@@ -78,7 +78,10 @@
       key: "mock",
       title: "模考",
       href: "zone.html?zone=mock&s=mock",
-      links: [{ href: "zone.html?zone=mock&s=mock", label: "剑桥套题模考" }]
+      links: [
+        { href: "zone.html?zone=mock&s=mock", label: "剑桥套题模考" },
+        { href: "ielts-vi/", label: "Luyện IELTS bằng tiếng Việt", lang: "vi" }
+      ]
     }
   ];
 
@@ -132,7 +135,8 @@
           "</a>" +
           '<ul class="mega-col__list">' +
             col.links.map(function (l) {
-              return '<li><a href="' + esc(l.href) + '">' + esc(l.label) + "</a></li>";
+              var lang = l.lang ? ' lang="' + esc(l.lang) + '"' : "";
+              return '<li><a href="' + esc(l.href) + '"' + lang + ">" + esc(l.label) + "</a></li>";
             }).join("") +
           "</ul></div>";
       }).join("") +
@@ -331,7 +335,8 @@
             sub.href = link.href;
             sub.className = "nav-drawer__sub";
             sub.dataset.key = "ielts";
-            sub.textContent = col.title + " · " + link.label;
+            if (link.lang) sub.lang = link.lang;
+            sub.textContent = link.lang ? link.label : col.title + " · " + link.label;
             drawerNav.appendChild(sub);
           });
         });

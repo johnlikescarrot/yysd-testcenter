@@ -1,6 +1,6 @@
 # Sải bước · Luyện IELTS Academic
 
-Sải bước là bản luyện IELTS Academic bằng tiếng Việt, chạy tĩnh, không cần đăng nhập hoặc API. Trang chủ của cổng YYSD cũ có liên kết đến bản này. Giao diện, hướng dẫn, giải thích và sổ tay đều dùng tiếng Việt; đề, ngữ liệu, đáp án và tên công trình khoa học giữ nguyên tiếng Anh khi cần. Ngân hàng đề, cổng giáo viên, hệ đăng nhập và các chương trình cũ không nằm trong bản phát hành này.
+Sải bước là bản luyện IELTS Academic bằng tiếng Việt, chạy tĩnh, không cần đăng nhập hoặc API. Mở bản này từ trang chủ, menu IELTS hoặc trang luyện IELTS của cổng YYSD. Giao diện, hướng dẫn, giải thích và sổ tay đều dùng tiếng Việt; đề, ngữ liệu, đáp án và tên công trình khoa học giữ nguyên tiếng Anh khi cần. Ngân hàng đề, cổng giáo viên, hệ đăng nhập và các chương trình cũ không nằm trong bản phát hành này.
 
 ## Học và ôn tập
 

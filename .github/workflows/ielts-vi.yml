@@ -6,6 +6,11 @@ on:
       - 'ielts-vi/**'
       - 'quality/**'
       - '.github/workflows/ielts-vi.yml'
+      - 'index.html'
+      - 'zone.html'
+      - 'assets/js/config.js'
+      - 'assets/js/nav.js'
+      - 'assets/js/zone.js'
   push:
     branches: [main]
     paths:
@@ -52,6 +57,15 @@ jobs:
           ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           CREATE_LOG_FILE: true
           SAVE_SUPER_LINTER_SUMMARY: true
+      - name: Verify the configured checks ran
+        shell: bash
+        run: |
+          for kind in GITHUB_ACTIONS HTML CSS JAVASCRIPT_ES JSON; do
+            if ! sudo grep -qF "Linting ${kind} items..." super-linter.log; then
+              printf '::error title=Super-Linter::No files were checked for %s.\n' "$kind"
+              exit 1
+            fi
+          done
       - name: Annotate lint failures
         if: failure() && steps.lint.outcome == 'failure'
         shell: bash
@@ -82,6 +96,7 @@ jobs:
           sparse-checkout: |
             ielts-vi
             quality
+            assets/js
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
