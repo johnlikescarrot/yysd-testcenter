@@ -173,10 +173,13 @@ test('completed paths recommend practice; stale review requests do not open empt
 
 test('boot module binds the browser clock and stops a running timer on exit', async (t) => {
   const { get, window, document, respond, dialog } = setup(t, { manualMount: true });
+  assert.equal(get('continue-lesson').disabled, true);
+  assert.equal(get('continue-lesson').hidden, false, 'reserve space for the primary button');
   globalThis.document = document;
   globalThis.window = window;
   try {
     await import('../../ielts-vi/assets/main.js');
+    assert.equal(get('continue-lesson').disabled, false);
     get('lesson-place').click();
     respond(0);
     respond(2);

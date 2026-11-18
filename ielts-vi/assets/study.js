@@ -141,7 +141,7 @@ export function mount(document, window, clock) {
     arrow.setAttribute('aria-hidden', 'true');
     continueButton.replaceChildren(label, arrow);
     continueButton.dataset.lesson = target;
-    continueButton.hidden = false;
+    continueButton.disabled = false;
     get('goal-count').textContent = `${today} / ${state.goal}`;
     get('goal-meter').max = state.goal;
     get('goal-meter').value = today;

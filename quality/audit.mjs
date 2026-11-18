@@ -9,6 +9,11 @@ const categories = ['performance', 'accessibility', 'best-practices', 'seo'];
 const pages = [['home', ''], ...guides.map(({ slug }) => [slug, `resources/${slug}.html`])];
 let failures = 0;
 await mkdir(reports, { recursive: true });
+function reportFailure(message) {
+  const escaped = message.replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
+  console.error(process.env.GITHUB_ACTIONS === 'true' ? `::error title=Lighthouse::${escaped}` : message);
+}
+
 const audit = (url) => withChrome(async (browser) => {
   const port = Number(new URL(browser.wsEndpoint()).port);
   for (const [name, path] of pages) {
@@ -25,15 +30,22 @@ const audit = (url) => withChrome(async (browser) => {
       for (const [key, score] of scores) {
         if (score === 1) continue;
         failures += 1;
-        for (const { id, weight } of lhr.categories[key].auditRefs) {
+        const missed = lhr.categories[key].auditRefs.flatMap(({ id, weight }) => {
           const entry = lhr.audits[id];
-          if (weight > 0 && entry.score !== null && entry.score < 1) console.error(`  ${id}: ${entry.displayValue ?? entry.title}`);
-        }
+          return weight > 0 && entry.score !== null && entry.score < 1
+            ? [`${id}: ${entry.displayValue ?? entry.title}`] : [];
+        });
+        reportFailure(`${label}: ${key} ${Math.round(score * 100)}/100. ${missed.join('; ')}`);
       }
     }
   }
 });
 const liveUrl = process.env.IELTS_PAGES_URL;
-if (liveUrl) await audit(liveUrl.endsWith('/') ? liveUrl : `${liveUrl}/`);
-else await withSite(audit);
+try {
+  if (liveUrl) await audit(liveUrl.endsWith('/') ? liveUrl : `${liveUrl}/`);
+  else await withSite(audit);
+} catch (error) {
+  reportFailure(error.message);
+  failures += 1;
+}
 if (failures) process.exitCode = 1;
