@@ -73,12 +73,12 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 2 听力", "剑桥雅思6 Test 3 听力"),
-        ("剑桥雅思6 · Test 2（听力）", "剑桥雅思6 · Test 3（听力）"),
-        ("剑桥雅思6 Test 2 听力：", "剑桥雅思6 Test 3 听力："),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 6 · Test 2", "剑桥雅思 6 · Test 3"),
-        ("剑桥雅思6 · Test 2", "剑桥雅思6 · Test 3"),
+        ("Cambridge IELTS 6 Test 2 Nghe", "Cambridge IELTS 6 Test 3 Nghe"),
+        ("Cambridge IELTS 6 · Test 2 (Nghe)", "Cambridge IELTS 6 · Test 3 (Nghe)"),
+        ("Cambridge IELTS 6 Test 2 Nghe: ", "Cambridge IELTS 6 Test 3 Nghe: "),
+        ("Test 2 Nghe (đề và đáp án Cambridge)", "Test 3 Nghe (đề và đáp án Cambridge)"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
         ("test-2", "test-3"),
         ("ielts6_test2", "ielts6_test3"),
     ]
@@ -89,12 +89,12 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 2 阅读", "剑桥雅思6 Test 3 阅读"),
-        ("剑桥雅思6 · Test 2（阅读）", "剑桥雅思6 · Test 3（阅读）"),
-        ("剑桥雅思6 Test 2 学术类阅读", "剑桥雅思6 Test 3 学术类阅读"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
-        ("剑桥雅思 6 · Test 2", "剑桥雅思 6 · Test 3"),
-        ("剑桥雅思6 · Test 2", "剑桥雅思6 · Test 3"),
+        ("Cambridge IELTS 6 Test 2 Đọc", "Cambridge IELTS 6 Test 3 Đọc"),
+        ("Cambridge IELTS 6 · Test 2 (Đọc)", "Cambridge IELTS 6 · Test 3 (Đọc)"),
+        ("Cambridge IELTS 6 Test 2 Đọc học thuật", "Cambridge IELTS 6 Test 3 Đọc học thuật"),
+        ("Test 2 Đọc (đề và đáp án Cambridge)", "Test 3 Đọc (đề và đáp án Cambridge)"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
     ]
@@ -105,18 +105,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 2 写作", "剑桥雅思6 Test 3 写作"),
-        ("剑桥雅思6 · Test 2（写作）", "剑桥雅思6 · Test 3（写作）"),
-        ("剑桥雅思6 Test 2 学术类写作", "剑桥雅思6 Test 3 学术类写作"),
+        ("Cambridge IELTS 6 Test 2 Viết", "Cambridge IELTS 6 Test 3 Viết"),
+        ("Cambridge IELTS 6 · Test 2 (Viết)", "Cambridge IELTS 6 · Test 3 (Viết)"),
+        ("Cambridge IELTS 6 Test 2 Viết học thuật", "Cambridge IELTS 6 Test 3 Viết học thuật"),
         (
             "Task 1 travel modes table + Task 2 sports professionals earnings essay",
             "Task 1 silkworm life cycle diagram + Task 2 cultural customs essay",
         ),
-        ("剑桥雅思 6 · Test 2", "剑桥雅思 6 · Test 3"),
-        ("剑桥雅思6 · Test 2", "剑桥雅思6 · Test 3"),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
+        ("Cambridge IELTS 6 · Test 2", "Cambridge IELTS 6 · Test 3"),
+        ("Test 2 Viết (đề Cambridge)", "Test 3 Viết (đề Cambridge)"),
         ("cambridge-6-test-2-writing-draft", "cambridge-6-test-3-writing-draft"),
-        ("【剑桥雅思6 · Test 2 写作】", "【剑桥雅思6 · Test 3 写作】"),
+        ("[Cambridge IELTS 6 · Test 2 Viết]", "[Cambridge IELTS 6 · Test 3 Viết]"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("travel-modes", "silkworm"),

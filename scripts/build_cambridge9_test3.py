@@ -79,7 +79,7 @@ def patch_listening_meta(html: str) -> str:
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("test2", "test3"),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
+        ("Test 2 Nghe (đề và đáp án Cambridge)", "Test 3 Nghe (đề và đáp án Cambridge)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -99,7 +99,7 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
+        ("Test 2 Đọc (đề và đáp án Cambridge)", "Test 3 Đọc (đề và đáp án Cambridge)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -135,7 +135,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 UK telephone calls bar chart + Task 2 unpaid community service essay",
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
         ),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Test 2 Viết (đề Cambridge)", "Test 3 Viết (đề Cambridge)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)

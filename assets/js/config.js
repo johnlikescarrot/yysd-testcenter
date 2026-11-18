@@ -1799,7 +1799,8 @@ window.YYSD = (function () {
 
   // Pull the volume number (e.g. "15") out of a title like "剑桥雅思15 · Test 1（听力）".
   function camVolume(item) {
-    var m = String((item && item.title) || "").match(/剑(?:桥雅思)?\s*0*(\d+)/);
+    var m = String((item && (item.file || item.id)) || "").match(/(?:^|\/)cambridge-0*(\d+)-test-/i)
+      || String((item && item.title) || "").match(/(?:Cambridge IELTS|剑(?:桥雅思)?)\s*0*(\d+)/i);
     return m ? m[1] : "";
   }
 
@@ -1966,7 +1967,7 @@ window.YYSD = (function () {
 
   // 听力精听：册列表走 vol-grid；点进一册再列 Test / Part
   function jingtingVol(item) {
-    var m = String((item && item.title) || "").match(/剑(?:雅|桥雅思)?\s*0*(\d+)/);
+    var m = String((item && item.title) || "").match(/(?:Cambridge IELTS|剑(?:雅|桥雅思)?)\s*0*(\d+)/i);
     if (m) return m[1];
     m = String((item && item.id) || "").match(/cam(\d+)/i);
     return m ? m[1] : "";

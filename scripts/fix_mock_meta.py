@@ -40,10 +40,10 @@ def reading_description(vol: str, test: str, test_data: dict | None) -> str:
             short = " / ".join(titles[:3])
             if len(short) > 80:
                 short = " / ".join(t[:28] + "…" if len(t) > 28 else t for t in titles[:3])
-            topics = f"（{short}）"
+            topics = f" ({short})"
     return (
-        f"剑桥雅思{vol} Test {test} 学术类阅读（官方真题）：3 篇文章共 40 题{topics}，"
-        "可单篇练习或完整模考，自动批改、解析与雅思预估分。"
+        f"Cambridge IELTS {vol} Test {test} Đọc học thuật (đề Cambridge): 3 bài đọc, gồm 40 câu{topics}, "
+        "luyện từng bài đọc hoặc thi thử trọn đề, chấm tự động, có lời giải và điểm band tham khảo."
     )
 
 
@@ -52,18 +52,18 @@ def writing_description(vol: str, test: str, test_data: dict | None) -> str:
     if test_data and test_data.get("task1"):
         prompt = (test_data["task1"].get("prompt") or "").lower()
         if "map" in prompt:
-            task1 = "Task 1 地图对比作文"
+            task1 = "Task 1 so sánh bản đồ"
         elif "diagram" in prompt or "process" in prompt or "流程" in prompt:
-            task1 = "Task 1 流程图作文"
+            task1 = "Task 1 mô tả quy trình"
         elif "table" in prompt:
-            task1 = "Task 1 表格作文"
+            task1 = "Task 1 mô tả bảng số liệu"
         elif "graph" in prompt or "chart" in prompt:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 mô tả biểu đồ"
         else:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 mô tả biểu đồ"
     return (
-        f"剑桥雅思{vol} Test {test} 学术类写作（官方真题）：{task1} + Task 2 议论文，"
-        "限时 60 分钟，自带字数统计、草稿自动保存与官方评分标准自评。"
+        f"Cambridge IELTS {vol} Test {test} Viết học thuật (đề Cambridge): {task1} + Task 2 bài nghị luận, "
+        "thời gian: 60 phút, có bộ đếm từ, lưu nháp tự động và bảng tiêu chí tự đánh giá."
     )
 
 

@@ -76,13 +76,13 @@ def read_text(path):
 
 
 def find_meta(html, name):
-    p1 = re.compile(r'<meta[^>]*name=["\']exam:%s["\'][^>]*content=["\']([^"\']*)["\']' % re.escape(name), re.I)
-    m = p1.search(html)
-    if m:
-        return m.group(1).strip()
-    p2 = re.compile(r'<meta[^>]*content=["\']([^"\']*)["\'][^>]*name=["\']exam:%s["\']' % re.escape(name), re.I)
-    m = p2.search(html)
-    return m.group(1).strip() if m else None
+    # Match the closing delimiter, not any quote: English titles can contain apostrophes.
+    for tag in re.findall(r"<meta\b[^>]*>", html, flags=re.I):
+        attrs = {key.lower(): value for key, _, value in
+                 re.findall(r"([\w:-]+)\s*=\s*([\"'])(.*?)\2", tag, flags=re.S)}
+        if attrs.get("name", "").lower() == "exam:" + name and "content" in attrs:
+            return attrs["content"].strip()
+    return None
 
 
 def find_title_tag(html):

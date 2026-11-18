@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// ponytail: assert 绝密套卷4 is 40 keyed questions + catalog id
+// ponytail: assert Bộ đề chuyên sâu 4 is 40 keyed questions + catalog id
 var fs = require("fs");
 var path = require("path");
 var root = path.join(__dirname, "..");
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
 var html = fs.readFileSync(path.join(root, "library/mock/cambridge-reading/secret-set-4-reading.html"), "utf8");
-must(html.indexOf('exam:title" content="绝密套卷4（阅读）"') >= 0, "title meta");
-must(html.indexOf("绝密套卷3") < 0, "leftover 套卷3");
+must(html.indexOf('exam:title" content="Bộ đề chuyên sâu 4 (Đọc)"') >= 0, "title meta");
+must(html.indexOf("Bộ đề chuyên sâu 3") < 0, "leftover 套卷3");
 must(html.indexOf("Sydney Opera House") < 0, "leftover set3 passage");
 
 var m = html.match(/const TEST = (\{[\s\S]*?\n\});\n/);
@@ -45,6 +45,6 @@ var man = JSON.parse(fs.readFileSync(path.join(root, "library/manifest.json"), "
 var items = man.items || man;
 var hit = (items || []).filter(function (it) { return it.id === "secret-set-4-reading"; });
 must(hit.length === 1, "manifest id");
-must(/绝密套卷4/.test(hit[0].title), "manifest title");
+must(/Bộ đề chuyên sâu 4/.test(hit[0].title), "manifest title");
 
 console.log("check_secret_set_4: ok");

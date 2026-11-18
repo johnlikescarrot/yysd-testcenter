@@ -6,6 +6,7 @@ name: Rebuild content list
 
 on:
   push:
+    branches: [main] # Only publish the generated index on the default branch.
     paths:
       - "library/**"
       - "scripts/build_manifest.py"

@@ -1478,9 +1478,9 @@
         el = nodes[i];
         if (el.children && el.children.length) continue;
         t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/批改报告|写作完成/.test(t)) {
+        if (/批改报告|写作完成|Báo cáo kết quả|Đã hoàn thành bài Viết/.test(t)) {
           el.className = "yysd-res-eyebrow";
-          el.textContent = /写作/.test(t) ? "Writing report" : "Practice result";
+          el.textContent = /写作|bài Viết/.test(t) ? "Writing report" : "Practice result";
           break;
         }
       }

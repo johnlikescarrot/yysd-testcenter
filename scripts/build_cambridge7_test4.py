@@ -84,10 +84,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 听力", "剑桥雅思7 Test 4 听力"),
-        ("剑桥雅思7 · Test 3（听力）", "剑桥雅思7 · Test 4（听力）"),
-        ("剑桥雅思7 Test 3 听力：", "剑桥雅思7 Test 4 听力："),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 Test 3 Nghe", "Cambridge IELTS 7 Test 4 Nghe"),
+        ("Cambridge IELTS 7 · Test 3 (Nghe)", "Cambridge IELTS 7 · Test 4 (Nghe)"),
+        ("Cambridge IELTS 7 Test 3 Nghe: ", "Cambridge IELTS 7 Test 4 Nghe: "),
+        ("Test 3 Nghe (đề và đáp án Cambridge)", "Test 4 Nghe (đề và đáp án Cambridge)"),
         ("test-3", "test-4"),
         ("ielts7_test3", "ielts7_test4"),
     ]
@@ -99,10 +99,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 阅读", "剑桥雅思7 Test 4 阅读"),
-        ("剑桥雅思7 · Test 3（阅读）", "剑桥雅思7 · Test 4（阅读）"),
-        ("剑桥雅思7 Test 3 学术类阅读", "剑桥雅思7 Test 4 学术类阅读"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 Test 3 Đọc", "Cambridge IELTS 7 Test 4 Đọc"),
+        ("Cambridge IELTS 7 · Test 3 (Đọc)", "Cambridge IELTS 7 · Test 4 (Đọc)"),
+        ("Cambridge IELTS 7 Test 3 Đọc học thuật", "Cambridge IELTS 7 Test 4 Đọc học thuật"),
+        ("Test 3 Đọc (đề và đáp án Cambridge)", "Test 4 Đọc (đề và đáp án Cambridge)"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
     ]
@@ -113,16 +113,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 写作", "剑桥雅思7 Test 4 写作"),
-        ("剑桥雅思7 · Test 3（写作）", "剑桥雅思7 · Test 4（写作）"),
-        ("剑桥雅思7 Test 3 学术类写作", "剑桥雅思7 Test 4 学术类写作"),
+        ("Cambridge IELTS 7 Test 3 Viết", "Cambridge IELTS 7 Test 4 Viết"),
+        ("Cambridge IELTS 7 · Test 3 (Viết)", "Cambridge IELTS 7 · Test 4 (Viết)"),
+        ("Cambridge IELTS 7 Test 3 Viết học thuật", "Cambridge IELTS 7 Test 4 Viết học thuật"),
         (
             "Task 1 house prices chart + Task 2 job satisfaction essay",
             "Task 1 electricity production pie charts + Task 2 university function essay",
         ),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Test 3 Viết (đề Cambridge)", "Test 4 Viết (đề Cambridge)"),
         ("cambridge-7-test-3-writing-draft", "cambridge-7-test-4-writing-draft"),
-        ("【剑桥雅思7 · Test 3 写作】", "【剑桥雅思7 · Test 4 写作】"),
+        ("[Cambridge IELTS 7 · Test 3 Viết]", "[Cambridge IELTS 7 · Test 4 Viết]"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("house-prices", "electricity-production"),

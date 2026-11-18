@@ -136,12 +136,12 @@ def patch_reading_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 听力", "剑桥雅思4 Test 2 听力"),
-        ("剑桥雅思4 · Test 1（听力）", "剑桥雅思4 · Test 2（听力）"),
-        ("剑桥雅思4 Test 1 听力：", "剑桥雅思4 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        ("Cambridge IELTS 4 Test 1 Nghe", "Cambridge IELTS 4 Test 2 Nghe"),
+        ("Cambridge IELTS 4 · Test 1 (Nghe)", "Cambridge IELTS 4 · Test 2 (Nghe)"),
+        ("Cambridge IELTS 4 Test 1 Nghe: ", "Cambridge IELTS 4 Test 2 Nghe: "),
+        ("Test 1 Nghe (đề và đáp án Cambridge)", "Test 2 Nghe (đề và đáp án Cambridge)"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts4_test1", "ielts4_test2"),
@@ -153,10 +153,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 阅读", "剑桥雅思4 Test 2 阅读"),
-        ("剑桥雅思4 · Test 1（阅读）", "剑桥雅思4 · Test 2（阅读）"),
-        ("剑桥雅思4 Test 1 学术类阅读", "剑桥雅思4 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 4 Test 1 Đọc", "Cambridge IELTS 4 Test 2 Đọc"),
+        ("Cambridge IELTS 4 · Test 1 (Đọc)", "Cambridge IELTS 4 · Test 2 (Đọc)"),
+        ("Cambridge IELTS 4 Test 1 Đọc học thuật", "Cambridge IELTS 4 Test 2 Đọc học thuật"),
+        ("Test 1 Đọc (đề và đáp án Cambridge)", "Test 2 Đọc (đề và đáp án Cambridge)"),
         (
             "Adults and children — loss o… / What Do Whales Feel? / Visual Symbols and the Blind",
             "Lost for Words / Alternative Medicine in Australia / Play Is a Serious Business",
@@ -165,8 +165,8 @@ def patch_reading_meta(html: str) -> str:
             "Rainforests、What Do Whales Feel?、Visual Symbols and the Blind",
             "Lost for Words、Alternative Medicine in Australia、Play Is a Serious Business",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -177,22 +177,22 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 写作", "剑桥雅思4 Test 2 写作"),
-        ("剑桥雅思4 · Test 1（写作）", "剑桥雅思4 · Test 2（写作）"),
-        ("剑桥雅思4 Test 1 学术类写作", "剑桥雅思4 Test 2 学术类写作"),
+        ("Cambridge IELTS 4 Test 1 Viết", "Cambridge IELTS 4 Test 2 Viết"),
+        ("Cambridge IELTS 4 · Test 1 (Viết)", "Cambridge IELTS 4 · Test 2 (Viết)"),
+        ("Cambridge IELTS 4 Test 1 Viết học thuật", "Cambridge IELTS 4 Test 2 Viết học thuật"),
         (
             "Task 1 poverty table + Task 2 media for communicating information essay",
             "Task 1 electricity graph & pie chart + Task 2 happiness essay",
         ),
         (
-            "Task 1 表格作文 + Task 2 议论文",
-            "Task 1 电力图表 + Task 2 幸福话题议论文",
+            "Task 1 mô tả bảng số liệu + Task 2 bài nghị luận",
+            "Task 1 电力图表 + Task 2 幸福话câubài nghị luận",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Test 1 Viết (đề Cambridge)", "Test 2 Viết (đề Cambridge)"),
         ("cambridge-4-test-1-writing-draft", "cambridge-4-test-2-writing-draft"),
-        ("【剑桥雅思4 · Test 1 写作】", "【剑桥雅思4 · Test 2 写作】"),
+        ("[Cambridge IELTS 4 · Test 1 Viết]", "[Cambridge IELTS 4 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("poverty-table", "electricity-charts"),
