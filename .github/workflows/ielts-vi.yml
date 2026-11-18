@@ -76,6 +76,8 @@ jobs:
             /ielts-vi/
             /quality/
             /assets/js/
+            /server/server.js
+            /scripts/report_localization.py
             /library/manifest.json
             /library/mock/cambridge-*/*.html
             /library/mock/ielts/*.html
@@ -99,6 +101,7 @@ jobs:
       - run: npm test
       - run: npm run test:portal
       - run: npm run build
+      - run: python3 ../scripts/report_localization.py --release dist
       - run: npm run test:browser
       - run: npm run lighthouse
       - name: Save reports

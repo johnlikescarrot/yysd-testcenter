@@ -1,6 +1,6 @@
 # Trung tâm học tập YYSD
 
-**[Sải bước – Luyện IELTS Academic](ielts-vi/)** là lộ trình tự học cho người Việt: làm bài ngắn, nghe đoạn ghi âm, luyện nói và viết, xem giải thích rồi ôn lại câu sai. Không cần đăng ký. Điểm kinh nghiệm phản ánh hoạt động học, không quy đổi sang band IELTS. [Hướng dẫn sử dụng, tài liệu và kiểm thử](ielts-vi/README.md).
+**[Sải bước – Luyện IELTS Academic](ielts-vi/)** là lộ trình tự học cho người Việt: làm bài ngắn, nghe đoạn ghi âm, luyện nói và viết, xem giải thích rồi ôn lại câu sai. Không cần đăng ký. Điểm kinh nghiệm phản ánh hoạt động học, không quy đổi sang band IELTS. [Hướng dẫn sử dụng và tài liệu](ielts-vi/README.md) · [Phạm vi Việt hóa và kiểm định](ielts-vi/VALIDATION.md).
 
 ## Bản tĩnh cho GitHub Pages
 

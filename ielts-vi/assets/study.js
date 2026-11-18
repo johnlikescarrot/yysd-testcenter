@@ -155,7 +155,7 @@ export function mount(document, window, clock) {
     get('review-note').textContent = due ? 'Câu từng sai được ưu tiên. Mỗi lượt có tối đa 8 câu.'
       : 'Chưa có câu đến hạn. Các câu đã làm sẽ tự lên lịch ôn.';
     reviewButton.disabled = !due;
-    dailyButton.disabled = state.lastDaily === day;
+    dailyButton.disabled = state.lastDaily >= day;
     dailyButton.textContent = dailyButton.disabled ? 'Đã hoàn thành hôm nay' : 'Luyện 5 từ hôm nay →';
     renderPath(nextLesson?.id);
     renderWeek();

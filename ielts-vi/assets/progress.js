@@ -98,7 +98,7 @@ function consecutiveThree(state) {
 
 export function makeSession(lessonId, state, day) {
   if (lessonId === 'daily') {
-    return state.lastDaily === day ? null : { lessonId, day, ids: dailyIds(day), results: [] };
+    return state.lastDaily >= day ? null : { lessonId, day, ids: dailyIds(day), results: [] };
   }
   if (lessonId === 'review') {
     const ids = dueCards(state, day).slice(0, reviewLimit);
@@ -135,7 +135,7 @@ export function finish(state, session, day) {
   if (session.results.length !== session.ids.length) return null;
   const daily = session.lessonId === 'daily';
   // A second tab may already have finished this day's challenge.
-  if (daily && state.lastDaily === session.day) {
+  if (daily && state.lastDaily >= session.day) {
     return { earned: 0, correct: session.results.filter((result) => result.correct).length, total: session.ids.length, state };
   }
   const completed = { ...state.completed };

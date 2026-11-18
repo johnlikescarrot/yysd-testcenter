@@ -34,6 +34,8 @@ test('daily credit is separate from course completion and survives midnight and 
   assert.deepEqual(dueCards(state, day + 1), [session.ids[0]]);
   assert.equal(makeSession('daily', state, day), null);
   assert.ok(makeSession('daily', state, day + 1));
+  const newer = { ...state, lastDaily: day + 1 };
+  assert.equal(finish(newer, session, day + 1).state, newer, 'a stale tab cannot roll the last completed date backwards');
   assert.deepEqual(finish(state, session, day + 1), { state, earned: 0, correct: 4, total: 5 });
   assert.deepEqual(readProgress(() => ({ getItem: () => JSON.stringify(state) })), state);
 });

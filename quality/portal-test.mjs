@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { Script } from 'node:vm';
+import { parse } from 'acorn';
 import test from 'node:test';
 import { JSDOM, VirtualConsole } from 'jsdom';
 
@@ -191,4 +192,51 @@ test('four localized listening parts keep their English transcripts, clocks and 
       assert.doesNotMatch(vi, oldScript);
     }
   }
+});
+
+for (const [lang, line] of [['vi', 'Xin chào.'], ['zh', '早上好。']]) {
+  test(`intensive listening identifies the ${lang} transcript and reveals it in both modes`, async (t) => {
+    const dom = new JSDOM(await source('jingting-player.html'), { url: 'https://example.test/project/jingting-player.html', runScripts: 'outside-only' });
+    const { window } = dom;
+    const { document } = window;
+    t.after(() => window.close());
+    window.Element.prototype.scrollIntoView = () => {};
+    window.HTMLMediaElement.prototype.pause = () => {};
+    window.fetch = async () => ({ ok: true, json: async () => ({
+      title: 'Cambridge IELTS', audioUrl: 'audio.mp3', examHref: 'exam.html',
+      sentences: [{ en: 'Good morning.', [lang]: line, start: 3, end: 5 }],
+    }) });
+    window.eval(await source('assets/js/jingting-player.js'));
+    await new Promise((resolve) => setImmediate(resolve));
+    const toggle = document.getElementById('jtShowZh');
+    assert.equal(toggle.textContent, lang === 'vi' ? 'Bản dịch tiếng Việt' : 'Bản dịch gốc (tiếng Trung)');
+    toggle.click();
+    assert.equal(toggle.getAttribute('aria-pressed'), 'true');
+    assert.equal(document.querySelector('.jt-full-zh').lang, lang);
+    assert.equal(document.querySelector('.jt-full-zh').textContent, line);
+    document.querySelector('[data-mode="line"]').click();
+    assert.equal(document.getElementById('jtLineZh').lang, lang);
+    assert.equal(document.getElementById('jtLineZh').textContent, line);
+  });
+}
+
+test('the API asks for Vietnamese coaching but keeps examiner turns, answers and protocol keys in English', async () => {
+  // Test the real pure prompt builders without starting Express, SQLite or a paid AI call.
+  const src = await source('server/server.js');
+  const decls = parse(src, { ecmaVersion: 2022 }).body.filter((n) => n.type === 'FunctionDeclaration');
+  function load(name) {
+    const node = decls.find((n) => n.id.name === name);
+    return new Script(`(${src.slice(node.start, node.end)})`).runInNewContext();
+  }
+  const tutor = load('buildTutorSystem');
+  assert.match(tutor('tutor'), /Explain in Vietnamese/);
+  assert.match(tutor('examiner', 'part2'), /Speak ONLY in English/);
+  assert.match(tutor('examiner', 'full', { examMode: 'mock', part1: [] }), /SCORE_JSON:/);
+  for (const type of ['task1', 'task2']) {
+    const prompt = load('buildWritingGradeSystem')(type, 'An English question.', '');
+    assert.match(prompt, /in Vietnamese; quote student English/);
+    assert.match(prompt, /WRITING_JSON:/);
+    assert.doesNotMatch(prompt, oldScript);
+  }
+  assert.match(load('buildWordLookupSystem')(), /WORD_JSON:.*meaning/);
 });

@@ -7,7 +7,7 @@
 var fs = require("fs");
 var path = require("path");
 
-var PROMPT_VERSION = process.env.AI_PROMPT_VERSION || "ielts-v1";
+var PROMPT_VERSION = process.env.AI_PROMPT_VERSION || "ielts-vi-v1";
 var DASHSCOPE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
 
 var RUBRIC_DIR = path.join(__dirname, "rubrics");
@@ -126,7 +126,7 @@ function evidenceWritingAddon() {
   return (
     "\nEvidence-first (mandatory):\n" +
     "- Each criteriaNotes.* must quote a short student phrase as evidence.\n" +
-    "- Avoid vague praise like 「词汇丰富」without a quote.\n" +
+    "- Avoid vague praise such as “vốn từ phong phú” without a quote.\n" +
     "- promptVersion=" + PROMPT_VERSION + "\n"
   );
 }

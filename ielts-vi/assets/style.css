@@ -436,6 +436,11 @@ button:disabled { cursor: not-allowed; }
 
 .side-icon svg {
   display: block;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   inline-size: 1.25rem;
   block-size: 1.25rem;
 }
@@ -823,5 +828,9 @@ fieldset {
 }
 
 .handbook .appendix details { border-block-end: 1px solid var(--line); }
-.handbook .appendix summary { padding-block: .8rem; color: var(--purple-dark); }
+
+.handbook .appendix summary {
+  padding-block: .8rem;
+  color: var(--purple-dark);
+}
 .handbook .appendix li { margin-block-end: .75rem; }
