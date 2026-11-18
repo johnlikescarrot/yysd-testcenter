@@ -2,7 +2,7 @@ name: Triển khai IELTS Việt lên GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: ["**"]
     paths:
       - "vi/**"
       - ".github/workflows/pages.yml"
@@ -46,6 +46,7 @@ jobs:
 
   deploy:
     name: Xuất bản
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
