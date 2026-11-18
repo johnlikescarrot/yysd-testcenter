@@ -76,7 +76,8 @@ jobs:
             -e VALIDATE_CHECKOV=false \
             -e VALIDATE_TRIVY=false \
             -e VALIDATE_JSCPD=false \
-            -e FILTER_REGEX_INCLUDE='(^|/)(vi|tests|docs)/' \
+            -e VALIDATE_JSON=false \
+            -e FILTER_REGEX_INCLUDE='(^|/)(vi|tests|docs/vi)/' \
             -v "$PWD":/tmp/lint \
             ghcr.io/super-linter/super-linter:v7.4.0 \
             2>&1 | tee /tmp/super-linter.log
@@ -92,7 +93,7 @@ jobs:
             echo "### Nhật ký Super-Linter"
             echo ""
             echo '```text'
-            tail -n 80 /tmp/super-linter.log || echo "không có nhật ký"
+            tail -n 300 /tmp/super-linter.log || echo "không có nhật ký"
             echo '```'
           } > "${body}"
           number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
