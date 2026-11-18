@@ -101,13 +101,13 @@ window.YYSD_ALEVEL = (function () {
   }
 
   function seasonBadge(season) {
-    var map = { m: "春", s: "夏", w: "冬" };
+    var map = { m: "T2–3", s: "T5–6", w: "T10–11" };
     return map[season] || season;
   }
 
   function subjectCardHTML(sub, prefix, boardLabel) {
-    var updated = sub.updatedYear ? "已更新至 " + sub.updatedYear + " 年" : "持续更新中";
-    var count = sub.paperCount ? sub.paperCount + " 套真题" : "即将上线";
+    var updated = sub.updatedYear ? "Cập nhật đến " + sub.updatedYear : "Đang cập nhật";
+    var count = sub.paperCount ? sub.paperCount + " bộ đề" : "Sắp có";
     var tag = boardLabel || sub.board || "";
     return '<a class="alevel-subject-card pressable" href="' + subjectHref(sub.board, sub.code, prefix) + '">' +
       '<span class="alevel-subject-card__ico" aria-hidden="true">' + (sub.icon || "📘") + "</span>" +
@@ -120,7 +120,7 @@ window.YYSD_ALEVEL = (function () {
   function hubBoardHTML(catalog, boardId, prefix) {
     var board = boardOf(catalog, boardId);
     if (!board || !board.subjects.length) {
-      return '<div class="soon-box">该考试局内容筹备中，敬请期待。</div>';
+      return '<div class="soon-box">Tài liệu của hội đồng thi này đang được chuẩn bị.</div>';
     }
     return '<div class="alevel-subject-grid">' +
       board.subjects.map(function (s) {
@@ -137,9 +137,9 @@ window.YYSD_ALEVEL = (function () {
       "<td>Paper " + Y.esc(item.paper) + "</td>" +
       "<td>" + Y.esc(item.typeLabelZh || item.type) + "</td>" +
       '<td class="alevel-paper-row__actions">' +
-        '<a class="btn btn--ghost btn--sm" href="' + viewHref(item, prefix) + '">预览</a>' +
+        '<a class="btn btn--ghost btn--sm" href="' + viewHref(item, prefix) + '">Xem trước</a>' +
         '<a class="btn btn--ghost btn--sm" href="' + fileHref(item, prefix) +
-          '" download target="_blank" rel="noopener">下载</a>' +
+          '" download target="_blank" rel="noopener">Tải về</a>' +
       "</td></tr>";
   }
 
@@ -152,7 +152,7 @@ window.YYSD_ALEVEL = (function () {
         '<div class="alevel-preview-board__head">' +
           "<h3>" + Y.esc(board.labelZh || board.label) + "</h3>" +
           '<a class="section-link" href="' + (prefix || "") + "alevel.html?board=" +
-            encodeURIComponent(board.id) + '">查看全部 →</a></div>' +
+            encodeURIComponent(board.id) + '">Xem tất cả →</a></div>' +
         '<div class="alevel-subject-grid alevel-subject-grid--compact">' +
           subs.map(function (s) { return subjectCardHTML(s, prefix, board.label); }).join("") +
         "</div></div>";
@@ -167,7 +167,7 @@ window.YYSD_ALEVEL = (function () {
   }
 
   function showcaseSubjectHTML(sub, prefix) {
-    var count = sub.paperCount ? sub.paperCount + " 套" : "即将上线";
+    var count = sub.paperCount ? sub.paperCount + " bộ đề" : "Sắp có";
     return '<a class="home-alevel__subject pressable" href="' + subjectHref(sub.board, sub.code, prefix) + '">' +
       '<span class="home-alevel__subject-ico" aria-hidden="true">' + (sub.icon || "📘") + "</span>" +
       '<span class="home-alevel__subject-body">' +
@@ -181,12 +181,12 @@ window.YYSD_ALEVEL = (function () {
   function homeShowcaseHTML(catalog, prefix) {
     var p = prefix || "";
     if (!hasContent(catalog)) {
-      return '<section class="home-alevel home-alevel--empty reveal" aria-label="A-Level 真题库">' +
+      return '<section class="home-alevel home-alevel--empty reveal" aria-label="Kho đề A-Level">' +
         '<div class="home-alevel__inner">' +
           '<span class="home-alevel__eyebrow">A-LEVEL PAST PAPERS</span>' +
-          "<h2>A-Level 真题库</h2>" +
-          "<p>CAIE · Edexcel · Oxford AQA 真题筹备中，敬请期待。</p>" +
-          '<a class="btn btn--ghost-dark pressable" href="' + hubHref(p) + '">了解更多 →</a>' +
+          "<h2>Kho đề A-Level</h2>" +
+          "<p>Đang chuẩn bị đề CAIE, Edexcel và Oxford AQA.</p>" +
+          '<a class="btn btn--ghost-dark pressable" href="' + hubHref(p) + '">Tìm hiểu thêm →</a>' +
         "</div></section>";
     }
 
@@ -215,8 +215,8 @@ window.YYSD_ALEVEL = (function () {
         ? p + "alevel.html?board=" + encodeURIComponent(board.id)
         : p + "alevel.html?board=" + encodeURIComponent(board.id);
       var meta = active
-        ? stats.subjects + " 科目 · " + stats.papers + " 套"
-        : "筹备中";
+        ? stats.subjects + " môn · " + stats.papers + " bộ đề"
+        : "Đang chuẩn bị";
       return '<a class="' + cls + '" href="' + href + '">' +
         '<span class="home-alevel__board-label">' + Y.esc(board.label) + "</span>" +
         '<span class="home-alevel__board-zh">' + Y.esc(board.labelZh || board.label) + "</span>" +
@@ -229,25 +229,25 @@ window.YYSD_ALEVEL = (function () {
       return showcaseSubjectHTML(sub, p);
     }).join("");
 
-    return '<section class="home-alevel reveal" aria-label="A-Level 真题库">' +
+    return '<section class="home-alevel reveal" aria-label="Kho đề A-Level">' +
       '<div class="home-alevel__inner">' +
         '<div class="home-alevel__head">' +
           "<div>" +
             '<span class="home-alevel__eyebrow">A-LEVEL PAST PAPERS</span>' +
-            "<h2>A-Level 真题库</h2>" +
-            "<p>三大考试局真题试卷与 Mark Scheme · 在线预览 · 免费下载</p>" +
+            "<h2>Kho đề A-Level</h2>" +
+            "<p>Đề và hướng dẫn chấm từ ba hội đồng thi · Xem trực tuyến · Tải miễn phí</p>" +
           "</div>" +
-          '<a class="btn btn--gold pressable home-alevel__cta" href="' + hubHref(p) + '">进入题库 →</a>' +
+          '<a class="btn btn--gold pressable home-alevel__cta" href="' + hubHref(p) + '">Vào kho đề →</a>' +
         "</div>" +
         '<div class="home-alevel__metrics">' +
-          '<div class="home-alevel__metric"><b data-count="' + boards.length + '">' + boards.length + "</b><span>考试局</span></div>" +
-          '<div class="home-alevel__metric"><b data-count="' + qp + '">' + qp + "</b><span>真题套数</span></div>" +
-          '<div class="home-alevel__metric"><b data-count="' + subjectTotal + '">' + subjectTotal + "</b><span>热门科目</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + boards.length + '">' + boards.length + "</b><span>Hội đồng thi</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + qp + '">' + qp + "</b><span>Số bộ đề</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + subjectTotal + '">' + subjectTotal + "</b><span>Môn phổ biến</span></div>" +
         "</div>" +
         '<div class="home-alevel__boards" role="list">' + boardCards + "</div>" +
         (subjectCards
-          ? '<div class="home-alevel__subjects-head"><h3>热门科目</h3><a class="section-link section-link--light" href="' +
-              hubHref(p) + '">查看全部 →</a></div>' +
+          ? '<div class="home-alevel__subjects-head"><h3>Môn phổ biến</h3><a class="section-link section-link--light" href="' +
+              hubHref(p) + '">Xem tất cả →</a></div>' +
             '<div class="home-alevel__subjects">' + subjectCards + "</div>"
           : "") +
       "</div></section>";

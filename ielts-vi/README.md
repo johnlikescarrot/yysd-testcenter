@@ -7,7 +7,7 @@ Sải bước là bản luyện IELTS Academic bằng tiếng Việt, chạy tĩ
 - Ba chặng, 12 bài và 36 hoạt động tự soạn cho Nghe, Đọc, Viết, Nói. Đoạn nghe sử dụng giọng tổng hợp và có bản chép tiếng Anh. Bài Viết và Nói có gợi ý tự kiểm, không chấm điểm tự động. Bộ đếm của phần Nói không bật mic.
 - Kết quả bài học, mục tiêu ngày, điểm kinh nghiệm và huy hiệu lưu trên trình duyệt. Bản nháp Viết không được lưu. Xóa dữ liệu trang sẽ xóa tiến độ; không có đồng bộ giữa thiết bị.
 - Câu sai vào lượt ôn tiếp theo. Tùy vào số lần trả lời đúng khi đến hạn, một câu được ôn lại sau 1, 3, 7 hoặc 14 ngày. Mỗi lượt ôn có tối đa 8 câu. Lịch này là quy tắc thực hành, không phải ước lượng điểm thi.
-- Hai sổ tay tiếng Việt có bản PDF và HTML cùng nội dung. Sổ tay dẫn 14 công trình học thuật khác nhau bằng DOI và liên kết tra cứu Google Scholar; tài liệu định dạng/chấm điểm dẫn trực tiếp IELTS. Tên bài nghiên cứu giữ nguyên để tra cứu. Không phân phối lại bài nghiên cứu của nhà xuất bản.
+- Bốn sổ tay tiếng Việt có bản PDF và HTML cùng nội dung. Sổ tay dẫn 25 công trình học thuật khác nhau bằng DOI và liên kết tra cứu Google Scholar; tài liệu định dạng/chấm điểm dẫn trực tiếp IELTS. Tên bài nghiên cứu giữ nguyên để tra cứu. Hai sổ tay bổ sung hướng dẫn học từ trong ngữ cảnh và chữa đề bằng hướng dẫn chấm. Sổ tay chữa đề cũng có trong trình xem PDF A-Level; không thay đổi các tệp đề gốc. Không phân phối lại bài nghiên cứu của nhà xuất bản.
 
 ## Phát triển và kiểm tra
 
@@ -25,7 +25,7 @@ npm run lighthouse --prefix quality
 
 - `assets/course.js`: nội dung bài luyện, giữ nguyên các mã bài/câu đã phát hành để không mất lịch ôn cũ.
 - `assets/progress.js`: mô hình tiến độ, chấm đáp án, lịch ôn và trạng thái lưu trên máy.
-- `../quality/materials.mjs`: nguồn nội dung và trích dẫn cho cả hai định dạng. Chạy `npm run pdf --prefix quality` để cập nhật bốn tệp trong `resources/`. PDF nhúng Noto Sans (giấy phép SIL Open Font License).
+- `../quality/materials.mjs`: nguồn nội dung và trích dẫn cho cả hai định dạng. Chạy `npm run pdf --prefix quality` để cập nhật tám tệp trong `resources/`. PDF nhúng Noto Sans (giấy phép SIL Open Font License).
 - Nếu sửa bản chép lời, chạy `npm run audio --prefix quality`. Ba tệp MP3 được tạo từ kịch bản trong kho bằng [Flite](https://github.com/festvox/flite); không sao chép âm thanh đề thi chính thức.
 
 Các tệp PDF/HTML và MP3 nhỏ được lưu trong Git để dùng được ngay trên cổng tĩnh cũ. CI kiểm tra có thể tạo lại cùng nội dung. `quality/dist/` và báo cáo sinh trong quá trình kiểm tra không được lưu trong Git.
@@ -36,4 +36,4 @@ Các tệp PDF/HTML và MP3 nhỏ được lưu trong Git để dùng được n
 2. Workflow **IELTS tiếng Việt · chất lượng và Pages** chạy trên PR khi có thay đổi liên quan. Chỉ `main` triển khai sau khi Super-Linter, kiểm thử trình duyệt, Lighthouse và coverage đều đạt. Có thể chạy thủ công workflow từ `main` sau khi workflow đã có trên nhánh đó.
 3. Chỉ nội dung được liệt kê trong `quality/build.mjs` được công bố (không mang theo `CNAME` cũ, máy chủ, kho đề hay dữ liệu khác). Đường dẫn tương đối hỗ trợ URL dự án dạng `https://<tài-khoản>.github.io/<tên-kho>/`.
 
-Ngưỡng 100% coverage áp dụng cho từng mô-đun JavaScript của bản IELTS tiếng Việt (dòng, nhánh, hàm, câu lệnh), không áp dụng cho mã cũ. Lighthouse kiểm tra bốn hạng mục trên trang học và cả hai sổ tay HTML, ở cấu hình di động và máy tính. Điểm đo tại bản dựng kiểm thử không bảo đảm kết quả giống hệt trên mọi thiết bị hay đường truyền.
+Ngưỡng 100% coverage áp dụng cho từng mô-đun JavaScript của bản IELTS tiếng Việt (dòng, nhánh, hàm, câu lệnh), không áp dụng cho mã cũ. Lighthouse kiểm tra bốn hạng mục trên trang học và bốn sổ tay HTML, ở cấu hình di động và máy tính. Điểm đo tại bản dựng kiểm thử không bảo đảm kết quả giống hệt trên mọi thiết bị hay đường truyền.

@@ -27,9 +27,9 @@ FILE_RE = re.compile(
 )
 
 SEASON_LABEL = {
-    "m": {"en": "Feb/Mar", "zh": "春季 (Feb/Mar)"},
-    "s": {"en": "May/Jun", "zh": "夏季 (May/Jun)"},
-    "w": {"en": "Oct/Nov", "zh": "冬季 (Oct/Nov)"},
+    "m": {"en": "Feb/Mar", "zh": "Tháng 2–3 (Feb/Mar)"},
+    "s": {"en": "May/Jun", "zh": "Tháng 5–6 (May/Jun)"},
+    "w": {"en": "Oct/Nov", "zh": "Tháng 10–11 (Oct/Nov)"},
 }
 
 # 同一年份内：冬季 → 夏季 → 春季（考试日期新→旧）
@@ -67,7 +67,7 @@ def parse_pdf_name(fname, meta):
     code = meta["code"]
     sid = f"{board_id}-{code_key.lower()}-{year}-{season}-{paper}-{kind}"
     season_info = SEASON_LABEL.get(season, {"en": season, "zh": season})
-    type_zh = "真题" if kind == "qp" else "官方答案"
+    type_zh = "Đề thi" if kind == "qp" else "Hướng dẫn chấm"
     title = (
         f"{board_label} {code} {meta['nameZh']} · {year} {season_info['zh']} · "
         f"Paper {paper} · {type_zh}"

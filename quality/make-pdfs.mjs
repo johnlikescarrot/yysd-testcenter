@@ -31,7 +31,7 @@ function html(guide) {
   ].join('\n'));
   const references = guide.sources.map((source, index) => {
     const details = source.doi
-      ? `<span lang="en">${plain(citation(source))}</span> <a href="${doiLink(source.doi)}">DOI ${source.doi}</a> · <a href="${scholarLink(source.doi)}">Tra Google Scholar<span class="visually-hidden"> cho nguồn ${index + 1}</span></a>`
+      ? `<span lang="en">${plain(citation(source))}</span> <a href="${doiLink(source.doi)}">DOI ${source.doi}</a> · <a href="${plain(scholarLink(source.doi))}">Tra Google Scholar<span class="visually-hidden"> cho nguồn ${index + 1}</span></a>`
       : `IELTS. <a href="${source.url}">${plain(source.title)}</a>.`;
     return `      <li id="nguon-${index + 1}">${details}</li>`;
   });

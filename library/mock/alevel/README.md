@@ -1,8 +1,8 @@
-# A-Level 真题库
+# Kho đề A-Level
 
-三大考试局：**CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
+Ba hội đồng thi: **CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
 
-目录结构：
+Cấu trúc thư mục:
 
 ```
 library/mock/alevel/
@@ -11,15 +11,17 @@ library/mock/alevel/
   oxford-aqa/7367-mathematics/papers/
 ```
 
-PDF 命名：`{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
+Đặt tên PDF: `{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
 
-- CAIE 示例：`9709_s24_qp_12.pdf`
-- Edexcel 示例：`9MA0_s24_qp_01.pdf`
-- Oxford AQA 示例：`7367_w23_ms_02.pdf`
+- CAIE ví dụ: `9709_s24_qp_12.pdf`
+- Edexcel ví dụ: `9MA0_s24_qp_01.pdf`
+- Oxford AQA ví dụ: `7367_w23_ms_02.pdf`
 
 ```bash
-python3 scripts/seed_alevel_demo.py      # 可选 demo
-python3 scripts/build_alevel_catalog.py  # 更新 catalog
+python3 scripts/seed_alevel_demo.py      # tùy chọn: tạo đề minh họa
+python3 scripts/build_alevel_catalog.py  # cập nhật danh mục
 ```
 
-科目清单见 `scripts/alevel_subjects.py`。
+Danh sách môn ở `scripts/alevel_subjects.py`.
+
+Trong trình xem đề, liên kết **Phiếu chữa bài** mở [sổ tay tiếng Việt](../../../ielts-vi/resources/tu-de-den-loi-giai.html) có trích dẫn nghiên cứu. Đây là tài liệu đi kèm, không thay đổi đề hoặc hướng dẫn chấm của hội đồng thi.

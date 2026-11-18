@@ -14,19 +14,19 @@
   if (navLink) navLink.classList.add("is-active");
 
   if (!id) {
-    contentEl.innerHTML = '<div class="state state--brand"><h3>缺少试卷 ID</h3>' +
-      '<p><a href="alevel.html">返回 A-Level 首页</a></p></div>';
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Thiếu mã đề</h3>' +
+      '<p><a href="alevel.html">Về thư viện A-Level</a></p></div>';
     return;
   }
 
   A.loadCatalog().then(function (catalog) {
     var item = A.itemById(catalog, id);
     if (!item) {
-      contentEl.innerHTML = '<div class="state state--brand"><h3>未找到该试卷</h3>' +
-        '<p><a href="alevel.html">返回 A-Level 首页</a></p></div>';
+      contentEl.innerHTML = '<div class="state state--brand"><h3>Không tìm thấy đề này</h3>' +
+        '<p><a href="alevel.html">Về thư viện A-Level</a></p></div>';
       return;
     }
-    document.title = item.title + " · 优益思达";
+    document.title = item.title + " · YYSD";
 
     document.getElementById("view-title").textContent = item.title;
     var comp = P.componentMeta(item.code, item.paper);
@@ -47,6 +47,6 @@
     var loading = contentEl.querySelector(".state");
     if (loading) loading.remove();
   }).catch(function (err) {
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(err.message) + "</p></div>";
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Không tải được dữ liệu</h3><p>' + Y.esc(err.message) + "</p></div>";
   });
 })();

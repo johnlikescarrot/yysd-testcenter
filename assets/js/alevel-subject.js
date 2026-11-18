@@ -1,5 +1,5 @@
 /* =========================================================================
-   alevel-subject.js — CAIE: 学为贵-style accordion list (真题资料)
+   alevel-subject.js — CAIE paper list, filters and mark schemes
    Other boards: flat year/season table
    ========================================================================= */
 (function () {
@@ -44,19 +44,19 @@
   }
 
   function actionBtns(item, label) {
-    if (!item) return '<span class="alevel-xwg-missing">暂无</span>';
+    if (!item) return '<span class="alevel-xwg-missing">Chưa có</span>';
     var view = A.viewHref(item, "");
     var dl = A.fileHref(item, "");
-    return '<a class="alevel-xwg-btn" href="' + view + '">查看</a>' +
-      '<a class="alevel-xwg-btn" href="' + dl + '" download target="_blank" rel="noopener">下载</a>' +
+    return '<a class="alevel-xwg-btn" href="' + view + '">Xem</a>' +
+      '<a class="alevel-xwg-btn" href="' + dl + '" download target="_blank" rel="noopener">Tải về</a>' +
       '<button type="button" class="alevel-xwg-btn alevel-xwg-btn--share" data-share-url="' +
-        Y.esc(dl) + '" data-share-title="' + Y.esc(label) + '">分享</button>';
+        Y.esc(dl) + '" data-share-title="' + Y.esc(label) + '">Chia sẻ</button>';
   }
 
   function renderXwgFilters(components) {
     var years = A.yearsFor(allItems, null);
     var yearChips = '<button type="button" class="chip' + (activeYear === "all" ? " is-active" : "") +
-      '" data-year="all">不限</button>';
+      '" data-year="all">Tất cả</button>';
     years.slice(0, 6).forEach(function (y) {
       yearChips += '<button type="button" class="chip' + (activeYear === String(y) ? " is-active" : "") +
         '" data-year="' + y + '">' + y + "</button>";
@@ -66,7 +66,7 @@
     if (P.filterMode(code) === "component") {
       var comps = components && components.length ? components : P.componentsPresent(code, allItems);
       row2 = '<button type="button" class="chip' + (activeComponent === "all" ? " is-active" : "") +
-        '" data-component="all">不限</button>';
+        '" data-component="all">Tất cả</button>';
       comps.forEach(function (c) {
         row2 += '<button type="button" class="chip chip--paper' +
           (activeComponent === String(c.d) ? " is-active" : "") +
@@ -75,7 +75,7 @@
       });
     } else {
       var levels = [
-        { id: "all", label: "不限" },
+        { id: "all", label: "Tất cả" },
         { id: "as", label: "AS" },
         { id: "a2", label: "A2" }
       ];
@@ -93,13 +93,13 @@
 
   function renderXwgList(rows) {
     if (!rows.length) {
-      return '<div class="soon-box">暂无试卷，请调整筛选。</div>';
+      return '<div class="soon-box">Không có đề khớp. Hãy đổi bộ lọc.</div>';
     }
     var html = rows.map(function (row, i) {
       var fname = P.displayFilename("QP", subject.name, row.year, row.season, row.paper);
       var msLabel = row.ms
         ? P.displayFilename("MS", subject.name, row.year, row.season, row.paper)
-        : "答案";
+        : "Đáp án";
       return '<details class="alevel-xwg-item"' + (i === 0 ? " open" : "") + ">" +
         '<summary class="alevel-xwg-item__summary">' +
           '<span class="alevel-xwg-item__text">' +
@@ -111,12 +111,12 @@
         '<div class="alevel-xwg-panel">' +
           '<div class="alevel-xwg-row">' +
             '<span class="alevel-xwg-row__ico" aria-hidden="true">📄</span>' +
-            '<span class="alevel-xwg-row__label">试卷</span>' +
+            '<span class="alevel-xwg-row__label">Đề thi</span>' +
             '<span class="alevel-xwg-row__acts">' + actionBtns(row.qp, fname) + "</span>" +
           "</div>" +
           '<div class="alevel-xwg-row">' +
             '<span class="alevel-xwg-row__ico" aria-hidden="true">📝</span>' +
-            '<span class="alevel-xwg-row__label">答案</span>' +
+            '<span class="alevel-xwg-row__label">Đáp án</span>' +
             '<span class="alevel-xwg-row__acts">' + actionBtns(row.ms, msLabel) + "</span>" +
           "</div>" +
         "</div></details>";
@@ -130,13 +130,13 @@
 
   function linkAnswer(item, prefix) {
     if (!item) return '<span class="alevel-paper-missing">—</span>';
-    return '<a class="alevel-see-answers" href="' + A.viewHref(item, prefix) + '">查看答案</a>';
+    return '<a class="alevel-see-answers" href="' + A.viewHref(item, prefix) + '">Xem đáp án</a>';
   }
 
   function renderComponentChips(components) {
     if (!components.length) return "";
     var chips = '<button type="button" class="chip' + (activeComponent === "all" ? " is-active" : "") +
-      '" data-component="all">全部</button>';
+      '" data-component="all">Tất cả</button>';
     chips += components.map(function (c) {
       return '<button type="button" class="chip chip--paper' +
         (activeComponent === String(c.d) ? " is-active" : "") +
@@ -148,7 +148,7 @@
 
   function renderFlatTable(items) {
     if (!items.length) {
-      return '<div class="soon-box">暂无试卷，请调整筛选。</div>';
+      return '<div class="soon-box">Không có đề khớp. Hãy đổi bộ lọc.</div>';
     }
     var rows = A.sortItems(items.filter(function (it) { return it.type === "qp"; }))
       .map(function (qp) {
@@ -162,26 +162,26 @@
             Y.esc(A.seasonBadge(qp.season)) + "</span></td>" +
           "<td>Paper " + Y.esc(qp.paper) + "</td>" +
           '<td class="alevel-paper-links">' +
-            (qp ? '<a href="' + A.viewHref(qp, "") + '">预览</a>' : "—") + "</td>" +
+            (qp ? '<a href="' + A.viewHref(qp, "") + '">Xem trước</a>' : "—") + "</td>" +
           '<td class="alevel-paper-links">' + linkAnswer(ms, "") + "</td></tr>";
       }).join("");
     return '<div class="alevel-paper-list-wrap"><table class="alevel-paper-list">' +
-      "<thead><tr><th>年份</th><th>考季</th><th>Paper</th><th>真题</th><th>答案</th></tr></thead>" +
+      "<thead><tr><th>Năm</th><th>Kỳ thi</th><th>Paper</th><th>Đề thi</th><th>Đáp án</th></tr></thead>" +
       "<tbody>" + rows + "</tbody></table></div>";
   }
 
   function renderLegacyFilters(components) {
     var years = A.yearsFor(allItems, null);
-    var yearOpts = '<option value="all"' + (activeYear === "all" ? " selected" : "") + ">全部</option>" +
+    var yearOpts = '<option value="all"' + (activeYear === "all" ? " selected" : "") + ">Tất cả</option>" +
       years.map(function (y) {
         return '<option value="' + y + '"' + (activeYear === String(y) ? " selected" : "") + ">" + y + "</option>";
       }).join("");
 
     var seasons = [
-      { id: "all", label: "全部考季" },
-      { id: "s", label: "夏季" },
-      { id: "w", label: "冬季" },
-      { id: "m", label: "春季" }
+      { id: "all", label: "Tất cả kỳ thi" },
+      { id: "s", label: "Tháng 5–6" },
+      { id: "w", label: "Tháng 10–11" },
+      { id: "m", label: "Tháng 2–3" }
     ];
     var seasonChips = seasons.map(function (s) {
       return '<button type="button" class="chip' + (activeSeason === s.id ? " is-active" : "") +
@@ -190,26 +190,26 @@
 
     return '<div class="alevel-filters">' +
       '<div class="alevel-filter-row">' +
-        '<label class="alevel-year-select">年份<select id="alevel-year">' + yearOpts + "</select></label>" +
+        '<label class="alevel-year-select">Năm<select id="alevel-year">' + yearOpts + "</select></label>" +
         '<div class="filters alevel-season-filters">' + seasonChips + "</div></div>" +
       (components.length ? '<div class="alevel-filter-row alevel-filter-row--paper">' +
-        '<span class="alevel-filter-label">卷别</span>' + renderComponentChips(components) + "</div>" : "") +
+        '<span class="alevel-filter-label">Phần thi</span>' + renderComponentChips(components) + "</div>" : "") +
       "</div>";
   }
 
   function paint() {
     var items = filteredItems();
     var pairs = isCaie ? P.sortFlatRows(P.pairRows(items)) : P.pairRows(items);
-    var updated = subject.updatedYear ? "更新至 " + subject.updatedYear : "";
+    var updated = subject.updatedYear ? "Cập nhật đến " + subject.updatedYear : "";
     var qpN = allItems.filter(function (it) { return it.type === "qp"; }).length;
     var components = isCaie ? P.componentsPresent(code, allItems) : [];
 
     var label = boardMeta ? (boardMeta.label || boardMeta.id) : board;
-    document.title = label + " " + code + " " + subject.nameZh + " · A-Level · 优益思达";
+    document.title = label + " " + code + " " + subject.nameZh + " · A-Level · YYSD";
 
     var crumb = '<div class="minimal-crumb cam-crumb">' +
-      '<a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
-      '<a href="alevel.html">国际课程</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      '<a href="index.html">Trang chủ</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      '<a href="alevel.html">Khóa quốc tế</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
       '<a href="alevel.html?board=' + encodeURIComponent(board) + '">A-Level</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
       Y.esc(subject.nameZh) + "</div>";
 
@@ -218,19 +218,19 @@
         Y.esc(code) + "</div></div>" +
       "<div><h1>" + Y.esc(subject.nameZh) + ' <span class="alevel-hero__en">' + Y.esc(subject.name) + "</span></h1>" +
       '<div class="meta">' + Y.esc(updated) + (updated && qpN ? " · " : "") +
-        (qpN ? qpN + " 套真题" : "") + "</div></div></div>";
+        (qpN ? qpN + " bộ đề" : "") + "</div></div></div>";
 
     var body;
     if (isCaie) {
       body = '<section class="alevel-xwg">' +
-        '<h2 class="alevel-xwg__title">真题资料</h2>' +
+        '<h2 class="alevel-xwg__title">Tài liệu theo đề</h2>' +
         renderXwgFilters(components) +
-        '<div class="alevel-xwg-meta">共 ' + pairs.length + " 套</div>" +
+        '<div class="alevel-xwg-meta">Tổng cộng ' + pairs.length + " bộ đề</div>" +
         renderCaieTable(items) +
         "</section>";
     } else {
       body = renderLegacyFilters(components) +
-        '<div class="alevel-results-meta">共 ' + pairs.length + " 套</div>" +
+        '<div class="alevel-results-meta">Tổng cộng ' + pairs.length + " bộ đề</div>" +
         renderFlatTable(items);
     }
 
@@ -249,13 +249,13 @@
     var shareBtn = e.target.closest(".alevel-xwg-btn--share");
     if (shareBtn) {
       var url = absoluteUrl(shareBtn.getAttribute("data-share-url"));
-      var title = shareBtn.getAttribute("data-share-title") || "A-Level 真题";
+      var title = shareBtn.getAttribute("data-share-title") || "Đề A-Level";
       if (navigator.share) {
         navigator.share({ title: title, url: url }).catch(function () {});
       } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () { alert("链接已复制，可粘贴分享"); });
+        navigator.clipboard.writeText(url).then(function () { alert("Đã sao chép liên kết để chia sẻ."); });
       } else {
-        prompt("复制链接：", url);
+        prompt("Sao chép liên kết:", url);
       }
       return;
     }
@@ -299,14 +299,14 @@
     boardMeta = A.boardOf(catalog, board);
     subject = A.subjectOf(catalog, board, code);
     if (!subject) {
-      contentEl.innerHTML = '<div class="state state--brand"><h3>未找到该科目</h3>' +
-        '<p><a href="alevel.html">返回 A-Level 首页</a></p></div>';
+      contentEl.innerHTML = '<div class="state state--brand"><h3>Không tìm thấy môn này</h3>' +
+        '<p><a href="alevel.html">Về thư viện A-Level</a></p></div>';
       return;
     }
     allItems = A.itemsForSubject(catalog, board, code);
     isCaie = board === "caie" && !!P.schema(code);
     paint();
   }).catch(function (err) {
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(err.message) + "</p></div>";
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Không tải được dữ liệu</h3><p>' + Y.esc(err.message) + "</p></div>";
   });
 })();
