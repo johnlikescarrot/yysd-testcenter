@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { createReadStream } from "node:fs";
 import { mkdir, stat, writeFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
+import { createGzip } from "node:zlib";
 import { once } from "node:events";
 import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
@@ -27,11 +28,18 @@ const server = createServer(async (req, res) => {
       throw Error();
     const info = await stat(file);
     if (!info.isFile()) throw Error();
+    const ext = extname(file),
+      stream = createReadStream(file);
+    const gzip =
+      [".html", ".svg", ".css", ".mjs", ".json"].includes(ext) &&
+      /\bgzip\b/.test(req.headers["accept-encoding"] || "");
     res.writeHead(200, {
-      "Content-Type": mime[extname(file)] || "application/octet-stream",
-      "Content-Length": info.size,
+      "Content-Type": mime[ext] || "application/octet-stream",
+      ...(gzip
+        ? { "Content-Encoding": "gzip", Vary: "Accept-Encoding" }
+        : { "Content-Length": info.size }),
     });
-    createReadStream(file).pipe(res);
+    (gzip ? stream.pipe(createGzip()) : stream).pipe(res);
   } catch {
     res.writeHead(404).end();
   }
@@ -89,12 +97,17 @@ try {
         process.exitCode = 1;
         for (const { id, weight } of auditRefs) {
           const audit = lhr.audits[id];
-          if (weight && audit.score !== null && audit.score < 1)
+          if (weight && audit.score !== null && audit.score < 1) {
+            if (process.env.GITHUB_ACTIONS)
+              console.error(
+                `::warning title=${id} · ${route}::${audit.displayValue || ""} ${JSON.stringify(audit.details?.items ?? []).slice(0, 600)}`,
+              );
             console.error(
               id,
               audit.displayValue || "",
               JSON.stringify(audit.details?.items || []).slice(0, 400),
             );
+          }
         }
       }
     }

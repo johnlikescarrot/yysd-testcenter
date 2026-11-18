@@ -3,6 +3,7 @@ import argparse
 import json
 import re
 import shutil
+import subprocess
 from collections import defaultdict
 from html import escape
 from pathlib import Path
@@ -90,9 +91,17 @@ def build():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    shutil.copytree(ROOT/'studio', OUT/'studio')
+    for folder in ['art', 'pdf', 'audio']:
+        shutil.copytree(ROOT/'studio'/folder, OUT/'studio'/folder)
+    esbuild = ROOT / 'node_modules/.bin/esbuild'
+    if not esbuild.exists():
+        raise SystemExit('Install the pinned build tools with npm ci first')
+    bundle = OUT/'studio/src/main.mjs'
+    subprocess.run([esbuild, ROOT/'studio/src/main.mjs', '--bundle', '--minify', '--format=esm',
+                    f'--outfile={bundle}'], check=True)
+    styles = subprocess.check_output([esbuild, ROOT/'studio/atlas.css', '--minify'], text=True)
     # Ship the small, first-paint stylesheet with each hub entry point.
-    style = '<style>' + (ROOT/'studio/atlas.css').read_text() + '</style>'
+    style = '<style>' + styles + '</style>'
     css_link = '<link rel="stylesheet" href="studio/atlas.css">'
     for name in ['index.html', 'atlas.html']:
         (OUT/name).write_text((ROOT/'atlas.html').read_text().replace(css_link, style))
@@ -107,6 +116,8 @@ def build():
         dest = OUT/p
         dest.parent.mkdir(parents=True, exist_ok=True)
         back = '../' * (len(p.parts)-1) + 'atlas-library.html#de-thi'
+        icon = '../' * (len(p.parts)-1) + 'studio/art/compass.svg'
+        src = src.replace('</head>', f'<link rel="icon" href="{icon}" type="image/svg+xml">\n</head>', 1)
         dest.write_text(src.replace('<body>', f'<body><nav aria-label="Quay lại"><a style="display:inline-block;padding:8px 16px;color:#173648" href="{back}">← Thư viện IELTS Atlas</a></nav>', 1))
         for asset in set(MEDIA.findall(src)):
             shutil.copyfile(ROOT/p.parent/asset, dest.parent/asset)

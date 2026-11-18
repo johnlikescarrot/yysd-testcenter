@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "c8": "11.0.0",
+    "esbuild": "0.28.2",
     "jsdom": "26.1.0",
     "lighthouse": "13.6.0",
     "prettier": "3.10.1"
