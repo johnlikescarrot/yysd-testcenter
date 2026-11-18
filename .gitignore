@@ -50,6 +50,8 @@ library/study/vocab-themes/raw/wd_cache/
 library/study/vocab-themes/raw/exam__*_book.json
 
 # Vietnamese learning hub: local dependencies and generated reports
+__pycache__/
+*.py[cod]
 /node_modules/
 /pages-dist/
 /coverage/

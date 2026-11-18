@@ -30,6 +30,17 @@ COMMON = (
 STANDARD_EXTRA = ('id="resultsTableBody"',)
 SPECIAL_EXTRA = ('id="stageResults"',)
 
+# These two teacher examples are a standalone quiz and a learn-only view, not
+# the graded LIST format consumed by vocab-bridge. Check all other HTML files.
+NON_LIST_TEMPLATES = frozenset({
+    "study/vocab/教师模版-单词检测.html",
+    "study/vocab/教师模版-词库学习List.html",
+})
+
+
+def is_graded_list(path: Path) -> bool:
+    return path.relative_to(LIB).as_posix() not in NON_LIST_TEMPLATES
+
 
 def check_file(path: Path, kind: str) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="ignore")
@@ -41,11 +52,15 @@ def check_file(path: Path, kind: str) -> list[str]:
 
 def main() -> int:
     errors: list[str] = []
+    total = 0
     for folder, kind in VOCAB_DIRS.items():
         base = LIB / folder
         if not base.is_dir():
             continue
         for html in sorted(base.rglob("*.html")):
+            if not is_graded_list(html):
+                continue
+            total += 1
             missing = check_file(html, kind)
             if missing:
                 rel = html.relative_to(ROOT)
@@ -60,7 +75,6 @@ def main() -> int:
             file=sys.stderr,
         )
         return 1
-    total = sum(1 for folder in VOCAB_DIRS for _ in (LIB / folder).rglob("*.html") if (LIB / folder).is_dir())
     print(f"OK — {total} vocab LIST file(s) have wrong-word bridge hooks.")
     return 0
 

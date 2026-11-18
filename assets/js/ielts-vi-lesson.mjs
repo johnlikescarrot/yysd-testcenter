@@ -72,8 +72,13 @@ function renderQuestion() {
   if (index > 0) byId('question-title').focus();
 }
 
+function stopAudio() {
+  if (questions[index]?.audio && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
 function finish() {
-  const result = completeLesson(progress, lessonId, answers, localDay());
+  // Merge with progress written by another tab while this lesson was open.
+  const result = completeLesson(loadProgress(storage).progress, lessonId, answers, localDay());
   const saved = saveProgress(storage, result.progress);
   byId('study-exercise').hidden = true;
   byId('study-result').hidden = false;
@@ -122,6 +127,7 @@ if (!questions) {
     byId('next-question').focus();
   });
   byId('next-question').addEventListener('click', () => {
+    stopAudio();
     index += 1;
     if (index === questions.length) finish();
     else renderQuestion();
@@ -134,5 +140,6 @@ if (!questions) {
     window.speechSynthesis.speak(utterance);
   });
   byId('show-transcript').addEventListener('click', () => { byId('audio-transcript').hidden = false; });
+  window.addEventListener('pagehide', stopAudio);
   renderQuestion();
 }

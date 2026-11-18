@@ -121,7 +121,7 @@ def prettify(stem):
     return re.sub(r"[-_]+", " ", stem).strip().title()
 
 
-def build_entry(relpath):
+def build_entry(relpath, previous_dates=None):
     """relpath is the file path relative to library/, using '/' separators."""
     path = os.path.join(LIB_DIR, relpath.replace("/", os.sep))
     stem = os.path.splitext(os.path.basename(relpath))[0]
@@ -163,14 +163,34 @@ def build_entry(relpath):
         "subject": subject,
         "duration": duration,
         "description": find_meta(html, "description") or "",
-        "added": git_added_date(path),
+        # Preserve the original date for known entries even in a shallow checkout.
+        "added": (previous_dates or {}).get(relpath) or git_added_date(path),
     }
+
+
+def load_previous_manifest():
+    try:
+        with open(MANIFEST, "r", encoding="utf-8") as f:
+            value = json.load(f)
+        return value if isinstance(value, dict) else {}
+    except (OSError, ValueError):
+        return {}
 
 
 def main():
     if not os.path.isdir(LIB_DIR):
         print("library/ folder not found", file=sys.stderr)
         sys.exit(1)
+
+    previous = load_previous_manifest()
+    previous_items = previous.get("items", [])
+    if not isinstance(previous_items, list):
+        previous_items = []
+    previous_dates = {
+        item["file"]: item["added"]
+        for item in previous_items
+        if isinstance(item, dict) and isinstance(item.get("file"), str) and isinstance(item.get("added"), str)
+    }
 
     # recursively collect every .html under library/ (any depth)
     files = []
@@ -185,7 +205,7 @@ def main():
     items, seen = [], set()
     for f in files:
         try:
-            e = build_entry(f)
+            e = build_entry(f, previous_dates)
         except Exception as ex:
             print("Skipping %s: %s" % (f, ex), file=sys.stderr)
             continue
@@ -222,7 +242,7 @@ def main():
                 "subject": "jingting",
                 "duration": 0,
                 "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
-                "added": git_added_date(path),
+                "added": previous_dates.get("practice/jingting/data/" + n) or git_added_date(path),
             })
 
     # ponytail: refuse to write a manifest that drops HTML sitting in a known subject folder
@@ -247,8 +267,13 @@ def main():
                 )
                 sys.exit(1)
 
+    # A no-op rebuild must be byte-stable; otherwise the bot commits a new
+    # timestamp on every run and obscures which source changes were checked.
+    generated = previous.get("generated") if previous_items == items else None
+    if not isinstance(generated, str) or not generated:
+        generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     manifest = {
-        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated": generated,
         "count": len(items),
         "items": items,
     }

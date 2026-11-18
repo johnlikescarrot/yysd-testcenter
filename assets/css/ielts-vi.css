@@ -101,6 +101,12 @@ h1, h2, h3, p { margin-top: 0; }
 .lesson-meta { display: flex; align-items: center; gap: 18px; color: #596a60; font-size: 12px; white-space: nowrap; }
 .lesson-meta b { color: #3e674e; font-size: 19px; font-weight: 400; }
 .path-footnote { color: #5b6b62; font-size: 12px; line-height: 1.65; margin: 17px 2px 0; }
+.extended-practice { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 24px; padding: 18px 2px; border-block: 1px solid var(--border); }
+.extended-practice > span { display: flex; flex-direction: column; gap: 4px; }
+.extended-practice small { color: #4d6657; font-size: 10px; font-weight: 800; letter-spacing: .09em; }
+.extended-practice strong { color: var(--brand-navy); font-size: 15px; }
+.extended-practice span span { color: #53645b; font-size: 12px; }
+.extended-practice b { color: #3e674e; font-size: 19px; font-weight: 400; }
 .side-column { display: flex; flex-direction: column; gap: 18px; padding-top: 4px; }
 .side-card { padding: 23px; border: 1px solid #e1e4db; border-radius: 13px; background: var(--surface-paper); }
 .weekly-card { background: #edf2e9; border-color: #dce6d9; }
@@ -193,6 +199,7 @@ h1, h2, h3, p { margin-top: 0; }
   .header-cta:hover, .button-secondary:hover { background: #e6eee3; }
   .button-primary:not(:disabled):hover { background: #1d425e; }
   .lesson-row:hover { background: #f2f6ee; }
+  .extended-practice:hover strong { color: #1f6b3b; }
   .answer-option:hover { border-color: #9bb69e; }
 }
 @media (max-width: 850px) {

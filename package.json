@@ -7,13 +7,18 @@
     "test:coverage": "node --experimental-test-coverage --test-coverage-include=assets/js/ielts-vi-core.mjs --test-coverage-include=assets/js/ielts-vi-data.mjs --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 --test tests/core.test.mjs tests/data.test.mjs",
     "test:browser": "node tests/browser.test.mjs",
     "audit": "node scripts/audit-ielts.mjs",
-    "build:pages": "node scripts/build-ielts-pages.mjs"
+    "build:pages": "node scripts/build-ielts-pages.mjs",
+    "lint:js": "eslint --max-warnings 0 --config .github/linters/eslint.config.mjs .github/linters/*.mjs assets/js/ielts-vi-*.mjs scripts/audit-ielts.mjs scripts/build-ielts-pages.mjs scripts/lint-ielts-inline.mjs scripts/report-browser-coverage.mjs tests/*.mjs && node scripts/lint-ielts-inline.mjs",
+    "test:browser:coverage": "node tests/browser.test.mjs --coverage && node scripts/report-browser-coverage.mjs"
   },
   "devDependencies": {
     "@sparticuz/chromium": "153.0.0",
     "chrome-launcher": "^1.2.1",
+    "eslint": "10.15.0",
+    "istanbul-lib-coverage": "3.2.2",
     "lighthouse": "13.6.0",
-    "playwright-core": "1.65.1"
+    "playwright-core": "1.65.1",
+    "v8-to-istanbul": "9.3.0"
   },
   "engines": {
     "node": ">=22.19.0"

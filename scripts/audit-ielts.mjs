@@ -11,7 +11,13 @@ const { server, url } = await serveBuild();
 const chrome = await chromeLauncher.launch({ chromePath: executablePath, chromeFlags: [...browserArgs, '--headless'] });
 try {
   await mkdir('.lighthouse', { recursive: true });
-  for (const [name, path] of [['home', ''], ['lesson', 'study.html?lesson=vocabulary']]) {
+  for (const [name, path] of [
+    ['home', ''],
+    ['lesson', 'study.html?lesson=vocabulary'],
+    ['listening', 'study.html?lesson=listening'],
+    ['review-empty', 'study.html?lesson=review'],
+    ['reading-sample', 'library/practice/ielts/sample-academic-reading-1.html']
+  ]) {
     const result = await lighthouse(`${url}${path}`, {
       port: chrome.port,
       output: 'json',

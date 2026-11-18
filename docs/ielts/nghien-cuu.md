@@ -9,8 +9,11 @@ Cẩm nang mới ưu tiên tài liệu chính thức về cấu trúc IELTS và 
 - Kim và Webb (2022), tổng hợp nghiên cứu học giãn cách ngôn ngữ thứ hai: [DOI](https://doi.org/10.1111/lang.12479).
 - Latimier và cộng sự (2021), phân tích tổng hợp về truy hồi giãn cách: [DOI](https://doi.org/10.1007/s10648-020-09572-8).
 - Shortt và cộng sự (2023), tổng quan nghiên cứu Duolingo: [DOI](https://doi.org/10.1080/09588221.2021.1933540).
+- Vandergrift và Tafaghodtari (2010), nghiên cứu về hướng dẫn nghe ở người học tiếng Pháp L2: [DOI](https://doi.org/10.1111/j.1467-9922.2009.00559.x); Jeon và Yamashita (2014), tổng hợp các tương quan với đọc hiểu L2: [DOI](https://doi.org/10.1111/lang.12034).
+- Kang và Han (2015), tổng hợp về phản hồi sửa lỗi viết L2: [DOI](https://doi.org/10.1111/modl.12189); Graham và Perin (2007), tổng hợp dạy viết cho thanh thiếu niên: [DOI](https://doi.org/10.1037/0022-0663.99.3.445).
+- Lee, Jang và Plonsky (2015), tổng hợp về dạy phát âm L2: [DOI](https://doi.org/10.1093/applin/amu040); Lyster và Saito (2010), tổng hợp về phản hồi nói trong lớp: [DOI](https://doi.org/10.1017/S0272263109990520).
 
-PDF có 12 tài liệu nghiên cứu và các liên kết DOI/Scholar tương ứng. Không chèn trích dẫn tùy tiện vào các PDF đề thi, đề gốc hoặc tài liệu của bên thứ ba.
+PDF có 20 tài liệu nghiên cứu và các liên kết DOI/Scholar tương ứng. Không chèn trích dẫn tùy tiện vào các PDF đề thi, đề gốc hoặc tài liệu của bên thứ ba.
 
 ## Giới hạn diễn giải
 
@@ -20,4 +23,4 @@ Bài nghe dùng giọng đọc do thiết bị tạo; trình duyệt không có 
 
 ## Phạm vi kỹ thuật
 
-Bản Pages chứa trang chủ và trình bài học mới, biểu tượng và cẩm nang. API và kho cũ không được triển khai kèm; các giao diện cũ vẫn còn tiếng Trung. Kiểm thử bao phủ 100% dòng, nhánh và hàm chỉ đối với `ielts-vi-core.mjs` và `ielts-vi-data.mjs`. Bộ kiểm thử trình duyệt đi qua năm bài, ôn tập, xử lý lỗi lưu trữ và các kích thước màn hình. Lighthouse đo riêng các trang trong bản dựng tĩnh; kết quả không bảo đảm cho mọi thiết bị, trạng thái hoặc trang cũ.
+Bản Pages chứa trang chủ, trình bài học mới, cẩm nang và một bài đọc mẫu tám câu có sẵn đã được Việt hóa giao diện; bài mẫu tự chấm riêng và không quy đổi band. API và phần còn lại của kho cũ không được triển khai kèm; các giao diện cũ vẫn còn tiếng Trung. Kiểm thử đo 100% dòng, nhánh và hàm cho `ielts-vi-core.mjs` và `ielts-vi-data.mjs` bằng Node, cùng `ielts-vi-home.mjs` và `ielts-vi-lesson.mjs` bằng Chromium V8/Istanbul. Các con số này không bao gồm bộ chấm trong bài đọc mẫu, tập lệnh xây dựng, Python hay mã cũ. Bộ kiểm thử trình duyệt đi qua năm bài, bài đọc mẫu, ôn tập, xử lý lỗi lưu trữ và các kích thước màn hình. Lighthouse đo riêng năm trang/trạng thái trong bản dựng tĩnh; kết quả không bảo đảm cho mọi thiết bị, trạng thái hoặc trang cũ.

@@ -8,6 +8,8 @@ on:
   push:
     paths:
       - "library/**"
+      # The bot's generated manifest commit must not trigger another rebuild.
+      - "!library/manifest.json"
       - "scripts/build_manifest.py"
       - "scripts/verify_cambridge_mock_pages.py"
       - "scripts/verify_vocab_wrongword_hooks.py"
@@ -61,6 +63,8 @@ jobs:
             echo "manifest.json unchanged — nothing to commit."
           else
             git add library/manifest.json
-            git commit -m "chore: rebuild content manifest [skip ci]"
+            # GITHUB_TOKEN pushes do not trigger new workflows; include generated
+            # changes in source commits when checks on the latest commit matter.
+            git commit -m "chore: rebuild content manifest"
             git push
           fi

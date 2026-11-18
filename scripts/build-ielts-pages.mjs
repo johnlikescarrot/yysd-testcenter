@@ -12,7 +12,8 @@ const files = [
   'assets/js/ielts-vi-lesson.mjs',
   'assets/img/favicon.svg',
   'assets/img/logo.svg',
-  'docs/ielts/cam-nang-ielts.pdf'
+  'docs/ielts/cam-nang-ielts.pdf',
+  'library/practice/ielts/sample-academic-reading-1.html'
 ];
 const destination = resolve('pages-dist');
 await rm(destination, { recursive: true, force: true });

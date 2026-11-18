@@ -31,23 +31,40 @@ jobs:
             /assets/img/favicon.svg
             /assets/img/logo.svg
             /docs/ielts/
+            /library/practice/ielts/sample-academic-reading-1.html
+            /library/manifest.json
             /tests/
+            /scripts/build_manifest.py
+            /scripts/build_ielts_guide.py
             /scripts/audit-ielts.mjs
             /scripts/build-ielts-pages.mjs
+            /scripts/lint-ielts-inline.mjs
+            /scripts/report-browser-coverage.mjs
+            /scripts/verify_vocab_wrongword_hooks.py
+            /.github/linters/
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci
+      - run: python3 -m pip install -r docs/ielts/requirements-pdf.txt
+      # Super-Linter v9 does not classify .mjs files; lint them and the sample's inline JS separately.
+      - run: npm run lint:js
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
       - run: npm run test:coverage
-      - run: npm run test:browser
+      - run: npm run test:browser:coverage
       - run: npm run audit
-      - name: Lưu báo cáo Lighthouse
+      - name: Lưu báo cáo Lighthouse và độ bao phủ
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-ielts-vi
-          path: .lighthouse/*.json
+          name: reports-ielts-vi
+          path: |
+            .lighthouse/*.json
+            coverage/browser-summary.json
           if-no-files-found: ignore
       - name: Đóng gói trang tĩnh
         if: github.event_name != 'pull_request'
@@ -70,15 +87,24 @@ jobs:
             /index.html
             /study.html
             /README.md
+            /package.json
+            /package-lock.json
             /assets/css/ielts-vi.css
             /assets/js/ielts-vi-*.mjs
             /docs/ielts/nghien-cuu.md
+            /library/practice/ielts/sample-academic-reading-1.html
+            /library/manifest.json
             /tests/
             /scripts/audit-ielts.mjs
             /scripts/build-ielts-pages.mjs
+            /scripts/lint-ielts-inline.mjs
+            /scripts/report-browser-coverage.mjs
             /scripts/build_ielts_guide.py
+            /scripts/build_manifest.py
+            /scripts/verify_vocab_wrongword_hooks.py
             /.github/linters/
             /.github/workflows/ielts-vi.yml
+            /.github/workflows/build-manifest.yml
       - name: Chạy Super-Linter
         uses: super-linter/super-linter/slim@v9.0.0
         env:
@@ -87,10 +113,11 @@ jobs:
           ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           USE_FIND_ALGORITHM: true
           VALIDATE_ALL_CODEBASE: true
-          FILTER_REGEX_INCLUDE: '(^|/)(index\.html|study\.html|README\.md|assets/(css/ielts-vi\.css|js/ielts-vi-[^/]+\.mjs)|tests/[^/]+\.mjs|scripts/(audit-ielts|build-ielts-pages)\.mjs|scripts/build_ielts_guide\.py|docs/ielts/nghien-cuu\.md|\.github/workflows/ielts-vi\.yml)$'
+          FILTER_REGEX_INCLUDE: '(^|/)(index\.html|study\.html|README\.md|package(-lock)?\.json|assets/(css/ielts-vi\.css|js/ielts-vi-[^/]+\.mjs)|library/(manifest\.json|practice/ielts/sample-academic-reading-1\.html)|tests/[^/]+\.(mjs|py)|scripts/(audit-ielts|build-ielts-pages|lint-ielts-inline|report-browser-coverage)\.mjs|scripts/(build_ielts_guide|build_manifest|verify_vocab_wrongword_hooks)\.py|docs/ielts/nghien-cuu\.md|\.github/workflows/(ielts-vi|build-manifest)\.yml)$'
           VALIDATE_CSS: true
           VALIDATE_HTML: true
           VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
           VALIDATE_MARKDOWN: true
           VALIDATE_PYTHON_RUFF: true
           VALIDATE_YAML: true
@@ -112,7 +139,7 @@ jobs:
   pages:
     name: Xuất bản GitHub Pages
     if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/arena/9e1a94bb-yysd-testcenter')
-    needs: quality
+    needs: [quality, super-linter]
     runs-on: ubuntu-latest
     permissions:
       pages: write

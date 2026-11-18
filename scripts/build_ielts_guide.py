@@ -38,6 +38,14 @@ SOURCES = [
     ("Zhang, X. (2025).", "Vocabulary knowledge towards L2 reading and listening performance", "Reading in a Foreign Language, 37(2), 109–126.", "10.64152/10125/67500"),
     ("Terai, M., Yamashita, J., & Pasich, K. E. (2021).", "Effects of Learning Direction in Retrieval Practice on EFL Vocabulary Learning", "Studies in Second Language Acquisition, 43(5), 1116–1137.", "10.1017/S0272263121000346"),
     ("Smith, S. (2019).", "IELTS Vocabulary: Ensuring Prepared Students", "The TESOL Encyclopedia of English Language Teaching.", "10.1002/9781118784235.eelt0761"),
+    ("Vandergrift, L., & Tafaghodtari, M. H. (2010).", "Teaching L2 Learners How to Listen Does Make a Difference: An Empirical Study", "Language Learning, 60(2), 470–497.", "10.1111/j.1467-9922.2009.00559.x"),
+    ("Jeon, E. H., & Yamashita, J. (2014).", "L2 Reading Comprehension and Its Correlates: A Meta-Analysis", "Language Learning, 64(1), 160–212.", "10.1111/lang.12034"),
+    ("Kang, E., & Han, Z. (2015).", "The Efficacy of Written Corrective Feedback in Improving L2 Written Accuracy: A Meta-Analysis", "The Modern Language Journal, 99(1), 1–18.", "10.1111/modl.12189"),
+    ("Hattie, J., & Timperley, H. (2007).", "The Power of Feedback", "Review of Educational Research, 77(1), 81–112.", "10.3102/003465430298487"),
+    ("Graham, S., & Perin, D. (2007).", "A Meta-Analysis of Writing Instruction for Adolescent Students", "Journal of Educational Psychology, 99(3), 445–476.", "10.1037/0022-0663.99.3.445"),
+    ("Lee, J., Jang, J., & Plonsky, L. (2015).", "The Effectiveness of Second Language Pronunciation Instruction: A Meta-Analysis", "Applied Linguistics, 36(3), 345–366.", "10.1093/applin/amu040"),
+    ("Lyster, R., & Saito, K. (2010).", "Oral Feedback in Classroom SLA: A Meta-Analysis", "Studies in Second Language Acquisition, 32(2), 265–302.", "10.1017/S0272263109990520"),
+    ("Li, S. (2010).", "The Effectiveness of Corrective Feedback in SLA: A Meta-Analysis", "Language Learning, 60(2), 309–365.", "10.1111/j.1467-9922.2010.00561.x"),
 ]
 
 styles = getSampleStyleSheet()
@@ -78,7 +86,7 @@ heading("Những tiêu chí cần nhớ")
 add("Writing được đánh giá theo đáp ứng yêu cầu đề, mạch lạc và liên kết, vốn từ, cùng phạm vi và độ chính xác ngữ pháp. Speaking được đánh giá theo độ trôi chảy và mạch lạc, vốn từ, ngữ pháp và phát âm. Hãy kiểm tra mô tả chính thức thay vì ghi nhớ các mẹo đoán điểm.")
 story.append(PageBreak())
 heading("Học ít nhưng có chủ đích")
-add("<b>1. Tự nhớ trước khi xem đáp án.</b> Che phần giải thích, thử tự trả lời, rồi kiểm tra và sửa lỗi. Tổng quan nghiên cứu đánh giá cao thực hành truy hồi và học giãn cách [1–3]. Tác dụng phụ thuộc nhiệm vụ, người học và cách áp dụng; không có kỹ thuật nào đảm bảo kết quả cho mọi người.")
+add("<b>1. Tự nhớ trước khi xem đáp án.</b> Che phần giải thích, thử tự trả lời, rồi kiểm tra và sửa lỗi. Nghiên cứu đánh giá cao thực hành truy hồi và học giãn cách [1–4]. Tác dụng phụ thuộc nhiệm vụ, người học và cách áp dụng; không có kỹ thuật nào đảm bảo kết quả cho mọi người.")
 add("<b>2. Ôn lại sau một khoảng thời gian.</b> Dành vài phút để xem lại từ hoặc câu đã học, đặc biệt là lỗi cũ. Nghiên cứu về ngôn ngữ thứ hai cho thấy học giãn cách có ích trong nhiều điều kiện [2, 5–7]. Lịch 1, 3, 7, 14 và 30 ngày trong ứng dụng chỉ là gợi ý thực hành, không phải lịch tối ưu đã được xác nhận cho từng cá nhân.")
 add("<b>3. Đặt từ trong ngữ cảnh.</b> Ghi một cụm từ, một câu ví dụ và tình huống sử dụng, thay vì chỉ ghi bản dịch. Luyện nhận diện từ khi đọc, nghe và thử dùng trong nói hoặc viết [10–12].")
 add("<b>4. Dùng điểm và chuỗi ngày như lời nhắc, không phải thước đo năng lực.</b> Trò chơi hóa có thể giúp trải nghiệm hấp dẫn hơn nhưng bằng chứng và kết quả còn khác nhau giữa các nghiên cứu [8–9]. Nếu bỏ lỡ một ngày, hãy tiếp tục mà không tự trách.")
@@ -96,10 +104,10 @@ for line in [
 add("Điều chỉnh thời lượng theo sức khỏe, lịch sinh hoạt và nhu cầu của bạn. Các bài tập ngắn là bổ trợ, không phải bài thi thử đầy đủ.", "SmallVI")
 story.append(PageBreak())
 heading("Bốn kỹ năng: thực hành có phản hồi")
-add("<b>Listening:</b> đọc yêu cầu trước khi nghe, dự đoán loại thông tin cần điền, sau đó kiểm tra chính tả và giới hạn số từ. Giọng máy trong ứng dụng chỉ giúp nhận diện từ và số, không mô phỏng độ dài, giọng nói hay áp lực của đề thi thật.")
-add("<b>Reading:</b> xác định từ khóa rồi tìm câu chứa bằng chứng. Với TRUE / FALSE / NOT GIVEN, phân biệt thông tin khẳng định, thông tin mâu thuẫn và thông tin không được đề cập. Không suy diễn ngoài đoạn văn.")
-add("<b>Writing:</b> phân tích yêu cầu, dành thời gian lập ý, rồi đọc lại theo bốn tiêu chí chính thức. Task 1 Academic cần một phần tổng quan về các đặc điểm quan trọng; Task 2 cần phát triển và hỗ trợ lập luận. Không có một khuôn mẫu câu nào tự bảo đảm band điểm.")
-add("<b>Speaking:</b> luyện trả lời thành câu, phát triển ý bằng lý do hoặc ví dụ và ghi âm để tự nghe lại. Hãy tìm phản hồi từ giáo viên hoặc bạn học; ứng dụng không chấm phát âm hay đánh giá band Speaking.")
+add("<b>Listening:</b> đọc yêu cầu trước khi nghe, dự đoán loại thông tin cần điền, sau đó kiểm tra chính tả và giới hạn số từ. Một nghiên cứu về người học tiếng Pháp như ngôn ngữ thứ hai xem xét việc lập kế hoạch và tự theo dõi khi nghe [13]; kết quả không tự động áp dụng cho IELTS. Giọng máy trong ứng dụng không mô phỏng đề thi thật.")
+add("<b>Reading:</b> xác định từ khóa rồi tìm câu chứa bằng chứng. Với TRUE / FALSE / NOT GIVEN, phân biệt thông tin khẳng định, thông tin mâu thuẫn và thông tin không được đề cập. Tổng hợp nghiên cứu về đọc hiểu L2 [14] phân tích tương quan, không chứng minh quan hệ nhân quả.")
+add("<b>Writing:</b> phân tích yêu cầu, lập ý và đọc lại theo bốn tiêu chí chính thức. Task 1 Academic cần tổng quan; Task 2 cần phát triển và hỗ trợ lập luận. Phản hồi có thể hữu ích nhưng hiệu quả phụ thuộc người học và nhiệm vụ [15–16]; tổng quan về dạy viết cho thanh thiếu niên [17] không dành riêng cho IELTS. Không có khuôn mẫu nào bảo đảm band điểm.")
+add("<b>Speaking:</b> luyện trả lời thành câu, phát triển ý bằng lý do hoặc ví dụ và ghi âm để tự nghe lại. Các tổng quan về dạy phát âm và phản hồi nói [18–20] xét nhiều bối cảnh khác nhau. Hãy tìm phản hồi từ giáo viên hoặc bạn học; ứng dụng không chấm phát âm hay đánh giá band Speaking.")
 heading("Sử dụng nguồn nghiên cứu một cách thận trọng")
 add("Các nghiên cứu sau được lựa chọn vì liên quan đến học ngôn ngữ, từ vựng, truy hồi hoặc trò chơi hóa. Đây không phải tổng quan hệ thống đầy đủ. Một số nghiên cứu về Duolingo xét bối cảnh, ngôn ngữ hoặc nhóm tuổi khác IELTS; không thể suy ra cùng hiệu quả cho mọi người học.")
 add("DOI dẫn tới hồ sơ bài báo hoặc nhà xuất bản; liên kết Google Scholar là truy vấn tìm theo tiêu đề, không phải chính bài báo hay bằng chứng đã xác minh kết quả tìm kiếm. Hãy đọc bản gốc và kiểm tra năm, phương pháp, mẫu nghiên cứu cũng như quyền truy cập trước khi trích dẫn.")
