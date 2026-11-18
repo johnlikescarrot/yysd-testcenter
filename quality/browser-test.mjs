@@ -36,8 +36,8 @@ await withSite((url) => withChrome(async (browser) => {
   }));
   assert.ok(duration >= 15 && duration < 40);
   await page.keyboard.press('Escape');
-  await page.waitForSelector('dialog[open]', { hidden: true });
-  assert.equal(await page.evaluate(() => document.activeElement.id), 'continue-lesson');
+  await page.waitForFunction(() => !document.querySelector('dialog').open
+    && document.activeElement.id === 'continue-lesson');
   await page.click('#continue-lesson');
   const submit = () => page.click('#session-action');
   await page.click('.option input[value="0"]'); // Wrong: enters the review queue.
@@ -60,7 +60,8 @@ await withSite((url) => withChrome(async (browser) => {
   await submit();
   await submit();
   assert.equal(await page.$eval('#begin-review', (el) => el.disabled), true);
-  assert.equal(await page.evaluate(() => document.activeElement.id), 'continue-lesson');
+  await page.waitForFunction(() => !document.querySelector('dialog').open
+    && document.activeElement.id === 'continue-lesson');
 
   for (const { slug } of guides) {
     const pdf = await fetch(new URL(`resources/${slug}.pdf`, url));

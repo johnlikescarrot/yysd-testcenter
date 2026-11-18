@@ -142,9 +142,7 @@ test('review prioritizes mistakes, sorts by date, limits each batch and caps int
   assert.equal(reviewed.earned, reviewLimit * 2);
   assert.deepEqual(reviewed.state.cards['booking-3'], { stage: 2, due: 34 });
   assert.deepEqual(reviewed.state.cards['booking-2'], { stage: 1, due: 32 });
-  const isolated = { ...emptyProgress(), cards: { 'booking-1': reviewed.state.cards['booking-3'] } };
-  delete isolated.cards['booking-1'];
-  isolated.cards['booking-1'] = { stage: 2, due: 34 };
+  const isolated = { ...emptyProgress(), cards: { 'booking-1': { stage: 2, due: 34 } } };
   const third = finish(isolated, allAnswers(makeSession('review', isolated, 34)), 34).state;
   assert.deepEqual(third.cards['booking-1'], { stage: 3, due: 41 });
   const fourth = finish(third, allAnswers(makeSession('review', third, 41)), 41).state;

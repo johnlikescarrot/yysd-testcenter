@@ -19,6 +19,8 @@ const htmlCitations = (value) => plain(value).replaceAll(/\[(\d+(?:, \d+)*)\]/g,
 const ink = '#241c32';
 const muted = '#5c5369';
 const purple = '#4b31a2';
+// Preserve individual Unicode characters for PDF search and copy/paste.
+const fontFeatureOptions = { features: { ccmp: false, liga: false, clig: false, dlig: false } };
 
 function html(guide) {
   const sections = guide.pages.flat().map(({ heading, paragraphs, list }) => [
@@ -74,25 +76,30 @@ async function pdf(guide) {
   const stream = createWriteStream(resource(`${guide.slug}.pdf`));
   doc.pipe(stream);
   doc.registerFont('regular', fonts.regular).registerFont('bold', fonts.bold);
+  const print = (value, options) => doc.text(value, { ...fontFeatureOptions, ...options });
   const newPage = (label, title) => {
     doc.addPage();
     doc.roundedRect(51, 48, 493, 90, 12).fill('#eee7fb');
-    doc.font('bold').fontSize(10).fillColor(purple).text(label, 67, 62, { width: 460 });
-    doc.font('bold').fontSize(24).fillColor(ink).text(title, 67, 81, { width: 460 });
+    doc.font('bold').fontSize(10).fillColor(purple).text(label, 67, 62, { ...fontFeatureOptions, width: 460 });
+    doc.font('bold').fontSize(24).fillColor(ink).text(title, 67, 81, { ...fontFeatureOptions, width: 460 });
     doc.x = 51;
     doc.y = 156;
   };
-  const paragraph = (value) => doc.font('regular').fontSize(10.7).fillColor(ink).text(value, { lineGap: 3 }).moveDown(.55);
+  const paragraph = (value) => {
+    doc.font('regular').fontSize(10.7).fillColor(ink);
+    print(value, { lineGap: 3 }).moveDown(.55);
+  };
   let pageNumber = 0;
   const footer = () => {
     if (doc.y > 758) throw new Error(`Too much content on ${guide.slug}, page ${pageNumber + 1}`);
-    doc.font('regular').fontSize(9).fillColor(muted).text(`SẢI BƯỚC  /  ${++pageNumber}`, 51, 778, { lineBreak: false });
+    doc.font('regular').fontSize(9).fillColor(muted).text(`SẢI BƯỚC  /  ${++pageNumber}`, 51, 778, { ...fontFeatureOptions, lineBreak: false });
   };
   for (const [index, page] of guide.pages.entries()) {
     newPage(`IELTS ACADEMIC  /  SỔ TAY ${guide.number}`, guide.title);
     if (index === 0) paragraph(guide.description);
     for (const { heading, paragraphs, list } of page) {
-      doc.font('bold').fontSize(13).fillColor(purple).text(heading).moveDown(.32);
+      doc.font('bold').fontSize(13).fillColor(purple);
+      print(heading).moveDown(.32);
       paragraphs.forEach(paragraph);
       list.forEach((item) => paragraph(`•  ${item}`));
       doc.moveDown(.45);
@@ -105,14 +112,15 @@ async function pdf(guide) {
     const prefix = `[${index + 1}] `;
     doc.font('regular').fontSize(9.75).fillColor(ink);
     if (source.doi) {
-      doc.text(`${prefix}${citation(source)}`, { lineGap: 1.6 });
-      doc.fontSize(9).fillColor(purple)
-        .text(`DOI ${source.doi}`, { link: doiLink(source.doi), underline: true, continued: true })
-        .text('     ', { link: null, underline: false, continued: true })
-        .text('Tra Google Scholar', { link: scholarLink(source.doi), underline: true });
+      print(`${prefix}${citation(source)}`, { lineGap: 1.6 });
+      doc.fontSize(9).fillColor(purple);
+      print(`DOI ${source.doi}`, { link: doiLink(source.doi), underline: true, continued: true });
+      print('     ', { link: null, underline: false, continued: true });
+      print('Tra Google Scholar', { link: scholarLink(source.doi), underline: true });
     } else {
-      doc.text(`${prefix}IELTS. `, { continued: true });
-      doc.fillColor(purple).text(source.title, { link: source.url, underline: true });
+      print(`${prefix}IELTS. `, { continued: true });
+      doc.fillColor(purple);
+      print(source.title, { link: source.url, underline: true });
     }
     doc.moveDown(.52);
   }
