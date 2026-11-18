@@ -1,0 +1,269 @@
+{
+ "id": "nen-tang-doc",
+ "lessons": [
+  {
+   "id": "doc-1-1",
+   "title": "Skimming: đọc lướt lấy ý chính",
+   "goal": "Nắm ý chính đoạn văn trong 60 giây",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "doc-1-1-q1",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn định nghĩa đúng",
+     "stem": "Skimming là gì?",
+     "options": [
+      "Đọc từng từ rồi dịch toàn bộ đoạn văn",
+      "Đọc nhanh để nắm ý chính của đoạn",
+      "Tìm một con số cụ thể trong bài",
+      "Ghi lại mọi từ mới gặp"
+     ],
+     "answer": 1,
+     "explain": "Skimming là đọc lướt có chủ đích để lấy bức tranh lớn: đoạn này nói về cái gì, thái độ tác giả ra sao. Bạn không cần hiểu từng từ.",
+     "tip": "Áp dụng: đọc câu đầu và câu cuối mỗi đoạn trước khi đọc câu hỏi."
+    },
+    {
+     "id": "doc-1-1-q2",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Đọc đoạn văn rồi chọn ý chính",
+     "stem": "“Many students believe that studying longer guarantees better results. Research on memory, however, shows that short, spaced sessions produce stronger long-term retention.”",
+     "options": [
+      "Học càng lâu càng hiệu quả",
+      "Học ngắn và chia nhỏ giúp nhớ lâu hơn",
+      "Sinh viên không nên học buổi tối",
+      "Trí nhớ con người không thể cải thiện"
+     ],
+     "answer": 1,
+     "explain": "Từ “however” báo hiệu tác giả phản bác quan niệm thông thường. Câu chứa ý chính là câu sau “however”: học ngắn, chia nhỏ (spaced) nhớ lâu hơn.",
+     "tip": "Từ nối như however, but, in fact thường đứng ngay trước ý chính."
+    },
+    {
+     "id": "doc-1-1-q3",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "The author's main ___ is that spacing beats cramming.",
+     "answer": "point",
+     "explain": "“Main point” là cách nói phổ biến cho “ý chính”. “Cramming” nghĩa là học dồn trước kỳ thi.",
+     "accept": [
+      "idea",
+      "argument",
+      "message"
+     ],
+     "tip": "Trong bài thi, đáp án thường là từ đồng nghĩa với từ trong bài — đừng tìm từ y hệt."
+    },
+    {
+     "id": "doc-1-1-q4",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "gives",
+      "the",
+      "first",
+      "Reading",
+      "sentence",
+      "main",
+      "the",
+      "idea"
+     ],
+     "answer": "Reading the first sentence gives the main idea",
+     "explain": "Câu đầu đoạn thường là câu chủ đề (topic sentence), chứa ý chính của cả đoạn."
+    },
+    {
+     "id": "doc-1-1-q5",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn vị trí nên đọc kỹ khi skimming",
+     "stem": "Khi skimming một đoạn văn, bạn nên đọc kỹ nhất ở đâu?",
+     "options": [
+      "Mọi tính từ miêu tả",
+      "Câu đầu và câu cuối đoạn",
+      "Tất cả các từ in đậm",
+      "Phần chú thích cuối trang"
+     ],
+     "answer": 1,
+     "explain": "Câu đầu giới thiệu chủ đề, câu cuối thường kết luận hoặc chuyển ý. Hai vị trí này cho bạn 70% ý chính với 20% thời gian.",
+     "tip": "Đừng đọc từng từ: mắt bạn nên nhảy theo cụm 3–4 từ."
+    }
+   ]
+  },
+  {
+   "id": "doc-1-2",
+   "title": "Scanning: tìm thông tin cụ thể",
+   "goal": "Định vị số liệu, tên riêng, ngày tháng",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "doc-1-2-q1",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn định nghĩa đúng",
+     "stem": "Scanning là gì?",
+     "options": [
+      "Đọc toàn bộ bài để hiểu sâu",
+      "Tìm nhanh một thông tin cụ thể như số liệu hay tên riêng",
+      "Dịch bài sang tiếng Việt",
+      "Học thuộc lòng đoạn văn"
+     ],
+     "answer": 1,
+     "explain": "Scanning là quét mắt có mục tiêu: bạn biết mình cần tìm gì (một năm, một cái tên) và bỏ qua phần còn lại.",
+     "tip": "Trước khi scan, gạch chân từ khoá trong câu hỏi."
+    },
+    {
+     "id": "doc-1-2-q2",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "Scanning means looking for a ___ piece of information, such as a date or a name.",
+     "answer": "specific",
+     "explain": "“Specific information” = thông tin cụ thể. Đây là cụm cố định trong đề Reading.",
+     "accept": [
+      "particular",
+      "single"
+     ],
+     "tip": "Số liệu và tên riêng không bị paraphrase nhiều, nên chúng là “mỏ neo” tốt để định vị."
+    },
+    {
+     "id": "doc-1-2-q3",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "Room B12, second floor.",
+     "answer": "Room B12, second floor.",
+     "explain": "Chữ cái và số trong địa chỉ thường được đọc tách rời: B – one – two. Hãy viết đúng cả chữ hoa.",
+     "tip": "Trong bài thi Listening, viết hoa chữ cái đầu tên riêng để tránh mất điểm trình bày."
+    },
+    {
+     "id": "doc-1-2-q4",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn cách hiểu đúng cụm từ",
+     "stem": "Cụm “in the region of” trong bài đọc số liệu nghĩa là gì?",
+     "options": [
+      "Chính xác bằng",
+      "Khoảng, xấp xỉ",
+      "Nhiều hơn gấp đôi",
+      "Không bao giờ vượt quá"
+     ],
+     "answer": 1,
+     "explain": "“In the region of 40%” = khoảng 40%. Đây là cách nói tránh con số tuyệt đối, thường gặp trong Writing Task 1 và bài đọc học thuật.",
+     "tip": "Các cụm tương tự: approximately, roughly, around, some."
+    },
+    {
+     "id": "doc-1-2-q5",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "rose",
+      "The",
+      "between",
+      "figure",
+      "2010",
+      "and",
+      "sharply",
+      "2015"
+     ],
+     "answer": "The figure rose sharply between 2010 and 2015",
+     "explain": "Trật tự chuẩn của câu miêu tả xu hướng: chủ ngữ + động từ + trạng từ mức độ + mốc thời gian."
+    }
+   ]
+  },
+  {
+   "id": "doc-1-3",
+   "title": "Từ nối dẫn đường trong bài đọc",
+   "goal": "Nhận ra quan hệ ý nghĩa giữa các câu",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "doc-1-3-q1",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn chức năng của từ nối",
+     "stem": "Từ “However” thường báo hiệu điều gì?",
+     "options": [
+      "Thêm một ý cùng chiều",
+      "Một ý tương phản với câu trước",
+      "Một ví dụ minh hoạ",
+      "Một kết luận chắc chắn"
+     ],
+     "answer": 1,
+     "explain": "However = tuy nhiên. Nó báo hiệu tác giả sắp đưa ý ngược lại, thường là ý quan trọng nhất của đoạn.",
+     "tip": "Nhóm tương phản: however, nevertheless, on the other hand, whereas."
+    },
+    {
+     "id": "doc-1-3-q2",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ nối phù hợp",
+     "stem": "The number of visitors increased; ___, revenue fell.",
+     "answer": "however",
+     "explain": "Hai vế trái chiều nhau (khách tăng nhưng doanh thu giảm), nên cần từ nối tương phản.",
+     "accept": [
+      "nevertheless",
+      "yet",
+      "nonetheless"
+     ]
+    },
+    {
+     "id": "doc-1-3-q3",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn từ nối chỉ nguyên nhân",
+     "stem": "Câu nào dùng từ nối chỉ nguyên nhân đúng nhất?",
+     "options": [
+      "The event was cancelled. Therefore, it rained heavily.",
+      "Because of heavy rain, the event was cancelled.",
+      "The event was cancelled, although it rained.",
+      "Heavy rain, in addition, the event was cancelled."
+     ],
+     "answer": 1,
+     "explain": "“Because of + danh từ” diễn tả nguyên nhân. “Therefore” chỉ kết quả, “although” chỉ tương phản.",
+     "tip": "Because + mệnh đề; because of + cụm danh từ. Đây là lỗi ngữ pháp rất hay gặp."
+    },
+    {
+     "id": "doc-1-3-q4",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Although",
+      "the",
+      "cost",
+      "was",
+      "high",
+      "the",
+      "invested",
+      "school",
+      "in",
+      "computers",
+      "new"
+     ],
+     "answer": "Although the cost was high, the school invested in new computers",
+     "explain": "Although + mệnh đề, mệnh đề chính. Mệnh đề sau “although” là thông tin nhượng bộ, không phải ý chính."
+    },
+    {
+     "id": "doc-1-3-q5",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ nối phù hợp",
+     "stem": "___ the data was incomplete, the conclusion remained tentative.",
+     "answer": "Because",
+     "explain": "Vế sau là kết quả của vế trước, nên cần từ nối nguyên nhân đứng đầu câu.",
+     "accept": [
+      "Since",
+      "As"
+     ],
+     "tip": "Sau “because” là mệnh đề đầy đủ; sau “because of” là cụm danh từ."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+name: IELTS Việt · Lighthouse 100
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'vi/**'
+      - '.lighthouserc.json'
+      - '.github/workflows/vi-lighthouse.yml'
+  pull_request:
+    paths:
+      - 'vi/**'
+      - '.lighthouserc.json'
+      - '.github/workflows/vi-lighthouse.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vi-lighthouse-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    name: Đo 4 hạng mục
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Chạy Lighthouse CI
+        run: npx --yes @lhci/cli@0.14.x autorun
+        env:
+          LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.head_ref || github.ref_name }}
+          LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
+          LHCI_BUILD_CONTEXT__GITHUB_REPO_SLUG: ${{ github.repository }}

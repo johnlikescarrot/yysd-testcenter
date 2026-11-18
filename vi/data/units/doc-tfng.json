@@ -1,0 +1,262 @@
+{
+ "id": "doc-tfng",
+ "lessons": [
+  {
+   "id": "doc-3-1",
+   "title": "Phân biệt False và Not Given",
+   "goal": "Không suy diễn ngoài bài đọc",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "doc-3-1-q1",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn định nghĩa đúng",
+     "stem": "Đáp án “Not Given” nghĩa là gì?",
+     "options": [
+      "Thông tin trong bài trái ngược với câu hỏi",
+      "Bài đọc không đủ thông tin để xác nhận hoặc phủ nhận",
+      "Câu hỏi sai ngữ pháp",
+      "Bài đọc nói đúng nhưng khác từ"
+     ],
+     "answer": 1,
+     "explain": "Not Given = bài không hề cho thông tin đó. Nếu bài nói ngược lại thì là False. Đừng dùng kiến thức ngoài bài.",
+     "tip": "Tự hỏi: “Bài đọc có câu nào trực tiếp nói về điều này không?” Nếu không → Not Given."
+    },
+    {
+     "id": "doc-3-1-q2",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Đọc bài và chọn đáp án",
+     "stem": "Bài: “The museum opened in 1998 and now attracts 500,000 visitors a year.” Câu: “The museum attracts more than a million visitors a year.”",
+     "options": [
+      "True",
+      "False",
+      "Not Given"
+     ],
+     "answer": 1,
+     "explain": "Bài nói 500.000, câu hỏi nói hơn 1 triệu → mâu thuẫn trực tiếp, nên là False. Nếu bài chỉ nói “nhiều khách” mà không nêu số thì mới là Not Given.",
+     "tip": "Khi có số liệu cụ thể ở cả hai bên, hãy so sánh trực tiếp."
+    },
+    {
+     "id": "doc-3-1-q3",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Đọc bài và chọn đáp án",
+     "stem": "Bài: “The museum opened in 1998 and now attracts 500,000 visitors a year.” Câu: “The museum receives government funding.”",
+     "options": [
+      "True",
+      "False",
+      "Not Given"
+     ],
+     "answer": 2,
+     "explain": "Bài không nhắc gì tới ngân sách nhà nước. Không thể kết luận đúng hay sai → Not Given.",
+     "tip": "Đây là lỗi phổ biến nhất: học viên suy luận “bảo tàng lớn thì chắc có tài trợ”. Không được suy luận."
+    },
+    {
+     "id": "doc-3-1-q4",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền cụm đáp án",
+     "stem": "Nếu thông tin trong bài không hề nhắc tới, bạn chọn ___.",
+     "answer": "Not Given",
+     "explain": "Ba lựa chọn chuẩn của dạng bài này: True, False, Not Given (một số đề dùng Yes/No/Not Given cho ý kiến tác giả).",
+     "accept": [
+      "NG",
+      "not given"
+     ],
+     "tip": "Yes/No/Not Given dùng cho câu hỏi về quan điểm của tác giả; True/False/Not Given dùng cho dữ kiện."
+    },
+    {
+     "id": "doc-3-1-q5",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "The",
+      "passage",
+      "does",
+      "not",
+      "mention",
+      "cost",
+      "the",
+      "of",
+      "tickets"
+     ],
+     "answer": "The passage does not mention the cost of tickets",
+     "explain": "Đây chính là lý do để chọn Not Given: bài không đề cập thông tin được hỏi."
+    }
+   ]
+  },
+  {
+   "id": "doc-3-2",
+   "title": "Matching headings",
+   "goal": "Ghép tiêu đề với đoạn văn",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "doc-3-2-q1",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn chiến lược đúng",
+     "stem": "Cách hiệu quả nhất để làm Matching headings?",
+     "options": [
+      "Đọc cả bài thật kỹ rồi mới ghép",
+      "Đọc câu đầu, câu cuối mỗi đoạn rồi tìm tiêu đề khái quát",
+      "Chọn tiêu đề có nhiều từ giống bài nhất",
+      "Làm từ đoạn cuối lên"
+     ],
+     "answer": 1,
+     "explain": "Headings hỏi ý khái quát, không hỏi chi tiết. Câu đầu/cuối thường chứa ý chính, còn việc chọn theo “từ giống” là bẫy kinh điển.",
+     "tip": "Loại trước những heading chỉ nói về một chi tiết nhỏ trong đoạn."
+    },
+    {
+     "id": "doc-3-2-q2",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn heading phù hợp",
+     "stem": "Đoạn văn: “Several factors explain the decline. Rising rents forced small shops to close, while online shopping changed habits. Transport costs also played a part.”",
+     "options": [
+      "The history of online shopping",
+      "Reasons for the decline",
+      "How to open a small shop",
+      "The cost of public transport"
+     ],
+     "answer": 1,
+     "explain": "Đoạn liệt kê nhiều nguyên nhân (“several factors”, “while”, “also”) → heading khái quát là “Reasons for the decline”.",
+     "tip": "Từ tín hiệu: several factors, reasons, causes → heading thường chứa “reasons/causes”."
+    },
+    {
+     "id": "doc-3-2-q3",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền thuật ngữ",
+     "stem": "Câu chứa ý chính của đoạn thường được gọi là ___ sentence.",
+     "answer": "topic",
+     "explain": "Topic sentence = câu chủ đề. Nó thường đứng đầu đoạn và bao quát toàn bộ nội dung phía sau.",
+     "accept": [
+      "main"
+     ],
+     "tip": "Nếu đoạn mở đầu bằng câu hỏi, câu trả lời ngay sau đó thường là câu chủ đề."
+    },
+    {
+     "id": "doc-3-2-q4",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn heading phù hợp",
+     "stem": "Đoạn văn: “One solution is to convert unused office space into housing. Cities such as Calgary have already tested the idea with some success.”",
+     "options": [
+      "A problem that remains unsolved",
+      "A practical response to the housing shortage",
+      "The history of office buildings",
+      "Why Calgary is expensive"
+     ],
+     "answer": 1,
+     "explain": "“One solution… have already tested… with some success” → đoạn nói về một giải pháp thực tế cho vấn đề nhà ở.",
+     "tip": "Từ tín hiệu của đoạn giải pháp: solution, approach, measure, remedy."
+    },
+    {
+     "id": "doc-3-2-q5",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Match",
+      "heading",
+      "each",
+      "correct",
+      "to",
+      "the",
+      "paragraph"
+     ],
+     "answer": "Match each heading to the correct paragraph",
+     "explain": "Đề bài Matching headings luôn yêu cầu ghép mỗi heading với đúng đoạn văn — không dùng lại heading."
+    }
+   ]
+  },
+  {
+   "id": "doc-3-3",
+   "title": "Sentence completion",
+   "goal": "Điền từ đúng giới hạn số từ",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "doc-3-3-q1",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "The survey was conducted over a ___ of six months.",
+     "answer": "period",
+     "explain": "“A period of six months” = khoảng thời gian sáu tháng. Kiểm tra ngữ pháp: sau “a” cần danh từ số ít.",
+     "accept": [
+      "span"
+     ],
+     "tip": "Luôn đọc lại câu sau khi điền để kiểm tra mạo từ và giới từ."
+    },
+    {
+     "id": "doc-3-3-q2",
+     "type": "mcq",
+     "skill": "reading",
+     "prompt": "Chọn cách hiểu đúng",
+     "stem": "Đề ghi “NO MORE THAN TWO WORDS”. Bạn được viết gì?",
+     "options": [
+      "Đúng hai từ",
+      "Một hoặc hai từ",
+      "Ba từ nếu cần",
+      "Một số và một từ"
+     ],
+     "answer": 1,
+     "explain": "“No more than two words” = tối đa hai từ, có thể ít hơn. Viết ba từ là mất điểm dù đúng nghĩa.",
+     "tip": "Đề có thể ghi “ONE WORD ONLY” hoặc “A NUMBER” — hãy gạch chân giới hạn này trước khi đọc bài."
+    },
+    {
+     "id": "doc-3-3-q3",
+     "type": "gap",
+     "skill": "reading",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "Researchers found that noise levels ___ significantly at night.",
+     "answer": "decreased",
+     "explain": "Ngữ cảnh học thuật: mức ồn giảm vào ban đêm. Động từ chia quá khứ vì nghiên cứu đã hoàn thành.",
+     "accept": [
+      "fell",
+      "dropped",
+      "declined"
+     ],
+     "tip": "Giữ đúng thì của động từ trong câu hỏi."
+    },
+    {
+     "id": "doc-3-3-q4",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "The experiment lasted for three weeks.",
+     "answer": "The experiment lasted for three weeks.",
+     "explain": "“Lasted for” + khoảng thời gian. Trong bài thi, đáp án có thể là “three weeks” nếu đề hỏi thời lượng.",
+     "tip": "Chú ý “last” ở đây là động từ (kéo dài), không phải tính từ (cuối cùng)."
+    },
+    {
+     "id": "doc-3-3-q5",
+     "type": "build",
+     "skill": "reading",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "results",
+      "The",
+      "were",
+      "a",
+      "in",
+      "published",
+      "national",
+      "journal"
+     ],
+     "answer": "The results were published in a national journal",
+     "explain": "Câu bị động quá khứ: were + past participle. Dạng này rất phổ biến trong bài đọc học thuật."
+    }
+   ]
+  }
+ ]
+}

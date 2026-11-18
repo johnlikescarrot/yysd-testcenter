@@ -1,0 +1,53 @@
+name: IELTS Việt · kiểm thử
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'vi/**'
+      - 'scripts/vi/**'
+      - '.github/workflows/vi-ci.yml'
+  pull_request:
+    paths:
+      - 'vi/**'
+      - 'scripts/vi/**'
+      - '.github/workflows/vi-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vi-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Coverage 100% + nội dung + khói
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vi
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cài jsdom (dùng cho kiểm thử khói)
+        run: npm install --no-save --no-audit --no-fund jsdom
+
+      - name: Kiểm thử đơn vị (bắt buộc 100% dòng, nhánh, hàm)
+        run: npm test
+
+      - name: Kiểm tra toàn vẹn nội dung
+        run: node ../scripts/vi/check_content.mjs
+
+      - name: Kiểm thử khói trên DOM thật
+        run: node ../scripts/vi/smoke.mjs
+
+      - name: ESLint
+        run: npx --yes eslint@9 .

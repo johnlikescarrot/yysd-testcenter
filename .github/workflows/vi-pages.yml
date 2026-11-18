@@ -1,0 +1,60 @@
+name: IELTS Việt · triển khai GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'vi/**'
+      - 'scripts/vi/**'
+      - '.github/workflows/vi-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: vi-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Chuẩn bị bản tĩnh
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Kiểm tra nội dung trước khi deploy
+        run: node scripts/vi/check_content.mjs
+
+      - name: Giữ tên miền tuỳ chỉnh và tắt Jekyll
+        run: |
+          if [ -f CNAME ]; then cp CNAME vi/CNAME; fi
+          touch vi/.nojekyll
+
+      - name: Cấu hình Pages
+        uses: actions/configure-pages@v5
+
+      - name: Đóng gói artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: vi
+
+  deploy:
+    name: Phát hành
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

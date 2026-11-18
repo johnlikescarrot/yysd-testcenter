@@ -48,3 +48,7 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# Ứng dụng IELTS Việt (vi/): phụ thuộc cài tại chỗ, không commit
+vi/node_modules/
+vi/.lighthouseci/

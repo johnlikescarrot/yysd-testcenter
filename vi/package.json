@@ -1,0 +1,17 @@
+{
+  "name": "yysd-ielts-vi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ứng dụng luyện thi IELTS tiếng Việt của YYSD — logic thuần, kiểm thử đầy đủ, không phụ thuộc thư viện ngoài.",
+  "scripts": {
+    "test": "node --test --experimental-test-coverage --test-coverage-include='js/**/*.js' --test-coverage-exclude='js/browser.js' --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 tests/all.test.mjs",
+    "test:plain": "node --test tests/all.test.mjs",
+    "test:unit": "node --test tests/*.test.mjs",
+    "check:content": "node ../scripts/vi/check_content.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

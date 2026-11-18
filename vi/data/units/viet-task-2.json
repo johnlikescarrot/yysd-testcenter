@@ -1,0 +1,264 @@
+{
+ "id": "viet-task-2",
+ "lessons": [
+  {
+   "id": "viet-5-1",
+   "title": "Khung bốn đoạn",
+   "goal": "Dựng bài 250 từ đúng cấu trúc",
+   "xp": 14,
+   "exercises": [
+    {
+     "id": "viet-5-1-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn cấu trúc chuẩn",
+     "stem": "Một bài Task 2 đạt band 7 thường có bao nhiêu đoạn?",
+     "options": [
+      "1 đoạn dài",
+      "2 đoạn",
+      "4 đoạn: mở, hai thân, kết",
+      "5–6 đoạn ngắn"
+     ],
+     "answer": 2,
+     "explain": "Bốn đoạn là chuẩn thực dụng: mở bài nêu quan điểm, hai thân bài mỗi đoạn một luận điểm, kết luận khẳng định lại.",
+     "tip": "Mỗi đoạn thân nên dài 80–110 từ, có câu chủ đề, giải thích và ví dụ."
+    },
+    {
+     "id": "viet-5-1-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "A strong introduction states the topic and the writer's ___.",
+     "answer": "position",
+     "explain": "Position = quan điểm/lập trường. Giám khảo phải thấy rõ bạn đồng ý, phản đối hay cân bằng ngay trong mở bài.",
+     "accept": [
+      "opinion",
+      "view",
+      "stance"
+     ],
+     "tip": "Tránh mở bài chỉ paraphrase đề mà không nêu quan điểm — mất điểm Task Response."
+    },
+    {
+     "id": "viet-5-1-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "This",
+      "essay",
+      "will",
+      "discuss",
+      "both",
+      "sides",
+      "of",
+      "the",
+      "argument"
+     ],
+     "answer": "This essay will discuss both sides of the argument",
+     "explain": "Câu chuyển ý này hơi máy móc. Band 7+ nên nêu thẳng quan điểm: “While X has merits, I believe Y is more convincing.”"
+    },
+    {
+     "id": "viet-5-1-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn cấu trúc đoạn thân đúng",
+     "stem": "Một đoạn thân bài tốt nhất nên có gì?",
+     "options": [
+      "Càng nhiều ý càng tốt",
+      "Câu chủ đề, giải thích, ví dụ, và câu nối về luận điểm chính",
+      "Chỉ toàn số liệu",
+      "Một câu dài 100 từ"
+     ],
+     "answer": 1,
+     "explain": "Công thức PEE: Point – Explain – Example. Mỗi đoạn một luận điểm, phát triển đủ sâu thay vì liệt kê.",
+     "tip": "Nếu đoạn có hai ý, hãy tách thành hai đoạn để lập luận rõ hơn."
+    },
+    {
+     "id": "viet-5-1-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền thuật ngữ",
+     "stem": "Each body paragraph should begin with a ___ sentence.",
+     "answer": "topic",
+     "explain": "Topic sentence nêu luận điểm của đoạn. Câu này phải trả lời được: đoạn này chứng minh điều gì?",
+     "accept": [
+      "main"
+     ],
+     "tip": "Đọc riêng các câu chủ đề phải thấy được toàn bộ dàn bài của bạn."
+    }
+   ]
+  },
+  {
+   "id": "viet-5-2",
+   "title": "Câu chủ đề và ví dụ",
+   "goal": "Viết ví dụ cụ thể thay vì chung chung",
+   "xp": 14,
+   "exercises": [
+    {
+     "id": "viet-5-2-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn câu chủ đề tốt nhất",
+     "stem": "Đề: “Some people think university education should be free.”",
+     "options": [
+      "Education is important.",
+      "Free university education would widen access for low-income students.",
+      "I will discuss this topic.",
+      "Many people have different opinions about this."
+     ],
+     "answer": 1,
+     "explain": "Câu B nêu một luận điểm cụ thể, có thể phát triển tiếp bằng giải thích và ví dụ. Ba câu còn lại quá chung.",
+     "tip": "Câu chủ đề tốt thường chứa từ khoá của đề và một hướng lập luận."
+    },
+    {
+     "id": "viet-5-2-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "For ___, in Finland students start school at seven.",
+     "answer": "example",
+     "explain": "“For example” / “For instance” giới thiệu ví dụ. Đừng lạm dụng “for example” ở mọi câu.",
+     "accept": [
+      "instance"
+     ],
+     "tip": "Ví dụ nên có chi tiết cụ thể (quốc gia, con số, thời điểm) để tăng độ tin cậy."
+    },
+    {
+     "id": "viet-5-2-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "One",
+      "clear",
+      "is",
+      "example",
+      "the",
+      "on",
+      "ban",
+      "bags",
+      "plastic"
+     ],
+     "answer": "One clear example is the ban on plastic bags",
+     "explain": "Câu ví dụ tốt: ngắn, cụ thể, liên kết trực tiếp với luận điểm phía trước."
+    },
+    {
+     "id": "viet-5-2-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn ví dụ mạnh hơn",
+     "stem": "Ví dụ nào thuyết phục hơn cho luận điểm “học nhóm giúp tiến bộ nhanh”?",
+     "options": [
+      "Students often study in groups.",
+      "A 2019 study of 300 university students found that those who studied in weekly groups scored 12% higher on exams.",
+      "Group study is very good.",
+      "Many of my friends like group study."
+     ],
+     "answer": 1,
+     "explain": "Ví dụ có số liệu, quy mô và thời điểm đáng tin hơn nhận định chung. Lưu ý: nếu không chắc số liệu, hãy dùng ví dụ định tính cụ thể.",
+     "tip": "Không bịa số liệu. Nếu không chắc, dùng ví dụ từ trải nghiệm có bối cảnh rõ ràng."
+    },
+    {
+     "id": "viet-5-2-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "This is ___ by research from the University of Oxford.",
+     "answer": "supported",
+     "explain": "“This is supported by research” = điều này được nghiên cứu củng cố. Câu bị động học thuật rất hữu ích.",
+     "accept": [
+      "shown",
+      "backed"
+     ],
+     "tip": "Các cụm tương tự: evidence suggests, data indicate, research demonstrates."
+    }
+   ]
+  },
+  {
+   "id": "viet-5-3",
+   "title": "Từ nối và mạch lạc",
+   "goal": "Liên kết ý tự nhiên, không gượng ép",
+   "xp": 14,
+   "exercises": [
+    {
+     "id": "viet-5-3-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn chức năng đúng",
+     "stem": "“Furthermore” dùng để làm gì?",
+     "options": [
+      "Đưa ra ý trái ngược",
+      "Bổ sung một luận điểm cùng hướng",
+      "Kết thúc bài",
+      "Đưa ví dụ"
+     ],
+     "answer": 1,
+     "explain": "Furthermore = hơn nữa, bổ sung luận điểm cùng chiều. Nhóm tương tự: moreover, in addition, what is more.",
+     "tip": "Không dùng “furthermore” cho ý tương phản — đó là lỗi logic rất hay gặp."
+    },
+    {
+     "id": "viet-5-3-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "___ addition, remote work reduces commuting time.",
+     "answer": "In",
+     "explain": "Cụm cố định “In addition”. Sau nó là dấu phẩy và một mệnh đề độc lập.",
+     "tip": "Các cụm: in addition, in contrast, in conclusion, in particular."
+    },
+    {
+     "id": "viet-5-3-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Although",
+      "the",
+      "policy",
+      "is",
+      "expensive",
+      "it",
+      "may",
+      "money",
+      "save",
+      "later"
+     ],
+     "answer": "Although the policy is expensive, it may save money later",
+     "explain": "Câu nhượng bộ giúp thể hiện tư duy cân bằng — yếu tố được đánh giá cao ở Coherence and Cohesion."
+    },
+    {
+     "id": "viet-5-3-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn nhận định đúng",
+     "stem": "Điều gì xảy ra nếu lạm dụng từ nối?",
+     "options": [
+      "Bài được điểm cao hơn vì “trông học thuật”",
+      "Bài trở nên máy móc và giảm điểm mạch lạc",
+      "Không ảnh hưởng gì",
+      "Giám khảo không để ý"
+     ],
+     "answer": 1,
+     "explain": "Từ nối chỉ có giá trị khi quan hệ ý nghĩa thật sự rõ. Dùng sai hoặc quá nhiều làm giảm điểm Coherence.",
+     "tip": "Một bài 250 từ chỉ cần 4–6 từ nối được dùng đúng chỗ."
+    },
+    {
+     "id": "viet-5-3-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The benefits ___ the drawbacks.",
+     "answer": "outweigh",
+     "explain": "“Outweigh” = nhiều hơn/lớn hơn về tầm quan trọng. Cấu trúc kinh điển khi kết luận cân bằng lợi ích – hạn chế.",
+     "accept": [
+      "exceed"
+     ],
+     "tip": "Cụm hay dùng: outweigh the disadvantages, far outweigh, slightly outweigh."
+    }
+   ]
+  }
+ ]
+}

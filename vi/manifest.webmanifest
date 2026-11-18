@@ -1,0 +1,49 @@
+{
+  "id": "./",
+  "name": "YYSD · IELTS Việt",
+  "short_name": "IELTS Việt",
+  "description": "Lộ trình luyện thi IELTS bằng tiếng Việt: bài học ngắn, ôn tập ngắt quãng, thư viện 37 nghiên cứu có trích dẫn Google Scholar và 7 tài liệu PDF.",
+  "lang": "vi",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fffcf7",
+  "theme_color": "#07192f",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "./img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Học bài kế tiếp",
+      "short_name": "Học",
+      "url": "./hoc.html",
+      "description": "Mở lộ trình 8 chương và học bài tiếp theo"
+    },
+    {
+      "name": "Ôn từ vựng",
+      "short_name": "Ôn tập",
+      "url": "./luyen-tap.html",
+      "description": "Thẻ từ vựng theo lịch 1 → 3 → 7 ngày"
+    },
+    {
+      "name": "Thư viện nghiên cứu",
+      "short_name": "Thư viện",
+      "url": "./thu-vien.html",
+      "description": "Kho trích dẫn Google Scholar và PDF"
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+{
+ "version": 1,
+ "updated": "2026-11-18",
+ "writing": [
+  {
+   "id": "w-t1-internet",
+   "task": 1,
+   "skill": "writing",
+   "minutes": 20,
+   "minWords": 150,
+   "title": "Biểu đồ cột: người dùng internet theo nhóm tuổi",
+   "prompt": "The chart below shows the percentage of people in four age groups who used the internet in 2010 and 2025 in one country.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+   "outline": [
+    "Mở bài: paraphrase đề (loại biểu đồ, đối tượng, thời điểm).",
+    "Overview: nhóm trẻ dùng nhiều nhất; tỉ lệ tăng ở mọi nhóm; khoảng cách giữa các nhóm thu hẹp.",
+    "Thân bài 1: mô tả nhóm 16–24 và 25–39 với số liệu cụ thể.",
+    "Thân bài 2: mô tả nhóm 40–59 và 60+ , nhấn mạnh mức tăng mạnh nhất ở nhóm lớn tuổi."
+   ],
+   "phrases": [
+    "stood at",
+    "rose from … to …",
+    "the gap narrowed",
+    "by far the highest",
+    "respectively"
+   ],
+   "model": "The bar chart compares internet use among four age groups in one country in 2010 and 2025.\n\nOverall, younger people were far more likely to use the internet in both years, but usage rose in every group. The gap between the youngest and oldest groups narrowed considerably.\n\nIn 2010, 92% of 16–24 year olds went online, compared with 78% of 25–39 year olds. By 2025 these figures had reached 99% and 96% respectively. The most striking change occurred among people aged 60 and over: their share climbed from 20% to 71%, more than tripling in fifteen years. The 40–59 group followed a similar pattern, rising from 55% to 89%.",
+   "checklist": [
+    "Có overview rõ ràng, không nêu số liệu chi tiết trong overview.",
+    "Mọi số liệu đều đúng với biểu đồ (tự kiểm tra lại).",
+    "Dùng ít nhất 3 cấu trúc mô tả xu hướng khác nhau.",
+    "Có ít nhất 2 câu so sánh giữa các nhóm.",
+    "Không nêu ý kiến cá nhân hay lý do."
+   ]
+  },
+  {
+   "id": "w-t1-museum",
+   "task": 1,
+   "skill": "writing",
+   "minutes": 20,
+   "minWords": 150,
+   "title": "Biểu đồ đường: khách tham quan ba bảo tàng",
+   "prompt": "The line graph below shows the number of visitors to three museums between 2015 and 2025.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+   "outline": [
+    "Mở bài: loại biểu đồ, ba đối tượng, khoảng thời gian.",
+    "Overview: bảo tàng A tăng mạnh nhất; B giảm nhẹ; C gần như ổn định.",
+    "Thân bài 1: mô tả A và B trong nửa đầu giai đoạn.",
+    "Thân bài 2: mô tả giai đoạn sau, nêu điểm giao nhau và mức cao nhất."
+   ],
+   "phrases": [
+    "peaked at",
+    "declined slightly",
+    "remained stable",
+    "overtook",
+    "over the period"
+   ],
+   "model": "The line graph illustrates visitor numbers at three museums over a ten-year period from 2015 to 2025.\n\nOverall, museum A experienced the strongest growth and finished as the most visited, while museum B declined slightly and museum C remained broadly stable.\n\nIn 2015, museum A attracted 200,000 visitors, well below museum B's 350,000. Numbers at A then rose steadily, overtaking B in 2019 and peaking at 520,000 in 2024. Museum B, by contrast, fell gradually from 350,000 to 280,000, with a brief recovery in 2021. Museum C stayed close to 300,000 throughout, ending the period at 310,000.",
+   "checklist": [
+    "Nêu đủ ba đối tượng, không bỏ sót đường nào.",
+    "Có mốc thời gian cho mọi số liệu quan trọng.",
+    "Dùng đúng thì quá khứ (giai đoạn đã kết thúc).",
+    "Có ít nhất một câu nêu điểm giao nhau hoặc điểm cao nhất.",
+    "Độ dài 150–190 từ."
+   ]
+  },
+  {
+   "id": "w-t1-spending",
+   "task": 1,
+   "skill": "writing",
+   "minutes": 20,
+   "minWords": 150,
+   "title": "Hai biểu đồ tròn: cơ cấu chi tiêu hộ gia đình",
+   "prompt": "The pie charts below show how an average household spent its income in 2000 and 2025.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+   "outline": [
+    "Mở bài: hai thời điểm, một hộ gia đình trung bình.",
+    "Overview: tỉ trọng ăn uống giảm; nhà ở và giải trí tăng.",
+    "Thân bài 1: các hạng mục tăng (nhà ở, giao thông, giải trí).",
+    "Thân bài 2: các hạng mục giảm và hạng mục ổn định."
+   ],
+   "phrases": [
+    "accounted for",
+    "the largest share",
+    "fell by … percentage points",
+    "roughly a fifth",
+    "in contrast"
+   ],
+   "model": "The two pie charts compare the spending patterns of an average household in 2000 and 2025.\n\nOverall, housing and transport took up a much larger share of the budget by 2025, while the proportion spent on food fell considerably.\n\nIn 2000, food accounted for 32% of household spending, the largest single category. By 2025 this had dropped to 21%. Housing rose from 22% to 30%, and transport increased from 12% to 18%. Spending on leisure almost doubled, from 8% to 15%. In contrast, clothing fell from 11% to 7%, and the share devoted to savings remained roughly stable at around 10% in both years.",
+   "checklist": [
+    "Dùng đúng ngôn ngữ cho biểu đồ tròn (proportion, share, percentage points).",
+    "Không cộng sai tổng phần trăm.",
+    "So sánh ít nhất hai hạng mục trong cùng một câu.",
+    "Overview nêu xu hướng chung, không liệt kê.",
+    "Không đưa ra lý do cho sự thay đổi."
+   ]
+  },
+  {
+   "id": "w-t1-transport",
+   "task": 1,
+   "skill": "writing",
+   "minutes": 20,
+   "minWords": 150,
+   "title": "Bảng số liệu: sử dụng phương tiện công cộng ở bốn thành phố",
+   "prompt": "The table below shows the percentage of commuters using public transport in four cities in 2010 and 2024, together with the average commute time.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+   "outline": [
+    "Mở bài: bảng số liệu, bốn thành phố, hai năm và thời gian đi lại.",
+    "Overview: thành phố có tỉ lệ cao nhất cũng có thời gian đi lại dài nhất.",
+    "Thân bài 1: so sánh tỉ lệ sử dụng giữa bốn thành phố.",
+    "Thân bài 2: tương quan với thời gian đi lại trung bình."
+   ],
+   "phrases": [
+    "the highest proportion",
+    "on average",
+    "correlated with",
+    "respectively",
+    "by contrast"
+   ],
+   "model": "The table compares public transport use and average commute times in four cities in 2010 and 2024.\n\nOverall, the city with the highest share of public transport users also recorded the longest average commute, and all four cities saw usage increase over the period.\n\nIn 2024, City A had the highest proportion at 62%, up from 48% in 2010, and its commuters spent 52 minutes travelling on average. City B followed with 55% and 45 minutes, while City C reached 41% and 38 minutes. City D had the lowest share at 28%, although this represented a substantial rise from 15% fourteen years earlier, and its average commute was the shortest at 31 minutes.",
+   "checklist": [
+    "Giữ đúng đơn vị: phần trăm và phút.",
+    "Không bỏ sót thành phố nào.",
+    "Nêu rõ năm khi so sánh.",
+    "Có câu nêu mối tương quan (nếu có).",
+    "Dùng respectively đúng thứ tự."
+   ]
+  },
+  {
+   "id": "w-t2-free-university",
+   "task": 2,
+   "skill": "writing",
+   "minutes": 40,
+   "minWords": 250,
+   "title": "Task 2 – Quan điểm: miễn học phí đại học",
+   "prompt": "Some people believe that university education should be free for all students. To what extent do you agree or disagree?",
+   "outline": [
+    "Mở bài: paraphrase đề + nêu quan điểm rõ (đồng ý một phần).",
+    "Thân bài 1: lợi ích — mở rộng tiếp cận, giảm bất bình đẳng, lợi ích dài hạn cho xã hội.",
+    "Thân bài 2: hạn chế — chi phí ngân sách, chất lượng có thể giảm, người học coi nhẹ giá trị.",
+    "Kết luận: khẳng định lại quan điểm + đề xuất giải pháp trung dung (miễn phí có điều kiện)."
+   ],
+   "phrases": [
+    "I largely agree that",
+    "a strong case can be made for",
+    "this is not to say that",
+    "a targeted subsidy",
+    "outweigh"
+   ],
+   "model": "University fees are a barrier for many capable students, and some argue that higher education should therefore be free. I largely agree, although I believe the funding model matters as much as the principle.\n\nThe strongest argument for free tuition is equality of access. When students must borrow heavily, talented candidates from low-income families are discouraged before they even apply. Countries that abolished fees, such as Germany, have seen wider participation without a collapse in standards. In addition, graduates generate tax revenue and innovation, so the state often recovers much of the cost.\n\nThis is not to say that free education is costless. Governments must fund it from general taxation, which may mean larger classes or reduced research budgets. A targeted subsidy — free for lower-income households with income-linked contributions from others — would capture most of the benefit while protecting quality.\n\nIn conclusion, I support free university education in principle, provided it is funded through a progressive and sustainable model.",
+   "checklist": [
+    "Mở bài nêu rõ mức độ đồng ý (lớn/hoàn toàn/không).",
+    "Mỗi thân bài chỉ một luận điểm chính, phát triển đủ sâu.",
+    "Có ví dụ cụ thể, không bịa số liệu.",
+    "Có câu nhượng bộ thể hiện tư duy cân bằng.",
+    "Kết luận không đưa luận điểm mới."
+   ]
+  },
+  {
+   "id": "w-t2-online-learning",
+   "task": 2,
+   "skill": "writing",
+   "minutes": 40,
+   "minWords": 250,
+   "title": "Task 2 – Thảo luận: học trực tuyến và học trên lớp",
+   "prompt": "Some people think online learning is as effective as classroom learning. Others believe face-to-face teaching cannot be replaced. Discuss both views and give your own opinion.",
+   "outline": [
+    "Mở bài: nêu hai quan điểm + quan điểm cá nhân.",
+    "Thân bài 1: vì sao học trực tuyến hiệu quả (linh hoạt, học lại, cá nhân hoá).",
+    "Thân bài 2: vì sao lớp học trực tiếp khó thay thế (tương tác, kỷ luật, kỹ năng xã hội).",
+    "Kết luận: mô hình kết hợp là thực tế nhất."
+   ],
+   "phrases": [
+    "proponents argue that",
+    "critics point out that",
+    "in my view",
+    "a blended model",
+    "social accountability"
+   ],
+   "model": "The growth of online courses has prompted a debate about whether screens can replace classrooms. While online learning offers real advantages, I believe face-to-face teaching remains essential for most learners.\n\nProponents of online study emphasise flexibility. Recorded lessons can be replayed, and adaptive platforms allow students to spend more time on weak areas. For adults balancing work and family, this removes a major obstacle.\n\nCritics, however, point out that learning is social. A classroom creates accountability: students turn up, participate and receive immediate feedback from a teacher who can read confusion in real time. Group work also develops the speaking and negotiation skills that online discussion boards rarely provide.\n\nIn my view, the evidence favours a blended model rather than a complete replacement. Online tools are excellent for practice, revision and access, while classroom time is best used for interaction and feedback.\n\nIn conclusion, although online learning can be highly effective, it works best when combined with face-to-face teaching rather than substituted for it.",
+   "checklist": [
+    "Thảo luận công bằng cả hai quan điểm.",
+    "Quan điểm cá nhân xuất hiện ở mở bài và kết luận.",
+    "Có ít nhất 2 từ nối thể hiện tương phản.",
+    "Không dùng trải nghiệm cá nhân làm bằng chứng duy nhất.",
+    "Đoạn văn không quá 4 câu mỗi ý để tránh lan man."
+   ]
+  },
+  {
+   "id": "w-t2-congestion",
+   "task": 2,
+   "skill": "writing",
+   "minutes": 40,
+   "minWords": 250,
+   "title": "Task 2 – Vấn đề & giải pháp: ùn tắc đô thị",
+   "prompt": "Traffic congestion has become a serious problem in many cities. What are the main causes of this problem and what measures could be taken to solve it?",
+   "outline": [
+    "Mở bài: nêu vấn đề và hướng trình bày (nguyên nhân → giải pháp).",
+    "Thân bài 1: nguyên nhân — dân số đô thị tăng, phụ thuộc xe cá nhân, quy hoạch kém.",
+    "Thân bài 2: giải pháp — giao thông công cộng, phí ùn tắc, làm việc từ xa, quy hoạch nén.",
+    "Kết luận: giải pháp hiệu quả nhất thường là kết hợp nhiều biện pháp."
+   ],
+   "phrases": [
+    "a major contributor",
+    "congestion charging",
+    "invest in",
+    "shift demand",
+    "long-term planning"
+   ],
+   "model": "Congestion is one of the most visible costs of urban growth, wasting both time and fuel. This essay outlines its main causes before suggesting practical remedies.\n\nThe first cause is the sheer volume of private vehicles. As incomes rise, car ownership grows faster than road capacity. A second cause is poor urban planning: when housing, workplaces and schools are far apart, every trip requires a car. Finally, cheap and unreliable public transport pushes commuters back into their vehicles.\n\nThe most effective remedies combine pricing and provision. Congestion charging in central zones, as in London and Stockholm, reduces peak demand and funds public transport. Investment in reliable buses and rail gives commuters a genuine alternative, while flexible working arrangements remove some trips altogether. In the longer term, compact urban design — mixed-use neighbourhoods within walking distance — reduces the need to travel.\n\nIn conclusion, congestion cannot be solved by widening roads alone. A combination of pricing, public transport investment and better planning is required, and cities that act early see the greatest benefit.",
+   "checklist": [
+    "Trả lời đúng cả hai phần: nguyên nhân và giải pháp.",
+    "Mỗi nguyên nhân có giải pháp tương ứng.",
+    "Có ví dụ thành phố cụ thể.",
+    "Không biến bài thành danh sách gạch đầu dòng.",
+    "Kết luận ngắn, khẳng định lại hướng giải quyết."
+   ]
+  },
+  {
+   "id": "w-t2-ai-education",
+   "task": 2,
+   "skill": "writing",
+   "minutes": 40,
+   "minWords": 250,
+   "title": "Task 2 – Lợi ích & hạn chế: AI trong giáo dục",
+   "prompt": "Artificial intelligence is increasingly used in education. Do the advantages of this development outweigh the disadvantages?",
+   "outline": [
+    "Mở bài: paraphrase + nêu câu trả lời (lợi ích nhiều hơn, có điều kiện).",
+    "Thân bài 1: lợi ích — cá nhân hoá, phản hồi tức thì, giảm gánh nặng hành chính.",
+    "Thân bài 2: hạn chế — phụ thuộc, sai lệch, quyền riêng tư, giảm tương tác người–người.",
+    "Kết luận: lợi ích lớn hơn nếu có quy định và giáo viên giữ vai trò chủ đạo."
+   ],
+   "phrases": [
+    "outweigh",
+    "personalised feedback",
+    "over-reliance",
+    "data privacy",
+    "human oversight"
+   ],
+   "model": "AI tools are now embedded in tutoring apps, marking software and lesson planning. In my view, their advantages outweigh the drawbacks, provided that teachers remain in control.\n\nThe benefits are substantial. Adaptive systems identify exactly which items a learner has forgotten and schedule practice accordingly, something a teacher with thirty students cannot do manually. Automated feedback also frees teachers from routine marking, giving them more time for discussion and support.\n\nNevertheless, there are genuine risks. Students may become over-reliant on instant answers instead of developing reasoning. AI systems can reproduce biases in their training data, and they require large amounts of personal data. There is also a risk that schools use automation to cut costs rather than to improve teaching.\n\nThese problems are serious but manageable. Clear rules on data use, transparency about how marks are generated, and a requirement that teachers review automated decisions would limit the damage.\n\nIn conclusion, the advantages of AI in education clearly outweigh the disadvantages when it is used as a tool for teachers and learners rather than a replacement for either.",
+   "checklist": [
+    "Nêu rõ “outweigh” hay không ngay từ mở bài.",
+    "Thân bài 1 và 2 cân bằng độ dài.",
+    "Có đề xuất giảm thiểu hạn chế.",
+    "Dùng hedging (may, can, tend to) thay vì tuyệt đối hoá.",
+    "Không sa vào mô tả kỹ thuật AI."
+   ]
+  }
+ ],
+ "speaking": [
+  {
+   "id": "s-skill",
+   "part": 2,
+   "topic": "Kỹ năng",
+   "title": "Describe a skill you learned that was difficult at first",
+   "cue": [
+    "what the skill is",
+    "when and how you learned it",
+    "why it was difficult at the beginning",
+    "how you feel about it now"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "I'd like to talk about learning to touch-type, which I started about three years ago. At first it felt almost impossible because I was used to looking at the keyboard. I downloaded a free trainer and practised for ten minutes a day, which sounds small but was surprisingly hard to keep up. The turning point was around week three, when my fingers suddenly found the right keys without me thinking. Looking back, the difficulty was mostly impatience — I expected fast results. Now I type much faster and, more importantly, I can think about what I'm writing instead of hunting for letters.",
+   "tips": [
+    "Dùng thì quá khứ cho phần trải nghiệm, hiện tại cho cảm nhận bây giờ.",
+    "Thêm một chi tiết cụ thể (10 phút/ngày) để câu trả lời dài tự nhiên.",
+    "Kết bằng cảm nhận hoặc bài học, đừng dừng đột ngột."
+   ]
+  },
+  {
+   "id": "s-place",
+   "part": 2,
+   "topic": "Địa điểm",
+   "title": "Describe a place you like to spend time in",
+   "cue": [
+    "where it is",
+    "how often you go there",
+    "what you do there",
+    "why you like it"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "The place I'd like to describe is a small public library about ten minutes from my flat. I go there most weekends, usually on Saturday mornings when it's quiet. I normally sit by the window, work on my writing for an hour and then borrow a book. What I like most is the atmosphere: nobody rushes you, and the staff know regular visitors by name. It's also free, which matters because cafés in my area are expensive. I suppose it gives me a sense of routine — a calm start to the weekend that I've come to rely on.",
+   "tips": [
+    "Dùng mệnh đề quan hệ: a library which/where…",
+    "So sánh với nơi khác để làm nổi bật lý do bạn thích.",
+    "Nêu cảm xúc, không chỉ miêu tả."
+   ]
+  },
+  {
+   "id": "s-person",
+   "part": 2,
+   "topic": "Người",
+   "title": "Describe a person who has influenced you",
+   "cue": [
+    "who the person is",
+    "how you know them",
+    "what they did that influenced you",
+    "how you are different because of them"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "The person I'd like to talk about is my first English teacher, Ms Hoa. I met her when I was about fifteen, at a small evening class. What impressed me was that she never pretended the subject was easy. Instead, she showed us exactly what we were doing wrong and how to fix it, one small step at a time. She also insisted that we speak from the first lesson, even with terrible pronunciation. Because of her, I stopped being afraid of making mistakes, which is probably the single biggest change in how I learn. I still hear her voice when I catch myself avoiding a difficult sentence.",
+   "tips": [
+    "Dùng tính từ mô tả tính cách thay vì chỉ kể sự việc.",
+    "Có ít nhất một câu so sánh trước/sau.",
+    "Kết thúc bằng ảnh hưởng dài hạn."
+   ]
+  },
+  {
+   "id": "s-decision",
+   "part": 2,
+   "topic": "Quyết định",
+   "title": "Describe an important decision you made",
+   "cue": [
+    "what the decision was",
+    "when you made it",
+    "what alternatives you considered",
+    "why you chose what you did"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "An important decision I made was to change my university major from economics to applied linguistics. I decided this in my second year, after a term in which I realised I was only studying for exams, not out of interest. The alternative was to stay and finish a degree I could already see myself abandoning later. I chose linguistics because I wanted work that involved language every day, and a few teachers encouraged me. It was risky — I had to catch up on a year of modules — but it turned out to be the right call. I've never regretted it.",
+   "tips": [
+    "Nêu rõ các lựa chọn đã cân nhắc, đừng chỉ kể kết quả.",
+    "Dùng câu điều kiện giả định: If I had stayed…",
+    "Đưa ra lý do, không chỉ cảm xúc."
+   ]
+  },
+  {
+   "id": "s-tech",
+   "part": 2,
+   "topic": "Công nghệ",
+   "title": "Describe a piece of technology you find useful",
+   "cue": [
+    "what it is",
+    "how long you have used it",
+    "how you use it every day",
+    "why it is useful to you"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "The piece of technology I'd like to describe is my noise-cancelling headphones. I've had them for about two years, and I use them almost every day, mainly when I study or commute. What makes them useful is not the sound quality but the silence: on a crowded bus they turn a noisy forty minutes into a study session. I also use them for listening practice, because the audio is clear enough to hear individual sounds in fast speech. If I lost them, I'd probably buy the same pair immediately, which says a lot about how much I depend on them.",
+   "tips": [
+    "Tránh liệt kê thông số kỹ thuật; tập trung vào lợi ích.",
+    "Dùng câu điều kiện để thể hiện tầm quan trọng.",
+    "Nêu thói quen cụ thể (trên xe buýt, khi học)."
+   ]
+  },
+  {
+   "id": "s-trip",
+   "part": 2,
+   "topic": "Chuyến đi",
+   "title": "Describe a trip you remember well",
+   "cue": [
+    "where you went",
+    "who you went with",
+    "what you did there",
+    "why you remember it"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "I'd like to talk about a trip to Da Lat that I took with two close friends about four years ago. We went for four days, mainly to escape the heat in the city. We rented bicycles, got hopelessly lost on the second day and ended up at a small coffee farm where the owner showed us how beans are dried. It wasn't a famous attraction, but it was the best part of the trip. I remember it so clearly because nothing went exactly to plan, and we laughed about it for weeks afterwards. Looking back, the unplanned moments are what I actually remember.",
+   "tips": [
+    "Dùng thì quá khứ đơn + quá khứ tiếp diễn cho bối cảnh.",
+    "Có một chi tiết bất ngờ, hài hước.",
+    "Kết bằng lý do vì sao bạn nhớ."
+   ]
+  },
+  {
+   "id": "s-habit",
+   "part": 2,
+   "topic": "Thói quen",
+   "title": "Describe a habit you changed",
+   "cue": [
+    "what the old habit was",
+    "why you decided to change it",
+    "how you changed it",
+    "what happened as a result"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "A habit I managed to change was checking my phone first thing in the morning. For years I'd wake up and immediately read messages, which left me anxious before I'd even got out of bed. I decided to change it after reading that the first hour shapes the rest of the day. My approach was simple: I charged the phone in the kitchen instead of beside the bed, so I had to walk to reach it. The first week felt strange, but after a month I noticed I was calmer and more focused in the morning. It's a small change, but it made a real difference.",
+   "tips": [
+    "Nêu rõ cách làm, không chỉ nói “tôi đã thay đổi”.",
+    "Dùng dấu hiệu trình tự: first, after a month, eventually.",
+    "Nêu kết quả cụ thể, có thể so sánh trước/sau."
+   ]
+  },
+  {
+   "id": "s-media",
+   "part": 2,
+   "topic": "Phim/Sách",
+   "title": "Describe a film or book that made you think",
+   "cue": [
+    "what it was",
+    "when you watched or read it",
+    "what it was about",
+    "why it made you think"
+   ],
+   "prep": 60,
+   "speak": 120,
+   "sample": "The book I'd like to describe is 'Thinking, Fast and Slow' by Daniel Kahneman, which I read about three years ago. It's about the two systems the mind uses: one fast and intuitive, one slow and deliberate. What made me think was how often my confident judgements turned out to be biased. I remember reading a chapter on how framing changes decisions, and realising I did exactly that when choosing between phone plans. It didn't make me a better decision-maker overnight, but it gave me a habit of asking, 'How else could this be framed?' That question has been surprisingly useful.",
+   "tips": [
+    "Tóm tắt nội dung ngắn, tập trung vào tác động.",
+    "Có một ví dụ cá nhân gắn với tác phẩm.",
+    "Dùng câu phức (which, that) để tăng điểm ngữ pháp."
+   ]
+  }
+ ]
+}

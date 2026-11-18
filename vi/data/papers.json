@@ -1,0 +1,637 @@
+{
+ "version": 1,
+ "updated": "2026-11-18",
+ "note": "Mọi trích dẫn đều có liên kết Google Scholar để tự kiểm chứng. DOI chỉ ghi khi có DOI chính thức.",
+ "papers": [
+  {
+   "id": "cepeda2006",
+   "authors": "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D.",
+   "year": 2006,
+   "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+   "venue": "Psychological Bulletin, 132(3), 354–380",
+   "doi": "10.1037/0033-2909.132.3.354",
+   "tags": [
+    "phuong-phap",
+    "tu-vung"
+   ],
+   "findingVi": "Tổng hợp 254 nghiên cứu cho thấy chia nhỏ thời gian ôn tập (spacing) giúp nhớ tốt hơn học dồn, với mức lợi ích lớn nhất khi khoảng cách ôn tăng dần.",
+   "applyVi": "Lịch ôn thẻ 1 → 3 → 7 ngày và nhắc học mỗi ngày đều dựa trên nguyên tắc này.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "roediger2006",
+   "authors": "Roediger, H. L., & Karpicke, J. D.",
+   "year": 2006,
+   "title": "Test-enhanced learning: Taking memory tests improves long-term retention",
+   "venue": "Psychological Science, 17(3), 249–255",
+   "doi": "10.1111/j.1467-9280.2006.01693.x",
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Sinh viên được kiểm tra sau khi đọc nhớ nhiều hơn sau một tuần so với sinh viên chỉ đọc lại, dù nhóm đọc lại tự tin hơn ngay sau buổi học.",
+   "applyVi": "Mỗi bài học là một chuỗi câu hỏi tự kiểm tra thay vì màn hình đọc lại kiến thức.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "karpicke2008",
+   "authors": "Karpicke, J. D., & Roediger, H. L.",
+   "year": 2008,
+   "title": "The critical importance of retrieval for learning",
+   "venue": "Science, 319(5865), 966–968",
+   "doi": "10.1126/science.1152408",
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Việc tự truy hồi thông tin từ trí nhớ (retrieval) là yếu tố quyết định ghi nhớ dài hạn; đọc lại nhiều lần không thay thế được.",
+   "applyVi": "Bài tập nghe chép và xếp câu buộc người học truy hồi chủ động thay vì nhận diện thụ động.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "listening-so-lieu"
+   ]
+  },
+  {
+   "id": "dunlosky2013",
+   "authors": "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T.",
+   "year": 2013,
+   "title": "Improving students' learning with effective learning techniques",
+   "venue": "Psychological Science in the Public Interest, 14(1), 4–58",
+   "doi": "10.1177/1529100612453266",
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Đánh giá 10 kỹ thuật học phổ biến: luyện tập ngắt quãng và tự kiểm tra có hiệu quả cao; tô sáng và đọc lại có hiệu quả thấp.",
+   "applyVi": "Ứng dụng không có tính năng tô sáng; thay vào đó là bài tập và lịch ôn.",
+   "docs": [
+    "cam-nang-30-ngay"
+   ]
+  },
+  {
+   "id": "ericsson1993",
+   "authors": "Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C.",
+   "year": 1993,
+   "title": "The role of deliberate practice in the acquisition of expert performance",
+   "venue": "Psychological Review, 100(3), 363–406",
+   "doi": "10.1037/0033-295X.100.3.363",
+   "tags": [
+    "phuong-phap",
+    "dong-luc"
+   ],
+   "findingVi": "Khác biệt về thành tích chuyên môn gắn với luyện tập có chủ đích — có mục tiêu rõ, phản hồi tức thì, độ khó tăng dần — chứ không chỉ với số giờ luyện.",
+   "applyVi": "Mỗi bài học có mục tiêu cụ thể, chấm ngay và mở khoá dần theo tiến độ.",
+   "docs": [
+    "cam-nang-30-ngay"
+   ]
+  },
+  {
+   "id": "mueller2014",
+   "authors": "Mueller, P. A., & Oppenheimer, D. M.",
+   "year": 2014,
+   "title": "The pen is mightier than the keyboard: Advantages of longhand over laptop note taking",
+   "venue": "Psychological Science, 25(6), 1159–1168",
+   "doi": "10.1177/0956797614524581",
+   "tags": [
+    "phuong-phap",
+    "viet"
+   ],
+   "findingVi": "Ghi chú bằng tay giúp hiểu khái niệm tốt hơn ghi bằng laptop, vì người viết buộc phải chọn lọc và diễn đạt lại ý.",
+   "applyVi": "Gợi ý trong trang tổng kết bài: viết lại một câu bạn vừa học vào sổ tay.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "writing-task-2"
+   ]
+  },
+  {
+   "id": "nation2006",
+   "authors": "Nation, I. S. P.",
+   "year": 2006,
+   "title": "How large a vocabulary is needed for reading and listening?",
+   "venue": "Canadian Modern Language Review, 63(1), 59–82",
+   "doi": "10.3138/cmlr.63.1.59",
+   "tags": [
+    "tu-vung",
+    "doc"
+   ],
+   "findingVi": "Cần khoảng 8.000–9.000 họ từ để đọc hiểu văn bản viết và 6.000–7.000 để nghe hiểu hội thoại với độ phủ từ vựng cần thiết.",
+   "applyVi": "Kho từ vựng trong ứng dụng chia theo tần suất, ưu tiên nhóm từ học thuật và chủ đề IELTS.",
+   "docs": [
+    "tu-vung-hoc-thuat",
+    "chien-luoc-reading"
+   ]
+  },
+  {
+   "id": "laufer2001",
+   "authors": "Laufer, B., & Hulstijn, J.",
+   "year": 2001,
+   "title": "Incidental vocabulary acquisition in a second language: The construct of task-induced involvement",
+   "venue": "Applied Linguistics, 22(1), 1–26",
+   "doi": "10.1093/applin/22.1.1",
+   "tags": [
+    "tu-vung"
+   ],
+   "findingVi": "Từ vựng được nhớ tốt hơn khi nhiệm vụ đòi hỏi mức độ “dấn thân” cao: cần dùng từ, cần tra cứu, cần ra quyết định về từ.",
+   "applyVi": "Thẻ từ vựng yêu cầu tự đánh giá mức nhớ và dùng từ trong câu ví dụ thay vì chỉ xem nghĩa.",
+   "docs": [
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "webb2007",
+   "authors": "Webb, S.",
+   "year": 2007,
+   "title": "The effects of repetition on vocabulary knowledge",
+   "venue": "Applied Linguistics, 28(1), 46–65",
+   "doi": "10.1093/applin/aml048",
+   "tags": [
+    "tu-vung"
+   ],
+   "findingVi": "Mỗi lần gặp lại từ trong ngữ cảnh mới giúp tăng thêm một phần kiến thức về từ (nghĩa, kết hợp, ngữ pháp), không chỉ số lần lặp.",
+   "applyVi": "Mỗi từ có câu ví dụ riêng và cụm kết hợp, không lặp lại cùng một câu.",
+   "docs": [
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "coxhead2000",
+   "authors": "Coxhead, A.",
+   "year": 2000,
+   "title": "A new academic word list",
+   "venue": "TESOL Quarterly, 34(2), 213–238",
+   "doi": "10.2307/3587951",
+   "tags": [
+    "tu-vung",
+    "doc"
+   ],
+   "findingVi": "Danh sách 570 họ từ học thuật (AWL) bao phủ khoảng 10% văn bản học thuật, bổ sung cho 2.000 từ tần suất cao nhất.",
+   "applyVi": "Chương 7 của lộ trình dạy trực tiếp các từ AWL xuất hiện nhiều trong đề IELTS.",
+   "docs": [
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "schmitt2001",
+   "authors": "Schmitt, N., Schmitt, D., & Clapham, C.",
+   "year": 2001,
+   "title": "Developing and exploring the behaviour of two new versions of the Vocabulary Levels Test",
+   "venue": "Language Testing, 18(1), 55–88",
+   "doi": "10.1177/026553220101800103",
+   "tags": [
+    "tu-vung",
+    "danh-gia"
+   ],
+   "findingVi": "Bài kiểm tra cỡ từ vựng theo cấp tần suất cho phép ước lượng vốn từ của người học một cách nhanh và có cơ sở.",
+   "applyVi": "Trang Tiến độ ước lượng số từ đã thuộc dựa trên số thẻ đã ôn và độ chính xác.",
+   "docs": [
+    "tu-vung-hoc-thuat",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "beglar2010",
+   "authors": "Beglar, D.",
+   "year": 2010,
+   "title": "A Rasch-based validation of the Vocabulary Size Test",
+   "venue": "Language Testing, 27(1), 101–118",
+   "doi": "10.1177/0265532209340194",
+   "tags": [
+    "tu-vung",
+    "danh-gia"
+   ],
+   "findingVi": "Vocabulary Size Test có độ tin cậy tốt để ước lượng cỡ từ vựng tổng quát, nhưng không thay thế đánh giá kỹ năng sử dụng từ.",
+   "applyVi": "Ứng dụng chỉ báo “từ đã thuộc” như một chỉ dấu tương đối, không coi là điểm năng lực.",
+   "docs": [
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "nation2013",
+   "authors": "Nation, I. S. P.",
+   "year": 2013,
+   "title": "Learning Vocabulary in Another Language (2nd ed.)",
+   "venue": "Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "tu-vung",
+    "phuong-phap"
+   ],
+   "findingVi": "Học từ hiệu quả cần cân bằng giữa học trực tiếp có chủ đích và gặp lại từ trong ngữ cảnh đọc/nghe phong phú.",
+   "applyVi": "Lộ trình kết hợp bài học từ vựng trực tiếp với bài đọc và bài nghe có chứa các từ đó.",
+   "docs": [
+    "tu-vung-hoc-thuat",
+    "chien-luoc-reading"
+   ]
+  },
+  {
+   "id": "wray2002",
+   "authors": "Wray, A.",
+   "year": 2002,
+   "title": "Formulaic Language and the Lexicon",
+   "venue": "Cambridge University Press",
+   "doi": "10.1017/CBO9780511519772",
+   "tags": [
+    "tu-vung",
+    "noi"
+   ],
+   "findingVi": "Phần lớn ngôn ngữ tự nhiên là các cụm công thức học sẵn, giúp người nói tiết kiệm thời gian xử lý và nghe tự nhiên hơn.",
+   "applyVi": "Mỗi từ vựng đi kèm 2–3 cụm kết hợp (collocation) để học theo khối, không học từ rời.",
+   "docs": [
+    "tu-vung-hoc-thuat",
+    "speaking-part-2"
+   ]
+  },
+  {
+   "id": "boers2009",
+   "authors": "Boers, F., & Lindstromberg, S.",
+   "year": 2009,
+   "title": "Optimizing a Lexical Approach to Instructed Second Language Acquisition",
+   "venue": "Palgrave Macmillan",
+   "doi": null,
+   "tags": [
+    "tu-vung",
+    "phuong-phap"
+   ],
+   "findingVi": "Dạy cụm từ theo nhóm nghĩa và kèm giải thích lý do dùng giúp người học nhớ và dùng lại tốt hơn dạy danh sách rời.",
+   "applyVi": "Các cụm từ trong bài viết được nhóm theo chức năng (mở bài, so sánh, kết luận).",
+   "docs": [
+    "writing-task-2",
+    "tu-vung-hoc-thuat"
+   ]
+  },
+  {
+   "id": "hamari2014",
+   "authors": "Hamari, J., Koivisto, J., & Sarsa, H.",
+   "year": 2014,
+   "title": "Does gamification work? A literature review of empirical studies on gamification",
+   "venue": "Proceedings of the 47th Hawaii International Conference on System Sciences",
+   "doi": "10.1109/HICSS.2014.377",
+   "tags": [
+    "dong-luc"
+   ],
+   "findingVi": "Tổng quan 24 nghiên cứu: gamification có tác động tích cực nhưng hiệu ứng phụ thuộc bối cảnh và cách thiết kế, không phải bùa chú.",
+   "applyVi": "Điểm XP, chuỗi ngày, huy hiệu được thiết kế để phản hồi tiến bộ thật, không thay thế nội dung học.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "sailer2017",
+   "authors": "Sailer, M., Hense, J. U., Mayr, S. K., & Mandl, H.",
+   "year": 2017,
+   "title": "How gamification motivates: An experimental study of the effects of specific game design elements on psychological need satisfaction",
+   "venue": "Computers in Human Behavior, 69, 371–380",
+   "doi": "10.1016/j.chb.2016.12.033",
+   "tags": [
+    "dong-luc"
+   ],
+   "findingVi": "Các yếu tố trò chơi tác động tới động lực thông qua ba nhu cầu: năng lực, tự chủ và kết nối; huy hiệu chỉ hiệu quả khi gắn với thành tích thật.",
+   "applyVi": "Huy hiệu chỉ mở khi đạt mốc thật (chuỗi 7 ngày, 5 bài hoàn hảo), không trao ngẫu nhiên.",
+   "docs": [
+    "hieu-band-descriptors",
+    "cam-nang-30-ngay"
+   ]
+  },
+  {
+   "id": "detering2011",
+   "authors": "Deterding, S., Dixon, D., Khaled, R., & Nacke, L.",
+   "year": 2011,
+   "title": "From game design elements to gamefulness: Defining gamification",
+   "venue": "Proceedings of MindTrek 2011",
+   "doi": "10.1145/2181037.2181040",
+   "tags": [
+    "dong-luc"
+   ],
+   "findingVi": "Bài định nghĩa nền tảng: gamification là dùng các yếu tố thiết kế trò chơi trong bối cảnh phi trò chơi, cần tránh biến việc học thành cuộc đua điểm rỗng.",
+   "applyVi": "Bảng hạng có ghi chú rõ đối thủ là dữ liệu mô phỏng, tránh tạo so sánh xã hội độc hại.",
+   "docs": [
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "ryan2000",
+   "authors": "Ryan, R. M., & Deci, E. L.",
+   "year": 2000,
+   "title": "Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being",
+   "venue": "American Psychologist, 55(1), 68–78",
+   "doi": "10.1037/0003-066X.55.1.68",
+   "tags": [
+    "dong-luc"
+   ],
+   "findingVi": "Động lực bền vững đến từ cảm giác tự chủ, năng lực và kết nối; phần thưởng bên ngoài có thể làm giảm động lực bên trong nếu lấn át.",
+   "applyVi": "Người học tự chọn mục tiêu XP mỗi ngày (20–100) thay vì bị áp một mức cố định.",
+   "docs": [
+    "hieu-band-descriptors",
+    "cam-nang-30-ngay"
+   ]
+  },
+  {
+   "id": "deci1999",
+   "authors": "Deci, E. L., Koestner, R., & Ryan, R. M.",
+   "year": 1999,
+   "title": "A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation",
+   "venue": "Psychological Bulletin, 125(6), 627–668",
+   "doi": "10.1037/0033-2909.125.6.627",
+   "tags": [
+    "dong-luc"
+   ],
+   "findingVi": "Phần thưởng vật chất có kiểm soát có thể làm giảm động lực nội tại; phần thưởng mang tính thông tin (phản hồi về năng lực) thì không.",
+   "applyVi": "Đá quý trong ứng dụng không mua được nội dung học, chỉ dùng cho bảo hiểm chuỗi và hồi tim.",
+   "docs": [
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "lyster1997",
+   "authors": "Lyster, R., & Ranta, L.",
+   "year": 1997,
+   "title": "Corrective feedback and learner uptake: Negotiation of form in communicative classrooms",
+   "venue": "Studies in Second Language Acquisition, 19(1), 37–66",
+   "doi": "10.1017/S0272263197001034",
+   "tags": [
+    "danh-gia",
+    "noi"
+   ],
+   "findingVi": "Phản hồi sửa lỗi có kèm cơ hội sửa lại (uptake) giúp người học chú ý tới hình thức ngôn ngữ; phản hồi quá gián tiếp thường bị bỏ qua.",
+   "applyVi": "Sau mỗi câu sai, ứng dụng hiện đáp án đúng và giải thích tiếng Việt ngay lập tức.",
+   "docs": [
+    "speaking-part-2",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "bitchener2010",
+   "authors": "Bitchener, J., & Knoch, U.",
+   "year": 2010,
+   "title": "The contribution of written corrective feedback to language development: A ten month investigation",
+   "venue": "Applied Linguistics, 31(2), 193–214",
+   "doi": "10.1093/applin/amp016",
+   "tags": [
+    "viet",
+    "danh-gia"
+   ],
+   "findingVi": "Phản hồi sửa lỗi viết có chọn lọc (một vài loại lỗi) giúp cải thiện độ chính xác và duy trì sau 10 tháng.",
+   "applyVi": "Bài viết có checklist tự soát lỗi thay vì sửa mọi lỗi cùng lúc.",
+   "docs": [
+    "writing-task-2",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "truscott1996",
+   "authors": "Truscott, J.",
+   "year": 1996,
+   "title": "The case against grammar correction in L2 writing classes",
+   "venue": "Language Learning, 46(2), 327–369",
+   "doi": "10.1111/j.1467-1770.1996.tb01238.x",
+   "tags": [
+    "viet",
+    "danh-gia"
+   ],
+   "findingVi": "Lập luận gây tranh cãi rằng sửa ngữ pháp trong bài viết có thể không hiệu quả và làm giảm động lực; đến nay vẫn là điểm tranh luận.",
+   "applyVi": "Ứng dụng ưu tiên phản hồi theo tiêu chí (mạch lạc, từ vựng) hơn là liệt kê lỗi ngữ pháp.",
+   "docs": [
+    "writing-task-2"
+   ]
+  },
+  {
+   "id": "swain1995",
+   "authors": "Swain, M.",
+   "year": 1995,
+   "title": "Three functions of output in second language learning",
+   "venue": "In G. Cook & B. Seidlhofer (Eds.), Principle and Practice in Applied Linguistics (pp. 125–144). Oxford University Press",
+   "doi": null,
+   "tags": [
+    "noi",
+    "viet"
+   ],
+   "findingVi": "Việc tạo ra ngôn ngữ (nói, viết) buộc người học nhận ra lỗ hổng kiến thức và thử nghiệm cấu trúc mới — điều mà nghe/đọc thụ động không làm được.",
+   "applyVi": "Speaking Part 2 yêu cầu nói liền mạch 2 phút và tự nghe lại; Writing yêu cầu viết trước khi xem bài mẫu.",
+   "docs": [
+    "speaking-part-2",
+    "writing-task-2"
+   ]
+  },
+  {
+   "id": "long1996",
+   "authors": "Long, M. H.",
+   "year": 1996,
+   "title": "The role of the linguistic environment in second language acquisition",
+   "venue": "In W. C. Ritchie & T. K. Bhatia (Eds.), Handbook of Second Language Acquisition (pp. 413–468). Academic Press",
+   "doi": null,
+   "tags": [
+    "noi"
+   ],
+   "findingVi": "Tương tác có thương lượng nghĩa (hỏi lại, nói lại cho rõ) giúp người học tiếp nhận ngôn ngữ dễ hiểu và tiến bộ hơn chỉ nghe một chiều.",
+   "applyVi": "Bài học có phản hồi tức thì và gợi ý, mô phỏng vòng tương tác thay vì bài giảng một chiều.",
+   "docs": [
+    "speaking-part-2"
+   ]
+  },
+  {
+   "id": "schmidt1990",
+   "authors": "Schmidt, R. W.",
+   "year": 1990,
+   "title": "The role of consciousness in second language learning",
+   "venue": "Applied Linguistics, 11(2), 129–158",
+   "doi": "10.1093/applin/11.2.129",
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Người học khó tiếp thu cấu trúc mà họ không chú ý tới; “noticing” là điều kiện cần để biến đầu vào thành kiến thức.",
+   "applyVi": "Mỗi câu hỏi đều có giải thích tiếng Việt nêu rõ điểm ngôn ngữ cần chú ý.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "chien-luoc-reading"
+   ]
+  },
+  {
+   "id": "field2008",
+   "authors": "Field, J.",
+   "year": 2008,
+   "title": "Listening in the Language Classroom",
+   "venue": "Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "nghe"
+   ],
+   "findingVi": "Nghe hiểu là kỹ năng chủ động gồm nhiều tiểu kỹ năng; luyện nghe chép chính tả giúp nhận diện âm, trọng âm và nối âm.",
+   "applyVi": "Chế độ Nghe chép yêu cầu viết lại đúng từ nghe được, có nút nghe chậm.",
+   "docs": [
+    "listening-so-lieu"
+   ]
+  },
+  {
+   "id": "vandergrift2012",
+   "authors": "Vandergrift, L., & Goh, C. C. M.",
+   "year": 2012,
+   "title": "Teaching and Learning Second Language Listening: Metacognition in Action",
+   "venue": "Routledge",
+   "doi": null,
+   "tags": [
+    "nghe"
+   ],
+   "findingVi": "Người nghe giỏi dùng chiến lược siêu nhận thức: dự đoán, kiểm tra, điều chỉnh khi nghe. Dạy các chiến lược này cải thiện kết quả.",
+   "applyVi": "Bài nghe có hướng dẫn “nghe lần hai để kiểm tra số ít/số nhiều”, rèn thói quen tự kiểm tra.",
+   "docs": [
+    "listening-so-lieu"
+   ]
+  },
+  {
+   "id": "khalifa2009",
+   "authors": "Khalifa, H., & Weir, C. J.",
+   "year": 2009,
+   "title": "Examining Reading: Research and practice in assessing second language reading",
+   "venue": "Studies in Language Testing 29. Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "doc",
+    "danh-gia"
+   ],
+   "findingVi": "Mô hình đọc trong bài thi gồm nhiều mức xử lý từ nhận diện từ tới suy luận; câu hỏi IELTS được thiết kế để đo các mức này.",
+   "applyVi": "Lộ trình Reading tách riêng kỹ năng định vị thông tin (scanning) và suy luận (inference).",
+   "docs": [
+    "chien-luoc-reading",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "weir2009",
+   "authors": "Weir, C. J., Hawkey, R., Green, A., & Devi, S.",
+   "year": 2009,
+   "title": "The cognitive processes underlying the academic reading construct as measured by IELTS",
+   "venue": "IELTS Research Reports, 9",
+   "doi": null,
+   "tags": [
+    "doc"
+   ],
+   "findingVi": "Nghiên cứu chứng minh bài đọc IELTS huy động đồng thời kỹ năng đọc lướt, đọc quét và suy luận — không chỉ hiểu nghĩa từ.",
+   "applyVi": "Bài học Reading luyện xen kẽ skimming, scanning và câu hỏi suy luận.",
+   "docs": [
+    "chien-luoc-reading"
+   ]
+  },
+  {
+   "id": "hyland2004",
+   "authors": "Hyland, K.",
+   "year": 2004,
+   "title": "Disciplinary Discourses: Social Interactions in Academic Writing",
+   "venue": "University of Michigan Press",
+   "doi": null,
+   "tags": [
+    "viet"
+   ],
+   "findingVi": "Mỗi ngành có cách lập luận và mức độ phòng ngừa khác nhau; người viết học thuật cần biết chuẩn của cộng đồng mình viết cho.",
+   "applyVi": "Chương Writing Task 2 dạy hedging (may, tend to) và nêu bằng chứng thay vì khẳng định tuyệt đối.",
+   "docs": [
+    "writing-task-2"
+   ]
+  },
+  {
+   "id": "swales1990",
+   "authors": "Swales, J. M.",
+   "year": 1990,
+   "title": "Genre Analysis: English in Academic and Research Settings",
+   "venue": "Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "viet",
+    "doc"
+   ],
+   "findingVi": "Phân tích cấu trúc thể loại cho thấy phần mở đầu học thuật thường đi theo mô hình: thiết lập bối cảnh → chỉ ra khoảng trống → nêu mục đích.",
+   "applyVi": "Dàn ý mở bài trong bài viết mẫu áp dụng mô hình này bằng tiếng Việt dễ hiểu.",
+   "docs": [
+    "writing-task-2",
+    "chien-luoc-reading"
+   ]
+  },
+  {
+   "id": "fulcher2003",
+   "authors": "Fulcher, G.",
+   "year": 2003,
+   "title": "Testing Second Language Speaking",
+   "venue": "Pearson Education",
+   "doi": null,
+   "tags": [
+    "noi",
+    "danh-gia"
+   ],
+   "findingVi": "Đánh giá nói cần tách các thành tố: độ trôi chảy, độ chính xác, ngữ pháp, từ vựng và phát âm, thay vì một điểm cảm tính.",
+   "applyVi": "Trang Luyện tập tách tiêu chí tự đánh giá sau khi nói, dựa trên bốn nhóm tiêu chí.",
+   "docs": [
+    "speaking-part-2",
+    "hieu-band-descriptors"
+   ]
+  },
+  {
+   "id": "luoma2004",
+   "authors": "Luoma, S.",
+   "year": 2004,
+   "title": "Assessing Speaking",
+   "venue": "Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "noi",
+    "danh-gia"
+   ],
+   "findingVi": "Bài nói tự nhiên có nhiều yếu tố “không hoàn hảo” (do dự, sửa lời); giám khảo đánh giá khả năng giao tiếp chứ không phải bài nói thuộc lòng.",
+   "applyVi": "Mẫu Speaking trong ứng dụng dùng ngôn ngữ nói tự nhiên, có cụm ứng cứu thay vì văn viết.",
+   "docs": [
+    "speaking-part-2"
+   ]
+  },
+  {
+   "id": "brown2011",
+   "authors": "Brown, S.",
+   "year": 2011,
+   "title": "Listening Myths: Applying Second Language Research to Classroom Teaching",
+   "venue": "University of Michigan Press",
+   "doi": null,
+   "tags": [
+    "nghe"
+   ],
+   "findingVi": "Một số niềm tin phổ biến về luyện nghe (ví dụ “phải nghe mọi từ”) không được nghiên cứu ủng hộ; người nghe hiệu quả dựa vào trọng âm và ngữ cảnh.",
+   "applyVi": "Bài nghe chép tập trung vào từ khoá và trọng âm thay vì yêu cầu hiểu từng từ.",
+   "docs": [
+    "listening-so-lieu"
+   ]
+  },
+  {
+   "id": "ellis2003",
+   "authors": "Ellis, R.",
+   "year": 2003,
+   "title": "Task-based Language Learning and Teaching",
+   "venue": "Oxford University Press",
+   "doi": null,
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Học theo nhiệm vụ đặt ngôn ngữ vào mục đích giao tiếp thật, giúp người học chú ý hình thức khi cần hoàn thành nhiệm vụ.",
+   "applyVi": "Mỗi bài học là một chuỗi nhiệm vụ nhỏ có mục tiêu rõ, không phải bài giảng lý thuyết.",
+   "docs": [
+    "cam-nang-30-ngay"
+   ]
+  },
+  {
+   "id": "dekeyser2007",
+   "authors": "DeKeyser, R. (Ed.)",
+   "year": 2007,
+   "title": "Practice in a Second Language: Perspectives from Applied Linguistics and Cognitive Psychology",
+   "venue": "Cambridge University Press",
+   "doi": null,
+   "tags": [
+    "phuong-phap"
+   ],
+   "findingVi": "Luyện tập có hướng dẫn và phân bố hợp lý giúp tự động hoá kỹ năng; luyện quá ít hoặc quá dồn đều kém hiệu quả.",
+   "applyVi": "Mục tiêu 20–100 XP/ngày khuyến khích luyện đều thay vì học dồn cuối tuần.",
+   "docs": [
+    "cam-nang-30-ngay",
+    "hieu-band-descriptors"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+{
+ "id": "tu-vung-awl",
+ "lessons": [
+  {
+   "id": "voc-7-1",
+   "title": "Động từ học thuật",
+   "goal": "analyse, demonstrate, indicate, confirm",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "voc-7-1-q1",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn nghĩa đúng",
+     "stem": "“Demonstrate” trong ngữ cảnh nghiên cứu nghĩa là gì?",
+     "options": [
+      "Chứng minh, cho thấy",
+      "Phản đối",
+      "Đo lường",
+      "Sao chép"
+     ],
+     "answer": 0,
+     "explain": "Demonstrate = chứng minh/cho thấy rõ. Đồng nghĩa học thuật: show, indicate, reveal, illustrate.",
+     "tip": "Trong Writing Task 1, “The chart demonstrates…” là cách paraphrase tốt cho “shows”."
+    },
+    {
+     "id": "voc-7-1-q2",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The study ___ that sleep improves memory.",
+     "answer": "demonstrates",
+     "explain": "Chủ ngữ số ít “the study” → động từ thêm -s ở hiện tại đơn. Đây là mẫu câu nêu phát hiện nghiên cứu.",
+     "accept": [
+      "shows",
+      "indicates",
+      "suggests"
+     ],
+     "tip": "Phân biệt: suggest (gợi ý, thận trọng hơn) và prove (chứng minh tuyệt đối)."
+    },
+    {
+     "id": "voc-7-1-q3",
+     "type": "build",
+     "skill": "vocab",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Researchers",
+      "the",
+      "over",
+      "analysed",
+      "six",
+      "data",
+      "months"
+     ],
+     "answer": "Researchers analysed the data over six months",
+     "explain": "“Analyse the data” là collocation chuẩn. Trong tiếng Anh–Mỹ viết là “analyze”."
+    },
+    {
+     "id": "voc-7-1-q4",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn từ đúng từ loại",
+     "stem": "“Significant” là từ loại gì và nghĩa là gì?",
+     "options": [
+      "Động từ — ký tên",
+      "Tính từ — đáng kể, có ý nghĩa thống kê",
+      "Danh từ — dấu hiệu",
+      "Trạng từ — đáng kể"
+     ],
+     "answer": 1,
+     "explain": "Significant là tính từ. Danh từ là significance, động từ là signify, trạng từ là significantly.",
+     "tip": "Trong báo cáo nghiên cứu, “statistically significant” nghĩa là có ý nghĩa thống kê, không phải “quan trọng”."
+    },
+    {
+     "id": "voc-7-1-q5",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The findings ___ earlier research.",
+     "answer": "confirm",
+     "explain": "Confirm = xác nhận. Nếu kết quả ngược lại, dùng contradict hoặc challenge.",
+     "accept": [
+      "support"
+     ],
+     "tip": "Cặp đối lập: confirm/contradict, support/challenge."
+    }
+   ]
+  },
+  {
+   "id": "voc-7-2",
+   "title": "Danh từ học thuật",
+   "goal": "hypothesis, finding, evidence, framework",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "voc-7-2-q1",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn nghĩa đúng",
+     "stem": "“Hypothesis” nghĩa là gì?",
+     "options": [
+      "Kết luận cuối cùng",
+      "Giả thuyết cần kiểm chứng",
+      "Số liệu thống kê",
+      "Phương pháp nghiên cứu"
+     ],
+     "answer": 1,
+     "explain": "Hypothesis = giả thuyết, một phát biểu được đưa ra để kiểm chứng. Số nhiều là hypotheses.",
+     "tip": "Cụm hay dùng: test/formulate/support a hypothesis."
+    },
+    {
+     "id": "voc-7-2-q2",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền danh từ phù hợp",
+     "stem": "The main ___ of the study was that feedback matters.",
+     "answer": "finding",
+     "explain": "Finding = phát hiện. Số nhiều “findings” rất hay dùng để tóm tắt kết quả nghiên cứu.",
+     "accept": [
+      "conclusion",
+      "result"
+     ],
+     "tip": "Cụm: key findings, preliminary findings, findings suggest."
+    },
+    {
+     "id": "voc-7-2-q3",
+     "type": "build",
+     "skill": "vocab",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "The",
+      "a",
+      "evidence",
+      "suggests",
+      "correlation",
+      "strong"
+     ],
+     "answer": "The evidence suggests a strong correlation",
+     "explain": "“Evidence suggests” luôn dùng động từ số ít vì evidence là danh từ không đếm được."
+    },
+    {
+     "id": "voc-7-2-q4",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn cách dùng đúng",
+     "stem": "“Framework” phù hợp nhất trong ngữ cảnh nào?",
+     "options": [
+      "Khung lý thuyết để phân tích vấn đề",
+      "Một loại thực phẩm",
+      "Cách tính điểm IELTS",
+      "Một loại xe"
+     ],
+     "answer": 0,
+     "explain": "Framework = khung/khung lý thuyết. Ví dụ: “a legal framework”, “a theoretical framework”.",
+     "tip": "Cụm: within the framework of, provide a framework for."
+    },
+    {
+     "id": "voc-7-2-q5",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền danh từ phù hợp",
+     "stem": "There is little ___ that the policy works.",
+     "answer": "evidence",
+     "explain": "“Evidence” không đếm được → dùng “little” chứ không dùng “few”. Đây là lỗi ngữ pháp phổ biến.",
+     "accept": [
+      "proof"
+     ],
+     "tip": "Danh từ không đếm được trong học thuật: evidence, research, information, knowledge, advice."
+    }
+   ]
+  },
+  {
+   "id": "voc-7-3",
+   "title": "Collocation và paraphrase",
+   "goal": "conduct research, draw a conclusion",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "voc-7-3-q1",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn collocation đúng",
+     "stem": "Cụm nào đúng?",
+     "options": [
+      "make research",
+      "conduct research",
+      "do researchs",
+      "take a research"
+     ],
+     "answer": 1,
+     "explain": "“Conduct research” là collocation chuẩn. Cũng có thể dùng “carry out research”, “do research” (thân mật hơn).",
+     "tip": "Research là danh từ không đếm được → không có “researches”."
+    },
+    {
+     "id": "voc-7-3-q2",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The researchers ___ a survey of 200 students.",
+     "answer": "conducted",
+     "explain": "“Conduct a survey” = thực hiện khảo sát. Thì quá khứ vì nghiên cứu đã hoàn thành.",
+     "accept": [
+      "carried out",
+      "ran",
+      "did"
+     ],
+     "tip": "Collocation với survey: conduct, carry out, administer."
+    },
+    {
+     "id": "voc-7-3-q3",
+     "type": "build",
+     "skill": "vocab",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "The",
+      "are",
+      "results",
+      "with",
+      "consistent",
+      "previous",
+      "studies"
+     ],
+     "answer": "The results are consistent with previous studies",
+     "explain": "“Consistent with” = nhất quán với. Cấu trúc học thuật dùng để so sánh kết quả."
+    },
+    {
+     "id": "voc-7-3-q4",
+     "type": "mcq",
+     "skill": "vocab",
+     "prompt": "Chọn collocation đúng",
+     "stem": "Cụm nào đúng?",
+     "options": [
+      "make a conclusion",
+      "draw a conclusion",
+      "do a conclusion",
+      "take conclusion"
+     ],
+     "answer": 1,
+     "explain": "“Draw a conclusion” = rút ra kết luận. Ngoài ra: reach a conclusion, come to a conclusion.",
+     "tip": "Học collocation theo cụm động từ + danh từ, đừng dịch từng từ từ tiếng Việt."
+    },
+    {
+     "id": "voc-7-3-q5",
+     "type": "gap",
+     "skill": "vocab",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "This ___ light on an important problem.",
+     "answer": "sheds",
+     "explain": "“Shed light on” = làm sáng tỏ. Động từ “shed” giữ nguyên dạng, thêm -s ở ngôi thứ ba số ít.",
+     "accept": [
+      "throws"
+     ],
+     "tip": "Cụm học thuật hay dùng: shed light on, play a role in, give rise to."
+    }
+   ]
+  }
+ ]
+}

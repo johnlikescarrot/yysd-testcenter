@@ -1,0 +1,261 @@
+{
+ "id": "viet-task-1",
+ "lessons": [
+  {
+   "id": "viet-4-1",
+   "title": "Mô tả xu hướng",
+   "goal": "Dùng đúng rise/fall/peak/plateau",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "viet-4-1-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn nghĩa đúng",
+     "stem": "Cụm “rose sharply” nghĩa là gì?",
+     "options": [
+      "Giảm nhẹ",
+      "Tăng mạnh",
+      "Không thay đổi",
+      "Tăng rồi giảm"
+     ],
+     "answer": 1,
+     "explain": "Rise = tăng, sharply = mạnh/nhanh. Trong Task 1, hãy đa dạng hoá: increased significantly, climbed steeply.",
+     "tip": "Trạng từ đi kèm là phần được chấm ở tiêu chí Lexical Resource."
+    },
+    {
+     "id": "viet-4-1-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The figure ___ from 20% to 45% between 2010 and 2020.",
+     "answer": "rose",
+     "explain": "Cần động từ chỉ tăng ở thì quá khứ, vì mốc thời gian đã kết thúc.",
+     "accept": [
+      "increased",
+      "grew",
+      "climbed"
+     ],
+     "tip": "“Rose from X to Y” là cấu trúc chuẩn; đừng viết “rose to X from Y”."
+    },
+    {
+     "id": "viet-4-1-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "There",
+      "was",
+      "a",
+      "steady",
+      "increase",
+      "in",
+      "ownership",
+      "car"
+     ],
+     "answer": "There was a steady increase in car ownership",
+     "explain": "Cấu trúc “There was a + tính từ + noun + in + đối tượng” giúp đa dạng hoá câu so với dùng động từ trực tiếp."
+    },
+    {
+     "id": "viet-4-1-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn câu đúng ngữ pháp",
+     "stem": "Câu nào mô tả sự giảm đúng nhất?",
+     "options": [
+      "Sales declined steadily to 200 units.",
+      "Sales were declined steadily.",
+      "Sales declined steady.",
+      "Sales has declined steady in 200 units."
+     ],
+     "answer": 0,
+     "explain": "Decline là nội động từ, không dùng bị động; trạng từ “steadily” bổ nghĩa cho động từ.",
+     "tip": "Các động từ giảm: fall, drop, decline, decrease, dip. Danh từ: a fall, a drop, a decline."
+    },
+    {
+     "id": "viet-4-1-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền giới từ",
+     "stem": "Sales peaked ___ 2018 before falling.",
+     "answer": "in",
+     "explain": "Trước năm dùng “in”: in 2018. Với tháng có ngày cụ thể dùng “on”; với khoảng thời gian dùng “over/during”.",
+     "tip": "Peak at + con số; peak in + năm. Đây là hai cấu trúc khác nhau."
+    }
+   ]
+  },
+  {
+   "id": "viet-4-2",
+   "title": "So sánh số liệu",
+   "goal": "Dùng twice as…as, respectively, while",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "viet-4-2-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn cách dùng đúng",
+     "stem": "Từ “respectively” dùng để làm gì?",
+     "options": [
+      "Nhấn mạnh số liệu lớn nhất",
+      "Ghép hai danh sách theo đúng thứ tự tương ứng",
+      "Chỉ ra số liệu gần đúng",
+      "So sánh hai năm"
+     ],
+     "answer": 1,
+     "explain": "“Men and women accounted for 60% and 40% respectively” = nam 60%, nữ 40% theo đúng thứ tự đã nêu.",
+     "tip": "Chỉ dùng respectively khi hai danh sách có cùng số phần tử và thứ tự rõ ràng."
+    },
+    {
+     "id": "viet-4-2-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "Twice as ___ students chose online courses as in 2019.",
+     "answer": "many",
+     "explain": "Danh từ đếm được số nhiều → “as many … as”. Với danh từ không đếm được dùng “as much … as”.",
+     "tip": "Cấu trúc: twice/three times + as + many/much + noun + as."
+    },
+    {
+     "id": "viet-4-2-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "The",
+      "of",
+      "proportion",
+      "men",
+      "was",
+      "higher",
+      "than",
+      "of",
+      "that",
+      "women"
+     ],
+     "answer": "The proportion of men was higher than that of women",
+     "explain": "“That of” thay cho “the proportion of” để tránh lặp từ — một điểm cộng về Coherence."
+    },
+    {
+     "id": "viet-4-2-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn câu so sánh đúng",
+     "stem": "Số liệu: A = 30%, B = 60%. Câu nào đúng?",
+     "options": [
+      "A was twice as high as B.",
+      "B was twice as high as A.",
+      "A was half as high as B and B was twice A.",
+      "B was two times higher than A."
+     ],
+     "answer": 1,
+     "explain": "B gấp đôi A. “Twice as high as” là cấu trúc chuẩn; “two times higher than” mang nghĩa gấp ba trong tiếng Anh học thuật.",
+     "tip": "Tránh “times higher than” vì gây tranh cãi về nghĩa; dùng “twice as high as”."
+    },
+    {
+     "id": "viet-4-2-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "While A rose, B ___.",
+     "answer": "fell",
+     "explain": "“While” nối hai xu hướng trái chiều trong cùng một câu — cấu trúc được đánh giá cao ở Task 1.",
+     "accept": [
+      "declined",
+      "dropped",
+      "decreased"
+     ],
+     "tip": "Cặp đối lập hay dùng: rose/fell, increased/decreased, doubled/halved."
+    }
+   ]
+  },
+  {
+   "id": "viet-4-3",
+   "title": "Mở bài và overview",
+   "goal": "Paraphrase đề và nêu xu hướng chung",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "viet-4-3-q1",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn nội dung đúng",
+     "stem": "Overview trong Task 1 nên chứa gì?",
+     "options": [
+      "Mọi con số cụ thể",
+      "Xu hướng hoặc đặc điểm nổi bật nhất, không nêu số liệu chi tiết",
+      "Ý kiến cá nhân về biểu đồ",
+      "Dự đoán tương lai"
+     ],
+     "answer": 1,
+     "explain": "Overview là 1–2 câu tóm tắt điều nổi bật nhất. Không đưa số liệu chi tiết, không nêu quan điểm cá nhân.",
+     "tip": "Bắt đầu bằng: Overall, In general, It is clear that…"
+    },
+    {
+     "id": "viet-4-3-q2",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền động từ phù hợp",
+     "stem": "The chart ___ the number of visitors to three museums.",
+     "answer": "shows",
+     "explain": "Động từ mô tả biểu đồ ở hiện tại đơn: shows, illustrates, compares, gives information about.",
+     "accept": [
+      "illustrates",
+      "compares",
+      "gives"
+     ],
+     "tip": "Tránh lặp “shows” nhiều lần; paraphrase ngay từ câu mở bài."
+    },
+    {
+     "id": "viet-4-3-q3",
+     "type": "build",
+     "skill": "writing",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Overall",
+      "the",
+      "figure",
+      "increased",
+      "over",
+      "period",
+      "the"
+     ],
+     "answer": "Overall the figure increased over the period",
+     "explain": "Câu overview mẫu: “Overall, + xu hướng chung”. Giữ ngắn và khái quát."
+    },
+    {
+     "id": "viet-4-3-q4",
+     "type": "mcq",
+     "skill": "writing",
+     "prompt": "Chọn câu overview tốt nhất",
+     "stem": "Biểu đồ: lượng khách của bảo tàng A tăng đều, B giảm nhẹ, C gần như không đổi.",
+     "options": [
+      "Overall, museum A rose from 20,000 to 60,000 visitors.",
+      "Overall, visitor numbers rose at museum A while museum B saw a slight decline and C remained stable.",
+      "In my opinion, museum A is the best.",
+      "The chart shows three museums in 2020."
+     ],
+     "answer": 1,
+     "explain": "Câu B tóm tắt cả ba xu hướng mà không sa vào số liệu chi tiết. Đây là dạng overview được điểm cao.",
+     "tip": "Luôn bao quát tất cả đối tượng chính trong overview."
+    },
+    {
+     "id": "viet-4-3-q5",
+     "type": "gap",
+     "skill": "writing",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "In ___, the number of cyclists doubled over ten years.",
+     "answer": "summary",
+     "explain": "“In summary” / “In conclusion” dùng để mở đầu câu tóm tắt. Trong Task 1, “Overall” tự nhiên hơn.",
+     "accept": [
+      "conclusion"
+     ],
+     "tip": "Task 1 không cần “In conclusion” nếu đã có “Overall” — tránh trùng lặp."
+    }
+   ]
+  }
+ ]
+}

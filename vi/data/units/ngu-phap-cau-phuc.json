@@ -1,0 +1,256 @@
+{
+ "id": "ngu-phap-cau-phuc",
+ "lessons": [
+  {
+   "id": "gra-8-1",
+   "title": "Mệnh đề quan hệ",
+   "goal": "who, which, where, whose, that",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "gra-8-1-q1",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn đại từ quan hệ đúng",
+     "stem": "The scientist ___ discovered the vaccine won a prize.",
+     "options": [
+      "which",
+      "who",
+      "where",
+      "whose"
+     ],
+     "answer": 1,
+     "explain": "Danh từ chỉ người (the scientist) → who. “That” cũng được trong mệnh đề xác định.",
+     "tip": "Nếu bỏ “who discovered the vaccine”, câu vẫn hiểu được → đây là mệnh đề xác định, không dùng dấu phẩy."
+    },
+    {
+     "id": "gra-8-1-q2",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền đại từ quan hệ",
+     "stem": "The book ___ I borrowed was useful.",
+     "answer": "that",
+     "explain": "Vật → which/that. Trong mệnh đề xác định, “that” thường tự nhiên hơn trong văn nói.",
+     "accept": [
+      "which"
+     ],
+     "tip": "Sau dấu phẩy không dùng “that”: The book, which I borrowed, …"
+    },
+    {
+     "id": "gra-8-1-q3",
+     "type": "build",
+     "skill": "grammar",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Students",
+      "read",
+      "who",
+      "daily",
+      "faster",
+      "make",
+      "progress"
+     ],
+     "answer": "Students who read daily make faster progress",
+     "explain": "Mệnh đề quan hệ đứng ngay sau danh từ nó bổ nghĩa. Động từ chính của câu là “make”."
+    },
+    {
+     "id": "gra-8-1-q4",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn câu đúng dấu câu",
+     "stem": "Câu nào dùng mệnh đề không xác định đúng?",
+     "options": [
+      "My brother who lives in Hue is a doctor.",
+      "My brother, who lives in Hue, is a doctor.",
+      "My brother, that lives in Hue is a doctor.",
+      "My brother who, lives in Hue, is a doctor."
+     ],
+     "answer": 1,
+     "explain": "Mệnh đề không xác định (bổ sung thông tin) cần hai dấu phẩy và không dùng “that”.",
+     "tip": "Nếu người đọc đã biết “my brother” là ai, thông tin thêm phải đặt trong dấu phẩy."
+    },
+    {
+     "id": "gra-8-1-q5",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền đại từ quan hệ",
+     "stem": "The city ___ I grew up has changed.",
+     "answer": "where",
+     "explain": "Nơi chốn → where (= in which). “The city where I grew up” là cấu trúc chuẩn.",
+     "accept": [
+      "in which"
+     ],
+     "tip": "where = nơi chốn; when = thời gian; why = lý do."
+    }
+   ]
+  },
+  {
+   "id": "gra-8-2",
+   "title": "Câu điều kiện",
+   "goal": "Loại 1, 2, 3 và unless",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "gra-8-2-q1",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn dạng đúng của câu điều kiện loại 2",
+     "stem": "Câu nào là câu điều kiện loại 2?",
+     "options": [
+      "If it rains, we will stay home.",
+      "If I had more time, I would practise speaking.",
+      "If I had known, I would have told you.",
+      "If you heat water, it boils."
+     ],
+     "answer": 1,
+     "explain": "Loại 2: If + quá khứ đơn, would + V. Diễn tả tình huống không có thật ở hiện tại.",
+     "tip": "Loại 3 dùng had + V3 ở mệnh đề if, would have + V3 ở mệnh đề chính."
+    },
+    {
+     "id": "gra-8-2-q2",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền dạng đúng của động từ",
+     "stem": "If I ___ more time, I would practise speaking.",
+     "answer": "had",
+     "explain": "Câu điều kiện loại 2 dùng quá khứ đơn cho mệnh đề if, kể cả với “I” (were cũng đúng nhưng had là động từ thường).",
+     "accept": [
+      "had had"
+     ],
+     "tip": "Với động từ “be”, dạng chuẩn học thuật là “If I were…”."
+    },
+    {
+     "id": "gra-8-2-q3",
+     "type": "build",
+     "skill": "grammar",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "If",
+      "invest",
+      "in",
+      "governments",
+      "transport",
+      "emissions",
+      "fall",
+      "will"
+     ],
+     "answer": "If governments invest in transport, emissions will fall",
+     "explain": "Điều kiện loại 1: If + hiện tại đơn, will + V. Dùng cho khả năng có thể xảy ra."
+    },
+    {
+     "id": "gra-8-2-q4",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn cách hiểu đúng",
+     "stem": "Câu điều kiện loại 3 diễn tả điều gì?",
+     "options": [
+      "Một khả năng trong tương lai",
+      "Một điều không thể xảy ra ở hiện tại",
+      "Một điều đã không xảy ra trong quá khứ",
+      "Một sự thật hiển nhiên"
+     ],
+     "answer": 2,
+     "explain": "Loại 3 nói về quá khứ không có thật: “If I had studied harder, I would have passed.” Hàm ý: đã không học chăm.",
+     "tip": "Đây là cấu trúc mạnh để diễn đạt hối tiếc hoặc phân tích giả định trong Writing Task 2."
+    },
+    {
+     "id": "gra-8-2-q5",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền dạng đúng",
+     "stem": "Unless we act now, the problem ___ worse.",
+     "answer": "will get",
+     "explain": "Unless = if not. Mệnh đề chính dùng will + V ở điều kiện loại 1.",
+     "accept": [
+      "will become",
+      "gets"
+     ],
+     "tip": "Không dùng “will” trong mệnh đề if/unless."
+    }
+   ]
+  },
+  {
+   "id": "gra-8-3",
+   "title": "So sánh và nhấn mạnh",
+   "goal": "not as…as, the more…the more, câu chẻ",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "gra-8-3-q1",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn cách hiểu đúng",
+     "stem": "“This option is not as expensive as that one” nghĩa là gì?",
+     "options": [
+      "Hai lựa chọn đắt như nhau",
+      "Lựa chọn này rẻ hơn lựa chọn kia",
+      "Lựa chọn này đắt hơn",
+      "Không so sánh được"
+     ],
+     "answer": 1,
+     "explain": "“Not as … as” = kém hơn. Đây là cách nói mềm hơn “cheaper than”.",
+     "tip": "Cấu trúc: as + tính từ + as. Phủ định: not as … as."
+    },
+    {
+     "id": "gra-8-3-q2",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền dạng so sánh",
+     "stem": "The more you practise, the ___ you become.",
+     "answer": "better",
+     "explain": "Cấu trúc “the + so sánh hơn, the + so sánh hơn” = càng… càng… Dạng so sánh hơn của good là better.",
+     "tip": "Ví dụ khác: “The harder you work, the more you achieve.”"
+    },
+    {
+     "id": "gra-8-3-q3",
+     "type": "build",
+     "skill": "grammar",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "Fewer",
+      "students",
+      "the",
+      "failed",
+      "this",
+      "exam",
+      "year"
+     ],
+     "answer": "Fewer students failed the exam this year",
+     "explain": "Fewer + danh từ đếm được số nhiều; less + danh từ không đếm được."
+    },
+    {
+     "id": "gra-8-3-q4",
+     "type": "mcq",
+     "skill": "grammar",
+     "prompt": "Chọn câu nhấn mạnh đúng",
+     "stem": "Câu nào là câu chẻ (cleft sentence) nhấn mạnh?",
+     "options": [
+      "It was the teacher who helped me most.",
+      "The teacher helped me most.",
+      "A teacher helped me.",
+      "Helping me was a teacher."
+     ],
+     "answer": 0,
+     "explain": "Câu chẻ “It was X who/that …” nhấn mạnh X. Đây là cấu trúc ăn điểm Grammar Range khi dùng đúng chỗ.",
+     "tip": "Biến thể: “What I need is more practice.”"
+    },
+    {
+     "id": "gra-8-3-q5",
+     "type": "gap",
+     "skill": "grammar",
+     "prompt": "Điền đại từ",
+     "stem": "It was the teacher ___ helped me most.",
+     "answer": "who",
+     "explain": "Trong câu chẻ chỉ người, dùng who hoặc that. Không dùng which.",
+     "accept": [
+      "that"
+     ],
+     "tip": "Câu chẻ chỉ vật: “It was the price that surprised me.”"
+    }
+   ]
+  }
+ ]
+}

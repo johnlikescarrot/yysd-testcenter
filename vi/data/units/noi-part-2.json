@@ -1,0 +1,260 @@
+{
+ "id": "noi-part-2",
+ "lessons": [
+  {
+   "id": "noi-6-1",
+   "title": "Cấu trúc 2 phút",
+   "goal": "Nói liền mạch, không bí từ",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "noi-6-1-q1",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn đáp án đúng",
+     "stem": "Phần Speaking Part 2 kéo dài bao lâu?",
+     "options": [
+      "30 giây",
+      "1 phút chuẩn bị + 2 phút nói",
+      "3 phút chuẩn bị + 1 phút nói",
+      "5 phút tự do"
+     ],
+     "answer": 1,
+     "explain": "Bạn có 1 phút chuẩn bị (có giấy bút) và nói khoảng 2 phút. Giám khảo sẽ dừng bạn khi hết giờ.",
+     "tip": "Dùng 1 phút chuẩn bị để ghi 4–5 từ khoá, không viết câu hoàn chỉnh."
+    },
+    {
+     "id": "noi-6-1-q2",
+     "type": "gap",
+     "skill": "speaking",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "You have one minute to ___ before speaking.",
+     "answer": "prepare",
+     "explain": "Prepare = chuẩn bị. Trong Part 2, thời gian chuẩn bị là 1 phút, sau đó bạn nói ngay.",
+     "accept": [
+      "plan",
+      "think"
+     ],
+     "tip": "Ghi dàn ý bằng tiếng Anh để não chuyển ngữ nhanh hơn khi nói."
+    },
+    {
+     "id": "noi-6-1-q3",
+     "type": "build",
+     "skill": "speaking",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "I",
+      "would",
+      "like",
+      "to",
+      "talk",
+      "about",
+      "a",
+      "skill",
+      "learned",
+      "I"
+     ],
+     "answer": "I would like to talk about a skill I learned",
+     "explain": "Câu mở đầu tự nhiên cho Part 2. Các biến thể: “I'm going to talk about…”, “The skill I'd like to describe is…”"
+    },
+    {
+     "id": "noi-6-1-q4",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn cách xử lý đúng",
+     "stem": "Khi bí một từ tiếng Anh giữa lúc nói, bạn nên làm gì?",
+     "options": [
+      "Im lặng cho tới khi nhớ ra",
+      "Chuyển sang tiếng Việt",
+      "Diễn đạt vòng: “the thing you use to…”, rồi nói tiếp",
+      "Xin giám khảo đổi chủ đề"
+     ],
+     "answer": 2,
+     "explain": "Paraphrase là kỹ năng được chấm điểm. Diễn đạt vòng giữ được mạch nói và thể hiện vốn từ linh hoạt.",
+     "tip": "Học sẵn các cụm ứng cứu: “what I mean is…”, “it's a kind of…”, “I can't remember the exact word, but…”."
+    },
+    {
+     "id": "noi-6-1-q5",
+     "type": "gap",
+     "skill": "speaking",
+     "prompt": "Điền từ còn thiếu",
+     "stem": "A good answer includes a ___ and a reason.",
+     "answer": "detail",
+     "explain": "Chi tiết cụ thể (tên, thời điểm, cảm xúc) giúp câu trả lời dài tự nhiên thay vì lan man.",
+     "accept": [
+      "example"
+     ],
+     "tip": "Công thức: ý chính → chi tiết → cảm nhận cá nhân."
+    }
+   ]
+  },
+  {
+   "id": "noi-6-2",
+   "title": "Mô tả người và nơi chốn",
+   "goal": "Dùng mệnh đề quan hệ và tính từ chính xác",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "noi-6-2-q1",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn tính từ phù hợp nhất",
+     "stem": "Tính từ nào mô tả một giáo viên luôn kiên nhẫn và khuyến khích học viên?",
+     "options": [
+      "Supportive",
+      "Aggressive",
+      "Indifferent",
+      "Careless"
+     ],
+     "answer": 0,
+     "explain": "Supportive = hay hỗ trợ, khích lệ. Từ này thường đi với teacher, colleague, manager.",
+     "tip": "Học theo cụm: a supportive teacher, a demanding coach, an approachable mentor."
+    },
+    {
+     "id": "noi-6-2-q2",
+     "type": "gap",
+     "skill": "speaking",
+     "prompt": "Điền đại từ quan hệ",
+     "stem": "She is the kind of person ___ always helps others.",
+     "answer": "who",
+     "explain": "“Person” chỉ người → dùng who. Trong văn nói, “that” cũng được chấp nhận.",
+     "accept": [
+      "that"
+     ],
+     "tip": "who + người, which + vật, where + nơi chốn, whose + sở hữu."
+    },
+    {
+     "id": "noi-6-2-q3",
+     "type": "build",
+     "skill": "speaking",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "The",
+      "place",
+      "I",
+      "visit",
+      "most",
+      "often",
+      "is",
+      "a",
+      "small",
+      "library"
+     ],
+     "answer": "The place I visit most often is a small library",
+     "explain": "Mệnh đề quan hệ lược bỏ “that/which”: The place (that) I visit… — cấu trúc rất tự nhiên trong speaking."
+    },
+    {
+     "id": "noi-6-2-q4",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn cách paraphrase tốt",
+     "stem": "Cách nói nào tự nhiên hơn cho “a very big city”?",
+     "options": [
+      "A very very big city",
+      "A huge, bustling city",
+      "A city with big size",
+      "Big city extremely"
+     ],
+     "answer": 1,
+     "explain": "“Huge, bustling” vừa chính xác vừa gợi hình. Trong speaking, tính từ ghép giúp tăng điểm Lexical Resource.",
+     "tip": "Tránh lặp “very + tính từ”; thay bằng một tính từ mạnh: enormous, packed, lively."
+    },
+    {
+     "id": "noi-6-2-q5",
+     "type": "gap",
+     "skill": "speaking",
+     "prompt": "Điền giới từ",
+     "stem": "It is located ___ the north of the city.",
+     "answer": "in",
+     "explain": "“In the north of” = ở phía bắc. Với “on the north” chỉ dùng khi nói giáp ranh (on the northern border).",
+     "tip": "Cụm vị trí: in the centre, on the outskirts, near the coast."
+    }
+   ]
+  },
+  {
+   "id": "noi-6-3",
+   "title": "Kể chuyện có mốc thời gian",
+   "goal": "Dùng thì quá khứ và dấu hiệu trình tự",
+   "xp": 12,
+   "exercises": [
+    {
+     "id": "noi-6-3-q1",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn thì phù hợp",
+     "stem": "Khi kể một câu chuyện đã xảy ra, bạn dùng thì nào chủ yếu?",
+     "options": [
+      "Hiện tại đơn",
+      "Quá khứ đơn, pha quá khứ tiếp diễn",
+      "Tương lai đơn",
+      "Hiện tại hoàn thành cho mọi câu"
+     ],
+     "answer": 1,
+     "explain": "Quá khứ đơn cho sự kiện chính, quá khứ tiếp diễn cho bối cảnh: “I was walking home when I saw…”.",
+     "tip": "Dùng hiện tại hoàn thành khi kể kết quả còn ảnh hưởng tới hiện tại."
+    },
+    {
+     "id": "noi-6-3-q2",
+     "type": "gap",
+     "skill": "speaking",
+     "prompt": "Điền từ nối thời gian",
+     "stem": "It all started ___ I was sixteen.",
+     "answer": "when",
+     "explain": "“When” nối mốc thời gian với sự kiện. Có thể dùng “at the time when” để nhấn mạnh.",
+     "accept": [
+      "when I was"
+     ],
+     "tip": "Các mốc: when, while, as soon as, by the time."
+    },
+    {
+     "id": "noi-6-3-q3",
+     "type": "build",
+     "skill": "speaking",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "After",
+      "that",
+      "we",
+      "decided",
+      "to",
+      "travel",
+      "by",
+      "train"
+     ],
+     "answer": "After that we decided to travel by train",
+     "explain": "“After that” là dấu hiệu trình tự đơn giản và tự nhiên nhất khi kể chuyện."
+    },
+    {
+     "id": "noi-6-3-q4",
+     "type": "mcq",
+     "skill": "speaking",
+     "prompt": "Chọn dấu hiệu trình tự đúng",
+     "stem": "Cụm nào dùng để kết thúc một câu chuyện?",
+     "options": [
+      "To begin with",
+      "In the end",
+      "First of all",
+      "At the beginning"
+     ],
+     "answer": 1,
+     "explain": "“In the end” / “Eventually” / “Looking back” dùng để kết. “To begin with”, “First of all” dùng để mở.",
+     "tip": "Dùng 3–4 dấu hiệu trình tự trong 2 phút là đủ; nhiều hơn sẽ nghe máy móc."
+    },
+    {
+     "id": "noi-6-3-q5",
+     "type": "listen",
+     "skill": "speaking",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "I have never regretted that decision.",
+     "answer": "I have never regretted that decision.",
+     "explain": "Hiện tại hoàn thành + never diễn tả trải nghiệm tính đến hiện tại — mẫu câu rất hay dùng khi kết thúc câu chuyện.",
+     "tip": "Phát âm “regretted” có đuôi /ɪd/ vì gốc kết thúc bằng /t/."
+    }
+   ]
+  }
+ ]
+}

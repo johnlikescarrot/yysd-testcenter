@@ -1,0 +1,232 @@
+{
+ "id": "nghe-so-lieu",
+ "lessons": [
+  {
+   "id": "nghe-2-1",
+   "title": "Nghe số và ngày tháng",
+   "goal": "Không nhầm 13 với 30, 9:30 với 9:15",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "nghe-2-1-q1",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "It costs one hundred and forty pounds.",
+     "answer": "It costs one hundred and forty pounds.",
+     "explain": "Số tiền trong Listening thường được đọc bằng chữ. Hãy viết bằng số nếu đề cho phép, nhưng giữ đúng đơn vị.",
+     "tip": "Khi nghe giá tiền, luôn ghi đơn vị (pounds, dollars) vì đề có thể hỏi đơn vị."
+    },
+    {
+     "id": "nghe-2-1-q2",
+     "type": "mcq",
+     "skill": "listening",
+     "prompt": "Chọn cách viết đúng",
+     "stem": "“The thirteenth of March” viết theo dạng số là gì?",
+     "options": [
+      "3/13",
+      "13/3",
+      "30/3",
+      "1/3"
+     ],
+     "answer": 1,
+     "explain": "Trong tiếng Anh–Anh, ngày trước tháng: 13/3 (13 March). Tiếng Anh–Mỹ viết tháng trước, nên đề IELTS luôn nói rõ bằng chữ.",
+     "tip": "Nghe kỹ đuôi -th (fourth) và -teen/-ty (thirteen/thirty) — đây là cặp dễ nhầm nhất."
+    },
+    {
+     "id": "nghe-2-1-q3",
+     "type": "gap",
+     "skill": "listening",
+     "prompt": "Điền số còn thiếu",
+     "stem": "In British English, “a fortnight” means ___ days.",
+     "answer": "14",
+     "explain": "Fortnight = hai tuần = 14 ngày. Từ này xuất hiện thường xuyên trong hội thoại đời sống của IELTS Listening.",
+     "accept": [
+      "fourteen"
+     ],
+     "tip": "Các đơn vị khác: a decade (10 năm), a century (100 năm), a quarter (15 phút)."
+    },
+    {
+     "id": "nghe-2-1-q4",
+     "type": "mcq",
+     "skill": "listening",
+     "prompt": "Chọn cách hiểu đúng",
+     "stem": "“Half past nine” là mấy giờ?",
+     "options": [
+      "9:15",
+      "9:30",
+      "8:30",
+      "9:45"
+     ],
+     "answer": 1,
+     "explain": "Half past nine = 9 giờ 30. Quarter past = hơn 15 phút; quarter to = kém 15 phút.",
+     "tip": "Half past nine (Anh) và nine thirty (Mỹ) cùng nghĩa — IELTS dùng cả hai."
+    },
+    {
+     "id": "nghe-2-1-q5",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "The train leaves at a quarter to seven.",
+     "answer": "The train leaves at a quarter to seven.",
+     "explain": "“A quarter to seven” = 6:45, không phải 7:15. Đây là bẫy kinh điển của phần điền giờ.",
+     "tip": "Ghi giờ bằng số ngay khi nghe để không phải nhớ lại."
+    }
+   ]
+  },
+  {
+   "id": "nghe-2-2",
+   "title": "Nghe tên riêng và địa chỉ",
+   "goal": "Đánh vần tên, viết đúng mã bưu điện",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "nghe-2-2-q1",
+     "type": "mcq",
+     "skill": "listening",
+     "prompt": "Chọn tình huống đúng",
+     "stem": "Khi nào người nói thường đánh vần từng chữ cái?",
+     "options": [
+      "Khi giới thiệu món ăn",
+      "Khi xác nhận tên hoặc địa chỉ qua điện thoại",
+      "Khi mô tả thời tiết",
+      "Khi kể một câu chuyện"
+     ],
+     "answer": 1,
+     "explain": "Đánh vần xuất hiện khi thông tin cần chính xác tuyệt đối: tên riêng, email, mã bưu điện. Đề thi hay đặt bẫy ở đây.",
+     "tip": "Học thuộc bảng chữ cái theo cách đọc Anh–Anh, đặc biệt W (double-u), Z (zed)."
+    },
+    {
+     "id": "nghe-2-2-q2",
+     "type": "gap",
+     "skill": "listening",
+     "prompt": "Điền chữ cái",
+     "stem": "“Double-u” là cách đọc chữ cái ___.",
+     "answer": "W",
+     "explain": "W trong tiếng Anh–Anh đọc là “double-u”; tiếng Anh–Mỹ đọc là “double-u” hoặc “dub-ya”.",
+     "accept": [
+      "w"
+     ],
+     "tip": "Các chữ hay nhầm: B/V, G/J, M/N, I/E, S/X."
+    },
+    {
+     "id": "nghe-2-2-q3",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "Please write to 24 Baker Street.",
+     "answer": "Please write to 24 Baker Street.",
+     "explain": "Địa chỉ gồm số nhà + tên đường + loại đường (Street, Road, Avenue). Viết hoa tên riêng.",
+     "tip": "Nếu đề giới hạn “ONE WORD AND/OR A NUMBER”, chỉ ghi phần cần thiết."
+    },
+    {
+     "id": "nghe-2-2-q4",
+     "type": "mcq",
+     "skill": "listening",
+     "prompt": "Chọn đáp án đúng",
+     "stem": "Mã bưu điện Anh thường có dạng nào?",
+     "options": [
+      "12345",
+      "SW1A 1AA",
+      "A1A-1A1",
+      "ABC 123"
+     ],
+     "answer": 1,
+     "explain": "Mã bưu điện Anh gồm chữ và số, ví dụ SW1A 1AA. Đề có thể đọc “S W one A, one A A”.",
+     "tip": "Viết liền hoặc có dấu cách đều được nếu đề không yêu cầu cụ thể — nhưng phải đúng ký tự."
+    },
+    {
+     "id": "nghe-2-2-q5",
+     "type": "build",
+     "skill": "listening",
+     "prompt": "Sắp xếp thành câu đúng",
+     "stem": "Sắp xếp các từ thành câu đúng.",
+     "words": [
+      "your",
+      "spell",
+      "Please",
+      "surname",
+      "for",
+      "receptionist",
+      "the"
+     ],
+     "answer": "Please spell your surname for the receptionist",
+     "explain": "“Spell” + tên = đánh vần. Câu này mô phỏng đúng tình huống trong phần Section 1."
+    }
+   ]
+  },
+  {
+   "id": "nghe-2-3",
+   "title": "Nghe chép chính tả câu ngắn",
+   "goal": "Viết lại câu nghe được không sai chính tả",
+   "xp": 10,
+   "exercises": [
+    {
+     "id": "nghe-2-3-q1",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "The library closes at six on Fridays.",
+     "answer": "The library closes at six on Fridays.",
+     "explain": "Chú ý đuôi -s: “closes”, “Fridays”. Mất một chữ s là mất điểm dù hiểu đúng.",
+     "tip": "Nghe lại lần hai chỉ để kiểm tra số ít/số nhiều."
+    },
+    {
+     "id": "nghe-2-3-q2",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "There are two hundred seats in the hall.",
+     "answer": "There are two hundred seats in the hall.",
+     "explain": "“Two hundred” không có -s khi đứng sau số đếm. Đây là lỗi chính tả phổ biến.",
+     "tip": "Phân biệt “hundred” (đúng) với “hundreds” (dùng khi không có số cụ thể)."
+    },
+    {
+     "id": "nghe-2-3-q3",
+     "type": "gap",
+     "skill": "listening",
+     "prompt": "Điền số",
+     "stem": "Khi nghe “twenty per cent”, bạn viết là ___%.",
+     "answer": "20",
+     "explain": "“Twenty per cent” = 20%. Trong bài thi, viết 20% hoặc 20 percent đều được nếu không bị giới hạn từ.",
+     "accept": [
+      "twenty"
+     ],
+     "tip": "Phân biệt “per cent” (phần trăm) với “percentage” (tỉ lệ phần trăm nói chung)."
+    },
+    {
+     "id": "nghe-2-3-q4",
+     "type": "mcq",
+     "skill": "listening",
+     "prompt": "Chọn trọng âm đúng",
+     "stem": "Từ nào có trọng âm ở âm tiết thứ hai?",
+     "options": [
+      "THIR-teen",
+      "thir-TEEN",
+      "THIR-ty",
+      "THIR-teen và THIR-ty giống nhau"
+     ],
+     "answer": 1,
+     "explain": "Thirteen nhấn âm tiết thứ hai (thir-TEEN); thirty nhấn âm đầu (THIR-ty). Đây là cặp gây nhầm số nhiều nhất.",
+     "tip": "Mẹo: thirteen kết thúc bằng âm /iːn/ dài; thirty kết thúc bằng /i/ ngắn."
+    },
+    {
+     "id": "nghe-2-3-q5",
+     "type": "listen",
+     "skill": "listening",
+     "prompt": "Nghe và chép lại",
+     "stem": "Nghe và chép lại chính xác câu bạn nghe.",
+     "audio": "The deadline is the third of June.",
+     "answer": "The deadline is the third of June.",
+     "explain": "Ngày trong tháng dùng số thứ tự: the third of June = 3/6. Chú ý “third” không phải “three”.",
+     "tip": "Số thứ tự bất quy tắc cần học: first, second, third, fifth, twelfth."
+    }
+   ]
+  }
+ ]
+}
