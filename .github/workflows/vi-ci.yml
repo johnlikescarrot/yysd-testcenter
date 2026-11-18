@@ -91,7 +91,44 @@ jobs:
           node-version: 22
 
       - name: Chạy Lighthouse CI
-        run: npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.json
+        id: lhci
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.json \
+            2>&1 | tee /tmp/lhci.log
+
+      - name: Đăng nhật ký Lighthouse
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          body=/tmp/lh-body.md
+          {
+            echo "### Nhật ký Lighthouse CI"
+            echo ""
+            echo '```text'
+            tail -n 400 /tmp/lhci.log || echo "không có nhật ký"
+            echo '```'
+            echo ""
+            echo "### Vi phạm ngưỡng"
+            echo ""
+            echo '```json'
+            head -c 5000 .lighthouseci/assertion-results.json 2>/dev/null \
+              || echo "không có tệp vi phạm"
+            echo '```'
+          } > "${body}"
+          number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
+          if [ -n "${number}" ]; then
+            gh pr comment "${number}" --body-file "${body}" --edit-last --create-if-none
+          fi
+
+      - name: Kết luận Lighthouse
+        if: steps.lhci.outcome == 'failure'
+        run: |
+          echo "Lighthouse chưa đạt ngưỡng."
+          exit 1
 
       - name: Lưu báo cáo Lighthouse
         if: always()
