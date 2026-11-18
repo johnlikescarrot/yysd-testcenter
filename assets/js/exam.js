@@ -549,11 +549,11 @@
         return;
       }
       if (!isStudy && item.zone === "mock" && item.subject === "cambridge-writing") {
-        if (!confirm("Bạn muốn thoát??Bản nháp bài viết đã được lưu tự động.")) e.preventDefault();
+        if (!confirm("Bạn muốn thoát? Bản nháp bài viết đã được lưu tự động.")) e.preventDefault();
       } else if (!isStudy && item.zone === "mock") {
-        if (!confirm("Bạn muốn thoát??Phần đã trả lời sẽ được lưu tự động, bạn có thể học tiếp khi mở lại.")) e.preventDefault();
+        if (!confirm("Bạn muốn thoát? Phần đã trả lời sẽ được lưu tự động, bạn có thể học tiếp khi mở lại.")) e.preventDefault();
       } else if (!isStudy) {
-        if (!confirm("Bạn muốn thoát??Câu trả lời chưa nộp có thể không được lưu.")) e.preventDefault();
+        if (!confirm("Bạn muốn thoát? Câu trả lời chưa nộp có thể không được lưu.")) e.preventDefault();
       }
     });
   }
@@ -582,7 +582,7 @@
     }, { once: true });
 
     backBtn.addEventListener("click", function (e) {
-      if (!confirm("Bạn muốn thoát??Câu trả lời chưa nộp có thể không được lưu.")) e.preventDefault();
+      if (!confirm("Bạn muốn thoát? Câu trả lời chưa nộp có thể không được lưu.")) e.preventDefault();
     });
   }
 

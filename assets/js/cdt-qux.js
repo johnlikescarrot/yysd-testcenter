@@ -62,20 +62,20 @@
   function allowsReuse(group, letterCount, slotCount) {
     var el = group.querySelector(".instruction");
     var t = (el && el.textContent) || "";
-    if (/more than once|一次以上|可重复|任意.*多次/i.test(t)) return true;
-    if (/only once|each (letter|answer) only once|仅.*一次|每个字母.*一次/i.test(t)) return false;
+    if (/more than once|nhiều lần|一次以上|可重复|任意.*多次/i.test(t)) return true;
+    if (/only once|chỉ một lần|each (letter|answer) only once|仅.*一次|每个字母.*一次/i.test(t)) return false;
     // pigeonhole: more gaps than letters ⇒ must reuse
     if (slotCount && letterCount && slotCount > letterCount) return true;
     // exclusive list/heading/map when enough distinct options
     var enough = letterCount && slotCount && letterCount >= slotCount;
-    if (enough && /heading|标题|from the box and write/i.test(t)) return false;
+    if (enough && /heading|tiêu đề|标题|from the box and write/i.test(t)) return false;
     if (enough && group.querySelector && group.querySelector(".map-wrap")) return false;
     // ponytail: default reusable — exclusive-by-default broke paragraph/classify matches
     return true;
   }
 
   function isMultiHint(text) {
-    return /选择一项|两题合计|两项|本组合计|选出正确|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
+    return /chọn hai (đáp án|phương án)|选择一项|两题合计|两项|本组合计|选出正确|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
   }
 
   function isMultiGroup(group, pairs) {
@@ -90,7 +90,7 @@
       if (mq && isMultiHint(mq.textContent)) hints++;
     });
     var instr = ((group.querySelector(".instruction") || {}).textContent) || "";
-    var instrMulti = /Choose TWO letters|Choose TWO\b|选出.*两项|两题合计/i.test(instr);
+    var instrMulti = /Choose TWO letters|Choose TWO\b|chọn hai (đáp án|phương án)|选出.*两项|两题合计/i.test(instr);
     // ponytail: never infer multi from row count alone — match also shares one letter box
     return hints > 0 || instrMulti;
   }

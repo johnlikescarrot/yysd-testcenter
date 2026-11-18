@@ -1276,10 +1276,10 @@ function buildTutorSystem(mode, examType, examPack) {
     );
   }
   return (
-    "你是优益思达国际课程中心（YYSD）的雅思辅导老师，辅导口语与写作。 " +
-    "讲解优先用中文，示范句子/范文用英文。帮助学生练口语思路、词汇语法。 " +
-    "系统写作批改在写作模块完成；此处可答写作方法问题。 " +
-    "不要编造网站没有的功能。若学生要模拟口语考试，提醒切换到「机经模考」。"
+    "Bạn là gia sư IELTS của YYSD, hỗ trợ phần Nói và Viết. Giải thích bằng tiếng Việt; " +
+    "giữ nguyên câu hỏi, câu ví dụ và bài mẫu bằng tiếng Anh. Giúp người học phát triển ý, từ vựng và ngữ pháp. " +
+    "Người học có thể hỏi phương pháp viết ở đây; để nhận nhận xét bài viết, hãy hướng dẫn mở phần Viết. " +
+    "Không giới thiệu chức năng không có thật. Nếu muốn thi thử Nói, hãy chỉ người học sang chế độ Thi thử."
   );
 }
 
@@ -1384,8 +1384,8 @@ function buildWritingGradeSystem(taskType, promptBody, chartBlock) {
       "- 9: fully addresses; fully developed position; relevant, fully extended & well-supported ideas.\n"
     );
   return (
-    "You are a certified IELTS Writing examiner for YYSD. Grade " + taskName + " using PUBLIC IELTS band descriptors only.\n" +
-    "Explanations/advice in Chinese; quote student English & write modelEssay in English.\n\n" +
+    "Provide an unofficial IELTS Writing practice assessment for YYSD. Evaluate " + taskName + " using PUBLIC IELTS band descriptors only.\n" +
+    "Explanations/advice in Vietnamese; quote student English & write modelEssay in English.\n\n" +
     "Rubric anchors (use these; do NOT default everything to 6.0):\n" +
     taskRubric +
     "Coherence & Cohesion (CC):\n" +
@@ -1410,7 +1410,7 @@ function buildWritingGradeSystem(taskType, promptBody, chartBlock) {
     "- Each criterion 0–9 in 0.5 steps. Differ scores when evidence differs; do not copy sample numbers.\n" +
     "- Under-length (<150 T1 / <250 T2) must lower TA/TR.\n" +
     "- Off-topic or memorised material: lower TA/TR sharply.\n" +
-    "- overall MUST equal the mean of the four criteria, rounded to nearest 0.5 (official method).\n" +
+    "- For this practice estimate, calculate the mean of the four criteria and round it to the nearest 0.5. Do not present it as an official score.\n" +
     "- Be fair like an examiner: neither flattering nor stuck at 6.0.\n" +
     (chartBlock
       ? "- Task 1 chart image is NOT visible; use captions only and be conservative on TA data accuracy.\n"
@@ -1420,12 +1420,12 @@ function buildWritingGradeSystem(taskType, promptBody, chartBlock) {
     "Escape newlines inside strings as \\n. Schema:\n" +
     "WRITING_JSON:{" +
     "\"overall\":6.5,\"task\":6.5,\"coherence\":6.0,\"lexical\":7.0,\"grammar\":6.5," +
-    "\"comment\":\"中文总评（对照四项，说明为何是这个总分）\"," +
-    "\"criteriaNotes\":{\"task\":\"中文：对照TA/TR描述语说明为何给该分\"," +
-    "\"coherence\":\"中文：对照CC\",\"lexical\":\"中文：对照LR\",\"grammar\":\"中文：对照GRA\"}," +
-    "\"paragraphNotes\":[\"段1：中文具体优缺点\",\"段2：...\"]," +
-    "\"corrections\":[{\"bad\":\"exact student phrase\",\"good\":\"improved English\",\"why\":\"中文原因（语法/词汇/连贯）\"}]," +
-    "\"nextSteps\":[\"中文可执行改进建议1\",\"建议2\",\"建议3\"]," +
+    "\"comment\":\"Nhận xét chung bằng tiếng Việt, giải thích điểm dựa trên bốn tiêu chí\"," +
+    "\"criteriaNotes\":{\"task\":\"Giải thích điểm theo tiêu chí TA/TR\"," +
+    "\"coherence\":\"Dẫn chứng cho CC\",\"lexical\":\"Dẫn chứng cho LR\",\"grammar\":\"Dẫn chứng cho GRA\"}," +
+    "\"paragraphNotes\":[\"Đoạn 1: một điểm mạnh và một điểm cần sửa\",\"Đoạn 2: ...\"]," +
+    "\"corrections\":[{\"bad\":\"exact student phrase\",\"good\":\"improved English\",\"why\":\"Giải thích bằng tiếng Việt về ngữ pháp, từ vựng hoặc mạch lạc\"}]," +
+    "\"nextSteps\":[\"Gợi ý cụ thể 1 bằng tiếng Việt\",\"Gợi ý 2\",\"Gợi ý 3\"]," +
     "\"modelEssay\":\"Band 8-ish model answer for THIS prompt only, English, use \\\\n between paragraphs\"}"
   );
 }
@@ -3127,9 +3127,10 @@ app.get("/api/student/score-attempts/:attemptId", authMiddleware, function (req,
 });
 
 var WRONG_ANALYZE_SYSTEM =
-  "你是雅思老师。根据学生错题（题号、作答、正解、卷面讲解）用简洁中文分析。" +
-  "只输出 JSON 对象，字段：whyWrong（错因）、evidence（考点或原文依据）、strategy（下次怎么做）、keyVocab（可选，相关词组，可空字符串）。" +
-  "若有学生追问，在上述结构里用 whyWrong 直接回答追问，其余字段可简短补充。不要输出 Markdown。";
+  "Giải thích ngắn gọn bằng tiếng Việt dựa trên đề IELTS, câu trả lời, đáp án và dẫn chứng được cung cấp. " +
+  "Chỉ trả về JSON: whyWrong (lý do sai), evidence (căn cứ trong bài; giữ nguyên trích dẫn tiếng Anh), " +
+  "strategy (cách làm lần sau), keyVocab (cụm từ liên quan, có thể để trống). " +
+  "Nếu có câu hỏi tiếp theo, trả lời trong whyWrong. Không dùng Markdown.";
 
 app.post("/api/exam/wrong-analyze", authMiddleware, async function (req, res) {
   if (req.user.role === "teacher") {
@@ -3275,17 +3276,17 @@ function clearLoginFail(key) {
 var JUDGE_SYSTEM =
   "You are an IELTS listening tutor at YYSD. Judge if the student captured subject, verb, object and grammar vs the target. Lenient on STT typos. " +
   "Also identify the subject, verb and object phrases in the TARGET sentence (exact substrings from target; use empty string if none). " +
-  'Reply ONLY JSON: {"subject":bool,"verb":bool,"object":bool,"grammar":bool,"pass":bool,"comment":"2-3 sentences in Chinese",' +
+  'Reply ONLY JSON: {"subject":bool,"verb":bool,"object":bool,"grammar":bool,"pass":bool,"comment":"2-3 sentences in Vietnamese",' +
   '"subjectText":"","verbText":"","objectText":""}';
 var TRANSLATE_SYSTEM =
-  "You are an IELTS listening tutor at YYSD. Grade Chinese translation for meaning. " +
-  'Reply ONLY JSON: {"pass":bool,"comment":"2-3 sentences in Chinese"}';
+  "You are an IELTS listening tutor at YYSD. Grade the learner’s Vietnamese translation for meaning; legacy reference translations may be in Chinese. " +
+  'Reply ONLY JSON: {"pass":bool,"comment":"2-3 sentences in Vietnamese"}';
 var SHADOW_SYSTEM =
   "You are an IELTS listening shadowing tutor. Compare TARGET with student speech-to-text HEARD word-by-word in order. " +
   "For each TARGET word (tokenize punctuation attached), status: correct|wrong|missing. " +
   "correct=lenient match (I'd=I would, can't=cannot, minor STT spelling). wrong=different word. missing=not said. " +
   "heard=what student said for that slot (empty if missing). extras=words student said not matching target. " +
-  "accuracy=correct count/target word count (0-1). comment=1-2 sentences Chinese coaching. " +
+  "accuracy=correct count/target word count (0-1). comment=1-2 sentences of Vietnamese coaching. " +
   'Reply ONLY JSON: {"words":[{"target":"","heard":"","status":"correct|wrong|missing"}],"extras":[],"accuracy":0.0,"comment":""}';
 
 function shadowPass(accuracy, wordCount) {
@@ -3345,8 +3346,8 @@ var SPEAKING_GRADE_SYSTEM =
   "Be conservative with bands (most learners score 4.5-6). STT transcripts may have errors — judge intent, not spelling. " +
   "Reply ONLY valid JSON with this shape: " +
   '{"overallBand":5.0,"detailedScores":{"fluencyAndCoherence":5,"lexicalResource":5,"grammaticalRangeAndAccuracy":5,"pronunciation":5},' +
-  '"strengths":["3 short bullets in Chinese"],"weaknesses":["3 short bullets in Chinese"],' +
-  '"generalAdvice":["3 short bullets in Chinese"],' +
+  '"strengths":["3 short bullets in Vietnamese"],"weaknesses":["3 short bullets in Vietnamese"],' +
+  '"generalAdvice":["3 short bullets in Vietnamese"],' +
   '"questionFeedbacks":[{"question":"","answer":"","fixed":"","feedback":"","keyPoints":["",""]}]}. ' +
   "overallBand and each detailedScores field: number 0-9 in 0.5 steps. questionFeedbacks: one per answer provided.";
 
@@ -3401,8 +3402,8 @@ app.post("/api/speaking/grade", authMiddleware, async function (req, res) {
 });
 
 var GLOSS_SYSTEM =
-  "Give the most common short Chinese gloss for this English word or short phrase, IELTS listening context. " +
-  'Reply ONLY JSON: {"word":"","gloss":"中文释义，不超过16字"}';
+  "Give the most common short Vietnamese gloss for this English word or short phrase, IELTS listening context. " +
+  'Reply ONLY JSON: {"word":"","gloss":"nghĩa ngắn gọn bằng tiếng Việt"}';
 var glossCachePath = path.join(__dirname, "jingting-gloss-cache.json");
 var glossCache = {};
 try { glossCache = JSON.parse(fs.readFileSync(glossCachePath, "utf8")) || {}; } catch (e) { glossCache = {}; }
@@ -3415,11 +3416,11 @@ app.post("/api/jingting/gloss", authMiddleware, async function (req, res) {
   if (!gate.ok) return res.status(429).json({ error: gate.msg });
   var word = clipText(req.body && req.body.word, 40).replace(/[^A-Za-z' -]/g, "");
   if (!word || word.length < 2) return res.status(400).json({ error: "缺少 word" });
-  var key = word.toLowerCase();
+  var key = "vi:" + word.toLowerCase();
   if (glossCache[key]) return res.json({ word: word, gloss: glossCache[key] });
   try {
     var d = parseJsonFromLLM(await qwenChat(GLOSS_SYSTEM, word));
-    var gloss = clipText(d.gloss, 40) || "暂无释义";
+    var gloss = clipText(d.gloss, 100) || "Chưa có nghĩa của từ";
     glossCache[key] = gloss;
     saveGlossCache();
     res.json({ word: word, gloss: gloss });
@@ -3433,12 +3434,12 @@ app.post("/api/jingting/translate", authMiddleware, async function (req, res) {
   var gate = canUseAi(req.ip || "unknown");
   if (!gate.ok) return res.status(429).json({ error: gate.msg });
   var en = clipText(req.body && req.body.en, 500);
-  var zh = clipText(req.body && req.body.zh, 500);
+  var translation = clipText(req.body && (req.body.vi || req.body.zh), 500);
   var reference = clipText(req.body && req.body.reference, 500);
-  if (!en || !zh) return res.status(400).json({ error: "缺少 en 或 zh" });
+  if (!en || !translation) return res.status(400).json({ error: "Thiếu câu gốc hoặc bản dịch" });
   try {
     var d = parseJsonFromLLM(await qwenChat(TRANSLATE_SYSTEM,
-      "English:\n" + en + "\n\nReference:\n" + (reference || "") + "\n\nStudent:\n" + zh));
+      "English:\n" + en + "\n\nReference:\n" + (reference || "") + "\n\nStudent:\n" + translation));
     res.json({ pass: asBool(d.pass), comment: clipText(d.comment, 500) || "" });
   } catch (e) {
     console.error("[yysd-api] jingting/translate", e.message);
@@ -3959,14 +3960,12 @@ function wordQuotaPayload(u) {
 
 function buildWordLookupSystem() {
   return (
-    "你是优益思达（YYSD）的英语词汇助教。用中文为主讲解，关键术语可保留英文。" +
-    "学生可能输入：单个英文单词、短语、整句，或中文（反查英文）。" +
-    "首次详尽解答时，按下列小节用纯文本输出（不要用 Markdown 代码块）：\n" +
-    "1) 词条（英文）\n2) 音标\n3) 词性与中文释义\n4) 英文释义\n5) 例句（2–3 句，附中文翻译）\n" +
-    "6) 近义词 / 反义词\n7) 常见搭配\n8) 易混词\n9) 记忆提示\n" +
-    "追问时针对问题简洁回答，不必重复全部小节。" +
-    "每次回复末尾单独一行：WORD_JSON:{\"word\":\"英文词条\",\"ipa\":\"音标\",\"meaning\":\"中文释义摘要\"}" +
-    "中文反查时 word 填最贴切的英文；短语/句子时 word 填核心英文表达。"
+    "Bạn là gia sư từ vựng tiếng Anh của YYSD. Giải thích bằng tiếng Việt. Có thể nhận từ, cụm từ, câu " +
+    "tiếng Anh hoặc yêu cầu tra ngược từ tiếng Việt. Trả lời lần đầu bằng văn bản thường: từ tiếng Anh, IPA, " +
+    "từ loại, nghĩa tiếng Việt, định nghĩa tiếng Anh, 2–3 câu ví dụ tiếng Anh kèm bản dịch tiếng Việt, " +
+    "từ đồng nghĩa/trái nghĩa, kết hợp từ, từ dễ nhầm và mẹo nhớ. Với câu hỏi tiếp theo, trả lời thẳng vào vấn đề. " +
+    'Kết thúc mỗi câu trả lời bằng một dòng WORD_JSON:{"word":"English headword","ipa":"IPA","meaning":"nghĩa tiếng Việt"}. ' +
+    "Khi tra ngược hoặc nhập cả câu, chọn từ hoặc cụm tiếng Anh phù hợp nhất cho trường word."
   );
 }
 

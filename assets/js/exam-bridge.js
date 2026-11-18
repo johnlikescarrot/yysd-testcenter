@@ -1617,7 +1617,8 @@
       return;
     }
     body.innerHTML = sents.map(function (s, i) {
-      var zh = s.zh ? '<span class="tx-zh">' + escTx(s.zh) + "</span>" : "";
+      var translation = s.vi || s.zh;
+      var zh = translation ? '<span class="tx-zh">' + escTx(translation) + "</span>" : "";
       return '<button type="button" class="tx-sent" data-i="' + i + '" data-start="' + escTx(s.start) + '">' +
         '<span class="tx-en">' + escTx(s.text || s.en || "") + "</span>" + zh + "</button>";
     }).join("");

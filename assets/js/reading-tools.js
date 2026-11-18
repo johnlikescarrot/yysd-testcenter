@@ -201,10 +201,10 @@
         '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span>Clear all</button>';
     } else {
       ctxMenu.innerHTML =
-        '<button type="button" data-act="highlight" data-color="yellow"><span class="ico ico--hl">🖍</span>高亮 Highlight</button>' +
-        '<button type="button" data-act="notes"><span class="ico ico--note">📝</span>笔记 Notes</button>' +
-        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span>清除 Clear</button>' +
-        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span>全部清除 Clear all</button>';
+        '<button type="button" data-act="highlight" data-color="yellow"><span class="ico ico--hl">🖍</span>Tô sáng Highlight</button>' +
+        '<button type="button" data-act="notes"><span class="ico ico--note">📝</span>Ghi chú Notes</button>' +
+        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span>Xóa Clear</button>' +
+        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span>Xóa tất cả Clear all</button>';
     }
     document.body.appendChild(ctxMenu);
 
