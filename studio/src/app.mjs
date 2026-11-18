@@ -1,3 +1,4 @@
+import { historyKey, showHistory } from "./history.mjs";
 import { cards, lessons, skills } from "./lessons.mjs";
 import {
   localDay,
@@ -47,6 +48,7 @@ export function mount(doc, env) {
     }
   }
   function render() {
+    showHistory(doc, env);
     const date = new Date(),
       day = localDay(date),
       s = summarize(state, day),
@@ -197,6 +199,7 @@ export function mount(doc, env) {
     render();
   });
   env.addEventListener("storage", (event) => {
+    if (event.key === historyKey) showHistory(doc, env);
     if (event.key === storageKey || event.key === null) {
       state = restore(event.newValue);
       render();

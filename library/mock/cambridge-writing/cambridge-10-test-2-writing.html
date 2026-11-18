@@ -231,8 +231,9 @@ function updateWC(){
   e2.textContent = n2; e2.className = 'n' + (n2 < 250 ? ' low' : '');
 }
 function save(which){
-  try { localStorage.setItem(SKEY, JSON.stringify({ t1:document.getElementById('t1').value, t2:document.getElementById('t2').value, ts:Date.now() })); } catch(e){}
-  var el = document.getElementById('saved'+which); if(el){ el.textContent='Đã lưu bản nháp ✓'; setTimeout(function(){ el.textContent=''; }, 1500); }
+  var saved = true;
+  try { localStorage.setItem(SKEY, JSON.stringify({ t1:document.getElementById('t1').value, t2:document.getElementById('t2').value, ts:Date.now() })); } catch(e){ saved = false; }
+  var el = document.getElementById('saved'+which); if(el){ el.textContent=saved?'Đã lưu bản nháp ✓':'Không thể lưu trên thiết bị này'; setTimeout(function(){ el.textContent=''; }, 1500); }
 }
 ['t1','t2'].forEach(function(id){
   var which = id === 't1' ? 1 : 2;
@@ -259,7 +260,7 @@ function startTest(){
 
 function confirmFinish(){
   var n1 = wordCount(document.getElementById('t1').value), n2 = wordCount(document.getElementById('t2').value);
-  if (window.confirm('Task 1: '+n1+' từ Task 2: '+n2+' từ\nNộp bài để xem phiếu tự đánh giá?')) finishTest();
+  if (window.confirm('Task 1: '+n1+' từ · Task 2: '+n2+' từ\nNộp bài để xem phiếu tự đánh giá?')) finishTest();
 }
 function finishTest(){
   finished = true; clearInterval(timerInterval);
@@ -271,8 +272,10 @@ function finishTest(){
   r1.textContent = n1; r1.className = 'big ' + (n1>=150?'ok':'bad');
   r2.textContent = n2; r2.className = 'big ' + (n2>=250?'ok':'bad');
   document.getElementById('resMeta').textContent = 'Thời gian làm bài: '+fmt(elapsed)+' · Hoàn thành lúc '+new Date().toLocaleString('vi-VN');
-  document.getElementById('dump1').textContent = v1 || ' (Chưa trả lời)';
-  document.getElementById('dump2').textContent = v2 || ' (Chưa trả lời)';
+
+  document.dispatchEvent(new CustomEvent('yysd:paper-result', { detail: {kind:'writing', words:n1+n2} }));
+  document.getElementById('dump1').textContent = v1 || '(Chưa trả lời)';
+  document.getElementById('dump2').textContent = v2 || '(Chưa trả lời)';
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
   window.scrollTo(0,0);
@@ -281,7 +284,7 @@ function copyAll(){
   var txt = '['+document.title+']\n\n--- Task 1 ---\n'+document.getElementById('t1').value+'\n\n--- Task 2 ---\n'+document.getElementById('t2').value;
   function done(){ var m=document.getElementById('copyMsg'); m.textContent='Đã sao chép ✓'; setTimeout(function(){ m.textContent=''; }, 2000); }
   if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, function(){ document.getElementById('copyMsg').textContent='Không sao chép được. Hãy chọn phần bài làm và sao chép thủ công.'; }); }
-  else { var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+  else { var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); var copied=false; try{ copied=document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); if(copied) done(); else document.getElementById('copyMsg').textContent='Hãy chọn phần bài làm và sao chép thủ công.'; }
 }
 function backToCover(){
   clearInterval(timerInterval);
@@ -292,5 +295,6 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 </script>
+<script type="module" src="../../../studio/src/paper.mjs"></script>
 </body>
 </html>

@@ -662,6 +662,8 @@ function submitTest(){
       <div class="rubric-result">🗣️ Điểm phần nói: <span id="speakingScore">6.0</span> / 10</div>
     </div>`;
   calcRubric();
+  document.dispatchEvent(new CustomEvent('yysd:paper-result', { detail: {kind:'objective', score:correct, total:total} }));
+
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('navBar').style.display='none';
@@ -706,5 +708,6 @@ window.playAudio=playAudio; window.stopAudio=stopAudio; window.submitTest=submit
 })();
 </script>
 
+<script type="module" src="../../../studio/src/paper.mjs"></script>
 </body>
 </html>

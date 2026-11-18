@@ -29,6 +29,7 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /assets/js/exam-bridge.js
             /atlas*.html
             /studio/
             /package*.json

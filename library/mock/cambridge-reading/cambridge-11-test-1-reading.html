@@ -598,6 +598,8 @@ function submitTest(){
   document.getElementById('resultArea').style.display='block';
   document.getElementById('resTitle').textContent='Cambridge IELTS 11 · Test 1 — Đọc';
   document.getElementById('resMeta').textContent=`${mode==='practice'?'Luyện tập':'Thi thử'} · Thời gian làm bài: ${fmt(elapsed)} · Hoàn thành lúc ${new Date().toLocaleString('vi-VN')}`;
+
+  document.dispatchEvent(new CustomEvent('yysd:paper-result', { detail: {kind:'objective', score:correct, total:total} }));
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
@@ -648,5 +650,6 @@ function backToCover(){
   if(rc){ new MutationObserver(report).observe(rc,{childList:true,subtree:true,characterData:true}); }
 })();
 </script>
+<script type="module" src="../../../studio/src/paper.mjs"></script>
 </body>
 </html>

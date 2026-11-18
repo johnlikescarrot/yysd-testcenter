@@ -191,6 +191,8 @@ document.getElementById("submit").addEventListener("click", function(){
     q.classList.toggle("wrong", !ok);
   });
 
+
+  document.dispatchEvent(new CustomEvent('yysd:paper-result', { detail: {kind:'objective', score:score, total:total} }));
   // Approximate IELTS reading band from raw score (rough demo mapping)
   var pct = score / total;
   var band = pct >= 0.95 ? 9 : pct >= 0.85 ? 8 : pct >= 0.75 ? 7
@@ -217,5 +219,6 @@ document.getElementById("retry").addEventListener("click", function(){
   location.reload();
 });
 </script>
+<script type="module" src="../../../studio/src/paper.mjs"></script>
 </body>
 </html>

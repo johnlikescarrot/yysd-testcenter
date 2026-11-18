@@ -861,6 +861,8 @@ function submitTest() {
 
   window._bands = { l: bandToNum(lBand), r: bandToNum(rBand) };
   calcRubric();
+  document.dispatchEvent(new CustomEvent('yysd:paper-result', { detail: {kind:'objective', score:correct, total:total} }));
+
 
   document.getElementById('testArea').style.display = 'none';
   document.getElementById('navBar').style.display = 'none';
@@ -919,5 +921,6 @@ window.toggleFlag = toggleFlag; window.calcRubric = calcRubric;
 })();
 </script>
 
+<script type="module" src="../../../studio/src/paper.mjs"></script>
 </body>
 </html>

@@ -86,6 +86,26 @@ test("learn, get feedback, finish, review mistakes, change goal, reload, cancel;
   w.dispatchEvent(new w.Event("focus"));
   w.close();
 });
+test("the hub refreshes the paper ledger on a same-origin storage update", () => {
+  const { w, $ } = setup();
+  const key = "yysd:ielts-atlas:results:v1";
+  w.localStorage.setItem(
+    key,
+    JSON.stringify([
+      {
+        path: "library/mock/ielts/placement-test-1.html",
+        title: "Đề 1",
+        at: 1,
+        kind: "objective",
+        score: 4,
+        total: 5,
+      },
+    ]),
+  );
+  w.dispatchEvent(new w.StorageEvent("storage", { key }));
+  assert.match($("#paper-history").textContent, /4 \/ 5/);
+  w.close();
+});
 test("storage denied: progress still works; weekly strip distinguishes earlier study days", () => {
   const { w, $, click } = setup(true);
   assert.equal($("#storage-note").hidden, false);

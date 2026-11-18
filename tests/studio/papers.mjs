@@ -1,9 +1,13 @@
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { basename, dirname, join } from "node:path";
 import { Script } from "node:vm";
 import { JSDOM } from "jsdom";
 
+import { fingerprint } from "./paper-content.mjs";
+const canonical = JSON.parse(
+  readFileSync(new URL("./paper-fingerprints.json", import.meta.url)),
+);
 const root = "dist/library";
 function files(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
@@ -29,6 +33,10 @@ for (const path of pages) {
   });
   const w = dom.window,
     d = w.document;
+  let summary;
+  d.addEventListener("yysd:paper-result", (e) => {
+    summary = e.detail;
+  });
   w.scrollTo = () => {};
   w.HTMLElement.prototype.scrollIntoView = () => {};
   w.fetch = async (url) => ({
@@ -40,9 +48,21 @@ for (const path of pages) {
   w.HTMLMediaElement.prototype.pause = () => {};
   w.HTMLMediaElement.prototype.play = () => Promise.resolve();
   try {
+    const draftKey = basename(path, ".html") + "-draft";
+    if (path.includes("cambridge-writing/"))
+      w.localStorage.setItem(
+        draftKey,
+        JSON.stringify({ t1: "Restored text", t2: "" }),
+      );
     const context = dom.getInternalVMContext();
     for (const script of d.scripts)
       new Script(script.textContent, { filename: path }).runInContext(context);
+    if (path.includes("mock/cambridge-"))
+      assert.equal(
+        fingerprint(new Script("TEST").runInContext(context)),
+        canonical[basename(path)],
+        "exam content differs from pre-localization reference",
+      );
     if (path.includes("sample-academic")) {
       d.querySelectorAll(".q").forEach((q) => {
         const key = q.dataset.answer.split("|")[0];
@@ -71,6 +91,9 @@ for (const path of pages) {
     } else if (path.includes("cambridge-writing/")) {
       w.startTest();
       const t = d.querySelector("#t1");
+      assert.equal(t.value, "Restored text");
+      assert.equal(d.getElementById("timerText").textContent, "60:00");
+      assert.ok(d.querySelector("#task1Tables").innerHTML.length);
       t.value = "A steady increase.";
       t.dispatchEvent(new w.Event("input"));
       assert.equal(d.querySelector("#wc1").textContent, "3");
@@ -81,6 +104,18 @@ for (const path of pages) {
       );
       w.finishTest();
       assert.equal(d.querySelector("#dump1").textContent, t.value);
+      let clipboard;
+      Object.defineProperty(w.navigator, "clipboard", {
+        value: {
+          writeText: async (text) => {
+            clipboard = text;
+          },
+        },
+      });
+      w.copyAll();
+      await Promise.resolve();
+      assert.ok(clipboard.includes(d.title));
+      assert.ok(clipboard.includes(t.value));
       w.backToCover();
     } else {
       w.openMode();
@@ -127,6 +162,12 @@ for (const path of pages) {
       w.confirmSubmit();
       assert.match(d.querySelector("#resCorrect").textContent, /40\s*\/\s*40/);
       w.backToCover();
+    }
+    if (path.includes("cambridge-writing/"))
+      assert.deepEqual({ ...summary }, { kind: "writing", words: 3 });
+    else {
+      assert.equal(summary.kind, "objective");
+      assert.equal(summary.score, summary.total);
     }
   } catch (e) {
     failures.push(`${path}: ${e.stack}`);

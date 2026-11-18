@@ -113,9 +113,8 @@ def assemble(stage):
     esbuild = ROOT / 'node_modules/.bin/esbuild'
     if not esbuild.exists():
         raise SystemExit('Install the pinned build tools with npm ci first')
-    bundle = stage/'studio/src/main.mjs'
-    subprocess.run([esbuild, ROOT/'studio/src/main.mjs', '--bundle', '--minify', '--format=esm',
-                    f'--outfile={bundle}'], check=True)
+    subprocess.run([esbuild, ROOT/'studio/src/main.mjs', ROOT/'studio/src/paper.mjs', '--bundle', '--minify',
+                    '--format=esm', '--out-extension:.js=.mjs', f'--outdir={stage}/studio/src'], check=True)
     styles = subprocess.check_output([esbuild, ROOT/'studio/atlas.css', '--minify'], text=True)
     # Ship the small, first-paint stylesheet with each hub entry point.
     style = '<style>' + styles + '</style>'

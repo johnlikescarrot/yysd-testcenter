@@ -1111,3 +1111,29 @@ dialog::backdrop {
   color: var(--muted);
   margin-top: 5px;
 }
+
+.history {
+  margin-bottom: 32px;
+}
+.history p:not(.kicker),
+.history li span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+.history ol {
+  list-style: none;
+  padding: 0;
+}
+.history li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 3px;
+}
+.history a {
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+.history h2 {
+  margin-bottom: 9px;
+}

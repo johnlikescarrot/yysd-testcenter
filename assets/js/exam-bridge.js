@@ -884,7 +884,7 @@
       box.innerHTML = "<h3>" + (taskType === "task1" ? "Task 1" : "Task 2") + " Kết quả nhận xét</h3>" + renderGradeHtml(d);
       if (d.quota && d.quota.textLeft != null) {
         var qHint = "Lượt AI văn bản còn lại hôm nay: " + d.quota.textLeft + "/" + d.quota.textLimit;
-        if (d.quota.textLeft <= 0) qHint += "（已用完. Hãy thử lại vào ngày mai.）";
+        if (d.quota.textLeft <= 0) qHint += " (đã dùng hết, hãy quay lại ngày mai).";
         setGradeHint(qHint);
       }
     }
@@ -895,7 +895,8 @@
     }
 
     function reportWriting() {
-      if (posted) return;
+      // The CDT parent hides the result panel, but loading the sheet is not a submission.
+      if (posted || (cdtShell && !isTestDone())) return;
       var ra = document.getElementById("resultArea");
       // ponytail: CDT skin forces resultArea display:none !important — still post
       if (!cdtShell && (!ra || getComputedStyle(ra).display === "none")) return;
