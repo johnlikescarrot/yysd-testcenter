@@ -1,72 +1,57 @@
-# 优益思达学习中心
+# YYSD · Trung tâm luyện tập IELTS
 
-雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
+YYSD là kho học tập và luyện thi có sẵn từ trước, gồm giao diện tĩnh, thư viện bài tập, ứng dụng máy tính và một API Node. Trang chủ mới cung cấp một lộ trình IELTS bằng tiếng Việt, hoạt động độc lập và không yêu cầu tài khoản.
 
-静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
+## Lộ trình tiếng Việt
 
-## 学生端
+- Bốn bài luyện ngắn: từ vựng, đọc hiểu, viết và nghe từ/số. Câu hỏi tiếng Anh được giữ nguyên; hướng dẫn và giải thích bằng tiếng Việt.
+- Phản hồi sau từng câu, điểm kinh nghiệm, chuỗi ngày học, lịch sử bảy ngày và danh sách câu đến hạn ôn tập. Lịch ôn là gợi ý, không phải đánh giá năng lực hoặc dự đoán điểm IELTS.
+- Tiến độ chỉ được lưu trong `localStorage` trên thiết bị. Xóa dữ liệu trình duyệt hoặc chuyển thiết bị sẽ không tự đồng bộ; có nút xóa tiến độ trong phần chân trang.
+- Bài nghe sử dụng giọng đọc của trình duyệt/thiết bị, có bản chép lời dự phòng. Đây không phải bản ghi IELTS chính thức.
+- [Cẩm nang IELTS bằng tiếng Việt](docs/ielts/cam-nang-ielts.pdf) có nguồn chính thức, DOI và liên kết tìm bài nghiên cứu trên Google Scholar. [Ghi chú nghiên cứu và phạm vi](docs/ielts/nghien-cuu.md) giải thích giới hạn của các nguồn này.
 
-| 入口 | 说明 |
-|------|------|
-| 单词 | 高中 / 四级 / 雅思听读写专项词书、分类词库、错题本 |
-| 雅思真题 | 剑桥听力 / 阅读 / 写作；补弱 Section·Passage；单项模考；全套模考（CDT 机考壳） |
-| 练习 | 长难句、数字听写、口语练习等 |
-| 国际课程 | A-Level 等资料入口 |
-| 任务中心 | 教师布置的作业、日程与待办 |
-| 口语 / AI | 口语练习、写作 AI 批改（额度受限） |
+Các bài học mới là bài tập bổ trợ do YYSD biên soạn, không phải đề thi chính thức. YYSD không liên kết chính thức với IELTS hoặc Duolingo.
 
-全套模考结束进入三科成绩报告（`cdt-report.html`）；交卷等待时有加载提示。
+## Những gì chưa được chuyển ngữ
 
-## 教师端
+Kho cũ có hơn 12.000 tệp, bao gồm khoảng 1.844 PDF và nhiều nội dung tiếng Trung. Các trang, đề, dữ liệu và tài liệu PDF gốc **chưa được dịch toàn bộ**; chúng được giữ nguyên để tránh làm sai đề hoặc thay đổi tài liệu của bên thứ ba. Trang chủ cũ được lưu tại `legacy-home.html`; trang chủ mới liên kết đến trang YYSD gốc và nêu rõ giới hạn ngôn ngữ. Các chức năng cũ dựa vào API vẫn cần máy chủ riêng.
 
-- 登录：`teacher-login.html`
-- 日历布置：`teacher-calendar.html` — 按类型（单词 / 补弱 / 单项模考 / 全套）下钻勾选，支持上传自有 HTML
-- 学生诊断与其它教师页见仓库内 `teacher-*.html`
+## Chạy và kiểm thử
 
-## 技术结构
-
-```
-├── *.html                 # 站点页面（首页、考场、单词、教师端等）
-├── assets/                # CSS / JS（config 分类、exam CDT、auth）
-├── library/               # 题目与词书 HTML（按 zone/subject 分目录）
-│   └── manifest.json      # 内容索引（脚本/CI 生成，勿手改）
-├── server/                # Express API + SQLite（登录、成绩、日历、AI 代理等）
-├── rankings/              # 排行榜子应用（可选）
-├── admission/             # 招生相关子应用（可选）
-└── scripts/               # manifest、词库、自检脚本
-```
-
-API 依赖见 [`server/package.json`](server/package.json)；环境变量模板见 [`server/.env.example`](server/.env.example)。生产部署脚本在 [`server/deploy/`](server/deploy/)。
-
-## 本地预览
-
-前端不要直接双击打开 HTML，需本地静态服务；API 另开进程。
+Cần Node.js 22.19 trở lên cho bộ kiểm thử mới. Không cần cài Node để phục vụ các tệp tĩnh trong môi trường phát triển.
 
 ```bash
-# 前端
-python3 -m http.server 8080
-# → http://localhost:8080
-
-# API（需 Node ≥ 18）
-cd server && cp -n .env.example .env && npm i && npm start
-# → 默认 http://localhost:3000
+npm ci
+npm run test:coverage   # 100% dòng, nhánh và hàm của lõi tiến độ + dữ liệu bài mới
+npm run test:browser    # bài học, lưu trữ, ôn tập, di động và đường dẫn Pages
+npm run audit           # Lighthouse di động cho trang chủ và trang bài học
+npm run build:pages     # tạo bản tĩnh trong pages-dist/
+python3 -m http.server 8080 --bind 0.0.0.0
 ```
 
-前端如何指向本地 API，以 `assets/js/auth.js` / 环境配置为准。
+Kiểm thử trình duyệt dùng Chromium được cài qua npm; trên Linux có thể cần các thư viện hệ thống tương thích. Báo cáo Lighthouse nằm trong `.lighthouse/` và không được đưa vào Git. Các ngưỡng 100% áp dụng cho **hai mô-đun được liệt kê**, không phải toàn bộ mã cũ hoặc mọi trạng thái của ứng dụng. Điểm Lighthouse có thể thay đổi theo môi trường và đường dẫn đo.
 
-## 内容与成绩
+Để tạo lại PDF cần Python, `reportlab` và phông DejaVu Sans tại `/usr/share/fonts/truetype/dejavu/`:
 
-- 新题放入 `library/<zone>/<subject>/`，提交后由 Actions 或 `scripts/build_manifest.py` 重建 `manifest.json`。
-- 可选 meta：`exam:title` / `exam:duration` / `exam:description`。
-- 试卷批改后向父页同步分数：
-
-```js
-parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
+```bash
+python3 -m pip install -r docs/ielts/requirements-pdf.txt
+python3 scripts/build_ielts_guide.py
 ```
 
-写作模考另可附带 `writingTask1` / `writingTask2` 等字段供报告页使用。
+## GitHub Pages
 
-## 相关文档
+Workflow `.github/workflows/ielts-vi.yml` kiểm thử và đóng gói riêng giao diện tiếng Việt. GitHub Pages chỉ phục vụ tệp tĩnh: API đăng nhập, AI, đồng bộ điểm, ứng dụng Next.js và kho đề/audio cũ không nằm trong bản xuất này. Kho nguồn gần 5 GB vượt giới hạn 1 GB của một trang Pages; workflow vì vậy **không** xuất toàn bộ kho. Các đường dẫn của bản mới là tương đối, hoạt động cả ở `/` và dưới đường dẫn tên kho.
 
-- 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
-- A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)
+Để xuất bản, bật **Settings → Pages → Build and deployment → GitHub Actions**. Workflow chạy trên nhánh làm việc hiện tại và `main`; PR chỉ kiểm thử, không tự triển khai hoặc hợp nhất. Tệp `CNAME` của hệ thống cũ không được đưa vào bản xuất, để không tự thay đổi tên miền hiện có.
+
+Super-Linter được cấu hình chạy trên mỗi lần đẩy thay đổi/PR đối với phạm vi các tệp của lộ trình mới; kho cũ chưa được tuyên bố là đã qua lint. Xem kết quả từng lần chạy trong GitHub Actions.
+
+## Cấu trúc kho cũ
+
+- `assets/`, các tệp HTML gốc: giao diện web và các trình luyện tập hiện có.
+- `library/`: kho đề và từ vựng; `library/manifest.json` được tạo bằng tập lệnh của dự án.
+- `server/`: API Node, SQLite, đăng nhập và các tính năng cần máy chủ; cấu hình mẫu ở `server/.env.example`.
+- `app/`, `desktop/`, `desktop-tiku/`: các ứng dụng và dữ liệu liên quan.
+- `admission/`, `rankings/`: các ứng dụng Next.js tùy chọn.
+
+Không đưa khóa bí mật vào kho. Hướng dẫn thiết kế và quy tắc nội dung cũ vẫn ở `AGENTS.md` và `YYSD-DESIGN-RULES.md`.

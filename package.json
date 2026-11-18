@@ -1,0 +1,21 @@
+{
+  "name": "yysd-ielts-vietnamese",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/core.test.mjs tests/data.test.mjs",
+    "test:coverage": "node --experimental-test-coverage --test-coverage-include=assets/js/ielts-vi-core.mjs --test-coverage-include=assets/js/ielts-vi-data.mjs --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 --test tests/core.test.mjs tests/data.test.mjs",
+    "test:browser": "node tests/browser.test.mjs",
+    "audit": "node scripts/audit-ielts.mjs",
+    "build:pages": "node scripts/build-ielts-pages.mjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "13.6.0",
+    "playwright-core": "1.65.1"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

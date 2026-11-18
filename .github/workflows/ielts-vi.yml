@@ -1,0 +1,115 @@
+name: IELTS tiếng Việt · Kiểm thử và GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - arena/9e1a94bb-yysd-testcenter
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Kiểm thử, độ bao phủ và Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lấy các tệp của lộ trình tiếng Việt
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /index.html
+            /study.html
+            /.nojekyll
+            /package.json
+            /package-lock.json
+            /assets/css/ielts-vi.css
+            /assets/js/ielts-vi-*.mjs
+            /assets/img/favicon.svg
+            /assets/img/logo.svg
+            /docs/ielts/
+            /tests/
+            /scripts/audit-ielts.mjs
+            /scripts/build-ielts-pages.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run test:coverage
+      - run: npm run test:browser
+      - run: npm run audit
+      - name: Lưu báo cáo Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-ielts-vi
+          path: .lighthouse/*.json
+          if-no-files-found: ignore
+      - name: Đóng gói trang tĩnh
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: pages-dist
+
+  super-linter:
+    name: Super-Linter · các tệp mới
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      statuses: write
+    steps:
+      - name: Lấy mã và cấu hình lint
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /index.html
+            /study.html
+            /README.md
+            /assets/css/ielts-vi.css
+            /assets/js/ielts-vi-*.mjs
+            /docs/ielts/nghien-cuu.md
+            /tests/
+            /scripts/audit-ielts.mjs
+            /scripts/build-ielts-pages.mjs
+            /scripts/build_ielts_guide.py
+            /.github/linters/
+            /.github/workflows/ielts-vi.yml
+      - name: Chạy Super-Linter
+        uses: super-linter/super-linter/slim@v9.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: '(^|/)(index\.html|study\.html|README\.md|assets/(css/ielts-vi\.css|js/ielts-vi-[^/]+\.mjs)|tests/[^/]+\.mjs|scripts/(audit-ielts|build-ielts-pages)\.mjs|scripts/build_ielts_guide\.py|docs/ielts/nghien-cuu\.md|\.github/workflows/ielts-vi\.yml)$'
+          VALIDATE_CSS: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_PYTHON_RUFF: true
+          VALIDATE_YAML: true
+
+  pages:
+    name: Xuất bản GitHub Pages
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/arena/9e1a94bb-yysd-testcenter')
+    needs: quality
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    steps:
+      - name: Cấu hình Pages
+        uses: actions/configure-pages@v5
+      - name: Triển khai
+        id: deployment
+        uses: actions/deploy-pages@v4

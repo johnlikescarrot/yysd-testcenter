@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ec">
+  <meta name="description" content="Bài học IELTS ngắn với phản hồi bằng tiếng Việt và lịch ôn tập trên thiết bị.">
+  <title>Bài học IELTS · YYSD</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/ielts-vi.css">
+  <script type="module" src="assets/js/ielts-vi-lesson.mjs"></script>
+</head>
+<body class="study-page">
+  <a class="skip-link" href="#noi-dung">Chuyển đến nội dung</a>
+  <header class="study-header">
+    <div class="study-header-inner">
+      <a class="study-back" href="index.html#lo-trinh"><span aria-hidden="true">←</span> <span>Về lộ trình</span></a>
+      <span class="study-brand">YYSD <span>·</span> IELTS</span>
+      <span class="study-time">MỖI NGÀY MỘT CHÚT</span>
+    </div>
+  </header>
+  <main id="noi-dung" class="study-main">
+    <div id="study-loading" class="study-message">Đang chuẩn bị bài học…</div>
+    <noscript><p class="study-message">Vui lòng bật JavaScript để làm bài học. <a href="index.html">Trở về trang chủ</a>.</p></noscript>
+    <section id="study-exercise" class="exercise" aria-labelledby="question-title" hidden>
+      <div class="exercise-top"><p id="lesson-label" class="eyebrow"></p><p id="question-count" class="question-count"></p></div>
+      <div class="progress-track" role="progressbar" aria-label="Tiến độ bài học" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="question-progress"><span id="question-progress-bar"></span></div>
+      <div class="exercise-content">
+        <p class="question-overline" id="lesson-title"></p>
+        <h1 id="question-title" tabindex="-1"></h1>
+        <p id="question-context" class="question-context" lang="en" hidden></p>
+        <div id="audio-tools" class="audio-tools" hidden>
+          <p>Giọng đọc do thiết bị tạo, chỉ để luyện tập; không phải bản ghi IELTS chính thức.</p>
+          <button id="play-audio" class="audio-button" type="button">▶ Nghe câu nói</button>
+          <button id="show-transcript" class="transcript-button" type="button">Xem bản chép lời</button>
+          <p id="audio-transcript" class="transcript" lang="en" hidden></p>
+        </div>
+        <form id="answer-form">
+          <fieldset id="answer-options"><legend>Chọn một câu trả lời</legend></fieldset>
+          <div id="answer-feedback" class="feedback" role="status" aria-live="polite" hidden><strong id="feedback-title"></strong><p id="feedback-explanation"></p></div>
+          <div class="exercise-actions"><button class="button button-primary" id="check-answer" type="submit" disabled>Kiểm tra <span aria-hidden="true">→</span></button><button class="button button-primary" id="next-question" type="button" hidden>Tiếp tục <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+    </section>
+    <section id="study-result" class="result" aria-labelledby="result-title" hidden>
+      <span class="result-icon" aria-hidden="true">✦</span><p class="eyebrow">BÀI HỌC HOÀN THÀNH</p>
+      <h1 id="result-title" tabindex="-1">Bạn đã tiến thêm một bước.</h1>
+      <p id="result-summary"></p><div class="result-points"><strong id="result-xp"></strong><span>điểm kinh nghiệm</span></div>
+      <p id="result-storage" class="result-note">Bài học và lịch ôn tập đã được lưu trên thiết bị này.</p>
+      <div class="result-actions"><a class="button button-primary" id="next-lesson" href="index.html#lo-trinh">Bài học tiếp theo <span aria-hidden="true">→</span></a><a class="text-link" href="index.html#lo-trinh">Về lộ trình</a></div>
+    </section>
+    <section id="study-empty" class="result" aria-labelledby="empty-title" hidden><span class="result-icon" aria-hidden="true">✳</span><h1 id="empty-title"></h1><p id="empty-message"></p><a class="button button-primary" href="index.html#lo-trinh">Về lộ trình <span aria-hidden="true">→</span></a></section>
+  </main>
+  <footer class="study-footer">Bài chưa hoàn thành sẽ bắt đầu lại khi bạn rời trang. Bài hoàn thành được lưu trên thiết bị.</footer>
+</body>
+</html>
