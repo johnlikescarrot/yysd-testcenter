@@ -1,0 +1,57 @@
+name: Publish learning center to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify IELTS learning logic and 100% core coverage
+        run: bash scripts/test_ielts_vn.sh
+      - name: Verify the Vietnamese entry point and local assets
+        run: |
+          test -s ielts-vn.html
+          test -s assets/css/ielts-vn.css
+          test -s assets/js/ielts-vn-core.js
+          test -s assets/js/ielts-vn-app.js
+          grep -q '<html lang="vi">' ielts-vn.html
+          grep -q 'ielts-vn.html' assets/js/zone.js
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Assemble the tracked static website
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          git archive --format=tar HEAD | tar -xf - -C "$RUNNER_TEMP/site"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

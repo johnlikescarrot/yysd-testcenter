@@ -1,0 +1,62 @@
+name: Super-Linter
+
+on:
+  push:
+    paths:
+      - "ielts-vn.html"
+      - "assets/css/ielts-vn.css"
+      - "assets/js/ielts-vn-core.js"
+      - "assets/js/ielts-vn-app.js"
+      - "scripts/test_ielts_vn_core.cjs"
+      - "scripts/test_ielts_vn.sh"
+      - "assets/js/zone.js"
+      - "assets/css/style.css"
+      - "docs/ielts-vn.md"
+      - ".github/workflows/super-linter.yml"
+      - ".github/workflows/pages.yml"
+  pull_request:
+    paths:
+      - "ielts-vn.html"
+      - "assets/css/ielts-vn.css"
+      - "assets/js/ielts-vn-core.js"
+      - "assets/js/ielts-vn-app.js"
+      - "scripts/test_ielts_vn_core.cjs"
+      - "scripts/test_ielts_vn.sh"
+      - "assets/js/zone.js"
+      - "assets/css/style.css"
+      - "docs/ielts-vn.md"
+      - ".github/workflows/super-linter.yml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  super-linter:
+    name: Lint IELTS learning experience
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Enforce 100% coverage of the IELTS progress engine
+        run: bash scripts/test_ielts_vn.sh
+      - name: Lint the focused Vietnamese IELTS feature
+        uses: super-linter/super-linter@v8
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_INCLUDE: '(^|/)(ielts-vn\.html|ielts-vn\.css|ielts-vn-core\.js|ielts-vn-app\.js|test_ielts_vn_core\.cjs|test_ielts_vn\.sh|ielts-vn\.md|pages\.yml|super-linter\.yml)$'
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_BASH: true
+          VALIDATE_YAML: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_GITHUB_ACTIONS: true

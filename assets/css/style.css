@@ -10173,3 +10173,25 @@ html:has(.home-apple-keynote) {
   .ha-demo__caption,
   .ha-demo__ripple { display: none !important; }
 }
+
+/* Vietnamese IELTS learning path */
+.ielts-vn-entry {
+  display: flex;
+  max-width: 510px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 15px;
+  padding: 12px 15px;
+  border: 1px solid rgba(22, 61, 86, .13);
+  border-radius: 10px;
+  background: rgba(255, 253, 248, .8);
+  color: #173e56;
+  transition: background .15s, transform .15s;
+}
+.ielts-vn-entry:hover { background: #fffdf8; transform: translateY(-1px); }
+.ielts-vn-entry b, .ielts-vn-entry small { display: block; }
+.ielts-vn-entry b { font-size: 12px; }
+.ielts-vn-entry small { margin-top: 3px; color: #697581; font-size: 10px; }
+.ielts-vn-entry > span:last-child { font-size: 17px; }
+@media (prefers-reduced-motion: reduce) { .ielts-vn-entry { transition: none; } }

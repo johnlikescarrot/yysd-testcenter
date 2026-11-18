@@ -593,6 +593,7 @@
         '<p class="ielts-hub__kicker">Cambridge IELTS</p>' +
         "<h2>选择你的训练路径</h2>" +
         "<p>单项精练打基础，套题模考练临场。四科口音分明，点进去就是对应题库。</p>" +
+        '<a class="ielts-vn-entry" href="ielts-vn.html"><span><b>IELTS 每日学习 · 越南语版</b><small>个性化学习路径、连续打卡与四科练习</small></span><span aria-hidden="true">→</span></a>' +
       "</header>" +
       '<div class="ielts-hub__grid">' + cards + "</div>" +
     "</section>";

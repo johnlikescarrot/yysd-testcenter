@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3ec">
+    <meta
+      name="description"
+      content="Luyện IELTS mỗi ngày bằng lộ trình ngắn, ôn tập có nhắc lại, mục tiêu rõ ràng và bài luyện đủ bốn kỹ năng."
+   >
+    <title>IELTS mỗi ngày — Ưu Ích Sĩ Đạt</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/ielts-vn.css">
+    <script defer src="assets/js/ielts-vn-core.js"></script>
+    <script defer src="assets/js/ielts-vn-app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Chuyển đến nội dung chính</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Điều hướng học tập">
+        <a
+          class="brand"
+          href="ielts-vn.html"
+          aria-label="IELTS mỗi ngày, trang tổng quan"
+        >
+          <span class="brand-mark" aria-hidden="true">i.</span>
+          <span
+            ><strong>IELTS mỗi ngày</strong
+            ><small>Học vững, thi tự tin</small></span
+          >
+        </a>
+        <nav class="side-nav" aria-label="Điều hướng chính">
+          <a class="side-link is-active" href="#tong-quan" data-view="tong-quan"
+            ><span aria-hidden="true">⌂</span> Tổng quan</a
+          >
+          <a class="side-link" href="#lo-trinh" data-view="lo-trinh"
+            ><span aria-hidden="true">◉</span> Lộ trình</a
+          >
+          <a class="side-link" href="#luyen-ky-nang" data-view="luyen-ky-nang"
+            ><span aria-hidden="true">▤</span> Luyện bốn kỹ năng</a
+          >
+          <a class="side-link" href="#bang-xep-hang" data-view="bang-xep-hang"
+            ><span aria-hidden="true">♧</span> Bảng xếp hạng</a
+          >
+          <a class="side-link" href="#tai-lieu" data-view="tai-lieu"
+            ><span aria-hidden="true">▧</span> Nghiên cứu &amp; tài liệu</a
+          >
+        </nav>
+        <section class="sidebar-note" aria-label="Nhắc nhở học tập">
+          <span class="note-icon" aria-hidden="true">✦</span>
+          <p>
+            <strong>Tiến bộ đến từ sự đều đặn.</strong><br>Một phiên tập trung
+            ngắn vẫn là một bước tiến.
+          </p>
+        </section>
+        <a class="back-link" href="zone.html?zone=mock&s=ielts"
+          >← Trở về kho đề IELTS</a
+        >
+      </aside>
+
+      <main id="main" class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="today-label">KHÔNG GIAN LUYỆN TẬP</p>
+            <h1>Chào bạn, hôm nay mình học gì?</h1>
+          </div>
+          <div class="topbar-stats" role="group" aria-label="Thành tích hiện tại">
+            <span class="streak-pill"
+              ><span aria-hidden="true">♨</span> <b id="streak-count">0</b
+              ><span>ngày</span></span
+            >
+            <span class="xp-pill"
+              ><span aria-hidden="true">✦</span> <b id="total-xp">0 XP</b></span
+            >
+            <button class="avatar" type="button" aria-label="Hồ sơ học tập">
+              HV
+            </button>
+          </div>
+        </header>
+
+        <section
+          id="tong-quan"
+          class="view-section"
+          aria-labelledby="welcome-title"
+        >
+          <div class="welcome-grid">
+            <article class="welcome-card">
+              <div class="welcome-copy">
+                <p class="eyebrow eyebrow-light">LỘ TRÌNH CỦA RIÊNG BẠN</p>
+                <h2 id="welcome-title">
+                  Mỗi ngày một chút.<br><em>Band cao hơn từng ngày.</em>
+                </h2>
+                <p>
+                  Học theo chặng ngắn, luyện đúng điểm cần cải thiện và nhìn
+                  thấy tiến bộ của mình.
+                </p>
+                <a
+                  class="button button-light"
+                  href="#lo-trinh"
+                  data-view="lo-trinh"
+                  >Tiếp tục bài học <span aria-hidden="true">→</span></a
+                >
+              </div>
+              <div class="welcome-art" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="book-stack">
+                  <span>IELTS</span><b>7.0</b><small>YOUR NEXT STEP</small>
+                </div>
+                <span class="spark spark-a">✳</span
+                ><span class="spark spark-b">✦</span>
+              </div>
+            </article>
+            <article class="streak-card">
+              <div class="streak-icon" aria-hidden="true">♨</div>
+              <p class="eyebrow">CHUỖI HỌC LIÊN TỤC</p>
+              <p class="streak-number">
+                <span id="hero-streak">0</span><small>ngày</small>
+              </p>
+              <p class="muted">Giữ nhịp học hôm nay để nối dài chuỗi nhé.</p>
+              <div
+                class="week-dots"
+                id="week-dots"
+                role="group"
+                aria-label="Hoạt động học trong bảy ngày gần đây"
+              ></div>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">HÔM NAY</p>
+              <h2>Mục tiêu nhỏ, tiến bộ thật</h2>
+            </div>
+            <span class="subtle" id="goal-summary">0/3 nhiệm vụ</span>
+          </div>
+          <div class="goal-list" id="goal-list" aria-live="polite"></div>
+
+          <div class="section-heading pathway-heading" id="lo-trinh">
+            <div>
+              <p class="eyebrow">LỘ TRÌNH HỌC</p>
+              <h2>Chặng tiếp theo của bạn</h2>
+              <p class="muted">
+                Bài ngắn, luyện có chủ đích — bạn có thể dừng và quay lại bất cứ
+                lúc nào.
+              </p>
+            </div>
+            <span class="level-pill" id="level-pill">Cấp 1</span>
+          </div>
+          <div class="level-progress">
+            <div class="level-label">
+              <span id="level-copy">0 / 100 XP đến cấp tiếp theo</span
+              ><span id="level-percent">0%</span>
+            </div>
+            <div class="progress-track"><span id="level-bar"></span></div>
+          </div>
+          <div class="pathway" id="pathway">
+            <span class="path-line" aria-hidden="true"></span>
+            <button
+              class="path-node is-current"
+              type="button"
+              data-action="lesson"
+            >
+              <span class="node-icon">✎</span
+              ><span
+                ><b>Khởi động từ vựng</b
+                ><small>5 câu · khoảng 3 phút</small></span
+              ><span class="node-arrow">Bắt đầu →</span>
+            </button>
+            <button class="path-node" type="button" data-action="review">
+              <span class="node-icon node-icon-soft">↻</span
+              ><span
+                ><b>Ôn tập thông minh</b
+                ><small>Nhắc lại để nhớ lâu hơn</small></span
+              ><span class="node-arrow">Ôn ngay →</span>
+            </button>
+            <a class="path-node" href="#luyen-ky-nang" data-view="luyen-ky-nang"
+              ><span class="node-icon node-icon-gold">◎</span
+              ><span
+                ><b>Chọn kỹ năng cần rèn</b
+                ><small>Nghe · Đọc · Viết · Nói</small></span
+              ><span class="node-arrow">Khám phá →</span></a
+            >
+          </div>
+        </section>
+
+        <section
+          id="luyen-ky-nang"
+          class="view-section skill-section"
+          aria-labelledby="skills-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">LUYỆN THI CÓ CHIẾN LƯỢC</p>
+              <h2 id="skills-title">Bốn kỹ năng, một mục tiêu</h2>
+              <p class="muted">
+                Chọn bài luyện trên nền tảng. Bài làm và tiến độ đề IELTS hiện
+                có được giữ nguyên.
+              </p>
+            </div>
+          </div>
+          <div class="skill-grid">
+            <a
+              class="skill-card skill-listen"
+              href="zone.html?zone=mock&s=listening"
+              ><span class="skill-icon" aria-hidden="true">♫</span
+              ><span class="eyebrow">LISTENING</span>
+              <h3>Nghe hiểu</h3>
+              <p>
+                Nghe chi tiết, nhận diện ý chính và làm quen nhiều giọng đọc.
+              </p>
+              <span class="skill-go">Luyện nghe <b>→</b></span></a
+            >
+            <a
+              class="skill-card skill-read"
+              href="zone.html?zone=mock&s=reading"
+              ><span class="skill-icon" aria-hidden="true">▤</span
+              ><span class="eyebrow">READING</span>
+              <h3>Đọc chiến lược</h3>
+              <p>Quét thông tin, suy luận từ ngữ cảnh và quản lý thời gian.</p>
+              <span class="skill-go">Luyện đọc <b>→</b></span></a
+            >
+            <a
+              class="skill-card skill-write"
+              href="zone.html?zone=mock&s=writing"
+              ><span class="skill-icon" aria-hidden="true">✎</span
+              ><span class="eyebrow">WRITING</span>
+              <h3>Viết mạch lạc</h3>
+              <p>
+                Phát triển luận điểm, tổ chức đoạn và kiểm tra độ chính xác.
+              </p>
+              <span class="skill-go">Luyện viết <b>→</b></span></a
+            >
+            <a class="skill-card skill-speak" href="speaking.html"
+              ><span class="skill-icon" aria-hidden="true">◖</span
+              ><span class="eyebrow">SPEAKING</span>
+              <h3>Nói tự tin</h3>
+              <p>Luyện trả lời, mở rộng ý và diễn đạt tự nhiên từng bước.</p>
+              <span class="skill-go">Luyện nói <b>→</b></span></a
+            >
+          </div>
+          <div class="exam-shortcut">
+            <div>
+              <p class="eyebrow">SẴN SÀNG CHO PHÒNG THI?</p>
+              <h3>Thử một đề Cambridge hoàn chỉnh</h3>
+              <p class="muted">
+                Chọn đề trong kho hiện có, làm bài theo thời gian và xem lại kết
+                quả.
+              </p>
+            </div>
+            <a class="button button-navy" href="zone.html?zone=mock&s=ielts"
+              >Mở kho đề IELTS <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </section>
+
+        <section
+          id="bang-xep-hang"
+          class="view-section leaderboard-section"
+          aria-labelledby="leader-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">THỬ THÁCH TUẦN NÀY</p>
+              <h2 id="leader-title">Cùng nhau giữ nhịp</h2>
+              <p class="muted">
+                Bảng mẫu minh họa trải nghiệm thi đua. Thành tích được lưu trên
+                thiết bị này.
+              </p>
+            </div>
+            <span class="league-badge">✦ Hạng Đồng</span>
+          </div>
+          <div class="leader-card">
+            <div class="leader-head">
+              <span>HẠNG</span><span>NGƯỜI HỌC</span><span>ĐIỂM TUẦN</span>
+            </div>
+            <div class="leader-row">
+              <span class="rank-medal">1</span
+              ><span class="leader-person"
+                ><span class="mini-avatar avatar-peach">AL</span
+                ><b>An Linh</b></span
+              ><b>420 XP</b>
+            </div>
+            <div class="leader-row">
+              <span class="rank-medal">2</span
+              ><span class="leader-person"
+                ><span class="mini-avatar avatar-blue">MK</span
+                ><b>Minh Khoa</b></span
+              ><b>365 XP</b>
+            </div>
+            <div class="leader-row is-you">
+              <span class="rank-medal">3</span
+              ><span class="leader-person"
+                ><span class="mini-avatar avatar-green">HV</span
+                ><b>Bạn <small>(thiết bị này)</small></b></span
+              ><b id="weekly-xp">0 XP</b>
+            </div>
+            <div class="leader-row">
+              <span class="rank-medal">4</span
+              ><span class="leader-person"
+                ><span class="mini-avatar avatar-lilac">TH</span
+                ><b>Thu Hà</b></span
+              ><b>210 XP</b>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="tai-lieu"
+          class="view-section evidence-section"
+          aria-labelledby="evidence-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CƠ SỞ HỌC TẬP</p>
+              <h2 id="evidence-title">Thiết kế dựa trên nghiên cứu</h2>
+              <p class="muted">
+                Tóm lược bằng tiếng Việt, kèm nguồn học thuật để bạn tự đọc và
+                đối chiếu.
+              </p>
+            </div>
+            <button
+              class="button button-outline"
+              type="button"
+              data-action="print"
+            >
+              Lưu tài liệu PDF <span aria-hidden="true">↓</span>
+            </button>
+          </div>
+          <div class="evidence-intro">
+            <b>Không có mẹo thần kỳ để tăng band.</b> Lặp lại có giãn cách, chủ
+            động nhớ lại, nhận phản hồi cụ thể và luyện đủ bốn kỹ năng là những
+            nguyên tắc hữu ích — nhưng kết quả phụ thuộc vào người học, thời
+            lượng và chất lượng thực hành.
+          </div>
+          <ol class="reference-list" id="reference-list"></ol>
+          <p class="citation-note">
+            Các mô tả trên là diễn giải ngắn, không phải trích dẫn nguyên văn.
+            Liên kết Google Scholar dùng để tra cứu công trình; quyền truy cập
+            toàn văn phụ thuộc nhà xuất bản hoặc kho lưu trữ. Học liệu IELTS
+            thuộc quyền của chủ sở hữu tương ứng.
+          </p>
+        </section>
+
+        <footer class="page-footer">
+          <span>© Ưu Ích Sĩ Đạt · Không gian học IELTS</span
+          ><a href="privacy.html">Quyền riêng tư</a
+          ><button type="button" data-action="reset">
+            Xóa tiến độ trên thiết bị này
+          </button>
+        </footer>
+      </main>
+    </div>
+
+    <dialog
+      class="practice-dialog"
+      id="practice-dialog"
+      aria-labelledby="practice-title"
+    >
+      <form method="dialog">
+        <button class="dialog-close" type="submit" aria-label="Đóng bài luyện">×</button>
+      </form>
+      <div class="dialog-inner" id="practice-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      ><p class="noscript">
+        Để lưu tiến độ và sử dụng bài luyện tương tác, vui lòng bật JavaScript.
+        Các liên kết tới kho đề IELTS vẫn hoạt động.
+      </p></noscript
+    >
+  </body>
+</html>
