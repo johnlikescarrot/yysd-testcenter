@@ -53,12 +53,21 @@ jobs:
           ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           MULTI_STATUS: false
           CREATE_LOG_FILE: true
+      - name: Expose Super-Linter diagnostics
+        if: failure()
+        run: |
+          if [[ -f super-linter.log ]]; then
+            sudo cat super-linter.log > "$RUNNER_TEMP/ielts-super-linter.log"
+            grep -E -A 8 '\[(ERROR|FATAL)\]' "$RUNNER_TEMP/ielts-super-linter.log" | tail -n 35 | while IFS= read -r line; do
+              printf '::error title=Super-Linter::%s\n' "${line//%/%25}"
+            done
+          fi
       - name: Upload Super-Linter diagnostics on failure
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: ielts-super-linter
-          path: super-linter.log
+          path: ${{ runner.temp }}/ielts-super-linter.log
           if-no-files-found: ignore
 
   quality:

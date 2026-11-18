@@ -37,7 +37,20 @@ try {
         const { lhr, report: [json, html] } = report;
         const scores = Object.fromEntries(categories.map((category) => [category, lhr.categories[category].score]));
         const id = `${mode}-${name}`;
-        results.push({ id, url: lhr.finalDisplayedUrl, scores, version: lhr.lighthouseVersion });
+        const problems = Object.entries(scores).flatMap(([category, score]) => {
+          if (score === 1) return [];
+          return lhr.categories[category].auditRefs
+            .filter(({ weight }) => weight > 0)
+            .map(({ id: auditId }) => lhr.audits[auditId])
+            .filter((audit) => audit.score !== null && audit.score !== 1)
+            .map((audit) => `${category}/${audit.id}=${audit.displayValue ?? audit.errorMessage ?? audit.score}`);
+        });
+        if (lhr.runtimeError) problems.push(lhr.runtimeError.message);
+        if (problems.length) {
+          const diagnostic = `${id}: ${problems.join(' | ')}`.replaceAll('\n', ' ');
+          console.error(process.env.GITHUB_ACTIONS ? `::error title=Lighthouse::${diagnostic.replaceAll('%', '%25')}` : diagnostic);
+        }
+        results.push({ id, url: lhr.finalDisplayedUrl, scores, version: lhr.lighthouseVersion, problems });
         await Promise.all([
           writeFile(new URL(`${id}.json`, reports), json),
           writeFile(new URL(`${id}.html`, reports), html),
