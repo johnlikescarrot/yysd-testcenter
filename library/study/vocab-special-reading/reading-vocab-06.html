@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
@@ -7,8 +7,8 @@
     <meta name="exam:title" content="Bài 6 · Ngôn ngữ và truyền thông">
     <meta name="exam:description" content="Từ vựng Đọc · Ngôn ngữ và truyền thông">
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元6-语言与传播</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc – Bài 06 · Ngôn ngữ và giao tiếp</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -131,36 +131,37 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🗣️</div><span>阅读-单元6-语言与传播</span></div>
+        <div class="logo"><div class="logo-icon">🗣️</div><span>Đọc – Bài 06 · Ngôn ngữ và giao tiếp</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">Đang tải từ vựng…</span>
     </div>
 </header>
 <div class="main-container">
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/tu-trong-ngu-canh.pdf" download>Tải sổ tay Học từ trong ngữ cảnh (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 Kiểm tra tổng hợp · Đang tải câu hỏi…</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Nhận diện nghĩa<br>Tiếng Anh → tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ tiếng Anh gần nghĩa</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Vận dụng<br>Ngữ cảnh và từ nhiều nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Nhận diện nghĩa</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -169,110 +170,101 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 语言与传播 · 32个核心词 ====================
+
 const wordData = [
-    // —— 语言学基础 ——
-    { word:'linguistic', ipa:'/lɪŋˈɡwɪs.tɪk/', pos:'adj.', meaning:'语言的；语言学的', synonym:'language-related', target:'linguistic', example:'The linguistic diversity of the region is remarkable.', accept_meaning:['语言的','语言学的'] },
-    { word:'literacy', ipa:'/ˈlɪt.ər.ə.si/', pos:'n.', meaning:'读写能力；文化素养', synonym:'reading ability', target:'literacy', example:'Literacy rates have increased significantly in recent decades.', accept_meaning:['读写能力','文化素养'] },
-    { word:'rhetoric', ipa:'/ˈret.ər.ɪk/', pos:'n.', meaning:'修辞；雄辩', synonym:'oratory', target:'rhetoric', example:'The politician used powerful rhetoric to persuade the audience.', accept_meaning:['修辞','雄辩'] },
-    { word:'grammar', ipa:'/ˈɡræm.ər/', pos:'n.', meaning:'语法；语法书', synonym:'syntax', target:'grammar', example:'Good grammar is essential for clear communication.', accept_meaning:['语法','语法书'] },
-    { word:'vocabulary', ipa:'/vəˈkæb.jə.lər.i/', pos:'n.', meaning:'词汇；词汇量', synonym:'lexicon', target:'vocabulary', example:'A wide vocabulary helps in academic writing.', accept_meaning:['词汇','词汇量'] },
-    { word:'pronunciation', ipa:'/prəˌnʌn.siˈeɪ.ʃən/', pos:'n.', meaning:'发音', synonym:'enunciation', target:'pronunciation', example:'Correct pronunciation is important for effective communication.', accept_meaning:['发音'] },
-    { word:'dialect', ipa:'/ˈdaɪ.ə.lekt/', pos:'n.', meaning:'方言', synonym:'vernacular', target:'dialects', example:'People in different regions speak different dialects.', accept_meaning:['方言'] },
-    { word:'idiom', ipa:'/ˈɪd.i.əm/', pos:'n.', meaning:'习语；成语', synonym:'expression', target:'idiom', example:'He used an idiom that confused the foreign students.', accept_meaning:['习语','成语'] },
 
-    // —— 交流与传播 ——
-    { word:'translate', ipa:'/trænzˈleɪt/', pos:'v.', meaning:'翻译', synonym:'interpret', target:'translate', example:'She was asked to translate the document into English.', accept_meaning:['翻译'] },
-    { word:'interpret', ipa:'/ɪnˈtɜː.prɪt/', pos:'v.', meaning:'口译；解释；解读', synonym:'explain', target:'interpret', example:'The interpreter helped to interpret the foreign language.', accept_meaning:['口译','解释','解读'] },
-    { word:'articulate', ipa:'/ɑːˈtɪk.jə.leɪt/', pos:'v./adj.', meaning:'清晰地表达；口齿清楚的', synonym:'express', target:'articulate', example:'She is able to articulate her ideas clearly.', accept_meaning:['清晰地表达','口齿清楚的'] },
-    { word:'discourse', ipa:'/ˈdɪs.kɔːs/', pos:'n.', meaning:'话语；论述', synonym:'communication', target:'discourse', example:'The discourse of the debate was very insightful.', accept_meaning:['话语','论述'] },
-    { word:'narrative', ipa:'/ˈnær.ə.tɪv/', pos:'n./adj.', meaning:'叙述；故事；叙事体的', synonym:'story', target:'narrative', example:'The narrative of the novel is very engaging.', accept_meaning:['叙述','故事','叙事体的'] },
-    { word:'communicate', ipa:'/kəˈmjuː.nɪ.keɪt/', pos:'v.', meaning:'交流；沟通；传达', synonym:'convey', target:'communicate', example:'Effective teachers communicate well with their students.', accept_meaning:['交流','沟通','传达'] },
-    { word:'disseminate', ipa:'/dɪˈsem.ɪ.neɪt/', pos:'v.', meaning:'传播；散布', synonym:'spread', target:'disseminate', example:'The internet can disseminate information quickly.', accept_meaning:['传播','散布'] },
-    { word:'exchange', ipa:'/ɪksˈtʃeɪndʒ/', pos:'n./v.', meaning:'交换；交流', synonym:'swap', target:'exchange', example:'Cultural exchange programmes promote understanding.', accept_meaning:['交换','交流'] },
+    { word:'linguistic', ipa:'/lɪŋˈɡwɪs.tɪk/', pos:'adj.', meaning:'thuộc ngôn ngữ; thuộc ngôn ngữ học', synonym:'language-related', target:'linguistic', example:'The linguistic diversity of the region is remarkable.', accept_meaning:['thuộc ngôn ngữ', 'thuộc ngôn ngữ học'] },
+    { word:'literacy', ipa:'/ˈlɪt.ər.ə.si/', pos:'n.', meaning:'khả năng đọc viết', synonym:'reading ability', target:'literacy', example:'Literacy rates have increased significantly in recent decades.', accept_meaning:['khả năng đọc viết'] },
+    { word:'rhetoric', ipa:'/ˈret.ər.ɪk/', pos:'n.', meaning:'nghệ thuật hùng biện; phép tu từ', synonym:'oratory', target:'rhetoric', example:'The politician used powerful rhetoric to persuade the audience.', accept_meaning:['nghệ thuật hùng biện', 'phép tu từ'] },
+    { word:'grammar', ipa:'/ˈɡræm.ər/', pos:'n.', meaning:'ngữ pháp', synonym:'syntax', target:'grammar', example:'Good grammar is essential for clear communication.', accept_meaning:['ngữ pháp'] },
+    { word:'vocabulary', ipa:'/vəˈkæb.jə.lər.i/', pos:'n.', meaning:'vốn từ vựng; từ vựng', synonym:'lexicon', target:'vocabulary', example:'A wide vocabulary helps in academic writing.', accept_meaning:['vốn từ vựng', 'từ vựng'] },
+    { word:'pronunciation', ipa:'/prəˌnʌn.siˈeɪ.ʃən/', pos:'n.', meaning:'cách phát âm', synonym:'enunciation', target:'pronunciation', example:'Correct pronunciation is important for effective communication.', accept_meaning:['cách phát âm'] },
+    { word:'dialect', ipa:'/ˈdaɪ.ə.lekt/', pos:'n.', meaning:'phương ngữ', synonym:'vernacular', target:'dialects', example:'People in different regions speak different dialects.', accept_meaning:['phương ngữ'] },
+    { word:'idiom', ipa:'/ˈɪd.i.əm/', pos:'n.', meaning:'thành ngữ', synonym:'expression', target:'idiom', example:'He used an idiom that confused the foreign students.', accept_meaning:['thành ngữ'] },
 
-    // —— 表达与含义 ——
-    { word:'formulate', ipa:'/ˈfɔː.mjə.leɪt/', pos:'v.', meaning:'表述；构想；制定', synonym:'devise', target:'formulated', example:'They formulated a plan to tackle the problem.', accept_meaning:['表述','构想','制定'] },
-    { word:'convey', ipa:'/kənˈveɪ/', pos:'v.', meaning:'传达；传递；运输', synonym:'communicate', target:'conveyed', example:'Her tone of voice conveyed a sense of urgency.', accept_meaning:['传达','传递','运输'] },
-    { word:'denote', ipa:'/dɪˈnəʊt/', pos:'v.', meaning:'表示；指示；意味着', synonym:'indicate', target:'denotes', example:'The colour red often denotes danger.', accept_meaning:['表示','指示','意味着'] },
-    { word:'imply', ipa:'/ɪmˈplaɪ/', pos:'v.', meaning:'暗示；意味着', synonym:'suggest', target:'imply', example:'The statistics imply a significant increase in population.', accept_meaning:['暗示','意味着'] },
-    { word:'infer', ipa:'/ɪnˈfɜː/', pos:'v.', meaning:'推断；推论', synonym:'deduce', target:'infer', example:'We can infer from the data that the economy is improving.', accept_meaning:['推断','推论'] },
-    { word:'context', ipa:'/ˈkɒn.tekst/', pos:'n.', meaning:'上下文；背景；环境', synonym:'background', target:'context', example:'The meaning of the word depends on the context.', accept_meaning:['上下文','背景','环境'] },
-    { word:'ambiguity', ipa:'/ˌæm.bɪˈɡjuː.ə.ti/', pos:'n.', meaning:'歧义；含混不清', synonym:'unclearness', target:'ambiguity', example:'The ambiguity of the statement caused confusion.', accept_meaning:['歧义','含混不清'] },
+    { word:'translate', ipa:'/trænzˈleɪt/', pos:'v.', meaning:'biên dịch; dịch', synonym:'interpret', target:'translate', example:'She was asked to translate the document into English.', accept_meaning:['biên dịch', 'dịch'] },
+    { word:'interpret', ipa:'/ɪnˈtɜː.prɪt/', pos:'v.', meaning:'phiên dịch; diễn giải', synonym:'explain', target:'interpret', example:'The interpreter helped to interpret the foreign language.', accept_meaning:['phiên dịch', 'diễn giải'] },
+    { word:'articulate', ipa:'/ɑːˈtɪk.jə.leɪt/', pos:'v./adj.', meaning:'diễn đạt rõ ràng', synonym:'express', target:'articulate', example:'She is able to articulate her ideas clearly.', accept_meaning:['diễn đạt rõ ràng'] },
+    { word:'discourse', ipa:'/ˈdɪs.kɔːs/', pos:'n.', meaning:'diễn ngôn; lời bàn luận', synonym:'communication', target:'discourse', example:'The discourse of the debate was very insightful.', accept_meaning:['diễn ngôn', 'lời bàn luận'] },
+    { word:'narrative', ipa:'/ˈnær.ə.tɪv/', pos:'n./adj.', meaning:'câu chuyện; việc kể chuyện', synonym:'story', target:'narrative', example:'The narrative of the novel is very engaging.', accept_meaning:['câu chuyện', 'việc kể chuyện'] },
+    { word:'communicate', ipa:'/kəˈmjuː.nɪ.keɪt/', pos:'v.', meaning:'giao tiếp; truyền đạt', synonym:'convey', target:'communicate', example:'Effective teachers communicate well with their students.', accept_meaning:['giao tiếp', 'truyền đạt'] },
+    { word:'disseminate', ipa:'/dɪˈsem.ɪ.neɪt/', pos:'v.', meaning:'phổ biến; truyền bá', synonym:'spread', target:'disseminate', example:'The internet can disseminate information quickly.', accept_meaning:['phổ biến', 'truyền bá'] },
+    { word:'exchange', ipa:'/ɪksˈtʃeɪndʒ/', pos:'n./v.', meaning:'trao đổi; giao lưu', synonym:'swap', target:'exchange', example:'Cultural exchange programmes promote understanding.', accept_meaning:['trao đổi', 'giao lưu'] },
 
-    // —— 语言技能与特征 ——
-    { word:'fluent', ipa:'/ˈfluː.ənt/', pos:'adj.', meaning:'流利的；流畅的', synonym:'eloquent', target:'fluent', example:'She is fluent in three languages.', accept_meaning:['流利的','流畅的'] },
-    { word:'utterance', ipa:'/ˈʌt.ər.əns/', pos:'n.', meaning:'话语；言论', synonym:'statement', target:'utterance', example:'His utterance was loud and clear.', accept_meaning:['话语','言论'] },
-    { word:'syntax', ipa:'/ˈsɪn.tæks/', pos:'n.', meaning:'句法；语法结构', synonym:'grammar', target:'syntax', example:'The syntax of this sentence is incorrect.', accept_meaning:['句法','语法结构'] },
-    { word:'semantics', ipa:'/sɪˈmæn.tɪks/', pos:'n.', meaning:'语义学；词义', synonym:'meaning', target:'semantics', example:'Semantics is the study of meaning in language.', accept_meaning:['语义学','词义'] },
-    { word:'phonetics', ipa:'/fəˈnet.ɪks/', pos:'n.', meaning:'语音学；语音', synonym:'phonology', target:'phonetics', example:'Phonetics deals with the sounds of speech.', accept_meaning:['语音学','语音'] },
-    { word:'pragmatics', ipa:'/præɡˈmæt.ɪks/', pos:'n.', meaning:'语用学', synonym:'language use', target:'pragmatics', example:'Pragmatics studies how context affects meaning.', accept_meaning:['语用学'] },
-    { word:'morphology', ipa:'/mɔːˈfɒl.ə.dʒi/', pos:'n.', meaning:'形态学；词法', synonym:'structure', target:'morphology', example:'Morphology examines the structure of words.', accept_meaning:['形态学','词法'] },
-    { word:'etymology', ipa:'/ˌet.ɪˈmɒl.ə.dʒi/', pos:'n.', meaning:'词源学；词源', synonym:'origin', target:'etymology', example:'The etymology of this word is very interesting.', accept_meaning:['词源学','词源'] },
-    { word:'colloquial', ipa:'/kəˈləʊ.kwi.əl/', pos:'adj.', meaning:'口语的；非正式的', synonym:'informal', target:'colloquial', example:'He used colloquial language in his speech.', accept_meaning:['口语的','非正式的'] }
+    { word:'formulate', ipa:'/ˈfɔː.mjə.leɪt/', pos:'v.', meaning:'xây dựng; hình thành; phát biểu thành lời', synonym:'devise', target:'formulated', example:'They formulated a plan to tackle the problem.', accept_meaning:['xây dựng', 'hình thành', 'phát biểu thành lời'] },
+    { word:'convey', ipa:'/kənˈveɪ/', pos:'v.', meaning:'truyền đạt; chuyển tải', synonym:'communicate', target:'conveyed', example:'Her tone of voice conveyed a sense of urgency.', accept_meaning:['truyền đạt', 'chuyển tải'] },
+    { word:'denote', ipa:'/dɪˈnəʊt/', pos:'v.', meaning:'biểu thị; chỉ', synonym:'indicate', target:'denotes', example:'The colour red often denotes danger.', accept_meaning:['biểu thị', 'chỉ'] },
+    { word:'imply', ipa:'/ɪmˈplaɪ/', pos:'v.', meaning:'hàm ý', synonym:'suggest', target:'imply', example:'The statistics imply a significant increase in population.', accept_meaning:['hàm ý'] },
+    { word:'infer', ipa:'/ɪnˈfɜː/', pos:'v.', meaning:'suy ra', synonym:'deduce', target:'infer', example:'We can infer from the data that the economy is improving.', accept_meaning:['suy ra'] },
+    { word:'context', ipa:'/ˈkɒn.tekst/', pos:'n.', meaning:'ngữ cảnh; bối cảnh', synonym:'background', target:'context', example:'The meaning of the word depends on the context.', accept_meaning:['ngữ cảnh', 'bối cảnh'] },
+    { word:'ambiguity', ipa:'/ˌæm.bɪˈɡjuː.ə.ti/', pos:'n.', meaning:'sự mơ hồ; tính đa nghĩa', synonym:'unclearness', target:'ambiguity', example:'The ambiguity of the statement caused confusion.', accept_meaning:['sự mơ hồ', 'tính đa nghĩa'] },
+
+    { word:'fluent', ipa:'/ˈfluː.ənt/', pos:'adj.', meaning:'lưu loát', synonym:'eloquent', target:'fluent', example:'She is fluent in three languages.', accept_meaning:['lưu loát'] },
+    { word:'utterance', ipa:'/ˈʌt.ər.əns/', pos:'n.', meaning:'phát ngôn', synonym:'statement', target:'utterance', example:'His utterance was loud and clear.', accept_meaning:['phát ngôn'] },
+    { word:'syntax', ipa:'/ˈsɪn.tæks/', pos:'n.', meaning:'cú pháp', synonym:'grammar', target:'syntax', example:'The syntax of this sentence is incorrect.', accept_meaning:['cú pháp'] },
+    { word:'semantics', ipa:'/sɪˈmæn.tɪks/', pos:'n.', meaning:'ngữ nghĩa học', synonym:'meaning', target:'semantics', example:'Semantics is the study of meaning in language.', accept_meaning:['ngữ nghĩa học'] },
+    { word:'phonetics', ipa:'/fəˈnet.ɪks/', pos:'n.', meaning:'ngữ âm học', synonym:'phonology', target:'phonetics', example:'Phonetics deals with the sounds of speech.', accept_meaning:['ngữ âm học'] },
+    { word:'pragmatics', ipa:'/præɡˈmæt.ɪks/', pos:'n.', meaning:'ngữ dụng học', synonym:'language use', target:'pragmatics', example:'Pragmatics studies how context affects meaning.', accept_meaning:['ngữ dụng học'] },
+    { word:'morphology', ipa:'/mɔːˈfɒl.ə.dʒi/', pos:'n.', meaning:'hình thái học', synonym:'structure', target:'morphology', example:'Morphology examines the structure of words.', accept_meaning:['hình thái học'] },
+    { word:'etymology', ipa:'/ˌet.ɪˈmɒl.ə.dʒi/', pos:'n.', meaning:'từ nguyên; nguồn gốc từ', synonym:'origin', target:'etymology', example:'The etymology of this word is very interesting.', accept_meaning:['từ nguyên', 'nguồn gốc từ'] },
+    { word:'colloquial', ipa:'/kəˈləʊ.kwi.əl/', pos:'adj.', meaning:'thuộc khẩu ngữ; thân mật', synonym:'informal', target:'colloquial', example:'He used colloquial language in his speech.', accept_meaning:['thuộc khẩu ngữ', 'thân mật'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+console.log('✅ wordData Số từ:', wordData.length);
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length;
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['Nhận diện nghĩa', 'Chọn từ gần nghĩa', 'Vận dụng'];
+const STAGE_DESC = [`Tiếng Anh → tiếng Việt (${TOTAL_STAGE1} từ)`, 'Chọn từ tiếng Anh gần nghĩa', 'Điền từ vào câu và phân biệt các nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `${TOTAL_STAGE1} từ`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 Kiểm tra tổng hợp · ${TOTAL} câu`;
 
-// ==================== 工具 ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    const stage1Data = all;
     stage1Data.forEach(w => {
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('Chưa rõ');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `“${w.word}” có nghĩa là gì trong tiếng Việt?`,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `“${w.word}” có nghĩa là “${w.meaning}”.`
         });
     });
 
-    // 阶段二：同义替换 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -283,19 +275,18 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `Từ tiếng Anh nào gần nghĩa nhất với “${w.word}”?`,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `Từ gần nghĩa với “${w.word}” là “${w.synonym}”.`
         });
     });
 
-    // 阶段三：综合应用 (10题)
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
         if (subTypeCounter % 2 === 0) {
-            // 语境填空
+
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
@@ -306,35 +297,26 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `Chọn từ để điền vào câu sau: “${sentenceDisplay}”`,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `Đáp án là “${w.word}”, nghĩa là “${w.meaning}”. ${w.example}`
             });
         } else {
-            // 一词多义
+
             const correctMeaning = w.accept_meaning[0];
-            const wrongMeanings = w.accept_meaning.slice(1);
-            while(wrongMeanings.length < 3) {
-                const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))];
-                const shuffledOthers = shuffle([...otherMeanings]);
-                for (const m of shuffledOthers) {
-                    if (!wrongMeanings.includes(m) && m !== correctMeaning) {
-                        wrongMeanings.push(m);
-                        break;
-                    }
-                }
-                if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
-            }
+            // Other accepted senses of this same word must not be distractors.
+            const alternatives = new Set(wordData.filter(x => x.word !== w.word)
+                .flatMap(x => x.accept_meaning).filter(m => !w.accept_meaning.includes(m)));
+            const wrongMeanings = shuffle([...alternatives]).slice(0, 3);
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `Trong câu “${w.example}”, “${w.word}” có nghĩa là gì?`,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `Trong câu này, “${w.word}” nghĩa là “${correctMeaning}”.`
             });
         }
         subTypeCounter++;
@@ -348,7 +330,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -381,7 +362,6 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -423,22 +403,22 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card=document.createElement('div'); card.className='word-card';
         card.innerHTML=`
             <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+                <div><span class="word-headword" lang="en">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
                 <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
+                <div class="word-detail-row"><strong>📎 Từ gần nghĩa: </strong>${w.synonym}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${w.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -459,7 +439,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -479,14 +458,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`Bạn đang làm bài. Hãy hoàn thành ${TOTAL} câu trước khi chuyển phần.`);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -516,10 +494,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -565,7 +543,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -586,7 +564,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -597,7 +575,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -608,7 +586,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -622,9 +599,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -634,16 +611,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -663,7 +640,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

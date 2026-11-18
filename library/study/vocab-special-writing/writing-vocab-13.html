@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
@@ -7,7 +7,7 @@
     <meta name="exam:description" content="Từ vựng Viết · Từ vựng thông dụng · So sánh và mức độ">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 13 · So sánh và mức độ</title>
     <style>
         :root {
@@ -144,126 +144,118 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">⚖️</div><span>单元13-通用词汇-对比与程度</span></div>
+        <div class="logo"><div class="logo-icon">⚖️</div><span>Bài 13 · So sánh và mức độ</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <!-- Chế độ học -->
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/sua-doan-viet.pdf" download>Tải phiếu tự sửa đoạn văn (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- Chế độ kiểm tra -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 Kiểm tra tổng hợp · 30 câu</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Kết hợp từ<br>Chọn cụm phù hợp</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chính tả<br>Viết cụm tiếng Anh theo nghĩa tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ gần nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Kết hợp từ</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 Bạn đã nhập</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 通用词汇 · 对比与程度 · 28个核心词条 ====================
+
 const phraseData = [
-    // —— 对比关系（8个） ——
-    { cn:'与...相比', en:'Compared with', word:'Compared', synonym:'Relative to', target:'compared', detail:'compared with 表示“与...相比”，用于对比两事物。', example:'Compared with traditional methods, online learning is more flexible.' },
-    { cn:'相比之下', en:'In contrast', word:'Contrast', synonym:'By contrast', target:'contrast', detail:'in contrast 表示“相比之下”，用于强调差异。', example:'In contrast, many families cannot afford private education.' },
-    { cn:'相反', en:'On the contrary', word:'Contrary', synonym:'Conversely', target:'contrary', detail:'on the contrary 表示“相反”，用于表达完全不同的情况。', example:'It is not a disadvantage; on the contrary, it is an advantage.' },
-    { cn:'然而', en:'Whereas', word:'Whereas', synonym:'While', target:'whereas', detail:'whereas 表示“然而”，用于对比两种不同情况的连接词。', example:'Some people prefer city life, whereas others enjoy the countryside.' },
-    { cn:'虽然', en:'While', word:'While', synonym:'Although', target:'while', detail:'while 表示“虽然、尽管”，用于引出让步从句。', example:'While technology brings convenience, it also causes social isolation.' },
-    { cn:'与...不同', en:'Unlike', word:'Unlike', synonym:'Different from', target:'unlike', detail:'unlike 表示“与...不同”，用于对比两事物的差异。', example:'Unlike his brother, he enjoys reading.' },
-    { cn:'相似的', en:'Similarly', word:'Similarly', synonym:'Likewise', target:'similarly', detail:'similarly 表示“相似的、同样地”，用于连接相似的情况。', example:'Similarly, many countries face the same problem.' },
-    { cn:'同样地', en:'Likewise', word:'Likewise', synonym:'Similarly', target:'likewise', detail:'likewise 表示“同样地、也”，用于表示相同的情况。', example:'We should protect the environment; likewise, we should reduce waste.' },
 
-    // —— 程度副词（8个） ——
-    { cn:'显著的', en:'Significantly', word:'Significantly', synonym:'Substantially', target:'significantly', detail:'significantly 表示“显著的、大幅度地”，指变化明显。', example:'The number of students has increased significantly.' },
-    { cn:'稍微', en:'Slightly', word:'Slightly', synonym:'Marginally', target:'slightly', detail:'slightly 表示“稍微、略微”，指程度很小。', example:'The price increased slightly last month.' },
-    { cn:'大量的', en:'Substantially', word:'Substantially', synonym:'Considerably', target:'substantially', detail:'substantially 表示“大量地、大幅度地”，指变化显著。', example:'Prices have dropped substantially in recent years.' },
-    { cn:'最低限度地', en:'Marginally', word:'Marginally', synonym:'Slightly', target:'marginally', detail:'marginally 表示“最低限度地、略微地”，指程度很小。', example:'The results improved marginally this year.' },
-    { cn:'相当大的', en:'Considerably', word:'Considerably', synonym:'Significantly', target:'considerably', detail:'considerably 表示“相当大的”，指程度或数量很大。', example:'The population has grown considerably over the past decade.' },
-    { cn:'明显的', en:'Markedly', word:'Markedly', synonym:'Noticeably', target:'markedly', detail:'markedly 表示“明显的”，指变化清晰可见。', example:'Student performance improved markedly this semester.' },
-    { cn:'引人注目的', en:'Noticeably', word:'Noticeably', synonym:'Visibly', target:'noticeably', detail:'noticeably 表示“引人注目的、显著地”，指容易注意到。', example:'The city has changed noticeably in recent years.' },
-    { cn:'巨大的', en:'Dramatically', word:'Dramatically', synonym:'Sharply', target:'dramatically', detail:'dramatically 表示“巨大的、急剧地”，指变化非常显著。', example:'Internet usage has grown dramatically over the past decade.' },
+    { cn:'so với', en:'Compared with', word:'Compared', synonym:'Relative to', target:'compared', detail:'Chọn hai đối tượng có thể đối chiếu cùng tiêu chí.', example:'Compared with traditional methods, online learning is more flexible.' },
+    { cn:'trái lại, ngược lại', en:'In contrast', word:'Contrast', synonym:'By contrast', target:'contrast', detail:'Có thể đứng đầu câu mới kèm dấu phẩy.', example:'In contrast, many families cannot afford private education.' },
+    { cn:'trái lại, hoàn toàn ngược lại', en:'On the contrary', word:'Contrary', synonym:'Conversely', target:'contrary', detail:'Dùng để bác bỏ một nhận định trước đó.', example:'It is not a disadvantage; on the contrary, it is an advantage.' },
+    { cn:'trong khi, trái lại', en:'Whereas', word:'Whereas', synonym:'While', target:'whereas', detail:'Nối hai mệnh đề tương phản.', example:'Some people prefer city life, whereas others enjoy the countryside.' },
+    { cn:'trong khi', en:'While', word:'While', synonym:'Although', target:'while', detail:'Có thể chỉ thời gian hoặc sự tương phản.', example:'While technology brings convenience, it also causes social isolation.' },
+    { cn:'không giống như', en:'Unlike', word:'Unlike', synonym:'Different from', target:'unlike', detail:'Sau unlike là danh từ hoặc đại từ.', example:'Unlike his brother, he enjoys reading.' },
+    { cn:'tương tự', en:'Similarly', word:'Similarly', synonym:'Likewise', target:'similarly', detail:'Dùng để nối một ví dụ cùng hướng.', example:'Similarly, many countries face the same problem.' },
+    { cn:'cũng như vậy', en:'Likewise', word:'Likewise', synonym:'Similarly', target:'likewise', detail:'Dẫn một điểm tương đồng.', example:'We should protect the environment; likewise, we should reduce waste.' },
 
-    // —— 比较结构（6个） ——
-    { cn:'优于', en:'Be superior to', word:'Superior', synonym:'Better than', target:'superior', detail:'be superior to 表示“优于”，指比某事物更好。', example:'Online learning is superior to traditional methods in some aspects.' },
-    { cn:'劣于', en:'Be inferior to', word:'Inferior', synonym:'Worse than', target:'inferior', detail:'be inferior to 表示“劣于”，指比某事物更差。', example:'Some products are inferior to others in quality.' },
-    { cn:'与...相似', en:'Be similar to', word:'Similar', synonym:'Resemble', target:'similar', detail:'be similar to 表示“与...相似”，指两事物有相似之处。', example:'The two teaching methods are similar to each other.' },
-    { cn:'与...有差异', en:'Be different from', word:'Different', synonym:'Differ from', target:'different', detail:'be different from 表示“与...不同”，指两事物有差异。', example:'This course is different from the one I took before.' },
-    { cn:'等同于', en:'Be equivalent to', word:'Equivalent', synonym:'Equal to', target:'equivalent', detail:'be equivalent to 表示“等同于”，指价值或意义相同。', example:'A bachelor\'s degree is equivalent to a four-year university education.' },
-    { cn:'与...相同', en:'Be identical to', word:'Identical', synonym:'Same as', target:'identical', detail:'be identical to 表示“与...相同”，指完全一样。', example:'Your answer is identical to mine.' },
+    { cn:'đáng kể', en:'Significantly', word:'Significantly', synonym:'Substantially', target:'significantly', detail:'Trạng từ bổ nghĩa cho động từ thay đổi.', example:'The number of students has increased significantly.' },
+    { cn:'nhẹ, một chút', en:'Slightly', word:'Slightly', synonym:'Marginally', target:'slightly', detail:'Mô tả thay đổi nhỏ.', example:'The price increased slightly last month.' },
+    { cn:'đáng kể, ở mức lớn', en:'Substantially', word:'Substantially', synonym:'Considerably', target:'substantially', detail:'Chọn khi số liệu thể hiện mức thay đổi rõ.', example:'Prices have dropped substantially in recent years.' },
+    { cn:'ở mức rất nhỏ', en:'Marginally', word:'Marginally', synonym:'Slightly', target:'marginally', detail:'Có thể dùng marginally higher.', example:'The results improved marginally this year.' },
+    { cn:'đáng kể', en:'Considerably', word:'Considerably', synonym:'Significantly', target:'considerably', detail:'Thường đi với higher, lower hoặc động từ thay đổi.', example:'The population has grown considerably over the past decade.' },
+    { cn:'rõ rệt', en:'Markedly', word:'Markedly', synonym:'Noticeably', target:'markedly', detail:'Nhấn mạnh sự khác biệt dễ nhận thấy.', example:'Student performance improved markedly this semester.' },
+    { cn:'một cách dễ nhận thấy', en:'Noticeably', word:'Noticeably', synonym:'Visibly', target:'noticeably', detail:'Không tự hàm ý một tỷ lệ cụ thể.', example:'The city has changed noticeably in recent years.' },
+    { cn:'mạnh, đột ngột', en:'Dramatically', word:'Dramatically', synonym:'Sharply', target:'dramatically', detail:'Dùng thận trọng nếu biến động chỉ nhỏ.', example:'Internet usage has grown dramatically over the past decade.' },
 
-    // —— 程度与比例（4个） ——
-    { cn:'成正比', en:'In proportion to', word:'Proportion', synonym:'Proportional', target:'proportion', detail:'in proportion to 表示“与...成正比”，指按比例变化。', example:'The cost is in proportion to the quality of the product.' },
-    { cn:'成反比', en:'In reverse proportion to', word:'Reverse', synonym:'Inverse', target:'reverse', detail:'in reverse proportion to 表示“与...成反比”，指一方增加，另一方减少。', example:'The supply is in reverse proportion to the demand.' },
-    { cn:'轻微的', en:'Slight', word:'Slight', synonym:'Small', target:'slight', detail:'slight 表示“轻微的、少量的”，形容变化或差异很小。', example:'There has been a slight increase in the price.' },
-    { cn:'适度的', en:'Moderate', word:'Moderate', synonym:'Reasonable', target:'moderate', detail:'moderate 表示“适度的、中等的”，指程度适中。', example:'The government should take moderate measures to control inflation.' },
+    { cn:'vượt trội hơn', en:'Be superior to', word:'Superior', synonym:'Better than', target:'superior', detail:'So sánh bằng to, không dùng than.', example:'Online learning is superior to traditional methods in some aspects.' },
+    { cn:'kém hơn', en:'Be inferior to', word:'Inferior', synonym:'Worse than', target:'inferior', detail:'Inferior đi với to.', example:'Some products are inferior to others in quality.' },
+    { cn:'tương tự như', en:'Be similar to', word:'Similar', synonym:'Resemble', target:'similar', detail:'Similar đi với to.', example:'The two teaching methods are similar to each other.' },
+    { cn:'khác với', en:'Be different from', word:'Different', synonym:'Differ from', target:'different', detail:'Cấu trúc different from.', example:'This course is different from the one I took before.' },
+    { cn:'tương đương với', en:'Be equivalent to', word:'Equivalent', synonym:'Equal to', target:'equivalent', detail:'Equivalent đi với to.', example:'A bachelor\'s degree is equivalent to a four-year university education.' },
+    { cn:'giống hệt', en:'Be identical to', word:'Identical', synonym:'Same as', target:'identical', detail:'Identical mạnh hơn similar.', example:'Your answer is identical to mine.' },
 
-    // —— 补充对比（2个） ——
-    { cn:'更加', en:'Even more', word:'Even', synonym:'Still', target:'more', detail:'even more 表示“更加”，用于强调程度加深。', example:'The situation is even more serious than we expected.' },
-    { cn:'最少的', en:'The least', word:'Least', synonym:'Minimum', target:'least', detail:'the least 表示“最少的”，指程度或数量最小。', example:'The least expensive option is often the most popular.' }
+    { cn:'tỷ lệ thuận với', en:'In proportion to', word:'Proportion', synonym:'Proportional', target:'proportion', detail:'Mô tả hai đại lượng thay đổi tương xứng.', example:'The cost is in proportion to the quality of the product.' },
+    { cn:'tỷ lệ nghịch với', en:'In reverse proportion to', word:'Reverse', synonym:'Inverse', target:'reverse', detail:'Cũng có thể dùng inversely proportional to.', example:'The supply is in reverse proportion to the demand.' },
+    { cn:'nhẹ, nhỏ', en:'Slight', word:'Slight', synonym:'Small', target:'slight', detail:'Slight là tính từ; slightly là trạng từ.', example:'There has been a slight increase in the price.' },
+    { cn:'vừa phải', en:'Moderate', word:'Moderate', synonym:'Reasonable', target:'moderate', detail:'Chỉ mức trung bình, không quá nhỏ hay quá lớn.', example:'The government should take moderate measures to control inflation.' },
+
+    { cn:'thậm chí còn hơn', en:'Even more', word:'Even', synonym:'Still', target:'more', detail:'Even nhấn mạnh so sánh.', example:'The situation is even more serious than we expected.' },
+    { cn:'ít nhất', en:'The least', word:'Least', synonym:'Minimum', target:'least', detail:'Chú ý mạo từ the khi dùng dạng so sánh nhất.', example:'The least expensive option is often the most popular.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 28');
+console.log('✅ phraseData Số mục:', phraseData.length);
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['Kết hợp từ', 'Chính tả', 'Chọn từ gần nghĩa'];
+const STAGE_DESC = ['Chọn cụm từ tiếng Anh phù hợp', 'Đọc nghĩa tiếng Việt rồi viết cụm từ tiếng Anh', 'Chọn từ gần nghĩa'];
 
-// ==================== 工具 ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -274,26 +266,24 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `Cụm tiếng Anh nào có nghĩa là “${p.cn}”?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `Cụm đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `Viết cụm tiếng Anh có nghĩa là “${p.cn}”:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `Cách viết đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -318,10 +308,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `Từ nào gần nghĩa nhất với từ được gạch dưới trong câu?<br>“${sentenceDisplay}”`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án là “${p.synonym}”, từ gần nghĩa với “${p.word}”. ${p.detail}`
         });
     });
 
@@ -333,7 +323,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -370,7 +359,6 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -412,7 +400,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
@@ -424,10 +412,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-meaning-cn">${p.cn}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
+                <div class="word-detail-row"><strong>📎 Cách dùng: </strong>${p.detail}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${p.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -448,7 +436,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -468,14 +455,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('Bạn đang làm bài. Hãy hoàn thành 30 câu trước khi chuyển phần.');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -505,10 +491,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -529,24 +515,23 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'Nhập cụm từ tiếng Anh…';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Compared with）';
+        hint.textContent = '💡 Hãy viết đúng chính tả và khoảng cách giữa các từ.';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+
             }
         });
     } else {
@@ -590,7 +575,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('Hãy nhập cụm từ tiếng Anh.');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -611,7 +596,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ Chính xác! Bạn đã viết đúng cụm từ.' : '❌ Chưa đúng. Hãy đối chiếu với cách viết bên dưới.';
 
         results.push({
             question: q.question,
@@ -622,14 +607,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -650,7 +635,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -661,7 +646,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -672,7 +657,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -686,9 +670,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -698,20 +682,20 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
-                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser}</td>
+                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</td>
                     <td style="color:#3a7d5a;">${r.correct}</td>
                     <td>${status}</td>
                 </tr>`;
@@ -727,7 +711,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

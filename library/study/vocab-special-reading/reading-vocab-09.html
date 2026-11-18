@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
@@ -7,8 +7,8 @@
     <meta name="exam:title" content="Bài 9 · Nghệ thuật và kiến trúc">
     <meta name="exam:description" content="Từ vựng Đọc · Nghệ thuật và kiến trúc">
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元9-艺术与建筑</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc – Bài 09 · Nghệ thuật và kiến trúc</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -131,36 +131,37 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🎨</div><span>阅读-单元9-艺术与建筑</span></div>
+        <div class="logo"><div class="logo-icon">🎨</div><span>Đọc – Bài 09 · Nghệ thuật và kiến trúc</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">Đang tải từ vựng…</span>
     </div>
 </header>
 <div class="main-container">
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/tu-trong-ngu-canh.pdf" download>Tải sổ tay Học từ trong ngữ cảnh (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 Kiểm tra tổng hợp · Đang tải câu hỏi…</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Nhận diện nghĩa<br>Tiếng Anh → tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ tiếng Anh gần nghĩa</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Vận dụng<br>Ngữ cảnh và từ nhiều nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Nhận diện nghĩa</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -169,112 +170,102 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 艺术与建筑 · 32个核心词 ====================
+
 const wordData = [
-    // —— 艺术形式与风格（7个） ——
-    { word:'aesthetic', ipa:'/esˈθet.ɪk/', pos:'adj./n.', meaning:'美学的；审美的；美学', synonym:'artistic', target:'aesthetic', example:'The building has great aesthetic value.', accept_meaning:['美学的','审美的','美学'] },
-    { word:'artistic', ipa:'/ɑːˈtɪs.tɪk/', pos:'adj.', meaning:'艺术的；艺术家的', synonym:'creative', target:'artistic', example:'She has an artistic talent for painting.', accept_meaning:['艺术的','艺术家的'] },
-    { word:'creative', ipa:'/kriˈeɪ.tɪv/', pos:'adj.', meaning:'创造性的；有创意的', synonym:'imaginative', target:'creative', example:'The project requires creative thinking.', accept_meaning:['创造性的','有创意的'] },
-    { word:'classical', ipa:'/ˈklæs.ɪ.kəl/', pos:'adj.', meaning:'古典的；经典的', synonym:'traditional', target:'classical', example:'Classical music is often complex and structured.', accept_meaning:['古典的','经典的'] },
-    { word:'modern', ipa:'/ˈmɒd.ən/', pos:'adj.', meaning:'现代的；近代的', synonym:'contemporary', target:'modern', example:'Modern architecture uses new materials and designs.', accept_meaning:['现代的','近代的'] },
-    { word:'traditional', ipa:'/trəˈdɪʃ.ən.əl/', pos:'adj.', meaning:'传统的；习俗的', synonym:'customary', target:'traditional', example:'Traditional crafts are still practised in some regions.', accept_meaning:['传统的','习俗的'] },
-    { word:'abstract', ipa:'/ˈæb.strækt/', pos:'adj./n.', meaning:'抽象的；抽象画', synonym:'non-representational', target:'abstract', example:'Abstract art often uses colours and shapes without clear meaning.', accept_meaning:['抽象的','抽象画'] },
 
-    // —— 建筑类型与结构（7个） ——
-    { word:'architecture', ipa:'/ˈɑː.kɪ.tek.tʃər/', pos:'n.', meaning:'建筑；建筑学', synonym:'design', target:'architecture', example:'The architecture of this building is very impressive.', accept_meaning:['建筑','建筑学'] },
-    { word:'cathedral', ipa:'/kəˈθiː.drəl/', pos:'n.', meaning:'大教堂', synonym:'church', target:'cathedral', example:'The cathedral was built in the 12th century.', accept_meaning:['大教堂'] },
-    { word:'tower', ipa:'/ˈtaʊər/', pos:'n./v.', meaning:'塔；高耸', synonym:'spire', target:'tower', example:'The Eiffel Tower is a famous landmark.', accept_meaning:['塔','高耸'] },
-    { word:'palace', ipa:'/ˈpæl.ɪs/', pos:'n.', meaning:'宫殿；王府', synonym:'mansion', target:'palace', example:'The palace is open to the public in summer.', accept_meaning:['宫殿','王府'] },
-    { word:'sculpture', ipa:'/ˈskʌlp.tʃər/', pos:'n.', meaning:'雕塑；雕刻', synonym:'statue', target:'sculptures', example:'The museum has a collection of ancient sculptures.', accept_meaning:['雕塑','雕刻'] },
-    { word:'painting', ipa:'/ˈpeɪn.tɪŋ/', pos:'n.', meaning:'绘画；油画', synonym:'picture', target:'painting', example:'The painting was created by a famous Renaissance artist.', accept_meaning:['绘画','油画'] },
-    { word:'fresco', ipa:'/ˈfres.kəʊ/', pos:'n.', meaning:'壁画', synonym:'mural', target:'frescoes', example:'The church is famous for its frescoes.', accept_meaning:['壁画'] },
+    { word:'aesthetic', ipa:'/esˈθet.ɪk/', pos:'adj./n.', meaning:'thuộc thẩm mỹ', synonym:'artistic', target:'aesthetic', example:'The building has great aesthetic value.', accept_meaning:['thuộc thẩm mỹ'] },
+    { word:'artistic', ipa:'/ɑːˈtɪs.tɪk/', pos:'adj.', meaning:'thuộc nghệ thuật; có khiếu nghệ thuật', synonym:'creative', target:'artistic', example:'She has an artistic talent for painting.', accept_meaning:['thuộc nghệ thuật', 'có khiếu nghệ thuật'] },
+    { word:'creative', ipa:'/kriˈeɪ.tɪv/', pos:'adj.', meaning:'sáng tạo', synonym:'imaginative', target:'creative', example:'The project requires creative thinking.', accept_meaning:['sáng tạo'] },
+    { word:'classical', ipa:'/ˈklæs.ɪ.kəl/', pos:'adj.', meaning:'cổ điển', synonym:'traditional', target:'classical', example:'Classical music is often complex and structured.', accept_meaning:['cổ điển'] },
+    { word:'modern', ipa:'/ˈmɒd.ən/', pos:'adj.', meaning:'hiện đại', synonym:'contemporary', target:'modern', example:'Modern architecture uses new materials and designs.', accept_meaning:['hiện đại'] },
+    { word:'traditional', ipa:'/trəˈdɪʃ.ən.əl/', pos:'adj.', meaning:'truyền thống', synonym:'customary', target:'traditional', example:'Traditional crafts are still practised in some regions.', accept_meaning:['truyền thống'] },
+    { word:'abstract', ipa:'/ˈæb.strækt/', pos:'adj./n.', meaning:'trừu tượng', synonym:'non-representational', target:'abstract', example:'Abstract art often uses colours and shapes without clear meaning.', accept_meaning:['trừu tượng'] },
 
-    // —— 艺术家与作品（6个） ——
-    { word:'sculptor', ipa:'/ˈskʌlp.tər/', pos:'n.', meaning:'雕塑家', synonym:'carver', target:'sculptor', example:'The sculptor worked on the statue for three years.', accept_meaning:['雕塑家'] },
-    { word:'architect', ipa:'/ˈɑː.kɪ.tekt/', pos:'n.', meaning:'建筑师；设计师', synonym:'designer', target:'architect', example:'The architect designed the new museum.', accept_meaning:['建筑师','设计师'] },
-    { word:'painter', ipa:'/ˈpeɪn.tər/', pos:'n.', meaning:'画家', synonym:'artist', target:'painter', example:'The painter used bright colours in his work.', accept_meaning:['画家'] },
-    { word:'potter', ipa:'/ˈpɒt.ər/', pos:'n.', meaning:'陶工；制陶工人', synonym:'ceramicist', target:'potter', example:'The potter created beautiful hand-made vases.', accept_meaning:['陶工','制陶工人'] },
-    { word:'craftsman', ipa:'/ˈkrɑːfts.mən/', pos:'n.', meaning:'工匠；手艺人', synonym:'artisan', target:'craftsman', example:'The craftsman made furniture using traditional techniques.', accept_meaning:['工匠','手艺人'] },
-    { word:'artist', ipa:'/ˈɑː.tɪst/', pos:'n.', meaning:'艺术家', synonym:'artisan', target:'artist', example:'The artist displayed her works in the gallery.', accept_meaning:['艺术家'] },
+    { word:'architecture', ipa:'/ˈɑː.kɪ.tek.tʃər/', pos:'n.', meaning:'kiến trúc; ngành kiến trúc', synonym:'design', target:'architecture', example:'The architecture of this building is very impressive.', accept_meaning:['kiến trúc', 'ngành kiến trúc'] },
+    { word:'cathedral', ipa:'/kəˈθiː.drəl/', pos:'n.', meaning:'nhà thờ chính tòa', synonym:'church', target:'cathedral', example:'The cathedral was built in the 12th century.', accept_meaning:['nhà thờ chính tòa'] },
+    { word:'tower', ipa:'/ˈtaʊər/', pos:'n./v.', meaning:'tháp; vươn cao', synonym:'spire', target:'tower', example:'The Eiffel Tower is a famous landmark.', accept_meaning:['tháp', 'vươn cao'] },
+    { word:'palace', ipa:'/ˈpæl.ɪs/', pos:'n.', meaning:'cung điện', synonym:'mansion', target:'palace', example:'The palace is open to the public in summer.', accept_meaning:['cung điện'] },
+    { word:'sculpture', ipa:'/ˈskʌlp.tʃər/', pos:'n.', meaning:'tác phẩm điêu khắc; nghệ thuật điêu khắc', synonym:'statue', target:'sculptures', example:'The museum has a collection of ancient sculptures.', accept_meaning:['tác phẩm điêu khắc', 'nghệ thuật điêu khắc'] },
+    { word:'painting', ipa:'/ˈpeɪn.tɪŋ/', pos:'n.', meaning:'bức tranh; hội họa', synonym:'picture', target:'painting', example:'The painting was created by a famous Renaissance artist.', accept_meaning:['bức tranh', 'hội họa'] },
+    { word:'fresco', ipa:'/ˈfres.kəʊ/', pos:'n.', meaning:'tranh tường; tranh bích họa', synonym:'mural', target:'frescoes', example:'The church is famous for its frescoes.', accept_meaning:['tranh tường', 'tranh bích họa'] },
 
-    // —— 审美与设计（6个） ——
-    { word:'ornate', ipa:'/ɔːˈneɪt/', pos:'adj.', meaning:'华丽的；装饰的', synonym:'decorative', target:'ornate', example:'The palace features ornate ceilings and walls.', accept_meaning:['华丽的','装饰的'] },
-    { word:'symmetry', ipa:'/ˈsɪm.ə.tri/', pos:'n.', meaning:'对称；对称性', synonym:'balance', target:'symmetry', example:'The building\'s design has perfect symmetry.', accept_meaning:['对称','对称性'] },
-    { word:'proportion', ipa:'/prəˈpɔː.ʃən/', pos:'n.', meaning:'比例；部分', synonym:'ratio', target:'proportion', example:'The proportion of windows to walls is well balanced.', accept_meaning:['比例','部分'] },
-    { word:'perspective', ipa:'/pəˈspek.tɪv/', pos:'n.', meaning:'透视；视角；观点', synonym:'viewpoint', target:'perspective', example:'The painting uses perspective to create depth.', accept_meaning:['透视','视角','观点'] },
-    { word:'harmonious', ipa:'/hɑːˈməʊ.ni.əs/', pos:'adj.', meaning:'和谐的；协调的', synonym:'balanced', target:'harmonious', example:'The colours in the room are harmonious.', accept_meaning:['和谐的','协调的'] },
-    { word:'dynamic', ipa:'/daɪˈnæm.ɪk/', pos:'adj.', meaning:'动态的；有活力的', synonym:'active', target:'dynamic', example:'The sculpture has a dynamic sense of movement.', accept_meaning:['动态的','有活力的'] },
+    { word:'sculptor', ipa:'/ˈskʌlp.tər/', pos:'n.', meaning:'nhà điêu khắc', synonym:'carver', target:'sculptor', example:'The sculptor worked on the statue for three years.', accept_meaning:['nhà điêu khắc'] },
+    { word:'architect', ipa:'/ˈɑː.kɪ.tekt/', pos:'n.', meaning:'kiến trúc sư', synonym:'designer', target:'architect', example:'The architect designed the new museum.', accept_meaning:['kiến trúc sư'] },
+    { word:'painter', ipa:'/ˈpeɪn.tər/', pos:'n.', meaning:'họa sĩ', synonym:'artist', target:'painter', example:'The painter used bright colours in his work.', accept_meaning:['họa sĩ'] },
+    { word:'potter', ipa:'/ˈpɒt.ər/', pos:'n.', meaning:'thợ gốm', synonym:'ceramicist', target:'potter', example:'The potter created beautiful hand-made vases.', accept_meaning:['thợ gốm'] },
+    { word:'craftsman', ipa:'/ˈkrɑːfts.mən/', pos:'n.', meaning:'nghệ nhân; thợ thủ công', synonym:'artisan', target:'craftsman', example:'The craftsman made furniture using traditional techniques.', accept_meaning:['nghệ nhân', 'thợ thủ công'] },
+    { word:'artist', ipa:'/ˈɑː.tɪst/', pos:'n.', meaning:'nghệ sĩ', synonym:'artisan', target:'artist', example:'The artist displayed her works in the gallery.', accept_meaning:['nghệ sĩ'] },
 
-    // —— 文化遗产与保护（6个） ——
-    { word:'heritage', ipa:'/ˈher.ɪ.tɪdʒ/', pos:'n.', meaning:'遗产；传统', synonym:'legacy', target:'heritage', example:'We should protect our cultural heritage.', accept_meaning:['遗产','传统'] },
-    { word:'restoration', ipa:'/ˌres.təˈreɪ.ʃən/', pos:'n.', meaning:'修复；恢复', synonym:'renovation', target:'restoration', example:'The restoration of the old building took three years.', accept_meaning:['修复','恢复'] },
-    { word:'preservation', ipa:'/ˌprez.əˈveɪ.ʃən/', pos:'n.', meaning:'保护；保存', synonym:'conservation', target:'preservation', example:'The preservation of historical sites is important.', accept_meaning:['保护','保存'] },
-    { word:'authentic', ipa:'/ɔːˈθen.tɪk/', pos:'adj.', meaning:'真正的；真实的；可信的', synonym:'genuine', target:'authentic', example:'The museum displays authentic ancient artifacts.', accept_meaning:['真正的','真实的','可信的'] },
-    { word:'antique', ipa:'/ænˈtiːk/', pos:'adj./n.', meaning:'古老的；古董', synonym:'old', target:'antique', example:'She collects antique furniture from the 18th century.', accept_meaning:['古老的','古董'] },
-    { word:'masterpiece', ipa:'/ˈmɑː.stə.piːs/', pos:'n.', meaning:'杰作；名著', synonym:'magnum opus', target:'masterpiece', example:'The painting is considered a masterpiece.', accept_meaning:['杰作','名著'] }
+    { word:'ornate', ipa:'/ɔːˈneɪt/', pos:'adj.', meaning:'được trang trí cầu kỳ', synonym:'decorative', target:'ornate', example:'The palace features ornate ceilings and walls.', accept_meaning:['được trang trí cầu kỳ'] },
+    { word:'symmetry', ipa:'/ˈsɪm.ə.tri/', pos:'n.', meaning:'tính đối xứng', synonym:'balance', target:'symmetry', example:'The building\'s design has perfect symmetry.', accept_meaning:['tính đối xứng'] },
+    { word:'proportion', ipa:'/prəˈpɔː.ʃən/', pos:'n.', meaning:'tỷ lệ', synonym:'ratio', target:'proportion', example:'The proportion of windows to walls is well balanced.', accept_meaning:['tỷ lệ'] },
+    { word:'perspective', ipa:'/pəˈspek.tɪv/', pos:'n.', meaning:'phép phối cảnh; góc nhìn', synonym:'viewpoint', target:'perspective', example:'The painting uses perspective to create depth.', accept_meaning:['phép phối cảnh', 'góc nhìn'] },
+    { word:'harmonious', ipa:'/hɑːˈməʊ.ni.əs/', pos:'adj.', meaning:'hài hòa', synonym:'balanced', target:'harmonious', example:'The colours in the room are harmonious.', accept_meaning:['hài hòa'] },
+    { word:'dynamic', ipa:'/daɪˈnæm.ɪk/', pos:'adj.', meaning:'năng động; giàu chuyển động', synonym:'active', target:'dynamic', example:'The sculpture has a dynamic sense of movement.', accept_meaning:['năng động', 'giàu chuyển động'] },
+
+    { word:'heritage', ipa:'/ˈher.ɪ.tɪdʒ/', pos:'n.', meaning:'di sản', synonym:'legacy', target:'heritage', example:'We should protect our cultural heritage.', accept_meaning:['di sản'] },
+    { word:'restoration', ipa:'/ˌres.təˈreɪ.ʃən/', pos:'n.', meaning:'sự trùng tu; sự phục hồi', synonym:'renovation', target:'restoration', example:'The restoration of the old building took three years.', accept_meaning:['sự trùng tu', 'sự phục hồi'] },
+    { word:'preservation', ipa:'/ˌprez.əˈveɪ.ʃən/', pos:'n.', meaning:'sự bảo tồn', synonym:'conservation', target:'preservation', example:'The preservation of historical sites is important.', accept_meaning:['sự bảo tồn'] },
+    { word:'authentic', ipa:'/ɔːˈθen.tɪk/', pos:'adj.', meaning:'nguyên gốc; đích thực', synonym:'genuine', target:'authentic', example:'The museum displays authentic ancient artifacts.', accept_meaning:['nguyên gốc', 'đích thực'] },
+    { word:'antique', ipa:'/ænˈtiːk/', pos:'adj./n.', meaning:'cổ; đồ cổ', synonym:'old', target:'antique', example:'She collects antique furniture from the 18th century.', accept_meaning:['cổ', 'đồ cổ'] },
+    { word:'masterpiece', ipa:'/ˈmɑː.stə.piːs/', pos:'n.', meaning:'kiệt tác', synonym:'magnum opus', target:'masterpiece', example:'The painting is considered a masterpiece.', accept_meaning:['kiệt tác'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+console.log('✅ wordData Số từ:', wordData.length);
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length;
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['Nhận diện nghĩa', 'Chọn từ gần nghĩa', 'Vận dụng'];
+const STAGE_DESC = [`Tiếng Anh → tiếng Việt (${TOTAL_STAGE1} từ)`, 'Chọn từ tiếng Anh gần nghĩa', 'Điền từ vào câu và phân biệt các nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `${TOTAL_STAGE1} từ`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 Kiểm tra tổng hợp · ${TOTAL} câu`;
 
-// ==================== 工具 ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    const stage1Data = all;
     stage1Data.forEach(w => {
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('Chưa rõ');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `“${w.word}” có nghĩa là gì trong tiếng Việt?`,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `“${w.word}” có nghĩa là “${w.meaning}”.`
         });
     });
 
-    // 阶段二：同义替换 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -285,19 +276,18 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `Từ tiếng Anh nào gần nghĩa nhất với “${w.word}”?`,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `Từ gần nghĩa với “${w.word}” là “${w.synonym}”.`
         });
     });
 
-    // 阶段三：综合应用 (10题)
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
         if (subTypeCounter % 2 === 0) {
-            // 语境填空
+
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
@@ -308,35 +298,26 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `Chọn từ để điền vào câu sau: “${sentenceDisplay}”`,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `Đáp án là “${w.word}”, nghĩa là “${w.meaning}”. ${w.example}`
             });
         } else {
-            // 一词多义
+
             const correctMeaning = w.accept_meaning[0];
-            const wrongMeanings = w.accept_meaning.slice(1);
-            while(wrongMeanings.length < 3) {
-                const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))];
-                const shuffledOthers = shuffle([...otherMeanings]);
-                for (const m of shuffledOthers) {
-                    if (!wrongMeanings.includes(m) && m !== correctMeaning) {
-                        wrongMeanings.push(m);
-                        break;
-                    }
-                }
-                if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
-            }
+            // Other accepted senses of this same word must not be distractors.
+            const alternatives = new Set(wordData.filter(x => x.word !== w.word)
+                .flatMap(x => x.accept_meaning).filter(m => !w.accept_meaning.includes(m)));
+            const wrongMeanings = shuffle([...alternatives]).slice(0, 3);
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `Trong câu “${w.example}”, “${w.word}” có nghĩa là gì?`,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `Trong câu này, “${w.word}” nghĩa là “${correctMeaning}”.`
             });
         }
         subTypeCounter++;
@@ -350,7 +331,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -383,7 +363,6 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -425,22 +404,22 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card=document.createElement('div'); card.className='word-card';
         card.innerHTML=`
             <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+                <div><span class="word-headword" lang="en">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
                 <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
+                <div class="word-detail-row"><strong>📎 Từ gần nghĩa: </strong>${w.synonym}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${w.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -461,7 +440,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -481,14 +459,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`Bạn đang làm bài. Hãy hoàn thành ${TOTAL} câu trước khi chuyển phần.`);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -518,10 +495,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -567,7 +544,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -588,7 +565,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -599,7 +576,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -610,7 +587,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -624,9 +600,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -636,16 +612,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -665,7 +641,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

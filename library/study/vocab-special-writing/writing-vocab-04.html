@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
@@ -7,7 +7,7 @@
     <meta name="exam:description" content="Từ vựng Viết · Công nghệ và môi trường · Công nghệ và đời sống">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 4 · Công nghệ và đời sống</title>
     <style>
         :root {
@@ -144,129 +144,121 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">💻</div><span>单元4-科技环境-科技与生活</span></div>
+        <div class="logo"><div class="logo-icon">💻</div><span>Bài 4 · Công nghệ và đời sống</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <!-- Chế độ học -->
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/sua-doan-viet.pdf" download>Tải phiếu tự sửa đoạn văn (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- Chế độ kiểm tra -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 Kiểm tra tổng hợp · 30 câu</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Kết hợp từ<br>Chọn cụm phù hợp</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chính tả<br>Viết cụm tiếng Anh theo nghĩa tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ gần nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Kết hợp từ</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 Bạn đã nhập</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 科技环境 · 科技与生活 · 27个核心词条 ====================
+
 const phraseData = [
-    // —— 互联网与信息 ——
-    { cn:'网络教学', en:'Internet-based teaching', word:'Internet-based', synonym:'Online', target:'Internet-based', detail:'Internet-based teaching 表示“网络教学”，指通过互联网进行的教学活动。', example:'Internet-based teaching has become increasingly popular in recent years.' },
-    { cn:'教室教学', en:'Classroom-based teaching', word:'Classroom-based', synonym:'Traditional', target:'Classroom-based', detail:'classroom-based teaching 表示“教室教学”，指传统的面对面教学。', example:'Classroom-based teaching allows for more direct interaction between teachers and students.' },
-    { cn:'信息时代', en:'The information age', word:'Age', synonym:'Era', target:'age', detail:'information age 表示“信息时代”，指以信息技术为主导的当代社会。', example:'We are living in the information age.' },
-    { cn:'上网', en:'Surf the Internet', word:'Surf', synonym:'Browse', target:'surf', detail:'surf the Internet 表示“上网”，也可用 go online。', example:'Many people surf the Internet for news and entertainment.' },
-    { cn:'浏览网站', en:'Browse websites', word:'Browse', synonym:'View', target:'browse', detail:'browse websites 表示“浏览网站”，指在网络上查看不同网站。', example:'Students often browse websites to find research materials.' },
-    { cn:'虚拟空间', en:'Virtual space', word:'Virtual', synonym:'Digital', target:'virtual', detail:'virtual space 表示“虚拟空间”，指互联网上的虚拟环境。', example:'People can communicate in virtual space through social media.' },
-    { cn:'互联网的广泛使用', en:'The widespread use of the Internet', word:'Widespread', synonym:'Extensive', target:'widespread', detail:'widespread use 表示“广泛使用”，常与 of the Internet 搭配。', example:'The widespread use of the Internet has changed our lives.' },
-    { cn:'互联网的到来', en:'The advent of the Internet', word:'Advent', synonym:'Arrival', target:'advent', detail:'advent 表示“到来、出现”，用于描述新技术或时代的来临。', example:'The advent of the Internet has revolutionised the way we communicate.' },
-    { cn:'互联网的普及', en:'The proliferation of the Internet', word:'Proliferation', synonym:'Spread', target:'proliferation', detail:'proliferation 表示“普及、扩散”，指互联网的快速传播。', example:'The proliferation of the Internet has made information more accessible.' },
-    { cn:'更多渠道获取信息', en:'Have more access to information', word:'Access', synonym:'Approach', target:'access', detail:'access to information 表示“获取信息的途径”，常与 have/get 搭配。', example:'With the Internet, students have more access to information than ever before.' },
 
-    // —— 科技产品与便利 ——
-    { cn:'方便', en:'Convenient', word:'Convenient', synonym:'Handy', target:'convenient', detail:'convenient 表示“方便的”，常用于描述科技产品的便利性。', example:'It is convenient to shop online.' },
-    { cn:'效率', en:'Efficient', word:'Efficient', synonym:'Productive', target:'efficient', detail:'efficient 表示“高效的”，指用较少的时间或资源完成工作。', example:'Using technology can make our work more efficient.' },
-    { cn:'灵活', en:'Flexible', word:'Flexible', synonym:'Adaptable', target:'flexible', detail:'flexible 表示“灵活的”，指适应性强、可调整的。', example:'Online courses are more flexible than traditional classes.' },
-    { cn:'人工智能', en:'Artificial intelligence', word:'Artificial', synonym:'AI', target:'intelligence', detail:'artificial intelligence 表示“人工智能”，缩写为 AI。', example:'Artificial intelligence is transforming many industries.' },
-    { cn:'智能机器', en:'Intelligent machine', word:'Intelligent', synonym:'Smart', target:'intelligent', detail:'intelligent machine 表示“智能机器”，指具备智能功能的设备。', example:'Intelligent machines are increasingly used in manufacturing.' },
+    { cn:'dạy học qua Internet', en:'Internet-based teaching', word:'Internet-based', synonym:'Online', target:'Internet-based', detail:'Internet-based là tính từ ghép.', example:'Internet-based teaching has become increasingly popular in recent years.' },
+    { cn:'dạy học trên lớp', en:'Classroom-based teaching', word:'Classroom-based', synonym:'Traditional', target:'Classroom-based', detail:'Có thể đối chiếu với hình thức trực tuyến.', example:'Classroom-based teaching allows for more direct interaction between teachers and students.' },
+    { cn:'thời đại thông tin', en:'The information age', word:'Age', synonym:'Era', target:'age', detail:'Dùng the khi chỉ một thời đại cụ thể.', example:'We are living in the information age.' },
+    { cn:'lướt Internet', en:'Surf the Internet', word:'Surf', synonym:'Browse', target:'surf', detail:'Surf ở đây không nói về môn lướt sóng.', example:'Many people surf the Internet for news and entertainment.' },
+    { cn:'duyệt các trang web', en:'Browse websites', word:'Browse', synonym:'View', target:'browse', detail:'Browse nhấn mạnh việc xem qua nhiều nội dung.', example:'Students often browse websites to find research materials.' },
+    { cn:'không gian ảo', en:'Virtual space', word:'Virtual', synonym:'Digital', target:'virtual', detail:'Đối chiếu với không gian vật lý.', example:'People can communicate in virtual space through social media.' },
+    { cn:'việc sử dụng Internet rộng rãi', en:'The widespread use of the Internet', word:'Widespread', synonym:'Extensive', target:'widespread', detail:'Use là danh từ trong cụm này.', example:'The widespread use of the Internet has changed our lives.' },
+    { cn:'sự xuất hiện của Internet', en:'The advent of the Internet', word:'Advent', synonym:'Arrival', target:'advent', detail:'The advent of dùng để giới thiệu một thay đổi lớn.', example:'The advent of the Internet has revolutionised the way we communicate.' },
+    { cn:'sự phát triển nhanh chóng của Internet', en:'The proliferation of the Internet', word:'Proliferation', synonym:'Spread', target:'proliferation', detail:'Proliferation nhấn mạnh sự lan rộng.', example:'The proliferation of the Internet has made information more accessible.' },
+    { cn:'tiếp cận được nhiều thông tin hơn', en:'Have more access to information', word:'Access', synonym:'Approach', target:'access', detail:'Access là danh từ đi với to.', example:'With the Internet, students have more access to information than ever before.' },
 
-    // —— 社交媒体与交流 ——
-    { cn:'社交媒体', en:'Social media', word:'Social', synonym:'Network', target:'media', detail:'social media 表示“社交媒体”，如微信、微博、Facebook 等。', example:'Social media has changed the way people interact with each other.' },
-    { cn:'社交网络', en:'Social networking', word:'Networking', synonym:'Socializing', target:'networking', detail:'social networking 表示“社交网络”，指通过互联网建立社交关系。', example:'Social networking sites are popular among young people.' },
-    { cn:'面对面交流', en:'Face-to-face communication', word:'Face-to-face', synonym:'Direct', target:'face-to-face', detail:'face-to-face 表示“面对面的”，强调直接交流。', example:'Face-to-face communication is more effective than texting.' },
-    { cn:'保持联系', en:'Stay in touch with', word:'Touch', synonym:'Contact', target:'touch', detail:'stay in touch 表示“保持联系”，常与 with 连用。', example:'It is important to stay in touch with old friends.' },
-    { cn:'没有地理阻碍', en:'Without geographical barriers', word:'Barriers', synonym:'Obstacles', target:'barriers', detail:'geographical barriers 表示“地理障碍”，without 表示没有这些限制。', example:'The Internet allows us to communicate without geographical barriers.' },
+    { cn:'thuận tiện', en:'Convenient', word:'Convenient', synonym:'Handy', target:'convenient', detail:'Mô tả địa điểm, công cụ hoặc cách làm thuận tiện.', example:'It is convenient to shop online.' },
+    { cn:'hiệu quả, ít lãng phí', en:'Efficient', word:'Efficient', synonym:'Productive', target:'efficient', detail:'Efficient nhấn mạnh cách dùng thời gian và nguồn lực.', example:'Using technology can make our work more efficient.' },
+    { cn:'linh hoạt', en:'Flexible', word:'Flexible', synonym:'Adaptable', target:'flexible', detail:'Ví dụ: flexible schedules.', example:'Online courses are more flexible than traditional classes.' },
+    { cn:'trí tuệ nhân tạo', en:'Artificial intelligence', word:'Artificial', synonym:'AI', target:'intelligence', detail:'Thường viết tắt là AI.', example:'Artificial intelligence is transforming many industries.' },
+    { cn:'máy thông minh', en:'Intelligent machine', word:'Intelligent', synonym:'Smart', target:'intelligent', detail:'Intelligent bổ nghĩa cho machine.', example:'Intelligent machines are increasingly used in manufacturing.' },
 
-    // —— 科技对生活的影响 ——
-    { cn:'损害视力', en:'Damage eyesight', word:'Damage', synonym:'Harm', target:'damage', detail:'damage eyesight 表示“损害视力”，常与长时间使用电子设备相关。', example:'Staring at screens for hours can damage eyesight.' },
-    { cn:'变得近视', en:'Become nearsighted', word:'Nearsighted', synonym:'Short-sighted', target:'nearsighted', detail:'nearsighted 表示“近视的”，指看远处困难。', example:'Many children become nearsighted due to excessive screen time.' },
-    { cn:'不良信息', en:'Harmful information', word:'Harmful', synonym:'Detrimental', target:'harmful', detail:'harmful information 表示“不良信息”，指对青少年有害的内容。', example:'Parents worry about children\'s exposure to harmful information online.' },
-    { cn:'上瘾', en:'Get addicted to', word:'Addicted', synonym:'Hooked', target:'addicted', detail:'addicted to 表示“对...上瘾”，常见于网络、游戏等话题。', example:'Young people may get addicted to online games.' },
-    { cn:'社会孤立', en:'Social isolation', word:'Isolation', synonym:'Alienation', target:'isolation', detail:'social isolation 表示“社会孤立”，指因过度上网而减少现实社交。', example:'Excessive Internet use can lead to social isolation.' },
-    { cn:'侵入私人生活', en:'Invade private lives', word:'Invade', synonym:'Intrude', target:'invade', detail:'invade private lives 表示“侵入私人生活”，指科技对个人隐私的侵犯。', example:'Some technologies may invade people\'s private lives.' },
+    { cn:'truyền thông xã hội', en:'Social media', word:'Social', synonym:'Network', target:'media', detail:'Chỉ các nền tảng và nội dung người dùng chia sẻ.', example:'Social media has changed the way people interact with each other.' },
+    { cn:'hoạt động kết nối qua mạng xã hội', en:'Social networking', word:'Networking', synonym:'Socializing', target:'networking', detail:'Nhấn mạnh việc thiết lập quan hệ và giao tiếp.', example:'Social networking sites are popular among young people.' },
+    { cn:'giao tiếp trực tiếp', en:'Face-to-face communication', word:'Face-to-face', synonym:'Direct', target:'face-to-face', detail:'Face-to-face có gạch nối khi đứng trước danh từ.', example:'Face-to-face communication is more effective than texting.' },
+    { cn:'giữ liên lạc với', en:'Stay in touch with', word:'Touch', synonym:'Contact', target:'touch', detail:'Sau with dùng tên người hoặc nhóm.', example:'It is important to stay in touch with old friends.' },
+    { cn:'không chịu rào cản địa lý', en:'Without geographical barriers', word:'Barriers', synonym:'Obstacles', target:'barriers', detail:'Without diễn đạt sự vắng mặt của giới hạn.', example:'The Internet allows us to communicate without geographical barriers.' },
 
-    // —— 科技发展与未来 ——
-    { cn:'科技进步', en:'Technological advances', word:'Advances', synonym:'Progress', target:'advances', detail:'technological advances 表示“科技进步”，常与 make 搭配。', example:'Technological advances have improved our quality of life.' },
-    { cn:'科技创新', en:'Technological innovation', word:'Innovation', synonym:'Invention', target:'innovation', detail:'technological innovation 表示“科技创新”，指新技术的创造和应用。', example:'Technological innovation drives economic growth.' },
-    { cn:'成熟的技术', en:'Sophisticated technology', word:'Sophisticated', synonym:'Advanced', target:'sophisticated', detail:'sophisticated technology 表示“成熟的技术”，指高度发达的科技。', example:'This smartphone uses sophisticated technology.' },
-    { cn:'尖端技术', en:'Cutting-edge technology', word:'Cutting-edge', synonym:'State-of-the-art', target:'cutting-edge', detail:'cutting-edge 表示“尖端的、最前沿的”，常用于描述最新科技。', example:'The company is known for its cutting-edge technology.' }
+    { cn:'làm hại thị lực', en:'Damage eyesight', word:'Damage', synonym:'Harm', target:'damage', detail:'Eyesight nói về khả năng nhìn.', example:'Staring at screens for hours can damage eyesight.' },
+    { cn:'trở nên cận thị', en:'Become nearsighted', word:'Nearsighted', synonym:'Short-sighted', target:'nearsighted', detail:'Nearsighted là tính từ; Anh-Anh cũng dùng short-sighted.', example:'Many children become nearsighted due to excessive screen time.' },
+    { cn:'thông tin có hại', en:'Harmful information', word:'Harmful', synonym:'Detrimental', target:'harmful', detail:'Information thường không đếm được.', example:'Parents worry about children\'s exposure to harmful information online.' },
+    { cn:'trở nên nghiện', en:'Get addicted to', word:'Addicted', synonym:'Hooked', target:'addicted', detail:'Sau addicted to dùng danh từ hoặc động từ thêm -ing.', example:'Young people may get addicted to online games.' },
+    { cn:'sự cô lập xã hội', en:'Social isolation', word:'Isolation', synonym:'Alienation', target:'isolation', detail:'Phân biệt với việc chủ động dành thời gian một mình.', example:'Excessive Internet use can lead to social isolation.' },
+    { cn:'xâm phạm đời tư', en:'Invade private lives', word:'Invade', synonym:'Intrude', target:'invade', detail:'Cũng có thể dùng invade someone’s privacy.', example:'Some technologies may invade people\'s private lives.' },
+
+    { cn:'những tiến bộ công nghệ', en:'Technological advances', word:'Advances', synonym:'Progress', target:'advances', detail:'Advances là danh từ số nhiều.', example:'Technological advances have improved our quality of life.' },
+    { cn:'đổi mới công nghệ', en:'Technological innovation', word:'Innovation', synonym:'Invention', target:'innovation', detail:'Nói về việc tạo ra hoặc ứng dụng công nghệ mới.', example:'Technological innovation drives economic growth.' },
+    { cn:'công nghệ tinh vi', en:'Sophisticated technology', word:'Sophisticated', synonym:'Advanced', target:'sophisticated', detail:'Sophisticated nhấn mạnh mức độ phức tạp hoặc phát triển.', example:'This smartphone uses sophisticated technology.' },
+    { cn:'công nghệ tiên tiến nhất', en:'Cutting-edge technology', word:'Cutting-edge', synonym:'State-of-the-art', target:'cutting-edge', detail:'Cutting-edge là tính từ ghép trước danh từ.', example:'The company is known for its cutting-edge technology.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 27');
+console.log('✅ phraseData Số mục:', phraseData.length);
 
 const TOTAL = 30;
-// ==================== 关键变量 ====================
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
 
-// ==================== 工具 ====================
+const STAGE_NAMES = ['Kết hợp từ', 'Chính tả', 'Chọn từ gần nghĩa'];
+const STAGE_DESC = ['Chọn cụm từ tiếng Anh phù hợp', 'Đọc nghĩa tiếng Việt rồi viết cụm từ tiếng Anh', 'Chọn từ gần nghĩa'];
+
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -277,26 +269,24 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `Cụm tiếng Anh nào có nghĩa là “${p.cn}”?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `Cụm đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `Viết cụm tiếng Anh có nghĩa là “${p.cn}”:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `Cách viết đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -321,10 +311,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `Từ nào gần nghĩa nhất với từ được gạch dưới trong câu?<br>“${sentenceDisplay}”`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án là “${p.synonym}”, từ gần nghĩa với “${p.word}”. ${p.detail}`
         });
     });
 
@@ -336,7 +326,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -373,7 +362,6 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -415,7 +403,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
@@ -427,10 +415,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-meaning-cn">${p.cn}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
+                <div class="word-detail-row"><strong>📎 Cách dùng: </strong>${p.detail}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${p.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -451,7 +439,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -471,14 +458,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('Bạn đang làm bài. Hãy hoàn thành 30 câu trước khi chuyển phần.');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -508,10 +494,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -532,24 +518,23 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'Nhập cụm từ tiếng Anh…';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Internet-based teaching）';
+        hint.textContent = '💡 Hãy viết đúng chính tả và khoảng cách giữa các từ.';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+
             }
         });
     } else {
@@ -593,7 +578,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('Hãy nhập cụm từ tiếng Anh.');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -614,7 +599,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ Chính xác! Bạn đã viết đúng cụm từ.' : '❌ Chưa đúng. Hãy đối chiếu với cách viết bên dưới.';
 
         results.push({
             question: q.question,
@@ -625,14 +610,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -653,7 +638,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -664,7 +649,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -675,7 +660,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -689,9 +673,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -701,20 +685,20 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
-                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser}</td>
+                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</td>
                     <td style="color:#3a7d5a;">${r.correct}</td>
                     <td>${status}</td>
                 </tr>`;
@@ -730,7 +714,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

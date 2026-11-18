@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
@@ -7,7 +7,7 @@
     <meta name="exam:description" content="Từ vựng Viết · Công nghệ và môi trường · Môi trường và ô nhiễm">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 5 · Môi trường và ô nhiễm</title>
     <style>
         :root {
@@ -144,125 +144,118 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🌿</div><span>单元5-科技环境-环境与污染</span></div>
+        <div class="logo"><div class="logo-icon">🌿</div><span>Bài 5 · Môi trường và ô nhiễm</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <!-- Chế độ học -->
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/sua-doan-viet.pdf" download>Tải phiếu tự sửa đoạn văn (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- Chế độ kiểm tra -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 Kiểm tra tổng hợp · 30 câu</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Kết hợp từ<br>Chọn cụm phù hợp</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chính tả<br>Viết cụm tiếng Anh theo nghĩa tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ gần nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Kết hợp từ</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 Bạn đã nhập</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 科技环境 · 环境与污染 · 27个核心词条 ====================
+
 const phraseData = [
-    // —— 污染类型与来源 ——
-    { cn:'汽车尾气', en:'Exhaust fumes', word:'Exhaust', synonym:'Emissions', target:'exhaust', detail:'exhaust fumes 表示“汽车尾气”，指机动车排放的废气。', example:'Exhaust fumes from cars contribute significantly to air pollution.' },
-    { cn:'温室气体', en:'Greenhouse gas', word:'Greenhouse', synonym:'GHG', target:'greenhouse', detail:'greenhouse gas 表示“温室气体”，如二氧化碳、甲烷等。', example:'The emission of greenhouse gases is a major cause of global warming.' },
-    { cn:'二氧化碳', en:'Carbon dioxide', word:'Carbon', synonym:'CO2', target:'carbon', detail:'carbon dioxide 表示“二氧化碳”，是最主要的温室气体。', example:'Carbon dioxide is released when fossil fuels are burned.' },
-    { cn:'有毒有害物质', en:'Toxic and harmful substances', word:'Toxic', synonym:'Poisonous', target:'toxic', detail:'toxic substances 表示“有毒有害物质”，指对人体和环境有害的化学物质。', example:'Toxic and harmful substances should be properly disposed of.' },
-    { cn:'污染物', en:'Pollutant', word:'Pollutant', synonym:'Contaminant', target:'pollutant', detail:'pollutant 表示“污染物”，指污染空气、水或土壤的物质。', example:'Industrial factories release a large amount of pollutants.' },
-    { cn:'排放污水', en:'Discharge waste water', word:'Discharge', synonym:'Release', target:'discharging', detail:'discharge waste water 表示“排放污水”，指将废水排入环境中。', example:'Factories should treat waste water before discharging it.' },
-    { cn:'垃圾处理', en:'Waste disposal', word:'Disposal', synonym:'Treatment', target:'disposal', detail:'waste disposal 表示“垃圾处理”，指对废弃物的管理和处置。', example:'Proper waste disposal is essential for environmental protection.' },
 
-    // —— 环境问题 ——
-    { cn:'气候变化', en:'Climate change', word:'Climate', synonym:'Global warming', target:'climate', detail:'climate change 表示“气候变化”，指全球气候模式的长期改变。', example:'Climate change is one of the most serious problems facing humanity.' },
-    { cn:'全球变暖', en:'Global warming', word:'Warming', synonym:'Heating', target:'warming', detail:'global warming 表示“全球变暖”，指地球平均气温上升的现象。', example:'Global warming is caused by the increase of greenhouse gases.' },
-    { cn:'森林减少', en:'Deforestation', word:'Deforestation', synonym:'Forest loss', target:'deforestation', detail:'deforestation 表示“森林减少、砍伐森林”，指森林被砍伐或破坏。', example:'Deforestation leads to loss of biodiversity and climate change.' },
-    { cn:'雾霾', en:'Smog', word:'Smog', synonym:'Haze', target:'smog', detail:'smog 表示“雾霾”，指由污染物形成的空气污染现象。', example:'Smog is a serious problem in many large cities.' },
-    { cn:'沙尘暴', en:'Sand storms', word:'Sand', synonym:'Dust', target:'sand', detail:'sand storms 表示“沙尘暴”，指大风将沙尘卷起的天气现象。', example:'Sand storms often occur in arid and semi-arid regions.' },
-    { cn:'酸雨', en:'Acid rain', word:'Acid', synonym:'Acidic', target:'acid', detail:'acid rain 表示“酸雨”，指含有酸性物质的降水。', example:'Acid rain causes damage to forests and buildings.' },
-    { cn:'能源短缺', en:'Energy shortage', word:'Shortage', synonym:'Crisis', target:'shortage', detail:'energy shortage 表示“能源短缺”，指能源供应不足的问题。', example:'Energy shortage is a growing concern worldwide.' },
+    { cn:'khí thải động cơ', en:'Exhaust fumes', word:'Exhaust', synonym:'Emissions', target:'exhaust', detail:'Fumes thường ở số nhiều.', example:'Exhaust fumes from cars contribute significantly to air pollution.' },
+    { cn:'khí nhà kính', en:'Greenhouse gas', word:'Greenhouse', synonym:'GHG', target:'greenhouse', detail:'Chẳng hạn carbon dioxide hoặc methane.', example:'The emission of greenhouse gases is a major cause of global warming.' },
+    { cn:'cacbon đioxit', en:'Carbon dioxide', word:'Carbon', synonym:'CO2', target:'carbon', detail:'Công thức hóa học là CO₂.', example:'Carbon dioxide is released when fossil fuels are burned.' },
+    { cn:'các chất độc hại', en:'Toxic and harmful substances', word:'Toxic', synonym:'Poisonous', target:'toxic', detail:'Substances chỉ các chất cụ thể.', example:'Toxic and harmful substances should be properly disposed of.' },
+    { cn:'chất gây ô nhiễm', en:'Pollutant', word:'Pollutant', synonym:'Contaminant', target:'pollutant', detail:'Phân biệt pollutant với pollution, sự ô nhiễm.', example:'Industrial factories release a large amount of pollutants.' },
+    { cn:'xả nước thải', en:'Discharge waste water', word:'Discharge', synonym:'Release', target:'discharging', detail:'Discharge là động từ; wastewater cũng có thể viết liền.', example:'Factories should treat waste water before discharging it.' },
+    { cn:'xử lý chất thải', en:'Waste disposal', word:'Disposal', synonym:'Treatment', target:'disposal', detail:'Disposal nói đến khâu xử lý hoặc thải bỏ.', example:'Proper waste disposal is essential for environmental protection.' },
 
-    // —— 资源消耗 ——
-    { cn:'化石燃料', en:'Fossil fuel', word:'Fossil', synonym:'Petroleum', target:'fossil', detail:'fossil fuel 表示“化石燃料”，如煤、石油、天然气等。', example:'Fossil fuels are non-renewable energy sources.' },
-    { cn:'储量', en:'Reserves', word:'Reserves', synonym:'Resources', target:'reserves', detail:'reserves 表示“储量”，指自然资源的储存量。', example:'Oil reserves are being depleted at an alarming rate.' },
-    { cn:'开采', en:'Exploit', word:'Exploit', synonym:'Extract', target:'exploit', detail:'exploit 表示“开采”，指对自然资源的开发、利用。', example:'Some countries exploit natural resources without considering environmental impact.' },
-    { cn:'耗尽自然资源', en:'Deplete natural resources', word:'Deplete', synonym:'Exhaust', target:'depleting', detail:'deplete natural resources 表示“耗尽自然资源”，指过度使用导致资源枯竭。', example:'Human activities are depleting natural resources at an unsustainable rate.' },
-    { cn:'给资源造成压力', en:'Put a strain on resources', word:'Strain', synonym:'Pressure', target:'strain', detail:'put a strain on 表示“给...造成压力”，指增加资源的负担。', example:'The growing population puts a strain on natural resources.' },
-    { cn:'浪费', en:'Waste', word:'Waste', synonym:'Squander', target:'wasting', detail:'waste 表示“浪费”，指不节约地使用资源。', example:'We should avoid wasting water and electricity.' },
+    { cn:'biến đổi khí hậu', en:'Climate change', word:'Climate', synonym:'Global warming', target:'climate', detail:'Nhấn mạnh thay đổi dài hạn.', example:'Climate change is one of the most serious problems facing humanity.' },
+    { cn:'sự nóng lên toàn cầu', en:'Global warming', word:'Warming', synonym:'Heating', target:'warming', detail:'Chỉ xu hướng tăng nhiệt độ trung bình.', example:'Global warming is caused by the increase of greenhouse gases.' },
+    { cn:'nạn phá rừng', en:'Deforestation', word:'Deforestation', synonym:'Forest loss', target:'deforestation', detail:'Mô tả diện tích rừng bị mất.', example:'Deforestation leads to loss of biodiversity and climate change.' },
+    { cn:'khói mù ô nhiễm', en:'Smog', word:'Smog', synonym:'Haze', target:'smog', detail:'Smog khác với sương mù tự nhiên.', example:'Smog is a serious problem in many large cities.' },
+    { cn:'bão cát', en:'Sand storms', word:'Sand', synonym:'Dust', target:'sand', detail:'Có thể gặp cách viết sandstorms.', example:'Sand storms often occur in arid and semi-arid regions.' },
+    { cn:'mưa axit', en:'Acid rain', word:'Acid', synonym:'Acidic', target:'acid', detail:'Rain ở đây thường không đếm được.', example:'Acid rain causes damage to forests and buildings.' },
+    { cn:'tình trạng thiếu năng lượng', en:'Energy shortage', word:'Shortage', synonym:'Crisis', target:'shortage', detail:'Dùng a shortage of khi nêu thứ bị thiếu.', example:'Energy shortage is a growing concern worldwide.' },
 
-    // —— 环境治理与保护 ——
-    { cn:'垃圾分类', en:'Waste classification', word:'Classification', synonym:'Sorting', target:'classification', detail:'waste classification 表示“垃圾分类”，指将垃圾按类别分开。', example:'Waste classification helps to improve recycling efficiency.' },
-    { cn:'节约能源', en:'Conserve energy', word:'Conserve', synonym:'Save', target:'conserve', detail:'conserve energy 表示“节约能源”，指减少能源消耗。', example:'We should conserve energy by using public transport.' },
-    { cn:'可再生能源', en:'Renewable energy', word:'Renewable', synonym:'Clean', target:'renewable', detail:'renewable energy 表示“可再生能源”，如太阳能、风能等。', example:'Renewable energy is essential for a sustainable future.' },
-    { cn:'电动汽车', en:'Electric cars', word:'Electric', synonym:'EV', target:'electric', detail:'electric cars 表示“电动汽车”，指使用电力的汽车。', example:'Electric cars are becoming more popular as people seek to reduce emissions.' },
-    { cn:'提高环保意识', en:'Raise environmental awareness', word:'Awareness', synonym:'Consciousness', target:'awareness', detail:'raise awareness 表示“提高意识”，environmental 表示“环保的”。', example:'Campaigns are needed to raise environmental awareness.' },
-    { cn:'生态平衡', en:'Ecological balance', word:'Ecological', synonym:'Environmental', target:'ecological', detail:'ecological balance 表示“生态平衡”，指生态系统的稳定状态。', example:'Protecting biodiversity is important for maintaining ecological balance.' },
-    { cn:'自然保护区', en:'Nature reserve', word:'Reserve', synonym:'Sanctuary', target:'reserve', detail:'nature reserve 表示“自然保护区”，指保护自然环境和野生动物的区域。', example:'Many countries have established nature reserves to protect wildlife.' },
-    { cn:'生态系统', en:'Ecosystem', word:'Ecosystem', synonym:'Biotope', target:'ecosystem', detail:'ecosystem 表示“生态系统”，指生物与其环境构成的整体。', example:'The destruction of ecosystems threatens the survival of many species.' }
+    { cn:'nhiên liệu hóa thạch', en:'Fossil fuel', word:'Fossil', synonym:'Petroleum', target:'fossil', detail:'Than, dầu và khí tự nhiên là ví dụ.', example:'Fossil fuels are non-renewable energy sources.' },
+    { cn:'trữ lượng, nguồn dự trữ', en:'Reserves', word:'Reserves', synonym:'Resources', target:'reserves', detail:'Ví dụ: oil reserves.', example:'Oil reserves are being depleted at an alarming rate.' },
+    { cn:'khai thác', en:'Exploit', word:'Exploit', synonym:'Extract', target:'exploit', detail:'Trong ngữ cảnh tài nguyên, động từ này nhận tân ngữ trực tiếp.', example:'Some countries exploit natural resources without considering environmental impact.' },
+    { cn:'làm cạn kiệt tài nguyên thiên nhiên', en:'Deplete natural resources', word:'Deplete', synonym:'Exhaust', target:'depleting', detail:'Deplete nhấn mạnh mức trữ lượng bị giảm.', example:'Human activities are depleting natural resources at an unsustainable rate.' },
+    { cn:'gây áp lực lên tài nguyên', en:'Put a strain on resources', word:'Strain', synonym:'Pressure', target:'strain', detail:'Giữ giới từ on.', example:'The growing population puts a strain on natural resources.' },
+    { cn:'lãng phí', en:'Waste', word:'Waste', synonym:'Squander', target:'wasting', detail:'Waste có thể là động từ hoặc danh từ.', example:'We should avoid wasting water and electricity.' },
+
+    { cn:'phân loại chất thải', en:'Waste classification', word:'Classification', synonym:'Sorting', target:'classification', detail:'Ví dụ: tách giấy, nhựa và rác hữu cơ.', example:'Waste classification helps to improve recycling efficiency.' },
+    { cn:'tiết kiệm năng lượng', en:'Conserve energy', word:'Conserve', synonym:'Save', target:'conserve', detail:'Conserve nói đến giảm mức sử dụng hoặc tránh lãng phí.', example:'We should conserve energy by using public transport.' },
+    { cn:'năng lượng tái tạo', en:'Renewable energy', word:'Renewable', synonym:'Clean', target:'renewable', detail:'Chẳng hạn năng lượng gió và mặt trời.', example:'Renewable energy is essential for a sustainable future.' },
+    { cn:'ô tô điện', en:'Electric cars', word:'Electric', synonym:'EV', target:'electric', detail:'Electric bổ nghĩa cho phương tiện chạy bằng điện.', example:'Electric cars are becoming more popular as people seek to reduce emissions.' },
+    { cn:'nâng cao nhận thức về môi trường', en:'Raise environmental awareness', word:'Awareness', synonym:'Consciousness', target:'awareness', detail:'Raise đi cùng awareness.', example:'Campaigns are needed to raise environmental awareness.' },
+    { cn:'cân bằng sinh thái', en:'Ecological balance', word:'Ecological', synonym:'Environmental', target:'ecological', detail:'Balance là danh từ chính.', example:'Protecting biodiversity is important for maintaining ecological balance.' },
+    { cn:'khu bảo tồn thiên nhiên', en:'Nature reserve', word:'Reserve', synonym:'Sanctuary', target:'reserve', detail:'Reserve chỉ khu vực được bảo vệ.', example:'Many countries have established nature reserves to protect wildlife.' },
+    { cn:'hệ sinh thái', en:'Ecosystem', word:'Ecosystem', synonym:'Biotope', target:'ecosystem', detail:'Bao gồm sinh vật và môi trường tương tác với chúng.', example:'The destruction of ecosystems threatens the survival of many species.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 27');
+console.log('✅ phraseData Số mục:', phraseData.length);
 
 const TOTAL = 30;
-// ==================== 关键变量 ====================
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
 
-// ==================== 工具 ====================
+const STAGE_NAMES = ['Kết hợp từ', 'Chính tả', 'Chọn từ gần nghĩa'];
+const STAGE_DESC = ['Chọn cụm từ tiếng Anh phù hợp', 'Đọc nghĩa tiếng Việt rồi viết cụm từ tiếng Anh', 'Chọn từ gần nghĩa'];
+
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -273,26 +266,24 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `Cụm tiếng Anh nào có nghĩa là “${p.cn}”?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `Cụm đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `Viết cụm tiếng Anh có nghĩa là “${p.cn}”:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `Cách viết đúng là “${p.en}” (${p.cn}). ${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -317,10 +308,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `Từ nào gần nghĩa nhất với từ được gạch dưới trong câu?<br>“${sentenceDisplay}”`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án là “${p.synonym}”, từ gần nghĩa với “${p.word}”. ${p.detail}`
         });
     });
 
@@ -332,7 +323,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -369,7 +359,6 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -411,7 +400,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
@@ -423,10 +412,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-meaning-cn">${p.cn}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
+                <div class="word-detail-row"><strong>📎 Cách dùng: </strong>${p.detail}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${p.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -447,7 +436,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -467,14 +455,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('Bạn đang làm bài. Hãy hoàn thành 30 câu trước khi chuyển phần.');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -504,10 +491,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -528,24 +515,23 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'Nhập cụm từ tiếng Anh…';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Exhaust fumes）';
+        hint.textContent = '💡 Hãy viết đúng chính tả và khoảng cách giữa các từ.';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+
             }
         });
     } else {
@@ -589,7 +575,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('Hãy nhập cụm từ tiếng Anh.');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -610,7 +596,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ Chính xác! Bạn đã viết đúng cụm từ.' : '❌ Chưa đúng. Hãy đối chiếu với cách viết bên dưới.';
 
         results.push({
             question: q.question,
@@ -621,14 +607,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -649,7 +635,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -660,7 +646,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -671,7 +657,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -685,9 +670,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -697,20 +682,20 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
-                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser}</td>
+                    <td style="color:${r.isCorrect?'#3a7d5a':'#c0392b'}">${displayUser.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</td>
                     <td style="color:#3a7d5a;">${r.correct}</td>
                     <td>${status}</td>
                 </tr>`;
@@ -726,7 +711,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

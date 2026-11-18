@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
@@ -7,8 +7,8 @@
     <meta name="exam:title" content="Bài 7 · Kinh tế và thương mại">
     <meta name="exam:description" content="Từ vựng Đọc · Kinh tế và thương mại">
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元7-经济与商业</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc – Bài 07 · Kinh tế và kinh doanh</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -131,36 +131,37 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">📈</div><span>阅读-单元7-经济与商业</span></div>
+        <div class="logo"><div class="logo-icon">📈</div><span>Đọc – Bài 07 · Kinh tế và kinh doanh</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">Đang tải từ vựng…</span>
     </div>
 </header>
 <div class="main-container">
-    <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <section class="section active" id="learnSection">
+        <p><a href="../../../ielts-vi/resources/tu-trong-ngu-canh.pdf" download>Tải sổ tay Học từ trong ngữ cảnh (PDF)</a></p><div class="learn-grid" id="learnGrid"></div></section>
 
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 Kiểm tra tổng hợp · Đang tải câu hỏi…</h3>
+            <p>Hoàn thành lần lượt ba phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Nhận diện nghĩa<br>Tiếng Anh → tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Chọn từ gần nghĩa<br>Chọn từ tiếng Anh gần nghĩa</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">Vận dụng<br>Ngữ cảnh và từ nhiều nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Câu 1 / 30</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Nhận diện nghĩa</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -169,116 +170,105 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 经济与商业 · 32个核心词 ====================
+
 const wordData = [
-    // —— 商业基础 ——
-    { word:'commerce', ipa:'/ˈkɒm.ɜːs/', pos:'n.', meaning:'商业；贸易', synonym:'trade', target:'commerce', example:'International commerce has increased significantly.', accept_meaning:['商业','贸易'] },
-    { word:'business', ipa:'/ˈbɪz.nɪs/', pos:'n.', meaning:'商业；企业；生意', synonym:'enterprise', target:'business', example:'She started her own business after graduation.', accept_meaning:['商业','企业','生意'] },
-    { word:'enterprise', ipa:'/ˈen.tə.praɪz/', pos:'n.', meaning:'企业；事业心；进取心', synonym:'company', target:'enterprise', example:'He is the CEO of a large enterprise.', accept_meaning:['企业','事业心','进取心'] },
-    { word:'corporation', ipa:'/ˌkɔː.pəˈreɪ.ʃən/', pos:'n.', meaning:'公司；法人', synonym:'company', target:'corporation', example:'The corporation has offices all over the world.', accept_meaning:['公司','法人'] },
-    { word:'firm', ipa:'/fɜːm/', pos:'n./adj.', meaning:'公司；坚定的；牢固的', synonym:'company', target:'firm', example:'She works for a law firm.', accept_meaning:['公司','坚定的','牢固的'] },
 
-    // —— 金融与投资 ——
-    { word:'investment', ipa:'/ɪnˈvest.mənt/', pos:'n.', meaning:'投资；投入', synonym:'funding', target:'investment', example:'Investment in education is crucial for development.', accept_meaning:['投资','投入'] },
-    { word:'capital', ipa:'/ˈkæp.ɪ.təl/', pos:'n.', meaning:'资本；资金；首都', synonym:'funds', target:'capital', example:'The company needs more capital to expand.', accept_meaning:['资本','资金','首都'] },
-    { word:'stock', ipa:'/stɒk/', pos:'n.', meaning:'股票；库存；储备', synonym:'shares', target:'stock', example:'The stock market crashed in 2008.', accept_meaning:['股票','库存','储备'] },
-    { word:'share', ipa:'/ʃeər/', pos:'n./v.', meaning:'股份；份额；分享', synonym:'portion', target:'share', example:'He owns a large share of the company.', accept_meaning:['股份','份额','分享'] },
-    { word:'asset', ipa:'/ˈæs.et/', pos:'n.', meaning:'资产；财产；优点', synonym:'property', target:'assets', example:'The company\'s assets are worth millions.', accept_meaning:['资产','财产','优点'] },
-    { word:'profit', ipa:'/ˈprɒf.ɪt/', pos:'n.', meaning:'利润；盈利', synonym:'earnings', target:'profit', example:'The company made a large profit this year.', accept_meaning:['利润','盈利'] },
+    { word:'commerce', ipa:'/ˈkɒm.ɜːs/', pos:'n.', meaning:'thương mại', synonym:'trade', target:'commerce', example:'International commerce has increased significantly.', accept_meaning:['thương mại'] },
+    { word:'business', ipa:'/ˈbɪz.nɪs/', pos:'n.', meaning:'doanh nghiệp; việc kinh doanh', synonym:'enterprise', target:'business', example:'She started her own business after graduation.', accept_meaning:['doanh nghiệp', 'việc kinh doanh'] },
+    { word:'enterprise', ipa:'/ˈen.tə.praɪz/', pos:'n.', meaning:'doanh nghiệp; tinh thần tiến thủ', synonym:'company', target:'enterprise', example:'He is the CEO of a large enterprise.', accept_meaning:['doanh nghiệp', 'tinh thần tiến thủ'] },
+    { word:'corporation', ipa:'/ˌkɔː.pəˈreɪ.ʃən/', pos:'n.', meaning:'công ty; tập đoàn', synonym:'company', target:'corporation', example:'The corporation has offices all over the world.', accept_meaning:['công ty', 'tập đoàn'] },
+    { word:'firm', ipa:'/fɜːm/', pos:'n./adj.', meaning:'công ty; vững chắc', synonym:'company', target:'firm', example:'She works for a law firm.', accept_meaning:['công ty', 'vững chắc'] },
 
-    // —— 贸易与市场 ——
-    { word:'market', ipa:'/ˈmɑː.kɪt/', pos:'n./v.', meaning:'市场；推销', synonym:'marketplace', target:'market', example:'The housing market is very competitive.', accept_meaning:['市场','推销'] },
-    { word:'demand', ipa:'/dɪˈmɑːnd/', pos:'n./v.', meaning:'需求；要求', synonym:'need', target:'demand', example:'There is a growing demand for renewable energy.', accept_meaning:['需求','要求'] },
-    { word:'supply', ipa:'/səˈplaɪ/', pos:'n./v.', meaning:'供应；供给', synonym:'provide', target:'supply', example:'The supply of fresh water is limited.', accept_meaning:['供应','供给'] },
-    { word:'export', ipa:'/ˈek.spɔːt/', pos:'n./v.', meaning:'出口', synonym:'ship abroad', target:'exports', example:'The country exports a large amount of oil.', accept_meaning:['出口'] },
-    { word:'import', ipa:'/ˈɪm.pɔːt/', pos:'n./v.', meaning:'进口', synonym:'bring in', target:'imports', example:'Japan imports a lot of oil and gas.', accept_meaning:['进口'] },
+    { word:'investment', ipa:'/ɪnˈvest.mənt/', pos:'n.', meaning:'sự đầu tư', synonym:'funding', target:'investment', example:'Investment in education is crucial for development.', accept_meaning:['sự đầu tư'] },
+    { word:'capital', ipa:'/ˈkæp.ɪ.təl/', pos:'n.', meaning:'vốn; thủ đô', synonym:'funds', target:'capital', example:'The company needs more capital to expand.', accept_meaning:['vốn', 'thủ đô'] },
+    { word:'stock', ipa:'/stɒk/', pos:'n.', meaning:'cổ phiếu; hàng tồn kho', synonym:'shares', target:'stock', example:'The stock market crashed in 2008.', accept_meaning:['cổ phiếu', 'hàng tồn kho'] },
+    { word:'share', ipa:'/ʃeər/', pos:'n./v.', meaning:'cổ phần; phần chia; chia sẻ', synonym:'portion', target:'share', example:'He owns a large share of the company.', accept_meaning:['cổ phần', 'phần chia', 'chia sẻ'] },
+    { word:'asset', ipa:'/ˈæs.et/', pos:'n.', meaning:'tài sản; điểm mạnh', synonym:'property', target:'assets', example:'The company\'s assets are worth millions.', accept_meaning:['tài sản', 'điểm mạnh'] },
+    { word:'profit', ipa:'/ˈprɒf.ɪt/', pos:'n.', meaning:'lợi nhuận', synonym:'earnings', target:'profit', example:'The company made a large profit this year.', accept_meaning:['lợi nhuận'] },
 
-    // —— 会计与财务 ——
-    { word:'revenue', ipa:'/ˈrev.ən.juː/', pos:'n.', meaning:'收入；营收', synonym:'income', target:'revenue', example:'The government\'s revenue comes mainly from taxes.', accept_meaning:['收入','营收'] },
-    { word:'expenditure', ipa:'/ɪkˈspen.dɪ.tʃər/', pos:'n.', meaning:'支出；开销', synonym:'spending', target:'expenditure', example:'The government cut expenditure on education.', accept_meaning:['支出','开销'] },
-    { word:'budget', ipa:'/ˈbʌdʒ.ɪt/', pos:'n.', meaning:'预算', synonym:'financial plan', target:'budget', example:'We need to stay within the budget.', accept_meaning:['预算'] },
-    { word:'finance', ipa:'/ˈfaɪ.næns/', pos:'n./v.', meaning:'金融；财务；为...提供资金', synonym:'funding', target:'finance', example:'He studied finance at university.', accept_meaning:['金融','财务','融资'] },
-    { word:'debt', ipa:'/det/', pos:'n.', meaning:'债务；欠款', synonym:'liability', target:'debt', example:'The company is in debt and needs to restructure.', accept_meaning:['债务','欠款'] },
-    { word:'loan', ipa:'/ləʊn/', pos:'n./v.', meaning:'贷款；借款', synonym:'credit', target:'loan', example:'He took out a loan to start his business.', accept_meaning:['贷款','借款'] },
-    { word:'credit', ipa:'/ˈkred.ɪt/', pos:'n.', meaning:'信用；信贷；学分；赞扬', synonym:'trust', target:'credit', example:'She has a good credit record.', accept_meaning:['信用','信贷','学分','赞扬'] },
+    { word:'market', ipa:'/ˈmɑː.kɪt/', pos:'n./v.', meaning:'thị trường; tiếp thị', synonym:'marketplace', target:'market', example:'The housing market is very competitive.', accept_meaning:['thị trường', 'tiếp thị'] },
+    { word:'demand', ipa:'/dɪˈmɑːnd/', pos:'n./v.', meaning:'nhu cầu; yêu cầu', synonym:'need', target:'demand', example:'There is a growing demand for renewable energy.', accept_meaning:['nhu cầu', 'yêu cầu'] },
+    { word:'supply', ipa:'/səˈplaɪ/', pos:'n./v.', meaning:'nguồn cung; cung cấp', synonym:'provide', target:'supply', example:'The supply of fresh water is limited.', accept_meaning:['nguồn cung', 'cung cấp'] },
+    { word:'export', ipa:'/ˈek.spɔːt/', pos:'n./v.', meaning:'xuất khẩu', synonym:'ship abroad', target:'exports', example:'The country exports a large amount of oil.', accept_meaning:['xuất khẩu'] },
+    { word:'import', ipa:'/ˈɪm.pɔːt/', pos:'n./v.', meaning:'nhập khẩu', synonym:'bring in', target:'imports', example:'Japan imports a lot of oil and gas.', accept_meaning:['nhập khẩu'] },
 
-    // —— 经济现象与政策 ——
-    { word:'inflation', ipa:'/ɪnˈfleɪ.ʃən/', pos:'n.', meaning:'通货膨胀', synonym:'price rise', target:'inflation', example:'Inflation has been rising in recent months.', accept_meaning:['通货膨胀'] },
-    { word:'recession', ipa:'/rɪˈseʃ.ən/', pos:'n.', meaning:'经济衰退', synonym:'downturn', target:'recession', example:'The country experienced a severe recession.', accept_meaning:['经济衰退'] },
-    { word:'tax', ipa:'/tæks/', pos:'n./v.', meaning:'税收；征税', synonym:'levy', target:'taxes', example:'The government plans to increase taxes.', accept_meaning:['税收','征税'] },
-    { word:'subsidy', ipa:'/ˈsʌb.sɪ.di/', pos:'n.', meaning:'补贴；津贴', synonym:'grant', target:'subsidies', example:'The government provides subsidies to farmers.', accept_meaning:['补贴','津贴'] },
-    { word:'welfare', ipa:'/ˈwel.feər/', pos:'n.', meaning:'福利；福祉', synonym:'well-being', target:'welfare', example:'The welfare system supports the poor.', accept_meaning:['福利','福祉'] },
-    { word:'unemployment', ipa:'/ˌʌn.ɪmˈplɔɪ.mənt/', pos:'n.', meaning:'失业；失业人数', synonym:'joblessness', target:'unemployment', example:'Unemployment has reached a record high.', accept_meaning:['失业','失业人数'] },
+    { word:'revenue', ipa:'/ˈrev.ən.juː/', pos:'n.', meaning:'nguồn thu; doanh thu', synonym:'income', target:'revenue', example:'The government\'s revenue comes mainly from taxes.', accept_meaning:['nguồn thu', 'doanh thu'] },
+    { word:'expenditure', ipa:'/ɪkˈspen.dɪ.tʃər/', pos:'n.', meaning:'chi tiêu; khoản chi', synonym:'spending', target:'expenditure', example:'The government cut expenditure on education.', accept_meaning:['chi tiêu', 'khoản chi'] },
+    { word:'budget', ipa:'/ˈbʌdʒ.ɪt/', pos:'n.', meaning:'ngân sách', synonym:'financial plan', target:'budget', example:'We need to stay within the budget.', accept_meaning:['ngân sách'] },
+    { word:'finance', ipa:'/ˈfaɪ.næns/', pos:'n./v.', meaning:'tài chính; tài trợ', synonym:'funding', target:'finance', example:'He studied finance at university.', accept_meaning:['tài chính', 'tài trợ'] },
+    { word:'debt', ipa:'/det/', pos:'n.', meaning:'nợ; khoản nợ', synonym:'liability', target:'debt', example:'The company is in debt and needs to restructure.', accept_meaning:['nợ', 'khoản nợ'] },
+    { word:'loan', ipa:'/ləʊn/', pos:'n./v.', meaning:'khoản vay', synonym:'credit', target:'loan', example:'He took out a loan to start his business.', accept_meaning:['khoản vay'] },
+    { word:'credit', ipa:'/ˈkred.ɪt/', pos:'n.', meaning:'tín dụng; tín chỉ; lời khen', synonym:'trust', target:'credit', example:'She has a good credit record.', accept_meaning:['tín dụng', 'tín chỉ', 'lời khen'] },
 
-    // —— 竞争与增长 ——
-    { word:'competition', ipa:'/ˌkɒm.pəˈtɪʃ.ən/', pos:'n.', meaning:'竞争；竞赛', synonym:'rivalry', target:'competition', example:'There is fierce competition in the industry.', accept_meaning:['竞争','竞赛'] },
-    { word:'growth', ipa:'/ɡrəʊθ/', pos:'n.', meaning:'增长；成长', synonym:'expansion', target:'growth', example:'Economic growth has slowed down recently.', accept_meaning:['增长','成长'] },
-    { word:'development', ipa:'/dɪˈvel.əp.mənt/', pos:'n.', meaning:'发展；开发', synonym:'progress', target:'development', example:'The company is investing in research and development.', accept_meaning:['发展','开发'] },
-    { word:'sustainable', ipa:'/səˈsteɪ.nə.bəl/', pos:'adj.', meaning:'可持续的', synonym:'viable', target:'sustainable', example:'Sustainable economic growth is essential.', accept_meaning:['可持续的'] },
-    { word:'globalisation', ipa:'/ˌɡləʊ.bə.laɪˈzeɪ.ʃən/', pos:'n.', meaning:'全球化', synonym:'worldwide integration', target:'globalisation', example:'Globalisation has changed the world economy.', accept_meaning:['全球化'] }
+    { word:'inflation', ipa:'/ɪnˈfleɪ.ʃən/', pos:'n.', meaning:'lạm phát', synonym:'price rise', target:'inflation', example:'Inflation has been rising in recent months.', accept_meaning:['lạm phát'] },
+    { word:'recession', ipa:'/rɪˈseʃ.ən/', pos:'n.', meaning:'suy thoái kinh tế', synonym:'downturn', target:'recession', example:'The country experienced a severe recession.', accept_meaning:['suy thoái kinh tế'] },
+    { word:'tax', ipa:'/tæks/', pos:'n./v.', meaning:'thuế; đánh thuế', synonym:'levy', target:'taxes', example:'The government plans to increase taxes.', accept_meaning:['thuế', 'đánh thuế'] },
+    { word:'subsidy', ipa:'/ˈsʌb.sɪ.di/', pos:'n.', meaning:'trợ cấp', synonym:'grant', target:'subsidies', example:'The government provides subsidies to farmers.', accept_meaning:['trợ cấp'] },
+    { word:'welfare', ipa:'/ˈwel.feər/', pos:'n.', meaning:'phúc lợi', synonym:'well-being', target:'welfare', example:'The welfare system supports the poor.', accept_meaning:['phúc lợi'] },
+    { word:'unemployment', ipa:'/ˌʌn.ɪmˈplɔɪ.mənt/', pos:'n.', meaning:'tình trạng thất nghiệp', synonym:'joblessness', target:'unemployment', example:'Unemployment has reached a record high.', accept_meaning:['tình trạng thất nghiệp'] },
+
+    { word:'competition', ipa:'/ˌkɒm.pəˈtɪʃ.ən/', pos:'n.', meaning:'sự cạnh tranh; cuộc thi', synonym:'rivalry', target:'competition', example:'There is fierce competition in the industry.', accept_meaning:['sự cạnh tranh', 'cuộc thi'] },
+    { word:'growth', ipa:'/ɡrəʊθ/', pos:'n.', meaning:'sự tăng trưởng', synonym:'expansion', target:'growth', example:'Economic growth has slowed down recently.', accept_meaning:['sự tăng trưởng'] },
+    { word:'development', ipa:'/dɪˈvel.əp.mənt/', pos:'n.', meaning:'sự phát triển', synonym:'progress', target:'development', example:'The company is investing in research and development.', accept_meaning:['sự phát triển'] },
+    { word:'sustainable', ipa:'/səˈsteɪ.nə.bəl/', pos:'adj.', meaning:'bền vững', synonym:'viable', target:'sustainable', example:'Sustainable economic growth is essential.', accept_meaning:['bền vững'] },
+    { word:'globalisation', ipa:'/ˌɡləʊ.bə.laɪˈzeɪ.ʃən/', pos:'n.', meaning:'toàn cầu hóa', synonym:'worldwide integration', target:'globalisation', example:'Globalisation has changed the world economy.', accept_meaning:['toàn cầu hóa'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+console.log('✅ wordData Số từ:', wordData.length);
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length;
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['Nhận diện nghĩa', 'Chọn từ gần nghĩa', 'Vận dụng'];
+const STAGE_DESC = [`Tiếng Anh → tiếng Việt (${TOTAL_STAGE1} từ)`, 'Chọn từ tiếng Anh gần nghĩa', 'Điền từ vào câu và phân biệt các nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `${TOTAL_STAGE1} từ`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 Kiểm tra tổng hợp · ${TOTAL} câu`;
 
-// ==================== 工具 ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    const stage1Data = all;
     stage1Data.forEach(w => {
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('Chưa rõ');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `“${w.word}” có nghĩa là gì trong tiếng Việt?`,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `“${w.word}” có nghĩa là “${w.meaning}”.`
         });
     });
 
-    // 阶段二：同义替换 (10题)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -289,19 +279,18 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `Từ tiếng Anh nào gần nghĩa nhất với “${w.word}”?`,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `Từ gần nghĩa với “${w.word}” là “${w.synonym}”.`
         });
     });
 
-    // 阶段三：综合应用 (10题)
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
         if (subTypeCounter % 2 === 0) {
-            // 语境填空
+
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
@@ -312,35 +301,26 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `Chọn từ để điền vào câu sau: “${sentenceDisplay}”`,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `Đáp án là “${w.word}”, nghĩa là “${w.meaning}”. ${w.example}`
             });
         } else {
-            // 一词多义
+
             const correctMeaning = w.accept_meaning[0];
-            const wrongMeanings = w.accept_meaning.slice(1);
-            while(wrongMeanings.length < 3) {
-                const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))];
-                const shuffledOthers = shuffle([...otherMeanings]);
-                for (const m of shuffledOthers) {
-                    if (!wrongMeanings.includes(m) && m !== correctMeaning) {
-                        wrongMeanings.push(m);
-                        break;
-                    }
-                }
-                if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
-            }
+            // Other accepted senses of this same word must not be distractors.
+            const alternatives = new Set(wordData.filter(x => x.word !== w.word)
+                .flatMap(x => x.accept_meaning).filter(m => !w.accept_meaning.includes(m)));
+            const wrongMeanings = shuffle([...alternatives]).slice(0, 3);
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `Trong câu “${w.example}”, “${w.word}” có nghĩa là gì?`,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `Trong câu này, “${w.word}” nghĩa là “${correctMeaning}”.`
             });
         }
         subTypeCounter++;
@@ -354,7 +334,6 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -387,7 +366,6 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -429,22 +407,22 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card=document.createElement('div'); card.className='word-card';
         card.innerHTML=`
             <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+                <div><span class="word-headword" lang="en">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
                 <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
+                <div class="word-detail-row"><strong>📎 Từ gần nghĩa: </strong>${w.synonym}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Ví dụ: </strong><span lang="en">${w.example}</span></div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -465,7 +443,6 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -485,14 +462,13 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`Bạn đang làm bài. Hãy hoàn thành ${TOTAL} câu trước khi chuyển phần.`);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -522,10 +498,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${currentIndex+1} / ${TOTAL}`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -571,7 +547,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án trước.'); return; }
         selected = '';
     }
 
@@ -592,7 +568,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Chính xác!' : '❌ Chưa đúng.';
 
     results.push({
         question: q.question,
@@ -603,7 +579,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -614,7 +590,6 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -628,9 +603,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">Tổng số câu đúng</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai</div></div>
     `;
 
     let html = '';
@@ -640,16 +615,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${s+1}: ${STAGE_NAMES[s]} (${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Chưa có câu hỏi</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -669,7 +644,6 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);
