@@ -83,7 +83,7 @@ jobs:
             2>&1 | tee /tmp/super-linter.log
 
       - name: Đăng nhật ký lint
-        if: always()
+        if: steps.lint.outcome == 'failure'
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

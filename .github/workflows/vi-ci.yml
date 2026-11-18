@@ -100,7 +100,7 @@ jobs:
             2>&1 | tee /tmp/lhci.log
 
       - name: Đăng nhật ký Lighthouse
-        if: always()
+        if: steps.lhci.outcome == 'failure'
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

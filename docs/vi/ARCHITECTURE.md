@@ -21,7 +21,7 @@
 | Luật chơi | `quiz.js` | `scoreSession`, `nextUnfinishedLesson`, `lessonById`, `practiceSession`, `daysUntil` |
 | Nội dung | `library.js` | `filterDocs`, `sortDocs`, `countCitations`, `citationUrl` |
 | Nội dung | `league.js` | Bảng đấu 15 người, thăng/xuống hạng tất định theo `weekStart` |
-| PWA | `pwa.js`, `pwa-cache.js`, `sw.js` | Đăng ký SW, chiến lược cache-first, precache, dọn cache cũ |
+| PWA | `pwa.js`, `pwa-cache.js`, `assets/js/sw.js`, `sw.js` | Đăng ký SW, chiến lược cache-first, precache, dọn cache cũ; `vi/sw.js` đặt ở gốc để SW được phép điều khiển toàn bộ phạm vi `/` |
 | Trang | `page-common.js` | Thanh trên, thanh dưới, `applyTheme`, `setActiveNav`, `renderHeader` |
 | Trang | `page-*.js` | `initHome`, `initLesson`, `initLibrary`, `initLeague`, `initProfile`, `initPractice` |
 | Khởi động | `boot.js` | `fetchJson`, `sessionFromParams`, `bootPage()` chọn trang theo `body[data-page]` |

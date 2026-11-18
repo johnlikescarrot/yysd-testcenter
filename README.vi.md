@@ -8,7 +8,9 @@ toàn bộ giao diện, thông báo, ngân hàng câu hỏi, tài liệu PDF và
 - **6 tài liệu PDF** (13–16 trang mỗi tài liệu) kèm **54 trích dẫn Google Scholar**.
 - Cơ chế học tập kiểu Duolingo: XP, chuỗi ngày học, trái tim, đá quý, huy hiệu, nhiệm vụ ngày và 5 hạng đấu.
 - **215 bài kiểm thử**, độ bao phủ **100%** (câu lệnh, nhánh, hàm, dòng) — kể cả service worker.
-- Mục tiêu **Lighthouse 100/100** cho Hiệu năng, Khả năng truy cập, Thực hành tốt nhất và SEO.
+- **Lighthouse 100/100** cho cả bốn hạng mục trên 4 trang đại diện (đo bằng Lighthouse CI, 3 lượt/trang).
+- CI: [Super-Linter](.github/workflows/super-linter.yml), [kiểm thử + độ bao phủ](.github/workflows/vi-ci.yml),
+  [triển khai Pages](.github/workflows/pages.yml) — tất cả đều xanh trên pull request.
 
 ## Bắt đầu nhanh
 

@@ -9,6 +9,26 @@
 | Thực hành tốt nhất | Không lỗi console, không `javascript:` URL, `rel="noopener"` cho liên kết ngoài, `type="module"`, không thư viện lỗi thời |
 | SEO | `title` 15–65 ký tự, mô tả 70–165 ký tự, `viewport`, `theme-color`, `robots.txt`, liên kết có thể thu thập, không `noindex` |
 
+## Kết quả đo trên CI
+
+Lighthouse CI chạy 3 lượt cho mỗi trang trong 4 trang đại diện:
+
+| Trang | Hiệu năng | Khả năng truy cập | Thực hành tốt nhất | SEO | CLS |
+| --- | --- | --- | --- | --- | --- |
+| `index.html` | 100 | 100 | 100 | 100 | 0 |
+| `hoc.html?bai=u1l1` | 100 | 100 | 100 | 100 | 0 |
+| `thu-vien.html` | 100 | 100 | 100 | 100 | 0 |
+| `ho-so.html` | 100 | 100 | 100 | 100 | 0 |
+
+Ba yếu tố quyết định để đạt điểm tuyệt đối:
+
+1. **Không có lỗi console** — service worker được đặt tại `vi/sw.js` (gốc) để phạm vi `/` hợp lệ,
+   đăng ký với `type: "module"`, mọi lỗi đăng ký đều được nuốt.
+2. **CLS = 0** — các vùng nạp bất đồng bộ (`#library-list`, `#home-path`, `#profile-badges`, …) được
+   giữ chỗ bằng `min-height` tương ứng với nội dung cuối cùng.
+3. **Tương phản đạt AA** — huy hiệu chưa mở khoá dùng nền `#ece7dc` với chữ `#3d4552` thay vì giảm
+   độ mờ, nên vẫn đọc rõ và không bị axe gắn cờ.
+
 ## Chạy cục bộ
 
 ```bash

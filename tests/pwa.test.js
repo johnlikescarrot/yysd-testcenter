@@ -115,6 +115,7 @@ describe("service worker", () => {
     window.clients = { claim };
 
     const sw = await import("../vi/assets/js/sw.js");
+    await import("../vi/sw.js");
 
     const installEvent = { waitUntil: vi.fn() };
     handlers.install(installEvent);

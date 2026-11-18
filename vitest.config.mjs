@@ -9,7 +9,7 @@ export default defineConfig({
       provider: "v8",
       reportsDirectory: "coverage",
       reporter: ["text", "json-summary", "lcov"],
-      include: ["vi/assets/js/**/*.js"],
+      include: ["vi/assets/js/**/*.js", "vi/sw.js"],
       thresholds: {
         lines: 100,
         functions: 100,
