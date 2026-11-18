@@ -893,3 +893,15 @@ dialog details {
 [hidden] {
   display: none !important;
 }
+@media print {
+  .doc .sheet {
+    margin: 12px 0;
+    padding-top: 0;
+  }
+  .doc .sheet h3 {
+    margin: 8px 0;
+  }
+  .doc .sheet p {
+    margin: 5px 0;
+  }
+}

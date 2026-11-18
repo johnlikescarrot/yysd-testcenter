@@ -46,7 +46,22 @@ def translate(text):
     )
     text = PHRASES.sub(lambda m: LABELS[m[0]].replace("␠", " "), text)
     return (
-        text.translate(str.maketrans("（）：，。；？　【】", "():,.;? []"))
+        text.translate(
+            str.maketrans(
+                {
+                    "（": " (",
+                    "）": ")",
+                    "：": ": ",
+                    "，": ", ",
+                    "。": ". ",
+                    "；": "; ",
+                    "？": "?",
+                    "　": " ",
+                    "【": "[",
+                    "】": "]",
+                }
+            )
+        )
         .replace('lang="zh-CN"', 'lang="vi"')
         .replace("'zh-CN'", "'vi-VN'")
     )
@@ -157,7 +172,35 @@ def package_paper(skill, path):
         else:
             raise FileNotFoundError(source)
     back = '<nav aria-label="Điều hướng đề"><a style="display:inline-block;padding:8px 16px;color:#183941" href="../../../thu-vien.html">← Thư viện đề</a></nav>'
-    dest.write_text(checked(text.replace("<body>", "<body>" + back, 1), path.name))
+    # Make the existing cover operable by keyboard as well as pointer. The
+    # native button bubbles to the original card's click handler.
+    text = re.sub(
+        r'<div class="pc-go">(.*?)</div>',
+        r'<button type="button" class="pc-go">\1</button>',
+        text,
+    )
+    text = text.replace(
+        '<div class="passage-pane">', '<div class="passage-pane" lang="en">'
+    )
+    text = text.replace('<textarea id="t', '<textarea lang="en" id="t')
+    text = re.sub(
+        r'(<textarea lang="en" id="t([12])")', r'\1 aria-label="Writing Task \2"', text
+    )
+    text = text.replace(
+        '<input type="text" id="Q${n}"',
+        '<input type="text" aria-label="Câu ${n}" id="Q${n}"',
+    )
+    description = re.search(r'<meta name="exam:description"\s+content="([^"]*)"', text)
+    head = (
+        f'<meta name="description" content="{description[1]}">' if description else ""
+    )
+    head += "<style>.header .brandtag{background:#274758}.cover-hero .sub,.paper-card .pc-meta{color:#47586b}.paper-card .pc-go{border:0;font-family:inherit;cursor:pointer}:focus-visible{outline:3px solid #855917;outline-offset:2px}</style>"
+    text = (
+        text.replace("</head>", head + "</head>")
+        .replace("<body>", "<body>" + back + "<main>", 1)
+        .replace("</body>", "</main></body>", 1)
+    )
+    dest.write_text(checked(text, path.name))
 
 
 def build():

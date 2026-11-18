@@ -13,7 +13,7 @@
     "node": ">=22.19.0"
   },
   "scripts": {
-    "build": "python3 tools/build.py",
+    "build": "python3 tools/build.py && node tools/prerender.mjs",
     "test": "node --experimental-test-coverage --test-coverage-include=\"assets/*.mjs\" --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 --test tests/*.test.mjs",
     "pdf": "node tools/pdf.mjs",
     "smoke": "node tools/smoke.mjs",
