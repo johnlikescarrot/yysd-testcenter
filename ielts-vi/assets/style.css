@@ -1,5 +1,6 @@
 :root {
   color-scheme: light;
+
   --paper: #f6f3ec;
   --surface: #fffcf7;
   --ink: #241c32;
@@ -9,6 +10,7 @@
   --purple-dark: #39217f;
   --purple-soft: #eee7fb;
   --radius: 1.25rem;
+
   font-family: system-ui, sans-serif;
   line-height: 1.55;
   color: var(--ink);
@@ -37,7 +39,7 @@ button:disabled { cursor: not-allowed; }
 .brand small { font-size: .65rem; font-weight: 750; letter-spacing: .09em; color: var(--muted); }
 .navigation { display: flex; flex-wrap: wrap; column-gap: .4rem; }
 .navigation a { color: var(--muted); text-decoration: none; padding: .55rem .72rem; border-radius: .65rem; font-size: .92rem; font-weight: 650; }
-.navigation a:hover { color: var(--purple-dark); background: var(--purple-soft); }
+.navigation a:where(:hover) { color: var(--purple-dark); background: var(--purple-soft); }
 .header-tag { display: flex; align-items: center; gap: .45rem; color: var(--purple-dark); background: var(--purple-soft); border-radius: 99px; padding: .36rem .7rem; font-size: .79rem; font-weight: 700; }
 .header-tag span { inline-size: .42rem; block-size: .42rem; border-radius: 50%; background: var(--purple); }
 .skip-link { position: absolute; inset: .6rem auto auto 1rem; z-index: 2; padding: .6rem 1rem; background: var(--surface); transform: translateY(-200%); }
@@ -66,7 +68,7 @@ button:disabled { cursor: not-allowed; }
 .section { margin-block: clamp(2.5rem, 6vw, 4.4rem); scroll-margin-block-start: 1rem; }
 .section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .75rem; margin-block-end: 1.05rem; }
 .section-heading h2 { margin-block: .24rem; font-size: clamp(1.55rem, 3.5vw, 2.25rem); letter-spacing: -.04em; }
-.section-heading p:not(.eyebrow, .xp-chip), .muted, .fine-print { color: var(--muted); }
+.section-heading :where(p:not(.eyebrow, .xp-chip)), .muted, .fine-print { color: var(--muted); }
 .skill-key { display: flex; flex-wrap: wrap; gap: .34rem; list-style: none; margin: 0; padding: 0; }
 .skill-key li { padding: .18rem .65rem; border-radius: 99px; background: var(--tone-bg); color: var(--tone-fg); font-weight: 700; font-size: .79rem; }
 .tone-listen { --tone-bg: #eee7fc; --tone-fg: #4c2d90; }
@@ -120,7 +122,7 @@ progress::-moz-progress-bar { background: var(--purple); border-radius: 99px; }
 .material-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .material-card .eyebrow { margin-block: .6rem .18rem; }
 .material-card h3 { font-size: 1.3rem; }
-.material-card p:not(.eyebrow) { color: var(--muted); margin-block-start: .42rem; }
+.material-card :where(p:not(.eyebrow)) { color: var(--muted); margin-block-start: .42rem; }
 .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .65rem; padding-block: 1.55rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
 
 /* Practice uses a single native dialog and does not replace the exam room. */
@@ -164,11 +166,12 @@ fieldset { margin: 0; border: 0; padding: 0; min-inline-size: 0; display: grid; 
 .handbook a { overflow-wrap: anywhere; }
 .references { padding-inline-start: 1.5rem; }
 
-@media (max-width: 55rem) {
+@media (width <= 55rem) {
   .header-tag { display: none; }
   .hero { min-block-size: auto; }
 }
-@media (max-width: 43rem) {
+
+@media (width <= 43rem) {
   .shell { inline-size: calc(100% - 1.5rem); }
   .header-inner { flex-wrap: wrap; min-block-size: auto; padding-block: .65rem .3rem; gap: .25rem; }
   .navigation { inline-size: 100%; justify-content: space-between; column-gap: 0; }
