@@ -72,6 +72,13 @@ await withChrome(async (browser) => {
   assert.equal(await page.$eval('#code-field', (el) => el.hidden), true);
   // Seed an offline learner session; no credentials or requests to a real service.
   await page.evaluate(() => localStorage.setItem('yysd:auth:token', 'offline-fixture'));
+  await go('zone.html?zone=mock');
+  await page.waitForSelector('.ielts-hub a[href="ielts-vi/"]');
+  noHan(await titleOf(page, '.ielts-hub'));
+  for (const n of [1, 2, 3]) {
+    const path = `exam.html?id=placement-test-${n}`;
+    assert.ok(await page.$(`.ielts-hub a[href="${path}"]`));
+  }
   await go('cambridge.html?vol=20&skill=reading');
   await page.waitForSelector('.test-tab');
   assert.equal(await page.$$eval('.test-tab', (els) => els.length), 4);
@@ -93,6 +100,11 @@ await withChrome(async (browser) => {
   await page.click('.practice .mode-start');
   assert.match(await titleOf(page, '#testModeTag'), /Luyện tập/);
   assert.equal(await page.evaluate(() => document.querySelectorAll('#questionsHolder .section-banner').length), 4);
+  await page.type('#L1', 'fish');
+  await page.click('.submit-btn');
+  await page.waitForSelector('#resultArea', { visible: true });
+  assert.equal(await titleOf(page, '#resCorrect'), '1/40');
+  noHan(await titleOf(page, '#detailHolder'));
   await go('library/mock/cambridge-writing/cambridge-20-test-1-writing.html');
   await page.click('[onclick="startTest()"]');
   await page.type('#t1', 'An English draft.');
@@ -104,6 +116,18 @@ await withChrome(async (browser) => {
   await go('cdt-report.html?suite=cambridge-20-test-1');
   assert.match(await titleOf(page, '#rpt-title'), /Cambridge IELTS 20 · Test 1/);
   assert.match(await page.$eval('#rpt-back', (el) => el.href), /cambridge.html\?vol=20$/);
+  for (const n of [1, 2, 3]) {
+    await go(`library/mock/ielts/placement-test-${n}.html`);
+    await page.type('#L_Q1', n === 1 ? 'Thursday' : '');
+    await page.click('#testArea .submit-btn');
+    await page.waitForSelector('#resultsArea', { visible: true });
+    assert.match(await titleOf(page, '#scoreText'), new RegExp(`${n === 1 ? 1 : 0} / 36$`));
+    assert.match(await titleOf(page, '#finalBand'), /Chờ tự đánh giá/);
+    noHan(await titleOf(page, '#resultsArea'));
+    await page.click('#w_confirm');
+    await page.click('#s_confirm');
+    assert.match(await titleOf(page, '#finalBand'), /^\d\.\d$/);
+  }
   await go('alevel-view.html?id=caie-9231-2025-w-11-qp');
   await page.waitForSelector('#view-shell:not([hidden])');
   assert.match(await page.$eval('#btn-download', (el) => el.href), /9231_w25_qp_11\.pdf$/);

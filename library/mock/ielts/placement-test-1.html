@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
-  <meta name="exam:title" content="优益思达入学测试 · 雅思全真模拟机考（第一卷）">
+  <meta name="exam:title" content="Bài đánh giá đầu vào IELTS · Đề 1">
   <meta name="exam:zone" content="mock">
   <meta name="exam:subject" content="ielts">
-  <meta name="exam:duration" content="180">
-  <meta name="exam:description" content="入学定位测试：听力 + 阅读（客观自动批改）+ 写作 + 口语（自评）。交卷后给出四项综合估算总分 Band。">
+  <meta name="exam:duration" content="90">
+  <meta name="exam:description" content="Đánh giá đầu vào: Nghe và Đọc chấm tự động; Viết và Nói tự đánh giá. Band quy đổi chỉ dùng để tham khảo khi lên kế hoạch học.">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达入学测试 - 雅思全真模拟机考（修订版）</title>
+<title>Đánh giá đầu vào IELTS · YYSD</title>
 <style>
   * { box-sizing: border-box; }
   body { font-family: 'Segoe UI', 'PingFang SC', Roboto, sans-serif; background: #f0f2f6; margin: 0; padding: 0 0 90px 0; color: #1e2a3a; line-height: 1.7; }
@@ -122,7 +122,7 @@
   .rubric-row input[type=range] { flex: 1; min-width: 160px; accent-color: #002b5e; }
   .rubric-row .rval { min-width: 38px; font-weight: 700; color: #002b5e; }
   .rubric-result { font-size: 16px; font-weight: 700; color: #001f3f; margin-top: 10px; }
-  /* 底部题号导航 */
+  /* Thanh số câu ở cuối trang */
   .nav-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #001f3f; padding: 8px 14px; z-index: 999; box-shadow: 0 -4px 14px rgba(0,0,0,0.25); }
   .nav-inner { display: flex; gap: 5px; overflow-x: auto; align-items: center; padding-bottom: 4px; }
   .nav-group-label { color: #8fa6c4; font-size: 11px; font-weight: 700; padding: 0 6px; white-space: nowrap; }
@@ -142,9 +142,9 @@
 <body>
 
 <header class="header">
-  <h1>📘 优益思达入学测试 <small>IELTS Mock Test</small> <span class="brandtag">智能诊断</span></h1>
+  <h1>📘 Đánh giá đầu vào YYSD <small>IELTS Mock Test</small> <span class="brandtag">Đánh giá đầu vào</span></h1>
   <div class="header-right">
-    <div class="fontsize-controls" title="字号调节">
+    <div class="fontsize-controls" title="Cỡ chữ">
       <button onclick="changeFont('sm')">A-</button>
       <button onclick="changeFont('md')">A</button>
       <button onclick="changeFont('lg')">A+</button>
@@ -158,28 +158,28 @@
 
 <div class="container" id="testArea">
 
-  <!-- ===== 听力 ===== -->
-  <h2>🎧 一、听力部分 <span class="badge">Listening</span></h2>
-  <div class="instruction"><strong>📌 提示：</strong>点击播放按钮听音频后作答，注意题目字数限制。每段音频可重复播放。</div>
+  <!-- ===== Nghe ===== -->
+  <h2>🎧 1. Nghe <span class="badge">Listening</span></h2>
+  <div class="instruction"><strong>📌 Hướng dẫn: </strong>Nhấn phát để nghe rồi trả lời. Chú ý giới hạn số từ ở mỗi câu. Bạn có thể nghe lại từng đoạn trong bài luyện này.</div>
 
   <h3>Part 1: Language Course Enrolment</h3>
   <div class="audio-bar">
-    <button class="audio-btn" onclick="playAudio(1)">▶ 播放 Part 1</button>
-    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ 停止</button>
-    <span class="audio-status" id="audioStatus1">⚪ 就绪</span>
+    <button class="audio-btn" onclick="playAudio(1)">▶ Nghe Part 1</button>
+    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ Dừng</button>
+    <span class="audio-status" id="audioStatus1">⚪ Sẵn sàng</span>
   </div>
   <div class="instruction">Questions 1–5: Write <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong>.</div>
-  <div class="question-block"><span class="qnum">1.</span> Class Day: <input type="text" id="L_Q1" placeholder="填写答案"> evening</div>
-  <div class="question-block"><span class="qnum">2.</span> Total Cost: £ <input type="text" id="L_Q2" placeholder="填写数字"></div>
-  <div class="question-block"><span class="qnum">3.</span> Required material: A <input type="text" id="L_Q3" placeholder="填写答案"></div>
-  <div class="question-block"><span class="qnum">4.</span> Surname: <input type="text" id="L_Q4" placeholder="填写姓氏"></div>
-  <div class="question-block"><span class="qnum">5.</span> Contact number: <input type="text" id="L_Q5" placeholder="填写号码"></div>
+  <div class="question-block"><span class="qnum">1.</span> Class Day: <input type="text" id="L_Q1" placeholder="Nhập đáp án"> evening</div>
+  <div class="question-block"><span class="qnum">2.</span> Total Cost: £ <input type="text" id="L_Q2" placeholder="Nhập số"></div>
+  <div class="question-block"><span class="qnum">3.</span> Required material: A <input type="text" id="L_Q3" placeholder="Nhập đáp án"></div>
+  <div class="question-block"><span class="qnum">4.</span> Surname: <input type="text" id="L_Q4" placeholder="Nhập họ"></div>
+  <div class="question-block"><span class="qnum">5.</span> Contact number: <input type="text" id="L_Q5" placeholder="Nhập số điện thoại"></div>
 
   <h3>Part 2: Campus Library Tour</h3>
   <div class="audio-bar">
-    <button class="audio-btn" onclick="playAudio(2)">▶ 播放 Part 2</button>
-    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ 停止</button>
-    <span class="audio-status" id="audioStatus2">⚪ 就绪</span>
+    <button class="audio-btn" onclick="playAudio(2)">▶ Nghe Part 2</button>
+    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ Dừng</button>
+    <span class="audio-status" id="audioStatus2">⚪ Sẵn sàng</span>
   </div>
   <div class="instruction">Questions 6–8: Choose <strong>A, B, or C</strong>.</div>
   <div class="question-block" id="block_L_Q6"><p><strong>6. The cafeteria closes at:</strong></p>
@@ -203,22 +203,22 @@
 
   <h3>Part 3: Renewable Energy Research</h3>
   <div class="audio-bar">
-    <button class="audio-btn" onclick="playAudio(3)">▶ 播放 Part 3</button>
-    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ 停止</button>
-    <span class="audio-status" id="audioStatus3">⚪ 就绪</span>
+    <button class="audio-btn" onclick="playAudio(3)">▶ Nghe Part 3</button>
+    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ Dừng</button>
+    <span class="audio-status" id="audioStatus3">⚪ Sẵn sàng</span>
   </div>
   <div class="instruction">Questions 11–15: Write <strong>NO MORE THAN TWO WORDS</strong>.</div>
-  <div class="question-block"><span class="qnum">11.</span> Narrowed focus to: <input type="text" id="L_Q11" placeholder="填写答案"></div>
-  <div class="question-block"><span class="qnum">12.</span> Compare panels with <input type="text" id="L_Q12" placeholder="填写答案"> solar films.</div>
-  <div class="question-block"><span class="qnum">13.</span> Barrier: high <input type="text" id="L_Q13" placeholder="填写答案"></div>
-  <div class="question-block"><span class="qnum">14.</span> Gather data from <input type="text" id="L_Q14" placeholder="填写答案"> with managers.</div>
-  <div class="question-block"><span class="qnum">15.</span> Conduct a <input type="text" id="L_Q15" placeholder="填写答案"> of bills.</div>
+  <div class="question-block"><span class="qnum">11.</span> Narrowed focus to: <input type="text" id="L_Q11" placeholder="Nhập đáp án"></div>
+  <div class="question-block"><span class="qnum">12.</span> Compare panels with <input type="text" id="L_Q12" placeholder="Nhập đáp án"> solar films.</div>
+  <div class="question-block"><span class="qnum">13.</span> Barrier: high <input type="text" id="L_Q13" placeholder="Nhập đáp án"></div>
+  <div class="question-block"><span class="qnum">14.</span> Gather data from <input type="text" id="L_Q14" placeholder="Nhập đáp án"> with managers.</div>
+  <div class="question-block"><span class="qnum">15.</span> Conduct a <input type="text" id="L_Q15" placeholder="Nhập đáp án"> of bills.</div>
 
   <h3>Part 4: Presentation Planning Discussion</h3>
   <div class="audio-bar">
-    <button class="audio-btn" onclick="playAudio(4)">▶ 播放 Part 4</button>
-    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ 停止</button>
-    <span class="audio-status" id="audioStatus4">⚪ 就绪</span>
+    <button class="audio-btn" onclick="playAudio(4)">▶ Nghe Part 4</button>
+    <button class="audio-btn stop-btn" onclick="stopAudio()">⏹ Dừng</button>
+    <span class="audio-status" id="audioStatus4">⚪ Sẵn sàng</span>
   </div>
   <div class="instruction">Questions 16–20: <strong>Who wants to include each item in the presentation?</strong><br>Choose <strong>A</strong> (Both agree), <strong>B</strong> (Only Tom), or <strong>C</strong> (Only Helen).</div>
   <div class="question-block"><span class="qnum">16.</span> Historical background: <select id="L_Q16"><option value="">— Select —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
@@ -227,13 +227,13 @@
   <div class="question-block"><span class="qnum">19.</span> Case studies on Asian cities: <select id="L_Q19"><option value="">— Select —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
   <div class="question-block"><span class="qnum">20.</span> Short video clip: <select id="L_Q20"><option value="">— Select —</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
 
-  <!-- ===== 阅读 ===== -->
-  <h2>📖 二、阅读部分 <span class="badge">Reading</span></h2>
+  <!-- ===== Đọc ===== -->
+  <h2>📖 2. Đọc <span class="badge">Reading</span></h2>
 
   <h3>Passage 1: Vertical Farming</h3>
   <div class="reading-toolbar">
-    <button class="audio-btn tool-btn" onclick="highlightSel('rt1')">🖍 高亮所选</button>
-    <button class="audio-btn tool-btn" onclick="clearHighlights('rt1')">清除高亮</button>
+    <button class="audio-btn tool-btn" onclick="highlightSel('rt1')">🖍 Tô sáng phần đã chọn</button>
+    <button class="audio-btn tool-btn" onclick="clearHighlights('rt1')">Bỏ tô sáng</button>
   </div>
   <div class="reading-section">
     <div class="reading-text" id="rt1"><p>As global populations expand, vertical farming has emerged as a solution to food shortages. It involves growing crops in stacked layers, using controlled-environment agriculture. One advantage is reduced water usage – up to 90% less than traditional farming. Also, indoor farms are protected from weather, ensuring year-round harvests. However, reliance on artificial LED lighting increases electricity consumption. If energy comes from fossil fuels, the carbon footprint may exceed that of conventional agriculture.</p></div>
@@ -251,8 +251,8 @@
 
   <h3>Passage 2: School Bullying</h3>
   <div class="reading-toolbar">
-    <button class="audio-btn tool-btn" onclick="highlightSel('rt2')">🖍 高亮所选</button>
-    <button class="audio-btn tool-btn" onclick="clearHighlights('rt2')">清除高亮</button>
+    <button class="audio-btn tool-btn" onclick="highlightSel('rt2')">🖍 Tô sáng phần đã chọn</button>
+    <button class="audio-btn tool-btn" onclick="clearHighlights('rt2')">Bỏ tô sáng</button>
   </div>
   <div class="reading-section">
     <div class="reading-text" id="rt2"><p><strong>(A)</strong> Bullying can be verbal, physical or indirect. A survey found that in British primary schools, up to a quarter of pupils experienced bullying, with one in ten cases persistent. In secondary schools, bullying was less common, with about one in twenty-five suffering persistent bullying.</p><p><strong>(B)</strong> Bullying makes victims feel unworthy and depressed. In extreme cases, it can lead to suicide. Victimised pupils often have difficulties with interpersonal relationships as adults, while bullies are more likely to become violent and commit offences.</p><p><strong>(C)</strong> Until recently, little was known about bullying and teachers had little help. Schools often denied the problem, saying 'There is no bullying at this school'. Now, more schools acknowledge it and have clear policies.</p></div>
@@ -283,70 +283,70 @@
     </div>
   </div>
 
-  <!-- ===== 写作 ===== -->
-  <h2>✍️ 三、写作部分 <span class="badge">Writing</span></h2>
-  <div class="instruction"><strong>📌 提示：</strong>改错题提交后自动初判，翻译与议论文为主观题，提交后对照参考答案并用 rubric 自评。</div>
+  <!-- ===== Viết ===== -->
+  <h2>✍️ 3. Viết <span class="badge">Writing</span></h2>
+  <div class="instruction"><strong>📌 Hướng dẫn: </strong>Các câu sửa lỗi được kiểm tra sơ bộ sau khi nộp. Với phần dịch và viết luận, hãy so sánh bài làm với đáp án tham khảo rồi tự nhận xét theo tiêu chí.</div>
 
-  <h3>Module 1: 翻译 (Translation)</h3>
-  <div class="question-block"><p><strong>1.</strong> 从 2010 年到 2020 年，乘坐公交车通勤的学生比例显著下降。</p><textarea id="W_Q1" rows="2" placeholder="Write your translation..."></textarea></div>
-  <div class="question-block"><p><strong>2.</strong> 相比之下，骑自行车的人数在十年间翻了一番。</p><textarea id="W_Q2" rows="2" placeholder="Write your translation..."></textarea></div>
-  <div class="question-block"><p><strong>3.</strong> 步行上学的学生数量保持相对稳定。</p><textarea id="W_Q3" rows="2" placeholder="Write your translation..."></textarea></div>
+  <h3>Module 1: Dịch Việt – Anh (Translation)</h3>
+  <div class="question-block"><p><strong>1.</strong> Từ năm 2010 đến năm 2020, tỷ lệ học sinh đi học bằng xe buýt giảm đáng kể.</p><textarea id="W_Q1" rows="2" placeholder="Write your translation..."></textarea></div>
+  <div class="question-block"><p><strong>2.</strong> Trong khi đó, số người đi xe đạp đã tăng gấp đôi trong mười năm ấy.</p><textarea id="W_Q2" rows="2" placeholder="Write your translation..."></textarea></div>
+  <div class="question-block"><p><strong>3.</strong> Số học sinh đi bộ đến trường vẫn tương đối ổn định.</p><textarea id="W_Q3" rows="2" placeholder="Write your translation..."></textarea></div>
 
-  <h3>Module 2: 改错 (Error Correction)</h3>
+  <h3>Module 2: Sửa lỗi (Error Correction)</h3>
   <div class="question-block"><p><strong>1.</strong> The number of students use cars decreased significantly.</p><input type="text" id="W_Q4" style="width:100%;" placeholder="Rewrite the correct sentence..."></div>
   <div class="question-block"><p><strong>2.</strong> The data show that more people prefers cycling today.</p><input type="text" id="W_Q5" style="width:100%;" placeholder="Rewrite the correct sentence..."></div>
   <div class="question-block"><p><strong>3.</strong> In the past, people was thinking memory is like a computer.</p><input type="text" id="W_Q6" style="width:100%;" placeholder="Rewrite the correct sentence..."></div>
   <div class="question-block"><p><strong>4.</strong> Although vertical farming is efficient, but it consumes much electricity.</p><input type="text" id="W_Q7" style="width:100%;" placeholder="Rewrite the correct sentence..."></div>
   <div class="question-block"><p><strong>5.</strong> It is extremely important to protecting our environment.</p><input type="text" id="W_Q8" style="width:100%;" placeholder="Rewrite the correct sentence..."></div>
 
-  <h3>Module 3: 议论文 (Essay)</h3>
-  <div class="question-block"><p><strong>Topic:</strong> Some people think AI will replace teachers in education. Discuss both views and give your own opinion. <em>(建议 ≥ 250 words)</em></p>
+  <h3>Module 3: Bài luận (Essay)</h3>
+  <div class="question-block"><p><strong>Topic:</strong> Some people think AI will replace teachers in education. Discuss both views and give your own opinion. <em>(Viết ít nhất 250 từ.)</em></p>
     <textarea id="W_Q9" rows="12" placeholder="Write your essay here..." oninput="updateWordCount()"></textarea>
-    <div class="word-counter" id="wordCount">字数：0</div>
+    <div class="word-counter" id="wordCount">Số từ: 0</div>
   </div>
 
-  <!-- ===== 口语 ===== -->
-  <h2>🗣️ 四、口语部分 <span class="badge">Speaking</span></h2>
-  <div class="instruction"><strong>📌 提示：</strong>口语为面试题，需教师评估；提交后可用 rubric 自评。可使用下方计时器模拟真实作答节奏。</div>
+  <!-- ===== Nói ===== -->
+  <h2>🗣️ 4. Nói <span class="badge">Speaking</span></h2>
+  <div class="instruction"><strong>📌 Hướng dẫn: </strong>Đây là câu hỏi phỏng vấn. Bạn có thể dùng đồng hồ bên dưới để luyện nói, sau đó tự nhận xét hoặc nhờ giáo viên góp ý. Bài này không ghi âm và không tự chấm phát âm.</div>
   <div class="speaking-questions question-block">
     <p><strong>Part 1:</strong> Hometown, hobbies, daily routine.</p>
     <p><strong>Part 2 (Cue Card):</strong> Describe a useful skill you learned recently. You should say: what it is, how you learned it, why it is useful, and how you feel about it.</p>
     <p><strong>Part 3:</strong> Changes in how people learn; practical vs academic skills; the government's role in education.</p>
     <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-      <button class="audio-btn" onclick="startSpeakingTimer()" id="spkBtn">⏱ Part 2 计时（准备 1 分钟 + 作答 2 分钟）</button>
-      <span class="audio-status" id="spkStatus">⚪ 就绪</span>
+      <button class="audio-btn" onclick="startSpeakingTimer()" id="spkBtn">⏱ Bấm giờ Part 2 (1 phút chuẩn bị, 2 phút nói)</button>
+      <span class="audio-status" id="spkStatus">⚪ Sẵn sàng</span>
     </div>
   </div>
 
-  <button class="submit-btn" onclick="confirmSubmit()">📤 提交试卷 &amp; 查看智能诊断报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">📤 Nộp bài và xem kết quả</button>
 </div>
 
-<!-- ===== 结果 ===== -->
+<!-- ===== Kết quả ===== -->
 <div class="container" id="resultsArea">
-  <h2>📊 智能诊断报告</h2>
+  <h2>📊 Báo cáo kết quả</h2>
   <div class="score-board">
-    <div id="scoreText">客观题得分: 0 / 0</div>
-    <div class="sub" id="accuracyText">准确率: 0%</div>
+    <div id="scoreText">Điểm câu hỏi chấm tự động: 0 / 0</div>
+    <div class="sub" id="accuracyText">Tỷ lệ đúng: 0%</div>
     <div class="sub" id="timeText"></div>
   </div>
   <div class="band-cards" id="bandCards"></div>
-  <div class="ability-section"><h3>📈 能力指标 &amp; 个性化反馈</h3><div id="abilityContent"></div></div>
-  <div class="insight-section"><h3>🔍 错误模式诊断</h3><div id="insightContent"></div></div>
-  <div class="review-section"><h3>📝 逐题解析</h3><div id="feedbackList"></div></div>
-  <div class="writing-review"><h3>✍️ 写作 — 作答、自动初判 &amp; 参考答案</h3><div id="writingContent"></div></div>
-  <div class="rubric-section"><h3>🎯 写作 / 口语自评（拖动滑块估算分数）</h3><div id="rubricContent"></div></div>
-  <div class="instruction" style="margin-top:28px;"><strong>📌 温馨提示：</strong>客观题已自动批改；改错题为机器初判，请教师复核；翻译、议论文、口语请结合参考答案与 rubric 评估。</div>
-  <button class="submit-btn" style="background:#c0392b;box-shadow:0 4px 14px rgba(192,57,43,0.3);" onclick="location.reload()">🔄 重新测试</button>
+  <div class="ability-section"><h3>📈 Kết quả theo dạng câu hỏi và góp ý</h3><div id="abilityContent"></div></div>
+  <div class="insight-section"><h3>🔍 Những lỗi cần xem lại</h3><div id="insightContent"></div></div>
+  <div class="review-section"><h3>📝 Lời giải từng câu</h3><div id="feedbackList"></div></div>
+  <div class="writing-review"><h3>✍️ Viết · Bài làm, kiểm tra sơ bộ và đáp án tham khảo</h3><div id="writingContent"></div></div>
+  <div class="rubric-section"><h3>🎯 Tự đánh giá Viết và Nói (di chuyển thanh trượt để ước tính)</h3><div id="rubricContent"></div></div>
+  <div class="instruction" style="margin-top:28px;"><strong>📌 Lưu ý: </strong>Điểm câu hỏi khách quan được tính tự động. Với bài sửa lỗi, máy chỉ kiểm tra sơ bộ; hãy nhờ giáo viên xem lại. Dùng đáp án tham khảo và tiêu chí để đánh giá phần dịch, viết luận và nói.</div>
+  <button class="submit-btn" style="background:#c0392b;box-shadow:0 4px 14px rgba(192,57,43,0.3);" onclick="location.reload()">🔄 Làm lại bài</button>
 </div>
 
-<!-- 底部题号导航 -->
+<!-- Thanh số câu ở cuối trang -->
 <div class="nav-bar" id="navBar">
   <div class="nav-inner" id="navInner"></div>
 </div>
 
 <script>
 // =============================================================
-// 0. 配置
+// 0. Cấu hình
 // =============================================================
 const startTime = Date.now();
 const objectiveOrder = [];
@@ -355,7 +355,7 @@ for (let i=21;i<=36;i++) objectiveOrder.push({ n:i, id:'R_Q'+i });
 const flagged = new Set();
 
 // =============================================================
-// 1. 计时器（标准 MM:SS + 预警 + 到点自动交卷）
+// 1. Đồng hồ MM:SS, cảnh báo và tự nộp khi hết giờ
 // =============================================================
 let timeLeft = 90 * 60;
 let submitted = false;
@@ -380,7 +380,7 @@ const timerInterval = setInterval(() => {
 }, 1000);
 
 // =============================================================
-// 2. 字号 / 高亮 / 口语计时
+// 2. Cỡ chữ, tô sáng, bấm giờ Nói
 // =============================================================
 function changeFont(size) {
   const c = document.getElementById('testArea');
@@ -396,7 +396,7 @@ function highlightSel(containerId) {
   if (!container.contains(range.commonAncestorContainer)) return;
   const span = document.createElement('span');
   span.className = 'hl';
-  try { range.surroundContents(span); } catch (e) { /* 跨标签选择忽略 */ }
+  try { range.surroundContents(span); } catch (e) { /* Bỏ qua vùng chọn trải trên nhiều thẻ */ }
   sel.removeAllRanges();
 }
 function clearHighlights(containerId) {
@@ -413,20 +413,20 @@ function startSpeakingTimer() {
   if (spkTimerId) { clearInterval(spkTimerId); spkTimerId = null; }
   const status = document.getElementById('spkStatus');
   let phase = 'prep', t = 60;
-  status.textContent = '🟡 准备中… 60s';
+  status.textContent = '🟡 Chuẩn bị… 60s';
   spkTimerId = setInterval(() => {
     t--;
     if (t < 0) {
-      if (phase === 'prep') { phase = 'speak'; t = 120; status.textContent = '🟢 开始作答… 120s'; }
-      else { clearInterval(spkTimerId); spkTimerId = null; status.textContent = '✅ 作答时间结束'; }
+      if (phase === 'prep') { phase = 'speak'; t = 120; status.textContent = '🟢 Bắt đầu nói… 120s'; }
+      else { clearInterval(spkTimerId); spkTimerId = null; status.textContent = '✅ Hết thời gian nói'; }
       return;
     }
-    status.textContent = (phase === 'prep' ? '🟡 准备中… ' : '🟢 作答中… ') + t + 's';
+    status.textContent = (phase === 'prep' ? '🟡 Chuẩn bị… ' : '🟢 Đang nói… ') + t + 's';
   }, 1000);
 }
 
 // =============================================================
-// 3. 智能语音系统
+// 3. Đọc hội thoại bằng giọng tổng hợp
 // =============================================================
 let isSpeaking = false;
 function getGenderByName(name) {
@@ -524,16 +524,16 @@ function playAudio(part) {
   const statusEl = document.getElementById('audioStatus'+part);
   stopAudio();
   setTimeout(() => {
-    if (statusEl) statusEl.textContent = '🔊 播放中...';
+    if (statusEl) statusEl.textContent = '🔊 Đang phát…';
     speakDialogue(audioScripts[part])
-      .then(() => { if (statusEl) statusEl.textContent = '✅ 播放完成'; })
-      .catch(() => { if (statusEl) statusEl.textContent = '⚠️ 播放出错'; });
+      .then(() => { if (statusEl) statusEl.textContent = '✅ Đã phát xong'; })
+      .catch(() => { if (statusEl) statusEl.textContent = '⚠️ Không phát được âm thanh'; });
   }, 80);
 }
 window.addEventListener('load', () => { getVoices().then(()=>{}); });
 
 // =============================================================
-// 4. 答案库（已校正）+ 解析
+// 4. Đáp án và lời giải
 // =============================================================
 const answerKey = {
   L_Q1:['thursday'], L_Q2:['120'], L_Q3:['notebook'], L_Q4:['carter'], L_Q5:['07895432'],
@@ -541,7 +541,7 @@ const answerKey = {
   L_Q11:['commercial buildings','commercial building'], L_Q12:['flexible'],
   L_Q13:['installation cost','installation costs'], L_Q14:['interviews','interview'],
   L_Q15:['statistical analysis'],
-  // ↓ Part 4 已校正：16 与 20 原键 C 改为 B
+  // ↓ Part 4 Đã sửa khóa của câu 16 và 20 từ C thành B
   L_Q16:['B'], L_Q17:['B'], L_Q18:['A'], L_Q19:['A'], L_Q20:['B'],
   R_Q21:['FALSE'], R_Q22:['TRUE'], R_Q23:['NOT GIVEN'], R_Q24:['FALSE'], R_Q25:['TRUE'],
   R_Q26:['water'], R_Q27:['weather','weather patterns','the weather'],
@@ -551,42 +551,42 @@ const answerKey = {
   R_Q34:['B'], R_Q35:['D'], R_Q36:['D']
 };
 const explanations = {
-  L_Q1:'录音："a beginner\'s Spanish class on Thursday evenings" → Thursday。',
-  L_Q2:'"the total cost ... is one hundred and twenty pounds" → 120。',
-  L_Q3:'"Just a standard notebook" → notebook。',
-  L_Q4:'"My name is John Carter"，拼读 C-A-R-T-E-R → Carter。',
-  L_Q5:'电话号码 "07895432"。',
-  L_Q6:'"the cafeteria ... open until ten PM" → B (10 PM)。',
-  L_Q7:'"food is strictly prohibited in the reading rooms" → B (No food)。',
-  L_Q8:'"Photocopiers are on the second floor" → C。',
-  L_Q9:'"Science and Engineering collection is now in the Basement" → B。',
-  L_Q10:'"Arts and Humanities are on the Third Floor" → D。',
-  L_Q11:'教授建议 "Narrow your scope to commercial buildings" → commercial buildings。',
-  L_Q12:'"compare traditional panels with flexible solar films" → flexible。',
-  L_Q13:'"the initial installation cost ... deters investors" → installation cost。',
-  L_Q14:'"interview building managers" → interviews。',
-  L_Q15:'"do a statistical analysis of energy bills" → statistical analysis。',
-  L_Q16:'Tom 提议讲历史背景，Helen 说"太长，跳过"。仅 Tom 主张 → B。',
-  L_Q17:'Tom 提议纸质讲义，Helen 主张改用数字链接。仅 Tom → B。',
-  L_Q18:'Tom 提议学生问卷，Helen "Great idea!"。两人都同意 → A。',
-  L_Q19:'Tom 提议聚焦亚洲城市，Helen "I totally agree"。两人 → A。',
-  L_Q20:'Tom 想播放视频，Helen 认为分散注意力、宁愿用图表。仅 Tom → B。',
-  R_Q21:'原文"up to 90% less"用水更少，"用水更多"为 FALSE。',
-  R_Q22:'"indoor farms are protected from weather" → TRUE。',
-  R_Q23:'全文未提番茄 → NOT GIVEN。',
-  R_Q24:'依赖"artificial LED lighting"而非自然光 → FALSE。',
-  R_Q25:'"carbon footprint may exceed conventional agriculture" → TRUE。',
-  R_Q26:'"90% less ... water" → water。',
-  R_Q27:'"protected from weather" → weather。',
-  R_Q28:'照明依赖电力（LED lighting 增加 electricity consumption）→ electricity。',
-  R_Q29:'高电力需求导致碳足迹上升 → electricity。',
-  R_Q30:'"the carbon footprint may exceed" → carbon footprint。',
-  R_Q31:'A 段讲调查与各阶段普及率 → i (Research on prevalence)。',
-  R_Q32:'B 段讲对孩子的影响（抑郁、关系困难等）→ iii (Effects on children)。',
-  R_Q33:'C 段讲学校从否认到承认问题 → ii (School reactions)。',
-  R_Q34:'"In secondary schools, bullying was less common" → B。',
-  R_Q35:'"difficulties with interpersonal relationships as adults" → D。',
-  R_Q36:'学校曾否认、"little was known"、"had little help" → 反映知识与资源匮乏 → D。'
+  L_Q1:'Trong bài nghe: "a beginner\'s Spanish class on Thursday evenings" → Thursday.',
+  L_Q2:'"the total cost ... is one hundred and twenty pounds" → 120.',
+  L_Q3:'"Just a standard notebook" → notebook.',
+  L_Q4:'"My name is John Carter", đánh vần C-A-R-T-E-R → Carter.',
+  L_Q5:'Số điện thoại: "07895432".',
+  L_Q6:'"the cafeteria ... open until ten PM" → B (10 PM).',
+  L_Q7:'"food is strictly prohibited in the reading rooms" → B (No food).',
+  L_Q8:'"Photocopiers are on the second floor" → C.',
+  L_Q9:'"Science and Engineering collection is now in the Basement" → B.',
+  L_Q10:'"Arts and Humanities are on the Third Floor" → D.',
+  L_Q11:'Giáo sư đề nghị: "Narrow your scope to commercial buildings" → commercial buildings.',
+  L_Q12:'"compare traditional panels with flexible solar films" → flexible.',
+  L_Q13:'"the initial installation cost ... deters investors" → installation cost.',
+  L_Q14:'"interview building managers" → interviews.',
+  L_Q15:'"do a statistical analysis of energy bills" → statistical analysis.',
+  L_Q16:'Tom muốn giới thiệu bối cảnh lịch sử, còn Helen cho rằng sẽ mất quá nhiều thời gian. Chỉ Tom ủng hộ → B.',
+  L_Q17:'Tom đề xuất phát tài liệu in; Helen muốn gửi liên kết. Chỉ Tom ủng hộ việc in → B.',
+  L_Q18:'Tom đề xuất khảo sát học sinh; Helen đáp “Great idea!”. Cả hai đồng ý → A.',
+  L_Q19:'Tom đề nghị tập trung vào các thành phố châu Á. Helen đáp “I totally agree” → A.',
+  L_Q20:'Tom muốn chiếu video, còn Helen thấy dễ mất tập trung và thích dùng sơ đồ. Chỉ Tom ủng hộ chiếu video → B.',
+  R_Q21:'Cụm “up to 90% less” nghĩa là dùng ít nước hơn; nhận định dùng nhiều nước hơn là FALSE.',
+  R_Q22:'"indoor farms are protected from weather" → TRUE.',
+  R_Q23:'Bài không đề cập đến cà chua → NOT GIVEN.',
+  R_Q24:'Trang trại phụ thuộc vào đèn LED nhân tạo chứ không phải ánh sáng tự nhiên → FALSE.',
+  R_Q25:'"carbon footprint may exceed conventional agriculture" → TRUE.',
+  R_Q26:'"90% less ... water" → water.',
+  R_Q27:'"protected from weather" → weather.',
+  R_Q28:'Đèn LED làm tăng mức tiêu thụ điện → electricity.',
+  R_Q29:'Nhu cầu dùng nhiều điện làm tăng dấu chân carbon → electricity.',
+  R_Q30:'"the carbon footprint may exceed" → carbon footprint.',
+  R_Q31:'Đoạn A nêu kết quả khảo sát về mức độ phổ biến của nạn bắt nạt theo cấp học → i (Research on prevalence).',
+  R_Q32:'Đoạn B nói về hậu quả đối với trẻ, như trầm cảm và khó khăn trong các mối quan hệ → iii (Effects on children).',
+  R_Q33:'Đoạn C mô tả việc nhà trường chuyển từ phủ nhận sang thừa nhận vấn đề → ii (School reactions).',
+  R_Q34:'"In secondary schools, bullying was less common" → B.',
+  R_Q35:'"difficulties with interpersonal relationships as adults" → D.',
+  R_Q36:'Nhà trường từng phủ nhận; “little was known” và “had little help” cho thấy thiếu hiểu biết và nguồn lực → D.'
 };
 const writingRef = {
   W_Q1:'The proportion of students commuting by bus decreased significantly from 2010 to 2020.',
@@ -599,7 +599,7 @@ const writingRef = {
   W_Q8:'It is extremely important to protect our environment.',
   W_Q9:'The rapid advancement of AI has sparked debate over whether it will replace teachers. While AI offers efficiency and can personalise learning, education also involves emotional support, motivation and mentorship that machines cannot provide. On balance, AI should be seen as a powerful tool that supports teachers rather than a replacement for them.'
 };
-// 改错自动初判（启发式，教师复核）
+// Kiểm tra theo mẫu, cần giáo viên xem lại
 const correctionChecks = {
   W_Q4: v => /students\s+using\s+cars/i.test(v) && !/students\s+use\s+cars/i.test(v),
   W_Q5: v => /people\s+prefer\b/i.test(v) && !/prefers/i.test(v),
@@ -609,7 +609,7 @@ const correctionChecks = {
 };
 
 // =============================================================
-// 5. 工具
+// 5. Công cụ
 // =============================================================
 function norm(s) {
   return (s||'').toString().toLowerCase()
@@ -637,7 +637,7 @@ function isAnswerCorrect(qId, userAns) {
 }
 
 // =============================================================
-// 6. 底部导航 + Flag
+// 6. Điều hướng và đánh dấu
 // =============================================================
 function getAnchor(qId) { return document.getElementById(qId) || document.getElementById('block_'+qId); }
 function toggleFlag(qId) {
@@ -659,12 +659,12 @@ function jumpTo(qId) {
 function buildNav() {
   const inner = document.getElementById('navInner');
   inner.innerHTML = '';
-  const lLabel = document.createElement('span'); lLabel.className='nav-group-label'; lLabel.textContent='听力';
+  const lLabel = document.createElement('span'); lLabel.className='nav-group-label'; lLabel.textContent='Nghe';
   inner.appendChild(lLabel);
   objectiveOrder.forEach((q, idx) => {
     if (q.n === 21) {
       const div = document.createElement('span'); div.className='nav-divider'; inner.appendChild(div);
-      const rLabel = document.createElement('span'); rLabel.className='nav-group-label'; rLabel.textContent='阅读'; inner.appendChild(rLabel);
+      const rLabel = document.createElement('span'); rLabel.className='nav-group-label'; rLabel.textContent='Đọc'; inner.appendChild(rLabel);
     }
     const chip = document.createElement('button');
     chip.className='nav-chip'; chip.textContent=q.n; chip.dataset.q=q.id;
@@ -685,7 +685,7 @@ function refreshNav() {
     if (has) answered++;
   });
   const prog = document.getElementById('navProgress');
-  if (prog) prog.textContent = '已答 ' + answered + '/' + objectiveOrder.length;
+  if (prog) prog.textContent = 'Đã trả lời ' + answered + '/' + objectiveOrder.length;
 }
 function injectFlags() {
   objectiveOrder.forEach(q => {
@@ -695,7 +695,7 @@ function injectFlags() {
     const host = block || anchor.parentNode;
     if (host.querySelector('.flag-btn[data-q="'+q.id+'"]')) return;
     const btn = document.createElement('button');
-    btn.className='flag-btn'; btn.dataset.q=q.id; btn.title='标记/取消标记此题以便复查';
+    btn.className='flag-btn'; btn.dataset.q=q.id; btn.title='Đánh dấu hoặc bỏ đánh dấu câu này để xem lại';
     btn.innerHTML='⚑';
     btn.onclick = (e) => { e.preventDefault(); toggleFlag(q.id); };
     if (block) block.insertBefore(btn, block.firstChild);
@@ -703,26 +703,26 @@ function injectFlags() {
 }
 
 // =============================================================
-// 7. 字数 / 提交确认
+// 7. Đếm từ và xác nhận nộp bài
 // =============================================================
 function updateWordCount() {
   const v = (document.getElementById('W_Q9').value || '').trim();
   const n = v ? v.split(/\s+/).length : 0;
-  document.getElementById('wordCount').textContent = '字数：' + n;
+  document.getElementById('wordCount').textContent = 'Số từ: ' + n;
 }
 function confirmSubmit() {
   let answered = 0;
   objectiveOrder.forEach(q => { if (readAnswer(q.id) !== '') answered++; });
   const unanswered = objectiveOrder.length - answered;
-  let msg = '客观题已作答 ' + answered + '/' + objectiveOrder.length + ' 题。';
-  if (unanswered > 0) msg += '\n还有 ' + unanswered + ' 题未作答。';
-  if (flagged.size > 0) msg += '\n有 ' + flagged.size + ' 题被标记待复查。';
-  msg += '\n\n确定提交并查看诊断报告吗？';
+  let msg = 'Số câu khách quan đã trả lời: ' + answered + '/' + objectiveOrder.length + ' câu.';
+  if (unanswered > 0) msg += '\nCòn ' + unanswered + ' câu chưa trả lời.';
+  if (flagged.size > 0) msg += '\nCó ' + flagged.size + ' câu đã đánh dấu để xem lại.';
+  msg += '\n\nNộp bài và xem báo cáo?';
   if (window.confirm(msg)) submitTest();
 }
 
 // =============================================================
-// 8. 评分 & 诊断报告
+// 8. Chấm điểm và báo cáo
 // =============================================================
 function estimateBand(pct) {
   if (pct >= 92) return '8.0+';
@@ -733,7 +733,7 @@ function estimateBand(pct) {
   if (pct >= 48) return '5.5';
   if (pct >= 38) return '5.0';
   if (pct >= 28) return '4.5';
-  return '4.0 或以下';
+  return '4.0 trở xuống';
 }
 function bandToNum(b) { return parseFloat(b) || 4.0; }
 
@@ -754,7 +754,7 @@ function submitTest() {
     if (ok) correct++;
   }
 
-  // 分技能统计
+  // Thống kê theo kỹ năng
   const listeningIds = objectiveOrder.filter(q=>q.id.startsWith('L_')).map(q=>q.id);
   const readingIds = objectiveOrder.filter(q=>q.id.startsWith('R_')).map(q=>q.id);
   let lc=0, rc=0;
@@ -765,19 +765,19 @@ function submitTest() {
   const overall = Math.round(correct/total*100);
   const lBand = estimateBand(lPct), rBand = estimateBand(rPct), oBand = estimateBand(overall);
 
-  // 用时
+  // Thời gian
   const elapsedMin = Math.max(1, Math.round((Date.now()-startTime)/60000));
 
-  // 题型分组
+  // Nhóm dạng câu hỏi
   const groupDef = {
-    '听力-填空(细节)': { ids:['L_Q1','L_Q2','L_Q3','L_Q4','L_Q5','L_Q11','L_Q12','L_Q13','L_Q14','L_Q15'] },
-    '听力-单选': { ids:['L_Q6','L_Q7','L_Q8'] },
-    '听力-匹配': { ids:['L_Q9','L_Q10'] },
-    '听力-观点(多人)': { ids:['L_Q16','L_Q17','L_Q18','L_Q19','L_Q20'] },
-    '阅读-判断(TFNG)': { ids:['R_Q21','R_Q22','R_Q23','R_Q24','R_Q25'] },
-    '阅读-摘要填空': { ids:['R_Q26','R_Q27','R_Q28','R_Q29','R_Q30'] },
-    '阅读-标题匹配': { ids:['R_Q31','R_Q32','R_Q33'] },
-    '阅读-单选': { ids:['R_Q34','R_Q35','R_Q36'] }
+    'Nghe – Điền chi tiết': { ids:['L_Q1','L_Q2','L_Q3','L_Q4','L_Q5','L_Q11','L_Q12','L_Q13','L_Q14','L_Q15'] },
+    'Nghe – Chọn một đáp án': { ids:['L_Q6','L_Q7','L_Q8'] },
+    'Nghe – Nối thông tin': { ids:['L_Q9','L_Q10'] },
+    'Nghe – Phân biệt quan điểm': { ids:['L_Q16','L_Q17','L_Q18','L_Q19','L_Q20'] },
+    'Đọc – TRUE/FALSE/NOT GIVEN': { ids:['R_Q21','R_Q22','R_Q23','R_Q24','R_Q25'] },
+    'Đọc – Điền tóm tắt': { ids:['R_Q26','R_Q27','R_Q28','R_Q29','R_Q30'] },
+    'Đọc – Nối tiêu đề': { ids:['R_Q31','R_Q32','R_Q33'] },
+    'Đọc – Chọn một đáp án': { ids:['R_Q34','R_Q35','R_Q36'] }
   };
   const groupResults = {};
   for (const [g, def] of Object.entries(groupDef)) {
@@ -785,82 +785,82 @@ function submitTest() {
     groupResults[g] = { correct:c, total:def.ids.length, percent:Math.round(c/def.ids.length*100) };
   }
 
-  // band 卡片
+  // Thẻ band
   document.getElementById('bandCards').innerHTML = `
-    <div class="band-card"><div class="lbl">🎧 听力</div><div class="val">${lBand}</div><div class="meta">${lc}/${listeningIds.length} 正确</div></div>
-    <div class="band-card"><div class="lbl">📖 阅读</div><div class="val">${rBand}</div><div class="meta">${rc}/${readingIds.length} 正确</div></div>
-    <div class="band-card overall"><div class="lbl">📊 客观综合</div><div class="val">${oBand}</div><div class="meta">${correct}/${total}（${overall}%）</div></div>`;
+    <div class="band-card"><div class="lbl">🎧 Nghe</div><div class="val">${lBand}</div><div class="meta">${lc}/${listeningIds.length} đúng</div></div>
+    <div class="band-card"><div class="lbl">📖 Đọc</div><div class="val">${rBand}</div><div class="meta">${rc}/${readingIds.length} đúng</div></div>
+    <div class="band-card overall"><div class="lbl">📊 Nghe và Đọc (tham khảo)</div><div class="val">${oBand}</div><div class="meta">${correct}/${total} (${overall}%)</div></div>`;
 
-  // 题型柱状图
+  // Biểu đồ theo dạng câu hỏi
   let barHTML = '';
   for (const [g,res] of Object.entries(groupResults)) {
     const p = res.percent; let cls = p<50?'low':(p<70?'mid':'high');
     barHTML += `<div class="bar-container"><div class="bar-label"><span>${g}</span><span>${p}% (${res.correct}/${res.total})</span></div><div class="bar-track"><div class="bar-fill ${cls}" style="width:${p}%;"></div></div></div>`;
   }
-  // 优势 / 弱项
+  // Điểm mạnh và điểm cần luyện
   const sorted = Object.entries(groupResults).sort((a,b)=>b[1].percent-a[1].percent);
   const strengths = sorted.filter(x=>x[1].percent>=70).slice(0,3).map(x=>x[0]);
   const weaknesses = sorted.filter(x=>x[1].percent<60).slice(-3).map(x=>x[0]);
   const adviceMap = {
-    '听力-填空(细节)':'强化数字、拼写与速记，多练 Section 1 与 4，听前预测词性与字数。',
-    '听力-单选':'练习排除干扰项，警惕同义替换与转折词带来的答案改变。',
-    '听力-匹配':'练习边听边定位，把选项提前读熟、转成关键词。',
-    '听力-观点(多人)':'区分不同说话人的态度，关注"同意/反对/让步"信号词。',
-    '阅读-判断(TFNG)':'吃透 FALSE 与 NOT GIVEN 的边界：原文有相反信息才是 FALSE，无信息才是 NOT GIVEN。',
-    '阅读-摘要填空':'回原文同义定位，严格遵守字数限制并注意词性与单复数。',
-    '阅读-标题匹配':'抓段落主旨句（常在首尾），区分主旨与细节。',
-    '阅读-单选':'定位题干关键词，逐项排除，警惕"绝对化"干扰项。'
+    'Nghe – Điền chi tiết':'Luyện nghe số, đánh vần và ghi nhanh ở Part 1 và 4. Trước khi nghe, hãy đoán loại từ cần điền và kiểm tra giới hạn số từ.',
+    'Nghe – Chọn một đáp án':'Loại phương án nhiễu; chú ý cách diễn đạt tương đương và những từ báo hiệu người nói đổi ý.',
+    'Nghe – Nối thông tin':'Đọc các lựa chọn trước, rút gọn thành từ khóa để dò theo khi nghe.',
+    'Nghe – Phân biệt quan điểm':'Phân biệt thái độ của từng người. Lắng nghe các dấu hiệu đồng ý, phản đối hoặc nhượng bộ.',
+    'Đọc – TRUE/FALSE/NOT GIVEN':'Nếu bài có thông tin trái với nhận định, chọn FALSE. Nếu bài không đủ thông tin để xác nhận hoặc bác bỏ, chọn NOT GIVEN.',
+    'Đọc – Điền tóm tắt':'Tìm cách diễn đạt tương đương trong bài; kiểm tra giới hạn số từ, từ loại và số ít/số nhiều.',
+    'Đọc – Nối tiêu đề':'Tìm ý chính (thường ở đầu hoặc cuối đoạn) và phân biệt với chi tiết minh họa.',
+    'Đọc – Chọn một đáp án':'Tìm từ khóa của câu hỏi, loại từng phương án không phù hợp. Chú ý các từ tuyệt đối hóa.'
   };
-  const strengthItems = strengths.map(s=>`<li><strong>${s}</strong>（${groupResults[s].percent}%）</li>`).join('') || '<li>暂无 70% 以上的稳定优势</li>';
-  const weaknessItems = weaknesses.map(w=>`<li><strong>${w}</strong>（${groupResults[w].percent}%）</li>`).join('') || '<li>各题型均较均衡，无明显短板</li>';
-  let adviceList = weaknesses.map(w=>`<li><strong>${w}</strong>：${adviceMap[w]||'针对性练习。'}</li>`).join('');
-  if (!adviceList) adviceList = '<li>基础扎实，建议进入限时套题训练，冲刺更高 band。</li>';
+  const strengthItems = strengths.map(s=>`<li><strong>${s}</strong> (${groupResults[s].percent}%)</li>`).join('') || '<li>Chưa có dạng câu hỏi nào đạt mốc 70%.</li>';
+  const weaknessItems = weaknesses.map(w=>`<li><strong>${w}</strong> (${groupResults[w].percent}%)</li>`).join('') || '<li>Kết quả khá đồng đều giữa các dạng câu hỏi.</li>';
+  let adviceList = weaknesses.map(w=>`<li><strong>${w}</strong>: ${adviceMap[w]||'Hãy luyện thêm dạng câu hỏi này.'}</li>`).join('');
+  if (!adviceList) adviceList = '<li>Hãy thử làm một bộ đề có giới hạn thời gian và xem mình giữ được độ chính xác ở mức nào.</li>';
   let extra = '';
-  if (lPct < rPct - 10) extra = '<li><strong>听力明显弱于阅读</strong>：增加精听与跟读，熟悉英式语速与连读。</li>';
-  else if (rPct < lPct - 10) extra = '<li><strong>阅读明显弱于听力</strong>：扩大学术词汇，练习长难句拆解与限时定位。</li>';
+  if (lPct < rPct - 10) extra = '<li><strong>Trong bài này, tỷ lệ đúng phần Nghe thấp hơn phần Đọc</strong>: Hãy luyện nghe từng đoạn ngắn, nhắc lại theo bản thu và chú ý cách nối âm.</li>';
+  else if (rPct < lPct - 10) extra = '<li><strong>Trong bài này, tỷ lệ đúng phần Đọc thấp hơn phần Nghe</strong>: Ôn từ học thuật, tách mệnh đề trong câu dài và tập tìm bằng chứng trong thời gian cho phép.</li>';
 
   document.getElementById('abilityContent').innerHTML = `
-    <div style="margin-bottom:8px;"><span style="font-size:15px;">🎧 听力 ${lPct}% &nbsp;|&nbsp; 📖 阅读 ${rPct}% &nbsp;|&nbsp; ⏱ 用时约 ${elapsedMin} 分钟</span></div>
+    <div style="margin-bottom:8px;"><span style="font-size:15px;">🎧 Nghe ${lPct}% &nbsp;|&nbsp; 📖 Đọc ${rPct}% &nbsp;|&nbsp; ⏱ Thời gian khoảng ${elapsedMin} phút</span></div>
     <div class="ability-grid">
-      <div class="ability-card"><h4>📊 各题型正确率</h4>${barHTML}</div>
+      <div class="ability-card"><h4>📊 Tỷ lệ đúng theo dạng câu hỏi</h4>${barHTML}</div>
       <div class="ability-card">
-        <h4>📌 优势 / 待提升</h4>
+        <h4>📌 Điểm mạnh và phần cần luyện</h4>
         <div class="strength-weakness">
-          <div class="strength"><strong>✅ 优势题型</strong><ul>${strengthItems}</ul></div>
-          <div class="weakness"><strong>⚠️ 待提升题型</strong><ul>${weaknessItems}</ul></div>
+          <div class="strength"><strong>✅ Dạng làm tốt</strong><ul>${strengthItems}</ul></div>
+          <div class="weakness"><strong>⚠️ Dạng cần luyện thêm</strong><ul>${weaknessItems}</ul></div>
         </div>
-        <div class="advice-box"><h4>💡 学习建议</h4><ul>${adviceList}${extra}</ul>
-          <p style="margin:8px 0 0 0;font-size:14px;">建议结合剑桥真题分题型专项突破，并做好限时管理。</p></div>
+        <div class="advice-box"><h4>💡 Gợi ý ôn tập</h4><ul>${adviceList}${extra}</ul>
+          <p style="margin:8px 0 0 0;font-size:14px;">Hãy chọn cùng dạng câu hỏi trong một đề Cambridge khác để luyện lại có bấm giờ.</p></div>
       </div>
     </div>`;
 
-  // 错误模式诊断
+  // Những lỗi cần xem lại
   const insights = [];
-  const tfng = groupResults['阅读-判断(TFNG)'];
-  if (tfng.percent < 60) insights.push('判断题（TRUE/FALSE/NOT GIVEN）正确率偏低，往往是把"无信息(NOT GIVEN)"误判成 FALSE，或反之——需明确两者边界。');
+  const tfng = groupResults['Đọc – TRUE/FALSE/NOT GIVEN'];
+  if (tfng.percent < 60) insights.push('Tỷ lệ đúng dạng TRUE/FALSE/NOT GIVEN còn thấp. Khi xem lại, hãy tìm thông tin bác bỏ để phân biệt FALSE với trường hợp không đủ dữ kiện.');
   const fillIds = ['L_Q1','L_Q2','L_Q3','L_Q4','L_Q5','L_Q11','L_Q12','L_Q13','L_Q14','L_Q15','R_Q26','R_Q27','R_Q28','R_Q29','R_Q30'];
   const selIds = objectiveOrder.map(q=>q.id).filter(id=>!fillIds.includes(id));
   const fillCorrect = fillIds.filter(id=>scoreMap[id]).length, selCorrect = selIds.filter(id=>scoreMap[id]).length;
   const fillP = Math.round(fillCorrect/fillIds.length*100), selP = Math.round(selCorrect/selIds.length*100);
-  if (fillP < selP - 15) insights.push('填空类（' + fillP + '%）明显弱于选择类（' + selP + '%）：多因拼写、字数限制或同义替换没抓住——填空前先预测词性，写后检查拼写与字数。');
-  else if (selP < fillP - 15) insights.push('选择类（' + selP + '%）弱于填空类（' + fillP + '%）：通常是被干扰项误导——养成"先排除明显错误项"的习惯。');
-  const opinion = groupResults['听力-观点(多人)'];
-  if (opinion.percent < 60) insights.push('多人对话的观点题正确率偏低：注意辨别每位说话人对同一事项是"支持/反对/折中"。');
-  if (elapsedMin < 30) insights.push('整卷用时较短（约 ' + elapsedMin + ' 分钟）：留意是否作答过快导致失分，正式考试中应充分利用时间复核。');
-  if (insights.length === 0) insights.push('未发现集中的错误模式，整体表现均衡，可进入更高难度的限时套题训练。');
-  document.getElementById('insightContent').innerHTML = `<div class="insight-box"><h4>🔍 系统观察到</h4><ul>${insights.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+  if (fillP < selP - 15) insights.push('Điền từ (' + fillP + '%) thấp hơn đáng kể so với chọn đáp án (' + selP + '%). Hãy đoán loại từ trước khi điền rồi kiểm tra chính tả, giới hạn từ và cách diễn đạt tương đương.');
+  else if (selP < fillP - 15) insights.push('Chọn đáp án (' + selP + '%) thấp hơn so với điền từ (' + fillP + '%). Hãy xem lại vì sao phương án nhiễu có vẻ hợp lý và thử loại các phương án sai rõ ràng trước.');
+  const opinion = groupResults['Nghe – Phân biệt quan điểm'];
+  if (opinion.percent < 60) insights.push('Ở câu hỏi quan điểm trong hội thoại, hãy xác định mỗi người ủng hộ, phản đối hay đề xuất phương án dung hòa.');
+  if (elapsedMin < 30) insights.push('Bạn đã làm bài khá nhanh (khoảng ' + elapsedMin + ' phút). Xem lại có câu nào sai vì đọc vội không; hãy chừa thời gian để kiểm tra ở lần sau.');
+  if (insights.length === 0) insights.push('Không thấy lỗi tập trung vào một dạng cụ thể. Hãy thử đề khó hơn với giới hạn thời gian.');
+  document.getElementById('insightContent').innerHTML = `<div class="insight-box"><h4>🔍 Nhận xét từ bài làm</h4><ul>${insights.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
 
-  // 逐题解析（分组折叠）
+  // Lời giải theo nhóm câu hỏi
   function reviewGroup(title, ids) {
     let rows = '';
     ids.forEach(qId => {
       const ok = scoreMap[qId];
       const ua = readAnswer(qId);
-      const display = ua === '' ? '（未作答）' : ua;
+      const display = ua === '' ? '(Chưa trả lời)' : ua.replace(/&/g, '&amp;').replace(/</g, '&lt;');
       const num = qId.replace('L_Q','').replace('R_Q','');
       rows += `<div class="result-item ${ok?'correct':'incorrect'}">
-        <div><strong>Q${num}</strong> ${ok?'✅':'❌'} 你的答案：${display}</div>
-        ${!ok?`<div class="answer-detail">📖 正确答案：<strong>${answerKey[qId].join(' / ')}</strong></div>`:''}
+        <div><strong>Q${num}</strong> ${ok?'✅':'❌'} Bạn trả lời: ${display}</div>
+        ${!ok?`<div class="answer-detail">📖 Đáp án: <strong>${answerKey[qId].join(' / ')}</strong></div>`:''}
         <div class="explain">💬 ${explanations[qId]||''}</div>
       </div>`;
     });
@@ -869,76 +869,79 @@ function submitTest() {
       <span>${title}</span><span>${gc}/${ids.length} ▾</span></div><div>${rows}</div>`;
   }
   document.getElementById('feedbackList').innerHTML =
-    reviewGroup('🎧 听力 Listening', listeningIds) +
-    reviewGroup('📖 阅读 Reading', readingIds);
+    reviewGroup('🎧 Nghe Listening', listeningIds) +
+    reviewGroup('📖 Đọc Reading', readingIds);
 
-  // 写作
+  // Viết
   const writingIds = ['W_Q1','W_Q2','W_Q3','W_Q4','W_Q5','W_Q6','W_Q7','W_Q8','W_Q9'];
-  const writingLabels = { W_Q1:'翻译 ①',W_Q2:'翻译 ②',W_Q3:'翻译 ③',W_Q4:'改错 ①',W_Q5:'改错 ②',W_Q6:'改错 ③',W_Q7:'改错 ④',W_Q8:'改错 ⑤',W_Q9:'议论文' };
+  const writingLabels = { W_Q1:'Dịch Việt – Anh ①',W_Q2:'Dịch Việt – Anh ②',W_Q3:'Dịch Việt – Anh ③',W_Q4:'Sửa lỗi ①',W_Q5:'Sửa lỗi ②',W_Q6:'Sửa lỗi ③',W_Q7:'Sửa lỗi ④',W_Q8:'Sửa lỗi ⑤',W_Q9:'Bài luận' };
   let writingHTML = '';
   let correctionScore = 0;
   for (const wid of writingIds) {
     const el = document.getElementById(wid);
     const userAns = el ? el.value.trim() : '';
-    const refAns = writingRef[wid] || '（无参考答案）';
+    const refAns = writingRef[wid] || '(Chưa có đáp án tham khảo)';
     const label = writingLabels[wid];
     let autoTag = '';
     if (correctionChecks[wid]) {
       const pass = userAns && correctionChecks[wid](userAns);
       if (pass) correctionScore++;
-      autoTag = `<span class="auto-check ${pass?'ok':'no'}">${pass?'✓ 初判正确':'✗ 仍有问题'}</span>`;
+      autoTag = `<span class="auto-check ${pass?'ok':'no'}">${pass?'✓ Đạt kiểm tra sơ bộ':'✗ Cần xem lại'}</span>`;
     } else {
-      autoTag = '<span class="tag">主观题</span>';
+      autoTag = '<span class="tag">Tự luận</span>';
     }
     let extraInfo = '';
     if (wid === 'W_Q9') {
       const wc = userAns ? userAns.split(/\s+/).length : 0;
-      let note = wc === 0 ? '未作答' : (wc < 150 ? '字数偏少，雅思 Task 2 建议 ≥ 250 词' : (wc < 250 ? '接近但未达 250 词，注意展开论证' : '字数达标'));
-      extraInfo = `<div class="word-counter">字数：${wc}（${note}）</div>`;
+      let note = wc === 0 ? 'Chưa trả lời' : (wc < 150 ? 'Bài còn ngắn; Task 2 cần ít nhất 250 từ' : (wc < 250 ? 'Chưa đủ 250 từ; hãy phát triển thêm lập luận' : 'Đã đủ số từ'));
+      extraInfo = `<div class="word-counter">Số từ: ${wc} (${note})</div>`;
     }
     writingHTML += `<div class="writing-pair">
       <div class="flex-between"><span><strong>${label}</strong></span>${autoTag}</div>
-      <div><span class="label user">✏️ 你的作答：</span><div class="user-answer">${userAns===''?'<span class="empty-writing">（未作答）</span>':userAns.replace(/</g,'&lt;')}</div>${extraInfo}</div>
-      <div><span class="label ref">📖 参考答案：</span><div class="ref-answer">${refAns}</div></div>
+      <div><span class="label user">✏️ Bài làm của bạn: </span><div class="user-answer">${userAns===''?'<span class="empty-writing">(Chưa trả lời)</span>':userAns.replace(/</g,'&lt;')}</div>${extraInfo}</div>
+      <div><span class="label ref">📖 Bài tham khảo: </span><div class="ref-answer">${refAns}</div></div>
     </div>`;
   }
-  writingHTML = `<div class="insight-box" style="margin-top:0;"><h4>🧮 改错题自动初判</h4><p style="margin:0;">5 题中初判正确 <strong>${correctionScore}/5</strong>（机器启发式判断，最终以教师复核为准）。</p></div>` + writingHTML;
+  writingHTML = `<div class="insight-box" style="margin-top:0;"><h4>🧮 Kiểm tra sơ bộ phần sửa lỗi</h4><p style="margin:0;">Số câu đạt kiểm tra sơ bộ: <strong>${correctionScore}/5</strong>. Máy kiểm tra theo mẫu, giáo viên cần xem lại kết quả.</p></div>` + writingHTML;
   document.getElementById('writingContent').innerHTML = writingHTML;
 
-  // 自评 rubric
+  // Tiêu chí tự đánh giá
   document.getElementById('rubricContent').innerHTML = `
     <div class="rubric">
-      <h4 style="margin-top:0;">✍️ 写作自评（对照参考答案给自己打分）</h4>
-      <div class="rubric-row"><label>任务回应 Task Response</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_tr"><span class="rval" id="w_tr_v">6</span></div>
-      <div class="rubric-row"><label>连贯衔接 Coherence</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_cc"><span class="rval" id="w_cc_v">6</span></div>
-      <div class="rubric-row"><label>词汇 Lexical Resource</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_lr"><span class="rval" id="w_lr_v">6</span></div>
-      <div class="rubric-row"><label>语法 Grammar</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_gr"><span class="rval" id="w_gr_v">6</span></div>
-      <div class="rubric-result">📝 写作自评估分：<span id="writingBand">6.0</span></div>
+      <h4 style="margin-top:0;">✍️ Tự đánh giá Viết (đối chiếu với bài tham khảo)</h4>
+      <div class="rubric-row"><label for="w_tr">Đáp ứng yêu cầu đề bài · Task Response</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_tr"><span class="rval" id="w_tr_v">6</span></div>
+      <div class="rubric-row"><label for="w_cc">Mạch lạc và liên kết · Coherence</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_cc"><span class="rval" id="w_cc_v">6</span></div>
+      <div class="rubric-row"><label for="w_lr">Vốn từ · Lexical Resource</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_lr"><span class="rval" id="w_lr_v">6</span></div>
+      <div class="rubric-row"><label for="w_gr">Ngữ pháp · Grammar</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="w_gr"><span class="rval" id="w_gr_v">6</span></div>
+      <label><input type="checkbox" id="w_confirm" onchange="calcRubric()"> Tôi đã tự đánh giá bài Viết theo bốn tiêu chí trên.</label>
+      <div class="rubric-result">📝 Viết – Điểm tự đánh giá: <span id="writingBand">—</span></div>
     </div>
     <div class="rubric">
-      <h4 style="margin-top:0;">🗣️ 口语自评（或由教师评分）</h4>
-      <div class="rubric-row"><label>流利度 Fluency</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_fl"><span class="rval" id="s_fl_v">6</span></div>
-      <div class="rubric-row"><label>词汇 Lexical Resource</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_lr"><span class="rval" id="s_lr_v">6</span></div>
-      <div class="rubric-row"><label>语法 Grammar</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_gr"><span class="rval" id="s_gr_v">6</span></div>
-      <div class="rubric-row"><label>发音 Pronunciation</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_pr"><span class="rval" id="s_pr_v">6</span></div>
-      <div class="rubric-result">🗣️ 口语自评估分：<span id="speakingBand">6.0</span></div>
+      <h4 style="margin-top:0;">🗣️ Tự đánh giá Nói (hoặc nhờ giáo viên đánh giá)</h4>
+      <div class="rubric-row"><label for="s_fl">Độ trôi chảy · Fluency</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_fl"><span class="rval" id="s_fl_v">6</span></div>
+      <div class="rubric-row"><label for="s_lr">Vốn từ · Lexical Resource</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_lr"><span class="rval" id="s_lr_v">6</span></div>
+      <div class="rubric-row"><label for="s_gr">Ngữ pháp · Grammar</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_gr"><span class="rval" id="s_gr_v">6</span></div>
+      <div class="rubric-row"><label for="s_pr">Phát âm · Pronunciation</label><input type="range" min="4" max="9" step="0.5" value="6" oninput="calcRubric()" id="s_pr"><span class="rval" id="s_pr_v">6</span></div>
+      <label><input type="checkbox" id="s_confirm" onchange="calcRubric()"> Tôi đã tự đánh giá phần Nói theo bốn tiêu chí trên.</label>
+      <div class="rubric-result">🗣️ Nói – Điểm tự đánh giá: <span id="speakingBand">—</span></div>
     </div>
     <div class="rubric" style="background:#f0f4fb;">
-      <div class="rubric-result" style="font-size:18px;">🎓 四项综合估算总分（听力/阅读为客观，写作/口语为自评）：<span id="finalBand">—</span></div>
-      <p class="text-muted" style="margin:6px 0 0 0;">说明：综合分 = (听力 + 阅读 + 写作自评 + 口语自评) / 4，四舍五入到 0.5。仅供入学定位参考。</p>
+      <div class="rubric-result" style="font-size:18px;">🎓 Ước tính bốn kỹ năng (Nghe và Đọc chấm tự động; Viết và Nói tự đánh giá): <span id="finalBand">—</span></div>
+      <p class="text-muted" style="margin:6px 0 0 0;">Lấy trung bình bốn kỹ năng và làm tròn đến nửa band. Hai phần Viết và Nói dùng điểm bạn tự chọn trên thanh trượt, không phải điểm giám khảo. Chỉ số này dành để định hướng học, không phải điểm IELTS chính thức. Lịch sử làm bài chỉ lưu số câu chấm tự động đúng; điểm bạn tự đánh giá hiển thị tại đây.</p>
     </div>`;
 
-  // 暴露 band 供 calcRubric 使用
+  // Cung cấp band cho calcRubric
   window._bands = { l: bandToNum(lBand), r: bandToNum(rBand) };
   calcRubric();
+  if (window.parent !== window) window.parent.postMessage({ type: "yysd:score", score: correct, total }, location.origin);
 
-  // 切换视图
+  // Chuyển chế độ hiển thị
   document.getElementById('testArea').style.display = 'none';
   document.getElementById('navBar').style.display = 'none';
   document.getElementById('resultsArea').style.display = 'block';
-  document.getElementById('scoreText').textContent = `客观题得分: ${correct} / ${total}`;
-  document.getElementById('accuracyText').textContent = `准确率: ${overall}%`;
-  document.getElementById('timeText').textContent = `用时约 ${elapsedMin} 分钟`;
+  document.getElementById('scoreText').textContent = `Điểm câu hỏi chấm tự động: ${correct} / ${total}`;
+  document.getElementById('accuracyText').textContent = `Tỷ lệ đúng: ${overall}%`;
+  document.getElementById('timeText').textContent = `Thời gian khoảng ${elapsedMin} phút`;
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 
@@ -950,15 +953,21 @@ function calcRubric() {
   });
   const w = roundHalf(avg(['w_tr','w_cc','w_lr','w_gr'].map(id=>parseFloat(document.getElementById(id).value))));
   const s = roundHalf(avg(['s_fl','s_lr','s_gr','s_pr'].map(id=>parseFloat(document.getElementById(id).value))));
-  document.getElementById('writingBand').textContent = w.toFixed(1);
-  document.getElementById('speakingBand').textContent = s.toFixed(1);
+  const wSet = document.getElementById('w_confirm').checked;
+  const sSet = document.getElementById('s_confirm').checked;
+  document.getElementById('writingBand').textContent = wSet ? w.toFixed(1) : '—';
+  document.getElementById('speakingBand').textContent = sSet ? s.toFixed(1) : '—';
+  if (!wSet || !sSet) {
+    document.getElementById('finalBand').textContent = 'Chờ tự đánh giá Viết và Nói';
+    return;
+  }
   const b = window._bands || { l:4, r:4 };
   const final = roundHalf(avg([b.l, b.r, w, s]));
   document.getElementById('finalBand').textContent = final.toFixed(1);
 }
 
 // =============================================================
-// 9. 初始化
+// 9. Khởi tạo
 // =============================================================
 window.addEventListener('DOMContentLoaded', () => {
   injectFlags();
@@ -968,7 +977,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('testArea').addEventListener('change', refreshNav);
 });
 
-// 暴露
+// Xuất hàm
 window.playAudio = playAudio;
 window.stopAudio = stopAudio;
 window.submitTest = submitTest;
@@ -980,28 +989,6 @@ window.startSpeakingTimer = startSpeakingTimer;
 window.updateWordCount = updateWordCount;
 window.toggleFlag = toggleFlag;
 window.calcRubric = calcRubric;
-</script>
-
-<!-- ===== YYSD 成绩同步（由考试中心自动添加，不改动原批改逻辑） ===== -->
-<script>
-(function(){
-  function report(){
-    var fb = document.getElementById('finalBand');
-    if(!fb) return;
-    var band = parseFloat(fb.textContent);
-    if(isNaN(band)) return;
-    var st = (document.getElementById('scoreText')||{}).textContent || '';
-    var m = st.match(/(\d+)\s*\/\s*(\d+)/);
-    try {
-      window.parent.postMessage({ type:'yysd:score',
-        score: m?+m[1]:null, total: m?+m[2]:null, band: band }, '*');
-    } catch(e){}
-  }
-  var fb = document.getElementById('finalBand');
-  if(fb){
-    new MutationObserver(report).observe(fb, {childList:true, subtree:true, characterData:true});
-  }
-})();
 </script>
 
 </body>

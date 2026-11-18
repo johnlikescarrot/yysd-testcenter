@@ -65,6 +65,7 @@ jobs:
             /library/*-catalog.json
             /library/*taxonomy.json
             /library/manifest.json
+            /library/mock/ielts/placement-test-*.html
             /library/mock/cambridge-*/cambridge-20-test-1*.html
             /library/mock/cambridge-listening/ielts20_test1_audio1.mp3
             /library/practice/jingting/data/cam20-t1-p*.json

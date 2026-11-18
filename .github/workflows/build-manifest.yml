@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: build-manifest
+  group: build-manifest-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
