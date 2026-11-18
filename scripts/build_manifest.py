@@ -121,7 +121,7 @@ def prettify(stem):
     return re.sub(r"[-_]+", " ", stem).strip().title()
 
 
-def build_entry(relpath):
+def build_entry(relpath, known_added=None):
     """relpath is the file path relative to library/, using '/' separators."""
     path = os.path.join(LIB_DIR, relpath.replace("/", os.sep))
     stem = os.path.splitext(os.path.basename(relpath))[0]
@@ -163,7 +163,7 @@ def build_entry(relpath):
         "subject": subject,
         "duration": duration,
         "description": find_meta(html, "description") or "",
-        "added": git_added_date(path),
+        "added": (known_added or {}).get(relpath) or git_added_date(path),
     }
 
 
@@ -182,10 +182,14 @@ def main():
                 files.append(rel)
     files.sort()
 
+    # Shallow clones report the graft commit as the addition date of every paper.
+    # Reuse established dates for known entries instead of rewriting their history.
+    previous = json.loads(read_text(MANIFEST)) if os.path.isfile(MANIFEST) else {}
+    known_added = {e['file']: e['added'] for e in previous.get('items', []) if e.get('added')}
     items, seen = [], set()
     for f in files:
         try:
-            e = build_entry(f)
+            e = build_entry(f, known_added)
         except Exception as ex:
             print("Skipping %s: %s" % (f, ex), file=sys.stderr)
             continue
@@ -222,7 +226,7 @@ def main():
                 "subject": "jingting",
                 "duration": 0,
                 "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
-                "added": git_added_date(path),
+                "added": known_added.get("practice/jingting/data/" + n) or git_added_date(path),
             })
 
     # ponytail: refuse to write a manifest that drops HTML sitting in a known subject folder
@@ -247,6 +251,9 @@ def main():
                 )
                 sys.exit(1)
 
+    if previous.get('items') == items and previous.get('count') == len(items):
+        print('Content manifest already up to date.')
+        return
     manifest = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "count": len(items),

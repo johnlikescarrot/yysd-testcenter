@@ -41,6 +41,10 @@ def catalog():
     return files
 
 
+def placement_papers():
+    return sorted(p.relative_to(ROOT) for p in (ROOT/'library/mock/ielts').glob('placement-*.html'))
+
+
 def library_page(books):
     source = (ROOT/'atlas.html').read_text()
     head = re.sub(r' *<script type="module"[^>]+></script>\n?', '', source.split('<main')[0])
@@ -72,6 +76,11 @@ def library_page(books):
                     body.append(f'<li><a href="{p}" aria-label="{label}, {shelf}, Test {n}">Test {n}</a></li>')
                 body.append('</ul>')
         body.append('</details>')
+    body.append('<details class="catalog-group"><summary>Bài kiểm tra đầu vào · 4 đề</summary><p>Nghe bằng giọng tiếng Anh của thiết bị. Các mục viết và nói dùng thang tự đánh giá hoặc nhận xét của giáo viên, không phải chấm IELTS chính thức.</p><ul>')
+    for p in placement_papers():
+        title = re.search(r'<meta name="exam:title" content="([^"]+)">', (ROOT/p).read_text())[1]
+        body.append(f'<li><a href="{p}">{escape(title)}</a></li>')
+    body.append('</ul></details>')
     bank = json.loads((ROOT/'data/speaking/jiijing-banks/2026-q2.json').read_text())
     body.append(f'</section><section id="the-noi" class="chapter"><h2>Thẻ luyện nói</h2><p class="catalog-intro">{escape(bank["title"])}. Nguồn: {escape(bank["source"])}. Mở một thẻ và trả lời thành tiếng; với Part 2, ghi từ khóa trong một phút trước khi nói.</p>')
     for part, items in [('Part 1', bank['part1']), ('Part 2 &amp; 3', bank['part2'])]:
@@ -92,6 +101,7 @@ def library_page(books):
 def assemble(stage):
     books = catalog()
     papers = [p for items in books.values() for _, _, p in items]
+    papers.extend(placement_papers())
     papers.append(Path('library/practice/ielts/sample-academic-reading-1.html'))
     media = {p: {p.parent/m for m in MEDIA.findall((ROOT/p).read_text())} for p in papers}
     tracks = {ROOT/asset for assets in media.values() for asset in assets if asset.suffix in {'.mp3', '.m4a'}}

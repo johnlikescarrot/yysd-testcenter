@@ -77,6 +77,36 @@
       "Fluency Training in the ESL Classroom: An Experimental Study of Fluency Development and Proceduralization",
       "Language Learning, 61, 533–568",
       "10.1111/j.1467-9922.2010.00620.x"
+    ],
+    "yang": [
+      "Yang, C., Luo, L., Vadillo, M. A., Yu, R. & Shanks, D. R. (2021)",
+      "Testing (quizzing) boosts classroom learning: A systematic and meta-analytic review",
+      "Psychological Bulletin, 147, 399–435",
+      "10.1037/bul0000309"
+    ],
+    "jeon": [
+      "Jeon, E. H. & Yamashita, J. (2014)",
+      "L2 Reading Comprehension and Its Correlates: A Meta-Analysis",
+      "Language Learning, 64, 160–212",
+      "10.1111/lang.12034"
+    ],
+    "graham": [
+      "Graham, S. (2006)",
+      "Listening comprehension: The learners’ perspective",
+      "System, 34, 165–182",
+      "10.1016/j.system.2005.11.001"
+    ],
+    "bitchener": [
+      "Bitchener, J. & Knoch, U. (2010)",
+      "Raising the linguistic accuracy level of advanced L2 writers with written corrective feedback",
+      "Journal of Second Language Writing, 19, 207–217",
+      "10.1016/j.jslw.2010.10.002"
+    ],
+    "lee": [
+      "Lee, J., Jang, J. & Plonsky, L. (2015)",
+      "The Effectiveness of Second Language Pronunciation Instruction: A Meta-Analysis",
+      "Applied Linguistics, 36, 345–366",
+      "10.1093/applin/amu040"
     ]
   },
   "guides": [
@@ -92,7 +122,7 @@
         ],
         [
           "Nhớ lại trước khi xem đáp án",
-          "Che lời giải. Viết một câu tiếng Anh giải thích vì sao bạn chọn đáp án, rồi mới đối chiếu. Tự kiểm tra có thể giúp ghi nhớ lâu hơn chỉ đọc lại; cảm giác quen mắt ngay lúc học không đồng nghĩa với việc sẽ nhớ sau một tuần [3, 4]."
+          "Che lời giải. Viết một câu tiếng Anh giải thích vì sao bạn chọn đáp án, rồi mới đối chiếu. Tự kiểm tra có thể giúp ghi nhớ lâu hơn chỉ đọc lại; cảm giác quen mắt ngay lúc học không đồng nghĩa với việc sẽ nhớ sau một tuần [3, 4]. Tổng hợp 222 nghiên cứu lớp học cũng ghi nhận lợi ích trung bình của kiểm tra ngắn [6]; hãy dùng lần làm sai để tìm việc cần học tiếp, không coi đó là phán quyết về năng lực."
         ],
         [
           "Trải bài học ra nhiều ngày",
@@ -101,7 +131,7 @@
       ],
       "task": "Hôm nay: chọn hai câu đã sai. Ngày mai: giải lại và ghi bằng chứng. Cuối tuần: dùng kỹ năng đó vào một đoạn hoàn toàn mới.",
       "check": "Tôi thực sự nhớ điều gì? Tôi chỉ nhận ra điều gì khi nhìn đáp án?",
-      "refs": ["kim", "cepeda", "recall", "dunlosky", "game"]
+      "refs": ["kim", "cepeda", "recall", "dunlosky", "game", "yang"]
     },
     {
       "id": "doc",
@@ -115,7 +145,7 @@
         ],
         [
           "Từ vựng là một phần của việc hiểu",
-          "Tỷ lệ từ đã biết có liên hệ với mức độ hiểu, nhưng không có một ngưỡng từ vựng bảo đảm hiểu đúng mọi bài [2]. Ghi cả cụm có ngữ cảnh, chẳng hạn a slight increase in visits, thay vì chỉ ghi increase."
+          "Tỷ lệ từ đã biết có liên hệ với mức độ hiểu, nhưng không có một ngưỡng từ vựng bảo đảm hiểu đúng mọi bài [2]. Ghi cả cụm có ngữ cảnh, chẳng hạn a slight increase in visits, thay vì chỉ ghi increase. Khi biết hết từ mà vẫn hiểu sai, thử gạch chân động từ chính và chủ ngữ: cả kiến thức ngữ pháp lẫn từ vựng đều có tương quan với đọc hiểu [4], không thể suy nguyên nhân từ tương quan đó."
         ],
         [
           "Tách sai khỏi thiếu dữ kiện",
@@ -124,7 +154,7 @@
       ],
       "task": "Tạo bảng ba cột: nhận định / trích dẫn ngắn / quan hệ giữa hai câu. Viết một nhận định sai và một nhận định thiếu thông tin từ cùng một đoạn.",
       "check": "Từ nào trong đoạn khiến tôi đổi đáp án? Nếu không có bằng chứng, tôi đã suy đoán gì?",
-      "refs": ["reading", "words", "recall"]
+      "refs": ["reading", "words", "recall", "jeon"]
     },
     {
       "id": "nghe",
@@ -138,7 +168,7 @@
         ],
         [
           "Trong khi nghe",
-          "Lần đầu nghe trọn ý. Lần sau tập trung vào chỗ chuyển ý: ‘We first planned Tuesday, but the hall is available on Thursday.’ Ngày được xác nhận là Thursday. Ghi lý do bỏ Tuesday thay vì chỉ chép lại đáp án."
+          "Lần đầu nghe trọn ý. Lần sau tập trung vào chỗ chuyển ý: ‘We first planned Tuesday, but the hall is available on Thursday.’ Ngày được xác nhận là Thursday. Ghi lý do bỏ Tuesday thay vì chỉ chép lại đáp án. Người học trong khảo sát của Graham kể rằng tốc độ và việc tách từ trong lời nói liên tục gây khó khăn [4]. Hãy ghi đúng điểm mất dấu thay vì tự gán nhãn “nghe kém”."
         ],
         [
           "Sau khi nghe",
@@ -147,7 +177,7 @@
       ],
       "task": "Nghe chặng Bắt đúng con số trong Atlas. Ghi hai cặp số – đơn vị, nghe lại để xác nhận rồi giải thích tại sao chỉ một cặp phù hợp với câu hỏi.",
       "check": "Lỗi của tôi nằm ở nghe âm, hiểu nghĩa, đơn vị hay chính tả?",
-      "refs": ["listen", "caption", "kim"]
+      "refs": ["listen", "caption", "kim", "graham"]
     },
     {
       "id": "viet",
@@ -165,12 +195,12 @@
         ],
         [
           "Kiểm tra khả năng chuyển giao",
-          "Viết một câu mới mô tả dữ liệu khác và dùng lại cấu trúc vừa sửa. Phản hồi về lỗi viết có thể hỗ trợ độ chính xác, nhưng kết quả còn tùy người học và dạng bài [1]. Đừng chỉ sửa sạch bản cũ rồi kết luận rằng lỗi sẽ không lặp lại; tự kiểm tra lại sau một khoảng nghỉ [3]."
+          "Viết một câu mới mô tả dữ liệu khác và dùng lại cấu trúc vừa sửa. Phản hồi về lỗi viết có thể hỗ trợ độ chính xác, nhưng kết quả còn tùy người học và dạng bài [1]. Đừng chỉ sửa sạch bản cũ rồi kết luận rằng lỗi sẽ không lặp lại; tự kiểm tra lại sau một khoảng nghỉ [3]. Nghiên cứu [4] tập trung vào độ chính xác của người viết trình độ cao; tiến bộ ở một dạng lỗi không đủ để kết luận rằng cả lập luận, bố cục và từ vựng đều tốt hơn."
         ]
       ],
       "task": "So sánh: 100 lượt năm 2020, 120 lượt năm 2021. Viết hai câu, một câu dùng increased by và một câu dùng rose from … to …. Đưa câu cho người khác đọc mà không cho xem bảng.",
       "check": "Người đọc có thể suy ra đúng số liệu không? Câu nào cần ví dụ hoặc bằng chứng rõ hơn?",
-      "refs": ["writing", "ellis", "dunlosky"]
+      "refs": ["writing", "ellis", "dunlosky", "bitchener"]
     },
     {
       "id": "noi",
@@ -188,12 +218,12 @@
         ],
         [
           "Xin một phản hồi có thể dùng ngay",
-          "Nhờ người nghe chỉ ra một chỗ khó hiểu và hỏi lại: ‘What happened next?’ Các nghiên cứu lớp học về phản hồi sửa lỗi khi nói cho thấy phản hồi có thể hỗ trợ phát triển ngôn ngữ [2]. Bạn có thể dành buổi sau để thử lại thay vì dồn mọi lượt vào một lúc [3]."
+          "Nhờ người nghe chỉ ra một chỗ khó hiểu và hỏi lại: ‘What happened next?’ Các nghiên cứu lớp học về phản hồi sửa lỗi khi nói cho thấy phản hồi có thể hỗ trợ phát triển ngôn ngữ [2]. Bạn có thể dành buổi sau để thử lại thay vì dồn mọi lượt vào một lúc [3]. Khi luyện phát âm, chọn mục tiêu cụ thể như trọng âm trong một cụm, rồi nhờ bạn nghe nhắc lại cụm đó. Tổng quan [4] bàn về dạy phát âm, không phải yêu cầu bắt chước một giọng bản xứ."
         ]
       ],
       "task": "Lấy một thẻ Part 2 trong thư viện. Chuẩn bị một phút, nói tối đa hai phút. Ghi ba từ khóa còn thiếu và dùng chúng trong lượt kể thứ hai.",
       "check": "Tôi có kể được nguyên nhân và kết quả không? Ví dụ nào vừa cụ thể vừa đúng trọng tâm?",
-      "refs": ["fluency", "oral", "kim"]
+      "refs": ["fluency", "oral", "kim", "lee"]
     }
   ]
 }

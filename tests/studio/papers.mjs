@@ -52,6 +52,22 @@ for (const path of pages) {
       });
       d.querySelector("#submit").click();
       assert.match(d.querySelector("#result").textContent, /8 \/ 8/);
+    } else if (path.includes("/placement-")) {
+      const key = new Script("answerKey").runInContext(context);
+      for (const [id, values] of Object.entries(key)) {
+        const field = d.getElementById(id);
+        if (field && field.type !== "radio") field.value = values[0];
+        else {
+          const option = [...d.getElementsByName(id)].find(
+            (r) => r.value.toLowerCase() === values[0].toLowerCase(),
+          );
+          assert.ok(option, id);
+          option.checked = true;
+        }
+      }
+      w.submitTest();
+      assert.ok(d.querySelector("#feedbackList").textContent.includes("20/20"));
+      assert.ok(d.querySelector('#rubricContent input[type="range"]'));
     } else if (path.includes("cambridge-writing/")) {
       w.startTest();
       const t = d.querySelector("#t1");

@@ -11,6 +11,7 @@ on:
       - "data/speaking/**"
       - "library/mock/cambridge-*/**"
       - "library/practice/ielts/**"
+      - "library/mock/ielts/**"
       - ".github/workflows/studio-pages.yml"
   pull_request:
     paths: *release-files
@@ -35,6 +36,7 @@ jobs:
             /tests/studio/
             /data/speaking/
             /library/practice/ielts/
+            /library/mock/ielts/
             /library/mock/cambridge-reading/
             /library/mock/cambridge-writing/
             /library/mock/cambridge-listening/
