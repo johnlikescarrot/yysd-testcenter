@@ -110,3 +110,12 @@ jobs:
           CSS_FILE_NAME: .stylelintrc.json
           HTML_HINT_CONFIG_FILE: .htmlhintrc
           MARKDOWN_CONFIG_FILE: .markdownlint.json
+
+      - name: Xuất chẩn đoán lint
+        if: always()
+        run: |
+          file=/tmp/super-linter.log
+          test -f "${file}" || exit 0
+          tail -n 40 "${file}" \
+            | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+            | awk '{ print "::error title=Super-Linter::" substr($0, 1, 350) }'
