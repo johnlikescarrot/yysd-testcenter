@@ -32,9 +32,4 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_HTML: false
-          VALIDATE_BASH: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_JSCPD: false
-          VALIDATE_GITLEAKS: false
+          DISABLE_ERRORS: false
