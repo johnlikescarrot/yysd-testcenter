@@ -1,8 +1,8 @@
 /* Service worker: giữ ứng dụng dùng được khi mất mạng.
    - Tài nguyên tĩnh (CSS, JS, JSON, PDF, ảnh): cache-first, làm mới ngầm.
-   - Trang HTML: network-first, rơi về bản cache hoặc trang 404 khi ngoại tuyến. */
+   - Trang HTML: network-first, rơi về bản cache hoặc trang lỗi khi ngoại tuyến. */
 
-const VERSION = 'yysd-ielts-vi-v1';
+const VERSION = 'yysd-ielts-vi-v2';
 const SHELL = [
   './',
   './index.html',
@@ -12,9 +12,27 @@ const SHELL = [
   './thu-vien.html',
   './tien-do.html',
   './404.html',
-  './css/app.css',
   './js/app.js',
   './js/browser.js',
+  './js/core/content.js',
+  './js/core/date.js',
+  './js/core/gamify.js',
+  './js/core/league.js',
+  './js/core/papers.js',
+  './js/core/quests.js',
+  './js/core/quiz.js',
+  './js/core/scoring.js',
+  './js/core/srs.js',
+  './js/core/state.js',
+  './js/core/text.js',
+  './js/views/dashboard.js',
+  './js/views/icons.js',
+  './js/views/layout.js',
+  './js/views/learn.js',
+  './js/views/lesson.js',
+  './js/views/library.js',
+  './js/views/practice.js',
+  './js/views/progress.js',
   './manifest.webmanifest',
   './img/favicon.svg',
   './data/curriculum.json',
@@ -22,6 +40,14 @@ const SHELL = [
   './data/papers.json',
   './data/pdfs.json',
   './data/prompts.json',
+  './data/units/doc-tfng.json',
+  './data/units/nen-tang-doc.json',
+  './data/units/nghe-so-lieu.json',
+  './data/units/ngu-phap-cau-phuc.json',
+  './data/units/noi-part-2.json',
+  './data/units/tu-vung-awl.json',
+  './data/units/viet-task-1.json',
+  './data/units/viet-task-2.json',
 ];
 
 self.addEventListener('install', (event) => {

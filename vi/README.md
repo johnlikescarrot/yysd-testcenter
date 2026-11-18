@@ -41,6 +41,15 @@ npx --yes eslint@9 .
 `npm test` chạy `tests/all.test.mjs` — điểm vào duy nhất nạp toàn bộ test trong **một tiến trình**
 để số liệu coverage phản ánh đúng phần mã đã được chạm tới.
 
+Kết quả đo trên CI:
+
+| Hạng mục | Kết quả |
+| --- | --- |
+| Test | 147 đạt, 0 hỏng |
+| Coverage | 100% dòng · 100% nhánh · 100% hàm |
+| Lighthouse (desktop, 3 lần chạy/trang) | Hiệu năng 100 · Trợ năng 100 · Thực hành tốt 100 · SEO 100 trên cả 4 trang chính |
+| `404.html` | Cũng đạt 100 về hiệu năng/trợ năng/thực hành tốt; SEO bị loại khỏi ngưỡng vì trang cố ý đặt `noindex` |
+
 ## Sinh lại nội dung
 
 ```bash
@@ -84,10 +93,12 @@ vi/
 | `.github/workflows/vi-ci.yml` | Chạy test + coverage 100%, kiểm tra nội dung, kiểm thử khói, ESLint |
 | `.github/workflows/vi-lint.yml` | Super-Linter (JSON, YAML, Markdown, Python) giới hạn trong `vi/`, `scripts/vi/`, `.github/` |
 | `.github/workflows/vi-pages.yml` | Đóng gói `vi/` và phát hành lên GitHub Pages (giữ `CNAME`, thêm `.nojekyll`) |
-| `.github/workflows/vi-lighthouse.yml` | Lighthouse CI: bắt buộc 100 cả bốn hạng mục (`.lighthouserc.json`) |
+| `.github/workflows/vi-lighthouse.yml` | Lighthouse CI: bắt buộc 100 cả bốn hạng mục (`.lighthouserc.json`), đăng bảng audit chưa đạt vào PR qua `scripts/vi/lighthouse-summary.mjs` |
 
 ## Quy ước
 
 * Mọi văn bản giao diện là tiếng Việt; nội dung tiếng Anh chỉ nằm trong câu hỏi và ví dụ học thuật.
 * `js/core/*` không chạm DOM để kiểm thử được 100%; `js/browser.js` là lớp mỏng duy nhất chạm DOM.
 * Không thêm phụ thuộc chạy trên trình duyệt. Mọi thứ phải tải được từ GitHub Pages.
+* CSS được nhúng thẳng vào HTML lúc sinh trang để không có tài nguyên chặn hiển thị; `#app` chỉ hiện
+  sau lần vẽ đầu tiên nên tổng dịch chuyển bố cục (CLS) bằng 0.
