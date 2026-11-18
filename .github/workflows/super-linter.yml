@@ -55,8 +55,9 @@ jobs:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
           IGNORE_GITIGNORED_FILES: true
-          FILTER_REGEX_EXCLUDE: (^|/)(library|assets|data|server|scripts|app|tiku)/.*
-          # ESLint 9 do vi-ci.yml đảm nhiệm; super-linter tập trung CSS/HTML/MD/JSON/YAML
+          FILTER_REGEX_EXCLUDE: (^|/)(library|assets|data|server|scripts|app)/
+          # ESLint 9 do vi-ci.yml đảm nhiệm
+          # Super-Linter tập trung vào CSS/HTML/MD/JSON/YAML
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_CSS: true
           VALIDATE_HTML: true
