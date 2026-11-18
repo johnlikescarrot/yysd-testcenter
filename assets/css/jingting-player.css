@@ -1,4 +1,4 @@
-/* 听力精听 lyric player — brand navy/gold, New Oriental–style layout */
+/* Nghetinh chất cười cổ đại lyric player — brand navy/gold, New Oriental–style layout */
 .jt-page {
   --jt-navy: var(--brand-navy, #07192f);
   --jt-navy-soft: var(--brand-navy-soft, #102a4c);
@@ -225,7 +225,7 @@
   background: #e8eef8;
 }
 .jt-full.is-blind .jt-full-line.is-active::after {
-  content: "（当前句 · 原文已隐藏）";
+  content: "(thời điểm hiện tạibiến thể của · Văn bản gốcđãche giấu)";
   visibility: visible;
   color: var(--jt-muted);
   font-weight: 500;

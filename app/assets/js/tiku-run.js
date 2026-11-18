@@ -1,4 +1,4 @@
-/* 题库组卷：练习回列表，模考按题块连做 */
+/* ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thihọ cuộn lại:Luyện tậpxoay vòngdanh sách,Thi thửnhấn họ cục họ làm */
 (function (w) {
   "use strict";
   var KEY = "yysd:tiku-run";
@@ -24,7 +24,7 @@
       return u;
     }
     if (block.source === "date" && block.paperId) {
-      // ponytail: 日期卷只在官网根有数据；app 播放器读不到，交考场引擎单科页
+      // ponytail: ngày thángcuộn lại chỉ tồn tạitrang web chính thứcrễđã đếmbiến thể của;app Phátthiết bị dấu phẩykhông đến,giao nộpPhòng thiđộng cơ từ mượnhọ ngành học đầu
       var u = examRoot() + "toefl-" + block.skill + ".html?id=" + encodeURIComponent(block.paperId) +
         "&mode=" + encodeURIComponent(mode === "practice" ? "practice" : "mock") +
         "&task=" + encodeURIComponent(block.task) +
@@ -51,7 +51,7 @@
       skillEnds: {},
       preview: !!paper.preview
     };
-    // 只考一科：从这一科第一个题块开始
+    // chỉ đánh một ngành học:biến thể của đại từ này một ngành họcđầu tiêndùng trong họ cụcBắt đầu
     if (paper.only) {
       run.only = paper.only;
       for (var k = 0; k < run.blocks.length; k++) {
@@ -97,7 +97,7 @@
       return false;
     }
     run.i += 1;
-    // 只考一科时跳过其它科题块，做完这一科就到终点
+    // chỉ đánh một ngành học biến thể cũ củanhảy quatính từ khácngành học họ cục,hoàn thànhđại từ này một ngành học sau một mệnh đề giả định trong trường hợp đó đếnkết thúc
     if (run.only) while (run.i < run.blocks.length && run.blocks[run.i].skill !== run.only) run.i += 1;
     save(run);
     if (run.i >= run.blocks.length) {

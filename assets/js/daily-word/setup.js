@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/setup.js — 任务设置页：选词书（单元 + 分类词库）+ 每日数量
+   daily-word/setup.js — Nhiệm vụCài đặtđầu:chọn biến thể cũ của viết tắt của(Bài + Kho từ vựng theo chủ đề)+ Hằng ngàysố lượng
    ========================================================================= */
 (function () {
   "use strict";
@@ -67,17 +67,17 @@
     var pick = document.getElementById("dw-pick-label");
     if (pick) {
       pick.textContent = state.bookId
-        ? ("已选：" + (bookLabelOf(state.bookId) || state.bookId))
-        : "请选择词书";
+        ? ("đã chọn:" + (bookLabelOf(state.bookId) || state.bookId))
+        : "mờiChọnbiến thể cũ của viết tắt của";
     }
     var note = document.getElementById("dw-resume-note");
     if (note && state.resume) {
-      var cur = state.resume.bookLabel || "今日任务";
+      var cur = state.resume.bookLabel || "hôm nayNhiệm vụ";
       var next = bookLabelOf(state.bookId);
       if (next && state.bookId !== state.resume.bookId) {
-        note.textContent = "重新开始将改为「" + next + "」，当前「" + cur + "」进度会清除。";
+        note.textContent = "tiếp tụcsẽthay đổi thành«" + next + "»,thời điểm hiện tại«" + cur + "»Tiến độcó thểdọn dẹp.";
       } else {
-        note.textContent = "可改词书或数量后重新开始；点重新开始将清除当前进度。";
+        note.textContent = "tiền tố có thể thay đổi biến thể cũ của viết tắt của có thểsố lượnghọtiếp tục;điểmtiếp tụcsẽdọn dẹpthời điểm hiện tạiTiến độ.";
       }
     }
   }
@@ -86,7 +86,7 @@
     var strong = root.querySelector(".dw-count-line strong");
     if (strong) strong.textContent = String(state.count);
     var eta = document.getElementById("dw-count-eta");
-    if (eta) eta.textContent = "预计约 " + DW.estimateMinutes(state.count) + " 分钟";
+    if (eta) eta.textContent = "dự báocân trong cân đĩa hoặc trên cân " + DW.estimateMinutes(state.count) + " phút";
     root.querySelectorAll(".dw-chip").forEach(function (c) {
       c.classList.toggle("is-on", Number(c.getAttribute("data-count")) === state.count);
     });
@@ -99,7 +99,7 @@
     if (!host) return;
     var list = filteredThemes();
     host.innerHTML = list.map(bookBtn).join("") ||
-      '<p class="dw-hint">该分类下暂无词库</p>';
+      '<p class="dw-hint">nênPhân loạixuống tạm thời không cókho từ</p>';
     host.querySelectorAll("[data-book]").forEach(function (btn) {
       btn.addEventListener("click", onBookClick);
     });
@@ -122,9 +122,9 @@
 
   function render() {
     var unitHtml = state.books.map(bookBtn).join("") ||
-      '<p class="dw-hint">暂无单元词书</p>';
+      '<p class="dw-hint">tạm thời không cóBàibiến thể cũ của viết tắt của</p>';
 
-    var catChips = [{ id: "all", label: "全部" }].concat(state.categories).map(function (c) {
+    var catChips = [{ id: "all", label: "Tất cả" }].concat(state.categories).map(function (c) {
       var on = c.id === state.themeCat ? " is-on" : "";
       return '<button type="button" class="dw-cat' + on + '" data-cat="' + DW.esc(c.id) + '">' +
         DW.esc(c.label) + "</button>";
@@ -133,7 +133,7 @@
     var chips = DW.PRESETS.map(function (n) {
       var on = n === state.count ? " is-on" : "";
       return '<button type="button" class="dw-chip' + on + '" data-count="' + n + '">' +
-        n + ' <small>≈' + DW.estimateMinutes(n) + "分</small></button>";
+        n + ' <small>≈' + DW.estimateMinutes(n) + "phần</small></button>";
     }).join("");
 
     var resume = state.resume;
@@ -142,46 +142,46 @@
       banner =
         '<div class="dw-resume-banner">' +
           '<div class="dw-resume-banner__row">' +
-            '<p class="dw-resume-banner__status"><strong>进行中</strong> ' +
+            '<p class="dw-resume-banner__status"><strong>Đang thực hiện</strong> ' +
               ((resume.currentIndex || 0) + 1) + "/" + resume.wordList.length +
-              " · " + DW.esc(resume.bookLabel || "今日任务") + "</p>" +
-            '<a class="dw-resume-banner__link" href="daily-word-learn.html">继续 ›</a>' +
+              " · " + DW.esc(resume.bookLabel || "hôm nayNhiệm vụ") + "</p>" +
+            '<a class="dw-resume-banner__link" href="daily-word-learn.html">Tiếp tục ›</a>' +
           "</div>" +
-          '<p class="dw-hint" id="dw-resume-note">可改词书或数量后重新开始；点重新开始将清除当前进度。</p>' +
+          '<p class="dw-hint" id="dw-resume-note">tiền tố có thể thay đổi biến thể cũ của viết tắt của có thểsố lượnghọtiếp tục;điểmtiếp tụcsẽdọn dẹpthời điểm hiện tạiTiến độ.</p>' +
         "</div>";
     }
 
     root.innerHTML =
       '<div class="dw-shell dw-shell--setup">' +
         '<header class="dw-top">' +
-          '<a class="dw-back" href="zone.html?zone=study&s=vocab" aria-label="返回">←</a>' +
-          '<div class="dw-top__title">' + (resume ? "重新设置任务" : "设置今日任务") + "</div>" +
+          '<a class="dw-back" href="zone.html?zone=study&s=vocab" aria-label="Quay lại">←</a>' +
+          '<div class="dw-top__title">' + (resume ? "lạiCài đặtNhiệm vụ" : "Cài đặthôm nayNhiệm vụ") + "</div>" +
         "</header>" +
         banner +
         '<p class="dw-pick" id="dw-pick-label"></p>' +
         '<section class="dw-setup-sec">' +
-          "<h2>单元词书</h2>" +
+          "<h2>Bàibiến thể cũ của viết tắt của</h2>" +
           '<div class="dw-books" id="dw-unit-list">' + unitHtml + "</div>" +
         "</section>" +
         '<section class="dw-setup-sec">' +
-          '<h2>分类词库 <span class="dw-setup-sec__n">' + state.themes.length + " 本</span></h2>" +
+          '<h2>Kho từ vựng theo chủ đề <span class="dw-setup-sec__n">' + state.themes.length + " hình thức kết hợp gốc</span></h2>" +
           '<div class="dw-cats" id="dw-cats">' + catChips + "</div>" +
           '<div class="dw-books dw-books--themes" id="dw-theme-list"></div>' +
         "</section>" +
         '<section class="dw-setup-sec">' +
-          "<h2>每日学习数量</h2>" +
+          "<h2>Hằng ngàyhọcsố lượng</h2>" +
           '<div class="dw-presets">' + chips + "</div>" +
-          '<div class="dw-count-line"><span>当前</span><strong>' + state.count + "</strong><span>词</span></div>" +
+          '<div class="dw-count-line"><span>thời điểm hiện tại</span><strong>' + state.count + "</strong><span>biến thể cũ của</span></div>" +
           '<div class="dw-slider-row">' +
             '<input class="dw-slider" type="range" min="' + DW.COUNT_MIN + '" max="' + DW.COUNT_MAX +
               '" step="' + DW.COUNT_STEP + '" value="' + state.count + '" id="dw-count-slider">' +
           "</div>" +
-          '<p class="dw-hint" id="dw-count-eta">预计约 ' + DW.estimateMinutes(state.count) + " 分钟</p>" +
+          '<p class="dw-hint" id="dw-count-eta">dự báocân trong cân đĩa hoặc trên cân ' + DW.estimateMinutes(state.count) + " phút</p>" +
         "</section>" +
         '<div class="dw-setup-foot">' +
           '<button type="button" class="dw-btn dw-btn--primary" id="dw-start"' +
             (state.bookId ? "" : " disabled") + ">" +
-            (resume ? "重新开始" : "开始学习") + "</button>" +
+            (resume ? "tiếp tục" : "Bắt đầuhọc") + "</button>" +
         "</div>" +
       "</div>";
 
@@ -223,13 +223,13 @@
     if (start) {
       start.addEventListener("click", function () {
         if (!state.bookId) return;
-        if (state.resume && !window.confirm("重新开始将清除当前进度，确定吗？")) return;
+        if (state.resume && !window.confirm("tiếp tụcsẽdọn dẹpthời điểm hiện tạiTiến độ,rõ ràngthông tục gì??")) return;
         persist();
         start.disabled = true;
-        start.textContent = "抽词中…";
+        start.textContent = "rút ra biến thể cũ của hình thức kết hợp Trung Quốc…";
         DW.fetchBookPool(state.bookId, 0).then(function (data) {
           var picked = DW.pickDaily(data.pool, state.bookId, state.count, DW.getRecords());
-          if (!picked.length) throw new Error("词库暂无可用单词");
+          if (!picked.length) throw new Error("kho từtạm thờikhông thểsử dụngTừ vựng");
           var A = window.YYSD_AUTH;
           var user = (A && A.getUser) ? A.getUser() : {};
           var task = {
@@ -256,8 +256,8 @@
           location.href = "daily-word-learn.html";
         }).catch(function (e) {
           start.disabled = false;
-          start.textContent = state.resume ? "重新开始" : "开始学习";
-          alert(e.message || "抽词失败");
+          start.textContent = state.resume ? "tiếp tục" : "Bắt đầuhọc";
+          alert(e.message || "rút ra biến thể cũ củaThất bại");
         });
       });
     }
@@ -305,7 +305,7 @@
         return {
           key: s.book.key,
           label: s.book.label,
-          meta: s.total + " 个单元 · " + (s.book.tag || "")
+          meta: s.total + " dùng trongBài · " + (s.book.tag || "")
         };
       });
       state.themes = (cat.themes || []).slice().sort(function (a, b) {
@@ -316,7 +316,7 @@
           id: t.id,
           category: t.category || "",
           label: t.title,
-          meta: (t.count || 0) + " 词 · " + (catLabel[t.category] || "分类词库")
+          meta: (t.count || 0) + " biến thể cũ của · " + (catLabel[t.category] || "Kho từ vựng theo chủ đề")
         };
       });
 
@@ -328,8 +328,8 @@
       }
       render();
     }).catch(function (e) {
-      root.innerHTML = '<div class="dw-fail"><p>无法加载词书</p><p>' +
-        DW.esc(e.message) + '</p><p><a href="zone.html?zone=study&s=vocab">返回单词区</a></p></div>';
+      root.innerHTML = '<div class="dw-fail"><p>không thểTảibiến thể cũ của viết tắt của</p><p>' +
+        DW.esc(e.message) + '</p><p><a href="zone.html?zone=study&s=vocab">Quay lạiKhu vực Từ vựng</a></p></div>';
     });
   }
 

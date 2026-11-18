@@ -94,7 +94,7 @@ body.exam-ets .passage {
   font-size: 16px;
   line-height: 1.75;
 }
-/* split 右栏需要满宽，CW 整段恢复可读行宽（与 app.css 默认一致） */
+/* split hình thức kết hợp bên phải hàng ràocầndân tộc Mãn Châu họ,CW hình thức liên kết toàn bộ họkhôi phụcthú vị để đọchàng họ( app.css đồng ý ngầmnhất quán) */
 body.exam-ets #cw-wrap .passage { max-width: 820px; margin: 0 auto; }
 body.exam-ets mark.hl {
   background: #ffe566;

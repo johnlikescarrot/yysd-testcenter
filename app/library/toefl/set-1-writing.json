@@ -71,9 +71,9 @@
         "it",
         "yet"
       ],
-      "analysis": "正确顺序：Have you applied for it yet?",
+      "analysis": "Đúng trình tự:Have you applied for it yet?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -119,9 +119,9 @@
         "application",
         "process"
       ],
-      "analysis": "正确顺序：Have you started the application process?",
+      "analysis": "Đúng trình tự:Have you started the application process?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -177,9 +177,9 @@
         "the",
         "schedule"
       ],
-      "analysis": "正确顺序：Do you know if she included the schedule?",
+      "analysis": "Đúng trình tự:Do you know if she included the schedule?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -220,9 +220,9 @@
         "be",
         "discussing"
       ],
-      "analysis": "正确顺序：What will you be discussing?",
+      "analysis": "Đúng trình tự:What will you be discussing?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -268,9 +268,9 @@
         "writing",
         "about"
       ],
-      "analysis": "正确顺序：What topic are you writing about?",
+      "analysis": "Đúng trình tự:What topic are you writing about?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -316,9 +316,9 @@
         "game",
         "start"
       ],
-      "analysis": "正确顺序：What time does the game start?",
+      "analysis": "Đúng trình tự:What time does the game start?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -384,9 +384,9 @@
         "the",
         "deadline"
       ],
-      "analysis": "正确顺序：I was not able to complete it before the deadline.",
+      "analysis": "Đúng trình tự:I was not able to complete it before the deadline.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -457,9 +457,9 @@
         "been",
         "announced"
       ],
-      "analysis": "正确顺序：Do you know if the new due date has been announced?",
+      "analysis": "Đúng trình tự:Do you know if the new due date has been announced?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -535,9 +535,9 @@
         "it",
         "yet"
       ],
-      "analysis": "正确顺序：Sorry, but I have not had time to look at it yet.",
+      "analysis": "Đúng trình tự:Sorry, but I have not had time to look at it yet.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -608,9 +608,9 @@
         "other",
         "commitments"
       ],
-      "analysis": "正确顺序：The dates when it is scheduled conflict with my other commitments.",
+      "analysis": "Đúng trình tự:The dates when it is scheduled conflict with my other commitments.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "email",
@@ -626,9 +626,9 @@
       "to": "Ms. Clark",
       "subject": "Printing Services for Upcoming Play",
       "sample": "Dear Ms. Clark,\n\nI am the event coordinator for our school's drama club. We will stage a play at the end of next month. The play is one of the biggest campus events of the year, and we expect several hundred students and faculty members to attend. To promote it, we need posters and flyers printed and distributed around campus.\n\nCould you tell me whether your shop handles promotional printing for school events? We would also like to know your pricing for about fifty A2 posters and three hundred A4 flyers, as well as your turnaround time, since our publicity campaign starts in two weeks.\n\nThank you for your time, and I look forward to your reply.\n\nBest regards,\nAlex Chen",
-      "analysis": "邮件需覆盖三点：活动与印刷重要性、能否做宣传印刷、价格与工期。称呼 Ms. Clark，结尾用 Best regards。",
+      "analysis": "thư từ yêu cầuche phủ họ điểm:tập thể dục in ấn tầm quan trọng,có hay không làmtruyền bá in ấn,giá thời gian dành cho dự án.gọi Ms. Clark,kết thúc sử dụng Best regards.",
       "title": "Printing Services",
-      "titleZh": "印刷服务"
+      "titleZh": "in ấn phục vụ"
     },
     {
       "type": "discussion",
@@ -651,9 +651,9 @@
         }
       ],
       "sample": "I believe individuals and social forces work together, but social and economic forces set the stage. For example, the American civil rights movement did not succeed only because of Martin Luther King's talent; it succeeded because millions of ordinary people were ready for change and the economy and media of the time amplified their voices. Without those social forces, even the most gifted individual would have been ignored. That said, individuals matter at the decisive moment: a leader gives a movement direction and courage at critical points. Social forces create the possibility of change, while influential individuals decide its shape and timing. Neither alone is enough to drive history forward.",
-      "analysis": "需表明立场并回应对方。较好答法：社会力量提供条件，关键人物决定时机与方向，并举例。",
+      "analysis": "yêu cầulàm rõ lập trường vàphản hồi người kia.tốt hơn hình thức gắn liền có nghĩa giống như từ tự do biến thể của:Xã hội sức mạnh đề nghị điều kiện,điểm mấu chốt Nhân vật quyết định làm gì đó cơ hội hướng,phát triển đồng thời ví dụ.",
       "title": "The Driving Force of History",
-      "titleZh": "历史的推动力"
+      "titleZh": "Lịch sử lực thúc đẩy"
     }
   ]
 }

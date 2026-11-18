@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思19 Test 3 阅读</title>
-<meta name="exam:title" content="剑桥雅思19 · Test 3（阅读）">
+<title>YYSD · Cambridge IELTS 19 Test 3 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 19 · Test 3(Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思19 Test 3 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 19 Test 3 Học thuật loạiĐọc (Chính thức Đề thi thật):3 tờbài viết Tổng 40 câu,tiền tố có thể họ tờLuyện tập có thểhoàn chỉnh Thi thử,tự động Chấm bài,Giải thích IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* bìa của ấn phẩm */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
@@ -36,7 +36,7 @@
   .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* chế độcửa sổ pop-up tin học */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -58,7 +58,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* hình thức gắn liền có nghĩa giống như từ tự do họ họ */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
@@ -71,7 +71,7 @@
   .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
   .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Đọcphần hàng rào: họbài viết hình thức kết hợp bên phảiĐề bài */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
   .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
@@ -119,7 +119,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
@@ -156,98 +156,99 @@
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span>Cambridge IELTS Đề thi thật Bài kiểm tra</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- bìa của ấn phẩm -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">19</div></div>
     <div>
-      <h2>剑桥雅思 19 · Test 3</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 19 · Test 3</h2>
+      <div class="sub">Học thuật loạiĐọc · Chính thức Đề thi thật · tự động Chấm bài và cung cấp đi raIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.nhấn bên dưới Bắt đầu Bài kiểm tra.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Học thuật loạiĐọc (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta">Đang tải…</div>
+      <div class="pc-go">Bắt đầu Bài kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- chế độcửa sổ pop-up tin học -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc">phù hợp phần tờđột phá,tiền tố có thể chỉ luyện tập một vài bàn nhỏ tờbài viết,hướng về phía trước đo thời gian khôngtác động nỗ lực hoặc áp lực áp lực.</div>
+        <div class="mb-sub"><span>Chọn Luyện tập bài viết:</span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc">hoàn chỉnh Mô phỏng thật Kì thi:tất cả bài viết đầu tiên Hoàn thành,đặt giới hạn thời gian 60 phút.</div>
+        <div class="mb-sub"><span>Bài kiểm tra thông tin:</span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo">hoàn chỉnh Bài kiểm tra (đặt giới hạn thời gian 60 phút)</div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu Thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- hình thức gắn liền có nghĩa giống như từ tự do họ họ -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Quay lại bìa của ấn phẩm</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài vàXem Chấm bài Báo cáo</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quảhọ -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Chấm bài Báo cáo</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đó họ đếm</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỉ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>hoàn toàn Tiến độ</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">chi tiết Kết quả</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思20 Test 4 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
-   ============================================================ */
+ một, bài thi dữ liệu —— Cambridge IELTS 20 Test 4 Học thuật loại Đọc (Chính thức họ họ + Đáp án chính thức)
+ Giải thích: mỗi tờ bài viết làm với tư cách một dùng trong mục tiêu {id, passage:{title,byline,paras[]}, groups:[...]}
+ phát hành lại đến Passage 2, 3 biến thể cũ của nhấn giống hệt hình thức thêm cái gì đó bổ sung tiến lên passages tin học mảng tương đương với.
+ ============================================================ */
 const TEST = {
   meta:{ volume:19, testNo:3 },
   durationMin:60,
@@ -274,13 +275,13 @@ const TEST = {
         { kind:'tfng', title:'Questions 1–7',
           instruction:'Do the following statements agree with the information given in Reading Passage 1? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.',
           questions:[
-            {id:'Q1',no:1,q:`Archaeological research had taken place on the island of Obi before the arrival of Ceri Shipton and his colleagues.`,answer:['FALSE'],explain:`第1段：他们是“the first archaeologists to explore Obi”——此前没有过。 FALSE。`},
-            {id:'Q2',no:2,q:`At the Kelo sites, the researchers found the first clam shell axes ever to be discovered in the region.`,answer:['FALSE'],explain:`第3段：同期的贝壳斧此前在本地区别处（如 Gebe 岛）也已发现过，并非“首次”。 FALSE。`},
-            {id:'Q3',no:3,q:`The size of Obi today is less than it was 18,000 years ago.`,answer:['TRUE'],explain:`第4段：当时海平面低约120米，Obi 面积更大（含今日的 Bisa 岛等）。今天更小。 TRUE。`},
-            {id:'Q4',no:4,q:`A change in the climate around 11,700 years ago had a greater impact on Obi than on the surrounding islands.`,answer:['NOT GIVEN'],explain:`第5段只讲气候变化对 Obi 的影响，未与周边岛屿作比较。 NOT GIVEN。`},
-            {id:'Q5',no:5,q:`The researchers believe there is a connection between warmer, wetter weather and a change in the material used to make axes.`,answer:['TRUE'],explain:`第5段：研究者认为更暖更湿时期出现石斧“no coincidence”——与材料变化有关联。 TRUE。`},
-            {id:'Q6',no:6,q:`Shipton's team were surprised to find evidence of the Obi islanders' hunting practices.`,answer:['NOT GIVEN'],explain:`第6段描述了狩猎证据，但未提研究者是否“惊讶”。 NOT GIVEN。`},
-            {id:'Q7',no:7,q:`It is thought that the Kelo shelters were occupied continuously until about 1,000 years ago.`,answer:['FALSE'],explain:`第8–9段：约8,000年前被弃用，之后到约1,000年前没有使用证据——并非连续。 FALSE。`},
+            {id:'Q1',no:1,q:`Archaeological research had taken place on the island of Obi before the arrival of Ceri Shipton and his colleagues.`,answer:['FALSE'],explain:`1họ: họ là chỉ theo sau bởi danh từ«the first archaeologists to explore Obi»—— trước đó không có họ. FALSE.`},
+            {id:'Q2',no:2,q:`At the Kelo sites, the researchers found the first clam shell axes ever to be discovered in the region.`,answer:['FALSE'],explain:`3họ: cùng kỳ trong năm khác của vỏ của động vật thân mềm rìu nhỏ trước đó tồn tại địa phương sự khác biệt cư trú(như Gebe biến thể của)họ đã để ý họ, thật sự không phải « đầu tiên ». FALSE.`},
+            {id:'Q3',no:3,q:`The size of Obi today is less than it was 18,000 years ago.`,answer:['TRUE'],explain:`4họ: lúc đó mực nước biển thấp cân trong cân đĩa hoặc trên cân120họ, Obi diện tích của sàn thay đổi hoặc thay thế(ngậm trong miệng hôm nay của Bisa biến thể của đợi). hôm nay thay đổi hoặc thay thế nhỏ. TRUE.`},
+            {id:'Q4',no:4,q:`A change in the climate around 11,700 years ago had a greater impact on Obi than on the surrounding islands.`,answer:['NOT GIVEN'],explain:`5họ chỉ nói biến đổi khí hậu đúng Obi của ảnh hưởng, chưa biến thể của ngoại vi đảo hình thức kết hợp công nhân So sánh. NOT GIVEN.`},
+            {id:'Q5',no:5,q:`The researchers believe there is a connection between warmer, wetter weather and a change in the material used to make axes.`,answer:['TRUE'],explain:`5họ: nhà điều tra nhận ra làm với tư cách thay đổi hoặc thay thế biến thể cũ của thay đổi hoặc thay thế biến thể của giai đoạn xuất hiện họ rìu nhỏ«no coincidence»——biến thể của Tư liệu thay đổi có liên quan đến. TRUE.`},
+            {id:'Q6',no:6,q:`Shipton's team were surprised to find evidence of the Obi islanders' hunting practices.`,answer:['NOT GIVEN'],explain:`6họ mô tả trợ từ chỉ hành động đã hoàn thành săn bằng chứng, nhưng chưa dùng trong và nhà điều tra liệu có hay không « kinh ngạc ». NOT GIVEN.`},
+            {id:'Q7',no:7,q:`It is thought that the Kelo shelters were occupied continuously until about 1,000 years ago.`,answer:['FALSE'],explain:`8–9họ: cân trong cân đĩa hoặc trên cân8,000 trước cuối năm chăn ngừng sử dụng, họ đến cân trong cân đĩa hoặc trên cân1,000 trước cuối năm không có sử dụng bằng chứng —— thật sự không phải Liên tiếp. FALSE.`},
           ]},
         { kind:'note', title:'Questions 8–13',
           instruction:'Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -299,12 +300,12 @@ const TEST = {
             {bullet:true, html:`probably took part in the production and sale of <Q n="13">`},
           ],
           questions:[
-            {id:'Q8',no:8,answer:['caves'],explain:`第3段：岩棚位于两个洞穴 caves 之内。答案：caves。`},
-            {id:'Q9',no:9,answer:['stone'],explain:`第5段：约11,700年前开始用石头 stone 制斧。答案：stone。`},
-            {id:'Q10',no:10,answer:['bones'],explain:`第6段：依据出土的动物骨头 bones 判断食物。答案：bones。`},
-            {id:'Q11',no:11,answer:['beads'],explain:`第7段：发现的珠子 beads 与他岛所见相似。答案：beads。`},
-            {id:'Q12',no:12,answer:['pottery'],explain:`第9段：拥有陶器 pottery 及金银（金属）制品。答案：pottery。`},
-            {id:'Q13',no:13,answer:['spices'],explain:`第9段：参与香料 spices 的生产与贸易。答案：spices。`},
+            {id:'Q8',no:8,answer:['caves'],explain:`3họ: vách đá nhà kho nằm ở dùng trong caves bên trong. Đáp án: caves.`},
+            {id:'Q9',no:9,answer:['stone'],explain:`5họ: cân trong cân đĩa hoặc trên cân11,700 trước cuối năm Bắt đầu sử dụng đá stone hệ thống rìu nhỏ. Đáp án: stone.`},
+            {id:'Q10',no:10,answer:['bones'],explain:`6họ: dựa vào đào lên của động vật xương bones Đánh giá thực phẩm. Đáp án: bones.`},
+            {id:'Q11',no:11,answer:['beads'],explain:`7họ: để ý của ngọc trai beads biến thể của anh ấy biến thể của văn học điều mà một người thấy tương tự. Đáp án: beads.`},
+            {id:'Q12',no:12,answer:['pottery'],explain:`9họ: có đồ gốm pottery và vàng và bạc (kim loại) sản phẩm. Đáp án: pottery.`},
+            {id:'Q13',no:13,answer:['spices'],explain:`9họ: tham gia vào việc gì gia vị spices của sản xuất biến thể của giao dịch thương mại. Đáp án: spices.`},
           ]},
       ]},
 
@@ -329,10 +330,10 @@ const TEST = {
           instruction:'Reading Passage 2 has eight paragraphs, A–H. Which paragraph contains the following information? Write the correct letter, A–H, in the box next to each question.',
           box:{A:'',B:'',C:'',D:'',E:'',F:'',G:'',H:''},
           questions:[
-            {id:'Q14',no:14,q:`reference to the need to ensure that inhabitants of wetland regions continue to benefit from them`,answer:['G'],explain:`G段：McCartney 强调当地人须参与并有明确权利使用湿地、从中获益。 G。`},
-            {id:'Q15',no:15,q:`the proportion of wetlands which have already been lost`,answer:['A'],explain:`A段：自1990年以来全球半数湿地已消失。 A。`},
-            {id:'Q16',no:16,q:`reference to the idea that people are beginning to appreciate the value of wetlands`,answer:['H'],explain:`H段：McCartney 谨慎乐观——“Awareness of the importance of wetlands is growing”。 H。`},
-            {id:'Q17',no:17,q:`mention of the cultural significance of wetlands`,answer:['B'],explain:`B段：湿地对许多社区具有“religious, historical and archaeological value”（文化意义）。 B。〔注：你的答案表里此题写作 C，应为笔误——文化意义在 B 段，官方答案为 B。〕`},
+            {id:'Q14',no:14,q:`reference to the need to ensure that inhabitants of wetland regions continue to benefit from them`,answer:['G'],explain:`Ghọ: McCartney nhấn mạnh một tuyên bố địa phương người phải tham gia vào việc gì và có rõ ràng quyền lợi tức là quyền được hưởng điều gì đó sử dụng đất ngập nước, từ bên trong thu lợi từ việc gì. G.`},
+            {id:'Q15',no:15,q:`the proportion of wetlands which have already been lost`,answer:['A'],explain:`Ahọ: dạng kết hợp tự1990họ kể từ một sự kiện trước toàn thế giới một nửa số đất ngập nước đã biến mất. A.`},
+            {id:'Q16',no:16,q:`reference to the idea that people are beginning to appreciate the value of wetlands`,answer:['H'],explain:`Hhọ: McCartney cẩn thận lạc quan ——«Awareness of the importance of wetlands is growing». H.`},
+            {id:'Q17',no:17,q:`mention of the cultural significance of wetlands`,answer:['B'],explain:`Bhọ: đất ngập nước đúng nhiều cộng đồng có «religious, historical and archaeological value»(Văn hóa ý nghĩa). B.〔tiêm: bạn của Đáp án bên ngoài và bên trong này họ Viết C, họ Ưng làm với tư cách lỗi viết —— Văn hóa ý nghĩa tồn tại B họ, Đáp án chính thức làm với tư cách B.〕`},
           ]},
         { kind:'note', title:'Questions 18–22',
           instruction:'Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -344,11 +345,11 @@ const TEST = {
             {bullet:true, html:`Draining peatlands leads to <Q n="22">: a serious problem which can eventually result in coastal flooding and land loss.`},
           ],
           questions:[
-            {id:'Q18',no:18,answer:['carbon'],explain:`D段：排干后泥炭地由储碳变为“net carbon emitters”——释放碳。答案：carbon。`},
-            {id:'Q19',no:19,answer:['fires'],explain:`D段：清理泥炭地增加森林火灾 fires 风险。答案：fires。`},
-            {id:'Q20',no:20,answer:['biodiversity'],explain:`D段：高生物多样性 biodiversity 价值的泥炭林被毁。答案：biodiversity。`},
-            {id:'Q21',no:21,answer:['ditches'],explain:`E段：伐木公司挖沟渠 ditches 排水。答案：ditches。`},
-            {id:'Q22',no:22,answer:['subsidence'],explain:`E段：固体物质下沉，即“subsidence”（地面沉降）。答案：subsidence。`},
+            {id:'Q18',no:18,answer:['carbon'],explain:`Dhọ: một hàng biến thể cũ của họ than bùn trợ từ kết cấu: dùng trước động từ hoặc tính từ họ cacbon hoá học thay đổi thành «net carbon emitters»—— thả cacbon hoá học. Đáp án: carbon.`},
+            {id:'Q19',no:19,answer:['fires'],explain:`Dhọ: dọn dẹp than bùn trợ từ kết cấu: dùng trước động từ hoặc tính từ tăng rừng đám cháy lớn trong thành phố fires rủi ro. Đáp án: fires.`},
+            {id:'Q20',no:20,answer:['biodiversity'],explain:`Dhọ: họ đa dạng sinh học biodiversity giá trị của than bùn họ chăn phá hủy. Đáp án: biodiversity.`},
+            {id:'Q21',no:21,answer:['ditches'],explain:`Ehọ: chặt gỗ công ty đào kênh ditches thoát nước. Đáp án: ditches.`},
+            {id:'Q22',no:22,answer:['subsidence'],explain:`Ehọ: chất rắn chìm xuống, tức là«subsidence»(sàn lún xuống). Đáp án: subsidence.`},
           ]},
         { kind:'match', title:'Questions 23–26',
           instruction:'Look at the following statements and the list of experts below. Match each statement with the correct expert, A–D.',
@@ -356,10 +357,10 @@ const TEST = {
           box:{A:`Matthew McCartney`,B:`Pieter van Eijk`,C:`Marcel Silvius`,D:`Dave Tickner`},
           subTitle:'Statements',
           questions:[
-            {id:'Q23',no:23,q:`Communities living in wetland regions must be included in discussions about the future of these areas.`,answer:['A'],explain:`G段：McCartney——“local people are involved in wetland planning and decision making”。 A。`},
-            {id:'Q24',no:24,q:`Official policies towards wetlands vary from one nation to the next.`,answer:['C'],explain:`H段：Silvius——“Different governments have different attitudes”。 C。`},
-            {id:'Q25',no:25,q:`People cause harm to wetlands without having any intention to do so.`,answer:['D'],explain:`F段：Tickner——“never met anybody who wanted to damage a wetland… effects simply come from people trying to make a living”。 D。`},
-            {id:'Q26',no:26,q:`Initiatives to reverse environmental damage need not be complex.`,answer:['B'],explain:`C段：van Eijk——“It can be as simple as planting a few trees per hectare”。 B。`},
+            {id:'Q23',no:23,q:`Communities living in wetland regions must be included in discussions about the future of these areas.`,answer:['A'],explain:`Ghọ: McCartney——«local people are involved in wetland planning and decision making». A.`},
+            {id:'Q24',no:24,q:`Official policies towards wetlands vary from one nation to the next.`,answer:['C'],explain:`Hhọ: Silvius——«Different governments have different attitudes». C.`},
+            {id:'Q25',no:25,q:`People cause harm to wetlands without having any intention to do so.`,answer:['D'],explain:`Fhọ: Tickner——«never met anybody who wanted to damage a wetland… effects simply come from people trying to make a living». D.`},
+            {id:'Q26',no:26,q:`Initiatives to reverse environmental damage need not be complex.`,answer:['B'],explain:`Chọ: van Eijk——«It can be as simple as planting a few trees per hectare». B.`},
           ]},
       ]},
 
@@ -384,10 +385,10 @@ const TEST = {
         { kind:'mcq', title:'Questions 27–30',
           instruction:'Choose the correct letter, A, B, C or D.',
           questions:[
-            {id:'Q27',no:27,q:`What does the reader learn about the conversation in the first paragraph?`,options:{A:`The speakers are communicating in different languages.`,B:`Neither of the speakers is familiar with their environment.`,C:`The topic of the conversation is difficult for both speakers.`,D:`Aspects of the conversation are challenging for both speakers.`},answer:['D'],explain:`第1段：噪音、嘈杂的电话线、近万公里的距离使双方交流都很吃力。 D。`},
-            {id:'Q28',no:28,q:`What assists the electronic translator during lectures at Karlsruhe Institute of Technology?`,options:{A:`the repeated content of lectures`,B:`the students' reading skills`,C:`the languages used`,D:`the lecturers' technical ability`},answer:['A'],explain:`第2段：讲师“say much the same thing each year”——内容重复有助于翻译。 A。`},
-            {id:'Q29',no:29,q:`When referring to The Hitchhiker's Guide to the Galaxy, the writer suggests that`,options:{A:`the Babel fish was considered undesirable at the time.`,B:`this book was not seriously intending to predict the future.`,C:`artificial speech translation was not a surprising development.`,D:`some speech translation techniques are better than others.`},answer:['C'],explain:`第3段：像可挂墙的平板电视一样，语音翻译是人们早已梦想、如今成真之物——其出现并不令人意外。 C。`},
-            {id:'Q30',no:30,q:`What does the writer say about sharing earpieces?`,options:{A:`It is something people will get used to doing.`,B:`The reluctance to do this is understandable.`,C:`The equipment will be unnecessary in the future.`,D:`It is something few people need to worry about.`},answer:['B'],explain:`第5段：与陌生人共用耳机有心理障碍——“That can't have been totally unexpected”，即这种抗拒可理解。 B。`},
+            {id:'Q27',no:27,q:`What does the reader learn about the conversation in the first paragraph?`,options:{A:`The speakers are communicating in different languages.`,B:`Neither of the speakers is familiar with their environment.`,C:`The topic of the conversation is difficult for both speakers.`,D:`Aspects of the conversation are challenging for both speakers.`},answer:['D'],explain:`1họ: tiếng ầm ĩ, ồn ào của dây điện thoại, gần dùng trong kilômét của khoảng cách khiến song phương trao đổi họ phó từ mức độ đòi hỏi nỗ lực vất vả. D.`},
+            {id:'Q28',no:28,q:`What assists the electronic translator during lectures at Karlsruhe Institute of Technology?`,options:{A:`the repeated content of lectures`,B:`the students' reading skills`,C:`the languages used`,D:`the lecturers' technical ability`},answer:['A'],explain:`2họ: người hướng dẫn «say much the same thing each year»—— Nội dung Lặp lại góp phần vào Dịch thuật. A.`},
+            {id:'Q29',no:29,q:`When referring to The Hitchhiker's Guide to the Galaxy, the writer suggests that`,options:{A:`the Babel fish was considered undesirable at the time.`,B:`this book was not seriously intending to predict the future.`,C:`artificial speech translation was not a surprising development.`,D:`some speech translation techniques are better than others.`},answer:['C'],explain:`3họ: giống tiền tố có thể biến thể của của tấm truyền hình giống, âm thanh lời nói Dịch thuật là chỉ theo sau bởi danh từ mọi người đã từ lâu bóng mơ ước, ngày nay trở thành sự thật hình thức kết hợp vật——của anh ấy xuất hiện hoàn toàn không khiến cho một người làm gì đó bất ngờ. C.`},
+            {id:'Q30',no:30,q:`What does the writer say about sharing earpieces?`,options:{A:`It is something people will get used to doing.`,B:`The reluctance to do this is understandable.`,C:`The equipment will be unnecessary in the future.`,D:`It is something few people need to worry about.`},answer:['B'],explain:`5họ: biến thể của người lạ dùng chung tai nghe có ý định kết cấu rào cản ——«That can't have been totally unexpected», tức là loại này kháng cự tiền tố có thể lĩnh hội. B.`},
           ]},
         { kind:'match', title:'Questions 31–34', noBox:false,
           instruction:'Complete each sentence with the correct ending, A–F, below. Write the correct letter, A–F, in the box next to each question.',
@@ -395,59 +396,59 @@ const TEST = {
           box:{A:`but there are concerns about this.`,B:`as systems do not need to conform to standard practices.`,C:`but they are far from perfect.`,D:`despite the noise issues.`,E:`because translation is immediate.`,F:`and have an awareness of good manners.`},
           subTitle:'Sentence beginnings',
           questions:[
-            {id:'Q31',no:31,q:`Speech translation methods are developing fast in Japan`,answer:['C'],explain:`第6段：日本语音翻译已起步，但“There is still a long way to go”——远未完美。 C。`},
-            {id:'Q32',no:32,q:`TV interviews that use translation voiceover methods are successful`,answer:['E'],explain:`第6段：理想系统应像电视上盖过受访政客的同声传译那样即时。 E（因翻译即时）。`},
-            {id:'Q33',no:33,q:`Future translation systems should address people appropriately`,answer:['F'],explain:`第7段：系统须具社交意识、以得体方式称呼他人，尊重礼仪。 F（具备良好礼仪意识）。`},
-            {id:'Q34',no:34,q:`Users may be able to maintain their local customs`,answer:['B'],explain:`第7段：系统可帮助保留本地习俗、减缓国际英语习惯（如直呼其名）的蔓延——无需遵循统一惯例。 B。`},
+            {id:'Q31',no:31,q:`Speech translation methods are developing fast in Japan`,answer:['C'],explain:`6họ: Nhật Bản âm thanh lời nói Dịch thuật đã bắt đầu, nhưng«There is still a long way to go»——tự tạo khoảng cách văn cổ chưa hoàn hảo. C.`},
+            {id:'Q32',no:32,q:`TV interviews that use translation voiceover methods are successful`,answer:['E'],explain:`6họ: một lý tưởng hệ thống họ Ưng giống truyền hình dùng trong họ họ được phỏng vấn chính trị gia của phiên dịch đồng thời loại đó ngay lập tức. E(biến thể cũ của Dịch thuật ngay lập tức).`},
+            {id:'Q33',no:33,q:`Future translation systems should address people appropriately`,answer:['F'],explain:`7họ: hệ thống phải công cụ tương tác ý thức, biến thể cũ của thích hợp với hoàn cảnh cách thức gọi người khác, tôn kính phép tắc. F(có tốt phép tắc ý thức).`},
+            {id:'Q34',no:34,q:`Users may be able to maintain their local customs`,answer:['B'],explain:`7họ: hệ thống tiền tố có thể Trợ giúp giữ địa phương phong tục, làm chậm quốc tế tiếng Anh thói quen (như thành ngữ gọi trực tiếp tên ai đó)của mở rộng —— không cần thiết tuân theo 7-Eleven chuỗi cửa hàng tiện lợi quy ước. B.`},
           ]},
         { kind:'tfng', title:'Questions 35–40',
           variant:'yn',
           instruction:'Do the following statements agree with the views of the writer in Reading Passage 3? Write YES if the statement agrees with the views of the writer, NO if the statement contradicts the views of the writer, NOT GIVEN if it is impossible to say what the writer thinks about this.',
           questions:[
-            {id:'Q35',no:35,q:`Language translation systems will be seen as very useful throughout the academic and professional worlds.`,answer:['NO'],explain:`第8段：“Professors and other professionals will not outsource language awareness to software”——专业人士不会把语言能力外包给软件，与题干矛盾。 NO。`},
-            {id:'Q36',no:36,q:`The overall value of automated translation to family life is yet to be shown.`,answer:['YES'],explain:`第8段：“Whether it will help people conduct their family lives or relationships is open to question”。 YES。`},
-            {id:'Q37',no:37,q:`Automated translation could make life more difficult for immigrant families.`,answer:['NO'],explain:`第8段：作者认为它反而“could overcome the language barriers… after migration”——帮助移民家庭，而非使其更难。 NO。`},
-            {id:'Q38',no:38,q:`Visual aspects of language translation are being considered by scientists.`,answer:['NOT GIVEN'],explain:`文中提到口型不匹配，但未说科学家正在研究翻译的“视觉”方面。 NOT GIVEN。`},
-            {id:'Q39',no:39,q:`International scientists have found English easier to translate into other languages than Latin.`,answer:['NOT GIVEN'],explain:`末段只说英语取代拉丁语成为通用语，未比较二者翻译难易。 NOT GIVEN。`},
-            {id:'Q40',no:40,q:`As far as language is concerned, there is a difference between people's social and practical needs.`,answer:['YES'],explain:`末段：“the practical need for a common language will diminish, the social value of sharing one will persist”——社交需求与实用需求确有区别。 YES。`},
+            {id:'Q35',no:35,q:`Language translation systems will be seen as very useful throughout the academic and professional worlds.`,answer:['NO'],explain:`8họ: «Professors and other professionals will not outsource language awareness to software»—— một chuyên gia không có khả năng cầm khả năng ngôn ngữ thuê ngoài cung cấp phần mềm máy tính, biến thể của họ biến thể cũ của mâu thuẫn. NO.`},
+            {id:'Q36',no:36,q:`The overall value of automated translation to family life is yet to be shown.`,answer:['YES'],explain:`8họ: «Whether it will help people conduct their family lives or relationships is open to question». YES.`},
+            {id:'Q37',no:37,q:`Automated translation could make life more difficult for immigrant families.`,answer:['NO'],explain:`8họ: tác giả nhận ra làm với tư cách nó ngược lại «could overcome the language barriers… after migration»—— Trợ giúp nhập cư gia đình, và viết tắt của khiến của anh ấy thay đổi hoặc thay thế khó để. NO.`},
+            {id:'Q38',no:38,q:`Visual aspects of language translation are being considered by scientists.`,answer:['NOT GIVEN'],explain:`họ hình thức kết hợp Trung Quốc đề cập miệng khuôn không Ghép nối, nhưng chưa thuyết phục nhà khoa học đang ở thời điểm đó nghiên cứu Dịch thuật của« thị giác » khía cạnh. NOT GIVEN.`},
+            {id:'Q39',no:39,q:`International scientists have found English easier to translate into other languages than Latin.`,answer:['NOT GIVEN'],explain:`phần đoạn cuối chỉ thuyết phục tiếng Anh thay thế tiếng Latin trở thành ngôn ngữ chung, chưa So sánh cả hai Dịch thuật độ khó. NOT GIVEN.`},
+            {id:'Q40',no:40,q:`As far as language is concerned, there is a difference between people's social and practical needs.`,answer:['YES'],explain:`phần đoạn cuối: «the practical need for a common language will diminish, the social value of sharing one will persist»—— tương tác yêu cầu biến thể của thực tế yêu cầu biến thể của có sự khác biệt. YES.`},
           ]},
       ]},
   ]
 };
 
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* Chính thức Học thuật loại Đọc đầu tiên phần(0-40) → IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần bảng so sánh */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
-   ============================================================ */
+, động cơ từ mượn 
+ ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* bìa của ấn phẩm thông tin */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} tờ bài viết · ${totalQs()} họ`;
 })();
 
-/* 模式弹窗 */
+/* chế độ cửa sổ pop-up tin học */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}(${allQs(p).length} họ)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'họ chọn'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('mời ít nhất Chọn một tờ bài viết.'); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -459,8 +460,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思19 · Test 3 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 19 · Test 3 — Đọc`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -473,11 +474,11 @@ function passageHtml(p){
     </div>`;
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
-      <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
-    </div><div class="reading-cols">${article}${qs}</div>`;
+ <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
+ <div class="sb-meta"> Gợi ý sử dụng biến thể cũ của cân trong cân đĩa hoặc trên cân 20 phút · hình thức kết hợp gốc tờ ${allQs(p).length} họ</div>
+ </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // cầm <Q n="x"> biến thể của vị trí thay thế họ đánh số huy hiệu + nhập khẩu khung ví dụ: khung cửa
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -520,11 +521,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> Chọn một họ(hình thức kết hợp gốc lắp ráp họ chọn ra Đúng của bàn nhỏ họ, trình tự không giới hạn)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn biến thể cũ của Điền khuyết: kho từ A–H + họ hình thức kết hợp Trung Quốc xuống kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -535,82 +536,82 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* đồng hồ bấm giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Thời gian đến, tự động Nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
-  const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
+ const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
 
 function confirmSubmit(){
-  let answered=0,total=0;
-  currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+ let answered=0,total=0;
+ currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
+ if(window.confirm(`đã trả lời ${answered}/${total} họ.\n rõ ràng Nộp bài và Xem Chấm bài Báo cáo thông tục gì??`)) submitTest();
 }
 function submitTest(){
-  if(submitted) return; submitted=true;
-  clearInterval(timerInterval);
-  document.getElementById('timer').classList.remove('show');
+ if(submitted) return; submitted=true;
+ clearInterval(timerInterval);
+ document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
-  const pairCorrect={};
-  currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
-  }));
+ /* trước xử lý multi ghép đôi họ(trình tự không giới hạn, không Lặp lại tính điểm) */
+ const pairCorrect={};
+ currentPaper.forEach(s=>s.groups.forEach(g=>{
+ if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+ }));
 
-  let correct=0,total=0; const detail=[];
-  currentPaper.forEach(s=>{
-    let sc=0; const items=[];
-    s.groups.forEach(g=>g.questions.forEach(q=>{
-      const ua=readAns(q); let ok;
-      if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
-      total++; if(ok){correct++;sc++;}
-      items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
-    }));
-    detail.push({s,sc,total:allQs(s).length,items});
-  });
+ let correct=0,total=0; const detail=[];
+ currentPaper.forEach(s=>{
+ let sc=0; const items=[];
+ s.groups.forEach(g=>g.questions.forEach(q=>{
+ const ua=readAns(q); let ok;
+ if(g.kind==='multi') ok=!!pairCorrect[q.id];
+ else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+ total++; if(ok){correct++;sc++;}
+ items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
+ }));
+ detail.push({s,sc,total:allQs(s).length,items});
+ });
 
-  const pct=total?Math.round(correct/total*100):0;
-  const band=lookupBand(correct,total);
-  const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
+ const pct=total?Math.round(correct/total*100):0;
+ const band=lookupBand(correct,total);
+ const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
 
-  document.getElementById('testArea').style.display='none';
-  document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思19 · Test 3 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
-  document.getElementById('resCorrect').textContent=`${correct}/${total}`;
-  document.getElementById('resPct').textContent=pct+'%';
-  document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
-  document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
-  setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
-  document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+ document.getElementById('testArea').style.display='none';
+ document.getElementById('resultArea').style.display='block';
+ document.getElementById('resTitle').textContent=' Cambridge IELTS 19 · Test 3 — Đọc ';
+ document.getElementById('resMeta').textContent=`${mode==='practice'?' Luyện tập chế độ ':' Thi thử chế độ '} · sử dụng biến thể cũ của ${fmt(elapsed)} · thì hoàn thành ngữ pháp giữa ${new Date().toLocaleString('zh-CN')}`;
+ document.getElementById('resCorrect').textContent=`${correct}/${total}`;
+ document.getElementById('resPct').textContent=pct+'%';
+ document.getElementById('resBand').textContent=band.toFixed(1);
+ document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
+ document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
+ setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
+ document.getElementById('bandNote').textContent = total===40
+? ' IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần nhấn Chính thức Học thuật loại Đọc 40 họ đầu tiên phần bảng so sánh chuyển đổi.'
+: `hình thức kết hợp gốc tiếp theo hầu như khảo sát ${total} họ, ước tính phần nhấn tỷ lệ chuyển đổi giữa các loại tiền tệ đến 40 họ họ áp dụng cái gì đó đã dùng trong ngữ cảnh khác Chính thức bảng so sánh; hoàn thành hình thức liên kết toàn bộ 3 tờ bài viết biến thể cũ của làm với tư cách chính xác chuyển đổi.`;
 
-  document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
-    const sp=d.total?Math.round(d.sc/d.total*100):0;
-    const rows=d.items.map(it=>{
-      const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+ document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
+ const sp=d.total?Math.round(d.sc/d.total*100):0;
+ const rows=d.items.map(it=>{
+ const cls=it.ok?'correct':'wrong';
+ const yours=it.ua?`bạn của Đáp án: <span class="yours">${it.ua}</span>　`:`<span class="yours"> Chưa trả lời </span> `;
+ return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} ${it.q.no} họ</div>
+ <div class="ra">${it.ok?'<span class="correctv"> trả lời Đúng </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
-        <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} họ Đúng ${sp}%</span></div></div>
+ <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
 }
@@ -624,7 +625,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Kết quả đồng bộ (Trung tâm Học tập tự động Thêm, không thay đổi họ Chấm bài logic từ mượn) ===== */
 (function(){
   var posted=false;
   function report(){

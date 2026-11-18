@@ -1,8 +1,8 @@
-# 全球大学排行榜（优益思达）
+# toàn thế giớiĐại họcbảng xếp hạng(YYSD)
 
-Next.js 应用，挂载于 `youyisida.com/rankings`（`basePath: /rankings`，端口 3002）。
+Next.js đưa vào sử dụng,tin học gắn kếthọ `youyisida.com/rankings`(`basePath: /rankings`,giao diện 3002).
 
-## 本地开发
+## địa phươngkhai thác tài nguyên
 
 ```bash
 cd rankings
@@ -12,16 +12,16 @@ npm run seed
 npm run dev
 ```
 
-打开 http://localhost:3002/rankings
+mở http://localhost:3002/rankings
 
-## 数据
+## dữ liệu
 
-- `npm run seed`：策展 THE/ARWU/US News + 合并 `data/raw/qs-official` 的 QS 真表 → 导入 SQLite
-- `npm run fetch:qs`：用 Chrome 从 TopUniversities 抓 QS World + 优先学科（各榜最多前 500）
-- `npm run build:qs`：仅重跑官方 JSON → editions 合并
-- 一期 QS 已换官网公开表；THE / 软科 / US News 仍为可替换策展数据
+- `npm run seed`:làm giám tuyển THE/ARWU/US News + biến thể của `data/raw/qs-official`  QS thật bề mặt bên ngoài → giới thiệu vào SQLite
+- `npm run fetch:qs`:sử dụng Chrome biến thể của TopUniversities bắt QS World + có ưu tiênmôn học(mỗi thông báo hoặc thông tritối đatrước 500)
+- `npm run build:qs`:hầu như lặp lại động vật cào mặt đấtChính thức JSON → editions biến thể của
+- một biến thể của QS đã trao đổitrang web chính thứcmởbề mặt bên ngoài;THE / mềm ngành học / US News vẫn làm với tư cách tiền tố có thểthay thếlàm giám tuyểndữ liệu
 
-## 检查
+## kiểm tra
 
 ```bash
 npm run check

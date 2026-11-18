@@ -1,92 +1,92 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>管理员注册 · 学习平台</title>
+  <title>người quản lý Đăng ký · học nền tảng</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722polish">
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="home-minimal teacher-auth-page">
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>学习平台</b>
+          <b>học nền tảng</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <a href="index.html">返回学生端</a>
-        <a href="teacher-login.html" id="nav-login-link">教师登录</a>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <a href="index.html">Quay lại Học viên cuối</a>
+        <a href="teacher-login.html" id="nav-login-link">Giáo viên Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="介绍">
+      <aside class="auth-aside reveal" aria-label="giới thiệu ai với ai">
         <div class="auth-aside__logo" aria-hidden="true">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
         </div>
-        <span class="auth-aside__eyebrow" id="aside-eyebrow">教师注册</span>
-        <h2 class="auth-aside__title" id="aside-title">注册教师账号<br>管理教学事务</h2>
-        <p class="auth-aside__desc" id="aside-desc">使用机构提供的教师注册密钥完成注册。登录后可查看学生成绩、布置练习。</p>
+        <span class="auth-aside__eyebrow" id="aside-eyebrow">Giáo viên Đăng ký</span>
+        <h2 class="auth-aside__title" id="aside-title">Đăng ký Giáo viên Tài khoản<br>giám sát dạy như một giáo sư chính trị</h2>
+        <p class="auth-aside__desc" id="aside-desc">sử dụng cơ chế đề nghị Giáo viên Đăng ký khóa mật mã Hoàn thành Đăng ký. Đăng nhập họ tiền tố có thể Xem Học viên Kết quả, sắp xếp Luyện tập.</p>
         <ul class="auth-aside__points" id="aside-points">
-          <li>机构密钥注册</li>
-          <li>学生成绩汇总</li>
-          <li>布置练习任务</li>
+          <li>cơ chế khóa mật mã Đăng ký</li>
+          <li>Học viên Kết quả biến thể của</li>
+          <li>sắp xếp Luyện tập Nhiệm vụ</li>
         </ul>
       </aside>
       <section class="auth-card reveal">
         <div class="auth-tabs">
-          <a class="auth-tabs__item" href="teacher-login.html" id="tab-login-link">登录</a>
-          <span class="auth-tabs__item is-active">注册</span>
+          <a class="auth-tabs__item" href="teacher-login.html" id="tab-login-link">Đăng nhập</a>
+          <span class="auth-tabs__item is-active">Đăng ký</span>
         </div>
-        <h1 class="auth-card__title" id="card-title">教师注册</h1>
-        <p class="auth-card__desc" id="card-desc">请向机构管理员获取教师注册密钥。</p>
+        <h1 class="auth-card__title" id="card-title">Giáo viên Đăng ký</h1>
+        <p class="auth-card__desc" id="card-desc">mời họ cơ chế người quản lý giành được Giáo viên Đăng ký khóa mật mã.</p>
 
         <form class="auth-form" id="register-form" novalidate>
           <label class="auth-field" id="role-field" hidden>
-            <span>注册身份</span>
+            <span>Đăng ký nhân dạng</span>
             <select id="reg-role">
-              <option value="teacher">老师</option>
-              <option value="org_admin">本校管理员</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="org_admin">hình thức kết hợp gốc kiểm tra người quản lý</option>
             </select>
           </label>
           <label class="auth-field">
-            <span>姓名（可选）</span>
-            <input type="text" id="name" autocomplete="name" maxlength="40" placeholder="便于识别，如：王老师">
+            <span>họ và tên (có sẵn)</span>
+            <input type="text" id="name" autocomplete="name" maxlength="40" placeholder="dễ dàng để phân biệt, như: họ Giáo viên">
           </label>
           <label class="auth-field">
-            <span>手机号</span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位中国大陆手机号" required>
+            <span>Số điện thoại</span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 vị trí Trung Quốc Trung Quốc đại lục nhắc đến CHND Trung Hoa điện thoại di động gầm" required>
           </label>
           <label class="auth-field" id="key-field">
-            <span id="key-label">教师注册密钥</span>
-            <input type="password" id="teacher-key" autocomplete="off" placeholder="机构提供的专属密钥">
+            <span id="key-label">Giáo viên Đăng ký khóa mật mã</span>
+            <input type="password" id="teacher-key" autocomplete="off" placeholder="cơ chế đề nghị thuộc về hoặc dành riêng cho khóa mật mã">
           </label>
           <label class="auth-field">
-            <span>设置密码</span>
-            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="至少 6 位" required>
+            <span>Cài đặt Mật khẩu</span>
+            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="ít nhất 6 vị trí" required>
           </label>
           <label class="auth-field">
-            <span>确认密码</span>
-            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="再次输入密码" required>
+            <span>Xác nhận Mật khẩu</span>
+            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="một lần nữa nhập khẩu Mật khẩu" required>
           </label>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable" id="submit-btn">注册并进入教师端</button>
+          <button type="submit" class="btn btn--primary btn--block pressable" id="submit-btn">Đăng ký cùng tiến triển tham gia một tôn giáo họ cuối</button>
         </form>
 
-        <p class="auth-legal">
-          已有账号？<a href="teacher-login.html" id="foot-login-link">去登录</a>
+        <p class="auth-legal">đã có Tài khoản?<a href="teacher-login.html" id="foot-login-link">đi Đăng nhập</a>
         </p>
       </section>
     </div>
@@ -128,14 +128,14 @@
 
     function setupInvite(d) {
       var org = d.org || {};
-      var name = org.name || "本校";
-      document.getElementById("card-title").textContent = "管理员注册";
+      var name = org.name || "hình thức kết hợp gốc kiểm tra";
+      document.getElementById("card-title").textContent = "người quản lý Đăng ký";
       document.getElementById("card-desc").textContent =
-        "您正在注册「" + name + "」的管理员账号。设置密码后即可管理本校师生。";
-      document.getElementById("aside-title").innerHTML = "成为" + name + "<br>管理员";
-      document.getElementById("aside-desc").textContent = "无需教师密钥。完成注册后请妥善保管密码。";
+        "bạn đang ở thời điểm đó Đăng ký «" + name + "» người quản lý Tài khoản. Cài đặt Mật khẩu họ là xong giám sát hình thức kết hợp gốc kiểm tra giáo viên và học sinh.";
+      document.getElementById("aside-title").innerHTML = "trở thành" + name + "<br> người quản lý";
+      document.getElementById("aside-desc").textContent = "không cần thiết Giáo viên khóa mật mã. Hoàn thành Đăng ký họ mời thích hợp giữ gìn Mật khẩu.";
       document.getElementById("aside-eyebrow").textContent = name;
-      document.getElementById("submit-btn").textContent = "完成注册并进入";
+      document.getElementById("submit-btn").textContent = "Hoàn thành Đăng ký cùng tiến triển đi vào";
       document.getElementById("key-field").hidden = true;
       document.getElementById("teacher-key").required = false;
       if (d.invite && d.invite.phoneFull) {
@@ -156,22 +156,22 @@
       });
       document.getElementById("role-field").hidden = false;
       document.getElementById("teacher-key").required = true;
-      document.getElementById("card-title").textContent = "工作人员注册";
+      document.getElementById("card-title").textContent = "nhân viên Đăng ký";
       document.getElementById("card-desc").textContent =
-        "向学校索取注册密钥，选择身份后完成注册。";
-      document.getElementById("aside-eyebrow").textContent = "工作人员";
-      document.getElementById("aside-title").innerHTML = "密钥注册";
+        "họ trường học hỏi Đăng ký khóa mật mã, Chọn nhân dạng họ Hoàn thành Đăng ký.";
+      document.getElementById("aside-eyebrow").textContent = "nhân viên";
+      document.getElementById("aside-title").innerHTML = "khóa mật mã Đăng ký";
       document.getElementById("aside-desc").textContent =
-        "老师或管理员使用对应密钥注册；登录统一使用 login 页。";
+        "Giáo viên có thể người quản lý sử dụng tương ứng với khóa mật mã Đăng ký; Đăng nhập 7-Eleven chuỗi cửa hàng tiện lợi sử dụng login đầu.";
       document.getElementById("aside-points").innerHTML =
-        "<li>注册密钥</li><li>手机号 + 密码登录</li><li>成绩与任务管理</li>";
-      document.getElementById("key-label").textContent = "注册密钥";
-      document.getElementById("teacher-key").placeholder = "注册密钥";
+        "<li> Đăng ký khóa mật mã </li><li> điện thoại di động gầm + Mật khẩu Đăng nhập </li><li> Kết quả Nhiệm vụ giám sát </li>";
+      document.getElementById("key-label").textContent = "Đăng ký khóa mật mã";
+      document.getElementById("teacher-key").placeholder = "Đăng ký khóa mật mã";
     } else if (inviteToken && A && A.api) {
       A.api("/api/tenant/invite/" + encodeURIComponent(inviteToken))
         .then(setupInvite)
         .catch(function (e) {
-          showMsg(e.message || "邀请无效");
+          showMsg(e.message || "mời không hợp lệ");
           form.querySelectorAll("input,button").forEach(function (el) { el.disabled = true; });
         });
     } else {
@@ -197,7 +197,7 @@
       T.api("/api/teacher/register", { method: "POST", body: body })
         .then(function (d) {
           if (d.alreadyRegistered) {
-            showMsg(d.message || "请直接登录", true);
+            showMsg(d.message || "mời trực tiếp Đăng nhập", true);
             setTimeout(function () {
               location.href = tenantMode ? tenantLoginUrl : "teacher-login.html";
             }, 1200);

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元14 · 态度与观点">
-    <meta name="exam:description" content="写作专项词汇 · 通用词汇 · 态度与观点">
+    <meta name="exam:title" content="Bài 14 · Thái độ Quan điểm">
+    <meta name="exam:description" content="Viết chuyên biệt Từ vựng · Dùng chung Từ vựng · Thái độ Quan điểm">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元14 · 态度与观点</title>
+    <title>Bài 14 · Thái độ Quan điểm</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -140,132 +140,133 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">💡</div><span>单元14-通用词汇-态度与观点</span></div>
+        <div class="logo"><div class="logo-icon">💡</div><span>Bài 14-Dùng chung Từ vựng -Thái độ Quan điểm</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng 30 câu</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi Chọn<br>chọnĐúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích họ viếtTiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọntừ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:ghép đôi Chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạnnhập khẩu</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 通用词汇 · 态度与观点 · 28个核心词条 ====================
+// ==================== Dùng chung Từ vựng · Thái độ biến thể của Quan điểm · 28dùng trong lõi mục từ điển ====================
 const phraseData = [
-    // —— 肯定与否定（7个） ——
-    { cn:'毫无疑问', en:'Undoubtedly', word:'Undoubtedly', synonym:'Definitely', target:'undoubtedly', detail:'undoubtedly 表示“毫无疑问”，用于表达非常肯定的观点。', example:'Undoubtedly, education is the key to success.' },
-    { cn:'显然', en:'Obviously', word:'Obviously', synonym:'Clearly', target:'obviously', detail:'obviously 表示“显然”，用于表达不言而喻的事实。', example:'Obviously, technology has changed our lives.' },
-    { cn:'确实', en:'Indeed', word:'Indeed', synonym:'Truly', target:'indeed', detail:'indeed 表示“确实、的确”，用于强调某个观点。', example:'The problem is indeed serious and needs immediate attention.' },
-    { cn:'不确定', en:'Uncertain', word:'Uncertain', synonym:'Unsure', target:'uncertain', detail:'uncertain 表示“不确定的”，指对某事没有把握。', example:'The future of the industry remains uncertain.' },
-    { cn:'可疑的', en:'Doubtful', word:'Doubtful', synonym:'Questionable', target:'doubtful', detail:'doubtful 表示“可疑的、令人怀疑的”，指不太可能或不可信。', example:'It is doubtful whether the plan will be successful.' },
-    { cn:'明显的', en:'Apparent', word:'Apparent', synonym:'Obvious', target:'apparent', detail:'apparent 表示“明显的、显而易见的”，指很容易看到或理解。', example:'It is apparent that climate change is a serious problem.' },
-    { cn:'毋庸置疑', en:'There is no doubt that', word:'Doubt', synonym:'Certainty', target:'doubt', detail:'there is no doubt that 表示“毋庸置疑”，后接从句。', example:'There is no doubt that technology has improved our lives.' },
+    // —— chắc chắn liệu có hay không ở cuối một câu cố định(7dùng trong) ——
+    { cn:'chắc chắn', en:'Undoubtedly', word:'Undoubtedly', synonym:'Definitely', target:'undoubtedly', detail:'undoubtedly về ai đó bày tỏ « chắc chắn », sử dụng trong diễn đạt rất chắc chắn của Quan điểm.', example:'Undoubtedly, education is the key to success.' },
+    { cn:'rõ ràng', en:'Obviously', word:'Obviously', synonym:'Clearly', target:'obviously', detail:'obviously về ai đó bày tỏ « rõ ràng », sử dụng trong diễn đạt không cần nói cũng hiểu của sự thật.', example:'Obviously, technology has changed our lives.' },
+    { cn:'thực sự', en:'Indeed', word:'Indeed', synonym:'Truly', target:'indeed', detail:'indeed về ai đó bày tỏ « thực sự, thực sự », sử dụng trong nhấn mạnh một tuyên bố một vài dùng trong Quan điểm.', example:'The problem is indeed serious and needs immediate attention.' },
+    { cn:'không rõ ràng', en:'Uncertain', word:'Uncertain', synonym:'Unsure', target:'uncertain', detail:'uncertain về ai đó bày tỏ «không rõ ràng của», ngón tay đúng một việc nào đó không có nắm bắt cũng nghĩa bóng.', example:'The future of the industry remains uncertain.' },
+    { cn:'đáng ngờ của', en:'Doubtful', word:'Doubtful', synonym:'Questionable', target:'doubtful', detail:'doubtful về ai đó bày tỏ « đáng ngờ của, khiến cho một người làm gì đó nghi ngờ điều gì của», ngón tay không cao nhất có thể xảy ra có thể không thể thư.', example:'It is doubtful whether the plan will be successful.' },
+    { cn:'rõ ràng của', en:'Apparent', word:'Apparent', synonym:'Obvious', target:'apparent', detail:'apparent về ai đó bày tỏ « rõ ràng của, rõ ràng và dễ thấy thành ngữ của», ngón tay phó từ mức độ dễ dàng nhìn thấy có thể lĩnh hội.', example:'It is apparent that climate change is a serious problem.' },
+    { cn:'không cần phải nghi ngờ', en:'There is no doubt that', word:'Doubt', synonym:'Certainty', target:'doubt', detail:'there is no doubt that về ai đó bày tỏ « không cần phải nghi ngờ », họ nhận mệnh đề.', example:'There is no doubt that technology has improved our lives.' },
 
-    // —— 强调（4个） ——
-    { cn:'强调', en:'Emphasise', word:'Emphasise', synonym:'Stress', target:'emphasise', detail:'emphasise 表示“强调”，指对某事物给予特别关注。', example:'The teacher emphasised the importance of practice.' },
-    { cn:'尤其', en:'Particularly', word:'Particularly', synonym:'Especially', target:'particularly', detail:'particularly 表示“尤其、特别”，用于突出某事物。', example:'This problem is particularly serious in developing countries.' },
-    { cn:'特别地', en:'Especially', word:'Especially', synonym:'Particularly', target:'especially', detail:'especially 表示“特别地、尤其是”，强调某事物的重要性。', example:'Young people, especially, are affected by social media.' },
-    { cn:'极其', en:'Extremely', word:'Extremely', synonym:'Highly', target:'extremely', detail:'extremely 表示“极其、非常”，用于加强形容词或副词的程度。', example:'The situation is extremely urgent.' },
+    // —— nhấn mạnh một tuyên bố (4dùng trong) ——
+    { cn:'nhấn mạnh một tuyên bố', en:'Emphasise', word:'Emphasise', synonym:'Stress', target:'emphasise', detail:'emphasise về ai đó bày tỏ « nhấn mạnh một tuyên bố », ngón tay đúng một việc nào đó hình thức kết hợp vật văn viết cho khác thường chú ý đến.', example:'The teacher emphasised the importance of practice.' },
+    { cn:'đặc biệt', en:'Particularly', word:'Particularly', synonym:'Especially', target:'particularly', detail:'particularly về ai đó bày tỏ « đặc biệt, khác thường », sử dụng trong nổi bật một việc nào đó hình thức kết hợp vật.', example:'This problem is particularly serious in developing countries.' },
+    { cn:'khác thường trợ từ kết cấu: dùng trước động từ hoặc tính từ', en:'Especially', word:'Especially', synonym:'Particularly', target:'especially', detail:'especially về ai đó bày tỏ « khác thường trợ từ kết cấu: dùng trước động từ hoặc tính từ, đặc biệt », nhấn mạnh một tuyên bố một việc nào đó hình thức kết hợp vật của tầm quan trọng.', example:'Young people, especially, are affected by social media.' },
+    { cn:'cực kỳ', en:'Extremely', word:'Extremely', synonym:'Highly', target:'extremely', detail:'extremely về ai đó bày tỏ « cực kỳ, rất », sử dụng trong củng cố tính từ có thể trạng từ của mức độ.', example:'The situation is extremely urgent.' },
 
-    // —— 可能性（4个） ——
-    { cn:'可能', en:'Probably', word:'Probably', synonym:'Likely', target:'probably', detail:'probably 表示“可能”，指有很大的可能性。', example:'The government will probably increase taxes.' },
-    { cn:'不太可能', en:'Unlikely', word:'Unlikely', synonym:'Improbable', target:'unlikely', detail:'unlikely 表示“不太可能”，指可能性很小。', example:'It is unlikely that the problem will be solved quickly.' },
-    { cn:'也许', en:'Perhaps', word:'Perhaps', synonym:'Maybe', target:'perhaps', detail:'perhaps 表示“也许”，用于表达不太确定的可能性。', example:'Perhaps we should consider other options.' },
-    { cn:'有可能', en:'It is possible that', word:'Possible', synonym:'Conceivable', target:'possible', detail:'it is possible that 表示“有可能”，后接从句。', example:'It is possible that the economy will recover next year.' },
+    // —— khả năng (4dùng trong) ——
+    { cn:'Có thể', en:'Probably', word:'Probably', synonym:'Likely', target:'probably', detail:'probably về ai đó bày tỏ « có thể xảy ra », ngón tay có phó từ mức độ của khả năng.', example:'The government will probably increase taxes.' },
+    { cn:'không cao nhất có thể xảy ra', en:'Unlikely', word:'Unlikely', synonym:'Improbable', target:'unlikely', detail:'unlikely về ai đó bày tỏ «không cao nhất có thể xảy ra », ngón tay khả năng phó từ mức độ nhỏ.', example:'It is unlikely that the problem will be solved quickly.' },
+    { cn:'có lẽ', en:'Perhaps', word:'Perhaps', synonym:'Maybe', target:'perhaps', detail:'perhaps về ai đó bày tỏ « có lẽ », sử dụng trong diễn đạt không cao nhất rõ ràng của khả năng.', example:'Perhaps we should consider other options.' },
+    { cn:'có thể', en:'It is possible that', word:'Possible', synonym:'Conceivable', target:'possible', detail:'it is possible that về ai đó bày tỏ « có thể », họ nhận mệnh đề.', example:'It is possible that the economy will recover next year.' },
 
-    // —— 个人观点（6个） ——
-    { cn:'在我看来', en:'From my perspective', word:'Perspective', synonym:'Viewpoint', target:'perspective', detail:'from my perspective 表示“在我看来”，引出个人观点。', example:'From my perspective, online learning is more efficient.' },
-    { cn:'我认为', en:'I believe that', word:'Believe', synonym:'Think', target:'believe', detail:'I believe that 表示“我认为”，引出个人信念。', example:'I believe that education is the key to solving poverty.' },
-    { cn:'我主张', en:'I argue that', word:'Argue', synonym:'Contend', target:'argue', detail:'I argue that 表示“我认为、我主张”，用于提出论点。', example:'I argue that technology has more benefits than drawbacks.' },
-    { cn:'我支持', en:'I support the view that', word:'Support', synonym:'Advocate', target:'support', detail:'I support the view that 表示“我支持...的观点”。', example:'I support the view that all children should receive quality education.' },
-    { cn:'我反对', en:'I oppose the idea that', word:'Oppose', synonym:'Object to', target:'oppose', detail:'I oppose the idea that 表示“我反对...的观点”。', example:'I oppose the idea that grades are the only measure of success.' },
-    { cn:'在我看来（替换）', en:'In my opinion', word:'Opinion', synonym:'View', target:'opinion', detail:'in my opinion 表示“在我看来”，最常见的观点表达。', example:'In my opinion, everyone should have access to education.' },
+    // —— cá nhân Quan điểm (6dùng trong) ——
+    { cn:'theo ý tôi', en:'From my perspective', word:'Perspective', synonym:'Viewpoint', target:'perspective', detail:'from my perspective về ai đó bày tỏ « theo ý tôi », rút ra cá nhân Quan điểm.', example:'From my perspective, online learning is more efficient.' },
+    { cn:'tôi nhận ra làm với tư cách', en:'I believe that', word:'Believe', synonym:'Think', target:'believe', detail:'I believe that về ai đó bày tỏ «tôi nhận ra làm với tư cách», rút ra cá nhân niềm tin.', example:'I believe that education is the key to solving poverty.' },
+    { cn:'tôi ủng hộ', en:'I argue that', word:'Argue', synonym:'Contend', target:'argue', detail:'I argue that về ai đó bày tỏ «tôi nhận ra làm với tư cách, tôi ủng hộ », sử dụng trong nêu vấn đề lập luận.', example:'I argue that technology has more benefits than drawbacks.' },
+    { cn:'tôi tán thành', en:'I support the view that', word:'Support', synonym:'Advocate', target:'support', detail:'I support the view that về ai đó bày tỏ «tôi tán thành...của Quan điểm ».', example:'I support the view that all children should receive quality education.' },
+    { cn:'tôi phản đối', en:'I oppose the idea that', word:'Oppose', synonym:'Object to', target:'oppose', detail:'I oppose the idea that về ai đó bày tỏ «tôi phản đối...của Quan điểm ».', example:'I oppose the idea that grades are the only measure of success.' },
+    { cn:'theo ý tôi (thay thế)', en:'In my opinion', word:'Opinion', synonym:'View', target:'opinion', detail:'in my opinion về ai đó bày tỏ « theo ý tôi », biến thể của thường thấy của Quan điểm diễn đạt.', example:'In my opinion, everyone should have access to education.' },
 
-    // —— 客观性（4个） ——
-    { cn:'客观地', en:'Objectively', word:'Objectively', synonym:'Impartially', target:'objectively', detail:'objectively 表示“客观地”，指不带偏见地看待问题。', example:'We must look at the problem objectively.' },
-    { cn:'主观的', en:'Subjective', word:'Subjective', synonym:'Personal', target:'subjective', detail:'subjective 表示“主观的”，指受个人看法影响。', example:'Judging art is highly subjective.' },
-    { cn:'从...角度', en:'From the perspective of', word:'Perspective', synonym:'Angle', target:'perspective', detail:'from the perspective of 表示“从...角度”，用于限定分析视角。', example:'From the perspective of teachers, the new policy is beneficial.' },
-    { cn:'中立', en:'Neutral', word:'Neutral', synonym:'Impartial', target:'neutral', detail:'neutral 表示“中立的”，指不偏袒任何一方。', example:'The journalist should remain neutral when reporting the news.' },
+    // —— tính khách quan (4dùng trong) ——
+    { cn:'khách quan trợ từ kết cấu: dùng trước động từ hoặc tính từ', en:'Objectively', word:'Objectively', synonym:'Impartially', target:'objectively', detail:'objectively về ai đó bày tỏ « khách quan trợ từ kết cấu: dùng trước động từ hoặc tính từ», ngón tay không có thành kiến trợ từ kết cấu: dùng trước động từ hoặc tính từ nhìn nhận câu hỏi.', example:'We must look at the problem objectively.' },
+    { cn:'chủ quan của', en:'Subjective', word:'Subjective', synonym:'Personal', target:'subjective', detail:'subjective về ai đó bày tỏ « chủ quan của», ngón tay nhận cá nhân cách nhìn ảnh hưởng.', example:'Judging art is highly subjective.' },
+    { cn:'biến thể của... góc', en:'From the perspective of', word:'Perspective', synonym:'Angle', target:'perspective', detail:'from the perspective of về ai đó bày tỏ «biến thể của... góc », sử dụng trong hạn chế phân tích góc độ quan sát một vật.', example:'From the perspective of teachers, the new policy is beneficial.' },
+    { cn:'trung lập', en:'Neutral', word:'Neutral', synonym:'Impartial', target:'neutral', detail:'neutral về ai đó bày tỏ « trung lập của», ngón tay không để lộ một bên vai bất kỳ một bên trong hợp đồng hoặc vụ kiện pháp lý.', example:'The journalist should remain neutral when reporting the news.' },
 
-    // —— 态度与立场（3个） ——
-    { cn:'赞同', en:'In favour of', word:'Favour', synonym:'Support', target:'favour', detail:'in favour of 表示“赞同、支持”，指持肯定态度。', example:'Many people are in favour of stricter gun control laws.' },
-    { cn:'反对', en:'Be against', word:'Against', synonym:'Oppose', target:'against', detail:'be against 表示“反对”，指持否定态度。', example:'Some people are against the construction of a new airport.' },
-    { cn:'矛盾的', en:'Ambivalent', word:'Ambivalent', synonym:'Mixed', target:'ambivalent', detail:'ambivalent 表示“矛盾的”，指对某事同时有正反两种看法。', example:'Many people feel ambivalent about the use of AI in daily life.' }
+    // —— Thái độ biến thể của lập trường (3dùng trong) ——
+    { cn:'tán thành', en:'In favour of', word:'Favour', synonym:'Support', target:'favour', detail:'in favour of về ai đó bày tỏ « tán thành, tán thành », ngón tay cầm chắc chắn Thái độ.', example:'Many people are in favour of stricter gun control laws.' },
+    { cn:'phản đối', en:'Be against', word:'Against', synonym:'Oppose', target:'against', detail:'be against về ai đó bày tỏ « phản đối », ngón tay cầm phủ định Thái độ.', example:'Some people are against the construction of a new airport.' },
+    { cn:'mâu thuẫn của', en:'Ambivalent', word:'Ambivalent', synonym:'Mixed', target:'ambivalent', detail:'ambivalent về ai đó bày tỏ « mâu thuẫn của», ngón tay đúng một việc nào đó đồng thời có tích cực và tiêu cực hạt cách nhìn.', example:'Many people feel ambivalent about the use of AI in daily life.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 28');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 28');
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi Chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn Đúng Tiếng Anh ghép đôi', 'thích họ viết Tiếng Anh cụm từ ngữ pháp', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // Giai đoạn một: ghép đôi Chọn (10họ)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -276,26 +277,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `«${p.cn}» của Đúng Tiếng Anh diễn đạt là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng ghép đôi là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // Giai đoạn: đánh vần (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra «${p.cn}» của Tiếng Anh cụm từ ngữ pháp:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng đánh vần là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // Giai đoạn họ: đồng nghĩa thay thế (10họ)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -320,10 +321,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của có thể thay thế Câu hình thức kết hợp Trung Quốc dải gạch dưới _ của biến thể cũ của?<br>«${sentenceDisplay}»`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${p.synonym}», là chỉ theo sau bởi danh từ «${p.word}» của từ đồng nghĩa.${p.detail}`
         });
     });
 
@@ -335,7 +336,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -372,7 +373,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -414,22 +415,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-phrase">${p.en}</span></div>
-                <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
-            </div>
-            <div><span class="word-meaning-cn">${p.cn}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-phrase">${p.en}</span></div>
+ <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
+ </div>
+ <div><span class="word-meaning-cn">${p.cn}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${p.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -450,7 +450,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -470,14 +470,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả 30họ!');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -507,10 +507,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -531,24 +531,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu Tiếng Anh cụm từ ngữ pháp...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 From my perspective）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống (như From my perspective)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung ví dụ: khung cửa: nhấn Enter không Nộp bài, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển cho mục đích cụ thể submitAnswer(), ngăn chặn nhầm lỗi chạm Nộp bài
             }
         });
     } else {
@@ -592,7 +592,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu Tiếng Anh cụm từ ngữ pháp!');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -613,7 +613,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh Đúng! đánh vần biến thể cũ của chữ hoa và chữ thường họ Đúng.' : '❌ đánh vần có nhầm lỗi, mời Xem bên dưới của so sánh.';
 
         results.push({
             question: q.question,
@@ -624,14 +624,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -652,7 +652,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -663,7 +663,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -674,7 +674,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -687,11 +687,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -700,16 +698,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -729,7 +727,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

@@ -1,7 +1,7 @@
-# 模考区 / 剑桥真题
+# Thi thửhọ / kiếm hai lưỡi cầuĐề thi thật
 
-**剑桥雅思真题（听力 + 阅读）放这里。**
+**Cambridge IELTSĐề thi thật(Nghe + Đọc)đặtbiến thể của.**
 
-- 板块：🎯 模考区 (mock) / 科目：剑桥真题 (cambridge)
-- 每套真题是一个 HTML（含听力/阅读、section 选择、自动批改、预估分），连同它的音频 MP3 一起上传到本文件夹。
-- 文件按名称自然排序（剑15 Test 1、Test 2…）。
+- tấm:🎯 Thi thửhọ (mock) / môn học:kiếm hai lưỡi cầuĐề thi thật (cambridge)
+- mỗi che đậyĐề thi thậtlà chỉ theo sau bởi danh từ một dùng trong HTML(ngậm trong miệngNghe/Đọc,section Chọn,tự độngChấm bài,ước tínhphần),cùng vớinóAudio MP3 ở cùng một nơiTải lênđếnvăn bản nàymón ép từ hai phía.
+- tài liệunhấntên của một sự vậtThiên nhiênSắp xếp(Cambridge 15 Test 1,Test 2…).

@@ -76,9 +76,9 @@
         "research",
         "there"
       ],
-      "analysis": "正确顺序：Will you be presenting your research there?",
+      "analysis": "Đúng trình tự:Will you be presenting your research there?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -144,9 +144,9 @@
         "varsity",
         "team"
       ],
-      "analysis": "正确顺序：He asked me to try out for the varsity team.",
+      "analysis": "Đúng trình tự:He asked me to try out for the varsity team.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -202,9 +202,9 @@
         "with",
         "everyone"
       ],
-      "analysis": "正确顺序：Yes, I had a wonderful time with everyone.",
+      "analysis": "Đúng trình tự:Yes, I had a wonderful time with everyone.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -255,9 +255,9 @@
         "research",
         "topic"
       ],
-      "analysis": "正确顺序：She asked me about my research topic.",
+      "analysis": "Đúng trình tự:She asked me about my research topic.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -313,9 +313,9 @@
         "debate",
         "club"
       ],
-      "analysis": "正确顺序：I am thinking about joining the debate club.",
+      "analysis": "Đúng trình tự:I am thinking about joining the debate club.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -366,9 +366,9 @@
         "the",
         "gathering"
       ],
-      "analysis": "正确顺序：What should I bring to the gathering?",
+      "analysis": "Đúng trình tự:What should I bring to the gathering?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -424,9 +424,9 @@
         "methodology",
         "section"
       ],
-      "analysis": "正确顺序：He said we should revise the methodology section.",
+      "analysis": "Đúng trình tự:He said we should revise the methodology section.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -482,9 +482,9 @@
         "to",
         "Thursday"
       ],
-      "analysis": "正确顺序：She said the lecture will move to Thursday.",
+      "analysis": "Đúng trình tự:She said the lecture will move to Thursday.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -545,9 +545,9 @@
         "the",
         "dorm"
       ],
-      "analysis": "正确顺序：He was complaining about the noise in the dorm.",
+      "analysis": "Đúng trình tự:He was complaining about the noise in the dorm.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -593,16 +593,16 @@
         "food at",
         "the"
       ],
-      "analysis": "正确顺序：Do you know if there will be food at theevent?",
+      "analysis": "Đúng trình tự:Do you know if there will be food at theevent?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Yoga Class Schedule",
-      "titleZh": "瑜伽课时间",
+      "titleZh": "yoga từ mượn tiết học giữa",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently joined a new yoga class at your local community center. The instructor, Mr. Davis, has been very welcoming and helpful. However, you find the class schedule inconvenient and would prefer if the classes were held at a different time that fits better with your daily routine.",
       "bullets": [
@@ -613,14 +613,14 @@
       "to": "Mr. Davis",
       "subject": "Yoga Class Schedule Change",
       "sample": "Dear Mr. Davis,\n\nThank you for your support and guidance in the community-center yoga class. You have made the sessions welcoming, and I have already learned a great deal from your instruction.\n\nThe current class time is difficult for me to keep. I finish work at 5:30 p.m., and the evening session starts before I can reach the center, so I have already missed two meetings. I am worried that I will fall behind if the schedule stays the same.\n\nWould it be possible to offer a later evening class, perhaps at 7:00 p.m., or a weekend morning option? I have spoken with two other participants who would also prefer one of those times. I would be grateful for your thoughts and happy to help collect other students' availability.\n\nThank you again for your teaching.\n\nBest regards,\n[Your Name]",
-      "analysis": "邮件需覆盖三点：感谢指导、说明现有时间不便、提出更合适的备选时间。称呼 Mr. Davis。"
+      "analysis": "thư từ yêu cầuche phủ họ điểm:bày tỏ cảm ơn hướng dẫn,Giải thích hiện có Thời gian bất tiện,nêu vấn đề thay đổi hoặc thay thếthích hợp phương án thay thế kế hoạch Thời gian.gọi Mr. Davis."
     },
     {
       "type": "discussion",
       "module": 3,
       "id": 12,
       "title": "Fast Fashion",
-      "titleZh": "快时尚",
+      "titleZh": "thời trang",
       "class": "Economics",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {
@@ -638,7 +638,7 @@
         }
       ],
       "sample": "I agree with Andrew that stronger legal accountability is the most effective solution to the problems created by fast fashion. Consumer preferences can influence companies, but voluntary change is often uneven because firms still have an incentive to keep prices low. A government could require large clothing brands to disclose factory conditions, reduce hazardous waste, and finance collection programs for unwanted garments. For example, if every major retailer had to accept used clothing and report how much material was recycled, companies would have a reason to design products that last longer and are easier to reuse. Kelly is right that consumer demand matters, but customers cannot verify every supply chain on their own. Clear standards would give shoppers reliable information and ensure that responsible companies are not placed at a cost disadvantage.",
-      "analysis": "需表态并回应对方。较好答法：法律问责更有效，消费者压力有用但不足以核实供应链。"
+      "analysis": "yêu cầutuyên bố lập trường vàphản hồi người kia.tốt hơn hình thức gắn liền có nghĩa giống như từ tự do biến thể của:pháp luật truy cứu trách nhiệm thay đổi hoặc thay thếhiệu quả,người tiêu dùng áp lực hữu ích nhưngkhông đủ biến thể cũ củaxác minh chuỗi cung ứng."
     }
   ]
 }

@@ -7,8 +7,8 @@
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.addEventListener("click", function () { T.logout(); });
 
-  var LEVEL = { high_school: "高中", cet4: "四级", ielts: "雅思" };
-  var RATING = { excellent: "优秀", good: "良好", weak: "需加强" };
+  var LEVEL = { high_school: "trường trung học phổ thông", cet4: "cấp 4", ielts: "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế" };
+  var RATING = { excellent: "xuất sắc", good: "tốt", weak: "yêu cầucủng cố" };
   var students = [];
 
   function esc(s) {
@@ -38,20 +38,20 @@
     });
 
     if (!rows.length) {
-      root.innerHTML = '<p class="diag-lead">暂无诊断数据。</p>';
+      root.innerHTML = '<p class="diag-lead">tạm thời không cóchẩn đoándữ liệu.</p>';
       return;
     }
 
     root.innerHTML =
       '<table class="diag-table"><thead><tr>' +
-      "<th>学生</th><th>高中</th><th>四级</th><th>雅思</th><th>推荐起始</th><th>最近测试</th>" +
+      "<th>Học viên</th><th>trường trung học phổ thông</th><th>cấp 4</th><th>IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế</th><th>đề xuấtbắt nguồn</th><th>gần đâyBài kiểm tra</th>" +
       "</tr></thead><tbody>" +
       rows
         .map(function (s) {
           var name = s.displayName || s.phone || "#" + s.id;
           var when = s.tested_at
             ? new Date(s.tested_at).toLocaleString("zh-CN")
-            : "未测";
+            : "chưa khảo sát";
           return (
             '<tr class="' +
             (s.alert ? "is-alert" : "") +
@@ -79,7 +79,7 @@
   function renderHot(words) {
     if (!hotRoot) return;
     if (!words || !words.length) {
-      hotRoot.innerHTML = '<p class="diag-lead">班级暂无未掌握错词。</p>';
+      hotRoot.innerHTML = '<p class="diag-lead">lớp học nhóm học sinhtạm thời không có chưaThành thạohọ biến thể cũ của.</p>';
       return;
     }
     var max = words[0].cnt || 1;
@@ -129,7 +129,7 @@
         renderHot((res[1] && res[1].words) || []);
       })
       .catch(function (e) {
-        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "加载失败") + "</p>";
+        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "Tải thất bại") + "</p>";
         if (hotRoot) hotRoot.innerHTML = "";
       });
   }

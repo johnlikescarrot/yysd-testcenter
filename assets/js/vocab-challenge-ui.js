@@ -1,4 +1,4 @@
-/* vocab-challenge-ui.js — 闯关 hub + A→D quiz + 错题本练习 */
+/* vocab-challenge-ui.js — xông qua rào cản hub + A→D quiz + Sổ lỗi saiLuyện tập */
 (function () {
   "use strict";
   var Y = window.YYSD;
@@ -121,7 +121,7 @@
   }
 
   function isRealCn(s) {
-    return !!(s && s.indexOf("暂无释义") < 0 && /[\u4e00-\u9fff]/.test(s));
+    return !!(s && s.indexOf("tạm thời không cóNghĩa") < 0 && /[\u4e00-\u9fff]/.test(s));
   }
 
   function mergeOptionBank(extra) {
@@ -254,8 +254,8 @@
     root.innerHTML =
       '<div class="vl-app">' +
         '<div class="vl-top-bar">' +
-          '<div class="vl-brand">优益思达 · <span>单词闯关</span></div>' +
-          '<div class="vl-list-badge">' + esc(badge || "闯关") + "</div>" +
+          '<div class="vl-brand">YYSD · <span>Thử thách từ vựng</span></div>' +
+          '<div class="vl-list-badge">' + esc(badge || "xông qua rào cản") + "</div>" +
           (opts.showLives ? '<div class="vl-lives" id="lives">' + livesHtml + "</div>" : "") +
         "</div>" +
         '<div class="vl-info-row">' +
@@ -277,36 +277,36 @@
   }
 
   function phaseLabel(phase) {
-    if (phase === "new_words") return "新词测试";
-    if (phase === "retest") return "错词重测";
-    if (phase === "makeup") return "补考循环";
-    if (phase === "scheduled_review") return "复习检测";
+    if (phase === "new_words") return "cách diễn đạt mớiBài kiểm tra";
+    if (phase === "retest") return "họ biến thể cũ của lặp lại khảo sát";
+    if (phase === "makeup") return "thi bổ sungtuần hoàn";
+    if (phase === "scheduled_review") return "Ôn tậpphát hiện";
     return phase || "";
   }
 
   function taskStatusLabel(st, inProgress) {
-    if (st === "completed") return "已通过";
-    if (st === "failed") return "需重测";
-    if (st === "pending") return inProgress ? "闯关中" : "待做";
+    if (st === "completed") return "đãđi qua";
+    if (st === "failed") return "yêu cầu lặp lại khảo sát";
+    if (st === "pending") return inProgress ? "xông qua rào cảnhình thức kết hợp Trung Quốc" : "ở lại làm";
     return st || "";
   }
 
   function taskTypeLabel(t) {
-    return t === "review" ? "复习抽测" : "新词";
+    return t === "review" ? "Ôn tậprút ra khảo sát" : "cách diễn đạt mới";
   }
 
   function stageChipSub(plan) {
     if (!plan) return "—";
     var parts = [];
     if (plan.new) parts.push("L" + plan.new);
-    if (plan.reviews && plan.reviews.length) parts.push("复" + plan.reviews.join(","));
+    if (plan.reviews && plan.reviews.length) parts.push("đi rồi quay lại" + plan.reviews.join(","));
     return parts.join("·") || "—";
   }
 
   function stageStatusLabel(st) {
-    if (st === "completed") return "已过";
-    if (st === "current") return "本关";
-    return "锁";
+    if (st === "completed") return "đã";
+    if (st === "current") return "hình thức kết hợp gốc họ";
+    return "khóa";
   }
 
   function stageGridHtml(stagesData, progressDay) {
@@ -321,15 +321,15 @@
           var attrs = s.practiceable
             ? (' data-stage="' + s.stage + '" tabindex="0" role="button"')
             : "";
-          return '<div class="' + cls + '"' + attrs + ' title="第 ' + s.stage + " 关 · " +
+          return '<div class="' + cls + '"' + attrs + ' title=" ' + s.stage + " họ · " +
             esc(stageChipSub(s.plan)) + '">' +
             "<span>" + s.stage + "</span>" +
             "<small>" + esc(stageStatusLabel(s.status)) + "</small>" +
             "</div>";
         }).join("") +
       "</div>" +
-      '<p class="vc-meta vc-stage-hint">共 ' + (stagesData.totalStages || stages.length) +
-        " 关 · 点击<strong>已过</strong>的关卡可自主重练（不影响进度）</p>"
+      '<p class="vc-meta vc-stage-hint"> ' + (stagesData.totalStages || stages.length) +
+        " họ · nhấn<strong>đã</strong>trạm kiểm soát về thuếtiền tố có thểđộc lậplặp lại luyện tập(khôngảnh hưởngTiến độ)</p>"
     );
   }
 
@@ -349,15 +349,15 @@
     panel.hidden = false;
     panel.innerHTML =
       '<div class="vc-stage-panel-head">' +
-        "<strong>第 " + stage + " 关 · 已通过</strong>" +
-        '<button type="button" class="vc-stage-panel-close" id="vc-stage-close" aria-label="关闭">×</button>' +
+        "<strong> " + stage + " họ · đãđi qua</strong>" +
+        '<button type="button" class="vc-stage-panel-close" id="vc-stage-close" aria-label="Đóng">×</button>' +
       "</div>" +
-      '<p class="vc-meta">' + esc(stageChipSub(info.plan)) + " · 选择要重练的任务</p>" +
+      '<p class="vc-meta">' + esc(stageChipSub(info.plan)) + " · Chọnhình thức kết hợp yêu cầu lặp lại luyện tậpNhiệm vụ</p>" +
       '<div class="vc-stage-panel-actions">' +
         info.tasks.map(function (t) {
           return '<button type="button" class="vl-btn vl-btn-sm vc-stage-practice" data-list="' + t.listNo +
             '" data-type="' + esc(t.taskType) + '" data-stage="' + stage + '">' +
-            "List " + t.listNo + " · " + taskTypeLabel(t.taskType) + " 练习</button>";
+            "List " + t.listNo + " · " + taskTypeLabel(t.taskType) + " Luyện tập</button>";
         }).join("") +
       "</div>";
     document.getElementById("vc-stage-close").onclick = function () { renderStagePanel(null, null); };
@@ -376,17 +376,17 @@
 
   function formatReviewStages(stages) {
     if (!stages || !stages.length) return "—";
-    return stages.map(function (d) { return "第 " + d + " 关"; }).join("、");
+    return stages.map(function (d) { return " " + d + " họ"; }).join(",");
   }
 
   function ebbinghausIntroHtml(plan, progressDay, todayPlan) {
     if (!plan || !plan.dayRows) {
-      return noticesHtml(["艾宾浩斯闯关：每关先新词（5 命 · 18 秒）→ 复习（20 题 · 3 命）。"]);
+      return noticesHtml(["họ khách mời to lớn phiên âmxông qua rào cản:mỗi họ trướccách diễn đạt mới(5 sinh mệnh · 18 giây)→ Ôn tập(20 câu · 3 sinh mệnh)."]);
     }
     progressDay = Math.floor(Number(progressDay) || 0) || 1;
     var stageNew = todayPlan && todayPlan.new ? ("List " + todayPlan.new) : "—";
     var stageRev = todayPlan && todayPlan.reviews && todayPlan.reviews.length
-      ? todayPlan.reviews.map(function (n) { return "List " + n; }).join("、")
+      ? todayPlan.reviews.map(function (n) { return "List " + n; }).join(",")
       : "—";
 
     var listNos = Object.keys(plan.listIndex).sort(function (a, b) {
@@ -400,56 +400,56 @@
           cls = " is-today";
         }
       }
-      return '<tr class="' + cls + '"><td>List ' + no + "</td><td>第 " + (li.newDay || "—") +
-        " 关</td><td>" + formatReviewStages(li.reviewDays) + "</td></tr>";
+      return '<tr class="' + cls + '"><td>List ' + no + "</td><td> " + (li.newDay || "—") +
+        " họ</td><td>" + formatReviewStages(li.reviewDays) + "</td></tr>";
     }).join("");
 
     var dayRows = plan.dayRows.map(function (row) {
       var cls = row.day === progressDay ? " is-today" : "";
-      var newPart = row.new ? ("新 List " + row.new) : "—";
+      var newPart = row.new ? ("viết tắt của Tân Cương List " + row.new) : "—";
       var revPart = row.reviews.length
-        ? row.reviews.map(function (r) { return "L" + r; }).join("、")
+        ? row.reviews.map(function (r) { return "L" + r; }).join(",")
         : "—";
-      return '<tr class="' + cls + '"><td>第 ' + row.day + " 关</td><td>" + newPart +
+      return '<tr class="' + cls + '"><td> ' + row.day + " họ</td><td>" + newPart +
         "</td><td>" + revPart + "</td></tr>";
     }).join("");
 
     return (
       '<details class="vc-ebb-intro">' +
         '<summary class="vc-ebb-intro-sum">' +
-          '<span class="vc-ebb-intro-title">艾宾浩斯科学闯关</span>' +
-          '<span class="vc-ebb-intro-teaser">结合记忆曲线安排新词与复习 · 点击展开规则与 ' +
-            plan.totalDays + " 关完整计划</span>" +
+          '<span class="vc-ebb-intro-title">họ khách mời to lớn phiên âmKhoa họcxông qua rào cản</span>' +
+          '<span class="vc-ebb-intro-teaser">kết hợpGhi nhớđường congsắp xếpcách diễn đạt mớiÔn tập · nhấnmở raquy tắc ' +
+            plan.totalDays + " họhoàn chỉnhkế hoạch</span>" +
         "</summary>" +
         '<div class="vc-ebb-intro-body">' +
-          '<p class="vc-ebb-intro-lead">本闯关将<strong>艾宾浩斯遗忘曲线</strong>拆成 <strong>' + plan.totalDays +
-            " 关</strong>学习任务：在新词学习后的关键节点自动安排复习，帮助你在正确的时间巩固记忆。</p>" +
-          '<p class="vc-ebb-intro-note">关数按你<strong>完成任务的进度</strong>推进，与日历日期无关；进度快的话，一天内可以连续完成多关。</p>' +
+          '<p class="vc-ebb-intro-lead">hình thức kết hợp gốcxông qua rào cảnsẽ<strong>họ khách mời to lớn phiên âmQuênđường cong</strong>xé mở họ <strong>' + plan.totalDays +
+            " họ</strong>họcNhiệm vụ:tồn tạicách diễn đạt mớihọchọđiểm mấu chốtđiểm núttự độngsắp xếpÔn tập,Trợ giúpbạn tồn tạiĐúngThời giancủng cốGhi nhớ.</p>" +
+          '<p class="vc-ebb-intro-note">họ đếm nhấn bạn<strong>Hoàn thànhNhiệm vụTiến độ</strong>thúc đẩy,lịchngày thángkhông liên quan;Tiến độnếu đứng sau mệnh đề điều kiện,một ngày bên trongcó thểLiên tiếpHoàn thànhnhiều họ.</p>' +
           '<ul class="vc-ebb-rules">' +
-            "<li><strong>每关顺序</strong>：先完成本关<strong>新词闯关</strong>，再做本关<strong>复习检测</strong>。</li>" +
-            "<li><strong>新词检测</strong>：听发音 → 选中文义 → 拼写英文；<strong>5 命</strong>，每题 <strong>18 秒</strong>；错词当场重测至全对。</li>" +
-            "<li><strong>复习检测</strong>：从已学 List 抽 <strong>20 题</strong>（错题加权）；<strong>3 命</strong>；通过后写入抽测池。</li>" +
-            "<li><strong>整体节奏</strong>：" + plan.totalLists + " 个 List 分散在 <strong>" + plan.totalDays +
-              " 关</strong>中完成；越往后复习任务越多，请保持学习节奏。</li>" +
+            "<li><strong>mỗi họtrình tự</strong>:trướcHoàn thànhhình thức kết hợp gốc họ<strong>cách diễn đạt mớixông qua rào cản</strong>,lại làm hình thức kết hợp gốc họ<strong>Ôn tậpphát hiện</strong>.</li>" +
+            "<li><strong>cách diễn đạt mớiphát hiện</strong>:cười cổ đạiPhát âm → lựa chọnhọ họ → đánh vầnTiếng Anh;<strong>5 sinh mệnh</strong>,mỗi họ <strong>18 giây</strong>;họ biến thể cũ củatại hiện trườnglặp lại khảo sát đến họ đúng.</li>" +
+            "<li><strong>Ôn tậpphát hiện</strong>:biến thể của đã học List rút ra <strong>20 câu</strong>(Câu saitoán thêm trọng số);<strong>3 sinh mệnh</strong>;đi quahọ viết đi vào rút ra khảo sát họ.</li>" +
+            "<li><strong>thực thể toàn bộnhịp điệu</strong>:" + plan.totalLists + " dùng trong List phân tántồn tại <strong>" + plan.totalDays +
+              " họ</strong>hình thức kết hợp Trung QuốcHoàn thành;vượttừ bây giờÔn tậpNhiệm vụvượt nhiều,mờigiữhọcnhịp điệu.</li>" +
           "</ul>" +
           '<div class="vc-ebb-today-plan">' +
-            "<strong>你当前进度：第 " + progressDay + " 关</strong>" +
-            " · 本关新词 " + stageNew + " · 本关复习 " + stageRev +
+            "<strong>bạnthời điểm hiện tạiTiến độ: " + progressDay + " họ</strong>" +
+            " · hình thức kết hợp gốc họcách diễn đạt mới " + stageNew + " · hình thức kết hợp gốc họÔn tập " + stageRev +
           "</div>" +
           '<details class="vc-ebb-sub">' +
-            '<summary>按 List 查看：每个 List 的新词关与复习关</summary>' +
+            '<summary>nhấn List Xem:mỗi dùng trong List cách diễn đạt mớihọÔn tậphọ</summary>' +
             '<div class="vc-ebb-scroll">' +
               '<table class="vc-ebb-table">' +
-                "<thead><tr><th>List</th><th>新词关</th><th>复习关</th></tr></thead>" +
+                "<thead><tr><th>List</th><th>cách diễn đạt mớihọ</th><th>Ôn tậphọ</th></tr></thead>" +
                 "<tbody>" + listRows + "</tbody>" +
               "</table>" +
             "</div>" +
           "</details>" +
           '<details class="vc-ebb-sub">' +
-            '<summary>按关查看：' + plan.totalDays + " 关完整任务表</summary>" +
+            '<summary>nhấn họXem:' + plan.totalDays + " họhoàn chỉnhNhiệm vụbề mặt bên ngoài</summary>" +
             '<div class="vc-ebb-scroll vc-ebb-scroll--tall">' +
               '<table class="vc-ebb-table">' +
-                "<thead><tr><th>进度关</th><th>本关新词</th><th>本关复习 List</th></tr></thead>" +
+                "<thead><tr><th>Tiến độhọ</th><th>hình thức kết hợp gốc họcách diễn đạt mới</th><th>hình thức kết hợp gốc họÔn tập List</th></tr></thead>" +
                 "<tbody>" + dayRows + "</tbody>" +
               "</table>" +
             "</div>" +
@@ -462,12 +462,12 @@
   function setQuizCounter() {
     var el = document.getElementById("vc-counter");
     if (!el) return;
-    var n = (session.idx + 1) + "</strong> / " + session.words.length + " · 剩余生命 " + session.lives;
+    var n = (session.idx + 1) + "</strong> / " + session.words.length + " · Còn lạisự sống như đặc trưng của sinh vật " + session.lives;
     if (session.phase === "practice") {
-      el.innerHTML = "第 <strong>" + n;
+      el.innerHTML = " <strong>" + n;
       return;
     }
-    el.innerHTML = phaseLabel(session.phase) + " · 第 <strong>" + n;
+    el.innerHTML = phaseLabel(session.phase) + " ·  <strong>" + n;
   }
 
   function updateLives() {
@@ -555,7 +555,7 @@
     var gate = window.YYSD_IME_GATE;
     var isPractice = session.phase === "practice";
     if (!gate || !gate.showCheat) {
-      alert("多次切换中文输入法，本次测试已作废。");
+      alert("nhiều lầnchuyển đổiTiếng Trungphương pháp nhập,hình thức kết hợp gốc tiếp theoBài kiểm trađãtrở nên không hiệu lực.");
       location.href = isPractice ? "vocab-challenge.html?view=notebook" : "vocab-challenge.html";
       return;
     }
@@ -622,7 +622,7 @@
   // ---- hub ----
 
   function renderHub() {
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>加载进度…</div>', "进度");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>TảiTiến độ…</div>', "Tiến độ");
     Promise.all([
       A.api("/api/vocab-challenge/me" + bookQs()),
       A.api("/api/vocab-challenge/lists" + bookQs()).catch(function (e) { return e; })
@@ -630,19 +630,19 @@
       var me = pair[0];
       var lists = pair[1];
       if (!me || !me.ok) {
-        shell('<p class="vs-empty">加载失败，请刷新重试。</p>', "错误");
+        shell('<p class="vs-empty">Tải thất bại,mờiLàm mớithử lại.</p>', "Lỗi");
         return;
       }
       if (!me.assigned) {
         shell(
-          '<p class="vc-notice vc-notice--warn">老师尚未为你布置闯关词册。布置后即可从 List 1 开始逐级解锁。</p>' +
-          '<div class="vc-actions"><a class="vl-btn" href="zone.html?zone=study">返回单词区</a></div>',
-          "待布置"
+          '<p class="vc-notice vc-notice--warn">Giáo viênchưalàm với tư cách bạnsắp xếpxông qua rào cảnbiến thể cũ của sách.sắp xếphọtương đương vớibiến thể của List 1 Bắt đầuhình thức kết hợp theo đuổi cấpmở khóa.</p>' +
+          '<div class="vc-actions"><a class="vl-btn" href="zone.html?zone=study">Quay lạiKhu vực Từ vựng</a></div>',
+          "ở lạisắp xếp"
         );
         return;
       }
       if (me.needsBook) {
-        var picker = '<p class="vc-notice">老师为你布置了多本闯关词册，请选择一本进入：</p>' +
+        var picker = '<p class="vc-notice">Giáo viênlàm với tư cách bạnsắp xếpnhiều hình thức kết hợp gốcxông qua rào cảnbiến thể cũ của sách,mờiChọnmột hình thức kết hợp gốcđi vào:</p>' +
           '<div class="vc-actions">' +
           (me.assignments || []).map(function (a) {
             return '<a class="vl-btn vl-btn-primary" href="vocab-challenge.html?book=' +
@@ -650,14 +650,14 @@
           }).join("") +
           "</div>";
         if (bookParam) {
-          shell('<p class="vc-notice vc-notice--warn">该词册尚未布置。</p>' + picker, "选词册");
+          shell('<p class="vc-notice vc-notice--warn">từ nàysáchchưasắp xếp.</p>' + picker, "chọn biến thể cũ của sách");
         } else {
-          shell(picker, "选词册");
+          shell(picker, "chọn biến thể cũ của sách");
         }
         return;
       }
       if (!lists || !lists.ok) {
-        shell('<p class="vs-empty">' + esc((lists && (lists.error || lists.message)) || "无法加载 List") + "</p>", "错误");
+        shell('<p class="vs-empty">' + esc((lists && (lists.error || lists.message)) || "không thểTải List") + "</p>", "Lỗi");
         return;
       }
       var prog = lists.progress || me.progress || {};
@@ -675,8 +675,8 @@
         if (l.todayRole === "new") cls += " is-today-new";
         if (l.todayRole === "review") cls += " is-today-review";
         if (l.todayStatus === "completed") cls += " is-done-today";
-        var sub = l.cleared || l.clearedNew ? "已通" : l.todayRole === "new" ? "本关新" :
-          l.todayRole === "review" ? "本关复习" : l.unlocked ? "已学" : "锁";
+        var sub = l.cleared || l.clearedNew ? "đã đi qua" : l.todayRole === "new" ? "hình thức kết hợp gốc họ viết tắt của Tân Cương" :
+          l.todayRole === "review" ? "hình thức kết hợp gốc họÔn tập" : l.unlocked ? "đã học" : "khóa";
         return '<div class="' + cls + '"><span>L' + l.listNo + "</span>" +
           "<small>" + sub + "</small></div>";
       }).join("");
@@ -701,21 +701,21 @@
       var todayHtml = "";
       if (isEbb) {
         if (programComplete) {
-          todayHtml = '<p class="vc-notice">艾宾浩斯 ' +
+          todayHtml = '<p class="vc-notice">họ khách mời to lớn phiên âm ' +
             (((lists.ebbinghausPlan && lists.ebbinghausPlan.totalDays) || (prog.totalDays) || 78)) +
-            " 关计划已全部完成。错题本仍可练习。</p>";
+            " họkế hoạchđãTất cảHoàn thành.Sổ lỗi saivẫn tiền tố có thểLuyện tập.</p>";
         } else {
           todayHtml =
             '<section class="vc-day-card">' +
-              '<h2 class="vc-day-title">第 ' + displayProgressDay(progressDay, programComplete) + " 关 · 本关任务</h2>" +
-              '<p class="vc-meta">先完成新词，再做复习 · 新词 5 命 · 复习 20 题 3 命</p>' +
+              '<h2 class="vc-day-title"> ' + displayProgressDay(progressDay, programComplete) + " họ · hình thức kết hợp gốc họNhiệm vụ</h2>" +
+              '<p class="vc-meta">trướcHoàn thànhcách diễn đạt mới,lại làmÔn tập · cách diễn đạt mới 5 sinh mệnh · Ôn tập 20 câu 3 sinh mệnh</p>' +
               '<ul class="vc-day-tasks">' +
               todayTasks.map(function (t) {
                 var btn = "";
                 if (t.canStart && t.status !== "completed" && !me.activeAttemptId) {
                   btn = '<button type="button" class="vl-btn vl-btn-sm vc-task-start" data-list="' +
                     t.listNo + '" data-type="' + esc(t.taskType) + '">' +
-                    (t.status === "failed" ? "重测" : "开始") + "</button>";
+                    (t.status === "failed" ? "lặp lại khảo sát" : "Bắt đầu") + "</button>";
                 }
                 return '<li class="vc-day-task vc-day-task--' + esc(t.status) + '">' +
                   "<span>List " + t.listNo + " · " + taskTypeLabel(t.taskType) +
@@ -731,17 +731,17 @@
       var metaLine = isEbb
         ? esc(lists.bookLabel || lists.bookId) +
           (programComplete
-            ? " · 已完成 " + shownDay + " / " + totalStages + " 关"
-            : " · 进度关 " + shownDay +
-              " · 已通过 " + passedStages + " / " + totalStages + " 关")
+            ? " · Đã hoàn thành " + shownDay + " / " + totalStages + " họ"
+            : " · Tiến độhọ " + shownDay +
+              " · đãđi qua " + passedStages + " / " + totalStages + " họ")
         : esc(lists.bookLabel || lists.bookId) +
-          " · 已通关 List " + (prog.clearedListNo || 0) +
-          " · 下一关 List " + (prog.nextListNo || 1) +
-          " · 重测配额 " + (lists.retestQuota || 0) + " 题";
+          " · đãthông quan List " + (prog.clearedListNo || 0) +
+          " · xuống một họ List " + (prog.nextListNo || 1) +
+          " · lặp lại khảo sáthạn ngạch " + (lists.retestQuota || 0) + " họ";
 
       var noticeLine = isEbb
         ? ""
-        : "按顺序闯关：新词（5 命 · 每题 18 秒）→ 错词重测 → 补考至全对。";
+        : "nhấntrình tựxông qua rào cản:cách diễn đạt mới(5 sinh mệnh · mỗi họ 18 giây)→ họ biến thể cũ của lặp lại khảo sát → thi bổ sungđến họ đúng.";
 
       var introHtml = isEbb
         ? ebbinghausIntroHtml(lists.ebbinghausPlan, progressDay, lists.todayPlan)
@@ -750,8 +750,8 @@
       var resumeHtml = "";
       if (me.activeAttemptId) {
         resumeHtml =
-          '<p class="vc-notice vc-notice--warn">你有进行中的闯关，可继续完成或退出作废。</p>' +
-          '<div class="vc-actions"><button type="button" class="vl-btn vl-btn-primary" id="vc-resume">继续闯关</button></div>';
+          '<p class="vc-notice vc-notice--warn">bạn cóĐang thực hiệnxông qua rào cản,tiền tố có thểTiếp tụcHoàn thànhcó thểĐăng xuấttrở nên không hiệu lực.</p>' +
+          '<div class="vc-actions"><button type="button" class="vl-btn vl-btn-primary" id="vc-resume">Tiếp tụcxông qua rào cản</button></div>';
       }
 
       shell(
@@ -759,22 +759,22 @@
         todayHtml +
         resumeHtml +
         '<p class="vc-meta">' + metaLine +
-        '</p><p class="vc-meta">抽测池 ' + (pool.active || 0) +
-          " · 顽固词 " + (pool.stubborn || 0) +
-          " · 错题本 " + (pool.notebook || 0) + "</p>" +
+        '</p><p class="vc-meta">rút ra khảo sát họ ' + (pool.active || 0) +
+          " · cứng đầubiến thể cũ của " + (pool.stubborn || 0) +
+          " · Sổ lỗi sai " + (pool.notebook || 0) + "</p>" +
         (isEbb ? stageGrid : ('<div class="vc-list-grid">' + chips + "</div>")) +
         '<div class="vc-actions">' +
           (!isEbb
-            ? '<button type="button" class="vl-btn vl-btn-primary" id="vc-start">开始 List ' +
+            ? '<button type="button" class="vl-btn vl-btn-primary" id="vc-start">Bắt đầu List ' +
               (prog.nextListNo || 1) + "</button>"
             : "") +
           (learnHref
-            ? '<a class="vl-btn" href="' + esc(learnHref) + '">先学习本 List</a>'
+            ? '<a class="vl-btn" href="' + esc(learnHref) + '">trướchọchình thức kết hợp gốc List</a>'
             : "") +
-          '<a class="vl-btn" href="vocab-challenge.html?view=notebook">错题本</a>' +
-          '<a class="vl-btn" href="zone.html?zone=study">返回</a>' +
+          '<a class="vl-btn" href="vocab-challenge.html?view=notebook">Sổ lỗi sai</a>' +
+          '<a class="vl-btn" href="zone.html?zone=study">Quay lại</a>' +
         "</div>",
-        lists.bookLabel || "闯关"
+        lists.bookLabel || "xông qua rào cản"
       );
 
       root.querySelectorAll(".vc-task-start").forEach(function (btn) {
@@ -817,15 +817,15 @@
       }
     }).catch(function (e) {
       var msg = (e && e.message) || "";
-      if (msg.indexOf("学生账号") >= 0 || (A.isTeacher && A.isTeacher())) {
+      if (msg.indexOf("Học viênTài khoản") >= 0 || (A.isTeacher && A.isTeacher())) {
         shell(
-          '<p class="vc-notice vc-notice--warn">教师账号不能直接闯关。请先在教师端切换到「网站功能区」，再打开本页。</p>' +
-          '<div class="vc-actions"><a class="vl-btn vl-btn-primary" href="teacher-mode-picker.html">选择网站功能区</a></div>',
-          "教师预览"
+          '<p class="vc-notice vc-notice--warn">Giáo viênTài khoảnkhông thểtrực tiếpxông qua rào cản.mời trướctheo một tôn giáo đặc biệt là Hồi giáohọ cuốichuyển đổiđến«trang webchức nănghọ»,lạimởhình thức kết hợp gốc đầu.</p>' +
+          '<div class="vc-actions"><a class="vl-btn vl-btn-primary" href="teacher-mode-picker.html">Chọntrang webchức nănghọ</a></div>',
+          "Giáo viênxem trước"
         );
         return;
       }
-      shell('<p class="vs-empty">' + esc(msg || "加载失败，请刷新重试") + "</p>", "错误");
+      shell('<p class="vs-empty">' + esc(msg || "Tải thất bại,mờiLàm mớithử lại") + "</p>", "Lỗi");
     });
   }
 
@@ -838,7 +838,7 @@
     }
     session.pendingStart = { listNo: listNo, taskType: taskType || "new" };
     requireImeGate("start", function () {
-      shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>准备题目…</div>', "开始");
+      shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>sự chuẩn bịĐề bài…</div>', "Bắt đầu");
       var body = {};
       if (listNo) body.listNo = listNo;
       if (taskType) body.taskType = taskType;
@@ -847,9 +847,9 @@
         .then(function (d) {
           if (!d || !d.ok) {
             shell(
-              '<p class="vc-notice vc-notice--warn">' + esc((d && d.error) || "无法开始") + "</p>" +
-              '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">返回</button></div>',
-              "错误"
+              '<p class="vc-notice vc-notice--warn">' + esc((d && d.error) || "không thểBắt đầu") + "</p>" +
+              '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">Quay lại</button></div>',
+              "Lỗi"
             );
             document.getElementById("vc-back").onclick = renderHub;
             return;
@@ -858,9 +858,9 @@
         })
         .catch(function (e) {
           shell(
-            '<p class="vc-notice vc-notice--warn">' + esc((e && e.message) || "开始失败") + "</p>" +
-            '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">返回</button></div>',
-            "错误"
+            '<p class="vc-notice vc-notice--warn">' + esc((e && e.message) || "Bắt đầuThất bại") + "</p>" +
+            '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">Quay lại</button></div>',
+            "Lỗi"
           );
           var back = document.getElementById("vc-back");
           if (back) back.onclick = renderHub;
@@ -912,11 +912,11 @@
     if (session.phase === "retest" && !session.words.length) {
       shell(
         noticesHtml(session.notices) +
-        '<p class="vc-meta">本阶段无需作答。</p>' +
+        '<p class="vc-meta">hình thức kết hợp gốcGiai đoạnkhông cần thiếttrả lời.</p>' +
         '<div class="vc-actions">' +
-          '<button type="button" class="vl-btn vl-btn-primary" id="vc-empty-pass">确认通关</button>' +
+          '<button type="button" class="vl-btn vl-btn-primary" id="vc-empty-pass">Xác nhậnthông quan</button>' +
         "</div>",
-        "重测"
+        "lặp lại khảo sát"
       );
       document.getElementById("vc-empty-pass").onclick = function () {
         A.api("/api/vocab-challenge/submit-review", {
@@ -1046,14 +1046,14 @@
     var fb = document.getElementById("fb");
     if (ok) {
       fb.className = "vl-feedback show ok";
-      fb.textContent = timeout ? "✅ 时间到，但作答正确！" : "✅ 完全正确！";
+      fb.textContent = timeout ? "✅ Thời gianđến,nhưngtrả lờiĐúng!" : "✅ hoàn chỉnhĐúng!";
     } else {
       session.lives = Math.max(0, session.lives - 1);
       updateLives();
       fb.className = "vl-feedback show " + (timeout ? "timeout" : "fail");
       fb.textContent = timeout
-        ? ("⏰ 时间到！答案：" + w.word + "（" + quizMeaning(w) + "）")
-        : ("❌ 正确答案：" + w.word + "（" + quizMeaning(w) + "）");
+        ? ("⏰ Thời gianđến!Đáp án:" + w.word + "(" + quizMeaning(w) + ")")
+        : ("❌ Đáp án đúng: " + w.word + "(" + quizMeaning(w) + ")");
     }
     session.answers.push({
       word: w.word,
@@ -1091,10 +1091,10 @@
       var r = applyGrade(w, false);
       if (r === "needMeaning") {
         var fb = document.getElementById("fb");
-        if (fb) { fb.className = "vl-feedback show fail"; fb.textContent = "请先选择中文含义"; }
+        if (fb) { fb.className = "vl-feedback show fail"; fb.textContent = "mời trướcChọnTiếng Trungý nghĩa hàm chứa trong một cụm từ"; }
       } else if (r === "needSpell") {
         var fb = document.getElementById("fb");
-        if (fb) { fb.className = "vl-feedback show fail"; fb.textContent = "请先拼写英文"; }
+        if (fb) { fb.className = "vl-feedback show fail"; fb.textContent = "mời trướcđánh vầnTiếng Anh"; }
         var spellEl = document.getElementById("spell");
         if (spellEl) spellEl.focus();
       }
@@ -1118,7 +1118,7 @@
           renderHub();
           return;
         }
-        if (!confirm("退出将作废本次闯关，确定？")) return;
+        if (!confirm("Đăng xuấtsẽtrở nên không hiệu lựchình thức kết hợp gốc tiếp theoxông qua rào cản,rõ ràng?")) return;
         clearTimer();
         var aid = session.attemptId;
         A.api("/api/vocab-challenge/void", {
@@ -1140,7 +1140,7 @@
     var labels = ["A", "B", "C", "D"];
     return noticesHtml(session.idx === 0 ? session.notices : []) +
       '<p class="vl-listen-hint">' + esc(hint) + "</p>" +
-      '<button type="button" class="vl-btn" id="listen">🔊 播放发音</button>' +
+      '<button type="button" class="vl-btn" id="listen">🔊 PhátPhát âm</button>' +
       '<div class="vl-opts" id="opts">' +
         opts.map(function (o, i) {
           return '<button type="button" class="vl-opt" data-v="' + esc(o) + '"><span class="label">' +
@@ -1148,18 +1148,18 @@
         }).join("") +
       "</div>" +
       '<div class="vl-spell-row" id="spellRow" hidden>' +
-        '<input type="text" id="spell" lang="en" inputmode="latin" placeholder="英文拼写（请用英文输入法）" ' +
+        '<input type="text" id="spell" lang="en" inputmode="latin" placeholder="Tiếng Anhđánh vần(mời sử dụngTiếng Anhphương pháp nhập)" ' +
           'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />' +
-        '<button type="button" class="vl-btn vl-btn-primary" id="submit" disabled>提交</button>' +
+        '<button type="button" class="vl-btn vl-btn-primary" id="submit" disabled>Nộp bài</button>' +
       "</div>" +
       '<div class="vl-feedback" id="fb"></div>' +
       '<div class="vl-nav-row">' +
         (showAbort
-          ? '<button type="button" class="vl-btn vl-btn-abort" id="vc-abort">退出并作废</button>'
+          ? '<button type="button" class="vl-btn vl-btn-abort" id="vc-abort">Đăng xuấtvàtrở nên không hiệu lực</button>'
           : (session.phase === "practice"
-            ? '<button type="button" class="vl-btn vl-btn-abort" id="vc-abort">退出练习</button>'
+            ? '<button type="button" class="vl-btn vl-btn-abort" id="vc-abort">Đăng xuấtLuyện tập</button>'
             : "")) +
-        '<button type="button" class="vl-btn vl-btn-primary" id="qnext" disabled>下一题 →</button>' +
+        '<button type="button" class="vl-btn vl-btn-primary" id="qnext" disabled>Câu sau →</button>' +
       "</div>";
   }
 
@@ -1174,7 +1174,7 @@
     session.waiting = false;
     saveQuizDraft();
     shell(
-      questionInner(phaseLabel(session.phase) + " · 听发音，先选中文含义，再拼写英文", true),
+      questionInner(phaseLabel(session.phase) + " · cười cổ đạiPhát âm,trướclựa chọnhọý nghĩa hàm chứa trong một cụm từ,lạiđánh vầnTiếng Anh", true),
       "List " + session.listNo,
       { showLives: true, showTimer: true }
     );
@@ -1184,7 +1184,7 @@
 
   function finishPhase() {
     clearQuizDraft(session.attemptId);
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>提交中…</div>', "提交");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>Nộp bàihình thức kết hợp Trung Quốc…</div>', "Nộp bài");
     var path = session.phase === "new_words"
       ? "/api/vocab-challenge/submit-new"
       : session.phase === "scheduled_review"
@@ -1196,9 +1196,9 @@
     }).then(function (d) {
       if (!d || !d.ok) {
         shell(
-          '<p class="vc-notice vc-notice--warn">' + esc((d && d.error) || "提交失败") + "</p>" +
-          '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">返回</button></div>',
-          "错误"
+          '<p class="vc-notice vc-notice--warn">' + esc((d && d.error) || "Nộp bàiThất bại") + "</p>" +
+          '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">Quay lại</button></div>',
+          "Lỗi"
         );
         document.getElementById("vc-back").onclick = renderHub;
         return;
@@ -1214,16 +1214,16 @@
             : "vocab-challenge.html";
           shell(
             noticesHtml(d.notices || [], true) +
-            '<p class="vc-meta">生命耗尽 · 错误 ' + (d.wrongCount || 0) + " 个（" + maxL +
-              " 命用尽" + (isReviewFail ? "，将重新抽题" : "，未记入错题") + "）</p>" +
+            '<p class="vc-meta">sự sống như đặc trưng của sinh vậttiêu hao · Lỗi ' + (d.wrongCount || 0) + " dùng trong(" + maxL +
+              " sinh mệnhsử dụng hết" + (isReviewFail ? ",sẽlạirút ra họ" : ",chưa ghi chép đi vàoCâu sai") + ")</p>" +
             '<div class="vc-actions">' +
-              '<button type="button" class="vl-btn vl-btn-primary" id="vc-retry">直接重考</button>' +
+              '<button type="button" class="vl-btn vl-btn-primary" id="vc-retry">trực tiếplặp lại đánh</button>' +
               (!isReviewFail
-                ? '<a class="vl-btn" href="' + esc(href) + '">先去学习</a>'
+                ? '<a class="vl-btn" href="' + esc(href) + '">trước đihọc</a>'
                 : "") +
-              '<button type="button" class="vl-btn" id="vc-hub">返回进度</button>' +
+              '<button type="button" class="vl-btn" id="vc-hub">Quay lạiTiến độ</button>' +
             "</div>",
-            "未通过"
+            "chưađi qua"
           );
           document.getElementById("vc-retry").onclick = function () {
             var ps = session.pendingStart || {};
@@ -1240,9 +1240,9 @@
       enterPhase(d);
     }).catch(function (err) {
       shell(
-        '<p class="vc-notice vc-notice--warn">' + esc((err && err.message) || "提交失败") + "</p>" +
-        '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">返回</button></div>',
-        "错误"
+        '<p class="vc-notice vc-notice--warn">' + esc((err && err.message) || "Nộp bàiThất bại") + "</p>" +
+        '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back">Quay lại</button></div>',
+        "Lỗi"
       );
       var back = document.getElementById("vc-back");
       if (back) back.onclick = renderHub;
@@ -1252,7 +1252,7 @@
   function renderCleared(d) {
     session.attemptId = 0;
     var prog = d.progress || {};
-    var dayNote = d.dayAdvanced ? '<p class="vc-notice">本关任务已全部完成，已进入下一关。</p>' : "";
+    var dayNote = d.dayAdvanced ? '<p class="vc-notice">hình thức kết hợp gốc họNhiệm vụđãTất cảHoàn thành,đãđi vàoxuống một họ.</p>' : "";
     var shown = displayProgressDay(
       prog.progressDay,
       !!(d.todayTasks && d.todayTasks.programComplete)
@@ -1261,18 +1261,18 @@
       noticesHtml(d.notices || []) +
       dayNote +
       (d.stubbornReleased && d.stubbornReleased.length
-        ? noticesHtml(["顽固词临时放行：" + d.stubbornReleased.join(", ")], true)
+        ? noticesHtml(["cứng đầubiến thể cũ củakhi thời gian đến gầncho qua:" + d.stubbornReleased.join(", ")], true)
         : "") +
       '<p class="vc-meta">' +
         (prog.progressDay
-          ? "进度关 " + shown + " · 已通新词 List " + (prog.clearedListNo || session.listNo)
-          : "已通关至 List " + (prog.clearedListNo || session.listNo) +
-            " · 下一关 List " + (prog.nextListNo || ((prog.clearedListNo || 0) + 1))) +
+          ? "Tiến độhọ " + shown + " · đã đi quacách diễn đạt mới List " + (prog.clearedListNo || session.listNo)
+          : "đãthông quanđến List " + (prog.clearedListNo || session.listNo) +
+            " · xuống một họ List " + (prog.nextListNo || ((prog.clearedListNo || 0) + 1))) +
       "</p>" +
       '<div class="vc-actions">' +
-        '<button type="button" class="vl-btn vl-btn-primary" id="vc-hub">返回本关任务</button>' +
+        '<button type="button" class="vl-btn vl-btn-primary" id="vc-hub">Quay lạihình thức kết hợp gốc họNhiệm vụ</button>' +
       "</div>",
-      "通关"
+      "thông quan"
     );
     document.getElementById("vc-hub").onclick = renderHub;
   }
@@ -1280,11 +1280,11 @@
   // ---- notebook ----
 
   function renderNotebook() {
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>加载错题本…</div>', "错题本");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>TảiSổ lỗi sai…</div>', "Sổ lỗi sai");
     A.api("/api/vocab-challenge/notebook" + bookQs())
       .then(function (d) {
         if (!d || !d.ok) {
-          shell('<p class="vs-empty">' + esc((d && d.error) || "加载失败") + "</p>", "错题本");
+          shell('<p class="vs-empty">' + esc((d && d.error) || "Tải thất bại") + "</p>", "Sổ lỗi sai");
           return;
         }
         var rows = d.words || [];
@@ -1293,31 +1293,31 @@
               return '<div class="vc-nb-row"><div><b>' + esc(r.word) + "</b> " +
                 '<span class="vc-meta">' + esc(r.ipa || "") + "</span><br>" +
                 '<span class="vc-meta">' + esc(r.meaning || "") + "</span></div>" +
-                "<div class=\"vc-nb-miss\">错 " + (r.missCount || 1) + " 次</div></div>";
+                "<div class=\"vc-nb-miss\">họ " + (r.missCount || 1) + " tiếp theo</div></div>";
             }).join("")
-          : '<p class="vs-empty">错题本还是空的。</p>';
+          : '<p class="vs-empty">Sổ lỗi saivẫn như trướctrống không.</p>';
         shell(
-          '<p class="vc-notice">错题本永久保留；此处主动练习不影响闯关抽测池。</p>' +
+          '<p class="vc-notice">Sổ lỗi saivĩnh cửugiữ;nơi nàychủ độngLuyện tậpkhôngảnh hưởngxông qua rào cảnrút ra khảo sát họ.</p>' +
           body +
           '<div class="vc-actions">' +
             (rows.length
-              ? '<button type="button" class="vl-btn vl-btn-primary" id="vc-practice">开始错词测试</button>'
+              ? '<button type="button" class="vl-btn vl-btn-primary" id="vc-practice">Bắt đầuhọ biến thể cũ củaBài kiểm tra</button>'
               : "") +
             '<a class="vl-btn" href="vocab-challenge.html' +
-              (bookParam ? "?book=" + encodeURIComponent(bookParam) : "") + '">返回闯关</a>' +
+              (bookParam ? "?book=" + encodeURIComponent(bookParam) : "") + '">Quay lạixông qua rào cản</a>' +
           "</div>",
-          "错题本 · " + (rows.length || 0)
+          "Sổ lỗi sai · " + (rows.length || 0)
         );
         var btn = document.getElementById("vc-practice");
         if (btn) btn.onclick = startPractice;
       })
       .catch(function () {
-        shell('<p class="vs-empty">加载失败</p>', "错题本");
+        shell('<p class="vs-empty">Tải thất bại</p>', "Sổ lỗi sai");
       });
   }
 
   function startListPractice(listNo, taskType, stageNo) {
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>抽题…</div>', "练习");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>rút ra họ…</div>', "Luyện tập");
     A.api(
       "/api/vocab-challenge/list-practice-pool?listNo=" + encodeURIComponent(listNo) +
         "&taskType=" + encodeURIComponent(taskType || "new") +
@@ -1326,9 +1326,9 @@
       .then(function (d) {
         if (!d || !d.ok || !(d.words || []).length) {
           shell(
-            '<p class="vs-empty">' + esc((d && d.error) || "没有可练习的词") + "</p>" +
-            '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back-hub">返回</button></div>',
-            "练习"
+            '<p class="vs-empty">' + esc((d && d.error) || "không cótiền tố có thểLuyện tậpbiến thể cũ của") + "</p>" +
+            '<div class="vc-actions"><button type="button" class="vl-btn" id="vc-back-hub">Quay lại</button></div>',
+            "Luyện tập"
           );
           var back = document.getElementById("vc-back-hub");
           if (back) back.onclick = renderHub;
@@ -1337,9 +1337,9 @@
         session.phase = "practice";
         session.attemptId = 0;
         session.practiceLabel = stageNo
-          ? ("第 " + stageNo + " 关 · List " + listNo + " · " + taskTypeLabel(taskType))
+          ? (" " + stageNo + " họ · List " + listNo + " · " + taskTypeLabel(taskType))
           : ("List " + listNo + " · " + taskTypeLabel(taskType));
-        session.notices = [d.notice || "已通过关卡练习不影响闯关进度与抽测池。"];
+        session.notices = [d.notice || "đãđi quatrạm kiểm soát về thuếLuyện tậpkhôngảnh hưởngxông qua rào cảnTiến độrút ra khảo sát họ."];
         session.words = shuffle(d.words.map(parseWord).filter(function (w) { return w.word; }));
         mergeOptionBank(d.optionBank);
         mergeOptionBank(session.words.map(quizMeaning));
@@ -1358,25 +1358,25 @@
         requireImeGate("start", renderPracticeQ);
       })
       .catch(function () {
-        shell('<p class="vs-empty">加载失败</p><div class="vc-actions"><button type="button" class="vl-btn" id="vc-back-hub">返回</button></div>', "练习");
+        shell('<p class="vs-empty">Tải thất bại</p><div class="vc-actions"><button type="button" class="vl-btn" id="vc-back-hub">Quay lại</button></div>', "Luyện tập");
         var back = document.getElementById("vc-back-hub");
         if (back) back.onclick = renderHub;
       });
   }
 
   function startPractice() {
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>抽题…</div>', "练习");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div>rút ra họ…</div>', "Luyện tập");
     A.api("/api/vocab-challenge/notebook/practice-pool?limit=20" +
       (bookParam ? "&bookId=" + encodeURIComponent(bookParam) : ""))
       .then(function (d) {
         if (!d || !d.ok || !(d.words || []).length) {
-          shell('<p class="vs-empty">没有可练习的词</p>', "练习");
+          shell('<p class="vs-empty">không cótiền tố có thểLuyện tậpbiến thể cũ của</p>', "Luyện tập");
           return;
         }
         session.phase = "practice";
         session.attemptId = 0;
-        session.practiceLabel = "错题本练习";
-        session.notices = [d.notice || "错题本练习不影响闯关抽测池。"];
+        session.practiceLabel = "Sổ lỗi saiLuyện tập";
+        session.notices = [d.notice || "Sổ lỗi saiLuyện tậpkhôngảnh hưởngxông qua rào cảnrút ra khảo sát họ."];
         session.words = shuffle(d.words.map(parseWord).filter(function (w) { return w.word; }));
         mergeOptionBank(d.optionBank);
         mergeOptionBank(session.words.map(quizMeaning));
@@ -1402,13 +1402,13 @@
       var wrong = session.answers.filter(function (a) { return !a.correct; }).length;
       shell(
         noticesHtml(session.notices) +
-        '<p class="vc-meta">练习结束 · 对 ' + (session.answers.length - wrong) +
-          " / 错 " + wrong + "（未计入抽测池）</p>" +
+        '<p class="vc-meta">Luyện tậpKết thúc · đúng ' + (session.answers.length - wrong) +
+          " / họ " + wrong + "(chưa họ đi vào rút ra khảo sát họ)</p>" +
         '<div class="vc-actions">' +
-          '<a class="vl-btn vl-btn-primary" href="vocab-challenge.html?view=notebook">返回错题本</a>' +
-          '<a class="vl-btn" href="vocab-challenge.html">闯关首页</a>' +
+          '<a class="vl-btn vl-btn-primary" href="vocab-challenge.html?view=notebook">Quay lạiSổ lỗi sai</a>' +
+          '<a class="vl-btn" href="vocab-challenge.html">xông qua rào cảnTrang chủ</a>' +
         "</div>",
-        "练习结果"
+        "Luyện tậpKết quả"
       );
       return;
     }
@@ -1416,8 +1416,8 @@
     session.answered = false;
     session.waiting = false;
     shell(
-      questionInner((session.practiceLabel || "练习") + " · 听发音，先选中文含义，再拼写英文", false),
-      "练习",
+      questionInner((session.practiceLabel || "Luyện tập") + " · cười cổ đạiPhát âm,trướclựa chọnhọý nghĩa hàm chứa trong một cụm từ,lạiđánh vầnTiếng Anh", false),
+      "Luyện tập",
       { showLives: true, showTimer: true }
     );
     setQuizCounter();

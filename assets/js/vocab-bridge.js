@@ -96,11 +96,11 @@
     question = String(question || "").replace(/<[^>]+>/g, "").trim();
     correct = String(correct || "").trim();
     userAnswer = String(userAnswer || "").trim();
-    if (userAnswer === "未作答") userAnswer = "";
+    if (userAnswer === "Chưa trả lời") userAnswer = "";
 
     var word = "";
     var meaning = "";
-    var dict = question.match(/听写[：:]\s*(.+)/);
+    var dict = question.match(/của học sinh viết chính tả[::]\s*(.+)/);
     if (dict) word = dict[1].trim();
 
     var correctParts = correct.split(/\s*[—–]\s*/);
@@ -108,20 +108,20 @@
     if (correctParts.length > 1) meaning = correctParts.slice(1).join(" — ").trim();
 
     if (!meaning) {
-      var meanM = question.match(/[「『](.+?)[」』]/);
+      var meanM = question.match(/[«『](.+?)[»』]/);
       if (meanM) meaning = meanM[1];
     }
 
     var userSpelling = "";
     var userMeaning = "";
-    var spellM = userAnswer.match(/拼写[：:]\s*([^/]+)/);
-    var meanM2 = userAnswer.match(/含义[：:]\s*(.+)/);
+    var spellM = userAnswer.match(/đánh vần[::]\s*([^/]+)/);
+    var meanM2 = userAnswer.match(/ý nghĩa hàm chứa trong một cụm từ[::]\s*(.+)/);
     if (spellM) userSpelling = spellM[1].trim();
     if (meanM2) userMeaning = meanM2[1].trim();
     if (!userSpelling && !userMeaning && userAnswer) userSpelling = userAnswer;
 
     if (!word) word = (correctParts[0] || correct).trim();
-    if (!meaning) meaning = question.replace(/^辨析[：:]\s*/, "");
+    if (!meaning) meaning = question.replace(/^phân biệt và phân tích[::]\s*/, "");
 
     if (!word) return null;
 
@@ -323,9 +323,9 @@
     el.id = "yysd-vocab-timer";
     el.setAttribute("aria-live", "polite");
     el.innerHTML =
-      '<div><span class="yysd-vocab-timer__label">剩余 </span>' +
+      '<div><span class="yysd-vocab-timer__label">Còn lại </span>' +
       '<span class="yysd-vocab-timer__secs">20</span>' +
-      '<span class="yysd-vocab-timer__unit"> 秒</span></div>' +
+      '<span class="yysd-vocab-timer__unit"> giây đơn vị thời gian</span></div>' +
       '<div id="yysd-vocab-timer-bar"><i></i></div>';
     var root = activeRoot();
     var progress = root && root.querySelector(".test-progress");
@@ -362,15 +362,15 @@
       el.classList.add("is-wait");
       el.classList.remove("is-low");
       if (label) label.textContent = "";
-      if (secsEl) secsEl.textContent = "听读音中…";
+      if (secsEl) secsEl.textContent = "cười cổ đạicách phát âmhình thức kết hợp Trung Quốc…";
       if (unit) unit.textContent = "";
       if (bar) bar.style.transform = "scaleX(1)";
       return;
     }
     el.classList.remove("is-wait");
-    if (label) label.textContent = "剩余 ";
+    if (label) label.textContent = "Còn lại ";
     if (secsEl) secsEl.textContent = String(secs);
-    if (unit) unit.textContent = " 秒";
+    if (unit) unit.textContent = " giây đơn vị thời gian";
     el.classList.toggle("is-low", secs <= 5);
     if (bar) bar.style.transform = "scaleX(" + Math.max(0, secs / QUESTION_SECS) + ")";
   }

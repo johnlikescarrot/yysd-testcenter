@@ -208,7 +208,7 @@
   .vl-word-table .col-ipa, .vl-word-table .col-pos { display: none; }
 }
 
-/* Quiz (template 闯关) */
+/* Quiz (template xông qua rào cản) */
 .vl-lives { display: flex; gap: 4px; font-size: 22px; }
 .vl-lives .heart { transition: 0.2s; }
 .vl-lives .heart.lost { opacity: 0.12; transform: scale(0.5); }

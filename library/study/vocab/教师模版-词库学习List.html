@@ -1,24 +1,24 @@
 <!--
 ================================================================
-优益思达 · 词库学习 List 模版（与站内「词库学习」卡片/列表同一套界面）
+YYSD · kho từhọc List biến thể của(trạm bên trong«kho từhọc»thẻ/danh sáchgiống hệtche đậybề mặt tiếp xúc)
 ================================================================
-用法：
-1. 用浏览器直接打开本文件 → 看到和线上一样的「卡片 / 列表」
-2. 只改下方 const wordData = [ ... ]; 里的单词
-3. 交给技术放入 library/study/vocab/ 并登记词库后，学生端书架也会读同一份 wordData
+cách dùng:
+1. sử dụngtrình duyệt phần mềmtrực tiếpmởvăn bản nàymón → nhìn thấybiến thể cũ củatrực tuyếngiống«thẻ / danh sách»
+2. chỉ thay đổibên dưới const wordData = [ ... ]; biến thể củaTừ vựng
+3. đưacông nghệbỏ vào library/study/vocab/ vàđăng ký tênkho từhọ,Học viêncuốigiá sáchcó thể dấu phẩygiống hệtlượng từ cho quà tặng wordData
 
-平台只解析：const wordData = [ ... ];（必须以分号结尾）
-必填：word、meaning、acceptCN（2～4 个短义，检测用）
-建议：ipa、pos、exampleEn、exampleZh、collocations、root、synonyms、antonyms、examTag
-列表释义会自动去掉英语，只留中文；卡片保留完整详解和例句。
+nền tảngchỉGiải thích: const wordData = [ ... ];(phảibiến thể cũ củadấu chấm phẩy dấu câukết thúc)
+nhất định lấp hoặc nhồi:word,meaning,acceptCN(2～4 dùng trong ngắn họ,phát hiệnsử dụng)
+Gợi ý:ipa,pos,exampleEn,exampleZh,collocations,root,synonyms,antonyms,examTag
+danh sáchNghĩacó thểtự độngloại bỏtiếng Anh,chỉ biến thể cũ củaTiếng Trung;thẻgiữhoàn chỉnhGiải thích chi tiếtbiến thể cũ củacâu ví dụ.
 ================================================================
 -->
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 词库学习 List 模版</title>
+<title>YYSD · kho từ học List biến thể của</title>
 <style>
 /* Learn-only chrome from vocab-template (no quiz tabs). */
 .vl-page {
@@ -218,7 +218,7 @@
   .vl-word-table .col-ipa, .vl-word-table .col-pos { display: none; }
 }
 
-/* Quiz (template 闯关) */
+/* Quiz (template xông qua rào cản) */
 .vl-lives { display: flex; gap: 4px; font-size: 22px; }
 .vl-lives .heart { transition: 0.2s; }
 .vl-lives .heart.lost { opacity: 0.12; transform: scale(0.5); }
@@ -362,44 +362,45 @@
   line-height: 1.5;
 }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="vl-page">
   <div class="vl-wrap">
-    <p class="vl-teacher-tip">教师预览：本页界面与站内「词库学习」一致。请只改源码里的 <code>wordData</code>，保存后刷新即可。</p>
-    <div class="vl-back"><span style="color:#2d6b4f;font-size:14px;font-weight:600">← 词库学习模版</span></div>
-    <div class="vl-app" id="vl-app"><div class="vl-state">正在加载…</div></div>
+    <p class="vl-teacher-tip">Giáo viênxem trước: hình thức kết hợp gốc đầubề mặt tiếp xúctrạm bên trong«kho từhọc»nhất quán.mời chỉ thay đổimã nguồn tin họcbiến thể của <code>wordData</code>, LưuhọLàm mớitương đương với.</p>
+    <div class="vl-back"><span style="color:#2d6b4f;font-size:14px;font-weight:600">← kho từ học biến thể của</span></div>
+    <div class="vl-app" id="vl-app"><div class="vl-state">Đang tải…</div></div>
   </div>
 <script>
-/* ★ 只改这一段 wordData；平台入库也只读这一段 */
+/* ★ chỉ thay đổi đại từ này một họ wordData; nền tảng đi vào nhà kho họ chỉ đọc tin học đại từ này một họ */
 const wordData = [
   {
     "id": 1,
     "word": "include",
     "ipa": "/ɪnˈkluːd/ · /ɪnˈklud/",
     "pos": "v.",
-    "meaning": "v. ①包括，包含（把某人或某物算作整体的一部分）；②算入，计入。常用 include sb/sth in；including（包括…在内，后接被包括部分）；included（包括在内，常后置，如 tax included）。反义 exclude。",
-    "phrases": "include sb/sth in（把…包括在内）, include sth as（把…列为）, taxes included（含税）",
-    "example": "The price includes breakfast and dinner.（价格包含早餐和晚餐。）",
+    "meaning": "v. ① bao gồm, chứa (cầm một người nào đó có thể một vật gì đó coi như hình thức kết hợp công nhân thực thể toàn bộ của phần); ②coi như đi vào, họ đi vào. được sử dụng phổ biến include sb/sth in; including(bao gồm … bao gồm trong đó, họ nhận chăn bao gồm phần); included(bao gồm bao gồm trong đó, họ đặt sau ví dụ: trong ngữ pháp, như tax included). trái nghĩa exclude.",
+    "phrases": "include sb/sth in(cầm… bao gồm bao gồm trong đó), include sth as(cầm… được phân loại là), taxes included(đã bao gồm thuế)",
+    "example": "The price includes breakfast and dinner.(giá chứa bữa sáng biến thể cũ của bữa tối.)",
     "acceptCN": [
-      "包括",
-      "包含",
-      "算入"
+      "bao gồm",
+      "Bao gồm",
+      "coi như đi vào"
     ],
     "collocations": [
       {
         "phrase": "include in",
-        "meaning": "把…包括在内"
+        "meaning": "cầm… bao gồm bao gồm trong đó"
       },
       {
         "phrase": "taxes included",
-        "meaning": "含税"
+        "meaning": "đã bao gồm thuế"
       },
       {
         "phrase": "including",
-        "meaning": "包括…在内"
+        "meaning": "bao gồm … bao gồm trong đó"
       }
     ],
-    "root": "in-(进入) + clud(关闭) → 关进里面 → 包括",
+    "root": "in-(đi vào) + clud(Đóng) → họ tiến lên bên trong → bao gồm",
     "synonyms": [
       "contain",
       "comprise"
@@ -408,44 +409,44 @@ const wordData = [
       "exclude"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "Tiếng Anh THPT",
       "frequency": 5,
-      "commonUsage": "包括",
-      "topic": "说明文"
+      "commonUsage": "bao gồm",
+      "topic": "Bài văn thuyết minh"
     },
     "exampleEn": "The price includes breakfast and dinner.",
-    "exampleZh": "价格包含早餐和晚餐。"
+    "exampleZh": "giá chứa bữa sáng biến thể cũ của bữa tối."
   },
   {
     "id": 2,
     "word": "empty",
     "ipa": "/ˈempti/",
     "pos": "adj. / v. / n.",
-    "meaning": "adj. ①空的，空无一人的；②空洞的，无意义的（empty promises）。v. 倒空，清空（empty the bin）。n. 空瓶，空箱。empty of（没有…）。反义 full。",
-    "phrases": "empty of（没有…）, empty the bin（倒垃圾）, empty promise（空头承诺）",
-    "example": "Please empty the waste bin after class.（下课后请把垃圾桶倒空。）",
+    "meaning": "adj. ①trống không của, không một bóng người thành ngữ của; ② hốc của, không cố ý họ của(empty promises).v. làm trống một cái túi, dọn dẹp (empty the bin).n. trống không biến thể của, trống không hộp.empty of(không có …). trái nghĩa full.",
+    "phrases": "empty of(không có …), empty the bin(ngã rác), empty promise(giả tạo hứa)",
+    "example": "Please empty the waste bin after class.(tan học họ mời cầm thùng rác làm trống một cái túi.)",
     "exampleEn": "Please empty the waste bin after class.",
-    "exampleZh": "下课后请把垃圾桶倒空。",
+    "exampleZh": "tan học họ mời cầm thùng rác làm trống một cái túi.",
     "acceptCN": [
-      "空的",
-      "倒空",
-      "空洞的"
+      "trống không của",
+      "làm trống một cái túi",
+      "hốc của"
     ],
     "collocations": [
       {
         "phrase": "empty of",
-        "meaning": "没有…"
+        "meaning": "không có …"
       },
       {
         "phrase": "empty the bin",
-        "meaning": "倒垃圾"
+        "meaning": "ngã rác"
       },
       {
         "phrase": "empty promise",
-        "meaning": "空头承诺"
+        "meaning": "giả tạo hứa"
       }
     ],
-    "root": "与 full 相对；也可表空洞、缺乏内容",
+    "root": "biến thể của full tương đối; họ tiền tố có thể bề mặt bên ngoài hốc, thiếu Nội dung",
     "synonyms": [
       "vacant",
       "blank"
@@ -454,31 +455,31 @@ const wordData = [
       "full"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "Tiếng Anh THPT",
       "frequency": 4,
-      "commonUsage": "空的",
-      "topic": "日常"
+      "commonUsage": "trống không của",
+      "topic": "Hàng ngày"
     }
   }
 ];
 
 function yysdMeaningForList(raw, accept) {
   var s = String(raw == null ? "" : raw).trim();
-  if (!s) return accept && accept.length ? accept.join("；") : "";
-  if (!/[A-Za-z]/.test(s) && !/(?:该词高中|须熟记|反义|同义|不规则|源自|易混|高考)/.test(s)) return s;
+  if (!s) return accept && accept.length ? accept.join("; ") : "";
+  if (!/[A-Za-z]/.test(s) && !/(?:từ nàytrường trung học phổ thông|phảihọc thuộc lòng|trái nghĩa|đồng nghĩa|bất quy tắc|bắt nguồn từ|họ bùn|kỳ thi tuyển sinh đại học)/.test(s)) return s;
 
-  s = s.replace(/[（(]([^）)]*)[）)]/g, function (_, inner) {
-    return /[A-Za-z]/.test(inner) ? "" : "（" + inner + "）";
+  s = s.replace(/[((]([^))]*)[))]/g, function (_, inner) {
+    return /[A-Za-z]/.test(inner) ? "" : "(" + inner + ")";
   });
-  s = s.split(/(?:该词高中|须熟记|注意词性|阅读完形|写作中准确|商业阅读|宗教用语已|核心义项为|源自|易混|高考|较正式|相当于)/)[0];
-  s = s.replace(/[。；;]?\s*(?:反义|同义|不规则)[:：]?[\s\S]*$/, "");
+  s = s.split(/(?:từ nàytrường trung học phổ thông|phảihọc thuộc lòng|chú ý đếnloại từ danh từ|Đọchình thức tổng thể|Viếthình thức kết hợp Trung Quốcchính xác|kinh doanhĐọc|tôn giáocách chọn từđã|lõinghĩa của một từlàm với tư cách|bắt nguồn từ|họ bùn|kỳ thi tuyển sinh đại học|hình thức ràng buộc so sánhtrang trọng|tương đương với)/)[0];
+  s = s.replace(/[.; ;]?\s*(?:trái nghĩa|đồng nghĩa|bất quy tắc)[:: ]?[\s\S]*$/, "");
 
   var POS = /^(?:interj\.|modal(?:\s+v\.?)?|adj\.|adv\.|prep\.|conj\.|pron\.|num\.|art\.|int\.|det\.|aux\.|phr\.|pref\.|abbr\.|pl\.|vt\.|vi\.|n\.|v\.)/i;
   var out = "";
   var i = 0;
   while (i < s.length) {
     var prev = i === 0 ? " " : s.charAt(i - 1);
-    if (/[\s.、，；。/／]/.test(prev)) {
+    if (/[\s., , ; ./／]/.test(prev)) {
       var m = s.slice(i).match(POS);
       if (m) {
         out += m[0];
@@ -490,69 +491,68 @@ function yysdMeaningForList(raw, accept) {
     if (/[A-Za-z]/.test(ch)) {
       i += 1;
       while (i < s.length && /[A-Za-z0-9'\u2019\-]/.test(s.charAt(i))) i += 1;
-      continue;
-    }
-    out += ch;
-    i += 1;
-  }
+ continue;
+ }
+ out += ch;
+ i += 1;
+ }
 
-  out = out.replace(/[ \t]+/g, " ");
-  out = out.replace(/（[^）]*）/g, function (full, off, str) {
-    var j = off - 1;
-    while (j >= 0 && str.charAt(j) === " ") j -= 1;
-    if (j >= 0 && /[\u4e00-\u9fff]/.test(str.charAt(j))) return full;
-    return "";
-  });
-  out = out.replace(/\s+([。；;，、])/g, "$1");
-  out = out.replace(/([。；;，、]) +/g, "$1");
-  out = out.replace(/(^|[^.\u4e00-\u9fff])\s*\/\s*(?=[^.\u4e00-\u9fff]|$)/g, "$1");
-  out = out.replace(/[。；;，、]{2,}/g, function (x) { return /。/.test(x) ? "。" : x.charAt(0); });
-  out = out.replace(/(?:名词|动词|形容词|副词|介词)[。；;\s]*$/g, "");
-  out = out.replace(/\s{2,}/g, " ");
-  out = out.replace(/^\s*[。；;，、]+|[。；;，、\s]+$/g, "");
-  out = out.replace(/([a-z])\.\s+/gi, "$1. ");
-  out = out.trim();
-  if (out && !/[。！？；]$/.test(out)) out += "。";
+ out = out.replace(/[\t]+/g, " ");
+ out = out.replace(/([^)]*)/g, function (full, off, str) {
+ var j = off - 1;
+ while (j >= 0 && str.charAt(j) === " ") j -= 1;
+ if (j >= 0 && /[\u4e00-\u9fff]/.test(str.charAt(j))) return full;
+ return "";
+ });
+ out = out.replace(/\s+([.;;,,])/g, "$1");
+ out = out.replace(/([.;;,,]) +/g, "$1");
+ out = out.replace(/(^|[^.\u4e00-\u9fff])\s*\/\s*(?=[^.\u4e00-\u9fff]|$)/g, "$1");
+ out = out.replace(/[.;;,,]{2,}/g, function (x) { return /./.test(x)? ".": x.charAt(0); });
+ out = out.replace(/(?: danh từ | động từ | tính từ | trạng từ | giới từ)[.;;\s]*$/g, "");
+ out = out.replace(/\s{2,}/g, " ");
+ out = out.replace(/^\s*[.;;,,]+|[.;;,, \s]+$/g, "");
+ out = out.replace(/([a-z])\.\s+/gi, "$1. ");
+ out = out.trim();
+ if (out &&!/[.!?;]$/.test(out)) out += ".";
 
-  var cjk = (out.match(/[\u4e00-\u9fff]/g) || []).length;
-  if (cjk < 2) return accept && accept.length ? accept.join("；") : s;
-  return out;
+ var cjk = (out.match(/[\u4e00-\u9fff]/g) || []).length;
+ if (cjk < 2) return accept && accept.length? accept.join("; "): s;
+ return out;
 }
 
 (function () {
-  "use strict";
-  var app = document.getElementById("vl-app");
-  var words = (wordData || []).filter(function (w) {
-    return w && String(w.word || "").trim() && String(w.meaning || "").trim();
-  });
-  var meta = { title: "自定义 List", stageLabel: "模版" };
-  var state = {
-    learnView: "card",
-    learnIdx: 0,
-    blurAllOff: false,
-    blurOne: true,
-    blurWordList: false,
-    blurMeaningList: false
-  };
+ "use strict";
+ var app = document.getElementById("vl-app");
+ var words = (wordData || []).filter(function (w) {
+ return w && String(w.word || "").trim() && String(w.meaning || "").trim();
+ });
+ var meta = { title: " tùy chỉnh List", stageLabel: " biến thể của " };
+ var state = {
+ learnView: "card",
+ learnIdx: 0,
+ blurAllOff: false,
+ blurOne: true,
+ blurWordList: false,
+ blurMeaningList: false
+ };
 
-  function esc(s) {
-    return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  }
-  function speak(word, accent) {
-    word = String(word || "").trim();
-    if (!word) return;
-    try {
-      var a = new Audio("https://dict.youdao.com/dictvoice?audio=" +
-        encodeURIComponent(word) + "&type=" + (accent === 2 ? 2 : 1));
-      a.play().catch(function () {});
-    } catch (e) {}
-  }
-  function shell(inner) {
-    app.innerHTML =
-      '<div class="vl-top-bar">' +
-        '<div class="vl-brand">优益思达 · <span>词库学习</span></div>' +
+ function esc(s) {
+ return String(s == null? "": s)
+.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+.replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+ }
+ function speak(word, accent) {
+ word = String(word || "").trim();
+ if (!word) return;
+ try {
+ var a = new Audio("https://dict.youdao.com/dictvoice?audio=" +
+ encodeURIComponent(word) + "&type=" + (accent === 2? 2: 1));
+ a.play().catch(function () {});
+ } catch (e) {}
+ }
+ function shell(inner) {
+ app.innerHTML ='<div class="vl-top-bar">' +
+        '<div class="vl-brand">YYSD · <span>kho từhọc</span></div>' +
         '<div class="vl-list-badge">' + esc(meta.stageLabel) + "</div>" +
       "</div>" +
       '<div class="vl-info-row"><div id="counter"></div></div>' +
@@ -561,37 +561,37 @@ function yysdMeaningForList(raw, accept) {
   function tabsHtml() {
     return '<div class="vl-view-tabs" id="learnViewTabs">' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "card" ? " active" : "") +
-        '" data-v="card">卡片</button>' +
+        '" data-v="card">thẻ</button>' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "list" ? " active" : "") +
-        '" data-v="list">列表</button></div>';
-  }
-  function bindChrome() {
-    var tabs = document.getElementById("learnViewTabs");
-    if (tabs) tabs.onclick = function (e) {
-      var b = e.target.closest(".vl-view-tab");
-      if (!b) return;
-      state.learnView = b.getAttribute("data-v");
-      render();
-    };
-    var blurAll = document.getElementById("btnBlurAll");
-    if (blurAll) blurAll.onclick = function () {
-      state.blurAllOff = !state.blurAllOff;
-      state.blurOne = true;
-      render();
-    };
-    var bw = document.getElementById("btnBlurWord");
-    if (bw) bw.onclick = function () { state.blurWordList = !state.blurWordList; render(); };
-    var bm = document.getElementById("btnBlurMeaning");
-    if (bm) bm.onclick = function () { state.blurMeaningList = !state.blurMeaningList; render(); };
-  }
-  function renderList() {
-    var blurWord = state.blurWordList;
-    var blurMeaning = state.blurMeaningList;
-    shell("");
-    document.getElementById("counter").innerHTML =
-      esc(meta.title) + " · 列表总览 <strong>" + words.length + "</strong> 词 · 点击一行进入卡片";
-    var rows = words.map(function (w, i) {
-      return '<tr class="word-row" data-i="' + i + '">' +
+        '" data-v="list">danh sách</button></div>';
+ }
+ function bindChrome() {
+ var tabs = document.getElementById("learnViewTabs");
+ if (tabs) tabs.onclick = function (e) {
+ var b = e.target.closest(".vl-view-tab");
+ if (!b) return;
+ state.learnView = b.getAttribute("data-v");
+ render();
+ };
+ var blurAll = document.getElementById("btnBlurAll");
+ if (blurAll) blurAll.onclick = function () {
+ state.blurAllOff =!state.blurAllOff;
+ state.blurOne = true;
+ render();
+ };
+ var bw = document.getElementById("btnBlurWord");
+ if (bw) bw.onclick = function () { state.blurWordList =!state.blurWordList; render(); };
+ var bm = document.getElementById("btnBlurMeaning");
+ if (bm) bm.onclick = function () { state.blurMeaningList =!state.blurMeaningList; render(); };
+ }
+ function renderList() {
+ var blurWord = state.blurWordList;
+ var blurMeaning = state.blurMeaningList;
+ shell("");
+ document.getElementById("counter").innerHTML =
+ esc(meta.title) + " · danh sách cái nhìn tổng quan <strong>" + words.length + "</strong> biến thể cũ của · nhấn đảng đi vào thẻ ";
+ var rows = words.map(function (w, i) {
+ return'<tr class="word-row" data-i="' + i + '">' +
         '<td class="w-no">' + (i + 1) + "</td>" +
         '<td><div class="w-en' + (blurWord ? " blurred" : "") + '">' + esc(w.word) + "</div></td>" +
         '<td class="col-ipa"><span class="w-ipa">' + esc(w.ipa || "") + "</span></td>" +
@@ -600,49 +600,47 @@ function yysdMeaningForList(raw, accept) {
           esc(yysdMeaningForList(w.meaning, w.acceptCN)) + "</span></td>" +
         '<td class="col-speak">' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(w.word) +
-            '" data-accent="1" style="padding:6px 8px;font-size:12px">英</button> ' +
+            '" data-accent="1" style="padding:6px 8px;font-size:12px">Anh nước</button> ' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(w.word) +
-            '" data-accent="2" style="padding:6px 8px;font-size:12px">美</button></td></tr>';
+            '" data-accent="2" style="padding:6px 8px;font-size:12px">hình thái kết hợp Châu Mỹ</button></td></tr>';
     }).join("");
     document.getElementById("panel").innerHTML =
       '<div class="vl-toolbar">' + tabsHtml() +
-        '<button type="button" class="vl-btn' + (blurWord ? " is-on" : "") + '" id="btnBlurWord">' +
-          (blurWord ? "显示单词" : "模糊单词") + "</button>" +
-        '<button type="button" class="vl-btn' + (blurMeaning ? " is-on" : "") + '" id="btnBlurMeaning">' +
-          (blurMeaning ? "显示释义" : "模糊释义") + "</button></div>" +
-      '<div style="overflow-x:auto"><table class="vl-word-table">' +
-        "<thead><tr><th>#</th><th>单词</th><th class=\"col-ipa\">音标</th>" +
-        "<th class=\"col-pos\">词性</th><th>释义</th><th>发音</th></tr></thead>" +
-        "<tbody>" + rows + "</tbody></table></div>";
-    bindChrome();
-    app.querySelectorAll(".word-row").forEach(function (tr) {
-      tr.onclick = function (e) {
-        if (e.target.closest(".btn-speak-row")) return;
-        var peek = e.target.closest(".w-en.blurred, .w-meaning.blurred");
-        if (peek) { peek.classList.remove("blurred"); return; }
-        state.learnIdx = Number(tr.getAttribute("data-i")) || 0;
-        state.learnView = "card";
-        state.blurOne = true;
-        render();
-      };
-    });
-    app.querySelectorAll(".btn-speak-row").forEach(function (b) {
-      b.onclick = function (e) {
-        e.stopPropagation();
-        speak(b.getAttribute("data-w"), Number(b.getAttribute("data-accent")) || 1);
-      };
-    });
-  }
-  function renderCard() {
-    var w = words[state.learnIdx];
-    if (!w) return;
-    var blur = state.blurAllOff ? false : state.blurOne;
-    shell("");
-    document.getElementById("counter").innerHTML =
-      esc(meta.title) + " · 第 <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " 词";
-    var coll = "";
-    if (w.collocations && w.collocations.length) {
-      coll = '<div class="vl-section"><div class="vl-section-title">搭配</div><div class="vl-collocs">' +
+        '<button type="button" class="vl-btn' + (blurWord ? " is-on" : "") + '" id="btnBlurWord">'+
+ (blurWord? " hiển thị Từ vựng ": " mơ hồ Từ vựng ") + "</button>" +'<button type="button" class="vl-btn' + (blurMeaning ? " is-on" : "") + '" id="btnBlurMeaning">'+
+ (blurMeaning? " hiển thị Nghĩa ": " mơ hồ Nghĩa ") + "</button></div>" +'<div style="overflow-x:auto"><table class="vl-word-table">'+
+ "<thead><tr><th>#</th><th> Từ vựng </th><th class=\"col-ipa\"> ký hiệu phiên âm </th>" +
+ "<th class=\"col-pos\"> loại từ danh từ </th><th> Nghĩa </th><th> Phát âm </th></tr></thead>" +
+ "<tbody>" + rows + "</tbody></table></div>";
+ bindChrome();
+ app.querySelectorAll(".word-row").forEach(function (tr) {
+ tr.onclick = function (e) {
+ if (e.target.closest(".btn-speak-row")) return;
+ var peek = e.target.closest(".w-en.blurred,.w-meaning.blurred");
+ if (peek) { peek.classList.remove("blurred"); return; }
+ state.learnIdx = Number(tr.getAttribute("data-i")) || 0;
+ state.learnView = "card";
+ state.blurOne = true;
+ render();
+ };
+ });
+ app.querySelectorAll(".btn-speak-row").forEach(function (b) {
+ b.onclick = function (e) {
+ e.stopPropagation();
+ speak(b.getAttribute("data-w"), Number(b.getAttribute("data-accent")) || 1);
+ };
+ });
+ }
+ function renderCard() {
+ var w = words[state.learnIdx];
+ if (!w) return;
+ var blur = state.blurAllOff? false: state.blurOne;
+ shell("");
+ document.getElementById("counter").innerHTML =
+ esc(meta.title) + " · <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " biến thể cũ của";
+ var coll = "";
+ if (w.collocations && w.collocations.length) {
+ coll ='<div class="vl-section"><div class="vl-section-title">ghép đôi</div><div class="vl-collocs">' +
         w.collocations.map(function (c) {
           return '<span class="vl-coloc">' + esc(c.phrase) +
             (c.meaning ? ' <span style="color:#6b7e78">→ ' + esc(c.meaning) + "</span>" : "") + "</span>";
@@ -651,13 +649,13 @@ function yysdMeaningForList(raw, accept) {
     var exam = "";
     if (w.examTag) {
       exam = '<div class="vl-section"><div class="vl-exam">' +
-        '<span><span class="lbl">来源 </span>' + esc(w.examTag.source || "") + "</span>" +
-        '<span><span class="lbl">话题 </span>' + esc(w.examTag.topic || "") + "</span>" +
-        '<span><span class="lbl">用法 </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
+        '<span><span class="lbl">nguồn thông tin </span>' + esc(w.examTag.source || "") + "</span>" +
+        '<span><span class="lbl">Chủ đề </span>' + esc(w.examTag.topic || "") + "</span>" +
+        '<span><span class="lbl">cách dùng </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
         "</div></div>";
     }
     var root = w.root
-      ? '<div class="vl-section"><div class="vl-section-title">词根拆解</div><div class="vl-root-text">' +
+      ? '<div class="vl-section"><div class="vl-section-title">ngôn ngữ học gốc từtháo rời</div><div class="vl-root-text">' +
         esc(w.root) + "</div></div>" : "";
     var ex = "";
     if (w.exampleEn) {
@@ -666,54 +664,53 @@ function yysdMeaningForList(raw, accept) {
         en = en.replace(new RegExp("\\b" + w.word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "gi"),
           function (m) { return '<span class="vl-hl">' + m + "</span>"; });
       } catch (e) {}
-      ex = '<div class="vl-section"><div class="vl-section-title">例句</div><div class="vl-ex-en">' + en +
+      ex = '<div class="vl-section"><div class="vl-section-title">câu ví dụ</div><div class="vl-ex-en">' + en +
         "</div>" + (w.exampleZh ? '<div class="vl-ex-zh">' + esc(w.exampleZh) + "</div>" : "") + "</div>";
     }
     var syn = "";
     if ((w.synonyms && w.synonyms.length) || (w.antonyms && w.antonyms.length)) {
       syn = '<div class="vl-section">' +
-        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">同义：' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
-        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">反义：' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
+        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">đồng nghĩa: ' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
+        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">trái nghĩa: ' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
         "</div>";
     }
     var atEnd = state.learnIdx >= words.length - 1;
     document.getElementById("panel").innerHTML =
       '<div class="vl-toolbar">' + tabsHtml() +
-        '<button type="button" class="vl-btn" id="btnBlurAll">' +
-          (state.blurAllOff ? "恢复默认模糊" : "本课全部明文") + "</button>" +
-        '<button type="button" class="vl-btn" id="btnSpeakUk">🔊 英音</button>' +
-        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 美音</button></div>' +
+        '<button type="button" class="vl-btn" id="btnBlurAll">'+
+ (state.blurAllOff? " khôi phục đồng ý ngầm mơ hồ ": "hình thức kết hợp gốc môn học Tất cả ghi rõ bằng văn bản luật lệ ") + "</button>" +'<button type="button" class="vl-btn" id="btnSpeakUk">🔊 Anh nước âm thanh</button>' +
+        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 hình thái kết hợp Châu Mỹ âm thanh</button></div>' +
       '<div class="vl-word">' + esc(w.word) + "</div>" +
       '<div class="vl-ipa">' + esc(w.ipa || "") + "</div>" +
       (w.pos ? '<div class="vl-pos">' + esc(w.pos) + "</div>" : "") +
       '<div class="vl-meaning' + (blur ? " blurred" : "") + '" id="meaning">' +
-        esc(w.meaning) + '<span class="vl-hint">点击显示/隐藏</span></div>' +
+        esc(w.meaning) + '<span class="vl-hint">nhấnhiển thị/che giấu</span></div>' +
       exam + coll + ex + root + syn +
       '<div class="vl-nav-row">' +
-        '<button type="button" class="vl-btn" id="prev">← 上一个</button>' +
-        '<button type="button" class="vl-btn vl-btn-primary" id="next">' +
-          (atEnd ? "完成本 List" : "下一个 →") + "</button></div>";
-    bindChrome();
-    document.getElementById("btnSpeakUk").onclick = function () { speak(w.word, 1); };
-    document.getElementById("btnSpeakUs").onclick = function () { speak(w.word, 2); };
-    document.getElementById("meaning").onclick = function () {
-      if (state.blurAllOff) return;
-      state.blurOne = !state.blurOne;
-      render();
-    };
-    document.getElementById("prev").onclick = function () {
-      if (state.learnIdx > 0) { state.learnIdx--; state.blurOne = true; render(); }
-    };
-    document.getElementById("next").onclick = function () {
-      if (atEnd) { alert("模版预览结束。把 wordData 填满后交给技术入库即可。"); return; }
-      state.learnIdx++;
-      state.blurOne = true;
-      render();
-    };
-  }
-  function render() {
-    if (!words.length) {
-      app.innerHTML = '<div class="vl-state">wordData 为空，请先填写单词</div>';
+        '<button type="button" class="vl-btn" id="prev">← cái trước</button>' +
+        '<button type="button" class="vl-btn vl-btn-primary" id="next">'+
+ (atEnd? " Hoàn thành hình thức kết hợp gốc List": " cái tiếp theo →") + "</button></div>";
+ bindChrome();
+ document.getElementById("btnSpeakUk").onclick = function () { speak(w.word, 1); };
+ document.getElementById("btnSpeakUs").onclick = function () { speak(w.word, 2); };
+ document.getElementById("meaning").onclick = function () {
+ if (state.blurAllOff) return;
+ state.blurOne =!state.blurOne;
+ render();
+ };
+ document.getElementById("prev").onclick = function () {
+ if (state.learnIdx > 0) { state.learnIdx--; state.blurOne = true; render(); }
+ };
+ document.getElementById("next").onclick = function () {
+ if (atEnd) { alert(" biến thể của xem trước Kết thúc.cầm wordData nhồi nhét họ đưa công nghệ đi vào nhà kho tương đương với."); return; }
+ state.learnIdx++;
+ state.blurOne = true;
+ render();
+ };
+ }
+ function render() {
+ if (!words.length) {
+ app.innerHTML ='<div class="vl-state">wordData làm với tư cách trống không, mời trướcđiền vào biểu mẫuTừ vựng</div>';
       return;
     }
     if (state.learnView === "list") renderList();

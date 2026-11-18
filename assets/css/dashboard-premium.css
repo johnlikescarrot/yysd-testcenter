@@ -106,7 +106,7 @@
   margin-top: 16px;
 }
 
-/* 今日焦点 — daily open ceremony */
+/* hôm nayđiểm tiêu — daily open ceremony */
 .page-premium .dash-focus {
   display: flex;
   align-items: center;
@@ -536,7 +536,7 @@
   to { opacity: 1; transform: none; }
 }
 
-/* —— zone (单词区 / 真题区) —— */
+/* —— zone (Khu vực Từ vựng / Khu vực Đề thi thật) —— */
 .page-premium .catalog-toolbar {
   background: var(--card);
   border: 1px solid var(--border);
@@ -762,7 +762,7 @@
   background: transparent;
 }
 
-/* —— practice zone: AI 雅思老师 hero —— */
+/* —— practice zone: AI IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếGiáo viên hero —— */
 .page-premium .ai-tutor-entry {
   display: flex;
   align-items: center;
@@ -2115,7 +2115,7 @@
   }
 }
 
-/* 双入口：作业单词区 → 词境远征 */
+/* họlối vào:Bài tậpKhu vực Từ vựng → biến thể cũ của biên giớicuộc viễn chinh */
 .page-premium .vocab-realm-banner {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -3207,7 +3207,7 @@
   color: var(--brand-navy, #07192f);
 }
 
-/* —— 词境远征 path hub —— */
+/* —— biến thể cũ của biên giớicuộc viễn chinh path hub —— */
 .page-premium .vocab-bento--rpg { gap: 16px; }
 .page-premium .vrpg-hero {
   display: flex;
@@ -3659,7 +3659,7 @@ body.home-apple-page.page-premium .minimal-footer__links a:hover {
   }
 }
 
-/* —— 教师新建任务：全屏作业台（仅 #create-modal） —— */
+/* —— Giáo viênhuyện Xinjian ở Nam XươngNhiệm vụ:máy tính toàn màn hìnhBài tậpĐài Loan viết tắt(hầu như #create-modal) —— */
 #create-modal.cal-modal {
   padding: 0;
   place-items: stretch;
@@ -3902,7 +3902,7 @@ body.home-apple-page.page-premium .minimal-footer__links a:hover {
   }
 }
 
-/* —— 我的学生：bento + 学生主页 —— */
+/* —— Học viên của tôi:bento + Học viêntrang chủ —— */
 .page-premium .teacher-students {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));

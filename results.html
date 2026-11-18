@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>我的成绩 · 优益思达国际课程中心</title>
+  <title>Kết quả của tôi · YYSD · Trung tâm Khóa học Quốc tế</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,39 +12,40 @@
   <link rel="stylesheet" href="assets/css/style.css?v=20260723mock">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722home">
   <link rel="stylesheet" href="assets/css/mascot.css?v=20260709a">
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="home-minimal page-premium">
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="YYSD · Trung tâm Khóa học Quốc tế Trang chủ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>YYSD · Trung tâm Khóa học Quốc tế</b>
           <span>YYSD International Course Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="dashboard.html" data-nav="dashboard">待办事项</a>
-        <a href="zone.html?zone=study" data-zone="study">单词区</a>
-        <a href="zone.html?zone=practice" data-zone="practice">练习区</a>
-        <a href="zone.html?zone=mock" data-zone="mock">真题区</a>
-        <a href="results.html" data-nav="results">我的成绩</a>
-        <a href="login.html" id="nav-auth">登录</a>
+      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
+        <a href="dashboard.html" data-nav="dashboard">Việc cần làm</a>
+        <a href="zone.html?zone=study" data-zone="study">Khu vực Từ vựng</a>
+        <a href="zone.html?zone=practice" data-zone="practice">Khu vực Luyện tập</a>
+        <a href="zone.html?zone=mock" data-zone="mock">Khu vực Đề thi thật</a>
+        <a href="results.html" data-nav="results">Kết quả của tôi</a>
+        <a href="login.html" id="nav-auth">Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <section class="minimal-shell minimal-page-head">
-    <div class="minimal-crumb"><a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> 我的成绩</div>
+    <div class="minimal-crumb"><a href="index.html">Trang chủ</a> <span class="crumb-sep" aria-hidden="true">★</span>Kết quả của tôi</div>
     <p class="dash-premium-eyebrow">Results</p>
-    <h1>我的成绩</h1>
-    <p class="minimal-page-desc">记录保存在本浏览器中。完成模考或练习并交卷后，成绩会自动出现在这里。</p>
+    <h1>Kết quả của tôi</h1>
+    <p class="minimal-page-desc">ghi chép Lưu tồn tại hình thức kết hợp gốc trình duyệt phần mềm hình thức kết hợp Trung Quốc. Hoàn thành Thi thử có thể Luyện tập và Nộp bài họ, Kết quả có thể tự động xuất hiện tồn tại biến thể của.</p>
   </section>
 
   <main class="minimal-shell minimal-main">
     <div class="section__head section__head--actions">
-      <button class="btn btn--ghost btn--sm" id="clear-btn">清空记录</button>
+      <button class="btn btn--ghost btn--sm" id="clear-btn">dọn dẹp ghi chép</button>
     </div>
     <div id="results-summary"></div>
     <div id="results-timeline"></div>
@@ -56,17 +57,16 @@
       <div class="minimal-footer__brand">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-footer__logo">
         <div>
-          <b>优益思达国际课程中心</b>
+          <b>YYSD · Trung tâm Khóa học Quốc tế</b>
           <span>YYSD International Course Center</span>
         </div>
       </div>
-      <nav class="minimal-footer__links" aria-label="页脚导航">
-        <a href="zone.html?zone=study">单词区</a>
-        <a href="zone.html?zone=practice">练习区</a>
-        <a href="zone.html?zone=mock">真题区</a>
+      <nav class="minimal-footer__links" aria-label="Điều hướng chân trang">
+        <a href="zone.html?zone=study">Khu vực Từ vựng</a>
+        <a href="zone.html?zone=practice">Khu vực Luyện tập</a>
+        <a href="zone.html?zone=mock">Khu vực Đề thi thật</a>
       </nav>
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · YYSD International Course Center
-        <span class="site-icp" data-icp></span>
+      <p class="minimal-footer__copy">© <span id="year"></span>YYSD · Trung tâm Khóa học Quốc tế · YYSD International Course Center<span class="site-icp" data-icp></span>
       </p>
     </div>
   </footer>
@@ -105,11 +105,11 @@
         if (timelineEl) timelineEl.innerHTML = "";
         if (summaryEl) summaryEl.innerHTML = "";
         area.innerHTML = '<div class="state state--brand results-empty premium-empty premium-enter">' +
-          '<h3>还没有成绩记录</h3>' +
-          '<p>完成一份剑桥真题并交卷后，得分和 Band 预估会自动出现在这里。</p>' +
+          '<h3>họ không có Kết quả ghi chép </h3>' +
+          '<p> Hoàn thành một lượng từ cho quà tặng Đề thi thật Cambridge và Nộp bài họ, Điểm số biến thể cũ của Band ước tính có thể tự động xuất hiện tồn tại biến thể của.</p>' +
           '<div class="results-empty__actions premium-empty__actions">' +
-          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts">去做第一套真题 →</a>' +
-          '<a class="btn btn--ghost" href="zone.html?zone=study">先去单词区</a>' +
+          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts">đi làm đầu tiên che đậy Đề thi thật →</a>' +
+          '<a class="btn btn--ghost" href="zone.html?zone=study">trước đi Khu vực Từ vựng </a>' +
           '</div></div>';
         return;
       }
@@ -132,11 +132,11 @@
           '</div>' +
           '<div class="results-row__acts">' +
             (String(r.id || "").indexOf("toefl-") === 0
-              ? '<span class="btn btn--ghost btn--sm is-disabled" title="系统试卷只在桌面端打开">请在桌面端打开</span>'
-              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '">再练一次</a>') +
+              ? '<span class="btn btn--ghost btn--sm is-disabled" title=" Hệ thống bài thi chỉ tồn tại màn hình máy tính cuối mở ">mời tồn tại màn hình máy tính cuối mở </span>'
+              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '">lại luyện tập đầu tiên </a>') +
             (r.wrong && r.wrong.length
-              ? '<a class="btn btn--ghost btn--sm" href="wrong-record.html?item=' + encodeURIComponent(r.id) + '&local=1">查看错题</a>'
-              : '<span class="btn btn--ghost btn--sm is-disabled" title="本次无错题或尚未收录">查看错题</span>') +
+              ? '<a class="btn btn--ghost btn--sm" href="wrong-record.html?item=' + encodeURIComponent(r.id) + '&local=1"> Xem Câu sai </a>'
+              : '<span class="btn btn--ghost btn--sm is-disabled" title="hình thức kết hợp gốc tiếp theo không có Câu sai có thể chưa lưu lại "> Xem Câu sai </span>') +
           '</div></article>';
       });
       html += '</div>';
@@ -144,7 +144,7 @@
     }
 
     document.getElementById("clear-btn").addEventListener("click", function () {
-      if (confirm("确定清空全部成绩记录吗？此操作不可撤销。")) {
+      if (confirm("rõ ràng dọn dẹp Tất cả Kết quả ghi chép thông tục gì??này làm việc không thể huỷ bỏ.")) {
         localStorage.removeItem("yysd:results"); render();
       }
     });

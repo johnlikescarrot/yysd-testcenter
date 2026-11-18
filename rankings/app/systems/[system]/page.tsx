@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { system: string } }): Promise<Metadata> {
   const s = SYSTEMS[params.system as SystemKey];
-  return { title: s?.name || "排名体系" };
+  return { title: s?.name || "Xếp hạnghệ thống" };
 }
 
 export default async function SystemDetailPage({ params }: { params: { system: string } }) {
@@ -52,7 +52,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
 
       <section className="panel">
         <div className="panel-head">
-          <span>综合榜 · 历年</span>
+          <span>toàn diệnthông báo hoặc thông tri · năm dương lịch</span>
         </div>
         <div className="flex flex-wrap gap-2 p-4">
           {years.map((year) => (
@@ -72,7 +72,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
       {subjects.length > 0 && (
         <section className="panel">
           <div className="panel-head">
-            <span>学科轨（示例）</span>
+            <span>môn họchình vị hạn chế đường ray(minh họa)</span>
           </div>
           <ul className="divide-y divide-[var(--line)]">
             {subjects.map((sub) => (

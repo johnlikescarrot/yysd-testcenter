@@ -39,7 +39,7 @@
   if (cdtSuite && !cdtPack) cdtPack = "exam";
   var explainMode = qs.get("explain") === "1" || /-explain$/i.test(String(id || ""));
 
-  if (!id) { fail("缺少内容编号。"); return; }
+  if (!id) { fail("thiếuNội dungđánh số."); return; }
 
   var uploadMatch = String(id).match(/^upload-(\d+)$/);
   if (uploadMatch) {
@@ -61,7 +61,7 @@
         var ev = d.event || {};
         item = {
           id: id,
-          title: ev.title || ("上传练习 #" + eventId),
+          title: ev.title || ("Tải lênLuyện tập #" + eventId),
           zone: "assignment",
           subject: "teacher-upload",
           duration: 0,
@@ -75,29 +75,29 @@
         startUpload(html);
       })
       .catch(function (e) {
-        fail((e && e.message) || "无法加载老师布置的练习。");
+        fail((e && e.message) || "không thểTảiGiáo viênsắp xếpLuyện tập.");
       });
   } else {
     Y.load().then(function (items) {
       item = Y.resolveItem ? Y.resolveItem(items, id) : items.filter(function (e) { return e.id === id; })[0];
-      if (!item) { fail("找不到该内容，可能已被移除。"); return; }
+      if (!item) { fail("không thể tìm thấynênNội dung,có thể xảy rađã chănloại bỏ."); return; }
       start();
     }).catch(function () {
       fail(location.protocol === "file:"
-        ? "请通过网址（http://）访问本站，本地双击打开会被浏览器拦截。"
-        : "内容信息加载失败。");
+        ? "Vui lòng truy cập qua địa chỉ web(http://)thămhình thức kết hợp gốc trạm,mở tệp trực tiếp bằng cách nhấp đúp sẽ bị trình duyệt chặn."
+        : "Nội dungthông tinTải thất bại.");
     });
   }
 
   function fail(msg) {
-    titleEl.textContent = "无法打开";
+    titleEl.textContent = "không thểmở";
     frame.removeAttribute("src");
     try {
       var doc = frame.contentDocument;
       doc.open();
       doc.write('<div style="font-family:sans-serif;padding:60px;text-align:center;color:#6b7589">' +
         '<h2 style="color:#14213d">😕 ' + Y.esc(msg) + '</h2>' +
-        '<p><a href="index.html" style="color:#c8102e">← 返回首页</a></p></div>');
+        '<p><a href="index.html" style="color:#c8102e">← Quay lạiTrang chủ</a></p></div>');
       doc.close();
     } catch (e) {
       metaEl.textContent = msg;
@@ -108,7 +108,7 @@
     var m = (it.id || "").match(/cambridge-(\d+)-test-(\d+)/);
     if (!m) return null;
     return {
-      vol: "剑" + m[1],
+      vol: "kiếm hai lưỡi" + m[1],
       test: "Test " + m[2],
       skill: (Y.SUBJECT[it.subject] || {}).label || ""
     };
@@ -127,7 +127,7 @@
   }
 
   function isScoredReveal(payload) {
-    // ponytail: paper already paints 批改报告 — full-screen reveal stacked "交卷中/成绩揭晓" on top of it
+    // ponytail: paper already paints Chấm bàiBáo cáo — full-screen reveal stacked "Nộp bàihình thức kết hợp Trung Quốc/Kết quảcông bố công khai" on top of it
     return false;
   }
 
@@ -155,8 +155,8 @@
     var isWriting = item.subject === "cambridge-writing" || item.subject === "ielts-writing" ||
       (payload.completed && payload.score == null);
     var reveal = isScoredReveal(payload);
-    var heading = isStudy ? "学习进度已保存" : (isWriting ? "写作练习已保存" : "成绩已保存");
-    var sub = payload.syncSub || "正在同步到云端…";
+    var heading = isStudy ? "họcTiến độđãLưu" : (isWriting ? "ViếtLuyện tậpđãLưu" : "Kết quảđãLưu");
+    var sub = payload.syncSub || "đang ở thời điểm đóđồng bộđếncao trên mây…";
     var scoreLine = "";
     var wrongN = payload.wrongWords && payload.wrongWords.length;
     var deltaLine = "";
@@ -167,20 +167,20 @@
       if (payload.band != null) scoreLine += " · Band " + payload.band;
       if (prevScore != null && isFinite(Number(prevScore)) && Number(prevScore) !== Number(payload.score)) {
         var dlt = Number(payload.score) - Number(prevScore);
-        deltaLine = dlt > 0 ? "比上次 +" + dlt : (dlt < 0 ? "比上次 " + dlt : "");
+        deltaLine = dlt > 0 ? "Bỉlần trước +" + dlt : (dlt < 0 ? "Bỉlần trước " + dlt : "");
       }
     } else if (isWriting) {
-      scoreLine = payload.writingWords ? payload.writingWords + " 词" : "已完成";
+      scoreLine = payload.writingWords ? payload.writingWords + " biến thể cũ của" : "Đã hoàn thành";
     } else if (isStudy) {
-      scoreLine = "已完成";
+      scoreLine = "Đã hoàn thành";
     }
     if (wrongN && !payload.syncSub) {
-      sub = "本次新增 " + wrongN + " 个错词，可在单词区错题本复习";
+      sub = "hình thức kết hợp gốc tiếp theothêm cái gì đó mới " + wrongN + " dùng trong họ biến thể cũ của,tiền tố có thể tồn tạiKhu vực Từ vựngSổ lỗi saiÔn tập";
     }
     if (deltaLine) sub = deltaLine + (sub ? " · " + sub : "");
 
     var primaryHref = wrongN ? "wrong-words.html" : "results.html";
-    var primaryLabel = wrongN ? "看错题 →" : "我的成绩 →";
+    var primaryLabel = wrongN ? "hiểu sai những gì nhìn hoặc đọchọ →" : "Kết quả của tôi →";
 
     if (reveal) {
       toastHost.innerHTML =
@@ -198,9 +198,9 @@
             '<p class="score-reveal__sub">' + Y.esc(sub) + "</p>" +
             '<div class="score-reveal__acts">' +
               '<a class="btn btn--primary btn--sm" href="' + primaryHref + '">' + primaryLabel + "</a>" +
-              '<a class="btn btn--ghost btn--sm" href="dashboard.html">回待办</a>' +
+              '<a class="btn btn--ghost btn--sm" href="dashboard.html">xoay vòng ở lại làm</a>' +
             "</div>" +
-            '<button type="button" class="score-toast__close score-reveal__x" aria-label="关闭">×</button>' +
+            '<button type="button" class="score-toast__close score-reveal__x" aria-label="Đóng">×</button>' +
           "</div>" +
         "</div>";
       toastHost.classList.add("is-visible", "is-reveal");
@@ -219,9 +219,9 @@
           '<span class="score-toast__sub">' + Y.esc(sub) + '</span>' +
         '</div>' +
         (wrongN
-          ? '<a class="score-toast__link" href="wrong-words.html">错题本 →</a>'
-          : '<a class="score-toast__link" href="results.html">我的成绩 →</a>') +
-        '<button type="button" class="score-toast__close" aria-label="关闭">×</button>' +
+          ? '<a class="score-toast__link" href="wrong-words.html">Sổ lỗi sai →</a>'
+          : '<a class="score-toast__link" href="results.html">Kết quả của tôi →</a>') +
+        '<button type="button" class="score-toast__close" aria-label="Đóng">×</button>' +
       '</div>';
 
     toastHost.classList.remove("is-reveal");
@@ -301,11 +301,11 @@
         '</div></div>';
     } else {
       el.innerHTML =
-        '<div><h2>模考已中止</h2>' +
-        '<p>检测到切换页面或离开考试窗口，本次模考无效，无法继续作答。</p>' +
+        '<div><h2>Thi thửđãngừng</h2>' +
+        '<p>phát hiệnđếnchuyển đổiđầu mặt có thểrời khỏiKì thicửa sổ,hình thức kết hợp gốc tiếp theoThi thửkhông hợp lệ,không thểTiếp tụctrả lời.</p>' +
         '<div class="yysd-exam-lock-actions">' +
-        '<button type="button" class="yysd-exam-lock-exit">强制退出</button>' +
-        '<button type="button" class="yysd-exam-lock-restart">重新开始</button>' +
+        '<button type="button" class="yysd-exam-lock-exit">ép buộcĐăng xuất</button>' +
+        '<button type="button" class="yysd-exam-lock-restart">tiếp tục</button>' +
         '</div></div>';
     }
     el.querySelector(".yysd-exam-lock-exit").onclick = forceExitExam;
@@ -451,36 +451,36 @@
         ? ("Cambridge IELTS " + vol + " · Test " + test + " (" + skill + ")")
         : (shown + " · IELTS");
     } else {
-      document.title = shown + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "学习中心");
+      document.title = shown + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "Trung tâm Học tập");
     }
     renderBadges(badges);
 
     if (badges) {
       metaEl.textContent = [
         zoneLabel,
-        (!isStudy && item.duration ? item.duration + " 分钟" : "")
+        (!isStudy && item.duration ? item.duration + " phút" : "")
       ].filter(Boolean).join(" · ");
     } else {
       metaEl.textContent = [subjLabel, zoneLabel,
-        (!isStudy && item.duration ? item.duration + " 分钟" : "")].filter(Boolean).join(" · ");
+        (!isStudy && item.duration ? item.duration + " phút" : "")].filter(Boolean).join(" · ");
     }
 
     if (hintEl && (explainMode || (item && item.explain))) {
       hintEl.hidden = false;
-      hintEl.textContent = "详解可答题看对错，不记成绩、不算完成";
+      hintEl.textContent = "Giải thích chi tiếttiền tố có thể hình thức gắn liền có nghĩa giống như từ tự do họ chăm sóc đúng họ,không ghi chépKết quả,không tínhHoàn thành";
     } else if (hintEl && (Y.isReadingExam(item) || item.subject === "cambridge-listening")) {
       hintEl.hidden = false;
-      hintEl.textContent = "选中文字可高亮 · 右键做笔记";
+      hintEl.textContent = "lựa chọnchữ viếttiền tố có thểtô sáng tin học · hình thức kết hợp bên phải phím trên đàn piano hoặc bàn phím máy tính làmGhi chú";
     }
 
-    backBtn.textContent = isStudy ? "← 返回单词" : "← 退出考场";
+    backBtn.textContent = isStudy ? "← Quay lạiTừ vựng" : "← Đăng xuấtPhòng thi";
     if (isStudy && (Y.isVocabListSubject(item.subject) || Y.isVocabSpecial(item.subject))) {
       var backBook = Y.vocabBookOfSubject(item.subject) || "special";
       backBtn.href = "vocab-shelf.html?book=" + encodeURIComponent(backBook);
-      backBtn.textContent = "← 返回词库";
+      backBtn.textContent = "← Quay lạikho từ";
     } else if (isStudy) {
       backBtn.href = "zone.html?zone=study&s=vocab";
-      backBtn.textContent = "← 返回单词区";
+      backBtn.textContent = "← Quay lạiKhu vực Từ vựng";
     } else if (item.zone === "mock") {
       var mockS = "mock";
       if (item.subject === "cambridge-listening") mockS = "listening";
@@ -544,32 +544,32 @@
         return;
       }
       if (examLockOn) {
-        alert("模考进行中，请先提交试卷并查看成绩后再退出。");
+        alert("Thi thửĐang thực hiện,mời trướcNộp bàibài thivàXemKết quảhọ lạiĐăng xuất.");
         e.preventDefault();
         return;
       }
       if (!isStudy && item.zone === "mock" && item.subject === "cambridge-writing") {
-        if (!confirm("确定退出吗？写作内容已自动保存草稿。")) e.preventDefault();
+        if (!confirm("rõ ràngĐăng xuấtthông tục gì??ViếtNội dungđãtự độngLưubản thảo.")) e.preventDefault();
       } else if (!isStudy && item.zone === "mock") {
-        if (!confirm("确定退出吗？已作答的内容会自动保存，下次打开可继续练习。")) e.preventDefault();
+        if (!confirm("rõ ràngĐăng xuấtthông tục gì??đãtrả lờiNội dungcó thểtự độngLưu,lần tớimởtiền tố có thểTiếp tụcLuyện tập.")) e.preventDefault();
       } else if (!isStudy) {
-        if (!confirm("确定退出吗？未交卷的作答可能不会被保存。")) e.preventDefault();
+        if (!confirm("rõ ràngĐăng xuấtthông tục gì??chưaNộp bàitrả lờicó thể xảy rakhông có khả năngchănLưu.")) e.preventDefault();
       }
     });
   }
 
   function startUpload(html) {
     var zoneLabel = (Y.ZONE[item.zone] || {}).label || "";
-    var subjLabel = "老师布置";
+    var subjLabel = "Giáo viênsắp xếp";
     titleEl.textContent = item.title;
-    document.title = item.title + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "学习中心");
+    document.title = item.title + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "Trung tâm Học tập");
     renderBadges(null);
     metaEl.textContent = [subjLabel, zoneLabel, item._attachmentName || ""].filter(Boolean).join(" · ");
     if (hintEl) {
       hintEl.hidden = false;
-      hintEl.textContent = "交卷后成绩会自动同步到「我的成绩」与待办事项";
+      hintEl.textContent = "Nộp bàihọKết quảcó thểtự độngđồng bộđến«Kết quả của tôi»Việc cần làm";
     }
-    backBtn.textContent = "← 返回待办事项";
+    backBtn.textContent = "← Quay lạiViệc cần làm";
     backBtn.href = "dashboard.html";
 
     // ponytail: no allow-same-origin — upload HTML cannot read parent JWT; score via postMessage + server bridge
@@ -582,7 +582,7 @@
     }, { once: true });
 
     backBtn.addEventListener("click", function (e) {
-      if (!confirm("确定退出吗？未交卷的作答可能不会被保存。")) e.preventDefault();
+      if (!confirm("rõ ràngĐăng xuấtthông tục gì??chưaNộp bàitrả lờicó thể xảy rakhông có khả năngchănLưu.")) e.preventDefault();
     });
   }
 
@@ -764,7 +764,7 @@
       }
       if (seconds <= 0) {
         clearInterval(timerHandle);
-        timerEl.textContent = "时间到";
+        timerEl.textContent = "Thời gianđến";
         // ponytail: bridge owns auto-submit; parent only signals (avoids stacked alerts)
         try { frame.contentWindow.postMessage({ type: "yysd:time-up" }, "*"); } catch (e) {}
         return;
@@ -810,12 +810,12 @@
       for (var i = 0; i < nodes.length && out.length < 80; i++) {
         var el = nodes[i];
         var rq = ((el.querySelector(".rq") || {}).textContent || "").trim();
-        var m = rq.match(/第\s*([^\s题]+)\s*题/);
+        var m = rq.match(/\s*([^\shọ]+)\s*họ/);
         var yoursEl = el.querySelector(".yours");
         var ansEl = el.querySelector(".correctv");
         var rexEl = el.querySelector(".rex");
         var ua = yoursEl ? yoursEl.textContent.trim() : "";
-        if (ua === "未作答") ua = "";
+        if (ua === "Chưa trả lời") ua = "";
         var explain = rexEl ? rexEl.textContent.replace(/^\s*💡\s*/, "").trim() : "";
         var row = {
           no: m ? m[1] : rq.replace(/^[✘✔]\s*/, ""),
@@ -883,11 +883,11 @@
         } catch (err) { /* iframe gone */ }
       }
       if (!window.YYSD_AUTH || !YYSD_AUTH.getToken || !YYSD_AUTH.getToken()) {
-        replyGrade({ error: "请先登录后再使用 AI 批改" });
+        replyGrade({ error: "mời trướcĐăng nhậphọtái sử dụng AI Chấm bài" });
         return;
       }
       if (YYSD_AUTH.isTeacher && YYSD_AUTH.isTeacher()) {
-        replyGrade({ error: "老师账号请在学生端体验 AI 批改" });
+        replyGrade({ error: "Giáo viênTài khoảnmời tồn tạiHọc viêncuốitrải nghiệm AI Chấm bài" });
         return;
       }
       YYSD_AUTH.api("/api/ai-tutor/writing-grade", {
@@ -905,11 +905,11 @@
           quota: res.quota
         });
       }).catch(function (err) {
-        var msg = (err && err.message) || "批改失败";
-        if (/上限|用完|额度/i.test(msg) && !/明日|明天/.test(msg)) {
-          msg = msg.replace(/[。！!]?$/, "") + "，明日再来";
-        } else if (/解析|失败|稍后/i.test(msg)) {
-          msg = msg.replace(/[。！!]?$/, "") + " — 可再点按钮重试";
+        var msg = (err && err.message) || "Chấm bàiThất bại";
+        if (/giới hạn trên|dùng hết|hạn ngạch/i.test(msg) && !/ngày mai|ngày mai/.test(msg)) {
+          msg = msg.replace(/[.!!]?$/, "") + ",ngày mailại đến";
+        } else if (/Giải thích|Thất bại|một lát nữa/i.test(msg)) {
+          msg = msg.replace(/[.!!]?$/, "") + " — tiền tố có thể lại điểmnút bấmthử lại";
         }
         replyGrade({ error: msg });
       });
@@ -995,12 +995,12 @@
     if (window.YYSD_AUTH && YYSD_AUTH.pushScoreRecord) {
       pendingScorePush = YYSD_AUTH.pushScoreRecord(pushBody)
         .then(function (ok) {
-          if (ok) setToastSyncSub("已同步至云端，可在「我的成绩」查看");
-          else setToastSyncSub("已保存在本浏览器（未登录则不同步云端）");
+          if (ok) setToastSyncSub("đãđồng bộđếncao trên mây,tiền tố có thể tồn tại«Kết quả của tôi»Xem");
+          else setToastSyncSub("đãLưutồn tại hình thức kết hợp gốctrình duyệt phần mềm(chưaĐăng nhậpvăn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưngkháchọcao trên mây)");
           return !!ok;
         })
         .catch(function () {
-          setToastSyncSub("本地已保存，云端同步失败");
+          setToastSyncSub("địa phươngđãLưu,cao trên mâyđồng bộThất bại");
           return false;
         });
     } else {

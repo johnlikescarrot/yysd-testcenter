@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思17 Test 1 阅读</title>
-<meta name="exam:title" content="剑桥雅思17 · Test 1（阅读）">
+<title>YYSD · Cambridge IELTS 17 Test 1 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 17 · Test 1(Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思17 Test 1 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 17 Test 1 Học thuật loạiĐọc (Chính thức Đề thi thật):3 tờbài viết Tổng 40 câu,tiền tố có thể họ tờLuyện tập có thểhoàn chỉnh Thi thử,tự động Chấm bài,Giải thích IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* bìa của ấn phẩm */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
@@ -36,7 +36,7 @@
   .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* chế độcửa sổ pop-up tin học */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -58,7 +58,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* hình thức gắn liền có nghĩa giống như từ tự do họ họ */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
@@ -71,7 +71,7 @@
   .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
   .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Đọcphần hàng rào: họbài viết hình thức kết hợp bên phảiĐề bài */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
   .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
@@ -119,7 +119,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
@@ -156,98 +156,99 @@
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span>Cambridge IELTS Đề thi thật Bài kiểm tra</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- bìa của ấn phẩm -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">17</div></div>
     <div>
-      <h2>剑桥雅思 17 · Test 1</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 17 · Test 1</h2>
+      <div class="sub">Học thuật loạiĐọc · Chính thức Đề thi thật · tự động Chấm bài và cung cấp đi raIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.nhấn bên dưới Bắt đầu Bài kiểm tra.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Học thuật loạiĐọc (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta">Đang tải…</div>
+      <div class="pc-go">Bắt đầu Bài kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- chế độcửa sổ pop-up tin học -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc">phù hợp phần tờđột phá,tiền tố có thể chỉ luyện tập một vài bàn nhỏ tờbài viết,hướng về phía trước đo thời gian khôngtác động nỗ lực hoặc áp lực áp lực.</div>
+        <div class="mb-sub"><span>Chọn Luyện tập bài viết:</span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc">hoàn chỉnh Mô phỏng thật Kì thi:tất cả bài viết đầu tiên Hoàn thành,đặt giới hạn thời gian 60 phút.</div>
+        <div class="mb-sub"><span>Bài kiểm tra thông tin:</span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo">hoàn chỉnh Bài kiểm tra (đặt giới hạn thời gian 60 phút)</div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu Thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- hình thức gắn liền có nghĩa giống như từ tự do họ họ -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Quay lại bìa của ấn phẩm</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài vàXem Chấm bài Báo cáo</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quảhọ -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Chấm bài Báo cáo</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đó họ đếm</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỉ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>hoàn toàn Tiến độ</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">chi tiết Kết quả</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思20 Test 4 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
-   ============================================================ */
+ một, bài thi dữ liệu —— Cambridge IELTS 20 Test 4 Học thuật loại Đọc (Chính thức họ họ + Đáp án chính thức)
+ Giải thích: mỗi tờ bài viết làm với tư cách một dùng trong mục tiêu {id, passage:{title,byline,paras[]}, groups:[...]}
+ phát hành lại đến Passage 2, 3 biến thể cũ của nhấn giống hệt hình thức thêm cái gì đó bổ sung tiến lên passages tin học mảng tương đương với.
+ ============================================================ */
 const TEST = {
   meta:{ volume:17, testNo:1 },
   durationMin:60,
@@ -290,23 +291,23 @@ const TEST = {
             {bullet:true, html:`With the completion of the brick arch, the tunnel was covered with <Q n="6">`},
           ],
           questions:[
-            {id:'Q1',no:1,answer:['population'],explain:`第1段：伦敦人口 population 在 1800–1850 间迅速增长。答案：population。`},
-            {id:'Q2',no:2,answer:['suburbs'],explain:`第2段：把工人迁到新建的郊区 suburbs。答案：suburbs。`},
-            {id:'Q3',no:3,answer:['businessmen'],explain:`第2段：一些商人 businessmen 支持 Pearson 的想法。答案：businessmen。`},
-            {id:'Q4',no:4,answer:['funding'],explain:`第3段：公司起初难以筹集资金 funding。答案：funding。`},
-            {id:'Q5',no:5,answer:['press'],explain:`第3段：媒体 press 刊登了批评文章。答案：press。`},
-            {id:'Q6',no:6,answer:['soil'],explain:`第4段：隧道顶部覆盖一层泥土 soil。答案：soil。`},
+            {id:'Q1',no:1,answer:['population'],explain:`1họ: Luân Đôn dân số population tồn tại 1800–1850 giữa nhanh chóng tăng trưởng. Đáp án: population.`},
+            {id:'Q2',no:2,answer:['suburbs'],explain:`2họ: cầm công nhân di chuyển đến huyện Xinjian ở Nam Xương của quận ngoại thành suburbs. Đáp án: suburbs.`},
+            {id:'Q3',no:3,answer:['businessmen'],explain:`2họ: một số thương nhân businessmen tán thành Pearson của cách nghĩ. Đáp án: businessmen.`},
+            {id:'Q4',no:4,answer:['funding'],explain:`3họ: công ty ban đầu khó dự đoán quyên góp quỹ funding. Đáp án: funding.`},
+            {id:'Q5',no:5,answer:['press'],explain:`3họ: truyền thông press đăng câu chuyện trợ từ chỉ hành động đã hoàn thành phê bình bài viết. Đáp án: press.`},
+            {id:'Q6',no:6,answer:['soil'],explain:`4họ: đường hầm mái che phủ lớp đất soil. Đáp án: soil.`},
           ]},
         { kind:'tfng', title:'Questions 7–13',
           instruction:'Do the following statements agree with the information given in Reading Passage 1? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.',
           questions:[
-            {id:'Q7',no:7,q:`Other countries had built underground railways before the Metropolitan line opened.`,answer:['FALSE'],explain:`第5段：Metropolitan 是“the world's first underground railway”。 FALSE。`},
-            {id:'Q8',no:8,q:`More people than predicted travelled on the Metropolitan line on the first day.`,answer:['NOT GIVEN'],explain:`第5段给出首日约4万乘客，但未提是否超出预期。 NOT GIVEN。`},
-            {id:'Q9',no:9,q:`The use of ventilation shafts failed to prevent pollution in the tunnels.`,answer:['TRUE'],explain:`第6段：即使加了通风井，烟雾仍是问题。 TRUE。`},
-            {id:'Q10',no:10,q:`A different approach from the 'cut and cover' technique was required in London's central area.`,answer:['TRUE'],explain:`第7段：市中心无法用“cut and cover”，只能深挖隧道。 TRUE。`},
-            {id:'Q11',no:11,q:`The windows on City & South London trains were at eye level.`,answer:['FALSE'],explain:`第8段：车窗很小，位于车顶下方，并非与视线齐平。 FALSE。`},
-            {id:'Q12',no:12,q:`The City & South London Railway was a financial success.`,answer:['FALSE'],explain:`第8段：尽管技术成就巨大，但“did not make a profit”。 FALSE。`},
-            {id:'Q13',no:13,q:`Trains on the 'Tuppenny Tube' nearly always ran on time.`,answer:['NOT GIVEN'],explain:`第8段说 Tuppenny Tube 很受欢迎，但未提其准点情况。 NOT GIVEN。`},
+            {id:'Q7',no:7,q:`Other countries had built underground railways before the Metropolitan line opened.`,answer:['FALSE'],explain:`5họ: Metropolitan là chỉ theo sau bởi danh từ«the world's first underground railway». FALSE.`},
+            {id:'Q8',no:8,q:`More people than predicted travelled on the Metropolitan line on the first day.`,answer:['NOT GIVEN'],explain:`5họ cung cấp đi ra đầu viết tắt của cân trong cân đĩa hoặc trên cân4dùng trong hành khách, nhưng chưa dùng trong và liệu có hay không vượt quá mong đợi. NOT GIVEN.`},
+            {id:'Q9',no:9,q:`The use of ventilation shafts failed to prevent pollution in the tunnels.`,answer:['TRUE'],explain:`6họ: dù cho thêm trợ từ chỉ hành động đã hoàn thành thông thoáng Tĩnh, khói vẫn là chỉ theo sau bởi danh từ câu hỏi. TRUE.`},
+            {id:'Q10',no:10,q:`A different approach from the 'cut and cover' technique was required in London's central area.`,answer:['TRUE'],explain:`7họ: trung tâm thành phố không thể sử dụng«cut and cover», chỉ có thể đào sâu đường hầm. TRUE.`},
+            {id:'Q11',no:11,q:`The windows on City & South London trains were at eye level.`,answer:['FALSE'],explain:`8họ: cửa xe phó từ mức độ nhỏ, nằm ở mái xe bên dưới, thật sự không phải biến thể của đường ngắm tên các nước và triều đại ở vài thời kỳ khác nhau họ. FALSE.`},
+            {id:'Q12',no:12,q:`The City & South London Railway was a financial success.`,answer:['FALSE'],explain:`8họ: mặc dù công nghệ thành tựu to lớn, nhưng«did not make a profit». FALSE.`},
+            {id:'Q13',no:13,q:`Trains on the 'Tuppenny Tube' nearly always ran on time.`,answer:['NOT GIVEN'],explain:`8họ thuyết phục Tuppenny Tube phó từ mức độ phổ biến, nhưng chưa dùng trong và của anh ấy đúng giờ hoàn cảnh. NOT GIVEN.`},
           ]},
       ]},
 
@@ -332,10 +333,10 @@ const TEST = {
           instruction:'Reading Passage 2 has seven sections, A–G. Which section contains the following information? Write the correct letter, A–G, in the box next to each question. You may use any letter more than once.',
           box:{A:'',B:'',C:'',D:'',E:'',F:'',G:''},
           questions:[
-            {id:'Q14',no:14,q:`a mention of negative attitudes towards stadium building projects`,answer:['A'],explain:`A段：如今人们对体育场建设“growing scepticism”。 A。`},
-            {id:'Q15',no:15,q:`figures demonstrating the environmental benefits of a certain stadium`,answer:['F'],explain:`F段：高雄体育场每年减排660吨CO2等数据。 F。`},
-            {id:'Q16',no:16,q:`examples of the wide range of facilities available at some new stadiums`,answer:['E'],explain:`E段：酒店、零售、会议中心、餐厅、游乐场、绿地等设施。 E。`},
-            {id:'Q17',no:17,q:`reference to the disadvantages of the stadiums built during a certain era`,answer:['D'],explain:`D段：20世纪初的体育场位置偏、能耗高、加剧城市热岛。 D。`},
+            {id:'Q14',no:14,q:`a mention of negative attitudes towards stadium building projects`,answer:['A'],explain:`Ahọ: ngày nay mọi người đúng sân vận động xây dựng «growing scepticism». A.`},
+            {id:'Q15',no:15,q:`figures demonstrating the environmental benefits of a certain stadium`,answer:['F'],explain:`Fhọ: Cao Hùng sân vận động mỗi năm giảm thải chất ô nhiễm 660tấn từ mượnCO2đợi dữ liệu. F.`},
+            {id:'Q16',no:16,q:`examples of the wide range of facilities available at some new stadiums`,answer:['E'],explain:`Ehọ: quán rượu, bán lẻ, cuộc họp trung tâm, phòng ăn, sân chơi, khu vực xanh ví dụ: công viên đô thị hoặc vườn đợi cơ sở vật chất. E.`},
+            {id:'Q17',no:17,q:`reference to the disadvantages of the stadiums built during a certain era`,answer:['D'],explain:`Dhọ: 20 thế kỷ lúc đầu của sân vận động vị trí nghiêng, tiêu thụ năng lượng họ, làm gia tăng thành phố hâm nóng biến thể của. D.`},
           ]},
         { kind:'note', title:'Questions 18–22',
           instruction:'Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -344,27 +345,27 @@ const TEST = {
             {plain:true, html:`The Roman stadiums of Europe have proved very versatile. The amphitheatre of Arles, for example, was converted first into a <Q n="18">, then into a residential area and finally into an arena where spectators could watch <Q n="19">. Meanwhile, the arena in Verona, one of the oldest Roman amphitheatres, is famous today as a venue where <Q n="20"> is performed. The site of Lucca's amphitheatre has also been used for many purposes over the centuries, including the storage of <Q n="21">. It is now a market square with <Q n="22"> and homes incorporated into the remains of the Roman amphitheatre.`},
           ],
           questions:[
-            {id:'Q18',no:18,answer:['fortress'],explain:`B段：Arles 先变成堡垒 fortress。答案：fortress。`},
-            {id:'Q19',no:19,answer:['bullfights'],explain:`B段：最后改作斗牛 bullfights 的竞技场。答案：bullfights。`},
-            {id:'Q20',no:20,answer:['opera'],explain:`B段：Verona 如今以歌剧 opera 演出闻名。答案：opera。`},
-            {id:'Q21',no:21,answer:['salt'],explain:`C段：Lucca 遗址曾用作盐 salt 仓库。答案：salt。`},
-            {id:'Q22',no:22,answer:['shops'],explain:`C段：如今是带商铺 shops 与住宅的集市广场。答案：shops。`},
+            {id:'Q18',no:18,answer:['fortress'],explain:`Bhọ: Arles trước thay đổi thành pháo đài fortress. Đáp án: fortress.`},
+            {id:'Q19',no:19,answer:['bullfights'],explain:`Bhọ: cuối cùng thay đổi hình thức kết hợp công nhân chòm sao Bắc Đẩu và sao Ngưu Lang thiên văn bullfights của đấu trường. Đáp án: bullfights.`},
+            {id:'Q20',no:20,answer:['opera'],explain:`Bhọ: Verona ngày nay biến thể cũ của nhạc kịch phương Tây opera diễn trong một vở kịch nổi tiếng. Đáp án: opera.`},
+            {id:'Q21',no:21,answer:['salt'],explain:`Chọ: Lucca di tích họ dùng cho mục đích muối salt kho hàng. Đáp án: salt.`},
+            {id:'Q22',no:22,answer:['shops'],explain:`Chọ: ngày nay là chỉ theo sau bởi danh từ dải cửa hàng shops biến thể của nơi ở của chợ quảng trường. Đáp án: shops.`},
           ]},
         { kind:'multi', title:'Questions 23 and 24',
           instruction:'Choose TWO letters, A–E. When comparing twentieth-century stadiums to ancient amphitheatres in Section D, which TWO negative features does the writer mention?',
           box:{A:`They are less imaginatively designed.`,B:`They are less spacious.`,C:`They are in less convenient locations.`,D:`They are less versatile.`,E:`They are made of less durable materials.`},
           groupId:'Q23_24', answerSet:['C','D'],
           questions:[
-            {id:'Q23',no:23,explain:`选两项（顺序不限）：C 与 D。 C：位置不便（郊区）； D：灵活性下降（只供体育用途）。`},
-            {id:'Q24',no:24,explain:`同上，正确两项为 C 与 D。`},
+            {id:'Q23',no:23,explain:`chọn họ(trình tự không giới hạn): C biến thể của D. C: vị trí bất tiện (quận ngoại thành); D: tính linh hoạt giảm (chỉ chất cho hóa học sinh con công dụng).`},
+            {id:'Q24',no:24,explain:`như trên, Đúng họ làm với tư cách C biến thể của D.`},
           ]},
         { kind:'multi', title:'Questions 25 and 26',
           instruction:'Choose TWO letters, A–E. Which TWO advantages of modern stadium design does the writer mention?',
           box:{A:`offering improved amenities for the enjoyment of sports events`,B:`bringing community life back into the city environment`,C:`facilitating research into solar and wind energy solutions`,D:`enabling local residents to reduce their consumption of electricity`,E:`providing a suitable site for the installation of renewable power generators`},
           groupId:'Q25_26', answerSet:['B','E'],
           questions:[
-            {id:'Q25',no:25,explain:`选两项（顺序不限）：B 与 E。 B：把社区生活带回城市； E：适合安装可再生能源发电设备。`},
-            {id:'Q26',no:26,explain:`同上，正确两项为 B 与 E。`},
+            {id:'Q25',no:25,explain:`chọn họ(trình tự không giới hạn): B biến thể của E. B: cầm cộng đồng Đời sống mang về thành phố; E: phù hợp lắp đặt tái tạo được tài nguyên năng lượng phát điện thiết bị.`},
+            {id:'Q26',no:26,explain:`như trên, Đúng họ làm với tư cách B biến thể của E.`},
           ]},
       ]},
 
@@ -394,67 +395,67 @@ const TEST = {
             {html:`Charles II's father was executed by the Parliamentarian forces in 1649. Charles II then formed a <Q n="27"> with the Scots, and in order to become King of Scots, he abandoned an important <Q n="28"> that was held by his father and had contributed to his father's death. The opposing sides then met outside Worcester in 1651. The battle led to a <Q n="29"> for the Parliamentarians and Charles had to flee for his life. A <Q n="30"> was offered for Charles's capture, but after six weeks spent in hiding, he eventually managed to reach the <Q n="31"> of continental Europe.`},
           ],
           questions:[
-            {id:'Q27',no:27,answer:['H'],explain:`答案：H（strategic alliance）——与苏格兰人结成战略同盟。`},
-            {id:'Q28',no:28,answer:['J'],explain:`答案：J（religious conviction）——放弃了其父坚守的宗教信念。`},
-            {id:'Q29',no:29,answer:['F'],explain:`答案：F（decisive victory）——议会派取得决定性胜利。`},
-            {id:'Q30',no:30,answer:['B'],explain:`答案：B（large reward）——悬赏巨款捉拿查理。`},
-            {id:'Q31',no:31,answer:['D'],explain:`答案：D（relative safety）——最终抵达欧洲大陆的相对安全之地。`},
+            {id:'Q27',no:27,answer:['H'],explain:`Đáp án: H(strategic alliance)——biến thể của dùng trong hình vuông họ người hình thành chiến lược liên minh.`},
+            {id:'Q28',no:28,answer:['J'],explain:`Đáp án: J(religious conviction)—— từ bỏ trợ từ chỉ hành động đã hoàn thành của anh ấy giữ vững của tôn giáo niềm tin.`},
+            {id:'Q29',no:29,answer:['F'],explain:`Đáp án: F(decisive victory)—— quốc hội dùng trong giành được mang tính quyết định chiến thắng.`},
+            {id:'Q30',no:30,answer:['B'],explain:`Đáp án: B(large reward)—— treo thưởng một khoản tiền lớn bắt giữ họ kết cấu.`},
+            {id:'Q31',no:31,answer:['D'],explain:`Đáp án: D(relative safety)—— cuối cùng đến lục địa Châu Âu của tương đối an toàn trợ từ kết cấu: dùng trước động từ hoặc tính từ.`},
           ]},
         { kind:'tfng', title:'Questions 32–35',
           variant:'yn',
           instruction:'Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, NOT GIVEN if it is impossible to say what the writer thinks about this.',
           questions:[
-            {id:'Q32',no:32,q:`Charles chose Pepys for the task because he considered him to be trustworthy.`,answer:['NOT GIVEN'],explain:`第2段说查理找 Pepys 记录故事，但未说原因是认为他可信。 NOT GIVEN。`},
-            {id:'Q33',no:33,q:`Charles's personal recollection of the escape lacked sufficient detail.`,answer:['NO'],explain:`第2段：他“in great detail”详述了回忆——与“缺乏细节”矛盾。 NO。`},
-            {id:'Q34',no:34,q:`Charles indicated to Pepys that he had planned his escape before the battle.`,answer:['NO'],explain:`第2段引语：战败后他才开始想如何自救——并非战前就计划。 NO。`},
-            {id:'Q35',no:35,q:`The inclusion of Charles's account is a positive aspect of the book.`,answer:['YES'],explain:`第3段：用查理自己的叙述是本书“one of the joys”。 YES。`},
+            {id:'Q32',no:32,q:`Charles chose Pepys for the task because he considered him to be trustworthy.`,answer:['NOT GIVEN'],explain:`2họ thuyết phục họ kết cấu cố gắng tìm Pepys ghi chép tục lệ cũ, nhưng chưa thuyết phục Lí do là chỉ theo sau bởi danh từ nhận ra làm với tư cách anh ấy đáng tin cậy. NOT GIVEN.`},
+            {id:'Q33',no:33,q:`Charles's personal recollection of the escape lacked sufficient detail.`,answer:['NO'],explain:`2họ: anh ấy«in great detail» thuật lại trợ từ chỉ hành động đã hoàn thành hồi tưởng ——biến thể của« thiếu Chi tiết » mâu thuẫn. NO.`},
+            {id:'Q34',no:34,q:`Charles indicated to Pepys that he had planned his escape before the battle.`,answer:['NO'],explain:`2họ trích dẫn: thua trận họ anh ấy khả năng Bắt đầu nghĩ về như thế nào tự cứu mình thoát khỏi rắc rối —— thật sự không phải chiến đấu trước sau một mệnh đề giả định trong trường hợp đó kế hoạch. NO.`},
+            {id:'Q35',no:35,q:`The inclusion of Charles's account is a positive aspect of the book.`,answer:['YES'],explain:`3họ: sử dụng họ kết cấu bản thân của kể một câu chuyện hoặc thông tin là chỉ theo sau bởi danh từ hình thức kết hợp gốc viết tắt của«one of the joys». YES.`},
           ]},
         { kind:'mcq', title:'Questions 36–40',
           instruction:'Choose the correct letter, A, B, C or D.',
           questions:[
-            {id:'Q36',no:36,q:`What is the reviewer's main purpose in the first paragraph?`,options:{A:`to describe what happened during the Battle of Worcester`,B:`to give an account of the circumstances leading to Charles II's escape`,C:`to provide details of the Parliamentarians' political views`,D:`to compare Charles II's beliefs with those of his father`},answer:['B'],explain:`第1段交代了查理二世逃亡的来龙去脉。 B。`},
-            {id:'Q37',no:37,q:`Why does the reviewer include examples of the fugitives' behaviour in the third paragraph?`,options:{A:`to explain how close Charles II came to losing his life`,B:`to suggest that Charles II's supporters were badly prepared`,C:`to illustrate how the events of the six weeks are brought to life`,D:`to argue that certain aspects are not as well known as they should be`},answer:['C'],explain:`第3段用生动细节说明书如何让那六周“close to the action”。 C。`},
-            {id:'Q38',no:38,q:`What point does the reviewer make about Charles II in the fourth paragraph?`,options:{A:`He chose to celebrate what was essentially a defeat.`,B:`He misunderstood the motives of his opponents.`,C:`He aimed to restore people's faith in the monarchy.`,D:`He was driven by a desire to be popular.`},answer:['A'],explain:`第4段：查理热衷于纪念人生最低谷（实为战败）。 A。`},
-            {id:'Q39',no:39,q:`What does the reviewer say about Charles Spencer in the fifth paragraph?`,options:{A:`His decision to write the book comes as a surprise.`,B:`He takes an unbiased approach to the subject matter.`,C:`His descriptions of events would be better if they included more detail.`,D:`He chooses language that is suitable for a twenty-first-century audience.`},answer:['B'],explain:`第5段：他对逃亡的国王和追捕他的共和政权都抱“even-handed sympathy”。 B。`},
-            {id:'Q40',no:40,q:`When the reviewer says the book 'doesn't quite hit the mark', she is making the point that`,options:{A:`it overlooks the impact of events on ordinary people.`,B:`it lacks an analysis of prevalent views on monarchy.`,C:`it omits any references to the deceit practised by Charles II during his time in hiding.`,D:`it fails to address whether Charles II's experiences had a lasting influence on him.`},answer:['D'],explain:`第6段：作者未深入探讨这六周经历是否对查理产生长远影响。 D。`},
+            {id:'Q36',no:36,q:`What is the reviewer's main purpose in the first paragraph?`,options:{A:`to describe what happened during the Battle of Worcester`,B:`to give an account of the circumstances leading to Charles II's escape`,C:`to provide details of the Parliamentarians' political views`,D:`to compare Charles II's beliefs with those of his father`},answer:['B'],explain:`1họ bàn giao nhiệm vụ cho người khác trợ từ chỉ hành động đã hoàn thành họ kết cấu thứ hai của các vị vua được đánh số chạy trốn của nghĩa đen: địa thế lên xuống thành ngữ. B.`},
+            {id:'Q37',no:37,q:`Why does the reviewer include examples of the fugitives' behaviour in the third paragraph?`,options:{A:`to explain how close Charles II came to losing his life`,B:`to suggest that Charles II's supporters were badly prepared`,C:`to illustrate how the events of the six weeks are brought to life`,D:`to argue that certain aspects are not as well known as they should be`},answer:['C'],explain:`3họ sử dụng sinh động Chi tiết sách hướng dẫn kỹ thuật như thế nào nhường họ sáu họ«close to the action». C.`},
+            {id:'Q38',no:38,q:`What point does the reviewer make about Charles II in the fourth paragraph?`,options:{A:`He chose to celebrate what was essentially a defeat.`,B:`He misunderstood the motives of his opponents.`,C:`He aimed to restore people's faith in the monarchy.`,D:`He was driven by a desire to be popular.`},answer:['A'],explain:`4họ: họ kết cấu đam mê họ tưởng niệm đời người thời gian sống trên thế gian điểm thấp nhất (thật làm với tư cách thua trận). A.`},
+            {id:'Q39',no:39,q:`What does the reviewer say about Charles Spencer in the fifth paragraph?`,options:{A:`His decision to write the book comes as a surprise.`,B:`He takes an unbiased approach to the subject matter.`,C:`His descriptions of events would be better if they included more detail.`,D:`He chooses language that is suitable for a twenty-first-century audience.`},answer:['B'],explain:`5họ: anh ấy đúng chạy trốn của họ họ biến thể cũ của truy đuổi anh ấy của cộng hòa chế độ họ ôm«even-handed sympathy». B.`},
+            {id:'Q40',no:40,q:`When the reviewer says the book 'doesn't quite hit the mark', she is making the point that`,options:{A:`it overlooks the impact of events on ordinary people.`,B:`it lacks an analysis of prevalent views on monarchy.`,C:`it omits any references to the deceit practised by Charles II during his time in hiding.`,D:`it fails to address whether Charles II's experiences had a lasting influence on him.`},answer:['D'],explain:`6họ: tác giả chưa thâm nhập sâu điều tra đại từ này sáu họ kinh nghiệm liệu có hay không đúng họ kết cấu phát sinh dài hạn ảnh hưởng. D.`},
           ]},
       ]},
   ]
 };
 
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* Chính thức Học thuật loại Đọc đầu tiên phần(0-40) → IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần bảng so sánh */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
-   ============================================================ */
+, động cơ từ mượn 
+ ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* bìa của ấn phẩm thông tin */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} tờ bài viết · ${totalQs()} họ`;
 })();
 
-/* 模式弹窗 */
+/* chế độ cửa sổ pop-up tin học */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}(${allQs(p).length} họ)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'họ chọn'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('mời ít nhất Chọn một tờ bài viết.'); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -466,8 +467,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思17 · Test 1 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 17 · Test 1 — Đọc`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -480,11 +481,11 @@ function passageHtml(p){
     </div>`;
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
-      <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
-    </div><div class="reading-cols">${article}${qs}</div>`;
+ <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
+ <div class="sb-meta"> Gợi ý sử dụng biến thể cũ của cân trong cân đĩa hoặc trên cân 20 phút · hình thức kết hợp gốc tờ ${allQs(p).length} họ</div>
+ </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // cầm <Q n="x"> biến thể của vị trí thay thế họ đánh số huy hiệu + nhập khẩu khung ví dụ: khung cửa
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -527,11 +528,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> Chọn một họ(hình thức kết hợp gốc lắp ráp họ chọn ra Đúng của bàn nhỏ họ, trình tự không giới hạn)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn biến thể cũ của Điền khuyết: kho từ A–H + họ hình thức kết hợp Trung Quốc xuống kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -542,82 +543,82 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* đồng hồ bấm giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Thời gian đến, tự động Nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
-  const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
+ const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
 
 function confirmSubmit(){
-  let answered=0,total=0;
-  currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+ let answered=0,total=0;
+ currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
+ if(window.confirm(`đã trả lời ${answered}/${total} họ.\n rõ ràng Nộp bài và Xem Chấm bài Báo cáo thông tục gì??`)) submitTest();
 }
 function submitTest(){
-  if(submitted) return; submitted=true;
-  clearInterval(timerInterval);
-  document.getElementById('timer').classList.remove('show');
+ if(submitted) return; submitted=true;
+ clearInterval(timerInterval);
+ document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
-  const pairCorrect={};
-  currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
-  }));
+ /* trước xử lý multi ghép đôi họ(trình tự không giới hạn, không Lặp lại tính điểm) */
+ const pairCorrect={};
+ currentPaper.forEach(s=>s.groups.forEach(g=>{
+ if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+ }));
 
-  let correct=0,total=0; const detail=[];
-  currentPaper.forEach(s=>{
-    let sc=0; const items=[];
-    s.groups.forEach(g=>g.questions.forEach(q=>{
-      const ua=readAns(q); let ok;
-      if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
-      total++; if(ok){correct++;sc++;}
-      items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
-    }));
-    detail.push({s,sc,total:allQs(s).length,items});
-  });
+ let correct=0,total=0; const detail=[];
+ currentPaper.forEach(s=>{
+ let sc=0; const items=[];
+ s.groups.forEach(g=>g.questions.forEach(q=>{
+ const ua=readAns(q); let ok;
+ if(g.kind==='multi') ok=!!pairCorrect[q.id];
+ else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+ total++; if(ok){correct++;sc++;}
+ items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
+ }));
+ detail.push({s,sc,total:allQs(s).length,items});
+ });
 
-  const pct=total?Math.round(correct/total*100):0;
-  const band=lookupBand(correct,total);
-  const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
+ const pct=total?Math.round(correct/total*100):0;
+ const band=lookupBand(correct,total);
+ const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
 
-  document.getElementById('testArea').style.display='none';
-  document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思17 · Test 1 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
-  document.getElementById('resCorrect').textContent=`${correct}/${total}`;
-  document.getElementById('resPct').textContent=pct+'%';
-  document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
-  document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
-  setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
-  document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+ document.getElementById('testArea').style.display='none';
+ document.getElementById('resultArea').style.display='block';
+ document.getElementById('resTitle').textContent=' Cambridge IELTS 17 · Test 1 — Đọc ';
+ document.getElementById('resMeta').textContent=`${mode==='practice'?' Luyện tập chế độ ':' Thi thử chế độ '} · sử dụng biến thể cũ của ${fmt(elapsed)} · thì hoàn thành ngữ pháp giữa ${new Date().toLocaleString('zh-CN')}`;
+ document.getElementById('resCorrect').textContent=`${correct}/${total}`;
+ document.getElementById('resPct').textContent=pct+'%';
+ document.getElementById('resBand').textContent=band.toFixed(1);
+ document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
+ document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
+ setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
+ document.getElementById('bandNote').textContent = total===40
+? ' IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần nhấn Chính thức Học thuật loại Đọc 40 họ đầu tiên phần bảng so sánh chuyển đổi.'
+: `hình thức kết hợp gốc tiếp theo hầu như khảo sát ${total} họ, ước tính phần nhấn tỷ lệ chuyển đổi giữa các loại tiền tệ đến 40 họ họ áp dụng cái gì đó đã dùng trong ngữ cảnh khác Chính thức bảng so sánh; hoàn thành hình thức liên kết toàn bộ 3 tờ bài viết biến thể cũ của làm với tư cách chính xác chuyển đổi.`;
 
-  document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
-    const sp=d.total?Math.round(d.sc/d.total*100):0;
-    const rows=d.items.map(it=>{
-      const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+ document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
+ const sp=d.total?Math.round(d.sc/d.total*100):0;
+ const rows=d.items.map(it=>{
+ const cls=it.ok?'correct':'wrong';
+ const yours=it.ua?`bạn của Đáp án: <span class="yours">${it.ua}</span>　`:`<span class="yours"> Chưa trả lời </span> `;
+ return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} ${it.q.no} họ</div>
+ <div class="ra">${it.ok?'<span class="correctv"> trả lời Đúng </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
-        <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} họ Đúng ${sp}%</span></div></div>
+ <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
 }
@@ -631,7 +632,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Kết quả đồng bộ (Trung tâm Học tập tự động Thêm, không thay đổi họ Chấm bài logic từ mượn) ===== */
 (function(){
   var posted=false;
   function report(){

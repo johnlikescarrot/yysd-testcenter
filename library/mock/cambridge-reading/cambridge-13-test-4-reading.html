@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思13 Test 4 阅读</title>
-<meta name="exam:title" content="剑桥雅思13 · Test 4（阅读）">
+<title>YYSD · Cambridge IELTS 13 Test 4 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 13 · Test 4(Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思13 Test 4 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 13 Test 4 Học thuật loạiĐọc (Chính thức Đề thi thật):3 tờbài viết Tổng 40 câu,tiền tố có thể họ tờLuyện tập có thểhoàn chỉnh Thi thử,tự động Chấm bài,Giải thích IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* bìa của ấn phẩm */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
@@ -36,7 +36,7 @@
   .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* chế độcửa sổ pop-up tin học */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -58,7 +58,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* hình thức gắn liền có nghĩa giống như từ tự do họ họ */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
@@ -71,7 +71,7 @@
   .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
   .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Đọcphần hàng rào: họbài viết hình thức kết hợp bên phảiĐề bài */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
   .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
@@ -119,7 +119,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
@@ -156,98 +156,99 @@
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span>Cambridge IELTS Đề thi thật Bài kiểm tra</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- bìa của ấn phẩm -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">13</div></div>
     <div>
-      <h2>剑桥雅思 13 · Test 4</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 13 · Test 4</h2>
+      <div class="sub">Học thuật loạiĐọc · Chính thức Đề thi thật · tự động Chấm bài và cung cấp đi raIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.nhấn bên dưới Bắt đầu Bài kiểm tra.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Học thuật loạiĐọc (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta">Đang tải…</div>
+      <div class="pc-go">Bắt đầu Bài kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- chế độcửa sổ pop-up tin học -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc">phù hợp phần tờđột phá,tiền tố có thể chỉ luyện tập một vài bàn nhỏ tờbài viết,hướng về phía trước đo thời gian khôngtác động nỗ lực hoặc áp lực áp lực.</div>
+        <div class="mb-sub"><span>Chọn Luyện tập bài viết:</span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc">hoàn chỉnh Mô phỏng thật Kì thi:tất cả bài viết đầu tiên Hoàn thành,đặt giới hạn thời gian 60 phút.</div>
+        <div class="mb-sub"><span>Bài kiểm tra thông tin:</span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo">hoàn chỉnh Bài kiểm tra (đặt giới hạn thời gian 60 phút)</div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu Thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- hình thức gắn liền có nghĩa giống như từ tự do họ họ -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Quay lại bìa của ấn phẩm</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài vàXem Chấm bài Báo cáo</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quảhọ -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Chấm bài Báo cáo</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đó họ đếm</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỉ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>hoàn toàn Tiến độ</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">chi tiết Kết quả</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思16 Test 4 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
-   ============================================================ */
+ một, bài thi dữ liệu —— Cambridge IELTS 16 Test 4 Học thuật loại Đọc (Chính thức họ họ + Đáp án chính thức)
+ Giải thích: mỗi tờ bài viết làm với tư cách một dùng trong mục tiêu {id, passage:{title,byline,paras[]}, groups:[...]}
+ phát hành lại đến Passage 2, 3 biến thể cũ của nhấn giống hệt hình thức thêm cái gì đó bổ sung tiến lên passages tin học mảng tương đương với.
+ ============================================================ */
 const TEST = {
   meta:{ volume:13, testNo:4 },
   durationMin:60,
@@ -274,14 +275,14 @@ const TEST = {
         { kind:'tfng', title:'Questions 1–8',
           instruction:'Do the following statements agree with the information given in Reading Passage 1? Choose TRUE, FALSE, or NOT GIVEN.',
           questions:[
-            {id:'Q1',no:1,q:`Clippers were originally intended to be used as passenger ships.`,answer:['FALSE'],explain:`第2段：快帆船是为运货而造，部分也载客。 FALSE。`},
-            {id:'Q2',no:2,q:`Cutty Sark was given the name of a character in a poem.`,answer:['FALSE'],explain:`第3段：名字取自"短睡裙"一词，非诗中人物之名。 FALSE。`},
-            {id:'Q3',no:3,q:`The contract between John Willis and Scott & Linton favoured Willis.`,answer:['TRUE'],explain:`第4段：合同使 Willis 处于很有利地位。 TRUE。`},
-            {id:'Q4',no:4,q:`John Willis wanted Cutty Sark to be the fastest tea clipper travelling between the UK and China.`,answer:['TRUE'],explain:`第5段：设计目的就是比任何船更快。 TRUE。`},
-            {id:'Q5',no:5,q:`Despite storm damage, Cutty Sark beat Thermopylae back to London.`,answer:['FALSE'],explain:`第5段：舵受损后，Cutty Sark 比对手晚一周到达。 FALSE。`},
-            {id:'Q6',no:6,q:`The opening of the Suez Canal meant that steam ships could travel between Britain and China faster than clippers.`,answer:['TRUE'],explain:`第6段：蒸汽船可走苏伊士直达航线，缩短约两个月。 TRUE。`},
-            {id:'Q7',no:7,q:`Steam ships sometimes used the ocean route to travel between London and China.`,answer:['NOT GIVEN'],explain:`未提蒸汽船是否走海洋航线。 NOT GIVEN。`},
-            {id:'Q8',no:8,q:`Captain Woodget put Cutty Sark at risk of hitting an iceberg.`,answer:['TRUE'],explain:`第8段：Woodget 把船开到危险地靠近冰山。 TRUE。`},
+            {id:'Q1',no:1,q:`Clippers were originally intended to be used as passenger ships.`,answer:['FALSE'],explain:`2họ: thuyền buồm là chỉ theo sau bởi danh từ làm với tư cách di chuyển hàng hóa và làm, phần họ chở khách lên. FALSE.`},
+            {id:'Q2',no:2,q:`Cutty Sark was given the name of a character in a poem.`,answer:['FALSE'],explain:`3họ: tên của người hoặc vật lấy dạng kết hợp tự"ngắn váy ngủ "một biến thể cũ của, viết tắt của viết tắt của Shijing người trung gian hình thức kết hợp vật tên. FALSE.`},
+            {id:'Q3',no:3,q:`The contract between John Willis and Scott & Linton favoured Willis.`,answer:['TRUE'],explain:`4họ: kinh doanh hợp đồng khiến Willis ở trong một trạng thái phó từ mức độ có lợi vị trí. TRUE.`},
+            {id:'Q4',no:4,q:`John Willis wanted Cutty Sark to be the fastest tea clipper travelling between the UK and China.`,answer:['TRUE'],explain:`5họ: thiết kế mục đích chính xác Bỉ bất kỳ biến thể của thay đổi hoặc thay thế. TRUE.`},
+            {id:'Q5',no:5,q:`Despite storm damage, Cutty Sark beat Thermopylae back to London.`,answer:['FALSE'],explain:`5họ: bánh lái bị tổn hại họ, Cutty Sark so sánh buổi tối một tuần đạt đến. FALSE.`},
+            {id:'Q6',no:6,q:`The opening of the Suez Canal meant that steam ships could travel between Britain and China faster than clippers.`,answer:['TRUE'],explain:`6họ: hơi nước biến thể của tiền tố có thể đi kênh đào Suez đến một nơi trực tiếp tuyến hàng không hoặc hàng hải, rút ngắn cân trong cân đĩa hoặc trên cân dùng trong mặt trăng. TRUE.`},
+            {id:'Q7',no:7,q:`Steam ships sometimes used the ocean route to travel between London and China.`,answer:['NOT GIVEN'],explain:`chưa dùng trong và hơi nước biến thể của liệu có hay không đi đại dương tuyến hàng không hoặc hàng hải. NOT GIVEN.`},
+            {id:'Q8',no:8,q:`Captain Woodget put Cutty Sark at risk of hitting an iceberg.`,answer:['TRUE'],explain:`8họ: Woodget cầm biến thể của mở ngoại động từ hoặc nội động từ đến nguy hiểm trợ từ kết cấu: dùng trước động từ hoặc tính từ ở gần tảng băng trôi. TRUE.`},
           ]},
         { kind:'note', title:'Questions 9–13',
           instruction:'Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -293,11 +294,11 @@ const TEST = {
             {bullet:true, html:`Cutty Sark has twice been damaged by <Q n="13"> in the 21st century.`},
           ],
           questions:[
-            {id:'Q9',no:9,answer:['wool'],explain:`第7段：最成功时期运羊毛 wool。答案：wool。`},
-            {id:'Q10',no:10,answer:['navigator'],explain:`第8段：Woodget 是出色的航海家 navigator。答案：navigator。`},
-            {id:'Q11',no:11,answer:['gale'],explain:`第10段：被大风 gale 严重损坏。答案：gale。`},
-            {id:'Q12',no:12,answer:['training'],explain:`第11段：用作训练 training 船。答案：training。`},
-            {id:'Q13',no:13,answer:['fire'],explain:`第11段：21世纪两次被火 fire 损坏。答案：fire。`},
+            {id:'Q9',no:9,answer:['wool'],explain:`7họ: biến thể của Thành công giai đoạn di chuyển lông cừu wool. Đáp án: wool.`},
+            {id:'Q10',no:10,answer:['navigator'],explain:`8họ: Woodget là chỉ theo sau bởi danh từ đáng chú ý của thuỷ thủ navigator. Đáp án: navigator.`},
+            {id:'Q11',no:11,answer:['gale'],explain:`10họ: chăn gió lớn gale nghiêm trọng làm hỏng. Đáp án: gale.`},
+            {id:'Q12',no:12,answer:['training'],explain:`11họ: dùng cho mục đích huấn luyện training biến thể của. Đáp án: training.`},
+            {id:'Q13',no:13,answer:['fire'],explain:`11họ: 21 thế kỷ tiếp theo chăn họ fire làm hỏng. Đáp án: fire.`},
           ]},
       ]},
     { id:2,
@@ -322,10 +323,10 @@ const TEST = {
             {plain:true, html:`Healthy soil contains a large variety of bacteria and other microorganisms, as well as plant remains and <Q n="14">. It provides us with food and also with antibiotics, and its function in storing <Q n="15"> has a significant effect on the climate. In addition, it prevents damage to property and infrastructure because it holds <Q n="16">. If these microorganisms are lost, soil may lose its special properties. The main factor contributing to soil degradation is the <Q n="17"> carried out by humans.`},
           ],
           questions:[
-            {id:'Q14',no:14,answer:['minerals'],explain:`B段：含细菌、微生物、腐烂植物和各种矿物质 minerals。答案：minerals。`},
-            {id:'Q15',no:15,answer:['carbon'],explain:`B段：储存碳 carbon 对气候有重大影响。答案：carbon。`},
-            {id:'Q16',no:16,answer:['water'],explain:`B段：土壤储水 water 防洪。答案：water。`},
-            {id:'Q17',no:17,answer:['agriculture'],explain:`C段：农业 agriculture 是最大问题。答案：agriculture。`},
+            {id:'Q14',no:14,answer:['minerals'],explain:`Bhọ: ngậm trong miệng vi khuẩn, vi sinh vật, thối rữa thực vật biến thể cũ của mỗi loại khoáng chất minerals. Đáp án: minerals.`},
+            {id:'Q15',no:15,answer:['carbon'],explain:`Bhọ: dự trữ cacbon hoá học carbon đúng khí tượng khí hậu có lớn ảnh hưởng. Đáp án: carbon.`},
+            {id:'Q16',no:16,answer:['water'],explain:`Bhọ: đất trữ nước water kiểm soát lũ. Đáp án: water.`},
+            {id:'Q17',no:17,answer:['agriculture'],explain:`Chọ: nông nghiệp agriculture là chỉ theo sau bởi danh từ biến thể của câu hỏi. Đáp án: agriculture.`},
           ]},
         { kind:'match', title:'Questions 18–21',
           instruction:'Complete each sentence with the correct ending, A–F, below. Write the correct letter, A–F.',
@@ -333,20 +334,20 @@ const TEST = {
           box:{A:`may improve the number and quality of plants growing there.`,B:`may contain data from up to nine countries.`,C:`may not be put back into the soil.`,D:`may help governments to be more aware of soil-related issues.`,E:`may cause damage to different aspects of the environment.`,F:`may be better for use at a global level.`},
           subTitle:'Sentence beginnings',
           questions:[
-            {id:'Q18',no:18,q:`Nutrients contained in the unused parts of harvested crops`,answer:['C'],explain:`C段：收割作物未用部分的养分可能不会被放回土壤。 C。`},
-            {id:'Q19',no:19,q:`Synthetic fertilisers produced with the Haber-Bosch process`,answer:['E'],explain:`D段：合成肥料会破坏环境的不同方面。 E。`},
-            {id:'Q20',no:20,q:`Addition of a mixture developed by Pius Floris to the soil`,answer:['A'],explain:`E段：Floris 的混合剂可改善植物的数量与质量。 A。`},
-            {id:'Q21',no:21,q:`The idea of zero net soil degradation`,answer:['D'],explain:`G段："零净土地退化"目标可帮助政府更关注土壤问题。 D。`},
+            {id:'Q18',no:18,q:`Nutrients contained in the unused parts of harvested crops`,answer:['C'],explain:`Chọ: thu hoạch cây trồng chưa sử dụng phần của chất dinh dưỡng có thể xảy ra không có khả năng chăn đặt xoay vòng đất. C.`},
+            {id:'Q19',no:19,q:`Synthetic fertilisers produced with the Haber-Bosch process`,answer:['E'],explain:`Dhọ: tổng hợp phân bón có thể sự phá hủy Môi trường của khác khía cạnh. E.`},
+            {id:'Q20',no:20,q:`Addition of a mixture developed by Pius Floris to the soil`,answer:['A'],explain:`Ehọ: Floris của trộn liều lượng thuốc tiền tố có thể cải thiện thực vật của số lượng biến thể của chất lượng. A.`},
+            {id:'Q21',no:21,q:`The idea of zero net soil degradation`,answer:['D'],explain:`Ghọ: "không Phật giáo Tịnh Độ trợ từ kết cấu: dùng trước động từ hoặc tính từ thoái hóa " Mục tiêu tiền tố có thể Trợ giúp chính phủ thay đổi hoặc thay thế chú ý đến đất câu hỏi. D.`},
           ]},
         { kind:'match', title:'Questions 22–26', noBox:true,
           instruction:'Reading Passage 2 has seven paragraphs, A–G. Which section contains the following information? Write the correct letter, A–G. You may use any letter more than once.',
           box:{A:'',B:'',C:'',D:'',E:'',F:'',G:''},
           questions:[
-            {id:'Q22',no:22,q:`a reference to one person's motivation for a soil-improvement project`,answer:['E'],explain:`E段：Floris 因想让树木茂盛而照料土壤。 E。`},
-            {id:'Q23',no:23,q:`an explanation of how soil stayed healthy before the development of farming`,answer:['C'],explain:`C段：野生状态下养分会直接回归土壤。 C。`},
-            {id:'Q24',no:24,q:`examples of different ways of collecting information on soil degradation`,answer:['F'],explain:`F段：田野调查、无人机、卫星影像、实验室分析等。 F。`},
-            {id:'Q25',no:25,q:`a suggestion for a way of keeping some types of soil safe in the near future`,answer:['G'],explain:`G段：建议为濒危土壤设立保护区。 G。`},
-            {id:'Q26',no:26,q:`a reason why it is difficult to provide an overview of soil degradation`,answer:['F'],explain:`F段：没有统一的国际土壤分类系统。 F。`},
+            {id:'Q22',no:22,q:`a reference to one person's motivation for a soil-improvement project`,answer:['E'],explain:`Ehọ: Floris biến thể cũ của nghĩ về nhường cây tươi tốt và chăm sóc đất. E.`},
+            {id:'Q23',no:23,q:`an explanation of how soil stayed healthy before the development of farming`,answer:['C'],explain:`Chọ: hoang dã tình trạng xuống chất dinh dưỡng có thể trực tiếp trở về đất. C.`},
+            {id:'Q24',no:24,q:`examples of different ways of collecting information on soil degradation`,answer:['F'],explain:`Fhọ: cánh đồng điều tra, máy bay không người lái, vệ tinh hình ảnh, phòng thí nghiệm phân tích đợi. F.`},
+            {id:'Q25',no:25,q:`a suggestion for a way of keeping some types of soil safe in the near future`,answer:['G'],explain:`Ghọ: Gợi ý làm với tư cách bị đe doạ loài đất thiết lập khu bảo tồn. G.`},
+            {id:'Q26',no:26,q:`a reason why it is difficult to provide an overview of soil degradation`,answer:['F'],explain:`Fhọ: không có 7-Eleven chuỗi cửa hàng tiện lợi của quốc tế đất Phân loại hệ thống. F.`},
           ]},
       ]},
     { id:3,
@@ -369,9 +370,9 @@ const TEST = {
         { kind:'mcq', title:'Questions 27–29',
           instruction:'Choose the correct letter, A, B, C or D.',
           questions:[
-            {id:'Q27',no:27,q:`What is the reviewer's attitude to advocates of positive psychology?`,options:{A:`They are wrong to reject the ideas of Bentham.`,B:`They are over-influenced by their study of Bentham's theories.`,C:`They have a fresh new approach to ideas on human happiness.`,D:`They are ignorant about the ideas they should be considering.`},answer:['D'],explain:`第2段：他们对思想史一无所知，无视大量哲学文献。 D。`},
-            {id:'Q28',no:28,q:`The reviewer refers to the Greek philosopher Aristotle in order to suggest that happiness`,options:{A:`may not be just pleasure and the absence of pain.`,B:`should not be the main goal of humans.`,C:`is not something that should be fought for.`,D:`is not just an abstract concept.`},answer:['A'],explain:`第2段：亚里士多德把幸福等同于自我实现——幸福不只是快乐与无痛。 A。`},
-            {id:'Q29',no:29,q:`According to Davies, Bentham's suggestion for linking the price of goods to happiness was significant because`,options:{A:`it was the first successful way of assessing happiness.`,B:`it established a connection between work and psychology.`,C:`it was the first successful example of psychological research.`,D:`it involved consideration of the rights of consumers.`},answer:['B'],explain:`第4段：把金钱与内心体验关联，为心理学研究与资本主义的交织奠基。 B。`},
+            {id:'Q27',no:27,q:`What is the reviewer's attitude to advocates of positive psychology?`,options:{A:`They are wrong to reject the ideas of Bentham.`,B:`They are over-influenced by their study of Bentham's theories.`,C:`They have a fresh new approach to ideas on human happiness.`,D:`They are ignorant about the ideas they should be considering.`},answer:['D'],explain:`2họ: họ đúng lịch sử tư tưởng không biết gì cả thành ngữ, phớt lờ lượng lớn triết học tài liệu. D.`},
+            {id:'Q28',no:28,q:`The reviewer refers to the Greek philosopher Aristotle in order to suggest that happiness`,options:{A:`may not be just pleasure and the absence of pain.`,B:`should not be the main goal of humans.`,C:`is not something that should be fought for.`,D:`is not just an abstract concept.`},answer:['A'],explain:`2họ: Aristotle 384-322 TCN cầm hạnh phúc đồng nhất họ tự hiện thực hóa tâm lý học —— hạnh phúc không chỉ là chỉ theo sau bởi danh từ vui vẻ biến thể của không đau. A.`},
+            {id:'Q29',no:29,q:`According to Davies, Bentham's suggestion for linking the price of goods to happiness was significant because`,options:{A:`it was the first successful way of assessing happiness.`,B:`it established a connection between work and psychology.`,C:`it was the first successful example of psychological research.`,D:`it involved consideration of the rights of consumers.`},answer:['B'],explain:`4họ: cầm tiền biến thể của trái tim trải nghiệm có liên quan, làm với tư cách tâm lý học nghiên cứu biến thể của chủ nghĩa tư bản của đan xen đặt nền móng. B.`},
           ]},
         { kind:'wbank', title:'Questions 30–34',
           instruction:'Complete the summary using the list of words A–G below. Write the correct letter, A–G, in the boxes.',
@@ -382,60 +383,60 @@ const TEST = {
             {html:`Jeremy Bentham was active in other areas besides philosophy. In the 1790s he suggested a type of technology to improve <Q n="30"> for different Government departments. He developed a new way of printing banknotes to increase <Q n="31"> and also designed a method for the <Q n="32"> of food. He also drew up plans for a prison which allowed the <Q n="33"> of prisoners at all times, and believed the same design could be used for other institutions as well. When researching happiness, he investigated possibilities for its <Q n="34">, and suggested some methods of doing this.`},
           ],
           questions:[
-            {id:'Q30',no:30,answer:['F'],explain:`答案：F（communication）——"conversation tubes"改善各部门通信。`},
-            {id:'Q31',no:31,answer:['B'],explain:`答案：B（security）——防伪钞票提高安全性。`},
-            {id:'Q32',no:32,answer:['G'],explain:`答案：G（preservation）——"frigidarium"保鲜食物。`},
-            {id:'Q33',no:33,answer:['E'],explain:`答案：E（observation）——圆形监狱可随时观察囚犯。`},
-            {id:'Q34',no:34,answer:['A'],explain:`答案：A（measurement）——研究幸福的测量方法。`},
+            {id:'Q30',no:30,answer:['F'],explain:`Đáp án: F(communication)——"conversation tubes" cải thiện mỗi phòng trao đổi thư từ.`},
+            {id:'Q31',no:31,answer:['B'],explain:`Đáp án: B(security)——bảo vệ tiền giả vé nâng cao an ninh.`},
+            {id:'Q32',no:32,answer:['G'],explain:`Đáp án: G(preservation)——"frigidarium" giữ cho tươi thực phẩm.`},
+            {id:'Q33',no:33,answer:['E'],explain:`Đáp án: E(observation)—— tròn nhà tù tiền tố có thể bất kỳ lúc nào quan sát tù nhân.`},
+            {id:'Q34',no:34,answer:['A'],explain:`Đáp án: A(measurement)—— nghiên cứu hạnh phúc của khảo sát Phương pháp.`},
           ]},
         { kind:'tfng', title:'Questions 35–40',
           variant:'yn',
           instruction:'Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO, or NOT GIVEN.',
           questions:[
-            {id:'Q35',no:35,q:`One strength of The Happiness Industry is its discussion of the relationship between psychology and economics.`,answer:['YES'],explain:`第5段：书中精彩地展示了经济问题如何被当作心理疾病——心理学与经济学关系是亮点。 YES。`},
-            {id:'Q36',no:36,q:`It is more difficult to measure some emotions than others.`,answer:['NOT GIVEN'],explain:`未比较不同情绪测量的难易。 NOT GIVEN。`},
-            {id:'Q37',no:37,q:`Watson's ideas on behaviourism were supported by research on humans he carried out before 1915.`,answer:['NO'],explain:`第5段：1915年前 Watson 只研究白鼠，"从未研究过一个人"。 NO。`},
-            {id:'Q38',no:38,q:`Watson's ideas have been most influential on governments outside America.`,answer:['NOT GIVEN'],explain:`只举了英国例子，未比较各国影响程度。 NOT GIVEN。`},
-            {id:'Q39',no:39,q:`The need for happiness is linked to industrialisation.`,answer:['YES'],explain:`末段：现代工业社会似乎需要不断增长的幸福来激励劳动。 YES。`},
-            {id:'Q40',no:40,q:`A main aim of government should be to increase the happiness of the population.`,answer:['NO'],explain:`末段：作者认为政府负责促进幸福始终威胁人类自由。 NO。`},
+            {id:'Q35',no:35,q:`One strength of The Happiness Industry is its discussion of the relationship between psychology and economics.`,answer:['YES'],explain:`5họ: viết tắt của hình thức kết hợp Trung Quốc tuyệt vời trợ từ kết cấu: dùng trước động từ hoặc tính từ tiết lộ trợ từ chỉ hành động đã hoàn thành vấn đề kinh tế như thế nào chăn xem như tâm lý bệnh tật —— tâm lý học biến thể của kinh tế học như một lĩnh vực nghiên cứu quan hệ là chỉ theo sau bởi danh từ điểm nổi bật. YES.`},
+            {id:'Q36',no:36,q:`It is more difficult to measure some emotions than others.`,answer:['NOT GIVEN'],explain:`chưa So sánh khác tâm trạng khảo sát của độ khó. NOT GIVEN.`},
+            {id:'Q37',no:37,q:`Watson's ideas on behaviourism were supported by research on humans he carried out before 1915.`,answer:['NO'],explain:`5họ: 1915 trước cuối năm Watson chỉ nghiên cứu họ hình thức kết hợp chuột, " chưa từng nghiên cứu họ một mình không có sự giúp đỡ ". NO.`},
+            {id:'Q38',no:38,q:`Watson's ideas have been most influential on governments outside America.`,answer:['NOT GIVEN'],explain:`chỉ biến thể của trợ từ chỉ hành động đã hoàn thành Vương quốc Anh trường hợp, chưa So sánh mỗi quốc gia ảnh hưởng mức độ. NOT GIVEN.`},
+            {id:'Q39',no:39,q:`The need for happiness is linked to industrialisation.`,answer:['YES'],explain:`phần đoạn cuối: thời hiện đại công nghiệp Xã hội dường như cần không ngừng tăng trưởng của hạnh phúc đến khích lệ công việc. YES.`},
+            {id:'Q40',no:40,q:`A main aim of government should be to increase the happiness of the population.`,answer:['NO'],explain:`phần đoạn cuối: tác giả nhận ra làm với tư cách chính phủ chịu trách nhiệm về thúc đẩy một ý tưởng hoặc sự nghiệp hạnh phúc từ đầu đến cuối đe dọa nhân loại tự do. NO.`},
           ]},
       ]},
   ]
 };
 
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* Chính thức Học thuật loại Đọc đầu tiên phần(0-40) → IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần bảng so sánh */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
-   ============================================================ */
+, động cơ từ mượn 
+ ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* bìa của ấn phẩm thông tin */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} tờ bài viết · ${totalQs()} họ`;
 })();
 
-/* 模式弹窗 */
+/* chế độ cửa sổ pop-up tin học */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}(${allQs(p).length} họ)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'họ chọn'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('mời ít nhất Chọn một tờ bài viết.'); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -447,8 +448,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思13 · Test 4 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 13 · Test 4 — Đọc`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -461,11 +462,11 @@ function passageHtml(p){
     </div>`;
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
-      <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
-    </div><div class="reading-cols">${article}${qs}</div>`;
+ <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
+ <div class="sb-meta"> Gợi ý sử dụng biến thể cũ của cân trong cân đĩa hoặc trên cân 20 phút · hình thức kết hợp gốc tờ ${allQs(p).length} họ</div>
+ </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // cầm <Q n="x"> biến thể của vị trí thay thế họ đánh số huy hiệu + nhập khẩu khung ví dụ: khung cửa
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -508,11 +509,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> Chọn một họ(hình thức kết hợp gốc lắp ráp họ chọn ra Đúng của bàn nhỏ họ, trình tự không giới hạn)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn biến thể cũ của Điền khuyết: kho từ A–H + họ hình thức kết hợp Trung Quốc xuống kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -523,82 +524,82 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* đồng hồ bấm giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Thời gian đến, tự động Nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
-  const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
+ const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
 
 function confirmSubmit(){
-  let answered=0,total=0;
-  currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+ let answered=0,total=0;
+ currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
+ if(window.confirm(`đã trả lời ${answered}/${total} họ.\n rõ ràng Nộp bài và Xem Chấm bài Báo cáo thông tục gì??`)) submitTest();
 }
 function submitTest(){
-  if(submitted) return; submitted=true;
-  clearInterval(timerInterval);
-  document.getElementById('timer').classList.remove('show');
+ if(submitted) return; submitted=true;
+ clearInterval(timerInterval);
+ document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
-  const pairCorrect={};
-  currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
-  }));
+ /* trước xử lý multi ghép đôi họ(trình tự không giới hạn, không Lặp lại tính điểm) */
+ const pairCorrect={};
+ currentPaper.forEach(s=>s.groups.forEach(g=>{
+ if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+ }));
 
-  let correct=0,total=0; const detail=[];
-  currentPaper.forEach(s=>{
-    let sc=0; const items=[];
-    s.groups.forEach(g=>g.questions.forEach(q=>{
-      const ua=readAns(q); let ok;
-      if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
-      total++; if(ok){correct++;sc++;}
-      items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
-    }));
-    detail.push({s,sc,total:allQs(s).length,items});
-  });
+ let correct=0,total=0; const detail=[];
+ currentPaper.forEach(s=>{
+ let sc=0; const items=[];
+ s.groups.forEach(g=>g.questions.forEach(q=>{
+ const ua=readAns(q); let ok;
+ if(g.kind==='multi') ok=!!pairCorrect[q.id];
+ else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+ total++; if(ok){correct++;sc++;}
+ items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
+ }));
+ detail.push({s,sc,total:allQs(s).length,items});
+ });
 
-  const pct=total?Math.round(correct/total*100):0;
-  const band=lookupBand(correct,total);
-  const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
+ const pct=total?Math.round(correct/total*100):0;
+ const band=lookupBand(correct,total);
+ const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
 
-  document.getElementById('testArea').style.display='none';
-  document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思13 · Test 4 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
-  document.getElementById('resCorrect').textContent=`${correct}/${total}`;
-  document.getElementById('resPct').textContent=pct+'%';
-  document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
-  document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
-  setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
-  document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+ document.getElementById('testArea').style.display='none';
+ document.getElementById('resultArea').style.display='block';
+ document.getElementById('resTitle').textContent=' Cambridge IELTS 13 · Test 4 — Đọc ';
+ document.getElementById('resMeta').textContent=`${mode==='practice'?' Luyện tập chế độ ':' Thi thử chế độ '} · sử dụng biến thể cũ của ${fmt(elapsed)} · thì hoàn thành ngữ pháp giữa ${new Date().toLocaleString('zh-CN')}`;
+ document.getElementById('resCorrect').textContent=`${correct}/${total}`;
+ document.getElementById('resPct').textContent=pct+'%';
+ document.getElementById('resBand').textContent=band.toFixed(1);
+ document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
+ document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
+ setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
+ document.getElementById('bandNote').textContent = total===40
+? ' IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần nhấn Chính thức Học thuật loại Đọc 40 họ đầu tiên phần bảng so sánh chuyển đổi.'
+: `hình thức kết hợp gốc tiếp theo hầu như khảo sát ${total} họ, ước tính phần nhấn tỷ lệ chuyển đổi giữa các loại tiền tệ đến 40 họ họ áp dụng cái gì đó đã dùng trong ngữ cảnh khác Chính thức bảng so sánh; hoàn thành hình thức liên kết toàn bộ 3 tờ bài viết biến thể cũ của làm với tư cách chính xác chuyển đổi.`;
 
-  document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
-    const sp=d.total?Math.round(d.sc/d.total*100):0;
-    const rows=d.items.map(it=>{
-      const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+ document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
+ const sp=d.total?Math.round(d.sc/d.total*100):0;
+ const rows=d.items.map(it=>{
+ const cls=it.ok?'correct':'wrong';
+ const yours=it.ua?`bạn của Đáp án: <span class="yours">${it.ua}</span>　`:`<span class="yours"> Chưa trả lời </span> `;
+ return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} ${it.q.no} họ</div>
+ <div class="ra">${it.ok?'<span class="correctv"> trả lời Đúng </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
-        <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} họ Đúng ${sp}%</span></div></div>
+ <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
 }
@@ -612,7 +613,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Kết quả đồng bộ (Trung tâm Học tập tự động Thêm, không thay đổi họ Chấm bài logic từ mượn) ===== */
 (function(){
   var posted=false;
   function report(){

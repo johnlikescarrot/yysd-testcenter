@@ -1,63 +1,63 @@
-# 多租户约定（阶段 0）
+# nhiềungười thuêthoả thuận sau khi thảo luận(Giai đoạn 0)
 
-## 子域名规则
+## trường con toántênquy tắc
 
-- 格式：`{slug}.youyisida.com`（小写英文字母、数字、连字符；2–32 字符）
-- 默认租户 slug：`yysd`（优益思达）
-- 根域 `youyisida.com` / `www.youyisida.com` / 本地 `localhost` 一律映射到 `yysd`
-- **保留字（不可作租户 slug）**：`www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`
+- hình thức:`{slug}.youyisida.com`(chữ thườngTiếng Anhchữ cái của bảng chữ cái,chữ số,dấu gạch nối;2–32 ký tự tin học)
+- đồng ý ngầmngười thuê slug:`yysd`(YYSD)
+- rễ lĩnh vực `youyisida.com` / `www.youyisida.com` / địa phương `localhost` giống nhauchiếu vàođến `yysd`
+- **giữchữ(không thểhình thức kết hợp công nhânngười thuê slug)**:`www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`
 
-## DNS / HTTPS（运维）
+## DNS / HTTPS(di chuyển viết tắt của Duy Ngô Nhĩ)
 
-1. 阿里云 DNS：`*.youyisida.com` CNAME 或 A 到网站服务器（与主站相同）。
-2. 通配符证书（需 DNS 验证）：
+1. Ali tênvăn cổ nói DNS:`*.youyisida.com` CNAME có thể A đếntrang webmáy chủ máy tính(chủ trạmgiống hệt).
+2. ký tự đại diện tin họcchứng chỉ(yêu cầu DNS kiểm tra và xác minh):
    ```bash
    certbot certonly --dns-<provider> -d youyisida.com -d '*.youyisida.com'
    ```
-3. Nginx：使用仓库内 `server/deploy/nginx-site.conf`（已含 `*.youyisida.com`）。
-4. 备案：子域名通配一般随主域；若备案系统要求逐条接入，按阿里云控制台提示处理。
+3. Nginx:sử dụngkho hàngbên trong `server/deploy/nginx-site.conf`(đã ngậm trong miệng `*.youyisida.com`).
+4. đưa vào hồ sơ:trường con toántên đi qua kết hợpgiốnghọ chủ lĩnh vực;dường nhưđưa vào hồ sơhệ thốngYêu cầuhình thức kết hợp theo đuổi dảitruy cập mạng,nhấnAli tênvăn cổ nóibàn điều khiểnGợi ýxử lý.
 
-## 默认租户与超管
+## đồng ý ngầmngười thuêvượt quá biến thể của
 
-| 项 | 约定 |
+| họ | thoả thuận sau khi thảo luận |
 |----|------|
-| 默认公司 | 名称「优益思达」，slug `yysd`；现有用户/老师/成绩全部迁入 |
-| 平台超管 | 环境变量 `ADMIN_PHONES`（与现网一致）；可进 `platform.html` 主控台 |
-| 公司管理员 | 主控台为该公司填写的 `admin_phone`（教师账号）；管本公司师生分配 |
+| đồng ý ngầmcông ty | tên của một sự vật«YYSD»,slug `yysd`;hiện cóngười dùng/Giáo viên/Kết quảTất cảchuyển đến chỗ ở mới |
+| nền tảngvượt quá biến thể của | Môi trườngbiến số toán `ADMIN_PHONES`(xuất hiện lướinhất quán);tiền tố có thể tiến lên `platform.html` chủ kiểm soát Đài Loan viết tắt |
+| công tyngười quản lý | chủ kiểm soát Đài Loan viết tắt làm với tư cách nêncông tyđiền vào biểu mẫu `admin_phone`(Giáo viênTài khoản);biến thể của hình thức kết hợp gốccông tygiáo viên và học sinhphân phối |
 
-## 字段与权限清单
+## trường sốQuyền hạndanh sách mục
 
-### 表 `orgs`
+### bề mặt bên ngoài `orgs`
 
-| 字段 | 含义 |
+| trường số | ý nghĩa hàm chứa trong một cụm từ |
 |------|------|
-| id | 主键 |
-| slug | 子域名短码 |
-| name | 公司显示名 |
-| logo_url | Logo（可空，用默认） |
+| id | chủ phím trên đàn piano hoặc bàn phím máy tính |
+| slug | trường con toántên ngắn trọng lượng |
+| name | công tyhiển thịtên |
+| logo_url | Logo(tiền tố có thể trống không,sử dụngđồng ý ngầm) |
 | status | `trial` / `active` / `suspended` |
-| expires_at | 到期日 ISO（可空=不限期） |
-| admin_phone | 公司管理员手机号 |
-| contract_note | 合同备注（可选） |
-| created_at | 创建时间 |
+| expires_at | ngày đến hạn ISO(tiền tố có thể trống không=khôngđặt giới hạn thời gian) |
+| admin_phone | công tyngười quản lýđiện thoại di độnggầm |
+| contract_note | kinh doanh hợp đồngGhi chú(có sẵn) |
+| created_at | thành lậpThời gian |
 
-### 用户隔离
+### người dùngtách biệt
 
-- `users.org_id` / `teachers.org_id`：每人只属一家公司；手机号全局唯一。
-- 成绩、日历、师生关系：经用户/老师间接归属公司；列表接口按 `org_id` 过滤。
-- 题库 `library/`：全平台共用（第一版）。
+- `users.org_id` / `teachers.org_id`:mỗi ngườichỉ phân loạicả gia đìnhcông ty;điện thoại di độnggầmtình hình tổng thểchỉ.
+- Kết quả,lịch,giáo viên và học sinhquan hệ:họngười dùng/Giáo viêngián tiếpthuộc vềcông ty;danh sáchgiao diệnnhấn `org_id` lọc.
+- ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi `library/`:họnền tảngdùng chung(đầu tiênmột đăng ký).
 
-### 谁能看谁
+### họ chăm sóc
 
-| 角色 | 范围 |
+| vai trò | phạm vi |
 |------|------|
-| 平台超管 | 主控台管所有公司；客服进入某公司时临时可见该公司 |
-| 公司管理员 | 仅本公司老师/学生/分配 |
-| 老师 | 仅被分配的本公司学生（管理员可见本公司全部） |
-| 学生 | 仅自己的成绩与任务 |
+| nền tảngvượt quá biến thể của | chủ kiểm soát Đài Loan viết tắt biến thể củatất cảcông ty;dịch vụ khách hàngđi vàomột vàicông tybiến thể cũ củakhi thời gian đến gầncó thể thấy rõ rằng điều này đúngnêncông ty |
+| công tyngười quản lý | hầu như hình thức kết hợp gốccông tyGiáo viên/Học viên/phân phối |
+| Giáo viên | hầu như chănphân phốihình thức kết hợp gốccông tyHọc viên(người quản lýcó thể thấy rõ rằng điều này đúnghình thức kết hợp gốccông tyTất cả) |
+| Học viên | hầu nhưbản thânKết quảNhiệm vụ |
 
-## 验收（阶段 0）
+## kiểm tra và chấp nhận(Giai đoạn 0)
 
-- [x] DNS `*.youyisida.com` 已解析（2026-07-22 验证 random slug → 139.224.0.221）
-- [ ] HTTPS 通配符证书生效（当前为 SAN 列表；ease/youyisi 已覆盖）
-- [x] 打开 `https://ease.youyisida.com/` 能出页面（品牌改造已完成）
+- [x] DNS `*.youyisida.com` đãGiải thích(2026-07-22 kiểm tra và xác minh random slug → 139.224.0.221)
+- [ ] HTTPS ký tự đại diện tin họcchứng chỉcó hiệu lực(thời điểm hiện tạilàm với tư cách SAN danh sách;ease/youyisi đãche phủ)
+- [x] mở `https://ease.youyisida.com/` họ đi ra đầu mặt(tên thương hiệucải tạoĐã hoàn thành)

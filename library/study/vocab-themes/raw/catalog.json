@@ -3,262 +3,262 @@
   "categories": [
     {
       "id": "exam",
-      "label": "英语考试",
+      "label": "tiếng Anh Kì thi",
       "subs": [
         {
           "id": "cet4",
-          "label": "CET-4考试",
+          "label": "CET-4Kì thi",
           "count": 4599,
           "file": "exam__cet4.json",
           "tags": [
             {
               "tag_id": 365,
-              "title": "四级必备",
+              "title": "cấp 4 cần thiết",
               "count": 4507
             },
             {
               "tag_id": 366,
-              "title": "四级救命",
+              "title": "cấp 4 cứu mạng",
               "count": 683
             }
           ]
         },
         {
           "id": "cet6",
-          "label": "CET-6考试",
+          "label": "CET-6Kì thi",
           "count": 2331,
           "file": "exam__cet6.json",
           "tags": [
             {
               "tag_id": 381,
-              "title": "六级必备",
+              "title": "sáu cấpcần thiết",
               "count": 2085
             },
             {
               "tag_id": 382,
-              "title": "六级救命",
+              "title": "sáu cấpcứu mạng",
               "count": 493
             }
           ]
         },
         {
           "id": "tem",
-          "label": "专四专八考试",
+          "label": "cho một người bốnTEM-8 hoặc Kỳ thi chuyên ngành tiếng Anh cấp 8 Kì thi",
           "count": 2915,
           "file": "exam__tem.json",
           "tags": [
             {
               "tag_id": 331,
-              "title": "专四必备词汇",
+              "title": "cho một người bốncần thiết Từ vựng",
               "count": 2094
             },
             {
               "tag_id": 332,
-              "title": "专八必备词汇",
+              "title": "TEM-8 hoặc Kỳ thi chuyên ngành tiếng Anh cấp 8 cần thiết Từ vựng",
               "count": 937
             }
           ]
         },
         {
           "id": "kaoyan",
-          "label": "考研",
+          "label": "dự thi đầu vào chương trình sau đại học",
           "count": 6341,
           "file": "exam__kaoyan.json",
           "tags": [
             {
               "tag_id": 330,
-              "title": "研究生入学考试",
+              "title": "học viên cao học vào trường hoặc cao đẳng Kì thi",
               "count": 5366
             },
             {
               "tag_id": 383,
-              "title": "考研必备",
+              "title": "dự thi đầu vào chương trình sau đại học cần thiết",
               "count": 5474
             },
             {
               "tag_id": 384,
-              "title": "2013考研大纲新增",
+              "title": "2013dự thi đầu vào chương trình sau đại học tóm tắt thêm cái gì đó mới",
               "count": 59
             }
           ]
         },
         {
           "id": "gaokao",
-          "label": "高考",
+          "label": "kỳ thi tuyển sinh đại học",
           "count": 4142,
           "file": "exam__gaokao.json",
           "tags": [
             {
               "tag_id": 389,
-              "title": "高考冲刺",
+              "title": "kỳ thi tuyển sinh đại học thể thao chạy nước rút",
               "count": 100
             },
             {
               "tag_id": 390,
-              "title": "高考大纲",
+              "title": "kỳ thi tuyển sinh đại học tóm tắt",
               "count": 3791
             },
             {
               "tag_id": 391,
-              "title": "高考常用短语",
+              "title": "kỳ thi tuyển sinh đại học được sử dụng phổ biến cụm từ ngữ pháp",
               "count": 359
             }
           ]
         },
         {
           "id": "bec_book",
-          "label": "BEC词汇书",
+          "label": "BECTừ vựng viết tắt của",
           "count": 17923,
           "file": "exam__bec_book.json",
           "tags": [
             {
               "tag_id": 1145,
-              "title": "考研-BEC直通车",
+              "title": "dự thi đầu vào chương trình sau đại học -BECdẫn trực tiếp đến họ",
               "count": 16832
             },
             {
               "tag_id": 1148,
-              "title": "BEC 商务英语词组精选",
+              "title": "BEC công việc thương mại tiếng Anh cụm từ ngữ pháp được chọn lọc kỹ",
               "count": 565
             },
             {
               "tag_id": 1149,
-              "title": "TIMES经典用词 商业篇",
+              "title": "TIMESkinh điển cách dùng của một thuật ngữ kinh doanh tờ",
               "count": 100
             },
             {
               "tag_id": 1150,
-              "title": "BEC中级单词书",
+              "title": "BECcấp trung trong hệ thống phân cấp Từ vựng viết tắt của",
               "count": 445
             },
             {
               "tag_id": 1151,
-              "title": "成功商务职场英语",
+              "title": "Thành công công việc thương mại nơi làm việc tiếng Anh",
               "count": 113
             },
             {
               "tag_id": 1152,
-              "title": "BEC 中高级词汇精选",
+              "title": "BEC hình thức kết hợp Trung Quốccấp cao Từ vựng được chọn lọc kỹ",
               "count": 900
             },
             {
               "tag_id": 1153,
-              "title": "剑桥BEC真题集（高级）",
+              "title": "kiếm hai lưỡi cầuBECĐề thi thật tập hợp(cấp cao)",
               "count": 838
             },
             {
               "tag_id": 1154,
-              "title": "新编剑桥商务英语口试必备手册（中、高级）",
+              "title": "biên soạn mới kiếm hai lưỡi cầucông việc thương mại tiếng Anh thi vấn đáp cần thiết sổ tay (hình thức kết hợp Trung Quốc,cấp cao)",
               "count": 691
             },
             {
               "tag_id": 1155,
-              "title": "剑桥商务英语（BEC）初级词汇",
+              "title": "kiếm hai lưỡi cầucông việc thương mại tiếng Anh (BEC)sơ cấp Từ vựng",
               "count": 1006
             },
             {
               "tag_id": 1156,
-              "title": "新编剑桥商务英语考试教程（高级）",
+              "title": "biên soạn mới kiếm hai lưỡi cầucông việc thương mại tiếng Anh Kì thi khóa học thường dùng trong tiêu đề sách (cấp cao)",
               "count": 711
             },
             {
               "tag_id": 1157,
-              "title": "剑桥商务英语BEC中级、高级考试词汇",
+              "title": "kiếm hai lưỡi cầucông việc thương mại tiếng Anh BECcấp trung trong hệ thống phân cấp,cấp cao Kì thi Từ vựng",
               "count": 724
             },
             {
               "tag_id": 1158,
-              "title": "BEC高频词汇表",
+              "title": "BECTần suất cao Từ vựng bề mặt bên ngoài",
               "count": 1759
             },
             {
               "tag_id": 1161,
-              "title": "剑桥商务英语中级词汇用法（上）",
+              "title": "kiếm hai lưỡi cầucông việc thương mại tiếng Anh cấp trung trong hệ thống phân cấp Từ vựng cách dùng (dùng trong)",
               "count": 607
             },
             {
               "tag_id": 1162,
-              "title": "新编商务英语泛读（2）词汇",
+              "title": "biên soạn mới công việc thương mại tiếng Anh giáo dục ngôn ngữ đọc nhanh (2)Từ vựng",
               "count": 392
             },
             {
               "tag_id": 1163,
-              "title": "BEC中级词汇",
+              "title": "BECcấp trung trong hệ thống phân cấp Từ vựng",
               "count": 818
             }
           ]
         },
         {
           "id": "gmat_book",
-          "label": "GMAT词汇书",
+          "label": "GMATTừ vựng viết tắt của",
           "count": 6875,
           "file": "exam__gmat_book.json",
           "tags": [
             {
               "tag_id": 1243,
-              "title": "GMAT词汇",
+              "title": "GMATTừ vựng",
               "count": 2247
             },
             {
               "tag_id": 1244,
-              "title": "GMAT单词 按语意分类",
+              "title": "GMATTừ vựng chú thích ÝPhân loại",
               "count": 2871
             },
             {
               "tag_id": 1245,
-              "title": "GMAT考试IR部分高频词汇",
+              "title": "GMATKì thi IRphần Tần suất cao Từ vựng",
               "count": 703
             },
             {
               "tag_id": 1246,
-              "title": "GMAT超难词 - Manhattan Elite",
+              "title": "GMATvượt quá khó để biến thể cũ của - Manhattan Elite",
               "count": 502
             },
             {
               "tag_id": 1247,
-              "title": "Manhatan Foundation of GMAT Verbal 曼哈顿GMAT基础词汇",
+              "title": "Manhatan Foundation of GMAT Verbal đảo Manhattan GMATCơ bản Từ vựng",
               "count": 422
             },
             {
               "tag_id": 1248,
-              "title": "GMAT核心词汇精选",
+              "title": "GMATlõi Từ vựng được chọn lọc kỹ",
               "count": 2215
             },
             {
               "tag_id": 1249,
-              "title": "GMAT数学词汇",
+              "title": "GMATtoán học Từ vựng",
               "count": 191
             },
             {
               "tag_id": 1250,
-              "title": "GMAT770词汇精选",
+              "title": "GMAT770Từ vựng được chọn lọc kỹ",
               "count": 2817
             },
             {
               "tag_id": 1251,
-              "title": "GMAT精选词汇",
+              "title": "GMATđược chọn lọc kỹ Từ vựng",
               "count": 4335
             },
             {
               "tag_id": 1252,
-              "title": "GMAT常用数学术语",
+              "title": "GMATđược sử dụng phổ biến toán học thuật ngữ",
               "count": 360
             },
             {
               "tag_id": 1253,
-              "title": "GMAT大纲核心词汇",
+              "title": "GMATtóm tắt lõi Từ vựng",
               "count": 2954
             },
             {
               "tag_id": 1254,
-              "title": "GMAT阅读和逻辑1000词",
+              "title": "GMATĐọc biến thể cũ củalogic từ mượn 1000biến thể cũ của",
               "count": 1000
             }
           ]
         },
         {
           "id": "gre_book",
-          "label": "GRE词汇书",
+          "label": "GRETừ vựng viết tắt của",
           "count": 15121,
           "file": "exam__gre_book.json",
           "tags": [
@@ -269,12 +269,12 @@
             },
             {
               "tag_id": 891,
-              "title": "Magoosh GRE 词卡",
+              "title": "Magoosh GRE biến thể cũ của dừng",
               "count": 994
             },
             {
               "tag_id": 892,
-              "title": "扇贝精选GRE单词",
+              "title": "sò điệp chi Pecten được chọn lọc kỹ GRETừ vựng",
               "count": 4599
             },
             {
@@ -289,22 +289,22 @@
             },
             {
               "tag_id": 895,
-              "title": "GRE阅读39+3 阅读词汇",
+              "title": "GREĐọc 39+3 Đọc Từ vựng",
               "count": 596
             },
             {
               "tag_id": 896,
-              "title": "游戏中的GRE词汇",
+              "title": "trò chơi bắn trúng mục tiêu GRETừ vựng",
               "count": 291
             },
             {
               "tag_id": 897,
-              "title": "[乱序] Magoosh GRE 1000 Vocabulary Flashcards",
+              "title": "[trong tình trạng rối loạn hình vị hạn chế thứ tự] Magoosh GRE 1000 Vocabulary Flashcards",
               "count": 999
             },
             {
               "tag_id": 898,
-              "title": "Nino's GRE 填空词汇",
+              "title": "Nino's GRE Điền khuyết Từ vựng",
               "count": 252
             },
             {
@@ -314,50 +314,50 @@
             },
             {
               "tag_id": 900,
-              "title": "“要命”GRE词汇3000·逆序版",
+              "title": "«gây chết người »GRETừ vựng 3000·thứ tự nghịch một đăng ký",
               "count": 3060
             },
             {
               "tag_id": 901,
-              "title": "GRE巅峰词汇",
+              "title": "GREđỉnh Từ vựng",
               "count": 2728
             },
             {
               "tag_id": 902,
-              "title": "GRE机经高频词汇",
+              "title": "GREhọ họTần suất cao Từ vựng",
               "count": 267
             },
             {
               "tag_id": 903,
-              "title": "巴朗-300个绝对重要的GRE单词",
+              "title": "nước Ba thời nhà Chu ở phía đông Tứ Xuyên hiện đại rõ ràng-300dùng trongtuyệt đối quan trọng GRETừ vựng",
               "count": 300
             },
             {
               "tag_id": 904,
-              "title": "突破英文词汇22000",
+              "title": "đột phá Tiếng Anh Từ vựng 22000",
               "count": 934
             }
           ]
         },
         {
           "id": "sat_book",
-          "label": "SAT词汇书",
+          "label": "SATTừ vựng viết tắt của",
           "count": 8030,
           "file": "exam__sat_book.json",
           "tags": [
             {
               "tag_id": 1255,
-              "title": "SAT 官方指南指定词汇",
+              "title": "SAT Chính thức hướng dẫn chỉ định Từ vựng",
               "count": 1278
             },
             {
               "tag_id": 1256,
-              "title": "巴朗3500词表",
+              "title": "nước Ba thời nhà Chu ở phía đông Tứ Xuyên hiện đại rõ ràng3500biến thể cũ của bề mặt bên ngoài",
               "count": 3636
             },
             {
               "tag_id": 1257,
-              "title": "SAT OG词汇伴侣",
+              "title": "SAT OGTừ vựng bạn đồng hành",
               "count": 3008
             },
             {
@@ -367,47 +367,47 @@
             },
             {
               "tag_id": 1259,
-              "title": "猴哥SAT填空词汇2300",
+              "title": "khỉ anh traiSATĐiền khuyết Từ vựng 2300",
               "count": 2291
             },
             {
               "tag_id": 1260,
-              "title": "SAT基础词汇",
+              "title": "SATCơ bản Từ vựng",
               "count": 1226
             },
             {
               "tag_id": 1261,
-              "title": "SAT最常考10大类词汇",
+              "title": "SATbiến thể của họ đánh10loại chính Từ vựng",
               "count": 785
             },
             {
               "tag_id": 1262,
-              "title": "SAT词汇（高难高频词汇）",
+              "title": "SATTừ vựng (vô cùng khó khăn Tần suất cao Từ vựng)",
               "count": 1466
             },
             {
               "tag_id": 1263,
-              "title": "SAT填空题词汇",
+              "title": "SATĐiền vào chỗ trống Từ vựng",
               "count": 1832
             },
             {
               "tag_id": 1264,
-              "title": "[全面收录]Direct Hits Core Vocabulary for the SAT 第四版",
+              "title": "[toàn diện bao gồm trong một bộ sưu tập]Direct Hits Core Vocabulary for the SAT bốn một đăng ký",
               "count": 440
             },
             {
               "tag_id": 1265,
-              "title": "SAT进阶词汇",
+              "title": "SATnâng cao Từ vựng",
               "count": 651
             },
             {
               "tag_id": 1266,
-              "title": "SAT高难词汇",
+              "title": "SATvô cùng khó khăn Từ vựng",
               "count": 672
             },
             {
               "tag_id": 1267,
-              "title": "[全面收录]Direct Hits Toughest Vocabulary for SAT 第四版",
+              "title": "[toàn diện bao gồm trong một bộ sưu tập]Direct Hits Toughest Vocabulary for SAT bốn một đăng ký",
               "count": 361
             },
             {
@@ -417,14 +417,14 @@
             },
             {
               "tag_id": 1269,
-              "title": "SAT阅读词汇及抽象类词汇",
+              "title": "SATĐọc Từ vựng vàtrừu tượng loạiTừ vựng",
               "count": 165
             }
           ]
         },
         {
           "id": "toeic_book",
-          "label": "托业考试词汇书",
+          "label": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Kì thi Từ vựng viết tắt của",
           "count": 8886,
           "file": "exam__toeic_book.json",
           "tags": [
@@ -435,52 +435,52 @@
             },
             {
               "tag_id": 1121,
-              "title": "Superb Elite新托业全真模拟试题集提取单词",
+              "title": "Superb Eliteviết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế họ thậtMô phỏng câu hỏi thi tập hợprút tiền Từ vựng",
               "count": 2891
             },
             {
               "tag_id": 1159,
-              "title": "VOA高频词汇",
+              "title": "VOATần suất cao Từ vựng",
               "count": 2075
             },
             {
               "tag_id": 1160,
-              "title": "新托业词汇必备",
+              "title": "viết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng cần thiết",
               "count": 1791
             },
             {
               "tag_id": 1225,
-              "title": "扇贝托业词汇精选",
+              "title": "sò điệp chi Pecten TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng được chọn lọc kỹ",
               "count": 2327
             },
             {
               "tag_id": 1226,
-              "title": "新托业词汇本领书全收录",
+              "title": "viết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng kỹ năng viết tắt của họbao gồm trong một bộ sưu tập",
               "count": 824
             },
             {
               "tag_id": 1227,
-              "title": "新托业词汇440",
+              "title": "viết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng 440",
               "count": 373
             },
             {
               "tag_id": 1228,
-              "title": "TIME单挑1000单词完整版",
+              "title": "TIMEchọn 1000Từ vựng hoàn chỉnh một đăng ký",
               "count": 1056
             },
             {
               "tag_id": 1229,
-              "title": "托业核心词汇",
+              "title": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế lõi Từ vựng",
               "count": 1465
             },
             {
               "tag_id": 1230,
-              "title": "托业词汇本领书",
+              "title": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng kỹ năng viết tắt của",
               "count": 987
             },
             {
               "tag_id": 1231,
-              "title": "TOEIC Vocabulary (高频核心单字书)",
+              "title": "TOEIC Vocabulary (Tần suất cao lõi chữ Hán đơn lẻ viết tắt của)",
               "count": 1803
             },
             {
@@ -490,183 +490,183 @@
             },
             {
               "tag_id": 1233,
-              "title": "史上最强NEW TOEIC新托业单词",
+              "title": "trong lịch sử biến thể của họNEW TOEICviết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Từ vựng",
               "count": 1718
             },
             {
               "tag_id": 1234,
-              "title": "新TOEIC必考單字600",
+              "title": "viết tắt của Tân CươngTOEICnhất định đánh chữ600",
               "count": 910
             },
             {
               "tag_id": 1235,
-              "title": "新托业全真题库—Part7",
+              "title": "viết tắt của Tân CươngTOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế họĐề thi thật nhà kho—Part7",
               "count": 1350
             }
           ]
         },
         {
           "id": "toefl_book",
-          "label": "托福词汇书",
+          "label": "nâng bằng tay họTừ vựng viết tắt của",
           "count": 11795,
           "file": "exam__toefl_book.json",
           "tags": [
             {
               "tag_id": 691,
-              "title": "托福高级词汇",
+              "title": "nâng bằng tay họcấp cao Từ vựng",
               "count": 1183
             },
             {
               "tag_id": 692,
-              "title": "托福中级词汇",
+              "title": "nâng bằng tay họcấp trung trong hệ thống phân cấp Từ vựng",
               "count": 1198
             },
             {
               "tag_id": 693,
-              "title": "托福基础词汇",
+              "title": "nâng bằng tay họCơ bản Từ vựng",
               "count": 1708
             },
             {
               "tag_id": 694,
-              "title": "TOEFL核心词汇21天突破",
+              "title": "TOEFLlõi Từ vựng 21ngàyđột phá",
               "count": 2139
             },
             {
               "tag_id": 695,
-              "title": "智能托福词汇书",
+              "title": "thông minh nâng bằng tay họTừ vựng viết tắt của",
               "count": 3462
             },
             {
               "tag_id": 696,
-              "title": "常春藤联盟大学5000字汇记忆课程",
+              "title": "cây thường xuân liên minh Đại học 5000máy tính tập hợp ký tự Ghi nhớ Khóa học",
               "count": 300
             },
             {
               "tag_id": 697,
-              "title": "【无老师】7天搞定TOEFL单词",
+              "title": "【không cóGiáo viên 】7ngàysửa xong TOEFLTừ vựng",
               "count": 2614
             },
             {
               "tag_id": 698,
-              "title": "猴哥托福词频9000",
+              "title": "khỉ anh trai nâng bằng tay họtần suất từ 9000",
               "count": 7914
             },
             {
               "tag_id": 699,
-              "title": "TOEFL 词汇",
+              "title": "TOEFL Từ vựng",
               "count": 4631
             },
             {
               "tag_id": 700,
-              "title": "托福真题词汇20组（上）",
+              "title": "nâng bằng tay họĐề thi thật Từ vựng 20họ(dùng trong)",
               "count": 1503
             },
             {
               "tag_id": 701,
-              "title": "托福真题词汇20组（下）",
+              "title": "nâng bằng tay họĐề thi thật Từ vựng 20họ(xuống)",
               "count": 1464
             },
             {
               "tag_id": 702,
-              "title": "托福考试高频专业词汇",
+              "title": "nâng bằng tay họKì thi Tần suất cao chuyên môn Từ vựng",
               "count": 1270
             },
             {
               "tag_id": 703,
-              "title": "简化版曲根词汇归类——托福",
+              "title": "đơn giản hóa một đăng ký họ rễTừ vựng phân loại ——nâng bằng tay họ",
               "count": 1238
             },
             {
               "tag_id": 704,
-              "title": "570个单词轻松征服托福",
+              "title": "570dùng trongTừ vựng nhẹ nhàng chinh phục nâng bằng tay họ",
               "count": 568
             },
             {
               "tag_id": 705,
-              "title": "Sean听力词汇大全（第三部分）",
+              "title": "SeanNghe Từ vựng bộ sưu tập toàn diện (họphần)",
               "count": 762
             }
           ]
         },
         {
           "id": "ielts_book",
-          "label": "雅思词汇书",
+          "label": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Từ vựng viết tắt của",
           "count": 10182,
           "file": "exam__ielts_book.json",
           "tags": [
             {
               "tag_id": 767,
-              "title": "雅思听力精选词汇",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Nghe được chọn lọc kỹ Từ vựng",
               "count": 2247
             },
             {
               "tag_id": 768,
-              "title": "雅思考试必备词组",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Kì thi cần thiết cụm từ ngữ pháp",
               "count": 1200
             },
             {
               "tag_id": 769,
-              "title": "IELTS 精选词表",
+              "title": "IELTS được chọn lọc kỹ biến thể cũ của bề mặt bên ngoài",
               "count": 2088
             },
             {
               "tag_id": 770,
-              "title": "雅思口语必备词",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Nói cần thiết biến thể cũ của",
               "count": 1511
             },
             {
               "tag_id": 771,
-              "title": "雅思写作精选词汇",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Viết được chọn lọc kỹ Từ vựng",
               "count": 1312
             },
             {
               "tag_id": 772,
-              "title": "剑桥雅思词汇精典（完整版）",
+              "title": "Cambridge IELTS Từ vựng tinh chất kinh điển(hoàn chỉnh một đăng ký)",
               "count": 1402
             },
             {
               "tag_id": 773,
-              "title": "雅思阅读必备词汇",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Đọc cần thiết Từ vựng",
               "count": 2546
             },
             {
               "tag_id": 774,
-              "title": "50天 征服雅思词汇",
+              "title": "50ngày chinh phục IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Từ vựng",
               "count": 4793
             },
             {
               "tag_id": 775,
-              "title": "剑桥雅思词汇精典",
+              "title": "Cambridge IELTS Từ vựng tinh chất kinh điển",
               "count": 199
             },
             {
               "tag_id": 776,
-              "title": "剑桥英语（青少版）第一级",
+              "title": "kiếm hai lưỡi cầutiếng Anh (viết tắt của ít một đăng ký)cấp một",
               "count": 300
             },
             {
               "tag_id": 777,
-              "title": "王陆807雅思阅读词汇精讲",
+              "title": "họ họ807IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Đọc Từ vựng tinh chất nói",
               "count": 1928
             },
             {
               "tag_id": 778,
-              "title": "雅思听力词汇王陆807",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Nghe Từ vựng họ họ807",
               "count": 1732
             },
             {
               "tag_id": 779,
-              "title": "雅思听力拼写词汇",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Nghe đánh vần Từ vựng",
               "count": 197
             },
             {
               "tag_id": 780,
-              "title": "雅思作文一般所需词汇分类记忆",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế viết bài văn giống cần thiết Từ vựng Phân loại Ghi nhớ",
               "count": 208
             },
             {
               "tag_id": 781,
-              "title": "雅思口语考试常用短语、词组、词串",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Nói Kì thi được sử dụng phổ biến cụm từ ngữ pháp,cụm từ ngữ pháp,biến thể cũ của xâu lại",
               "count": 346
             }
           ]
@@ -675,7 +675,7 @@
     },
     {
       "id": "abroad",
-      "label": "出国留学",
+      "label": "ra nước ngoài du học",
       "subs": [
         {
           "id": "bec",
@@ -685,100 +685,100 @@
           "tags": [
             {
               "tag_id": 376,
-              "title": "BEC高级",
+              "title": "BECcấp cao",
               "count": 609
             },
             {
               "tag_id": 377,
-              "title": "BEC中级",
+              "title": "BECcấp trung trong hệ thống phân cấp",
               "count": 924
             }
           ]
         },
         {
           "id": "gmat",
-          "label": "GMAT考试",
+          "label": "GMATKì thi",
           "count": 3403,
           "file": "abroad__gmat.json",
           "tags": [
             {
               "tag_id": 385,
-              "title": "GMAT600分",
+              "title": "GMAT600 điểm",
               "count": 789
             },
             {
               "tag_id": 386,
-              "title": "GMAT800分常考",
+              "title": "GMAT800 điểmhọ đánh",
               "count": 1064
             },
             {
               "tag_id": 387,
-              "title": "GMAT词汇精选",
+              "title": "GMATTừ vựng được chọn lọc kỹ",
               "count": 2135
             }
           ]
         },
         {
           "id": "gre",
-          "label": "GRE考试",
+          "label": "GREKì thi",
           "count": 7496,
           "file": "abroad__gre.json",
           "tags": [
             {
               "tag_id": 328,
-              "title": "GRE考试必备词汇",
+              "title": "GREKì thi cần thiết Từ vựng",
               "count": 7496
             }
           ]
         },
         {
           "id": "sat",
-          "label": "SAT考试",
+          "label": "SATKì thi",
           "count": 210,
           "file": "abroad__sat.json",
           "tags": [
             {
               "tag_id": 388,
-              "title": "SAT数学",
+              "title": "SATtoán học",
               "count": 211
             }
           ]
         },
         {
           "id": "toeic",
-          "label": "托业考试",
+          "label": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Kì thi",
           "count": 828,
           "file": "abroad__toeic.json",
           "tags": [
             {
               "tag_id": 325,
-              "title": "托业考试必备",
+              "title": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế Kì thi cần thiết",
               "count": 829
             }
           ]
         },
         {
           "id": "toefl",
-          "label": "托福考试",
+          "label": "nâng bằng tay họKì thi",
           "count": 4883,
           "file": "abroad__toefl.json",
           "tags": [
             {
               "tag_id": 326,
-              "title": "TOEFL必备词汇",
+              "title": "TOEFLcần thiết Từ vựng",
               "count": 4883
             }
           ]
         },
         {
           "id": "ielts",
-          "label": "雅思考试",
+          "label": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế Kì thi",
           "count": 4541,
           "file": "abroad__ielts.json",
           "tags": [
             {
               "tag_id": 327,
-              "title": "雅思必备词汇",
+              "title": "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế cần thiết Từ vựng",
               "count": 4541
             }
           ]
@@ -787,243 +787,243 @@
     },
     {
       "id": "k12",
-      "label": "中小学",
+      "label": "trường trung học và tiểu học",
       "subs": [
         {
           "id": "junior",
-          "label": "初中",
+          "label": "trường trung học cơ sở",
           "count": 3626,
           "file": "k12__junior.json",
           "tags": [
             {
               "tag_id": 423,
-              "title": "初中牛津版初一 上学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýngày mùng một tháng âm lịch đi học biến thể của",
               "count": 525
             },
             {
               "tag_id": 424,
-              "title": "初中牛津版初一 下学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýngày mùng một tháng âm lịch xuốnghọc kỳ",
               "count": 471
             },
             {
               "tag_id": 425,
-              "title": "初中牛津版初二 上学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýnăm thứ hai trung học cơ sở đi học biến thể của",
               "count": 402
             },
             {
               "tag_id": 426,
-              "title": "初中牛津版初二 下学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýnăm thứ hai trung học cơ sở xuốnghọc kỳ",
               "count": 293
             },
             {
               "tag_id": 427,
-              "title": "初中牛津版初三 上学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýnăm thứ ba trung học cơ sở đi học biến thể của",
               "count": 383
             },
             {
               "tag_id": 428,
-              "title": "初中牛津版初三 下学期",
+              "title": "trường trung học cơ sở Oxford thành phố ở Anh một đăng kýnăm thứ ba trung học cơ sở xuốnghọc kỳ",
               "count": 317
             },
             {
               "tag_id": 429,
-              "title": "初中人教版七年级上",
+              "title": "trường trung học cơ sở người họ một đăng ký bảylớp dùng trong",
               "count": 575
             },
             {
               "tag_id": 430,
-              "title": "初中人教版七年级下",
+              "title": "trường trung học cơ sở người họ một đăng ký bảylớp xuống",
               "count": 383
             },
             {
               "tag_id": 431,
-              "title": "初中人教版八年级上",
+              "title": "trường trung học cơ sở người họ một đăng ký támlớp dùng trong",
               "count": 549
             },
             {
               "tag_id": 432,
-              "title": "初中人教版八年级下",
+              "title": "trường trung học cơ sở người họ một đăng ký támlớp xuống",
               "count": 481
             },
             {
               "tag_id": 433,
-              "title": "初中人教版九年级",
+              "title": "trường trung học cơ sở người họ một đăng ký chínlớp",
               "count": 730
             },
             {
               "tag_id": 434,
-              "title": "仁爱版七年级上册",
+              "title": "Khu Nhân Ái hoặc Nhân Ai của thành phố Cơ Long một đăng ký bảylớp dùng trong sách",
               "count": 377
             },
             {
               "tag_id": 435,
-              "title": "仁爱版七年级下册",
+              "title": "Khu Nhân Ái hoặc Nhân Ai của thành phố Cơ Long một đăng ký bảylớp xuống sách",
               "count": 368
             },
             {
               "tag_id": 436,
-              "title": "仁爱版八年级上册",
+              "title": "Khu Nhân Ái hoặc Nhân Ai của thành phố Cơ Long một đăng ký támlớp dùng trong sách",
               "count": 344
             },
             {
               "tag_id": 437,
-              "title": "仁爱版八年级下册",
+              "title": "Khu Nhân Ái hoặc Nhân Ai của thành phố Cơ Long một đăng ký támlớp xuống sách",
               "count": 322
             }
           ]
         },
         {
           "id": "primary",
-          "label": "小学",
+          "label": "trường tiểu học",
           "count": 1202,
           "file": "k12__primary.json",
           "tags": [
             {
               "tag_id": 392,
-              "title": "小学牛津版一年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký mộtlớp đi học biến thể của",
               "count": 83
             },
             {
               "tag_id": 393,
-              "title": "小学牛津版一年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký mộtlớp xuốnghọc kỳ",
               "count": 51
             },
             {
               "tag_id": 394,
-              "title": "小学牛津版二年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng kýlớp đi học biến thể của",
               "count": 51
             },
             {
               "tag_id": 395,
-              "title": "小学牛津版二年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng kýlớp xuốnghọc kỳ",
               "count": 59
             },
             {
               "tag_id": 396,
-              "title": "小学牛津版三年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký họlớp đi học biến thể của",
               "count": 75
             },
             {
               "tag_id": 397,
-              "title": "小学牛津版三年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký họlớp xuốnghọc kỳ",
               "count": 69
             },
             {
               "tag_id": 398,
-              "title": "小学牛津版四年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký bốnlớp đi học biến thể của",
               "count": 68
             },
             {
               "tag_id": 399,
-              "title": "小学牛津版四年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký bốnlớp xuốnghọc kỳ",
               "count": 97
             },
             {
               "tag_id": 400,
-              "title": "小学牛津版五年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký nămlớp đi học biến thể của",
               "count": 83
             },
             {
               "tag_id": 401,
-              "title": "小学牛津版五年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký nămlớp xuốnghọc kỳ",
               "count": 73
             },
             {
               "tag_id": 402,
-              "title": "小学牛津版六年级 上学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký sáulớp đi học biến thể của",
               "count": 274
             },
             {
               "tag_id": 403,
-              "title": "小学牛津版六年级 下学期",
+              "title": "trường tiểu học Oxford thành phố ở Anh một đăng ký sáulớp xuốnghọc kỳ",
               "count": 181
             },
             {
               "tag_id": 404,
-              "title": "小学深圳版第一册",
+              "title": "trường tiểu học thành phố cấp phó tỉnh Thâm Quyến ở Quảng Đông một đăng kýđầu tiên sách",
               "count": 146
             },
             {
               "tag_id": 405,
-              "title": "小学深圳版第二册",
+              "title": "trường tiểu học thành phố cấp phó tỉnh Thâm Quyến ở Quảng Đông một đăng kýthứ hai sách",
               "count": 136
             },
             {
               "tag_id": 406,
-              "title": "小学深圳版第三册",
+              "title": "trường tiểu học thành phố cấp phó tỉnh Thâm Quyến ở Quảng Đông một đăng ký họ sách",
               "count": 36
             }
           ]
         },
         {
           "id": "senior",
-          "label": "高中",
+          "label": "THPT",
           "count": 3896,
           "file": "k12__senior.json",
           "tags": [
             {
               "tag_id": 449,
-              "title": "高中牛津版高一 上学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ một đi học biến thể của",
               "count": 372
             },
             {
               "tag_id": 450,
-              "title": "高中牛津版高一 下学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ một xuốnghọc kỳ",
               "count": 493
             },
             {
               "tag_id": 451,
-              "title": "高中牛津版高二 上学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ đi học biến thể của",
               "count": 464
             },
             {
               "tag_id": 452,
-              "title": "高中牛津版高二 下学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ xuốnghọc kỳ",
               "count": 392
             },
             {
               "tag_id": 453,
-              "title": "高中牛津版高三 上学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ họ đi học biến thể của",
               "count": 487
             },
             {
               "tag_id": 454,
-              "title": "高中牛津版高三 下学期",
+              "title": "trường trung học phổ thông Oxford thành phố ở Anh một đăng ký họ họ xuốnghọc kỳ",
               "count": 437
             },
             {
               "tag_id": 455,
-              "title": "高中人教版必修1",
+              "title": "trường trung học phổ thông người họ một đăng kýcủa một khóa học bắt buộc 1",
               "count": 276
             },
             {
               "tag_id": 456,
-              "title": "高中人教版必修2",
+              "title": "trường trung học phổ thông người họ một đăng kýcủa một khóa học bắt buộc 2",
               "count": 265
             },
             {
               "tag_id": 457,
-              "title": "高中人教版必修3",
+              "title": "trường trung học phổ thông người họ một đăng kýcủa một khóa học bắt buộc 3",
               "count": 362
             },
             {
               "tag_id": 458,
-              "title": "高中人教版必修4",
+              "title": "trường trung học phổ thông người họ một đăng kýcủa một khóa học bắt buộc 4",
               "count": 299
             },
             {
               "tag_id": 459,
-              "title": "高中人教版必修5",
+              "title": "trường trung học phổ thông người họ một đăng kýcủa một khóa học bắt buộc 5",
               "count": 343
             },
             {
               "tag_id": 460,
-              "title": "高中人教版选修6",
+              "title": "trường trung học phổ thông người họ một đăng kýở trường học tự chọn 6",
               "count": 385
             },
             {
               "tag_id": 461,
-              "title": "高中人教版选修7",
+              "title": "trường trung học phổ thông người họ một đăng kýở trường học tự chọn 7",
               "count": 379
             }
           ]
@@ -1032,96 +1032,96 @@
     },
     {
       "id": "learning",
-      "label": "英语学习",
+      "label": "tiếng Anh học",
       "subs": [
         {
           "id": "nce",
-          "label": "新概念",
+          "label": "viết tắt của Tân Cươngkhái niệm",
           "count": 4276,
           "file": "learning__nce.json",
           "tags": [
             {
               "tag_id": 468,
-              "title": "新概念英语1",
+              "title": "viết tắt của Tân Cươngkhái niệm tiếng Anh 1",
               "count": 799
             },
             {
               "tag_id": 469,
-              "title": "新概念英语2",
+              "title": "viết tắt của Tân Cươngkhái niệm tiếng Anh 2",
               "count": 960
             },
             {
               "tag_id": 470,
-              "title": "新概念英语3",
+              "title": "viết tắt của Tân Cươngkhái niệm tiếng Anh 3",
               "count": 1606
             },
             {
               "tag_id": 471,
-              "title": "新概念英语4",
+              "title": "viết tắt của Tân Cươngkhái niệm tiếng Anh 4",
               "count": 1513
             }
           ]
         },
         {
           "id": "collins",
-          "label": "柯林斯星级词汇",
+          "label": "Collins tên xếp hạng sao Từ vựng",
           "count": 8903,
           "file": "learning__collins.json",
           "tags": [
             {
               "tag_id": 477,
-              "title": "柯林斯星级词汇五星级词表",
+              "title": "Collins tên xếp hạng sao Từ vựng khách sạn năm sao biến thể cũ của bề mặt bên ngoài",
               "count": 472
             },
             {
               "tag_id": 478,
-              "title": "柯林斯星级词汇四星级词表",
+              "title": "Collins tên xếp hạng sao Từ vựng bốnxếp hạng sao biến thể cũ của bề mặt bên ngoài",
               "count": 835
             },
             {
               "tag_id": 479,
-              "title": "柯林斯星级词汇三星级词表",
+              "title": "Collins tên xếp hạng sao Từ vựng Thị trấn Sanxing hoặc Sanhsing ở huyện Nghi Lan cấp biến thể cũ của bề mặt bên ngoài",
               "count": 1195
             },
             {
               "tag_id": 480,
-              "title": "柯林斯星级词汇二星级词表",
+              "title": "Collins tên xếp hạng sao Từ vựng xếp hạng sao biến thể cũ của bề mặt bên ngoài",
               "count": 2172
             },
             {
               "tag_id": 481,
-              "title": "柯林斯星级词汇一星级词表",
+              "title": "Collins tên xếp hạng sao Từ vựng mộtxếp hạng sao biến thể cũ của bề mặt bên ngoài",
               "count": 4237
             }
           ]
         },
         {
           "id": "oxford3000",
-          "label": "牛津3000词",
+          "label": "Oxford thành phố ở Anh 3000biến thể cũ của",
           "count": 3433,
           "file": "learning__oxford3000.json",
           "tags": [
             {
               "tag_id": 482,
-              "title": "牛津3000词汇（上）",
+              "title": "Oxford thành phố ở Anh 3000Từ vựng (dùng trong)",
               "count": 1022
             },
             {
               "tag_id": 483,
-              "title": "牛津3000词汇（下）",
+              "title": "Oxford thành phố ở Anh 3000Từ vựng (xuống)",
               "count": 2417
             }
           ]
         },
         {
           "id": "phrases",
-          "label": "短语",
+          "label": "cụm từ ngữ pháp",
           "count": 431,
           "file": "learning__phrases.json",
           "tags": [
             {
               "tag_id": 334,
-              "title": "短语动词",
+              "title": "cụm từ ngữ pháp động từ",
               "count": 431
             }
           ]
@@ -1130,126 +1130,126 @@
     },
     {
       "id": "subject",
-      "label": "学科分类",
+      "label": "môn học Phân loại",
       "subs": [
         {
           "id": "chem",
-          "label": "化学",
+          "label": "Hóa học",
           "count": 490,
           "file": "subject__chem.json",
           "tags": [
             {
               "tag_id": 222,
-              "title": "化学实验用具",
+              "title": "hóa học thí nghiệm dụng cụ",
               "count": 22
             },
             {
               "tag_id": 223,
-              "title": "化合",
+              "title": "sự kết hợp hóa học",
               "count": 29
             },
             {
               "tag_id": 224,
-              "title": "化学元素",
+              "title": "nguyên tố hóa học",
               "count": 54
             },
             {
               "tag_id": 225,
-              "title": "化合物",
+              "title": "hợp chất hóa học",
               "count": 36
             },
             {
               "tag_id": 226,
-              "title": "化学反应",
+              "title": "phản ứng hóa học",
               "count": 38
             },
             {
               "tag_id": 349,
-              "title": "化学（高分子）专业词汇",
+              "title": "hóa học (đại phân tử)chuyên môn Từ vựng",
               "count": 327
             }
           ]
         },
         {
           "id": "geo",
-          "label": "地理学",
+          "label": "địa lý học",
           "count": 177,
           "file": "subject__geo.json",
           "tags": [
             {
               "tag_id": 155,
-              "title": "地理",
+              "title": "Địa lí",
               "count": 47
             },
             {
               "tag_id": 156,
-              "title": "地图",
+              "title": "bản đồ",
               "count": 12
             },
             {
               "tag_id": 157,
-              "title": "方位",
+              "title": "phương hướng",
               "count": 20
             },
             {
               "tag_id": 158,
-              "title": "河海",
+              "title": "sông họ",
               "count": 63
             },
             {
               "tag_id": 159,
-              "title": "山脉",
+              "title": "dãy núi",
               "count": 35
             }
           ]
         },
         {
           "id": "math",
-          "label": "数学",
+          "label": "Toán",
           "count": 249,
           "file": "subject__math.json",
           "tags": [
             {
               "tag_id": 281,
-              "title": "数字",
+              "title": "chữ số",
               "count": 51
             },
             {
               "tag_id": 282,
-              "title": "几何",
+              "title": "hình học",
               "count": 46
             },
             {
               "tag_id": 362,
-              "title": "数学术语",
+              "title": "toán học thuật ngữ",
               "count": 209
             }
           ]
         },
         {
           "id": "phys",
-          "label": "物理",
+          "label": "Vật lí",
           "count": 80,
           "file": "subject__phys.json",
           "tags": [
             {
               "tag_id": 130,
-              "title": "力学",
+              "title": "cơ học",
               "count": 34
             },
             {
               "tag_id": 131,
-              "title": "电学",
+              "title": "kỹ thuật điện",
               "count": 13
             },
             {
               "tag_id": 132,
-              "title": "磁学",
+              "title": "thuộc từ tính học",
               "count": 9
             },
             {
               "tag_id": 133,
-              "title": "光学",
+              "title": "quang học",
               "count": 24
             }
           ]
@@ -1258,75 +1258,75 @@
     },
     {
       "id": "nature",
-      "label": "动植物",
+      "label": "động thực vật",
       "subs": [
         {
           "id": "animals",
-          "label": "动物世界",
+          "label": "động vật thế giới",
           "count": 319,
           "file": "nature__animals.json",
           "tags": [
             {
               "tag_id": 192,
-              "title": "哺乳动物",
+              "title": "động vật có vú",
               "count": 103
             },
             {
               "tag_id": 193,
-              "title": "禽类",
+              "title": "loài chim",
               "count": 71
             },
             {
               "tag_id": 194,
-              "title": "爬行动物",
+              "title": "bò sát",
               "count": 31
             },
             {
               "tag_id": 195,
-              "title": "鱼类",
+              "title": "các loài cá",
               "count": 34
             },
             {
               "tag_id": 196,
-              "title": "昆虫",
+              "title": "côn trùng",
               "count": 49
             },
             {
               "tag_id": 197,
-              "title": "甲壳动物",
+              "title": "động vật giáp xác",
               "count": 21
             },
             {
               "tag_id": 198,
-              "title": "蠕虫",
+              "title": "biến thể của biến thể của",
               "count": 4
             },
             {
               "tag_id": 360,
-              "title": "动物",
+              "title": "động vật",
               "count": 202
             }
           ]
         },
         {
           "id": "plants",
-          "label": "植物王国",
+          "label": "thực vật vương quốc",
           "count": 137,
           "file": "nature__plants.json",
           "tags": [
             {
               "tag_id": 303,
-              "title": "花",
+              "title": "họ",
               "count": 63
             },
             {
               "tag_id": 304,
-              "title": "树",
+              "title": "cây",
               "count": 67
             },
             {
               "tag_id": 361,
-              "title": "植物",
+              "title": "thực vật",
               "count": 119
             }
           ]
@@ -1335,282 +1335,282 @@
     },
     {
       "id": "life",
-      "label": "生活日常",
+      "label": "Đời sống Hàng ngày",
       "subs": [
         {
           "id": "food",
-          "label": "吃喝玩乐",
+          "label": "ăn uống vui chơi thành ngữ",
           "count": 1365,
           "file": "life__food.json",
           "tags": [
             {
               "tag_id": 127,
-              "title": "摄影",
+              "title": "chụp ảnh",
               "count": 33
             },
             {
               "tag_id": 128,
-              "title": "器材",
+              "title": "thiết bị",
               "count": 36
             },
             {
               "tag_id": 129,
-              "title": "显影",
+              "title": "quy trình xử lý ảnh rửa ảnh",
               "count": 20
             },
             {
               "tag_id": 147,
-              "title": "马戏",
+              "title": "rạp xiếc",
               "count": 65
             },
             {
               "tag_id": 148,
-              "title": "游乐场",
+              "title": "sân chơi",
               "count": 24
             },
             {
               "tag_id": 231,
-              "title": "旅行",
+              "title": "Du lịch",
               "count": 44
             },
             {
               "tag_id": 279,
-              "title": "厨房",
+              "title": "nhà bếp",
               "count": 28
             },
             {
               "tag_id": 353,
-              "title": "生活常用",
+              "title": "Đời sống được sử dụng phổ biến",
               "count": 505
             },
             {
               "tag_id": 355,
-              "title": "海外生活-家居篇",
+              "title": "nước ngoài Đời sống -nhà tờ",
               "count": 239
             },
             {
               "tag_id": 356,
-              "title": "海外生活-气象篇",
+              "title": "nước ngoài Đời sống -đặc điểm khí tượng tờ",
               "count": 180
             },
             {
               "tag_id": 357,
-              "title": "旅行相关单词",
+              "title": "Du lịch liên quan Từ vựng",
               "count": 225
             }
           ]
         },
         {
           "id": "urban",
-          "label": "城市规划",
+          "label": "quy hoạch đô thị",
           "count": 117,
           "file": "life__urban.json",
           "tags": [
             {
               "tag_id": 320,
-              "title": "城市",
+              "title": "thành phố",
               "count": 64
             },
             {
               "tag_id": 321,
-              "title": "街区",
+              "title": "khu nhà",
               "count": 35
             },
             {
               "tag_id": 322,
-              "title": "居民",
+              "title": "cư dân",
               "count": 18
             }
           ]
         },
         {
           "id": "travel",
-          "label": "安全出行",
+          "label": "an toàn đi ra đâu đó chuyến đi ngắn",
           "count": 415,
           "file": "life__travel.json",
           "tags": [
             {
               "tag_id": 122,
-              "title": "道路",
+              "title": "đường",
               "count": 22
             },
             {
               "tag_id": 123,
-              "title": "交通障碍",
+              "title": "kết nối rào cản",
               "count": 21
             },
             {
               "tag_id": 124,
-              "title": "道路安全",
+              "title": "đường an toàn",
               "count": 23
             },
             {
               "tag_id": 144,
-              "title": "船舶种类",
+              "title": "vận tải loại",
               "count": 74
             },
             {
               "tag_id": 199,
-              "title": "公共汽车",
+              "title": "xe buýt",
               "count": 22
             },
             {
               "tag_id": 200,
-              "title": "航空",
+              "title": "hàng không",
               "count": 43
             },
             {
               "tag_id": 201,
-              "title": "船",
+              "title": "biến thể của",
               "count": 31
             },
             {
               "tag_id": 202,
-              "title": "铁路",
+              "title": "đường sắt",
               "count": 73
             },
             {
               "tag_id": 219,
-              "title": "自行车",
+              "title": "xe đạp",
               "count": 13
             },
             {
               "tag_id": 221,
-              "title": "自行车维修",
+              "title": "xe đạp bảo trì thiết bị",
               "count": 13
             },
             {
               "tag_id": 227,
-              "title": "民航种类",
+              "title": "hàng không dân dụng loại",
               "count": 26
             },
             {
               "tag_id": 228,
-              "title": "民用航空",
+              "title": "dành cho sử dụng dân sự hàng không",
               "count": 10
             },
             {
               "tag_id": 229,
-              "title": "飞机",
+              "title": "máy bay",
               "count": 27
             },
             {
               "tag_id": 230,
-              "title": "空港",
+              "title": "sân bay",
               "count": 17
             },
             {
               "tag_id": 309,
-              "title": "客运",
+              "title": "vận chuyển hành khách",
               "count": 43
             }
           ]
         },
         {
           "id": "edu",
-          "label": "科教兴国",
+          "label": "chấn hưng đất nước qua khoa học và giáo dục",
           "count": 216,
           "file": "life__edu.json",
           "tags": [
             {
               "tag_id": 151,
-              "title": "教育",
+              "title": "Giáo dục",
               "count": 108
             },
             {
               "tag_id": 152,
-              "title": "科目",
+              "title": "môn học",
               "count": 51
             },
             {
               "tag_id": 153,
-              "title": "学校",
+              "title": "trường học",
               "count": 26
             },
             {
               "tag_id": 154,
-              "title": "教学用品",
+              "title": "dạy như một giáo sư đồ dùng",
               "count": 32
             }
           ]
         },
         {
           "id": "work",
-          "label": "职业职场",
+          "label": "Nghề nghiệp nơi làm việc",
           "count": 1848,
           "file": "life__work.json",
           "tags": [
             {
               "tag_id": 186,
-              "title": "工作",
+              "title": "làm việc",
               "count": 41
             },
             {
               "tag_id": 187,
-              "title": "劳动力",
+              "title": "lực lượng lao động",
               "count": 40
             },
             {
               "tag_id": 188,
-              "title": "劳动条件",
+              "title": "công việc điều kiện",
               "count": 40
             },
             {
               "tag_id": 189,
-              "title": "劳工冲突",
+              "title": "lao động xung đột",
               "count": 26
             },
             {
               "tag_id": 190,
-              "title": "职业",
+              "title": "Nghề nghiệp",
               "count": 104
             },
             {
               "tag_id": 191,
-              "title": "职位",
+              "title": "vị trí",
               "count": 325
             },
             {
               "tag_id": 240,
-              "title": "会议类型",
+              "title": "cuộc họp loại",
               "count": 69
             },
             {
               "tag_id": 241,
-              "title": "与会人员",
+              "title": "tham gia cuộc họp nhân viên",
               "count": 38
             },
             {
               "tag_id": 242,
-              "title": "会议议程",
+              "title": "cuộc họp chương trình nghị sự",
               "count": 78
             },
             {
               "tag_id": 344,
-              "title": "交友常用词汇",
+              "title": "kết bạn được sử dụng phổ biến Từ vựng",
               "count": 340
             },
             {
               "tag_id": 345,
-              "title": "求职常用词汇",
+              "title": "tìm việc làm được sử dụng phổ biến Từ vựng",
               "count": 201
             },
             {
               "tag_id": 346,
-              "title": "人力资源词汇",
+              "title": "nguồn nhân lực Từ vựng",
               "count": 668
             }
           ]
         },
         {
           "id": "festivals",
-          "label": "节日",
+          "label": "ngày lễ",
           "count": 41,
           "file": "life__festivals.json",
           "tags": [
             {
               "tag_id": 350,
-              "title": "过年必用单词",
+              "title": "đón Tết Nguyên Đán nhất định sử dụngTừ vựng",
               "count": 41
             }
           ]
@@ -1619,223 +1619,223 @@
     },
     {
       "id": "arts",
-      "label": "艺术文体",
+      "label": "nghệ thuật thể loại viết",
       "subs": [
         {
           "id": "literature",
-          "label": "文学艺术",
+          "label": "văn học nghệ thuật",
           "count": 541,
           "file": "arts__literature.json",
           "tags": [
             {
               "tag_id": 139,
-              "title": "艺术",
+              "title": "nghệ thuật",
               "count": 37
             },
             {
               "tag_id": 140,
-              "title": "文学",
+              "title": "Văn học",
               "count": 76
             },
             {
               "tag_id": 141,
-              "title": "绘画",
+              "title": "vẽ",
               "count": 59
             },
             {
               "tag_id": 142,
-              "title": "雕塑",
+              "title": "bức tượng",
               "count": 23
             },
             {
               "tag_id": 143,
-              "title": "建筑",
+              "title": "xây dựng",
               "count": 50
             },
             {
               "tag_id": 149,
-              "title": "舞蹈",
+              "title": "múa nghệ thuật biểu diễn",
               "count": 16
             },
             {
               "tag_id": 211,
-              "title": "宗教",
+              "title": "tôn giáo",
               "count": 19
             },
             {
               "tag_id": 212,
-              "title": "宗教意识",
+              "title": "tôn giáo ý thức",
               "count": 23
             },
             {
               "tag_id": 213,
-              "title": "冥世",
+              "title": "biến thể cũ của họ",
               "count": 25
             },
             {
               "tag_id": 214,
-              "title": "圣书",
+              "title": "đào viết tắt của",
               "count": 7
             },
             {
               "tag_id": 215,
-              "title": "神职人员",
+              "title": "giáo sĩ",
               "count": 29
             },
             {
               "tag_id": 216,
-              "title": "宗教场所",
+              "title": "tôn giáo địa điểm",
               "count": 35
             },
             {
               "tag_id": 217,
-              "title": "圣事",
+              "title": "Bí tích thánh lễ",
               "count": 8
             },
             {
               "tag_id": 218,
-              "title": "祈祷",
+              "title": "cầu nguyện",
               "count": 13
             },
             {
               "tag_id": 359,
-              "title": "颜色",
+              "title": "màu sắc",
               "count": 133
             }
           ]
         },
         {
           "id": "sports",
-          "label": "体育",
+          "label": "Thể thao",
           "count": 533,
           "file": "arts__sports.json",
           "tags": [
             {
               "tag_id": 146,
-              "title": "帆具",
+              "title": "biến thể của công cụ",
               "count": 31
             },
             {
               "tag_id": 171,
-              "title": "运动",
+              "title": "di chuyển",
               "count": 34
             },
             {
               "tag_id": 172,
-              "title": "体育竞技",
+              "title": "Thể thao thi đấu kỹ năng ví dụ: thể thao",
               "count": 23
             },
             {
               "tag_id": 173,
-              "title": "体育项目",
+              "title": "sự kiện thể thao",
               "count": 29
             },
             {
               "tag_id": 174,
-              "title": "球类运动",
+              "title": "môn thể thao bóng di chuyển",
               "count": 22
             },
             {
               "tag_id": 175,
-              "title": "水上运动",
+              "title": "các môn thể thao dưới nước",
               "count": 18
             },
             {
               "tag_id": 176,
-              "title": "车类运动",
+              "title": "họ loạidi chuyển",
               "count": 10
             },
             {
               "tag_id": 177,
-              "title": "赛马",
+              "title": "đua ngựa",
               "count": 10
             },
             {
               "tag_id": 178,
-              "title": "棒球",
+              "title": "bóng chày",
               "count": 144
             },
             {
               "tag_id": 179,
-              "title": "足球",
+              "title": "quả bóng đá",
               "count": 105
             },
             {
               "tag_id": 180,
-              "title": "游泳",
+              "title": "bơi lội",
               "count": 40
             },
             {
               "tag_id": 181,
-              "title": "网球",
+              "title": "quần vợt",
               "count": 52
             },
             {
               "tag_id": 182,
-              "title": "摔跤",
+              "title": "vấp ngã",
               "count": 8
             },
             {
               "tag_id": 183,
-              "title": "柔道",
+              "title": "mềm đường",
               "count": 4
             },
             {
               "tag_id": 184,
-              "title": "跆拳道",
+              "title": "taekwondo võ thuật Hàn Quốc",
               "count": 20
             }
           ]
         },
         {
           "id": "games",
-          "label": "游戏娱乐",
+          "label": "trò chơi giải trí",
           "count": 925,
           "file": "arts__games.json",
           "tags": [
             {
               "tag_id": 150,
-              "title": "休闲娱乐",
+              "title": "giải trí giải trí",
               "count": 61
             },
             {
               "tag_id": 263,
-              "title": "室内游戏",
+              "title": "trong nhà trò chơi",
               "count": 17
             },
             {
               "tag_id": 264,
-              "title": "棋类游戏",
+              "title": "biến thể của loạitrò chơi",
               "count": 32
             },
             {
               "tag_id": 265,
-              "title": "牌类游戏",
+              "title": "quân mạt chược loạitrò chơi",
               "count": 61
             },
             {
               "tag_id": 266,
-              "title": "儿童游戏",
+              "title": "trẻ em trò chơi",
               "count": 34
             },
             {
               "tag_id": 267,
-              "title": "其他游戏",
+              "title": "Khác trò chơi",
               "count": 16
             },
             {
               "tag_id": 506,
-              "title": "热门游戏词汇",
+              "title": "phổ biến trò chơi Từ vựng",
               "count": 631
             },
             {
               "tag_id": 507,
-              "title": "各类游戏集锦",
+              "title": "tất cả các loại trò chơi bộ sưu tập các mục chọn lọc thơ",
               "count": 30
             },
             {
               "tag_id": 508,
-              "title": "英雄联盟常用",
+              "title": "Liên Minh Huyền Thoại trò chơi điện tử được sử dụng phổ biến",
               "count": 100
             }
           ]
@@ -1844,100 +1844,100 @@
     },
     {
       "id": "media",
-      "label": "影音视听",
+      "label": "phương tiện ghi hình và âm thanh CD và DVD biến thể của cười cổ đại",
       "subs": [
         {
           "id": "film",
-          "label": "影视剧",
+          "label": "phim và truyền hình tác phẩm sân khấu kịch",
           "count": 525,
           "file": "media__film.json",
           "tags": [
             {
               "tag_id": 289,
-              "title": "电影",
+              "title": "sét hình ảnh",
               "count": 59
             },
             {
               "tag_id": 292,
-              "title": "电影演员",
+              "title": "diễn viên phim",
               "count": 16
             },
             {
               "tag_id": 293,
-              "title": "电影工作人员",
+              "title": "sét hình ảnhnhân viên",
               "count": 22
             },
             {
               "tag_id": 307,
-              "title": "电视",
+              "title": "truyền hình",
               "count": 38
             },
             {
               "tag_id": 319,
-              "title": "剧场",
+              "title": "rạp hát",
               "count": 40
             },
             {
               "tag_id": 352,
-              "title": "看美剧攻略",
+              "title": "chăm sócphim truyền hình Mỹ văn học tấn công và chiếm được",
               "count": 361
             }
           ]
         },
         {
           "id": "music",
-          "label": "音乐广播",
+          "label": "âm nhạc phát sóng",
           "count": 263,
           "file": "media__music.json",
           "tags": [
             {
               "tag_id": 295,
-              "title": "音乐",
+              "title": "âm nhạc",
               "count": 73
             },
             {
               "tag_id": 296,
-              "title": "音乐形式",
+              "title": "âm nhạc bề ngoài",
               "count": 29
             },
             {
               "tag_id": 297,
-              "title": "击键乐器",
+              "title": "đánh phím trên đàn piano hoặc bàn phím máy tínhnhạc cụ",
               "count": 13
             },
             {
               "tag_id": 298,
-              "title": "弦乐器",
+              "title": "nhạc cụ dây",
               "count": 27
             },
             {
               "tag_id": 299,
-              "title": "管乐器",
+              "title": "nhạc cụ hơi",
               "count": 26
             },
             {
               "tag_id": 300,
-              "title": "打击乐器",
+              "title": "nhạc cụ gõ",
               "count": 10
             },
             {
               "tag_id": 306,
-              "title": "广播",
+              "title": "phát sóng",
               "count": 16
             },
             {
               "tag_id": 316,
-              "title": "剧目",
+              "title": "tác phẩm sân khấu kịch hoặc opera",
               "count": 10
             },
             {
               "tag_id": 317,
-              "title": "戏剧排演",
+              "title": "một vở kịch tập dượt một buổi biểu diễn",
               "count": 23
             },
             {
               "tag_id": 318,
-              "title": "戏剧演出",
+              "title": "một vở kịch diễn trong một vở kịch",
               "count": 48
             }
           ]

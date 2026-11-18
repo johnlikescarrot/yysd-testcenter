@@ -8,7 +8,7 @@
     return;
   }
 
-  // ponytail: block student practice UI before paint unless they clicked 网站功能区
+  // ponytail: block student practice UI before paint unless they clicked trang webchức nănghọ
   try {
     var teacherTok = localStorage.getItem("yysd:teacher:token");
     var mode = localStorage.getItem("yysd:teacher:mode") || "";
@@ -97,7 +97,7 @@
     if (org && org.slug === slug && org.name && document.title) {
       if (document.title.indexOf("·") >= 0) {
         document.title = document.title.replace(/^[^·]+·/, org.name + " ·");
-      } else if (document.title.indexOf("优益思达") >= 0 || document.title.indexOf("YYSD") >= 0) {
+      } else if (document.title.indexOf("YYSD") >= 0 || document.title.indexOf("YYSD") >= 0) {
         document.title = org.name;
       }
     }

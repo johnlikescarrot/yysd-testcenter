@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="exam:title" content="四级词汇 单元 8">
+<meta name="exam:title" content="cấp 4 Từ vựng Bài 8">
 <meta name="exam:duration" content="0">
-<meta name="exam:description" content="频段 high · 80 词 · 边学边测">
+<meta name="exam:description" content="vô tuyến băng tần high · 80 biến thể cũ của · bên học bên khảo sát">
 <meta name="exam:band" content="high">
-<title>四级词汇 单元 8 · 语速0.8 · 宽松评判</title>
+<title>cấp 4 Từ vựng Bài 8 · phương ngữ0.8 · rộng rãi đánh giá một cuộc thi</title>
 <style>
 :root {
   --bg:#f5f3f0; --card:#fff; --primary:#2c3e6b; --primary-light:#3d5a99;
@@ -61,44 +61,45 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
 .btn-clear-history { margin-left:8px; border:0; background:#eee; padding:4px 8px; border-radius:6px; cursor:pointer }
 </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header"><div class="header-inner">
-  <div class="logo"><span>📖</span><span>四级词汇 单元 8</span></div>
+  <div class="logo"><span>📖</span><span>cấp 4 Từ vựng Bài 8</span></div>
   <nav class="nav-tabs" id="navTabs">
-    <button class="nav-tab active" data-mode="learn">词汇总览</button>
-    <button class="nav-tab" data-mode="test">单词检测</button>
+    <button class="nav-tab active" data-mode="learn">Từ vựng cái nhìn tổng quan</button>
+    <button class="nav-tab" data-mode="test">Từ vựng phát hiện</button>
   </nav>
-  <span class="badge">共 80 词</span>
+  <span class="badge">80 biến thể cũ của</span>
 </div></header>
 <div class="main">
   <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
   <section class="test-section" id="testSection">
     <div class="test-setup" id="testSetup">
-      <h3>四级词汇 单元 8 · 单词检测</h3>
-      <p>听读音后填写拼写与中文含义（宽松评判）。</p>
-      <button class="btn-start-test" id="btnStartTest">开始检测（80 题）</button>
-      <div class="history-title">历史记录 <button class="btn-clear-history" id="btnClearHistory">清除</button></div>
+      <h3>cấp 4 Từ vựng Bài 8 · Từ vựng phát hiện</h3>
+      <p>cười cổ đạicách phát âm họđiền vào biểu mẫu đánh vần Tiếng Trung ý nghĩa hàm chứa trong một cụm từ (rộng rãi đánh giá một cuộc thi).</p>
+      <button class="btn-start-test" id="btnStartTest">Bắt đầu phát hiện (80 câu)</button>
+      <div class="history-title">Lịch sử ghi chép<button class="btn-clear-history" id="btnClearHistory">dọn dẹp</button></div>
       <div id="historyContent"></div>
     </div>
     <div class="test-active-area" id="testActiveArea">
-      <div class="test-progress"><span id="testProgressLabel">第 1 / 80 题</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel">得分: 0</span></div>
+      <div class="test-progress"><span id="testProgressLabel">1 / 80 câu</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel">Điểm số: 0</span></div>
       <button class="btn-play" id="btnPlayTest" style="width:64px;height:64px;font-size:1.4rem">▶</button>
       <div class="test-inputs">
-        <div class="test-input-group"><label>英文拼写</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-        <div class="test-input-group"><label>中文含义</label><input id="inputMeaning" autocomplete="off"></div>
+        <div class="test-input-group"><label>Tiếng Anh đánh vần</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div class="test-input-group"><label>Tiếng Trung ý nghĩa hàm chứa trong một cụm từ</label><input id="inputMeaning" autocomplete="off"></div>
       </div>
-      <button class="btn-submit" id="btnSubmit">提交答案</button>
+      <button class="btn-submit" id="btnSubmit">Nộp bài Đáp án</button>
       <div class="test-feedback" id="testFeedback"></div>
-      <button class="btn-next" id="btnNext">下一题</button>
+      <button class="btn-next" id="btnNext">Câu sau</button>
     </div>
     <div class="test-results" id="testResults">
-      <h3>检测完成</h3>
+      <h3>phát hiện Hoàn thành</h3>
       <div id="resultsScore" style="font-size:2rem;font-weight:700;color:var(--primary)"></div>
       <div id="resultsDetail"></div>
-      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>单词</th><th>拼写</th><th>含义</th><th>结果</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
-      <button class="btn-retry" id="btnRetry">重新检测</button>
-      <button class="btn-retry" id="btnBackToSetup" style="background:#666">返回</button>
+      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>Từ vựng</th><th>đánh vần</th><th>ý nghĩa hàm chứa trong một cụm từ</th><th>Kết quả</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
+      <button class="btn-retry" id="btnRetry">lại phát hiện</button>
+      <button class="btn-retry" id="btnBackToSetup" style="background:#666">Quay lại</button>
     </div>
   </section>
 </div>
@@ -110,1760 +111,1760 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   word: "bias",
   ipa: "/ˈbaɪ.əs/",
   pos: "n. / v.",
-  meaning: "n. / v. 偏见；偏心；使有偏见。常用 racial bias（种族偏见）, be biased against（对…有偏见）, without bias（无偏见）。",
+  meaning: "n. / v. thành kiến; thiên vị; khiến có thành kiến. được sử dụng phổ biến racial bias(chủng tộc thành kiến), be biased against(đúng…có thành kiến), without bias(không có thành kiến).",
   mnemonic: "",
   root: "",
-  collocations: "racial bias（种族偏见）, be biased against（对…有偏见）, without bias（无偏见）",
-  phrases: "racial bias（种族偏见）, be biased against（对…有偏见）, without bias（无偏见）",
-  example: "The judge was accused of bias in the case.（法官被指控在此案中存有偏见。）",
+  collocations: "racial bias(chủng tộc thành kiến), be biased against(đúng…có thành kiến), without bias(không có thành kiến)",
+  phrases: "racial bias(chủng tộc thành kiến), be biased against(đúng…có thành kiến), without bias(không có thành kiến)",
+  example: "The judge was accused of bias in the case.(thẩm phán trong tòa án bị buộc tội kiểm soát tại đây pháp lý vụ việc hình thức kết hợp Trung Quốc lưu trữ thành kiến.)",
   exampleEN: "The judge was accused of bias in the case.",
-  exampleCN: "法官被指控在此案中存有偏见。",
+  exampleCN: "thẩm phán trong tòa án bị buộc tội kiểm soát tại đây pháp lý vụ việc hình thức kết hợp Trung Quốc lưu trữ thành kiến.",
   exampleEn: "The judge was accused of bias in the case.",
-  exampleZh: "法官被指控在此案中存有偏见。",
+  exampleZh: "thẩm phán trong tòa án bị buộc tội kiểm soát tại đây pháp lý vụ việc hình thức kết hợp Trung Quốc lưu trữ thành kiến.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "偏见", "topic": "通用"},
-  acceptCN: ["偏见", "偏心", "倾向"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "thành kiến", "topic": "Dùng chung"},
+  acceptCN: ["thành kiến", "thiên vị", "xu hướng"]
 },
 {
   id: 2,
   word: "discourage",
   ipa: "/dɪsˈkʌrɪdʒ/",
   pos: "vt.",
-  meaning: "vt. 使气馁；使沮丧；阻碍；劝阻。常用 discourage skills（使气馁相关能力）, use discourage（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「使气馁」",
-  root: "联想：结合词形与释义记住「使气馁」",
-  collocations: "discourage skills（使气馁相关能力）, use discourage（使用/运用该词）",
-  phrases: "discourage skills（使气馁相关能力）, use discourage（使用/运用该词）",
-  example: "It is useful to understand the meaning of discourage in this sentence.（理解这句话中 discourage 的含义很有帮助。）",
+  meaning: "vt. khiến mất tinh thần; khiến chán nản; cản trở; khuyên ngăn. được sử dụng phổ biến discourage skills(khiến mất tinh thần liên quan Năng lực), use discourage(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «khiến mất tinh thần »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «khiến mất tinh thần »",
+  collocations: "discourage skills(khiến mất tinh thần liên quan Năng lực), use discourage(dùng / vận dụng từ này)",
+  phrases: "discourage skills(khiến mất tinh thần liên quan Năng lực), use discourage(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of discourage in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc discourage của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of discourage in this sentence.",
-  exampleCN: "理解这句话中 discourage 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc discourage của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of discourage in this sentence.",
-  exampleZh: "理解这句话中 discourage 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc discourage của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "使气馁", "topic": "通用"},
-  acceptCN: ["使气馁", "使沮丧", "阻碍", "劝阻"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "khiến mất tinh thần", "topic": "Dùng chung"},
+  acceptCN: ["khiến mất tinh thần", "khiến chán nản", "cản trở", "khuyên ngăn"]
 },
 {
   id: 3,
   word: "intake",
   ipa: "/ˈɪnteɪk/",
   pos: "n.",
-  meaning: "n. 摄入；吸入；招收人数。常用 food intake（食物摄入量）, water intake（饮水量）, student intake（招收学生数）。",
+  meaning: "n. hấp thụ; hít vào; thuê số lượng người. được sử dụng phổ biến food intake(thực phẩm lượng nạp số lượng), water intake(nước uống đo lường), student intake(thuê Học viên đếm).",
   mnemonic: "",
   root: "",
-  collocations: "food intake（食物摄入量）, water intake（饮水量）, student intake（招收学生数）",
-  phrases: "food intake（食物摄入量）, water intake（饮水量）, student intake（招收学生数）",
-  example: "You should reduce your daily sugar intake.（你应该减少每天的糖摄入量。）",
+  collocations: "food intake(thực phẩm lượng nạp số lượng), water intake(nước uống đo lường), student intake(thuê Học viên đếm)",
+  phrases: "food intake(thực phẩm lượng nạp số lượng), water intake(nước uống đo lường), student intake(thuê Học viên đếm)",
+  example: "You should reduce your daily sugar intake.(bạn nên giảm mỗi ngày của đường lượng nạp số lượng.)",
   exampleEN: "You should reduce your daily sugar intake.",
-  exampleCN: "你应该减少每天的糖摄入量。",
+  exampleCN: "bạn nên giảm mỗi ngày của đường lượng nạp số lượng.",
   exampleEn: "You should reduce your daily sugar intake.",
-  exampleZh: "你应该减少每天的糖摄入量。",
+  exampleZh: "bạn nên giảm mỗi ngày của đường lượng nạp số lượng.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "摄入", "topic": "通用"},
-  acceptCN: ["摄入", "吸入", "招收"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "hấp thụ", "topic": "Dùng chung"},
+  acceptCN: ["hấp thụ", "hít vào", "thuê"]
 },
 {
   id: 4,
   word: "chore",
   ipa: "/tʃɔːr/",
   pos: "n.",
-  meaning: "n. 家务杂事；例行工作；乏味的任务。常用 household chores（家务活）, do the chores（做家务）, daily chore（日常琐事）。",
+  meaning: "n. công việc nhà nhiệm vụ linh tinh; công việc thường lệ nhiệm vụ làm việc; nhàm chán của Nhiệm vụ. được sử dụng phổ biến household chores(việc nhà), do the chores(làm công việc nhà), daily chore(Hàng ngày chuyện vặt).",
   mnemonic: "",
   root: "",
-  collocations: "household chores（家务活）, do the chores（做家务）, daily chore（日常琐事）",
-  phrases: "household chores（家务活）, do the chores（做家务）, daily chore（日常琐事）",
-  example: "She spends the morning doing household chores.（她上午做家务活。）",
+  collocations: "household chores(việc nhà), do the chores(làm công việc nhà), daily chore(Hàng ngày chuyện vặt)",
+  phrases: "household chores(việc nhà), do the chores(làm công việc nhà), daily chore(Hàng ngày chuyện vặt)",
+  example: "She spends the morning doing household chores.(cô ấy buổi sáng làm việc nhà.)",
   exampleEN: "She spends the morning doing household chores.",
-  exampleCN: "她上午做家务活。",
+  exampleCN: "cô ấy buổi sáng làm việc nhà.",
   exampleEn: "She spends the morning doing household chores.",
-  exampleZh: "她上午做家务活。",
+  exampleZh: "cô ấy buổi sáng làm việc nhà.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "家务", "topic": "通用"},
-  acceptCN: ["家务", "杂务", "琐事"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "công việc nhà", "topic": "Dùng chung"},
+  acceptCN: ["công việc nhà", "công việc lặt vặt", "chuyện vặt"]
 },
 {
   id: 5,
   word: "battery",
   ipa: "/ˈbætri/",
   pos: "n.",
-  meaning: "n. [电]电池，蓄电池；[军]炮台，炮位；一组；[法]殴打。常用 battery skills（[电]电池相关能力）, use battery（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「[电]电池」",
-  root: "联想：结合词形与释义记住「[电]电池」",
-  collocations: "battery skills（[电]电池相关能力）, use battery（使用/运用该词）",
-  phrases: "battery skills（[电]电池相关能力）, use battery（使用/运用该词）",
-  example: "It is useful to understand the meaning of battery in this sentence.（理解这句话中 battery 的含义很有帮助。）",
+  meaning: "n. [sét]sét họ, ắc quy; [hình thức kết hợp quân đội] pháo đài, xào vị trí; một họ; [biến thể của] đánh đập. được sử dụng phổ biến battery skills([sét]sét họ liên quan Năng lực), use battery(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «[sét]sét họ»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «[sét]sét họ»",
+  collocations: "battery skills([sét]sét họ liên quan Năng lực), use battery(dùng / vận dụng từ này)",
+  phrases: "battery skills([sét]sét họ liên quan Năng lực), use battery(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of battery in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc battery của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of battery in this sentence.",
-  exampleCN: "理解这句话中 battery 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc battery của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of battery in this sentence.",
-  exampleZh: "理解这句话中 battery 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc battery của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "[电]电池", "topic": "通用"},
-  acceptCN: ["[电]电池", "蓄电池", "[军]炮台", "炮位", "一组", "[法]殴打"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "[sét]sét họ", "topic": "Dùng chung"},
+  acceptCN: ["[sét]sét họ", "ắc quy", "[hình thức kết hợp quân đội] pháo đài", "xào vị trí", "một họ", "[biến thể của] đánh đập"]
 },
 {
   id: 6,
   word: "coach",
   ipa: "/kəʊtʃ/",
   pos: "n.",
-  meaning: "n. 教练；（铁路）旅客车厢；长途客运汽车；四轮大马车。常用 coach skills（教练相关能力）, use coach（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「教练」",
-  root: "联想：结合词形与释义记住「教练」",
-  collocations: "coach skills（教练相关能力）, use coach（使用/运用该词）",
-  phrases: "coach skills（教练相关能力）, use coach（使用/运用该词）",
-  example: "It is useful to understand the meaning of coach in this sentence.（理解这句话中 coach 的含义很有帮助。）",
+  meaning: "n. người hướng dẫn; (đường sắt) du khách toa hành khách; đường dài vận chuyển hành khách xe hơi; bốn bánh xe xe ngựa kéo. được sử dụng phổ biến coach skills(người hướng dẫn liên quan Năng lực), use coach(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « người hướng dẫn »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « người hướng dẫn »",
+  collocations: "coach skills(người hướng dẫn liên quan Năng lực), use coach(dùng / vận dụng từ này)",
+  phrases: "coach skills(người hướng dẫn liên quan Năng lực), use coach(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of coach in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc coach của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of coach in this sentence.",
-  exampleCN: "理解这句话中 coach 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc coach của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of coach in this sentence.",
-  exampleZh: "理解这句话中 coach 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc coach của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "教练", "topic": "通用"},
-  acceptCN: ["教练", "旅客车厢", "长途客运汽车", "四轮大马车"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "người hướng dẫn", "topic": "Dùng chung"},
+  acceptCN: ["người hướng dẫn", "du khách toa hành khách", "đường dài vận chuyển hành khách xe hơi", "bốn bánh xe xe ngựa kéo"]
 },
 {
   id: 7,
   word: "permanent",
   ipa: "/ˈpɜːrmənənt/",
   pos: "adj.",
-  meaning: "adj. 永久的；固定的；长期的。常用 permanent job（长期工作）, permanent address（固定地址）, permanent damage（永久性损伤）。",
+  meaning: "adj. vĩnh cửu của; cố định của; dài hạn của. được sử dụng phổ biến permanent job(dài hạn làm việc), permanent address(cố định địa chỉ), permanent damage(vĩnh viễn làm hại).",
   mnemonic: "",
   root: "",
-  collocations: "permanent job（长期工作）, permanent address（固定地址）, permanent damage（永久性损伤）",
-  phrases: "permanent job（长期工作）, permanent address（固定地址）, permanent damage（永久性损伤）",
-  example: "This is a permanent position, not temporary.（这是一个长期职位，不是临时的。）",
+  collocations: "permanent job(dài hạn làm việc), permanent address(cố định địa chỉ), permanent damage(vĩnh viễn làm hại)",
+  phrases: "permanent job(dài hạn làm việc), permanent address(cố định địa chỉ), permanent damage(vĩnh viễn làm hại)",
+  example: "This is a permanent position, not temporary.(đại từ này là chỉ theo sau bởi danh từ một dùng trong dài hạn vị trí, không phải khi thời gian đến gần của.)",
   exampleEN: "This is a permanent position, not temporary.",
-  exampleCN: "这是一个长期职位，不是临时的。",
+  exampleCN: "đại từ này là chỉ theo sau bởi danh từ một dùng trong dài hạn vị trí, không phải khi thời gian đến gần của.",
   exampleEn: "This is a permanent position, not temporary.",
-  exampleZh: "这是一个长期职位，不是临时的。",
+  exampleZh: "đại từ này là chỉ theo sau bởi danh từ một dùng trong dài hạn vị trí, không phải khi thời gian đến gần của.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "永久", "topic": "通用"},
-  acceptCN: ["永久", "固定", "长期"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "vĩnh cửu", "topic": "Dùng chung"},
+  acceptCN: ["vĩnh cửu", "cố định", "dài hạn"]
 },
 {
   id: 8,
   word: "vast",
   ipa: "/vɑ:st/",
   pos: "adj.",
-  meaning: "adj. 广阔的；巨大的；大量的；巨额的。常用 vast skills（广阔的相关能力）, use vast（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「广阔的」",
-  root: "联想：结合词形与释义记住「广阔的」",
-  collocations: "vast skills（广阔的相关能力）, use vast（使用/运用该词）",
-  phrases: "vast skills（广阔的相关能力）, use vast（使用/运用该词）",
-  example: "It is useful to understand the meaning of vast in this sentence.（理解这句话中 vast 的含义很有帮助。）",
+  meaning: "adj. rộng của; to lớn của; lượng lớn của; số tiền lớn của. được sử dụng phổ biến vast skills(rộng của liên quan Năng lực), use vast(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « rộng của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « rộng của»",
+  collocations: "vast skills(rộng của liên quan Năng lực), use vast(dùng / vận dụng từ này)",
+  phrases: "vast skills(rộng của liên quan Năng lực), use vast(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of vast in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vast của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of vast in this sentence.",
-  exampleCN: "理解这句话中 vast 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vast của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of vast in this sentence.",
-  exampleZh: "理解这句话中 vast 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vast của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "广阔的", "topic": "通用"},
-  acceptCN: ["广阔的", "巨大的", "大量的", "巨额的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "rộng của", "topic": "Dùng chung"},
+  acceptCN: ["rộng của", "to lớn của", "lượng lớn của", "số tiền lớn của"]
 },
 {
   id: 9,
   word: "circumstance",
   ipa: "/ˈsɜ:kəmstəns/",
   pos: "n.",
-  meaning: "n. 环境，境遇；事实，细节；典礼，仪式。常用 circumstance skills（环境相关能力）, use circumstance（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「环境」",
-  root: "联想：结合词形与释义记住「环境」",
-  collocations: "circumstance skills（环境相关能力）, use circumstance（使用/运用该词）",
-  phrases: "circumstance skills（环境相关能力）, use circumstance（使用/运用该词）",
-  example: "It is useful to understand the meaning of circumstance in this sentence.（理解这句话中 circumstance 的含义很有帮助。）",
+  meaning: "n. Môi trường, hoàn cảnh; sự thật, Chi tiết; lễ, nghi thức. được sử dụng phổ biến circumstance skills(Môi trường liên quan Năng lực), use circumstance(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Môi trường »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Môi trường »",
+  collocations: "circumstance skills(Môi trường liên quan Năng lực), use circumstance(dùng / vận dụng từ này)",
+  phrases: "circumstance skills(Môi trường liên quan Năng lực), use circumstance(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of circumstance in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc circumstance của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of circumstance in this sentence.",
-  exampleCN: "理解这句话中 circumstance 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc circumstance của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of circumstance in this sentence.",
-  exampleZh: "理解这句话中 circumstance 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc circumstance của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "环境", "topic": "通用"},
-  acceptCN: ["环境", "境遇", "事实", "细节", "典礼", "仪式"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Môi trường", "topic": "Dùng chung"},
+  acceptCN: ["Môi trường", "hoàn cảnh", "sự thật", "Chi tiết", "lễ", "nghi thức"]
 },
 {
   id: 10,
   word: "vulnerable",
   ipa: "/ˈvʌlnərəbəl/",
   pos: "adj.",
-  meaning: "adj. 脆弱的；易受伤的；易受攻击的。常用 vulnerable to（易受…的伤害）, vulnerable group（弱势群体）, vulnerable situation（脆弱的状态）。",
+  meaning: "adj. yếu đuối của; họ bị thương của; dễ bị tấn công của. được sử dụng phổ biến vulnerable to(họ nhận…của làm bị thương), vulnerable group(nhóm xã hội thua thiệt ví dụ: người khuyết tật), vulnerable situation(yếu đuối của tình trạng).",
   mnemonic: "",
   root: "",
-  collocations: "vulnerable to（易受…的伤害）, vulnerable group（弱势群体）, vulnerable situation（脆弱的状态）",
-  phrases: "vulnerable to（易受…的伤害）, vulnerable group（弱势群体）, vulnerable situation（脆弱的状态）",
-  example: "The injured animal was vulnerable to attack.（受伤的动物很容易受到攻击。）",
+  collocations: "vulnerable to(họ nhận…của làm bị thương), vulnerable group(nhóm xã hội thua thiệt ví dụ: người khuyết tật), vulnerable situation(yếu đuối của tình trạng)",
+  phrases: "vulnerable to(họ nhận…của làm bị thương), vulnerable group(nhóm xã hội thua thiệt ví dụ: người khuyết tật), vulnerable situation(yếu đuối của tình trạng)",
+  example: "The injured animal was vulnerable to attack.(bị thương của động vật phó từ mức độ dễ dàng nhận được lời khen ngợi tấn công.)",
   exampleEN: "The injured animal was vulnerable to attack.",
-  exampleCN: "受伤的动物很容易受到攻击。",
+  exampleCN: "bị thương của động vật phó từ mức độ dễ dàng nhận được lời khen ngợi tấn công.",
   exampleEn: "The injured animal was vulnerable to attack.",
-  exampleZh: "受伤的动物很容易受到攻击。",
+  exampleZh: "bị thương của động vật phó từ mức độ dễ dàng nhận được lời khen ngợi tấn công.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "脆弱", "topic": "通用"},
-  acceptCN: ["脆弱", "易受伤", "易受攻击"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "yếu đuối", "topic": "Dùng chung"},
+  acceptCN: ["yếu đuối", "họ bị thương", "dễ bị tấn công"]
 },
 {
   id: 11,
   word: "counterpart",
   ipa: "/ˈkaʊn.tə.pɑːt/",
   pos: "n.",
-  meaning: "n. 对应的人或物；职位相当的人。常用 foreign counterpart（国外同行）, female counterpart（对应的女性角色）, modern counterpart（现代的对应物）。",
+  meaning: "n. tương ứng với của người có thể hình thức kết hợp vật; vị trí tương đương của người. được sử dụng phổ biến foreign counterpart(ở nước ngoài người cùng nghề), female counterpart(tương ứng với của phụ nữ vai trò), modern counterpart(thời hiện đại của tương ứng với hình thức kết hợp vật).",
   mnemonic: "",
   root: "",
-  collocations: "foreign counterpart（国外同行）, female counterpart（对应的女性角色）, modern counterpart（现代的对应物）",
-  phrases: "foreign counterpart（国外同行）, female counterpart（对应的女性角色）, modern counterpart（现代的对应物）",
-  example: "The US president met with his Chinese counterpart.（美国总统会见了中国国家主席。）",
+  collocations: "foreign counterpart(ở nước ngoài người cùng nghề), female counterpart(tương ứng với của phụ nữ vai trò), modern counterpart(thời hiện đại của tương ứng với hình thức kết hợp vật)",
+  phrases: "foreign counterpart(ở nước ngoài người cùng nghề), female counterpart(tương ứng với của phụ nữ vai trò), modern counterpart(thời hiện đại của tương ứng với hình thức kết hợp vật)",
+  example: "The US president met with his Chinese counterpart.(Hoa Kỳ tổng thống của một quốc gia gặp gỡ ai đó đang viếng thăm trợ từ chỉ hành động đã hoàn thành Trung Quốc quốc gia chủ tịch.)",
   exampleEN: "The US president met with his Chinese counterpart.",
-  exampleCN: "美国总统会见了中国国家主席。",
+  exampleCN: "Hoa Kỳ tổng thống của một quốc gia gặp gỡ ai đó đang viếng thăm trợ từ chỉ hành động đã hoàn thành Trung Quốc quốc gia chủ tịch.",
   exampleEn: "The US president met with his Chinese counterpart.",
-  exampleZh: "美国总统会见了中国国家主席。",
+  exampleZh: "Hoa Kỳ tổng thống của một quốc gia gặp gỡ ai đó đang viếng thăm trợ từ chỉ hành động đã hoàn thành Trung Quốc quốc gia chủ tịch.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "对应者", "topic": "通用"},
-  acceptCN: ["对应者", "同行", "对应物"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "tương ứng với sau động từ hoặc tính từ người mà", "topic": "Dùng chung"},
+  acceptCN: ["tương ứng với sau động từ hoặc tính từ người mà", "người cùng nghề", "tương ứng với hình thức kết hợp vật"]
 },
 {
   id: 12,
   word: "burden",
   ipa: "/ˈbɜ:dn/",
   pos: "n.",
-  meaning: "n. 负担，包袱；责任，义务；载货量；（诗歌，发言等的）重点。常用 burden skills（负担相关能力）, use burden（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「负担」",
-  root: "联想：结合词形与释义记住「负担」",
-  collocations: "burden skills（负担相关能力）, use burden（使用/运用该词）",
-  phrases: "burden skills（负担相关能力）, use burden（使用/运用该词）",
-  example: "It is useful to understand the meaning of burden in this sentence.（理解这句话中 burden 的含义很有帮助。）",
+  meaning: "n. gánh chịu chi phí, vải gói; trách nhiệm, nhiệm vụ; hàng hóa đo lường; (bài thơ, phát biểu đợi của) Trọng điểm. được sử dụng phổ biến burden skills(gánh chịu chi phí liên quan Năng lực), use burden(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « gánh chịu chi phí »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « gánh chịu chi phí »",
+  collocations: "burden skills(gánh chịu chi phí liên quan Năng lực), use burden(dùng / vận dụng từ này)",
+  phrases: "burden skills(gánh chịu chi phí liên quan Năng lực), use burden(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of burden in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc burden của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of burden in this sentence.",
-  exampleCN: "理解这句话中 burden 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc burden của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of burden in this sentence.",
-  exampleZh: "理解这句话中 burden 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc burden của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "负担", "topic": "通用"},
-  acceptCN: ["负担", "包袱", "责任", "义务", "载货量", "（诗歌"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "gánh chịu chi phí", "topic": "Dùng chung"},
+  acceptCN: ["gánh chịu chi phí", "vải gói", "trách nhiệm", "nhiệm vụ", "hàng hóa đo lường", "(bài thơ"]
 },
 {
   id: 13,
   word: "cheat",
   ipa: "/tʃi:t/",
   pos: "vt.",
-  meaning: "vt. 欺骗，诈骗；误导，愚弄；躲避，逃脱。常用 cheat skills（欺骗相关能力）, use cheat（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「欺骗」",
-  root: "联想：结合词形与释义记住「欺骗」",
-  collocations: "cheat skills（欺骗相关能力）, use cheat（使用/运用该词）",
-  phrases: "cheat skills（欺骗相关能力）, use cheat（使用/运用该词）",
-  example: "It is useful to understand the meaning of cheat in this sentence.（理解这句话中 cheat 的含义很有帮助。）",
+  meaning: "vt. lừa dối, lừa đảo; làm cho hiểu lầm, biến thành kẻ ngốc; trốn, chạy trốn. được sử dụng phổ biến cheat skills(lừa dối liên quan Năng lực), use cheat(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « lừa dối »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « lừa dối »",
+  collocations: "cheat skills(lừa dối liên quan Năng lực), use cheat(dùng / vận dụng từ này)",
+  phrases: "cheat skills(lừa dối liên quan Năng lực), use cheat(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of cheat in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc cheat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of cheat in this sentence.",
-  exampleCN: "理解这句话中 cheat 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc cheat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of cheat in this sentence.",
-  exampleZh: "理解这句话中 cheat 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc cheat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "欺骗", "topic": "通用"},
-  acceptCN: ["欺骗", "诈骗", "误导", "愚弄", "躲避", "逃脱"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "lừa dối", "topic": "Dùng chung"},
+  acceptCN: ["lừa dối", "lừa đảo", "làm cho hiểu lầm", "biến thành kẻ ngốc", "trốn", "chạy trốn"]
 },
 {
   id: 14,
   word: "competitive",
   ipa: "/kəmˈpetɪtɪv/",
   pos: "adj.",
-  meaning: "adj. 竞争的；有竞争力的。常用 competitive market（竞争激烈的市场）, competitive advantage（竞争优势）, competitive price（有竞争力的价格）。",
+  meaning: "adj. cạnh tranh của; có khả năng cạnh tranh của. được sử dụng phổ biến competitive market(cạnh tranh về cạnh tranh hoặc chiến đấu mãnh liệt của khu chợ), competitive advantage(cạnh tranh sự vượt trội), competitive price(có khả năng cạnh tranh của giá).",
   mnemonic: "",
   root: "",
-  collocations: "competitive market（竞争激烈的市场）, competitive advantage（竞争优势）, competitive price（有竞争力的价格）",
-  phrases: "competitive market（竞争激烈的市场）, competitive advantage（竞争优势）, competitive price（有竞争力的价格）",
-  example: "The company is highly competitive in the industry.（该公司在业内具有很强的竞争力。）",
+  collocations: "competitive market(cạnh tranh về cạnh tranh hoặc chiến đấu mãnh liệt của khu chợ), competitive advantage(cạnh tranh sự vượt trội), competitive price(có khả năng cạnh tranh của giá)",
+  phrases: "competitive market(cạnh tranh về cạnh tranh hoặc chiến đấu mãnh liệt của khu chợ), competitive advantage(cạnh tranh sự vượt trội), competitive price(có khả năng cạnh tranh của giá)",
+  example: "The company is highly competitive in the industry.(nên công ty tồn tại trong ngành có phó từ mức độ họ của khả năng cạnh tranh.)",
   exampleEN: "The company is highly competitive in the industry.",
-  exampleCN: "该公司在业内具有很强的竞争力。",
+  exampleCN: "nên công ty tồn tại trong ngành có phó từ mức độ họ của khả năng cạnh tranh.",
   exampleEn: "The company is highly competitive in the industry.",
-  exampleZh: "该公司在业内具有很强的竞争力。",
+  exampleZh: "nên công ty tồn tại trong ngành có phó từ mức độ họ của khả năng cạnh tranh.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "竞争", "topic": "通用"},
-  acceptCN: ["竞争", "有竞争力"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "cạnh tranh", "topic": "Dùng chung"},
+  acceptCN: ["cạnh tranh", "có khả năng cạnh tranh"]
 },
 {
   id: 15,
   word: "sufficient",
   ipa: "/səˈfɪʃnt/",
   pos: "adj.",
-  meaning: "adj. 足够的；充足的；充分的。常用 sufficient skills（足够的相关能力）, use sufficient（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「足够的」",
-  root: "联想：结合词形与释义记住「足够的」",
-  collocations: "sufficient skills（足够的相关能力）, use sufficient（使用/运用该词）",
-  phrases: "sufficient skills（足够的相关能力）, use sufficient（使用/运用该词）",
-  example: "It is useful to understand the meaning of sufficient in this sentence.（理解这句话中 sufficient 的含义很有帮助。）",
+  meaning: "adj. đủ của; đầy đủ của; đầy đủ của. được sử dụng phổ biến sufficient skills(đủ của liên quan Năng lực), use sufficient(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « đủ của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « đủ của»",
+  collocations: "sufficient skills(đủ của liên quan Năng lực), use sufficient(dùng / vận dụng từ này)",
+  phrases: "sufficient skills(đủ của liên quan Năng lực), use sufficient(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of sufficient in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sufficient của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of sufficient in this sentence.",
-  exampleCN: "理解这句话中 sufficient 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sufficient của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of sufficient in this sentence.",
-  exampleZh: "理解这句话中 sufficient 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sufficient của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "足够的", "topic": "通用"},
-  acceptCN: ["足够的", "充足的", "充分的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "đủ của", "topic": "Dùng chung"},
+  acceptCN: ["đủ của", "đầy đủ của", "đầy đủ của"]
 },
 {
   id: 16,
   word: "border",
   ipa: "/ˈbɔ:də(r)/",
   pos: "n.",
-  meaning: "n. 边；镶边；包边；边界。常用 border skills（边相关能力）, use border（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「边」",
-  root: "联想：结合词形与释义记住「边」",
-  collocations: "border skills（边相关能力）, use border（使用/运用该词）",
-  phrases: "border skills（边相关能力）, use border（使用/运用该词）",
-  example: "It is useful to understand the meaning of border in this sentence.（理解这句话中 border 的含义很有帮助。）",
+  meaning: "n. bên; mép; họ bên; ranh giới. được sử dụng phổ biến border skills(bên liên quan Năng lực), use border(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «bên»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «bên»",
+  collocations: "border skills(bên liên quan Năng lực), use border(dùng / vận dụng từ này)",
+  phrases: "border skills(bên liên quan Năng lực), use border(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of border in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc border của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of border in this sentence.",
-  exampleCN: "理解这句话中 border 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc border của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of border in this sentence.",
-  exampleZh: "理解这句话中 border 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc border của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "边", "topic": "通用"},
-  acceptCN: ["边", "镶边", "包边", "边界"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "bên", "topic": "Dùng chung"},
+  acceptCN: ["bên", "mép", "họ bên", "ranh giới"]
 },
 {
   id: 17,
   word: "employment",
   ipa: "/ɪmˈplɔɪmənt/",
   pos: "n.",
-  meaning: "n. 雇用；使用；职业；有益的活动。常用 employment skills（雇用相关能力）, use employment（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「雇用」",
-  root: "联想：结合词形与释义记住「雇用」",
-  collocations: "employment skills（雇用相关能力）, use employment（使用/运用该词）",
-  phrases: "employment skills（雇用相关能力）, use employment（使用/运用该词）",
-  example: "It is useful to understand the meaning of employment in this sentence.（理解这句话中 employment 的含义很有帮助。）",
+  meaning: "n. thuê dụng; sử dụng; Nghề nghiệp; hữu ích của tập thể dục. được sử dụng phổ biến employment skills(thuê dụng liên quan Năng lực), use employment(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thuê dụng »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thuê dụng »",
+  collocations: "employment skills(thuê dụng liên quan Năng lực), use employment(dùng / vận dụng từ này)",
+  phrases: "employment skills(thuê dụng liên quan Năng lực), use employment(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of employment in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc employment của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of employment in this sentence.",
-  exampleCN: "理解这句话中 employment 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc employment của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of employment in this sentence.",
-  exampleZh: "理解这句话中 employment 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc employment của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "雇用", "topic": "通用"},
-  acceptCN: ["雇用", "使用", "职业", "有益的活动"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "thuê dụng", "topic": "Dùng chung"},
+  acceptCN: ["thuê dụng", "sử dụng", "Nghề nghiệp", "hữu ích của tập thể dục"]
 },
 {
   id: 18,
   word: "sunlight",
   ipa: "/ˈsʌnlaɪt/",
   pos: "n.",
-  meaning: "n. 阳光。常用 sunlight skills（阳光相关能力）, use sunlight（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「阳光」",
-  root: "联想：结合词形与释义记住「阳光」",
-  collocations: "sunlight skills（阳光相关能力）, use sunlight（使用/运用该词）",
-  phrases: "sunlight skills（阳光相关能力）, use sunlight（使用/运用该词）",
-  example: "It is useful to understand the meaning of sunlight in this sentence.（理解这句话中 sunlight 的含义很有帮助。）",
+  meaning: "n. ánh nắng. được sử dụng phổ biến sunlight skills(ánh nắng liên quan Năng lực), use sunlight(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ánh nắng »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ánh nắng »",
+  collocations: "sunlight skills(ánh nắng liên quan Năng lực), use sunlight(dùng / vận dụng từ này)",
+  phrases: "sunlight skills(ánh nắng liên quan Năng lực), use sunlight(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of sunlight in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sunlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of sunlight in this sentence.",
-  exampleCN: "理解这句话中 sunlight 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sunlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of sunlight in this sentence.",
-  exampleZh: "理解这句话中 sunlight 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc sunlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "阳光", "topic": "通用"},
-  acceptCN: ["阳光"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "ánh nắng", "topic": "Dùng chung"},
+  acceptCN: ["ánh nắng"]
 },
 {
   id: 19,
   word: "crucial",
   ipa: "/ˈkruː.ʃəl/",
   pos: "adj.",
-  meaning: "adj. 关键的；至关重要的。常用 crucial role（关键作用）, be crucial to（对…至关重要）, at a crucial moment（在关键时刻）。",
+  meaning: "adj. điểm mấu chốt của; cực kỳ quan trọng của. được sử dụng phổ biến crucial role(điểm mấu chốt tác động đến), be crucial to(đúng… cực kỳ quan trọng), at a crucial moment(tồn tại điểm mấu chốt thời gian).",
   mnemonic: "",
   root: "",
-  collocations: "crucial role（关键作用）, be crucial to（对…至关重要）, at a crucial moment（在关键时刻）",
-  phrases: "crucial role（关键作用）, be crucial to（对…至关重要）, at a crucial moment（在关键时刻）",
-  example: "This decision is crucial to the future of the company.（这个决定对公司的未来至关重要。）",
+  collocations: "crucial role(điểm mấu chốt tác động đến), be crucial to(đúng… cực kỳ quan trọng), at a crucial moment(tồn tại điểm mấu chốt thời gian)",
+  phrases: "crucial role(điểm mấu chốt tác động đến), be crucial to(đúng… cực kỳ quan trọng), at a crucial moment(tồn tại điểm mấu chốt thời gian)",
+  example: "This decision is crucial to the future of the company.(đại từ này quyết định làm gì đó đúng công ty của tương lai cực kỳ quan trọng.)",
   exampleEN: "This decision is crucial to the future of the company.",
-  exampleCN: "这个决定对公司的未来至关重要。",
+  exampleCN: "đại từ này quyết định làm gì đó đúng công ty của tương lai cực kỳ quan trọng.",
   exampleEn: "This decision is crucial to the future of the company.",
-  exampleZh: "这个决定对公司的未来至关重要。",
+  exampleZh: "đại từ này quyết định làm gì đó đúng công ty của tương lai cực kỳ quan trọng.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "关键", "topic": "通用"},
-  acceptCN: ["关键", "至关重要", "决定性", "紧要"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "điểm mấu chốt", "topic": "Dùng chung"},
+  acceptCN: ["điểm mấu chốt", "cực kỳ quan trọng", "mang tính quyết định", "quan trọng"]
 },
 {
   id: 20,
   word: "elementary",
   ipa: "/ˌelɪˈmentri/",
   pos: "adj.",
-  meaning: "adj. 基本的；初级的；[化]元素的；初等。常用 elementary skills（基本的相关能力）, use elementary（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「基本的」",
-  root: "联想：结合词形与释义记住「基本的」",
-  collocations: "elementary skills（基本的相关能力）, use elementary（使用/运用该词）",
-  phrases: "elementary skills（基本的相关能力）, use elementary（使用/运用该词）",
-  example: "It is useful to understand the meaning of elementary in this sentence.（理解这句话中 elementary 的含义很有帮助。）",
+  meaning: "adj. cơ bản của; sơ cấp của; [biến thể của] thành phần cơ bản của cái gì đó của; sơ cấp tức là dễ. được sử dụng phổ biến elementary skills(cơ bản của liên quan Năng lực), use elementary(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « cơ bản của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « cơ bản của»",
+  collocations: "elementary skills(cơ bản của liên quan Năng lực), use elementary(dùng / vận dụng từ này)",
+  phrases: "elementary skills(cơ bản của liên quan Năng lực), use elementary(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of elementary in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc elementary của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of elementary in this sentence.",
-  exampleCN: "理解这句话中 elementary 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc elementary của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of elementary in this sentence.",
-  exampleZh: "理解这句话中 elementary 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc elementary của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "基本的", "topic": "通用"},
-  acceptCN: ["基本的", "初级的", "[化]元素的", "初等"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "cơ bản của", "topic": "Dùng chung"},
+  acceptCN: ["cơ bản của", "sơ cấp của", "[biến thể của] thành phần cơ bản của cái gì đó của", "sơ cấp tức là dễ"]
 },
 {
   id: 21,
   word: "myth",
   ipa: "/mɪθ/",
   pos: "n.",
-  meaning: "n. 神话；虚构的故事。常用 Greek myth（希腊神话）, urban myth（都市传说）, myth about（关于…的谬见）。",
+  meaning: "n. truyền thuyết; bịa đặt của tục lệ cũ. được sử dụng phổ biến Greek myth(Hy Lạp truyền thuyết), urban myth(thành phố truyền thuyết), myth about(liên quan đến …của quan điểm sai lầm).",
   mnemonic: "",
   root: "",
-  collocations: "Greek myth（希腊神话）, urban myth（都市传说）, myth about（关于…的谬见）",
-  phrases: "Greek myth（希腊神话）, urban myth（都市传说）, myth about（关于…的谬见）",
-  example: "The myth of the unicorn has been popular for centuries.（独角兽的神话流传了几个世纪。）",
+  collocations: "Greek myth(Hy Lạp truyền thuyết), urban myth(thành phố truyền thuyết), myth about(liên quan đến …của quan điểm sai lầm)",
+  phrases: "Greek myth(Hy Lạp truyền thuyết), urban myth(thành phố truyền thuyết), myth about(liên quan đến …của quan điểm sai lầm)",
+  example: "The myth of the unicorn has been popular for centuries.(kỳ lân của truyền thuyết lan truyền trợ từ chỉ hành động đã hoàn thành một vài thế kỷ.)",
   exampleEN: "The myth of the unicorn has been popular for centuries.",
-  exampleCN: "独角兽的神话流传了几个世纪。",
+  exampleCN: "kỳ lân của truyền thuyết lan truyền trợ từ chỉ hành động đã hoàn thành một vài thế kỷ.",
   exampleEn: "The myth of the unicorn has been popular for centuries.",
-  exampleZh: "独角兽的神话流传了几个世纪。",
+  exampleZh: "kỳ lân của truyền thuyết lan truyền trợ từ chỉ hành động đã hoàn thành một vài thế kỷ.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "神话", "topic": "通用"},
-  acceptCN: ["神话", "传说", "虚构", "谬见"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "truyền thuyết", "topic": "Dùng chung"},
+  acceptCN: ["truyền thuyết", "truyền thuyết", "bịa đặt", "quan điểm sai lầm"]
 },
 {
   id: 22,
   word: "relieve",
   ipa: "/rɪˈli:v/",
   pos: "vt.",
-  meaning: "vt. 解除；缓解；换班；（去厕所的一种委婉说法）方便。常用 relieve skills（解除相关能力）, use relieve（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「解除」",
-  root: "联想：结合词形与释义记住「解除」",
-  collocations: "relieve skills（解除相关能力）, use relieve（使用/运用该词）",
-  phrases: "relieve skills（解除相关能力）, use relieve（使用/运用该词）",
-  example: "It is useful to understand the meaning of relieve in this sentence.（理解这句话中 relieve 的含义很有帮助。）",
+  meaning: "vt. loại bỏ; mang lại sự nhẹ nhõm; đổi ca; (đi nhà vệ sinh của một loại khéo léo thuyết giảng Phật pháp) tiện lợi. được sử dụng phổ biến relieve skills(loại bỏ liên quan Năng lực), use relieve(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « loại bỏ »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « loại bỏ »",
+  collocations: "relieve skills(loại bỏ liên quan Năng lực), use relieve(dùng / vận dụng từ này)",
+  phrases: "relieve skills(loại bỏ liên quan Năng lực), use relieve(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of relieve in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc relieve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of relieve in this sentence.",
-  exampleCN: "理解这句话中 relieve 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc relieve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of relieve in this sentence.",
-  exampleZh: "理解这句话中 relieve 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc relieve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "解除", "topic": "通用"},
-  acceptCN: ["解除", "缓解", "换班", "方便"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "loại bỏ", "topic": "Dùng chung"},
+  acceptCN: ["loại bỏ", "mang lại sự nhẹ nhõm", "đổi ca", "tiện lợi"]
 },
 {
   id: 23,
   word: "hinder",
   ipa: "/ˈhɪn.dər/",
   pos: "v.",
-  meaning: "v. 阻碍；妨碍；阻止。常用 hinder progress（阻碍进展）, hinder from（妨碍…不能）, without hindrance（毫无阻碍地）。",
+  meaning: "v. cản trở; cản trở; ngăn chặn. được sử dụng phổ biến hinder progress(cản trở tiến triển), hinder from(cản trở … không thể), without hindrance(không một chút nào cản trở trợ từ kết cấu: dùng trước động từ hoặc tính từ).",
   mnemonic: "",
   root: "",
-  collocations: "hinder progress（阻碍进展）, hinder from（妨碍…不能）, without hindrance（毫无阻碍地）",
-  phrases: "hinder progress（阻碍进展）, hinder from（妨碍…不能）, without hindrance（毫无阻碍地）",
-  example: "Bad weather hindered the rescue efforts.（恶劣天气阻碍了救援工作。）",
+  collocations: "hinder progress(cản trở tiến triển), hinder from(cản trở … không thể), without hindrance(không một chút nào cản trở trợ từ kết cấu: dùng trước động từ hoặc tính từ)",
+  phrases: "hinder progress(cản trở tiến triển), hinder from(cản trở … không thể), without hindrance(không một chút nào cản trở trợ từ kết cấu: dùng trước động từ hoặc tính từ)",
+  example: "Bad weather hindered the rescue efforts.(tồi tệ thời tiết cản trở trợ từ chỉ hành động đã hoàn thành cứu hộ làm việc.)",
   exampleEN: "Bad weather hindered the rescue efforts.",
-  exampleCN: "恶劣天气阻碍了救援工作。",
+  exampleCN: "tồi tệ thời tiết cản trở trợ từ chỉ hành động đã hoàn thành cứu hộ làm việc.",
   exampleEn: "Bad weather hindered the rescue efforts.",
-  exampleZh: "恶劣天气阻碍了救援工作。",
+  exampleZh: "tồi tệ thời tiết cản trở trợ từ chỉ hành động đã hoàn thành cứu hộ làm việc.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "阻碍", "topic": "通用"},
-  acceptCN: ["阻碍", "妨碍", "阻止"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "cản trở", "topic": "Dùng chung"},
+  acceptCN: ["cản trở", "cản trở", "Ngăn cản"]
 },
 {
   id: 24,
   word: "appreciate",
   ipa: "/əˈpri:ʃieɪt/",
   pos: "vt.",
-  meaning: "vt. 感激；欣赏；领会；鉴别。常用 appreciate skills（感激相关能力）, use appreciate（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「感激」",
-  root: "联想：结合词形与释义记住「感激」",
-  collocations: "appreciate skills（感激相关能力）, use appreciate（使用/运用该词）",
-  phrases: "appreciate skills（感激相关能力）, use appreciate（使用/运用该词）",
-  example: "It is useful to understand the meaning of appreciate in this sentence.（理解这句话中 appreciate 的含义很有帮助。）",
+  meaning: "vt. biết ơn; thưởng thức; hiểu; phân biệt. được sử dụng phổ biến appreciate skills(biết ơn liên quan Năng lực), use appreciate(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « biết ơn »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « biết ơn »",
+  collocations: "appreciate skills(biết ơn liên quan Năng lực), use appreciate(dùng / vận dụng từ này)",
+  phrases: "appreciate skills(biết ơn liên quan Năng lực), use appreciate(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of appreciate in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc appreciate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of appreciate in this sentence.",
-  exampleCN: "理解这句话中 appreciate 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc appreciate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of appreciate in this sentence.",
-  exampleZh: "理解这句话中 appreciate 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc appreciate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "感激", "topic": "通用"},
-  acceptCN: ["感激", "欣赏", "领会", "鉴别"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "biết ơn", "topic": "Dùng chung"},
+  acceptCN: ["biết ơn", "thưởng thức", "hiểu", "phân biệt"]
 },
 {
   id: 25,
   word: "insist",
   ipa: "/ɪnˈsɪst/",
   pos: "vt.& vi.",
-  meaning: "vt.& vi. 坚持；强调；坚决要求；坚决认为。常用 insist skills（坚持相关能力）, use insist（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「坚持」",
-  root: "联想：结合词形与释义记住「坚持」",
-  collocations: "insist skills（坚持相关能力）, use insist（使用/运用该词）",
-  phrases: "insist skills（坚持相关能力）, use insist（使用/运用该词）",
-  example: "It is useful to understand the meaning of insist in this sentence.（理解这句话中 insist 的含义很有帮助。）",
+  meaning: "vt.& vi. kiên trì; nhấn mạnh một tuyên bố; vững vàng Yêu cầu; vững vàng nhận ra làm với tư cách. được sử dụng phổ biến insist skills(kiên trì liên quan Năng lực), use insist(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « kiên trì »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « kiên trì »",
+  collocations: "insist skills(kiên trì liên quan Năng lực), use insist(dùng / vận dụng từ này)",
+  phrases: "insist skills(kiên trì liên quan Năng lực), use insist(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of insist in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc insist của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of insist in this sentence.",
-  exampleCN: "理解这句话中 insist 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc insist của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of insist in this sentence.",
-  exampleZh: "理解这句话中 insist 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc insist của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "坚持", "topic": "通用"},
-  acceptCN: ["坚持", "强调", "坚决要求", "坚决认为"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "kiên trì", "topic": "Dùng chung"},
+  acceptCN: ["kiên trì", "nhấn mạnh một tuyên bố", "vững vàng Yêu cầu", "vững vàng nhận ra làm với tư cách"]
 },
 {
   id: 26,
   word: "preparation",
   ipa: "/ˌprepəˈreɪʃn/",
   pos: "n.",
-  meaning: "n. 准备，预备；准备工作；配制品；制剂。常用 preparation skills（准备相关能力）, use preparation（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「准备」",
-  root: "联想：结合词形与释义记住「准备」",
-  collocations: "preparation skills（准备相关能力）, use preparation（使用/运用该词）",
-  phrases: "preparation skills（准备相关能力）, use preparation（使用/运用该词）",
-  example: "It is useful to understand the meaning of preparation in this sentence.（理解这句话中 preparation 的含义很有帮助。）",
+  meaning: "n. sự chuẩn bị, chuẩn bị; sự chuẩn bị làm việc; pha chế thuốc hình thức kết hợp hàng hóa; chế phẩm hóa học hoặc dược phẩm. được sử dụng phổ biến preparation skills(sự chuẩn bị liên quan Năng lực), use preparation(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « sự chuẩn bị »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « sự chuẩn bị »",
+  collocations: "preparation skills(sự chuẩn bị liên quan Năng lực), use preparation(dùng / vận dụng từ này)",
+  phrases: "preparation skills(sự chuẩn bị liên quan Năng lực), use preparation(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of preparation in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc preparation của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of preparation in this sentence.",
-  exampleCN: "理解这句话中 preparation 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc preparation của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of preparation in this sentence.",
-  exampleZh: "理解这句话中 preparation 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc preparation của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "准备", "topic": "通用"},
-  acceptCN: ["准备", "预备", "准备工作", "配制品", "制剂"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "sự chuẩn bị", "topic": "Dùng chung"},
+  acceptCN: ["sự chuẩn bị", "chuẩn bị", "sự chuẩn bị làm việc", "pha chế thuốc hình thức kết hợp hàng hóa", "chế phẩm hóa học hoặc dược phẩm"]
 },
 {
   id: 27,
   word: "approve",
   ipa: "/əˈpru:v/",
   pos: "vt.& vi.",
-  meaning: "vt.& vi. 赞成，同意。常用 approve skills（赞成相关能力）, use approve（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「赞成」",
-  root: "联想：结合词形与释义记住「赞成」",
-  collocations: "approve skills（赞成相关能力）, use approve（使用/运用该词）",
-  phrases: "approve skills（赞成相关能力）, use approve（使用/运用该词）",
-  example: "It is useful to understand the meaning of approve in this sentence.（理解这句话中 approve 的含义很有帮助。）",
+  meaning: "vt.& vi. tán thành, đồng ý. được sử dụng phổ biến approve skills(tán thành liên quan Năng lực), use approve(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tán thành »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tán thành »",
+  collocations: "approve skills(tán thành liên quan Năng lực), use approve(dùng / vận dụng từ này)",
+  phrases: "approve skills(tán thành liên quan Năng lực), use approve(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of approve in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc approve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of approve in this sentence.",
-  exampleCN: "理解这句话中 approve 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc approve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of approve in this sentence.",
-  exampleZh: "理解这句话中 approve 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc approve của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "赞成", "topic": "通用"},
-  acceptCN: ["赞成", "同意"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Tán thành", "topic": "Dùng chung"},
+  acceptCN: ["Tán thành", "đồng ý"]
 },
 {
   id: 28,
   word: "brief",
   ipa: "/bri:f/",
   pos: "adj.",
-  meaning: "adj. 短暂的；（衣着）短的；简洁的；简明的。常用 brief skills（短暂的相关能力）, use brief（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「短暂的」",
-  root: "联想：结合词形与释义记住「短暂的」",
-  collocations: "brief skills（短暂的相关能力）, use brief（使用/运用该词）",
-  phrases: "brief skills（短暂的相关能力）, use brief（使用/运用该词）",
-  example: "It is useful to understand the meaning of brief in this sentence.（理解这句话中 brief 的含义很有帮助。）",
+  meaning: "adj. thời gian ngắn của; (quần áo)ngắn của; ngắn gọn của; đơn giản và rõ ràng của. được sử dụng phổ biến brief skills(thời gian ngắn của liên quan Năng lực), use brief(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thời gian ngắn của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thời gian ngắn của»",
+  collocations: "brief skills(thời gian ngắn của liên quan Năng lực), use brief(dùng / vận dụng từ này)",
+  phrases: "brief skills(thời gian ngắn của liên quan Năng lực), use brief(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of brief in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc brief của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of brief in this sentence.",
-  exampleCN: "理解这句话中 brief 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc brief của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of brief in this sentence.",
-  exampleZh: "理解这句话中 brief 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc brief của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "短暂的", "topic": "通用"},
-  acceptCN: ["短暂的", "短的", "简洁的", "简明的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "thời gian ngắn của", "topic": "Dùng chung"},
+  acceptCN: ["thời gian ngắn của", "ngắn của", "ngắn gọn của", "đơn giản và rõ ràng của"]
 },
 {
   id: 29,
   word: "destroy",
   ipa: "/dɪˈstrɔɪ/",
   pos: "vt.",
-  meaning: "vt. 破坏，摧毁；消灭，歼灭（敌人）；杀死；使失败。常用 destroy skills（破坏相关能力）, use destroy（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「破坏」",
-  root: "联想：结合词形与释义记住「破坏」",
-  collocations: "destroy skills（破坏相关能力）, use destroy（使用/运用该词）",
-  phrases: "destroy skills（破坏相关能力）, use destroy（使用/运用该词）",
-  example: "It is useful to understand the meaning of destroy in this sentence.（理解这句话中 destroy 的含义很有帮助。）",
+  meaning: "vt. sự phá hủy, phá hủy; chấm dứt, xóa sổ (kẻ thù); giết; khiến Thất bại. được sử dụng phổ biến destroy skills(sự phá hủy liên quan Năng lực), use destroy(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « sự phá hủy »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « sự phá hủy »",
+  collocations: "destroy skills(sự phá hủy liên quan Năng lực), use destroy(dùng / vận dụng từ này)",
+  phrases: "destroy skills(sự phá hủy liên quan Năng lực), use destroy(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of destroy in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc destroy của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of destroy in this sentence.",
-  exampleCN: "理解这句话中 destroy 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc destroy của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of destroy in this sentence.",
-  exampleZh: "理解这句话中 destroy 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc destroy của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "破坏", "topic": "通用"},
-  acceptCN: ["破坏", "摧毁", "消灭", "歼灭", "杀死", "使失败"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "sự phá hủy", "topic": "Dùng chung"},
+  acceptCN: ["sự phá hủy", "phá hủy", "chấm dứt", "xóa sổ", "giết", "khiến Thất bại"]
 },
 {
   id: 30,
   word: "guideline",
   ipa: "/ˈɡaɪdlaɪn/",
   pos: "n.",
-  meaning: "n. 指导方针；准则。常用 guideline for（…的指导方针）, follow guidelines（遵循准则）, strict guidelines（严格准则）。",
+  meaning: "n. hướng dẫn chính sách; chuẩn mực. được sử dụng phổ biến guideline for(…của hướng dẫn chính sách), follow guidelines(tuân theo chuẩn mực), strict guidelines(nghiêm ngặt chuẩn mực).",
   mnemonic: "",
   root: "",
-  collocations: "guideline for（…的指导方针）, follow guidelines（遵循准则）, strict guidelines（严格准则）",
-  phrases: "guideline for（…的指导方针）, follow guidelines（遵循准则）, strict guidelines（严格准则）",
-  example: "All students must follow the guidelines.（所有学生必须遵循指导方针。）",
+  collocations: "guideline for(…của hướng dẫn chính sách), follow guidelines(tuân theo chuẩn mực), strict guidelines(nghiêm ngặt chuẩn mực)",
+  phrases: "guideline for(…của hướng dẫn chính sách), follow guidelines(tuân theo chuẩn mực), strict guidelines(nghiêm ngặt chuẩn mực)",
+  example: "All students must follow the guidelines.(tất cả Học viên phải tuân theo hướng dẫn chính sách.)",
   exampleEN: "All students must follow the guidelines.",
-  exampleCN: "所有学生必须遵循指导方针。",
+  exampleCN: "tất cả Học viên phải tuân theo hướng dẫn chính sách.",
   exampleEn: "All students must follow the guidelines.",
-  exampleZh: "所有学生必须遵循指导方针。",
+  exampleZh: "tất cả Học viên phải tuân theo hướng dẫn chính sách.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "指导方针", "topic": "通用"},
-  acceptCN: ["指导方针", "准则"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "hướng dẫn chính sách", "topic": "Dùng chung"},
+  acceptCN: ["hướng dẫn chính sách", "chuẩn mực"]
 },
 {
   id: 31,
   word: "investigate",
   ipa: "/ɪnˈvestɪgeɪt/",
   pos: "vt.",
-  meaning: "vt. 调查；审查；研究。常用 investigate skills（调查相关能力）, use investigate（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「调查」",
-  root: "联想：结合词形与释义记住「调查」",
-  collocations: "investigate skills（调查相关能力）, use investigate（使用/运用该词）",
-  phrases: "investigate skills（调查相关能力）, use investigate（使用/运用该词）",
-  example: "It is useful to understand the meaning of investigate in this sentence.（理解这句话中 investigate 的含义很有帮助。）",
+  meaning: "vt. điều tra; kiểm tra; nghiên cứu. được sử dụng phổ biến investigate skills(điều tra liên quan Năng lực), use investigate(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « điều tra »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « điều tra »",
+  collocations: "investigate skills(điều tra liên quan Năng lực), use investigate(dùng / vận dụng từ này)",
+  phrases: "investigate skills(điều tra liên quan Năng lực), use investigate(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of investigate in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc investigate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of investigate in this sentence.",
-  exampleCN: "理解这句话中 investigate 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc investigate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of investigate in this sentence.",
-  exampleZh: "理解这句话中 investigate 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc investigate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "调查", "topic": "通用"},
-  acceptCN: ["调查", "审查", "研究"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "điều tra", "topic": "Dùng chung"},
+  acceptCN: ["điều tra", "kiểm tra", "Nghiên cứu"]
 },
 {
   id: 32,
   word: "welfare",
   ipa: "/ˈwelfeə(r)/",
   pos: "n.",
-  meaning: "n. 福利；幸福；繁荣；安宁。常用 welfare skills（福利相关能力）, use welfare（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「福利」",
-  root: "联想：结合词形与释义记住「福利」",
-  collocations: "welfare skills（福利相关能力）, use welfare（使用/运用该词）",
-  phrases: "welfare skills（福利相关能力）, use welfare（使用/运用该词）",
-  example: "It is useful to understand the meaning of welfare in this sentence.（理解这句话中 welfare 的含义很有帮助。）",
+  meaning: "n. lợi ích vật chất; hạnh phúc; thịnh vượng; Quận Anning của thành phố Lan Châu. được sử dụng phổ biến welfare skills(lợi ích vật chất liên quan Năng lực), use welfare(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « lợi ích vật chất »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « lợi ích vật chất »",
+  collocations: "welfare skills(lợi ích vật chất liên quan Năng lực), use welfare(dùng / vận dụng từ này)",
+  phrases: "welfare skills(lợi ích vật chất liên quan Năng lực), use welfare(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of welfare in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc welfare của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of welfare in this sentence.",
-  exampleCN: "理解这句话中 welfare 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc welfare của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of welfare in this sentence.",
-  exampleZh: "理解这句话中 welfare 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc welfare của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "福利", "topic": "通用"},
-  acceptCN: ["福利", "幸福", "繁荣", "安宁"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "lợi ích vật chất", "topic": "Dùng chung"},
+  acceptCN: ["lợi ích vật chất", "hạnh phúc", "thịnh vượng", "Quận Anning của thành phố Lan Châu"]
 },
 {
   id: 33,
   word: "switch",
   ipa: "/swɪtʃ/",
   pos: "n.",
-  meaning: "n. 开关；转换，转换器；软鞭子；[信]接线台。常用 switch skills（开关相关能力）, use switch（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「开关」",
-  root: "联想：结合词形与释义记住「开关」",
-  collocations: "switch skills（开关相关能力）, use switch（使用/运用该词）",
-  phrases: "switch skills（开关相关能力）, use switch（使用/运用该词）",
-  example: "It is useful to understand the meaning of switch in this sentence.（理解这句话中 switch 的含义很有帮助。）",
+  meaning: "n. công tắc điện; thay đổi, bộ chuyển đổi; mềm cái roi; [thư] đấu dây Đài Loan viết tắt. được sử dụng phổ biến switch skills(công tắc điện liên quan Năng lực), use switch(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « công tắc điện »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « công tắc điện »",
+  collocations: "switch skills(công tắc điện liên quan Năng lực), use switch(dùng / vận dụng từ này)",
+  phrases: "switch skills(công tắc điện liên quan Năng lực), use switch(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of switch in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc switch của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of switch in this sentence.",
-  exampleCN: "理解这句话中 switch 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc switch của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of switch in this sentence.",
-  exampleZh: "理解这句话中 switch 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc switch của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "开关", "topic": "通用"},
-  acceptCN: ["开关", "转换", "转换器", "软鞭子", "[信]接线台"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "công tắc điện", "topic": "Dùng chung"},
+  acceptCN: ["công tắc điện", "thay đổi", "bộ chuyển đổi", "mềm cái roi", "[thư] đấu dây Đài Loan viết tắt"]
 },
 {
   id: 34,
   word: "aspect",
   ipa: "/ˈæspekt/",
   pos: "n.",
-  meaning: "n. 方面；面貌；方位，方向；形势。常用 aspect skills（方面相关能力）, use aspect（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「方面」",
-  root: "联想：结合词形与释义记住「方面」",
-  collocations: "aspect skills（方面相关能力）, use aspect（使用/运用该词）",
-  phrases: "aspect skills（方面相关能力）, use aspect（使用/运用该词）",
-  example: "It is useful to understand the meaning of aspect in this sentence.（理解这句话中 aspect 的含义很有帮助。）",
+  meaning: "n. khía cạnh; khuôn mặt; phương hướng, hướng; hoàn cảnh. được sử dụng phổ biến aspect skills(khía cạnh liên quan Năng lực), use aspect(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « khía cạnh »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « khía cạnh »",
+  collocations: "aspect skills(khía cạnh liên quan Năng lực), use aspect(dùng / vận dụng từ này)",
+  phrases: "aspect skills(khía cạnh liên quan Năng lực), use aspect(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of aspect in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc aspect của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of aspect in this sentence.",
-  exampleCN: "理解这句话中 aspect 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc aspect của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of aspect in this sentence.",
-  exampleZh: "理解这句话中 aspect 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc aspect của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "方面", "topic": "通用"},
-  acceptCN: ["方面", "面貌", "方位", "方向", "形势"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Khía cạnh", "topic": "Dùng chung"},
+  acceptCN: ["Khía cạnh", "khuôn mặt", "phương hướng", "hướng", "hoàn cảnh"]
 },
 {
   id: 35,
   word: "tutor",
   ipa: "/ˈtju:tə(r)/",
   pos: "n.",
-  meaning: "n. 家庭教师；导师；（大专院校的）助教；课本。常用 tutor skills（家庭教师相关能力）, use tutor（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「家庭教师」",
-  root: "联想：结合词形与释义记住「家庭教师」",
-  collocations: "tutor skills（家庭教师相关能力）, use tutor（使用/运用该词）",
-  phrases: "tutor skills（家庭教师相关能力）, use tutor（使用/运用该词）",
-  example: "It is useful to understand the meaning of tutor in this sentence.（理解这句话中 tutor 的含义很有帮助。）",
+  meaning: "n. gia sư; gia sư; (cao đẳng ba năm trường cao đẳng của) trợ giảng; sách giáo khoa. được sử dụng phổ biến tutor skills(gia sư liên quan Năng lực), use tutor(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « gia sư »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « gia sư »",
+  collocations: "tutor skills(gia sư liên quan Năng lực), use tutor(dùng / vận dụng từ này)",
+  phrases: "tutor skills(gia sư liên quan Năng lực), use tutor(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of tutor in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc tutor của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of tutor in this sentence.",
-  exampleCN: "理解这句话中 tutor 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc tutor của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of tutor in this sentence.",
-  exampleZh: "理解这句话中 tutor 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc tutor của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "家庭教师", "topic": "通用"},
-  acceptCN: ["家庭教师", "导师", "助教", "课本"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "gia sư", "topic": "Dùng chung"},
+  acceptCN: ["gia sư", "gia sư", "trợ giảng", "sách giáo khoa"]
 },
 {
   id: 36,
   word: "register",
   ipa: "/ˈredʒɪstə(r)/",
   pos: "n.",
-  meaning: "n. 登记，注册；记录；登记簿；自动记录器。常用 register skills（登记相关能力）, use register（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「登记」",
-  root: "联想：结合词形与释义记住「登记」",
-  collocations: "register skills（登记相关能力）, use register（使用/运用该词）",
-  phrases: "register skills（登记相关能力）, use register（使用/运用该词）",
-  example: "It is useful to understand the meaning of register in this sentence.（理解这句话中 register 的含义很有帮助。）",
+  meaning: "n. đăng ký tên, Đăng ký; ghi chép; đăng ký tên sổ; tự động máy ghi âm. được sử dụng phổ biến register skills(đăng ký tên liên quan Năng lực), use register(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « đăng ký tên »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « đăng ký tên »",
+  collocations: "register skills(đăng ký tên liên quan Năng lực), use register(dùng / vận dụng từ này)",
+  phrases: "register skills(đăng ký tên liên quan Năng lực), use register(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of register in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc register của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of register in this sentence.",
-  exampleCN: "理解这句话中 register 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc register của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of register in this sentence.",
-  exampleZh: "理解这句话中 register 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc register của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "登记", "topic": "通用"},
-  acceptCN: ["登记", "注册", "记录", "登记簿", "自动记录器"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "đăng ký tên", "topic": "Dùng chung"},
+  acceptCN: ["đăng ký tên", "Đăng ký", "ghi chép", "đăng ký tên sổ", "tự động máy ghi âm"]
 },
 {
   id: 37,
   word: "vision",
   ipa: "/ˈvɪʒn/",
   pos: "n.",
-  meaning: "n. 视力，视觉；美景，绝妙的东西；幻影；想像力。常用 vision skills（视力相关能力）, use vision（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「视力」",
-  root: "联想：结合词形与释义记住「视力」",
-  collocations: "vision skills（视力相关能力）, use vision（使用/运用该词）",
-  phrases: "vision skills（视力相关能力）, use vision（使用/运用该词）",
-  example: "It is useful to understand the meaning of vision in this sentence.（理解这句话中 vision 的含义很有帮助。）",
+  meaning: "n. thị lực, thị giác; phong cảnh đẹp, tuyệt diệu của đông và tây; ảo ảnh; khả năng tưởng tượng. được sử dụng phổ biến vision skills(thị lực liên quan Năng lực), use vision(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thị lực »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thị lực »",
+  collocations: "vision skills(thị lực liên quan Năng lực), use vision(dùng / vận dụng từ này)",
+  phrases: "vision skills(thị lực liên quan Năng lực), use vision(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of vision in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vision của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of vision in this sentence.",
-  exampleCN: "理解这句话中 vision 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vision của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of vision in this sentence.",
-  exampleZh: "理解这句话中 vision 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc vision của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "视力", "topic": "通用"},
-  acceptCN: ["视力", "视觉", "美景", "绝妙的东西", "幻影", "想像力"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "thị lực", "topic": "Dùng chung"},
+  acceptCN: ["thị lực", "thị giác", "phong cảnh đẹp", "tuyệt diệu của đông và tây", "ảo ảnh", "khả năng tưởng tượng"]
 },
 {
   id: 38,
   word: "instruction",
   ipa: "/ɪnˈstrʌkʃn/",
   pos: "n.",
-  meaning: "n. 授课；教诲；传授的或获得的知识，课程；[计算机科学]指令。常用 instruction skills（授课相关能力）, use instruction（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「授课」",
-  root: "联想：结合词形与释义记住「授课」",
-  collocations: "instruction skills（授课相关能力）, use instruction（使用/运用该词）",
-  phrases: "instruction skills（授课相关能力）, use instruction（使用/运用该词）",
-  example: "It is useful to understand the meaning of instruction in this sentence.（理解这句话中 instruction 的含义很有帮助。）",
+  meaning: "n. dạy; văn học dạy dỗ; truyền dạy của có thể Nhận được của kiến thức, Khóa học; [khoa học máy tính] mệnh lệnh. được sử dụng phổ biến instruction skills(dạy liên quan Năng lực), use instruction(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « dạy »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « dạy »",
+  collocations: "instruction skills(dạy liên quan Năng lực), use instruction(dùng / vận dụng từ này)",
+  phrases: "instruction skills(dạy liên quan Năng lực), use instruction(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of instruction in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc instruction của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of instruction in this sentence.",
-  exampleCN: "理解这句话中 instruction 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc instruction của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of instruction in this sentence.",
-  exampleZh: "理解这句话中 instruction 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc instruction của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "授课", "topic": "通用"},
-  acceptCN: ["授课", "教诲", "传授的或获得的知识", "课程", "[计算机科学]指令"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "dạy", "topic": "Dùng chung"},
+  acceptCN: ["dạy", "văn học dạy dỗ", "truyền dạy của có thể Nhận được của kiến thức", "Khóa học", "[khoa học máy tính] mệnh lệnh"]
 },
 {
   id: 39,
   word: "observe",
   ipa: "/əbˈzɜ:v/",
   pos: "vt.& vi.",
-  meaning: "vt.& vi. 观察；研究。常用 observe skills（观察相关能力）, use observe（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「观察」",
-  root: "联想：结合词形与释义记住「观察」",
-  collocations: "observe skills（观察相关能力）, use observe（使用/运用该词）",
-  phrases: "observe skills（观察相关能力）, use observe（使用/运用该词）",
-  example: "It is useful to understand the meaning of observe in this sentence.（理解这句话中 observe 的含义很有帮助。）",
+  meaning: "vt.& vi. quan sát; nghiên cứu. được sử dụng phổ biến observe skills(quan sát liên quan Năng lực), use observe(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « quan sát »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « quan sát »",
+  collocations: "observe skills(quan sát liên quan Năng lực), use observe(dùng / vận dụng từ này)",
+  phrases: "observe skills(quan sát liên quan Năng lực), use observe(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of observe in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc observe của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of observe in this sentence.",
-  exampleCN: "理解这句话中 observe 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc observe của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of observe in this sentence.",
-  exampleZh: "理解这句话中 observe 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc observe của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "观察", "topic": "通用"},
-  acceptCN: ["观察", "研究"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "quan sát", "topic": "Dùng chung"},
+  acceptCN: ["quan sát", "Nghiên cứu"]
 },
 {
   id: 40,
   word: "candidate",
   ipa: "/ˈkændɪdət/",
   pos: "n.",
-  meaning: "n. 候选人；应试者；申请人；被认定适合者。常用 candidate skills（候选人相关能力）, use candidate（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「候选人」",
-  root: "联想：结合词形与释义记住「候选人」",
-  collocations: "candidate skills（候选人相关能力）, use candidate（使用/运用该词）",
-  phrases: "candidate skills（候选人相关能力）, use candidate（使用/运用该词）",
-  example: "It is useful to understand the meaning of candidate in this sentence.（理解这句话中 candidate 的含义很有帮助。）",
+  meaning: "n. ứng cử viên; dự thi sau động từ hoặc tính từ người mà; người nộp đơn; chăn cho rằng điều gì đó là đúng phù hợp sau động từ hoặc tính từ người mà. được sử dụng phổ biến candidate skills(ứng cử viên liên quan Năng lực), use candidate(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ứng cử viên »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ứng cử viên »",
+  collocations: "candidate skills(ứng cử viên liên quan Năng lực), use candidate(dùng / vận dụng từ này)",
+  phrases: "candidate skills(ứng cử viên liên quan Năng lực), use candidate(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of candidate in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc candidate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of candidate in this sentence.",
-  exampleCN: "理解这句话中 candidate 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc candidate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of candidate in this sentence.",
-  exampleZh: "理解这句话中 candidate 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc candidate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "候选人", "topic": "通用"},
-  acceptCN: ["候选人", "应试者", "申请人", "被认定适合者"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "ứng cử viên", "topic": "Dùng chung"},
+  acceptCN: ["ứng cử viên", "dự thi sau động từ hoặc tính từ người mà", "người nộp đơn", "chăn cho rằng điều gì đó là đúng phù hợp sau động từ hoặc tính từ người mà"]
 },
 {
   id: 41,
   word: "flat",
   ipa: "/flæt/",
   pos: "adj.",
-  meaning: "adj. 平的；单调的；不景气的；干脆的。常用 flat skills（平的相关能力）, use flat（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「平的」",
-  root: "联想：结合词形与释义记住「平的」",
-  collocations: "flat skills（平的相关能力）, use flat（使用/运用该词）",
-  phrases: "flat skills（平的相关能力）, use flat（使用/运用该词）",
-  example: "It is useful to understand the meaning of flat in this sentence.（理解这句话中 flat 的含义很有帮助。）",
+  meaning: "adj. họ của; đơn điệu của; trì trệ của; thẳng thắn của. được sử dụng phổ biến flat skills(họ của liên quan Năng lực), use flat(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «họ của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «họ của»",
+  collocations: "flat skills(họ của liên quan Năng lực), use flat(dùng / vận dụng từ này)",
+  phrases: "flat skills(họ của liên quan Năng lực), use flat(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of flat in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc flat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of flat in this sentence.",
-  exampleCN: "理解这句话中 flat 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc flat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of flat in this sentence.",
-  exampleZh: "理解这句话中 flat 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc flat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "平的", "topic": "通用"},
-  acceptCN: ["平的", "单调的", "不景气的", "干脆的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "họ của", "topic": "Dùng chung"},
+  acceptCN: ["họ của", "đơn điệu của", "trì trệ của", "thẳng thắn của"]
 },
 {
   id: 42,
   word: "humanity",
   ipa: "/hjuːˈmæn.ə.ti/",
   pos: "n.",
-  meaning: "n. 人类；人道；人性。常用 crime against humanity（反人类罪）, common humanity（共同的人性）, humanity and justice（仁义）。",
+  meaning: "n. nhân loại; cảm thông con người; bản chất con người. được sử dụng phổ biến crime against humanity(tội ác chống lại loài người), common humanity(giống của bản chất con người), humanity and justice(nhân nghĩa và chính trực).",
   mnemonic: "",
   root: "",
-  collocations: "crime against humanity（反人类罪）, common humanity（共同的人性）, humanity and justice（仁义）",
-  phrases: "crime against humanity（反人类罪）, common humanity（共同的人性）, humanity and justice（仁义）",
-  example: "The disaster shocked the whole of humanity.（这场灾难震惊了全人类。）",
+  collocations: "crime against humanity(tội ác chống lại loài người), common humanity(giống của bản chất con người), humanity and justice(nhân nghĩa và chính trực)",
+  phrases: "crime against humanity(tội ác chống lại loài người), common humanity(giống của bản chất con người), humanity and justice(nhân nghĩa và chính trực)",
+  example: "The disaster shocked the whole of humanity.(đại từ này sân phơi thảm họa sốc trợ từ chỉ hành động đã hoàn thành họ nhân loại.)",
   exampleEN: "The disaster shocked the whole of humanity.",
-  exampleCN: "这场灾难震惊了全人类。",
+  exampleCN: "đại từ này sân phơi thảm họa sốc trợ từ chỉ hành động đã hoàn thành họ nhân loại.",
   exampleEn: "The disaster shocked the whole of humanity.",
-  exampleZh: "这场灾难震惊了全人类。",
+  exampleZh: "đại từ này sân phơi thảm họa sốc trợ từ chỉ hành động đã hoàn thành họ nhân loại.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "人类", "topic": "通用"},
-  acceptCN: ["人类", "人道", "人性"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "nhân loại", "topic": "Dùng chung"},
+  acceptCN: ["nhân loại", "cảm thông con người", "bản chất con người"]
 },
 {
   id: 43,
   word: "complex",
   ipa: "/ˈkɒmpleks/",
   pos: "adj.",
-  meaning: "adj. 复杂的；难懂的；复合的。常用 complex skills（复杂的相关能力）, use complex（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「复杂的」",
-  root: "联想：结合词形与释义记住「复杂的」",
-  collocations: "complex skills（复杂的相关能力）, use complex（使用/运用该词）",
-  phrases: "complex skills（复杂的相关能力）, use complex（使用/运用该词）",
-  example: "It is useful to understand the meaning of complex in this sentence.（理解这句话中 complex 的含义很有帮助。）",
+  meaning: "adj. phức tạp của; khó hiểu của; về người từng mâu thuẫn hòa giải của. được sử dụng phổ biến complex skills(phức tạp của liên quan Năng lực), use complex(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « phức tạp của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « phức tạp của»",
+  collocations: "complex skills(phức tạp của liên quan Năng lực), use complex(dùng / vận dụng từ này)",
+  phrases: "complex skills(phức tạp của liên quan Năng lực), use complex(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of complex in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc complex của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of complex in this sentence.",
-  exampleCN: "理解这句话中 complex 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc complex của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of complex in this sentence.",
-  exampleZh: "理解这句话中 complex 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc complex của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "复杂的", "topic": "通用"},
-  acceptCN: ["复杂的", "难懂的", "复合的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "phức tạp của", "topic": "Dùng chung"},
+  acceptCN: ["phức tạp của", "khó hiểu của", "về người từng mâu thuẫn hòa giải của"]
 },
 {
   id: 44,
   word: "mood",
   ipa: "/mu:d/",
   pos: "n.",
-  meaning: "n. 心情；语气；气氛；坏心境。常用 mood skills（心情相关能力）, use mood（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「心情」",
-  root: "联想：结合词形与释义记住「心情」",
-  collocations: "mood skills（心情相关能力）, use mood（使用/运用该词）",
-  phrases: "mood skills（心情相关能力）, use mood（使用/运用该词）",
-  example: "It is useful to understand the meaning of mood in this sentence.（理解这句话中 mood 的含义很有帮助。）",
+  meaning: "n. tâm trạng; giọng điệu; bầu không khí; xấu tâm trạng. được sử dụng phổ biến mood skills(tâm trạng liên quan Năng lực), use mood(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tâm trạng »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tâm trạng »",
+  collocations: "mood skills(tâm trạng liên quan Năng lực), use mood(dùng / vận dụng từ này)",
+  phrases: "mood skills(tâm trạng liên quan Năng lực), use mood(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of mood in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mood của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of mood in this sentence.",
-  exampleCN: "理解这句话中 mood 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mood của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of mood in this sentence.",
-  exampleZh: "理解这句话中 mood 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mood của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "心情", "topic": "通用"},
-  acceptCN: ["心情", "语气", "气氛", "坏心境"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "tâm trạng", "topic": "Dùng chung"},
+  acceptCN: ["tâm trạng", "giọng điệu", "bầu không khí", "xấu tâm trạng"]
 },
 {
   id: 45,
   word: "eliminate",
   ipa: "/ɪˈlɪmɪneɪt/",
   pos: "vt.",
-  meaning: "vt. 排除，消除；淘汰；除掉；干掉。常用 eliminate skills（排除相关能力）, use eliminate（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「排除」",
-  root: "联想：结合词形与释义记住「排除」",
-  collocations: "eliminate skills（排除相关能力）, use eliminate（使用/运用该词）",
-  phrases: "eliminate skills（排除相关能力）, use eliminate（使用/运用该词）",
-  example: "It is useful to understand the meaning of eliminate in this sentence.（理解这句话中 eliminate 的含义很有帮助。）",
+  meaning: "vt. loại bỏ, loại bỏ; loại bỏ; loại bỏ; loại bỏ. được sử dụng phổ biến eliminate skills(loại bỏ liên quan Năng lực), use eliminate(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « loại bỏ »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « loại bỏ »",
+  collocations: "eliminate skills(loại bỏ liên quan Năng lực), use eliminate(dùng / vận dụng từ này)",
+  phrases: "eliminate skills(loại bỏ liên quan Năng lực), use eliminate(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of eliminate in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc eliminate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of eliminate in this sentence.",
-  exampleCN: "理解这句话中 eliminate 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc eliminate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of eliminate in this sentence.",
-  exampleZh: "理解这句话中 eliminate 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc eliminate của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "排除", "topic": "通用"},
-  acceptCN: ["排除", "消除", "淘汰", "除掉", "干掉"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "loại bỏ", "topic": "Dùng chung"},
+  acceptCN: ["loại bỏ", "loại bỏ", "loại bỏ", "loại bỏ", "loại bỏ"]
 },
 {
   id: 46,
   word: "suggestion",
   ipa: "/səˈdʒestʃən/",
   pos: "n.",
-  meaning: "n. 建议，意见，暗示；联想，启发；微量。常用 suggestion skills（建议相关能力）, use suggestion（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「建议」",
-  root: "联想：结合词形与释义记住「建议」",
-  collocations: "suggestion skills（建议相关能力）, use suggestion（使用/运用该词）",
-  phrases: "suggestion skills（建议相关能力）, use suggestion（使用/运用该词）",
-  example: "It is useful to understand the meaning of suggestion in this sentence.（理解这句话中 suggestion 的含义很有帮助。）",
+  meaning: "n. Gợi ý, ý kiến, gợi ý; liên tưởng về mặt nhận thức, khai sáng; một chút ít. được sử dụng phổ biến suggestion skills(Gợi ý liên quan Năng lực), use suggestion(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Gợi ý »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Gợi ý »",
+  collocations: "suggestion skills(Gợi ý liên quan Năng lực), use suggestion(dùng / vận dụng từ này)",
+  phrases: "suggestion skills(Gợi ý liên quan Năng lực), use suggestion(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of suggestion in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc suggestion của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of suggestion in this sentence.",
-  exampleCN: "理解这句话中 suggestion 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc suggestion của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of suggestion in this sentence.",
-  exampleZh: "理解这句话中 suggestion 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc suggestion của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "建议", "topic": "通用"},
-  acceptCN: ["建议", "意见", "暗示", "联想", "启发", "微量"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Gợi ý", "topic": "Dùng chung"},
+  acceptCN: ["Gợi ý", "ý kiến", "gợi ý", "liên tưởng về mặt nhận thức", "khai sáng", "một chút ít"]
 },
 {
   id: 47,
   word: "update",
   ipa: "/ʌpˈdeɪt/",
   pos: "v. / n.",
-  meaning: "v. / n. 更新；使现代化。常用 update software（更新软件）, keep someone updated（让某人了解最新情况）, latest update（最新消息）。",
+  meaning: "v. / n. thay cũ đổi mới; khiến hiện đại hóa. được sử dụng phổ biến update software(thay cũ đổi mới phần mềm máy tính), keep someone updated(nhường một người nào đó hiểu mới nhất hoàn cảnh), latest update(mới nhất tin tức).",
   mnemonic: "",
   root: "",
-  collocations: "update software（更新软件）, keep someone updated（让某人了解最新情况）, latest update（最新消息）",
-  phrases: "update software（更新软件）, keep someone updated（让某人了解最新情况）, latest update（最新消息）",
-  example: "You need to update your computer regularly.（你需要定期更新电脑。）",
+  collocations: "update software(thay cũ đổi mới phần mềm máy tính), keep someone updated(nhường một người nào đó hiểu mới nhất hoàn cảnh), latest update(mới nhất tin tức)",
+  phrases: "update software(thay cũ đổi mới phần mềm máy tính), keep someone updated(nhường một người nào đó hiểu mới nhất hoàn cảnh), latest update(mới nhất tin tức)",
+  example: "You need to update your computer regularly.(bạn cần vào các ngày cố định thay cũ đổi mới máy tính.)",
   exampleEN: "You need to update your computer regularly.",
-  exampleCN: "你需要定期更新电脑。",
+  exampleCN: "bạn cần vào các ngày cố định thay cũ đổi mới máy tính.",
   exampleEn: "You need to update your computer regularly.",
-  exampleZh: "你需要定期更新电脑。",
+  exampleZh: "bạn cần vào các ngày cố định thay cũ đổi mới máy tính.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "更新", "topic": "通用"},
-  acceptCN: ["更新", "升级", "最新消息"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "thay cũ đổi mới", "topic": "Dùng chung"},
+  acceptCN: ["thay cũ đổi mới", "lên một cấp", "mới nhất tin tức"]
 },
 {
   id: 48,
   word: "engine",
   ipa: "/ˈendʒɪn/",
   pos: "n.",
-  meaning: "n. 发动机，引擎；工具；火车头；机车。常用 engine skills（发动机相关能力）, use engine（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「发动机」",
-  root: "联想：结合词形与释义记住「发动机」",
-  collocations: "engine skills（发动机相关能力）, use engine（使用/运用该词）",
-  phrases: "engine skills（发动机相关能力）, use engine（使用/运用该词）",
-  example: "It is useful to understand the meaning of engine in this sentence.（理解这句话中 engine 的含义很有帮助。）",
+  meaning: "n. động cơ, động cơ từ mượn; công cụ; đầu máy xe lửa; đầu máy. được sử dụng phổ biến engine skills(động cơ liên quan Năng lực), use engine(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « động cơ »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « động cơ »",
+  collocations: "engine skills(động cơ liên quan Năng lực), use engine(dùng / vận dụng từ này)",
+  phrases: "engine skills(động cơ liên quan Năng lực), use engine(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of engine in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc engine của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of engine in this sentence.",
-  exampleCN: "理解这句话中 engine 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc engine của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of engine in this sentence.",
-  exampleZh: "理解这句话中 engine 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc engine của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "发动机", "topic": "通用"},
-  acceptCN: ["发动机", "引擎", "工具", "火车头", "机车"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "động cơ", "topic": "Dùng chung"},
+  acceptCN: ["động cơ", "động cơ từ mượn", "công cụ", "đầu máy xe lửa", "đầu máy"]
 },
 {
   id: 49,
   word: "stable",
   ipa: "/ˈsteɪbl/",
   pos: "adj.",
-  meaning: "adj. 稳定的；沉稳[持重]的；[物理学]稳定平衡的；持久的。常用 stable skills（稳定的相关能力）, use stable（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「稳定的」",
-  root: "联想：结合词形与释义记住「稳定的」",
-  collocations: "stable skills（稳定的相关能力）, use stable（使用/运用该词）",
-  phrases: "stable skills（稳定的相关能力）, use stable（使用/运用该词）",
-  example: "It is useful to understand the meaning of stable in this sentence.（理解这句话中 stable 的含义很有帮助。）",
+  meaning: "adj. vững vàng của; vững vàng [thận trọng]của; [vật lý] vững vàng cân bằng của; kéo dài của. được sử dụng phổ biến stable skills(vững vàng của liên quan Năng lực), use stable(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « vững vàng của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « vững vàng của»",
+  collocations: "stable skills(vững vàng của liên quan Năng lực), use stable(dùng / vận dụng từ này)",
+  phrases: "stable skills(vững vàng của liên quan Năng lực), use stable(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of stable in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc stable của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of stable in this sentence.",
-  exampleCN: "理解这句话中 stable 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc stable của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of stable in this sentence.",
-  exampleZh: "理解这句话中 stable 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc stable của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "稳定的", "topic": "通用"},
-  acceptCN: ["稳定的", "沉稳[持重]的", "[物理学]稳定平衡的", "持久的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "vững vàng của", "topic": "Dùng chung"},
+  acceptCN: ["vững vàng của", "vững vàng [thận trọng]của", "[vật lý] vững vàng cân bằng của", "kéo dài của"]
 },
 {
   id: 50,
   word: "meaning",
   ipa: "/ˈmi:nɪŋ/",
   pos: "n.",
-  meaning: "n. 意思，意义；含义；意图。常用 meaning skills（意思相关能力）, use meaning（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「意思」",
-  root: "联想：结合词形与释义记住「意思」",
-  collocations: "meaning skills（意思相关能力）, use meaning（使用/运用该词）",
-  phrases: "meaning skills（意思相关能力）, use meaning（使用/运用该词）",
-  example: "It is useful to understand the meaning of meaning in this sentence.（理解这句话中 meaning 的含义很有帮助。）",
+  meaning: "n. ý tưởng, ý nghĩa; ý nghĩa hàm chứa trong một cụm từ; ý định. được sử dụng phổ biến meaning skills(ý tưởng liên quan Năng lực), use meaning(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ý tưởng »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ý tưởng »",
+  collocations: "meaning skills(ý tưởng liên quan Năng lực), use meaning(dùng / vận dụng từ này)",
+  phrases: "meaning skills(ý tưởng liên quan Năng lực), use meaning(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of meaning in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc meaning của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of meaning in this sentence.",
-  exampleCN: "理解这句话中 meaning 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc meaning của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of meaning in this sentence.",
-  exampleZh: "理解这句话中 meaning 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc meaning của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "意思", "topic": "通用"},
-  acceptCN: ["意思", "意义", "含义", "意图"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "ý tưởng", "topic": "Dùng chung"},
+  acceptCN: ["ý tưởng", "ý nghĩa", "ý nghĩa hàm chứa trong một cụm từ", "ý định"]
 },
 {
   id: 51,
   word: "session",
   ipa: "/ˈseʃn/",
   pos: "n.",
-  meaning: "n. 开会，会议；（法庭的）开庭；会期，学期；（进行某活动连续的）一段时间。常用 session skills（开会相关能力）, use session（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「开会」",
-  root: "联想：结合词形与释义记住「开会」",
-  collocations: "session skills（开会相关能力）, use session（使用/运用该词）",
-  phrases: "session skills（开会相关能力）, use session（使用/运用该词）",
-  example: "It is useful to understand the meaning of session in this sentence.（理解这句话中 session 的含义很有帮助。）",
+  meaning: "n. tổ chức cuộc họp, cuộc họp; (tòa án của) bắt đầu phiên tòa xét xử; thời gian diễn ra hội nghị, học kỳ; (tiến hành một vài tập thể dục Liên tiếp của)một họ Thời gian. được sử dụng phổ biến session skills(tổ chức cuộc họp liên quan Năng lực), use session(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tổ chức cuộc họp »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « tổ chức cuộc họp »",
+  collocations: "session skills(tổ chức cuộc họp liên quan Năng lực), use session(dùng / vận dụng từ này)",
+  phrases: "session skills(tổ chức cuộc họp liên quan Năng lực), use session(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of session in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc session của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of session in this sentence.",
-  exampleCN: "理解这句话中 session 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc session của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of session in this sentence.",
-  exampleZh: "理解这句话中 session 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc session của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "开会", "topic": "通用"},
-  acceptCN: ["开会", "会议", "开庭", "会期", "学期", "一段时间"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "tổ chức cuộc họp", "topic": "Dùng chung"},
+  acceptCN: ["tổ chức cuộc họp", "cuộc họp", "bắt đầu phiên tòa xét xử", "thời gian diễn ra hội nghị", "học kỳ", "một họ Thời gian"]
 },
 {
   id: 52,
   word: "prompt",
   ipa: "/prɒmpt/",
   pos: "adj.",
-  meaning: "adj. 敏捷的；迅速的；立刻的；准时的。常用 prompt skills（敏捷的相关能力）, use prompt（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「敏捷的」",
-  root: "联想：结合词形与释义记住「敏捷的」",
-  collocations: "prompt skills（敏捷的相关能力）, use prompt（使用/运用该词）",
-  phrases: "prompt skills（敏捷的相关能力）, use prompt（使用/运用该词）",
-  example: "It is useful to understand the meaning of prompt in this sentence.（理解这句话中 prompt 的含义很有帮助。）",
+  meaning: "adj. nhanh nhẹn của; nhanh chóng của; ngay lập tức của; đúng giờ của. được sử dụng phổ biến prompt skills(nhanh nhẹn của liên quan Năng lực), use prompt(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « nhanh nhẹn của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « nhanh nhẹn của»",
+  collocations: "prompt skills(nhanh nhẹn của liên quan Năng lực), use prompt(dùng / vận dụng từ này)",
+  phrases: "prompt skills(nhanh nhẹn của liên quan Năng lực), use prompt(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of prompt in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc prompt của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of prompt in this sentence.",
-  exampleCN: "理解这句话中 prompt 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc prompt của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of prompt in this sentence.",
-  exampleZh: "理解这句话中 prompt 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc prompt của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "敏捷的", "topic": "通用"},
-  acceptCN: ["敏捷的", "迅速的", "立刻的", "准时的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "nhanh nhẹn của", "topic": "Dùng chung"},
+  acceptCN: ["nhanh nhẹn của", "nhanh chóng của", "ngay lập tức của", "đúng giờ của"]
 },
 {
   id: 53,
   word: "settle",
   ipa: "/ˈsetl/",
   pos: "vt.",
-  meaning: "vt. 解决；安排；使定居；使沉淀。常用 settle skills（解决相关能力）, use settle（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「解决」",
-  root: "联想：结合词形与释义记住「解决」",
-  collocations: "settle skills（解决相关能力）, use settle（使用/运用该词）",
-  phrases: "settle skills（解决相关能力）, use settle（使用/运用该词）",
-  example: "It is useful to understand the meaning of settle in this sentence.（理解这句话中 settle 的含义很有帮助。）",
+  meaning: "vt. giải quyết; sắp xếp; khiến định cư ở một thành phố; khiến hoá học lắng. được sử dụng phổ biến settle skills(giải quyết liên quan Năng lực), use settle(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « giải quyết »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « giải quyết »",
+  collocations: "settle skills(giải quyết liên quan Năng lực), use settle(dùng / vận dụng từ này)",
+  phrases: "settle skills(giải quyết liên quan Năng lực), use settle(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of settle in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc settle của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of settle in this sentence.",
-  exampleCN: "理解这句话中 settle 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc settle của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of settle in this sentence.",
-  exampleZh: "理解这句话中 settle 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc settle của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "解决", "topic": "通用"},
-  acceptCN: ["解决", "安排", "使定居", "使沉淀"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "giải quyết", "topic": "Dùng chung"},
+  acceptCN: ["giải quyết", "sắp xếp", "khiến định cư ở một thành phố", "khiến hoá học lắng"]
 },
 {
   id: 54,
   word: "royal",
   ipa: "/ˈrɔɪəl/",
   pos: "n.",
-  meaning: "n. 国王的,女王的,王室的。常用 royal skills（国王的,女王的,王室相关能力）, use royal（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「国王的,女王的,王室的」",
-  root: "联想：结合词形与释义记住「国王的,女王的,王室的」",
-  collocations: "royal skills（国王的,女王的,王室相关能力）, use royal（使用/运用该词）",
-  phrases: "royal skills（国王的,女王的,王室相关能力）, use royal（使用/运用该词）",
-  example: "It is useful to understand the meaning of royal in this sentence.（理解这句话中 royal 的含义很有帮助。）",
+  meaning: "n. họ họ của, nữ hoàng của, hoàng gia của. được sử dụng phổ biến royal skills(họ họ của, nữ hoàng của, hoàng gia liên quan Năng lực), use royal(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «họ họ của, nữ hoàng của, hoàng gia của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «họ họ của, nữ hoàng của, hoàng gia của»",
+  collocations: "royal skills(họ họ của, nữ hoàng của, hoàng gia liên quan Năng lực), use royal(dùng / vận dụng từ này)",
+  phrases: "royal skills(họ họ của, nữ hoàng của, hoàng gia liên quan Năng lực), use royal(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of royal in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc royal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of royal in this sentence.",
-  exampleCN: "理解这句话中 royal 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc royal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of royal in this sentence.",
-  exampleZh: "理解这句话中 royal 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc royal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "国王的", "topic": "通用"},
-  acceptCN: ["国王的", "女王的", "王室的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "họ họ của", "topic": "Dùng chung"},
+  acceptCN: ["họ họ của", "nữ hoàng của", "hoàng gia của"]
 },
 {
   id: 55,
   word: "mathematics",
   ipa: "/ˌmæθəˈmætɪks/",
   pos: "n.",
-  meaning: "n. 数学；〈诗〉同“ripen”；算学。常用 mathematics skills（数学相关能力）, use mathematics（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「数学」",
-  root: "联想：结合词形与释义记住「数学」",
-  collocations: "mathematics skills（数学相关能力）, use mathematics（使用/运用该词）",
-  phrases: "mathematics skills（数学相关能力）, use mathematics（使用/运用该词）",
-  example: "It is useful to understand the meaning of mathematics in this sentence.（理解这句话中 mathematics 的含义很有帮助。）",
+  meaning: "n. toán học; 〈viết tắt của Shijing〉giống«ripen»; coi như học. được sử dụng phổ biến mathematics skills(toán học liên quan Năng lực), use mathematics(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « toán học »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « toán học »",
+  collocations: "mathematics skills(toán học liên quan Năng lực), use mathematics(dùng / vận dụng từ này)",
+  phrases: "mathematics skills(toán học liên quan Năng lực), use mathematics(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of mathematics in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mathematics của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of mathematics in this sentence.",
-  exampleCN: "理解这句话中 mathematics 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mathematics của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of mathematics in this sentence.",
-  exampleZh: "理解这句话中 mathematics 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc mathematics của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "数学", "topic": "通用"},
-  acceptCN: ["数学", "〈诗〉同“ripen”", "算学"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Toán", "topic": "Dùng chung"},
+  acceptCN: ["Toán", "〈viết tắt của Shijing〉giống«ripen»", "coi như học"]
 },
 {
   id: 56,
   word: "contaminate",
   ipa: "/kənˈtæmɪneɪt/",
   pos: "v.",
-  meaning: "v. 污染；弄脏。常用 contaminate water（污染水源）, contaminated food（受污染的食物）, be contaminated by（被…污染）。",
+  meaning: "v. gây ô nhiễm; làm bẩn. được sử dụng phổ biến contaminate water(gây ô nhiễm nguồn nước), contaminated food(nhận gây ô nhiễm của thực phẩm), be contaminated by(chăn… gây ô nhiễm).",
   mnemonic: "",
   root: "",
-  collocations: "contaminate water（污染水源）, contaminated food（受污染的食物）, be contaminated by（被…污染）",
-  phrases: "contaminate water（污染水源）, contaminated food（受污染的食物）, be contaminated by（被…污染）",
-  example: "The chemical spill contaminated the river.（化学品泄漏污染了河流。）",
+  collocations: "contaminate water(gây ô nhiễm nguồn nước), contaminated food(nhận gây ô nhiễm của thực phẩm), be contaminated by(chăn… gây ô nhiễm)",
+  phrases: "contaminate water(gây ô nhiễm nguồn nước), contaminated food(nhận gây ô nhiễm của thực phẩm), be contaminated by(chăn… gây ô nhiễm)",
+  example: "The chemical spill contaminated the river.(hóa chất chất lỏng hoặc khí rò rỉ gây ô nhiễm trợ từ chỉ hành động đã hoàn thành sông.)",
   exampleEN: "The chemical spill contaminated the river.",
-  exampleCN: "化学品泄漏污染了河流。",
+  exampleCN: "hóa chất chất lỏng hoặc khí rò rỉ gây ô nhiễm trợ từ chỉ hành động đã hoàn thành sông.",
   exampleEn: "The chemical spill contaminated the river.",
-  exampleZh: "化学品泄漏污染了河流。",
+  exampleZh: "hóa chất chất lỏng hoặc khí rò rỉ gây ô nhiễm trợ từ chỉ hành động đã hoàn thành sông.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "污染", "topic": "通用"},
-  acceptCN: ["污染", "弄脏", "玷污"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "gây ô nhiễm", "topic": "Dùng chung"},
+  acceptCN: ["gây ô nhiễm", "làm bẩn", "làm bẩn"]
 },
 {
   id: 57,
   word: "grant",
   ipa: "/grɑ:nt/",
   pos: "n.",
-  meaning: "n. 补助金,助学金,津贴。常用 grant skills（补助金,助学金,津贴相关能力）, use grant（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「补助金,助学金,津贴」",
-  root: "联想：结合词形与释义记住「补助金,助学金,津贴」",
-  collocations: "grant skills（补助金,助学金,津贴相关能力）, use grant（使用/运用该词）",
-  phrases: "grant skills（补助金,助学金,津贴相关能力）, use grant（使用/运用该词）",
-  example: "It is useful to understand the meaning of grant in this sentence.（理解这句话中 grant 的含义很有帮助。）",
+  meaning: "n. trợ cấp họ, trợ cấp sinh viên, trợ cấp. được sử dụng phổ biến grant skills(trợ cấp họ, trợ cấp sinh viên, trợ cấp liên quan Năng lực), use grant(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « trợ cấp họ, trợ cấp sinh viên, trợ cấp »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « trợ cấp họ, trợ cấp sinh viên, trợ cấp »",
+  collocations: "grant skills(trợ cấp họ, trợ cấp sinh viên, trợ cấp liên quan Năng lực), use grant(dùng / vận dụng từ này)",
+  phrases: "grant skills(trợ cấp họ, trợ cấp sinh viên, trợ cấp liên quan Năng lực), use grant(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of grant in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc grant của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of grant in this sentence.",
-  exampleCN: "理解这句话中 grant 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc grant của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of grant in this sentence.",
-  exampleZh: "理解这句话中 grant 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc grant của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "补助金", "topic": "通用"},
-  acceptCN: ["补助金", "助学金", "津贴"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "trợ cấp họ", "topic": "Dùng chung"},
+  acceptCN: ["trợ cấp họ", "trợ cấp sinh viên", "trợ cấp"]
 },
 {
   id: 58,
   word: "besides",
   ipa: "/bɪˈsaɪdz/",
   pos: "adv.",
-  meaning: "adv. 而且；此外；以及；更。常用 besides skills（而且相关能力）, use besides（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「而且」",
-  root: "联想：结合词形与释义记住「而且」",
-  collocations: "besides skills（而且相关能力）, use besides（使用/运用该词）",
-  phrases: "besides skills（而且相关能力）, use besides（使用/运用该词）",
-  example: "It is useful to understand the meaning of besides in this sentence.（理解这句话中 besides 的含义很有帮助。）",
+  meaning: "adv. không những... mà còn; ngoài ra; cũng như; thay đổi hoặc thay thế. được sử dụng phổ biến besides skills(không những... mà còn liên quan Năng lực), use besides(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « không những... mà còn »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « không những... mà còn »",
+  collocations: "besides skills(không những... mà còn liên quan Năng lực), use besides(dùng / vận dụng từ này)",
+  phrases: "besides skills(không những... mà còn liên quan Năng lực), use besides(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of besides in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc besides của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of besides in this sentence.",
-  exampleCN: "理解这句话中 besides 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc besides của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of besides in this sentence.",
-  exampleZh: "理解这句话中 besides 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc besides của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "而且", "topic": "通用"},
-  acceptCN: ["而且", "此外", "以及", "更"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "không những... mà còn", "topic": "Dùng chung"},
+  acceptCN: ["không những... mà còn", "ngoài ra", "cũng như", "thay đổi hoặc thay thế"]
 },
 {
   id: 59,
   word: "theme",
   ipa: "/θiːm/",
   pos: "n.",
-  meaning: "n. 主题；题目；主旋律。常用 theme park（主题公园）, theme song（主题曲）, central theme（中心主题）。",
+  meaning: "n. Chủ đề; Đề bài; âm nhạc chủ đề. được sử dụng phổ biến theme park(Chủ đề công viên dành cho công chúng giải trí), theme song(bài hát chủ đề), central theme(trung tâm Chủ đề).",
   mnemonic: "",
   root: "",
-  collocations: "theme park（主题公园）, theme song（主题曲）, central theme（中心主题）",
-  phrases: "theme park（主题公园）, theme song（主题曲）, central theme（中心主题）",
-  example: "The theme of this year's conference is \"Innovation\".（今年会议的主题是\"创新\"。）",
+  collocations: "theme park(Chủ đề công viên dành cho công chúng giải trí), theme song(bài hát chủ đề), central theme(trung tâm Chủ đề)",
+  phrases: "theme park(Chủ đề công viên dành cho công chúng giải trí), theme song(bài hát chủ đề), central theme(trung tâm Chủ đề)",
+  example: "The theme of this year's conference is \"Innovation\".(năm nay cuộc họp của Chủ đề là chỉ theo sau bởi danh từ\" đề xuất ý tưởng mới \".)",
   exampleEN: "The theme of this year's conference is \"Innovation\".",
-  exampleCN: "今年会议的主题是\"创新\"。",
+  exampleCN: "năm nay cuộc họp của Chủ đề là chỉ theo sau bởi danh từ\" đề xuất ý tưởng mới \".",
   exampleEn: "The theme of this year's conference is \"Innovation\".",
-  exampleZh: "今年会议的主题是\"创新\"。",
+  exampleZh: "năm nay cuộc họp của Chủ đề là chỉ theo sau bởi danh từ\" đề xuất ý tưởng mới \".",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "主题", "topic": "通用"},
-  acceptCN: ["主题", "题目", "主旋律"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Chủ đề", "topic": "Dùng chung"},
+  acceptCN: ["Chủ đề", "Đề bài", "âm nhạc chủ đề"]
 },
 {
   id: 60,
   word: "conventional",
   ipa: "/kənˈven.ʃən.əl/",
   pos: "adj.",
-  meaning: "adj. 传统的；常规的；习惯的。常用 conventional wisdom（传统观念）, conventional weapons（常规武器）, conventional method（传统方法）。",
+  meaning: "adj. truyền thống của; quy tắc ứng xử của; thói quen của. được sử dụng phổ biến conventional wisdom(truyền thống khái niệm), conventional weapons(vũ khí thông thường), conventional method(truyền thống Phương pháp).",
   mnemonic: "",
   root: "",
-  collocations: "conventional wisdom（传统观念）, conventional weapons（常规武器）, conventional method（传统方法）",
-  phrases: "conventional wisdom（传统观念）, conventional weapons（常规武器）, conventional method（传统方法）",
-  example: "He decided to follow a more conventional career path.（他决定走一条更传统的职业道路。）",
+  collocations: "conventional wisdom(truyền thống khái niệm), conventional weapons(vũ khí thông thường), conventional method(truyền thống Phương pháp)",
+  phrases: "conventional wisdom(truyền thống khái niệm), conventional weapons(vũ khí thông thường), conventional method(truyền thống Phương pháp)",
+  example: "He decided to follow a more conventional career path.(anh ấy quyết định làm gì đó đi một dải thay đổi hoặc thay thế truyền thống của Nghề nghiệp đường.)",
   exampleEN: "He decided to follow a more conventional career path.",
-  exampleCN: "他决定走一条更传统的职业道路。",
+  exampleCN: "anh ấy quyết định làm gì đó đi một dải thay đổi hoặc thay thế truyền thống của Nghề nghiệp đường.",
   exampleEn: "He decided to follow a more conventional career path.",
-  exampleZh: "他决定走一条更传统的职业道路。",
+  exampleZh: "anh ấy quyết định làm gì đó đi một dải thay đổi hoặc thay thế truyền thống của Nghề nghiệp đường.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "传统", "topic": "通用"},
-  acceptCN: ["传统", "常规", "习惯", "保守"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "truyền thống", "topic": "Dùng chung"},
+  acceptCN: ["truyền thống", "quy tắc ứng xử", "thói quen", "bảo thủ"]
 },
 {
   id: 61,
   word: "airplane",
   ipa: "/ˈeə.pleɪn/",
   pos: "n.",
-  meaning: "n. 飞机。常用 board an airplane（登机）, model airplane（模型飞机）, airplane crash（飞机失事）。",
+  meaning: "n. máy bay. được sử dụng phổ biến board an airplane(lên máy bay), model airplane(mô hình máy bay), airplane crash(tai nạn máy bay).",
   mnemonic: "",
   root: "",
-  collocations: "board an airplane（登机）, model airplane（模型飞机）, airplane crash（飞机失事）",
-  phrases: "board an airplane（登机）, model airplane（模型飞机）, airplane crash（飞机失事）",
-  example: "The airplane took off on time.（飞机准时起飞了。）",
+  collocations: "board an airplane(lên máy bay), model airplane(mô hình máy bay), airplane crash(tai nạn máy bay)",
+  phrases: "board an airplane(lên máy bay), model airplane(mô hình máy bay), airplane crash(tai nạn máy bay)",
+  example: "The airplane took off on time.(máy bay đúng giờ của máy bay cất cánh trợ từ chỉ hành động đã hoàn thành.)",
   exampleEN: "The airplane took off on time.",
-  exampleCN: "飞机准时起飞了。",
+  exampleCN: "máy bay đúng giờ của máy bay cất cánh trợ từ chỉ hành động đã hoàn thành.",
   exampleEn: "The airplane took off on time.",
-  exampleZh: "飞机准时起飞了。",
+  exampleZh: "máy bay đúng giờ của máy bay cất cánh trợ từ chỉ hành động đã hoàn thành.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "飞机", "topic": "通用"},
-  acceptCN: ["飞机"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "máy bay", "topic": "Dùng chung"},
+  acceptCN: ["máy bay"]
 },
 {
   id: 62,
   word: "interact",
   ipa: "/ˌɪn.təˈrækt/",
   pos: "v.",
-  meaning: "v. 互动；相互作用；交流。常用 interact with（与…互动）, interact closely（密切互动）, interact socially（社交互动）。",
+  meaning: "v. tương tác; tương tác; trao đổi. được sử dụng phổ biến interact with(biến thể của… tương tác), interact closely(gần gũi tương tác), interact socially(tương tác tương tác).",
   mnemonic: "",
   root: "",
-  collocations: "interact with（与…互动）, interact closely（密切互动）, interact socially（社交互动）",
-  phrases: "interact with（与…互动）, interact closely（密切互动）, interact socially（社交互动）",
-  example: "Teachers should interact more with their students.（老师应该更多地与学生互动。）",
+  collocations: "interact with(biến thể của… tương tác), interact closely(gần gũi tương tác), interact socially(tương tác tương tác)",
+  phrases: "interact with(biến thể của… tương tác), interact closely(gần gũi tương tác), interact socially(tương tác tương tác)",
+  example: "Teachers should interact more with their students.(Giáo viên nên thay đổi hoặc thay thế nhiều trợ từ kết cấu: dùng trước động từ hoặc tính từ biến thể của Học viên tương tác.)",
   exampleEN: "Teachers should interact more with their students.",
-  exampleCN: "老师应该更多地与学生互动。",
+  exampleCN: "Giáo viên nên thay đổi hoặc thay thế nhiều trợ từ kết cấu: dùng trước động từ hoặc tính từ biến thể của Học viên tương tác.",
   exampleEn: "Teachers should interact more with their students.",
-  exampleZh: "老师应该更多地与学生互动。",
+  exampleZh: "Giáo viên nên thay đổi hoặc thay thế nhiều trợ từ kết cấu: dùng trước động từ hoặc tính từ biến thể của Học viên tương tác.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "互动", "topic": "通用"},
-  acceptCN: ["互动", "相互作用", "交流"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "tương tác", "topic": "Dùng chung"},
+  acceptCN: ["tương tác", "tương tác", "trao đổi"]
 },
 {
   id: 63,
   word: "basis",
   ipa: "/ˈbeɪsɪs/",
   pos: "n.",
-  meaning: "n. 基础；主要成分；基准，基本原则。常用 basis skills（基础相关能力）, use basis（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「基础」",
-  root: "联想：结合词形与释义记住「基础」",
-  collocations: "basis skills（基础相关能力）, use basis（使用/运用该词）",
-  phrases: "basis skills（基础相关能力）, use basis（使用/运用该词）",
-  example: "It is useful to understand the meaning of basis in this sentence.（理解这句话中 basis 的含义很有帮助。）",
+  meaning: "n. Cơ bản; chính thành phần; trắc địa mốc chuẩn, học thuyết cơ bản. được sử dụng phổ biến basis skills(Cơ bản liên quan Năng lực), use basis(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Cơ bản »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « Cơ bản »",
+  collocations: "basis skills(Cơ bản liên quan Năng lực), use basis(dùng / vận dụng từ này)",
+  phrases: "basis skills(Cơ bản liên quan Năng lực), use basis(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of basis in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc basis của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of basis in this sentence.",
-  exampleCN: "理解这句话中 basis 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc basis của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of basis in this sentence.",
-  exampleZh: "理解这句话中 basis 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc basis của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "基础", "topic": "通用"},
-  acceptCN: ["基础", "主要成分", "基准", "基本原则"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Cơ bản", "topic": "Dùng chung"},
+  acceptCN: ["Cơ bản", "chính thành phần", "trắc địa mốc chuẩn", "học thuyết cơ bản"]
 },
 {
   id: 64,
   word: "appetite",
   ipa: "/ˈæp.ə.taɪt/",
   pos: "n.",
-  meaning: "n. 食欲；胃口；欲望。常用 lose one's appetite（食欲不振）, a healthy appetite（好胃口）, appetite for（对…的兴趣）。",
+  meaning: "n. sự thèm ăn; thèm ăn; khát khao. được sử dụng phổ biến lose one's appetite(sự thèm ăn thiếu sinh khí), a healthy appetite(tốt thèm ăn), appetite for(đúng…của hứng thú mong muốn biết về gì đó).",
   mnemonic: "",
   root: "",
-  collocations: "lose one's appetite（食欲不振）, a healthy appetite（好胃口）, appetite for（对…的兴趣）",
-  phrases: "lose one's appetite（食欲不振）, a healthy appetite（好胃口）, appetite for（对…的兴趣）",
-  example: "She has a big appetite after exercise.（运动后她胃口很好。）",
+  collocations: "lose one's appetite(sự thèm ăn thiếu sinh khí), a healthy appetite(tốt thèm ăn), appetite for(đúng…của hứng thú mong muốn biết về gì đó)",
+  phrases: "lose one's appetite(sự thèm ăn thiếu sinh khí), a healthy appetite(tốt thèm ăn), appetite for(đúng…của hứng thú mong muốn biết về gì đó)",
+  example: "She has a big appetite after exercise.(di chuyển họ cô ấy thèm ăn phó từ mức độ tốt.)",
   exampleEN: "She has a big appetite after exercise.",
-  exampleCN: "运动后她胃口很好。",
+  exampleCN: "di chuyển họ cô ấy thèm ăn phó từ mức độ tốt.",
   exampleEn: "She has a big appetite after exercise.",
-  exampleZh: "运动后她胃口很好。",
+  exampleZh: "di chuyển họ cô ấy thèm ăn phó từ mức độ tốt.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "食欲", "topic": "通用"},
-  acceptCN: ["食欲", "胃口", "欲望"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "sự thèm ăn", "topic": "Dùng chung"},
+  acceptCN: ["sự thèm ăn", "thèm ăn", "khát khao"]
 },
 {
   id: 65,
   word: "schedule",
   ipa: "/ˈʃedjuːl/",
   pos: "n./v.",
-  meaning: "n./v. 时间表；日程安排；安排。常用 on schedule（按时）, behind schedule（落后于计划）, tight schedule（紧张的日程）。",
+  meaning: "n./v. lịch trình; lịch trình sắp xếp; sắp xếp. được sử dụng phổ biến on schedule(đúng giờ), behind schedule(tụt hậu họ kế hoạch), tight schedule(căng thẳng của lịch trình).",
   mnemonic: "",
   root: "",
-  collocations: "on schedule（按时）, behind schedule（落后于计划）, tight schedule（紧张的日程）",
-  phrases: "on schedule（按时）, behind schedule（落后于计划）, tight schedule（紧张的日程）",
-  example: "The project is on schedule and will finish on time.（项目按计划进行，将按时完成。）",
+  collocations: "on schedule(đúng giờ), behind schedule(tụt hậu họ kế hoạch), tight schedule(căng thẳng của lịch trình)",
+  phrases: "on schedule(đúng giờ), behind schedule(tụt hậu họ kế hoạch), tight schedule(căng thẳng của lịch trình)",
+  example: "The project is on schedule and will finish on time.(mục nhấn kế hoạch tiến hành, sẽ đúng giờ Hoàn thành.)",
   exampleEN: "The project is on schedule and will finish on time.",
-  exampleCN: "项目按计划进行，将按时完成。",
+  exampleCN: "mục nhấn kế hoạch tiến hành, sẽ đúng giờ Hoàn thành.",
   exampleEn: "The project is on schedule and will finish on time.",
-  exampleZh: "项目按计划进行，将按时完成。",
+  exampleZh: "mục nhấn kế hoạch tiến hành, sẽ đúng giờ Hoàn thành.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "时间表", "topic": "通用"},
-  acceptCN: ["时间表", "日程", "安排"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "lịch trình", "topic": "Dùng chung"},
+  acceptCN: ["lịch trình", "lịch trình", "sắp xếp"]
 },
 {
   id: 66,
   word: "formal",
   ipa: "/ˈfɔ:ml/",
   pos: "adj.",
-  meaning: "adj. （学校教育或培训）正规的；方式上的；礼仪上的。常用 formal skills（（学校教育或培训）正相关能力）, use formal（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「（学校教育或培训）正规的」",
-  root: "联想：结合词形与释义记住「（学校教育或培训）正规的」",
-  collocations: "formal skills（（学校教育或培训）正相关能力）, use formal（使用/运用该词）",
-  phrases: "formal skills（（学校教育或培训）正相关能力）, use formal（使用/运用该词）",
-  example: "It is useful to understand the meaning of formal in this sentence.（理解这句话中 formal 的含义很有帮助。）",
+  meaning: "adj. (trường học Giáo dục có thể nuôi dưỡng) chính quy của; cách thức dùng trong của; phép tắc dùng trong của. được sử dụng phổ biến formal skills((trường học Giáo dục có thể nuôi dưỡng) tương quan thuận Năng lực), use formal(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «(trường học Giáo dục có thể nuôi dưỡng) chính quy của»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «(trường học Giáo dục có thể nuôi dưỡng) chính quy của»",
+  collocations: "formal skills((trường học Giáo dục có thể nuôi dưỡng) tương quan thuận Năng lực), use formal(dùng / vận dụng từ này)",
+  phrases: "formal skills((trường học Giáo dục có thể nuôi dưỡng) tương quan thuận Năng lực), use formal(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of formal in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc formal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of formal in this sentence.",
-  exampleCN: "理解这句话中 formal 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc formal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of formal in this sentence.",
-  exampleZh: "理解这句话中 formal 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc formal của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "正规的", "topic": "通用"},
-  acceptCN: ["正规的", "方式上的", "礼仪上的"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "chính quy của", "topic": "Dùng chung"},
+  acceptCN: ["chính quy của", "cách thức dùng trong của", "phép tắc dùng trong của"]
 },
 {
   id: 67,
   word: "submit",
   ipa: "/səbˈmɪt/",
   pos: "vi.",
-  meaning: "vi. 顺从，服从；甘受，忍受。常用 submit skills（顺从相关能力）, use submit（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「顺从」",
-  root: "联想：结合词形与释义记住「顺从」",
-  collocations: "submit skills（顺从相关能力）, use submit（使用/运用该词）",
-  phrases: "submit skills（顺从相关能力）, use submit（使用/运用该词）",
-  example: "It is useful to understand the meaning of submit in this sentence.（理解这句话中 submit 的含义很有帮助。）",
+  meaning: "vi. ngoan ngoãn, tuân theo mệnh lệnh; họ nhận, chịu đựng. được sử dụng phổ biến submit skills(ngoan ngoãn liên quan Năng lực), use submit(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ngoan ngoãn »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « ngoan ngoãn »",
+  collocations: "submit skills(ngoan ngoãn liên quan Năng lực), use submit(dùng / vận dụng từ này)",
+  phrases: "submit skills(ngoan ngoãn liên quan Năng lực), use submit(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of submit in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc submit của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of submit in this sentence.",
-  exampleCN: "理解这句话中 submit 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc submit của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of submit in this sentence.",
-  exampleZh: "理解这句话中 submit 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc submit của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "顺从", "topic": "通用"},
-  acceptCN: ["顺从", "服从", "甘受", "忍受"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "ngoan ngoãn", "topic": "Dùng chung"},
+  acceptCN: ["ngoan ngoãn", "tuân theo mệnh lệnh", "họ nhận", "Chịu đựng"]
 },
 {
   id: 68,
   word: "advertise",
   ipa: "/ˈædvətaɪz/",
   pos: "vt.",
-  meaning: "vt. 做广告，做宣传；通告，通知；宣扬。常用 advertise skills（做广告相关能力）, use advertise（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「做广告」",
-  root: "联想：结合词形与释义记住「做广告」",
-  collocations: "advertise skills（做广告相关能力）, use advertise（使用/运用该词）",
-  phrases: "advertise skills（做广告相关能力）, use advertise（使用/运用该词）",
-  example: "It is useful to understand the meaning of advertise in this sentence.（理解这句话中 advertise 的含义很有帮助。）",
+  meaning: "vt. làm quảng cáo, làm truyền bá; thông báo, thông báo; tuyên truyền. được sử dụng phổ biến advertise skills(làm quảng cáo liên quan Năng lực), use advertise(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «làm quảng cáo »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «làm quảng cáo »",
+  collocations: "advertise skills(làm quảng cáo liên quan Năng lực), use advertise(dùng / vận dụng từ này)",
+  phrases: "advertise skills(làm quảng cáo liên quan Năng lực), use advertise(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of advertise in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc advertise của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of advertise in this sentence.",
-  exampleCN: "理解这句话中 advertise 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc advertise của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of advertise in this sentence.",
-  exampleZh: "理解这句话中 advertise 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc advertise của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "做广告", "topic": "通用"},
-  acceptCN: ["做广告", "做宣传", "通告", "通知", "宣扬"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "làm quảng cáo", "topic": "Dùng chung"},
+  acceptCN: ["làm quảng cáo", "làm truyền bá", "thông báo", "Thông báo", "tuyên truyền"]
 },
 {
   id: 69,
   word: "commitment",
   ipa: "/kəˈmɪt.mənt/",
   pos: "n.",
-  meaning: "n. 承诺；投入；奉献；责任。常用 make a commitment（做出承诺）, show commitment（表现出投入）, long-term commitment（长期承诺）。",
+  meaning: "n. hứa; ném vào; cung kính dâng hiến; trách nhiệm. được sử dụng phổ biến make a commitment(đưa ra hứa), show commitment(thể hiện đi ra ném vào), long-term commitment(dài hạn hứa).",
   mnemonic: "",
   root: "",
-  collocations: "make a commitment（做出承诺）, show commitment（表现出投入）, long-term commitment（长期承诺）",
-  phrases: "make a commitment（做出承诺）, show commitment（表现出投入）, long-term commitment（长期承诺）",
-  example: "She shows great commitment to her job.（她对工作表现出极大的投入。）",
+  collocations: "make a commitment(đưa ra hứa), show commitment(thể hiện đi ra ném vào), long-term commitment(dài hạn hứa)",
+  phrases: "make a commitment(đưa ra hứa), show commitment(thể hiện đi ra ném vào), long-term commitment(dài hạn hứa)",
+  example: "She shows great commitment to her job.(cô ấy đúng cách hình thức kết hợp công nhân thể hiện đi ra cực đại của ném vào.)",
   exampleEN: "She shows great commitment to her job.",
-  exampleCN: "她对工作表现出极大的投入。",
+  exampleCN: "cô ấy đúng cách hình thức kết hợp công nhân thể hiện đi ra cực đại của ném vào.",
   exampleEn: "She shows great commitment to her job.",
-  exampleZh: "她对工作表现出极大的投入。",
+  exampleZh: "cô ấy đúng cách hình thức kết hợp công nhân thể hiện đi ra cực đại của ném vào.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "承诺", "topic": "通用"},
-  acceptCN: ["承诺", "投入", "奉献", "责任"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Cam kết", "topic": "Dùng chung"},
+  acceptCN: ["Cam kết", "ném vào", "cung kính dâng hiến", "trách nhiệm"]
 },
 {
   id: 70,
   word: "normally",
   ipa: "/ˈnɔ:məli/",
   pos: "adv.",
-  meaning: "adv. 正常地；通常地，一般地；按说；论理。常用 normally skills（正常地相关能力）, use normally（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「正常地」",
-  root: "联想：结合词形与释义记住「正常地」",
-  collocations: "normally skills（正常地相关能力）, use normally（使用/运用该词）",
-  phrases: "normally skills（正常地相关能力）, use normally（使用/运用该词）",
-  example: "It is useful to understand the meaning of normally in this sentence.（理解这句话中 normally 的含义很有帮助。）",
+  meaning: "adv. bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ; thông thường trợ từ kết cấu: dùng trước động từ hoặc tính từ, giống trợ từ kết cấu: dùng trước động từ hoặc tính từ; theo lẽ thường; bình thường. được sử dụng phổ biến normally skills(bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ liên quan Năng lực), use normally(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ»",
+  collocations: "normally skills(bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ liên quan Năng lực), use normally(dùng / vận dụng từ này)",
+  phrases: "normally skills(bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ liên quan Năng lực), use normally(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of normally in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc normally của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of normally in this sentence.",
-  exampleCN: "理解这句话中 normally 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc normally của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of normally in this sentence.",
-  exampleZh: "理解这句话中 normally 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc normally của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "正常地", "topic": "通用"},
-  acceptCN: ["正常地", "通常地", "一般地", "按说", "论理"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ", "topic": "Dùng chung"},
+  acceptCN: ["bình thường trợ từ kết cấu: dùng trước động từ hoặc tính từ", "thông thường trợ từ kết cấu: dùng trước động từ hoặc tính từ", "giống trợ từ kết cấu: dùng trước động từ hoặc tính từ", "theo lẽ thường", "bình thường"]
 },
 {
   id: 71,
   word: "highlight",
   ipa: "/ˈhaɪlaɪt/",
   pos: "n.",
-  meaning: "n. （图画或照片的）强光部份；最重要的事情；最精彩的部分。常用 highlight skills（（图画或照片的）强光相关能力）, use highlight（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「（图画或照片的）强光部份」",
-  root: "联想：结合词形与释义记住「（图画或照片的）强光部份」",
-  collocations: "highlight skills（（图画或照片的）强光相关能力）, use highlight（使用/运用该词）",
-  phrases: "highlight skills（（图画或照片的）强光相关能力）, use highlight（使用/运用该词）",
-  example: "It is useful to understand the meaning of highlight in this sentence.（理解这句话中 highlight 的含义很有帮助。）",
+  meaning: "n. (sơ đồ vẽ có thể bức ảnh của)họ ánh sáng bộ lượng từ cho quà tặng; biến thể của quan trọng của sự việc; biến thể của tuyệt vời của phần. được sử dụng phổ biến highlight skills((sơ đồ vẽ có thể bức ảnh của)họ ánh sáng liên quan Năng lực), use highlight(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «(sơ đồ vẽ có thể bức ảnh của)họ ánh sáng bộ lượng từ cho quà tặng»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «(sơ đồ vẽ có thể bức ảnh của)họ ánh sáng bộ lượng từ cho quà tặng»",
+  collocations: "highlight skills((sơ đồ vẽ có thể bức ảnh của)họ ánh sáng liên quan Năng lực), use highlight(dùng / vận dụng từ này)",
+  phrases: "highlight skills((sơ đồ vẽ có thể bức ảnh của)họ ánh sáng liên quan Năng lực), use highlight(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of highlight in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc highlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of highlight in this sentence.",
-  exampleCN: "理解这句话中 highlight 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc highlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of highlight in this sentence.",
-  exampleZh: "理解这句话中 highlight 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc highlight của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "强光部份", "topic": "通用"},
-  acceptCN: ["强光部份", "最重要的事情", "最精彩的部分"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "họ ánh sáng bộ lượng từ cho quà tặng", "topic": "Dùng chung"},
+  acceptCN: ["họ ánh sáng bộ lượng từ cho quà tặng", "biến thể của quan trọng của sự việc", "biến thể của tuyệt vời của phần"]
 },
 {
   id: 72,
   word: "rat",
   ipa: "/ræt/",
   pos: "n.",
-  meaning: "n. 大老鼠；似鼠动物；鼠辈，卑鄙小人。常用 rat skills（大老鼠相关能力）, use rat（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「大老鼠」",
-  root: "联想：结合词形与释义记住「大老鼠」",
-  collocations: "rat skills（大老鼠相关能力）, use rat（使用/运用该词）",
-  phrases: "rat skills（大老鼠相关能力）, use rat（使用/运用该词）",
-  example: "It is useful to understand the meaning of rat in this sentence.（理解这句话中 rat 的含义很有帮助。）",
+  meaning: "n. chuột; dùng trong hình thức kết hợp chuột động vật; kẻ đê tiện, hèn hạ người có địa vị xã hội thấp cũ. được sử dụng phổ biến rat skills(chuột liên quan Năng lực), use rat(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « chuột »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « chuột »",
+  collocations: "rat skills(chuột liên quan Năng lực), use rat(dùng / vận dụng từ này)",
+  phrases: "rat skills(chuột liên quan Năng lực), use rat(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of rat in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of rat in this sentence.",
-  exampleCN: "理解这句话中 rat 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of rat in this sentence.",
-  exampleZh: "理解这句话中 rat 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rat của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "大老鼠", "topic": "通用"},
-  acceptCN: ["大老鼠", "似鼠动物", "鼠辈", "卑鄙小人"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "chuột", "topic": "Dùng chung"},
+  acceptCN: ["chuột", "dùng trong hình thức kết hợp chuột động vật", "kẻ đê tiện", "hèn hạ người có địa vị xã hội thấp cũ"]
 },
 {
   id: 73,
   word: "estimate",
   ipa: "/ˈes.tɪ.meɪt/",
   pos: "v. / n.",
-  meaning: "v. / n. 估计；估算；估价。常用 rough estimate（粗略估计）, estimate the cost（估算成本）, by one's estimate（据某人估计）。",
+  meaning: "v. / n. ước tính; sự đánh giá; định giá. được sử dụng phổ biến rough estimate(thô không chính xác hoặc không chuẩn ước tính), estimate the cost(sự đánh giá chi phí sản xuất), by one's estimate(biến thể của một người nào đó ước tính).",
   mnemonic: "",
   root: "",
-  collocations: "rough estimate（粗略估计）, estimate the cost（估算成本）, by one's estimate（据某人估计）",
-  phrases: "rough estimate（粗略估计）, estimate the cost（估算成本）, by one's estimate（据某人估计）",
-  example: "We estimate that the project will take three months.（我们估计这个项目需要三个月。）",
+  collocations: "rough estimate(thô không chính xác hoặc không chuẩn ước tính), estimate the cost(sự đánh giá chi phí sản xuất), by one's estimate(biến thể của một người nào đó ước tính)",
+  phrases: "rough estimate(thô không chính xác hoặc không chuẩn ước tính), estimate the cost(sự đánh giá chi phí sản xuất), by one's estimate(biến thể của một người nào đó ước tính)",
+  example: "We estimate that the project will take three months.(chúng tôi ước tính đại từ này mục cần họ dùng trong mặt trăng.)",
   exampleEN: "We estimate that the project will take three months.",
-  exampleCN: "我们估计这个项目需要三个月。",
+  exampleCN: "chúng tôi ước tính đại từ này mục cần họ dùng trong mặt trăng.",
   exampleEn: "We estimate that the project will take three months.",
-  exampleZh: "我们估计这个项目需要三个月。",
+  exampleZh: "chúng tôi ước tính đại từ này mục cần họ dùng trong mặt trăng.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "估计", "topic": "通用"},
-  acceptCN: ["估计", "估算", "估价"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "ước tính", "topic": "Dùng chung"},
+  acceptCN: ["ước tính", "sự đánh giá", "định giá"]
 },
 {
   id: 74,
   word: "protein",
   ipa: "/ˈprəʊti:n/",
   pos: "n.",
-  meaning: "n. [化]朊，蛋白（质）。常用 protein skills（[化]朊相关能力）, use protein（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「[化]朊」",
-  root: "联想：结合词形与释义记住「[化]朊」",
-  collocations: "protein skills（[化]朊相关能力）, use protein（使用/运用该词）",
-  phrases: "protein skills（[化]朊相关能力）, use protein（使用/运用该词）",
-  example: "It is useful to understand the meaning of protein in this sentence.（理解这句话中 protein 的含义很有帮助。）",
+  meaning: "n. [biến thể của], lòng trắng trứng (tính cách). được sử dụng phổ biến protein skills([biến thể của] liên quan Năng lực), use protein(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «[biến thể của]»",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ «[biến thể của]»",
+  collocations: "protein skills([biến thể của] liên quan Năng lực), use protein(dùng / vận dụng từ này)",
+  phrases: "protein skills([biến thể của] liên quan Năng lực), use protein(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of protein in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc protein của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of protein in this sentence.",
-  exampleCN: "理解这句话中 protein 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc protein của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of protein in this sentence.",
-  exampleZh: "理解这句话中 protein 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc protein của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "[化]朊", "topic": "通用"},
-  acceptCN: ["[化]朊", "蛋白"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "[biến thể của]", "topic": "Dùng chung"},
+  acceptCN: ["[biến thể của]", "lòng trắng trứng"]
 },
 {
   id: 75,
   word: "guy",
   ipa: "/ɡaɪ/",
   pos: "n./v.",
-  meaning: "n./v. 家伙；男人；嘲弄。常用 nice guy（好人）, funny guy（有趣的家伙）, guy rope（拉索）。",
+  meaning: "n./v. biến thể của; một người đàn ông; chế giễu. được sử dụng phổ biến nice guy(người tốt), funny guy(thú vị của biến thể của), guy rope(kéo họ).",
   mnemonic: "",
   root: "",
-  collocations: "nice guy（好人）, funny guy（有趣的家伙）, guy rope（拉索）",
-  phrases: "nice guy（好人）, funny guy（有趣的家伙）, guy rope（拉索）",
-  example: "He is a really nice guy.（他真是个好人。）",
+  collocations: "nice guy(người tốt), funny guy(thú vị của biến thể của), guy rope(kéo họ)",
+  phrases: "nice guy(người tốt), funny guy(thú vị của biến thể của), guy rope(kéo họ)",
+  example: "He is a really nice guy.(anh ấy thực sự dùng trong người tốt.)",
   exampleEN: "He is a really nice guy.",
-  exampleCN: "他真是个好人。",
+  exampleCN: "anh ấy thực sự dùng trong người tốt.",
   exampleEn: "He is a really nice guy.",
-  exampleZh: "他真是个好人。",
+  exampleZh: "anh ấy thực sự dùng trong người tốt.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "家伙", "topic": "通用"},
-  acceptCN: ["家伙", "男人"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "biến thể của", "topic": "Dùng chung"},
+  acceptCN: ["biến thể của", "một người đàn ông"]
 },
 {
   id: 76,
   word: "represent",
   ipa: "/ˌreprɪˈzent/",
   pos: "vt.",
-  meaning: "vt. 表现，象征；代表，代理；扮演；作为示范。常用 represent skills（表现相关能力）, use represent（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「表现」",
-  root: "联想：结合词形与释义记住「表现」",
-  collocations: "represent skills（表现相关能力）, use represent（使用/运用该词）",
-  phrases: "represent skills（表现相关能力）, use represent（使用/运用该词）",
-  example: "It is useful to understand the meaning of represent in this sentence.（理解这句话中 represent 的含义很有帮助。）",
+  meaning: "vt. thể hiện, biểu tượng; đại diện, đại diện cho ai đó trong một vị trí trách nhiệm; đóng vai; hành vi trình diễn. được sử dụng phổ biến represent skills(thể hiện liên quan Năng lực), use represent(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thể hiện »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « thể hiện »",
+  collocations: "represent skills(thể hiện liên quan Năng lực), use represent(dùng / vận dụng từ này)",
+  phrases: "represent skills(thể hiện liên quan Năng lực), use represent(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of represent in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc represent của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of represent in this sentence.",
-  exampleCN: "理解这句话中 represent 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc represent của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of represent in this sentence.",
-  exampleZh: "理解这句话中 represent 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc represent của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "表现", "topic": "通用"},
-  acceptCN: ["表现", "象征", "代表", "代理", "扮演", "作为示范"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "Thể hiện", "topic": "Dùng chung"},
+  acceptCN: ["Thể hiện", "biểu tượng", "Đại diện", "đại diện cho ai đó trong một vị trí trách nhiệm", "đóng vai", "hành vi trình diễn"]
 },
 {
   id: 77,
   word: "scale",
   ipa: "/skeɪl/",
   pos: "n.",
-  meaning: "n. 规模；比例（尺）；鱼鳞；级别。常用 scale skills（规模相关能力）, use scale（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「规模」",
-  root: "联想：结合词形与释义记住「规模」",
-  collocations: "scale skills（规模相关能力）, use scale（使用/运用该词）",
-  phrases: "scale skills（规模相关能力）, use scale（使用/运用该词）",
-  example: "It is useful to understand the meaning of scale in this sentence.（理解这句话中 scale 的含义很有帮助。）",
+  meaning: "n. quy mô; tỷ lệ (một trong các ký tự dùng để biểu diễn nốt nhạc trong phổ gongche); vảy cá; cấp bậc quân sự. được sử dụng phổ biến scale skills(quy mô liên quan Năng lực), use scale(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « quy mô »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « quy mô »",
+  collocations: "scale skills(quy mô liên quan Năng lực), use scale(dùng / vận dụng từ này)",
+  phrases: "scale skills(quy mô liên quan Năng lực), use scale(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of scale in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc scale của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of scale in this sentence.",
-  exampleCN: "理解这句话中 scale 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc scale của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of scale in this sentence.",
-  exampleZh: "理解这句话中 scale 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc scale của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "规模", "topic": "通用"},
-  acceptCN: ["规模", "比例", "鱼鳞", "级别"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "quy mô", "topic": "Dùng chung"},
+  acceptCN: ["quy mô", "tỷ lệ", "vảy cá", "cấp bậc quân sự"]
 },
 {
   id: 78,
   word: "pump",
   ipa: "/pʌmp/",
   pos: "n. / v.",
-  meaning: "n. / v. 泵；抽水；打气。常用 water pump（水泵）, pump up（打气；激励）, heat pump（热泵）。",
+  meaning: "n. / v. bơm từ mượn; bơm nước; bơm hơi. được sử dụng phổ biến water pump(máy bơm nước), pump up(bơm hơi; khích lệ), heat pump(hâm nóng bơm từ mượn).",
   mnemonic: "",
   root: "",
-  collocations: "water pump（水泵）, pump up（打气；激励）, heat pump（热泵）",
-  phrases: "water pump（水泵）, pump up（打气；激励）, heat pump（热泵）",
-  example: "He pumped up the car tyre at the garage.（他在修车厂给汽车轮胎打了气。）",
+  collocations: "water pump(máy bơm nước), pump up(bơm hơi; khích lệ), heat pump(hâm nóng bơm từ mượn)",
+  phrases: "water pump(máy bơm nước), pump up(bơm hơi; khích lệ), heat pump(hâm nóng bơm từ mượn)",
+  example: "He pumped up the car tyre at the garage.(anh ấy tồn tại sửa xe đạp ô tô bộ hán trong chữ Hán bộ Khang Hy số 27 cung cấp xe hơi lốp xe tá từ mượn trợ từ chỉ hành động đã hoàn thành khí.)",
   exampleEN: "He pumped up the car tyre at the garage.",
-  exampleCN: "他在修车厂给汽车轮胎打了气。",
+  exampleCN: "anh ấy tồn tại sửa xe đạp ô tô bộ hán trong chữ Hán bộ Khang Hy số 27 cung cấp xe hơi lốp xe tá từ mượn trợ từ chỉ hành động đã hoàn thành khí.",
   exampleEn: "He pumped up the car tyre at the garage.",
-  exampleZh: "他在修车厂给汽车轮胎打了气。",
+  exampleZh: "anh ấy tồn tại sửa xe đạp ô tô bộ hán trong chữ Hán bộ Khang Hy số 27 cung cấp xe hơi lốp xe tá từ mượn trợ từ chỉ hành động đã hoàn thành khí.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "泵", "topic": "通用"},
-  acceptCN: ["泵", "抽水", "打气", "抽"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "bơm từ mượn", "topic": "Dùng chung"},
+  acceptCN: ["bơm từ mượn", "bơm nước", "bơm hơi", "rút ra"]
 },
 {
   id: 79,
   word: "powerful",
   ipa: "/ˈpaʊə.fəl/",
   pos: "adj.",
-  meaning: "adj. 强大的；有影响力的；有力的。常用 powerful engine（强大的引擎）, powerful speech（有力的演讲）, powerful country（强国）。",
+  meaning: "adj. to lớn và mạnh mẽ của; có tầm ảnh hưởng họ của; mạnh mẽ của. được sử dụng phổ biến powerful engine(to lớn và mạnh mẽ của động cơ từ mượn), powerful speech(mạnh mẽ của diễn thuyết), powerful country(mỉa mai Trung Quốc đại lục cách dùng ở Đài Loan và Hồng Kông).",
   mnemonic: "",
   root: "",
-  collocations: "powerful engine（强大的引擎）, powerful speech（有力的演讲）, powerful country（强国）",
-  phrases: "powerful engine（强大的引擎）, powerful speech（有力的演讲）, powerful country（强国）",
-  example: "The president is the most powerful person in the country.（总统是这个国家最有权力的人。）",
+  collocations: "powerful engine(to lớn và mạnh mẽ của động cơ từ mượn), powerful speech(mạnh mẽ của diễn thuyết), powerful country(mỉa mai Trung Quốc đại lục cách dùng ở Đài Loan và Hồng Kông)",
+  phrases: "powerful engine(to lớn và mạnh mẽ của động cơ từ mượn), powerful speech(mạnh mẽ của diễn thuyết), powerful country(mỉa mai Trung Quốc đại lục cách dùng ở Đài Loan và Hồng Kông)",
+  example: "The president is the most powerful person in the country.(tổng thống của một quốc gia là chỉ theo sau bởi danh từ đại từ này quốc gia biến thể của có quyền họ của người.)",
   exampleEN: "The president is the most powerful person in the country.",
-  exampleCN: "总统是这个国家最有权力的人。",
+  exampleCN: "tổng thống của một quốc gia là chỉ theo sau bởi danh từ đại từ này quốc gia biến thể của có quyền họ của người.",
   exampleEn: "The president is the most powerful person in the country.",
-  exampleZh: "总统是这个国家最有权力的人。",
+  exampleZh: "tổng thống của một quốc gia là chỉ theo sau bởi danh từ đại từ này quốc gia biến thể của có quyền họ của người.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "强大", "topic": "通用"},
-  acceptCN: ["强大", "有力", "有权势"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "to lớn và mạnh mẽ", "topic": "Dùng chung"},
+  acceptCN: ["to lớn và mạnh mẽ", "mạnh mẽ", "có quyền quyền lực"]
 },
 {
   id: 80,
   word: "rank",
   ipa: "/ræŋk/",
   pos: "n.",
-  meaning: "n. 阶层，等级；军衔；次序，顺序；行列。常用 rank skills（阶层相关能力）, use rank（使用/运用该词）。",
-  mnemonic: "联想：结合词形与释义记住「阶层」",
-  root: "联想：结合词形与释义记住「阶层」",
-  collocations: "rank skills（阶层相关能力）, use rank（使用/运用该词）",
-  phrases: "rank skills（阶层相关能力）, use rank（使用/运用该词）",
-  example: "It is useful to understand the meaning of rank in this sentence.（理解这句话中 rank 的含义很有帮助。）",
+  meaning: "n. giai cấp xã hội, Cấp độ; cấp bậc quân đội; trình tự, trình tự; đội hình. được sử dụng phổ biến rank skills(giai cấp xã hội liên quan Năng lực), use rank(dùng / vận dụng từ này).",
+  mnemonic: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « giai cấp xã hội »",
+  root: "liên tưởng về mặt nhận thức: kết hợp hình thức của từ ví dụ: biến tố biến thể của Nghĩa nhớ « giai cấp xã hội »",
+  collocations: "rank skills(giai cấp xã hội liên quan Năng lực), use rank(dùng / vận dụng từ này)",
+  phrases: "rank skills(giai cấp xã hội liên quan Năng lực), use rank(dùng / vận dụng từ này)",
+  example: "It is useful to understand the meaning of rank in this sentence.(lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rank của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.)",
   exampleEN: "It is useful to understand the meaning of rank in this sentence.",
-  exampleCN: "理解这句话中 rank 的含义很有帮助。",
+  exampleCN: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rank của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   exampleEn: "It is useful to understand the meaning of rank in this sentence.",
-  exampleZh: "理解这句话中 rank 的含义很有帮助。",
+  exampleZh: "lĩnh hội đại từ này biến thể của phương ngữ hình thức kết hợp Trung Quốc rank của ý nghĩa hàm chứa trong một cụm từ phó từ mức độ hữu ích.",
   derivatives: "",
   distinguish: "",
   synonyms: [],
   antonyms: [],
-  examTag: {"source": "大学英语四级", "frequency": 4, "commonUsage": "阶层", "topic": "通用"},
-  acceptCN: ["阶层", "等级", "军衔", "次序", "顺序", "行列"]
+  examTag: {"source": "Tiếng Anh CET-4", "frequency": 4, "commonUsage": "giai cấp xã hội", "topic": "Dùng chung"},
+  acceptCN: ["giai cấp xã hội", "Cấp độ", "cấp bậc quân đội", "trình tự", "trình tự", "đội hình"]
 }
   ];
   var TOTAL_QUESTIONS = 80;
@@ -1909,150 +1910,150 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
       '<button class="btn-play btn-play-card" data-word="'+esc(w.word)+'">▶</button></div>'+
       '<div><span class="word-pos">'+esc(w.pos)+'</span><span>'+esc(w.meaning)+'</span></div>'+
       '<div class="word-blocks">'+
-        block('记', w.mnemonic)+
-        block('考', w.collocations || w.phrases)+
-        block('例', w.example)+
-        block('派', w.derivatives)+
-        block('辨', w.distinguish)+
-      '</div><div class="hint">点击收起</div>';
-    card.addEventListener('click', e => {
-      if(e.target.closest('.btn-play-card')) return;
-      const open = card.classList.contains('expanded');
-      document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
-      if(!open) card.classList.add('expanded');
-    });
-    card.querySelector('.btn-play-card').addEventListener('click', function(e){
-      e.stopPropagation();
-      document.querySelectorAll('.btn-play.playing').forEach(b => b.classList.remove('playing'));
-      this.classList.add('playing');
-      speakWord(w.word, () => this.classList.remove('playing'));
-    });
-    learnGrid.appendChild(card);
-  });
+ block('ghi chép', w.mnemonic)+
+ block('đánh', w.collocations || w.phrases)+
+ block('ví dụ', w.example)+
+ block('dùng trong', w.derivatives)+
+ block('phân biệt', w.distinguish)+
+ '</div><div class="hint"> nhấn nhận dậy</div>';
+ card.addEventListener('click', e => {
+ if(e.target.closest('.btn-play-card')) return;
+ const open = card.classList.contains('expanded');
+ document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
+ if(!open) card.classList.add('expanded');
+ });
+ card.querySelector('.btn-play-card').addEventListener('click', function(e){
+ e.stopPropagation();
+ document.querySelectorAll('.btn-play.playing').forEach(b => b.classList.remove('playing'));
+ this.classList.add('playing');
+ speakWord(w.word, () => this.classList.remove('playing'));
+ });
+ learnGrid.appendChild(card);
+ });
 
-  const navTabs = document.getElementById('navTabs');
-  const learnSection = document.getElementById('learnSection');
-  const testSection = document.getElementById('testSection');
-  let currentMode = 'learn';
-  navTabs.addEventListener('click', e => {
-    const tab = e.target.closest('.nav-tab'); if(!tab) return;
-    const mode = tab.dataset.mode; if(mode === currentMode) return;
-    currentMode = mode;
-    navTabs.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t === tab));
-    learnSection.classList.toggle('active', mode === 'learn');
-    testSection.classList.toggle('active', mode === 'test');
-    if(mode === 'test'){ showTestSetup(); renderHistory(); }
-    if(synth) synth.cancel();
-  });
+ const navTabs = document.getElementById('navTabs');
+ const learnSection = document.getElementById('learnSection');
+ const testSection = document.getElementById('testSection');
+ let currentMode = 'learn';
+ navTabs.addEventListener('click', e => {
+ const tab = e.target.closest('.nav-tab'); if(!tab) return;
+ const mode = tab.dataset.mode; if(mode === currentMode) return;
+ currentMode = mode;
+ navTabs.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t === tab));
+ learnSection.classList.toggle('active', mode === 'learn');
+ testSection.classList.toggle('active', mode === 'test');
+ if(mode === 'test'){ showTestSetup(); renderHistory(); }
+ if(synth) synth.cancel();
+ });
 
-  const testSetup = document.getElementById('testSetup');
-  const testActiveArea = document.getElementById('testActiveArea');
-  const testResults = document.getElementById('testResults');
-  const btnStartTest = document.getElementById('btnStartTest');
-  const btnPlayTest = document.getElementById('btnPlayTest');
-  const btnSubmit = document.getElementById('btnSubmit');
-  const btnNext = document.getElementById('btnNext');
-  const btnRetry = document.getElementById('btnRetry');
-  const btnBackToSetup = document.getElementById('btnBackToSetup');
-  const btnClearHistory = document.getElementById('btnClearHistory');
-  const inputSpelling = document.getElementById('inputSpelling');
-  const inputMeaning = document.getElementById('inputMeaning');
-  const testFeedback = document.getElementById('testFeedback');
-  const testProgressLabel = document.getElementById('testProgressLabel');
-  const testScoreLabel = document.getElementById('testScoreLabel');
-  const progressBarFill = document.getElementById('progressBarFill');
-  const resultsScore = document.getElementById('resultsScore');
-  const resultsDetail = document.getElementById('resultsDetail');
-  const resultsTableBody = document.getElementById('resultsTableBody');
-  const historyContent = document.getElementById('historyContent');
+ const testSetup = document.getElementById('testSetup');
+ const testActiveArea = document.getElementById('testActiveArea');
+ const testResults = document.getElementById('testResults');
+ const btnStartTest = document.getElementById('btnStartTest');
+ const btnPlayTest = document.getElementById('btnPlayTest');
+ const btnSubmit = document.getElementById('btnSubmit');
+ const btnNext = document.getElementById('btnNext');
+ const btnRetry = document.getElementById('btnRetry');
+ const btnBackToSetup = document.getElementById('btnBackToSetup');
+ const btnClearHistory = document.getElementById('btnClearHistory');
+ const inputSpelling = document.getElementById('inputSpelling');
+ const inputMeaning = document.getElementById('inputMeaning');
+ const testFeedback = document.getElementById('testFeedback');
+ const testProgressLabel = document.getElementById('testProgressLabel');
+ const testScoreLabel = document.getElementById('testScoreLabel');
+ const progressBarFill = document.getElementById('progressBarFill');
+ const resultsScore = document.getElementById('resultsScore');
+ const resultsDetail = document.getElementById('resultsDetail');
+ const resultsTableBody = document.getElementById('resultsTableBody');
+ const historyContent = document.getElementById('historyContent');
 
-  function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e){ return []; } }
-  function saveHistory(r){ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
-  function renderHistory(){
-    const h = getHistory();
-    if(!h.length){ historyContent.innerHTML = '<div style="color:#888;margin-top:8px">暂无记录</div>'; return; }
-    historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {
-      const t = new Date(r.timestamp);
-      return '<li>'+r.score+'/'+r.total+'（'+r.percent+'%） · '+t.toLocaleString()+'</li>';
-    }).join('')+'</ul>';
-  }
-  btnClearHistory.addEventListener('click', () => { if(confirm('清除历史？')){ localStorage.removeItem(HISTORY_KEY); renderHistory(); } });
+ function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e){ return []; } }
+ function saveHistory(r){ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
+ function renderHistory(){
+ const h = getHistory();
+ if(!h.length){ historyContent.innerHTML = '<div style="color:#888;margin-top:8px">tạm thời không có ghi chép </div>'; return; }
+ historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {
+ const t = new Date(r.timestamp);
+ return '<li>'+r.score+'/'+r.total+'('+r.percent+'%) · '+t.toLocaleString()+'</li>';
+ }).join('')+'</ul>';
+ }
+ btnClearHistory.addEventListener('click', () => { if(confirm(' dọn dẹp Lịch sử?')){ localStorage.removeItem(HISTORY_KEY); renderHistory(); } });
 
-  let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
-  function shuffle(a){ const x=[...a]; for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; } return x; }
-  function resetTestState(){
-    testSetup.style.display=''; testActiveArea.classList.remove('visible'); testResults.classList.remove('visible');
-    testFeedback.className='test-feedback'; testFeedback.textContent=''; btnNext.classList.remove('visible');
-    inputSpelling.value=''; inputMeaning.value=''; btnSubmit.disabled=false; btnSubmit.style.display='';
-  }
-  function showTestSetup(){ resetTestState(); }
-  btnStartTest.addEventListener('click', () => {
-    testWords = shuffle(wordData).slice(0, TOTAL_QUESTIONS);
-    testCurrentIndex=0; testScore=0; testResultsData=[]; testSubmitted=false;
-    testSetup.style.display='none'; testActiveArea.classList.add('visible'); testResults.classList.remove('visible');
-    updateProgress(); setTimeout(playCurrent, 300);
-  });
-  function updateProgress(){
-    testProgressLabel.textContent = '第 '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' 题';
-    testScoreLabel.textContent = '得分: '+testScore;
-    progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
-  }
-  function playCurrent(){ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }
-  btnPlayTest.addEventListener('click', () => { if(!testSubmitted) playCurrent(); });
+ let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
+ function shuffle(a){ const x=[...a]; for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; } return x; }
+ function resetTestState(){
+ testSetup.style.display=''; testActiveArea.classList.remove('visible'); testResults.classList.remove('visible');
+ testFeedback.className='test-feedback'; testFeedback.textContent=''; btnNext.classList.remove('visible');
+ inputSpelling.value=''; inputMeaning.value=''; btnSubmit.disabled=false; btnSubmit.style.display='';
+ }
+ function showTestSetup(){ resetTestState(); }
+ btnStartTest.addEventListener('click', () => {
+ testWords = shuffle(wordData).slice(0, TOTAL_QUESTIONS);
+ testCurrentIndex=0; testScore=0; testResultsData=[]; testSubmitted=false;
+ testSetup.style.display='none'; testActiveArea.classList.add('visible'); testResults.classList.remove('visible');
+ updateProgress(); setTimeout(playCurrent, 300);
+ });
+ function updateProgress(){
+ testProgressLabel.textContent = ' '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' họ';
+ testScoreLabel.textContent = ' Điểm số: '+testScore;
+ progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
+ }
+ function playCurrent(){ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }
+ btnPlayTest.addEventListener('click', () => { if(!testSubmitted) playCurrent(); });
 
-  function cleanCN(s){ return String(s||'').replace(/[，,、。；;：:！!？?（）()【】\[\]""''\s]/g,''); }
-  function submitAnswer(){
-    if(testSubmitted || testCurrentIndex>=testWords.length) return;
-    testSubmitted = true; btnSubmit.disabled = true;
-    const w = testWords[testCurrentIndex];
-    const userSpelling = inputSpelling.value.trim();
-    const userMeaningClean = cleanCN(inputMeaning.value);
-    const spellingOk = userSpelling.toLowerCase() === w.word.toLowerCase();
-    let meaningOk = false;
-    if(userMeaningClean){
-      for(const a of (w.acceptCN||[])){
-        const ac = cleanCN(a);
-        if(ac && (userMeaningClean.includes(ac) || ac.includes(userMeaningClean))){ meaningOk = true; break; }
-      }
-      if(!meaningOk){
-        const m = cleanCN(w.meaning);
-        if(m && (userMeaningClean.includes(m) || m.includes(userMeaningClean))) meaningOk = true;
-      }
-    }
-    const both = spellingOk && meaningOk;
-    const earned = both ? 1 : ((spellingOk || meaningOk) ? 0.5 : 0);
-    testScore += earned;
-    testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
-    testFeedback.innerHTML = (both?'全对':(spellingOk||meaningOk?'部分正确':'再看看'))+
-      '<div style="margin-top:6px;font-size:.9rem">答案：'+esc(w.word)+' · '+esc(w.meaning)+'</div>';
-    testResultsData.push({
-      word: w.word, ipa: w.ipa || '', meaning: w.meaning,
-      userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
-      spellingCorrect: spellingOk, meaningCorrect: meaningOk, earned: earned
-    });
-    btnNext.classList.add('visible');
-  }
-  btnSubmit.addEventListener('click', submitAnswer);
-  inputMeaning.addEventListener('keydown', e => { if(e.key==='Enter') submitAnswer(); });
-  inputSpelling.addEventListener('keydown', e => { if(e.key==='Enter') inputMeaning.focus(); });
+ function cleanCN(s){ return String(s||'').replace(/[,,,.;;::!!??()()【】\[\]""''\s]/g,''); }
+ function submitAnswer(){
+ if(testSubmitted || testCurrentIndex>=testWords.length) return;
+ testSubmitted = true; btnSubmit.disabled = true;
+ const w = testWords[testCurrentIndex];
+ const userSpelling = inputSpelling.value.trim();
+ const userMeaningClean = cleanCN(inputMeaning.value);
+ const spellingOk = userSpelling.toLowerCase() === w.word.toLowerCase();
+ let meaningOk = false;
+ if(userMeaningClean){
+ for(const a of (w.acceptCN||[])){
+ const ac = cleanCN(a);
+ if(ac && (userMeaningClean.includes(ac) || ac.includes(userMeaningClean))){ meaningOk = true; break; }
+ }
+ if(!meaningOk){
+ const m = cleanCN(w.meaning);
+ if(m && (userMeaningClean.includes(m) || m.includes(userMeaningClean))) meaningOk = true;
+ }
+ }
+ const both = spellingOk && meaningOk;
+ const earned = both? 1: ((spellingOk || meaningOk)? 0.5: 0);
+ testScore += earned;
+ testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
+ testFeedback.innerHTML = (both?'họ đúng':(spellingOk||meaningOk?' phần Đúng ':'lại xem qua '))+
+ '<div style="margin-top:6px;font-size:.9rem"> Đáp án: '+esc(w.word)+' · '+esc(w.meaning)+'</div>';
+ testResultsData.push({
+ word: w.word, ipa: w.ipa || '', meaning: w.meaning,
+ userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
+ spellingCorrect: spellingOk, meaningCorrect: meaningOk, earned: earned
+ });
+ btnNext.classList.add('visible');
+ }
+ btnSubmit.addEventListener('click', submitAnswer);
+ inputMeaning.addEventListener('keydown', e => { if(e.key==='Enter') submitAnswer(); });
+ inputSpelling.addEventListener('keydown', e => { if(e.key==='Enter') inputMeaning.focus(); });
 
-  function nextQ(){
-    testCurrentIndex++; testSubmitted=false; btnSubmit.disabled=false; btnNext.classList.remove('visible');
-    testFeedback.className='test-feedback'; inputSpelling.value=''; inputMeaning.value='';
-    if(testCurrentIndex >= TOTAL_QUESTIONS){ finish(); return; }
-    updateProgress(); setTimeout(playCurrent, 250); inputSpelling.focus();
-  }
-  btnNext.addEventListener('click', nextQ);
+ function nextQ(){
+ testCurrentIndex++; testSubmitted=false; btnSubmit.disabled=false; btnNext.classList.remove('visible');
+ testFeedback.className='test-feedback'; inputSpelling.value=''; inputMeaning.value='';
+ if(testCurrentIndex >= TOTAL_QUESTIONS){ finish(); return; }
+ updateProgress(); setTimeout(playCurrent, 250); inputSpelling.focus();
+ }
+ btnNext.addEventListener('click', nextQ);
 
-  function finish(){
-    testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
-    const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
-    resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
-    resultsDetail.textContent = '正确率 '+percent+'%';
-    resultsTableBody.innerHTML = testResultsData.map((r,i) => {
-      const ok = r.earned === 1;
-      const cls = ok ? 'row-ok' : 'row-wrong';
-      return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
+ function finish(){
+ testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
+ const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
+ resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
+ resultsDetail.textContent = ' Tỉ lệ đúng '+percent+'%';
+ resultsTableBody.innerHTML = testResultsData.map((r,i) => {
+ const ok = r.earned === 1;
+ const cls = ok? 'row-ok': 'row-wrong';
+ return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
     }).join('');
     saveHistory({ score:testScore, total:TOTAL_QUESTIONS, percent, timestamp:Date.now() });
   }

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-reading">
-    <meta name="exam:title" content="单元5 · 生物与动物">
-    <meta name="exam:description" content="阅读专项词汇 · 生物与动物">
+    <meta name="exam:title" content="Bài 5 · sinh vật động vật">
+    <meta name="exam:description" content="Đọc chuyên biệt Từ vựng · sinh vật động vật">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元5-生物与动物</title>
+    <title>Đọc -Bài 5-sinh vật động vật</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -127,16 +127,17 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🐾</div><span>阅读-单元5-生物与动物</span></div>
+        <div class="logo"><div class="logo-icon">🐾</div><span>Đọc -Bài 5-sinh vật động vật</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">Từ vựng Đang tải</span>
     </div>
 </header>
 <div class="main-container">
@@ -144,23 +145,23 @@
 
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 toàn diện phát hiện · Đề bài Đang tải</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">nghĩa của một từ phân biệt<br>Tiếng Anh →Tiếng Trung</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đồng nghĩa thay thế<br>Tiếng Anh →Tiếng Anh gần họ</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">toàn diện đưa vào sử dụng<br>ngữ cảnh +một biến thể cũ củađa nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:nghĩa của một từ phân biệt</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -169,112 +170,112 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 生物与动物 · 32个核心词 ====================
+// ==================== Đọc · sinh vật biến thể của động vật · 32dùng trong lõi biến thể cũ của ====================
 const wordData = [
-    // —— 动物分类（6个） ——
-    { word:'species', ipa:'/ˈspiː.ʃiːz/', pos:'n.', meaning:'物种；种类', synonym:'organism', target:'species', example:'There are over 500 species of birds in this area.', accept_meaning:['物种','种类'] },
-    { word:'mammal', ipa:'/ˈmæm.əl/', pos:'n.', meaning:'哺乳动物', synonym:'vertebrate', target:'mammals', example:'Whales are mammals, not fish.', accept_meaning:['哺乳动物'] },
-    { word:'reptile', ipa:'/ˈrep.taɪl/', pos:'n.', meaning:'爬行动物', synonym:'cold-blooded vertebrate', target:'reptiles', example:'Snakes and lizards are reptiles.', accept_meaning:['爬行动物','爬虫'] },
-    { word:'amphibian', ipa:'/æmˈfɪb.i.ən/', pos:'n.', meaning:'两栖动物', synonym:'water-land vertebrate', target:'amphibians', example:'Frogs and toads are amphibians.', accept_meaning:['两栖动物','水陆两用飞机'] },
-    { word:'insect', ipa:'/ˈɪn.sekt/', pos:'n.', meaning:'昆虫', synonym:'bug', target:'insects', example:'Bees and butterflies are insects.', accept_meaning:['昆虫'] },
-    { word:'invertebrate', ipa:'/ɪnˈvɜː.tɪ.brət/', pos:'n.', meaning:'无脊椎动物', synonym:'spineless animal', target:'invertebrates', example:'Spiders and worms are invertebrates.', accept_meaning:['无脊椎动物'] },
+    // —— phân loại động vật (6dùng trong) ——
+    { word:'species', ipa:'/ˈspiː.ʃiːz/', pos:'n.', meaning:'loài; loại', synonym:'organism', target:'species', example:'There are over 500 species of birds in this area.', accept_meaning:['loài','Loại'] },
+    { word:'mammal', ipa:'/ˈmæm.əl/', pos:'n.', meaning:'động vật có vú', synonym:'vertebrate', target:'mammals', example:'Whales are mammals, not fish.', accept_meaning:['động vật có vú'] },
+    { word:'reptile', ipa:'/ˈrep.taɪl/', pos:'n.', meaning:'bò sát', synonym:'cold-blooded vertebrate', target:'reptiles', example:'Snakes and lizards are reptiles.', accept_meaning:['bò sát','bò sát'] },
+    { word:'amphibian', ipa:'/æmˈfɪb.i.ən/', pos:'n.', meaning:'động vật lưỡng cư', synonym:'water-land vertebrate', target:'amphibians', example:'Frogs and toads are amphibians.', accept_meaning:['động vật lưỡng cư','lưỡng cư phương tiện máy bay'] },
+    { word:'insect', ipa:'/ˈɪn.sekt/', pos:'n.', meaning:'côn trùng', synonym:'bug', target:'insects', example:'Bees and butterflies are insects.', accept_meaning:['côn trùng'] },
+    { word:'invertebrate', ipa:'/ɪnˈvɜː.tɪ.brət/', pos:'n.', meaning:'động vật không xương sống', synonym:'spineless animal', target:'invertebrates', example:'Spiders and worms are invertebrates.', accept_meaning:['động vật không xương sống'] },
 
-    // —— 动物身体特征（7个） ——
-    { word:'skeleton', ipa:'/ˈskel.ɪ.tən/', pos:'n.', meaning:'骨骼；骨架', synonym:'bone structure', target:'skeleton', example:'The human skeleton has 206 bones.', accept_meaning:['骨骼','骨架'] },
-    { word:'limb', ipa:'/lɪm/', pos:'n.', meaning:'肢；臂；分支', synonym:'branch', target:'limb', example:'The tree limb broke in the strong wind.', accept_meaning:['肢','臂','分支'] },
-    { word:'feather', ipa:'/ˈfeð.ər/', pos:'n.', meaning:'羽毛', synonym:'plume', target:'feathers', example:'Birds have feathers to keep warm.', accept_meaning:['羽毛'] },
-    { word:'scale', ipa:'/skeɪl/', pos:'n.', meaning:'鳞片；规模；尺度', synonym:'flake', target:'scales', example:'Fish are covered with scales.', accept_meaning:['鳞片','规模','尺度'] },
-    { word:'fur', ipa:'/fɜːr/', pos:'n.', meaning:'毛皮', synonym:'coat', target:'fur', example:'The animal has thick fur to keep warm.', accept_meaning:['毛皮'] },
-    { word:'horn', ipa:'/hɔːn/', pos:'n.', meaning:'角；喇叭', synonym:'antler', target:'horn', example:'The rhino uses its horn for defence.', accept_meaning:['角','喇叭'] },
-    { word:'pouch', ipa:'/paʊtʃ/', pos:'n.', meaning:'育儿袋；小袋', synonym:'bag', target:'pouch', example:'Kangaroos carry their babies in a pouch.', accept_meaning:['育儿袋','小袋'] },
+    // —— động vật cơ thể đặc điểm (7dùng trong) ——
+    { word:'skeleton', ipa:'/ˈskel.ɪ.tən/', pos:'n.', meaning:'xương; kết cấu', synonym:'bone structure', target:'skeleton', example:'The human skeleton has 206 bones.', accept_meaning:['xương','kết cấu'] },
+    { word:'limb', ipa:'/lɪm/', pos:'n.', meaning:'chi bộ phận cơ thể; cánh tay; chi nhánh công ty', synonym:'branch', target:'limb', example:'The tree limb broke in the strong wind.', accept_meaning:['chi bộ phận cơ thể','cánh tay','chi nhánh công ty'] },
+    { word:'feather', ipa:'/ˈfeð.ər/', pos:'n.', meaning:'lông vũ', synonym:'plume', target:'feathers', example:'Birds have feathers to keep warm.', accept_meaning:['lông vũ'] },
+    { word:'scale', ipa:'/skeɪl/', pos:'n.', meaning:'vảy của cá; quy mô; thang đo', synonym:'flake', target:'scales', example:'Fish are covered with scales.', accept_meaning:['vảy của cá','quy mô','thang đo'] },
+    { word:'fur', ipa:'/fɜːr/', pos:'n.', meaning:'lông thú', synonym:'coat', target:'fur', example:'The animal has thick fur to keep warm.', accept_meaning:['lông thú'] },
+    { word:'horn', ipa:'/hɔːn/', pos:'n.', meaning:'họ; còi xe hơi', synonym:'antler', target:'horn', example:'The rhino uses its horn for defence.', accept_meaning:['họ','còi xe hơi'] },
+    { word:'pouch', ipa:'/paʊtʃ/', pos:'n.', meaning:'túi của thú có túi; túi nhỏ', synonym:'bag', target:'pouch', example:'Kangaroos carry their babies in a pouch.', accept_meaning:['túi của thú có túi','túi nhỏ'] },
 
-    // —— 生态与保护（7个） ——
-    { word:'habitat', ipa:'/ˈhæb.ɪ.tæt/', pos:'n.', meaning:'栖息地', synonym:'dwelling', target:'habitat', example:'The forest provides habitat for many species.', accept_meaning:['栖息地','生存环境'] },
-    { word:'ecosystem', ipa:'/ˈiː.kəʊ.sɪs.təm/', pos:'n.', meaning:'生态系统', synonym:'biome', target:'ecosystem', example:'The ecosystem has been damaged by human activity.', accept_meaning:['生态系统'] },
-    { word:'extinct', ipa:'/ɪkˈstɪŋkt/', pos:'adj.', meaning:'灭绝的；绝种的', synonym:'vanished', target:'extinct', example:'Many species are in danger of becoming extinct.', accept_meaning:['灭绝的','绝种的'] },
-    { word:'endangered', ipa:'/ɪnˈdeɪn.dʒəd/', pos:'adj.', meaning:'濒危的', synonym:'threatened', target:'endangered', example:'The panda is an endangered species.', accept_meaning:['濒危的','濒临灭绝的'] },
-    { word:'wildlife', ipa:'/ˈwaɪld.laɪf/', pos:'n.', meaning:'野生动物', synonym:'fauna', target:'wildlife', example:'Wildlife must be protected from poaching.', accept_meaning:['野生动物','野生生物'] },
-    { word:'conservation', ipa:'/ˌkɒn.səˈveɪ.ʃən/', pos:'n.', meaning:'保护；保存', synonym:'preservation', target:'conservation', example:'Wildlife conservation is a global priority.', accept_meaning:['保护','保存'] },
-    { word:'reserve', ipa:'/rɪˈzɜːv/', pos:'n./v.', meaning:'保护区；储备；保留', synonym:'sanctuary', target:'reserves', example:'Many animals are protected in nature reserves.', accept_meaning:['保护区','储备','保留'] },
+    // —— sinh thái biến thể của bảo vệ (7dùng trong) ——
+    { word:'habitat', ipa:'/ˈhæb.ɪ.tæt/', pos:'n.', meaning:'môi trường sống', synonym:'dwelling', target:'habitat', example:'The forest provides habitat for many species.', accept_meaning:['môi trường sống','môi trường sống'] },
+    { word:'ecosystem', ipa:'/ˈiː.kəʊ.sɪs.təm/', pos:'n.', meaning:'hệ sinh thái', synonym:'biome', target:'ecosystem', example:'The ecosystem has been damaged by human activity.', accept_meaning:['hệ sinh thái'] },
+    { word:'extinct', ipa:'/ɪkˈstɪŋkt/', pos:'adj.', meaning:'tuyệt chủng của; tuyệt chủng loài của', synonym:'vanished', target:'extinct', example:'Many species are in danger of becoming extinct.', accept_meaning:['tuyệt chủng của','tuyệt chủng loài của'] },
+    { word:'endangered', ipa:'/ɪnˈdeɪn.dʒəd/', pos:'adj.', meaning:'bị đe doạ loài của', synonym:'threatened', target:'endangered', example:'The panda is an endangered species.', accept_meaning:['bị đe doạ loài của','bên bờ của tuyệt chủng của'] },
+    { word:'wildlife', ipa:'/ˈwaɪld.laɪf/', pos:'n.', meaning:'động vật hoang dã', synonym:'fauna', target:'wildlife', example:'Wildlife must be protected from poaching.', accept_meaning:['động vật hoang dã','động vật hoang dã'] },
+    { word:'conservation', ipa:'/ˌkɒn.səˈveɪ.ʃən/', pos:'n.', meaning:'bảo vệ; Lưu', synonym:'preservation', target:'conservation', example:'Wildlife conservation is a global priority.', accept_meaning:['bảo vệ','Lưu'] },
+    { word:'reserve', ipa:'/rɪˈzɜːv/', pos:'n./v.', meaning:'khu bảo tồn; dự trữ; giữ', synonym:'sanctuary', target:'reserves', example:'Many animals are protected in nature reserves.', accept_meaning:['khu bảo tồn','dự trữ','giữ'] },
 
-    // —— 生物过程与行为（6个） ——
-    { word:'breed', ipa:'/briːd/', pos:'v./n.', meaning:'繁殖；品种；饲养', synonym:'reproduce', target:'breed', example:'These birds breed in the spring.', accept_meaning:['繁殖','品种','饲养'] },
-    { word:'reproduce', ipa:'/ˌriː.prəˈdjuːs/', pos:'v.', meaning:'繁殖；复制', synonym:'propagate', target:'reproduce', example:'Many organisms can reproduce themselves.', accept_meaning:['繁殖','复制'] },
-    { word:'evolve', ipa:'/iˈvɒlv/', pos:'v.', meaning:'进化；演变', synonym:'develop', target:'evolve', example:'Species evolve over millions of years.', accept_meaning:['进化','演变'] },
-    { word:'adapt', ipa:'/əˈdæpt/', pos:'v.', meaning:'适应；改编', synonym:'adjust', target:'adapt', example:'Animals adapt to their environment to survive.', accept_meaning:['适应','改编'] },
-    { word:'migrate', ipa:'/maɪˈɡreɪt/', pos:'v.', meaning:'迁徙；迁移', synonym:'move', target:'migrate', example:'Many birds migrate south in winter.', accept_meaning:['迁徙','迁移'] },
-    { word:'parasite', ipa:'/ˈpær.ə.saɪt/', pos:'n.', meaning:'寄生虫', synonym:'host-dependent organism', target:'parasites', example:'Fleas are parasites that live on animals.', accept_meaning:['寄生虫','寄生生物'] },
+    // —— sinh vật quá trình sự kiện biến thể của hành động (6dùng trong) ——
+    { word:'breed', ipa:'/briːd/', pos:'v./n.', meaning:'sinh sản; giống; nuôi', synonym:'reproduce', target:'breed', example:'These birds breed in the spring.', accept_meaning:['sinh sản','giống','nuôi'] },
+    { word:'reproduce', ipa:'/ˌriː.prəˈdjuːs/', pos:'v.', meaning:'sinh sản; nhân bản', synonym:'propagate', target:'reproduce', example:'Many organisms can reproduce themselves.', accept_meaning:['sinh sản','nhân bản'] },
+    { word:'evolve', ipa:'/iˈvɒlv/', pos:'v.', meaning:'tiến hóa; phát triển', synonym:'develop', target:'evolve', example:'Species evolve over millions of years.', accept_meaning:['tiến hóa','phát triển'] },
+    { word:'adapt', ipa:'/əˈdæpt/', pos:'v.', meaning:'thích nghi; chuyển thể', synonym:'adjust', target:'adapt', example:'Animals adapt to their environment to survive.', accept_meaning:['Thích ứng','chuyển thể'] },
+    { word:'migrate', ipa:'/maɪˈɡreɪt/', pos:'v.', meaning:'di cư; di cư', synonym:'move', target:'migrate', example:'Many birds migrate south in winter.', accept_meaning:['di cư','di cư'] },
+    { word:'parasite', ipa:'/ˈpær.ə.saɪt/', pos:'n.', meaning:'ký sinh trùng sinh học', synonym:'host-dependent organism', target:'parasites', example:'Fleas are parasites that live on animals.', accept_meaning:['ký sinh trùng sinh học','sống trên hoặc trong sinh vật khác như ký sinh sinh vật'] },
 
-    // —— 生态关系（6个） ——
-    { word:'predator', ipa:'/ˈpred.ə.tər/', pos:'n.', meaning:'捕食者；掠夺者', synonym:'hunter', target:'predators', example:'Lions are predators that hunt other animals.', accept_meaning:['捕食者','掠夺者'] },
-    { word:'prey', ipa:'/preɪ/', pos:'n.', meaning:'猎物；被捕食者', synonym:'victim', target:'prey', example:'Mice are prey for many larger animals.', accept_meaning:['猎物','被捕食者'] },
-    { word:'pest', ipa:'/pest/', pos:'n.', meaning:'害虫；有害动物', synonym:'nuisance', target:'pests', example:'Rats and mice are common household pests.', accept_meaning:['害虫','有害动物'] },
-    { word:'creature', ipa:'/ˈkriː.tʃər/', pos:'n.', meaning:'生物；动物', synonym:'being', target:'creature', example:'The creature is very rare.', accept_meaning:['生物','动物'] },
-    { word:'fauna', ipa:'/ˈfɔː.nə/', pos:'n.', meaning:'动物区系；动物群', synonym:'animals', target:'fauna', example:'The island has a unique and diverse fauna.', accept_meaning:['动物群','动物区系'] },
-    { word:'flora', ipa:'/ˈflɔː.rə/', pos:'n.', meaning:'植物区系；植物群', synonym:'plants', target:'flora', example:'The region is known for its rich flora.', accept_meaning:['植物群','植物区系'] }
+    // —— sinh thái quan hệ (6dùng trong) ——
+    { word:'predator', ipa:'/ˈpred.ə.tər/', pos:'n.', meaning:'loài săn mồi; kẻ cướp', synonym:'hunter', target:'predators', example:'Lions are predators that hunt other animals.', accept_meaning:['loài săn mồi','kẻ cướp'] },
+    { word:'prey', ipa:'/preɪ/', pos:'n.', meaning:'con mồi; bị bắt ăn sau động từ hoặc tính từ người mà', synonym:'victim', target:'prey', example:'Mice are prey for many larger animals.', accept_meaning:['con mồi','bị bắt ăn sau động từ hoặc tính từ người mà'] },
+    { word:'pest', ipa:'/pest/', pos:'n.', meaning:'côn trùng gây hại; có hại động vật', synonym:'nuisance', target:'pests', example:'Rats and mice are common household pests.', accept_meaning:['côn trùng gây hại','có hại động vật'] },
+    { word:'creature', ipa:'/ˈkriː.tʃər/', pos:'n.', meaning:'sinh vật; động vật', synonym:'being', target:'creature', example:'The creature is very rare.', accept_meaning:['Sinh học','động vật'] },
+    { word:'fauna', ipa:'/ˈfɔː.nə/', pos:'n.', meaning:'động vật họ kết nối; động vật biến thể của', synonym:'animals', target:'fauna', example:'The island has a unique and diverse fauna.', accept_meaning:['động vật biến thể của','động vật họ kết nối'] },
+    { word:'flora', ipa:'/ˈflɔː.rə/', pos:'n.', meaning:'thực vật họ kết nối; hệ thực vật', synonym:'plants', target:'flora', example:'The region is known for its rich flora.', accept_meaning:['hệ thực vật','thực vật họ kết nối'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ wordData chiều dài:', wordData.length);
+console.log('✅ mong đợi chiều dài: 32');
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length; // 32 — Giai đoạn một che phủ Tất cả Từ vựng
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['nghĩa của một từ phân biệt', 'đồng nghĩa thay thế', 'toàn diện đưa vào sử dụng'];
+const STAGE_DESC = [`Tiếng Anh → Tiếng Trung (Tất cả ${TOTAL_STAGE1}biến thể cũ của)`, 'Tiếng Anh → Tiếng Anh gần họ', 'ngữ cảnh Điền khuyết +một biến thể cũ của đa nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `${TOTAL_STAGE1} biến thể cũ của`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 toàn diện phát hiện · ${TOTAL}họ`;
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    // Giai đoạn một: nghĩa của một từ phân biệt (32họ) — che phủ Tất cả Từ vựng
+    const stage1Data = all; // Tất cả 32 dùng trong
     stage1Data.forEach(w => {
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('chưa biết');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `«${w.word}» của Tiếng Trung ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `«${w.word}» của Đúng ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ «${w.meaning}».`
         });
     });
 
-    // 阶段二：同义替换 (10题)
+    // Giai đoạn: đồng nghĩa thay thế (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -285,19 +286,19 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `biến thể của «${w.word}» ý tưởng biến thể của tiếp cận của Tiếng Anh biến thể cũ của là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `«${w.word}» của từ đồng nghĩa là chỉ theo sau bởi danh từ «${w.synonym}».`
         });
     });
 
-    // 阶段三：综合应用 (10题)
+    // Giai đoạn họ: toàn diện đưa vào sử dụng (10họ)
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
         if (subTypeCounter % 2 === 0) {
-            // 语境填空
+            // ngữ cảnh Điền khuyết
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
@@ -308,13 +309,13 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `«${sentenceDisplay}» họ Ưng lấp hoặc nhồi đi vào nào biến thể cũ của?`,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${w.word}», Ý làm với tư cách «${w.meaning}».${w.example}`
             });
         } else {
-            // 一词多义
+            // một biến thể cũ của đa nghĩa
             const correctMeaning = w.accept_meaning[0];
             const wrongMeanings = w.accept_meaning.slice(1);
             while(wrongMeanings.length < 3) {
@@ -327,16 +328,16 @@ function generateQuestions() {
                     }
                 }
                 if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
+                wrongMeanings.push('Khác ý nghĩa hàm chứa trong một cụm từ');
             }
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `tồn tại Câu «${w.example}» hình thức kết hợp Trung Quốc, «${w.word}» của ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ?`,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `tồn tại biến thể của hình thức kết hợp Trung Quốc, «${w.word}» của ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ «${correctMeaning}».`
             });
         }
         subTypeCounter++;
@@ -350,7 +351,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -383,7 +384,7 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -425,22 +426,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
-                <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
-            </div>
-            <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+ <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
+ </div>
+ <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 từ đồng nghĩa: </strong>${w.synonym}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${w.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -461,7 +461,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -481,14 +481,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả ${TOTAL}họ!`);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -518,10 +518,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -567,7 +567,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -588,7 +588,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -599,7 +599,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -610,7 +610,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -623,11 +623,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -636,16 +634,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -665,7 +663,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

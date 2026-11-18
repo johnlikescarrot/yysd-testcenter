@@ -1,5 +1,5 @@
 /* =========================================================================
-   dashboard.js — 待办事项（今日焦点 + 近期待办；日历由 student-calendar.js）
+   dashboard.js — Việc cần làm(hôm nayđiểm tiêu + gần về mặt thời gianở lại làm;lịch student-calendar.js)
    ========================================================================= */
 (function () {
   "use strict";
@@ -20,17 +20,17 @@
 
   var user = A.getUser ? A.getUser() : {};
   var name = (user.displayName || "").trim();
-  if (hello) hello.textContent = name ? (name + "，你好") : "任务中心";
+  if (hello) hello.textContent = name ? (name + ",xin chào") : "Trung tâm nhiệm vụ";
 
   var TYPE_LABEL = {
-    ASSIGNMENT: "练习作业",
-    LESSON: "课程日程",
-    ANNOUNCEMENT: "提醒事项"
+    ASSIGNMENT: "Luyện tậpBài tập",
+    LESSON: "Khóa họclịch trình",
+    ANNOUNCEMENT: "Nhắc nhởsự việc"
   };
   var STATUS_LABEL = {
-    PENDING: "未完成",
-    COMPLETED: "已完成",
-    OVERDUE: "已逾期"
+    PENDING: "Chưa hoàn thành",
+    COMPLETED: "Đã hoàn thành",
+    OVERDUE: "Đã quá hạn"
   };
 
   function esc(s) { return Y.esc(s); }
@@ -75,7 +75,7 @@
       d.getDate() === n.getDate();
   }
 
-  // ponytail: 最新布置(未见) > 今日截止 > 逾期 > 其余未完成
+  // ponytail: mới nhấtsắp xếp(chưa thấy) > hôm nayHạn > bị quá hạn > phần còn lạiChưa hoàn thành
   function pickFocus(events) {
     var open = (events || []).filter(function (ev) {
       if (Y.isExplainOnlyAssignment && Y.isExplainOnlyAssignment(ev.linkedExerciseIds || [])) return false;
@@ -123,8 +123,8 @@
     }
     var id0 = String((ids && ids[0]) || "");
     var legacyBook = "gaozhong";
-    if (/cet4|四级/i.test(id0)) legacyBook = "cet4";
-    else if (/listening|reading|writing|special|专项/i.test(id0)) legacyBook = "special";
+    if (/cet4|cấp 4/i.test(id0)) legacyBook = "cet4";
+    else if (/listening|reading|writing|special|chuyên biệt/i.test(id0)) legacyBook = "special";
     return { bookId: legacyBook, listIds: (ids || []).slice(), refs: [] };
   }
 
@@ -140,7 +140,7 @@
           : ("vocab-quiz.html?book=" + encodeURIComponent(parsed.bookId) +
             "&lists=" + parsed.listIds.map(encodeURIComponent).join(",") +
             "&event=" + encodeURIComponent(ev.id));
-        return { href: href, label: "开始单词检测" };
+        return { href: href, label: "Bắt đầuTừ vựngphát hiện" };
       }
       if (pack === "vocab-learn") {
         var learn = parseVocabLinked(ids);
@@ -148,7 +148,7 @@
           href: "vocab-learn.html?book=" + encodeURIComponent(learn.bookId) +
             "&list=" + encodeURIComponent(learn.listIds[0] || "") +
             "&event=" + encodeURIComponent(ev.id),
-          label: "开始列表学习"
+          label: "Bắt đầudanh sáchhọc"
         };
       }
       var listen = null;
@@ -160,7 +160,7 @@
           href: "exam.html?id=" + encodeURIComponent(listen) +
             "&event=" + encodeURIComponent(ev.id) +
             (Y.cambridgeCdtQs ? Y.cambridgeCdtQs(listen, ids, ev.cdtPack) : "&cdt=1&pack=exam&suite=1"),
-          label: "开始全套模考"
+          label: "Bắt đầumột bộ hoàn chỉnhThi thử"
         };
       }
       if (ids.length === 1) {
@@ -168,19 +168,19 @@
           href: "exam.html?id=" + encodeURIComponent(ids[0]) +
             "&event=" + encodeURIComponent(ev.id) +
             (Y.cambridgeCdtQs ? Y.cambridgeCdtQs(ids[0], ids, ev.cdtPack) : ""),
-          label: (Y.isExplainId && Y.isExplainId(ids[0])) ? "进入详解" : "开始这项"
+          label: (Y.isExplainId && Y.isExplainId(ids[0])) ? "đi vàoGiải thích chi tiết" : "Bắt đầuđại từ này họ"
         };
       }
     }
-    return { href: "#event-" + ev.id, label: ev.status === "COMPLETED" ? "查看" : "查看详情" };
+    return { href: "#event-" + ev.id, label: ev.status === "COMPLETED" ? "Xem" : "XemChi tiết" };
   }
 
   function reasonLabel(reason, ev) {
-    if (reason === "new") return "老师刚布置";
-    if (reason === "today") return "今日截止";
-    if (reason === "overdue") return "已逾期";
-    if (ev.dueTime) return "截止 " + fmtDate(ev.dueTime);
-    return TYPE_LABEL[ev.eventType] || "待办";
+    if (reason === "new") return "Giáo viêncứngsắp xếp";
+    if (reason === "today") return "hôm nayHạn";
+    if (reason === "overdue") return "Đã quá hạn";
+    if (ev.dueTime) return "Hạn " + fmtDate(ev.dueTime);
+    return TYPE_LABEL[ev.eventType] || "ở lại làm";
   }
 
   function renderFocus(events) {
@@ -196,10 +196,10 @@
       focusEl.innerHTML =
         '<div class="dash-focus dash-focus--clear">' +
           '<div class="dash-focus__text">' +
-            "<b>今日任务已清</b>" +
-            "<span>去真题区加练，或等老师布置新任务</span>" +
+            "<b>hôm nayNhiệm vụđã triều đại nhà Thanh của Trung Quốc 1644-1911</b>" +
+            "<span>điKhu vực Đề thi thậtthêm luyện tập,có thể đợiGiáo viênsắp xếpmới được bổ nhiệmcông việc</span>" +
           "</div>" +
-          '<a class="btn btn--primary btn--sm" href="zone.html?zone=mock">去真题区</a>' +
+          '<a class="btn btn--primary btn--sm" href="zone.html?zone=mock">điKhu vực Đề thi thật</a>' +
         "</div>";
       return;
     }
@@ -214,17 +214,17 @@
           '<p class="dash-focus__eyebrow">' +
             (neu ? '<span class="dash-focus__dot" aria-hidden="true"></span>' : "") +
             esc(reasonLabel(hit.reason, ev)) +
-            (openN > 1 ? " · 另有 " + (openN - 1) + " 项" : "") +
+            (openN > 1 ? " · có điều gì khác lý do " + (openN - 1) + " họ" : "") +
           "</p>" +
           "<b>" + esc(ev.title) + "</b>" +
           '<span>' +
-            (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "开始 " + esc(fmtDate(ev.startTime)) : "")) +
+            (ev.dueTime ? "Hạn " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "Bắt đầu " + esc(fmtDate(ev.startTime)) : "")) +
           "</span>" +
         "</div>" +
         '<div class="dash-focus__acts">' +
           '<a class="btn btn--primary btn--sm" href="' + esc(cta.href) + '" data-focus-cta="1">' +
             esc(cta.label) + "</a>" +
-          '<a class="btn btn--ghost btn--sm" href="#dash-calendar">全部任务</a>' +
+          '<a class="btn btn--ghost btn--sm" href="#dash-calendar">Tất cảNhiệm vụ</a>' +
         "</div>" +
       "</div>";
 
@@ -246,8 +246,8 @@
 
     var body;
     if (!open.length) {
-      body = '<p class="dash-empty">暂无待办。老师布置作业后会出现在这里。</p>' +
-        '<a class="btn btn--ghost btn--sm" href="#dash-calendar">查看任务日历</a>';
+      body = '<p class="dash-empty">tạm thời không có ở lại làm.Giáo viênsắp xếpBài tậphọ có thểxuất hiệntồn tạibiến thể của.</p>' +
+        '<a class="btn btn--ghost btn--sm" href="#dash-calendar">XemLịch nhiệm vụ</a>';
     } else {
       body = '<ul class="dash-todo-list">' + open.map(function (ev) {
         var st = ev.status || "PENDING";
@@ -259,21 +259,21 @@
             '<span class="cal-status-pill cal-status--' +
               (st === "COMPLETED" ? "done" : st === "OVERDUE" ? "overdue" : "pending") +
               '">' + esc(STATUS_LABEL[st] || st) + "</span>" +
-            (isNew(ev) ? ' <span class="dash-todo__new">新</span>' : "") +
+            (isNew(ev) ? ' <span class="dash-todo__new">viết tắt của Tân Cương</span>' : "") +
             "<b>" + esc(ev.title) + "</b>" +
             '<span class="dash-todo__meta">' +
-              (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "开始 " + esc(fmtDate(ev.startTime)) : "")) +
+              (ev.dueTime ? "Hạn " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "Bắt đầu " + esc(fmtDate(ev.startTime)) : "")) +
             "</span></div>" +
-          '<a class="btn btn--primary btn--sm" href="#event-' + esc(String(ev.id)) + '">查看</a></li>';
+          '<a class="btn btn--primary btn--sm" href="#event-' + esc(String(ev.id)) + '">Xem</a></li>';
       }).join("") + "</ul>" +
-        '<a class="dash-more" href="#dash-calendar">全部任务 →</a>';
+        '<a class="dash-more" href="#dash-calendar">Tất cảNhiệm vụ →</a>';
     }
 
-    return '<div class="dash-section__head"><h2 class="bento-panel__title">近期待办</h2><p class="bento-panel__desc">本周作业与截止</p></div>' + body;
+    return '<div class="dash-section__head"><h2 class="bento-panel__title">gần về mặt thời gianở lại làm</h2><p class="bento-panel__desc">hình thức kết hợp gốc họBài tậpHạn</p></div>' + body;
   }
 
   function fail(msg) {
-    root.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + esc(msg) + "</p></div>";
+    root.innerHTML = '<div class="state state--brand"><h3>Tải thất bại</h3><p>' + esc(msg) + "</p></div>";
     if (focusEl) focusEl.hidden = true;
   }
 
@@ -282,6 +282,6 @@
     renderFocus(events);
     root.innerHTML = todosHTML(events);
   }).catch(function (e) {
-    fail(e.message || "请刷新重试");
+    fail(e.message || "mờiLàm mớithử lại");
   });
 })();

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元8 · 家庭与生活">
-    <meta name="exam:description" content="写作专项词汇 · 工作家庭 · 家庭与生活">
+    <meta name="exam:title" content="Bài 8 · gia đình Đời sống">
+    <meta name="exam:description" content="Viết chuyên biệt Từ vựng · làm việc gia đình · gia đình Đời sống">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元8 · 家庭与生活</title>
+    <title>Bài 8 · gia đình Đời sống</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -140,127 +140,128 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🏠</div><span>单元8-工作家庭-家庭与生活</span></div>
+        <div class="logo"><div class="logo-icon">🏠</div><span>Bài 8-làm việc gia đình -gia đình Đời sống</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng 30 câu</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi Chọn<br>chọnĐúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích họ viếtTiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọntừ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:ghép đôi Chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạnnhập khẩu</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 工作家庭 · 家庭与生活 · 27个核心词条 ====================
+// ==================== làm việc gia đình · gia đình biến thể của Đời sống · 27dùng trong lõi mục từ điển ====================
 const phraseData = [
-    // —— 家庭成员与关系 ——
-    { cn:'核心家庭', en:'Nuclear family', word:'Nuclear', synonym:'Immediate family', target:'nuclear', detail:'nuclear family 表示“核心家庭”，指父母和未婚子女组成的家庭。', example:'A nuclear family typically consists of parents and their children.' },
-    { cn:'几代同堂', en:'Several generations under one roof', word:'Generations', synonym:'Multigenerational', target:'generations', detail:'several generations 表示“几代人”，指多代人共同生活。', example:'Several generations live under one roof in many Asian families.' },
-    { cn:'团聚', en:'Reunite with', word:'Reunite', synonym:'Meet again', target:'reunite', detail:'reunite with 表示“与...团聚”，指与家人或朋友重逢。', example:'Families reunite with each other during the Spring Festival.' },
-    { cn:'祖先', en:'Ancestor', word:'Ancestor', synonym:'Forefather', target:'ancestor', detail:'ancestor 表示“祖先”，指家族中较早的世代。', example:'Many people respect their ancestors and visit their graves.' },
-    { cn:'族谱', en:'Family tree', word:'Tree', synonym:'Genealogy', target:'tree', detail:'family tree 表示“族谱、家谱”，指家族成员关系的图表。', example:'She traced her family tree back to the 18th century.' },
-    { cn:'家庭凝聚力', en:'Family cohesion', word:'Cohesion', synonym:'Unity', target:'cohesion', detail:'family cohesion 表示“家庭凝聚力”，指家庭成员之间的团结程度。', example:'Family cohesion can be strengthened through regular communication.' },
-    { cn:'归属感', en:'A sense of belonging', word:'Belonging', synonym:'Membership', target:'belonging', detail:'a sense of belonging 表示“归属感”，指对家庭或团体的认同感。', example:'A sense of belonging is important for children\'s development.' },
+    // —— thành viên gia đình biến thể của quan hệ ——
+    { cn:'lõi gia đình', en:'Nuclear family', word:'Nuclear', synonym:'Immediate family', target:'nuclear', detail:'nuclear family về ai đó bày tỏ « lõi gia đình », ngón tay cha và mẹ biến thể cũ của chưa kết hôn con cái hình thành của gia đình.', example:'A nuclear family typically consists of parents and their children.' },
+    { cn:'bàn nhỏ thay thế sống cùng một mái nhà của các thế hệ khác nhau', en:'Several generations under one roof', word:'Generations', synonym:'Multigenerational', target:'generations', detail:'several generations về ai đó bày tỏ «bàn nhỏ thay thế người», ngón tay nhiều thay thế người giống Đời sống.', example:'Several generations live under one roof in many Asian families.' },
+    { cn:'đoàn tụ', en:'Reunite with', word:'Reunite', synonym:'Meet again', target:'reunite', detail:'reunite with về ai đó bày tỏ «biến thể của... đoàn tụ », ngón tay biến thể của thành viên gia đình có thể bạn gặp lại.', example:'Families reunite with each other during the Spring Festival.' },
+    { cn:'tổ tiên', en:'Ancestor', word:'Ancestor', synonym:'Forefather', target:'ancestor', detail:'ancestor về ai đó bày tỏ « tổ tiên », ngón tay gia đình hình thức kết hợp Trung Quốc hình thức ràng buộc so sánh sớm của nhiều thế hệ.', example:'Many people respect their ancestors and visit their graves.' },
+    { cn:'hồ sơ gia phả', en:'Family tree', word:'Tree', synonym:'Genealogy', target:'tree', detail:'family tree về ai đó bày tỏ « hồ sơ gia phả, gia phả », ngón tay gia đình thành viên quan hệ của biểu đồ.', example:'She traced her family tree back to the 18th century.' },
+    { cn:'gia đình sự kết dính', en:'Family cohesion', word:'Cohesion', synonym:'Unity', target:'cohesion', detail:'family cohesion về ai đó bày tỏ « gia đình sự kết dính », ngón tay thành viên gia đình sau danh từ giữa của đoàn kết mức độ.', example:'Family cohesion can be strengthened through regular communication.' },
+    { cn:'cảm giác thuộc về', en:'A sense of belonging', word:'Belonging', synonym:'Membership', target:'belonging', detail:'a sense of belonging về ai đó bày tỏ « cảm giác thuộc về », ngón tay đối tác trong trò chơi bốn người sảnh chính có thể nhóm của tán thành cảm thấy.', example:'A sense of belonging is important for children\'s development.' },
 
-    // —— 养育孩子与怀孕 ——
-    { cn:'养育孩子', en:'Raise a child', word:'Raise', synonym:'Bring up', target:'raise', detail:'raise a child 表示“养育孩子”，指父母对孩子的抚养和教育。', example:'It takes a lot of time and effort to raise a child.' },
-    { cn:'生孩子', en:'Give birth to', word:'Birth', synonym:'Deliver', target:'birth', detail:'give birth to 表示“生孩子”，指母亲分娩的过程。', example:'She gave birth to a healthy baby boy.' },
-    { cn:'怀孕', en:'Get pregnant', word:'Pregnant', synonym:'Expecting', target:'pregnant', detail:'pregnant 表示“怀孕的”，指女性怀有胎儿的状态。', example:'Many women continue working after they get pregnant.' },
+    // —— nuôi dưỡng trẻ em biến thể của mang thai ——
+    { cn:'nuôi dưỡng trẻ em', en:'Raise a child', word:'Raise', synonym:'Bring up', target:'raise', detail:'raise a child về ai đó bày tỏ « nuôi dưỡng trẻ em », ngón tay cha và mẹ đúng trẻ em của nuôi dưỡng biến thể cũ của Giáo dục.', example:'It takes a lot of time and effort to raise a child.' },
+    { cn:'được sinh trẻ em', en:'Give birth to', word:'Birth', synonym:'Deliver', target:'birth', detail:'give birth to về ai đó bày tỏ «được sinh trẻ em », ngón tay mẹ chuyển dạ của quá trình sự kiện.', example:'She gave birth to a healthy baby boy.' },
+    { cn:'mang thai', en:'Get pregnant', word:'Pregnant', synonym:'Expecting', target:'pregnant', detail:'pregnant về ai đó bày tỏ « mang thai của», ngón tay phụ nữ có trong người tình cảm thai nhi của tình trạng.', example:'Many women continue working after they get pregnant.' },
 
-    // —— 养老与家务 ——
-    { cn:'养老', en:'Support the old', word:'Support', synonym:'Provide for', target:'support', detail:'support the old 表示“养老”，指照顾年迈的父母或老人。', example:'Children have a responsibility to support their ageing parents.' },
-    { cn:'家务活', en:'Household chores', word:'Household', synonym:'Housework', target:'household', detail:'household chores 表示“家务活”，指家庭日常清洁和杂务。', example:'Household chores should be shared among family members.' },
+    // —— chu cấp cho người cao tuổi thành viên gia đình biến thể của công việc nhà ——
+    { cn:'chu cấp cho người cao tuổi thành viên gia đình', en:'Support the old', word:'Support', synonym:'Provide for', target:'support', detail:'support the old về ai đó bày tỏ « chu cấp cho người cao tuổi thành viên gia đình », ngón tay chăm sóc già của cha và mẹ có thể ông già hoặc bà già.', example:'Children have a responsibility to support their ageing parents.' },
+    { cn:'việc nhà', en:'Household chores', word:'Household', synonym:'Housework', target:'household', detail:'household chores về ai đó bày tỏ « việc nhà », ngón tay gia đình Hàng ngày sạch biến thể cũ của công việc lặt vặt.', example:'Household chores should be shared among family members.' },
 
-    // —— 生活与健康 ——
-    { cn:'生病', en:'Fall ill', word:'Ill', synonym:'Sick', target:'ill', detail:'fall ill 表示“生病”，指身体不适或患病。', example:'She fell ill and had to stay in bed for several days.' },
-    { cn:'生活节奏', en:'Pace of life', word:'Pace', synonym:'Speed', target:'pace', detail:'pace of life 表示“生活节奏”，指生活的快慢程度。', example:'The fast pace of life in big cities can be stressful.' },
-    { cn:'生活模式', en:'Lifestyle', word:'Lifestyle', synonym:'Way of life', target:'lifestyle', detail:'lifestyle 表示“生活模式、生活方式”，指个人的生活习惯和行为方式。', example:'A healthy lifestyle includes regular exercise and a balanced diet.' },
-    { cn:'和谐的', en:'Harmonious', word:'Harmonious', synonym:'Peaceful', target:'harmonious', detail:'harmonious 表示“和谐的”，指关系和睦、协调的。', example:'A harmonious family environment is beneficial for children.' },
-    { cn:'分开', en:'Be separated from', word:'Separated', synonym:'Apart', target:'separated', detail:'separated from 表示“与...分开”，指与某人或某地分离。', example:'Many children are separated from their parents during the week.' },
-    { cn:'社区', en:'Community', word:'Community', synonym:'Neighbourhood', target:'community', detail:'community 表示“社区”，指共同居住的群体。', example:'Community activities can help build social connections.' },
-    { cn:'住所', en:'Place of residence', word:'Residence', synonym:'Dwelling', target:'residence', detail:'place of residence 表示“住所”，指居住的地方。', example:'Your place of residence determines your local school district.' },
+    // —— Đời sống biến thể của Sức khỏe ——
+    { cn:'bị ốm', en:'Fall ill', word:'Ill', synonym:'Sick', target:'ill', detail:'fall ill về ai đó bày tỏ « bị ốm », ngón tay cơ thể không khỏe có thể bị ốm.', example:'She fell ill and had to stay in bed for several days.' },
+    { cn:'Đời sống nhịp điệu', en:'Pace of life', word:'Pace', synonym:'Speed', target:'pace', detail:'pace of life về ai đó bày tỏ « Đời sống nhịp điệu », ngón tay Đời sống của tốc độ mức độ.', example:'The fast pace of life in big cities can be stressful.' },
+    { cn:'Đời sống chế độ', en:'Lifestyle', word:'Lifestyle', synonym:'Way of life', target:'lifestyle', detail:'lifestyle về ai đó bày tỏ « Đời sống chế độ, cách sống », ngón tay cá nhân của Đời sống thói quen biến thể cũ của hành động cách thức.', example:'A healthy lifestyle includes regular exercise and a balanced diet.' },
+    { cn:'hài hòa của', en:'Harmonious', word:'Harmonious', synonym:'Peaceful', target:'harmonious', detail:'harmonious về ai đó bày tỏ « hài hòa của», ngón tay quan hệ quan hệ hòa bình, phối hợp của.', example:'A harmonious family environment is beneficial for children.' },
+    { cn:'Tách ra', en:'Be separated from', word:'Separated', synonym:'Apart', target:'separated', detail:'separated from về ai đó bày tỏ «biến thể của... tách ra », ngón tay biến thể của một người nào đó có thể một nơi tách rời.', example:'Many children are separated from their parents during the week.' },
+    { cn:'cộng đồng', en:'Community', word:'Community', synonym:'Neighbourhood', target:'community', detail:'community về ai đó bày tỏ « cộng đồng », ngón tay sống chung sống của cộng đồng.', example:'Community activities can help build social connections.' },
+    { cn:'nơi ở', en:'Place of residence', word:'Residence', synonym:'Dwelling', target:'residence', detail:'place of residence về ai đó bày tỏ « nơi ở », ngón tay cư trú của khu vực.', example:'Your place of residence determines your local school district.' },
 
-    // —— 饮食与健康 ——
-    { cn:'营养', en:'Nutrition', word:'Nutrition', synonym:'Nourishment', target:'nutrition', detail:'nutrition 表示“营养”，指食物对人体健康的影响。', example:'Good nutrition is essential for growing children.' },
-    { cn:'均衡饮食', en:'Balanced diet', word:'Balanced', synonym:'Healthy', target:'balanced', detail:'balanced diet 表示“均衡饮食”，指包含各种营养素的食物组合。', example:'A balanced diet is important for maintaining good health.' },
-    { cn:'减肥', en:'Lose weight', word:'Lose', synonym:'Slim down', target:'lose', detail:'lose weight 表示“减肥”，指减少体重。', example:'Many people try to lose weight by exercising regularly.' },
-    { cn:'增重', en:'Gain weight', word:'Gain', synonym:'Put on', target:'gain', detail:'gain weight 表示“增重”，指增加体重。', example:'Some people want to gain weight to build muscle.' },
-    { cn:'焦虑', en:'Anxiety', word:'Anxiety', synonym:'Worry', target:'anxiety', detail:'anxiety 表示“焦虑”，指对未来的担忧和不安。', example:'Anxiety can be caused by stress and lack of sleep.' },
-    { cn:'失眠', en:'Insomnia', word:'Insomnia', synonym:'Sleeplessness', target:'insomnia', detail:'insomnia 表示“失眠”，指难以入睡或保持睡眠的状态。', example:'Insomnia is a common problem among university students.' }
+    // —— ăn uống biến thể của Sức khỏe ——
+    { cn:'dinh dưỡng', en:'Nutrition', word:'Nutrition', synonym:'Nourishment', target:'nutrition', detail:'nutrition về ai đó bày tỏ « dinh dưỡng », ngón tay thực phẩm đúng cơ thể người Sức khỏe của ảnh hưởng.', example:'Good nutrition is essential for growing children.' },
+    { cn:'bằng nhau ăn uống', en:'Balanced diet', word:'Balanced', synonym:'Healthy', target:'balanced', detail:'balanced diet về ai đó bày tỏ « bằng nhau ăn uống », ngón tay chứa mỗi loại chất dinh dưỡng của thực phẩm lắp ráp.', example:'A balanced diet is important for maintaining good health.' },
+    { cn:'giảm cân', en:'Lose weight', word:'Lose', synonym:'Slim down', target:'lose', detail:'lose weight về ai đó bày tỏ « giảm cân », ngón tay giảm trọng lượng cơ thể.', example:'Many people try to lose weight by exercising regularly.' },
+    { cn:'dạng kết hợp tăng lặp lại', en:'Gain weight', word:'Gain', synonym:'Put on', target:'gain', detail:'gain weight về ai đó bày tỏ «dạng kết hợp tăng lặp lại», ngón tay tăng trọng lượng cơ thể.', example:'Some people want to gain weight to build muscle.' },
+    { cn:'lo âu', en:'Anxiety', word:'Anxiety', synonym:'Worry', target:'anxiety', detail:'anxiety về ai đó bày tỏ « lo âu », ngón tay đúng tương lai của lo lắng biến thể cũ của không yên.', example:'Anxiety can be caused by stress and lack of sleep.' },
+    { cn:'bị mất ngủ', en:'Insomnia', word:'Insomnia', synonym:'Sleeplessness', target:'insomnia', detail:'insomnia về ai đó bày tỏ « bị mất ngủ », ngón tay khó dự đoán rơi vào giấc ngủ có thể giữ giấc ngủ của tình trạng.', example:'Insomnia is a common problem among university students.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 26');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 26');
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi Chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn Đúng Tiếng Anh ghép đôi', 'thích họ viết Tiếng Anh cụm từ ngữ pháp', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // Giai đoạn một: ghép đôi Chọn (10họ)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -271,26 +272,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `«${p.cn}» của Đúng Tiếng Anh diễn đạt là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng ghép đôi là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // Giai đoạn: đánh vần (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra «${p.cn}» của Tiếng Anh cụm từ ngữ pháp:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng đánh vần là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // Giai đoạn họ: đồng nghĩa thay thế (10họ)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -315,10 +316,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của có thể thay thế Câu hình thức kết hợp Trung Quốc dải gạch dưới _ của biến thể cũ của?<br>«${sentenceDisplay}»`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${p.synonym}», là chỉ theo sau bởi danh từ «${p.word}» của từ đồng nghĩa.${p.detail}`
         });
     });
 
@@ -330,7 +331,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -367,7 +368,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -409,22 +410,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-phrase">${p.en}</span></div>
-                <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
-            </div>
-            <div><span class="word-meaning-cn">${p.cn}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-phrase">${p.en}</span></div>
+ <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
+ </div>
+ <div><span class="word-meaning-cn">${p.cn}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${p.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -445,7 +445,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -465,14 +465,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả 30họ!');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -502,10 +502,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -526,24 +526,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu Tiếng Anh cụm từ ngữ pháp...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Nuclear family）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống (như Nuclear family)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung ví dụ: khung cửa: nhấn Enter không Nộp bài, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển cho mục đích cụ thể submitAnswer(), ngăn chặn nhầm lỗi chạm Nộp bài
             }
         });
     } else {
@@ -587,7 +587,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu Tiếng Anh cụm từ ngữ pháp!');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -608,7 +608,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh Đúng! đánh vần biến thể cũ của chữ hoa và chữ thường họ Đúng.' : '❌ đánh vần có nhầm lỗi, mời Xem bên dưới của so sánh.';
 
         results.push({
             question: q.question,
@@ -619,14 +619,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -647,7 +647,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -658,7 +658,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -669,7 +669,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -682,11 +682,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -695,16 +693,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -724,7 +722,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

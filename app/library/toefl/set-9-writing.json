@@ -66,9 +66,9 @@
         "there",
         "yesterday"
       ],
-      "analysis": "正确顺序：Yes I went there yesterday.",
+      "analysis": "Đúng trình tự:Yes I went there yesterday.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -114,9 +114,9 @@
         "next",
         "week"
       ],
-      "analysis": "正确顺序：He said it starts next week.",
+      "analysis": "Đúng trình tự:He said it starts next week.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -157,9 +157,9 @@
         "there",
         "yet"
       ],
-      "analysis": "正确顺序：Have you been there yet?",
+      "analysis": "Đúng trình tự:Have you been there yet?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -205,9 +205,9 @@
         "join",
         "me"
       ],
-      "analysis": "正确顺序：Would you like to join me?",
+      "analysis": "Đúng trình tự:Would you like to join me?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -248,9 +248,9 @@
         "back",
         "yet"
       ],
-      "analysis": "正确顺序：Have you heard back yet?",
+      "analysis": "Đúng trình tự:Have you heard back yet?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -291,9 +291,9 @@
         "last",
         "night"
       ],
-      "analysis": "正确顺序：I finished them last night.",
+      "analysis": "Đúng trình tự:I finished them last night.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -329,9 +329,9 @@
         "really",
         "interesting"
       ],
-      "analysis": "正确顺序：It was really interesting.",
+      "analysis": "Đúng trình tự:It was really interesting.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -372,9 +372,9 @@
         "doctor's",
         "appointment"
       ],
-      "analysis": "正确顺序：I had a doctor's appointment.",
+      "analysis": "Đúng trình tự:I had a doctor's appointment.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -420,9 +420,9 @@
         "new",
         "schedule"
       ],
-      "analysis": "正确顺序：Did he explain the new schedule?",
+      "analysis": "Đúng trình tự:Did he explain the new schedule?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "sentence",
@@ -473,9 +473,9 @@
         "and",
         "seemed"
       ],
-      "analysis": "正确顺序：the movie won several awards and seemed interesting.",
+      "analysis": "Đúng trình tự:the movie won several awards and seemed interesting.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Xây dựng câu"
     },
     {
       "type": "email",
@@ -491,9 +491,9 @@
       "to": "Ms. Taylor",
       "subject": "Team-building Retreat Resort Inquiry",
       "sample": "Dear Ms. Taylor,\n\nI am writing on behalf of my classmates. We are planning a weekend team-building retreat to help our project group work more effectively together, and your resort looks like a good fit because it is close to campus and has meeting rooms.\n\nCould you tell us whether you offer special dietary options, such as vegetarian and allergy-friendly meals, for a group of about twenty students?\n\nWe would also like to know what recreational activities are available on site, for example hiking, swimming, or group games, so we can plan our schedule.\n\nThank you for your time. I look forward to your reply.\n\nBest regards,\nAlex Chen",
-      "analysis": "邮件需覆盖三点：说明团建目的与选择该度假村的原因、询问特殊饮食、询问康乐活动。称呼 Ms. Taylor。",
+      "analysis": "thư từ yêu cầuche phủ họ điểm:Giải thích xây dựng đội nhóm mục đích Chọn nênđi nghỉ mát ngôi làngLí do,hỏi thông tin đặc biệt ăn uống,hỏi thông tin huyện Kangle trong Châu tự trị dân tộc Hồi Lâm Hạ tập thể dục.gọi Ms. Taylor.",
       "title": "Team-building Retreat Inquiry",
-      "titleZh": "团建度假问询"
+      "titleZh": "xây dựng đội nhóm đi nghỉ mát hỏi hỏi về"
     },
     {
       "type": "discussion",
@@ -516,9 +516,9 @@
         }
       ],
       "sample": "I agree with both Claire and Paul that preservation and adaptation can work together. Indigenous languages and traditions carry knowledge that the rest of the world cannot replace, so schools, museums, and community programs should support them. At the same time, people should not have to choose between keeping their culture and having education, healthcare, and jobs. Communities that control how they enter modern systems can use new tools to record languages and pass on stories. Globalization is a real pressure, but it does not have to erase identity if indigenous peoples lead the process of change.",
-      "analysis": "需表明立场并回应 Claire（保护）与 Paul（适应）。较好答法：两者结合，由原住民主导现代化进程。",
+      "analysis": "yêu cầulàm rõ lập trường vàphản hồi Claire(bảo vệ) Paul(thích nghi).tốt hơn hình thức gắn liền có nghĩa giống như từ tự do biến thể của:hai bên kết hợp,người bản địa dẫn dắt hiện đại hóa quá trình.",
       "title": "Preserving Indigenous Cultures",
-      "titleZh": "保护原住民文化"
+      "titleZh": "bảo vệ người bản địa Văn hóa"
     }
   ]
 }

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元11 · 旅游与文化">
-    <meta name="exam:description" content="写作专项词汇 · 媒体政府 · 旅游与文化">
+    <meta name="exam:title" content="Bài 11 · chuyến đi Văn hóa">
+    <meta name="exam:description" content="Viết chuyên biệt Từ vựng · truyền thông chính phủ · chuyến đi Văn hóa">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元11 · 旅游与文化</title>
+    <title>Bài 11 · chuyến đi Văn hóa</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -140,130 +140,131 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🏛️</div><span>单元11-媒体政府-旅游与文化</span></div>
+        <div class="logo"><div class="logo-icon">🏛️</div><span>Bài 11-truyền thông chính phủ -chuyến đi Văn hóa</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng 30 câu</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi Chọn<br>chọnĐúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích họ viếtTiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọntừ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:ghép đôi Chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạnnhập khẩu</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 媒体政府 · 旅游与文化 · 28个核心词条 ====================
+// ==================== truyền thông chính phủ · chuyến đi biến thể của Văn hóa · 28dùng trong lõi mục từ điển ====================
 const phraseData = [
-    // —— 景点与场所（7个） ——
-    { cn:'旅游景点', en:'Tourist attractions', word:'Attractions', synonym:'Sights', target:'attractions', detail:'tourist attractions 表示“旅游景点”，指吸引游客的地方。', example:'London has many famous tourist attractions.' },
-    { cn:'风景区', en:'Scenic spot', word:'Scenic', synonym:'Picturesque', target:'scenic', detail:'scenic spot 表示“风景区”，指风景优美的地区。', example:'This scenic spot attracts millions of visitors each year.' },
-    { cn:'历史遗迹', en:'Historical site', word:'Historical', synonym:'Ancient', target:'historical', detail:'historical site 表示“历史遗迹”，指有历史意义的遗址。', example:'The ancient city is a well-known historical site.' },
-    { cn:'地标', en:'Landmark', word:'Landmark', synonym:'Monument', target:'landmark', detail:'landmark 表示“地标”，指具有标志性的建筑或地点。', example:'The Eiffel Tower is a famous landmark in Paris.' },
-    { cn:'宝塔', en:'Pagoda', word:'Pagoda', synonym:'Tower', target:'pagoda', detail:'pagoda 表示“宝塔”，指东亚传统多层塔式建筑。', example:'The ancient pagoda is over 1,000 years old.' },
-    { cn:'四合院', en:'Courtyard houses', word:'Courtyard', synonym:'Quadrangle', target:'courtyard', detail:'courtyard houses 表示“四合院”，中国传统院落式住宅。', example:'Courtyard houses are traditional in northern China.' },
-    { cn:'摩天大楼', en:'Skyscraper', word:'Skyscraper', synonym:'High-rise', target:'skyscraper', detail:'skyscraper 表示“摩天大楼”，指超高层建筑。', example:'The city is full of skyscrapers.' },
+    // —— điểm du lịch biến thể của địa điểm (7dùng trong) ——
+    { cn:'điểm hấp dẫn du lịch', en:'Tourist attractions', word:'Attractions', synonym:'Sights', target:'attractions', detail:'tourist attractions về ai đó bày tỏ « điểm hấp dẫn du lịch », ngón tay thu hút khách du lịch của khu vực.', example:'London has many famous tourist attractions.' },
+    { cn:'phong cảnh họ', en:'Scenic spot', word:'Scenic', synonym:'Picturesque', target:'scenic', detail:'scenic spot về ai đó bày tỏ « phong cảnh họ», ngón tay phong cảnh duyên dáng của địa phương.', example:'This scenic spot attracts millions of visitors each year.' },
+    { cn:'di tích lịch sử', en:'Historical site', word:'Historical', synonym:'Ancient', target:'historical', detail:'historical site về ai đó bày tỏ « di tích lịch sử », ngón tay có ý nghĩa lịch sử của di tích.', example:'The ancient city is a well-known historical site.' },
+    { cn:'cột mốc', en:'Landmark', word:'Landmark', synonym:'Monument', target:'landmark', detail:'landmark về ai đó bày tỏ « cột mốc », ngón tay có mang tính biểu tượng của xây dựng có thể Địa điểm.', example:'The Eiffel Tower is a famous landmark in Paris.' },
+    { cn:'chùa tháp', en:'Pagoda', word:'Pagoda', synonym:'Tower', target:'pagoda', detail:'pagoda về ai đó bày tỏ « chùa tháp », ngón tay Đông Á truyền thống nhiều lớp chùa tháp loại xây dựng.', example:'The ancient pagoda is over 1,000 years old.' },
+    { cn:'nhà tứ hợp với sân được bao kín hoàn toàn loại hình nhà ở Trung Quốc', en:'Courtyard houses', word:'Courtyard', synonym:'Quadrangle', target:'courtyard', detail:'courtyard houses về ai đó bày tỏ « nhà tứ hợp với sân được bao kín hoàn toàn loại hình nhà ở Trung Quốc », Trung Quốc truyền thống sân loại nơi ở.', example:'Courtyard houses are traditional in northern China.' },
+    { cn:'tòa nhà chọc trời', en:'Skyscraper', word:'Skyscraper', synonym:'High-rise', target:'skyscraper', detail:'skyscraper về ai đó bày tỏ « tòa nhà chọc trời », ngón tay vượt quá tòa nhà cao tầng.', example:'The city is full of skyscrapers.' },
 
-    // —— 文化遗产与旅游（6个） ——
-    { cn:'文化遗产', en:'Cultural heritage', word:'Heritage', synonym:'Legacy', target:'heritage', detail:'cultural heritage 表示“文化遗产”，指历史遗留的文化财富。', example:'We must protect our cultural heritage.' },
-    { cn:'文物', en:'Cultural relics', word:'Relics', synonym:'Antiques', target:'relics', detail:'cultural relics 表示“文物”，指具有历史价值的物品。', example:'The museum displays many cultural relics.' },
-    { cn:'文化象征', en:'Cultural identity', word:'Identity', synonym:'Character', target:'identity', detail:'cultural identity 表示“文化象征”，指代表某种文化的事物。', example:'These buildings are a symbol of our cultural identity.' },
-    { cn:'展览', en:'Exhibition', word:'Exhibition', synonym:'Show', target:'exhibition', detail:'exhibition 表示“展览”，指公开展示物品的活动。', example:'There is a photography exhibition at the museum.' },
-    { cn:'展品', en:'Exhibit', word:'Exhibit', synonym:'Display', target:'exhibit', detail:'exhibit 表示“展品”，指展览中展示的物品。', example:'Each exhibit has a detailed description.' },
-    { cn:'陈列', en:'Display', word:'Display', synonym:'Show', target:'display', detail:'display 表示“陈列、展示”，指将物品摆放供人观看。', example:'The museum displays objects from ancient times.' },
+    // —— di sản văn hóa biến thể của chuyến đi (6dùng trong) ——
+    { cn:'di sản văn hóa', en:'Cultural heritage', word:'Heritage', synonym:'Legacy', target:'heritage', detail:'cultural heritage về ai đó bày tỏ « di sản văn hóa », ngón tay Lịch sử để lại của Văn hóa sự giàu có.', example:'We must protect our cultural heritage.' },
+    { cn:'di tích văn hóa', en:'Cultural relics', word:'Relics', synonym:'Antiques', target:'relics', detail:'cultural relics về ai đó bày tỏ « di tích văn hóa », ngón tay có Lịch sử giá trị của hàng hóa.', example:'The museum displays many cultural relics.' },
+    { cn:'Văn hóa biểu tượng', en:'Cultural identity', word:'Identity', synonym:'Character', target:'identity', detail:'cultural identity về ai đó bày tỏ « Văn hóa biểu tượng », chỉ đến bề mặt bên ngoài một loại nào đó Văn hóa của sự vật.', example:'These buildings are a symbol of our cultural identity.' },
+    { cn:'trưng bày', en:'Exhibition', word:'Exhibition', synonym:'Show', target:'exhibition', detail:'exhibition về ai đó bày tỏ « trưng bày », ngón tay mở tiết lộ hàng hóa của tập thể dục.', example:'There is a photography exhibition at the museum.' },
+    { cn:'hiện vật', en:'Exhibit', word:'Exhibit', synonym:'Display', target:'exhibit', detail:'exhibit về ai đó bày tỏ « hiện vật », ngón tay trưng bày hình thức kết hợp Trung Quốc tiết lộ của hàng hóa.', example:'Each exhibit has a detailed description.' },
+    { cn:'trưng bày', en:'Display', word:'Display', synonym:'Show', target:'display', detail:'display về ai đó bày tỏ « trưng bày, tiết lộ », ngón tay sẽ hàng hóa sắp xếp cung cấp người họ chăm sóc.', example:'The museum displays objects from ancient times.' },
 
-    // —— 旅游服务与体验（5个） ——
-    { cn:'旅行社', en:'Travel agency', word:'Agency', synonym:'Bureau', target:'agency', detail:'travel agency 表示“旅行社”，提供旅游服务的机构。', example:'We booked the trip through a travel agency.' },
-    { cn:'导游', en:'Tour guide', word:'Guide', synonym:'Escort', target:'guide', detail:'tour guide 表示“导游”，带领游客参观的人员。', example:'The tour guide spoke fluent English and Chinese.' },
-    { cn:'容纳', en:'Accommodate', word:'Accommodate', synonym:'House', target:'accommodate', detail:'accommodate 表示“容纳、提供住宿”，指为游客提供住处。', example:'The hotel can accommodate up to 200 guests.' },
-    { cn:'免票进入', en:'Free admission', word:'Admission', synonym:'Entry', target:'admission', detail:'free admission 表示“免票进入、免费入场”。', example:'Children under 12 have free admission.' },
-    { cn:'亲身体验', en:'First-hand experience', word:'Experience', synonym:'Exposure', target:'experience', detail:'first-hand experience 表示“亲身体验”，指直接获得的经历。', example:'Travelling gives you first-hand experience of different cultures.' },
+    // —— chuyến đi phục vụ biến thể của trải nghiệm (5dùng trong) ——
+    { cn:'công ty du lịch', en:'Travel agency', word:'Agency', synonym:'Bureau', target:'agency', detail:'travel agency về ai đó bày tỏ « công ty du lịch », đề nghị chuyến đi phục vụ của cơ chế.', example:'We booked the trip through a travel agency.' },
+    { cn:'hướng dẫn viên du lịch', en:'Tour guide', word:'Guide', synonym:'Escort', target:'guide', detail:'tour guide về ai đó bày tỏ « hướng dẫn viên du lịch », dẫn dắt khách du lịch tham quan của nhân viên.', example:'The tour guide spoke fluent English and Chinese.' },
+    { cn:'chứa', en:'Accommodate', word:'Accommodate', synonym:'House', target:'accommodate', detail:'accommodate về ai đó bày tỏ « chứa, đề nghị ở lại », ngón tay làm với tư cách khách du lịch đề nghị nơi cư trú.', example:'The hotel can accommodate up to 200 guests.' },
+    { cn:'không bị tính phí vào cửa đi vào', en:'Free admission', word:'Admission', synonym:'Entry', target:'admission', detail:'free admission về ai đó bày tỏ « không bị tính phí vào cửa đi vào, miễn phí vào địa điểm cho một cuộc họp ».', example:'Children under 12 have free admission.' },
+    { cn:'cá nhân trải nghiệm', en:'First-hand experience', word:'Experience', synonym:'Exposure', target:'experience', detail:'first-hand experience về ai đó bày tỏ « cá nhân trải nghiệm », ngón tay trực tiếp Nhận được của kinh nghiệm.', example:'Travelling gives you first-hand experience of different cultures.' },
 
-    // —— 建筑相关（6个） ——
-    { cn:'住宅楼', en:'Residential building', word:'Residential', synonym:'Housing', target:'residential', detail:'residential building 表示“住宅楼”，指居住用途的建筑物。', example:'They live in a residential building near the park.' },
-    { cn:'商业楼', en:'Commercial building', word:'Commercial', synonym:'Business', target:'commercial', detail:'commercial building 表示“商业楼”，指办公或商业用途的建筑物。', example:'The company is located in a large commercial building.' },
-    { cn:'危楼', en:'Dilapidated building', word:'Dilapidated', synonym:'Run-down', target:'dilapidated', detail:'dilapidated building 表示“危楼、破旧建筑”。', example:'The dilapidated building was demolished last year.' },
-    { cn:'建筑', en:'Architecture', word:'Architecture', synonym:'Structure', target:'architecture', detail:'architecture 表示“建筑”，指建筑设计和风格。', example:'The architecture of this building is very impressive.' },
-    { cn:'美学价值', en:'Aesthetic value', word:'Aesthetic', synonym:'Artistic', target:'aesthetic', detail:'aesthetic value 表示“美学价值”，指艺术和美感方面的价值。', example:'The building has great aesthetic value.' },
-    { cn:'拆除', en:'Demolish', word:'Demolish', synonym:'Dismantle', target:'demolish', detail:'demolish 表示“拆除”，指拆毁建筑物。', example:'The old building was demolished to make way for a new road.' },
+    // —— xây dựng liên quan (6dùng trong) ——
+    { cn:'tòa nhà dân cư', en:'Residential building', word:'Residential', synonym:'Housing', target:'residential', detail:'residential building về ai đó bày tỏ « tòa nhà dân cư », ngón tay cư trú công dụng của tòa nhà.', example:'They live in a residential building near the park.' },
+    { cn:'kinh doanh họ', en:'Commercial building', word:'Commercial', synonym:'Business', target:'commercial', detail:'commercial building về ai đó bày tỏ « kinh doanh họ», ngón tay xử lý công việc chính thức có thể kinh doanh công dụng của tòa nhà.', example:'The company is located in a large commercial building.' },
+    { cn:'nhà nguy hiểm', en:'Dilapidated building', word:'Dilapidated', synonym:'Run-down', target:'dilapidated', detail:'dilapidated building về ai đó bày tỏ « nhà nguy hiểm, tồi tàn xây dựng ».', example:'The dilapidated building was demolished last year.' },
+    { cn:'xây dựng', en:'Architecture', word:'Architecture', synonym:'Structure', target:'architecture', detail:'architecture về ai đó bày tỏ « xây dựng », ngón tay xây dựng thiết kế gió nhẹ hình vuông.', example:'The architecture of this building is very impressive.' },
+    { cn:'mỹ học giá trị', en:'Aesthetic value', word:'Aesthetic', synonym:'Artistic', target:'aesthetic', detail:'aesthetic value về ai đó bày tỏ « mỹ học giá trị », ngón tay nghệ thuật Trấn Hemei hoặc Homei ở huyện Changhua cảm thấy khía cạnh của giá trị.', example:'The building has great aesthetic value.' },
+    { cn:'phá dỡ', en:'Demolish', word:'Demolish', synonym:'Dismantle', target:'demolish', detail:'demolish về ai đó bày tỏ « phá dỡ », ngón tay phá hủy tòa nhà.', example:'The old building was demolished to make way for a new road.' },
 
-    // —— 文化交流（4个） ——
-    { cn:'文化交流', en:'Cultural exchange', word:'Exchange', synonym:'Interaction', target:'exchange', detail:'cultural exchange 表示“文化交流”，指不同文化间的交流。', example:'Cultural exchange programmes promote mutual understanding.' },
-    { cn:'文化多样性', en:'Cultural diversity', word:'Diversity', synonym:'Variety', target:'diversity', detail:'cultural diversity 表示“文化多样性”，指不同文化的共存。', example:'Cultural diversity enriches our society.' },
-    { cn:'全球化', en:'Globalisation', word:'Globalisation', synonym:'Integration', target:'globalisation', detail:'globalisation 表示“全球化”，指世界各国的相互联系。', example:'Globalisation has led to greater cultural integration.' },
-    { cn:'习俗', en:'Custom', word:'Custom', synonym:'Tradition', target:'custom', detail:'custom 表示“习俗、风俗”，指传统的习惯和行为方式。', example:'It is a local custom to greet people with a bow.' }
+    // —— giao lưu văn hóa (4dùng trong) ——
+    { cn:'giao lưu văn hóa', en:'Cultural exchange', word:'Exchange', synonym:'Interaction', target:'exchange', detail:'cultural exchange về ai đó bày tỏ « giao lưu văn hóa », ngón tay khác Văn hóa giữa của trao đổi.', example:'Cultural exchange programmes promote mutual understanding.' },
+    { cn:'Văn hóa sự đa dạng', en:'Cultural diversity', word:'Diversity', synonym:'Variety', target:'diversity', detail:'cultural diversity về ai đó bày tỏ « Văn hóa sự đa dạng », ngón tay khác Văn hóa của cùng tồn tại.', example:'Cultural diversity enriches our society.' },
+    { cn:'toàn cầu hóa', en:'Globalisation', word:'Globalisation', synonym:'Integration', target:'globalisation', detail:'globalisation về ai đó bày tỏ « toàn cầu hóa », ngón tay thế giới mỗi quốc gia của lẫn nhau biến thể của.', example:'Globalisation has led to greater cultural integration.' },
+    { cn:'phong tục', en:'Custom', word:'Custom', synonym:'Tradition', target:'custom', detail:'custom về ai đó bày tỏ « phong tục, phong tục xã hội », ngón tay truyền thống của thói quen biến thể cũ của hành động cách thức.', example:'It is a local custom to greet people with a bow.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 28');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 28');
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi Chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn Đúng Tiếng Anh ghép đôi', 'thích họ viết Tiếng Anh cụm từ ngữ pháp', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // Giai đoạn một: ghép đôi Chọn (10họ)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -274,26 +275,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `«${p.cn}» của Đúng Tiếng Anh diễn đạt là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng ghép đôi là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // Giai đoạn: đánh vần (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra «${p.cn}» của Tiếng Anh cụm từ ngữ pháp:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng đánh vần là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // Giai đoạn họ: đồng nghĩa thay thế (10họ)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -318,10 +319,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của có thể thay thế Câu hình thức kết hợp Trung Quốc dải gạch dưới _ của biến thể cũ của?<br>«${sentenceDisplay}»`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${p.synonym}», là chỉ theo sau bởi danh từ «${p.word}» của từ đồng nghĩa.${p.detail}`
         });
     });
 
@@ -333,7 +334,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -370,7 +371,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -412,22 +413,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-phrase">${p.en}</span></div>
-                <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
-            </div>
-            <div><span class="word-meaning-cn">${p.cn}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-phrase">${p.en}</span></div>
+ <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
+ </div>
+ <div><span class="word-meaning-cn">${p.cn}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${p.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -448,7 +448,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -468,14 +468,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả 30họ!');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -505,10 +505,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -529,24 +529,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu Tiếng Anh cụm từ ngữ pháp...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Tourist attractions）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống (như Tourist attractions)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung ví dụ: khung cửa: nhấn Enter không Nộp bài, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển cho mục đích cụ thể submitAnswer(), ngăn chặn nhầm lỗi chạm Nộp bài
             }
         });
     } else {
@@ -590,7 +590,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu Tiếng Anh cụm từ ngữ pháp!');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -611,7 +611,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh Đúng! đánh vần biến thể cũ của chữ hoa và chữ thường họ Đúng.' : '❌ đánh vần có nhầm lỗi, mời Xem bên dưới của so sánh.';
 
         results.push({
             question: q.question,
@@ -622,14 +622,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -650,7 +650,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -661,7 +661,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -672,7 +672,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -685,11 +685,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -698,16 +696,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -727,7 +725,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

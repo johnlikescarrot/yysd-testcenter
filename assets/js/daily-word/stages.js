@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/stages.js — 五步：image / speaking / spelling / meaning / detail
+   daily-word/stages.js — năm họ:image / speaking / spelling / meaning / detail
    ========================================================================= */
 (function (global) {
   "use strict";
@@ -34,17 +34,17 @@
         '<div class="dw-card">' +
           '<div class="dw-card__img-wrap"><img class="dw-card__img" alt="" src="' + DW.esc(imgSrc(w, ctx.bookId)) + '"></div>' +
           '<div class="dw-card__body">' +
-            '<button type="button" class="dw-def-play" data-act="play">点击播放发音</button>' +
+            '<button type="button" class="dw-def-play" data-act="play">nhấnPhátPhát âm</button>' +
             '<div class="dw-word">' + DW.esc(w.word) + "</div>" +
             (w.ipa ? '<div class="dw-ipa">' + DW.esc(w.ipa) + "</div>" : "") +
             (showZh ? '<div class="dw-zh">' + DW.esc(w.meaning || "—") + "</div>" : "") +
           "</div>" +
         "</div>" +
         '<button type="button" class="dw-hint-btn" data-act="hint">' +
-          (showZh ? "已显示中文提示" : "显示中文提示（或按空格）") +
+          (showZh ? "đãhiển thịTiếng TrungGợi ý" : "hiển thịTiếng TrungGợi ý(có thể nhấntrống)") +
         "</button>" +
         '<button type="button" class="dw-btn dw-btn--primary" data-act="to-speak"' +
-          (canNext ? "" : " disabled") + ">开始跟读</button>" +
+          (canNext ? "" : " disabled") + ">Bắt đầugót chân dấu phẩy</button>" +
       "</div>";
   }
 
@@ -59,23 +59,23 @@
         '<div class="dw-card dw-card--speak">' +
           '<div class="dw-card__img-wrap"><img class="dw-card__img" alt="" src="' + DW.esc(imgSrc(w, ctx.bookId)) + '"></div>' +
           '<div class="dw-card__body dw-card__body--speak">' +
-            '<button type="button" class="dw-def-play" data-act="play">播放标准音</button>' +
+            '<button type="button" class="dw-def-play" data-act="play">Phátphát âm tiêu chuẩn</button>' +
             '<div class="dw-word">' + DW.esc(w.word) + "</div>" +
             (w.ipa ? '<div class="dw-ipa">' + DW.esc(w.ipa) + "</div>" : "") +
           "</div>" +
         "</div>" +
         '<button type="button" class="dw-mic' + (rec ? " is-rec" : "") +
-          '" data-act="mic" aria-label="' + (rec ? "松开结束" : "按住录音") + '">' +
+          '" data-act="mic" aria-label="' + (rec ? "thả raKết thúc" : "nhấn sốngGhi âm") + '">' +
           (rec ? "●" : "◎") +
         "</button>" +
         '<p class="dw-hint" id="dw-speak-hint">' +
-          (rec ? "松开结束录音" : (status || "按住麦克风跟读，松开结束")) +
+          (rec ? "thả raKết thúcGhi âm" : (status || "nhấn sốngmicrophone từ mượngót chân dấu phẩy,thả raKết thúc")) +
         "</p>" +
         (canSkip
-          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="skip-speak">跳过并标记薄弱</button>'
+          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="skip-speak">nhảy quavàký hiệuyếu</button>'
           : "") +
         (tries > 0 && !canSkip
-          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="retry-speak">再试一次</button>'
+          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="retry-speak">lại thửđầu tiên</button>'
           : "") +
       "</div>";
   }
@@ -90,15 +90,15 @@
           '<img class="dw-spell-thumb" alt="" src="' + DW.esc(imgSrc(w, ctx.bookId)) + '">' +
           '<div class="dw-zh dw-zh--lg">' + DW.esc(w.meaning) + "</div>" +
         "</div>" +
-        '<label class="dw-spell-label">拼写这个单词' +
+        '<label class="dw-spell-label">đánh vầnđại từ nàyTừ vựng' +
           '<input class="dw-spell-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ' +
             'data-act="spell-input" value="' + DW.esc(ctx.spellValue || "") + '"' +
             (reveal ? " disabled" : "") + ">" +
         "</label>" +
         (feedback ? '<p class="dw-feedback">' + feedback + "</p>" : "") +
         (reveal
-          ? '<p class="dw-answer">正确答案：<strong>' + DW.esc(w.word) + "</strong></p>"
-          : '<button type="button" class="dw-btn dw-btn--primary" data-act="submit-spell">提交</button>') +
+          ? '<p class="dw-answer">Đáp án đúng: <strong>' + DW.esc(w.word) + "</strong></p>"
+          : '<button type="button" class="dw-btn dw-btn--primary" data-act="submit-spell">Nộp bài</button>') +
       "</div>";
   }
 
@@ -115,17 +115,17 @@
             (w.ipa ? '<div class="dw-ipa">' + DW.esc(w.ipa) + "</div>" : "") +
           "</div>" +
         "</div>" +
-        '<label class="dw-spell-label">写出中文含义' +
+        '<label class="dw-spell-label">viết đi raTiếng Trungý nghĩa hàm chứa trong một cụm từ' +
           '<input class="dw-spell-input dw-meaning-input" type="text" autocomplete="off" ' +
             'lang="zh-CN" inputmode="text" spellcheck="false" ' +
-            'data-act="meaning-input" placeholder="例如：牢固的；公司" value="' +
+            'data-act="meaning-input" placeholder="ví dụ:chắc chắn;công ty" value="' +
             DW.esc(ctx.meaningValue || "") + '"' +
             (reveal ? " disabled" : "") + ">" +
         "</label>" +
         (feedback ? '<p class="dw-feedback">' + feedback + "</p>" : "") +
         (reveal
-          ? '<p class="dw-answer">参考释义：<strong>' + DW.esc(w.meaning || "—") + "</strong></p>"
-          : '<button type="button" class="dw-btn dw-btn--primary" data-act="submit-meaning">提交</button>') +
+          ? '<p class="dw-answer">tham khảoNghĩa:<strong>' + DW.esc(w.meaning || "—") + "</strong></p>"
+          : '<button type="button" class="dw-btn dw-btn--primary" data-act="submit-meaning">Nộp bài</button>') +
       "</div>";
   }
 
@@ -141,12 +141,12 @@
           (w.ipa ? '<div class="dw-ipa">' + DW.esc(w.ipa) + "</div>" : "") +
           (w.pos ? '<span class="dw-pos">' + DW.esc(w.pos) + "</span>" : "") +
           '<p class="dw-zh dw-zh--lg">' + DW.esc(w.meaning) + "</p>" +
-          (phrases ? '<div class="dw-block"><h3>搭配</h3><p>' + DW.esc(phrases) + "</p></div>" : "") +
-          (example ? '<div class="dw-block"><h3>例句</h3><p>' + DW.esc(example) +
-            '</p><button type="button" class="dw-btn dw-btn--ghost dw-btn--sm" data-act="play-ex">播放例句</button></div>' : "") +
+          (phrases ? '<div class="dw-block"><h3>ghép đôi</h3><p>' + DW.esc(phrases) + "</p></div>" : "") +
+          (example ? '<div class="dw-block"><h3>câu ví dụ</h3><p>' + DW.esc(example) +
+            '</p><button type="button" class="dw-btn dw-btn--ghost dw-btn--sm" data-act="play-ex">Phátcâu ví dụ</button></div>' : "") +
         "</div>" +
         '<button type="button" class="dw-btn dw-btn--primary" data-act="next-word">' +
-          (isLast ? "查看今日报告" : "下一个单词") +
+          (isLast ? "Xemhôm nayBáo cáo" : "cái tiếp theoTừ vựng") +
         "</button>" +
       "</div>";
   }
@@ -157,7 +157,7 @@
     if (stage === "spelling") return renderSpelling(host, ctx);
     if (stage === "meaning") return renderMeaning(host, ctx);
     if (stage === "detail") return renderDetail(host, ctx);
-    host.innerHTML = '<p class="dw-fail">未知阶段</p>';
+    host.innerHTML = '<p class="dw-fail">chưa biếtGiai đoạn</p>';
   }
 
   global.YYSD_DAILY_WORD_STAGES = {

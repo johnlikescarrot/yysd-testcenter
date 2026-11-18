@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>选择使用模式 · 教师端</title>
+  <title>Chọn sử dụng chế độ · Cổng giáo viên</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722polish">
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="home-minimal teacher-auth-page">
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="teacher-mode-picker.html" class="minimal-brand" aria-label="优益思达国际课程中心">
+      <a href="teacher-mode-picker.html" class="minimal-brand" aria-label="YYSD · Trung tâm Khóa học Quốc tế">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>YYSD · Trung tâm Khóa học Quốc tế</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <button type="button" class="btn btn--ghost btn--sm" id="logout-btn">退出登录</button>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <button type="button" class="btn btn--ghost btn--sm" id="logout-btn">Đăng xuất Đăng nhập</button>
       </nav>
     </div>
   </header>
@@ -31,17 +32,17 @@
   <main class="minimal-shell minimal-main auth-main">
     <section class="auth-card reveal teacher-mode-picker">
       <div class="minimal-eyebrow">TEACHER MODE</div>
-      <h1 class="auth-card__title">请选择使用模式</h1>
-      <p class="auth-card__desc">登录后请先选择要进入的区域。之后如需切换，请使用页面顶部的模式切换按钮。</p>
+      <h1 class="auth-card__title">mời Chọn sử dụng chế độ</h1>
+      <p class="auth-card__desc">Đăng nhập họ mời trước Chọn hình thức kết hợp yêu cầu đi vào khu vực.họ như yêu cầu chuyển đổi, mời sử dụng đầu mặt mái chế độ chuyển đổi nút bấm.</p>
 
       <div class="teacher-mode-picker__choices">
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-admin">
-          <strong>教室管理区</strong>
-          <span>查看学情、布置任务、词汇诊断、单词闯关管理与学生成绩。</span>
+          <strong>phòng học giám sát họ</strong>
+          <span>Xem học hình thức kết hợp tình cảm, sắp xếp Nhiệm vụ, Chẩn đoán từ vựng, Thử thách từ vựng giám sát Học viên Kết quả.</span>
         </button>
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-site">
-          <strong>网站功能区</strong>
-          <span>以学生视角体验单词区、练习区、真题区等功能与闯关进度。</span>
+          <strong>trang web chức năng họ</strong>
+          <span>biến thể cũ của Học viên góc độ quan sát một vật trải nghiệm Khu vực Từ vựng, Khu vực Luyện tập, Khu vực Đề thi thật đợi chức năng xông qua rào cản Tiến độ.</span>
         </button>
       </div>
 
@@ -51,7 +52,7 @@
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · 教师端</p>
+      <p class="minimal-footer__copy">© <span id="year"></span>YYSD · Trung tâm Khóa học Quốc tế · Cổng giáo viên</p>
     </div>
   </footer>
 
@@ -89,7 +90,7 @@
       var btn = this;
       btn.disabled = true;
       M.enterSiteMode().catch(function (err) {
-        showMsg((err && err.message) || "无法进入网站功能区");
+        showMsg((err && err.message) || "không thể đi vào trang web chức năng họ");
         btn.disabled = false;
       });
     });

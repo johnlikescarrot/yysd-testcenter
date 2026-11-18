@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const u = await prisma.university.findUnique({ where: { slug: params.slug } });
-  return { title: u ? u.nameZh : "院校" };
+  return { title: u ? u.nameZh : "trường cao đẳng" };
 }
 
 export default async function UniversityPage({ params }: { params: { slug: string } }) {
@@ -46,18 +46,18 @@ export default async function UniversityPage({ params }: { params: { slug: strin
         {aliases.length > 0 && <p className="mono mt-2 text-[11px] text-[var(--muted)]">AKA {aliases.join(" · ")}</p>}
         <div className="mt-4 flex flex-wrap gap-2">
           <Link href={`/compare?ids=${u.slug}`} className="btn-ghost py-2">
-            加入对比盘
+            trở thành thành viênso sánhđĩa
           </Link>
           <a href="/admission" className="btn-ink py-2">
-            估录取
+            ước lượngchấp nhận ứng viên sinh viên
           </a>
         </div>
-        <p className="mt-2 text-[11px] text-[var(--muted)]">顾问侧按项目匹配，可搜「{admitHint}」。</p>
+        <p className="mt-2 text-[11px] text-[var(--muted)]">cố vấnmột bên nhấnmụcGhép nối,tiền tố có thể tìm kiếm«{admitHint}».</p>
       </div>
 
       <section>
         <div className="mb-2 flex items-end justify-between">
-          <h2 className="text-sm font-semibold">四轨历年</h2>
+          <h2 className="text-sm font-semibold">bốn hình vị hạn chế đường raynăm dương lịch</h2>
           <span className="mono text-[10px] text-[var(--muted)]">HISTORY</span>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -72,14 +72,14 @@ export default async function UniversityPage({ params }: { params: { slug: strin
                   </span>
                 </div>
                 {rows.length === 0 ? (
-                  <p className="px-4 py-3 text-sm text-[var(--muted)]">暂无数据</p>
+                  <p className="px-4 py-3 text-sm text-[var(--muted)]">tạm thờivô sốbiến thể của</p>
                 ) : (
                   <ul>
                     {rows.map((r) => (
                       <li key={r.year}>
                         <Link href={r.href} className="tape-row">
                           <span className="mono text-[var(--muted)]">{r.year}</span>
-                          <span className="text-[var(--muted)]">名次</span>
+                          <span className="text-[var(--muted)]">vị trí trong bảng xếp hạng</span>
                           <span className="rank-num">#{r.rankDisplay}</span>
                         </Link>
                       </li>

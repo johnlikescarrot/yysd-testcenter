@@ -15,76 +15,76 @@ export type SystemMeta = {
 export const SYSTEMS: Record<SystemKey, SystemMeta> = {
   qs: {
     key: "qs",
-    name: "QS 世界大学排名",
+    name: "QS thế giớiĐại họcXếp hạng",
     shortName: "QS",
     sourceUrl: "https://www.topuniversities.com",
     sourceHost: "www.topuniversities.com",
     started: 2004,
     latestYear: 2027,
     blurb:
-      "由 Quacquarelli Symonds 发布，从学术声誉、雇主声誉、师生比、引用率、国际教员与国际学生比例等维度评估全球大学。",
+      " Quacquarelli Symonds phát hành,biến thể củaHọc thuậtdanh tiếng,người thuê lao độngdanh tiếng,giáo viên và học sinhBỉ,trích dẫntỉ lệ,quốc tếgiáo viênquốc tếHọc viêntỷ lệđợichiều toán họcđánh giátoàn thế giớiĐại học.",
     method:
-      "学术声誉与雇主声誉合计权重较高；另含师生比、单位教员引用、国际教师/学生比例及可持续发展等指标。",
+      "Học thuậtdanh tiếngngười thuê lao độngdanh tiếngcộng tổngtrọng số tức là tầm quan trọng gắn với điều gì đóhình thức ràng buộc so sánh họ;khác ngậm trong miệnggiáo viên và học sinhBỉ,đơn vị đo lườnggiáo viêntrích dẫn,quốc tếGiáo viên/Học viêntỷ lệvàphát triển bền vữngđợimục tiêu sản xuất.",
   },
   the: {
     key: "the",
-    name: "泰晤士高等教育世界大学排名",
+    name: "báo The Timesgiáo dục cao đẳng và đại họcthế giớiĐại họcXếp hạng",
     shortName: "THE",
     sourceUrl: "https://www.timeshighereducation.com",
     sourceHost: "www.timeshighereducation.com",
     started: 2004,
     latestYear: 2026,
     blurb:
-      "由《泰晤士高等教育》发布，从教学、研究环境、研究质量、产业与国际展望等维度评估研究型大学。",
+      "«báo The Timesgiáo dục cao đẳng và đại học»phát hành,làm giáo viênhọc,nghiên cứuMôi trường,nghiên cứuchất lượng,công nghiệpquốc tếtriển vọngđợichiều toán họcđánh giánghiên cứukhuônĐại học.",
     method:
-      "教学、研究环境、研究质量、产业收入、国际展望共 13 项绩效指标；引文数据常与 Scopus 合作。",
+      "dạy như một giáo sư,nghiên cứuMôi trường,nghiên cứuchất lượng,công nghiệpthu vào,quốc tếtriển vọng 13 họhiệu suấtmục tiêu sản xuất;trích dẫndữ liệuhọ Scopus hợp tác.",
   },
   arwu: {
     key: "arwu",
-    name: "软科世界大学学术排名",
+    name: "mềm ngành họcthế giớiĐại họcHọc thuậtXếp hạng",
     shortName: "ARWU",
     sourceUrl: "https://www.shanghairanking.com",
     sourceHost: "www.shanghairanking.com",
     started: 2003,
     latestYear: 2025,
     blurb:
-      "由上海软科发布，侧重诺奖/菲尔兹奖、高被引学者、Nature/Science 与 SCI/SSCI 等客观学术产出。",
+      "Thành phố Thượng Hảimềm ngành họcphát hành,đặt sự nhấn mạnh đặc biệt vàoGiải Nobel/Giải thưởng Fields cho toán học,họ chăn kéo ví dụ: dây cunghọc giả,Nature/Science  SCI/SSCI đợikhách quanHọc thuậtsản xuất sinh viên tốt nghiệp.",
     method:
-      "获奖校友与教员、高被引学者、Nature & Science、论文数量与生均学术表现等可核验指标。",
+      "giành được giải thưởngbạn họcgiáo viên,họ chăn kéo ví dụ: dây cunghọc giả,Nature & Science,bài báosố lượngđược sinh bằngHọc thuậtthể hiệnđợi tiền tố có thể hạt nhân biến thể củamục tiêu sản xuất.",
   },
   usnews: {
     key: "usnews",
-    name: "U.S. News 全球最佳大学排名",
+    name: "U.S. News toàn thế giớitối ưuĐại họcXếp hạng",
     shortName: "US News",
     sourceUrl: "https://www.usnews.com",
     sourceHost: "www.usnews.com",
     started: 2014,
     latestYear: 2027,
     blurb:
-      "由《美国新闻与世界报道》发布，聚焦全球研究声誉、发表、引用与国际合作等研究表现。",
+      "«Hoa Kỳtin tứctên của các tờ báo khác nhauđường»phát hành,tập trungtoàn thế giớinghiên cứudanh tiếng,phát hành,trích dẫnquốc tếhợp tácđợinghiên cứuthể hiện.",
     method:
-      "全球/区域研究声誉、发表与会议、归一化引用、高被引论文、国际合作等约 13 项指标。",
+      "toàn thế giới/khu vựcnghiên cứudanh tiếng,phát hànhtham gia cuộc họpbình luận,họ một biến thể củatrích dẫn,họ chăn kéo ví dụ: dây cungbài báo,quốc tếhợp tácđợi cân trong cân đĩa hoặc trên cân 13 họmục tiêu sản xuất.",
   },
 };
 
 export const SYSTEM_ORDER: SystemKey[] = ["qs", "the", "arwu", "usnews"];
 
 export const COUNTRY_LABELS: Record<string, string> = {
-  US: "美国",
-  UK: "英国",
-  CA: "加拿大",
-  AU: "澳大利亚",
-  CN: "中国",
-  HK: "中国香港",
-  SG: "新加坡",
-  JP: "日本",
-  KR: "韩国",
-  DE: "德国",
-  FR: "法国",
-  CH: "瑞士",
-  NL: "荷兰",
-  SE: "瑞典",
-  OTHER: "其他",
+  US: "Hoa Kỳ",
+  UK: "Vương quốc Anh",
+  CA: "thêmra vẻ",
+  AU: "Úc",
+  CN: "Trung Quốc",
+  HK: "Trung QuốcHồng Kông",
+  SG: "viết tắt của Tân Cương thêm dốc",
+  JP: "Nhật Bản",
+  KR: "Hàn Quốc Đại Hàn Dân Quốc",
+  DE: "Đức",
+  FR: "Pháp",
+  CH: "Thụy Sĩ",
+  NL: "Hà Lan",
+  SE: "Thụy Điển",
+  OTHER: "Khác",
 };
 
 /** Tape colors for the four ranking tracks (dashboard UI). */

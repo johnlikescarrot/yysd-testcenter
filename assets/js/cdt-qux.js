@@ -62,20 +62,20 @@
   function allowsReuse(group, letterCount, slotCount) {
     var el = group.querySelector(".instruction");
     var t = (el && el.textContent) || "";
-    if (/more than once|一次以上|可重复|任意.*多次/i.test(t)) return true;
-    if (/only once|each (letter|answer) only once|仅.*一次|每个字母.*一次/i.test(t)) return false;
+    if (/more than once|đầu tiênmức đó hoặc cao hơn|tiền tố có thểLặp lại|bất kỳ.*nhiều lần/i.test(t)) return true;
+    if (/only once|each (letter|answer) only once|hầu như.*đầu tiên|mỗi dùng trongchữ cái của bảng chữ cái.*đầu tiên/i.test(t)) return false;
     // pigeonhole: more gaps than letters ⇒ must reuse
     if (slotCount && letterCount && slotCount > letterCount) return true;
     // exclusive list/heading/map when enough distinct options
     var enough = letterCount && slotCount && letterCount >= slotCount;
-    if (enough && /heading|标题|from the box and write/i.test(t)) return false;
+    if (enough && /heading|tiêu đề|from the box and write/i.test(t)) return false;
     if (enough && group.querySelector && group.querySelector(".map-wrap")) return false;
     // ponytail: default reusable — exclusive-by-default broke paragraph/classify matches
     return true;
   }
 
   function isMultiHint(text) {
-    return /选择一项|两题合计|两项|本组合计|选出正确|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
+    return /Chọnmột họ|họcộng tổng|họ|hình thức kết hợp gốclắp ráphọ|chọn raĐúng|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
   }
 
   function isMultiGroup(group, pairs) {
@@ -90,7 +90,7 @@
       if (mq && isMultiHint(mq.textContent)) hints++;
     });
     var instr = ((group.querySelector(".instruction") || {}).textContent) || "";
-    var instrMulti = /Choose TWO letters|Choose TWO\b|选出.*两项|两题合计/i.test(instr);
+    var instrMulti = /Choose TWO letters|Choose TWO\b|chọn ra.*họ|họcộng tổng/i.test(instr);
     // ponytail: never infer multi from row count alone — match also shares one letter box
     return hints > 0 || instrMulti;
   }
@@ -400,7 +400,7 @@
   };
 
   // ponytail: smallest check — fails loud if multi detection regresses
-  console.assert(isMultiHint("选择一项（两题合计选出正确的两项，顺序不限）"), "cdt-qux: multi hint");
+  console.assert(isMultiHint("Chọnmột họ(họcộng tổngchọn raĐúnghọ,trình tựkhông giới hạn)"), "cdt-qux: multi hint");
   console.assert(!isMultiHint("Which gallery has the best collection of ceramics?"), "cdt-qux: not multi");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "You may use any letter more than once." }; } }), "cdt-qux: reuse");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "Write the correct letter, A, B or C." }; } }, 3, 6), "cdt-qux: pigeonhole reuse");

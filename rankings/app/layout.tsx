@@ -4,10 +4,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "选校行情台 · 优益思达",
-    template: "%s · 优益思达行情台",
+    default: "chọn kiểm tragiá thị trườngĐài Loan viết tắt · YYSD",
+    template: "%s · YYSDgiá thị trườngĐài Loan viết tắt",
   },
-  description: "优益思达选校行情台：QS / THE / ARWU / US News 四大榜对照、院校检索与跨体系对比。",
+  description: "YYSDchọn kiểm tragiá thị trườngĐài Loan viết tắt:QS / THE / ARWU / US News bốn nguyên tố: đấtthông báo hoặc thông triĐối chiếu,trường cao đẳngtruy xuất dữ liệubước quahệ thốngso sánh.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

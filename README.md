@@ -1,72 +1,85 @@
-# 优益思达学习中心
+# YYSD · Trung tâm Học tập
 
-雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
+Nền tảng luyện thi **IELTS**, TOEFL và các chương trình quốc tế (A-Level…) bằng **tiếng Việt**.
+Trang web chính thức: [youyisida.com](https://youyisida.com) · Bản phát hành tĩnh: **GitHub Pages**.
 
-静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
+Kiến trúc: tĩnh front-end + Node API (đăng nhập bằng số điện thoại, đồng bộ điểm, giao bài của giáo viên, tác vụ AI). Nội dung chính là các đề thi HTML có tự chấm điểm trong `library/`; lớp vỏ cung cấp nhận diện thương hiệu, phòng thi tính giờ (CDT), trung tâm nhiệm vụ và cổng giáo viên.
 
-## 学生端
+> **Ngôn ngữ.** Toàn bộ nội dung giao diện, tài liệu và chú giải được chuyển sang tiếng Việt. Đề thi, transcript và đáp án tiếng Anh được giữ nguyên theo đúng yêu cầu của bài thi. Xem [`localization/vi/REPORT.md`](localization/vi/REPORT.md) để biết số liệu bản địa hóa.
 
-| 入口 | 说明 |
-|------|------|
-| 单词 | 高中 / 四级 / 雅思听读写专项词书、分类词库、错题本 |
-| 雅思真题 | 剑桥听力 / 阅读 / 写作；补弱 Section·Passage；单项模考；全套模考（CDT 机考壳） |
-| 练习 | 长难句、数字听写、口语练习等 |
-| 国际课程 | A-Level 等资料入口 |
-| 任务中心 | 教师布置的作业、日程与待办 |
-| 口语 / AI | 口语练习、写作 AI 批改（额度受限） |
+## Dành cho học viên
 
-全套模考结束进入三科成绩报告（`cdt-report.html`）；交卷等待时有加载提示。
+| Lối vào | Mô tả |
+| --- | --- |
+| [Trung tâm luyện tập](practice-hub.html) | Chuỗi ngày (streak), XP, năng lượng, giải đấu, huy hiệu, ôn tập ngắt quãng — lấy cảm hứng từ Duolingo |
+| [Tài liệu nghiên cứu](research.html) | Kho PDF tiếng Việt có trích dẫn học thuật và liên kết Google Scholar cho mọi tài liệu PDF |
+| Từ vựng | Từ vựng THPT / CET-4 / IELTS, kho từ theo chủ đề, sổ lỗi sai, ôn tập ngắt quãng |
+| Đề thi thật IELTS | Cambridge Nghe / Đọc / Viết; luyện theo Section · Passage; thi thử từng kĩ năng; thi thử trọn bộ (CDT) |
+| Luyện tập | Câu dài khó, chính tả số, luyện nói, luyện Viết có AI chấm bài |
+| Chương trình quốc tế | A-Level và tài liệu liên quan |
+| Trung tâm nhiệm vụ | Bài tập do giáo viên giao, lịch học và việc cần làm |
 
-## 教师端
+Sau khi thi thử trọn bộ, học viên nhận báo cáo 3 kĩ năng tại `cdt-report.html`.
 
-- 登录：`teacher-login.html`
-- 日历布置：`teacher-calendar.html` — 按类型（单词 / 补弱 / 单项模考 / 全套）下钻勾选，支持上传自有 HTML
-- 学生诊断与其它教师页见仓库内 `teacher-*.html`
+## Dành cho giáo viên
 
-## 技术结构
+- Đăng nhập: `teacher-login.html`
+- Giao bài theo lịch: `teacher-calendar.html` — chọn theo loại (từ vựng / bổ trợ / thi thử đơn lẻ / trọn bộ), hỗ trợ tải lên HTML riêng
+- Chẩn đoán học viên và các trang `teacher-*.html` khác
+
+## Cấu trúc kĩ thuật
 
 ```
-├── *.html                 # 站点页面（首页、考场、单词、教师端等）
-├── assets/                # CSS / JS（config 分类、exam CDT、auth）
-├── library/               # 题目与词书 HTML（按 zone/subject 分目录）
-│   └── manifest.json      # 内容索引（脚本/CI 生成，勿手改）
-├── server/                # Express API + SQLite（登录、成绩、日历、AI 代理等）
-├── rankings/              # 排行榜子应用（可选）
-├── admission/             # 招生相关子应用（可选）
-└── scripts/               # manifest、词库、自检脚本
+├── *.html                     # các trang (trang chủ, phòng thi, từ vựng, cổng giáo viên…)
+├── assets/                    # CSS / JS; assets/js/i18n/ = bộ bản địa hóa; gamification/ = luồng trò chơi hóa
+├── library/                   # đề thi & từ vựng HTML/JSON; library/research/ = PDF học thuật
+│   └── manifest.json          # chỉ mục nội dung (do script/CI sinh, không sửa tay)
+├── localization/vi/           # từ điển, báo cáo bao phủ, giấy phép dữ liệu
+├── scripts/                   # bản địa hóa, build Pages, sinh PDF, kiểm tra chất lượng
+├── tests/                     # unit test JS + Python (bao phủ 100%)
+├── .github/workflows/         # Super-Linter, Pages, Lighthouse, quality gate
+├── server/                    # Express API + SQLite
+├── rankings/ · admission/     # tiện ích con (tùy chọn)
+└── desktop/ · desktop-tiku/   # ứng dụng Electron
 ```
 
-API 依赖见 [`server/package.json`](server/package.json)；环境变量模板见 [`server/.env.example`](server/.env.example)。生产部署脚本在 [`server/deploy/`](server/deploy/)。
+API: xem [`server/package.json`](server/package.json) và [`server/.env.example`](server/.env.example).
 
-## 本地预览
-
-前端不要直接双击打开 HTML，需本地静态服务；API 另开进程。
+## Chạy cục bộ
 
 ```bash
-# 前端
+# front-end (không mở HTML bằng cách nhấp đúp)
 python3 -m http.server 8080
-# → http://localhost:8080
-
-# API（需 Node ≥ 18）
+# API (Node ≥ 18)
 cd server && cp -n .env.example .env && npm i && npm start
-# → 默认 http://localhost:3000
 ```
 
-前端如何指向本地 API，以 `assets/js/auth.js` / 环境配置为准。
+## Quy trình chất lượng
 
-## 内容与成绩
+```bash
+npm ci
+npm run lint:local          # tương đương Super-Linter khi không có Docker
+npm test                    # node:test + jsdom
+npm run coverage            # ngưỡng 100% cho toàn bộ mã first-party
+python3 scripts/build_vi_dictionary.py
+python3 scripts/localize_vi.py --check --max-residual 0
+python3 scripts/build_pages.py
+bash scripts/super-linter-local.sh
+python3 scripts/build_research_pdfs.py
+```
 
-- 新题放入 `library/<zone>/<subject>/`，提交后由 Actions 或 `scripts/build_manifest.py` 重建 `manifest.json`。
-- 可选 meta：`exam:title` / `exam:duration` / `exam:description`。
-- 试卷批改后向父页同步分数：
+GitHub Actions chạy Super-Linter trên mọi push/PR, kiểm tra bao phủ mã, đo Lighthouse trên Chromium thật với ngưỡng **100/100/100/100** và triển khai Pages.
+
+## Nội dung & điểm số
+
+- Đề mới đặt trong `library/<zone>/<subject>/`; `scripts/build_manifest.py` sẽ cập nhật `manifest.json`.
+- Meta tùy chọn: `exam:title` / `exam:duration` / `exam:description`.
+- Trang con gửi điểm về trang cha:
 
 ```js
 parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
 ```
 
-写作模考另可附带 `writingTask1` / `writingTask2` 等字段供报告页使用。
+## Giấy phép dữ liệu
 
-## 相关文档
-
-- 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
-- A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)
+Từ điển Hán–Việt mở rộng được phái sinh từ [CVDICT](https://github.com/ph0ngp/CVDICT) (Phong Phan, CC BY-SA 4.0, dựa trên CC-CEDICT). Xem [`localization/vi/LICENSE-CVDICT.md`](localization/vi/LICENSE-CVDICT.md).

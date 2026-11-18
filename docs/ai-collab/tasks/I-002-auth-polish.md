@@ -1,33 +1,33 @@
-# I-002 — Auth 表单 focus 与 auth-card 视觉
+# I-002 — Auth biểu mẫu tài liệu focus  auth-card thị giác
 
-**状态：** done
+**tình trạng:** done
 
-## 目标
+## Mục tiêu
 
-login/register 输入框 focus 与 premium 表单一致；auth-card 边框更清晰。
+login/register nhập khẩukhung ví dụ: khung cửa focus  premium biểu mẫu tài liệunhất quán;auth-card bên khung ví dụ: khung cửa thay đổi hoặc thay thếrõ ràng.
 
-## 允许改动
+## cho phépthay đổi
 
-- `assets/css/style.css`：`.auth-card`、`.auth-field input:focus-visible`
+- `assets/css/style.css`:`.auth-card`,`.auth-field input:focus-visible`
 
-## 禁止
+## cấm
 
-- login.html / register.html 结构
+- login.html / register.html cấu trúc
 - auth.js
 
-## 变更
+## thay đổi
 
 ```css
 .auth-card { border: 1px solid var(--border); box-shadow: var(--shadow-paper); }
 .auth-field input:focus-visible { border-color: var(--brand-gold); box-shadow: 0 0 0 3px color-mix(...); outline: none; }
 ```
 
-## 验收
+## kiểm tra và chấp nhận
 
 - `/login.html` · `/register.html`
-- Tab 到输入框可见 gold ring
+- Tab đếnnhập khẩukhung ví dụ: khung cửacó thể thấy rõ rằng điều này đúng gold ring
 - 1280 / 375
 
-## 回滚
+## tin học quay lui
 
-删除新增 CSS 规则。
+Xóathêm cái gì đó mới CSS quy tắc.

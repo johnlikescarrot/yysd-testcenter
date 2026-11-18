@@ -1,11 +1,11 @@
-/* ponytail: 考前冲刺包 picker — exam engine stays on toefl-*.html */
+/* ponytail: đánh trướcthể thao chạy nước rúthọ picker — exam engine stays on toefl-*.html */
 (function (w) {
   "use strict";
 
   var SKILLS = [
-    { key: "reading", label: "阅读", page: "toefl-reading.html", list: "TOEFL_READING" },
-    { key: "listening", label: "听力", page: "toefl-listening.html", list: "TOEFL_LISTENING" },
-    { key: "writing", label: "写作", page: "toefl-writing.html", list: "TOEFL_WRITING" }
+    { key: "reading", label: "Đọc", page: "toefl-reading.html", list: "TOEFL_READING" },
+    { key: "listening", label: "Nghe", page: "toefl-listening.html", list: "TOEFL_LISTENING" },
+    { key: "writing", label: "Viết", page: "toefl-writing.html", list: "TOEFL_WRITING" }
   ];
 
   function yysd() { return w.YYSD || {}; }
@@ -27,7 +27,7 @@
     return (yysd()[listName] || []).filter(function (p) { return p.id === id; })[0] || null;
   }
 
-  /* ---- 包锁态：/api/toefl/access 是唯一事实来源；取不到时只当未知（开始前服务端再兜底） ---- */
+  /* ---- họ khóa hình thức kết hợp:/api/toefl/access là chỉ theo sau bởi danh từchỉsự thậtnguồn thông tin;lấykhông đếnbiến thể cũ của chỉ từ tượng thanh đongchưa biết(Bắt đầutrướcphục vụcuối lạicung cấp mạng lưới an toàn) ---- */
   var access = null;
   function fetchAccess() {
     if (access) return Promise.resolve(access);
@@ -67,7 +67,7 @@
     location.href = examRoot() + page + "?id=" + encodeURIComponent(id) + "&mode=mock&from=app";
   }
 
-  /* 开始前服务端硬校验（卡面只渲染已开通的卷；被绕过后这里仍会拦） */
+  /* Bắt đầutrướcphục vụcuối cứngkiểm tra(dừng mặt chỉkết xuất tin họcđãmở đường mới hoặc tuyến đường sắtcuộn lại;chănđi vònghọbiến thể củavẫn có thể chặn đường) */
   function startGuard(packageId, go) {
     var A = w.YYSD_APP;
     if (!A || !A.api) { go(); return; }
@@ -75,18 +75,18 @@
       go();
     }).catch(function (e) {
       var err = document.getElementById("mock-err");
-      if (err) err.textContent = (e && e.message) || "暂时不能开始";
+      if (err) err.textContent = (e && e.message) || "tạm thờikhông thểBắt đầu";
       var btn = document.getElementById("mock-go");
       if (btn) btn.disabled = false;
     });
   }
 
-  /* ---- 便当盒：wofo 式卡片，卡面只有「TOEFL Mock N」+ 全科模考 + 四格只考X ---- */
+  /* ---- tiện lợihộp nhỏ:wofo loạithẻ,dừng mặtchỉ có«TOEFL Mock N»+ họ ngành họcThi thử + bốn hình vuông chỉ đánhX ---- */
   var SLOTS = [
-    { key: "reading", label: "只考阅读", list: "TOEFL_READING" },
-    { key: "listening", label: "只考听力", list: "TOEFL_LISTENING" },
-    { key: "speaking", label: "只考口语", list: "TOEFL_SPEAKING" },
-    { key: "writing", label: "只考写作", list: "TOEFL_WRITING" }
+    { key: "reading", label: "chỉ đánhĐọc", list: "TOEFL_READING" },
+    { key: "listening", label: "chỉ đánhNghe", list: "TOEFL_LISTENING" },
+    { key: "speaking", label: "chỉ đánhNói", list: "TOEFL_SPEAKING" },
+    { key: "writing", label: "chỉ đánhViết", list: "TOEFL_WRITING" }
   ];
   var PER_PAGE = 10;
   var page = 1;
@@ -104,7 +104,7 @@
     });
   }
 
-  /* 编号按全量清单算，再按权限过滤 —— 不同学生看到的同一张卷卷号一致，会跳号 */
+  /* đánh sốnhấn họ đo lườngdanh sách mụccoi như,lại nhấnQuyền hạnlọc —— khácHọc viênnhìn thấygiống hệthọ cuộn lại cuộn lại gầmnhất quán,có thể nhảy gầm */
   function buildList(stock, papers) {
     var out = fullPapers(stock).map(function (p) {
       return {
@@ -144,9 +144,9 @@
     }).join("");
     return '<div class="hit-mock-card">' +
       '<div class="hit-mock-id"><b>TOEFL Mock ' + p.no + "</b>" +
-      "<span>真题模考 · 自动评分</span></div>" +
+      "<span>Đề thi thậtThi thử · tự độngChấm điểm</span></div>" +
       '<a class="hit-mock-main" href="' + s2(p.href("")) + '">' +
-      (p.skills.length === 1 ? "开始模考" : "全科模考") + "</a>" +
+      (p.skills.length === 1 ? "Bắt đầuThi thử" : "họ ngành họcThi thử") + "</a>" +
       '<div class="hit-mock-skill">' + skills + "</div></div>";
   }
 
@@ -169,9 +169,9 @@
     var last = Math.max(1, Math.ceil(visible.length / PER_PAGE));
     if (page > last) page = last;
     var shown = visible.slice((page - 1) * PER_PAGE, page * PER_PAGE);
-    return "<h1>考前冲刺包</h1>" + '<div class="hit-mock-cards">' +
+    return "<h1>đánh trướcthể thao chạy nước rúthọ</h1>" + '<div class="hit-mock-cards">' +
       (shown.length ? shown.map(mockCardHTML).join("") :
-        '<div class="hit-empty"><b>这里还没有下发给你的卷子</b><p>联系老师开通考前冲刺包。</p></div>') +
+        '<div class="hit-empty"><b>biến thể củahọkhông cóban hành ví dụ: thông tư đến cấp dướicung cấp bạnbánh hấp</b><p>biến thể củaGiáo viênmở đường mới hoặc tuyến đường sắtđánh trướcthể thao chạy nước rúthọ.</p></div>') +
       "</div>" + pagerHTML(visible.length);
   }
 
@@ -184,7 +184,7 @@
 
   function titleOf(id, skill) {
     var p = packs.filter(function (x) { return x.id === id; })[0];
-    if (!p) return "模考";
+    if (!p) return "Thi thử";
     var slot = SLOTS.filter(function (s) { return s.key === skill; })[0];
     return "TOEFL Mock " + p.no + (slot ? " · " + slot.label : "");
   }
@@ -197,19 +197,19 @@
     var mins = kind === "full" ? (pack && pack.duration) : (single && single.duration);
     var back = "mock.html";
     var rules = kind === "full"
-      ? "<li>阅读 → 听力 → 写作 → 口语，无安排休息，科与科之间不能返回。</li>" +
-        "<li>按各科官方时限连考，约 " + (mins || "—") + " 分钟。</li>" +
-        "<li>切换页面或离开窗口则整场作废，四科均不记分。</li>"
-      : "<li>只考" + (spec ? spec.label : "口语") + "一科，时限约 " + (mins || "—") + " 分钟。</li>" +
-        "<li>切换页面或离开窗口则本场作废，不记分。</li>" +
-        "<li>开始后不能返回题目列表。</li>";
-    if (!pack && kind === "full") return '<p class="hit-status">找不到这套题。</p><a class="hit-back" href="mock.html">← 返回</a>';
-    if (kind === "single" && !single) return '<p class="hit-status">找不到这一科。</p><a class="hit-back" href="' + back + '">← 返回</a>';
-    return '<h1>开始前确认</h1>' +
-      '<a class="hit-back" href="' + back + '">← 返回列表</a>' +
+      ? "<li>Đọc → Nghe → Viết → Nói,không cósắp xếpnghỉ,ngành học ngành họcsau danh từ giữakhông thểQuay lại.</li>" +
+        "<li>nhấn mỗi ngành họcChính thứcgiới hạn thời gianhọ đánh,cân trong cân đĩa hoặc trên cân " + (mins || "—") + " phút.</li>" +
+        "<li>chuyển đổiđầu mặt có thểrời khỏicửa sổvăn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưng hình thức liên kết toàn bộ sân phơitrở nên không hiệu lực,bốn ngành học bằng khôngghi điểm.</li>"
+      : "<li>chỉ đánh" + (spec ? spec.label : "Nói") + "một ngành học,giới hạn thời giancân trong cân đĩa hoặc trên cân " + (mins || "—") + " phút.</li>" +
+        "<li>chuyển đổiđầu mặt có thểrời khỏicửa sổvăn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưng hình thức kết hợp gốc sân phơitrở nên không hiệu lực,khôngghi điểm.</li>" +
+        "<li>Bắt đầuhọkhông thểQuay lạiĐề bàidanh sách.</li>";
+    if (!pack && kind === "full") return '<p class="hit-status">không thể tìm thấyđại từ này che đậy họ.</p><a class="hit-back" href="mock.html">← Quay lại</a>';
+    if (kind === "single" && !single) return '<p class="hit-status">không thể tìm thấyđại từ này một ngành học.</p><a class="hit-back" href="' + back + '">← Quay lại</a>';
+    return '<h1>Bắt đầutrướcXác nhận</h1>' +
+      '<a class="hit-back" href="' + back + '">← Quay lạidanh sách</a>' +
       '<div class="hit-confirm"><h2 id="mock-title">' + esc(titleOf(id, kind === "full" ? "" : skill)) + "</h2><ul>" + rules + "</ul>" +
       '<p class="hit-status is-warn" id="mock-err"></p>' +
-      '<button type="button" class="hit-go" id="mock-go">开始模考</button></div>';
+      '<button type="button" class="hit-go" id="mock-go">Bắt đầuThi thử</button></div>';
   }
 
   function bindConfirm(kind, id, skill) {

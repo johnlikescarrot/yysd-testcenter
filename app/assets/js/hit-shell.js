@@ -1,24 +1,24 @@
-/* HIT hub shell — 顶栏/首页/个人页 + 真题题库一屏列表 */
+/* HIT hub shell — đỉnh hàng rào/Trang chủ/cá nhânđầu + Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thimột loại bỏdanh sách */
 (function (w) {
   "use strict";
   var LINKS = [
-    { href: "home.html", key: "home", zh: "首页" },
-    { href: "practice.html", key: "practice", zh: "真题题库" },
-    { href: "mock.html", key: "mock", zh: "考前冲刺包" },
-    { href: "profile.html", key: "profile", zh: "个人" }
+    { href: "home.html", key: "home", zh: "Trang chủ" },
+    { href: "practice.html", key: "practice", zh: "Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi" },
+    { href: "mock.html", key: "mock", zh: "đánh trướcthể thao chạy nước rúthọ" },
+    { href: "profile.html", key: "profile", zh: "cá nhân" }
   ];
   var SUBJECTS = [
-    { skill: "reading", zh: "阅读", chips: ["单词填空", "日常阅读", "学术文章"] },
-    { skill: "listening", zh: "听力", chips: ["听句选回应", "对话", "讲座"] },
-    { skill: "speaking", zh: "口语", chips: ["听力复述", "模拟面试"] },
-    { skill: "writing", zh: "写作", chips: ["句子构建", "邮件", "学术讨论"] }
+    { skill: "reading", zh: "Đọc", chips: ["Từ vựngĐiền khuyết", "Hàng ngàyĐọc", "Học thuậtbài viết"] },
+    { skill: "listening", zh: "Nghe", chips: ["Nghe câu, chọn đáp án", "nói chuyện với ai đó", "một khóa bài giảng"] },
+    { skill: "speaking", zh: "Nói", chips: ["Nghelặp lại lời của chính mình hoặc của người khác", "Mô phỏngđược phỏng vấn với tư cách ứng viên"] },
+    { skill: "writing", zh: "Viết", chips: ["Xây dựng câu", "thư từ", "Thảo luận học thuật"] }
   ];
-  var SKILL_ZH = { reading: "阅读", listening: "听力", speaking: "口语", writing: "写作" };
+  var SKILL_ZH = { reading: "Đọc", listening: "Nghe", speaking: "Nói", writing: "Viết" };
 
   function parse(raw, fallback) {
     try { return JSON.parse(raw); } catch (e) { return fallback; }
   }
-  // 进度存储只有一套：assets/js/toefl-lab.js 的 yysd:toefl-item-state
+  // Tiến độtích trữchỉ cóbộ:assets/js/toefl-lab.js  yysd:toefl-item-state
   function L() { return w.YYSD_TOEFL_LAB; }
   function doneMap() { return L().state(); }
   function lookup(skill, task, set, records) {
@@ -72,13 +72,13 @@
         l.zh + "</b></a>";
     }).join("");
     return '<header class="hit-top">' +
-      '<a class="hit-brand" href="home.html"><span class="hit-logo-mark" aria-hidden="true">优</span>' +
-      '<span>优益思达<small>TOEFL 学习系统</small></span></a>' +
-      '<nav class="hit-pills" aria-label="主导航">' + pills + "</nav>" +
+      '<a class="hit-brand" href="home.html"><span class="hit-logo-mark" aria-hidden="true">xuất sắc</span>' +
+      '<span>YYSD<small>TOEFL họchệ thống</small></span></a>' +
+      '<nav class="hit-pills" aria-label="dẫn dắtthuyền">' + pills + "</nav>" +
       '<div class="hit-user">' + avatarBox({ displayName: name, phone: u.phone, avatarUrl: u.avatarUrl }, "") +
       '<span class="hit-who" id="hit-who">' + esc(name) + "</span>" +
-      '<button type="button" class="hit-out" id="hit-reload">刷新</button>' +
-      '<button type="button" class="hit-out" id="hit-out">退出</button></div></header>';
+      '<button type="button" class="hit-out" id="hit-reload">Làm mới</button>' +
+      '<button type="button" class="hit-out" id="hit-out">Đăng xuất</button></div></header>';
   }
 
   function hardReload() {
@@ -94,7 +94,7 @@
   function mount(active) {
     var A = w.YYSD_APP;
     if (A && !A.requireLogin(location.pathname.split("/").pop() + location.search)) return false;
-    document.body.insertAdjacentHTML("afterbegin", '<a class="hit-skip" href="#hit-content">跳至主要内容</a>' + navHTML(active));
+    document.body.insertAdjacentHTML("afterbegin", '<a class="hit-skip" href="#hit-content">nhảy đếnchínhNội dung</a>' + navHTML(active));
     var main = document.querySelector("main");
     if (main) {
       if (!main.id) main.id = "hit-content";
@@ -102,7 +102,7 @@
       document.querySelector(".hit-skip").href = "#" + main.id;
       document.querySelector(".hit-skip").onclick = function (ev) { ev.preventDefault(); main.focus(); };
     }
-    document.body.insertAdjacentHTML("beforeend", '<footer class="hit-footer"><span>优益思达国际课程中心</span><span>TOEFL 学习系统</span></footer>');
+    document.body.insertAdjacentHTML("beforeend", '<footer class="hit-footer"><span>YYSD · Trung tâm Khóa học Quốc tế</span><span>TOEFL họchệ thống</span></footer>');
     var out = document.getElementById("hit-out");
     if (out) out.onclick = function () { A.logout(); location.replace("login.html"); };
     var reload = document.getElementById("hit-reload");
@@ -110,37 +110,37 @@
     return true;
   }
 
-  /* ---------- 真题题库：科目 tab + 题型 segmented + 题目列表，一屏到底 ----------
-     版式与文案照 hanginthere：idx 决定序号写法，cells 决定行式题号格，其余走大卡；皮肤瑞士黑红、圆角 0。 */
+  /* ---------- Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi:môn học tab + họ khuôn segmented + Đề bàidanh sách,một loại bỏcuối cùng ----------
+     định dạngbáo chíbiến thể của hanginthere:idx quyết định làm gì đósố thứ tựphong cách viết phong cách văn học,cells quyết định làm gì đóhàng loại họ gầm hình vuông,phần còn lạiđi dừng;họThụy Sĩviết tắt của tỉnh Hắc Long Giang họ,góc bo tròn 0. */
   var LIB = {
     reading: [
-      { type: "complete_words", en: "Complete the Words", zh: "单词填空", idx: "set" },
-      { type: "daily_life", en: "Read in Daily Life", zh: "生活阅读", idx: "set", count: 1 },
-      { type: "academic", en: "Academic Passage", head: "Read an Academic Passage", zh: "学术文章", idx: "set" }
+      { type: "complete_words", en: "Complete the Words", zh: "Từ vựngĐiền khuyết", idx: "set" },
+      { type: "daily_life", en: "Read in Daily Life", zh: "Đời sốngĐọc", idx: "set", count: 1 },
+      { type: "academic", en: "Academic Passage", head: "Read an Academic Passage", zh: "Học thuậtbài viết", idx: "set" }
     ],
     listening: [
-      { type: "choose_response", en: "Choose a Response", head: "Listen and Choose a Response", zh: "听句选回应", idx: "set", prog: 1 },
-      { type: "conversation", en: "Conversation", zh: "对话", idx: "set", prog: 1 },
-      { type: "announcement", en: "Announcement", zh: "通知", idx: "set", prog: 1 },
-      { type: "lecture", en: "Academic Talk", zh: "学术讲座", idx: "set" }
+      { type: "choose_response", en: "Choose a Response", head: "Listen and Choose a Response", zh: "Nghe câu, chọn đáp án", idx: "set", prog: 1 },
+      { type: "conversation", en: "Conversation", zh: "nói chuyện với ai đó", idx: "set", prog: 1 },
+      { type: "announcement", en: "Announcement", zh: "thông báo", idx: "set", prog: 1 },
+      { type: "lecture", en: "Academic Talk", zh: "Bài giảng học thuật", idx: "set" }
     ],
     speaking: [
-      { type: "repeat", en: "Listen and Repeat", zh: "听后跟读", idx: "hash", sub: 1 },
-      { type: "interview", en: "Take an Interview", zh: "面试问答", idx: "hash", sub: 1 }
+      { type: "repeat", en: "Listen and Repeat", zh: "Nghe và lặp lại", idx: "hash", sub: 1 },
+      { type: "interview", en: "Take an Interview", zh: "Hỏi đáp phỏng vấn", idx: "hash", sub: 1 }
     ],
     writing: [
-      { type: "sentence", en: "Build a Sentence", zh: "句子构建", idx: "set" },
-      { type: "email", en: "Write an Email", zh: "邮件写作", idx: "pad", sub: 1 },
-      { type: "discussion", en: "Academic Discussion", zh: "学术讨论", idx: "pad", sub: 1 }
+      { type: "sentence", en: "Build a Sentence", zh: "Xây dựng câu", idx: "set" },
+      { type: "email", en: "Write an Email", zh: "Viết email", idx: "pad", sub: 1 },
+      { type: "discussion", en: "Academic Discussion", zh: "Thảo luận học thuật", idx: "pad", sub: 1 }
     ]
   };
   var LIB_SKILLS = ["reading", "listening", "speaking", "writing"];
-  var LIB_FILTERS = [{ key: "all", zh: "全部" }, { key: "todo", zh: "未做" }, { key: "hot", zh: "高频" }];
+  var LIB_FILTERS = [{ key: "all", zh: "Tất cả" }, { key: "todo", zh: "chưa làm" }, { key: "hot", zh: "Tần suất cao" }];
   var LIB_HEAD = {
-    reading: { kicker: "TOEFL READING LAB", zh: "阅读练习", lead: "先选择题型，再点击题号进入练习。" },
-    listening: { kicker: "TOEFL LISTENING LAB", zh: "听力练习", lead: "先选择题型，再点击题目进入练习。" },
-    speaking: { kicker: "TOEFL SPEAKING LAB", zh: "口语练习", lead: "先选择题型，再点击题目进入练习。" },
-    writing: { kicker: "TOEFL WRITING LAB", zh: "写作练习", lead: "按题型练习真题，草稿会自动保存在本机。" }
+    reading: { kicker: "TOEFL READING LAB", zh: "ĐọcLuyện tập", lead: "trướccâu hỏi trắc nghiệmkhuôn,lạinhấnhọ gầmđi vàoLuyện tập." },
+    listening: { kicker: "TOEFL LISTENING LAB", zh: "NgheLuyện tập", lead: "trướccâu hỏi trắc nghiệmkhuôn,lạinhấnĐề bàiđi vàoLuyện tập." },
+    speaking: { kicker: "TOEFL SPEAKING LAB", zh: "NóiLuyện tập", lead: "trướccâu hỏi trắc nghiệmkhuôn,lạinhấnĐề bàiđi vàoLuyện tập." },
+    writing: { kicker: "TOEFL WRITING LAB", zh: "ViếtLuyện tập", lead: "nhấn họ khuônLuyện tậpĐề thi thật,bản thảocó thểtự độngLưutồn tại hình thức kết hợp gốc họ." }
   };
   var libCatalog = {};
   var libHost = null;
@@ -157,7 +157,7 @@
     return skill + ".html?id=" + encodeURIComponent(paperId) + "&mode=practice&task=" + encodeURIComponent(task) +
       (end > task ? "&taskEnd=" + encodeURIComponent(end) : "");
   }
-  // 一次列表只解析一遍进度表
+  // đầu tiêndanh sáchchỉGiải thíchmột lần từ đầu đến cuốibiểu đồ tiến độ
   function doneInSpan(skill, paperId, from, to, records) {
     var d = records || doneMap();
     var n = 0;
@@ -170,11 +170,11 @@
     return { total: total, done: done, cls: done >= total ? "done" : (done ? "mid" : "todo") };
   }
   function stateLabel(st) {
-    return st.cls === "done" ? "已完成" : (st.cls === "mid" ? "进行中 " + st.done + "/" + st.total : "未开始");
+    return st.cls === "done" ? "Đã hoàn thành" : (st.cls === "mid" ? "Đang thực hiện " + st.done + "/" + st.total : "Chưa bắt đầu");
   }
   function hotChip(g) {
     if (!g.hot) return "";
-    var tier = g.hot > 1 ? ["🔥🔥", "超高频题"] : ["🔥", "高频题"];
+    var tier = g.hot > 1 ? ["🔥🔥", "vượt quáTần suất caohọ"] : ["🔥", "Tần suất caohọ"];
     return '<span class="hit-lib-hot" role="img" title="' + tier[1] + '">' + tier[0] + "</span>";
   }
   function idxLabel(meta, g, i) {
@@ -192,10 +192,10 @@
       (meta.sub ? '<p class="hit-lib-sub">' + esc(g.zh || meta.zh) + "</p>" : "") +
       '<div class="hit-lib-foot">' + stateLabel(st) + "</div></a>";
   }
-  // 题号格只进这一道。一整套（task..end）要单独的入口，否则 Windows 同学只能一题一题点。
+  // họ gầm hình vuông chỉ tiến lên đại từ nàycùng nhau.mộttoàn bộ bộ sưu tập(task..end)hình thức kết hợp yêu cầumột mìnhlối vào,nếu không thì Windows học cùng trườngchỉ có thểmột họ một họ điểm.
   function setStartHTML(skill, g) {
     if (!(Number(g.end) > Number(g.task))) return "";
-    return '<a class="hit-lib-start" href="' + itemHref(skill, g.paperId, g.task, g.end) + '">开始做题</a>';
+    return '<a class="hit-lib-start" href="' + itemHref(skill, g.paperId, g.task, g.end) + '">Bắt đầulàm họ</a>';
   }
   function rowHTML(skill, meta, g, i, records) {
     var cells = g.cells || [];
@@ -211,7 +211,7 @@
     return '<div class="hit-lib-row is-' + st.cls + '">' +
       '<div class="hit-lib-meta"><span class="hit-lib-idx">' + idxLabel(meta, g, i) + "</span>" + hotChip(g) +
       setStartHTML(skill, g) + "</div>" +
-      '<div class="hit-lib-foot">' + (meta.prog ? "完成 " + st.done + "/" + st.total : stateLabel(st)) + "</div>" +
+      '<div class="hit-lib-foot">' + (meta.prog ? "Hoàn thành " + st.done + "/" + st.total : stateLabel(st)) + "</div>" +
       '<div class="hit-lib-nums">' + nums + "</div></div>";
   }
   function libKept(skill, groups, records, hit) {
@@ -234,7 +234,7 @@
     var filters = LIB_FILTERS.filter(function (f) {
       return f.key !== "hot" || groups.some(function (g) { return g.hot; });
     });
-    return '<div class="hit-filter" role="group" aria-label="题目筛选">' + filters.map(function (f) {
+    return '<div class="hit-filter" role="group" aria-label="Đề bàiLọc">' + filters.map(function (f) {
       return '<button type="button" data-filter="' + f.key + '"' +
         (libView.filter === f.key ? ' class="is-on" aria-pressed="true"' : ' aria-pressed="false"') + ">" + f.zh + "</button>";
     }).join("") + "</div>";
@@ -242,10 +242,10 @@
   function panelHTML(skill, meta, groups, records) {
     var keep = libKept(skill, groups, records);
     var body = keep.length ? libBody(skill, meta, keep, records) :
-      '<div class="hit-empty"><b>这个筛选下没有题目</b><p>切回「全部」看看其他题。</p></div>';
+      '<div class="hit-empty"><b>đại từ nàyLọcxuốngkhông cóĐề bài</b><p>cắt xoay vòng«Tất cả»xem quaKháchọ.</p></div>';
     return '<div class="hit-lib-panelhead"><h2 lang="en">' + esc(meta.head || meta.en) + "</h2>" + filterHTML(groups) + "</div>" + body;
   }
-  // 搜索跨该科目全部题型：题目名只记得住中文或英文，不该先逼用户猜题型
+  // Tìm kiếmbước qua nênmôn họcTất cảhọ khuôn:Đề bàitên chỉnhớsốngTiếng Trungcó thểTiếng Anh,không nêntrước biến thể củangười dùngđoán họ khuôn
   function libSearchHTML(skill, query, records) {
     var t = query.trim().toLocaleLowerCase();
     var parts = [];
@@ -260,10 +260,10 @@
         libBody(skill, meta, keep, records));
     });
     var body = total ? parts.join("") :
-      '<div class="hit-empty"><b>题库里没有「' + esc(query.trim()) + '」</b><p>换个关键词，或清空搜索框浏览全部题目。</p>' +
-      '<button type="button" class="hit-go" data-clear>清空搜索</button></div>';
-    return '<div class="hit-lib-panelhead"><h2>搜索「' + esc(query.trim()) + '」<span class="hit-lib-count">命中 ' +
-      total + " 组</span></h2>" + filterHTML(libCatalog[skill] || []) + "</div>" + body;
+      '<div class="hit-empty"><b>ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thibiến thể củakhông có«' + esc(query.trim()) + '»</b><p>trao đổi dùng trongtừ khóa,có thểdọn dẹpTìm kiếmkhung ví dụ: khung cửaxem lướtTất cảĐề bài.</p>' +
+      '<button type="button" class="hit-go" data-clear>dọn dẹpTìm kiếm</button></div>';
+    return '<div class="hit-lib-panelhead"><h2>Tìm kiếm«' + esc(query.trim()) + '»<span class="hit-lib-count">bắn trúng mục tiêu ' +
+      total + " họ</span></h2>" + filterHTML(libCatalog[skill] || []) + "</div>" + body;
   }
   function segHTML(skill) {
     return (LIB[skill] || []).map(function (m, i) {
@@ -293,9 +293,9 @@
     libHost.querySelector(".hit-lib-head").innerHTML = '<p class="hit-kicker">' + hc.kicker + "</p><h1>" +
       hc.zh + '</h1><p class="hit-lead">' + hc.lead + "</p>";
     var searching = !!libView.query.trim();
-    panel.setAttribute("aria-label", searching ? "搜索结果" : meta.zh);
+    panel.setAttribute("aria-label", searching ? "Tìm kiếmKết quả" : meta.zh);
     if (!libCatalog[skill]) {
-      panel.innerHTML = '<p class="hit-lib-note">正在载入题库目录…</p>';
+      panel.innerHTML = '<p class="hit-lib-note">đang ở thời điểm đótải vàongân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thimục lục…</p>';
       return;
     }
     libView.records = doneMap();
@@ -319,10 +319,10 @@
   }
   function paintBankPapers(host, papers) {
     if (!papers || !papers.length) return;
-    host.querySelector(".hit-lib-extra").innerHTML = '<h2 class="hit-minor-heading">老师组卷</h2><div class="hit-set-list">' +
+    host.querySelector(".hit-lib-extra").innerHTML = '<h2 class="hit-minor-heading">Giáo viênhọ cuộn lại</h2><div class="hit-set-list">' +
       papers.map(function (p) {
         return '<a class="hit-set-row" href="bank.html?id=' + encodeURIComponent(p.id) + '"><div class="hit-set-info"><h4>' +
-          esc(p.title || p.id) + "</h4><p>" + esc((p.makerName ? p.makerName + " · " : "") + "练习") + "</p></div></a>";
+          esc(p.title || p.id) + "</h4><p>" + esc((p.makerName ? p.makerName + " · " : "") + "Luyện tập") + "</p></div></a>";
       }).join("") + "</div>";
   }
   function clearQuery() {
@@ -336,12 +336,12 @@
     if (LIB_SKILLS.indexOf(q) >= 0) libView.skill = q;
     host.innerHTML = '<section class="hit-lib">' +
       '<div class="hit-lib-head"></div>' +
-      '<nav class="hit-lib-skills" role="tablist" aria-label="科目">' + LIB_SKILLS.map(function (s) {
+      '<nav class="hit-lib-skills" role="tablist" aria-label="môn học">' + LIB_SKILLS.map(function (s) {
         return '<button type="button" role="tab" data-skill="' + s + '">' + SKILL_ZH[s] +
           '<small lang="en">' + s.toUpperCase() + "</small></button>";
       }).join("") + "</nav>" +
-      '<div class="hit-lib-seg" role="tablist" aria-label="题型">' + segHTML(libView.skill) + "</div>" +
-      '<form class="hit-search" role="search"><label>搜索题目<input type="search" name="query" autocomplete="off" placeholder="输入中文或英文题目名称"></label></form>' +
+      '<div class="hit-lib-seg" role="tablist" aria-label="họ khuôn">' + segHTML(libView.skill) + "</div>" +
+      '<form class="hit-search" role="search"><label>Tìm kiếmĐề bài<input type="search" name="query" autocomplete="off" placeholder="nhập khẩuTiếng Trungcó thểTiếng AnhĐề bàitên của một sự vật"></label></form>' +
       '<div class="hit-lib-panel" role="tabpanel"></div>' +
       '<div class="hit-lib-extra"></div></section>';
     host.addEventListener("click", function (ev) {
@@ -436,7 +436,7 @@
     if (!iso) return "";
     var d = new Date(iso);
     var p2 = function (n) { return (n < 10 ? "0" : "") + n; };
-    return (d.getMonth() + 1) + "月" + d.getDate() + "日 " + p2(d.getHours()) + ":" + p2(d.getMinutes());
+    return (d.getMonth() + 1) + "mặt trăng" + d.getDate() + "viết tắt của " + p2(d.getHours()) + ":" + p2(d.getMinutes());
   }
 
   function paintProfile(host) {
@@ -449,62 +449,62 @@
       };
       var practiceRow;
       if (acc && acc.staff) {
-        practiceRow = row("真题题库", "已开通", true);
+        practiceRow = row("Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi", "đãmở đường mới hoặc tuyến đường sắt", true);
       } else if (acc && acc.failed) {
-        practiceRow = row("真题题库", "查询失败", false);
+        practiceRow = row("Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi", "kiểm traThất bại", false);
       } else {
         var p = acc || { on: false, reason: "none" };
-        var label = "未开通";
-        if (p.on) label = p.expireAt ? fmtWhen(p.expireAt) + " 到期" : "已开通";
-        else if (p.reason === "expired") label = "已到期";
-        else if (p.reason === "scheduled") label = fmtWhen(p.startAt) + " 开启";
-        else if (p.reason === "off") label = "已停用";
-        practiceRow = row("真题题库", label, !!p.on);
+        var label = "chưamở đường mới hoặc tuyến đường sắt";
+        if (p.on) label = p.expireAt ? fmtWhen(p.expireAt) + " đến hạn khoản vay" : "đãmở đường mới hoặc tuyến đường sắt";
+        else if (p.reason === "expired") label = "đãđến hạn khoản vay";
+        else if (p.reason === "scheduled") label = fmtWhen(p.startAt) + " mở";
+        else if (p.reason === "off") label = "đãngừng sử dụng";
+        practiceRow = row("Đề thi thậtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi", label, !!p.on);
       }
-      return practiceRow + row("免费题库", "已开通", true);
+      return practiceRow + row("miễn phíngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi", "đãmở đường mới hoặc tuyến đường sắt", true);
     }
     function draw() {
       var u = A && A.user ? A.user() : {};
-      var name = u.displayName || u.phone || "同学";
+      var name = u.displayName || u.phone || "học cùng trường";
       var teacher = u.role === "teacher";
       var s = stats();
       var perms = permHTML();
       var rows = s.recs.length ? s.recs.map(function (r) {
         var when = r.at ? dayKey(r.at) : "—";
-        var setLabel = /^\d+$/.test(r.set) ? "第 " + r.set + " 套" : "免费题库";
+        var setLabel = /^\d+$/.test(r.set) ? " " + r.set + " che đậy" : "miễn phíngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi";
         return "<tr><td>" + when + "</td><td>" + r.skill + "</td><td>" + setLabel + '</td><td class="hit-score">' + r.pct + "</td></tr>";
-      }).join("") : '<tr><td colspan="4">还没有记录。</td></tr>';
+      }).join("") : '<tr><td colspan="4">họkhông cóghi chép.</td></tr>';
       var nameBlock = teacher
         ? '<div class="hit-profile-name">' + esc(name) + "</div>"
         : '<form class="hit-name-form" id="hit-name-form">' +
           '<input id="hit-display-name" maxlength="20" value="' + esc(u.displayName || "") +
-          '" placeholder="用户名" aria-label="用户名" autocomplete="nickname">' +
-          '<button type="submit" class="hit-save">保存</button></form>';
+          '" placeholder="tên người dùng" aria-label="tên người dùng" autocomplete="nickname">' +
+          '<button type="submit" class="hit-save">Lưu</button></form>';
       host.innerHTML =
         '<div class="hit-profile">' +
           '<div class="hit-profile-card">' +
             '<label class="hit-avatar-edit">' + avatarBox(u, "is-lg") +
             '<input type="file" id="hit-avatar-file" class="hit-file-input" accept="image/jpeg,image/png,image/webp">' +
-            '<span class="hit-avatar-hint">更换头像</span></label>' +
+            '<span class="hit-avatar-hint">thay thế lốp xe mònchân dung</span></label>' +
             nameBlock +
             '<p class="hit-profile-msg" id="hit-profile-msg" role="status" aria-live="polite"></p>' +
-            '<div class="hit-profile-role">练习账号</div>' +
+            '<div class="hit-profile-role">Luyện tậpTài khoản</div>' +
             '<div class="hit-perm-list">' + perms + "</div>" +
             '<div class="hit-profile-links">' +
-              '<a href="soon.html?p=wordbook">生词本</a>' +
-              '<a href="soon.html?p=history">练习记录</a>' +
+              '<a href="soon.html?p=wordbook">sổ tay từ vựng</a>' +
+              '<a href="soon.html?p=history">Luyện tậpghi chép</a>' +
             "</div>" +
           "</div>" +
           "<div>" +
             '<div class="hit-stat-grid">' +
-              "<div class=\"hit-stat\"><strong>" + s.n + "</strong><span>已做题</span></div>" +
-              "<div class=\"hit-stat\"><strong>" + s.avg + "</strong><span>平均正确率</span></div>" +
-              "<div class=\"hit-stat\"><strong>—</strong><span>剩余模考</span></div>" +
-              "<div class=\"hit-stat\"><strong>" + s.streak + "</strong><span>连续天数</span></div>" +
+              "<div class=\"hit-stat\"><strong>" + s.n + "</strong><span>đã làm họ</span></div>" +
+              "<div class=\"hit-stat\"><strong>" + s.avg + "</strong><span>trung bìnhTỉ lệ đúng</span></div>" +
+              "<div class=\"hit-stat\"><strong>—</strong><span>Còn lạiThi thử</span></div>" +
+              "<div class=\"hit-stat\"><strong>" + s.streak + "</strong><span>Liên tiếpsố ngày</span></div>" +
             "</div>" +
             '<div class="hit-profile-card">' +
-              "<h3>最近练习</h3>" +
-              '<table class="hit-table"><thead><tr><th>日期</th><th>科目</th><th>套卷</th><th>成绩</th></tr></thead><tbody>' +
+              "<h3>gần đâyLuyện tập</h3>" +
+              '<table class="hit-table"><thead><tr><th>ngày tháng</th><th>môn học</th><th>che đậy cuộn lại</th><th>Kết quả</th></tr></thead><tbody>' +
               rows + "</tbody></table></div>" +
           "</div>" +
         "</div>";
@@ -522,12 +522,12 @@
         var f = this.files && this.files[0];
         this.value = "";
         if (!f || !A || !A.uploadAvatar) return;
-        msg("上传中…");
+        msg("Tải lênhình thức kết hợp Trung Quốc…");
         A.uploadAvatar(f).then(function () {
           draw();
           refreshChrome();
-          msg("头像已更新", true);
-        }).catch(function (e) { msg(e.message || "上传失败"); });
+          msg("chân dungđãthay cũ đổi mới", true);
+        }).catch(function (e) { msg(e.message || "Tải lênThất bại"); });
       };
       var form = document.getElementById("hit-name-form");
       if (form) form.onsubmit = function (ev) {
@@ -541,9 +541,9 @@
             A.setUser({ displayName: u.displayName || name, avatarUrl: u.avatarUrl || A.user().avatarUrl || "" });
             draw();
             refreshChrome();
-            msg("用户名已保存", true);
+            msg("tên người dùngđãLưu", true);
           })
-          .catch(function (e) { msg(e.message || "保存失败"); });
+          .catch(function (e) { msg(e.message || "LưuThất bại"); });
       };
     }
     draw();
@@ -576,32 +576,32 @@
     var s = stats();
     host.innerHTML =
       '<section class="hit-hero" aria-labelledby="home-heading"><div>' +
-        '<p class="hit-greeting">欢迎回来' + (name ? "，" + esc(name) : "") + '</p>' +
-        '<h1 id="home-heading">专注练习。<br><span>稳步向前。</span></h1>' +
-        '<p class="hit-lead">选一套完整模考，或从一个题型开始。</p></div>' +
-        '<aside class="hit-overview"><div class="hit-minor-heading"><h2>你的学习概览</h2><span>本机学习记录</span></div>' +
-        '<dl class="hit-hero-stats"><div><dt>已完成练习</dt><dd>' + s.n + '<small>题</small></dd></div>' +
-        '<div><dt>平均正确率</dt><dd>' + s.avg + '</dd></div>' +
-        '<div><dt>连续学习</dt><dd>' + s.streak + '<small>天</small></dd></div></dl>' +
-        '<a class="hit-resume" href="profile.html"><span><small>每次练习，都有记录</small><strong>查看你的学习进度</strong></span><span>学习记录 ↗</span></a></aside></section>' +
-      '<section class="hit-study-modes" aria-label="选择学习方式">' +
-        '<article class="hit-home-mock"><div><p class="hit-mode-label">Full-length practice</p><h2>全真模考</h2>' +
-        '<p>阅读、听力、写作、口语。<br>在完整考试中，找到自己的节奏。</p>' +
-        '<a class="hit-go" href="official.html">查看模考入口 <span aria-hidden="true">↗</span></a></div>' +
-        '<div class="hit-mode-number">15<span>套完整模考</span></div></article>' +
-        '<a class="hit-home-practice" href="free.html"><div><p class="hit-mode-label">Focused practice</p><h2>题库分类练习</h2>' +
-        '<p>按科目、按题型，<br>把每一个薄弱点练扎实。</p></div><span class="hit-mode-bottom">进入题库 <span aria-hidden="true">↗</span></span></a></section>' +
-      '<section class="hit-home-subjects"><div class="hit-section-heading"><h2>从一个科目开始</h2><span>专项练习，逐个突破</span></div>' +
+        '<p class="hit-greeting">chào đóntrở về' + (name ? "," + esc(name) : "") + '</p>' +
+        '<h1 id="home-heading">tập trungLuyện tập.<br><span>một cách ổn địnhtiến lên.</span></h1>' +
+        '<p class="hit-lead">chọnbộhoàn chỉnhThi thử,có thể biến thể của một dùng trong họ khuônBắt đầu.</p></div>' +
+        '<aside class="hit-overview"><div class="hit-minor-heading"><h2>bạnhọctổng quan</h2><span>hình thức kết hợp gốc họhọcghi chép</span></div>' +
+        '<dl class="hit-hero-stats"><div><dt>Đã hoàn thànhLuyện tập</dt><dd>' + s.n + '<small>họ</small></dd></div>' +
+        '<div><dt>trung bìnhTỉ lệ đúng</dt><dd>' + s.avg + '</dd></div>' +
+        '<div><dt>Liên tiếphọc</dt><dd>' + s.streak + '<small>ngày</small></dd></div></dl>' +
+        '<a class="hit-resume" href="profile.html"><span><small>mỗi lầnLuyện tập,họ cóghi chép</small><strong>XembạnhọcTiến độ</strong></span><span>họcghi chép ↗</span></a></aside></section>' +
+      '<section class="hit-study-modes" aria-label="Chọnhọccách thức">' +
+        '<article class="hit-home-mock"><div><p class="hit-mode-label">Full-length practice</p><h2>họ thậtThi thử</h2>' +
+        '<p>Đọc,Nghe,Viết,Nói.<br>tồn tạihoàn chỉnhKì thihình thức kết hợp Trung Quốc,tìm thấybản thânnhịp điệu.</p>' +
+        '<a class="hit-go" href="official.html">XemThi thửlối vào <span aria-hidden="true">↗</span></a></div>' +
+        '<div class="hit-mode-number">15<span>che đậyhoàn chỉnhThi thử</span></div></article>' +
+        '<a class="hit-home-practice" href="free.html"><div><p class="hit-mode-label">Focused practice</p><h2>ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thiPhân loạiLuyện tập</h2>' +
+        '<p>nhấnmôn học,nhấn họ khuôn,<br>cầm mỗi một dùng trongyếuđiểm luyện tậpmạnh mẽ.</p></div><span class="hit-mode-bottom">đi vàongân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi <span aria-hidden="true">↗</span></span></a></section>' +
+      '<section class="hit-home-subjects"><div class="hit-section-heading"><h2>biến thể của một dùng trongmôn họcBắt đầu</h2><span>chuyên biệtLuyện tập,từng cái mộtđột phá</span></div>' +
         '<div class="hit-subject-strip">' + SUBJECTS.map(function (subject) {
           return '<a href="free.html?skill=' + subject.skill + '"><span>' + subject.zh + '<span aria-hidden="true">↗</span></span><h3 lang="en">' +
             subject.skill.charAt(0).toUpperCase() + subject.skill.slice(1) + '</h3><p>' + subject.chips.join(" / ") + '</p></a>';
         }).join("") + '</div></section>' +
-      '<section class="hit-recent"><div class="hit-section-heading"><h2>最近练习</h2><a href="profile.html">查看记录 ↗</a></div>' +
+      '<section class="hit-recent"><div class="hit-section-heading"><h2>gần đâyLuyện tập</h2><a href="profile.html">Xemghi chép ↗</a></div>' +
         (s.recs.length ? s.recs.slice(0, 3).map(function (r) {
           return '<a class="hit-recent-row" href="profile.html"><span>' + esc(r.skill) + '</span><strong>' +
-            (/^\d+$/.test(r.set) ? '第 ' + esc(r.set) + ' 套' : '免费题库') + '</strong><span>' +
+            (/^\d+$/.test(r.set) ? ' ' + esc(r.set) + ' che đậy' : 'miễn phíngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi') + '</strong><span>' +
             (r.at ? esc(dayKey(r.at)) : '—') + '</span><span>' + esc(r.pct) + '</span><span aria-hidden="true">↗</span></a>';
-        }).join("") : '<div class="hit-empty"><b>从第一组练习开始</b><p>完成练习后，你的学习记录会显示在这里。</p></div>') + '</section>';
+        }).join("") : '<div class="hit-empty"><b>biến thể củađầu tiênhọLuyện tậpBắt đầu</b><p>Hoàn thànhLuyện tậphọ,bạnhọcghi chépcó thểhiển thịtồn tạibiến thể của.</p></div>') + '</section>';
   }
 
   w.YYSD_HIT = {

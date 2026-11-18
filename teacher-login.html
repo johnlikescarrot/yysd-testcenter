@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>教师登录 · 优益思达国际课程中心</title>
+  <title>Giáo viên Đăng nhập · YYSD · Trung tâm Khóa học Quốc tế</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722polish">
   <script>
-  /* ponytail: 分网站统一登录，避免 teacher-login 闪出优益思达品牌 */
+  /* ponytail: phần trang web 7-Eleven chuỗi cửa hàng tiện lợi Đăng nhập, ngăn chặn teacher-login loé lên YYSD tên thương hiệu */
   (function () {
     try {
       var q = new URLSearchParams(location.search).get("tenant");
@@ -34,69 +34,69 @@
     }
   })();
   </script>
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="home-minimal teacher-auth-page">
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="YYSD · Trung tâm Khóa học Quốc tế Trang chủ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>YYSD · Trung tâm Khóa học Quốc tế</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <a href="index.html">返回学生端</a>
-        <a href="teacher-login.html" class="is-active">教师登录</a>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <a href="index.html">Quay lại Học viên cuối</a>
+        <a href="teacher-login.html" class="is-active">Giáo viên Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="教师端介绍">
+      <aside class="auth-aside reveal" aria-label="Cổng giáo viên giới thiệu ai với ai">
         <div class="auth-aside__logo" aria-hidden="true">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
         </div>
         <span class="auth-aside__eyebrow">YYSD · TEACHER</span>
-        <h2 class="auth-aside__title">教师端<br>学情一览</h2>
-        <p class="auth-aside__desc">查看学生模考与练习成绩，掌握整体备考进度。</p>
+        <h2 class="auth-aside__title">Cổng giáo viên<br>học hình thức kết hợp tình cảm nhìn thoáng qua</h2>
+        <p class="auth-aside__desc">Xem Học viên Thi thử Luyện tập Kết quả, Thành thạo thực thể toàn bộ chuẩn bị cho kỳ thi Tiến độ.</p>
         <ul class="auth-aside__points">
-          <li>学生成绩汇总</li>
-          <li>模考记录追踪</li>
-          <li>按板块筛选</li>
+          <li>Học viên Kết quả biến thể của</li>
+          <li>Thi thử ghi chép theo dấu</li>
+          <li>nhấn tấm Lọc</li>
         </ul>
       </aside>
       <section class="auth-card reveal">
         <div class="auth-tabs">
-          <span class="auth-tabs__item is-active">登录</span>
-          <a class="auth-tabs__item" href="teacher-register.html">注册</a>
+          <span class="auth-tabs__item is-active">Đăng nhập</span>
+          <a class="auth-tabs__item" href="teacher-register.html">Đăng ký</a>
         </div>
-        <h1 class="auth-card__title">教师登录</h1>
-        <p class="auth-card__desc">使用教师账号的手机号与密码登录。</p>
+        <h1 class="auth-card__title">Giáo viên Đăng nhập</h1>
+        <p class="auth-card__desc">sử dụng Giáo viên Tài khoản điện thoại di động gầm Mật khẩu Đăng nhập.</p>
 
         <form class="auth-form" id="login-form" novalidate>
           <label class="auth-field">
-            <span>手机号</span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位中国大陆手机号" required>
+            <span>Số điện thoại</span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 vị trí Trung Quốc Trung Quốc đại lục nhắc đến CHND Trung Hoa điện thoại di động gầm" required>
           </label>
           <label class="auth-field">
-            <span>密码</span>
-            <input type="password" id="password" autocomplete="current-password" minlength="6" maxlength="64" placeholder="至少 6 位">
+            <span>Mật khẩu</span>
+            <input type="password" id="password" autocomplete="current-password" minlength="6" maxlength="64" placeholder="ít nhất 6 vị trí">
           </label>
           <label class="auth-field">
-            <span>激活码</span>
-            <input id="activationCode" autocomplete="off" placeholder="这台电脑已绑定可留空">
+            <span>Mã kích hoạt</span>
+            <input id="activationCode" autocomplete="off" placeholder="đại từ này Đài Loan viết tắt máy tính đã từ mượn ràng buộc tiền tố có thể chừa trống trong tài liệu">
           </label>
-          <p class="auth-forgot"><a href="forgot-password.html">忘记密码？</a></p>
+          <p class="auth-forgot"><a href="forgot-password.html">Quên mật khẩu?</a></p>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable">进入教师端</button>
+          <button type="submit" class="btn btn--primary btn--block pressable">Vào Cổng giáo viên</button>
         </form>
 
-        <p class="auth-legal">
-          还没有教师账号？<a href="teacher-register.html">注册教师账号</a>
-          · <a href="login.html">学生登录</a>
+        <p class="auth-legal">họ không có Giáo viên Tài khoản?<a href="teacher-register.html">Đăng ký Giáo viên Tài khoản</a>
+          · <a href="login.html">Học viên Đăng nhập</a>
         </p>
       </section>
     </div>
@@ -104,7 +104,7 @@
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · 教师端</p>
+      <p class="minimal-footer__copy">© <span id="year"></span>YYSD · Trung tâm Khóa học Quốc tế · Cổng giáo viên</p>
     </div>
   </footer>
 

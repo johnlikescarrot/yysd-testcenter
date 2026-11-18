@@ -271,11 +271,11 @@
     var lead = $("cdt-gate-sections-lead");
     var lab = $("cdt-gate-sec-label");
     if (isReading(state.item)) {
-      if (lead) lead.textContent = "适合分项突破，可只练某几篇文章；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习文章：";
+      if (lead) lead.textContent = "phù hợpmục phụ của chương trìnhđột phá,tiền tố có thể chỉ luyện tập một vài bàn nhỏ tờbài viết;hướng về phía trướcđo thời giankhôngtác động nỗ lực hoặc áp lựcthêmáp lực.";
+      if (lab) lab.textContent = "ChọnLuyện tậpbài viết:";
     } else {
-      if (lead) lead.textContent = "适合分项突破，可只练某几个部分；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习部分：";
+      if (lead) lead.textContent = "phù hợpmục phụ của chương trìnhđột phá,tiền tố có thể chỉ luyện tập một vàimột vàiphần;hướng về phía trướcđo thời giankhôngtác động nỗ lực hoặc áp lựcthêmáp lực.";
+      if (lab) lab.textContent = "ChọnLuyện tậpphần:";
     }
     host.innerHTML = parts.map(function (p) {
       var on = !prefer || prefer === p.id;
@@ -295,7 +295,7 @@
     for (var i = 0; i < boxes.length; i++) {
       if (!boxes[i].checked) { allOn = false; break; }
     }
-    btn.textContent = allOn ? "取消全选" : "全选";
+    btn.textContent = allOn ? "Hủyhọ chọn" : "họ chọn";
   }
 
   function selectedGateSections() {
@@ -1271,7 +1271,7 @@
 
   function showSubmitLoading(msg) {
     var text = $("cdt-submit-loading-text");
-    if (text) text.textContent = msg || "正在加载成绩报告…";
+    if (text) text.textContent = msg || "Đang tảiKết quảBáo cáo…";
     showMask("cdt-submit-loading", true);
   }
 
@@ -1280,10 +1280,10 @@
   }
 
   function submitLoadingMsg(plan) {
-    if (!plan) return "正在加载成绩报告…";
-    if (plan.action === "hop") return "正在进入下一科…";
-    if (plan.action === "report") return "正在加载成绩报告…";
-    return "正在生成成绩单…";
+    if (!plan) return "Đang tảiKết quảBáo cáo…";
+    if (plan.action === "hop") return "đang ở thời điểm đóđi vàoxuống một ngành học…";
+    if (plan.action === "report") return "Đang tảiKết quảBáo cáo…";
+    return "đang ở thời điểm đótạo raphiếu điểm hoặc bảng điểm…";
   }
 
   function updateTimer(seconds) {
@@ -1412,7 +1412,7 @@
       else if (typeof win.confirmSubmit === "function") win.confirmSubmit();
       else win.postMessage({ type: "yysd:time-up" }, "*");
     } catch (e) { /* ignore */ }
-    // ponytail: 详解不发 yysd:score — Finish 只出批改
+    // ponytail: Giải thích chi tiếtkhông gửi đi yysd:score — Finish chỉ đi raChấm bài
     if (isExplainMode()) {
       state.scoredThisSession = true;
       setTimeout(finish, 300);
@@ -1478,9 +1478,9 @@
         el = nodes[i];
         if (el.children && el.children.length) continue;
         t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/批改报告|写作完成/.test(t)) {
+        if (/Chấm bàiBáo cáo|ViếtHoàn thành/.test(t)) {
           el.className = "yysd-res-eyebrow";
-          el.textContent = /写作/.test(t) ? "Writing report" : "Practice result";
+          el.textContent = /Viết/.test(t) ? "Writing report" : "Practice result";
           break;
         }
       }
@@ -1544,12 +1544,12 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? "详解批改如下，不计入成绩。"
+        ? "Giải thích chi tiếtChấm bàinhư sau,không quan tâmđi vàoKết quả."
         : (state.pack === "drill"
           ? (isListening(state.item)
-            ? "练习已交卷 · 成绩单与解析如下；可用顶部播放器回放听力。"
-            : "练习已交卷 · 成绩单与解析如下。")
-          : "模考已交卷 · 下方为本次作答与解析。");
+            ? "Luyện tậpđãNộp bài · phiếu điểm hoặc bảng điểmGiải thíchnhư sau;tiền tố có thể sử dụngmáiPhátthiết bịphát lạiNghe."
+            : "Luyện tậpđãNộp bài · phiếu điểm hoặc bảng điểmGiải thíchnhư sau.")
+          : "Thi thửđãNộp bài · bên dướilàm với tư cách hình thức kết hợp gốc tiếp theotrả lờiGiải thích.");
     }
   }
 

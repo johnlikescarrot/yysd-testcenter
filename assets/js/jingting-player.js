@@ -1,4 +1,4 @@
-/* 听力精听 lyric player — full / line + LightPeek */
+/* Nghetinh chất cười cổ đại lyric player — full / line + LightPeek */
 (function () {
   "use strict";
 
@@ -63,7 +63,7 @@
     var el = $("jtGloss"), wEl = $("jtGlossW"), mEl = $("jtGlossM");
     if (!el) return;
     wEl.textContent = word;
-    mEl.textContent = "查询中…";
+    mEl.textContent = "kiểm trahình thức kết hợp Trung Quốc…";
     el.classList.remove("is-hidden");
     var left = Math.min(x + 8, window.innerWidth - 280);
     var top = Math.min(y + 12, window.innerHeight - 80);
@@ -79,15 +79,15 @@
       headers: apiHeaders(),
       body: JSON.stringify({ word: word })
     }).then(function (r) {
-      if (r.status === 401) throw new Error("登录后可查词");
-      if (!r.ok) throw new Error("查词失败");
+      if (r.status === 401) throw new Error("Đăng nhậphọ tiền tố có thể họ biến thể cũ của");
+      if (!r.ok) throw new Error("họ biến thể cũ củaThất bại");
       return r.json();
     }).then(function (d) {
-      var g = (d && d.gloss) || "暂无释义";
+      var g = (d && d.gloss) || "tạm thời không cóNghĩa";
       state.glossCache[key] = g;
       if (wEl.textContent === word) mEl.textContent = g;
     }).catch(function (err) {
-      if (wEl.textContent === word) mEl.textContent = (err && err.message) || "查词失败";
+      if (wEl.textContent === word) mEl.textContent = (err && err.message) || "họ biến thể cũ củaThất bại";
     });
   }
 
@@ -116,7 +116,7 @@
     if (!ol || !state.data) return;
     ol.innerHTML = state.data.sentences.map(function (s, i) {
       var cls = i === state.i ? " is-active" : "";
-      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '">第 ' + (i + 1) + " 句</button></li>";
+      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '"> ' + (i + 1) + " biến thể của</button></li>";
     }).join("");
     var active = ol.querySelector(".is-active");
     if (active) active.scrollIntoView({ block: "nearest" });
@@ -210,7 +210,7 @@
     var s = curSent();
     var t = audio.currentTime || 0;
 
-    // 单句循环：任何模式到句末都回跳；逐句/跟读未开循环则停在句末
+    // câu đơn ngữ pháptuần hoàn:bất kỳchế độđến biến thể của đầu mút họ xoay vòng nhảy;hình thức kết hợp theo đuổi biến thể của/gót chân dấu phẩy chưa mở ngoại động từ hoặc nội động từtuần hoànvăn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưng dừng tồn tại biến thể của đầu mút
     if (s && t >= s.end - 0.05) {
       if (state.loop) {
         try { audio.currentTime = s.start; } catch (e) {}
@@ -354,8 +354,8 @@
       if (!li) return;
       state.rate = Number(li.getAttribute("data-r"));
       audio.playbackRate = state.rate;
-      $("jtRateBtn").textContent = "倍速 " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
-      if (state.rate === 1) $("jtRateBtn").textContent = "倍速 1.0x";
+      $("jtRateBtn").textContent = " " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
+      if (state.rate === 1) $("jtRateBtn").textContent = " 1.0x";
       $("jtRateMenu").classList.add("is-hidden");
     };
     document.addEventListener("click", function () {
@@ -398,7 +398,7 @@
         state.showZh = !state.showZh;
         renderStage();
       } else if (e.key === "Shift") {
-        // ponytail: Shift alone toggles loop (matches 新东方 tip); ignore chord keys
+        // ponytail: Shift alone toggles loop (matches viết tắt của Tân Cươngphương Đông tip); ignore chord keys
         if (!e.repeat && !e.ctrlKey && !e.metaKey && !e.altKey) {
           state.loop = !state.loop;
           $("jtLoop").classList.toggle("is-on", state.loop);
@@ -411,11 +411,11 @@
   function boot() {
     bind();
     fetch(DATA_URL).then(function (r) {
-      if (!r.ok) throw new Error("找不到精听数据：" + partId);
+      if (!r.ok) throw new Error("không thể tìm thấytinh chất cười cổ đạidữ liệu:" + partId);
       return r.json();
     }).then(function (data) {
       state.data = data;
-      document.title = data.title + " · 听力精听 · 优益思达";
+      document.title = data.title + " · Nghetinh chất cười cổ đại · YYSD";
       $("jtTitle").textContent = data.title;
       $("jtExam").href = data.examHref || "cambridge.html";
       audio.src = data.audioUrl;
@@ -433,8 +433,8 @@
       setMode("full");
       seekFirst();
     }).catch(function (err) {
-      $("jtTitle").textContent = "加载失败";
-      $("jtFullBody").textContent = (err && err.message) || "加载失败";
+      $("jtTitle").textContent = "Tải thất bại";
+      $("jtFullBody").textContent = (err && err.message) || "Tải thất bại";
     });
   }
 

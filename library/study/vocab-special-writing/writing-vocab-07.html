@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元7 · 职场与工作">
-    <meta name="exam:description" content="写作专项词汇 · 工作家庭 · 职场与工作">
+    <meta name="exam:title" content="Bài 7 · nơi làm việc làm việc">
+    <meta name="exam:description" content="Viết chuyên biệt Từ vựng · làm việc gia đình · nơi làm việc làm việc">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元7 · 职场与工作</title>
+    <title>Bài 7 · nơi làm việc làm việc</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -140,138 +140,139 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">💼</div><span>单元7-工作家庭-职场与工作</span></div>
+        <div class="logo"><div class="logo-icon">💼</div><span>Bài 7-làm việc gia đình -nơi làm việc làm việc</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng 30 câu</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi Chọn<br>chọnĐúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích họ viếtTiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọntừ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:ghép đôi Chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạnnhập khẩu</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 工作家庭 · 职场与工作 · 27个核心词条 ====================
+// ==================== làm việc gia đình · nơi làm việc biến thể của làm việc · 27dùng trong lõi mục từ điển ====================
 const phraseData = [
-    // —— 工作性质与状态（4个） ——
-    { cn:'繁重的', en:'Arduous', word:'Arduous', synonym:'Hard', target:'arduous', detail:'arduous 表示“繁重的、费力的”，形容工作或任务需要大量精力。', example:'Arduous work requires a lot of physical or mental effort.' },
-    { cn:'重复的', en:'Repetitive', word:'Repetitive', synonym:'Monotonous', target:'repetitive', detail:'repetitive 表示“重复的”，指不断重复相同动作或任务的工作。', example:'Repetitive tasks can lead to boredom and low job satisfaction.' },
-    { cn:'单调的', en:'Monotonous', word:'Monotonous', synonym:'Boring', target:'monotonous', detail:'monotonous 表示“单调的、乏味的”，指工作或生活缺乏变化。', example:'Monotonous work can be demotivating for employees.' },
-    { cn:'繁重的工作', en:'Heavy workload', word:'Workload', synonym:'Burden', target:'workload', detail:'workload 表示“工作量”，heavy 表示“繁重的”，指工作任务量很大。', example:'Many employees struggle with a heavy workload.' },
+    // —— làm việc bản chất biến thể của tình trạng (4dùng trong) ——
+    { cn:'nặng nề của', en:'Arduous', word:'Arduous', synonym:'Hard', target:'arduous', detail:'arduous về ai đó bày tỏ « nặng nề của, tốn nhiều công sức của», miêu tả làm việc có thể Nhiệm vụ cần lượng lớn năng lượng.', example:'Arduous work requires a lot of physical or mental effort.' },
+    { cn:'Lặp lại của', en:'Repetitive', word:'Repetitive', synonym:'Monotonous', target:'repetitive', detail:'repetitive về ai đó bày tỏ « Lặp lại của», ngón tay không ngừng Lặp lại giống hệt chuyển động có thể Nhiệm vụ của làm việc.', example:'Repetitive tasks can lead to boredom and low job satisfaction.' },
+    { cn:'đơn điệu của', en:'Monotonous', word:'Monotonous', synonym:'Boring', target:'monotonous', detail:'monotonous về ai đó bày tỏ « đơn điệu của, nhàm chán của», ngón tay làm việc có thể Đời sống thiếu thay đổi.', example:'Monotonous work can be demotivating for employees.' },
+    { cn:'nặng nề của làm việc', en:'Heavy workload', word:'Workload', synonym:'Burden', target:'workload', detail:'workload về ai đó bày tỏ « khối lượng công việc », heavy về ai đó bày tỏ « nặng nề của», ngón tay làm việc Nhiệm vụ đo lường phó từ mức độ.', example:'Many employees struggle with a heavy workload.' },
 
-    // —— 求职与申请（4个） ——
-    { cn:'找工作', en:'Hunt for jobs', word:'Hunt', synonym:'Seek', target:'hunt', detail:'hunt for jobs 表示“找工作”，也可用 job hunting。', example:'After graduation, she began to hunt for jobs in her field.' },
-    { cn:'申请', en:'Apply for', word:'Apply', synonym:'Request', target:'apply', detail:'apply for 表示“申请”，介词 for 后接职位或机会。', example:'He decided to apply for a position at the company.' },
-    { cn:'胜任', en:'Be competent for', word:'Competent', synonym:'Qualified', target:'competent', detail:'competent for 表示“有能力的、胜任的”，指具备工作所需技能。', example:'She is highly competent for the management role.' },
-    { cn:'合格的', en:'Be qualified for', word:'Qualified', synonym:'Eligible', target:'qualified', detail:'qualified for 表示“有资格的、合格的”，常与 job/position 搭配。', example:'With five years of experience, he is qualified for the position.' },
+    // —— tìm việc làm biến thể của nộp đơn xin (4dùng trong) ——
+    { cn:'cố gắng tìm làm việc', en:'Hunt for jobs', word:'Hunt', synonym:'Seek', target:'hunt', detail:'hunt for jobs về ai đó bày tỏ «cố gắng tìm làm việc », họ tiền tố có thể sử dụng job hunting.', example:'After graduation, she began to hunt for jobs in her field.' },
+    { cn:'nộp đơn xin', en:'Apply for', word:'Apply', synonym:'Request', target:'apply', detail:'apply for về ai đó bày tỏ « nộp đơn xin », giới từ for họ nhận vị trí có thể cơ hội.', example:'He decided to apply for a position at the company.' },
+    { cn:'đủ khả năng', en:'Be competent for', word:'Competent', synonym:'Qualified', target:'competent', detail:'competent for về ai đó bày tỏ « có năng lực của, đủ khả năng của», ngón tay có làm việc cần thiết Kỹ năng.', example:'She is highly competent for the management role.' },
+    { cn:'đáp ứng tiêu chuẩn yêu cầu của', en:'Be qualified for', word:'Qualified', synonym:'Eligible', target:'qualified', detail:'qualified for về ai đó bày tỏ « được quyền của, đáp ứng tiêu chuẩn yêu cầu của», họ biến thể của job/position ghép đôi.', example:'With five years of experience, he is qualified for the position.' },
 
-    // —— 工作单位与人际（4个） ——
-    { cn:'工作单位', en:'Workplace', word:'Workplace', synonym:'Office', target:'workplace', detail:'workplace 表示“工作场所、工作单位”，指人们工作的地方。', example:'The company is committed to creating a safe workplace.' },
-    { cn:'同事', en:'Colleague', word:'Colleague', synonym:'Co-worker', target:'colleague', detail:'colleague 表示“同事”，指在同一单位工作的人。', example:'She gets along well with her colleagues.' },
-    { cn:'关系紧张', en:'Tense relationship', word:'Tense', synonym:'Strained', target:'tense', detail:'tense relationship 表示“关系紧张”，指人与人之间不和谐的关系。', example:'There is a tense relationship between the two departments.' },
-    { cn:'对公司忠诚', en:'Be loyal to the company', word:'Loyal', synonym:'Faithful', target:'loyal', detail:'loyal to the company 表示“对公司忠诚”，指员工忠于雇主。', example:'Employees who are loyal to the company tend to stay longer.' },
+    // —— đơn vị công tác biến thể của mối quan hệ giữa người với người (4dùng trong) ——
+    { cn:'đơn vị công tác', en:'Workplace', word:'Workplace', synonym:'Office', target:'workplace', detail:'workplace về ai đó bày tỏ « làm việc địa điểm, đơn vị công tác », ngón tay mọi người làm việc của khu vực.', example:'The company is committed to creating a safe workplace.' },
+    { cn:'đồng nghiệp', en:'Colleague', word:'Colleague', synonym:'Co-worker', target:'colleague', detail:'colleague về ai đó bày tỏ « đồng nghiệp », ngón tay tồn tại giống hệt đơn vị đo lường làm việc của người.', example:'She gets along well with her colleagues.' },
+    { cn:'quan hệ căng thẳng', en:'Tense relationship', word:'Tense', synonym:'Strained', target:'tense', detail:'tense relationship về ai đó bày tỏ « quan hệ căng thẳng », ngón tay người biến thể của người sau danh từ giữa không hoà hợp hình thức kết hợp hòa hợp của quan hệ.', example:'There is a tense relationship between the two departments.' },
+    { cn:'đúng công ty tận tụy', en:'Be loyal to the company', word:'Loyal', synonym:'Faithful', target:'loyal', detail:'loyal to the company về ai đó bày tỏ «đúng công ty tận tụy », ngón tay nhân viên trung thành với người thuê lao động.', example:'Employees who are loyal to the company tend to stay longer.' },
 
-    // —— 职业发展（4个） ——
-    { cn:'获得提升', en:'Get promotions', word:'Promotions', synonym:'Advancement', target:'promotions', detail:'get promotions 表示“获得晋升、提升”，指在职位上得到提升。', example:'Hard work often leads to get promotions in the workplace.' },
-    { cn:'职业发展', en:'Career development', word:'Career', synonym:'Professional', target:'career', detail:'career development 表示“职业发展”，指在工作中的成长和进步。', example:'The company offers many opportunities for career development.' },
-    { cn:'建立人脉关系', en:'Establish connections', word:'Establish', synonym:'Build', target:'establish', detail:'establish connections 表示“建立人脉关系”，指与行业人士建立联系。', example:'Networking helps professionals establish connections in their industry.' },
-    { cn:'铁饭碗', en:'Permanent job', word:'Permanent', synonym:'Stable', target:'permanent', detail:'permanent job 表示“铁饭碗、永久性工作”，指长期稳定的工作。', example:'Many people prefer a permanent job with benefits.' },
+    // —— Nghề nghiệp sự phát triển (4dùng trong) ——
+    { cn:'Nhận được Nâng cao', en:'Get promotions', word:'Promotions', synonym:'Advancement', target:'promotions', detail:'get promotions về ai đó bày tỏ « Nhận được thăng chức lên vị trí cao hơn, Nâng cao », ngón tay đang làm việc vị trí dùng trong được Nâng cao.', example:'Hard work often leads to get promotions in the workplace.' },
+    { cn:'Nghề nghiệp sự phát triển', en:'Career development', word:'Career', synonym:'Professional', target:'career', detail:'career development về ai đó bày tỏ « Nghề nghiệp sự phát triển », ngón tay tồn tại làm việc bắn trúng mục tiêu trưởng thành biến thể cũ của tiến bộ.', example:'The company offers many opportunities for career development.' },
+    { cn:'thiết lập mối quan hệ quan hệ', en:'Establish connections', word:'Establish', synonym:'Build', target:'establish', detail:'establish connections về ai đó bày tỏ « thiết lập mối quan hệ quan hệ », ngón tay biến thể của ngành nghề người thiết lập biến thể của.', example:'Networking helps professionals establish connections in their industry.' },
+    { cn:'công việc ổn định nghĩa đen: bát cơm sắt', en:'Permanent job', word:'Permanent', synonym:'Stable', target:'permanent', detail:'permanent job về ai đó bày tỏ « công việc ổn định nghĩa đen: bát cơm sắt, vĩnh viễn làm việc », ngón tay dài hạn vững vàng của làm việc.', example:'Many people prefer a permanent job with benefits.' },
 
-    // —— 员工与福利（5个） ——
-    { cn:'员工福利', en:'Employees\' welfare', word:'Welfare', synonym:'Benefits', target:'welfare', detail:'employees\' welfare 表示“员工福利”，指公司为员工提供的福利待遇。', example:'Employees\' welfare includes health insurance and paid leave.' },
-    { cn:'休假', en:'Take a vacation', word:'Vacation', synonym:'Holiday', target:'vacation', detail:'take a vacation 表示“休假、度假”，指离开工作进行休息。', example:'After a busy project, she decided to take a vacation.' },
-    { cn:'安全感', en:'Sense of security', word:'Security', synonym:'Stability', target:'security', detail:'sense of security 表示“安全感”，指对稳定和安全的感受。', example:'A permanent job gives people a sense of security.' },
-    { cn:'满足感', en:'Sense of fulfillment', word:'Fulfillment', synonym:'Satisfaction', target:'fulfillment', detail:'sense of fulfillment 表示“满足感”，指从工作中获得的成就感。', example:'Helping others gives her a great sense of fulfillment.' },
-    { cn:'满意度', en:'Sense of satisfaction', word:'Satisfaction', synonym:'Contentment', target:'satisfaction', detail:'sense of satisfaction 表示“满意度”，指对工作或生活的满意程度。', example:'Job satisfaction is important for employee retention.' },
+    // —— nhân viên biến thể của lợi ích vật chất (5dùng trong) ——
+    { cn:'nhân viên lợi ích vật chất', en:'Employees\' welfare', word:'Welfare', synonym:'Benefits', target:'welfare', detail:'employees\' welfare về ai đó bày tỏ « nhân viên lợi ích vật chất », ngón tay công ty làm với tư cách nhân viên đề nghị của lợi ích vật chất đãi ngộ.', example:'Employees\' welfare includes health insurance and paid leave.' },
+    { cn:'đi nghỉ', en:'Take a vacation', word:'Vacation', synonym:'Holiday', target:'vacation', detail:'take a vacation về ai đó bày tỏ « đi nghỉ, đi nghỉ mát », ngón tay rời khỏi làm việc tiến hành nghỉ.', example:'After a busy project, she decided to take a vacation.' },
+    { cn:'cảm giác an toàn', en:'Sense of security', word:'Security', synonym:'Stability', target:'security', detail:'sense of security về ai đó bày tỏ « cảm giác an toàn », ngón tay đúng vững vàng biến thể cũ của an toàn của cảm nhận.', example:'A permanent job gives people a sense of security.' },
+    { cn:'cảm giác hài lòng', en:'Sense of fulfillment', word:'Fulfillment', synonym:'Satisfaction', target:'fulfillment', detail:'sense of fulfillment về ai đó bày tỏ « cảm giác hài lòng », ngón tay biến thể của làm việc hình thức kết hợp Trung Quốc Nhận được của cảm giác thành tựu.', example:'Helping others gives her a great sense of fulfillment.' },
+    { cn:'mức độ hài lòng', en:'Sense of satisfaction', word:'Satisfaction', synonym:'Contentment', target:'satisfaction', detail:'sense of satisfaction về ai đó bày tỏ « mức độ hài lòng », ngón tay đúng cách hình thức kết hợp công nhân có thể Đời sống của hài lòng mức độ.', example:'Job satisfaction is important for employee retention.' },
 
-    // —— 失业与招聘（4个） ——
-    { cn:'失业率', en:'Unemployment rate', word:'Unemployment', synonym:'Joblessness', target:'unemployment', detail:'unemployment rate 表示“失业率”，指失业人口占劳动力人口的比例。', example:'The unemployment rate has dropped in recent months.' },
-    { cn:'招收新员工', en:'Recruit new staff', word:'Recruit', synonym:'Hire', target:'recruit', detail:'recruit new staff 表示“招收新员工”，指招聘新员工。', example:'The company plans to recruit new staff next year.' },
-    { cn:'职位空缺', en:'Vacancy', word:'Vacancy', synonym:'Opening', target:'vacancies', detail:'vacancy 表示“职位空缺”，指尚未被填补的工作岗位。', example:'There are several vacancies in the marketing department.' },
-    { cn:'被解雇', en:'Be laid off', word:'Laid', synonym:'Dismissed', target:'laid', detail:'be laid off 表示“被解雇”，指因经济原因被裁员。', example:'Many workers were laid off during the economic crisis.' },
+    // —— thất nghiệp biến thể của mời ứng tuyển vào công việc (4dùng trong) ——
+    { cn:'tỉ lệ thất nghiệp', en:'Unemployment rate', word:'Unemployment', synonym:'Joblessness', target:'unemployment', detail:'unemployment rate về ai đó bày tỏ « tỉ lệ thất nghiệp », ngón tay thất nghiệp dân số biến thể của lực lượng lao động dân số của tỷ lệ.', example:'The unemployment rate has dropped in recent months.' },
+    { cn:'thuê viết tắt của Tân Cương nhân viên', en:'Recruit new staff', word:'Recruit', synonym:'Hire', target:'recruit', detail:'recruit new staff về ai đó bày tỏ « thuê viết tắt của Tân Cương nhân viên », ngón tay mời ứng tuyển vào công việc viết tắt của Tân Cương nhân viên.', example:'The company plans to recruit new staff next year.' },
+    { cn:'vị trí vị trí trống', en:'Vacancy', word:'Vacancy', synonym:'Opening', target:'vacancies', detail:'vacancy về ai đó bày tỏ « vị trí vị trí trống », ngón tay chưa chăn lấp đầy chỗ trống của làm việc một vị trí.', example:'There are several vacancies in the marketing department.' },
+    { cn:'chăn sa thải', en:'Be laid off', word:'Laid', synonym:'Dismissed', target:'laid', detail:'be laid off về ai đó bày tỏ «chăn sa thải », ngón tay biến thể cũ của Kinh tế Lí do chăn cắt giảm nhân sự.', example:'Many workers were laid off during the economic crisis.' },
 
-    // —— 工作态度与挑战（6个） ——
-    { cn:'为公司服务', en:'Serve the company', word:'Serve', synonym:'Work for', target:'serve', detail:'serve the company 表示“为公司服务”，指为组织努力工作。', example:'He has served the company for over 20 years.' },
-    { cn:'接受挑战', en:'Take challenges', word:'Challenges', synonym:'Difficulties', target:'challenges', detail:'take challenges 表示“接受挑战”，指勇敢面对困难。', example:'Successful people are willing to take challenges.' },
-    { cn:'工作狂', en:'Workaholic', word:'Workaholic', synonym:'Overworker', target:'workaholic', detail:'workaholic 表示“工作狂”，指过度沉迷于工作的人。', example:'He is a workaholic and rarely takes time off.' },
-    { cn:'追逐名利', en:'Pursue fame and wealth', word:'Pursue', synonym:'Seek', target:'pursue', detail:'pursue fame and wealth 表示“追逐名利”，指追求名誉和财富。', example:'Some people pursue fame and wealth at the expense of their health.' },
-    { cn:'成年期', en:'Adulthood', word:'Adulthood', synonym:'Maturity', target:'adulthood', detail:'adulthood 表示“成年期”，指成人的阶段。', example:'Entering adulthood brings new responsibilities, including career choices.' },
-    { cn:'变得冷漠', en:'Become apathetic to others', word:'Apathetic', synonym:'Indifferent', target:'apathetic', detail:'apathetic 表示“冷漠的”，指对他人或事物缺乏兴趣或关心。', example:'Some employees become apathetic to others due to workplace stress.' }
+    // —— làm việc Thái độ biến thể của thử thách (6dùng trong) ——
+    { cn:'làm với tư cách công ty phục vụ', en:'Serve the company', word:'Serve', synonym:'Work for', target:'serve', detail:'serve the company về ai đó bày tỏ «làm với tư cách công ty phục vụ », ngón tay làm với tư cách tổ chức nỗ lực làm việc.', example:'He has served the company for over 20 years.' },
+    { cn:'chấp nhận đề nghị thử thách', en:'Take challenges', word:'Challenges', synonym:'Difficulties', target:'challenges', detail:'take challenges về ai đó bày tỏ « chấp nhận đề nghị thử thách », ngón tay dũng cảm đối mặt khó khăn.', example:'Successful people are willing to take challenges.' },
+    { cn:'người nghiện công việc', en:'Workaholic', word:'Workaholic', synonym:'Overworker', target:'workaholic', detail:'workaholic về ai đó bày tỏ « người nghiện công việc », ngón tay quá mức mải mê họ làm việc của người.', example:'He is a workaholic and rarely takes time off.' },
+    { cn:'đuổi theo danh tiếng và lợi lộc', en:'Pursue fame and wealth', word:'Pursue', synonym:'Seek', target:'pursue', detail:'pursue fame and wealth về ai đó bày tỏ « đuổi theo danh tiếng và lợi lộc », ngón tay theo đuổi một mục tiêu danh tiếng biến thể cũ của sự giàu có.', example:'Some people pursue fame and wealth at the expense of their health.' },
+    { cn:'trưởng thành biến thể của', en:'Adulthood', word:'Adulthood', synonym:'Maturity', target:'adulthood', detail:'adulthood về ai đó bày tỏ « trưởng thành biến thể của», ngón tay đến tuổi trưởng thành của Giai đoạn.', example:'Entering adulthood brings new responsibilities, including career choices.' },
+    { cn:'trở nên lạnh lùng và thờ ơ với ai đó', en:'Become apathetic to others', word:'Apathetic', synonym:'Indifferent', target:'apathetic', detail:'apathetic về ai đó bày tỏ « lạnh lùng và thờ ơ với ai đó của», ngón tay đúng người khác có thể sự vật thiếu hứng thú mong muốn biết về gì đó có thể quan tâm đến.', example:'Some employees become apathetic to others due to workplace stress.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 27');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 27');
 
 const TOTAL = 30;
-// ==================== 关键变量 ====================
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+// ==================== điểm mấu chốt biến số toán ====================
+const STAGE_NAMES = ['ghép đôi Chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn Đúng Tiếng Anh ghép đôi', 'thích họ viết Tiếng Anh cụm từ ngữ pháp', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // Giai đoạn một: ghép đôi Chọn (10họ)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -282,26 +283,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `«${p.cn}» của Đúng Tiếng Anh diễn đạt là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng ghép đôi là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // Giai đoạn: đánh vần (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra «${p.cn}» của Tiếng Anh cụm từ ngữ pháp:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng đánh vần là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // Giai đoạn họ: đồng nghĩa thay thế (10họ)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -326,10 +327,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của có thể thay thế Câu hình thức kết hợp Trung Quốc dải gạch dưới _ của biến thể cũ của?<br>«${sentenceDisplay}»`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${p.synonym}», là chỉ theo sau bởi danh từ «${p.word}» của từ đồng nghĩa.${p.detail}`
         });
     });
 
@@ -341,7 +342,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -378,7 +379,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -420,22 +421,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-phrase">${p.en}</span></div>
-                <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
-            </div>
-            <div><span class="word-meaning-cn">${p.cn}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-phrase">${p.en}</span></div>
+ <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
+ </div>
+ <div><span class="word-meaning-cn">${p.cn}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${p.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -456,7 +456,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -476,14 +476,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả 30họ!');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -513,10 +513,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -537,24 +537,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu Tiếng Anh cụm từ ngữ pháp...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Arduous）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống (như Arduous)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung ví dụ: khung cửa: nhấn Enter không Nộp bài, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển cho mục đích cụ thể submitAnswer(), ngăn chặn nhầm lỗi chạm Nộp bài
             }
         });
     } else {
@@ -598,7 +598,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu Tiếng Anh cụm từ ngữ pháp!');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -619,7 +619,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh Đúng! đánh vần biến thể cũ của chữ hoa và chữ thường họ Đúng.' : '❌ đánh vần có nhầm lỗi, mời Xem bên dưới của so sánh.';
 
         results.push({
             question: q.question,
@@ -630,14 +630,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -658,7 +658,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -669,7 +669,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -680,7 +680,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -693,11 +693,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -706,16 +704,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -735,7 +733,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

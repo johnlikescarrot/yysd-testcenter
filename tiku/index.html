@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="优益思达托福题库中心 · 教师题目审阅、预测包与已有试卷管理">
-  <title>题库中心 · 优益思达</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23da3025'/%3E%3Ctext x='16' y='23' text-anchor='middle' fill='%23fff' font-size='22' font-family='Helvetica Neue,Helvetica,Arial,PingFang SC,sans-serif'%3E优%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="YYSD nâng bằng tay họTrung tâm ngân hàng đề · Giáo viên Đề bài xem xét hoặc đọc kỹ,dự báo họ đã cóbài thi giám sát">
+  <title>Trung tâm ngân hàng đề · YYSD</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23da3025'/%3E%3Ctext x='16' y='23' text-anchor='middle' fill='%23fff' font-size='22' font-family='Helvetica Neue,Helvetica,Arial,PingFang SC,sans-serif'%3Exuất sắc%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="tiku.css?v=20261016prediction1">
   <script src="gate.js?v=20261015prev1"></script>
+<script type="module" src="../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
   <div id="gate" class="gate hidden">
     <div class="auth-card">
-      <h1>题库中心</h1>
-      <p class="lede">请使用老师端打开。安装包不在网站上，由总部私下发给你。</p>
+      <h1>Trung tâm ngân hàng đề</h1>
+      <p class="lede">mờisử dụng Giáo viên cuốimở.lắp đặt họkhông có mặt trang web dùng trong,trụ sở chính riêng tư cấp bạn.</p>
     </div>
   </div>
   <div id="login" class="login hidden">
     <div class="auth-card">
-      <h1>题库中心</h1>
-      <p class="lede">教师账号登录。仅总部开通的老师、且在指定网络可用。</p>
+      <h1>Trung tâm ngân hàng đề</h1>
+      <p class="lede">Giáo viên Tài khoản Đăng nhập.hầu nhưtrụ sở chính mở đường mới hoặc tuyến đường sắt Giáo viên,và tồn tạichỉ định mạng lưới máy tính tiền tố có thể sử dụng.</p>
       <form id="login-form">
-        <label class="f"><span>手机号</span><input id="phone" type="tel" maxlength="11" autocomplete="username"></label>
-        <label class="f"><span>密码</span><input id="password" type="password" autocomplete="current-password"></label>
-        <label class="f"><span>激活码</span><input id="activationCode" autocomplete="off" placeholder="这台电脑已绑定可留空"></label>
-        <button class="btn primary" type="submit">登录</button>
+        <label class="f"><span>Số điện thoại</span><input id="phone" type="tel" maxlength="11" autocomplete="username"></label>
+        <label class="f"><span>Mật khẩu</span><input id="password" type="password" autocomplete="current-password"></label>
+        <label class="f"><span>Mã kích hoạt</span><input id="activationCode" autocomplete="off" placeholder="đại từ này Đài Loan viết tắtmáy tính đãtừ mượn ràng buộc tiền tố có thểchừa trống trong tài liệu"></label>
+        <button class="btn primary" type="submit">Đăng nhập</button>
         <p class="msg-f" id="login-msg" role="status" aria-live="polite" aria-atomic="true"></p>
       </form>
     </div>
@@ -32,16 +33,16 @@
   <div id="app" class="wrap hidden">
     <header class="top">
       <div class="brand">
-        <h1>题库中心</h1>
+        <h1>Trung tâm ngân hàng đề</h1>
         <span class="sub">TOEFL Studio</span>
       </div>
       <div class="row">
         <span class="who" id="who"></span>
-        <button type="button" class="btn ghost" id="refresh">刷新</button>
-        <button type="button" class="btn ghost" id="out">退出</button>
+        <button type="button" class="btn ghost" id="refresh">Làm mới</button>
+        <button type="button" class="btn ghost" id="out">Đăng xuất</button>
       </div>
     </header>
-    <nav class="tabs" id="tabs" aria-label="题库工作台导航"></nav>
+    <nav class="tabs" id="tabs" aria-label="ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi bàn làm việc nghĩa đen và bóng điều hướng"></nav>
     <p class="msg" id="msg" role="status" aria-live="polite" aria-atomic="true"></p>
     <main id="main"></main>
   </div>

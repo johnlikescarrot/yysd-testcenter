@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元12 · 逻辑与因果">
-    <meta name="exam:description" content="写作专项词汇 · 通用词汇 · 逻辑与因果">
+    <meta name="exam:title" content="Bài 12 · logic từ mượn nghiệp">
+    <meta name="exam:description" content="Viết chuyên biệt Từ vựng · Dùng chung Từ vựng · logic từ mượn nghiệp">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元12 · 逻辑与因果</title>
+    <title>Bài 12 · logic từ mượn nghiệp</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -140,130 +140,131 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🔗</div><span>单元12-通用词汇-逻辑与因果</span></div>
+        <div class="logo"><div class="logo-icon">🔗</div><span>Bài 12-Dùng chung Từ vựng -logic từ mượn nghiệp</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng 30 câu</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi Chọn<br>chọnĐúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích họ viếtTiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọntừ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:ghép đôi Chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạnnhập khẩu</span><span class="value" id="spellUserValue">—</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">—</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 通用词汇 · 逻辑与因果 · 28个核心词条 ====================
+// ==================== Dùng chung Từ vựng · logic từ mượn biến thể của nghiệp · 28dùng trong lõi mục từ điển ====================
 const phraseData = [
-    // —— 因果关系 ——
-    { cn:'导致', en:'Lead to', word:'Lead', synonym:'Cause', target:'lead', detail:'lead to 表示“导致”，指引起某种结果，后面接名词或动名词。', example:'Poor diet can lead to serious health problems.' },
-    { cn:'造成', en:'Result in', word:'Result', synonym:'Cause', target:'results', detail:'result in 表示“导致、产生”，指某种行为产生了某种结果。', example:'Hard work results in success.' },
-    { cn:'归因于', en:'Be attributed to', word:'Attribute', synonym:'Due to', target:'attributed', detail:'be attributed to 表示“归因于...”，指某事物被视为由...引起的。', example:'The success was attributed to careful planning.' },
-    { cn:'来源于', en:'Be derived from', word:'Derived', synonym:'Originate', target:'derived', detail:'be derived from 表示“来源于...”，指某事物源自于某处。', example:'Many English words are derived from Latin.' },
-    { cn:'由...决定', en:'Be determined by', word:'Determined', synonym:'Decided by', target:'determined', detail:'be determined by 表示“由...决定”，指某事物的结果受某因素影响。', example:'The outcome is determined by many factors.' },
-    { cn:'依赖于', en:'Depend on', word:'Depend', synonym:'Rely on', target:'depend', detail:'depend on 表示“依赖于...”，指需要某人或某事的支持。', example:'Our success depends on teamwork.' },
-    { cn:'促成', en:'Contribute to', word:'Contribute', synonym:'Lead to', target:'contribute', detail:'contribute to 表示“促成、有助于”，指对某事有积极作用。', example:'Regular exercise contributes to good health.' },
-    { cn:'引起', en:'Give rise to', word:'Give', synonym:'Cause', target:'rise', detail:'give rise to 表示“引起、导致”，指某事物引发另一事物。', example:'The new policy gave rise to public concern.' },
-    { cn:'激发', en:'Trigger', word:'Trigger', synonym:'Spark', target:'trigger', detail:'trigger 表示“激发、引发”，指突然引起某种反应或事件。', example:'The announcement triggered a wave of protests.' },
-    { cn:'产生', en:'Generate', word:'Generate', synonym:'Produce', target:'generate', detail:'generate 表示“产生、生成”，指创造或生产出某物。', example:'Renewable energy generates electricity without pollution.' },
+    // —— nghiệp quan hệ ——
+    { cn:'dẫn đến', en:'Lead to', word:'Lead', synonym:'Cause', target:'lead', detail:'lead to về ai đó bày tỏ « dẫn đến », hướng dẫn dậy một loại nào đó Kết quả, phía sau nhận danh từ có thể động danh từ.', example:'Poor diet can lead to serious health problems.' },
+    { cn:'gây ra', en:'Result in', word:'Result', synonym:'Cause', target:'results', detail:'result in về ai đó bày tỏ « dẫn đến, phát sinh », ngón tay một loại nào đó hành động phát sinh trợ từ chỉ hành động đã hoàn thành một loại nào đó Kết quả.', example:'Hard work results in success.' },
+    { cn:'quy cho họ', en:'Be attributed to', word:'Attribute', synonym:'Due to', target:'attributed', detail:'be attributed to về ai đó bày tỏ « quy cho họ...», ngón tay một việc nào đó hình thức kết hợp vật chăn xem như... gây ra của.', example:'The success was attributed to careful planning.' },
+    { cn:'bắt nguồn từ', en:'Be derived from', word:'Derived', synonym:'Originate', target:'derived', detail:'be derived from về ai đó bày tỏ « bắt nguồn từ...», ngón tay một việc nào đó hình thức kết hợp vật bắt nguồn từ họ một nơi nào đó.', example:'Many English words are derived from Latin.' },
+    { cn:'... quyết định làm gì đó', en:'Be determined by', word:'Determined', synonym:'Decided by', target:'determined', detail:'be determined by về ai đó bày tỏ «... quyết định làm gì đó », ngón tay một việc nào đó hình thức kết hợp vật của Kết quả nhận một vài yếu tố ảnh hưởng.', example:'The outcome is determined by many factors.' },
+    { cn:'phụ thuộc vào họ', en:'Depend on', word:'Depend', synonym:'Rely on', target:'depend', detail:'depend on về ai đó bày tỏ « phụ thuộc vào họ...», ngón tay cần một người nào đó có thể một việc nào đó của tán thành.', example:'Our success depends on teamwork.' },
+    { cn:'tạo điều kiện', en:'Contribute to', word:'Contribute', synonym:'Lead to', target:'contribute', detail:'contribute to về ai đó bày tỏ « tạo điều kiện, góp phần vào », ngón tay đúng một việc nào đó có chủ động tác động đến.', example:'Regular exercise contributes to good health.' },
+    { cn:'gây ra', en:'Give rise to', word:'Give', synonym:'Cause', target:'rise', detail:'give rise to về ai đó bày tỏ « gây ra, dẫn đến », ngón tay một việc nào đó hình thức kết hợp vật dẫn đến khác sự vật.', example:'The new policy gave rise to public concern.' },
+    { cn:'khơi dậy', en:'Trigger', word:'Trigger', synonym:'Spark', target:'trigger', detail:'trigger về ai đó bày tỏ « khơi dậy, dẫn đến », ngón tay đột ngột gây ra một loại nào đó phản ứng có thể sự kiện.', example:'The announcement triggered a wave of protests.' },
+    { cn:'phát sinh', en:'Generate', word:'Generate', synonym:'Produce', target:'generate', detail:'generate về ai đó bày tỏ « phát sinh, tạo ra », ngón tay tạo ra có thể sản xuất đi ra một vật gì đó.', example:'Renewable energy generates electricity without pollution.' },
 
-    // —— 因果关系（继续） ——
-    { cn:'遭受', en:'Suffer from', word:'Suffer', synonym:'Experience', target:'suffer', detail:'suffer from 表示“遭受...”，指承受某种痛苦或不幸。', example:'Many people suffer from stress at work.' },
-    { cn:'遭受（更正式）', en:'Be afflicted with', word:'Afflicted', synonym:'Affected by', target:'afflicted', detail:'be afflicted with 表示“受...之苦”，比 suffer from 更正式。', example:'Many countries are afflicted with poverty.' },
-    { cn:'损害', en:'Damage', word:'Damage', synonym:'Harm', target:'damage', detail:'damage 表示“损害”，指对人或物造成伤害。', example:'Smoking can damage your lungs.' },
-    { cn:'损害（更正式）', en:'Impair', word:'Impair', synonym:'Damage', target:'impair', detail:'impair 表示“损害、削弱”，指使某物变差或变弱。', example:'Lack of sleep can impair cognitive function.' },
-    { cn:'破坏', en:'Undermine', word:'Undermine', synonym:'Weaken', target:'undermine', detail:'undermine 表示“破坏、削弱”，指逐渐损害某人或某事的信心或力量。', example:'Constant criticism can undermine a child\'s confidence.' },
+    // —— nghiệp quan hệ (Tiếp tục) ——
+    { cn:'chịu', en:'Suffer from', word:'Suffer', synonym:'Experience', target:'suffer', detail:'suffer from về ai đó bày tỏ « chịu...», ngón tay chịu đựng một loại nào đó đau đớn có thể bất hạnh.', example:'Many people suffer from stress at work.' },
+    { cn:'chịu (sửa chữa loại)', en:'Be afflicted with', word:'Afflicted', synonym:'Affected by', target:'afflicted', detail:'be afflicted with về ai đó bày tỏ «nhận...đắng», Bỉ suffer from sửa chữa loại.', example:'Many countries are afflicted with poverty.' },
+    { cn:'tổn hại', en:'Damage', word:'Damage', synonym:'Harm', target:'damage', detail:'damage về ai đó bày tỏ « tổn hại », ngón tay đúng người có thể hình thức kết hợp vật gây ra làm bị thương.', example:'Smoking can damage your lungs.' },
+    { cn:'tổn hại (sửa chữa loại)', en:'Impair', word:'Impair', synonym:'Damage', target:'impair', detail:'impair về ai đó bày tỏ « tổn hại, làm suy yếu », xúi giục một vật gì đó thay đổi sự khác biệt có thể thay đổi yếu.', example:'Lack of sleep can impair cognitive function.' },
+    { cn:'sự phá hủy', en:'Undermine', word:'Undermine', synonym:'Weaken', target:'undermine', detail:'undermine về ai đó bày tỏ « sự phá hủy, làm suy yếu », ngón tay dần dần tổn hại một người nào đó có thể một việc nào đó của niềm tin có thể sức mạnh.', example:'Constant criticism can undermine a child\'s confidence.' },
 
-    // —— 解决与应对 ——
-    { cn:'解决', en:'Address', word:'Address', synonym:'Tackle', target:'address', detail:'address 表示“解决、处理”，指正式应对问题或议题。', example:'The government needs to address the housing crisis.' },
-    { cn:'应对', en:'Tackle', word:'Tackle', synonym:'Handle', target:'tackle', detail:'tackle 表示“应对、处理”，指勇敢面对和解决困难。', example:'We must tackle climate change urgently.' },
-    { cn:'面对', en:'Face', word:'Face', synonym:'Confront', target:'face', detail:'face 表示“面对”，指勇敢地应对困难或挑战。', example:'Many students face financial difficulties.' },
-    { cn:'遇到', en:'Encounter', word:'Encounter', synonym:'Meet', target:'encounter', detail:'encounter 表示“遇到、遭遇”，指偶然或突然遇到某情况。', example:'Travellers often encounter language barriers.' },
+    // —— giải quyết biến thể của trả lời ——
+    { cn:'giải quyết', en:'Address', word:'Address', synonym:'Tackle', target:'address', detail:'address về ai đó bày tỏ « giải quyết, xử lý », chỉ ra sai lầm hoặc điểm yếu để sửa chữa loại trả lời câu hỏi có thể chủ đề thảo luận.', example:'The government needs to address the housing crisis.' },
+    { cn:'trả lời', en:'Tackle', word:'Tackle', synonym:'Handle', target:'tackle', detail:'tackle về ai đó bày tỏ « trả lời, xử lý », ngón tay dũng cảm đối mặt giải quyết tranh chấp ngoài tòa quyết định khó khăn.', example:'We must tackle climate change urgently.' },
+    { cn:'đối mặt', en:'Face', word:'Face', synonym:'Confront', target:'face', detail:'face về ai đó bày tỏ « đối mặt », ngón tay dũng cảm trợ từ kết cấu: dùng trước động từ hoặc tính từ trả lời khó khăn có thể thử thách.', example:'Many students face financial difficulties.' },
+    { cn:'gặp', en:'Encounter', word:'Encounter', synonym:'Meet', target:'encounter', detail:'encounter về ai đó bày tỏ « gặp, gặp phải », ngón tay tình cờ có thể đột ngột gặp một vài hoàn cảnh.', example:'Travellers often encounter language barriers.' },
 
-    // —— 恶化与缓解 ——
-    { cn:'恶化', en:'Deteriorate', word:'Deteriorate', synonym:'Worsen', target:'deteriorate', detail:'deteriorate 表示“恶化”，指情况变得更糟。', example:'The economic situation continues to deteriorate.' },
-    { cn:'加剧', en:'Aggravate', word:'Aggravate', synonym:'Worsen', target:'aggravate', detail:'aggravate 表示“加剧、恶化”，指使情况更严重。', example:'Pollution aggravates respiratory problems.' },
-    { cn:'缓解', en:'Relieve', word:'Relieve', synonym:'Ease', target:'relieve', detail:'relieve 表示“缓解、减轻”，指减少痛苦或压力。', example:'Exercise can relieve stress and anxiety.' },
-    { cn:'减少', en:'Reduce', word:'Reduce', synonym:'Decrease', target:'reduce', detail:'reduce 表示“减少、降低”，指使某物变小或变少。', example:'We should reduce our daily intake of sugar.' },
+    // —— trở nên tồi tệ biến thể của mang lại sự nhẹ nhõm ——
+    { cn:'trở nên tồi tệ', en:'Deteriorate', word:'Deteriorate', synonym:'Worsen', target:'deteriorate', detail:'deteriorate về ai đó bày tỏ « trở nên tồi tệ », ngón tay hoàn cảnh trở nên thay đổi hoặc thay thế bã.', example:'The economic situation continues to deteriorate.' },
+    { cn:'làm gia tăng', en:'Aggravate', word:'Aggravate', synonym:'Worsen', target:'aggravate', detail:'aggravate về ai đó bày tỏ « làm gia tăng, trở nên tồi tệ », xúi giục hoàn cảnh thay đổi hoặc thay thế nghiêm trọng.', example:'Pollution aggravates respiratory problems.' },
+    { cn:'mang lại sự nhẹ nhõm', en:'Relieve', word:'Relieve', synonym:'Ease', target:'relieve', detail:'relieve về ai đó bày tỏ « mang lại sự nhẹ nhõm, giảm nhẹ », ngón tay giảm đau đớn có thể áp lực.', example:'Exercise can relieve stress and anxiety.' },
+    { cn:'giảm', en:'Reduce', word:'Reduce', synonym:'Decrease', target:'reduce', detail:'reduce về ai đó bày tỏ « giảm, giảm », xúi giục một vật gì đó thay đổi nhỏ có thể thay đổi ít.', example:'We should reduce our daily intake of sugar.' },
 
-    // —— 影响与结果 ——
-    { cn:'影响', en:'Influence', word:'Influence', synonym:'Affect', target:'influence', detail:'influence 表示“影响”，指对某人或某事产生作用。', example:'Parents have a strong influence on their children.' },
-    { cn:'后果', en:'Consequence', word:'Consequence', synonym:'Result', target:'consequence', detail:'consequence 表示“后果”，指某行为导致的直接结果。', example:'The decision had serious consequences.' },
-    { cn:'结果', en:'Outcome', word:'Outcome', synonym:'Result', target:'outcome', detail:'outcome 表示“结果”，指某事最终的结果。', example:'The outcome of the project was very successful.' },
-    { cn:'起因', en:'Root cause', word:'Root', synonym:'Origin', target:'root', detail:'root cause 表示“根本原因”，指导致问题的深层原因。', example:'The root cause of poverty is inequality.' },
-    { cn:'深远的影响', en:'Profound influence', word:'Profound', synonym:'Deep', target:'profound', detail:'profound influence 表示“深远的影响”，指非常深刻和持久的影响。', example:'The Internet has had a profound influence on our lives.' }
+    // —— ảnh hưởng biến thể của Kết quả ——
+    { cn:'Ảnh hưởng', en:'Influence', word:'Influence', synonym:'Affect', target:'influence', detail:'influence về ai đó bày tỏ « ảnh hưởng », ngón tay đúng một người nào đó có thể một việc nào đó phát sinh tác động đến.', example:'Parents have a strong influence on their children.' },
+    { cn:'hậu quả', en:'Consequence', word:'Consequence', synonym:'Result', target:'consequence', detail:'consequence về ai đó bày tỏ « hậu quả », ngón tay một vài hành động dẫn đến của trực tiếp Kết quả.', example:'The decision had serious consequences.' },
+    { cn:'Kết quả', en:'Outcome', word:'Outcome', synonym:'Result', target:'outcome', detail:'outcome về ai đó bày tỏ « Kết quả », ngón tay một việc nào đó cuối cùng của Kết quả.', example:'The outcome of the project was very successful.' },
+    { cn:'nguyên nhân', en:'Root cause', word:'Root', synonym:'Origin', target:'root', detail:'root cause về ai đó bày tỏ « cơ bản Lí do », hướng dẫn dạng kết hợp tinh tế câu hỏi của tầng sâu Lí do.', example:'The root cause of poverty is inequality.' },
+    { cn:'tác động sâu rộng của ảnh hưởng', en:'Profound influence', word:'Profound', synonym:'Deep', target:'profound', detail:'profound influence về ai đó bày tỏ « tác động sâu rộng của ảnh hưởng », ngón tay rất sâu sắc biến thể cũ của kéo dài của ảnh hưởng.', example:'The Internet has had a profound influence on our lives.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 28');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 28');
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi Chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn Đúng Tiếng Anh ghép đôi', 'thích họ viết Tiếng Anh cụm từ ngữ pháp', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // Giai đoạn một: ghép đôi Chọn (10họ)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -274,26 +275,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `«${p.cn}» của Đúng Tiếng Anh diễn đạt là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng ghép đôi là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // Giai đoạn: đánh vần (10họ)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra «${p.cn}» của Tiếng Anh cụm từ ngữ pháp:`,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `«${p.cn}» của Đúng đánh vần là chỉ theo sau bởi danh từ «${p.en}».${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // Giai đoạn họ: đồng nghĩa thay thế (10họ)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -318,10 +319,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của có thể thay thế Câu hình thức kết hợp Trung Quốc dải gạch dưới _ của biến thể cũ của?<br>«${sentenceDisplay}»`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${p.synonym}», là chỉ theo sau bởi danh từ «${p.word}» của từ đồng nghĩa.${p.detail}`
         });
     });
 
@@ -333,7 +334,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -370,7 +371,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -412,22 +413,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-phrase">${p.en}</span></div>
-                <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
-            </div>
-            <div><span class="word-meaning-cn">${p.cn}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-phrase">${p.en}</span></div>
+ <button class="btn-play btn-play-card" data-word="${p.en}">▶</button>
+ </div>
+ <div><span class="word-meaning-cn">${p.cn}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${p.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -448,7 +448,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -468,14 +468,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả 30họ!');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -505,10 +505,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -529,24 +529,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu Tiếng Anh cụm từ ngữ pháp...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Lead to）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống (như Lead to)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung ví dụ: khung cửa: nhấn Enter không Nộp bài, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển cho mục đích cụ thể submitAnswer(), ngăn chặn nhầm lỗi chạm Nộp bài
             }
         });
     } else {
@@ -590,7 +590,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu Tiếng Anh cụm từ ngữ pháp!');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -611,7 +611,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh Đúng! đánh vần biến thể cũ của chữ hoa và chữ thường họ Đúng.' : '❌ đánh vần có nhầm lỗi, mời Xem bên dưới của so sánh.';
 
         results.push({
             question: q.question,
@@ -622,14 +622,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -650,7 +650,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -661,7 +661,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -672,7 +672,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -685,11 +685,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -698,16 +696,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -727,7 +725,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

@@ -357,7 +357,7 @@ body.yysd-cdt-review .ritem .rex {
 }
 
 body.yysd-cdt-review .ritem .rex::before {
-  content: "解析 · ";
+  content: "Giải thích · ";
   font-weight: 700;
   color: #6b7c90;
   font-size: 11px;

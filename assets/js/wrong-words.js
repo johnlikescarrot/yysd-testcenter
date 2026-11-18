@@ -26,8 +26,8 @@
   }
 
   function fail(msg) {
-    contentEl.innerHTML = '<div class="state"><h3>无法打开</h3><p>' + esc(msg) +
-      '</p><p><a href="zone.html?zone=study&s=vocab">返回单词区</a></p></div>';
+    contentEl.innerHTML = '<div class="state"><h3>không thểmở</h3><p>' + esc(msg) +
+      '</p><p><a href="zone.html?zone=study&s=vocab">Quay lạiKhu vực Từ vựng</a></p></div>';
   }
 
   function importLocalOnce() {
@@ -63,25 +63,25 @@
   function renderList(data) {
     var sessions = data.sessions || [];
     var total = data.totalMistakes || 0;
-    document.title = "错题本 · 优益思达国际课程中心";
+    document.title = "Sổ lỗi sai · YYSD · Trung tâm Khóa học Quốc tế";
     var rows = sessions.length
       ? sessions.map(function (s) {
           return '<a class="vs-list-row" href="wrong-words.html?session=' + s.id + '">' +
             "<div><b>" + esc(s.title) + "</b>" +
-            '<span class="vs-row__meta">错词 ' + (s.wrongCount || 0) +
-            (s.passed ? " · 当时已通关" : "") + "</span></div>" +
-            '<span class="vs-go">查看 ›</span></a>';
+            '<span class="vs-row__meta">họ biến thể cũ của ' + (s.wrongCount || 0) +
+            (s.passed ? " · lúc đóđãthông quan" : "") + "</span></div>" +
+            '<span class="vs-go">Xem ›</span></a>';
         }).join("")
-      : '<div class="soon-box premium-empty">还没有错题记录。去「单词检测」完成一场后，错词会按日期 + 词书 + List 出现在这里。</div>';
+      : '<div class="soon-box premium-empty">họkhông cóCâu saighi chép.đi«Từ vựngphát hiện»Hoàn thànhmột sân phơi họ,họ biến thể cũ của có thểhàng ngày pháp luậtbiến thể của + biến thể cũ của viết tắt của + List xuất hiệntồn tạibiến thể của.</div>';
 
     contentEl.innerHTML =
       '<div class="cam-hero vocab-hero wrong-words-hero bento-panel">' +
-        '<div class="cam-hero__badge"><div class="lbl">错题</div><div class="num">' + total + "</div></div>" +
-        "<div><h1>错题本</h1>" +
-        '<div class="meta">按检测场次：日期 + 词书 + List · 答对不自动删除，可手动删除整场</div>' +
+        '<div class="cam-hero__badge"><div class="lbl">Câu sai</div><div class="num">' + total + "</div></div>" +
+        "<div><h1>Sổ lỗi sai</h1>" +
+        '<div class="meta">nhấnphát hiệnsố lần chiếu của một bộ phim:ngày tháng + biến thể cũ của viết tắt của + List · thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đókhôngtự độngXóa,tiền tố có thểthủ côngXóahình thức liên kết toàn bộ sân phơi</div>' +
         '<div class="vocab-hero__actions">' +
-          '<a class="btn btn--primary btn--sm" href="vocab-quiz.html">去检测</a>' +
-          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← 单词区</a>' +
+          '<a class="btn btn--primary btn--sm" href="vocab-quiz.html">điphát hiện</a>' +
+          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← Khu vực Từ vựng</a>' +
         "</div></div></div>" +
       '<div class="vs-list" style="margin-top:14px">' + rows + "</div>";
   }
@@ -89,7 +89,7 @@
   function renderSession(data) {
     var s = data.session;
     var mistakes = data.mistakes || [];
-    document.title = s.title + " · 错题本 · 优益思达";
+    document.title = s.title + " · Sổ lỗi sai · YYSD";
     var cards = mistakes.length
       ? '<div class="wrong-words-list">' + mistakes.map(function (w) {
           return '<article class="wrong-word-card">' +
@@ -98,29 +98,29 @@
                 ' <span class="wrong-word-card__ipa">' + esc(w.ipa || "") + "</span></h3></div>" +
               '<p class="wrong-word-card__meaning">' + esc(w.meaning || "") + "</p>" +
               (w.userAnswer
-                ? '<p class="wrong-word-card__attempt">作答：' + esc(w.userAnswer) + "</p>"
+                ? '<p class="wrong-word-card__attempt">trả lời:' + esc(w.userAnswer) + "</p>"
                 : "") +
             "</div>" +
             '<div class="wrong-word-card__actions">' +
               '<button type="button" class="btn btn--ghost btn--sm btn-speak" data-word="' +
-                esc(w.word) + '">🔊 发音</button>' +
+                esc(w.word) + '">🔊 Phát âm</button>' +
             "</div></article>";
         }).join("") + "</div>"
-      : '<div class="soon-box premium-empty">这场目前没有错词（重测已清空列表）。记录仍保留，可手动删除。</div>';
+      : '<div class="soon-box premium-empty">đại từ này sân phơihiện tạikhông cóhọ biến thể cũ của(lặp lại khảo sát đãdọn dẹpdanh sách).ghi chépvẫngiữ,tiền tố có thểthủ côngXóa.</div>';
 
     contentEl.innerHTML =
       '<div class="cam-hero vocab-hero wrong-words-hero bento-panel">' +
-        '<div class="cam-hero__badge"><div class="lbl">场次</div><div class="num">' +
+        '<div class="cam-hero__badge"><div class="lbl">số lần chiếu của một bộ phim</div><div class="num">' +
           mistakes.length + "</div></div>" +
         "<div><h1>" + esc(s.title) + "</h1>" +
-        '<div class="meta">' + esc(s.bookLabel) + " · 错词重测会更新本场列表</div>" +
+        '<div class="meta">' + esc(s.bookLabel) + " · họ biến thể cũ của lặp lại khảo sát có thểthay cũ đổi mớihình thức kết hợp gốc sân phơidanh sách</div>" +
         '<div class="vocab-hero__actions">' +
-          '<a class="btn btn--ghost btn--sm" href="wrong-words.html">← 全部场次</a>' +
+          '<a class="btn btn--ghost btn--sm" href="wrong-words.html">← Tất cảsố lần chiếu của một bộ phim</a>' +
           (mistakes.length
             ? '<a class="btn btn--primary btn--sm" href="vocab-quiz.html?session=' + s.id +
-              '">错词重测</a>'
+              '">họ biến thể cũ của lặp lại khảo sát</a>'
             : "") +
-          '<button type="button" class="btn btn--ghost btn--sm" id="btn-del-session">删除本场</button>' +
+          '<button type="button" class="btn btn--ghost btn--sm" id="btn-del-session">Xóahình thức kết hợp gốc sân phơi</button>' +
         "</div></div></div>" +
       cards;
 
@@ -135,21 +135,21 @@
       };
     });
     document.getElementById("btn-del-session").onclick = function () {
-      if (!confirm("删除后不可恢复，确定删除这场错题记录？")) return;
+      if (!confirm("Xóahọkhông thểkhôi phục,rõ ràngXóađại từ này sân phơiCâu saighi chép?")) return;
       A.api("/api/vocab-shelf/wrongbook/session/remove", {
         method: "POST",
         body: { sessionId: s.id }
       }).then(function () {
         location.href = "wrong-words.html";
       }).catch(function (e) {
-        alert((e && e.message) || "删除失败");
+        alert((e && e.message) || "XóaThất bại");
       });
     };
   }
 
   function boot() {
     if (!needAuth()) return;
-    contentEl.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>正在加载…</div>';
+    contentEl.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>Đang tải…</div>';
     importLocalOnce().then(function () {
       if (sessionId) {
         return A.api("/api/vocab-shelf/wrongbook/session?id=" + encodeURIComponent(sessionId))
@@ -157,7 +157,7 @@
       }
       return A.api("/api/vocab-shelf/wrongbook").then(renderList);
     }).catch(function (e) {
-      fail((e && e.message) || "加载失败");
+      fail((e && e.message) || "Tải thất bại");
     });
   }
 

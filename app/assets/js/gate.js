@@ -18,7 +18,7 @@
   }
   function allowed() {
     try { if (new URLSearchParams(w.location.search).get("preview") === "1") return true; } catch (e) {}
-    // app 域名只给桌面端；官网 /app/ 挂载后由 auth.js 管登录态，不再弹回下载页
+    // app tin học tên miềnchỉ cung cấpmàn hình máy tínhcuối;trang web chính thức /app/ tin học gắn kếthọ auth.js biến thể củaĐăng nhậphình thức kết hợp,không cònnảy lạiTải xuốngđầu
     return isDesktop() || isLocal() || !isAppHost();
   }
   function block() {

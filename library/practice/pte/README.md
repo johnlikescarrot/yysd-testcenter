@@ -1,8 +1,8 @@
-# 练习区 / PTE练习
+# Khu vực Luyện tập / PTELuyện tập
 
-**把「PTE练习题」的 HTML 文件上传到这个文件夹即可自动归类。**
+**cầm«PTELuyện tậphọ» HTML tài liệuTải lênđếnđại từ nàythư mụctương đương vớitự độngphân loại.**
 
-- 板块：✏️ 练习区 (practice)
-- 科目：PTE (pte)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm:✏️ Khu vực Luyện tập (practice)
+- môn học:PTE (pte)
+- Tải lêncách thức:tồn tạivăn bản nàymón ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phúthọtự độngxuất hiệntồn tạitrang webtương ứng vớiPhân loạixuống,không cần thiếtKháclàm việc.

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   优益思达学习中心 (YYSD Learning Center)
+   YYSDTrung tâm Học tập (YYSD Learning Center)
    Global stylesheet — design system (Phase ① visual foundation)
    Playfair Display loaded via <link> in shell pages (not @import — blocks render).
    ========================================================================== */
@@ -563,7 +563,7 @@ a.navleaf:hover { border-color: var(--zc, var(--brand-red)); transform: translat
 .subject-group__head h2 { margin: 0; font-size: 19px; color: var(--brand-navy); }
 .subject-dot { width: 11px; height: 11px; border-radius: 50%; }
 .subject-group__head .cnt { font-size: 13px; color: var(--text-faint); font-weight: 600; }
-/* sub-skill blocks inside a category (e.g. 雅思真题 → 听力/阅读/口语/写作) */
+/* sub-skill blocks inside a category (e.g. Đề thi thật IELTS → Nghe/Đọc/Nói/Viết) */
 .leaf-wrap { display: flex; flex-direction: column; gap: 22px; }
 .leaf-block { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; background: var(--surface); }
 .leaf-block__head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -577,7 +577,7 @@ a.navleaf:hover { border-color: var(--zc, var(--brand-red)); transform: translat
   background: var(--bg); border: 1px dashed var(--border-strong); border-radius: var(--radius-sm);
 }
 
-/* ---------- Cambridge volume cards (剑桥真题系列) ---------------------- */
+/* ---------- Cambridge volume cards (kiếm hai lưỡi cầuĐề thi thậtloạt) ---------------------- */
 .vol-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
 .vol-card {
   display: flex; flex-direction: column; gap: 16px;
@@ -2690,7 +2690,7 @@ table.data tr:last-child td { border-bottom: 0; }
   margin: 0 auto var(--space-block);
 }
 
-/* —— Marketing homepage: Bento Grid (便当盒) —— */
+/* —— Marketing homepage: Bento Grid (tiện lợihộp nhỏ) —— */
 .home-market-page,
 .home-bento-page {
   --bento-ink: #18181b;
@@ -4416,7 +4416,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 }
 
 /* ==========================================================================
-   P1 — results hero, login layout (成绩页 / 登录页)
+   P1 — results hero, login layout (Kết quảđầu / Đăng nhậpđầu)
    ========================================================================== */
 .results-hero {
   display: grid;
@@ -4509,7 +4509,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 }
 
 /* ==========================================================================
-   AI word lookup (学习区 · 单词)
+   AI word lookup (họchọ · Từ vựng)
    ========================================================================== */
 .ai-word {
   margin-bottom: 22px;
@@ -4633,7 +4633,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 .ai-word__status.is-err { color: var(--brand-red, #c8102e); }
 
 /* ==========================================================================
-   Wrong-word notebook (单词错题本)
+   Wrong-word notebook (Từ vựngSổ lỗi sai)
    ========================================================================== */
 .wrong-notebook-strip {
   margin-bottom: 22px;
@@ -5051,7 +5051,7 @@ a.alevel-paper-title:hover { color: var(--c-pte); text-decoration: underline; }
 .alevel-link-sep { margin: 0 4px; color: var(--text-faint); }
 .alevel-paper-missing { color: var(--text-faint); }
 
-/* --- 学为贵-style accordion (真题资料) --- */
+/* --- học làm với tư cách đắt-style accordion (Đề thi thậttài liệu) --- */
 .alevel-hero--compact { margin-bottom: 8px; }
 .alevel-hero--compact h1 { font-size: 22px; }
 .alevel-xwg {
@@ -6270,7 +6270,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
 .reme-nav a.is-active::after {
   content: none;
 }
-/* 全球大学排行榜 — teal accent (between 国际课程 and AI升学顾问) */
+/* toàn thế giớiĐại họcbảng xếp hạng — teal accent (between Chương trình quốc tế and AIlên lớp hoặc trường cấp trêncố vấn) */
 .reme-nav a.nav-rankings,
 .nav-drawer__links a.nav-rankings {
   font-weight: 700;
@@ -6297,7 +6297,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-/* AI 升学顾问 — gradient accent in top nav */
+/* AI lên lớp hoặc trường cấp trêncố vấn — gradient accent in top nav */
 .reme-nav a.nav-ai-admit,
 .nav-drawer__links a.nav-ai-admit {
   font-weight: 700;
@@ -9543,7 +9543,7 @@ html:has(.home-apple-keynote) {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-/* ponytail: let AI panel pass through so footer (备案/投诉) can rest in view */
+/* ponytail: let AI panel pass through so footer (đưa vào hồ sơ/phàn nàn) can rest in view */
 .home-apple-keynote .ha-ai.ha-panel {
   scroll-snap-stop: normal;
 }

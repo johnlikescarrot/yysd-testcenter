@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>听力精听：剑雅20 Test 1 · Section 1（完整版）</title>
+<title>Nghe tinh chất cười cổ đại:kiếm hai lưỡi tao nhã20 Test 1 · Section 1(hoàn chỉnh một đăng ký)</title>
 
-<meta name="exam:title"       content="听力精听：剑雅20 Test 1 · Section 1（完整版）">
+<meta name="exam:title"       content="Nghe tinh chất cười cổ đại:kiếm hai lưỡi tao nhã20 Test 1 · Section 1(hoàn chỉnh một đăng ký)">
 <meta name="exam:zone"        content="practice">
 <meta name="exam:subject"     content="jingting">
 <meta name="exam:duration"    content="0">
-<meta name="exam:description" content="剑雅20 Test 1 Section 1 跟读模式：盲听复述，AI 逐词标绿/红/灰，准确率≥85%过关。">
+<meta name="exam:description" content="kiếm hai lưỡi tao nhã20 Test 1 Section 1 gót chân dấu phẩychế độ:mù cười cổ đạilặp lại lời của chính mình hoặc của người khác,AI hình thức kết hợp theo đuổi biến thể cũ của đánh dấu màu xanh lá/họ/,chính xác tỉ lệ≥85%vượt qua rào cản.">
 
 <style>
   :root{ --red:#c8102e; --navy:#14213d; --ink:#1f2a3a; --muted:#667085; --line:#e4e8ef;
@@ -108,57 +108,58 @@
   .finish-card h2{ color:var(--navy); margin:0 0 8px; font-size:22px; }
   .finish-card p{ color:var(--muted); margin:0 0 18px; }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <div class="wrap">
 
   <div class="card">
-    <h1>听力精听 · AI 跟读模式</h1>
-    <p class="lead">剑雅20 Test 1 — Section 1 · 盲听跟读 · 逐词反馈（共 75 句）</p>
+    <h1>Nghe tinh chất cười cổ đại · AI gót chân dấu phẩychế độ</h1>
+    <p class="lead">kiếm hai lưỡi tao nhã20 Test 1 — Section 1 · mù cười cổ đại gót chân dấu phẩy · hình thức kết hợp theo đuổi biến thể cũ củaPhản hồi (75 biến thể của)</p>
     <div id="modeBanner" class="mode-banner"></div>
     <div class="progress-bar"><div class="fill" id="progFill"></div></div>
-    <div class="progress-text" id="progText">进度 0 / 75</div>
+    <div class="progress-text" id="progText">Tiến độ 0 / 75</div>
   </div>
 
   <div class="layout">
     <aside class="list">
-      <h3>句子列表</h3>
+      <h3>Câu danh sách</h3>
       <div id="sentList"></div>
     </aside>
 
     <section id="mainStage">
       <div class="card" id="stageRepeat">
-        <span class="stage-tag">跟读测试 · 盲听复述</span>
+        <span class="stage-tag">gót chân dấu phẩyBài kiểm tra · mù cười cổ đạilặp lại lời của chính mình hoặc của người khác</span>
         <div class="row" style="margin-bottom:12px;">
           <span class="speaker" id="speakerTag">—</span>
-          <button class="btn" id="playBtn">▶ 播放例句</button>
+          <button class="btn" id="playBtn">▶ Phát câu ví dụ</button>
         </div>
-        <div class="blind-panel" id="transcript">🔒 测试期间不显示原文 · 请先听清再复述</div>
+        <div class="blind-panel" id="transcript">🔒 Bài kiểm tra khoảng thời gian khônghiển thị Văn bản gốc · mời trướcnghe rõ lạilặp lại lời của chính mình hoặc của người khác</div>
         <div class="divider"></div>
         <div class="row">
-          <button class="btn rec" id="recBtn">🎙 点击开始复述</button>
-          <button class="btn ghost" id="stopBtn" disabled>■ 说完点停止</button>
+          <button class="btn rec" id="recBtn">🎙 nhấn Bắt đầu lặp lại lời của chính mình hoặc của người khác</button>
+          <button class="btn ghost" id="stopBtn" disabled>■ thuyết phục hoàn thành điểmDừng</button>
         </div>
-        <div class="heard" id="heard"><span class="ph">你复述的内容会显示在这里…</span></div>
+        <div class="heard" id="heard"><span class="ph">bạnlặp lại lời của chính mình hoặc của người khác Nội dung có thểhiển thị tồn tạibiến thể của …</span></div>
         <div class="verdict" id="verdict"></div>
         <p class="sr-note" id="srNote"></p>
       </div>
 
       <div class="card" id="stageTranslate" style="display:none !important;" hidden>
-        <span class="stage-tag" style="background:#e1f5ee;color:#0f6e56;">第 2 步 · 翻译这句话</span>
+        <span class="stage-tag" style="background:#e1f5ee;color:#0f6e56;">2 họ · Dịch thuật đại từ này biến thể của phương ngữ</span>
         <p class="lead" id="translatePrompt"></p>
-        <textarea id="zhInput" placeholder="在这里输入这句话的中文翻译…"></textarea>
+        <textarea id="zhInput" placeholder="tồn tạibiến thể của nhập khẩu đại từ này biến thể của phương ngữTiếng Trung Dịch thuật …"></textarea>
         <div class="row" style="margin-top:10px;">
-          <button class="btn" id="checkZhBtn">提交翻译</button>
-          <button class="btn ghost" id="nextBtn" style="display:none;">下一句 →</button>
+          <button class="btn" id="checkZhBtn">Nộp bài Dịch thuật</button>
+          <button class="btn ghost" id="nextBtn" style="display:none;">xuốngmột dòng thơ →</button>
         </div>
         <div class="verdict" id="zhVerdict"></div>
       </div>
 
       <div class="card finish-card" id="stageFinish" style="display:none;">
-        <h2>🎉 Section 1 精听完成！</h2>
-        <p id="finishSummary">你已完成全部句子。</p>
-        <button class="btn" id="restartBtn">从头再练一遍</button>
+        <h2>🎉 Section 1 tinh chất cười cổ đạiHoàn thành!</h2>
+        <p id="finishSummary">bạnĐã hoàn thành Tất cả Câu.</p>
+        <button class="btn" id="restartBtn">làm lại từ đầu lại luyện tậpmột lần từ đầu đến cuối</button>
       </div>
     </section>
   </div>
@@ -170,81 +171,81 @@ var API_BASE = (location.hostname === "localhost" || location.hostname === "127.
   : "https://api.youyisida.com";
 
 var SENTENCES = [
-  {who:"W",en:"I've been meaning to ask you for some advice about restaurants.",zh:"我一直想请教你一些关于餐厅的建议。"},
-  {who:"W",en:"I need to book somewhere to celebrate my sister's 30th birthday,",zh:"我得订个地方，给我姐姐过30岁生日，"},
-  {who:"W",en:"and I liked the sound of that place you went to for your mum's 50th.",zh:"而且你给你妈办50岁生日宴的那家店，听起来很不错。"},
-  {who:"M",en:"The Junction.",zh:"The Junction 餐厅。"},
-  {who:"M",en:"Yeah, I'd definitely recommend that for a special occasion.",zh:"对，这种特殊场合我肯定推荐那家。"},
-  {who:"M",en:"We had a great time there.",zh:"我们在那儿过得特别开心。"},
-  {who:"M",en:"Everyone really enjoyed it.",zh:"大家都很喜欢。"},
-  {who:"W",en:"Where is it again? I can't remember.",zh:"它又在哪儿来着？我记不清了。"},
-  {who:"M",en:"It's on Greyson Street, only about a 2-minute walk from the station.",zh:"在 Greyson 街上，离车站走路大约只要两分钟。"},
-  {who:"W",en:"Oh that's good.",zh:"哦，那挺好。"},
-  {who:"W",en:"I prefer not to have to drive anywhere but I don't want to have to walk too far either.",zh:"我不太想开车去太远的地方，但也不想走太远。"},
-  {who:"M",en:"Yes, the location's perfect, but that's not necessarily why I'd recommend it.",zh:"是啊，位置确实很好，但这不是我推荐它的主要原因。"},
-  {who:"M",en:"The food's amazing.",zh:"菜特别棒。"},
-  {who:"M",en:"If you like fish, it's probably the best restaurant in town for that.",zh:"要是你喜欢鱼，它大概是城里吃鱼的最好的餐厅。"},
-  {who:"M",en:"It's always really fresh and there are lots of interesting dishes to choose from.",zh:"鱼一直很新鲜，而且有很多有意思的菜品可选。"},
-  {who:"M",en:"But all the food is good there.",zh:"不过那里的菜整体都很好。"},
-  {who:"W",en:"Is it really expensive?",zh:"是不是很贵？"},
-  {who:"M",en:"It's certainly not cheap, but for a special occasion I think it's fine.",zh:"肯定不算便宜，但我觉得特殊场合还是值得的。"},
-  {who:"M",en:"It's got a great atmosphere and before dinner you can go up on the roof and have a drink.",zh:"氛围很好，晚饭前你还可以上楼顶喝一杯。"},
-  {who:"M",en:"It's really nice up there, but you need to book.",zh:"楼上很舒服，但需要预订。"},
-  {who:"M",en:"It's very popular as the views are spectacular.",zh:"那儿很受欢迎，因为景色特别壮观。"},
-  {who:"W",en:"Hmm... sounds good.",zh:"嗯……听起来不错。"},
-  {who:"W",en:"So that's definitely a possibility then.",zh:"那这肯定是一个可以考虑的选择。"},
-  {who:"W",en:"Is there anywhere else you can think of?",zh:"你还能想到别的地方吗？"},
-  {who:"M",en:"Hmm... if you want somewhere a bit less formal, then you could try Paloma.",zh:"嗯……要是你想找稍微不那么正式的地方，可以试试 Paloma。"},
-  {who:"W",en:"Where's that? I haven't heard of it.",zh:"在哪儿？我没听说过。"},
-  {who:"M",en:"No, it's quite new.",zh:"对，它挺新的。"},
-  {who:"M",en:"It's only been open a few months, but it's got a great reputation already.",zh:"才开业几个月，但口碑已经很好了。"},
-  {who:"M",en:"It's in a really beautiful old building on Bow Street.",zh:"在 Bow 街上的一栋很漂亮的老建筑里。"},
-  {who:"W",en:"Oh, I think I know where you mean, right beside the cinema.",zh:"哦，我想我知道你说哪儿了，就在电影院旁边。"},
-  {who:"M",en:"Yes, that's it.",zh:"对，就是那儿。"},
-  {who:"M",en:"I've only been there a couple of times, but I was really impressed.",zh:"我只去过几次，但印象特别深。"},
-  {who:"M",en:"The chef used to work at Don Felipe's, apparently.",zh:"据说主厨以前在 Don Felipe's 工作。"},
-  {who:"M",en:"I was really sorry when that closed down.",zh:"它关门的时候我挺遗憾的。"},
-  {who:"W",en:"So is all the food they serve Spanish, then?",zh:"那他们供应的都是西班牙菜吗？"},
-  {who:"M",en:"Yeah, you can get lots of small dishes to share, which always works really well if you're in a group.",zh:"对，你可以点很多小菜一起分享，人多的话总是特别合适。"},
-  {who:"W",en:"Hmm... worth thinking about.",zh:"嗯……值得考虑一下。"},
-  {who:"M",en:"Yeah, there's a lively atmosphere and the waiters are really friendly.",zh:"对，那儿气氛很热闹，服务员也特别友好。"},
-  {who:"M",en:"The only thing is that you need to pay a £50 deposit to book a table.",zh:"唯一的问题是订位要先付50英镑押金。"},
-  {who:"W",en:"A lot of restaurants are doing that these days.",zh:"现在很多餐厅都这么做。"},
-  {who:"W",en:"I should have a look at the menu to check there is a good choice of vegetarian dishes.",zh:"我得看看菜单，确认有没有足够多的素食可选。"},
-  {who:"W",en:"A couple of my friends have stopped eating meat.",zh:"我有几个朋友已经不吃肉了。"},
-  {who:"M",en:"Not sure, I'd say the selection of those would be quite limited.",zh:"不好说，我觉得那方面的选择会比较有限。"},
-  {who:"M",en:"I've just thought of another idea.",zh:"我刚想到另一个主意。"},
-  {who:"M",en:"Have you been to the Audley?",zh:"你去过 Audley 吗？"},
-  {who:"W",en:"No, don't think I've heard of it.",zh:"没有，我好像没听说过。"},
-  {who:"W",en:"How's it spelt?",zh:"怎么拼写？"},
-  {who:"M",en:"A-U-D-L-E-Y.",zh:"A-U-D-L-E-Y。"},
-  {who:"M",en:"You must have heard of it.",zh:"你肯定听说过。"},
-  {who:"M",en:"There's been a lot about it in the press.",zh:"媒体上报道过很多。"},
-  {who:"W",en:"I don't tend to pay much attention to that kind of thing.",zh:"我通常不太关注这类消息。"},
-  {who:"W",en:"So where is it exactly?",zh:"那它具体在哪儿？"},
-  {who:"M",en:"It's in that hotel near Baxter Bridge, on the top floor.",zh:"在 Baxter Bridge 附近那家酒店的顶楼。"},
-  {who:"W",en:"Oh, the views would be incredible from up there.",zh:"哦，从那儿看风景一定很棒。"},
-  {who:"W",en:"Yeah, I'd love to go.",zh:"是啊，我很想去。"},
-  {who:"W",en:"I can't think of the chef's name, but she was a judge on that TV cookery show recently.",zh:"我想不起主厨的名字了，不过她最近在那个美食电视节目里当过评委。"},
-  {who:"W",en:"And she's written a couple of cookery books.",zh:"而且她还写过几本烹饪书。"},
-  {who:"M",en:"Oh, Angela Frayne.",zh:"哦，Angela Frayne。"},
-  {who:"M",en:"That's the one.",zh:"就是她。"},
-  {who:"M",en:"Anyway, it's had excellent reviews from all the newspapers.",zh:"总之，各家报纸对它的评价都非常好。"},
-  {who:"W",en:"That would be a memorable place for a celebration.",zh:"那倒是个值得纪念的庆祝地点。"},
-  {who:"M",en:"Definitely!",zh:"绝对没错！"},
-  {who:"M",en:"Obviously it's worth going there just for the view, but the food is supposed to be really special.",zh:"显然，就算只为风景也值得去，但据说菜也特别出色。"},
-  {who:"W",en:"She only likes cooking with local products, doesn't she?",zh:"她只喜欢用本地食材做菜，对吧？"},
-  {who:"M",en:"Yes. Everything at the restaurant has to be sourced within a short distance, and absolutely nothing flown in from abroad.",zh:"对。餐厅所有食材都必须来自短距离范围内，绝对不能有空运进口的。"},
-  {who:"W",en:"I imagine it's really expensive though.",zh:"不过我想应该很贵吧。"},
-  {who:"M",en:"Well, you could go for the set lunch.",zh:"嗯，你可以选套餐午餐。"},
-  {who:"M",en:"That's quite reasonable for a top class restaurant, £30 a head.",zh:"对顶级餐厅来说挺合理，每人30英镑。"},
-  {who:"M",en:"In the evening, I think it would be more like £50.",zh:"晚上的话，我觉得大概要50英镑左右。"},
-  {who:"M",en:"At least that I should think, but I'm sure everyone would enjoy it.",zh:"至少我是这么想的，不过我相信大家都会喜欢。"},
-  {who:"W",en:"It's not the kind of place you leave feeling hungry though, is it?",zh:"不过那种地方吃完不会觉得饿吧？"},
-  {who:"W",en:"With tiny portions.",zh:"份量那么小。"},
-  {who:"M",en:"No, the reviews I've read didn't mention that.",zh:"没有，我看到的评价没提到这一点。"},
-  {who:"M",en:"I imagine they'd be average.",zh:"我觉得份量应该是中等水平。"},
-  {who:"W",en:"Well, that's all great...",zh:"嗯，这些都太好了……"}
+  {who:"W",en:"I've been meaning to ask you for some advice about restaurants.",zh:"tôi thẳng theo đường thẳng nghĩ về hỏi để được hướng dẫn bạn một số liên quan đến phòng ăn của Gợi ý."},
+  {who:"W",en:"I need to book somewhere to celebrate my sister's 30th birthday,",zh:"tôi được đồng ý dùng trong khu vực, cung cấp tôi chị gái họ30biến thể của sinh nhật,"},
+  {who:"W",en:"and I liked the sound of that place you went to for your mum's 50th.",zh:"không những... mà còn bạn cung cấp thán từ mẹ mày làm50biến thể của sinh nhật dạng kết hợp tiệc của họ dùng trong quán trọ, nghe có vẻ như phó từ mức độ đúng."},
+  {who:"M",en:"The Junction.",zh:"The Junction phòng ăn."},
+  {who:"M",en:"Yeah, I'd definitely recommend that for a special occasion.",zh:"đúng, loại này đặc biệt tình huống tôi chắc chắn đề xuất họ dùng trong."},
+  {who:"M",en:"We had a great time there.",zh:"chúng tôi tồn tại ở đó Bạn sống thế nào? khác thường cảm thấy vui."},
+  {who:"M",en:"Everyone really enjoyed it.",zh:"mọi người họ phó từ mức độ thích."},
+  {who:"W",en:"Where is it again? I can't remember.",zh:"nó một lần nữa tồn tại ở đâu? trợ từ chỉ điều gì đó đã xảy ra trong quá khứ?tôi ghi chép không rõ ràng trợ từ chỉ hành động đã hoàn thành."},
+  {who:"M",en:"It's on Greyson Street, only about a 2-minute walk from the station.",zh:"tồn tại Greyson trên đường, loài thú thần thoại cổ ga tàu đi bộ khoảng chỉ cần phút."},
+  {who:"W",en:"Oh that's good.",zh:"ngâm nga, họ rất tốt."},
+  {who:"W",en:"I prefer not to have to drive anywhere but I don't want to have to walk too far either.",zh:"tôi không cao nhất vượt qua cú sốc họ đi cao nhất tự tạo khoảng cách văn cổ của khu vực, nhưng họ một cách bất ngờ đi cao nhất tự tạo khoảng cách văn cổ."},
+  {who:"M",en:"Yes, the location's perfect, but that's not necessarily why I'd recommend it.",zh:"là chỉ theo sau bởi danh từ thán từ biểu thị sự ngạc nhiên, vị trí thực sự phó từ mức độ tốt, nhưng thông tục Thực ra là chỉ theo sau bởi danh từ tôi đề xuất nó của chính Lí do."},
+  {who:"M",en:"The food's amazing.",zh:"khác thường gậy."},
+  {who:"M",en:"If you like fish, it's probably the best restaurant in town for that.",zh:"thông tục nếu bạn thích họ, nó đại khái là chỉ theo sau bởi danh từ tường thành biến thể của ăn họ của tốt nhất của phòng ăn."},
+  {who:"M",en:"It's always really fresh and there are lots of interesting dishes to choose from.",zh:"họ thẳng theo đường thẳng phó từ mức độ tươi trải nghiệm, không những... mà còn có phó từ mức độ nhiều thú vị của món ăn có sẵn."},
+  {who:"M",en:"But all the food is good there.",zh:"chỉ ở đó của thực thể toàn bộ họ phó từ mức độ tốt."},
+  {who:"W",en:"Is it really expensive?",zh:"có phải hay không phó từ mức độ đắt?"},
+  {who:"M",en:"It's certainly not cheap, but for a special occasion I think it's fine.",zh:"chắc chắn không tính thuận tiện, nhưng tôi nghĩ rằng đặc biệt tình huống vẫn như trước đáng của."},
+  {who:"M",en:"It's got a great atmosphere and before dinner you can go up on the roof and have a drink.",zh:"bầu không khí phó từ mức độ tốt, bữa tối trước bạn họ có thể đi lên lầu đỉnh uống một cái cúp."},
+  {who:"M",en:"It's really nice up there, but you need to book.",zh:"tầng trên phó từ mức độ thoải mái, nhưng cần đặt hàng."},
+  {who:"M",en:"It's very popular as the views are spectacular.",zh:"ở đó phó từ mức độ phổ biến, bởi vì phong cảnh khác thường cảnh tượng hùng vĩ."},
+  {who:"W",en:"Hmm... sounds good.",zh:"âm thanh rên rỉ…… nghe có vẻ như đúng."},
+  {who:"W",en:"So that's definitely a possibility then.",zh:"họ đại từ này chắc chắn là chỉ theo sau bởi danh từ một dùng trong có thể suy nghĩ kỹ của Chọn."},
+  {who:"W",en:"Is there anywhere else you can think of?",zh:"bạn họ họ nghĩ đến khác khu vực thông tục gì??"},
+  {who:"M",en:"Hmm... if you want somewhere a bit less formal, then you could try Paloma.",zh:"âm thanh rên rỉ…… thông tục nếu bạn nghĩ về cố gắng tìm một chút không như vậy trang trọng của khu vực, có thể thử thử Paloma."},
+  {who:"W",en:"Where's that? I haven't heard of it.",zh:"tồn tại ở đâu??tôi tiền tố phủ định cho động từ chưa nghe nói họ."},
+  {who:"M",en:"No, it's quite new.",zh:"đúng, nó thẳng viết tắt của Tân Cương của."},
+  {who:"M",en:"It's only been open a few months, but it's got a great reputation already.",zh:"khả năng khai trương kinh doanh một vài mặt trăng, nhưng lời khen ngợi của công chúng đã phó từ mức độ tốt trợ từ chỉ hành động đã hoàn thành."},
+  {who:"M",en:"It's in a really beautiful old building on Bow Street.",zh:"tồn tại Bow trên đường của một lượng từ cho nhà hoặc tòa nhà phó từ mức độ xinh đẹp của xây dựng biến thể của."},
+  {who:"W",en:"Oh, I think I know where you mean, right beside the cinema.",zh:"ngâm nga, tôi nghĩ về tôi biết bạn thuyết phục ở đâu? trợ từ chỉ hành động đã hoàn thành, sau một mệnh đề giả định trong trường hợp đó tồn tại rạp chiếu phim bên."},
+  {who:"M",en:"Yes, that's it.",zh:"đúng, chính xác ở đó."},
+  {who:"M",en:"I've only been there a couple of times, but I was really impressed.",zh:"tôi chỉ đi họ một vài lần, nhưng ấn tượng điều gì đó lưu lại trong tâm trí khác thường biến thể cũ của."},
+  {who:"M",en:"The chef used to work at Don Felipe's, apparently.",zh:"nghe nói rằng bếp trưởng trước đây tồn tại Don Felipe's làm việc."},
+  {who:"M",en:"I was really sorry when that closed down.",zh:"nó đóng cửa của thời gian tôi thẳng hối tiếc của."},
+  {who:"W",en:"So is all the food they serve Spanish, then?",zh:"họ họ cung cấp của họ là chỉ theo sau bởi danh từ Tây Ban Nha thông tục gì??"},
+  {who:"M",en:"Yeah, you can get lots of small dishes to share, which always works really well if you're in a group.",zh:"đúng, bạn có thể điểm phó từ mức độ nhiều món khai vị ở cùng một nơi Chia sẻ, người nhiều nếu đứng sau mệnh đề điều kiện luôn luôn khác thường thích hợp."},
+  {who:"W",en:"Hmm... worth thinking about.",zh:"âm thanh rên rỉ…… đáng suy nghĩ kỹ dùng sau động từ thử xem."},
+  {who:"M",en:"Yeah, there's a lively atmosphere and the waiters are really friendly.",zh:"đúng, ở đó bầu không khí phó từ mức độ náo nhiệt và sôi động, bồi bàn họ khác thường quận Hữu Hảo của thành phố Y Xuân."},
+  {who:"M",en:"The only thing is that you need to pay a £50 deposit to book a table.",zh:"chỉ của câu hỏi là chỉ theo sau bởi danh từ đặt chỗ hình thức kết hợp yêu cầu trước họ50 bảng Anh tiền đặt cọc."},
+  {who:"W",en:"A lot of restaurants are doing that these days.",zh:"bây giờ phó từ mức độ nhiều phòng ăn họ nhiều như vậy làm."},
+  {who:"W",en:"I should have a look at the menu to check there is a good choice of vegetarian dishes.",zh:"tôi được xem qua Menu, Xác nhận trước danh từ Có bạn đủ nhiều của đồ ăn chay có sẵn."},
+  {who:"W",en:"A couple of my friends have stopped eating meat.",zh:"tôi có một vài bạn đã không ăn thịt trợ từ chỉ hành động đã hoàn thành."},
+  {who:"M",en:"Not sure, I'd say the selection of those would be quite limited.",zh:"khó nói, tôi nghĩ rằng họ khía cạnh của Chọn có thể So sánh hạn chế."},
+  {who:"M",en:"I've just thought of another idea.",zh:"tôi cứng nghĩ đến khác dùng trong kế hoạch."},
+  {who:"M",en:"Have you been to the Audley?",zh:"bạn đi họ Audley thông tục gì??"},
+  {who:"W",en:"No, don't think I've heard of it.",zh:"không có, tôi như thể tiền tố phủ định cho động từ chưa nghe nói họ."},
+  {who:"W",en:"How's it spelt?",zh:"như thế nào? đánh vần?"},
+  {who:"M",en:"A-U-D-L-E-Y.",zh:"A-U-D-L-E-Y."},
+  {who:"M",en:"You must have heard of it.",zh:"bạn chắc chắn nghe nói họ."},
+  {who:"M",en:"There's been a lot about it in the press.",zh:"truyền thông báo cáo lên cấp trên đường họ phó từ mức độ nhiều."},
+  {who:"W",en:"I don't tend to pay much attention to that kind of thing.",zh:"tôi thông thường không cao nhất chú ý đến loại này tin tức."},
+  {who:"W",en:"So where is it exactly?",zh:"họ nó cụ thể tồn tại ở đâu??"},
+  {who:"M",en:"It's in that hotel near Baxter Bridge, on the top floor.",zh:"tồn tại Baxter Bridge gần đó họ dùng trong quán rượu của tầng trên cùng."},
+  {who:"W",en:"Oh, the views would be incredible from up there.",zh:"ngâm nga, biến thể của ở đó chăm sóc phong cảnh chắc chắn phó từ mức độ gậy."},
+  {who:"W",en:"Yeah, I'd love to go.",zh:"là chỉ theo sau bởi danh từ thán từ biểu thị sự ngạc nhiên, tôi phó từ mức độ nghĩ về đi."},
+  {who:"W",en:"I can't think of the chef's name, but she was a judge on that TV cookery show recently.",zh:"tôi nghĩ về không dậy bếp trưởng của tên của người hoặc vật trợ từ chỉ hành động đã hoàn thành, chỉ cô ấy gần đây tồn tại cái đó món ngon chương trình truyền hình biến thể của từ tượng thanh đong họ ban đánh giá."},
+  {who:"W",en:"And she's written a couple of cookery books.",zh:"không những... mà còn cô ấy họ viết họ bàn nhỏ hình thức kết hợp gốc nấu nướng viết tắt của."},
+  {who:"M",en:"Oh, Angela Frayne.",zh:"ngâm nga, Angela Frayne."},
+  {who:"M",en:"That's the one.",zh:"chính xác cô ấy."},
+  {who:"M",en:"Anyway, it's had excellent reviews from all the newspapers.",zh:"tóm lại, mỗi dùng trong báo đúng nó của đánh giá họ rất tốt."},
+  {who:"W",en:"That would be a memorable place for a celebration.",zh:"Ồ dùng trong đáng tưởng niệm của ăn mừng Địa điểm."},
+  {who:"M",en:"Definitely!",zh:"tuyệt đối đúng rồi!"},
+  {who:"M",en:"Obviously it's worth going there just for the view, but the food is supposed to be really special.",zh:"rõ ràng, thông tục ngay cả khi chỉ làm với tư cách phong cảnh họ đáng đi, nhưng nghe nói rằng họ khác thường đáng chú ý."},
+  {who:"W",en:"She only likes cooking with local products, doesn't she?",zh:"cô ấy chỉ thích sử dụng địa phương nguyên liệu nấu ăn nấu ăn, đúng quán bar từ mượn phục vụ đồ uống?"},
+  {who:"M",en:"Yes. Everything at the restaurant has to be sourced within a short distance, and absolutely nothing flown in from abroad.",zh:"đúng. phòng ăn tất cả nguyên liệu nấu ăn họ phải đến từ một nơi cự ly ngắn phạm vi bên trong, tuyệt đối không thể có thời gian làm gì đó di chuyển nhập khẩu của."},
+  {who:"W",en:"I imagine it's really expensive though.",zh:"chỉ tôi nghĩ về nên phó từ mức độ đắt quán bar từ mượn phục vụ đồ uống."},
+  {who:"M",en:"Well, you could go for the set lunch.",zh:"âm thanh rên rỉ, bạn có thể chọn bữa ăn set bữa trưa."},
+  {who:"M",en:"That's quite reasonable for a top class restaurant, £30 a head.",zh:"đúng hàng đầu phòng ăn đến thuyết phục thẳng hợp lý, mỗi người 30 bảng Anh."},
+  {who:"M",en:"In the evening, I think it would be more like £50.",zh:"buổi tối nếu đứng sau mệnh đề điều kiện, tôi nghĩ rằng đại khái hình thức kết hợp yêu cầu50 bảng Anh trái phải."},
+  {who:"M",en:"At least that I should think, but I'm sure everyone would enjoy it.",zh:"ít nhất tôi là chỉ theo sau bởi danh từ nhiều như vậy nghĩ về của, chỉ tôi tin tưởng mọi người thành phố thích."},
+  {who:"W",en:"It's not the kind of place you leave feeling hungry though, is it?",zh:"chỉ loại đó khu vực ăn xong không có khả năng nghĩ rằng đói quán bar từ mượn phục vụ đồ uống?"},
+  {who:"W",en:"With tiny portions.",zh:"lượng từ cho quà tặng đo lường như vậy nhỏ."},
+  {who:"M",en:"No, the reviews I've read didn't mention that.",zh:"không có, tôi nhìn thấy của đánh giá tiền tố phủ định cho động từ chưa đề cập đại từ này một chút."},
+  {who:"M",en:"I imagine they'd be average.",zh:"tôi nghĩ rằng lượng từ cho quà tặng đo lường nên là chỉ theo sau bởi danh từ trung bình Trình độ."},
+  {who:"W",en:"Well, that's all great...",zh:"âm thanh rên rỉ, những... này họ rất tốt ……"}
 ];
 
 var cur = 0, done = [];
@@ -255,14 +256,14 @@ function countDone(){ return done.filter(Boolean).length; }
 function updateProgress(){
   var n = countDone(), total = SENTENCES.length;
   document.getElementById('progFill').style.width = (n / total * 100) + '%';
-  document.getElementById('progText').textContent = '进度 ' + n + ' / ' + total;
+  document.getElementById('progText').textContent = 'Tiến độ' + n + ' / ' + total;
 }
 
 var sentList = document.getElementById('sentList');
 function renderList(){
   sentList.innerHTML = SENTENCES.map(function(s, i){
     return '<div class="sent-item '+(i===cur?'active':'')+(done[i]?' done':'')+'" data-i="'+i+'">'
-         + '<span class="dot"></span>第 '+(i+1)+' 句</div>';
+         + '<span class="dot"></span>'+(i+1)+'biến thể của</div>';
   }).join('');
   Array.prototype.forEach.call(sentList.querySelectorAll('.sent-item'), function(el){
     el.onclick = function(){ goTo(+el.dataset.i); };
@@ -284,7 +285,7 @@ var transcript = document.getElementById('transcript');
 function paintTranscript(){
   var s = SENTENCES[cur];
   document.getElementById('speakerTag').textContent = s.who === 'W' ? 'WOMAN' : 'MAN';
-  transcript.textContent = '🔒 测试期间不显示原文 · 请先听清再复述';
+  transcript.textContent = '🔒 Bài kiểm tra khoảng thời gian không hiển thị Văn bản gốc · mời trước nghe rõ lại lặp lại lời của chính mình hoặc của người khác';
 }
 
 document.getElementById('playBtn').onclick = function(){
@@ -293,7 +294,7 @@ document.getElementById('playBtn').onclick = function(){
     var u = new SpeechSynthesisUtterance(SENTENCES[cur].en);
     u.lang = 'en-GB'; u.rate = 0.9;
     window.speechSynthesis.speak(u);
-  }catch(e){ alert('当前浏览器不支持朗读，请换 Chrome。'); }
+  }catch(e){ alert('thời điểm hiện tại trình duyệt phần mềm không thể chịu đựng được cầm đọc to lên, mời trao đổi Chrome.'); }
 };
 
 var heard = document.getElementById('heard'), verdict = document.getElementById('verdict');
@@ -303,7 +304,7 @@ var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recog = null, lastHeard = '', wantRec = false;
 
 if(!SR){
-  srNote.textContent = '⚠️ 请用电脑版 Chrome 打开以使用语音识别。';
+  srNote.textContent = '⚠️ mời sử dụng máy tính một đăng ký Chrome mở biến thể cũ của sử dụng nhận dạng giọng nói.';
   recBtn.disabled = true;
 }
 
@@ -320,7 +321,7 @@ function startRec(){
   window.speechSynthesis.cancel();
   lastHeard = '';
   wantRec = true;
-  heard.innerHTML = '<span class="ph">🎙 正在听… 说完整句后点「说完点停止」</span>';
+  heard.innerHTML = '<span class="ph">🎙 đang ở thời điểm đó cười cổ đại… thuyết phục hoàn chỉnh biến thể của họ điểm«thuyết phục hoàn thành điểm Dừng »</span>';
   verdict.classList.remove('show');
   srNote.textContent = '';
   recog = new SR();
@@ -338,8 +339,8 @@ function startRec(){
     if(ev.error === 'no-speech' || ev.error === 'aborted') return;
     wantRec = false;
     setRecUi(false);
-    var msg = { 'not-allowed': '请允许麦克风权限（地址栏左侧锁图标）', 'network': '网络错误', 'service-not-allowed': '请用 Chrome 直接打开本页，或从考场页重新进入' };
-    srNote.textContent = '识别出错：' + (msg[ev.error] || ev.error);
+    var msg = { 'not-allowed': 'mời cho phép microphone từ mượn Quyền hạn (địa chỉ hàng rào bên trái khóa biểu tượng máy tính)', 'network': 'mạng lưới máy tính Lỗi', 'service-not-allowed': 'mời sử dụng Chrome trực tiếp mở hình thức kết hợp gốc đầu, có thể biến thể của Phòng thi đầu lại đi vào' };
+    srNote.textContent = 'phân biệt mắc lỗi:' + (msg[ev.error] || ev.error);
   };
   recog.onend = function(){
     if(wantRec){
@@ -354,7 +355,7 @@ function startRec(){
   } catch(e) {
     wantRec = false;
     setRecUi(false);
-    srNote.textContent = '无法启动麦克风，请检查权限并用 Chrome 打开。';
+    srNote.textContent = 'không thể khởi động một máy microphone từ mượn, mời kiểm tra Quyền hạn và sử dụng Chrome mở.';
   }
 }
 recBtn.onclick = startRec;
@@ -365,14 +366,14 @@ stopBtn.onclick = function(){
   setRecUi(false);
   if(lastHeard) shadowCheck(lastHeard);
   else {
-    heard.innerHTML = '<span class="ph">未识别到语音，请再试一次</span>';
-    srNote.textContent = '提示：等播放完再复述，说完后再点停止。';
+    heard.innerHTML = '<span class="ph">chưa phân biệt đến âm thanh lời nói, mời lại thử đầu tiên </span>';
+    srNote.textContent = 'Gợi ý: đợi Phát hoàn thành lại lặp lại lời của chính mình hoặc của người khác, thuyết phục hoàn thành họ lại điểm Dừng.';
   }
 };
 
 function shadowCheck(text){
   verdict.className = 'verdict show';
-  verdict.innerHTML = '⏳ 正在逐词分析跟读…';
+  verdict.innerHTML = '⏳ đang ở thời điểm đó hình thức kết hợp theo đuổi biến thể cũ của phân tích gót chân dấu phẩy…';
   var s = SENTENCES[cur];
   if(API_BASE){
     fetch(API_BASE + '/api/jingting/shadow', {
@@ -390,7 +391,7 @@ function shadowCheck(text){
       .then(function(d){
         if(d._status===401 || d.error){
           verdict.className='verdict show no';
-          verdict.innerHTML='<b>❌</b> '+(d._status===401?'请先登录后再使用 AI 跟读':d.error);
+          verdict.innerHTML='<b>❌</b> '+(d._status===401?'mời trước Đăng nhập họ tái sử dụng AI gót chân dấu phẩy':d.error);
           return;
         }
         showShadowResult(d, text);
@@ -422,7 +423,7 @@ function localShadow(target, heard){
   var acc = tgt.length ? ok / tgt.length : 0;
   var thresh = tgt.length <= 5 ? PASS_THRESH_SHORT : PASS_THRESH;
   return { words: words, extras: extras, accuracy: acc, pass: acc >= thresh,
-    comment: '本地简易对比。连接 AI 服务器可获得更准确的逐词分析。' };
+    comment: 'địa phươngđơn giản và dễ dàngso sánh.liên kết AI máy chủ máy tínhtiền tố có thểNhận đượcthay đổi hoặc thay thếchính xáchình thức kết hợp theo đuổi biến thể cũ củaphân tích.' };
 }
 
 function buildWordDiff(d, heardRaw){
@@ -431,34 +432,34 @@ function buildWordDiff(d, heardRaw){
   var row = words.map(function(w){
     var cls = w.status === 'correct' ? 'w-ok' : (w.status === 'missing' ? 'w-miss' : 'w-bad');
     var tip = '';
-    if(w.status === 'wrong' && w.heard) tip = ' title="你说成了：'+w.heard+'"';
-    if(w.status === 'missing') tip = ' title="漏读"';
+    if(w.status === 'wrong' && w.heard) tip = ' title="bạn thuyết phục họ trợ từ chỉ hành động đã hoàn thành: '+w.heard+'"';
+    if(w.status === 'missing') tip = ' title="rò rỉ dấu phẩy"';
     return '<span class="w-tok '+cls+'"'+tip+'>'+escHtml(w.target)+'</span>';
   }).join('');
   var extras = (d.extras || []).map(function(e){
-    return '<span class="w-tok w-extra" title="多余的词">'+escHtml(e)+'</span>';
+    return '<span class="w-tok w-extra" title="thừa của biến thể cũ của">'+escHtml(e)+'</span>';
   }).join('');
-  return '<div class="word-diff"><div class="word-diff-hd">📊 跟读逐词对照 · 准确率 '+acc+'%</div>'+
+  return '<div class="word-diff"><div class="word-diff-hd">📊 gót chân dấu phẩy hình thức kết hợp theo đuổi biến thể cũ củaĐối chiếu · chính xáctỉ lệ '+acc+'%</div>'+
     '<div class="word-row">'+row+(extras ? ' '+extras : '')+'</div>'+
-    '<div class="word-legend"><span class="w-ok">绿色=正确</span><span class="w-bad">红色=错误</span><span class="w-miss">灰色=漏读</span></div>'+
-    '<div class="heard-echo"><b>你说的：</b>'+escHtml(heardRaw)+'</div></div>';
+    '<div class="word-legend"><span class="w-ok">màu xanh lá=Đúng</span><span class="w-bad">màu đỏ màu sắc=Lỗi</span><span class="w-miss">màu xám=rò rỉ dấu phẩy</span></div>'+
+    '<div class="heard-echo"><b>bạn thuyết phục: </b>'+escHtml(heardRaw)+'</div></div>';
 }
 
 function postActionButtons(passed){
   if(passed){
     return '<div class="post-actions">'+
       (cur < SENTENCES.length - 1
-        ? '<button class="btn" id="nextSentBtn">下一句 →</button>'
-        : '<button class="btn" id="finishBtn">完成本节 →</button>')+
+        ? '<button class="btn" id="nextSentBtn">xuốngmột dòng thơ →</button>'
+        : '<button class="btn" id="finishBtn">Hoàn thànhhình thức kết hợp gốc khớp →</button>')+
       '</div>';
   }
-  return '<div class="post-actions"><button class="btn" id="retryBtn">🔄 再听一遍，重试</button></div>';
+  return '<div class="post-actions"><button class="btn" id="retryBtn">🔄 lại cười cổ đạimột lần từ đầu đến cuối, thử lại</button></div>';
 }
 
 function showShadowResult(d, heardRaw){
   var pass = !!d.pass;
   verdict.className = 'verdict show ' + (pass ? 'ok' : 'no');
-  verdict.innerHTML = '<b>'+(pass?'✅ 过关！':'❌ 未达标，请重试')+'</b> '+(d.comment||'')+
+  verdict.innerHTML = '<b>'+(pass?'✅ vượt qua rào cản!':'❌ chưađạt tiêu chuẩn đặt ra, mờithử lại')+'</b> '+(d.comment||'')+
     buildWordDiff(d, heardRaw) + postActionButtons(pass);
   var retry = document.getElementById('retryBtn');
   if(retry) retry.onclick = function(){ resetAttempt(); };
@@ -470,7 +471,7 @@ function showShadowResult(d, heardRaw){
 }
 
 function resetAttempt(){
-  heard.innerHTML = '<span class="ph">你复述的内容会显示在这里…</span>';
+  heard.innerHTML = '<span class="ph">bạnlặp lại lời của chính mình hoặc của người khácNội dungcó thểhiển thịtồn tạibiến thể của…</span>';
   verdict.classList.remove('show');
   srNote.textContent = '';
   lastHeard = '';
@@ -485,7 +486,7 @@ function showFinish(){
   document.getElementById('stageFinish').style.display = '';
   var n = countDone();
   document.getElementById('finishSummary').textContent =
-    '你完成了 ' + n + ' / ' + SENTENCES.length + ' 句跟读过关。';
+    'bạnHoàn thành ' + n + ' / ' + SENTENCES.length + ' biến thể của gót chân dấu phẩyvượt qua rào cản.';
   try{
     window.parent.postMessage({ type:'yysd:score', score:n, total:SENTENCES.length }, '*');
   }catch(e){}
@@ -504,15 +505,15 @@ function resetStage(){
   if(recog) try { recog.stop(); } catch(e) {}
   setRecUi(false);
   paintTranscript();
-  heard.innerHTML = '<span class="ph">你复述的内容会显示在这里…</span>';
+  heard.innerHTML = '<span class="ph">bạnlặp lại lời của chính mình hoặc của người khácNội dungcó thểhiển thịtồn tạibiến thể của…</span>';
   verdict.classList.remove('show');
   srNote.textContent = '';
   lastHeard = '';
 }
 
 document.getElementById('modeBanner').textContent = API_BASE
-  ? '正在连接 AI 服务…'
-  : '跟读模式 · 本地体验：请连接 AI 服务器获得逐词智能分析。';
+  ? 'đang ở thời điểm đóliên kết AI phục vụ…'
+  : 'gót chân dấu phẩychế độ · địa phươngtrải nghiệm: mờiliên kết AI máy chủ máy tínhNhận đượchình thức kết hợp theo đuổi biến thể cũ củathông minhphân tích.';
 
 function setAiBanner(cls, text){
   var b = document.getElementById('modeBanner');
@@ -524,13 +525,13 @@ if(API_BASE){
   fetch(API_BASE + '/api/health').then(function(r){ return r.json(); })
     .then(function(d){
       if(d && d.ok && d.ai){
-        setAiBanner('ok', '跟读模式 · AI 已连接 · 盲听复述，逐词标绿/红/灰，准确率≥85%过关（短句≥90%）。');
+        setAiBanner('ok', 'gót chân dấu phẩychế độ · AI đãliên kết · mù cười cổ đạilặp lại lời của chính mình hoặc của người khác, hình thức kết hợp theo đuổi biến thể cũ của đánh dấu màu xanh lá/họ/, chính xáctỉ lệ≥85%vượt qua rào cản(mệnh đề≥90%).');
       } else {
-        setAiBanner('err', '跟读模式 · AI 服务异常，请刷新页面重试');
+        setAiBanner('err', 'gót chân dấu phẩychế độ · AI phục vụbất thường, mờiLàm mớiđầu mặtthử lại');
       }
     })
     .catch(function(){
-      setAiBanner('err', '跟读模式 · AI 连接失败，请检查网络后刷新');
+      setAiBanner('err', 'gót chân dấu phẩychế độ · AI liên kếtThất bại, mờikiểm tramạng lưới máy tínhhọLàm mới');
     });
 }
 

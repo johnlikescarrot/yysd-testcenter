@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>每日单词学习 · 优益思达</title>
+  <title>Hằng ngày Từ vựng học · YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/css/daily-word.css?v=20260804dw9">
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="dw-page">
-  <span class="dw-sr">每日单词学习</span>
+  <span class="dw-sr">Hằng ngày Từ vựng học</span>
   <div id="dw-root">
-    <div class="dw-loading">正在准备今日任务…</div>
+    <div class="dw-loading">đang ở thời điểm đó sự chuẩn bị Hôm nay Nhiệm vụ …</div>
   </div>
   <div id="dw-exit-modal" class="dw-modal" hidden>
     <div class="dw-modal__box">
-      <h3>退出学习？</h3>
-      <p>进度已自动保存，下次可继续。也可重新设置词书与数量。</p>
+      <h3>Đăng xuất học?</h3>
+      <p>Tiến độ đã tự động Lưu, lần tới tiền tố có thể Tiếp tục.tiền tố có thể lại Cài đặt Từ vựng số lượng.</p>
       <div class="dw-modal__actions">
-        <button type="button" class="dw-btn dw-btn--primary" id="dw-exit-confirm">退出</button>
-        <button type="button" class="dw-btn dw-btn--ghost" id="dw-exit-reset">重新设置任务</button>
-        <button type="button" class="dw-btn dw-btn--ghost" id="dw-exit-cancel">继续学习</button>
+        <button type="button" class="dw-btn dw-btn--primary" id="dw-exit-confirm">Đăng xuất</button>
+        <button type="button" class="dw-btn dw-btn--ghost" id="dw-exit-reset">lại Cài đặt Nhiệm vụ</button>
+        <button type="button" class="dw-btn dw-btn--ghost" id="dw-exit-cancel">Tiếp tục học</button>
       </div>
     </div>
   </div>

@@ -1,29 +1,29 @@
 <!--
 ================================================================
-优益思达 · 单词检测教师模版
+YYSD · Từ vựngphát hiệnGiáo viênbiến thể của
 ================================================================
-给机构老师：复制本文件 → 只改下方 wordData → 用浏览器打开即可测。
+cung cấpcơ chếGiáo viên:nhân bảnvăn bản nàymón → chỉ thay đổibên dưới wordData → sử dụngtrình duyệt phần mềmmởtương đương vớikhảo sát.
 
-两种用法：
-A. 教师端布置作业时，上传本 HTML（练习作业 → 选择文件）
-B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词检测」也能读
+hạtcách dùng:
+A. Cổng giáo viênsắp xếpBài tậpbiến thể cũ của,Tải lênhình thức kết hợp gốc HTML(Luyện tậpBài tập → Chọntài liệu)
+B. đưacông nghệbỏ vào library/study/vocab/ vàđăng ký tênkho từhọ,trạm bên trong«Từ vựngphát hiện»họ dấu phẩy
 
-平台只解析：
-  const wordData = [ ... ];     ← 必须以分号结尾
-必填：word（英文）、meaning（中文）
-建议：ipa、pos、acceptCN（本页填空判中文时更宽松）
+nền tảngchỉGiải thích: 
+  const wordData = [ ... ];     ← phảibiến thể cũ củadấu chấm phẩy dấu câukết thúc
+nhất định lấp hoặc nhồi:word(Tiếng Anh),meaning(Tiếng Trung)
+Gợi ý:ipa,pos,acceptCN(hình thức kết hợp gốc đầuĐiền khuyếtdạng kết hợp phân biệtTiếng Trungbiến thể cũ của thay đổi hoặc thay thếrộng rãi)
 
-检测规则（与站内闯关接近）：
-  先选中文意思（四选一）→ 再拼写英文
-  5 条生命 · 每题 20 秒 · 错 5 题即失败
+phát hiệnquy tắc(trạm bên trongxông qua rào cảntiếp cận):
+  trướclựa chọnhọý tưởng(bốn chọn một)→ lạiđánh vầnTiếng Anh
+  5 dảisự sống như đặc trưng của sinh vật · mỗi họ 20 giây · họ 5 câutức làThất bại
 ================================================================
 -->
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>优益思达 · 单词检测模版（请改标题）</title>
+  <title>YYSD · Từ vựng phát hiện biến thể của (mời thay đổitiêu đề)</title>
   <style>
     :root {
       --bg: #f4f1ec; --card: #fff; --ink: #1c1917; --muted: #78716c;
@@ -72,16 +72,17 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
     .score { font-size: 2.4rem; font-weight: 800; margin: 8px 0; }
     .setup p { color: var(--muted); }
   </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
   <div class="wrap">
-    <h1 id="pageTitle">单词检测</h1>
-    <p class="sub" id="pageSub">填好 wordData 后，用浏览器打开本文件即可预览。</p>
+    <h1 id="pageTitle">Từ vựng phát hiện</h1>
+    <p class="sub" id="pageSub">lấp hoặc nhồi tốt wordData họ,sử dụngtrình duyệt phần mềm mở văn bản này móntương đương với xem trước.</p>
 
     <div class="card setup" id="setup">
-      <p id="setupHint">共 0 词 · 先选中文意思，再拼写英文 · 5 条生命 · 每题 20 秒</p>
+      <p id="setupHint">0 biến thể cũ của · trướclựa chọn họý tưởng,lạiđánh vần Tiếng Anh · 5 dảisự sống như đặc trưng của sinh vật · mỗi họ 20 giây</p>
       <div class="row">
-        <button type="button" class="btn btn-primary" id="btnStart">开始检测</button>
+        <button type="button" class="btn btn-primary" id="btnStart">Bắt đầu phát hiện</button>
       </div>
     </div>
 
@@ -94,10 +95,10 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
       <div class="word-ipa" id="ipa"></div>
       <div class="opts" id="opts"></div>
       <input class="spell hidden" id="spell" type="text" lang="en" inputmode="latin"
-        placeholder="拼写英文…" autocomplete="off" autocapitalize="off" spellcheck="false">
+        placeholder="đánh vần Tiếng Anh …" autocomplete="off" autocapitalize="off" spellcheck="false">
       <div class="fb" id="fb"></div>
       <div class="row">
-        <button type="button" class="btn btn-primary hidden" id="btnNext">下一题</button>
+        <button type="button" class="btn btn-primary hidden" id="btnNext">Câu sau</button>
       </div>
     </div>
 
@@ -106,20 +107,20 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
       <div class="score" id="doneScore"></div>
       <p class="sub" id="doneSub"></p>
       <div class="row">
-        <button type="button" class="btn btn-primary" id="btnRetry">重新检测</button>
+        <button type="button" class="btn btn-primary" id="btnRetry">lại phát hiện</button>
       </div>
     </div>
   </div>
 
 <script>
 (function () {
-  /* ★ 老师只改这一段。每个对象 = 1 个单词。复制最后一项再改即可。 */
+  /* ★ Giáo viên chỉ thay đổi đại từ này một họ.mỗi dùng trong mục tiêu = 1 dùng trong Từ vựng. nhân bản cuối cùng một họ đổi mới tương đương với. */
   const wordData = [
-    { id: 1, word: "include", ipa: "/ɪnˈkluːd/", pos: "v.", meaning: "包括；包含", acceptCN: ["包括", "包含"] },
-    { id: 2, word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n. / v.", meaning: "挑战；质疑", acceptCN: ["挑战", "质疑"] },
-    { id: 3, word: "accurate", ipa: "/ˈækjərət/", pos: "adj.", meaning: "准确的；精确的", acceptCN: ["准确", "精确"] },
-    { id: 4, word: "survive", ipa: "/səˈvaɪv/", pos: "v.", meaning: "幸存；存活", acceptCN: ["幸存", "存活", "生存"] },
-    { id: 5, word: "grateful", ipa: "/ˈɡreɪtfl/", pos: "adj.", meaning: "感激的；感谢的", acceptCN: ["感激", "感谢"] }
+    { id: 1, word: "include", ipa: "/ɪnˈkluːd/", pos: "v.", meaning: "bao gồm; chứa", acceptCN: ["bao gồm", "Bao gồm"] },
+    { id: 2, word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n. / v.", meaning: "thử thách; đặt câu hỏi", acceptCN: ["thử thách", "đặt câu hỏi"] },
+    { id: 3, word: "accurate", ipa: "/ˈækjərət/", pos: "adj.", meaning: "chính xác của; chính xác của", acceptCN: ["chính xác", "chính xác"] },
+    { id: 4, word: "survive", ipa: "/səˈvaɪv/", pos: "v.", meaning: "sống sót sau thảm họa; sống sót sau tai nạn nghiêm trọng", acceptCN: ["sống sót sau thảm họa", "sống sót sau tai nạn nghiêm trọng", "tồn tại"] },
+    { id: 5, word: "grateful", ipa: "/ˈɡreɪtfl/", pos: "adj.", meaning: "biết ơn của; bày tỏ cảm ơn của", acceptCN: ["biết ơn", "bày tỏ cảm ơn"] }
   ];
 
   const MAX_LIVES = 5;
@@ -259,8 +260,8 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
     if (!meaningOk) {
       paintMeaning(false);
       failLife(timeout
-        ? ("⏱ 超时。正确答案：" + w.word + "（" + w.meaning + "）")
-        : ("❌ 意思不对。正确答案：" + w.word + "（" + w.meaning + "）"));
+        ? ("⏱ vượt quá thời gian. Đáp án đúng:" + w.word + "(" + w.meaning + ")")
+        : ("❌ ý tưởng không chính xác. Đáp án đúng:" + w.word + "(" + w.meaning + ")"));
       return;
     }
     paintMeaning(true);
@@ -268,7 +269,7 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
     spell.focus();
     if (timeout) {
       spell.classList.add("bad");
-      failLife("⏱ 超时未拼写。正确答案：" + w.word);
+      failLife("⏱ vượt quá thời gian chưa đánh vần. Đáp án đúng:" + w.word);
       return;
     }
   }
@@ -286,10 +287,10 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
     paintMeaning(true);
     if (ok) {
       correct++;
-      fb.textContent = "✅ 正确";
+      fb.textContent = "✅ Đúng";
       btnNext.classList.remove("hidden");
     } else {
-      failLife("❌ 拼写应为：" + w.word + "（" + w.meaning + "）");
+      failLife("❌ đánh vần họ Ưng làm với tư cách:" + w.word + "(" + w.meaning + ")");
     }
   }
 
@@ -303,16 +304,16 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
     clearTimer();
     var passed = lives > 0 && (idx >= order.length || correct + wrong >= order.length);
     show(done);
-    document.getElementById("doneTitle").textContent = passed ? "检测通过" : "未通过";
+    document.getElementById("doneTitle").textContent = passed ? "phát hiện đi qua" : "chưa đi qua";
     document.getElementById("doneScore").textContent = correct + " / " + order.length;
     document.getElementById("doneSub").textContent = passed
-      ? ("错 " + wrong + " 题 · 剩余生命 " + lives)
-      : ("错误已达 " + MAX_LIVES + " 题，须重测。错 " + wrong + " · 对 " + correct);
+      ? ("họ" + wrong + "họ · Còn lại sự sống như đặc trưng của sinh vật" + lives)
+      : ("Lỗi đã họ" + MAX_LIVES + "họ, phải lặp lại khảo sát.họ" + wrong + "· đúng" + correct);
   }
 
   function start() {
     if (words.length < 2) {
-      alert("请至少填写 2 个单词（word + meaning），否则无法组成四选一。");
+      alert("mời ít nhất điền vào biểu mẫu 2 dùng trong Từ vựng (word + meaning), nếu không thì không thể hình thành bốn chọn một.");
       return;
     }
     order = shuffle(words.map(function (_, i) { return i; }));
@@ -322,7 +323,7 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
   }
 
   document.getElementById("setupHint").textContent =
-    "共 " + words.length + " 词 · 先选中文意思，再拼写英文 · 5 条生命 · 每题 20 秒";
+    "" + words.length + "biến thể cũ của · trước lựa chọn họ ý tưởng, lại đánh vần Tiếng Anh · 5 dải sự sống như đặc trưng của sinh vật · mỗi họ 20 giây đơn vị thời gian";
   document.getElementById("btnStart").onclick = start;
   document.getElementById("btnRetry").onclick = start;
   btnNext.onclick = next;
@@ -340,7 +341,7 @@ B. 交给技术放入 library/study/vocab/ 并登记词库后，站内「单词�
   };
 
   document.getElementById("pageTitle").textContent =
-    document.title.replace(/（请改标题）$/, "") || "单词检测";
+    document.title.replace(/(mời thay đổitiêu đề)$/, "") || "Từ vựng phát hiện";
 })();
 </script>
 </body>

@@ -1,4 +1,4 @@
-/* ai-tutor.js — 口语/写作分轨 + 全真模考考场 */
+/* ai-tutor.js — Nói/Viếtphần hình vị hạn chế đường ray + họ thậtThi thửPhòng thi */
 (function () {
   "use strict";
 
@@ -77,9 +77,9 @@
 
   // ponytail: quota UX — one place for 429 copy so buttons don't look "dead"
   function quotaMsg(msg) {
-    msg = String(msg || "今日额度已用完");
-    if (/明日|明天/.test(msg)) return msg;
-    if (/上限|用完|额度|quota/i.test(msg)) return msg.replace(/[。！!]?$/, "") + "，明日再来";
+    msg = String(msg || "hôm nayhạn ngạchđãdùng hết");
+    if (/ngày mai|ngày mai/.test(msg)) return msg;
+    if (/giới hạn trên|dùng hết|hạn ngạch|quota/i.test(msg)) return msg.replace(/[.!!]?$/, "") + ",ngày mailại đến";
     return msg;
   }
 
@@ -101,10 +101,10 @@
       return r.text().then(function (text) {
         var d = null;
         try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("服务器返回异常（" + r.status + "）");
+          throw new Error("máy chủ máy tínhQuay lạibất thường(" + r.status + ")");
         }
         if (!r.ok) {
-          var raw = (d && d.error) || "请求失败";
+          var raw = (d && d.error) || "yêu cầuThất bại";
           var err = new Error(r.status === 429 ? quotaMsg(raw) : raw);
           err.quota = d && d.quota;
           err.status = r.status;
@@ -150,25 +150,25 @@
       }
     }
     if (name === "hub") {
-      title.textContent = "AI 雅思老师";
-      desc.textContent = "先选口语或写作，一次只做一件事。";
-      crumb.textContent = "AI 雅思老师";
+      title.textContent = "AI IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếGiáo viên";
+      desc.textContent = "trước chọnNóicó thểViết,đầu tiênchỉ làm một món sự việc.";
+      crumb.textContent = "AI IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếGiáo viên";
     } else if (name === "speaking-home") {
-      title.textContent = "口语";
-      desc.textContent = "模考按真考节奏；练习可选题并重录；辅导可打字。";
-      crumb.textContent = "口语";
+      title.textContent = "Nói";
+      desc.textContent = "Thi thửnhấn thật đánhnhịp điệu;Luyện tậpcó sẵnhọcoi trọng như nhaukhắc gỗ;hướng dẫntiền tố có thểđánh máy.";
+      crumb.textContent = "Nói";
     } else if (name === "practice") {
-      title.textContent = "机经练习";
-      desc.textContent = "勾选话题后开始；仅用麦克风作答，可重听 / 重录。";
-      crumb.textContent = "口语 · 练习";
+      title.textContent = "họ họLuyện tập";
+      desc.textContent = "chọn một hoặc nhiều lựa chọn từ danh sáchChủ đềhọBắt đầu;hầu như sử dụngmicrophone từ mượntrả lời,tiền tố có thểlãng tai / lặp lại khắc gỗ.";
+      crumb.textContent = "Nói · Luyện tập";
     } else if (name === "tutor") {
-      title.textContent = "辅导聊天";
-      desc.textContent = "口语思路与表达问题可打字，也可语音。";
-      crumb.textContent = "口语 · 辅导";
+      title.textContent = "hướng dẫntrò chuyện";
+      desc.textContent = "Nóidòng suy nghĩdiễn đạtcâu hỏitiền tố có thểđánh máy,tiền tố có thểâm thanh lời nói.";
+      crumb.textContent = "Nói · hướng dẫn";
     } else if (name === "writing") {
-      title.textContent = "写作批改";
-      desc.textContent = "先选题干，再粘贴作文提交批改。";
-      crumb.textContent = writingOnly ? "雅思 · AI写作批改" : "写作";
+      title.textContent = "ViếtChấm bài";
+      desc.textContent = "trước chọn họ biến thể cũ của,lạidánviết bài vănNộp bàiChấm bài.";
+      crumb.textContent = writingOnly ? "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế · AIViếtChấm bài" : "Viết";
     }
 
     var examOn = !document.getElementById("exam-overlay").hidden;
@@ -181,16 +181,16 @@
     if (q) lastQuota = q;
     var html;
     var exhausted = false;
-    if (!q) html = "额度加载失败";
-    else if (q.unlimited) html = "管理员账号：AI 口语 / 写作额度不限";
+    if (!q) html = "hạn ngạchTải thất bại";
+    else if (q.unlimited) html = "người quản lýTài khoản:AI Nói / Viếthạn ngạchkhông giới hạn";
     else {
       exhausted = (q.textLeft <= 0 && q.voiceSecLeft <= 0 && q.fullMockLeft <= 0);
       html =
-        "今日剩余：文字 <b>" + q.textLeft + "</b>/" + q.textLimit +
-        " · 语音 <b>" + Math.floor(q.voiceSecLeft / 60) + ":" + String(q.voiceSecLeft % 60).padStart(2, "0") + "</b>" +
-        " · 模考 <b>" + q.fullMockLeft + "</b>/" + q.fullMockLimit;
-      if (exhausted) html += " · <b>今日已用完，明日再来</b>";
-      else if (q.textLeft <= 0) html += " · 文字额度已用完，明日再来";
+        "hôm nayCòn lại:chữ viết <b>" + q.textLeft + "</b>/" + q.textLimit +
+        " · âm thanh lời nói <b>" + Math.floor(q.voiceSecLeft / 60) + ":" + String(q.voiceSecLeft % 60).padStart(2, "0") + "</b>" +
+        " · Thi thử <b>" + q.fullMockLeft + "</b>/" + q.fullMockLimit;
+      if (exhausted) html += " · <b>hôm nayđãdùng hết,ngày mailại đến</b>";
+      else if (q.textLeft <= 0) html += " · chữ viếthạn ngạchđãdùng hết,ngày mailại đến";
     }
     if (elQuota) elQuota.innerHTML = html;
     if (elQuotaHub) elQuotaHub.innerHTML = html;
@@ -205,19 +205,19 @@
     var voiceGone = !!(q && !unlimited && q.voiceSecLeft <= 0);
     if (elSend) {
       elSend.disabled = busy || textGone;
-      if (textGone) elSend.title = "今日文字额度已用完，明日再来";
+      if (textGone) elSend.title = "hôm naychữ viếthạn ngạchđãdùng hết,ngày mailại đến";
       else elSend.removeAttribute("title");
     }
     if (elMic) {
       // keep stoppable while recording even if voice quota just hit
       var micOn = elMic.classList.contains("is-on");
       elMic.disabled = !micOn && (busy || voiceGone);
-      if (voiceGone && !micOn) elMic.title = "今日语音额度已用完，明日再来";
+      if (voiceGone && !micOn) elMic.title = "hôm nayâm thanh lời nóihạn ngạchđãdùng hết,ngày mailại đến";
       else elMic.removeAttribute("title");
     }
     if (elGrade) {
       elGrade.disabled = busy || textGone;
-      if (textGone) elGrade.title = "今日文字额度已用完，明日再来";
+      if (textGone) elGrade.title = "hôm naychữ viếthạn ngạchđãdùng hết,ngày mailại đến";
       else elGrade.removeAttribute("title");
     }
   }
@@ -225,7 +225,7 @@
   function loadQuota() {
     return api("/api/ai-tutor/quota").then(function (d) { renderQuota(d.quota); })
       .catch(function (e) {
-        var msg = (e && e.message) || "额度加载失败";
+        var msg = (e && e.message) || "hạn ngạchTải thất bại";
         if (elQuota) elQuota.textContent = msg;
         if (elQuotaHub) elQuotaHub.textContent = msg;
       });
@@ -234,7 +234,7 @@
   function scoreCardHTML(score) {
     if (!score) return "";
     return '<div class="ai-score">' +
-      "<h3>口语评分 · Overall " + esc(score.overall) + "</h3>" +
+      "<h3>NóiChấm điểm · Overall " + esc(score.overall) + "</h3>" +
       "<dl>" +
       "<dt>Fluency</dt><dd>" + esc(score.fluency) + "</dd>" +
       "<dt>Lexical</dt><dd>" + esc(score.lexical) + "</dd>" +
@@ -261,7 +261,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "btn btn--ghost btn--sm";
-      btn.textContent = "重听";
+      btn.textContent = "lãng tai";
       btn.addEventListener("click", function () { playTts(content); });
       actions.appendChild(btn);
       div.appendChild(actions);
@@ -407,7 +407,7 @@
 
   function reopenMockMic(msg) {
     if (track !== "mock" || phase === "done" || phase === "part2_prep") return;
-    setExamStatus((msg || "出错") + " — 请再答一次");
+    setExamStatus((msg || "mắc lỗi") + " — mời lại hình thức gắn liền có nghĩa giống như từ tự dođầu tiên");
     // next tick: busy may still be clearing in sendChat.finally
     setTimeout(function () {
       if (track !== "mock" || phase === "done" || phase === "part2_prep") return;
@@ -431,8 +431,8 @@
     // ponytail: mock auto-open runs inside sendChat while busy=true; don't block system mic
     if (busy && !opts.auto) return;
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      hint("当前浏览器不支持录音", "error");
-      setExamStatus("无法使用麦克风");
+      hint("thời điểm hiện tạitrình duyệt phần mềmkhông thể chịu đựng đượccầmGhi âm", "error");
+      setExamStatus("không thểsử dụngmicrophone từ mượn");
       return;
     }
     if (!sessionId) return;
@@ -460,8 +460,8 @@
         if (reason === "silence") {
           var url = URL.createObjectURL(blob);
           turnLog.push({ q: currentQ, a: "(silence — invalid)", valid: false, audioUrl: url });
-          if (track === "mock") setExamStatus("静音超时，本题无效，进入下一题…");
-          else hint("静音超时，本题记为无效", "error");
+          if (track === "mock") setExamStatus("yên lặngvượt quá thời gian,chủ đề đang thảo luậnkhông hợp lệ,đi vàoCâu sau…");
+          else hint("yên lặngvượt quá thời gian,chủ đề đang thảo luậnkí hiệu làkhông hợp lệ", "error");
           sendChat({ answerInvalid: true, audioSec: sec });
           return;
         }
@@ -469,7 +469,7 @@
         if (track === "practice") {
           pendingBlob = blob;
           pendingSec = sec;
-          hint("识别中…");
+          hint("phân biệthình thức kết hợp Trung Quốc…");
           blobToDataUrl(blob).then(function (dataUrl) {
             return api("/api/ai-tutor/asr", { method: "POST", body: { audio: dataUrl, audioSec: sec } });
           }).then(function (d) {
@@ -477,17 +477,17 @@
             pendingText = d.text;
             document.getElementById("btn-rerecord").hidden = false;
             document.getElementById("btn-confirm-rec").hidden = false;
-            hint("识别结果：「" + pendingText.slice(0, 80) + (pendingText.length > 80 ? "…" : "") + "」确认发送或重新录制");
+            hint("phân biệtKết quả:«" + pendingText.slice(0, 80) + (pendingText.length > 80 ? "…" : "") + "»Xác nhậntruyền đicó thểlạighi âm hoặc ghi hình video hoặc âm thanh");
           }).catch(function (e) {
             if (e.quota) renderQuota(e.quota);
-            hint(e.message || "识别失败", "error");
+            hint(e.message || "phân biệtThất bại", "error");
           });
           return;
         }
 
         // mock / tutor voice path: send immediately
-        hint("识别中…");
-        setExamStatus("识别中…");
+        hint("phân biệthình thức kết hợp Trung Quốc…");
+        setExamStatus("phân biệthình thức kết hợp Trung Quốc…");
         blobToDataUrl(blob).then(function (dataUrl) {
           return api("/api/ai-tutor/asr", { method: "POST", body: { audio: dataUrl, audioSec: sec } })
             .then(function (d) {
@@ -498,9 +498,9 @@
             });
         }).catch(function (e) {
           if (e.quota) renderQuota(e.quota);
-          hint(e.message || "语音识别失败", "error");
-          setExamStatus(e.message || "识别失败");
-          reopenMockMic(e.message || "识别失败");
+          hint(e.message || "nhận dạng giọng nóiThất bại", "error");
+          setExamStatus(e.message || "phân biệtThất bại");
+          reopenMockMic(e.message || "phân biệtThất bại");
         });
       };
 
@@ -512,7 +512,7 @@
 
       if (opts.auto) {
         document.getElementById("btn-exam-submit").hidden = false;
-        setExamStatus(inPart2Speak ? "请开始陈述（最长 2 分钟，说完可点提交）" : "请作答（说完点提交；静音 5 秒本题无效）");
+        setExamStatus(inPart2Speak ? "mờiBắt đầumột sự khẳng định(biến thể của chiều dài 2 phút,thuyết phục hoàn thành tiền tố có thể điểmNộp bài)" : "mờitrả lời(thuyết phục hoàn thành điểmNộp bài;yên lặng 5 giâychủ đề đang thảo luậnkhông hợp lệ)");
         watchSilence(stream, function () { finishRec("silence"); });
         if (inPart2Speak) {
           var left = PART2_SPEAK;
@@ -532,11 +532,11 @@
           document.getElementById("exam-subwrap").hidden = true;
         }
       } else {
-        hint("录音中…再点麦克风结束", "rec");
+        hint("Ghi âmhình thức kết hợp Trung Quốc…lại điểmmicrophone từ mượnKết thúc", "rec");
       }
     }).catch(function () {
-      hint("无法使用麦克风，请检查权限", "error");
-      setExamStatus("麦克风权限被拒绝");
+      hint("không thểsử dụngmicrophone từ mượn,mờikiểm traQuyền hạn", "error");
+      setExamStatus("microphone từ mượnQuyền hạnchăntừ chối");
     });
   }
 
@@ -555,12 +555,12 @@
     if (!opts.answerInvalid && track !== "mock") {
       appendMsg("user", body.content);
     } else if (opts.answerInvalid && track !== "mock") {
-      appendMsg("user", "（静音超时 · 本题无效）", { answerInvalid: true });
+      appendMsg("user", "(yên lặngvượt quá thời gian · chủ đề đang thảo luậnkhông hợp lệ)", { answerInvalid: true });
     }
     if (track === "mock") {
-      setExamStatus("考官思考中…");
+      setExamStatus("giám khảosuy ngẫmhình thức kết hợp Trung Quốc…");
     } else {
-      hint("思考中…");
+      hint("suy ngẫmhình thức kết hợp Trung Quốc…");
     }
 
     return api("/api/ai-tutor/chat", { method: "POST", body: body }).then(function (d) {
@@ -581,14 +581,14 @@
       }
       if (track === "practice" || track === "tutor") {
         return playTts(d.reply || "").then(function () {
-          hint(track === "practice" ? "点麦克风作答；可重听考官问题" : "");
+          hint(track === "practice" ? "điểmmicrophone từ mượntrả lời;tiền tố có thểlãng taigiám khảocâu hỏi" : "");
         });
       }
     }).catch(function (e) {
       if (e.quota) renderQuota(e.quota);
-      hint(e.message || "发送失败", "error");
-      setExamStatus(e.message || "发送失败");
-      reopenMockMic(e.message || "发送失败");
+      hint(e.message || "truyền điThất bại", "error");
+      setExamStatus(e.message || "truyền điThất bại");
+      reopenMockMic(e.message || "truyền điThất bại");
     }).then(function () {
       busy = false;
       applyQuotaControls();
@@ -606,7 +606,7 @@
       document.getElementById("exam-overlay").hidden = true;
       showReview(score, reply);
     } else {
-      hint("本场已结束");
+      hint("hình thức kết hợp gốc sân phơi đãKết thúc");
       if (reply) playTts(reply);
     }
     showView(track === "mock" ? "speaking-home" : track);
@@ -621,20 +621,20 @@
     document.getElementById("review-score").innerHTML = scoreCardHTML(score);
     var tips = (score && score.improvements) || [];
     document.getElementById("review-tips").innerHTML = tips.length
-      ? "<h3>改进建议</h3><ul>" + tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>"
+      ? "<h3>Cải thiệnGợi ý</h3><ul>" + tips.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>"
       : (score && score.comment ? "<p>" + esc(score.comment) + "</p>" : "");
     if (reply) {
       document.getElementById("review-tips").innerHTML += "<p class=\"ai-review__closing\">" + esc(reply) + "</p>";
     }
     document.getElementById("review-turns").innerHTML =
-      "<h3>逐题回顾（录音仅保存在本机本次）</h3>" +
+      "<h3>hình thức kết hợp theo đuổi họnhìn lại(Ghi âmhầu nhưLưutồn tại hình thức kết hợp gốc họ hình thức kết hợp gốc tiếp theo)</h3>" +
       turnLog.map(function (t, i) {
         return '<div class="ai-review__turn">' +
           "<b>Q" + (i + 1) + "</b><p>" + esc(t.q || "") + "</p>" +
           "<b>A</b><p class=\"" + (t.valid ? "" : "is-invalid") + "\">" + esc(t.a || "") + "</p>" +
           (t.audioUrl ? '<audio controls src="' + t.audioUrl + '"></audio>' : "") +
           "</div>";
-      }).join("") || "<p>暂无作答记录</p>";
+      }).join("") || "<p>tạm thời không cótrả lờighi chép</p>";
   }
 
   function startTotalClock() {
@@ -648,7 +648,7 @@
 
   function startPart2Prep() {
     setExamPhase("part2_prep", "Part 2 · Preparation");
-    setExamStatus("请看题卡，准备 1 分钟（结束后自动开始陈述）");
+    setExamStatus("vui lòng xemhọ dừng,sự chuẩn bị 1 phút(Kết thúchọtự độngBắt đầumột sự khẳng định)");
     document.getElementById("btn-exam-submit").hidden = true;
     document.getElementById("exam-subwrap").hidden = false;
     document.getElementById("exam-sublabel").textContent = "Prep";
@@ -662,7 +662,7 @@
         clearInterval(prepTimer);
         prepTimer = null;
         setExamPhase("part2_speak", "Part 2 · Long turn");
-        setExamStatus("请开始陈述");
+        setExamStatus("mờiBắt đầumột sự khẳng định");
         startRec({ auto: true, part2: true });
       }
     }, 1000);
@@ -694,7 +694,7 @@
     document.getElementById("exam-cue").hidden = true;
     document.getElementById("exam-subwrap").hidden = true;
     setExamPhase("waiting", "Ready");
-    setExamStatus("点击「开始考试」解锁声音并进入全真流程");
+    setExamStatus("nhấn«Bắt đầuKì thi»mở khóagiọngcùng tiến triểnđi vào họ thậtquy trình");
     document.getElementById("site-header").hidden = true;
     document.getElementById("page-head").hidden = true;
     document.getElementById("site-footer").hidden = true;
@@ -712,8 +712,8 @@
   function syncSpeakRoomUI() {
     var isPractice = track === "practice";
     var isTutor = track === "tutor";
-    document.getElementById("room-label").textContent = isPractice ? "机经练习" : "辅导聊天";
-    document.getElementById("side-title").textContent = isPractice ? "练习会话" : "辅导会话";
+    document.getElementById("room-label").textContent = isPractice ? "họ họLuyện tập" : "hướng dẫntrò chuyện";
+    document.getElementById("side-title").textContent = isPractice ? "Luyện tậphọc ngôn ngữ hội thoại" : "hướng dẫnhọc ngôn ngữ hội thoại";
     elPicker.hidden = !(isPractice && !sessionId);
     elPracticeBar.hidden = !isPractice;
     elInput.hidden = !isTutor;
@@ -721,19 +721,19 @@
     elMic.hidden = false;
     elInputRow.classList.toggle("is-mic-only", isPractice);
     if (isPractice) {
-      hint(sessionId ? "仅麦克风作答 · 可重听 / 重录" : "请先选题，再开始练习");
+      hint(sessionId ? "hầu nhưmicrophone từ mượntrả lời · tiền tố có thểlãng tai / lặp lại khắc gỗ" : "mời trước chọn họ,lạiBắt đầuLuyện tập");
     } else {
-      hint("可打字，也可点麦克风");
+      hint("tiền tố có thểđánh máy,tiền tố có thể điểmmicrophone từ mượn");
     }
   }
 
   function renderBankLists() {
     if (!bank) return;
-    document.getElementById("bank-title").textContent = (bank.title || "机经题库") +
+    document.getElementById("bank-title").textContent = (bank.title || "họ họngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi") +
       (bank.source ? " · " + bank.source : "");
     document.getElementById("part1-list").innerHTML = (bank.part1 || []).map(function (t) {
       return '<label><input type="checkbox" name="p1" value="' + esc(t.id) + '"> <span>' +
-        esc(t.topic) + "（" + t.questionCount + "）</span></label>";
+        esc(t.topic) + "(" + t.questionCount + ")</span></label>";
     }).join("");
     document.getElementById("part2-list").innerHTML = (bank.part2 || []).map(function (t) {
       return '<label><input type="radio" name="p2" value="' + esc(t.id) + '"> <span>' +
@@ -745,7 +745,7 @@
     return api("/api/ai-tutor/bank").then(function (d) {
       bank = d.bank;
       renderBankLists();
-    }).catch(function (e) { hint(e.message || "题库加载失败", "error"); });
+    }).catch(function (e) { hint(e.message || "ngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thiTải thất bại", "error"); });
   }
 
   function renderSessions(sessions) {
@@ -756,7 +756,7 @@
       return true;
     });
     if (!filtered.length) {
-      elList.innerHTML = '<li style="padding:8px;color:#5a6b7d;font-size:0.85rem">暂无历史</li>';
+      elList.innerHTML = '<li style="padding:8px;color:#5a6b7d;font-size:0.85rem">tạm thời không cóLịch sử</li>';
       return;
     }
     filtered.forEach(function (s) {
@@ -764,18 +764,18 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = s.id === sessionId ? "is-active" : "";
-      var st = s.status === "incomplete" ? "未完成" : (s.status === "complete" ? "已完成" : "");
+      var st = s.status === "incomplete" ? "Chưa hoàn thành" : (s.status === "complete" ? "Đã hoàn thành" : "");
       var noResume = s.status === "incomplete" &&
         (s.exam_mode === "mock" || (s.mode === "examiner" && s.exam_mode === "practice"));
-      btn.innerHTML = "<span>" + esc(s.title || "会话") + '</span><span class="meta">' +
+      btn.innerHTML = "<span>" + esc(s.title || "học ngôn ngữ hội thoại") + '</span><span class="meta">' +
         esc(st + " · " + String(s.updated_at || "").slice(0, 16).replace("T", " ")) + "</span>";
       if (noResume) {
         btn.disabled = true;
-        btn.title = "未完成，不可续考 — 请重新开一场";
+        btn.title = "Chưa hoàn thành,không thểtiếp tục đánh — mờilạimở ngoại động từ hoặc nội động từ một sân phơi";
       }
       btn.addEventListener("click", function () {
         if (noResume) {
-          hint("未完成，不可续考 — 请重新开一场", "error");
+          hint("Chưa hoàn thành,không thểtiếp tục đánh — mờilạimở ngoại động từ hoặc nội động từ một sân phơi", "error");
           return;
         }
         openSession(s.id);
@@ -811,12 +811,12 @@
       return el.value;
     });
     var p2el = document.querySelector('input[name="p2"]:checked');
-    if (!p1.length) { hint("请至少选择 1 个 Part 1 话题", "error"); return; }
-    if (!p2el) { hint("请选择 1 个 Part 2 话题", "error"); return; }
+    if (!p1.length) { hint("mờiít nhấtChọn 1 dùng trong Part 1 Chủ đề", "error"); return; }
+    if (!p2el) { hint("mờiChọn 1 dùng trong Part 2 Chủ đề", "error"); return; }
     if (busy) return;
     busy = true;
     applyQuotaControls();
-    hint("正在组卷…");
+    hint("đang ở thời điểm đóhọ cuộn lại…");
     api("/api/ai-tutor/sessions", {
       method: "POST",
       body: { mode: "examiner", examMode: "practice", part1Ids: p1, part2Id: p2el.value }
@@ -834,7 +834,7 @@
       return loadSessions();
     }).catch(function (e) {
       if (e.quota) renderQuota(e.quota);
-      hint(e.message || "开始失败", "error");
+      hint(e.message || "Bắt đầuThất bại", "error");
     }).then(function () { busy = false; applyQuotaControls(); });
   }
 
@@ -853,32 +853,32 @@
         return loadSessions();
       }).catch(function (e) {
         if (e.quota) renderQuota(e.quota);
-        hint(e.message || "创建失败", "error");
+        hint(e.message || "thành lậpThất bại", "error");
       }).then(function () { busy = false; applyQuotaControls(); });
   }
 
   function startMock() {
     if (busy) return;
     if (lastQuota && !lastQuota.unlimited && lastQuota.fullMockLeft <= 0) {
-      hint("今日模考次数已用完，明日再来", "error");
+      hint("hôm nayThi thửsố lầnđãdùng hết,ngày mailại đến", "error");
       return;
     }
     turnLog = [];
     busy = true;
     applyQuotaControls();
     openMockOverlay();
-    setExamStatus("正在组卷…");
+    setExamStatus("đang ở thời điểm đóhọ cuộn lại…");
     api("/api/ai-tutor/sessions", { method: "POST", body: { mode: "examiner", examMode: "mock" } })
       .then(function (d) {
         if (d.quota) renderQuota(d.quota);
         sessionId = d.session.id;
         examPack = d.examPack;
         currentQ = d.opener || "";
-        setExamStatus("组卷完成。点击下方开始考试以解锁声音。");
+        setExamStatus("họ cuộn lạiHoàn thành.nhấnbên dướiBắt đầuKì thibiến thể cũ củamở khóagiọng.");
         document.getElementById("btn-exam-start").dataset.opener = d.opener || "";
       }).catch(function (e) {
         if (e.quota) renderQuota(e.quota);
-        setExamStatus(e.message || "开始失败");
+        setExamStatus(e.message || "Bắt đầuThất bại");
         closeMockOverlay();
         showView("speaking-home");
       }).then(function () { busy = false; applyQuotaControls(); });
@@ -901,7 +901,7 @@
         sessionId = null;
         closeMockOverlay();
         showView("speaking-home");
-        hint("本场已放弃（未完成），不可续考；可重新开一场");
+        hint("hình thức kết hợp gốc sân phơi đãtừ bỏ(Chưa hoàn thành),không thểtiếp tục đánh;tiền tố có thểlạimở ngoại động từ hoặc nội động từ một sân phơi");
         loadQuota();
         loadSessions();
       });
@@ -932,7 +932,7 @@
       writingBank = d.bank;
       fillWritingPrompts();
     }).catch(function (e) {
-      document.getElementById("w-hint").textContent = e.message || "写作题库加载失败";
+      document.getElementById("w-hint").textContent = e.message || "Viếtngân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thiTải thất bại";
     });
   }
 
@@ -941,9 +941,9 @@
     var taskType = document.getElementById("w-task").value;
     var promptId = document.getElementById("w-prompt").value;
     var essay = document.getElementById("w-essay").value.trim();
-    if (!essay) { wh.textContent = "请粘贴作文"; wh.className = "ai-write__hint is-error"; return; }
+    if (!essay) { wh.textContent = "mờidánviết bài văn"; wh.className = "ai-write__hint is-error"; return; }
     if (lastQuota && !lastQuota.unlimited && lastQuota.textLeft <= 0) {
-      wh.textContent = "今日文字额度已用完，明日再来";
+      wh.textContent = "hôm naychữ viếthạn ngạchđãdùng hết,ngày mailại đến";
       wh.className = "ai-write__hint is-error";
       applyQuotaControls();
       return;
@@ -951,7 +951,7 @@
     if (busy) return;
     busy = true;
     applyQuotaControls();
-    wh.textContent = "批改中…";
+    wh.textContent = "Chấm bàihình thức kết hợp Trung Quốc…";
     wh.className = "ai-write__hint";
     api("/api/ai-tutor/writing-grade", {
       method: "POST",
@@ -962,8 +962,8 @@
       var g = d.grade;
       var html = "";
       if (g && !looksLikeJsonLeak(g.overall)) {
-        html += '<div class="ai-score"><h3>写作评分 · Overall ' + esc(g.overall) +
-          ' <span style="font-weight:500;font-size:12px;color:#64748b">（AI 估分 · 非正式考分）</span></h3><dl>' +
+        html += '<div class="ai-score"><h3>ViếtChấm điểm · Overall ' + esc(g.overall) +
+          ' <span style="font-weight:500;font-size:12px;color:#64748b">(AI ước lượng phần · không chính thứcđiểm)</span></h3><dl>' +
           "<dt>Task</dt><dd>" + esc(g.task) + "</dd>" +
           "<dt>Coherence</dt><dd>" + esc(g.coherence) + "</dd>" +
           "<dt>Lexical</dt><dd>" + esc(g.lexical) + "</dd>" +
@@ -971,33 +971,33 @@
           (g.comment && !looksLikeJsonLeak(g.comment) ? "<p>" + esc(g.comment) + "</p>" : "") + "</div>";
         var cn = g.criteriaNotes || {};
         if (cn.task || cn.coherence || cn.lexical || cn.grammar) {
-          html += "<h3>对照官方四项说明</h3><ul>" +
-            (cn.task && !looksLikeJsonLeak(cn.task) ? "<li><b>Task</b>：" + esc(cn.task) + "</li>" : "") +
-            (cn.coherence && !looksLikeJsonLeak(cn.coherence) ? "<li><b>Coherence</b>：" + esc(cn.coherence) + "</li>" : "") +
-            (cn.lexical && !looksLikeJsonLeak(cn.lexical) ? "<li><b>Lexical</b>：" + esc(cn.lexical) + "</li>" : "") +
-            (cn.grammar && !looksLikeJsonLeak(cn.grammar) ? "<li><b>Grammar</b>：" + esc(cn.grammar) + "</li>" : "") +
+          html += "<h3>Đối chiếuChính thứcbốn họGiải thích</h3><ul>" +
+            (cn.task && !looksLikeJsonLeak(cn.task) ? "<li><b>Task</b>:" + esc(cn.task) + "</li>" : "") +
+            (cn.coherence && !looksLikeJsonLeak(cn.coherence) ? "<li><b>Coherence</b>:" + esc(cn.coherence) + "</li>" : "") +
+            (cn.lexical && !looksLikeJsonLeak(cn.lexical) ? "<li><b>Lexical</b>:" + esc(cn.lexical) + "</li>" : "") +
+            (cn.grammar && !looksLikeJsonLeak(cn.grammar) ? "<li><b>Grammar</b>:" + esc(cn.grammar) + "</li>" : "") +
             "</ul>";
         }
         if (g.paragraphNotes && g.paragraphNotes.length) {
-          html += "<h3>逐段批注</h3><ul>" + g.paragraphNotes.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h3>hình thức kết hợp theo đuổi họchú thích</h3><ul>" + g.paragraphNotes.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + esc(n) + "</li>";
           }).join("") + "</ul>";
         }
         if (g.corrections && g.corrections.length) {
-          html += "<h3>用词 / 语法纠错</h3><ul>" + g.corrections.filter(function (c) {
+          html += "<h3>cách dùng của một thuật ngữ / Ngữ phápsửa lỗi</h3><ul>" + g.corrections.filter(function (c) {
             return c && !looksLikeJsonLeak(c.bad) && !looksLikeJsonLeak(c.good);
           }).map(function (c) {
             return "<li><s>" + esc(c.bad) + "</s> → <b>" + esc(c.good) + "</b>" +
-              (c.why ? "（" + esc(c.why) + "）" : "") + "</li>";
+              (c.why ? "(" + esc(c.why) + ")" : "") + "</li>";
           }).join("") + "</ul>";
         }
         if (g.nextSteps && g.nextSteps.length) {
-          html += "<h3>提分建议</h3><ul>" + g.nextSteps.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h3>dùng trong và phầnGợi ý</h3><ul>" + g.nextSteps.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + esc(n) + "</li>";
           }).join("") + "</ul>";
         }
         if (g.modelEssay && !looksLikeJsonLeak(g.modelEssay)) {
-          html += "<h3>同题高分范文</h3><pre class=\"ai-write__model\">" + esc(g.modelEssay) + "</pre>";
+          html += "<h3>giống họđiểm caomô hình họ</h3><pre class=\"ai-write__model\">" + esc(g.modelEssay) + "</pre>";
         }
       }
       var fb = d.feedback ? String(d.feedback).trim() : "";
@@ -1005,13 +1005,13 @@
         html += "<div class=\"ai-write__hint\">" + esc(fb) + "</div>";
       }
       var emptyMsg = lastQuota && !lastQuota.unlimited && lastQuota.textLeft <= 0
-        ? "批改结果不完整（今日文字额度已用完，明日再来）"
-        : "未返回结构化评分，请再点一次「提交批改」重试";
+        ? "Chấm bàiKết quảkhônghoàn chỉnh(hôm naychữ viếthạn ngạchđãdùng hết,ngày mailại đến)"
+        : "chưaQuay lạicấu trúcbiến thể củaChấm điểm,mời lại điểmđầu tiên«Nộp bàiChấm bài»thử lại";
       document.getElementById("w-result").innerHTML = html || "<p>" + emptyMsg + "</p>";
       if (!html) wh.textContent = emptyMsg;
     }).catch(function (e) {
       if (e.quota) renderQuota(e.quota);
-      wh.textContent = (e.message || "批改失败") + (e.status === 502 ? " — 可再点提交重试" : "");
+      wh.textContent = (e.message || "Chấm bàiThất bại") + (e.status === 502 ? " — tiền tố có thể lại điểmNộp bàithử lại" : "");
       wh.className = "ai-write__hint is-error";
     }).then(function () {
       busy = false;
@@ -1024,7 +1024,7 @@
     var out = document.getElementById("w-wordcount");
     if (!el || !out) return;
     var n = String(el.value || "").trim().split(/\s+/).filter(Boolean).length;
-    out.textContent = n + " 词";
+    out.textContent = n + " biến thể cũ của";
   }
 
   /* Events */
@@ -1068,7 +1068,7 @@
       syncSpeakRoomUI();
       loadBank();
       loadSessions();
-      elMsgs.innerHTML = '<div class="ai-tutor__empty">勾选 Part 1 与一道 Part 2，开始练习。仅麦克风作答。</div>';
+      elMsgs.innerHTML = '<div class="ai-tutor__empty">chọn một hoặc nhiều lựa chọn từ danh sách Part 1 cùng nhau Part 2,Bắt đầuLuyện tập.hầu nhưmicrophone từ mượntrả lời.</div>';
       return;
     }
     if (kind === "tutor") {
@@ -1146,8 +1146,8 @@
   document.getElementById("btn-upload-jiijing").addEventListener("click", function () {
     var file = document.getElementById("jiijing-file").files[0];
     var uh = document.getElementById("upload-hint");
-    if (!file) { uh.textContent = "请先选择 PDF"; return; }
-    uh.textContent = "上传解析中…";
+    if (!file) { uh.textContent = "mời trướcChọn PDF"; return; }
+    uh.textContent = "Tải lênGiải thíchhình thức kết hợp Trung Quốc…";
     var fr = new FileReader();
     fr.onload = function () {
       api("/api/admin/jiijing/upload", {
@@ -1155,9 +1155,9 @@
         body: { pdfBase64: fr.result, title: file.name.replace(/\.pdf$/i, "") }
       }).then(function (d) {
         bank = d.bank;
-        uh.textContent = "已切换题库：" + (bank.title || bank.id);
+        uh.textContent = "đãchuyển đổingân hàng câu hỏi cho người ra đề hoặc học sinh chuẩn bị thi:" + (bank.title || bank.id);
       }).catch(function (e) {
-        uh.textContent = e.message || "上传失败";
+        uh.textContent = e.message || "Tải lênThất bại";
       });
     };
     fr.readAsDataURL(file);

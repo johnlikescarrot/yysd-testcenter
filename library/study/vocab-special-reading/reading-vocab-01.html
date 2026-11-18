@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-reading">
-    <meta name="exam:title" content="单元1 · 科技与发现">
-    <meta name="exam:description" content="阅读专项词汇 · 科技与发现">
+    <meta name="exam:title" content="Bài 1 · Công nghệ để ý">
+    <meta name="exam:description" content="Đọc chuyên biệt Từ vựng · Công nghệ để ý">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元1-科技与发现</title>
+    <title>Đọc -Bài 1-Công nghệ để ý</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -37,7 +37,7 @@
         .section { display:none; }
         .section.active { display:block; }
 
-        /* 学习卡片 */
+        /* họcthẻ */
         .learn-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:14px; }
         .word-card { background:var(--card-bg); border-radius:var(--radius); padding:16px 18px; cursor:pointer; transition:var(--transition); border:1.5px solid transparent; box-shadow:var(--shadow-card); display:flex; flex-direction:column; gap:6px; user-select:none; }
         .word-card:hover { box-shadow:var(--shadow-hover); border-color:#d5cec4; transform:translateY(-2px); }
@@ -59,7 +59,7 @@
         .card-collapse-hint { font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:4px; display:none; }
         .word-card.expanded .card-collapse-hint { display:block; }
 
-        /* 检测准备 */
+        /* phát hiệnsự chuẩn bị */
         .test-setup { background:var(--card-bg); border-radius:var(--radius); padding:32px 28px; text-align:center; box-shadow:var(--shadow); max-width:620px; margin:0 auto; }
         .test-setup h3 { font-family:var(--font-heading); font-size:1.4rem; color:var(--primary); margin-bottom:12px; }
         .test-setup .stage-info { display:flex; justify-content:center; gap:20px; margin:16px 0 24px; flex-wrap:wrap; }
@@ -69,7 +69,7 @@
         .btn-start-test { padding:14px 48px; border-radius:26px; border:none; cursor:pointer; font-size:1.1rem; font-weight:700; background:var(--primary); color:#fff; transition:var(--transition); font-family:var(--font-body); }
         .btn-start-test:hover { background:var(--primary-light); box-shadow:0 4px 16px rgba(44,62,107,0.3); transform:translateY(-1px); }
 
-        /* 答题界面 */
+        /* hình thức gắn liền có nghĩa giống như từ tự do họbề mặt tiếp xúc */
         .test-active-area { display:none; max-width:720px; margin:0 auto; background:var(--card-bg); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow); text-align:center; }
         .test-active-area.visible { display:block; }
         .test-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; font-size:0.85rem; color:var(--text-muted); font-weight:500; gap:8px; flex-wrap:wrap; }
@@ -131,42 +131,43 @@
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🔬</div><span>阅读-单元1-科技与发现</span></div>
+        <div class="logo"><div class="logo-icon">🔬</div><span>Đọc -Bài 1-Công nghệ để ý</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">Từ vựng Đang tải</span>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- họcchế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiệnchế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 toàn diện phát hiện · Đề bài Đang tải</h3>
+            <p>phần họ dùng trongGiai đoạn,theo thứ tự Hoàn thành,không thể tin học nhảy đến một vị trí mới trong tài liệu siêu văn bản.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">nghĩa của một từ phân biệt<br>Tiếng Anh →Tiếng Trung</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đồng nghĩa thay thế<br>Tiếng Anh →Tiếng Anh gần họ</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">toàn diện đưa vào sử dụng<br>ngữ cảnh +một biến thể cũ củađa nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">1 / 30 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">Giai đoạn một:nghĩa của một từ phân biệt</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -175,115 +176,115 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                <button class="btn-next" id="btnNext">Câu sau →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện Báo cáo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 科技与发现 · 32个核心词 ====================
+// ==================== Đọc · Công nghệ biến thể của để ý · 32dùng trong lõi biến thể cũ của ====================
 const wordData = [
-    // —— 科技与仪器 ——
-    { word:'sophisticated', ipa:'/səˈfɪs.tɪ.keɪ.tɪd/', pos:'adj.', meaning:'复杂的；精密的', synonym:'complex', target:'sophisticated', example:'The laboratory uses sophisticated equipment for the research.', accept_meaning:['复杂的','精密的','先进的'] },
-    { word:'instrument', ipa:'/ˈɪn.strə.mənt/', pos:'n.', meaning:'仪器；工具；乐器', synonym:'device', target:'instrument', example:'The scientist used a precise instrument to measure the temperature.', accept_meaning:['仪器','工具','乐器','手段'] },
-    { word:'detection', ipa:'/dɪˈtek.ʃən/', pos:'n.', meaning:'侦查；探测；察觉', synonym:'discovery', target:'detection', example:'Early detection of the disease can save lives.', accept_meaning:['侦查','探测','察觉','发现'] },
-    { word:'radiation', ipa:'/ˌreɪ.diˈeɪ.ʃən/', pos:'n.', meaning:'辐射；放射物', synonym:'emission', target:'radiation', example:'Radiation levels are carefully monitored in nuclear plants.', accept_meaning:['辐射','放射物'] },
-    { word:'artificial', ipa:'/ˌɑː.tɪˈfɪʃ.əl/', pos:'adj.', meaning:'人造的；虚假的', synonym:'synthetic', target:'artificial', example:'The product contains artificial ingredients.', accept_meaning:['人造的','仿造的','虚伪的'] },
-    { word:'technique', ipa:'/tekˈniːk/', pos:'n.', meaning:'技术；技巧；手法', synonym:'method', target:'technique', example:'This technique is widely used in scientific research.', accept_meaning:['技术','技巧','手法'] },
-    { word:'mathematical', ipa:'/ˌmæθ.əˈmæt.ɪ.kəl/', pos:'adj.', meaning:'数学的；精确的', synonym:'numerical', target:'mathematical', example:'The study requires advanced mathematical skills.', accept_meaning:['数学的','精确的'] },
-    { word:'navigation', ipa:'/ˌnæv.ɪˈɡeɪ.ʃən/', pos:'n.', meaning:'航行；航海；导航', synonym:'route-finding', target:'navigation', example:'GPS has revolutionised navigation.', accept_meaning:['航行','航海','导航'] },
+    // —— Công nghệ biến thể của dụng cụ ——
+    { word:'sophisticated', ipa:'/səˈfɪs.tɪ.keɪ.tɪd/', pos:'adj.', meaning:'phức tạp của; chính xác của', synonym:'complex', target:'sophisticated', example:'The laboratory uses sophisticated equipment for the research.', accept_meaning:['phức tạp của','chính xác của','tiên tiến công nghệ của'] },
+    { word:'instrument', ipa:'/ˈɪn.strə.mənt/', pos:'n.', meaning:'dụng cụ; công cụ; nhạc cụ', synonym:'device', target:'instrument', example:'The scientist used a precise instrument to measure the temperature.', accept_meaning:['dụng cụ','công cụ','nhạc cụ','phương pháp'] },
+    { word:'detection', ipa:'/dɪˈtek.ʃən/', pos:'n.', meaning:'phát hiện; thăm dò; cảm nhận', synonym:'discovery', target:'detection', example:'Early detection of the disease can save lives.', accept_meaning:['phát hiện','thăm dò','cảm nhận','để ý'] },
+    { word:'radiation', ipa:'/ˌreɪ.diˈeɪ.ʃən/', pos:'n.', meaning:'bức xạ; vật liệu phóng xạ', synonym:'emission', target:'radiation', example:'Radiation levels are carefully monitored in nuclear plants.', accept_meaning:['bức xạ','vật liệu phóng xạ'] },
+    { word:'artificial', ipa:'/ˌɑː.tɪˈfɪʃ.əl/', pos:'adj.', meaning:'nhân tạo của; giả dối của', synonym:'synthetic', target:'artificial', example:'The product contains artificial ingredients.', accept_meaning:['nhân tạo của','sao chép của','giả dối của'] },
+    { word:'technique', ipa:'/tekˈniːk/', pos:'n.', meaning:'công nghệ; Kĩ thuật; kỹ thuật', synonym:'method', target:'technique', example:'This technique is widely used in scientific research.', accept_meaning:['công nghệ','Kĩ thuật','kỹ thuật'] },
+    { word:'mathematical', ipa:'/ˌmæθ.əˈmæt.ɪ.kəl/', pos:'adj.', meaning:'toán học của; chính xác của', synonym:'numerical', target:'mathematical', example:'The study requires advanced mathematical skills.', accept_meaning:['toán học của','chính xác của'] },
+    { word:'navigation', ipa:'/ˌnæv.ɪˈɡeɪ.ʃən/', pos:'n.', meaning:'đi thuyền; đi biển; nghĩa đen và bóng điều hướng', synonym:'route-finding', target:'navigation', example:'GPS has revolutionised navigation.', accept_meaning:['đi thuyền','đi biển','nghĩa đen và bóng điều hướng'] },
 
-    // —— 科学研究与探索 ——
-    { word:'pioneer', ipa:'/ˌpaɪ.əˈnɪər/', pos:'n./v.', meaning:'先驱；开辟；倡导', synonym:'initiate', target:'pioneer', example:'Marie Curie was a pioneer in the field of radiation research.', accept_meaning:['先驱','开辟','倡导'] },
-    { word:'explore', ipa:'/ɪkˈsplɔːr/', pos:'v.', meaning:'探索；考察', synonym:'investigate', target:'explore', example:'Scientists continue to explore the mysteries of the universe.', accept_meaning:['探索','考察','探险'] },
-    { word:'feat', ipa:'/fiːt/', pos:'n.', meaning:'功绩；壮举；技艺表演', synonym:'achievement', target:'feat', example:'Landing on the moon was a remarkable feat of engineering.', accept_meaning:['功绩','壮举','技艺表演'] },
-    { word:'prototype', ipa:'/ˈprəʊ.tə.taɪp/', pos:'n.', meaning:'原型；标准；模范', synonym:'model', target:'prototype', example:'The engineers built a prototype to test the design.', accept_meaning:['原型','标准','模范'] },
-    { word:'empirical', ipa:'/ɪmˈpɪr.ɪ.kəl/', pos:'adj.', meaning:'经验主义的；实证的', synonym:'observational', target:'empirical', example:'The theory is supported by empirical evidence.', accept_meaning:['经验主义的','实证的'] },
-    { word:'theorem', ipa:'/ˈθɪə.rəm/', pos:'n.', meaning:'定理；原理', synonym:'principle', target:'theorem', example:'The Pythagorean theorem is fundamental to geometry.', accept_meaning:['定理','原理'] },
-    { word:'formula', ipa:'/ˈfɔː.mjə.lə/', pos:'n.', meaning:'公式；准则；配方', synonym:'equation', target:'formula', example:'The formula for success includes hard work and persistence.', accept_meaning:['公式','准则','配方'] },
+    // —— nghiên cứu khoa học biến thể của khám phá ——
+    { word:'pioneer', ipa:'/ˌpaɪ.əˈnɪər/', pos:'n./v.', meaning:'tiên phong; mở ra; tán thành', synonym:'initiate', target:'pioneer', example:'Marie Curie was a pioneer in the field of radiation research.', accept_meaning:['tiên phong','mở ra','tán thành'] },
+    { word:'explore', ipa:'/ɪkˈsplɔːr/', pos:'v.', meaning:'khám phá; kiểm tra', synonym:'investigate', target:'explore', example:'Scientists continue to explore the mysteries of the universe.', accept_meaning:['khám phá','kiểm tra','thám hiểm'] },
+    { word:'feat', ipa:'/fiːt/', pos:'n.', meaning:'chiến công; chiến công vĩ đại; kỹ năng vở kịch', synonym:'achievement', target:'feat', example:'Landing on the moon was a remarkable feat of engineering.', accept_meaning:['chiến công','chiến công vĩ đại','kỹ năng vở kịch'] },
+    { word:'prototype', ipa:'/ˈprəʊ.tə.taɪp/', pos:'n.', meaning:'mô hình; Chuẩn; hình mẫu', synonym:'model', target:'prototype', example:'The engineers built a prototype to test the design.', accept_meaning:['mô hình','Chuẩn','hình mẫu'] },
+    { word:'empirical', ipa:'/ɪmˈpɪr.ɪ.kəl/', pos:'adj.', meaning:'chủ nghĩa kinh nghiệm của; bằng chứng thực tế của', synonym:'observational', target:'empirical', example:'The theory is supported by empirical evidence.', accept_meaning:['chủ nghĩa kinh nghiệm của','bằng chứng thực tế của'] },
+    { word:'theorem', ipa:'/ˈθɪə.rəm/', pos:'n.', meaning:'định lý; nguyên lý', synonym:'principle', target:'theorem', example:'The Pythagorean theorem is fundamental to geometry.', accept_meaning:['định lý','nguyên lý'] },
+    { word:'formula', ipa:'/ˈfɔː.mjə.lə/', pos:'n.', meaning:'công thức; chuẩn mực; đơn thuốc', synonym:'equation', target:'formula', example:'The formula for success includes hard work and persistence.', accept_meaning:['công thức','chuẩn mực','đơn thuốc'] },
 
-    // —— 原理与性质 ——
-    { word:'principle', ipa:'/ˈprɪn.sə.pəl/', pos:'n.', meaning:'原理；原则；主义', synonym:'tenet', target:'principles', example:'We must adhere to the principles of scientific research.', accept_meaning:['原理','原则','主义'] },
-    { word:'substance', ipa:'/ˈsʌb.stəns/', pos:'n.', meaning:'物质；实质；主旨', synonym:'matter', target:'substance', example:'The chemical substance is dangerous if mishandled.', accept_meaning:['物质','实质','主旨'] },
-    { word:'property', ipa:'/ˈprɒp.ə.ti/', pos:'n.', meaning:'性质；性能；财产', synonym:'attribute', target:'properties', example:'The chemical properties of the element are well known.', accept_meaning:['性质','性能','财产'] },
-    { word:'element', ipa:'/ˈel.ə.mənt/', pos:'n.', meaning:'元素；要素；成分', synonym:'component', target:'element', example:'Hydrogen is the most abundant element in the universe.', accept_meaning:['元素','要素','成分'] },
-    { word:'fraction', ipa:'/ˈfræk.ʃən/', pos:'n.', meaning:'分数；部分；小部分', synonym:'portion', target:'fraction', example:'Only a fraction of the population supports this policy.', accept_meaning:['分数','部分','小部分'] },
-    { word:'mineral', ipa:'/ˈmɪn.ər.əl/', pos:'n.', meaning:'矿物；无机物', synonym:'ore', target:'mineral', example:'The area is rich in mineral resources.', accept_meaning:['矿物','无机物'] },
-    { word:'phenomenon', ipa:'/fəˈnɒm.ɪ.nən/', pos:'n.', meaning:'现象；奇迹', synonym:'occurrence', target:'phenomenon', example:'Climate change is a global phenomenon.', accept_meaning:['现象','奇迹'] },
+    // —— nguyên lý biến thể của bản chất ——
+    { word:'principle', ipa:'/ˈprɪn.sə.pəl/', pos:'n.', meaning:'nguyên lý; nguyên tắc; chủ nghĩa', synonym:'tenet', target:'principles', example:'We must adhere to the principles of scientific research.', accept_meaning:['nguyên lý','nguyên tắc','chủ nghĩa'] },
+    { word:'substance', ipa:'/ˈsʌb.stəns/', pos:'n.', meaning:'vật chất; thực chất; ý chính', synonym:'matter', target:'substance', example:'The chemical substance is dangerous if mishandled.', accept_meaning:['vật chất','thực chất','ý chính'] },
+    { word:'property', ipa:'/ˈprɒp.ə.ti/', pos:'n.', meaning:'bản chất; chức năng; tài sản', synonym:'attribute', target:'properties', example:'The chemical properties of the element are well known.', accept_meaning:['bản chất','chức năng','tài sản'] },
+    { word:'element', ipa:'/ˈel.ə.mənt/', pos:'n.', meaning:'thành phần cơ bản của cái gì đó; yếu tố thiết yếu; thành phần', synonym:'component', target:'element', example:'Hydrogen is the most abundant element in the universe.', accept_meaning:['thành phần cơ bản của cái gì đó','yếu tố thiết yếu','thành phần'] },
+    { word:'fraction', ipa:'/ˈfræk.ʃən/', pos:'n.', meaning:'Điểm số; phần; nhỏ phần', synonym:'portion', target:'fraction', example:'Only a fraction of the population supports this policy.', accept_meaning:['Điểm số','phần','nhỏ phần'] },
+    { word:'mineral', ipa:'/ˈmɪn.ər.əl/', pos:'n.', meaning:'khoáng vật; hợp chất vô cơ', synonym:'ore', target:'mineral', example:'The area is rich in mineral resources.', accept_meaning:['khoáng vật','hợp chất vô cơ'] },
+    { word:'phenomenon', ipa:'/fəˈnɒm.ɪ.nən/', pos:'n.', meaning:'hiện tượng; phép màu', synonym:'occurrence', target:'phenomenon', example:'Climate change is a global phenomenon.', accept_meaning:['hiện tượng','phép màu'] },
 
-    // —— 认识与发现 ——
-    { word:'recognition', ipa:'/ˌrek.əɡˈnɪʃ.ən/', pos:'n.', meaning:'识别；承认；认可', synonym:'acknowledgment', target:'recognition', example:'He received international recognition for his discoveries.', accept_meaning:['识别','承认','认可'] },
-    { word:'expose', ipa:'/ɪkˈspəʊz/', pos:'v.', meaning:'揭露；暴露；显示', synonym:'reveal', target:'exposes', example:'The report exposes the truth about the company.', accept_meaning:['揭露','暴露','显示'] },
-    { word:'contribute', ipa:'/kənˈtrɪb.juːt/', pos:'v.', meaning:'贡献；促成；投稿', synonym:'lead to', target:'contributes', example:'Regular exercise contributes to good health.', accept_meaning:['贡献','促成','投稿'] },
-    { word:'echo', ipa:'/ˈek.əʊ/', pos:'v./n.', meaning:'反射；重复；回音', synonym:'reverberate', target:'echoed', example:'His words echoed in the empty hall.', accept_meaning:['反射','重复','回音'] },
-    { word:'object', ipa:'/ˈɒb.dʒɪkt/', pos:'n./v.', meaning:'物体；目标；反对', synonym:'disagree', target:'object', example:'The scientist observed the object under the microscope.', accept_meaning:['物体','目标','反对'] },
-    { word:'strike', ipa:'/straɪk/', pos:'v./n.', meaning:'打击；罢工；敲击', synonym:'hit', target:'strike', example:'The workers decided to strike for better pay.', accept_meaning:['打击','罢工','敲击'] },
+    // —— biết biến thể của để ý ——
+    { word:'recognition', ipa:'/ˌrek.əɡˈnɪʃ.ən/', pos:'n.', meaning:'phân biệt; thừa nhận; phê duyệt', synonym:'acknowledgment', target:'recognition', example:'He received international recognition for his discoveries.', accept_meaning:['phân biệt','thừa nhận','phê duyệt'] },
+    { word:'expose', ipa:'/ɪkˈspəʊz/', pos:'v.', meaning:'vạch trần; phơi bày; hiển thị', synonym:'reveal', target:'exposes', example:'The report exposes the truth about the company.', accept_meaning:['vạch trần','phơi bày','hiển thị'] },
+    { word:'contribute', ipa:'/kənˈtrɪb.juːt/', pos:'v.', meaning:'đóng góp; tạo điều kiện; gửi bài viết để xuất bản', synonym:'lead to', target:'contributes', example:'Regular exercise contributes to good health.', accept_meaning:['đóng góp','tạo điều kiện','gửi bài viết để xuất bản'] },
+    { word:'echo', ipa:'/ˈek.əʊ/', pos:'v./n.', meaning:'phản chiếu; Lặp lại; tiếng vọng', synonym:'reverberate', target:'echoed', example:'His words echoed in the empty hall.', accept_meaning:['phản chiếu','Lặp lại','tiếng vọng'] },
+    { word:'object', ipa:'/ˈɒb.dʒɪkt/', pos:'n./v.', meaning:'vật thể; Mục tiêu; phản đối', synonym:'disagree', target:'object', example:'The scientist observed the object under the microscope.', accept_meaning:['vật thể','Mục tiêu','phản đối'] },
+    { word:'strike', ipa:'/straɪk/', pos:'v./n.', meaning:'đánh; cuộc đình công; đập', synonym:'hit', target:'strike', example:'The workers decided to strike for better pay.', accept_meaning:['đánh','cuộc đình công','đập'] },
 
-    // —— 障碍与限制 ——
-    { word:'obstacle', ipa:'/ˈɒb.stə.kəl/', pos:'n.', meaning:'障碍；干扰；妨害物', synonym:'barrier', target:'obstacle', example:'Lack of funding is a major obstacle to research.', accept_meaning:['障碍','干扰','妨害物'] },
-    { word:'limitation', ipa:'/ˌlɪm.ɪˈteɪ.ʃən/', pos:'n.', meaning:'限制；局限性', synonym:'restriction', target:'limitations', example:'Every method has its limitations.', accept_meaning:['限制','局限性'] },
-    { word:'inaccurate', ipa:'/ɪnˈæk.jə.rət/', pos:'adj.', meaning:'不准确的；错误的', synonym:'incorrect', target:'inaccurate', example:'The data was inaccurate and had to be corrected.', accept_meaning:['不准确的','错误的'] },
-    { word:'isolated', ipa:'/ˈaɪ.sə.leɪ.tɪd/', pos:'adj.', meaning:'孤立的；隔离的', synonym:'remote', target:'isolated', example:'The village was isolated by the heavy snow.', accept_meaning:['孤立的','隔离的'] },
-    { word:'superior', ipa:'/suːˈpɪə.ri.ər/', pos:'adj./n.', meaning:'优秀的；上级的；上级', synonym:'excellent', target:'superior', example:'She has a superior intellect.', accept_meaning:['优秀的','上级的','上级'] },
-    { word:'rely on', ipa:'/rɪˈlaɪ ɒn/', pos:'v.', meaning:'依靠；依赖', synonym:'depend on', target:'rely', example:'Scientists rely on accurate data for their research.', accept_meaning:['依靠','依赖'] }
+    // —— rào cản biến thể của hạn chế ——
+    { word:'obstacle', ipa:'/ˈɒb.stə.kəl/', pos:'n.', meaning:'rào cản; làm phiền; gây tổn hại hình thức kết hợp vật', synonym:'barrier', target:'obstacle', example:'Lack of funding is a major obstacle to research.', accept_meaning:['rào cản','làm phiền','gây tổn hại hình thức kết hợp vật'] },
+    { word:'limitation', ipa:'/ˌlɪm.ɪˈteɪ.ʃən/', pos:'n.', meaning:'hạn chế; giới hạn', synonym:'restriction', target:'limitations', example:'Every method has its limitations.', accept_meaning:['hạn chế','giới hạn'] },
+    { word:'inaccurate', ipa:'/ɪnˈæk.jə.rət/', pos:'adj.', meaning:'không chính xác của; Lỗi của', synonym:'incorrect', target:'inaccurate', example:'The data was inaccurate and had to be corrected.', accept_meaning:['không chính xác của','Lỗi của'] },
+    { word:'isolated', ipa:'/ˈaɪ.sə.leɪ.tɪd/', pos:'adj.', meaning:'cô lập của; tách biệt của', synonym:'remote', target:'isolated', example:'The village was isolated by the heavy snow.', accept_meaning:['cô lập của','tách biệt của'] },
+    { word:'superior', ipa:'/suːˈpɪə.ri.ər/', pos:'adj./n.', meaning:'xuất sắc của; cấp trên của; cấp trên', synonym:'excellent', target:'superior', example:'She has a superior intellect.', accept_meaning:['xuất sắc của','cấp trên của','cấp trên'] },
+    { word:'rely on', ipa:'/rɪˈlaɪ ɒn/', pos:'v.', meaning:'dựa vào cái gì đó để hỗ trợ; phụ thuộc vào', synonym:'depend on', target:'rely', example:'Scientists rely on accurate data for their research.', accept_meaning:['dựa vào cái gì đó để hỗ trợ','phụ thuộc vào'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ wordData chiều dài:', wordData.length);
+console.log('✅ mong đợi chiều dài: 32');
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length; // 32 — Giai đoạn một che phủ Tất cả Từ vựng
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['nghĩa của một từ phân biệt', 'đồng nghĩa thay thế', 'toàn diện đưa vào sử dụng'];
+const STAGE_DESC = [`Tiếng Anh → Tiếng Trung (Tất cả ${TOTAL_STAGE1}biến thể cũ của)`, 'Tiếng Anh → Tiếng Anh gần họ', 'ngữ cảnh Điền khuyết +một biến thể cũ của đa nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `${TOTAL_STAGE1} biến thể cũ của`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 toàn diện phát hiện · ${TOTAL}họ`;
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== Đề bài tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    // Giai đoạn một: nghĩa của một từ phân biệt (32họ) — che phủ Tất cả Từ vựng
+    const stage1Data = all; // Tất cả 32 dùng trong
     stage1Data.forEach(w => {
-        // 干扰项：从其他词的中文释义中选3个不同的
+        // làm phiền họ: biến thể của Khác biến thể cũ của của Tiếng Trung Nghĩa được chọn 3dùng trong khác của
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('chưa biết');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `«${w.word}» của Tiếng Trung ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `«${w.word}» của Đúng ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ «${w.meaning}».`
         });
     });
 
-    // 阶段二：同义替换 (10题) — 英文选英文近义词
+    // Giai đoạn: đồng nghĩa thay thế (10họ) — Tiếng Anh chọn Tiếng Anh từ đồng nghĩa
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -294,24 +295,24 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `biến thể của «${w.word}» ý tưởng biến thể của tiếp cận của Tiếng Anh biến thể cũ của là chỉ theo sau bởi danh từ?`,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `«${w.word}» của từ đồng nghĩa là chỉ theo sau bởi danh từ «${w.synonym}».`
         });
     });
 
-    // 阶段三：综合应用 (10题) — 语境填空(5题) + 一词多义(5题)
-    // 从剩余数据中取10个，混合出题
+    // Giai đoạn họ: toàn diện đưa vào sử dụng (10họ) — ngữ cảnh Điền khuyết (5họ) + một biến thể cũ của đa nghĩa (5họ)
+    // biến thể của Còn lại dữ liệu hình thức kết hợp Trung Quốc lấy10dùng trong, trộn ra đề tài thảo luận
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
-        // 交替出题：语境填空和一词多义轮流
+        // thay thế ra đề tài thảo luận: ngữ cảnh Điền khuyết biến thể cũ của một biến thể cũ của đa nghĩa luân phiên
         if (subTypeCounter % 2 === 0) {
-            // 语境填空：用 target 替换原文中的词
+            // ngữ cảnh Điền khuyết: sử dụng target thay thế Văn bản gốc bắn trúng mục tiêu biến thể cũ của
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
-            // 干扰项：从其他词中取3个不同的词
+            // làm phiền họ: biến thể của Khác biến thể cũ của hình thức kết hợp Trung Quốc lấy3dùng trong khác của biến thể cũ của
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
             const shuffledWords = shuffle([...allWords]);
             const wrongs = shuffledWords.slice(0, 3);
@@ -320,18 +321,18 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `«${sentenceDisplay}» họ Ưng lấp hoặc nhồi đi vào nào biến thể cũ của?`,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `Đáp án đúng là chỉ theo sau bởi danh từ «${w.word}», Ý làm với tư cách «${w.meaning}».${w.example}`
             });
         } else {
-            // 一词多义：给一个句子，选该词的正确含义
-            // 从 accept_meaning 中取一个作为正确答案，其他作为干扰项
+            // một biến thể cũ của đa nghĩa: cung cấp một dùng trong Câu, chọn từ này của Đúng ý nghĩa hàm chứa trong một cụm từ
+            // biến thể của accept_meaning hình thức kết hợp Trung Quốc lấy một dùng trong hành vi Đáp án đúng, Khác hành vi làm phiền họ
             const correctMeaning = w.accept_meaning[0];
             const wrongMeanings = w.accept_meaning.slice(1);
             while(wrongMeanings.length < 3) {
-                // 从其他词的 accept_meaning 中补充
+                // biến thể của Khác biến thể cũ của của accept_meaning hình thức kết hợp Trung Quốc bổ sung
                 const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))];
                 const shuffledOthers = shuffle([...otherMeanings]);
                 for (const m of shuffledOthers) {
@@ -341,22 +342,22 @@ function generateQuestions() {
                     }
                 }
                 if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
+                wrongMeanings.push('Khác ý nghĩa hàm chứa trong một cụm từ');
             }
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `tồn tại Câu «${w.example}» hình thức kết hợp Trung Quốc, «${w.word}» của ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ?`,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `tồn tại biến thể của hình thức kết hợp Trung Quốc, «${w.word}» của ý nghĩa hàm chứa trong một cụm từ là chỉ theo sau bởi danh từ «${correctMeaning}».`
             });
         }
         subTypeCounter++;
     });
 
-    // 打乱各阶段内部顺序
+    // tá từ mượn trong tình trạng rối loạn mỗi Giai đoạn bên trong trình tự
     const qs = [];
     for(let s=0; s<3; s++) {
         const stageQs = questions.filter(q => q.stage === s);
@@ -365,7 +366,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic từ mượn ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -398,7 +399,7 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói (Anh nước loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -440,22 +441,21 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card=document.createElement('div'); card.className='word-card';
-        card.innerHTML=`
-            <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
-                <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
-            </div>
-            <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
-            <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
-            </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+        card.innerHTML=`<div class="word-card-top">
+ <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+ <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
+ </div>
+ <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
+ <div class="word-detail">
+ <div class="word-detail-row"><strong>📎 từ đồng nghĩa: </strong>${w.synonym}</div>
+ <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 câu ví dụ: </strong>${w.example}</div>
+ </div>
+ <div class="card-collapse-hint"> nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -476,7 +476,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== nghĩa đen và bóng điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -496,14 +496,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`phát hiện Đang thực hiện, mời trước Hoàn thành Tất cả ${TOTAL}họ!`);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -533,10 +533,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `${currentIndex+1} / ${TOTAL} họ`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `Giai đoạn ${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -582,7 +582,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước Chọn một dùng trong Phương án!'); return; }
         selected = '';
     }
 
@@ -603,7 +603,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng!' : '❌ Lỗi.';
 
     results.push({
         question: q.question,
@@ -614,7 +614,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -625,7 +625,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== Câu sai Báo cáo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -638,11 +638,9 @@ function showResults() {
     const totalCorrect = results.filter(r => r.isCorrect).length;
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
-    summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
-    `;
+    summary.innerHTML = `<div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể Đúng đếm</div></div>
+ <div class="item"><div class="num">${pct}%</div><div class="label"> Tỉ lệ đúng </div></div>
+ <div class="item"><div class="num">${results.filter(r =>!r.isCorrect).length}</div><div class="label"> Câu sai đếm</div></div>`;
 
     let html = '';
     for (let s = 0; s < 3; s++) {
@@ -651,16 +649,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4> Giai đoạn ${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})— Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th> Đề bài </th><th>bạn của Đáp án </th><th> Đáp án đúng </th><th> tình trạng </th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -680,7 +678,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện từ mượn ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

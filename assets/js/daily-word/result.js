@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/result.js — 结算页 + 可保存/发给老师的今日报告
+   daily-word/result.js — thanh toánđầu + tiền tố có thểLưu/cấpGiáo viênhôm nayBáo cáo
    ========================================================================= */
 (function () {
   "use strict";
@@ -25,8 +25,8 @@
     if (!sec) return "—";
     var m = Math.floor(sec / 60);
     var s = sec % 60;
-    if (!m) return s + " 秒";
-    return m + " 分" + (s ? s + " 秒" : "");
+    if (!m) return s + " giây đơn vị thời gian";
+    return m + " phần" + (s ? s + " giây đơn vị thời gian" : "");
   }
 
   function pad2(n) { return n < 10 ? "0" + n : String(n); }
@@ -44,36 +44,36 @@
     var mastered = r.mastered != null ? r.mastered : total;
     var rate = total ? Math.round((mastered / total) * 100) : 0;
     var lines = [];
-    lines.push("【优益思达 · 今日单词学习报告】");
-    lines.push("日期：" + (r.date || "—"));
-    lines.push("完成时间：" + (fmtFinished(r.finishedAt) || "—"));
-    lines.push("学生：" + (r.studentName || "未填写姓名"));
-    lines.push("手机：" + maskPhone(r.studentPhone));
-    lines.push("词书：" + (r.bookLabel || "—"));
-    lines.push("学习数量：" + total + " 词");
-    lines.push("掌握率：" + rate + "%（掌握 " + mastered + " / " + total + "）");
-    lines.push("用时：" + fmtTime(r.elapsedSec));
+    lines.push("【YYSD · hôm nayTừ vựnghọcBáo cáo】");
+    lines.push("ngày tháng:" + (r.date || "—"));
+    lines.push("thì hoàn thành ngữ phápgiữa:" + (fmtFinished(r.finishedAt) || "—"));
+    lines.push("Học viên:" + (r.studentName || "Chưa điềnviếthọ và tên"));
+    lines.push("điện thoại di động:" + maskPhone(r.studentPhone));
+    lines.push("biến thể cũ của viết tắt của:" + (r.bookLabel || "—"));
+    lines.push("họcsố lượng:" + total + " biến thể cũ của");
+    lines.push("Thành thạotỉ lệ:" + rate + "%(Thành thạo " + mastered + " / " + total + ")");
+    lines.push("sử dụng biến thể cũ của:" + fmtTime(r.elapsedSec));
     lines.push("");
-    lines.push("发音薄弱词：" + ((r.weakSpeak && r.weakSpeak.length) ? r.weakSpeak.join("、") : "无"));
-    lines.push("拼写易错词：" + ((r.weakSpell && r.weakSpell.length) ? r.weakSpell.join("、") : "无"));
-    lines.push("释义易错词：" + ((r.weakMeaning && r.weakMeaning.length) ? r.weakMeaning.join("、") : "无"));
+    lines.push("Phát âmyếubiến thể cũ của:" + ((r.weakSpeak && r.weakSpeak.length) ? r.weakSpeak.join(",") : "không có"));
+    lines.push("đánh vầnDễ saibiến thể cũ của:" + ((r.weakSpell && r.weakSpell.length) ? r.weakSpell.join(",") : "không có"));
+    lines.push("NghĩaDễ saibiến thể cũ của:" + ((r.weakMeaning && r.weakMeaning.length) ? r.weakMeaning.join(",") : "không có"));
     lines.push("");
-    lines.push("今日学习单词明细：");
+    lines.push("hôm nayhọcTừ vựngrõ ràng và chi tiết:");
     (r.words || []).forEach(function (w, i) {
       var tags = [];
-      if (w.speakingWrong) tags.push("发音弱");
-      if (w.spellingWrong) tags.push("拼写弱");
-      if (w.meaningWrong) tags.push("释义弱");
+      if (w.speakingWrong) tags.push("Phát âmyếu");
+      if (w.spellingWrong) tags.push("đánh vầnyếu");
+      if (w.meaningWrong) tags.push("Nghĩayếu");
       lines.push((i + 1) + ". " + w.word +
         (w.ipa ? " " + w.ipa : "") +
         (w.meaning ? " — " + w.meaning : "") +
         (tags.length ? " [" + tags.join("·") + "]" : ""));
     });
     if (!(r.words && r.words.length)) {
-      lines.push("（无明细）");
+      lines.push("(vô minh Phật giáomỏng hoặc thon)");
     }
     lines.push("");
-    lines.push("—— 学生可截图/转发本报告给老师 ——");
+    lines.push("—— Học viêntiền tố có thểtin học ảnh chụp màn hình/truyền đitờ báo nàyhình thức kết hợp nói cung cấpGiáo viên ——");
     return lines.join("\n");
   }
 
@@ -134,8 +134,8 @@
       };
     }
     if (!r) {
-      root.innerHTML = '<div class="dw-fail"><p>暂无今日报告</p>' +
-        '<p><a href="daily-word-setup.html">开始今日任务</a></p></div>';
+      root.innerHTML = '<div class="dw-fail"><p>tạm thời không cóhôm nayBáo cáo</p>' +
+        '<p><a href="daily-word-setup.html">Bắt đầuhôm nayNhiệm vụ</a></p></div>';
       return;
     }
 
@@ -146,23 +146,23 @@
     var spellN = (r.weakSpell || []).length;
     var meaningN = (r.weakMeaning || []).length;
     var reportText = buildReportText(r);
-    var fileName = "每日单词报告-" + (r.date || DW.todayStr()) +
+    var fileName = "Hằng ngàyTừ vựngBáo cáo-" + (r.date || DW.todayStr()) +
       (r.studentName ? "-" + r.studentName : "") + ".txt";
 
     function listHtml(arr) {
-      if (!arr || !arr.length) return "<li>无</li>";
+      if (!arr || !arr.length) return "<li>không có</li>";
       return arr.map(function (w) { return "<li>" + DW.esc(w) + "</li>"; }).join("");
     }
 
     function wordsTable() {
       var words = r.words || [];
-      if (!words.length) return '<p class="dw-hint">无单词明细</p>';
+      if (!words.length) return '<p class="dw-hint">không cóTừ vựngrõ ràng và chi tiết</p>';
       var rows = words.map(function (w, i) {
         var tags = [];
-        if (w.speakingWrong) tags.push('<span class="dw-tag dw-tag--bad">发音</span>');
-        if (w.spellingWrong) tags.push('<span class="dw-tag dw-tag--bad">拼写</span>');
-        if (w.meaningWrong) tags.push('<span class="dw-tag dw-tag--bad">释义</span>');
-        if (!tags.length) tags.push('<span class="dw-tag dw-tag--ok">通过</span>');
+        if (w.speakingWrong) tags.push('<span class="dw-tag dw-tag--bad">Phát âm</span>');
+        if (w.spellingWrong) tags.push('<span class="dw-tag dw-tag--bad">đánh vần</span>');
+        if (w.meaningWrong) tags.push('<span class="dw-tag dw-tag--bad">Nghĩa</span>');
+        if (!tags.length) tags.push('<span class="dw-tag dw-tag--ok">đi qua</span>');
         return "<tr>" +
           "<td>" + (i + 1) + "</td>" +
           "<td><strong>" + DW.esc(w.word) + "</strong>" +
@@ -172,45 +172,45 @@
           "</tr>";
       }).join("");
       return '<div class="dw-table-wrap"><table class="dw-table">' +
-        "<thead><tr><th>#</th><th>单词</th><th>释义</th><th>结果</th></tr></thead>" +
+        "<thead><tr><th>#</th><th>Từ vựng</th><th>Nghĩa</th><th>Kết quả</th></tr></thead>" +
         "<tbody>" + rows + "</tbody></table></div>";
     }
 
     root.innerHTML =
       '<div class="dw-shell dw-shell--report">' +
         '<header class="dw-top no-print">' +
-          '<a class="dw-back" href="zone.html?zone=study&s=vocab" aria-label="返回">←</a>' +
-          '<div class="dw-top__title">今日学习报告</div>' +
+          '<a class="dw-back" href="zone.html?zone=study&s=vocab" aria-label="Quay lại">←</a>' +
+          '<div class="dw-top__title">hôm nayhọcBáo cáo</div>' +
         "</header>" +
         '<div class="dw-report" id="dw-report-card">' +
-          '<div class="dw-report__brand">优益思达 · 今日单词学习报告</div>' +
+          '<div class="dw-report__brand">YYSD · hôm nayTừ vựnghọcBáo cáo</div>' +
           '<div class="dw-report__meta">' +
-            '<div><span>学生</span><strong>' + DW.esc(r.studentName || "未填写姓名") + "</strong></div>" +
-            '<div><span>手机</span><strong>' + DW.esc(maskPhone(r.studentPhone)) + "</strong></div>" +
-            '<div><span>日期</span><strong>' + DW.esc(r.date || "—") + "</strong></div>" +
-            '<div><span>词书</span><strong>' + DW.esc(r.bookLabel || "每日单词") + "</strong></div>" +
-            '<div><span>用时</span><strong>' + DW.esc(fmtTime(r.elapsedSec)) + "</strong></div>" +
-            '<div><span>完成</span><strong>' + DW.esc(fmtFinished(r.finishedAt) || "—") + "</strong></div>" +
+            '<div><span>Học viên</span><strong>' + DW.esc(r.studentName || "Chưa điềnviếthọ và tên") + "</strong></div>" +
+            '<div><span>điện thoại di động</span><strong>' + DW.esc(maskPhone(r.studentPhone)) + "</strong></div>" +
+            '<div><span>ngày tháng</span><strong>' + DW.esc(r.date || "—") + "</strong></div>" +
+            '<div><span>biến thể cũ của viết tắt của</span><strong>' + DW.esc(r.bookLabel || "Hằng ngàyTừ vựng") + "</strong></div>" +
+            '<div><span>sử dụng biến thể cũ của</span><strong>' + DW.esc(fmtTime(r.elapsedSec)) + "</strong></div>" +
+            '<div><span>Hoàn thành</span><strong>' + DW.esc(fmtFinished(r.finishedAt) || "—") + "</strong></div>" +
           "</div>" +
           '<div class="dw-stats">' +
-            '<div class="dw-stat"><div class="dw-stat__n">' + total + '</div><div class="dw-stat__l">今日学习</div></div>' +
-            '<div class="dw-stat"><div class="dw-stat__n">' + rate + '%</div><div class="dw-stat__l">掌握率</div></div>' +
-            '<div class="dw-stat"><div class="dw-stat__n">' + speakN + '</div><div class="dw-stat__l">发音薄弱</div></div>' +
-            '<div class="dw-stat"><div class="dw-stat__n">' + (spellN + meaningN) + '</div><div class="dw-stat__l">拼写/释义弱</div></div>' +
+            '<div class="dw-stat"><div class="dw-stat__n">' + total + '</div><div class="dw-stat__l">hôm nayhọc</div></div>' +
+            '<div class="dw-stat"><div class="dw-stat__n">' + rate + '%</div><div class="dw-stat__l">Thành thạotỉ lệ</div></div>' +
+            '<div class="dw-stat"><div class="dw-stat__n">' + speakN + '</div><div class="dw-stat__l">Phát âmyếu</div></div>' +
+            '<div class="dw-stat"><div class="dw-stat__n">' + (spellN + meaningN) + '</div><div class="dw-stat__l">đánh vần/Nghĩayếu</div></div>' +
           "</div>" +
-          '<div class="dw-weak"><h3>发音薄弱词</h3><ul>' + listHtml(r.weakSpeak) + "</ul></div>" +
-          '<div class="dw-weak"><h3>拼写易错词</h3><ul>' + listHtml(r.weakSpell) + "</ul></div>" +
-          '<div class="dw-weak"><h3>释义易错词</h3><ul>' + listHtml(r.weakMeaning) + "</ul></div>" +
-          '<div class="dw-weak"><h3>今日单词明细</h3>' + wordsTable() + "</div>" +
-          '<p class="dw-report__foot">请保存或转发本报告给老师</p>' +
+          '<div class="dw-weak"><h3>Phát âmyếubiến thể cũ của</h3><ul>' + listHtml(r.weakSpeak) + "</ul></div>" +
+          '<div class="dw-weak"><h3>đánh vầnDễ saibiến thể cũ của</h3><ul>' + listHtml(r.weakSpell) + "</ul></div>" +
+          '<div class="dw-weak"><h3>NghĩaDễ saibiến thể cũ của</h3><ul>' + listHtml(r.weakMeaning) + "</ul></div>" +
+          '<div class="dw-weak"><h3>hôm nayTừ vựngrõ ràng và chi tiết</h3>' + wordsTable() + "</div>" +
+          '<p class="dw-report__foot">mờiLưucó thểtruyền đitờ báo nàyhình thức kết hợp nói cung cấpGiáo viên</p>' +
         "</div>" +
         '<div class="dw-result-actions no-print">' +
-          '<button type="button" class="dw-btn dw-btn--primary" id="dw-copy">复制报告给老师</button>' +
-          '<button type="button" class="dw-btn dw-btn--ghost" id="dw-download">下载 TXT 报告</button>' +
-          '<button type="button" class="dw-btn dw-btn--ghost" id="dw-print">打印 / 存 PDF</button>' +
-          '<a class="dw-btn dw-btn--ghost" href="daily-word-setup.html">再学一组</a>' +
-          '<a class="dw-btn dw-btn--ghost" href="zone.html?zone=study&s=vocab">返回单词中心</a>' +
-          '<p class="dw-hint" id="dw-share-tip" hidden>已复制，可粘贴到微信发给老师</p>' +
+          '<button type="button" class="dw-btn dw-btn--primary" id="dw-copy">nhân bảnBáo cáocung cấpGiáo viên</button>' +
+          '<button type="button" class="dw-btn dw-btn--ghost" id="dw-download">Tải xuống TXT Báo cáo</button>' +
+          '<button type="button" class="dw-btn dw-btn--ghost" id="dw-print">đóng dấu / tồn tại PDF</button>' +
+          '<a class="dw-btn dw-btn--ghost" href="daily-word-setup.html">lại học một họ</a>' +
+          '<a class="dw-btn dw-btn--ghost" href="zone.html?zone=study&s=vocab">Quay lạiTừ vựngtrung tâm</a>' +
+          '<p class="dw-hint" id="dw-share-tip" hidden>đãnhân bản,tiền tố có thểdánđếnWeixin hoặc WeChatcấpGiáo viên</p>' +
         "</div>" +
       "</div>";
 
@@ -218,10 +218,10 @@
       var tip = document.getElementById("dw-share-tip");
       copyText(reportText).then(function () {
         tip.hidden = false;
-        tip.textContent = "已复制，可粘贴到微信发给老师";
+        tip.textContent = "đãnhân bản,tiền tố có thểdánđếnWeixin hoặc WeChatcấpGiáo viên";
       }).catch(function () {
         tip.hidden = false;
-        tip.textContent = "复制失败，请改用「下载 TXT」";
+        tip.textContent = "nhân bảnThất bại,mờichuyển sang«Tải xuống TXT»";
       });
     });
     document.getElementById("dw-download").addEventListener("click", function () {

@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/core.js — 每日单词：存储、抽词、拼写、LIST 解析、API 助手
+   daily-word/core.js — Hằng ngàyTừ vựng:tích trữ,rút ra biến thể cũ của,đánh vần,LIST Giải thích,API trợ lý
    ========================================================================= */
 (function (global) {
   "use strict";
@@ -205,8 +205,8 @@
     for (i = 0; i < list.length; i++) {
       if (list[i]) accepts.push(String(list[i]).replace(/\s+/g, ""));
     }
-    String((wordObj && wordObj.meaning) || "").split(/[；;，,、\/|]/).forEach(function (p) {
-      p = String(p || "").replace(/\s+/g, "").replace(/（[^）]*）|\([^)]*\)/g, "");
+    String((wordObj && wordObj.meaning) || "").split(/[;;,,,\/|]/).forEach(function (p) {
+      p = String(p || "").replace(/\s+/g, "").replace(/([^)]*)|\([^)]*\)/g, "");
       if (p) accepts.push(p);
     });
     for (i = 0; i < accepts.length; i++) {
@@ -214,7 +214,7 @@
       if (!a) continue;
       if (userCN === a || userCN.indexOf(a) >= 0 || a.indexOf(userCN) >= 0) return { ok: true };
     }
-    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[；;，,、\s]/g, "");
+    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[;;,,,\s]/g, "");
     if (!meaningClean) return { ok: false };
     var head = meaningClean.substring(0, Math.min(2, meaningClean.length));
     if (userCN.length >= 2 && (userCN.indexOf(head) >= 0 || meaningClean.indexOf(userCN) >= 0)) {
@@ -349,9 +349,9 @@
       return r.text().then(function (text) {
         var d = null;
         try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("服务器返回异常（" + r.status + "）");
+          throw new Error("máy chủ máy tínhQuay lạibất thường(" + r.status + ")");
         }
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || "yêu cầuThất bại");
         return d;
       });
     });
@@ -385,7 +385,7 @@
 
   function fetchThemesCatalog() {
     return fetch(libraryUrl("study/vocab-themes/themes.json")).then(function (r) {
-      if (!r.ok) throw new Error("分类词库目录加载失败");
+      if (!r.ok) throw new Error("Kho từ vựng theo chủ đềmục lụcTải thất bại");
       return r.json();
     });
   }
@@ -416,14 +416,14 @@
 
   function fetchThemePool(bookKey) {
     var themeId = themeIdOf(bookKey);
-    if (!themeId) return Promise.reject(new Error("分类词库无效"));
+    if (!themeId) return Promise.reject(new Error("Kho từ vựng theo chủ đềkhông hợp lệ"));
     return fetchThemesCatalog().then(function (cat) {
       var t = null;
       var i;
       for (i = 0; i < (cat.themes || []).length; i++) {
         if (cat.themes[i].id === themeId) { t = cat.themes[i]; break; }
       }
-      if (!t || !t.dataFile) throw new Error("分类词库不存在");
+      if (!t || !t.dataFile) throw new Error("Kho từ vựng theo chủ đềkhôngtồn tại");
       var catLabel = "";
       for (i = 0; i < (cat.categories || []).length; i++) {
         if (cat.categories[i].id === t.category) {
@@ -432,17 +432,17 @@
         }
       }
       return fetch(libraryUrl(t.dataFile)).then(function (r) {
-        if (!r.ok) throw new Error("分类词库加载失败");
+        if (!r.ok) throw new Error("Kho từ vựng theo chủ đềTải thất bại");
         return r.json();
       }).then(function (detail) {
         var pool = mapThemeWords((detail && detail.words) || [], bookKey, themeId)
           .filter(function (w) { return w.word; });
-        if (!pool.length) throw new Error("分类词库暂无可用单词");
+        if (!pool.length) throw new Error("Kho từ vựng theo chủ đềtạm thờikhông thểsử dụngTừ vựng");
         return {
           book: {
             key: bookKey,
             label: t.title || themeId,
-            tag: catLabel || "分类词库"
+            tag: catLabel || "Kho từ vựng theo chủ đề"
           },
           pool: pool,
           listCount: 1
@@ -457,7 +457,7 @@
     // 0 / null / undefined → whole book (needed for true random)
     return Y.load().then(function (items) {
       var stats = Y.vocabBookStats(items, bookKey);
-      if (!stats || !stats.lists.length) throw new Error("词书为空或不存在");
+      if (!stats || !stats.lists.length) throw new Error("biến thể cũ của viết tắt của làm với tư cách trống không có thể khôngtồn tại");
       var lists = stats.lists;
       if (maxLists > 0) lists = lists.slice(0, maxLists);
       // ponytail: parallel fetch; ceiling = whole book (~40 LISTs)

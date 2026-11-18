@@ -1,35 +1,35 @@
-# I-001 — results.html 接入 page-premium 壳
+# I-001 — results.html truy cập mạng page-premium biến thể của
 
-**状态：** done（Cursor 2026-07-22）
+**tình trạng:** done(Cursor 2026-07-22)
 
-## 目标
+## Mục tiêu
 
-学生活路径 dashboard → zone → **results** 视觉连贯，与 premium 顶栏/背景一致。
+Học viênđường thôngđường mòn dashboard → zone → **results** thị giáckết nối các yếu tố khác biệt, premium đỉnh hàng rào/bối cảnhnhất quán.
 
-## 允许改动
+## cho phépthay đổi
 
-- `results.html`：`<head>` 字体/CSS；`body` class
-- `assets/css/dashboard-premium.css`：`.page-premium` 下 results 页头（可选）
+- `results.html`:`<head>` phong cách thư pháp/CSS;`body` class
+- `assets/css/dashboard-premium.css`:`.page-premium` xuống results đầu đầu(có sẵn)
 
-## 禁止
+## cấm
 
-- `results.html` 内联 script 逻辑
-- `config.js` results 数据结构
+- `results.html` bên trong hình thức kết hợp: liên minh với script logic từ mượn
+- `config.js` results dữ liệucấu trúc
 
-## 变更
+## thay đổi
 
-1. 增加 Inter Google Font link（与 dashboard 一致）
-2. 增加 `dashboard-premium.css` link
+1. tăng Inter Google Font link( dashboard nhất quán)
+2. tăng `dashboard-premium.css` link
 3. `body class="home-minimal page-premium"`
-4. page-head eyebrow 改用 `dash-premium-eyebrow`（可选）
+4. page-head eyebrow chuyển sang `dash-premium-eyebrow`(có sẵn)
 
-## 验收
+## kiểm tra và chấp nhận
 
-- URL：`/results.html`（登录态）
-- 1280px：topbar 毛玻璃、背景 `#fbf8f1`
-- 375px：mobile-tabs 正常；hero stack 不变
-- `?tenant=ease`：品牌名/logo 正常
+- URL:`/results.html`(Đăng nhậphình thức kết hợp)
+- 1280px:topbar kính mờ,bối cảnh `#fbf8f1`
+- 375px:mobile-tabs bình thường;hero stack không đổi
+- `?tenant=ease`:tên thương hiệutên/logo bình thường
 
-## 回滚
+## tin học quay lui
 
-移除 premium CSS link 与 `page-premium` class。
+loại bỏ premium CSS link  `page-premium` class.

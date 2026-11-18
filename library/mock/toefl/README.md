@@ -1,8 +1,8 @@
-# 模考区 / 托福模考
+# Thi thửhọ / nâng bằng tay họThi thử
 
-**把「托福模考卷」的 HTML 文件上传到这个文件夹即可自动归类。**
+**cầm«nâng bằng tay họThi thửcuộn lại» HTML tài liệuTải lênđếnđại từ nàythư mụctương đương vớitự độngphân loại.**
 
-- 板块：🎯 模考区 (mock)
-- 科目：托福 (toefl)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm:🎯 Thi thửhọ (mock)
+- môn học:nâng bằng tay họ (toefl)
+- Tải lêncách thức:tồn tạivăn bản nàymón ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phúthọtự độngxuất hiệntồn tạitrang webtương ứng vớiPhân loạixuống,không cần thiếtKháclàm việc.

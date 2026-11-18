@@ -1,4 +1,4 @@
-/* 题库中心：生产必须老师端；本机检查放行。顺手补刷新钮（旧缓存页没有）。 */
+/* Trung tâm ngân hàng đề:sản xuấtphảiGiáo viêncuối;hình thức kết hợp gốc họkiểm tracho qua.một cách dễ dàngsửaLàm mớihọ(cũtin học bộ nhớ đệmđầukhông có). */
 (function (w) {
   "use strict";
   function local() {
@@ -20,7 +20,7 @@
     b.type = "button";
     b.className = "btn ghost";
     b.id = "refresh";
-    b.textContent = "刷新";
+    b.textContent = "Làm mới";
     row.insertBefore(b, document.getElementById("out"));
     b.addEventListener("click", hardReload);
   }

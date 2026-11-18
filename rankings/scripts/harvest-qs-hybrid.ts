@@ -68,7 +68,7 @@ async function harvestOne(
 
   for (let i = 0; i < 60; i++) {
     const title = await page.title();
-    if (!/请稍候|Just a moment/i.test(title)) break;
+    if (!/mờiđợi một chút|Just a moment/i.test(title)) break;
     await page.waitForTimeout(1000);
   }
 

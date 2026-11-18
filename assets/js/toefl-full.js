@@ -43,7 +43,7 @@
     return pack;
   }
 
-  // 一场模考四科共用一个 sid，成绩单才把四科算作同一场
+  // một sân phơiThi thửbốn ngành họcdùng chungmột dùng trong sid,phiếu điểm hoặc bảng điểmkhả năng cầm bốn ngành học coi như hình thức kết hợp công nhângiống hệtsân phơi
   function useSid(sid) {
     try { sessionStorage.setItem("yysd:toefl-sid", String(sid)); } catch (e) {}
   }
@@ -72,7 +72,7 @@
     return "app/" + q;
   }
 
-  /* 全真模考从套题列表进，返回列表而非冲刺包 */
+  /* họ thậtThi thửbiến thể của che đậy họdanh sáchtiến lên,Quay lạidanh sáchviết tắt củathể thao chạy nước rúthọ */
   function homeHubHref() {
     if (typeof location !== "undefined" && location.hostname === "app.youyisida.com") return "home.html";
     return "app/home.html";
@@ -224,7 +224,7 @@
     return href;
   }
 
-  /* 复盘页只有 sessionStorage 里这一份答卷，整场其余科目由页面自己按 sid 从模考历史重建 */
+  /* sau khi hoàn thành ván cờ chơi lại ván cờđầuchỉ có sessionStorage biến thể của đại từ này một lượng từ cho quà tặngbài thi đã hoàn thành,hình thức liên kết toàn bộ sân phơiphần còn lạimôn họcđầu mặtbản thânnhấn sid biến thể củaThi thửLịch sửtái thiết */
   function reviewGo(skill, paper, payload) {
     stashReview(skill, paper, payload);
     go(reviewHref(skill));
@@ -279,7 +279,7 @@
     if (exit) exit.setAttribute("href", listBack());
   }
 
-  /* 作废/退出 = 本场结束：上报完成，宽限不再允许续考（best-effort，失败不影响流程） */
+  /* trở nên không hiệu lực/Đăng xuất = hình thức kết hợp gốc sân phơiKết thúc:báo cáo lên cấp trênHoàn thành,gia hạn thời hạnkhông còncho phéptiếp tục đánh(best-effort,Thất bạikhôngảnh hưởngquy trình) */
   function examDone(id) {
     try {
       var A = w.YYSD_AUTH;

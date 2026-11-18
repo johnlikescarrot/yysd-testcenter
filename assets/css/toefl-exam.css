@@ -378,7 +378,7 @@ body.exam-ets .blank {
   margin: 0 1px;
 }
 body.exam-ets .blank-pre { font-weight: 500; }
-/* CW：一个空 = 一个 input，「一字母一横线」是底纹画出来的（1:1 照 wofo.cc） */
+/* CW:một dùng trong trống không = một dùng trong input,«thành hàngmẹ mộtđường ngang»là chỉ theo sau bởi danh từ nền tảng đường vẽđi ra(1:1 biến thể của wofo.cc) */
 body.exam-ets .blank input {
   width: calc(var(--n) * 1.3ch);
   margin: 0 1px;
@@ -400,7 +400,7 @@ body.exam-ets .blank input {
   line-height: 1.25;
   letter-spacing: 0.12em;
 }
-/* 考场里不要蓝色圆角焦点框；焦点用加深加粗的底纹横线表达 */
+/* Phòng thibiến thể củađừng!màu xanh lamgóc bo trònđiểm tiêukhung ví dụ: khung cửa;điểm tiêusử dụnglàm sâu sắc hơnlàm cho chữ in đậmnền tảng đườngđường ngangdiễn đạt */
 body.exam-ets .blank input:focus {
   outline: 0;
   background-image: repeating-linear-gradient(
@@ -735,7 +735,7 @@ body.exam-ets .review audio { display: block; width: 100%; margin: 0 0 8px; }
   body.exam-ets .dl-cols { grid-template-columns: 1fr; }
 }
 
-/* wofo: 交卷后的「生成成绩单」屏 */
+/* wofo: Nộp bàihọ«tạo raphiếu điểm hoặc bảng điểm»loại bỏ */
 body.exam-ets.ets-gate-on .ets-frame > section { display: none !important; }
 body.exam-ets .ets-gate {
   display: flex;

@@ -11,9 +11,9 @@
   var OFF_KEY = "yysd:mascot-off";
   var IDLE_MS = 45000;
   var ONBOARD_STEPS = [
-    "你好，我是思达，你的错题本陪练。",
-    "单词区背单词、练习区精听长难句、真题区剑桥真题——点我都能给建议。",
-    "做题时我会实时反馈；模考完我会帮你复盘 Band。"
+    "xin chào,tôi là chỉ theo sau bởi danh từ suy nghĩ họ,bạnSổ lỗi saibạn tập.",
+    "Khu vực Từ vựngbiến thể củaTừ vựng,Khu vực Luyện tậptinh chất cười cổ đại chiều dài khó để biến thể của,Khu vực Đề thi thậtkiếm hai lưỡi cầuĐề thi thật——điểm tôi họ họ cung cấpGợi ý.",
+    "làm họ biến thể cũ của tôi có thểtheo thời gian thựcPhản hồi;Thi thửhoàn thành tôi có thể biến thể cũ của bạnsau khi hoàn thành ván cờ chơi lại ván cờ Band."
   ];
 
   var examPage = /exam\.html/.test(location.pathname);
@@ -38,8 +38,8 @@
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "yysd-mascot-restore";
-    btn.textContent = "召唤思达";
-    btn.setAttribute("aria-label", "重新启用思达学习助手");
+    btn.textContent = "triệu hồisuy nghĩ họ";
+    btn.setAttribute("aria-label", "lạibắt đầu sử dụngsuy nghĩ họhọctrợ lý");
     btn.addEventListener("click", enableMascot);
     document.body.appendChild(btn);
   }
@@ -151,136 +151,136 @@
 
   var TIPS = {
     home: [
-      "学习打基础，练习强技能，模考验真章——三步走最稳。",
-      "首页 A-Level 专区可直接选考试局和科目，真题免费预览下载。",
-      "雅思专项词汇按听说读写分册，比盲目刷词效率高。",
-      "剑桥真题从 Vol.19+ 最新册开始模考，感受最接近考场。"
+      "họctá từ mượnCơ bản,Luyện tậphọKỹ năng,Thi thửbiến thể của thật họ——họ họ đi biến thể của ổn định.",
+      "Trang chủ A-Level khu vực thành lập cho mục đích nhất địnhtiền tố có thểtrực tiếpchọnKì thihẹp biến thể cũ củamôn học,Đề thi thậtmiễn phíxem trướcTải xuống.",
+      "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếchuyên biệtTừ vựngnhấnnghe nóiđọc và viếtquyển,Bỉmù quángchải biến thể cũ củahiệu suấthọ.",
+      "kiếm hai lưỡi cầuĐề thi thậtbiến thể của Vol.19+ mới nhấtsáchBắt đầuThi thử,cảm nhậnbiến thể củatiếp cậnPhòng thi."
     ],
     study: [
-      "高中词汇和四级词汇分开刷，别混在一个 LIST 里。",
-      "背单词要同时过关拼写和释义，两个都记牢才算会。",
-      "语法精讲做完随堂小测，错题回头再看一遍解析。",
-      "听力/阅读/写作专项词汇，对应你接下来要攻的科目。",
-      "不会的词会自动进错题本，记得去复习。"
+      "trường trung học phổ thôngTừ vựngbiến thể cũ củacấp 4Từ vựngtách rachải,họ bùn tồn tại một dùng trong LIST biến thể của.",
+      "biến thể củaTừ vựnghình thức kết hợp yêu cầuđồng thờivượt qua rào cảnđánh vầnbiến thể cũ củaNghĩa,dùng trong họ ghi chép chắc chắn khả năng coi như có thể.",
+      "Ngữ pháptinh chất nóihoàn thànhhọ chính sảnh nhỏ khảo sát,Câu saiquay lạilại chăm sócmột lần từ đầu đến cuốiGiải thích.",
+      "Nghe/Đọc/Viếtchuyên biệtTừ vựng,tương ứng vớibạnchấp nhậnhình thức kết hợp yêu cầu tấn côngmôn học.",
+      "không có khả năngbiến thể cũ của có thểtự độngtiến lênSổ lỗi sai,nhớđiÔn tập."
     ],
     practice: [
-      "练习区有长难句拆解和听力精听，专项提分最快。",
-      "精听跟读要逐句过关，注意连读、弱读和吞音。",
-      "长难句先找主干，再拆定语、状语和同位语。",
-      "阅读练习卷交卷后可以看得分，非模考也能练手感。"
+      "Khu vực Luyện tậpcó chiều dài khó để biến thể củatháo rờibiến thể cũ củaNghetinh chất cười cổ đại,chuyên biệtdùng trong và phần biến thể của.",
+      "tinh chất cười cổ đại gót chân dấu phẩy hình thức kết hợp yêu cầu hình thức kết hợp theo đuổi biến thể củavượt qua rào cản,chú ý đếnnối âm trong ngữ âm học,yếu dấu phẩy biến thể cũ củangôn ngữ học nuốt âm.",
+      "chiều dài khó để biến thể của trước cố gắng tìmthân chính,lại xé mởđịnh ngữ,thành phần trạng ngữ trạng từ hoặc mệnh đề trạng ngữbiến thể cũ củacùng vị tríphương ngữ.",
+      "ĐọcLuyện tậpcuộn lạiNộp bàihọcó thểchăm sócĐiểm số,viết tắt củaThi thửhọluyện tập một kỹ năngcảm thấy."
     ],
     mock: [
-      "真题区剑桥雅思听力阅读支持计时，尽量按真考节奏。",
-      "阅读题可高亮、做笔记，和机考习惯保持一致。",
-      "交卷后 Band 和成绩会记在「我的成绩」。",
-      "同一套题可以二刷，对比两次得分看进步。",
-      "A-Level 真题在「国际课程」里，和雅思分区互不混用。"
+      "Khu vực Đề thi thậtCambridge IELTSNgheĐọctán thànhđo thời gian,càng nhiều càng tốtnhấn thật đánhnhịp điệu.",
+      "Đọchọ tiền tố có thểtô sáng tin học,làmGhi chú,biến thể cũ của họ đánhthói quengiữnhất quán.",
+      "Nộp bàihọ Band biến thể cũ củaKết quảcó thể ghi chép tồn tại«Kết quả của tôi».",
+      "giống hệtche đậy họcó thểchải,so sánhtiếp theoĐiểm sốchăm sóctiến bộ.",
+      "A-Level Đề thi thậttồn tại«Chương trình quốc tế»biến thể của,biến thể cũ củaIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếkhu vực được phân bổ cho nhà ởlẫn nhau không bùn sử dụng."
     ],
     vocab: {
       gaozhong: [
-        "高中词汇按 LIST 推进，完成一个勾一个。",
-        "测试模式会同时考拼写和中文释义。",
-        "错词自动收入错题本，隔天复习效果最好。"
+        "trường trung học phổ thôngTừ vựngnhấn LIST thúc đẩy,Hoàn thànhmột dùng trong họ một dùng trong.",
+        "Bài kiểm trachế độhuyện Huitong ở Huaihuabiến thể cũ của đánhđánh vầnbiến thể cũ củaTiếng TrungNghĩa.",
+        "họ biến thể cũ củatự độngthu vàoSổ lỗi sai,ngày hôm sauÔn tậpkết quảtốt nhất."
       ],
       cet4: [
-        "四级词汇量和雅思有重叠，打好底子两头受益。",
-        "释义写关键词即可，不用背完整词典例句。",
-        "今天目标：稳稳记住 15 个，比贪多更有效。"
+        "cấp 4Từ vựngđo lường biến thể cũ củaIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếcóchồng chéo,tá từ mượn tốtnền tảngcả hai đầuhưởng lợi từ.",
+        "Nghĩaviếttừ khóatương đương với,không cầnbiến thể củahoàn chỉnhtừ điểncâu ví dụ.",
+        "hôm nayMục tiêu:ổn định ổn địnhnhớ 15 dùng trong,Bỉ có khao khát mãnh liệt nhiều thay đổi hoặc thay thếhiệu quả."
       ],
       special: [
-        "专项词汇按听说读写分单元，哪科弱就先刷哪科。",
-        "这些词在剑桥真题里出现频率高，值得精读。",
-        "配合同科目的模考/练习，记得更牢。"
+        "chuyên biệtTừ vựngnhấnnghe nóiđọc và viếtphầnBài,như thế nào ngành học yếu sau một mệnh đề giả định trong trường hợp đó trước chải như thế nào ngành học.",
+        "những... nàybiến thể cũ của tồn tại kiếm hai lưỡi cầuĐề thi thậtbiến thể củaxuất hiệntần sốhọ,đángđọc cẩn thận và kỹ lưỡng.",
+        "phù hợpgiốngmôn họcThi thử/Luyện tập,nhớthay đổi hoặc thay thế chắc chắn."
       ]
     },
     results: [
-      "成绩已同步云端，换设备登录后可在「我的成绩」查看。",
-      "Band 轨迹能看最近几次模考走势。",
-      "得分低的科目，去练习区做专项往往比硬刷题管用。"
+      "Kết quảđãđồng bộcao trên mây,trao đổithiết bịĐăng nhậphọ tiền tố có thể tồn tại«Kết quả của tôi»Xem.",
+      "Band quỹ đạohọ chăm sócgần đâymột vài lầnThi thửxu hướng.",
+      "Điểm sốthấpmôn học,điKhu vực Luyện tậplàmchuyên biệtthường thườngBỉ cứnglàm nhiều câu hỏi luyện tập để chuẩn bị cho kỳ thihiệu quả."
     ],
     general: [
-      "每天精听 15 分钟，比盲目刷三套阅读更有效。",
-      "阅读先看题干再定位，别从第一段读到尾。",
-      "听力填空注意单复数、大小写和词性变形。",
-      "写作留 5 分钟检查拼写、时态和主谓一致。",
-      "口语不是背答案，是练流利度和观点展开。"
+      "mỗi ngàytinh chất cười cổ đại 15 phút,Bỉmù quángchải họ che đậyĐọcthay đổi hoặc thay thếhiệu quả.",
+      "Đọctrước chăm sóc họ biến thể cũ của lạiVị trí,họ biến thể củađầu tiênhọ dấu phẩy đến đuôi.",
+      "NgheĐiền khuyếtchú ý đếnhọngôn ngữ học số nhiều,chữ hoa và chữ thườngbiến thể cũ củaloại từ danh từbị biến dạng.",
+      "Viếtbiến thể cũ của 5 phútkiểm trađánh vần,thì của động từbiến thể cũ của chủ họnhất quán.",
+      "Nóikhông phảibiến thể củaĐáp án,là chỉ theo sau bởi danh từ luyện tậplưu loátvượt qua biến thể cũ củaQuan điểmmở ra."
     ]
   };
 
   var HINT_LINES = {
     correct: [
-      "对了！继续保持。",
-      "准确！这个掌握了。",
-      "漂亮，下一题稳住。",
-      "就是这个感觉，节奏很好。"
+      "Đúng rồi!!Tiếp tụcgiữ.",
+      "chính xác!đại từ nàyThành thạo.",
+      "xinh đẹp,Câu sauổn định sống.",
+      "chính xácđại từ nàycảm giác,nhịp điệuphó từ mức độ tốt."
     ],
     "partial-spelling": [
-      "含义对了！拼写再核对一下字母顺序。",
-      "意思掌握了，写法记一记就满分。",
-      "释义过关，拼写差一点点，再看一眼。"
+      "ý nghĩa hàm chứa trong một cụm từĐúng rồi!!đánh vầnlạikiểm tradùng sau động từ thử xemthứ tự chữ cái.",
+      "ý tưởngThành thạo,phong cách viết phong cách văn họcghi chép một ghi chép sau một mệnh đề giả định trong trường hợp đóđiểm tối đa.",
+      "Nghĩavượt qua rào cản,đánh vầnsự khác biệtmột chút,lại chăm sócmột cái nhìn."
     ],
     "partial-meaning": [
-      "拼写对了！中文释义再想想。",
-      "写法没问题，含义再巩固一下。",
-      "字母全对，意思还差一口气。"
+      "đánh vầnĐúng rồi!!Tiếng TrungNghĩalại nghĩ về nghĩ về.",
+      "phong cách viết phong cách văn họckhông vấn đề gì,ý nghĩa hàm chứa trong một cụm từlạicủng cốdùng sau động từ thử xem.",
+      "chữ cái của bảng chữ cáihọ đúng,ý tưởnghọ sự khác biệtmột hơi."
     ],
     partial: [
-      "接近了，看看反馈里的细节。",
-      "一半对了，离全对不远。",
-      "方向对了，再调整一下。"
+      "tiếp cận,xem quaPhản hồibiến thể củaChi tiết.",
+      "một nửaĐúng rồi!,loài thú thần thoại cổ họ đúng không tự tạo khoảng cách văn cổ.",
+      "hướngĐúng rồi!,lạiđiều chỉnhdùng sau động từ thử xem."
     ],
     wrong: [
-      "这题值得进错题本，晚点再刷一遍。",
-      "没关系，搞懂比蒙对更重要。",
-      "先标记，等会儿回头复盘。",
-      "错了就记住了，下次注意。"
+      "đại từ này họđángtiến lênSổ lỗi sai,tàu xelại chảimột lần từ đầu đến cuối.",
+      "không sao đâu,làm hiểu Bỉ mưa phùn đúng thay đổi hoặc thay thếquan trọng.",
+      "trướcký hiệu,đợi có thể biến thể củaquay lạisau khi hoàn thành ván cờ chơi lại ván cờ.",
+      "họ sau một mệnh đề giả định trong trường hợp đónhớ,lần tớichú ý đến."
     ],
     pass: [
-      "过关！这句跟读到位了。",
-      "精听通过，继续保持这个语速。",
-      "结构提交成功，对照参考完善一下。",
-      "语法小测这题拿下了。"
+      "vượt qua rào cản!đại từ này biến thể của gót chân dấu phẩyđến đúng vị trí.",
+      "tinh chất cười cổ đạiđi qua,Tiếp tụcgiữđại từ nàyphương ngữ.",
+      "cấu trúcNộp bàiThành công,Đối chiếutham khảohệ thốngdùng sau động từ thử xem.",
+      "Ngữ phápnhỏ khảo sát đại từ này họbắt giữ."
     ],
     fail: [
-      "再听一遍，注意连读和弱读。",
-      "没达标，放慢语速逐词跟读。",
-      "长难句别急，先圈出主干再找从句。",
-      "再看看解析，下次会更好。"
+      "lại cười cổ đạimột lần từ đầu đến cuối,chú ý đếnnối âm trong ngữ âm họcbiến thể cũ của yếu dấu phẩy.",
+      "tiền tố phủ định cho động từ chưađạt tiêu chuẩn đặt ra,giảm tốc độ cử độngphương ngữ hình thức kết hợp theo đuổi biến thể cũ của gót chân dấu phẩy.",
+      "chiều dài khó để biến thể của họ khẩn cấp,trước giam giữ đi rathân chínhlại cố gắng tìmmệnh đề.",
+      "lạixem quaGiải thích,lần tớicó thể thay đổi hoặc thay thế tốt."
     ]
   };
 
   var STREAK_CELEBRATE = [
-    "三连对！状态来了。",
-    "厉害，连续答对！",
-    "节奏很好，保持这个手感。",
-    "连对三道，今天词汇手感不错。"
+    "họ họ đúng!tình trạngđến.",
+    "dùng để mô tả ai đó hoặc điều gì đó gây ấn tượng mạnh,Liên tiếpthường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đó!",
+    "nhịp điệuphó từ mức độ tốt,giữđại từ nàycảm giác khi chạm tay vào thứ gì đó.",
+    "họ đúng họ đường,hôm nayTừ vựngcảm giác khi chạm tay vào thứ gì đóđúng."
   ];
 
   var GREET_DEFAULTS = {
     home: [
-      "你好，我是思达。学习、练习、模考，我都在。",
-      "欢迎来到优益思达。备考路上，有事点我就行。"
+      "xin chào,tôi là chỉ theo sau bởi danh từ suy nghĩ họ.học,Luyện tập,Thi thử,tôi họ tồn tại.",
+      "chào đónđếnYYSD.chuẩn bị cho kỳ thitrên đường,bận việc gì đóđiểm tôi sau một mệnh đề giả định trong trường hợp đó hàng."
     ],
     study: [
-      "单词区到了。词汇、语法、专项词——稳扎稳打。",
-      "先学好词汇语法，模考才能稳。"
+      "Khu vực Từ vựngcuối cùng.Từ vựng,Ngữ pháp,chuyên biệtbiến thể cũ của——tiến chắc chắn và đánh mạnh trong chiến đấu.",
+      "trướcnoi gương tốtTừ vựngNgữ pháp,Thi thửtài năngổn định."
     ],
     practice: [
-      "练习区！精听、长难句、阅读卷，专项提分。",
-      "针对性练习比盲目刷题更有效，选一个开始吧。"
+      "Khu vực Luyện tập!tinh chất cười cổ đại,chiều dài khó để biến thể của,Đọccuộn lại,chuyên biệtdùng trong và phần.",
+      "tập trungLuyện tậpBỉmù quánglàm nhiều câu hỏi luyện tập để chuẩn bị cho kỳ thithay đổi hoặc thay thếhiệu quả,chọn một dùng trongBắt đầuquán bar từ mượn phục vụ đồ uống."
     ],
     mock: [
-      "真题区。剑桥真题计时练，交卷自动估 Band。",
-      "全真环境练一次，比刷十套碎片题管用。"
+      "Khu vực Đề thi thật.kiếm hai lưỡi cầuĐề thi thậtđo thời gianluyện tập,Nộp bàitự độngước lượng Band.",
+      "họ thậtMôi trườngluyện tậpđầu tiên,Bỉ chải mười che đậymảnhhọhiệu quả."
     ],
     results: [
-      "来看看战绩。每次模考都值得记录。",
-      "Band 轨迹在这，进步一目了然。"
+      "đếnxem quachiến công.mỗi lầnThi thửhọđángghi chép.",
+      "Band quỹ đạotồn tại đại từ này,tiến bộrõ ràng ngay từ cái nhìn đầu tiên thành ngữ."
     ],
     vocab: {
-      gaozhong: "高中词汇 LIST 到了。拼写和释义都要过关。",
-      cet4: "四级词汇练习。今天先稳拿一批核心词。",
-      special: "雅思专项词汇。按科目刷，效率更高。"
+      gaozhong: "trường trung học phổ thôngTừ vựng LIST cuối cùng.đánh vầnbiến thể cũ củaNghĩahọ hình thức kết hợp yêu cầuvượt qua rào cản.",
+      cet4: "cấp 4Từ vựngLuyện tập.hôm naytrướcthu lợi chắc chắnmột xác minhlõibiến thể cũ của.",
+      special: "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếchuyên biệtTừ vựng.nhấnmôn họcchải,hiệu suấtthay đổi hoặc thay thế họ."
     }
   };
 
@@ -306,19 +306,19 @@
     host = document.createElement("div");
     host.className = "yysd-mascot";
     host.setAttribute("role", "complementary");
-    host.setAttribute("aria-label", "思达学习助手");
+    host.setAttribute("aria-label", "suy nghĩ họhọctrợ lý");
     host.dataset.state = "default";
     host.innerHTML =
       '<div class="yysd-mascot__bubble" id="sida-bubble" hidden>' +
-        '<button type="button" class="yysd-mascot__min" aria-label="收起气泡">—</button>' +
-        '<button type="button" class="yysd-mascot__close" aria-label="关闭思达">×</button>' +
+        '<button type="button" class="yysd-mascot__min" aria-label="nhận dậybong bóng">—</button>' +
+        '<button type="button" class="yysd-mascot__close" aria-label="Đóngsuy nghĩ họ">×</button>' +
         '<div class="yysd-mascot__head">' +
-          '<b>思达</b><span class="yysd-mascot__streak" id="sida-streak" hidden></span>' +
+          '<b>suy nghĩ họ</b><span class="yysd-mascot__streak" id="sida-streak" hidden></span>' +
         '</div>' +
         '<p id="sida-text"></p>' +
-        '<button type="button" class="yysd-mascot__next" id="sida-next" hidden>下一步</button>' +
+        '<button type="button" class="yysd-mascot__next" id="sida-next" hidden>Bước tiếp theo</button>' +
       '</div>' +
-      '<button type="button" class="yysd-mascot__figure" id="sida-figure" aria-expanded="false" aria-label="展开思达提示">' +
+      '<button type="button" class="yysd-mascot__figure" id="sida-figure" aria-expanded="false" aria-label="mở rasuy nghĩ họGợi ý">' +
         sidaSvg("widget") +
       '</button>';
     document.body.appendChild(host);
@@ -384,7 +384,7 @@
     if (!fig) return;
     var open = !bubble.hidden;
     fig.setAttribute("aria-expanded", open ? "true" : "false");
-    fig.setAttribute("aria-label", open ? "收起思达提示" : "展开思达提示");
+    fig.setAttribute("aria-label", open ? "nhận dậy suy nghĩ họGợi ý" : "mở rasuy nghĩ họGợi ý");
   }
 
   function show(text, opts) {
@@ -441,28 +441,28 @@
     var sub = ctx.subject || "";
     if (ctx.page === "exam") {
       if (ctx.zone === "study") {
-        if (sub.indexOf("grammar") >= 0) return "语法题慢慢想，吃透一道是一道。";
-        if (sub.indexOf("vocab") >= 0) return "还在背单词？错词会自动进错题本。";
-        return pick(["词汇练习别赶，拼写和释义都要稳。", "单词区进度会保存，做完记得看错题本。"]);
+        if (sub.indexOf("grammar") >= 0) return "Ngữ pháphọchậm rãinghĩ về,ăn hình thức kết hợp thâm nhậpcùng nhaulà chỉ theo sau bởi danh từcùng nhau.";
+        if (sub.indexOf("vocab") >= 0) return "họ tồn tại biến thể củaTừ vựng?họ biến thể cũ của có thểtự độngtiến lênSổ lỗi sai.";
+        return pick(["Từ vựngLuyện tậphọ đuổi kịp,đánh vầnbiến thể cũ củaNghĩahọ hình thức kết hợp yêu cầu ổn định.", "Khu vực Từ vựngTiến độcó thểLưu,hoàn thànhnhớhiểu sai những gì nhìn hoặc đọchọ hình thức kết hợp gốc."]);
       }
       if (ctx.zone === "practice") {
-        if (sub === "jingting") return "精听卡住了？退回半速再跟一遍。";
-        if (sub === "changnanju") return "长难句先找主谓宾，别被修饰成分吓到。";
-        return "专项练习贵在坚持，再练一句？";
+        if (sub === "jingting") return "tinh chất cười cổ đạibị kẹt?trả lại một món đồmột nửa lại gót chânmột lần từ đầu đến cuối.";
+        if (sub === "changnanju") return "chiều dài khó để biến thể của trước cố gắng tìm chủ họ khách mời,họ chăntrang tríthành phầndọa đến.";
+        return "chuyên biệtLuyện tậpđắt tồn tạikiên trì,lại luyện tậpmột dòng thơ?";
       }
     }
     if (ctx.page === "zone") {
-      if (ctx.zone === "mock") return pick(["搜「剑19」「Test 1」能快速找到卷子。", "模考记得开计时，习惯真考节奏。"]);
-      if (ctx.zone === "practice") return "精听和长难句都在这，选一个专项开始。";
-      if (ctx.zone === "study") return "高中词、四级词、专项词——今天想攻哪块？";
+      if (ctx.zone === "mock") return pick(["tìm kiếm«Cambridge 19»«Test 1»họtìm thấybánh hấp.", "Thi thửnhớmở ngoại động từ hoặc nội động từđo thời gian,thói quenthật đánhnhịp điệu."]);
+      if (ctx.zone === "practice") return "tinh chất cười cổ đại biến thể cũ của chiều dài khó để biến thể của họ tồn tại đại từ này,chọn một dùng trongchuyên biệtBắt đầu.";
+      if (ctx.zone === "study") return "trường trung học phổ thôngbiến thể cũ của,cấp 4biến thể cũ của,chuyên biệtbiến thể cũ của——hôm naynghĩ về tấn công như thế nào cục?";
     }
     if (ctx.page === "vocab") {
-      if (ctx.book === "cet4") return "四级 LIST 推进中？今天记住 15 个就很棒。";
-      if (ctx.book === "special") return "专项词汇配合同科目练习，记得更牢。";
-      return "高中词汇稳扎稳打，错题本记得复习。";
+      if (ctx.book === "cet4") return "cấp 4 LIST thúc đẩyhình thức kết hợp Trung Quốc?hôm naynhớ 15 dùng trong sau một mệnh đề giả định trong trường hợp đó phó từ mức độ gậy.";
+      if (ctx.book === "special") return "chuyên biệtTừ vựngphù hợpgiốngmôn họcLuyện tập,nhớthay đổi hoặc thay thế chắc chắn.";
+      return "trường trung học phổ thôngTừ vựngtiến chắc chắn và đánh mạnh trong chiến đấu,Sổ lỗi sainhớÔn tập.";
     }
-    if (ctx.page === "results") return "可以挑一套分低的卷子，去练习区补专项。";
-    return pick(["还在吗？点我获取一条备考小贴士。", "学习·练习·模考，有事随时点我。"]);
+    if (ctx.page === "results") return "có thểgánh bằng đòn gánhbộphần thấpbánh hấp,điKhu vực Luyện tậpsửachuyên biệt.";
+    return pick(["họ tồn tại thông tục gì??điểm tôigiành đượcmột dảichuẩn bị cho kỳ thinhỏtừ mượn mẹo.", "học·Luyện tập·Thi thử,bận việc gì đóbất kỳ lúc nàođiểm tôi."]);
   }
 
   function onTap() {
@@ -499,7 +499,7 @@
     onboardActive = true;
     var nextBtn = host.querySelector("#sida-next");
     if (nextBtn) {
-      nextBtn.textContent = i >= ONBOARD_STEPS.length - 1 ? "知道了" : "下一步 (" + (i + 1) + "/" + ONBOARD_STEPS.length + ")";
+      nextBtn.textContent = i >= ONBOARD_STEPS.length - 1 ? "biết" : "Bước tiếp theo (" + (i + 1) + "/" + ONBOARD_STEPS.length + ")";
     }
     show(ONBOARD_STEPS[i], { state: i === 0 ? "wave" : "happy", pinned: true, onboard: true });
   }
@@ -527,9 +527,9 @@
     var Y = window.YYSD;
     if (!Y || !Y.touchStreak) return "";
     var s = Y.touchStreak();
-    if (s.visit >= 7) return pick(["连续 " + s.visit + " 天，你是备考钉子户！", "第 " + s.visit + " 天打卡，习惯已经养成了。"]);
-    if (s.visit >= 3) return pick(["连续 " + s.visit + " 天，保持！", "连续 " + s.visit + " 天来了，节奏很好。"]);
-    if (s.visit === 2) return "连续 2 天来了，好习惯！";
+    if (s.visit >= 7) return pick(["Liên tiếp " + s.visit + " ngày,bạn là chỉ theo sau bởi danh từchuẩn bị cho kỳ thiđinhmột hộ gia đình!", " " + s.visit + " ngàynhân viên chấm công vào hoặc ra,thói quenđãbồi dưỡng."]);
+    if (s.visit >= 3) return pick(["Liên tiếp " + s.visit + " ngày,giữ!", "Liên tiếp " + s.visit + " ngày đến,nhịp điệuphó từ mức độ tốt."]);
+    if (s.visit === 2) return "Liên tiếp 2 ngày đến,tốtthói quen!";
     return "";
   }
 
@@ -576,19 +576,19 @@
 
   function examStartLine(zone, subject, title) {
     var sub = subject || "";
-    var t = title ? "「" + title + "」" : "";
+    var t = title ? "«" + title + "»" : "";
     if (zone === "study") {
-      if (sub === "grammar") return "语法精讲" + t + "开始了，随堂小测我帮你盯。";
-      if (sub === "vocab-cet4") return "四级词汇" + t + "，拼写和释义都要过关。";
-      if (sub.indexOf("vocab-special") === 0) return "专项词汇" + t + "，结合科目记更牢。";
-      if (sub.indexOf("vocab") >= 0) return "词汇" + t + "开练，错词会自动进错题本。";
-      return pick(["学习模式启动，我陪你一道一道来。", "边学边测，不会的记下来。"]);
+      if (sub === "grammar") return "Ngữ pháptinh chất nói" + t + "Bắt đầu,họ chính sảnh nhỏ khảo sát tôi biến thể cũ của bạn nhìn chăm chú.";
+      if (sub === "vocab-cet4") return "cấp 4Từ vựng" + t + ",đánh vầnbiến thể cũ củaNghĩahọ hình thức kết hợp yêu cầuvượt qua rào cản.";
+      if (sub.indexOf("vocab-special") === 0) return "chuyên biệtTừ vựng" + t + ",kết hợpmôn họcghi chép thay đổi hoặc thay thế chắc chắn.";
+      if (sub.indexOf("vocab") >= 0) return "Từ vựng" + t + "mở ngoại động từ hoặc nội động từ luyện tập,họ biến thể cũ của có thểtự độngtiến lênSổ lỗi sai.";
+      return pick(["họcchế độkhởi động một máy,tôi đi cùng bạncùng nhaucùng nhauđến.", "bên học bên khảo sát,không có khả năngghi chépđi xuống."]);
     }
     if (zone === "practice") {
-      if (sub === "jingting") return "精听" + t + "，跟读过关要反复练，别急。";
-      if (sub === "changnanju") return "长难句" + t + "，先拆主干再对译文。";
-      if (sub === "ielts") return "阅读练习" + t + "，按题干定位，别通读全文。";
-      return "专项练习" + t + "，量变才能质变。";
+      if (sub === "jingting") return "tinh chất cười cổ đại" + t + ",gót chân dấu phẩyvượt qua rào cảnhình thức kết hợp yêu cầubiến thể củaluyện tập,họ khẩn cấp.";
+      if (sub === "changnanju") return "chiều dài khó để biến thể của" + t + ",trước xé mởthân chínhlại đúngBản dịch.";
+      if (sub === "ielts") return "ĐọcLuyện tập" + t + ",nhấn họ biến thể cũ củaVị trí,họđọc xuyên suốttoàn văn.";
+      return "chuyên biệtLuyện tập" + t + ",thay đổi về lượngtài năngthay đổi chất.";
     }
     return "";
   }
@@ -631,9 +631,9 @@
     if (d.wrongWords && d.wrongWords.length) {
       var n = d.wrongWords.length;
       show(pick([
-        "完成！有 " + n + " 个错词已收入错题本，去复习一下吧。",
-        n + " 个词进了错题本，隔天再刷一遍记得更牢。",
-        "本轮有 " + n + " 个错词，错题本已更新。"
+        "Hoàn thành!có " + n + " dùng trong họ biến thể cũ của đãthu vàoSổ lỗi sai,điÔn tậpdùng sau động từ thử xemquán bar từ mượn phục vụ đồ uống.",
+        n + " dùng trong biến thể cũ của tiến lênSổ lỗi sai,ngày hôm saulại chảimột lần từ đầu đến cuốinhớthay đổi hoặc thay thế chắc chắn.",
+        "hình thức kết hợp gốc bánh xe có " + n + " dùng trong họ biến thể cũ của,Sổ lỗi saiđãthay cũ đổi mới."
       ]), { state: "happy", ms: 6500 });
       return;
     }
@@ -642,28 +642,28 @@
 
   function onScore(d) {
     if (d.score == null || d.total == null || !d.total) {
-      show(pick(["完成了！成绩已保存。", "交卷成功，去「我的成绩」看看吧。"]), { state: "celebrate", ms: 6000 });
+      show(pick(["Hoàn thành!Kết quảđãLưu.", "Nộp bàiThành công,đi«Kết quả của tôi»xem quaquán bar từ mượn phục vụ đồ uống."]), { state: "celebrate", ms: 6000 });
       return;
     }
     var ratio = d.score / d.total;
     var s = d.score + "/" + d.total;
     if (ratio >= 0.85) {
       show(pick([
-        "太棒了！" + s + "，保持这个状态。",
-        s + "，几乎全对！可以挑战更难的内容了。",
-        s + "，漂亮！错题再过一遍就稳了。"
+        "cao nhất gậy!" + s + ",giữđại từ nàytình trạng.",
+        s + ",hầu nhưhọ đúng!có thểthử tháchthay đổi hoặc thay thế khó đểNội dung.",
+        s + ",xinh đẹp!Câu sailạimột lần từ đầu đến cuốisau một mệnh đề giả định trong trường hợp đó ổn định."
       ]), { state: "celebrate", ms: 7000 });
     } else if (ratio >= 0.6) {
       show(pick([
-        s + "，不错。看看错题再巩固一下。",
-        s + "，及格线以上了，查漏补缺还能再涨。",
-        s + "，有基础了，专项练习能再推一把。"
+        s + ",đúng.xem quaCâu sailạicủng cốdùng sau động từ thử xem.",
+        s + ",điểm hoặc vạch đạt trong một kỳ thimức đó hoặc cao hơn,họ rò rỉlấp chỗ trốnghọ họ lại tăng giá cả.",
+        s + ",cóCơ bản,chuyên biệtLuyện tậphọ lại đẩy một cầm."
       ]), { state: "happy", ms: 6500 });
     } else {
       show(pick([
-        s + "，别灰心。搞懂错题比分数更重要。",
-        s + "，先复盘错题，比急着刷下一套管用。",
-        s + "，薄弱点找到了，去练习区补专项试试。"
+        s + ",họnản lòng.làm hiểuCâu saitỷ sốđếm thay đổi hoặc thay thếquan trọng.",
+        s + ",trướcsau khi hoàn thành ván cờ chơi lại ván cờCâu sai,Bỉmột cách khẩn trươngchải xuốngbộhiệu quả.",
+        s + ",yếuđiểmtìm thấy,điKhu vực Luyện tậpsửachuyên biệtthử thử."
       ]), { state: "confused", ms: 7000 });
     }
   }
@@ -673,34 +673,34 @@
     var low = (band != null && !isNaN(band) && band < 6.5) || (ratio != null && ratio < 0.65);
     if (sub.indexOf("listening") >= 0) {
       return pick(low ? [
-        "听力：拼写和单复数是失分重灾区，精听跟读很有用。",
-        "听力：Section 4 学术词多听几遍，去练习区精听补一下。"
+        "Nghe:đánh vầnbiến thể cũ của họngôn ngữ học số nhiềulà chỉ theo sau bởi danh từ mất phầnkhu vực bị thiên tai nặng nề,tinh chất cười cổ đại gót chân dấu phẩy phó từ mức độhữu ích.",
+        "Nghe:Section 4 Học thuậtbiến thể cũ của nhiều cười cổ đại bàn nhỏ biến thể của,điKhu vực Luyện tậptinh chất cười cổ đại sửadùng sau động từ thử xem."
       ] : [
-        "听力：节奏不错，保持预判下一题题型。",
-        "听力：拼写稳住了，下次试试更高册的剑桥题。"
+        "Nghe:nhịp điệuđúng,giữdự đoánCâu sauhọ khuôn.",
+        "Nghe:đánh vầnổn định sống,lần tớithử thử thay đổi hoặc thay thế họ sách kiếm hai lưỡi cầu họ."
       ]);
     }
     if (sub.indexOf("reading") >= 0) {
       return pick(low ? [
-        "阅读：错题定位词再找一遍，别通读全文。",
-        "阅读：时间紧就先保简单题，判断/填空优先。"
+        "Đọc:Câu saiVị tríbiến thể cũ của lại cố gắng tìmmột lần từ đầu đến cuối,họđọc xuyên suốttoàn văn.",
+        "Đọc:Thời gianchặt sau một mệnh đề giả định trong trường hợp đó trước phòng thủđơn giảnhọ,Đánh giá/Điền khuyếtcó ưu tiên."
       ] : [
-        "阅读：定位准确，注意 Passage 3 的时间分配。",
-        "阅读：发挥不错，试试限时刷下一套保持手感。"
+        "Đọc:Vị tríchính xác,chú ý đến Passage 3 Thời gianphân phối.",
+        "Đọc:phát huyđúng,thử thửđặt giới hạn thời gianchải xuốngbộgiữcảm giác khi chạm tay vào thứ gì đó."
       ]);
     }
     if (sub.indexOf("writing") >= 0) {
       return pick(low ? [
-        "写作：检查段落结构和衔接词，比堆词更重要。",
-        "写作：Task 2 先列提纲再动笔，逻辑比辞藻要紧。"
+        "Viết:kiểm trađoạncấu trúcbiến thể cũ củaliên kếtbiến thể cũ của,Bỉ chất đống biến thể cũ của thay đổi hoặc thay thếquan trọng.",
+        "Viết:Task 2 trước sắp xếpdàn ýlạibắt đầu viết hoặc vẽ,logic từ mượnBỉtu từquan trọng."
       ] : [
-        "写作：结构清晰，下次试试更高阶的论证。",
-        "写作：表达稳住了，注意字数和段落均衡。"
+        "Viết:cấu trúcrõ ràng,lần tớithử thử thay đổi hoặc thay thếcấp caochứng minh một quan điểm.",
+        "Viết:diễn đạtổn định sống,chú ý đếnsố lượng ký tự viếtbiến thể cũ củađoạnbằng nhau."
       ]);
     }
     if (sub.indexOf("speaking") >= 0) {
-      return low ? "口语：流利度优先，观点展开用 because / for example 串联。"
-        : "口语：表达流畅，下次试试更复杂的话题词汇。";
+      return low ? "Nói:lưu loátvượt quacó ưu tiên,Quan điểmmở rasử dụng because / for example thiết lập mối quan hệ."
+        : "Nói:diễn đạttrôi chảy về lời nói,lần tớithử thử thay đổi hoặc thay thếphức tạpnếu đứng sau mệnh đề điều kiệndòng đề tặngchuyển tiền.";
     }
     return "";
   }
@@ -712,23 +712,23 @@
     var ratio = (d.score != null && d.total) ? d.score / d.total : null;
 
     if (band != null && !isNaN(band)) {
-      if (band >= 7.5) { line = pick(["Band " + band + "，非常出色！", "Band " + band + "，稳了！保持节奏。"]); st = "celebrate"; }
-      else if (band >= 6.5) { line = pick(["Band " + band + "，达标了。", "Band " + band + "，不错，继续巩固弱项。"]); st = "happy"; }
-      else if (band >= 5.5) { line = pick(["Band " + band + "，有进步空间。", "Band " + band + "，弱项找准了就能再涨。"]); st = "default"; }
-      else { line = pick(["Band " + band + "，别灰心，复盘比刷题重要。", "Band " + band + "，先搞懂错题，分数会跟上。"]); st = "confused"; }
+      if (band >= 7.5) { line = pick(["Band " + band + ",rấtđáng chú ý!", "Band " + band + ",ổn định!giữnhịp điệu."]); st = "celebrate"; }
+      else if (band >= 6.5) { line = pick(["Band " + band + ",đạt tiêu chuẩn đặt ra.", "Band " + band + ",đúng,Tiếp tụccủng cốđiểm yếu của một người."]); st = "happy"; }
+      else if (band >= 5.5) { line = pick(["Band " + band + ",cótiến bộkhông gian.", "Band " + band + ",điểm yếu của một ngườicố gắng tìm cho phép sau một mệnh đề giả định trong trường hợp đó họ lại tăng giá cả."]); st = "default"; }
+      else { line = pick(["Band " + band + ",họnản lòng,sau khi hoàn thành ván cờ chơi lại ván cờBỉlàm nhiều câu hỏi luyện tập để chuẩn bị cho kỳ thiquan trọng.", "Band " + band + ",trước làm hiểuCâu sai,Điểm sốcó thểtheo kịp."]); st = "confused"; }
     } else if (d.score != null && d.total) {
-      line = d.score + "/" + d.total + " 完成。";
-      if (ratio >= 0.85) { line += pick([" 表现很好！", " 接近满分手感！"]); st = "celebrate"; }
-      else if (ratio >= 0.6) { line += pick([" 不错，继续巩固。", " 有基础，专项还能再推。"]); st = "happy"; }
-      else { line += pick([" 看看错题解析。", " 去练习区补一下薄弱项。"]); st = "confused"; }
+      line = d.score + "/" + d.total + " Hoàn thành.";
+      if (ratio >= 0.85) { line += pick([" thể hiệnphó từ mức độ tốt!", " tiếp cậnđiểm tối đacảm giác khi chạm tay vào thứ gì đó!"]); st = "celebrate"; }
+      else if (ratio >= 0.6) { line += pick([" đúng,Tiếp tụccủng cố.", " cóCơ bản,chuyên biệthọ họ lại đẩy."]); st = "happy"; }
+      else { line += pick([" xem quaCâu saiGiải thích.", " điKhu vực Luyện tậpsửadùng sau động từ thử xemyếuhọ."]); st = "confused"; }
     } else {
-      line = pick(["模考完成，成绩已保存。", "交卷成功！去「我的成绩」看详情。"]);
+      line = pick(["Thi thửHoàn thành,Kết quảđãLưu.", "Nộp bàiThành công!đi«Kết quả của tôi»chăm sócChi tiết."]);
       st = "celebrate";
     }
 
     tip = mockSkillTip(d, band, ratio);
     if (tip) line += " " + tip;
-    else line += pick([" 去「我的成绩」查看详情。", " 成绩在「我的成绩」里，随时能复盘。"]);
+    else line += pick([" đi«Kết quả của tôi»XemChi tiết.", " Kết quảtồn tại«Kết quả của tôi»biến thể của,bất kỳ lúc nàohọsau khi hoàn thành ván cờ chơi lại ván cờ."]);
 
     show(line, { state: st, ms: 10000 });
   }
@@ -737,15 +737,15 @@
     if (examZone === "mock") return;
     if (level === "danger") {
       show(pick([
-        "时间不多了！抓紧检查答题卡。",
-        "最后 1 分钟！没写的先猜上，别留空。",
-        "快交卷了，确认题号有没有涂错行。"
+        "Thời giankhông nhiều!nắm chắckiểm trahình thức gắn liền có nghĩa giống như từ tự do họ dừng.",
+        "cuối cùng 1 phút!tiền tố phủ định cho động từ chưa viết trước đoán dùng trong,họchừa trống trong tài liệu.",
+        "Nộp bài,Xác nhậnhọ gầmtrước danh từ Có bạnbôi sơn họ hàng."
       ]), { state: "panic", ms: 5000 });
     } else if (level === "low") {
       show(pick([
-        "还剩不到 5 分钟，留意一下节奏。",
-        "时间偏紧，优先做有把握的题目。",
-        "5 分钟倒计时，阅读题别在一道难题上耗太久。"
+        "họ còn lạikhông đến 5 phút,chú ýdùng sau động từ thử xemnhịp điệu.",
+        "Thời giannghiêng chặt,có ưu tiênlàm cónắm bắt cũng nghĩa bóngĐề bài.",
+        "5 phútĐếm ngược,Đọchọ họ tồn tạicùng nhauvấn đề khódùng trong lãng phí cao nhất thời gian dài."
       ]), { state: "confused", ms: 4500 });
     }
   }

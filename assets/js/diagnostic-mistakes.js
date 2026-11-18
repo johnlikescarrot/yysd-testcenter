@@ -8,15 +8,15 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   var TYPE_LABEL = {
-    listening_choice: "听音选词",
-    english_to_chinese: "看英选中",
-    chinese_to_english: "看中选英",
-    spelling: "拼写填空"
+    listening_choice: "cười cổ đại âm thanh chọn biến thể cũ của",
+    english_to_chinese: "chăm sóc Anh nướclựa chọn",
+    chinese_to_english: "thíchchọn Anh nước",
+    spelling: "đánh vầnĐiền khuyết"
   };
   var LEVEL_NAME = {
-    high_school: "高中词汇",
-    cet4: "四级词汇",
-    ielts: "雅思词汇"
+    high_school: "trường trung học phổ thôngTừ vựng",
+    cet4: "cấp 4Từ vựng",
+    ielts: "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếTừ vựng"
   };
 
   var mistakes = [];
@@ -38,7 +38,7 @@
 
   if (!A || !A.getToken || !A.getToken()) {
     contentEl.innerHTML =
-      '<div class="diag-card"><p class="diag-lead">请先登录</p><a class="btn btn--primary" href="login.html">去登录</a></div>';
+      '<div class="diag-card"><p class="diag-lead">mời trướcĐăng nhập</p><a class="btn btn--primary" href="login.html">điĐăng nhập</a></div>';
     return;
   }
 
@@ -71,9 +71,9 @@
           " · " +
           esc(TYPE_LABEL[m.question_type] || m.question_type) +
           "</div>" +
-          '<div>你的答案：<span class="diag-ua">' +
-          esc(m.user_answer || "（空）") +
-          '</span> · 正确：<span class="diag-ca">' +
+          '<div>bạnĐáp án:<span class="diag-ua">' +
+          esc(m.user_answer || "(trống không)") +
+          '</span> · Đúng:<span class="diag-ca">' +
           esc(m.correct_answer) +
           "</span></div></div></li>"
         );
@@ -82,23 +82,23 @@
 
     contentEl.innerHTML =
       '<div class="diag-card">' +
-      "<h1>诊断错题本</h1>" +
-      '<p class="diag-lead">来自能力诊断的错题；重练答对后自动移出。</p>' +
+      "<h1>chẩn đoánSổ lỗi sai</h1>" +
+      '<p class="diag-lead">đến từ một nơiNăng lựcchẩn đoánCâu sai;lặp lại luyện tậpthường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đóhọtự độngdi chuyển đi ra.</p>' +
       '<div class="diag-mistakes-toolbar">' +
-      '<select id="filt-level"><option value="">全部词库</option>' +
-      '<option value="high_school">高中</option><option value="cet4">四级</option><option value="ielts">雅思</option></select>' +
-      '<select id="filt-type"><option value="">全部题型</option>' +
-      '<option value="listening_choice">听音选词</option>' +
-      '<option value="english_to_chinese">看英选中</option>' +
-      '<option value="chinese_to_english">看中选英</option>' +
-      '<option value="spelling">拼写填空</option></select>' +
-      '<button type="button" class="btn btn--ghost btn--sm" id="btn-filter">筛选</button>' +
-      '<button type="button" class="btn btn--primary btn--sm" id="btn-retest">重练选中</button>' +
-      '<a class="btn btn--ghost btn--sm" href="diagnostic.html">去诊断</a>' +
+      '<select id="filt-level"><option value="">Tất cảkho từ</option>' +
+      '<option value="high_school">trường trung học phổ thông</option><option value="cet4">cấp 4</option><option value="ielts">IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế</option></select>' +
+      '<select id="filt-type"><option value="">Tất cảhọ khuôn</option>' +
+      '<option value="listening_choice">cười cổ đại âm thanh chọn biến thể cũ của</option>' +
+      '<option value="english_to_chinese">chăm sóc Anh nướclựa chọn</option>' +
+      '<option value="chinese_to_english">thíchchọn Anh nước</option>' +
+      '<option value="spelling">đánh vầnĐiền khuyết</option></select>' +
+      '<button type="button" class="btn btn--ghost btn--sm" id="btn-filter">Lọc</button>' +
+      '<button type="button" class="btn btn--primary btn--sm" id="btn-retest">lặp lại luyện tậplựa chọn</button>' +
+      '<a class="btn btn--ghost btn--sm" href="diagnostic.html">đichẩn đoán</a>' +
       "</div>" +
       (mistakes.length
         ? '<ul class="diag-mist-list">' + rows + "</ul>"
-        : '<p class="diag-lead">暂无错题。</p>') +
+        : '<p class="diag-lead">tạm thời không cóCâu sai.</p>') +
       '<p class="diag-msg" id="mist-err" hidden></p></div>';
 
     document.getElementById("btn-filter").addEventListener("click", function () {
@@ -121,14 +121,14 @@
       ids.push(Number(cb.value));
     });
     if (!ids.length) {
-      showErr(new Error("请先勾选错题"));
+      showErr(new Error("mời trướcchọn một hoặc nhiều lựa chọn từ danh sáchCâu sai"));
       return;
     }
     A.api("/api/diagnostic/mistakes/retest", { method: "POST", body: { ids: ids } })
       .then(function (d) {
         retestQs = d.questions || [];
         retestIdx = 0;
-        if (!retestQs.length) throw new Error("无法生成重练题");
+        if (!retestQs.length) throw new Error("không thểtạo ralặp lại luyện tập họ");
         renderRetest();
       })
       .catch(showErr);
@@ -137,8 +137,8 @@
   function renderRetest() {
     if (retestIdx >= retestQs.length) {
       contentEl.innerHTML =
-        '<div class="diag-card"><h1>重练完成</h1><p class="diag-lead">答对的题目已移出错题本。</p>' +
-        '<div class="diag-actions"><button type="button" class="btn btn--primary" id="back-list">返回错题本</button></div></div>';
+        '<div class="diag-card"><h1>lặp lại luyện tậpHoàn thành</h1><p class="diag-lead">thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đóĐề bàiđã di chuyểnmắc lỗihọ hình thức kết hợp gốc.</p>' +
+        '<div class="diag-actions"><button type="button" class="btn btn--primary" id="back-list">Quay lạiSổ lỗi sai</button></div></div>';
       document.getElementById("back-list").addEventListener("click", function () {
         loadList().catch(showErr);
       });
@@ -172,7 +172,7 @@
 
     contentEl.innerHTML =
       '<div class="diag-card">' +
-      "<h1>错题重练 " +
+      "<h1>Câu sailặp lại luyện tập " +
       (retestIdx + 1) +
       "/" +
       retestQs.length +
@@ -180,8 +180,8 @@
       body +
       '<div class="diag-feedback" id="rt-fb"></div>' +
       '<div class="diag-actions">' +
-      '<button type="button" class="btn btn--primary" id="rt-submit">提交</button>' +
-      '<button type="button" class="btn btn--ghost" id="rt-next" hidden>下一题</button>' +
+      '<button type="button" class="btn btn--primary" id="rt-submit">Nộp bài</button>' +
+      '<button type="button" class="btn btn--ghost" id="rt-next" hidden>Câu sau</button>' +
       "</div></div>";
 
     var play = document.getElementById("rt-play");
@@ -232,8 +232,8 @@
       var fb = document.getElementById("rt-fb");
       fb.className = "diag-feedback is-visible " + (d.is_correct ? "is-ok" : "is-bad");
       fb.innerHTML = d.is_correct
-        ? "✓ 正确" + (d.removed ? " · 已移出错题本" : "")
-        : "✗ 错误。正确答案：<strong>" + esc(d.correct_answer) + "</strong>";
+        ? "✓ Đúng" + (d.removed ? " · đã di chuyểnmắc lỗihọ hình thức kết hợp gốc" : "")
+        : "✗ Lỗi.Đáp án đúng: <strong>" + esc(d.correct_answer) + "</strong>";
       document.getElementById("rt-submit").hidden = true;
       var next = document.getElementById("rt-next");
       next.hidden = false;

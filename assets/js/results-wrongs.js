@@ -1,5 +1,5 @@
 /* =========================================================================
-   results-wrongs.js — 我的成绩 · 错题行动区
+   results-wrongs.js — Kết quả của tôi · Câu saihoạt độnghọ
    ========================================================================= */
 (function () {
   "use strict";
@@ -130,7 +130,7 @@
         mockMap[mk].wrongN += wrongCount(a);
         if (!mockMap[mk].date || String(a.date) > String(mockMap[mk].date)) mockMap[mk].date = a.date;
         var base = suiteBase(a.id);
-        mockMap[mk].title = (a.title || base).replace(/（听力）|（阅读）|（写作）/g, "").trim() || base;
+        mockMap[mk].title = (a.title || base).replace(/(Nghe)|(Đọc)|(Viết)/g, "").trim() || base;
         return;
       }
       if (a.subject === "cambridge-listening") listening.push(a);
@@ -161,10 +161,10 @@
       '<span class="wrong-hub-row__main">' +
         "<b>" + esc(a.title || a.id) + "</b>" +
         '<span class="wrong-hub-row__meta">' + esc(fmtDate(a.date)) +
-          (a.assignmentEventId ? " · 作业" : "") +
+          (a.assignmentEventId ? " · Bài tập" : "") +
         "</span>" +
       "</span>" +
-      '<span class="wrong-hub-row__stat">错 ' + n + " 题</span>" +
+      '<span class="wrong-hub-row__stat">họ ' + n + " họ</span>" +
       '<span class="wrong-hub-row__go" aria-hidden="true">›</span>' +
     "</a>";
   }
@@ -172,13 +172,13 @@
   function mockRowHTML(g) {
     return '<a class="wrong-hub-row" href="' + esc(mockHref(g)) + '">' +
       '<span class="wrong-hub-row__main">' +
-        "<b>" + esc(g.title || "雅思模考") + "</b>" +
+        "<b>" + esc(g.title || "IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếThi thử") + "</b>" +
         '<span class="wrong-hub-row__meta">' + esc(fmtDate(g.date)) +
-          (g.assignmentEventId ? " · 作业" : "") +
-          " · 听+读" +
+          (g.assignmentEventId ? " · Bài tập" : "") +
+          " · cười cổ đại+dấu phẩy" +
         "</span>" +
       "</span>" +
-      '<span class="wrong-hub-row__stat">错 ' + g.wrongN + " 题</span>" +
+      '<span class="wrong-hub-row__stat">họ ' + g.wrongN + " họ</span>" +
       '<span class="wrong-hub-row__go" aria-hidden="true">›</span>' +
     "</a>";
   }
@@ -252,14 +252,14 @@
       a.className = "btn btn--ghost btn--sm";
       a.setAttribute("data-wrong-link", "");
       a.href = "wrong-record.html?item=" + encodeURIComponent(id);
-      a.textContent = "错题";
+      a.textContent = "Câu sai";
       disabled.replaceWith(a);
     });
   }
 
   function panelListHTML(key, b, empty) {
     var cta = '<p class="wrong-hub-empty">' + esc(empty) +
-      ' <a href="zone.html?zone=mock">去练一套</a></p>';
+      ' <a href="zone.html?zone=mock">đi luyện tậpbộ</a></p>';
     if (key === "listening") {
       return b.listening.length ? b.listening.map(rowHTML).join("") : cta;
     }
@@ -300,8 +300,8 @@
       ? attempts.filter(function (a) { return !!a.assignmentEventId; })
       : attempts;
     var b = bucket(filtered);
-    var emptyHw = "还没有作业错题。完成老师布置的听力/阅读后会出现在这里。";
-    var emptyAll = "还没有练习错题记录。交卷后错题会自动收录。";
+    var emptyHw = "họkhông cóBài tậpCâu sai.Hoàn thànhGiáo viênsắp xếpNghe/Đọchọ có thểxuất hiệntồn tạibiến thể của.";
+    var emptyAll = "họkhông cóLuyện tậpCâu saighi chép.Nộp bàihọCâu saicó thểtự độngbao gồm trong một bộ sưu tập.";
     var empty = assignmentOnly ? emptyHw : emptyAll;
 
     var lN = totalWrongItems(b.listening, false);
@@ -313,24 +313,24 @@
     activePanel = pickDefaultPanel(b);
 
     root.innerHTML =
-      '<div class="wrong-hub results-panel premium-enter" aria-label="错题记录">' +
+      '<div class="wrong-hub results-panel premium-enter" aria-label="Câu saighi chép">' +
         '<div class="wrong-hub__head">' +
           "<div>" +
             '<span class="wrong-hub__eyebrow">WRONG ANSWERS</span>' +
-            "<h2>错题记录</h2>" +
+            "<h2>Câu saighi chép</h2>" +
           "</div>" +
-          '<div class="results-seg" role="group" aria-label="错题范围">' +
-            '<button type="button" class="results-seg__btn' + (assignmentOnly ? " is-active" : "") + '" data-seg="hw">作业</button>' +
-            '<button type="button" class="results-seg__btn' + (!assignmentOnly ? " is-active" : "") + '" data-seg="all">全部</button>' +
+          '<div class="results-seg" role="group" aria-label="Câu saiphạm vi">' +
+            '<button type="button" class="results-seg__btn' + (assignmentOnly ? " is-active" : "") + '" data-seg="hw">Bài tập</button>' +
+            '<button type="button" class="results-seg__btn' + (!assignmentOnly ? " is-active" : "") + '" data-seg="all">Tất cả</button>' +
           "</div>" +
         "</div>" +
         '<div class="wrong-stats">' +
           '<button type="button" class="wrong-stat' + (activePanel === "listening" ? " is-active" : "") + '" data-panel="listening">' +
-            "<b>" + lN + "</b><span>听力</span></button>" +
+            "<b>" + lN + "</b><span>Nghe</span></button>" +
           '<button type="button" class="wrong-stat' + (activePanel === "reading" ? " is-active" : "") + '" data-panel="reading">' +
-            "<b>" + rN + "</b><span>阅读</span></button>" +
+            "<b>" + rN + "</b><span>Đọc</span></button>" +
           '<button type="button" class="wrong-stat' + (activePanel === "mock" ? " is-active" : "") + '" data-panel="mock">' +
-            "<b>" + mN + "</b><span>模考</span></button>" +
+            "<b>" + mN + "</b><span>Thi thử</span></button>" +
         "</div>" +
         '<div class="wrong-hub-list" data-panel-body>' + panelListHTML(activePanel, b, empty) + "</div>" +
       "</div>";
@@ -341,7 +341,7 @@
   }
 
   function load() {
-    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>加载错题记录…</div>';
+    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>TảiCâu saighi chép…</div>';
     var local = localAttempts();
     var p = AUTH && AUTH.fetchScoreAttempts
       ? AUTH.fetchScoreAttempts({ assignmentOnly: false, limit: 150 })

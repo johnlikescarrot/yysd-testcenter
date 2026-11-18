@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm.js — Hub / 钉点地图 / 图鉴（第 2 期）
+   word-realm.js — Hub / cái đinh điểmbản đồ / sách hướng dẫn minh họa( 2 biến thể của)
    ========================================================================= */
 (function () {
   "use strict";
@@ -9,7 +9,7 @@
   var CORE = window.YYSD_WORD_REALM;
   var SFX = window.YYSD_WORD_REALM_SFX;
   var A = window.YYSD_AUTH;
-  // 仅优益思达总部站可见；租户深链直接打回单词区
+  // hầu nhưYYSDtrụ sở chínhtrạmcó thể thấy rõ rằng điều này đúng;người thuêbiến thể cũ của dây xíchtrực tiếptá từ mượnbiên laibiến thể cũ của họ
   if (!A || !A.canWordRealm || !A.canWordRealm()) {
     location.replace("zone.html?zone=study&s=vocab");
     return;
@@ -32,7 +32,7 @@
     var v = (params.get("view") || "").trim();
     if (v === "map" || v === "codex" || v === "hub" || v === "dream" || v === "lore" ||
         v === "vn" || v === "clear") return v;
-    // 从战斗返回常带 region=：直接落地图
+    // biến thể củachiến đấuQuay lạihọ dải region=:trực tiếprơi xuống đấtsơ đồ
     if ((params.get("region") || "").trim()) return "map";
     return "hub";
   }
@@ -92,7 +92,7 @@
       try { r = localStorage.getItem("yysd:word-realm-region") || "mist"; }
       catch (e) { r = "mist"; }
     }
-    // pilot：非雾原章节一律回落 mist
+    // pilot:viết tắt của sương mù họchươnggiống nhaurơi xuống mist
     if (!CORE.regionUnlocked(r)) r = "mist";
     return r;
   }
@@ -169,7 +169,7 @@
   }
 
   function shrineBeat(shrine) {
-    return STORY.shrineBeat(shrine.region, shrine.index, "远征祠 " + shrine.index);
+    return STORY.shrineBeat(shrine.region, shrine.index, "cuộc viễn chinhnhà thờ " + shrine.index);
   }
 
   function unlockedFragments(doneCount) {
@@ -200,19 +200,19 @@
       var done = cleared >= total;
       var cls = "wr-saga__ch" + (open ? " is-open" : " is-locked") + (done ? " is-done" : "");
       return '<article class="' + cls + '">' +
-        '<p class="wr-kicker">' + (open ? (done ? "已通关" : "进行中") : "未解锁") + "</p>" +
+        '<p class="wr-kicker">' + (open ? (done ? "đãthông quan" : "Đang thực hiện") : "chưa được giải quyết vấn đềkhóa") + "</p>" +
         "<h3>" + esc(ch.title) + "</h3>" +
-        "<p>" + esc(open ? ch.summary : "击败前一章 Boss 后开启。") + "</p>" +
+        "<p>" + esc(open ? ch.summary : "đánh bạitrước một họ Boss họmở.") + "</p>" +
         (open
           ? ('<span class="wr-saga__prog">' + cleared + "/" + total + "</span>")
-          : '<span class="wr-saga__lock">锁定</span>') +
+          : '<span class="wr-saga__lock">khóa cửa</span>') +
         "</article>";
     }).join("");
-    return '<section class="wr-saga" aria-label="史诗六章">' +
-      '<p class="wr-kicker">词境史诗 · 六章</p>' +
-      "<h2>远征卷宗</h2>" +
-      '<p class="wr-saga__lead">从晨雾到遗忘王座——点亮 ' + doneCount + "/" +
-        (CORE.shrineTotal ? CORE.shrineTotal() : 48) + " 座祠。</p>" +
+    return '<section class="wr-saga" aria-label="một bản anh hùng casáu họ">' +
+      '<p class="wr-kicker">biến thể cũ của biên giớimột bản anh hùng ca · sáu họ</p>' +
+      "<h2>cuộc viễn chinhhồ sơ</h2>" +
+      '<p class="wr-saga__lead">biến thể của buổi sáng sương mù đếnQuênngai vàng——thắp sáng ' + doneCount + "/" +
+        (CORE.shrineTotal ? CORE.shrineTotal() : 48) + " chỗ ngồi nhà thờ.</p>" +
       '<div class="wr-saga__grid">' + cards + "</div></section>";
   }
 
@@ -223,18 +223,18 @@
   function topChrome(snap, active) {
     var muteOn = SFX && SFX.muted();
     return '<header class="wr-top">' +
-      '<a class="wr-back" href="zone.html?zone=study&s=vocab">← 离开词境</a>' +
-      '<div class="wr-brand"><span>词境远征</span><em>Hub · Map · Codex</em></div>' +
+      '<a class="wr-back" href="zone.html?zone=study&s=vocab">← rời khỏibiến thể cũ của biên giới</a>' +
+      '<div class="wr-brand"><span>biến thể cũ của biên giớicuộc viễn chinh</span><em>Hub · Map · Codex</em></div>' +
       '<div class="wr-top__right">' +
         '<button type="button" class="wr-mute" id="wr-mute" aria-pressed="' + (muteOn ? "true" : "false") + '">' +
-          (muteOn ? "声音：关" : "声音：开") + "</button>" +
+          (muteOn ? "giọng:họ" : "giọng:mở ngoại động từ hoặc nội động từ") + "</button>" +
         '<div class="wr-lv">Lv.' + snap.level + " · " + esc(snap.title) + "</div>" +
       "</div>" +
     "</header>" +
-    '<nav class="wr-tabs" aria-label="远征导航">' +
-      '<a class="wr-tab' + (active === "hub" ? " is-on" : "") + '" href="' + hrefView("hub") + '">营地</a>' +
-      '<a class="wr-tab' + (active === "map" ? " is-on" : "") + '" href="' + hrefView("map", regionParam()) + '">地图</a>' +
-      '<a class="wr-tab' + (active === "codex" ? " is-on" : "") + '" href="' + hrefView("codex") + '">图鉴</a>' +
+    '<nav class="wr-tabs" aria-label="cuộc viễn chinhnghĩa đen và bóng điều hướng">' +
+      '<a class="wr-tab' + (active === "hub" ? " is-on" : "") + '" href="' + hrefView("hub") + '">trại</a>' +
+      '<a class="wr-tab' + (active === "map" ? " is-on" : "") + '" href="' + hrefView("map", regionParam()) + '">bản đồ</a>' +
+      '<a class="wr-tab' + (active === "codex" ? " is-on" : "") + '" href="' + hrefView("codex") + '">sách hướng dẫn minh họa</a>' +
     "</nav>";
   }
 
@@ -244,26 +244,26 @@
     btn.onclick = function () {
       SFX.setMuted(!SFX.muted());
       if (SFX) SFX.ui();
-      btn.textContent = SFX.muted() ? "声音：关" : "声音：开";
+      btn.textContent = SFX.muted() ? "giọng:họ" : "giọng:mở ngoại động từ hoặc nội động từ";
       btn.setAttribute("aria-pressed", SFX.muted() ? "true" : "false");
     };
   }
 
   function boardHTML(snap) {
-    // ponytail: 本地周榜占位——用本周 XP 生成稳定伪对手，不接服务器
+    // ponytail: địa phươnghọ thông báo hoặc thông tri biến thể của vị trí——sử dụng hình thức kết hợp gốc họ XP tạo ravững vànggiảđối thủ,không nhậnmáy chủ máy tính
     var me = snap.weekXp || 0;
     var ghosts = [
-      { name: "雾原学徒", xp: Math.max(0, me - 12) },
-      { name: "石语行者", xp: Math.max(8, Math.round(me * 0.7) + 5) },
-      { name: "潮声书记", xp: Math.max(0, me - 3) }
+      { name: "sương mù họngười học việc", xp: Math.max(0, me - 12) },
+      { name: "họ phương ngữngười đi bộ", xp: Math.max(8, Math.round(me * 0.7) + 5) },
+      { name: "thuỷ triều âm thanh viết tắt của ghi chép", xp: Math.max(0, me - 3) }
     ];
-    var rows = [{ name: "我（勇者）", xp: me, me: true }].concat(ghosts);
+    var rows = [{ name: "tôi(dũng cảm)", xp: me, me: true }].concat(ghosts);
     rows.sort(function (a, b) { return b.xp - a.xp; });
     return '<ol class="wr-board">' + rows.map(function (r, i) {
       return '<li class="' + (r.me ? "is-me" : "") + '">' +
         '<span><em>' + (i + 1) + "</em> " + esc(r.name) + "</span><b>" + r.xp + " XP</b></li>";
     }).join("") +
-      '<li class="wr-board__soon"><span>同机构实时榜</span><em>即将开放</em></li></ol>';
+      '<li class="wr-board__soon"><span>giốngcơ chếtheo thời gian thựcthông báo hoặc thông tri</span><em>sắpnở hoa</em></li></ol>';
   }
 
   function saveVnFlags(flags) {
@@ -338,30 +338,30 @@
     markCh1Settle();
     var snap = RPG.snapshot();
     var ch = STORY.chapterOfRegion ? STORY.chapterOfRegion("mist") : (STORY.chapters && STORY.chapters[0]);
-    var ella = (STORY.cast && STORY.cast.ella) || { name: "艾拉" };
+    var ella = (STORY.cast && STORY.cast.ella) || { name: "họ kéo" };
     root.innerHTML =
       topChrome(snap, "hub") +
-      '<section class="wr-clear" aria-label="第一章通关">' +
+      '<section class="wr-clear" aria-label="đầu tiênhọthông quan">' +
         '<p class="wr-kicker">Chapter I · Cleared</p>' +
-        "<h1>" + esc(ch ? ch.title : "第一章") + "</h1>" +
+        "<h1>" + esc(ch ? ch.title : "đầu tiênhọ") + "</h1>" +
         '<p class="wr-clear__en">Those Who Remember Names</p>' +
         '<div class="wr-clear__stats">' +
-          '<div class="wr-stat"><span>等级</span><b>Lv.' + snap.level + "</b></div>" +
-          '<div class="wr-stat"><span>称号</span><b>' + esc(snap.title) + "</b></div>" +
-          '<div class="wr-stat"><span>记忆之力</span><b>' + snap.totalXp + "</b></div>" +
-          '<div class="wr-stat"><span>点亮祠</span><b>' + CORE.clearedCount() + "/" +
+          '<div class="wr-stat"><span>Cấp độ</span><b>Lv.' + snap.level + "</b></div>" +
+          '<div class="wr-stat"><span>tên</span><b>' + esc(snap.title) + "</b></div>" +
+          '<div class="wr-stat"><span>Ghi nhớhọ</span><b>' + snap.totalXp + "</b></div>" +
+          '<div class="wr-stat"><span>thắp sángnhà thờ</span><b>' + CORE.clearedCount() + "/" +
             (CORE.shrineTotal ? CORE.shrineTotal() : 48) + "</b></div>" +
         "</div>" +
         '<div class="wr-clear__ella">' +
           portraitHTML(ella.portrait, "✎", "wr-ella__face") +
-          '<div><p class="wr-kicker">书吏艾拉 · 记事</p>' +
-          "<p>「第一章完。雾原记得你们的名字了。东边的路还在雾里——先回营地休整，下一章开放时我会叫醒你。」</p></div>" +
+          '<div><p class="wr-kicker">viết tắt của quan chức hoặc nhân viên chính phủ nhỏ cổ họ kéo · ghi chép sự kiện</p>' +
+          "<p>«đầu tiênhọ hoàn thành.sương mù họnhớcác bạn số nhiềutên của người hoặc vật.hướng đônghọ họ tồn tại sương mù biến thể của——trước xoay vòngtrạinghỉ ngơi và tái tổ chức quân đội,xuống một họnở hoabiến thể cũ của tôi có thểđánh thứcbạn.»</p></div>" +
         "</div>" +
-        '<p class="wr-clear__lead">第一章通关 · 雾原试玩</p>' +
+        '<p class="wr-clear__lead">đầu tiênhọthông quan · sương mù họthử chơi một trò chơi</p>' +
         '<div class="wr-clear__actions">' +
-          '<a class="wr-btn wr-btn--gold" href="' + hrefView("hub") + '">回营地 ›</a>' +
-          '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", "mist") + '">再巡雾原</a>' +
-          '<button type="button" class="wr-btn wr-btn--ghost" id="wr-clear-replay">重看通关演出</button>' +
+          '<a class="wr-btn wr-btn--gold" href="' + hrefView("hub") + '">xoay vòngtrại ›</a>' +
+          '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", "mist") + '">lại tuần tra sương mù họ</a>' +
+          '<button type="button" class="wr-btn wr-btn--ghost" id="wr-clear-replay">lặp lại chăm sócthông quandiễn trong một vở kịch</button>' +
         "</div>" +
       "</section>";
     bindMute();
@@ -380,7 +380,7 @@
     var pitch = (STORY.chronicle && STORY.chronicle.pitch) || "";
     var volHTML = vols.map(function (v) {
       return '<article class="wr-lore-card">' +
-        '<p class="wr-kicker">编年</p>' +
+        '<p class="wr-kicker">dệt họ</p>' +
         "<h2>" + esc(v.title) + "</h2>" +
         proseHTML(v.body) +
         "</article>";
@@ -389,10 +389,10 @@
       topChrome(snap, "codex") +
       '<section class="wr-lore">' +
         '<header class="wr-codex__head">' +
-          "<h1>" + esc(STORY.sagaTitle || "词境编年") + "</h1>" +
+          "<h1>" + esc(STORY.sagaTitle || "biến thể cũ của biên giới dệt họ") + "</h1>" +
           "<p>" + esc(pitch) + "</p>" +
-          '<p><a class="wr-btn wr-btn--ghost" href="' + hrefView("codex") + '">← 回图鉴</a> ' +
-          '<button type="button" class="wr-btn wr-btn--gold" id="wr-replay-pro">重看序章演出</button></p>' +
+          '<p><a class="wr-btn wr-btn--ghost" href="' + hrefView("codex") + '">← xoay vòngsách hướng dẫn minh họa</a> ' +
+          '<button type="button" class="wr-btn wr-btn--gold" id="wr-replay-pro">lặp lại chăm sóclời mở đầudiễn trong một vở kịch</button></p>' +
         "</header>" +
         volHTML +
       "</section>";
@@ -418,7 +418,7 @@
     var doneCount = CORE.clearedCount();
     var frags = unlockedFragments(doneCount);
     var mentor = STORY.mentorLines[doneCount % STORY.mentorLines.length];
-    var hero = (STORY.cast && STORY.cast.hero) || { name: "词之勇者", role: "宿主", blurb: "" };
+    var hero = (STORY.cast && STORY.cast.hero) || { name: "biến thể cũ của dũng cảm", role: "sinh học vật chủ", blurb: "" };
     var ella = (STORY.cast && STORY.cast.ella) || null;
     var stats = lex.stats || {};
     var nextHref = cur ? lessonHref(cur.shrine.id) : hrefView("map", "mist");
@@ -441,18 +441,18 @@
       ? ("Quest · " + (chapter.questLine || chapter.summary) +
         " · " + (chapter.recLevel || "—") +
         (chapter.region === "mist" && !mistDone
-          ? (" · 进度 " + mistLit + "/8")
+          ? (" · Tiến độ " + mistLit + "/8")
           : ""))
       : "";
     var settleBanner = mistDone
       ? ('<section class="wr-clear-banner">' +
           '<p class="wr-kicker">Chapter I · Cleared</p>' +
-          "<h2>第一章通关 · 雾原试玩</h2>" +
-          "<p>晨雾已肃清。后续章节尚未开放——先在修炼场保持剑感，或重巡雾原。</p>" +
-          '<a class="wr-btn wr-btn--gold" href="' + hrefView("map", "mist") + '">再巡雾原 ›</a>' +
+          "<h2>đầu tiênhọthông quan · sương mù họthử chơi một trò chơi</h2>" +
+          "<p>buổi sáng sương mù đãthanh trừng.theo sauchươngchưanở hoa——trước tồn tạiđạo sĩ tu luyện khổ hạnhsân phơigiữkiếm hai lưỡi cảm thấy,có thể lặp lại tuần tra sương mù họ.</p>" +
+          '<a class="wr-btn wr-btn--gold" href="' + hrefView("map", "mist") + '">lại tuần tra sương mù họ ›</a>' +
           (seenCh1Settle()
-            ? (' <a class="wr-btn wr-btn--ghost" href="' + hrefView("clear") + '">重看结算</a>')
-            : (' <a class="wr-btn wr-btn--ghost" href="' + hrefView("clear") + '">领取通关结算 ›</a>')) +
+            ? (' <a class="wr-btn wr-btn--ghost" href="' + hrefView("clear") + '">lặp lại chăm sócthanh toán</a>')
+            : (' <a class="wr-btn wr-btn--ghost" href="' + hrefView("clear") + '">nhậnthông quanthanh toán ›</a>')) +
         "</section>")
       : "";
 
@@ -462,92 +462,92 @@
         '<div class="wr-hero-card">' +
           portraitHTML(hero.portrait, "✦", "wr-hero-art") +
           '<div class="wr-hero-body">' +
-            '<p class="wr-kicker">' + esc(hero.role) + " · 营地</p>" +
+            '<p class="wr-kicker">' + esc(hero.role) + " · trại</p>" +
             "<h1>" + esc(hero.name) + "</h1>" +
             "<p>" + esc(hero.blurb) + "</p>" +
             '<div class="wr-stat-row">' +
-              '<div class="wr-stat"><span>等级</span><b>Lv.' + snap.level + "</b></div>" +
-              '<div class="wr-stat"><span>称号</span><b>' + esc(snap.title) + "</b></div>" +
-              '<div class="wr-stat"><span>记忆之力</span><b>' + snap.totalXp + "</b></div>" +
-              '<div class="wr-stat"><span>点亮祠</span><b>' + doneCount + "/" +
+              '<div class="wr-stat"><span>Cấp độ</span><b>Lv.' + snap.level + "</b></div>" +
+              '<div class="wr-stat"><span>tên</span><b>' + esc(snap.title) + "</b></div>" +
+              '<div class="wr-stat"><span>Ghi nhớhọ</span><b>' + snap.totalXp + "</b></div>" +
+              '<div class="wr-stat"><span>thắp sángnhà thờ</span><b>' + doneCount + "/" +
                 (CORE.shrineTotal ? CORE.shrineTotal() : 48) + "</b></div>" +
             "</div>" +
             '<div class="wr-xp"><i style="width:' + snap.pct + '%"></i></div>' +
-            '<p class="wr-xp__txt">' + snap.into + " / " + snap.need + " · 本周 " + snap.weekXp + " XP</p>" +
+            '<p class="wr-xp__txt">' + snap.into + " / " + snap.need + " · hình thức kết hợp gốc họ " + snap.weekXp + " XP</p>" +
           "</div>" +
         "</div>" +
         settleBanner +
-        '<nav class="wr-camp-menu" aria-label="营地指令">' +
+        '<nav class="wr-camp-menu" aria-label="trạimệnh lệnh">' +
           '<p class="wr-camp-menu__label">COMMAND</p>' +
           '<div class="wr-camp-menu__grid">' +
             '<a class="wr-camp-menu__btn" href="' + hrefView("map", cur ? cur.shrine.region : regionParam()) +
-              '">远征<span>地图 · 点亮祠庙</span></a>' +
+              '">cuộc viễn chinh<span>bản đồ · thắp sángnhà thờ tổ</span></a>' +
             '<a class="wr-camp-menu__btn" href="' + campHref() +
-              '">修炼<span>星屑修炼场 · 仅记忆之力</span></a>' +
+              '">đạo sĩ tu luyện khổ hạnh<span>ngôi sao mảnh vụnđạo sĩ tu luyện khổ hạnhsân phơi · hầu nhưGhi nhớhọ</span></a>' +
             '<a class="wr-camp-menu__btn" href="' + hrefView("codex") +
-              '">图鉴<span>残页 ' + frags.length + "/" + allFragments().length + "</span></a>" +
+              '">sách hướng dẫn minh họa<span>phá hủy đầu ' + frags.length + "/" + allFragments().length + "</span></a>" +
             '<a class="wr-camp-menu__btn" href="' + hrefView("lore") +
-              '">编年<span>序章与史诗全文</span></a>' +
-            '<button type="button" class="wr-camp-menu__btn" id="wr-hub-replay-pro">序章<span>重看开场演出</span></button>' +
+              '">dệt họ<span>lời mở đầumột bản anh hùng catoàn văn</span></a>' +
+            '<button type="button" class="wr-camp-menu__btn" id="wr-hub-replay-pro">lời mở đầu<span>lặp lạichấp nhận một sự thật khó chịusân phơidiễn trong một vở kịch</span></button>' +
             (mistDone
               ? ('<a class="wr-camp-menu__btn" href="' + hrefView("clear") +
-                '">结算<span>第一章通关回顾</span></a>')
+                '">thanh toán<span>đầu tiênhọthông quannhìn lại</span></a>')
               : "") +
           "</div>" +
         "</nav>" +
         (theme
           ? ('<section class="wr-weekly">' +
-              '<p class="wr-kicker">本周周常</p>' +
+              '<p class="wr-kicker">hình thức kết hợp gốc họ họ họ</p>' +
               "<h2>" + esc(theme.name) + "</h2>" +
               "<p>" + esc(theme.blurb) + "</p>" +
-              '<a class="wr-btn wr-btn--gold" href="' + campHref() + '">进入周常训练 +' +
+              '<a class="wr-btn wr-btn--gold" href="' + campHref() + '">đi vàohọ họhuấn luyện +' +
                 (theme.bonusXp || 0) + " ›</a></section>")
           : "") +
         '<section class="wr-ella">' +
           portraitHTML(ella && ella.portrait, "✎", "wr-ella__face") +
           '<div class="wr-ella__body">' +
-            '<p class="wr-kicker">书吏艾拉 · 任务板</p>' +
+            '<p class="wr-kicker">viết tắt của quan chức hoặc nhân viên chính phủ nhỏ cổ họ kéo · Nhiệm vụtấm</p>' +
             (chapter
               ? ("<h2>" + esc(chapter.title) + "</h2>" +
                 (questMeta ? '<p class="wr-ella__quest">' + esc(questMeta) + "</p>" : "") +
                 '<div class="wr-ella__novel">' + proseHTML(chapter.novel || chapter.summary) + "</div>" +
-                '<p class="wr-ella__tip">「' + esc(chapter.ellaTip) + "」</p>")
-              : "<h2>记事册摊开</h2><p>先去地图点亮一座祠。</p>") +
+                '<p class="wr-ella__tip">«' + esc(chapter.ellaTip) + "»</p>")
+              : "<h2>sổ ghi chépmở ra</h2><p>trước đibản đồthắp sángmột chỗ ngồi nhà thờ.</p>") +
           "</div>" +
         "</section>" +
         '<section class="wr-quest' + (isBossNext ? " wr-quest--boss" : "") +
           (mistDone && !cur ? " wr-quest--clear" : "") + '">' +
           '<p class="wr-kicker">' +
             (mistDone && (!cur || cur.shrine.region !== "mist")
-              ? "下一章"
-              : (isBossNext ? "地区 Boss" : "今日目标")) + "</p>" +
+              ? "xuống một họ"
+              : (isBossNext ? "địa phương Boss" : "hôm nayMục tiêu")) + "</p>" +
           (nextBeat
             ? ("<h2>" + esc(nextBeat.shrineName) + " · " + esc(nextRegion.name) +
               (boss ? (" · " + esc(boss.name)) : "") + "</h2>" +
               "<p>" + esc(nextBeat.enter) + "</p>" +
               (chapter && chapter.recLevel
-                ? ('<p class="wr-quest__rec">推荐 ' + esc(chapter.recLevel) +
-                  (nextBeat.shrineName ? (" · 下一祠：" + esc(nextBeat.shrineName)) : "") + "</p>")
+                ? ('<p class="wr-quest__rec">đề xuất ' + esc(chapter.recLevel) +
+                  (nextBeat.shrineName ? (" · xuống một nhà thờ:" + esc(nextBeat.shrineName)) : "") + "</p>")
                 : "") +
               '<a class="wr-btn wr-btn--gold" href="' + nextHref + '">' +
-                (isBossNext ? "挑战 Boss ›" : "出战 ›") + "</a>" +
-              '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", cur.shrine.region) + '">在地图上查看</a>')
+                (isBossNext ? "thử thách Boss ›" : "quân sự ra trận ›") + "</a>" +
+              '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", cur.shrine.region) + '">địa phươngsơ đồ dùng trongXem</a>')
             : (mistDone
-              ? ("<h2>雾原已通关</h2>" +
-                "<p>后续章节尚未开放。去修炼场保持剑感，或重巡雾原复习词律。</p>" +
-                '<a class="wr-btn wr-btn--gold" href="' + campHref() + '">星屑修炼场 ›</a>' +
-                '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", "mist") + '">再巡雾原</a>')
-              : ("<h2>远征暂无下一祠</h2><p>去图鉴重读残页，或进修炼场保持剑感。</p>"))) +
-          '<p class="wr-mentor">「' + esc(mentor) + "」" +
+              ? ("<h2>sương mù họ đãthông quan</h2>" +
+                "<p>theo sauchươngchưanở hoa.điđạo sĩ tu luyện khổ hạnhsân phơigiữkiếm hai lưỡi cảm thấy,có thể lặp lại tuần tra sương mù họÔn tậpbiến thể cũ của họ.</p>" +
+                '<a class="wr-btn wr-btn--gold" href="' + campHref() + '">ngôi sao mảnh vụnđạo sĩ tu luyện khổ hạnhsân phơi ›</a>' +
+                '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", "mist") + '">lại tuần tra sương mù họ</a>')
+              : ("<h2>cuộc viễn chinhtạm thời không có xuống một nhà thờ</h2><p>đisách hướng dẫn minh họanhấn mạnh trên một âm tiếtphá hủy đầu,có thểtheo học nâng caoluyện sân phơigiữkiếm hai lưỡi cảm thấy.</p>"))) +
+          '<p class="wr-mentor">«' + esc(mentor) + "»" +
             (ella ? " —— " + esc(ella.name) : "") + "</p>" +
-          '<p class="wr-lex-meta">混合词库 ' + (stats.total || "—") +
-            " · 高难 " + ((stats.byTier && stats.byTier[4]) || 0) +
-            " · 史诗 " + doneCount + "/" + totalShrines + "</p>" +
+          '<p class="wr-lex-meta">trộnkho từ ' + (stats.total || "—") +
+            " · vô cùng khó khăn " + ((stats.byTier && stats.byTier[4]) || 0) +
+            " · một bản anh hùng ca " + doneCount + "/" + totalShrines + "</p>" +
         "</section>" +
         sagaProgressHTML(doneCount) +
         '<section class="wr-panel wr-panel--board">' +
-          "<h2>本周词境榜</h2>" +
-          "<p>按本周记忆之力排序。幽灵对手仅供对照，机构实时榜稍后上线。</p>" +
+          "<h2>hình thức kết hợp gốc họ biến thể cũ của biên giới thông báo hoặc thông tri</h2>" +
+          "<p>nhấn hình thức kết hợp gốc họGhi nhớhọSắp xếp.bóng mađối thủchỉ đểĐối chiếu,cơ chếtheo thời gian thựcthông báo hoặc thông trimột lát nữalên mạng.</p>" +
           boardHTML(snap) +
         "</section>" +
       "</section>";
@@ -576,14 +576,14 @@
       root.innerHTML =
         topChrome(snap, "hub") +
         '<section class="wr-dream">' +
-          '<p class="wr-kicker">王子残影</p>' +
+          '<p class="wr-kicker">hoàng tửphá hủy hình ảnh</p>' +
           "<h1>" + esc(dream.title) + "</h1>" +
           '<p class="wr-dream__line">' + esc(dream.lines[i] || "") + "</p>" +
           '<p class="wr-dream__step">' + (i + 1) + " / " + dream.lines.length + "</p>" +
           '<div class="wr-dream__actions">' +
-            '<button type="button" class="wr-btn wr-btn--ghost" id="wr-dream-skip">跳过梦境</button>' +
+            '<button type="button" class="wr-btn wr-btn--ghost" id="wr-dream-skip">nhảy quaxứ mơ</button>' +
             '<button type="button" class="wr-btn wr-btn--gold" id="wr-dream-next">' +
-              (i >= dream.lines.length - 1 ? "醒来 · 回营地" : "下一句") + "</button>" +
+              (i >= dream.lines.length - 1 ? "thức dậy · xoay vòngtrại" : "xuốngmột dòng thơ") + "</button>" +
           "</div>" +
         "</section>";
       function finish() {
@@ -638,7 +638,7 @@
       var on = id === regionId;
       var open = isRegionUnlocked(id);
       if (!open) {
-        return '<span class="wr-seg is-locked" title="击败前一章 Boss 后解锁" aria-disabled="true">' +
+        return '<span class="wr-seg is-locked" title="đánh bạitrước một họ Boss họmở khóa" aria-disabled="true">' +
           esc(reg.name) + "</span>";
       }
       return '<a class="wr-seg' + (on ? " is-on" : "") + '" href="' + hrefView("map", id) + '">' +
@@ -654,7 +654,7 @@
       var cls = "wr-pin is-" + n.state + (n.shrine.id === selectedId ? " is-selected" : "") +
         (isBoss ? " is-boss" : "");
       var label = isBoss ? "Boss" : String(i + 1);
-      var tag = n.state === "current" ? "目标" : (n.state === "done" ? "已点亮" : "未启");
+      var tag = n.state === "current" ? "Mục tiêu" : (n.state === "done" ? "đãthắp sáng" : "chưa biến thể của");
       if (n.state === "done" || n.state === "current") {
         regionDone += n.state === "done" ? 1 : 0;
         clearHTML += '<span class="wr-fog-clear' + (n.state === "current" ? " is-current" : "") +
@@ -683,20 +683,20 @@
       var actions = "";
       if (selected.state === "current" || selected.state === "done") {
         actions += '<a class="wr-btn wr-btn--gold" href="' + lessonHref(selected.shrine.id) + '">' +
-          (selected.state === "done" ? "再次挑战" : "进入噬词战") + "</a>";
+          (selected.state === "done" ? "một lần nữathử thách" : "đi vàongấu nghiến biến thể cũ của chiến đấu") + "</a>";
       } else {
-        actions += '<span class="wr-btn wr-btn--ghost" aria-disabled="true">尚未解锁</span>';
+        actions += '<span class="wr-btn wr-btn--ghost" aria-disabled="true">chưamở khóa</span>';
       }
       if (chest && chest.state === "chest") {
         actions += '<button type="button" class="wr-btn wr-btn--ghost" data-chest="' +
-          esc(chest.chestId) + '">收取残页 +5</button>';
+          esc(chest.chestId) + '">nhậnphá hủy đầu +5</button>';
       } else if (chest && chest.state === "claimed") {
-        actions += '<span class="wr-detail__meta">残页已收</span>';
+        actions += '<span class="wr-detail__meta">phá hủy đầu đã nhận</span>';
       }
       detail =
         '<div class="wr-detail" id="wr-detail">' +
           '<p class="wr-kicker">' + esc(enemy.name) + " · " + esc(enemy.title) + "</p>" +
-          "<h2>" + esc(beat.shrineName) + (pins.indexOf(selected) === pins.length - 1 ? " · 地区关底" : "") + "</h2>" +
+          "<h2>" + esc(beat.shrineName) + (pins.indexOf(selected) === pins.length - 1 ? " · địa phươnghọ nền tảng" : "") + "</h2>" +
           "<p>" + esc(selected.state === "done" ? beat.clear : beat.enter) + "</p>" +
           '<div class="wr-detail__actions">' + actions + "</div>" +
         "</div>";
@@ -705,13 +705,13 @@
     var jumpHint = "";
     if (cur && cur.shrine.region !== regionId) {
       var cr = STORY.regions[cur.shrine.region];
-      jumpHint = '<p class="wr-map__jump">当前目标在「' + esc(cr.name) +
-        '」· <a href="' + hrefView("map", cur.shrine.region) + '">前往 ›</a></p>';
+      jumpHint = '<p class="wr-map__jump">thời điểm hiện tạiMục tiêutồn tại«' + esc(cr.name) +
+        '»· <a href="' + hrefView("map", cur.shrine.region) + '">đi đến ›</a></p>';
     }
 
     root.innerHTML =
       topChrome(snap, "map") +
-      '<nav class="wr-segs" aria-label="地区">' + segs + "</nav>" +
+      '<nav class="wr-segs" aria-label="địa phương">' + segs + "</nav>" +
       '<p class="wr-transit">' + esc(region.transit || region.blurb) + "</p>" +
       jumpHint +
       '<div class="wr-layout wr-layout--map">' +
@@ -719,7 +719,7 @@
           '<div class="wr-map-board__head">' +
             "<h1>" + esc(region.name) + "</h1>" +
             "<p>" + esc(region.blurb) + "</p>" +
-            '<p class="wr-map__hint">点选亮起的钉点 · 已点亮 ' + doneCount + "/" +
+            '<p class="wr-map__hint">chọnsáng dậy cái đinh điểm · đãthắp sáng ' + doneCount + "/" +
               (CORE.shrineTotal ? CORE.shrineTotal() : 48) + "</p>" +
           "</div>" +
           '<div class="wr-map-stage' + (region.mapImage ? " has-art" : "") +
@@ -737,13 +737,13 @@
         "</main>" +
         '<aside class="wr-side">' +
           '<section class="wr-panel">' +
-            "<h2>出征提示</h2>" +
-            "<p>答对砍血，连对暴击。雾随点亮散开。撤退不点亮祠。</p>" +
-            '<a class="wr-panel wr-panel--link" href="' + hrefView("hub") + '">← 回营地</a>' +
+            "<h2>ra trậnGợi ý</h2>" +
+            "<p>thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đóchặt máu,họ đúngđòn chí mạng trò chơi.sương mù họthắp sángtách ra.rút luikhôngthắp sángnhà thờ.</p>" +
+            '<a class="wr-panel wr-panel--link" href="' + hrefView("hub") + '">← xoay vòngtrại</a>' +
           "</section>" +
           '<section class="wr-panel">' +
-            "<h2>本周词境榜</h2>" +
-            "<p>本周记忆之力对照。</p>" +
+            "<h2>hình thức kết hợp gốc họ biến thể cũ của biên giới thông báo hoặc thông tri</h2>" +
+            "<p>hình thức kết hợp gốc họGhi nhớhọĐối chiếu.</p>" +
             boardHTML(snap) +
           "</section>" +
         "</aside>" +
@@ -778,7 +778,7 @@
         var sid = "shrine-" + String(i).padStart(2, "0");
         if (!CORE.isCleared(sid)) { allDone = false; break; }
       }
-      // 遇见即登记：该区至少点亮 1 祠则「遭遇」
+      // gặp gỡtức làđăng ký tên:nên họít nhấtthắp sáng 1 nhà thờ văn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưng«gặp phải»
       var met = false;
       for (var j = range.start; j <= range.end; j++) {
         var s2 = "shrine-" + String(j).padStart(2, "0");
@@ -790,9 +790,9 @@
     var fragHTML = frags.map(function (f) {
       var open = !!unlockedIds[f.id];
       return '<article class="wr-codex-card' + (open ? " is-open" : " is-locked") + '">' +
-        '<p class="wr-kicker">' + (open ? "已收集" : ("点亮 " + f.afterShrine + " 祠后解锁")) + "</p>" +
-        "<h3>" + esc(open ? f.title : "残页 · ？？？") + "</h3>" +
-        "<p>" + esc(open ? f.body : "雾气封住了字迹。继续远征，才能读到王子留下的句子。") + "</p>" +
+        '<p class="wr-kicker">' + (open ? "đãthu thập" : ("thắp sáng " + f.afterShrine + " nhà thờ họmở khóa")) + "</p>" +
+        "<h3>" + esc(open ? f.title : "phá hủy đầu · ???") + "</h3>" +
+        "<p>" + esc(open ? f.body : "sương mùhọ sốngchữ viết tay.Tiếp tụccuộc viễn chinh,tài năngdấu phẩy đếnhoàng tửđể lạiCâu.") + "</p>" +
       "</article>";
     }).join("");
 
@@ -804,9 +804,9 @@
       return '<article class="wr-codex-card wr-codex-card--foe' + (open ? " is-open" : " is-locked") + '">' +
         '<div class="wr-foe-glyph wr-foe-glyph--' + esc(e.skin) + '" aria-hidden="true">' +
           esc(open ? e.glyph : "?") + "</div>" +
-        '<div><p class="wr-kicker">' + (st.cleared ? "地区肃清" : (open ? "已遭遇" : "未遭遇")) + "</p>" +
-        "<h3>" + esc(open ? e.name : "？？？") + "</h3>" +
-        "<p>" + esc(open ? e.intro : "尚无足迹。") + "</p></div></article>";
+        '<div><p class="wr-kicker">' + (st.cleared ? "địa phươngthanh trừng" : (open ? "đãgặp phải" : "chưagặp phải")) + "</p>" +
+        "<h3>" + esc(open ? e.name : "???") + "</h3>" +
+        "<p>" + esc(open ? e.intro : "chưadấu chân.") + "</p></div></article>";
     }).join("");
 
     var cast = STORY.cast || {};
@@ -822,19 +822,19 @@
       if (!c) return "";
       var open = doneCount >= row.need;
       return '<article class="wr-codex-card' + (open ? " is-open" : " is-locked") + '">' +
-        '<p class="wr-kicker">' + esc(open ? c.role : "未揭示") + "</p>" +
-        "<h3>" + esc(open ? c.name : "？？？") + "</h3>" +
-        "<p>" + esc(open ? c.blurb : ("点亮 " + row.need + " 祠后，卷宗才会写出这个名字。")) + "</p></article>";
+        '<p class="wr-kicker">' + esc(open ? c.role : "chưacho thấy") + "</p>" +
+        "<h3>" + esc(open ? c.name : "???") + "</h3>" +
+        "<p>" + esc(open ? c.blurb : ("thắp sáng " + row.need + " nhà thờ họ,hồ sơkhả năng có thể viết đi rađại từ nàytên của người hoặc vật.")) + "</p></article>";
     }).join("");
 
     var sagaHTML = (STORY.chapters || []).map(function (ch) {
       var open = isRegionUnlocked(ch.region);
       return '<article class="wr-codex-card' + (open ? " is-open" : " is-locked") + '">' +
-        '<p class="wr-kicker">' + (open ? ("第 " + ch.chapter + " 章") : "未解锁") + "</p>" +
-        "<h3>" + esc(open ? ch.title : "卷 · ？？？") + "</h3>" +
+        '<p class="wr-kicker">' + (open ? (" " + ch.chapter + " họ") : "chưa được giải quyết vấn đềkhóa") + "</p>" +
+        "<h3>" + esc(open ? ch.title : "cuộn lại · ???") + "</h3>" +
         (open
           ? ('<div class="wr-codex-prose">' + proseHTML(ch.novel) + "</div>")
-          : "<p>击败前一章 Boss，才能翻开这一卷。</p>") +
+          : "<p>đánh bạitrước một họ Boss,tài năngmở rađại từ này một cuộn lại.</p>") +
         "</article>";
     }).join("");
 
@@ -842,17 +842,17 @@
       topChrome(snap, "codex") +
       '<section class="wr-codex">' +
         '<header class="wr-codex__head">' +
-          "<h1>图鉴</h1>" +
-          "<p>序章与编年随时可读。残页随主线解锁；修炼场不掉落。</p>" +
-          '<p><a class="wr-btn wr-btn--gold" href="' + hrefView("lore") + '">翻开词境编年 · 序章全文 ›</a></p>' +
+          "<h1>sách hướng dẫn minh họa</h1>" +
+          "<p>lời mở đầudệt họbất kỳ lúc nàothú vị để đọc.phá hủy đầu họdòng chính của liên lạcmở khóa;đạo sĩ tu luyện khổ hạnhsân phơi khôngrơi xuống.</p>" +
+          '<p><a class="wr-btn wr-btn--gold" href="' + hrefView("lore") + '">mở rabiến thể cũ của biên giới dệt họ · lời mở đầutoàn văn ›</a></p>' +
         "</header>" +
-        "<h2>史诗六章</h2>" +
+        "<h2>một bản anh hùng casáu họ</h2>" +
         '<div class="wr-codex-grid">' + sagaHTML + "</div>" +
-        "<h2>王子残页 · " + unlocked.length + "/" + frags.length + "</h2>" +
+        "<h2>hoàng tửphá hủy đầu · " + unlocked.length + "/" + frags.length + "</h2>" +
         '<div class="wr-codex-grid">' + fragHTML + "</div>" +
-        "<h2>噬词图录</h2>" +
+        "<h2>ngấu nghiến biến thể cũ củadanh mục</h2>" +
         '<div class="wr-codex-grid wr-codex-grid--foe">' + foeHTML + "</div>" +
-        "<h2>旅伴与宿敌</h2>" +
+        "<h2>chuyến đi bạn đồng hànhkẻ thù cũ</h2>" +
         '<div class="wr-codex-grid">' + castHTML + "</div>" +
       "</section>";
     bindMute();
@@ -879,7 +879,7 @@
   }
 
   function boot() {
-    root.innerHTML = '<div class="wr-loading">正在展开词境…</div>';
+    root.innerHTML = '<div class="wr-loading">đang ở thời điểm đómở rabiến thể cũ của biên giới…</div>';
     if (viewParam() === "vn") {
       renderVnRoute();
       return;
@@ -887,18 +887,18 @@
     var ready = lexCache ? Promise.resolve(lexCache) : CORE.loadLexicon();
     ready.then(function (lex) {
       if (!lex.shrines || !lex.shrines.length) {
-        root.innerHTML = '<div class="wr-empty">词境词库尚未生成。</div>';
+        root.innerHTML = '<div class="wr-empty">biến thể cũ của biên giớikho từchưatạo ra.</div>';
         return;
       }
       if (params.get("pin") && viewParam() !== "map" && viewParam() !== "vn") setQuery("map", regionParam());
-      // 战斗结算带回的梦境，或营地有待播梦境
+      // chiến đấuthanh toánmang vềxứ mơ,có thểtrạichưa làm xongxứ mơ
       if (viewParam() === "dream" || (CORE.pendingDream() && viewParam() === "hub" && !params.get("region"))) {
         renderDream();
         return;
       }
       render(lex);
     }).catch(function (err) {
-      root.innerHTML = '<div class="wr-empty">加载失败：' + esc(err.message) + "</div>";
+      root.innerHTML = '<div class="wr-empty">Tải thất bại:' + esc(err.message) + "</div>";
     });
   }
 

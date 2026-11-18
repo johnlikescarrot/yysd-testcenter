@@ -1,45 +1,45 @@
 {
-  "sourceNote": "公开分类词表复刻浏览库；暂不含小课/测试。",
+  "sourceNote": "mở Phân loại biến thể cũ của bề mặt bên ngoàitái bản một tác phẩm đã hết bản in xem lướt nhà kho;tạm thời không ngậm trong miệng nhỏ môn học/Bài kiểm tra.",
   "categories": [
     {
       "id": "all",
-      "label": "全部"
+      "label": "Tất cả"
     },
     {
       "id": "exam",
-      "label": "英语考试"
+      "label": "tiếng Anh Kì thi"
     },
     {
       "id": "abroad",
-      "label": "出国留学"
+      "label": "ra nước ngoài du học"
     },
     {
       "id": "k12",
-      "label": "中小学"
+      "label": "trường trung học và tiểu học"
     },
     {
       "id": "learning",
-      "label": "英语学习"
+      "label": "tiếng Anh học"
     },
     {
       "id": "subject",
-      "label": "学科分类"
+      "label": "môn học Phân loại"
     },
     {
       "id": "nature",
-      "label": "动植物"
+      "label": "động thực vật"
     },
     {
       "id": "life",
-      "label": "生活日常"
+      "label": "Đời sống Hàng ngày"
     },
     {
       "id": "arts",
-      "label": "艺术文体"
+      "label": "nghệ thuật thể loại viết"
     },
     {
       "id": "media",
-      "label": "影音视听"
+      "label": "phương tiện ghi hình và âm thanh CD và DVD biến thể của cười cổ đại"
     }
   ],
   "themes": [
@@ -48,7 +48,7 @@
       "no": 1,
       "title": "CET-4",
       "category": "exam",
-      "desc": "英语考试 · 4599 词（已释义 4599）",
+      "desc": "tiếng Anh Kì thi · 4599 biến thể cũ của(đãNghĩa 4599)",
       "count": 4599,
       "defined": 4599,
       "preview": [
@@ -72,7 +72,7 @@
       "no": 2,
       "title": "CET-6",
       "category": "exam",
-      "desc": "英语考试 · 2331 词（已释义 2327）",
+      "desc": "tiếng Anh Kì thi · 2331 biến thể cũ của(đãNghĩa 2327)",
       "count": 2331,
       "defined": 2327,
       "preview": [
@@ -94,9 +94,9 @@
     {
       "id": "tem",
       "no": 3,
-      "title": "专四专八",
+      "title": "cho một người bốnTEM-8 hoặc Kỳ thi chuyên ngành tiếng Anh cấp 8",
       "category": "exam",
-      "desc": "英语考试 · 2915 词（已释义 2912）",
+      "desc": "tiếng Anh Kì thi · 2915 biến thể cũ của(đãNghĩa 2912)",
       "count": 2915,
       "defined": 2912,
       "preview": [
@@ -118,9 +118,9 @@
     {
       "id": "kaoyan",
       "no": 4,
-      "title": "考研英语",
+      "title": "dự thi đầu vào chương trình sau đại học tiếng Anh",
       "category": "exam",
-      "desc": "英语考试 · 6341 词（已释义 6335）",
+      "desc": "tiếng Anh Kì thi · 6341 biến thể cũ của(đãNghĩa 6335)",
       "count": 6341,
       "defined": 6335,
       "preview": [
@@ -142,9 +142,9 @@
     {
       "id": "gaokao",
       "no": 5,
-      "title": "高考英语",
+      "title": "kỳ thi tuyển sinh đại học tiếng Anh",
       "category": "exam",
-      "desc": "英语考试 · 4142 词（已释义 4095）",
+      "desc": "tiếng Anh Kì thi · 4142 biến thể cũ của(đãNghĩa 4095)",
       "count": 4142,
       "defined": 4095,
       "preview": [
@@ -168,7 +168,7 @@
       "no": 6,
       "title": "BEC",
       "category": "abroad",
-      "desc": "出国留学 · 1279 词（已释义 1264）",
+      "desc": "ra nước ngoài du học · 1279 biến thể cũ của(đãNghĩa 1264)",
       "count": 1279,
       "defined": 1264,
       "preview": [
@@ -192,7 +192,7 @@
       "no": 7,
       "title": "GMAT",
       "category": "abroad",
-      "desc": "出国留学 · 3403 词（已释义 3400）",
+      "desc": "ra nước ngoài du học · 3403 biến thể cũ của(đãNghĩa 3400)",
       "count": 3403,
       "defined": 3400,
       "preview": [
@@ -216,7 +216,7 @@
       "no": 8,
       "title": "GRE",
       "category": "abroad",
-      "desc": "出国留学 · 7496 词（已释义 7486）",
+      "desc": "ra nước ngoài du học · 7496 biến thể cũ của(đãNghĩa 7486)",
       "count": 7496,
       "defined": 7486,
       "preview": [
@@ -240,7 +240,7 @@
       "no": 9,
       "title": "SAT",
       "category": "abroad",
-      "desc": "出国留学 · 210 词（已释义 196）",
+      "desc": "ra nước ngoài du học · 210 biến thể cũ của(đãNghĩa 196)",
       "count": 210,
       "defined": 196,
       "preview": [
@@ -262,9 +262,9 @@
     {
       "id": "toeic",
       "no": 10,
-      "title": "托业",
+      "title": "TOEIC Bài kiểm tra tiếng Anh giao tiếp quốc tế",
       "category": "abroad",
-      "desc": "出国留学 · 828 词（已释义 825）",
+      "desc": "ra nước ngoài du học · 828 biến thể cũ của(đãNghĩa 825)",
       "count": 828,
       "defined": 825,
       "preview": [
@@ -286,9 +286,9 @@
     {
       "id": "toefl",
       "no": 11,
-      "title": "托福",
+      "title": "nâng bằng tay họ",
       "category": "abroad",
-      "desc": "出国留学 · 4883 词（已释义 4876）",
+      "desc": "ra nước ngoài du học · 4883 biến thể cũ của(đãNghĩa 4876)",
       "count": 4883,
       "defined": 4876,
       "preview": [
@@ -310,9 +310,9 @@
     {
       "id": "ielts",
       "no": 12,
-      "title": "雅思",
+      "title": "IELTS",
       "category": "abroad",
-      "desc": "出国留学 · 4541 词（已释义 4535）",
+      "desc": "ra nước ngoài du học · 4541 biến thể cũ của(đãNghĩa 4535)",
       "count": 4541,
       "defined": 4535,
       "preview": [
@@ -334,9 +334,9 @@
     {
       "id": "primary",
       "no": 13,
-      "title": "小学词汇",
+      "title": "trường tiểu học Từ vựng",
       "category": "k12",
-      "desc": "中小学 · 1202 词（已释义 1200）",
+      "desc": "trường trung học và tiểu học · 1202 biến thể cũ của(đãNghĩa 1200)",
       "count": 1202,
       "defined": 1200,
       "preview": [
@@ -358,9 +358,9 @@
     {
       "id": "junior",
       "no": 14,
-      "title": "初中词汇",
+      "title": "trường trung học cơ sở Từ vựng",
       "category": "k12",
-      "desc": "中小学 · 3626 词（已释义 3619）",
+      "desc": "trường trung học và tiểu học · 3626 biến thể cũ của(đãNghĩa 3619)",
       "count": 3626,
       "defined": 3619,
       "preview": [
@@ -382,9 +382,9 @@
     {
       "id": "senior",
       "no": 15,
-      "title": "高中词汇",
+      "title": "Từ vựng THPT",
       "category": "k12",
-      "desc": "中小学 · 3896 词（已释义 3888）",
+      "desc": "trường trung học và tiểu học · 3896 biến thể cũ của(đãNghĩa 3888)",
       "count": 3896,
       "defined": 3888,
       "preview": [
@@ -406,9 +406,9 @@
     {
       "id": "nce",
       "no": 16,
-      "title": "新概念",
+      "title": "viết tắt của Tân Cươngkhái niệm",
       "category": "learning",
-      "desc": "英语学习 · 4276 词（已释义 4274）",
+      "desc": "tiếng Anh học · 4276 biến thể cũ của(đãNghĩa 4274)",
       "count": 4276,
       "defined": 4274,
       "preview": [
@@ -430,9 +430,9 @@
     {
       "id": "oxford3000",
       "no": 17,
-      "title": "牛津3000词",
+      "title": "Oxford thành phố ở Anh 3000biến thể cũ của",
       "category": "learning",
-      "desc": "英语学习 · 3433 词（已释义 3431）",
+      "desc": "tiếng Anh học · 3433 biến thể cũ của(đãNghĩa 3431)",
       "count": 3433,
       "defined": 3431,
       "preview": [
@@ -454,9 +454,9 @@
     {
       "id": "collins",
       "no": 18,
-      "title": "柯林斯星级",
+      "title": "Collins tên xếp hạng sao",
       "category": "learning",
-      "desc": "英语学习 · 8903 词（已释义 8894）",
+      "desc": "tiếng Anh học · 8903 biến thể cũ của(đãNghĩa 8894)",
       "count": 8903,
       "defined": 8894,
       "preview": [
@@ -478,9 +478,9 @@
     {
       "id": "phrases",
       "no": 19,
-      "title": "常用短语",
+      "title": "được sử dụng phổ biến cụm từ ngữ pháp",
       "category": "learning",
-      "desc": "英语学习 · 431 词（已释义 430）",
+      "desc": "tiếng Anh học · 431 biến thể cũ của(đãNghĩa 430)",
       "count": 431,
       "defined": 430,
       "preview": [
@@ -502,9 +502,9 @@
     {
       "id": "chem",
       "no": 20,
-      "title": "化学",
+      "title": "Hóa học",
       "category": "subject",
-      "desc": "学科分类 · 490 词（已释义 488）",
+      "desc": "môn học Phân loại · 490 biến thể cũ của(đãNghĩa 488)",
       "count": 490,
       "defined": 488,
       "preview": [
@@ -526,9 +526,9 @@
     {
       "id": "geo",
       "no": 21,
-      "title": "地理学",
+      "title": "địa lý học",
       "category": "subject",
-      "desc": "学科分类 · 177 词（已释义 177）",
+      "desc": "môn học Phân loại · 177 biến thể cũ của(đãNghĩa 177)",
       "count": 177,
       "defined": 177,
       "preview": [
@@ -550,9 +550,9 @@
     {
       "id": "math",
       "no": 22,
-      "title": "数学",
+      "title": "Toán",
       "category": "subject",
-      "desc": "学科分类 · 249 词（已释义 249）",
+      "desc": "môn học Phân loại · 249 biến thể cũ của(đãNghĩa 249)",
       "count": 249,
       "defined": 249,
       "preview": [
@@ -574,9 +574,9 @@
     {
       "id": "phys",
       "no": 23,
-      "title": "物理",
+      "title": "Vật lí",
       "category": "subject",
-      "desc": "学科分类 · 80 词（已释义 80）",
+      "desc": "môn học Phân loại · 80 biến thể cũ của(đãNghĩa 80)",
       "count": 80,
       "defined": 80,
       "preview": [
@@ -598,9 +598,9 @@
     {
       "id": "animals",
       "no": 24,
-      "title": "动物世界",
+      "title": "động vật thế giới",
       "category": "nature",
-      "desc": "动植物 · 319 词（已释义 319）",
+      "desc": "động thực vật · 319 biến thể cũ của(đãNghĩa 319)",
       "count": 319,
       "defined": 319,
       "preview": [
@@ -622,9 +622,9 @@
     {
       "id": "plants",
       "no": 25,
-      "title": "植物王国",
+      "title": "thực vật vương quốc",
       "category": "nature",
-      "desc": "动植物 · 137 词（已释义 137）",
+      "desc": "động thực vật · 137 biến thể cũ của(đãNghĩa 137)",
       "count": 137,
       "defined": 137,
       "preview": [
@@ -646,9 +646,9 @@
     {
       "id": "food",
       "no": 26,
-      "title": "吃喝玩乐",
+      "title": "ăn uống vui chơi thành ngữ",
       "category": "life",
-      "desc": "生活日常 · 1365 词（已释义 1256）",
+      "desc": "Đời sống Hàng ngày · 1365 biến thể cũ của(đãNghĩa 1256)",
       "count": 1365,
       "defined": 1256,
       "preview": [
@@ -670,9 +670,9 @@
     {
       "id": "urban",
       "no": 27,
-      "title": "城市规划",
+      "title": "quy hoạch đô thị",
       "category": "life",
-      "desc": "生活日常 · 117 词（已释义 117）",
+      "desc": "Đời sống Hàng ngày · 117 biến thể cũ của(đãNghĩa 117)",
       "count": 117,
       "defined": 117,
       "preview": [
@@ -694,9 +694,9 @@
     {
       "id": "travel",
       "no": 28,
-      "title": "安全出行",
+      "title": "an toàn đi ra đâu đó chuyến đi ngắn",
       "category": "life",
-      "desc": "生活日常 · 415 词（已释义 381）",
+      "desc": "Đời sống Hàng ngày · 415 biến thể cũ của(đãNghĩa 381)",
       "count": 415,
       "defined": 381,
       "preview": [
@@ -718,9 +718,9 @@
     {
       "id": "edu",
       "no": 29,
-      "title": "科教兴国",
+      "title": "chấn hưng đất nước qua khoa học và giáo dục",
       "category": "life",
-      "desc": "生活日常 · 215 词（已释义 211）",
+      "desc": "Đời sống Hàng ngày · 215 biến thể cũ của(đãNghĩa 211)",
       "count": 215,
       "defined": 211,
       "preview": [
@@ -742,9 +742,9 @@
     {
       "id": "work",
       "no": 30,
-      "title": "职业职场",
+      "title": "Nghề nghiệp nơi làm việc",
       "category": "life",
-      "desc": "生活日常 · 1844 词（已释义 1756）",
+      "desc": "Đời sống Hàng ngày · 1844 biến thể cũ của(đãNghĩa 1756)",
       "count": 1844,
       "defined": 1756,
       "preview": [
@@ -766,9 +766,9 @@
     {
       "id": "festivals",
       "no": 31,
-      "title": "节日",
+      "title": "ngày lễ",
       "category": "life",
-      "desc": "生活日常 · 41 词（已释义 37）",
+      "desc": "Đời sống Hàng ngày · 41 biến thể cũ của(đãNghĩa 37)",
       "count": 41,
       "defined": 37,
       "preview": [
@@ -790,9 +790,9 @@
     {
       "id": "literature",
       "no": 32,
-      "title": "文学艺术",
+      "title": "văn học nghệ thuật",
       "category": "arts",
-      "desc": "艺术文体 · 541 词（已释义 538）",
+      "desc": "nghệ thuật thể loại viết · 541 biến thể cũ của(đãNghĩa 538)",
       "count": 541,
       "defined": 538,
       "preview": [
@@ -814,9 +814,9 @@
     {
       "id": "sports",
       "no": 33,
-      "title": "体育",
+      "title": "Thể thao",
       "category": "arts",
-      "desc": "艺术文体 · 532 词（已释义 520）",
+      "desc": "nghệ thuật thể loại viết · 532 biến thể cũ của(đãNghĩa 520)",
       "count": 532,
       "defined": 520,
       "preview": [
@@ -838,9 +838,9 @@
     {
       "id": "games",
       "no": 34,
-      "title": "游戏娱乐",
+      "title": "trò chơi giải trí",
       "category": "arts",
-      "desc": "艺术文体 · 925 词（已释义 903）",
+      "desc": "nghệ thuật thể loại viết · 925 biến thể cũ của(đãNghĩa 903)",
       "count": 925,
       "defined": 903,
       "preview": [
@@ -862,9 +862,9 @@
     {
       "id": "film",
       "no": 35,
-      "title": "影视剧",
+      "title": "phim và truyền hình tác phẩm sân khấu kịch",
       "category": "media",
-      "desc": "影音视听 · 525 词（已释义 509）",
+      "desc": "phương tiện ghi hình và âm thanh CD và DVD biến thể của cười cổ đại · 525 biến thể cũ của(đãNghĩa 509)",
       "count": 525,
       "defined": 509,
       "preview": [
@@ -886,9 +886,9 @@
     {
       "id": "music",
       "no": 36,
-      "title": "音乐广播",
+      "title": "âm nhạc phát sóng",
       "category": "media",
-      "desc": "影音视听 · 263 词（已释义 239）",
+      "desc": "phương tiện ghi hình và âm thanh CD và DVD biến thể của cười cổ đại · 263 biến thể cũ của(đãNghĩa 239)",
       "count": 263,
       "defined": 239,
       "preview": [

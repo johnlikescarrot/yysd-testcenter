@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>组卷</title>
+  <title>họ cuộn lại</title>
   <link rel="stylesheet" href="assets/css/hit.css?v=20261027win1">
   <link rel="stylesheet" href="assets/css/access.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
@@ -11,10 +11,11 @@
   <script src="assets/js/hit-shell.js?v=20261027win1"></script>
   <script src="assets/js/tiku-run.js?v=20261020run2"></script>
   <script src="assets/js/access.js?v=20261014kl1"></script>
+<script type="module" src="../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="hit">
   <main class="hit-main">
-    <h1 id="title">组卷</h1>
+    <h1 id="title">họ cuộn lại</h1>
     <p class="hit-lead" id="lead"></p>
     <div id="list"></div>
   </main>
@@ -26,7 +27,7 @@
       var A = window.YYSD_APP;
       if (!preview && !A.requireLogin("bank.html" + location.search)) return;
       if (!preview && !YYSD_HIT.mount("practice")) return;
-      if (preview) document.body.insertAdjacentHTML("afterbegin", "<p class='hit-lead'>预览 · 不记分</p>");
+      if (preview) document.body.insertAdjacentHTML("afterbegin", "<p class='hit-lead'> xem trước · không ghi điểm </p>");
       function bindPvBack() {
         var a = document.getElementById("pv-back");
         if (!a) return;
@@ -47,12 +48,12 @@
         return fetch(API + path, { method: "POST", headers: h, body: JSON.stringify(body) })
           .then(function (r) {
             return r.json().then(function (d) {
-              if (!r.ok) throw new Error((d && d.error) || "请求失败");
+              if (!r.ok) throw new Error((d && d.error) || "Yêu cầu thất bại");
               return d;
             });
           });
       }
-      // 考前冲刺包：开始前服务端硬校验开考资格（练习卷不走）；交卷回来时上报完成关掉宽限
+      // đánh trước thể thao chạy nước rút họ: Bắt đầu trước phục vụ cuối cứng kiểm tra mở ngoại động từ hoặc nội động từ đánh trình độ (Luyện tập cuộn lại không đi); Nộp bài trở về biến thể cũ của báo cáo lên cấp trên Hoàn thành tắt đi gia hạn thời hạn
       function examStart(pid) {
         if (preview) return Promise.resolve();
         return apiPost("/api/toefl/exam-start", { packageId: pid });
@@ -65,24 +66,24 @@
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var p = d.paper;
-          if (!p) { document.getElementById("lead").textContent = (d && d.error) || "找不到这套卷"; return; }
+          if (!p) { document.getElementById("lead").textContent = (d && d.error) || "không thể tìm thấy đại từ này che đậy cuộn lại"; return; }
           if (qs.get("done") === "1" && p.kind !== "practice") examDone(p.id);
           document.getElementById("title").textContent = p.title;
-          var kind = p.kind === "practice" ? "分开做，做完一题块再回这里。" : "按顺序一套连着做。";
-          document.getElementById("lead").textContent = kind + (qs.get("done") === "1" ? " 已交卷。" : "");
+          var kind = p.kind === "practice" ? "tách ra làm, hoàn thành một họ cục lại xoay vòng biến thể của." : "nhấn trình tự bộ họ cờ nước đi làm.";
+          document.getElementById("lead").textContent = kind + (qs.get("done") === "1" ? "đã Nộp bài." : "");
           if (p.kind !== "practice") {
             var first = (p.blocks || [])[0] || {};
             document.getElementById("list").innerHTML =
-              '<button type="button" class="hit-go" id="go">开始</button>' +
-              '<a class="hit-back" href="' + (preview ? "#" : "mock.html") + '" id="pv-back">← 返回</a>' +
-              "<p class='hit-lead'>题块：" + (p.blocks || []).map(function (b) { return b.titleZh || b.title; }).join("、") + "</p>";
+              '<button type="button" class="hit-go" id="go"> Bắt đầu </button>' +
+              '<a class="hit-back" href="' + (preview ? "#" : "mock.html") + '" id="pv-back">← Quay lại </a>' +
+              "<p class='hit-lead'>họ cục:" + (p.blocks || []).map(function (b) { return b.titleZh || b.title; }).join("、") + "</p>";
             bindPvBack();
             document.getElementById("go").onclick = function () {
               var btn = this;
               var only = qs.get("skill") || "";
               btn.disabled = true;
               examStart(p.id).then(function () {
-                // ponytail: 日期卷数据在官网根，整套交给模考确认链+考场引擎（app 播放器读不到这些卷）
+                // ponytail: ngày tháng cuộn lại dữ liệu tồn tại trang web chính thức rễ, toàn bộ bộ sưu tập đưa Thi thử Xác nhận dây xích+ Phòng thi động cơ từ mượn (app Phát thiết bị dấu phẩy không đến những... này cuộn lại)
                 if (first.source === "date" && first.paperId) {
                   location.href = only
                     ? "mock.html?kind=single&id=" + encodeURIComponent(first.paperId) + "&skill=" + encodeURIComponent(only)
@@ -93,7 +94,7 @@
                 location.href = YYSD_TIKU_RUN.href(run.i, run);
               }).catch(function (e) {
                 btn.disabled = false;
-                document.getElementById("lead").textContent = (e && e.message) || "暂时不能开始";
+                document.getElementById("lead").textContent = (e && e.message) || "tạm thời không thể Bắt đầu";
               });
             };
             return;
@@ -101,7 +102,7 @@
           YYSD_TIKU_RUN.start({ id: p.id, title: p.title, kind: "practice", blocks: p.blocks, preview: preview });
           var drawBlocks = function () {
             document.getElementById("list").innerHTML =
-              '<a class="hit-back" href="' + (preview ? "#" : "practice.html") + '" id="pv-back">← 返回练习</a>' +
+              '<a class="hit-back" href="' + (preview ? "#" : "practice.html") + '" id="pv-back">← Quay lại Luyện tập </a>' +
               '<div class="hit-set-list">' + (p.blocks || []).map(function (b) {
                 return '<a class="hit-set-row" href="' + YYSD_TIKU_RUN.hrefOf(b, "practice", "&bank=" + encodeURIComponent(p.id) + (preview ? "&preview=1" : "")) + '"><div class="hit-set-info"><h4>' +
                   (b.titleZh || b.title) + "</h4><p>" + (b.skill || "") + "</p></div></a>";
@@ -115,7 +116,7 @@
           });
         })
         .catch(function (e) {
-          document.getElementById("lead").textContent = e.message || "加载失败";
+          document.getElementById("lead").textContent = e.message || "Tải thất bại";
         });
     })();
   </script>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思13 Test 4 听力</title>
-<meta name="exam:title" content="剑桥雅思13 · Test 4（听力）">
+<title>YYSD · Cambridge IELTS 13 Test 4 Nghe</title>
+<meta name="exam:title" content="Cambridge IELTS 13 · Test 4(Nghe)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-listening">
 <meta name="exam:duration" content="32">
-<meta name="exam:description" content="剑桥雅思13 Test 4 听力（官方真题）：4 个 section，可单独练习或完整模考，自带音频、自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 13 Test 4 Nghe (Chính thức Đề thi thật):4 dùng trong section,tiền tố có thểmột mình Luyện tập có thểhoàn chỉnh Thi thử,tự mang theo Audio,tự động Chấm bài,Giải thích IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1080px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* bìa của ấn phẩm */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eaf2ff,#dbe9ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#5a7184; font-weight:600; }
@@ -41,7 +41,7 @@
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; }
   .paper-card.listen .pc-go { background:#2563eb; } .paper-card.read .pc-go { background:#aeb9c6; }
 
-  /* 模式弹窗 */
+  /* chế độcửa sổ pop-up tin học */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -63,7 +63,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#2563eb; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* hình thức gắn liền có nghĩa giống như từ tự do họ họ */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#001f3f; }
@@ -120,7 +120,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#001f3f; margin:4px 0 2px; }
@@ -157,65 +157,66 @@
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
+<script type="module" src="../../../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span>Cambridge IELTS Đề thi thật Bài kiểm tra</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- bìa của ấn phẩm -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">13</div></div>
     <div>
-      <h2>剑桥雅思 13 · Test 4</h2>
-      <div class="sub">官方真题 · 自动批改并给出雅思预估分。请选择科目开始测试。</div>
+      <h2>Cambridge IELTS 13 · Test 4</h2>
+      <div class="sub">Chính thức Đề thi thật · tự động Chấm bài và cung cấp đi raIELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần.mờiChọn môn học Bắt đầu Bài kiểm tra.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card listen" onclick="openMode()">
       <div class="pc-icon">🎧</div>
-      <h3>听力 (Listening)</h3>
-      <div class="pc-meta">4 个部分 · 共 40 题</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Nghe (Listening)</h3>
+      <div class="pc-meta">4 dùng trongphần · Tổng 40 câu</div>
+      <div class="pc-go">Bắt đầu Bài kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- chế độcửa sổ pop-up tin học -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分项突破，可只练某几个部分，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习部分：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc">phù hợp mục phụ của chương trình đột phá,tiền tố có thể chỉ luyện tập một vàimột vài phần,hướng về phía trước đo thời gian khôngtác động nỗ lực hoặc áp lực áp lực.</div>
+        <div class="mb-sub"><span>Chọn phần luyện tập:</span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：4 个部分一次完成，限时 32 分钟并自动连播录音。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;">完整测试（4 个部分，限时 32 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc">hoàn chỉnh Mô phỏng thật Kì thi:4 dùng trongphần đầu tiên Hoàn thành,đặt giới hạn thời gian 32 phútvàtự động họGhi âm.</div>
+        <div class="mb-sub"><span>Bài kiểm tra thông tin:</span></div>
+        <div style="color:#445;font-size:14.5px;">hoàn chỉnh Bài kiểm tra (4 dùng trongphần,đặt giới hạn thời gian 32 phút)</div>
         <ul class="exam-list"><li>• Section 1</li><li>• Section 2</li><li>• Section 3</li><li>• Section 4</li></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu Thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- hình thức gắn liền có nghĩa giống như từ tự do họ họ -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Quay lại bìa của ấn phẩm</button>
   </div>
   <div class="audio-bar">
     <div class="audio-row">
@@ -224,39 +225,39 @@
       <div class="audio-prog" id="aProg" onclick="seekAudio(event)"><div class="fill" id="aFill"></div></div>
       <div class="audio-time" id="aTime">00:00 / 00:00</div>
     </div>
-    <div class="audio-note" id="aNote">🔊 点击各部分的「▶ 听本部分录音」可单独播放该部分；模考模式下会自动连播。</div>
+    <div class="audio-note" id="aNote">🔊 nhấn mỗiphần «▶ cười cổ đạitrụ sở chính bút toán kế toán âm thanh»tiền tố có thểmột mình Phát nênphần;Thi thử chế độ xuống có thểtự động họ.</div>
     <audio id="player" preload="none"></audio>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài vàXem Chấm bài Báo cáo</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quảhọ -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 Chấm bài Báo cáo</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">thường dùng ở dạng phủ định trả lời hoặc đáp lại câu hỏi của ai đó họ đếm</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỉ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế ước tính phần</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>hoàn toàn Tiến độ</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="audio-note" id="bandNote" style="margin-top:14px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">chi tiết Kết quả</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思13 Test 4 听力（官方原题 + 官方答案）
-   ============================================================ */
+ một, bài thi dữ liệu —— Cambridge IELTS 13 Test 4 Nghe (Chính thức họ họ + Đáp án chính thức)
+ ============================================================ */
 const TEST = {
   meta:{ volume:13, testNo:4 },
   durationMin:32,
@@ -283,16 +284,16 @@ const TEST = {
             {bullet:true, html:`Make sure you <Q n="10">`},
           ],
           questions:[
-            {id:'L1',no:1,answer:['Finance'],explain:`Alex 起初在 ___ 部门培训。答案：Finance（财务）。`},
-            {id:'L2',no:2,answer:['Maths','Math','Mathematics'],explain:`没有 ___ 技能的学校资格。答案：Maths。`},
-            {id:'L3',no:3,answer:['business'],explain:`本应做 ___ 技能文凭。答案：business（商务）。`},
-            {id:'L4',no:4,answer:['17','seventeen'],explain:`最年轻的学员 ___ 岁。答案：17。`},
-            {id:'L5',no:5,answer:['holiday','holidays','vacation','vacations'],explain:`学员享有与正式员工相同的 ___。答案：holiday(s)（假期）。`},
-            {id:'L6',no:6,answer:['college'],explain:`每月去 ___ 一天。答案：college（学院）。`},
-            {id:'L7',no:7,answer:['location'],explain:`公司位置 ___ 便利。答案：location。`},
-            {id:'L8',no:8,answer:['jeans'],explain:`面试别穿 ___。答案：jeans（牛仔裤）。`},
-            {id:'L9',no:9,answer:['late'],explain:`别 ___。答案：late（迟到）。`},
-            {id:'L10',no:10,answer:['smile'],explain:`一定要 ___。答案：smile（微笑）。`},
+            {id:'L1',no:1,answer:['Finance'],explain:`Alex ban đầu tồn tại ___ phòng nuôi dưỡng. Đáp án: Finance(công việc tài chính).`},
+            {id:'L2',no:2,answer:['Maths','Math','Mathematics'],explain:`không có ___ Kỹ năng của trường học trình độ. Đáp án: Maths.`},
+            {id:'L3',no:3,answer:['business'],explain:`nên đã làm ___ Kỹ năng văn bằng. Đáp án: business(công việc thương mại).`},
+            {id:'L4',no:4,answer:['17','seventeen'],explain:`biến thể của trẻ của học viên ___ biến thể của. Đáp án: 17.`},
+            {id:'L5',no:5,answer:['holiday','holidays','vacation','vacations'],explain:`học viên hưởng quyền lợi biến thể của trang trọng nhân viên giống hệt của ___. Đáp án: holiday(s)(kỳ nghỉ).`},
+            {id:'L6',no:6,answer:['college'],explain:`mỗi tháng đi ___ một ngày. Đáp án: college(Khoa / Viện).`},
+            {id:'L7',no:7,answer:['location'],explain:`công ty vị trí ___ thuận tiện. Đáp án: location.`},
+            {id:'L8',no:8,answer:['jeans'],explain:`được phỏng vấn với tư cách ứng viên họ mặc ___. Đáp án: jeans(quần jean).`},
+            {id:'L9',no:9,answer:['late'],explain:`họ ___. Đáp án: late(đến muộn).`},
+            {id:'L10',no:10,answer:['smile'],explain:`phải ___. Đáp án: smile(cười).`},
           ]}
       ]},
     { id:2, audio:'ielts13_test4_audio2.mp3', audioClips:[{qFrom:11,qTo:16,audioStart:0,audioEnd:253},{qFrom:17,qTo:20,audioStart:253,audioEnd:368}],
@@ -301,12 +302,12 @@ const TEST = {
           instruction:'Choose the correct letter, A, B or C.',
           heading:'Visit to mountain area',
           questions:[
-            {id:'L11',no:11,q:`Annie recommends that when cross-country skiing, the visitors should`,options:{A:`get away from the regular trails.`,B:`stop to enjoy views of the scenery.`,C:`go at a slow speed at the beginning.`},answer:['A'],explain:`答案：A — 离开常规雪道。`},
-            {id:'L12',no:12,q:`What does Annie tell the group about this afternoon's dog-sled trip?`,options:{A:`Those who want to can take part in a race.`,B:`Anyone has the chance to drive a team of dogs.`,C:`One group member will be chosen to lead the trail.`},answer:['B'],explain:`答案：B — 任何人都有机会驾驭狗队。`},
-            {id:'L13',no:13,q:`What does Annie say about the team relay event?`,options:{A:`All participants receive a medal.`,B:`The course is 4 km long.`,C:`Each team is led by a teacher.`},answer:['A'],explain:`答案：A — 所有参与者都得奖牌。`},
-            {id:'L14',no:14,q:`On the snow-shoe trip, the visitors will`,options:{A:`visit an old gold mine.`,B:`learn about unusual flowers.`,C:`climb to the top of a mountain.`},answer:['C'],explain:`答案：C — 登上山顶。`},
-            {id:'L15',no:15,q:`The cost of accommodation in the mountain hut includes`,options:{A:`a supply of drinking water.`,B:`transport of visitors' luggage.`,C:`cooked meals.`},answer:['A'],explain:`答案：A — 含饮用水供应。`},
-            {id:'L16',no:16,q:`If there is a storm while the visitors are in the hut, they should`,options:{A:`contact the bus driver.`,B:`wait until the weather improves.`,C:`use the emergency locator beacon.`},answer:['B'],explain:`答案：B — 等天气好转。`},
+            {id:'L11',no:11,q:`Annie recommends that when cross-country skiing, the visitors should`,options:{A:`get away from the regular trails.`,B:`stop to enjoy views of the scenery.`,C:`go at a slow speed at the beginning.`},answer:['A'],explain:`Đáp án: A — rời khỏi quy tắc ứng xử họ đường.`},
+            {id:'L12',no:12,q:`What does Annie tell the group about this afternoon's dog-sled trip?`,options:{A:`Those who want to can take part in a race.`,B:`Anyone has the chance to drive a team of dogs.`,C:`One group member will be chosen to lead the trail.`},answer:['B'],explain:`Đáp án: B — bất kỳ người họ hữu cơ có thể thúc ngựa chó phi đội.`},
+            {id:'L13',no:13,q:`What does Annie say about the team relay event?`,options:{A:`All participants receive a medal.`,B:`The course is 4 km long.`,C:`Each team is led by a teacher.`},answer:['A'],explain:`Đáp án: A — tất cả người tham gia họ đoạt giải quân mạt chược.`},
+            {id:'L14',no:14,q:`On the snow-shoe trip, the visitors will`,options:{A:`visit an old gold mine.`,B:`learn about unusual flowers.`,C:`climb to the top of a mountain.`},answer:['C'],explain:`Đáp án: C — leo lên đỉnh đồi.`},
+            {id:'L15',no:15,q:`The cost of accommodation in the mountain hut includes`,options:{A:`a supply of drinking water.`,B:`transport of visitors' luggage.`,C:`cooked meals.`},answer:['A'],explain:`Đáp án: A — ngậm trong miệng nước uống cung cấp.`},
+            {id:'L16',no:16,q:`If there is a storm while the visitors are in the hut, they should`,options:{A:`contact the bus driver.`,B:`wait until the weather improves.`,C:`use the emergency locator beacon.`},answer:['B'],explain:`Đáp án: B — đợi thời tiết cải thiện.`},
           ]},
         { kind:'match', title:'Questions 17–20', audioStart:253, audioEnd:368,
           instruction:'What information does Annie give about skiing on each of the following mountain trails? Choose FOUR answers from the box and write the correct letter, A–F, next to Questions 17–20.',
@@ -314,10 +315,10 @@ const TEST = {
           box:{A:`It has a good place to stop and rest.`,B:`It is suitable for all abilities.`,C:`It involves crossing a river.`,D:`It demands a lot of skill.`,E:`It may be closed in bad weather.`,F:`It has some very narrow sections.`},
           subTitle:'Mountain trails',
           questions:[
-            {id:'L17',no:17,q:`Highland Trail`,answer:['B'],explain:`答案：B — 适合各种水平。`},
-            {id:'L18',no:18,q:`Pine Trail`,answer:['D'],explain:`答案：D — 需要很高技巧。`},
-            {id:'L19',no:19,q:`Stony Trail`,answer:['A'],explain:`答案：A — 有适合休息的地方。`},
-            {id:'L20',no:20,q:`Loser's Trail`,answer:['E'],explain:`答案：E — 恶劣天气可能关闭。`},
+            {id:'L17',no:17,q:`Highland Trail`,answer:['B'],explain:`Đáp án: B — phù hợp mỗi loại Trình độ.`},
+            {id:'L18',no:18,q:`Pine Trail`,answer:['D'],explain:`Đáp án: D — cần phó từ mức độ họ Kĩ thuật.`},
+            {id:'L19',no:19,q:`Stony Trail`,answer:['A'],explain:`Đáp án: A — có phù hợp nghỉ của khu vực.`},
+            {id:'L20',no:20,q:`Loser's Trail`,answer:['E'],explain:`Đáp án: E — tồi tệ thời tiết có thể xảy ra Đóng.`},
           ]}
       ]},
     { id:3, audio:'ielts13_test4_audio3.mp3', audioClips:[{qFrom:21,qTo:26,audioStart:0,audioEnd:263.8},{qFrom:27,qTo:28,audioStart:263.8,audioEnd:334.8},{qFrom:29,qTo:30,audioStart:334.8,audioEnd:405.8}],
@@ -326,23 +327,23 @@ const TEST = {
           instruction:'Choose the correct letter, A, B or C.',
           heading:'Labels giving nutritional information on food packaging',
           questions:[
-            {id:'L21',no:21,q:`What was Jack's attitude to nutritional food labels before this project?`,options:{A:`He didn't read everything on them.`,B:`He didn't think they were important.`,C:`He thought they were too complicated.`},answer:['A'],explain:`答案：A — 不会读上面的所有内容。`},
-            {id:'L22',no:22,q:`Alice says that before doing this project,`,options:{A:`she was unaware of what certain foods contained.`,B:`she was too lazy to read food labels.`,C:`she was only interested in the number of calories.`},answer:['A'],explain:`答案：A — 不了解某些食物的成分。`},
-            {id:'L23',no:23,q:`When discussing supermarket brands of pizza, Jack agrees with Alice that`,options:{A:`the list of ingredients is shocking.`,B:`he will hesitate before buying pizza again.`,C:`the nutritional label is misleading.`},answer:['C'],explain:`答案：C — 营养标签具有误导性。`},
-            {id:'L24',no:24,q:`Jack prefers the daily value system to other labelling systems because it is`,options:{A:`more accessible.`,B:`more logical.`,C:`more comprehensive.`},answer:['C'],explain:`答案：C — 更全面。`},
-            {id:'L25',no:25,q:`What surprised both students about one flavour of crisps?`,options:{A:`The percentage of artificial additives given was incorrect.`,B:`The products did not contain any meat.`,C:`The labels did not list all the ingredients.`},answer:['B'],explain:`答案：B — 产品其实不含肉。`},
-            {id:'L26',no:26,q:`What do the students think about research into the impact of nutritional food labelling?`,options:{A:`It did not produce clear results.`,B:`It focused on the wrong people.`,C:`It made unrealistic recommendations.`},answer:['A'],explain:`答案：A — 没有得出明确结果。`},
+            {id:'L21',no:21,q:`What was Jack's attitude to nutritional food labels before this project?`,options:{A:`He didn't read everything on them.`,B:`He didn't think they were important.`,C:`He thought they were too complicated.`},answer:['A'],explain:`Đáp án: A — không có khả năng dấu phẩy bên trên của tất cả Nội dung.`},
+            {id:'L22',no:22,q:`Alice says that before doing this project,`,options:{A:`she was unaware of what certain foods contained.`,B:`she was too lazy to read food labels.`,C:`she was only interested in the number of calories.`},answer:['A'],explain:`Đáp án: A — không họ một vài thực phẩm của thành phần.`},
+            {id:'L23',no:23,q:`When discussing supermarket brands of pizza, Jack agrees with Alice that`,options:{A:`the list of ingredients is shocking.`,B:`he will hesitate before buying pizza again.`,C:`the nutritional label is misleading.`},answer:['C'],explain:`Đáp án: C — dinh dưỡng nhãn có làm cho hiểu lầm bản chất.`},
+            {id:'L24',no:24,q:`Jack prefers the daily value system to other labelling systems because it is`,options:{A:`more accessible.`,B:`more logical.`,C:`more comprehensive.`},answer:['C'],explain:`Đáp án: C — thay đổi hoặc thay thế toàn diện.`},
+            {id:'L25',no:25,q:`What surprised both students about one flavour of crisps?`,options:{A:`The percentage of artificial additives given was incorrect.`,B:`The products did not contain any meat.`,C:`The labels did not list all the ingredients.`},answer:['B'],explain:`Đáp án: B — hàng hóa thực ra không ngậm trong miệng thịt.`},
+            {id:'L26',no:26,q:`What do the students think about research into the impact of nutritional food labelling?`,options:{A:`It did not produce clear results.`,B:`It focused on the wrong people.`,C:`It made unrealistic recommendations.`},answer:['A'],explain:`Đáp án: A — không có đạt được kết quả rõ ràng Kết quả.`},
           ]},
         { kind:'multi', title:'Questions 27 and 28', audioStart:263.8, audioEnd:334.8,
           instruction:'Choose TWO letters, A–E. Which TWO things surprised the students about the traffic-light system for nutritional labels?',
           box:{A:`its widespread use`,B:`the fact that it is voluntary for supermarkets`,C:`how little research was done before its introduction`,D:`its unpopularity with food manufacturers`,E:`the way that certain colours are used`},
           groupId:'L27_28', answerSet:['B','C'],
-          questions:[{id:'L27',no:27,explain:`选两项（顺序不限）：B 与 C。`},{id:'L28',no:28,explain:`同上，正确两项为 B 与 C。`}]},
+          questions:[{id:'L27',no:27,explain:`chọn họ(trình tự không giới hạn): B biến thể của C.`},{id:'L28',no:28,explain:`như trên, Đúng họ làm với tư cách B biến thể của C.`}]},
         { kind:'multi', title:'Questions 29 and 30', audioStart:334.8, audioEnd:405.8,
           instruction:'Choose TWO letters, A–E. Which TWO things are true about the participants in the study on the traffic-light system?',
           box:{A:`They had low literacy levels.`,B:`They were regular consumers of packaged food.`,C:`They were selected randomly.`,D:`They were from all socio-economic groups.`,E:`They were interviewed face-to-face.`},
           groupId:'L29_30', answerSet:['D','E'],
-          questions:[{id:'L29',no:29,explain:`选两项（顺序不限）：D 与 E。`},{id:'L30',no:30,explain:`同上，正确两项为 D 与 E。`}]},
+          questions:[{id:'L29',no:29,explain:`chọn họ(trình tự không giới hạn): D biến thể của E.`},{id:'L30',no:30,explain:`như trên, Đúng họ làm với tư cách D biến thể của E.`}]},
       ]},
     { id:4, audio:'ielts13_test4_audio4.mp3', audioClips:[{qFrom:31,qTo:40,audioStart:0,audioEnd:422}],
       groups:[
@@ -368,46 +369,46 @@ const TEST = {
             {bullet:true, html:`Industrial workers found coffee helped them to work at <Q n="40">.`},
           ],
           questions:[
-            {id:'L31',no:31,answer:['destruction'],explain:`统治者下令 ___ 所有咖啡馆。答案：destruction（摧毁）。`},
-            {id:'L32',no:32,answer:['universities','university'],explain:`咖啡馆被比作 ___。答案：universities（大学）。`},
-            {id:'L33',no:33,answer:['political'],explain:`在社会和 ___ 变革中起作用。答案：political（政治）。`},
-            {id:'L34',no:34,answer:['ports','port'],explain:`咖啡常以来源的 ___ 命名。答案：port(s)（港口）。`},
-            {id:'L35',no:35,answer:['slaves','slavery'],explain:`巴西和加勒比种植多依赖 ___。答案：slaves / slavery。`},
-            {id:'L36',no:36,answer:['taxation'],explain:`在爪哇，咖啡用作一种 ___。答案：taxation（税收）。`},
-            {id:'L37',no:37,answer:['sugar'],explain:`咖啡变得几乎和 ___ 一样重要。答案：sugar（糖）。`},
-            {id:'L38',no:38,answer:['tea'],explain:`英国转向饮 ___，美国则没有。答案：tea（茶）。`},
-            {id:'L39',no:39,answer:['transportation'],explain:`因 ___ 改善价格下降。答案：transportation（运输）。`},
-            {id:'L40',no:40,answer:['night'],explain:`咖啡帮助工人在 ___ 工作。答案：night（夜间）。`},
+            {id:'L31',no:31,answer:['destruction'],explain:`người cai trị ra lệnh ___ tất cả quán cà phê. Đáp án: destruction(phá hủy).`},
+            {id:'L32',no:32,answer:['universities','university'],explain:`quán cà phê chăn so sánh với ___. Đáp án: universities(Đại học).`},
+            {id:'L33',no:33,answer:['political'],explain:`tồn tại Xã hội biến thể cũ của ___ cải biến hình thức kết hợp Trung Quốc có tác dụng. Đáp án: political(chính trị).`},
+            {id:'L34',no:34,answer:['ports','port'],explain:`cà phê từ mượn họ kể từ một sự kiện trước gốc của ___ đặt tên. Đáp án: port(s)(cảng).`},
+            {id:'L35',no:35,answer:['slaves','slavery'],explain:`nước Ba thời nhà Chu ở phía đông Tứ Xuyên hiện đại huyện Tây Hòa ở Longnan thêm văn học dây cương Bỉ trồng nhiều phụ thuộc vào ___. Đáp án: slaves / slavery.`},
+            {id:'L36',no:36,answer:['taxation'],explain:`tồn tại Java đảo của Indonesia, cà phê từ mượn dùng cho mục đích một loại ___. Đáp án: taxation(thuế).`},
+            {id:'L37',no:37,answer:['sugar'],explain:`cà phê từ mượn trở nên hầu như biến thể cũ của ___ giống quan trọng. Đáp án: sugar(đường).`},
+            {id:'L38',no:38,answer:['tea'],explain:`Vương quốc Anh đổi hướng biến thể cũ của ___, Hoa Kỳ văn học liên từ dùng để thể hiện sự tương phản với mệnh đề trước nhưng không có. Đáp án: tea(trà).`},
+            {id:'L39',no:39,answer:['transportation'],explain:`biến thể cũ của ___ cải thiện giá giảm. Đáp án: transportation(vận chuyển).`},
+            {id:'L40',no:40,answer:['night'],explain:`cà phê từ mượn Trợ giúp công nhân tồn tại ___ làm việc. Đáp án: night(ban đêm).`},
           ]}
       ]},
   ]
 };
 
-/* 官方 听力 原始分(0-40) → 雅思分 对照表 */
+/* Chính thức Nghe đầu tiên phần(0-40) → IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần bảng so sánh */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[32,7.5],[30,7.0],[26,6.5],[23,6.0],[18,5.5],[16,5.0],[13,4.5],[10,4.0],[6,3.5],[4,3.0],[0,2.5]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.5; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
-   ============================================================ */
+, động cơ từ mượn 
+ ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 
-/* 模式弹窗 */
+/* chế độ cửa sổ pop-up tin học */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
     TEST.sections.map(s=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${s.id}" checked> Section ${s.id}</label>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'họ chọn'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一个部分。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('Vui lòng chọn ít nhất một phần.'); return; } selectedSections=ids; }
   else selectedSections=TEST.sections.map(s=>s.id);
   currentPaper=TEST.sections.filter(s=>selectedSections.includes(s.id));
   closeMode(); submitted=false;
@@ -419,18 +420,18 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思13 · Test 4 — 听力`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 13 · Test 4 — Nghe`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(sectionHtml).join('');
 }
 function sectionHtml(s){
   return `<div class="section-banner" id="anchor_${s.id}">
-      <div class="sb-top"><span class="sb-title">Section ${s.id}</span>
-        <button class="listen-here" onclick="playSection(${s.id})">▶ 听本部分录音</button></div>
-      <div class="sb-meta">本部分共 ${allQs(s).length} 题</div>
-    </div>${s.groups.map(groupHtml).join('')}`;
+ <div class="sb-top"><span class="sb-title">Section ${s.id}</span>
+ <button class="listen-here" onclick="playSection(${s.id})">▶ cười cổ đại trụ sở chính bút toán kế toán âm thanh</button></div>
+ <div class="sb-meta"> trụ sở chính phần ${allQs(s).length} họ</div>
+ </div>${s.groups.map(groupHtml).join('')}`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // cầm <Q n="x"> biến thể của vị trí thay thế họ đánh số huy hiệu + nhập khẩu khung ví dụ: khung cửa
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="L${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -466,13 +467,13 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（两题合计选出正确的两项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> Chọn một họ(họ cộng tổng chọn ra Đúng của họ, trình tự không giới hạn)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='map'){
     const letters=g.letters||['A','B','C','D','E','F','G','H','I'];
     const inner=g.svg?g.svg:`<img class="map-img" src="${g.image}" alt="${g.mapTitle||'map'}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">` +
-      `<div class="map-missing" style="display:none;">📍 地图图片待上传：请把书上这张地图发给老师，上传后此处会显示地图，即可对照作答。</div>`;
+      `<div class="map-missing" style="display:none;">📍 bản đồ Hình ảnh ở lại Tải lên: mời cầm viết tắt của dùng trong đại từ này họ bản đồ cấp Giáo viên, Tải lên họ nơi này có thể hiển thị bản đồ, tương đương với Đối chiếu trả lời.</div>`;
     const img=`<div class="map-wrap">${g.mapTitle?`<div class="note-title">${g.mapTitle}</div>`:''}${inner}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
     const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel(q.id)}</div>`).join('');
@@ -481,19 +482,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* đồng hồ bấm giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Thời gian đến, tự động Nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=300&&left>60); t.classList.toggle('danger',left<=60);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 音频（真实文件，每部分一段；模考自动连播） */
+/* Audio (thật tài liệu, mỗi phần một họ; Thi thử tự động họ) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }
@@ -515,70 +516,70 @@ player.addEventListener('ended',()=>{
 });
 function paintAudio(){ const d=player.duration||0,c=player.currentTime||0; document.getElementById('aFill').style.width=(d?c/d*100:0)+'%'; document.getElementById('aTime').textContent=fmt(Math.floor(c))+' / '+fmt(Math.floor(d)); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
-  const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
+ const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
 
 function confirmSubmit(){
-  let answered=0,total=0;
-  currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+ let answered=0,total=0;
+ currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
+ if(window.confirm(`đã trả lời ${answered}/${total} họ.\n rõ ràng Nộp bài và Xem Chấm bài Báo cáo thông tục gì??`)) submitTest();
 }
 function submitTest(){
-  if(submitted) return; submitted=true;
-  clearInterval(timerInterval); player.pause();
-  document.getElementById('timer').classList.remove('show');
+ if(submitted) return; submitted=true;
+ clearInterval(timerInterval); player.pause();
+ document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
-  const pairCorrect={};
-  currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
-  }));
+ /* trước xử lý multi ghép đôi họ(trình tự không giới hạn, không Lặp lại tính điểm) */
+ const pairCorrect={};
+ currentPaper.forEach(s=>s.groups.forEach(g=>{
+ if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+ }));
 
-  let correct=0,total=0; const detail=[];
-  currentPaper.forEach(s=>{
-    let sc=0; const items=[];
-    s.groups.forEach(g=>g.questions.forEach(q=>{
-      const ua=readAns(q); let ok;
-      if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
-      total++; if(ok){correct++;sc++;}
-      items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
-    }));
-    detail.push({s,sc,total:allQs(s).length,items});
-  });
+ let correct=0,total=0; const detail=[];
+ currentPaper.forEach(s=>{
+ let sc=0; const items=[];
+ s.groups.forEach(g=>g.questions.forEach(q=>{
+ const ua=readAns(q); let ok;
+ if(g.kind==='multi') ok=!!pairCorrect[q.id];
+ else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+ total++; if(ok){correct++;sc++;}
+ items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
+ }));
+ detail.push({s,sc,total:allQs(s).length,items});
+ });
 
-  const pct=total?Math.round(correct/total*100):0;
-  const band=lookupBand(correct,total);
-  const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
+ const pct=total?Math.round(correct/total*100):0;
+ const band=lookupBand(correct,total);
+ const elapsed=Math.max(1,Math.round((Date.now()-startTime)/1000));
 
-  document.getElementById('testArea').style.display='none';
-  document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思13 · Test 4 — 听力';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
-  document.getElementById('resCorrect').textContent=`${correct}/${total}`;
-  document.getElementById('resPct').textContent=pct+'%';
-  document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
-  document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
-  setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
-  document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方听力 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 4 个部分时为精确换算。`;
+ document.getElementById('testArea').style.display='none';
+ document.getElementById('resultArea').style.display='block';
+ document.getElementById('resTitle').textContent=' Cambridge IELTS 13 · Test 4 — Nghe ';
+ document.getElementById('resMeta').textContent=`${mode==='practice'?' Luyện tập chế độ ':' Thi thử chế độ '} · sử dụng biến thể cũ của ${fmt(elapsed)} · thì hoàn thành ngữ pháp giữa ${new Date().toLocaleString('zh-CN')}`;
+ document.getElementById('resCorrect').textContent=`${correct}/${total}`;
+ document.getElementById('resPct').textContent=pct+'%';
+ document.getElementById('resBand').textContent=band.toFixed(1);
+ document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
+ document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
+ setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
+ document.getElementById('bandNote').textContent = total===40
+? ' IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế phần nhấn Chính thức Nghe 40 họ đầu tiên phần bảng so sánh chuyển đổi.'
+: `hình thức kết hợp gốc tiếp theo hầu như khảo sát ${total} họ, ước tính phần nhấn tỷ lệ chuyển đổi giữa các loại tiền tệ đến 40 họ họ áp dụng cái gì đó đã dùng trong ngữ cảnh khác Chính thức bảng so sánh; hoàn thành hình thức liên kết toàn bộ 4 dùng trong phần biến thể cũ của làm với tư cách chính xác chuyển đổi.`;
 
-  document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
-    const sp=d.total?Math.round(d.sc/d.total*100):0;
-    const rows=d.items.map(it=>{
-      const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+ document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
+ const sp=d.total?Math.round(d.sc/d.total*100):0;
+ const rows=d.items.map(it=>{
+ const cls=it.ok?'correct':'wrong';
+ const yours=it.ua?`bạn của Đáp án: <span class="yours">${it.ua}</span>　`:`<span class="yours"> Chưa trả lời </span> `;
+ return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} ${it.q.no} họ</div>
+ <div class="ra">${it.ok?'<span class="correctv"> trả lời Đúng </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
-        <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
+        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} họ Đúng ${sp}%</span></div></div>
+ <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
 }
@@ -592,7 +593,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Kết quả đồng bộ (Trung tâm Học tập tự động Thêm, không thay đổi họ Chấm bài logic từ mượn) ===== */
 (function(){
   var posted=false;
   function report(){

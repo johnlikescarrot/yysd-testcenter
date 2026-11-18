@@ -6,74 +6,74 @@ window.YYSD_ALEVEL_PAPERS = (function () {
   "use strict";
 
   var SEASON_MM = { m: "03", s: "06", w: "11" };
-  var SEASON_ZH = { m: "春季", s: "夏季", w: "冬季" };
-  var SEASON_SHORT = { m: "春", s: "夏", w: "冬" };
+  var SEASON_ZH = { m: "mùa xuân", s: "mùa hè", w: "mùa đông" };
+  var SEASON_SHORT = { m: "biến thể cũ của", s: "nhà Hạ khoảng 2000 TCN", w: "mùa đông" };
 
-  // CIE 标准：卷号十位 = Paper 序号（见 Desktop 编号规则说明.docx）
+  // CIE Chuẩn:cuộn lại gầmhàng chục trong hệ thập phân = Paper số thứ tự(thấy Desktop đánh sốquy tắcGiải thích.docx)
   var BY_CODE = {
     "9709": [
-      { d: 1, short: "P1", name: "Pure Mathematics 1", nameZh: "纯数 P1", level: "AS/A2",
-        desc: "11/12/13 · 代数、函数、坐标几何、三角、数列、微积分入门" },
-      { d: 2, short: "P2", name: "Pure Mathematics 2", nameZh: "纯数 P2", level: "AS",
-        desc: "21/22/23 · 代数、指数对数、三角、微积分、数值解方程（仅 AS 路线）" },
-      { d: 3, short: "P3", name: "Pure Mathematics 3", nameZh: "纯数 P3", level: "A2",
-        desc: "31/32/33 · 向量、微分方程、复数等 A2 纯数" },
-      { d: 4, short: "M1", name: "Mechanics", nameZh: "力学 M1", level: "AS/A2",
-        desc: "41/42/43 · 力与平衡、直线运动、动量、牛顿定律、功与能" },
-      { d: 5, short: "S1", name: "Probability & Statistics 1", nameZh: "概率统计 S1", level: "AS/A2",
-        desc: "51/52/53 · 数据表示、排列组合、概率、离散随机变量、正态分布" },
-      { d: 6, short: "S2", name: "Probability & Statistics 2", nameZh: "概率统计 S2", level: "A2",
-        desc: "61/62/63 · 泊松分布、连续随机变量、估计与假设检验" }
+      { d: 1, short: "P1", name: "Pure Mathematics 1", nameZh: "thuần khiết đếm P1", level: "AS/A2",
+        desc: "11/12/13 · đại số,hàm số toán,tọa độ hình họchình học,hình tam giác,dãy số,toán vi tích phâncửa vào" },
+      { d: 2, short: "P2", name: "Pure Mathematics 2", nameZh: "thuần khiết đếm P2", level: "AS",
+        desc: "21/22/23 · đại số,chỉ số thống kêđúng đếm,hình tam giác,toán vi tích phân,lời giải sốphương trình toán học(hầu như AS hành trình)" },
+      { d: 3, short: "P3", name: "Pure Mathematics 3", nameZh: "thuần khiết đếm P3", level: "A2",
+        desc: "31/32/33 · toán vector,phương trình vi phân toán,ngôn ngữ học số nhiềuđợi A2 thuần khiết đếm" },
+      { d: 4, short: "M1", name: "Mechanics", nameZh: "cơ học M1", level: "AS/A2",
+        desc: "41/42/43 · họcân bằng,đường thẳngdi chuyển,động lượng,Newton tên gọiđịnh luật khoa học ví dụ: định luật bảo toàn năng lượng,hành động hoặc dịch vụ có công họ" },
+      { d: 5, short: "S1", name: "Probability & Statistics 1", nameZh: "xác suất toánthống kê S1", level: "AS/A2",
+        desc: "51/52/53 · dữ liệuvề ai đó bày tỏ,sắp xếp theo thứ tựlắp ráp,xác suất toán,các thành viên gia đình ly tántheo tình huốngbiến số toán,toán phân phối chuẩn" },
+      { d: 6, short: "S2", name: "Probability & Statistics 2", nameZh: "xác suất toánthống kê S2", level: "A2",
+        desc: "61/62/63 · phân phối Poisson trong thống kê,Liên tiếptheo tình huốngbiến số toán,ước tínhgiả sửkiểm tra" }
     ],
     "9231": [
-      { d: 1, short: "FP1", name: "Further Pure Mathematics 1", nameZh: "高数 FP1", level: "AS/A2",
-        desc: "11/12/13 · 矩阵、复数、级数等" },
-      { d: 2, short: "FP2", name: "Further Pure Mathematics 2", nameZh: "高数 FP2", level: "A2",
-        desc: "21/22/23 · 进阶纯数 A2 内容" },
-      { d: 3, short: "FM", name: "Further Mechanics", nameZh: "高数 FM", level: "AS/A2",
-        desc: "31/32/33 · 进阶力学" },
-      { d: 4, short: "FS", name: "Further Probability & Statistics", nameZh: "高数 FS", level: "AS/A2",
-        desc: "41/42/43 · 进阶概率统计" }
+      { d: 1, short: "FP1", name: "Further Pure Mathematics 1", nameZh: "toán cao cấp FP1", level: "AS/A2",
+        desc: "11/12/13 · mảng,ngôn ngữ học số nhiều,toán học chuỗiđợi" },
+      { d: 2, short: "FP2", name: "Further Pure Mathematics 2", nameZh: "toán cao cấp FP2", level: "A2",
+        desc: "21/22/23 · nâng caothuần khiết đếm A2 Nội dung" },
+      { d: 3, short: "FM", name: "Further Mechanics", nameZh: "toán cao cấp FM", level: "AS/A2",
+        desc: "31/32/33 · nâng caocơ học" },
+      { d: 4, short: "FS", name: "Further Probability & Statistics", nameZh: "toán cao cấp FS", level: "AS/A2",
+        desc: "41/42/43 · nâng caoxác suất toánthống kê" }
     ],
     "9700": "science",
     "9701": "science",
     "9702": "science",
     "9708": [
-      { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 选择题", level: "AS",
-        desc: "11/12/13 · 30 道选择题，考查 AS 考纲" },
-      { d: 2, short: "P2", name: "Data Response and Essays", nameZh: "P2 数据回应", level: "AS",
-        desc: "21/22/23 · 数据回应与简答，考查 AS 考纲" },
-      { d: 3, short: "P3", name: "Multiple Choice", nameZh: "P3 选择题", level: "A2",
-        desc: "31/32/33 · A2 选择题" },
-      { d: 4, short: "P4", name: "Data Response and Essays", nameZh: "P4 数据回应", level: "A2",
-        desc: "41/42/43 · 数据回应与论述，考查 A2 考纲" }
+      { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 câu hỏi trắc nghiệm", level: "AS",
+        desc: "11/12/13 · 30 đườngcâu hỏi trắc nghiệm,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+      { d: 2, short: "P2", name: "Data Response and Essays", nameZh: "P2 dữ liệuphản hồi", level: "AS",
+        desc: "21/22/23 · dữ liệuphản hồiđơn giản hình thức gắn liền có nghĩa giống như từ tự do,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+      { d: 3, short: "P3", name: "Multiple Choice", nameZh: "P3 câu hỏi trắc nghiệm", level: "A2",
+        desc: "31/32/33 · A2 câu hỏi trắc nghiệm" },
+      { d: 4, short: "P4", name: "Data Response and Essays", nameZh: "P4 dữ liệuphản hồi", level: "A2",
+        desc: "41/42/43 · dữ liệuphản hồiluận văn,điều tra A2 đề cương kỳ thi đề cương nội dung của kỳ thi" }
     ],
     "9706": [
-      { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 选择题", level: "AS",
-        desc: "11/12/13 · 选择题，考查 AS 考纲" },
-      { d: 2, short: "P2", name: "Structured Questions", nameZh: "P2 结构题", level: "AS",
-        desc: "21/22/23 · 结构化试题，考查 AS 考纲" },
-      { d: 3, short: "P3", name: "Structured Questions", nameZh: "P3 结构题", level: "A2",
-        desc: "31/32/33 · 结构化试题，考查 A2 考纲" },
-      { d: 4, short: "P4", name: "Structured Questions", nameZh: "P4 结构题", level: "A2",
-        desc: "41/42/43 · 结构化试题，考查 A2 考纲" }
+      { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 câu hỏi trắc nghiệm", level: "AS",
+        desc: "11/12/13 · câu hỏi trắc nghiệm,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+      { d: 2, short: "P2", name: "Structured Questions", nameZh: "P2 cấu trúchọ", level: "AS",
+        desc: "21/22/23 · cấu trúcbiến thể củacâu hỏi thi,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+      { d: 3, short: "P3", name: "Structured Questions", nameZh: "P3 cấu trúchọ", level: "A2",
+        desc: "31/32/33 · cấu trúcbiến thể củacâu hỏi thi,điều tra A2 đề cương kỳ thi đề cương nội dung của kỳ thi" },
+      { d: 4, short: "P4", name: "Structured Questions", nameZh: "P4 cấu trúchọ", level: "A2",
+        desc: "41/42/43 · cấu trúcbiến thể củacâu hỏi thi,điều tra A2 đề cương kỳ thi đề cương nội dung của kỳ thi" }
     ]
   };
 
   var SCIENCE = [
-    { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 选择题", level: "AS",
-      desc: "11/12/13 · 选择题，考查 AS 考纲" },
-    { d: 2, short: "P2", name: "AS Level Structured Questions", nameZh: "P2 AS结构题", level: "AS",
-      desc: "21/22/23 · 结构化问答题，考查 AS 考纲" },
-    { d: 3, short: "P3", name: "Advanced Practical Skills", nameZh: "P3 AS实验题", level: "AS",
-      desc: "31/32/33 · 实验操作与数据分析，考查 AS 实验技能" },
-    { d: 4, short: "P4", name: "A Level Structured Questions", nameZh: "P4 A2结构题", level: "A2",
-      desc: "41/42/43 · 结构化问答题，考查 A2 考纲" },
-    { d: 5, short: "P5", name: "Planning, Analysis and Evaluation", nameZh: "P5 A2实验题", level: "A2",
-      desc: "51/52/53 · 实验设计、数据分析与评估" }
+    { d: 1, short: "P1", name: "Multiple Choice", nameZh: "P1 câu hỏi trắc nghiệm", level: "AS",
+      desc: "11/12/13 · câu hỏi trắc nghiệm,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+    { d: 2, short: "P2", name: "AS Level Structured Questions", nameZh: "P2 AScấu trúchọ", level: "AS",
+      desc: "21/22/23 · cấu trúcbiến thể củahỏi và đáphọ,điều tra AS đề cương kỳ thi đề cương nội dung của kỳ thi" },
+    { d: 3, short: "P3", name: "Advanced Practical Skills", nameZh: "P3 ASthí nghiệmhọ", level: "AS",
+      desc: "31/32/33 · thí nghiệmlàm việcdữ liệuphân tích,điều tra AS thí nghiệmKỹ năng" },
+    { d: 4, short: "P4", name: "A Level Structured Questions", nameZh: "P4 A2cấu trúchọ", level: "A2",
+      desc: "41/42/43 · cấu trúcbiến thể củahỏi và đáphọ,điều tra A2 đề cương kỳ thi đề cương nội dung của kỳ thi" },
+    { d: 5, short: "P5", name: "Planning, Analysis and Evaluation", nameZh: "P5 A2thí nghiệmhọ", level: "A2",
+      desc: "51/52/53 · thí nghiệmthiết kế,dữ liệuphân tíchđánh giá" }
   ];
 
-  // 同一年份内：冬季 → 夏季 → 春季（考试日期新→旧）
+  // giống hệtnăm cụ thểbên trong:mùa đông → mùa hè → mùa xuân(Kì thingày thángviết tắt của Tân Cương→cũ)
   var SEASON_SORT = { w: 1, s: 2, m: 3 };
 
   function schema(code) {
@@ -150,7 +150,7 @@ window.YYSD_ALEVEL_PAPERS = (function () {
     return true;
   }
 
-  // 学为贵：数学/高数按卷别(P1/FP1…)，生物等按 AS/A2
+  // học làm với tư cách đắt:toán học/toán cao cấpnhấn cuộn lại họ(P1/FP1…),sinh vậtđợi nhấn AS/A2
   function filterMode(code) {
     var key = String(code).toUpperCase();
     if (key === "9709" || key === "9231") return "component";
@@ -163,7 +163,7 @@ window.YYSD_ALEVEL_PAPERS = (function () {
     return String(paperDigit(paper)) === String(filter);
   }
 
-  // CIE 标准：先 Paper 序号（十位），再变卷号（个位）；中国区 14/37 等按数值排
+  // CIE Chuẩn:trước Paper số thứ tự(hàng chục trong hệ thập phân),lại thay đổi cuộn lại gầm(hàng đơn vị trong hệ thập phân);Trung Quốchọ 14/37 đợi nhấngiá trị sốmột hàng
   function comparePaper(code, paperA, paperB) {
     var da = paperDigit(paperA);
     var db = paperDigit(paperB);
@@ -195,11 +195,11 @@ window.YYSD_ALEVEL_PAPERS = (function () {
   }
 
   function rowMeta(paper) {
-    return "变卷 " + paperVariant(paper);
+    return "thay đổi cuộn lại " + paperVariant(paper);
   }
 
   function sectionHeading(comp) {
-    return comp.name + "（" + comp.nameZh + "）";
+    return comp.name + "(" + comp.nameZh + ")";
   }
 
   function componentsPresent(code, items) {
@@ -264,7 +264,7 @@ window.YYSD_ALEVEL_PAPERS = (function () {
 
   function hintFor(code) {
     if (schema(code)) {
-      return "按 CIE 标准卷号排序：Paper 1→2→…，同 Paper 内变卷 11→12→13→14…；年份新→旧，考季冬→夏→春。";
+      return "nhấn CIE Chuẩncuộn lại gầmSắp xếp:Paper 1→2→…,giống Paper bên trong thay đổi cuộn lại 11→12→13→14…;năm cụ thểviết tắt của Tân Cương→cũ,đánhtháng cuối của mùa đông tức là tháng mười hai âm lịch→nhà Hạ khoảng 2000 TCN→biến thể cũ của.";
     }
     return "";
   }

@@ -1,8 +1,8 @@
-# 学习区 / 单词学习
+# họchọ / Từ vựnghọc
 
-**把「单词学习册」的 HTML 文件上传到这个文件夹即可自动归类。**
+**cầm«Từ vựnghọcsách» HTML tài liệuTải lênđếnđại từ nàythư mụctương đương vớitự độngphân loại.**
 
-- 板块：📚 学习区 (study)
-- 科目：单词 (vocab)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm:📚 họchọ (study)
+- môn học:Từ vựng (vocab)
+- Tải lêncách thức:tồn tạivăn bản nàymón ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phúthọtự độngxuất hiệntồn tạitrang webtương ứng vớiPhân loạixuống,không cần thiếtKháclàm việc.

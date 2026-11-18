@@ -92,7 +92,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || "(Chưa trả lời)",
           ans: ans,
           stem: stem,
           explain: explain
@@ -110,7 +110,7 @@
   }
 
   function vocabWord(q) {
-    var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["“”‘’']([^"“”‘’']+)["“”‘’']/i);
+    var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["«»‘’']([^"«»‘’']+)["«»‘’']/i);
     return m ? m[1].trim() : "";
   }
 
@@ -339,7 +339,7 @@
     return "";
   }
 
-  /* 复盘三态（照 wofo.cc）：填对=绿字母；填错=红字母+绿(正确答案)；未填=红虚线段+绿(正确答案) */
+  /* sau khi hoàn thành ván cờ chơi lại ván cờhọ hình thức kết hợp(biến thể của wofo.cc):lấp hoặc nhồi đúng=màu xanh láchữ cái của bảng chữ cái;lấp hoặc nhồi họ=họchữ cái của bảng chữ cái+màu xanh lá(Đáp án đúng);Chưa điền=họđường chấmhọ+màu xanh lá(Đáp án đúng) */
   function blankReviewHTML(part, raw) {
     var ok = matchBlank(part, raw);
     var got = savedSuffix(part, raw);

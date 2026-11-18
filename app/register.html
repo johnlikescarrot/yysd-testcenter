@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>注册 · 机考系统</title>
+  <title>Đăng ký · họ đánhhệ thống</title>
   <link rel="stylesheet" href="assets/css/app.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261008ui15"></script>
+<script type="module" src="../assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="auth-page">
-  <header class="top"><b>优益思达机考系统<small lang="en">YYSD TEST CENTER</small></b>
-    <span class="top-acts"><button type="button" id="hit-reload">刷新</button></span>
+  <header class="top"><b>YYSD họ đánhhệ thống<small lang="en">YYSD TEST CENTER</small></b>
+    <span class="top-acts"><button type="button" id="hit-reload">Làm mới</button></span>
   </header>
   <main class="shell">
     <div class="card">
       <p class="auth-eyebrow" lang="en">CREATE ACCOUNT</p>
-      <h1>注册</h1>
-      <p class="lead">用管理员发给你的激活码开户并绑定这台电脑。</p>
+      <h1>Đăng ký</h1>
+      <p class="lead">sử dụngngười quản lý cấp bạnMã kích hoạt mở tài khoản ngân hàng vàtừ mượn ràng buộc đại từ này Đài Loan viết tắtmáy tính.</p>
       <form id="f">
-        <label class="field">手机号
-          <input type="tel" id="phone" maxlength="11" inputmode="numeric" autocomplete="tel" required>
+        <label class="field">điện thoại di động gầm<input type="tel" id="phone" maxlength="11" inputmode="numeric" autocomplete="tel" required>
         </label>
-        <label class="field">设置密码
-          <input type="password" id="password" minlength="6" maxlength="64" autocomplete="new-password" required>
+        <label class="field">Cài đặt Mật khẩu<input type="password" id="password" minlength="6" maxlength="64" autocomplete="new-password" required>
         </label>
-        <label class="field">确认密码
-          <input type="password" id="confirm" minlength="6" maxlength="64" autocomplete="new-password" required>
+        <label class="field">Xác nhận Mật khẩu<input type="password" id="confirm" minlength="6" maxlength="64" autocomplete="new-password" required>
         </label>
-        <label class="field">激活码
-          <input id="activationCode" autocomplete="off" placeholder="ABCD-EFGH" required>
+        <label class="field">Mã kích hoạt<input id="activationCode" autocomplete="off" placeholder="ABCD-EFGH" required>
         </label>
         <p class="msg" id="msg"></p>
-        <button class="btn btn-block" type="submit">注册并进入</button>
+        <button class="btn btn-block" type="submit">Đăng ký cùng tiến triển đi vào</button>
       </form>
-      <p class="auth-switch">已有账号？<a href="login.html">去登录</a></p>
+      <p class="auth-switch">đã cóTài khoản?<a href="login.html">điĐăng nhập</a></p>
     </div>
   </main>
   <script>
@@ -47,7 +44,7 @@
         var password = document.getElementById("password").value;
         var confirm = document.getElementById("confirm").value;
         msg.textContent = "";
-        if (password !== confirm) { msg.textContent = "两次密码不一致"; return; }
+        if (password !== confirm) { msg.textContent = "tiếp theo Mật khẩu thay đổi dạng kết hợp tinh tế"; return; }
         A.api("/api/auth/register", {
           method: "POST",
           body: {
@@ -60,7 +57,7 @@
           A.applyLogin(d);
           location.replace("home.html");
         }).catch(function (e) {
-          msg.textContent = e.message || "注册失败";
+          msg.textContent = e.message || "Đăng ký Thất bại";
         });
       });
     })();

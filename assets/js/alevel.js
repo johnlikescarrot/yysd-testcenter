@@ -8,7 +8,7 @@
   var contentEl = document.getElementById("content");
   var board = (new URLSearchParams(location.search).get("board") || "caie").trim();
 
-  document.title = "A-Level 真题库 · 优益思达国际课程中心";
+  document.title = "A-Level Đề thi thậtnhà kho · YYSD · Trung tâm Khóa học Quốc tế";
   document.getElementById("year").textContent = new Date().getFullYear();
 
   function render(catalog) {
@@ -20,21 +20,21 @@
     var boardLabel = current ? (current.labelZh || current.label) : "A-Level";
 
     var crumb = '<div class="minimal-crumb cam-crumb">' +
-      '<a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
-      '<span>国际课程</span> <span class="crumb-sep" aria-hidden="true">★</span> ' +
-      "A-Level 真题库</div>";
+      '<a href="index.html">Trang chủ</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      '<span>Chương trình quốc tế</span> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      "A-Level Đề thi thậtnhà kho</div>";
 
     var hero = '<div class="cam-hero alevel-hero">' +
       '<div class="cam-hero__badge alevel-hero__badge"><div class="lbl">A-LEVEL</div><div class="num">📚</div></div>' +
-      "<div><h1>A-Level 历年真题</h1>" +
-      '<div class="meta">CAIE · Edexcel · Oxford AQA · 已收录 ' + qp + " 套真题 · 免费预览下载</div></div></div>";
+      "<div><h1>A-Level năm dương lịchĐề thi thật</h1>" +
+      '<div class="meta">CAIE · Edexcel · Oxford AQA · đãbao gồm trong một bộ sưu tập ' + qp + " che đậyĐề thi thật · miễn phíxem trướcTải xuống</div></div></div>";
 
     var tabs = (catalog.boards || []).map(function (b) {
       var active = b.id === board;
       var empty = !b.subjects || !b.subjects.length;
       return '<button type="button" class="alevel-board-tab' + (active ? " is-active" : "") +
         (empty ? " is-soon" : "") + '" data-board="' + Y.esc(b.id) + '"' +
-        (empty ? ' disabled title="筹备中"' : "") + ">" +
+        (empty ? ' disabled title="chuẩn bịhình thức kết hợp Trung Quốc"' : "") + ">" +
         Y.esc(b.labelZh || b.label) + "</button>";
     }).join("");
 
@@ -42,7 +42,7 @@
       '<div class="alevel-board-tabs" role="tablist">' + tabs + "</div>" +
       '<div class="alevel-board-heading"><span class="subject-dot"></span><h2>' + Y.esc(boardLabel) + "</h2></div>" +
       A.hubBoardHTML(catalog, board, "") +
-      '<p class="alevel-footnote">解析与逐步详解将在后续版本开放付费解锁；当前真题与 Mark Scheme 均可免费使用。</p>';
+      '<p class="alevel-footnote">Giải thíchmột cách tiến triểnGiải thích chi tiếtsẽphía sautiếp tụcphiên bảnnở hoatrả tiềnmở khóa;thời điểm hiện tạiĐề thi thật Mark Scheme đều đượcmiễn phísử dụng.</p>';
   }
 
   contentEl.addEventListener("click", function (e) {
@@ -56,8 +56,8 @@
 
   A.loadCatalog().then(render).catch(function (err) {
     var msg = location.protocol === "file:"
-      ? "请通过网址（http://）访问本站，本地双击打开会被浏览器拦截。"
+      ? "Vui lòng truy cập qua địa chỉ web(http://)thămhình thức kết hợp gốc trạm,mở tệp trực tiếp bằng cách nhấp đúp sẽ bị trình duyệt chặn."
       : err.message;
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(msg) + "</p></div>";
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Tải thất bại</h3><p>' + Y.esc(msg) + "</p></div>";
   });
 })();

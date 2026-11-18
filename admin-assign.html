@@ -1,71 +1,72 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>学生分配 · 管理 · 优益思达</title>
+  <title>Phân bổ học viên · giám sát · YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260723read">
   <link rel="stylesheet" href="assets/css/teacher-desk.css?v=20260828olive2">
+<script type="module" src="assets/js/i18n/vi-boot.mjs"></script>
 </head>
 <body class="home-minimal teacher-page teacher-layout shell-compact-nav">
 
   <header class="teacher-mobilebar">
-    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">菜单</button>
-    <span class="teacher-mobilebar__title">学生分配</span>
+    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">Menu</button>
+    <span class="teacher-mobilebar__title">Phân bổ học viên</span>
   </header>
   <div class="teacher-nav-overlay" data-teacher-nav-close hidden></div>
 
   <div class="teacher-shell">
-    <aside class="teacher-side" id="teacher-side" aria-label="导航">
+    <aside class="teacher-side" id="teacher-side" aria-label="nghĩa đen và bóng điều hướng">
       <div class="teacher-side__head">
         <a href="teacher.html" class="teacher-side__brand">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
-          <span class="teacher-side__brand-text"><b>优益思达</b><span>教务</span></span>
+          <span class="teacher-side__brand-text"><b>YYSD</b><span>Giáo vụ</span></span>
         </a>
-        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="收起侧栏">‹</button>
+        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="Thu gọn thanh bên">‹</button>
       </div>
       <nav class="teacher-side__nav">
-        <p class="teacher-side__label">教务</p>
-        <a href="teacher.html" class="teacher-side__link" title="我的学生">我的学生</a>
-        <a href="teacher-calendar.html" class="teacher-side__link" title="任务日历">任务日历</a>
-        <a href="teacher-diagnostic.html" class="teacher-side__link" title="词汇诊断">词汇诊断</a>
-        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="单词闯关">单词闯关</a>
-        <a href="admin-assign.html" class="teacher-side__link is-active" title="学生分配">学生分配</a>
-        <a href="admin-perms.html" class="teacher-side__link" title="权限管理">权限管理</a>
+        <p class="teacher-side__label">Giáo vụ</p>
+        <a href="teacher.html" class="teacher-side__link" title="Học viên của tôi">Học viên của tôi</a>
+        <a href="teacher-calendar.html" class="teacher-side__link" title="Lịch nhiệm vụ">Lịch nhiệm vụ</a>
+        <a href="teacher-diagnostic.html" class="teacher-side__link" title="Chẩn đoán từ vựng">Chẩn đoán từ vựng</a>
+        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="Thử thách từ vựng">Thử thách từ vựng</a>
+        <a href="admin-assign.html" class="teacher-side__link is-active" title="Phân bổ học viên">Phân bổ học viên</a>
+        <a href="admin-perms.html" class="teacher-side__link" title="Quản lí quyền">Quản lí quyền</a>
       </nav>
       <div class="teacher-side__foot">
-        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">个人中心</a>
-        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">退出</button>
+        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">Trang cá nhân</a>
+        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">Đăng xuất</button>
       </div>
     </aside>
 
     <div class="teacher-content">
       <section class="minimal-page-head">
-        <h1>学生分配</h1>
-        <p class="minimal-page-desc">先选择教师，再勾选要分配给他的学生。一名学生可同时属于多位教师。</p>
+        <h1>Phân bổ học viên</h1>
+        <p class="minimal-page-desc">trước Chọn Giáo viên, lại chọn một hoặc nhiều lựa chọn từ danh sách hình thức kết hợp yêu cầu phân phối cung cấp anh ấy Học viên.một thuật ngữ cổ logic được sinh tiền tố có thể đồng thời được phân loại là nhiều vị trí Giáo viên.</p>
       </section>
 
       <main class="minimal-main">
         <div class="admin-assign">
           <label class="auth-field">
-            <span>选择教师</span>
+            <span>Chọn Giáo viên</span>
             <select id="teacher-select">
-              <option value="">加载中…</option>
+              <option value="">Đang tải…</option>
             </select>
           </label>
           <div class="cal-picker-toolbar">
-            <input type="search" id="student-q" placeholder="搜索学生姓名或手机号" autocomplete="off">
-            <button type="button" class="btn btn--ghost btn--sm" id="select-all">全选可见</button>
-            <button type="button" class="btn btn--ghost btn--sm" id="clear-all">清空勾选</button>
+            <input type="search" id="student-q" placeholder="Tìm kiếm Học viên họ và tên có thể điện thoại di động gầm" autocomplete="off">
+            <button type="button" class="btn btn--ghost btn--sm" id="select-all">họ chọn có thể thấy rõ rằng điều này đúng</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="clear-all">dọn dẹp chọn một hoặc nhiều lựa chọn từ danh sách</button>
           </div>
-          <p class="profile-hint" id="picked-hint">请先选择教师</p>
+          <p class="profile-hint" id="picked-hint">mời trước Chọn Giáo viên</p>
           <div class="cal-check-list cal-check-list--tall" id="student-list"></div>
           <p class="auth-msg" id="msg" role="status"></p>
           <div class="cal-form__foot" style="justify-content:flex-start;margin-top:16px">
-            <button type="button" class="btn btn--primary" id="save-btn" disabled>保存分配</button>
+            <button type="button" class="btn btn--primary" id="save-btn" disabled>Lưu phân phối</button>
           </div>
         </div>
       </main>
@@ -74,7 +75,7 @@
 
   <footer class="minimal-footer">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达 · 管理</p>
+      <p class="minimal-footer__copy">© <span id="year"></span>YYSD · giám sát</p>
     </div>
   </footer>
 

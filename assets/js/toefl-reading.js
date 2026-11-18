@@ -85,7 +85,7 @@
     return Math.round(score / total * 30);
   }
 
-  // ponytail: ETS 不公开原始分表；用官网 0–30 → 1–6 对照，标预估
+  // ponytail: ETS bất côngKhai Nguyênbắt đầu phần bề mặt bên ngoài;sử dụngtrang web chính thức 0–30 → 1–6 Đối chiếu,đánh dấuước tính
   function bandFrom30(n) {
     if (n >= 29) return 6;
     if (n >= 27) return 5.5;
@@ -126,7 +126,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || "(Chưa trả lời)",
           ans: ans,
           stem: stem,
           explain: explain
@@ -152,7 +152,7 @@
   }
 
   function vocabWord(q) {
-    var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["“”‘’']([^"“”‘’']+)["“”‘’']/i);
+    var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["«»‘’']([^"«»‘’']+)["«»‘’']/i);
     return m ? m[1].trim() : "";
   }
 
@@ -204,7 +204,7 @@
       pre.className = "blank-pre";
       pre.textContent = part.prefix || "";
       wrap.appendChild(pre);
-      // 一个空 = 一个 input；「一字母一横线」由底纹画出，宽度 = n × 1.3ch
+      // một dùng trong trống không = một dùng trong input;«thành hàngmẹ mộtđường ngang»nền tảng đường vẽ đi ra,bề rộng = n × 1.3ch
       var inp = document.createElement("input");
       inp.type = "text";
       inp.maxLength = n;
@@ -416,7 +416,7 @@
 
   function renderPassage(task, host, showInsert, q) {
     var word = vocabWord(q);
-    // ponytail: kl SRDL/LRDL daily 阅读题面是整图，无 paras；直接铺图
+    // ponytail: kl SRDL/LRDL daily Đọchọ mặt là chỉ theo sau bởi danh từ hình thức liên kết toàn bộ sơ đồ,không có paras;trực tiếpbiến thể của sơ đồ
     if (task.image) {
       host.innerHTML = '<img class="passage-img" src="' + esc(task.image) + '" alt="">';
       return;

@@ -1,0 +1,346 @@
+{
+  "filesChanged": 65,
+  "cjkBefore": 338506,
+  "cjkAfter": 0,
+  "cjkRemoved": 338506,
+  "localizedPercent": 100.0,
+  "filesWithResidualCjk": [],
+  "dictionary": {
+    "exact": 571,
+    "phrases": 414,
+    "extended": 103181
+  },
+  "scope": "shipped static site (HTML/JS/CSS/JSON/Markdown); build tooling intentionally excluded",
+  "fullRepoScan": {
+    "cjkCharacters": 0,
+    "filesWithCjk": 0,
+    "topFiles": []
+  },
+  "perFile": {
+    "admin-assign.html": {
+      "cjkBefore": 158,
+      "cjkAfter": 0,
+      "cjkRemoved": 158
+    },
+    "admin-perms.html": {
+      "cjkBefore": 221,
+      "cjkAfter": 0,
+      "cjkRemoved": 221
+    },
+    "admin-seats.html": {
+      "cjkBefore": 139,
+      "cjkAfter": 0,
+      "cjkRemoved": 139
+    },
+    "agreement.html": {
+      "cjkBefore": 455,
+      "cjkAfter": 0,
+      "cjkRemoved": 455
+    },
+    "ai-tutor.html": {
+      "cjkBefore": 353,
+      "cjkAfter": 0,
+      "cjkRemoved": 353
+    },
+    "alevel-subject.html": {
+      "cjkBefore": 74,
+      "cjkAfter": 0,
+      "cjkRemoved": 74
+    },
+    "alevel-view.html": {
+      "cjkBefore": 82,
+      "cjkAfter": 0,
+      "cjkRemoved": 82
+    },
+    "alevel.html": {
+      "cjkBefore": 86,
+      "cjkAfter": 0,
+      "cjkRemoved": 86
+    },
+    "calendar.html": {
+      "cjkBefore": 9,
+      "cjkAfter": 0,
+      "cjkRemoved": 9
+    },
+    "cambridge.html": {
+      "cjkBefore": 77,
+      "cjkAfter": 0,
+      "cjkRemoved": 77
+    },
+    "cdt-report.html": {
+      "cjkBefore": 69,
+      "cjkAfter": 0,
+      "cjkRemoved": 69
+    },
+    "daily-word-learn.html": {
+      "cjkBefore": 63,
+      "cjkAfter": 0,
+      "cjkRemoved": 63
+    },
+    "daily-word-result.html": {
+      "cjkBefore": 19,
+      "cjkAfter": 0,
+      "cjkRemoved": 19
+    },
+    "daily-word-setup.html": {
+      "cjkBefore": 19,
+      "cjkAfter": 0,
+      "cjkRemoved": 19
+    },
+    "dashboard.html": {
+      "cjkBefore": 120,
+      "cjkAfter": 0,
+      "cjkRemoved": 120
+    },
+    "diagnostic-mistakes.html": {
+      "cjkBefore": 73,
+      "cjkAfter": 0,
+      "cjkRemoved": 73
+    },
+    "diagnostic-report.html": {
+      "cjkBefore": 74,
+      "cjkAfter": 0,
+      "cjkRemoved": 74
+    },
+    "diagnostic.html": {
+      "cjkBefore": 34,
+      "cjkAfter": 0,
+      "cjkRemoved": 34
+    },
+    "download.html": {
+      "cjkBefore": 241,
+      "cjkAfter": 0,
+      "cjkRemoved": 241
+    },
+    "exam.html": {
+      "cjkBefore": 85,
+      "cjkAfter": 0,
+      "cjkRemoved": 85
+    },
+    "forgot-password.html": {
+      "cjkBefore": 306,
+      "cjkAfter": 0,
+      "cjkRemoved": 306
+    },
+    "hs-vocab.html": {
+      "cjkBefore": 17,
+      "cjkAfter": 0,
+      "cjkRemoved": 17
+    },
+    "ielts-upgrade.html": {
+      "cjkBefore": 26,
+      "cjkAfter": 0,
+      "cjkRemoved": 26
+    },
+    "index.html": {
+      "cjkBefore": 1501,
+      "cjkAfter": 0,
+      "cjkRemoved": 1501
+    },
+    "jingting-player.html": {
+      "cjkBefore": 141,
+      "cjkAfter": 0,
+      "cjkRemoved": 141
+    },
+    "login.html": {
+      "cjkBefore": 262,
+      "cjkAfter": 0,
+      "cjkRemoved": 262
+    },
+    "maintenance.html": {
+      "cjkBefore": 22,
+      "cjkAfter": 0,
+      "cjkRemoved": 22
+    },
+    "platform.html": {
+      "cjkBefore": 462,
+      "cjkAfter": 0,
+      "cjkRemoved": 462
+    },
+    "privacy.html": {
+      "cjkBefore": 437,
+      "cjkAfter": 0,
+      "cjkRemoved": 437
+    },
+    "profile.html": {
+      "cjkBefore": 305,
+      "cjkAfter": 0,
+      "cjkRemoved": 305
+    },
+    "register.html": {
+      "cjkBefore": 325,
+      "cjkAfter": 0,
+      "cjkRemoved": 325
+    },
+    "report.html": {
+      "cjkBefore": 220,
+      "cjkAfter": 0,
+      "cjkRemoved": 220
+    },
+    "requirements.html": {
+      "cjkBefore": 328173,
+      "cjkAfter": 0,
+      "cjkRemoved": 328173
+    },
+    "results.html": {
+      "cjkBefore": 238,
+      "cjkAfter": 0,
+      "cjkRemoved": 238
+    },
+    "saved-words.html": {
+      "cjkBefore": 78,
+      "cjkAfter": 0,
+      "cjkRemoved": 78
+    },
+    "speaking-select.html": {
+      "cjkBefore": 192,
+      "cjkAfter": 0,
+      "cjkRemoved": 192
+    },
+    "speaking-session.html": {
+      "cjkBefore": 336,
+      "cjkAfter": 0,
+      "cjkRemoved": 336
+    },
+    "speaking.html": {
+      "cjkBefore": 225,
+      "cjkAfter": 0,
+      "cjkRemoved": 225
+    },
+    "suspended.html": {
+      "cjkBefore": 42,
+      "cjkAfter": 0,
+      "cjkRemoved": 42
+    },
+    "teacher-calendar.html": {
+      "cjkBefore": 365,
+      "cjkAfter": 0,
+      "cjkRemoved": 365
+    },
+    "teacher-diagnostic.html": {
+      "cjkBefore": 171,
+      "cjkAfter": 0,
+      "cjkRemoved": 171
+    },
+    "teacher-login.html": {
+      "cjkBefore": 205,
+      "cjkAfter": 0,
+      "cjkRemoved": 205
+    },
+    "teacher-mode-picker.html": {
+      "cjkBefore": 156,
+      "cjkAfter": 0,
+      "cjkRemoved": 156
+    },
+    "teacher-register.html": {
+      "cjkBefore": 348,
+      "cjkAfter": 0,
+      "cjkRemoved": 348
+    },
+    "teacher-student-diagnostic.html": {
+      "cjkBefore": 121,
+      "cjkAfter": 0,
+      "cjkRemoved": 121
+    },
+    "teacher-student-report.html": {
+      "cjkBefore": 20,
+      "cjkAfter": 0,
+      "cjkRemoved": 20
+    },
+    "teacher-vocab-challenge.html": {
+      "cjkBefore": 137,
+      "cjkAfter": 0,
+      "cjkRemoved": 137
+    },
+    "teacher.html": {
+      "cjkBefore": 169,
+      "cjkAfter": 0,
+      "cjkRemoved": 169
+    },
+    "toefl-full.html": {
+      "cjkBefore": 203,
+      "cjkAfter": 0,
+      "cjkRemoved": 203
+    },
+    "toefl-listening.html": {
+      "cjkBefore": 28,
+      "cjkAfter": 0,
+      "cjkRemoved": 28
+    },
+    "toefl-reading.html": {
+      "cjkBefore": 28,
+      "cjkAfter": 0,
+      "cjkRemoved": 28
+    },
+    "toefl-score.html": {
+      "cjkBefore": 125,
+      "cjkAfter": 0,
+      "cjkRemoved": 125
+    },
+    "toefl-speaking.html": {
+      "cjkBefore": 25,
+      "cjkAfter": 0,
+      "cjkRemoved": 25
+    },
+    "toefl-writing.html": {
+      "cjkBefore": 25,
+      "cjkAfter": 0,
+      "cjkRemoved": 25
+    },
+    "vocab-challenge.html": {
+      "cjkBefore": 66,
+      "cjkAfter": 0,
+      "cjkRemoved": 66
+    },
+    "vocab-learn.html": {
+      "cjkBefore": 22,
+      "cjkAfter": 0,
+      "cjkRemoved": 22
+    },
+    "vocab-lesson.html": {
+      "cjkBefore": 24,
+      "cjkAfter": 0,
+      "cjkRemoved": 24
+    },
+    "vocab-quiz.html": {
+      "cjkBefore": 62,
+      "cjkAfter": 0,
+      "cjkRemoved": 62
+    },
+    "vocab-shelf.html": {
+      "cjkBefore": 79,
+      "cjkAfter": 0,
+      "cjkRemoved": 79
+    },
+    "vocab-themes.html": {
+      "cjkBefore": 17,
+      "cjkAfter": 0,
+      "cjkRemoved": 17
+    },
+    "vocab.html": {
+      "cjkBefore": 77,
+      "cjkAfter": 0,
+      "cjkRemoved": 77
+    },
+    "word-realm.html": {
+      "cjkBefore": 20,
+      "cjkAfter": 0,
+      "cjkRemoved": 20
+    },
+    "wrong-record.html": {
+      "cjkBefore": 105,
+      "cjkAfter": 0,
+      "cjkRemoved": 105
+    },
+    "wrong-words.html": {
+      "cjkBefore": 80,
+      "cjkAfter": 0,
+      "cjkRemoved": 80
+    },
+    "zone.html": {
+      "cjkBefore": 69,
+      "cjkAfter": 0,
+      "cjkRemoved": 69
+    }
+  }
+}

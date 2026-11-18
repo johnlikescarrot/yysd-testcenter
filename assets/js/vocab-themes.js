@@ -24,7 +24,7 @@
 
   function fail(msg) {
     root.innerHTML = '<div class="vt-empty"><p>' + Y.esc(msg) +
-      '</p><p><a href="zone.html?zone=study&s=vocab">返回单词区</a></p></div>';
+      '</p><p><a href="zone.html?zone=study&s=vocab">Quay lạiKhu vực Từ vựng</a></p></div>';
   }
 
   function setUrl() {
@@ -56,8 +56,8 @@
   }
 
   function sideHTML() {
-    return '<aside class="vt-side" aria-label="词库分类">' +
-      '<div class="vt-side__label">分类</div>' +
+    return '<aside class="vt-side" aria-label="kho từPhân loại">' +
+      '<div class="vt-side__label">Phân loại</div>' +
       (state.catalog.categories || []).map(function (c) {
         return '<button type="button" class="vt-side__btn' +
           (state.cat === c.id ? " is-active" : "") +
@@ -74,13 +74,13 @@
     return '<article class="vt-block">' +
       '<div class="vt-block__head">' +
         '<h2 class="vt-block__title">' + Y.esc(t.title) + "</h2>" +
-        '<span class="vt-block__count">' + (t.count || 0) + " 词</span>" +
+        '<span class="vt-block__count">' + (t.count || 0) + " biến thể cũ của</span>" +
       "</div>" +
       '<p class="vt-block__desc">' + Y.esc(t.desc || "") + "</p>" +
       '<div class="vt-chips">' + chips + "</div>" +
       '<div class="vt-block__actions">' +
         '<a class="btn btn--primary btn--sm" href="?cat=' + encodeURIComponent(state.cat) +
-          "&theme=" + encodeURIComponent(t.id) + '">查看词表 ›</a>' +
+          "&theme=" + encodeURIComponent(t.id) + '">Xembiến thể cũ của bề mặt bên ngoài ›</a>' +
       "</div></article>";
   }
 
@@ -104,30 +104,30 @@
         '<div class="vt-word__zh">' + Y.esc(w.meaning || "—") + "</div>" +
         (w.pos ? '<span class="vt-word__pos">' + Y.esc(w.pos) + "</span>" : "") +
         "</div>";
-    }).join("") || '<div class="vt-empty">没有匹配的单词。</div>';
+    }).join("") || '<div class="vt-empty">không cóGhép nốiTừ vựng.</div>';
 
     var pager = "";
     if (pages > 1) {
       pager = '<div class="vt-block__actions" style="margin-top:14px">' +
         (state.page > 1
-          ? '<button type="button" class="btn btn--ghost btn--sm" data-page="' + (state.page - 1) + '">上一页</button>'
+          ? '<button type="button" class="btn btn--ghost btn--sm" data-page="' + (state.page - 1) + '">trang trước</button>'
           : "") +
-        '<span class="vt-toolbar__meta">第 ' + state.page + " / " + pages + " 页 · 共 " + filtered.length + " 词</span>" +
+        '<span class="vt-toolbar__meta"> ' + state.page + " / " + pages + " đầu ·  " + filtered.length + " biến thể cũ của</span>" +
         (state.page < pages
-          ? '<button type="button" class="btn btn--ghost btn--sm" data-page="' + (state.page + 1) + '">下一页</button>'
+          ? '<button type="button" class="btn btn--ghost btn--sm" data-page="' + (state.page + 1) + '">trang kế tiếp</button>'
           : "") +
         "</div>";
     }
 
     return '<div class="vt-detail">' +
-      '<a class="vt-detail__back" href="?cat=' + encodeURIComponent(state.cat) + '">← 返回分类列表</a>' +
+      '<a class="vt-detail__back" href="?cat=' + encodeURIComponent(state.cat) + '">← Quay lạiPhân loạidanh sách</a>' +
       '<div class="vt-block__head">' +
         '<h2 class="vt-block__title">' + Y.esc(t.title) + "</h2>" +
-        '<span class="vt-block__count">' + all.length + " 词</span>" +
+        '<span class="vt-block__count">' + all.length + " biến thể cũ của</span>" +
       "</div>" +
       '<p class="vt-block__desc">' + Y.esc(t.desc || "") + "</p>" +
-      '<label class="vt-search" style="max-width:360px;margin:8px 0 14px;display:block">在本词库搜索' +
-        '<input type="search" id="vt-wq" placeholder="英文或中文" value="' +
+      '<label class="vt-search" style="max-width:360px;margin:8px 0 14px;display:block">tồn tại hình thức kết hợp gốckho từTìm kiếm' +
+        '<input type="search" id="vt-wq" placeholder="Tiếng Anhcó thểTiếng Trung" value="' +
         Y.esc(state.wq) + '" autocomplete="off"></label>' +
       '<div class="vt-wordgrid">' + grid + "</div>" + pager +
       "</div>";
@@ -198,30 +198,30 @@
   function renderList() {
     var themes = filteredThemes();
     var main = '<div class="vt-toolbar">' +
-      '<div class="vt-toolbar__meta">共 ' + themes.length + " 个词库 · 仅浏览</div>" +
-      '<label class="vt-search">搜索词库' +
-        '<input type="search" id="vt-q" placeholder="如：雅思 / GRE / 动物" value="' +
+      '<div class="vt-toolbar__meta"> ' + themes.length + " dùng trongkho từ · hầu nhưxem lướt</div>" +
+      '<label class="vt-search">Tìm kiếmkho từ' +
+        '<input type="search" id="vt-q" placeholder="như:IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế / GRE / động vật" value="' +
         Y.esc(state.q) + '" autocomplete="off"></label>' +
       "</div>" +
-      (themes.length ? themes.map(blockHTML).join("") : '<div class="vt-empty">没有匹配的词库。</div>');
+      (themes.length ? themes.map(blockHTML).join("") : '<div class="vt-empty">không cóGhép nốikho từ.</div>');
     root.innerHTML = sideHTML() + '<div class="vt-main">' + main + "</div>";
     bindChrome(null);
   }
 
   function renderDetail(t) {
     root.innerHTML = sideHTML() + '<div class="vt-main"><div class="state state--brand">' +
-      '<div class="spinner spinner--brand"></div>加载词表…</div></div>';
+      '<div class="spinner spinner--brand"></div>Tảibiến thể cũ của bề mặt bên ngoài…</div></div>';
     bindChrome(null);
     var url = "library/" + t.dataFile;
     fetch(url).then(function (r) {
-      if (!r.ok) throw new Error("词表加载失败");
+      if (!r.ok) throw new Error("biến thể cũ của bề mặt bên ngoàiTải thất bại");
       return r.json();
     }).then(function (data) {
       setUrl();
       root.innerHTML = sideHTML() + '<div class="vt-main">' + detailHTML(t, data) + "</div>";
       bindChrome({ theme: t, data: data });
     }).catch(function (e) {
-      fail((e && e.message) || "加载失败");
+      fail((e && e.message) || "Tải thất bại");
     });
   }
 
@@ -238,17 +238,17 @@
 
   function boot() {
     fetch("library/study/vocab-themes/themes.json").then(function (r) {
-      if (!r.ok) throw new Error("词库目录加载失败");
+      if (!r.ok) throw new Error("kho từmục lụcTải thất bại");
       return r.json();
     }).then(function (cat) {
       state.catalog = cat;
       if (!(state.catalog.themes || []).length) {
-        fail("分类词库还是空的。");
+        fail("Kho từ vựng theo chủ đềvẫn như trướctrống không.");
         return;
       }
       render();
     }).catch(function (e) {
-      fail((e && e.message) || "加载失败");
+      fail((e && e.message) || "Tải thất bại");
     });
   }
 

@@ -1,8 +1,8 @@
-# 模考区 / 雅思模考
+# Thi thửhọ / IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếThi thử
 
-**把「雅思模考卷」的 HTML 文件上传到这个文件夹即可自动归类。**
+**cầm«IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tếThi thửcuộn lại» HTML tài liệuTải lênđếnđại từ nàythư mụctương đương vớitự độngphân loại.**
 
-- 板块：🎯 模考区 (mock)
-- 科目：雅思 (ielts)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm:🎯 Thi thửhọ (mock)
+- môn học:IELTS Hệ thống Kiểm tra Tiếng Anh Quốc tế (ielts)
+- Tải lêncách thức:tồn tạivăn bản nàymón ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phúthọtự độngxuất hiệntồn tạitrang webtương ứng vớiPhân loạixuống,không cần thiếtKháclàm việc.
