@@ -21,7 +21,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           sparse-checkout: |
             studio
@@ -31,7 +31,8 @@ jobs:
           persist-credentials: false
       - uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
-          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MULTI_STATUS: false
           VALIDATE_ALL_CODEBASE: true
           USE_FIND_ALGORITHM: true
           FILTER_REGEX_INCLUDE: (^|/)(studio/|tests/studio/|scripts/studio/|\.github/workflows/studio-|README\.md$)

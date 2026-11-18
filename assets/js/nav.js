@@ -26,17 +26,17 @@
     );
   }
 
-  // ponytail: 词境只从单词区 banner 进，不占顶栏
+  // ponytail: Word Realm is linked from the vocabulary banner, not the top bar.
   var TOP_LINKS = [
-    { href: "index.html", key: "home", label: "首页" },
-    { href: "zone.html?zone=study&s=vocab", key: "words", label: "单词", zone: "study" },
-    { href: "zone.html?zone=mock", key: "ielts", label: "雅思", mega: true },
-    { href: "alevel.html", key: "intl", label: "国际课程" },
-    { href: "/rankings", key: "rankings", label: "全球大学排行榜", special: "nav-rankings", rankings: true },
-    { href: "/admission", key: "ai-admit", label: "AI升学顾问", special: "nav-ai-admit", aiAdmit: true },
-    { href: "dashboard.html", key: "tasks", label: "任务中心" },
-    { href: "download.html", key: "download", label: "下载机考" },
-    { href: "requirements.html", key: "requirements", label: "录取查询" }
+    { href: "index.html", key: "home", label: "Trang chủ" },
+    { href: "zone.html?zone=study&s=vocab", key: "words", label: "Từ vựng", zone: "study" },
+    { href: "zone.html?zone=mock", key: "ielts", label: "IELTS", mega: true },
+    { href: "alevel.html", key: "intl", label: "Khóa quốc tế" },
+    { href: "/rankings", key: "rankings", label: "Xếp hạng đại học thế giới", special: "nav-rankings", rankings: true },
+    { href: "/admission", key: "ai-admit", label: "AITư vấn tuyển sinh", special: "nav-ai-admit", aiAdmit: true },
+    { href: "dashboard.html", key: "tasks", label: "Nhiệm vụ" },
+    { href: "download.html", key: "download", label: "Tải ứng dụng thi" },
+    { href: "requirements.html", key: "requirements", label: "Tra cứu tuyển sinh" }
   ].filter(function (l) {
     if ((l.aiAdmit || l.rankings) && !canAiAdmit()) return false;
     return true;
@@ -45,40 +45,40 @@
   var MEGA_COLS = [
     {
       key: "listening",
-      title: "听力",
+      title: "Nghe",
       href: "zone.html?zone=mock&s=listening",
       links: [
-        { href: "zone.html?zone=mock&s=listening", label: "听力真题顺序练习" }
+        { href: "zone.html?zone=mock&s=listening", label: "Luyện đề nghe theo thứ tự" }
       ].concat((window.YYSD && window.YYSD.JINGTING_OPEN) ? [
-        { href: "zone.html?zone=mock&s=jingting", label: "听力真题精听" }
+        { href: "zone.html?zone=mock&s=jingting", label: "Nghe kỹ từng đoạn" }
       ] : [])
     },
     {
       key: "reading",
-      title: "阅读",
+      title: "Đọc",
       href: "zone.html?zone=mock&s=reading",
-      links: [{ href: "zone.html?zone=mock&s=reading", label: "阅读真题顺序练习" }]
+      links: [{ href: "zone.html?zone=mock&s=reading", label: "Luyện đề đọc theo thứ tự" }]
     },
     {
       key: "speaking",
-      title: "口语",
+      title: "Nói",
       href: "speaking.html",
-      links: [{ href: "speaking.html", label: "AI口语练习/模考" }]
+      links: [{ href: "speaking.html", label: "AILuyện nói/Thi thử" }]
     },
     {
       key: "writing",
-      title: "写作",
+      title: "Viết",
       href: "zone.html?zone=mock&s=writing",
       links: [
-        { href: "zone.html?zone=mock&s=writing", label: "写作真题顺序练习" },
-        { href: "ai-tutor.html?track=writing", label: "AI写作批改" }
+        { href: "zone.html?zone=mock&s=writing", label: "Luyện đề viết theo thứ tự" },
+        { href: "ai-tutor.html?track=writing", label: "AInhận xét bài viết" }
       ]
     },
     {
       key: "mock",
-      title: "模考",
+      title: "Thi thử",
       href: "zone.html?zone=mock&s=mock",
-      links: [{ href: "zone.html?zone=mock&s=mock", label: "剑桥套题模考" }]
+      links: [{ href: "zone.html?zone=mock&s=mock", label: "Thi thử bộ đề Cambridge" }]
     }
   ];
 
@@ -91,7 +91,7 @@
   function orgName() {
     var A = window.YYSD_AUTH;
     var org = A && A.getOrg && A.getOrg();
-    return (org && org.name) || "学习中心";
+    return (org && org.name) || "Trung tâm học tập";
   }
 
   function renderUser() {
@@ -99,12 +99,12 @@
     var logged = !!(A && A.getToken && A.getToken());
     var user = logged && A.getUser ? A.getUser() : {};
     var phone = (user.phone || "").trim();
-    var label = (user.displayName || "").trim() || "个人中心";
+    var label = (user.displayName || "").trim() || "Hồ sơ cá nhân";
     var src = logged && A.avatarSrc ? A.avatarSrc(user.avatarUrl) : "";
     var digits = phone.replace(/\D/g, "");
     var avatarText = "·";
-    if (/体验/.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
-      avatarText = "体验";
+    if (/\u4f53\u9a8c|Dùng thử/i.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
+      avatarText = "Dùng thử";
     } else if (phone) {
       avatarText = phone.slice(-4);
     }
@@ -113,12 +113,12 @@
       : '<span class="nav-auth__avatar" aria-hidden="true">' + esc(avatarText) + "</span>";
     return '<div class="reme-user" id="nav-user">' +
       '<a href="' + (logged ? "profile.html" : "login.html") + '" id="nav-auth" class="reme-avatar' + (logged ? " is-logged-in" : "") + '">' +
-        avatar + '<span class="nav-auth__label">' + (logged ? esc(label) : "登录") + "</span>" +
+        avatar + '<span class="nav-auth__label">' + (logged ? esc(label) : "Đăng nhập") + "</span>" +
       "</a>" +
       '<div class="reme-dropdown" id="nav-dropdown" hidden>' +
         (logged
-          ? '<a href="profile.html">个人中心</a><a href="results.html">我的成绩</a><button type="button" id="nav-logout">退出登录</button>'
-          : '<a href="login.html">登录</a><a href="register.html">注册</a>') +
+          ? '<a href="profile.html">Hồ sơ cá nhân</a><a href="results.html">Kết quả của tôi</a><button type="button" id="nav-logout">Đăng xuất</button>'
+          : '<a href="login.html">Đăng nhập</a><a href="register.html">Đăng ký</a>') +
       "</div>" +
     "</div>";
   }
@@ -173,7 +173,7 @@
       brand = document.createElement("a");
       brand.href = "index.html";
       brand.className = "minimal-brand";
-      brand.setAttribute("aria-label", orgName() + "首页");
+      brand.setAttribute("aria-label", orgName() + "Trang chủ");
       brand.innerHTML = '<img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">' +
         '<span class="minimal-brand__text"><b>' + esc(orgName()) + '</b><span>Learning Center</span></span>';
     }
@@ -181,7 +181,7 @@
     var newNav = document.createElement("nav");
     newNav.className = "reme-nav";
     newNav.id = "nav";
-    newNav.setAttribute("aria-label", "主导航");
+    newNav.setAttribute("aria-label", "Điều hướng chính");
     newNav.innerHTML = TOP_LINKS.map(function (l) {
       var cls = [];
       if (l.mega) cls.push("reme-nav__ielts");
@@ -198,7 +198,7 @@
     var tools = document.createElement("div");
     tools.className = "reme-tools";
     tools.innerHTML =
-      '<button type="button" class="reme-tool" id="nav-bell" aria-label="通知">' +
+      '<button type="button" class="reme-tool" id="nav-bell" aria-label="Thông báo">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>' +
       "</button>" +
       '<span class="reme-badge" id="nav-sub">Pro</span>' +
@@ -207,7 +207,7 @@
     var menuBtn = document.createElement("button");
     menuBtn.type = "button";
     menuBtn.className = "nav-menu-btn";
-    menuBtn.setAttribute("aria-label", "打开菜单");
+    menuBtn.setAttribute("aria-label", "Mở trình đơn");
     menuBtn.setAttribute("aria-expanded", "false");
     menuBtn.innerHTML =
       '<span class="nav-menu-btn__bar" aria-hidden="true"></span>' +
@@ -294,22 +294,22 @@
   drawer.className = "nav-drawer";
   drawer.setAttribute("role", "dialog");
   drawer.setAttribute("aria-modal", "true");
-  drawer.setAttribute("aria-label", "站点菜单");
+  drawer.setAttribute("aria-label", "Trình đơn trang web");
   drawer.hidden = true;
 
   var drawerHead = document.createElement("div");
   drawerHead.className = "nav-drawer__head";
-  drawerHead.innerHTML = "<b>菜单</b>";
+  drawerHead.innerHTML = "<b>Trình đơn</b>";
   var closeBtn = document.createElement("button");
   closeBtn.type = "button";
   closeBtn.className = "nav-drawer__close";
-  closeBtn.setAttribute("aria-label", "关闭菜单");
+  closeBtn.setAttribute("aria-label", "Đóng trình đơn");
   closeBtn.textContent = "×";
   drawerHead.appendChild(closeBtn);
 
   var drawerNav = document.createElement("nav");
   drawerNav.className = "nav-drawer__links";
-  drawerNav.setAttribute("aria-label", "页面导航");
+  drawerNav.setAttribute("aria-label", "Điều hướng trang");
 
   function rebuildDrawer() {
     drawerNav.innerHTML = "";
@@ -380,13 +380,13 @@
 
   var tabs = document.createElement("nav");
   tabs.className = "mobile-tabs";
-  tabs.setAttribute("aria-label", "快捷导航");
+  tabs.setAttribute("aria-label", "Truy cập nhanh");
   [
-    { href: "index.html", label: "首页", key: "home" },
-    { href: "zone.html?zone=study&s=vocab", label: "单词", key: "words" },
-    { href: "zone.html?zone=mock", label: "雅思", key: "ielts" },
-    { href: "dashboard.html", label: "任务", key: "tasks" },
-    { href: meHref(), label: "我的", key: "me", dynamic: true }
+    { href: "index.html", label: "Trang chủ", key: "home" },
+    { href: "zone.html?zone=study&s=vocab", label: "Từ vựng", key: "words" },
+    { href: "zone.html?zone=mock", label: "IELTS", key: "ielts" },
+    { href: "dashboard.html", label: "Nhiệm vụ", key: "tasks" },
+    { href: meHref(), label: "Cá nhân", key: "me", dynamic: true }
   ].forEach(function (t) {
     var a = document.createElement("a");
     a.href = t.dynamic ? meHref() : t.href;

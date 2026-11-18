@@ -48,3 +48,10 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# IELTS Studio build, audit and development artifacts
+/node_modules/
+/dist/
+/coverage/
+/.c8_output/
+/.lighthouseci/

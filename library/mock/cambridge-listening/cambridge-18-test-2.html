@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi-VN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思18 Test 2 听力</title>
-<meta name="exam:title" content="剑桥雅思18 · Test 2（听力）">
+<title>YYSD · Cambridge IELTS 18 Test 2 Nghe</title>
+<meta name="exam:title" content="Cambridge IELTS 18 · Test 2 (Nghe)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-listening">
 <meta name="exam:duration" content="32">
-<meta name="exam:description" content="剑桥雅思18 Test 2 听力（官方真题）：餐厅招聘、住宅区规划、拉基火山喷发与服装口袋史；4 个 section，自带音频、自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 18 Test 2 Nghe (Đề Cambridge): tuyển dụng nhà hàng, quy hoạch khu dân cư, núi lửa Laki và lịch sử túi áo; 4 phần, có âm thanh, chấm tự động, lời giải và điểm ước tính.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1080px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Giới thiệu */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eaf2ff,#dbe9ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#5a7184; font-weight:600; }
@@ -41,7 +41,7 @@
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; }
   .paper-card.listen .pc-go { background:#2563eb; } .paper-card.read .pc-go { background:#aeb9c6; }
 
-  /* 模式弹窗 */
+  /* Chọn chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -63,7 +63,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#2563eb; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực làm bài */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#001f3f; }
@@ -120,7 +120,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#001f3f; margin:4px 0 2px; }
@@ -161,61 +161,61 @@
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span> Luyện đề Cambridge IELTS</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Giới thiệu -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">18</div></div>
     <div>
-      <h2>剑桥雅思 18 · Test 2</h2>
-      <div class="sub">官方真题 · 自动批改并给出雅思预估分。请选择科目开始测试。</div>
+      <h2>Cambridge IELTS 18 · Test 2</h2>
+      <div class="sub">Đề Cambridge · Chấm tự động và ước tính điểm IELTS.Chọn kỹ năng để bắt đầu.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card listen" onclick="openMode()">
       <div class="pc-icon">🎧</div>
-      <h3>听力 (Listening)</h3>
-      <div class="pc-meta">4 个部分 · 共 40 题</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Nghe (Listening)</h3>
+      <div class="pc-meta">4 phần · tổng cộng 40 câu</div>
+      <div class="pc-go">Bắt đầu làm bài ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分项突破，可只练某几个部分，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习部分：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Luyện tập</h3>
+        <div class="mb-desc">Chọn các phần muốn luyện. Đồng hồ đếm thời gian đã học, không giới hạn thời gian.</div>
+        <div class="mb-sub"><span>Chọn phần luyện tập: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：4 个部分一次完成，限时 32 分钟并自动连播录音。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;">完整测试（4 个部分，限时 32 分钟）</div>
+        <h3>Thi thử</h3>
+        <div class="mb-desc">Mô phỏng kỳ thi: 4 phần trong một lượt, thời gian 32 phút, âm thanh phát liên tiếp.</div>
+        <div class="mb-sub"><span>Thông tin bài thi: </span></div>
+        <div style="color:#445;font-size:14.5px;">Bài thi đầy đủ (4 phần, thời gian 32 phút)</div>
         <ul class="exam-list"><li>• Section 1</li><li>• Section 2</li><li>• Section 3</li><li>• Section 4</li></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang giới thiệu</button>
   </div>
   <div class="audio-bar">
     <div class="audio-row">
@@ -224,38 +224,38 @@
       <div class="audio-prog" id="aProg" onclick="seekAudio(event)"><div class="fill" id="aFill"></div></div>
       <div class="audio-time" id="aTime">00:00 / 00:00</div>
     </div>
-    <div class="audio-note" id="aNote">🔊 点击各部分的「▶ 听本部分录音」可单独播放该部分；模考模式下会自动连播。</div>
+    <div class="audio-note" id="aNote">🔊 Chọn “▶ Nghe phần này” để phát riêng từng phần. Khi thi thử, các phần sẽ phát liên tiếp.</div>
     <audio id="player" preload="none"></audio>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài và xem kết quả</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quả -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 Kết quả làm bài</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">Số câu đúng</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỷ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">Điểm IELTS ước tính</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>Tiến độ chung</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="audio-note" id="bandNote" style="margin-top:14px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">Kết quả chi tiết</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang giới thiệu</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思18 Test 2 听力（官方原题 + 官方答案）
+   1, Dữ liệu đề —— Cambridge IELTS 18 Test 2 Nghe (Đề gốc + Đáp án gốc)
    ============================================================ */
 const TEST = {
   meta:{ volume:18, testNo:2 },
@@ -305,16 +305,16 @@ const TEST = {
           box:{A:`It has suitable geographical features.`,B:`There is easy access to local facilities.`,C:`It has good connections with the airport.`,D:`The land is of little agricultural value.`,E:`It will be convenient for workers.`},
           groupId:'L11_12',answerSet:['B','E'],
           questions:[
-            {id:'L11',no:11,explain:`选两项（顺序不限）：B 与 E。`},
-            {id:'L12',no:12,explain:`同上。`},
+            {id:'L11',no:11,explain:`Chọn hai phương án (không phân biệt thứ tự): B và E.`},
+            {id:'L12',no:12,explain:`Như câu trước.`},
           ]},
         { kind:'multi', title:'Questions 13 and 14', audioStart:100.5, audioEnd:201,
           instruction:'Choose TWO letters, A–E. Which TWO aspects of the planned housing development have people given positive feedback about?',
           box:{A:`the facilities for cyclists`,B:`the impact on the environment`,C:`the encouragement of good relations between residents`,D:`the low cost of all the accommodation`,E:`the rural location`},
           groupId:'L13_14',answerSet:['B','C'],
           questions:[
-            {id:'L13',no:13,explain:`选两项（顺序不限）：B 与 C。`},
-            {id:'L14',no:14,explain:`同上。`},
+            {id:'L13',no:13,explain:`Chọn hai phương án (không phân biệt thứ tự): B và C.`},
+            {id:'L14',no:14,explain:`Như câu trước.`},
           ]},
         { kind:'map', title:'Questions 15–20', audioStart:201, audioEnd:449,
           instruction:'Label the map below. Write the correct letter, A–I, next to Questions 15–20.',
@@ -345,8 +345,8 @@ const TEST = {
           box:{A:`how widespread the effects were`,B:`how long-lasting the effects were`,C:`the number of deaths it caused`,D:`the speed at which the volcanic ash cloud spread`,E:`how people ignored the warning signs`},
           groupId:'L25_26',answerSet:['A','B'],
           questions:[
-            {id:'L25',no:25,explain:`选两项（顺序不限）：A 与 B。`},
-            {id:'L26',no:26,explain:`同上。`},
+            {id:'L25',no:25,explain:`Chọn hai phương án (không phân biệt thứ tự): A và B.`},
+            {id:'L26',no:26,explain:`Như câu trước.`},
           ]},
         { kind:'match', title:'Questions 27–30', audioStart:259, audioEnd:432,
           instruction:'What comment do the students make about the impact of the Laki eruption on the following countries? Choose FOUR answers from the box and write the correct letter, A–F.',
@@ -384,46 +384,46 @@ const TEST = {
             {bullet:true,html:`Bags called 'pouches' became popular, before women carried a <Q n="40">.`},
           ],
           questions:[
-            {id:'L31',no:31,answer:['convenient'],explain:`答案：convenient。`},
-            {id:'L32',no:32,answer:['suits'],explain:`答案：suits。`},
-            {id:'L33',no:33,answer:['tailor'],explain:`答案：tailor。`},
-            {id:'L34',no:34,answer:['profession'],explain:`答案：profession。`},
-            {id:'L35',no:35,answer:['visible'],explain:`答案：visible。`},
-            {id:'L36',no:36,answer:['string','strings'],explain:`答案：string(s)。`},
-            {id:'L37',no:37,answer:['waist','waists'],explain:`答案：waist(s)。`},
-            {id:'L38',no:38,answer:['perfume'],explain:`答案：perfume。`},
-            {id:'L39',no:39,answer:['image'],explain:`答案：image。`},
-            {id:'L40',no:40,answer:['handbag'],explain:`答案：handbag。`},
+            {id:'L31',no:31,answer:['convenient'],explain:`Đáp án: convenient.`},
+            {id:'L32',no:32,answer:['suits'],explain:`Đáp án: suits.`},
+            {id:'L33',no:33,answer:['tailor'],explain:`Đáp án: tailor.`},
+            {id:'L34',no:34,answer:['profession'],explain:`Đáp án: profession.`},
+            {id:'L35',no:35,answer:['visible'],explain:`Đáp án: visible.`},
+            {id:'L36',no:36,answer:['string','strings'],explain:`Đáp án: string(s).`},
+            {id:'L37',no:37,answer:['waist','waists'],explain:`Đáp án: waist(s).`},
+            {id:'L38',no:38,answer:['perfume'],explain:`Đáp án: perfume.`},
+            {id:'L39',no:39,answer:['image'],explain:`Đáp án: image.`},
+            {id:'L40',no:40,answer:['handbag'],explain:`Đáp án: handbag.`},
           ]}
       ]},
   ]
 };
 
-/* 官方 听力 原始分(0-40) → 雅思分 对照表 */
+/* Gốc Nghe Điểm thô(0-40) → Điểm IELTS Bảng quy đổi */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[32,7.5],[30,7.0],[26,6.5],[23,6.0],[18,5.5],[16,5.0],[13,4.5],[10,4.0],[6,3.5],[4,3.0],[0,2.5]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.5; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
+   2, Trình xử lý
    ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 
-/* 模式弹窗 */
+/* Chọn chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
     TEST.sections.map(s=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${s.id}" checked> Section ${s.id}</label>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'Chọn tất cả'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一个部分。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('Hãy chọn ít nhất một phần.'); return; } selectedSections=ids; }
   else selectedSections=TEST.sections.map(s=>s.id);
   currentPaper=TEST.sections.filter(s=>selectedSections.includes(s.id));
   closeMode(); submitted=false;
@@ -435,18 +435,18 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思18 · Test 2 — 听力`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 18 · Test 2 — Nghe`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Luyện tập':'Thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(sectionHtml).join('');
 }
 function sectionHtml(s){
   return `<div class="section-banner" id="anchor_${s.id}">
       <div class="sb-top"><span class="sb-title">Section ${s.id}</span>
-        <button class="listen-here" onclick="playSection(${s.id})">▶ 听本部分录音</button></div>
-      <div class="sb-meta">本部分共 ${allQs(s).length} 题</div>
+        <button class="listen-here" onclick="playSection(${s.id})">▶ Nghe phần này</button></div>
+      <div class="sb-meta">Phần này có ${allQs(s).length} câu</div>
     </div>${s.groups.map(groupHtml).join('')}`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // Đổi <Q n="x"> thành số câu + ô trả lời
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="L${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -482,13 +482,13 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（两题合计选出正确的两项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">Chọn một phương án (chọn hai đáp án cho cặp câu hỏi, không phân biệt thứ tự)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='map'){
     const letters=g.letters||['A','B','C','D','E','F','G','H','I'];
     const inner=g.svg?g.svg:`<img class="map-img" src="${g.image}" alt="${g.mapTitle||'map'}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">` +
-      `<div class="map-missing" style="display:none;">📍 地图图片待上传：请把书上这张地图发给老师，上传后此处会显示地图，即可对照作答。</div>`;
+      `<div class="map-missing" style="display:none;">📍 Chưa có bản đồ: Hãy đối chiếu với bản đồ trong sách, Bản đồ sẽ xuất hiện sau khi được cập nhật, để làm bài.</div>`;
     const img=`<div class="map-wrap">${g.mapTitle?`<div class="note-title">${g.mapTitle}</div>`:''}${inner}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
     const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel(q.id)}</div>`).join('');
@@ -497,19 +497,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* Đồng hồ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Hết giờ, Tự động nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=300&&left>60); t.classList.toggle('danger',left<=60);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 音频（真实文件，每部分一段；模考自动连播） */
+/* Âm thanh (tệp âm thanh, một đoạn cho mỗi phần; thi thử phát liên tiếp) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }
@@ -531,7 +531,7 @@ player.addEventListener('ended',()=>{
 });
 function paintAudio(){ const d=player.duration||0,c=player.currentTime||0; document.getElementById('aFill').style.width=(d?c/d*100:0)+'%'; document.getElementById('aTime').textContent=fmt(Math.floor(c))+' / '+fmt(Math.floor(d)); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -539,14 +539,14 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(`Đã trả lời ${answered}/${total} câu.\nNộp bài và xem kết quả?`)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval); player.pause();
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* Xử lý trước multi câu ghép cặp (không phân biệt thứ tự, không cộng điểm hai lần) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
     if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
@@ -571,29 +571,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思18 · Test 2 — 听力';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 18 · Test 2 — Nghe';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?'Luyện tập':'Thi thử'} · Thời gian làm bài: ${fmt(elapsed)} · Hoàn thành lúc ${new Date().toLocaleString('vi-VN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent='Trình độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方听力 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 4 个部分时为精确换算。`;
+    ? 'Điểm tham khảo được quy đổi từ số câu nghe đúng trên 40 câu. Đây không phải điểm thi chính thức.'
+    : `Bạn đã làm ${total} câu, Điểm được ước lượng theo tỷ lệ trên 40 câu; Hãy làm đủ 4 phần để kết quả có tính đại diện hơn.`;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?`Bạn trả lời: <span class="yours">${String(it.ua).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</span> `:`<span class="yours">Chưa trả lời</span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
+        <div class="ra">${it.ok?'<span class="correctv">Trả lời đúng</span>':yours+'Đáp án: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} câu đúng ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -608,7 +608,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Đồng bộ kết quả (do trung tâm học tập bổ sung, giữ nguyên cách chấm) ===== */
 (function(){
   var posted=false;
   function report(){

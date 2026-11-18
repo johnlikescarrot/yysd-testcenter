@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi-VN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思3 Test 1 阅读</title>
-<meta name="exam:title" content="剑桥雅思3 · Test 1（阅读）">
+<title>YYSD · Cambridge IELTS 3 Test 1 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 3 · Test 1 (Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思3 Test 1 学术类阅读（官方真题）：3 篇文章共 40 题（The Rocket - From East to We… / The Risks of Cigarette Smoke / The Scientific Method），可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 3 Test 1 Đọc học thuật (Đề Cambridge): 3 bài đọc với 40 câu (The Rocket - From East to We… / The Risks of Cigarette Smoke / The Scientific Method), luyện từng bài đọc hoặc thi thử trọn bộ, chấm tự động, lời giải và điểm ước tính.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Giới thiệu */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
@@ -36,7 +36,7 @@
   .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* Chọn chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -58,7 +58,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực làm bài */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
@@ -71,7 +71,7 @@
   .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
   .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Bố cục bài đọc: bài đọc bên trái câu hỏi bên phải */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
   .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
@@ -119,7 +119,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
@@ -160,93 +160,93 @@
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span> Luyện đề Cambridge IELTS</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Giới thiệu -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">6</div></div>
     <div>
-      <h2>剑桥雅思3 · Test 1</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 3 · Test 1</h2>
+      <div class="sub">Đọc học thuật · Đề Cambridge · Chấm tự động và ước tính điểm IELTS.Chọn nút bên dưới để làm bài.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Đọc học thuật (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta">Đang tải…</div>
+      <div class="pc-go">Bắt đầu làm bài ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Luyện tập</h3>
+        <div class="mb-desc">Chọn các bài đọc muốn luyện. Đồng hồ đếm thời gian đã học, không giới hạn thời gian.</div>
+        <div class="mb-sub"><span>Chọn bài đọc: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Thi thử</h3>
+        <div class="mb-desc">Mô phỏng kỳ thi: Làm tất cả bài đọc trong một lượt, thời gian 60 phút.</div>
+        <div class="mb-sub"><span>Thông tin bài thi: </span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo">Bài thi đầy đủ (thời gian 60 phút)</div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang giới thiệu</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài và xem kết quả</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quả -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Kết quả làm bài</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">Số câu đúng</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỷ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">Điểm IELTS ước tính</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>Tiến độ chung</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">Kết quả chi tiết</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang giới thiệu</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思3 Test 1 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
+   1, Dữ liệu đề —— Cambridge IELTS 3 Test 1 Đọc học thuật (Đề gốc + Đáp án gốc)
+   Ghi chú: Mỗi bài đọc là một đối tượng {id, passage:{title,byline,paras[]}, groups:[...]}
+   Thêm Passage 2, 3 theo cùng định dạng vào passages mảng.
    ============================================================ */
 const TEST = {
   "meta": {
@@ -295,28 +295,28 @@ const TEST = {
               "no": 1,
               "q": "Paragraph B",
               "answer": ["iv"],
-              "explain": "答案：iv。"
+              "explain": "Đáp án: iv."
             },
             {
               "id": "R2",
               "no": 2,
               "q": "Paragraph C",
               "answer": ["i"],
-              "explain": "答案：i。"
+              "explain": "Đáp án: i."
             },
             {
               "id": "R3",
               "no": 3,
               "q": "Paragraph D",
               "answer": ["v"],
-              "explain": "答案：v。"
+              "explain": "Đáp án: v."
             },
             {
               "id": "R4",
               "no": 4,
               "q": "Paragraph E",
               "answer": ["vii"],
-              "explain": "答案：vii。"
+              "explain": "Đáp án: vii."
             }
           ]
         },
@@ -336,7 +336,7 @@ const TEST = {
                 "D": "bigger rockets were able to be built."
               },
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R6",
@@ -349,7 +349,7 @@ const TEST = {
                 "D": "from the late nineteenth century to the present day."
               },
               "answer": ["D"],
-              "explain": "答案：D。"
+              "explain": "Đáp án: D."
             }
           ]
         },
@@ -371,28 +371,28 @@ const TEST = {
               "no": 7,
               "q": "black powder",
               "answer": ["A"],
-              "explain": "答案：A。"
+              "explain": "Đáp án: A."
             },
             {
               "id": "R8",
               "no": 8,
               "q": "rocket-propelled arrows for fighting",
               "answer": ["A"],
-              "explain": "答案：A。"
+              "explain": "Đáp án: A."
             },
             {
               "id": "R9",
               "no": 9,
               "q": "rockets as war weapons",
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R10",
               "no": 10,
               "q": "the rocket launcher",
               "answer": ["E"],
-              "explain": "答案：E。"
+              "explain": "Đáp án: E."
             }
           ]
         },
@@ -417,28 +417,28 @@ const TEST = {
               "no": 11,
               "q": "The Chinese 'basket of fire'",
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R12",
               "no": 12,
               "q": "The Arab 'egg which moves and burns'",
               "answer": ["E"],
-              "explain": "答案：E。"
+              "explain": "Đáp án: E."
             },
             {
               "id": "R13",
               "no": 13,
               "q": "The Indian rocket",
               "answer": ["F"],
-              "explain": "答案：F。"
+              "explain": "Đáp án: F."
             },
             {
               "id": "R14",
               "no": 14,
               "q": "The British barrage rocket",
               "answer": ["G"],
-              "explain": "答案：G。"
+              "explain": "Đáp án: G."
             }
           ]
         }
@@ -478,7 +478,7 @@ const TEST = {
                 "D": "result in 30 per cent of deaths per year."
               },
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R16",
@@ -491,7 +491,7 @@ const TEST = {
                 "D": "promotes nicotine absorption."
               },
               "answer": ["A"],
-              "explain": "答案：A。"
+              "explain": "Đáp án: A."
             },
             {
               "id": "R17",
@@ -504,7 +504,7 @@ const TEST = {
                 "D": "an increase of platelets in the blood."
               },
               "answer": ["C"],
-              "explain": "答案：C。"
+              "explain": "Đáp án: C."
             }
           ]
         },
@@ -519,28 +519,28 @@ const TEST = {
               "no": 18,
               "q": "Thirty per cent of deaths in the United States are caused by smoking-related diseases.",
               "answer": ["NO"],
-              "explain": "答案：NO。"
+              "explain": "Đáp án: NO."
             },
             {
               "id": "R19",
               "no": 19,
               "q": "If one partner in a marriage smokes, the other is likely to take up smoking.",
               "answer": ["NOT GIVEN"],
-              "explain": "答案：NOT GIVEN。"
+              "explain": "Đáp án: NOT GIVEN."
             },
             {
               "id": "R20",
               "no": 20,
               "q": "Teenagers whose parents smoke are at risk of getting lung cancer at some time during their lives.",
               "answer": ["YES"],
-              "explain": "答案：YES。"
+              "explain": "Đáp án: YES."
             },
             {
               "id": "R21",
               "no": 21,
               "q": "Opponents of smoking financed the UCSF study.",
               "answer": ["NOT GIVEN"],
-              "explain": "答案：NOT GIVEN。"
+              "explain": "Đáp án: NOT GIVEN."
             }
           ]
         },
@@ -567,21 +567,21 @@ const TEST = {
               "no": 22,
               "q": "Passive smoking ...",
               "answer": ["E"],
-              "explain": "答案：E。"
+              "explain": "Đáp án: E."
             },
             {
               "id": "R23",
               "no": 23,
               "q": "Compared with a non-smoker, a smoker ...",
               "answer": ["G"],
-              "explain": "答案：G。"
+              "explain": "Đáp án: G."
             },
             {
               "id": "R24",
               "no": 24,
               "q": "The American Medical Association ...",
               "answer": ["H"],
-              "explain": "答案：H。"
+              "explain": "Đáp án: H."
             }
           ]
         },
@@ -601,28 +601,28 @@ const TEST = {
               "no": 25,
               "q": "Smokers' cardiovascular systems adapt to the intake of environmental smoke.",
               "answer": ["A"],
-              "explain": "答案：A。"
+              "explain": "Đáp án: A."
             },
             {
               "id": "R26",
               "no": 26,
               "q": "There is a philosophical question as to whether people should have to inhale others' smoke.",
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R27",
               "no": 27,
               "q": "Smoke-free public places offer the best solution.",
               "answer": ["B"],
-              "explain": "答案：B。"
+              "explain": "Đáp án: B."
             },
             {
               "id": "R28",
               "no": 28,
               "q": "The intake of side-stream smoke is more harmful than smoke exhaled by a smoker.",
               "answer": ["C"],
-              "explain": "答案：C。"
+              "explain": "Đáp án: C."
             }
           ]
         }
@@ -668,35 +668,35 @@ const TEST = {
               "no": 29,
               "q": "Paragraph C",
               "answer": ["iv"],
-              "explain": "答案：iv。"
+              "explain": "Đáp án: iv."
             },
             {
               "id": "R30",
               "no": 30,
               "q": "Paragraph D",
               "answer": ["vii"],
-              "explain": "答案：vii。"
+              "explain": "Đáp án: vii."
             },
             {
               "id": "R31",
               "no": 31,
               "q": "Paragraph E",
               "answer": ["iii"],
-              "explain": "答案：iii。"
+              "explain": "Đáp án: iii."
             },
             {
               "id": "R32",
               "no": 32,
               "q": "Paragraph F",
               "answer": ["v"],
-              "explain": "答案：v。"
+              "explain": "Đáp án: v."
             },
             {
               "id": "R33",
               "no": 33,
               "q": "Paragraph G",
               "answer": ["vi"],
-              "explain": "答案：vi。"
+              "explain": "Đáp án: vi."
             }
           ]
         },
@@ -721,12 +721,12 @@ const TEST = {
             {
               "id": "R34",
               "no": 34,
-              "explain": "答案：B 与 F，顺序不限。"
+              "explain": "Đáp án: B và F, không phân biệt thứ tự."
             },
             {
               "id": "R35",
               "no": 35,
-              "explain": "答案：B 与 F，顺序不限。"
+              "explain": "Đáp án: B và F, không phân biệt thứ tự."
             }
           ]
         },
@@ -741,28 +741,28 @@ const TEST = {
               "no": 36,
               "q": "Popper says that the scientific method is hypothetico-deductive.",
               "answer": ["YES"],
-              "explain": "答案：YES。"
+              "explain": "Đáp án: YES."
             },
             {
               "id": "R37",
               "no": 37,
               "q": "If a prediction based on a hypothesis is fulfilled, then the hypothesis is confirmed as true.",
               "answer": ["NO"],
-              "explain": "答案：NO。"
+              "explain": "Đáp án: NO."
             },
             {
               "id": "R38",
               "no": 38,
               "q": "Many people carry out research in a mistaken way.",
               "answer": ["NOT GIVEN"],
-              "explain": "答案：NOT GIVEN。"
+              "explain": "Đáp án: NOT GIVEN."
             },
             {
               "id": "R39",
               "no": 39,
               "q": "The 'scientific method' is more a way of describing research than a way of doing it.",
               "answer": ["YES"],
-              "explain": "答案：YES。"
+              "explain": "Đáp án: YES."
             }
           ]
         },
@@ -782,7 +782,7 @@ const TEST = {
                 "D": "to help Ph.D students by explaining different conceptions of the research process"
               },
               "answer": ["D"],
-              "explain": "答案：D。"
+              "explain": "Đáp án: D."
             }
           ]
         }
@@ -791,7 +791,7 @@ const TEST = {
   ]
 };
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* Gốc Đọc học thuật Điểm thô(0-40) → Điểm IELTS Bảng quy đổi */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
@@ -801,25 +801,25 @@ let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInt
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* Thông tin bài thi */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} bài đọc · tổng cộng ${totalQs()} câu`;
 })();
 
-/* 模式弹窗 */
+/* Chọn chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id} (${allQs(p).length} câu)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'Chọn tất cả'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('Hãy chọn ít nhất một bài đọc.'); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -831,8 +831,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思3 · Test 1 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 3 · Test 1 — Đọc`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Luyện tập':'Thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -846,10 +846,10 @@ function passageHtml(p){
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
       <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
+      <div class="sb-meta">Thời gian gợi ý: 20 phút · Bài đọc này có ${allQs(p).length} câu</div>
     </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // Đổi <Q n="x"> thành số câu + ô trả lời
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -895,11 +895,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">Chọn một phương án (chọn đủ số đáp án đúng cho nhóm này, không phân biệt thứ tự)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // Điền từ: Danh sách từ A–H + danh sách chọn trong bài
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -910,19 +910,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* Đồng hồ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('Hết giờ, Tự động nộp bài.'); submitTest(); return; }
       t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -930,14 +930,14 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(`Đã trả lời ${answered}/${total} câu.\nNộp bài và xem kết quả?`)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval);
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* Xử lý trước multi câu ghép cặp (không phân biệt thứ tự, không cộng điểm hai lần) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
     if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
@@ -962,29 +962,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思3 · Test 1 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 3 · Test 1 — Đọc';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?'Luyện tập':'Thi thử'} · Thời gian làm bài: ${fmt(elapsed)} · Hoàn thành lúc ${new Date().toLocaleString('vi-VN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent='Trình độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+    ? 'Điểm tham khảo được quy đổi từ số câu đọc đúng trên 40 câu. Đây không phải điểm thi chính thức.'
+    : `Bạn đã làm ${total} câu, Điểm được ước lượng theo tỷ lệ trên 40 câu; Hãy làm đủ 3 bài đọc để kết quả có tính đại diện hơn.`;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?`Bạn trả lời: <span class="yours">${String(it.ua).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</span> `:`<span class="yours">Chưa trả lời</span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
+        <div class="ra">${it.ok?'<span class="correctv">Trả lời đúng</span>':yours+'Đáp án: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} câu đúng ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -999,7 +999,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Đồng bộ kết quả (do trung tâm học tập bổ sung, giữ nguyên cách chấm) ===== */
 (function(){
   var posted=false;
   function report(){
