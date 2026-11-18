@@ -46,14 +46,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Super-Linter
         uses: super-linter/super-linter@v7.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: (^|/)(vi|tests|docs)/
           IGNORE_GITIGNORED_FILES: true
           FILTER_REGEX_EXCLUDE: (^|/)(library|assets|data|server|scripts|app)/
           # ESLint 9 do vi-ci.yml đảm nhiệm
@@ -66,7 +67,6 @@ jobs:
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_YAML_PRETTIER: false
-          VALIDATE_BIOME_FORMAT: false
           VALIDATE_CSS: true
           VALIDATE_HTML: true
           VALIDATE_MARKDOWN: true
@@ -107,9 +107,6 @@ jobs:
           VALIDATE_PROTOBUF: false
           VALIDATE_OPENAPI: false
           VALIDATE_GRAPHQL: false
-          CSS_FILE_NAME: .stylelintrc.json
-          HTML_HINT_CONFIG_FILE: .htmlhintrc
-          MARKDOWN_CONFIG_FILE: .markdownlint.json
 
       - name: Xuất chẩn đoán lint
         if: always()
