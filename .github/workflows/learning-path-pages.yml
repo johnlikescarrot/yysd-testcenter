@@ -1,0 +1,75 @@
+name: IELTS Atlas · Kiểm thử và Pages
+on:
+  pull_request:
+  push:
+    branches: [main, 'arena/5b49db07-yysd-testcenter']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ielts-vi
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ielts-vi/
+            /scripts/cambridge_scoring.py
+            /scripts/verify_cambridge_mock_pages.py
+            /library/mock/cambridge-reading/
+            /library/mock/cambridge-writing/
+            /library/mock/cambridge-listening/*.html
+            /library/mock/cambridge-listening/ielts10_test*_audio*.mp3
+            /library/mock/cambridge-listening/ielts12_test*_audio*.mp3
+            /library/mock/cambridge-listening/*.png
+            /library/mock/cambridge-listening/*.jpg
+            /library/practice/ielts/sample-academic-reading-1.html
+            /library/practice/shuzi-tingxie/numbers-1.html
+            /app/library/toefl/audio/set-1-s-lr-*.mp3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.22.3'
+          cache: npm
+          cache-dependency-path: ielts-vi/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run build
+      - run: python -m pip install pypdf==5.9.0 && python tools/verify.py
+      - run: npm run smoke
+      - run: npm run audit:pages
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile
+          path: ielts-vi/reports/*.json
+          if-no-files-found: ignore
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ielts-vi/dist
+  deploy:
+    needs: verify
+    # No deploy tokens on pull_request jobs. Respect the repository's Pages
+    # environment branch policy, including for a manually dispatched release.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.release.outputs.page_url }}
+    steps:
+      - name: Publish verified artifact
+        id: release
+        uses: actions/deploy-pages@v4

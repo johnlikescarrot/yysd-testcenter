@@ -1,18 +1,15 @@
 """Build only the reviewed Vietnamese IELTS release, never the whole checkout."""
 
-from collections import defaultdict
-from html import escape
-from pathlib import Path
 import re
 import shutil
 import sys
+from collections import defaultdict
+from html import escape
+from pathlib import Path
 
 HERE = Path(__file__).resolve().parents[1]
 ROOT = HERE.parent
 OUT = HERE / "dist"
-sys.path.insert(0, str(ROOT / "scripts"))
-from cambridge_scoring import patch_scoring  # noqa: E402
-
 # Explicit editorial selection. Do not silently omit an untranslated paper.
 VOLUMES = {
     "writing": range(3, 22),
@@ -26,7 +23,7 @@ PRACTICE = [
 ]
 HAN = re.compile(r"[\u3400-\u9fff\uf900-\ufaff]")
 MEDIA = re.compile(
-    r"""["'`]([\w.-]+\.(?:mp3|m4a|png|jpe?g|webp|svg|json))["'`]""", re.I
+    r"""["'`]([\w.-]+\.(?:mp3|m4a|png|jpe?g|webp|svg|json))["'`]""", re.IGNORECASE
 )
 LABELS = dict(
     line.split("\t", 1)
@@ -109,7 +106,7 @@ def catalogue(prefix):
     for skill, vol, test, file in papers():
         entries[vol][test][skill] = f"{prefix}{file.relative_to(ROOT)}"
     body = [
-        '<p class="eyebrow">Bộ sưu tập · Cambridge IELTS</p><h1>Thư viện đề</h1><p class="lead">Chọn tập và kỹ năng để mở đề gốc. Câu hỏi và đáp án bằng tiếng Anh; hướng dẫn, nhận xét và báo cáo bằng tiếng Việt trên bản Pages.</p>',
+        '<p class="eyebrow">Bộ sưu tập · Cambridge IELTS</p><h1>Thư viện đề</h1><p class="lead">Chọn tập và kỹ năng để mở đề gốc. Câu hỏi và đáp án bằng tiếng Anh; hướng dẫn, nhận xét và báo cáo bằng tiếng Việt.</p>',
         "<h2>Bài luyện theo chủ điểm</h2>",
         f'<p><a href="{prefix}library/{PRACTICE[0]}">Đọc: Ong mật tìm đường về tổ</a> · <a href="{prefix}library/{PRACTICE[1]}">Nghe: Ghi số điện thoại</a></p><h2>Đề theo tập</h2><p>Chấm câu khách quan ngay trên máy. Phần viết có bộ đếm từ, bản nháp và bảng tự đánh giá; không tự cấp band. Với đề thiếu hình, hãy đối chiếu sách gốc.</p>',
     ]
@@ -137,24 +134,9 @@ def package_paper(skill, path):
     dest = OUT / path.relative_to(ROOT)
     dest.parent.mkdir(parents=True, exist_ok=True)
     text = path.read_text()
-    if skill in ("reading", "listening"):
-        if "let currentPaper=" not in text:
-            text = text.replace(
-                "const allQs =",
-                "let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;\nconst allQs =",
-                1,
-            )
-        text = patch_scoring(text, reading=skill == "reading")
-        if "function lookupBand" not in text or "function levelLabel" not in text:
-            raise ValueError(f"Missing scoring helper in {path}")
-        # The original inline report uses innerHTML. Treat a learner's free-text
-        # response as text (the source bank HTML itself is trusted).
-        text = text.replace(
-            "${it.ua}",
-            '${String(it.ua).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")}',
-        )
-    text = translate(text)
-    for name in sorted(set(MEDIA.findall(text))):
+    if skill in ("reading", "listening") and "function lookupBand" not in text:
+        raise ValueError(f"Missing scoring helper in {path}")
+    for name in sorted(set(MEDIA.findall(text.replace(r"\"", '"')))):
         source = path.parent / name
         if source.is_file():
             target = dest.parent / name
@@ -187,14 +169,14 @@ def package_paper(skill, path):
         r'(<textarea lang="en" id="t([12])")', r'\1 aria-label="Writing Task \2"', text
     )
     text = text.replace(
-        '<input type="text" id="Q${n}"',
-        '<input type="text" aria-label="Câu ${n}" id="Q${n}"',
+        '<input type="text" id="${questionId(n)}"',
+        '<input type="text" aria-label="Câu ${n}" id="${questionId(n)}"',
     )
     description = re.search(r'<meta name="exam:description"\s+content="([^"]*)"', text)
     head = (
         f'<meta name="description" content="{description[1]}">' if description else ""
     )
-    head += "<style>.header .brandtag{background:#274758}.cover-hero .sub,.paper-card .pc-meta{color:#47586b}.paper-card .pc-go{border:0;font-family:inherit;cursor:pointer}:focus-visible{outline:3px solid #855917;outline-offset:2px}</style>"
+    head += "<style>.header h1 .brandtag{background:#274758}.cover-hero .sub,.paper-card .pc-meta{color:#47586b}.paper-card .pc-go{border:0;font-family:inherit;cursor:pointer}:focus-visible{outline:3px solid #855917;outline-offset:2px}</style>"
     text = (
         text.replace("</head>", head + "</head>")
         .replace("<body>", "<body>" + back + "<main>", 1)

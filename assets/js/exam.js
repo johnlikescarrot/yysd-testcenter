@@ -815,7 +815,7 @@
         var ansEl = el.querySelector(".correctv");
         var rexEl = el.querySelector(".rex");
         var ua = yoursEl ? yoursEl.textContent.trim() : "";
-        if (ua === "未作答") ua = "";
+        if (ua === "未作答" || ua === "Chưa trả lời") ua = "";
         var explain = rexEl ? rexEl.textContent.replace(/^\s*💡\s*/, "").trim() : "";
         var row = {
           no: m ? m[1] : rq.replace(/^[✘✔]\s*/, ""),

@@ -178,7 +178,7 @@
     var titleRec = L || R || W;
     var title = (titleRec && titleRec.title) || suite;
     // normalize to suite label
-    var m = String(title).match(/剑(?:桥雅思)?\s*0*(\d+)/);
+    var m = String(title).match(/(?:Cambridge IELTS|剑(?:桥雅思)?)\s*0*(\d+)/i);
     var t = String(title).match(/Test\s*0*(\d+)/i);
     var suiteLabel = (m && t)
       ? ("剑桥雅思真题" + m[1] + " - Test " + t[1])

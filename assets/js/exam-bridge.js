@@ -643,7 +643,7 @@
       var ta = document.getElementById("t" + n);
       if (ta && ta.value) return ta.value;
       var dump = document.getElementById("dump" + n);
-      if (dump && dump.textContent && dump.textContent !== "（未作答）") return dump.textContent;
+      if (dump && dump.textContent && dump.textContent !== "（未作答）" && dump.textContent !== "(Chưa trả lời)") return dump.textContent;
       return "";
     }
 

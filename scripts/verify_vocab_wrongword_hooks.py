@@ -33,6 +33,13 @@ SPECIAL_EXTRA = ('id="stageResults"',)
 
 def check_file(path: Path, kind: str) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="ignore")
+    # server/vocab-shelf.js intentionally does not serve authoring templates as LISTs.
+    if path.name.startswith("教师模版-"):
+        import re
+        script = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+        bank = re.search(r"const\s+wordData\s*=\s*\[(.*?)\]\s*;", script, re.DOTALL)
+        required = (r'["\']?word["\']?\s*:', r'["\']?meaning["\']?\s*:')
+        return [] if bank and all(re.search(key, bank[1]) for key in required) else ["wordData with word and meaning"]
     missing = [token for token in COMMON if token not in text]
     extra = STANDARD_EXTRA if kind == "standard" else SPECIAL_EXTRA
     missing.extend(token for token in extra if token not in text)
@@ -61,7 +68,7 @@ def main() -> int:
         )
         return 1
     total = sum(1 for folder in VOCAB_DIRS for _ in (LIB / folder).rglob("*.html") if (LIB / folder).is_dir())
-    print(f"OK — {total} vocab LIST file(s) have wrong-word bridge hooks.")
+    print(f"OK — {total} vocab files checked (student result hooks or teacher word banks).")
     return 0
 
 
