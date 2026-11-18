@@ -198,7 +198,7 @@
 
     function warn(msg) {
       if (locked()) return;
-      if (opts.onWarn) opts.onWarn(msg || "请切换到英文输入法后再拼写");
+      if (opts.onWarn) opts.onWarn(msg || "Hãy chuyển sang bộ gõ tiếng Anh trước khi làm bài chính tả");
     }
 
     function imeViolation() {
@@ -227,7 +227,7 @@
       if (t.indexOf("delete") === 0) return;
       if (BLOCK_TYPES[t]) {
         e.preventDefault();
-        warn(t.indexOf("Paste") >= 0 ? "拼写题不支持粘贴" : undefined);
+        warn(t.indexOf("Paste") >= 0 ? "Không thể dán văn bản vào câu chính tả" : undefined);
         if (t.indexOf("Composition") >= 0 || t === "insertCompositionText" || t === "insertFromComposition") {
           imeViolation();
         }
@@ -247,7 +247,7 @@
 
     el.addEventListener("paste", function (e) {
       e.preventDefault();
-      warn("拼写题不支持粘贴");
+      warn("Không thể dán văn bản vào câu chính tả");
     });
 
     el.addEventListener("input", function () {

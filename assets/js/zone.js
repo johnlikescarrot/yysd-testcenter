@@ -26,7 +26,7 @@
 
   document.body.classList.add("zone-page", "zone-page--" + zone);
 
-  document.title = z.label + " · 优益思达国际课程中心";
+  document.title = z.label + " · Trung tâm Luyện thi Quốc tế YYSD";
   document.getElementById("crumb-zone").textContent = z.label;
   document.getElementById("zone-en").textContent = z.en || z.label;
   document.getElementById("zone-title").textContent = z.label;
@@ -103,10 +103,10 @@
     }
     subFiltersEl.hidden = false;
     var tiers = [
-      { id: "all", label: "全部册" },
-      { id: "new", label: "最新 Vol.19+" },
-      { id: "mid", label: "进阶 Vol.13–18" },
-      { id: "base", label: "基础 Vol.7–12" }
+      { id: "all", label: "Tất cả các tập" },
+      { id: "new", label: "Mới nhất Vol.19+" },
+      { id: "mid", label: "Nâng cao Vol.13–18" },
+      { id: "base", label: "Cơ bản Vol.7–12" }
     ];
     subFiltersEl.innerHTML = tiers.map(function (t) {
       return '<button type="button" class="chip chip--sub' + (camTier === t.id ? " is-active" : "") +
@@ -151,14 +151,14 @@
   }
 
   function buildFilters() {
-    var chips = ['<button type="button" class="chip' + (activeCat === "all" ? " is-active" : "") + '" data-s="all">全部</button>'];
+    var chips = ['<button type="button" class="chip' + (activeCat === "all" ? " is-active" : "") + '" data-s="all">Tất cả</button>'];
     visibleNav().forEach(function (c) {
       chips.push('<button type="button" class="chip' + (activeCat === c.key ? " is-active" : "") +
         '" data-s="' + c.key + '">' + Y.esc(c.label) + "</button>");
     });
     // 精听从听力入口进入时，顶栏补一枚当前 chip
     if (activeCat === "jingting") {
-      chips.push('<button type="button" class="chip is-active" data-s="jingting">听力精听</button>');
+      chips.push('<button type="button" class="chip is-active" data-s="jingting">Luyện nghe kỹ</button>');
     }
     filtersEl.innerHTML = chips.join("");
     // ponytail: only reset after items load; early empty nav was wiping s=ielts → all
@@ -187,7 +187,7 @@
     activeCat = next;
     jtVol = "";
     if (searchInput && zone === "toefl") {
-      searchInput.placeholder = next === "lab" ? "搜索题目名称…" : "搜索托福套题…";
+      searchInput.placeholder = next === "lab" ? "Tìm theo tên câu hỏi…" : "Tìm bộ đề TOEFL…";
     }
     syncZoneQuery();
     buildSubFilters();
@@ -238,16 +238,16 @@
     var box = document.createElement("div");
     box.id = "lab-sheet";
     box.className = "hit-lab-sheet";
-    box.innerHTML = '<div class="hit-lab-sheet__box"><h3>查看记录</h3>' +
+    box.innerHTML = '<div class="hit-lab-sheet__box"><h3>Xem kết quả</h3>' +
       (items.length
         ? '<div class="hit-lab-sheet__list">' + items.map(function (d) {
           return '<div class="hit-lab-sheet__row ' + (d.ok ? "is-ok" : "is-bad") + '"><b>Q' +
-            Y.esc(String(d.no)) + "</b><span>" + (d.ok ? "正确" : "错误") +
-            "</span><span>你的：" + Y.esc(d.ua || "（未作答）") +
-            (d.expect ? " · 正解：" + Y.esc(d.expect) : "") + "</span></div>";
+            Y.esc(String(d.no)) + "</b><span>" + (d.ok ? "Đúng" : "Sai") +
+            "</span><span>Bạn trả lời: " + Y.esc(d.ua || "(Chưa trả lời)") +
+            (d.expect ? " · Đáp án: " + Y.esc(d.expect) : "") + "</span></div>";
         }).join("") + "</div>"
-        : "<p>还没有作答记录。</p>") +
-      '<button type="button" class="btn btn--ghost btn--sm" data-lab="sheet-close">关闭</button></div>';
+        : "<p>Chưa có lượt trả lời nào.</p>") +
+      '<button type="button" class="btn btn--ghost btn--sm" data-lab="sheet-close">Đóng</button></div>';
     document.body.appendChild(box);
     box.addEventListener("click", function (e) {
       if (e.target === box || e.target.closest("[data-lab=sheet-close]")) hideLabSheet();
@@ -266,8 +266,8 @@
   }
 
   if (searchInput) {
-    searchInput.placeholder = zone === "mock" ? "搜索模考、册数、Test…"
-      : (zone === "toefl" ? (activeCat === "lab" ? "搜索题目名称…" : "搜索托福套题…") : "搜索内容名称…");
+    searchInput.placeholder = zone === "mock" ? "Tìm đề thi thử, tập, Test…"
+      : (zone === "toefl" ? (activeCat === "lab" ? "Tìm theo tên câu hỏi…" : "Tìm bộ đề TOEFL…") : "Tìm theo tên…");
     var onSearch = window.YYSD_DEBOUNCE ? window.YYSD_DEBOUNCE(function () {
       searchQuery = searchInput.value.trim();
       buildSubFilters();
@@ -283,7 +283,7 @@
   function itemsOf(subject) {
     return allItems.filter(function (it) { return it.subject === subject; })
       .sort(function (a, b) {
-        return String(a.title).localeCompare(String(b.title), "zh-Hans-CN", { numeric: true, sensitivity: "base" });
+        return String(a.title).localeCompare(String(b.title), "vi", { numeric: true, sensitivity: "base" });
       });
   }
 
@@ -292,7 +292,7 @@
       "<h3>" + Y.esc(title) + "</h3>" +
       "<p>" + Y.esc(desc) + "</p>" +
       (href
-        ? '<a class="btn btn--ghost btn--sm" href="' + Y.esc(href) + '">' + Y.esc(cta || "返回雅思") + "</a>"
+        ? '<a class="btn btn--ghost btn--sm" href="' + Y.esc(href) + '">' + Y.esc(cta || "Trở về IELTS") + "</a>"
         : "") +
       "</div>";
   }
@@ -302,19 +302,19 @@
       return '<div class="spk-cta-grid bento-grid bento-grid--3">' +
         '<a class="bento-cta" href="speaking.html">' +
           '<span class="bento-cta__badge">Part 1</span>' +
-          '<div><p class="bento-cta__title">口语模考</p>' +
-          '<p class="bento-cta__desc">录音作答 · AI 四维评分</p></div>' +
-          '<span class="spk-cta-go">进入 ›</span></a>' +
+          '<div><p class="bento-cta__title">Thi thử Nói</p>' +
+          '<p class="bento-cta__desc">Thu âm câu trả lời · AI nhận xét theo bốn tiêu chí</p></div>' +
+          '<span class="spk-cta-go">Vào luyện ›</span></a>' +
         '<a class="bento-cta bento-cta--teal" href="speaking-select.html">' +
-          '<span class="bento-cta__badge">专项</span>' +
-          '<div><p class="bento-cta__title">专项选题</p>' +
-          '<p class="bento-cta__desc">勾选话题，组一套 Part 1</p></div>' +
-          '<span class="spk-cta-go">选题 ›</span></a>' +
+          '<span class="bento-cta__badge">Theo chủ đề</span>' +
+          '<div><p class="bento-cta__title">Chọn chủ đề luyện tập</p>' +
+          '<p class="bento-cta__desc">Chọn chủ đề, để tạo một bài Part 1</p></div>' +
+          '<span class="spk-cta-go">Chọn chủ đề ›</span></a>' +
         '<a class="bento-cta bento-cta--orange" href="ai-tutor.html">' +
           '<span class="bento-cta__badge">AI</span>' +
-          '<div><p class="bento-cta__title">AI 雅思老师</p>' +
-          '<p class="bento-cta__desc">口语机经 / 写作批改</p></div>' +
-          '<span class="spk-cta-go">进入 ›</span></a></div>';
+          '<div><p class="bento-cta__title">Gia sư IELTS bằng AI</p>' +
+          '<p class="bento-cta__desc">Chủ đề luyện Nói / Nhận xét bài viết</p></div>' +
+          '<span class="spk-cta-go">Vào luyện ›</span></a></div>';
     }
     if (Y.isCambridge(subject)) {
       var vols = Y.camVolumes(allItems.filter(function (it) { return it.subject === subject; }));
@@ -340,7 +340,7 @@
         return '<div class="exam-grid">' + its.map(function (it) { return Y.cardHTML(it, ""); }).join("") + "</div>";
       }
     }
-    return emptyBox("该板块即将上线", "内容准备中，先去其他科目练习，或从雅思总览重新选择。", "zone.html?zone=mock", "返回雅思总览");
+    return emptyBox("Mục này sắp ra mắt", "Nội dung đang được chuẩn bị, bạn có thể luyện kỹ năng khác, hoặc quay lại chọn trong kho IELTS.", "zone.html?zone=mock", "Về tổng quan IELTS");
   }
 
   function countOf(subject) {
@@ -351,7 +351,7 @@
     }
     return itemsOf(subject).length;
   }
-  function unitOf(subject) { return (Y.isCambridge(subject) || subject === "jingting") ? " 册" : " 份"; }
+  function unitOf(subject) { return (Y.isCambridge(subject) || subject === "jingting") ? " Quyển" : " bài"; }
 
   // Vocab hub — 学习台：左进度轨 + 右主模块；诊断/每日单词为 chips
   function dailyWordChipMeta() {
@@ -368,12 +368,12 @@
     var resume = !!(dwTask && dwTask.wordList && dwTask.wordList.length && !dwTask.completed);
     var done = !resume && !!(dwResult && dwResult.date === today);
     if (resume) {
-      return { href: "daily-word-learn.html", label: "每日单词 · 继续", state: "is-resume" };
+      return { href: "daily-word-learn.html", label: "Từ vựng hằng ngày · Tiếp tục", state: "is-resume" };
     }
     if (done) {
-      return { href: "daily-word-result.html", label: "每日单词 · 已完成", state: "is-done" };
+      return { href: "daily-word-result.html", label: "Từ vựng hằng ngày · Đã hoàn thành", state: "is-done" };
     }
-    return { href: "daily-word-setup.html", label: "每日单词", state: "is-idle" };
+    return { href: "daily-word-setup.html", label: "Từ vựng hằng ngày", state: "is-idle" };
   }
 
   function vocabBentoHTML() {
@@ -400,17 +400,17 @@
       "</article>";
     }
 
-    return '<section class="vocab-desk" data-vocab-desk aria-label="单词学习台">' +
-      '<aside class="vocab-desk__rail" aria-label="学习进度">' +
-        '<p class="vocab-desk__rail-kicker">学习进度</p>' +
+    return '<section class="vocab-desk" data-vocab-desk aria-label="Bàn học từ vựng">' +
+      '<aside class="vocab-desk__rail" aria-label="Tiến độ học">' +
+        '<p class="vocab-desk__rail-kicker">Tiến độ học</p>' +
         '<ul class="vocab-desk__stats">' +
-          '<li><span>书架本数</span><b data-desk="shelfBooks">—</b></li>' +
-          '<li><span>词书学习</span><b data-desk="activeLists">—</b></li>' +
-          '<li><span>今日已学</span><b data-desk="todayWords">—</b></li>' +
-          '<li><span>本周已学</span><b data-desk="weekWords">—</b></li>' +
+          '<li><span>Số sách trên kệ</span><b data-desk="shelfBooks">—</b></li>' +
+          '<li><span>Học theo sách</span><b data-desk="activeLists">—</b></li>' +
+          '<li><span>Hôm nay đã học</span><b data-desk="todayWords">—</b></li>' +
+          '<li><span>Tuần này đã học</span><b data-desk="weekWords">—</b></li>' +
         "</ul>" +
         '<div class="vocab-desk__chips">' +
-          '<a class="vocab-desk__chip" href="diagnostic.html">能力诊断</a>' +
+          '<a class="vocab-desk__chip" href="diagnostic.html">Đánh giá năng lực</a>' +
           '<a class="vocab-desk__chip vocab-desk__chip--' + dw.state + '" href="' + Y.esc(dw.href) + '">' +
             Y.esc(dw.label) + "</a>" +
         "</div>" +
@@ -418,17 +418,17 @@
       '<div class="vocab-desk__main">' +
         '<header class="vocab-desk__head">' +
           '<div class="vocab-desk__head-copy">' +
-            '<p class="vocab-desk__brand">优益思达 · 单词</p>' +
-            "<h2>学习台</h2>" +
-            "<p>词库学习 · 闯关解锁 · 检测巩固 · 错题回炉。</p>" +
+            '<p class="vocab-desk__brand">YYSD · Từ vựng</p>' +
+            "<h2>Bàn học</h2>" +
+            "<p>Học theo kho từ · Vượt chặng để mở khóa · Kiểm tra để củng cố · Ôn lại từ sai.</p>" +
           "</div>" +
           bookSvg +
         "</header>" +
-        '<div class="vocab-desk__mods" role="navigation" aria-label="单词主模块">' +
-          mod("shelf", "vocab-shelf.html", "01", "词库", "书架本数", "—", "续学", "—", "进入书架", "vocab-shelf.html") +
-          mod("challenge", "vocab-challenge.html", "02", "单词闯关", "当前关", "—", "抽测池", "—", "开始闯关", "vocab-challenge.html") +
-          mod("quiz", "vocab-quiz.html", "03", "单词检测", "本周次数", "—", "最近正确率", "—", "开始检测", "vocab-quiz.html") +
-          mod("wrong", "wrong-words.html", "04", "错题本", "待复习场次", "—", "错词数", "—", "去复习", "wrong-words.html") +
+        '<div class="vocab-desk__mods" role="navigation" aria-label="Hoạt động từ vựng">' +
+          mod("shelf", "vocab-shelf.html", "01", "Kho từ", "Số sách trên kệ", "—", "Học tiếp", "—", "Mở kệ sách", "vocab-shelf.html") +
+          mod("challenge", "vocab-challenge.html", "02", "Thử thách từ vựng", "Chặng hiện tại", "—", "Nhóm từ để kiểm tra", "—", "Bắt đầu thử thách", "vocab-challenge.html") +
+          mod("quiz", "vocab-quiz.html", "03", "Kiểm tra từ vựng", "Số lượt tuần này", "—", "Tỉ lệ đúng gần đây", "—", "Bắt đầu kiểm tra", "vocab-quiz.html") +
+          mod("wrong", "wrong-words.html", "04", "Sổ câu sai", "Lượt cần ôn", "—", "Số từ sai", "—", "Ôn ngay", "wrong-words.html") +
         "</div>" +
       "</div>" +
     "</section>";
@@ -453,7 +453,7 @@
       set("activeLists", "0");
       set("todayWords", "0");
       set("weekWords", "0");
-      set("shelf-m1", "0 本");
+      set("shelf-m1", "0 quyển");
       set("shelf-m2", "0");
       set("quiz-m1", "0");
       set("quiz-m2", "—");
@@ -479,7 +479,7 @@
         : String(d.activeLists || 0));
       set("todayWords", String(d.todayWords || 0));
       set("weekWords", String(d.weekWords || 0));
-      set("shelf-m1", (d.shelfBooks || 0) + " 本");
+      set("shelf-m1", (d.shelfBooks || 0) + " quyển");
       set("shelf-m2", d.continueLearn && d.continueLearn.listLabel
         ? String(d.continueLearn.listLabel)
         : String(d.activeLists || 0));
@@ -488,9 +488,9 @@
       set("wrong-m1", String(d.pendingSessions || 0));
       set("wrong-m2", String(d.mistakeWords || 0));
       if (ch && ch.needsBook && ch.assignments && ch.assignments.length > 1) {
-        set("challenge-m1", ch.assignments.length + " 本");
-        set("challenge-m2", "选词册");
-        setCta("challenge-cta", "vocab-challenge.html", "去闯关");
+        set("challenge-m1", ch.assignments.length + " quyển");
+        set("challenge-m2", "Chọn giáo trình");
+        setCta("challenge-cta", "vocab-challenge.html", "Vào thử thách");
       } else if (ch && ch.assigned && ch.progress) {
         var totalDays = (ch.progress && ch.progress.totalDays) || 78;
         var bookHref = "vocab-challenge.html" +
@@ -498,33 +498,33 @@
             ? "?book=" + encodeURIComponent(ch.assignment.bookId)
             : "");
         if (ch.programComplete) {
-          set("challenge-m1", "已完成");
-          setCta("challenge-cta", bookHref, "查看进度");
+          set("challenge-m1", "Đã hoàn thành");
+          setCta("challenge-cta", bookHref, "Xem tiến độ");
         } else if (ch.progressDay) {
-          set("challenge-m1", "第 " + Math.min(ch.progressDay, totalDays) + " 关");
-          setCta("challenge-cta", bookHref, ch.activeAttemptId ? "继续闯关" : "去闯关");
+          set("challenge-m1", "Câu " + Math.min(ch.progressDay, totalDays) + " chặng");
+          setCta("challenge-cta", bookHref, ch.activeAttemptId ? "Tiếp tục thử thách" : "Vào thử thách");
         } else {
           set("challenge-m1", "L" + (ch.progress.nextListNo || 1));
-          setCta("challenge-cta", bookHref, "去闯关");
+          setCta("challenge-cta", bookHref, "Vào thử thách");
         }
         set("challenge-m2", String((ch.pool && ch.pool.active) || 0));
       } else {
-        set("challenge-m1", "待布置");
+        set("challenge-m1", "Chờ giao bài");
         set("challenge-m2", "—");
-        setCta("challenge-cta", "vocab-challenge.html", "查看闯关");
+        setCta("challenge-cta", "vocab-challenge.html", "Xem thử thách");
       }
       if (d.continueLearn) {
-        setCta("shelf-cta", d.continueLearn.href, "续学 · " + (d.continueLearn.listLabel || "List"));
+        setCta("shelf-cta", d.continueLearn.href, "Học tiếp · " + (d.continueLearn.listLabel || "List"));
       } else if ((d.shelfBooks || 0) > 0) {
-        setCta("shelf-cta", "vocab-shelf.html", "继续学习");
+        setCta("shelf-cta", "vocab-shelf.html", "Học tiếp");
       } else {
-        setCta("shelf-cta", "vocab-shelf.html", "添加词书");
+        setCta("shelf-cta", "vocab-shelf.html", "Thêm giáo trình");
       }
       if (d.continueQuiz) {
-        setCta("quiz-cta", d.continueQuiz.href, "续测 · " + (d.continueQuiz.label || "检测"));
+        setCta("quiz-cta", d.continueQuiz.href, "Tiếp tục kiểm tra · " + (d.continueQuiz.label || "Kiểm tra"));
       }
       if (d.continueWrong) {
-        setCta("wrong-cta", d.continueWrong.href, "续复习 · " + (d.continueWrong.wrongCount || "") + " 词");
+        setCta("wrong-cta", d.continueWrong.href, "Tiếp tục ôn · " + (d.continueWrong.wrongCount || "") + " từ");
       }
     }).catch(function () { paintGuest(); });
   }
@@ -567,9 +567,9 @@
         ? cat.links
         : cat.key === "speaking"
           ? [
-              { href: "speaking.html", label: "口语模考" },
-              { href: "speaking-select.html", label: "专项选题" },
-              { href: "ai-tutor.html", label: "AI 雅思老师" }
+              { href: "speaking.html", label: "Thi thử Nói" },
+              { href: "speaking-select.html", label: "Chọn chủ đề luyện tập" },
+              { href: "ai-tutor.html", label: "Gia sư IELTS bằng AI" }
             ]
           : [{ href: headHref, label: cat.desc || cat.label }];
       return '<article class="ielts-hub__card ielts-hub__card--' + Y.esc(cat.key) + '">' +
@@ -584,33 +584,34 @@
             return '<li><a href="' + Y.esc(l.href) + '">' + Y.esc(l.label) + "</a></li>";
           }).join("") +
         "</ul>" +
-        '<a class="ielts-hub__go" href="' + Y.esc(headHref) + '">进入' + Y.esc(cat.label) + " <span aria-hidden=\"true\">›</span></a>" +
+        '<a class="ielts-hub__go" href="' + Y.esc(headHref) + '">Mở ' + Y.esc(cat.label) + " <span aria-hidden=\"true\">›</span></a>" +
       "</article>";
     }).join("");
 
-    return '<section class="ielts-hub" aria-label="雅思入口">' +
+    return '<section class="ielts-hub" aria-label="Khu IELTS">' +
       '<header class="ielts-hub__intro">' +
         '<p class="ielts-hub__kicker">Cambridge IELTS</p>' +
-        "<h2>选择你的训练路径</h2>" +
-        "<p>单项精练打基础，套题模考练临场。四科口音分明，点进去就是对应题库。</p>" +
+        "<h2>Chọn cách luyện thi</h2>" +
+        "<p>Luyện theo kỹ năng hoặc làm một đề trọn bộ. Để học theo lộ trình ngắn, chọn Sải bước bên dưới.</p>" +
+        '<p><a class="ielts-hub__go" href="ielts-vi/">Sải bước · Học và ôn tập miễn phí →</a></p>' +
       "</header>" +
       '<div class="ielts-hub__grid">' + cards + "</div>" +
     "</section>";
   }
 
   var TOEFL_SKILL = {
-    full: { list: "TOEFL_FULL", page: "toefl-full.html", badge: "全卷", empty: "暂无完整套题" },
-    reading: { list: "TOEFL_READING", page: "toefl-reading.html", badge: "阅读", empty: "暂无阅读真题" },
-    listening: { list: "TOEFL_LISTENING", page: "toefl-listening.html", badge: "听力", empty: "暂无听力真题" },
-    writing: { list: "TOEFL_WRITING", page: "toefl-writing.html", badge: "写作", empty: "暂无写作真题" },
-    speaking: { list: "TOEFL_SPEAKING", page: "toefl-speaking.html", badge: "口语", empty: "暂无口语真题" }
+    full: { list: "TOEFL_FULL", page: "toefl-full.html", badge: "Toàn bộ đề", empty: "Chưa có đề trọn bộ" },
+    reading: { list: "TOEFL_READING", page: "toefl-reading.html", badge: "Đọc", empty: "Chưa có đề Đọc" },
+    listening: { list: "TOEFL_LISTENING", page: "toefl-listening.html", badge: "Nghe", empty: "Chưa có đề Nghe" },
+    writing: { list: "TOEFL_WRITING", page: "toefl-writing.html", badge: "Viết", empty: "Chưa có đề Viết" },
+    speaking: { list: "TOEFL_SPEAKING", page: "toefl-speaking.html", badge: "Nói", empty: "Chưa có đề Nói" }
   };
 
   function toeflPaperCards(skill) {
     var spec = TOEFL_SKILL[skill] || TOEFL_SKILL.reading;
     var papers = Y[spec.list] || [];
     if (!papers.length) {
-      return emptyBox(spec.empty, "题目上传后会出现在这里。", "zone.html?zone=toefl", "返回托福总览");
+      return emptyBox(spec.empty, "Đề sẽ xuất hiện ở đây sau khi được tải lên.", "zone.html?zone=toefl", "Về tổng quan TOEFL");
     }
     return '<div class="exam-grid">' + papers.map(function (p) {
       var practice = spec.page + "?id=" + encodeURIComponent(p.id) + "&mode=practice";
@@ -619,10 +620,10 @@
         '<div class="exam-card__top"><span class="badge badge--toefl-' + skill + '">' + spec.badge + "</span></div>" +
         "<h3>" + Y.esc(p.title) + "</h3>" +
         "<p>" + Y.esc(p.desc || "") + "</p>" +
-        '<div class="exam-card__meta"><span>⏱️ ' + Y.esc(String(p.duration || 30)) + " 分钟</span></div>" +
+        '<div class="exam-card__meta"><span>⏱️ ' + Y.esc(String(p.duration || 30)) + " phút</span></div>" +
         '<div class="exam-card__foot toefl-card-acts">' +
-          '<a class="btn btn--ghost btn--sm" href="' + practice + '">练习</a>' +
-          '<a class="btn btn--primary btn--sm" href="' + mock + '">模考</a>' +
+          '<a class="btn btn--ghost btn--sm" href="' + practice + '">Luyện tập</a>' +
+          '<a class="btn btn--primary btn--sm" href="' + mock + '">Thi thử</a>' +
         "</div></article>";
     }).join("") + "</div>";
   }
@@ -639,8 +640,8 @@
         : '<a class="ielts-hub__hit" href="' + Y.esc(headHref) + '">';
       var hitEnd = soon ? "</div>" : "</a>";
       var go = soon
-        ? '<span class="ielts-hub__go is-soon">即将上线</span>'
-        : '<a class="ielts-hub__go" href="' + Y.esc(headHref) + '">进入' + Y.esc(cat.label) + ' <span aria-hidden="true">›</span></a>';
+        ? '<span class="ielts-hub__go is-soon">Sắp ra mắt</span>'
+        : '<a class="ielts-hub__go" href="' + Y.esc(headHref) + '">Mở ' + Y.esc(cat.label) + ' <span aria-hidden="true">›</span></a>';
       var kind = kindOf[cat.key] || cat.key;
       var glyph = cat.key === "lab" ? "reading" : (cat.key === "dates" ? "mock" : cat.key);
       return '<article class="ielts-hub__card ielts-hub__card--' + Y.esc(kind) + (soon ? " is-soon" : "") + '">' +
@@ -653,10 +654,10 @@
         go +
       "</article>";
     }).join("");
-    return '<section class="ielts-hub" aria-label="' + Y.esc(opts.aria || "托福入口") + '">' +
+    return '<section class="ielts-hub" aria-label="' + Y.esc(opts.aria || "Khu TOEFL") + '">' +
       '<header class="ielts-hub__intro">' +
         '<p class="ielts-hub__kicker">Enhanced TOEFL iBT</p>' +
-        "<h2>" + Y.esc(opts.h2 || "选择训练方式") + "</h2>" +
+        "<h2>" + Y.esc(opts.h2 || "Chọn cách luyện") + "</h2>" +
         "<p>" + Y.esc(opts.p || "") + "</p>" +
         (opts.link ? '<p><a class="ielts-hub__go" href="' + Y.esc(opts.link.href) + '">' +
           Y.esc(opts.link.label) + ' <span aria-hidden="true">›</span></a></p>' : "") +
@@ -667,19 +668,19 @@
 
   function toeflHubHTML() {
     return toeflDoorCards(["lab", "dates"], {
-      aria: "托福入口",
-      h2: "选择训练方式",
-      p: "按题型拆开精练一篇，或按考试日进入整卷练习与模考。",
-      link: { href: "toefl-score.html", label: "成绩单与模考历史" },
+      aria: "Khu TOEFL",
+      h2: "Chọn cách luyện",
+      p: "Luyện riêng từng dạng câu hỏi, hoặc chọn ngày thi để luyện hay thi thử cả đề.",
+      link: { href: "toefl-score.html", label: "Bảng điểm và lịch sử thi thử" },
       grid: "ielts-hub__grid ielts-hub__grid--2"
     });
   }
 
   function toeflDateHubHTML() {
     return toeflDoorCards(["reading", "listening", "speaking", "writing"], {
-      aria: "按考试日模考",
-      h2: "按考试日模考",
-      p: "按考试日进入单项练习与模考。完整连考请到机考系统 Mock Test。",
+      aria: "Thi thử theo ngày thi",
+      h2: "Thi thử theo ngày thi",
+      p: "Chọn ngày thi để luyện hoặc thi thử từng kỹ năng. Để thi liên tục các kỹ năng, vào hệ thống Mock Test.",
       grid: "ielts-hub__grid"
     });
   }
@@ -694,10 +695,10 @@
 
   function toeflLabHTML() {
     var Lab = window.YYSD_TOEFL_LAB;
-    if (!Lab) return emptyBox("精练目录未加载", "请刷新后重试。", "zone.html?zone=toefl", "返回托福总览");
+    if (!Lab) return emptyBox("Chưa tải được danh mục bài luyện", "Hãy tải lại trang rồi thử lại.", "zone.html?zone=toefl", "Về tổng quan TOEFL");
     if (!labIndex) {
       loadLabThen(render);
-      return '<div class="state state--brand"><p>正在加载题型目录…</p></div>';
+      return '<div class="state state--brand"><p>Đang tải danh mục dạng câu hỏi…</p></div>';
     }
     var types = Lab.TYPES[labSkill] || Lab.TYPES.reading;
     if (!types.some(function (t) { return t.key === labType; })) labType = types[0].key;
@@ -720,15 +721,15 @@
       }).join("") + "</div>";
     }
     function statusTxt(st, kind) {
-      if (!st.attempted) return "未做";
-      if (kind === "speaking") return st.ok + "/" + st.total + " 已录";
-      if (st.done >= st.total && st.total) return (st.ok === st.total ? "全部正确" : (st.ok + "/" + st.total + " 正确"));
+      if (!st.attempted) return "Chưa làm";
+      if (kind === "speaking") return st.ok + "/" + st.total + " Đã ghi âm";
+      if (st.done >= st.total && st.total) return (st.ok === st.total ? "Đúng tất cả" : (st.ok + "/" + st.total + " Đúng"));
       return st.ok + "/" + st.total;
     }
     function acts(href, recId, attempted) {
       return '<div class="hit-lab__acts">' +
-        '<a class="hit-lab__go" href="' + Y.esc(href) + '">' + (attempted ? "再做一遍" : "开始练习") + "</a>" +
-        (attempted ? '<button type="button" class="hit-lab__rec" data-lab="record" data-rec="' + Y.esc(recId) + '">查看记录</button>' : "") +
+        '<a class="hit-lab__go" href="' + Y.esc(href) + '">' + (attempted ? "Làm lại" : "Bắt đầu luyện") + "</a>" +
+        (attempted ? '<button type="button" class="hit-lab__rec" data-lab="record" data-rec="' + Y.esc(recId) + '">Xem kết quả</button>' : "") +
       "</div>";
     }
     var body;
@@ -761,26 +762,26 @@
           "</header>" + rows +
         "</article>";
       }).filter(Boolean).join("");
-      body = blocks || emptyBox("没有符合筛选的题目", "换一个题型或筛选再试。", "zone.html?zone=toefl&s=lab", "查看全部");
+      body = blocks || emptyBox("Không có câu hỏi phù hợp", "Hãy đổi dạng câu hỏi hoặc bộ lọc.", "zone.html?zone=toefl&s=lab", "Xem tất cả");
     } else {
-      var countWord = labSkill === "reading" && labType === "complete_words" ? "空" : "题";
+      var countWord = labSkill === "reading" && labType === "complete_words" ? "Trống" : "câu";
       body = cards.length
         ? '<div class="hit-lab__grid">' + cards.map(function (it) {
           var href = Lab.hrefOf(it, "practice");
           var st = Lab.cardResults(it);
           return '<article class="hit-lab__card">' +
             '<p class="hit-lab__kicker">' + Y.esc(Lab.typeLabel(it.skill, it.type)) +
-              (it.hot ? " · 高频" : "") + " · " + it.itemCount + " " + countWord + "</p>" +
+              (it.hot ? " · tần suất cao" : "") + " · " + it.itemCount + " " + countWord + "</p>" +
             "<h3>" + Y.esc(Lab.displayTitle(it)) + "</h3>" +
             "<p>" + Y.esc(it.date) + "</p>" +
             '<p class="hit-lab__stat">' + Y.esc(statusTxt(st, labSkill)) + "</p>" +
             acts(href, "card|" + it.skill + "|" + it.paperId + "|" + it.taskIndex, st.attempted) +
           "</article>";
         }).join("") + "</div>"
-        : emptyBox("没有符合筛选的题目", "换一个题型或筛选再试。", "zone.html?zone=toefl&s=lab", "查看全部");
+        : emptyBox("Không có câu hỏi phù hợp", "Hãy đổi dạng câu hỏi hoặc bộ lọc.", "zone.html?zone=toefl&s=lab", "Xem tất cả");
     }
-    return '<section class="hit-lab" aria-label="按题型精练">' +
-      '<header class="hit-lab__intro"><h2>按题型精练</h2><p>先选择题型，再点题目进入 ETS 机考界面。</p></header>' +
+    return '<section class="hit-lab" aria-label="Luyện theo dạng câu hỏi">' +
+      '<header class="hit-lab__intro"><h2>Luyện theo dạng câu hỏi</h2><p>Chọn dạng câu hỏi, rồi chọn bài để mở giao diện thi trên máy ETS giao diện thi.</p></header>' +
       chipRow("skill", Lab.SKILLS, labSkill) +
       chipRow("type", types, labType) +
       chipRow("filter", filters, labFilter) +
@@ -793,12 +794,12 @@
     // ponytail: vocab desk owns its own title — skip generic subject head
     var head = cat.key === "vocab" ? "" : ('<div class="subject-group__head">' +
       '<span class="subject-dot" style="background:' + sub.color + '"></span>' +
-      "<h2>" + Y.esc(cat.key === "jingting" && jtVol ? ("剑桥雅思 " + jtVol) : cat.label) + '</h2><span class="cnt">' +
-      (cat.key === "mock" || cat.key === "ielts" ? Y.camVolumes(allItems).length + " 册"
+      "<h2>" + Y.esc(cat.key === "jingting" && jtVol ? ("Cambridge IELTS " + jtVol) : cat.label) + '</h2><span class="cnt">' +
+      (cat.key === "mock" || cat.key === "ielts" ? Y.camVolumes(allItems).length + " Quyển"
         : cat.key === "alevel" && alevelCatalog && window.YYSD_ALEVEL
-          ? window.YYSD_ALEVEL.qpCount(alevelCatalog) + " 套"
+          ? window.YYSD_ALEVEL.qpCount(alevelCatalog) + " bộ đề"
         : (zone === "toefl" && TOEFL_SKILL[cat.key]
-          ? (Y[TOEFL_SKILL[cat.key].list] || []).length + " 套"
+          ? (Y[TOEFL_SKILL[cat.key].list] || []).length + " bộ đề"
           : countOf(cat.subject) + unitOf(cat.subject || ""))) +
       "</span></div>");
 
@@ -807,9 +808,9 @@
       var vols = Y.camVolumes(allItems);
       body = vols.length
         ? Y.cambridgeCatalogHTML(vols, allItems, "", { tier: camTier, query: searchQuery, collapseLegacy: true })
-        : emptyBox("暂无剑桥真题", "老师上传套题后会出现在这里。也可以先做单项听力或阅读练习。", "zone.html?zone=mock&s=listening", "去练听力");
+        : emptyBox("Chưa có đề Cambridge", "Đề sẽ xuất hiện sau khi giáo viên tải lên. Bạn cũng có thể luyện riêng phần Nghe hoặc Đọc.", "zone.html?zone=mock&s=listening", "Luyện Nghe");
     } else if (zone === "toefl" && cat.soon) {
-      body = emptyBox(cat.label + "即将上线", "四科机考已开放，这一科随后加入。", "zone.html?zone=toefl", "返回托福总览");
+      body = emptyBox(cat.label + "Sắp ra mắt", "Đã mở thi trên máy cho bốn kỹ năng, kỹ năng này sẽ được bổ sung sau.", "zone.html?zone=toefl", "Về tổng quan TOEFL");
     } else if (zone === "toefl" && TOEFL_SKILL[cat.key]) {
       body = toeflPaperCards(cat.key);
     } else if (zone === "mock" && (cat.key === "listening" || cat.key === "reading" || cat.key === "writing")) {
@@ -821,25 +822,25 @@
             collapseLegacy: true,
             skill: cat.skill || ""
           })
-        : emptyBox("该科目暂无内容", "先试试其他科目，或稍后再来。", "zone.html?zone=mock", "返回雅思总览");
+        : emptyBox("Mục này chưa có nội dung", "Hãy thử kỹ năng khác, hoặc quay lại sau.", "zone.html?zone=mock", "Về tổng quan IELTS");
     } else if (cat.key === "jingting") {
       var jtItems = itemsOf("jingting");
       body = jtItems.length && Y.jingtingCatalogHTML
         ? Y.jingtingCatalogHTML(jtItems, "", { vol: jtVol, query: searchQuery, tier: camTier })
-        : emptyBox("暂无精听内容", "精听材料上传后会出现在这里。", "zone.html?zone=mock&s=listening", "返回听力");
+        : emptyBox("Chưa có bài luyện nghe kỹ", "Tài liệu nghe kỹ sẽ xuất hiện sau khi được tải lên.", "zone.html?zone=mock&s=listening", "Trở về phần Nghe");
     } else if (cat.href) {
       body = '<a class="bento-cta" href="' + Y.esc(cat.href) + '">' +
         '<div><p class="bento-cta__title">' + Y.esc(cat.label) + "</p>" +
         '<p class="bento-cta__desc">' + Y.esc(cat.desc || "") + "</p></div>" +
-        '<span class="spk-cta-go">进入 ›</span></a>';
+        '<span class="spk-cta-go">Vào luyện ›</span></a>';
     } else if (cat.key === "alevel") {
       var A = window.YYSD_ALEVEL;
       var qp = alevelCatalog ? A.qpCount(alevelCatalog) : 0;
       body = alevelCatalog && A.hasContent(alevelCatalog)
-        ? '<p class="alevel-zone-intro">CAIE 热门科目真题 · 在线预览 · 免费下载 · 已收录 ' + qp + " 套</p>" +
+        ? '<p class="alevel-zone-intro">CAIE đề thi các môn phổ biến · xem trực tuyến · tải miễn phí · hiện có ' + qp + " bộ đề</p>" +
           A.catalogPreviewHTML(alevelCatalog, "", 6) +
-          '<div class="alevel-zone-more"><a class="btn btn--primary pressable" href="alevel.html">进入 A-Level 题库 →</a></div>'
-        : '<div class="soon-box">A-Level 真题筹备中，敬请期待。</div>';
+          '<div class="alevel-zone-more"><a class="btn btn--primary pressable" href="alevel.html">Mở A-Level kho đề →</a></div>'
+        : '<div class="soon-box">A-Level đang chuẩn bị đề thi, vui lòng quay lại sau.</div>';
     } else if (cat.key === "vocab") {
       body = vocabBentoHTML();
     } else if (cat.children) {
@@ -914,7 +915,7 @@
       html = toeflLabHTML();
     } else if (searchQuery) {
       var matched = Y.searchItems(allItems, searchQuery);
-      html = '<div class="catalog-search-meta">找到 ' + matched.length + " 条结果</div>" +
+      html = '<div class="catalog-search-meta">Tìm thấy ' + matched.length + " kết quả</div>" +
         Y.searchResultsHTML(matched, "");
     } else if (zone === "mock" && activeCat === "all") {
       html = ieltsHubHTML();
@@ -930,10 +931,10 @@
             '<span class="ai-tutor-entry__badge" aria-hidden="true">AI</span>' +
             '<span class="ai-tutor-entry__body">' +
               '<span class="ai-tutor-entry__kicker">Featured</span>' +
-              "<b>AI 雅思老师</b>" +
-              "<span>口语机经练习 / 全真模考 · 写作批改 · 随时开练</span>" +
+              "<b>Gia sư IELTS bằng AI</b>" +
+              "<span>Luyện chủ đề Nói / thi thử như thi thật · Nhận xét bài viết · luyện bất cứ lúc nào</span>" +
             "</span>" +
-            '<span class="ai-tutor-entry__cta">立即开始 <span aria-hidden="true">→</span></span>' +
+            '<span class="ai-tutor-entry__cta">Bắt đầu ngay <span aria-hidden="true">→</span></span>' +
           "</a>"
         : "";
       var cats = activeCat === "all" ? visibleNav()
@@ -941,7 +942,7 @@
         : visibleNav().filter(function (c) { return c.key === activeCat; });
       html = aiTutorHTML + cats.map(categoryHTML).join("");
       if (activeCat === "jingting" && !cats.length) {
-        html = emptyBox("暂无精听内容", "精听材料上传后会出现在这里。", "zone.html?zone=mock&s=listening", "返回听力");
+        html = emptyBox("Chưa có bài luyện nghe kỹ", "Tài liệu nghe kỹ sẽ xuất hiện sau khi được tải lên.", "zone.html?zone=mock&s=listening", "Trở về phần Nghe");
       }
     }
     function bindJtFolds(root) {
@@ -1035,9 +1036,9 @@
     go();
   }).catch(function (err) {
     var msg = location.protocol === "file:"
-      ? "请通过网址（http://）访问本站，本地双击打开会被浏览器拦截。"
+      ? "Hãy dùng địa chỉ web (http://)để mở trang, trình duyệt sẽ chặn nếu bạn mở trực tiếp tệp trên máy."
       : err.message;
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(msg) + '</p></div>';
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Không tải được nội dung</h3><p>' + Y.esc(msg) + '</p></div>';
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
