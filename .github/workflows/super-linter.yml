@@ -33,6 +33,7 @@ permissions:
   contents: read
   packages: read
   statuses: write
+  pull-requests: write
 
 concurrency:
   group: super-linter-${{ github.ref }}
@@ -49,76 +50,69 @@ jobs:
           fetch-depth: 1
 
       - name: Super-Linter
-        uses: super-linter/super-linter@v7.4.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BRANCH: main
-          VALIDATE_ALL_CODEBASE: true
-          FILTER_REGEX_INCLUDE: (^|/)(vi|tests|docs)/
-          IGNORE_GITIGNORED_FILES: true
-          FILTER_REGEX_EXCLUDE: (^|/)(library|assets|data|server|scripts|app)/
-          # ESLint 9 do vi-ci.yml đảm nhiệm
-          # Super-Linter tập trung vào CSS/HTML/MD/JSON/YAML
-          VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_JAVASCRIPT_STANDARD: false
-          VALIDATE_JAVASCRIPT_PRETTIER: false
-          VALIDATE_CSS_PRETTIER: false
-          VALIDATE_HTML_PRETTIER: false
-          VALIDATE_JSON_PRETTIER: false
-          VALIDATE_MARKDOWN_PRETTIER: false
-          VALIDATE_YAML_PRETTIER: false
-          VALIDATE_CSS: true
-          VALIDATE_HTML: true
-          VALIDATE_MARKDOWN: true
-          VALIDATE_JSON: true
-          VALIDATE_YAML: true
-          VALIDATE_EDITORCONFIG: false
-          VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_GITLEAKS: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_CHECKOV: false
-          VALIDATE_TRIVY: false
-          VALIDATE_JSCPD: false
-          VALIDATE_SPELL_CODESPELL: false
-          VALIDATE_PYTHON_BLACK: false
-          VALIDATE_PYTHON_FLAKE8: false
-          VALIDATE_PYTHON_ISORT: false
-          VALIDATE_PYTHON_MYPY: false
-          VALIDATE_PYTHON_PYLINT: false
-          VALIDATE_PYTHON_RUFF: false
-          VALIDATE_TYPESCRIPT_ES: false
-          VALIDATE_TYPESCRIPT_PRETTIER: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
-          VALIDATE_JSX: false
-          VALIDATE_TSX: false
-          VALIDATE_DOCKERFILE_HADOLINT: false
-          VALIDATE_SHELL_SHFMT: false
-          VALIDATE_BASH: false
-          VALIDATE_BASH_EXEC: false
-          VALIDATE_XML: false
-          VALIDATE_RUBY: false
-          VALIDATE_GO: false
-          VALIDATE_JAVA: false
-          VALIDATE_KOTLIN: false
-          VALIDATE_SWIFT: false
-          VALIDATE_PHP: false
-          VALIDATE_POWERSHELL: false
-          VALIDATE_CLANG_FORMAT: false
-          VALIDATE_PROTOBUF: false
-          VALIDATE_OPENAPI: false
-          VALIDATE_GRAPHQL: false
-
-      - name: Xuất chẩn đoán lint
-        if: always()
+        id: lint
+        continue-on-error: true
         run: |
+          set -o pipefail
+          docker run --rm \
+            -e RUN_LOCAL=true \
+            -e VALIDATE_ALL_CODEBASE=true \
+            -e DEFAULT_BRANCH=main \
+            -e IGNORE_GITIGNORED_FILES=true \
+            -e FILTER_REGEX_INCLUDE='(^|/)(vi|tests|docs)/' \
+            -e VALIDATE_CSS=true \
+            -e VALIDATE_HTML=true \
+            -e VALIDATE_MARKDOWN=true \
+            -e VALIDATE_JSON=true \
+            -e VALIDATE_YAML=true \
+            -e VALIDATE_GITHUB_ACTIONS=true \
+            -e VALIDATE_JAVASCRIPT_ES=false \
+            -e VALIDATE_JAVASCRIPT_STANDARD=false \
+            -e VALIDATE_JAVASCRIPT_PRETTIER=false \
+            -e VALIDATE_CSS_PRETTIER=false \
+            -e VALIDATE_HTML_PRETTIER=false \
+            -e VALIDATE_JSON_PRETTIER=false \
+            -e VALIDATE_MARKDOWN_PRETTIER=false \
+            -e VALIDATE_YAML_PRETTIER=false \
+            -e VALIDATE_NATURAL_LANGUAGE=false \
+            -e VALIDATE_GITLEAKS=false \
+            -e VALIDATE_EDITORCONFIG=false \
+            -e VALIDATE_CHECKOV=false \
+            -e VALIDATE_TRIVY=false \
+            -e VALIDATE_JSCPD=false \
+            -v "$PWD":/tmp/lint \
+            ghcr.io/super-linter/super-linter:v7.4.0 2>&1 | tee /tmp/super-linter.log
+
+      - name: Đăng nhật ký lint
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          body=/tmp/sl-body.md
           {
-            echo "== cây tệp =="
-            find . -maxdepth 3 -iname "*super-linter*" \
-              -o -maxdepth 2 -iname "*.log"
-            echo "== tóm tắt =="
-            find . -maxdepth 4 -name "*.md" -path "*super-linter*" \
-              -exec head -n 60 {} \;
-            echo "== log =="
-            find . -maxdepth 4 -name "*.log" -exec tail -n 40 {} \;
-          } 2>&1 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
-            | awk '{ print "::error title=Super-Linter::" substr($0, 1, 350) }'
+            echo "### Nhật ký Super-Linter"
+            echo ""
+            echo '```text'
+            tail -n 80 /tmp/super-linter.log || echo "không có nhật ký"
+            echo '```'
+          } > "${body}"
+          number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
+          if [ -n "${number}" ]; then
+            gh pr comment "${number}" --body-file "${body}"
+          fi
+
+      - name: Lưu kết quả lint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: super-linter-output
+          path: super-linter-output/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Kết luận
+        if: steps.lint.outcome == 'failure'
+        run: |
+          echo "Super-Linter phát hiện lỗi."
+          exit 1
