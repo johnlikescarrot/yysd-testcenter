@@ -33,3 +33,5 @@ jobs:
           VALIDATE_YAML: true
           VALIDATE_PYTHON_FLAKE8: true
           DISABLE_ERRORS: false
+          # Ep ESLint 8 trong Super-Linter dung .eslintrc thay vi flat config cua repo.
+          ESLINT_USE_FLAT_CONFIG: 'false'
