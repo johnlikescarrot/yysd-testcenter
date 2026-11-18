@@ -1,0 +1,37 @@
+name: IELTS Mỗi Ngày
+
+on:
+  pull_request:
+    paths: ['ielts/**', '.github/workflows/ielts-vi.yml']
+  push:
+    branches: [main, arena/4f9b88d1-yysd-testcenter]
+    paths: ['ielts/**', '.github/workflows/ielts-vi.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ielts-vi-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  super-linter:
+    name: Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Lint IELTS sources
+        uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: '^ielts/|^\.github/workflows/ielts-vi\.yml$'
+          LINTER_RULES_PATH: ielts
+          VALIDATE_CSS: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          MULTI_STATUS: false

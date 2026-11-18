@@ -1,0 +1,356 @@
+[
+  {
+    "id": "hen-o-thu-vien",
+    "unit": 1,
+    "skill": "listen",
+    "title": "Cuộc hẹn ở thư viện",
+    "minutes": 5,
+    "intro": "Tập nhận ra thông tin đã được đính chính trong một cuộc trò chuyện.",
+    "source": {
+      "title": "Booking a study room",
+      "audio": "thu-vien.mp3",
+      "body": ["Reception: Good afternoon. The small study room is free at quarter past two on Friday.", "Student: Could we come at half past two instead? My seminar finishes at two.", "Reception: Of course. Come to the west entrance, not the main entrance. The room is on the second floor, next to the lift.", "Student: Great. Do we need to bring anything?", "Reception: Each member of your group needs a student card. The room is free, but food isn't allowed inside."]
+    },
+    "items": [
+      {
+        "id": "l1-time",
+        "kind": "choice",
+        "prompt": "What time is the final booking?",
+        "options": ["2:00 p.m.", "2:15 p.m.", "2:30 p.m."],
+        "answers": ["2:30 p.m."],
+        "explain": "14:15 là giờ đề xuất ban đầu. Người học đề nghị lúc 14:30 và nhân viên đồng ý."
+      },
+      {
+        "id": "l1-entrance",
+        "kind": "input",
+        "prompt": "Use ONE WORD: The group should use the ___ entrance.",
+        "answers": ["west"],
+        "explain": "Người nói chỉ lối phía tây rồi loại trừ cửa chính. Bỏ qua cụm phủ định có thể khiến bạn chọn nhầm."
+      },
+      {
+        "id": "l1-card",
+        "kind": "choice",
+        "prompt": "What must every person bring?",
+        "options": ["A student card", "A printed booking form", "A deposit"],
+        "answers": ["A student card"],
+        "explain": "Cụm “each member” cho biết yêu cầu mang thẻ sinh viên áp dụng cho từng người, không chỉ người đặt phòng."
+      },
+      {
+        "id": "l1-floor",
+        "kind": "choice",
+        "prompt": "Where is the room?",
+        "options": ["Opposite the main entrance", "On the first floor", "Beside the lift on the second floor"],
+        "answers": ["Beside the lift on the second floor"],
+        "explain": "“Beside” và “next to” đều diễn tả vị trí ngay cạnh. Cả số tầng và vị trí cạnh thang máy đều khớp với lời thoại."
+      }
+    ]
+  },
+  {
+    "id": "doc-y-va-dan-chung",
+    "unit": 1,
+    "skill": "read",
+    "title": "Tìm ý chính và dẫn chứng",
+    "minutes": 6,
+    "intro": "Phân biệt nhận định đúng, sai và không có đủ thông tin trong văn bản.",
+    "source": {
+      "title": "A cooler street",
+      "body": ["A town council tested two approaches to making a shopping street more comfortable in summer. It planted trees along one stretch and installed pale paving on another. Volunteers measured surface temperatures at noon for six weeks. The new paving was cooler than the old paving, but shaded areas beneath trees were cooler still.", "The researchers warned against applying the result to every street. Street width and the height of nearby buildings change where shade falls. The council therefore asked planners to record shade and pedestrian traffic before choosing a solution for each block."]
+    },
+    "items": [
+      {
+        "id": "r1-main",
+        "kind": "choice",
+        "prompt": "What is the main purpose of the passage?",
+        "options": ["To compare cooling methods and explain why local conditions matter", "To argue that pale paving should be banned", "To describe how trees are grown in nurseries"],
+        "answers": ["To compare cooling methods and explain why local conditions matter"],
+        "explain": "Đoạn đầu mô tả thử nghiệm; đoạn sau cảnh báo về điều kiện từng phố. Ý chính phải bao quát cả hai đoạn."
+      },
+      {
+        "id": "r1-frequency",
+        "kind": "choice",
+        "prompt": "True, False or Not Given? Temperatures were measured at midnight.",
+        "options": ["True", "False", "Not Given"],
+        "answers": ["False"],
+        "explain": "Văn bản nói “at noon”, tức giữa trưa. Đây là bằng chứng trực tiếp mâu thuẫn với “at midnight”."
+      },
+      {
+        "id": "r1-cost",
+        "kind": "choice",
+        "prompt": "True, False or Not Given? Planting the trees cost more than installing the paving.",
+        "options": ["True", "False", "Not Given"],
+        "answers": ["Not Given"],
+        "explain": "Văn bản so sánh nhiệt độ, không nêu chi phí. Đừng dùng kiến thức ngoài văn bản để suy đoán."
+      },
+      {
+        "id": "r1-height",
+        "kind": "input",
+        "prompt": "Use ONE WORD from the text: The width of streets and the ___ of buildings influence shade.",
+        "answers": ["height"],
+        "explain": "Gạch chân cụm “street width” để định vị câu. Thông tin song song là chiều cao của các tòa nhà."
+      }
+    ]
+  },
+  {
+    "id": "viet-cau-tong-quan",
+    "unit": 1,
+    "skill": "write",
+    "title": "Viết câu tổng quan rõ ràng",
+    "minutes": 7,
+    "intro": "Chọn xu hướng nổi bật và viết một câu tổng quan cho Academic Writing Task 1.",
+    "source": {
+      "title": "Bicycle journeys to work",
+      "body": ["The share of work journeys made by bicycle in Hillford rose from 8% in 2015 to 12% in 2020 and 18% in 2025. In Lakeford, the figures were 15%, 14% and 15% respectively."]
+    },
+    "items": [
+      {
+        "id": "w1-overview",
+        "kind": "choice",
+        "prompt": "Which sentence works best as an overview?",
+        "options": ["In 2020, the share in Hillford was 12%.", "Overall, Hillford's share rose steadily and overtook Lakeford's, which remained broadly stable.", "Cycling increased because the weather improved."],
+        "answers": ["Overall, Hillford's share rose steadily and overtook Lakeford's, which remained broadly stable."],
+        "explain": "Câu tổng quan nêu hai xu hướng và sự đổi vị trí. Một số liệu lẻ hoặc một nguyên nhân không có trong dữ liệu đều không phù hợp."
+      },
+      {
+        "id": "w1-change",
+        "kind": "choice",
+        "prompt": "By how many percentage points did Hillford's share rise from 2015 to 2025?",
+        "options": ["8 percentage points", "18 percentage points", "10 percentage points"],
+        "answers": ["10 percentage points"],
+        "explain": "18% trừ 8% bằng 10 điểm phần trăm. Điểm phần trăm khác với phần trăm tăng tương đối."
+      },
+      {
+        "id": "w1-verb",
+        "kind": "input",
+        "prompt": "Use ONE WORD: The share in Lakeford ___ from 15% to 14% between 2015 and 2020.",
+        "answers": ["fell", "decreased", "dropped", "declined", "dipped", "slipped"],
+        "explain": "Cần một động từ quá khứ chỉ sự giảm. Cấu trúc “fell from X to Y” nêu đúng điểm đầu và cuối."
+      },
+      {
+        "id": "w1-own",
+        "kind": "write",
+        "prompt": "Write an overview in one or two sentences. Describe the main trends and the change in which town led.",
+        "model": "Overall, the proportion of bicycle commutes in Hillford increased at each measurement, while Lakeford's changed little. By 2025 Hillford had the higher share.",
+        "explain": "Tự kiểm tra: Đã bao quát cả hai nơi, nêu thay đổi thứ hạng và tránh suy diễn nguyên nhân chưa? Mẫu chỉ là một cách diễn đạt."
+      }
+    ]
+  },
+  {
+    "id": "noi-tra-loi-tu-nhien",
+    "unit": 1,
+    "skill": "speak",
+    "title": "Trả lời tự nhiên ở Phần 1",
+    "minutes": 6,
+    "intro": "Tập trả lời thẳng vào câu hỏi rồi mở rộng bằng một lý do hoặc ví dụ.",
+    "items": [
+      {
+        "id": "s1-detail",
+        "kind": "choice",
+        "prompt": "Do you prefer studying alone or with other people? Choose the most developed on-topic reply.",
+        "options": ["Yes, I do.", "I prefer studying alone because I can work at my own pace. For example, I can reread a difficult article without interrupting anyone.", "People have studied for centuries."],
+        "answers": ["I prefer studying alone because I can work at my own pace. For example, I can reread a difficult article without interrupting anyone."],
+        "explain": "Câu trả lời nêu lựa chọn, giải thích lý do và minh họa bằng ví dụ liên quan. Đây là một khung linh hoạt, không phải kịch bản cần học thuộc."
+      },
+      {
+        "id": "s1-clarify",
+        "kind": "choice",
+        "prompt": "You did not hear the question. Which reply asks for repetition naturally?",
+        "options": ["I have already answered it.", "Please speak about a different topic.", "Sorry, could you repeat the question?"],
+        "answers": ["Sorry, could you repeat the question?"],
+        "explain": "Cách hỏi lại này ngắn, lịch sự và nêu đúng điều bạn cần."
+      },
+      {
+        "id": "s1-example",
+        "kind": "input",
+        "prompt": "Use ONE WORD: I enjoy quiet activities. For ___, I often read on the bus.",
+        "answers": ["example", "instance"],
+        "explain": "“For example” và “for instance” đều nối một nhận xét với ví dụ cụ thể."
+      },
+      {
+        "id": "s1-own",
+        "kind": "speak",
+        "prompt": "Where do you usually study, and why? Answer aloud in two or three sentences.",
+        "model": "I usually study at the public library because it is quieter than my flat. If I need to work on a group project, though, I book a room on campus.",
+        "explain": "Tự đối chiếu: Bạn đã nêu địa điểm, giải thích lý do và nói thành ý trọn vẹn chưa? Không cần dùng đúng từ trong mẫu."
+      }
+    ]
+  },
+  {
+    "id": "nghe-tu-bao-hieu",
+    "unit": 2,
+    "skill": "listen",
+    "title": "Nghe từ báo hiệu chuyển ý",
+    "minutes": 5,
+    "intro": "Ghi chú có chọn lọc khi nghe một thông báo ngắn.",
+    "source": {
+      "title": "An open day at the community garden",
+      "audio": "vuon-cong-dong.mp3",
+      "body": ["Welcome to the community garden. First, a quick update: the tour of the greenhouse will start at eleven as planned. However, because the path is wet, please meet at the tool shed rather than the gate.", "After the tour, you can join a workshop on making compost. You do not need gloves; we'll lend you a pair. What you do need is a water bottle.", "Finally, if you'd like to volunteer next month, put your name on the list at the entrance before you leave."]
+    },
+    "items": [
+      {
+        "id": "l2-location",
+        "kind": "choice",
+        "prompt": "Where should visitors meet before the tour?",
+        "options": ["At the gate", "At the tool shed", "Inside the greenhouse"],
+        "answers": ["At the tool shed"],
+        "explain": "“However” báo hiệu thay đổi; “rather than” đối chiếu điểm hẹn mới với điểm hẹn không còn dùng."
+      },
+      {
+        "id": "l2-topic",
+        "kind": "input",
+        "prompt": "Use ONE WORD: The workshop is about making ___.",
+        "answers": ["compost"],
+        "explain": "Người nói chuyển sang hoạt động kế tiếp bằng “after the tour”. Từ cần điền là tên sản phẩm được làm trong buổi thực hành."
+      },
+      {
+        "id": "l2-bring",
+        "kind": "choice",
+        "prompt": "What must people bring to the workshop?",
+        "options": ["Gloves", "A set of tools", "A water bottle"],
+        "answers": ["A water bottle"],
+        "explain": "“What you do need” nhấn mạnh vật phải mang. Găng tay được cho mượn nên không phải tự chuẩn bị."
+      },
+      {
+        "id": "l2-volunteer",
+        "kind": "choice",
+        "prompt": "How can visitors express interest in volunteering?",
+        "options": ["Add their name to a list", "Call the organiser next month", "Buy a ticket at the workshop"],
+        "answers": ["Add their name to a list"],
+        "explain": "Sau “finally” là chỉ dẫn cuối: ghi tên vào danh sách ở lối vào trước khi ra về."
+      }
+    ]
+  },
+  {
+    "id": "doc-paraphrase",
+    "unit": 2,
+    "skill": "read",
+    "title": "Nhận ra cách diễn đạt lại",
+    "minutes": 6,
+    "intro": "Tìm hai cách diễn đạt cùng ý mà vẫn giữ đúng mức độ chắc chắn của tác giả.",
+    "source": {
+      "title": "A library of tools",
+      "body": ["The Eastbank tool library lends out drills, sewing machines and other equipment that people may only need occasionally. Instead of buying a new item, members reserve one online and collect it from a staffed counter. A small annual fee pays for repairs, but the cost of membership is waived for residents on low incomes.", "The organisers expect the scheme to reduce waste as more residents share equipment. They have not yet measured changes in the amount of waste collected in the neighbourhood. Their next step is to survey members about which purchases they avoided by borrowing."]
+    },
+    "items": [
+      {
+        "id": "r2-paraphrase",
+        "kind": "choice",
+        "prompt": "Which statement accurately paraphrases the first paragraph?",
+        "options": ["Certain residents do not have to pay the membership fee.", "The library charges all residents the same amount.", "Every tool loan includes a repair charge."],
+        "answers": ["Certain residents do not have to pay the membership fee."],
+        "explain": "“The cost of membership is waived” có nghĩa là được miễn phí thành viên. Đoạn văn giới hạn việc miễn phí ở một nhóm cư dân."
+      },
+      {
+        "id": "r2-purpose",
+        "kind": "choice",
+        "prompt": "What does the second paragraph mainly distinguish between?",
+        "options": ["Two kinds of equipment", "A hoped-for outcome and evidence that has yet to be collected", "The cost of two membership plans"],
+        "answers": ["A hoped-for outcome and evidence that has yet to be collected"],
+        "explain": "“Expect” là kỳ vọng; “have not yet measured” cho biết kết quả chưa được đo. Không được diễn đạt kỳ vọng thành kết quả đã chứng minh."
+      },
+      {
+        "id": "r2-repairs",
+        "kind": "input",
+        "prompt": "Use ONE WORD from the text: The annual fee covers the cost of ___.",
+        "answers": ["repairs"],
+        "explain": "“Covers the cost of” tương đương “pays for”. Chép đúng danh từ số nhiều trong văn bản."
+      },
+      {
+        "id": "r2-next",
+        "kind": "choice",
+        "prompt": "What do the organisers plan to do next?",
+        "options": ["Increase membership fees", "Close the staffed counter", "Ask members what they did not need to buy"],
+        "answers": ["Ask members what they did not need to buy"],
+        "explain": "“Survey members” nghĩa là hỏi thành viên theo một bảng khảo sát. “Purchases they avoided” là những món họ không phải mua nhờ đi mượn."
+      }
+    ]
+  },
+  {
+    "id": "viet-ly-giai",
+    "unit": 2,
+    "skill": "write",
+    "title": "Phát triển một luận điểm",
+    "minutes": 8,
+    "intro": "Thực hành nối lập luận, nguyên nhân và ví dụ cho Writing Task 2.",
+    "source": {
+      "title": "Public transport and city budgets",
+      "body": ["Some people believe cities should make public transport free. To what extent do you agree or disagree?"]
+    },
+    "items": [
+      {
+        "id": "w2-position",
+        "kind": "choice",
+        "prompt": "Which thesis states a clear position on the question?",
+        "options": ["Transport is very important these days.", "This essay will talk about fares.", "I support free travel for low-income riders, but not a universal fare exemption."],
+        "answers": ["I support free travel for low-income riders, but not a universal fare exemption."],
+        "explain": "Câu này cho biết người viết đồng ý ở mức nào và đối với ai. Nó hướng phần thân bài vào một lập trường rõ ràng."
+      },
+      {
+        "id": "w2-evidence",
+        "kind": "choice",
+        "prompt": "Which example illustrates how fares can affect access to work?",
+        "options": ["A worker on a tight budget may decline a shift if bus fares consume a large share of its pay.", "Many buses have large windows.", "Some cities were founded centuries ago."],
+        "answers": ["A worker on a tight budget may decline a shift if bus fares consume a large share of its pay."],
+        "explain": "Ví dụ liên hệ trực tiếp chi phí đi lại với quyết định nhận ca làm. Đây là minh họa giả định, không phải số liệu thực tế."
+      },
+      {
+        "id": "w2-cause",
+        "kind": "input",
+        "prompt": "Use ONE WORD: Lower fares may improve access to jobs ___ they reduce the cost of commuting.",
+        "answers": ["because", "since", "as"],
+        "explain": "Mệnh đề sau giải thích nguyên nhân. “Because”, “since” và “as” đều có thể dùng với nghĩa đó trong ngữ cảnh này."
+      },
+      {
+        "id": "w2-own",
+        "kind": "write",
+        "prompt": "Write three sentences: make a claim about free public transport, explain why, then add a concrete example.",
+        "model": "Targeted fare waivers can improve access to work. This is because travel costs matter most to people with irregular or low wages. For instance, a free bus ride can make a short evening shift affordable for a part-time worker.",
+        "explain": "Đọc từng câu và tự hỏi câu sau có thực sự phát triển câu trước không. Một ví dụ rõ ràng có ích hơn nhiều ví dụ chỉ được liệt kê."
+      }
+    ]
+  },
+  {
+    "id": "noi-ke-chuyen",
+    "unit": 2,
+    "skill": "speak",
+    "title": "Kể một câu chuyện ở Phần 2",
+    "minutes": 8,
+    "intro": "Dùng trình tự thời gian và một chi tiết cụ thể để giữ mạch nói.",
+    "source": {
+      "title": "Speaking practice card",
+      "body": ["Describe a time you helped someone learn something. Say who you helped, what you taught them, and how they responded. Explain why you remember the experience."]
+    },
+    "items": [
+      {
+        "id": "s2-sequence",
+        "kind": "choice",
+        "prompt": "Which sentence signals the outcome of a story?",
+        "options": ["At first, my sister was nervous.", "For the first few minutes, I showed her the controls.", "In the end, she edited the video on her own."],
+        "answers": ["In the end, she edited the video on her own."],
+        "explain": "“In the end” đưa người nghe tới kết quả cuối cùng, không phải sự kiện mở đầu."
+      },
+      {
+        "id": "s2-specific",
+        "kind": "choice",
+        "prompt": "Which detail best shows how the speaker helped?",
+        "options": ["I helped a lot.", "I showed her how to trim the first ten seconds, then let her try the second clip.", "It was a nice afternoon."],
+        "answers": ["I showed her how to trim the first ten seconds, then let her try the second clip."],
+        "explain": "Chi tiết nêu thao tác cụ thể và cách người học tự thử, đúng trọng tâm câu hỏi."
+      },
+      {
+        "id": "s2-past",
+        "kind": "input",
+        "prompt": "Use the past simple of teach: Last summer, I ___ my cousin how to edit a video.",
+        "answers": ["taught"],
+        "explain": "“Teach” là động từ bất quy tắc; dạng quá khứ đơn là “taught”."
+      },
+      {
+        "id": "s2-own",
+        "kind": "speak",
+        "prompt": "Take one minute to note three keywords. Then speak aloud for up to two minutes about the practice card.",
+        "model": "I helped my cousin edit a school video. We trimmed a clip together first; then she worked on the next one alone. I remember her smile when she played the finished video for the family.",
+        "explain": "Đoạn mẫu chỉ minh họa trình tự, không phải câu trả lời đủ hai phút. Nói lại và thay một ý chung chung bằng chi tiết có ý nghĩa."
+      }
+    ]
+  }
+]
