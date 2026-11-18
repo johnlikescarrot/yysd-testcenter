@@ -40,27 +40,79 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           FILTER_REGEX_INCLUDE: (^vi/|^scripts/vi/|^\.github/)
           FILTER_REGEX_EXCLUDE: (vi/node_modules/|vi/library/|\.git/)
+          # Bốn bộ kiểm tra phù hợp với ứng dụng tĩnh này
+          VALIDATE_JSON: true
+          VALIDATE_YAML: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_PYTHON_FLAKE8: true
+          # Tắt phần còn lại để tránh nhiễu từ cây mã cũ (HTML/CSS/JS do ESLint riêng đảm nhiệm)
+          VALIDATE_ACTION_ZIZMOR: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+          VALIDATE_GIT_COMMITLINT: false
+          VALIDATE_GIT_MERGE_CONFLICT_MARKERS: false
+          VALIDATE_EDITORCONFIG: false
+          VALIDATE_ENV: false
+          VALIDATE_BASH: false
+          VALIDATE_BASH_EXEC: false
+          VALIDATE_SHELL_SHFMT: false
+          VALIDATE_CHECKOV: false
+          VALIDATE_TRIVY: false
+          VALIDATE_GITLEAKS: false
+          VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_SPELL_CODESPELL: false
+          VALIDATE_HTML: false
+          VALIDATE_HTML_PRETTIER: false
+          VALIDATE_CSS: false
+          VALIDATE_CSS_PRETTIER: false
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_JAVASCRIPT_PRETTIER: false
           VALIDATE_JSON_PRETTIER: false
+          VALIDATE_JSONC: false
+          VALIDATE_JSX: false
+          VALIDATE_TSX: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_TYPESCRIPT_PRETTIER: false
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false
-          VALIDATE_HTML: false
-          VALIDATE_CSS: false
-          VALIDATE_JSCPD: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_CHECKOV: false
-          VALIDATE_GITLEAKS: false
-          VALIDATE_TRIVY: false
           VALIDATE_PYTHON_BLACK: false
-          VALIDATE_PYTHON_FLAKE8: true
           VALIDATE_PYTHON_ISORT: false
           VALIDATE_PYTHON_MYPY: false
           VALIDATE_PYTHON_PYLINT: false
           VALIDATE_PYTHON_RUFF: false
-          VALIDATE_JSON: true
-          VALIDATE_YAML: true
-          VALIDATE_MARKDOWN: true
+          VALIDATE_DOCKERFILE_HADOLINT: false
+          VALIDATE_XML: false
+          VALIDATE_SQL: false
+          VALIDATE_KUBERNETES_KUBECONFORM: false
+          VALIDATE_TERRAFORM_FMT: false
+          VALIDATE_TERRAFORM_TFLINT: false
+          VALIDATE_GO: false
+          VALIDATE_GO_MODULES: false
+          VALIDATE_RUST_CLIPPY: false
+          VALIDATE_RUBY: false
+          VALIDATE_PHP_BUILTIN: false
+          VALIDATE_PHP_PHPCS: false
+          VALIDATE_PHP_PHPSTAN: false
+          VALIDATE_PHP_PSALM: false
+          VALIDATE_PERL: false
+          VALIDATE_LUA: false
+          VALIDATE_R: false
+          VALIDATE_JAVA: false
+          VALIDATE_KOTLIN: false
+          VALIDATE_GROOVY: false
+          VALIDATE_SCALAFMT: false
+          VALIDATE_CLOJURE: false
+          VALIDATE_COFFEESCRIPT: false
+          VALIDATE_DART: false
+          VALIDATE_POWERSHELL: false
+          VALIDATE_PROTOBUF: false
+          VALIDATE_ARM: false
+          VALIDATE_ANSIBLE: false
+          VALIDATE_GRAPHQL_PRETTIER: false
+          VALIDATE_LATEX: false
+          VALIDATE_SNAKEMAKE_SNAKEFMT: false
+          VALIDATE_SQLFLUFF: false
+          # Tệp cấu hình
           PYTHON_FLAKE8_CONFIG_FILE: .flake8
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           YAML_CONFIG_FILE: .yaml-lint.yml
