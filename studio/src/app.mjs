@@ -17,6 +17,16 @@ const badgeLabels = [
   "Giữ nhịp · học ba ngày liên tiếp",
 ];
 
+export function renderRows(filter, completed) {
+  return lessons
+    .filter((l) => filter === "all" || l.skill === filter)
+    .map(
+      (l) =>
+        `<li><button type="button" class="lesson-row" data-unit="${l.id}"><span class="skill-icon ${l.skill}">${icon(skills[l.skill].icon)}</span><span class="row-main"><span class="row-label">CHẶNG ${number(lessons.indexOf(l) + 1)} &nbsp;/&nbsp; ${l.skill}</span><span class="row-name">${l.title}</span></span><span class="row-end">${completed.has(l.id) ? "Đã học " + icon("check") : "3 câu " + icon("arrow")}</span></button></li>`,
+    )
+    .join("");
+}
+
 export function mount(doc, env) {
   const $ = (id) => doc.getElementById(id);
   let raw = null;
@@ -41,11 +51,17 @@ export function mount(doc, env) {
       day = localDay(date),
       s = summarize(state, day),
       next = s.next;
-    $("date").textContent = date.toLocaleDateString("vi-VN", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-    });
+    const weekdays = [
+      "Chủ nhật",
+      "Thứ hai",
+      "Thứ ba",
+      "Thứ tư",
+      "Thứ năm",
+      "Thứ sáu",
+      "Thứ bảy",
+    ];
+    $("date").textContent =
+      `${weekdays[date.getDay()]}, ${date.getDate()} tháng ${date.getMonth() + 1}`;
     $("feature-title").textContent = next.title;
     $("feature-unit").textContent =
       `CHẶNG ${number(lessons.indexOf(next) + 1)} / ${number(lessons.length)}  ·  ${next.skill.toUpperCase()}`;
@@ -84,13 +100,12 @@ export function mount(doc, env) {
           `<li class="${s.badges[i] ? "earned" : ""}">${icon(s.badges[i] ? "award" : "lock")}<span>${b} · ${s.badges[i] ? "đã đạt" : "chưa đạt"}</span></li>`,
       )
       .join("");
-    $("lessons").innerHTML = lessons
-      .filter((l) => filter === "all" || l.skill === filter)
-      .map(
-        (l) =>
-          `<li><button type="button" class="lesson-row" data-unit="${l.id}"><span class="skill-icon ${l.skill}">${icon(skills[l.skill].icon)}</span><span class="row-main"><span class="row-label">CHẶNG ${number(lessons.indexOf(l) + 1)} &nbsp;/&nbsp; ${l.skill}</span><span class="row-name">${l.title}</span></span><span class="row-end">${s.completed.has(l.id) ? "Đã học " + icon("check") : "3 câu " + icon("arrow")}</span></button></li>`,
-      )
-      .join("");
+    const list = $("lessons"),
+      key = `${filter}:${[...s.completed].join(",")}`;
+    if (list.dataset.rendered !== key) {
+      list.innerHTML = renderRows(filter, s.completed);
+      list.dataset.rendered = key;
+    }
   }
   function start(unit, ids) {
     run = { unit, ids, picks: [] };

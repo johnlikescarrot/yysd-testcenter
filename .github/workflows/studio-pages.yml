@@ -19,6 +19,7 @@ permissions:
   contents: read
 jobs:
   verify:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, '[publish-pages]')
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
@@ -46,10 +47,10 @@ jobs:
           python-version: "3.12"
       - run: npm ci
       - run: python -m pip install -r scripts/studio/requirements.txt
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: .cache/atlas-audio
-          key: atlas-audio-${{ runner.os }}-${{ hashFiles('scripts/studio/audio.py') }}-${{ hashFiles('scripts/studio/catalog.json', 'library/mock/cambridge-listening/*.mp3') }}
+          key: atlas-audio-${{ runner.os }}-${{ hashFiles('scripts/studio/audio.py') }}-${{ hashFiles('library/mock/cambridge-listening/*.mp3', 'library/mock/cambridge-listening/*.m4a') }}
           restore-keys: |
             atlas-audio-${{ runner.os }}-${{ hashFiles('scripts/studio/audio.py') }}-
       - name: Build static site and check links, Vietnamese text and PDF citations

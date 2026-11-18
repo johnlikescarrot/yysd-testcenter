@@ -128,7 +128,7 @@
     body.classList.toggle("is-blind", !state.showEn && !state.showZh);
     body.innerHTML = state.data.sentences.map(function (s, i) {
       var en = state.showEn ? '<span class="jt-full-en">' + linkWords(s.en) + "</span>" : '<span class="jt-full-en">· · ·</span>';
-      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.zh || "") + "</span>" : "";
+      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.vi || s.zh || "") + "</span>" : "";
       return '<button type="button" class="jt-full-line' + (i === state.i ? " is-active" : "") +
         '" data-i="' + i + '" data-start="' + s.start + '">' + en + zh + "</button>";
     }).join("");
@@ -153,7 +153,7 @@
     $("jtIdx").textContent = String(state.i + 1);
     $("jtTotal").textContent = String(state.data.sentences.length);
     $("jtLineEn").innerHTML = linkWords(s.en);
-    $("jtLineZh").textContent = s.zh || "";
+    $("jtLineZh").textContent = s.vi || s.zh || "";
     var reveal = $("jtReveal");
     var showAny = state.showEn || state.showZh;
     reveal.classList.toggle("is-hidden", showAny);

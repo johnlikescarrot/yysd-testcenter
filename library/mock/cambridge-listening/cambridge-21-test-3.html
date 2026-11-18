@@ -34,6 +34,7 @@
   .transcript-toggle { display:inline-flex; align-items:center; gap:8px; font-size:13px; color:#33475b; cursor:pointer; user-select:none; }
   .transcript-toggle input { width:16px; height:16px; accent-color:#2563eb; }
   .transcript-body { overflow:auto; padding:14px 16px 20px; line-height:1.75; font-size:14.5px; color:#243447; }
+  .tx-translation {display:block; margin-top:3px; color:#445e58;}
   .transcript-body.hidden { display:none; }
   .tx-sent { display:block; width:100%; text-align:left; border:none; background:transparent; padding:6px 8px; margin:0 0 2px; border-radius:8px; cursor:pointer; color:inherit; font:inherit; line-height:1.75; }
   .tx-sent:hover { background:#f0f6ff; }
@@ -270,6 +271,7 @@
       <div class="transcript-head">
         <span class="th-title">Bản chép lời · Section <span id="txSecLabel">1</span></span>
         <label class="transcript-toggle"><input type="checkbox" id="txShow" checked onchange="toggleTranscript()"> Hiện bản chép lời</label>
+        <label class="transcript-toggle"><input type="checkbox" id="txVi" onchange="toggleTranscript()"> Bản dịch tiếng Việt</label>
       </div>
       <div class="transcript-body" id="transcriptBody"><div class="tx-empty">Đang tải bản chép lời…</div></div>
     </aside>
@@ -1119,7 +1121,7 @@ function renderTranscript(secId){
   const part=txPart(secId);
   if(!part){ body.innerHTML='<div class="tx-empty">Đang tải bản chép lời của phần này…</div>'; return; }
   body.innerHTML=part.sentences.map((s,i)=>
-    `<button type="button" class="tx-sent" data-i="${i}" data-start="${s.start}" onclick="seekTranscript(${s.start},${i})">${escapeHtml(s.text)}</button>`
+    `<button type="button" class="tx-sent" data-i="${i}" data-start="${s.start}" onclick="seekTranscript(${s.start},${i})"><span lang="en">${escapeHtml(s.text)}</span>${document.getElementById('txVi').checked && s.vi ? `<span class="tx-translation" lang="vi">${escapeHtml(s.vi)}</span>` : ''}</button>`
   ).join('');
   txActiveIdx=-1; syncTranscriptHighlight();
 }

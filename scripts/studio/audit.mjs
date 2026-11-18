@@ -73,44 +73,48 @@ try {
         "library/mock/cambridge-listening/cambridge-19-test-1.html",
         "library/mock/cambridge-writing/cambridge-19-test-1-writing.html",
       ]) {
-    const { lhr, report } = await lighthouse(origin + route, {
-      port: chrome.port,
-      output: "html",
-      logLevel: "error",
-      onlyCategories: categories,
-    });
-    await writeFile(`.lighthouseci/${route.split("/").at(-1)}`, report);
-    summary[route] = Object.fromEntries(
-      categories.map((k) => [k, lhr.categories[k].score * 100]),
-    );
-    console.log(route, summary[route]);
-    if (
-      process.env.GITHUB_ACTIONS &&
-      categories.some((k) => lhr.categories[k].score !== 1)
-    ) {
-      console.error(
-        `::error title=Lighthouse ${route}::${JSON.stringify(summary[route])}`,
+    // A single mobile timing can be skewed by unrelated runner activity. Retain all
+    // three cold navigations, gate median performance, and require every other score.
+    const samples = [];
+    for (let i = 1; i <= 3; i++) {
+      const { lhr, report } = await lighthouse(origin + route, {
+        port: chrome.port,
+        output: "html",
+        logLevel: "error",
+        onlyCategories: categories,
+      });
+      await writeFile(`.lighthouseci/${i}-${route.split("/").at(-1)}`, report);
+      const scores = Object.fromEntries(
+        categories.map((k) => [k, Math.round(lhr.categories[k].score * 100)]),
       );
-    }
-    for (const category of categories) {
-      const { auditRefs, score } = lhr.categories[category];
-      if (score !== 1) {
-        process.exitCode = 1;
-        for (const { id, weight } of auditRefs) {
-          const audit = lhr.audits[id];
-          if (weight && audit.score !== null && audit.score < 1) {
-            if (process.env.GITHUB_ACTIONS)
-              console.error(
-                `::warning title=${id} · ${route}::${audit.displayValue || ""} ${JSON.stringify(audit.details?.items ?? []).slice(0, 600)}`,
-              );
-            console.error(
-              id,
-              audit.displayValue || "",
-              JSON.stringify(audit.details?.items || []).slice(0, 400),
-            );
-          }
+      samples.push(scores);
+      for (const k of categories.filter((k) => scores[k] < 100)) {
+        for (const { id, weight } of lhr.categories[k].auditRefs) {
+          const a = lhr.audits[id];
+          if (weight && a.score !== null && a.score < 1)
+            console.warn(`${route} #${i} ${id}: ${a.displayValue || ""}`);
         }
       }
+    }
+    const scores = Object.fromEntries(
+      categories.map((k) => {
+        const values = samples.map((s) => s[k]).sort((a, b) => a - b);
+        return [k, k === "performance" ? values[1] : values[0]];
+      }),
+    );
+    summary[route] = { scores, samples };
+    console.log(
+      route,
+      scores,
+      "Performance samples:",
+      samples.map((s) => s.performance),
+    );
+    if (categories.some((k) => scores[k] !== 100)) {
+      process.exitCode = 1;
+      if (process.env.GITHUB_ACTIONS)
+        console.error(
+          `::error title=Lighthouse ${route}::${JSON.stringify(summary[route])}`,
+        );
     }
   }
   await writeFile(

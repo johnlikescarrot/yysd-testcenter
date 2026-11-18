@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { Script } from "node:vm";
 import { JSDOM } from "jsdom";
 
@@ -30,6 +30,12 @@ for (const path of pages) {
   const w = dom.window,
     d = w.document;
   w.scrollTo = () => {};
+  w.HTMLElement.prototype.scrollIntoView = () => {};
+  w.fetch = async (url) => ({
+    ok: true,
+    json: async () =>
+      JSON.parse(readFileSync(join(dirname(path), url), "utf8")),
+  });
   w.confirm = () => true;
   w.HTMLMediaElement.prototype.pause = () => {};
   w.HTMLMediaElement.prototype.play = () => Promise.resolve();
@@ -64,6 +70,15 @@ for (const path of pages) {
       w.openMode();
       w.startTest("practice");
       assert.ok(d.querySelector("#questionsHolder").children.length, path);
+      if (d.getElementById("txVi")) {
+        await new Promise((resolve) => setImmediate(resolve));
+        assert.ok(d.querySelector('.tx-sent [lang="en"]'));
+        d.getElementById("txVi").checked = true;
+        w.toggleTranscript();
+        assert.ok(d.querySelector(".tx-translation").textContent.trim());
+        w.seekTranscript(3, 0);
+        assert.equal(d.getElementById("player").currentTime, 3);
+      }
       w.submitTest();
       assert.match(d.querySelector("#resCorrect").textContent, /0\s*\/\s*40/);
       w.backToCover();

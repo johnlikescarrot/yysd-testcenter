@@ -24,20 +24,19 @@ def content(name):
 
 
 def catalog():
-    selected = content('catalog.json')
     files = defaultdict(list)
     for skill in ['reading', 'listening', 'writing']:
         folder = ROOT / f'library/mock/cambridge-{skill}'
         suffix = '' if skill == 'listening' else '-' + skill
-        if skill == 'writing':
-            papers = folder.glob('cambridge-*-writing.html')
-        else:
-            papers = (folder / f'cambridge-{stem}{suffix}.html' for stem in selected[skill])
-        for p in papers:
+        for p in sorted(folder.glob('*.html')):
             match = re.fullmatch(r'cambridge-(\d+)-test-(\d+)' + suffix, p.stem)
-            if not match or not p.is_file():
-                raise ValueError(f'Invalid catalog entry: {p}')
-            book, test = map(int, match.groups())
+            extra = re.fullmatch(r'secret-set-(\d+)' + suffix, p.stem)
+            if match:
+                book, test = map(int, match.groups())
+            elif extra:
+                book, test = 0, int(extra[1])
+            else:
+                raise ValueError(f'Unrecognized paper: {p}')
             files[book].append((skill, test, p.relative_to(ROOT)))
     return files
 
@@ -63,13 +62,14 @@ def library_page(books):
         body.append('</ol></article>')
     body.append('</details></section><section id="de-thi" class="chapter"><h2>Kệ đề Cambridge</h2><p class="catalog-intro">Chọn tập sách, kỹ năng rồi mở đề. Bài viết có đếm từ, lưu nháp và phiếu tự đánh giá; không chấm band tự động.</p><a class="backlink" href="library/practice/ielts/sample-academic-reading-1.html">Làm quen · Bài đọc mẫu về ong mật (8 câu)</a>')
     for book, papers in sorted(books.items(), reverse=True):
-        body.append(f'<details class="catalog-group"><summary>Cambridge IELTS {book} · {len(papers)} đề</summary>')
+        shelf = f'Cambridge IELTS {book}' if book else 'Bộ đề bổ sung'
+        body.append(f'<details class="catalog-group"><summary>{shelf} · {len(papers)} đề</summary>')
         for skill, label in [('listening', 'Nghe'), ('reading', 'Đọc'), ('writing', 'Viết')]:
             entries = sorted((n, p) for sk, n, p in papers if sk == skill)
             if entries:
                 body.append(f'<h3>{label}</h3><ul class="paper-links">')
                 for n, p in entries:
-                    body.append(f'<li><a href="{p}" aria-label="{label}, Cambridge IELTS {book}, Test {n}">Test {n}</a></li>')
+                    body.append(f'<li><a href="{p}" aria-label="{label}, {shelf}, Test {n}">Test {n}</a></li>')
                 body.append('</ul>')
         body.append('</details>')
     bank = json.loads((ROOT/'data/speaking/jiijing-banks/2026-q2.json').read_text())
@@ -110,8 +110,11 @@ def assemble(stage):
     # Ship the small, first-paint stylesheet with each hub entry point.
     style = '<style>' + styles + '</style>'
     css_link = '<link rel="stylesheet" href="studio/atlas.css">'
+    shell = (ROOT/'atlas.html').read_text().replace(css_link, style)
+    rows = subprocess.check_output(['node', HERE/'prerender.mjs'], text=True).strip()
+    shell = shell.replace('id="lessons"></ol>', f'id="lessons" data-rendered="all:">{rows}</ol>')
     for name in ['index.html', 'atlas.html']:
-        (stage/name).write_text((ROOT/'atlas.html').read_text().replace(css_link, style))
+        (stage/name).write_text(shell)
     page = library_page(books)
     if page != (ROOT/'atlas-library.html').read_text():
         raise ValueError('Regenerate atlas-library.html: python3 scripts/studio/build.py --catalog')
