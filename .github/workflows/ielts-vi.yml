@@ -65,6 +65,8 @@ jobs:
           path: |
             .lighthouse/*.json
             coverage/browser-summary.json
+          # The Lighthouse directory is hidden; include only the explicitly named reports.
+          include-hidden-files: true
           if-no-files-found: ignore
       - name: Đóng gói trang tĩnh
         if: github.event_name != 'pull_request'

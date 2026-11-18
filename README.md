@@ -48,7 +48,9 @@ python3 scripts/build_ielts_guide.py
 
 Workflow `.github/workflows/ielts-vi.yml` kiểm thử và đóng gói riêng giao diện tiếng Việt cùng bài đọc mẫu nói trên. GitHub Pages chỉ phục vụ tệp tĩnh: API đăng nhập, AI, đồng bộ điểm, ứng dụng Next.js và phần còn lại của kho đề/audio cũ không nằm trong bản xuất này. Kho nguồn gần 5 GB vượt giới hạn 1 GB của một trang Pages; workflow vì vậy **không** xuất toàn bộ kho. Các đường dẫn của bản mới là tương đối, hoạt động cả ở `/` và dưới đường dẫn tên kho.
 
-Để xuất bản, bật **Settings → Pages → Build and deployment → GitHub Actions**. Workflow chạy trên nhánh làm việc hiện tại và `main`; PR chỉ kiểm thử, không tự triển khai hoặc hợp nhất. Tệp `CNAME` của hệ thống cũ không được đưa vào bản xuất, để không tự thay đổi tên miền hiện có.
+Để xuất bản, Pages phải dùng **Settings → Pages → Build and deployment → GitHub Actions**, và môi trường `github-pages` phải cho phép nhánh thực hiện triển khai. Workflow chạy trên nhánh làm việc hiện tại và `main`; PR chỉ kiểm thử, không tự triển khai hoặc hợp nhất. Tệp `CNAME` của hệ thống cũ không được đưa vào bản xuất, để không tự thay đổi tên miền hiện có.
+
+Tại lần kiểm tra gần nhất, Pages đã được cấu hình nhưng chính sách môi trường `github-pages` chỉ cho phép `main`, nên lần triển khai từ nhánh làm việc bị từ chối. Muốn triển khai từ nhánh này, quản trị viên cần thêm `arena/9e1a94bb-yysd-testcenter` trong **Settings → Environments → github-pages → Deployment branches and tags**, rồi chạy lại workflow. Pages là địa chỉ dùng chung của kho: triển khai bản rút gọn này sẽ thay thế nội dung hiện đang được phục vụ tại đó.
 
 Super-Linter được cấu hình chạy trên mỗi lần đẩy thay đổi/PR đối với các tệp được chọn của lộ trình và danh mục; kho cũ chưa được tuyên bố là đã qua lint. Phiên bản Super-Linter v9 không tự nhận diện `.mjs`, vì vậy CI chạy ESLint riêng cho những mô-đun đó và JavaScript trong bài đọc mẫu. Xem kết quả từng lần chạy trong GitHub Actions.
 
