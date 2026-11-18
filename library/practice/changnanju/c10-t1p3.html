@@ -62,7 +62,7 @@
         </ul>
     </div>
 
-    <footer>Nguồn: Cambridge IELTS 10 Test 1 Reading Passage 3 · Hãy tự nhập phần phân tích của bạn.</footer>
+    <footer>Nguồn: Cambridge IELTS 10 Test 1 Reading Passage 3 · Hãy tự phân tích trước khi đối chiếu lời giải.</footer>
 </div>
 
 <script>
@@ -187,18 +187,9 @@
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
-
-        document.querySelectorAll('.sentence-card textarea').forEach(ta => {
-            ta.addEventListener('paste', e => { e.preventDefault(); alert('Hãy tự nhập câu trả lời.'); });
-            ta.addEventListener('copy', e => e.preventDefault());
-            ta.addEventListener('cut', e => e.preventDefault());
-            ta.addEventListener('contextmenu', e => e.preventDefault());
-        });
     }
 
-    window.onload = () => {
-        renderLongSentences();
-    };
+    renderLongSentences();
 </script>
 </body>
 </html>
