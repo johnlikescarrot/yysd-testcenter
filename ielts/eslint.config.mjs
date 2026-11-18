@@ -1,5 +1,13 @@
+import json from '@eslint/json';
+
 export default [
-  { ignores: ['dist/**', 'coverage/**', 'reports/**'] },
+  { ignores: ['**/dist/**', '**/coverage/**', '**/reports/**'] },
+  {
+    files: ['**/*.json'],
+    plugins: { json },
+    language: 'json/json',
+    rules: { 'json/no-duplicate-keys': 'error' },
+  },
   {
     files: ['**/*.mjs'],
     languageOptions: {

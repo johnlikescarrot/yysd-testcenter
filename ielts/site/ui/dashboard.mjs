@@ -83,7 +83,7 @@ export function progress(runtime) {
   select.addEventListener('change', () => {
     const goal = Number(select.value);
     if (!goals.includes(goal)) return;
-    runtime.save({ ...runtime.state, goal });
+    runtime.save({ ...runtime.latest(), goal });
     current.innerHTML = todayPanel(runtime.state, runtime.now());
     doc.querySelector('[data-goal-message]').textContent = `Đã chọn mục tiêu ${goal} XP mỗi ngày.`;
   });

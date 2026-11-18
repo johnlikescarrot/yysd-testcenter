@@ -70,3 +70,7 @@ parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
 
 - 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
 - A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)
+
+## IELTS Mỗi Ngày · Tiếng Việt
+
+Bản tự luyện IELTS Academic dành cho người học tiếng Việt nằm tại [`ielts/`](ielts/README.md). Bản GitHub Pages được dựng riêng để không xuất bản kho đề, máy chủ hoặc công cụ quản trị của nền tảng hiện có.

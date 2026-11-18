@@ -10,6 +10,10 @@ export function mount(doc, window, now = dayKey) {
   notice.hidden = available;
   const runtime = {
     doc, window, state, now, today: now(),
+    latest() {
+      const loaded = readState(window);
+      return loaded.available ? loaded.state : runtime.state;
+    },
     save(next) {
       runtime.state = next;
       notice.hidden = writeState(window, next);

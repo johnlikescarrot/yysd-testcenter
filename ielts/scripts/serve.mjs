@@ -20,7 +20,8 @@ export async function serve({ host = '127.0.0.1', port = 0, prefix = '/' } = {})
       response.writeHead(404).end();
       return;
     }
-    request.url = `/${request.url.slice(prefix.length)}`;
+    const relative = `/${request.url.slice(prefix.length)}`;
+    request.url = /^\/(?:\?|$)/.test(relative) ? `/index.html${relative.slice(1)}` : relative;
     staticFiles(request, response);
   });
   server.listen(port, host);

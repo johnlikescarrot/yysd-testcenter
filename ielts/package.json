@@ -15,6 +15,7 @@
     "audit": "node scripts/audit.mjs"
   },
   "devDependencies": {
+    "@eslint/json": "2.1.1",
     "@sparticuz/chromium": "153.0.0",
     "c8": "9.1.0",
     "chrome-launcher": "1.2.3",

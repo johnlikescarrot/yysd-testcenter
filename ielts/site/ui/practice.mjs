@@ -46,7 +46,7 @@ function summary(doc, target, lesson, results, xp) {
   const heading = lesson ? 'Đã hoàn thành bài luyện!' : 'Đã hoàn thành lượt ôn!';
   target.innerHTML = `<section class="panel lesson-result" aria-labelledby="result-title">
     <span class="tile tile--award">${icon('award')}</span><h1 id="result-title" tabindex="-1">${heading}</h1>
-    <p>${correct} / ${results.length} câu có đáp án đúng <span aria-hidden="true">·</span> <strong>+${xp} XP</strong></p>
+    <p>${correct} / ${results.length} câu làm đúng <span aria-hidden="true">·</span> <strong>+${xp} XP</strong></p>
     <p class="mini-note">Câu đúng chỉ nhận XP một lần mỗi ngày. Kết quả luyện tập không quy đổi sang band IELTS.</p>
     <div class="lesson-actions"><a class="button" href="./#lo-trinh">Về lộ trình ${icon('arrow')}</a>
     <a class="button button--quiet" href="review.html">Xem lịch ôn</a></div></section>`;
@@ -136,9 +136,10 @@ export function practice(runtime) {
       return;
     }
     const today = runtime.now();
-    const updated = finishPractice(state, lesson?.id, results, today);
+    const latest = runtime.latest();
+    const updated = finishPractice(latest, lesson?.id, results, today);
     runtime.save(updated);
-    summary(doc, root, lesson, results, dailyPoints(updated, today) - dailyPoints(state, today));
+    summary(doc, root, lesson, results, dailyPoints(updated, today) - dailyPoints(latest, today));
   });
   render();
 }

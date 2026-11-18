@@ -69,8 +69,8 @@ button, select, summary { cursor: pointer; }
 .button--quiet { background: transparent; color: var(--navy); border-color: #afbdc0; }
 
 .home-grid { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(16rem, 1fr); gap: 1.65rem; margin-top: 2.2rem; align-items: start; }
-.section-heading { display: flex; justify-content: space-between; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
-.section-heading p { margin: .34rem 0 1.15rem; color: var(--muted); }
+.section-heading { display: flex; justify-content: space-between; gap: .45rem .6rem; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.04rem; }
+.section-heading p { margin-top: .34rem; color: var(--muted); }
 .section-heading h2 { font-size: clamp(1.42rem, 2.5vw, 1.82rem); letter-spacing: -.035em; }
 .path { scroll-margin-top: 1rem; }
 .group { background: white; border: 1px solid var(--line); border-radius: .95rem; padding: 0 .85rem; }
@@ -124,6 +124,7 @@ progress::-moz-progress-bar { background: var(--green); border-radius: 1rem; }
 
 .page { padding-block: 2rem 3rem; }
 .page--narrow { max-width: 54rem; }
+.privacy-note { margin-top: .88rem; }
 .page-heading { padding-bottom: 1.45rem; }
 .page-heading h1, .lesson-head h1 { margin: .3rem 0 .43rem; font-size: clamp(1.82rem, 4vw, 2.32rem); letter-spacing: -.037em; }
 .page-heading > p:last-child, .lesson-head > p:not(.eyebrow) { color: var(--muted); max-width: 62ch; }
@@ -286,5 +287,3 @@ progress::-moz-progress-bar { background: var(--green); border-radius: 1rem; }
   .guide p, .guide li { orphans: 2; widows: 2; }
   .guide li { break-inside: avoid; }
 }
-
-.privacy-note { margin-top: .88rem; }

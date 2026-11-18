@@ -142,8 +142,9 @@ function referenceItem(id, index) {
   const ref = references[id];
   if (!ref.doi) return `<li id="ref-${id}"><span lang="en">${escape(ref.authors)}. ${escape(ref.title)}.</span> <a href="${ref.url}">Tài liệu chính thức của IELTS</a></li>`;
   const doiUrl = `https://doi.org/${ref.doi}`;
-  const scholarUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${ref.title}" ${ref.doi}`)}`;
-  return `<li id="ref-${id}"><span lang="en">${escape(ref.authors)} (${ref.year}). ${escape(ref.title.replace(/[.?]$/, ''))}. <i>${escape(ref.venue)}</i>.</span><br>
+  const scholarUrl = `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${ref.title}"`)}`;
+  const title = ref.title + (/[.?]$/.test(ref.title) ? '' : '.');
+  return `<li id="ref-${id}"><span lang="en">${escape(ref.authors)} (${ref.year}). ${escape(title)} <i>${escape(ref.venue)}</i>.</span><br>
     <a href="${escape(doiUrl)}" aria-label="DOI của nguồn ${index + 1}">DOI: ${escape(ref.doi)}</a>
     <a href="${escape(scholarUrl)}" aria-label="Tra nguồn ${index + 1} trên Google Scholar">Tra trên Google Scholar</a></li>`;
 }
