@@ -30,7 +30,7 @@ pairs.slice(0, 8).forEach(function (p) {
 
 if (assertMode) {
   if (stats.mae == null || stats.mae > target) {
-    console.error("FAIL: MAE above target — collect teacher corrections / retune prompts");
+    console.error("FAIL: MAE above target - collect teacher corrections / retune prompts");
     process.exit(1);
   }
   console.log("OK");

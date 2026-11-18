@@ -1,5 +1,5 @@
 /* ==========================================================================
-   exam-shell.css — brand skin for exam iframes (injected by exam.js)
+   exam-shell.css - brand skin for exam iframes (injected by exam.js)
    Canvas-like academic remap: ivory / navy / gold over legacy blue-green.
    Applied when body.yysd-embedded.
    ========================================================================== */
@@ -12,7 +12,7 @@ body.yysd-embedded {
   padding-bottom: 48px !important;
 }
 
-/* Hide duplicate logo/chrome only — vocab LIST mode tabs live in .header */
+/* Hide duplicate logo/chrome only - vocab LIST mode tabs live in .header */
 body.yysd-embedded > .header .logo,
 body.yysd-embedded > header.header .logo,
 body.yysd-embedded > .header .word-count-badge,
@@ -62,7 +62,7 @@ body.yysd-embedded #timer.timer:not(.show) {
   display: none !important;
 }
 
-/* Fullscreen mock: iframe is the FS root, parent bar gone — float paper timer top-right */
+/* Fullscreen mock: iframe is the FS root, parent bar gone - float paper timer top-right */
 :fullscreen body.yysd-embedded .header .timer.show,
 :-webkit-full-screen body.yysd-embedded .header .timer.show,
 :fullscreen body.yysd-embedded > .header .timer.show,
@@ -236,7 +236,7 @@ body.yysd-embedded .btn-play {
   color: #07192f !important;
 }
 
-/* Mock exam lock overlay (模考模式防切屏) */
+/* Mock exam lock overlay (bắt chước đánh chế độ bảo vệ cắt xem |) */
 .yysd-exam-lock-overlay {
   display: none;
   position: fixed;

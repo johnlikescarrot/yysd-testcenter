@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# one-shot builder — run: python3 scripts/build_toefl58_reading.py
-# Reconstructs 优考托福第58套阅读 (50 items) from the official PDF + key.
+# one-shot builder - run: python3 scripts/build_toefl58_reading.py
+# Reconstructs xuất sắc đánh TOEFL thu 58 che đậy đọc (50 items) from the official PDF + key.
 import json
 from pathlib import Path
 
@@ -17,7 +17,7 @@ def mcq(qid, stem, options, answer, explain=""):
 
 paper = {
     "id": "toefl-58-reading",
-    "title": "新托福第58套 · 阅读",
+    "title": " viết tắt của Tân Cương TOEFL thu 58 Bộ · Đọc hiểu ",
     "set": "58",
     "modules": [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
@@ -63,7 +63,7 @@ paper = {
                 cw(11, "introd", "uction", "introduction"),
                 {"t": " of synchronized "},
                 cw(12, "so", "und", "sound"),
-                {"t": "—where "},
+                {"t": "-where "},
                 cw(13, "au", "dio", "audio"),
                 {"t": " was "},
                 cw(14, "mat", "ched", "matched"),
@@ -71,7 +71,7 @@ paper = {
                 cw(15, "wi", "th", "with"),
                 {"t": " the "},
                 cw(16, "mov", "ing", "moving"),
-                {"t": " image—"},
+                {"t": " image-"},
                 cw(17, "all", "owed", "allowed"),
                 {"t": " audiences "},
                 cw(18, "t", "o", "to"),
@@ -95,7 +95,7 @@ paper = {
             "questions": [
                 mcq(21, "What establishment most likely posted the advertisement?",
                     {"A": "A restaurant", "B": "A tour company", "C": "A hotel", "D": "A fitness center"},
-                    "C", "Roxmore West offers a two-night stay, breakfast, and a spa — a hotel."),
+                    "C", "Roxmore West offers a two-night stay, breakfast, and a spa - a hotel."),
                 mcq(22, "What is NOT included in the advertisement?",
                     {"A": "Cost of the package", "B": "Services offered by the package",
                      "C": "Expected experiences of buyers of the package",
@@ -138,8 +138,8 @@ paper = {
             "instruction": "Read an academic passage.",
             "title": "Herpetology: A Tale of Two Lizards",
             "paras": [
-                "Herpetologists have closely studied the interaction between two species of lizards—the native green anole (Anolis carolinensis) and the invasive brown anole (Anolis sagrei)—in the southeastern United States. Although the two species are similar in size, they occupy different vertical zones: green anoles are found in the tree canopy (treetops), while brown anoles dominate ground-level habitats.",
-                "Initially, this vertical separation was interpreted as a natural habitat preference, but further research suggests that it is a defensive response by green anoles to avoid direct competition. Scientists now believe that green anoles were displaced upward due to aggressive territorial behavior by brown anoles. One theory proposes that this forced shift has triggered rapid evolutionary changes in green anoles. Researchers have documented the development of larger toe pads and more lamellae—microscopic scales that enhance grip—allowing green anoles to navigate thinner branches more effectively.",
+                "Herpetologists have closely studied the interaction between two species of lizards-the native green anole (Anolis carolinensis) and the invasive brown anole (Anolis sagrei)-in the southeastern United States. Although the two species are similar in size, they occupy different vertical zones: green anoles are found in the tree canopy (treetops), while brown anoles dominate ground-level habitats.",
+                "Initially, this vertical separation was interpreted as a natural habitat preference, but further research suggests that it is a defensive response by green anoles to avoid direct competition. Scientists now believe that green anoles were displaced upward due to aggressive territorial behavior by brown anoles. One theory proposes that this forced shift has triggered rapid evolutionary changes in green anoles. Researchers have documented the development of larger toe pads and more lamellae-microscopic scales that enhance grip-allowing green anoles to navigate thinner branches more effectively.",
                 "Meanwhile, brown anoles have adapted as well, showing changes in limb length and body coloration in response to new environments and predators. In one Florida study, brown anoles exposed to higher predation developed shorter limbs, which may improve maneuverability in dense vegetation. These findings reveal how competitive pressure can reshape species behavior and morphology within just a few generations, offering a real-time glimpse into evolutionary change.",
             ],
             "questions": [
@@ -177,7 +177,7 @@ paper = {
             "title": "The Question of Animal Cultures",
             "paras": [
                 "Can animals be said to possess culture? Many scientists argue that certain species do exhibit cultural traits, defining culture broadly as behaviors learned socially and transmitted across generations. Classic examples include chimpanzees using tools in ways distinctive to their local community, or whales developing group-specific songs that evolve over time. These patterns suggest that at least some animals maintain traditions not rooted solely in genetics or instinct.",
-                "Others argue that applying the term “culture” to animals risks stretching the concept beyond usefulness. Human cultures involve symbolic meaning and cumulative innovation—the ability to build on previous discoveries so that knowledge and practices become more sophisticated over generations. Nonhuman species have not convincingly demonstrated these abilities. Animal behaviors that appear cultural may instead reflect adaptation to environmental pressures or simple imitation, not deeper shared understandings.",
+                "Others argue that applying the term “culture” to animals risks stretching the concept beyond usefulness. Human cultures involve symbolic meaning and cumulative innovation-the ability to build on previous discoveries so that knowledge and practices become more sophisticated over generations. Nonhuman species have not convincingly demonstrated these abilities. Animal behaviors that appear cultural may instead reflect adaptation to environmental pressures or simple imitation, not deeper shared understandings.",
                 "A middle position acknowledges that while animals may not possess culture in the sense humans do, they can still display rudimentary cultural phenomena. This view emphasizes a continuum rather than a strict divide, suggesting that cultural capacities evolved gradually and appear in varying degrees across species.",
                 "Ultimately, whether animals have culture depends on how culture is defined, but growing evidence of socially transmitted behaviors challenges long-held assumptions about the uniqueness of human societies.",
             ],
@@ -187,7 +187,7 @@ paper = {
                      "B": "They evolve over time in ways that are not typical of behaviors generally accepted as cultural.",
                      "C": "They are considered by some to be cultural phenomena because they are not uniform across whale groups.",
                      "D": "They differ from tool use by chimpanzees, in that they reflect the influence of genetics on behavior."},
-                    "C", "Whales develop group-specific songs — a classic example of cultural traits."),
+                    "C", "Whales develop group-specific songs - a classic example of cultural traits."),
                 mcq(32, "The author mentions “cumulative innovation” primarily to",
                     {"A": "characterize one view about how culture should be defined",
                      "B": "explain how some animal behaviors evolve over generations",
@@ -277,10 +277,10 @@ paper = {
                      "D": "make it difficult to see aircraft instruments."},
                     "D", "They can obscure instrument readings essential for navigation."),
                 mcq(50, "There are four locations [■] in the passage that indicate where the following sentence could be added.\nApplications are not limited to the inorganic world.\nWhere would the sentence best fit?",
-                    {"A": "Location A — before the biology paragraph",
-                     "B": "Location B — before “Such techniques”",
-                     "C": "Location C — after the Alzheimer's sentence",
-                     "D": "Location D — at the end of the passage"},
+                    {"A": "Location A - before the biology paragraph",
+                     "B": "Location B - before “Such techniques”",
+                     "C": "Location C - after the Alzheimer's sentence",
+                     "D": "Location D - at the end of the passage"},
                     "A", "It bridges crystals (inorganic) and biology (organic)."),
             ],
         },

@@ -26,7 +26,7 @@ LISTENING_DIR = ROOT / "library/mock/cambridge-listening"
 READING_DIR = ROOT / "library/mock/cambridge-reading"
 WRITING_DIR = ROOT / "library/mock/cambridge-writing"
 
-AUDIO_ZIP = Path("/Users/frankman/Desktop/C21音频.zip")
+AUDIO_ZIP = Path("/Users/frankman/Desktop/C21 Âm thanh.zip")
 
 STATE_VARS = (
     "let currentPaper=[], selectedSections=[], mode='practice', "
@@ -55,17 +55,17 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思21"),
-        ("剑桥雅思 20", "剑桥雅思 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
         ("CAMBRIDGE IELTS", "CAMBRIDGE IELTS"),
         ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
         ("test1", f"test{n}"),
         ("ielts20_test1", f"cam21_test{n}"),
-        ("剑桥雅思20 Test 1 听力", f"剑桥雅思21 Test {n} 听力"),
-        ("Test 1 听力（官方原题 + 官方答案）", f"Test {n} 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思15 Test 1 听力", f"剑桥雅思21 Test {n} 听力"),
+        (" Cambridge IELTS 20 Test 1 Nghe hiểu ", f" Cambridge IELTS 21 Test {n} Nghe hiểu "),
+        ("Test 1 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", f"Test {n} Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
+        (" Cambridge IELTS 15 Test 1 Nghe hiểu ", f" Cambridge IELTS 21 Test {n} Nghe hiểu "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -74,13 +74,13 @@ def patch_listening_meta(html: str, n: int) -> str:
 
 def patch_reading_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思21"),
-        ("剑桥雅思 20", "剑桥雅思 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
         ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
-        ("剑桥雅思20 Test 1 阅读", f"剑桥雅思21 Test {n} 阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", f"Test {n} 阅读（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 20 Test 1 Đọc hiểu ", f" Cambridge IELTS 21 Test {n} Đọc hiểu "),
+        ("Test 1 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", f"Test {n} Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -89,8 +89,8 @@ def patch_reading_meta(html: str, n: int) -> str:
 
 def patch_writing_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思21"),
-        ("剑桥雅思 20", "剑桥雅思 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
+        (" Cambridge IELTS 20", " Cambridge IELTS 21"),
         ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
         ("Test 4", f"Test {n}"),  # template is cambridge-20-test-4-writing
         ("test-4", f"test-{n}"),
@@ -103,10 +103,10 @@ def patch_writing_meta(html: str, n: int) -> str:
             WRITING_BLURBS[n],
         ),
         (
-            "Task 1（约 20 分钟，≥150 词）+ Task 2（约 40 分钟，≥250 词）",
-            "Task 1（约 20 分钟，≥150 词）+ Task 2（约 40 分钟，≥250 词）",
+            "Task 1(cân trong cân đĩa hoặc trên cân 20 phút, ≥150 Từ)+ Task 2(cân trong cân đĩa hoặc trên cân 40 phút, ≥250 Từ)",
+            "Task 1(cân trong cân đĩa hoặc trên cân 20 phút, ≥150 Từ)+ Task 2(cân trong cân đĩa hoặc trên cân 40 phút, ≥250 Từ)",
         ),
-        ("Test 1 写作（官方真题）", f"Test {n} 写作（官方真题）"),
+        ("Test 1 Viết(Đề thi chính thức)", f"Test {n} Viết(Đề thi chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -146,7 +146,7 @@ def prepare_audio() -> None:
                 if len(parts) == 1:
                     shutil.copy2(parts[0], dst)
                 else:
-                    # ponytail: cat merge — no ffmpeg on this machine
+                    # ponytail: cat merge - no ffmpeg on this machine
                     with dst.open("wb") as out_f:
                         for part in parts:
                             out_f.write(part.read_bytes())

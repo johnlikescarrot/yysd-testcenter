@@ -1,6 +1,6 @@
-/* 新东方 26托福官方套题 view JSON → 引擎 schema 四科 JSON + 媒体下载清单。
-   输入: /tmp/kl-out/kl-set-N-view.json (页内爬虫落盘)
-   输出: library/toefl/kl-set-N-{reading,listening,writing,speaking}.json
+/* viết tắt của Tân Cương phương Đông 26 TOEFL chính phủ che đậy chủ đề view JSON → động cơ schema bốn ngành học JSON + truyền thông tải xuống danh sách mục 
+   nhập khẩu: /tmp/kl-out/kl-set-N-view.json (đầu bên trong bò sát bỏ sót đĩa)
+   xuất khẩu: library/toefl/kl-set-N-{reading,listening,writing,speaking}.json
         /tmp/kl-out/media-download.json [{url,dest}] */
 "use strict";
 const fs = require("fs");
@@ -28,7 +28,7 @@ function stripHtml(s, keepEdge) {
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&apos;/g, "'")
     .replace(/[ \t]+\n/g, "\n");
-  // ponytail: keepEdge 保段间空格——CW 按 <a> 切段后各 chunk 的首尾空格是渲染所依赖的
+  // ponytail: keepEdge Bulgaria đoạn giữa trống--CW nhấn <a> cắt đoạn hoàng hậu mỗi chunk của đầu và đuôi trống là kết xuất thực ra phụ thuộc vào của
   return keepEdge ? r : r.trim();
 }
 
@@ -137,7 +137,7 @@ function convertReading(view, setNo) {
 
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 阅读",
+    title: " TOEFL chính phủ che đậy chủ đề " + String(setNo).padStart(2, "0") + " · Đọc hiểu ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "reading",
     modules: modules,
@@ -201,7 +201,7 @@ function convertListening(view, setNo) {
 
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 听力",
+    title: " TOEFL chính phủ che đậy chủ đề " + String(setNo).padStart(2, "0") + " · Nghe hiểu ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "listening",
     modules: modules,
@@ -220,7 +220,7 @@ function convertWriting(view, setNo) {
       if (ch.qtype === 38) {
         ch.questionList.forEach((q) => {
           qid += 1;
-          // name: table[context(img+text), response(img + ▩…template)]
+          // name: table[context(img+text), response(img + ▩...template)]
           const cells = String(q.name || "").match(/<td>([\s\S]*?)<\/td>/gi) || [];
           const context = cells.length ? oneLine(cells[0]) : "";
           const respHtml = cells.length > 1 ? cells[1] : "";
@@ -292,7 +292,7 @@ function convertWriting(view, setNo) {
   const sentenceCount = tasks.filter((t) => t.type === "sentence").length;
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 写作",
+    title: " TOEFL chính phủ che đậy chủ đề " + String(setNo).padStart(2, "0") + " · Viết ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "writing",
     modules: [
@@ -342,7 +342,7 @@ function convertSpeaking(view, setNo) {
   const rep = tasks.filter((t) => t.type === "repeat").length;
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 口语",
+    title: " TOEFL chính phủ che đậy chủ đề " + String(setNo).padStart(2, "0") + " · Nói ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "speaking",
     modules: [

@@ -1,4 +1,4 @@
-/* TOEFL Set 58 reading — scorer + render helpers */
+/* TOEFL Set 58 reading - scorer + render helpers */
 (function (w) {
   "use strict";
 
@@ -92,7 +92,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || "(Chưa trả lời)",
           ans: ans,
           stem: stem,
           explain: explain
@@ -339,7 +339,7 @@
     return "";
   }
 
-  /* 复盘三态（照 wofo.cc）：填对=绿字母；填错=红字母+绿(正确答案)；未填=红虚线段+绿(正确答案) */
+  /* chơi lại ván cờ ba(biến thể của wofo.cc): lấp hoặc nhồi đúng=màu xanh lá chữ cái; lấp hoặc nhồi lỗi=đỏ chữ cái+màu xanh lá(Đáp án đúng); chưa lấp hoặc nhồi=đỏ đường chấm đoạn+màu xanh lá(Đáp án đúng) */
   function blankReviewHTML(part, raw) {
     var ok = matchBlank(part, raw);
     var got = savedSuffix(part, raw);

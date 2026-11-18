@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.29-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.29-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-29/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-29"
 SET = "7.29"
-TITLE = "新托福 7.29 国内线下"
+TITLE = " TOEFL mới 7.29 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -259,8 +259,8 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("Linguistic Structural Diversity", 2, [
-        "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order—the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
-        "Beyond syntax, languages differ in morphological complexity—the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
+        "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order-the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
+        "Beyond syntax, languages differ in morphological complexity-the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
         {"insert": "A", "t": "This trade-off reflects deeper functional pressures."},
         {"insert": "B", "t": "Languages evolve not randomly but in response to cognitive constraints and social factors, including contact with other languages and cultural shifts."},
         {"insert": "C", "t": "Studying this evolution helps linguists understand not only how languages differ but why certain grammatical strategies emerge and persist across communities."},
@@ -288,7 +288,7 @@ def build_reading():
     n += 5
     tasks.append(academic("The Ascent of the Italian Lute Song", 2, [
         "Some historians explain the mid-sixteenth-century surge of Italian lute songs as the product of technological innovation combined with shifting social tastes. Around 1500, Ottavio dei Petrucci developed a groundbreaking movable-type printing technique for music, making it easier and cheaper to produce books of lute music. Suddenly, amateur musicians from Naples to Venice could acquire fashionable arrangements of madrigals, villanellas, and solo ricercars. This ease of access dovetailed with an expanding culture of private performance in aristocratic homes.",
-        "Other historians point to a different catalyst: courtly patronage. Alfonso d'Este, the duke of Ferrara, played a decisive role by commissioning virtuosos like Francesco da Milano and Antonio Valente, whose published collections set a high artistic benchmark. Evidence for both theories emerges in extant manuscripts: some contain personalized annotations indicating home practice, while lavish presentation copies bear heraldic emblems of noble households. Furthermore, stylistic borrowings from the Spanish vihuela and French lute idioms suggest a pan-European dialogue that reinforced Italian composers' ambitions. While the printing press democratized repertoire, it was the symbiosis of domestic enthusiasm and aristocratic sponsorship—each reinforcing the other—that, arguably, propelled the Italian lute song to its enduring prominence.",
+        "Other historians point to a different catalyst: courtly patronage. Alfonso d'Este, the duke of Ferrara, played a decisive role by commissioning virtuosos like Francesco da Milano and Antonio Valente, whose published collections set a high artistic benchmark. Evidence for both theories emerges in extant manuscripts: some contain personalized annotations indicating home practice, while lavish presentation copies bear heraldic emblems of noble households. Furthermore, stylistic borrowings from the Spanish vihuela and French lute idioms suggest a pan-European dialogue that reinforced Italian composers' ambitions. While the printing press democratized repertoire, it was the symbiosis of domestic enthusiasm and aristocratic sponsorship-each reinforcing the other-that, arguably, propelled the Italian lute song to its enduring prominence.",
     ], [
         q(n, "Which of the following best expresses the main idea of the passage?", {
             "A": "Innovations in printing have emerged as the most likely cause of a surge in the composition of sixteenth-century Italian lute songs, replacing older, now disproven theories.",
@@ -316,7 +316,7 @@ def build_reading():
     n += 5
     if n != 56:
         raise SystemExit("reading expected next id 56, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1200, "from": 1, "to": 40},
         {"n": 2, "timeSec": 1080, "from": 41, "to": 55},
     ], tasks)
@@ -443,14 +443,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(clip(typ, title, module, fname, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 4},
         {"n": 2, "timeSec": 1440, "from": 5, "to": 20},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 840, "from": 1, "to": 2, "label": "Email"},
         {"n": 2, "timeSec": 2400, "from": 3, "to": 6, "label": "Academic Discussion"},
     ], [
@@ -638,8 +638,8 @@ if __name__ == "__main__":
     dump("2025-07-29-reading.json", build_reading())
     dump("2025-07-29-listening.json", build_listening())
     dump("2025-07-29-writing.json", build_writing())
-    dump("2025-07-29-speaking.json", build_speaking(ID, TITLE + " · 口语 Form 1", 1, 1))
-    dump("2025-07-29-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · 口语 Form 2", 2, None))
-    dump("2025-07-29-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · 口语 Form 3", 3, None))
-    dump("2025-07-29-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · 口语 Form 4", 4, None))
+    dump("2025-07-29-speaking.json", build_speaking(ID, TITLE + " · Nói Form 1", 1, 1))
+    dump("2025-07-29-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · Nói Form 2", 2, None))
+    dump("2025-07-29-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · Nói Form 3", 3, None))
+    dump("2025-07-29-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · Nói Form 4", 4, None))
     copy_audio()

@@ -1,5 +1,5 @@
 /* =========================================================================
-   teacher-auth.js — 教师端登录态与 API
+   teacher-auth.js - giáo viên cuối đăng ký biến thể của | API
    ========================================================================= */
 window.YYSD_TEACHER = (function () {
   "use strict";
@@ -83,7 +83,7 @@ window.YYSD_TEACHER = (function () {
     }
     try {
       localStorage.setItem(TOKEN_KEY, t);
-      // ponytail: never mirror teacher JWT into yysd:auth:token — site-mode uses a shadow student
+      // ponytail: never mirror teacher JWT into yysd:auth:token - site-mode uses a shadow student
     } catch (e) {}
     setAuthCookie(true);
   }
@@ -158,7 +158,7 @@ window.YYSD_TEACHER = (function () {
         try { d = raw ? JSON.parse(raw) : null; } catch (e) { d = null; }
         if (!r.ok) {
           if (d && d.code === "seat_required") location.replace("download.html");
-          throw new Error((d && d.error) || (r.status === 502 ? "服务暂不可用，请重试" : "请求失败"));
+          throw new Error((d && d.error) || (r.status === 502 ? " phục vụ tạm thời không thể sử dụng, mời thử lại " : " yêu cầu bị đánh bại "));
         }
         return d || {};
       });
@@ -210,12 +210,12 @@ window.YYSD_TEACHER = (function () {
         var tok = decodeURIComponent(m[1]);
         if (tok) {
           setToken(tok);
-          setTeacher({ phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true });
+          setTeacher({ phone: " dịch vụ khách hàng ", name: " nền tảng dịch vụ khách hàng ", isAdmin: true, isPlatformAdmin: true });
           if (window.YYSD_AUTH && YYSD_AUTH.applyLogin) {
             YYSD_AUTH.applyLogin({
               token: tok,
               role: "teacher",
-              teacher: { phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true }
+              teacher: { phone: " dịch vụ khách hàng ", name: " nền tảng dịch vụ khách hàng ", isAdmin: true, isPlatformAdmin: true }
             });
           }
           history.replaceState({}, "", location.pathname);
@@ -237,7 +237,7 @@ window.YYSD_TEACHER = (function () {
       });
       revealAdminNav();
     }).catch(function () {
-      // 学生超管 token 也可进教师页看主控台入口：再试 /api/auth/me
+      // học sinh vượt quá biến thể của token cũng có thể tiến lên giáo viên đầu chăm sóc chủ kiểm soát Đài Loan lối vào: lại thử /api/auth/me
       if (window.YYSD_AUTH && YYSD_AUTH.api) {
         YYSD_AUTH.api("/api/auth/me").then(function (d) {
           var me = d.user || {};

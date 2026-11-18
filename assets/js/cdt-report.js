@@ -1,5 +1,5 @@
 /* =========================================================================
-   cdt-report.js — suite L/R/W report + AI writing grade + copy-to-teacher
+   cdt-report.js - suite L/R/W report + AI writing grade + copy-to-teacher
    ========================================================================= */
 (function () {
   "use strict";
@@ -31,21 +31,21 @@
   function skillCard(label, rec, kind) {
     if (!rec) {
       return '<article class="cdt-report__card is-empty"><h3>' + esc(label) + "</h3>" +
-        '<div class="big">未完成</div>' +
-        '<div class="meta">Finish section 交卷后会出现在这里</div></article>';
+        '<div class="big">chưa hoàn thành</div>' +
+        '<div class="meta">Finish section nộp bài thi hoàng hậu có thể xuất hiện tồn tại biến thể của |</div></article>';
     }
     var big = "";
     var meta = "";
     if (kind === "writing") {
       var n1 = wordCount(rec.writingTask1);
       var n2 = wordCount(rec.writingTask2);
-      big = (rec.writingWords != null ? rec.writingWords : n1 + n2) + " 词";
-      meta = "Task 1：" + n1 + " 词（建议 ≥150） · Task 2：" + n2 + " 词（建议 ≥250）";
+      big = (rec.writingWords != null ? rec.writingWords : n1 + n2) + " Từ ";
+      meta = "Task 1: " + n1 + " Từ(Gợi ý ≥150) · Task 2: " + n2 + " Từ(Gợi ý ≥250)";
     } else {
-      big = (rec.score != null ? rec.score : "—") +
+      big = (rec.score != null ? rec.score : "-") +
         (rec.total != null ? " / " + rec.total : "");
-      meta = rec.band != null ? "Band " + rec.band : "已交卷";
-      if (rec.date) meta += " · " + new Date(rec.date).toLocaleString("zh-CN");
+      meta = rec.band != null ? "Band " + rec.band : " đã nộp bài thi ";
+      if (rec.date) meta += " · " + new Date(rec.date).toLocaleString("vi-VN");
     }
     return '<article class="cdt-report__card"><h3>' + esc(label) + "</h3>" +
       '<div class="big">' + esc(String(big)) + "</div>" +
@@ -61,8 +61,8 @@
     var g = d && d.grade;
     var html = "";
     if (g && !looksLikeJsonLeak(g.overall)) {
-      html += '<div><h4>写作评分 · Overall ' + esc(g.overall) +
-        ' <span style="font-weight:500;font-size:12px;color:#64748b">（AI 估分 · 非正式考分）</span></h4><dl>' +
+      html += '<div><h4>viết chấm điểm · Overall ' + esc(g.overall) +
+        ' <span style="font-weight:500;font-size:12px;color:#64748b">(AI ước lượng chia · không chính thức điểm)</span></h4><dl>' +
         "<dt>Task</dt><dd>" + esc(g.task) + "</dd>" +
         "<dt>Coherence</dt><dd>" + esc(g.coherence) + "</dd>" +
         "<dt>Lexical</dt><dd>" + esc(g.lexical) + "</dd>" +
@@ -70,25 +70,25 @@
         (g.comment && !looksLikeJsonLeak(g.comment) ? "<p>" + esc(g.comment) + "</p>" : "") +
         "</div>";
       if (g.modelEssay && !looksLikeJsonLeak(g.modelEssay)) {
-        html += "<h4>同题高分范文</h4><pre class=\"model\">" + esc(g.modelEssay) + "</pre>";
+        html += "<h4>giống chủ đề điểm cao mô hình ngôn ngữ</h4><pre class=\"model\">" + esc(g.modelEssay) + "</pre>";
       }
       if (g.corrections && g.corrections.length) {
-        html += "<h4>用词 / 语法纠错</h4><ul>" + g.corrections.filter(function (c) {
+        html += "<h4>cách dùng / ngữ pháp sửa lỗi</h4><ul>" + g.corrections.filter(function (c) {
           return c && !looksLikeJsonLeak(c.bad) && !looksLikeJsonLeak(c.good);
         }).map(function (c) {
           return "<li><s>" + esc(c.bad) + "</s> → <b>" + esc(c.good) + "</b>" +
-            (c.why ? "（" + esc(c.why) + "）" : "") + "</li>";
+            (c.why ? "(" + esc(c.why) + ")" : "") + "</li>";
         }).join("") + "</ul>";
       }
       if (g.nextSteps && g.nextSteps.length) {
-        html += "<h4>提分建议</h4><ul>" + g.nextSteps.filter(function (n) {
+        html += "<h4>dùng trong và chia đề xuất</h4><ul>" + g.nextSteps.filter(function (n) {
           return !looksLikeJsonLeak(n);
         }).map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>";
       }
     }
     var fb = d && d.feedback ? String(d.feedback).trim() : "";
     if (fb && !looksLikeJsonLeak(fb)) html += "<p>" + esc(fb) + "</p>";
-    return html || "<p>未返回结构化评分，请再点按钮重试</p>";
+    return html || "<p>chưa trở về cấu trúc biến thể của chấm điểm, mời lại điểm nút bấm thử lại</p>";
   }
 
   function setHint(msg, isError) {
@@ -101,7 +101,7 @@
   function copyTeacherText(wRec, title) {
     var t1 = (wRec && wRec.writingTask1) || "";
     var t2 = (wRec && wRec.writingTask2) || "";
-    return "【" + (title || "雅思写作") + "】\n\n--- Task 1 ---\n" + t1 +
+    return "[" + (title || " IELTS viết ") + "]\n\n--- Task 1 ---\n" + t1 +
       "\n\n--- Task 2 ---\n" + t2;
   }
 
@@ -109,27 +109,27 @@
     var essay = taskType === "task1" ? (wRec.writingTask1 || "") : (wRec.writingTask2 || "");
     essay = essay.trim();
     if (essay.length < 80) {
-      setHint(taskType === "task1" ? "Task 1 作文过短或未作答" : "Task 2 作文过短或未作答", true);
+      setHint(taskType === "task1" ? "Task 1 viết bài văn băng qua ngắn có thể chưa trả lời " : "Task 2 viết bài văn băng qua ngắn có thể chưa trả lời ", true);
       return;
     }
     var prompt = taskType === "task1" ? wRec.writingPrompt1 : wRec.writingPrompt2;
     if (!prompt) {
-      setHint("缺少题干（请从本套写作重新 Finish 一次以保存题干）", true);
+      setHint(" thiếu chủ đề biến thể cũ của |(mời biến thể của | gốc che đậy viết lại Finish đầu tiên biến thể cũ của bảo tồn chủ đề biến thể cũ của |)", true);
       return;
     }
     if (!window.YYSD_AUTH || !YYSD_AUTH.getToken || !YYSD_AUTH.getToken()) {
-      setHint("请先登录后再使用 AI 批改", true);
+      setHint(" mời trước đăng ký hoàng hậu tái sử dụng AI Chấm bài ", true);
       return;
     }
     if (YYSD_AUTH.isTeacher && YYSD_AUTH.isTeacher()) {
-      setHint("老师账号请在学生端体验 AI 批改", true);
+      setHint(" giáo viên số tài khoản mời tồn tại học sinh cuối trải nghiệm AI Chấm bài ", true);
       return;
     }
     var btn1 = $("rpt-ai-t1");
     var btn2 = $("rpt-ai-t2");
     if (btn1) btn1.disabled = true;
     if (btn2) btn2.disabled = true;
-    setHint("批改中…");
+    setHint(" chấm Trung Quốc...");
     YYSD_AUTH.api("/api/ai-tutor/writing-grade", {
       method: "POST",
       body: {
@@ -143,16 +143,16 @@
       if (box) {
         box.hidden = false;
         box.innerHTML = "<h3>" + (taskType === "task1" ? "Task 1" : "Task 2") +
-          " 批改结果</h3>" + renderGradeHtml(res);
+          " chấm kết trái</h3>" + renderGradeHtml(res);
       }
       var qHint = "";
       if (res.quota && res.quota.textLeft != null) {
-        qHint = "今日文字额度剩余 " + res.quota.textLeft + "/" + res.quota.textLimit;
-        if (res.quota.textLeft <= 0) qHint += "（已用完，明日再来）";
+        qHint = " hôm nay chữ viết hạn ngạch phần còn lại " + res.quota.textLeft + "/" + res.quota.textLimit;
+        if (res.quota.textLeft <= 0) qHint += "(đã dùng hết, ngày mai lại đến)";
       }
-      setHint(qHint || "批改完成");
+      setHint(qHint || " chấm hoàn thành ");
     }).catch(function (err) {
-      var msg = (err && err.message) || "批改失败";
+      var msg = (err && err.message) || " chấm bị đánh bại ";
       setHint(msg, true);
     }).then(function () {
       if (btn1) btn1.disabled = false;
@@ -163,9 +163,9 @@
   function render() {
     if (!suite) {
       $("rpt-skills").innerHTML =
-        '<article class="cdt-report__card is-empty"><h3>报告</h3>' +
-        '<div class="big">缺少套题参数</div>' +
-        '<div class="meta">请从模考 Finish section 进入</div></article>';
+        '<article class="cdt-report__card is-empty"><h3>Báo cáo</h3>' +
+        '<div class="big">thiếu che đậy chủ đề tham số</div>' +
+        '<div class="meta">mời biến thể của | bắt chước đánh Finish section đi vào</div></article>';
       return;
     }
 
@@ -178,14 +178,14 @@
     var titleRec = L || R || W;
     var title = (titleRec && titleRec.title) || suite;
     // normalize to suite label
-    var m = String(title).match(/剑(?:桥雅思)?\s*0*(\d+)/);
+    var m = String(title).match(/Cambridge(?:cầu IELTS)?\s*0*(\d+)/);
     var t = String(title).match(/Test\s*0*(\d+)/i);
     var suiteLabel = (m && t)
-      ? ("剑桥雅思真题" + m[1] + " - Test " + t[1])
-      : title.replace(/（听力）|（阅读）|（写作）/g, "").trim();
+      ? (" Đề thi Cambridge IELTS " + m[1] + " - Test " + t[1])
+      : title.replace(/(Nghe hiểu)|(Đọc hiểu)|(Viết)/g, "").trim();
 
-    $("rpt-title").textContent = suiteLabel + " · 模考报告";
-    document.title = suiteLabel + " · 模考报告 · 优益思达";
+    $("rpt-title").textContent = suiteLabel + " · bắt chước đánh thông báo ";
+    document.title = suiteLabel + " · bắt chước đánh thông báo · YYSD ";
 
     var vol = m ? m[1] : "";
     var back = $("rpt-back");
@@ -212,8 +212,8 @@
         wrongActs.hidden = false;
         var href = "wrong-record.html?items=" + encodeURIComponent([ids.listening, ids.reading].join(",")) + "&local=1";
         wrongActs.innerHTML =
-          '<a class="btn btn--ghost btn--sm" href="' + href + '">查看本套听读错题</a>' +
-          ' <a class="btn btn--ghost btn--sm" href="results.html#tab=wrongs">错题记录</a>';
+          '<a class="btn btn--ghost btn--sm" href="' + href + '">xem xét gốc che đậy cười dấu phẩy lỗi chủ đề</a>' +
+          ' <a class="btn btn--ghost btn--sm" href="results.html#tab=wrongs">lỗi lời đề từ khắc gỗ</a>';
       } else {
         wrongActs.hidden = true;
         wrongActs.innerHTML = "";
@@ -226,14 +226,14 @@
       return;
     }
     writingSec.hidden = false;
-    $("rpt-essay-t1").textContent = W.writingTask1 || "（未作答）";
-    $("rpt-essay-t2").textContent = W.writingTask2 || "（未作答）";
+    $("rpt-essay-t1").textContent = W.writingTask1 || "(Chưa trả lời)";
+    $("rpt-essay-t2").textContent = W.writingTask2 || "(Chưa trả lời)";
 
     $("rpt-ai-t1").onclick = function () { gradeTask("task1", W); };
     $("rpt-ai-t2").onclick = function () { gradeTask("task2", W); };
     $("rpt-copy").onclick = function () {
-      var txt = copyTeacherText(W, suiteLabel + " 写作");
-      function done() { setHint("已复制全文，可粘贴发给老师"); }
+      var txt = copyTeacherText(W, suiteLabel + " Viết ");
+      function done() { setHint(" đã nhân bản toàn văn, có thể dán cấp giáo viên "); }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(txt).then(done, function () {
           fallbackCopy(txt); done();

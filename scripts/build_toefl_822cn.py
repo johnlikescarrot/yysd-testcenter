@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.22-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/8 tháng/8.22-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-22/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-22"
 SET = "8.22"
-TITLE = "新托福 8.22 国内线下"
+TITLE = " TOEFL mới 8.22 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -624,7 +624,7 @@ def build_reading():
     n += 5
     tasks.append(academic("Person-Centered Therapy: A Shift in Focus", 2, [
         "When American psychologist Carl Rogers first introduced person-centered therapy in the mid-twentieth century, the prevailing view was that therapists should be experts in diagnosis and treatment. Instead, in his new approach, Rogers centered the patient as an individual who is able to discover and take steps toward personal growth. Counseling was viewed as a collaborative interaction between the professional and the patient, with the latter playing a key role in effecting change.",
-        "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection—paraphrasing, summarizing, and clarifying the client's words—to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
+        "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection-paraphrasing, summarizing, and clarifying the client's words-to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
         "Unlike Rogers' model, earlier clinical approaches foregrounded issues and behaviors of concern, with the therapist diagnosing them and specifying treatment courses. Critics question the effectiveness of Rogers' approach for patients seeking expert guidance, especially those with severe mental health challenges who need structured intervention.",
     ], [
         q(n, 'The word "prevailing" in the passage is closest in meaning to',
@@ -646,7 +646,7 @@ def build_reading():
             "D": "They did not view empathy as a key therapeutic methodology."}, "D"),
         q(n + 4, "Identify the sentence in paragraph 2 that best explains the intended outcomes for a patient receiving person-centered therapy.", {
             "A": "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery.",
-            "B": "The therapist acts as an empathetic facilitator, listening actively and using reflection—paraphrasing, summarizing, and clarifying the client's words—to elicit the client's feelings.",
+            "B": "The therapist acts as an empathetic facilitator, listening actively and using reflection-paraphrasing, summarizing, and clarifying the client's words-to elicit the client's feelings.",
             "C": "Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues.",
             "D": "Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy."}, "C"),
     ]))
@@ -739,7 +739,7 @@ def build_reading():
     n += 5
     if n != 166:
         raise SystemExit("reading expected next id 166, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 2880, "from": 1, "to": 120},
         {"n": 2, "timeSec": 1680, "from": 121, "to": 165},
     ], tasks)
@@ -923,14 +923,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(lecture(title, module, fname, src_name, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1440, "from": 1, "to": 20},
         {"n": 2, "timeSec": 960, "from": 21, "to": 30},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 3360, "from": 1, "to": 8, "label": "Email"},
         {"n": 2, "timeSec": 4200, "from": 9, "to": 15, "label": "Academic Discussion"},
     ], [
@@ -1191,11 +1191,11 @@ if __name__ == "__main__":
     dump("2025-08-22-listening.json", build_listening())
     dump("2025-08-22-writing.json", build_writing())
     dump("2025-08-22-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-08-22-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-08-22-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
     dump("2025-08-22-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", None, 4))
+        ID + "-s4", TITLE + " · Nói Form 4", None, 4))
     copy_audio()

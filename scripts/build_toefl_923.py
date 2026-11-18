@@ -5,7 +5,7 @@ import os
 import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/全套/2026-09-23"
+SRC = "/Users/frankman/Desktop/một bộ hoàn chỉnh/2026-09-23"
 AUDIO = "library/toefl/audio/2026-09-23/"
 PHOTO = "library/toefl/img/2025-09-02/"
 
@@ -256,7 +256,7 @@ def build_reading():
         raise SystemExit("reading expected 80 blanks, next id %s" % n)
     return {
         "id": "2026-09-23",
-        "title": "新托福 9.23 · 阅读",
+        "title": " TOEFL mới 9.23 · Đọc hiểu ",
         "set": "9.23",
         "skill": "reading",
         "modules": [
@@ -270,7 +270,7 @@ def build_reading():
 def build_listening():
     return {
         "id": "2026-09-23",
-        "title": "新托福 9.23 · 听力",
+        "title": " TOEFL mới 9.23 · Nghe hiểu ",
         "set": "9.23",
         "skill": "listening",
         "modules": [
@@ -451,7 +451,7 @@ def person(name, photo, text):
 def build_writing():
     return {
         "id": "2026-09-23",
-        "title": "新托福 9.23 · 写作",
+        "title": " TOEFL mới 9.23 · Viết ",
         "set": "9.23",
         "skill": "writing",
         "modules": [
@@ -539,7 +539,7 @@ SPEAK = [
     {
         "form": 1,
         "sid": "2026-09-23",
-        "title": "新托福 9.23 · 口语 Form 1",
+        "title": " TOEFL mới 9.23 · Nói Form 1",
         "folder": "20260923-T1-001 - 2026-09-23 Library Tour",
         "instruction": "You are learning how to show new students around the university library. Listen to the speaker and repeat what the speaker says. Repeat only once.",
         "items": [
@@ -555,7 +555,7 @@ SPEAK = [
     {
         "form": 2,
         "sid": "2026-09-23-s2",
-        "title": "新托福 9.23 · 口语 Form 2",
+        "title": " TOEFL mới 9.23 · Nói Form 2",
         "folder": "20260923-T1-002 - 2026-09-23 Woodworking Basics",
         "instruction": "You are an art student assisting your professor in a community woodworking class. Your professor is training you to show others how to complete simple woodworking steps. Listen to the instructor and repeat what the instructor says. Repeat only once.",
         "items": [
@@ -571,7 +571,7 @@ SPEAK = [
     {
         "form": 3,
         "sid": "2026-09-23-s3",
-        "title": "新托福 9.23 · 口语 Form 3",
+        "title": " TOEFL mới 9.23 · Nói Form 3",
         "folder": "20260923-T1-003 - 2026-09-23 Birdwatching Basics",
         "instruction": "You are volunteering at a community nature center near campus. The leader is training you to help beginners learn the basics of birdwatching. Listen to the leader and repeat what the leader says. Repeat only once.",
         "items": [
@@ -587,7 +587,7 @@ SPEAK = [
     {
         "form": 4,
         "sid": "2026-09-23-s4",
-        "title": "新托福 9.23 · 口语 Form 4",
+        "title": " TOEFL mới 9.23 · Nói Form 4",
         "folder": "20260923-T1-004 - 2026-09-23 Smoothie Making",
         "instruction": "You are volunteering at a community center near campus. The instructor is showing you how to guide beginners in making a smoothie. Listen to the instructor and repeat what the instructor says. Repeat only once.",
         "items": [
@@ -629,16 +629,16 @@ def copy_audio():
     dest = os.path.join(ROOT, "library/toefl/audio/2026-09-23")
     os.makedirs(dest, exist_ok=True)
     pairs = [
-        (os.path.join(SRC, "听力/T4_01_2026-09-23 Keystone Species Effects/audio.mp3"), "listening_keystone.mp3"),
-        (os.path.join(SRC, "听力/T4_02_2026-09-23 Dark Stores and Retail Tradeoffs/audio.mp3"), "listening_dark_stores.mp3"),
-        (os.path.join(SRC, "听力/T4_03_2026-09-23 Sustainable Adobe Construction/audio.mp3"), "listening_adobe.mp3"),
-        (os.path.join(SRC, "听力/T4_04_2026-09-23 Poverty Point Engineering and Trade Networks/audio.mp3"), "listening_poverty_point.mp3"),
+        (os.path.join(SRC, " Nghe hiểu/T4_01_2026-09-23 Keystone Species Effects/audio.mp3"), "listening_keystone.mp3"),
+        (os.path.join(SRC, " Nghe hiểu/T4_02_2026-09-23 Dark Stores and Retail Tradeoffs/audio.mp3"), "listening_dark_stores.mp3"),
+        (os.path.join(SRC, " Nghe hiểu/T4_03_2026-09-23 Sustainable Adobe Construction/audio.mp3"), "listening_adobe.mp3"),
+        (os.path.join(SRC, " Nghe hiểu/T4_04_2026-09-23 Poverty Point Engineering and Trade Networks/audio.mp3"), "listening_poverty_point.mp3"),
     ]
     for src, name in pairs:
         shutil.copy2(src, os.path.join(dest, name))
         print("audio", name)
     for spec in SPEAK:
-        folder = os.path.join(SRC, "口语", spec["folder"])
+        folder = os.path.join(SRC, " Nói ", spec["folder"])
         for i in range(1, 8):
             src = os.path.join(folder, "Q%02d_audio.mp3" % i)
             name = "speaking_form%02d_q%02d.mp3" % (spec["form"], i)

@@ -23,14 +23,14 @@ SKIP_PREFIXES = ('tools/data/',)
 MAX_SIZE = 9_000_000
 
 LOCALE = [
-    ('lang="zh-CN"', 'lang="vi"'),
-    ('lang="zh"', 'lang="vi"'),
-    ('hreflang="zh-CN"', 'hreflang="vi"'),
-    ('xml:lang="zh-CN"', 'xml:lang="vi"'),
-    ('zh-CN', 'vi-VN'),
-    ('zh_CN', 'vi_VN'),
-    ('zh-Hans', 'vi-VN'),
-    ('zh-hans', 'vi-VN'),
+    ('lang="vi"', 'lang="vi"'),
+    ('lang="vi"', 'lang="vi"'),
+    ('hreflang="vi"', 'hreflang="vi"'),
+    ('xml:lang="vi"', 'xml:lang="vi"'),
+    ('vi-VN', 'vi-VN'),
+    ('vi_VN', 'vi_VN'),
+    ('vi-VN', 'vi-VN'),
+    ('vi-VN', 'vi-VN'),
 ]
 PUNCT = {
     '\u3000': ' ', '\uff0c': ', ', '\u3001': ', ', '\uff1b': '; ',
@@ -106,8 +106,8 @@ def translate_text(text):
     for match in HAN.finditer(text):
         before = text[match.start() - 1] if match.start() > 0 else ''
         after = text[match.end()] if match.end() < len(text) else ''
-        pad_before = ' ' if before.isalnum() else ''
-        pad_after = ' ' if after.isalnum() else ''
+        pad_before = ' ' if (before.isalnum() or before in '"\u2018\u201c\u00ab') else ''
+        pad_after = ' ' if (after.isalnum() or after in '"\u2019\u201d\u00bb') else ''
         pieces.append(text[last:match.start()])
         pieces.append(pad_before + translate_run(match.group(0)) + pad_after)
         last = match.end()

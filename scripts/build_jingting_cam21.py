@@ -40,7 +40,7 @@ def convert_one(test: int, part: dict) -> dict:
     audio = part["audio"]
     return {
         "id": part_id(test, sec),
-        "title": f"剑21 Test {test} Part {sec}",
+        "title": f" Cambridge 21 Test {test} Part {sec}",
         "audioUrl": f"{AUDIO_DIR}/{audio}",
         "examHref": f"{AUDIO_DIR}/cambridge-21-test-{test}.html",
         "sentences": [
@@ -89,8 +89,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             {
                 "role": "system",
                 "content": (
-                    "你是雅思听力原文译者。把每句英译中，保留说话人标签（如 WOMAN:/MAN:）不译。"
-                    "只输出 JSON 数组，长度与输入句数相同，元素为中文字符串，不要其它文字。"
+                    " bạn là IELTS thính giác nguyên văn người dịch cầm mỗi biến thể của bản dịch tiếng Anh Trung Quốc, giữ nói người nhãn(như WOMAN:/MAN:)không dịch "
+                    " chỉ xuất khẩu JSON mảng, chiều dài biến thể của | nhập khẩu số câu giống hệt, thành phần cơ bản của cái gì đó làm ngôn ngữ Trung Quốc chuỗi, đừng! khác chữ viết "
                 ),
             },
             {"role": "user", "content": numbered},
@@ -125,7 +125,7 @@ def fill_zh(batch_size: int = 20):
         if not missing:
             print(f"{path.name}: zh ok")
             continue
-        print(f"{path.name}: translating {len(missing)} sentences…")
+        print(f"{path.name}: translating {len(missing)} sentences...")
         for off in range(0, len(missing), batch_size):
             idxs = missing[off : off + batch_size]
             ens = [sents[i]["en"] for i in idxs]

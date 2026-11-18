@@ -1,4 +1,4 @@
-/* ponytail: CDT suite P1 — prompts, time-up hop, draft isolation, calendar cdt */
+/* ponytail: CDT suite P1 - prompts, time-up hop, draft isolation, calendar cdt */
 var fs = require("fs");
 function assert(cond, msg) { if (!cond) { console.error("FAIL:", msg); process.exit(1); } }
 var bridge = fs.readFileSync("assets/js/exam-bridge.js", "utf8");
@@ -28,11 +28,11 @@ assert(/cambridgeCdtQs/.test(cal), "calendar uses cambridgeCdtQs");
 assert(/cambridgeCdtQs/.test(dash), "dashboard uses cambridgeCdtQs");
 assert(/function cambridgeCdtQs/.test(cfg), "config cambridgeCdtQs");
 assert(/data-ex-cat="skill"/.test(thtml), "teacher skill mock cat");
-assert(/data-ex-cat="part"/.test(thtml) && /剑雅单项/.test(thtml), "teacher part cat renamed");
-assert(/data-ex-cat="qtype"/.test(thtml) && /听力题型练习/.test(thtml), "teacher qtype cat");
-assert(/data-ex-cat="scene"/.test(thtml) && /听力场景练习/.test(thtml), "teacher scene cat");
-assert(/data-ex-cat="rqtype"/.test(thtml) && /阅读题型练习/.test(thtml), "teacher reading qtype cat");
-assert(/data-ex-cat="rscene"/.test(thtml) && /阅读场景练习/.test(thtml), "teacher reading scene cat");
+assert(/data-ex-cat="part"/.test(thtml) && /kiếm hai lưỡi tao nhã mục đơn lẻ/.test(thtml), "teacher part cat renamed");
+assert(/data-ex-cat="qtype"/.test(thtml) && /thính giác chủ đề khuôn luyện tập/.test(thtml), "teacher qtype cat");
+assert(/data-ex-cat="scene"/.test(thtml) && /thính giác cảnh luyện tập/.test(thtml), "teacher scene cat");
+assert(/data-ex-cat="rqtype"/.test(thtml) && /đọc chủ đề khuôn luyện tập/.test(thtml), "teacher reading qtype cat");
+assert(/data-ex-cat="rscene"/.test(thtml) && /đọc cảnh luyện tập/.test(thtml), "teacher reading scene cat");
 assert(!/data-ex-cat="listening"/.test(thtml), "no listening practice chip");
 assert(/exercise-browse|exercise-vol-filter/.test(thtml), "browse cascade hosts");
 assert(/cdtPackForCat/.test(teach) && /ensureBrowseDefaults/.test(teach), "teacher cascade browse");
@@ -40,8 +40,8 @@ assert(/cat === "qtype" \|\| cat === "scene"/.test(teach) || /cat === "part" \|\
 assert(/isTaxonomyBrowse/.test(teach) && /loadListeningTaxonomy/.test(teach) && /loadReadingTaxonomy/.test(teach), "teacher taxonomy browse");
 assert(/assign-desk/.test(thtml) && /cal-modal__panel--desk/.test(thtml), "assign desk layout");
 assert(!/id="f-desc"/.test(thtml) && /assign-desk__students-body/.test(thtml), "no desc field; student body wrap");
-assert(/全部册/.test(teach) && /concat\(vols\)/.test(teach), "all-volumes chip");
-assert(/全部 Tests/.test(teach), "all-tests chip");
+assert(/toàn bộ sách/.test(teach) && /concat\(vols\)/.test(teach), "all-volumes chip");
+assert(/Tất cả Tests/.test(teach), "all-tests chip");
 assert(/matchVolTest/.test(teach) && /cambridgeVolumes/.test(teach), "vol/test filter helpers");
 assert(/ensureVocabBrowseDefaults/.test(teach) && /data-ex-vbook/.test(teach), "teacher vocab book browse");
 assert(/vocabRangesForBook/.test(teach) && /listsInVocabRange/.test(teach), "vocab range filter");
@@ -67,41 +67,41 @@ assert(/replace\("manifest\.json", file\)/.test(cfg), "taxonomy url keeps ?v=");
 assert(/function rememberTaxonomy/.test(cfg) && /function drillKindLabel/.test(cfg), "taxonomy kind lookup");
 assert(/cal-ex-kind/.test(cal) && /drillKindLabel/.test(cal), "student list shows drill kind");
 assert(/drillKindLabel/.test(teach), "teacher detail shows drill kind");
-assert(/是否需要打印学生任务列表/.test(teach), "print prompt after assignment");
+assert(/liệu có cần đóng dấu học sinh nhiệm vụ danh sách/.test(teach), "print prompt after assignment");
 assert(/function printAssignList/.test(teach) && /page-break-after/.test(teach), "one printed page per student");
 assert(/eventType === "ASSIGNMENT"/.test(teach) || /type === "ASSIGNMENT" \? snapshotAssignPrint/.test(teach), "print only for ASSIGNMENT");
 
 var tax = JSON.parse(fs.readFileSync("library/listening-taxonomy.json", "utf8"));
 assert(tax.groups && tax.groups.length > 400, "taxonomy groups");
 assert(tax.parts && tax.parts.length > 200, "taxonomy scene parts");
-assert(tax.types && tax.types.indexOf("填空题") >= 0, "taxonomy types");
-assert(tax.scenes && tax.scenes.indexOf("求职") >= 0, "taxonomy scenes");
+assert(tax.types && tax.types.indexOf(" lấp chỗ trống công việc chủ đề ") >= 0, "taxonomy types");
+assert(tax.scenes && tax.scenes.indexOf(" tìm việc làm ") >= 0, "taxonomy scenes");
 
 var rtax = JSON.parse(fs.readFileSync("library/reading-taxonomy.json", "utf8"));
 assert(rtax.groups && rtax.groups.length > 400, "reading taxonomy groups");
 assert(rtax.parts && rtax.parts.length > 150, "reading taxonomy scene parts");
-assert(rtax.types && rtax.types.indexOf("判断题") >= 0, "reading taxonomy types");
-assert(rtax.scenes && rtax.scenes.indexOf("社会人文") >= 0, "reading taxonomy scenes");
+assert(rtax.types && rtax.types.indexOf(" phán đoán chủ đề ") >= 0, "reading taxonomy types");
+assert(rtax.scenes && rtax.scenes.indexOf(" xã hội nhân văn ") >= 0, "reading taxonomy scenes");
 assert(rtax.groups[0].id.indexOf("-reading-p") > 0, "reading group id shape");
 function taxById(arr, id) {
   for (var i = 0; i < arr.length; i++) if (arr[i].id === id) return arr[i];
 }
 var c14mcq = taxById(tax.groups, "cambridge-14-test-2-s3-q21-24");
-assert(c14mcq && c14mcq.qType === "单选题", "c14 t2 p3 q21-24 单选题");
-assert(taxById(rtax.parts, "cambridge-19-test-2-reading-p1").scene === "历史发展", "c19 t2 p1 scene");
-assert(taxById(rtax.parts, "cambridge-19-test-3-reading-p1").scene === "历史发展", "c19 t3 p1 scene");
-assert(taxById(rtax.parts, "cambridge-15-test-4-reading-p2").scene === "语言教育", "c15 t4 p2 scene");
-assert(taxById(rtax.parts, "cambridge-14-test-3-reading-p1").scene === "语言教育", "c14 t3 p1 scene");
-assert(taxById(rtax.parts, "cambridge-14-test-3-reading-p3").scene === "语言教育", "c14 t3 p3 scene");
-assert(taxById(rtax.parts, "cambridge-12-test-3-reading-p3").scene === "社会人文", "c12 t3 p3 scene");
+assert(c14mcq && c14mcq.qType === " hóa đơn chọn chủ đề ", "c14 t2 p3 q21-24 hóa đơn chọn chủ đề ");
+assert(taxById(rtax.parts, "cambridge-19-test-2-reading-p1").scene === " lịch sử sự phát triển ", "c19 t2 p1 scene");
+assert(taxById(rtax.parts, "cambridge-19-test-3-reading-p1").scene === " lịch sử sự phát triển ", "c19 t3 p1 scene");
+assert(taxById(rtax.parts, "cambridge-15-test-4-reading-p2").scene === " ngôn ngữ giáo dục ", "c15 t4 p2 scene");
+assert(taxById(rtax.parts, "cambridge-14-test-3-reading-p1").scene === " ngôn ngữ giáo dục ", "c14 t3 p1 scene");
+assert(taxById(rtax.parts, "cambridge-14-test-3-reading-p3").scene === " ngôn ngữ giáo dục ", "c14 t3 p3 scene");
+assert(taxById(rtax.parts, "cambridge-12-test-3-reading-p3").scene === " xã hội nhân văn ", "c12 t3 p3 scene");
 var dkStart = cfg.indexOf("  var _taxById");
 var dkEnd = cfg.indexOf("  function loadTaxonomyJson");
 assert(dkStart > 0 && dkEnd > dkStart, "drillKindLabel slice");
 var kindApi = Function(cfg.slice(dkStart, dkEnd) + "\nreturn { rememberTaxonomy: rememberTaxonomy, drillKindLabel: drillKindLabel };")();
 kindApi.rememberTaxonomy(tax);
 kindApi.rememberTaxonomy(rtax);
-assert(kindApi.drillKindLabel("cambridge-14-test-2-s3-q21-24").indexOf("单选题") >= 0, "kind qtype");
-assert(kindApi.drillKindLabel("cambridge-21-test-1-s1") === "场景：日常生活", "kind scene part");
+assert(kindApi.drillKindLabel("cambridge-14-test-2-s3-q21-24").indexOf(" hóa đơn chọn chủ đề ") >= 0, "kind qtype");
+assert(kindApi.drillKindLabel("cambridge-21-test-1-s1") === " cảnh: Đời sống hằng ngày ", "kind scene part");
 assert(kindApi.drillKindLabel("nope") === "", "kind missing");
 
 var start = cfg.indexOf("function cambridgeCdtQs");
@@ -137,11 +137,11 @@ var mgStart = cfg.indexOf("function makePartItem");
 var mgEnd = cfg.indexOf("\n  function resolveItem");
 assert(mgStart > 0 && mgEnd > mgStart, "makeGroupItem slice");
 var makeGroupItem = Function(cfg.slice(mgStart, mgEnd) + "\nreturn makeGroupItem;")();
-var rItem = makeGroupItem({ id: "cambridge-21-test-1-reading", subject: "cambridge-reading", title: "剑21" }, 1, 1, 7);
+var rItem = makeGroupItem({ id: "cambridge-21-test-1-reading", subject: "cambridge-reading", title: " Cambridge 21" }, 1, 1, 7);
 assert(rItem && rItem.id === "cambridge-21-test-1-reading-p1-q1-7" && rItem.partKind === "p", "makeGroupItem reading");
-var lItem = makeGroupItem({ id: "cambridge-21-test-1", subject: "cambridge-listening", title: "剑21" }, 1, 1, 6);
+var lItem = makeGroupItem({ id: "cambridge-21-test-1", subject: "cambridge-listening", title: " Cambridge 21" }, 1, 1, 6);
 assert(lItem && lItem.id === "cambridge-21-test-1-s1-q1-6" && lItem.partKind === "s", "makeGroupItem listening");
-var xItem = makeGroupItem({ id: "cambridge-21-test-1", subject: "cambridge-listening", title: "剑21" }, 1, 1, 6, true);
+var xItem = makeGroupItem({ id: "cambridge-21-test-1", subject: "cambridge-listening", title: " Cambridge 21" }, 1, 1, 6, true);
 assert(xItem && xItem.id === "cambridge-21-test-1-s1-q1-6-explain" && xItem.explain, "makeGroupItem explain");
 assert(/cal-dual/.test(teach) && /row\.id \+ "-explain"/.test(teach), "teacher qtype dual boxes");
 assert(/function isExplainExerciseId/.test(server) && /practiceExerciseIds/.test(server), "server skips explain complete");

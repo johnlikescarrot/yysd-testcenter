@@ -15,7 +15,7 @@ GARBAGE_OPT = re.compile(
     re.I,
 )
 INSERT_MARK = re.compile(
-    r"(?:[•·●■□▪]|[-–—.])\s*([A-D])\b|(?:^|(?<=\s))([A-D])\s+(?=[A-Z“\"‘])"
+    r"(?:[•·●■□▪]|[-–-.])\s*([A-D])\b|(?:^|(?<=\s))([A-D])\s+(?=[A-Z“\"‘])"
 )
 INSERT_STEM_RE = re.compile(
     r"four locations|where would the (?:following )?sentence best fit|could be added",

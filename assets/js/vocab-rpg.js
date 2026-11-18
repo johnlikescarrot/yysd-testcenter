@@ -1,13 +1,13 @@
 /* =========================================================================
-   vocab-rpg.js — 词境远征：XP / 等级 / 称号 / 周XP / 宝箱
+   vocab-rpg.js - biến thể cũ của | biên giới cuộc viễn chinh: XP / hạng / tên / đi một vòng XP / biến thể của | hộp
    localStorage key: yysd:vocab-rpg
    ========================================================================= */
 window.YYSD_VOCAB_RPG = (function () {
   "use strict";
   var KEY = "yysd:vocab-rpg";
   var TITLES = [
-    "词芽", "识途", "破雾", "猎词手", "词境旅人",
-    "远征者", "破关客", "词锋", "境主", "传奇词士"
+    " biến thể cũ của | nụ ", " biết con đường ", " hỏng sương mù ", " săn bắn biến thể cũ của | tay ", " biến thể cũ của | biên giới chuyến đi người ",
+    " cuộc viễn chinh người mà ", " giải quyết hoặc vượt qua khách hàng ", " biến thể cũ của | mũi giáo ", " biên giới chủ ", " huyền thoại biến thể cũ của | thành viên tầng lớp đại phu "
   ];
 
   function weekId() {
@@ -25,7 +25,7 @@ window.YYSD_VOCAB_RPG = (function () {
       weekId: weekId(),
       weekXp: 0,
       chests: {},
-      nick: "词境旅人"
+      nick: " biến thể cũ của | biên giới chuyến đi người "
     };
   }
 
@@ -80,7 +80,7 @@ window.YYSD_VOCAB_RPG = (function () {
     var p = progressFromXp(s.totalXp);
     p.weekXp = s.weekXp;
     p.weekId = s.weekId;
-    p.nick = s.nick || "词境旅人";
+    p.nick = s.nick || " biến thể cũ của | biên giới chuyến đi người ";
     return p;
   }
 
@@ -125,7 +125,7 @@ window.YYSD_VOCAB_RPG = (function () {
     var Y = window.YYSD;
     var sorted = (lists || []).slice().sort(function (a, b) {
       return (Y.vocabListNo(a) - Y.vocabListNo(b)) ||
-        String(a.title).localeCompare(String(b.title), "zh-Hans-CN", { numeric: true });
+        String(a.title).localeCompare(String(b.title), "vi-VN-CN", { numeric: true });
     });
     var res = results || {};
     var nodes = [];
@@ -143,7 +143,7 @@ window.YYSD_VOCAB_RPG = (function () {
         var open = done;
         var claimed = hasChest(bookKey || "book", ck);
         nodes.push({
-          item: { id: ck, title: "远征宝箱", _chestAfter: it.id },
+          item: { id: ck, title: " cuộc viễn chinh biến thể của | hộp ", _chestAfter: it.id },
           state: !open ? "chest-locked" : (claimed ? "claimed" : "chest"),
           index: i,
           isChest: true,

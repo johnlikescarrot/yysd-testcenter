@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/core.js — 每日单词：存储、抽词、拼写、LIST 解析、API 助手
+   daily-word/core.js - hàng ngày từ: tích trữ, rút ra biến thể cũ của |, đánh vần, LIST Giải thích, API trợ lý
    ========================================================================= */
 (function (global) {
   "use strict";
@@ -19,7 +19,7 @@
   var COUNT_MAX = 300;
   var COUNT_STEP = 5;
 
-  // ponytail: tiny UK/US map — expand if students hit more variants
+  // ponytail: tiny UK/US map - expand if students hit more variants
   var UK_US = {
     colour: "color", favor: "favour", honour: "honor", humour: "humor",
     labour: "labor", neighbour: "neighbor", behaviour: "behavior",
@@ -71,7 +71,7 @@
     try { localStorage.removeItem(KEYS.task); } catch (e) {}
   }
 
-  // ponytail: date[] only — month calendar later if needed
+  // ponytail: date[] only - month calendar later if needed
   function getCheckins() {
     var arr = readJson(KEYS.checkins, []);
     return Array.isArray(arr) ? arr : [];
@@ -132,7 +132,7 @@
     return base + "library/" + String(file || "").replace(/^\//, "");
   }
 
-  // ponytail: trusted local LIST HTML only — same approach as vocab-lesson
+  // ponytail: trusted local LIST HTML only - same approach as vocab-lesson
   function parseWordData(html) {
     var m = html.match(/(?:const|var|let)\s+wordData\s*=\s*(\[[\s\S]*?\]);/);
     if (!m) return [];
@@ -195,7 +195,7 @@
     return { ok: false, marks: marks };
   }
 
-  // ponytail: same idea as wrong-words.meaningCorrect — accept partial / acceptCN
+  // ponytail: same idea as wrong-words.meaningCorrect - accept partial / acceptCN
   function meaningCheck(input, wordObj) {
     var userCN = String(input || "").replace(/\s+/g, "");
     if (!userCN) return { ok: false };
@@ -205,8 +205,8 @@
     for (i = 0; i < list.length; i++) {
       if (list[i]) accepts.push(String(list[i]).replace(/\s+/g, ""));
     }
-    String((wordObj && wordObj.meaning) || "").split(/[；;，,、\/|]/).forEach(function (p) {
-      p = String(p || "").replace(/\s+/g, "").replace(/（[^）]*）|\([^)]*\)/g, "");
+    String((wordObj && wordObj.meaning) || "").split(/[; ;, ,, \/|]/).forEach(function (p) {
+      p = String(p || "").replace(/\s+/g, "").replace(/([^)]*)|\([^)]*\)/g, "");
       if (p) accepts.push(p);
     });
     for (i = 0; i < accepts.length; i++) {
@@ -214,7 +214,7 @@
       if (!a) continue;
       if (userCN === a || userCN.indexOf(a) >= 0 || a.indexOf(userCN) >= 0) return { ok: true };
     }
-    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[；;，,、\s]/g, "");
+    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[; ;, ,, \s]/g, "");
     if (!meaningClean) return { ok: false };
     var head = meaningClean.substring(0, Math.min(2, meaningClean.length));
     if (userCN.length >= 2 && (userCN.indexOf(head) >= 0 || meaningClean.indexOf(userCN) >= 0)) {
@@ -349,9 +349,9 @@
       return r.text().then(function (text) {
         var d = null;
         try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("服务器返回异常（" + r.status + "）");
+          throw new Error(" máy chủ trở về bất thường(" + r.status + ")");
         }
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || " yêu cầu bị đánh bại ");
         return d;
       });
     });
@@ -385,7 +385,7 @@
 
   function fetchThemesCatalog() {
     return fetch(libraryUrl("study/vocab-themes/themes.json")).then(function (r) {
-      if (!r.ok) throw new Error("分类词库目录加载失败");
+      if (!r.ok) throw new Error(" phân loại kho từ mục lục tải bị đánh bại ");
       return r.json();
     });
   }
@@ -416,14 +416,14 @@
 
   function fetchThemePool(bookKey) {
     var themeId = themeIdOf(bookKey);
-    if (!themeId) return Promise.reject(new Error("分类词库无效"));
+    if (!themeId) return Promise.reject(new Error(" phân loại kho từ không hợp lệ "));
     return fetchThemesCatalog().then(function (cat) {
       var t = null;
       var i;
       for (i = 0; i < (cat.themes || []).length; i++) {
         if (cat.themes[i].id === themeId) { t = cat.themes[i]; break; }
       }
-      if (!t || !t.dataFile) throw new Error("分类词库不存在");
+      if (!t || !t.dataFile) throw new Error(" phân loại kho từ không tồn tại ");
       var catLabel = "";
       for (i = 0; i < (cat.categories || []).length; i++) {
         if (cat.categories[i].id === t.category) {
@@ -432,17 +432,17 @@
         }
       }
       return fetch(libraryUrl(t.dataFile)).then(function (r) {
-        if (!r.ok) throw new Error("分类词库加载失败");
+        if (!r.ok) throw new Error(" phân loại kho từ tải bị đánh bại ");
         return r.json();
       }).then(function (detail) {
         var pool = mapThemeWords((detail && detail.words) || [], bookKey, themeId)
           .filter(function (w) { return w.word; });
-        if (!pool.length) throw new Error("分类词库暂无可用单词");
+        if (!pool.length) throw new Error(" phân loại kho từ tạm thời không thể sử dụng từ ");
         return {
           book: {
             key: bookKey,
             label: t.title || themeId,
-            tag: catLabel || "分类词库"
+            tag: catLabel || " Kho từ theo chủ đề "
           },
           pool: pool,
           listCount: 1
@@ -457,7 +457,7 @@
     // 0 / null / undefined → whole book (needed for true random)
     return Y.load().then(function (items) {
       var stats = Y.vocabBookStats(items, bookKey);
-      if (!stats || !stats.lists.length) throw new Error("词书为空或不存在");
+      if (!stats || !stats.lists.length) throw new Error(" biến thể cũ của | viết tắt của | làm trống không có thể không tồn tại ");
       var lists = stats.lists;
       if (maxLists > 0) lists = lists.slice(0, maxLists);
       // ponytail: parallel fetch; ceiling = whole book (~40 LISTs)

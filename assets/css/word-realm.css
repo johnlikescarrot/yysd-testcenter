@@ -1,4 +1,4 @@
-/* 词境远征 — Zelda-like adventure shell (navy/gold, map & shrine feel) */
+/* biến thể cũ của | biên giới cuộc viễn chinh - Zelda-like adventure shell (navy/gold, map & shrine feel) */
 :root {
   --wr-bg0: #071018;
   --wr-bg1: #0f1c2e;
@@ -354,7 +354,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
   .wr-prologue__lines li, .wr-shrine--lit, .wr-pin.is-current .wr-pin__dot { animation: none; }
 }
 
-/* —— Phase 2: Hub / pin map / codex —— */
+/* -- Phase 2: Hub / pin map / codex -- */
 .wr-tabs {
   display: flex;
   gap: 0.4rem;
@@ -847,7 +847,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
     linear-gradient(180deg, rgba(10,20,34,0.15), rgba(7,16,24,0.45));
 }
 
-/* —— Visual novel (cinematic stage + bottom dialogue dock) —— */
+/* -- Visual novel (cinematic stage + bottom dialogue dock) -- */
 .wr-page:has(.wr-vn) {
   overflow: hidden;
 }
@@ -941,7 +941,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
   height: 100%;
   background: rgba(255,255,255,0.04);
 }
-/* Dialogue docked to bottom — no mid-screen floating void */
+/* Dialogue docked to bottom - no mid-screen floating void */
 .wr-vn__box {
   flex: 0 0 auto;
   margin: 0;
@@ -1055,7 +1055,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
 .wr-board__soon { opacity: 0.65; }
 .wr-panel--board { margin-top: 0.25rem; }
 
-/* Phase 1.5 — camp command menu + chapter clear */
+/* Phase 1.5 - camp command menu + chapter clear */
 .wr-camp-menu {
   padding: 1rem 1.15rem;
   border-radius: 18px;

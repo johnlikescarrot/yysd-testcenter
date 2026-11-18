@@ -597,7 +597,7 @@ def main():
             "set": "L-LCN" + n,
             "title": "L-LCN%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "对话",
+            "titleZh": " Hội thoại ",
             "code": item["code"] or ("C%02d" % int(k)),
             "instruction": "Listen to a conversation.",
             "audio": "library/toefl/audio/bank-l-lcn/" + audio_name,
@@ -607,7 +607,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-lcn",
-        "title": "题块库 · 对话",
+        "title": " chủ đề cục nhà kho · Hội thoại ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

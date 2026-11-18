@@ -1,5 +1,5 @@
 /* =========================================================================
-   alevel-common.js — A-Level catalog loader + shared render helpers
+   alevel-common.js - A-Level catalog loader + shared render helpers
    ========================================================================= */
 window.YYSD_ALEVEL = (function () {
   "use strict";
@@ -101,13 +101,13 @@ window.YYSD_ALEVEL = (function () {
   }
 
   function seasonBadge(season) {
-    var map = { m: "春", s: "夏", w: "冬" };
+    var map = { m: " biến thể cũ của ", s: " nhà Hạ khoảng 2000 TCN ", w: " mùa đông " };
     return map[season] || season;
   }
 
   function subjectCardHTML(sub, prefix, boardLabel) {
-    var updated = sub.updatedYear ? "已更新至 " + sub.updatedYear + " 年" : "持续更新中";
-    var count = sub.paperCount ? sub.paperCount + " 套真题" : "即将上线";
+    var updated = sub.updatedYear ? " đã thay cũ đổi mới đến " + sub.updatedYear + " năm " : " tiếp tục thay cũ đổi mới Trung Quốc ";
+    var count = sub.paperCount ? sub.paperCount + " che đậy câu hỏi từ đề thi các năm trước " : " sắp lên mạng ";
     var tag = boardLabel || sub.board || "";
     return '<a class="alevel-subject-card pressable" href="' + subjectHref(sub.board, sub.code, prefix) + '">' +
       '<span class="alevel-subject-card__ico" aria-hidden="true">' + (sub.icon || "📘") + "</span>" +
@@ -120,7 +120,7 @@ window.YYSD_ALEVEL = (function () {
   function hubBoardHTML(catalog, boardId, prefix) {
     var board = boardOf(catalog, boardId);
     if (!board || !board.subjects.length) {
-      return '<div class="soon-box">该考试局内容筹备中，敬请期待。</div>';
+      return '<div class="soon-box">nên dự thi hẹp nội dung chuẩn bị Trung Quốc, kính mời mong chờ </div>';
     }
     return '<div class="alevel-subject-grid">' +
       board.subjects.map(function (s) {
@@ -137,9 +137,9 @@ window.YYSD_ALEVEL = (function () {
       "<td>Paper " + Y.esc(item.paper) + "</td>" +
       "<td>" + Y.esc(item.typeLabelZh || item.type) + "</td>" +
       '<td class="alevel-paper-row__actions">' +
-        '<a class="btn btn--ghost btn--sm" href="' + viewHref(item, prefix) + '">预览</a>' +
+        '<a class="btn btn--ghost btn--sm" href="' + viewHref(item, prefix) + '">xem trước</a>' +
         '<a class="btn btn--ghost btn--sm" href="' + fileHref(item, prefix) +
-          '" download target="_blank" rel="noopener">下载</a>' +
+          '" download target="_blank" rel="noopener">Tải xuống</a>' +
       "</td></tr>";
   }
 
@@ -152,7 +152,7 @@ window.YYSD_ALEVEL = (function () {
         '<div class="alevel-preview-board__head">' +
           "<h3>" + Y.esc(board.labelZh || board.label) + "</h3>" +
           '<a class="section-link" href="' + (prefix || "") + "alevel.html?board=" +
-            encodeURIComponent(board.id) + '">查看全部 →</a></div>' +
+            encodeURIComponent(board.id) + '">xem xét toàn bộ →</a></div>' +
         '<div class="alevel-subject-grid alevel-subject-grid--compact">' +
           subs.map(function (s) { return subjectCardHTML(s, prefix, board.label); }).join("") +
         "</div></div>";
@@ -167,7 +167,7 @@ window.YYSD_ALEVEL = (function () {
   }
 
   function showcaseSubjectHTML(sub, prefix) {
-    var count = sub.paperCount ? sub.paperCount + " 套" : "即将上线";
+    var count = sub.paperCount ? sub.paperCount + " Bộ " : " sắp lên mạng ";
     return '<a class="home-alevel__subject pressable" href="' + subjectHref(sub.board, sub.code, prefix) + '">' +
       '<span class="home-alevel__subject-ico" aria-hidden="true">' + (sub.icon || "📘") + "</span>" +
       '<span class="home-alevel__subject-body">' +
@@ -181,12 +181,12 @@ window.YYSD_ALEVEL = (function () {
   function homeShowcaseHTML(catalog, prefix) {
     var p = prefix || "";
     if (!hasContent(catalog)) {
-      return '<section class="home-alevel home-alevel--empty reveal" aria-label="A-Level 真题库">' +
+      return '<section class="home-alevel home-alevel--empty reveal" aria-label="A-Level câu hỏi từ đề thi các năm trước nhà kho ">' +
         '<div class="home-alevel__inner">' +
           '<span class="home-alevel__eyebrow">A-LEVEL PAST PAPERS</span>' +
-          "<h2>A-Level 真题库</h2>" +
-          "<p>CAIE · Edexcel · Oxford AQA 真题筹备中，敬请期待。</p>" +
-          '<a class="btn btn--ghost-dark pressable" href="' + hubHref(p) + '">了解更多 →</a>' +
+          "<h2>A-Level câu hỏi từ đề thi các năm trước nhà kho</h2>" +
+          "<p>CAIE · Edexcel · Oxford AQA câu hỏi từ đề thi các năm trước chuẩn bị Trung Quốc, kính mời mong chờ </p>" +
+          '<a class="btn btn--ghost-dark pressable" href="' + hubHref(p) + '">hiểu thay đổi hoặc thay thế nhiều →</a>' +
         "</div></section>";
     }
 
@@ -215,8 +215,8 @@ window.YYSD_ALEVEL = (function () {
         ? p + "alevel.html?board=" + encodeURIComponent(board.id)
         : p + "alevel.html?board=" + encodeURIComponent(board.id);
       var meta = active
-        ? stats.subjects + " 科目 · " + stats.papers + " 套"
-        : "筹备中";
+        ? stats.subjects + " Môn học · " + stats.papers + " Bộ "
+        : " chuẩn bị Trung Quốc ";
       return '<a class="' + cls + '" href="' + href + '">' +
         '<span class="home-alevel__board-label">' + Y.esc(board.label) + "</span>" +
         '<span class="home-alevel__board-zh">' + Y.esc(board.labelZh || board.label) + "</span>" +
@@ -229,25 +229,25 @@ window.YYSD_ALEVEL = (function () {
       return showcaseSubjectHTML(sub, p);
     }).join("");
 
-    return '<section class="home-alevel reveal" aria-label="A-Level 真题库">' +
+    return '<section class="home-alevel reveal" aria-label="A-Level câu hỏi từ đề thi các năm trước nhà kho ">' +
       '<div class="home-alevel__inner">' +
         '<div class="home-alevel__head">' +
           "<div>" +
             '<span class="home-alevel__eyebrow">A-LEVEL PAST PAPERS</span>' +
-            "<h2>A-Level 真题库</h2>" +
-            "<p>三大考试局真题试卷与 Mark Scheme · 在线预览 · 免费下载</p>" +
+            "<h2>A-Level câu hỏi từ đề thi các năm trước nhà kho</h2>" +
+            "<p>ba kỳ thi cuối kỳ thử hẹp câu hỏi từ đề thi các năm trước bài thi biến thể của | Mark Scheme · trực tuyến xem trước · miễn phí tải xuống</p>" +
           "</div>" +
-          '<a class="btn btn--gold pressable home-alevel__cta" href="' + hubHref(p) + '">进入题库 →</a>' +
+          '<a class="btn btn--gold pressable home-alevel__cta" href="' + hubHref(p) + '">đi vào ngân hàng câu hỏi →</a>' +
         "</div>" +
         '<div class="home-alevel__metrics">' +
-          '<div class="home-alevel__metric"><b data-count="' + boards.length + '">' + boards.length + "</b><span>考试局</span></div>" +
-          '<div class="home-alevel__metric"><b data-count="' + qp + '">' + qp + "</b><span>真题套数</span></div>" +
-          '<div class="home-alevel__metric"><b data-count="' + subjectTotal + '">' + subjectTotal + "</b><span>热门科目</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + boards.length + '">' + boards.length + "</b><span>dự thi hẹp</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + qp + '">' + qp + "</b><span>câu hỏi từ đề thi các năm trước chuỗi bài trong kinh kịch Trung Quốc</span></div>" +
+          '<div class="home-alevel__metric"><b data-count="' + subjectTotal + '">' + subjectTotal + "</b><span>phổ biến môn học</span></div>" +
         "</div>" +
         '<div class="home-alevel__boards" role="list">' + boardCards + "</div>" +
         (subjectCards
-          ? '<div class="home-alevel__subjects-head"><h3>热门科目</h3><a class="section-link section-link--light" href="' +
-              hubHref(p) + '">查看全部 →</a></div>' +
+          ? '<div class="home-alevel__subjects-head"><h3>phổ biến môn học</h3><a class="section-link section-link--light" href="' +
+              hubHref(p) + '">xem xét toàn bộ →</a></div>' +
             '<div class="home-alevel__subjects">' + subjectCards + "</div>"
           : "") +
       "</div></section>";

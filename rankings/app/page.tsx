@@ -43,28 +43,28 @@ export default async function HomePage() {
       <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)]">
         <div className="panel flex flex-col">
           <div className="panel-head">
-            <span>选校检索</span>
+            <span>chọn kiểm tra truy xuất</span>
             <span className="mono text-[var(--gold)]">DESK</span>
           </div>
           <div className="flex flex-1 flex-col justify-between gap-6 p-5">
             <div>
               <h1 className="text-[1.75rem] font-bold leading-tight tracking-tight sm:text-[2rem]">
-                这所学校，
+                này thực ra trường học, 
                 <br />
-                在四大榜站哪？
+                tồn tại bốn nguyên tố: đất thông báo hoặc thông tri trạm như thế nào? 
               </h1>
               <p className="mt-3 text-sm text-[var(--muted)]">
-                把 QS / THE / ARWU / US News 当成四条行情轨。查名次、比差距，再决定要不要估录取。
+                hãy QS / THE / ARWU / US News coi như bốn lá giống giá thị trường đường ray nghiên cứu vị trí trong bảng xếp hạng, Bỉ chênh lệch, lại quyết định nếu không thì yêu cầu ước lượng chấp nhận ứng viên vượt kỳ thi đầu vào 
               </p>
             </div>
             <form action="/rankings/universities" method="get" className="space-y-3">
-              <input name="q" placeholder="输入校名 / 别名，回车检索" className="input-desk" autoComplete="off" />
+              <input name="q" placeholder=" nhập khẩu kiểm tra tên / bí danh, quay xe lại truy xuất " className="input-desk" autoComplete="off" />
               <div className="flex flex-wrap gap-2">
                 <button type="submit" className="btn-ink">
-                  查行情
+                  nghiên cứu giá thị trường
                 </button>
                 <Link href="/compare" className="btn-ghost inline-flex items-center">
-                  开对比盘
+                  mở so sánh đĩa
                 </Link>
               </div>
             </form>
@@ -97,7 +97,7 @@ export default async function HomePage() {
               </label>
             ))}
             <span className="mono ml-auto px-2 text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
-              行情轨
+              giá thị trường đường ray
             </span>
           </div>
           {tapes.map((tape) => (
@@ -128,44 +128,44 @@ export default async function HomePage() {
       {/* three asks as rail, not cards */}
       <section>
         <div className="mb-2 flex items-end justify-between">
-          <h2 className="text-sm font-semibold tracking-wide">下一步</h2>
+          <h2 className="text-sm font-semibold tracking-wide">Bước tiếp theo</h2>
           <span className="mono text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">Action rail</span>
         </div>
         <div className="ask-rail">
           <Link href="/compare">
             <p className="mono text-[10px] text-[var(--gold)]">01</p>
-            <p className="mt-2 text-base font-semibold">四大榜差多少？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">开对比盘，并排看同一所学校的轨位。</p>
+            <p className="mt-2 text-base font-semibold">bốn nguyên tố: đất thông báo hoặc thông tri sự khác biệt số lượng? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]">mở so sánh đĩa, cạnh nhau chăm sóc giống hệt thực ra trường học của đường ray vị trí </p>
           </Link>
           <a href="/admission">
             <p className="mono text-[10px] text-[var(--gold)]">02</p>
-            <p className="mt-2 text-base font-semibold">背景够不够？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">跳转 AI 升学顾问，估项目录取区间。</p>
+            <p className="mt-2 text-base font-semibold">bối cảnh đủ không đủ? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]">nhảy đến AI lên lớp hoặc trường cấp trên cố vấn, ước lượng mục chấp nhận ứng viên vượt kỳ thi đầu vào khu vực giới hạn </p>
           </a>
           <a href="/">
             <p className="mono text-[10px] text-[var(--gold)]">03</p>
-            <p className="mt-2 text-base font-semibold">语言分还差多少？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">回主站练雅思 / 国际课程。</p>
+            <p className="mt-2 text-base font-semibold">ngôn ngữ chia vẫn sự khác biệt số lượng? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]">xoay vòng chủ trạm luyện tập IELTS / Chương trình quốc tế </p>
           </a>
         </div>
       </section>
 
-      {/* destinations — large type cells */}
+      {/* destinations - large type cells */}
       <section>
         <div className="mb-2 flex items-end justify-between">
-          <h2 className="text-sm font-semibold tracking-wide">目的地</h2>
+          <h2 className="text-sm font-semibold tracking-wide">điểm đến</h2>
           <Link href="/universities" className="mono text-[10px] text-[var(--muted)] hover:text-[var(--ink)]">
             ALL MARKETS →
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
           {[
-            ["US", "美国", "US"],
-            ["UK", "英国", "UK"],
-            ["CA", "加拿大", "CA"],
-            ["AU", "澳大利亚", "AU"],
-            ["CN", "中国", "CN"],
-            ["HK", "中国香港", "HK"],
+            ["US", " Hoa Kỳ ", "US"],
+            ["UK", " Vương quốc Anh ", "UK"],
+            ["CA", " Canada ", "CA"],
+            ["AU", " Úc ", "AU"],
+            ["CN", " Trung Quốc ", "CN"],
+            ["HK", " Trung Quốc Hồng Kông ", "HK"],
           ].map(([code, label, tag]) => (
             <Link key={code} href={`/universities?country=${code}`} className="dest-cell">
               <span className="mono text-[10px] text-[var(--muted)]">{tag}</span>
@@ -175,12 +175,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* track legend — one row, not essays */}
+      {/* track legend - one row, not essays */}
       <section className="panel">
         <div className="panel-head">
-          <span>四条行情轨</span>
+          <span>bốn lá giống giá thị trường đường ray</span>
           <Link href="/systems" className="mono text-[10px] hover:text-[var(--ink)]">
-            方法论 →
+            phương pháp luận →
           </Link>
         </div>
         <div className="grid sm:grid-cols-4">
@@ -196,7 +196,7 @@ export default async function HomePage() {
                   <span className="track-dot" style={{ background: SYSTEM_TRACK[key as SystemKey] }} />
                   <span className="font-semibold">{s.shortName}</span>
                 </span>
-                <span className="mono text-[11px] text-[var(--muted)]">最新 {s.latestYear}</span>
+                <span className="mono text-[11px] text-[var(--muted)]">mới nhất {s.latestYear}</span>
                 <span className="line-clamp-2 text-[12px] text-[var(--muted)]">{s.blurb}</span>
               </Link>
             );

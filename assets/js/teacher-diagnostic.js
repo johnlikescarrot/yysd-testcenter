@@ -1,4 +1,4 @@
-/* teacher-diagnostic.js — class vocab diagnostic overview + hot words */
+/* teacher-diagnostic.js - class vocab diagnostic overview + hot words */
 (function () {
   "use strict";
   var T = window.YYSD_TEACHER;
@@ -7,8 +7,8 @@
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.addEventListener("click", function () { T.logout(); });
 
-  var LEVEL = { high_school: "高中", cet4: "四级", ielts: "雅思" };
-  var RATING = { excellent: "优秀", good: "良好", weak: "需加强" };
+  var LEVEL = { high_school: " trường trung học phổ thông ", cet4: " cấp 4 ", ielts: " IELTS " };
+  var RATING = { excellent: " xuất sắc ", good: " tốt ", weak: " yêu cầu củng cố " };
   var students = [];
 
   function esc(s) {
@@ -17,7 +17,7 @@
   }
 
   function cell(stage) {
-    if (!stage) return "—";
+    if (!stage) return "-";
     return (
       Math.round((stage.accuracy || 0) * 100) +
       "% · " +
@@ -38,20 +38,20 @@
     });
 
     if (!rows.length) {
-      root.innerHTML = '<p class="diag-lead">暂无诊断数据。</p>';
+      root.innerHTML = '<p class="diag-lead">tạm thời không có chẩn đoán dữ liệu </p>';
       return;
     }
 
     root.innerHTML =
       '<table class="diag-table"><thead><tr>' +
-      "<th>学生</th><th>高中</th><th>四级</th><th>雅思</th><th>推荐起始</th><th>最近测试</th>" +
+      "<th>Học viên</th><th>trường trung học phổ thông</th><th>cấp 4</th><th>IELTS</th><th>đề xuất bắt nguồn</th><th>gần đây kiểm tra</th>" +
       "</tr></thead><tbody>" +
       rows
         .map(function (s) {
           var name = s.displayName || s.phone || "#" + s.id;
           var when = s.tested_at
-            ? new Date(s.tested_at).toLocaleString("zh-CN")
-            : "未测";
+            ? new Date(s.tested_at).toLocaleString("vi-VN")
+            : " chưa khảo sát ";
           return (
             '<tr class="' +
             (s.alert ? "is-alert" : "") +
@@ -66,7 +66,7 @@
             "</td><td>" +
             esc(cell(s.ielts)) +
             "</td><td>" +
-            esc(LEVEL[s.recommended_start_level] || s.recommended_start_level || "—") +
+            esc(LEVEL[s.recommended_start_level] || s.recommended_start_level || "-") +
             "</td><td>" +
             esc(when) +
             "</td></tr>"
@@ -79,7 +79,7 @@
   function renderHot(words) {
     if (!hotRoot) return;
     if (!words || !words.length) {
-      hotRoot.innerHTML = '<p class="diag-lead">班级暂无未掌握错词。</p>';
+      hotRoot.innerHTML = '<p class="diag-lead">lớp học tạm thời không có chưa nắm bắt lỗi biến thể cũ của | </p>';
       return;
     }
     var max = words[0].cnt || 1;
@@ -129,7 +129,7 @@
         renderHot((res[1] && res[1].words) || []);
       })
       .catch(function (e) {
-        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "加载失败") + "</p>";
+        root.innerHTML = '<p class="diag-msg">' + esc(e.message || " Tải không thành công ") + "</p>";
         if (hotRoot) hotRoot.innerHTML = "";
       });
   }

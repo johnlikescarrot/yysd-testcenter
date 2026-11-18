@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Báo cáo nghiên cứu: mô hình học ngôn ngữ gamification và ứng dụng cho luyện thi IELTS | YYSD
+    </title>
+    <meta
+      name="description"
+      content="Chuyển ngữ và tổng hợp tiếng Việt từ tài liệu tham khảo về Duolingo: lịch sử, sản phẩm, mô hình học tập, gamification, AI, đón nhận và đối chiếu tính năng với ứng dụng luyện thi IELTS Cú Luyện."
+    />
+    <link
+      rel="canonical"
+      href="https://johnlikescarrot.github.io/yysd-testcenter/nghien-cuu/duolingo-va-ielts.html"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <p>
+        <a href="../">← Về ứng dụng luyện thi IELTS</a> · <a href="../tai-lieu/index.html">Thư viện PDF</a>
+      </p>
+      <p class="eyebrow">Nghiên cứu · Phiên bản tiếng Việt</p>
+      <h1>Mô hình học ngôn ngữ gamification: bài học cho ứng dụng luyện thi IELTS</h1>
+      <p class="lead">
+        Báo cáo này chuyển ngữ, chắt lọc và đối chiếu toàn bộ tài liệu tham khảo tiếng Anh về Duolingo, Inc.
+        sang tiếng Việt, nhằm làm cơ sở thiết kế cho bản cập nhật toàn diện của ứng dụng luyện thi IELTS của
+        Trung tâm YYSD. Các dữ liệu lịch sử, sản phẩm, mô hình kinh doanh và đón nhận được trình bày lại bằng
+        tiếng Việt; các thuật ngữ chuyên môn và tên riêng được giữ nguyên hoặc chú thích rõ ràng.
+      </p>
+
+      <h2>1. Tóm tắt điều hành</h2>
+      <p>
+        Duolingo, Inc. là công ty công nghệ giáo dục Hoa Kỳ, đặt trụ sở tại Pittsburgh, Pennsylvania, do Luis
+        von Ahn và Severin Hacker sáng lập năm 2011. Công ty sản xuất ứng dụng học tập và cung cấp chứng nhận
+        năng lực ngôn ngữ. Năm 2025, doanh thu đạt khoảng 1,04 tỷ đô la Mỹ, lợi nhuận ròng khoảng 414,1 triệu
+        đô la Mỹ; số người dùng hoạt động hằng tháng đạt 130 triệu vào quý I năm 2025, với khoảng 830 nhân
+        viên tính đến tháng 12 năm 2024. Cổ phiếu được niêm yết trên NASDAQ với mã DUOL và là thành phần của
+        chỉ số S&amp;P 400.
+      </p>
+      <p>
+        Điểm đáng chú ý nhất không phải là quy mô, mà là <strong>cấu trúc động lực</strong>: bài học ngắn,
+        chuỗi ngày, điểm kinh nghiệm, năng lượng (trước đây là "trái tim"), giải đấu, huy hiệu, nhân vật linh
+        vật và thuật toán nhắc nhở cá nhân hoá. Bản cập nhật này tái cấu trúc toàn bộ trải nghiệm đó bằng
+        tiếng Việt, nhưng thay nội dung học ngôn ngữ tổng quát bằng bốn kỹ năng IELTS và thay phần thưởng
+        thuần túy bằng phản hồi học thuật có trích dẫn.
+      </p>
+
+      <h2>2. Lịch sử và các vòng tài trợ</h2>
+      <p>
+        Ý tưởng hình thành năm 2009 tại Đại học Carnegie Mellon: sau khi bán reCAPTCHA cho Google, von Ahn
+        muốn thực hiện một dự án giáo dục, xuất phát từ việc chi phí học tiếng Anh tại Guatemala rất cao.
+        Hacker — đồng sáng lập và hiện là Giám đốc Công nghệ — tin rằng "giáo dục miễn phí sẽ thực sự thay đổi
+        thế giới". Dự án ban đầu được tài trợ bằng học bổng MacArthur và một khoản trợ cấp của Quỹ Khoa học
+        Quốc gia Hoa Kỳ. Mô hình phi lợi nhuận được cân nhắc nhưng bị đánh giá là không bền vững; nguồn thu
+        ban đầu là dịch vụ dịch thuật cộng đồng, sau đó thay bằng chứng nhận Duolingo English Test, quảng cáo
+        và thuê bao.
+      </p>
+      <ul>
+        <li>Tháng 10/2011: vòng Series A 3,3 triệu đô la, dẫn dắt bởi Union Square Ventures.</li>
+        <li>Tháng 11/2011: bản thử nghiệm riêng tư; danh sách chờ vượt 100.000 người trong tháng 12.</li>
+        <li>Tháng 6/2012: phát hành công khai với khoảng 500.000 người trong danh sách chờ.</li>
+        <li>
+          Tháng 9/2012: Series B 15 triệu đô la; tháng 11/2012 ra mắt ứng dụng iPhone, tháng 5/2013 ra mắt
+          Android với khoảng 3 triệu người dùng.
+        </li>
+        <li>Tháng 2/2014: Series C 20 triệu đô la; 34 nhân viên, khoảng 25 triệu tài khoản.</li>
+        <li>
+          Tháng 6/2015: Series D 45 triệu đô la do Google Capital dẫn dắt, định giá khoảng 470 triệu đô la.
+        </li>
+        <li>Tháng 7/2017: Series E 25 triệu đô la, định giá 700 triệu đô la, vượt 200 triệu tài khoản.</li>
+        <li>
+          Tháng 12/2019: Series F 30 triệu đô la từ CapitalG, định giá 1,5 tỷ đô la, khoảng 200 nhân viên.
+        </li>
+        <li>
+          Tháng 6/2021: nộp hồ sơ IPO trên NASDAQ; tháng 6/2022 ứng dụng trở lại các kho ứng dụng tại Trung
+          Quốc sau một năm bị gỡ.
+        </li>
+        <li>
+          Tháng 10/2022: mua lại studio hoạt hình Gunner tại Detroit; tháng 3/2024 mua studio thiết kế Hobbes;
+          năm 2025 mua NextBeat tại Luân Đôn để mở rộng giáo dục âm nhạc.
+        </li>
+      </ul>
+
+      <h2>3. Sản phẩm và dịch vụ</h2>
+      <p>
+        Duolingo cung cấp khoảng 42 khoá ngôn ngữ, từ tiếng Anh, Pháp, Tây Ban Nha đến các ngôn ngữ ít phổ
+        biến như Hawaii, Gael Scotland, Navajo, và cả ngôn ngữ được xây dựng có chủ đích như Esperanto,
+        Klingon hay High Valyrian. Bên cạnh đó là các môn nhạc, toán và cờ vua; Duolingo ABC cho trẻ em học
+        đọc; và Duolingo English Test — bài kiểm tra năng lực tiếng Anh trực tuyến, thang 10–160, trên 120
+        được coi là thành thạo, với câu hỏi điều chỉnh theo năng lực người thi.
+      </p>
+      <p>
+        Mô hình freemium: nội dung miễn phí kèm quảng cáo, gói Super Duolingo (trước đây là Plus) gỡ quảng
+        cáo, cho phép thử lại không giới hạn và mở một số dạng bài; gói Duolingo Max từng bổ sung nhập vai
+        cùng AI và gọi video kiểu Zoom với nhân vật. Từ tháng 11 năm 2026, Max bị dừng và toàn bộ tính năng
+        chuyển sang Super. Duolingo for Schools hỗ trợ giáo viên tạo lớp, giao bài và theo dõi tiến độ, nhưng
+        được thông báo sẽ kết thúc vào năm 2027.
+      </p>
+
+      <h2>4. Mô hình học tập</h2>
+      <p>
+        Người học "học bằng cách làm" qua các bài rất ngắn, gồm dịch, bài tương tác, trắc nghiệm và truyện.
+        Cách tiếp cận trò chơi hoá dùng điểm, phần thưởng và <strong>lặp lại ngắt quãng</strong> để tạo động
+        lực. Một thuật toán bandit cá nhân hoá (sau này là biến thể softmax phục hồi hiệu số, được thử nghiệm
+        A/B) quyết định nội dung thông báo nhắc học hằng ngày.
+      </p>
+      <p>
+        Thang "Duolingo Score" ước tính năng lực theo các khoá căn chỉnh CEFR: 0–9 là rất sớm A1; 30–59 là A2;
+        60–79 là B1 sớm; 80–99 là B1 cao; 100–114 là B2 sớm; 115–129 là B2 cao; 130–160 tương đương C1–C2. Ứng
+        dụng của chúng tôi dùng cấu trúc tương tự nhưng ánh xạ sang dải band IELTS và mô tả năng lực bằng
+        tiếng Việt, như bảng trong trang chủ.
+      </p>
+      <p>
+        Về cơ sở khoa học, có thể đối chiếu với các công trình về thực hành phân tán của Cepeda và cộng sự, về
+        học tăng cường nhờ kiểm tra của Roediger và Karpicke, về lịch ghi nhớ Pimsleur, và về hồi quy chu kỳ
+        bán rã của Settles và Meeder — tất cả đều có liên kết tra cứu trong
+        <a href="../tai-lieu/07-tu-vung-va-on-tap.pdf">tài liệu số 07</a> và
+        <a href="../tai-lieu/index.html">danh mục Google Scholar</a>.
+      </p>
+
+      <h2>5. Mô hình kinh doanh và chuyển dịch sang AI</h2>
+      <p>
+        Doanh thu chủ yếu từ thuê bao, mua vật phẩm ảo trong ứng dụng và bài kiểm tra tiếng Anh chi phí thấp.
+        Số người trả phí tăng từ một triệu tháng 4/2020 lên 2,9 triệu tháng 3/2022, 4,8 triệu tháng 3/2023 và
+        10,9 triệu tháng 6/2025. Doanh thu năm 2023 là 531 triệu đô la so với 250,77 triệu đô la năm 2021.
+      </p>
+      <p>
+        Từ tháng 1/2024, công ty cắt khoảng 10% lực lượng hợp đồng và tăng dùng AI để tạo nội dung. Tháng
+        4/2025 ra mắt 148 khoá ngôn ngữ do AI tạo, kéo theo tranh luận về sắc thái văn hoá và việc thay thế
+        dịch giả. Thông điệp "AI-first" của CEO gây làn sóng huỷ thuê bao và kết thúc chuỗi học; các video
+        trên TikTok và Instagram bị gỡ, sau đó đăng tải lại kèm giải thích. Đây là bài học trực tiếp cho bản
+        cập nhật của chúng tôi:
+        <strong>tự động hoá phải phục vụ người học, không thay thế sự tin cậy của nội dung</strong>. Vì vậy
+        mọi giải thích trong ứng dụng đều được biên soạn bằng tiếng Việt và gắn với nguồn học thuật có thể
+        kiểm chứng.
+      </p>
+
+      <h2>6. Hiệu quả, chỉ trích và rủi ro</h2>
+      <p>
+        Một nghiên cứu năm 2017 trên học sinh tiểu học học tiếng Tây Ban Nha không tìm thấy khác biệt đáng kể
+        giữa nhóm dùng ứng dụng và nhóm học lớp về thành tích và tự hiệu quả. Nghiên cứu năm 2022 trên người
+        lớn dùng Duolingo làm công cụ duy nhất ghi nhận năng lực đọc và nghe tương đương sinh viên sau bốn học
+        kỳ. Nghiên cứu khác tại Malaysia cho thấy ứng dụng hỗ trợ tốt việc học từ vựng cho người mới bắt đầu.
+        Ở chiều ngược lại, giới chuyên môn phê phán thiết kế trò chơi hoá dễ dẫn đến gian lận và tối ưu điểm
+        thay vì học thực chất.
+      </p>
+      <p>
+        Tháng 1/2023, dữ liệu của hơn 2,6 triệu tài khoản (tên người dùng, tên, số điện thoại) bị rao bán trên
+        diễn đàn tin tặc; công ty kết luận thông tin bị thu thập từ một API công khai. Việc ngừng cập nhật
+        khoá tiếng Wales từ cuối tháng 10/2023 cũng bị chỉ trích vì ảnh hưởng đến người học ngôn ngữ ít tài
+        nguyên. Bản cập nhật của YYSD rút ra hai nguyên tắc: không thu thập dữ liệu cá nhân (tiến độ chỉ nằm
+        trong trình duyệt) và không bỏ rơi kỹ năng nào trong bốn kỹ năng IELTS.
+      </p>
+
+      <h2>7. Hình ảnh thương hiệu</h2>
+      <p>
+        Linh vật là chú cú xanh lá Duo Keyshauna Renee Lingo. Tháng 2/2025, một chiến dịch truyền thông thông
+        báo Duo "qua đời" sau khi bị xe Tesla Cybertruck tông, rồi người dùng cùng gom 50 tỷ điểm kinh nghiệm
+        để "hồi sinh" nhân vật. Các meme về cú nhắc học, video Cá tháng Tư "Duolingo Push", tiểu phẩm của
+        Saturday Night Live năm 2019, webcomic <em>Duo Unleashed</em> (2024), <em>Duo Leveling</em> (2026) và
+        loạt phim hoạt hình ngắn DuoTV (tháng 10/2026) cho thấy sức mạnh của một nhân vật nhất quán. Ứng dụng
+        của chúng tôi dùng linh vật riêng, <strong>Cú Luyện</strong>, với vai trò nhắc nhở nhẹ nhàng và đưa
+        gợi ý, không gây áp lực.
+      </p>
+
+      <h2>8. Đối chiếu tính năng</h2>
+      <div class="table-scroll">
+        <table>
+          <caption>
+            Từ mô hình tham khảo đến ứng dụng luyện thi IELTS phiên bản tiếng Việt
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Thành tố tham khảo</th>
+              <th scope="col">Cách triển khai tại YYSD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chuỗi ngày học (streak) và đóng băng chuỗi</td>
+              <td>Chuỗi ngày, ngày học cuối và tự động đặt lại khi gián đoạn.</td>
+            </tr>
+            <tr>
+              <td>Điểm kinh nghiệm (XP) và mục tiêu hằng ngày</td>
+              <td>XP cho mỗi câu, thanh tiến độ và ba mức mục tiêu 10 · 20 · 50 XP.</td>
+            </tr>
+            <tr>
+              <td>Trái tim / năng lượng</td>
+              <td>Năm đơn vị năng lượng, trừ khi trả lời sai, hồi đầy bằng bài luyện thêm.</td>
+            </tr>
+            <tr>
+              <td>Giải đấu và bảng xếp hạng</td>
+              <td>Mười hạng đấu, nhóm tối đa 30 người, xếp hạng theo XP tuần.</td>
+            </tr>
+            <tr>
+              <td>Chuỗi bạn bè</td>
+              <td>Công tắc chuỗi bạn bè và huy hiệu "Cùng nhau".</td>
+            </tr>
+            <tr>
+              <td>Huy hiệu và cấp độ</td>
+              <td>Tám huy hiệu theo cột mốc cụ thể và cấp độ tính từ XP.</td>
+            </tr>
+            <tr>
+              <td>Lặp lại ngắt quãng / mô hình chu kỳ bán rã</td>
+              <td>Thẻ ghi nhớ với khoảng cách ôn 1, 2, 4, 7, 15, 30, 60, 120 ngày.</td>
+            </tr>
+            <tr>
+              <td>Duolingo Score căn chỉnh CEFR</td>
+              <td>Thang điểm 0–160 ánh xạ sang CEFR và band IELTS, giải thích bằng tiếng Việt.</td>
+            </tr>
+            <tr>
+              <td>Lộ trình tuyến tính thay cây khoá học</td>
+              <td>Tám đơn vị Nghe – Đọc – Viết – Nói, mở khoá tuần tự.</td>
+            </tr>
+            <tr>
+              <td>Nhân vật linh vật và thông báo nhắc học</td>
+              <td>Cú Luyện và phần giải thích về nhắc nhở không gây áp lực.</td>
+            </tr>
+            <tr>
+              <td>Khoá học tạo bởi AI, gây tranh cãi</td>
+              <td>Nội dung biên soạn thủ công, có trích dẫn học thuật và kiểm chứng tự động.</td>
+            </tr>
+            <tr>
+              <td>Thu thập dữ liệu và API công khai</td>
+              <td>Không có máy chủ, không tài khoản, tiến độ chỉ lưu cục bộ.</td>
+            </tr>
+            <tr>
+              <td>Thư viện nội dung mở rộng (nhạc, toán, cờ)</td>
+              <td>Thư viện mười tài liệu PDF bốn kỹ năng và cơ sở khoa học.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>9. Nguồn tham khảo</h2>
+      <ol>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Duolingo" rel="noopener noreferrer"
+            >Bài tổng quan Duolingo trên Wikipedia tiếng Anh</a
+          >
+          — nguồn chính của bản chuyển ngữ này.
+        </li>
+        <li>
+          <a
+            href="https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm"
+            rel="noopener noreferrer"
+            >Báo cáo thường niên Form 10-K năm 2025</a
+          >
+          — doanh thu và lợi nhuận.
+        </li>
+        <li>
+          <a href="https://blog.duolingo.com/how-we-learn-how-you-learn/" rel="noopener noreferrer"
+            >Duolingo Blog: mô hình học và lặp lại ngắt quãng</a
+          >.
+        </li>
+        <li>
+          <a href="https://blog.duolingo.com/duolingo-score/" rel="noopener noreferrer"
+            >Duolingo Blog: Duolingo Score</a
+          >.
+        </li>
+        <li>
+          <a href="https://blog.duolingo.com/spaced-repetition-for-learning/" rel="noopener noreferrer"
+            >Duolingo Blog: vì sao lặp lại ngắt quãng quan trọng</a
+          >.
+        </li>
+        <li>
+          <a
+            href="https://scholar.google.com/scholar?q=Shortt+2021+gamification+mobile+assisted+language+learning+Duolingo"
+            rel="noopener noreferrer"
+            >Tổng quan hệ thống về gamification trong MALL trên Google Scholar</a
+          >.
+        </li>
+        <li>
+          <a
+            href="https://scholar.google.com/scholar?q=Jiang+2022+evaluating+reading+listening+outcomes+Duolingo"
+            rel="noopener noreferrer"
+            >Nghiên cứu hiệu quả đọc và nghe trên Google Scholar</a
+          >.
+        </li>
+        <li>
+          <a
+            href="https://scholar.google.com/scholar?q=Cepeda+2006+distributed+practice+verbal+recall"
+            rel="noopener noreferrer"
+            >Phân tích tổng hợp về thực hành phân tán trên Google Scholar</a
+          >.
+        </li>
+        <li>
+          <a href="https://github.com/GoogleChrome/lighthouse" rel="noopener noreferrer">Lighthouse</a> và
+          <a href="https://github.com/super-linter/super-linter" rel="noopener noreferrer">Super-Linter</a> —
+          chuẩn kiểm chứng của bản cập nhật.
+        </li>
+        <li>
+          <a href="https://github.com/ph0ngp/CVDICT" rel="noopener noreferrer">Từ điển Hán Việt CVDICT</a>
+          (Phong Phan, CC BY-SA 4.0) — nền tảng chuyển ngữ hàng loạt.
+        </li>
+      </ol>
+      <p class="eyebrow">Ghi chú chuyển ngữ</p>
+      <p>
+        Toàn bộ nội dung không phải tiếng Anh trong repository, kể cả các văn bản hướng dẫn, tệp dữ liệu từ
+        vựng và giao diện quản trị, đã được chuyển sang tiếng Việt bằng <code>tools/vietnamize.py</code>. Các
+        đề thi, câu hỏi và từ vựng tiếng Anh được giữ nguyên vì đó là nội dung ngôn ngữ đích của kỳ thi IELTS.
+      </p>
+    </main>
+  </body>
+</html>

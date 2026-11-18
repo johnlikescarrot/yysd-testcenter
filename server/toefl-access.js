@@ -1,9 +1,9 @@
 "use strict";
 /**
- * TOEFL 授权 — 练习区（scope=practice）+ 考前冲刺包（scope=package:<卷id>）。
- * 管理员批量开/关；老师限自己名下的学员开考前冲刺包。
- * 前端只负责显示锁态；能不能进以本模块的 /api/toefl/access 与 /api/toefl/exam-start 为准。
- * 宽限语义：模考关停/到期时，已开考未完成的场次 24h 内可回来考完，不打断进行中的作答。
+ * TOEFL ủy quyền - Khu vực luyện tập(scope=practice)+ đánh trước chạy nước rút che phủ(scope=package:<cuộn lại id>) 
+ * người quản lý loạt mở/ải núi; giáo viên giới hạn bản thân dưới tên của ai đó của học viên mở đánh trước chạy nước rút che phủ 
+ * phía trước chỉ chịu trách nhiệm về hiển thị khóa; có thể không thể tiến lên biến thể cũ của gốc mô-đun của /api/toefl/access và /api/toefl/exam-start làm chuẩn 
+ * gia hạn nghĩa của từ: bắt chước đánh đóng cửa/đến hạn biến thể cũ của |, đã mở đánh chưa hoàn thành của số lần chiếu của một bộ phim 24h bên trong có thể trở về làm xong bài thi, không gián đoạn tiến hành bắn trúng mục tiêu trả lời 
  */
 var PKG_PREFIX = "package:";
 var GRACE_MS = 24 * 3600 * 1000;
@@ -40,11 +40,11 @@ function ensureSchema(db) {
 function parseTime(v, what) {
   if (v == null || v === "") return { v: null };
   var ms = Date.parse(v);
-  if (isNaN(ms)) return { error: what + "格式不对" };
+  if (isNaN(ms)) return { error: what + " hình thức không chính xác " };
   return { v: new Date(ms).toISOString() };
 }
 
-/** 授权状态机：none/off/scheduled/expired/on。nowMs 由调用方传入，方便测试。 */
+/** ủy quyền tình trạng máy móc: none/off/scheduled/expired/on nowMs theo điều chuyển vuông nhập vào, tiện lợi kiểm tra  */
 function grantState(row, nowMs) {
   if (!row) return { on: false, reason: "none" };
   if (row.status !== "on") return { on: false, reason: "off" };
@@ -57,8 +57,8 @@ function grantState(row, nowMs) {
   return { on: true, startAt: row.start_at || null, expireAt: row.expire_at || null };
 }
 
-/** 考前冲刺包状态 = 授权状态 + 开考宽限。
- *  ponytail: 宽限窗 24h —— 关停后开考未完成的卷可在窗内考完本场；窗外的未完成记录视作弃考。 */
+/** đánh trước chạy nước rút che phủ tình trạng = ủy quyền tình trạng + mở đánh gia hạn 
+ *  ponytail: gia hạn biến thể cũ của 24h -- đóng cửa hoàng hậu mở đánh chưa hoàn thành của cuộn lại có thể tồn tại biến thể cũ của bên trong làm xong bài thi gốc sân phơi; biến thể cũ của bên ngoài của chưa hoàn thành ghi chép coi như từ bỏ đánh  */
 function packageState(grant, start, nowMs) {
   var st = grantState(grant, nowMs);
   if (st.on) return st;
@@ -79,20 +79,20 @@ function loadGrantRows(db, scopes, orgId) {
 
 function validateGrantWindow(body) {
   var on = body.action !== "off";
-  var start = parseTime(body.startAt, "开始时间");
+  var start = parseTime(body.startAt, " bắt đầu thời gian ");
   if (start.error) return { error: start.error };
-  var expire = parseTime(body.expireAt, "到期时间");
+  var expire = parseTime(body.expireAt, " đến hạn thời gian ");
   if (expire.error) return { error: expire.error };
   if (on && expire.v && Date.parse(expire.v) <= Date.now()) {
-    return { error: "到期时间已过，请选未来的时间" };
+    return { error: " đến hạn thời gian đã băng qua, mời chọn tương lai của thời gian " };
   }
   if (on && start.v && expire.v && Date.parse(start.v) >= Date.parse(expire.v)) {
-    return { error: "到期时间需晚于开始时间" };
+    return { error: " đến hạn thời gian yêu cầu buổi tối đi bắt đầu thời gian " };
   }
   return { on: on, start: start.v, expire: expire.v };
 }
 
-// 批量对象解析：逗号分隔 + 去重 + 上限（防一次写爆）。纯函数，selfCheck 覆盖。
+// loạt mục tiêu phân tích: dấu phẩy chia cắt + đi lặp lại + giới hạn trên(bảo vệ đầu tiên viết nổ hoặc bùng nổ) thuần khiết hàm số, selfCheck che phủ 
 function splitScopes(raw) {
   var list = String(raw == null || raw === "" ? "practice" : raw).split(",")
     .map(function (x) { return x.trim(); })
@@ -103,25 +103,25 @@ function splitScopes(raw) {
 }
 
 function adminNameOf(db, req) {
-  if (!req.user.phone) return "总部";
+  if (!req.user.phone) return " trụ sở chính ";
   var t = db.prepare("SELECT name FROM teachers WHERE phone = ?").get(req.user.phone);
-  return (t && t.name) || "管理员";
+  return (t && t.name) || " người quản lý ";
 }
 
 function mountRoutes(app, deps) {
   var db = deps.db;
   ensureSchema(db);
 
-  // practice 或 package:<已上架 full/single 卷>；包 id 统一去 hq- 前缀
+  // practice hoặc package:<đã đưa hàng lên kệ full/single cuộn lại>; che phủ id 7-Eleven đi hq- tiền tố
   function scopeInfo(scope) {
     scope = String(scope || "practice").trim();
     if (scope === "practice") return { scope: "practice" };
     if (scope.indexOf(PKG_PREFIX) === 0) {
       var p = deps.tiku.resolvePackage(db, scope.slice(PKG_PREFIX.length));
-      if (!p) return { error: "找不到这个考前冲刺包（可能还没上架）" };
+      if (!p) return { error: " không thể tìm thấy này đánh trước chạy nước rút che phủ(có thể vẫn chưa đưa hàng lên kệ)" };
       return { scope: PKG_PREFIX + p.id, packageId: p.id };
     }
-    return { error: "未知范围" };
+    return { error: " chưa biết phạm vi " };
   }
 
   function resolveScopes(raw) {
@@ -168,7 +168,7 @@ function mountRoutes(app, deps) {
     })();
   }
 
-  // 学生端：入口校验的唯一事实来源（practice + 该学生的 packages 状态表）
+  // Dành cho học viên: lối vào kiểm tra của chỉ sự thật nguồn(practice + nên học sinh của packages tình trạng bề mặt bên ngoài)
   app.get("/api/toefl/access", deps.authMiddleware, function (req, res) {
     var staff = req.user.role === "teacher" || deps.isOrgAdminReq(req);
     if (staff) {
@@ -190,11 +190,11 @@ function mountRoutes(app, deps) {
     res.json({ ok: true, access: { staff: false, practice: practice, packages: packages } });
   });
 
-  // 学生端：开考 —— 正规入口（mock 确认页 / bank 播放页）开始前调用。
-  // 已开考未完成的复用原 started_at（防宽限无限滚）；完成过的重新计时。
+  // Dành cho học viên: mở đánh -- chính quy lối vào(mock xác nhận đầu / bank phát sóng đầu)bắt đầu hương đầu sử dụng 
+  // đã mở đánh chưa hoàn thành của đi rồi quay lại sử dụng trước đây started_at(bảo vệ gia hạn không giới hạn sôi); hoàn thành băng qua của lại đo thời gian 
   app.post("/api/toefl/exam-start", deps.authMiddleware, function (req, res) {
     var info = scopeInfo(PKG_PREFIX + String((req.body && req.body.packageId) || ""));
-    if (info.error || !info.packageId) return res.status(404).json({ error: "这套模考还没上架" });
+    if (info.error || !info.packageId) return res.status(404).json({ error: " này che đậy bắt chước đánh vẫn chưa đưa hàng lên kệ " });
     if (req.user.role === "teacher" || deps.isOrgAdminReq(req)) return res.json({ ok: true, staff: true });
     var now = Date.now();
     var grant = db.prepare("SELECT * FROM toefl_grants WHERE user_id = ? AND scope = ?").get(req.user.sub, info.scope);
@@ -203,12 +203,12 @@ function mountRoutes(app, deps) {
     var st = packageState(grant, start, now);
     if (!st.on) {
       var TEXT = {
-        none: "这一包还没开通，请联系老师",
-        scheduled: "还没到开启时间",
-        expired: "这一包已到期",
-        off: "这一包已被停用"
+        none: " này một che phủ vẫn chưa mở, mời biến thể của | giáo viên ",
+        scheduled: " vẫn chưa đến mở thời gian ",
+        expired: " này một che phủ đã đến hạn ",
+        off: " này một che phủ đã chăn ngừng sử dụng "
       };
-      return res.status(403).json({ error: TEXT[st.reason] || "暂时不能开始", reason: st.reason });
+      return res.status(403).json({ error: TEXT[st.reason] || " tạm thời không thể bắt đầu ", reason: st.reason });
     }
     var startedAt = start && !start.finished_at ? start.started_at : new Date(now).toISOString();
     if (!start || start.finished_at) {
@@ -220,32 +220,32 @@ function mountRoutes(app, deps) {
     res.json({ ok: true, startedAt: startedAt, grace: !!st.grace });
   });
 
-  // 学生端：完成上报（交卷页 best-effort 调用，只用于关闭宽限）
+  // Dành cho học viên: hoàn thành báo cáo lên cấp trên(nộp bài thi đầu best-effort điều chuyển, chỉ sử dụng trong đóng gia hạn)
   app.post("/api/toefl/exam-done", deps.authMiddleware, function (req, res) {
     var pid = deps.tiku.normPackageId(String((req.body && req.body.packageId) || "").trim().slice(0, 64));
-    if (!pid) return res.status(400).json({ error: "缺少 packageId" });
+    if (!pid) return res.status(400).json({ error: " thiếu packageId" });
     db.prepare("UPDATE toefl_exam_starts SET finished_at = ? WHERE user_id = ? AND package_id = ? AND finished_at IS NULL")
       .run(nowIso(), req.user.sub, pid);
     res.json({ ok: true });
   });
 
-  // 后台（老师/管理员）：可开锁的包列表
+  // khu vực hậu trường(giáo viên/người quản lý): có thể mở khóa của che phủ danh sách
   app.get("/api/toefl/packages", deps.authMiddleware, function (req, res) {
     if (req.user.role !== "teacher" && !deps.isOrgAdminReq(req)) {
-      return res.status(403).json({ error: "无权限" });
+      return res.status(403).json({ error: " không có quyền giới hạn " });
     }
     res.setHeader("Cache-Control", "private, no-store");
     res.json({ ok: true, packages: deps.tiku.listPackages(db) });
   });
 
-  // 管理员端：当前授权台账（含状态，前端不用自己算时间）。scope= 或 scopes= 逗号批量
+  // người quản lý cuối: thời điểm hiện tại ủy quyền Đài Loan tài khoản(ngậm trong miệng tình trạng, phía trước không cần bản thân coi như thời gian) scope= hoặc scopes= dấu phẩy loạt
   app.get("/api/admin/grants", deps.adminAuthMiddleware, function (req, res) {
     var rs = resolveScopes(splitScopes(req.query.scopes != null ? req.query.scopes : req.query.scope));
     if (rs.error) return res.status(400).json({ error: rs.error });
     res.json({ ok: true, grants: grantLedger(req, rs.scopes) });
   });
 
-  // 管理员端：批量开/关。scope 或 scopes（批量对象）× studentIds 叉乘；开 = 覆盖式写入开始/到期；关 = status off
+  // người quản lý cuối: loạt mở/ải núi scope hoặc scopes(loạt mục tiêu)× studentIds cái nĩa cưỡi; mở = che phủ loại viết đi vào bắt đầu/đến hạn; ải núi = status off
   app.post("/api/admin/grants", deps.adminAuthMiddleware, function (req, res) {
     var body = req.body || {};
     var rawScopes = Array.isArray(body.scopes) && body.scopes.length
@@ -254,14 +254,14 @@ function mountRoutes(app, deps) {
     var rs = resolveScopes(rawScopes);
     if (rs.error) return res.status(400).json({ error: rs.error });
     var ids = (Array.isArray(body.studentIds) ? body.studentIds : []).map(Number).filter(Boolean);
-    if (!ids.length) return res.status(400).json({ error: "请先勾选学生" });
-    if (ids.length > 500) return res.status(400).json({ error: "一次最多 500 人" });
+    if (!ids.length) return res.status(400).json({ error: " mời trước chọn học sinh " });
+    if (ids.length > 500) return res.status(400).json({ error: " đầu tiên tối đa 500 người " });
     var win = validateGrantWindow(body);
     if (win.error) return res.status(400).json({ error: win.error });
     var marks = ids.map(function () { return "?"; }).join(",");
     var stmt = db.prepare("SELECT id FROM users WHERE org_id = ? AND id IN (" + marks + ")");
     var okIds = stmt.all.apply(stmt, [req.user.orgId].concat(ids)).map(function (r) { return r.id; });
-    if (!okIds.length) return res.status(400).json({ error: "没有找到这些学生" });
+    if (!okIds.length) return res.status(400).json({ error: " không có tìm thấy những... này học sinh " });
     applyGrants(req, rs.scopes, okIds, win);
     res.json({ ok: true, count: okIds.length * rs.scopes.length, students: okIds.length, scopes: rs.scopes.length, action: win.on ? "on" : "off" });
   });
@@ -290,7 +290,7 @@ function selfCheck() {
   eq(grantState(win, t0).on, true, "inside window is on");
   eq(grantState(win, t0 + 10).reason, "expired", "expire bound inclusive");
 
-  // 宽限：关停/到期后已开考未完成的场次 24h 内放行
+  // gia hạn: đóng cửa/đến hạn hoàng hậu đã mở đánh chưa hoàn thành của số lần chiếu của một bộ phim 24h bên trong cho qua
   var open = { started_at: iso(t0 - 3600000), finished_at: null };
   var done = { started_at: iso(t0 - 3600000), finished_at: iso(t0 - 1800000) };
   var stale = { started_at: iso(t0 - 25 * 3600000), finished_at: null };
@@ -302,9 +302,9 @@ function selfCheck() {
   eq(packageState({ status: "on", expire_at: iso(t0 - 1) }, open, t0).grace, true, "expired still graces open exam");
   eq(packageState({ status: "on", expire_at: iso(t0 + 3600000) }, open, t0).on, true, "on ignores grace");
 
-  db.prepare("INSERT INTO users (id, phone, org_id, display_name) VALUES (1,'13800000001',1,'甲')").run();
+  db.prepare("INSERT INTO users (id, phone, org_id, display_name) VALUES (1,'13800000001',1,'thiên can đầu tiên trong mười thiên can')").run();
   db.prepare("INSERT INTO toefl_grants (user_id, scope, status, start_at, expire_at, created_by, created_by_name, created_at, updated_at) " +
-    "VALUES (1,'practice','on',NULL,NULL,9,'总部','x','x')").run();
+    "VALUES (1,'practice','on',NULL,NULL,9,'trụ sở chính','x','x')").run();
   db.prepare("INSERT INTO toefl_grants (user_id, scope, status, created_at, updated_at) VALUES (1,'practice','off','y','y') " +
     "ON CONFLICT(user_id, scope) DO UPDATE SET status = excluded.status").run();
   var row = db.prepare("SELECT * FROM toefl_grants WHERE user_id = 1 AND scope = 'practice'").get();
@@ -319,7 +319,7 @@ function selfCheck() {
   eq(ex.started_at, "y", "exam start upsert");
   eq(db.prepare("SELECT COUNT(*) c FROM toefl_exam_starts").get().c, 1, "one start per user×package");
 
-  // splitScopes：默认 practice、去重、去空白、上限 20
+  // splitScopes: đồng ý ngầm practice, đi lặp lại, đi khoảng trống, giới hạn trên 20
   eq(splitScopes(null).join(), "practice", "default practice");
   eq(splitScopes("").join(), "practice", "empty practice");
   eq(splitScopes(" practice , package:a ,practice, package:a ").join(), "practice,package:a", "dedupe+trim");

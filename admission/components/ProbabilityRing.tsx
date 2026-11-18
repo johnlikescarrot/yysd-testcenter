@@ -7,22 +7,22 @@ export function ProbabilityRing({
   variant = "default",
 }: {
   probability: number;
-  category?: "冲刺" | "匹配" | "保底";
+  category?: " chạy nước rút " | " phối hoặc kết hôn " | " hòa vốn ";
   range?: { low: number; high: number };
   variant?: "default" | "tech";
 }) {
   const p = Math.max(0, Math.min(100, probability));
-  const label = category || (p < 40 ? "冲刺" : p < 70 ? "匹配" : "保底");
+  const label = category || (p < 40 ? " chạy nước rút " : p < 70 ? " phối hoặc kết hôn " : " hòa vốn ");
   const tech = variant === "tech";
   const color = tech
-    ? label === "冲刺"
+    ? label === " chạy nước rút "
       ? "#f59e0b"
-      : label === "匹配"
+      : label === " phối hoặc kết hôn "
         ? "#22d3ee"
         : "#3b82f6"
-    : label === "冲刺"
+    : label === " chạy nước rút "
       ? "#b45309"
-      : label === "匹配"
+      : label === " phối hoặc kết hôn "
         ? "#0f766e"
         : "#1d4ed8";
   const track = tech ? "#1e3a5f" : "#e7e5e4";
@@ -36,7 +36,7 @@ export function ProbabilityRing({
           boxShadow: tech ? `0 0 32px ${color}44` : undefined,
         }}
         role="img"
-        aria-label={`录取概率约 ${p}%`}
+        aria-label={`chấp nhận ứng viên vượt kỳ thi đầu vào xác suất cân trong cân đĩa hoặc trên cân ${p}%`}
       >
         <div
           className={`grid h-28 w-28 place-items-center rounded-full ${
@@ -60,7 +60,7 @@ export function ProbabilityRing({
       </span>
       {range && (
         <p className={`text-sm ${tech ? "text-slate-400" : "text-stone-500"}`}>
-          估算区间 {range.low}% – {range.high}%（非官方）
+          sự đánh giá khu vực giới hạn {range.low}% – {range.high}%(không chính thức)
         </p>
       )}
     </div>

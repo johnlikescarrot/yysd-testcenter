@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Deploy 全球大学排行榜 Next.js app on ECS (run on server).
+# Deploy toàn thế giới Đại học bảng xếp hạng Next.js app on ECS (run on server).
 # Usage: sudo bash deploy/deploy-rankings.sh
 set -euo pipefail
 

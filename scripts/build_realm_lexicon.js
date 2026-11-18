@@ -81,7 +81,7 @@ function shuffleSeeded(arr, seed) {
 }
 
 function weightsForShrine(n) {
-  // 六章难度：前易后难，终章偏学术/高难
+  // sáu chương mức độ khó: trước dễ hoàng hậu khó, kết thúc chương nghiêng học thuật/vô cùng khó khăn
   if (n <= 8) return { 1: 0.55, 2: 0.35, 3: 0.08, 4: 0.02 };
   if (n <= 16) return { 1: 0.3, 2: 0.4, 3: 0.22, 4: 0.08 };
   if (n <= 24) return { 1: 0.15, 2: 0.3, 3: 0.35, 4: 0.2 };

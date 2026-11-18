@@ -1,4 +1,4 @@
-/* CDT drill/exam post-submit result — injected into paper iframe.
+/* CDT drill/exam post-submit result - injected into paper iframe.
    Cool exam-desk look: navy score sheet, no pastel stat cards / trophy chrome. */
 
 html,
@@ -31,7 +31,7 @@ body.yysd-cdt-review #results {
   box-sizing: border-box !important;
 }
 
-/* —— Listening replay bar —— */
+/* -- Listening replay bar -- */
 body.yysd-cdt-review #testArea {
   max-width: 800px !important;
   margin: 20px auto 0 !important;
@@ -114,7 +114,7 @@ body.yysd-cdt-review .audio-note {
   padding: 0 !important;
 }
 
-/* —— Score sheet —— */
+/* -- Score sheet -- */
 body.yysd-cdt-review .res-card {
   background: #fff !important;
   border: 1px solid #c5d0dc !important;
@@ -250,7 +250,7 @@ body.yysd-cdt-review .res-card .audio-note {
   padding: 10px 12px !important;
 }
 
-/* —— Detail list —— */
+/* -- Detail list -- */
 body.yysd-cdt-review .detail-h {
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -357,7 +357,7 @@ body.yysd-cdt-review .ritem .rex {
 }
 
 body.yysd-cdt-review .ritem .rex::before {
-  content: "解析 · ";
+  content: " Giải thích · ";
   font-weight: 700;
   color: #6b7c90;
   font-size: 11px;

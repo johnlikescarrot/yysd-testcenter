@@ -1,4 +1,4 @@
-/* ponytail: one-shot checks for P0 polish — run: node scripts/check_p0_polish.js */
+/* ponytail: one-shot checks for P0 polish - run: node scripts/check_p0_polish.js */
 "use strict";
 
 var fs = require("fs");
@@ -31,6 +31,6 @@ ok(results.indexOf('qs.get("event") ? "wrongs"') >= 0, "results ?event= opens wr
 ok(results.indexOf('hashchange') >= 0, "results listens to hashchange");
 
 var wrongs = fs.readFileSync(path.join(root, "assets/js/results-wrongs.js"), "utf8");
-ok(wrongs.indexOf("if (focusEvent) assignmentOnly = true") >= 0, "event deep-link forces 作业 filter");
+ok(wrongs.indexOf("if (focusEvent) assignmentOnly = true") >= 0, "event deep-link forces Bài tập filter");
 
 process.exit(fails ? 1 : 0);

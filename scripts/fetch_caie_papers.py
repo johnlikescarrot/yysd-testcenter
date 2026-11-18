@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-fetch_caie_papers.py — download CAIE A-Level QP + MS (StudyHatch + XtraPapers fallback).
+fetch_caie_papers.py - download CAIE A-Level QP + MS (StudyHatch + XtraPapers fallback).
 
   python3 scripts/fetch_caie_papers.py --year 2025
   python3 scripts/build_alevel_catalog.py

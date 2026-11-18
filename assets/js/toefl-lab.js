@@ -3,37 +3,37 @@
   "use strict";
 
   var FAV_KEY = "yysd:toefl-favs";
-  // 一套本地键：三套旧键只做一次性只读迁移，旧键不删也不再写
+  // bộ địa phương phím: ba che đậy cũ phím chỉ làm một lần chỉ đọc di cư, cũ phím không xóa cũng không còn viết
   var STATE_KEY = "yysd:toefl-item-state";
   var LEGACY = { done: "yysd:toefl-lab-done", res: "yysd:toefl-lab-results", app: "yysd:app-toefl-done" };
 
   var TYPES = {
     reading: [
-      { key: "complete_words", label: "填词" },
-      { key: "daily_life", label: "日常" },
-      { key: "academic", label: "学术" }
+      { key: "complete_words", label: " sáng tác thơ " },
+      { key: "daily_life", label: " Hằng ngày " },
+      { key: "academic", label: " Học thuật " }
     ],
     listening: [
-      { key: "choose_response", label: "01 Choose a Response 听句选回应" },
-      { key: "conversation", label: "02 Conversation 对话" },
-      { key: "announcement", label: "03 Announcement 通知" },
-      { key: "lecture", label: "04 Academic Talk 讲座" }
+      { key: "choose_response", label: "01 Choose a Response Nghe câu và chọn câu đáp lại " },
+      { key: "conversation", label: "02 Conversation Hội thoại " },
+      { key: "announcement", label: "03 Announcement Thông báo " },
+      { key: "lecture", label: "04 Academic Talk bài giảng " }
     ],
     writing: [
-      { key: "sentence", label: "组句" },
-      { key: "email", label: "邮件" },
-      { key: "discussion", label: "讨论" }
+      { key: "sentence", label: " hình thành biến thể của " },
+      { key: "email", label: " thư từ " },
+      { key: "discussion", label: " thảo luận " }
     ],
     speaking: [
-      { key: "repeat", label: "听后复述" },
-      { key: "interview", label: "面试" }
+      { key: "repeat", label: " cười hoàng hậu lặp lại " },
+      { key: "interview", label: " được phỏng vấn " }
     ]
   };
   var SKILLS = [
-    { key: "reading", label: "阅读" },
-    { key: "listening", label: "听力" },
-    { key: "writing", label: "写作" },
-    { key: "speaking", label: "口语" }
+    { key: "reading", label: " Đọc hiểu " },
+    { key: "listening", label: " Nghe hiểu " },
+    { key: "writing", label: " Viết " },
+    { key: "speaking", label: " Nói " }
   ];
   var PAGES = {
     reading: "toefl-reading.html",
@@ -42,14 +42,14 @@
     speaking: "toefl-speaking.html"
   };
   var FILTERS = [
-    { key: "all", label: "全部" },
-    { key: "todo", label: "未做" },
-    { key: "hot", label: "高频" },
-    { key: "fav", label: "已收藏" }
+    { key: "all", label: " Tất cả " },
+    { key: "todo", label: " chưa làm " },
+    { key: "hot", label: " tần số cao " },
+    { key: "fav", label: " đã sưu tầm " }
   ];
   var FILTERS_LISTEN = [
-    { key: "all", label: "全部" },
-    { key: "todo", label: "未做" }
+    { key: "all", label: " Tất cả " },
+    { key: "todo", label: " chưa làm " }
   ];
 
   function parse(raw, fallback) {
@@ -170,7 +170,7 @@
     });
     writeState(map);
   }
-  /* 模考历史：一次交卷追加一条 attempt，MyBest 按科取最高档，不回写旧记录 */
+  /* bắt chước đánh lịch sử: đầu tiên nộp bài thi thêm cái gì đó bổ sung một dải attempt, MyBest nhấn ngành học lấy cao nhất số, không xoay vòng viết cũ ghi chép */
   var ATT_KEY = "yysd:toefl-attempts";
   var SID = Date.now();
   function attempts() {

@@ -9,14 +9,14 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   var RATING_STAR = {
-    excellent: "优秀 ★★★",
-    good: "良好 ★★☆",
-    weak: "需加强 ★☆☆"
+    excellent: " xuất sắc ★★★",
+    good: " tốt ★★☆",
+    weak: " yêu cầu củng cố ★☆☆"
   };
   var LEVEL_NAME = {
-    high_school: "高中词汇",
-    cet4: "四级词汇",
-    ielts: "雅思词汇"
+    high_school: " trường trung học phổ thông biến thể của | ",
+    cet4: " Từ vựng CET-4 ",
+    ielts: " IELTS biến thể của | "
   };
 
   function esc(s) {
@@ -26,7 +26,7 @@
 
   function thermoHTML(stage) {
     if (!stage) {
-      return '<p class="diag-lead">未参加本阶段</p>';
+      return '<p class="diag-lead">chưa tham gia gốc giai đoạn</p>';
     }
     var pct = Math.round((stage.accuracy || 0) * 100);
     var lo = Math.round((stage.ci_lower || 0) * 100);
@@ -55,23 +55,23 @@
       Math.max(2, hi - lo) +
       '%" title="95% CI"></div>' +
       "</div>" +
-      '<p class="diag-mist-meta">95% 置信区间 ' +
+      '<p class="diag-mist-meta">95% khoảng tin cậy ' +
       lo +
       "% – " +
       hi +
-      "% · 拼写 " +
+      "% · đánh vần " +
       Math.round((stage.spelling_accuracy || 0) * 100) +
-      "%（" +
+      "%(" +
       (stage.spelling_correct || 0) +
       "/" +
       (stage.spelling_total || 0) +
-      "）</p></div>"
+      ")</p></div>"
     );
   }
 
   if (!A || !A.getToken || !A.getToken()) {
     contentEl.innerHTML =
-      '<div class="diag-card"><p class="diag-lead">请先登录</p><a class="btn btn--primary" href="login.html">去登录</a></div>';
+      '<div class="diag-card"><p class="diag-lead">mời trước đăng ký</p><a class="btn btn--primary" href="login.html">đi đăng ký</a></div>';
     return;
   }
 
@@ -80,7 +80,7 @@
   var isPlacement = params.get("placement") === "1";
   if (!sid) {
     contentEl.innerHTML =
-      '<div class="diag-card"><p class="diag-lead">缺少会话参数</p><a href="diagnostic.html">返回诊断</a></div>';
+      '<div class="diag-card"><p class="diag-lead">thiếu hội thoại tham số</p><a href="diagnostic.html">trở về chẩn đoán</a></div>';
     return;
   }
 
@@ -101,7 +101,7 @@
           var found = (stages || []).find(function (x) { return x && x.level === lv; });
           return (
             '<section style="margin:20px 0">' +
-            (found ? thermoHTML(found) : '<p class="diag-lead">' + esc(LEVEL_NAME[lv]) + " · 未参加</p>") +
+            (found ? thermoHTML(found) : '<p class="diag-lead">' + esc(LEVEL_NAME[lv]) + " · chưa tham gia</p>") +
             "</section>"
           );
         })
@@ -109,7 +109,7 @@
 
       var radar =
         any && Charts.radarSVG
-          ? '<div class="diag-report-radar"><h2 class="diag-h2">能力雷达</h2>' +
+          ? '<div class="diag-report-radar"><h2 class="diag-h2">năng lực ra đa</h2>' +
             Charts.radarSVG(vals) +
             "</div>"
           : "";
@@ -125,31 +125,31 @@
       var bookLabel =
         LEVEL_NAME[report.recommended_start_level] ||
         report.recommended_start_level ||
-        "推荐词库";
+        " đề xuất kho từ ";
 
       var actions = isPlacement
-        ? '<a class="btn btn--primary" href="vocab-shelf.html?view=catalog">进入词库书架 · ' +
+        ? '<a class="btn btn--primary" href="vocab-shelf.html?view=catalog">đi vào kho từ giá sách · ' +
           esc(bookLabel) +
           "</a>" +
-          '<a class="btn btn--ghost" href="diagnostic-mistakes.html">查看诊断错题</a>' +
-          '<a class="btn btn--ghost" href="zone.html?zone=study&s=vocab">打开单词区</a>'
-        : '<a class="btn btn--primary" href="diagnostic-mistakes.html">进入错题本</a>' +
-          '<a class="btn btn--ghost" href="diagnostic.html">再测一次</a>';
+          '<a class="btn btn--ghost" href="diagnostic-mistakes.html">xem xét chẩn đoán lỗi chủ đề</a>' +
+          '<a class="btn btn--ghost" href="zone.html?zone=study&s=vocab">mở từ khu vực</a>'
+        : '<a class="btn btn--primary" href="diagnostic-mistakes.html">đi vào lỗi chủ đề gốc</a>' +
+          '<a class="btn btn--ghost" href="diagnostic.html">lại khảo sát đầu tiên</a>';
 
       contentEl.innerHTML =
         '<div class="diag-card">' +
         "<h1>" +
-        (isPlacement ? "首次测评报告" : "能力报告") +
+        (isPlacement ? " đầu tiên kiểm tra và đánh giá thông báo " : " năng lực thông báo ") +
         "</h1>" +
-        '<p class="diag-lead">推荐起始：<strong>' +
-        esc(LEVEL_NAME[report.recommended_start_level] || report.recommended_start_level || "—") +
-        "</strong> · 用时 " +
+        '<p class="diag-lead">đề xuất bắt nguồn: <strong>' +
+        esc(LEVEL_NAME[report.recommended_start_level] || report.recommended_start_level || "-") +
+        "</strong> · Thời lượng " +
         Math.round((report.total_time_seconds || 0) / 60) +
-        " 分钟</p>" +
+        " phút</p>" +
         radar +
         stageHtml +
         '<div class="diag-advice">' +
-        (isPlacement ? "<h2 class=\"diag-h2\">学习建议</h2>" : "") +
+        (isPlacement ? "<h2 class=\"diag-h2\">học đề xuất</h2>" : "") +
         esc(report.advice_text || "") +
         "</div>" +
         '<div class="diag-actions">' +
@@ -159,7 +159,7 @@
     .catch(function (e) {
       contentEl.innerHTML =
         '<div class="diag-card"><p class="diag-msg">' +
-        esc(e.message || "加载失败") +
-        '</p><a href="diagnostic.html">返回</a></div>';
+        esc(e.message || " Tải không thành công ") +
+        '</p><a href="diagnostic.html">Quay lại</a></div>';
     });
 })();

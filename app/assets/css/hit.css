@@ -37,7 +37,7 @@
 }
 * { box-sizing: border-box; }
 html, body { min-height: 100%; margin: 0; }
-/* tabular-nums stays off the root: Windows DirectWrite will not fall back to YaHei for CJK when the feature is on, so Chinese (开始做题) paints blank. Digit-only nodes opt in. */
+/* tabular-nums stays off the root: Windows DirectWrite will not fall back to YaHei for CJK when the feature is on, so Chinese (Bắt đầu làm bài) paints blank. Digit-only nodes opt in. */
 body.hit { font-family: var(--hit-serif); background: var(--hit-bg); color: var(--hit-ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
 [hidden] { display: none !important; }
 a { color: inherit; text-decoration: none; }
@@ -148,7 +148,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover .hit-row-ar
 .hit-confirm { border-top: 1px solid var(--hit-ink); padding: 28px 0; max-width: 620px; }
 .hit-confirm h2 { margin: 0 0 16px; font-size: 22px; font-weight: 600; }
 .hit-confirm ul { color: var(--hit-muted); padding-left: 18px; margin: 0 0 8px; line-height: 1.8; }
-/* 冲刺包便当盒：卡面尺寸与皮肤 1:1 照 wofo（圆角白卡 + 浅描边 + 灰底按钮），全科模考占中间一格 */
+/* chạy nước rút che phủ tiện lợi hộp nhỏ: dừng mặt kích thước biến thể của | da 1:1 biến thể của wofo(góc bo tròn trắng dừng + âm thanh nước chảy miêu tả bên + tro nền tảng nút bấm), tất cả ngành học bắt chước đánh Phong trào Chiếm lĩnh Trung Hoàn giữa một hình vuông */
 .hit-mock-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
 .hit-mock-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 16px; padding: 18px 22px; background: #fff; border: 1px solid #ececee; border-radius: 12px; box-shadow: 0 1px 2px rgba(20, 20, 20, .04); }
 .hit-mock-card:hover { border-color: #d8d8dd; box-shadow: 0 6px 18px rgba(20, 20, 20, .07); }
@@ -237,7 +237,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover .hit-row-ar
 .rev-insert-sent { background: var(--hit-gold-light); padding: 0 6px; margin: 0 6px; }
 .rev-stem { white-space: pre-wrap; font-size: 16px; margin: 0 0 16px; line-height: 1.6; }
 .rev-opt { margin: 0 0 8px; padding: 10px 12px; border: 1px solid var(--hit-line); font-size: 15px; }
-/* 对错要一眼可见：正确项绿字、错选红字（照 wofo.cc） */
+/* đúng lỗi yêu cầu một cái nhìn có thể thấy rõ: đúng sau cổ màu xanh lá chữ, lỗi chọn đỏ chữ(biến thể của wofo.cc) */
 .rev-opt.is-key { background: #fff; color: #1b8f33; font-weight: 700; }
 .rev-opt.is-mine { background: #fff; color: #c62828; }
 .rev-opt-tag { margin-left: 8px; font-size: 12px; font-weight: 600; }
@@ -260,7 +260,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover .hit-row-ar
 .rev-blank.is-ok .rev-blank-got { color: #1b8f33; font-weight: 600; }
 .rev-blank.is-bad .rev-blank-got { color: #c62828; font-weight: 600; }
 .rev-blank-key { margin-left: 2px; color: #1b8f33; font-weight: 600; }
-/* 未填：每缺一个字母一条红短横，虚线由底纹画出 */
+/* chưa lấp hoặc nhồi: mỗi sự thiếu một dùng trong | chữ cái một dải đỏ ngắn ngang, đường chấm theo nền tảng đường vẽ đi ra */
 .rev-blank-empty {
   display: inline-block;
   width: calc(var(--n) * 1.3ch);
@@ -364,7 +364,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover .hit-row-ar
 .hit-library .hit-set-st { width: 74px; }
 
 
-/* ===== 真题题库一屏：科目细文字 tab + 题型 01/02/03 大 segmented + 四科版式 ===== */
+/* ===== câu hỏi từ đề thi các năm trước ngân hàng câu hỏi một xem |: môn học mỏng hoặc thon chữ viết tab + chủ đề khuôn 01/02/03 to segmented + bốn ngành học định dạng ===== */
 .hit-lib { border-top: 1px solid var(--hit-ink); }
 .hit-lib-head { padding: 30px 0 26px; }
 .hit-lib-head h1 { margin-bottom: 14px; }
@@ -528,7 +528,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover .hit-row-ar
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
 
-/* ===== 交卷后复盘：wofo 式顶栏 Tab（分数与各科解析同页切换） ===== */
+/* ===== nộp bài thi hoàng hậu chơi lại ván cờ: wofo loại đỉnh hàng rào Tab(điểm biến thể của | mỗi ngành học phân tích giống đầu chuyển đổi) ===== */
 .rev-shell .hit-top { background: #2b8084; border-bottom-color: #2b8084; color: #fff; }
 .rev-shell .hit-brand { color: #fff; }
 .rev-shell .hit-logo-mark { background: #fff; color: #077f83; }

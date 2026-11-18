@@ -27,7 +27,7 @@ function mergeOne(n) {
       type: "email",
       set: prefix,
       title: t.title || "Write an Email",
-      titleZh: t.titleZh || "邮件写作",
+      titleZh: t.titleZh || " thư từ viết ",
       sample: t.sample || "",
       analysis: t.analysis || "",
       instruction: t.instruction || "Write an email. In your email, do the following:"

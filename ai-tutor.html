@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>AI 雅思老师 · 优益思达国际课程中心</title>
+  <title>AI IELTS giáo viên · Trung tâm YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,35 +17,35 @@
 
   <header class="minimal-topbar" id="site-header">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="dashboard.html" class="minimal-brand" aria-label="待办事项">
+      <a href="dashboard.html" class="minimal-brand" aria-label=" Việc cần làm ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm YYSD</b>
           <span>YYSD International Course Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="dashboard.html" data-nav="dashboard">待办事项</a>
-        <a href="zone.html?zone=study" data-zone="study">单词区</a>
-        <a href="zone.html?zone=practice" data-zone="practice" class="is-active">练习区</a>
-        <a href="zone.html?zone=mock" data-zone="mock">真题区</a>
-        <a href="results.html" data-nav="results">我的成绩</a>
-        <a href="login.html" id="nav-auth">登录</a>
+      <nav class="minimal-nav" id="nav" aria-label=" Điều hướng chính ">
+        <a href="dashboard.html" data-nav="dashboard">Việc cần làm</a>
+        <a href="zone.html?zone=study" data-zone="study">Khu vực từ vựng</a>
+        <a href="zone.html?zone=practice" data-zone="practice" class="is-active">Khu vực luyện tập</a>
+        <a href="zone.html?zone=mock" data-zone="mock">Khu vực đề thi</a>
+        <a href="results.html" data-nav="results">Kết quả của tôi</a>
+        <a href="login.html" id="nav-auth">Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <section class="minimal-shell minimal-page-head" id="page-head">
     <div class="minimal-crumb">
-      <a href="zone.html?zone=practice">练习区</a>
+      <a href="zone.html?zone=practice">Khu vực luyện tập</a>
       <span class="crumb-sep" aria-hidden="true">★</span>
-      <span id="crumb-here">AI 雅思老师</span>
+      <span id="crumb-here">AI IELTS giáo viên</span>
     </div>
     <div class="ai-page-title-row">
-      <button type="button" class="ai-page-back" id="page-back" hidden data-back="hub">← 返回</button>
+      <button type="button" class="ai-page-back" id="page-back" hidden data-back="hub">← Quay lại</button>
       <div>
-        <h1 id="page-title">AI 雅思老师</h1>
-        <p class="minimal-page-desc" id="page-desc">先选口语或写作，一次只做一件事。</p>
+        <h1 id="page-title">AI IELTS giáo viên</h1>
+        <p class="minimal-page-desc" id="page-desc">trước chọn lời nói thông thường có thể viết, đầu tiên chỉ làm một món sự việc </p>
       </div>
     </div>
   </section>
@@ -57,47 +57,47 @@
       <div class="ai-path-grid">
         <button type="button" class="ai-path" data-track="speaking">
           <span class="ai-path__kicker">Speaking</span>
-          <strong>口语</strong>
-          <span class="ai-path__desc">机经练习、全真模考、辅导聊天</span>
-          <span class="ai-path__cta">进入口语 →</span>
+          <strong>Nói</strong>
+          <span class="ai-path__desc">máy móc kinh điển luyện tập, tất cả thật bắt chước đánh, hướng dẫn trò chuyện</span>
+          <span class="ai-path__cta">đi vào lời nói thông thường →</span>
         </button>
         <button type="button" class="ai-path" data-track="writing">
           <span class="ai-path__kicker">Writing</span>
-          <strong>写作</strong>
-          <span class="ai-path__desc">选题干、粘贴作文、四项评分与范文</span>
-          <span class="ai-path__cta">进入写作 →</span>
+          <strong>Viết</strong>
+          <span class="ai-path__desc">chọn chủ đề biến thể cũ của |, dán viết bài văn, bốn sau cổ chấm điểm biến thể của | mô hình ngôn ngữ</span>
+          <span class="ai-path__cta">đi vào viết →</span>
         </button>
       </div>
-      <p class="ai-quota-line" id="quota-hub">加载额度…</p>
+      <p class="ai-quota-line" id="quota-hub">tải hạn ngạch...</p>
     </section>
 
     <!-- Speaking home -->
     <section class="ai-view" id="view-speaking-home" hidden>
       <div class="ai-mode-list">
         <button type="button" class="ai-mode" data-speak="mock">
-          <span class="ai-mode__badge">推荐</span>
-          <strong>机经模考</strong>
-          <span>全真考场计时 · 考官自动出声 · 说完点提交</span>
+          <span class="ai-mode__badge">đề xuất</span>
+          <strong>máy móc kinh điển bắt chước đánh</strong>
+          <span>tất cả thật phòng thi đo thời gian · giám khảo tự động phát ra âm thanh · thuyết phục hoàn thành điểm nộp</span>
         </button>
         <button type="button" class="ai-mode" data-speak="practice">
-          <strong>机经练习</strong>
-          <span>自选 Part 1 / Part 2 · 可重听、重录</span>
+          <strong>máy móc kinh điển luyện tập</strong>
+          <span>tự mình chọn Part 1 / Part 2 · có thể lãng tai, lặp lại khắc gỗ</span>
         </button>
         <button type="button" class="ai-mode" data-speak="tutor">
-          <strong>辅导聊天</strong>
-          <span>可打字讲解 · 麦克风可选</span>
+          <strong>hướng dẫn trò chuyện</strong>
+          <span>có thể đánh máy giải thích · microphone có sẵn</span>
         </button>
         <button type="button" class="ai-mode" data-speak="omni">
-          <strong>实时口语（Omni）</strong>
-          <span>麦克风直连千问 Omni · 考官/老师可切换</span>
+          <strong>thời gian thực lời nói thông thường(Omni)</strong>
+          <span>microphone kết nối trực tiếp đến một nghìn hỏi Omni · giám khảo/giáo viên có thể chuyển đổi</span>
         </button>
       </div>
-      <p class="ai-quota-line" id="quota-box">加载额度…</p>
+      <p class="ai-quota-line" id="quota-box">tải hạn ngạch...</p>
       <details class="ai-admin" id="admin-upload" hidden>
-        <summary>更新机经题库（管理员 / 老师）</summary>
+        <summary>thay cũ đổi mới máy móc kinh điển ngân hàng câu hỏi(người quản lý / giáo viên)</summary>
         <div class="ai-admin__body">
           <input type="file" id="jiijing-file" accept="application/pdf,.pdf">
-          <button type="button" class="btn btn--ghost btn--sm" id="btn-upload-jiijing">上传 PDF</button>
+          <button type="button" class="btn btn--ghost btn--sm" id="btn-upload-jiijing">Tải lên PDF</button>
           <p class="ai-admin__hint" id="upload-hint"></p>
         </div>
       </details>
@@ -105,49 +105,49 @@
 
     <!-- Speaking practice / tutor -->
     <section class="ai-view ai-room" id="view-speak-room" hidden>
-      <aside class="ai-room__side" aria-label="历史会话">
+      <aside class="ai-room__side" aria-label=" lịch sử hội thoại ">
         <div class="ai-room__side-head">
-          <strong id="side-title">会话</strong>
+          <strong id="side-title">hội thoại</strong>
         </div>
         <ul class="ai-room__sessions" id="session-list"></ul>
       </aside>
 
       <div class="ai-room__main">
         <div class="ai-room__bar">
-          <span class="ai-room__label" id="room-label">口语</span>
+          <span class="ai-room__label" id="room-label">Nói</span>
           <span class="ai-room__hint-inline" id="status-hint"></span>
         </div>
 
         <div class="ai-picker" id="topic-picker" hidden>
-          <div class="ai-picker__title" id="bank-title">机经题库</div>
+          <div class="ai-picker__title" id="bank-title">máy móc kinh điển ngân hàng câu hỏi</div>
           <div class="ai-picker__cols">
             <div>
-              <h3>Part 1（可多选）</h3>
+              <h3>Part 1(có thể nhiều chọn)</h3>
               <div class="ai-picker__list" id="part1-list"></div>
             </div>
             <div>
-              <h3>Part 2（单选，含 Part 3）</h3>
+              <h3>Part 2(hóa đơn chọn, ngậm trong miệng Part 3)</h3>
               <div class="ai-picker__list" id="part2-list"></div>
             </div>
           </div>
-          <button type="button" class="btn btn--primary" id="btn-start-practice">开始练习</button>
+          <button type="button" class="btn btn--primary" id="btn-start-practice">bắt đầu luyện tập</button>
         </div>
 
         <div class="ai-room__messages" id="messages" aria-live="polite"></div>
 
         <div class="ai-room__composer" id="composer">
           <div class="ai-practice-bar" id="practice-bar" hidden>
-            <button type="button" class="btn btn--ghost btn--sm" id="btn-replay">重听考官</button>
-            <button type="button" class="btn btn--ghost btn--sm" id="btn-rerecord" hidden>重新录制</button>
-            <button type="button" class="btn btn--primary btn--sm" id="btn-confirm-rec" hidden>确认发送</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="btn-replay">lãng tai giám khảo</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="btn-rerecord" hidden>lại ghi âm hoặc ghi hình</button>
+            <button type="button" class="btn btn--primary btn--sm" id="btn-confirm-rec" hidden>xác nhận truyền đi</button>
           </div>
           <div class="ai-room__input-row" id="input-row">
-            <textarea id="input" rows="2" placeholder="输入消息…" maxlength="8000"></textarea>
-            <button type="button" class="ai-mic" id="btn-mic" aria-pressed="false" title="点一下开始录音，再点结束">
+            <textarea id="input" rows="2" placeholder=" nhập khẩu tin tức..." maxlength="8000"></textarea>
+            <button type="button" class="ai-mic" id="btn-mic" aria-pressed="false" title=" điểm thử xem bắt đầu ghi âm, lại điểm chấm dứt ">
               <span class="ai-mic__icon" aria-hidden="true"></span>
-              <span class="ai-mic__label">录音</span>
+              <span class="ai-mic__label">Ghi âm</span>
             </button>
-            <button type="button" class="btn btn--primary" id="btn-send">发送</button>
+            <button type="button" class="btn btn--primary" id="btn-send">truyền đi</button>
           </div>
         </div>
       </div>
@@ -156,36 +156,36 @@
     <!-- Writing -->
     <section class="ai-view ai-write" id="view-writing" hidden>
       <ol class="ai-write__steps" aria-hidden="true">
-        <li class="is-on">选题</li>
-        <li>粘贴</li>
-        <li>批改</li>
+        <li class="is-on">chọn chủ đề</li>
+        <li>dán</li>
+        <li>Chấm bài</li>
       </ol>
       <div class="ai-write__select">
         <label>
-          <span>题型</span>
+          <span>chủ đề khuôn</span>
           <select id="w-task">
             <option value="task1">Task 1</option>
             <option value="task2">Task 2</option>
           </select>
         </label>
         <label class="ai-write__grow">
-          <span>题干</span>
+          <span>chủ đề biến thể cũ của |</span>
           <select id="w-prompt"></select>
         </label>
       </div>
       <pre class="ai-write__prompt" id="w-prompt-text"></pre>
       <label class="ai-write__chart" id="w-chart-wrap" hidden>
-        <span>Task 1 图表图片（可选，提升数据准确度）</span>
+        <span>Task 1 biểu đồ bức tranh(có sẵn, thăng chức dữ liệu chính xác vượt qua)</span>
         <input type="file" id="w-chart" accept="image/*">
       </label>
-      <label class="ai-write__essay-label" for="w-essay">作文</label>
-      <textarea id="w-essay" rows="14" maxlength="8000" placeholder="在此粘贴你的作文…"></textarea>
-      <p class="ai-write__disclaimer">评分仅为 AI 模拟训练分，非正式官方成绩。</p>
+      <label class="ai-write__essay-label" for="w-essay">viết bài văn</label>
+      <textarea id="w-essay" rows="14" maxlength="8000" placeholder=" tại đây dán bạn của viết bài văn..."></textarea>
+      <p class="ai-write__disclaimer">chấm điểm hầu như làm AI mô phỏng huấn luyện chia, không chính thức chính phủ thành tích </p>
       <div class="ai-write__meta">
-        <span id="w-wordcount">0 词</span>
-        <p class="ai-quota-line" id="quota-writing">加载额度…</p>
+        <span id="w-wordcount">0 Từ</span>
+        <p class="ai-quota-line" id="quota-writing">tải hạn ngạch...</p>
         <p class="ai-write__hint" id="w-hint"></p>
-        <button type="button" class="btn btn--primary" id="btn-grade">提交批改</button>
+        <button type="button" class="btn btn--primary" id="btn-grade">nộp chấm</button>
       </div>
       <div class="ai-write__result" id="w-result"></div>
     </section>
@@ -202,32 +202,32 @@
         <div><span>Total</span><strong id="exam-total">00:00</strong></div>
         <div id="exam-subwrap" hidden><span id="exam-sublabel">Prep</span><strong id="exam-sub">01:00</strong></div>
       </div>
-      <button type="button" class="btn btn--ghost btn--sm" id="btn-abandon">退出（未完成）</button>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-abandon">Đăng xuất(chưa hoàn thành)</button>
     </div>
     <div class="ai-exam__stage">
       <div class="ai-exam__cue" id="exam-cue" hidden></div>
-      <p class="ai-exam__status" id="exam-status">准备开始…</p>
+      <p class="ai-exam__status" id="exam-status">sự chuẩn bị bắt đầu...</p>
       <div class="ai-exam__viz" id="exam-viz" aria-hidden="true"></div>
     </div>
     <div class="ai-exam__bottom">
-      <button type="button" class="btn btn--primary" id="btn-exam-start">开始考试（解锁声音）</button>
-      <button type="button" class="btn btn--primary" id="btn-exam-submit" hidden>说完了 / 提交</button>
+      <button type="button" class="btn btn--primary" id="btn-exam-start">bắt đầu dự thi(mở khóa giọng)</button>
+      <button type="button" class="btn btn--primary" id="btn-exam-submit" hidden>thuyết phục hoàn thành / Nộp bài</button>
     </div>
   </div>
 
   <div class="ai-review" id="review-overlay" hidden>
     <div class="ai-review__panel">
-      <h2>模考回顾</h2>
+      <h2>bắt chước đánh nhìn lại</h2>
       <div id="review-score"></div>
       <div id="review-tips"></div>
       <div id="review-turns"></div>
-      <button type="button" class="btn btn--primary" id="btn-review-close">返回口语</button>
+      <button type="button" class="btn btn--primary" id="btn-review-close">trở về lời nói thông thường</button>
     </div>
   </div>
 
   <footer class="minimal-footer minimal-footer--rich" id="site-footer">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm YYSD
         <span class="site-icp" data-icp></span>
       </p>
     </div>

@@ -19,7 +19,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑5T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 5T2.docx")
 BAKELITE_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-03_09.05.19-ff5a4cdb-94d0-4194-9ea1-90fe4c1d4e40.png"
@@ -33,10 +33,10 @@ CHARTS_SRC = Path(
     "__2026-07-03_09.05.37-b53020d1-685e-486c-9e36-5d142a45ef25.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS5 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS5 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS5 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS5 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-5-test-2.html"
@@ -61,7 +61,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -93,12 +93,12 @@ def patch_reading_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 听力", "剑桥雅思5 Test 2 听力"),
-        ("剑桥雅思5 · Test 1（听力）", "剑桥雅思5 · Test 2（听力）"),
-        ("剑桥雅思5 Test 1 听力：", "剑桥雅思5 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
+        (" Cambridge IELTS 5 Test 1 Nghe hiểu ", " Cambridge IELTS 5 Test 2 Nghe hiểu "),
+        (" Cambridge IELTS 5 · Test 1(Nghe hiểu)", " Cambridge IELTS 5 · Test 2(Nghe hiểu)"),
+        (" Cambridge IELTS 5 Test 1 Nghe hiểu: ", " Cambridge IELTS 5 Test 2 Nghe hiểu: "),
+        ("Test 1 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts5_test1", "ielts5_test2"),
@@ -110,13 +110,13 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 阅读", "剑桥雅思5 Test 2 阅读"),
-        ("剑桥雅思5 · Test 1（阅读）", "剑桥雅思5 · Test 2（阅读）"),
-        ("剑桥雅思5 Test 1 学术类阅读", "剑桥雅思5 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
-        ("Johnson Dictionary、Nature or Nurture、The Truth about the Environment", "Bakelite、What's so funny?、The Birth of Scientific English"),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
+        (" Cambridge IELTS 5 Test 1 Đọc hiểu ", " Cambridge IELTS 5 Test 2 Đọc hiểu "),
+        (" Cambridge IELTS 5 · Test 1(Đọc hiểu)", " Cambridge IELTS 5 · Test 2(Đọc hiểu)"),
+        (" Cambridge IELTS 5 Test 1 Reading học thuật ", " Cambridge IELTS 5 Test 2 Reading học thuật "),
+        ("Test 1 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
+        ("Johnson Dictionary, Nature or Nurture, The Truth about the Environment", "Bakelite, What's so funny?, The Birth of Scientific English"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -127,18 +127,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 写作", "剑桥雅思5 Test 2 写作"),
-        ("剑桥雅思5 · Test 1（写作）", "剑桥雅思5 · Test 2（写作）"),
-        ("剑桥雅思5 Test 1 学术类写作", "剑桥雅思5 Test 2 学术类写作"),
+        (" Cambridge IELTS 5 Test 1 Viết ", " Cambridge IELTS 5 Test 2 Viết "),
+        (" Cambridge IELTS 5 · Test 1(Viết)", " Cambridge IELTS 5 · Test 2(Viết)"),
+        (" Cambridge IELTS 5 Test 1 Writing học thuật ", " Cambridge IELTS 5 Test 2 Writing học thuật "),
         (
             "Task 1 population 65+ graph + Task 2 equal male/female university places essay",
             "Task 1 study reasons/employer support charts + Task 2 gap year essay",
         ),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
+        (" Cambridge IELTS 5 · Test 1", " Cambridge IELTS 5 · Test 2"),
+        ("Test 1 Viết(Đề thi chính thức)", "Test 2 Viết(Đề thi chính thức)"),
         ("cambridge-10-test-1-writing-draft", "cambridge-5-test-2-writing-draft"),
-        ("【剑桥雅思5 · Test 1 写作】", "【剑桥雅思5 · Test 2 写作】"),
+        ("[Cambridge IELTS 5 · Test 1 Viết]", "[Cambridge IELTS 5 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("population-65", "study-charts"),
@@ -283,9 +283,9 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["C", "E", "F"],
                         "questions": [
-                            {"id": "L18", "no": 18, "explain": "答案：C、E、F，顺序不限。"},
-                            {"id": "L19", "no": 19, "explain": "答案：C、E、F，顺序不限。"},
-                            {"id": "L20", "no": 20, "explain": "答案：C、E、F，顺序不限。"},
+                            {"id": "L18", "no": 18, "explain": " Đáp án: C, E, F, Thứ tự tùy ý "},
+                            {"id": "L19", "no": 19, "explain": " Đáp án: C, E, F, Thứ tự tùy ý "},
+                            {"id": "L20", "no": 20, "explain": " Đáp án: C, E, F, Thứ tự tùy ý "},
                         ],
                     },
                 ],
@@ -302,7 +302,7 @@ def listening_test() -> dict:
                         "cols": ["", "Cristina", "Ibrahim"],
                         "rows": [
                             ["Enjoyed", "using the camera; going to a British <Q n=\"21\">", "contact with students doing other courses (has asked some to <Q n=\"22\"> with him)"],
-                            ["Most useful language practice", "listening to instructions; learning <Q n=\"23\"> vocabulary", "listening to British students' language — normal speed; large amount of <Q n=\"24\">"],
+                            ["Most useful language practice", "listening to instructions; learning <Q n=\"23\"> vocabulary", "listening to British students' language - normal speed; large amount of <Q n=\"24\">"],
                             ["General usefulness", "operating video camera; working with other people: learning about <Q n=\"25\">; compromising; <Q n=\"26\">; people who have different views", "the importance of <Q n=\"27\">"],
                             ["Things to do differently in future", "decide when to <Q n=\"28\"> each stage at the beginning; make more effort to <Q n=\"29\"> with the camera", "don't make the film too <Q n=\"30\">"],
                         ],
@@ -415,7 +415,7 @@ def reading_test() -> dict:
         {
             "kind": "multi",
             "title": "Questions 9 and 10",
-            "instruction": "Choose TWO letters, A–E. Which TWO of the following factors influencing the design of Bakelite objects are mentioned in the text? (顺序不限)",
+            "instruction": "Choose TWO letters, A–E. Which TWO of the following factors influencing the design of Bakelite objects are mentioned in the text? (Thứ tự tùy ý)",
             "box": {
                 "A": "the function which the object would serve",
                 "B": "the ease with which the resin could fill the mould",
@@ -425,8 +425,8 @@ def reading_test() -> dict:
             },
             "answerSet": ["B", "C"],
             "questions": [
-                {"id": "Q9", "no": 9, "explain": "答案：B 与 C，顺序不限。"},
-                {"id": "Q10", "no": 10, "explain": "答案：B 与 C，顺序不限。"},
+                {"id": "Q9", "no": 9, "explain": " Đáp án: B và C, Thứ tự tùy ý "},
+                {"id": "Q10", "no": 10, "explain": " Đáp án: B và C, Thứ tự tùy ý "},
             ],
         },
         {
@@ -463,9 +463,9 @@ def reading_test() -> dict:
             "instruction": "Label the diagram below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
             "image": "cambridge-5-test-2-brain-humour.png",
             "lines": [
-                {"plain": True, "html": "21 Right prefrontal cortex — area linked to <Q n=\"21\">"},
+                {"plain": True, "html": "21 Right prefrontal cortex - area linked to <Q n=\"21\">"},
                 {"plain": True, "html": "22 <Q n=\"22\"> become active too"},
-                {"plain": True, "html": "23 Orbital prefrontal cortex — involved with <Q n=\"23\">"},
+                {"plain": True, "html": "23 Orbital prefrontal cortex - involved with <Q n=\"23\">"},
             ],
             "questions": [
                 {"id": "Q21", "no": 21, "answer": ans("problem solving"), "explain": explain("problem solving")},
@@ -506,7 +506,7 @@ def reading_test() -> dict:
             "questions": [
                 {"id": "Q28", "no": 28, "answer": ans("Latin"), "explain": explain("Latin")},
                 {"id": "Q29", "no": 29, "answer": ans("doctors"), "explain": explain("doctors")},
-                # ponytail: either-order pair — both answers accepted on Q30/Q31
+                # ponytail: either-order pair - both answers accepted on Q30/Q31
                 {"id": "Q30", "no": 30, "answer": vocab_either, "explain": explain("technical vocabulary", "grammatical resources")},
                 {"id": "Q31", "no": 31, "answer": vocab_either, "explain": explain("technical vocabulary", "grammatical resources")},
                 {"id": "Q32", "no": 32, "answer": ans("Royal Society"), "explain": explain("Royal Society")},

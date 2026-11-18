@@ -1,4 +1,4 @@
-/* speaking-common.js — shared store, API, report modal for 雅思口语专项练习 */
+/* speaking-common.js - shared store, API, report modal for IELTS lời nói thông thường chuyên biệt luyện tập */
 window.YYSD_SPEAKING = (function () {
   "use strict";
 
@@ -12,8 +12,8 @@ window.YYSD_SPEAKING = (function () {
 
   function apiUnavailableMsg() {
     return (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-      ? "未连接 AI 服务，请运行 ./scripts/start-local-ai.sh 启动 API（端口 3000）"
-      : "AI 服务暂不可用，请稍后再试";
+      ? " chưa liên kết AI phục vụ, mời di chuyển trên quỹ đạo ./scripts/start-local-ai.sh khởi động API(giao diện 3000)"
+      : "AI phục vụ tạm thời không thể sử dụng, mời một lát nữa lại thử ";
   }
 
   function esc(s) {
@@ -75,7 +75,7 @@ window.YYSD_SPEAKING = (function () {
       done = true;
       if (onEnd) onEnd();
     }
-    // ponytail: Chrome often never fires onend without user gesture — always use timeout fallback
+    // ponytail: Chrome often never fires onend without user gesture - always use timeout fallback
     var maxMs = Math.min(15000, Math.max(4000, String(text || "").length * 70));
     var timer = setTimeout(function () {
       try { window.speechSynthesis.cancel(); } catch (e) {}
@@ -116,17 +116,17 @@ window.YYSD_SPEAKING = (function () {
 
   function mountAiBanner(el) {
     if (!el) return probeAi();
-    el.textContent = "正在连接 AI 服务…";
+    el.textContent = " đang ở liên kết AI phục vụ...";
     el.className = "spk-ai-banner spk-ai-banner--wait";
     return probeAi().then(function (r) {
       if (r.ok && r.ai) {
-        el.textContent = "✓ AI 已连接，练习中将自动调用智能评分";
+        el.textContent = "✓ AI đã liên kết, luyện tập trung tướng tự động điều chuyển thông minh chấm điểm ";
         el.className = "spk-ai-banner spk-ai-banner--ok";
       } else if (!API_BASE) {
         el.textContent = apiUnavailableMsg();
         el.className = "spk-ai-banner spk-ai-banner--err";
       } else {
-        el.textContent = "AI 连接失败，请检查网络后刷新页面";
+        el.textContent = "AI liên kết bị đánh bại, mời kiểm tra Internet hoàng hậu cải tiến trang ";
         el.className = "spk-ai-banner spk-ai-banner--err";
       }
       return r;
@@ -157,17 +157,17 @@ window.YYSD_SPEAKING = (function () {
       return r.text().then(function (text) {
         var d = null;
         try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("评分失败（" + r.status + "）— 请稍后重试");
+          throw new Error(" chấm điểm bị đánh bại(" + r.status + ")- mời một lát nữa thử lại ");
         }
-        if (r.status === 401) throw new Error("请先登录后再使用 AI 评分");
+        if (r.status === 401) throw new Error(" mời trước đăng ký hoàng hậu tái sử dụng AI chấm điểm ");
         if (!r.ok) {
-          var msg = (d && d.error) || ("评分失败（" + r.status + "）");
-          if (/上限|用完|额度/i.test(msg) && !/明日/.test(msg)) msg = msg.replace(/[。！!]?$/, "") + "，明日再来";
-          else if (/失败|稍后|502|503|解析/.test(msg)) msg = msg.replace(/[。！!]?$/, "") + " — 请稍后重试";
+          var msg = (d && d.error) || (" chấm điểm bị đánh bại(" + r.status + ")");
+          if (/giới hạn trên|dùng hết|hạn ngạch/i.test(msg) && !/ngày mai/.test(msg)) msg = msg.replace(/[ ! !]?$/, "") + ", ngày mai lại đến ";
+          else if (/Không thành công|một lát nữa|502|503|Giải thích/.test(msg)) msg = msg.replace(/[ ! !]?$/, "") + " - mời một lát nữa thử lại ";
           throw new Error(msg);
         }
         if (d.error) throw new Error(d.error);
-        if (!d.ok || !d.report) throw new Error("评分返回无效，请稍后重试");
+        if (!d.ok || !d.report) throw new Error(" chấm điểm trở về không hợp lệ, mời một lát nữa thử lại ");
         return d.report;
       });
     })
@@ -176,10 +176,10 @@ window.YYSD_SPEAKING = (function () {
 
   function criteriaLabel(key) {
     var map = {
-      fluencyAndCoherence: "流利度与连贯性",
-      lexicalResource: "词汇资源",
-      grammaticalRangeAndAccuracy: "语法与准确性",
-      pronunciation: "发音"
+      fluencyAndCoherence: " lưu loát vượt qua biến thể của | kết nối bản chất ",
+      lexicalResource: " biến thể của | huyện Tư Nguyên ở Quế Lâm ",
+      grammaticalRangeAndAccuracy: " ngữ pháp biến thể của | độ chính xác ",
+      pronunciation: " Phát âm "
     };
     return map[key] || key;
   }
@@ -195,7 +195,7 @@ window.YYSD_SPEAKING = (function () {
     var ds = rec.detailedScores || {};
     var critKeys = ["fluencyAndCoherence", "lexicalResource", "grammaticalRangeAndAccuracy", "pronunciation"];
     var critCards = critKeys.map(function (k) {
-      var v = ds[k] != null ? ds[k] : "—";
+      var v = ds[k] != null ? ds[k] : "-";
       return '<div class="spk-crit"><span class="spk-crit__label">' + esc(criteriaLabel(k)) + "</span>" +
         '<span class="spk-crit__score">' + esc(String(v)) + " / 9</span></div>";
     }).join("");
@@ -213,8 +213,8 @@ window.YYSD_SPEAKING = (function () {
     var qfb = (rec.questionFeedbacks || []).map(function (q, i) {
       return '<div class="spk-qfb">' +
         '<p class="spk-qfb__q"><b>Q' + (i + 1) + ".</b> " + esc(q.question) + "</p>" +
-        '<p class="spk-qfb__a"><span>你的回答</span> ' + esc(q.answer || "—") + "</p>" +
-        (q.fixed ? '<p class="spk-qfb__fix"><span>修正</span> ' + esc(q.fixed) + "</p>" : "") +
+        '<p class="spk-qfb__a"><span>bạn của trả lời</span> ' + esc(q.answer || "-") + "</p>" +
+        (q.fixed ? '<p class="spk-qfb__fix"><span>sửa đổi</span> ' + esc(q.fixed) + "</p>" : "") +
         (q.feedback ? '<p class="spk-qfb__fb">' + esc(q.feedback) + "</p>" : "") +
         "</div>";
     }).join("");
@@ -223,13 +223,13 @@ window.YYSD_SPEAKING = (function () {
       '<div class="spk-report__hero">' +
         '<div class="spk-report__band"><span class="spk-report__num">' + esc(String(rec.overallBand)) + '</span><span class="spk-report__of">/ 9.0</span></div>' +
         '<div class="spk-report__meta"><b>' + esc(bandLabel(rec.overallBand)) + "</b>" +
-          "<p>口语专项练习 · " + esc((rec.topics || []).join(" · ")) + "</p></div>" +
+          "<p>lời nói thông thường chuyên biệt luyện tập · " + esc((rec.topics || []).join(" · ")) + "</p></div>" +
       "</div>" +
       '<div class="spk-report__crits">' + critCards + "</div>" +
-      (strengths ? '<div class="spk-box spk-box--ok"><h4>表现亮点</h4><ul>' + strengths + "</ul></div>" : "") +
-      (weaknesses ? '<div class="spk-box spk-box--warn"><h4>改进方向</h4><ul>' + weaknesses + "</ul></div>" : "") +
-      (advice ? '<div class="spk-box spk-box--tip"><h4>学习建议</h4><ul>' + advice + "</ul></div>" : "") +
-      (qfb ? '<div class="spk-qfb-list"><h4>逐题反馈</h4>' + qfb + "</div>" : "") +
+      (strengths ? '<div class="spk-box spk-box--ok"><h4>thể hiện điểm nổi bật</h4><ul>' + strengths + "</ul></div>" : "") +
+      (weaknesses ? '<div class="spk-box spk-box--warn"><h4>cải thiện hướng</h4><ul>' + weaknesses + "</ul></div>" : "") +
+      (advice ? '<div class="spk-box spk-box--tip"><h4>học đề xuất</h4><ul>' + advice + "</ul></div>" : "") +
+      (qfb ? '<div class="spk-qfb-list"><h4>theo đuổi chủ đề gửi thông tin phản hồi</h4>' + qfb + "</div>" : "") +
       "</div>";
   }
 
@@ -238,7 +238,7 @@ window.YYSD_SPEAKING = (function () {
     overlay.className = "spk-modal-overlay";
     overlay.innerHTML =
       '<div class="spk-modal" role="dialog" aria-modal="true">' +
-        '<button type="button" class="spk-modal__close" aria-label="关闭">×</button>' +
+        '<button type="button" class="spk-modal__close" aria-label=" đóng ">×</button>' +
         renderReportHTML(rec) +
       "</div>";
     document.body.appendChild(overlay);

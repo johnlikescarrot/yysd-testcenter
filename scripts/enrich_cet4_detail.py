@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Compose CET-4 card 详解 (gaozhong-style) from gloss + helpers; keep acceptCN for list/quiz."""
+"""Compose CET-4 card giải thích chi tiết (gaozhong-style) from gloss + helpers; keep acceptCN for list/quiz."""
 from __future__ import annotations
 
 import json
@@ -16,14 +16,14 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from build_cet4_lists import render_html  # noqa: E402
 from draft_cet4_lists import accept_from_meaning  # noqa: E402
 
-GENERIC_MN = re.compile(r"结合词形与释义|待校对|Students should learn")
+GENERIC_MN = re.compile(r" kết hợp hình thức của từ biến thể của | nghĩa của cái gì đó|ở lại người hiệu đính|Students should learn")
 
 
 def looks_detailed(meaning: str) -> bool:
     s = str(meaning or "")
-    if len(s) >= 48 and ("①" in s or "常用" in s or "。常用" in s or "反义" in s or "派生" in s):
+    if len(s) >= 48 and ("①" in s or " Thường dùng " in s or " Thường dùng " in s or " Trái nghĩa " in s or " sản xuất " in s):
         return True
-    if len(s) >= 80 and ("；" in s or "。" in s):
+    if len(s) >= 80 and ("; " in s or " " in s):
         return True
     return False
 
@@ -36,10 +36,10 @@ def as_phrase_str(w: dict) -> str:
             if isinstance(c, dict):
                 ph = (c.get("phrase") or "").strip()
                 me = (c.get("meaning") or "").strip()
-                parts.append(f"{ph}（{me}）" if ph and me else ph)
+                parts.append(f"{ph}({me})" if ph and me else ph)
             else:
                 parts.append(str(c).strip())
-        return "，".join(p for p in parts if p)
+        return ", ".join(p for p in parts if p)
     return str(coll or "").strip()
 
 
@@ -48,7 +48,7 @@ def compose_detail(w: dict) -> str:
     if looks_detailed(gloss):
         return gloss
     # strip prior composed markers if re-run
-    gloss = re.split(r"。常用 |。派生：|。辨：", gloss)[0].strip("。；; ")
+    gloss = re.split(r" Thường dùng | sản xuất: | phân biệt: ", gloss)[0].strip(" ; ; ")
     pos = str(w.get("pos") or "").strip()
     phrases = as_phrase_str(w)
     distinguish = str(w.get("distinguish") or "").strip()
@@ -60,29 +60,29 @@ def compose_detail(w: dict) -> str:
     core = gloss
     if pos and core and not re.match(rf"^{re.escape(pos)}\b", core):
         core = f"{pos} {core}"
-    if core and not core.endswith(("。", ".", "！", "?")):
-        core += "。"
+    if core and not core.endswith((" ", ".", "! ", "?")):
+        core += " "
     parts = [core] if core else []
     if phrases:
-        parts.append(f"常用 {phrases}。")
+        parts.append(f" Thường dùng {phrases} ")
     if distinguish:
-        parts.append(distinguish if distinguish.endswith(("。", ".", "！")) else distinguish + "。")
+        parts.append(distinguish if distinguish.endswith((" ", ".", "! ")) else distinguish + " ")
     if derivatives:
-        parts.append(f"派生：{derivatives}。")
+        parts.append(f" sản xuất: {derivatives} ")
     if mnemonic:
-        # card also shows root=mnemonic; keep a short recall tip in 详解
+        # card also shows root=mnemonic; keep a short recall tip in giải thích chi tiết
         tip = mnemonic
-        if tip.startswith("联想：") or tip.startswith("拆分："):
-            parts.append(tip if tip.endswith("。") else tip + "。")
+        if tip.startswith(" Liên tưởng: ") or tip.startswith(" tách ra thành từng phần: "):
+            parts.append(tip if tip.endswith(" ") else tip + " ")
     out = "".join(parts).strip()
-    return out or gloss or f"（待校对）{w.get('word') or ''}"
+    return out or gloss or f"(ở lại người hiệu đính){w.get('word') or ''}"
 
 
 def enrich_word(w: dict) -> dict:
     out = dict(w)
     gloss = str(out.get("meaning") or "").strip()
     # acceptCN from short gloss before we expand meaning
-    short = re.split(r"。常用 |。派生：|。辨：", gloss)[0].strip()
+    short = re.split(r" Thường dùng | sản xuất: | phân biệt: ", gloss)[0].strip()
     if not out.get("acceptCN"):
         out["acceptCN"] = accept_from_meaning(short or gloss)
     out["meaning"] = compose_detail(out)
@@ -95,7 +95,7 @@ def enrich_word(w: dict) -> dict:
     ex_cn = str(out.get("exampleCN") or out.get("exampleZh") or "").strip()
     if not ex_en:
         ex = str(out.get("example") or "")
-        m = re.match(r"^(.+?)[（(](.+)[）)]\s*$", ex)
+        m = re.match(r"^(.+?)[((](.+)[))]\s*$", ex)
         if m:
             ex_en, ex_cn = m.group(1).strip(), m.group(2).strip()
     if ex_en:
@@ -105,17 +105,17 @@ def enrich_word(w: dict) -> dict:
         out["exampleCN"] = ex_cn
         out["exampleZh"] = ex_cn
     if ex_en and ex_cn:
-        out["example"] = f"{ex_en}（{ex_cn}）"
+        out["example"] = f"{ex_en}({ex_cn})"
     mn = str(out.get("mnemonic") or "").strip()
     if mn and not GENERIC_MN.search(mn) and not out.get("root"):
         out["root"] = mn
     if not out.get("examTag"):
         usage = (out.get("acceptCN") or [None])[0] or short[:8]
         out["examTag"] = {
-            "source": "大学英语四级",
+            "source": " CET-4 (tiếng Anh đại học) ",
             "frequency": 4,
             "commonUsage": usage,
-            "topic": "通用",
+            "topic": " Dùng chung ",
         }
     return out
 
@@ -136,9 +136,9 @@ def main() -> int:
                 1,
             )
         html = html.replace("const wordData = [", "var wordData = [", 1)
-        # emit root/examTag/exampleEn for shelf parity (via extra keys in word_js — patch after render)
+        # emit root/examTag/exampleEn for shelf parity (via extra keys in word_js - patch after render)
         # ponytail: inject into wordData by re-render with extended word_js below if needed
-        (HTML_DIR / f"四级单词LIST{n}.html").write_text(html, encoding="utf-8")
+        (HTML_DIR / f" cấp 4 từ LIST{n}.html").write_text(html, encoding="utf-8")
         sample = meta["words"][0]
         print(f"LIST{n}: meaning_len={len(sample['meaning'])} accept={sample.get('acceptCN')}")
     return 0

@@ -52,7 +52,7 @@ def ocr(path):
 def letters_from_ocr(text):
     hits = []
     for line in text.splitlines():
-        m = re.search(r"(?:Correct\s*Answer|正确答案)\s*[:：]?\s*([A-D])\b", line, re.I)
+        m = re.search(r"(?:Correct\s*Answer|Đáp án đúng)\s*[:: ]?\s*([A-D])\b", line, re.I)
         if m:
             hits.append(m.group(1).upper())
             continue
@@ -108,12 +108,12 @@ def official_audio(set_n, kind, n):
     if not d:
         return None
     names = {
-        "CR": "LR-%02d-音频.mp3" % n,
-        "C": "C-%02d-音频.mp3" % n,
-        "A": "A-%02d-音频.mp3" % n,
-        "AT": "AT-%02d-音频.mp3" % n,
-        "S-LR": "LNR-01-音频.mp3",
-        "S-IV": "INT-01-音频.mp3",
+        "CR": "LR-%02d-Âm thanh.mp3" % n,
+        "C": "C-%02d-Âm thanh.mp3" % n,
+        "A": "A-%02d-Âm thanh.mp3" % n,
+        "AT": "AT-%02d-Âm thanh.mp3" % n,
+        "S-LR": "LNR-01-Âm thanh.mp3",
+        "S-IV": "INT-01-Âm thanh.mp3",
     }
     p = os.path.join(d, names[kind])
     return p if os.path.exists(p) else None
@@ -137,10 +137,10 @@ def main():
                 continue
 
             official_ans = sorted(
-                f for f in os.listdir(odir) if f.endswith("答案.png")
+                f for f in os.listdir(odir) if f.endswith(" Đáp án.png")
             )
             official_q = sorted(
-                f for f in os.listdir(odir) if f.endswith("题目.png")
+                f for f in os.listdir(odir) if f.endswith(" Câu hỏi.png")
             )
             official_mp3 = sorted(
                 f for f in os.listdir(odir) if f.endswith(".mp3")
@@ -183,9 +183,9 @@ def main():
             if skill == "listening":
                 cr = [t for t in tasks if t.get("type") == "choose_response"]
                 for i, t in enumerate(cr, 1):
-                    png = os.path.join(odir, "LR-%02d-答案.png" % i)
+                    png = os.path.join(odir, "LR-%02d-Đáp án.png" % i)
                     if not os.path.exists(png):
-                        errs.append("set%d missing official LR-%02d-答案.png" % (n, i))
+                        errs.append("set%d missing official LR-%02d-Đáp án.png" % (n, i))
                         continue
                     text = ocr(png)
                     keys = letters_from_ocr(text)
@@ -206,7 +206,7 @@ def main():
                             notes.append("set%d LR%02d option-A wording drift official~%r" % (n, i, first_opt[:60]))
 
                 lec = [t for t in tasks if t.get("type") == "lecture"]
-                png = os.path.join(odir, "AT-01-答案.png")
+                png = os.path.join(odir, "AT-01-Đáp án.png")
                 if lec and os.path.exists(png):
                     text = ocr(png)
                     title_line = ""
@@ -232,7 +232,7 @@ def main():
 
             if skill == "reading":
                 daily = [t for t in tasks if t.get("type") == "daily_life"]
-                png = os.path.join(odir, "RDL-01-答案.png")
+                png = os.path.join(odir, "RDL-01-Đáp án.png")
                 if daily and os.path.exists(png):
                     text = ocr(png)
                     keys = letters_from_ocr(text)
@@ -240,7 +240,7 @@ def main():
                     if keys and ours and keys[: len(ours)] != ours[: len(keys)]:
                         errs.append("set%d daily keys official=%s ours=%s" % (n, keys, ours))
                 acad = [t for t in tasks if t.get("type") == "academic"]
-                png = os.path.join(odir, "RAP-01-答案.png")
+                png = os.path.join(odir, "RAP-01-Đáp án.png")
                 if acad and os.path.exists(png):
                     text = ocr(png)
                     keys = letters_from_ocr(text)

@@ -1,4 +1,4 @@
-/* page-transit.js — tiered motion: light hub hops, scene for exam/auth */
+/* page-transit.js - tiered motion: light hub hops, scene for exam/auth */
 (function () {
   "use strict";
 

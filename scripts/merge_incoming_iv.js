@@ -30,7 +30,7 @@ function mergeOne(n) {
       speakSec: t.speakSec != null ? t.speakSec : 45,
       sample: t.sample != null ? t.sample : t.stem,
       title: t.title || ("INT " + n),
-      titleZh: t.titleZh || "面试问答",
+      titleZh: t.titleZh || " Hỏi đáp phỏng vấn ",
       analysis: t.analysis || ""
     });
   }));

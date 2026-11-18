@@ -1,8 +1,8 @@
-# A-Level 真题库
+# A-Level câu hỏi từ đề thi các năm trước nhà kho
 
-三大考试局：**CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
+ba kỳ thi cuối kỳ thử hẹp: **CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
 
-目录结构：
+mục lục cấu trúc: 
 
 ```
 library/mock/alevel/
@@ -11,15 +11,15 @@ library/mock/alevel/
   oxford-aqa/7367-mathematics/papers/
 ```
 
-PDF 命名：`{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
+PDF đặt tên: `{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
 
-- CAIE 示例：`9709_s24_qp_12.pdf`
-- Edexcel 示例：`9MA0_s24_qp_01.pdf`
-- Oxford AQA 示例：`7367_w23_ms_02.pdf`
+- CAIE minh họa: `9709_s24_qp_12.pdf`
+- Edexcel minh họa: `9MA0_s24_qp_01.pdf`
+- Oxford AQA minh họa: `7367_w23_ms_02.pdf`
 
 ```bash
-python3 scripts/seed_alevel_demo.py      # 可选 demo
-python3 scripts/build_alevel_catalog.py  # 更新 catalog
+python3 scripts/seed_alevel_demo.py      # có sẵn demo
+python3 scripts/build_alevel_catalog.py  # thay cũ đổi mới catalog
 ```
 
-科目清单见 `scripts/alevel_subjects.py`。
+môn học danh sách mục thấy `scripts/alevel_subjects.py` 

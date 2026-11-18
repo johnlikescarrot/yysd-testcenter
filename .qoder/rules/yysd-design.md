@@ -2,50 +2,50 @@
 trigger: always_on
 ---
 
-# YYSD 前端质感
+# YYSD phía trước chủ nghĩa hiện thực
 
-目标不是仿 iOS，而是：**内容像纸，壳像玻璃，交互像物理；考场保持官方工具感。**
+mục tiêu không phải bắt chước iOS, mà là: **nội dung giống biến thể của |, biến thể của | giống thủy tinh, lẫn nhau giống vật lý; phòng thi giữ chính phủ công cụ cảm thấy **
 
-完整条文见仓库根目录 `YYSD-DESIGN-RULES.md`。冲突时以该文件为准。
+hoàn chỉnh điều khoản thấy kho hàng rễ mục lục `YYSD-DESIGN-RULES.md` xung đột biến thể cũ của | biến thể cũ của nên tài liệu làm chuẩn 
 
-## 三层人格（勿混用）
+## ba chồng lên nhau nhân cách(đừng bùn sử dụng)
 
-| 层 | 性格 | 范围 |
+| chồng lên nhau | bản chất | Phạm vi |
 | --- | --- | --- |
-| **内容** | 象牙纸、沉静、可读 | 真题、单词、报告、Hub 正文 |
-| **壳** | 轻霜化、浮在内容上 | 顶栏、底栏、Drawer、确认 / Sheet |
-| **考场** | 功利、可信、少装饰 | CDT 及防切屏 — 不要苹果化 |
+| **nội dung** | ngà voi biến thể của |, bình yên, thú vị để đọc | Đề thi thật, Từ vựng, Báo cáo, Hub văn bản chính |
+| **biến thể của |** | nhẹ sương giá biến thể của, nổi trong đó chứa dùng trong | | đỉnh hàng rào, nền tảng hàng rào, Drawer, Xác nhận / Sheet |
+| **phòng thi** | tính hữu dụng, đáng tin cậy, ít trang trí | CDT và bảo vệ cắt xem | - đừng! quả táo biến thể của |
 
-新 UI 先问：这是内容、壳，还是考场？
+viết tắt của Tân Cương UI trước hỏi: này là nội dung, biến thể của |, vẫn phòng thi? 
 
-## 材料（只许两种）
+## Tài liệu(chỉ cho phép hai hạt)
 
-1. Paper — `#f6f3ec` / `#fffcf7` + 极轻纸纹。承载阅读。
-2. Chrome — 半透明 + `blur(20px) saturate(180%)` + 亮边高光。承载导航与决策。
+1. Paper - `#f6f3ec` / `#fffcf7` + cực kỳ nhẹ biến thể của | đường chịu tải đọc 
+2. Chrome - mờ mờ + `blur(20px) saturate(180%)` + sáng bên cao ánh sáng chịu tải điều hướng biến thể của | quyết định chiến lược 
 
-禁止第三种材料（紫渐变、重投影装饰卡、到处玻璃）。
+cấm thu ba hạt liệu(màu tím thay đổi dần dần, lặp lại chiếu trang trí dừng, khắp nơi thủy tinh) 
 
-## 交互物理
+## lẫn nhau vật lý
 
-- 按压即时：反馈在 pointer-down（约 100ms），不是等 click。
-- 同路径进出：右进右出、底进底出；用 `YYSD_SURFACE`，禁止硬切 `hidden`。
-- 空间锚定：面板从触发源展开。
-- 默认可打断：过渡中允许反向意图。
-- 决策用品牌 Sheet：`YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`。
-- Hover 特效仅限 `@media (hover: hover)`。触控只保留 `:active`。
+- nhấn ngay lập tức: gửi thông tin phản hồi tồn tại pointer-down(cân trong cân đĩa hoặc trên cân 100ms), không phải đợi click 
+- đi cùng đường đường mòn ra vào: bên phải tiến lên bên phải đi ra, nền tảng tiến lên nền tảng đi ra; sử dụng `YYSD_SURFACE`, cấm cứng cắt `hidden` 
+- không gian mỏ neo cố định: bảng điều khiển biến thể của | kích hoạt gốc mở ra 
+- đồng ý ngầm có thể gián đoạn: chèo qua Trung Quốc cho phép hướng ngược ý định 
+- quyết định chiến lược đồ dùng quân mạt chược Sheet: `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK` 
+- Hover hiệu quả đặc biệt hầu như giới hạn `@media (hover: hover)` chạm kiểm soát chỉ giữ `:active` 
 
-## 实现锚点
+## đạt được mỏ neo điểm
 
-- Token：`assets/css/style.css` `:root`
-- 表面：`assets/js/ui.js`
-- 分页转场：`assets/js/page-transit.js`
-- 自检：`node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
+- Token: `assets/css/style.css` `:root`
+- bề mặt: `assets/js/ui.js`
+- chèn ngắt trang xem | sân phơi: `assets/js/page-transit.js`
+- tự kiềm chế: `node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
 
-## 不做
+## không làm
 
-- CDT 按钮 / void lock 加 bounce 或毛玻璃
-- 全站上 spring 动画库
-- 无动量场景的 overshoot
-- 叠两层浅半透明
-- 为炫技加的整页 blur
-- 第二套视觉系统或第二套播放器
+- CDT nút bấm / void lock Canada bounce có thể kính mờ
+- tất cả trạm dùng trong | spring hoạt hình nhà kho
+- không có động lượng cảnh của overshoot
+- biến thể của | hai chồng lên nhau âm thanh nước chảy mờ mờ
+- làm phô diễn kỹ năng Canada của toàn bộ đầu blur
+- thứ hai che đậy thị giác hệ thống có thể thứ hai che đậy phát sóng thiết bị

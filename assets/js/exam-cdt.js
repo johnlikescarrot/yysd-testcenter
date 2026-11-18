@@ -1,5 +1,5 @@
 /* =========================================================================
-   exam-cdt.js — IELTS CDT chrome (exam.html?cdt=1)
+   exam-cdt.js - IELTS CDT chrome (exam.html?cdt=1)
    B1: one shell, pack=drill|exam; suite=1 hops L→R→W
    ponytail: footer nav is visual + best-effort iframe focus; deep paper sync later
    ========================================================================= */
@@ -37,7 +37,7 @@
 
   var LISTEN_REVIEW_SECS = 120;
 
-  /** Pure hop matrix — also used by ?cdtCheck=1 self-check */
+  /** Pure hop matrix - also used by ?cdtCheck=1 self-check */
   function resolveAfterSubmit(pack, suite, item) {
     if (pack === "drill") return { action: "review" };
     if (suite) {
@@ -271,11 +271,11 @@
     var lead = $("cdt-gate-sections-lead");
     var lab = $("cdt-gate-sec-label");
     if (isReading(state.item)) {
-      if (lead) lead.textContent = "适合分项突破，可只练某几篇文章；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习文章：";
+      if (lead) lead.textContent = " phù hợp mục phụ đột phá, có thể chỉ luyện tập một vài bàn nhỏ tờ bài viết; hướng về phía trước đo thời gian không tác động thêm áp lực ";
+      if (lab) lab.textContent = " chọn luyện tập bài viết: ";
     } else {
-      if (lead) lead.textContent = "适合分项突破，可只练某几个部分；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习部分：";
+      if (lead) lead.textContent = " phù hợp mục phụ đột phá, có thể chỉ luyện tập một vài một vài phần; hướng về phía trước đo thời gian không tác động thêm áp lực ";
+      if (lab) lab.textContent = " chọn luyện tập phần: ";
     }
     host.innerHTML = parts.map(function (p) {
       var on = !prefer || prefer === p.id;
@@ -295,7 +295,7 @@
     for (var i = 0; i < boxes.length; i++) {
       if (!boxes[i].checked) { allOn = false; break; }
     }
-    btn.textContent = allOn ? "取消全选" : "全选";
+    btn.textContent = allOn ? " Bỏ chọn tất cả " : " tất cả chọn ";
   }
 
   function selectedGateSections() {
@@ -471,7 +471,7 @@
       gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.55);
       osc.start(t0);
       osc.stop(t0 + 0.6);
-    } catch (e) { /* ponytail: no WebAudio — skip */ }
+    } catch (e) { /* ponytail: no WebAudio - skip */ }
   }
 
   function listeningPaperCss() {
@@ -774,7 +774,7 @@
       try { host.scrollIntoView({ block: "nearest" }); } catch (e) { /* ignore */ }
       return;
     }
-    // reset first — leftover scrollTop + stale rects overshoot past the target
+    // reset first - leftover scrollTop + stale rects overshoot past the target
     pane.scrollTop = 0;
     var delta =
       host.getBoundingClientRect().top -
@@ -832,7 +832,7 @@
 
   function autoplayListening() {
     if (!isListening(state.item)) return;
-    // must stay on Start-test user gesture — setTimeout loses autoplay permission
+    // must stay on Start-test user gesture - setTimeout loses autoplay permission
     try {
       var win = state.frame && state.frame.contentWindow;
       if (!win) return;
@@ -853,7 +853,7 @@
     var badges = doc.querySelectorAll(".qnum-badge");
     for (var i = 0; i < badges.length; i++) {
       if (String(badges[i].textContent || "").trim() !== String(n)) continue;
-      // ponytail: no bare `div` — .qtext wins over .mcq and misses radios
+      // ponytail: no bare `div` - .qtext wins over .mcq and misses radios
       var root = badges[i].closest(".mcq, .match-q, td, tr, .fill-row, .qgroup");
       if (!root) continue;
       var text = root.querySelector("input[type='text'], select");
@@ -973,7 +973,7 @@
     try {
       var win = state.frame && state.frame.contentWindow;
       if (!win || typeof win.startTest !== "function") return false;
-      // pack may be chosen after bridge inject — sync before startTest
+      // pack may be chosen after bridge inject - sync before startTest
       try {
         var bridge = state.frame.contentDocument &&
           state.frame.contentDocument.getElementById("yysd-exam-bridge-js");
@@ -1255,7 +1255,7 @@
     if (!el) return;
     if (on) {
       el.removeAttribute("hidden");
-      // ponytail: parent masks steal iframe focus — pause void while dialog open
+      // ponytail: parent masks steal iframe focus - pause void while dialog open
       try {
         if (window.YYSD_EXAM && typeof YYSD_EXAM.pauseVoid === "function") {
           YYSD_EXAM.pauseVoid(15000);
@@ -1271,7 +1271,7 @@
 
   function showSubmitLoading(msg) {
     var text = $("cdt-submit-loading-text");
-    if (text) text.textContent = msg || "正在加载成绩报告…";
+    if (text) text.textContent = msg || " đang ở tải thành tích thông báo...";
     showMask("cdt-submit-loading", true);
   }
 
@@ -1280,10 +1280,10 @@
   }
 
   function submitLoadingMsg(plan) {
-    if (!plan) return "正在加载成绩报告…";
-    if (plan.action === "hop") return "正在进入下一科…";
-    if (plan.action === "report") return "正在加载成绩报告…";
-    return "正在生成成绩单…";
+    if (!plan) return " đang ở tải thành tích thông báo...";
+    if (plan.action === "hop") return " đang ở đi vào xuống một ngành học...";
+    if (plan.action === "report") return " đang ở tải thành tích thông báo...";
+    return " đang ở tạo ra phiếu điểm hoặc bảng điểm...";
   }
 
   function updateTimer(seconds) {
@@ -1293,7 +1293,7 @@
       el.textContent = "0 minutes left";
       el.classList.add("is-danger");
       el.classList.remove("is-flash", "is-low");
-      // ponytail: parent clock owns after-submit — don't leave student stuck on timed-out section
+      // ponytail: parent clock owns after-submit - don't leave student stuck on timed-out section
       if (state.started && !state.timeUpHop) {
         state.timeUpHop = true;
         setTimeout(function () { hopAfterSubmit(); }, 600);
@@ -1357,7 +1357,7 @@
     } catch (e) { /* ignore */ }
   }
 
-  /** This page-load only — never treat prior localStorage scores as "already submitted" */
+  /** This page-load only - never treat prior localStorage scores as "already submitted" */
   function isExplainMode() {
     try {
       var q = new URLSearchParams(location.search);
@@ -1382,13 +1382,13 @@
       window.removeEventListener("message", onScore);
       done();
     }
-    // ponytail: time-up / double Finish — paper won't re-post yysd:score
+    // ponytail: time-up / double Finish - paper won't re-post yysd:score
     if (alreadyScoredThisPaper()) {
       finish();
       return;
     }
     function afterScoreSynced() {
-      // ponytail: exam.js registers first — its push already started when we see yysd:score
+      // ponytail: exam.js registers first - its push already started when we see yysd:score
       var wait = (window.YYSD_EXAM && typeof YYSD_EXAM.waitScorePush === "function")
         ? YYSD_EXAM.waitScorePush(8000)
         : Promise.resolve(false);
@@ -1405,20 +1405,20 @@
     try {
       var win = state.frame && state.frame.contentWindow;
       if (!win) { finish(); return; }
-      // ponytail: CDT already confirmed — skip paper's second Chinese confirm
+      // ponytail: CDT already confirmed - skip paper's second Chinese confirm
       if (typeof win.submitTest === "function") win.submitTest();
       else if (typeof win.finishTest === "function") win.finishTest();
       else if (typeof win.confirmFinish === "function") win.confirmFinish();
       else if (typeof win.confirmSubmit === "function") win.confirmSubmit();
       else win.postMessage({ type: "yysd:time-up" }, "*");
     } catch (e) { /* ignore */ }
-    // ponytail: 详解不发 yysd:score — Finish 只出批改
+    // ponytail: giải thích chi tiết không gửi đi yysd:score - Finish chỉ đi ra chấm
     if (isExplainMode()) {
       state.scoredThisSession = true;
       setTimeout(finish, 300);
       return;
     }
-    // ponytail: longer fallback if paper never posts score — still hop so student isn't stuck
+    // ponytail: longer fallback if paper never posts score - still hop so student isn't stuck
     setTimeout(finish, 12000);
   }
 
@@ -1431,7 +1431,7 @@
   }
 
   function reviewCssHref() {
-    // iframe base is /library/... — must be origin-absolute, not relative
+    // iframe base is /library/... - must be origin-absolute, not relative
     try {
       return location.origin + "/assets/css/cdt-review.css?v=20260801rev1";
     } catch (e) {
@@ -1454,7 +1454,7 @@
       style.id = "yysd-cdt-review-css";
       doc.head.appendChild(style);
     }
-    // display toggles only — look-and-feel lives in cdt-review.css
+    // display toggles only - look-and-feel lives in cdt-review.css
     style.textContent =
       (unlockAudio
         ? "body.yysd-cdt-review #testArea{display:block!important}" +
@@ -1478,9 +1478,9 @@
         el = nodes[i];
         if (el.children && el.children.length) continue;
         t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/批改报告|写作完成/.test(t)) {
+        if (/chấm thông báo|viết hoàn thành/.test(t)) {
           el.className = "yysd-res-eyebrow";
-          el.textContent = /写作/.test(t) ? "Writing report" : "Practice result";
+          el.textContent = /Viết/.test(t) ? "Writing report" : "Practice result";
           break;
         }
       }
@@ -1513,7 +1513,7 @@
       var doc = state.frame && state.frame.contentDocument;
       if (!doc) return;
       // ponytail: exam skin uses body.yysd-cdt-* #resultArea{display:none!important}
-      // which beats plain #resultArea{display:block!important} — drop skin classes first
+      // which beats plain #resultArea{display:block!important} - drop skin classes first
       if (doc.body) {
         doc.body.classList.remove("yysd-cdt-reading", "yysd-cdt-listening", "yysd-cdt-writing");
         doc.body.classList.add("yysd-cdt-review");
@@ -1527,7 +1527,7 @@
       if (ra) {
         try { ra.style.setProperty("display", "block", "important"); } catch (e0) { ra.style.display = "block"; }
         polishResultDom(doc);
-        // detail rows may paint a tick later via MutationObserver in papers — re-polish once
+        // detail rows may paint a tick later via MutationObserver in papers - re-polish once
         try {
           var mo = new MutationObserver(function () { polishResultDom(doc); });
           mo.observe(ra, { childList: true, subtree: true });
@@ -1544,12 +1544,12 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? "详解批改如下，不计入成绩。"
+        ? " giải thích chi tiết chấm như sau, không quan tâm đi vào thành tích "
         : (state.pack === "drill"
           ? (isListening(state.item)
-            ? "练习已交卷 · 成绩单与解析如下；可用顶部播放器回放听力。"
-            : "练习已交卷 · 成绩单与解析如下。")
-          : "模考已交卷 · 下方为本次作答与解析。");
+            ? " luyện tập đã nộp bài thi · phiếu điểm hoặc bảng điểm biến thể của | phân tích như sau; có thể sử dụng mái phát sóng thiết bị phát lại thính giác "
+            : " luyện tập đã nộp bài thi · phiếu điểm hoặc bảng điểm biến thể của | phân tích như sau ")
+          : " bắt chước đánh đã nộp bài thi · bên dưới làm gốc tiếp theo trả lời biến thể của | phân tích ");
     }
   }
 
@@ -1866,7 +1866,7 @@
     LISTEN_REVIEW_SECS: LISTEN_REVIEW_SECS
   };
 
-  // ponytail: B1/B5 — open exam.html?cdtCheck=1 to verify hop matrix + chrome presence
+  // ponytail: B1/B5 - open exam.html?cdtCheck=1 to verify hop matrix + chrome presence
   if (/(?:^|[?&])cdtCheck=1(?:&|$)/.test(location.search)) {
     var fake = { id: "cambridge-20-test-1", subject: "cambridge-listening" };
     var cases = [

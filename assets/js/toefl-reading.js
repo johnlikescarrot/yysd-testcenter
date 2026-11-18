@@ -1,4 +1,4 @@
-/* TOEFL reading — scorer + render. Shared by toefl-reading.html */
+/* TOEFL reading - scorer + render. Shared by toefl-reading.html */
 (function (w) {
   "use strict";
 
@@ -85,7 +85,7 @@
     return Math.round(score / total * 30);
   }
 
-  // ponytail: ETS 不公开原始分表；用官网 0–30 → 1–6 对照，标预估
+  // ponytail: ETS bất công Khai Nguyên bắt đầu chia bề mặt bên ngoài; sử dụng trang web chính thức 0–30 → 1–6 đối chiếu, đánh dấu ước tính
   function bandFrom30(n) {
     if (n >= 29) return 6;
     if (n >= 27) return 5.5;
@@ -126,7 +126,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || "(Chưa trả lời)",
           ans: ans,
           stem: stem,
           explain: explain
@@ -204,7 +204,7 @@
       pre.className = "blank-pre";
       pre.textContent = part.prefix || "";
       wrap.appendChild(pre);
-      // 一个空 = 一个 input；「一字母一横线」由底纹画出，宽度 = n × 1.3ch
+      // một dùng trong | trống không = một dùng trong | input; «thành hàng mẹ một đường ngang»theo nền tảng đường vẽ đi ra, bề rộng = n × 1.3ch
       var inp = document.createElement("input");
       inp.type = "text";
       inp.maxLength = n;
@@ -416,7 +416,7 @@
 
   function renderPassage(task, host, showInsert, q) {
     var word = vocabWord(q);
-    // ponytail: kl SRDL/LRDL daily 阅读题面是整图，无 paras；直接铺图
+    // ponytail: kl SRDL/LRDL daily đọc chủ đề mặt là toàn bộ sơ đồ, không có paras; trực tiếp biến thể của | sơ đồ
     if (task.image) {
       host.innerHTML = '<img class="passage-img" src="' + esc(task.image) + '" alt="">';
       return;

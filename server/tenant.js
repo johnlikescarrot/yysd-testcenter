@@ -6,7 +6,7 @@ var RESERVED_SLUGS = {
   www: 1, api: 1, admin: 1, platform: 1, mail: 1, static: 1, cdn: 1, test: 1, dev: 1, staging: 1, app: 1, tiku: 1, jingting: 1
 };
 var DEFAULT_SLUG = "yysd";
-var DEFAULT_NAME = "优益思达";
+var DEFAULT_NAME = " YYSD ";
 
 function normalizeSlug(raw) {
   var s = String(raw || "").toLowerCase().trim();

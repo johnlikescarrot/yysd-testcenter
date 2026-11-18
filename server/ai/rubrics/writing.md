@@ -2,14 +2,14 @@
 
 Use these descriptors. Cite student evidence for each criterion. Do not invent chart data.
 
-## Task 1 — Task Achievement
+## Task 1 - Task Achievement
 - 5: partially addresses; limited/no clear overview; key features missing or inaccurate
 - 6: addresses requirements; overview present; main features selected but may be mechanical; some inaccuracy
 - 7: covers requirements; clear overview; key features clearly presented; occasional under/over-generalisation
 - 8: covers all requirements sufficiently; well-selected features; accurate detail
 - 9: fully satisfies; insightful overview; features fully extended
 
-## Task 2 — Task Response
+## Task 2 - Task Response
 - 5: partially addresses; unclear/repetitive position; limited ideas
 - 6: addresses all parts unevenly; relevant position; ideas relevant but unevenly developed
 - 7: addresses all parts; clear position; ideas extended/supported with occasional over-generalisation

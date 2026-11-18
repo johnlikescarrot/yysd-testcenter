@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm-vn.js — Visual novel player (EN dialogue + ZH subtitles)
+   word-realm-vn.js - Visual novel player (EN dialogue + ZH subtitles)
    Script node types: line | cutscene | choice | end
    ========================================================================= */
 window.YYSD_WORD_REALM_VN = (function () {
@@ -72,7 +72,7 @@ window.YYSD_WORD_REALM_VN = (function () {
       return key.indexOf("/") >= 0 ? key : "";
     }
 
-    // Landscape maps/cuts are cinematic scenes — not postage-stamp portraits
+    // Landscape maps/cuts are cinematic scenes - not postage-stamp portraits
     function isSceneKey(key) {
       var k = String(key || "");
       return k.indexOf("map-") === 0 || k.indexOf("cut-") === 0;

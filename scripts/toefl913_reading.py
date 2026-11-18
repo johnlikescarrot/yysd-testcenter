@@ -274,7 +274,7 @@ def build_reading():
             ("precon", "preconceived"),
             " notions ",
             ("an", "and"),
-            " invite audiences to consider diverse perspectives. Its ephemeral quality—existing only in the moment of performance—heightens the impact, forcing both performers and viewers to engage with the present, ultimately transforming their understanding of human experiences.",
+            " invite audiences to consider diverse perspectives. Its ephemeral quality-existing only in the moment of performance-heightens the impact, forcing both performers and viewers to engage with the present, ultimately transforming their understanding of human experiences.",
         ],
     )
     tasks.append(t)
@@ -348,7 +348,7 @@ def build_reading():
                 "title": "Momentum Meet-up: Networking Mixer for Students",
                 "body": (
                     "Build real-world connections with peers, alumni, and local employers at our campus-wide mixer! "
-                    "The evening features fast-paced speed-networking rounds, a short alumni insights panel, and open mingling—perfect for practicing introductions and discovering internships."
+                    "The evening features fast-paced speed-networking rounds, a short alumni insights panel, and open mingling-perfect for practicing introductions and discovering internships."
                 ),
                 "fields": [
                     {"label": "When", "value": "Tuesday, April 14, 5:00–7:00 P.M."},
@@ -421,7 +421,7 @@ def build_reading():
                 },
                 {"insert": "D"},
                 "Recent initiatives have focused on creating more green spaces in underserved areas. Some cities are converting abandoned lots into community gardens or small parks. These projects not only provide green spaces but also involve community members in the planning and maintenance of them, fostering a sense of ownership and responsibility.",
-                "While urban green spaces offer a host of benefits, they are not without drawbacks. When parks and gardens are added in city neighborhoods, they often increase the value of nearby properties. This can unintentionally lead to the displacement of longtime residents who can no longer afford rising rents or property taxes. Another challenge is preserving these spaces—it can be difficult to secure the funding necessary to maintain them.",
+                "While urban green spaces offer a host of benefits, they are not without drawbacks. When parks and gardens are added in city neighborhoods, they often increase the value of nearby properties. This can unintentionally lead to the displacement of longtime residents who can no longer afford rising rents or property taxes. Another challenge is preserving these spaces-it can be difficult to secure the funding necessary to maintain them.",
             ],
             [
                 mcq(77, 'The word "respite" in the passage is closest in meaning to', {"A": "break", "B": "addition", "C": "symbol", "D": "surprise"}, "A"),
@@ -656,7 +656,7 @@ def build_reading():
             2,
             [
                 "Some historians explain the mid-sixteenth-century surge of Italian lute songs as the product of technological innovation combined with shifting social tastes. Around 1500, Ottavio dei Petrucci developed a groundbreaking movable-type printing technique for music, making it easier and cheaper to produce books of lute music. Suddenly, amateur musicians from Naples to Venice could acquire fashionable arrangements of madrigals, villanellas, and solo ricercars. This ease of access dovetailed with an expanding culture of private performance in aristocratic homes. Other historians point to a different catalyst: courtly patronage. Alfonso d'Este, the duke of Ferrara, played a decisive role by commissioning virtuosos like Francesco da Milano and Antonio Valente, whose published collections set a high artistic benchmark.",
-                "Evidence for both theories emerges in extant manuscripts: Some contain personalized annotations indicating home practice, while lavish presentation copies bear heraldic emblems of noble households. Furthermore, stylistic borrowings from the Spanish vihuela and French lute idioms suggest a pan-European dialogue that reinforced Italian composers' ambitions. While the printing press democratized repertoire, it was the symbiosis of domestic enthusiasm and aristocratic sponsorship—each reinforcing the other—that, arguably, propelled the Italian lute song to its enduring prominence.",
+                "Evidence for both theories emerges in extant manuscripts: Some contain personalized annotations indicating home practice, while lavish presentation copies bear heraldic emblems of noble households. Furthermore, stylistic borrowings from the Spanish vihuela and French lute idioms suggest a pan-European dialogue that reinforced Italian composers' ambitions. While the printing press democratized repertoire, it was the symbiosis of domestic enthusiasm and aristocratic sponsorship-each reinforcing the other-that, arguably, propelled the Italian lute song to its enduring prominence.",
             ],
             [
                 mcq(
@@ -835,7 +835,7 @@ def build_reading():
 
     return {
         "id": "2025-09-13",
-        "title": "新托福 9.13 · 阅读",
+        "title": " TOEFL mới 9.13 · Đọc hiểu ",
         "set": "9.13",
         "skill": "reading",
         "modules": [

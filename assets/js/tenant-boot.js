@@ -1,4 +1,4 @@
-/* tenant-boot.js — run in <head>: teacher gate + tenant brand hide */
+/* tenant-boot.js - run in <head>: teacher gate + tenant brand hide */
 (function () {
   "use strict";
 
@@ -8,7 +8,7 @@
     return;
   }
 
-  // ponytail: block student practice UI before paint unless they clicked 网站功能区
+  // ponytail: block student practice UI before paint unless they clicked trang web chức năng khu vực
   try {
     var teacherTok = localStorage.getItem("yysd:teacher:token");
     var mode = localStorage.getItem("yysd:teacher:mode") || "";
@@ -40,7 +40,7 @@
     }
   } catch (e) {}
 
-  // ponytail: maintenance gate — only platform admin phones pass while on
+  // ponytail: maintenance gate - only platform admin phones pass while on
   try {
     var maintPage = page || (function () {
       var p = location.pathname.split("/").filter(Boolean);
@@ -97,7 +97,7 @@
     if (org && org.slug === slug && org.name && document.title) {
       if (document.title.indexOf("·") >= 0) {
         document.title = document.title.replace(/^[^·]+·/, org.name + " ·");
-      } else if (document.title.indexOf("优益思达") >= 0 || document.title.indexOf("YYSD") >= 0) {
+      } else if (document.title.indexOf(" YYSD ") >= 0 || document.title.indexOf("YYSD") >= 0) {
         document.title = org.name;
       }
     }

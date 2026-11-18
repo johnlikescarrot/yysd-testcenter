@@ -17,7 +17,7 @@ const ONLY = (process.env.QS_ONLY || "")
   .filter(Boolean);
 const MIN_OK = 150;
 
-/** Plain JS string — avoids tsx/esbuild injecting __name into page.evaluate. */
+/** Plain JS string - avoids tsx/esbuild injecting __name into page.evaluate. */
 function harvestExpr(metaJson: string): string {
   return `new Promise(async (resolve) => {
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -68,7 +68,7 @@ async function harvestOne(
 
   for (let i = 0; i < 60; i++) {
     const title = await page.title();
-    if (!/请稍候|Just a moment/i.test(title)) break;
+    if (!/mời đợi một chút|Just a moment/i.test(title)) break;
     await page.waitForTimeout(1000);
   }
 
@@ -108,7 +108,7 @@ async function harvestOne(
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });
   const targets = QS_TARGETS.filter((t) => ONLY.includes(t.slug));
-  if (!targets.length) throw new Error("no targets — set QS_ONLY");
+  if (!targets.length) throw new Error("no targets - set QS_ONLY");
 
   const browser = await chromium.launch({
     executablePath: CHROME,

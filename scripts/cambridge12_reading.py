@@ -8,7 +8,7 @@ def ans(*v):
 
 
 def explain(*v):
-    return "答案：" + " / ".join(v) + "。"
+    return " Đáp án: " + " / ".join(v) + " "
 
 
 def Q(no, *answers, q=None, options=None):
@@ -993,4 +993,4 @@ if __name__ == "__main__":
         ids = [q["id"] for q in qs]
         assert ids == [f"Q{i}" for i in range(1, 41)], (n, ids)
         titles = [p["passage"]["title"] for p in t["passages"]]
-        print(f"Test {n}: {len(qs)} questions — {titles}")
+        print(f"Test {n}: {len(qs)} questions - {titles}")

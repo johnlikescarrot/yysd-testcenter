@@ -42,13 +42,13 @@ function metaFromWord(w) {
 }
 
 function quizMeaning(meta) {
-  if (!meta) return "（暂无释义）";
+  if (!meta) return "(tạm thời không có nghĩa của cái gì đó)";
   if (meta.acceptCN && meta.acceptCN.length) {
     var cn = meta.acceptCN.filter(Boolean).join(" / ");
     if (cn) return cn;
   }
   var m = String(meta.meaning || "").trim();
-  return m || "（暂无释义）";
+  return m || "(tạm thời không có nghĩa của cái gì đó)";
 }
 
 function normalizeSpell(s) {
@@ -297,41 +297,41 @@ function gradeQuizResults(words, results, maxLives) {
 }
 
 function selfCheck() {
-  var m = metaFromWord({ word: "include", acceptCN: ["包括", "包含"], meaning: "v. 包括" });
-  if (quizMeaning(m) !== "包括 / 包含") throw new Error("quizMeaning acceptCN");
-  if (!gradeVocabAnswer(m, { userAnswer: "include", userMeaning: "包括 / 包含" })) {
+  var m = metaFromWord({ word: "include", acceptCN: [" bao gồm ", " chứa "], meaning: "v. bao gồm " });
+  if (quizMeaning(m) !== " bao gồm / chứa ") throw new Error("quizMeaning acceptCN");
+  if (!gradeVocabAnswer(m, { userAnswer: "include", userMeaning: " bao gồm / chứa " })) {
     throw new Error("grade ok");
   }
-  if (gradeVocabAnswer(m, { userAnswer: "include", userMeaning: "包括" })) {
+  if (gradeVocabAnswer(m, { userAnswer: "include", userMeaning: " bao gồm " })) {
     throw new Error("grade meaning exact");
   }
-  if (gradeVocabAnswer(m, { userAnswer: "wrong", userMeaning: "包括 / 包含" })) {
+  if (gradeVocabAnswer(m, { userAnswer: "wrong", userMeaning: " bao gồm / chứa " })) {
     throw new Error("grade spell");
   }
-  var east = { word: "eastward(s)", acceptCN: ["向东"] };
-  if (!gradeVocabAnswer(east, { userAnswer: "eastward", userMeaning: "向东" })) {
+  var east = { word: "eastward(s)", acceptCN: [" về hướng đông "] };
+  if (!gradeVocabAnswer(east, { userAnswer: "eastward", userMeaning: " về hướng đông " })) {
     throw new Error("grade eastward(s) -> eastward");
   }
-  if (!gradeVocabAnswer(east, { userAnswer: "eastwards", userMeaning: "向东" })) {
+  if (!gradeVocabAnswer(east, { userAnswer: "eastwards", userMeaning: " về hướng đông " })) {
     throw new Error("grade eastward(s) -> eastwards");
   }
-  if (!gradeVocabAnswer({ word: "0", acceptCN: ["零"] }, { userAnswer: "zero", userMeaning: "零" })) {
+  if (!gradeVocabAnswer({ word: "0", acceptCN: [" không "] }, { userAnswer: "zero", userMeaning: " không " })) {
     throw new Error("grade 0 -> zero");
   }
-  if (!gradeVocabAnswer({ word: "zero", acceptCN: ["零"] }, { userAnswer: "0", userMeaning: "零" })) {
+  if (!gradeVocabAnswer({ word: "zero", acceptCN: [" không "] }, { userAnswer: "0", userMeaning: " không " })) {
     throw new Error("grade zero -> 0");
   }
-  if (!gradeVocabAnswer({ word: "used to", acceptCN: ["过去常常"] }, { userAnswer: "used  to", userMeaning: "过去常常" })) {
+  if (!gradeVocabAnswer({ word: "used to", acceptCN: [" băng qua đi thường xuyên "] }, { userAnswer: "used  to", userMeaning: " băng qua đi thường xuyên " })) {
     throw new Error("grade used to spaces");
   }
-  var dual = { word: "center", spellings: ["center", "centre"], acceptCN: ["中心"] };
-  if (!gradeVocabAnswer(dual, { userAnswer: "centre", userMeaning: "中心" })) {
+  var dual = { word: "center", spellings: ["center", "centre"], acceptCN: [" Trung tâm "] };
+  if (!gradeVocabAnswer(dual, { userAnswer: "centre", userMeaning: " Trung tâm " })) {
     throw new Error("grade dual UK spelling");
   }
-  if (!gradeVocabAnswer({ word: "license", acceptCN: ["执照"] }, { userAnswer: "licence", userMeaning: "执照" })) {
+  if (!gradeVocabAnswer({ word: "license", acceptCN: [" giấy phép "] }, { userAnswer: "licence", userMeaning: " giấy phép " })) {
     throw new Error("grade license <- licence");
   }
-  if (!gradeVocabAnswer({ word: "licence", acceptCN: ["执照"] }, { userAnswer: "license", userMeaning: "执照" })) {
+  if (!gradeVocabAnswer({ word: "licence", acceptCN: [" giấy phép "] }, { userAnswer: "license", userMeaning: " giấy phép " })) {
     throw new Error("grade licence <- license");
   }
   [
@@ -369,19 +369,19 @@ function selfCheck() {
   var map = gradedAnswerMap(draft, [{ word: "alpha", userAnswer: "alpha", userMeaning: "a", correct: true }]);
   if (!map.alpha || !map.alpha.correct) throw new Error("gradedAnswerMap");
   var gq = gradeQuizResults(
-    [{ word: "a", acceptCN: ["甲"] }, { word: "b", acceptCN: ["乙"] }],
+    [{ word: "a", acceptCN: [" thiên can đầu tiên trong mười thiên can "] }, { word: "b", acceptCN: [" đứng thứ hai trong mười Thiên Can "] }],
     [
-      { word: "a", userAnswer: "a", userMeaning: "甲" },
-      { word: "b", userAnswer: "x", userMeaning: "乙" }
+      { word: "a", userAnswer: "a", userMeaning: " thiên can đầu tiên trong mười thiên can " },
+      { word: "b", userAnswer: "x", userMeaning: " đứng thứ hai trong mười Thiên Can " }
     ],
     5
   );
   if (gq.correct !== 1 || gq.wrong !== 1 || !gq.passed) throw new Error("gradeQuizResults partial");
   var gqFail = gradeQuizResults(
-    [{ word: "a", acceptCN: ["甲"] }, { word: "b", acceptCN: ["乙"] }, { word: "c", acceptCN: ["丙"] }],
+    [{ word: "a", acceptCN: [" thiên can đầu tiên trong mười thiên can "] }, { word: "b", acceptCN: [" đứng thứ hai trong mười Thiên Can "] }, { word: "c", acceptCN: [" thứ ba trong mười Thiên Can "] }],
     [
-      { word: "a", userAnswer: "x", userMeaning: "甲" },
-      { word: "b", userAnswer: "x", userMeaning: "乙" }
+      { word: "a", userAnswer: "x", userMeaning: " thiên can đầu tiên trong mười thiên can " },
+      { word: "b", userAnswer: "x", userMeaning: " đứng thứ hai trong mười Thiên Can " }
     ],
     2
   );

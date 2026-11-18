@@ -1,4 +1,4 @@
-/* diagnostic-gate.js — first-time vocab placement redirect */
+/* diagnostic-gate.js - first-time vocab placement redirect */
 (function (global) {
   "use strict";
 
@@ -34,7 +34,7 @@
         return false;
       })
       .catch(function () {
-        // API down — don't soft-lock the whole vocab area
+        // API down - don't soft-lock the whole vocab area
         return true;
       });
   }

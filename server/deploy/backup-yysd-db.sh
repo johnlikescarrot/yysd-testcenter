@@ -1,5 +1,5 @@
 #!/bin/bash
-# ponytail: file-level HBR of open WAL is unsafe — checkpoint then copy main db
+# ponytail: file-level HBR of open WAL is unsafe - checkpoint then copy main db
 set -euo pipefail
 DIR=/opt/yysd/server
 OUT="$DIR/data/backups"

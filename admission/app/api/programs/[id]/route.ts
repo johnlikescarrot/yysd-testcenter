@@ -12,7 +12,7 @@ export async function GET(
 ) {
   const school = await prisma.school.findUnique({ where: { id: ctx.params.id } });
   if (!school) {
-    return NextResponse.json({ error: "项目不存在" }, { status: 404 });
+    return NextResponse.json({ error: " mục không tồn tại " }, { status: 404 });
   }
   const inst = getInstitutionMeta(school.name);
   return NextResponse.json({

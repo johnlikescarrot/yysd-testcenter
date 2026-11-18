@@ -19,7 +19,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑4T1.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 4T1.docx")
 ASSETS = Path("/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets")
 SOCIAL_SRC = ASSETS / "__2026-07-03_11.44.45-516f5392-b8df-4845-9095-a7b2562e537c.png"
 TRIPS_SRC = ASSETS / "__2026-07-03_11.44.51-88fa0c1d-050c-4bca-ad35-7bb7ce45789d.png"
@@ -29,10 +29,10 @@ WHALE_SRC = ASSETS / "__2026-07-03_11.45.16-cc484cfa-09a7-4cf9-8b37-2d9a0f923679
 CIRCLE_SRC = ASSETS / "__2026-07-03_11.45.27-1831a803-1fda-4e05-9362-46508accf830.png"
 POVERTY_SRC = ASSETS / "__2026-07-03_11.45.37-ec51ae85-23b7-4a17-bfc3-d4de8b7d9c56.png"
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test1 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test1 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test1 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test1 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-4-test-1.html"
@@ -57,7 +57,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -138,12 +138,12 @@ def patch_reading_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 听力", "剑桥雅思4 Test 1 听力"),
-        ("剑桥雅思5 · Test 4（听力）", "剑桥雅思4 · Test 1（听力）"),
-        ("剑桥雅思5 Test 4 听力：", "剑桥雅思4 Test 1 听力："),
-        ("Test 4 听力（官方原题 + 官方答案）", "Test 1 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
+        (" Cambridge IELTS 5 Test 4 Nghe hiểu ", " Cambridge IELTS 4 Test 1 Nghe hiểu "),
+        (" Cambridge IELTS 5 · Test 4(Nghe hiểu)", " Cambridge IELTS 4 · Test 1(Nghe hiểu)"),
+        (" Cambridge IELTS 5 Test 4 Nghe hiểu: ", " Cambridge IELTS 4 Test 1 Nghe hiểu: "),
+        ("Test 4 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 1 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
         ("ielts5_test4", "ielts4_test1"),
@@ -156,16 +156,16 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 阅读", "剑桥雅思4 Test 1 阅读"),
-        ("剑桥雅思5 · Test 4（阅读）", "剑桥雅思4 · Test 1（阅读）"),
-        ("剑桥雅思5 Test 4 学术类阅读", "剑桥雅思4 Test 1 学术类阅读"),
-        ("Test 4 阅读（官方原题 + 官方答案）", "Test 1 阅读（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 5 Test 4 Đọc hiểu ", " Cambridge IELTS 4 Test 1 Đọc hiểu "),
+        (" Cambridge IELTS 5 · Test 4(Đọc hiểu)", " Cambridge IELTS 4 · Test 1(Đọc hiểu)"),
+        (" Cambridge IELTS 5 Test 4 Reading học thuật ", " Cambridge IELTS 4 Test 1 Reading học thuật "),
+        ("Test 4 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 1 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         (
-            "Wilderness Tourism、Toughened Glass、Effects of Light",
-            "Rainforests、What Do Whales Feel?、Visual Symbols and the Blind",
+            "Wilderness Tourism, Toughened Glass, Effects of Light",
+            "Rainforests, What Do Whales Feel?, Visual Symbols and the Blind",
         ),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
     ]
@@ -177,18 +177,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 写作", "剑桥雅思4 Test 1 写作"),
-        ("剑桥雅思5 · Test 4（写作）", "剑桥雅思4 · Test 1（写作）"),
-        ("剑桥雅思5 Test 4 学术类写作", "剑桥雅思4 Test 1 学术类写作"),
+        (" Cambridge IELTS 5 Test 4 Viết ", " Cambridge IELTS 4 Test 1 Viết "),
+        (" Cambridge IELTS 5 · Test 4(Viết)", " Cambridge IELTS 4 · Test 1(Viết)"),
+        (" Cambridge IELTS 5 Test 4 Writing học thuật ", " Cambridge IELTS 4 Test 1 Writing học thuật "),
         (
             "Task 1 underground railway table + Task 2 nature vs nurture essay",
             "Task 1 poverty table + Task 2 media for communicating information essay",
         ),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
-        ("Test 4 写作（官方真题）", "Test 1 写作（官方真题）"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
+        (" Cambridge IELTS 5 · Test 4", " Cambridge IELTS 4 · Test 1"),
+        ("Test 4 Viết(Đề thi chính thức)", "Test 1 Viết(Đề thi chính thức)"),
         ("cambridge-5-test-4-writing-draft", "cambridge-4-test-1-writing-draft"),
-        ("【剑桥雅思5 · Test 4 写作】", "【剑桥雅思4 · Test 1 写作】"),
+        ("[Cambridge IELTS 5 · Test 4 Viết]", "[Cambridge IELTS 4 · Test 1 Viết]"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
         ("underground-railway", "poverty-table"),
@@ -221,7 +221,7 @@ def reading_passages() -> list[dict]:
         {
             "id": 1,
             "passage": {
-                "title": "Adults and children — loss of tropical rainforests",
+                "title": "Adults and children - loss of tropical rainforests",
                 "byline": "You should spend about 20 minutes on Questions 1–14, which are based on Reading Passage 1 below.",
                 "paras": p[82:93],
             },
@@ -246,7 +246,7 @@ def reading_passages() -> list[dict]:
                 "paras": [
                     *p[156:161],
                     *p[162:164],
-                    "When we tested four totally blind volunteers using the same list, we found that their choices closely resembled those made by the sighted subjects. One man, who had been blind since birth, scored extremely well. He made only one match differing from the consensus, assigning 'far' to square and 'near' to circle. In fact, only a small majority of sighted subjects — 53% — had paired far and near to the opposite partners. Thus, we concluded that the blind interpret abstract shapes as sighted people do.",
+                    "When we tested four totally blind volunteers using the same list, we found that their choices closely resembled those made by the sighted subjects. One man, who had been blind since birth, scored extremely well. He made only one match differing from the consensus, assigning 'far' to square and 'near' to circle. In fact, only a small majority of sighted subjects - 53% - had paired far and near to the opposite partners. Thus, we concluded that the blind interpret abstract shapes as sighted people do.",
                 ],
             },
         },
@@ -687,9 +687,9 @@ def reading_test() -> dict:
                 "E": "use of brakes",
             },
             "questions": [
-                {"id": "Q30", "no": 30, "q": "Diagram 30 — wavy spokes", "answer": ans("E"), "explain": explain("E")},
-                {"id": "Q31", "no": 31, "q": "Diagram 31 — dashed spokes", "answer": ans("C"), "explain": explain("C")},
-                {"id": "Q32", "no": 32, "q": "Diagram 32 — bent spokes", "answer": ans("A"), "explain": explain("A")},
+                {"id": "Q30", "no": 30, "q": "Diagram 30 - wavy spokes", "answer": ans("E"), "explain": explain("E")},
+                {"id": "Q31", "no": 31, "q": "Diagram 31 - dashed spokes", "answer": ans("C"), "explain": explain("C")},
+                {"id": "Q32", "no": 32, "q": "Diagram 32 - bent spokes", "answer": ans("A"), "explain": explain("A")},
             ],
         },
         {
@@ -747,7 +747,7 @@ def writing_test() -> dict:
                 "and make comparisons where relevant.<br>"
                 "<strong>Write at least 150 words.</strong>"
             ),
-            "charts": [{"caption": "Family types living in poverty — Australia 1999", "image": "cambridge-4-test-1-poverty-table.png"}],
+            "charts": [{"caption": "Family types living in poverty - Australia 1999", "image": "cambridge-4-test-1-poverty-table.png"}],
         },
         "task2": {
             "prompt": (

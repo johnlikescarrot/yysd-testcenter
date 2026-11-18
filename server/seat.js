@@ -69,13 +69,13 @@ function init(db) {
       var code = s.slice(0, 4) + "-" + s.slice(4);
       if (!stmts.byCode.get(code)) return code;
     }
-    throw new Error("生成激活码失败");
+    throw new Error(" tạo ra kích hoạt trọng lượng bị đánh bại ");
   }
 
   function create(role, phone) {
-    if (role !== "student" && role !== "teacher") return { error: "请选择学生或老师" };
+    if (role !== "student" && role !== "teacher") return { error: " mời chọn học sinh có thể giáo viên " };
     phone = phone ? String(phone) : "";
-    if (phone && stmts.byPhoneRole.get(phone, role)) return { error: "这个人已经有激活码" };
+    if (phone && stmts.byPhoneRole.get(phone, role)) return { error: " này người đã có kích hoạt trọng lượng " };
     var code = genCode();
     var info = stmts.insert.run(code, role, phone || null, new Date().toISOString());
     return { seat: stmts.byCode.get(code) || { id: info.lastInsertRowid, code: code, role: role, phone: phone || null } };
@@ -88,7 +88,7 @@ function init(db) {
     var on = switchOn();
     if (!key) {
       if (on && (opts.purpose === "login" || opts.purpose === "register" || opts.purpose === "reset")) {
-        return { error: "请下载机考程序后继续", status: 403, code: "seat_required" };
+        return { error: " mời tải xuống máy móc đánh quy trình hoàng hậu tiếp tục ", status: 403, code: "seat_required" };
       }
       return { ok: true };
     }
@@ -97,35 +97,35 @@ function init(db) {
     var role = opts.role;
     var phone = opts.phone;
     var held = phone ? stmts.byPhoneRole.get(phone, role) : null;
-    if (held && held.disabled) return { error: "账号已停用", status: 403 };
+    if (held && held.disabled) return { error: " số tài khoản đã ngừng sử dụng ", status: 403 };
 
     if (held && held.device_key && held.device_key === key) {
       return { ok: true, claim: key };
     }
     if (held && held.device_key && held.device_key !== key && !opts.code) {
-      return { error: "这张激活码已绑定另一台电脑，请联系管理员解除", status: 403 };
+      return { error: " này mở ra kích hoạt trọng lượng đã ràng buộc khác Đài Loan máy tính, mời biến thể của | người quản lý loại bỏ ", status: 403 };
     }
 
     var code = normalizeCode(opts.code);
-    if (!code) return { error: "这台电脑尚未激活，请填写激活码", status: 403 };
+    if (!code) return { error: " này Đài Loan máy tính chưa kích hoạt, mời điền vào biểu mẫu kích hoạt trọng lượng ", status: 403 };
     var row = stmts.byCode.get(code);
-    if (!row) return { error: "激活码无效", status: 400 };
+    if (!row) return { error: " kích hoạt trọng lượng không hợp lệ ", status: 400 };
     if (row.role !== role) {
       return {
-        error: row.role === "teacher" ? "这是老师激活码，请用该老师账号登录" : "这是学生激活码，请用学生账号登录",
+        error: row.role === "teacher" ? " này là giáo viên kích hoạt trọng lượng, mời sử dụng nên giáo viên số tài khoản đăng ký " : " này là học sinh kích hoạt trọng lượng, mời sử dụng học sinh số tài khoản đăng ký ",
         status: 400
       };
     }
-    if (row.disabled) return { error: "账号已停用", status: 403 };
-    if (row.phone && row.phone !== phone) return { error: "这张激活码不属于该手机号", status: 400 };
+    if (row.disabled) return { error: " số tài khoản đã ngừng sử dụng ", status: 403 };
+    if (row.phone && row.phone !== phone) return { error: " này mở ra kích hoạt trọng lượng không được phân loại là nên điện thoại di động gầm ", status: 400 };
     if (!row.phone && opts.purpose === "login") {
-      return { error: "这是一张新用户激活码，请先注册", status: 400 };
+      return { error: " này là một mở ra viết tắt của Tân Cương người dùng kích hoạt trọng lượng, mời trước đăng ký ", status: 400 };
     }
     if (row.device_key && row.device_key !== key) {
-      return { error: "这张激活码已绑定另一台电脑，请联系管理员解除", status: 403 };
+      return { error: " này mở ra kích hoạt trọng lượng đã ràng buộc khác Đài Loan máy tính, mời biến thể của | người quản lý loại bỏ ", status: 403 };
     }
     var taken = stmts.byDevice.get(key);
-    if (taken && taken.id !== row.id) return { error: "这台电脑已绑定其他账号", status: 400 };
+    if (taken && taken.id !== row.id) return { error: " này Đài Loan máy tính đã ràng buộc khác số tài khoản ", status: 400 };
     return { ok: true, claim: key, bindId: row.id, bindPhone: phone };
   }
 
@@ -138,10 +138,10 @@ function init(db) {
     if (!user || user.platformImpersonate || user.adminSeat) return null;
     if (user.role !== "student" && user.role !== "teacher") return null;
     if (!switchOn()) return null;
-    if (!user.device) return "请下载机考程序后登录";
+    if (!user.device) return " mời tải xuống máy móc đánh quy trình hoàng hậu đăng ký ";
     var row = stmts.bound.get(user.phone, user.role, user.device);
-    if (!row) return "这台电脑未绑定该账号";
-    if (row.disabled) return "账号已停用";
+    if (!row) return " này Đài Loan máy tính chưa ràng buộc nên số tài khoản ";
+    if (row.disabled) return " số tài khoản đã ngừng sử dụng ";
     return null;
   }
 

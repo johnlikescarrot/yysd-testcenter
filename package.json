@@ -1,0 +1,24 @@
+{
+  "name": "yysd-ielts-vietnamese",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ứng dụng luyện thi IELTS hoàn toàn bằng tiếng Việt, triển khai trên GitHub Pages.",
+  "scripts": {
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "prettier --check \"docs/**/*.{html,css,js}\" \"tests/**/*.js\" \"*.json\" && eslint docs/js tests vitest.config.js && python3 -m py_compile tools/*.py",
+    "format": "prettier --write \"docs/**/*.{html,css,js}\" \"tests/**/*.js\" \"*.json\"",
+    "verify": "npm run coverage && npm run lint && python3 tools/check_vietnamese.py && python3 tools/check_pdfs.py",
+    "pdf": "python3 tools/build_pdfs.py",
+    "vietnamize": "python3 tools/vietnamize.py"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "2.1.9",
+    "eslint": "9.17.0",
+    "jsdom": "25.0.1",
+    "prettier": "3.4.2",
+    "vitest": "2.1.9",
+    "globals": "15.14.0"
+  }
+}

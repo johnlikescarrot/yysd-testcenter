@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""9.13 China Offline TOEFL listening. Source: listening-01.png … listening-15.png."""
+"""9.13 China Offline TOEFL listening. Source: listening-01.png ... listening-15.png."""
 
 AUDIO = "library/toefl/audio/2025-09-13/"
 INSTR = {
@@ -755,7 +755,7 @@ def build_listening():
         raise SystemExit("expected 58 listening items, next id %s" % qid)
     return {
         "id": "2025-09-13",
-        "title": "新托福 9.13 · 听力",
+        "title": " TOEFL mới 9.13 · Nghe hiểu ",
         "set": "9.13",
         "skill": "listening",
         "modules": [

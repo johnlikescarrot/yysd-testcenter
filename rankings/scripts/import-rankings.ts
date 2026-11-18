@@ -40,7 +40,7 @@ async function main() {
   const unisPath = path.join(RAW, "universities.json");
   const edsPath = path.join(RAW, "editions.json");
   if (!fs.existsSync(unisPath) || !fs.existsSync(edsPath)) {
-    throw new Error("Missing data/raw/*.json — run: npx tsx scripts/seed-raw.ts");
+    throw new Error("Missing data/raw/*.json - run: npx tsx scripts/seed-raw.ts");
   }
 
   const universities = JSON.parse(fs.readFileSync(unisPath, "utf8")) as UniRow[];

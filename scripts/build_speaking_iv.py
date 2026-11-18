@@ -202,7 +202,7 @@ def ocr_questions(png: Path) -> tuple[str, list[str]]:
 def title_zh_for(title: str) -> str:
     if re.search(r"[\u4e00-\u9fff]", title or ""):
         return title
-    return "面试问答"
+    return " Hỏi đáp phỏng vấn "
 
 
 def build_one(n: int) -> Path:
@@ -264,7 +264,7 @@ def build_one(n: int) -> Path:
                 "audio": audio["qs"][q],
                 "stem": stem,
                 "sample": stem,
-                "analysis": f"围绕「{title}」作答。",
+                "analysis": f" xoay quanh«{title}»Trả lời ",
                 "title": title,
                 "titleZh": title_zh,
             }

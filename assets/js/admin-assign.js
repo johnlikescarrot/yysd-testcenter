@@ -1,5 +1,5 @@
 /* =========================================================================
-   admin-assign.js — assign students to a teacher (admin only)
+   admin-assign.js - assign students to a teacher (admin only)
    ========================================================================= */
 (function () {
   "use strict";
@@ -50,7 +50,7 @@
       body: opts.body ? JSON.stringify(opts.body) : undefined
     }).then(function (r) {
       return r.json().then(function (d) {
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || " yêu cầu bị đánh bại ");
         return d;
       });
     });
@@ -80,8 +80,8 @@
 
   function renderStudents() {
     if (!activeTeacherId) {
-      studentList.innerHTML = '<p class="profile-hint">请先选择教师</p>';
-      pickedHint.textContent = "请先选择教师";
+      studentList.innerHTML = '<p class="profile-hint">mời trước chọn giáo viên</p>';
+      pickedHint.textContent = " mời trước chọn giáo viên ";
       saveBtn.disabled = true;
       return;
     }
@@ -94,14 +94,14 @@
       var checked = selected[s.id] ? " checked" : "";
       return '<label class="cal-check">' +
         '<input type="checkbox" data-sid="' + s.id + '"' + checked + ">" +
-        "<span><b>" + esc(s.displayName || "未命名") + "</b>" +
+        "<span><b>" + esc(s.displayName || " chưa có tiêu đề ") + "</b>" +
         "<small>" + esc(s.phone) +
-        (s.scoreCount ? " · " + s.scoreCount + " 条成绩" : "") +
+        (s.scoreCount ? " · " + s.scoreCount + " dải thành tích " : "") +
         "</small></span></label>";
-    }).join("") || '<p class="profile-hint">没有匹配的学生</p>';
+    }).join("") || '<p class="profile-hint">không có phối hoặc kết hôn của học sinh</p>';
 
     var n = Object.keys(selected).length;
-    pickedHint.textContent = "已选 " + n + " 名学生（保存后将覆盖该教师当前名单）";
+    pickedHint.textContent = " đã chọn " + n + " logic được sinh(bảo tồn hoàng hậu sẽ che phủ nên giáo viên thời điểm hiện tại danh sách tên)";
     saveBtn.disabled = false;
   }
 
@@ -132,7 +132,7 @@
     var id = Number(t.getAttribute("data-sid"));
     if (t.checked) selected[id] = true;
     else delete selected[id];
-    pickedHint.textContent = "已选 " + Object.keys(selected).length + " 名学生（保存后将覆盖该教师当前名单）";
+    pickedHint.textContent = " đã chọn " + Object.keys(selected).length + " logic được sinh(bảo tồn hoàng hậu sẽ che phủ nên giáo viên thời điểm hiện tại danh sách tên)";
   });
 
   document.getElementById("select-all").addEventListener("click", function () {
@@ -152,7 +152,7 @@
 
   saveBtn.addEventListener("click", function () {
     if (!activeTeacherId) return;
-    showMsg("保存中…");
+    showMsg(" bảo tồn Trung Quốc...");
     saveBtn.disabled = true;
     api("/api/admin/assignments", {
       method: "PUT",
@@ -161,7 +161,7 @@
         studentIds: Object.keys(selected).map(Number)
       }
     }).then(function (d) {
-      showMsg("已保存：该教师现有 " + (d.studentIds || []).length + " 名学生", true);
+      showMsg(" đã bảo tồn: nên giáo viên hiện có " + (d.studentIds || []).length + " logic được sinh ", true);
       saveBtn.disabled = false;
     }).catch(function (e) {
       showMsg(e.message);
@@ -175,17 +175,17 @@
   ]).then(function (res) {
     teachers = res[0].teachers || [];
     students = res[1].students || [];
-    teacherSelect.innerHTML = '<option value="">请选择教师</option>' +
+    teacherSelect.innerHTML = '<option value="">mời chọn giáo viên</option>' +
       teachers.map(function (t) {
         return '<option value="' + t.id + '">' +
-          esc((t.name || "教师") + " · " + t.phone + "（已分配 " + t.studentCount + " 人）") +
+          esc((t.name || " Giáo viên ") + " · " + t.phone + "(đã phân phối " + t.studentCount + " người)") +
           "</option>";
       }).join("");
     renderStudents();
   }).catch(function (e) {
-    showMsg(e.message || "无管理员权限，请使用管理员账号登录");
-    teacherSelect.innerHTML = '<option value="">无法加载</option>';
-    if (String(e.message).indexOf("管理员") >= 0 || String(e.message).indexOf("登录") >= 0) {
+    showMsg(e.message || " không có người quản lý phạm vi quyền hạn, mời sử dụng người quản lý số tài khoản đăng ký ");
+    teacherSelect.innerHTML = '<option value="">không thể tải</option>';
+    if (String(e.message).indexOf(" người quản lý ") >= 0 || String(e.message).indexOf(" Đăng nhập ") >= 0) {
       setTimeout(function () {
         location.href = "login.html?next=" + encodeURIComponent("admin-assign.html");
       }, 1200);

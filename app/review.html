@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>复习</title>
+  <title>Ôn tập</title>
   <link rel="stylesheet" href="assets/css/hit.css?v=20261027win1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261015prev1"></script>
@@ -16,24 +16,24 @@
 <body class="hit rev-shell">
   <main class="hit-main">
   <section id="pane-rep" hidden>
-    <iframe id="rep-frame" title="成绩单 Score Report" scrolling="no"></iframe>
+    <iframe id="rep-frame" title=" phiếu điểm hoặc bảng điểm Score Report" scrolling="no"></iframe>
     <div class="rep-foot">
-      <p class="rep-note">成绩单按本次考试（同一场）的四科汇总；未考科目显示「--」。</p>
-      <p><button type="button" class="rep-btn" id="rep-print">保存成绩单</button></p>
+      <p class="rep-note">phiếu điểm hoặc bảng điểm nhấn gốc tiếp theo dự thi(giống hệt sân phơi)của bốn ngành học biến thể của |; chưa đánh môn học hiển thị«--» </p>
+      <p><button type="button" class="rep-btn" id="rep-print">bảo tồn phiếu điểm hoặc bảng điểm</button></p>
     </div>
   </section>
   <section id="pane-rev">
-    <h1 id="title">查看记录</h1>
+    <h1 id="title">xem xét ghi chép</h1>
     <p class="hit-lead" id="score"></p>
     <p class="rev-sub" id="rev-sub"></p>
-    <p class="hit-lead" id="sw-choice" hidden>口语/写作可导出音频和作文；要 AI 分再走原来的评分。只导出则口语写作记「已提交、未评分」。</p>
-    <p><button type="button" class="hit-go" id="export-all" hidden>导出全部录音</button></p>
+    <p class="hit-lead" id="sw-choice" hidden>Nói/viết có thể đạo hàm đi ra âm thanh biến thể cũ của viết bài văn; yêu cầu AI chia lại đi gốc của chấm điểm chỉ suy ra nhưng lời nói thông thường viết ghi chép«đã nộp, chưa chấm điểm» </p>
+    <p><button type="button" class="hit-go" id="export-all" hidden>suy ra toàn bộ ghi âm</button></p>
     <div id="list"></div>
     <audio id="model-clip" hidden></audio>
   </section>
   <div id="rev-ov" hidden>
     <div class="rev-ov-in">
-      <header><b>索引</b><button type="button" id="rev-ov-x" aria-label="关闭">关闭</button></header>
+      <header><b>chỉ mục</b><button type="button" id="rev-ov-x" aria-label=" đóng ">đóng</button></header>
       <div id="rev-index"></div>
     </div>
   </div>
@@ -50,12 +50,12 @@
       var recs = S && S.readRecs ? S.readRecs() : {};
       var rows = [];
       if (!att || !att.paper) {
-        document.getElementById("score").textContent = "没有本次作答记录。";
+        document.getElementById("score").textContent = " không có gốc tiếp theo trả lời ghi chép ";
         return;
       }
 
-      /* wofo: 分数与各科解析在同一页，靠顶栏 Tab 切换；其余科目按 sid 从模考历史重建 */
-      var NAMES = { report: "分数", reading: "阅读", listening: "听力", writing: "写作", speaking: "口语" };
+      /* wofo: điểm biến thể của | mỗi ngành học phân tích tồn tại giống hệt đầu, dựa vào đỉnh hàng rào Tab chuyển đổi; phần còn lại môn học nhấn sid biến thể của | bắt chước đánh lịch sử tái thiết */
+      var NAMES = { report: " điểm ", reading: " Đọc hiểu ", listening: " Nghe hiểu ", writing: " Viết ", speaking: " Nói " };
       var ORDER = ["report", "reading", "listening", "writing", "speaking"];
       var sid = att.sid || 0;
       var sit = {};
@@ -67,14 +67,14 @@
       var tab = "report";
       var REP = (location.pathname.indexOf("/app/") === 0 ? "../" : "") + "toefl-score.html" +
         (sid ? "?sid=" + sid : "");
-      // preview=1 时上面那行会跳过 mount，这里补挂，否则 Tab 栏无处可插
+      // preview=1 biến thể cũ của | bên trên biến thể của hàng có thể nhảy qua mount, biến thể của | sửa treo, nếu không thì Tab hàng rào không nơi nào có thể cắm
       var top = document.querySelector(".hit-top");
       if (!top && YYSD_HIT.mount(skill)) top = document.querySelector(".hit-top");
       var mid = document.createElement("div");
       mid.className = "rev-mid";
       top.insertBefore(mid, top.querySelector(".hit-user"));
       top.querySelector(".hit-brand").insertAdjacentHTML("afterend",
-        '<a class="rev-out" id="rev-exit" href="' + esc(P.backHref(skill)) + '">退出复习</a>');
+        '<a class="rev-out" id="rev-exit" href="' + esc(P.backHref(skill)) + '">rút lui xem lại</a>');
       document.getElementById("rev-exit").addEventListener("click", function (e) {
         e.preventDefault();
         P.goBack(skill);
@@ -103,7 +103,7 @@
         var r = sit[skill] || own;
         var n = 0;
         ORDER.forEach(function (k) { if (k !== "report" && sit[k]) n += 1; });
-        return (r.title || r.paperId || "模考") + " · " + NAMES[skill] + (n > 1 ? " · 全卷" : " · 单科");
+        return (r.title || r.paperId || " bắt chước đánh ") + " · " + NAMES[skill] + (n > 1 ? " · tất cả cuộn lại " : " · hóa đơn ngành học ");
       }
       function paintBar() {
         mid.innerHTML = '<span class="rev-mock">' + esc(mockLabel()) + '</span><nav class="rev-tabs">' +
@@ -113,7 +113,7 @@
               (dis ? " disabled" : "") + ">" + NAMES[k] + "</button>";
           }).join("") + "</nav>" +
           (tab === "report" ? "" : '<span class="rev-acts">' +
-            '<button type="button" id="rev-index-btn"' + (rows.length ? "" : " disabled") + ">索引</button>" +
+            '<button type="button" id="rev-index-btn"' + (rows.length ? "" : " disabled") + ">chỉ mục</button>" +
             '<button type="button" id="rev-prev"' + (rows.length ? "" : " disabled") + ">Back</button>" +
             '<button type="button" id="rev-next"' + (rows.length ? "" : " disabled") + ">Next</button></span>");
         mid.querySelector(".rev-tabs").onclick = function (e) {
@@ -234,8 +234,8 @@
       } else paint();
 
       function paint() {
-        document.getElementById("title").textContent = (att.paper.title || "Set 1") + " · 复习";
-        if (att.total != null) document.getElementById("score").textContent = "得分 " + (att.score || 0) + " / " + att.total;
+        document.getElementById("title").textContent = (att.paper.title || "Set 1") + " · Ôn tập ";
+        if (att.total != null) document.getElementById("score").textContent = " Điểm số " + (att.score || 0) + " / " + att.total;
         var list = document.getElementById("list");
         list.innerHTML = "";
         rows = [];
@@ -251,20 +251,20 @@
             var mine = Array.isArray(ua) ? ua.filter(Boolean).join(" ") : String(ua || "");
             var key = (task.answer || []).join(" ");
             var ok = sameSeq(Array.isArray(ua) ? ua : [], task.answer || []);
-            list.insertAdjacentHTML("beforeend", card(ok ? "is-ok" : "is-bad", title, note("Context", task.context) + pair(mine || "未作答", key, ok) + note("解析", explainOf(task))));
+            list.insertAdjacentHTML("beforeend", card(ok ? "is-ok" : "is-bad", title, note("Context", task.context) + pair(mine || " Chưa trả lời ", key, ok) + note(" Giải thích ", explainOf(task))));
           } else if (task.type === "email" || task.type === "discussion") {
-            list.insertAdjacentHTML("beforeend", card("is-done", "已提交 · " + title, note("你的作答", (att.answers || {})[task.id] || "未作答") + note("范文", task.sample) + note("解析", explainOf(task))));
+            list.insertAdjacentHTML("beforeend", card("is-done", " đã nộp · " + title, note(" bạn của trả lời ", (att.answers || {})[task.id] || " Chưa trả lời ") + note(" mô hình ngôn ngữ ", task.sample) + note(" Giải thích ", explainOf(task))));
           } else if (task.type === "repeat" || task.type === "interview") {
             var rec = recs[task.id];
             var audio = rec && rec.data
-              ? '<div class="rev-note"><span>你的录音</span><audio controls src="' + rec.data + '"></audio><p><button type="button" class="hit-go exp-one" data-id="' + task.id + '">导出本题</button></p></div>'
-              : note("你的录音", "未录音");
+              ? '<div class="rev-note"><span>bạn của ghi âm</span><audio controls src="' + rec.data + '"></audio><p><button type="button" class="hit-go exp-one" data-id="' + task.id + '">suy ra chủ đề đang thảo luận</button></p></div>'
+              : note(" bạn của ghi âm ", " chưa ghi âm ");
             var model = task.audio
-              ? '<div class="rev-note"><span>原句</span><audio controls src="' + encodeURI(task.audio) + '"></audio></div>'
+              ? '<div class="rev-note"><span>trước đây biến thể của</span><audio controls src="' + encodeURI(task.audio) + '"></audio></div>'
               : "";
-            list.insertAdjacentHTML("beforeend", card("is-done", "已提交 · " + title,
-              (task.type === "interview" ? note("题目", task.stem || task.sample) : note("应复述", task.sample)) +
-              model + audio + note("提示", explainOf(task))));
+            list.insertAdjacentHTML("beforeend", card("is-done", " đã nộp · " + title,
+              (task.type === "interview" ? note(" Câu hỏi ", task.stem || task.sample) : note(" Ưng lặp lại ", task.sample)) +
+              model + audio + note(" Gợi ý ", explainOf(task))));
           } else if (hasSource(task) && (task.questions || []).length) {
             mountSplit(list, task, ti, title);
           } else {
@@ -272,7 +272,7 @@
               var picked = pick(ti, q);
               var qok = String(picked || "") === String(q.answer || "");
               var id = "revq" + ti + "-" + q.id;
-              list.insertAdjacentHTML("beforeend", card(qok ? "is-ok" : "is-bad", "Question " + q.id, note("题目", q.stem) + pair(label(q, picked), label(q, q.answer), qok) + note("原文", q.transcript) + note("解析", explainOf(q)), id));
+              list.insertAdjacentHTML("beforeend", card(qok ? "is-ok" : "is-bad", "Question " + q.id, note(" Câu hỏi ", q.stem) + pair(label(q, picked), label(q, q.answer), qok) + note(" Bản gốc ", q.transcript) + note(" Giải thích ", explainOf(q)), id));
               rows.push({ no: q.id, label: q.stem, res: resOf(q, picked), el: id });
             });
           }
@@ -310,15 +310,15 @@
         T.renderBlanksReview(task, art.querySelector(".rev-cw"), att.answers || {});
         var zh = task.translation || "";
         var extra = (zh
-          ? '<button class="rev-zh-btn" type="button">显示中文</button>' +
-            '<div class="rev-note rev-zh"><span>中文</span><p>' + esc(zh) + "</p></div>"
-          : "") + (blankNotes(blanks) || note("解析", explainOf(task)));
+          ? '<button class="rev-zh-btn" type="button">hiển thị ngôn ngữ Trung Quốc</button>' +
+            '<div class="rev-note rev-zh"><span>tiếng Trung</span><p>' + esc(zh) + "</p></div>"
+          : "") + (blankNotes(blanks) || note(" Giải thích ", explainOf(task)));
         if (extra) art.insertAdjacentHTML("beforeend", extra);
         if (zh) {
           var zb = art.querySelector(".rev-zh-btn"), zx = art.querySelector(".rev-zh");
           zb.onclick = function () {
             var on = zx.classList.toggle("is-on");
-            zb.textContent = on ? "隐藏中文" : "显示中文";
+            zb.textContent = on ? " che giấu ngôn ngữ Trung Quốc " : " hiển thị ngôn ngữ Trung Quốc ";
           };
         }
         list.appendChild(art);
@@ -391,18 +391,18 @@
           var tag = "";
           if (k === q.answer) {
             cls += " is-key";
-            tag = '<span class="rev-opt-tag">✓ 正确答案</span>';
+            tag = '<span class="rev-opt-tag">✓ Đáp án đúng</span>';
           }
           if (picked && k === picked && picked !== q.answer) {
             cls += " is-mine";
-            tag = '<span class="rev-opt-tag">✗ 你选的</span>';
+            tag = '<span class="rev-opt-tag">✗ bạn chọn của</span>';
           }
           return '<p class="' + cls + '"><b>' + esc(k) + "</b> " + esc(q.options[k]) + tag + "</p>";
         }).join("");
         panel.className = "rev-q " + (ok ? "is-ok" : "is-bad");
         panel.innerHTML = '<header class="rev-head"><span class="rev-mark" aria-hidden="true"></span><strong>Question ' +
           esc(q.id) + "</strong></header><p class=\"rev-stem\">" + esc(q.stem) + "</p>" + opts +
-          pair(label(q, picked), label(q, q.answer), ok) + note("解析", explainOf(q));
+          pair(label(q, picked), label(q, q.answer), ok) + note(" Giải thích ", explainOf(q));
       }
 
       function hasSource(task) {
@@ -417,9 +417,9 @@
       function explainOf(obj) { return (obj && (obj.analysis || obj.explain)) || ""; }
       function blankNotes(blanks) {
         var lines = (blanks || []).filter(explainOf).map(function (b) {
-          return b.id + ". " + (b.word || b.answer || "") + " — " + explainOf(b);
+          return b.id + ". " + (b.word || b.answer || "") + " - " + explainOf(b);
         });
-        return lines.length ? note("解析", lines.join("\n")) : "";
+        return lines.length ? note(" Giải thích ", lines.join("\n")) : "";
       }
       function heading(task) {
         return task.title || task.subject || task.code || ({
@@ -435,19 +435,19 @@
         return '<article class="rev-card ' + cls + '"' + (id ? ' id="' + id + '"' : "") + '><header class="rev-head"><span class="rev-mark" aria-hidden="true"></span><strong>' + esc(name) + "</strong></header>" + inner + "</article>";
       }
       function resOf(q, picked) {
-        if (!String(picked || "").trim()) return "未答";
-        return String(picked) === String(q.answer || "") ? "对" : "错";
+        if (!String(picked || "").trim()) return " chưa hình thức gắn liền có nghĩa giống như từ tự do ";
+        return String(picked) === String(q.answer || "") ? " đối với " : " lỗi ";
       }
       function resOfBlank(b, raw) {
-        if (T.matchBlank(b, raw)) return "对";
-        return String(raw || "").trim() ? "错" : "未答";
+        if (T.matchBlank(b, raw)) return " đối với ";
+        return String(raw || "").trim() ? " lỗi " : " chưa hình thức gắn liền có nghĩa giống như từ tự do ";
       }
       function paintIndex() {
         var host = document.getElementById("rev-index");
         if (!rows.length) { host.innerHTML = ""; return; }
-        host.innerHTML = '<table class="rev-index"><thead><tr><th>题号</th><th>题目</th><th>结果</th></tr></thead><tbody>'
+        host.innerHTML = '<table class="rev-index"><thead><tr><th>chủ đề gầm</th><th>Câu hỏi</th><th>Kết quả</th></tr></thead><tbody>'
           + rows.map(function (r, i) {
-            var cls = r.res === "对" ? "is-ok" : r.res === "错" ? "is-bad" : "is-skip";
+            var cls = r.res === " đối với " ? "is-ok" : r.res === " lỗi " ? "is-bad" : "is-skip";
             return '<tr data-i="' + i + '"><td>' + esc(r.no) + "</td><td>" + esc(r.label) + '</td><td class="' + cls + '">' + esc(r.res) + "</td></tr>";
           }).join("") + "</tbody></table>";
         host.onclick = function (e) {
@@ -458,14 +458,14 @@
         };
       }
       function pair(mine, key, ok) {
-        return '<div class="rev-pair"><div><span>你的答案</span><p class="' + (ok ? "" : "is-strike") + '">' + esc(mine || "未作答") + "</p></div><div><span>正确答案</span><p>" + esc(key) + "</p></div></div>";
+        return '<div class="rev-pair"><div><span>bạn của câu trả lời</span><p class="' + (ok ? "" : "is-strike") + '">' + esc(mine || " Chưa trả lời ") + "</p></div><div><span>Đáp án đúng</span><p>" + esc(key) + "</p></div></div>";
       }
       function note(k, v) {
         if (!v) return "";
-        return '<div class="rev-note' + (k === "解析" ? " rev-note--explain" : "") + '"><span>' + esc(k) + "</span><p>" + esc(v) + "</p></div>";
+        return '<div class="rev-note' + (k === " Giải thích " ? " rev-note--explain" : "") + '"><span>' + esc(k) + "</span><p>" + esc(v) + "</p></div>";
       }
       function label(q, k) {
-        if (!k) return "未作答";
+        if (!k) return " Chưa trả lời ";
         return k + (q.options && q.options[k] ? ". " + q.options[k] : "");
       }
       function sameSeq(got, want) {

@@ -354,7 +354,7 @@
     if (on && pop) pop.classList.add("hidden");
   }
 
-  /* wofo: 交卷后先停在「生成成绩单」屏，点 View 才把答卷交给复盘页 */
+  /* wofo: nộp bài thi hoàng hậu trước dừng tồn tại«tạo ra phiếu điểm hoặc bảng điểm»xem |, điểm View khả năng cầm bài thi đã hoàn thành đưa chơi lại ván cờ đầu */
   function reportGate(onView) {
     examMode(false);
     document.body.classList.add("ets-gate-on");
@@ -373,7 +373,7 @@
     $("ets-gate-go").onclick = function () { if (onView) onView(); };
   }
 
-  // ponytail: confirmExit 与 confirmSubmit 共用 #ets-exit 浮层，每次全量写文案防止上一次的残留
+  // ponytail: confirmExit và confirmSubmit dùng chung #ets-exit nổi chồng lên nhau, mỗi lần tất cả đo lường viết nội dung ngăn chặn dùng trong | đầu tiên của còn lại
   function confirmExit(onYes, mock) {
     var box = $("ets-exit");
     if (!box) { if (onYes) onYes(); return; }
@@ -569,15 +569,15 @@
 
   function renderReview(detail) {
     return (detail || []).map(function (d) {
-      var ua = d.ua ? escHtml(d.ua) : "无";
+      var ua = d.ua ? escHtml(d.ua) : " không có ";
       var mark = d.ok === true ? "is-correct" : (d.ok === false ? "is-incorrect" : "");
       var stem = d.stem ? " · " + escHtml(d.stem) : "";
       var explain = d.explain
-        ? '<p class="rv-explain"><b>解析</b> ' + escHtml(d.explain) + "</p>"
+        ? '<p class="rv-explain"><b>Giải thích</b> ' + escHtml(d.explain) + "</p>"
         : "";
       return '<article class="rv-item"><p class="rv-stem">Q' + escHtml(d.id) + stem + "</p>" +
-        '<p class="rv-line"><span class="rv-k">我的答案：</span><span class="' + mark + '">' + ua + "</span></p>" +
-        '<p class="rv-line"><span class="rv-k">正确答案：</span><span class="is-correct">' + escHtml(d.expect || "") + "</span></p>" +
+        '<p class="rv-line"><span class="rv-k">tôi của câu trả lời: </span><span class="' + mark + '">' + ua + "</span></p>" +
+        '<p class="rv-line"><span class="rv-k">Đáp án đúng: </span><span class="is-correct">' + escHtml(d.expect || "") + "</span></p>" +
         explain + "</article>";
     }).join("");
   }

@@ -13,9 +13,26 @@ export function renderIntro() {
 
 export function renderQuestion(question, index) {
   const options = question.options
-    .map((option) => '<button class="option" type="button" data-action="answer" data-choice="' + escapeHtml(option) + '" aria-pressed="false">' + escapeHtml(option) + '</button>')
+    .map(
+      (option) =>
+        '<button class="option" type="button" data-action="answer" data-choice="' +
+        escapeHtml(option) +
+        '" aria-pressed="false">' +
+        escapeHtml(option) +
+        '</button>'
+    )
     .join('');
-  return '<p class="question"><span class="question__meta">Câu ' + (index + 1) + ' · ' + escapeHtml(question.skill) + '</span>' + escapeHtml(question.prompt) + '</p><div class="options">' + options + '</div><button class="btn btn--secondary" type="button" data-action="next">Câu tiếp theo</button>';
+  return (
+    '<p class="question"><span class="question__meta">Câu ' +
+    (index + 1) +
+    ' · ' +
+    escapeHtml(question.skill) +
+    '</span>' +
+    escapeHtml(question.prompt) +
+    '</p><div class="options">' +
+    options +
+    '</div><button class="btn btn--secondary" type="button" data-action="next">Câu tiếp theo</button>'
+  );
 }
 
 export function renderFeedback(state) {
@@ -25,7 +42,18 @@ export function renderFeedback(state) {
 
 export function renderUnits(units) {
   return units
-    .map((unit) => '<article class="unit"><span class="unit__tag">Đơn vị ' + unit.id + ' · ' + escapeHtml(unit.skill) + '</span><h3>' + escapeHtml(unit.title) + '</h3><p>' + escapeHtml(unit.detail) + '</p></article>')
+    .map(
+      (unit) =>
+        '<article class="unit"><span class="unit__tag">Đơn vị ' +
+        unit.id +
+        ' · ' +
+        escapeHtml(unit.skill) +
+        '</span><h3>' +
+        escapeHtml(unit.title) +
+        '</h3><p>' +
+        escapeHtml(unit.detail) +
+        '</p></article>'
+    )
     .join('');
 }
 
@@ -36,19 +64,48 @@ export function renderLeague(state) {
     .map((row, index) => {
       let open = '<tr>';
       if (row.name === 'Bạn') open = '<tr class="row--me">';
-      return open + '<td>' + (index + 1) + '</td><td>' + escapeHtml(row.name) + '</td><td>' + row.xp + '</td><td>' + row.streak + '</td></tr>';
+      return (
+        open +
+        '<td>' +
+        (index + 1) +
+        '</td><td>' +
+        escapeHtml(row.name) +
+        '</td><td>' +
+        row.xp +
+        '</td><td>' +
+        row.streak +
+        '</td></tr>'
+      );
     })
     .join('');
 }
 
 export function renderBadges(state) {
   const earned = earnedBadges(state);
-  return BADGES.map((badge) => '<li data-earned="' + earned.includes(badge.id) + '"><strong>' + escapeHtml(badge.name) + '</strong><span>' + escapeHtml(badge.note) + '</span></li>').join('');
+  return BADGES.map(
+    (badge) =>
+      '<li data-earned="' +
+      earned.includes(badge.id) +
+      '"><strong>' +
+      escapeHtml(badge.name) +
+      '</strong><span>' +
+      escapeHtml(badge.note) +
+      '</span></li>'
+  ).join('');
 }
 
 export function renderPdfs(pdfs) {
   return pdfs
-    .map((pdf) => '<li><strong>' + escapeHtml(pdf.title) + '</strong><span>' + escapeHtml(pdf.topic) + '</span><br><a href="tai-lieu/' + escapeHtml(pdf.file) + '" target="_blank" rel="noopener noreferrer">Mở tài liệu PDF</a></li>')
+    .map(
+      (pdf) =>
+        '<li><strong>' +
+        escapeHtml(pdf.title) +
+        '</strong><span>' +
+        escapeHtml(pdf.topic) +
+        '</span><br><a href="tai-lieu/' +
+        escapeHtml(pdf.file) +
+        '" target="_blank" rel="noopener noreferrer">Mở tài liệu PDF</a></li>'
+    )
     .join('');
 }
 

@@ -174,7 +174,7 @@ function main() {
   ) as UniRow[];
   const editions = JSON.parse(fs.readFileSync(path.join(RAW, "editions.json"), "utf8")) as EditionRow[];
 
-  // drop curated QS editions — replaced by official
+  // drop curated QS editions - replaced by official
   const kept = editions.filter((e) => e.system !== "qs");
   const unmatched: string[] = [];
   let index = buildAliasIndex(universities);

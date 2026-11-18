@@ -14,11 +14,11 @@ JSON_DIR = Path(__file__).resolve().parent / "gaozhong_json"
 
 def collocations_from_phrases(phrases):
     coll = []
-    for part in re.split(r"[,，]", phrases or ""):
+    for part in re.split(r"[,, ]", phrases or ""):
         part = part.strip()
         if not part:
             continue
-        m = re.match(r"^(.+?)[（(](.+?)[）)]$", part)
+        m = re.match(r"^(.+?)[((](.+?)[))]$", part)
         if m:
             coll.append({"phrase": m.group(1).strip(), "meaning": m.group(2).strip()})
         elif len(coll) < 3:
@@ -32,7 +32,7 @@ def normalize_item(i, raw, expect_word):
         raise SystemExit("order mismatch #%s: json %r excel %r" % (i, word, expect_word))
     accept = raw.get("acceptCN") or []
     if isinstance(accept, str):
-        accept = re.split(r"[/／、;；]", accept)
+        accept = re.split(r"[/ , ;; ]", accept)
     accept = [str(x).strip() for x in accept if str(x).strip()][:4]
     if len(accept) < 2:
         raise SystemExit("%s acceptCN < 2: %r" % (word, accept))
@@ -60,7 +60,7 @@ def normalize_item(i, raw, expect_word):
         list(raw.get("synonyms") or []),
         list(raw.get("antonyms") or []),
         str((raw.get("examTag") or {}).get("commonUsage") or accept[0]),
-        str((raw.get("examTag") or {}).get("topic") or "通用"),
+        str((raw.get("examTag") or {}).get("topic") or " Dùng chung "),
         int((raw.get("examTag") or {}).get("frequency") or 4),
     )
     if raw.get("collocations"):

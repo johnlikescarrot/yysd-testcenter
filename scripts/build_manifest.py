@@ -5,7 +5,7 @@ build_manifest.py
 =================
 Recursively scans the `library/` folder for content HTML files (mock exams,
 study materials, practice sets) and regenerates `library/manifest.json`, the
-index the website reads to build the 模考区 / 学习区 / 练习区 sections.
+index the website reads to build the bắt chước khu vực thi / học khu vực / Khu vực luyện tập sections.
 
 Runs automatically via GitHub Actions whenever a file changes in `library/`,
 so the admin never edits JSON by hand.
@@ -13,7 +13,7 @@ so the admin never edits JSON by hand.
 CLASSIFICATION IS BY FOLDER. The folder a file lives in decides its category:
     library/<zone>/<subject>/<file>.html
 e.g. library/study/vocab/xxx.html  ->  zone=study, subject=vocab
-The admin just drops a file into the matching folder — no tags required.
+The admin just drops a file into the matching folder - no tags required.
 
 Study vocab LISTs opened via exam.html auto-sync test wrong words to the
 matching wrong-word notebook (gaozhong / cet4 / special) when they include
@@ -27,7 +27,7 @@ Metadata per file (priority order):
   - description -> <meta exam:description>, else ""
   - added       -> first git commit date of the file, else file mtime
 
-Standard library only — no third-party dependencies.
+Standard library only - no third-party dependencies.
 """
 
 import json
@@ -54,19 +54,19 @@ ZONE_SUBJECTS = {
 VALID_ZONES = set(ZONE_SUBJECTS.keys())
 
 ZONE_KEYWORDS = [
-    ("study",    ["study", "lesson", "grammar", "vocab", "语法", "单词", "词汇", "学习", "讲解", "精讲"]),
-    ("practice", ["practice", "exercise", "drill", "练习", "习题", "专项"]),
-    ("mock",     ["mock", "test", "full", "exam", "模考", "模拟", "全真", "套卷", "入学测试"]),
+    ("study",    ["study", "lesson", "grammar", "vocab", " Ngữ pháp ", " Từ vựng ", " biến thể của | ", " học ", " giải thích ", " tinh chất nói "]),
+    ("practice", ["practice", "exercise", "drill", " luyện tập ", " bài tập ", " chuyên biệt "]),
+    ("mock",     ["mock", "test", "full", "exam", " bắt chước đánh ", " mô phỏng ", " tất cả thật ", " che đậy cuộn lại ", " vào trường hoặc cao đẳng kiểm tra "]),
 ]
 SUBJECT_KEYWORDS = [
-    ("cambridge-listening", ["剑桥听力", "cambridge listening", "剑听", "剑桥雅思 listening"]),
-    ("cambridge-reading",   ["剑桥阅读", "cambridge reading", "剑阅"]),
-    ("cambridge", ["cambridge", "剑桥", "剑"]),
-    ("ielts",   ["ielts", "雅思"]),
+    ("cambridge-listening", [" Cambridge thính giác ", "cambridge listening", " kiếm hai lưỡi cười ", " Cambridge IELTS listening"]),
+    ("cambridge-reading",   [" Cambridge đọc ", "cambridge reading", " kiếm hai lưỡi kiểm tra "]),
+    ("cambridge", ["cambridge", " Cambridge ", " Cambridge "]),
+    ("ielts",   ["ielts", " IELTS "]),
     ("pte",     ["pte"]),
-    ("toefl",   ["toefl", "托福"]),
-    ("grammar", ["grammar", "语法"]),
-    ("vocab",   ["vocab", "word", "单词", "词汇"]),
+    ("toefl",   ["toefl", " TOEFL "]),
+    ("grammar", ["grammar", " Ngữ pháp "]),
+    ("vocab",   ["vocab", "word", " Từ vựng ", " biến thể của | "]),
 ]
 
 
@@ -100,7 +100,7 @@ def guess(haystack, table, default):
 
 
 def slugify(name):
-    s = re.sub(r"[^a-z0-9一-鿿]+", "-", name.lower())
+    s = re.sub(r"[^a-z0-9 một-noi dung]+", "-", name.lower())
     return s.strip("-") or "item"
 
 
@@ -221,7 +221,7 @@ def main():
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
+                "description": " toàn văn/theo đuổi biến thể của tinh chất cười: thật âm thanh, chính phủ nguyên văn trục thời gian, văn bản dịch, chèo biến thể cũ của | ",
                 "added": git_added_date(path),
             })
 

@@ -52,7 +52,7 @@ function mergeFile(filePath) {
     paper.tasks.push(Object.assign({}, t, {
       type: "discussion",
       title: t.title || "Academic Discussion",
-      titleZh: t.titleZh || "学术讨论",
+      titleZh: t.titleZh || " Thảo luận học thuật ",
       sample: t.sample || "",
       analysis: t.analysis || "",
       instruction: t.instruction || "Your professor is teaching a class. Write a post responding to the professor's question.\nIn your response, you should do the following:\n• Express and support your personal opinion.\n• Make a contribution to the discussion in your own words.\nAn effective response will contain at least 100 words."

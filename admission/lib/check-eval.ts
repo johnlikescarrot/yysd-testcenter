@@ -51,7 +51,7 @@ const lxr = {
 const cases = Array.from({ length: 10 }, (_, i) => ({
   admissionResult: i % 3 === 0,
   gpa: 3.5,
-  undergradSchool: "国际本科（GradCafe 自报）",
+  undergradSchool: " quốc tế khóa học đại học(GradCafe tự thông báo)",
   source: "gradcafe" as const,
 }));
 
@@ -68,7 +68,7 @@ const asu = calibrateAdmission({
   resume: { research: ["course project"], internships: ["a", "b", "c"], papers: [], tags: ["internship"] },
 });
 
-console.assert(cmu.category === "冲刺", `CMU should be 冲刺, got ${cmu.category}`);
+console.assert(cmu.category === " chạy nước rút ", `CMU should be chạy nước rút, got ${cmu.category}`);
 console.assert(cmu.probability < 30, `CMU prob should be <30, got ${cmu.probability}`);
 console.assert(asu.probability > cmu.probability + 15, `ASU should beat CMU by 15+, ${asu.probability} vs ${cmu.probability}`);
 console.assert(cmu.evidence.length >= 4, "evidence required");

@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.18-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.18-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-18/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-18"
 SET = "7.18"
-TITLE = "新托福 7.18 国内线下"
+TITLE = " TOEFL mới 7.18 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -142,7 +142,7 @@ def post(name, photo, text):
 def build_reading():
     tasks, n = [], 1
     t, n = cw("Craftsmanship as Art", 1, n, [
-        "Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers—known as artisans—were highly valued not only for their ",
+        "Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers-known as artisans-were highly valued not only for their ",
         ("tech", "technical"),
         " expertise ",
         ("b", "but"),
@@ -282,7 +282,7 @@ def build_reading():
         ("pro", "process"),
         " was ",
         ("ti", "time"),
-        "-consuming and required detailed knowledge of pigments—their chemical properties, how they interact with different media, and their durability over time. But it also allowed painters to give their artworks a truly unique color palette.",
+        "-consuming and required detailed knowledge of pigments-their chemical properties, how they interact with different media, and their durability over time. But it also allowed painters to give their artworks a truly unique color palette.",
     ])
     tasks.append(t)
     t, n = cw("Neolithic Pottery", 1, n, [
@@ -394,15 +394,15 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("Social Networks and Influence", 2, [
-        "Computational sociology studies how social networks—like friendships, professional connections, or online communities—affect how people think and act. Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior. If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views. These influences are especially strong when the conversations are emotionally charged or align with the person's values.",
+        "Computational sociology studies how social networks-like friendships, professional connections, or online communities-affect how people think and act. Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior. If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views. These influences are especially strong when the conversations are emotionally charged or align with the person's values.",
         {"insert": "A", "t": "Interestingly, it is not always the most famous or powerful people who have the biggest impact."},
-        {"insert": "B", "t": "Everyday conversations—like repeated exchanges between coworkers—can be more influential than a single message from a celebrity or expert. Researchers use computational models to analyze how messages spread."},
+        {"insert": "B", "t": "Everyday conversations-like repeated exchanges between coworkers-can be more influential than a single message from a celebrity or expert. Researchers use computational models to analyze how messages spread."},
         {"insert": "C", "t": "An accurate model can predict which types of messages are likely to spread widely."},
         {"insert": "D"},
         "Still, predicting human behavior is incredibly complex. People are shaped by their culture, social norms, and personal experiences, which makes it hard to build models that work universally. For example, a message that spreads quickly in one country might fall flat in another due to different cultural values. The real challenge lies in understanding how all these subtle factors interact to drive large-scale changes in behavior.",
     ], [
         q(n, "Identify the sentence in paragraph 1 that describes how repeated interaction can influence a person's beliefs.", {
-            "A": "Computational sociology studies how social networks—like friendships, professional connections, or online communities—affect how people think and act.",
+            "A": "Computational sociology studies how social networks-like friendships, professional connections, or online communities-affect how people think and act.",
             "B": "Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior.",
             "C": "If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views.",
             "D": "These influences are especially strong when the conversations are emotionally charged or align with the person's values."}, "C"),
@@ -545,7 +545,7 @@ def build_reading():
     n += 5
     if n != 114:
         raise SystemExit("reading expected next id 114, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 2100, "from": 1, "to": 83},
         {"n": 2, "timeSec": 1080, "from": 84, "to": 113},
     ], tasks)
@@ -650,14 +650,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(clip(typ, title, module, fname, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 720, "from": 1, "to": 8},
         {"n": 2, "timeSec": 720, "from": 9, "to": 16},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 1680, "from": 1, "to": 4, "label": "Email"},
         {"n": 2, "timeSec": 3600, "from": 5, "to": 10, "label": "Academic Discussion"},
     ], [
@@ -909,10 +909,10 @@ if __name__ == "__main__":
     dump("2025-07-18-reading.json", build_reading())
     dump("2025-07-18-listening.json", build_listening())
     dump("2025-07-18-writing.json", build_writing())
-    dump("2025-07-18-speaking.json", build_speaking(ID, TITLE + " · 口语 Form 1", 1, 1))
-    dump("2025-07-18-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
-    dump("2025-07-18-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
-    dump("2025-07-18-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · 口语 Form 4", 4, 4))
-    dump("2025-07-18-speaking-f5.json", build_speaking(ID + "-s5", TITLE + " · 口语 Form 5", 5, None))
-    dump("2025-07-18-speaking-f6.json", build_speaking(ID + "-s6", TITLE + " · 口语 Form 6", 6, None))
+    dump("2025-07-18-speaking.json", build_speaking(ID, TITLE + " · Nói Form 1", 1, 1))
+    dump("2025-07-18-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
+    dump("2025-07-18-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
+    dump("2025-07-18-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · Nói Form 4", 4, 4))
+    dump("2025-07-18-speaking-f5.json", build_speaking(ID + "-s5", TITLE + " · Nói Form 5", 5, None))
+    dump("2025-07-18-speaking-f6.json", build_speaking(ID + "-s6", TITLE + " · Nói Form 6", 6, None))
     copy_audio()

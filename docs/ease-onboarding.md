@@ -1,78 +1,78 @@
-# 壹则教育（ease）开通与试点验收
+# một nhưng giáo dục(ease)mở biến thể của | điểm thử nghiệm kiểm tra và chấp nhận
 
-## 站点入口
+## trang web lối vào
 
-| 用途 | 地址 |
+| công dụng | địa chỉ |
 |------|------|
-| 首页 | https://ease.youyisida.com |
-| 登录（学生 / 教师 / 管理员） | https://ease.youyisida.com/login.html |
-| 学生注册 | https://ease.youyisida.com/register.html |
-| 工作人员注册（教师 / 管理员） | https://ease.youyisida.com/teacher-register.html |
-| 教师工作台 | https://ease.youyisida.com/teacher.html |
-| 学生分配（管理员） | https://ease.youyisida.com/admin-assign.html |
+| Trang chủ | https://ease.youyisida.com |
+| Đăng nhập(Học viên / Giáo viên / người quản lý) | https://ease.youyisida.com/login.html |
+| học sinh đăng ký | https://ease.youyisida.com/register.html |
+| nhân viên đăng ký(Giáo viên / người quản lý) | https://ease.youyisida.com/teacher-register.html |
+| giáo viên bàn làm việc | https://ease.youyisida.com/teacher.html |
+| học sinh phân phối(người quản lý) | https://ease.youyisida.com/admin-assign.html |
 
-总部主控台（仅 youyisida.com）：https://youyisida.com/platform.html
+trụ sở chính chủ kiểm soát Đài Loan(hầu như youyisida.com): https://youyisida.com/platform.html
 
-## 当前机构配置（已验证 2026-07-22）
+## thời điểm hiện tại cơ chế triển khai(đã kiểm tra và xác minh 2026-07-22)
 
-- 名称：**壹则教育**
-- slug：`ease`
-- 状态：正常（到期 2026-10-21）
-- 管理员手机（暂用验收）：15901754473
-- Logo：已上传
+- tên: **một nhưng giáo dục**
+- slug: `ease`
+- tình trạng: bình thường(đến hạn 2026-10-21)
+- người quản lý điện thoại di động(tạm thời sử dụng kiểm tra và chấp nhận): 15901754473
+- Logo: đã tải lên
 
-## 注册密钥（请妥善转发，勿公开张贴）
+## đăng ký khóa(mời thích hợp truyền đi, đừng mở dán)
 
-| 角色 | 密钥 | 剩余次数 |
+| vai trò | khóa | phần còn lại số lần |
 |------|------|----------|
-| 公司管理员 | `EaseAdm7760` | 1 / 1 |
-| 教师 | `EaseTch5508` | 4 / 5（已用 1 次） |
-| 学生 | `EaseStu2273` | 10 / 10 |
+| công ty người quản lý | `EaseAdm7760` | 1 / 1 |
+| Giáo viên | `EaseTch5508` | 4 / 5(đã sử dụng 1 tiếp theo) |
+| Học viên | `EaseStu2273` | 10 / 10 |
 
-分网站注册须填写对应密钥；总部 `youyisida.com` 仍用短信验证码注册。
+chia trang web đăng ký phải điền vào biểu mẫu tương ứng với khóa; trụ sở chính `youyisida.com` vẫn sử dụng tin nhắn văn bản mã xác minh đăng ký 
 
-## 推荐验收顺序（管理员 = 15901754473）
+## đề xuất kiểm tra và chấp nhận trình tự(người quản lý = 15901754473)
 
-1. **管理员注册**  
-   打开 https://ease.youyisida.com/teacher-register.html  
-   填写手机号、密码，**教师注册密钥处填管理员密钥 `EaseAdm7760`**（不要用教师密钥）。  
-   注册成功后应能进教师端，并看到「学生分配」。
+1. **người quản lý đăng ký**  
+   mở https://ease.youyisida.com/teacher-register.html  
+   điền vào biểu mẫu điện thoại di động gầm, Mật khẩu, **giáo viên đăng ký khóa cư trú lấp hoặc nhồi người quản lý khóa `EaseAdm7760`**(đừng! sử dụng giáo viên khóa)   
+   đăng ký Trấn Thành Công hoặc trấn Chengkung ở huyện Đài Đông | hoàng hậu Ưng có thể tiến lên giáo viên cuối, và nhìn thấy«học sinh phân phối» 
 
-2. **学生分配**  
-   教师端 → 学生分配：导入或等待学生注册后，将学生分配给教师。
+2. **học sinh phân phối**  
+   Dành cho giáo viên → học sinh phân phối: giới thiệu vào có thể chờ học sinh đăng ký hoàng hậu, sẽ học sinh phân phối cho giáo viên 
 
-3. **测试学生注册**  
-   用**未在总部注册过的新手机号**，打开 https://ease.youyisida.com/register.html  
-   填写 **学生密钥 `EaseStu2273`**，完成注册。
+3. **kiểm tra học sinh đăng ký**  
+   sử dụng**chưa tồn tại trụ sở chính đăng ký băng qua của người mới máy móc gầm**, mở https://ease.youyisida.com/register.html  
+   điền vào biểu mẫu **học sinh khóa `EaseStu2273`**, hoàn thành đăng ký 
 
-4. **模考与成绩**  
-   学生登录 → 真题区 → 完成一套剑桥模考 → 教师在 ease 教师端查看成绩。
+4. **bắt chước đánh biến thể của | thành tích**  
+   học sinh đăng ký → Khu vực đề thi → hoàn thành bộ Cambridge bắt chước đánh → giáo viên tồn tại ease giáo viên cuối xem xét thành tích 
 
-5. **隔离验证**  
-   在 https://youyisida.com 用超管登录，确认**看不到** ease 站测试学生的数据。
+5. **tách biệt kiểm tra và xác minh**  
+   tại https://youyisida.com sử dụng vượt quá biến thể của đăng ký, Xác nhận**chăm sóc không đến** ease trạm kiểm tra học sinh của dữ liệu 
 
-6. **到期关停（可选）**  
-   主控台将 ease 到期日改为昨天 → ease 站应跳转 `suspended.html` → 恢复开通后恢复正常。
+6. **đến hạn đóng cửa(có sẵn)**  
+   chủ kiểm soát Đài Loan sẽ ease ngày đến hạn thay đổi thành hôm qua → ease trạm Ưng nhảy đến `suspended.html` → khôi phục mở hoàng hậu khôi phục bình thường 
 
-## 给壹则负责人的转发话术（可复制）
+## cho một nhưng người phụ trách của truyền đi lời nói mang tính thao túng(có thể nhân bản)
 
-> 壹则教育在线学习平台已开通。  
-> 网址：https://ease.youyisida.com  
-> 登录入口：https://ease.youyisida.com/login.html（学生、教师、管理员统一登录）。  
-> 管理员首次注册请打开「工作人员注册」，使用我们提供的**管理员注册密钥**（密钥单独发您，勿外传）。  
-> 学生注册需**学生注册密钥**；每位学生一个手机号，不能与优益思达总部站重复。  
-> 注册后登录即可使用剑桥模考与练习功能。Logo 与页面已显示「壹则教育」。
+> một nhưng giáo dục trực tuyến học nền tảng đã mở   
+> trang web: https://ease.youyisida.com  
+> đăng ký lối vào: https://ease.youyisida.com/login.html(Học viên, Giáo viên, người quản lý 7-Eleven đăng ký)   
+> người quản lý đầu tiên đăng ký mời mở«nhân viên đăng ký», sử dụng chúng tôi đề nghị của**người quản lý đăng ký khóa**(khóa một mình gửi đi bạn, đừng nói cho người khác)   
+> học sinh đăng ký yêu cầu**học sinh đăng ký khóa**; mỗi vị trí học sinh một dùng trong | điện thoại di động gầm, không thể biến thể của | xuất sắc lợi ích suy nghĩ đạt tới trụ sở chính trạm lặp lại   
+> đăng ký hoàng hậu đăng ký tương đương với sử dụng Cambridge bắt chước đánh biến thể của | luyện tập chức năng Logo biến thể của | trang đã hiển thị«một nhưng giáo dục» 
 
-## 常见问题
+## vấn đề phổ biến
 
-| 问题 | 处理 |
+| câu hỏi | xử lý |
 |------|------|
-| 手机号已注册 | 全站手机号唯一；请用新号，或联系优益思达处理 |
-| 密钥次数用尽 | 总部主控台 → 该机构 →「注册密钥」加次或换新密钥 |
-| 页面仍显示优益思达 | 首次访问某页可能短暂空白（防闪现）；若仍看到优益思达字样，强制刷新 `Cmd+Shift+R` 或无痕窗口 |
-| 忘记密码（分网站） | 联系本校管理员或优益思达超管，分网站不支持短信重置 |
+| điện thoại di động gầm đã đăng ký | tất cả trạm điện thoại di động gầm chỉ; mời sử dụng viết tắt của Tân Cương gầm, có thể biến thể của | xuất sắc lợi ích suy nghĩ đạt tới xử lý |
+| khóa số lần sử dụng hết | trụ sở chính chủ kiểm soát Đài Loan → nên cơ chế →«đăng ký khóa»Canada tiếp theo có thể thay bằng cái mới khóa |
+| trang vẫn hiển thị xuất sắc lợi ích suy nghĩ đạt tới | đầu tiên thăm một vài đầu có thể thời gian ngắn khoảng trống(bảo vệ loé lên); dường như vẫn nhìn thấy xuất sắc lợi ích suy nghĩ đạt tới mẫu hoặc ký tự mẫu, ép buộc cải tiến `Cmd+Shift+R` có thể không dấu vết cửa sổ |
+| Quên mật khẩu(chia trang web) | biến thể của | gốc kiểm tra người quản lý có thể xuất sắc lợi ích suy nghĩ đạt tới vượt quá biến thể của, chia trang web không thể chịu đựng được cầm tin nhắn văn bản đặt lại |
 
-## 运维备注
+## di chuyển viết tắt của Duy Ngô Nhĩ | cột ghi chú
 
-- DNS 通配符 `*.youyisida.com` 已生效；Nginx 已改为通配符 `server_name`。
-- HTTPS 证书当前覆盖 `youyisida.com`、`www`、`api`、`ease`、`youyisi`；**新开其它 slug 子域时**需执行一次 `certbot --nginx --expand` 添加 SAN，或后续配置 DNS-01 通配符证书（见 `docs/multi-tenant.md`）。
+- DNS ký tự đại diện `*.youyisida.com` đã có hiệu lực; Nginx đã thay đổi thành ký tự đại diện `server_name` 
+- HTTPS chứng chỉ thời điểm hiện tại che phủ `youyisida.com`, `www`, `api`, `ease`, `youyisi`; **viết tắt của Tân Cương mở khác slug trường con biến thể cũ của |**yêu cầu thực hiện đầu tiên `certbot --nginx --expand` thêm SAN, có thể theo sau triển khai DNS-01 ký tự đại diện chứng chỉ(thấy `docs/multi-tenant.md`) 

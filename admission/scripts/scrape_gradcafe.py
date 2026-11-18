@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Optional GradCafe public results scraper skeleton.
-Default: do NOT run in production pipelines — respect robots.txt / ToS.
+Default: do NOT run in production pipelines - respect robots.txt / ToS.
 
 Usage (manual):
   python scripts/scrape_gradcafe.py --query "computer science" --pages 2 --out /tmp/gradcafe.json
@@ -30,7 +30,7 @@ def fetch(url: str) -> str:
 
 
 def parse_rows(html: str) -> list[dict]:
-    # ponytail: fragile HTML scrape — GradCafe markup changes often
+    # ponytail: fragile HTML scrape - GradCafe markup changes often
     rows = []
     for m in re.finditer(
         r"(?is)<tr[^>]*>.*?</tr>",

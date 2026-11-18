@@ -7,7 +7,7 @@ var os = require("os");
 var path = require("path");
 var { execFileSync, spawn } = require("child_process");
 
-app.setName("优益思达国际课程中心");
+app.setName(" Trung tâm YYSD ");
 var START_URL = process.env.YYSD_URL || "https://app.youyisida.com/login.html";
 var splashWin = null;
 var siteWin = null;
@@ -148,7 +148,7 @@ function downloadFile(url, dest, onProgress) {
 function installTarget() {
   var running = appBundlePath();
   if (running.indexOf("/Applications/") === 0 && running.indexOf("AppTranslocation") < 0) return running;
-  return "/Applications/优益思达国际课程中心.app";
+  return "/Applications/Trung tâm YYSD.app";
 }
 
 function bundleVersion(bundle) {
@@ -201,14 +201,14 @@ function checkUpdate() {
       }
       return false;
     }
-    splashLabel("请更新到最新版本");
+    splashLabel(" mời thay cũ đổi mới đến mới nhất phiên bản ");
     setProgress(0);
     var zipPath = path.join(os.tmpdir(), "YouYiSiDa-update.zip");
     return downloadFile(info.url, zipPath, function (n) {
-      splashLabel("正在下载新版本");
+      splashLabel(" đang ở tải xuống phiên bản mới gốc ");
       setProgress(n);
     }).then(function () {
-      splashLabel("正在安装新版本");
+      splashLabel(" đang ở lắp đặt phiên bản mới gốc ");
       applyUpdate(zipPath);
       return true;
     });
@@ -238,7 +238,7 @@ function reveal() {
 function loadSite() {
   shown = false;
   progress = 0;
-  splashLabel("系统预加载中");
+  splashLabel(" hệ thống ứng trước tải Trung Quốc ");
   sendProgress(6);
   startCreep();
   siteWin.loadURL(START_URL).catch(function () {
@@ -327,8 +327,8 @@ app.whenReady().then(function () {
   allowMic();
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     { role: "appMenu" },
-    { label: "查看", submenu: [
-      { label: "刷新", accelerator: "CmdOrCtrl+R", click: reloadSite },
+    { label: " xem xét ", submenu: [
+      { label: " cải tiến ", accelerator: "CmdOrCtrl+R", click: reloadSite },
       { type: "separator" },
       { role: "togglefullscreen" }
     ]},

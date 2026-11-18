@@ -1,4 +1,4 @@
-/* slim HQ login + score PUT — same API as the website, own origin storage */
+/* slim HQ login + score PUT - same API as the website, own origin storage */
 (function (w) {
   "use strict";
   var API = (w.location.hostname === "localhost" || w.location.hostname === "127.0.0.1")
@@ -42,10 +42,10 @@
         var d = {};
         if (text) {
           try { d = JSON.parse(text); } catch (e) {
-            throw new Error("服务器返回异常（" + r.status + "）");
+            throw new Error(" máy chủ trở về bất thường(" + r.status + ")");
           }
         }
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || " yêu cầu bị đánh bại ");
         return d;
       });
     });
@@ -53,7 +53,7 @@
 
   function applyLogin(d) {
     var t = (d && d.token) || "";
-    if (!t) throw new Error("登录失败");
+    if (!t) throw new Error(" đăng ký bị đánh bại ");
     localStorage.setItem(TOKEN, t);
     var src = d.user || d.teacher || {};
     localStorage.setItem(USER, JSON.stringify({
@@ -85,9 +85,9 @@
   function compressAvatar(file) {
     return new Promise(function (resolve, reject) {
       if (!file || !/^image\/(jpeg|jpg|png|webp|gif)$/i.test(file.type)) {
-        return reject(new Error("请选择 JPG / PNG / WebP 图片"));
+        return reject(new Error(" Vui lòng chọn JPG / PNG / WebP bức tranh "));
       }
-      if (file.size > 5 * 1024 * 1024) return reject(new Error("图片不能超过 5MB"));
+      if (file.size > 5 * 1024 * 1024) return reject(new Error(" bức tranh không thể vượt qua 5MB"));
       var img = new Image();
       var objectUrl = URL.createObjectURL(file);
       img.onload = function () {
@@ -102,7 +102,7 @@
       };
       img.onerror = function () {
         URL.revokeObjectURL(objectUrl);
-        reject(new Error("图片读取失败"));
+        reject(new Error(" bức tranh đọc bị đánh bại "));
       };
       img.src = objectUrl;
     });

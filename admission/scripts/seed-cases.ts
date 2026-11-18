@@ -12,12 +12,12 @@ const prisma = new PrismaClient();
 const CASES_PER_SCHOOL = 4;
 
 const UNDERGRADS = [
-  "某985高校",
-  "某211高校",
-  "某双一流高校",
-  "某海外本科院校",
-  "某地方重点大学",
-  "某中外合作办学院校",
+  " một vài 985 các trường đại học và cao đẳng ",
+  " một vài 211 các trường đại học và cao đẳng ",
+  " một vài Kế hoạch Hai Hạng Nhất các trường đại học và cao đẳng ",
+  " một vài nước ngoài khóa học đại học trường cao đẳng ",
+  " một nơi vuông kể lại Đại học ",
+  " một vài Trung-Ngoại hợp tác điều hành một trường học trường cao đẳng ",
 ];
 
 const MAJORS_BY_FIELD: Record<Field, string[]> = {
@@ -111,7 +111,7 @@ async function main() {
       bySlug.set(s.slug, updated);
       byKey.set(keyOf(s.name, s.program, s.degree), updated);
     } catch {
-      /* slug collision — upsert path will create/update */
+      /* slug collision - upsert path will create/update */
     }
   }
 
@@ -186,7 +186,7 @@ async function main() {
     }
   }
 
-  // sequential updates — pooler drops parallel bursts (P1017)
+  // sequential updates - pooler drops parallel bursts (P1017)
   async function updateOne(row: (typeof toUpdate)[number], attempt = 1): Promise<void> {
     try {
       await prisma.school.update({
@@ -285,8 +285,8 @@ async function main() {
       const p = admitProb(school.avgGpa, gpa, toefl, ielts, tags);
       const admissionResult = Math.random() < p;
       const lang = toefl != null ? `TOEFL ${toefl}` : `IELTS ${ielts}`;
-      const grePart = gre != null ? `，GRE ${gre}` : "";
-      const resultCn = admissionResult ? "获录取" : "被拒";
+      const grePart = gre != null ? `, GRE ${gre}` : "";
+      const resultCn = admissionResult ? " bắt chấp nhận ứng viên vượt kỳ thi đầu vào " : " chăn kháng cự ";
       caseRows.push({
         schoolId: school.id,
         gpa,
@@ -298,7 +298,7 @@ async function main() {
         backgroundTags: tags,
         admissionResult,
         year,
-        description: `脱敏案例：${undergradSchool}${undergradMajor}背景，GPA ${gpa.toFixed(2)}，${lang}${grePart}，标签 ${tags.join("/")}，${year} 年申请 ${school.country} ${school.name} ${school.program}，${resultCn}。`,
+        description: `giảm mẫn cảm vụ việc: ${undergradSchool}${undergradMajor}bối cảnh, GPA ${gpa.toFixed(2)}, ${lang}${grePart}, nhãn ${tags.join("/")}, ${year} năm nộp đơn xin ${school.country} ${school.name} ${school.program}, ${resultCn} `,
         source: "synthetic",
       });
     }

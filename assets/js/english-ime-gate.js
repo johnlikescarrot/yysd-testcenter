@@ -1,9 +1,9 @@
-/* english-ime-gate.js — block spell tests until English IME is confirmed */
+/* english-ime-gate.js - block spell tests until English IME is confirmed */
 (function () {
   "use strict";
 
   var PROBE = "test";
-  var CHEAT_LIMIT = 3; // ponytail: 超过 3 次中途切中文 IME → 第 4 次判作弊
+  var CHEAT_LIMIT = 3; // ponytail: vượt qua 3 tiếp theo giữa chừng trúng mục tiêu ngôn ngữ IME → Thứ 4 tiếp theo phân biệt thực hành gian lận
   var overlay = null;
   var pending = null;
   var probeIdx = 0;
@@ -79,10 +79,10 @@
     var strikeHint = "";
     if (isViolation && strikes > 0) {
       strikeHint =
-        '<p class="ime-gate-strikes">已切换中文输入法 <strong>' + strikes + "</strong> 次" +
+        '<p class="ime-gate-strikes">đã chuyển đổi ngôn ngữ Trung Quốc phương pháp nhập <strong>' + strikes + "</strong> tiếp theo " +
         (strikes >= CHEAT_LIMIT
-          ? "（再次切换将作废本次测试）"
-          : "（超过 " + CHEAT_LIMIT + " 次将作废本次测试）") +
+          ? "(một lần nữa chuyển đổi sẽ trở nên không hiệu lực gốc tiếp theo kiểm tra)"
+          : "(vượt qua " + CHEAT_LIMIT + " tiếp theo sẽ trở nên không hiệu lực gốc tiếp theo kiểm tra)") +
         "</p>";
     }
     overlay = document.createElement("div");
@@ -92,18 +92,18 @@
     overlay.setAttribute("aria-labelledby", "ime-gate-title");
     overlay.innerHTML =
       '<div class="ime-gate-panel">' +
-        '<h2 id="ime-gate-title">请调整成英文输入模式</h2>' +
+        '<h2 id="ime-gate-title">yêu cầu điều chuyển toàn bộ thành công tiếng Anh nhập khẩu chế độ</h2>' +
         (isViolation
-          ? '<p class="ime-gate-lead ime-gate-lead--warn">检测到中文输入法，请切换回英文后再继续测试。</p>'
-          : '<p class="ime-gate-lead">单词检测要求使用英文输入法。中文输入法的英文联想会自动补全，无法用于拼写。</p>') +
+          ? '<p class="ime-gate-lead ime-gate-lead--warn">phát hiện đến ngôn ngữ Trung Quốc phương pháp nhập, mời chuyển đổi xoay vòng tiếng Anh hoàng hậu lại tiếp tục kiểm tra </p>'
+          : '<p class="ime-gate-lead">từ phát hiện yêu cầu sử dụng tiếng Anh phương pháp nhập ngôn ngữ Trung Quốc phương pháp nhập của tiếng Anh Lenovo có thể tự động sửa tất cả, không thể sử dụng trong đánh vần </p>') +
         strikeHint +
-        '<p class="ime-gate-tip">Mac：Caps Lock 或 Control+Space 切换到 ABC/英文<br>' +
-        "Windows：Shift 或 Win+Space 切换到 ENG</p>" +
-        '<p class="ime-gate-probe-label">请在下方<strong>逐字</strong>输入 <code>test</code> 以确认：</p>' +
+        '<p class="ime-gate-tip">Mac: Caps Lock hoặc Control+Space chuyển đổi đến ABC/tiếng Anh<br>' +
+        "Windows: Shift hoặc Win+Space chuyển đổi đến ENG</p>" +
+        '<p class="ime-gate-probe-label">mời bên dưới<strong>theo đuổi chữ</strong>nhập khẩu <code>test</code> biến thể cũ của xác nhận: </p>' +
         '<div class="ime-gate-progress"></div>' +
         '<input type="text" class="ime-gate-input yysd-en-spell" id="ime-gate-probe" ' +
           'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ' +
-          'lang="en" inputmode="latin" aria-label="输入 test 确认英文输入法" />' +
+          'lang="en" inputmode="latin" aria-label=" nhập khẩu test xác nhận tiếng Anh phương pháp nhập " />' +
         '<p class="ime-gate-err" hidden></p>' +
       "</div>";
     document.body.appendChild(overlay);
@@ -115,14 +115,14 @@
 
     input.addEventListener("compositionstart", function () {
       composing = true;
-      showError("检测到中文输入法，请切换到英文输入法");
+      showError(" phát hiện đến ngôn ngữ Trung Quốc phương pháp nhập, mời chuyển đổi đến tiếng Anh phương pháp nhập ");
       resetProbe(input);
     });
 
     input.addEventListener("compositionend", function () {
       composing = false;
       if (input.value) {
-        showError("检测到中文输入法，请切换到英文输入法");
+        showError(" phát hiện đến ngôn ngữ Trung Quốc phương pháp nhập, mời chuyển đổi đến tiếng Anh phương pháp nhập ");
         resetProbe(input);
       }
     });
@@ -137,7 +137,7 @@
       if (composing || t.indexOf("Composition") >= 0 || t === "insertReplacementText" ||
           t === "insertFromPaste" || t === "insertFromComposition" || t === "insertFromDrop") {
         e.preventDefault();
-        showError("检测到中文输入法，请切换到英文输入法");
+        showError(" phát hiện đến ngôn ngữ Trung Quốc phương pháp nhập, mời chuyển đổi đến tiếng Anh phương pháp nhập ");
         resetProbe(input);
         return;
       }
@@ -145,14 +145,14 @@
         if (e.data.length !== 1 || /[^a-zA-Z]/.test(e.data)) {
           e.preventDefault();
           if (/[\u4e00-\u9fff]/.test(e.data)) {
-            showError("请使用英文输入法");
+            showError(" mời sử dụng tiếng Anh phương pháp nhập ");
             resetProbe(input);
           }
           return;
         }
         if (e.data.toLowerCase() !== PROBE[probeIdx]) {
           e.preventDefault();
-          showError("请按顺序逐字输入 test");
+          showError(" mời nhấn trình tự theo đuổi chữ nhập khẩu test");
           resetProbe(input);
           return;
         }
@@ -170,7 +170,7 @@
 
     input.addEventListener("paste", function (e) {
       e.preventDefault();
-      showError("请手动逐字输入，不可粘贴");
+      showError(" mời thủ công theo đuổi chữ nhập khẩu, không thể dán ");
       resetProbe(input);
     });
 
@@ -198,13 +198,13 @@
     overlay.setAttribute("aria-labelledby", "ime-cheat-title");
     overlay.innerHTML =
       '<div class="ime-gate-panel ime-gate-panel--cheat">' +
-        '<h2 id="ime-cheat-title">检测到作弊行为</h2>' +
-        '<p class="ime-gate-lead ime-gate-lead--warn">测试中途多次切换到中文输入法（已超过 ' +
-          CHEAT_LIMIT + " 次），本次作答无效。</p>" +
-        '<p class="ime-gate-tip">请使用英文输入法完成拼写。可选择重新开始，或退出本次测试。</p>' +
+        '<h2 id="ime-cheat-title">phát hiện đến thực hành gian lận hành động</h2>' +
+        '<p class="ime-gate-lead ime-gate-lead--warn">kiểm tra giữa chừng nhiều lần chuyển đổi đến ngôn ngữ Trung Quốc phương pháp nhập(đã vượt qua ' +
+          CHEAT_LIMIT + " tiếp theo), gốc tiếp theo trả lời không hợp lệ </p>" +
+        '<p class="ime-gate-tip">mời sử dụng tiếng Anh phương pháp nhập hoàn thành đánh vần có sẵn lựa chọn tiếp tục, có thể rút lui gốc tiếp theo kiểm tra </p>' +
         '<div class="ime-gate-actions">' +
-          '<button type="button" class="vl-btn vl-btn-primary" id="ime-cheat-restart">重新开始</button>' +
-          '<button type="button" class="vl-btn" id="ime-cheat-exit">退出测试</button>' +
+          '<button type="button" class="vl-btn vl-btn-primary" id="ime-cheat-restart">Bắt đầu lại</button>' +
+          '<button type="button" class="vl-btn" id="ime-cheat-exit">rút lui kiểm tra</button>' +
         "</div>" +
       "</div>";
     document.body.appendChild(overlay);

@@ -9,12 +9,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.16/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.16/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-16/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-16"
 SET = "7.16"
-TITLE = "新托福 7.16"
+TITLE = " TOEFL mới 7.16"
 
 
 def dump(name, obj):
@@ -206,7 +206,7 @@ def build_reading():
     ])
     if n != 46:
         raise SystemExit("m2 cw expected next 46, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
         {"n": 2, "timeSec": 540, "from": 36, "to": 50},
     ], [
@@ -496,7 +496,7 @@ def build_listening():
                 "C": "She cannot find anyone to take care of her dog.",
                 "D": "She needs to sell her house as soon as possible.",
             }, "A"),
-            q(14, "What does the woman imply when she says, 'Even better—I love dogs'?", {
+            q(14, "What does the woman imply when she says, 'Even better-I love dogs'?", {
                 "A": "Her current apartment does not allow pets.",
                 "B": "She prefers dogs over cats.",
                 "C": "She volunteered at a pet shelter when she was younger.",
@@ -649,7 +649,7 @@ def build_listening():
         cr(2, 35, "listening_m2_q03_choose_response.mp3", {
             "A": "I think it's open until midnight.",
             "B": "Yes, the library is very quiet.",
-            "C": "Thanks—I'll check online.",
+            "C": "Thanks-I'll check online.",
             "D": "I'm planning to stay in tonight.",
         }, "A"),
         clip("conversation", "Chemistry Safety", 2, listen,
@@ -737,14 +737,14 @@ def build_listening():
             }, "C"),
         ]),
     ]
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 32},
         {"n": 2, "timeSec": 660, "from": 33, "to": 47},
     ], m1 + m2)
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email"},
         {"n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion"},
@@ -956,7 +956,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 7),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview"},
     ], tasks)

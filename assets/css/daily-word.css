@@ -1,4 +1,4 @@
-/* daily-word — ReMe-like light immersion inside YYSD */
+/* daily-word - ReMe-like light immersion inside YYSD */
 :root {
   --dw-bg: #f4f7fb;
   --dw-card: #ffffff;
@@ -252,7 +252,7 @@ html, body.dw-page {
 .dw-book.is-on {
   border-color: var(--dw-blue);
   background: #eff6ff;
-  /* no outer ring — overflow scroller would clip it */
+  /* no outer ring - overflow scroller would clip it */
   box-shadow: none;
 }
 .dw-book__name {

@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/learn.js — 学习主页面：四步状态机、录音、续学、配图预取
+   daily-word/learn.js - học trang chủ mặt: bốn một bước tình trạng máy móc, Ghi âm, tiếp tục học, kết hợp sơ đồ ứng trước lấy
    ========================================================================= */
 (function () {
   "use strict";
@@ -23,7 +23,7 @@
     meaningFeedback: "",
     meaningReveal: false,
     meaningTries: 0,
-    // ponytail: block Enter briefly after stage change — spelling Enter was bubbling into detail→nextWord
+    // ponytail: block Enter briefly after stage change - spelling Enter was bubbling into detail→nextWord
     enterArmedAt: 0
   };
   var imageTimer = null;
@@ -47,12 +47,12 @@
   }
 
   function stageLabel() {
-    if (task.stage === "image") return "看图识词";
-    if (task.stage === "speaking") return "跟读";
-    if (task.stage === "spelling") return "拼写";
-    if (task.stage === "meaning") return "释义";
-    if (task.stage === "detail") return "详解";
-    return "学习";
+    if (task.stage === "image") return " chăm sóc sơ đồ biết biến thể cũ của | ";
+    if (task.stage === "speaking") return " gót chân dấu phẩy ";
+    if (task.stage === "spelling") return " đánh vần ";
+    if (task.stage === "meaning") return " Định nghĩa ";
+    if (task.stage === "detail") return " giải thích chi tiết ";
+    return " học ";
   }
 
   function shell(inner) {
@@ -61,12 +61,12 @@
     var total = task.wordList.length;
     return '<div class="dw-shell">' +
       '<header class="dw-top">' +
-        '<button type="button" class="dw-icon-btn" data-act="exit" aria-label="退出">✕</button>' +
+        '<button type="button" class="dw-icon-btn" data-act="exit" aria-label=" Đăng xuất ">✕</button>' +
         '<span class="dw-badge">' + stageLabel() + "</span>" +
         '<div class="dw-progress-wrap">' +
           '<div class="dw-progress" aria-hidden="true"><div class="dw-progress__bar" style="width:' +
             progressPct() + '%"></div></div>' +
-          '<span class="dw-progress__n">' + n + "/" + total + " 词</span>" +
+          '<span class="dw-progress__n">' + n + "/" + total + " Từ</span>" +
         "</div>" +
       "</header>" +
       '<div class="dw-main" id="dw-stage">' + inner + "</div>" +
@@ -197,12 +197,12 @@
     if (mic) {
       mic.classList.toggle("is-rec", !!ui.recording);
       mic.textContent = ui.recording ? "●" : "◎";
-      mic.setAttribute("aria-label", ui.recording ? "松开结束" : "按住录音");
+      mic.setAttribute("aria-label", ui.recording ? " thả ra chấm dứt " : " nhấn sống ghi âm ");
     }
     if (hint) {
       hint.textContent = ui.recording
-        ? "松开结束录音"
-        : (ui.speakStatus || "按住麦克风跟读，松开结束");
+        ? " thả ra chấm dứt ghi âm "
+        : (ui.speakStatus || " nhấn sống microphone gót chân dấu phẩy, thả ra chấm dứt ");
     }
   }
 
@@ -313,7 +313,7 @@
   function startRec() {
     if (ui.recording || scoring) return;
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      ui.speakStatus = "当前环境不支持录音";
+      ui.speakStatus = " thời điểm hiện tại môi trường không thể chịu đựng được cầm ghi âm ";
       syncMicUi();
       paint();
       return;
@@ -336,7 +336,7 @@
         var blob = new Blob(mediaChunks, { type: mediaRec.mimeType || "audio/webm" });
         mediaRec = null;
         if (!blob.size) {
-          ui.speakStatus = "录音太短，请按住再说一次";
+          ui.speakStatus = " ghi âm cao nhất ngắn, mời nhấn sống nói lại đầu tiên ";
           scoring = false;
           paint();
           return;
@@ -345,12 +345,12 @@
       };
       mediaRec.start();
       ui.recording = true;
-      ui.speakStatus = "松开结束录音";
-      // ponytail: don't full-paint while finger is down — destroys pointer target
+      ui.speakStatus = " thả ra chấm dứt ghi âm ";
+      // ponytail: don't full-paint while finger is down - destroys pointer target
       syncMicUi();
     }).catch(function () {
       pressIntent = false;
-      ui.speakStatus = "无法使用麦克风，请检查权限";
+      ui.speakStatus = " không thể sử dụng microphone, mời kiểm tra phạm vi quyền hạn ";
       paint();
     });
   }
@@ -365,12 +365,12 @@
       syncMicUi();
       return;
     }
-    ui.speakStatus = "评测中…";
+    ui.speakStatus = " thảo luận khảo sát Trung Quốc...";
     scoring = true;
     syncMicUi();
     try { mediaRec.stop(); } catch (e) {
       scoring = false;
-      ui.speakStatus = "录音失败";
+      ui.speakStatus = " ghi âm bị đánh bại ";
       paint();
     }
   }
@@ -389,11 +389,11 @@
       ui.speakTries = task.speakTries[w];
       persist();
       if (d && d.pass) {
-        ui.speakStatus = "通过 ✓";
+        ui.speakStatus = " đi qua ✓";
         paint();
         setTimeout(enterSpelling, 450);
       } else {
-        ui.speakStatus = "未通过" + (d && d.heard ? "（识别：" + d.heard + "）" : "") + "，请重试";
+        ui.speakStatus = " chưa đi qua " + (d && d.heard ? "(phân biệt: " + d.heard + ")" : "") + ", mời thử lại ";
         if (ui.speakTries >= 3) markSpeakFail();
         paint();
       }
@@ -401,9 +401,9 @@
       scoring = false;
       task.speakTries[w] = (task.speakTries[w] || 0) + 1;
       ui.speakTries = task.speakTries[w];
-      ui.speakStatus = (e && e.message) || "评测失败";
-      // ponytail: billing/key failures — unlock skip immediately, don't burn 3 retries
-      if (/欠费|密钥无效|语音服务/.test(ui.speakStatus)) {
+      ui.speakStatus = (e && e.message) || " thảo luận khảo sát bị đánh bại ";
+      // ponytail: billing/key failures - unlock skip immediately, don't burn 3 retries
+      if (/bị nợ|khóa không hợp lệ|âm thanh lời nói phục vụ/.test(ui.speakStatus)) {
         ui.speakTries = Math.max(ui.speakTries, 3);
         markSpeakFail();
       } else if (ui.speakTries >= 3) {
@@ -425,13 +425,13 @@
     ui.spellTries += 1;
     if (ui.spellTries >= 2) {
       ui.spellReveal = true;
-      ui.spellFeedback = "两次错误，已显示答案";
+      ui.spellFeedback = " hai tiếp theo sai lầm, đã hiển thị câu trả lời ";
       markSpellFail();
       paint();
       setTimeout(enterMeaning, 2000);
       return;
     }
-    ui.spellFeedback = "拼写不正确，再试一次";
+    ui.spellFeedback = " đánh vần không chính xác, lại thử đầu tiên ";
     paint();
     setTimeout(function () {
       var inp = root.querySelector(".dw-spell-input");
@@ -450,13 +450,13 @@
     ui.meaningTries += 1;
     if (ui.meaningTries >= 2) {
       ui.meaningReveal = true;
-      ui.meaningFeedback = "两次错误，已显示参考释义";
+      ui.meaningFeedback = " hai tiếp theo sai lầm, đã hiển thị tham khảo nghĩa của cái gì đó ";
       markMeaningFail();
       paint();
       setTimeout(enterDetail, 2000);
       return;
     }
-    ui.meaningFeedback = "释义不太对，再试一次";
+    ui.meaningFeedback = " nghĩa của cái gì đó không cao nhất đúng, lại thử đầu tiên ";
     paint();
     setTimeout(function () {
       var inp = root.querySelector(".dw-meaning-input");
@@ -464,7 +464,7 @@
     }, 30);
   }
 
-  // ahead window + limited concurrency — 200-word days need pipeline, not 1-by-1
+  // ahead window + limited concurrency - 200-word days need pipeline, not 1-by-1
   var PREFETCH_AHEAD = 6;
   var PREFETCH_CONCURRENCY = 2;
   var prefetchBusy = 0;
@@ -615,7 +615,7 @@
       return;
     }
     if (act === "play-ex") {
-      var ex = String(word().example || "").replace(/[（(].*$/, "").trim();
+      var ex = String(word().example || "").replace(/[((].*$/, "").trim();
       DW.speakWord(ex || word().word);
       return;
     }
@@ -702,8 +702,8 @@
   function boot() {
     task = DW.getTask();
     if (!task || !task.wordList || !task.wordList.length) {
-      root.innerHTML = '<div class="dw-fail"><p>没有进行中的任务</p>' +
-        '<p><a href="daily-word-setup.html">去设置今日任务</a></p></div>';
+      root.innerHTML = '<div class="dw-fail"><p>không có tiến hành bắn trúng mục tiêu nhiệm vụ</p>' +
+        '<p><a href="daily-word-setup.html">đi thiết lập hôm nay nhiệm vụ</a></p></div>';
       return;
     }
     if (task.completed) {

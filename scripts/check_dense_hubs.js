@@ -29,7 +29,7 @@ assert(/vocab-dense/.test(zone), "vocab dense hub missing");
 assert(/yysd-row--primary/.test(zone), "hub primary CTA missing");
 assert(!/ielts-hub__band/.test(zone), "legacy mock band should be gone");
 assert(!/vocab-bento__body/.test(zone), "legacy vocab bento collage should be gone");
-assert(/Hub 密度/.test(rules), "DESIGN-RULES density section missing");
+assert(/Hub mật độ/.test(rules), "DESIGN-RULES density section missing");
 assert(/is-ielts-hub[\s\S]*minimal-page-head[\s\S]*display:\s*none/.test(prem), "hub page-head hide missing");
 
 console.log("OK: dense hubs");

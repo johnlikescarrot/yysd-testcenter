@@ -19,15 +19,15 @@ from build_listening_taxonomy import (  # noqa: E402
 )
 from verify_cambridge_mock_pages import load_test  # noqa: E402
 
-TYPE_XLSX = Path("/Users/frankman/Desktop/雅思阅读题目分类.xlsx")
-SCENE_XLSX = Path("/Users/frankman/Desktop/雅思阅读场景分类.xlsx")
+TYPE_XLSX = Path("/Users/frankman/Desktop/IELTS đọc chủ đề phân loại.xlsx")
+SCENE_XLSX = Path("/Users/frankman/Desktop/IELTS đọc cảnh phân loại.xlsx")
 OUT = ROOT / "library" / "reading-taxonomy.json"
 READ_DIR = ROOT / "library" / "mock" / "cambridge-reading"
 
-TYPE_ORDER = ["总结题", "判断题", "单选题", "多选题", "段落匹配题", "细节匹配题", "填空题", "选段意题"]
+TYPE_ORDER = [" tóm tắt chủ đề ", " phán đoán chủ đề ", " hóa đơn chọn chủ đề ", " câu hỏi trắc nghiệm ", " đoạn phối hoặc kết hôn chủ đề ", " chi tiết phối hoặc kết hôn chủ đề ", " lấp chỗ trống công việc chủ đề ", " chọn đoạn Ý chủ đề "]
 SCENE_ORDER = [
-    "历史发展", "自然科技", "社会人文", "生态环保",
-    "语言教育", "生物研究", "财经商业", "医疗健康",
+    " lịch sử sự phát triển ", " tự nhiên khoa học và công nghệ ", " xã hội nhân văn ", " sinh thái bảo vệ môi trường ",
+    " ngôn ngữ giáo dục ", " sinh vật nghiên cứu ", " tài chính và kinh tế kinh doanh ", " điều trị y tế sức khỏe ",
 ]
 
 
@@ -136,7 +136,7 @@ def main() -> None:
             "part": part,
             "qFrom": q_from,
             "qTo": q_to,
-            "qType": rec["qType"] or rec.get("_sheet") or "填空题",
+            "qType": rec["qType"] or rec.get("_sheet") or " lấp chỗ trống công việc chủ đề ",
             "scene": rec["scene"],
             "diff": rec["diff"],
         })
@@ -184,7 +184,7 @@ def main() -> None:
     payload = {
         "types": types,
         "scenes": scenes,
-        "diffs": ["易", "中", "难"],
+        "diffs": [" dễ ", " trong ", " Khó "],
         "groups": groups,
         "parts": parts,
     }
@@ -200,8 +200,8 @@ def main() -> None:
     assert groups[0]["id"].startswith("cambridge-") and "-reading-p" in groups[0]["id"]
     assert "-q" in groups[0]["id"]
     assert parts[0]["id"].endswith("-p" + str(parts[0]["part"])) or "-reading-p" in parts[0]["id"]
-    assert "判断题" in types or "填空题" in types
-    assert "社会人文" in scenes or scenes
+    assert " phán đoán chủ đề " in types or " lấp chỗ trống công việc chủ đề " in types
+    assert " xã hội nhân văn " in scenes or scenes
 
 
 if __name__ == "__main__":

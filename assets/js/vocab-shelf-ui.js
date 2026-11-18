@@ -1,4 +1,4 @@
-/* vocab-shelf-ui.js — bookshelf hub + book list picker */
+/* vocab-shelf-ui.js - bookshelf hub + book list picker */
 (function () {
   "use strict";
   var Y = window.YYSD;
@@ -35,18 +35,18 @@
           return '<a class="vs-card" href="vocab-shelf.html?book=' + encodeURIComponent(b.bookId) + '">' +
             '<span class="vs-card__tag">' + esc(meta.tag || meta.kind || "") + "</span>" +
             '<b class="vs-card__title">' + esc(meta.label || b.bookId) + "</b>" +
-            '<span class="vs-card__meta">进度 ' + done + " / " + total + " List</span>" +
+            '<span class="vs-card__meta">tốc độ tiến triển ' + done + " / " + total + " List</span>" +
             "</a>";
         }).join("")
-      : '<p class="vs-empty">书架还是空的。先去添加一本词书吧。</p>';
+      : '<p class="vs-empty">giá sách vẫn trống không của trước đi thêm một gốc biến thể cũ của | viết tắt của | quán bar </p>';
 
     content.innerHTML =
       '<div class="vs-hero bento-panel">' +
-        '<h1 class="bento-panel__title">我的词库书架</h1>' +
-        '<p class="bento-panel__desc">加入词书后才能学习与检测。可随时移除（学习进度会清零）。</p>' +
+        '<h1 class="bento-panel__title">tôi của kho từ giá sách</h1>' +
+        '<p class="bento-panel__desc">trở thành thành viên biến thể cũ của | viết tắt của | hoàng hậu tài năng học biến thể của | phát hiện có thể bất kỳ lúc nào loại bỏ(học tốc độ tiến triển có thể khôi phục thứ gì đó về trạng thái ban đầu) </p>' +
         '<div class="vs-actions">' +
-          '<a class="btn btn--primary btn--sm" href="vocab-shelf.html?view=catalog">添加词书</a>' +
-          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← 单词区</a>' +
+          '<a class="btn btn--primary btn--sm" href="vocab-shelf.html?view=catalog">thêm biến thể cũ của | viết tắt của |</a>' +
+          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← Khu vực từ vựng</a>' +
         "</div>" +
       "</div>" +
       '<div class="vs-grid">' + cards + "</div>";
@@ -113,34 +113,34 @@
     if (BOOK_EMOJI[id]) return BOOK_EMOJI[id];
     var label = String((b && b.label) || "");
     var hay = id + " " + label;
-    if (/高中/.test(label) && (b && b.kind) === "main") return "📚";
-    if (/专项/.test(label)) return "🎯";
-    if (/六级|cet-?6/i.test(hay)) return "📘";
-    if (/四级|cet-?4/i.test(hay)) return "📗";
-    if (/专四|专八/i.test(hay)) return "🎓";
-    if (/考研/i.test(hay)) return "📖";
-    if (/托福|toefl/i.test(hay)) return "✈️";
-    if (/雅思|ielts/i.test(hay)) return "🌏";
-    if (/托业|toeic/i.test(hay)) return "🪪";
-    if (/化学/.test(label)) return "🧪";
-    if (/地理/.test(label)) return "🗺️";
-    if (/数学/.test(label)) return "🔢";
-    if (/物理/.test(label)) return "⚛️";
-    if (/动物/.test(label)) return "🐾";
-    if (/植物/.test(label)) return "🌿";
-    if (/吃喝|美食|食物/.test(label)) return "🍜";
-    if (/城市/.test(label)) return "🏙️";
-    if (/出行|旅行|交通/.test(label)) return "🚗";
-    if (/科教|教育/.test(label)) return "🔬";
-    if (/职业|职场/.test(label)) return "💼";
-    if (/节日/.test(label)) return "🎉";
-    if (/文学|艺术/.test(label)) return "🎨";
-    if (/体育/.test(label)) return "⚽";
-    if (/游戏/.test(label)) return "🎮";
-    if (/影视|电影/.test(label)) return "🎬";
-    if (/音乐|广播/.test(label)) return "🎵";
-    if (/短语/.test(label)) return "💬";
-    if (/柯林斯/.test(label)) return "⭐";
+    if (/trường trung học phổ thông/.test(label) && (b && b.kind) === "main") return "📚";
+    if (/chuyên biệt/.test(label)) return "🎯";
+    if (/sáu cấp|cet-?6/i.test(hay)) return "📘";
+    if (/cấp 4|cet-?4/i.test(hay)) return "📗";
+    if (/cho một người bốn|TEM-8 hoặc Kỳ thi chuyên ngành tiếng Anh cấp 8/i.test(hay)) return "🎓";
+    if (/dự thi đầu vào chương trình sau đại học/i.test(hay)) return "📖";
+    if (/TOEFL|toefl/i.test(hay)) return "✈️";
+    if (/IELTS|ielts/i.test(hay)) return "🌏";
+    if (/TOEIC|toeic/i.test(hay)) return "🪪";
+    if (/Hóa học/.test(label)) return "🧪";
+    if (/địa lý/.test(label)) return "🗺️";
+    if (/Toán/.test(label)) return "🔢";
+    if (/Vật lý/.test(label)) return "⚛️";
+    if (/động vật/.test(label)) return "🐾";
+    if (/thực vật/.test(label)) return "🌿";
+    if (/ăn uống|món ngon|thực phẩm/.test(label)) return "🍜";
+    if (/thành phố/.test(label)) return "🏙️";
+    if (/đi ra đâu đó|du lịch|kết nối/.test(label)) return "🚗";
+    if (/giáo dục khoa học|Giáo dục/.test(label)) return "🔬";
+    if (/nghề nghiệp|nơi làm việc/.test(label)) return "💼";
+    if (/ngày lễ/.test(label)) return "🎉";
+    if (/văn học|nghệ thuật/.test(label)) return "🎨";
+    if (/thể thao/.test(label)) return "⚽";
+    if (/trò chơi/.test(label)) return "🎮";
+    if (/phim và truyền hình|phim/.test(label)) return "🎬";
+    if (/âm nhạc|phát sóng/.test(label)) return "🎵";
+    if (/cụm từ/.test(label)) return "💬";
+    if (/Collins/.test(label)) return "⭐";
     var tag = String((b && b.tag) || "").toLowerCase();
     if (TAG_EMOJI[tag]) return TAG_EMOJI[tag];
     return "📗";
@@ -158,7 +158,7 @@
       });
       var tiles = books.map(function (b) {
         var added = !!onShelf[b.id];
-        var wc = b.wordCount != null ? (b.wordCount + " 词 · ") : "";
+        var wc = b.wordCount != null ? (b.wordCount + " Từ · ") : "";
         return '<div class="vs-bento-tile' + (added ? " is-on-shelf" : "") +
           '" data-id="' + esc(b.id) + '">' +
           '<span class="vs-bento-emoji" aria-hidden="true">' + bookEmoji(b) + "</span>" +
@@ -166,22 +166,22 @@
           '<span class="vs-bento-meta">' + esc(wc + b.listCount + " List · " + (b.tag || b.kind)) +
           "</span>" +
           (added
-            ? '<button type="button" class="btn btn--ghost btn--sm" data-act="remove">移出书架</button>'
-            : '<button type="button" class="btn btn--primary btn--sm" data-act="add">加入书架</button>') +
+            ? '<button type="button" class="btn btn--ghost btn--sm" data-act="remove">di chuyển xuất bản sách chống đỡ</button>'
+            : '<button type="button" class="btn btn--primary btn--sm" data-act="add">trở thành thành viên giá sách</button>') +
           "</div>";
       }).join("");
       content.innerHTML =
         '<div class="vs-hero bento-panel">' +
-          '<h1 class="bento-panel__title">添加词书</h1>' +
-          '<p class="bento-panel__desc">高中 / 四级 / 雅思专项与分类主题词书平铺可选。</p>' +
+          '<h1 class="bento-panel__title">thêm biến thể cũ của | viết tắt của |</h1>' +
+          '<p class="bento-panel__desc">trường trung học phổ thông / cấp 4 / IELTS chuyên biệt biến thể của | phân loại chủ đề biến thể cũ của | viết tắt của | phẳng biến thể của | có sẵn </p>' +
           '<div class="vs-actions">' +
-            '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">← 我的书架</a>' +
-            '<label class="catalog-search vs-search"><input type="search" id="vs-q" placeholder="搜索词书" value="' +
+            '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">← tôi của giá sách</a>' +
+            '<label class="catalog-search vs-search"><input type="search" id="vs-q" placeholder=" tìm kiếm biến thể cũ của | viết tắt của | " value="' +
               esc(q) + '"></label>' +
           "</div>" +
         "</div>" +
         '<div class="vs-bento" id="vs-list">' +
-          (tiles || '<p class="vs-empty">没有匹配的词书</p>') +
+          (tiles || '<p class="vs-empty">không có phối hoặc kết hôn của biến thể cũ của | viết tắt của |</p>') +
         "</div>";
 
       var input = document.getElementById("vs-q");
@@ -208,7 +208,7 @@
             paint(q);
           })
           .catch(function (err) {
-            alert((err && err.message) || "操作失败");
+            alert((err && err.message) || " làm việc bị đánh bại ");
             btn.disabled = false;
           });
       };
@@ -221,47 +221,47 @@
     var lists = detail.lists || [];
     var rows = lists.map(function (l) {
       var hint = l.done
-        ? "已学完"
-        : (l.wordIdx > 0 ? ("学到第 " + (l.wordIdx + 1) + " 词") : "未开始");
-      var wc = l.wordCount != null ? l.wordCount + " 词 · " : "";
+        ? " đã học hoàn thành "
+        : (l.wordIdx > 0 ? (" học được thu " + (l.wordIdx + 1) + " Từ ") : " chưa bắt đầu ");
+      var wc = l.wordCount != null ? l.wordCount + " Từ · " : "";
       return '<a class="vs-list-row" href="vocab-learn.html?book=' + encodeURIComponent(book.id) +
         "&list=" + encodeURIComponent(l.id) + '">' +
         "<div><b>" + esc(l.label) + "</b>" +
         '<span class="vs-row__meta">' + esc(wc + hint) + "</span></div>" +
-        '<span class="vs-go">' + (l.done ? "复习 ›" : "学习 ›") + "</span></a>";
+        '<span class="vs-go">' + (l.done ? " Ôn tập ›" : " học ›") + "</span></a>";
     }).join("");
 
     content.innerHTML =
       '<div class="vs-hero bento-panel">' +
         '<h1 class="bento-panel__title">' + esc(book.label || book.id) + "</h1>" +
-        '<p class="bento-panel__desc">' + esc((book.listCount || 0) + " 个 List · 点开开始学习") + "</p>" +
+        '<p class="bento-panel__desc">' + esc((book.listCount || 0) + " cái List · điểm mở bắt đầu học ") + "</p>" +
         '<div class="vs-actions">' +
-          '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">← 书架</a>' +
-          '<button type="button" class="btn btn--ghost btn--sm" id="vs-remove">移出书架</button>' +
+          '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">← giá sách</a>' +
+          '<button type="button" class="btn btn--ghost btn--sm" id="vs-remove">di chuyển xuất bản sách chống đỡ</button>' +
           '<a class="btn btn--ghost btn--sm" href="vocab-quiz.html?book=' +
-            encodeURIComponent(book.id) + '">单词检测</a>' +
+            encodeURIComponent(book.id) + '">từ phát hiện</a>' +
         "</div>" +
       "</div>" +
       '<div class="vs-list">' + rows + "</div>";
 
     document.getElementById("vs-remove").onclick = function () {
-      if (!confirm("移出后学习进度将清零，确定？")) return;
+      if (!confirm(" di chuyển đi ra học giả hoặc học trò thời phong kiến Trung Quốc thực hành tốc độ tiến triển sẽ khôi phục thứ gì đó về trạng thái ban đầu, rõ ràng? ")) return;
       api("/api/vocab-shelf/remove", { method: "POST", body: { bookId: book.id } })
         .then(function () { location.href = "vocab-shelf.html"; })
-        .catch(function (e) { alert((e && e.message) || "移除失败"); });
+        .catch(function (e) { alert((e && e.message) || " loại bỏ bị đánh bại "); });
     };
   }
 
   function boot() {
     if (!needAuth()) return;
-    content.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>正在加载…</div>';
+    content.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>Đang tải...</div>';
 
     if (bookParam) {
       api("/api/vocab-shelf/book?bookId=" + encodeURIComponent(bookParam))
         .then(renderBook)
         .catch(function (e) {
-          content.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "加载失败") +
-            '</p><p><a class="btn btn--primary btn--sm" href="vocab-shelf.html">回书架</a></p></div>';
+          content.innerHTML = '<div class="state"><p>' + esc((e && e.message) || " Tải không thành công ") +
+            '</p><p><a class="btn btn--primary btn--sm" href="vocab-shelf.html">xoay vòng giá sách</a></p></div>';
         });
       return;
     }
@@ -273,7 +273,7 @@
       if (view === "catalog") renderCatalog(pair[1], pair[0]);
       else renderShelf(pair[0]);
     }).catch(function (e) {
-      content.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "加载失败") + "</p></div>";
+      content.innerHTML = '<div class="state"><p>' + esc((e && e.message) || " Tải không thành công ") + "</p></div>";
     });
   }
 

@@ -9,7 +9,7 @@ glob:
   - scripts/check_toefl*listening*
 ---
 
-# TOEFL listening — listen first
+# TOEFL listening - listen first
 
 When making any new TOEFL listening paper:
 

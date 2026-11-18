@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm-sfx.js — 零素材 SFX（Web Audio 合成），可静音
+   word-realm-sfx.js - không tư liệu gốc SFX(Web Audio tổng hợp), có thể yên lặng
    localStorage: yysd:word-realm-mute = "1"
    ========================================================================= */
 window.YYSD_WORD_REALM_SFX = (function () {

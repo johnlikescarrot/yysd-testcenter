@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T4.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T4.docx")
 BOILER_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_14.23.29-fa96a46c-8f4e-42c8-9c38-ad3d72d6e6e7.png"
@@ -26,10 +26,10 @@ ENERGY_SRC = Path(
     "__2026-07-01_14.23.46-6b92bad3-c869-4193-a62e-50817c5e89e4.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test4 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test4 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test4 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test4 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-4.html"
@@ -53,7 +53,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -73,7 +73,7 @@ def patch_listening_meta(html: str) -> str:
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("test3", "test4"),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
+        ("Test 3 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -109,7 +109,7 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        ("Test 3 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -133,7 +133,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             "Task 1 US energy consumption graph + Task 2 languages dying out essay",
         ),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Test 3 Viết(Đề thi chính thức)", "Test 4 Viết(Đề thi chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -223,7 +223,7 @@ def listening_test() -> dict:
                         "rows": [
                             [
                                 "The Harvey Clinic",
-                                "Example — Dr Green",
+                                "Example - Dr Green",
                                 "especially good with <Q n=\"1\">",
                             ],
                             [
@@ -234,7 +234,7 @@ def listening_test() -> dict:
                             [
                                 "The Shore Lane Health Centre",
                                 "Dr <Q n=\"4\">",
-                                "—",
+                                "-",
                             ],
                         ],
                         "questions": [
@@ -257,8 +257,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["B", "E"],
                         "questions": [
-                            {"id": "L5", "no": 5, "explain": "答案：B 与 E，顺序不限。"},
-                            {"id": "L6", "no": 6, "explain": "答案：B 与 E，顺序不限。"},
+                            {"id": "L5", "no": 5, "explain": " Đáp án: B và E, Thứ tự tùy ý "},
+                            {"id": "L6", "no": 6, "explain": " Đáp án: B và E, Thứ tự tùy ý "},
                         ],
                     },
                     {
@@ -348,8 +348,8 @@ def listening_test() -> dict:
                         "title": "Questions 19 and 20",
                         "instruction": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
                         "lines": [
-                            {"bullet": True, "html": "The best place to park in town — next to the station"},
-                            {"bullet": True, "html": "Phone number for takeaway pizzas — <Q n=\"19\">"},
+                            {"bullet": True, "html": "The best place to park in town - next to the station"},
+                            {"bullet": True, "html": "Phone number for takeaway pizzas - <Q n=\"19\">"},
                             {"bullet": True, "html": "Railway museum closed on <Q n=\"20\">"},
                         ],
                         "questions": [

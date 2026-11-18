@@ -21,7 +21,7 @@ AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 OUT_DIR = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
 OCR_DIR = ROOT / "scripts/.ocr_cache"
-PDF_DIR = Path("/Users/frankman/Desktop/剑1-21学术类真题")
+PDF_DIR = Path("/Users/frankman/Desktop/Cambridge 1-21 học thuật loại câu hỏi từ đề thi các năm trước ")
 OCR_BIN = ROOT / "scripts/ocr_page"
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -33,9 +33,9 @@ side.CACHE = CACHE
 side.PDF_DIR = PDF_DIR
 
 PDF_NAMES = {
-    14: "剑桥真题14.pdf",
-    20: "剑20.pdf",
-    21: "剑桥雅思21（A类）.pdf",
+    14: " Cambridge câu hỏi từ đề thi các năm trước 14.pdf",
+    20: " Cambridge 20.pdf",
+    21: " Cambridge IELTS 21(A loại).pdf",
 }
 
 
@@ -44,7 +44,7 @@ def load_env():
 
 
 def pdf_path(vol: int) -> Path:
-    name = PDF_NAMES.get(vol, f"剑桥雅思{vol}.pdf")
+    name = PDF_NAMES.get(vol, f" Cambridge IELTS{vol}.pdf")
     p = PDF_DIR / name
     if not p.exists():
         raise SystemExit(f"missing PDF {p}")
@@ -77,7 +77,7 @@ def extract_script_pages(vol: int) -> str:
             pages.append(t)
     doc.close()
     raw = "\n".join(pages)
-    raw = re.sub(r"更多雅思[^\n]*", "\n", raw)
+    raw = re.sub(r" thay đổi hoặc thay thế nhiều IELTS[^\n]*", "\n", raw)
     raw = re.sub(r"@IELTS\w+", "\n", raw)
     return raw
 
@@ -269,7 +269,7 @@ def convert_vol(vol: int) -> int:
                 old_zh = {s["en"]: s.get("zh", "") for s in old.get("sentences") or []}
             obj = {
                 "id": pid,
-                "title": f"剑{vol} Test {test} Part {sec}",
+                "title": f" Cambridge{vol} Test {test} Part {sec}",
                 "audioUrl": f"library/mock/cambridge-listening/{part['audio']}",
                 "examHref": f"library/mock/cambridge-listening/cambridge-{vol}-test-{test}.html",
                 "sentences": [],
@@ -302,7 +302,7 @@ def fill_zh(vols: list[int], batch_size: int = 40):
             if not missing:
                 print(f"{path.name}: zh ok")
                 continue
-            print(f"{path.name}: translating {len(missing)}…")
+            print(f"{path.name}: translating {len(missing)}...")
             for off in range(0, len(missing), batch_size):
                 idxs = missing[off:off + batch_size]
                 ens = [obj["sentences"][i]["en"] for i in idxs]
@@ -347,7 +347,7 @@ def main():
         print(f"cam{vol} ocr parts {sorted(gold)} chars={len(raw)}")
         missing = [(t, p) for t in range(1, 5) for p in range(1, 5) if (t, p) not in gold]
         if missing:
-            raise SystemExit(f"cam{vol}: OCR missing {missing} — not shipping")
+            raise SystemExit(f"cam{vol}: OCR missing {missing} - not shipping")
         write_official_transcripts(vol, gold, "official-audioscript-ocr+whisper-align")
         convert_vol(vol)
 

@@ -1,72 +1,58 @@
-# 优益思达学习中心
+# Trung tâm YYSD — Ứng dụng luyện thi IELTS phiên bản tiếng Việt
 
-雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
+Bản cập nhật toàn diện nhất từ trước đến nay: **toàn bộ nội dung không phải tiếng Anh đã được chuyển sang tiếng Việt** (4.193 tệp văn bản được rà soát, 3.486 tệp được cập nhật, 0 ký tự Hán còn lại), đồng thời bổ sung một ứng dụng luyện thi IELTS mới, tinh tế và có kiểm chứng tự động.
 
-静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
+## Điểm nổi bật
 
-## 学生端
+| Yêu cầu | Kết quả |
+| --- | --- |
+| Chuyển ngữ toàn bộ nội dung | `tools/vietnamize.py` dùng từ điển Hán–Việt CVDICT (122.591 mục, rút gọn còn 37.923 mục cần thiết) cộng 369 thuật ngữ giao diện biên soạn thủ công. Kiểm chứng: `python3 tools/check_vietnamese.py`. |
+| Ứng dụng luyện thi IELTS | `docs/` — giao diện hoàn toàn tiếng Việt, bốn kỹ năng Nghe/Đọc/Viết/Nói, 12 câu hỏi có giải thích chi tiết. |
+| Tính năng tương tự Duolingo | Chuỗi ngày, XP, mục tiêu ngày, năm năng lượng, 10 giải đấu, bảng xếp hạng, chuỗi bạn bè, 8 huy hiệu, cấp độ, thang điểm CEFR/IELTS, ôn tập ngắt quãng 1→120 ngày, lộ trình 8 đơn vị, linh vật Cú Luyện. |
+| Tài liệu PDF học thuật | 10 tệp PDF tiếng Việt, **287 lượt trích dẫn** tới `scholar.google.com` từ 110 công trình. Kiểm chứng: `python3 tools/check_pdfs.py`. |
+| GitHub Pages | `.github/workflows/pages.yml` đóng gói `docs/` bằng `actions/deploy-pages`. |
+| Lighthouse 100/100 | `.lighthouserc.json` ép điểm tối đa ở cả bốn hạng mục; `.github/workflows/lighthouse.yml`. |
+| Code coverage 100% | Vitest + coverage-v8, ngưỡng 100 cho statements / branches / functions / lines. |
+| Super-Linter | `.github/workflows/super-linter.yml`: chạy trên mỗi push, mỗi PR và 6 giờ một lần theo lịch. |
 
-| 入口 | 说明 |
-|------|------|
-| 单词 | 高中 / 四级 / 雅思听读写专项词书、分类词库、错题本 |
-| 雅思真题 | 剑桥听力 / 阅读 / 写作；补弱 Section·Passage；单项模考；全套模考（CDT 机考壳） |
-| 练习 | 长难句、数字听写、口语练习等 |
-| 国际课程 | A-Level 等资料入口 |
-| 任务中心 | 教师布置的作业、日程与待办 |
-| 口语 / AI | 口语练习、写作 AI 批改（额度受限） |
-
-全套模考结束进入三科成绩报告（`cdt-report.html`）；交卷等待时有加载提示。
-
-## 教师端
-
-- 登录：`teacher-login.html`
-- 日历布置：`teacher-calendar.html` — 按类型（单词 / 补弱 / 单项模考 / 全套）下钻勾选，支持上传自有 HTML
-- 学生诊断与其它教师页见仓库内 `teacher-*.html`
-
-## 技术结构
-
-```
-├── *.html                 # 站点页面（首页、考场、单词、教师端等）
-├── assets/                # CSS / JS（config 分类、exam CDT、auth）
-├── library/               # 题目与词书 HTML（按 zone/subject 分目录）
-│   └── manifest.json      # 内容索引（脚本/CI 生成，勿手改）
-├── server/                # Express API + SQLite（登录、成绩、日历、AI 代理等）
-├── rankings/              # 排行榜子应用（可选）
-├── admission/             # 招生相关子应用（可选）
-└── scripts/               # manifest、词库、自检脚本
-```
-
-API 依赖见 [`server/package.json`](server/package.json)；环境变量模板见 [`server/.env.example`](server/.env.example)。生产部署脚本在 [`server/deploy/`](server/deploy/)。
-
-## 本地预览
-
-前端不要直接双击打开 HTML，需本地静态服务；API 另开进程。
+## Chạy cục bộ
 
 ```bash
-# 前端
-python3 -m http.server 8080
-# → http://localhost:8080
-
-# API（需 Node ≥ 18）
-cd server && cp -n .env.example .env && npm i && npm start
-# → 默认 http://localhost:3000
+npm ci
+npm run verify          # coverage 100% + lint + kiểm tra tiếng Việt + kiểm tra trích dẫn
+python3 -m http.server 8080 --directory docs
+# mở http://localhost:8080
 ```
 
-前端如何指向本地 API，以 `assets/js/auth.js` / 环境配置为准。
+Để sinh lại tài liệu PDF (cần `reportlab` và phông DejaVu):
 
-## 内容与成绩
-
-- 新题放入 `library/<zone>/<subject>/`，提交后由 Actions 或 `scripts/build_manifest.py` 重建 `manifest.json`。
-- 可选 meta：`exam:title` / `exam:duration` / `exam:description`。
-- 试卷批改后向父页同步分数：
-
-```js
-parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
+```bash
+python3 -m pip install reportlab
+python3 tools/build_pdfs.py
 ```
 
-写作模考另可附带 `writingTask1` / `writingTask2` 等字段供报告页使用。
+Để chạy lại bộ Việt hóa trên nội dung mới:
 
-## 相关文档
+```bash
+python3 tools/vietnamize.py
+```
 
-- 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
-- A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)
+## Cấu trúc mới
+
+```
+docs/                     Trang GitHub Pages (index.html, css/, js/, tai-lieu/, nghien-cuu/)
+tests/                    Bộ kiểm thư Vitest (state, storage, render, app)
+tools/                    Việt hóa, sinh PDF, kiểm chứng
+tools/data/               Từ điển và bản kê trích dẫn (khoá được mã hoá \uXXXX)
+.github/workflows/        Pages, CI, Super-Linter, Lighthouse
+```
+
+`docs/js/` vừa là mã nguồn vừa là mã được trang web nạp trực tiếp, nên con số coverage phản ánh đúng sản phẩm đã triển khai.
+
+## Nghiên cứu
+
+Xem [báo cáo nghiên cứu tiếng Việt](docs/nghien-cuu/duolingo-va-ielts.html): chuyển ngữ và phân tích tài liệu tham khảo về mô hình gamification, kèm bảng đối chiếu tính năng.
+
+## Giấy phép dữ liệu ngôn ngữ
+
+`tools/data/zh_vi.json` được dẫn xuất từ [CVDICT](https://github.com/ph0ngp/CVDICT) của Phong Phan, phát hành theo Creative Commons Attribution-ShareAlike 4.0. Chúng tôi ghi nhận tác giả và giữ nguyên điều khoản chia sẻ tương tự cho dữ liệu dẫn xuất.

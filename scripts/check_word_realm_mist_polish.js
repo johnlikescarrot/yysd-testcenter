@@ -26,7 +26,7 @@ assert(S.mist_boss_post.nodes.some((n) => n.type === "cutscene" && n.panels && n
 assert(S.mist_boss_pre.nodes.every((n) => !JSON.stringify(n).includes("command menu")), "no cmd menu copy");
 
 const lesson = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8");
-assert(lesson.includes("playSlashFx") && lesson.includes("斩击"), "slash fx");
+assert(lesson.includes("playSlashFx") && lesson.includes(" chặt đầu đánh "), "slash fx");
 const css = fs.readFileSync(path.join(root, "assets/css/vocab-lesson.css"), "utf8");
 assert(css.includes("vl-slash") && css.includes("vl-slash-cut"), "slash css");
 

@@ -202,7 +202,7 @@ def still_jammed(text):
 
 
 def norm(s):
-    s = re.sub(r"[&＋]", " and ", str(s or "").lower())
+    s = re.sub(r"[& ]", " and ", str(s or "").lower())
     s = re.sub(r"[^a-z0-9]+", " ", s)
     return " ".join(s.split())
 
@@ -424,7 +424,7 @@ def parse_rdl(path, lines):
                 if is_green(r["rgb"]):
                     answer = k
                 continue
-            if re.match(r"^Question\s+\d+", t, re.I) or t in ("解析",) or t.startswith("##"):
+            if re.match(r"^Question\s+\d+", t, re.I) or t in (" Giải thích ",) or t.startswith("##"):
                 continue
             last = next(reversed(options), None)
             if last and col_of(r["x"]) == col_of(rows[0]["x"]) and not re.match(r"^Question\s+\d+", t, re.I):
@@ -609,8 +609,8 @@ def main():
                 failed.append(path + " " + str(e))
     parsed["cw"].sort(key=lambda t: t["title"].lower())
     parsed["rdl"].sort(key=lambda t: t["title"].lower())
-    json.dump(paper("bank-cw", "题块库 · 单词填空", parsed["cw"]), open(OUT_CW, "w"), ensure_ascii=False, indent=2)
-    json.dump(paper("bank-rdl", "题块库 · 生活阅读", parsed["rdl"]), open(OUT_RDL, "w"), ensure_ascii=False, indent=2)
+    json.dump(paper("bank-cw", " chủ đề cục nhà kho · từ lấp chỗ trống công việc ", parsed["cw"]), open(OUT_CW, "w"), ensure_ascii=False, indent=2)
+    json.dump(paper("bank-rdl", " chủ đề cục nhà kho · sống đọc ", parsed["rdl"]), open(OUT_RDL, "w"), ensure_ascii=False, indent=2)
     for path in (OUT_CW, OUT_RDL):
         bad = jam_report(json.load(open(path)))
         if bad:

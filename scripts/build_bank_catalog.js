@@ -1,4 +1,4 @@
-/* 真题题库轻量目录：直接复用 server/tiku.js 的 buildPool，不另起第二套解析引擎 */
+/* câu hỏi từ đề thi các năm trước ngân hàng câu hỏi nhẹ đo lường mục lục: trực tiếp đi rồi quay lại sử dụng server/tiku.js của buildPool, không khác dậy thứ hai che đậy phân tích động cơ */
 const fs = require("fs");
 const path = require("path");
 
@@ -7,9 +7,9 @@ const OUT = path.join(repo, "app", "library", "toefl");
 const HOT = path.join(OUT, "bank-hot.json");
 const TIKU = require(path.join(repo, "server", "tiku.js"));
 
-// 行式题号格的单元编号前缀，照 hanginthere：听力 LR/C/A，写作组句用纯数字
+// hàng loại chủ đề gầm hình vuông của đơn vị đánh số tiền tố, biến thể của hanginthere: Nghe hiểu LR/C/A, viết hình thành biến thể của sử dụng thuần khiết chữ số
 const CELL_PREFIX = { choose_response: "LR", conversation: "C", announcement: "A" };
-// 只有这些题型是「一行套题号格」；其余（含口语整场景、听力讲座单篇）一张卡进整套
+// chỉ có những... này chủ đề khuôn là«đảng che đậy chủ đề gầm hình vuông»; phần còn lại(ngậm trong miệng lời nói thông thường toàn bộ cảnh, thính giác một khóa bài giảng hóa đơn tờ)một mở ra dừng tiến lên toàn bộ bộ sưu tập
 const ROW_TYPES = { choose_response: 1, conversation: 1, announcement: 1, sentence: 1 };
 const CODE_TITLE = /^[A-Z]{1,3}-[A-Z]{1,4}\d+-\d+$/;
 
@@ -87,7 +87,7 @@ function build() {
       return o;
     });
     fs.writeFileSync(file, JSON.stringify({ skill: skill, count: rows.length, groups: rows }));
-    console.log(file.replace(repo + "/", ""), rows.length + " 组", fs.statSync(file).size + " B");
+    console.log(file.replace(repo + "/", ""), rows.length + " hình thành ", fs.statSync(file).size + " B");
   });
 }
 

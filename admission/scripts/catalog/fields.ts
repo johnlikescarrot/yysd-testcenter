@@ -18,25 +18,25 @@ export const FIELDS = [
 export type Field = (typeof FIELDS)[number];
 
 export const COUNTRY_LABELS: Record<Country, string> = {
-  US: "美国",
-  UK: "英国",
-  CA: "加拿大",
-  AU: "澳大利亚",
+  US: " Hoa Kỳ ",
+  UK: " Vương quốc Anh ",
+  CA: " Canada ",
+  AU: " Úc ",
 };
 
 export const FIELD_LABELS: Record<Field, string> = {
-  cs: "计算机",
-  engineering: "工程",
-  data_ai: "数据/AI",
-  business: "商科",
-  finance: "金融",
-  science: "理科",
-  life_health: "生命健康",
-  arts_design: "艺术设计",
-  social: "社科",
-  education: "教育",
-  law: "法学",
-  other: "其他",
+  cs: " máy tính ",
+  engineering: " kỹ thuật ",
+  data_ai: " dữ liệu/AI",
+  business: " công ty IT Thương Khoa ",
+  finance: " ngân hàng ",
+  science: " khoa học tự nhiên ",
+  life_health: " sự sống sức khỏe ",
+  arts_design: " nghệ thuật thiết kế ",
+  social: " khoa học xã hội ",
+  education: " Giáo dục ",
+  law: " luật ",
+  other: " Khác ",
 };
 
 export type SchoolSeed = {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Set 2 JSON from No.2 OCR. Sentence Q1–Q9 from 答案 contexts; Q10 from visible chips."""
+"""Build Set 2 JSON from No.2 OCR. Sentence Q1–Q9 from Đáp án contexts; Q10 from visible chips."""
 import json
 import os
 import sys
@@ -24,7 +24,7 @@ def sent(i, context, answer, extra=None):
         "parts": [{"slot": True} for _ in words] + [{"t": "?" if answer.endswith("?") else "."}],
         "bank": scramble(bank, words),
         "answer": words,
-        "analysis": "正确顺序：" + answer
+        "analysis": " đúng trình tự: " + answer
     }
 
 
@@ -35,7 +35,7 @@ def cr(n, stem, opts, ans, tr, analysis):
         "type": "choose_response",
         "module": 1,
         "title": "LR%02d" % n,
-        "titleZh": "听句选回应 %02d" % n,
+        "titleZh": " Nghe câu và chọn câu đáp lại %02d" % n,
         "code": "LR%02d" % n,
         "instruction": "Choose the best response.",
         "audio": "%s/Set2-L-CR%d.mp3" % (AUD, n),
@@ -79,9 +79,9 @@ reading = {
             "type": "complete_words",
             "module": 1,
             "title": "Tigers",
-            "titleZh": "老虎",
+            "titleZh": " hổ ",
             "instruction": "Fill in the missing letters in the paragraph.",
-            "translation": "老虎是独居动物，以领地行为著称；雄性用气味标记和叫声划定领地。每只雄虎控制着数平方英里的大片领地，并定期巡视以寻找猎物、维持主导地位。这种行为有助于减少因猎物产生的冲突，但必要时老虎会猛烈抵御入侵者。它们常在夜间狩猎，借助隐蔽和出色的夜视能力。",
+            "translation": " hổ là sống một mình động vật, biến thể cũ của lãnh thổ hành động được biết đến rộng rãi là; giống đực sử dụng mùi ký hiệu biến thể cũ của la hét phân định lãnh thổ mỗi chỉ đực con hổ kiểm soát nước đi vuông dặm của khu vực rộng lớn lãnh thổ, và vào các ngày cố định tuần tra biến thể cũ của tìm kiếm con mồi, giữ dẫn dắt vị trí loại này hành động góp phần vào giảm biến thể cũ của con mồi phát sinh của xung đột, nhưng cần thiết biến thể cũ của | hổ có thể mãnh liệt chống cự kẻ xâm nhập chúng luôn luôn tồn tại ban đêm săn, nhờ vào che giấu biến thể cũ của đáng chú ý của tầm nhìn ban đêm năng lực ",
             "passage": [
                 {"t": "Tigers are solitary animals known for their territorial behavior; males use scent markings and vocalizations to define their territories. Each "},
                 {"id": 1, "prefix": "ma", "answer": "le", "word": "male"},
@@ -110,13 +110,13 @@ reading = {
             "type": "daily_life",
             "module": 1,
             "title": "Introduction to Glassblowing",
-            "titleZh": "玻璃吹制入门",
+            "titleZh": " thủy tinh thổi hệ thống cửa vào ",
             "instruction": "Read a course description.",
             "layout": {
                 "kind": "card",
                 "kicker": "Course",
                 "title": "Introduction to Glassblowing",
-                "body": "This hands-on class introduces adults (18+) to the art of glassblowing. You'll learn safety, shaping, and design techniques while crafting your own unique work of glass art.\n\nNo experience needed — just curiosity and closed-toe shoes! Other safety-related equipment will be provided by the instructor.\n\nRegister now — spaces are limited!\nVisit www.alburcommunitycenter.com/glassblowing."
+                "body": "This hands-on class introduces adults (18+) to the art of glassblowing. You'll learn safety, shaping, and design techniques while crafting your own unique work of glass art.\n\nNo experience needed - just curiosity and closed-toe shoes! Other safety-related equipment will be provided by the instructor.\n\nRegister now - spaces are limited!\nVisit www.alburcommunitycenter.com/glassblowing."
             },
             "questions": [
                 {
@@ -129,7 +129,7 @@ reading = {
                         "D": "Anyone who is registered for classes at a university"
                     },
                     "answer": "A",
-                    "analysis": "课程写 adults (18+)，年满 18 岁即可报名。"
+                    "analysis": " khóa học viết adults (18+), đạt đến tuổi 18 biến thể của | tương đương với đăng ký "
                 },
                 {
                     "id": 2,
@@ -141,7 +141,7 @@ reading = {
                         "D": "they help reduce the risk of falling"
                     },
                     "answer": "B",
-                    "analysis": "与 safety-related equipment 并列，闭口鞋是保护。"
+                    "analysis": " và safety-related equipment đứng song song, đóng miệng giày là bảo vệ "
                 }
             ]
         },
@@ -149,9 +149,9 @@ reading = {
             "type": "academic",
             "module": 1,
             "title": "Augmented Reality in Training",
-            "titleZh": "增强现实培训",
+            "titleZh": " tăng cường thực tế nuôi dưỡng ",
             "instruction": "Read the passage.",
-            "translation": "增强现实（AR）已成为人类绩效技术、尤其是培训领域的突破性工具。AR 将数字信息叠加到现实世界，提供沉浸式体验，促进学习与技能习得。例如，AR 可模拟复杂机械操作，让学员像亲临现场一样与虚拟部件互动。这种动手方式帮助学习者理解复杂流程，同时避免真实操作的风险。AR 的适应性使其适用于多个行业。医学中可投射人体解剖三维模型，引导外科医生完成复杂手术；航空中飞行员用 AR 练习应急程序，获得安全而真实的训练环境。研究表明这些应用显著提高记忆保持与表现。AR 还能按个人需求定制场景。但把 AR 纳入培训也面临挑战：硬件与软件投入巨大，制作准确、响应迅速的内容需要许多机构尚不具备的专业能力。尽管如此，AR 对提升人类绩效的益处毋庸置疑。随着技术演进，它有望提供更精密有效的培训方案。",
+            "translation": " tăng cường thực tế(AR)đã trở thành nhân loại hiệu suất công nghệ, đặc biệt nuôi dưỡng miền của mang tính đột phá công cụ AR sẽ chữ số thông tin chồng lên đến thực tế thế giới, đề nghị mang tính đắm chìm trải nghiệm, thúc đẩy học biến thể của | khả năng kỹ thuật học được ví dụ, AR có thể mô phỏng phức tạp máy làm việc, nhường học viên giống đích thân đến hiện trường giống biến thể của | tưởng tượng bộ phận tương tác loại này bắt đầu cách thức sự giúp đỡ học người mà lĩnh hội phức tạp quy trình, đồng thời ngăn chặn thật làm việc của rủi ro AR của tính thích nghi khiến của anh ấy có thể áp dụng đi nhiều ngành nghề y học Trung Quốc có thể ném giải phẫu người ba chiều mô hình, hướng dẫn bác sĩ phẫu thuật hoàn thành phức tạp ca phẫu thuật; hàng không Trung Quốc phi công sử dụng AR luyện tập ứng phó khẩn cấp quy trình, đạt được an toàn và thật của huấn luyện môi trường nghiên cứu làm rõ những... này đưa vào sử dụng nổi bật nâng cao nhớ giữ biến thể của | thể hiện AR vẫn có thể nhấn cá nhân yêu cầu đặt làm riêng cảnh nhưng cầm AR đưa vào nuôi dưỡng cũng đối mặt với cái gì đó thử thách: phần cứng biến thể của | phần mềm ném vào to lớn, làm chính xác, đáp lại nhanh chóng của nội dung cần nhiều cơ chế vẫn không có của chuyên môn năng lực mặc dù như thế, AR đúng thăng chức nhân loại hiệu suất của lợi ích không cần phải nghi ngờ cùng với công nghệ tiến hóa, nó đầy hy vọng đề nghị thay đổi hoặc thay thế chính xác hiệu quả của nuôi dưỡng kế hoạch ",
             "paras": [
                 "Augmented reality (AR) has emerged as a groundbreaking tool in the field of human performance technology, particularly in training environments. AR overlays digital information on the real world, providing immersive experiences that enhance learning and skill acquisition. For example, AR can simulate complex machinery operations, allowing trainees to interact with virtual components as if they were physically present. This hands-on approach helps learners understand intricate processes without the risks associated with real-world practice.",
                 "The adaptability of AR makes it suitable for various industries. In medicine, AR can project 3D models of human anatomy, guiding surgeons through complex procedures. In aviation, pilots use AR to practice emergency protocols, offering a safe yet realistic training environment. Studies have shown that these AR applications significantly improve retention rates and performance outcomes. Moreover, AR's ability to customize training scenarios based on individual needs further enhances its effectiveness.",
@@ -163,7 +163,7 @@ reading = {
                     "stem": "The word \"groundbreaking\" in the passage is closest in meaning to",
                     "options": {"A": "educational", "B": "practical", "C": "revolutionary", "D": "interesting"},
                     "answer": "C",
-                    "analysis": "groundbreaking 意为开创性，最接近 revolutionary。"
+                    "analysis": "groundbreaking Ý làm có tính sáng tạo, biến thể của tiếp cận revolutionary "
                 },
                 {
                     "id": 2,
@@ -175,7 +175,7 @@ reading = {
                         "D": "AR produces a digital record of real-world content."
                     },
                     "answer": "B",
-                    "analysis": "原文 providing immersive experiences that enhance learning。"
+                    "analysis": " Bản gốc providing immersive experiences that enhance learning "
                 },
                 {
                     "id": 3,
@@ -187,7 +187,7 @@ reading = {
                         "D": "Their high financial costs"
                     },
                     "answer": "B",
-                    "analysis": "without the risks associated with real-world practice。"
+                    "analysis": "without the risks associated with real-world practice "
                 },
                 {
                     "id": 4,
@@ -199,7 +199,7 @@ reading = {
                         "D": "To support the claim that it is useful to industries"
                     },
                     "answer": "D",
-                    "analysis": "研究用来支撑 these AR applications 对行业培训有效。"
+                    "analysis": " nghiên cứu được dùng để chống đỡ these AR applications đúng ngành nghề nuôi dưỡng hiệu quả "
                 },
                 {
                     "id": 5,
@@ -211,7 +211,7 @@ reading = {
                         "D": "The absence of existing training programs into which it may be integrated"
                     },
                     "answer": "A",
-                    "analysis": "substantial investment in hardware and software；定制内容也费钱费人。"
+                    "analysis": "substantial investment in hardware and software; đặt làm riêng nội dung cũng tốn tiền xu tốn người "
                 }
             ]
         }
@@ -228,106 +228,106 @@ listening = {
         cr(1, "Choose the best response.",
            ["Let's see what's on the agenda first.", "We need to send invitations.", "The club room is more spacious.", "Friday is better."],
            "A", "W: Should we invite the whole club or just the officers?",
-           "问请全员还是只请干部。A 说先看议程再定。"),
+           " hỏi mời tất cả nhân viên vẫn chỉ mời cán bộ A thuyết phục trước chăm sóc chương trình nghị sự lại cố định "),
         cr(2, "Choose the best response.",
            ["I need to clean them up first.", "I don't think Tim took notes either.", "Class ran long.", "I didn't expect so many people to be there."],
            "A", "W: Would you mind forwarding me the notes from yesterday's class?",
-           "请转发笔记。A 说先整理一下再发。"),
+           " mời truyền đi ghi chép lại A thuyết phục trước sắp xếp thử xem phát hành lại "),
         cr(3, "Choose the best response.",
            ["Yes, I need them immediately.", "I have no idea where I left them.", "No, it's actually quite far from here.", "You can put them in here."],
            "B", "W: Can I borrow your headphones to listen to the recorded lecture?",
-           "借耳机。B 说不知道耳机放哪了。"),
+           " mượn tai nghe B thuyết phục không biết đường tai nghe đặt như thế nào hoàn thành "),
         cr(4, "Choose the best response.",
            ["I enjoyed our conversation.", "I had a meeting yesterday.", "What time is lunch?", "Yes, the forecast states clear skies."],
            "D", "It should be nice weather for the hiking club's trip today.",
-           "说徒步天气不错。D 说预报是晴天。"),
+           " thuyết phục đi bộ thời tiết đúng D thuyết phục dự báo là trời quang "),
         cr(5, "Choose the best response.",
            ["Friday is casual day.", "Most students are home for the break.", "The calendar is shared with all students.", "The air conditioning is very loud."],
            "B", "Why is campus so quiet today?",
-           "问校园为何安静。B 说多数学生放假回家了。"),
+           " hỏi khuôn viên trường tại sao yên tĩnh B thuyết phục đa số học sinh nghỉ lễ hoặc kỳ nghỉ trở về nhà hoàn thành "),
         cr(6, "Choose the best response.",
            ["We grabbed dinner before the concert.", "I will see my friends there.", "The band played some great songs.", "Ticket prices will go up next month."],
            "C", "Did the campus concert meet your expectations?",
-           "问音乐会是否达预期。C 说乐队演奏很好。"),
+           " hỏi buổi hòa nhạc liệu có đạt tới mong đợi C thuyết phục ban nhạc biểu diễn nhạc cụ tốt "),
         cr(7, "Choose the best response.",
            ["They're not in this section.", "Yes, she prefers fiction.", "The Second World War.", "I'm in the library."],
            "A", "Where can I find the books on history?",
-           "问历史书在哪。A 说不在这个区域。"),
+           " hỏi lịch sử viết tắt của | tồn tại như thế nào A thuyết phục không có mặt này khu vực "),
         cr(8, "Choose the best response.",
            ["There's a good Thai restaurant near campus.", "I had to eat my lunch during class.", "I haven't eaten there.", "I had leftovers for dinner yesterday."],
            "A", "Which restaurant do you recommend for dinner?",
-           "请推荐餐厅。A 推荐校园附近的泰国餐馆。"),
+           " mời đề xuất phòng ăn A đề xuất khuôn viên trường gần đó của Thái Lan nhà hàng "),
         cr(9, "Choose the best response.",
            ["Yes, sometimes I do.", "You should update before you run into problems.", "The new version has been out for just a month or so I think.", "I'm having trouble getting used to the new one, honestly."],
            "D", "Do you prefer the new or old version of our course website?",
-           "问更喜欢新旧版课程网站。D 说还不习惯新版。"),
+           " hỏi thay đổi hoặc thay thế thích viết tắt của Tân Cương phiên bản cũ khóa học trang web D thuyết phục vẫn không thói quen phiên bản mới "),
         cr(10, "Choose the best response.",
            ["Two blocks over, why?", "It's on campus.", "I move in next week.", "I'll give them a call."],
            "B", "Why did you select this dorm?",
-           "问为何选这栋宿舍。B 说因为它在校内。"),
+           " hỏi tại sao chọn này lượng từ cho nhà hoặc tòa nhà ký túc xá B thuyết phục bởi vì nó đang theo học tại một trường bên trong "),
         cr(11, "Choose the best response.",
            ["I left my yoga mat in the car.", "I downloaded a fitness app.", "I look forward to going to all of the classes now.", "They make delicious health shakes at the gym cafe."],
            "C", "How's your new yoga instructor?",
-           "问新瑜伽老师怎么样。C 说现在很期待每节课。"),
+           " hỏi viết tắt của Tân Cương yoga giáo viên như thế nào? C thuyết phục bây giờ mong chờ mỗi xem | môn học "),
         cr(12, "Choose the best response.",
            ["No, I don't mind if you borrow it.", "They purchased the new printer last week.", "We should receive our grades tomorrow.", "Yes, it was very insightful."],
            "D", "Did you find the leadership seminar impactful?",
-           "问领导力讲座是否有收获。D 说很有启发。"),
-        conv(1, "Getting in Shape", "健身动力", 1,
+           " hỏi năng lực lãnh đạo một khóa bài giảng liệu có có biến thể của | D thuyết phục có khai sáng "),
+        conv(1, "Getting in Shape", " tập thể dục động lực ", 1,
              "I've been trying to get in shape, but I'm not having much success. You know a lot about fitness. What am I doing wrong? The most important thing is staying motivated. Yes, that's been a problem for me. You should set small, achievable goals. Seeing your progress can be very motivating. I see what you're saying. Have you thought about joining a class? Working out with others can keep you motivated and accountable. It's a great idea. I'll go online now and see what's available.",
              [
                  {"id": 1, "stem": "What is the man's problem?",
                   "options": {"A": "He lacks the incentive to exercise regularly.", "B": "He cannot find a gym he likes.", "C": "A class he wanted to join has been canceled.", "D": "He set a goal he could not achieve."},
-                  "answer": "A", "analysis": "他说 that's been a problem 指 staying motivated，缺少持续锻炼的动力。"},
+                  "answer": "A", "analysis": " anh ấy thuyết phục that's been a problem ngón tay staying motivated, thiếu tiếp tục rèn luyện của động lực "},
                  {"id": 2, "stem": "What will the man most likely do next?",
                   "options": {"A": "Invite the woman to work out with him", "B": "Review his list of fitness goals", "C": "Make an appointment with a personal trainer", "D": "Choose from a list of fitness classes"},
-                  "answer": "D", "analysis": "I'll go online now and see what's available，去网上看课程。"}
+                  "answer": "D", "analysis": "I'll go online now and see what's available, đi trực tuyến chăm sóc khóa học "}
              ]),
-        conv(2, "Campus Chess Club", "校园棋社", 2,
+        conv(2, "Campus Chess Club", " khuôn viên trường biến thể của xã hội ", 2,
              "I heard you joined the Campus Chess Club. How's it going? Great! I'm learning a lot and meeting new people. I've always wanted to learn to play, but I've never tried. Is everyone pretty advanced? No, not necessarily. There are members of all skill levels. When do they meet? Every Saturday afternoon at the Student Center. I work at the library then. But they're very flexible, so I'm sure I could make it work.",
              [
                  {"id": 1, "stem": "What can be inferred about the Chess Club?",
                   "options": {"A": "It is run by the man.", "B": "It requires a small fee to join.", "C": "It accepts beginners.", "D": "It has very few members."},
-                  "answer": "C", "analysis": "members of all skill levels，接受初学者。"},
+                  "answer": "C", "analysis": "members of all skill levels, chấp nhận học sinh mới bắt đầu "},
                  {"id": 2, "stem": "Based on the conversation, what will the woman most likely do?",
                   "options": {"A": "Change her schedule", "B": "Volunteer with the man", "C": "Help the man get a job at the library", "D": "Return a book"},
-                  "answer": "A", "analysis": "周六下午要在图书馆上班，但社团灵活，她会调整时间参加。"}
+                  "answer": "A", "analysis": " Thứ Bảy buổi chiều yêu cầu tồn tại thư viện đi làm, nhưng hiệp hội linh hoạt, cô ấy có thể điều chỉnh thời gian tham gia "}
              ]),
-        conv(3, "Dormitory Fees", "宿舍涨价", 3,
+        conv(3, "Dormitory Fees", " ký túc xá tăng giá trị ", 3,
              "I just interviewed the director of campus housing for the University newspaper and she confirmed the rumors. The cost to live in the dormitories will increase 10 percent. I don't know if it makes sense to stay. I'm looking for an apartment or something that's not on campus. That's what I'm planning to do. If I come across any good ones while I'm looking, I'll pass them along to you. Awesome, thanks.",
              [
                  {"id": 1, "stem": "What information did the man just learn about?",
                   "options": {"A": "A price increase", "B": "A newspaper club meeting", "C": "A new dormitory building", "D": "A new housing director"},
-                  "answer": "A", "analysis": "宿舍费用将上涨 10%。"},
+                  "answer": "A", "analysis": " ký túc xá chi phí sẽ tăng lên 10% "},
                  {"id": 2, "stem": "What is the man planning to do?",
                   "options": {"A": "Speak with a university official", "B": "Make a payment", "C": "Read a newspaper article", "D": "Find off-campus housing"},
-                  "answer": "D", "analysis": "That's what I'm planning to do 指找校外公寓。"}
+                  "answer": "D", "analysis": "That's what I'm planning to do ngón tay cố gắng tìm ngoài khuôn viên trường toà nhà chung cư "}
              ]),
-        conv(4, "Tutoring Appointment", "辅导预约", 4,
+        conv(4, "Tutoring Appointment", " hướng dẫn đặt chỗ ", 4,
              "Hi, this is Sarah calling from the Campus Tutoring Center. I just wanted to confirm your biology session with Raoul tomorrow at noon. I'm glad you called. My manager at work needs me to go in tomorrow. I get off at three. Hmm, okay, let me check the schedule. Raoul's not available at that time, but I can put you in with Kara at 3:30. That'd be perfect. I worked with her before, and she's great. Thank you.",
              [
                  {"id": 1, "stem": "Why is the woman calling the man?",
                   "options": {"A": "To provide a reminder", "B": "To cancel an appointment", "C": "To review a work schedule", "D": "To discuss a job opportunity"},
-                  "answer": "A", "analysis": "Sarah 打电话确认明天中午的生物辅导。"},
+                  "answer": "A", "analysis": "Sarah gọi điện thoại xác nhận ngày mai buổi trưa của sinh vật hướng dẫn "},
                  {"id": 2, "stem": "Why does the man say that he gets off at 3:00?",
                   "options": {"A": "To confirm a request", "B": "To suggest an alternative", "C": "To ask a question", "D": "To clarify a misunderstanding"},
-                  "answer": "B", "analysis": "他中午去不了，提出三点下班后再约，是在给替代时间。"}
+                  "answer": "B", "analysis": " anh ấy buổi trưa đi không, nêu ba điểm tan làm hoàng hậu lại cân trong cân đĩa hoặc trên cân, là tồn tại cho thay thế cho thời gian "}
              ]),
-        conv(5, "Broken Laptop", "电脑故障", 5,
+        conv(5, "Broken Laptop", " máy tính trục trặc ", 5,
              "I was just typing my paper and my computer suddenly shut down. You've had a lot of problems with that laptop, haven't you? Yeah. Have you tried holding down the power button for a few seconds? I did, but nothing happened. I'd rather not take it to a repair shop, but I don't know what else to do. How about I get in touch with my ex-roommate, Monica? She's a real tech whiz. Oh, that's an idea. Could you give me her number? I'm not sure I have it anymore.",
              [
                  {"id": 1, "stem": "What is the man's problem?",
                   "options": {"A": "He does not know what to write about in his paper.", "B": "An item he wants to buy is too expensive.", "C": "He has a disagreement with his roommate.", "D": "His computer is not working."},
-                  "answer": "D", "analysis": "电脑突然关机，按电源键也没用。"},
+                  "answer": "D", "analysis": " máy tính đột ngột tắt, nhấn nguồn điện phím cũng vô dụng "},
                  {"id": 2, "stem": "At the end of the conversation, what is the man's attitude toward the woman's idea?",
                   "options": {"A": "Confused", "B": "Annoyed", "C": "Hopeful", "D": "Doubtful"},
-                  "answer": "C", "analysis": "Oh, that's an idea. Could you give me her number? 对找 Monica 抱有希望。"}
+                  "answer": "C", "analysis": "Oh, that's an idea. Could you give me her number? đúng cố gắng tìm Monica có hy vọng "}
              ]),
         {
             "type": "announcement",
             "module": 1,
             "title": "Student Organization Policy",
-            "titleZh": "社团活动审批",
+            "titleZh": " hiệp hội tập thể dục xem xét và phê duyệt ",
             "code": "A01",
             "instruction": "Listen to an announcement.",
             "audio": AUD + "/Set2-L-ANO1.mp3",
@@ -335,17 +335,17 @@ listening = {
             "questions": [
                 {"id": 1, "stem": "What can be inferred about the new policy?",
                  "options": {"A": "It aims to reduce the number of student events.", "B": "It is designed to ensure proper event planning.", "C": "It will be enforced starting next semester.", "D": "It was implemented because of budget cuts."},
-                 "answer": "B", "analysis": "针对 last-minute 安排，要求提前一周审批，是为了规范筹备。"},
+                 "answer": "B", "analysis": " nhắm vào last-minute sắp xếp, yêu cầu dời lên ngày sớm hơn một tuần xem xét và phê duyệt, là để chuẩn mực chuẩn bị "},
                 {"id": 2, "stem": "What can be concluded about previously held events?",
                  "options": {"A": "They were sometimes submitted for approval at the last minute.", "B": "They were often canceled because of poor planning.", "C": "They did not involve the Student Affairs Office.", "D": "They usually created extra work for student clubs."},
-                 "answer": "A", "analysis": "新规针对临时申报，说明以前常有最后一刻才报批的活动。"}
+                 "answer": "A", "analysis": " quy tắc mới nhắm vào khi thời gian đến gần báo cáo, giải thích trước đây luôn luôn có cuối cùng một một phần tư khả năng báo cáo để phê bình của tập thể dục "}
             ]
         },
         {
             "type": "announcement",
             "module": 1,
             "title": "Fashion Design Internship",
-            "titleZh": "服装设计实习",
+            "titleZh": " trang phục thiết kế thực hành ",
             "code": "A02",
             "instruction": "Listen to an announcement.",
             "audio": AUD + "/Set2-L-ANO2.mp3",
@@ -353,17 +353,17 @@ listening = {
             "questions": [
                 {"id": 1, "stem": "What can we infer about the business mentioned by the speaker?",
                  "options": {"A": "It has been open for many years.", "B": "It was started by a fashion design student at the university.", "C": "It targets a narrow market.", "D": "It is moving to a new location."},
-                 "answer": "C", "analysis": "focuses solely on young adult clothing，面向窄市场。"},
+                 "answer": "C", "analysis": "focuses solely on young adult clothing, đối mặt hẹp khu chợ "},
                 {"id": 2, "stem": "Why should listeners visit the website?",
                  "options": {"A": "To purchase young adult clothing", "B": "To view a new logo", "C": "To learn about a contest", "D": "To provide some feedback"},
-                 "answer": "C", "analysis": "还在征集公司 logo 设计，网站有比赛详情。"}
+                 "answer": "C", "analysis": " vẫn tồn tại thu thập công ty logo thiết kế, trang web có cuộc thi chi tiết "}
             ]
         },
         {
             "type": "announcement",
             "module": 1,
             "title": "Fitness Center Closing",
-            "titleZh": "健身中心关闭",
+            "titleZh": " tập thể dục trung tâm đóng ",
             "code": "A03",
             "instruction": "Listen to an announcement.",
             "audio": AUD + "/Set2-L-ANO3.mp3",
@@ -371,17 +371,17 @@ listening = {
             "questions": [
                 {"id": 1, "stem": "What are visitors asked to do?",
                  "options": {"A": "Clean any items they have used", "B": "Renew their fitness membership", "C": "Prepare for a workout in two minutes", "D": "Put exercise equipment in the correct locations"},
-                 "answer": "D", "analysis": "return all dumbbells, bars, and other items to their proper places。"},
+                 "answer": "D", "analysis": "return all dumbbells, bars, and other items to their proper places "},
                 {"id": 2, "stem": "What is mentioned about tomorrow?",
                  "options": {"A": "The fitness center will be closed.", "B": "The fitness center will hire additional employees.", "C": "The dumbbells in the fitness center will be replaced.", "D": "A new morning class will begin at the fitness center."},
-                 "answer": "A", "analysis": "closed for our clean-up day tomorrow。"}
+                 "answer": "A", "analysis": "closed for our clean-up day tomorrow "}
             ]
         },
         {
             "type": "lecture",
             "module": 1,
             "title": "Lean Startup and MVP",
-            "titleZh": "精益创业与最小可行产品",
+            "titleZh": " tinh chất lợi ích bắt đầu sự nghiệp biến thể của | biến thể của nhỏ hàng hàng hóa ",
             "code": "AT1",
             "instruction": "Listen to a lecture.",
             "audio": AUD + "/Set2-L-AT1.mp3",
@@ -389,16 +389,16 @@ listening = {
             "questions": [
                 {"id": 1, "stem": "What is the main topic of the talk?",
                  "options": {"A": "The benefits of traditional market research", "B": "The principles of the lean start-up methodology", "C": "An approach to making business decisions", "D": "The challenges of product development"},
-                 "answer": "B", "analysis": "整段在讲 Lean Startup 方法及其核心做法。"},
+                 "answer": "B", "analysis": " toàn bộ đoạn tồn tại nói Lean Startup phương pháp và của lõi cách xử lý "},
                 {"id": 2, "stem": "According to the talk, what is a minimum viable product, or MVP?",
                  "options": {"A": "A concept created to attract funding before product development", "B": "A version of a product used for internal testing only", "C": "A basic version of a product that can be released quickly", "D": "A product with complete features designed for final release"},
-                 "answer": "C", "analysis": "a basic version of a new product released quickly to gather feedback。"},
+                 "answer": "C", "analysis": "a basic version of a new product released quickly to gather feedback "},
                 {"id": 3, "stem": "What does the speaker imply about validated learning?",
                  "options": {"A": "It helps ensure that the product meets buyers' needs.", "B": "It is less effective than traditional methods.", "C": "It involves surveying a large number of customers.", "D": "It relies on extensive market research."},
-                 "answer": "A", "analysis": "把产品放到真实市场检验，看是否满足顾客需求。"},
+                 "answer": "A", "analysis": " cầm hàng hóa đặt đến thật khu chợ kiểm tra, chăm sóc liệu có thoả mãn khách hàng yêu cầu "},
                 {"id": 4, "stem": "Why does the speaker mention the drawbacks of the lean start-up approach?",
                  "options": {"A": "To show that the approach is not suitable for all businesses", "B": "To contrast the approach with traditional product-development methods", "C": "To provide a balanced view of the approach", "D": "To suggest that drawbacks should be addressed from an early stage"},
-                 "answer": "C", "analysis": "In all fairness ... isn't perfect，补充局限以保持平衡。"}
+                 "answer": "C", "analysis": "In all fairness ... isn't perfect, bổ sung biến thể của biến thể cũ của giữ cân bằng "}
             ]
         }
     ]
@@ -432,14 +432,14 @@ writing = {
             "parts": [{"slot": True}] * 6 + [{"t": "."}],
             "bank": ["it", "I", "make", "to", "able", "wasn't"],
             "answer": ["I", "wasn't", "able", "to", "make", "it"],
-            "analysis": "正确顺序：I wasn't able to make it."
+            "analysis": " đúng trình tự: I wasn't able to make it."
         },
         {
             "type": "email",
             "module": 2,
             "id": 11,
             "title": "Car Rental Feedback",
-            "titleZh": "租车反馈",
+            "titleZh": " thuê xe gửi thông tin phản hồi ",
             "instruction": "Write an email. In your email, do the following:",
             "prompt": "You recently rented a car for a weekend trip with your dorm mate and were satisfied with the vehicle's performance. However, you had a bad experience with the customer service at the rental office. You want to provide feedback to the rental company manager, Ms. Turner.",
             "bullets": [
@@ -450,14 +450,14 @@ writing = {
             "to": "Ms. Turner",
             "subject": "Feedback on Car Rental Experience",
             "sample": "Dear Ms. Turner,\n\nI recently rented a compact car for a weekend trip and was satisfied with the vehicle itself. It was clean, easy to park, and used less fuel than I expected, which made the trip more comfortable.\n\nUnfortunately, the customer service at the rental office was not as reliable. At pick-up we waited more than forty minutes, and the staff could not find our reservation until we showed the confirmation email. At drop-off, nobody was available to inspect the car, so we were unsure whether the return had been recorded.\n\nA simple check-in list, a visible queue number, and a short drop-off confirmation would prevent this confusion. I hope this feedback helps the office match the quality of the cars you provide.\n\nSincerely,\n[Your Name]",
-            "analysis": "邮件需覆盖三点：喜欢的车况、客服问题、取还车改进。称呼 Ms. Turner。"
+            "analysis": " thư từ yêu cầu che phủ ba điểm: thích của xe hơn nữa, dịch vụ khách hàng câu hỏi, lấy vẫn xe cải thiện gọi Ms. Turner "
         },
         {
             "type": "discussion",
             "module": 3,
             "id": 12,
             "title": "Brand Loyalty",
-            "titleZh": "品牌忠诚度",
+            "titleZh": " tên thương hiệu tận tụy vượt qua ",
             "class": "Marketing 210",
             "instruction": "Write a discussion response. An effective response contains at least 100 words.",
             "professor": {
@@ -469,7 +469,7 @@ writing = {
                 {"name": "Andrew", "text": "In my opinion, while personalization is important, it's not the only factor in building brand loyalty. Other aspects like customer service, product quality, and pricing also play a significant role. A balanced approach is needed to maintain strong brand loyalty."}
             ],
             "sample": "I agree with Andrew that personalization helps, but it is not the only key to brand loyalty. Personalized recommendations can make a customer feel recognized, as Claire says, and streaming services show how that unique experience keeps people subscribed. Still, if the product is unreliable or the price jumps without warning, even a perfectly tailored homepage will not keep buyers. In my experience, loyalty lasts when personalization is paired with consistent quality and responsive service. A store that remembers my size but ships damaged goods will lose me; a brand that gets both right is much harder to leave. So personalization is a strong tool, not the whole strategy.",
-            "analysis": "需表态并回应对方。较好答法：个性化有用，但质量、服务、价格同样关键，并举例。"
+            "analysis": " yêu cầu tuyên bố lập trường và phản hồi người kia tốt hơn hình thức gắn liền có nghĩa giống như từ tự do biến thể của: cá nhân hóa hữu ích, nhưng chất lượng, phục vụ, giá giống nhau điểm mấu chốt, phát triển đồng thời ví dụ "
         }
     ]
 }
@@ -502,12 +502,12 @@ for i, line in enumerate(wood_lines, 1):
         "module": 1,
         "id": i,
         "title": "Wood Shop",
-        "titleZh": "木工坊",
+        "titleZh": " thợ mộc ngõ ",
         "speakSec": 15,
         "instruction": wood,
         "audio": AUD + "/Set2-S-LR2.mp3",
         "sample": line,
-        "analysis": "复述：" + line
+        "analysis": " Thuật lại: " + line
     })
 
 iv = [
@@ -522,13 +522,13 @@ for i, q in enumerate(iv, 1):
         "module": 2,
         "id": 7 + i,
         "title": "Transportation Habits",
-        "titleZh": "交通习惯",
+        "titleZh": " kết nối thói quen ",
         "speakSec": 45,
         "instruction": "Listen to the question, then respond.",
         "audio": "%s/Set2-S-IV2-Q%d.mp3" % (AUD, i),
         "stem": q,
         "sample": q,
-        "analysis": "围绕交通习惯作答，给出具体例子。"
+        "analysis": " xoay quanh kết nối thói quen trả lời, cho cấp phong cách con trai "
     })
 
 os.makedirs(OUT, exist_ok=True)

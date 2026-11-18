@@ -3,30 +3,30 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI升学顾问 · 优益思达",
-  description: "科技蓝单页步进：选校 → 学历 → 科目 → 录取评估",
+  title: "AI lên lớp hoặc trường cấp trên cố vấn · YYSD ",
+  description: " khoa học và công nghệ màu xanh hóa đơn đầu một bước tiến lên: chọn kiểm tra → nền tảng giáo dục → Môn học → chấp nhận ứng viên vượt kỳ thi đầu vào đánh giá ",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="vi">
       <body className="min-h-screen antialiased">
         <header className="border-b border-sky-500/15 bg-slate-950/40 backdrop-blur-md">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
             <Link href="/" className="tech-title text-base tracking-wide">
-              AI升学顾问
+              AI lên lớp hoặc trường cấp trên cố vấn
             </Link>
             <nav className="flex gap-4 text-sm text-slate-400">
               <Link href="/" className="hover:text-sky-300">
-                开始评估
+                bắt đầu đánh giá
               </Link>
               <a href="/rankings" className="hover:text-sky-300">
-                大学排名
+                Đại học xếp hạng
               </a>
               <a href="/" className="hover:text-sky-300">
-                返回主站
+                trở về chủ trạm
               </a>
             </nav>
           </div>

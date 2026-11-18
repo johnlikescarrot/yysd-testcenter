@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元9 · 健康与生活方式">
-    <meta name="exam:description" content="写作专项词汇 · 工作家庭 · 健康与生活方式">
+    <meta name="exam:title" content=" Đơn vị 9 · sức khỏe biến thể của | cách sống ">
+    <meta name="exam:description" content=" viết chuyên biệt biến thể của | · làm việc gia đình · sức khỏe biến thể của | cách sống ">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元9 · 健康与生活方式</title>
+    <title>Đơn vị 9 · sức khỏe biến thể của | cách sống</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -144,122 +144,122 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🍎</div><span>单元9-工作家庭-健康与生活方式</span></div>
+        <div class="logo"><div class="logo-icon">🍎</div><span>Đơn vị 9-làm việc gia đình-sức khỏe biến thể của | cách sống</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- học chế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiện chế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng cộng 30 Câu hỏi</h3>
+            <p>chia ba dùng trong | giai đoạn, theo thứ tự hoàn thành, không thể nhảy đến </p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi chọn<br>chọn đúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích ngôn ngữ viết tiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọn từ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Thứ 1 / 30 Câu hỏi</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">giai đoạn một: ghép đôi chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạn của nhập khẩu</span><span class="value" id="spellUserValue">-</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">-</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ xác nhận câu trả lời</button>
+                <button class="btn-next" id="btnNext">xuống một chủ đề →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện thông báo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 trở về học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 工作家庭 · 健康与生活方式 · 27个核心词条 ====================
+// ==================== làm việc gia đình · sức khỏe biến thể của | cách sống · 27 dùng trong | lõi mục từ điển ====================
 const phraseData = [
-    // —— 饮食与食品（6个） ——
-    { cn:'均衡饮食', en:'Balanced diet', word:'Balanced', synonym:'Healthy', target:'balanced', detail:'balanced diet 表示“均衡饮食”，指包含各种营养素的健康饮食。', example:'A balanced diet is essential for maintaining good health.' },
-    { cn:'添加剂', en:'Additive', word:'Additive', synonym:'Enhancer', target:'additive', detail:'additive 表示“添加剂”，指食品中为改善口味或保质期添加的物质。', example:'Many processed foods contain artificial additives.' },
-    { cn:'防腐剂', en:'Preservative', word:'Preservative', synonym:'Stabilizer', target:'preservative', detail:'preservative 表示“防腐剂”，用于延长食品保质期。', example:'Some preservatives may be harmful to health.' },
-    { cn:'成分', en:'Ingredient', word:'Ingredient', synonym:'Component', target:'ingredient', detail:'ingredient 表示“成分、配料”，指食品中包含的原料。', example:'Check the list of ingredients before buying any food product.' },
-    { cn:'家常饭菜', en:'Home-made food', word:'Home-made', synonym:'Homemade', target:'home-made', detail:'home-made food 表示“家常饭菜”，指在家自己烹饪的食物。', example:'Home-made food is generally healthier than fast food.' },
-    { cn:'方便食品', en:'Convenience food', word:'Convenience', synonym:'Ready-made', target:'convenience', detail:'convenience food 表示“方便食品”，指可以快速食用的预制食品。', example:'Convenience food is popular among busy working people.' },
+    // -- ăn uống biến thể của | thực phẩm(6 cái) --
+    { cn:'bằng nhau ăn uống', en:'Balanced diet', word:'Balanced', synonym:'Healthy', target:'balanced', detail:'balanced diet biểu thị“ bằng nhau ăn uống ”, ngón tay chứa mỗi loại chất dinh dưỡng của sức khỏe ăn uống ', example:'A balanced diet is essential for maintaining good health.' },
+    { cn:'chất phụ gia', en:'Additive', word:'Additive', synonym:'Enhancer', target:'additive', detail:'additive biểu thị“ chất phụ gia ”, ngón tay thực phẩm Trung Quốc làm cải thiện sở thích của một người có thể thời hạn sử dụng thêm của vật chất ', example:'Many processed foods contain artificial additives.' },
+    { cn:'chất bảo quản', en:'Preservative', word:'Preservative', synonym:'Stabilizer', target:'preservative', detail:'preservative biểu thị“ chất bảo quản ”, sử dụng trong huyện Yanchang ở Yan’an thực phẩm thời hạn sử dụng ', example:'Some preservatives may be harmful to health.' },
+    { cn:'thành phần', en:'Ingredient', word:'Ingredient', synonym:'Component', target:'ingredient', detail:'ingredient biểu thị“ thành phần, nguyên liệu ”, ngón tay thực phẩm Trung Quốc chứa của nguyên liệu ', example:'Check the list of ingredients before buying any food product.' },
+    { cn:'cuộc sống hàng ngày của gia đình đồ ăn', en:'Home-made food', word:'Home-made', synonym:'Homemade', target:'home-made', detail:'home-made food biểu thị“ cuộc sống hàng ngày của gia đình đồ ăn ”, ngón tay ở nhà bản thân nấu nướng của thực phẩm ', example:'Home-made food is generally healthier than fast food.' },
+    { cn:'tiện lợi thực phẩm', en:'Convenience food', word:'Convenience', synonym:'Ready-made', target:'convenience', detail:'convenience food biểu thị“ tiện lợi thực phẩm ”, ngón tay có thể nhanh ăn của đúc sẵn thực phẩm ', example:'Convenience food is popular among busy working people.' },
 
-    // —— 疾病与健康问题（7个） ——
-    { cn:'肥胖', en:'Obesity', word:'Obesity', synonym:'Overweight', target:'obesity', detail:'obesity 表示“肥胖”，指体重超出正常范围的状况。', example:'Obesity is a major health problem in many developed countries.' },
-    { cn:'高血压', en:'Hypertension', word:'Hypertension', synonym:'High blood pressure', target:'hypertension', detail:'hypertension 表示“高血压”，指血压持续偏高。', example:'Hypertension is often associated with stress and poor diet.' },
-    { cn:'失眠', en:'Insomnia', word:'Insomnia', synonym:'Sleeplessness', target:'insomnia', detail:'insomnia 表示“失眠”，指难以入睡或无法保持睡眠。', example:'Many people suffer from insomnia due to stress.' },
-    { cn:'慢性病', en:'Chronic disease', word:'Chronic', synonym:'Long-term', target:'chronic', detail:'chronic disease 表示“慢性病”，指持续很长时间的疾病。', example:'Chronic diseases require long-term medical care.' },
-    { cn:'焦虑', en:'Anxiety', word:'Anxiety', synonym:'Worry', target:'anxiety', detail:'anxiety 表示“焦虑”，指对未来的紧张和担忧。', example:'Anxiety can affect both physical and mental health.' },
-    { cn:'糖尿病', en:'Diabetes', word:'Diabetes', synonym:'Hyperglycaemia', target:'diabetes', detail:'diabetes 表示“糖尿病”，指血糖水平过高的慢性疾病。', example:'Diabetes can lead to serious health complications.' },
+    // -- bệnh tật biến thể của | sức khỏe câu hỏi(7 cái) --
+    { cn:'béo', en:'Obesity', word:'Obesity', synonym:'Overweight', target:'obesity', detail:'obesity biểu thị“ béo ”, ngón tay trọng lượng cơ thể vượt quá bình thường phạm vi của tình trạng ', example:'Obesity is a major health problem in many developed countries.' },
+    { cn:'huyết áp cao', en:'Hypertension', word:'Hypertension', synonym:'High blood pressure', target:'hypertension', detail:'hypertension biểu thị“ huyết áp cao ”, ngón tay huyết áp tiếp tục ở mức cao ', example:'Hypertension is often associated with stress and poor diet.' },
+    { cn:'bị mất ngủ', en:'Insomnia', word:'Insomnia', synonym:'Sleeplessness', target:'insomnia', detail:'insomnia biểu thị“ bị mất ngủ ”, ngón tay khó rơi vào giấc ngủ có thể không thể giữ giấc ngủ ', example:'Many people suffer from insomnia due to stress.' },
+    { cn:'bệnh mãn tính', en:'Chronic disease', word:'Chronic', synonym:'Long-term', target:'chronic', detail:'chronic disease biểu thị“ bệnh mãn tính ”, ngón tay tiếp tục chiều dài thời gian của bệnh tật ', example:'Chronic diseases require long-term medical care.' },
+    { cn:'lo âu', en:'Anxiety', word:'Anxiety', synonym:'Worry', target:'anxiety', detail:'anxiety biểu thị“ lo âu ”, ngón tay đúng tương lai của căng thẳng biến thể cũ của lo lắng ', example:'Anxiety can affect both physical and mental health.' },
+    { cn:'bệnh tiểu đường', en:'Diabetes', word:'Diabetes', synonym:'Hyperglycaemia', target:'diabetes', detail:'diabetes biểu thị“ bệnh tiểu đường ”, ngón tay đường huyết mức độ quá cao của bệnh mãn tính ', example:'Diabetes can lead to serious health complications.' },
 
-    // —— 健康习惯与生活方式（8个） ——
-    { cn:'保持健康', en:'Stay healthy', word:'Healthy', synonym:'Fit', target:'healthy', detail:'stay healthy 表示“保持健康”，指通过饮食和运动维持良好健康状况。', example:'To stay healthy, you should exercise regularly.' },
-    { cn:'不健康的生活方式', en:'Unhealthy lifestyle', word:'Lifestyle', synonym:'Way of life', target:'lifestyle', detail:'unhealthy lifestyle 表示“不健康的生活方式”，指导致健康问题的生活习惯。', example:'An unhealthy lifestyle can lead to chronic diseases.' },
-    { cn:'减肥', en:'Lose weight', word:'Lose', synonym:'Slim down', target:'lose', detail:'lose weight 表示“减肥”，指减轻体重。', example:'Many people try to lose weight by going on a diet.' },
-    { cn:'增重', en:'Gain weight', word:'Gain', synonym:'Put on', target:'gain', detail:'gain weight 表示“增重”，指增加体重。', example:'Some people gain weight due to lack of exercise.' },
-    { cn:'摄取量', en:'Intake', word:'Intake', synonym:'Consumption', target:'intake', detail:'intake 表示“摄入量、摄取量”，指食物或物质的摄入数量。', example:'You should reduce your daily intake of sugar.' },
-    { cn:'消化', en:'Digestion', word:'Digestion', synonym:'Digestive process', target:'digestion', detail:'digestion 表示“消化”，指身体分解食物的过程。', example:'Exercise can help improve digestion.' },
-    { cn:'呼吸', en:'Respiration', word:'Respiration', synonym:'Breathing', target:'respiration', detail:'respiration 表示“呼吸”，指吸入和呼出空气的过程。', example:'Deep respiration can help reduce stress.' },
-    { cn:'压力', en:'Stress', word:'Stress', synonym:'Pressure', target:'stress', detail:'stress 表示“压力”，指因生活或工作产生的紧张感。', example:'Stress has become a common problem in modern society.' },
+    // -- sức khỏe thói quen biến thể của | cách sống(8 cái) --
+    { cn:'giữ sức khỏe', en:'Stay healthy', word:'Healthy', synonym:'Fit', target:'healthy', detail:'stay healthy biểu thị“ giữ sức khỏe ”, ngón tay đi qua ăn uống biến thể cũ của di chuyển giữ tốt tình trạng sức khỏe ', example:'To stay healthy, you should exercise regularly.' },
+    { cn:'không sức khỏe của cách sống', en:'Unhealthy lifestyle', word:'Lifestyle', synonym:'Way of life', target:'lifestyle', detail:'unhealthy lifestyle biểu thị“ không sức khỏe của cách sống ”, hướng dẫn tinh tế sức khỏe câu hỏi của sống thói quen ', example:'An unhealthy lifestyle can lead to chronic diseases.' },
+    { cn:'giảm cân', en:'Lose weight', word:'Lose', synonym:'Slim down', target:'lose', detail:'lose weight biểu thị“ giảm cân ”, ngón tay giảm nhẹ trọng lượng cơ thể ', example:'Many people try to lose weight by going on a diet.' },
+    { cn:'tăng lặp lại', en:'Gain weight', word:'Gain', synonym:'Put on', target:'gain', detail:'gain weight biểu thị“ tăng lặp lại ”, ngón tay tăng trọng lượng cơ thể ', example:'Some people gain weight due to lack of exercise.' },
+    { cn:'hấp thụ đo lường', en:'Intake', word:'Intake', synonym:'Consumption', target:'intake', detail:'intake biểu thị“ lượng nạp, hấp thụ đo lường ”, ngón tay thực phẩm có thể vật chất của hấp thụ số lượng ', example:'You should reduce your daily intake of sugar.' },
+    { cn:'tiêu hóa', en:'Digestion', word:'Digestion', synonym:'Digestive process', target:'digestion', detail:'digestion biểu thị“ tiêu hóa ”, ngón tay cơ thể phân giải thực phẩm của quá trình sự kiện ', example:'Exercise can help improve digestion.' },
+    { cn:'thở', en:'Respiration', word:'Respiration', synonym:'Breathing', target:'respiration', detail:'respiration biểu thị“ thở ”, ngón tay hít vào biến thể cũ của thở ra không khí của quá trình sự kiện ', example:'Deep respiration can help reduce stress.' },
+    { cn:'áp lực', en:'Stress', word:'Stress', synonym:'Pressure', target:'stress', detail:'stress biểu thị“ áp lực ”, ngón tay biến thể cũ của sống có thể làm việc phát sinh của căng thẳng cảm thấy ', example:'Stress has become a common problem in modern society.' },
 
-    // —— 食品与健康（6个） ——
-    { cn:'甜食', en:'Sugary food', word:'Sugary', synonym:'Sweet', target:'sugary', detail:'sugary food 表示“甜食”，指含糖量高的食品。', example:'Eating too much sugary food can cause obesity.' },
-    { cn:'破坏食欲', en:'Spoil one\'s appetite', word:'Spoil', synonym:'Ruin', target:'spoil', detail:'spoil one\'s appetite 表示“破坏食欲”，指影响进食的欲望。', example:'Snacking just before a meal may spoil your appetite.' },
-    { cn:'含有', en:'Contain', word:'Contain', synonym:'Include', target:'contain', detail:'contain 表示“含有”，指包含某种成分或物质。', example:'These products contain high levels of sugar.' },
-    { cn:'营养缺乏', en:'Malnutrition', word:'Malnutrition', synonym:'Undernourishment', target:'malnutrition', detail:'malnutrition 表示“营养缺乏”，指因饮食不当导致的营养不良。', example:'Malnutrition is common among children in developing countries.' },
-    { cn:'生活习惯', en:'Lifestyle habits', word:'Habits', synonym:'Routines', target:'habits', detail:'lifestyle habits 表示“生活习惯”，指日常的行为方式。', example:'Healthy lifestyle habits can improve your overall well-being.' },
-    { cn:'饮食', en:'Diet', word:'Diet', synonym:'Nutrition', target:'diet', detail:'diet 表示“饮食”，指日常摄入的食物和饮料。', example:'A balanced diet is important for health.' }
+    // -- thực phẩm biến thể của | sức khỏe(6 cái) --
+    { cn:'món tráng miệng', en:'Sugary food', word:'Sugary', synonym:'Sweet', target:'sugary', detail:'sugary food biểu thị“ món tráng miệng ”, ngón tay ngậm trong miệng đường đo lường cao của thực phẩm ', example:'Eating too much sugary food can cause obesity.' },
+    { cn:'sự phá hủy sự thèm ăn', en:'Spoil one\'s appetite', word:'Spoil', synonym:'Ruin', target:'spoil', detail:'spoil one\'s appetite biểu thị“ sự phá hủy sự thèm ăn ”, ngón tay ảnh hưởng dùng bữa của khát khao ', example:'Snacking just before a meal may spoil your appetite.' },
+    { cn:'chứa', en:'Contain', word:'Contain', synonym:'Include', target:'contain', detail:'contain biểu thị“ chứa ”, ngón tay chứa một loại thành phần có thể vật chất ', example:'These products contain high levels of sugar.' },
+    { cn:'dinh dưỡng thiếu', en:'Malnutrition', word:'Malnutrition', synonym:'Undernourishment', target:'malnutrition', detail:'malnutrition biểu thị“ dinh dưỡng thiếu ”, ngón tay biến thể cũ của ăn uống không phù hợp dẫn đến của suy dinh dưỡng ', example:'Malnutrition is common among children in developing countries.' },
+    { cn:'sống thói quen', en:'Lifestyle habits', word:'Habits', synonym:'Routines', target:'habits', detail:'lifestyle habits biểu thị“ sống thói quen ”, ngón tay hằng ngày của hành động cách thức ', example:'Healthy lifestyle habits can improve your overall well-being.' },
+    { cn:'ăn uống', en:'Diet', word:'Diet', synonym:'Nutrition', target:'diet', detail:'diet biểu thị“ ăn uống ”, ngón tay hằng ngày hấp thụ của thực phẩm biến thể cũ của đồ uống ', example:'A balanced diet is important for health.' }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ phraseData 长度:', phraseData.length);
-console.log('✅ 预期长度: 27');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ phraseData chiều dài:', phraseData.length);
+console.log('✅ mong đợi chiều dài: 27');
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn đúng tiếng Anh ghép đôi', 'thích ngôn ngữ viết tiếng Anh cụm từ', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== chủ đề tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // giai đoạn một: ghép đôi chọn (10 Câu hỏi)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -270,26 +270,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `“${p.cn}” của đúng tiếng Anh diễn đạt là? `,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `“${p.cn}” của đúng ghép đôi là “${p.en}” ${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // giai đoạn hai: đánh vần (10 Câu hỏi)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra “${p.cn}” của tiếng Anh cụm từ: `,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `“${p.cn}” của đúng đánh vần là “${p.en}” ${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // giai đoạn ba: đồng nghĩa thay thế (10 Câu hỏi)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -314,10 +314,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của | có thể thay thế câu Trung Quốc dải gạch dưới _ của biến thể cũ của |? <br>“${sentenceDisplay}”`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `đúng câu trả lời là “${p.synonym}”, là “${p.word}” của từ đồng nghĩa ${p.detail}`
         });
     });
 
@@ -329,7 +329,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -366,7 +366,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói(Anh loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -408,7 +408,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
@@ -420,10 +420,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-meaning-cn">${p.cn}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
+                <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Câu ví dụ: </strong>${p.example}</div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -444,7 +444,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -464,14 +464,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện tiến hành Trung Quốc, mời trước hoàn thành toàn bộ 30 Câu hỏi! ');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -501,10 +501,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Thứ ${currentIndex+1} / ${TOTAL} Câu hỏi`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `giai đoạn${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -525,24 +525,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu tiếng Anh cụm từ...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格（如 Balanced diet）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống(như Balanced diet)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung: nhấn Enter không nộp, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển submitAnswer(), ngăn chặn nhầm lỗi chạm nộp
             }
         });
     } else {
@@ -586,7 +586,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu tiếng Anh cụm từ! ');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -607,7 +607,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh đúng! đánh vần biến thể cũ của chữ hoa và chữ thường tất cả đúng ' : '❌ đánh vần có nhầm lỗi, mời xem xét bên dưới của so sánh ';
 
         results.push({
             question: q.question,
@@ -618,14 +618,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước chọn một dùng trong | tùy chọn! '); return; }
         selected = '';
     }
 
@@ -646,7 +646,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng! ' : '❌ Sai ';
 
     results.push({
         question: q.question,
@@ -657,7 +657,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -668,7 +668,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== lỗi chủ đề thông báo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -682,9 +682,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể đúng đếm</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỉ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">lỗi chủ đề đếm</div></div>
     `;
 
     let html = '';
@@ -694,16 +694,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>giai đoạn${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})- Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>bạn của câu trả lời</th><th>Đáp án đúng</th><th>tình trạng</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -723,7 +723,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

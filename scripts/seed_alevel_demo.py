@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""seed_alevel_demo.py — placeholder PDFs until real papers are added."""
+"""seed_alevel_demo.py - placeholder PDFs until real papers are added."""
 
 import os
 import sys
@@ -64,8 +64,8 @@ def seed():
             with open(readme, "w", encoding="utf-8") as f:
                 f.write(
                     f"# {board_label} {code} {meta['name']}\n\n"
-                    f"`{code}_s24_qp_12.pdf` — question paper\n"
-                    f"`{code}_s24_ms_12.pdf` — mark scheme\n\n"
+                    f"`{code}_s24_qp_12.pdf` - question paper\n"
+                    f"`{code}_s24_ms_12.pdf` - mark scheme\n\n"
                     "Run `python3 scripts/build_alevel_catalog.py` after adding files.\n"
                 )
         for season, yy, paper in DEMO_SETS:

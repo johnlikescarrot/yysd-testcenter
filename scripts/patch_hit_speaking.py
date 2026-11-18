@@ -122,7 +122,7 @@ def slice_m4a(wav, start, end, dest):
 
 
 # Whisper timestamps on Set2-S-LR2.mp3, snapped to mid-silence between
-# the 7 应复述 sentences. Silence-split had put "Repeat only once" on Q1.
+# the 7 Ưng lặp lại sentences. Silence-split had put "Repeat only once" on Q1.
 SET2_CUTS = [
     ("intro", 0.00, 10.54),
     (1, 10.54, 12.57),

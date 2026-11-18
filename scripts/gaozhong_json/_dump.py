@@ -18,8 +18,8 @@ def dump(rows, out_path, expect):
     for word, ipa, pos, meaning, accept, phrases, en, zh, root, syn, ant, usage, topic in rows:
         n_zh = len(re.findall(r"[\u4e00-\u9fff]", meaning))
         if n_zh < 40:
-            extra = "高中须抓住「%s」等义项，并记牢搭配与词性转换。" % "、".join(accept[:3])
-            meaning = meaning.rstrip("。") + "。" + extra
+            extra = " trường trung học phổ thông phải nắm bắt«%s»đợi nghĩa, và ghi chép chắc chắn ghép đôi biến thể của | loại từ thay đổi " % ", ".join(accept[:3])
+            meaning = meaning.rstrip(" ") + " " + extra
             n_zh = len(re.findall(r"[\u4e00-\u9fff]", meaning))
             if n_zh < 40:
                 thin.append("%s %s (%s)" % (out_path.name, word, n_zh))
@@ -40,7 +40,7 @@ def dump(rows, out_path, expect):
             "synonyms": syn,
             "antonyms": ant,
             "examTag": {
-                "source": "高中英语",
+                "source": " Tiếng Anh THPT ",
                 "frequency": 4,
                 "commonUsage": accept[0],
                 "topic": topic,

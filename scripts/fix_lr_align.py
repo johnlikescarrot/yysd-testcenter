@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Align Listen-and-Repeat clips to 应复述: strip 'Listen and repeat only once' and fix HIT Q1 samples."""
+"""Align Listen-and-Repeat clips to Ưng lặp lại: strip 'Listen and repeat only once' and fix HIT Q1 samples."""
 import json
 import os
 import subprocess
@@ -102,7 +102,7 @@ def fix_hit():
         paper = json.load(open(path))
         t = next(x for x in paper["tasks"] if x.get("type") == "repeat" and x.get("id") == 1)
         t["sample"] = sample
-        t["analysis"] = "复述：" + sample
+        t["analysis"] = " Thuật lại: " + sample
         dump(path, paper)
         print("hit q1 sample", n, sample)
 

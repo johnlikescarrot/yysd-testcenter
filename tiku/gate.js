@@ -1,4 +1,4 @@
-/* 题库中心：生产必须老师端；本机检查放行。顺手补刷新钮（旧缓存页没有）。 */
+/* ngân hàng câu hỏi trung tâm: sản xuất phải giáo viên cuối; gốc máy móc kiểm tra cho qua một cách dễ dàng sửa cải tiến cúc áo(cũ bộ nhớ đệm đầu không có)  */
 (function (w) {
   "use strict";
   function local() {
@@ -20,7 +20,7 @@
     b.type = "button";
     b.className = "btn ghost";
     b.id = "refresh";
-    b.textContent = "刷新";
+    b.textContent = " cải tiến ";
     row.insertBefore(b, document.getElementById("out"));
     b.addEventListener("click", hardReload);
   }

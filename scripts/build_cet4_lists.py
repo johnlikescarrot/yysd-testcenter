@@ -58,18 +58,18 @@ def render_html(meta: dict) -> str:
     words = meta.get("words") or []
     total = len(words)
     band = meta.get("band") or "high"
-    title = meta.get("title") or f"单元 {n}"
+    title = meta.get("title") or f" Đơn vị {n}"
     word_data = ",\n".join(word_js(w) for w in words)
     return f"""<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="exam:title" content="四级词汇 {title}">
+<meta name="exam:title" content=" Từ vựng CET-4 {title}">
 <meta name="exam:duration" content="0">
-<meta name="exam:description" content="频段 {band} · {total} 词 · 边学边测">
+<meta name="exam:description" content=" băng tần {band} · {total} Từ · bên học bên khảo sát ">
 <meta name="exam:band" content="{band}">
-<title>四级词汇 {title} · 语速0.8 · 宽松评判</title>
+<title>Từ vựng CET-4 {title} · phương ngữ nhanh 0.8 · rộng rãi đánh giá</title>
 <style>
 :root {{
   --bg:#f5f3f0; --card:#fff; --primary:#2c3e6b; --primary-light:#3d5a99;
@@ -125,41 +125,41 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
 </head>
 <body>
 <header class="header"><div class="header-inner">
-  <div class="logo"><span>📖</span><span>四级词汇 {title}</span></div>
+  <div class="logo"><span>📖</span><span>Từ vựng CET-4 {title}</span></div>
   <nav class="nav-tabs" id="navTabs">
-    <button class="nav-tab active" data-mode="learn">词汇总览</button>
-    <button class="nav-tab" data-mode="test">单词检测</button>
+    <button class="nav-tab active" data-mode="learn">biến thể của | cái nhìn tổng quan</button>
+    <button class="nav-tab" data-mode="test">từ phát hiện</button>
   </nav>
-  <span class="badge">共 {total} 词</span>
+  <span class="badge">Tổng cộng {total} Từ</span>
 </div></header>
 <div class="main">
   <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
   <section class="test-section" id="testSection">
     <div class="test-setup" id="testSetup">
-      <h3>四级词汇 {title} · 单词检测</h3>
-      <p>听读音后填写拼写与中文含义（宽松评判）。</p>
-      <button class="btn-start-test" id="btnStartTest">开始检测（{total} 题）</button>
-      <div class="history-title">历史记录 <button class="btn-clear-history" id="btnClearHistory">清除</button></div>
+      <h3>Từ vựng CET-4 {title} · từ phát hiện</h3>
+      <p>cười cách phát âm hoàng hậu điền vào biểu mẫu đánh vần biến thể của | ngôn ngữ Trung Quốc ý nghĩa(rộng rãi đánh giá) </p>
+      <button class="btn-start-test" id="btnStartTest">bắt đầu phát hiện({total} Câu hỏi)</button>
+      <div class="history-title">lịch sử ghi chép <button class="btn-clear-history" id="btnClearHistory">dọn dẹp</button></div>
       <div id="historyContent"></div>
     </div>
     <div class="test-active-area" id="testActiveArea">
-      <div class="test-progress"><span id="testProgressLabel">第 1 / {total} 题</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel">得分: 0</span></div>
+      <div class="test-progress"><span id="testProgressLabel">Thứ 1 / {total} Câu hỏi</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel">Điểm số: 0</span></div>
       <button class="btn-play" id="btnPlayTest" style="width:64px;height:64px;font-size:1.4rem">▶</button>
       <div class="test-inputs">
-        <div class="test-input-group"><label>英文拼写</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-        <div class="test-input-group"><label>中文含义</label><input id="inputMeaning" autocomplete="off"></div>
+        <div class="test-input-group"><label>tiếng Anh đánh vần</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div class="test-input-group"><label>ngôn ngữ Trung Quốc ý nghĩa</label><input id="inputMeaning" autocomplete="off"></div>
       </div>
-      <button class="btn-submit" id="btnSubmit">提交答案</button>
+      <button class="btn-submit" id="btnSubmit">nộp câu trả lời</button>
       <div class="test-feedback" id="testFeedback"></div>
-      <button class="btn-next" id="btnNext">下一题</button>
+      <button class="btn-next" id="btnNext">xuống một chủ đề</button>
     </div>
     <div class="test-results" id="testResults">
-      <h3>检测完成</h3>
+      <h3>phát hiện hoàn thành</h3>
       <div id="resultsScore" style="font-size:2rem;font-weight:700;color:var(--primary)"></div>
       <div id="resultsDetail"></div>
-      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>单词</th><th>拼写</th><th>含义</th><th>结果</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
-      <button class="btn-retry" id="btnRetry">重新检测</button>
-      <button class="btn-retry" id="btnBackToSetup" style="background:#666">返回</button>
+      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>Từ vựng</th><th>đánh vần</th><th>ý nghĩa</th><th>Kết quả</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
+      <button class="btn-retry" id="btnRetry">lại phát hiện</button>
+      <button class="btn-retry" id="btnBackToSetup" style="background:#666">Quay lại</button>
     </div>
   </section>
 </div>
@@ -211,12 +211,12 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
       '<button class="btn-play btn-play-card" data-word="'+esc(w.word)+'">▶</button></div>'+
       '<div><span class="word-pos">'+esc(w.pos)+'</span><span>'+esc(w.meaning)+'</span></div>'+
       '<div class="word-blocks">'+
-        block('记', w.mnemonic || w.root)+
-        block('考', w.phrases || w.collocations)+
-        block('例', w.example)+
-        block('派', w.derivatives)+
-        block('辨', w.distinguish)+
-      '</div><div class="hint">点击收起</div>';
+        block('ghi chép', w.mnemonic || w.root)+
+        block('đánh', w.phrases || w.collocations)+
+        block('ví dụ', w.example)+
+        block('dùng trong', w.derivatives)+
+        block('phân biệt', w.distinguish)+
+      '</div><div class="hint">nhấn nhận dậy</div>';
     card.addEventListener('click', e => {{
       if(e.target.closest('.btn-play-card')) return;
       const open = card.classList.contains('expanded');
@@ -272,13 +272,13 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
   function saveHistory(r){{ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }}
   function renderHistory(){{
     const h = getHistory();
-    if(!h.length){{ historyContent.innerHTML = '<div style="color:#888;margin-top:8px">暂无记录</div>'; return; }}
+    if(!h.length){{ historyContent.innerHTML = '<div style="color:#888;margin-top:8px">tạm thời không có ghi chép</div>'; return; }}
     historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {{
       const t = new Date(r.timestamp);
-      return '<li>'+r.score+'/'+r.total+'（'+r.percent+'%） · '+t.toLocaleString()+'</li>';
+      return '<li>'+r.score+'/'+r.total+'('+r.percent+'%) · '+t.toLocaleString()+'</li>';
     }}).join('')+'</ul>';
   }}
-  btnClearHistory.addEventListener('click', () => {{ if(confirm('清除历史？')){{ localStorage.removeItem(HISTORY_KEY); renderHistory(); }} }});
+  btnClearHistory.addEventListener('click', () => {{ if(confirm('dọn dẹp lịch sử? ')){{ localStorage.removeItem(HISTORY_KEY); renderHistory(); }} }});
 
   let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
   function shuffle(a){{ const x=[...a]; for(let i=x.length-1;i>0;i--){{ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; }} return x; }}
@@ -295,14 +295,14 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
     updateProgress(); setTimeout(playCurrent, 300);
   }});
   function updateProgress(){{
-    testProgressLabel.textContent = '第 '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' 题';
-    testScoreLabel.textContent = '得分: '+testScore;
+    testProgressLabel.textContent = 'Thứ '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' Câu hỏi';
+    testScoreLabel.textContent = 'Điểm số: '+testScore;
     progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
   }}
   function playCurrent(){{ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }}
   btnPlayTest.addEventListener('click', () => {{ if(!testSubmitted) playCurrent(); }});
 
-  function cleanCN(s){{ return String(s||'').replace(/[，,、。；;：:！!？?（）()【】\\[\\]"\"''\\s]/g,''); }}
+  function cleanCN(s){{ return String(s||'').replace(/[, ,,  ; ;: :! !? ?()()[]\\[\\]"\"''\\s]/g,''); }}
   function submitAnswer(){{
     if(testSubmitted || testCurrentIndex>=testWords.length) return;
     testSubmitted = true; btnSubmit.disabled = true;
@@ -325,8 +325,8 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
     const earned = both ? 1 : ((spellingOk || meaningOk) ? 0.5 : 0);
     testScore += earned;
     testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
-    testFeedback.innerHTML = (both?'全对':(spellingOk||meaningOk?'部分正确':'再看看'))+
-      '<div style="margin-top:6px;font-size:.9rem">答案：'+esc(w.word)+' · '+esc(w.meaning)+'</div>';
+    testFeedback.innerHTML = (both?'tất cả đúng':(spellingOk||meaningOk?'phần đúng':'lại xem qua'))+
+      '<div style="margin-top:6px;font-size:.9rem">Đáp án: '+esc(w.word)+' · '+esc(w.meaning)+'</div>';
     testResultsData.push({{
       word: w.word, ipa: w.ipa || '', meaning: w.meaning,
       userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
@@ -350,11 +350,11 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
     testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
     const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
     resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
-    resultsDetail.textContent = '正确率 '+percent+'%';
+    resultsDetail.textContent = 'Tỉ lệ đúng '+percent+'%';
     resultsTableBody.innerHTML = testResultsData.map((r,i) => {{
       const ok = r.earned === 1;
       const cls = ok ? 'row-ok' : 'row-wrong';
-      return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
+      return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'-')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'-')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
     }}).join('');
     saveHistory({{ score:testScore, total:TOTAL_QUESTIONS, percent, timestamp:Date.now() }});
   }}
@@ -383,7 +383,7 @@ def build_one(path: Path) -> Path:
         print("skip unpublished", path.name)
         return None
     n = int(meta["listNo"])
-    out = OUT / f"四级单词LIST{n}.html"
+    out = OUT / f" cấp 4 từ LIST{n}.html"
     OUT.mkdir(parents=True, exist_ok=True)
     out.write_text(render_html(meta), encoding="utf-8")
     print("wrote", out.relative_to(ROOT), "words", len(meta.get("words") or []))

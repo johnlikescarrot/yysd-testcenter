@@ -107,7 +107,7 @@ def whisper_samples(audio_paths: dict[int, str]) -> list[str]:
         text = re.sub(r"\s+", " ", text).strip()
         if text and text[-1] not in ".?!":
             text += "."
-        # whisper often lowercases first letter — restore from first alpha
+        # whisper often lowercases first letter - restore from first alpha
         if text and text[0].islower():
             text = text[0].upper() + text[1:]
         out.append(text)
@@ -216,7 +216,7 @@ def build_one(n: int) -> Path:
     audio = copy_lrp_audio(n, slot)
     title = slot.get("title") or f"LRP {n}"
     scene = scene_for(n, title, slot.get("png"))
-    title_zh = "听后跟读"
+    title_zh = " Nghe và đọc lại "
 
     key = title.lower().strip()
     key2 = re.sub(r"\s+2$", "", key)
@@ -274,7 +274,7 @@ def build_one(n: int) -> Path:
                 "instruction": instruction,
                 "audio": audio["qs"][q],
                 "sample": sample,
-                "analysis": f"复述：{sample}",
+                "analysis": f" Thuật lại: {sample}",
                 "title": title,
                 "titleZh": title_zh,
                 "image": scene,

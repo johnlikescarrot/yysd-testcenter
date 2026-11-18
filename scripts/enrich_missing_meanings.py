@@ -18,7 +18,7 @@ os.makedirs(CACHE, exist_ok=True)
 
 
 def force_enrich(wd_id: int):
-    """Always refetch — empty cached glosses need reparsing."""
+    """Always refetch - empty cached glosses need reparsing."""
     url = "https://www.koolearn.com/dict/wd_%d.html" % wd_id
     try:
         html = fetch(url)

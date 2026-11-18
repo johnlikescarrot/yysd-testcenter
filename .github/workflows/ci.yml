@@ -1,0 +1,37 @@
+name: Kiem chung va coverage
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cai phu thuoc
+        run: npm ci
+      - name: Kiem tra 100% coverage
+        run: npm run coverage
+      - name: Linters cuc bo
+        run: npm run lint
+      - name: Kiem tra tieng Viet
+        run: python3 tools/check_vietnamese.py
+      - name: Kiem tra trich dan Scholar
+        run: python3 tools/check_pdfs.py
+      - name: Luu bao cao coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/

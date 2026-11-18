@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* check_vocab_cloze.js — smoke for collocation / example_cloze helpers + coverage */
+/* check_vocab_cloze.js - smoke for collocation / example_cloze helpers + coverage */
 "use strict";
 var fs = require("fs");
 var path = require("path");
@@ -7,7 +7,7 @@ var path = require("path");
 var root = path.join(__dirname, "..");
 var lesson = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8");
 ["parsePhrasePairs", "blankWord", "englishOnly", "tryCollocation", "tryExampleCloze",
-  "collocation", "example_cloze", "补全常见搭配", "vl-cloze"].forEach(function (k) {
+  "collocation", "example_cloze", " sửa tất cả thường thấy ghép đôi ", "vl-cloze"].forEach(function (k) {
   if (lesson.indexOf(k) < 0) throw new Error("vocab-lesson.js missing " + k);
 });
 var css = fs.readFileSync(path.join(root, "assets/css/vocab-lesson.css"), "utf8");
@@ -19,10 +19,10 @@ function escapeRe(s) {
 function parsePhrasePairs(phrases) {
   var raw = String(phrases || "").trim();
   if (!raw) return [];
-  return raw.split(/[,，]/).map(function (part) {
+  return raw.split(/[,, ]/).map(function (part) {
     part = part.trim();
     if (!part) return null;
-    var m = part.match(/^(.+?)\s*[（(]\s*(.+?)\s*[）)]\s*$/);
+    var m = part.match(/^(.+?)\s*[((]\s*(.+?)\s*[))]\s*$/);
     if (!m) return null;
     return { en: m[1].trim(), zh: m[2].trim() };
   }).filter(Boolean);
@@ -30,7 +30,7 @@ function parsePhrasePairs(phrases) {
 function englishOnly(example) {
   var s = String(example || "").trim();
   if (!s) return "";
-  var cut = s.search(/[（(]/);
+  var cut = s.search(/[((]/);
   if (cut >= 0) s = s.slice(0, cut);
   return s.trim();
 }
@@ -61,10 +61,10 @@ function parseWordData(html) {
 }
 
 // unit asserts
-var pairs = parsePhrasePairs("firm belief（坚定的信念）, law firm（律师事务所）, stand firm（坚定不移）");
+var pairs = parsePhrasePairs("firm belief(vững vàng của niềm tin), law firm(hãng luật), stand firm(không nao núng)");
 if (pairs.length !== 3) throw new Error("parsePhrasePairs count");
 if (blankWord("stand firm", "firm") !== "stand ____") throw new Error("blank collocation");
-if (blankWord(englishOnly("She has a firm belief in justice.（她对正义有着坚定的信念。）"), "firm")
+if (blankWord(englishOnly("She has a firm belief in justice.(cô ấy đúng công lý có vững vàng của niềm tin )"), "firm")
   !== "She has a ____ belief in justice.") throw new Error("blank example");
 if (blankWord("nope", "firm") !== null) throw new Error("blank miss should be null");
 if (blankWord("Beach volleyball is fun", "Beach volleyball") !== "____ is fun") {
@@ -107,9 +107,9 @@ var gz = cover("library/study/vocab", "gaozhong");
 if (gz.colo < gz.words * 0.5) throw new Error("gaozhong collocation coverage too low");
 cover("library/study/vocab-cet4", "cet4");
 var listen = cover("library/study/vocab-special-listening", "listen");
-// listening often has no phrases — collocation should degrade (low ok)
+// listening often has no phrases - collocation should degrade (low ok)
 if (listen.colo > listen.words * 0.2) {
-  console.log("(listen unexpectedly has phrases — ok)");
+  console.log("(listen unexpectedly has phrases - ok)");
 }
 
 console.log("check_vocab_cloze: ok");

@@ -71,9 +71,9 @@
         "so",
         "far"
       ],
-      "analysis": "正确顺序：How is it going so far?",
+      "analysis": " đúng trình tự: How is it going so far?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -124,9 +124,9 @@
         "campus",
         "store"
       ],
-      "analysis": "正确顺序：I got them at the campus store.",
+      "analysis": " đúng trình tự: I got them at the campus store.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -177,9 +177,9 @@
         "I",
         "missed"
       ],
-      "analysis": "正确顺序：Can you tell me what I missed?",
+      "analysis": " đúng trình tự: Can you tell me what I missed?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -225,9 +225,9 @@
         "be",
         "there"
       ],
-      "analysis": "正确顺序：Yes, I plan to be there.",
+      "analysis": " đúng trình tự: Yes, I plan to be there.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -288,9 +288,9 @@
         "my",
         "major"
       ],
-      "analysis": "正确顺序：It seemed like a good fit for my major.",
+      "analysis": " đúng trình tự: It seemed like a good fit for my major.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -336,9 +336,9 @@
         "completely",
         "empty"
       ],
-      "analysis": "正确顺序：No, the room was completely empty.",
+      "analysis": " đúng trình tự: No, the room was completely empty.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -394,9 +394,9 @@
         "with",
         "you"
       ],
-      "analysis": "正确顺序：Would you like me to go with you?",
+      "analysis": " đúng trình tự: Would you like me to go with you?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -452,9 +452,9 @@
         "next",
         "week"
       ],
-      "analysis": "正确顺序：He wants us to submit it next week.",
+      "analysis": " đúng trình tự: He wants us to submit it next week.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -505,9 +505,9 @@
         "kitchen",
         "table"
       ],
-      "analysis": "正确顺序：I left them on the kitchen table.",
+      "analysis": " đúng trình tự: I left them on the kitchen table.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "sentence",
@@ -553,16 +553,16 @@
         "make",
         "it"
       ],
-      "analysis": "正确顺序：I wasn't able to make it.",
+      "analysis": " đúng trình tự: I wasn't able to make it.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": " Xây dựng câu "
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Car Rental Feedback",
-      "titleZh": "租车反馈",
+      "titleZh": " thuê xe gửi thông tin phản hồi ",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently rented a car for a weekend trip with your dorm mate and were satisfied with the vehicle's performance. However, you had a bad experience with the customer service at the rental office. You want to provide feedback to the rental company manager, Ms. Turner.",
       "bullets": [
@@ -573,14 +573,14 @@
       "to": "Ms. Turner",
       "subject": "Feedback on Car Rental Experience",
       "sample": "Dear Ms. Turner,\n\nI recently rented a compact car for a weekend trip and was satisfied with the vehicle itself. It was clean, easy to park, and used less fuel than I expected, which made the trip more comfortable.\n\nUnfortunately, the customer service at the rental office was not as reliable. At pick-up we waited more than forty minutes, and the staff could not find our reservation until we showed the confirmation email. At drop-off, nobody was available to inspect the car, so we were unsure whether the return had been recorded.\n\nA simple check-in list, a visible queue number, and a short drop-off confirmation would prevent this confusion. I hope this feedback helps the office match the quality of the cars you provide.\n\nSincerely,\n[Your Name]",
-      "analysis": "邮件需覆盖三点：喜欢的车况、客服问题、取还车改进。称呼 Ms. Turner。"
+      "analysis": " thư từ yêu cầu che phủ ba điểm: thích của xe hơn nữa, dịch vụ khách hàng câu hỏi, lấy vẫn xe cải thiện gọi Ms. Turner "
     },
     {
       "type": "discussion",
       "module": 3,
       "id": 12,
       "title": "Brand Loyalty",
-      "titleZh": "品牌忠诚度",
+      "titleZh": " tên thương hiệu tận tụy vượt qua ",
       "class": "Marketing 210",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {
@@ -598,7 +598,7 @@
         }
       ],
       "sample": "I agree with Andrew that personalization helps, but it is not the only key to brand loyalty. Personalized recommendations can make a customer feel recognized, as Claire says, and streaming services show how that unique experience keeps people subscribed. Still, if the product is unreliable or the price jumps without warning, even a perfectly tailored homepage will not keep buyers. In my experience, loyalty lasts when personalization is paired with consistent quality and responsive service. A store that remembers my size but ships damaged goods will lose me; a brand that gets both right is much harder to leave. So personalization is a strong tool, not the whole strategy.",
-      "analysis": "需表态并回应对方。较好答法：个性化有用，但质量、服务、价格同样关键，并举例。"
+      "analysis": " yêu cầu tuyên bố lập trường và phản hồi người kia tốt hơn hình thức gắn liền có nghĩa giống như từ tự do biến thể của: cá nhân hóa hữu ích, nhưng chất lượng, phục vụ, giá giống nhau điểm mấu chốt, phát triển đồng thời ví dụ "
     }
   ]
 }

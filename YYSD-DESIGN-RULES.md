@@ -1,131 +1,131 @@
 # YYSD Design Rules
 
-优益思达前端质感约定。目标不是仿 iOS，而是：**内容像纸，壳像玻璃，交互像物理；考场保持官方工具感。**
+xuất sắc lợi ích suy nghĩ đạt tới phía trước chủ nghĩa hiện thực thoả thuận mục tiêu không phải bắt chước iOS, mà là: **nội dung giống biến thể của |, biến thể của | giống thủy tinh, lẫn nhau giống vật lý; phòng thi giữ chính phủ công cụ cảm thấy **
 
-核心句：界面像身体的延伸——按下立刻有反应，运动从当前值出发，带着速度，随时可打断。
+lõi biến thể của: bề mặt tiếp xúc giống cơ thể của mở rộng--nhấn xuống ngay lập tức có phản ứng, di chuyển biến thể của | thời điểm hiện tại giá trị khởi hành, dải nước đi tốc độ, bất kỳ lúc nào có thể gián đoạn 
 
 ---
 
-## 1. 三层人格（勿混用）
+## 1. ba chồng lên nhau nhân cách(đừng bùn sử dụng)
 
-| 层 | 性格 | 范围 |
+| chồng lên nhau | bản chất | Phạm vi |
 | --- | --- | --- |
-| **内容** | 象牙纸、沉静、可读 | 真题、单词、报告、Hub 正文 |
-| **壳** | 轻霜化、浮在内容上 | 顶栏、底栏、Drawer、确认 / Sheet |
-| **考场** | 功利、可信、少装饰 | CDT 及防切屏 —— **不要苹果化** |
+| **nội dung** | ngà voi biến thể của |, bình yên, thú vị để đọc | Đề thi thật, Từ vựng, Báo cáo, Hub văn bản chính |
+| **biến thể của |** | nhẹ sương giá biến thể của, nổi trong đó chứa dùng trong | | đỉnh hàng rào, nền tảng hàng rào, Drawer, Xác nhận / Sheet |
+| **phòng thi** | tính hữu dụng, đáng tin cậy, ít trang trí | CDT và bảo vệ cắt xem | -- **đừng! quả táo biến thể của** |
 
-新 UI 先问：这是内容、壳，还是考场？
-
----
-
-## 2. 材料（只许两种）
-
-1. **Paper** — `#f6f3ec` / `#fffcf7` + 极轻纸纹。承载阅读。  
-2. **Chrome** — 半透明 + `blur(20px) saturate(180%)` + 亮边高光。承载导航与决策。
-
-- 禁止第三种材料（紫渐变、重投影装饰卡、到处玻璃）。  
-- 更大表面更「厚」：Sheet > 卡片 > Chip。  
-- 尊重 `prefers-reduced-transparency`：降级为实心底。  
-- Token：`--chrome-bg` / `--chrome-blur` / `--chrome-saturate` / `--chrome-edge`。
+viết tắt của Tân Cương UI trước hỏi: này là nội dung, biến thể của |, vẫn phòng thi? 
 
 ---
 
-## 3. 字体
+## 2. Tài liệu(chỉ cho phép hai hạt)
 
-| 用途 | 规则 |
+1. **Paper** - `#f6f3ec` / `#fffcf7` + cực kỳ nhẹ biến thể của | đường chịu tải đọc   
+2. **Chrome** - mờ mờ + `blur(20px) saturate(180%)` + sáng bên cao ánh sáng chịu tải điều hướng biến thể của | quyết định chiến lược 
+
+- cấm thu ba hạt liệu(màu tím thay đổi dần dần, lặp lại chiếu trang trí dừng, khắp nơi thủy tinh)   
+- thay đổi hoặc thay thế to bề mặt thay đổi hoặc thay thế«dày»: Sheet > thẻ > Chip   
+- tôn kính `prefers-reduced-transparency`: giáng chức làm chân thành nền tảng   
+- Token: `--chrome-bg` / `--chrome-blur` / `--chrome-saturate` / `--chrome-edge` 
+
+---
+
+## 3. phong cách thư pháp
+
+| công dụng | quy tắc |
 | --- | --- |
-| 展示标题 | Playfair / 宋体系；字距 `-0.02em`～`-0.03em`；行高 ~1.1 |
-| 界面正文 | 系统字体 + PingFang；行高 ~1.5；字距近 0 |
-| 小标签 | 略加 tracking；字重略提（霜化底上要可读） |
+| tiết lộ tiêu đề | Playfair / phông chữ Mincho kết nối; chữ cách một khoảng ... từ `-0.02em`~`-0.03em`; hàng cao ~1.1 |
+| bề mặt tiếp xúc văn bản chính | hệ thống phong cách thư pháp + PingFang; hàng cao ~1.5; chữ cách một khoảng ... từ gần 0 |
+| nhỏ nhãn | ngắn gọn Canada tracking; độ đậm của phông chữ ngắn gọn dùng trong và(sương giá biến thể của nền tảng dùng trong | yêu cầu thú vị để đọc) |
 
-- **壳层禁止 Inter 及第二套无衬线网红体。**  
-- 层级靠「字重 + 字号 + 行高」成套，不只放大字号。  
-- `font-optical-sizing: auto`。
+- **biến thể của | chồng lên nhau cấm Inter đậu kỳ thi khoa cử hai che đậy chữ không chân người nổi tiếng trên mạng cơ thể **  
+- cấp độ dựa vào«độ đậm của phông chữ + chữ và số + hàng cao»hình thành một bộ hoàn chỉnh, không chỉ phóng to chữ và số   
+- `font-optical-sizing: auto` 
 
 ---
 
-## 4. 交互物理
+## 4. lẫn nhau vật lý
 
-### 必须
-1. **按压即时** — 反馈在 pointer-down（约 100ms），不是等 click。Token：`--press-ms` / `--press-scale`。  
-2. **同路径进出** — 右进右出、底进底出；用 `YYSD_SURFACE`，禁止硬切 `hidden`。  
-3. **空间锚定** — 面板从触发源展开（`transform-origin` + `.is-surface-source`）；手机 Sheet 锚定底部。  
-4. **默认可打断** — 过渡中允许反向意图；勿长时间 `pointer-events: none`。  
-5. **决策用品牌 Sheet** — 壳层用 `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`，不用系统 `confirm`/`alert`（CDT 例外可保留）。
+### phải
+1. **nhấn ngay lập tức** - gửi thông tin phản hồi tồn tại pointer-down(cân trong cân đĩa hoặc trên cân 100ms), không phải đợi click Token: `--press-ms` / `--press-scale`   
+2. **đi cùng đường đường mòn ra vào** - bên phải tiến lên bên phải đi ra, nền tảng tiến lên nền tảng đi ra; sử dụng `YYSD_SURFACE`, cấm cứng cắt `hidden`   
+3. **không gian mỏ neo cố định** - bảng điều khiển biến thể của | kích hoạt gốc mở ra(`transform-origin` + `.is-surface-source`); điện thoại di động Sheet mỏ neo cố định đáy   
+4. **đồng ý ngầm có thể gián đoạn** - chèo qua Trung Quốc cho phép hướng ngược ý định; đừng chiều dài thời gian `pointer-events: none`   
+5. **quyết định chiến lược đồ dùng quân mạt chược Sheet** - biến thể của | chồng lên nhau sử dụng `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`, không cần hệ thống `confirm`/`alert`(CDT ngoại lệ có thể giữ) 
 
-### 弹簧
-- 默认：无弹跳（critically damped）。  
-- 仅「甩出去」的动量手势可轻微 overshoot。  
-- 菜单 / 淡入禁止弹跳。
+### lò xo
+- đồng ý ngầm: không có nảy(critically damped)   
+- hầu như«ném đi ra ngoài»của động lượng cử chỉ có thể nhẹ overshoot   
+- thực đơn / chuyển cảnh sáng dần cấm nảy 
 
 ### Hover
-- 抬起、悬停特效仅限 `@media (hover: hover)`。  
-- 触控只保留 `:active` 按压。
+- nâng lên, lơ lửng hiệu quả đặc biệt hầu như giới hạn `@media (hover: hover)`   
+- chạm kiểm soát chỉ giữ `:active` nhấn 
 
-### 整页转场（Silk）
-- Hub 内 hop：短、轻（opacity，~100ms）。  
-- Scene：短 fade，**禁止 blur**；二次意图立刻导航。  
-- Sheet：支持下拉关闭（跟手 + 速度投影）；学习工具要快而连。
-
----
-
-## 5. 布局与信息
-
-- 每区块一件事：一个主标题 +（可选）一句说明 + 一组主操作。  
-- 卡片是交互容器，不是装饰；去掉边框/阴影后仍清楚 → 不该是卡。  
-- Landing / 首屏少卡；Hub 可用卡。  
-- Navy = 结构与主操作；Gold = 稀用强调；技能色只作细条 / 图标。  
-- 顶栏 / 底栏用**滚动边缘渐隐**，少用硬 1px 分割线。  
-- Sheet / Drawer：霜化纸 + 进出时 blur 与 scale 同到（materialize）。  
-- 同页内容切换：短 opacity cross-fade（`YYSD_UI_SWAP`），少位移。  
-- 尊重 `prefers-reduced-motion` / `prefers-reduced-transparency`。
+### toàn bộ đầu xem | sân phơi(Silk)
+- Hub bên trong hop: ngắn, nhẹ(opacity, ~100ms)   
+- Scene: ngắn fade, **cấm blur**; lần thứ hai ý định ngay lập tức điều hướng   
+- Sheet: tán thành xuống kéo đóng(tiện tay làm + tốc độ chiếu); học công cụ yêu cầu nhanh và liên kết 
 
 ---
 
-## 5b. Hub 密度（单词 / 雅思）
+## 5. sắp xếp biến thể của | thông tin
 
-像 Apple 教育产品，不像营销落地页。
+- mỗi khối một món sự việc: một dùng trong | chủ tiêu đề +(có sẵn)một dòng thơ giải thích + một hình thành chủ làm việc   
+- thẻ là lẫn nhau đồ chứa, không phải trang trí; loại bỏ khung/bóng hoàng hậu vẫn rõ ràng → không nên là dừng   
+- Landing / đầu xem | ít dừng; Hub có thể sử dụng dừng   
+- Navy = cấu trúc biến thể của | chủ làm việc; Gold = hiếm sử dụng nhấn mạnh; khả năng kỹ thuật màu sắc chỉ công nhân mỏng hoặc thon dải / biểu tượng   
+- đỉnh hàng rào / nền tảng hàng rào sử dụng**lăn cạnh thấm nhuần bí mật**, ít sử dụng cứng 1px cắt ra biến thể của |   
+- Sheet / Drawer: sương giá biến thể của biến thể của | + ra vào biến thể cũ của | blur và scale giống đến(materialize)   
+- giống đầu nội dung chuyển đổi: ngắn opacity cross-fade(`YYSD_UI_SWAP`), ít độ dời   
+- tôn kính `prefers-reduced-motion` / `prefers-reduced-transparency` 
 
-| 规则 | 约定 |
+---
+
+## 5b. Hub mật độ(Từ vựng / IELTS)
+
+giống Apple giáo dục hàng hóa, không giống tiếp thị rơi xuống đất đầu 
+
+| quy tắc | thoả thuận |
 | --- | --- |
-| 配色 | 冷近白 `#f5f5f7` + 白表面 + 海军主操作；金极稀 |
-| 标题 | 一级约 28–34px 系统无衬线；禁止巨型 Playfair 撑留白 |
-| 列表语言 | `.yysd-group` / `.yysd-row` inset 分组列表；一种语言贯穿 |
-| 结构 | 一个主 CTA + 若干组；禁止双大标题 / bento 拼盘 / 色脊横条散落 |
-| 密度 | 组间距 ~20–28px，行高 ~48–56px |
+| phối màu | lạnh gần trắng `#f5f5f7` + trắng bề mặt + hải quân chủ làm việc; vàng cực kỳ hiếm |
+| tiêu đề | hạng nhất cân trong cân đĩa hoặc trên cân 28–34px hệ thống chữ không chân; cấm khổng lồ Playfair hỗ trợ để lại lời nhắn |
+| danh sách ngôn ngữ | `.yysd-group` / `.yysd-row` inset chia thành nhóm danh sách; một loại ngôn ngữ chạy xuyên qua |
+| cấu trúc | một dùng trong | chủ CTA + một số lượng hoặc con số nhất định hình thành; cấm hai to tiêu đề / bento đĩa mẫu / màu sắc cột sống ngang dải nằm rải rác |
+| mật độ | hình thành khoảng cách ~20–28px, hàng cao ~48–56px |
 
 ---
 
-## 6. 上线前五问
+## 6. lên mạng trước năm hỏi
 
-1. 这是内容、壳，还是考场？性格对了吗？  
-2. 按下有没有在 ~100ms 内说话？  
-3. 进出是同一条路径吗？  
-4. 能不能少一层卡片 / 边框 / 阴影？  
-5. 这里的动效是在表达物理，还是在表演？——表演则删。
+1. này là nội dung, biến thể của |, vẫn phòng thi? bản chất Đúng rồi! gì??   
+2. nhấn xuống Có ... không? tồn tại ~100ms bên trong nói?   
+3. ra vào là giống hệt dải con đường gì??   
+4. có thể không thể ít lớp thẻ / khung / bóng?   
+5. biến thể của | của di chuyển biến thể của | là tồn tại diễn đạt vật lý, vẫn tồn tại vở kịch? --vở kịch nhưng xóa 
 
 ---
 
-## 7. 实现锚点（已有代码）
+## 7. đạt được mỏ neo điểm(đã có mã)
 
-| 能力 | 位置 |
+| năng lực | vị trí |
 | --- | --- |
-| 设计 token | `assets/css/style.css` `:root` |
-| 表面开关 | `YYSD_SURFACE` → `assets/js/ui.js` |
-| 品牌确认 | `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK` → `assets/js/ui.js` |
-| 分页转场 | `assets/js/page-transit.js` |
-| 自检 | `node scripts/check_surface.js` · `node scripts/check_apple_shell.js` |
+| thiết kế token | `assets/css/style.css` `:root` |
+| bề mặt công tắc điện | `YYSD_SURFACE` → `assets/js/ui.js` |
+| tên thương hiệu xác nhận | `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK` → `assets/js/ui.js` |
+| chèn ngắt trang xem | sân phơi | `assets/js/page-transit.js` |
+| tự kiềm chế | `node scripts/check_surface.js` · `node scripts/check_apple_shell.js` |
 
 ---
 
-## 8. 不做清单
+## 8. không làm danh sách mục
 
-- CDT 按钮 / void lock 加 bounce 或毛玻璃「假高级」  
-- 全站上 spring 动画库（无示范件需求前）  
-- 无动量场景的 overshoot  
-- 叠两层浅半透明（可读性崩）  
-- 为炫技加的整页 blur
+- CDT nút bấm / void lock Canada bounce có thể kính mờ«dùng trong cấp cao»  
+- tất cả trạm dùng trong | spring hoạt hình nhà kho(không có trình diễn món yêu cầu trước)  
+- không có động lượng cảnh của overshoot  
+- biến thể của | hai chồng lên nhau âm thanh nước chảy mờ mờ(tính dễ đọc sụp đổ)  
+- làm phô diễn kỹ năng Canada của toàn bộ đầu blur
 
 ---
 
-*修订时只改规则，不堆案例。新模式先过「五问」，再进代码。*
+*sửa đổi biến thể cũ của | chỉ thay đổi quy tắc, không chất đống vụ việc viết tắt của Tân Cương chế độ trước băng qua«năm hỏi», lại tiến lên mã *

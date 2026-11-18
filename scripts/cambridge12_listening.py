@@ -8,7 +8,7 @@ def ans(*v):
 
 
 def explain(*v):
-    return "答案：" + " / ".join(v) + "。"
+    return " Đáp án: " + " / ".join(v) + " "
 
 
 def _q(no, *answers, q=None, options=None):
@@ -21,7 +21,7 @@ def _q(no, *answers, q=None, options=None):
 
 
 def _multi_pair(a, b, letters):
-    text = "选两项（顺序不限）：" + " 与 ".join(letters) + "。"
+    text = " chọn hai sau cổ(Thứ tự tùy ý): " + " và ".join(letters) + " "
     return [
         {"id": f"L{a}", "no": a, "explain": text},
         {"id": f"L{b}", "no": b, "explain": text},
@@ -357,11 +357,11 @@ _T2 = _test(2, [
             },
             "subTitle": "How James will write his paper on the Vikings",
             "questions": [
-                _q(26, "E", q="Choose information from …"),
-                _q(27, "G", q="Make notes of …"),
-                _q(28, "D", q="Decide on …"),
-                _q(29, "C", q="Find some … to use"),
-                _q(30, "A", q="Check …"),
+                _q(26, "E", q="Choose information from ..."),
+                _q(27, "G", q="Make notes of ..."),
+                _q(28, "D", q="Decide on ..."),
+                _q(29, "C", q="Find some ... to use"),
+                _q(30, "A", q="Check ..."),
             ],
         },
     ]),
@@ -531,12 +531,12 @@ _T3 = _test(3, [
             },
             "subTitle": "STAGES IN DOING A TOURISM CASE STUDY",
             "questions": [
-                _q(21, "C", q="Locate and read relevant articles, noting key information and also …"),
-                _q(22, "E", q="Select interviewees – these may be site …"),
-                _q(23, "H", q="visitors or city …"),
-                _q(24, "B", q="Check whether … of interviewees can be used"),
-                _q(25, "A", q="Select relevant information and try to identify …"),
-                _q(26, "F", q="Do NOT end with …"),
+                _q(21, "C", q="Locate and read relevant articles, noting key information and also ..."),
+                _q(22, "E", q="Select interviewees – these may be site ..."),
+                _q(23, "H", q="visitors or city ..."),
+                _q(24, "B", q="Check whether ... of interviewees can be used"),
+                _q(25, "A", q="Select relevant information and try to identify ..."),
+                _q(26, "F", q="Do NOT end with ..."),
             ],
         },
         {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * Build 四级词汇（精简版） List HTML + ebbinghaus schedule + manifest entries
+ * Build Từ vựng CET-4(đơn giản hóa một đăng ký) List HTML + ebbinghaus schedule + manifest entries
  * from Desktop Excel + existing CET4/gaozhong cards.
  */
 var fs = require("fs");
@@ -10,7 +10,7 @@ var { execFileSync } = require("child_process");
 
 var ROOT = path.join(__dirname, "..");
 var OUT_DIR = path.join(ROOT, "library/study/vocab-cet4-lite");
-var XLSX = "/Users/frankman/Desktop/四级单词精简版.xlsx";
+var XLSX = "/Users/frankman/Desktop/cấp 4 từ đơn giản hóa một đăng ký.xlsx";
 var TODAY = "2026-08-21";
 
 function parseWordData(html) {
@@ -209,10 +209,10 @@ function cloneCard(src, excelWord, id) {
     root: src.root || src.mnemonic || "",
     synonyms: Array.isArray(src.synonyms) ? src.synonyms : [],
     antonyms: Array.isArray(src.antonyms) ? src.antonyms : [],
-    examTag: src.examTag || { source: "大学英语四级", frequency: 4, commonUsage: "", topic: "精简版" }
+    examTag: src.examTag || { source: " CET-4 (tiếng Anh đại học) ", frequency: 4, commonUsage: "", topic: " đơn giản hóa một đăng ký " }
   };
   if (!out.exampleEn && out.example) {
-    var em = String(out.example).match(/^(.+?)[（(](.+)[）)]\s*$/);
+    var em = String(out.example).match(/^(.+?)[((](.+)[))]\s*$/);
     if (em) {
       out.exampleEn = em[1].trim();
       out.exampleZh = out.exampleZh || em[2].trim();
@@ -222,14 +222,14 @@ function cloneCard(src, excelWord, id) {
 }
 
 function htmlFor(listNo, words) {
-  var title = "四级词汇（精简版） List " + listNo;
-  return "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n" +
+  var title = " Từ vựng CET-4(đơn giản hóa một đăng ký) List " + listNo;
+  return "<!DOCTYPE html>\n<html lang=\"vi-VN\">\n<head>\n" +
     "<meta charset=\"UTF-8\">\n" +
     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
     "<meta name=\"exam:title\" content=\"" + title + "\">\n" +
     "<title>" + title + "</title>\n" +
     "</head>\n<body>\n" +
-    "<p>" + title + " · " + words.length + " 词</p>\n" +
+    "<p>" + title + " · " + words.length + " Từ</p>\n" +
     "<script>\nconst wordData = " + JSON.stringify(words, null, 2) + ";\n</script>\n" +
     "</body>\n</html>\n";
 }
@@ -297,7 +297,7 @@ function main() {
       }
       return cloneCard(src, r.word, i + 1);
     });
-    var file = "四级精简LIST" + n + ".html";
+    var file = " cấp 4 đơn giản hóa LIST" + n + ".html";
     fs.writeFileSync(path.join(OUT_DIR, file), htmlFor(n, words));
     console.log("wrote", file, words.length);
   });
@@ -317,13 +317,13 @@ function main() {
   });
   Object.keys(byList).map(Number).sort(function (a, b) { return a - b; }).forEach(function (n) {
     man.items.push({
-      id: "四级精简list" + n,
-      file: "study/vocab-cet4-lite/四级精简LIST" + n + ".html",
-      title: "四级词汇（精简版） List " + n,
+      id: " cấp 4 đơn giản hóa list" + n,
+      file: "study/vocab-cet4-lite/cấp 4 đơn giản hóa LIST" + n + ".html",
+      title: " Từ vựng CET-4(đơn giản hóa một đăng ký) List " + n,
       zone: "study",
       subject: "vocab-cet4-lite",
       duration: 0,
-      description: byList[n].length + " 词 · 按 Excel 顺序",
+      description: byList[n].length + " Từ · nhấn Excel trình tự ",
       added: TODAY
     });
   });

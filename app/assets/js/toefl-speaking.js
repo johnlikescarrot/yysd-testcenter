@@ -1,4 +1,4 @@
-/* TOEFL speaking — recorder + download helpers */
+/* TOEFL speaking - recorder + download helpers */
 (function (w) {
   "use strict";
 

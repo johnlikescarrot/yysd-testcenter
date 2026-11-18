@@ -1,5 +1,5 @@
 /* =========================================================================
-   cdt-qux.js — B3 CDT question UX: DnD match/map/wbank + multi letter pick
+   cdt-qux.js - B3 CDT question UX: DnD match/map/wbank + multi letter pick
    Injected into Cambridge L/R iframes under exam.html?cdt=1.
    Keeps <select> as answer source of truth for existing paper scoring.
    ========================================================================= */
@@ -62,20 +62,20 @@
   function allowsReuse(group, letterCount, slotCount) {
     var el = group.querySelector(".instruction");
     var t = (el && el.textContent) || "";
-    if (/more than once|一次以上|可重复|任意.*多次/i.test(t)) return true;
-    if (/only once|each (letter|answer) only once|仅.*一次|每个字母.*一次/i.test(t)) return false;
+    if (/more than once|đầu tiên mức đó hoặc cao hơn|có thể lặp lại|bất kỳ.*nhiều lần/i.test(t)) return true;
+    if (/only once|each (letter|answer) only once|hầu như.*đầu tiên|mỗi dùng trong | chữ cái.*đầu tiên/i.test(t)) return false;
     // pigeonhole: more gaps than letters ⇒ must reuse
     if (slotCount && letterCount && slotCount > letterCount) return true;
     // exclusive list/heading/map when enough distinct options
     var enough = letterCount && slotCount && letterCount >= slotCount;
-    if (enough && /heading|标题|from the box and write/i.test(t)) return false;
+    if (enough && /heading|tiêu đề|from the box and write/i.test(t)) return false;
     if (enough && group.querySelector && group.querySelector(".map-wrap")) return false;
-    // ponytail: default reusable — exclusive-by-default broke paragraph/classify matches
+    // ponytail: default reusable - exclusive-by-default broke paragraph/classify matches
     return true;
   }
 
   function isMultiHint(text) {
-    return /选择一项|两题合计|两项|本组合计|选出正确|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
+    return /chọn một sau cổ|hai chủ đề cộng tổng|hai sau cổ|gốc lắp ráp tính toán|chọn ra đúng|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
   }
 
   function isMultiGroup(group, pairs) {
@@ -90,8 +90,8 @@
       if (mq && isMultiHint(mq.textContent)) hints++;
     });
     var instr = ((group.querySelector(".instruction") || {}).textContent) || "";
-    var instrMulti = /Choose TWO letters|Choose TWO\b|选出.*两项|两题合计/i.test(instr);
-    // ponytail: never infer multi from row count alone — match also shares one letter box
+    var instrMulti = /Choose TWO letters|Choose TWO\b|chọn ra.*hai sau cổ|hai chủ đề cộng tổng/i.test(instr);
+    // ponytail: never infer multi from row count alone - match also shares one letter box
     return hints > 0 || instrMulti;
   }
 
@@ -399,8 +399,8 @@
     allowsReuse: allowsReuse
   };
 
-  // ponytail: smallest check — fails loud if multi detection regresses
-  console.assert(isMultiHint("选择一项（两题合计选出正确的两项，顺序不限）"), "cdt-qux: multi hint");
+  // ponytail: smallest check - fails loud if multi detection regresses
+  console.assert(isMultiHint(" chọn một sau cổ(hai chủ đề cộng tổng chọn ra đúng của hai sau cổ, Thứ tự tùy ý)"), "cdt-qux: multi hint");
   console.assert(!isMultiHint("Which gallery has the best collection of ceramics?"), "cdt-qux: not multi");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "You may use any letter more than once." }; } }), "cdt-qux: reuse");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "Write the correct letter, A, B or C." }; } }, 3, 6), "cdt-qux: pigeonhole reuse");

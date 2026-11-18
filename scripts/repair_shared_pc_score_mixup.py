@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Repair user_scores / cloned attempts after shared-PC login sync mixup.
 
-Default: dry-run. Pass --apply to write. Targets 谢超然(4) / 刘雨茜(5) unless --all-clones.
+Default: dry-run. Pass --apply to write. Targets cảm ơn lãnh đạm(4) / một loại búa chiến mưa Rubia cordifolia(5) unless --all-clones.
 """
 from __future__ import annotations
 
@@ -86,7 +86,7 @@ def main() -> int:
         if sc.get("score") != apay.get("score") or str(sc.get("date") or "") != str(att["created_at"]):
             actions.append(("restore_score", b, row["item_id"], apay.get("score"), att["created_at"]))
 
-    # 4) Identical created_at+item clones between A/B — keep lower attempt id
+    # 4) Identical created_at+item clones between A/B - keep lower attempt id
     clones = c.execute(
         """
         SELECT a.id AS id_a, b.id AS id_b, a.item_id, a.created_at

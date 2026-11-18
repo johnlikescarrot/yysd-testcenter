@@ -9,12 +9,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.26-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/8 tháng/8.26-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-26/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-26"
 SET = "8.26"
-TITLE = "新托福 8.26 国内线下"
+TITLE = " TOEFL mới 8.26 Trong nước · trực tiếp "
 
 
 def dump(name, obj):
@@ -206,7 +206,7 @@ def build_reading():
     ])
     if n != 46:
         raise SystemExit("m2 cw expected next 46, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
         {"n": 2, "timeSec": 540, "from": 36, "to": 50},
     ], [
@@ -721,14 +721,14 @@ def build_listening():
             }, "B"),
         ]),
     ]
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 32},
         {"n": 2, "timeSec": 660, "from": 33, "to": 47},
     ], m1 + m2)
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email"},
         {"n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion"},
@@ -840,7 +840,7 @@ def build_writing():
 
 
 def build_speaking():
-    # ponytail: source missing listen-repeat q01–q02 audio (answer key also says 答案缺失).
+    # ponytail: source missing listen-repeat q01–q02 audio (answer key also says câu trả lời thiếu).
     # Ceiling: paper ships the 5 clips that exist. Upgrade: recover q01–q02 from a full Speaking.mp3 if it appears.
     instr_r = (
         "You are being trained to assist guests during a campus career fair. "
@@ -905,7 +905,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 5),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 180, "from": 1, "to": 5, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 6, "to": 9, "label": "Take an Interview"},
     ], tasks)

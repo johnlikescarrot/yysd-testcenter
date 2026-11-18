@@ -20,27 +20,27 @@ function eq(got, want, label) {
 }
 
 eq(
-  fn("adj. ①空的，空无一人的；②空洞的，无意义的（empty promises）。v. 倒空，清空（empty the bin）。n. 空瓶，空箱。empty of（没有…）。反义 full。"),
-  "adj. ①空的，空无一人的；②空洞的，无意义的。v. 倒空，清空。n. 空瓶，空箱。",
+  fn("adj. ① trống không của, không một bóng người của; ② hốc của, không cố ý công lý của(empty promises) v. làm trống, dọn dẹp(empty the bin) n. trống không chai, trống không hộp empty of(không có...) Trái nghĩa full "),
+  "adj. ① trống không của, không một bóng người của; ② hốc của, không cố ý công lý của v. làm trống, dọn dẹp n. trống không chai, trống không hộp ",
   "empty"
 );
 eq(
-  fn("n. 踝，踝关节。twist / sprain one's ankle（扭伤脚踝）；ankle boots（踝靴）。"),
-  "n. 踝，踝关节。",
+  fn("n. mắt cá chân, mắt cá chân khớp twist / sprain one's ankle(bong gân mắt cá chân); ankle boots(mắt cá chân ủng) "),
+  "n. mắt cá chân, mắt cá chân khớp ",
   "ankle"
 );
 eq(
-  fn("v. 游泳；游过（swim the river）；旋转、眩晕（my head is swimming）；充满（eyes swimming with tears）。n. 游泳。go for a swim；swimming pool。不规则：swim–swam–swum。"),
-  "v. 游泳；游过；旋转、眩晕；充满。n. 游泳。",
+  fn("v. bơi lội; bơi băng qua(swim the river); xoay, chóng mặt(my head is swimming); đầy(eyes swimming with tears) n. bơi lội go for a swim; swimming pool bất quy tắc: swim–swam–swum "),
+  "v. bơi lội; bơi băng qua; xoay, chóng mặt; đầy n. bơi lội ",
   "swim"
 );
 eq(
-  fn("v. ①祝福，保佑（God bless you；bless sb with sth 赋予某人某物）；②使有幸得到。n. blessing 祝福，幸事。a blessing in disguise（因祸得福）。be blessed with（有幸拥有）。宗教用语已日常化，口语 God bless 表祝愿或打喷嚏时的回应。"),
-  "v. ①祝福，保佑；②使有幸得到。n. 祝福，幸事。",
+  fn("v. ① lời chúc, phù hộ và bảo vệ(God bless you; bless sb with sth giao phó một người nào đó một vật gì đó); ② khiến may mắn thay được n. blessing lời chúc, điều may mắn a blessing in disguise(trong họa có phúc) be blessed with(may mắn thay có) tôn giáo cách chọn từ đã hằng ngày biến thể của, Nói God bless bề mặt bên ngoài cầu chúc có thể hắt xì biến thể cũ của | của phản hồi "),
+  "v. ① lời chúc, phù hộ và bảo vệ; ② khiến may mắn thay được n. lời chúc, điều may mắn ",
   "bless"
 );
-eq(fn("按照；根据"), "按照；根据", "cet4 passthrough");
-eq(fn("adv. 因此，从而，这样。较正式，相当于 therefore / so。thus far（到目前为止）。"), "adv. 因此，从而，这样。", "thus");
-eq(fn("prep. 按照；根据。常用 according to plan（按计划）。", ["根据", "按照"]), "根据；按照", "prefer acceptCN");
+eq(fn(" theo; theo "), " theo; theo ", "cet4 passthrough");
+eq(fn("adv. do đó, do đó, loại này so sánh trang trọng, tương đương với therefore / so thus far(cho đến giờ) "), "adv. do đó, do đó, loại này ", "thus");
+eq(fn("prep. theo; theo Thường dùng according to plan(nhấn kế hoạch) ", [" theo ", " theo "]), " theo; theo ", "prefer acceptCN");
 
 console.log("OK: list meaning");

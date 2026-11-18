@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ponytail: vocab-daily-card 三态 + 满宽 CTA 契约
+// ponytail: vocab-daily-card ba + dân tộc Mãn Châu rộng CTA thỏa thuận
 "use strict";
 
 var fs = require("fs");

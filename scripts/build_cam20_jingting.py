@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 OUT_DIR = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
-PDF = Path("/Users/frankman/Downloads/剑1-20学术类真题") / "剑雅20 .pdf"
+PDF = Path("/Users/frankman/Downloads/Cambridge 1-20 học thuật loại câu hỏi từ đề thi các năm trước ") / " kiếm hai lưỡi tao nhã 20 .pdf"
 RAW_CACHE = ROOT / "scripts/cam20_scripts_raw.txt"
 GOLD_T1P1 = ROOT / "library/practice/jingting/cam20-test1-section1.html"
 
@@ -111,7 +111,7 @@ def split_sentences(text: str) -> list[str]:
         if re.match(rf"^({names}):", line, re.I) and buf:
             lines.append(buf.strip())
             buf = line
-        elif buf and not re.search(r"[.!?…][\"']?$", buf):
+        elif buf and not re.search(r"[.!?...][\"']?$", buf):
             buf = buf + " " + line
         else:
             if buf:
@@ -135,7 +135,7 @@ def split_sentences(text: str) -> list[str]:
             if not prefix.endswith(" "):
                 prefix += " "
             body = sp.group(2).strip()
-        parts = re.split(r"(?<=[.!?…])\s+(?=[A-Z\"'“])", body) if body else []
+        parts = re.split(r"(?<=[.!?...])\s+(?=[A-Z\"'“])", body) if body else []
         if not parts:
             parts = [body] if body else []
         for i, p in enumerate(parts):
@@ -318,7 +318,7 @@ def convert_jingting():
             path = OUT_DIR / f"{pid}.json"
             obj = {
                 "id": pid,
-                "title": f"剑20 Test {test} Part {sec}",
+                "title": f" Cambridge 20 Test {test} Part {sec}",
                 "audioUrl": f"library/mock/cambridge-listening/{part['audio']}",
                 "examHref": f"library/mock/cambridge-listening/cambridge-20-test-{test}.html",
                 "sentences": [],
@@ -353,8 +353,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             {
                 "role": "system",
                 "content": (
-                    "你是雅思听力原文译者。把每句英译中，保留说话人标签（如 WOMAN:/MAN:/TAMARA:）不译。"
-                    "只输出 JSON 数组，长度与输入句数相同，元素为中文字符串，不要其它文字。"
+                    " bạn là IELTS thính giác nguyên văn người dịch cầm mỗi biến thể của bản dịch tiếng Anh Trung Quốc, giữ nói người nhãn(như WOMAN:/MAN:/TAMARA:)không dịch "
+                    " chỉ xuất khẩu JSON mảng, chiều dài biến thể của | nhập khẩu số câu giống hệt, thành phần cơ bản của cái gì đó làm ngôn ngữ Trung Quốc chuỗi, đừng! khác chữ viết "
                 ),
             },
             {"role": "user", "content": numbered},
@@ -389,7 +389,7 @@ def fill_zh(batch_size: int = 20):
         if not missing:
             print(f"{path.name}: zh ok")
             continue
-        print(f"{path.name}: translating {len(missing)}…")
+        print(f"{path.name}: translating {len(missing)}...")
         for off in range(0, len(missing), batch_size):
             idxs = missing[off : off + batch_size]
             ens = [sents[i]["en"] for i in idxs]
@@ -428,11 +428,11 @@ def update_manifest():
                 "id": pid,
                 "file": f"practice/jingting/data/{pid}.json",
                 "directHref": f"jingting-player.html?id={pid}",
-                "title": f"听力精听：剑20 Test {t} Part {p}",
+                "title": f" thính giác tinh chất cười: Cambridge 20 Test {t} Part {p}",
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听 + AI 跟读：真音频、句子时间轴、隐文/译文、倍速与单句循环。",
+                "description": " toàn văn/theo đuổi biến thể của tinh chất cười + AI gót chân dấu phẩy: thật âm thanh, câu trục thời gian, bí mật ngôn ngữ/văn bản dịch, lần nhanh biến thể của | câu đơn tuần hoàn ",
                 "added": "2026-07-23",
             })
     last = -1

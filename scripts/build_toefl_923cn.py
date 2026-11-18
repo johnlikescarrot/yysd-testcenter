@@ -5,7 +5,7 @@ import os
 import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/9月/9.23-国内线下/audio"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/9 tháng/9.23-Trong nước · trực tiếp/audio"
 AUDIO = "library/toefl/audio/2025-09-23/"
 PHOTO = "library/toefl/img/2025-09-02/"
 NEED = []
@@ -263,7 +263,7 @@ def build_reading():
         ("condi", "conditions"),
         " for a ",
         ("reg", "region"),
-        "—not ",
+        "-not ",
         ("ju", "just"),
         " the daily forecast. While weather can shift dramatically from one day to the next, the climate of an area describes what is normal over decades.",
     ])
@@ -346,10 +346,10 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("Space Debris: A Growing Concern", 2, [
-        "The Kessler Syndrome, proposed by NASA scientist Donald J. Kessler in 1978, hypothesizes a cascading effect in low Earth orbit (LEO) in which collisions between satellites and debris—defunct satellites, spent rocket stages, and fragments from earlier collisions—generate more fragments, exponentially increasing the likelihood of further collisions. This feedback loop could render certain orbital regions unusable for decades.",
+        "The Kessler Syndrome, proposed by NASA scientist Donald J. Kessler in 1978, hypothesizes a cascading effect in low Earth orbit (LEO) in which collisions between satellites and debris-defunct satellites, spent rocket stages, and fragments from earlier collisions-generate more fragments, exponentially increasing the likelihood of further collisions. This feedback loop could render certain orbital regions unusable for decades.",
         "While the model is compelling, some assumptions merit scrutiny. For instance, it presumes a uniform distribution of debris and constant collision probability, yet orbital mechanics suggest that debris clusters in specific altitudes and orbital paths, potentially limiting the scope of cascading events.",
         "Moreover, technological advancements in debris tracking and active removal may mitigate the risk more effectively than Kessler originally envisioned. Critics argue that the syndrome underestimates the resilience of orbital infrastructure and overstates the inevitability of runaway collisions. Alternative explanations for observed debris growth include a greater number of satellite launches and fragmentation from aging spacecraft, rather than a self-sustaining cascade.",
-        "Nonetheless, the Kessler Syndrome remains a valuable heuristic for space policy, emphasizing the need for international cooperation and sustainable orbital practices. Its cautionary implications are profound—especially as commercial constellations dramatically increase the number of active satellites in LEO.",
+        "Nonetheless, the Kessler Syndrome remains a valuable heuristic for space policy, emphasizing the need for international cooperation and sustainable orbital practices. Its cautionary implications are profound-especially as commercial constellations dramatically increase the number of active satellites in LEO.",
     ], [
         q(n, "The passage suggests that one impact of the Kessler Syndrome would be",
           {"A": "an increase in NASA space research",
@@ -428,7 +428,7 @@ def build_reading():
     ]))
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 阅读",
+        "title": " TOEFL mới 9.23 Trong nước · trực tiếp · Đọc hiểu ",
         "set": "9.23",
         "skill": "reading",
         "modules": [
@@ -735,7 +735,7 @@ def build_listening():
         tasks.append(lecture(title, module, instruction, fname, items))
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 听力",
+        "title": " TOEFL mới 9.23 Trong nước · trực tiếp · Nghe hiểu ",
         "set": "9.23",
         "skill": "listening",
         "modules": [
@@ -812,7 +812,7 @@ def build_writing():
               {"title": "Price Keeps Demand", "text": "Keeping prices low can be the stronger long-term strategy when customers can easily switch to another supplier. Kelly's point is that training costs are recovered only if people stay and if the extra skill actually improves the product they buy. In a market where buyers compare price first, a company that spends heavily on programs may lose the sales that would have paid for those programs. Paul is right that skilled workers matter, but not every role needs a certification before the company can operate. Targeted on-the-job training for the tasks that cause errors can protect quality without a large formal budget. I would cut spending that does not change what customers receive, keep essential instruction, and use the savings to remain competitive. A company that loses its customers while building an impressive training catalog has not succeeded in the long term."}]),
         disc(12, "Business Management",
              person("Professor Achebe", "diaz.png", "This week we have been discussing strategies to promote workplace productivity and employee performance. One particularly controversial topic that has emerged is multitasking. While some argue that the ability to juggle multiple tasks at once is essential in today's fast-paced work environments, others believe that multitasking actually reduces efficiency and increases the likelihood of errors. Do you believe that managers should promote multitasking in the workplace? Why or why not?"),
-             [person("Paul", "andrew.png", "I think managers should promote multitasking. It helps employees handle routine tasks simultaneously and mirrors real-world demands. Even outside of the office, who has the luxury of focusing only on one task? With the right tools and training, multitasking can improve time management and adaptability—key traits in today's dynamic workplaces."),
+             [person("Paul", "andrew.png", "I think managers should promote multitasking. It helps employees handle routine tasks simultaneously and mirrors real-world demands. Even outside of the office, who has the luxury of focusing only on one task? With the right tools and training, multitasking can improve time management and adaptability-key traits in today's dynamic workplaces."),
               person("Kelly", "kelly.png", "I oppose multitasking in the workplace. It increases the chance of mistakes and leads to mental fatigue. For example, when employees answer emails during meetings, they often miss key details or misinterpret information. Deep, focused work is more effective for quality outcomes and long-term employee well-being.")],
              [{"title": "Protect Focused Work", "text": "Managers should not promote multitasking as a general habit because most demanding work suffers when attention is split. Kelly's example of answering email during a meeting is familiar: the person appears busy, yet later has to ask for information that was already explained. That wasted time is the opposite of productivity. Routine tasks can be batched, but a report, a calculation, or a conversation with a client usually needs an uninterrupted stretch. Paul is right that workplaces are busy, yet busyness is not the same as finishing accurate work. A manager can still expect people to handle several responsibilities across a day. The useful instruction is to finish one demanding task, then switch, rather than keep several half-done. Protecting focus also reduces fatigue, which makes later work faster instead of slower."},
               {"title": "Train Switching", "text": "Managers should promote a limited form of multitasking because many jobs already require people to respond to more than one demand. A receptionist, a nurse, or a project coordinator cannot pretend that only one person will need help at a time. Paul's point about real-world conditions is therefore practical. The mistake is to treat every role as if it were writing a research paper. What managers should teach is how to switch cleanly: finish a sentence, write down the next step, then take the interruption. Tools that gather messages into set times also help. Kelly is right that answering mail during a meeting is a poor example, so I would ban that specific habit while still expecting staff to manage overlapping routine tasks. Promoted this way, multitasking means organized switching, not constant distraction."}]),
@@ -825,7 +825,7 @@ def build_writing():
     ]
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 写作",
+        "title": " TOEFL mới 9.23 Trong nước · trực tiếp · Viết ",
         "set": "9.23",
         "skill": "writing",
         "modules": [
@@ -987,15 +987,15 @@ if __name__ == "__main__":
     dump("2025-09-23-listening.json", build_listening())
     dump("2025-09-23-writing.json", build_writing())
     dump("2025-09-23-speaking.json", build_speaking(
-        "2025-09-23", "新托福 9.23 国内线下 · 口语 Form 1", 1, 1))
+        "2025-09-23", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 1", 1, 1))
     dump("2025-09-23-speaking-f2.json", build_speaking(
-        "2025-09-23-s2", "新托福 9.23 国内线下 · 口语 Form 2", 2, 2))
+        "2025-09-23-s2", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 2", 2, 2))
     dump("2025-09-23-speaking-f3.json", build_speaking(
-        "2025-09-23-s3", "新托福 9.23 国内线下 · 口语 Form 3", 3, 3))
+        "2025-09-23-s3", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 3", 3, 3))
     dump("2025-09-23-speaking-f4.json", build_speaking(
-        "2025-09-23-s4", "新托福 9.23 国内线下 · 口语 Form 4", 4))
+        "2025-09-23-s4", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 4", 4))
     dump("2025-09-23-speaking-f5.json", build_speaking(
-        "2025-09-23-s5", "新托福 9.23 国内线下 · 口语 Form 5", 5))
+        "2025-09-23-s5", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 5", 5))
     dump("2025-09-23-speaking-f6.json", build_speaking(
-        "2025-09-23-s6", "新托福 9.23 国内线下 · 口语 Form 6", 6))
+        "2025-09-23-s6", " TOEFL mới 9.23 Trong nước · trực tiếp · Nói Form 6", 6))
     copy_audio() 

@@ -753,7 +753,7 @@ def main():
             "set": "L-AT" + n,
             "title": "L-AT%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "学术讲座",
+            "titleZh": " Bài giảng học thuật ",
             "code": item["code"] or ("AT%s" % n),
             "instruction": "Listen to a lecture.",
             "audio": "library/toefl/audio/bank-l-at/" + audio_name,
@@ -763,7 +763,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-at",
-        "title": "题块库 · 学术讲座",
+        "title": " chủ đề cục nhà kho · Bài giảng học thuật ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

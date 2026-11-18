@@ -1,4 +1,4 @@
-/* TOEFL writing — sentence chips + essay screens */
+/* TOEFL writing - sentence chips + essay screens */
 (function (w) {
   "use strict";
 

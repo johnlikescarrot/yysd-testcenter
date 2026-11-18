@@ -10,15 +10,15 @@ assert(auth.includes("function canWordRealm") && auth.includes("canWordRealm: ca
 assert(/function canWordRealm\(\)\s*\{[^}]*return false/.test(auth), "auth realm offline");
 
 const nav = fs.readFileSync(path.join(root, "assets/js/nav.js"), "utf8");
-assert(!nav.includes('label: "词境"') && !nav.includes('label: "词境远征"'), "nav no realm top link");
+assert(!nav.includes('label: " biến thể cũ của | biên giới "') && !nav.includes('label: " biến thể cũ của | biên giới cuộc viễn chinh "'), "nav no realm top link");
 
 const zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
 assert(!zone.includes("vocab-realm-banner"), "zone banner hidden offline");
 
 const realm = fs.readFileSync(path.join(root, "assets/js/word-realm.js"), "utf8");
 assert(realm.includes("canWordRealm") && realm.includes('location.replace("zone.html?zone=study&s=vocab")'), "realm hard gate");
-assert(realm.includes("雾原试玩") && realm.includes("后续章节尚未开放"), "clear CTA mist-only");
-assert(!realm.includes("前往石语峡谷") && !realm.includes("东行 · 石语峡谷 ›"), "no stone launch CTA");
+assert(realm.includes(" sương mù trước đây thử chơi ") && realm.includes(" theo sau chương chưa nở hoa "), "clear CTA mist-only");
+assert(!realm.includes(" đi đến đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi ") && !realm.includes(" phía đông hàng · đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi ›"), "no stone launch CTA");
 
 const lesson = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8");
 assert(lesson.includes("canWordRealm") && lesson.includes('shrine.region !== "mist"'), "lesson mist-only");

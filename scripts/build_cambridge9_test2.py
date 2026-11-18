@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T2.docx")
 CHART_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_14.15.21-1966c33e-431f-4f33-a113-10f77c1a0a33.png"
@@ -26,10 +26,10 @@ MAP_SRC = Path(
     "__2026-07-01_14.15.10-8edf756b-016a-41db-a12d-a66fdccf6379.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-2.html"
@@ -53,7 +53,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -73,12 +73,12 @@ def patch_listening_meta(html: str) -> str:
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("test1", "test2"),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
+        ("Test 1 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
     html = inject_state_vars(html)
-    # ponytail: Q12 has two boxes but one scored item — merge L12a/L12b on read
+    # ponytail: Q12 has two boxes but one scored item - merge L12a/L12b on read
     needle = "function readAns(q){ const el=document.getElementById(q.id);"
     insert = (
         "function readAns(q){ if(q.id==='L12'){"
@@ -96,7 +96,7 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Test 1 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -111,7 +111,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 island before/after maps + Task 2 foreign language at primary school essay",
             "Task 1 UK telephone calls bar chart + Task 2 unpaid community service essay",
         ),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Test 1 Viết(Đề thi chính thức)", "Test 2 Viết(Đề thi chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -521,8 +521,8 @@ def reading_test() -> dict:
             },
             "answerSet": ["A", "C"],
             "questions": [
-                {"id": "Q11", "no": 11, "explain": "答案：A 与 C，顺序不限。"},
-                {"id": "Q12", "no": 12, "explain": "答案：A 与 C，顺序不限。"},
+                {"id": "Q11", "no": 11, "explain": " Đáp án: A và C, Thứ tự tùy ý "},
+                {"id": "Q12", "no": 12, "explain": " Đáp án: A và C, Thứ tự tùy ý "},
             ],
         },
         {

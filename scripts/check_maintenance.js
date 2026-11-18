@@ -7,7 +7,7 @@ function read(rel) { return fs.readFileSync(path.join(root, rel), "utf8"); }
 
 must(fs.existsSync(path.join(root, "assets/img/maintenance-dog.png")), "dog image");
 var html = read("maintenance.html");
-must(html.indexOf("网站更新中，别急啊，在弄了") >= 0, "copy");
+must(html.indexOf(" trang web thay cũ đổi mới Trung Quốc, rời khỏi khẩn cấp thán từ biểu thị sự ngạc nhiên, tồn tại đường nhỏ hoàn thành ") >= 0, "copy");
 must(html.indexOf("maintenance-dog.png") >= 0, "img src");
 
 var boot = read("assets/js/tenant-boot.js");
@@ -19,7 +19,7 @@ must(server.indexOf("function readMaintOn") >= 0, "flag helper");
 must(server.indexOf("15901754473") >= 0 && server.indexOf("18956023079") >= 0, "allow phones");
 must(server.indexOf('app.get("/api/maintenance"') >= 0, "GET");
 must(server.indexOf('app.post("/api/maintenance"') >= 0, "POST");
-must(server.indexOf("网站更新中，别急啊，在弄了") >= 0, "api copy");
+must(server.indexOf(" trang web thay cũ đổi mới Trung Quốc, rời khỏi khẩn cấp thán từ biểu thị sự ngạc nhiên, tồn tại đường nhỏ hoàn thành ") >= 0, "api copy");
 
 var plat = read("platform.html");
 must(plat.indexOf("id=\"maint-toggle\"") >= 0, "platform toggle");

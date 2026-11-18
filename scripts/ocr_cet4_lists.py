@@ -12,7 +12,7 @@ from pathlib import Path
 import fitz
 from PIL import Image
 
-PDF = Path("/Users/frankman/Desktop/2024四级词汇2024版新东方绿宝书乱序.pdf")
+PDF = Path("/Users/frankman/Desktop/2024 Từ vựng CET-4 2024 một đăng ký viết tắt của Tân Cương phương Đông màu xanh lá quyển sách quý trong tình trạng rối loạn thứ tự.pdf")
 OCR_BIN = Path("/tmp/ocr_vision")
 OUT_DIR = Path(__file__).resolve().parents[1] / "library" / "study" / "vocab-cet4-data" / "ocr"
 TMP = Path("/tmp/lvbaoshu_ocr")
@@ -53,7 +53,7 @@ def band_for(n: int) -> str:
 
 def clean_line(ln: str) -> str:
     ln = ln.strip().lower()
-    ln = re.sub(r"^[o0udl\[\]•·□◼▪○◯\-–—\d\.\s]+", "", ln)
+    ln = re.sub(r"^[o0udl\[\]•·□◼▪○◯\-–-\d\.\s]+", "", ln)
     ln = ln.strip()
     # strip leading OCR letter leftovers like "d interest"
     ln = re.sub(r"^[a-z]\s+(?=[a-z]{3,})", "", ln)
@@ -132,7 +132,7 @@ def main(argv: list[str]) -> int:
         payload = {
             "listNo": n,
             "band": band_for(n),
-            "title": f"单元 {n}",
+            "title": f" Đơn vị {n}",
             "words": words,
             "count": len(words),
         }

@@ -1,202 +1,202 @@
-# wofo 新托福 vs 优益思达新托福 · 对比分析
+# wofo TOEFL mới vs xuất sắc lợi ích suy nghĩ đạt tới viết tắt của Tân Cương TOEFL · so sánh phân tích
 
-版本 v1.2（索引版）｜2026-10-20｜作者 Qoder
-状态：**等你勾选深挖项**。本版只给评分卡 + 问题索引，未展开方案与工作量。
-v1.1 变更：机器勘察 + 逐条 grep/curl 后新增 **P-56~P-62**、更正 CW 解析口径（§4.1 更正 1）。
-v1.2 变更：**自我证伪 P-56**——"完整模考写作必崩"不成立，降级为不可达死分支 + 三科休息屏机制不统一（§4.1 更正 2）。**没有阻断性线上崩溃。**
+phiên bản v1.2(chỉ mục một đăng ký) 2026-10-20 tác giả Qoder
+tình trạng: **đợi bạn chọn đào sâu sau cổ** gốc một đăng ký chỉ cho chấm điểm dừng + câu hỏi chỉ mục, chưa mở ra kế hoạch biến thể của | khối lượng công việc 
+v1.1 thay đổi: máy móc trinh sát + theo đuổi dải grep/curl hoàng hậu thêm **P-56~P-62**, sửa chữa CW phân tích lỗ khoan(§4.1 sửa chữa 1) 
+v1.2 thay đổi: **tự chứng minh là sai P-56**--" hoàn chỉnh bắt chước đánh viết nhất định sụp đổ " không được đứng, giáng chức làm không thể đạt tới chết chi nhánh + ba ngành học nghỉ xem | cơ chế không 7-Eleven(§4.1 sửa chữa 2) **không có chặn bản chất trực tuyến sụp đổ **
 
 ---
 
-## §0 一页结论
+## §0 một đầu kết luận
 
-**总判断：界面这一仗我们刚刚追平，产品这一仗还差一个身位。**
-wofo 是「模考 + 内容库 + AI 批改/带练 + 词表 + 打卡 + 付费课程 + 申请规划」的学习平台；我们目前是「一套做得挺像的模考引擎 + 一个还没被学生看见的题库」。差距最大的不是 UI，而是三件我们**数据已经在手边却没做成产品**的事：学员数据不上云、生词本/练习记录只有占位页、bank 题库解析与音频大面积缺失。
+**tổng thể phán đoán: bề mặt tiếp xúc này một vũ khí chúng tôi mới đây điêu khắc phẳng, hàng hóa này một vũ khí vẫn sự khác biệt một dùng trong | cơ thể vị trí **
+wofo là«bắt chước đánh + nội dung nhà kho + AI Chấm bài/dải luyện tập + biến thể cũ của | bề mặt bên ngoài + chấm công vào + trả tiền khóa học + nộp đơn xin lập kế hoạch»của học nền tảng; chúng tôi hiện tại là«bộ làm được thẳng giống của bắt chước đánh động cơ + một dùng trong | vẫn chưa chăn học sinh nhìn thấy của ngân hàng câu hỏi» chênh lệch biến thể của to của không phải UI, mà là ba món chúng tôi**dữ liệu đã tồn tại trong tay biến thể cũ của | chưa làm thành công hàng hóa**của sự việc: học viên dữ liệu không dùng trong | nói, sổ tay từ vựng/luyện tập ghi chép chỉ có biến thể của vị trí đầu, bank ngân hàng câu hỏi phân tích biến thể của | âm thanh diện tích lớn thiếu 
 
-**另有一条 v1.1 报错的必须更正**（见 §4.1 更正 2）：我一度判定"完整模考必然崩在写作科目"，实测证伪——写作休息屏走的是屏内 Continue 按钮，底部导航条当时是禁用状态，那行引用未声明变量的代码**当前点不到**。真实问题降级为：三科休息屏机制不统一 + 写作里埋了一颗不可达的雷（P-56）。**结论：没有阻断性线上崩溃，别按我上一条消息去抢修。**
+**có điều gì khác một dải v1.1 báo lỗi của phải sửa chữa**(thấy §4.1 sửa chữa 2): tôi một thời phán đoán " hoàn chỉnh bắt chước đánh không thể tránh khỏi sụp đổ tồn tại viết môn học ", đo lường chứng minh là sai--viết nghỉ xem | đi của là xem | bên trong Continue nút bấm, đáy điều hướng dải lúc đó là cấm sử dụng tình trạng, biến thể của hàng trích dẫn chưa phát biểu biến số của mã**thời điểm hiện tại điểm không đến** thật câu hỏi giáng chức làm: ba ngành học nghỉ xem | cơ chế không 7-Eleven + viết biến thể của | chôn hoàn thành một lượng từ cho vật nhỏ hình cầu không thể đạt tới của sấm sét(P-56) **kết luận: không có chặn bản chất trực tuyến sụp đổ, rời khỏi nhấn tôi dùng trong | một dải tin tức đi sửa chữa khẩn trương **
 
-### 评分卡（1 差 · 5 标杆）
+### chấm điểm dừng(1 sự khác biệt · 5 cột đo đạc)
 
-| # | 维度 | wofo | 我们 | 差距根因 |
+| # | chiều | wofo | chúng tôi | chênh lệch rễ biến thể cũ của |
 |---|---|---|---|---|
-| 1 | 产品定位完整度 | 5 | 2 | 我们是模考工具，它是备考平台 |
-| 2 | 模考内容规模 | 5（首页标称 40 套，历史里出现 mock-50） | 2（代码只枚举 set-1…set-10） | 内容生产与上架，不是 UI |
-| 3 | 考试界面还原度 | 5 | 4.5 | 今天对齐后已接近；细节仍缺（见 §3） |
-| 4 | 交卷后成绩与复盘 | 4.5 | 4 | 结构已 1:1，差在图例/Module 定位/诊断 |
-| 5 | 解析内容覆盖率 | 5 | 1 | **CW 逐空解析 set / free / bank 三处全为 0**；bank 总覆盖 16.9% |
-| 6 | 诊断与个性化（生词本/错词/词表） | 4.5 | 1 | 数据在 localStorage，页面是 soon.html |
-| 7 | AI 能力（批改/带练/助教） | 5 | 0 | 决策⑥⑧主动未做 → 需重拍 |
-| 8 | 学习动机与留存（打卡/任务/积分） | 4 | 2 | 我们有连续天数，无任务体系 |
-| 9 | 学员数据资产（跨设备/教师可见） | 5 | 1 | 交卷记录不上云，换机即丢 |
-| 10 | 断点续考 | 5（"进行中→继续考试"） | 1 | 只有 markLeave，无服务端续考 |
-| 11 | 教务与内容运营 | 未取证（按你要求只自评） | 3 | 后台能用但无版本无回滚 |
-| 12 | 商业化（订单/权益/价格） | 5 | 2 | 我们有座位/激活码，无学生侧购买闭环 |
-| 13 | 移动端与性能 | 未测 | 未测 | 本轮未跑，见 §I |
-| 14 | 安全与鉴权 | 未测 | 2 | preview/id 可越权，真题 JSON 零鉴权 |
+| 1 | hàng hóa định hướng hoàn chỉnh vượt qua | 5 | 2 | chúng tôi là bắt chước đánh công cụ, nó là chuẩn bị cho kỳ thi nền tảng |
+| 2 | bắt chước đánh nội dung quy mô | 5(trang chủ danh nghĩa 40 Bộ, lịch sử biến thể của | xuất hiện mock-50) | 2(mã chỉ liệt kê set-1...set-10) | nội dung sản xuất biến thể của | đưa hàng lên kệ, không phải UI |
+| 3 | dự thi bề mặt tiếp xúc khôi phục về trạng thái ban đầu vượt qua | 5 | 4.5 | hôm nay căn chỉnh hoàng hậu đã tiếp cận; chi tiết vẫn sự thiếu(thấy §3) |
+| 4 | nộp bài thi hoàng hậu thành tích biến thể của | chơi lại ván cờ | 4.5 | 4 | cấu trúc đã 1:1, sự khác biệt tồn tại chú giải/Module Xác định vị trí/Chẩn đoán |
+| 5 | phân tích nội dung mức độ bao phủ | 5 | 1 | **CW theo đuổi trống không phân tích set / free / bank ba cư trú tất cả làm 0**; bank tổng thể che phủ 16.9% |
+| 6 | chẩn đoán biến thể của | cá nhân hóa(sổ tay từ vựng/lỗi biến thể cũ của |/biến thể cũ của | bề mặt bên ngoài) | 4.5 | 1 | dữ liệu tồn tại localStorage, trang là soon.html |
+| 7 | AI năng lực(Chấm bài/dải luyện tập/trợ giảng) | 5 | 0 | quyết định chiến lược ⑥⑧ chủ động chưa làm → yêu cầu lặp lại vỗ |
+| 8 | học động cơ biến thể của | giữ gìn(chấm công vào/nhiệm vụ/tích phân) | 4 | 2 | chúng tôi có liên tục số ngày, vô cùng công việc hệ thống |
+| 9 | học viên dữ liệu tài sản(bước qua thiết bị/giáo viên có thể thấy rõ) | 5 | 1 | nộp bài thi ghi chép không dùng trong | nói, trao đổi máy móc tức là mất |
+| 10 | điểm dừng tiếp tục đánh | 5(" tiến hành Trung Quốc→tiếp tục dự thi ") | 1 | chỉ có markLeave, không có phục vụ cuối tiếp tục đánh |
+| 11 | quản lý giáo dục biến thể của | nội dung hoạt động | chưa thu thập chứng cứ(nhấn bạn yêu cầu chỉ tự thảo luận) | 3 | khu vực hậu trường có thể sử dụng nhưng không có phiên bản không có quay lui |
+| 12 | thương mại hóa(đơn đặt hàng/quyền lợi/giá) | 5 | 2 | chúng tôi có chỗ ngồi/kích hoạt trọng lượng, không có học sinh một bên mua vòng kín |
+| 13 | di chuyển cuối biến thể của | chức năng | chưa khảo sát | chưa khảo sát | gốc bánh xe chưa cào, thấy §I |
+| 14 | an toàn biến thể của | biến thể của | quyền lực | chưa khảo sát | 2 | preview/id có thể vượt quá thẩm quyền, Đề thi thật JSON không biến thể của | quyền lực |
 
 ---
 
-## §1 取证方法与证据等级
+## §1 thu thập chứng cứ phương pháp biến thể của | bằng chứng hạng
 
-- `[实测]` 我亲手在你的 Chrome 里点开并读取 DOM/截图。wofo 侧账号 jackman（未新建考试记录，只复用了你已有的复盘页）；我们侧 youyisida.com/app（账号 Wanli）。
-- `[代码]` 仓库内 `file:line` 或脚本实测统计。
-- `[推断]` 仅凭行业常识，不作结论依据。
-- wofo 后台未取证（按你的决定：教务侧只自评）。
-
----
-
-## §2 结构差距：它是平台，我们是工具
-
-wofo 托福线的一级入口 `[实测]`：`/toefl` 总览、`/toefl/mock` 模考、`/toefl/courses` 课程、`/my-exams` 我的模考、`/my-courses` 我的课程、`/messages` 消息、`/wallet` 钱包·订单、`/me` 个人设置、`/typing/toefl` 打字练习、生词本（在 /my-exams 内切换）、AI 助教（全站顶部）。
-再外面还有：雅思/GRE/GMAT/SAT/ACT 同构产品线 + 留学申请（选校定位、文书助手、申请管理、导师团队）。
-
-我们托福线的一级入口 `[实测]`：`app/home`、`app/practice`、`app/mock`、`app/profile`、`app/official`、`app/free`、四科 `*-lab`。
-其中 `app/profile` 的「生词本」和「练习记录」两个入口都指向 `soon.html`（页面自述"这一页第一期先占位"）`[代码 app/soon.html:16]`。
+- `[đo lường]` tôi đích thân tồn tại bạn của Chrome biến thể của | điểm mở và đọc DOM/ảnh chụp màn hình wofo một bên số tài khoản jackman(chưa huyện Xinjian ở Nam Xương dự thi ghi chép, chỉ đi rồi quay lại sử dụng hoàn thành bạn đã một số chơi lại ván cờ đầu); chúng tôi một bên youyisida.com/app(số tài khoản Wanli) 
+- `[mã]` kho hàng bên trong `file:line` có thể kịch bản đo lường thống kê 
+- `[suy luận]` hầu như biến thể của | ngành nghề kiến thức chung, không công nhân kết luận dựa vào 
+- wofo khu vực hậu trường chưa thu thập chứng cứ(nhấn bạn của quyết định: quản lý giáo dục một bên chỉ tự thảo luận) 
 
 ---
 
-## §3 模考闭环逐点对比（最要紧的一段）
+## §2 cấu trúc chênh lệch: nó là nền tảng, chúng tôi là công cụ
 
-| 环节 | wofo `[实测]` | 我们 `[实测/代码]` | 判定 |
+wofo TOEFL biến thể của | của hạng nhất lối vào `[đo lường]`: `/toefl` cái nhìn tổng quan, `/toefl/mock` bắt chước đánh, `/toefl/courses` Khóa học, `/my-exams` tôi của bắt chước đánh, `/my-courses` tôi của khóa học, `/messages` tin tức, `/wallet` ví·đơn đặt hàng, `/me` cá nhân thiết lập, `/typing/toefl` đánh máy luyện tập, sổ tay từ vựng(tại /my-exams nội tiếp trao đổi), AI trợ giảng(tất cả trạm mái) 
+lại bên ngoài vẫn còn: IELTS/GRE/GMAT/SAT/ACT đồng cấu hàng hóa biến thể của | + du học nộp đơn xin(chọn kiểm tra định hướng, tài liệu trợ lý, nộp đơn xin giám sát, gia sư đội nhóm) 
+
+chúng tôi TOEFL biến thể của | của hạng nhất lối vào `[đo lường]`: `app/home`, `app/practice`, `app/mock`, `app/profile`, `app/official`, `app/free`, bốn ngành học `*-lab` 
+trong số `app/profile` của«sổ tay từ vựng»và«luyện tập ghi chép»hai dùng trong | lối vào tất cả chỉ về `soon.html`(trang kể lại bằng lời của chính mình " này một đầu đầu tiên biến thể của trước biến thể của vị trí ")`[mã app/soon.html:16]` 
+
+---
+
+## §3 bắt chước đánh vòng kín theo đuổi điểm so sánh(biến thể của quan trọng của một đoạn)
+
+| đốt | wofo `[đo lường]` | chúng tôi `[đo lường/mã]` | phán đoán |
 |---|---|---|---|
-| 交卷中间屏 | Generate score report → View | 已上线（今天） | 平 |
-| 成绩+解析同页 Tab | 分数/阅读/听力/写作/口语 | 已上线，未考科 disabled | 平 |
-| 成绩单双卡 | 本次 + MyBest，跨日期取最高 | 已上线 | 平 |
-| 分数换算 | 1–6 档 **+ 95+ of 120 + CEFR C1** | 只有 1–6 档 + 预估标注 | 我们缺 |
-| 复盘 sub-bar | `Reading \| Module 1 · Question 1 of 17` | `阅读 · Question 1 of 10`（无 Module） | 我们缺 |
-| 复盘颜色图例 | 「绿色=你填对了 / 红色=你填错了 / 虚线=你没填」三行常驻 | 无图例 | 我们缺 |
-| 逐空解析 | 每条含语法/搭配/语境解释 | 有面板，set 的 CW 解析 0 条 | 内容缺 |
-| 索引 + Next/Back | 右上角 | 已上线 | 平 |
-| 题目跳转 / 文本高亮 | 各题型均可用 | **只有阅读有**（听力、口语两者皆无，写作有跳转无高亮）| 我们缺，见 P-57 |
-| 模块间休息屏 | 统一走导航条 | 四科都能推进；但阅读/听力用底部导航条、写作用屏内按钮，机制不统一 | 能用，见 P-56 |
-| 分数页底部提示 | 4 条：进入复习指引 / 打字练习钩子 / AI 助教+历史成绩钩子 / 联系客服 | 1 条（未考科显示 --）+ 保存成绩单 | 我们缺钩子 |
-| 历史记录 | 按套分组、已完成/进行中计数、每次记录含模式与五档分、删除/永久删除 | `soon.html` 占位 | 我们缺 |
-| 断点续考 | 进行中 → 继续考试（服务端） | 无 | 我们缺 |
-| 保存成绩单 | 有 | 有（打印/PDF） | 平（PNG 未做） |
+| nộp bài thi ở giữa xem | | Generate score report → View | đã lên mạng(hôm nay) | phẳng |
+| Kết quả+phân tích giống đầu Tab | điểm/Đọc hiểu/Nghe hiểu/Viết/Nói | đã lên mạng, chưa đánh ngành học disabled | phẳng |
+| phiếu điểm hoặc bảng điểm hai dừng | gốc tiếp theo + MyBest, bước qua ngày tháng lấy cao nhất | đã lên mạng | phẳng |
+| điểm chuyển đổi | 1–6 số **+ 95+ of 120 + CEFR C1** | chỉ có 1–6 số + ước tính đánh dấu | chúng tôi sự thiếu |
+| chơi lại ván cờ sub-bar | `Reading \| Module 1 · Question 1 of 17` | `Đọc hiểu · Question 1 of 10`(không có Module) | chúng tôi sự thiếu |
+| chơi lại ván cờ màu sắc chú giải | «màu xanh lá=bạn lấp hoặc nhồi Đúng rồi! / màu đỏ=bạn lấp hoặc nhồi lỗi hoàn thành / đường chấm=bạn chưa lấp hoặc nhồi»ba hàng cư trú | không có chú giải | chúng tôi sự thiếu |
+| theo đuổi trống không phân tích | mỗi dải ngậm trong miệng ngữ pháp/Cụm đi kèm/ngữ cảnh giải thích | có bảng điều khiển, set của CW Giải thích 0 dải | nội dung sự thiếu |
+| chỉ mục + Next/Back | phía trên bên phải góc | đã lên mạng | phẳng |
+| chủ đề nhảy đến / một văn bản tô sáng | mỗi chủ đề khuôn đều được sử dụng | **chỉ có đọc có**(Nghe hiểu, lời nói thông thường hai bên tất cả không có, viết có nhảy đến không có tô sáng)| chúng tôi sự thiếu, thấy P-57 |
+| mô-đun giữa nghỉ xem | | 7-Eleven đi điều hướng dải | bốn ngành học tất cả có thể thúc đẩy; nhưng đọc/thính giác sử dụng đáy điều hướng dải, viết sử dụng xem | bên trong nút bấm, cơ chế không 7-Eleven | có thể sử dụng, thấy P-56 |
+| điểm phần dưới của trang bộ chỉ ra | 4 dải: đi vào xem lại hướng dẫn / đánh máy luyện tập cái móc / AI trợ giảng+lịch sử thành tích cái móc / biến thể của | dịch vụ khách hàng | 1 dải(chưa đánh ngành học hiển thị --)+ bảo tồn phiếu điểm hoặc bảng điểm | chúng tôi sự thiếu cái móc |
+| lịch sử ghi chép | nhấn che đậy chia thành nhóm, đã hoàn thành/tiến hành rơi vào bẫy đếm, mỗi lần ghi chép ngậm trong miệng chế độ biến thể của | năm số chia, Xóa/vĩnh cửu xóa | `soon.html` biến thể của vị trí | chúng tôi sự thiếu |
+| điểm dừng tiếp tục đánh | tiến hành Trung Quốc → tiếp tục dự thi(phục vụ cuối) | không có | chúng tôi sự thiếu |
+| bảo tồn phiếu điểm hoặc bảng điểm | có | có(đóng dấu/PDF) | phẳng(PNG chưa làm) |
 
 ---
 
-## §4 问题索引（勾选用）
+## §4 câu hỏi chỉ mục(chọn sử dụng)
 
-档位说明：**S**=小成本高感知（先做）｜**M**=中等投入｜**L**=大投入或需重拍｜**Q**=质量/数据修复｜**R**=安全风险
+số vị trí giải thích: **S**=nhỏ chi phí cao nhận thức(trước làm) **M**=trung bình ném vào **L**=to ném vào có thể yêu cầu lặp lại vỗ **Q**=chất lượng/dữ liệu khôi phục **R**=an toàn rủi ro
 
-### A 模考闭环与界面（范围内，可直接开工）
+### A bắt chước đánh vòng kín biến thể của | bề mặt tiếp xúc(phạm vi bên trong, có thể trực tiếp bắt đầu công việc)
 
-- **P-01** 复盘页缺「绿=对 / 红=错 / 虚线=没填」颜色图例，学生第一眼读不懂 `[实测 wofo]` — **S**
-- **P-02** sub-bar 没有 Module 层级，长卷定位不清（wofo 是 `Module 1 · Question 1 of 17`）`[实测]` — **S**
-- **P-03** 成绩单只有 1–6 档，缺 0–120 总分与 CEFR 等级双换算 `[实测 wofo: 5.0 of 6 / 95+ of 120 / CEFR C1]` — **M**
-- **P-04** 分数页底部没有引导钩子（去复习/去练弱项/看历史）`[实测]` — **S**
-- **P-05** 保存成绩单只有打印，无 PNG 分享图（任务 #7 未做）`[代码]` — **M**
-- **P-06** 口语/写作交卷后不再有独立成绩屏，复盘页只给单条范文，多任务时"你的作答 vs 范文"对照变弱（今天引入的降级）`[代码 toefl-writing/speaking.html]` — **S**
-- **P-07** 复盘页 `#done`、`#score-line`、`#pct-line`、`#wrong-preview`、`#back`、`#rep` 等节点与 `handoffApp` 已成死码，留在页面里 `[代码]` — **S**
-- **P-08** 交卷确认在 ETS 壳里是「Exit → Submit」，文案与 wofo 的「结束并出分」语义差一截，学生容易以为只是退出 `[实测双方]` — **S**
-- **P-09** 计时到期提示 wofo 有明确 `Reading time has expired.` 状态条，我们未见等价反馈 `[实测]` — **S**
-- **P-10** 完整模考的科目 Tab 依赖 attempt 记录，而写作/口语根本不写 attempt，导致这四科 Tab 在真实全卷场景永远灰着 `[代码 toefl-lab.js logAttempt]` — **M**
+- **P-01** chơi lại ván cờ đầu sự thiếu«màu xanh lá=đối với / đỏ=lỗi / đường chấm=chưa lấp hoặc nhồi»màu sắc chú giải, học sinh thoạt nhìn dấu phẩy không hiểu `[đo lường wofo]` - **S**
+- **P-02** sub-bar không có Module cấp độ, chiều dài cuộn lại định hướng không rõ ràng(wofo là `Module 1 · Question 1 of 17`)`[đo lường]` - **S**
+- **P-03** phiếu điểm hoặc bảng điểm chỉ có 1–6 số, sự thiếu 0–120 điểm tổng biến thể của | CEFR hạng hai chuyển đổi `[đo lường wofo: 5.0 of 6 / 95+ of 120 / CEFR C1]` - **M**
+- **P-04** điểm phần dưới của trang bộ không có hướng dẫn cái móc(đi xem lại/đi luyện tập điểm yếu của một người/chăm sóc lịch sử)`[đo lường]` - **S**
+- **P-05** bảo tồn phiếu điểm hoặc bảng điểm chỉ có đóng dấu, không có PNG chia sẻ sơ đồ(nhiệm vụ #7 chưa làm)`[mã]` - **M**
+- **P-06** Nói/viết nộp bài thi hoàng hậu không còn có độc lập thành tích xem |, chơi lại ván cờ đầu chỉ cho hóa đơn dải mô hình ngôn ngữ, nhiều nhiệm vụ biến thể cũ của | " bạn của trả lời vs mô hình ngôn ngữ " đối chiếu thay đổi yếu(hôm nay đưa vào của giáng chức)`[mã toefl-writing/speaking.html]` - **S**
+- **P-07** chơi lại ván cờ đầu `#done`, `#score-line`, `#pct-line`, `#wrong-preview`, `#back`, `#rep` đợi điểm nút biến thể của | `handoffApp` đã thành công chết trọng lượng, biến thể cũ của tồn tại trang biến thể của | `[mã]` - **S**
+- **P-08** nộp bài thi xác nhận tồn tại ETS biến thể của | biến thể của | là«Exit → Submit», nội dung biến thể của | wofo của«chấm dứt và đi ra chia»nghĩa của từ sự khác biệt một cắt đứt, học sinh dễ dàng nghĩ rằng chỉ rút lui `[đo lường song phương]` - **S**
+- **P-09** đo thời gian đến hạn chỉ ra wofo có rõ ràng `Reading time has expired.` tình trạng dải, chúng tôi chưa thấy bằng nhau gửi thông tin phản hồi `[đo lường]` - **S**
+- **P-10** hoàn chỉnh bắt chước đánh của môn học Tab phụ thuộc vào attempt ghi chép, và viết/lời nói thông thường cơ bản không viết attempt, dẫn đến này bốn ngành học Tab tồn tại thật tất cả cuộn lại cảnh mãi mãi tro nước đi `[mã toefl-lab.js logAttempt]` - **M**
 
-### A+ 壳层坏路与未接线（v1.1 新增，全部本轮实证）
+### A+ biến thể của | chồng lên nhau xấu đường biến thể của | chưa đấu dây(v1.1 thêm, toàn bộ gốc bánh xe bằng chứng thực tế)
 
-- **P-56**（v1.2 已降级，原报"完整模考必崩"是我的过度推断）**休息屏三科机制不统一，写作里埋着一颗雷**：阅读 `:420` 与听力 `:318` 在 `show(rest)` 之后额外调 `setNav(true)`，所以底部导航条的 Continue 可点，`startModule(pendingNext || 2)` 分支是**活的**（这两科都声明了 `pendingNext`）；写作用屏内 `#rest-go` 按钮推进（`:427`），全程没有 `setNav(true)`，底部 Next 在休息屏是 disabled → `toefl-writing.html:471` 引用**从未声明的 `pendingNext`**，当前**点不到、不崩**，属不可达死分支 `[实测：show() 内 setNav(el===exam||el===review) + 全仓 pendingNext 仅 4 处命中已核]` — **S**（要么补声明、要么删分支；一旦有人把写作休息屏统一成导航条式，立刻变 ReferenceError）
-- **P-57** 题目跳转与文本高亮只有阅读具备：`review-btn` 命中 阅读2/写作2/听力0/口语0，`ets-hl-pop` 命中 阅读2/其余0 `[实测 grep]`。wofo 各题型都能跳题和高亮 — **S**（复制既有实现，非新逻辑）
-- **P-58** 收藏功能整条不可达：`toefl-lab.js:315-316` 绑定的 `#fav-task-btn` / `#fav-item-btn` 在全仓 HTML 中不存在；存储键 `yysd:toefl-favs` 与逻辑都在，只差挂按钮 `[实测 grep]` — **S**
-- **P-59** 口语「Export all responses」永不显示：按钮位于 `#done` 屏内（`toefl-speaking.html:72`），而 `show()` 全文只被调用过 `show(exam)` / `show(rest)` `[实测 grep]` — **S**
-- **P-60** 官网托福总览「选择训练方式」两张卡永远空白：`zone.js:668-676` 向导航表要 `lab` / `dates` 两个 key，`config.js:109-114` 的 `NAV.toefl` 只定义了四科 `[实测]` — **S**
-- **P-61** 成绩单页 `toefl-score.html` 已上线但**没有任何可点入口**：唯一入口挂在死的 `#score-report` 上，其余靠手输 URL `[代码 + 实测]` — **S**（与 P-14 同一页列表可一并解）
-- **P-62** 口语录音存 `yysd:app-speak-recs`，超过 5MB 静默丢弃（无提示、无降采样）`[代码 toefl-speaking.js:157，此条来自机器勘察，尚未独立复验]` — **M · 待复验**
+- **P-56**(v1.2 đã giáng chức, trước đây thông báo " hoàn chỉnh bắt chước đánh nhất định sụp đổ " là tôi của quá mức suy luận)**nghỉ xem | ba ngành học cơ chế không 7-Eleven, viết biến thể của | chôn nước đi một lượng từ cho vật nhỏ hình cầu sấm sét**: Đọc hiểu `:420` biến thể của | thính giác `:318` tại `show(rest)` sau thêm điều chuyển `setNav(true)`, vì vậy đáy điều hướng dải của Continue có thể điểm, `startModule(pendingNext || 2)` chi nhánh là**sống của**(này hai ngành học tất cả phát biểu hoàn thành `pendingNext`); viết sử dụng xem | bên trong `#rest-go` nút bấm thúc đẩy(`:427`), toàn bộ quãng đường không có `setNav(true)`, đáy Next tồn tại nghỉ xem | là disabled → `toefl-writing.html:471` trích dẫn**chưa từng phát biểu của `pendingNext`**, thời điểm hiện tại**điểm không đến, không sụp đổ**, phân loại không thể đạt tới chết chi nhánh `[đo lường: show() bên trong setNav(el===exam||el===review) + tất cả kho pendingNext hầu như 4 cư trú bắn trúng đã hạt nhân]` - **S**(hoặc sửa phát biểu, hoặc xóa chi nhánh; trong trường hợp ai đó cầm viết nghỉ xem | 7-Eleven thành công điều hướng dải loại, ngay lập tức thay đổi ReferenceError)
+- **P-57** chủ đề nhảy đến biến thể của | một văn bản tô sáng chỉ có đọc có: `review-btn` bắn trúng Đọc hiểu 2/Viết 2/Nghe hiểu 0/Nói 0, `ets-hl-pop` bắn trúng Đọc hiểu 2/phần còn lại 0 `[đo lường grep]` wofo mỗi chủ đề khuôn tất cả có thể nhảy chủ đề biến thể cũ của tô sáng - **S**(nhân bản tồn tại đạt được, viết tắt của viết tắt của Tân Cương logic)
+- **P-58** sưu tầm chức năng toàn bộ không thể đạt tới: `toefl-lab.js:315-316` ràng buộc của `#fav-task-btn` / `#fav-item-btn` tồn tại tất cả kho HTML Trung Quốc không tồn tại; tích trữ phím `yysd:toefl-favs` biến thể của | logic tất cả tồn tại, chỉ sự khác biệt treo nút bấm `[đo lường grep]` - **S**
+- **P-59** Nói«Export all responses»không bao giờ hiển thị: nút bấm nằm ở `#done` xem | bên trong(`toefl-speaking.html:72`), và `show()` toàn văn chỉ chăn điều chuyển băng qua `show(exam)` / `show(rest)` `[đo lường grep]` - **S**
+- **P-60** trang web chính thức TOEFL cái nhìn tổng quan«chọn huấn luyện cách thức»hai mở ra dừng mãi mãi khoảng trống: `zone.js:668-676` hướng dẫn thuyền bề mặt bên ngoài yêu cầu `lab` / `dates` hai dùng trong | key, `config.js:109-114` của `NAV.toefl` chỉ định nghĩa hoàn thành bốn ngành học `[đo lường]` - **S**
+- **P-61** phiếu điểm hoặc bảng điểm đầu `toefl-score.html` đã lên mạng nhưng**không có bất kỳ có thể điểm lối vào**: chỉ lối vào treo tồn tại chết của `#score-report` trên, phần còn lại dựa vào tay thua URL `[mã + đo lường]` - **S**(và P-14 giống hệt đầu danh sách có thể biến thể của | chia)
+- **P-62** lời nói thông thường ghi âm tồn tại `yysd:app-speak-recs`, vượt qua 5MB im lặng vứt bỏ(không có chỉ ra, không có rơi lấy mẫu)`[mã toefl-speaking.js:157, này dải đến từ máy móc trinh sát, chưa độc lập đi rồi quay lại biến thể của |]` - **M · đợi được thông báo biến thể của |**
 
 
-### B 学员数据与账号（范围内，价值最高）
+### B học viên dữ liệu biến thể của | số tài khoản(phạm vi bên trong, giá trị cao nhất)
 
-- **P-11** 模考/冲刺包/官方全真交卷**完全不回传服务端**，成绩只进 localStorage `[代码 app/assets/js/tiku-run.js:91-100、assets/js/toefl-full.js:291]` — **M**
-- **P-12** 模考历史封顶 200 条且只在本机 `[代码 assets/js/toefl-lab.js:142-165]` — **M**（同 P-11 一并解）
-- **P-13** 老师看不到托福机考学员的逐题对错，无法讲评 `[代码 tiku-run.js:79-88 只回传聚合分；对照 assets/js/exam.js:995]` — **M**
-- **P-14** 「练习记录」页是 soon.html 占位，学生自己看不到历史成绩 `[实测 + 代码 app/soon.html:16]` — **S**（数据已有，只差一页列表）
-- **P-15** 「生词本」数据已在本地积累（`yysd:saved-words`）但入口是占位页 `[实测 profile.html + localStorage]` — **S**
-- **P-16** 无断点续考：中途退出=重考，wofo 有「进行中→继续考试」`[实测]` — **L**
-- **P-17** 无消息/通知中心（wofo /messages，且有未读计数）`[实测]` — **L**（机构场景可用飞书/微信替代，需重拍）
+- **P-11** bắt chước đánh/chạy nước rút che phủ/chính phủ tất cả thật nộp bài thi**hoàn chỉnh không xoay vòng truyền đạt phục vụ cuối**, thành tích chỉ tiến lên localStorage `[mã app/assets/js/tiku-run.js:91-100, assets/js/toefl-full.js:291]` - **M**
+- **P-12** bắt chước đánh lịch sử lợp mái 200 dải và chỉ tồn tại gốc máy móc `[mã assets/js/toefl-lab.js:142-165]` - **M**(giống P-11 biến thể của | chia)
+- **P-13** giáo viên chăm sóc không đến TOEFL máy móc đánh học viên của theo đuổi chủ đề đúng lỗi, không thể phê bình `[mã tiku-run.js:79-88 chỉ xoay vòng truyền đạt tập hợp lại chia; đối chiếu assets/js/exam.js:995]` - **M**
+- **P-14** «luyện tập ghi chép»đầu là soon.html biến thể của vị trí, học sinh bản thân chăm sóc không đến lịch sử thành tích `[đo lường + mã app/soon.html:16]` - **S**(dữ liệu đã có, chỉ sự khác biệt một đầu danh sách)
+- **P-15** «sổ tay từ vựng»dữ liệu đã tồn tại địa phương tích lũy(`yysd:saved-words`)nhưng lối vào là biến thể của vị trí đầu `[đo lường profile.html + localStorage]` - **S**
+- **P-16** không có điểm dừng tiếp tục đánh: giữa chừng rút lui=lặp lại đánh, wofo có«tiến hành Trung Quốc→tiếp tục dự thi»`[đo lường]` - **L**
+- **P-17** không có tin tức/thông báo trung tâm(wofo /messages, và có chưa dấu phẩy đếm)`[đo lường]` - **L**(cơ chế cảnh có thể sử dụng bay viết tắt của |/Weixin hoặc WeChat thay thế cho, yêu cầu lặp lại vỗ)
 
-### C 内容与数据缺口（跑批/修数据，不是改代码）
+### C nội dung biến thể của | dữ liệu mẻ(cào xác minh/trang trí dữ liệu, không phải thay đổi mã)
 
-- **P-18** 能考的 10 套 set 里，**阅读填空（CW）逐空解析 0 条**，每套固定缺 10 空 → 学生最常练的题型恰好最空 `[代码统计]` — **Q**
-- **P-19** bank 成套模考解析覆盖 **16.9%**（7874 单元里 1331 条）；听力 bank **0/2187**、写作 bank **0/1084** `[代码统计]` — **Q**
-- **P-20** bank 口语解析虽标 100%，实为模板占位（均长 21 字，"围绕「X」作答。"），等于没有 `[代码统计]` — **Q**
-- **P-21** **897 条口语音频 404**：文件在仓库根 `library/toefl/audio/bank-iv|bank-lr/`，未拷进 `app/` 树，属路径基准错位 → 口语 bank 整块没声音 `[代码统计+抽检]` — **Q**（疑似一次拷贝即可修）
-- **P-22** `free` 阅读填空 103 篇的 `analysis` 字段装的是英中对照译文，不是逐空解析 → 旧结论「free 解析 100% 齐全」是误判，实际逐空 **0/1030** `[代码统计]` — **Q**
-- **P-23** 277 处 `analysis` 键存在但值为空（bank-we 102、bank-ad 87、free email/discussion 88）→ UI 会显示空解析条 `[代码统计]` — **Q**
-- **P-24** `set-58-reading.json` 存在但代码只枚举 set-1…set-10，永远考不到；且缺 `skill` 字段、CW 空位 21–35 跳号 `[代码 hit-shell.js:319 + 统计]` — **Q**
-- **P-25** `set-58-r1.json` 是孤儿文件（无 tasks，内容与 set-58-reading 第一篇重复）`[代码统计]` — **Q**
-- **P-26** `bank-cw-reading.json` 246 篇里 6 组标题重名（Crop Rotation / Archaeology / Fungi 等），索引页会看不出区别 `[代码统计]` — **Q**
-- **P-27** 题库套数口径三处不一致：首页硬编码「15 套完整模考」、代码枚举 10 套、冲刺包页只有 3 个日期包 `[实测 + 代码 hit-shell.js:631]` — **S**
-- **P-28** 译文覆盖极低：bank CW 21.5%、RAP 5.5%、RDL/听力/口语/写作 0%（wofo 复盘页"显示中文"是常驻能力）`[代码统计]` — **Q**
+- **P-18** có thể đánh của 10 Bộ set biến thể của |, **đọc lấp chỗ trống công việc(CW)theo đuổi trống không phân tích 0 dải**, mỗi che đậy cố định sự thiếu 10 trống không → học sinh biến thể của luôn luôn luyện tập của chủ đề khuôn hoá ra biến thể của trống không `[mã thống kê]` - **Q**
+- **P-19** bank hình thành một bộ hoàn chỉnh bắt chước đánh phân tích che phủ **16.9%**(7874 đơn vị biến thể của | 1331 dải); Nghe hiểu bank **0/2187**, Viết bank **0/1084** `[mã thống kê]` - **Q**
+- **P-20** bank lời nói thông thường phân tích mặc dù đánh dấu 100%, thật làm mẫu biến thể của vị trí(bằng chiều dài 21 chữ, " xoay quanh«X»Trả lời "), bằng không có `[mã thống kê]` - **Q**
+- **P-21** **897 dải lời nói thông thường âm thanh 404**: tài liệu tồn tại kho hàng rễ `library/toefl/audio/bank-iv|bank-lr/`, chưa đánh tiến lên `app/` cây, phân loại con đường mốc chuẩn bị đặt sai vị trí → Nói bank toàn bộ cục chưa giọng `[mã thống kê+lấy mẫu]` - **Q**(bị nghi ngờ là đầu tiên sao chép tương đương với trang trí)
+- **P-22** `free` đọc lấp chỗ trống công việc 103 tờ của `analysis` ) trang sức của là trường trung học ở Hồng Kông sử dụng tiếng Anh làm ngôn ngữ giảng dạy đối chiếu văn bản dịch, không phải theo đuổi trống không phân tích → cũ kết luận«free Giải thích 100% đầy đủ»là phán đoán sai, thực tế theo đuổi trống không **0/1030** `[mã thống kê]` - **Q**
+- **P-23** 277 cư trú `analysis` phím tồn tại nhưng giá trị làm trống không(bank-we 102, bank-ad 87, free email/discussion 88)→ UI có thể hiển thị trống không phân tích dải `[mã thống kê]` - **Q**
+- **P-24** `set-58-reading.json` tồn tại nhưng mã chỉ liệt kê set-1...set-10, mãi mãi đánh không đến; và sự thiếu `skill` ), CW chỗ trống 21–35 nhảy gầm `[mã hit-shell.js:319 + thống kê]` - **Q**
+- **P-25** `set-58-r1.json` là trẻ mồ côi tài liệu(không có tasks, nội dung biến thể của | set-58-reading đầu tiên tờ lặp lại)`[mã thống kê]` - **Q**
+- **P-26** `bank-cw-reading.json` 246 tờ biến thể của | 6 hình thành tiêu đề trùng tên(Crop Rotation / Archaeology / Fungi đợi), chỉ mục đầu có thể không thể nhận ra sự khác biệt `[mã thống kê]` - **Q**
+- **P-27** ngân hàng câu hỏi chuỗi bài trong kinh kịch Trung Quốc lỗ khoan ba cư trú thay đổi tinh tế: trang chủ mã hóa cứng«15 che đậy hoàn chỉnh bắt chước đánh», mã liệt kê 10 Bộ, chạy nước rút che phủ đầu chỉ có 3 dùng trong | ngày tháng che phủ `[đo lường + mã hit-shell.js:631]` - **S**
+- **P-28** văn bản dịch che phủ cực kỳ thấp: bank CW 21.5%, RAP 5.5%, RDL/Nghe hiểu/Nói/Viết 0%(wofo chơi lại ván cờ đầu " hiển thị ngôn ngữ Trung Quốc " là cư trú năng lực)`[mã thống kê]` - **Q**
 
-### D 诊断、个性化与 AI（多数与旧决策⑥⑧冲突 → 需重拍）
+### D Chẩn đoán, cá nhân hóa biến thể của | AI(đa số biến thể của | cũ quyết định chiến lược ⑥⑧ xung đột → yêu cầu lặp lại vỗ)
 
-- **P-29** 无错因诊断：wofo 复盘按题给语法/搭配/语境三类解释，我们只有文本解析条目，无「你弱在什么题型」`[实测]` — **M**
-- **P-30** 无个性化词表（wofo Word Lab：阅读/听力各形成"只背你不会的"词表）`[实测]` — **L · 需重拍**
-- **P-31** 无写作 AI 逐句批改（wofo 直接在原文上划掉错词、插入正确形式）`[实测]` — **L · 需重拍（决策⑥）**
-- **P-32** 无口语 AI 评分与满分音频/文稿对照 `[实测]` — **L · 需重拍（决策⑥）**
-- **P-33** 无 AI 助教（wofo 全站顶部入口：讲错题、改作文、分析成绩、24h）`[实测]` — **L · 需重拍**
-- **P-34** 无 AI 带练（wofo AI Coach：抽真题一步步搭出想法，限次"你有 2 次机会"）`[实测]` — **L · 需重拍**
-- **P-35** 无打字练习（wofo 用当月高频写作真题+范文跟打，实时 WPM/准确率/用时/进度+练习记录）——新托福机考真实痛点，且我们已有写作题库 `[实测]` — **M · 建议纳入**
-- **P-36** 无「易错题/高频题/难题」按大数据组卷的运营位（wofo 有 4 类刷题包按统计出题）`[实测]` — **L**
+- **P-29** không có lỗi biến thể cũ của chẩn đoán: wofo chơi lại ván cờ nhấn chủ đề cho ngữ pháp/Cụm đi kèm/ngữ cảnh ba loại giải thích, chúng tôi chỉ có một văn bản phân tích điều khoản và tiểu mục, không có«bạn yếu tồn tại gì? chủ đề khuôn»`[đo lường]` - **M**
+- **P-30** không có cá nhân hóa biến thể cũ của | bề mặt bên ngoài(wofo Word Lab: Đọc hiểu/thính giác mỗi hình thành " chỉ biến thể của bạn không có khả năng của " biến thể cũ của | bề mặt bên ngoài)`[đo lường]` - **L · yêu cầu lặp lại vỗ**
+- **P-31** không có viết AI theo đuổi biến thể của chấm(wofo trực tiếp tồn tại nguyên văn dùng trong | gạch bỏ lỗi biến thể cũ của |, chèn vào đúng bề ngoài)`[đo lường]` - **L · yêu cầu lặp lại vỗ(quyết định chiến lược ⑥)**
+- **P-32** không có lời nói thông thường AI chấm điểm biến thể của | điểm tối đa âm thanh/bản thảo đối chiếu `[đo lường]` - **L · yêu cầu lặp lại vỗ(quyết định chiến lược ⑥)**
+- **P-33** không có AI trợ giảng(wofo tất cả trạm mái lối vào: nói lỗi chủ đề, thay đổi viết bài văn, phân tích thành tích, 24h)`[đo lường]` - **L · yêu cầu lặp lại vỗ**
+- **P-34** không có AI dải luyện tập(wofo AI Coach: rút ra câu hỏi từ đề thi các năm trước một từng bước dựng đi ra cách nghĩ, giới hạn tiếp theo " bạn có 2 tiếp theo cơ hội ")`[đo lường]` - **L · yêu cầu lặp lại vỗ**
+- **P-35** không có đánh máy luyện tập(wofo sử dụng vào tháng đó tần số cao viết câu hỏi từ đề thi các năm trước+mô hình ngôn ngữ gót chân tá, thời gian thực WPM/chính xác tỉ lệ/Thời lượng/tốc độ tiến triển+luyện tập ghi chép)--viết tắt của Tân Cương TOEFL máy móc đánh thật điểm đau, và chúng tôi đã có viết ngân hàng câu hỏi `[đo lường]` - **M · đề xuất đưa vào**
+- **P-36** không có«dễ lỗi chủ đề/tần số cao chủ đề/vấn đề khó»nhấn dữ liệu lớn hình thành cuộn lại của hoạt động vị trí(wofo có 4 loại làm nhiều câu hỏi luyện tập che phủ nhấn thống kê ra đề tài)`[đo lường]` - **L**
 
-### E 留存与商业化（需重拍）
+### E giữ gìn biến thể của | thương mại hóa(yêu cầu lặp lại vỗ)
 
-- **P-37** 只有"连续学习天数"，无任务式打卡闯关（wofo：Day 1/2/3…，每天几个小任务，连续 11 天）`[实测双方]` — **M**
-- **P-38** 学生侧无积分/钱包/订单，权益只能靠后台开通（wofo：10 点、钱包·订单、试学→购买）`[实测]` — **L · 需重拍**
-- **P-39** 无"试学"漏斗：wofo 每个付费包都有试学按钮 `[实测]` — **M · 需重拍**
+- **P-37** chỉ có " liên tục học số ngày ", vô cùng công việc loại chấm công vào xông qua rào cản(wofo: Day 1/2/3..., mỗi ngày một vài nhỏ nhiệm vụ, liên tục 11 ngày)`[đo lường song phương]` - **M**
+- **P-38** học sinh một bên không có tích phân/ví/đơn đặt hàng, quyền lợi chỉ có thể dựa vào khu vực hậu trường mở(wofo: 10 điểm, ví·đơn đặt hàng, thử học→mua)`[đo lường]` - **L · yêu cầu lặp lại vỗ**
+- **P-39** không có " thử học " phễu: wofo mỗi dùng trong | trả tiền che phủ tất cả có thử học nút bấm `[đo lường]` - **M · yêu cầu lặp lại vỗ**
 
-### F 教务与内容运营（自评，不与 wofo 对拍）
+### F quản lý giáo dục biến thể của | nội dung hoạt động(tự thảo luận, không biến thể của | wofo đúng vỗ)
 
-- **P-40** `admin/index.html` 是伪后台：只拼 GitHub 上传链接，无 API、角色仅前端 class 判断 `[代码 admin/index.html:129-138, 24]` — **M**
-- **P-41** 题库内容无版本、无回滚；线上存在未入 git 的密卷 `[代码 server/deploy/sync-web.sh:33-45、server/tiku.js:531]` — **M**
-- **P-42** CI 只跑 3 项，不含托福新卷校验 `[代码 .github/workflows/build-manifest.yml:44-54]` — **S**
-- **P-43** 权限粒度只到「整区/整包」，无法按套卷/班级/科目开通 `[代码 admin-perms.html:69-71]` — **M**
-- **P-44** `tiku` 有整套 `?demo=1` 假数据通道，容易被当成真实数据 `[代码 tiku/tiku.js:978-1004]` — **S**
-- **P-45** 题库中心与机考复盘是两套前端，复盘组件未复用（决策⑤遗留）`[代码]` — **M**
+- **P-40** `admin/index.html` là giả khu vực hậu trường: chỉ chắp vá GitHub tải lên liên kết, không có API, vai trò hầu như phía trước class phán đoán `[mã admin/index.html:129-138, 24]` - **M**
+- **P-41** ngân hàng câu hỏi nội dung không có phiên bản, không có quay lui; trực tuyến tồn tại chưa đi vào git của bí mật cuộn lại `[mã server/deploy/sync-web.sh:33-45, server/tiku.js:531]` - **M**
+- **P-42** CI chỉ cào 3 sau cổ, không ngậm trong miệng TOEFL viết tắt của Tân Cương cuộn lại kiểm tra `[mã .github/workflows/build-manifest.yml:44-54]` - **S**
+- **P-43** phạm vi quyền hạn hạt vượt qua chỉ đến«toàn bộ khu vực/toàn bộ che phủ», không thể nhấn che đậy cuộn lại/Lớp học/môn học mở `[mã admin-perms.html:69-71]` - **M**
+- **P-44** `tiku` có toàn bộ bộ sưu tập `?demo=1` dùng trong dữ liệu huyện tự trị dân tộc Đồng Thông Đạo ở Hoài Hóa |, dễ dàng chăn coi như thật dữ liệu `[mã tiku/tiku.js:978-1004]` - **S**
+- **P-45** ngân hàng câu hỏi trung tâm biến thể của | máy móc đánh chơi lại ván cờ là hai che đậy phía trước, chơi lại ván cờ mô-đun chưa đi rồi quay lại sử dụng(quyết định chiến lược ⑤ để lại)`[mã]` - **M**
 
-### G 安全与鉴权（建议优先处理）
+### G an toàn biến thể của | biến thể của | quyền lực(đề xuất có ưu tiên xử lý)
 
-- **P-46** `?preview=1` 可免登录进任意机考页 `[代码 app/assets/js/auth.js:134]` — **R**
-- **P-47** URL 带 `id=` 即跳过权限锁 `[代码 app/assets/js/access.js:51-52]` — **R**
-- **P-48** 租户由客户端可伪造的 `X-Tenant-Slug`/origin 推导，且 app 端硬编码 `yysd` `[代码 server.js:586-598、app/assets/js/auth.js:25]` — **R**
-- **P-49** 真题 JSON 在 app 域名零鉴权；官网侧仅靠可伪造的 `yysd_auth` cookie `[代码 server/deploy/nginx-app.conf:32-41、nginx-site.conf:30-33]` — **R**
-- **P-50** 我今天把 `gate.js` 放宽为「只在 app 域名强制」，等于把整棵 `/opt/yysd/app` 挂到官网域名下（你已授权，但入口面变大，含 P-46 的 preview 绕过）`[代码 app/assets/js/gate.js]` — **R**
+- **P-46** `?preview=1` có thể miễn cho ai đăng ký tiến lên bất kỳ máy móc đánh đầu `[mã app/assets/js/auth.js:134]` - **R**
+- **P-47** URL dải `id=` tức là nhảy qua phạm vi quyền hạn khóa `[mã app/assets/js/access.js:51-52]` - **R**
+- **P-48** người thuê theo máy khách có thể làm giả của `X-Tenant-Slug`/origin diễn giải, và app cuối mã hóa cứng `yysd` `[mã server.js:586-598, app/assets/js/auth.js:25]` - **R**
+- **P-49** Đề thi thật JSON tại app tên miền không biến thể của | quyền lực; trang web chính thức một bên hầu như dựa vào có thể làm giả của `yysd_auth` cookie `[mã server/deploy/nginx-app.conf:32-41, nginx-site.conf:30-33]` - **R**
+- **P-50** tôi hôm nay cầm `gate.js` nới lỏng làm«chỉ tồn tại app tên miền ép buộc», bằng cầm toàn bộ lượng từ cho cây `/opt/yysd/app` treo đến trang web chính thức tên miền xuống(bạn đã ủy quyền, nhưng lối vào mặt thay đổi to, ngậm trong miệng P-46 của preview đi vòng)`[mã app/assets/js/gate.js]` - **R**
 
-### H 部署漂移与线上新缺陷（今天实测发现）
+### H bố trí trôi dạt biến thể của | trực tuyến viết tắt của Tân Cương khuyết điểm(hôm nay đo lường để ý)
 
-- **P-51** `app.youyisida.com` 在普通浏览器直接 302 到 `youyisida.com/download.html`，网页端不可用（须装桌面壳）；而官网 `/app/*` 现在可用 → 两套域名规则相反，学生与老师会撞墙 `[实测]` — **S**
-- **P-52** 官网 `/app/profile.html` 的「真题题库」显示**查询失败**：`/api/toefl/access` 走 `https://api.youyisida.com`，在官网 origin 下失败 `[实测 + 代码 auth.js:4、hit-shell.js:590-597]` — **M**
-- **P-53** `preview=1` 时复盘页跳过 `YYSD_HIT.mount`，导致 Tab 栏无处插入而整页空白（今天线上发现并修复，但同类"壳依赖"未系统排查）`[代码 app/review.html]` — **S**
-- **P-54** 首页「15 套完整模考」为硬编码文案，与实际可考数不符（同 P-27）`[代码 hit-shell.js:631]` — **S**
+- **P-51** `app.youyisida.com` tồn tại phổ thông trình duyệt trực tiếp 302 đến `youyisida.com/download.html`, trang web cuối không thể sử dụng(phải trang sức màn hình máy tính biến thể của |); và trang web chính thức `/app/*` bây giờ có thể sử dụng → hai che đậy tên miền quy tắc đối lập, học sinh biến thể của | giáo viên có thể đâm vào biến thể của | `[đo lường]` - **S**
+- **P-52** trang web chính thức `/app/profile.html` của«câu hỏi từ đề thi các năm trước ngân hàng câu hỏi»hiển thị**kiểm tra bị đánh bại**: `/api/toefl/access` đi `https://api.youyisida.com`, tồn tại trang web chính thức origin xuống bị đánh bại `[đo lường + mã auth.js:4, hit-shell.js:590-597]` - **M**
+- **P-53** `preview=1` biến thể cũ của | chơi lại ván cờ đầu nhảy qua `YYSD_HIT.mount`, dẫn đến Tab hàng rào không nơi nào chèn vào và toàn bộ đầu khoảng trống(hôm nay trực tuyến để ý và khôi phục, nhưng tương tự " biến thể của | phụ thuộc vào " chưa hệ thống kiểm tra)`[mã app/review.html]` - **S**
+- **P-54** Trang chủ«15 che đậy hoàn chỉnh bắt chước đánh»làm mã hóa cứng nội dung, biến thể của | thực tế có thể đánh đếm không nhất quán(giống P-27)`[mã hit-shell.js:631]` - **S**
 
-### I 移动端与性能（本轮未取证，需补测）
+### I di chuyển cuối biến thể của | chức năng(gốc bánh xe chưa thu thập chứng cứ, yêu cầu sửa khảo sát)
 
-- **P-55** wofo 与我们的响应式表现、iPhone Safari 下音频自动播放、题库 JSON 体积与首屏 ——**均未按约定实测**，索引留位。 — **M**
+- **P-55** wofo biến thể của | chúng tôi của đáp lại loại thể hiện, iPhone Safari xuống âm thanh tự động phát sóng, Ngân hàng đề JSON thể tích biến thể của | đầu xem | --**bằng chưa nhấn thoả thuận đo lường**, chỉ mục biến thể cũ của vị trí  - **M**
 
 ---
 
-## §4.1 更正与排除记录（v1.1）
+## §4.1 sửa chữa biến thể của | loại bỏ ghi chép(v1.1)
 
-**更正 1｜CW 逐空解析的覆盖面比 v1 记的更糟。**
-本轮实测三处数据结构：`set-N-reading.json` 的 CW 任务 `analysis` 为空串且无 `blanks` 数组；`bank-cw-reading.json` 246 篇同样为空；`free-*reading.json` 103 篇的 `analysis` 装的是**英中对照整段译文**（如 `free-12188` 655 字符，英文段落后直接跟中文翻译），不是逐空解析。
-→ 结论：**「free 零散练习解析 100% 齐全」是误判**，实际逐空解析在 set / free / bank 三处**全为 0**。项目记忆里已同步更正。
+**sửa chữa 1 CW theo đuổi trống không phân tích của phạm vi che phủ Bỉ v1 ghi chép của thay đổi hoặc thay thế bã **
+gốc bánh xe đo lường ba cư trú dữ liệu cấu trúc: `set-N-reading.json` của CW nhiệm vụ `analysis` làm trống không xâu lại và không có `blanks` mảng; `bank-cw-reading.json` 246 tờ giống nhau làm trống không; `free-*reading.json` 103 tờ của `analysis` trang sức của là**trường trung học ở Hồng Kông sử dụng tiếng Anh làm ngôn ngữ giảng dạy đối chiếu toàn bộ đoạn văn bản dịch**(như `free-12188` 655 ký tự, tiếng Anh đoạn hoàng hậu trực tiếp gót chân ngôn ngữ Trung Quốc dịch), không phải theo đuổi trống không phân tích 
+→ kết luận: **«free rải rác luyện tập phân tích 100% đầy đủ»là phán đoán sai**, thực tế theo đuổi trống không phân tích tồn tại set / free / bank ba cư trú**tất cả làm 0** mục nhớ biến thể của | đã đồng bộ sửa chữa 
 
-**更正 2｜"完整模考写作必崩"是我自己的过度推断，已证伪。**
-推理链错在哪：grep 到 `toefl-writing.html:471` 用了未声明的 `pendingNext`（阅读/听力都声明了，写作没有），就断定"休息屏点 Next 即崩"。**没有验证这行到底点不点得到。**
-补查后的事实：`show(el)` 内 `setNav(el === exam || el === review)`（`:229`）——`show(rest)` 会把底部 Next 置灰；而阅读 `:420`、听力 `:318` 在 `show(rest)` 之后各补了一句 `setNav(true)` 并写 `nextBtn.textContent = "Continue"`，所以那两科的分支是活的；写作没有 `setNav(true)`（全仓 grep 只有这两处），改用屏内 `#rest-go`（`:427` → `startModule(next)`，闭包变量正常）。所以 `:471` 是不可达死分支，**当前不崩**。
-教训：变量未声明 ≠ 路径可达，判定崩溃必须同时证明"该分支能被点出来"。
+**sửa chữa 2 " hoàn chỉnh bắt chước đánh viết nhất định sụp đổ " là tôi bản thân của quá mức suy luận, đã chứng minh là sai **
+lập luận dây xích lỗi tồn tại như thế nào: grep đến `toefl-writing.html:471` sử dụng hoàn thành chưa phát biểu của `pendingNext`(Đọc hiểu/thính giác tất cả phát biểu hoàn thành, viết không có), trong trường hợp đó kết luận " nghỉ xem | điểm Next tức là sụp đổ " **không có kiểm tra và xác minh này hàng cuối cùng điểm không điểm được **
+sửa nghiên cứu hoàng hậu của sự thật: `show(el)` bên trong `setNav(el === exam || el === review)`(`:229`)--`show(rest)` có thể cầm đáy Next lắp đặt tro; và đọc `:420`, Nghe hiểu `:318` tại `show(rest)` sau mỗi sửa hoàn thành một dòng thơ `setNav(true)` và viết `nextBtn.textContent = "Continue"`, vì vậy biến thể của hai ngành học của chi nhánh là sống của; viết không có `setNav(true)`(tất cả kho grep chỉ có này hai cư trú), chuyển sang xem | bên trong `#rest-go`(`:427` → `startModule(next)`, phép đóng biến số bình thường) vì vậy `:471` là không thể đạt tới chết chi nhánh, **thời điểm hiện tại không sụp đổ** 
+đưa ra hướng dẫn: biến số chưa phát biểu ≠ con đường có thể đạt tới, phán đoán sụp đổ phải đồng thời bằng chứng " nên chi nhánh có thể chăn chỉ ra đến " 
 
-**排除 1｜成绩单页 404 是误报，别再查。**
-机器勘察阶段报「app 域只放行 `toefl-{reading,listening,writing,speaking,full}.html`，`toefl-score.html` 与 `assets/css/toefl-report.css` 无 alias → 成绩单 iframe 会 404」。
-本轮 `curl -k` 实测两个域名均 **200**：`app.youyisida.com/toefl-score.html` 7445 B、`/assets/css/toefl-report.css` 7044 B，官网 `/app/*` 下同样 200。真实原因：nginx 的 `~* \.html$` 回落到 app 根，CSS 走 app 根静态。此条**不成立**，已排除。
+**loại bỏ 1 phiếu điểm hoặc bảng điểm đầu 404 là nhầm lỗi thông báo, rời khỏi lại nghiên cứu **
+máy móc trinh sát giai đoạn thông báo«app lĩnh vực chỉ cho qua `toefl-{reading,listening,writing,speaking,full}.html`, `toefl-score.html` và `assets/css/toefl-report.css` không có alias → phiếu điểm hoặc bảng điểm iframe có thể 404» 
+gốc bánh xe `curl -k` đo lường hai dùng trong | tên miền bằng **200**: `app.youyisida.com/toefl-score.html` 7445 B, `/assets/css/toefl-report.css` 7044 B, trang web chính thức `/app/*` tương tự như dưới đây cách 200 thật nguyên nhân: nginx của `~* \.html$` rơi xuống đến app rễ, CSS đi app rễ tĩnh này dải**không được đứng**, đã loại bỏ 
 
-**方法说明**：P-56~P-62 逐条用 grep/curl 复核后才写入，**但复核深度不够仍会出错**——P-56 只 grep 到变量未声明就判"必崩"，漏了验证分支可达性，v1.2 已自行证伪并降级（见更正 2）。勘察报告中未通过复核或无法复核的条目（休息屏 `act==="go"` 恒 false 一条即被我方代码证伪——`toefl-writing.html:460` 判的是 `act === "rest"`）不进入索引。P-62 标了"待复验"，未当作结论。
+**phương pháp giải thích**: P-56~P-62 theo đuổi dải sử dụng grep/curl xem xét lại hoàng hậu khả năng viết đi vào, **nhưng xem xét lại độ sâu không đủ vẫn có thể mắc lỗi**--P-56 chỉ grep đến biến số chưa phát biểu trong trường hợp đó phân biệt " nhất định sụp đổ ", rò rỉ hoàn thành kiểm tra và xác minh chi nhánh có thể đạt tới bản chất, v1.2 đã tự nguyện chứng minh là sai và giáng chức(thấy sửa chữa 2) trinh sát thông báo Trung Quốc chưa đi qua xem xét lại có thể không thể xem xét lại của điều khoản và tiểu mục(nghỉ xem | `act==="go"` vĩnh viễn false một dải tức là chăn phía chúng tôi mã chứng minh là sai--`toefl-writing.html:460` phân biệt của là `act === "rest"`)không đi vào chỉ mục P-62 đánh dấu hoàn thành " đợi được thông báo biến thể của | ", chưa xem như kết luận 
 
 
-## §5 下一步（等你勾选）
+## §5 Bước tiếp theo(đợi bạn chọn)
 
-请回我三件事即可开工：
-1. 勾选要深挖的条目编号（可整区勾，如「A + A+ 全要 + C 全要 + P-46~P-50」）。**A+ 区（P-56~P-62）是我更推荐的第二轮起点**：全是"代码写了但进不去"或"机制不统一"，单条成本低、学生可感知，不需要等内容跑批。
-2. D/E 区里哪些你**根本不想做**（直接划掉，我不再提）；哪些想看方案。
-3. P-55（移动端与性能）要不要我现在补测——需要你把手机连上或允许我用窄视口截图。
+mời xoay vòng tôi ba món sự việc tương đương với bắt đầu công việc: 
+1. chọn yêu cầu đào sâu của điều khoản và tiểu mục đánh số(có thể toàn bộ khu vực thu hút, như«A + A+ tất cả yêu cầu + C tất cả yêu cầu + P-46~P-50») **A+ khu vực(P-56~P-62)là tôi thay đổi hoặc thay thế đề xuất của vòng thứ hai điểm bắt đầu**: tất cả là " mã viết hoàn thành nhưng tiến lên không đi " hoặc " cơ chế không 7-Eleven ", hóa đơn dải chi phí thấp, học sinh có thể nhận thức, không cần đợi nội dung cào xác minh 
+2. D/E khu vực biến thể của | những cái nào? bạn**cơ bản một cách bất ngờ làm**(trực tiếp gạch bỏ, tôi không còn dùng trong và); những cái nào? nghĩ chăm sóc kế hoạch 
+3. P-55(di chuyển cuối biến thể của | chức năng)nếu không thì yêu cầu tôi bây giờ sửa khảo sát--cần bạn bắt tay máy móc liên kết dùng trong | có thể cho phép tôi sử dụng hẹp biến thể của | miệng ảnh chụp màn hình 
 
-勾选后我对选中项补：根因定位（file:line）→ 方案 → 成本量级 → 验收判据，并合成 W1/W2/W3 波次表。
+chọn hoàng hậu tôi đúng lựa chọn sau cổ sửa: rễ biến thể cũ của định hướng(file:line)→ kế hoạch → chi phí bậc độ lớn → kiểm tra và chấp nhận tiêu chí, và tổng hợp W1/W2/W3 Ba Lan tiếp theo bề mặt bên ngoài 

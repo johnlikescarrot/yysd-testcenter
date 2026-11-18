@@ -1,10 +1,10 @@
 #!/bin/bash
-# 临时公网内测 — ngrok 暴露 AI 精听（方案 B）
+# khi thời gian đến gần mạng công cộng thực hiện kiểm thử beta kín - ngrok phơi bày AI tinh chất cười(kế hoạch B)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export PATH="$HOME/.local/node/bin:$PATH"
 
-echo "==> 启动 AI 服务器（端口 3000）…"
+echo "==> khởi động AI máy chủ(giao diện 3000)..."
 lsof -ti :3000 | xargs kill 2>/dev/null || true
 sleep 1
 cd "$ROOT/server"
@@ -14,26 +14,26 @@ for i in 1 2 3 4 5 6 7 8 9 10; do
   sleep 1
 done
 if ! curl -sf http://127.0.0.1:3000/api/health | grep -q '"ai":true'; then
-  echo "❌ AI 服务器未就绪，查看 /tmp/yysd-api.log"
+  echo "❌ AI máy chủ chưa sẵn sàng, xem xét /tmp/yysd-api.log"
   tail -5 /tmp/yysd-api.log 2>/dev/null || true
   exit 1
 fi
-echo "    AI 服务器已就绪"
+echo "    AI máy chủ đã sẵn sàng "
 
-echo "==> 启动 ngrok 隧道…"
+echo "==> khởi động ngrok đường hầm..."
 lsof -ti :4040 | xargs kill 2>/dev/null || true
 pkill -f "ngrok http 3000" 2>/dev/null || true
 sleep 1
 
 if [ -z "${NGROK_AUTHTOKEN:-}" ] && [ -f "$HOME/.ngrok2/ngrok.yml" ]; then
-  : # 已配置过
+  : # đã triển khai băng qua
 elif [ -z "${NGROK_AUTHTOKEN:-}" ]; then
   echo ""
-  echo "⚠️  首次使用需要 ngrok 账号（免费）："
-  echo "   1. 打开 https://dashboard.ngrok.com/signup 注册"
-  echo "   2. 复制 Authtoken，运行："
-  echo "      npx ngrok config add-authtoken <你的token>"
-  echo "   3. 再重新运行本脚本"
+  echo "⚠️  đầu tiên sử dụng cần ngrok số tài khoản(miễn phí): "
+  echo "   1. mở https://dashboard.ngrok.com/signup Đăng ký "
+  echo "   2. nhân bản Authtoken, di chuyển trên quỹ đạo: "
+  echo "      npx ngrok config add-authtoken <của bạn token>"
+  echo "   3. lại lại di chuyển trên quỹ đạo gốc kịch bản "
   echo ""
   exit 1
 fi
@@ -55,7 +55,7 @@ except: pass
 " 2>/dev/null)
 
 if [ -z "$PUBLIC_URL" ]; then
-  echo "❌ ngrok 未获取到公网地址，查看 /tmp/yysd-ngrok.log"
+  echo "❌ ngrok chưa giành được đến mạng công cộng địa chỉ, xem xét /tmp/yysd-ngrok.log"
   tail -10 /tmp/yysd-ngrok.log 2>/dev/null || true
   exit 1
 fi
@@ -63,14 +63,14 @@ fi
 TEST_URL="${PUBLIC_URL}/test/jingting"
 
 echo ""
-echo "✅ 临时公网链接已生成（发给内测人员）："
+echo "✅ khi thời gian đến gần mạng công cộng liên kết đã tạo ra(cấp thực hiện kiểm thử beta kín nhân viên): "
 echo ""
 echo "   $TEST_URL"
 echo ""
-echo "⚠️  注意："
-echo "   · 你的 Mac 必须保持开机，且本脚本服务在运行"
-echo "   · 免费 ngrok 链接重启后会变"
-echo "   · 首次打开可能有 ngrok 提示页，点 Visit Site 继续"
-echo "   · 请用 Chrome 打开，并允许麦克风"
+echo "⚠️  Lưu ý: "
+echo "   · của bạn Mac phải giữ khởi động máy, và gốc kịch bản phục vụ tồn tại di chuyển trên quỹ đạo "
+echo "   · miễn phí ngrok liên kết khởi động lại hoàng hậu có thể thay đổi "
+echo "   · đầu tiên mở có thể có ngrok chỉ ra đầu, điểm Visit Site Tiếp tục "
+echo "   · mời sử dụng Chrome mở, và cho phép microphone "
 echo ""
-echo "停止：bash \"$ROOT/scripts/stop-ngrok-test.sh\""
+echo " dừng: bash \"$ROOT/scripts/stop-ngrok-test.sh\""

@@ -1,7 +1,7 @@
 /* =========================================================================
-   word-audio.js — Youdao dictionary audio (UK type=1 / US type=2)
+   word-audio.js - Youdao dictionary audio (UK type=1 / US type=2)
    speak(text, onEndOrOpts, accent?) / cancel() / installSpeechPatch()
-   ponytail: Youdao CDN; self-host if blocked — swap URL only here
+   ponytail: Youdao CDN; self-host if blocked - swap URL only here
    ========================================================================= */
 (function (global) {
   "use strict";
@@ -32,7 +32,7 @@
       audio.onerror = null;
       audio.pause();
       audio.removeAttribute("src");
-      // ponytail: skip load() — empty-src load() can replay the last file
+      // ponytail: skip load() - empty-src load() can replay the last file
     } catch (e) {}
     audio = null;
   }

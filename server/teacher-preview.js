@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Teacher site-mode: shadow student user per teacher for full-site preview + gaozhong 闯关.
+ * Teacher site-mode: shadow student user per teacher for full-site preview + gaozhong xông qua rào cản.
  */
 var crypto = require("crypto");
 
@@ -8,14 +8,14 @@ var PILOT_BOOK = "gaozhong";
 
 function previewPhone(teacherId) {
   var id = Math.max(1, Math.floor(Number(teacherId) || 0));
-  // ponytail: 900… internal segment — avoids collision with real 199 MSISDN
+  // ponytail: 900... internal segment - avoids collision with real 199 MSISDN
   return "900" + String(id).padStart(8, "0").slice(-8);
 }
 
 function isPreviewUser(user) {
   var phone = String((user && (user.phone || user.Phone)) || "").replace(/\D/g, "");
   var name = String((user && (user.display_name || user.displayName || user.name)) || "");
-  if (/（体验）/.test(name)) return true;
+  if (/(trải nghiệm)/.test(name)) return true;
   if (/^900\d{8}$/.test(phone)) return true;
   // leftover from old previewPhone("199"+pad)
   if (/^19900000\d{3}$/.test(phone)) return true;
@@ -49,7 +49,7 @@ function ensurePreviewUser(db, stmts, teacher) {
     var unusable = crypto.randomBytes(16).toString("hex") + ":" + crypto.randomBytes(64).toString("hex");
     stmts.insertUser.run(phone, unusable, now, now, teacher.org_id || null);
     user = stmts.findUser.get(phone);
-    var label = String(teacher.name || "教师").trim().slice(0, 16) + "（体验）";
+    var label = String(teacher.name || " Giáo viên ").trim().slice(0, 16) + "(trải nghiệm)";
     if (user && label.length >= 2) {
       stmts.setDisplayName.run(label, phone);
       user = stmts.findUser.get(phone);
@@ -70,7 +70,7 @@ function ensureGaozhongChallenge(db, vocabChallenge, studentId, teacherId) {
   });
 }
 
-/** Idempotent: preview user + 高中闯关布置（登录/注册/进入体验模式时调用） */
+/** Idempotent: preview user + trường trung học phổ thông xông qua rào cản sắp xếp(Đăng nhập/Đăng ký/đi vào trải nghiệm chế độ bài dân ca phổ biến trong một giai đoạn nhất định sử dụng) */
 function provisionTeacher(db, stmts, vocabChallenge, teacher) {
   var t = teacher && teacher.id ? teacher : getTeacher(db, teacher);
   if (!t) return null;
@@ -90,11 +90,11 @@ function mountRoutes(app, opts) {
 
   app.post("/api/teacher/site-mode/enter", teacherAuth, function (req, res) {
     var teacher = getTeacher(db, req.user.sub);
-    if (!teacher) return res.status(404).json({ error: "教师不存在" });
+    if (!teacher) return res.status(404).json({ error: " giáo viên không tồn tại " });
     var user = provisionTeacher(db, stmts, vocabChallenge, teacher);
-    if (!user) return res.status(500).json({ error: "无法创建体验账号" });
+    if (!user) return res.status(500).json({ error: " không thể thành lập trải nghiệm số tài khoản " });
     var token = issueToken(user, user.phone);
-    if (!token) return res.status(503).json({ error: "服务未配置 JWT_SECRET" });
+    if (!token) return res.status(503).json({ error: " phục vụ chưa triển khai JWT_SECRET" });
     res.json({
       ok: true,
       token: token,
@@ -120,16 +120,16 @@ function selfCheck(db, stmts, vocabChallenge) {
   if (previewPhone(1) !== "90000000001" || previewPhone(26) !== "90000000026") {
     throw new Error("previewPhone format");
   }
-  if (!isPreviewUser({ phone: "90000000002", display_name: "张老师（体验）" })) {
+  if (!isPreviewUser({ phone: "90000000002", display_name: " mở ra giáo viên(trải nghiệm)" })) {
     throw new Error("isPreviewUser 900");
   }
-  if (!isPreviewUser({ phone: "19900000004", display_name: "馨馨老师（体验）" })) {
+  if (!isPreviewUser({ phone: "19900000004", display_name: " thơm ngát thơm ngát giáo viên(trải nghiệm)" })) {
     throw new Error("isPreviewUser leftover 199");
   }
-  if (isPreviewUser({ phone: "15901754473", display_name: "张老师" })) {
+  if (isPreviewUser({ phone: "15901754473", display_name: " mở ra giáo viên " })) {
     throw new Error("isPreviewUser false positive");
   }
-  // ponytail: boot must not DELETE 199% users on live db — wipes teacher preview accounts + progress
+  // ponytail: boot must not DELETE 199% users on live db - wipes teacher preview accounts + progress
 }
 
 module.exports = {

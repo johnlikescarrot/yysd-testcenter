@@ -1,18 +1,18 @@
-/* 题库中心教师站 - 题目审阅 / 已有试卷 / 开通（管理员） */
+/* ngân hàng câu hỏi trung tâm giáo viên trạm - chủ đề xem xét hoặc đọc kỹ / đã có bài thi / mở(người quản lý) */
 (function (w) {
   "use strict";
   var API = (w.location.hostname === "localhost" || w.location.hostname === "127.0.0.1")
     ? (w.location.protocol + "//" + w.location.hostname + ":3000")
     : "https://api.youyisida.com";
   var TK = "yysd:teacher:token";
-  var SKILL_ZH = { reading: "阅读", listening: "听力", writing: "写作", speaking: "口语" };
+  var SKILL_ZH = { reading: " Đọc hiểu ", listening: " Nghe hiểu ", writing: " Viết ", speaking: " Nói " };
   var SKILL_ORDER = ["reading", "listening", "writing", "speaking"];
   var SKILL_DOT = { reading: "var(--sk-reading)", listening: "var(--sk-listening)", writing: "var(--sk-writing)", speaking: "var(--sk-speaking)" };
   var TYPE_ZH = {
-    complete_words: "单词填空", daily_life: "生活阅读", academic: "学术文章",
-    choose_response: "听句选回应", conversation: "对话", announcement: "通知", lecture: "学术讲座",
-    sentence: "句子构建", email: "邮件写作", discussion: "学术讨论",
-    repeat: "听力复述", interview: "模拟面试"
+    complete_words: " từ lấp chỗ trống công việc ", daily_life: " sống đọc ", academic: " học thuật bài viết ",
+    choose_response: " Nghe câu và chọn câu đáp lại ", conversation: " Hội thoại ", announcement: " Thông báo ", lecture: " Bài giảng học thuật ",
+    sentence: " Xây dựng câu ", email: " thư từ viết ", discussion: " Thảo luận học thuật ",
+    repeat: " thính giác lặp lại ", interview: " mô phỏng được phỏng vấn "
   };
   var TYPES = {
     reading: ["complete_words", "daily_life", "academic"],
@@ -20,8 +20,8 @@
     writing: ["sentence", "email", "discussion"],
     speaking: ["repeat", "interview"]
   };
-  var KIND_ZH = { practice: "练习", full: "完整模考", single: "单项模考" };
-  var ST_ZH = { draft: "草稿", pending: "待审", live: "已上架", unpublished: "已下架" };
+  var KIND_ZH = { practice: " luyện tập ", full: " hoàn chỉnh bắt chước đánh ", single: " mục đơn lẻ bắt chước đánh " };
+  var ST_ZH = { draft: " bản thảo ", pending: " ở lại xem xét ", live: " đã đưa hàng lên kệ ", unpublished: " đã gỡ xuống khỏi kệ " };
 
   var me = null;
   var pool = [];
@@ -62,8 +62,8 @@
     }).then(function (r) {
       return r.text().then(function (text) {
         var d = {};
-        if (text) { try { d = JSON.parse(text); } catch (e) { throw new Error("服务器异常"); } }
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (text) { try { d = JSON.parse(text); } catch (e) { throw new Error(" máy chủ bất thường "); } }
+        if (!r.ok) throw new Error((d && d.error) || " yêu cầu bị đánh bại ");
         return d;
       });
     });
@@ -99,7 +99,7 @@
   }
   function setLabel(s) {
     var m = /^prediction-(\d{4}-\d{2}-\d{2})$/.exec(String(s || ""));
-    return m ? m[1] + " 预测包" : isBankSet(s) ? String(s) : "Set " + s;
+    return m ? m[1] + " dự báo che phủ " : isBankSet(s) ? String(s) : "Set " + s;
   }
   function isPrediction(b) {
     return (b.sources || [b.source]).indexOf("prediction") >= 0 || /^prediction-/.test(String(b.set || ""));
@@ -109,7 +109,7 @@
     return (TYPE_ZH[b.type] || SKILL_ZH[b.skill] || "") +
       (set ? " · " + set : "") +
       (b.paperId && !isBankSet(b.set) && !isPrediction(b) ? " · " + b.paperId : "") +
-      (b.n > 1 ? " · " + b.n + " 题" : "");
+      (b.n > 1 ? " · " + b.n + " Câu hỏi " : "");
   }
   function dotStyle(b) {
     return " style=\"--sk:" + (SKILL_DOT[b.skill] || "var(--faint)") + "\"";
@@ -122,12 +122,12 @@
     return p(d.getMonth() + 1) + "-" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
   }
 
-  /* ——— 筛选与题池 ——— */
+  /* --- lọc biến thể của | chủ đề ao --- */
   function typeOptions() {
     var keys = F.skill && TYPES[F.skill]
       ? TYPES[F.skill]
       : ["complete_words", "daily_life", "academic", "choose_response", "conversation", "announcement", "lecture", "sentence", "email", "discussion", "repeat", "interview"];
-    return '<option value="">全部题型</option>' + keys.map(function (k) {
+    return '<option value="">toàn bộ chủ đề khuôn</option>' + keys.map(function (k) {
       return '<option value="' + k + '"' + (F.typ === k ? " selected" : "") + ">" + TYPE_ZH[k] + "</option>";
     }).join("");
   }
@@ -179,24 +179,24 @@
   function setOptions() {
     dropGoneSet();
     var keys = setKeys();
-    return '<option value="">全部套号 / 日期</option>' + keys.map(function (k) {
+    return '<option value="">toàn bộ che đậy gầm / ngày tháng</option>' + keys.map(function (k) {
       return '<option value="' + esc(k) + '"' + (String(F.set) === String(k) ? " selected" : "") + ">" + esc(setLabel(k)) + "</option>";
     }).join("");
   }
   function paintFilters() {
     var setOpts = setOptions();
-    return '<input id="f-q" class="q" aria-label="搜索文章、题干、选项或解析" value="' + esc(F.q) + '" placeholder="搜文章 / 题干 / 选项 / 解析">' +
-      '<select id="f-skill" aria-label="科目"><option value="">全部科目</option>' +
+    return '<input id="f-q" class="q" aria-label=" tìm kiếm bài viết, chủ đề biến thể cũ của |, tùy chọn có thể phân tích " value="' + esc(F.q) + '" placeholder=" tìm kiếm bài viết / chủ đề biến thể cũ của | / Phương án / Giải thích ">' +
+      '<select id="f-skill" aria-label=" Môn học "><option value="">toàn bộ môn học</option>' +
       SKILL_ORDER.map(function (s) {
         return '<option value="' + s + '"' + (F.skill === s ? " selected" : "") + ">" + SKILL_ZH[s] + "</option>";
       }).join("") + "</select>" +
-      '<select id="f-type" aria-label="题型">' + typeOptions() + "</select>" +
-      '<select id="f-set" aria-label="套号或日期">' + setOpts + "</select>" +
-      '<select id="f-src" aria-label="来源"><option value="">全部来源</option>' +
-      '<option value="set"' + (F.src === "set" ? " selected" : "") + ">官方套题</option>" +
-      '<option value="date"' + (F.src === "date" ? " selected" : "") + ">模考卷</option>" +
-      '<option value="bank"' + (F.src === "bank" ? " selected" : "") + ">题库</option>" +
-      '<option value="prediction"' + (F.src === "prediction" ? " selected" : "") + ">预测包</option></select>";
+      '<select id="f-type" aria-label=" chủ đề khuôn ">' + typeOptions() + "</select>" +
+      '<select id="f-set" aria-label=" che đậy gầm có thể ngày tháng ">' + setOpts + "</select>" +
+      '<select id="f-src" aria-label=" Nguồn "><option value="">toàn bộ nguồn</option>' +
+      '<option value="set"' + (F.src === "set" ? " selected" : "") + ">chính phủ che đậy chủ đề</option>" +
+      '<option value="date"' + (F.src === "date" ? " selected" : "") + ">bắt chước giấy thi</option>" +
+      '<option value="bank"' + (F.src === "bank" ? " selected" : "") + ">Ngân hàng đề</option>" +
+      '<option value="prediction"' + (F.src === "prediction" ? " selected" : "") + ">dự báo che phủ</option></select>";
   }
   function blockPreviewHref(b) {
     if (isPrediction(b)) return "";
@@ -214,7 +214,7 @@
     var el = document.getElementById("pool-list");
     if (!el) return;
     var list = filtered();
-    document.getElementById("pool-count").textContent = "筛到 " + list.length + " 个题块";
+    document.getElementById("pool-count").textContent = " cái sàng đến " + list.length + " dùng trong | chủ đề cục ";
     el.innerHTML = list.length
       ? list.map(function (b) {
         var href = blockPreviewHref(b);
@@ -222,13 +222,13 @@
           '<button type="button" class="block-review" data-inspect="' + esc(b.id) + '" aria-pressed="' + (reviewId === b.id) + '" aria-controls="review-body">' +
           '<b>' + esc(b.title || b.titleZh) + "</b>" +
           (b.titleZh && b.title && b.titleZh !== b.title ? '<span class="sub">' + esc(b.titleZh) + "</span>" : "") +
-          '<span class="meta">' + esc(blockLine(b)) + '</span><span class="review-label">审阅</span></button>' +
-          (href ? '<a class="block-pv" data-bpv="' + esc(b.id) + '" href="' + esc(href) + '" target="yysd-preview">外部预览</a>' : "") + '</article>';
+          '<span class="meta">' + esc(blockLine(b)) + '</span><span class="review-label">xem xét hoặc đọc kỹ</span></button>' +
+          (href ? '<a class="block-pv" data-bpv="' + esc(b.id) + '" href="' + esc(href) + '" target="yysd-preview">bên ngoài xem trước</a>' : "") + '</article>';
       }).join("")
-      : '<div class="empty"><b>没有符合条件的题块</b><p>换个筛选条件试试</p></div>';
+      : '<div class="empty"><b>không có phù hợp với điều kiện của chủ đề cục</b><p>trao đổi dùng trong | lọc điều kiện thử thử</p></div>';
   }
 
-  /* 教师只读审阅：复用阅读显示，不接入学生计时、评分或录音。 */
+  /* giáo viên chỉ đọc xem xét hoặc đọc kỹ: đi rồi quay lại sử dụng đọc hiển thị, không truy cập học sinh đo thời gian, chấm điểm có thể ghi âm  */
   function clearReview() {
     reviewSeq += 1;
     reviewData = null;
@@ -296,19 +296,19 @@
     var box = document.createElement("figure");
     box.className = "review-media";
     var caption = document.createElement("figcaption");
-    caption.textContent = item.label || "媒体附件";
+    caption.textContent = item.label || " truyền thông phụ lục ";
     var slot = document.createElement("div");
     box.appendChild(caption);
     box.appendChild(slot);
     host.appendChild(box);
     var metadata = reviewData && (reviewData.media || []).filter(function (m) { return m.path === item.path; })[0];
     if (item.available === false || (metadata && metadata.available === false)) {
-      slot.textContent = "原站拒绝访问，未取得此资源；题目与文字资料仍可审阅。";
+      slot.textContent = " trước đây trạm từ chối thăm, chưa giành được này huyện Tư Nguyên ở Quế Lâm; chủ đề biến thể của | chữ viết tài liệu vẫn có thể xem xét hoặc đọc kỹ ";
       slot.className = "review-error";
       return;
     }
     var path = mediaPath(item.path);
-    if (!path) { slot.textContent = "不支持的媒体路径"; return; }
+    if (!path) { slot.textContent = " không thể chịu đựng được cầm của truyền thông con đường "; return; }
     var kind = mediaKind(item.path, item.kind);
     function mount(url) {
       if (!reviewCurrent(seq, body)) return;
@@ -318,23 +318,23 @@
         el.href = url;
         el.download = String(item.path).split("/").pop();
         el.className = "link-btn";
-        el.textContent = "下载附件";
+        el.textContent = " tải xuống phụ lục ";
       } else {
         if (kind === "image") el.alt = caption.textContent;
         else { el.controls = true; el.preload = "none"; el.setAttribute("aria-label", caption.textContent); }
         el.src = url;
-        el.addEventListener("error", function () { if (reviewCurrent(seq, body)) fail("媒体无法播放或显示，请重试"); });
+        el.addEventListener("error", function () { if (reviewCurrent(seq, body)) fail(" truyền thông không thể phát sóng có thể hiển thị, mời thử lại "); });
       }
       slot.appendChild(el);
     }
     function fail(text) {
-      slot.innerHTML = '<p class="review-error" role="status"></p><button type="button" class="sm">重试媒体</button>';
+      slot.innerHTML = '<p class="review-error" role="status"></p><button type="button" class="sm">thử lại truyền thông</button>';
       slot.querySelector("p").textContent = text;
       slot.querySelector("button").onclick = load;
     }
     function load() {
       if (!reviewCurrent(seq, body)) return;
-      slot.textContent = "加载媒体…";
+      slot.textContent = " tải truyền thông...";
       if (path.indexOf("/api/") !== 0) { mount(path); return; }
       var controller = new AbortController();
       reviewRequests.push(controller);
@@ -342,17 +342,17 @@
         headers: { "X-Tenant-Slug": "yysd", Authorization: token() ? "Bearer " + token() : "" },
         cache: "no-store", signal: controller.signal, redirect: "error"
       }).then(function (r) {
-        if (!r.ok) throw new Error("媒体加载失败（" + r.status + "），请重试");
+        if (!r.ok) throw new Error(" truyền thông tải bị đánh bại(" + r.status + "), mời thử lại ");
         return r.blob();
       }).then(function (blob) {
         if (!reviewCurrent(seq, body)) return;
-        // 附件只下载，不让原包 HTML 等文件在教师页执行。
+        // phụ lục chỉ tải xuống, không nhường trước đây che phủ HTML đợi tài liệu theo một tôn giáo giáo viên đầu thực hiện 
         if (kind === "attachment") blob = new Blob([blob], { type: "application/octet-stream" });
         var url = URL.createObjectURL(blob);
         reviewBlobs.push(url);
         mount(url);
       }).catch(function (e) {
-        if (reviewCurrent(seq, body) && e.name !== "AbortError") fail(e.message || "媒体加载失败，请重试");
+        if (reviewCurrent(seq, body) && e.name !== "AbortError") fail(e.message || " truyền thông tải bị đánh bại, mời thử lại ");
       });
     }
     load();
@@ -364,25 +364,25 @@
     readingLoad = new Promise(function (resolve, reject) {
       var script = document.createElement("script");
       script.src = "https://app.youyisida.com/assets/js/reading.js?v=20261016prediction1";
-      script.onload = function () { script.remove(); if (w.YYSD_TOEFL) resolve(w.YYSD_TOEFL); else reject(new Error("阅读显示组件加载失败")); };
-      script.onerror = function () { script.remove(); reject(new Error("阅读显示组件加载失败，请重试")); };
+      script.onload = function () { script.remove(); if (w.YYSD_TOEFL) resolve(w.YYSD_TOEFL); else reject(new Error(" đọc hiển thị mô-đun tải bị đánh bại ")); };
+      script.onerror = function () { script.remove(); reject(new Error(" đọc hiển thị mô-đun tải bị đánh bại, mời thử lại ")); };
       document.head.appendChild(script);
     }).catch(function (e) { readingLoad = null; throw e; });
     return readingLoad;
   }
   function renderReview(data, body, seq, T) {
     var b = data.block || blockOf(reviewId) || {};
-    body.innerHTML = '<div class="pane-title"><h3></h3><button type="button" class="sm" id="review-export">导出原包数据</button></div><p class="muted review-meta"></p>';
-    body.querySelector("h3").textContent = b.titleZh || b.title || "题目内容";
-    body.querySelector(".review-meta").textContent = blockLine(b) + " · 教师只读";
+    body.innerHTML = '<div class="pane-title"><h3></h3><button type="button" class="sm" id="review-export">suy ra trước đây che phủ dữ liệu</button></div><p class="muted review-meta"></p>';
+    body.querySelector("h3").textContent = b.titleZh || b.title || " chủ đề nội dung ";
+    body.querySelector(".review-meta").textContent = blockLine(b) + " · giáo viên chỉ đọc ";
     body.querySelector("#review-export").disabled = !(data.sourceItems || []).length;
     var no = 0;
     (data.tasks || []).forEach(function (task, ti) {
       var section = document.createElement("article");
       section.className = "review-task";
       body.appendChild(section);
-      reviewNote(section, "题块 " + (ti + 1), task.title || task.titleZh || TYPE_ZH[task.type]);
-      reviewNote(section, "说明", task.instruction);
+      reviewNote(section, " chủ đề cục " + (ti + 1), task.title || task.titleZh || TYPE_ZH[task.type]);
+      reviewNote(section, " Hướng dẫn ", task.instruction);
       var passage = document.createElement("div");
       passage.className = "review-passage";
       if (task.type === "complete_words") {
@@ -396,34 +396,34 @@
         if (insertion) T.markInsertReview(passage, insertion, "", T.insertSentence(task, insertion));
         section.appendChild(passage);
       }
-      reviewNote(section, "待插入句子", task.insertSentence);
-      reviewMedia(section, { path: task.audio, label: "题目音频", kind: "audio" }, seq, body);
-      reviewMedia(section, { path: task.image, label: "题目配图", kind: "image" }, seq, body);
-      reviewNote(section, "听力原文", task.transcript);
-      reviewNote(section, "情境", task.context);
-      reviewNote(section, "题目", task.stem);
-      reviewNote(section, "写作任务", task.prompt);
-      reviewNote(section, "写作要点", task.bullets);
-      reviewNote(section, "收件人", task.to);
-      reviewNote(section, "主题", task.subject);
-      reviewNote(section, "教授问题", task.professor);
-      reviewNote(section, "讨论帖", task.posts);
+      reviewNote(section, " ở lại chèn vào câu ", task.insertSentence);
+      reviewMedia(section, { path: task.audio, label: " chủ đề âm thanh ", kind: "audio" }, seq, body);
+      reviewMedia(section, { path: task.image, label: " chủ đề kết hợp sơ đồ ", kind: "image" }, seq, body);
+      reviewNote(section, " thính giác nguyên văn ", task.transcript);
+      reviewNote(section, " tình huống ", task.context);
+      reviewNote(section, " Câu hỏi ", task.stem);
+      reviewNote(section, " viết nhiệm vụ ", task.prompt);
+      reviewNote(section, " viết điểm chính ", task.bullets);
+      reviewNote(section, " người nhận ", task.to);
+      reviewNote(section, " chủ đề ", task.subject);
+      reviewNote(section, " giáo sư câu hỏi ", task.professor);
+      reviewNote(section, " thảo luận vừa khít ", task.posts);
       if (task.type === "sentence") {
-        reviewNote(section, "句子结构", (task.parts || []).map(function (p) { return p.slot ? "____" : p.t || ""; }).join(" "));
-        reviewNote(section, "词块", (task.bank || []).join(" / "));
-        reviewNote(section, "正确顺序", (task.answer || []).join(" "));
+        reviewNote(section, " câu cấu trúc ", (task.parts || []).map(function (p) { return p.slot ? "____" : p.t || ""; }).join(" "));
+        reviewNote(section, " biến thể cũ của | cục ", (task.bank || []).join(" / "));
+        reviewNote(section, " đúng trình tự ", (task.answer || []).join(" "));
       }
-      reviewNote(section, task.type === "repeat" ? "应复述" : "参考范文 / 示例", task.sample);
-      reviewNote(section, "其他范文", task.samples);
-      reviewNote(section, "解析", task.analysis || task.explain);
+      reviewNote(section, task.type === "repeat" ? " Ưng lặp lại " : " tham khảo mô hình ngôn ngữ / minh họa ", task.sample);
+      reviewNote(section, " khác mô hình ngôn ngữ ", task.samples);
+      reviewNote(section, " Giải thích ", task.analysis || task.explain);
       (task.questions || []).forEach(function (q, qi) {
         var question = document.createElement("section");
         question.className = "review-question";
         section.appendChild(question);
-        reviewNote(question, "问题 " + (qi + 1), q.stem);
+        reviewNote(question, " câu hỏi " + (qi + 1), q.stem);
         var options = document.createElement("div");
         options.className = "review-options";
-        // renderOptions 把 id 拼进属性；只传内部数值，绝不传原包 id。
+        // renderOptions hãy id chắp vá tiến lên thuộc tính; chỉ truyền đạt bên trong giá trị số, không đời nào truyền đạt trước đây che phủ id 
         T.renderOptions(Object.assign({}, q, { id: ++no }), options, q.answer);
         options.querySelectorAll("input").forEach(function (input) {
           input.disabled = true;
@@ -433,55 +433,55 @@
             input.parentNode.classList.add("is-key");
             var key = document.createElement("span");
             key.className = "review-key";
-            key.textContent = "正确答案";
+            key.textContent = " Đáp án đúng ";
             input.parentNode.appendChild(key);
           }
         });
         question.appendChild(options);
-        reviewNote(question, "正确答案", q.answer);
-        reviewNote(question, "解析", q.analysis || q.explain);
-        reviewNote(question, "听力原文", q.transcript);
-        reviewMedia(question, { path: q.audio, label: "问题音频", kind: "audio" }, seq, body);
-        reviewMedia(question, { path: q.image, label: "问题配图", kind: "image" }, seq, body);
+        reviewNote(question, " Đáp án đúng ", q.answer);
+        reviewNote(question, " Giải thích ", q.analysis || q.explain);
+        reviewNote(question, " thính giác nguyên văn ", q.transcript);
+        reviewMedia(question, { path: q.audio, label: " câu hỏi âm thanh ", kind: "audio" }, seq, body);
+        reviewMedia(question, { path: q.image, label: " câu hỏi kết hợp sơ đồ ", kind: "image" }, seq, body);
       });
     });
-    if (!(data.tasks || []).length) reviewNote(body, "内容提示", "暂无转换后的题目，请查看下方原包补充内容。");
+    if (!(data.tasks || []).length) reviewNote(body, " nội dung chỉ ra ", " tạm thời không có thay đổi hoàng hậu của chủ đề, mời xem xét bên dưới trước đây che phủ bổ sung nội dung ");
     (data.sourceItems || []).forEach(function (item, i) {
-      var extra = reviewDetails(body, "原包补充 " + (i + 1) + (item.labelZh ? " · " + item.labelZh : ""));
+      var extra = reviewDetails(body, " trước đây che phủ bổ sung " + (i + 1) + (item.labelZh ? " · " + item.labelZh : ""));
       [
-        ["原文全文", "full"], ["补词与答案", "slots"], ["中文译文", "stimulusTextZh"],
-        ["段落译文", "paragraphsZh"], ["标题译文", "labelZh"], ["题干译文", "stemZh"],
-        ["听力译文", "transcriptZh"], ["写作任务", "prompt"], ["原包范文", "essay"],
-        ["范文译文", "translation"], ["口语情境", "scenario"]
+        [" nguyên văn toàn văn ", "full"], [" sửa biến thể cũ của | biến thể của | câu trả lời ", "slots"], [" ngôn ngữ Trung Quốc văn bản dịch ", "stimulusTextZh"],
+        [" đoạn văn bản dịch ", "paragraphsZh"], [" tiêu đề văn bản dịch ", "labelZh"], [" chủ đề biến thể cũ của | văn bản dịch ", "stemZh"],
+        [" thính giác văn bản dịch ", "transcriptZh"], [" viết nhiệm vụ ", "prompt"], [" trước đây che phủ mô hình ngôn ngữ ", "essay"],
+        [" mô hình ngôn ngữ văn bản dịch ", "translation"], [" lời nói thông thường tình huống ", "scenario"]
       ].forEach(function (field) { reviewNote(extra, field[0], item[field[1]]); });
       if ((item.questions || []).length) {
-        var analyses = reviewDetails(extra, "全部问题译文与选项解析");
+        var analyses = reviewDetails(extra, " toàn bộ câu hỏi văn bản dịch biến thể của | tùy chọn phân tích ");
         item.questions.forEach(function (q, qi) {
-          reviewNote(analyses, "问题 " + (qi + 1), q.stemZh || q.stem);
-          reviewNote(analyses, "问题标签", q.labelZh);
+          reviewNote(analyses, " câu hỏi " + (qi + 1), q.stemZh || q.stem);
+          reviewNote(analyses, " câu hỏi nhãn ", q.labelZh);
           (q.choices || []).slice().sort(function (a, b) { return a.order - b.order; }).forEach(function (choice, ci) {
-            reviewNote(analyses, String.fromCharCode(65 + ci) + " 选项译文", choice.labelZh);
+            reviewNote(analyses, String.fromCharCode(65 + ci) + " tùy chọn văn bản dịch ", choice.labelZh);
           });
-          reviewNote(analyses, "全部选项解析", q.explanations || q.analysis || q.explain);
-          reviewNote(analyses, "原包题目段落 / 插入位置", q.questionParagraphs);
+          reviewNote(analyses, " toàn bộ tùy chọn phân tích ", q.explanations || q.analysis || q.explain);
+          reviewNote(analyses, " trước đây che phủ chủ đề đoạn / chèn vào vị trí ", q.questionParagraphs);
         });
       }
       if ((item.transcriptSentences || []).length) {
-        var transcript = reviewDetails(extra, "逐句听力原文与译文");
+        var transcript = reviewDetails(extra, " theo đuổi biến thể của thính giác nguyên văn biến thể của | văn bản dịch ");
         item.transcriptSentences.forEach(function (sentence, si) {
-          var timing = sentence.startTime != null ? "（" + sentence.startTime + " - " + (sentence.endTime == null ? "" : sentence.endTime) + "）" : "";
-          reviewNote(transcript, "句 " + (si + 1) + timing, sentence.text);
-          reviewNote(transcript, "译文", sentence.translationZh);
+          var timing = sentence.startTime != null ? "(" + sentence.startTime + " - " + (sentence.endTime == null ? "" : sentence.endTime) + ")" : "";
+          reviewNote(transcript, " Câu " + (si + 1) + timing, sentence.text);
+          reviewNote(transcript, " văn bản dịch ", sentence.translationZh);
         });
       }
       (item.qs || []).forEach(function (q, qi) {
-        reviewNote(extra, "口语问题 / 应复述 " + (qi + 1), q.sentence);
-        reviewNote(extra, "口语示范答案 " + (qi + 1), q.modelAnswerText);
+        reviewNote(extra, " lời nói thông thường câu hỏi / Ưng lặp lại " + (qi + 1), q.sentence);
+        reviewNote(extra, " lời nói thông thường trình diễn câu trả lời " + (qi + 1), q.modelAnswerText);
       });
     });
     var media = data.media || [];
     if (media.length) {
-      var group = reviewDetails(body, "原包全部媒体与附件（" + media.length + "）");
+      var group = reviewDetails(body, " trước đây che phủ toàn bộ truyền thông biến thể của | phụ lục(" + media.length + ")");
       group.open = true;
       media.forEach(function (item) { reviewMedia(group, item, seq, body); });
     }
@@ -493,10 +493,10 @@
     var body = document.getElementById("review-body");
     if (!body) return;
     updatePoolList();
-    body.innerHTML = '<p role="status">加载题目内容…</p><div class="skel skel-row"></div><div class="skel skel-row"></div>';
+    body.innerHTML = '<p role="status">tải chủ đề nội dung...</p><div class="skel skel-row"></div><div class="skel skel-row"></div>';
     if (focus) body.focus();
     if (w.YYSD_TIKU_GATE && w.YYSD_TIKU_GATE.local && /(?:\?|&)demo=1(?:&|$)/.test(w.location.search || "")) {
-      body.textContent = "这里只演示布局；真实题目与预测包需通过教师认证后审阅。";
+      body.textContent = " biến thể của | chỉ trình diễn sắp xếp; thật chủ đề biến thể của | dự báo che phủ yêu cầu đi qua giáo viên xác thực hoàng hậu xem xét hoặc đọc kỹ ";
       return;
     }
     var controller = new AbortController();
@@ -504,14 +504,14 @@
     Promise.all([api("/api/tiku/blocks/" + encodeURIComponent(id), { signal: controller.signal }), ensureReading()]).then(function (xs) {
       if (!reviewCurrent(seq, body)) return;
       var data = xs[0];
-      if (!data.ok) throw new Error("题目加载失败");
+      if (!data.ok) throw new Error(" chủ đề tải bị đánh bại ");
       reviewData = data;
       renderReview(data, body, seq, xs[1]);
     }).catch(function (e) {
       if (!reviewCurrent(seq, body)) return;
       clearReview();
-      body.innerHTML = '<p class="review-error" role="status"></p><button type="button" class="btn" id="review-retry">重试审阅</button>';
-      body.querySelector("p").textContent = e.message || "题目加载失败，请重试";
+      body.innerHTML = '<p class="review-error" role="status"></p><button type="button" class="btn" id="review-retry">thử lại xem xét hoặc đọc kỹ</button>';
+      body.querySelector("p").textContent = e.message || " chủ đề tải bị đánh bại, mời thử lại ";
     });
   }
   function exportReview() {
@@ -526,21 +526,21 @@
     link.remove();
   }
   function paintPool() {
-    var summary = predictionSummary ? "预测包：" + predictionSummary.groups + " 组 / " + predictionSummary.questions + " 子题；" +
-      (predictionSummary.media - predictionSummary.unavailableMedia) + "/" + predictionSummary.media + " 个媒体已取得。" +
-      (predictionSummary.unavailableMedia ? predictionSummary.unavailableMedia + " 个资源原站拒绝访问，已标注缺失。" : "") : "";
+    var summary = predictionSummary ? " dự báo che phủ: " + predictionSummary.groups + " hình thành / " + predictionSummary.questions + " con trai chủ đề; " +
+      (predictionSummary.media - predictionSummary.unavailableMedia) + "/" + predictionSummary.media + " dùng trong | truyền thông đã giành được " +
+      (predictionSummary.unavailableMedia ? predictionSummary.unavailableMedia + " dùng trong | huyện Tư Nguyên ở Quế Lâm trước đây trạm từ chối thăm, đã đánh dấu thiếu " : "") : "";
     document.getElementById("main").innerHTML =
       '<div class="bench review-bench"><section class="card pool-pane">' +
-        '<div class="pane-title"><h2>题目审阅</h2><span class="n" id="pool-count" role="status"></span></div>' +
-        '<div class="filters">' + paintFilters() + '</div><p class="pool-meta">点击「审阅」查看正文、答案与解析；预测包仅教师可见。' + esc(summary) + '</p>' +
+        '<div class="pane-title"><h2>chủ đề xem xét hoặc đọc kỹ</h2><span class="n" id="pool-count" role="status"></span></div>' +
+        '<div class="filters">' + paintFilters() + '</div><p class="pool-meta">nhấn«xem xét hoặc đọc kỹ»xem xét văn bản chính, câu trả lời biến thể của | phân tích; dự báo che phủ hầu như giáo viên có thể thấy rõ ' + esc(summary) + '</p>' +
         '<div class="pool" id="pool-list"></div></section>' +
-        '<section class="card review-pane" aria-labelledby="review-heading"><div class="pane-title"><h2 id="review-heading">只读内容</h2></div>' +
-        '<div id="review-body" tabindex="-1"><div class="empty"><b>选择一个题块审阅</b><p>不会作答、计时、评分或录音。</p></div></div></section></div>';
+        '<section class="card review-pane" aria-labelledby="review-heading"><div class="pane-title"><h2 id="review-heading">chỉ đọc nội dung</h2></div>' +
+        '<div id="review-body" tabindex="-1"><div class="empty"><b>chọn một dùng trong | chủ đề cục xem xét hoặc đọc kỹ</b><p>không có khả năng trả lời, đo thời gian, chấm điểm có thể ghi âm </p></div></div></section></div>';
     updatePoolList();
     if (reviewId && blockOf(reviewId)) loadReview(reviewId, false);
   }
 
-  /* ——— 我的卷 ——— */
+  /* --- tôi của cuộn lại --- */
   function totalMins(p) {
     var m = p.skillMinutes || {};
     return SKILL_ORDER.reduce(function (a, s) { return a + (Number(m[s]) || 0); }, 0);
@@ -551,52 +551,52 @@
     if (review) list = list.filter(function (p) { return p.status === "pending"; });
     if (!list.length) {
       main.innerHTML = '<div class="empty"><b>' +
-        (review ? "没有待审的卷" : "还没有已有试卷") + "</b><p>" +
-        (review ? "当前没有需要审核的试卷。" : "已有试卷会保留在这里；本轮不新增人工组卷。") +
-        '</p><button type="button" class="btn" data-tab="pool">去审阅题目</button></div>';
+        (review ? " không có ở lại xem xét của cuộn lại " : " vẫn không có đã có bài thi ") + "</b><p>" +
+        (review ? " thời điểm hiện tại không có cần kiểm toán của bài thi " : " đã có bài thi có thể giữ tồn tại biến thể của |; gốc bánh xe không thêm nhân tạo hình thành cuộn lại ") +
+        '</p><button type="button" class="btn" data-tab="pool">đi xem xét hoặc đọc kỹ chủ đề</button></div>';
       return;
     }
     main.innerHTML = '<div class="paper-list">' + list.map(function (p) {
       var acts = [];
       if (review) {
-        acts.push('<button type="button" class="sm" data-ok="' + esc(p.id) + '">通过</button>');
-        acts.push('<button type="button" class="sm danger" data-no="' + esc(p.id) + '">退回</button>');
+        acts.push('<button type="button" class="sm" data-ok="' + esc(p.id) + '">đi qua</button>');
+        acts.push('<button type="button" class="sm danger" data-no="' + esc(p.id) + '">trả lại</button>');
       } else {
-        if (p.status === "draft" || p.status === "pending") acts.push('<button type="button" class="sm primary" data-sub="' + esc(p.id) + '">上架</button>');
-        if (p.status === "live" || (p.status === "pending" && p.live)) acts.push('<button type="button" class="sm danger" data-off="' + esc(p.id) + '">下架</button>');
+        if (p.status === "draft" || p.status === "pending") acts.push('<button type="button" class="sm primary" data-sub="' + esc(p.id) + '">đưa hàng lên kệ</button>');
+        if (p.status === "live" || (p.status === "pending" && p.live)) acts.push('<button type="button" class="sm danger" data-off="' + esc(p.id) + '">gỡ xuống khỏi kệ</button>');
       }
-      acts.push('<button type="button" class="sm" data-pv="' + esc(p.id) + '">预览</button>');
+      acts.push('<button type="button" class="sm" data-pv="' + esc(p.id) + '">xem trước</button>');
       var blocks = p.blocks || [];
       return '<article class="card paper-row">' +
         '<div class="r1"><span class="pt">' + esc(p.title) + '</span>' +
           '<span class="pill kind">' + esc(KIND_ZH[p.kind] || p.kind) + '</span>' +
           '<span class="pill ' + esc(p.status) + '">' + esc(ST_ZH[p.status] || p.status) + "</span></div>" +
-        '<div class="r2"><span>' + blocks.length + ' 个题块</span><span class="sep">·</span>' +
-          '<span>' + (totalMins(p) ? "时长合计 " + totalMins(p) + " 分钟" : "不限时") + '</span><span class="sep">·</span>' +
-          "<span>更新于 " + esc(ts(p.updatedAt)) + "</span>" +
-          (p.owner === "hq" ? '<span class="sep">·</span><span>总部</span>' : "") +
+        '<div class="r2"><span>' + blocks.length + ' dùng trong | chủ đề cục</span><span class="sep">·</span>' +
+          '<span>' + (totalMins(p) ? " thời lượng cộng tổng " + totalMins(p) + " phút " : " không đặt giới hạn thời gian ") + '</span><span class="sep">·</span>' +
+          "<span>thay cũ đổi mới đi " + esc(ts(p.updatedAt)) + "</span>" +
+          (p.owner === "hq" ? '<span class="sep">·</span><span>trụ sở chính</span>' : "") +
           (p.makerName && p.owner !== "hq" && me && me.isAdmin ? '<span class="sep">·</span><span>' + esc(p.makerName) + " " + esc(p.makerPhone || "") + "</span>" : "") +
-          (p.rejectNote ? '<span class="sep">·</span><span style="color:var(--accent)">退回：' + esc(p.rejectNote) + "</span>" : "") + "</div>" +
-        (blocks.length ? '<div class="r2">' + blocks.slice(0, 6).map(function (b) { return esc(b.titleZh || b.title); }).join("、") + (blocks.length > 6 ? " …" : "") + "</div>" : "") +
+          (p.rejectNote ? '<span class="sep">·</span><span style="color:var(--accent)">trả lại: ' + esc(p.rejectNote) + "</span>" : "") + "</div>" +
+        (blocks.length ? '<div class="r2">' + blocks.slice(0, 6).map(function (b) { return esc(b.titleZh || b.title); }).join(", ") + (blocks.length > 6 ? " ..." : "") + "</div>" : "") +
         '<div class="acts">' + acts.join("") + "</div></article>";
     }).join("") + "</div>";
   }
 
-  /* ——— 开通（管理员）：学生多选 × 对象多选（练习区 + 考前冲刺包）批量 ——— */
+  /* --- mở(người quản lý): học sinh nhiều chọn × mục tiêu nhiều chọn(Khu vực luyện tập + đánh trước chạy nước rút che phủ)loạt --- */
   function grantStateText(st) {
     if (!st) return "";
-    if (st.on && st.grace) return "宽限中";
-    if (st.on) return st.expireAt ? "已开通 · 至 " + ts(st.expireAt) : "已开通";
-    if (st.reason === "scheduled") return "定时 " + ts(st.startAt);
-    if (st.reason === "expired") return "已到期";
-    if (st.reason === "off") return "已停用";
+    if (st.on && st.grace) return " gia hạn Trung Quốc ";
+    if (st.on) return st.expireAt ? " đã mở · đến " + ts(st.expireAt) : " đã mở ";
+    if (st.reason === "scheduled") return " ấn định thời gian " + ts(st.startAt);
+    if (st.reason === "expired") return " đã đến hạn ";
+    if (st.reason === "off") return " đã ngừng sử dụng ";
     return "";
   }
   function checkedScopes() {
     return Object.keys(grantSel).filter(function (k) { return grantSel[k]; });
   }
   function scopeTitle(scope) {
-    if (scope === "practice") return "真题题库";
+    if (scope === "practice") return " câu hỏi từ đề thi các năm trước ngân hàng câu hỏi ";
     var id = scope.slice("package:".length);
     var p = (pkgs || []).filter(function (x) { return x.id === id; })[0];
     return p ? p.title : id;
@@ -623,11 +623,11 @@
     main.innerHTML =
       '<div class="bench">' +
         '<section class="card pool-pane">' +
-          '<div class="pane-title"><h2>学生</h2><span class="n">共 ' + (stuList || []).length + " 人 · 已选对象 " + m + ' 个</span></div>' +
+          '<div class="pane-title"><h2>Học viên</h2><span class="n">Tổng cộng ' + (stuList || []).length + " người · đã chọn mục tiêu " + m + ' cái</span></div>' +
           '<div class="filters">' +
-            '<input id="g-q" class="q" value="' + esc(stuQ) + '" placeholder="搜姓名 / 手机号">' +
-            '<button type="button" class="sm" id="g-all">全选当前</button>' +
-            '<button type="button" class="sm" id="g-none">清空</button>' +
+            '<input id="g-q" class="q" value="' + esc(stuQ) + '" placeholder=" tìm kiếm và tên / Số điện thoại ">' +
+            '<button type="button" class="sm" id="g-all">tất cả chọn thời điểm hiện tại</button>' +
+            '<button type="button" class="sm" id="g-none">dọn dẹp</button>' +
           "</div>" +
           (students.length
             ? '<div class="g-list">' + students.map(function (s) {
@@ -635,38 +635,38 @@
               var n = items.filter(function (it) { return it.state && it.state.on; }).length;
               return '<label class="g-row">' +
                 '<input type="checkbox" data-gsel="' + esc(s.id) + '"' + (stuSel[s.id] ? " checked" : "") + ">" +
-                '<span class="g-who">' + esc(s.displayName || "（未命名）") + "<i>" + esc(s.phone) + "</i></span>" +
-                (m ? '<span class="pill ' + (n === m ? "live" : "unpublished") + '">已开 ' + n + "/" + m + "</span>" : "") +
+                '<span class="g-who">' + esc(s.displayName || "(chưa có tiêu đề)") + "<i>" + esc(s.phone) + "</i></span>" +
+                (m ? '<span class="pill ' + (n === m ? "live" : "unpublished") + '">đã mở ' + n + "/" + m + "</span>" : "") +
               "</label>";
             }).join("") + "</div>"
-            : '<div class="empty"><b>没有符合的学生</b></div>') +
+            : '<div class="empty"><b>không có phù hợp với của học sinh</b></div>') +
         "</section>" +
         '<section class="card sheet">' +
-          '<div class="pane-title"><h2>开通对象</h2><span class="n">勾几个，一次就开通几个</span></div>' +
+          '<div class="pane-title"><h2>mở mục tiêu</h2><span class="n">thu hút một vài, đầu tiên trong trường hợp đó mở một vài</span></div>' +
           '<div class="g-list scope-list">' +
             '<label class="g-row">' +
               '<input type="checkbox" data-gscope="practice"' + (grantSel.practice ? " checked" : "") + ">" +
-              '<span class="g-who">真题题库<i>整个练习区</i></span>' +
+              '<span class="g-who">câu hỏi từ đề thi các năm trước ngân hàng câu hỏi<i>toàn bộ luyện tập khu vực</i></span>' +
             "</label>" +
             pkgs.map(function (p) {
               var sc = "package:" + p.id;
               return '<label class="g-row">' +
                 '<input type="checkbox" data-gscope="' + esc(sc) + '"' + (grantSel[sc] ? " checked" : "") + ">" +
-                '<span class="g-who">' + esc(p.title) + "<i>" + (p.kind === "single" ? "单科包" : "整套包") + "</i></span>" +
+                '<span class="g-who">' + esc(p.title) + "<i>" + (p.kind === "single" ? " hóa đơn ngành học che phủ " : " toàn bộ bộ sưu tập che phủ ") + "</i></span>" +
               "</label>";
             }).join("") +
           "</div>" +
           '<div class="minis" style="margin-top:.8rem">' +
-            '<label class="f"><span>开始（可空 = 立即）</span><input type="datetime-local" id="g-start" value="' + esc(gwStart) + '"></label>' +
-            '<label class="f"><span>到期（可空 = 不过期）</span><input type="datetime-local" id="g-exp" value="' + esc(gwExp) + '"></label>' +
+            '<label class="f"><span>Bắt đầu(có thể trống không = ngay lập tức)</span><input type="datetime-local" id="g-start" value="' + esc(gwStart) + '"></label>' +
+            '<label class="f"><span>đến hạn(có thể trống không = chỉ biến thể của)</span><input type="datetime-local" id="g-exp" value="' + esc(gwExp) + '"></label>' +
           "</div>" +
           '<div class="actions" style="margin-top:.6rem">' +
-            '<button type="button" class="btn primary" id="g-on">开通 / 更新选中</button>' +
-            '<button type="button" class="btn danger" id="g-off">停用选中</button>' +
+            '<button type="button" class="btn primary" id="g-on">mở / thay cũ đổi mới lựa chọn</button>' +
+            '<button type="button" class="btn danger" id="g-off">ngừng sử dụng lựa chọn</button>' +
           "</div>" +
-          '<p class="hint">批量规则：每位勾选的学生 × 每个勾选的对象，一次全部生效（共用上面的开始/到期时间）。模考关停或到期时，已开考的学生 24 小时内可考完本场；练习区停用后立即拦截。</p>' +
+          '<p class="hint">loạt quy tắc: mỗi vị trí chọn của học sinh × mỗi dùng trong | chọn của mục tiêu, đầu tiên toàn bộ có hiệu lực(dùng chung bên trên của bắt đầu/đến hạn thời gian) bắt chước đánh đóng cửa có thể đến hạn biến thể cũ của |, đã mở đánh của học sinh 24 giờ bên trong có thể làm xong bài thi gốc sân phơi; luyện tập khu vực ngừng sử dụng hoàng hậu ngay lập tức đánh chặn </p>' +
           '<div class="ledger">' +
-            '<div class="picked-head"><span>授权台账（所选对象）</span><span>' + ledger.length + " 条</span></div>" +
+            '<div class="picked-head"><span>ủy quyền Đài Loan tài khoản(thực ra chọn mục tiêu)</span><span>' + ledger.length + " dải</span></div>" +
             (Object.keys(byUser).length
               ? Object.keys(byUser).map(function (uid) {
                 var u = byUser[uid];
@@ -676,11 +676,11 @@
                     var on = it.state && it.state.on;
                     return '<span class="lg-item"><span class="pill ' + (on ? "live" : "unpublished") + '">' +
                       esc(scopeTitle(it.scope)) + " · " + esc(grantStateText(it.state)) + "</span>" +
-                      (on ? '<button type="button" class="sm danger" data-grev="' + esc(it.userId) + "|" + esc(it.scope) + '">收回</button>' : "") +
+                      (on ? '<button type="button" class="sm danger" data-grev="' + esc(it.userId) + "|" + esc(it.scope) + '">lấy lại</button>' : "") +
                       "</span>";
                   }).join("") + "</span></div>";
               }).join("")
-              : '<p class="muted" style="margin:.4rem 0 0">所选对象还没给任何人开过。</p>') +
+              : '<p class="muted" style="margin:.4rem 0 0">thực ra chọn mục tiêu vẫn chưa cho bất kỳ người mở băng qua </p>') +
           "</div>" +
         "</section></div>";
   }
@@ -693,7 +693,7 @@
       .catch(function (e) { msg(e.message); ledger = []; paint(); });
   }
   function ensureGrant() {
-    // 每次进开通都重拉包列表，刚上架的完整/单项模考才会出现
+    // mỗi lần tiến lên mở tất cả lặp lại kéo che phủ danh sách, cứng đưa hàng lên kệ của hoàn chỉnh/mục đơn lẻ bắt chước đánh khả năng có thể xuất hiện
     var jobs = [api("/api/toefl/packages").then(function (d) { pkgs = d.packages || []; })];
     if (!stuList) jobs.push(api("/api/admin/students").then(function (d) { stuList = d.students || []; }));
     return Promise.all(jobs).then(function () {
@@ -702,19 +702,19 @@
   }
   function submitGrants(action, ids, onlyScope) {
     var scopes = onlyScope ? [onlyScope] : checkedScopes();
-    if (!scopes.length) { msg("先勾选右边的开通对象"); return; }
+    if (!scopes.length) { msg(" trước chọn bên phải của mở mục tiêu "); return; }
     var body = { scopes: scopes, studentIds: ids, action: action };
     if (action !== "off") {
       body.startAt = gwStart ? new Date(gwStart).toISOString() : "";
       body.expireAt = gwExp ? new Date(gwExp).toISOString() : "";
     }
     api("/api/admin/grants", { method: "POST", body: body }).then(function (d) {
-      msg((action === "on" ? "已开通 " : "已停用 ") + (d.count || ids.length * scopes.length) + " 个组合", true);
+      msg((action === "on" ? " đã mở " : " đã ngừng sử dụng ") + (d.count || ids.length * scopes.length) + " dùng trong | lắp ráp ", true);
       return refreshLedger();
     }).catch(function (e) { msg(e.message); });
   }
 
-  /* 已有试卷预览与上下架保留。 */
+  /* đã có bài thi xem trước biến thể của | lên xuống chống đỡ giữ  */
   function previewHref(paper) {
     var id = paper && paper.id;
     if (!id) return "";
@@ -730,18 +730,18 @@
   }
 
   function paintTabs() {
-    var tabs = [["pool", "题目审阅"], ["mine", "已有试卷"]];
-    if (me && me.canGrant) tabs.push(["grant", "开通"]);
-    if (me && me.isAdmin) tabs.push(["review", "审核"]);
+    var tabs = [["pool", " chủ đề xem xét hoặc đọc kỹ "], ["mine", " đã có bài thi "]];
+    if (me && me.canGrant) tabs.push(["grant", " mở "]);
+    if (me && me.isAdmin) tabs.push(["review", " kiểm toán "]);
     document.getElementById("tabs").innerHTML = tabs.map(function (t) {
       return '<button type="button" class="' + (tab === t[0] ? "is-on" : "") + '" data-tab="' + t[0] + '">' + t[1] + "</button>";
-    }).join("") + '<button type="button" class="tab-refresh" data-refresh="1">刷新</button>';
+    }).join("") + '<button type="button" class="tab-refresh" data-refresh="1">cải tiến</button>';
   }
   function paint() {
     clearReview();
     paintTabs();
     var who = document.getElementById("who");
-    if (who) who.textContent = (me.name || me.phone || "") + (me.isAdmin ? " · 总部" : me.canGrant ? " · 管理员" : "");
+    if (who) who.textContent = (me.name || me.phone || "") + (me.isAdmin ? " · trụ sở chính " : me.canGrant ? " · người quản lý " : "");
     if (tab === "pool") paintPool();
     else if (tab === "grant") paintGrant();
     else if (tab === "review") paintList(papers, true);
@@ -761,9 +761,9 @@
     var btns = document.querySelectorAll("#refresh,[data-refresh]");
     btns.forEach(function (b) { b.disabled = true; });
     return reload().then(function () {
-      msg("已刷新 · " + pool.length + " 个题块", true);
+      msg(" đã cải tiến · " + pool.length + " dùng trong | chủ đề cục ", true);
     }).catch(function (e) {
-      msg(e.message || "刷新失败");
+      msg(e.message || " cải tiến bị đánh bại ");
     }).then(function () {
       btns.forEach(function (b) { b.disabled = false; });
     });
@@ -776,11 +776,11 @@
       return reload();
     }).catch(function (e) {
       show("login");
-      document.getElementById("login-msg").textContent = e.message || "请重新登录";
+      document.getElementById("login-msg").textContent = e.message || " mời lại đăng ký ";
     });
   }
 
-  // 最小可运行检查：node tiku/tiku.js；不访问 API、不读取登录凭据。
+  // biến thể của nhỏ di chuyển trên quỹ đạo kiểm tra: node tiku/tiku.js; không thăm API, không đọc đăng ký bằng chứng 
   if (typeof window === "undefined") {
     var assert = require("assert");
     var privatePath = "/api/tiku/prediction/media/0123456789abcdef01234567.mp3";
@@ -789,7 +789,7 @@
     ["javascript:alert(1)", "data:audio/mp3;base64,AA", "https://evil.example/a.mp3", "//evil.example/a.mp3", "library/toefl/../../secret", "library/toefl/%2e%2e/secret", "library/toefl/%252e%252e/secret", "library/toefl/a.mp3?token=secret", privatePath + "?token=secret"].forEach(function (path) {
       assert.strictEqual(mediaPath(path), "");
     });
-    assert.strictEqual(setLabel("prediction-2026-10-17"), "2026-10-17 预测包");
+    assert.strictEqual(setLabel("prediction-2026-10-17"), "2026-10-17 dự báo che phủ ");
     assert.strictEqual(setLabel("R-CW12"), "R-CW12");
     assert.strictEqual(setLabel("W-BS1-Q1"), "W-BS1-Q1");
     F.src = "prediction";
@@ -822,7 +822,7 @@
     return;
   }
 
-  /* ——— 事件 ——— */
+  /* --- sự kiện --- */
   document.addEventListener("click", function (ev) {
     var t = ev.target.closest("[data-tab],[data-bpv],[data-inspect],[data-sub],[data-off],[data-ok],[data-no],[data-pv],[data-grev],[data-refresh],#review-retry,#review-export,#g-on,#g-off,#g-all,#g-none,#refresh,#out");
     if (!t) return;
@@ -836,7 +836,7 @@
     }
     var tabBtn = t.getAttribute("data-tab");
     if (tabBtn) {
-      if (tabBtn === "grant" && !(me && me.canGrant)) { msg("开通服务需要管理员账号"); return; }
+      if (tabBtn === "grant" && !(me && me.canGrant)) { msg(" mở phục vụ cần người quản lý số tài khoản "); return; }
       clearReview();
       tab = tabBtn;
       paint();
@@ -856,7 +856,7 @@
     var sub = t.getAttribute("data-sub");
     if (sub) {
       api("/api/tiku/papers/" + sub + "/submit", { method: "POST", body: {} })
-        .then(function () { msg("已上架", true); return reload(); })
+        .then(function () { msg(" đã đưa hàng lên kệ ", true); return reload(); })
         .catch(function (e) { msg(e.message); });
       return;
     }
@@ -865,16 +865,16 @@
     var grev = t.getAttribute("data-grev");
     if (grev) {
       var gp = String(grev).split("|");
-      if (confirm("收回「" + scopeTitle(gp[1]) + "」的开通？正在考的可考完本场。")) submitGrants("off", [Number(gp[0])], gp[1]);
+      if (confirm(" lấy lại«" + scopeTitle(gp[1]) + "»của mở? đang ở đánh của có thể làm xong bài thi gốc sân phơi ")) submitGrants("off", [Number(gp[0])], gp[1]);
       return;
     }
     if (t.id === "g-on" || t.id === "g-off") {
       var gids = Object.keys(stuSel).map(Number).filter(Boolean);
-      if (!gids.length) { msg("先在左边勾选学生"); return; }
+      if (!gids.length) { msg(" trước tồn tại bên trái chọn học sinh "); return; }
       var gsc = checkedScopes();
-      if (!gsc.length) { msg("先勾选右边的开通对象"); return; }
+      if (!gsc.length) { msg(" trước chọn bên phải của mở mục tiêu "); return; }
       if (t.id === "g-off") {
-        if (!confirm("停用这 " + gids.length + " 名学生 × " + gsc.length + " 个对象的开通？进行中的模考 24 小时内可考完本场，练习区立即拦截。")) return;
+        if (!confirm(" ngừng sử dụng này " + gids.length + " logic được sinh × " + gsc.length + " dùng trong | mục tiêu của mở? tiến hành bắn trúng mục tiêu bắt chước đánh 24 giờ bên trong có thể làm xong bài thi gốc sân phơi, luyện tập khu vực ngay lập tức đánh chặn ")) return;
         submitGrants("off", gids);
       } else {
         submitGrants("on", gids);
@@ -882,24 +882,24 @@
       return;
     }
     var off = t.getAttribute("data-off");
-    if (off && confirm("下架后不能再挂回去，确定？")) {
+    if (off && confirm(" gỡ xuống khỏi kệ hoàng hậu không thể lại treo trở về, rõ ràng? ")) {
       api("/api/tiku/papers/" + off + "/unpublish", { method: "POST", body: {} })
-        .then(function () { msg("已下架", true); return reload(); })
+        .then(function () { msg(" đã gỡ xuống khỏi kệ ", true); return reload(); })
         .catch(function (e) { msg(e.message); });
       return;
     }
     var okid = t.getAttribute("data-ok");
     if (okid) {
       api("/api/tiku/papers/" + okid + "/approve", { method: "POST", body: {} })
-        .then(function () { msg("已通过", true); return reload(); })
+        .then(function () { msg(" đã đi qua ", true); return reload(); })
         .catch(function (e) { msg(e.message); });
       return;
     }
     var noid = t.getAttribute("data-no");
     if (noid) {
-      var note = prompt("退回原因（可空）") || "";
+      var note = prompt(" trả lại nguyên nhân(có thể trống không)") || "";
       api("/api/tiku/papers/" + noid + "/reject", { method: "POST", body: { note: note } })
-        .then(function () { msg("已退回", true); return reload(); })
+        .then(function () { msg(" đã trả lại ", true); return reload(); })
         .catch(function (e) { msg(e.message); });
       return;
     }
@@ -933,9 +933,9 @@
   });
   function syncFilterDom() {
     var typ = document.getElementById("f-type");
-    if (typ) typ.outerHTML = '<select id="f-type" aria-label="题型">' + typeOptions() + "</select>";
+    if (typ) typ.outerHTML = '<select id="f-type" aria-label=" chủ đề khuôn ">' + typeOptions() + "</select>";
     var set = document.getElementById("f-set");
-    if (set) set.outerHTML = '<select id="f-set" aria-label="套号或日期">' + setOptions() + "</select>";
+    if (set) set.outerHTML = '<select id="f-set" aria-label=" che đậy gầm có thể ngày tháng ">' + setOptions() + "</select>";
   }
   document.addEventListener("input", function (ev) {
     if (ev.target.id === "f-q") { F.q = ev.target.value.toLowerCase(); updatePoolList(); }
@@ -967,7 +967,7 @@
       localStorage.setItem(TK, d.token);
       bootApp();
     }).catch(function (e) {
-      document.getElementById("login-msg").textContent = e.message || "登录失败";
+      document.getElementById("login-msg").textContent = e.message || " đăng ký bị đánh bại ";
     });
   };
 
@@ -975,26 +975,26 @@
     show("gate");
     return;
   }
-  // ponytail: localhost ?demo=1 无 API 预览界面
+  // ponytail: localhost ?demo=1 không có API xem trước bề mặt tiếp xúc
   if (w.YYSD_TIKU_GATE.local && /(?:\?|&)demo=1(?:&|$)/.test(w.location.search || "")) {
-    me = { name: "演示老师", phone: "13800000000", isAdmin: true, canGrant: true };
+    me = { name: " trình diễn giáo viên ", phone: "13800000000", isAdmin: true, canGrant: true };
     pool = [
-      { id: "d1", skill: "reading", type: "complete_words", title: "Archaeopteryx", titleZh: "始祖鸟填空", set: 2, n: 10, source: "set" },
-      { id: "d2", skill: "reading", type: "daily_life", title: "Campus Notice", titleZh: "校园通知", set: 1, n: 5, source: "set" },
-      { id: "d3", skill: "reading", type: "academic", title: "Hollywood", titleZh: "好莱坞黄金时代", set: 1, n: 10, source: "set" },
-      { id: "d4", skill: "reading", type: "academic", title: "Coral Reefs", titleZh: "珊瑚礁生态", set: 3, n: 10, source: "set" },
-      { id: "d5", skill: "listening", type: "lecture", title: "Art History", titleZh: "艺术史讲座", set: 3, n: 6, source: "set" },
-      { id: "d6", skill: "listening", type: "conversation", title: "Library", titleZh: "图书馆借书", set: 2, n: 5, source: "set" },
-      { id: "d7", skill: "listening", type: "choose_response", title: "Quick Response", titleZh: "听句选回应", set: 1, n: 8, source: "set" },
-      { id: "d8", skill: "writing", type: "email", title: "Email to Prof", titleZh: "给教授写邮件", paperId: "2025-09-02", n: 1, source: "date" },
-      { id: "d9", skill: "writing", type: "discussion", title: "Urban Planning", titleZh: "学术讨论", set: 4, n: 1, source: "set" },
-      { id: "d10", skill: "writing", type: "sentence", title: "Build a Sentence", titleZh: "句子构建", set: 2, n: 5, source: "set" },
-      { id: "d11", skill: "speaking", type: "repeat", title: "Listen & Repeat", titleZh: "听力复述", set: 1, n: 8, source: "set" },
-      { id: "d12", skill: "speaking", type: "interview", title: "Interview", titleZh: "模拟面试", set: 2, n: 5, source: "set" }
+      { id: "d1", skill: "reading", type: "complete_words", title: "Archaeopteryx", titleZh: " Archaeopteryx lấp chỗ trống công việc ", set: 2, n: 10, source: "set" },
+      { id: "d2", skill: "reading", type: "daily_life", title: "Campus Notice", titleZh: " khuôn viên trường thông báo ", set: 1, n: 5, source: "set" },
+      { id: "d3", skill: "reading", type: "academic", title: "Hollywood", titleZh: " Hollywood thời đại hoàng kim ", set: 1, n: 10, source: "set" },
+      { id: "d4", skill: "reading", type: "academic", title: "Coral Reefs", titleZh: " rạn san hô sinh thái ", set: 3, n: 10, source: "set" },
+      { id: "d5", skill: "listening", type: "lecture", title: "Art History", titleZh: " lịch sử nghệ thuật một khóa bài giảng ", set: 3, n: 6, source: "set" },
+      { id: "d6", skill: "listening", type: "conversation", title: "Library", titleZh: " thư viện mượn viết tắt của | ", set: 2, n: 5, source: "set" },
+      { id: "d7", skill: "listening", type: "choose_response", title: "Quick Response", titleZh: " Nghe câu và chọn câu đáp lại ", set: 1, n: 8, source: "set" },
+      { id: "d8", skill: "writing", type: "email", title: "Email to Prof", titleZh: " cho giáo sư viết thư từ ", paperId: "2025-09-02", n: 1, source: "date" },
+      { id: "d9", skill: "writing", type: "discussion", title: "Urban Planning", titleZh: " Thảo luận học thuật ", set: 4, n: 1, source: "set" },
+      { id: "d10", skill: "writing", type: "sentence", title: "Build a Sentence", titleZh: " Xây dựng câu ", set: 2, n: 5, source: "set" },
+      { id: "d11", skill: "speaking", type: "repeat", title: "Listen & Repeat", titleZh: " thính giác lặp lại ", set: 1, n: 8, source: "set" },
+      { id: "d12", skill: "speaking", type: "interview", title: "Interview", titleZh: " mô phỏng được phỏng vấn ", set: 2, n: 5, source: "set" }
     ];
     papers = [
-      { id: "tp_demo1", title: "十月冲刺模考 A 卷", kind: "full", status: "live", owner: "teacher", skillMinutes: { reading: 35, listening: 36, writing: 29, speaking: 16 }, blocks: [pool[0], pool[4], pool[7], pool[10]], updatedAt: "2026-10-13T10:24:00" },
-      { id: "tp_demo2", title: "阅读专项 · 学术文章", kind: "single", status: "draft", owner: "teacher", skillMinutes: {}, blocks: [pool[2], pool[3]], updatedAt: "2026-10-12T18:02:00" }
+      { id: "tp_demo1", title: " tháng Mười chạy nước rút bắt chước đánh A cuộn lại ", kind: "full", status: "live", owner: "teacher", skillMinutes: { reading: 35, listening: 36, writing: 29, speaking: 16 }, blocks: [pool[0], pool[4], pool[7], pool[10]], updatedAt: "2026-10-13T10:24:00" },
+      { id: "tp_demo2", title: " đọc chuyên biệt · học thuật bài viết ", kind: "single", status: "draft", owner: "teacher", skillMinutes: {}, blocks: [pool[2], pool[3]], updatedAt: "2026-10-12T18:02:00" }
     ];
     var dt = (w.location.search.match(/(?:\?|&)tab=(pool|mine|grant)(?:&|$)/) || [])[1];
     if (dt) tab = dt;

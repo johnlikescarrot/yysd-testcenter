@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_alevel_catalog.py — scan library/mock/alevel/**/papers/*.pdf → alevel-catalog.json
+build_alevel_catalog.py - scan library/mock/alevel/**/papers/*.pdf → alevel-catalog.json
 
 Filename: {code}_{session}{yy}_{qp|ms}_{paper}.pdf
   e.g. 9709_s24_qp_12.pdf  |  9MA0_s24_qp_01.pdf  |  7367_w23_ms_02.pdf
@@ -27,12 +27,12 @@ FILE_RE = re.compile(
 )
 
 SEASON_LABEL = {
-    "m": {"en": "Feb/Mar", "zh": "春季 (Feb/Mar)"},
-    "s": {"en": "May/Jun", "zh": "夏季 (May/Jun)"},
-    "w": {"en": "Oct/Nov", "zh": "冬季 (Oct/Nov)"},
+    "m": {"en": "Feb/Mar", "zh": " Mùa xuân (Feb/Mar)"},
+    "s": {"en": "May/Jun", "zh": " Mùa hè (May/Jun)"},
+    "w": {"en": "Oct/Nov", "zh": " Mùa đông (Oct/Nov)"},
 }
 
-# 同一年份内：冬季 → 夏季 → 春季（考试日期新→旧）
+# giống hệt năm cụ thể bên trong: Mùa đông → Mùa hè → Mùa xuân(dự thi ngày tháng viết tắt của Tân Cương→cũ)
 SEASON_SORT = {"w": 0, "s": 1, "m": 2}
 
 
@@ -67,7 +67,7 @@ def parse_pdf_name(fname, meta):
     code = meta["code"]
     sid = f"{board_id}-{code_key.lower()}-{year}-{season}-{paper}-{kind}"
     season_info = SEASON_LABEL.get(season, {"en": season, "zh": season})
-    type_zh = "真题" if kind == "qp" else "官方答案"
+    type_zh = " Đề thi thật " if kind == "qp" else " Đáp án chính thức "
     title = (
         f"{board_label} {code} {meta['nameZh']} · {year} {season_info['zh']} · "
         f"Paper {paper} · {type_zh}"
@@ -173,7 +173,7 @@ def main():
         json.dump(catalog, f, ensure_ascii=False, indent=2)
         f.write("\n")
     qp = sum(1 for it in catalog["items"] if it["type"] == "qp")
-    print(f"Wrote {CATALOG_PATH} — {len(catalog['boards'])} boards, {qp} QPs, {len(catalog['items'])} files")
+    print(f"Wrote {CATALOG_PATH} - {len(catalog['boards'])} boards, {qp} QPs, {len(catalog['items'])} files")
 
 
 if __name__ == "__main__":

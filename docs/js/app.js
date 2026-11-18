@@ -8,22 +8,46 @@ export function createApp(doc, storage, day) {
   const find = (id) => doc.getElementById(id);
 
   const actions = {
-    start: () => { state = S.startLesson(state); },
+    start: () => {
+      state = S.startLesson(state);
+    },
     answer: (button) => {
       const question = QUESTIONS[state.lessonIndex % QUESTIONS.length];
       state = S.applyAnswer(state, question, button.getAttribute('data-choice'), day).state;
     },
-    next: () => { state = S.advanceLesson(state); },
-    review: () => { state = S.startReview(state, day); },
-    goal: () => { state = S.cycleGoal(state); },
-    heart: () => { state = S.refillHearts(state); },
-    friend: () => { state = S.toggleFriend(state); },
-    theme: () => { state = S.toggleTheme(state); },
-    tab: (button) => { state = S.setView(state, button.getAttribute('data-view')); },
-    'reset-open': () => { state = S.openReset(state); },
-    'reset-yes': () => { state = S.resetProgress(day); },
-    'reset-no': () => { state = S.closeReset(state); },
-    close: () => { state = S.closeReset(state); }
+    next: () => {
+      state = S.advanceLesson(state);
+    },
+    review: () => {
+      state = S.startReview(state, day);
+    },
+    goal: () => {
+      state = S.cycleGoal(state);
+    },
+    heart: () => {
+      state = S.refillHearts(state);
+    },
+    friend: () => {
+      state = S.toggleFriend(state);
+    },
+    theme: () => {
+      state = S.toggleTheme(state);
+    },
+    tab: (button) => {
+      state = S.setView(state, button.getAttribute('data-view'));
+    },
+    'reset-open': () => {
+      state = S.openReset(state);
+    },
+    'reset-yes': () => {
+      state = S.resetProgress(day);
+    },
+    'reset-no': () => {
+      state = S.closeReset(state);
+    },
+    close: () => {
+      state = S.closeReset(state);
+    }
   };
 
   function render() {
@@ -68,5 +92,5 @@ export function createApp(doc, storage, day) {
   });
 
   render();
-  return { getState: () => state, render, actions };
+  return { render, actions };
 }

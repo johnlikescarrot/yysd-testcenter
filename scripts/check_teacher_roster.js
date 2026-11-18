@@ -9,7 +9,7 @@ function assert(cond, msg) {
 }
 
 var html = read("teacher.html");
-assert(html.indexOf(">我的学生<") >= 0, "teacher.html title 我的学生");
+assert(html.indexOf(">tôi của học sinh<") >= 0, "teacher.html title tôi của học sinh ");
 assert(html.indexOf("teacher-shell.js") >= 0, "fixed sidebar shell script");
 assert(html.indexOf("data-teacher-nav-toggle") >= 0, "mobile hamburger");
 assert(html.indexOf("id=\"teacher-side\"") >= 0, "sidebar id for drawer");
@@ -45,8 +45,8 @@ assert(css.indexOf(".teacher-student-card.is-overdue") >= 0, "overdue card style
 assert(css.indexOf(".stu-home .cal-month__chip.is-pending") >= 0, "amber pending");
 assert(css.indexOf(".stu-home .cal-month__chip.is-done") >= 0, "green done");
 
-assert(read("teacher-calendar.html").indexOf("我的学生") >= 0, "nav calendar");
-assert(read("teacher-diagnostic.html").indexOf("我的学生") >= 0, "nav diagnostic");
+assert(read("teacher-calendar.html").indexOf(" tôi của học sinh ") >= 0, "nav calendar");
+assert(read("teacher-diagnostic.html").indexOf(" tôi của học sinh ") >= 0, "nav diagnostic");
 
 function pad(n) { return n < 10 ? "0" + n : "" + n; }
 function dayKeyOf(iso) {
@@ -63,11 +63,11 @@ var onDay = events.filter(function (ev) {
 });
 assert(onDay.length === 1 && onDay[0].eventType === "ASSIGNMENT", "assign-day filter");
 
-var names = [{ displayName: "周周" }, { displayName: "阿明" }, { displayName: "" , phone: "13800000000" }];
+var names = [{ displayName: " đi một vòng đi một vòng " }, { displayName: " Al-Amin " }, { displayName: "" , phone: "13800000000" }];
 names.sort(function (a, b) {
   return (a.displayName || a.phone || "").localeCompare(b.displayName || b.phone || "", "zh");
 });
-assert(names[0].phone === "13800000000" || names[0].displayName === "阿明", "zh name sort runs");
+assert(names[0].phone === "13800000000" || names[0].displayName === " Al-Amin ", "zh name sort runs");
 
 assert(html.indexOf("id=\"report-month\"") >= 0, "report month select");
 assert(html.indexOf("id=\"report-export\"") >= 0, "report export button");
@@ -77,8 +77,8 @@ assert(js.indexOf("teacher-student-report.html?student=") >= 0, "export opens pr
 
 assert(server.indexOf("/api/teacher/students/:userId/report") >= 0, "report API");
 assert(server.indexOf("function monthKeyOf") >= 0, "month bucket helper");
-assert(read("assets/js/teacher-student-report.js").indexOf("本月无记录") >= 0, "empty month copy");
-assert(read("teacher-student-report.html").indexOf("打印 / 存 PDF") >= 0, "print to PDF");
+assert(read("assets/js/teacher-student-report.js").indexOf(" tháng này không có ghi chép ") >= 0, "empty month copy");
+assert(read("teacher-student-report.html").indexOf(" đóng dấu / tồn tại PDF") >= 0, "print to PDF");
 assert(read("teacher-student-report.html").indexOf("teacher-mode.js") < 0, "report page must not boot teacher-mode redirect");
 assert(read("assets/js/teacher-mode.js").indexOf("teacher-student-report.html") >= 0, "mode boot skips report page");
 assert(read("assets/js/teacher-auth.js").indexOf("teacher-student-report.html") >= 0, "report page gated");
@@ -130,4 +130,4 @@ function scoreForEvent(event, list) {
 assert(scoreForEvent(ev, attemptRows).title === "by-event", "prefer assignmentEventId");
 assert(scoreForEvent(ev, attemptRows.slice(1)).title === "legacy-linked", "legacy assigned attempt still attaches");
 
-console.log("ok: teacher roster 我的学生");
+console.log("ok: teacher roster tôi của học sinh ");

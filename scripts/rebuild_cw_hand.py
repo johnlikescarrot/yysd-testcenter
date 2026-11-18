@@ -86,7 +86,7 @@ def extract_answers(lines):
 def extract_passage(lines):
     rows = [r for r in lines if 0.54 <= r["y"] < 0.86]
     text = glue_lines(rows)
-    text = re.sub(r"\b(?:答案|全文翻译)\b", " ", text)
+    text = re.sub(r"\b(?:Đáp án|toàn văn dịch)\b", " ", text)
     return normalize_blanks(text)
 
 
@@ -114,7 +114,7 @@ def match_one(text, pos, word):
     for k in range(len(word) - 1, 0, -1):
         pre = re.escape(word[:k])
         pats = [re.compile(r"\b" + pre + r"_+", re.I), re.compile(r"\b" + pre + r"\b", re.I)]
-        # glued "Speciesad__" — only for 2+ letter prefixes so "of" cannot eat "lo__"
+        # glued "Speciesad__" - only for 2+ letter prefixes so "of" cannot eat "lo__"
         if k >= 2:
             pats.insert(1, re.compile(pre + r"_+", re.I))
         for pat in pats:
@@ -221,99 +221,99 @@ def from_marked(set_id, title, zh, trans, marked):
 # OCR leftovers: glued prefixes / 0-for-o / dropped underscores. Hand-marked from the same PNGs.
 OVERRIDE = {
     "R-CW25": from_marked(
-        "R-CW25", "Stomata", "气孔",
-        "植物的叶子和茎上有称为气孔的小孔，使它们能够从空气中吸收二氧化碳并向空气中释放氧气。然而，气孔也会让水蒸气逸出，这在干燥环境中会引起问题。为了解决这个问题，在水分流失特别严重的时期，一些植物会暂时关闭气孔。另一种特殊的适应是植物叶子上厚厚的蜡质层，有助于保存水分。",
+        "R-CW25", "Stomata", " bong bóng khí ",
+        " thực vật của lá biến thể cũ của cuống dùng trong | có được gọi là bong bóng khí của nhỏ lỗ, khiến chúng có khả năng biến thể của | không khí Trung Quốc hấp thụ carbon điôxít CO2 và hướng không khí Trung Quốc thả khí oxy tuy nhiên, bong bóng khí cũng có thể nhường hơi nước trốn thoát đi ra, này tồn tại khô môi trường Trung Quốc có thể gây ra câu hỏi để giải quyết này câu hỏi, tồn tại hàm lượng nước bị cuốn trôi khác thường nghiêm trọng của giai đoạn, một số thực vật có thể tạm thời đóng bong bóng khí khác hạt đặc biệt của thích nghi là thực vật lá dùng trong | dày dày của tính sáp chồng lên nhau, góp phần vào bảo tồn hàm lượng nước ",
         "Plants have tiny holes called stomata on their leaves and stems that allow them to take in carbon dioxide from the air and release oxygen into the air. {How|ever}, stomata {c|an} also {l|et} water vapor {esc|ape}, which {cau|ses} problems {i|n} dry {enviro|nments}. To {man|age} this, {dur|ing} hot {per|iods} when water loss is especially severe, some plants close their stomata temporarily. Another special adaptation is thick, waxy coatings on plant leaves that help conserve water.",
     ),
     "R-CW30": from_marked(
-        "R-CW30", "Ocean Currents", "洋流",
-        "洋流是地球气候系统的重要组成部分，影响天气模式和海洋生态系统。在风、温度变化和盐度差异的驱动下，洋流将热量分布到全球各地。例如，墨西哥湾流使北大西洋变暖，影响欧洲的气候。深洋流，亦称为温盐环流，在调节全球温度和二氧化碳水平方面发挥着作用。海洋学研究不断揭示这些动态系统的复杂性。",
+        "R-CW30", "Ocean Currents", " dòng hải lưu ",
+        " dòng hải lưu là trái đất khí hậu hệ thống của quan trọng phần, ảnh hưởng thời tiết chế độ biến thể cũ của đại dương hệ sinh thái tồn tại gió, nhiệt độ thay đổi biến thể cũ của độ mặn sự khác biệt của điều khiển xuống, dòng hải lưu sẽ nhiệt lượng phân tán đến toàn thế giới ở khắp mọi nơi ví dụ, Vịnh Mexico chảy khiến Bắc Đại Tây Dương trở nên ấm, ảnh hưởng châu Âu của khí hậu biến thể cũ của dòng hải lưu, còn được gọi là làm tuần hoàn nhiệt muối, tồn tại điều chỉnh toàn thế giới nhiệt độ biến thể cũ của carbon điôxít CO2 mức độ khía cạnh phát huy nước đi tác động đến hải dương học nghiên cứu không ngừng cho thấy những... này chuyển động hệ thống của tính phức tạp ",
         "Ocean currents are critical components of Earth's climate system, influencing weather patterns and marine ecosystems. Driven {b|y} wind, {tempe|rature} changes, {a|nd} differences {i|n} salinity, ocean currents {distr|ibute} heat {acr|oss} the {gl|obe}. The Gulf Stream, {f|or} instance, {wa|rms} the North Atlantic, {affe|cting} climate in Europe. Deep ocean currents, known as thermohaline circulation, play a role in regulating global temperatures and carbon dioxide levels. Research in oceanography continues to reveal the complexities of these dynamic systems.",
     ),
     "R-CW46": from_marked(
-        "R-CW46", "The Ottoman Empire", "奥斯曼帝国",
-        "奥斯曼帝国存续于1299年至1922年，是一股强大的力量，重塑了欧洲、中东和北非的政治与文化格局。该帝国以军事实力和战略征服著称，在苏莱曼大帝统治时期达到鼎盛，其间艺术与建筑蓬勃发展。奥斯曼人还在全球贸易中发挥了关键作用，控制着连接亚洲香料市场与欧洲商业中心的重要贸易路线。",
+        "R-CW46", "The Ottoman Empire", " Đế chế Ottoman ",
+        " Đế chế Ottoman tiếp tục tồn tại đi 1299 năm đến 1922 năm, là một đùi to lớn và mạnh mẽ của sức mạnh, tái tạo hoàn thành châu Âu, Trung Đông biến thể cũ của Bắc Phi của chính trị biến thể của | văn hóa kết cấu nên đế quốc lính Israel sự thật sức mạnh biến thể cũ của chiến lược chinh phục được biết đến rộng rãi là, tồn tại Suleiman thiên đế cai trị giai đoạn đạt tới thịnh vượng, ở giữa nghệ thuật biến thể của | xây dựng mạnh mẽ sự phát triển đế chế Ottoman người vẫn tồn tại toàn thế giới thương mại Trung Quốc phát huy hoàn thành điểm mấu chốt tác động đến, kiểm soát nước đi liên kết Châu Á gia vị khu chợ biến thể của | châu Âu trung tâm kinh doanh của quan trọng thương mại hành trình ",
         "The Ottoman Empire, which lasted from 1299 to 1922, was a formidable force that reshaped the political and cultural landscapes of Europe, the Middle East, and North Africa. Renowned for its {mili|tary} prowess {a|nd} strategic {conq|uests}, the {emp|ire} reached {i|ts} zenith {un|der} the {re|ign} of Suleyman the Magnificent, {dur|ing} which {ar|ts} and {archit|ecture} flourished. The Ottomans also played a pivotal role in global commerce, controlling key trade routes that linked the spice markets of Asia with the merchant hubs of Europe.",
     ),
     "R-CW63": from_marked(
-        "R-CW63", "River Delta Formation", "河流三角洲形成",
-        "河流三角洲的形成是一种地理过程，体现了陆地与水体之间的动态相互作用。当河流流入海洋或大海等水体时，流速会减慢，将上游携带的物质沉积下来。沉积物逐渐堆积，形成了三角洲，这是向水中延伸的肥沃地貌。三角洲不仅支撑着多样的生态系统，还提供了丰富的农业用地。",
+        "R-CW63", "River Delta Formation", " sông đồng bằng châu thổ hình thành ",
+        " sông đồng bằng châu thổ của hình thành là một loại địa lý quá trình sự kiện, thể hiện hoàn thành đất liền biến thể của | vùng nước giữa của chuyển động tương tác đong sông chảy vào đại dương có thể biển đợi vùng nước biến thể cũ của |, tốc độ dòng chảy có thể làm chậm lại, sẽ thượng nguồn mang theo của vật chất trầm tích đi xuống trầm tích dần dần chất đống, hình thành hoàn thành đồng bằng châu thổ, này là hướng nước Trung Quốc mở rộng của màu mỡ địa mạo đồng bằng châu thổ không chỉ chống đỡ nước đi đa dạng của hệ sinh thái, vẫn đề nghị hoàn thành làm phong phú của nông nghiệp sử dụng trợ từ kết cấu: dùng trước động từ hoặc tính từ ",
         "The formation of river deltas is a geographical process that illustrates the dynamic interaction between land and water. When a river reaches a body of water, such as an {oc|ean} or {s|ea}, it {sl|ows} down, {depos|iting} the {mate|rials} it has {car|ried} from {upst|ream}. Gradually, {t|he} sediments {accum|ulate} to {cre|ate} deltas, which are fertile landforms that extend into the water. Deltas not only support diverse ecosystems but also provide rich agricultural land.",
     ),
     "R-CW89": from_marked(
-        "R-CW89", "Exoplanets", "系外行星",
-        "近年来，系外行星研究迅速发展，重新定义了我们对宇宙的理解。天文学家已经确认了数千颗太阳系外的行星，其中一些行星与其恒星的轨道离得足够近，可能支持生命存在。这些发现挑战了此前关于行星形成以及别处存在生命可能性的观念。在这些遥远世界上探测到水蒸气和甲烷等大气成分，为它们是否适合孕育生命提供了令人兴奋的线索。",
+        "R-CW89", "Exoplanets", " kết nối người ngoại đạo ngôi sao ",
+        " trong vài năm qua, kết nối người ngoại đạo ngôi sao nghiên cứu phát triển nhanh chóng, lại định nghĩa hoàn thành chúng tôi đúng vũ trụ của lĩnh hội nhà thiên văn học đã xác nhận hoàn thành đếm một nghìn lượng từ cho vật nhỏ hình cầu hệ mặt trời bên ngoài của hành tinh, trong số một số hành tinh thay vì ngôi sao của đường ray loài thú thần thoại được đủ gần, có thể tán thành sự sống tồn tại những... này để ý thử thách hoàn thành trước đó liên quan đến hành tinh hình thành cũng như nơi khác tồn tại sự sống khả năng của khái niệm tồn tại những... này xa xôi thế giới dùng trong | thăm dò đến hơi nước biến thể cũ của mê-tan CH4 đợi khí quyển thành phần, làm chúng liệu có phù hợp mang thai sự sống đề nghị hoàn thành khiến cho một người phấn khích của manh mối ",
         "The study of exoplanets has rapidly advanced in recent years, redefining our understanding of the universe. Astronomers have identified thousands of planets beyond our solar system, some of which orbit close enough to their stars to support life. These {find|ings} challenge {prev|ious} notions {ab|out} planetary {form|ation} and {t|he} potential {f|or} life {else|where}. The {dete|ction} of {atmos|pheric} components {li|ke} water vapor and methane in these distant worlds offers exciting clues about their suitability for hosting life.",
     ),
     "R-CW107": from_marked(
-        "R-CW107", "Underwater Robotics", "水下机器人",
-        "水下机器人技术的进步正在彻底改变海洋探索。这些机器人被称为自主水下航行器（AUV），可以独立在深海环境中航行。AUV配备传感器和摄像头，可收集有关海洋生物、洋流和水下地质的数据。它们可以到达人类潜水员无法到达的深度，为未知区域提供宝贵的见解。研究人员利用AUV来研究气候变化对海洋生态系统的影响并探索水下考古遗址，增强我们对海洋的了解。",
+        "R-CW107", "Underwater Robotics", " dưới nước người máy ",
+        " dưới nước người máy công nghệ của tiến bộ đang ở triệt để thay đổi đại dương khám phá những... này người máy chăn được gọi là độc lập dưới nước đi thuyền thiết bị(AUV), có thể độc lập tồn tại biển sâu môi trường Trung Quốc đi thuyền AUV phân bổ cảm biến biến thể cũ của webcam, có thể thu thập có liên quan đến đại dương sinh vật, dòng hải lưu biến thể cũ của dưới nước địa chất của dữ liệu chúng có thể đạt đến nhân loại thợ lặn không thể đạt đến của độ sâu, làm chưa biết khu vực đề nghị có giá trị của ý kiến nhân viên nghiên cứu tận dụng AUV đến nghiên cứu biến đổi khí hậu đúng đại dương hệ sinh thái của ảnh hưởng và khám phá dưới nước khảo cổ di tích, tăng cường chúng tôi đúng đại dương của hiểu ",
         "Advancements in underwater robotics are revolutionizing ocean exploration. These robots, known as autonomous underwater vehicles (AUVs), can navigate deep-sea environments independently. Equipped with {sen|sors} and {cam|eras}, AUVs {col|lect} data {o|n} marine {li|fe}, ocean {curr|ents}, and {under|water} geology. {Th|ey} can {re|ach} depths {th|at} are inaccessible to human divers, providing valuable insights into uncharted regions. Researchers use AUVs to study the impact of climate change on ocean ecosystems and to explore underwater archaeological sites, enhancing our understanding of the ocean.",
     ),
     "R-CW109": from_marked(
-        "R-CW109", "Language Development", "语言发展",
-        "儿童语言发展是一个复杂的过程，受到遗传和环境的影响。从出生起，婴儿就开始识别声音和言语模式。到一岁的时候，大多数人都能说“妈妈”或“爸爸”等简单的单词。随着他们的成长，他们的词汇量迅速扩大。与护理人员和同龄人的互动在这一发展中起着至关重要的作用。给孩子读书和参与对话是支持语言习得的有效方法。",
+        "R-CW109", "Language Development", " ngôn ngữ sự phát triển ",
+        " trẻ em ngôn ngữ sự phát triển là một dùng trong | phức tạp của quá trình sự kiện, nhận được di truyền biến thể cũ của môi trường của ảnh hưởng biến thể của | được sinh ra dậy, trẻ sơ sinh trong trường hợp đó bắt đầu phân biệt giọng biến thể cũ của từ ngữ chế độ đến một biến thể của | của thời gian, đại đa số người tất cả có thể thuyết phục“ mẹ ”hoặc“ cha ”đợi đơn giản của từ cùng với họ của trưởng thành, họ của biến thể của | đo lường nhanh chóng mở rộng biến thể của | chăm sóc nhân viên biến thể cũ của người cùng tuổi của tương tác tồn tại này một đang phát triển dậy nước đi cực kỳ quan trọng của tác động đến cho trẻ em đọc sách biến thể cũ của tham gia nói chuyện là tán thành ngôn ngữ học được của hiệu quả phương pháp ",
         "Language development in children is a complex process influenced by both genetics and environment. From {bi|rth} infants {be|gin} to recognize {sou|nds} and {patt|erns} in {spe|ech}. By {o|ne} year {o|f} age, {mo|st} can {sp|eak} simple {wo|rds} like \"mama\" or \"dada.\" As they grow, their vocabulary expands rapidly. Interacting with caregivers and peers plays a crucial role in this development. Reading to children and engaging in conversations are effective ways to support language acquisition.",
     ),
     "R-CW121": from_marked(
-        "R-CW121", "Color Perception and Pigments", "颜色感知与颜料",
-        "几个世纪以来，颜色感知一直吸引着科学家和艺术家。颜料是赋予材料颜色的物质；对颜料的研究揭示了它们与光的复杂相互作用。颜料吸收某些波长并反射其他波长，这正是物体呈现颜色的原因。合成颜料扩大了艺术家和工业可用的色彩范围。研发颜料需要化学和物理知识，因为其性质影响耐久性和外观。理解颜料的行为对艺术修复、制造等多个领域都至关重要。",
+        "R-CW121", "Color Perception and Pigments", " màu sắc nhận thức biến thể của | sơn ",
+        " một vài thế kỷ kể từ, màu sắc nhận thức thẳng thu hút nước đi nhà khoa học biến thể cũ của nghệ sĩ sơn là giao phó liệu màu sắc của vật chất; đúng sơn của nghiên cứu cho thấy hoàn thành chúng biến thể của | ánh sáng của phức tạp tương tác sơn hấp thụ một vài bước sóng và phản chiếu khác bước sóng, này chính xác là vật thể xuất hiện màu sắc của nguyên nhân tổng hợp sơn mở rộng hoàn thành nghệ sĩ biến thể cũ của công nghiệp có thể sử dụng của màu sắc phạm vi nghiên cứu và phát triển sơn cần hóa học biến thể cũ của vật lý kiến thức, bởi vì của anh ấy bản chất ảnh hưởng bền lâu bản chất biến thể cũ của diện mạo bên ngoài lĩnh hội sơn của hành động đúng nghệ thuật khôi phục, sản xuất đợi nhiều miền tất cả cực kỳ quan trọng ",
         "Color perception has fascinated scientists and artists alike for centuries. The study of pigments, {subst|ances} that {gi|ve} color {t|o} materials, {rev|eals} complex {intera|ctions} with {li|ght}. Pigments {abs|orb} certain {wavel|engths} and {ref|lect} others, {wh|ich} is why objects appear to have color. Synthetic pigments have expanded the color palette available to artists and industries. The development of pigments requires knowledge of chemistry and physics, as their properties influence durability and appearance. Understanding how pigments behave is crucial in various fields, from art restoration to manufacturing.",
     ),
     "R-CW128": from_marked(
-        "R-CW128", "Sodium-Ion Batteries", "钠离子电池",
-        "钠离子电池作为锂电池的潜在替代品正日益受到关注。钠比锂更易获取，因为它可以从海水中提取，而锂通常需要采用可能危害环境的开采方法。从长远来看，钠离子技术被认为更具可持续性。然而，若干挑战限制了它的广泛应用。钠离子电池的储能往往低于锂电池，从而降低了其在某些应用中的效率。研究人员持续研究钠离子电池，以提升其性能并确定其在未来能源系统中的作用。",
+        "R-CW128", "Sodium-Ion Batteries", " natri ion pin ",
+        " natri ion pin hành vi pin lithium của ẩn giấu sản phẩm thay thế ngày chính lợi ích nhận được chú ý đến natri Bỉ liti thay đổi hoặc thay thế dễ giành được, bởi vì nó có thể biến thể của | nước biển Trung Quốc rút, và liti thông thường cần áp dụng có thể gây nguy hại môi trường của khai thác phương pháp biến thể của | dài hạn đến chăm sóc, natri ion công nghệ chăn tin thay đổi hoặc thay thế công cụ bền vững bản chất tuy nhiên, một số lượng hoặc con số nhất định thử thách hạn chế hoàn thành nó của rộng đưa vào sử dụng natri ion pin của dự trữ có thể thường thường thấp hơn so với pin lithium, do đó giảm hoàn thành của anh ấy tồn tại một vài đưa vào sử dụng bắn trúng mục tiêu hiệu suất nhân viên nghiên cứu tiếp tục nghiên cứu natri ion pin, biến thể cũ của thăng chức của anh ấy chức năng và rõ ràng của anh ấy tồn tại tương lai năng lượng hệ thống bắn trúng mục tiêu tác động đến ",
         "Sodium-ion batteries are gaining attention as a potential alternative to lithium-ion batteries. Sodium is more accessible than lithium because it can be extracted from seawater, while lithium typically requires mining methods that can {ha|rm} the {envir|onment}. Sodium-ion {techn|ology} is {consi|dered} more {susta|inable} in {t|he} long {te|rm}. However, {sev|eral} challenges {li|mit} its {wides|pread} use. Sodium-ion batteries often store less energy than lithium-ion batteries, reducing their efficiency for certain applications. Researchers continue to study sodium-ion batteries in order to improve their performance and determine their role in future energy systems.",
     ),
     "R-CW129": from_marked(
-        "R-CW129", "Human Anatomy", "人体解剖学",
-        "人体解剖学是对人体结构的科学研究。解剖学揭示了身体的不同部分如何相互作用和共同发挥作用以维持生命。例如，循环系统将血液输送到全身，将氧气和营养物质送到细胞，同时清除废物。解剖学家还必须了解器官、组织和细胞的组织。医疗专业人员利用解剖学知识来诊断和治疗疾病，改善患者护理和健康结果。",
+        "R-CW129", "Human Anatomy", " giải phẫu học người ",
+        " giải phẫu học người là đúng cơ thể người cấu trúc của nghiên cứu khoa học giải phẫu học cho thấy hoàn thành cơ thể của khác phần như thế nào tương tác biến thể cũ của chung phát huy tác động đến biến thể cũ của giữ sự sống ví dụ, hệ thống tuần hoàn sẽ máu vận chuyển đến toàn bộ cơ thể, sẽ khí oxy biến thể cũ của chất dinh dưỡng gửi đến tế bào, đồng thời dọn dẹp rác rưởi giải phẫu học dùng trong | và | vẫn phải hiểu cơ quan, tổ chức biến thể cũ của tế bào của tổ chức điều trị y tế chuyên môn nhân viên tận dụng giải phẫu học kiến thức đến chẩn đoán biến thể cũ của điều trị bệnh tật, cải thiện bệnh nhân chăm sóc biến thể cũ của sức khỏe kết trái ",
         "Human anatomy is the scientific study of human structure. Anatomy {rev|eals} how different {pa|rts} of {t|he} body {inte|ract} and {func|tion} together {t|o} maintain {li|fe}. For {exa|mple}, the circulatory {sys|tem} transports {bl|ood} throughout the body, carrying oxygen and nutrients to cells while removing waste products. Anatomists must also understand the organization of organs, tissues, and cells. Medical professionals use anatomical knowledge to diagnose and treat illnesses, improving patient care and health outcomes.",
     ),
     "R-CW133": from_marked(
-        "R-CW133", "Prehistoric Tools", "史前工具",
-        "最初，人类使用自然物体作为工具（例如，锋利的石头或分叉的棍子）。后来，人们开始有目的地将木头和石头塑造成工具。由于木材易腐烂的性质，现代关于史前时代如何使用木材的知识很大程度上只能靠推断。然而，有了石器工具，考古学家就有了更坚实的基础。有大量幸存的文物。在全世界范围内，燧石因其不寻常的物理特性而成为一种受欢迎的材料。",
+        "R-CW133", "Prehistoric Tools", " thời tiền sử công cụ ",
+        " đầu tiên, nhân loại sử dụng tự nhiên vật thể hành vi công cụ(ví dụ, sắc bén của đá có thể ngã ba của gậy) sau này, mọi người bắt đầu có điểm đến sẽ chậm chạp biến thể cũ của đá tạo mẫu thành công công cụ do gỗ dễ thối rữa của bản chất, Hyundai liên quan đến thời tiền sử Time như thế nào sử dụng gỗ của kiến thức to mức độ dùng trong | chỉ có thể dựa vào suy luận tuy nhiên, tôi có giải pháp rồi! dụng cụ đá công cụ, nhà khảo cổ học trong trường hợp đó tôi có giải pháp rồi! thay đổi hoặc thay thế vững chắc và có giá trị của nền có lượng lớn sống sót của di tích văn hóa tồn tại toàn thế giới phạm vi bên trong, đá lửa biến thể cũ của của anh ấy không thông thường của vật lý tính chất và trở thành một loại phổ biến của liệu ",
         "Initially, humans used naturally occurring objects as tools (for instance, a sharp stone or a forked stick). Later, {peo|ple} began {purpos|efully} to {sh|ape} wood {a|nd} stone {in|to} tools. {Bec|ause} of {t|he} perishable {nat|ure} of {wo|od}, modern {know|ledge} of how it was used in prehistoric times is largely a matter of inference. With tools of stone, however, archaeologists are on firmer ground; there are a vast number of surviving artifacts. Throughout the world, flint was a favored material because of its unusual physical properties.",
     ),
     "R-CW140": from_marked(
-        "R-CW140", "Black Holes", "黑洞",
-        "宇宙浩瀚无垠，充满了几个世纪以来一直吸引着人类的谜团。黑洞是太空中的一个区域，那里的引力非常强大，任何东西都无法逃脱，甚至连光也无法逃脱。尽管黑洞是看不见的，但可以通过观察它们对附近物质的影响来探测它们。黑洞在天体物理学中发挥着至关重要的作用，影响星系的形成并提供对空间、时间和重力本质的见解。",
+        "R-CW140", "Black Holes", " hố đen ",
+        " vũ trụ mênh mông rộng lớn, đầy hoàn thành một vài thế kỷ kể từ thẳng thu hút nước đi nhân loại của câu đố hố đen là không gian vũ trụ bắn trúng mục tiêu một dùng trong | khu vực, ở đó của lực hấp dẫn rất to lớn và mạnh mẽ, bất kỳ đông và tây tất cả không thể chạy trốn, thậm chí liên kết ánh sáng cũng không thể chạy trốn mặc dù hố đen là không thể thấy của, nhưng có thể đi qua quan sát chúng đúng gần đó vật chất của ảnh hưởng đến thăm dò chúng hố đen tồn tại vật lý thiên văn Trung Quốc phát huy nước đi cực kỳ quan trọng của tác động đến, ảnh hưởng xem | của hình thành và đề nghị đúng không gian, thời gian biến thể cũ của trọng lực bản chất của ý kiến ",
         "The universe is a vast expanse, filled with mysteries that have intrigued humans for centuries. Black holes are {reg|ions} in {sp|ace} where {gra|vity} is {s|o} strong {th|at} nothing, {n|ot} even {li|ght}, can {esc|ape}. Even {tho|ugh} they {a|re} invisible, black holes can be detected by observing their effects on nearby matter. Black holes play a crucial role in astrophysics, influencing galaxy formation and offering insights into the nature of space, time, and gravity.",
     ),
     "R-CW141": from_marked(
-        "R-CW141", "Industrialization and Urbanization", "工业化与城市化",
-        "在工业化初期，许多城市经历了快速发展。这是由于大量工人涌入工厂寻找工作。城市化导致社会结构发生重大变化，来自不同背景的人们开始近距离生活和工作。工业化也带来了各种挑战，包括污染加剧造成的环境问题以及改善新城市居民住房和交通基础设施的需要。",
+        "R-CW141", "Industrialization and Urbanization", " công nghiệp hóa biến thể của | đô thị hóa ",
+        " tồn tại công nghiệp hóa giai đoạn đầu, nhiều thành phố kinh nghiệm hoàn thành nhanh sự phát triển này là do lượng lớn công nhân đổ vào nhà máy tìm kiếm làm việc đô thị hóa dẫn đến xã hội cấu trúc xảy ra lớn thay đổi, đến từ khác bối cảnh của mọi người bắt đầu cự ly gần sống biến thể cũ của làm việc công nghiệp hóa cũng mang đến hoàn thành mỗi loại thử thách, bao gồm gây ô nhiễm làm gia tăng gây ra của môi trường câu hỏi cũng như cải thiện Xincheng hoặc Hsincheng chợ cư dân nhà ở biến thể cũ của kết nối cơ sở hạ tầng của cần ",
         "In the early days of industrialization, many cities experienced rapid growth. This {w|as} due {t|o} the {inf|lux} of {wor|kers} seeking {emplo|yment} in {fact|ories}. Urbanization {l|ed} to {signi|ficant} changes {i|n} the {soc|ial} fabric, as people from diverse backgrounds came to live and work in close quarters. Industrialization also brought about various challenges, including the environmental problems caused by increased pollution and the need for improved infrastructure to house and transport the new city residents.",
     ),
     "R-CW146": from_marked(
-        "R-CW146", "Environmental Geology", "环境地质学",
-        "地质学涉及对地球物理结构和物质、作用于它们的过程以及地球及其生命形式的历史的研究。环境地质学特别关注地质过程如何影响人类活动和环境。它涵盖自然灾害评估、资源管理和土地利用规划等领域。通过了解影响环境条件的地质因素，地质学家可以帮助减轻自然灾害的影响并促进可持续发展。",
+        "R-CW146", "Environmental Geology", " môi trường địa chất học ",
+        " địa chất học liên quan nhắm vào quả bóng cấu trúc vật lý biến thể cũ của vật chất, tác động đến đi chúng của quá trình sự kiện cũng như trái đất và của sự sống bề ngoài của lịch sử của nghiên cứu môi trường địa chất học khác thường chú ý đến địa chất quá trình sự kiện như thế nào ảnh hưởng nhân loại tập thể dục biến thể cũ của môi trường nó bao phủ thiên tai đánh giá, huyện Tư Nguyên ở Quế Lâm giám sát biến thể cũ của quy hoạch sử dụng đất đợi miền đi qua hiểu ảnh hưởng môi trường điều kiện của địa chất yếu tố, nhà địa chất học có thể sự giúp đỡ giảm nhẹ thiên tai của ảnh hưởng và thúc đẩy phát triển bền vững ",
         "Geology involves the study of Earth's physical structure and substances, the processes that act upon them, and the history of the planet and its life forms. Environmental geology {specif|ically} focuses {o|n} how {geolo|gical} processes {aff|ect} human {activ|ities} and {t|he} environment. {I|t} encompasses {ar|eas} such {a|s} natural {haz|ard} assessment, resource management, and land-use planning. By understanding the geological factors that influence environmental conditions, geologists can help mitigate the impacts of natural disasters and promote sustainable development.",
     ),
     "R-CW197": from_marked(
-        "R-CW197", "Public Health Initiatives", "公共卫生倡议",
-        "公共卫生倡议旨在促进全体人群的福祉并预防疾病。这些策略往往既关注对突发事件的短期应对，也关注对基础设施的长期投资。具体工作包括疫苗接种计划、教育宣传活动，以及制定确保人们获得清洁用水和营养食品的政策。政府、非营利组织与社区之间的协作，对于有效的公共卫生干预至关重要。理解健康的社会决定因素，如经济稳定和教育，有助于量身定制各项倡议，以满足不同人群的具体需求。",
+        "R-CW197", "Public Health Initiatives", " y tế công cộng đề nghị ",
+        " y tế công cộng đề nghị có mục đích là thúc đẩy tất cả đám đông của hạnh phúc và ngăn ngừa bệnh tật những... này chiến lược thường thường đã chú ý đến đúng tình huống khẩn cấp của ngắn hạn trả lời, cũng chú ý đến đúng cơ sở hạ tầng của dài hạn đầu tư cụ thể làm việc bao gồm vắc-xin được tiêm vắc xin kế hoạch, giáo dục truyền bá tập thể dục, cũng như soạn thảo đảm bảo mọi người đạt được sạch sử dụng nước biến thể cũ của dinh dưỡng thực phẩm của chính sách chính phủ, tổ chức phi lợi nhuận biến thể của | cộng đồng giữa của hợp tác, về hiệu quả của y tế công cộng can thiệp cực kỳ quan trọng lĩnh hội sức khỏe của xã hội quyết định yếu tố, như kinh tế vững vàng biến thể cũ của giáo dục, góp phần vào được đặt làm riêng mỗi sau cổ đề nghị, biến thể cũ của thoả mãn khác đám đông của cụ thể yêu cầu ",
         "Public health initiatives aim to promote well-being and prevent disease across populations. These {strateg|ies} often {fo|cus} on {bo|th} short-term {resp|onses} to {emerg|encies} and long-{t|erm} investments {i|n} infrastructure. {Eff|orts} include {vacci|nation} programs, {educ|ational} campaigns, and the development of policies that ensure access to clean water and nutritious food. Collaboration between governments, nonprofit organizations, and communities is essential for effective public health interventions. Understanding the social determinants of health, such as economic stability and education, helps tailor initiatives to address the specific needs of different populations.",
     ),
     "R-CW207": from_marked(
-        "R-CW207", "Moon Phases and Navigation", "月相与航海",
-        "观察月相对于历史上的许多文化都很重要，影响着日历、航海和神话。月相周期构成了早期计时系统的基础，例如伊斯兰回历和中国传统的阴阳历。航海员利用月球的位置来预测海平面及其亮度，以指导他们的航行，特别是在夜间旅行时。在神话中，月亮通常象征着强大的神灵或象征，塑造仪式、古故事和季节性节日。跨越各大洲，月亮的盈亏一直是通用的时钟，也是人类想象力的灵感来源。",
+        "R-CW207", "Moon Phases and Navigation", " tuần trăng biến thể của | đi biển ",
+        " quan sát tuần trăng về mang tính lịch sử của nhiều văn hóa tất cả quan trọng, ảnh hưởng nước đi lịch, đi biển biến thể cũ của truyền thuyết tuần trăng chu kỳ cấu thành hoàn thành giai đoạn đầu đo thời gian hệ thống của nền, ví dụ Hồi giáo xoay vòng biến thể cũ của | biến thể cũ của Trung Quốc truyền thống của âm và dương biến thể cũ của | đi biển người tham gia một lĩnh vực hoạt động nhất định tận dụng mặt trăng của vị trí đến dự báo mực nước biển và của độ sáng, biến thể cũ của hướng dẫn họ của đi thuyền, khác thường là tồn tại ban đêm du lịch biến thể cũ của | tồn tại truyền thuyết Trung Quốc, mặt trăng thông thường biểu tượng nước đi to lớn và mạnh mẽ của thần có thể biểu tượng, tạo mẫu nghi thức, cổ tục lệ cũ biến thể cũ của theo mùa ngày lễ bước qua mỗi lục địa, mặt trăng của lời và lỗ thẳng là sử dụng mọi nơi của đồng hồ, cũng là nhân loại trí tưởng tượng của cảm hứng nguồn ",
         "Observing the moon's phases has been important for many cultures throughout history, influencing calendars, navigation, and mythology. Lunar cycles formed the basis of early timekeeping systems, such as the Islamic Hijri calendar and the traditional Chinese lunisolar calendar. Seafarers {us|ed} the {posi|tion} of {t|he} moon {t|o} make {predi|ctions} about {o|cean} levels {an|d} its {illumi|nation} to {gu|ide} their {voy|ages} especially during night travel. In mythology, the moon often embodied powerful deities or symbols, shaping rituals, stories, and seasonal festivals. Across continents, the waxing and waning of the moon has remained a universal clock and an inspiration for human imagination.",
     ),
     "R-CW214": from_marked(
-        "R-CW214", "Earth's Axial Tilt and Seasons", "地球轴倾与季节",
-        "我们的行星在围绕太阳运行时，地轴倾斜约23.5度。因此，到达地球不同部分的阳光量并不完全相同，从而形成了季节。当太阳直射某一区域时，该区域往往气温更高、白昼更长。季节的变化影响生活的许多方面，包括农业、野生动物行为和人类活动。",
+        "R-CW214", "Earth's Axial Tilt and Seasons", " trái đất trục lật đổ biến thể của | thời gian ",
+        " chúng tôi của hành tinh tồn tại xoay quanh mặt trời thời gian chạy, trục trái đất nghiêng cân trong cân đĩa hoặc trên cân 23.5 vượt qua do đó, đạt đến trái đất khác phần của ánh nắng đo lường hoàn toàn không hoàn chỉnh giống hệt, do đó hình thành hoàn thành thời gian đong mặt trời thẳng biến thể cũ của một vài một khu vực biến thể cũ của |, nên khu vực thường thường nhiệt độ không khí thay đổi hoặc thay thế cao, ban ngày thay đổi hoặc thay thế chiều dài thời gian của thay đổi ảnh hưởng sống của nhiều khía cạnh, bao gồm nông nghiệp, động vật hoang dã hành động biến thể cũ của nhân loại tập thể dục ",
         "Our planet's axis is tilted at an angle of about 23.5 degrees as it orbits the Sun. {A|s} a {res|ult} the {amo|unt} of {sun|light} that {hi|ts} different {pa|rts} of {Ea|rth} is {n|ot} all {t|he} same, {crea|ting} seasons. When the Sun shines directly on a region, that region tends to have higher temperatures and longer days. The changing seasons affect many aspects of life, including agriculture, wildlife behavior, and human activities.",
     ),
     "R-CW224": from_marked(
-        "R-CW224", "Photoperiodism in Trees", "树木的光周期现象",
-        "光周期现象对生物的生存至关重要。就树木而言，光周期现象指的是对昼夜长短的生理反应。这种反应影响着落叶、开花等季节性行为。随着白昼变短、黑夜变长，一些树木开始通过落叶为季节的变更做准备。这能在冬季的几个月里保存水分与能量，并保护树木敏感的组织免受冻害。",
+        "R-CW224", "Photoperiodism in Trees", " cây của ánh sáng chu kỳ hiện tượng ",
+        " ánh sáng chu kỳ hiện tượng bố trí lá mọc đối vật của tồn tại cực kỳ quan trọng trong trường hợp đó cây xét về, ánh sáng chu kỳ hiện tượng ngón tay của là đúng ngày và đêm chiều dài của sinh lý phản ứng loại này phản ứng ảnh hưởng tung tích hòa hợp, nở hoa đợi theo mùa hành động cùng với ban ngày thay đổi ngắn, đêm thay đổi chiều dài, một số cây bắt đầu đi qua lá khô làm thời gian của thay đổi làm sự chuẩn bị này có thể tồn tại mùa đông của một vài mặt trăng biến thể của | bảo tồn hàm lượng nước biến thể của | năng lượng, và bảo vệ cây nhạy cảm của tổ chức tránh chịu đựng tổn thương do đóng băng ",
         "Photoperiodism is crucial for the survival of organisms. In trees, photoperiodism refers to the physiological response to the length of day and night. This response influences {seas|onal} behaviors {li|ke} leaf {shed|ding} and {flow|ering}. As {t|he} days {gr|ow} shorter {a|nd} the {nig|hts} longer, {so|me} trees {be|gin} to prepare for the changing seasons by dropping their leaves. This conserves water and energy during the winter months and protects the sensitive tissues of the tree from cold damage.",
     ),
     "R-CW236": from_marked(
-        "R-CW236", "Paleontology", "古生物学",
-        "古生物学是通过分析化石记录来研究生命历史的科学。这一领域需要考察化石——即保存在岩石中的生物残骸——以了解古代生命形式如何演化并适应其环境。古生物学家还利用化石来了解古代的环境条件。例如，在内陆地区发现的海洋化石表明，这些地区很可能曾经处于水下。",
-        "Paleontology is the scientific study that deals with the history of life through the analysis of fossil records. This {fi|eld} involves {exam|ining} fossils—{rem|ains} of {orga|nisms} preserved {i|n} rock—{t|o} understand {h|ow} ancient {li|fe} forms {evo|lved} and {ada|pted} to their surroundings. Paleontologists also use fossils to learn about ancient environmental conditions. Finding marine fossils in landlocked areas, for example, suggests that these regions were very likely underwater once upon a time.",
+        "R-CW236", "Paleontology", " cổ sinh vật học ",
+        " cổ sinh vật học là đi qua phân tích hoá thạch ghi chép đến học viên cao học sinh mệnh lịch sử của khoa học này một miền cần kiểm tra hoá thạch--tức là bảo tồn tồn tại đá bắn trúng mục tiêu sinh vật hài cốt--biến thể cũ của hiểu thời cổ đại sự sống bề ngoài như thế nào tiến hóa và thích nghi của anh ấy môi trường nhà cổ sinh vật học vẫn tận dụng hoá thạch đến hiểu thời cổ đại của môi trường điều kiện ví dụ, trong đó đất liền khu vực để ý của đại dương hoá thạch làm rõ, những... này địa phương có thể một lần ở trong dưới nước ",
+        "Paleontology is the scientific study that deals with the history of life through the analysis of fossil records. This {fi|eld} involves {exam|ining} fossils-{rem|ains} of {orga|nisms} preserved {i|n} rock-{t|o} understand {h|ow} ancient {li|fe} forms {evo|lved} and {ada|pted} to their surroundings. Paleontologists also use fossils to learn about ancient environmental conditions. Finding marine fossils in landlocked areas, for example, suggests that these regions were very likely underwater once upon a time.",
     ),
 }
 
@@ -353,7 +353,7 @@ def parse(path, lines):
 def paper(tasks):
     return {
         "id": "bank-cw",
-        "title": "题块库 · 单词填空",
+        "title": " chủ đề cục nhà kho · từ lấp chỗ trống công việc ",
         "skill": "reading",
         "source": "bank",
         "tasks": tasks,

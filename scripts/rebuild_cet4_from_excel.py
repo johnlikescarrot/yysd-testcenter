@@ -11,7 +11,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCEL = Path("/Users/frankman/Desktop/四级单词List1-35.xlsx")
+EXCEL = Path("/Users/frankman/Desktop/cấp 4 từ List1-35.xlsx")
 DATA = ROOT / "library" / "study" / "vocab-cet4-data"
 HTML_DIR = ROOT / "library" / "study" / "vocab-cet4"
 THEME_DIR = ROOT / "library" / "study" / "vocab-themes" / "data"
@@ -109,10 +109,10 @@ def load_bank() -> dict[str, dict]:
         if not key:
             return
         meaning = str(w.get("meaning") or "").strip()
-        weak = (not meaning) or ("待校对" in meaning)
+        weak = (not meaning) or (" ở lại người hiệu đính " in meaning)
         if key in bank:
             old_weak = (not str(bank[key].get("meaning") or "").strip()) or (
-                "待校对" in str(bank[key].get("meaning") or "")
+                " ở lại người hiệu đính " in str(bank[key].get("meaning") or "")
             )
             if weak and not old_weak:
                 return
@@ -122,9 +122,9 @@ def load_bank() -> dict[str, dict]:
         # also index slash/paren variants so center hits centre entry, etc.
         for vk in variant_keys(str(w.get("word") or "")):
             if vk not in bank or (
-                "待校对" in str(bank[vk].get("meaning") or "")
+                " ở lại người hiệu đính " in str(bank[vk].get("meaning") or "")
                 and meaning
-                and "待校对" not in meaning
+                and " ở lại người hiệu đính " not in meaning
             ):
                 bank[vk] = w
 
@@ -171,7 +171,7 @@ def load_excel() -> dict[int, list[str]]:
 
 def entry_for(i: int, word: str, bank: dict[str, dict]) -> dict:
     hit = bank_get(bank, word)
-    if hit and str(hit.get("meaning") or "").strip() and "待校对" not in str(hit.get("meaning") or ""):
+    if hit and str(hit.get("meaning") or "").strip() and " ở lại người hiệu đính " not in str(hit.get("meaning") or ""):
         out = dict(hit)
         out["id"] = i
         out["word"] = word
@@ -186,10 +186,10 @@ def entry_for(i: int, word: str, bank: dict[str, dict]) -> dict:
                 if isinstance(c, dict):
                     ph = c.get("phrase") or ""
                     me = c.get("meaning") or ""
-                    parts.append(f"{ph}（{me}）" if me else ph)
+                    parts.append(f"{ph}({me})" if me else ph)
                 else:
                     parts.append(str(c))
-            out["collocations"] = "，".join([p for p in parts if p])
+            out["collocations"] = ", ".join([p for p in parts if p])
             out["phrases"] = out.get("phrases") or out["collocations"]
         if out.get("exampleEn") and not out.get("exampleEN"):
             out["exampleEN"] = out["exampleEn"]
@@ -221,13 +221,13 @@ def main() -> int:
     stub = 0
     for n in range(1, 36):
         words = [entry_for(i, w, bank) for i, w in enumerate(by[n], 1)]
-        stub += sum(1 for w in words if "待校对" in str(w.get("meaning") or ""))
+        stub += sum(1 for w in words if " ở lại người hiệu đính " in str(w.get("meaning") or ""))
         meta = {
             "listNo": n,
             "band": band_for(n),
-            "title": f"单元 {n}",
+            "title": f" Đơn vị {n}",
             "published": True,
-            "sourceNote": "Headword order from 四级单词List1-35.xlsx; definitions from CET-4 bank + theme lexicon.",
+            "sourceNote": "Headword order from cấp 4 từ List1-35.xlsx; definitions from CET-4 bank + theme lexicon.",
             "words": words,
         }
         jp = DATA / f"list-{n:02d}.json"
@@ -242,7 +242,7 @@ def main() -> int:
                 1,
             )
         html = html.replace("const wordData = [", "var wordData = [", 1)
-        out = HTML_DIR / f"四级单词LIST{n}.html"
+        out = HTML_DIR / f" cấp 4 từ LIST{n}.html"
         out.write_text(html, encoding="utf-8")
         print(f"LIST{n}: {len(words)} words → {out.name}")
 

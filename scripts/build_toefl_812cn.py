@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.12-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/8 tháng/8.12-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-12/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-12"
 SET = "8.12"
-TITLE = "新托福 8.12 国内线下"
+TITLE = " TOEFL mới 8.12 Trong nước · trực tiếp "
 
 
 def dump(name, obj):
@@ -162,7 +162,7 @@ def build_reading():
         " invisible, black holes can be detected by observing their effects on nearby matter. Black holes play a crucial role in astrophysics, influencing galaxy formation and offering insights into the nature of space, time, and gravity.",
     ])
     t2, n = cw("Craftsmanship", 1, n, [
-        "Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers—known as artisans—were highly valued not only for their ",
+        "Craftsmanship has undergone a profound transformation over the centuries, shifting from a demonstration of manual skill to an expression of artistic vision and communal identity. In medieval Europe, skilled makers-known as artisans-were highly valued not only for their ",
         ("tech", "technical"),
         " expertise ",
         ("b", "but"),
@@ -255,7 +255,7 @@ def build_reading():
     ])
     if n != 51:
         raise SystemExit("expected next 51 after CW, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1440, "from": 1, "to": 55},
         {"n": 2, "timeSec": 480, "from": 56, "to": 65},
     ], [
@@ -291,7 +291,7 @@ def build_reading():
             "title": "Winter Student Trek",
             "subtitle": "Alpine Adventures · Swiss Alps",
             "body": (
-                "Looking for the ultimate winter break escape? Alpine Adventures invites you to embark on an unforgettable journey through the Swiss Alps—the perfect mix of adventure, culture, and relaxation. Our seven-day Winter Student Trek is designed for both first-time explorers and seasoned adventurers."
+                "Looking for the ultimate winter break escape? Alpine Adventures invites you to embark on an unforgettable journey through the Swiss Alps-the perfect mix of adventure, culture, and relaxation. Our seven-day Winter Student Trek is designed for both first-time explorers and seasoned adventurers."
             ),
             "fields": [
                 {"label": "Highlights", "value": "Snow-dusted valleys, mountain trails, cozy alpine lodges, and wildlife such as ibex and eagles. Each day brings a curated challenge."},
@@ -320,8 +320,8 @@ def build_reading():
             }, "A"),
         ]),
         academic("Linguistic Structural Diversity", 2, [
-            "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order—the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: Placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
-            "Beyond syntax, languages differ in morphological complexity—the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
+            "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order-the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: Placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
+            "Beyond syntax, languages differ in morphological complexity-the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
             {"insert": "A", "t": "This trade-off reflects deeper functional pressures."},
             {"insert": "B", "t": "Languages evolve not randomly but in response to cognitive constraints and social factors, including contact with other languages and cultural shifts."},
             {"insert": "C", "t": "Studying this evolution helps linguists understand not only how languages differ but why certain grammatical strategies emerge and persist across communities."},
@@ -356,7 +356,7 @@ def build_reading():
         academic("Diane Arbus", 2, [
             "Diane Arbus (1923–1971) occupies a singular place in the history of photography, celebrated and criticized for her stark, intimate portraits of a wide range of people, including some of unconventional appearance or marginalized social status. Her work has long provoked debate because it resists easy moral or aesthetic categorization.",
             "Some critics, such as Susan Sontag, argued that Arbus' photographs create a troubling distance between viewer and subject. Sontag claimed that Arbus' images risk turning people into spectacles of oddity, suggesting that her gaze could be predatory in its fascination with difference. Others, however, see Arbus as a profoundly empathetic artist. Writers like Arthur Lubow emphasize her ability to reveal her subjects' complexity and dignity, noting that many of them collaborated willingly and even joyfully in the creation of their portraits.",
-            "A further line of debate surrounds Arbus' style: her use of frontal composition, square format, and direct flash has been interpreted negatively—as a cold, clinical approach—and positively—as a method that strips away artifice to expose deeper truths.",
+            "A further line of debate surrounds Arbus' style: her use of frontal composition, square format, and direct flash has been interpreted negatively-as a cold, clinical approach-and positively-as a method that strips away artifice to expose deeper truths.",
             "Ultimately, Arbus' work continues to inspire disagreement because it challenges viewers to confront their own assumptions about normalcy, beauty, and vulnerability. Her photographs remain powerful precisely because they refuse to resolve these tensions.",
         ], [
             q(61, 'The word "stark" in the passage is closest in meaning to', {
@@ -394,7 +394,7 @@ def build_reading():
 
 
 def build_listening():
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 900, "from": 1, "to": 12},
         {"n": 2, "timeSec": 600, "from": 13, "to": 20},
     ], [
@@ -532,7 +532,7 @@ def build_listening():
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 1680, "from": 1, "to": 4, "label": "Email"},
         {"n": 2, "timeSec": 3000, "from": 5, "to": 9, "label": "Academic Discussion"},
     ], [
@@ -566,7 +566,7 @@ def build_writing():
               "Dear Guest Lecturer,\n\nThank you for speaking to our class about environmental sustainability. Your presentation made a complex topic practical, and I especially appreciated the examples showing how cities can reduce waste by repairing, reusing, and sharing materials instead of treating them as disposable.\n\nThe discussion of food waste interested me most. I had not realized how planning purchases, improving storage, and redistributing unused food can reduce both unnecessary costs and environmental pressure. The example helped me see that sustainability is not limited to large government projects; ordinary institutions and households can also make measurable changes.\n\nI would like to explore this topic further because I am interested in how universities can apply these ideas on campus. If you have a recommended article, project, or introductory resource about waste reduction programs, I would be grateful for the suggestion.\n\nSincerely,\n[Your Name]"),
         disc(5, "Workplace Productivity", "Dr. Gupta", "diaz.png",
              "This week, we have been discussing strategies to promote workplace productivity and employee performance. One particularly controversial topic that has emerged is multitasking. While some argue that the ability to juggle multiple tasks at once is essential in today's fast-paced work environments, others believe that multitasking actually reduces efficiency and increases the likelihood of errors. Do you believe that managers should promote multitasking in the workplace? Why or why not?",
-             [post("Kelly", "kelly.png", "I think managers should promote multitasking. It helps employees handle routine tasks simultaneously and mirrors real-world demands. Even outside of the office, who has the luxury of focusing only on one task? With the right tools and training, multitasking can improve time management and adaptability—key traits in today's dynamic workplaces."),
+             [post("Kelly", "kelly.png", "I think managers should promote multitasking. It helps employees handle routine tasks simultaneously and mirrors real-world demands. Even outside of the office, who has the luxury of focusing only on one task? With the right tools and training, multitasking can improve time management and adaptability-key traits in today's dynamic workplaces."),
               post("Andrew", "andrew.png", "I oppose multitasking in the workplace. It increases the chance of mistakes and leads to mental fatigue. For example, when employees answer emails during meetings, they often miss key details or misinterpret information. Deep, focused work is more effective for quality outcomes and long-term employee well-being.")],
              [{"title": "Limited Multitasking",
                "text": "Managers should promote a limited form of multitasking for routine, low-risk activities because workplaces often require employees to monitor several streams of work. A receptionist may need to notice incoming visitors while checking a shared schedule, and a technician may supervise an automated process while recording standard data. These combinations can use waiting time efficiently when neither task demands continuous reasoning. The key is classification. Managers should identify tasks that are predictable, easy to pause, and unlikely to cause serious harm if attention shifts. Employees can then receive tools and practice for managing those combinations, while complex analysis, sensitive communication, and safety decisions remain protected from interruption. Teams should also evaluate error rates and fatigue rather than assuming busyness equals productivity. Promoting every form of multitasking would be reckless, but banning it entirely ignores ordinary workflow. When task pairs are chosen deliberately and workers can return to focused time as soon as complexity rises, controlled multitasking improves responsiveness without sacrificing quality."},
@@ -645,7 +645,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 7),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview"},
     ], tasks)

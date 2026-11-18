@@ -7,14 +7,14 @@ export function loadState(storage, day) {
   let raw = null;
   try {
     raw = storage.getItem(STORAGE_KEY);
-  } catch (error) {
+  } catch {
     return fallback;
   }
   if (raw === null) return fallback;
   let parsed = null;
   try {
     parsed = JSON.parse(raw);
-  } catch (error) {
+  } catch {
     return fallback;
   }
   if (parsed === null) return fallback;
@@ -27,7 +27,7 @@ export function saveState(storage, state) {
   try {
     storage.setItem(STORAGE_KEY, JSON.stringify(state));
     return true;
-  } catch (error) {
+  } catch {
     return false;
   }
 }

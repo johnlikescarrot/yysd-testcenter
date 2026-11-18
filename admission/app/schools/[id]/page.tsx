@@ -55,7 +55,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       <Card>
         <CardHeader>
           <CardTitle>
-            {school.name} · {school.program}（{school.degree}）
+            {school.name} · {school.program}({school.degree})
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 text-sm text-stone-600">
@@ -64,13 +64,13 @@ export default async function SchoolDetailPage({ params }: Props) {
             {school.city ? ` · ${school.city}` : ""}
           </p>
           <p>
-            均分 GPA {school.avgGpa.toFixed(2)} · 最低 GPA{" "}
+            chia GPA {school.avgGpa.toFixed(2)} · biến thể của thấp GPA{" "}
             {school.minGpa.toFixed(2)}
             {school.minToefl != null ? ` · TOEFL ≥ ${school.minToefl}` : ""}
             {school.minIelts != null ? ` · IELTS ≥ ${school.minIelts}` : ""}
           </p>
           <p className="text-stone-500">
-            成绩说明：系统内 GPA 按 4.0 量表；英/澳百分制或等级制请先换算后再填写。
+            thành tích giải thích: hệ thống bên trong GPA nhấn 4.0 dụng cụ đo; Anh/Ma Cao hệ thống chấm điểm theo thang 100 có thể hạng hệ thống mời trước chuyển đổi hoàng hậu lại điền vào biểu mẫu 
           </p>
           <p>{school.admissionRequirements}</p>
           {school.website && (
@@ -80,7 +80,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               rel="noreferrer"
               className="text-stone-900 underline"
             >
-              官方网站
+              chính phủ trang web
             </a>
           )}
         </CardContent>
@@ -90,7 +90,7 @@ export default async function SchoolDetailPage({ params }: Props) {
 
       {peers.length > 0 && (
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold">同国同学门类可对比</h2>
+          <h2 className="text-lg font-semibold">giống quốc gia học cùng trường thể loại có thể so sánh</h2>
           <ul className="space-y-2 text-sm">
             {peers.map((p) => (
               <li key={p.id}>
@@ -98,7 +98,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                   href={`/schools/${p.id}`}
                   className="text-stone-800 underline"
                 >
-                  {p.name} · {p.program}（{p.degree}）
+                  {p.name} · {p.program}({p.degree})
                 </Link>
               </li>
             ))}
@@ -107,7 +107,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             href={`/schools?country=${school.country}&field=${school.field}`}
             className="text-sm text-stone-600 underline"
           >
-            查看全部同学门类 →
+            xem xét toàn bộ học cùng trường thể loại →
           </Link>
         </div>
       )}

@@ -17,7 +17,7 @@ guard let img = NSImage(contentsOf: url),
 let req = VNRecognizeTextRequest()
 req.recognitionLevel = .accurate
 req.usesLanguageCorrection = true
-req.recognitionLanguages = ["en-US", "zh-Hans"]
+req.recognitionLanguages = ["en-US", "vi-VN"]
 let handler = VNImageRequestHandler(cgImage: cg, options: [:])
 try handler.perform([req])
 let lines = (req.results ?? []).compactMap { $0.topCandidates(1).first?.string }

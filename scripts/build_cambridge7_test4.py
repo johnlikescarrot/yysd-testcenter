@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑7T4.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 7T4.docx")
 OLYMPIC_MAP_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_17.54.29-fbc5d8c9-bc35-4202-981f-5b06d99b758b.png"
@@ -26,10 +26,10 @@ ELECTRICITY_SRC = Path(
     "__2026-07-01_17.54.38-0b45b026-93f4-4f17-a292-e584fbad44e0.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test4 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test4 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test4 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test4 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS7 Test4 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS7 Test4 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS7 Test4 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS7 Test4 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-7-test-4.html"
@@ -54,7 +54,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -84,10 +84,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 听力", "剑桥雅思7 Test 4 听力"),
-        ("剑桥雅思7 · Test 3（听力）", "剑桥雅思7 · Test 4（听力）"),
-        ("剑桥雅思7 Test 3 听力：", "剑桥雅思7 Test 4 听力："),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 7 Test 3 Nghe hiểu ", " Cambridge IELTS 7 Test 4 Nghe hiểu "),
+        (" Cambridge IELTS 7 · Test 3(Nghe hiểu)", " Cambridge IELTS 7 · Test 4(Nghe hiểu)"),
+        (" Cambridge IELTS 7 Test 3 Nghe hiểu: ", " Cambridge IELTS 7 Test 4 Nghe hiểu: "),
+        ("Test 3 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         ("test-3", "test-4"),
         ("ielts7_test3", "ielts7_test4"),
     ]
@@ -99,10 +99,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 阅读", "剑桥雅思7 Test 4 阅读"),
-        ("剑桥雅思7 · Test 3（阅读）", "剑桥雅思7 · Test 4（阅读）"),
-        ("剑桥雅思7 Test 3 学术类阅读", "剑桥雅思7 Test 4 学术类阅读"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 7 Test 3 Đọc hiểu ", " Cambridge IELTS 7 Test 4 Đọc hiểu "),
+        (" Cambridge IELTS 7 · Test 3(Đọc hiểu)", " Cambridge IELTS 7 · Test 4(Đọc hiểu)"),
+        (" Cambridge IELTS 7 Test 3 Reading học thuật ", " Cambridge IELTS 7 Test 4 Reading học thuật "),
+        ("Test 3 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
     ]
@@ -113,16 +113,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 3 写作", "剑桥雅思7 Test 4 写作"),
-        ("剑桥雅思7 · Test 3（写作）", "剑桥雅思7 · Test 4（写作）"),
-        ("剑桥雅思7 Test 3 学术类写作", "剑桥雅思7 Test 4 学术类写作"),
+        (" Cambridge IELTS 7 Test 3 Viết ", " Cambridge IELTS 7 Test 4 Viết "),
+        (" Cambridge IELTS 7 · Test 3(Viết)", " Cambridge IELTS 7 · Test 4(Viết)"),
+        (" Cambridge IELTS 7 Test 3 Writing học thuật ", " Cambridge IELTS 7 Test 4 Writing học thuật "),
         (
             "Task 1 house prices chart + Task 2 job satisfaction essay",
             "Task 1 electricity production pie charts + Task 2 university function essay",
         ),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Test 3 Viết(Đề thi chính thức)", "Test 4 Viết(Đề thi chính thức)"),
         ("cambridge-7-test-3-writing-draft", "cambridge-7-test-4-writing-draft"),
-        ("【剑桥雅思7 · Test 3 写作】", "【剑桥雅思7 · Test 4 写作】"),
+        ("[Cambridge IELTS 7 · Test 3 Viết]", "[Cambridge IELTS 7 · Test 4 Viết]"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("house-prices", "electricity-production"),
@@ -377,8 +377,8 @@ def listening_test() -> dict:
                         ],
                         "questions": [
                             {"id": "L34", "no": 34, "answer": ans("water"), "explain": explain("water")},
-                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "答案：meat 与 cheese，顺序不限。"},
-                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "答案：meat 与 cheese，顺序不限。"},
+                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": " Đáp án: meat và cheese, Thứ tự tùy ý "},
+                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": " Đáp án: meat và cheese, Thứ tự tùy ý "},
                             {"id": "L37", "no": 37, "answer": ans("new taste", "5th taste", "fifth taste"), "explain": explain("new taste", "5th taste", "fifth taste")},
                             {"id": "L38", "no": 38, "answer": ans("common"), "explain": explain("common")},
                             {"id": "L39", "no": 39, "answer": ans("bitterness"), "explain": explain("bitterness")},
@@ -550,7 +550,7 @@ def writing_test() -> dict:
             ),
             "charts": [
                 {
-                    "caption": "Units of electricity by fuel source — Australia & France (1980 & 2000)",
+                    "caption": "Units of electricity by fuel source - Australia & France (1980 & 2000)",
                     "image": "cambridge-7-test-4-electricity-production.png",
                 }
             ],

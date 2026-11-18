@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm-core.js — 混合词库加载、祠进度、训练营抽词（与作业 results 隔离）
+   word-realm-core.js - trộn kho từ tải, nhà thờ tốc độ tiến triển, trại huấn luyện rút ra biến thể cũ của |(biến thể của | bài tập về nhà results tách biệt)
    ========================================================================= */
 window.YYSD_WORD_REALM = (function () {
   "use strict";
@@ -115,7 +115,7 @@ window.YYSD_WORD_REALM = (function () {
   function loadLexicon() {
     if (cache) return Promise.resolve(cache);
     return fetch(libraryUrl(LEXICON_URL)).then(function (r) {
-      if (!r.ok) throw new Error("词库加载失败 HTTP " + r.status);
+      if (!r.ok) throw new Error(" kho từ tải bị đánh bại HTTP " + r.status);
       return r.json();
     }).then(function (data) {
       cache = data;
@@ -239,7 +239,7 @@ window.YYSD_WORD_REALM = (function () {
     return 48;
   }
 
-  /** 连对 ≥4 暴击 2，否则普攻 1（难度上调） */
+  /** liên kết đúng ≥4 đòn chí mạng 2, nếu không thì chung tấn công 1(mức độ khó tăng) */
   function battleDamage(comboAfterHit) {
     return comboAfterHit >= 4 ? 2 : 1;
   }
@@ -249,13 +249,13 @@ window.YYSD_WORD_REALM = (function () {
     var key = regionOrCamp === "camp" ? "camp" : (regionOrCamp || "mist");
     var enemies = (STORY && STORY.enemies) || {};
     return enemies[key] || enemies.mist || {
-      id: "fog-tongue", name: "雾舌", title: "噬词者", skin: "mist", glyph: "〰", intro: ""
+      id: "fog-tongue", name: " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” ", title: " ngấu nghiến biến thể cũ của | người mà ", skin: "mist", glyph: " ", intro: ""
     };
   }
 
   /**
-   * 开战状态：敌人 HP 可由 opts.enemyMaxHp 指定；勇者 HP = heartsMax。
-   * 答对扣敌；答错/超时扣己；敌 HP≤0 击破；己 HP≤0 战败不推进祠。
+   * bắt đầu chiến tranh tình trạng: kẻ thù HP có thể theo opts.enemyMaxHp chỉ định; dũng cảm người mà HP = heartsMax 
+   * trả lời hoặc đáp lại câu hỏi của ai đó cài kẻ thù; hình thức gắn liền có nghĩa giống như từ tự do lỗi/vượt quá thời gian cài tự bản thân; kẻ thù HP≤0 đánh hỏng; tự bản thân HP≤0 thua trận không thúc đẩy nhà thờ 
    */
   function createBattle(opts) {
     opts = opts || {};
@@ -277,7 +277,7 @@ window.YYSD_WORD_REALM = (function () {
     };
   }
 
-  /** Boss 噬咬更重 */
+  /** Boss cắn thay đổi hoặc thay thế lặp lại */
   function enemyAttackDamage(isBoss) {
     return isBoss ? 2 : 1;
   }

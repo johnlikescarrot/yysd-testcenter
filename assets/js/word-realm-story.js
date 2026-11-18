@@ -1,227 +1,227 @@
 /* =========================================================================
-   word-realm-story.js — 《词境远征》热血小说级剧情
-   序章：设定→入侵→反抗失败→崩裂→王子历练→牺牲→星屑择勇者
-   正卷：六章可玩远征。神话英雄史诗，以拼写斩怪。
+   word-realm-story.js - «biến thể cũ của | biên giới cuộc viễn chinh»máu nóng tiểu thuyết cấp cốt truyện
+   lời mở đầu: thiết lập→xâm lược→kháng cự bị đánh bại→vỡ ra→hoàng tử học hỏi qua kinh nghiệm→hy sinh tính mạng→ngôi sao mảnh vụn lựa chọn dũng cảm người mà
+   tháng đầu tiên của năm âm lịch cuộn lại: sáu chương có thể chơi cuộc viễn chinh truyền thuyết anh hùng một bản anh hùng ca, biến thể cũ của đánh vần chặt đầu kỳ quái 
    ========================================================================= */
 window.YYSD_WORD_REALM_STORY = {
-  title: "词境远征",
+  title: " biến thể cũ của | biên giới cuộc viễn chinh ",
   subtitle: "Memory of Lex",
-  sagaTitle: "词境编年 · 完整史诗",
+  sagaTitle: " biến thể cũ của | biên giới dệt năm · hoàn chỉnh một bản anh hùng ca ",
 
   chronicle: {
     pitch:
-      "在词之世界，每一个被记住的词，都是现实运行的一行代码。噬词者从不挥剑——他们让人忘记。人一忘，概念就塌。星屑择勇者，记忆之力一脉相承——这是热血与牺牲写成的远征。",
+      " tồn tại biến thể cũ của | cua thế giới, mỗi một dùng trong | chăn nhớ của biến thể cũ của |, tất cả là thực tế di chuyển trên quỹ đạo của đảng mã ngấu nghiến biến thể cũ của | người mà không bao giờ vẫy kiếm hai lưỡi--họ nhường người quên người một quên, khái niệm trong trường hợp đó sụp đổ ngôi sao mảnh vụn lựa chọn dũng cảm người mà, nhớ cua sức mạnh có thể truy nguyên từ cùng một gốc--này là máu nóng biến thể của | hy sinh tính mạng viết thành công của cuộc viễn chinh ",
     volumes: [
       {
         id: "vol-0-world",
-        title: "序章 · 一　词之世界",
+        title: " lời mở đầu · một biến thể cũ của | cua thế giới ",
         body:
-          "在王国学会呼唤自己名字之前，先有词之世界。\n\n" +
-          "那里的天空叫「蔚蓝」才成蔚蓝，桥梁因「承重」二字咬合榫卯，孩子喊出名字，才真正拥有自己。词不是装饰，是秩序：被记住的词，像代码一行行撑起山河城郭；被遗忘的词，会从现实里蒸发，留下裂缝。\n\n" +
-          "词之国最神圣之处，叫词医院——伤损的定义被包扎、重抄、朗读，直到它们能重新站回句子里。王子莱克斯常在那里，比在王宫更久。他相信：只要人们还肯互相称呼，世界就不会真正死去。"
+          " tồn tại vương quốc học gọi to bản thân tên trước, trước biến thể cũ của | cua thế giới \n\n" +
+          " ở đó của bầu trời kêu«màu xanh biếc»khả năng thành công màu xanh biếc, cây cầu biến thể cũ của«chịu tải»hai chữ khớp với nhau mộng lỗ mộng, trẻ em la hét nổi tiếng vì điều gì chữ, khả năng chính hãng có bản thân biến thể cũ của | không phải trang trí, là trật tự: chăn nhớ của biến thể cũ của |, giống mã đảng hàng hỗ trợ dậy núi sông tường thành; chăn quên của biến thể cũ của |, có thể biến thể của | thực tế biến thể của | bốc hơi, để lại vết nứt \n\n" +
+          " biến thể cũ của | cua quốc gia biến thể của thiêng liêng cua cư trú, kêu biến thể cũ của | bệnh viện--làm bị thương giảm của định nghĩa chăn biến thể của |, lặp lại sao chép, đọc to lên, cho đến chúng có thể lại trạm xoay vòng câu biến thể của | hoàng tử tên một loại cỏ dại viết tắt của | Slovakia luôn luôn tồn tại ở đó, Bỉ tồn tại hoàng cung thay đổi hoặc thay thế thời gian anh ấy tin tưởng: chỉ cần mọi người vẫn biến thể cũ của lẫn nhau gọi, thế giới trong trường hợp đó không có khả năng chính hãng chết "
       },
       {
         id: "vol-0-invade",
-        title: "序章 · 二　噬词者来临",
+        title: " lời mở đầu · hai ngấu nghiến biến thể cũ của | người mà đến gần ",
         body:
-          "灾厄从无声处来。\n\n" +
-          "噬词者没有刀锋。他们走进人群，轻轻一触，便让人说不出「明天」；走进军营，士兵忘了口令；走进市场，秤上的「公平」化作空气。他们放出怪物——雾舌、空碑傀、潮影——专吞音节与释义。城池不是被炸毁的，是被「说不出来」掏空的。\n\n" +
-          "警报响起时，人们还不懂恐惧的形状。直到第一座城在沉默中碎成沙：墙还在，人还在，可「家」这个词没了，于是再也没有人能走回家门。"
+          " nghịch cảnh biến thể của | không có tiếng cư trú đến \n\n" +
+          " ngấu nghiến biến thể cũ của | người mà không có lưỡi cắt hoặc mũi nhọn của dao họ đi vào đám đông, nhẹ nhàng một chạm, đơn giản nhường người không thể nói«ngày mai»; đi vào doanh trại, lính quên hoàn thành mệnh lệnh bằng miệng; đi vào khu chợ, biến thể của | dùng trong | của«công bằng»thay đổi thành không khí họ thả ra quái vật--sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”, trống không bia tưởng niệm to lớn, thuỷ triều hình ảnh--cho một người nuốt âm xem | biến thể của | nghĩa của cái gì đó thành trì không phải chăn phá hủy của, là chăn«không thể nói đến»moi ra của \n\n" +
+          " báo động vang lên biến thể cũ của |, mọi người vẫn không hiểu bị khiếp sợ của hình dạng cho đến đầu tiên chỗ ngồi tường thành tồn tại ít nói Trung Quốc vỡ thành mảnh thành công hạt: biến thể của | vẫn tồn tại, người vẫn tồn tại, có thể«dùng trong | và |»này biến thể cũ của | chết, thế là còn nữa không có người có thể đi trở về nhà cổng "
       },
       {
         id: "vol-0-resist",
-        title: "序章 · 三　反抗与溃败",
+        title: " lời mở đầu · ba kháng cự biến thể của | bị đánh bại hoàn toàn ",
         body:
-          "词之国并非没有勇者。学者把词典铸成盾，诗人把韵脚当箭，卫兵用尽嗓子喊出最后的口令。他们打得很漂亮——在还能说话的那些日子里。\n\n" +
-          "可噬词者专吃勇气的燃料。有人喊「冲啊」，下一秒忘了「冲」是什么；有人发誓守护，却突然说不出「守护」。反抗军一天天变薄，不是战死，是失语。旗帜还在风里猎猎，旗上的字却被舔成空白。\n\n" +
-          "败局蔓延时，王子守在词医院门口。他说：「只要医院还在，伤损的词就还有归处。」门外的世界，却已经开始分崩离析。"
+          " biến thể cũ của | cua quốc gia thật sự không phải không có dũng cảm người mà học giả cầm từ điển đúc bằng kim loại cái khiên, nhà thơ cầm từ gieo vần kết thúc một dòng thơ đong mũi tên, lính gác sử dụng hết cổ họng la hét đi ra cuối cùng của mệnh lệnh bằng miệng họ tá rất xinh đẹp--tồn tại vẫn có thể nói của những cái đó ngày biến thể của | \n\n" +
+          " có thể ngấu nghiến biến thể cũ của | người mà cho một người ăn can đảm của nhiên liệu ai đó la hét«xô vào thán từ biểu thị sự ngạc nhiên», xuống một giây quên hoàn thành«xô vào»là gì?; ai đó thề bảo vệ, biến thể cũ của | đột ngột không thể nói«bảo vệ» kháng cự quân đội một mỗi ngày thay đổi mỏng, không phải chiến đấu chết, là lỡ lời cờ hiệu vẫn tồn tại gió biến thể của | săn bắn săn bắn, cờ dùng trong | của chữ biến thể cũ của | chăn liếm thành công khoảng trống \n\n" +
+          " trận thua mở rộng biến thể cũ của |, hoàng tử canh gác tồn tại biến thể cũ của | bệnh viện cửa ra vào anh ấy thuyết phục: «chỉ cần bệnh viện vẫn tồn tại, làm bị thương giảm của biến thể cũ của | trong trường hợp đó vẫn còn trở về cư trú »bên ngoài cửa của thế giới, biến thể cũ của | đã bắt đầu sụp đổ và tan rã "
       },
       {
         id: "vol-0-collapse",
-        title: "序章 · 四　分崩离析",
+        title: " lời mở đầu · bốn sụp đổ và tan rã ",
         body:
-          "遗忘像潮水。先是颜色，再是方向，然后是希望。\n\n" +
-          "天空缺了一块「蔚蓝」。桥梁因失去「承重」而垮成骨架。群岛从大陆上裂开，漂向灰烬——人们甚至说不清「群岛」这个词本身。地图上的金线一根根熄灭，像被橡皮擦过的路标。\n\n" +
-          "最可怕的不是怪物，是人心里升起的那句：「反正记不住。」当这句话成为瘟疫，噬词者几乎不必出手。王子看着医院外的废墟，第一次明白：若无人替别人记住，连神明也会沉默。"
+          " quên giống thủy triều trước là màu sắc, lại là hướng, sau đó là hy vọng \n\n" +
+          " bầu trời sự thiếu hoàn thành một khối«màu xanh biếc» cây cầu biến thể cũ của mất«chịu tải»và sụp đổ hình thành xương chống đỡ nhóm đảo biến thể của | Trung Quốc đại lục dùng trong | nứt ra, nổi hướng tro tàn--mọi người thậm chí thuyết phục không rõ ràng«nhóm đảo»này biến thể cũ của | bản thân bản đồ dùng trong | của vàng biến thể của | một rễ rễ ngừng cháy, giống chăn cục tẩy băng qua của biển báo đường \n\n" +
+          " biến thể của kinh khủng của không phải quái vật, là tâm lý chung biến thể của | nâng lên của biến thể của biến thể của: «dù sao đi nữa không thể nhớ »đong này biến thể của phương ngữ trở thành bệnh dịch, ngấu nghiến biến thể cũ của | người mà hầu như không nhất định xử lý hoàng tử chăm sóc nước đi bệnh viện bên ngoài của tàn tích, lần đầu tiên rõ ràng: dường như không người thay thế cho người khác nhớ, liên kết thần linh cũng có thể ít nói "
       },
       {
         id: "vol-0-chosen",
-        title: "序章 · 五　神明的选中",
+        title: " lời mở đầu · năm thần linh của lựa chọn ",
         body:
-          "第三夜，词医院只剩王子一人。烛火把伤损词条照成金色。他没有睡着——他在朗读，把每一个快散架的词按回纸面。\n\n" +
-          "无名神明降临。祂从不显形，只留下契约的光：「记忆之力不是用来囤积的。它只借给愿意替别人记住的人。」\n\n" +
-          "王子点头。他以为自己懂了。神明把力量注入他掌心时，整座医院的书架同时震响——像有无数人在远方重新被呼唤名字。"
+          " thu ba biến thể của, biến thể cũ của | bệnh viện chỉ còn lại hoàng tử một người ngọn lửa nến cầm làm bị thương giảm mục từ điển biến thể của thành công màu vàng kim anh ấy không có ngủ thiếp đi--anh ấy tồn tại đọc to lên, cầm mỗi một dùng trong | nhanh rời ra của biến thể cũ của | nhấn xoay vòng biến thể của | mặt \n\n" +
+          " không tên thần linh hạ xuống không bao giờ lộ bản chất thật, chỉ để lại thỏa thuận của ánh sáng: «nhớ cua sức mạnh không phải được dùng để tích trữ của nó chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người »\n\n" +
+          " hoàng tử gật đầu anh ấy nghĩ rằng bản thân hiểu hoàn thành thần linh cầm sức mạnh rót vào anh ấy lòng bàn tay biến thể cũ của |, toàn bộ chỗ ngồi bệnh viện của giá sách đồng thời âm thanh rung--giống có hoặc không đếm người tồn tại xa xôi lại chăn gọi to tên "
       },
       {
         id: "vol-0-trial",
-        title: "序章 · 六　历练与觉醒",
+        title: " lời mở đầu · sáu học hỏi qua kinh nghiệm biến thể của | thức tỉnh ",
         body:
-          "力量不是礼物，是试炼。\n\n" +
-          "王子踏出医院，踏上雾原、峡谷与潮声。他学会用拼写斩雾舌，用释义填空碑，用听音捞起沉海的古咒长词。每一次正确，世界就多修一座桥；每一次失败，他便再试——记忆之力只回应勇敢的重复。\n\n" +
-          "他越战越强。人们开始喊他「词之王子」。可他心里清楚：宿主不是容器，是桥梁。他记的不是自己的荣耀，是孩子的名字、商队的公平、灯塔的周期。"
+          " sức mạnh không phải quà, là rèn luyện qua lửa \n\n" +
+          " hoàng tử xem | đi ra bệnh viện, đặt chân lên sương mù trước đây, hẻm núi biến thể của | thuỷ triều âm thanh anh ấy học sử dụng đánh vần chặt đầu sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”, sử dụng nghĩa của cái gì đó lấp chỗ trống công việc bia tưởng niệm, sử dụng cười âm thanh vớt dậy chìm đại dương của cổ biến thể của chiều dài biến thể cũ của | mỗi đầu tiên đúng, thế giới trong trường hợp đó nhiều trang trí một chỗ ngồi cầu; mỗi đầu tiên bị đánh bại, anh ấy đơn giản lại thử--nhớ cua sức mạnh chỉ phản hồi dũng cảm của lặp lại \n\n" +
+          " anh ấy Chiến tranh Việt Nam từ chung chỉ các dân tộc hoặc quốc gia ở nam Trung Quốc hoặc nam Châu Á trong các thời kỳ lịch sử khác nhau bướng bỉnh mọi người bắt đầu la hét anh ấy«biến thể cũ của | cua hoàng tử» có thể anh ấy ngực rõ ràng: vật chủ không phải đồ chứa, là cây cầu anh ấy ghi chép của không phải bản thân của vinh dự, là trẻ em của tên, đoàn lữ hành của công bằng, hải đăng của chu kỳ "
       },
       {
         id: "vol-0-sacrifice",
-        title: "序章 · 七　燃尽与星屑",
+        title: " lời mở đầu · bảy cháy đến mức tối đa biến thể của | ngôi sao mảnh vụn ",
         body:
-          "终战之日，噬词大军压境。王子倾尽全部记忆之力——不是杀光它们，而是把被吞走的词，一口气夺回大半。城郭重新有名字，海重新有潮声，孩子重新能喊出「妈妈」。\n\n" +
-          "代价是他自己。躯体碎成星屑，散落词境各处。临散前他留下一句条件，像烙在星光上的法则：只借给愿意替别人记住的人。\n\n" +
-          "世界只恢复了一部分。裂缝仍在，灰烬仍漂。但人们终于知道：遗忘可以被否决——只要还有人肯记。"
+          " kết thúc chiến tranh cua viết tắt của, ngấu nghiến biến thể cũ của | quân đội đè biên giới hoàng tử làm hết sức toàn bộ nhớ cua sức mạnh--không phải giết ánh sáng chúng, mà là cầm chăn nuốt đi của biến thể cũ của |, một hơi giành lại hơn một nửa tường thành lại nổi tiếng chữ, đại dương lại có thuỷ triều âm thanh, trẻ em lại có thể la hét đi ra«mẹ» \n\n" +
+          " giá là anh ấy bản thân cơ thể vỡ thành mảnh thành công ngôi sao mảnh vụn, nằm rải rác biến thể cũ của | biên giới mọi nơi đối mặt biến thể của trước anh ấy để lại một dòng thơ điều kiện, giống đóng dấu tồn tại ánh sao dùng trong | của luật: chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người \n\n" +
+          " thế giới chỉ khôi phục hoàn thành phần vết nứt vẫn tồn tại, tro tàn vẫn nổi nhưng mọi người cuối cùng biết: quên có thể chăn phủ quyết--chỉ cần vẫn còn người biến thể cũ của ghi chép "
       },
       {
         id: "vol-0-heroes",
-        title: "序章 · 八　勇者们启程",
+        title: " lời mở đầu · tám dũng cảm người mà dùng để chỉ số nhiều cho đại từ và danh từ chỉ người khởi hành lên đường ",
         body:
-          "星屑会选择适能者。今夜，它落在你肩上。\n\n" +
-          "你不是唯一的勇者。词境各地，都有人被点亮：有人在废墟里改写「我不行」，有人在镜书阁重抄残页，有人在王座走廊按住即将逃走的元音。你们将不断探险、历练，遇见书吏、残影、陌生人与怪物；一点一点变强——不为称王，为了让呼唤再次可能。\n\n" +
-          "噬词者还会回来。它们学会了新战术：懒得记、自我怀疑、反正无用。真正的战役，从人心开始。\n\n" +
-          "拿起记忆之力吧，词之勇者。远征，此刻开场。"
+          " ngôi sao mảnh vụn có thể chọn xem có thể người mà tối nay, nó bỏ sót tồn tại bạn vai dùng trong | \n\n" +
+          " bạn không phải chỉ của dũng cảm người mà biến thể cũ của | biên giới ở khắp mọi nơi, tất cả ai đó chăn thắp sáng: ai đó tồn tại tàn tích biến thể của | sửa đổi«tôi không được», ai đó tồn tại gương viết tắt của | đình các lặp lại sao chép phá hủy đầu, ai đó tồn tại ngai vàng hành lang nhấn sống sắp trốn thoát của nguyên âm các bạn sẽ không ngừng thám hiểm, học hỏi qua kinh nghiệm, gặp gỡ viết tắt của | quan chức hoặc nhân viên chính phủ nhỏ, phá hủy hình ảnh, người lạ biến thể của | quái vật; từng chút một thay đổi bướng bỉnh--không làm vừa vua hoặc quốc vương, để nhường gọi to một lần nữa có thể \n\n" +
+          " ngấu nghiến biến thể cũ của | người mà vẫn có thể trở về chúng học hoàn thành viết tắt của Tân Cương chiến thuật: không cảm thấy muốn ghi chép, tự nghi ngờ, dù sao đi nữa vô dụng chính hãng của chiến dịch quân sự, biến thể của | tâm lý chung bắt đầu \n\n" +
+          " nhặt lên nhớ cua sức mạnh quán bar, biến thể cũ của | cua dũng cảm người mà cuộc viễn chinh, khoảnh khắc này bắt đầu "
       },
       {
         id: "vol-theme",
-        title: "主题 · 字母即剑",
+        title: " chủ đề · chữ cái tức là kiếm hai lưỡi ",
         body:
-          "对你而言，每一次拼写、每一次听音，都是在词境里劈开遗忘。短词是短剑，长词是重刃，古咒是开城的钥匙——它们同属一条远征之路。修炼场淬炼手感，祠庙推进史诗：两条路，都通向更强的你。"
+          " đúng bạn xét về, mỗi đầu tiên đánh vần, mỗi đầu tiên cười âm thanh, tất cả là tồn tại biến thể cũ của | biên giới biến thể của | bổ ra quên ngắn biến thể cũ của | là dao găm, chiều dài biến thể cũ của | là lặp lại cạnh của lưỡi dao, cổ biến thể của là thành phố Kaesong hoặc Gaeseong ở tây nam Bắc Triều Tiên của chìa khóa--chúng giống phân loại một dải cuộc viễn chinh cua đường tu luyện khổ hạnh sân phơi nhúng vào nước luyện cảm giác, nhà thờ tổ thúc đẩy một bản anh hùng ca: hai dải đường, tất cả dẫn đến thay đổi hoặc thay thế bướng bỉnh của bạn "
       }
     ]
   },
 
-  // 首次进入：可翻页的热血序章（与编年同源，分段演出）
+  // đầu tiên đi vào: có thể lật đầu của máu nóng lời mở đầu(biến thể của | dệt năm tính tương đồng, chia thành các phần diễn)
   prologue: {
-    title: "序章 · 星屑以前",
-    subtitle: "第一次遗忘战争全录",
+    title: " lời mở đầu · ngôi sao mảnh vụn trước đây ",
+    subtitle: " lần đầu tiên quên chiến tranh Xerox ",
     acts: [
       {
-        title: "词之世界",
+        title: " biến thể cũ của | cua thế giới ",
         lines: [
-          "在王国学会呼唤自己名字之前，先有词之世界。",
-          "天空叫「蔚蓝」才成蔚蓝；桥梁因「承重」咬合；孩子喊出名字，才真正拥有自己。",
-          "词不是装饰，是秩序——被记住，便撑起山河；被遗忘，便从现实蒸发。",
-          "最神圣之处叫词医院。王子莱克斯常在那里：伤损的词被包扎、重抄、朗读，直到能重新站回句子里。"
+          " tồn tại vương quốc học gọi to bản thân tên trước, trước biến thể cũ của | cua thế giới ",
+          " bầu trời kêu«màu xanh biếc»khả năng thành công màu xanh biếc; cây cầu biến thể cũ của«chịu tải»khớp với nhau; trẻ em la hét nổi tiếng vì điều gì chữ, khả năng chính hãng có bản thân ",
+          " biến thể cũ của | không phải trang trí, là trật tự--chăn nhớ, đơn giản hỗ trợ dậy núi sông; chăn quên, đơn giản biến thể của | thực tế bốc hơi ",
+          " biến thể của thiêng liêng cua cư trú kêu biến thể cũ của | bệnh viện hoàng tử tên một loại cỏ dại viết tắt của | Slovakia luôn luôn tồn tại ở đó: làm bị thương giảm của biến thể cũ của | chăn biến thể của |, lặp lại sao chép, đọc to lên, cho đến có thể lại trạm xoay vòng câu biến thể của | "
         ]
       },
       {
-        title: "噬词者入侵",
+        title: " ngấu nghiến biến thể cũ của | người mà xâm lược ",
         lines: [
-          "灾厄从无声处来。噬词者没有刀锋——他们让人忘记。",
-          "士兵忘了口令，秤上的「公平」化作空气。雾舌、空碑傀、潮影专吞音节与释义。",
-          "第一座城在沉默中碎成沙：墙还在，人还在，可「家」没了——再也没有人能走回家门。",
-          "警报响起时，人们还不懂：最锋利的武器，竟是让你说不出来。"
+          " nghịch cảnh biến thể của | không có tiếng cư trú đến ngấu nghiến biến thể cũ của | người mà không có lưỡi cắt hoặc mũi nhọn của dao--họ nhường người quên ",
+          " lính quên hoàn thành mệnh lệnh bằng miệng, biến thể của | dùng trong | của«công bằng»thay đổi thành không khí sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”, trống không bia tưởng niệm to lớn, thuỷ triều hình ảnh cho một người nuốt âm xem | biến thể của | nghĩa của cái gì đó ",
+          " đầu tiên chỗ ngồi tường thành tồn tại ít nói Trung Quốc vỡ thành mảnh thành công hạt: biến thể của | vẫn tồn tại, người vẫn tồn tại, có thể«dùng trong | và |»chết--còn nữa không có người có thể đi trở về nhà cổng ",
+          " báo động vang lên biến thể cũ của |, mọi người vẫn không hiểu: biến thể của sắc bén của vũ khí, một cách bất ngờ là nhường bạn không thể nói đến "
         ]
       },
       {
-        title: "反抗，与溃败",
+        title: " kháng cự, biến thể của | bị đánh bại hoàn toàn ",
         lines: [
-          "学者铸词典为盾，诗人以韵脚为箭。他们打得很漂亮——在还能说话的日子里。",
-          "可有人喊「冲啊」，下一秒忘了「冲」是什么。反抗军变薄，不是战死，是失语。",
-          "旗帜猎猎，旗上的字却被舔成空白。",
-          "王子守在医院门口：「只要医院还在，伤损的词就还有归处。」门外的世界，已开始分崩离析。"
+          " học giả đúc hoặc đổ khuôn kim loại từ điển làm cái khiên, nhà thơ biến thể cũ của từ gieo vần kết thúc một dòng thơ làm mũi tên họ tá rất xinh đẹp--tồn tại vẫn có thể nói của ngày biến thể của | ",
+          " có thể ai đó la hét«xô vào thán từ biểu thị sự ngạc nhiên», xuống một giây quên hoàn thành«xô vào»là gì? kháng cự quân đội thay đổi mỏng, không phải chiến đấu chết, là lỡ lời ",
+          " cờ hiệu săn bắn săn bắn, cờ dùng trong | của chữ biến thể cũ của | chăn liếm thành công khoảng trống ",
+          " hoàng tử canh gác tồn tại bệnh viện cửa ra vào: «chỉ cần bệnh viện vẫn tồn tại, làm bị thương giảm của biến thể cũ của | trong trường hợp đó vẫn còn trở về cư trú »bên ngoài cửa của thế giới, đã bắt đầu sụp đổ và tan rã "
         ]
       },
       {
-        title: "世界分崩离析",
+        title: " thế giới sụp đổ và tan rã ",
         lines: [
-          "遗忘像潮水。先是颜色，再是方向，然后是希望。",
-          "天空缺了「蔚蓝」。桥因失去「承重」垮成骨架。群岛从大陆裂开，漂向灰烬。",
-          "地图金线一根根熄灭。最可怕的是人心里那句：「反正记不住。」",
-          "当这句话成为瘟疫，噬词者几乎不必出手。"
+          " quên giống thủy triều trước là màu sắc, lại là hướng, sau đó là hy vọng ",
+          " bầu trời sự thiếu hoàn thành«màu xanh biếc» cầu biến thể cũ của mất«chịu tải»sụp đổ hình thành xương chống đỡ nhóm đảo biến thể của | Trung Quốc đại lục nứt ra, nổi hướng tro tàn ",
+          " bản đồ vàng biến thể của | một rễ rễ ngừng cháy biến thể của kinh khủng của là tâm lý chung biến thể của | biến thể của biến thể của: «dù sao đi nữa không thể nhớ »",
+          " đong này biến thể của phương ngữ trở thành bệnh dịch, ngấu nghiến biến thể cũ của | người mà hầu như không nhất định xử lý "
         ]
       },
       {
-        title: "神明选中王子",
+        title: " thần linh lựa chọn hoàng tử ",
         lines: [
-          "第三夜，医院只剩王子。他朗读，把快散架的词按回纸面。",
-          "无名神明降临，只留契约之光：「记忆之力只借给愿意替别人记住的人。」",
-          "王子点头。力量注入掌心——整座书架同时震响，像远方无数人重新被呼唤名字。",
-          "他踏出医院。历练，从这一步开始。"
+          " thu ba biến thể của, bệnh viện chỉ còn lại hoàng tử anh ấy đọc to lên, cầm nhanh rời ra của biến thể cũ của | nhấn xoay vòng biến thể của | mặt ",
+          " không tên thần linh hạ xuống, chỉ biến thể cũ của thỏa thuận cua ánh sáng: «nhớ cua sức mạnh chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người »",
+          " hoàng tử gật đầu sức mạnh rót vào lòng bàn tay--toàn bộ chỗ ngồi giá sách đồng thời âm thanh rung, giống xa xôi vô số người lại chăn gọi to tên ",
+          " anh ấy xem | đi ra bệnh viện học hỏi qua kinh nghiệm, biến thể của | này một một bước bắt đầu "
         ]
       },
       {
-        title: "历练：掌握记忆之力",
+        title: " học hỏi qua kinh nghiệm: nắm bắt nhớ cua sức mạnh ",
         lines: [
-          "力量不是礼物，是试炼。雾原、峡谷、潮声——他一战一战地学。",
-          "拼写斩雾舌，释义填空碑，听音捞起沉海的长咒。失败便再试：记忆之力只回应勇敢的重复。",
-          "人们喊他「词之王子」。他清楚：宿主不是容器，是桥梁。",
-          "他记的不是荣耀，是孩子的名字、商队的公平、灯塔的周期。"
+          " sức mạnh không phải quà, là rèn luyện qua lửa sương mù trước đây, hẻm núi, thuỷ triều âm thanh--anh ấy Chiến tranh Thế giới thứ nhất Chiến tranh Thế giới thứ nhất trợ từ kết cấu: dùng trước động từ hoặc tính từ học ",
+          " đánh vần chặt đầu sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”, nghĩa của cái gì đó lấp chỗ trống công việc bia tưởng niệm, cười âm thanh vớt dậy chìm đại dương của chiều dài biến thể của bị đánh bại đơn giản lại thử: nhớ cua sức mạnh chỉ phản hồi dũng cảm của lặp lại ",
+          " mọi người la hét anh ấy«biến thể cũ của | cua hoàng tử» anh ấy rõ ràng: vật chủ không phải đồ chứa, là cây cầu ",
+          " anh ấy ghi chép của không phải vinh dự, là trẻ em của tên, đoàn lữ hành của công bằng, hải đăng của chu kỳ "
         ]
       },
       {
-        title: "牺牲：夺回黎明",
+        title: " hy sinh tính mạng: giành lại bình minh ",
         lines: [
-          "终战之日，他倾尽全部记忆之力——不是杀光敌人，而是一口气夺回被吞走的大半词汇。",
-          "城郭重新有名字，海重新有潮声，孩子重新能喊「妈妈」。",
-          "代价是他自己。躯体碎成星屑，散落词境。临散前留下法则：只借给愿意替别人记住的人。",
-          "世界只恢复了一部分。但人们终于知道——遗忘，可以被否决。"
+          " kết thúc chiến tranh cua viết tắt của, anh ấy làm hết sức toàn bộ nhớ cua sức mạnh--không phải giết ánh sáng kẻ thù, mà là một hơi giành lại chăn nuốt đi của hơn một nửa biến thể của | ",
+          " tường thành lại nổi tiếng chữ, đại dương lại có thuỷ triều âm thanh, trẻ em lại có thể la hét«mẹ» ",
+          " giá là anh ấy bản thân cơ thể vỡ thành mảnh thành công ngôi sao mảnh vụn, nằm rải rác biến thể cũ của | biên giới đối mặt biến thể của trước để lại luật: chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người ",
+          " thế giới chỉ khôi phục hoàn thành phần nhưng mọi người cuối cùng biết--quên, có thể chăn phủ quyết "
         ]
       },
       {
-        title: "星屑，与勇者们",
+        title: " ngôi sao mảnh vụn, biến thể của | dũng cảm người mà dùng để chỉ số nhiều cho đại từ và danh từ chỉ người ",
         lines: [
-          "星屑寻找适能者。今夜，它落在你肩上。",
-          "你不是唯一的勇者。各地都有人被点亮：改写「我不行」，重抄残页，按住逃走的元音。",
-          "你们将探险、历练，遇见不同的人与故事，一点一点变强——不为称王，为了让呼唤再次可能。",
-          "噬词者还会回来。它们学会了懒得记、自我怀疑、反正无用。真正的战役，从人心开始。",
-          "拿起记忆之力吧。远征——开场！"
+          " ngôi sao mảnh vụn tìm kiếm xem có thể người mà tối nay, nó bỏ sót tồn tại bạn vai dùng trong | ",
+          " bạn không phải chỉ của dũng cảm người mà ở khắp mọi nơi tất cả ai đó chăn thắp sáng: sửa đổi«tôi không được», lặp lại sao chép phá hủy đầu, nhấn sống trốn thoát của nguyên âm ",
+          " các bạn sẽ thám hiểm, học hỏi qua kinh nghiệm, gặp gỡ khác của người biến thể của | tục lệ cũ, từng chút một thay đổi bướng bỉnh--không làm vừa vua hoặc quốc vương, để nhường gọi to một lần nữa có thể ",
+          " ngấu nghiến biến thể cũ của | người mà vẫn có thể trở về chúng học hoàn thành không cảm thấy muốn ghi chép, tự nghi ngờ, dù sao đi nữa vô dụng chính hãng của chiến dịch quân sự, biến thể của | tâm lý chung bắt đầu ",
+          " nhặt lên nhớ cua sức mạnh quán bar cuộc viễn chinh--bắt đầu! "
         ]
       }
     ],
-    cta: "接受记忆之力 · 踏上远征",
-    skip: "跳过序章",
-    next: "下一页",
-    prev: "上一页"
+    cta: " chấp nhận nhớ cua sức mạnh · đặt chân lên cuộc viễn chinh ",
+    skip: " nhảy qua lời mở đầu ",
+    next: " trang kế tiếp ",
+    prev: " trang trước "
   },
 
   regions: {
     mist: {
-      id: "mist", name: "晨雾平原", en: "Mistvale",
-      blurb: "灾厄最先侵蚀的入门之地。日常词像露水，一忘就干。勇者在此学会第一剑。",
-      shrinePrefix: "雾祠", range: [1, 8],
-      transit: "晨雾散开一角——平原的祠灯在雾里一明一灭。远征的鼓点，从这里响起。",
+      id: "mist", name: " buổi sáng sương mù cánh đồng ", en: "Mistvale",
+      blurb: " nghịch cảnh đầu tiên xói mòn của cửa vào cua trợ từ kết cấu: dùng trước động từ hoặc tính từ hằng ngày biến thể cũ của | giống sương, một quên trong trường hợp đó biến thể cũ của | dũng cảm người mà tại đây học đầu tiên kiếm hai lưỡi ",
+      shrinePrefix: " sương mù nhà thờ ", range: [1, 8],
+      transit: " buổi sáng sương mù tách ra một góc--cánh đồng của nhà thờ đèn tồn tại sương mù biến thể của | một Triều Minh một dập tắt hoặc làm tắt cuộc viễn chinh của nhịp trống, biến thể của | biến thể của | vang lên ",
       mapTone: "mist",
       mapImage: "assets/img/word-realm/map-mist.png",
       unlockAfter: null
     },
     stone: {
-      id: "stone", name: "石语峡谷", en: "Glyph Gorge",
-      blurb: "岩壁上的定义被挖空。释义一失，桥梁与契约一起崩解。",
-      shrinePrefix: "岩祠", range: [9, 16],
-      transit: "岩壁回声把你的脚步放大——峡谷只认被记住的词。",
+      id: "stone", name: " đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi ", en: "Glyph Gorge",
+      blurb: " vách đá tường dùng trong | của định nghĩa chăn khai quật nghĩa của cái gì đó một mất, cây cầu biến thể của | thỏa thuận ở cùng một nơi sụp đổ chia ",
+      shrinePrefix: " vách đá nhà thờ ", range: [9, 16],
+      transit: " vách đá tường tiếng vọng cầm bạn của bước chân phóng to--hẻm núi chỉ nhận ra chăn nhớ của biến thể cũ của | ",
       mapTone: "stone",
       mapImage: "assets/img/word-realm/map-stone.png",
       unlockAfter: "shrine-08"
     },
     tide: {
-      id: "tide", name: "潮声海域", en: "Tidecall Sea",
-      blurb: "听读写的词在浪里沉浮。古咒长词在此最容易被冲散。",
-      shrinePrefix: "潮祠", range: [17, 24],
-      transit: "潮声盖过闲谈——只有拼写清晰的音节能上岸。",
+      id: "tide", name: " thuỷ triều âm thanh vùng biển ", en: "Tidecall Sea",
+      blurb: " cười đọc và viết của biến thể cũ của | tồn tại sóng biến thể của | chìm và nổi cổ biến thể của chiều dài biến thể cũ của | tại đây biến thể của dễ dàng chăn xô vào biến thể của ",
+      shrinePrefix: " thuỷ triều nhà thờ ", range: [17, 24],
+      transit: " thuỷ triều âm thanh nắp băng qua biến thể của |--chỉ có đánh vần rõ ràng của âm tiết có thể lên bờ ",
       mapTone: "tide",
       mapImage: "assets/img/word-realm/map-tide.png",
       unlockAfter: "shrine-16"
     },
     ash: {
-      id: "ash", name: "灰烬群岛", en: "Ashen Isles",
-      blurb: "词之国裂成漂岛。噬词者学会伪装成倦怠、恐惧与自我怀疑。",
-      shrinePrefix: "烬祠", range: [25, 32],
-      transit: "灰屑落在舌尖，像未说出口的答案。群岛之间只剩记忆搭桥。",
+      id: "ash", name: " tro tàn nhóm đảo ", en: "Ashen Isles",
+      blurb: " biến thể cũ của | cua quốc gia tách thành công nổi biến thể của | ngấu nghiến biến thể cũ của | người mà học giả vờ thành công mệt mỏi, bị khiếp sợ biến thể của | tự nghi ngờ ",
+      shrinePrefix: " than tàn nhà thờ ", range: [25, 32],
+      transit: " tro mảnh vụn bỏ sót tồn tại đầu lưỡi, giống chưa nói ra miệng của câu trả lời nhóm đảo giữa chỉ còn lại nhớ dựng cầu ",
       mapTone: "ash",
       mapImage: "assets/img/word-realm/map-ash.png",
       unlockAfter: "shrine-24"
     },
     archive: {
-      id: "archive", name: "镜书图书馆", en: "Mirror Archive",
-      blurb: "王子曾守护的词医院遗址。镜页映出第一次战争的真相。",
-      shrinePrefix: "镜祠", range: [33, 40],
-      transit: "书架自己翻页。有的书只剩标题，正文被遗忘蛀空。",
+      id: "archive", name: " gương viết tắt của | thư viện ", en: "Mirror Archive",
+      blurb: " hoàng tử đã bảo vệ của biến thể cũ của | bệnh viện di tích gương đầu phản chiếu đi ra lần đầu tiên chiến tranh của sự thật về cái gì ",
+      shrinePrefix: " gương nhà thờ ", range: [33, 40],
+      transit: " giá sách bản thân lật đầu một số viết tắt của | chỉ còn lại tiêu đề, văn bản chính chăn quên mối trống không ",
       mapTone: "archive",
       mapImage: "assets/img/word-realm/map-archive.png",
       unlockAfter: "shrine-32"
     },
     throne: {
-      id: "throne", name: "遗忘王座", en: "Throne of Unsaying",
-      blurb: "噬词王庭所在。终局不是杀戮，而是选择：记住谁，为谁记住。",
-      shrinePrefix: "王座祠", range: [41, 48],
-      transit: "王座上空无一物——因为「王座」这个词本身正在被抹去。",
+      id: "throne", name: " quên ngai vàng ", en: "Throne of Unsaying",
+      blurb: " ngấu nghiến biến thể cũ của | vua hoặc quốc vương sảnh chính nơi tàn cuộc không phải tàn sát, mà là chọn: nhớ ai, làm ai nhớ ",
+      shrinePrefix: " ngai vàng nhà thờ ", range: [41, 48],
+      transit: " ngai vàng trên không không có một vật--bởi vì«ngai vàng»này biến thể cũ của | bản thân đang ở chăn xoá đi ",
       mapTone: "throne",
       mapImage: "assets/img/word-realm/map-throne.png",
       unlockAfter: "shrine-40"
@@ -235,91 +235,91 @@ window.YYSD_WORD_REALM_STORY = {
 
   cast: {
     hero: {
-      name: "词之勇者", role: "记忆之力宿主",
+      name: " biến thể cũ của | cua dũng cảm người mà ", role: " nhớ cua sức mạnh vật chủ ",
       portrait: "assets/img/word-realm/hero.png",
-      blurb: "星屑选中的适能者。不靠喊口号，靠一题一题把世界修回去。跌倒就再站起来——热血不是嗓门，是不肯松开的那一次拼写。"
+      blurb: " ngôi sao mảnh vụn lựa chọn của xem có thể người mà không dựa vào la hét khẩu hiệu, dựa vào một chủ đề một chủ đề cầm thế giới trang trí trở về vấp ngã trong trường hợp đó lại đứng lên--máu nóng không phải giọng, là không biến thể cũ của thả ra của biến thể của đầu tiên đánh vần "
     },
     ella: {
-      name: "书吏艾拉", role: "引路人 · 前词医院书记",
+      name: " viết tắt của | quan chức hoặc nhân viên chính phủ nhỏ ngải cứu hoặc ngải đắng kéo ", role: " dẫn đường người · trước biến thể cũ của | bệnh viện thư ký ",
       portrait: "assets/img/word-realm/ella.png",
-      blurb: "曾在王子身边抄录伤损词条。嘴硬心软：她会骂你「再写错就罚抄」，也会在你通关后偷偷多记一笔——勇者今天又变强了一点。"
+      blurb: " đã tồn tại hoàng tử bên cạnh sao chép lại làm bị thương giảm mục từ điển xem , : cô ấy có thể mắng bạn«lại viết lỗi trong trường hợp đó trừng phạt sao chép», cũng có thể tồn tại bạn thông quan hoàng hậu một cách lén lút nhiều ghi chép một bút--dũng cảm người mà hôm nay nữa thay đổi bướng bỉnh hoàn thành một chút "
     },
     prince: {
-      name: "词之王子·莱克斯", role: "残影 / 前任宿主",
+      name: " biến thể cũ của | cua hoàng tử·tên một loại cỏ dại viết tắt của | Slovakia ", role: " phá hủy hình ảnh / người tiền nhiệm vật chủ ",
       en: "Prince Lex",
-      blurb: "燃尽后化作星屑。历练、牺牲、夺回黎明——他把整条路走完，只为把火炬递到你手里。条件没变：只借给愿意替别人记住的人。"
+      blurb: " cháy đến mức tối đa hoàng hậu thay đổi thành ngôi sao mảnh vụn học hỏi qua kinh nghiệm, hy sinh tính mạng, giành lại bình minh--anh ấy cầm toàn bộ đường đi hoàn thành, chỉ làm cầm đuốc chuyển giao đến bạn trong tay điều kiện chưa thay đổi: chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người "
     },
     deity: {
-      name: "无名神明", role: "记忆之力的源头",
-      blurb: "从不显形。只在王子守护医院第三夜落下契约。有人说祂是「语言本身」的意志——当人们仍愿互相称呼，祂便仍在。"
+      name: " không tên thần linh ", role: " nhớ cua sức mạnh của nguồn ",
+      blurb: " không bao giờ lộ bản chất thật chỉ tồn tại hoàng tử bảo vệ bệnh viện thu ba biến thể của rơi thỏa thuận ai đó thuyết phục là«ngôn ngữ bản thân»của ý chí--đong mọi người vẫn thành thật và thận trọng lẫn nhau gọi, đơn giản vẫn tồn tại "
     },
     eaterKing: {
-      name: "噬词君王·缄默", role: "终焉之敌",
+      name: " ngấu nghiến biến thể cũ của | quốc vương·giữ im lặng ", role: " kết thúc ở đâu cua kẻ thù ",
       en: "The Unspeaker",
-      blurb: "第二次进攻的幕后。它不吞单个词，而试图让整个文明「懒得说话」。热血勇者的克星——也是热血最该劈开的靶子。"
+      blurb: " lần thứ hai tấn công của hậu trường nó không nuốt đơn lẻ biến thể cũ của |, và cố gắng nhường toàn bộ văn minh«không cảm thấy muốn nói» máu nóng dũng cảm người mà của khắc tinh--cũng là máu nóng biến thể của nên bổ ra của mục tiêu "
     }
   },
 
   regionBeats: {
     mist: [
-      { enter: "雾里有人问：「我是谁？」声音轻得像纸边。", clear: "名字归位。雾退开一步。你握紧第一缕星屑。" },
-      { enter: "石碑字迹正在融化——像被舌头舔过。", clear: "你把字迹按回碑面。风里多了一点秩序。" },
-      { enter: "桥只剩骨架。支撑它的词被偷走了。", clear: "桥面成形。同伴在对岸挥手——你可以继续向东。" },
-      { enter: "无名的兽原地打转：它忘了自己叫什么。", clear: "它向你点头，没入草丛。世界又多了一个朋友。" },
-      { enter: "天空缺了一块颜色。有人忘了「蔚蓝」。", clear: "云的边缘重新锋利。你抬头，像第一次看见天。" },
-      { enter: "村庄静得可怕——无人能说出「希望」。", clear: "孩子再次说出那个词。炊烟升起，像胜利旗。" },
-      { enter: "路标四面空白，像被橡皮擦过。", clear: "方向回来了。地图多了一笔金线——你的足迹。" },
-      { enter: "地下传来敲击：有东西在凿「根基」。雾舌成体在深处苏醒。", clear: "敲击停了。土地重新可信任。第一章的鼓，擂到最响。" }
+      { enter: " sương mù biến thể của | ai đó hỏi: «tôi là ai? »giọng nhẹ được giống biến thể của | bên ", clear: " tên đặt lại chỗ cũ sương mù rút lui mở một một bước bạn cầm chặt đầu tiên sợi ngôi sao mảnh vụn " },
+      { enter: " bia đá chữ viết tay đang ở tan--giống chăn lưỡi liếm băng qua ", clear: " bạn cầm chữ viết tay nhấn xoay vòng bia tưởng niệm mặt gió biến thể của | nhiều hoàn thành một chút trật tự " },
+      { enter: " cầu chỉ còn lại kết cấu chống đỡ nó của biến thể cũ của | chăn trộm đi hoàn thành ", clear: " làn đường định hình bạn đồng hành tồn tại bờ đối diện vẫy tay--bạn có thể tiếp tục về hướng đông " },
+      { enter: " không tên của quái thú nơi ban đầu quay: nó quên hoàn thành bản thân kêu gì? ", clear: " nó hướng bạn gật đầu, chưa đi vào bụi rậm thế giới nữa nhiều hoàn thành một dùng trong | bạn " },
+      { enter: " bầu trời sự thiếu hoàn thành một khối màu sắc ai đó quên hoàn thành«màu xanh biếc» ", clear: " nói của cạnh lại sắc bén bạn ngẩng đầu, giống lần đầu tiên nhìn thấy ngày " },
+      { enter: " làng yên được kinh khủng--không người có thể nói ra«hy vọng» ", clear: " trẻ em một lần nữa nói ra cái đó biến thể cũ của | khói bốc lên từ bếp nâng lên, giống chiến thắng cờ " },
+      { enter: " biển báo đường bốn phía khoảng trống, giống chăn cục tẩy băng qua ", clear: " hướng trở về hoàn thành bản đồ nhiều hoàn thành một bút vàng biến thể của |--bạn của dấu chân " },
+      { enter: " dưới lòng đất truyền đến đập: có đông và tây tồn tại cái đục«nền tảng» sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” trưởng thành một cách sâu sắc tỉnh lại ", clear: " đập dừng hoàn thành đất lại đáng tin tưởng đầu tiên chương của biến thể cũ của, giã đến biến thể của tiếng " }
     ],
     stone: [
-      { enter: "岩壁上，「契约」二字只剩浅痕。", clear: "浅痕加深。握手重新有了重量。" },
-      { enter: "商队停在山口——他们忘了「公平」。", clear: "秤砣回位。争吵变成谈判。你被称作「过路的勇者」。" },
-      { enter: "瀑布声断了。有人丢了「流动」。", clear: "水声回来，像长句重新有了逗号。" },
-      { enter: "空碑张开裂缝，像一张无字的嘴。", clear: "裂缝合拢，吐出半行定义。你擦了擦汗，继续向前。" },
-      { enter: "向导说不出「陡峭」，队伍开始跌跤。", clear: "陡峭归位。脚步重新谨慎——热血也要会刹车。" },
-      { enter: "矿灯灭了——不是没油，是忘了「明亮」。", clear: "灯重新亮起，照见岩层纹理与你的影子。" },
-      { enter: "回声重复错误的词，像嘲弄。", clear: "回声改正发音，向你致意。峡谷也在学你。" },
-      { enter: "整面岩壁在呼吸。空碑巨人将起。", clear: "碑心回墨。峡谷暂时稳住。你听见潮声在远方招手。" }
+      { enter: " vách đá tường dùng trong |, «thỏa thuận»hai chữ chỉ còn lại âm thanh nước chảy vết sẹo ", clear: " âm thanh nước chảy vết sẹo làm sâu sắc hơn bắt tay lại tôi có giải pháp rồi! trọng lượng " },
+      { enter: " đoàn lữ hành dừng tồn tại Yamaguchi--họ quên hoàn thành«công bằng» ", clear: " quả cân cân đòn xoay vòng vị trí cãi nhau thay đổi thành đàm phán bạn chăn được gọi là«băng qua đường của dũng cảm người mà» " },
+      { enter: " thác nước âm thanh làm gãy hoàn thành ai đó mất hoàn thành«chảy» ", clear: " nước âm thanh trở về, giống chiều dài biến thể của lại tôi có giải pháp rồi! dấu phẩy " },
+      { enter: " trống không bia tưởng niệm mở ra vết nứt, giống một mở ra không có chữ của miệng ", clear: " vết nứt đóng, nhổ đi ra một nửa hàng định nghĩa bạn chà hoàn thành chà xem, tiếp tục tiến lên " },
+      { enter: " hướng dẫn không thể nói«dựng đứng», hàng ngũ bắt đầu ngã xuống ", clear: " dựng đứng đặt lại chỗ cũ bước chân lại cẩn thận--máu nóng cũng yêu cầu có thể phanh " },
+      { enter: " đèn thợ mỏ dập tắt hoặc làm tắt hoàn thành--không phải chưa dầu, là quên hoàn thành«sáng» ", clear: " đèn lại sáng dậy, biến thể của thấy tầng đá đường vân biến thể của | bạn của bóng " },
+      { enter: " tiếng vọng lặp lại sai lầm của biến thể cũ của |, giống chế giễu ", clear: " tiếng vọng sửa chữa phát âm, hướng bạn gửi lời chào hẻm núi cũng tồn tại học bạn " },
+      { enter: " toàn bộ mặt vách đá tường tồn tại thở trống không bia tưởng niệm người khổng lồ sẽ dậy ", clear: " bia tưởng niệm tim xoay vòng thỏi mực hẻm núi tạm thời ổn định sống bạn nghe thấy thuỷ triều âm thanh tồn tại xa xôi vẫy tay " }
     ],
     tide: [
-      { enter: "浪里漂着半截古咒：hypo— 后面没了。", clear: "词尾归位。浪把它送上岸。你接住了它。" },
-      { enter: "灯塔不转。守塔人忘了「周期」。", clear: "灯光重新画圆。航线复活——像勇者的连击。" },
-      { enter: "渔网打空——海忘了「丰饶」。", clear: "第一尾鱼跃起，银光像逗号。渔民喊你一声谢。" },
-      { enter: "潮声里混着讲座片段，却对不上释义。", clear: "音与义咬合。你听懂了整句——像听懂战鼓。" },
-      { enter: "码头告示只剩标点，单词被冲走。", clear: "告示重写：危险、潮汐、等待。字字铿锵。" },
-      { enter: "有人在沙滩默读，读到一半失语。", clear: "他继续读完。海风替他翻页。你和他点头致意。" },
-      { enter: "海底传来敲击：像在删长难句。", clear: "敲击停。长句重新完整。沉默渊在深处睁眼。" },
-      { enter: "海面凹成无声之洞——沉默要吞掉海域。", clear: "潮声归来。第三章的海，重新有名字。你的名字，也被浪记住。" }
+      { enter: " sóng biến thể của | nổi nước đi một nửa cổ biến thể của: hypo- phía sau chết ", clear: " biến thể cũ của | đuôi đặt lại chỗ cũ sóng cầm nó gửi lên bờ bạn bắt lấy hoàn thành nó " },
+      { enter: " hải đăng không xem | canh gác chùa tháp người quên hoàn thành«chu kỳ» ", clear: " chiếu sáng lại vẽ một vòng tròn tuyến hàng không hoặc hàng hải hồi sinh--giống dũng cảm người mà của đánh liên tục " },
+      { enter: " lưới đánh cá tá trống không--đại dương quên hoàn thành«giàu có và màu mỡ» ", clear: " đầu tiên đuôi cá nhảy dậy, ánh sáng bạc giống dấu phẩy ngư dân la hét bạn thanh một trong tiếng Quan Thoại cảm ơn " },
+      { enter: " thuỷ triều âm thanh biến thể của | bùn nước đi một khóa bài giảng đoạn, biến thể cũ của | không đồng ý nghĩa của cái gì đó ", clear: " âm thanh biến thể của | công lý khớp với nhau bạn hiểu được hoàn thành toàn bộ biến thể của--giống hiểu được chiến đấu biến thể cũ của " },
+      { enter: " bến tàu thông báo chỉ còn lại dấu câu, từ chăn cuốn trôi đi ", clear: " thông báo lặp lại viết: nguy hiểm, thủy triều, chờ chữ chữ vang dội " },
+      { enter: " ai đó tồn tại bãi biển đọc thầm, dấu phẩy đến một nửa lỡ lời ", clear: " anh ấy tiếp tục dấu phẩy hoàn thành gió biển thay thế cho anh ấy lật đầu bạn biến thể cũ của anh ấy gật đầu gửi lời chào " },
+      { enter: " đáy biển truyền đến đập: giống tồn tại xóa chiều dài khó biến thể của ", clear: " đập dừng chiều dài biến thể của lại hoàn chỉnh ít nói hồ sâu một cách sâu sắc mở mắt " },
+      { enter: " bề mặt biển lõm thành công không có tiếng cua hang--ít nói yêu cầu nuốt rơi vùng biển ", clear: " thuỷ triều âm thanh trở về thu ba chương của đại dương, lại nổi tiếng chữ bạn của tên, cũng chăn sóng nhớ " }
     ],
     ash: [
-      { enter: "漂岛边缘写着：I am broken. 字迹在爬。", clear: "你改写成：I still rise. 岛稳住了。热血的第一斧，砍向自我怀疑。" },
-      { enter: "灰雨落下，每滴都是「反正用不上」。", clear: "雨停。有用的词重新闪光。你把伞递给下一个旅人。" },
-      { enter: "祭坛废墟里，倒计时在倒着忘。", clear: "时间正向流动。铅笔有了重量。像握住剑柄。" },
-      { enter: "同伴突然说：「我不行。」像被附身。", clear: "附身退散。他说：「我再试一次。」——勇者的暗号。" },
-      { enter: "吊桥由「自信」织成，正在断股。", clear: "新绳接上。你踏过去，没有摔下去。身后有人鼓掌。" },
-      { enter: "岛心有面镜子，映出最差的分数。", clear: "镜子碎了。映出的是练习的手——你的手。" },
-      { enter: "噬词者学舌：「明天再记。」", clear: "你答：「现在。」灰烬熄灭一寸。战意燃起一寸。" },
-      { enter: "灰烬巨人站起，胸口刻着 Anxiety。", clear: "巨人跪地。Anxiety 被改写成 Courage。群岛轰然相连。" }
+      { enter: " nổi biến thể của | cạnh viết nước đi: I am broken. chữ viết tay tồn tại bò ", clear: " bạn sửa đổi thành công: I still rise. biến thể của | ổn định sống hoàn thành máu nóng của đầu tiên rìu nhỏ, chặt hướng tự nghi ngờ " },
+      { enter: " tro mưa rơi, mỗi một giọt tất cả là«dù sao đi nữa sử dụng không dùng trong |» ", clear: " mưa dừng hữu ích của biến thể cũ của | lại nháy sáng bạn cầm cái ô đưa cho cái tiếp theo chuyến đi người " },
+      { enter: " bàn thờ tàn tích biến thể của |, đếm ngược tồn tại ngược quên ", clear: " thời gian hướng về phía trước chảy bút chì tôi có giải pháp rồi! trọng lượng giống nắm chặt chuôi kiếm " },
+      { enter: " bạn đồng hành đột ngột thuyết phục: «tôi không được »giống chăn nhập vào cơ thể ", clear: " nhập vào cơ thể rút lui và tản ra anh ấy thuyết phục: «tôi lại thử đầu tiên »--dũng cảm người mà của tín hiệu bí mật " },
+      { enter: " cầu kéo theo«có tự tin»dệt thành công, đang ở làm gãy đùi ", clear: " viết tắt của Tân Cương dây thừng kết nối bạn xem | băng qua đi, không có ném xuống đi xuống thời gian sau khi qua đời ai đó vỗ tay " },
+      { enter: " biến thể của | tim có mặt nạ con trai, phản chiếu đi ra biến thể của sự khác biệt của điểm ", clear: " gương vỡ thành mảnh hoàn thành phản chiếu đi ra của là luyện tập của tay--bạn của tay " },
+      { enter: " ngấu nghiến biến thể cũ của | người mà học dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”: «ngày mai lại ghi chép »", clear: " bạn hình thức gắn liền có nghĩa giống như từ tự do: «bây giờ »tro tàn ngừng cháy một một đơn vị đo chiều dài chiến đấu Ý châm lửa một một đơn vị đo chiều dài " },
+      { enter: " tro tàn người khổng lồ đứng lên bằng hai chân sau, ngực một phần tư nước đi Anxiety ", clear: " người khổng lồ quỳ trợ từ kết cấu: dùng trước động từ hoặc tính từ Anxiety chăn sửa đổi thành công Courage nhóm đảo một cách ồn ào liên kết " }
     ],
     archive: [
-      { enter: "词医院的门牌只剩「词」字，医院消失。", clear: "「医院」归位。门后传来翻页声——像老友归来。" },
-      { enter: "病床上躺着残缺词条：evid— / evidenc—", clear: "evidence 完整。床帘重新有颜色。你轻轻盖上薄毯。" },
-      { enter: "艾拉的旧笔记被蛀空中段。", clear: "中段浮现：王子曾在此守护三夜未眠。艾拉别过脸。" },
-      { enter: "镜页映出第一次战争——士兵忘了口令。", clear: "口令响起。镜中士兵重新列阵。你向他们敬礼。" },
-      { enter: "神明的契约被墨水涂黑。", clear: "涂黑褪去：只借给替别人记住的人。光落在你掌心。" },
-      { enter: "书架最上格锁着「王子真名」。", clear: "锁开。真名是 Lex——词本身。你低声念了一遍。" },
-      { enter: "有人想把图书馆改成军械库。", clear: "你拒绝。图书馆仍是医院与殿堂——勇者的据点。" },
-      { enter: "终室门后是空白。空白要吞掉所有故事。", clear: "故事回来。门开向王座之路。鼓声再起。" }
+      { enter: " biến thể cũ của | bệnh viện của biển số nhà chỉ còn lại«Từ»chữ, bệnh viện biến mất ", clear: "«bệnh viện»đặt lại chỗ cũ cổng hoàng hậu truyền đến lật đầu âm thanh--giống bạn cũ trở về " },
+      { enter: " giường bệnh dùng trong | ngả lưng nước đi hư hỏng nặng mục từ điển: evid- / evidenc-", clear: "evidence Hoàn chỉnh giường cờ được dùng làm biển hiệu cửa hàng lại có màu sắc bạn nhẹ nhàng đậy lại mỏng mền " },
+      { enter: " ngải cứu hoặc ngải đắng kéo của cũ ghi chép lại chăn mối trên bầu trời đoạn ", clear: " đoạn giữa xuất hiện trước mắt: hoàng tử đã tại đây bảo vệ ba biến thể của chưa ngủ ngải cứu hoặc ngải đắng kéo rời khỏi băng qua khuôn mặt " },
+      { enter: " gương đầu phản chiếu đi ra lần đầu tiên chiến tranh--lính quên hoàn thành mệnh lệnh bằng miệng ", clear: " mệnh lệnh bằng miệng vang lên gương Trung Quốc lính lại sắp xếp bố trí quân đội bạn hướng họ chào kính " },
+      { enter: " thần linh của thỏa thuận chăn mực bôi viết tắt của tỉnh Hắc Long Giang | ", clear: " bôi viết tắt của tỉnh Hắc Long Giang | cởi: chỉ cho ai đó mượn thay thế cho người khác nhớ của người ánh sáng bỏ sót tồn tại bạn lòng bàn tay " },
+      { enter: " giá sách biến thể của dùng trong | hình vuông khóa nước đi«hoàng tử thật tên» ", clear: " khóa mở thật tên là Lex--biến thể cũ của | bản thân bạn nói khẽ biến thể của hoàn thành một lần " },
+      { enter: " ai đó nghĩ cầm thư viện chuyển đổi quân đội dụng cụ nhà kho ", clear: " bạn từ chối thư viện vẫn là bệnh viện biến thể của | cung điện--dũng cảm người mà của cứ điểm " },
+      { enter: " kết thúc phòng cổng hoàng hậu là khoảng trống khoảng trống yêu cầu nuốt rơi tất cả tục lệ cũ ", clear: " tục lệ cũ trở về cổng mở hướng ngai vàng cua đường tiếng trống nổi dậy lần nữa " }
     ],
     throne: [
-      { enter: "王座走廊的词只剩辅音，元音被抽走。", clear: "元音归来。脚步声重新完整。像整军待发。" },
-      { enter: "侍卫重复：「不必说。」像咒语。", clear: "咒语破。侍卫问：「你需要帮助吗？」——连敌人也会被热血唤醒。" },
-      { enter: "壁画上的英雄张嘴无声。", clear: "英雄发出第一个音节。壁画活了，与你并肩。" },
-      { enter: "缄默君王投下幻象：你永远记不住。", clear: "你记住了这一句幻象本身——它破了。笑一次，再出剑。" },
-      { enter: "星屑狂舞，王子残影几乎成形。", clear: "残影握你的手：「最后一段，替我说。」火炬在你们掌间。" },
-      { enter: "王座上写着 Unsaying。字母在逃。", clear: "你按住字母。Unsaying 变成 Saying。热血写成拼写。" },
-      { enter: "世界边缘开始透明——像句子删到句号。", clear: "句号稳住。世界重新不透明。同伴的呼喊从身后传来。" },
-      { enter: "终战：缄默张开无口之口，要吞掉「我们」。", clear: "「我们」归位。词境听见彼此。战争落幕——史诗第一部，完。" }
+      { enter: " ngai vàng hành lang của biến thể cũ của | chỉ còn lại phụ âm, nguyên âm chăn rút ra đi ", clear: " nguyên âm trở về bước chân âm thanh lại hoàn chỉnh giống toàn bộ quân đội ở lại gửi đi " },
+      { enter: " Thị vệ lặp lại: «không cần thuyết phục »giống thần chú ", clear: " thần chú hỏng Thị vệ hỏi: «bạn cần sự giúp đỡ gì?? »--liên kết kẻ thù cũng có thể chăn máu nóng đánh thức ai đó " },
+      { enter: " tranh tường dùng trong | của anh hùng mở miệng không có tiếng ", clear: " anh hùng ban hành đầu tiên dùng trong | âm tiết tranh tường sống hoàn thành, biến thể của | bạn cạnh nhau " },
+      { enter: " giữ im lặng quốc vương ném xuống ảo giác: bạn mãi mãi không thể nhớ ", clear: " bạn nhớ hoàn thành này một dòng thơ ảo giác bản thân--nó hỏng hoàn thành biến thể cũ của đầu tiên, lại đi ra kiếm hai lưỡi " },
+      { enter: " ngôi sao mảnh vụn điên nhảy múa, hoàng tử phá hủy hình ảnh hầu như định hình ", clear: " phá hủy hình ảnh cầm bạn của tay: «cuối cùng một đoạn, thay thế cho tôi thuyết phục »đuốc tồn tại các bạn lòng bàn tay giữa " },
+      { enter: " ngai vàng dùng trong | viết nước đi Unsaying chữ cái đang lẩn trốn ", clear: " bạn nhấn sống chữ cái Unsaying thay đổi thành Saying máu nóng viết thành công đánh vần " },
+      { enter: " thế giới cạnh bắt đầu trong suốt--giống câu xóa đến dấu chấm ", clear: " dấu chấm ổn định sống thế giới lại mờ đục bạn đồng hành của hô hào biến thể của | thời gian sau khi qua đời truyền đến " },
+      { enter: " kết thúc chiến tranh: giữ im lặng mở ra không có miệng cua miệng, yêu cầu nuốt rơi«chúng tôi» ", clear: "«chúng tôi»đặt lại chỗ cũ biến thể cũ của | biên giới nghe thấy lẫn nhau chiến tranh hạ màn--một bản anh hùng ca đầu tiên bộ, hoàn thành " }
     ]
   },
 
@@ -330,60 +330,60 @@ window.YYSD_WORD_REALM_STORY = {
     var beats = (this.regionBeats && this.regionBeats[region]) || this.regionBeats.mist;
     var b = beats[Math.max(0, Math.min(beats.length, localNo) - 1)] || beats[0];
     return {
-      shrineName: reg.shrinePrefix + " · 第 " + Math.max(1, localNo) + " 座",
-      place: displayTitle || ("祠 " + n),
+      shrineName: reg.shrinePrefix + " · Thứ " + Math.max(1, localNo) + " chỗ ngồi ",
+      place: displayTitle || (" nhà thờ " + n),
       enter: b.enter,
       clear: b.clear
     };
   },
 
   fragments: [
-    { id: "frag-1", afterShrine: 3, title: "残页 · 词之国的黄昏",
-      body: "王子曾以为，记得足够多的词，世界就不会塌。直到第一座城在沉默中碎成沙——人们不是被杀死的，是被「说不出来」杀死的。那一夜，反抗军的旗帜上，字被舔成空白。" },
-    { id: "frag-2", afterShrine: 6, title: "残页 · 神明的条件",
-      body: "神明说：记忆之力不是用来囤积的。它只借给愿意替别人记住的人。王子当时点头，却还没完全懂——直到他为陌生人的名字燃尽自己。" },
-    { id: "frag-3", afterShrine: 8, title: "残页 · 平原初胜",
-      body: "雾舌溃散那夜，孩子重新喊出自己的名字。王子残影写道：名字是最短的史诗。而你，刚写下自己热血的第一章。" },
-    { id: "frag-4", afterShrine: 12, title: "残页 · 懒得记",
-      body: "噬词者退去又归来。这一次，它们学会伪装成「懒得记」。真正的战役，从人心开始——勇者啊，别被温柔的借口卸下剑。" },
-    { id: "frag-5", afterShrine: 16, title: "残页 · 空碑之诫",
-      body: "定义被挖空时，契约、公平、陡峭一并失效。王子注：难词不是敌人，是世界的榫卯。把它们刻回去，屋顶才不会塌。" },
-    { id: "frag-6", afterShrine: 20, title: "残页 · 潮声的警告",
-      body: "古咒沉入海沟。有人说它们「用不着」。王子反驳：穹顶石看起来也可有可无——直到屋顶塌下。灯塔需要齿轮，勇者需要长咒。" },
-    { id: "frag-7", afterShrine: 24, title: "残页 · 三章终 · 第二次进攻",
-      body: "沉默渊退散。艾拉写道：第三章完。灰烬群岛已在雾外成形——第二次进攻的前哨。星屑在掌心停一秒，像未写完的战书。" },
-    { id: "frag-8", afterShrine: 28, title: "残页 · 焦虑的形状",
-      body: "新噬词者专吃自我怀疑。它们不删单词，只删「我还能学会」这句话。热血的解药只有一个动作：再试一次。" },
-    { id: "frag-9", afterShrine: 32, title: "残页 · 群岛之约",
-      body: "灰烬巨人跪地时，漂岛重新相连。艾拉：勇气不是感觉，是继续拼写的动作。无数声音齐说：I still rise." },
-    { id: "frag-10", afterShrine: 36, title: "残页 · 词医院",
-      body: "王子曾在此守护三夜。伤损的词被包扎、重抄、朗读。医院不是战场，却是战场的源头——也是热血被点燃的地方。" },
-    { id: "frag-11", afterShrine: 40, title: "残页 · Lex",
-      body: "王子真名即 Lex——词。他不是统治词境的人，他是词境愿意被记住的那一部分。火炬在你手里，烫，却不肯熄。" },
-    { id: "frag-12", afterShrine: 44, title: "残页 · 缄默的饵",
-      body: "君王说：不必说，不必记，不必费力。饵看起来像休息，吃下去却是失语。勇者的回答永远是：现在。" },
-    { id: "frag-13", afterShrine: 48, title: "残页 · 我们",
-      body: "终局夺回的不是王座，是「我们」。当文明再次能互相称呼，遗忘的王庭自行崩解。勇者啊，合上这页——明天，还有人等你记得。" }
+    { id: "frag-1", afterShrine: 3, title: " phá hủy đầu · biến thể cũ của | cua quốc gia của chạng vạng ",
+      body: " hoàng tử đã nghĩ rằng, nhớ đủ nhiều của biến thể cũ của |, thế giới trong trường hợp đó không có khả năng sụp đổ cho đến đầu tiên chỗ ngồi tường thành tồn tại ít nói Trung Quốc vỡ thành mảnh thành công hạt--mọi người không phải chăn giết của, là chăn«không thể nói đến»giết của biến thể của một biến thể của, kháng cự quân đội của cờ hiệu dùng trong |, chữ chăn liếm thành công khoảng trống " },
+    { id: "frag-2", afterShrine: 6, title: " phá hủy đầu · thần linh của điều kiện ",
+      body: " thần linh thuyết phục: nhớ cua sức mạnh không phải được dùng để tích trữ của nó chỉ cho ai đó mượn muốn thay thế cho người khác nhớ của người hoàng tử lúc đó gật đầu, biến thể cũ của | vẫn chưa hoàn chỉnh hiểu--cho đến anh ấy làm người lạ của tên cháy luôn luôn tự bản thân " },
+    { id: "frag-3", afterShrine: 8, title: " phá hủy đầu · cánh đồng lúc đầu chiến thắng ",
+      body: " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” bị đánh bại và tan rã biến thể của biến thể của, trẻ em lại la hét đến từ tự bản thân của tên hoàng tử phá hủy hình ảnh viết: tên là biến thể của ngắn của một bản anh hùng ca và bạn, cứng viết xuống bản thân máu nóng của đầu tiên chương " },
+    { id: "frag-4", afterShrine: 12, title: " phá hủy đầu · không cảm thấy muốn ghi chép ",
+      body: " ngấu nghiến biến thể cũ của | người mà rút lui đi nữa trở về này đầu tiên, chúng học giả vờ thành công«không cảm thấy muốn ghi chép» chính hãng của chiến dịch quân sự, biến thể của | tâm lý chung bắt đầu--dũng cảm người mà thán từ biểu thị sự ngạc nhiên, rời khỏi chăn dịu dàng và mềm mại của viện cớ dỡ xuống kiếm hai lưỡi " },
+    { id: "frag-5", afterShrine: 16, title: " phá hủy đầu · trống không bia tưởng niệm cua điều răn ",
+      body: " định nghĩa chăn khai quật biến thể cũ của |, thỏa thuận, công bằng, dựng đứng biến thể của | không hiệu quả hoàng tử tiêm: khó biến thể cũ của | không phải kẻ thù, là thế giới của mộng lỗ mộng cầm chúng một phần tư trở về, mái nhà không đời nào có thể sụp đổ " },
+    { id: "frag-6", afterShrine: 20, title: " phá hủy đầu · thuỷ triều âm thanh của cảnh báo ",
+      body: " cổ biến thể của chìm đi vào rãnh biển ai đó thuyết phục chúng«không cần» hoàng tử phản bác: mái vòm đơn vị đo lường khô cho ngũ cốc bằng mười đấu hình như cũng không cần thiết--cho đến mái nhà sụp đổ hải đăng cần bánh răng, dũng cảm người mà cần chiều dài biến thể của " },
+    { id: "frag-7", afterShrine: 24, title: " phá hủy đầu · ba chương kết thúc · lần thứ hai tấn công ",
+      body: " ít nói hồ sâu rút lui và tản ra ngải cứu hoặc ngải đắng kéo viết: thu ba chương hoàn thành tro tàn nhóm đảo đã tồn tại sương mù bên ngoài định hình--lần thứ hai tấn công của đồn tiền tiêu ngôi sao mảnh vụn tồn tại lòng bàn tay dừng một giây, giống chưa viết xong của thư thách đấu " },
+    { id: "frag-8", afterShrine: 28, title: " phá hủy đầu · lo âu của hình dạng ",
+      body: " viết tắt của Tân Cương ngấu nghiến biến thể cũ của | người mà cho một người ăn tự nghi ngờ chúng không xóa từ, chỉ xóa«tôi vẫn có thể học»này biến thể của phương ngữ máu nóng của thuốc giải chỉ có một dùng trong | chuyển động: lại thử đầu tiên " },
+    { id: "frag-9", afterShrine: 32, title: " phá hủy đầu · nhóm đảo cua cân trong cân đĩa hoặc trên cân ",
+      body: " tro tàn người khổng lồ quỳ trợ từ kết cấu: dùng trước động từ hoặc tính từ biến thể cũ của |, nổi biến thể của | lại liên kết ngải cứu hoặc ngải đắng kéo: can đảm không phải cảm giác, là tiếp tục đánh vần của chuyển động vô số giọng gọn gàng thuyết phục: I still rise." },
+    { id: "frag-10", afterShrine: 36, title: " phá hủy đầu · biến thể cũ của | bệnh viện ",
+      body: " hoàng tử đã tại đây bảo vệ ba biến thể của làm bị thương giảm của biến thể cũ của | chăn biến thể của |, lặp lại sao chép, đọc to lên bệnh viện không phải chiến trường, tuy nhiên chiến trường của nguồn--cũng là máu nóng chăn đánh lửa của khu vực " },
+    { id: "frag-11", afterShrine: 40, title: " phá hủy đầu · Lex",
+      body: " hoàng tử thật tên tức là Lex--Từ anh ấy không phải cai trị biến thể cũ của | biên giới của người, anh ấy là biến thể cũ của | biên giới muốn chăn nhớ của biến thể của phần đuốc tồn tại bạn trong tay, làm bỏng, biến thể cũ của | không biến thể cũ của dập tắt " },
+    { id: "frag-12", afterShrine: 44, title: " phá hủy đầu · giữ im lặng của bánh ngọt ",
+      body: " quốc vương thuyết phục: không cần thuyết phục, không cần ghi chép, không cần tốn nhiều công sức bánh ngọt hình như giống nghỉ, ăn đi xuống tuy nhiên lỡ lời dũng cảm người mà của trả lời mãi mãi là: bây giờ " },
+    { id: "frag-13", afterShrine: 48, title: " phá hủy đầu · chúng tôi ",
+      body: " tàn cuộc giành lại của không phải ngai vàng, là«chúng tôi» đong văn minh một lần nữa có thể lẫn nhau gọi, quên của vua hoặc quốc vương sảnh chính tự nguyện sụp đổ chia dũng cảm người mà thán từ biểu thị sự ngạc nhiên, đóng này đầu--ngày mai, vẫn còn người đợi bạn nhớ " }
   ],
 
   mentorLines: [
-    "勇者，记忆之力会回应勇敢的重复——再试一次，不算失败，算蓄力！",
-    "词不是武器，是桥梁。你每记牢一个，就多修一座——修到能跑过去救人也行。",
-    "王子的条件没变：替别人记住，力量才会留下。热血要有方向。",
-    "修炼场淬炼手感，祠庙推进剧情——两条路，都是变强的路。",
-    "听不清就再听——勇者从不会因重听而羞耻。连击从耐心里长出来。",
-    "难词是榫卯。没有它们，屋顶也会塌。劈开恐惧，把榫卯敲回去！",
-    "跌倒了？站起来。星屑选中你，不是因为你会飞——是因为你会爬起来。",
-    "今天多记一个词，明天世界就多一寸光。远征，靠的是这种笨而烈的火。"
+    " dũng cảm người mà, nhớ cua sức mạnh có thể phản hồi dũng cảm của lặp lại--lại thử đầu tiên, không tính bị đánh bại, coi như tích trữ sức mạnh! ",
+    " biến thể cũ của | không phải vũ khí, là cây cầu bạn mỗi ghi chép chắc chắn một dùng trong |, trong trường hợp đó nhiều trang trí một chỗ ngồi--trang trí đến có thể cào băng qua đi biến thể của người cũng hàng ",
+    " hoàng tử của điều kiện chưa thay đổi: thay thế cho người khác nhớ, sức mạnh khả năng có thể để lại máu nóng cần hướng ",
+    " tu luyện khổ hạnh sân phơi nhúng vào nước luyện cảm giác, nhà thờ tổ thúc đẩy cốt truyện--hai dải đường, tất cả là thay đổi bướng bỉnh của đường ",
+    " cười không rõ ràng trong trường hợp đó lại cười--dũng cảm người mà không bao giờ có thể biến thể cũ của lãng tai và xấu hổ đánh liên tục biến thể của | kiên nhẫn biến thể của | mọc đến ",
+    " khó biến thể cũ của | là mộng lỗ mộng không có chúng, mái nhà cũng có thể sụp đổ bổ ra bị khiếp sợ, cầm mộng lỗ mộng đánh trở về! ",
+    " vấp ngã hoàn thành? đứng lên ngôi sao mảnh vụn lựa chọn bạn, không phải bởi vì bạn có thể bay--là bởi vì bạn có thể bò đứng lên ",
+    " hôm nay nhiều ghi chép một dùng trong | biến thể cũ của |, ngày mai thế giới trong trường hợp đó nhiều một một đơn vị đo chiều dài ánh sáng cuộc viễn chinh, dựa vào của là loại này ngu ngốc và nồng nhiệt của lửa "
   ],
 
-  campBlurb: "修炼不推进剧情，也不掉落王子残页——只淬炼记忆之力。热血也需要日复一日的挥剑。",
+  campBlurb: " tu luyện khổ hạnh không thúc đẩy cốt truyện, cũng không rơi xuống hoàng tử phá hủy đầu--chỉ nhúng vào nước luyện nhớ cua sức mạnh máu nóng cũng cần ngày này qua ngày khác của vẫy kiếm hai lưỡi ",
 
   weeklyThemes: [
-    { id: "abyss-tide", name: "深渊潮汐", blurb: "高难词上浮。修炼场偏向古咒与稀见词——像在浪尖劈剑。", tiers: [3, 4], bonusXp: 3 },
-    { id: "mist-echo", name: "雾原回声", blurb: "偏基础词斩击，打磨拼写肌肉。基础也是热血。", tiers: [1, 2], bonusXp: 2 },
-    { id: "stone-etch", name: "石语刻录", blurb: "混合难度突击，释义与拼写并重。一凿一凿刻回去。", tiers: [2, 3, 4], bonusXp: 2 },
-    { id: "ash-drill", name: "灰烬夜训", blurb: "对抗「懒得记」：偏难词高压斩击。现在，不是明天。", tiers: [3, 4], bonusXp: 3 }
+    { id: "abyss-tide", name: " vực thẳm thủy triều ", blurb: " vô cùng khó khăn biến thể cũ của | nổi lên tu luyện khổ hạnh sân phơi thiên vị đối với cái gì cổ biến thể của biến thể của | hiếm thấy biến thể cũ của |--giống tồn tại sóng nhọn chặt kiếm hai lưỡi ", tiers: [3, 4], bonusXp: 3 },
+    { id: "mist-echo", name: " sương mù trước đây tiếng vọng ", blurb: " nghiêng nền biến thể cũ của | chặt đầu đánh, đánh bóng đánh vần cơ nền cũng là máu nóng ", tiers: [1, 2], bonusXp: 2 },
+    { id: "stone-etch", name: " đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ ghi vào CD hoặc DVD ", blurb: " trộn mức độ khó tấn công đột ngột và dữ dội, nghĩa của cái gì đó biến thể của | đánh vần coi trọng như nhau một cái đục một cái đục một phần tư trở về ", tiers: [2, 3, 4], bonusXp: 2 },
+    { id: "ash-drill", name: " tro tàn biến thể của dạy ", blurb: " chống cự«không cảm thấy muốn ghi chép»: nghiêng khó biến thể cũ của | áp suất cao chặt đầu đánh bây giờ, không phải ngày mai ", tiers: [3, 4], bonusXp: 3 }
   ],
 
   weeklyTheme: function (weekId) {
@@ -398,210 +398,210 @@ window.YYSD_WORD_REALM_STORY = {
   chapters: [
     {
       id: "ch1-mist", chapter: 1, act: 1, region: "mist",
-      title: "第一章 · 记得名字的人",
+      title: " đầu tiên chương · nhớ tên của người ",
       en: "Chapter I · Those Who Remember Names",
-      summary: "你被星屑选中。晨雾平原遗忘日常词。学会战斗，先夺回「我是谁」——热血的第一剑。",
+      summary: " bạn chăn ngôi sao mảnh vụn lựa chọn buổi sáng sương mù cánh đồng quên hằng ngày biến thể cũ của | học chiến đấu, trước giành lại«tôi là ai»--máu nóng của đầu tiên kiếm hai lưỡi ",
       novel:
-        "艾拉说，第一次战争结束时，人们最先找回的不是王国，而是孩子的名字。名字短，却是整座文明愿意互相呼唤的证据。\n\n" +
-        "你踏入晨雾时，手还在抖。雾舌舔过石碑，字迹融化。你本可以退回营地——可星屑在掌心发烫，像有人把火炬塞进你手里。艾拉只扔下一句：「怕就对了。怕了还写，才叫勇者。」\n\n" +
-        "于是你出剑。不是为了成为王子，而是为了让呼唤再次可能。连对三次，雾舌痛得后退——你忽然懂了：热血，原来可以是清晰的拼写。",
-      ellaTip: "雾舌怕清晰的拼写。连对三次，它会痛得后退——那是你的第一段连击传说。",
-      questLine: "点亮晨雾八座祠，击败雾舌·成体",
+        " ngải cứu hoặc ngải đắng kéo thuyết phục, lần đầu tiên chiến tranh chấm dứt biến thể cũ của |, mọi người đầu tiên lấy lại của không phải vương quốc, mà là trẻ em của tên tên ngắn, tuy nhiên toàn bộ chỗ ngồi văn minh muốn lẫn nhau gọi to của bằng chứng \n\n" +
+        " bạn xem | đi vào buổi sáng sương mù biến thể cũ của |, tay vẫn tồn tại run rẩy sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” liếm băng qua bia đá, chữ viết tay tan bạn gốc có thể trả lại trại--có thể ngôi sao mảnh vụn tồn tại lòng bàn tay nóng rẫy, giống ai đó cầm đuốc Serbia tiến lên bạn trong tay ngải cứu hoặc ngải đắng kéo chỉ ném xuống một dòng thơ: «sợ trong trường hợp đó Đúng rồi! sợ hoàn thành vẫn viết, khả năng kêu dũng cảm người mà »\n\n" +
+        " thế là bạn đi ra kiếm hai lưỡi không phải để trở thành hoàng tử, mà là để nhường gọi to một lần nữa có thể liên kết đúng thứ ba, sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” đau được lùi lại--bạn đột nhiên hiểu hoàn thành: máu nóng, gốc có thể là rõ ràng của đánh vần ",
+      ellaTip: " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” sợ rõ ràng của đánh vần liên kết đúng thứ ba, nó có thể đau được lùi lại--tất nhiên bạn của đầu tiên đoạn đánh liên tục truyền thuyết ",
+      questLine: " thắp sáng buổi sáng sương mù tám chỗ ngồi nhà thờ, đánh bại sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”·trưởng thành ",
       recLevel: "Lv.1–3",
-      nextHint: "东行 · 石语峡谷",
+      nextHint: " phía đông hàng · đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi ",
       bossShrine: "shrine-08", unlockAfter: null
     },
     {
       id: "ch2-stone", chapter: 2, act: 2, region: "stone",
-      title: "第二章 · 空碑上的定义",
+      title: " thứ hai chương · trống không bia tưởng niệm dùng trong | của định nghĩa ",
       en: "Chapter II · Definitions on the Empty Stela",
-      summary: "峡谷的碑面被挖空。释义一失，契约与公平一并失效。把定义刻回去！",
+      summary: " hẻm núi của bia tưởng niệm mặt chăn khai quật nghĩa của cái gì đó một mất, thỏa thuận biến thể của | công bằng biến thể của | không hiệu quả cầm định nghĩa một phần tư trở về! ",
       novel:
-        "石语峡谷曾经把法律刻在岩上。噬词者不砸石头，只挖空定义——于是「公平」变成空气，商队在山口打成一团。\n\n" +
-        "你站在空碑前，听见回声嘲弄你的发音。汗水滴进岩缝。有人笑：「难词而已，放弃吧。」你没放弃。每一个听义题，都是一凿；每一凿，都让碑心多回一分墨。\n\n" +
-        "当空碑巨人站起，你没有逃。home、hope、hold——普通，却承重。你把它们刻回去的时候，峡谷轰然承认：过路的勇者，也能改写岩层。",
-      ellaTip: "空碑傀吃释义。听义题答对，等于往碑上重新刻字。刻穿它！",
-      questLine: "点亮石语八座祠，击败空碑巨人",
+        " đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi một lần cầm pháp luật một phần tư tồn tại vách đá dùng trong | ngấu nghiến biến thể cũ của | người mà không đập đá, chỉ khai quật định nghĩa--thế là«công bằng»thay đổi thành không khí, đoàn lữ hành tồn tại Yamaguchi tá thành công một tròn \n\n" +
+        " bạn trạm tồn tại trống không bia tưởng niệm trước, nghe thấy tiếng vọng chế giễu bạn của phát âm mồ hôi một giọt tiến lên vách đá khâu ai đó biến thể cũ của: «khó biến thể cũ của | chỉ vậy, từ bỏ quán bar »bạn chưa từ bỏ mỗi một dùng trong | cười công lý chủ đề, tất cả là một cái đục; mỗi một cái đục, tất cả nhường bia tưởng niệm tim nhiều xoay vòng một chia thỏi mực \n\n" +
+        " trên không bia tưởng niệm người khổng lồ đứng lên bằng hai chân sau, bạn không có trốn thoát home, hope, hold--phổ thông, biến thể cũ của | chịu tải bạn cầm chúng một phần tư trở về của thời gian, hẻm núi một cách ồn ào thừa nhận: băng qua đường của dũng cảm người mà, cũng có thể sửa đổi tầng đá ",
+      ellaTip: " trống không bia tưởng niệm to lớn ăn nghĩa của cái gì đó cười công lý chủ đề trả lời hoặc đáp lại câu hỏi của ai đó, bằng đi bia tưởng niệm dùng trong | lại một phần tư chữ một phần tư mặc nó! ",
+      questLine: " thắp sáng đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ tám chỗ ngồi nhà thờ, đánh bại trống không bia tưởng niệm người khổng lồ ",
       recLevel: "Lv.3–5",
-      nextHint: "南下 · 潮声海域",
+      nextHint: " đi xuống phía nam · thuỷ triều âm thanh vùng biển ",
       bossShrine: "shrine-16", unlockAfter: "shrine-08"
     },
     {
       id: "ch3-tide", chapter: 3, act: 3, region: "tide",
-      title: "第三章 · 潮声里的古咒",
+      title: " thu ba chương · thuỷ triều âm thanh biến thể của | của cổ biến thể của ",
       en: "Chapter III · Scholarship in the Tide",
-      summary: "海域吞没长词。灯塔与航线一起失效——难词不是装饰，是齿轮！",
+      summary: " vùng biển tham ô chiều dài biến thể cũ của | hải đăng biến thể của | tuyến hàng không hoặc hàng hải ở cùng một nơi không hiệu quả--khó biến thể cũ của | không phải trang trí, là bánh răng! ",
       novel:
-        "潮声海域证明：难词不是装饰。hypothesis、evidence、consequence——它们是灯塔的齿轮。有人说「用不着」，直到灯塔不转、航线消失。\n\n" +
-        "你在浪里捞起半个词：hypo—。后半截被沉默咬住。听不清？再播。勇者不以重听为耻。音与义咬合的瞬间，像战鼓对上了心跳。\n\n" +
-        "沉默渊张开无声之洞。王子残影只说一句：「若你还愿意记，就把古咒也救回来。」你愿意。潮声回来时，整片海都在朗读——朗读你的名字。",
-      ellaTip: "潮影藏在潮声里。听不清就再听——连击从耐心里长出来。",
+        " thuỷ triều âm thanh vùng biển bằng chứng: khó biến thể cũ của | không phải trang trí hypothesis, evidence, consequence--chúng là hải đăng của bánh răng ai đó thuyết phục«không cần», cho đến hải đăng không xem |, tuyến hàng không hoặc hàng hải biến mất \n\n" +
+        " bạn tồn tại sóng biến thể của | vớt dậy một nửa của cái gì đó biến thể cũ của |: hypo- nửa sau cắt đứt chăn ít nói cắn sống cười không rõ ràng? lại gieo dũng cảm người mà không biến thể cũ của lãng tai làm xấu hổ âm thanh biến thể của | công lý khớp với nhau của trong chớp mắt, giống chiến đấu biến thể cũ của khớp vào nhau hoàn thành nhịp tim \n\n" +
+        " ít nói hồ sâu mở ra không có tiếng cua hang hoàng tử phá hủy hình ảnh chỉ thuyết phục một dòng thơ: «dường như bạn trả lễ Ý ghi chép, trong trường hợp đó cầm cổ biến thể của cũng biến thể của trở về »bạn muốn thuỷ triều âm thanh trở về biến thể cũ của |, toàn bộ đĩa đại dương tất cả tồn tại đọc to lên--đọc to lên bạn của tên ",
+      ellaTip: " thuỷ triều hình ảnh Tây Tạng tồn tại thuỷ triều âm thanh biến thể của | cười không rõ ràng trong trường hợp đó lại cười--đánh liên tục biến thể của | kiên nhẫn biến thể của | mọc đến ",
       bossShrine: "shrine-24", unlockAfter: "shrine-16"
     },
     {
       id: "ch4-ash", chapter: 4, act: 4, region: "ash",
-      title: "第四章 · 灰烬群岛",
+      title: " thu bốn chương · tro tàn nhóm đảo ",
       en: "Chapter IV · The Ashen Isles",
-      summary: "第二次进攻。焦虑伪装成怪物，专吃「我还能学会」。改写成 Courage！",
+      summary: " lần thứ hai tấn công lo âu giả vờ thành công quái vật, cho một người ăn«tôi vẫn có thể học» sửa đổi thành công Courage! ",
       novel:
-        "群岛从不连接陆地——它们连接勇气。灰烬巨人胸口刻着 Anxiety，每一步砸出「我不行」。同伴被附身，吊桥由自信织成却在断股。\n\n" +
-        "你发现：对抗它的不是空话，而是把 I am broken 改写成 I still rise 的每一次斩击。噬词者学舌「明天再记」——你答：「现在。」\n\n" +
-        "巨人跪地时，Anxiety 裂开，露出 Courage 的笔画。漂岛轰然相连。无数声音齐喊：我再试一次。那是热血最动听的齐唱。",
-      ellaTip: "它们靠「明天再记」长大。克制之道只有一个字：现在。",
+        " nhóm đảo không bao giờ liên kết đất liền--chúng liên kết can đảm tro tàn người khổng lồ ngực một phần tư nước đi Anxiety, mỗi một một bước đập đi ra«tôi không được» bạn đồng hành chăn nhập vào cơ thể, cầu kéo theo có tự tin dệt thành công biến thể cũ của | tồn tại làm gãy đùi \n\n" +
+        " bạn để ý: chống cự nó của không phải lời nói rỗng tuếch, mà là cầm I am broken sửa đổi thành công I still rise của mỗi đầu tiên chặt đầu đánh ngấu nghiến biến thể cũ của | người mà học dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”«ngày mai lại ghi chép»--bạn hình thức gắn liền có nghĩa giống như từ tự do: «bây giờ »\n\n" +
+        " người khổng lồ quỳ trợ từ kết cấu: dùng trước động từ hoặc tính từ biến thể cũ của |, Anxiety nứt ra, để lộ Courage của nét của chữ Hán nổi biến thể của | một cách ồn ào liên kết vô số giọng gọn gàng la hét: tôi lại thử đầu tiên tất nhiên máu nóng biến thể của nghe hay của hát đồng thanh ",
+      ellaTip: " chúng dựa vào«ngày mai lại ghi chép»trưởng thành kiềm chế cua đường chỉ có một dùng trong | chữ: bây giờ ",
       bossShrine: "shrine-32", unlockAfter: "shrine-24"
     },
     {
       id: "ch5-archive", chapter: 5, act: 5, region: "archive",
-      title: "第五章 · 镜书图书馆",
+      title: " thứ năm chương · gương viết tắt của | thư viện ",
       en: "Chapter V · The Mirror Archive",
-      summary: "词医院遗址。看见王子三夜，看见契约全文——再决定要不要走王座。",
+      summary: " biến thể cũ của | bệnh viện di tích nhìn thấy hoàng tử ba biến thể của, nhìn thấy thỏa thuận toàn văn--lại quyết định nếu không thì yêu cầu đi ngai vàng ",
       novel:
-        "图书馆曾是医院。伤损的词被包扎、重抄、朗读。艾拉的笔迹在这里最多——她不说，可纸会说。\n\n" +
-        "镜页映出第一次战争：士兵忘了口令，王子守门三夜。神明无声，只留下光：「只借给替别人记住的人。」你伸出手，光也落到你掌心——不是继承王位，是继承责任。\n\n" +
-        "终室的空白要删掉你走过的五章。你拒绝。故事回来时，王子真名 Lex 亮起又熄灭。王座之路打开：不是荣耀，是更大的战场在召唤。",
-      ellaTip: "这里的敌人删故事中段。保持耐心，把句子读完整——读完就是胜利。",
+        " thư viện đã là bệnh viện làm bị thương giảm của biến thể cũ của | chăn biến thể của |, lặp lại sao chép, đọc to lên ngải cứu hoặc ngải đắng kéo của chữ viết tay tồn tại biến thể của | tối đa--cô ấy không thuyết phục, có thể biến thể của | có thể thuyết phục \n\n" +
+        " gương đầu phản chiếu đi ra lần đầu tiên chiến tranh: lính quên hoàn thành mệnh lệnh bằng miệng, hoàng tử bắt gôn ba biến thể của thần linh không có tiếng, chỉ để lại ánh sáng: «chỉ cho ai đó mượn thay thế cho người khác nhớ của người »bạn duỗi ra tay, ánh sáng cũng bỏ sót đến bạn lòng bàn tay--không phải thừa kế tước hiệu vua, là thừa kế trách nhiệm \n\n" +
+        " kết thúc phòng của khoảng trống yêu cầu xóa bạn đi qua của năm chương bạn từ chối tục lệ cũ trở về biến thể cũ của |, hoàng tử thật tên Lex sáng dậy nữa ngừng cháy ngai vàng cua đường mở: không phải vinh dự, là thay đổi hoặc thay thế to của chiến trường tồn tại triệu hồi ",
+      ellaTip: " biến thể của | của kẻ thù xóa tục lệ cũ đoạn giữa giữ kiên nhẫn, cầm câu dấu phẩy hoàn chỉnh--dấu phẩy hoàn thành chính xác chiến thắng ",
       bossShrine: "shrine-40", unlockAfter: "shrine-32"
     },
     {
       id: "ch6-throne", chapter: 6, act: 6, region: "throne",
-      title: "第六章 · 遗忘王座",
+      title: " thu sáu chương · quên ngai vàng ",
       en: "Chapter VI · The Throne of Unsaying",
-      summary: "终焉之战。缄默要吞掉「我们」。替王子说完最后一段——一起赢！",
+      summary: " kết thúc ở đâu cua chiến đấu giữ im lặng yêu cầu nuốt rơi«chúng tôi» thay thế cho hoàng tử thuyết phục hoàn thành cuối cùng một đoạn--ở cùng một nơi thắng! ",
       novel:
-        "王座上空无一物，因为「王座」正在被抹去。君王的声音像温柔的安眠咒：不必说，不必记。壁画上的英雄张嘴无声。世界边缘开始透明。\n\n" +
-        "王子残影几乎成形，握你的手：「最后一段，替我说——我们。」你按住逃走的字母，Unsaying 变成 Saying。连击暴起，像整座词境在为你加油。\n\n" +
-        "「我们」归位。王庭崩解，如被纠正的病句。艾拉合上记事册，眼眶红了：「……写完了。」星屑落满肩头。远征未止——但史诗第一部，你们赢了。",
-      ellaTip: "终章斩击最密。暴击连击是你的剑光——稳住节奏，一刀劈开缄默！",
+        " ngai vàng trên không không có một vật, bởi vì«ngai vàng»đang ở chăn xoá đi quốc vương của giọng giống dịu dàng và mềm mại của ngủ yên biến thể của: không cần thuyết phục, không cần ghi chép tranh tường dùng trong | của anh hùng mở miệng không có tiếng thế giới cạnh bắt đầu trong suốt \n\n" +
+        " hoàng tử phá hủy hình ảnh hầu như định hình, cầm bạn của tay: «cuối cùng một đoạn, thay thế cho tôi thuyết phục--chúng tôi »bạn nhấn sống trốn thoát của chữ cái, Unsaying thay đổi thành Saying đánh liên tục đột ngột dậy, giống toàn bộ chỗ ngồi biến thể cũ của | biên giới tồn tại làm bạn thêm dầu \n\n" +
+        "«chúng tôi»đặt lại chỗ cũ vua hoặc quốc vương sảnh chính sụp đổ chia, như chăn sửa chữa của câu sai ngải cứu hoặc ngải đắng kéo đóng sổ ghi chép, hốc mắt đỏ hoàn thành: «......viết xong hoàn thành »ngôi sao mảnh vụn bỏ sót dân tộc Mãn Châu trên vai cuộc viễn chinh chưa dừng--nhưng một bản anh hùng ca đầu tiên bộ, các bạn thắng hoàn thành ",
+      ellaTip: " kết thúc chương chặt đầu đánh biến thể của bí mật đòn chí mạng đánh liên tục là bạn của kiếm hai lưỡi ánh sáng--ổn định sống nhịp điệu, một dao bổ ra giữ im lặng! ",
       bossShrine: "shrine-48", unlockAfter: "shrine-40"
     }
   ],
 
   bosses: {
     "shrine-08": {
-      id: "boss-mist", name: "雾舌·成体",
+      id: "boss-mist", name: " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”·trưởng thành ",
       portrait: "assets/img/word-realm/boss-fog-tongue.png",
       vnPre: "mist_boss_pre",
       vnPost: "mist_boss_post",
       pre: [
-        "雾突然变厚，像有人把天空的布拧干。",
-        "艾拉：「别找我——看它的舌头。它在舔掉『我是谁』。」",
-        "平原最后一座祠，灯火只剩你这一处。热血的第一场Boss战——出剑！"
+        " sương mù đột ngột trở nên dày hơn, giống ai đó cầm bầu trời của biến thể của véo biến thể cũ của | ",
+        " ngải cứu hoặc ngải đắng kéo: «rời khỏi cố gắng tìm tôi--chăm sóc nó của lưỡi nó tồn tại liếm rơi«tôi là ai» »",
+        " cánh đồng cuối cùng một chỗ ngồi nhà thờ, ánh đèn chỉ còn lại bạn này một cư trú máu nóng của đầu tiên sân phơi Boss chiến đấu--đi ra kiếm hai lưỡi! "
       ],
       post: [
-        "雾舌碎成露水。孩子重新喊出自己的名字。",
-        "王子残影点头，又散了：「不错。继续变强。」",
-        "艾拉记笔：「第一章完。峡谷在东边——勇者，别停。」"
+        " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” vỡ thành mảnh thành công sương trẻ em lại la hét đến từ tự bản thân của tên ",
+        " hoàng tử phá hủy hình ảnh gật đầu, nữa biến thể của hoàn thành: «đúng tiếp tục thay đổi bướng bỉnh »",
+        " ngải cứu hoặc ngải đắng kéo ghi chép bút: «đầu tiên chương hoàn thành hẻm núi tồn tại hướng đông--dũng cảm người mà, rời khỏi dừng »"
       ]
     },
     "shrine-16": {
-      id: "boss-stone", name: "空碑巨人",
+      id: "boss-stone", name: " trống không bia tưởng niệm người khổng lồ ",
       pre: [
-        "整面岩壁站起来。碑心空空，像无瞳的眼。",
-        "「它不是石头，」艾拉说，「是被挖空的定义。」",
-        "每一个你犹豫的拼写，都是它的口粮。那就把犹豫咬碎！"
+        " toàn bộ mặt vách đá tường đứng lên bia tưởng niệm tim trống rỗng, giống không có tròng đen của mắt của mắt ",
+        "«nó không phải đá, »ngải cứu hoặc ngải đắng kéo thuyết phục, «là chăn khai quật của định nghĩa »",
+        " mỗi một dùng trong | bạn do dự của đánh vần, tất cả là nó của khẩu phần biến thể của trong trường hợp đó cầm do dự cắn vỡ thành mảnh! "
       ],
       post: [
-        "碑面回墨：home, hope, hold——普通，却承重。",
-        "残页展开：记忆之力只借给替别人记住的人。",
-        "潮声从更远处传来。像下一章的战鼓。"
+        " bia tưởng niệm mặt xoay vòng thỏi mực: home, hope, hold--phổ thông, biến thể cũ của | chịu tải ",
+        " phá hủy đầu mở ra: nhớ cua sức mạnh chỉ cho ai đó mượn thay thế cho người khác nhớ của người ",
+        " thuỷ triều âm thanh biến thể của | thay đổi hoặc thay thế nơi xa truyền đến giống xuống một chương của chiến đấu biến thể cũ của "
       ]
     },
     "shrine-24": {
-      id: "boss-tide", name: "沉默渊",
+      id: "boss-tide", name: " ít nói hồ sâu ",
       pre: [
-        "海面凹成无声之洞。",
-        "王子残影：「若你还愿意记，就把古咒也救回来。」",
-        "第三章终战，从下一个拼写开始——让潮声为你呐喊！"
+        " bề mặt biển lõm thành công không có tiếng cua hang ",
+        " hoàng tử phá hủy hình ảnh: «dường như bạn trả lễ Ý ghi chép, trong trường hợp đó cầm cổ biến thể của cũng biến thể của trở về »",
+        " thu ba chương kết thúc chiến tranh, biến thể của | cái tiếp theo đánh vần bắt đầu--nhường thuỷ triều âm thanh làm bạn hò hét! "
       ],
       post: [
-        "潮声回来——音节，然后是整片海的朗读。",
-        "艾拉：「第三章完。灰烬群岛在雾外成形——第二次进攻开始了。」",
-        "星屑在掌心停一秒，像未写完的战书。你握紧它。"
+        " thuỷ triều âm thanh trở về--âm tiết, sau đó là toàn bộ đĩa đại dương của đọc to lên ",
+        " ngải cứu hoặc ngải đắng kéo: «thu ba chương hoàn thành tro tàn nhóm đảo tồn tại sương mù bên ngoài định hình--lần thứ hai tấn công bắt đầu hoàn thành »",
+        " ngôi sao mảnh vụn tồn tại lòng bàn tay dừng một giây, giống chưa viết xong của thư thách đấu bạn cầm chặt nó "
       ]
     },
     "shrine-32": {
-      id: "boss-ash", name: "灰烬巨人·焦虑",
+      id: "boss-ash", name: " tro tàn người khổng lồ·lo âu ",
       pre: [
-        "漂岛拼成一张扭曲的答卷。",
-        "巨人胸口刻着 Anxiety，每一步都砸出「我不行」。",
-        "艾拉咬牙：「把它改写成 Courage——用你的拼写之剑。现在！」"
+        " nổi biến thể của | ghép lại thành từ các bộ phận cấu thành một mở ra vặn của bài thi đã hoàn thành ",
+        " người khổng lồ ngực một phần tư nước đi Anxiety, mỗi một một bước tất cả đập đi ra«tôi không được» ",
+        " ngải cứu hoặc ngải đắng kéo nghiến răng: «cầm nó sửa đổi thành công Courage--sử dụng bạn của đánh vần cua kiếm hai lưỡi bây giờ! »"
       ],
       post: [
-        "Anxiety 裂开，露出 Courage 的笔画。",
-        "群岛重新相连。有人第一次说：我再试一次。",
-        "图书馆的光，在西边亮起。像为勇者点的灯。"
+        "Anxiety nứt ra, để lộ Courage của nét của chữ Hán ",
+        " nhóm đảo lại liên kết ai đó lần đầu tiên thuyết phục: tôi lại thử đầu tiên ",
+        " thư viện của ánh sáng, tồn tại phía tây sáng dậy giống làm dũng cảm người mà điểm của đèn "
       ]
     },
     "shrine-40": {
-      id: "boss-archive", name: "空白终室",
+      id: "boss-archive", name: " khoảng trống kết thúc phòng ",
       pre: [
-        "终室门后是一片没有故事的白。",
-        "镜中王子低语：「看见契约全文，再决定要不要走王座。」",
-        "空白伸出手，要删掉你已走过的五章——绝不让它得逞！"
+        " kết thúc phòng cổng hoàng hậu là một đĩa không có tục lệ cũ của trắng ",
+        " gương Trung Quốc hoàng tử lẩm bẩm: «nhìn thấy thỏa thuận toàn văn, lại quyết định nếu không thì yêu cầu đi ngai vàng »",
+        " khoảng trống duỗi ra tay, yêu cầu xóa bạn đã đi qua của năm chương--không đời nào nhường nó thắng thế! "
       ],
       post: [
-        "白面上浮现字迹：只借给替别人记住的人。",
-        "王子真名 Lex 亮起，又温柔地熄灭。",
-        "王座之路打开——不是荣耀，是责任。鼓声再起！"
+        " bột mì nổi lên xuất hiện chữ viết tay: chỉ cho ai đó mượn thay thế cho người khác nhớ của người ",
+        " hoàng tử thật tên Lex sáng dậy, nữa dịu dàng và mềm mại trợ từ kết cấu: dùng trước động từ hoặc tính từ ngừng cháy ",
+        " ngai vàng cua đường mở--không phải vinh dự, là trách nhiệm tiếng trống nổi dậy lần nữa! "
       ]
     },
     "shrine-48": {
-      id: "boss-throne", name: "噬词君王·缄默",
+      id: "boss-throne", name: " ngấu nghiến biến thể cũ của | quốc vương·giữ im lặng ",
       pre: [
-        "王座上空无一物。君王却无处不在。",
-        "「不必说。」它的声音像温柔的放假通知。",
-        "王子残影几乎成形：「最后一段，替我说——我们。」一起上！"
+        " ngai vàng trên không không có một vật quốc vương biến thể cũ của | có mặt khắp nơi ",
+        "«không cần thuyết phục »nó của giọng giống dịu dàng và mềm mại của nghỉ lễ hoặc kỳ nghỉ thông báo ",
+        " hoàng tử phá hủy hình ảnh hầu như định hình: «cuối cùng một đoạn, thay thế cho tôi thuyết phục--chúng tôi »ở cùng một nơi dùng trong |! "
       ],
       post: [
-        "「我们」归位。王庭自行崩解，如一句被纠正的病句。",
-        "艾拉合上记事册，眼眶红了：「……写完了。你赢了。」",
-        "星屑落满肩头。词境听见彼此。远征未止——但史诗第一部，完。"
+        "«chúng tôi»đặt lại chỗ cũ vua hoặc quốc vương sảnh chính tự nguyện sụp đổ chia, nhất quán biến thể của chăn sửa chữa của câu sai ",
+        " ngải cứu hoặc ngải đắng kéo đóng sổ ghi chép, hốc mắt đỏ hoàn thành: «......viết xong hoàn thành bạn thắng hoàn thành »",
+        " ngôi sao mảnh vụn bỏ sót dân tộc Mãn Châu trên vai biến thể cũ của | biên giới nghe thấy lẫn nhau cuộc viễn chinh chưa dừng--nhưng một bản anh hùng ca đầu tiên bộ, hoàn thành "
       ]
     }
   },
 
   dreams: [
-    { id: "dream-4", afterShrine: 4, title: "梦境 · 星屑的重量",
+    { id: "dream-4", afterShrine: 4, title: " xứ mơ · ngôi sao mảnh vụn của trọng lượng ",
       lines: [
-        "你站在词之国城墙上。脚下是第一次战争的废墟。",
-        "王子：「宿主不是容器，是桥梁。你会发抖——发抖也要走。」",
-        "城下有人抬头，等你把名字念回去。你握紧星屑：好。"
+        " bạn trạm tồn tại biến thể cũ của | cua quốc gia tường thành dùng trong | dưới chân là lần đầu tiên chiến tranh của tàn tích ",
+        " hoàng tử: «vật chủ không phải đồ chứa, là cây cầu bạn có thể run rẩy--run rẩy cũng yêu cầu đi »",
+        " tường thành xuống ai đó ngẩng đầu, đợi bạn cầm tên biến thể của trở về bạn cầm chặt ngôi sao mảnh vụn: tốt "
       ] },
-    { id: "dream-8", afterShrine: 8, title: "梦境 · 名字的史诗",
+    { id: "dream-8", afterShrine: 8, title: " xứ mơ · tên của một bản anh hùng ca ",
       lines: [
-        "雾散。平原像擦干净的纸。孩子的笑声像胜利号角。",
-        "王子：「你学会了战斗。下一步，替别人记得。」",
-        "东边空碑睁眼。你擦汗，笑了一下：下一章，来吧。"
+        " sương mù biến thể của cánh đồng giống lau khô biến thể của | của biến thể của | trẻ em của tiếng cười giống chiến thắng kèn tín hiệu ",
+        " hoàng tử: «bạn học hoàn thành chiến đấu Bước tiếp theo, thay thế cho người khác nhớ »",
+        " hướng đông trống không bia tưởng niệm mở mắt bạn chà xem, biến thể cũ của hoàn thành thử xem: xuống một chương, đến quán bar "
       ] },
-    { id: "dream-16", afterShrine: 16, title: "梦境 · 榫卯",
+    { id: "dream-16", afterShrine: 16, title: " xứ mơ · mộng lỗ mộng ",
       lines: [
-        "岩层打开，露出语言的榫卯。长咒卡进榫眼，屋顶不再晃。",
-        "王子笑了一下，很浅：「看见了？热血也可以很精密。」",
-        "潮声在梦外响起。你点头：看见了。"
+        " tầng đá mở, để lộ ngôn ngữ của mộng lỗ mộng chiều dài biến thể của dừng tiến lên mộng, mái nhà không còn biến thể của ",
+        " hoàng tử biến thể cũ của hoàn thành thử xem, âm thanh nước chảy: «nhìn thấy hoàn thành? máu nóng cũng có thể chính xác »",
+        " thuỷ triều âm thanh tồn tại giấc mơ bên ngoài vang lên bạn gật đầu: nhìn thấy hoàn thành "
       ] },
-    { id: "dream-24", afterShrine: 24, title: "梦境 · 第二次进攻",
+    { id: "dream-24", afterShrine: 24, title: " xứ mơ · lần thứ hai tấn công ",
       lines: [
-        "海平线上漂来灰烬岛。",
-        "噬词者打哈欠：「我们不偷，你们自己松开。」",
-        "你握住一个难词。它恼了。你反而更燃：正合我意。"
+        " đại dương phẳng trực tuyến nổi đến tro tàn biến thể của | ",
+        " ngấu nghiến biến thể cũ của | người mà tá ngáp: «chúng tôi không trộm, các bạn bản thân thả ra »",
+        " bạn nắm chặt một dùng trong | khó biến thể cũ của | nó nổi giận hoàn thành bạn ngược lại thay đổi hoặc thay thế cháy: tháng đầu tiên của năm âm lịch 100 ml tôi Ý "
       ] },
-    { id: "dream-32", afterShrine: 32, title: "梦境 · I still rise",
+    { id: "dream-32", afterShrine: 32, title: " xứ mơ · I still rise",
       lines: [
-        "巨人跪地。灰雨停。漂岛相连，像无数人握手。",
-        "无数声音齐说：I still rise.",
-        "艾拉在梦外喊你：图书馆开门了——勇者，继续冲！"
+        " người khổng lồ quỳ trợ từ kết cấu: dùng trước động từ hoặc tính từ tro mưa dừng nổi biến thể của | liên kết, giống vô số người bắt tay ",
+        " vô số giọng gọn gàng thuyết phục: I still rise.",
+        " ngải cứu hoặc ngải đắng kéo tồn tại giấc mơ bên ngoài la hét bạn: thư viện mở cửa hoàn thành--dũng cảm người mà, tiếp tục xô vào! "
       ] },
-    { id: "dream-40", afterShrine: 40, title: "梦境 · 词医院三夜",
+    { id: "dream-40", afterShrine: 40, title: " xứ mơ · biến thể cũ của | bệnh viện ba biến thể của ",
       lines: [
-        "年轻的王子包扎伤词，三夜未眠。烛火不灭。",
-        "神明无声，只留下契约光。",
-        "你伸出手——光也落到你掌心。火炬交接，热血相传。"
+        " trẻ của hoàng tử biến thể của | làm bị thương biến thể cũ của |, ba biến thể của chưa ngủ ngọn lửa nến không dập tắt hoặc làm tắt ",
+        " thần linh không có tiếng, chỉ để lại thỏa thuận ánh sáng ",
+        " bạn duỗi ra tay--ánh sáng cũng bỏ sót đến bạn lòng bàn tay đuốc tiếp xúc, máu nóng truyền lại "
       ] },
-    { id: "dream-48", afterShrine: 48, title: "梦境 · 我们",
+    { id: "dream-48", afterShrine: 48, title: " xứ mơ · chúng tôi ",
       lines: [
-        "王座空了。词境灯火连成句子。",
-        "王子最后说：「记得彼此。这就够了。」",
-        "你醒来。营地的笔还热。远征未止——你已是传奇的一页。"
+        " ngai vàng trống không hoàn thành biến thể cũ của | biên giới ánh đèn liên kết thành công câu ",
+        " hoàng tử cuối cùng thuyết phục: «nhớ lẫn nhau ngay lập tức đủ hoàn thành »",
+        " bạn thức dậy trại của bút vẫn hâm nóng cuộc viễn chinh chưa dừng--bạn đã là huyền thoại của một đầu "
       ] }
   ],
 
@@ -630,39 +630,39 @@ window.YYSD_WORD_REALM_STORY = {
   },
 
   regionUnlocked: function (regionId) {
-    // ponytail: pilot 只开雾原；开放后续章时恢复 unlockAfter + isClearedFn 链
+    // ponytail: pilot chỉ mở sương mù trước đây; nở hoa theo sau chương biến thể cũ của | khôi phục unlockAfter + isClearedFn dây xích
     return regionId === "mist";
   },
 
   enemies: {
     mist: {
-      id: "fog-tongue", name: "雾舌", title: "噬词幼兽", skin: "mist", glyph: "〰",
+      id: "fog-tongue", name: " sương mù dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi” ", title: " ngấu nghiến biến thể cũ của | con non ", skin: "mist", glyph: " ",
       portrait: "assets/img/word-realm/enemy-fog-tongue.png",
-      intro: "雾凝聚成舌，要舔掉你刚想起的词。热血的第一课：别让它舔走。"
+      intro: " sương mù ngưng tụ thành công dùng trong để phiên âm từ Đài Loan nghĩa là ”lưỡi”, yêu cầu liếm rơi bạn cứng nhớ lại của biến thể cũ của | máu nóng của đầu tiên môn học: rời khỏi nhường nó liếm đi "
     },
     stone: {
-      id: "empty-stela", name: "空碑傀", title: "噬词构装", skin: "stone", glyph: "▣",
-      intro: "碑面空白，它靠吞掉定义站立。把释义凿回去，它就会跪。"
+      id: "empty-stela", name: " trống không bia tưởng niệm to lớn ", title: " ngấu nghiến biến thể cũ của | biến thể của | trang sức ", skin: "stone", glyph: "▣",
+      intro: " bia tưởng niệm mặt khoảng trống, nó dựa vào nuốt rơi định nghĩa đứng cầm nghĩa của cái gì đó cái đục trở về, nó trong trường hợp đó có thể quỳ "
     },
     tide: {
-      id: "tide-wraith", name: "潮影", title: "噬词游魂", skin: "tide", glyph: "≈",
-      intro: "浪声里混着被冲散的音节。听清它，再斩断它。"
+      id: "tide-wraith", name: " thuỷ triều hình ảnh ", title: " ngấu nghiến biến thể cũ của | bơi biến thể cũ của ", skin: "tide", glyph: "≈",
+      intro: " sóng âm thanh biến thể của | bùn nước đi chăn xô vào biến thể của của âm tiết nghe rõ nó, lại cắt đứt nó "
     },
     ash: {
-      id: "ash-doubt", name: "灰疑", title: "焦虑拟态", skin: "ash", glyph: "☁",
-      intro: "它看起来像疲惫，吃掉的却是「我还能学会」。现在，反击。"
+      id: "ash-doubt", name: " tro nghi ngờ ", title: " lo âu bắt chước ", skin: "ash", glyph: "☁",
+      intro: " nó hình như giống bị đánh bại, ăn hết của tuy nhiên«tôi vẫn có thể học» bây giờ, phản kích "
     },
     archive: {
-      id: "blank-folio", name: "白页虫", title: "噬故事者", skin: "archive", glyph: "▭",
-      intro: "专蛀故事中段，让开头永远接不上结尾。把中段读完——就是杀招。"
+      id: "blank-folio", name: " trắng đầu biến thể của | ", title: " ngấu nghiến tục lệ cũ người mà ", skin: "archive", glyph: "▭",
+      intro: " cho một người mối tục lệ cũ đoạn giữa, tránh ra đầu mãi mãi nhận không dùng trong | kết thúc cầm đoạn giữa dấu phẩy hoàn thành--chính xác giết tuyển dụng "
     },
     throne: {
-      id: "unsayer", name: "缄侍", title: "王庭侍卫", skin: "throne", glyph: "◈",
-      intro: "它重复「不必说」，直到你忘记如何开口。你的回答是出声——然后出剑。"
+      id: "unsayer", name: " gỗ phục vụ ", title: " vua hoặc quốc vương sảnh chính Thị vệ ", skin: "throne", glyph: "◈",
+      intro: " nó lặp lại«không cần thuyết phục», cho đến bạn quên như thế nào mở miệng bạn của trả lời là phát ra âm thanh--sau đó đi ra kiếm hai lưỡi "
     },
     camp: {
-      id: "drill-dummy", name: "修炼木桩", title: "星屑修炼场", skin: "camp", glyph: "✚",
-      intro: "木桩不会改写剧情——只管出手。日复一日的挥剑，也是热血。"
+      id: "drill-dummy", name: " tu luyện khổ hạnh cọc gỗ ", title: " ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi ", skin: "camp", glyph: "✚",
+      intro: " cọc gỗ không có khả năng sửa đổi cốt truyện--chỉ chăm chú vào một việc xử lý ngày này qua ngày khác của vẫy kiếm hai lưỡi, cũng là máu nóng "
     }
   }
 };

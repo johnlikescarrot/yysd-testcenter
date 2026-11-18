@@ -17,7 +17,7 @@ let ci = CIImage(bitmapImageRep: bitmap) ?? CIImage()
 let req = VNRecognizeTextRequest()
 req.recognitionLevel = .accurate
 req.usesLanguageCorrection = true
-req.recognitionLanguages = ["en-US", "zh-Hans"]
+req.recognitionLanguages = ["en-US", "vi-VN"]
 let handler = VNImageRequestHandler(ciImage: ci, options: [:])
 do { try handler.perform([req]) } catch {
   fputs("vision: \(error)\n", stderr)

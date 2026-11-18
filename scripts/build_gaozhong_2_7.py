@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from inject_gaozhong_html import inject
 
-EXCEL = Path.home() / "Desktop" / "高中单词List1-40.xlsx"
+EXCEL = Path.home() / "Desktop" / " trường trung học phổ thông từ List1-40.xlsx"
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
 

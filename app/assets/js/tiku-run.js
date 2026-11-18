@@ -1,4 +1,4 @@
-/* 题库组卷：练习回列表，模考按题块连做 */
+/* ngân hàng câu hỏi hình thành cuộn lại: luyện tập xoay vòng danh sách, bắt chước đánh nhấn chủ đề cục liên kết làm */
 (function (w) {
   "use strict";
   var KEY = "yysd:tiku-run";
@@ -24,7 +24,7 @@
       return u;
     }
     if (block.source === "date" && block.paperId) {
-      // ponytail: 日期卷只在官网根有数据；app 播放器读不到，交考场引擎单科页
+      // ponytail: ngày tháng cuộn lại chỉ tồn tại trang web chính thức rễ đã đếm biến thể của |; app phát sóng thiết bị dấu phẩy không đến, giao nộp phòng thi động cơ hóa đơn ngành học đầu
       var u = examRoot() + "toefl-" + block.skill + ".html?id=" + encodeURIComponent(block.paperId) +
         "&mode=" + encodeURIComponent(mode === "practice" ? "practice" : "mock") +
         "&task=" + encodeURIComponent(block.task) +
@@ -51,7 +51,7 @@
       skillEnds: {},
       preview: !!paper.preview
     };
-    // 只考一科：从这一科第一个题块开始
+    // chỉ đánh một ngành học: biến thể của | này một ngành học đầu tiên dùng trong | chủ đề cục bắt đầu
     if (paper.only) {
       run.only = paper.only;
       for (var k = 0; k < run.blocks.length; k++) {
@@ -97,7 +97,7 @@
       return false;
     }
     run.i += 1;
-    // 只考一科时跳过其它科题块，做完这一科就到终点
+    // chỉ đánh một ngành học biến thể cũ của | nhảy qua khác ngành học chủ đề cục, hoàn thành này một ngành học trong trường hợp đó đến kết thúc
     if (run.only) while (run.i < run.blocks.length && run.blocks[run.i].skill !== run.only) run.i += 1;
     save(run);
     if (run.i >= run.blocks.length) {

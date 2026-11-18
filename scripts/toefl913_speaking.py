@@ -223,7 +223,7 @@ def build_speaking(paper_id, title, form_repeat, form_interview):
 
 
 if __name__ == "__main__":
-    paper = build_speaking("2025-09-13", "新托福 9.13 · 口语 Form 1", 1, 1)
+    paper = build_speaking("2025-09-13", " TOEFL mới 9.13 · Nói Form 1", 1, 1)
     tasks = paper["tasks"]
     assert len(tasks) == 11, len(tasks)
     assert [t["type"] for t in tasks] == ["repeat"] * 7 + ["interview"] * 4

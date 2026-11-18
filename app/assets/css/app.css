@@ -268,7 +268,7 @@ h1 {
 
 .hidden, [hidden] { display: none !important; }
 
-/* 考场引擎页保持浅色 ETS 皮肤（exam.css 在其后加载，同特异性它优先） */
+/* phòng thi động cơ đầu giữ màu nhạt ETS da(exam.css tồn tại tiếp theo tải, giống đặc hiệu nó có ưu tiên) */
 body.exam-ets .exam-card { background: transparent; }
 body.exam-ets .opt { background: #fff; border-color: #c5c9d0; color: #1b1b1b; }
 body.exam-ets .insert { background: #eef1f4; border-color: #9aa8b5; color: #1b1b1b; }

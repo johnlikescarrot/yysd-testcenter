@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * Koolearn 新托福（reform26）题库 → YYSD 免费题库
+ * Koolearn TOEFL mới(reform26)Ngân hàng đề → YYSD miễn phí ngân hàng câu hỏi
  *
- * 用法：
- *   node scripts/koolearn-crawl.js                # 全量 12 类（约 1389 题）
- *   node scripts/koolearn-crawl.js --limit=3      # 每类前 3 题（小样验证）
+ * cách dùng: 
+ *   node scripts/koolearn-crawl.js                # tất cả đo lường 12 loại(cân trong cân đĩa hoặc trên cân 1389 Câu hỏi)
+ *   node scripts/koolearn-crawl.js --limit=3      # mỗi loại trước 3 Câu hỏi(bản in thử kiểm tra và xác minh)
  *   node scripts/koolearn-crawl.js --labels=1322,1326
- *   node scripts/koolearn-crawl.js --no-media     # 不下载音频/图片
+ *   node scripts/koolearn-crawl.js --no-media     # không ít hơn ghi chép bằng văn bản âm thanh/bức tranh
  *
- * 输出：
- *   app/library/toefl/free-<qid>-<skill>.json     # 每母题一卷（play.js 零改动复用）
- *   app/library/toefl/free/audio|img/<name>       # 媒体镜像
- *   app/library/toefl/free/index.json             # 免费题库索引（列表页用，仅全量跑写）
- *   app/library/toefl/free/report.json            # 爬取报告（错误汇总）
+ * xuất khẩu: 
+ *   app/library/toefl/free-<qid>-<skill>.json     # mỗi mô-típ một cuộn lại(play.js không thay đổi đi rồi quay lại sử dụng)
+ *   app/library/toefl/free/audio|img/<name>       # truyền thông hình ảnh gương
+ *   app/library/toefl/free/index.json             # miễn phí ngân hàng câu hỏi chỉ mục(danh sách đầu sử dụng, hầu như tất cả đo lường cào viết)
+ *   app/library/toefl/free/report.json            # bò lấy thông báo(sai lầm biến thể của |)
  */
 const fs = require("fs");
 const path = require("path");
@@ -32,18 +32,18 @@ const FFMPEG = path.join(ROOT, "tools", "bin", "ffmpeg");
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
 const LABELS = [
-  { id: 1319, skill: "reading", type: "complete_words", en: "Complete the Words", zh: "阅读填空" },
-  { id: 1320, skill: "reading", type: "daily_life", en: "Daily Life Reading", zh: "日常生活阅读" },
-  { id: 1321, skill: "reading", type: "academic", en: "Academic Passage", zh: "学术阅读" },
-  { id: 1322, skill: "listening", type: "choose_response", en: "Choose a Response", zh: "听答" },
-  { id: 1323, skill: "listening", type: "conversation", en: "Conversation", zh: "对话" },
-  { id: 1324, skill: "listening", type: "announcement", en: "Announcement", zh: "公告" },
-  { id: 1325, skill: "listening", type: "lecture", en: "Lecture", zh: "学术讲座" },
-  { id: 1326, skill: "writing", type: "sentence", en: "Build a Sentence", zh: "造句" },
-  { id: 1329, skill: "writing", type: "email", en: "Write an Email", zh: "邮件" },
-  { id: 1330, skill: "writing", type: "discussion", en: "Academic Discussion", zh: "学术讨论" },
-  { id: 1331, skill: "speaking", type: "repeat", en: "Listen and Repeat", zh: "听与复述" },
-  { id: 1332, skill: "speaking", type: "interview", en: "Interview", zh: "虚拟面试" },
+  { id: 1319, skill: "reading", type: "complete_words", en: "Complete the Words", zh: " đọc lấp chỗ trống công việc " },
+  { id: 1320, skill: "reading", type: "daily_life", en: "Daily Life Reading", zh: " hằng ngày sống đọc " },
+  { id: 1321, skill: "reading", type: "academic", en: "Academic Passage", zh: " học thuật đọc " },
+  { id: 1322, skill: "listening", type: "choose_response", en: "Choose a Response", zh: " cười hình thức gắn liền có nghĩa giống như từ tự do " },
+  { id: 1323, skill: "listening", type: "conversation", en: "Conversation", zh: " Hội thoại " },
+  { id: 1324, skill: "listening", type: "announcement", en: "Announcement", zh: " đăng thông báo " },
+  { id: 1325, skill: "listening", type: "lecture", en: "Lecture", zh: " Bài giảng học thuật " },
+  { id: 1326, skill: "writing", type: "sentence", en: "Build a Sentence", zh: " Đặt câu " },
+  { id: 1329, skill: "writing", type: "email", en: "Write an Email", zh: " thư từ " },
+  { id: 1330, skill: "writing", type: "discussion", en: "Academic Discussion", zh: " Thảo luận học thuật " },
+  { id: 1331, skill: "speaking", type: "repeat", en: "Listen and Repeat", zh: " cười biến thể của | lặp lại " },
+  { id: 1332, skill: "speaking", type: "interview", en: "Interview", zh: " tưởng tượng được phỏng vấn " },
 ];
 
 // ---------- args ----------
@@ -59,7 +59,7 @@ function parseArgs() {
   return out;
 }
 
-// ---------- koolearn api（签名算法复现自 kl-app.js asciiSort + chuguoapiParmasFormat）----------
+// ---------- koolearn api(ký tên số học tái hiện tự kl-app.js asciiSort + chuguoapiParmasFormat)----------
 function md5(s) { return crypto.createHash("md5").update(s).digest("hex").toUpperCase(); }
 
 function validation(params, ts) {
@@ -120,7 +120,7 @@ function decodeEntities(s) {
   });
 }
 
-// HTML → 纯文本，块级标签与 <br> 转 \n
+// HTML → văn bản thuần túy, cục cấp nhãn biến thể của | <br> xem | \n
 function textOf(html) {
   let s = String(html || "");
   s = s.replace(/<br\s*\/?>/gi, "\n");
@@ -130,15 +130,15 @@ function textOf(html) {
   return decodeEntities(s);
 }
 
-// 单行压缩（选项 / 题干）
+// đi riêng lẻ nén(Phương án / chủ đề biến thể cũ của |)
 function oneLine(html) { return textOf(html).replace(/\s+/g, " ").trim(); }
 
-// 段落化：非空行数组
+// đoạn biến thể của: không rỗng hàng mảng
 function linesOf(html) {
   return textOf(html).split("\n").map((l) => l.replace(/[ \t\u00a0]+/g, " ").trim()).filter((l) => l !== "");
 }
 
-// 去 [#highlightN]...[/highlightN] 标记，保留内文
+// đi [#highlightN]...[/highlightN] ký hiệu, giữ bên trong ngôn ngữ
 function stripHighlights(s) { return String(s || "").replace(/\[#highlight\d*\]/g, "").replace(/\[\/highlight\d*\]/g, ""); }
 
 function mediaOf(html) {
@@ -184,7 +184,7 @@ function planMedia(src, kind) {
   const base = path.basename(s, ext);
   let entry;
   if (e === ".mp3" || e === ".m4a" || e === ".wav") entry = { rel: "library/toefl/free/audio/" + path.basename(s), remote: s, kind: "audio" };
-  else if (e === ".mp4" || e === ".webm") entry = { rel: "library/toefl/free/audio/" + base + ".mp3", remote: s, kind: "video" }; // 面试提问在 mp4 里，抽音轨
+  else if (e === ".mp4" || e === ".webm") entry = { rel: "library/toefl/free/audio/" + base + ".mp3", remote: s, kind: "video" }; // được phỏng vấn đặt câu hỏi tồn tại mp4 biến thể của |, rút ra bản âm
   else entry = { rel: "library/toefl/free/img/" + path.basename(s), remote: s, kind: "img" };
   MEDIA.set(s, entry);
   return entry;
@@ -494,7 +494,7 @@ function buildDiscussion(meta, d, errors) {
   let m;
   while ((m = re.exec(html))) {
     const name = oneLine(m[1]);
-    if (!name || /[:：]/.test(name) || /following|response|should/i.test(name)) continue;
+    if (!name || /[:: ]/.test(name) || /following|response|should/i.test(name)) continue;
     names.push({ name, start: m.index + m[0].length });
   }
   if (!names.length) { errors.push({ qid: d.questionId, kind: "discussion", reason: "no speaker strong tags" }); return null; }
@@ -519,7 +519,7 @@ function buildDiscussion(meta, d, errors) {
   return paper;
 }
 
-// child stem 尾部英文句（repeat 的 sample）
+// child stem phần sau tiếng Anh biến thể của(repeat của sample)
 function tailSentence(stemHtml) {
   const lines = linesOf(stemHtml);
   return lines.length ? lines[lines.length - 1] : "";
@@ -551,7 +551,7 @@ function buildRepeat(meta, d, errors) {
       audio: audio ? audio.rel : "",
       sample,
       image: img ? img.rel : "",
-      analysis: zh ? "中文：" + zh + "\n复述：" + sample : "复述：" + sample,
+      analysis: zh ? " tiếng Trung: " + zh + "\n Thuật lại: " + sample : " Thuật lại: " + sample,
       title: "Listen and Repeat", titleZh: meta.zh,
     });
   }
@@ -585,7 +585,7 @@ function buildInterview(meta, d, errors) {
       audio: audio ? audio.rel : "",
       stem, sample: oneLine(cq.reference || ""),
       image: img ? img.rel : "",
-      analysis: zh ? "中文：" + zh : "",
+      analysis: zh ? " tiếng Trung: " + zh : "",
       title: "Interview", titleZh: meta.zh,
     });
   }
@@ -619,7 +619,7 @@ async function main() {
 
   const errors = [];
   const index = { generated: new Date().toISOString().slice(0, 10), source: "liuxue.koolearn.com", sections: [] };
-  const skills = { reading: "阅读", listening: "听力", writing: "写作", speaking: "口语" };
+  const skills = { reading: " Đọc hiểu ", listening: " Nghe hiểu ", writing: " Viết ", speaking: " Nói " };
   let okCount = 0, failCount = 0;
 
   for (const meta of labels) {

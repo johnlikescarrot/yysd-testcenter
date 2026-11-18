@@ -1,4 +1,4 @@
-/* diagnostic-charts.js — tiny SVG line + radar (no chart lib) */
+/* diagnostic-charts.js - tiny SVG line + radar (no chart lib) */
 (function (global) {
   "use strict";
 
@@ -94,9 +94,9 @@
     var cy = size / 2;
     var r = size * 0.36;
     var labels = [
-      { key: "high_school", name: "高中" },
-      { key: "cet4", name: "四级" },
-      { key: "ielts", name: "雅思" }
+      { key: "high_school", name: " trường trung học phổ thông " },
+      { key: "cet4", name: " cấp 4 " },
+      { key: "ielts", name: " IELTS " }
     ];
     var n = labels.length;
 
@@ -141,7 +141,7 @@
     return (
       '<div class="diag-radar">' +
       '<svg viewBox="0 0 ' + size + " " + size + '" width="100%" max-width="' +
-      size + '" role="img" aria-label="能力雷达图">' +
+      size + '" role="img" aria-label=" năng lực ra đa sơ đồ ">' +
       rings + axes +
       '<polygon points="' + poly +
       '" fill="rgba(200,150,62,0.25)" stroke="#c8963e" stroke-width="2"/>' +

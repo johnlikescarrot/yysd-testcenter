@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Vocab challenge (闯关) — schema + draw + engine + HTTP API.
+ * Vocab challenge (xông qua rào cản) - schema + draw + engine + HTTP API.
  */
 
 var schedule = require("./vocab-challenge-schedule");
@@ -15,7 +15,7 @@ var MS_PER_DAY = 86400000;
 var TASK_NEW = "new";
 var TASK_REVIEW = "review";
 
-/** Org admin returns null from listManagedStudentIds — Array.isArray(null) is false. */
+/** Org admin returns null from listManagedStudentIds - Array.isArray(null) is false. */
 function resolveRosterStudentIds(listManagedStudentIds, req) {
   if (!listManagedStudentIds) return [];
   var ids = listManagedStudentIds(req);
@@ -132,17 +132,17 @@ var STATUS_VOIDED = "voided";
 var STATUS_FAILED = "failed"; // new-words >5 wrongs; no pool writes
 
 var NOTICE = {
-  enterList: "已进入本 List 闯关：先完成新词测试。",
-  newFail: "错误已达 5 题，本 List 闯关失败，请重学或重考（未记入错题）。",
-  enterRetest: "新词已通过，进入历史错词重测。",
-  emptyRetest: "暂无错题，完成本阶段后即可通关。",
-  enterMakeup: "重测有错，进入补考循环：已对的词已锁定，只重做错词。",
-  stubborn: "该词在补考中累计答错 3 次，已临时放行并标记为顽固词。",
-  cleared: "本任务已通过。",
-  enterReview: "复习检测：20 题 · 3 命 · 每题 18 秒。",
-  reviewFail: "错误已达 3 题，本次复习失败，请重测（将重新抽题）。",
-  reviewPass: "复习通过。",
-  dayAdvanced: "本关任务已全部完成，进入下一关。"
+  enterList: " đã đi vào gốc List xông qua rào cản: trước hoàn thành cách diễn đạt mới kiểm tra ",
+  newFail: " sai lầm đã đạt tới 5 Câu hỏi, gốc List xông qua rào cản bị đánh bại, mời lặp lại học có thể lặp lại đánh(chưa ghi chép đi vào lỗi chủ đề) ",
+  enterRetest: " cách diễn đạt mới đã đi qua, đi vào lịch sử lỗi biến thể cũ của | lặp lại khảo sát ",
+  emptyRetest: " tạm thời không có lỗi chủ đề, hoàn thành gốc giai đoạn hoàng hậu tương đương với thông quan ",
+  enterMakeup: " lặp lại khảo sát có lỗi, đi vào thi bổ sung tuần hoàn: đã đúng của biến thể cũ của | đã khóa, chỉ làm lại lỗi biến thể cũ của | ",
+  stubborn: " nên biến thể cũ của | tồn tại thi bổ sung Trung Quốc tính tổng tích lũy hình thức gắn liền có nghĩa giống như từ tự do lỗi 3 tiếp theo, đã khi thời gian đến gần cho qua và ký hiệu làm cứng đầu biến thể cũ của | ",
+  cleared: " gốc nhiệm vụ đã đi qua ",
+  enterReview: " xem lại phát hiện: 20 Câu hỏi · 3 sinh mệnh · mỗi chủ đề 18 giây ",
+  reviewFail: " sai lầm đã đạt tới 3 Câu hỏi, gốc tiếp theo xem lại bị đánh bại, mời lặp lại khảo sát(sẽ lại rút ra chủ đề) ",
+  reviewPass: " xem lại đi qua ",
+  dayAdvanced: " gốc ải núi nhiệm vụ đã toàn bộ hoàn thành, đi vào xuống một ải núi "
 };
 
 function isoNow(now) {
@@ -441,7 +441,7 @@ function getTodayTasks(db, studentId, bookId) {
   };
 }
 
-/** Per-stage progress for Ebbinghaus hub grid (78 关). */
+/** Per-stage progress for Ebbinghaus hub grid (78 ải núi). */
 function getStageSummaries(db, studentId, bookId) {
   var sched = schedule.loadSchedule(bookId);
   if (!sched) return null;
@@ -541,7 +541,7 @@ function resetEbbinghausStudent(db, studentId, bookId, nowIso) {
   ).run(studentId, bookId, nowIso);
 }
 
-/** Assign / re-assign gaozhong without wiping saved 闯关 progress. */
+/** Assign / re-assign gaozhong without wiping saved xông qua rào cản progress. */
 function ensureEbbinghausProgress(db, studentId, bookId, nowIso) {
   if (!schedule.isEbbinghausBook(bookId)) return;
   var row = db
@@ -628,7 +628,7 @@ function notebookTouch(draft, word, listId, nowIso) {
   };
 }
 
-/** New-word miss: enter/re-enter pool + notebook; does not set last_review_date (not 抽测). */
+/** New-word miss: enter/re-enter pool + notebook; does not set last_review_date (not rút ra khảo sát). */
 function applyNewWordMiss(draft, word, listId, nowIso) {
   var e = ensureDraftPoolEntry(draft, word, listId, nowIso);
   e.consecutive_correct = 0;
@@ -762,7 +762,7 @@ function replaceItems(db, s, attemptId, words, opts) {
   (words || []).forEach(function (w) {
     var word = typeof w === "string" ? w : w.word;
     var key = String(word).toLowerCase();
-    // ponytail: vocab HTML may repeat same headword (e.g. can×2 in L4) — UNIQUE(attempt_id, word)
+    // ponytail: vocab HTML may repeat same headword (e.g. can×2 in L4) - UNIQUE(attempt_id, word)
     if (seen[key]) return;
     seen[key] = true;
     s.insertItem.run(
@@ -882,32 +882,32 @@ function startListChallenge(db, opts) {
   var words = Array.isArray(opts.words) ? opts.words : [];
   var nowIso = isoNow(opts.now);
   if (!studentId || !bookId || !listId || listNo < 1) {
-    return { ok: false, error: "缺少 studentId / bookId / listId / listNo" };
+    return { ok: false, error: " thiếu studentId / bookId / listId / listNo" };
   }
-  if (!words.length) return { ok: false, error: "词表为空" };
+  if (!words.length) return { ok: false, error: " biến thể cũ của | bề mặt bên ngoài làm trống không " };
 
   var prog = getProgress(db, studentId, bookId);
   var today = null;
   if (schedule.isEbbinghausBook(bookId)) {
     today = getTodayTasks(db, studentId, bookId);
     if (today.programComplete) {
-      return { ok: false, error: "艾宾浩斯计划已完成", programComplete: true };
+      return { ok: false, error: " ngải cứu hoặc ngải đắng khách mời to lớn Slovakia kế hoạch đã hoàn thành ", programComplete: true };
     }
     if (opts.skipScheduleGate !== true) {
       var match = (today.tasks || []).filter(function (t) {
         return t.listNo === listNo && t.taskType === TASK_NEW;
       })[0];
       if (!match) {
-        return { ok: false, error: "List " + listNo + " 不是本关新词任务" };
+        return { ok: false, error: "List " + listNo + " không phải gốc ải núi cách diễn đạt mới nhiệm vụ " };
       }
       if (!match.canStart) {
-        return { ok: false, error: "请先完成前置任务或继续进行中的闯关", todayTasks: today.tasks };
+        return { ok: false, error: " mời trước hoàn thành đặt trước nhiệm vụ có thể tiếp tục tiến hành bắn trúng mục tiêu xông qua rào cản ", todayTasks: today.tasks };
       }
     }
   } else if (listNo !== prog.nextListNo) {
     return {
       ok: false,
-      error: "请先通关 List " + prog.nextListNo,
+      error: " mời trước thông quan List " + prog.nextListNo,
       nextListNo: prog.nextListNo,
       clearedListNo: prog.clearedListNo
     };
@@ -972,24 +972,24 @@ function startScheduledReview(db, opts) {
   var words = Array.isArray(opts.words) ? opts.words : [];
   var nowIso = isoNow(opts.now);
   if (!studentId || !bookId || !listId || listNo < 1) {
-    return { ok: false, error: "缺少 studentId / bookId / listId / listNo" };
+    return { ok: false, error: " thiếu studentId / bookId / listId / listNo" };
   }
   if (!schedule.isEbbinghausBook(bookId)) {
-    return { ok: false, error: "当前词册不支持艾宾浩斯复习" };
+    return { ok: false, error: " thời điểm hiện tại biến thể cũ của | sách không thể chịu đựng được cầm ngải cứu hoặc ngải đắng khách mời to lớn Slovakia xem lại " };
   }
   var today = getTodayTasks(db, studentId, bookId);
   if (today.programComplete) {
-    return { ok: false, error: "艾宾浩斯计划已完成", programComplete: true };
+    return { ok: false, error: " ngải cứu hoặc ngải đắng khách mời to lớn Slovakia kế hoạch đã hoàn thành ", programComplete: true };
   }
   if (opts.skipScheduleGate !== true) {
     var match = (today.tasks || []).filter(function (t) {
       return t.listNo === listNo && t.taskType === TASK_REVIEW;
     })[0];
     if (!match) {
-      return { ok: false, error: "List " + listNo + " 不是本关复习任务" };
+      return { ok: false, error: "List " + listNo + " không phải gốc ải núi xem lại nhiệm vụ " };
     }
     if (!match.canStart) {
-      return { ok: false, error: "请先完成本关新词或继续进行中的复习", todayTasks: today.tasks };
+      return { ok: false, error: " mời trước hoàn thành gốc ải núi cách diễn đạt mới có thể tiếp tục tiến hành bắn trúng mục tiêu xem lại ", todayTasks: today.tasks };
     }
   }
 
@@ -1008,7 +1008,7 @@ function startScheduledReview(db, opts) {
     schedule.REVIEW_DRAW_SIZE,
     opts.rng
   );
-  if (!drawn.length) return { ok: false, error: "复习抽题失败" };
+  if (!drawn.length) return { ok: false, error: " xem lại rút ra chủ đề bị đánh bại " };
 
   var s = stmtsFor(db);
   var draft = emptyDraft();
@@ -1059,10 +1059,10 @@ function startScheduledReview(db, opts) {
 function submitScheduledReview(db, attemptId, studentId, answers, now) {
   var s = stmtsFor(db);
   var attempt = s.getAttempt.get(attemptId, studentId);
-  if (!attempt) return { ok: false, error: "尝试不存在" };
-  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: "尝试已结束" };
+  if (!attempt) return { ok: false, error: " thử không tồn tại " };
+  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: " thử đã chấm dứt " };
   if (attempt.phase !== PHASE_SCHEDULED_REVIEW) {
-    return { ok: false, error: "当前不是复习检测" };
+    return { ok: false, error: " thời điểm hiện tại không phải xem lại phát hiện " };
   }
 
   var nowIso = isoNow(now);
@@ -1073,7 +1073,7 @@ function submitScheduledReview(db, attemptId, studentId, answers, now) {
   for (var i = 0; i < items.length; i++) {
     var it = items[i];
     var a = map[it.word];
-    if (!a) return { ok: false, error: "缺少作答: " + it.word };
+    if (!a) return { ok: false, error: " thiếu trả lời: " + it.word };
     if (!a.correct) wrongs.push(it.word);
   }
 
@@ -1190,9 +1190,9 @@ function submitScheduledReview(db, attemptId, studentId, answers, now) {
 function voidAttempt(db, attemptId, studentId, now) {
   var s = stmtsFor(db);
   var row = s.getAttempt.get(attemptId, studentId);
-  if (!row) return { ok: false, error: "尝试不存在" };
+  if (!row) return { ok: false, error: " thử không tồn tại " };
   if (row.status !== STATUS_IN_PROGRESS) {
-    return { ok: false, error: "当前尝试不可作废", status: row.status };
+    return { ok: false, error: " thời điểm hiện tại thử không thể trở nên không hiệu lực ", status: row.status };
   }
   var nowIso = isoNow(now);
   s.updateAttempt.run(
@@ -1261,9 +1261,9 @@ function finishClear(db, s, attempt, draft, nowIso, notices) {
 function submitNewWords(db, attemptId, studentId, answers, now) {
   var s = stmtsFor(db);
   var attempt = s.getAttempt.get(attemptId, studentId);
-  if (!attempt) return { ok: false, error: "尝试不存在" };
-  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: "尝试已结束" };
-  if (attempt.phase !== PHASE_NEW) return { ok: false, error: "当前不是新词阶段" };
+  if (!attempt) return { ok: false, error: " thử không tồn tại " };
+  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: " thử đã chấm dứt " };
+  if (attempt.phase !== PHASE_NEW) return { ok: false, error: " thời điểm hiện tại không phải cách diễn đạt mới giai đoạn " };
 
   var items = s.listItems.all(attemptId);
   var nowIso = isoNow(now);
@@ -1273,7 +1273,7 @@ function submitNewWords(db, attemptId, studentId, answers, now) {
   for (var i = 0; i < items.length; i++) {
     var it = items[i];
     var a = map[it.word];
-    if (!a) return { ok: false, error: "缺少作答: " + it.word };
+    if (!a) return { ok: false, error: " thiếu trả lời: " + it.word };
     if (!a.correct) wrongs.push(it.word);
   }
 
@@ -1373,10 +1373,10 @@ function submitNewWords(db, attemptId, studentId, answers, now) {
 function submitReview(db, attemptId, studentId, answers, now) {
   var s = stmtsFor(db);
   var attempt = s.getAttempt.get(attemptId, studentId);
-  if (!attempt) return { ok: false, error: "尝试不存在" };
-  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: "尝试已结束" };
+  if (!attempt) return { ok: false, error: " thử không tồn tại " };
+  if (attempt.status !== STATUS_IN_PROGRESS) return { ok: false, error: " thử đã chấm dứt " };
   if (attempt.phase !== PHASE_RETEST && attempt.phase !== PHASE_MAKEUP) {
-    return { ok: false, error: "当前不是重测/补考阶段" };
+    return { ok: false, error: " thời điểm hiện tại không phải lặp lại khảo sát/thi bổ sung giai đoạn " };
   }
 
   var nowIso = isoNow(now);
@@ -1402,14 +1402,14 @@ function submitReview(db, attemptId, studentId, answers, now) {
     var it = items[i];
     if (it.locked) continue;
     var a = map[it.word];
-    if (!a) return { ok: false, error: "缺少作答: " + it.word };
+    if (!a) return { ok: false, error: " thiếu trả lời: " + it.word };
     if (a.correct) {
       applyReviewCorrect(draft, it.word, attempt.list_id, nowIso);
     } else {
       var wr = applyReviewWrong(draft, it.word, attempt.list_id, nowIso, inMakeup);
       if (wr.stubbornRelease) {
         stubbornWords.push(it.word);
-        notices.push(NOTICE.stubborn + "（" + it.word + "）");
+        notices.push(NOTICE.stubborn + "(" + it.word + ")");
       } else {
         stillWrong.push(it.word);
       }
@@ -1466,7 +1466,7 @@ function submitReview(db, attemptId, studentId, answers, now) {
 function getAttemptView(db, attemptId, studentId) {
   var s = stmtsFor(db);
   var attempt = s.getAttempt.get(attemptId, studentId);
-  if (!attempt) return { ok: false, error: "尝试不存在" };
+  if (!attempt) return { ok: false, error: " thử không tồn tại " };
   var draft = parseDraft(attempt.draft_json);
   var livesMax = attempt.phase === PHASE_SCHEDULED_REVIEW
     ? schedule.MAX_REVIEW_WRONG
@@ -1550,7 +1550,7 @@ function ensureSchema(db) {
       "PRIMARY KEY (student_id, book_id)" +
     ");" +
 
-    // 抽测池
+    // rút ra khảo sát ao
     "CREATE TABLE IF NOT EXISTS vocab_challenge_draw_pool (" +
       "id INTEGER PRIMARY KEY AUTOINCREMENT," +
       "student_id INTEGER NOT NULL," +
@@ -1571,13 +1571,13 @@ function ensureSchema(db) {
       "graduated_at TEXT," +
       "UNIQUE(student_id, book_id, word)" +
     ");" +
-    // Spec: (user_id, last_review_date, status) — student_id is the user key here
+    // Spec: (user_id, last_review_date, status) - student_id is the user key here
     "CREATE INDEX IF NOT EXISTS idx_vch_pool_draw " +
       "ON vocab_challenge_draw_pool(student_id, book_id, status, last_review_date);" +
     "CREATE INDEX IF NOT EXISTS idx_vch_pool_pending " +
       "ON vocab_challenge_draw_pool(student_id, book_id, status, pending_uncorrected);" +
 
-    // 错题本（永久；主动练习不改 draw_pool）
+    // Sổ lỗi sai(vĩnh cửu; chủ động luyện tập không thay đổi draw_pool)
     "CREATE TABLE IF NOT EXISTS vocab_challenge_notebook (" +
       "id INTEGER PRIMARY KEY AUTOINCREMENT," +
       "student_id INTEGER NOT NULL," +
@@ -1595,7 +1595,7 @@ function ensureSchema(db) {
     "CREATE INDEX IF NOT EXISTS idx_vch_nb_stu_book " +
       "ON vocab_challenge_notebook(student_id, book_id, last_missed_at DESC);" +
 
-    // 通关尝试：中途退出 → status=voided，副作用不提交进 pool
+    // thông quan thử: giữa chừng rút lui → status=voided, tác dụng phụ không nộp tiến lên pool
     "CREATE TABLE IF NOT EXISTS vocab_challenge_attempt (" +
       "id INTEGER PRIMARY KEY AUTOINCREMENT," +
       "student_id INTEGER NOT NULL," +
@@ -1729,12 +1729,12 @@ function selfCheck() {
   if (idx.length < 3) throw new Error("missing indexes");
 
   var bank = optionBankFromWords([
-    { word: "include", acceptCN: ["包括", "包含"] },
-    { word: "desk", meaning: "桌子" },
-    { word: "run", acceptCN: ["跑步"] },
+    { word: "include", acceptCN: [" bao gồm ", " chứa "] },
+    { word: "desk", meaning: " bàn " },
+    { word: "run", acceptCN: [" chạy "] },
     { word: "enonly", meaning: "only-english" }
   ]);
-  if (bank.length !== 3 || bank.indexOf("桌子") < 0 || bank.indexOf("包括 / 包含") < 0) {
+  if (bank.length !== 3 || bank.indexOf(" bàn ") < 0 || bank.indexOf(" bao gồm / chứa ") < 0) {
     throw new Error("optionBankFromWords " + JSON.stringify(bank));
   }
 
@@ -1794,7 +1794,7 @@ function selfCheck() {
     row({ word: "pend_b", pending_uncorrected: 1, fail_count: 0, last_review_date: "2026-08-14" }),
     row({ word: "pend_a", pending_uncorrected: 1, fail_count: 1, last_review_date: "2026-08-14" }),
     row({ word: "fresh", last_review_date: "2026-08-15T00:00:00.000Z", fail_count: 0 })
-  ], 1, now); // list 1 → quota 10, take all 3 active non-grad… wait 4 active
+  ], 1, now); // list 1 → quota 10, take all 3 active non-grad... wait 4 active
   if (picked.length !== 4) throw new Error("quota 10 should take all 4");
   if (picked[0].word !== "pend_a" || picked[1].word !== "pend_b") {
     throw new Error("p1 first: " + picked.map(function (w) { return w.word; }).join(","));
@@ -1808,7 +1808,7 @@ function selfCheck() {
     row({ word: "x", last_review_date: null, fail_count: 50 }),
     row({ word: "y", last_review_date: null, fail_count: 40 })
   ], 1, now);
-  // list1 quota=10, still all 3 — need more rows or mock quota via list that… 
+  // list1 quota=10, still all 3 - need more rows or mock quota via list that... 
   // force truncate: build 12 words, listNo=1 quota=10
   var many = [];
   many.push(row({ word: "p1a", pending_uncorrected: 1, fail_count: 0 }));
@@ -1855,8 +1855,8 @@ function selfCheck() {
     poolByWord: {
       legacy: {
         word: "legacy",
-        meaning: "旧词",
-        word_json: JSON.stringify({ word: "legacy", acceptCN: ["遗留"] })
+        meaning: " cũ biến thể cũ của | ",
+        word_json: JSON.stringify({ word: "legacy", acceptCN: [" để lại "] })
       }
     }
   };
@@ -1864,7 +1864,7 @@ function selfCheck() {
     [{ word: "legacy", sort_ord: 0, locked: 0, is_correct: null, user_answer: null }],
     metaDraft
   )[0];
-  if (!legacyPub.meaning || legacyPub.meaning !== "旧词") throw new Error("publicItems pool fallback");
+  if (!legacyPub.meaning || legacyPub.meaning !== " cũ biến thể cũ của | ") throw new Error("publicItems pool fallback");
 
   // --- pass engine ---
   db.prepare("DELETE FROM vocab_challenge_draw_pool").run();
@@ -2249,10 +2249,10 @@ function resumeSameAttempt(db, studentId, bookId, listNo, phase) {
 }
 
 function bookLabelOfId(bookId) {
-  if (bookId === "gaozhong") return "高中词汇";
-  if (bookId === "cet4") return "四级词汇";
-  if (bookId === "cet4-lite") return "四级词汇（精简版）";
-  if (bookId === "special") return "雅思专项词汇";
+  if (bookId === "gaozhong") return " trường trung học phổ thông biến thể của | ";
+  if (bookId === "cet4") return " Từ vựng CET-4 ";
+  if (bookId === "cet4-lite") return " Từ vựng CET-4(đơn giản hóa một đăng ký)";
+  if (bookId === "special") return " IELTS chuyên biệt biến thể của | ";
   return bookId;
 }
 
@@ -2281,16 +2281,16 @@ function getAssignment(db, studentId, bookId) {
 
 function pickAssigned(db, studentId, bookId) {
   var all = listAssignments(db, studentId);
-  if (!all.length) return { error: "老师尚未布置词册", status: 400 };
+  if (!all.length) return { error: " giáo viên chưa sắp xếp biến thể cũ của | sách ", status: 400 };
   bookId = String(bookId || "").trim();
   if (bookId) {
     var hit = all.filter(function (r) { return r.book_id === bookId; })[0];
-    if (!hit) return { error: "该词册尚未布置", status: 400 };
+    if (!hit) return { error: " nên biến thể cũ của | sách chưa sắp xếp ", status: 400 };
     return { asg: hit };
   }
   if (all.length === 1) return { asg: all[0] };
   return {
-    error: "请选择词册",
+    error: " mời chọn biến thể cũ của | sách ",
     status: 400,
     needsBook: true,
     assignments: all.map(function (r) {
@@ -2309,7 +2309,7 @@ function assignBook(db, opts) {
   var teacherId = opts.teacherId;
   var nowIso = isoNow(opts.now);
   if (!studentId || !bookId || !teacherId) {
-    return { ok: false, error: "缺少 studentId / bookId / teacherId" };
+    return { ok: false, error: " thiếu studentId / bookId / teacherId" };
   }
   var cur = getAssignment(db, studentId, bookId);
   if (cur) {
@@ -2359,7 +2359,7 @@ function unassignBook(db, opts) {
   opts = opts || {};
   var studentId = opts.studentId;
   var bookId = String(opts.bookId || "").trim();
-  if (!studentId || !bookId) return { ok: false, error: "缺少 studentId / bookId" };
+  if (!studentId || !bookId) return { ok: false, error: " thiếu studentId / bookId" };
   var cur = getAssignment(db, studentId, bookId);
   if (!cur) return { ok: true, unchanged: true, bookId: bookId };
   db.prepare(
@@ -2467,7 +2467,7 @@ function findListByNo(book, listNo) {
 
 function requireStudent(req, res) {
   if (req.user.role === "teacher") {
-    res.status(403).json({ error: "请使用学生账号" });
+    res.status(403).json({ error: " mời sử dụng học sinh số tài khoản " });
     return false;
   }
   return true;
@@ -2475,7 +2475,7 @@ function requireStudent(req, res) {
 
 function requireTeacher(req, res) {
   if (req.user.role !== "teacher") {
-    res.status(403).json({ error: "请使用教师账号" });
+    res.status(403).json({ error: " mời sử dụng giáo viên số tài khoản " });
     return false;
   }
   return true;
@@ -2533,7 +2533,7 @@ function mountRoutes(app, opts) {
     if (!asg) return;
     var cat = catalog();
     var book = cat.byId[asg.book_id];
-    if (!book) return res.status(404).json({ error: "词册不存在" });
+    if (!book) return res.status(404).json({ error: " biến thể cũ của | sách không tồn tại " });
     var prog = getProgress(db, req.user.sub, asg.book_id);
     var today = schedule.isEbbinghausBook(asg.book_id)
       ? getTodayTasks(db, req.user.sub, asg.book_id)
@@ -2609,15 +2609,15 @@ function mountRoutes(app, opts) {
     var taskType = String(body.taskType || TASK_NEW).trim();
     var cat = catalog();
     var book = cat.byId[asg.book_id];
-    if (!book) return res.status(404).json({ error: "词册不存在" });
+    if (!book) return res.status(404).json({ error: " biến thể cũ của | sách không tồn tại " });
     var prog = getProgress(db, req.user.sub, asg.book_id);
     var listNo = Math.floor(Number(body.listNo) || prog.nextListNo || 0);
-    if (!listNo) return res.status(400).json({ error: "缺少 listNo" });
+    if (!listNo) return res.status(400).json({ error: " thiếu listNo" });
     var list = findListByNo(book, listNo);
-    if (!list) return res.status(404).json({ error: "List 不存在" });
+    if (!list) return res.status(404).json({ error: "List không tồn tại " });
     var lesson = shelf.resolveLesson(resolveRoot, book, list.id);
     if (!lesson || !lesson.words.length) {
-      return res.status(404).json({ error: "词表缺失" });
+      return res.status(404).json({ error: " biến thể cũ của | bề mặt bên ngoài thiếu " });
     }
     var result;
     if (schedule.isEbbinghausBook(asg.book_id) && taskType === TASK_REVIEW) {
@@ -2645,7 +2645,7 @@ function mountRoutes(app, opts) {
     if (!requireStudent(req, res)) return;
     var body = req.body || {};
     var attemptId = Number(body.attemptId);
-    if (!attemptId) return res.status(400).json({ error: "缺少 attemptId" });
+    if (!attemptId) return res.status(400).json({ error: " thiếu attemptId" });
     var result = submitNewWords(db, attemptId, req.user.sub, body.answers || []);
     if (!result.ok) return res.status(400).json(result);
     res.json(result);
@@ -2655,7 +2655,7 @@ function mountRoutes(app, opts) {
     if (!requireStudent(req, res)) return;
     var body = req.body || {};
     var attemptId = Number(body.attemptId);
-    if (!attemptId) return res.status(400).json({ error: "缺少 attemptId" });
+    if (!attemptId) return res.status(400).json({ error: " thiếu attemptId" });
     var result = submitReview(db, attemptId, req.user.sub, body.answers || []);
     if (!result.ok) return res.status(400).json(result);
     res.json(result);
@@ -2665,7 +2665,7 @@ function mountRoutes(app, opts) {
     if (!requireStudent(req, res)) return;
     var body = req.body || {};
     var attemptId = Number(body.attemptId);
-    if (!attemptId) return res.status(400).json({ error: "缺少 attemptId" });
+    if (!attemptId) return res.status(400).json({ error: " thiếu attemptId" });
     var result = submitScheduledReview(db, attemptId, req.user.sub, body.answers || []);
     if (!result.ok) return res.status(400).json(result);
     res.json(result);
@@ -2674,7 +2674,7 @@ function mountRoutes(app, opts) {
   app.post("/api/vocab-challenge/void", authMiddleware, function (req, res) {
     if (!requireStudent(req, res)) return;
     var attemptId = Number((req.body && req.body.attemptId) || 0);
-    if (!attemptId) return res.status(400).json({ error: "缺少 attemptId" });
+    if (!attemptId) return res.status(400).json({ error: " thiếu attemptId" });
     var result = voidAttempt(db, attemptId, req.user.sub);
     if (!result.ok) return res.status(400).json(result);
     res.json(result);
@@ -2683,7 +2683,7 @@ function mountRoutes(app, opts) {
   app.get("/api/vocab-challenge/attempt", authMiddleware, function (req, res) {
     if (!requireStudent(req, res)) return;
     var attemptId = Number(req.query.id || 0);
-    if (!attemptId) return res.status(400).json({ error: "缺少 id" });
+    if (!attemptId) return res.status(400).json({ error: " thiếu id" });
     var result = getAttemptView(db, attemptId, req.user.sub);
     if (!result.ok) return res.status(404).json(result);
     res.json(result);
@@ -2693,7 +2693,7 @@ function mountRoutes(app, opts) {
     if (!requireStudent(req, res)) return;
     var asg = getAssignment(db, req.user.sub, req.query.bookId);
     var bookId = String(req.query.bookId || (asg && asg.book_id) || "").trim();
-    if (!bookId) return res.status(400).json({ error: "缺少 bookId" });
+    if (!bookId) return res.status(400).json({ error: " thiếu bookId" });
     var rows = db
       .prepare(
         "SELECT id, word, ipa, meaning, word_json, source_list_id, first_missed_at, " +
@@ -2724,14 +2724,14 @@ function mountRoutes(app, opts) {
     });
   });
 
-  // Voluntary practice for a passed list task — does not touch draw_pool or progress
+  // Voluntary practice for a passed list task - does not touch draw_pool or progress
   app.get("/api/vocab-challenge/list-practice-pool", authMiddleware, function (req, res) {
     if (!requireStudent(req, res)) return;
     var asg = assignedOrFail(req, res);
     if (!asg) return;
     var listNo = Math.floor(Number(req.query.listNo) || 0);
     var taskType = String(req.query.taskType || TASK_NEW).trim();
-    if (!listNo) return res.status(400).json({ error: "缺少 listNo" });
+    if (!listNo) return res.status(400).json({ error: " thiếu listNo" });
     var tt = taskType === TASK_REVIEW ? TASK_REVIEW : TASK_NEW;
     var passed = db
       .prepare(
@@ -2739,14 +2739,14 @@ function mountRoutes(app, opts) {
           "WHERE student_id = ? AND book_id = ? AND list_no = ? AND task_type = ? AND status = 'completed' LIMIT 1"
       )
       .get(req.user.sub, asg.book_id, listNo, tt);
-    if (!passed) return res.status(400).json({ error: "该任务尚未通过，暂不可练习" });
+    if (!passed) return res.status(400).json({ error: " nên nhiệm vụ chưa đi qua, tạm thời không thể luyện tập " });
     var cat = catalog();
     var book = cat.byId[asg.book_id];
-    if (!book) return res.status(404).json({ error: "词册不存在" });
+    if (!book) return res.status(404).json({ error: " biến thể cũ của | sách không tồn tại " });
     var list = findListByNo(book, listNo);
-    if (!list) return res.status(404).json({ error: "List 不存在" });
+    if (!list) return res.status(404).json({ error: "List không tồn tại " });
     var lesson = shelf.resolveLesson(resolveRoot, book, list.id);
-    if (!lesson || !lesson.words.length) return res.status(404).json({ error: "词表缺失" });
+    if (!lesson || !lesson.words.length) return res.status(404).json({ error: " biến thể cũ của | bề mặt bên ngoài thiếu " });
     var words = lesson.words;
     if (tt === TASK_REVIEW) {
       var statsRows = db
@@ -2762,7 +2762,7 @@ function mountRoutes(app, opts) {
       bookId: asg.book_id,
       listNo: listNo,
       taskType: tt,
-      notice: "已通过关卡练习不影响闯关进度与抽测池。",
+      notice: " đã đi qua trạm kiểm soát luyện tập không ảnh hưởng xông qua rào cản tốc độ tiến triển biến thể của | rút ra khảo sát ao ",
       optionBank: optionBankFromWords(lesson.words),
       words: words.map(function (w) {
         return {
@@ -2776,13 +2776,13 @@ function mountRoutes(app, opts) {
     });
   });
 
-  // Voluntary practice pool — does not touch draw_pool (spec Q24)
+  // Voluntary practice pool - does not touch draw_pool (spec Q24)
   app.get("/api/vocab-challenge/notebook/practice-pool", authMiddleware, function (req, res) {
     if (!requireStudent(req, res)) return;
     var asg = getAssignment(db, req.user.sub, req.query.bookId);
     var bookId = String(req.query.bookId || (asg && asg.book_id) || "").trim();
     var limit = Math.max(1, Math.min(100, Math.floor(Number(req.query.limit) || 20)));
-    if (!bookId) return res.status(400).json({ error: "缺少 bookId" });
+    if (!bookId) return res.status(400).json({ error: " thiếu bookId" });
     var rows = db
       .prepare(
         "SELECT word, ipa, meaning, word_json, source_list_id FROM vocab_challenge_notebook " +
@@ -2800,7 +2800,7 @@ function mountRoutes(app, opts) {
     res.json({
       ok: true,
       bookId: bookId,
-      notice: "错题本练习不影响闯关抽测池。",
+      notice: " lỗi chủ đề gốc luyện tập không ảnh hưởng xông qua rào cản rút ra khảo sát ao ",
       optionBank: bank,
       words: rows.map(function (r) {
         var wj = null;
@@ -2825,20 +2825,20 @@ function mountRoutes(app, opts) {
     var body = req.body || {};
     var studentId = Number(body.studentId);
     var bookId = String(body.bookId || PILOT_BOOK_ID).trim();
-    if (!studentId) return res.status(400).json({ error: "缺少 studentId" });
+    if (!studentId) return res.status(400).json({ error: " thiếu studentId" });
     if (opts.isPreviewStudent) {
       var previewRow = db.prepare(
         "SELECT phone, display_name FROM users WHERE id = ?"
       ).get(studentId);
       if (opts.isPreviewStudent(previewRow)) {
-        return res.status(400).json({ error: "体验账号请在网站功能区闯关，不要在此布置" });
+        return res.status(400).json({ error: " trải nghiệm số tài khoản mời tồn tại trang web chức năng khu vực xông qua rào cản, đừng! tại đây sắp xếp " });
       }
     }
     if (!canManageStudent(req, studentId)) {
-      return res.status(403).json({ error: "无权布置该学生" });
+      return res.status(403).json({ error: " không có quyền sắp xếp nên học sinh " });
     }
     var cat = catalog();
-    if (!cat.byId[bookId]) return res.status(404).json({ error: "词册不存在" });
+    if (!cat.byId[bookId]) return res.status(404).json({ error: " biến thể cũ của | sách không tồn tại " });
     // V1 pilot: prefer gaozhong; still allow catalog books for forward-compat
     var result = assignBook(db, {
       studentId: studentId,
@@ -2854,9 +2854,9 @@ function mountRoutes(app, opts) {
     var body = req.body || {};
     var studentId = Number(body.studentId);
     var bookId = String(body.bookId || "").trim();
-    if (!studentId || !bookId) return res.status(400).json({ error: "缺少 studentId / bookId" });
+    if (!studentId || !bookId) return res.status(400).json({ error: " thiếu studentId / bookId" });
     if (!canManageStudent(req, studentId)) {
-      return res.status(403).json({ error: "无权操作该学生" });
+      return res.status(403).json({ error: " không có quyền làm việc nên học sinh " });
     }
     var result = unassignBook(db, { studentId: studentId, bookId: bookId });
     if (!result.ok) return res.status(400).json(result);
@@ -2866,9 +2866,9 @@ function mountRoutes(app, opts) {
   app.get("/api/vocab-challenge/teacher/student", authMiddleware, function (req, res) {
     if (!requireTeacher(req, res)) return;
     var studentId = Number(req.query.studentId);
-    if (!studentId) return res.status(400).json({ error: "缺少 studentId" });
+    if (!studentId) return res.status(400).json({ error: " thiếu studentId" });
     if (!canManageStudent(req, studentId)) {
-      return res.status(403).json({ error: "无权查看该学生" });
+      return res.status(403).json({ error: " không có quyền xem xét nên học sinh " });
     }
     var summary = studentChallengeSummary(db, studentId);
     if (summary.assigned && summary.assignment) {

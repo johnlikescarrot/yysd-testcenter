@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.30-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/8 tháng/8.30-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-30/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-30"
 SET = "8.30"
-TITLE = "新托福 8.30 国内线下"
+TITLE = " TOEFL mới 8.30 Trong nước · trực tiếp "
 
 
 def dump(name, obj):
@@ -537,14 +537,14 @@ def build_reading():
             "D": "It offers advice to farmers on best agricultural practices.",
         }, "C"),
     ]))
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1920, "from": 1, "to": 161},
         {"n": 2, "timeSec": 480, "from": 162, "to": 166},
     ], tasks)
 
 
 def build_listening():
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 24},
         {"n": 2, "timeSec": 1320, "from": 25, "to": 46},
     ], [
@@ -859,7 +859,7 @@ def build_listening():
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 2100, "from": 1, "to": 5, "label": "Email"},
         {"n": 2, "timeSec": 3000, "from": 6, "to": 10, "label": "Academic Discussion"},
     ], [
@@ -949,7 +949,7 @@ def build_writing():
               {"title": "Prioritize Systemic Policy",
                "text": "Policy and corporate accountability are more effective because they can change the default conditions faced by every individual. A building code can improve thousands of homes during construction, while one efficient resident cannot correct poor insulation in a rented apartment. A supply-chain requirement can alter materials and transport before products reach consumers, who otherwise choose only among existing options. Systemic measures also create measurable responsibility. Governments can establish a clear target, require comparable reporting, and impose consequences when major emitters fail to meet it. Corporations should publish transition plans linked to investment and executive decisions, not only distant promises. Citizens remain important as voters, workers, and customers who demand enforcement, but climate success should not depend on perfect private behavior. Rules are most effective when they reward early improvement, protect lower-income households from unfair costs, and close loopholes that shift pollution elsewhere. By changing infrastructure and production at their source, systemic action makes lower-impact behavior available and normal at a scale personal choice cannot reach."}]),
         disc(9, "Communication", "Dr. Diaz", "diaz.png",
-             "Digital communication includes texting, video chats, and social media. Some people say these tools help relationships by allowing instant messages, sharing photos, and staying in touch over long distances. Others believe they cause problems—like misunderstandings and less eye contact—because people rely less on talking in person. Think about how you communicate with family, friends, or classmates. Do you believe digital communication makes your relationships stronger or weaker? Share specific examples and explain your opinion clearly.",
+             "Digital communication includes texting, video chats, and social media. Some people say these tools help relationships by allowing instant messages, sharing photos, and staying in touch over long distances. Others believe they cause problems-like misunderstandings and less eye contact-because people rely less on talking in person. Think about how you communicate with family, friends, or classmates. Do you believe digital communication makes your relationships stronger or weaker? Share specific examples and explain your opinion clearly.",
              [post("Claire", "kelly.png",
                    "I think digital communication strengthens relationships. It allows people to maintain bonds with family members who live far away. For example, my brothers work in another country, but we can stay in touch and remain a loving family thanks to various digital communication platforms."),
               post("Kelly", "andrew.png",
@@ -1087,10 +1087,10 @@ if __name__ == "__main__":
     dump("2025-08-30-listening.json", build_listening())
     dump("2025-08-30-writing.json", build_writing())
     dump("2025-08-30-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-08-30-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-08-30-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, None))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, None))
     dump("2025-08-30-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", 4, None))
+        ID + "-s4", TITLE + " · Nói Form 4", 4, None))

@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.19-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/8 tháng/8.19-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-19/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-19"
 SET = "8.19"
-TITLE = "新托福 8.19 国内线下"
+TITLE = " TOEFL mới 8.19 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -234,7 +234,7 @@ def build_reading():
         ("wild", "wildlife"),
         ". Glaciers ",
         ("se", "serve"),
-        " as indicators of climate change—rapid melting signals shifts in global temperatures. Studying glaciers helps scientists understand past climate patterns and predict future environmental impacts, making them vital to global research.",
+        " as indicators of climate change-rapid melting signals shifts in global temperatures. Studying glaciers helps scientists understand past climate patterns and predict future environmental impacts, making them vital to global research.",
     ])
     tasks.append(t)
     t, n = cw("The Earliest Ancestor of the Modern Bicycle", 1, n, [
@@ -282,7 +282,7 @@ def build_reading():
         ("pro", "process"),
         " was ",
         ("ti", "time"),
-        "-consuming and required detailed knowledge of pigments—their chemical properties, how they interact with different media, and their durability over time. But it also allowed painters to give their artworks a truly unique color palette.",
+        "-consuming and required detailed knowledge of pigments-their chemical properties, how they interact with different media, and their durability over time. But it also allowed painters to give their artworks a truly unique color palette.",
     ])
     tasks.append(t)
     t, n = cw("The Odyssey", 1, n, [
@@ -306,7 +306,7 @@ def build_reading():
         ("narr", "narrative"),
         " structures ",
         ("a", "and"),
-        " archetypes—like the hero's journey—that continue to shape storytelling today. It also delves into timeless human experiences. Odysseus's longing to return home, for example, resonates with the universal desire for belonging and stability. He must adapt, disguise, and rediscover himself, reflecting the fluid nature of identity.",
+        " archetypes-like the hero's journey-that continue to shape storytelling today. It also delves into timeless human experiences. Odysseus's longing to return home, for example, resonates with the universal desire for belonging and stability. He must adapt, disguise, and rediscover himself, reflecting the fluid nature of identity.",
     ])
     tasks.append(t)
     tasks.append(daily("Kintsugi", 2, "Read an article in a student magazine.", {
@@ -415,7 +415,7 @@ def build_reading():
     n += 5
     tasks.append(academic("Unveiling Earth's Core", 2, [
         "Geophysicists have long been intrigued by Earth's core (the center of Earth). When earthquakes occur, they send seismic waves through the planet, offering rare glimpses into this mysterious world. Interestingly, these waves sometimes slow down in unexpected ways, suggesting that the core's makeup may be more complex than just iron and nickel as previously believed. Some scientists suggest it might not be entirely solid, possibly containing molten layers or unusual elements that create a unique state of matter.",
-        "Advanced computer models now depict the core not as a homogeneous sphere, but as a layered structure with distinct regions. These models also propose phenomena like super-rotation—where the inner core (the inner part of Earth's core) spins slightly faster than the rest of the planet—and directional differences in wave behavior, known as anisotropies. Collectively, these findings portray a core in constant motion.",
+        "Advanced computer models now depict the core not as a homogeneous sphere, but as a layered structure with distinct regions. These models also propose phenomena like super-rotation-where the inner core (the inner part of Earth's core) spins slightly faster than the rest of the planet-and directional differences in wave behavior, known as anisotropies. Collectively, these findings portray a core in constant motion.",
         "But is this picture complete? Some researchers argue that these models rely on overly simplified assumptions. Truly understanding the inner core demands cutting-edge technology and fresh perspectives. The limitations of current theories remind us that the deeper we explore planetary science, the more we challenge our understanding of it.",
     ], [
         q(n, "Why does the author discuss earthquakes in paragraph 1?", {
@@ -513,7 +513,7 @@ def build_reading():
     n += 5
     tasks.append(academic("The Benefits of Music Education", 2, [
         "Studies such as those by the National Association for Music Education (NAfME) and research published in Frontiers in Psychology have shown that children who study music often demonstrate improvements in memory, language acquisition, and spatial-temporal reasoning. These cognitive gains are attributed to the discipline and structured practice inherent in learning music, which strengthens neural pathways associated with attention and processing.",
-        "Beyond cognition, music education contributes meaningfully to social development. Participation in an ensemble—a group of musicians performing together—requires active collaboration, listening, and nonverbal communication, fostering empathy and cooperative behavior. This group dynamic differs from traditional classroom settings and can support the development of interpersonal skills.",
+        "Beyond cognition, music education contributes meaningfully to social development. Participation in an ensemble-a group of musicians performing together-requires active collaboration, listening, and nonverbal communication, fostering empathy and cooperative behavior. This group dynamic differs from traditional classroom settings and can support the development of interpersonal skills.",
         "Moreover, music provides a safe space for emotional exploration. Students engage with complex emotions, both their own and those conveyed by others, through the expressive nature of music itself. This experience can enhance emotional intelligence and serve as a constructive outlet for stress. Despite these documented benefits, music programs in U.S. schools are often viewed as nonessential compared to core academic subjects and thus vulnerable to budget cuts. This reduction may disproportionately affect students who could benefit most from music's holistic contributions, potentially limiting their cognitive, social, and emotional growth.",
     ], [
         q(n, 'Why does the author mention "neural pathways associated with attention and processing"?', {
@@ -547,7 +547,7 @@ def build_reading():
     tasks.append(academic("Diane Arbus and the Debate over Portraiture", 2, [
         "Diane Arbus (1923–1971) occupies a singular place in the history of photography, celebrated and criticized for her stark, intimate portraits of a wide range of people, including some of unconventional appearance or marginalized social status. Her work has long provoked debate because it resists easy moral or aesthetic categorization.",
         "Some critics, such as Susan Sontag, argued that Arbus' photographs create a troubling distance between viewer and subject. Sontag claimed that Arbus' images risk turning people into spectacles of oddity, suggesting that her gaze could be predatory in its fascination with difference. Others, however, see Arbus as a profoundly empathetic artist. Writers like Arthur Lubow emphasize her ability to reveal her subjects' complexity and dignity, noting that many of them collaborated willingly and even joyfully in the creation of their portraits.",
-        "A further line of debate surrounds Arbus' style: her use of frontal composition, square format, and direct flash has been interpreted negatively—as a cold, clinical approach—and positively—as a method that strips away artifice to expose deeper truths. Ultimately, Arbus' work continues to inspire disagreement because it challenges viewers to confront their own assumptions about normalcy, beauty, and vulnerability. Her photographs remain powerful precisely because they refuse to resolve these tensions.",
+        "A further line of debate surrounds Arbus' style: her use of frontal composition, square format, and direct flash has been interpreted negatively-as a cold, clinical approach-and positively-as a method that strips away artifice to expose deeper truths. Ultimately, Arbus' work continues to inspire disagreement because it challenges viewers to confront their own assumptions about normalcy, beauty, and vulnerability. Her photographs remain powerful precisely because they refuse to resolve these tensions.",
     ], [
         q(n, 'The word "stark" in the passage is closest in meaning to',
           {"A": "severe", "B": "graceful", "C": "classic", "D": "natural"}, "A"),
@@ -576,7 +576,7 @@ def build_reading():
             "D": "arising from false assumptions about Arbus' style",
         }, "B"),
     ]))
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1680, "from": 1, "to": 70},
         {"n": 2, "timeSec": 1440, "from": 71, "to": 108},
     ], tasks)
@@ -966,14 +966,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(lecture(title, module, fname, src_name, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1920, "from": 1, "to": 36},
         {"n": 2, "timeSec": 1680, "from": 37, "to": 68},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 3, "label": "Email"},
         {"n": 2, "timeSec": 3000, "from": 4, "to": 8, "label": "Academic Discussion"},
     ], [
@@ -1125,7 +1125,7 @@ INTERVIEWS = [
         ("Thank you for agreeing to participate. I'd like to ask you some questions about hobbies. To begin, do you have a hobby or interest that you regularly spend time doing?",
          "My hobby is landscape photography, which I engage in every weekend. I find it rewarding to explore parks and nature reserves, capturing the changing seasons and lighting conditions. This activity not only allows me to connect with the outdoors but also helps me develop technical skills in using my camera and editing software. Over time, I have built a small portfolio of images that I share with friends and family, and it serves as a creative outlet that balances my academic studies. The process of planning shoots and reviewing photos has become a relaxing routine that I look forward to regularly."),
         ("Thank you. If you were to select a new hobby, what would you choose and why?",
-         "If I were to pick up a new hobby, I would choose urban sketching. The main reason is that it combines creativity with exploration. I enjoy discovering new places in my city, and sketching would allow me to capture those moments in a personal, artistic way. It is also a relaxing activity that doesn't require expensive equipment—just a sketchbook and pen. Plus, it encourages me to slow down and observe details I might otherwise miss in my daily routine. This hobby would help me unwind while fostering a deeper connection to my surroundings."),
+         "If I were to pick up a new hobby, I would choose urban sketching. The main reason is that it combines creativity with exploration. I enjoy discovering new places in my city, and sketching would allow me to capture those moments in a personal, artistic way. It is also a relaxing activity that doesn't require expensive equipment-just a sketchbook and pen. Plus, it encourages me to slow down and observe details I might otherwise miss in my daily routine. This hobby would help me unwind while fostering a deeper connection to my surroundings."),
         ("Interesting. Now tell me what might prevent you from starting this new pastime.",
          "There are a few key factors that could hinder me from beginning this new hobby. First, time constraints are a major barrier; as a university student, my schedule is packed with classes, assignments, and part-time work, leaving little room for additional activities. Second, financial considerations might pose a challenge, especially if the hobby requires expensive equipment or materials, which could strain my budget. Lastly, a lack of initial motivation or support from peers could make it difficult to stay committed, as starting something new often feels daunting without encouragement."),
         ("Great. Some people believe it is better to have one interest outside of work or school that you dedicate yourself to rather than multiple smaller ones. Do you agree or disagree? Why?",
@@ -1212,15 +1212,15 @@ if __name__ == "__main__":
     dump("2025-08-19-listening.json", build_listening())
     dump("2025-08-19-writing.json", build_writing())
     dump("2025-08-19-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-08-19-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-08-19-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
     dump("2025-08-19-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", 4, 4))
+        ID + "-s4", TITLE + " · Nói Form 4", 4, 4))
     dump("2025-08-19-speaking-f5.json", build_speaking(
-        ID + "-s5", TITLE + " · 口语 Form 5", None, 5))
+        ID + "-s5", TITLE + " · Nói Form 5", None, 5))
     dump("2025-08-19-speaking-f6.json", build_speaking(
-        ID + "-s6", TITLE + " · 口语 Form 6", None, 6))
+        ID + "-s6", TITLE + " · Nói Form 6", None, 6))
     copy_audio()

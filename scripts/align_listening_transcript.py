@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 CACHE = ROOT / "scripts/.whisper_cache"
 
-# argv: [test] [model]  — also accept legacy: python align.py tiny  (test=1)
+# argv: [test] [model]  - also accept legacy: python align.py tiny  (test=1)
 _args = sys.argv[1:]
 if _args and _args[0].isdigit():
     TEST = int(_args[0])
@@ -31,7 +31,7 @@ TEST_ID = f"cambridge-21-test-{TEST}"
 
 
 def tok(s):
-    return re.findall(r"[a-z0-9']+", s.lower().replace("£", " ").replace("–", " ").replace("—", " "))
+    return re.findall(r"[a-z0-9']+", s.lower().replace("£", " ").replace("–", " ").replace("-", " "))
 
 
 def align_sentences(sentences, words, audio_dur=None):

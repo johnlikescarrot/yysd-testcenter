@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-// ponytail: assert 听力绝密套卷2 is 40 keyed questions
+// ponytail: assert thính giác tuyệt mật che đậy cuộn lại 2 is 40 keyed questions
 var fs = require("fs");
 var path = require("path");
 var root = path.join(__dirname, "..");
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
 var html = fs.readFileSync(path.join(root, "library/mock/cambridge-listening/secret-set-2.html"), "utf8");
-must(html.indexOf('exam:title" content="绝密套卷2（听力）"') >= 0, "title meta");
+must(html.indexOf('exam:title" content=" tuyệt mật che đậy cuộn lại 2(Nghe hiểu)"') >= 0, "title meta");
 must(html.indexOf("secret-set-2-map.png") >= 0, "map ref");
 must(html.indexOf("secret-set-2-audio1.mp3") >= 0, "audio1");
-must(html.indexOf("绝密套卷1") < 0, "leftover 套卷1");
+must(html.indexOf(" tuyệt mật che đậy cuộn lại 1") < 0, "leftover che đậy cuộn lại 1");
 ["1", "2", "3", "4"].forEach(function (n) {
   must(fs.existsSync(path.join(root, "library/mock/cambridge-listening/secret-set-2-audio" + n + ".mp3")), "audio" + n);
 });
@@ -33,7 +33,7 @@ TEST.sections.forEach(function (s) {
     g.questions.forEach(function (q) {
       got.push(q.answer[0]);
       must(q.answer.map(norm).indexOf(norm(q.answer[0])) >= 0, "self-grade Q" + q.no);
-      must(q.explain && q.explain.indexOf("定位") >= 0 && q.explain.length > 40, "explain Q" + q.no);
+      must(q.explain && q.explain.indexOf(" Xác định vị trí ") >= 0 && q.explain.length > 40, "explain Q" + q.no);
     });
   });
 });
@@ -45,7 +45,7 @@ var items = man.items || man;
 var hit = (items || []).filter(function (it) { return it.id === "secret-set-2"; });
 must(hit.length === 1, "manifest id");
 must(hit[0].subject === "cambridge-listening", "manifest subject");
-must(/绝密套卷2（听力）/.test(hit[0].title), "manifest title");
+must(/tuyệt mật che đậy cuộn lại 2(Nghe hiểu)/.test(hit[0].title), "manifest title");
 must(man.count === items.length, "count " + man.count + " vs " + items.length);
 
 console.log("check_secret_set_2_listening: ok");

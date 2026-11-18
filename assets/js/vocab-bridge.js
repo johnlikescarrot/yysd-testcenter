@@ -1,8 +1,8 @@
 /* =========================================================================
-   vocab-bridge.js — injected into vocab LIST iframes by exam.js
+   vocab-bridge.js - injected into vocab LIST iframes by exam.js
    Posts score + wrong words when the test results panel becomes visible.
    Also enforces per-question 20s limit (after audio) + 2s feedback auto-next.
-   ponytail: DOM scrape — works for new LISTs that follow template hooks;
+   ponytail: DOM scrape - works for new LISTs that follow template hooks;
    upgrade path: add ids/classes listed in scripts/verify_vocab_wrongword_hooks.py
    ========================================================================= */
 (function () {
@@ -19,7 +19,7 @@
   var autoNextTimer = null;
   var remaining = 0;
   var playWatchersReady = false;
-  // ponytail: one countdown per question — replay must not refresh the 20s
+  // ponytail: one countdown per question - replay must not refresh the 20s
   var countdownStarted = false;
 
   function resultsPanel() {
@@ -71,8 +71,8 @@
     }
     var userSpelling = cells[2].textContent.trim();
     var userMeaning = cells[3].textContent.trim();
-    if (userSpelling === "—") userSpelling = "";
-    if (userMeaning === "—") userMeaning = "";
+    if (userSpelling === "-") userSpelling = "";
+    if (userMeaning === "-") userMeaning = "";
     var spellColor = cells[2].style.color || "";
     var meanColor = cells[3].style.color || "";
     return {
@@ -96,32 +96,32 @@
     question = String(question || "").replace(/<[^>]+>/g, "").trim();
     correct = String(correct || "").trim();
     userAnswer = String(userAnswer || "").trim();
-    if (userAnswer === "未作答") userAnswer = "";
+    if (userAnswer === " Chưa trả lời ") userAnswer = "";
 
     var word = "";
     var meaning = "";
-    var dict = question.match(/听写[：:]\s*(.+)/);
+    var dict = question.match(/Nghe chép[: :]\s*(.+)/);
     if (dict) word = dict[1].trim();
 
-    var correctParts = correct.split(/\s*[—–]\s*/);
+    var correctParts = correct.split(/\s*[-–]\s*/);
     if (!word && correctParts[0]) word = correctParts[0].trim();
-    if (correctParts.length > 1) meaning = correctParts.slice(1).join(" — ").trim();
+    if (correctParts.length > 1) meaning = correctParts.slice(1).join(" - ").trim();
 
     if (!meaning) {
-      var meanM = question.match(/[「『](.+?)[」』]/);
+      var meanM = question.match(/[««](.+?)[»»]/);
       if (meanM) meaning = meanM[1];
     }
 
     var userSpelling = "";
     var userMeaning = "";
-    var spellM = userAnswer.match(/拼写[：:]\s*([^/]+)/);
-    var meanM2 = userAnswer.match(/含义[：:]\s*(.+)/);
+    var spellM = userAnswer.match(/đánh vần[: :]\s*([^/]+)/);
+    var meanM2 = userAnswer.match(/ý nghĩa[: :]\s*(.+)/);
     if (spellM) userSpelling = spellM[1].trim();
     if (meanM2) userMeaning = meanM2[1].trim();
     if (!userSpelling && !userMeaning && userAnswer) userSpelling = userAnswer;
 
     if (!word) word = (correctParts[0] || correct).trim();
-    if (!meaning) meaning = question.replace(/^辨析[：:]\s*/, "");
+    if (!meaning) meaning = question.replace(/^phân biệt và phân tích[: :]\s*/, "");
 
     if (!word) return null;
 
@@ -210,7 +210,7 @@
         book: book,
         wrongWords: wrongWords
       }, timingPayload()), "*");
-    } catch (e) { /* ponytail: iframe edge — parent may be unreachable */ }
+    } catch (e) { /* ponytail: iframe edge - parent may be unreachable */ }
   }
 
   function onResultsVisible() {
@@ -323,9 +323,9 @@
     el.id = "yysd-vocab-timer";
     el.setAttribute("aria-live", "polite");
     el.innerHTML =
-      '<div><span class="yysd-vocab-timer__label">剩余 </span>' +
+      '<div><span class="yysd-vocab-timer__label">phần còn lại </span>' +
       '<span class="yysd-vocab-timer__secs">20</span>' +
-      '<span class="yysd-vocab-timer__unit"> 秒</span></div>' +
+      '<span class="yysd-vocab-timer__unit"> giây</span></div>' +
       '<div id="yysd-vocab-timer-bar"><i></i></div>';
     var root = activeRoot();
     var progress = root && root.querySelector(".test-progress");
@@ -362,15 +362,15 @@
       el.classList.add("is-wait");
       el.classList.remove("is-low");
       if (label) label.textContent = "";
-      if (secsEl) secsEl.textContent = "听读音中…";
+      if (secsEl) secsEl.textContent = " cười cách phát âm Trung Quốc...";
       if (unit) unit.textContent = "";
       if (bar) bar.style.transform = "scaleX(1)";
       return;
     }
     el.classList.remove("is-wait");
-    if (label) label.textContent = "剩余 ";
+    if (label) label.textContent = " phần còn lại ";
     if (secsEl) secsEl.textContent = String(secs);
-    if (unit) unit.textContent = " 秒";
+    if (unit) unit.textContent = " giây ";
     el.classList.toggle("is-low", secs <= 5);
     if (bar) bar.style.transform = "scaleX(" + Math.max(0, secs / QUESTION_SECS) + ")";
   }

@@ -71,7 +71,7 @@
     <p id="score-line"></p>
     <p id="pct-line"></p>
     <div class="review" id="wrong-preview"></div>
-    <p><a class="btn" id="score-report" href="toefl-score.html">成绩单 Score Report</a>
+    <p><a class="btn" id="score-report" href="toefl-score.html">phiếu điểm hoặc bảng điểm Score Report</a>
       <a class="btn" id="back-zone" href="zone.html?zone=toefl&amp;s=listening">Return</a></p>
   </section>
 </div>
@@ -354,7 +354,7 @@
           if (act === "rest") { F.fillRest("listening", paperId, mode); view = "rest"; show(rest); return; }
         }
         var scored = Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ) : paper;
-        // wofo: 交卷先停在「生成成绩单」屏，点 View 才进成绩+解析合一页
+        // wofo: nộp bài thi trước dừng tồn tại«tạo ra phiếu điểm hoặc bảng điểm»xem |, điểm View khả năng tiến lên thành tích+phân tích hợp nhất đầu
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("listening", scored, {
             tasks: (scored.tasks || []).map(function (_, i) { return i; }),
@@ -417,7 +417,7 @@
           screens = T.screensOf(p);
           if (Lab) screens = Lab.clipScreens(p, screens, taskQ, taskEndQ, typeQ);
           if (!screens.length) throw new Error("Unable to load this task");
-          document.title = (p.title || "TOEFL Listening") + (mode === "mock" ? " · 模考" : " · 练习");
+          document.title = (p.title || "TOEFL Listening") + (mode === "mock" ? " · bắt chước đánh " : " · luyện tập ");
           document.getElementById("mode-tag").textContent = mode === "mock" ? "Mock" : "Practice";
           function goStart() {
             startModule(Lab ? Lab.firstModule(screens) : 1);

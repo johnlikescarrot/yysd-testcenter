@@ -51,7 +51,7 @@ function omniVoice() {
 async function dashscopeChat(messages, opts) {
   opts = opts || {};
   var key = apiKey();
-  if (!key) throw new Error("DASHSCOPE_API_KEY 未配置");
+  if (!key) throw new Error("DASHSCOPE_API_KEY chưa triển khai ");
   var body = {
     model: opts.model || chatModel(),
     messages: messages,
@@ -71,11 +71,11 @@ async function dashscopeChat(messages, opts) {
     body: JSON.stringify(body)
   });
   var data = await res.json();
-  if (!res.ok) throw new Error((data && data.error && data.error.message) || "DashScope 请求失败");
+  if (!res.ok) throw new Error((data && data.error && data.error.message) || "DashScope yêu cầu bị đánh bại ");
   var content = data && data.choices && data.choices[0] && data.choices[0].message
     ? data.choices[0].message.content
     : null;
-  if (content == null || content === "") throw new Error("AI 返回为空");
+  if (content == null || content === "") throw new Error("AI trở về làm trống không ");
   return { text: typeof content === "string" ? content : JSON.stringify(content), raw: data };
 }
 
@@ -87,7 +87,7 @@ async function streamChat(key, body) {
   });
   if (!res.ok) {
     var errBody = await res.text();
-    var msg = "DashScope 流式请求失败";
+    var msg = "DashScope chảy loại yêu cầu bị đánh bại ";
     try {
       var j = JSON.parse(errBody);
       msg = (j.error && j.error.message) || j.message || msg;
@@ -118,7 +118,7 @@ async function streamChat(key, body) {
       } catch (e) { /* skip partial */ }
     }
   }
-  if (!text && !audioB64) throw new Error("AI 流式返回为空");
+  if (!text && !audioB64) throw new Error("AI chảy loại trở về làm trống không ");
   return { text: text, audioBase64: audioB64 || null };
 }
 
@@ -126,7 +126,7 @@ function evidenceWritingAddon() {
   return (
     "\nEvidence-first (mandatory):\n" +
     "- Each criteriaNotes.* must quote a short student phrase as evidence.\n" +
-    "- Avoid vague praise like 「词汇丰富」without a quote.\n" +
+    "- Avoid vague praise like «biến thể của | làm phong phú»without a quote.\n" +
     "- promptVersion=" + PROMPT_VERSION + "\n"
   );
 }

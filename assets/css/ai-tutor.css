@@ -1,4 +1,4 @@
-/* AI 雅思老师 — product UI (preserve YYSD cream/navy) */
+/* AI IELTS giáo viên - product UI (preserve YYSD cream/navy) */
 
 .ai-tutor-page {
   --ai-ink: #102a4c;
@@ -438,7 +438,7 @@
   box-shadow: 0 0 0 4px rgba(180, 35, 24, 0.18);
   animation: ai-mic-pulse 1s ease-in-out infinite;
 }
-.ai-mic.is-on .ai-mic__label::after { content: "中…"; }
+.ai-mic.is-on .ai-mic__label::after { content: " trong..."; }
 @keyframes ai-mic-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }

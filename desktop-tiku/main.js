@@ -7,7 +7,7 @@ var os = require("os");
 var path = require("path");
 var { execFileSync, spawn } = require("child_process");
 
-app.setName("优益思达题库中心");
+app.setName(" xuất sắc lợi ích suy nghĩ đạt tới ngân hàng câu hỏi trung tâm ");
 var START_URL = process.env.YYSD_URL || "https://tiku.youyisida.com/?v=20261015prev1";
 var splashWin = null;
 var siteWin = null;
@@ -148,7 +148,7 @@ function downloadFile(url, dest, onProgress) {
 function installTarget() {
   var running = appBundlePath();
   if (running.indexOf("/Applications/") === 0 && running.indexOf("AppTranslocation") < 0) return running;
-  return "/Applications/优益思达国际课程中心.app";
+  return "/Applications/Trung tâm YYSD.app";
 }
 
 function bundleVersion(bundle) {
@@ -187,7 +187,7 @@ function applyUpdate(zipPath) {
 }
 
 function checkUpdate() {
-  // ponytail: 老师端不走学生桌面自动更新，避免被换成 HIT 客户端
+  // ponytail: giáo viên cuối không đi học sinh màn hình máy tính tự động thay cũ đổi mới, ngăn chặn chăn đổi lấy HIT máy khách
   return Promise.resolve(false);
 }
 
@@ -214,7 +214,7 @@ function reveal() {
 function loadSite() {
   shown = false;
   progress = 0;
-  splashLabel("系统预加载中");
+  splashLabel(" hệ thống ứng trước tải Trung Quốc ");
   sendProgress(6);
   startCreep();
   var url = START_URL + (START_URL.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now();
@@ -313,8 +313,8 @@ app.whenReady().then(function () {
   allowMic();
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     { role: "appMenu" },
-    { label: "查看", submenu: [
-      { label: "刷新", accelerator: "CmdOrCtrl+R", click: reloadSite },
+    { label: " xem xét ", submenu: [
+      { label: " cải tiến ", accelerator: "CmdOrCtrl+R", click: reloadSite },
       { type: "separator" },
       { role: "togglefullscreen" }
     ]},

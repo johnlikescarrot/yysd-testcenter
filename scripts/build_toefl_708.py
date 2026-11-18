@@ -9,12 +9,12 @@ from toefl_sent import scramble
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.8-问题已经修复/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.8-câu hỏi đã khôi phục/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-08/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-08"
 SET = "7.08"
-TITLE = "新托福 7.08"
+TITLE = " TOEFL mới 7.08"
 
 
 def dump(name, obj):
@@ -206,7 +206,7 @@ def build_reading():
     ])
     if n != 46:
         raise SystemExit("m2 cw expected next 46, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
         {"n": 2, "timeSec": 540, "from": 36, "to": 50},
     ], [
@@ -342,7 +342,7 @@ def build_reading():
         ]),
         t3,
         academic("The Domestication of Maize", 2, [
-            "Maize, also known as corn, is one of the world's most important crops. Scholars studying its domestication have debated about how a wild grass with limited utility transformed into a globally significant staple. The dominant theory, supported by genetic and archaeological evidence, posits that maize was domesticated from wild teosinte (a species that, like modern maize, belongs to the Zea genus) in southwestern Mexico roughly 9,000 years ago. Proponents argue that early cultivators selectively bred plants exhibiting desirable traits—larger kernels, reduced seed casings, and more robust cobs—thereby accelerating the cultivated plants' divergence from teosinte. This model is reinforced by analyses demonstrating a close genetic relationship between modern maize and specific southwest Mexican teosinte populations.",
+            "Maize, also known as corn, is one of the world's most important crops. Scholars studying its domestication have debated about how a wild grass with limited utility transformed into a globally significant staple. The dominant theory, supported by genetic and archaeological evidence, posits that maize was domesticated from wild teosinte (a species that, like modern maize, belongs to the Zea genus) in southwestern Mexico roughly 9,000 years ago. Proponents argue that early cultivators selectively bred plants exhibiting desirable traits-larger kernels, reduced seed casings, and more robust cobs-thereby accelerating the cultivated plants' divergence from teosinte. This model is reinforced by analyses demonstrating a close genetic relationship between modern maize and specific southwest Mexican teosinte populations.",
             "Alternative accounts have also been suggested. Some researchers propose a multiregional model, suggesting that while initial domestication occurred in Mexico, subsequent hybridization with other species of the Zea genus across Central America contributed to maize's eventual diversity. Another hypothesis highlights the possibility of protracted domestication, in which early foragers managed wild-growing teosinte long before fully domesticated maize emerged, blurring the boundary between cultivation and wild harvesting. Although consensus increasingly favors a single primary domestication event, ongoing discoveries continue to refine our understanding of one of the world's most transformative crops.",
         ], [
             q(46, 'Why does the author mention that wild teosinte had "limited utility"?', {
@@ -703,14 +703,14 @@ def build_listening():
             }, "A"),
         ]),
     ]
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 32},
         {"n": 2, "timeSec": 660, "from": 33, "to": 47},
     ], m1 + m2)
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email"},
         {"n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion"},
@@ -937,7 +937,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 7),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview"},
     ], tasks)

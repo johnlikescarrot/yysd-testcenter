@@ -9,14 +9,14 @@ export function checkHardGate(school: School, input: EvaluateInput): GateResult 
   const reasons: string[] = [];
   if (input.gpa < school.minGpa) {
     reasons.push(
-      `GPA ${input.gpa.toFixed(2)} 低于该校最低要求 ${school.minGpa.toFixed(2)}`
+      `GPA ${input.gpa.toFixed(2)} thấp hơn so với nên kiểm tra biến thể của thấp yêu cầu ${school.minGpa.toFixed(2)}`
     );
   }
   const hasLang =
     (input.toefl != null && input.toefl > 0) ||
     (input.ielts != null && input.ielts > 0);
   if (!hasLang && (school.minToefl != null || school.minIelts != null)) {
-    reasons.push("未提供 TOEFL/IELTS 成绩，无法通过语言硬门槛");
+    reasons.push(" chưa đề nghị TOEFL/IELTS Kết quả, không thể đi qua ngôn ngữ cứng bậc cửa ");
   } else {
     const toeflOk =
       school.minToefl == null ||
@@ -30,13 +30,13 @@ export function checkHardGate(school: School, input: EvaluateInput): GateResult 
         (input.toefl != null && toeflOk) || (input.ielts != null && ieltsOk);
       if (!anyPass) {
         if (input.toefl != null && school.minToefl != null && input.toefl < school.minToefl) {
-          reasons.push(`TOEFL ${input.toefl} 低于最低要求 ${school.minToefl}`);
+          reasons.push(`TOEFL ${input.toefl} thấp hơn so với biến thể của thấp yêu cầu ${school.minToefl}`);
         }
         if (input.ielts != null && school.minIelts != null && input.ielts < school.minIelts) {
-          reasons.push(`IELTS ${input.ielts} 低于最低要求 ${school.minIelts}`);
+          reasons.push(`IELTS ${input.ielts} thấp hơn so với biến thể của thấp yêu cầu ${school.minIelts}`);
         }
         if (reasons.length === 0) {
-          reasons.push("语言成绩未达到该校最低要求");
+          reasons.push(" ngôn ngữ thành tích chưa đạt tới nên kiểm tra biến thể của thấp yêu cầu ");
         }
       }
     }

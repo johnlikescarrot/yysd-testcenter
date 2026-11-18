@@ -1,24 +1,24 @@
 <!--
 ================================================================
-优益思达 · 词库学习 List 模版（与站内「词库学习」卡片/列表同一套界面）
+YYSD · kho từ học List biến thể của(biến thể của | trạm bên trong«kho từ học»thẻ/danh sách giống hệt che đậy bề mặt tiếp xúc)
 ================================================================
-用法：
-1. 用浏览器直接打开本文件 → 看到和线上一样的「卡片 / 列表」
-2. 只改下方 const wordData = [ ... ]; 里的单词
-3. 交给技术放入 library/study/vocab/ 并登记词库后，学生端书架也会读同一份 wordData
+cách dùng: 
+1. sử dụng trình duyệt trực tiếp mở văn bản này món → nhìn thấy biến thể cũ của trực tuyến giống của«thẻ / danh sách»
+2. chỉ thay đổi bên dưới const wordData = [ ... ]; biến thể của | của từ
+3. đưa công nghệ bỏ vào library/study/vocab/ và đăng ký kho từ hoàng hậu, học sinh cuối giá sách cũng có thể dấu phẩy giống hệt lượng từ cho quà tặng wordData
 
-平台只解析：const wordData = [ ... ];（必须以分号结尾）
-必填：word、meaning、acceptCN（2～4 个短义，检测用）
-建议：ipa、pos、exampleEn、exampleZh、collocations、root、synonyms、antonyms、examTag
-列表释义会自动去掉英语，只留中文；卡片保留完整详解和例句。
+nền tảng chỉ phân tích: const wordData = [ ... ];(phải biến thể cũ của dấu chấm phẩy kết thúc)
+nhất định lấp hoặc nhồi: word, meaning, acceptCN(2~4 dùng trong | ngắn công lý, phát hiện sử dụng)
+Gợi ý: ipa, pos, exampleEn, exampleZh, collocations, root, synonyms, antonyms, examTag
+danh sách nghĩa của cái gì đó có thể tự động loại bỏ tiếng Anh, chỉ biến thể cũ của ngôn ngữ Trung Quốc; thẻ giữ hoàn chỉnh giải thích chi tiết biến thể cũ của câu ví dụ 
 ================================================================
 -->
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 词库学习 List 模版</title>
+<title>YYSD · kho từ học List biến thể của</title>
 <style>
 /* Learn-only chrome from vocab-template (no quiz tabs). */
 .vl-page {
@@ -218,7 +218,7 @@
   .vl-word-table .col-ipa, .vl-word-table .col-pos { display: none; }
 }
 
-/* Quiz (template 闯关) */
+/* Quiz (template xông qua rào cản) */
 .vl-lives { display: flex; gap: 4px; font-size: 22px; }
 .vl-lives .heart { transition: 0.2s; }
 .vl-lives .heart.lost { opacity: 0.12; transform: scale(0.5); }
@@ -268,7 +268,7 @@
   border-radius: 16px;
   padding: 10px 14px;
   font-size: 16px;
-  ime-mode: disabled; /* legacy hint; Chrome ignores — JS strips CJK */
+  ime-mode: disabled; /* legacy hint; Chrome ignores - JS strips CJK */
 }
 .vl-spell-row input.spell-ok {
   border-color: #2d6b4f;
@@ -365,41 +365,41 @@
 </head>
 <body class="vl-page">
   <div class="vl-wrap">
-    <p class="vl-teacher-tip">教师预览：本页界面与站内「词库学习」一致。请只改源码里的 <code>wordData</code>，保存后刷新即可。</p>
-    <div class="vl-back"><span style="color:#2d6b4f;font-size:14px;font-weight:600">← 词库学习模版</span></div>
-    <div class="vl-app" id="vl-app"><div class="vl-state">正在加载…</div></div>
+    <p class="vl-teacher-tip">giáo viên xem trước: gốc đầu bề mặt tiếp xúc biến thể của | trạm bên trong«kho từ học»Thống nhất mời chỉ thay đổi mã nguồn biến thể của | của <code>wordData</code>, bảo tồn hoàng hậu cải tiến tương đương với </p>
+    <div class="vl-back"><span style="color:#2d6b4f;font-size:14px;font-weight:600">← kho từ học biến thể của</span></div>
+    <div class="vl-app" id="vl-app"><div class="vl-state">Đang tải...</div></div>
   </div>
 <script>
-/* ★ 只改这一段 wordData；平台入库也只读这一段 */
+/* ★ chỉ thay đổi này một đoạn wordData; nền tảng đi vào nhà kho cũng chỉ đọc này một đoạn */
 const wordData = [
   {
     "id": 1,
     "word": "include",
     "ipa": "/ɪnˈkluːd/ · /ɪnˈklud/",
     "pos": "v.",
-    "meaning": "v. ①包括，包含（把某人或某物算作整体的一部分）；②算入，计入。常用 include sb/sth in；including（包括…在内，后接被包括部分）；included（包括在内，常后置，如 tax included）。反义 exclude。",
-    "phrases": "include sb/sth in（把…包括在内）, include sth as（把…列为）, taxes included（含税）",
-    "example": "The price includes breakfast and dinner.（价格包含早餐和晚餐。）",
+    "meaning": "v. ① bao gồm, chứa(cầm một người nào đó có thể một vật gì đó coi như công nhân thực thể toàn bộ của phần); ② coi như đi vào, tính toán đi vào Thường dùng include sb/sth in; including(bao gồm...trong đó, hoàng hậu nhận chăn bao gồm phần); included(bao gồm trong đó, luôn luôn đặt sau, như tax included) Trái nghĩa exclude ",
+    "phrases": "include sb/sth in(hãy...bao gồm trong đó), include sth as(hãy...được phân loại là), taxes included(đã bao gồm thuế)",
+    "example": "The price includes breakfast and dinner.(giá chứa bữa sáng biến thể cũ của bữa tối )",
     "acceptCN": [
-      "包括",
-      "包含",
-      "算入"
+      " bao gồm ",
+      " chứa ",
+      " coi như đi vào "
     ],
     "collocations": [
       {
         "phrase": "include in",
-        "meaning": "把…包括在内"
+        "meaning": " hãy...bao gồm trong đó "
       },
       {
         "phrase": "taxes included",
-        "meaning": "含税"
+        "meaning": " đã bao gồm thuế "
       },
       {
         "phrase": "including",
-        "meaning": "包括…在内"
+        "meaning": " bao gồm...trong đó "
       }
     ],
-    "root": "in-(进入) + clud(关闭) → 关进里面 → 包括",
+    "root": "in-(đi vào) + clud(đóng) → ải núi tiến lên bên trong → bao gồm ",
     "synonyms": [
       "contain",
       "comprise"
@@ -408,44 +408,44 @@ const wordData = [
       "exclude"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": " Tiếng Anh THPT ",
       "frequency": 5,
-      "commonUsage": "包括",
-      "topic": "说明文"
+      "commonUsage": " bao gồm ",
+      "topic": " giải thích ngôn ngữ "
     },
     "exampleEn": "The price includes breakfast and dinner.",
-    "exampleZh": "价格包含早餐和晚餐。"
+    "exampleZh": " giá chứa bữa sáng biến thể cũ của bữa tối "
   },
   {
     "id": 2,
     "word": "empty",
     "ipa": "/ˈempti/",
     "pos": "adj. / v. / n.",
-    "meaning": "adj. ①空的，空无一人的；②空洞的，无意义的（empty promises）。v. 倒空，清空（empty the bin）。n. 空瓶，空箱。empty of（没有…）。反义 full。",
-    "phrases": "empty of（没有…）, empty the bin（倒垃圾）, empty promise（空头承诺）",
-    "example": "Please empty the waste bin after class.（下课后请把垃圾桶倒空。）",
+    "meaning": "adj. ① trống không của, không một bóng người của; ② hốc của, không cố ý công lý của(empty promises) v. làm trống, dọn dẹp(empty the bin) n. trống không chai, trống không hộp empty of(không có...) Trái nghĩa full ",
+    "phrases": "empty of(không có...), empty the bin(ngã rác), empty promise(giả tạo hứa)",
+    "example": "Please empty the waste bin after class.(tan học hoàng hậu mời cầm thùng rác làm trống )",
     "exampleEn": "Please empty the waste bin after class.",
-    "exampleZh": "下课后请把垃圾桶倒空。",
+    "exampleZh": " tan học hoàng hậu mời cầm thùng rác làm trống ",
     "acceptCN": [
-      "空的",
-      "倒空",
-      "空洞的"
+      " trống không của ",
+      " làm trống ",
+      " hốc của "
     ],
     "collocations": [
       {
         "phrase": "empty of",
-        "meaning": "没有…"
+        "meaning": " không có..."
       },
       {
         "phrase": "empty the bin",
-        "meaning": "倒垃圾"
+        "meaning": " ngã rác "
       },
       {
         "phrase": "empty promise",
-        "meaning": "空头承诺"
+        "meaning": " giả tạo hứa "
       }
     ],
-    "root": "与 full 相对；也可表空洞、缺乏内容",
+    "root": " và full tương đối; cũng có thể bề mặt bên ngoài hốc, thiếu nội dung ",
     "synonyms": [
       "vacant",
       "blank"
@@ -454,31 +454,31 @@ const wordData = [
       "full"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": " Tiếng Anh THPT ",
       "frequency": 4,
-      "commonUsage": "空的",
-      "topic": "日常"
+      "commonUsage": " trống không của ",
+      "topic": " Hằng ngày "
     }
   }
 ];
 
 function yysdMeaningForList(raw, accept) {
   var s = String(raw == null ? "" : raw).trim();
-  if (!s) return accept && accept.length ? accept.join("；") : "";
-  if (!/[A-Za-z]/.test(s) && !/(?:该词高中|须熟记|反义|同义|不规则|源自|易混|高考)/.test(s)) return s;
+  if (!s) return accept && accept.length ? accept.join("; ") : "";
+  if (!/[A-Za-z]/.test(s) && !/(?:nên biến thể cũ của | trường trung học phổ thông|phải học thuộc lòng|Trái nghĩa|đồng nghĩa|bất quy tắc|bắt nguồn từ|Dễ nhầm|Kỳ thi đại học)/.test(s)) return s;
 
-  s = s.replace(/[（(]([^）)]*)[）)]/g, function (_, inner) {
-    return /[A-Za-z]/.test(inner) ? "" : "（" + inner + "）";
+  s = s.replace(/[((]([^))]*)[))]/g, function (_, inner) {
+    return /[A-Za-z]/.test(inner) ? "" : "(" + inner + ")";
   });
-  s = s.split(/(?:该词高中|须熟记|注意词性|阅读完形|写作中准确|商业阅读|宗教用语已|核心义项为|源自|易混|高考|较正式|相当于)/)[0];
-  s = s.replace(/[。；;]?\s*(?:反义|同义|不规则)[:：]?[\s\S]*$/, "");
+  s = s.split(/(?:nên biến thể cũ của | trường trung học phổ thông|phải học thuộc lòng|chú ý đến loại từ|đọc hình thức tổng thể|viết Trung Quốc chính xác|kinh doanh đọc|tôn giáo cách chọn từ đã|Nghĩa cốt lõi là|bắt nguồn từ|Dễ nhầm|Kỳ thi đại học|so sánh trang trọng|tương đương với)/)[0];
+  s = s.replace(/[ ; ;]?\s*(?:Trái nghĩa|đồng nghĩa|bất quy tắc)[:: ]?[\s\S]*$/, "");
 
   var POS = /^(?:interj\.|modal(?:\s+v\.?)?|adj\.|adv\.|prep\.|conj\.|pron\.|num\.|art\.|int\.|det\.|aux\.|phr\.|pref\.|abbr\.|pl\.|vt\.|vi\.|n\.|v\.)/i;
   var out = "";
   var i = 0;
   while (i < s.length) {
     var prev = i === 0 ? " " : s.charAt(i - 1);
-    if (/[\s.、，；。/／]/.test(prev)) {
+    if (/[\s., , ;  / ]/.test(prev)) {
       var m = s.slice(i).match(POS);
       if (m) {
         out += m[0];
@@ -497,25 +497,25 @@ function yysdMeaningForList(raw, accept) {
   }
 
   out = out.replace(/[ \t]+/g, " ");
-  out = out.replace(/（[^）]*）/g, function (full, off, str) {
+  out = out.replace(/([^)]*)/g, function (full, off, str) {
     var j = off - 1;
     while (j >= 0 && str.charAt(j) === " ") j -= 1;
     if (j >= 0 && /[\u4e00-\u9fff]/.test(str.charAt(j))) return full;
     return "";
   });
-  out = out.replace(/\s+([。；;，、])/g, "$1");
-  out = out.replace(/([。；;，、]) +/g, "$1");
+  out = out.replace(/\s+([ ; ;, , ])/g, "$1");
+  out = out.replace(/([ ; ;, , ]) +/g, "$1");
   out = out.replace(/(^|[^.\u4e00-\u9fff])\s*\/\s*(?=[^.\u4e00-\u9fff]|$)/g, "$1");
-  out = out.replace(/[。；;，、]{2,}/g, function (x) { return /。/.test(x) ? "。" : x.charAt(0); });
-  out = out.replace(/(?:名词|动词|形容词|副词|介词)[。；;\s]*$/g, "");
+  out = out.replace(/[ ; ;, , ]{2,}/g, function (x) { return / /.test(x) ? " " : x.charAt(0); });
+  out = out.replace(/(?:Danh từ|Động từ|Tính từ|Trạng từ|giới từ)[ ; ;\s]*$/g, "");
   out = out.replace(/\s{2,}/g, " ");
-  out = out.replace(/^\s*[。；;，、]+|[。；;，、\s]+$/g, "");
+  out = out.replace(/^\s*[ ; ;, , ]+|[ ; ;, , \s]+$/g, "");
   out = out.replace(/([a-z])\.\s+/gi, "$1. ");
   out = out.trim();
-  if (out && !/[。！？；]$/.test(out)) out += "。";
+  if (out && !/[ ! ? ; ]$/.test(out)) out += " ";
 
   var cjk = (out.match(/[\u4e00-\u9fff]/g) || []).length;
-  if (cjk < 2) return accept && accept.length ? accept.join("；") : s;
+  if (cjk < 2) return accept && accept.length ? accept.join("; ") : s;
   return out;
 }
 
@@ -525,7 +525,7 @@ function yysdMeaningForList(raw, accept) {
   var words = (wordData || []).filter(function (w) {
     return w && String(w.word || "").trim() && String(w.meaning || "").trim();
   });
-  var meta = { title: "自定义 List", stageLabel: "模版" };
+  var meta = { title: " tùy chỉnh List", stageLabel: " biến thể của " };
   var state = {
     learnView: "card",
     learnIdx: 0,
@@ -552,7 +552,7 @@ function yysdMeaningForList(raw, accept) {
   function shell(inner) {
     app.innerHTML =
       '<div class="vl-top-bar">' +
-        '<div class="vl-brand">优益思达 · <span>词库学习</span></div>' +
+        '<div class="vl-brand">YYSD · <span>kho từ học</span></div>' +
         '<div class="vl-list-badge">' + esc(meta.stageLabel) + "</div>" +
       "</div>" +
       '<div class="vl-info-row"><div id="counter"></div></div>' +
@@ -561,9 +561,9 @@ function yysdMeaningForList(raw, accept) {
   function tabsHtml() {
     return '<div class="vl-view-tabs" id="learnViewTabs">' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "card" ? " active" : "") +
-        '" data-v="card">卡片</button>' +
+        '" data-v="card">thẻ</button>' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "list" ? " active" : "") +
-        '" data-v="list">列表</button></div>';
+        '" data-v="list">danh sách</button></div>';
   }
   function bindChrome() {
     var tabs = document.getElementById("learnViewTabs");
@@ -589,7 +589,7 @@ function yysdMeaningForList(raw, accept) {
     var blurMeaning = state.blurMeaningList;
     shell("");
     document.getElementById("counter").innerHTML =
-      esc(meta.title) + " · 列表总览 <strong>" + words.length + "</strong> 词 · 点击一行进入卡片";
+      esc(meta.title) + " · danh sách cái nhìn tổng quan <strong>" + words.length + "</strong> Từ · nhấn đảng đi vào thẻ ";
     var rows = words.map(function (w, i) {
       return '<tr class="word-row" data-i="' + i + '">' +
         '<td class="w-no">' + (i + 1) + "</td>" +
@@ -600,19 +600,19 @@ function yysdMeaningForList(raw, accept) {
           esc(yysdMeaningForList(w.meaning, w.acceptCN)) + "</span></td>" +
         '<td class="col-speak">' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(w.word) +
-            '" data-accent="1" style="padding:6px 8px;font-size:12px">英</button> ' +
+            '" data-accent="1" style="padding:6px 8px;font-size:12px">Anh</button> ' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(w.word) +
-            '" data-accent="2" style="padding:6px 8px;font-size:12px">美</button></td></tr>';
+            '" data-accent="2" style="padding:6px 8px;font-size:12px">Hoa Kỳ</button></td></tr>';
     }).join("");
     document.getElementById("panel").innerHTML =
       '<div class="vl-toolbar">' + tabsHtml() +
         '<button type="button" class="vl-btn' + (blurWord ? " is-on" : "") + '" id="btnBlurWord">' +
-          (blurWord ? "显示单词" : "模糊单词") + "</button>" +
+          (blurWord ? " hiển thị từ " : " mơ hồ từ ") + "</button>" +
         '<button type="button" class="vl-btn' + (blurMeaning ? " is-on" : "") + '" id="btnBlurMeaning">' +
-          (blurMeaning ? "显示释义" : "模糊释义") + "</button></div>" +
+          (blurMeaning ? " hiển thị nghĩa của cái gì đó " : " mơ hồ nghĩa của cái gì đó ") + "</button></div>" +
       '<div style="overflow-x:auto"><table class="vl-word-table">' +
-        "<thead><tr><th>#</th><th>单词</th><th class=\"col-ipa\">音标</th>" +
-        "<th class=\"col-pos\">词性</th><th>释义</th><th>发音</th></tr></thead>" +
+        "<thead><tr><th>#</th><th>Từ vựng</th><th class=\"col-ipa\">ký hiệu phiên âm</th>" +
+        "<th class=\"col-pos\">Từ loại</th><th>Định nghĩa</th><th>Phát âm</th></tr></thead>" +
         "<tbody>" + rows + "</tbody></table></div>";
     bindChrome();
     app.querySelectorAll(".word-row").forEach(function (tr) {
@@ -639,10 +639,10 @@ function yysdMeaningForList(raw, accept) {
     var blur = state.blurAllOff ? false : state.blurOne;
     shell("");
     document.getElementById("counter").innerHTML =
-      esc(meta.title) + " · 第 <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " 词";
+      esc(meta.title) + " · Thứ <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " Từ ";
     var coll = "";
     if (w.collocations && w.collocations.length) {
-      coll = '<div class="vl-section"><div class="vl-section-title">搭配</div><div class="vl-collocs">' +
+      coll = '<div class="vl-section"><div class="vl-section-title">Cụm đi kèm</div><div class="vl-collocs">' +
         w.collocations.map(function (c) {
           return '<span class="vl-coloc">' + esc(c.phrase) +
             (c.meaning ? ' <span style="color:#6b7e78">→ ' + esc(c.meaning) + "</span>" : "") + "</span>";
@@ -651,13 +651,13 @@ function yysdMeaningForList(raw, accept) {
     var exam = "";
     if (w.examTag) {
       exam = '<div class="vl-section"><div class="vl-exam">' +
-        '<span><span class="lbl">来源 </span>' + esc(w.examTag.source || "") + "</span>" +
-        '<span><span class="lbl">话题 </span>' + esc(w.examTag.topic || "") + "</span>" +
-        '<span><span class="lbl">用法 </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
+        '<span><span class="lbl">Nguồn </span>' + esc(w.examTag.source || "") + "</span>" +
+        '<span><span class="lbl">chủ đề </span>' + esc(w.examTag.topic || "") + "</span>" +
+        '<span><span class="lbl">cách dùng </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
         "</div></div>";
     }
     var root = w.root
-      ? '<div class="vl-section"><div class="vl-section-title">词根拆解</div><div class="vl-root-text">' +
+      ? '<div class="vl-section"><div class="vl-section-title">gốc từ tháo rời</div><div class="vl-root-text">' +
         esc(w.root) + "</div></div>" : "";
     var ex = "";
     if (w.exampleEn) {
@@ -666,33 +666,33 @@ function yysdMeaningForList(raw, accept) {
         en = en.replace(new RegExp("\\b" + w.word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "gi"),
           function (m) { return '<span class="vl-hl">' + m + "</span>"; });
       } catch (e) {}
-      ex = '<div class="vl-section"><div class="vl-section-title">例句</div><div class="vl-ex-en">' + en +
+      ex = '<div class="vl-section"><div class="vl-section-title">Câu ví dụ</div><div class="vl-ex-en">' + en +
         "</div>" + (w.exampleZh ? '<div class="vl-ex-zh">' + esc(w.exampleZh) + "</div>" : "") + "</div>";
     }
     var syn = "";
     if ((w.synonyms && w.synonyms.length) || (w.antonyms && w.antonyms.length)) {
       syn = '<div class="vl-section">' +
-        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">同义：' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
-        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">反义：' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
+        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">đồng nghĩa: ' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
+        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">Trái nghĩa: ' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
         "</div>";
     }
     var atEnd = state.learnIdx >= words.length - 1;
     document.getElementById("panel").innerHTML =
       '<div class="vl-toolbar">' + tabsHtml() +
         '<button type="button" class="vl-btn" id="btnBlurAll">' +
-          (state.blurAllOff ? "恢复默认模糊" : "本课全部明文") + "</button>" +
-        '<button type="button" class="vl-btn" id="btnSpeakUk">🔊 英音</button>' +
-        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 美音</button></div>' +
+          (state.blurAllOff ? " khôi phục đồng ý ngầm mơ hồ " : " gốc môn học toàn bộ ghi rõ bằng văn bản ") + "</button>" +
+        '<button type="button" class="vl-btn" id="btnSpeakUk">🔊 Anh âm thanh</button>' +
+        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 Châu Mỹ âm thanh</button></div>' +
       '<div class="vl-word">' + esc(w.word) + "</div>" +
       '<div class="vl-ipa">' + esc(w.ipa || "") + "</div>" +
       (w.pos ? '<div class="vl-pos">' + esc(w.pos) + "</div>" : "") +
       '<div class="vl-meaning' + (blur ? " blurred" : "") + '" id="meaning">' +
-        esc(w.meaning) + '<span class="vl-hint">点击显示/隐藏</span></div>' +
+        esc(w.meaning) + '<span class="vl-hint">nhấn hiển thị/che giấu</span></div>' +
       exam + coll + ex + root + syn +
       '<div class="vl-nav-row">' +
-        '<button type="button" class="vl-btn" id="prev">← 上一个</button>' +
+        '<button type="button" class="vl-btn" id="prev">← cái trước</button>' +
         '<button type="button" class="vl-btn vl-btn-primary" id="next">' +
-          (atEnd ? "完成本 List" : "下一个 →") + "</button></div>";
+          (atEnd ? " hoàn thành gốc List" : " cái tiếp theo →") + "</button></div>";
     bindChrome();
     document.getElementById("btnSpeakUk").onclick = function () { speak(w.word, 1); };
     document.getElementById("btnSpeakUs").onclick = function () { speak(w.word, 2); };
@@ -705,7 +705,7 @@ function yysdMeaningForList(raw, accept) {
       if (state.learnIdx > 0) { state.learnIdx--; state.blurOne = true; render(); }
     };
     document.getElementById("next").onclick = function () {
-      if (atEnd) { alert("模版预览结束。把 wordData 填满后交给技术入库即可。"); return; }
+      if (atEnd) { alert(" biến thể của xem trước chấm dứt hãy wordData nhồi nhét hoàng hậu đưa công nghệ đi vào nhà kho tương đương với "); return; }
       state.learnIdx++;
       state.blurOne = true;
       render();
@@ -713,7 +713,7 @@ function yysdMeaningForList(raw, accept) {
   }
   function render() {
     if (!words.length) {
-      app.innerHTML = '<div class="vl-state">wordData 为空，请先填写单词</div>';
+      app.innerHTML = '<div class="vl-state">wordData làm trống không, mời trước điền vào biểu mẫu từ</div>';
       return;
     }
     if (state.learnView === "list") renderList();

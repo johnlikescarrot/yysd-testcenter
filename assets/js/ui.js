@@ -1,5 +1,5 @@
 /* =========================================================================
-   ui.js — premium motion: hero stagger, reveal, count-up, parallax, swap
+   ui.js - premium motion: hero stagger, reveal, count-up, parallax, swap
    ========================================================================= */
 (function () {
   "use strict";

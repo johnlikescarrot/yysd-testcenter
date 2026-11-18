@@ -14,7 +14,7 @@ export type CalibratedResult = {
   /** point estimate for ring display */
   probability: number;
   range: { low: number; high: number };
-  category: "冲刺" | "匹配" | "保底";
+  category: " chạy nước rút " | " phối hoặc kết hôn " | " hòa vốn ";
   evidence: EvidenceItem[];
   undergrad: ReturnType<typeof classifyUndergrad>;
   difficulty: ReturnType<typeof programDifficulty>;
@@ -69,18 +69,18 @@ export function calibrateAdmission(opts: {
   let caseSource: string;
   if (peerReal.length >= 5) {
     useCases = peerReal;
-    caseSource = `GradCafe 真实自报（同档 n=${peerReal.length}）`;
+    caseSource = `GradCafe thật tự thông báo(giống số n=${peerReal.length})`;
   } else if (realAll.length >= 5) {
     useCases = realAll;
-    caseSource = `GradCafe 真实自报（跨档混入，同档仅 ${peerReal.length}）`;
+    caseSource = `GradCafe thật tự thông báo(bước qua số lẻn vào, giống số hầu như ${peerReal.length})`;
   } else if (peerReal.length + peerSynth.length >= 5) {
     useCases = [...peerReal, ...peerSynth];
-    caseSource = `真实 ${peerReal.length} + 合成同档 ${peerSynth.length}（真实样本不足）`;
+    caseSource = `thật ${peerReal.length} + tổng hợp giống số ${peerSynth.length}(thật mẫu không đủ)`;
   } else {
     useCases = cases.length ? cases : [];
     caseSource = useCases.length
-      ? "案例不足，混用全库样本（可信度低）"
-      : "无可用案例，仅用选择性模型";
+      ? " vụ việc không đủ, bùn sử dụng tất cả nhà kho mẫu(mức độ đáng tin cậy thấp)"
+      : " không thể sử dụng vụ việc, hầu như sử dụng có tính chọn lọc mô hình ";
   }
 
   let admitRate: number | null = null;
@@ -144,70 +144,70 @@ export function calibrateAdmission(opts: {
   const mid = Math.round((low + high) / 2);
 
   let category: CalibratedResult["category"];
-  if (gap >= 1 || mid < 35) category = "冲刺";
-  else if (mid >= 60 && gap <= 0) category = "保底";
-  else category = "匹配";
-  if (mid < 30) category = "冲刺";
-  if (mid >= 65 && gap <= 0) category = "保底";
+  if (gap >= 1 || mid < 35) category = " chạy nước rút ";
+  else if (mid >= 60 && gap <= 0) category = " hòa vốn ";
+  else category = " phối hoặc kết hôn ";
+  if (mid < 30) category = " chạy nước rút ";
+  if (mid >= 65 && gap <= 0) category = " hòa vốn ";
 
   const evidence: EvidenceItem[] = [
     {
       type: "official_threshold",
-      title: "项目门槛（库内近似/公开口径）",
-      detail: `${school.name} ${school.program}：minGPA ${school.minGpa}，均分约 ${school.avgGpa}，TOEFL≥${school.minToefl ?? "—"}，IELTS≥${school.minIelts ?? "—"}。备注：${school.admissionRequirements.slice(0, 160)}`,
-      weight: "硬约束",
+      title: " mục bậc cửa(nhà kho bên trong tương tự/mở lỗ khoan)",
+      detail: `${school.name} ${school.program}: minGPA ${school.minGpa}, chia cân trong cân đĩa hoặc trên cân ${school.avgGpa}, TOEFL≥${school.minToefl ?? "-"}, IELTS≥${school.minIelts ?? "-"} cột ghi chú: ${school.admissionRequirements.slice(0, 160)}`,
+      weight: " cứng hạn chế ",
     },
   ];
 
   if (school.admitRateOfficial != null) {
     evidence.push({
       type: "official_admit_rate",
-      title: "公开/近似录取率（可引用）",
-      detail: `约 ${(school.admitRateOfficial * 100).toFixed(0)}%（${school.admitRateYear ?? "年份未标"}）。${school.admitRateSource ?? ""}。注意：多为项目/学院口径近似，非个人保证。`,
-      weight: "参考",
+      title: " mở/tương tự tỷ lệ chấp nhận(có thể trích dẫn)",
+      detail: `cân trong cân đĩa hoặc trên cân ${(school.admitRateOfficial * 100).toFixed(0)}%(${school.admitRateYear ?? " năm cụ thể chưa đánh dấu "}) ${school.admitRateSource ?? ""} Lưu ý: nhiều làm mục/trường cao đẳng lỗ khoan tương tự, viết tắt của cá nhân bảo đảm `,
+      weight: " tham khảo ",
     });
   }
 
   if (school.admitRateGradcafe != null && school.gradcafeSampleSize) {
     evidence.push({
       type: "gradcafe_rate",
-      title: "GradCafe 自报样本录取率",
-      detail: `本项目库内 GradCafe 样本 n=${school.gradcafeSampleSize}，自报录取率约 ${(school.admitRateGradcafe * 100).toFixed(0)}%。自报有幸存者偏差，仅作旁证。`,
-      weight: "旁证",
+      title: "GradCafe tự thông báo mẫu tỷ lệ chấp nhận ",
+      detail: `gốc mục nhà kho bên trong GradCafe mẫu n=${school.gradcafeSampleSize}, tự vé vào kỳ thi hoàng gia lấy tỉ lệ cân trong cân đĩa hoặc trên cân ${(school.admitRateGradcafe * 100).toFixed(0)}% tự thông báo may mắn thay tồn tại người mà thiên lệch, hầu như công nhân bằng chứng gián tiếp `,
+      weight: " bằng chứng gián tiếp ",
     });
   }
 
   evidence.push(
     {
       type: "selectivity",
-      title: "选择性与本科档次差",
-      detail: `本科「${undergrad.label}」(${undergrad.score}/5) vs 项目「${difficulty.label}」(${difficulty.score}/5)，档次差 gap=${gap}（>0 为冲刺）。依据：${undergrad.source} + ${difficulty.source}`,
-      weight: "主权重",
+      title: " có tính chọn lọc biến thể của | khóa học đại học hạng sự khác biệt ",
+      detail: `khóa học đại học«${undergrad.label}»(${undergrad.score}/5) vs mục«${difficulty.label}»(${difficulty.score}/5), hạng sự khác biệt gap=${gap}(>0 làm chạy nước rút) dựa vào: ${undergrad.source} + ${difficulty.source}`,
+      weight: " chủ quyền lặp lại ",
     },
     {
       type: "major_fit",
-      title: "专业匹配",
-      detail: `${major.label}（fit=${major.score}）。申请人专业：${input.undergradMajor} → 目标 field=${school.field}`,
-      weight: "中",
+      title: " chuyên môn phối hoặc kết hôn ",
+      detail: `${major.label}(fit=${major.score}) người nộp đơn chuyên môn: ${input.undergradMajor} → mục tiêu field=${school.field}`,
+      weight: " trong ",
     },
     {
       type: "peer_cases",
-      title: "案例样本",
-      detail: `${caseSource}。使用 n=${useCases.length}${admitRate != null ? `，同池录取率约 ${(admitRate * 100).toFixed(0)}%` : ""}。真实案例优先于合成脱敏样本。`,
-      weight: peerReal.length >= 5 ? "中高" : realN >= 5 ? "中" : "低",
+      title: " vụ việc mẫu ",
+      detail: `${caseSource} Sử dụng n=${useCases.length}${admitRate != null ? `, giống ao tỷ lệ chấp nhận cân trong cân đĩa hoặc trên cân ${(admitRate * 100).toFixed(0)}%` : ""} thật vụ việc có ưu tiên đi tổng hợp giảm mẫn cảm mẫu `,
+      weight: peerReal.length >= 5 ? " Trung Quốc cao " : realN >= 5 ? " trong " : " thấp ",
     },
     {
       type: "profile",
-      title: "成绩与材料信号",
-      detail: `GPA ${input.gpa}（相对均分 ${gpaDelta >= 0 ? "+" : ""}${gpaDelta.toFixed(2)}）；语言 TOEFL ${input.toefl ?? "—"} / IELTS ${input.ielts ?? "—"}；简历信号 research=${researchN}, papers=${paperN}, internships=${internN}`,
-      weight: "中",
+      title: " thành tích biến thể của | liệu tín hiệu ",
+      detail: `GPA ${input.gpa}(tương đối chia ${gpaDelta >= 0 ? "+" : ""}${gpaDelta.toFixed(2)}); ngôn ngữ TOEFL ${input.toefl ?? "-"} / IELTS ${input.ielts ?? "-"}; sơ yếu lý lịch tín hiệu research=${researchN}, papers=${paperN}, internships=${internN}`,
+      weight: " trong ",
     },
     {
       type: "disclaimer",
-      title: "非官方声明",
+      title: " không chính thức phát biểu ",
       detail:
-        "本结果为顾问口径估算（冲刺/匹配/保底 + 区间），不是院校官方个人录取决定。GradCafe 为申请人自报；公开录取率为历史/近似统计。录取还取决于推荐信、文书、套磁、名额与当年竞争池。",
-      weight: "必读",
+        " gốc kết trái làm cố vấn lỗ khoan sự đánh giá(chạy nước rút/phối hoặc kết hôn/hòa vốn + khu vực giới hạn), không phải trường cao đẳng chính phủ cá nhân chấp nhận ứng viên vượt kỳ thi đầu vào quyết định GradCafe làm người nộp đơn tự thông báo; mở tỷ lệ chấp nhận làm lịch sử/tương tự thống kê chấp nhận ứng viên vượt kỳ thi đầu vào vẫn phụ thuộc vào thư giới thiệu, tài liệu, tạo mối quan hệ tốt với ai đó, chỉ tiêu biến thể của | những ngày đó cạnh tranh ao ",
+      weight: " nhất định dấu phẩy ",
     }
   );
 

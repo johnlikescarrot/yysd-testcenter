@@ -15,7 +15,7 @@ if (!key) {
 function looksTruncated(text) {
   var t = (text || "").trim();
   if (!t || t.length < 12) return { bad: true, reason: "too-short" };
-  // still in exam instructions — dialogue not reached yet in this window
+  // still in exam instructions - dialogue not reached yet in this window
   if (/now listen carefully|look at questions|you will hear|answer questions|transfer your answers|this is the ielts/i.test(t) &&
       !/\b(hello|hi[, ]|good morning|excuse me)\b/i.test(t)) {
     return { bad: false, reason: "still-instructions", retry: true };

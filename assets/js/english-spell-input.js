@@ -1,4 +1,4 @@
-/* english-spell-input.js — block Chinese IME English autocomplete on spell fields */
+/* english-spell-input.js - block Chinese IME English autocomplete on spell fields */
 (function () {
   "use strict";
 
@@ -198,7 +198,7 @@
 
     function warn(msg) {
       if (locked()) return;
-      if (opts.onWarn) opts.onWarn(msg || "请切换到英文输入法后再拼写");
+      if (opts.onWarn) opts.onWarn(msg || " mời chuyển đổi đến tiếng Anh phương pháp nhập hoàng hậu lại đánh vần ");
     }
 
     function imeViolation() {
@@ -214,7 +214,7 @@
 
     el.addEventListener("compositionend", function () {
       composing = false;
-      // ponytail: Chinese IME English联想 commits here — discard whole composition
+      // ponytail: Chinese IME English Liên tưởng commits here - discard whole composition
       if (el.value !== composeBase) {
         el.value = composeBase;
         warn();
@@ -227,7 +227,7 @@
       if (t.indexOf("delete") === 0) return;
       if (BLOCK_TYPES[t]) {
         e.preventDefault();
-        warn(t.indexOf("Paste") >= 0 ? "拼写题不支持粘贴" : undefined);
+        warn(t.indexOf("Paste") >= 0 ? " đánh vần chủ đề không thể chịu đựng được cầm dán " : undefined);
         if (t.indexOf("Composition") >= 0 || t === "insertCompositionText" || t === "insertFromComposition") {
           imeViolation();
         }
@@ -247,7 +247,7 @@
 
     el.addEventListener("paste", function (e) {
       e.preventDefault();
-      warn("拼写题不支持粘贴");
+      warn(" đánh vần chủ đề không thể chịu đựng được cầm dán ");
     });
 
     el.addEventListener("input", function () {

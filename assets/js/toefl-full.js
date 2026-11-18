@@ -1,4 +1,4 @@
-/* TOEFL full test — ETS Enhanced order, no scheduled break */
+/* TOEFL full test - ETS Enhanced order, no scheduled break */
 (function (w) {
   "use strict";
 
@@ -43,7 +43,7 @@
     return pack;
   }
 
-  // 一场模考四科共用一个 sid，成绩单才把四科算作同一场
+  // một sân phơi bắt chước đánh bốn ngành học dùng chung một dùng trong | sid, phiếu điểm hoặc bảng điểm khả năng cầm bốn ngành học coi như công nhân giống hệt sân phơi
   function useSid(sid) {
     try { sessionStorage.setItem("yysd:toefl-sid", String(sid)); } catch (e) {}
   }
@@ -72,7 +72,7 @@
     return "app/" + q;
   }
 
-  /* 全真模考从套题列表进，返回列表而非冲刺包 */
+  /* tất cả thật bắt chước đánh biến thể của | che đậy chủ đề danh sách tiến lên, trở về danh sách và viết tắt của chạy nước rút che phủ */
   function homeHubHref() {
     if (typeof location !== "undefined" && location.hostname === "app.youyisida.com") return "home.html";
     return "app/home.html";
@@ -224,7 +224,7 @@
     return href;
   }
 
-  /* 复盘页只有 sessionStorage 里这一份答卷，整场其余科目由页面自己按 sid 从模考历史重建 */
+  /* chơi lại ván cờ đầu chỉ có sessionStorage biến thể của | này một lượng từ cho quà tặng bài thi đã hoàn thành, toàn bộ sân phơi phần còn lại môn học theo trang bản thân nhấn sid biến thể của | bắt chước đánh lịch sử tái thiết */
   function reviewGo(skill, paper, payload) {
     stashReview(skill, paper, payload);
     go(reviewHref(skill));
@@ -279,7 +279,7 @@
     if (exit) exit.setAttribute("href", listBack());
   }
 
-  /* 作废/退出 = 本场结束：上报完成，宽限不再允许续考（best-effort，失败不影响流程） */
+  /* trở nên không hiệu lực/Đăng xuất = gốc sân phơi chấm dứt: báo cáo lên cấp trên hoàn thành, gia hạn không còn cho phép tiếp tục đánh(best-effort, bị đánh bại không ảnh hưởng quy trình) */
   function examDone(id) {
     try {
       var A = w.YYSD_AUTH;

@@ -1,2 +1,2 @@
-/** Legacy helper — prefer calibrateAdmission */
+/** Legacy helper - prefer calibrateAdmission */
 export { calibrateAdmission } from "./calibrate";

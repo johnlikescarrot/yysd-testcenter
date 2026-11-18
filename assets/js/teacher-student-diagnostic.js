@@ -7,8 +7,8 @@
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.addEventListener("click", function () { T.logout(); });
 
-  var LEVEL = { high_school: "高中", cet4: "四级", ielts: "雅思" };
-  var RATING = { excellent: "优秀", good: "良好", weak: "需加强" };
+  var LEVEL = { high_school: " trường trung học phổ thông ", cet4: " cấp 4 ", ielts: " IELTS " };
+  var RATING = { excellent: " xuất sắc ", good: " tốt ", weak: " yêu cầu củng cố " };
   var COLORS = { high_school: "#2c3e6b", cet4: "#c8963e", ielts: "#3a7d5a" };
 
   function esc(s) {
@@ -27,7 +27,7 @@
 
   var id = Number(new URLSearchParams(location.search).get("id") || 0);
   if (!id) {
-    root.innerHTML = '<p class="diag-msg">缺少学生 ID</p><a href="teacher-diagnostic.html">返回总览</a>';
+    root.innerHTML = '<p class="diag-msg">thiếu học sinh ID</p><a href="teacher-diagnostic.html">trở về cái nhìn tổng quan</a>';
     return;
   }
 
@@ -38,7 +38,7 @@
     });
     return ["high_school", "cet4", "ielts"].map(function (lv) {
       var s = map[lv];
-      if (!s) return "<td>—</td>";
+      if (!s) return "<td>-</td>";
       return (
         "<td>" +
         esc(pct(s.accuracy)) +
@@ -51,11 +51,11 @@
 
   function mistakesTable(mistakes) {
     if (!mistakes || !mistakes.length) {
-      return '<p class="diag-lead">本次无错题记录</p>';
+      return '<p class="diag-lead">gốc tiếp theo không có lỗi lời đề từ khắc gỗ</p>';
     }
     return (
       '<div class="diag-table-wrap"><table class="diag-table"><thead><tr>' +
-      "<th>单词</th><th>词库</th><th>题型</th><th>作答</th><th>正确</th></tr></thead><tbody>" +
+      "<th>Từ vựng</th><th>kho từ</th><th>chủ đề khuôn</th><th>Trả lời</th><th>Đúng</th></tr></thead><tbody>" +
       mistakes
         .map(function (m) {
           return (
@@ -68,7 +68,7 @@
             "</td><td>" +
             esc(m.question_type || "") +
             '</td><td class="diag-ua">' +
-            esc(m.user_answer || "（空）") +
+            esc(m.user_answer || "(trống không)") +
             '</td><td class="diag-ca">' +
             esc(m.correct_answer) +
             "</td></tr>"
@@ -82,9 +82,9 @@
   function render(data) {
     var stu = data.student || {};
     var name = stu.displayName || stu.phone || "#" + stu.id;
-    document.getElementById("stu-title").textContent = name + " · 词汇诊断";
+    document.getElementById("stu-title").textContent = name + " · biến thể của | chẩn đoán ";
     document.getElementById("stu-sub").textContent =
-      "共 " + (data.sessions || []).length + " 次已完成测试";
+      " Tổng cộng " + (data.sessions || []).length + " tiếp theo đã hoàn thành kiểm tra ";
 
     var trend = data.trend || {};
     var series = ["high_school", "cet4", "ielts"].map(function (lv) {
@@ -94,7 +94,7 @@
         points: (trend[lv] || []).map(function (p) {
           return {
             y: p.accuracy,
-            xLabel: p.at ? new Date(p.at).toLocaleDateString("zh-CN") : ""
+            xLabel: p.at ? new Date(p.at).toLocaleDateString("vi-VN") : ""
           };
         })
       };
@@ -103,8 +103,8 @@
     var chartHtml = series.length
       ? (Charts.lineChartSVG
         ? Charts.lineChartSVG(series)
-        : '<p class="diag-lead">图表脚本未加载</p>')
-      : '<p class="diag-lead">暂无多次测试，无法绘制趋势</p>';
+        : '<p class="diag-lead">biểu đồ kịch bản chưa tải</p>')
+      : '<p class="diag-lead">tạm thời không có nhiều lần kiểm tra, không thể vẽ xu hướng</p>';
 
     var timeline = (data.sessions || [])
       .map(function (s, idx) {
@@ -116,21 +116,21 @@
           (idx === 0 ? " open" : "") +
           ">" +
           "<summary>" +
-          esc(s.tested_at ? new Date(s.tested_at).toLocaleString("zh-CN") : "—") +
-          " · 推荐 " +
-          esc(LEVEL[s.recommended_start_level] || s.recommended_start_level || "—") +
-          " · 错题 " +
+          esc(s.tested_at ? new Date(s.tested_at).toLocaleString("vi-VN") : "-") +
+          " · đề xuất " +
+          esc(LEVEL[s.recommended_start_level] || s.recommended_start_level || "-") +
+          " · Câu sai " +
           ((s.mistakes && s.mistakes.length) || 0) +
           "</summary>" +
           '<div class="diag-timeline__body">' +
           '<div class="diag-table-wrap"><table class="diag-table"><thead><tr>' +
-          "<th>高中</th><th>四级</th><th>雅思</th></tr></thead><tbody><tr>" +
+          "<th>trường trung học phổ thông</th><th>cấp 4</th><th>IELTS</th></tr></thead><tbody><tr>" +
           stageCells(s.stages) +
           "</tr></tbody></table></div>" +
           (s.advice_text
             ? '<p class="diag-advice">' + esc(s.advice_text) + "</p>"
             : "") +
-          "<h3 class=\"diag-h3\">错题明细</h3>" +
+          "<h3 class=\"diag-h3\">lỗi chủ đề rõ ràng và chi tiết</h3>" +
           mistakesTable(s.mistakes) +
           "</div></details>"
         );
@@ -139,15 +139,15 @@
 
     root.innerHTML =
       '<section class="diag-card diag-card--wide">' +
-      "<h2 class=\"diag-h2\">能力变化</h2>" +
-      '<p class="diag-lead">同一词库多次测试正确率趋势</p>' +
+      "<h2 class=\"diag-h2\">năng lực thay đổi</h2>" +
+      '<p class="diag-lead">giống hệt kho từ nhiều lần kiểm tra đúng tỉ lệ xu hướng</p>' +
       chartHtml +
       "</section>" +
       '<section class="diag-card diag-card--wide" style="margin-top:16px">' +
-      "<h2 class=\"diag-h2\">测试时间轴</h2>" +
-      (timeline || '<p class="diag-lead">尚无完成的诊断记录</p>') +
+      "<h2 class=\"diag-h2\">kiểm tra trục thời gian</h2>" +
+      (timeline || '<p class="diag-lead">chưa hoàn thành của chẩn đoán ghi chép</p>') +
       "</section>" +
-      '<p style="margin-top:16px"><a class="btn btn--ghost btn--sm" href="teacher-diagnostic.html">← 返回总览</a></p>';
+      '<p style="margin-top:16px"><a class="btn btn--ghost btn--sm" href="teacher-diagnostic.html">← trở về cái nhìn tổng quan</a></p>';
   }
 
   T.api("/api/teacher/student-diagnostic/" + id)
@@ -155,7 +155,7 @@
     .catch(function (e) {
       root.innerHTML =
         '<p class="diag-msg">' +
-        esc(e.message || "加载失败") +
-        '</p><a href="teacher-diagnostic.html">返回</a>';
+        esc(e.message || " Tải không thành công ") +
+        '</p><a href="teacher-diagnostic.html">Quay lại</a>';
     });
 })();

@@ -73,14 +73,14 @@ assert(CORE.shrineTotal() === 48, "shrineTotal 48");
 assert(CORE.regionRange("throne").start === 41 && CORE.regionRange("throne").end === 48, "throne range");
 
 const realmJs = fs.readFileSync(path.join(root, "assets/js/word-realm.js"), "utf8");
-assert(realmJs.includes("星屑修炼场") && realmJs.includes("mode=camp"), "camp CTA");
+assert(realmJs.includes(" ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi ") && realmJs.includes("mode=camp"), "camp CTA");
 assert(realmJs.includes("region=") && !realmJs.includes("vocabBooksForZone"), "story regions not books");
 assert(realmJs.includes("from=realm&shrine="), "shrine lesson link");
 assert(realmJs.includes("renderHub") && realmJs.includes("renderMap") && realmJs.includes("renderCodex"), "hub/map/codex");
 assert(realmJs.includes("wr-pin") && realmJs.includes("pinLayout"), "pin map");
 assert(realmJs.includes("view=map") || realmJs.includes('"map"'), "map view");
 assert(!realmJs.includes("wr-path"), "vertical path retired");
-assert(realmJs.includes("renderDream") && realmJs.includes("wr-ella") && realmJs.includes("任务板"), "ella+dream");
+assert(realmJs.includes("renderDream") && realmJs.includes("wr-ella") && realmJs.includes(" nhiệm vụ tấm "), "ella+dream");
 assert(realmJs.includes("wr-weekly") && realmJs.includes("wr-saga") && realmJs.includes("wr-fog-clear"), "juice+saga ui");
 assert(realmJs.includes("boardHTML") && realmJs.includes("bindMute"), "board+mute");
 assert(realmJs.includes("ash") && realmJs.includes("archive") && realmJs.includes("throne"), "six region UI");
@@ -92,11 +92,11 @@ assert(fs.readFileSync(path.join(root, "word-realm.html"), "utf8").includes("wor
 assert(fs.readFileSync(path.join(root, "vocab-lesson.html"), "utf8").includes("word-realm-sfx.js"), "lesson loads sfx");
 
 const story = fs.readFileSync(path.join(root, "assets/js/word-realm-story.js"), "utf8");
-assert(story.includes("weeklyThemes") && story.includes("深渊潮汐"), "weekly themes");
-assert(story.includes("灰烬群岛") && story.includes("镜书图书馆") && story.includes("遗忘王座"), "late chapter names");
+assert(story.includes("weeklyThemes") && story.includes(" vực thẳm thủy triều "), "weekly themes");
+assert(story.includes(" tro tàn nhóm đảo ") && story.includes(" gương viết tắt của | thư viện ") && story.includes(" quên ngai vàng "), "late chapter names");
 assert(!story.includes("chapter2Preview"), "ch2 teaser retired");
-assert(story.includes("prologue") && story.includes("acts") && story.includes("星屑以前"), "novel prologue");
-assert(story.includes("第一次遗忘战争") || story.includes("分崩离析"), "prologue lore beats");
+assert(story.includes("prologue") && story.includes("acts") && story.includes(" ngôi sao mảnh vụn trước đây "), "novel prologue");
+assert(story.includes(" lần đầu tiên quên chiến tranh ") || story.includes(" sụp đổ và tan rã "), "prologue lore beats");
 assert(STORY.prologue && Array.isArray(STORY.prologue.acts) && STORY.prologue.acts.length >= 8, "8+ prologue acts");
 assert(STORY.chronicle && STORY.chronicle.volumes && STORY.chronicle.volumes.length >= 8, "chronicle volumes");
 assert(realmJs.includes("renderPrologue") && realmJs.includes("renderLore") && realmJs.includes("prologue-v3"), "prologue UI");
@@ -122,8 +122,8 @@ assert(lesson.includes("markCleared") && lesson.includes("startShrine"), "shrine
 assert(lesson.includes('camp ? "camp"'), "camp xp reason");
 assert(lesson.includes("if (state.shrineId && CORE && !state.camp) CORE.markCleared"), "only shrine marks progress");
 assert(lesson.includes("createBattle") && lesson.includes("battleDamage") && lesson.includes("showDefeat"), "battle skin");
-assert(lesson.includes("vl-battle-hud") && lesson.includes("击破"), "battle HUD");
-assert(lesson.includes("showCutscene") && lesson.includes("Boss 战前") && lesson.includes("view=dream"), "boss cutscene + dream exit");
+assert(lesson.includes("vl-battle-hud") && lesson.includes(" đánh hỏng "), "battle HUD");
+assert(lesson.includes("showCutscene") && lesson.includes("Boss chiến đấu trước ") && lesson.includes("view=dream"), "boss cutscene + dream exit");
 
 // dream queue on clear
 assert(CORE.markCleared("shrine-01") === true || CORE.isCleared("shrine-01"), "clear 1");
@@ -133,7 +133,7 @@ const d = CORE.consumeDream("dream-4");
 assert(d && d.id === "dream-4" && !CORE.pendingDream(), "consume dream");
 assert(STORY.isBossShrine("shrine-08") && !STORY.isBossShrine("shrine-01"), "boss detect");
 
-// pilot: mist-only — clearing bosses does not open later regions
+// pilot: mist-only - clearing bosses does not open later regions
 for (var i = 5; i <= 8; i++) CORE.markCleared("shrine-" + String(i).padStart(2, "0"));
 assert(CORE.regionUnlocked("stone") === false, "stone stays locked after 08 (pilot)");
 assert(CORE.regionUnlocked("mist") === true, "mist still open after boss");
@@ -151,7 +151,7 @@ assert(b.enemyMaxHp === 8 && b.heroHp === 5 && b.enemy.name && b.defendNext === 
   assert(CORE.enemyFor(r).skin === r, "skin " + r);
 });
 
-assert(lesson.includes("function showDefeat") && lesson.includes("祠未点亮"), "defeat copy");
+assert(lesson.includes("function showDefeat") && lesson.includes(" nhà thờ chưa thắp sáng "), "defeat copy");
 const defeatSlice = lesson.slice(lesson.indexOf("function showDefeat"), lesson.indexOf("function campHrefSafe"));
 assert(!defeatSlice.includes("markCleared"), "defeat does not clear shrine");
 
@@ -162,7 +162,7 @@ const realmHtml = fs.readFileSync(path.join(root, "word-realm.html"), "utf8");
 assert(realmHtml.includes("word-realm-core.js") && realmHtml.includes("word-realm.js"), "realm shell");
 
 const zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
-assert(zone.includes("高中") || zone.includes("vocab-entry"), "homework bento");
+assert(zone.includes(" trường trung học phổ thông ") || zone.includes("vocab-entry"), "homework bento");
 // ponytail: zone primary entry is shelf; realm remains a standalone page
 assert(zone.includes("vocab-shelf.html"), "zone → shelf");
 assert(fs.existsSync(path.join(root, "word-realm.html")), "realm page still shipped");

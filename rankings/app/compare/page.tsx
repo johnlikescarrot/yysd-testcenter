@@ -4,12 +4,12 @@ import { prisma } from "@/lib/db";
 import { latestYear, getEdition } from "@/lib/queries";
 import { SYSTEMS, SYSTEM_ORDER, SYSTEM_TRACK, countryLabel, type SystemKey } from "@/lib/systems";
 
-export const metadata: Metadata = { title: "院校对比" };
+export const metadata: Metadata = { title: " trường cao đẳng so sánh " };
 export const dynamic = "force-dynamic";
 
 const PRESETS: { label: string; ids: string[] }[] = [
   {
-    label: "G5 样本",
+    label: "G5 mẫu ",
     ids: [
       "university-of-oxford",
       "university-of-cambridge",
@@ -18,7 +18,7 @@ const PRESETS: { label: string; ids: string[] }[] = [
     ],
   },
   {
-    label: "美前五样本",
+    label: " Châu Mỹ trước năm mẫu ",
     ids: [
       "massachusetts-institute-of-technology",
       "harvard-university",
@@ -27,7 +27,7 @@ const PRESETS: { label: string; ids: string[] }[] = [
     ],
   },
   {
-    label: "港三",
+    label: " Hồng Kông ba ",
     ids: ["the-university-of-hong-kong", "chinese-university-of-hong-kong", "hong-kong-university-of-science-and-technology"],
   },
 ];
@@ -49,7 +49,7 @@ export default async function ComparePage({ searchParams }: { searchParams: { id
 
   const ranks: Record<string, Record<SystemKey, string>> = {};
   for (const u of ordered) {
-    ranks[u.slug] = { qs: "—", the: "—", arwu: "—", usnews: "—" };
+    ranks[u.slug] = { qs: "-", the: "-", arwu: "-", usnews: "-" };
     for (const system of SYSTEM_ORDER) {
       const year = await latestYear(system);
       const edition = await getEdition(system, "world", year);
@@ -71,8 +71,8 @@ export default async function ComparePage({ searchParams }: { searchParams: { id
     <div className="space-y-5">
       <div>
         <p className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Compare board</p>
-        <h1 className="mt-1 text-2xl font-bold tracking-tight">对比盘</h1>
-        <p className="mt-2 text-sm text-[var(--muted)]">选 2–4 所，看四轨最新名次并排。</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight">so sánh đĩa</h1>
+        <p className="mt-2 text-sm text-[var(--muted)]">chọn 2–4 thực ra, chăm sóc bốn đường ray mới nhất vị trí trong bảng xếp hạng cạnh nhau </p>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -89,7 +89,7 @@ export default async function ComparePage({ searchParams }: { searchParams: { id
 
       <form method="get" action="/rankings/compare" className="panel text-sm">
         <div className="panel-head">
-          <span>勾选标的（最多 4）</span>
+          <span>chọn mục tiêu(tối đa 4)</span>
         </div>
         <div className="grid max-h-64 grid-cols-1 gap-0 overflow-y-auto sm:grid-cols-2">
           {suggestions.map((u) => (
@@ -106,7 +106,7 @@ export default async function ComparePage({ searchParams }: { searchParams: { id
         </div>
         <div className="border-t border-[var(--line)] p-3">
           <button type="submit" className="btn-ink">
-            刷新对比盘
+            cải tiến so sánh đĩa
           </button>
           <script
             dangerouslySetInnerHTML={{

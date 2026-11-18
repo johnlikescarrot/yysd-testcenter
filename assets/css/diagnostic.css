@@ -1,4 +1,4 @@
-/* diagnostic — Assessment Console (vocab placement) */
+/* diagnostic - Assessment Console (vocab placement) */
 
 :root {
   --diag-navy: #07192f;
@@ -16,7 +16,7 @@
   --diag-font: "IBM Plex Sans", "Noto Sans SC", "PingFang SC", "Helvetica Neue", sans-serif;
 }
 
-/* —— Exam shell —— */
+/* -- Exam shell -- */
 .diag-page {
   margin: 0;
   min-height: 100vh;
@@ -132,7 +132,7 @@
   padding-bottom: 48px;
 }
 
-/* —— Briefing / shared card —— */
+/* -- Briefing / shared card -- */
 .diag-brief,
 .diag-card {
   background: var(--diag-paper);
@@ -252,7 +252,7 @@
   color: var(--diag-navy);
 }
 
-/* —— Live session —— */
+/* -- Live session -- */
 .diag-session {
   animation: diag-fade 0.18s ease both;
 }
@@ -493,7 +493,7 @@
   margin-top: 10px;
 }
 
-/* —— Stage / complete —— */
+/* -- Stage / complete -- */
 .diag-stat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -547,7 +547,7 @@
 
 .diag-section-break .diag-kicker { margin-bottom: 6px; }
 
-/* —— Shared (report / mistakes / teacher) —— */
+/* -- Shared (report / mistakes / teacher) -- */
 .diag-card--wide { max-width: 920px; margin-left: auto; margin-right: auto; }
 .diag-h2 {
   font-family: var(--diag-font);

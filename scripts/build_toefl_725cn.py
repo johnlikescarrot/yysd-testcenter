@@ -9,12 +9,12 @@ from toefl_sent import scramble
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.25国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.25 Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-25/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-25"
 SET = "7.25"
-TITLE = "新托福 7.25 国内线下"
+TITLE = " TOEFL mới 7.25 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -213,7 +213,7 @@ def build_reading():
         ("wild", "wildlife"),
         ". Glaciers ",
         ("se", "serve"),
-        " as indicators of climate change—rapid melting signals shifts in global temperatures. Studying glaciers helps scientists understand past climate patterns and predict future environmental impacts, making them vital to global research.",
+        " as indicators of climate change-rapid melting signals shifts in global temperatures. Studying glaciers helps scientists understand past climate patterns and predict future environmental impacts, making them vital to global research.",
     ])
     tasks.append(t)
     tasks.append(academic("Dinosaur Feathers", 1, [
@@ -276,7 +276,7 @@ def build_reading():
     n += 5
     if n != 41:
         raise SystemExit("reading expected next id 41, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 600, "from": 1, "to": 10},
         {"n": 2, "timeSec": 1200, "from": 11, "to": 40},
     ], tasks)
@@ -381,13 +381,13 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(clip(typ, title, module, fname, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 2, "timeSec": 1440, "from": 1, "to": 16},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 2, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 840, "from": 3, "to": 4, "label": "Email"},
         {"n": 3, "timeSec": 1800, "from": 5, "to": 7, "label": "Academic Discussion"},
@@ -415,7 +415,7 @@ def build_writing():
         disc(5, "Business Ethics", "Professor Diaz", "diaz.png",
              "We've been discussing strategic growth in corporations. Businesses may often choose to expand globally or prefer instead to deepen local roots. Global growth offers access to new markets and new resources, but can dilute brand identity and strain resources. A local focus, on the other hand, builds community trust, adapts to regional needs, and strengthens customer loyalty. Do you think corporations should concentrate more on expansion or local business? Why?",
              [post("Claire", "kelly.png", "I think global expansion is vital for businesses. It unlocks opportunities, like broader talent pools and increased innovation. Most companies that I know seek to stay competitive in a connected world. While local focus has its strengths, going global builds resilience and relevance across cultures and economies."),
-              post("Paul", "andrew.png", "Focusing on local business practices supports regional economies and allows companies to tailor offerings to local needs. It builds trust, loyalty, and authenticity—qualities that global strategies can struggle to replicate. Sometimes, deep roots in one place can create more lasting impact than a broad reach across many.")],
+              post("Paul", "andrew.png", "Focusing on local business practices supports regional economies and allows companies to tailor offerings to local needs. It builds trust, loyalty, and authenticity-qualities that global strategies can struggle to replicate. Sometimes, deep roots in one place can create more lasting impact than a broad reach across many.")],
              [{"title": "Expand With Care",
                "text": "Corporations should concentrate more on careful global expansion because isolated local markets can shrink quickly when technology, suppliers, or customers move. Access to a wider talent pool and more than one economy reduces the risk that a single region's downturn will close the business. Claire is right that innovation often appears when teams compare different customer problems. Paul is also right that a company can lose its identity if it copies every market at once. The better path is therefore sequential expansion: keep a strong home operation, then enter a few related markets with products adapted to local rules rather than a generic brand. That approach uses global reach without abandoning the trust built nearby. Over time, a company that can sell and hire in more than one place is more resilient than one that depends entirely on a single community, even a loyal one."},
               {"title": "Deepen Local Roots",
@@ -425,7 +425,7 @@ def build_writing():
              [post("Kelly", "kelly.png", "I believe digital communication enhances relationships. It allows people to stay connected regardless of distance and time. Tools like video calls and instant messaging make it possible to maintain close relationships with friends and family who live far away."),
               post("Andrew", "andrew.png", "In my opinion, digital communication diminishes the quality of personal interactions. It often lacks the emotional depth and non-verbal cues of face-to-face conversations. People may feel more isolated and less emotionally connected despite frequent digital interactions.")],
              [{"title": "Distance Needs Tools",
-               "text": "Digital communication enhances relationships when distance or schedules would otherwise end them. A short video call can show a parent a child's face; a message can keep a friend included in daily news that would be forgotten if people waited for a yearly visit. Kelly is right that these tools make contact possible across time zones. Andrew's concern about missing tone and body language is real, so digital contact should not replace every meeting that can still happen in person. The harm appears when people sit together and look only at screens, or when a difficult conversation is reduced to a one-line text. Used as a supplement—planning a visit, sharing photographs, checking on someone quickly—digital tools protect relationships that geography would otherwise weaken. The impact is therefore positive if people treat online contact as a bridge rather than a complete substitute for being present."},
+               "text": "Digital communication enhances relationships when distance or schedules would otherwise end them. A short video call can show a parent a child's face; a message can keep a friend included in daily news that would be forgotten if people waited for a yearly visit. Kelly is right that these tools make contact possible across time zones. Andrew's concern about missing tone and body language is real, so digital contact should not replace every meeting that can still happen in person. The harm appears when people sit together and look only at screens, or when a difficult conversation is reduced to a one-line text. Used as a supplement-planning a visit, sharing photographs, checking on someone quickly-digital tools protect relationships that geography would otherwise weaken. The impact is therefore positive if people treat online contact as a bridge rather than a complete substitute for being present."},
               {"title": "Presence Still Matters",
                "text": "I agree with Andrew that digital communication often reduces the quality of personal relationships even when it increases their frequency. Messages are easy to send, so people may feel they have stayed in touch after a few emojis, while never having a conversation long enough to notice that a friend is struggling. Video calls help, but they still omit shared physical context and are easy to interrupt. Kelly is right that distance sometimes leaves no other option, and in those cases a call is better than silence. The problem is treating the easier option as equally good when a walk, a meal, or an unhurried talk is available. Relationships depend on attention, not only on contact counts. If digital tools become the default, people can become simultaneously reachable and lonely. Protecting regular face-to-face time, and using messages mainly to arrange it, keeps the technology from flattening the relationship."}]),
         disc(7, "Environmental Science", "Professor Diaz", "diaz.png",
@@ -601,8 +601,8 @@ if __name__ == "__main__":
     dump("2025-07-25-reading.json", build_reading())
     dump("2025-07-25-listening.json", build_listening())
     dump("2025-07-25-writing.json", build_writing())
-    dump("2025-07-25-speaking.json", build_speaking(ID, TITLE + " · 口语 Form 1", 1, 1))
-    dump("2025-07-25-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
-    dump("2025-07-25-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
-    dump("2025-07-25-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · 口语 Form 4", None, 4))
+    dump("2025-07-25-speaking.json", build_speaking(ID, TITLE + " · Nói Form 1", 1, 1))
+    dump("2025-07-25-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
+    dump("2025-07-25-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
+    dump("2025-07-25-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · Nói Form 4", None, 4))
     copy_audio()

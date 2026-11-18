@@ -703,7 +703,7 @@ def main():
             "set": "L-ANO" + n,
             "title": "L-ANO%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "通知",
+            "titleZh": " Thông báo ",
             "code": item["code"] or ("A%02d" % int(k)),
             "instruction": "Listen to an announcement.",
             "audio": "library/toefl/audio/bank-l-ano/" + audio_name,
@@ -713,7 +713,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-ano",
-        "title": "题块库 · 通知",
+        "title": " chủ đề cục nhà kho · Thông báo ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>考场 · 优益思达国际课程中心</title>
+  <title>phòng thi · Trung tâm YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/exam-viewer.css?v=20260722polish">
@@ -15,10 +15,10 @@
 
   <div class="viewer-bar" id="brand-bar">
     <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="viewer-bar__logo" aria-hidden="true">
-    <a href="index.html" class="back" id="back-btn">← 退出考场</a>
+    <a href="index.html" class="back" id="back-btn">← rút lui phòng thi</a>
     <div class="v-info">
       <div class="v-badges" id="v-badges" hidden></div>
-      <span class="v-title" id="v-title">加载中…</span>
+      <span class="v-title" id="v-title">tải Trung Quốc...</span>
       <span class="v-meta" id="v-meta"></span>
     </div>
     <div class="v-right">
@@ -60,7 +60,7 @@
     <textarea id="cdt-notepad-ta" class="cdt-notepad__ta" spellcheck="false" placeholder="Type your notes here. These notes are for your use only and are not seen by the examiner."></textarea>
   </aside>
 
-  <iframe class="viewer-frame" id="exam-frame" title="学习内容" allow="microphone"></iframe>
+  <iframe class="viewer-frame" id="exam-frame" title=" học nội dung " allow="microphone"></iframe>
 
   <div class="cdt-gate" id="cdt-gate" hidden>
     <div class="cdt-gate__panel cdt-gate__panel--pack" id="cdt-gate-pack" hidden>
@@ -87,15 +87,15 @@
 
     <!-- drill only · Chinese OK pre-exam · feeds paper .secbox -->
     <div class="cdt-gate__panel" id="cdt-gate-sections" hidden>
-      <h2 class="cdt-gate__title">选择练习部分</h2>
-      <p class="cdt-gate__pack-lead" id="cdt-gate-sections-lead">适合分项突破，可只练某几个部分；正向计时不施加额外压力。</p>
+      <h2 class="cdt-gate__title">chọn luyện tập phần</h2>
+      <p class="cdt-gate__pack-lead" id="cdt-gate-sections-lead">phù hợp mục phụ đột phá, có thể chỉ luyện tập một vài một vài phần; hướng về phía trước đo thời gian không tác động thêm áp lực </p>
       <div class="cdt-gate__sec-head">
-        <span id="cdt-gate-sec-label">选择练习部分：</span>
-        <button type="button" class="cdt-gate__sec-toggle" id="cdt-gate-sec-toggle">取消全选</button>
+        <span id="cdt-gate-sec-label">chọn luyện tập phần: </span>
+        <button type="button" class="cdt-gate__sec-toggle" id="cdt-gate-sec-toggle">Bỏ chọn tất cả</button>
       </div>
       <div class="cdt-gate__sec-list" id="cdt-gate-sec-list"></div>
-      <p class="cdt-gate__sec-err" id="cdt-gate-sec-err" hidden>请至少选择一个部分。</p>
-      <button type="button" class="cdt-gate__btn" id="cdt-gate-sec-ok">开始练习</button>
+      <p class="cdt-gate__sec-err" id="cdt-gate-sec-err" hidden>mời ít nhất chọn một dùng trong | phần </p>
+      <button type="button" class="cdt-gate__btn" id="cdt-gate-sec-ok">bắt đầu luyện tập</button>
     </div>
 
     <div class="cdt-gate__panel" id="cdt-gate-confirm" hidden>
@@ -168,7 +168,7 @@
   <div class="cdt-modal-mask cdt-submit-loading" id="cdt-submit-loading" hidden>
     <div class="cdt-submit-loading__card" role="status" aria-live="polite">
       <div class="cdt-submit-loading__spin" aria-hidden="true"></div>
-      <p class="cdt-submit-loading__text" id="cdt-submit-loading-text">正在加载成绩报告…</p>
+      <p class="cdt-submit-loading__text" id="cdt-submit-loading-text">đang ở tải thành tích thông báo...</p>
     </div>
   </div>
 

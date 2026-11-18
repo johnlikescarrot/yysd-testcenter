@@ -1,4 +1,4 @@
-/* vocab-lesson — Duolingo-mechanics shell inside YYSD brand (navy/gold/ivory) */
+/* vocab-lesson - Duolingo-mechanics shell inside YYSD brand (navy/gold/ivory) */
 :root {
   --vl-bg: #0f1c2e;
   --vl-panel: #162638;
@@ -408,7 +408,7 @@ html, body.vl-page {
   .vl-btn--primary { flex: 1.4; }
 }
 
-/* —— 词境噬词战（战斗皮） —— */
+/* -- biến thể cũ của | biên giới ngấu nghiến biến thể cũ của | chiến đấu(chiến đấu da) -- */
 .vl--battle .vl-main { justify-content: flex-start; padding-top: 0.25rem; }
 
 .vl-battle-hud {
@@ -752,7 +752,7 @@ html, body.vl-page {
 .vl-levelup__zh { margin: 0.25rem 0 0; color: var(--vl-muted); font-size: 0.88rem; }
 .vl-celebrate.is-levelup { box-shadow: 0 0 0 1px rgba(199,164,93,0.25); }
 
-/* Phase 1.5 — between-turn command gate */
+/* Phase 1.5 - between-turn command gate */
 .vl-turn {
   margin: 0.15rem 0 0.35rem;
   font-size: 0.85rem;

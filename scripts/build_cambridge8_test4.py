@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑8T4.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 8T4.docx")
 MAP_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_16.47.48-4e48c589-51ef-400b-82a9-01c1cf98d6cb.png"
@@ -30,10 +30,10 @@ TRANSPORT_SRC = Path(
     "__2026-07-01_16.48.11-adbd29ce-b181-4960-9373-582f4325b9a8.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test4 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test4 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test4 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test4 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS8 Test4 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS8 Test4 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS8 Test4 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS8 Test4 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-8-test-4.html"
@@ -58,7 +58,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -88,10 +88,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 3 听力", "剑桥雅思8 Test 4 听力"),
-        ("剑桥雅思8 · Test 3（听力）", "剑桥雅思8 · Test 4（听力）"),
-        ("剑桥雅思8 Test 3 听力：", "剑桥雅思8 Test 4 听力："),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 8 Test 3 Nghe hiểu ", " Cambridge IELTS 8 Test 4 Nghe hiểu "),
+        (" Cambridge IELTS 8 · Test 3(Nghe hiểu)", " Cambridge IELTS 8 · Test 4(Nghe hiểu)"),
+        (" Cambridge IELTS 8 Test 3 Nghe hiểu: ", " Cambridge IELTS 8 Test 4 Nghe hiểu: "),
+        ("Test 3 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         ("test-3", "test-4"),
         ("cam8_test3", "cam8_test4"),
     ]
@@ -103,10 +103,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 3 阅读", "剑桥雅思8 Test 4 阅读"),
-        ("剑桥雅思8 · Test 3（阅读）", "剑桥雅思8 · Test 4（阅读）"),
-        ("剑桥雅思8 Test 3 学术类阅读", "剑桥雅思8 Test 4 学术类阅读"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 8 Test 3 Đọc hiểu ", " Cambridge IELTS 8 Test 4 Đọc hiểu "),
+        (" Cambridge IELTS 8 · Test 3(Đọc hiểu)", " Cambridge IELTS 8 · Test 4(Đọc hiểu)"),
+        (" Cambridge IELTS 8 Test 3 Reading học thuật ", " Cambridge IELTS 8 Test 4 Reading học thuật "),
+        ("Test 3 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 4 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
     ]
@@ -117,16 +117,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 3 写作", "剑桥雅思8 Test 4 写作"),
-        ("剑桥雅思8 · Test 3（写作）", "剑桥雅思8 · Test 4（写作）"),
-        ("剑桥雅思8 Test 3 学术类写作", "剑桥雅思8 Test 4 学术类写作"),
+        (" Cambridge IELTS 8 Test 3 Viết ", " Cambridge IELTS 8 Test 4 Viết "),
+        (" Cambridge IELTS 8 · Test 3(Viết)", " Cambridge IELTS 8 · Test 4(Viết)"),
+        (" Cambridge IELTS 8 Test 3 Writing học thuật ", " Cambridge IELTS 8 Test 4 Writing học thuật "),
         (
             "Task 1 cement and concrete production diagrams + Task 2 petrol price traffic pollution essay",
             "Task 1 UK goods transport graph + Task 2 weight and fitness essay",
         ),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Test 3 Viết(Đề thi chính thức)", "Test 4 Viết(Đề thi chính thức)"),
         ("cambridge-8-test-3-writing-draft", "cambridge-8-test-4-writing-draft"),
-        ("【剑桥雅思8 · Test 3 写作】", "【剑桥雅思8 · Test 4 写作】"),
+        ("[Cambridge IELTS 8 · Test 3 Viết]", "[Cambridge IELTS 8 · Test 4 Viết]"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("cement-concrete", "goods-transport"),
@@ -293,8 +293,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["B", "E"],
                         "questions": [
-                            {"id": "L21", "no": 21, "explain": "答案：B 与 E，顺序不限。"},
-                            {"id": "L22", "no": 22, "explain": "答案：B 与 E，顺序不限。"},
+                            {"id": "L21", "no": 21, "explain": " Đáp án: B và E, Thứ tự tùy ý "},
+                            {"id": "L22", "no": 22, "explain": " Đáp án: B và E, Thứ tự tùy ý "},
                         ],
                     },
                     {
@@ -310,8 +310,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["A", "C"],
                         "questions": [
-                            {"id": "L23", "no": 23, "explain": "答案：A 与 C，顺序不限。"},
-                            {"id": "L24", "no": 24, "explain": "答案：A 与 C，顺序不限。"},
+                            {"id": "L23", "no": 23, "explain": " Đáp án: A và C, Thứ tự tùy ý "},
+                            {"id": "L24", "no": 24, "explain": " Đáp án: A và C, Thứ tự tùy ý "},
                         ],
                     },
                     {

@@ -1,29 +1,29 @@
 /* =========================================================================
-   vocab-lesson.js — YYSD「单词小课」引擎（中国版多邻国机制，站内升级）
+   vocab-lesson.js - YYSD«từ nhỏ môn học»động cơ(Trung Quốc một đăng ký nhiều quốc gia láng giềng cơ chế, trạm bên trong lên một cấp)
 
-   SCOPE（计划默认，已对齐）:
-   - 主战场：机构站内单词区，沉浸壳，不是独立 App
-   - 设备：手机优先，桌面可用
-   - LIST HTML 退居「词卡指南」(exam.html)；主 CTA 进本播放器
+   SCOPE(kế hoạch đồng ý ngầm, đã căn chỉnh):
+   - chủ chiến trường: cơ chế trạm bên trong từ khu vực, ngâm biến thể của |, không phải độc lập App
+   - thiết bị: điện thoại di động có ưu tiên, màn hình máy tính có thể sử dụng
+   - LIST HTML rút lui trợ từ cuối câu biểu thị thái độ nghi ngờ«biến thể cũ của | dừng hướng dẫn»(exam.html); chủ CTA tiến lên gốc phát sóng thiết bị
 
-   MECHANISM SPEC（8 层 → 可开发）:
-   1. Path     → zone/vocab CTA 指向本页「开始 +N 经验」
-   2. Lesson   → 每课 8 词 / ~12–16 题 / 一题一屏 / 顶栏进度
+   MECHANISM SPEC(8 chồng lên nhau → có thể khai thác):
+   1. Path     → zone/vocab CTA chỉ về gốc đầu«Bắt đầu +N kinh nghiệm»
+   2. Lesson   → mỗi môn học 8 Từ / ~12–16 Câu hỏi / một chủ đề một xem | / đỉnh hàng rào tốc độ tiến triển
    3. Mix      → meaning_to_word | collocation | listen_meaning | example_cloze | scramble | type_spell
-   4. Feedback → 口语化夸奖 / 温柔纠错 +「继续」；连对 N 题
-   5. Learn    → 作业小课不扣心；错题收录 + 当堂可重练
-   6. Retry    → 错词换题型当堂重练（标签「错题重练」）
-   7. Celebrate→ 轻结算：经验 + 正确率 + 轻连胜 + 雅思一句提示
-   8. Habit    → localStorage 轻连胜（不恐吓归零）
+   4. Feedback → lời nói thông thường biến thể của khen ngợi / dịu dàng và mềm mại sửa lỗi +«Tiếp tục»; liên kết đúng N Câu hỏi
+   5. Learn    → bài tập về nhà nhỏ môn học không cài tim; lỗi chủ đề bao gồm + đong sảnh có thể lặp lại luyện tập
+   6. Retry    → lỗi biến thể cũ của | trao đổi chủ đề khuôn đong sảnh lặp lại luyện tập(nhãn«lỗi chủ đề lặp lại luyện tập»)
+   7. Celebrate→ nhẹ thanh toán: kinh nghiệm + Tỉ lệ đúng + nhẹ liên kết chiến thắng + IELTS một dòng thơ chỉ ra
+   8. Habit    → localStorage nhẹ liên kết chiến thắng(không đe dọa đặt lại về không)
 
    DATA BRIDGE:
-   - fetch library/{item.file} → 抽取 wordData 数组字面量 → Function 求值
-   - 字段：word, meaning, ipa?, acceptCN?, example?, phrases?
+   - fetch library/{item.file} → trích xuất wordData mảng nghĩa đen đo lường → Function tính
+   - ): word, meaning, ipa?, acceptCN?, example?, phrases?
 
    URL:
-   - 作业: vocab-lesson.html?id=<manifestId> | ?book=gaozhong|cet4|special
-   - 远征祠: ?from=realm&shrine=shrine-01
-   - 训练营: ?from=realm&mode=camp
+   - Bài tập: vocab-lesson.html?id=<manifestId> | ?book=gaozhong|cet4|special
+   - cuộc viễn chinh nhà thờ: ?from=realm&shrine=shrine-01
+   - trại huấn luyện: ?from=realm&mode=camp
    ========================================================================= */
 (function () {
   "use strict";
@@ -38,7 +38,7 @@
   var shrineParam = (params.get("shrine") || "").trim();
   var campMode = fromRealm && (params.get("mode") || "") === "camp";
   var realmEntry = !!(fromRealm || shrineParam || campMode);
-  // 远征战斗仅总部站；作业小课不受影响
+  // cuộc viễn chinh chiến đấu hầu như trụ sở chính trạm; bài tập về nhà nhỏ môn học không nhận ảnh hưởng
   if (realmEntry) {
     var A0 = window.YYSD_AUTH;
     if (!A0 || !A0.canWordRealm || !A0.canWordRealm()) {
@@ -51,14 +51,14 @@
   var CAMP_WORDS = 18;
   var REALM_WORDS_MIN = 20; // shrine pad + denser queue
   var HEARTS_MAX = 5; // homework
-  var REALM_HEARTS = 4; // 远征更脆：容错更少
+  var REALM_HEARTS = 4; // cuộc viễn chinh thay đổi hoặc thay thế biến thể cũ của: chịu lỗi thay đổi hoặc thay thế ít
   var XP_PER_LESSON = 10;
   var XP_CAMP = 6;
   var ANSWER_SEC = 9;
   var ANSWER_SEC_SPELL = 14;
   var weekly = (CORE && CORE.weeklyTheme) ? CORE.weeklyTheme() : null;
   var STREAK_KEY = "yysd:vocab-lesson-streak";
-  var PRAISE = ["太棒了！", "真棒！", "好棒！", "不错哦！", "漂亮！", "泰裤辣！"];
+  var PRAISE = [" cao nhất gậy hoàn thành! ", " tuyệt vời!! ", " xuất sắc! ", " đúng ngâm nga! ", " xinh đẹp! ", " núi Thái ở Sơn Đông biến thể của | biến thể cũ của! "];
   var answerTimer = null;
 
   var root = document.getElementById("vl-root");
@@ -83,7 +83,7 @@
     selected: null,
     scramblePicked: [],
     freeRefillShown: false,
-    battle: null, // realm 战斗皮状态；作业小课为 null
+    battle: null, // realm chiến đấu da tình trạng; bài tập về nhà nhỏ môn học làm null
     timedOut: false
   };
 
@@ -98,7 +98,7 @@
     return base + "library/" + String(file || "").replace(/^\//, "");
   }
 
-  // ponytail: trusted local LIST HTML only — Function beats a half-baked JSON rewriter
+  // ponytail: trusted local LIST HTML only - Function beats a half-baked JSON rewriter
   function parseWordData(html) {
     var m = html.match(/(?:const|var|let)\s+wordData\s*=\s*(\[[\s\S]*?\]);/);
     if (!m) return [];
@@ -148,14 +148,14 @@
     return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  /** Split "en（zh）, en(zh)" → [{en, zh}, ...] */
+  /** Split "en(zh), en(zh)" → [{en, zh}, ...] */
   function parsePhrasePairs(phrases) {
     var raw = String(phrases || "").trim();
     if (!raw) return [];
-    return raw.split(/[,，]/).map(function (part) {
+    return raw.split(/[,, ]/).map(function (part) {
       part = part.trim();
       if (!part) return null;
-      var m = part.match(/^(.+?)\s*[（(]\s*(.+?)\s*[）)]\s*$/);
+      var m = part.match(/^(.+?)\s*[((]\s*(.+?)\s*[))]\s*$/);
       if (!m) return null;
       return { en: m[1].trim(), zh: m[2].trim() };
     }).filter(Boolean);
@@ -164,7 +164,7 @@
   function englishOnly(example) {
     var s = String(example || "").trim();
     if (!s) return "";
-    var cut = s.search(/[（(]/);
+    var cut = s.search(/[((]/);
     if (cut >= 0) s = s.slice(0, cut);
     return s.trim();
   }
@@ -212,7 +212,7 @@
     return attachCloze(ex, blank, "", pool);
   }
 
-  /** 记/派/辨：展示提示文本，选出对应单词 */
+  /** ghi chép/dùng trong/phân biệt: tiết lộ chỉ ra một văn bản, chọn ra tương ứng với từ */
   function tryHintPick(ex, pool, field) {
     var hint = String(ex.word[field] || "").trim();
     if (!hint || hint.length < 4) return null;
@@ -262,7 +262,7 @@
     return shuffle(queue);
   }
 
-  /** 训练营：听写 + 听义为主，不推进主线 */
+  /** trại huấn luyện: Nghe chép + cười công lý dựa chủ yếu vào, không thúc đẩy dòng chính */
   function buildCampExercises(words, allPool) {
     var queue = [];
     words.forEach(function (w, i) {
@@ -272,7 +272,7 @@
     return shuffle(queue);
   }
 
-  /** 远征祠：每词三斩，题量拉高 */
+  /** cuộc viễn chinh nhà thờ: mỗi biến thể cũ của | ba chặt đầu, chủ đề đo lường kéo lên */
   function buildRealmExercises(words, allPool) {
     var types = ["meaning_to_word", "collocation", "listen_meaning", "example_cloze", "scramble", "type_spell"];
     var queue = [];
@@ -293,7 +293,7 @@
       seen[k] = true;
       out.push(w);
     });
-    // 补词优先中高难，不够再回落全库
+    // sửa biến thể cũ của | có ưu tiên Trung Quốc vô cùng khó khăn, không đủ lại rơi xuống tất cả nhà kho
     var hard = (lex.words || []).filter(function (w) { return (w.tier || 1) >= 2; });
     var pool = shuffle(hard.length >= minN ? hard : (lex.words || []).slice());
     for (var i = 0; i < pool.length && out.length < minN; i++) {
@@ -345,37 +345,37 @@
 
   function promptFor(ex) {
     if (ex.retry) {
-      if (ex.type === "type_spell") return "错题重练 · 听音写单词";
-      return "错题重练 · 选出正确单词";
+      if (ex.type === "type_spell") return " lỗi chủ đề lặp lại luyện tập · cười âm thanh viết từ ";
+      return " lỗi chủ đề lặp lại luyện tập · chọn ra đúng từ ";
     }
-    if (ex.type === "meaning_to_word") return "选出对应的英文单词";
-    if (ex.type === "word_to_meaning") return "选出正确的中文释义";
-    if (ex.type === "listen_meaning") return "听音，选出正确的单词";
-    if (ex.type === "collocation") return "补全常见搭配";
-    if (ex.type === "example_cloze") return "根据例句选出挖空的单词";
-    if (ex.type === "mnemonic_pick") return "根据记忆提示选出单词";
-    if (ex.type === "derivative_pick") return "根据派生词选出原词";
-    if (ex.type === "distinguish_pick") return "根据辨析说明选出单词";
-    if (ex.type === "scramble") return "把字母排成正确的单词";
-    if (ex.type === "type_spell") return "听音，写出英文拼写";
-    return "选择正确答案";
+    if (ex.type === "meaning_to_word") return " chọn ra tương ứng với của tiếng Anh từ ";
+    if (ex.type === "word_to_meaning") return " chọn ra đúng của ngôn ngữ Trung Quốc nghĩa của cái gì đó ";
+    if (ex.type === "listen_meaning") return " cười âm thanh, chọn ra đúng của từ ";
+    if (ex.type === "collocation") return " sửa tất cả thường thấy ghép đôi ";
+    if (ex.type === "example_cloze") return " theo câu ví dụ chọn ra khai quật của từ ";
+    if (ex.type === "mnemonic_pick") return " theo nhớ chỉ ra chọn ra từ ";
+    if (ex.type === "derivative_pick") return " theo từ phái sinh chọn ra trước đây biến thể cũ của | ";
+    if (ex.type === "distinguish_pick") return " theo phân biệt và phân tích giải thích chọn ra từ ";
+    if (ex.type === "scramble") return " cầm chữ cái một hàng thành công đúng của từ ";
+    if (ex.type === "type_spell") return " cười âm thanh, viết đi ra tiếng Anh đánh vần ";
+    return " chọn đúng câu trả lời ";
   }
 
   function ieltsHint(word) {
     var m = word.meaning || "";
-    if (/气候|环境|污染/.test(m)) return "这类词常出现在听力 Section 3/4 与阅读环境主题。";
-    if (/证据|研究|数据|科学/.test(m)) return "学术词：阅读判断题与听力讲座高频。";
-    if (/压力|活动|饮食|健康/.test(m)) return "生活场景词：听力 Section 1–2 与口语 Part 1 常用。";
-    return "记搭配比记孤词更稳——写作同义替换时能直接用上。";
+    if (/khí hậu|Môi trường|gây ô nhiễm/.test(m)) return " loại này biến thể cũ của | luôn luôn xuất hiện tồn tại thính giác Section 3/4 biến thể của | đọc môi trường chủ đề ";
+    if (/bằng chứng|nghiên cứu|dữ liệu|khoa học/.test(m)) return " học thuật biến thể cũ của |: đọc phán đoán chủ đề biến thể của | thính giác một khóa bài giảng tần số cao ";
+    if (/áp lực|tập thể dục|ăn uống|Sức khỏe/.test(m)) return " sống cảnh biến thể cũ của |: Nghe hiểu Section 1–2 biến thể của | lời nói thông thường Part 1 Thường dùng ";
+    return " ghi chép ghép đôi Bỉ ghi chép cô đơn biến thể cũ của | thay đổi hoặc thay thế ổn định--viết đồng nghĩa thay thế biến thể cũ của | có thể trực tiếp sử dụng dùng trong | ";
   }
 
   /** Mythic combat tip for Word Realm (no exam framing). */
   function realmHint() {
     var lines = [
-      "字母是剑锋。记准音节，噬词者就会后退。",
-      "连击使剑光暴涨——记忆之力只回应勇敢的重复。",
-      "短词是短剑，长词是重刃。今天你又多修一座桥。",
-      "替别人记住一个词，星屑就会在掌心多停一秒。"
+      " chữ cái là kiếm hai lưỡi mũi giáo ghi chép cho phép âm tiết, ngấu nghiến biến thể cũ của | người mà trong trường hợp đó có thể lùi lại ",
+      " đánh liên tục khiến kiếm hai lưỡi ánh sáng tăng mạnh--nhớ cua sức mạnh chỉ phản hồi dũng cảm của lặp lại ",
+      " ngắn biến thể cũ của | là dao găm, chiều dài biến thể cũ của | là lặp lại cạnh của lưỡi dao hôm nay bạn nữa nhiều trang trí một chỗ ngồi cầu ",
+      " thay thế cho người khác nhớ một dùng trong | biến thể cũ của |, ngôi sao mảnh vụn trong trường hợp đó có thể tồn tại lòng bàn tay nhiều dừng một giây "
     ];
     return lines[Math.floor(Math.random() * lines.length)];
   }
@@ -384,9 +384,9 @@
     var battle = battleMode();
     var hud = battle
       ? ('<header class="vl-battle-hud">' +
-          '<a class="vl-x" id="vl-exit" href="#" aria-label="退出">×</a>' +
+          '<a class="vl-x" id="vl-exit" href="#" aria-label=" Đăng xuất ">×</a>' +
           '<div class="vl-hp vl-hp--hero" id="vl-hp-hero">' +
-            '<span class="vl-hp__label">勇者</span>' +
+            '<span class="vl-hp__label">dũng cảm người mà</span>' +
             '<div class="vl-hp__track"><i id="vl-hp-hero-bar"></i></div>' +
             '<span class="vl-hp__n" id="vl-hp-hero-n"></span></div>' +
           '<div class="vl-hp vl-hp--enemy" id="vl-hp-enemy">' +
@@ -399,9 +399,9 @@
           '<div class="vl-float" id="vl-float" hidden></div>' +
         "</div>")
       : ('<header class="vl-top">' +
-          '<a class="vl-x" id="vl-exit" href="#" aria-label="退出">×</a>' +
+          '<a class="vl-x" id="vl-exit" href="#" aria-label=" Đăng xuất ">×</a>' +
           '<div class="vl-progress" aria-hidden="true"><div class="vl-progress__bar" id="vl-bar"></div></div>' +
-          // ponytail: homework is learn+record, not hearts — realm keeps HP via battleMode
+          // ponytail: homework is learn+record, not hearts - realm keeps HP via battleMode
           '<div class="vl-top__meta" id="vl-top-meta" aria-live="polite"></div>' +
         "</header>");
     root.innerHTML =
@@ -416,7 +416,7 @@
       e.preventDefault();
       var back = exitHref();
       if (state.phase === "play" || state.phase === "feedback") {
-        if (!confirm(battle ? "战斗还没结束，确定撤退？" : "小课还没结束，确定离开？")) return;
+        if (!confirm(battle ? " chiến đấu vẫn chưa chấm dứt, rõ ràng rút lui? " : " nhỏ môn học vẫn chưa chấm dứt, rõ ràng rời khỏi? ")) return;
       }
       location.href = back;
     });
@@ -558,7 +558,7 @@
     answerTimer = setInterval(tick, 1000);
   }
 
-  /** 答错/超时：怪物噬咬扣血（远征无免费补心） */
+  /** hình thức gắn liền có nghĩa giống như từ tự do lỗi/vượt quá thời gian: quái vật cắn cài máu(cuộc viễn chinh không có miễn phí sửa tim) */
   function applyEnemyAttack() {
     if (!battleMode() || !state.battle) return false;
     var dmg = CORE.enemyAttackDamage
@@ -568,7 +568,7 @@
     state.battle.heroHp = state.hearts;
     state.battle.lastHit = dmg;
     state.battle.crit = false;
-    battleFloat("噬咬 -" + dmg, "hurt");
+    battleFloat(" cắn -" + dmg, "hurt");
     if (SFX) SFX.hurt();
     if (state.battle.heroHp <= 0) state.battle.lost = true;
     paintHearts();
@@ -632,15 +632,15 @@
       var line = lines[i] || "";
       document.getElementById("vl-main").innerHTML =
         '<div class="vl-cut">' +
-          '<p class="vl-cut__kicker">' + esc(opts.kicker || "剧情") + "</p>" +
+          '<p class="vl-cut__kicker">' + esc(opts.kicker || " cốt truyện ") + "</p>" +
           "<h2>" + esc(opts.title || "") + "</h2>" +
           '<p class="vl-cut__line">' + esc(line) + "</p>" +
           '<p class="vl-cut__step">' + (i + 1) + " / " + lines.length + "</p>" +
         "</div>";
       document.getElementById("vl-foot").innerHTML =
-        '<button type="button" class="vl-btn vl-btn--ghost" id="vl-cut-skip">跳过</button>' +
+        '<button type="button" class="vl-btn vl-btn--ghost" id="vl-cut-skip">nhảy qua</button>' +
         '<button type="button" class="vl-btn vl-btn--primary" id="vl-cut-next">' +
-          (i >= lines.length - 1 ? (opts.doneLabel || "继续") : "下一句") + "</button>";
+          (i >= lines.length - 1 ? (opts.doneLabel || " Tiếp tục ") : " xuống một dòng thơ ") + "</button>";
       document.getElementById("vl-cut-skip").onclick = function () { done(); };
       document.getElementById("vl-cut-next").onclick = function () {
         if (i >= lines.length - 1) done();
@@ -657,11 +657,11 @@
       paintBattleHud(false);
       return;
     }
-    // 作业小课：顶栏显示错词收录数，不扣心
+    // bài tập về nhà nhỏ môn học: đỉnh hàng rào hiển thị lỗi biến thể cũ của | bao gồm đếm, không cài tim
     var el = document.getElementById("vl-top-meta");
     if (!el) return;
     var n = state.everWrong.length;
-    el.textContent = n ? ("待记 " + n) : "学习中";
+    el.textContent = n ? (" ở lại ghi chép " + n) : " học Trung Quốc ";
   }
 
   function paintProgress() {
@@ -679,8 +679,8 @@
     if (!combo) return;
     if (state.combo >= 2 && state.phase === "feedback") {
       combo.hidden = false;
-      combo.textContent = (battleMode() && state.combo >= 4 ? "连击暴击！×" : "连对 ") +
-        state.combo + (battleMode() && state.combo >= 4 ? "" : " 题");
+      combo.textContent = (battleMode() && state.combo >= 4 ? " đánh liên tục đòn chí mạng! ×" : " liên kết đúng ") +
+        state.combo + (battleMode() && state.combo >= 4 ? "" : " Câu hỏi ");
     } else {
       combo.hidden = true;
     }
@@ -715,20 +715,20 @@
     var main = document.getElementById("vl-main");
     var foot = document.getElementById("vl-foot");
     var badge = ex.retry
-      ? '<span class="vl-badge vl-badge--retry">错题重练</span>'
+      ? '<span class="vl-badge vl-badge--retry">lỗi chủ đề lặp lại luyện tập</span>'
       : (ex.type === "collocation"
-        ? '<span class="vl-badge">考</span>'
+        ? '<span class="vl-badge">đánh</span>'
         : (ex.type === "example_cloze"
-          ? '<span class="vl-badge">例</span>'
+          ? '<span class="vl-badge">ví dụ</span>'
           : (ex.type === "mnemonic_pick"
-            ? '<span class="vl-badge">记</span>'
+            ? '<span class="vl-badge">ghi chép</span>'
             : (ex.type === "derivative_pick"
-              ? '<span class="vl-badge">派</span>'
+              ? '<span class="vl-badge">dùng trong</span>'
               : (ex.type === "distinguish_pick"
-                ? '<span class="vl-badge">辨</span>'
+                ? '<span class="vl-badge">phân biệt</span>'
                 : (ex.type.indexOf("listen") === 0 || ex.type === "type_spell"
-                  ? '<span class="vl-badge">听力</span>'
-                  : '<span class="vl-badge">新练</span>'))))));
+                  ? '<span class="vl-badge">Nghe hiểu</span>'
+                  : '<span class="vl-badge">viết tắt của Tân Cương luyện tập</span>'))))));
 
     var body = "";
     if (ex.type === "meaning_to_word") {
@@ -738,8 +738,8 @@
         (ex.word.ipa ? '<p class="vl-ipa">' + esc(ex.word.ipa) + "</p>" : "") +
         optionsHTML(ex);
     } else if (ex.type === "listen_meaning") {
-      body = '<button type="button" class="vl-play" id="vl-play" aria-label="播放发音">▶</button>' +
-        '<p class="vl-hint">点击播放，再选单词</p>' + optionsHTML(ex);
+      body = '<button type="button" class="vl-play" id="vl-play" aria-label=" phát sóng phát âm ">▶</button>' +
+        '<p class="vl-hint">nhấn phát sóng, lại trình đơn biến thể cũ của |</p>' + optionsHTML(ex);
     } else if (ex.type === "mnemonic_pick" || ex.type === "derivative_pick" || ex.type === "distinguish_pick") {
       body = '<p class="vl-prompt-cn">' + esc(ex.hintZh || "") + "</p>" + optionsHTML(ex);
     } else if (ex.type === "collocation" || ex.type === "example_cloze") {
@@ -751,9 +751,9 @@
         '<div class="vl-scramble-out" id="vl-scramble-out"></div>' +
         '<div class="vl-scramble-pool" id="vl-scramble-pool"></div>';
     } else if (ex.type === "type_spell") {
-      body = '<button type="button" class="vl-play" id="vl-play" aria-label="播放发音">▶</button>' +
-        '<p class="vl-hint">听音拼写（可不区分大小写）</p>' +
-        '<label class="vl-input-wrap">英文拼写' +
+      body = '<button type="button" class="vl-play" id="vl-play" aria-label=" phát sóng phát âm ">▶</button>' +
+        '<p class="vl-hint">cười âm thanh đánh vần(xem phân biệt chữ hoa với chữ thường)</p>' +
+        '<label class="vl-input-wrap">tiếng Anh đánh vần' +
         '<input type="text" id="vl-input" class="vl-input" autocomplete="off" autocapitalize="off" spellcheck="false"></label>';
     }
 
@@ -763,8 +763,8 @@
       "</div>";
 
     foot.innerHTML =
-      '<button type="button" class="vl-btn vl-btn--ghost" id="vl-skip">跳过</button>' +
-      '<button type="button" class="vl-btn vl-btn--primary" id="vl-check" disabled>检查</button>';
+      '<button type="button" class="vl-btn vl-btn--ghost" id="vl-skip">nhảy qua</button>' +
+      '<button type="button" class="vl-btn vl-btn--primary" id="vl-check" disabled>kiểm tra</button>';
 
     bindQuestion(ex);
     if (ex.type === "listen_meaning" || ex.type === "type_spell") {
@@ -823,7 +823,7 @@
       function paintScramble() {
         out.innerHTML = state.scramblePicked.map(function (ch, i) {
           return '<button type="button" class="vl-chip" data-from="out" data-i="' + i + '">' + esc(ch) + "</button>";
-        }).join("") || '<span class="vl-scramble-ph">点选字母</span>';
+        }).join("") || '<span class="vl-scramble-ph">chọn chữ cái</span>';
         pool.innerHTML = poolLeft.map(function (ch, i) {
           return '<button type="button" class="vl-chip" data-from="pool" data-i="' + i + '">' + esc(ch) + "</button>";
         }).join("");
@@ -890,7 +890,7 @@
         state.battle.crit = dmg >= 2;
         state.battle.enemyHp = Math.max(0, state.battle.enemyHp - dmg);
         if (state.battle.enemyHp <= 0) state.battle.won = true;
-        battleFloat((state.battle.crit ? "暴击斩 -" : "斩击 -") + dmg, "hit");
+        battleFloat((state.battle.crit ? " đòn chí mạng chặt đầu -" : " chặt đầu đánh -") + dmg, "hit");
         playSlashFx(state.battle.crit);
         if (SFX) SFX.hit(state.battle.crit);
       }
@@ -899,7 +899,7 @@
       if (battleMode()) {
         applyEnemyAttack();
       }
-      // ponytail: homework — no hearts; wrong → wrongBank for retry/notebook
+      // ponytail: homework - no hearts; wrong → wrongBank for retry/notebook
       if (!ex.retry) {
         var exists = state.wrongBank.some(function (w) {
           return normWord(w.word) === normWord(ex.word.word);
@@ -920,17 +920,17 @@
     var foot = document.getElementById("vl-foot");
     var praise = PRAISE[Math.floor(Math.random() * PRAISE.length)];
     var badTitle = timedOut
-      ? "时间到 · 噬词者发动攻击"
-      : (skipped ? "已跳过 · 噬词者发动攻击" : "答错 · 噬词者发动攻击");
+      ? " thời gian đến · ngấu nghiến biến thể cũ của | người mà bắt đầu tấn công "
+      : (skipped ? " đã nhảy qua · ngấu nghiến biến thể cũ của | người mà bắt đầu tấn công " : " hình thức gắn liền có nghĩa giống như từ tự do lỗi · ngấu nghiến biến thể cũ của | người mà bắt đầu tấn công ");
     if (!battleMode()) {
-      badTitle = skipped ? "已跳过" : "再记一次就好";
+      badTitle = skipped ? " đã nhảy qua " : " lại ghi chép đầu tiên trong trường hợp đó tốt ";
     }
     var msg = ok
       ? '<div class="vl-fb vl-fb--ok"><strong>' + esc(praise) + "</strong>" +
         (ex.word.example ? '<p class="vl-fb__ex">' + esc(ex.word.example) + "</p>" : "") +
         "</div>"
       : '<div class="vl-fb vl-fb--bad"><strong>' + esc(badTitle) + "</strong>" +
-        "<p>正确答案：<b>" + esc(ex.word.word) + "</b> · " + esc(ex.word.meaning) + "</p></div>";
+        "<p>Đáp án đúng: <b>" + esc(ex.word.word) + "</b> · " + esc(ex.word.meaning) + "</p></div>";
 
     // inject feedback above foot
     var main = document.getElementById("vl-main");
@@ -943,9 +943,9 @@
       else if (b.classList.contains("is-on")) b.classList.add("is-wrong");
     });
 
-    var nextLabel = "继续";
-    if (battleMode() && state.battle.won) nextLabel = "击破！";
-    else if (battleMode() && state.battle.lost) nextLabel = "溃败…";
+    var nextLabel = " Tiếp tục ";
+    if (battleMode() && state.battle.won) nextLabel = " đánh hỏng! ";
+    else if (battleMode() && state.battle.lost) nextLabel = " bị đánh bại hoàn toàn...";
     foot.innerHTML = '<button type="button" class="vl-btn vl-btn--primary vl-btn--wide" id="vl-next">' +
       nextLabel + "</button>";
     document.getElementById("vl-next").onclick = function () {
@@ -962,7 +962,7 @@
   }
 
   function offerRefill() {
-    // 仅远征战斗皮仍可能走到补心；作业小课不再触发
+    // hầu như cuộc viễn chinh chiến đấu da vẫn có thể đi đến sửa tim; bài tập về nhà nhỏ môn học không còn kích hoạt
     if (!battleMode()) {
       advance();
       return;
@@ -971,9 +971,9 @@
     showModal(
       '<div class="vl-refill">' +
         '<div class="vl-mascot" aria-hidden="true">✦</div>' +
-        "<h2>记忆之力将散</h2>" +
-        "<p>神明借你一次重新凝聚——再倒下便要撤退。</p>" +
-        '<button type="button" class="vl-btn vl-btn--primary vl-btn--wide" id="vl-refill">免费重新凝聚</button>' +
+        "<h2>nhớ cua sức mạnh sẽ biến thể của</h2>" +
+        "<p>thần linh mượn bạn đầu tiên lại ngưng tụ--lại sụp đổ đơn giản yêu cầu rút lui </p>" +
+        '<button type="button" class="vl-btn vl-btn--primary vl-btn--wide" id="vl-refill">miễn phí lại ngưng tụ</button>' +
       "</div>"
     );
     document.getElementById("vl-refill").onclick = function () {
@@ -1000,7 +1000,7 @@
 
   function maybeRetryOrCelebrate() {
     if (battleMode()) {
-      // 题尽：必须击破才算胜；敌仍存活 = 体力耗尽战败（不再自动通关）
+      // chủ đề đến mức tối đa: phải đánh hỏng khả năng coi như chiến thắng; kẻ thù vẫn sống sót = sức mạnh thể chất tiêu hao thua trận(không còn tự động thông quan)
       if (state.battle.enemyHp <= 0) {
         state.battle.won = true;
         celebrate();
@@ -1019,9 +1019,9 @@
       bridge.innerHTML =
         '<div class="vl-bridge">' +
           '<div class="vl-mascot" aria-hidden="true">✦</div>' +
-          "<h2>一起来复习不太熟练的部分吧</h2>" +
-          "<p>换种题型再练一遍，轻轻的。</p>" +
-          '<button type="button" class="vl-btn vl-btn--primary" id="vl-retry-go">开始重练</button>' +
+          "<h2>ở cùng một nơi đến xem lại không cao nhất thành thạo của phần quán bar</h2>" +
+          "<p>trao đổi hạt chủ đề khuôn lại luyện tập một lần, nhẹ nhàng của </p>" +
+          '<button type="button" class="vl-btn vl-btn--primary" id="vl-retry-go">bắt đầu lặp lại luyện tập</button>' +
         "</div>";
       document.getElementById("vl-retry-go").onclick = function () {
         state.queue = buildExercises(retryWords, state.words, true);
@@ -1042,28 +1042,28 @@
     var retry = state.shrineId
       ? ("vocab-lesson.html?from=realm&shrine=" + encodeURIComponent(state.shrineId))
       : campHrefSafe();
-    var enemyName = (state.battle && state.battle.enemy && state.battle.enemy.name) || "噬词者";
+    var enemyName = (state.battle && state.battle.enemy && state.battle.enemy.name) || " ngấu nghiến biến thể cũ của | người mà ";
     var isBoss = isBossFight();
     var exhausted = state.battle && state.battle.enemyHp > 0 && state.idx >= state.queue.length;
     var soft = exhausted
-      ? (enemyName + "仍未倒下，你的斩击耗尽。祠未点亮。")
+      ? (enemyName + " vẫn chưa sụp đổ, bạn của chặt đầu đánh tiêu hao nhà thờ chưa thắp sáng ")
       : (isBoss
-        ? (enemyName + "低语着 Forget… 祠未点亮。艾拉：「还没写完。回修炼场淬剑，再来。」")
-        : (enemyName + "仍在。祠未点亮，残页未掉落。"));
+        ? (enemyName + " lẩm bẩm nước đi Forget... nhà thờ chưa thắp sáng ngải cứu hoặc ngải đắng kéo: «vẫn chưa viết xong xoay vòng tu luyện khổ hạnh sân phơi nhúng vào nước kiếm hai lưỡi, lại đến »")
+        : (enemyName + " vẫn tồn tại nhà thờ chưa thắp sáng, phá hủy đầu chưa rơi xuống "));
     var hint = isBoss
-      ? "Boss 战败不推进剧情。限时答题，答对斩击，答错/超时挨噬咬。"
-      : "答错与超时都会挨噬咬。左上角 × 可撤退（祠不点亮）。";
+      ? "Boss thua trận không thúc đẩy cốt truyện đặt giới hạn thời gian hình thức gắn liền có nghĩa giống như từ tự do chủ đề, trả lời hoặc đáp lại câu hỏi của ai đó chặt đầu đánh, hình thức gắn liền có nghĩa giống như từ tự do lỗi/vượt quá thời gian theo thứ tự cắn "
+      : " hình thức gắn liền có nghĩa giống như từ tự do lỗi biến thể của | vượt quá thời gian thành phố theo thứ tự cắn trên bên trái góc × có thể rút lui(nhà thờ không thắp sáng) ";
     document.getElementById("vl-main").innerHTML =
       '<div class="vl-celebrate vl-defeat' + (isBoss ? " vl-defeat--boss" : "") + '">' +
         '<div class="vl-enemy vl-enemy--down" aria-hidden="true">☠</div>' +
-        "<h2>" + (isBoss ? "Boss 撤退" : (exhausted ? "斩击耗尽" : "撤退")) + "</h2>" +
+        "<h2>" + (isBoss ? "Boss rút lui " : (exhausted ? " chặt đầu đánh tiêu hao " : " rút lui ")) + "</h2>" +
         '<p class="vl-celebrate__soft">' + esc(soft) + "</p>" +
         '<p class="vl-celebrate__hint">' + esc(hint) + "</p>" +
       "</div>";
     document.getElementById("vl-foot").innerHTML =
-      '<a class="vl-btn vl-btn--primary vl-btn--wide" href="' + esc(retry) + '">再次挑战</a>' +
-      '<a class="vl-btn vl-btn--ghost" href="' + esc(campHrefSafe()) + '">去修炼场</a>' +
-      '<a class="vl-btn vl-btn--ghost" href="' + esc(fleeHref()) + '">回远征地图</a>';
+      '<a class="vl-btn vl-btn--primary vl-btn--wide" href="' + esc(retry) + '">một lần nữa thử thách</a>' +
+      '<a class="vl-btn vl-btn--ghost" href="' + esc(campHrefSafe()) + '">đi tu luyện khổ hạnh sân phơi</a>' +
+      '<a class="vl-btn vl-btn--ghost" href="' + esc(fleeHref()) + '">xoay vòng cuộc viễn chinh bản đồ</a>';
   }
 
   function campHrefSafe() {
@@ -1142,7 +1142,7 @@
       state.battle.lost = false;
     }
     if (!state.camp && !state.shrineId) saveLessonResult();
-    // 仅主线击破写祠进度；训练营 / 战败绝不写
+    // hầu như dòng chính đánh hỏng viết nhà thờ tốc độ tiến triển; trại huấn luyện / thua trận không đời nào viết
     if (state.shrineId && CORE && !state.camp) CORE.markCleared(state.shrineId);
 
     var postBoss = state.shrineId && STORY && STORY.bossOf
@@ -1165,31 +1165,31 @@
       var back = exitHref();
       var nextLesson = "";
       if (state.item && !state.shrineId && !state.camp) {
-        nextLesson = '<a class="vl-btn vl-btn--ghost" href="' + esc(guideHref(state.item)) + '">查看词卡指南</a>';
+        nextLesson = '<a class="vl-btn vl-btn--ghost" href="' + esc(guideHref(state.item)) + '">xem xét biến thể cũ của | dừng hướng dẫn</a>';
       }
       var hasDream = !!(CORE && CORE.pendingDream && CORE.pendingDream());
       var continueLabel = hasDream
-        ? "进入梦境 ›"
-        : ((state.camp || state.shrineId || fromRealm) ? "回到远征地图" : "回单词区");
+        ? " đi vào xứ mơ ›"
+        : ((state.camp || state.shrineId || fromRealm) ? " trở về cuộc viễn chinh bản đồ " : " biên lai biến thể cũ của | khu vực ");
       var softLine;
       var enemyName = state.battle && state.battle.enemy ? state.battle.enemy.name : "";
       if (state.camp) {
-        softLine = "修炼木桩倒下。未推进剧情、未掉落残页——记忆之力增长。" +
-          (weekly ? (" 本周主题「" + weekly.name + "」额外 +" + (weekly.bonusXp || 0) + "。") : "");
+        softLine = " tu luyện khổ hạnh cọc gỗ sụp đổ chưa thúc đẩy cốt truyện, chưa rơi xuống phá hủy đầu--nhớ cua sức mạnh tăng trưởng " +
+          (weekly ? (" gốc đi một vòng chủ đề«" + weekly.name + "»thêm +" + (weekly.bonusXp || 0) + " ") : "");
       } else if (state.shrineId) {
         var clearLine = "";
         if (STORY && state.shrineMeta) {
           clearLine = STORY.shrineBeat(state.shrineMeta.region, state.shrineMeta.index).clear;
         }
         softLine = (clearLine ? clearLine + " " : "") +
-          (enemyName ? ("击破「" + enemyName + "」。") : "") + "祠已点亮。" +
-          (hasDream ? " 星屑震颤——有梦境待看。" : "");
+          (enemyName ? (" đánh hỏng«" + enemyName + "» ") : "") + " nhà thờ đã thắp sáng " +
+          (hasDream ? " ngôi sao mảnh vụn rung chuyển--có xứ mơ ở lại chăm sóc " : "");
       } else {
-        softLine = "本课完成。回单词区继续作业，或去「词境」冒险。";
+        softLine = " gốc môn học hoàn thành biên lai biến thể cũ của | khu vực tiếp tục bài tập về nhà, có thể đi«biến thể cũ của | biên giới»mạo hiểm ";
       }
       var headline = battleMode()
-        ? ((postBoss ? "Boss 击破 · " : "击破 · ") + (enemyName || "噬词者"))
-        : (state.camp ? "训练完成！" : "本关完成！");
+        ? ((postBoss ? "Boss đánh hỏng · " : " đánh hỏng · ") + (enemyName || " ngấu nghiến biến thể cũ của | người mà "))
+        : (state.camp ? " huấn luyện hoàn thành! " : " gốc ải núi hoàn thành! ");
       var mascot;
       if (battleMode() && state.battle.enemy && state.battle.enemy.portrait) {
         mascot = '<div class="vl-enemy vl-enemy--down vl-enemy--portrait vl-enemy--' +
@@ -1217,7 +1217,7 @@
               '<p class="vl-levelup__kicker">Memory Power surges</p>' +
               "<h3>Lv." + rpgGain.before.level + " → Lv." + rpgGain.after.level + "</h3>" +
               '<p class="vl-levelup__en">Title: ' + esc(rpgGain.after.title) + "</p>" +
-              '<p class="vl-levelup__zh">称号更新：' + esc(rpgGain.after.title) + " · 记忆之力回应了你的重复。</p>" +
+              '<p class="vl-levelup__zh">tên thay cũ đổi mới: ' + esc(rpgGain.after.title) + " · nhớ cua sức mạnh phản hồi hoàn thành bạn của lặp lại </p>" +
             "</div>";
         }
       }
@@ -1232,11 +1232,11 @@
           levelBanner +
           "<h2>" + esc(headline) + "</h2>" +
           '<p class="vl-celebrate__xp">+' + xp +
-            (battleMode() ? " 记忆之力" : " 经验") + "</p>" +
+            (battleMode() ? " nhớ cua sức mạnh " : " kinh nghiệm ") + "</p>" +
           levelLine +
           '<div class="vl-celebrate__stats">' +
-            "<div><span>正确率</span><b>" + rate + "%</b></div>" +
-            "<div><span>轻连胜</span><b>" + streak + " 天</b></div>" +
+            "<div><span>Tỉ lệ đúng</span><b>" + rate + "%</b></div>" +
+            "<div><span>nhẹ liên kết chiến thắng</span><b>" + streak + " ngày</b></div>" +
           "</div>" +
           '<p class="vl-celebrate__hint">' +
             esc(battleMode() ? realmHint() : ieltsHint(sample)) + "</p>" +
@@ -1247,13 +1247,13 @@
         nextLesson;
     }
 
-    // vnPost plays on word-realm after celebrate exit — skip legacy Chinese post when present
+    // vnPost plays on word-realm after celebrate exit - skip legacy Chinese post when present
     if (postBoss && postBoss.post && postBoss.post.length && !postBoss.vnPost) {
       showCutscene({
-        kicker: "Boss 战后",
+        kicker: "Boss sau chiến tranh ",
         title: postBoss.name,
         lines: postBoss.post,
-        doneLabel: "领取战果"
+        doneLabel: " nhận chiến đấu trái cây "
       }, paintCelebrate);
     } else {
       paintCelebrate();
@@ -1262,9 +1262,9 @@
 
   function fail(msg) {
     var back = fromRealm || campMode || shrineParam
-      ? '<a href="word-realm.html">返回词境远征</a>'
-      : '<a href="zone.html?zone=study&s=vocab">返回单词区</a>';
-    root.innerHTML = '<div class="vl-fail"><h2>打不开这关</h2><p>' + esc(msg) +
+      ? '<a href="word-realm.html">trở về biến thể cũ của | biên giới cuộc viễn chinh</a>'
+      : '<a href="zone.html?zone=study&s=vocab">trở về từ khu vực</a>';
+    root.innerHTML = '<div class="vl-fail"><h2>tá không mở này ải núi</h2><p>' + esc(msg) +
       "</p><p>" + back + "</p></div>";
   }
 
@@ -1294,7 +1294,7 @@
 
     if (realmFight && CORE) {
       var qLen = state.queue.length;
-      // 敌更厚：多数答对才能击破；Boss 接近题数；题尽未击破 = 败
+      // kẻ thù thay đổi hoặc thay thế dày: đa số trả lời hoặc đáp lại câu hỏi của ai đó tài năng đánh hỏng; Boss tiếp cận chủ đề đếm; chủ đề đến mức tối đa chưa đánh hỏng = đánh bại
       var enemyMax = isBossFight()
         ? Math.max(20, Math.ceil(qLen * 0.9))
         : Math.max(18, Math.ceil(qLen * 0.78));
@@ -1311,7 +1311,7 @@
         state.battle.enemy = {
           id: bossMeta.id,
           name: bossMeta.name,
-          title: "地区 Boss",
+          title: " địa phương Boss",
           skin: state.shrineRegion || "mist",
           glyph: state.battle.enemy.glyph,
           portrait: bossMeta.portrait || state.battle.enemy.portrait || "",
@@ -1322,9 +1322,9 @@
       state.battle = null;
     }
 
-    document.title = title + (opts.camp ? " · 星屑修炼场" : (realmFight ? " · 噬词战" : " · 单词小课"));
+    document.title = title + (opts.camp ? " · ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi " : (realmFight ? " · ngấu nghiến biến thể cũ của | chiến đấu " : " · từ nhỏ môn học "));
     var sub = document.getElementById("vl-sub");
-    if (sub) sub.textContent = title + " · 约 " + state.queue.length + " 题";
+    if (sub) sub.textContent = title + " · cân trong cân đĩa hoặc trên cân " + state.queue.length + " Câu hỏi ";
     renderShell();
 
     function showStartGate() {
@@ -1332,19 +1332,19 @@
       var enemy = state.battle && state.battle.enemy;
       var isBoss = !!(state.shrineId && STORY && STORY.isBossShrine && STORY.isBossShrine(state.shrineId));
       var blurb = opts.camp
-        ? ("星屑修炼 · " + words.length + " 词 · " + state.queue.length + " 斩 · 限时 · 不推进剧情")
+        ? (" ngôi sao mảnh vụn tu luyện khổ hạnh · " + words.length + " Từ · " + state.queue.length + " chặt đầu · Giới hạn thời gian · không thúc đẩy cốt truyện ")
         : (realmFight
-          ? ((isBoss ? "Boss 战 · " : "噬词战 · ") + words.length + " 词 · " +
-            state.queue.length + " 斩 · 限时 " + ANSWER_SEC + "/" + ANSWER_SEC_SPELL +
-            "s · 敌 HP " + (state.battle ? state.battle.enemyMaxHp : "—"))
-          : ("今日一小关 · " + words.length + " 个词 · 约 5–8 分钟"));
+          ? ((isBoss ? "Boss chiến đấu · " : " ngấu nghiến biến thể cũ của | chiến đấu · ") + words.length + " Từ · " +
+            state.queue.length + " chặt đầu · Giới hạn thời gian " + ANSWER_SEC + "/" + ANSWER_SEC_SPELL +
+            "s · kẻ thù HP " + (state.battle ? state.battle.enemyMaxHp : "-"))
+          : (" hôm nay một nhỏ ải núi · " + words.length + " dùng trong | biến thể cũ của | · cân trong cân đĩa hoặc trên cân 5–8 phút "));
       var guide = opts.guideHref
-        ? '<a class="vl-start__guide" href="' + esc(opts.guideHref) + '">先看词卡指南</a>'
+        ? '<a class="vl-start__guide" href="' + esc(opts.guideHref) + '">trước chăm sóc biến thể cũ của | dừng hướng dẫn</a>'
         : (opts.enterLine
           ? '<p class="vl-start__guide">' + esc(opts.enterLine) + "</p>"
           : "");
       var startVisual = enemyVisualHTML(enemy);
-      var cta = realmFight ? ("开始挑战 +" + xpShow + " 记忆之力") : ("开始 +" + xpShow + " 经验");
+      var cta = realmFight ? (" bắt đầu thử thách +" + xpShow + " nhớ cua sức mạnh ") : (" Bắt đầu +" + xpShow + " kinh nghiệm ");
       document.getElementById("vl-main").innerHTML =
         '<div class="vl-start">' + startVisual +
           "<h1>" + esc(title) + "</h1>" +
@@ -1364,10 +1364,10 @@
       ? STORY.bossOf(state.shrineId) : null;
     if (preBoss && preBoss.pre && preBoss.pre.length && !preBoss.vnPre && !skipBossCut) {
       showCutscene({
-        kicker: "Boss 战前",
+        kicker: "Boss chiến đấu trước ",
         title: preBoss.name,
         lines: preBoss.pre,
-        doneLabel: "进入战场"
+        doneLabel: " đi vào chiến trường "
       }, showStartGate);
     } else {
       showStartGate();
@@ -1381,7 +1381,7 @@
     state.camp = false;
     var words = shuffle(allWords).slice(0, Math.min(WORDS_PER_LESSON, allWords.length));
     if (words.length < 4) {
-      fail("这个单元词太少，换一单元试试。");
+      fail(" này đơn vị biến thể cũ của | cao nhất ít, trao đổi một đơn vị thử thử ");
       return;
     }
     resetPlayState(words, allWords, Y.displayTitle(item), { guideHref: guideHref(item) });
@@ -1390,7 +1390,7 @@
   function startShrine(lex, shrine) {
     var words = padRealmWords(lex, CORE.shrineWords(lex, shrine.id), REALM_WORDS_MIN);
     if (words.length < 4) {
-      fail("这座祠的词表不完整。");
+      fail(" này chỗ ngồi nhà thờ của biến thể cũ của | bề mặt bên ngoài không hoàn chỉnh ");
       return;
     }
     state.item = null;
@@ -1411,7 +1411,7 @@
     var theme = weekly || ((CORE && CORE.weeklyTheme) ? CORE.weeklyTheme() : null);
     var words = CORE.randomCampWords(lex, CAMP_WORDS, theme ? { tiers: theme.tiers } : null);
     if (words.length < 4) {
-      fail("词库太小，无法开训。");
+      fail(" kho từ cao nhất nhỏ, không thể mở dạy ");
       return;
     }
     state.item = null;
@@ -1419,7 +1419,7 @@
     state.shrineId = null;
     state.camp = true;
     state.shrineRegion = "";
-    var title = theme ? ("星屑修炼场 · " + theme.name) : "星屑修炼场";
+    var title = theme ? (" ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi · " + theme.name) : " ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi ";
     resetPlayState(words, lex.words, title, {
       camp: true,
       enterLine: theme ? theme.blurb : ""
@@ -1448,20 +1448,20 @@
     return Y.load().then(function (items) {
       var item = resolveItem(items);
       if (!item) {
-        fail("找不到对应单元。请从单词区重新进入。");
+        fail(" không thể tìm thấy tương ứng với đơn vị mời biến thể của | từ khu vực lại đi vào ");
         return;
       }
       if (!item.file) {
-        fail("该内容没有词表文件。");
+        fail(" nên nội dung không có biến thể cũ của | bề mặt bên ngoài tài liệu ");
         return;
       }
-      root.innerHTML = '<div class="vl-loading">正在准备小课…</div>';
+      root.innerHTML = '<div class="vl-loading">đang ở sự chuẩn bị nhỏ môn học...</div>';
       return fetch(libraryUrl(item.file)).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.text();
       }).then(function (html) {
         var words = parseWordData(html);
-        if (words.length < 4) throw new Error("未能解析词表（需要 wordData）");
+        if (words.length < 4) throw new Error(" không thể phân tích biến thể cũ của | bề mặt bên ngoài(cần wordData)");
         startWithItem(item, words);
       });
     });
@@ -1469,10 +1469,10 @@
 
   function bootRealm() {
     if (!CORE) {
-      fail("词境核心未加载。请从词境远征重新进入。");
+      fail(" biến thể cũ của | biên giới lõi chưa tải mời biến thể của | biến thể cũ của | biên giới cuộc viễn chinh lại đi vào ");
       return Promise.resolve();
     }
-    root.innerHTML = '<div class="vl-loading">正在展开' + (campMode ? "修炼场" : "祠庙") + "…</div>";
+    root.innerHTML = '<div class="vl-loading">đang ở mở ra' + (campMode ? " tu luyện khổ hạnh sân phơi " : " nhà thờ tổ ") + "...</div>";
     return CORE.loadLexicon().then(function (lex) {
       if (campMode) {
         startCamp(lex);
@@ -1480,12 +1480,12 @@
       }
       var shrine = CORE.shrineById(lex, shrineParam);
       if (!shrine) {
-        fail("找不到这座祠。请从远征地图重新进入。");
+        fail(" không thể tìm thấy này chỗ ngồi nhà thờ mời biến thể của | cuộc viễn chinh bản đồ lại đi vào ");
         return;
       }
-      // pilot：仅雾原章节可战
+      // pilot: hầu như sương mù trước đây chương có thể chiến đấu
       if (shrine.region && shrine.region !== "mist") {
-        fail("后续章节尚未开放，请先完成晨雾平原。");
+        fail(" theo sau chương chưa nở hoa, mời trước hoàn thành buổi sáng sương mù cánh đồng ");
         return;
       }
       startShrine(lex, shrine);
@@ -1496,7 +1496,7 @@
     var boot;
     if (campMode || shrineParam) boot = bootRealm();
     else if (fromRealm) {
-      fail("请从远征地图进入祠庙，或打开星屑修炼场。");
+      fail(" mời biến thể của | cuộc viễn chinh bản đồ đi vào nhà thờ tổ, có thể mở ngôi sao mảnh vụn tu luyện khổ hạnh sân phơi ");
       boot = Promise.resolve();
     } else boot = bootHomework();
 

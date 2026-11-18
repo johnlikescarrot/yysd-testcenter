@@ -1,4 +1,4 @@
-/* ponytail: P0 suite-mock guards — writing post, no false void, junk score */
+/* ponytail: P0 suite-mock guards - writing post, no false void, junk score */
 var fs = require("fs");
 var bridge = fs.readFileSync("assets/js/exam-bridge.js", "utf8");
 var exam = fs.readFileSync("assets/js/exam.js", "utf8");

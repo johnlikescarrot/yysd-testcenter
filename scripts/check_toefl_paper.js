@@ -111,7 +111,7 @@ function writingBlob(t) {
   return parts.join(" ");
 }
 
-var WRITE_HUD = /Question\s+\d+\s+of\s+\d+|WORD BANK|正确答案|BUILD A SENTENCE|Save Draft|Clear Draft|收藏|AI批改|Your Response:/i;
+var WRITE_HUD = /Question\s+\d+\s+of\s+\d+|WORD BANK|Đáp án đúng|BUILD A SENTENCE|Save Draft|Clear Draft|Lưu lại|AI Chấm bài|Your Response:/i;
 var WRITE_JUNK = /[▩▒�]/;
 var WRITE_CJK = /[\u4e00-\u9fff]/;
 
@@ -139,7 +139,7 @@ function checkFile(file) {
       });
     }
     if (t.type === "daily_life" && dailyNeedsBreaks(t) && !dailyStructured(t)) {
-      errs.push(tag + " daily_life is one block — break email/notice/schedule with newlines or fields");
+      errs.push(tag + " daily_life is one block - break email/notice/schedule with newlines or fields");
     }
     if (t.type === "sentence") {
       var slots = (t.parts || []).filter(function (p) { return p && p.slot; }).length;
@@ -151,7 +151,7 @@ function checkFile(file) {
         t.answer.forEach(function (w) {
           if (t.bank.indexOf(w) < 0) errs.push(tag + " answer missing from bank: " + w);
         });
-        if (same(t.bank, t.answer)) errs.push(tag + " bank is answer order — scramble before upload");
+        if (same(t.bank, t.answer)) errs.push(tag + " bank is answer order - scramble before upload");
       }
       if (bankPaper) {
         (t.bank || []).concat(t.answer || []).forEach(function (w) {
@@ -193,7 +193,7 @@ function checkFile(file) {
     }
     if (t.type === "repeat") {
       var akey = (t.audio || "") + "\0" + (t.fromSec != null ? t.fromSec : "") + "\0" + (t.toSec != null ? t.toSec : "");
-      if (seenClip[akey]) errs.push(tag + " Listen and Repeat shares this clip — one file or fromSec/toSec per sentence");
+      if (seenClip[akey]) errs.push(tag + " Listen and Repeat shares this clip - one file or fromSec/toSec per sentence");
       seenClip[akey] = 1;
       if (t.audio && intros[t.audio]) errs.push(tag + " scene intro audio is a numbered question");
       if (clipIsSceneReel(t.audio)) errs.push(tag + " full scene reel or intro file used as a question");

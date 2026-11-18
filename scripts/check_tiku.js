@@ -1,4 +1,4 @@
-/* ponytail: 题库中心 state machine + pool + no-relist */
+/* ponytail: ngân hàng câu hỏi trung tâm state machine + pool + no-relist */
 var path = require("path");
 var fs = require("fs");
 var tiku = require("../server/tiku");
@@ -144,7 +144,7 @@ if (!pool.some(function (b) { return b.set === "R-RDL1"; })) throw new Error("R-
 });
 var ui = fs.readFileSync(path.join(__dirname, "..", "tiku/tiku.js"), "utf8");
 if (ui.indexOf("/api/tiku/papers") < 0) throw new Error("tiku ui api");
-if (ui.indexOf('["pool", "题块池"]') >= 0) throw new Error("pool tab should be gone");
+if (ui.indexOf('["pool", " chủ đề cục ao "]') >= 0) throw new Error("pool tab should be gone");
 if (ui.indexOf("f-type") < 0) throw new Error("type filter");
 if (ui.indexOf('value="bank"') < 0) throw new Error("bank source filter");
 if (ui.indexOf("L-CR") < 0 || ui.indexOf("L-LCN") < 0 || ui.indexOf("L-ANO") < 0 || ui.indexOf("L-AT") < 0 || ui.indexOf("R-CW") < 0 || ui.indexOf("W-BS") < 0 || ui.indexOf("S-LRP") < 0 || ui.indexOf("S-INT") < 0) throw new Error("bank set filter");
@@ -210,7 +210,7 @@ if ((siteAuth.match(/get\("preview"\) === "1"/g) || []).length < 3) {
 var gateApp = fs.readFileSync(path.join(__dirname, "..", "app/assets/js/gate.js"), "utf8");
 if (gateApp.indexOf('preview') < 0) throw new Error("app gate preview");
 if (gateApp.indexOf("tikuHome") < 0) throw new Error("app gate tikuHome");
-if (/if\s*\(\s*!pkgs\s*\)\s*jobs\.push/.test(ui)) throw new Error("packages must refetch on 开通");
+if (/if\s*\(\s*!pkgs\s*\)\s*jobs\.push/.test(ui)) throw new Error("packages must refetch on mở ");
 if (ui.indexOf("data-refresh") < 0) throw new Error("tab refresh");
 if (ui.indexOf("class=\"bench\"") < 0) throw new Error("merged bench");
 var html = fs.readFileSync(path.join(__dirname, "..", "tiku/index.html"), "utf8");
@@ -219,7 +219,7 @@ var gate = fs.readFileSync(path.join(__dirname, "..", "tiku/gate.js"), "utf8");
 if (gate.indexOf("injectRefresh") < 0) throw new Error("gate injects refresh");
 var plat = fs.readFileSync(path.join(__dirname, "..", "platform.html"), "utf8");
 if (plat.indexOf("plat-tiku") < 0) throw new Error("platform tiku");
-if (ui.indexOf('[["pool", "题目审阅"], ["mine", "已有试卷"]]') < 0) throw new Error("teacher review tabs");
+if (ui.indexOf('[["pool", " chủ đề xem xét hoặc đọc kỹ "], ["mine", " đã có bài thi "]]') < 0) throw new Error("teacher review tabs");
 ["data-add", "function saveBuild", "function paintBuild", "function copyPaper", "data-edit"].forEach(function (s) {
   if (ui.indexOf(s) >= 0) throw new Error("manual builder remains: " + s);
 });

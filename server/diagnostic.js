@@ -11,7 +11,7 @@ var crypto = require("crypto");
 var STAGES = {
   high_school: {
     level: "high_school",
-    name: "高中词汇",
+    name: " trường trung học phổ thông biến thể của | ",
     total: 30,
     passThreshold: 0.9,
     excellentThreshold: 0.95,
@@ -20,7 +20,7 @@ var STAGES = {
   },
   cet4: {
     level: "cet4",
-    name: "四级词汇",
+    name: " Từ vựng CET-4 ",
     total: 30,
     passThreshold: 0.8,
     excellentThreshold: 0.9,
@@ -29,7 +29,7 @@ var STAGES = {
   },
   ielts: {
     level: "ielts",
-    name: "雅思词汇",
+    name: " IELTS biến thể của | ",
     total: 35,
     passThreshold: 0.8,
     excellentThreshold: 0.9,
@@ -58,9 +58,9 @@ var LEVEL_DIRS = {
 };
 
 var LEVEL_LABEL = {
-  high_school: "高中词汇",
-  cet4: "四级词汇",
-  ielts: "雅思词汇"
+  high_school: " trường trung học phổ thông biến thể của | ",
+  cet4: " Từ vựng CET-4 ",
+  ielts: " IELTS biến thể của | "
 };
 
 function allocateTypes(n) {
@@ -125,9 +125,9 @@ function pctStr(x) {
 }
 
 function ratingLabel(r) {
-  if (r === "excellent") return "优秀";
-  if (r === "good") return "良好";
-  return "需加强";
+  if (r === "excellent") return " xuất sắc ";
+  if (r === "good") return " tốt ";
+  return " yêu cầu củng cố ";
 }
 
 function buildAdvice(stageResults, recommended) {
@@ -136,19 +136,19 @@ function buildAdvice(stageResults, recommended) {
     var row = stageResults && stageResults[lv];
     if (!row) return;
     parts.push(
-      LEVEL_LABEL[lv] + "正确率 " + pctStr(row.accuracy) +
-      "（" + ratingLabel(row.rating) + "）"
+      LEVEL_LABEL[lv] + " Tỉ lệ đúng " + pctStr(row.accuracy) +
+      "(" + ratingLabel(row.rating) + ")"
     );
   });
-  var tip = "建议从" + (LEVEL_LABEL[recommended] || recommended) + "开始学习。";
+  var tip = " đề xuất biến thể của | " + (LEVEL_LABEL[recommended] || recommended) + " bắt đầu học ";
   var last = stageResults && stageResults[recommended];
   if (last && last.spelling_accuracy != null && last.spelling_accuracy < 0.6) {
-    tip += "重点加强拼写填空。";
+    tip += " kể lại củng cố đánh vần lấp chỗ trống công việc ";
   }
   if (recommended === "ielts" && last && !last.is_passed) {
-    tip += "报告注明：需重点加强基础。";
+    tip += " thông báo chỉ rõ: yêu cầu kể lại củng cố nền ";
   }
-  return (parts.length ? parts.join("；") + "。" : "") + tip;
+  return (parts.length ? parts.join("; ") + " " : "") + tip;
 }
 
 function readJsArray(html, name) {
@@ -339,11 +339,11 @@ function pickDistractors(pool, excludeId, key, n) {
 
 function blankExample(example, word) {
   // Blank lemma + common English inflections (search→searched, capture→captured).
-  var ex = String(example || "").replace(/（[^）]*）|\([^)]*\)/g, "").trim();
+  var ex = String(example || "").replace(/([^)]*)|\([^)]*\)/g, "").trim();
   var w = String(word || "").trim();
   if (!ex || !w) return "______";
   var esc = w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  // underscore is \w in JS — don't use \b around ______
+  // underscore is \w in JS - don't use \b around ______
   if (/_{2,}/.test(ex) && !new RegExp("(?:^|[^A-Za-z])" + esc + "(?:[^A-Za-z]|$)", "i").test(ex)) {
     return ex;
   }
@@ -380,7 +380,7 @@ function blankExample(example, word) {
     if (out !== ex) return out;
   }
 
-  // Still contains lemma letters as a word fragment — hide context entirely
+  // Still contains lemma letters as a word fragment - hide context entirely
   if (new RegExp(esc, "i").test(ex)) return "______";
   return ex || "______";
 }
@@ -392,7 +392,7 @@ function generateStageQuestions(db, stageLevel) {
     "SELECT id, word, ipa, meaning, example, pos FROM vocab_bank WHERE level = ?"
   ).all(stageLevel);
   if (pool.length < stage.total + 3) {
-    throw new Error(stage.name + "词库不足（需至少 " + (stage.total + 3) + " 词，现有 " + pool.length + "）");
+    throw new Error(stage.name + " kho từ không đủ(yêu cầu ít nhất " + (stage.total + 3) + " Từ, hiện có " + pool.length + ")");
   }
   var picked = shuffle(pool).slice(0, stage.total);
   var quotas = allocateTypes(stage.total);
@@ -522,7 +522,7 @@ function computeStageStats(answers, stageLevel, opts) {
 }
 
 /** Error rate > 50% with enough sample → abort whole test. */
-var EARLY_ABORT_MIN = 10; // ponytail: ceiling — don't abort on first few answers; raise if too twitchy
+var EARLY_ABORT_MIN = 10; // ponytail: ceiling - don't abort on first few answers; raise if too twitchy
 function shouldEarlyAbort(answers) {
   var n = answers.length;
   if (n < EARLY_ABORT_MIN) return false;
@@ -538,7 +538,7 @@ function finalizeReport(session, stageMap, elapsed) {
   });
   var early = stages.some(function (s) { return s && s.early_aborted; });
   var advice = buildAdvice(stageMap, recommended);
-  if (early) advice += "因错误率超过50%已提前结束测试。";
+  if (early) advice += " biến thể cũ của sai lầm tỉ lệ vượt qua 50%đã dời lên ngày sớm hơn chấm dứt kiểm tra ";
   return {
     total_time_seconds: elapsed || 0,
     stages: stages,
@@ -613,7 +613,7 @@ function mountRoutes(app, opts) {
     findWord: db.prepare("SELECT * FROM vocab_bank WHERE id = ?")
   };
 
-  // allow abandoned status column — status TEXT already flexible
+  // allow abandoned status column - status TEXT already flexible
   try {
     db.exec("CREATE INDEX IF NOT EXISTS idx_diag_sess_completed ON diagnostic_sessions(student_id, status)");
   } catch (e) { /* ignore */ }
@@ -621,12 +621,12 @@ function mountRoutes(app, opts) {
   function ownSession(req, res) {
     var id = Number(req.params.sessionId || req.params.id);
     if (!id) {
-      res.status(400).json({ error: "无效会话" });
+      res.status(400).json({ error: " không hợp lệ hội thoại " });
       return null;
     }
     var row = stmts.findSession.get(id);
     if (!row || row.student_id !== req.user.sub) {
-      res.status(404).json({ error: "会话不存在" });
+      res.status(404).json({ error: " hội thoại không tồn tại " });
       return null;
     }
     return row;
@@ -644,7 +644,7 @@ function mountRoutes(app, opts) {
     var current = null;
     if (stage !== "finished" && list[nextIdx]) {
       var answered = !!answeredMap[nextIdx];
-      // current unanswered question — hide correct
+      // current unanswered question - hide correct
       current = publicQuestion(list[nextIdx], false);
     }
     var lastFeedback = null;
@@ -774,7 +774,7 @@ function mountRoutes(app, opts) {
       res.json({ ok: true, resume_available: false, session: sessionPayload(row) });
     } catch (e) {
       console.error("[diagnostic] start", e);
-      res.status(500).json({ error: e.message || "无法开始测试" });
+      res.status(500).json({ error: e.message || " không thể bắt đầu kiểm tra " });
     }
   });
 
@@ -788,7 +788,7 @@ function mountRoutes(app, opts) {
     var row = ownSession(req, res);
     if (!row) return;
     if (row.status !== "in_progress") {
-      return res.status(400).json({ error: "测试已结束" });
+      return res.status(400).json({ error: " kiểm tra đã chấm dứt " });
     }
     var body = req.body || {};
     var qid = String(body.qid || "");
@@ -800,14 +800,14 @@ function mountRoutes(app, opts) {
     var stage = row.current_stage;
     var list = questions[stage] || [];
     var idx = list.findIndex(function (q) { return q.qid === qid; });
-    if (idx < 0) return res.status(400).json({ error: "题目不存在" });
+    if (idx < 0) return res.status(400).json({ error: " chủ đề không tồn tại " });
 
     var answers = stmts.listAnswers.all(row.id, stage);
     if (answers.length !== idx) {
-      return res.status(400).json({ error: "请按顺序答题" });
+      return res.status(400).json({ error: " mời nhấn trình tự hình thức gắn liền có nghĩa giống như từ tự do chủ đề " });
     }
     if (stmts.findAnswer.get(row.id, stage, idx)) {
-      return res.status(400).json({ error: "本题已作答" });
+      return res.status(400).json({ error: " chủ đề đang thảo luận đã trả lời " });
     }
 
     var q = list[idx];
@@ -861,7 +861,7 @@ function mountRoutes(app, opts) {
     var row = ownSession(req, res);
     if (!row) return;
     if (row.status !== "in_progress") {
-      return res.status(400).json({ error: "测试已结束" });
+      return res.status(400).json({ error: " kiểm tra đã chấm dứt " });
     }
     var elapsed = Math.max(
       row.elapsed_seconds || 0,
@@ -875,7 +875,7 @@ function mountRoutes(app, opts) {
     var list = questions[stage] || [];
     var answers = stmts.listAnswers.all(row.id, stage);
     if (answers.length < list.length) {
-      return res.status(400).json({ error: "本阶段题目尚未答完" });
+      return res.status(400).json({ error: " gốc giai đoạn chủ đề chưa hình thức gắn liền có nghĩa giống như từ tự do hoàn thành " });
     }
 
     var stats = computeStageStats(answers, stage);
@@ -890,7 +890,7 @@ function mountRoutes(app, opts) {
       try {
         questions[nextStage] = generateStageQuestions(db, nextStage);
       } catch (e) {
-        return res.status(500).json({ error: e.message || "无法生成下一阶段题目" });
+        return res.status(500).json({ error: e.message || " không thể tạo ra xuống một giai đoạn chủ đề " });
       }
     }
 
@@ -926,7 +926,7 @@ function mountRoutes(app, opts) {
     var row = ownSession(req, res);
     if (!row) return;
     if (row.status !== "completed") {
-      return res.status(400).json({ error: "测试尚未完成" });
+      return res.status(400).json({ error: " kiểm tra chưa hoàn thành " });
     }
     res.json({ ok: true, report: parseJson(row.final_report, null), session_id: row.id });
   });
@@ -945,7 +945,7 @@ function mountRoutes(app, opts) {
   app.post("/api/diagnostic/mistakes/retest", authMiddleware, function (req, res) {
     var ids = (req.body && req.body.ids) || [];
     if (!Array.isArray(ids) || !ids.length) {
-      return res.status(400).json({ error: "请选择错题" });
+      return res.status(400).json({ error: " mời chọn lỗi chủ đề " });
     }
     var questions = [];
     ids.forEach(function (id) {
@@ -1024,7 +1024,7 @@ function mountRoutes(app, opts) {
     var mistakeId = Number(body.mistake_id);
     var userAnswer = body.user_answer != null ? body.user_answer : body.answer;
     var m = stmts.findMistake.get(mistakeId, req.user.sub);
-    if (!m || m.is_removed) return res.status(404).json({ error: "错题不存在" });
+    if (!m || m.is_removed) return res.status(404).json({ error: " lỗi chủ đề không tồn tại " });
     var bank = stmts.findWord.get(m.word_id);
     var word = bank ? bank.word : (m.word || m.correct_answer);
     var meaning = bank ? bank.meaning : (m.meaning || "");
@@ -1082,13 +1082,13 @@ function mountRoutes(app, opts) {
 
   app.get("/api/teacher/student-diagnostic/:studentId", teacherAuthMiddleware, function (req, res) {
     var studentId = Number(req.params.studentId);
-    if (!studentId) return res.status(400).json({ error: "无效的学生 ID" });
+    if (!studentId) return res.status(400).json({ error: " không hợp lệ của học sinh ID" });
     if (teacherCanManageStudent && !teacherCanManageStudent(req, studentId)) {
-      return res.status(403).json({ error: "该学生未分配给你" });
+      return res.status(403).json({ error: " nên học sinh chưa phân phối cho bạn " });
     }
     var user = findUserById ? findUserById(studentId) : null;
     if (!user || (req.user.orgId && user.org_id !== req.user.orgId)) {
-      return res.status(404).json({ error: "学生不存在" });
+      return res.status(404).json({ error: " học sinh không tồn tại " });
     }
     var sessions = stmts.listCompleted.all(studentId).map(function (sess) {
       var report = parseJson(sess.final_report, null) || {};

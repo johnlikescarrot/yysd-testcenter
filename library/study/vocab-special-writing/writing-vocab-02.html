@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-writing">
-    <meta name="exam:title" content="单元2 · 教学与课程">
-    <meta name="exam:description" content="写作专项词汇 · 教育 · 教学与课程">
+    <meta name="exam:title" content=" Đơn vị 2 · dạy biến thể của | khóa học ">
+    <meta name="exam:description" content=" viết chuyên biệt biến thể của | · Giáo dục · dạy biến thể của | khóa học ">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>单元2 · 教学与课程</title>
+    <title>Đơn vị 2 · dạy biến thể của | khóa học</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -144,115 +144,115 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">✍️</div><span>单元2-教育-教学与课程</span></div>
+        <div class="logo"><div class="logo-icon">✍️</div><span>Đơn vị 2-Giáo dục-dạy biến thể của | khóa học</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- học chế độ -->
     <section class="section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
 
-    <!-- 检测模式 -->
+    <!-- phát hiện chế độ -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共30题</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3>📋 toàn diện phát hiện · Tổng cộng 30 Câu hỏi</h3>
+            <p>chia ba dùng trong | giai đoạn, theo thứ tự hoàn thành, không thể nhảy đến </p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">搭配选择<br>选正确搭配</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">拼写<br>看中文写英文</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">同义替换<br>选近义词</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">ghép đôi chọn<br>chọn đúng ghép đôi</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đánh vần<br>thích ngôn ngữ viết tiếng Anh</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">đồng nghĩa thay thế<br>chọn từ đồng nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Thứ 1 / 30 Câu hỏi</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：搭配选择</div>
+            <div class="stage-badge" id="stageBadge">giai đoạn một: ghép đôi chọn</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
             </div>
 
             <div class="spell-compare" id="spellCompare">
-                <div class="row"><span class="label">📝 你的输入</span><span class="value" id="spellUserValue">—</span></div>
-                <div class="row"><span class="label">✅ 正确答案</span><span class="value" id="spellCorrectValue">—</span></div>
+                <div class="row"><span class="label">📝 bạn của nhập khẩu</span><span class="value" id="spellUserValue">-</span></div>
+                <div class="row"><span class="label">✅ Đáp án đúng</span><span class="value" id="spellCorrectValue">-</span></div>
             </div>
 
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ xác nhận câu trả lời</button>
+                <button class="btn-next" id="btnNext">xuống một chủ đề →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện thông báo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 trở về học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 教育 · 教学与课程 · 27个核心词条 ====================
+// ==================== Giáo dục · dạy biến thể của | khóa học · 27 dùng trong | lõi mục từ điển ====================
 const phraseData = [
-    { cn:'必修课', en:'Compulsory course', word:'Compulsory', synonym:'Required', target:'compulsory', detail:'compulsory course 表示“必修课”，与 elective/optional course（选修课）相对。', example:'Mathematics is a compulsory course in most schools.' },
-    { cn:'选修课', en:'Elective course', word:'Elective', synonym:'Optional', target:'elective', detail:'elective/optional course 表示“选修课”，学生可自由选择。', example:'Students can choose elective courses based on their interests.' },
-    { cn:'文科', en:'Liberal arts', word:'Liberal', synonym:'Humanities', target:'liberal', detail:'liberal arts 表示“文科”，包括文学、历史、哲学等。', example:'Liberal arts education develops critical thinking skills.' },
-    { cn:'理科', en:'Science subjects', word:'Science', synonym:'STEM', target:'science', detail:'science subjects 表示“理科”，包括物理、化学、生物等。', example:'Science subjects are essential for engineering careers.' },
-    { cn:'基础科学', en:'Basic sciences', word:'Basic', synonym:'Fundamental', target:'basic', detail:'basic sciences 表示“基础科学”，如数学、物理、化学等。', example:'Basic sciences provide the foundation for applied research.' },
-    { cn:'应用科学', en:'Applied sciences', word:'Applied', synonym:'Practical', target:'applied', detail:'applied sciences 表示“应用科学”，将理论知识应用于实际问题。', example:'Applied sciences bridge the gap between theory and practice.' },
-    { cn:'专业知识', en:'Specialized knowledge', word:'Specialized', synonym:'Professional', target:'specialized', detail:'specialized knowledge 表示“专业知识”，指某一领域的深入知识。', example:'University education provides students with specialized knowledge.' },
-    { cn:'专长于', en:'Specialize in', word:'Specialize', synonym:'Focus on', target:'specialize', detail:'specialize in 表示“专长于...”，介词 in 不可省略。', example:'Many students specialize in a particular field of study.' },
-    { cn:'全才', en:'Generalist', word:'Generalist', synonym:'Versatile person', target:'generalist', detail:'generalist 表示“全才”，指拥有广泛知识的人，与 specialist（专才）相对。', example:'A generalist has knowledge in many different areas.' },
-    { cn:'专才', en:'Specialist', word:'Specialist', synonym:'Expert', target:'specialist', detail:'specialist 表示“专才”，指在某一领域有深入知识的人。', example:'A specialist has deep knowledge in a particular field.' },
-    { cn:'应试教育', en:'Exam-oriented education', word:'Oriented', synonym:'Test-focused', target:'oriented', detail:'exam-oriented 表示“以考试为导向的”，指过度重视考试成绩的教育模式。', example:'Exam-oriented education has been widely criticised in recent years.' },
-    { cn:'填鸭式教学', en:'Cramming method of teaching', word:'Cramming', synonym:'Rote', target:'cramming', detail:'cramming 表示“填鸭式教学”，指让学生死记硬背的教学方式。', example:'The cramming method of teaching stifles students\' creativity.' },
-    { cn:'死记硬背', en:'Rote learning', word:'Rote', synonym:'Memorization', target:'rote', detail:'rote learning 表示“死记硬背”，指通过重复记忆而非理解的学习方式。', example:'Rote learning is less effective than understanding concepts.' },
-    { cn:'记忆公式', en:'Memorize formulas', word:'Memorize', synonym:'Learn by heart', target:'memorize', detail:'memorize formulas 表示“记忆公式”，指背诵数学或科学公式。', example:'Students should not just memorize formulas without understanding them.' },
-    { cn:'启发学生', en:'Inspire students', word:'Inspire', synonym:'Motivate', target:'inspire', detail:'inspire students 表示“启发学生”，激发学生的思考和兴趣。', example:'Good teachers inspire students to think independently.' },
-    { cn:'按能力分班', en:'Segregate students by ability', word:'Segregate', synonym:'Separate', target:'segregate', detail:'segregate students 表示“按能力分班”，将学生按水平分组。', example:'Some schools segregate students by ability in certain subjects.' },
-    { cn:'学术研究', en:'Academic research', word:'Academic', synonym:'Scholarly', target:'academic', detail:'academic research 表示“学术研究”，指在大学或研究机构进行的系统研究。', example:'Academic research contributes to the advancement of knowledge.' },
-    { cn:'学术成就', en:'Academic achievement', word:'Achievement', synonym:'Attainment', target:'achievement', detail:'academic achievement 表示“学术成就”，常与 make/achieve 搭配。', example:'Academic achievement is an important indicator of students\' progress.' },
-    { cn:'学术不诚实', en:'Academic dishonesty', word:'Dishonesty', synonym:'Cheating', target:'dishonesty', detail:'academic dishonesty 表示“学术不诚实”，包括抄袭、作弊等行为。', example:'Academic dishonesty is a serious offence in universities.' },
-    { cn:'考试作弊', en:'Cheat in exams', word:'Cheat', synonym:'Copy', target:'cheat', detail:'cheat in exams 表示“考试作弊”，in 表示在考试过程中。', example:'Students who cheat in exams will face severe penalties.' },
-    { cn:'考试合格', en:'Pass exams', word:'Pass', synonym:'Succeed in', target:'pass', detail:'pass exams 表示“考试合格、通过考试”，反义词是 fail exams。', example:'She worked hard to pass all her final exams.' },
-    { cn:'考试不及格', en:'Fail exams', word:'Fail', synonym:'Flunk', target:'fail', detail:'fail exams 表示“考试不及格”，指未能通过考试。', example:'Many students fail exams due to lack of preparation.' },
-    { cn:'学龄儿童', en:'School-age children', word:'School-age', synonym:'School-aged', target:'school-age', detail:'school-age 表示“学龄的”，指达到入学年龄的儿童。', example:'School-age children should have access to quality education.' },
-    { cn:'学校教育', en:'Schooling', word:'Schooling', synonym:'Education', target:'schooling', detail:'schooling 表示“学校教育”，指在正规学校接受的教育。', example:'Schooling plays a crucial role in children\'s development.' },
-    { cn:'上学', en:'Attend school', word:'Attend', synonym:'Go to', target:'attend', detail:'attend school 表示“上学”，也可用 go to school。', example:'Children are required to attend school until the age of 16.' },
-    { cn:'量身定制的课程', en:'Tailor-made course', word:'Tailor-made', synonym:'Customized', target:'tailor-made', detail:'tailor-made course 表示“量身定制的课程”，根据学生需求设计。', example:'The school offers tailor-made courses for students with special needs.' },
-    { cn:'补习班', en:'Cram school', word:'Cram', synonym:'Tutoring centre', target:'cram', detail:'cram school 表示“补习班”，帮助学生备考的课外辅导机构。', example:'Many students attend cram schools after regular classes.' },
-    { cn:'辍学', en:'Drop out of school', word:'Drop', synonym:'Quit', target:'drop', detail:'drop out 表示“辍学”，指未完成学业就离开学校。', example:'Financial problems may cause students to drop out of school.' },
-    { cn:'反馈', en:'Feedback', word:'Feedback', synonym:'Response', target:'feedback', detail:'feedback 表示“反馈”，指对学习或教学的评价和建议。', example:'Teachers should provide constructive feedback to students.' },
-    { cn:'互动', en:'Interact with', word:'Interact', synonym:'Engage with', target:'interact', detail:'interact with 表示“互动”，指师生之间或学生之间的交流互动。', example:'Students are encouraged to interact with their teachers in class.' }
+    { cn:'môn học bắt buộc', en:'Compulsory course', word:'Compulsory', synonym:'Required', target:'compulsory', detail:'compulsory course biểu thị“ môn học bắt buộc ”, và elective/optional course(môn học tự chọn)tương đối ', example:'Mathematics is a compulsory course in most schools.' },
+    { cn:'môn học tự chọn', en:'Elective course', word:'Elective', synonym:'Optional', target:'elective', detail:'elective/optional course biểu thị“ môn học tự chọn ”, học sinh có thể tự do chọn ', example:'Students can choose elective courses based on their interests.' },
+    { cn:'khối khoa học xã hội và nhân văn', en:'Liberal arts', word:'Liberal', synonym:'Humanities', target:'liberal', detail:'liberal arts biểu thị“ khối khoa học xã hội và nhân văn ”, bao gồm văn học, lịch sử, triết học đợi ', example:'Liberal arts education develops critical thinking skills.' },
+    { cn:'khoa học tự nhiên', en:'Science subjects', word:'Science', synonym:'STEM', target:'science', detail:'science subjects biểu thị“ khoa học tự nhiên ”, bao gồm vật lý, Hóa học, sinh vật đợi ', example:'Science subjects are essential for engineering careers.' },
+    { cn:'nền khoa học', en:'Basic sciences', word:'Basic', synonym:'Fundamental', target:'basic', detail:'basic sciences biểu thị“ nền khoa học ”, đủ số lượng đã thoả thuận học, Vật lý, hóa học đợi ', example:'Basic sciences provide the foundation for applied research.' },
+    { cn:'khoa học ứng dụng', en:'Applied sciences', word:'Applied', synonym:'Practical', target:'applied', detail:'applied sciences biểu thị“ khoa học ứng dụng ”, sẽ lý thuyết kiến thức đưa vào sử dụng đi thực tế câu hỏi ', example:'Applied sciences bridge the gap between theory and practice.' },
+    { cn:'chuyên môn kiến thức', en:'Specialized knowledge', word:'Specialized', synonym:'Professional', target:'specialized', detail:'specialized knowledge biểu thị“ chuyên môn kiến thức ”, ngón tay một vài một miền của thâm nhập sâu kiến thức ', example:'University education provides students with specialized knowledge.' },
+    { cn:'chuyên môn đi', en:'Specialize in', word:'Specialize', synonym:'Focus on', target:'specialize', detail:'specialize in biểu thị“ chuyên môn đi...”, giới từ in không thể bỏ qua ', example:'Many students specialize in a particular field of study.' },
+    { cn:'người toàn diện', en:'Generalist', word:'Generalist', synonym:'Versatile person', target:'generalist', detail:'generalist biểu thị“ người toàn diện ”, ngón tay có rộng kiến thức của người, và specialist(cho một người khả năng)tương đối ', example:'A generalist has knowledge in many different areas.' },
+    { cn:'cho một người khả năng', en:'Specialist', word:'Specialist', synonym:'Expert', target:'specialist', detail:'specialist biểu thị“ cho một người khả năng ”, ngón tay tồn tại một vài một miền có thâm nhập sâu kiến thức của người ', example:'A specialist has deep knowledge in a particular field.' },
+    { cn:'giáo dục định hướng thi', en:'Exam-oriented education', word:'Oriented', synonym:'Test-focused', target:'oriented', detail:'exam-oriented biểu thị“ biến thể cũ của dự thi làm được định hướng tới của ”, ngón tay quá mức coi trọng dự thi thành tích của giáo dục chế độ ', example:'Exam-oriented education has been widely criticised in recent years.' },
+    { cn:'nhồi nhét dạy', en:'Cramming method of teaching', word:'Cramming', synonym:'Rote', target:'cramming', detail:'cramming biểu thị“ nhồi nhét dạy ”, ngón tay nhường học sinh học vẹt của dạy cách thức ', example:'The cramming method of teaching stifles students\' creativity.' },
+    { cn:'học vẹt', en:'Rote learning', word:'Rote', synonym:'Memorization', target:'rote', detail:'rote learning biểu thị“ học vẹt ”, ngón tay đi qua lặp lại nhớ và viết tắt của lĩnh hội của học cách thức ', example:'Rote learning is less effective than understanding concepts.' },
+    { cn:'nhớ công thức', en:'Memorize formulas', word:'Memorize', synonym:'Learn by heart', target:'memorize', detail:'memorize formulas biểu thị“ nhớ công thức ”, ngón tay đọc thuộc lòng toán học có thể khoa học công thức ', example:'Students should not just memorize formulas without understanding them.' },
+    { cn:'khai sáng học sinh', en:'Inspire students', word:'Inspire', synonym:'Motivate', target:'inspire', detail:'inspire students biểu thị“ khai sáng học sinh ”, khơi dậy học sinh của suy ngẫm biến thể cũ của hứng thú ', example:'Good teachers inspire students to think independently.' },
+    { cn:'nhấn năng lực chia người thành nhóm', en:'Segregate students by ability', word:'Segregate', synonym:'Separate', target:'segregate', detail:'segregate students biểu thị“ nhấn năng lực chia người thành nhóm ”, sẽ học sinh nhấn mức độ chia thành nhóm ', example:'Some schools segregate students by ability in certain subjects.' },
+    { cn:'học thuật nghiên cứu', en:'Academic research', word:'Academic', synonym:'Scholarly', target:'academic', detail:'academic research biểu thị“ học thuật nghiên cứu ”, ngón tay tồn tại Đại học có thể tổ chức nghiên cứu tiến hành của hệ thống nghiên cứu ', example:'Academic research contributes to the advancement of knowledge.' },
+    { cn:'học thuật thành tựu', en:'Academic achievement', word:'Achievement', synonym:'Attainment', target:'achievement', detail:'academic achievement biểu thị“ học thuật thành tựu ”, luôn luôn biến thể của | make/achieve Cụm đi kèm ', example:'Academic achievement is an important indicator of students\' progress.' },
+    { cn:'học thuật không thành thật', en:'Academic dishonesty', word:'Dishonesty', synonym:'Cheating', target:'dishonesty', detail:'academic dishonesty biểu thị“ học thuật không thành thật ”, bao gồm đạo văn, thực hành gian lận đợi hành động ', example:'Academic dishonesty is a serious offence in universities.' },
+    { cn:'dự thi thực hành gian lận', en:'Cheat in exams', word:'Cheat', synonym:'Copy', target:'cheat', detail:'cheat in exams biểu thị“ dự thi thực hành gian lận ”, in bày tỏ tồn tại dự thi quá trình sự kiện Trung Quốc ', example:'Students who cheat in exams will face severe penalties.' },
+    { cn:'dự thi đáp ứng tiêu chuẩn yêu cầu', en:'Pass exams', word:'Pass', synonym:'Succeed in', target:'pass', detail:'pass exams biểu thị“ dự thi đáp ứng tiêu chuẩn yêu cầu, đi qua dự thi ”, từ phản nghĩa là fail exams ', example:'She worked hard to pass all her final exams.' },
+    { cn:'dự thi trượt', en:'Fail exams', word:'Fail', synonym:'Flunk', target:'fail', detail:'fail exams biểu thị“ dự thi trượt ”, ngón tay không thể đi qua dự thi ', example:'Many students fail exams due to lack of preparation.' },
+    { cn:'độ tuổi đi học trẻ em', en:'School-age children', word:'School-age', synonym:'School-aged', target:'school-age', detail:'school-age biểu thị“ độ tuổi đi học của ”, ngón tay đạt tới vào trường hoặc cao đẳng năm tuổi của trẻ em ', example:'School-age children should have access to quality education.' },
+    { cn:'trường học giáo dục', en:'Schooling', word:'Schooling', synonym:'Education', target:'schooling', detail:'schooling biểu thị“ trường học giáo dục ”, ngón tay tồn tại chính quy trường học chấp nhận của giáo dục ', example:'Schooling plays a crucial role in children\'s development.' },
+    { cn:'đi học', en:'Attend school', word:'Attend', synonym:'Go to', target:'attend', detail:'attend school biểu thị“ đi học ”, cũng có thể sử dụng go to school ', example:'Children are required to attend school until the age of 16.' },
+    { cn:'được đặt làm riêng của khóa học', en:'Tailor-made course', word:'Tailor-made', synonym:'Customized', target:'tailor-made', detail:'tailor-made course biểu thị“ được đặt làm riêng của khóa học ”, theo học sinh yêu cầu thiết kế ', example:'The school offers tailor-made courses for students with special needs.' },
+    { cn:'lớp học thêm', en:'Cram school', word:'Cram', synonym:'Tutoring centre', target:'cram', detail:'cram school biểu thị“ lớp học thêm ”, sự giúp đỡ học sinh chuẩn bị cho kỳ thi của ngoại khoá hướng dẫn cơ chế ', example:'Many students attend cram schools after regular classes.' },
+    { cn:'bỏ học', en:'Drop out of school', word:'Drop', synonym:'Quit', target:'drop', detail:'drop out biểu thị“ bỏ học ”, ngón tay chưa hoàn thành việc học trong trường hợp đó rời khỏi trường học ', example:'Financial problems may cause students to drop out of school.' },
+    { cn:'gửi thông tin phản hồi', en:'Feedback', word:'Feedback', synonym:'Response', target:'feedback', detail:'feedback biểu thị“ gửi thông tin phản hồi ”, ngón tay đúng học có thể dạy của đánh giá biến thể cũ của đề xuất ', example:'Teachers should provide constructive feedback to students.' },
+    { cn:'tương tác', en:'Interact with', word:'Interact', synonym:'Engage with', target:'interact', detail:'interact with biểu thị“ tương tác ”, ngón tay giáo viên và học sinh giữa có thể học sinh giữa của trao đổi tương tác ', example:'Students are encouraged to interact with their teachers in class.' }
 ];
 
 const TOTAL = 30;
-const STAGE_NAMES = ['搭配选择', '拼写', '同义替换'];
-const STAGE_DESC = ['选正确英文搭配', '看中文写英文短语', '选近义词'];
+const STAGE_NAMES = ['ghép đôi chọn', 'đánh vần', 'đồng nghĩa thay thế'];
+const STAGE_DESC = ['chọn đúng tiếng Anh ghép đôi', 'thích ngôn ngữ viết tiếng Anh cụm từ', 'chọn từ đồng nghĩa'];
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== chủ đề tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
     const questions = [];
 
-    // 阶段一：搭配选择 (10题)
+    // giai đoạn một: ghép đôi chọn (10 Câu hỏi)
     const stage1Data = all.slice(0, 10);
     stage1Data.forEach(p => {
         const others = phraseData.filter(x => x.cn !== p.cn);
@@ -263,26 +263,26 @@ function generateQuestions() {
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${p.cn}” 的正确英文表达是？`,
+            question: `“${p.cn}” của đúng tiếng Anh diễn đạt là? `,
             options: opts,
             correct: p.en,
-            detail: `“${p.cn}” 的正确搭配是 “${p.en}”。${p.detail}`
+            detail: `“${p.cn}” của đúng ghép đôi là “${p.en}” ${p.detail}`
         });
     });
 
-    // 阶段二：拼写 (10题)
+    // giai đoạn hai: đánh vần (10 Câu hỏi)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(p => {
         questions.push({
             stage: 1,
             type: 'spell',
-            question: `请写出 “${p.cn}” 的英文短语：`,
+            question: `mời viết đi ra “${p.cn}” của tiếng Anh cụm từ: `,
             correct: p.en,
-            detail: `“${p.cn}” 的正确拼写是 “${p.en}”。${p.detail}`
+            detail: `“${p.cn}” của đúng đánh vần là “${p.en}” ${p.detail}`
         });
     });
 
-    // 阶段三：同义替换 (10题)
+    // giai đoạn ba: đồng nghĩa thay thế (10 Câu hỏi)
     const stage3Pool = shuffle([...phraseData]).filter(function(p) {
         return p.synonym && p.synonym.toLowerCase() !== (p.word || '').toLowerCase();
     });
@@ -307,10 +307,10 @@ function generateQuestions() {
         questions.push({
             stage: 2,
             type: 'choice',
-            question: `下列哪个词可以替换句子中带下划线的词？<br>“${sentenceDisplay}”`,
+            question: `sau đây nào biến thể cũ của | có thể thay thế câu Trung Quốc dải gạch dưới _ của biến thể cũ của |? <br>“${sentenceDisplay}”`,
             options: opts,
             correct: p.synonym,
-            detail: `正确答案是 “${p.synonym}”，是 “${p.word}” 的近义词。${p.detail}`
+            detail: `đúng câu trả lời là “${p.synonym}”, là “${p.word}” của từ đồng nghĩa ${p.detail}`
         });
     });
 
@@ -322,7 +322,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -359,7 +359,7 @@ const spellCorrectValue = document.getElementById('spellCorrectValue');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói(Anh loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -401,7 +401,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     phraseData.forEach(p=>{
@@ -413,10 +413,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-meaning-cn">${p.cn}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 解析：</strong>${p.detail}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${p.example}</div>
+                <div class="word-detail-row"><strong>📎 Giải thích: </strong>${p.detail}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Câu ví dụ: </strong>${p.example}</div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -437,7 +437,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -457,14 +457,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部30题！');
+            alert('phát hiện tiến hành Trung Quốc, mời trước hoàn thành toàn bộ 30 Câu hỏi! ');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -494,10 +494,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Thứ ${currentIndex+1} / ${TOTAL} Câu hỏi`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `giai đoạn${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -518,24 +518,24 @@ function renderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'spellInput';
-        input.placeholder = '请输入英文短语...';
+        input.placeholder = 'mời nhập khẩu tiếng Anh cụm từ...';
         input.autocomplete = 'off';
         input.autocapitalize = 'off';
         input.spellcheck = false;
         const hint = document.createElement('div');
         hint.className = 'spell-hint';
-        hint.textContent = '💡 提示：注意大小写和空格，关键词通常首字母大写（如 Compulsory course）';
+        hint.textContent = '💡 Gợi ý: chú ý đến chữ hoa và chữ thường biến thể cũ của trống, từ khóa thông thường chữ cái đầu chữ in hoa(như Compulsory course)';
         wrap.appendChild(input);
         wrap.appendChild(hint);
         qOptionsContainer.appendChild(wrap);
         setTimeout(() => input.focus(), 100);
 
-        // 拼写输入框：按 Enter 不提交，仅阻止默认行为
+        // đánh vần nhập khẩu khung: nhấn Enter không nộp, hầu như ngăn chặn đồng ý ngầm hành động
         input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !submitted) {
                 e.preventDefault();
                 e.stopPropagation();
-                // 不调用 submitAnswer()，防止误触提交
+                // không điều chuyển submitAnswer(), ngăn chặn nhầm lỗi chạm nộp
             }
         });
     } else {
@@ -579,7 +579,7 @@ function submitAnswer() {
         if (!input) return;
         userAnswer = input.value.trim();
         if (!userAnswer && !window.__vocabTestTimedOut) {
-            alert('请输入英文短语！');
+            alert('mời nhập khẩu tiếng Anh cụm từ! ');
             return;
         }
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -600,7 +600,7 @@ function submitAnswer() {
         if (isCorrect) score++;
 
         feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-        feedback.textContent = isCorrect ? '✅ 完全正确！拼写和大小写都正确。' : '❌ 拼写有误，请查看下方的对比。';
+        feedback.textContent = isCorrect ? '✅ hoàn chỉnh đúng! đánh vần biến thể cũ của chữ hoa và chữ thường tất cả đúng ' : '❌ đánh vần có nhầm lỗi, mời xem xét bên dưới của so sánh ';
 
         results.push({
             question: q.question,
@@ -611,14 +611,14 @@ function submitAnswer() {
             stage: q.stage
         });
 
-        scoreLabel.textContent = `得分: ${score}`;
+        scoreLabel.textContent = `Điểm số: ${score}`;
         btnSubmit.style.display = 'none';
         btnNext.classList.add('visible');
         return;
     }
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước chọn một dùng trong | tùy chọn! '); return; }
         selected = '';
     }
 
@@ -639,7 +639,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng! ' : '❌ Sai ';
 
     results.push({
         question: q.question,
@@ -650,7 +650,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -661,7 +661,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== lỗi chủ đề thông báo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -675,9 +675,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể đúng đếm</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỉ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">lỗi chủ đề đếm</div></div>
     `;
 
     let html = '';
@@ -687,16 +687,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>giai đoạn${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})- Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>bạn của câu trả lời</th><th>Đáp án đúng</th><th>tình trạng</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -716,7 +716,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

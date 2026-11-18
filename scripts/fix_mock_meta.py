@@ -39,11 +39,11 @@ def reading_description(vol: str, test: str, test_data: dict | None) -> str:
         if len(titles) >= 3:
             short = " / ".join(titles[:3])
             if len(short) > 80:
-                short = " / ".join(t[:28] + "…" if len(t) > 28 else t for t in titles[:3])
-            topics = f"（{short}）"
+                short = " / ".join(t[:28] + "..." if len(t) > 28 else t for t in titles[:3])
+            topics = f"({short})"
     return (
-        f"剑桥雅思{vol} Test {test} 学术类阅读（官方真题）：3 篇文章共 40 题{topics}，"
-        "可单篇练习或完整模考，自动批改、解析与雅思预估分。"
+        f" Cambridge IELTS{vol} Test {test} Reading học thuật(Đề thi chính thức): 3 tờ bài viết chung 40 Câu hỏi{topics}, "
+        " có thể hóa đơn tờ luyện tập có thể hoàn chỉnh bắt chước đánh, tự động chấm, phân tích biến thể của | IELTS ước tính chia "
     )
 
 
@@ -52,18 +52,18 @@ def writing_description(vol: str, test: str, test_data: dict | None) -> str:
     if test_data and test_data.get("task1"):
         prompt = (test_data["task1"].get("prompt") or "").lower()
         if "map" in prompt:
-            task1 = "Task 1 地图对比作文"
-        elif "diagram" in prompt or "process" in prompt or "流程" in prompt:
-            task1 = "Task 1 流程图作文"
+            task1 = "Task 1 bản đồ so sánh viết bài văn "
+        elif "diagram" in prompt or "process" in prompt or " quy trình " in prompt:
+            task1 = "Task 1 sơ đồ quy trình viết bài văn "
         elif "table" in prompt:
-            task1 = "Task 1 表格作文"
+            task1 = "Task 1 biểu mẫu viết bài văn "
         elif "graph" in prompt or "chart" in prompt:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 biểu đồ viết bài văn "
         else:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 biểu đồ viết bài văn "
     return (
-        f"剑桥雅思{vol} Test {test} 学术类写作（官方真题）：{task1} + Task 2 议论文，"
-        "限时 60 分钟，自带字数统计、草稿自动保存与官方评分标准自评。"
+        f" Cambridge IELTS{vol} Test {test} Writing học thuật(Đề thi chính thức): {task1} + Task 2 bình luận ngôn ngữ, "
+        " Giới hạn thời gian 60 phút, tự mang theo số lượng ký tự viết thống kê, bản thảo tự động bảo tồn biến thể của | chính phủ chấm điểm tiêu chuẩn tự thảo luận "
     )
 
 

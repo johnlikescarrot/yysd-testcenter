@@ -16,9 +16,9 @@
       "type": "complete_words",
       "module": 1,
       "title": "Spix's Macaw",
-      "titleZh": "斯皮克斯金刚鹦鹉",
+      "titleZh": " Slovakia Pixar Animation Studios vẹt macaw ",
       "instruction": "Fill in the missing letters in the paragraph.",
-      "translation": "斯皮克斯金刚鹦鹉原产于巴西，因动画片《里约大冒险》而闻名，现已极度濒危，野外剩余不足一百只。这种充满活力的蓝鸟数量下降，是因为栖息地丧失以及为销往国外而进行的非法诱捕；私人收藏家和宠物商店曾为此花费巨资。保护人士启动了圈养繁殖与栖息地恢复计划，希望将这种鸟重新引入野外——它于 2019 年被正式宣布野外灭绝。",
+      "translation": " Slovakia Pixar Animation Studios vẹt macaw sản xuất gốc đi Brazil, biến thể cũ của phim hoạt hình«Rio to mạo hiểm»và nổi tiếng, xuất hiện đã cực kỳ bị đe doạ, nông thôn phần còn lại không đủ một một trăm chỉ loại này đầy năng lượng của màu xanh biến thể của số lượng giảm, là bởi vì môi trường sống mất cũng như làm nấu chảy đi ở nước ngoài và tiến hành của bất hợp pháp bẫy; riêng tư nhà sưu tập biến thể cũ của thú cưng cửa hàng đã vì lý do này chi phí đầu tư khổng lồ người giám hộ thành viên tầng lớp đại phu khởi động hoàn thành nuôi trong chuồng sinh sản biến thể của | môi trường sống khôi phục kế hoạch, hy vọng sẽ loại này biến thể của lại đưa vào nông thôn--nó đi 2019 năm chăn trang trọng tuyên bố nông thôn tuyệt chủng ",
       "passage": [
         {
           "t": "The Spix's macaw, native to Brazil and famously known as the inspiration for the animated movie Rio, is critically endangered, with fewer than a hundred individuals remaining. The "
@@ -119,13 +119,13 @@
       "type": "daily_life",
       "module": 1,
       "title": "AI-Generated Art on Campus",
-      "titleZh": "校园 AI 艺术展",
+      "titleZh": " Khuôn viên trường AI nghệ thuật mở ra ",
       "instruction": "Read an article.",
       "layout": {
         "kind": "card",
         "kicker": "Article",
         "title": "AI-Generated Art on Campus",
-        "body": "Visitors to the Petrunich Gallery can now view an exhibition of AI-generated paintings that blur the line between human creativity and machine learning. One standout work, Dream Algorithm, depicts a city floating in a sea of binary code, while another, Echoes of Light, uses layered brushstrokes created by artificial neural networks to mimic a sunrise over glass towers.\n\nThe exhibit, which was funded by an arts innovation grant, allows visitors to interact with a program that generates custom artwork in real time, allowing them to choose themes and color palettes. This feature has become the centerpiece of the show, enchanting everyone from art majors to computer science instructors.\n\n\"We're exploring the intersection of creativity and technology,\" said curator Dana Fields. \"It challenges what art means.\"\n\n\"I made a painting with code—it felt empowering,\" said senior art major Sofia Ramirez. \"It's a new frontier.\""
+        "body": "Visitors to the Petrunich Gallery can now view an exhibition of AI-generated paintings that blur the line between human creativity and machine learning. One standout work, Dream Algorithm, depicts a city floating in a sea of binary code, while another, Echoes of Light, uses layered brushstrokes created by artificial neural networks to mimic a sunrise over glass towers.\n\nThe exhibit, which was funded by an arts innovation grant, allows visitors to interact with a program that generates custom artwork in real time, allowing them to choose themes and color palettes. This feature has become the centerpiece of the show, enchanting everyone from art majors to computer science instructors.\n\n\"We're exploring the intersection of creativity and technology,\" said curator Dana Fields. \"It challenges what art means.\"\n\n\"I made a painting with code-it felt empowering,\" said senior art major Sofia Ramirez. \"It's a new frontier.\""
       },
       "questions": [
         {
@@ -138,7 +138,7 @@
             "D": "A plan to replace the art gallery with a data center"
           },
           "answer": "A",
-          "analysis": "文章围绕画廊的 AI 绘画展览，以及技术如何参与艺术创作。"
+          "analysis": " bài viết xoay quanh phòng trưng bày nghệ thuật của AI vẽ trưng bày, cũng như công nghệ như thế nào tham gia nghệ thuật sáng tác "
         },
         {
           "id": 2,
@@ -150,7 +150,7 @@
             "D": "It tries to help visitors feel comfortable using AI in their creative endeavors."
           },
           "answer": "D",
-          "analysis": "互动程序让访客选择主题和色板并实时生成作品，支持访客尝试用 AI 进行创作。"
+          "analysis": " tương tác quy trình nhường khách thăm chọn chủ đề biến thể cũ của màu sắc tấm và thời gian thực tạo ra tác phẩm, tán thành khách thăm thử sử dụng AI tiến hành sáng tác "
         }
       ]
     },
@@ -158,13 +158,13 @@
       "type": "academic",
       "module": 1,
       "title": "Parallel Algorithms: From Challenges to Opportunities",
-      "titleZh": "并行算法：从挑战到机遇",
+      "titleZh": " tiến hành song song số học: biến thể của | thử thách đến cơ hội ",
       "instruction": "Read the passage.",
-      "translation": "并行算法是现代计算机中常见的计算方法，通过把任务拆成可同时运行的小部分来加快解题。顺序算法会逐条检查大型数据库，而并行算法可把工作分到多个处理器核心，各自同时检查一部分数据。在医疗领域，并行算法能快速分析大规模数据：研究者模拟病毒在人群中传播时，需要处理感染率、人口统计等上百万个数据点。并行处理后，这些模拟可在数分钟而非数小时内完成，帮助公共卫生官员在疫情中更快决策。但若一次向处理器发送过多数据且缺乏管理，系统反而会变慢。并行算法的优势之一是适应性强。开发者可针对 GPU 等擅长同时处理多项任务的硬件进行优化。这也是深度学习（如面部识别）进展迅速的重要原因：没有并行计算，训练深度学习模型几乎不可能。",
+      "translation": " tiến hành song song số học là Hyundai máy tính bình thường thấy của đếm phương pháp, đi qua cầm nhiệm vụ xé mở thành công có thể đồng thời di chuyển trên quỹ đạo của nhỏ phần đến tăng tốc giải quyết vấn đề trình tự số học có thể theo đuổi dải kiểm tra lớn cơ sở dữ liệu, và tiến hành song song số học có thể cầm làm việc chia đến nhiều bộ xử lý lõi, mỗi đồng thời kiểm tra phần dữ liệu tồn tại điều trị y tế miền, tiến hành song song số học có thể nhanh phân tích quy mô lớn dữ liệu: nhà điều tra mô phỏng vi rút tồn tại đám đông Trung Quốc truyền bá biến thể cũ của |, cần xử lý tỷ lệ nhiễm, dân số thống kê đợi dùng trong | một triệu số lượng mục hoặc cá nhân cứ điểm tiến hành song song xử lý hoàng hậu, những... này mô phỏng có thể tồn tại đếm phút và viết tắt của vài giờ bên trong hoàn thành, sự giúp đỡ y tế công cộng quan chức tồn tại tình hình dịch bệnh Trung Quốc thay đổi hoặc thay thế nhanh quyết định chiến lược nhưng dường như đầu tiên hướng bộ xử lý truyền đi quá nhiều dữ liệu và thiếu giám sát, hệ thống ngược lại có thể thay đổi chậm tiến hành song song số học của sự vượt trội một trong là tính thích nghi bướng bỉnh nhà phát triển có thể nhắm vào GPU đợi giỏi về đồng thời xử lý nhiều sau cổ nhiệm vụ của phần cứng tiến hành tối ưu hóa này cũng là học sâu(như khuôn mặt phân biệt)tiến triển nhanh chóng của quan trọng nguyên nhân: không có tính toán song song, huấn luyện học sâu mô hình hầu như không có thể ",
       "paras": [
         "Parallel algorithms, a computing method common in modern computers, solve problems faster by dividing a task into smaller parts that run at the same time. Instead of checking every item in a huge database one by one as in a sequential algorithm, a parallel algorithm might split the job across multiple processor cores, each checking a portion of the data simultaneously.",
-        "In healthcare, parallel algorithms play a crucial role in analyzing large datasets quickly. When researchers simulate how a virus might spread through a population, they need to process millions of data points—like infection rates and demographics. Using parallel processing, these simulations can run in minutes instead of hours, helping public health officials make faster decisions during outbreaks. However, if too much data is sent to the processors at once without proper management, the system slows down.",
-        "One of the strengths of parallel algorithms is their versatility. Developers can tailor them to work efficiently on different types of hardware, such as graphics processing units (GPUs), which are especially good at handling many tasks at once. This is a big reason why deep learning—used in things like facial recognition—has advanced so quickly. Training a deep learning model would be nearly impossible without parallel computing."
+        "In healthcare, parallel algorithms play a crucial role in analyzing large datasets quickly. When researchers simulate how a virus might spread through a population, they need to process millions of data points-like infection rates and demographics. Using parallel processing, these simulations can run in minutes instead of hours, helping public health officials make faster decisions during outbreaks. However, if too much data is sent to the processors at once without proper management, the system slows down.",
+        "One of the strengths of parallel algorithms is their versatility. Developers can tailor them to work efficiently on different types of hardware, such as graphics processing units (GPUs), which are especially good at handling many tasks at once. This is a big reason why deep learning-used in things like facial recognition-has advanced so quickly. Training a deep learning model would be nearly impossible without parallel computing."
       ],
       "questions": [
         {
@@ -177,7 +177,7 @@
             "D": "They use more advanced hardware than parallel algorithms do."
           },
           "answer": "A",
-          "analysis": "顺序算法逐个检查数据，并行算法把任务分到多个核心同时执行，因此顺序算法效率较低。"
+          "analysis": " trình tự số học từng cái một kiểm tra dữ liệu, tiến hành song song số học cầm nhiệm vụ chia đến nhiều lõi đồng thời thực hiện, do đó trình tự số học hiệu suất so sánh thấp "
         },
         {
           "id": 2,
@@ -189,7 +189,7 @@
             "D": "simplicity"
           },
           "answer": "B",
-          "analysis": "下文说开发者可针对不同硬件调整算法，versatility 指适应性。"
+          "analysis": " xuống ngôn ngữ thuyết phục nhà phát triển có thể nhắm vào khác phần cứng điều chỉnh số học, versatility ngón tay tính thích nghi "
         },
         {
           "id": 3,
@@ -201,7 +201,7 @@
             "D": "To explain why GPUs were first invented for hospitals"
           },
           "answer": "B",
-          "analysis": "疫情模拟需要处理上百万数据点，用来说明并行处理能把耗时从数小时缩到数分钟。"
+          "analysis": " tình hình dịch bệnh mô phỏng cần xử lý dùng trong | một triệu dữ liệu điểm, được dùng để giải thích tiến hành song song xử lý có thể cầm tốn thời gian biến thể của | vài giờ rút lại đến đếm phút "
         },
         {
           "id": 4,
@@ -213,7 +213,7 @@
             "D": "The algorithm switches to a sequential method."
           },
           "answer": "C",
-          "analysis": "原文 However, if too much data is sent ... the system slows down。"
+          "analysis": " Bản gốc However, if too much data is sent ... the system slows down "
         },
         {
           "id": 5,
@@ -225,7 +225,7 @@
             "D": "It is used mainly to manage public-health outbreaks."
           },
           "answer": "A",
-          "analysis": "末段：没有并行计算，训练深度学习模型几乎不可能。"
+          "analysis": " phần đoạn cuối: không có tính toán song song, huấn luyện học sâu mô hình hầu như không có thể "
         }
       ]
     }

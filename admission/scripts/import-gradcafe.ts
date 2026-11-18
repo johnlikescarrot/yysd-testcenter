@@ -56,7 +56,7 @@ function greTotal(v: string, q: string): number | null {
   const a = Number(v);
   const b = Number(q);
   if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
-  if (a > 170 || b > 170) return null; // old GRE scale — skip
+  if (a > 170 || b > 170) return null; // old GRE scale - skip
   return Math.round(a + b);
 }
 
@@ -103,7 +103,7 @@ async function main() {
     return cs || list[0];
   }
 
-  console.log(`Loading ${CSV}…`);
+  console.log(`Loading ${CSV}...`);
   const raw = await loadCsv();
   const ms = raw.filter(
     (r) =>
@@ -171,10 +171,10 @@ async function main() {
     const gre = greTotal(r.greV, r.greQ);
     const ug =
       /international/i.test(r.status)
-        ? "国际本科（GradCafe 自报）"
+        ? " quốc tế khóa học đại học(GradCafe tự thông báo)"
         : /american/i.test(r.status)
-          ? "美国本科（GradCafe 自报）"
-          : "未标注本科（GradCafe 自报）";
+          ? " Hoa Kỳ khóa học đại học(GradCafe tự thông báo)"
+          : " chưa đánh dấu khóa học đại học(GradCafe tự thông báo)";
     const note = redactComment(r.comment);
     const gpa = hasGpa ? Math.round(gpaNum * 100) / 100 : school.avgGpa;
     const tags = ["gradcafe"];
@@ -193,7 +193,7 @@ async function main() {
       backgroundTags: tags,
       admissionResult: admitted,
       year,
-      description: `GradCafe 真实自报（脱敏）：${ug}，GPA ${gpa.toFixed(2)}${gre != null ? `，GRE ${gre}` : ""}，${year} ${r.season} 申请 ${catalog} ${school.program}，${admitted ? "录取" : "拒绝"}${note ? `。备注：${note}` : ""}。来源：The GradCafe（历史公开数据集）。`,
+      description: `GradCafe thật tự thông báo(giảm mẫn cảm): ${ug}, GPA ${gpa.toFixed(2)}${gre != null ? `, GRE ${gre}` : ""}, ${year} ${r.season} nộp đơn xin ${catalog} ${school.program}, ${admitted ? " chấp nhận ứng viên vượt kỳ thi đầu vào " : " từ chối "}${note ? ` cột ghi chú: ${note}` : ""} Nguồn: The GradCafe(lịch sử mở tập dữ liệu) `,
       source: "gradcafe",
       externalId: `gradcafe-deedy-${r.rowId}`,
     });

@@ -1,4 +1,4 @@
-/* vocab.js — legacy hub → bookshelf (phase 5) */
+/* vocab.js - legacy hub → bookshelf (phase 5) */
 (function () {
   "use strict";
   var params = new URLSearchParams(location.search);

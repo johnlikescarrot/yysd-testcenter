@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>优益思达国际课程中心</title>
+  <title>Trung tâm YYSD</title>
   <style>
     html, body { height: 100%; margin: 0; background: #f4f1ea; color: #1c1915; font-family: "Songti SC", "Noto Serif SC", serif; }
     body { display: flex; align-items: center; justify-content: center; }
@@ -16,10 +16,10 @@
 </head>
 <body>
   <main>
-    <h1>优益思达题库中心</h1>
-    <p id="label">系统预加载中</p>
+    <h1>xuất sắc lợi ích suy nghĩ đạt tới ngân hàng câu hỏi trung tâm</h1>
+    <p id="label">hệ thống ứng trước tải Trung Quốc</p>
     <div class="track"><div class="bar" id="bar"></div></div>
-    <button id="retry" hidden type="button">重试</button>
+    <button id="retry" hidden type="button">thử lại</button>
   </main>
   <script>
     var bar = document.getElementById("bar");
@@ -31,11 +31,11 @@
       retry.hidden = true;
     });
     window.yysdSplash.onFail(function () {
-      label.textContent = "加载失败";
+      label.textContent = " Tải không thành công ";
       retry.hidden = false;
     });
     retry.onclick = function () {
-      label.textContent = "系统预加载中";
+      label.textContent = " hệ thống ứng trước tải Trung Quốc ";
       retry.hidden = true;
       bar.style.width = "0";
       window.yysdSplash.retry();

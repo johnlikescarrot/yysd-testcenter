@@ -27,7 +27,7 @@ const bg = {
 
 const nHard = fitNotes(hard, bg);
 const nSoft = fitNotes(soft, bg);
-console.assert(nHard.some((x) => x.includes("冲刺") || x.includes("低于")), nHard);
-console.assert(nSoft.some((x) => x.includes("达参考")), nSoft);
+console.assert(nHard.some((x) => x.includes(" chạy nước rút ") || x.includes(" thấp hơn so với ")), nHard);
+console.assert(nSoft.some((x) => x.includes(" đạt tới tham khảo ")), nSoft);
 console.assert(fitPenalty(nHard) > fitPenalty(nSoft), "hard should rank worse");
 console.log("check-advisor-bg OK", { nHard, nSoft });

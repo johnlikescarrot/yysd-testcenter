@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Stamp listening 题型 groups with audioStart/audioEnd (and section.audioClips).
+"""Stamp listening chủ đề khuôn groups with audioStart/audioEnd (and section.audioClips).
 
 Usage: python3 scripts/mark_listen_group_audio.py --volume 21
        python3 scripts/mark_listen_group_audio.py --volume 20-5
-ponytail: Whisper tiny + look-at cues; equal-split when one 口播 covers two 题型组.
+ponytail: Whisper tiny + look-at cues; equal-split when one nói chuyện với khán giả covers two chủ đề khuôn hình thành.
 """
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def tnum(x: float) -> str:
 
 
 def words_to_nums(s: str) -> str:
-    s = s.lower().replace("—", " ").replace("–", "-").replace("/", " ")
+    s = s.lower().replace("-", " ").replace("–", "-").replace("/", " ")
     s = re.sub(r"[^a-z0-9'\- ]+", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     for w, n in sorted(WORDN.items(), key=lambda kv: -len(kv[0])):
@@ -383,7 +383,7 @@ def process_volume(vol: int, model, dry: bool) -> list[str]:
             clips = apply_overrides(vol, test, part, clips)
             for f in flags:
                 print("    !", f)
-                report.append("剑%d T%d S%d %s" % (vol, test, part, f))
+                report.append(" Cambridge%d T%d S%d %s" % (vol, test, part, f))
             looks = [c for c in cues if c["kind"] == "look"]
             print("    looks", [(c["q1"], c["q2"], round(c["start"], 1)) for c in looks], "dur", round(dur, 1))
             if not looks:
@@ -468,9 +468,9 @@ def main() -> None:
         if vol < 5 or vol > 21:
             print("skip vol", vol)
             continue
-        print("\n=== 剑", vol, "===")
+        print("\n=== Cambridge ", vol, "===")
         all_report.extend(process_volume(vol, model, args.dry_run))
-    print("\n=== 难段清单 (%d) ===" % len(all_report))
+    print("\n=== khó đoạn danh sách mục (%d) ===" % len(all_report))
     for line in all_report:
         print(line)
     out = CACHE / "hard_cases.txt"

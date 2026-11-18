@@ -20,9 +20,9 @@ from scripts.reading_paras import (
     to_plain as _to_plain,
 )
 
-PDF = Path("/Users/frankman/Desktop/剑21/剑桥雅思21（A类）.pdf")
+PDF = Path("/Users/frankman/Desktop/Cambridge 21/Cambridge IELTS 21(A loại).pdf")
 
-# ponytail: hard-coded page ranges — upgrade path: scan for PASSAGE markers dynamically
+# ponytail: hard-coded page ranges - upgrade path: scan for PASSAGE markers dynamically
 PASSAGE_PAGES: dict[int, list[tuple[int, int]]] = {
     1: [(17, 18), (21, 22), (26, 27)],
     2: [(39, 40), (43, 44), (47, 48)],
@@ -38,7 +38,7 @@ SKIP = re.compile(
 BYLINE = re.compile(r"^A review of .+ book ", re.I)
 _FOOTNOTE_LINE = re.compile(r"^[•\*]{1,3}\s|^\*\*\*")
 
-# Section label: A–G + space + word (uppercase + lowercase), not “A I …” / “a single …”
+# Section label: A–G + space + word (uppercase + lowercase), not “A I ...” / “a single ...”
 _LABEL = re.compile(r"^([A-G])\s+([A-Z][a-z].*)")
 
 _BODY_START = re.compile(
@@ -310,7 +310,7 @@ def passages_for_test(test_no: int) -> list[dict]:
     return out
 
 
-# ponytail: runnable self-check — fails if paragraph counts drift from question refs
+# ponytail: runnable self-check - fails if paragraph counts drift from question refs
 _MIN_PARAS: dict[tuple[int, int], int] = {
     (1, 2): 7,
     (1, 3): 4,
@@ -348,5 +348,5 @@ if __name__ == "__main__":
             paras = p["passage"]["paras"]
             labels = sum(1 for t in paras if "para-label" in t)
             print(
-                f"T{test} P{p['id']}: {len(paras):2} paras ({labels} labels) — {p['passage']['title'][:50]}"
+                f"T{test} P{p['id']}: {len(paras):2} paras ({labels} labels) - {p['passage']['title'][:50]}"
             )

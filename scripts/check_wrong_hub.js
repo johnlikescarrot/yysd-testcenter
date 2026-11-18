@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* ponytail: smoke-check for wrong-hub suite bucketing — fails if L+R homework no longer aggregates to mock */
+/* ponytail: smoke-check for wrong-hub suite bucketing - fails if L+R homework no longer aggregates to mock */
 "use strict";
 
 function suiteBase(itemId) {

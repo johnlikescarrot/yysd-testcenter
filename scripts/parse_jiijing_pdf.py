@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse New Oriental IELTS speaking 机经 PDF (纯题目版) into jiijing JSON bank."""
+"""Parse New Oriental IELTS speaking máy móc kinh điển PDF (thuần khiết chủ đề một đăng ký) into jiijing JSON bank."""
 from __future__ import annotations
 
 import argparse
@@ -11,11 +11,11 @@ from pathlib import Path
 from pypdf import PdfReader
 
 NOISE = {
-    "必备话题",
-    "本季新题",
-    "保留旧题",
-    "雅思教研中心",
-    "雅思研发中心",
+    " cần thiết chủ đề ",
+    " gốc mùa viết tắt của Tân Cương chủ đề ",
+    " giữ cũ chủ đề ",
+    " IELTS giảng dạy và nghiên cứu trung tâm ",
+    " IELTS nghiên cứu và phát triển trung tâm ",
     "People:",
     "Place:",
     "Event:",
@@ -39,8 +39,8 @@ def extract_text(pdf: Path) -> str:
 
 
 def parse_part1(full: str) -> list[dict]:
-    m1 = re.search(r"1 Topic Pool——Part One", full)
-    m2 = re.search(r"3 Topic Pool——Part 2&3|2 Topic Pool", full)
+    m1 = re.search(r"1 Topic Pool--Part One", full)
+    m2 = re.search(r"3 Topic Pool--Part 2&3|2 Topic Pool", full)
     if not m1 or not m2:
         return []
     part1_text = full[m1.end() : m2.start()]
@@ -158,14 +158,14 @@ def join_describe_title(prev: str) -> str | None:
         parts.append(ln)
     title = re.sub(r"\s+", " ", " ".join(parts)).strip()
     title = re.sub(r"^(•\s*)+", "", title)
-    title = re.sub(r"\s*(本季新题|保留旧题)\s*$", "", title).strip()
+    title = re.sub(r"\s*(gốc mùa viết tắt của Tân Cương chủ đề|giữ cũ chủ đề)\s*$", "", title).strip()
     if not title.lower().startswith("describe"):
         return None
     return title
 
 
 def parse_part2(full: str) -> list[dict]:
-    m2 = re.search(r"3 Topic Pool——Part 2&3|2 Topic Pool", full)
+    m2 = re.search(r"3 Topic Pool--Part 2&3|2 Topic Pool", full)
     section = full[m2.start() :] if m2 else full
     chunks = re.split(r"(?i)You should say:\s*", section)
     part2: list[dict] = []
@@ -248,7 +248,7 @@ def parse_pdf(pdf: Path, bank_id: str, title: str) -> dict:
     return {
         "id": bank_id,
         "title": title,
-        "source": "新东方在线雅思研发中心 · 纯题目版",
+        "source": " viết tắt của Tân Cương phương Đông trực tuyến IELTS nghiên cứu và phát triển trung tâm · thuần khiết chủ đề một đăng ký ",
         "part1": parse_part1(full),
         "part2": parse_part2(full),
     }
@@ -258,7 +258,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf", type=Path)
     ap.add_argument("--bank-id", default="2026-q2")
-    ap.add_argument("--title", default="2026年第二季度雅思口语机经")
+    ap.add_argument("--title", default="2026 năm quý thứ hai IELTS lời nói thông thường máy móc kinh điển ")
     ap.add_argument(
         "--out-dir",
         type=Path,

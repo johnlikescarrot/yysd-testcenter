@@ -1,4 +1,4 @@
-/* ponytail: warm-premium shell — shadcn tokens; shared by dashboard / zone / teacher */
+/* ponytail: warm-premium shell - shadcn tokens; shared by dashboard / zone / teacher */
 
 .page-premium {
   --background: #fbf8f1;
@@ -106,7 +106,7 @@
   margin-top: 16px;
 }
 
-/* 今日焦点 — daily open ceremony */
+/* hôm nay điểm tiêu - daily open ceremony */
 .page-premium .dash-focus {
   display: flex;
   align-items: center;
@@ -536,7 +536,7 @@
   to { opacity: 1; transform: none; }
 }
 
-/* —— zone (单词区 / 真题区) —— */
+/* -- zone (Khu vực từ vựng / Khu vực đề thi) -- */
 .page-premium .catalog-toolbar {
   background: var(--card);
   border: 1px solid var(--border);
@@ -638,7 +638,7 @@
   color: var(--muted-foreground);
 }
 
-/* —— teacher shell —— */
+/* -- teacher shell -- */
 .page-premium.teacher-page {
   background: var(--background);
 }
@@ -762,7 +762,7 @@
   background: transparent;
 }
 
-/* —— practice zone: AI 雅思老师 hero —— */
+/* -- practice zone: AI IELTS giáo viên hero -- */
 .page-premium .ai-tutor-entry {
   display: flex;
   align-items: center;
@@ -936,7 +936,7 @@
   }
 }
 
-/* —— I-004 results empty (premium path) —— */
+/* -- I-004 results empty (premium path) -- */
 .page-premium .state.results-empty {
   max-width: 520px;
   margin: 24px auto 0;
@@ -962,7 +962,7 @@
   margin-top: 22px;
 }
 
-/* —— I-005 keyboard focus (premium pages) —— */
+/* -- I-005 keyboard focus (premium pages) -- */
 .page-premium a:focus-visible,
 .page-premium button:focus-visible,
 .page-premium .btn:focus-visible,
@@ -971,7 +971,7 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 28%, transparent);
 }
 
-/* —— Phase 1: Bento design tokens + primitives (Reme layout language) —— */
+/* -- Phase 1: Bento design tokens + primitives (Reme layout language) -- */
 .page-premium {
   --bento-radius-lg: 32px;
   --bento-radius-md: 24px;
@@ -1205,7 +1205,7 @@
   }
 }
 
-/* —— Phase 3: Vocab learning desk —— */
+/* -- Phase 3: Vocab learning desk -- */
 .page-premium .subject-group--vocab {
   margin-top: 0;
 }
@@ -1522,7 +1522,7 @@
   }
 }
 
-/* —— Legacy vocab bento (unused on hub; keep for safety) —— */
+/* -- Legacy vocab bento (unused on hub; keep for safety) -- */
 .page-premium .vocab-bento {
   margin-top: 4px;
   display: flex;
@@ -2115,7 +2115,7 @@
   }
 }
 
-/* 双入口：作业单词区 → 词境远征 */
+/* hai lối vào: bài tập về nhà từ khu vực → biến thể cũ của | biên giới cuộc viễn chinh */
 .page-premium .vocab-realm-banner {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -2175,7 +2175,7 @@
   }
 }
 
-/* —— Phase 4: Speaking CTAs + Cambridge glass grid —— */
+/* -- Phase 4: Speaking CTAs + Cambridge glass grid -- */
 .page-premium .spk-cta-grid {
   margin: 0 0 var(--bento-gap);
 }
@@ -2242,7 +2242,7 @@
   background: linear-gradient(135deg, #102a4c, #07192f);
 }
 
-/* Glass VOL cards — Reme listening/reading language */
+/* Glass VOL cards - Reme listening/reading language */
 .page-premium .vol-grid {
   gap: var(--bento-gap-sm);
 }
@@ -2362,7 +2362,7 @@
   }
 }
 
-/* —— Wave S0: premium utilities —— */
+/* -- Wave S0: premium utilities -- */
 .page-premium .premium-page-head {
   padding: var(--space-3) 0 var(--space-2);
 }
@@ -2432,7 +2432,7 @@
   color: #fff;
 }
 
-/* —— Wave S1: profile —— */
+/* -- Wave S1: profile -- */
 .page-premium .profile-card,
 .page-premium #profile-card.auth-card {
   max-width: 560px;
@@ -2450,7 +2450,7 @@
   border-top: 1px solid var(--bento-border);
 }
 
-/* —— Wave S2: results list cards —— */
+/* -- Wave S2: results list cards -- */
 .page-premium .results-list {
   display: flex;
   flex-direction: column;
@@ -2528,7 +2528,7 @@
   }
 }
 
-/* —— Results shell: tabs, panels, archive —— */
+/* -- Results shell: tabs, panels, archive -- */
 .results-shell {
   padding-top: 4px;
 }
@@ -2715,7 +2715,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* —— Wrong-record hub on results —— */
+/* -- Wrong-record hub on results -- */
 .wrong-hub {
   margin: 0;
   padding: 18px 18px 16px;
@@ -3000,7 +3000,7 @@
   .wrong-item__ans { grid-template-columns: 1fr; }
 }
 
-/* —— Wave S3: speaking select/session —— */
+/* -- Wave S3: speaking select/session -- */
 .page-premium.spk-page .spk-card {
   border-radius: var(--bento-radius-sm);
   border: 1px solid var(--bento-border);
@@ -3062,7 +3062,7 @@
   box-shadow: var(--bento-shadow);
 }
 
-/* —— Teacher portal wave-1 (align with assign catalog) —— */
+/* -- Teacher portal wave-1 (align with assign catalog) -- */
 .page-premium .teacher-focus {
   margin: 10px 0 0;
   max-width: 40rem;
@@ -3207,7 +3207,7 @@
   color: var(--brand-navy, #07192f);
 }
 
-/* —— 词境远征 path hub —— */
+/* -- biến thể cũ của | biên giới cuộc viễn chinh path hub -- */
 .page-premium .vocab-bento--rpg { gap: 16px; }
 .page-premium .vrpg-hero {
   display: flex;
@@ -3440,7 +3440,7 @@
 }
 
 /* ==========================================================================
-   Apple hub shell — zone / dashboard / alevel (matches homepage chrome)
+   Apple hub shell - zone / dashboard / alevel (matches homepage chrome)
    Loaded after page-premium tokens so these win the cascade.
    ========================================================================== */
 body.home-apple-page.page-premium {
@@ -3659,7 +3659,7 @@ body.home-apple-page.page-premium .minimal-footer__links a:hover {
   }
 }
 
-/* —— 教师新建任务：全屏作业台（仅 #create-modal） —— */
+/* -- giáo viên huyện Xinjian ở Nam Xương nhiệm vụ: toàn màn hình bài tập về nhà Đài Loan(hầu như #create-modal) -- */
 #create-modal.cal-modal {
   padding: 0;
   place-items: stretch;
@@ -3902,7 +3902,7 @@ body.home-apple-page.page-premium .minimal-footer__links a:hover {
   }
 }
 
-/* —— 我的学生：bento + 学生主页 —— */
+/* -- tôi của học sinh: bento + học sinh trang chủ -- */
 .page-premium .teacher-students {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));

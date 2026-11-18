@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""OCR Desktop RAP screenshots into bank-rap-reading.json. Set id stays R-RAP1…"""
+"""OCR Desktop RAP screenshots into bank-rap-reading.json. Set id stays R-RAP1..."""
 import importlib.util
 import json
 import os
@@ -24,7 +24,7 @@ SKIP_LEFT = re.compile(
     re.I,
 )
 CHROME_RIGHT = re.compile(
-    r"^(question\s+\d+\s+of\s+\d+|解析|#|sentence to insert)",
+    r"^(question\s+\d+\s+of\s+\d+|Giải thích|#|sentence to insert)",
     re.I,
 )
 INSERT_STEM = re.compile(
@@ -55,7 +55,7 @@ def zh_header(lines):
         t = r["t"] or ""
         if not re.search(r"[\u4e00-\u9fff]", t):
             continue
-        t = re.sub(r"[^\u4e00-\u9fffA-Za-z0-9·，、：:（）()\- ]+", "", t)
+        t = re.sub(r"[^\u4e00-\u9fffA-Za-z0-9·, , : :()()\- ]+", "", t)
         t = t.strip(" |·-")
         if t and t not in chunks:
             chunks.append(t)
@@ -141,7 +141,7 @@ def parse_question(rows):
     seen_opts = False
     for r in rows:
         t = (r["t"] or "").strip()
-        if not t or CHROME_RIGHT.match(t) or t in ("解析", "##"):
+        if not t or CHROME_RIGHT.match(t) or t in (" Giải thích ", "##"):
             continue
         if re.match(r"^#", t) or re.match(r"^[A-Z0-9.*#]{3,}$", t):
             continue
@@ -189,7 +189,7 @@ def parse_question(rows):
         return q
     if INSERT_STEM.search(stem) and len(options) < 2:
         options = {"A": "Location A", "B": "Location B", "C": "Location C", "D": "Location D"}
-        am = re.search(r"选\s*([A-D])", analysis)
+        am = re.search(r" chọn\s*([A-D])", analysis)
         answer = answer or (am.group(1) if am else "A")
     if len(options) < 2 or not answer:
         return None
@@ -230,7 +230,7 @@ def fill_sentence_q(q, paras):
         para = re.sub(r"^Para[a-z]*\s*\d+\s*", "", para, flags=re.I)
     sents = split_sents(para)
     pick = 0
-    m = re.search(r"第\s*(\d+)\s*句", analysis)
+    m = re.search(r" Thứ\s*(\d+)\s*Câu ", analysis)
     if m:
         pick = max(0, int(m.group(1)) - 1)
     else:
@@ -395,7 +395,7 @@ def paper(tasks):
     tasks = sorted(tasks, key=lambda t: int(re.search(r"\d+", t["set"]).group()))
     return {
         "id": "bank-rap",
-        "title": "题块库 · 学术文章",
+        "title": " chủ đề cục nhà kho · học thuật bài viết ",
         "skill": "reading",
         "source": "bank",
         "tasks": tasks,
@@ -466,10 +466,10 @@ def build():
 def calibrate():
     hit = hit_academic()
     src = hit[B.norm("The Dynamics of Hollywood's Golden Age")]
-    t = clone_hit(src, 1, "The Dynamics of Hollywood's Golden Age", "好莱坞黄金时代")
+    t = clone_hit(src, 1, "The Dynamics of Hollywood's Golden Age", " Hollywood thời đại hoàng kim ")
     assert t["set"] == "R-RAP1"
     assert t["questions"][0]["answer"] == "D"
-    assert t["titleZh"] == "好莱坞黄金时代"
+    assert t["titleZh"] == " Hollywood thời đại hoàng kim "
     p = "/tmp/yysd-rap/03-R-RAP (1)/R-RAP2-Augmented Reality for Training-Q1.png"
     page = parse_page(p, B.ocr_one(p))
     assert page["q"]["answer"] == "C", page["q"]

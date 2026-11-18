@@ -1,10 +1,10 @@
 /* =========================================================================
-   exam-bridge.js — injected in mock iframes: draft autosave, writing sync, time-up
+   exam-bridge.js - injected in mock iframes: draft autosave, writing sync, time-up
    ========================================================================= */
 (function () {
   "use strict";
 
-  /** 客户站 iframe 卷面白标：读父页 YYSD_AUTH，替换 title / brandtag / 页头 */
+  /** khách hàng trạm iframe cuộn lại mặt trắng đánh dấu: dấu phẩy cha đầu YYSD_AUTH, thay thế title / brandtag / đầu đầu */
   function applyTenantPaperBrand() {
     var A;
     try { A = window.parent && window.parent.YYSD_AUTH; } catch (e) { return; }
@@ -13,10 +13,10 @@
     var name = (A.brandName && A.brandName(org)) || (org && org.name) || "";
     if (!name) return;
     var replacers = [
-      [/优益思达国际课程中心/g, name],
-      [/优益思达备考/g, name],
-      [/优益思达学习中心/g, name],
-      [/优益思达/g, name],
+      [/Trung tâm YYSD/g, name],
+      [/xuất sắc lợi ích suy nghĩ đạt tới chuẩn bị cho kỳ thi/g, name],
+      [/Trung tâm học tập YYSD/g, name],
+      [/YYSD/g, name],
       [/YYSD International Course Center/gi, name],
       [/\bYYSD\b/g, name]
     ];
@@ -27,14 +27,14 @@
     }
     document.querySelectorAll(".brandtag").forEach(function (el) {
       var bt = el.textContent || "";
-      if (bt.indexOf("优益思达") >= 0 || bt.indexOf("YYSD") >= 0) el.textContent = name;
+      if (bt.indexOf(" YYSD ") >= 0 || bt.indexOf("YYSD") >= 0) el.textContent = name;
     });
     document.querySelectorAll(".header h1, h1 .brandtag").forEach(function (el) {
       var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
       var node;
       while ((node = walk.nextNode())) {
         var txt = node.nodeValue;
-        if (!txt || txt.indexOf("优益思达") < 0) continue;
+        if (!txt || txt.indexOf(" YYSD ") < 0) continue;
         var next = txt;
         replacers.forEach(function (pair) { next = next.replace(pair[0], pair[1]); });
         if (next !== txt) node.nodeValue = next;
@@ -47,7 +47,7 @@
   var script = document.currentScript;
   var bridgeMode = (script && script.dataset.mode) || "exam";
   var examId = (script && script.dataset.examId) || "";
-  // ponytail: parent CDT chrome is outside this iframe — fullscreen here hides timer/Finish/footer
+  // ponytail: parent CDT chrome is outside this iframe - fullscreen here hides timer/Finish/footer
   var cdtShell = !!(script && script.dataset && script.dataset.cdt === "1");
   function cdtPack() {
     var p = (script && script.dataset && script.dataset.pack) || "";
@@ -126,7 +126,7 @@
     if (!part && location.search) {
       try { part = Number(new URLSearchParams(location.search).get("assignPart") || 0); } catch (e) { part = 0; }
     }
-    // ponytail: papers use const TEST — not on window; pageGet evals the page scope
+    // ponytail: papers use const TEST - not on window; pageGet evals the page scope
     var TEST = pageGet("TEST");
     if (!part || !TEST) return;
     function clipBlocks(blocks) {
@@ -324,7 +324,7 @@
     return false;
   }
 
-  /* ---- mock exam lock (模考模式：一切页即作废) ---- */
+  /* ---- mock exam lock (Chế độ thi thử: mọi thứ đầu tức là trở nên không hiệu lực) ---- */
   var origBackToCover = null;
   var examLock = (function () {
     var on = false, voided = false, bound = null;
@@ -388,7 +388,7 @@
 
     function focusLost() {
       if (!on || voided || Date.now() < voidPausedUntil) return false;
-      // ponytail: CDT chrome is on parent — Finish/Help/nav blur this iframe; only void on tab hide
+      // ponytail: CDT chrome is on parent - Finish/Help/nav blur this iframe; only void on tab hide
       if (cdtShell) return !!document.hidden;
       return document.hidden || !document.hasFocus();
     }
@@ -431,7 +431,7 @@
 
     function onPageHide() {
       if (!on || voided) return;
-      // ponytail: confirm() on some mobile browsers fires pagehide — honor pauseVoid
+      // ponytail: confirm() on some mobile browsers fires pagehide - honor pauseVoid
       if (Date.now() < voidPausedUntil) return;
       voidExam();
     }
@@ -614,7 +614,7 @@
       window.finishTest = function () {
         clearAnyDraft();
         var ret = fn.apply(this, arguments);
-        // ponytail: CDT hides #resultArea with !important — MutationObserver never posts
+        // ponytail: CDT hides #resultArea with !important - MutationObserver never posts
         if (cdtShell) reportWriting();
         examLock.disable();
         return ret;
@@ -630,7 +630,7 @@
         if (examLock.isOn() && !isTestDone() && isTesting()) {
           alert(cdtShell
             ? "You cannot leave during a mock test. Use Finish section to end this part."
-            : "模考进行中不可返回封面。如需结束，请点「完成并查看报告」。");
+            : " bắt chước vào được nhờ thi đỗ hàng Trung Quốc không thể trở về bìa như yêu cầu chấm dứt, mời điểm«hoàn thành và xem xét thông báo» ");
           return;
         }
         examLock.disable();
@@ -643,7 +643,7 @@
       var ta = document.getElementById("t" + n);
       if (ta && ta.value) return ta.value;
       var dump = document.getElementById("dump" + n);
-      if (dump && dump.textContent && dump.textContent !== "（未作答）") return dump.textContent;
+      if (dump && dump.textContent && dump.textContent !== "(Chưa trả lời)") return dump.textContent;
       return "";
     }
 
@@ -705,8 +705,8 @@
       var g = d && d.grade;
       var html = "";
       if (g && !looksLikeJsonLeak(g.overall)) {
-        html += '<div class="yysd-ai-grade__score"><h4>写作评分 · Overall ' + escHtml(g.overall) +
-          " <span style=\"font-weight:500;font-size:12px;color:#64748b\">（AI 估分 · 非正式考分）</span></h4><dl>" +
+        html += '<div class="yysd-ai-grade__score"><h4>viết chấm điểm · Overall ' + escHtml(g.overall) +
+          " <span style=\"font-weight:500;font-size:12px;color:#64748b\">(AI ước lượng chia · không chính thức điểm)</span></h4><dl>" +
           "<dt>Task</dt><dd>" + escHtml(g.task) + "</dd>" +
           "<dt>Coherence</dt><dd>" + escHtml(g.coherence) + "</dd>" +
           "<dt>Lexical</dt><dd>" + escHtml(g.lexical) + "</dd>" +
@@ -714,33 +714,33 @@
           (g.comment && !looksLikeJsonLeak(g.comment) ? "<p>" + escHtml(g.comment) + "</p>" : "") + "</div>";
         var cn = g.criteriaNotes || {};
         if (cn.task || cn.coherence || cn.lexical || cn.grammar) {
-          html += "<h4>对照官方四项说明</h4><ul>" +
-            (cn.task && !looksLikeJsonLeak(cn.task) ? "<li><b>Task</b>：" + escHtml(cn.task) + "</li>" : "") +
-            (cn.coherence && !looksLikeJsonLeak(cn.coherence) ? "<li><b>Coherence</b>：" + escHtml(cn.coherence) + "</li>" : "") +
-            (cn.lexical && !looksLikeJsonLeak(cn.lexical) ? "<li><b>Lexical</b>：" + escHtml(cn.lexical) + "</li>" : "") +
-            (cn.grammar && !looksLikeJsonLeak(cn.grammar) ? "<li><b>Grammar</b>：" + escHtml(cn.grammar) + "</li>" : "") +
+          html += "<h4>đối chiếu chính phủ bốn sau cổ giải thích</h4><ul>" +
+            (cn.task && !looksLikeJsonLeak(cn.task) ? "<li><b>Task</b>: " + escHtml(cn.task) + "</li>" : "") +
+            (cn.coherence && !looksLikeJsonLeak(cn.coherence) ? "<li><b>Coherence</b>: " + escHtml(cn.coherence) + "</li>" : "") +
+            (cn.lexical && !looksLikeJsonLeak(cn.lexical) ? "<li><b>Lexical</b>: " + escHtml(cn.lexical) + "</li>" : "") +
+            (cn.grammar && !looksLikeJsonLeak(cn.grammar) ? "<li><b>Grammar</b>: " + escHtml(cn.grammar) + "</li>" : "") +
             "</ul>";
         }
         if (g.paragraphNotes && g.paragraphNotes.length) {
-          html += "<h4>逐段批注</h4><ul>" + g.paragraphNotes.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h4>theo đuổi đoạn chú thích</h4><ul>" + g.paragraphNotes.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + escHtml(n) + "</li>";
           }).join("") + "</ul>";
         }
         if (g.corrections && g.corrections.length) {
-          html += "<h4>用词 / 语法纠错</h4><ul>" + g.corrections.filter(function (c) {
+          html += "<h4>cách dùng / ngữ pháp sửa lỗi</h4><ul>" + g.corrections.filter(function (c) {
             return c && !looksLikeJsonLeak(c.bad) && !looksLikeJsonLeak(c.good);
           }).map(function (c) {
             return "<li><s>" + escHtml(c.bad) + "</s> → <b>" + escHtml(c.good) + "</b>" +
-              (c.why ? "（" + escHtml(c.why) + "）" : "") + "</li>";
+              (c.why ? "(" + escHtml(c.why) + ")" : "") + "</li>";
           }).join("") + "</ul>";
         }
         if (g.nextSteps && g.nextSteps.length) {
-          html += "<h4>提分建议</h4><ul>" + g.nextSteps.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h4>dùng trong và chia đề xuất</h4><ul>" + g.nextSteps.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + escHtml(n) + "</li>";
           }).join("") + "</ul>";
         }
         if (g.modelEssay && !looksLikeJsonLeak(g.modelEssay)) {
-          html += "<h4>同题高分范文</h4><pre class=\"yysd-ai-grade__model\">" + escHtml(g.modelEssay) + "</pre>";
+          html += "<h4>giống chủ đề điểm cao mô hình ngôn ngữ</h4><pre class=\"yysd-ai-grade__model\">" + escHtml(g.modelEssay) + "</pre>";
         }
       }
       // ponytail: ignore raw LLM dumps that look like failed JSON payloads
@@ -748,12 +748,12 @@
       if (fb && !looksLikeJsonLeak(fb)) {
         html += "<div class=\"yysd-ai-grade__feedback\">" + escHtml(fb) + "</div>";
       }
-      return html || "<p>未返回结构化评分，请再点上方按钮重试</p>";
+      return html || "<p>chưa trở về cấu trúc biến thể của chấm điểm, mời lại điểm nơi phía trên nút bấm thử lại</p>";
     }
 
     function ensureAiPanel() {
       var ra = document.getElementById("resultArea");
-      // ponytail: CDT skin keeps resultArea display:none until parent unskins — still inject
+      // ponytail: CDT skin keeps resultArea display:none until parent unskins - still inject
       if (!ra) return null;
       if (!cdtShell && getComputedStyle(ra).display === "none") return null;
       var panel = document.getElementById("yysd-ai-grade");
@@ -779,13 +779,13 @@
         ".yysd-ai-grade__feedback{font-size:13px;white-space:pre-wrap;color:#334155;margin-top:8px;}" +
         ".yysd-ai-grade ul{margin:6px 0 0;padding-left:1.2em;font-size:13px;line-height:1.5;}" +
         "</style>" +
-        "<h3>AI 考官批改</h3>" +
-        '<p class="yysd-ai-grade__note">按雅思四项标准估分，并给出点评、纠错与范文。' +
-        "<b>AI 估分仅供练习参考，非正式考分</b>。Task 1 本版不读原图，仅依据题干与图表说明文字。" +
-        "每次批改消耗 1 次当日 AI 文字额度。</p>" +
+        "<h3>AI giám khảo chấm</h3>" +
+        '<p class="yysd-ai-grade__note">nhấn IELTS bốn sau cổ tiêu chuẩn ước lượng chia, và cho đi ra bình luận, sửa lỗi biến thể của | mô hình ngôn ngữ ' +
+        "<b>AI ước lượng chia chỉ để luyện tập tham khảo, không chính thức điểm</b> Task 1 gốc một đăng ký không dấu phẩy bản vẽ, hầu như dựa vào chủ đề biến thể của | biểu đồ giải thích chữ viết " +
+        " mỗi lần chấm tiêu thụ 1 tiếp theo vào ngày đó AI chữ viết hạn ngạch </p>" +
         '<div class="yysd-ai-grade__actions">' +
-        '<button type="button" data-task="task1">AI 批改 Task 1</button>' +
-        '<button type="button" data-task="task2">AI 批改 Task 2</button>' +
+        '<button type="button" data-task="task1">AI Chấm bài Task 1</button>' +
+        '<button type="button" data-task="task2">AI Chấm bài Task 2</button>' +
         "</div>" +
         '<p class="yysd-ai-grade__hint" id="yysd-ai-grade-hint"></p>' +
         '<div class="yysd-ai-grade__block" id="yysd-ai-grade-task1" hidden></div>' +
@@ -816,29 +816,29 @@
 
     function requestWritingGrade(taskType) {
       if (Object.keys(gradePending).length) {
-        setGradeHint("上一题仍在批改中，请稍候…");
+        setGradeHint(" dùng trong | một chủ đề vẫn tồn tại chấm Trung Quốc, mời đợi một chút...");
         return;
       }
       var essay = readWritingTask(taskType === "task1" ? 1 : 2).trim();
       if (!essay || essay.length < 80) {
-        setGradeHint(taskType === "task1" ? "Task 1 作文过短或未作答" : "Task 2 作文过短或未作答", true);
+        setGradeHint(taskType === "task1" ? "Task 1 viết bài văn băng qua ngắn có thể chưa trả lời " : "Task 2 viết bài văn băng qua ngắn có thể chưa trả lời ", true);
         return;
       }
       var prompt = promptForTask(taskType);
       if (!prompt) {
-        setGradeHint("未能读取本题题干", true);
+        setGradeHint(" không thể đọc chủ đề đang thảo luận chủ đề biến thể cũ của | ", true);
         return;
       }
       var reqId = "wg-" + (++gradeReqSeq);
       gradePending[reqId] = taskType;
       setGradeButtonsBusy(true);
-      setGradeHint("批改中…");
+      setGradeHint(" chấm Trung Quốc...");
       gradeTimers[reqId] = setTimeout(function () {
         if (!gradePending[reqId]) return;
         delete gradePending[reqId];
         delete gradeTimers[reqId];
         setGradeButtonsBusy(Object.keys(gradePending).length > 0);
-        setGradeHint("批改超时，请再点按钮重试", true);
+        setGradeHint(" chấm vượt quá thời gian, mời lại điểm nút bấm thử lại ", true);
       }, 120000);
       try {
         window.parent.postMessage({
@@ -854,7 +854,7 @@
         delete gradeTimers[reqId];
         delete gradePending[reqId];
         setGradeButtonsBusy(false);
-        setGradeHint("无法联系父页面，请刷新重试", true);
+        setGradeHint(" không thể biến thể của | cha trang, mời cải tiến thử lại ", true);
       }
     }
 
@@ -868,11 +868,11 @@
       }
       setGradeButtonsBusy(Object.keys(gradePending).length > 0);
       if (d.error) {
-        var err = String(d.error || "批改失败");
-        if (/上限|用完|额度/i.test(err) && !/明日|明天/.test(err)) {
-          err = err.replace(/[。！!]?$/, "") + "，明日再来";
-        } else if (/解析|失败|稍后/i.test(err)) {
-          err = err.replace(/[。！!]?$/, "") + " — 可再点按钮重试";
+        var err = String(d.error || " chấm bị đánh bại ");
+        if (/giới hạn trên|dùng hết|hạn ngạch/i.test(err) && !/ngày mai|ngày mai/.test(err)) {
+          err = err.replace(/[ ! !]?$/, "") + ", ngày mai lại đến ";
+        } else if (/Giải thích|Không thành công|một lát nữa/i.test(err)) {
+          err = err.replace(/[ ! !]?$/, "") + " - có thể lại điểm nút bấm thử lại ";
         }
         setGradeHint(err, true);
         return;
@@ -881,10 +881,10 @@
       var box = document.getElementById("yysd-ai-grade-" + taskType);
       if (!box) return;
       box.hidden = false;
-      box.innerHTML = "<h3>" + (taskType === "task1" ? "Task 1" : "Task 2") + " 批改结果</h3>" + renderGradeHtml(d);
+      box.innerHTML = "<h3>" + (taskType === "task1" ? "Task 1" : "Task 2") + " chấm kết trái</h3>" + renderGradeHtml(d);
       if (d.quota && d.quota.textLeft != null) {
-        var qHint = "今日文字额度剩余 " + d.quota.textLeft + "/" + d.quota.textLimit;
-        if (d.quota.textLeft <= 0) qHint += "（已用完，明日再来）";
+        var qHint = " hôm nay chữ viết hạn ngạch phần còn lại " + d.quota.textLeft + "/" + d.quota.textLimit;
+        if (d.quota.textLeft <= 0) qHint += "(đã dùng hết, ngày mai lại đến)";
         setGradeHint(qHint);
       }
     }
@@ -897,7 +897,7 @@
     function reportWriting() {
       if (posted) return;
       var ra = document.getElementById("resultArea");
-      // ponytail: CDT skin forces resultArea display:none !important — still post
+      // ponytail: CDT skin forces resultArea display:none !important - still post
       if (!cdtShell && (!ra || getComputedStyle(ra).display === "none")) return;
       var r1 = document.getElementById("r1");
       var r2 = document.getElementById("r2");
@@ -950,7 +950,7 @@
   examId = resolveExamId();
   if (!examId) return;
 
-  // ponytail: older Cam7–15 papers call lookupBand/levelLabel but omit the defs — submit then throws after locking `submitted`
+  // ponytail: older Cam7–15 papers call lookupBand/levelLabel but omit the defs - submit then throws after locking `submitted`
   function ensureBandHelpers() {
     if (typeof window.lookupBand === "function" && typeof window.levelLabel === "function") return;
     var isReading = /reading/i.test(examId);
@@ -1016,7 +1016,7 @@
   }
 
   function ensurePageGlobals() {
-    // ponytail: some papers omit `let timerInterval=null` — clearInterval then throws and skips restore
+    // ponytail: some papers omit `let timerInterval=null` - clearInterval then throws and skips restore
     ["timerInterval", "startTime", "submitted", "mode", "selectedSections", "currentPaper"].forEach(function (n) {
       if (pageGet(n) !== undefined) return;
       if (n === "selectedSections" || n === "currentPaper") pageSet(n, []);
@@ -1126,7 +1126,7 @@
       };
     }
     window.seekAudio = function () { /* B2 locked */ };
-    window.togglePlay = function () { /* B2 locked — autoplay only */ };
+    window.togglePlay = function () { /* B2 locked - autoplay only */ };
     window.playSection = function () { /* B2 locked */ };
 
     var prog = document.getElementById("aProg");
@@ -1213,7 +1213,7 @@
     return !!(p && p.tagName === "AUDIO");
   }
 
-  // ponytail: wall-clock must not run while MP3 still buffering — start on `playing`
+  // ponytail: wall-clock must not run while MP3 still buffering - start on `playing`
   var audioWaitGen = 0;
   function armListeningTimerOnPlay() {
     if (!isListeningPaper() || !isTesting()) return;
@@ -1228,7 +1228,7 @@
     var tEl = document.getElementById("timer");
     var tt = document.getElementById("timerText");
     if (tEl) tEl.classList.add("show");
-    if (tt) tt.textContent = "等待播放";
+    if (tt) tt.textContent = " chờ phát sóng ";
 
     var oldOverlay = document.getElementById("yysd-audio-wait");
     if (oldOverlay) oldOverlay.remove();
@@ -1261,7 +1261,7 @@
       overlay.style.cssText = "position:fixed;inset:0;z-index:10000;background:rgba(15,23,42,.48);display:flex;align-items:center;justify-content:center;padding:20px;";
       overlay.innerHTML =
         '<div style="background:#fff;border-radius:12px;padding:22px 24px;max-width:320px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.18);">' +
-        '<p id="yysd-audio-wait-msg" style="margin:0 0 6px;font-weight:700;color:#0f172a;">Loading listening audio…</p>' +
+        '<p id="yysd-audio-wait-msg" style="margin:0 0 6px;font-weight:700;color:#0f172a;">Loading listening audio...</p>' +
         '<p style="margin:0;font-size:13px;color:#64748b;line-height:1.45;">The timer will start when the recording begins.</p>' +
         '<button type="button" id="yysd-audio-retry" style="display:none;margin-top:14px;background:#1d4ed8;color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:600;cursor:pointer;">Retry</button>' +
         "</div>";
@@ -1283,7 +1283,7 @@
     function retryPlay() {
       if (done || gen !== audioWaitGen) return;
       var msgEl = overlay && overlay.querySelector("#yysd-audio-wait-msg");
-      if (msgEl) msgEl.textContent = "Loading listening audio…";
+      if (msgEl) msgEl.textContent = "Loading listening audio...";
       var btn = overlay && overlay.querySelector("#yysd-audio-retry");
       if (btn) btn.style.display = "none";
       try {
@@ -1305,7 +1305,7 @@
 
     if (isCdt) {
       ensureOverlay();
-      // ponytail: 45s ceiling — after that student can retry; no infinite spinner
+      // ponytail: 45s ceiling - after that student can retry; no infinite spinner
       timeoutId = setTimeout(function () {
         if (!done && gen === audioWaitGen) showRetry("Network is slow. Audio has not started.");
       }, 45000);
@@ -1343,7 +1343,7 @@
       ensurePageGlobals();
       if (m === "exam") examLock.enable();
       else examLock.disable();
-      // ponytail: auto-restore practice draft — exit copy promises autosave/continue
+      // ponytail: auto-restore practice draft - exit copy promises autosave/continue
       var draftSections = null;
       if (m === "practice" && !restorePending) {
         var d = loadDraft();
@@ -1376,7 +1376,7 @@
             armListeningTimerOnPlay();
             if (cdtShell) installCdtListeningIron();
           }
-          // B5/C18: parent CDT owns the clock — kill paper alert('时间到…')
+          // B5/C18: parent CDT owns the clock - kill paper alert('thời gian đến...')
           if (cdtShell) {
             try {
               var iv = pageGet("timerInterval");
@@ -1404,13 +1404,13 @@
         examLock.disable();
         return ret;
       } catch (err) {
-        // ponytail: papers set submitted=true before scoring — unlock so student can retry
+        // ponytail: papers set submitted=true before scoring - unlock so student can retry
         pageSet("submitted", false);
         console.error("[yysd] submitTest failed", err);
         try {
           alert(cdtShell
             ? "Submit failed. Please try again or tell your invigilator."
-            : "交卷失败，请再试一次。若仍不行请联系老师。");
+            : " nộp bài thi bị đánh bại, mời lại thử đầu tiên dường như vẫn không được mời biến thể của | giáo viên ");
         } catch (e) {}
         return;
       }
@@ -1426,7 +1426,7 @@
       if (examLock.isOn() && !isTestDone() && isTestingLR()) {
         alert(cdtShell
           ? "You cannot leave during a mock test. Use Finish section to end this part."
-          : "模考进行中不可返回封面。如需结束，请滚动至底部点击「提交并批改」。");
+          : " bắt chước vào được nhờ thi đỗ hàng Trung Quốc không thể trở về bìa như yêu cầu chấm dứt, mời lăn đến đáy nhấn«nộp và chấm» ");
         return;
       }
       examLock.disable();
@@ -1463,15 +1463,15 @@
     if (old) old.remove();
 
     var n = countAnswered(draft.answers);
-    var when = draft.savedAt ? new Date(draft.savedAt).toLocaleString("zh-CN") : "";
+    var when = draft.savedAt ? new Date(draft.savedAt).toLocaleString("vi-VN") : "";
     var bar = document.createElement("div");
     bar.id = "yysd-resume-bar";
     bar.style.cssText = "margin-top:16px;padding:14px 18px;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;text-align:center;";
     bar.innerHTML =
-      '<p style="margin:0 0 10px;color:#065f46;font-weight:600;">发现未完成进度（已保存 ' + n + " 道题" +
-      (when ? "，" + when : "") + "）</p>" +
-      '<button type="button" id="yysd-resume-btn" style="background:#059669;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer;margin-right:8px;">继续上次练习</button>' +
-      '<button type="button" id="yysd-discard-btn" style="background:#fff;color:#64748b;border:1px solid #cbd5e1;padding:10px 16px;border-radius:8px;cursor:pointer;">重新开始</button>';
+      '<p style="margin:0 0 10px;color:#065f46;font-weight:600;">để ý chưa hoàn thành tốc độ tiến triển(đã bảo tồn ' + n + " đường chủ đề " +
+      (when ? ", " + when : "") + ")</p>" +
+      '<button type="button" id="yysd-resume-btn" style="background:#059669;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer;margin-right:8px;">tiếp tục lần trước luyện tập</button>' +
+      '<button type="button" id="yysd-discard-btn" style="background:#fff;color:#64748b;border:1px solid #cbd5e1;padding:10px 16px;border-radius:8px;cursor:pointer;">Bắt đầu lại</button>';
     bar.querySelector("#yysd-resume-btn").addEventListener("click", function () { bar.remove(); continueDraft(draft); });
     bar.querySelector("#yysd-discard-btn").addEventListener("click", function () { clearDraft(); bar.remove(); });
     cover.appendChild(bar);
@@ -1613,7 +1613,7 @@
     var pane = document.getElementById("yysd-tx-pane");
     if (!body || !pane) return;
     if (!sents.length) {
-      body.innerHTML = '<p class="tx-empty">暂无原文</p>';
+      body.innerHTML = '<p class="tx-empty">tạm thời không có nguyên văn</p>';
       return;
     }
     body.innerHTML = sents.map(function (s, i) {
@@ -1651,14 +1651,14 @@
     var pane = document.createElement("aside");
     pane.id = "yysd-tx-pane";
     pane.className = "show-en";
-    pane.setAttribute("aria-label", "听力原文");
+    pane.setAttribute("aria-label", " thính giác nguyên văn ");
     pane.innerHTML =
-      '<div class="transcript-head"><span class="th-title">原文</span>' +
+      '<div class="transcript-head"><span class="th-title">Bản gốc</span>' +
         '<span class="transcript-toggles">' +
-          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-en" checked>原文</label>' +
-          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-zh">译文</label>' +
+          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-en" checked>Bản gốc</label>' +
+          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-zh">văn bản dịch</label>' +
         "</span></div>" +
-      '<div class="transcript-body" id="yysd-tx-body"><p class="tx-empty">加载原文…</p></div>';
+      '<div class="transcript-body" id="yysd-tx-body"><p class="tx-empty">tải nguyên văn...</p></div>';
     wrap.appendChild(pane);
     document.getElementById("yysd-tx-en").addEventListener("change", function () { paintExplainToggles(pane); });
     document.getElementById("yysd-tx-zh").addEventListener("change", function () { paintExplainToggles(pane); });

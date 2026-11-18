@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 JINGTING = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
-PDF_DIR = Path("/Users/frankman/Downloads/剑1-20学术类真题")
+PDF_DIR = Path("/Users/frankman/Downloads/Cambridge 1-20 học thuật loại câu hỏi từ đề thi các năm trước ")
 AUDIO_RE = re.compile(r"""(?:["']audio["']|audio)\s*:\s*['"]([^'"]+\.(?:mp3|m4a))['"]""", re.I)
 CHROME = re.compile(
     r"(this is the ielts|published by cambridge|this recording is copyright|"
@@ -201,7 +201,7 @@ def split_official(text: str) -> list[str]:
         if re.match(r"^[A-Za-z][A-Za-z'’.\- ]{0,20}:\s*", line) and buf:
             sents.append(buf.strip())
             buf = line
-        elif buf and not re.search(r"[.!?…][\"']?$", buf):
+        elif buf and not re.search(r"[.!?...][\"']?$", buf):
             buf = buf + " " + line
         else:
             if buf:
@@ -214,7 +214,7 @@ def split_official(text: str) -> list[str]:
         chunk = re.sub(r"\s+", " ", chunk).replace("\u2019", "'").strip()
         if len(chunk) < 3 or CHROME.search(chunk):
             continue
-        parts = re.split(r"(?<=[.!?…])\s+(?=[A-Z\"'“])", chunk)
+        parts = re.split(r"(?<=[.!?...])\s+(?=[A-Z\"'“])", chunk)
         for p in parts:
             p = p.strip()
             if len(p) >= 3:
@@ -223,7 +223,7 @@ def split_official(text: str) -> list[str]:
 
 
 def extract_pdf_parts(vol: int) -> dict[tuple[int, int], str]:
-    name = f"剑桥雅思{vol}.pdf"
+    name = f" Cambridge IELTS{vol}.pdf"
     pdf = PDF_DIR / name
     if not pdf.exists():
         return {}
@@ -257,7 +257,7 @@ def extract_pdf_parts(vol: int) -> dict[tuple[int, int], str]:
 def build_official(vol: int, align_mod) -> bool:
     gold = extract_pdf_parts(vol)
     if len(gold) < 8:
-        print(f"cam{vol}: official parts {len(gold)} — skip")
+        print(f"cam{vol}: official parts {len(gold)} - skip")
         return False
     for test in range(1, 5):
         audios = paper_audios(vol, test)
@@ -291,8 +291,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             {
                 "role": "system",
                 "content": (
-                    "你是雅思听力原文译者。把每句英译中，保留说话人标签（如 WOMAN:/MAN:）不译。"
-                    "只输出 JSON 数组，长度与输入句数相同，元素为中文字符串，不要其它文字。"
+                    " bạn là IELTS thính giác nguyên văn người dịch cầm mỗi biến thể của bản dịch tiếng Anh Trung Quốc, giữ nói người nhãn(như WOMAN:/MAN:)không dịch "
+                    " chỉ xuất khẩu JSON mảng, chiều dài biến thể của | nhập khẩu số câu giống hệt, thành phần cơ bản của cái gì đó làm ngôn ngữ Trung Quốc chuỗi, đừng! khác chữ viết "
                 ),
             },
             {"role": "user", "content": numbered},
@@ -348,7 +348,7 @@ def fill_zh(vols: list[int], batch_size: int = 40):
             if not missing:
                 print(f"{path.name}: zh ok")
                 continue
-            print(f"{path.name}: translating {len(missing)}…")
+            print(f"{path.name}: translating {len(missing)}...")
             for off in range(0, len(missing), batch_size):
                 chunk = missing[off:off + batch_size]
                 ens = [c[2] for c in chunk]

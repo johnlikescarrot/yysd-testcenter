@@ -19,12 +19,12 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑4T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 4T2.docx")
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS4 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-4-test-2.html"
@@ -49,7 +49,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -136,12 +136,12 @@ def patch_reading_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 听力", "剑桥雅思4 Test 2 听力"),
-        ("剑桥雅思4 · Test 1（听力）", "剑桥雅思4 · Test 2（听力）"),
-        ("剑桥雅思4 Test 1 听力：", "剑桥雅思4 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        (" Cambridge IELTS 4 Test 1 Nghe hiểu ", " Cambridge IELTS 4 Test 2 Nghe hiểu "),
+        (" Cambridge IELTS 4 · Test 1(Nghe hiểu)", " Cambridge IELTS 4 · Test 2(Nghe hiểu)"),
+        (" Cambridge IELTS 4 Test 1 Nghe hiểu: ", " Cambridge IELTS 4 Test 2 Nghe hiểu: "),
+        ("Test 1 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts4_test1", "ielts4_test2"),
@@ -153,20 +153,20 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 阅读", "剑桥雅思4 Test 2 阅读"),
-        ("剑桥雅思4 · Test 1（阅读）", "剑桥雅思4 · Test 2（阅读）"),
-        ("剑桥雅思4 Test 1 学术类阅读", "剑桥雅思4 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        (" Cambridge IELTS 4 Test 1 Đọc hiểu ", " Cambridge IELTS 4 Test 2 Đọc hiểu "),
+        (" Cambridge IELTS 4 · Test 1(Đọc hiểu)", " Cambridge IELTS 4 · Test 2(Đọc hiểu)"),
+        (" Cambridge IELTS 4 Test 1 Reading học thuật ", " Cambridge IELTS 4 Test 2 Reading học thuật "),
+        ("Test 1 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 2 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
         (
-            "Adults and children — loss o… / What Do Whales Feel? / Visual Symbols and the Blind",
+            "Adults and children - loss o... / What Do Whales Feel? / Visual Symbols and the Blind",
             "Lost for Words / Alternative Medicine in Australia / Play Is a Serious Business",
         ),
         (
-            "Rainforests、What Do Whales Feel?、Visual Symbols and the Blind",
-            "Lost for Words、Alternative Medicine in Australia、Play Is a Serious Business",
+            "Rainforests, What Do Whales Feel?, Visual Symbols and the Blind",
+            "Lost for Words, Alternative Medicine in Australia, Play Is a Serious Business",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -177,22 +177,22 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 写作", "剑桥雅思4 Test 2 写作"),
-        ("剑桥雅思4 · Test 1（写作）", "剑桥雅思4 · Test 2（写作）"),
-        ("剑桥雅思4 Test 1 学术类写作", "剑桥雅思4 Test 2 学术类写作"),
+        (" Cambridge IELTS 4 Test 1 Viết ", " Cambridge IELTS 4 Test 2 Viết "),
+        (" Cambridge IELTS 4 · Test 1(Viết)", " Cambridge IELTS 4 · Test 2(Viết)"),
+        (" Cambridge IELTS 4 Test 1 Writing học thuật ", " Cambridge IELTS 4 Test 2 Writing học thuật "),
         (
             "Task 1 poverty table + Task 2 media for communicating information essay",
             "Task 1 electricity graph & pie chart + Task 2 happiness essay",
         ),
         (
-            "Task 1 表格作文 + Task 2 议论文",
-            "Task 1 电力图表 + Task 2 幸福话题议论文",
+            "Task 1 biểu mẫu viết bài văn + Task 2 bình luận ngôn ngữ ",
+            "Task 1 năng lượng điện biểu đồ + Task 2 hạnh phúc chủ đề bình luận ngôn ngữ ",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
+        (" Cambridge IELTS 4 · Test 1", " Cambridge IELTS 4 · Test 2"),
+        ("Test 1 Viết(Đề thi chính thức)", "Test 2 Viết(Đề thi chính thức)"),
         ("cambridge-4-test-1-writing-draft", "cambridge-4-test-2-writing-draft"),
-        ("【剑桥雅思4 · Test 1 写作】", "【剑桥雅思4 · Test 2 写作】"),
+        ("[Cambridge IELTS 4 · Test 1 Viết]", "[Cambridge IELTS 4 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("poverty-table", "electricity-charts"),
@@ -414,7 +414,7 @@ def listening_test() -> dict:
                             {"bullet": True, "html": "often more complex, and needing <Q n=\"35\">"},
                             {"bullet": True, "html": "less human interest than conventional crime"},
                             {"bullet": True, "html": "victims often <Q n=\"36\">"},
-                            {"h": "Effects — Economic costs"},
+                            {"h": "Effects - Economic costs"},
                             {"bullet": True, "html": "may appear unimportant to <Q n=\"37\">"},
                             {"bullet": True, "html": "can make large <Q n=\"38\"> for company"},
                         ],
@@ -645,7 +645,7 @@ def writing_test() -> dict:
                 "<strong>Write at least 150 words.</strong>"
             ),
             "charts": [
-                {"caption": "Demand for electricity — typical winter and summer days", "image": "cambridge-4-test-2-electricity-demand.png"},
+                {"caption": "Demand for electricity - typical winter and summer days", "image": "cambridge-4-test-2-electricity-demand.png"},
                 {"caption": "Electricity use in an average English home", "image": "cambridge-4-test-2-electricity-home.png"},
             ],
         },

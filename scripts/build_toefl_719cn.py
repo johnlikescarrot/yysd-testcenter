@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.19-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/7 tháng/7.19-Trong nước · trực tiếp/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-19/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-19"
 SET = "7.19"
-TITLE = "新托福 7.19 国内线下"
+TITLE = " TOEFL mới 7.19 Trong nước · trực tiếp "
 NEED = []
 
 
@@ -256,15 +256,15 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("Social Networks and Influence", 2, [
-        "Computational sociology studies how social networks—like friendships, professional connections, or online communities—affect how people think and act. Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior. If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views. These influences are especially strong when the conversations are emotionally charged or align with the person's values.",
+        "Computational sociology studies how social networks-like friendships, professional connections, or online communities-affect how people think and act. Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior. If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views. These influences are especially strong when the conversations are emotionally charged or align with the person's values.",
         {"insert": "A", "t": "Interestingly, it is not always the most famous or powerful people who have the biggest impact."},
-        {"insert": "B", "t": "Everyday conversations—like repeated exchanges between coworkers—can be more influential than a single message from a celebrity or expert. Researchers use computational models to analyze how messages spread."},
+        {"insert": "B", "t": "Everyday conversations-like repeated exchanges between coworkers-can be more influential than a single message from a celebrity or expert. Researchers use computational models to analyze how messages spread."},
         {"insert": "C", "t": "An accurate model can predict which types of messages are likely to spread widely."},
         {"insert": "D"},
         "Still, predicting human behavior is incredibly complex. People are shaped by their culture, social norms, and personal experiences, which makes it hard to build models that work universally. For example, a message that spreads quickly in one country might fall flat in another due to different cultural values. The real challenge lies in understanding how all these subtle factors interact to drive large-scale changes in behavior.",
     ], [
         q(n, "Identify the sentence in paragraph 1 that describes how repeated interaction can influence a person's beliefs.", {
-            "A": "Computational sociology studies how social networks—like friendships, professional connections, or online communities—affect how people think and act.",
+            "A": "Computational sociology studies how social networks-like friendships, professional connections, or online communities-affect how people think and act.",
             "B": "Instead of just drawing diagrams of who is connected to whom, researchers now look more closely at how frequent interactions shape behavior.",
             "C": "If someone regularly chats with a group of friends who share strong opinions about climate change, they may gradually adopt similar views.",
             "D": "These influences are especially strong when the conversations are emotionally charged or align with the person's values."}, "C"),
@@ -313,8 +313,8 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("Hidden Structures in Discrete Geometry", 2, [
-        "Discrete geometry is a fascinating branch of mathematics that explores the hidden patterns formed by distinct geometric objects. Unlike continuous geometry—which deals with shapes and structures that are smooth and unbroken, like curves and surfaces—discrete geometry focuses on objects that are finite or countable, like points, lines, and polygons. These distinct components reveal unexpected structures and relationships. Such relations occur particularly in packing and tiling problems.",
-        "Packing problems involve finding the most efficient arrangement of objects in a given space. While this might sound like a simple exercise—such as fitting oranges into boxes—it has far-reaching applications in fields like computer-chip design, where components must be arranged to maximize performance and minimize space, and in data storage, where digital information is packed efficiently to save memory and speed up access. Researchers have discovered intriguing connections between the arrangement of shapes and space utilization, challenging assumptions about efficiency.",
+        "Discrete geometry is a fascinating branch of mathematics that explores the hidden patterns formed by distinct geometric objects. Unlike continuous geometry-which deals with shapes and structures that are smooth and unbroken, like curves and surfaces-discrete geometry focuses on objects that are finite or countable, like points, lines, and polygons. These distinct components reveal unexpected structures and relationships. Such relations occur particularly in packing and tiling problems.",
+        "Packing problems involve finding the most efficient arrangement of objects in a given space. While this might sound like a simple exercise-such as fitting oranges into boxes-it has far-reaching applications in fields like computer-chip design, where components must be arranged to maximize performance and minimize space, and in data storage, where digital information is packed efficiently to save memory and speed up access. Researchers have discovered intriguing connections between the arrangement of shapes and space utilization, challenging assumptions about efficiency.",
         {"insert": "A", "t": "Tiling problems further illustrate the depth of discrete geometry. Arranging figures so they cover a surface without gaps or overlaps creates a pattern with non-repeating order, making underlying symmetries apparent. The tiling derived from such figures may take the form of architectural designs and artworks."},
         {"insert": "B", "t": "For instance, patterns can repeat regularly or follow more complex nonperiodic rules."},
         {"insert": "C", "t": "Mathematicians continue to show how these structures drive innovation across fields."},
@@ -322,7 +322,7 @@ def build_reading():
     ], [
         q(n, "Identify the sentence in paragraph 1 that contrasts two branches of mathematics.", {
             "A": "Discrete geometry is a fascinating branch of mathematics that explores the hidden patterns formed by distinct geometric objects.",
-            "B": "Unlike continuous geometry—which deals with shapes and structures that are smooth and unbroken, like curves and surfaces—discrete geometry focuses on objects that are finite or countable, like points, lines, and polygons.",
+            "B": "Unlike continuous geometry-which deals with shapes and structures that are smooth and unbroken, like curves and surfaces-discrete geometry focuses on objects that are finite or countable, like points, lines, and polygons.",
             "C": "These distinct components reveal unexpected structures and relationships.",
             "D": "Such relations occur particularly in packing and tiling problems."}, "B"),
         q(n + 1, 'Why does the author mention "fitting oranges into boxes"?', {
@@ -341,7 +341,7 @@ def build_reading():
     ]))
     n += 5
     tasks.append(academic("The Discovery of Vitamins", 2, [
-        "The first vitamin discovered was thiamine (vitamin B1). It is found in pork, legumes, and rice bran—the outer layer of brown rice that is removed during the milling process to make white rice.",
+        "The first vitamin discovered was thiamine (vitamin B1). It is found in pork, legumes, and rice bran-the outer layer of brown rice that is removed during the milling process to make white rice.",
         "Around 1900, researchers realized that rice bran could cure a disease called beriberi. In 1912, Casimir Funk isolated an extract from rice bran that he determined to be an amine (a type of nitrogen compound). Funk proposed that the absence of certain amines in the diet can cause beriberi as well as other diseases. Because these amines were essential for life (vita in Latin), Funk coined the term vitamine. The predominant belief about disease at the time was that it was caused by toxins or infections. The idea that disease could arise from the absence of nutrients was revolutionary.",
         "Thiamine was indeed an amine whose absence can cause beriberi, but Funk's extract likely contained a mixture of substances, and his chemical analysis was incomplete.",
         {"insert": "A"},
@@ -374,7 +374,7 @@ def build_reading():
     n += 5
     if n != 66:
         raise SystemExit("reading expected next id 66, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc hiểu ", [
         {"n": 1, "timeSec": 1200, "from": 1, "to": 40},
         {"n": 2, "timeSec": 1200, "from": 41, "to": 65},
     ], tasks)
@@ -545,14 +545,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(clip(typ, title, module, fname, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe hiểu ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 4},
         {"n": 2, "timeSec": 1440, "from": 5, "to": 30},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 840, "from": 1, "to": 2, "label": "Email"},
         {"n": 2, "timeSec": 1800, "from": 3, "to": 5, "label": "Academic Discussion"},
     ], [
@@ -748,8 +748,8 @@ if __name__ == "__main__":
     dump("2025-07-19-reading.json", build_reading())
     dump("2025-07-19-listening.json", build_listening())
     dump("2025-07-19-writing.json", build_writing())
-    dump("2025-07-19-speaking.json", build_speaking(ID, TITLE + " · 口语 Form 1", 1, 1))
-    dump("2025-07-19-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
-    dump("2025-07-19-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
-    dump("2025-07-19-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · 口语 Form 4", 4, 4))
+    dump("2025-07-19-speaking.json", build_speaking(ID, TITLE + " · Nói Form 1", 1, 1))
+    dump("2025-07-19-speaking-f2.json", build_speaking(ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
+    dump("2025-07-19-speaking-f3.json", build_speaking(ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
+    dump("2025-07-19-speaking-f4.json", build_speaking(ID + "-s4", TITLE + " · Nói Form 4", 4, 4))
     copy_audio()

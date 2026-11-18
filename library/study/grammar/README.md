@@ -1,8 +1,8 @@
-# 学习区 / 语法学习
+# học khu vực / ngữ pháp học
 
-**把「语法学习册」的 HTML 文件上传到这个文件夹即可自动归类。**
+**hãy«ngữ pháp học sách»của HTML tài liệu tải lên đến này thư mục tương đương với tự động phân loại **
 
-- 板块：📚 学习区 (study)
-- 科目：语法 (grammar)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm: 📚 học khu vực (study)
+- Môn học: Ngữ pháp (grammar)
+- tải lên cách thức: tồn tại văn bản này món ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phút hoàng hậu tự động xuất hiện tồn tại trang web tương ứng với phân loại xuống, không cần thiết khác làm việc 

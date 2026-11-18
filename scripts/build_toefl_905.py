@@ -342,7 +342,7 @@ def build_reading():
             "Navigating Gene Editing Ethics",
             2,
             [
-                "Gene editing technologies, particularly CRISPR-Cas9, have transformed agricultural biotechnology by enabling precise modifications to plant genomes (genetic material). This allows scientists to enhance crop traits such as drought tolerance, pest resistance, and nutritional content without introducing foreign DNA (DNA from another species), distinguishing it from traditional genetic modification. For example, researchers have used CRISPR to develop rice varieties with improved yields and resistance to bacterial blight, a plant disease that is a major threat to global food security. In another case, gene-edited soybeans have been engineered to produce oil with reduced saturated fat and increased oleic acid—an unsaturated fat associated with heart health—making them more appealing for both consumers and food manufacturers.",
+                "Gene editing technologies, particularly CRISPR-Cas9, have transformed agricultural biotechnology by enabling precise modifications to plant genomes (genetic material). This allows scientists to enhance crop traits such as drought tolerance, pest resistance, and nutritional content without introducing foreign DNA (DNA from another species), distinguishing it from traditional genetic modification. For example, researchers have used CRISPR to develop rice varieties with improved yields and resistance to bacterial blight, a plant disease that is a major threat to global food security. In another case, gene-edited soybeans have been engineered to produce oil with reduced saturated fat and increased oleic acid-an unsaturated fat associated with heart health-making them more appealing for both consumers and food manufacturers.",
                 {"insert": "A", "t": "Despite its promise, gene editing in agriculture raises important concerns. Unintended off-target effects, where edits occur in nontarget regions of the genome, could potentially alter plant metabolism or reduce resilience to environmental stress."},
                 {"insert": "B", "t": "Additionally, widespread adoption of uniform edited traits may diminish genetic diversity, making crops more vulnerable to future pests or diseases."},
                 {"insert": "C", "t": "Such outcomes highlight the need for comprehensive field testing and multi-season trials to mitigate risks before commercial release. Scientists must evaluate not just the intended trait but also how gene edits affect overall plant health and adaptability."},
@@ -363,7 +363,7 @@ def build_reading():
             2,
             [
                 "When American psychologist Carl Rogers first introduced person-centered therapy in the mid-twentieth century, the prevailing view was that therapists should be experts in diagnosis and treatment. Instead, in his new approach, Rogers centered the patient as an individual who is able to discover and take steps toward personal growth. Counseling was viewed as a collaborative interaction between the professional and the patient, with the latter playing a key role in effecting change.",
-                "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection—paraphrasing, summarizing, and clarifying the client's words—to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
+                "One of Rogers' core beliefs was that a nonjudgmental environment fosters self-discovery. The therapist acts as an empathetic facilitator, listening actively and using reflection-paraphrasing, summarizing, and clarifying the client's words-to elicit the client's feelings. Rogers claimed this approach allows individuals to gain the self-awareness and self-acceptance needed to grow personally and resolve issues. Rogers' research suggested that the most successful patients were those who experienced the highest degree of empathy in therapy.",
                 "Unlike Rogers' model, earlier clinical approaches foregrounded issues and behaviors of concern, with the therapist diagnosing them and specifying treatment courses. Critics question the effectiveness of Rogers' approach for patients seeking expert guidance, especially those with severe mental-health challenges who need structured intervention. However, Rogers' theories remain influential: The person-centered paradigm is seen in various therapeutic approaches.",
             ],
             [
@@ -430,7 +430,7 @@ def build_reading():
             2,
             [
                 "Spider silk is one of nature's most remarkable materials, known for its strength and elasticity. Stronger than steel and highly stretchable, spider silk has inspired researchers to explore its medical potential.",
-                "Researchers have experimented with spider silk as a surgical suture material for use in stitching wounds, praising its strength and biocompatibility—a material's ability to interact with the human body without causing adverse reactions, such as inflammation or rejection. Spider silk meets this criterion exceptionally well. It integrates smoothly with human tissues, minimizing immune response and promoting faster healing. Additionally, its natural elasticity helps the sutures adapt to bodily movements, reducing the risk of sutures rupturing under tension.",
+                "Researchers have experimented with spider silk as a surgical suture material for use in stitching wounds, praising its strength and biocompatibility-a material's ability to interact with the human body without causing adverse reactions, such as inflammation or rejection. Spider silk meets this criterion exceptionally well. It integrates smoothly with human tissues, minimizing immune response and promoting faster healing. Additionally, its natural elasticity helps the sutures adapt to bodily movements, reducing the risk of sutures rupturing under tension.",
                 "Spider silk has been woven into advanced dressings for wounds that accelerate recovery. Spider silk's biocompatibility and ability to retain moisture make it ideal for treating chronic wounds and joint injuries. Spider silk-based bandages can also be infused with medications for localized drug delivery, reducing infection risk and improving treatment outcomes.",
                 {"insert": "A", "t": "However, large-scale production is challenging. Spiders are territorial and cannibalistic, making farming them for silk impractical."},
                 {"insert": "B", "t": "Scientists have turned to synthetic methods of producing spider silk using genetically modified bacteria and yeast, but scaling up these techniques remains difficult."},
@@ -443,7 +443,7 @@ def build_reading():
                     102,
                     "Identify the sentence in paragraph 2 that contains the definition of a term.",
                     {
-                        "A": "Researchers have experimented with spider silk as a surgical suture material for use in stitching wounds, praising its strength and biocompatibility—a material's ability to interact with the human body without causing adverse reactions, such as inflammation or rejection.",
+                        "A": "Researchers have experimented with spider silk as a surgical suture material for use in stitching wounds, praising its strength and biocompatibility-a material's ability to interact with the human body without causing adverse reactions, such as inflammation or rejection.",
                         "B": "Spider silk meets this criterion exceptionally well.",
                         "C": "It integrates smoothly with human tissues, minimizing immune response and promoting faster healing.",
                         "D": "Additionally, its natural elasticity helps the sutures adapt to bodily movements, reducing the risk of sutures rupturing under tension.",
@@ -461,8 +461,8 @@ def build_reading():
             "Linguistic Structural Diversity",
             2,
             [
-                "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order—the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: Placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
-                "Beyond syntax, languages differ in morphological complexity—the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
+                "Linguistic typology investigates structural features across languages, revealing both universal patterns and language-specific variation. A central area of study is word order-the arrangement of subjects, verbs, and objects. English follows a subject-verb-object (SVO) pattern, while Japanese uses subject-object-verb (SOV). Most languages conform to a limited set of dominant word orders, which may reflect cognitive efficiency: Placing the subject first helps listeners quickly identify the sentence's main actor, aiding comprehension.",
+                "Beyond syntax, languages differ in morphological complexity-the degree to which inflection (such as noun or verb endings) marks grammatical relationships. Turkish uses extensive inflection to express subtle distinctions, whereas Mandarin Chinese relies more on word order and context. These contrasts suggest that languages balance morphology and syntax based on communicative needs. Highly inflected languages can afford flexible word order because grammatical roles are marked morphologically. In contrast, languages with minimal inflection often depend on fixed word order to maintain clarity.",
                 {"insert": "A", "t": "This trade-off reflects deeper functional pressures."},
                 {"insert": "B", "t": "Languages evolve not randomly but in response to cognitive constraints and social factors, including contact with other languages and cultural shifts."},
                 {"insert": "C", "t": "Studying this evolution helps linguists understand not only how languages differ but why certain grammatical strategies emerge and persist across communities."},
@@ -479,7 +479,7 @@ def build_reading():
     )
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 阅读",
+        "title": " TOEFL mới 9.05 · Đọc hiểu ",
         "set": "9.05",
         "modules": [
             {"n": 1, "timeSec": 1680, "from": 1, "to": 70},
@@ -664,7 +664,7 @@ def build_listening():
         raise SystemExit("expected 52 listening items, next id %s" % qid)
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 听力",
+        "title": " TOEFL mới 9.05 · Nghe hiểu ",
         "set": "9.05",
         "skill": "listening",
         "modules": [
@@ -718,7 +718,7 @@ DISC_INSTR = (
 def build_writing():
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 写作",
+        "title": " TOEFL mới 9.05 · Viết ",
         "set": "9.05",
         "skill": "writing",
         "modules": [
@@ -926,7 +926,7 @@ INTERVIEW = {
         "instruction": "You have volunteered for a research study at your university about hobbies. You will have a short online interview with a researcher. The researcher will ask you some questions.",
         "items": [
             ("Do you have a hobby or interest that you regularly spend time doing?", "Certainly. For example, my hobby is landscape photography, which I engage in every weekend. I find it rewarding to explore parks and nature reserves, capturing the changing seasons and lighting conditions. This activity not only allows me to connect with the outdoors but helps me develop technical skills in using my camera and editing software. Over time, I've built a small portfolio of images that I share with friends and family, and it serves as a creative outlet that balances my academic studies. The process of planning shoots and reviewing photos has become a relaxing routine that I look forward to regularly."),
-            ("If you were to select a new hobby, what would you choose and why?", "If I were to pick up a new hobby, I'd choose urban sketching. The main reason is that it combines creativity with exploration. For example, I enjoy discovering new places in my city, and sketching would allow me to capture those moments in a personal, artistic way. It's also a relaxing activity that doesn't require expensive equipment—just a sketchbook and a pen. Plus, it encourages me to slow down and observe details I might otherwise miss in my daily routine. This hobby would help me unwind while fostering a deeper connection to my surroundings."),
+            ("If you were to select a new hobby, what would you choose and why?", "If I were to pick up a new hobby, I'd choose urban sketching. The main reason is that it combines creativity with exploration. For example, I enjoy discovering new places in my city, and sketching would allow me to capture those moments in a personal, artistic way. It's also a relaxing activity that doesn't require expensive equipment-just a sketchbook and a pen. Plus, it encourages me to slow down and observe details I might otherwise miss in my daily routine. This hobby would help me unwind while fostering a deeper connection to my surroundings."),
             ("Now tell me what might prevent you from starting this new pastime.", "There are a few key factors that could hinder me from beginning this new hobby. For example, first, time constraints are a major barrier; as a university student, my schedule is packed with classes, assignments, and part-time work, leaving little room for additional activities. Second, financial considerations might pose a challenge, especially if the hobby requires expensive equipment or materials, which could strain my budget. Lastly, a lack of initial motivation or support from peers could make it difficult to stay committed, as starting something new often feels daunting without encouragement."),
             ("Some people believe it is better to have one interest outside of work or school that you dedicate yourself to rather than multiple smaller ones. What do you think about that, and why?", "I believe dedicating oneself to a single primary interest outside of work or school is more beneficial than spreading efforts across multiple smaller ones. Focusing deeply on one hobby allows for mastery and meaningful progress, which can be more satisfying. For example, if someone commits to learning a musical instrument, they can develop advanced skills over time, leading to a sense of accomplishment and stress relief. In contrast, juggling many interests might result in superficial engagement without real depth. This concentrated approach also helps build discipline and can enhance personal growth, making it a more rewarding choice overall."),
         ],
@@ -1040,10 +1040,10 @@ if __name__ == "__main__":
     dump("2025-09-05-reading.json", build_reading())
     dump("2025-09-05-listening.json", build_listening())
     dump("2025-09-05-writing.json", build_writing())
-    dump("2025-09-05-speaking.json", build_speaking("2025-09-05", "新托福 9.05 · 口语 Form 1", 1, 1))
-    dump("2025-09-05-speaking-f2.json", build_speaking("2025-09-05-s2", "新托福 9.05 · 口语 Form 2", 2, 2))
-    dump("2025-09-05-speaking-f3.json", build_speaking("2025-09-05-s3", "新托福 9.05 · 口语 Form 3", 3, 3))
-    dump("2025-09-05-speaking-f4.json", build_speaking("2025-09-05-s4", "新托福 9.05 · 口语 Form 4", 4, 4))
-    dump("2025-09-05-speaking-f5.json", build_speaking("2025-09-05-s5", "新托福 9.05 · 口语 Form 5", 5, 5))
-    dump("2025-09-05-speaking-f6.json", build_speaking("2025-09-05-s6", "新托福 9.05 · 口语 Form 6 面试", None, 6))
-    dump("2025-09-05-speaking-f7.json", build_speaking("2025-09-05-s7", "新托福 9.05 · 口语 Form 7 面试", None, 7))
+    dump("2025-09-05-speaking.json", build_speaking("2025-09-05", " TOEFL mới 9.05 · Nói Form 1", 1, 1))
+    dump("2025-09-05-speaking-f2.json", build_speaking("2025-09-05-s2", " TOEFL mới 9.05 · Nói Form 2", 2, 2))
+    dump("2025-09-05-speaking-f3.json", build_speaking("2025-09-05-s3", " TOEFL mới 9.05 · Nói Form 3", 3, 3))
+    dump("2025-09-05-speaking-f4.json", build_speaking("2025-09-05-s4", " TOEFL mới 9.05 · Nói Form 4", 4, 4))
+    dump("2025-09-05-speaking-f5.json", build_speaking("2025-09-05-s5", " TOEFL mới 9.05 · Nói Form 5", 5, 5))
+    dump("2025-09-05-speaking-f6.json", build_speaking("2025-09-05-s6", " TOEFL mới 9.05 · Nói Form 6 được phỏng vấn ", None, 6))
+    dump("2025-09-05-speaking-f7.json", build_speaking("2025-09-05-s7", " TOEFL mới 9.05 · Nói Form 7 được phỏng vấn ", None, 7))

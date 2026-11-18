@@ -12,7 +12,7 @@ OUT_RDL = os.path.join(ROOT, "app/library/toefl/bank-rdl-reading.json")
 
 
 def norm(s):
-    s = re.sub(r"[&＋]", " and ", str(s or "").lower())
+    s = re.sub(r"[& ]", " and ", str(s or "").lower())
     s = re.sub(r"[^a-z0-9]+", " ", s)
     return " ".join(s.split())
 

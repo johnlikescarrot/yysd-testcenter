@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>激活码 · 优益思达</title>
+  <title>kích hoạt trọng lượng · YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
 </head>
 <body class="home-minimal teacher-page">
   <main class="minimal-shell minimal-main" style="max-width:880px">
-    <p><a href="platform.html">返回主控台</a></p>
-    <h1>激活码</h1>
+    <p><a href="platform.html">trở về chủ kiểm soát Đài Loan</a></p>
+    <h1>kích hoạt trọng lượng</h1>
     <p id="switch-line"></p>
     <p>
-      <button type="button" id="switch-on" class="btn btn--primary">打开总开关</button>
-      <button type="button" id="switch-off" class="btn">关闭总开关</button>
+      <button type="button" id="switch-on" class="btn btn--primary">mở công tắc chính</button>
+      <button type="button" id="switch-off" class="btn">đóng công tắc chính</button>
     </p>
     <p class="auth-msg" id="msg"></p>
     <form id="create" class="auth-form">
-      <label class="auth-field"><span>身份</span>
-        <select id="role"><option value="student">学生</option><option value="teacher">老师</option></select>
+      <label class="auth-field"><span>nhân dạng</span>
+        <select id="role"><option value="student">Học viên</option><option value="teacher">giáo viên</option></select>
       </label>
-      <label class="auth-field"><span>手机号</span>
-        <input id="phone" inputmode="numeric" maxlength="11" placeholder="老用户必填，新用户留空">
+      <label class="auth-field"><span>Số điện thoại</span>
+        <input id="phone" inputmode="numeric" maxlength="11" placeholder=" tiền tố dùng trước của một người hoặc số thứ tự sinh của các con trong gia đình hoặc để chỉ sự thân mật hoặc quen thuộc người dùng nhất định lấp hoặc nhồi, viết tắt của Tân Cương người dùng chừa trống trong tài liệu ">
       </label>
-      <button class="btn btn--primary" type="submit">生成激活码</button>
+      <button class="btn btn--primary" type="submit">tạo ra kích hoạt trọng lượng</button>
     </form>
     <div id="list"></div>
   </main>
@@ -36,18 +36,18 @@
     function load() {
       A.api("/api/platform/seats").then(function (d) {
         document.getElementById("switch-line").textContent = d.on
-          ? "总开关已打开：学生和老师只能用机考程序。"
-          : "总开关关着：浏览器仍可登录。程序里登录成功会绑定这台电脑。";
-        var html = "<table><tr><th>码</th><th>身份</th><th>手机号</th><th>电脑</th><th>状态</th><th></th></tr>";
+          ? " công tắc chính đã mở: học sinh biến thể cũ của giáo viên chỉ có thể sử dụng máy móc đánh quy trình "
+          : " công tắc chính ải núi nước đi: trình duyệt vẫn có thể đăng ký quy trình biến thể của | đăng ký Trấn Thành Công hoặc trấn Chengkung ở huyện Đài Đông | có thể ràng buộc này Đài Loan máy tính ";
+        var html = "<table><tr><th>trọng lượng</th><th>nhân dạng</th><th>Số điện thoại</th><th>máy tính</th><th>tình trạng</th><th></th></tr>";
         (d.seats || []).forEach(function (s) {
-          html += "<tr><td>" + s.code + "</td><td>" + (s.role === "teacher" ? "老师" : "学生") +
-            "</td><td>" + (s.phone || "空白") + "</td><td>" + (s.device_key ? "已绑定" : "未绑定") +
-            "</td><td>" + (s.disabled ? "停用" : "可用") + "</td><td>" +
-            "<button data-act='unbind' data-id='" + s.id + "'>解除</button> " +
+          html += "<tr><td>" + s.code + "</td><td>" + (s.role === "teacher" ? " giáo viên " : " Học viên ") +
+            "</td><td>" + (s.phone || " khoảng trống ") + "</td><td>" + (s.device_key ? " đã ràng buộc " : " chưa ràng buộc ") +
+            "</td><td>" + (s.disabled ? " ngừng sử dụng " : " có thể sử dụng ") + "</td><td>" +
+            "<button data-act='unbind' data-id='" + s.id + "'>loại bỏ</button> " +
             (s.disabled
-              ? "<button data-act='enable' data-id='" + s.id + "'>恢复</button> "
-              : "<button data-act='disable' data-id='" + s.id + "'>停用</button> ") +
-            "<button data-act='password' data-id='" + s.id + "'>设密码</button></td></tr>";
+              ? "<button data-act='enable' data-id='" + s.id + "'>khôi phục</button> "
+              : "<button data-act='disable' data-id='" + s.id + "'>ngừng sử dụng</button> ") +
+            "<button data-act='password' data-id='" + s.id + "'>thiết lập mã hóa</button></td></tr>";
         });
         document.getElementById("list").innerHTML = html + "</table>";
       }).catch(function (e) { show(e.message); });
@@ -71,10 +71,10 @@
       var id = btn.getAttribute("data-id");
       var act = btn.getAttribute("data-act");
       if (act === "password") {
-        var password = window.prompt("新密码（至少 6 位）");
+        var password = window.prompt(" Xinmi trọng lượng(Ít nhất 6 vị trí)");
         if (!password) return;
         A.api("/api/platform/seats/" + id + "/password", { method: "POST", body: { password: password } })
-          .then(function () { show("密码已设置"); }).catch(function (e) { show(e.message); });
+          .then(function () { show(" mã hóa đã thiết lập "); }).catch(function (e) { show(e.message); });
         return;
       }
       A.api("/api/platform/seats/" + id + "/" + act, { method: "POST", body: {} })

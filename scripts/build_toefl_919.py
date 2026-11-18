@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/9月/9.19-海外线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/xuất sắc lợi ích suy nghĩ đạt tới tự sắp xếp viết tắt của Tân Cương TOEFL chủ đề/9 tháng/9.19-nước ngoài ngoại tuyến/audio/item_level"
 AUDIO = "library/toefl/audio/2025-09-19/"
 PHOTO = "library/toefl/img/2025-09-02/"
 
@@ -286,8 +286,8 @@ def build_reading():
     ])
     tasks.append(t)
     tasks.append(academic("Beyond Philosophy's Borders", 2, [
-        "Metaphilosophy is a field that looks critically at whether philosophical inquiry can truly transcend cultural and linguistic boundaries. While traditional philosophy often aims to uncover universal truths, metaphilosophy questions whether such truths are even accessible across diverse contexts. Language, far from being a neutral vessel, shapes and limits how ideas are expressed and understood. A concept that resonates deeply in one culture may carry entirely different connotations—or none at all—in another. This raises concerns about the global applicability of philosophical frameworks developed in specific cultural milieus. Are we uncovering truths, or merely reinforcing culturally contingent assumptions?",
-        "Some insist that despite linguistic and cultural variation, certain philosophical concerns—like suffering, justice, or mortality—are shared across societies, suggesting a basis for universality. Yet even these themes may be interpreted through culturally specific lenses. Metaphilosophy doesn't deny the possibility of cross-cultural dialogue but cautions against assuming it is seamless. It encourages philosophers to examine how their methods and assumptions travel—or fail to—across contexts.",
+        "Metaphilosophy is a field that looks critically at whether philosophical inquiry can truly transcend cultural and linguistic boundaries. While traditional philosophy often aims to uncover universal truths, metaphilosophy questions whether such truths are even accessible across diverse contexts. Language, far from being a neutral vessel, shapes and limits how ideas are expressed and understood. A concept that resonates deeply in one culture may carry entirely different connotations-or none at all-in another. This raises concerns about the global applicability of philosophical frameworks developed in specific cultural milieus. Are we uncovering truths, or merely reinforcing culturally contingent assumptions?",
+        "Some insist that despite linguistic and cultural variation, certain philosophical concerns-like suffering, justice, or mortality-are shared across societies, suggesting a basis for universality. Yet even these themes may be interpreted through culturally specific lenses. Metaphilosophy doesn't deny the possibility of cross-cultural dialogue but cautions against assuming it is seamless. It encourages philosophers to examine how their methods and assumptions travel-or fail to-across contexts.",
         "Critics worry this reflexivity may stall progress, but others see it as essential for avoiding intellectual overreach. By foregrounding these tensions, metaphilosophy aims not to dilute philosophy's aims, but to sharpen them through greater self-awareness and methodological rigor.",
     ], [
         q(46, "What is the main purpose of the passage?", {
@@ -322,7 +322,7 @@ def build_reading():
         raise SystemExit("reading blanks ended at %s" % n)
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 阅读",
+        "title": " TOEFL mới 9.19 nước ngoài ngoại tuyến · Đọc hiểu ",
         "set": "9.19",
         "skill": "reading",
         "modules": [
@@ -612,7 +612,7 @@ def build_listening():
     ]
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 听力",
+        "title": " TOEFL mới 9.19 nước ngoài ngoại tuyến · Nghe hiểu ",
         "set": "9.19",
         "skill": "listening",
         "modules": [
@@ -637,7 +637,7 @@ def sent(sid, context, lead, bank, answer, tail="."):
 def build_writing():
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 写作",
+        "title": " TOEFL mới 9.19 nước ngoài ngoại tuyến · Viết ",
         "set": "9.19",
         "skill": "writing",
         "modules": [
@@ -753,7 +753,7 @@ def build_speaking():
         })
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 口语",
+        "title": " TOEFL mới 9.19 nước ngoài ngoại tuyến · Nói ",
         "set": "9.19",
         "skill": "speaking",
         "modules": [

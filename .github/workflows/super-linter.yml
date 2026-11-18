@@ -1,0 +1,40 @@
+name: Super-Linter
+on:
+  push:
+    branches:
+      - arena/977f1811-yysd-testcenter
+      - main
+  pull_request:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  statuses: write
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Chay Super-Liner thuong xuyen
+        uses: super-linter/super-linter@v7
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: '(^|/)(docs|tools|tests)/'
+          FILTER_REGEX_EXCLUDE: 'tools/data/'
+          VALIDATE_JSON: true
+          VALIDATE_CSS: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_HTML: false
+          VALIDATE_BASH: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_JSCPD: false
+          VALIDATE_GITLEAKS: false

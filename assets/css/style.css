@@ -1,7 +1,7 @@
 /* ==========================================================================
-   优益思达学习中心 (YYSD Learning Center)
-   Global stylesheet — design system (Phase ① visual foundation)
-   Playfair Display loaded via <link> in shell pages (not @import — blocks render).
+   Trung tâm học tập YYSD (YYSD Learning Center)
+   Global stylesheet - design system (Phase ① visual foundation)
+   Playfair Display loaded via <link> in shell pages (not @import - blocks render).
    ========================================================================== */
 
 :root {
@@ -65,7 +65,7 @@
   --shadow-paper: 0 1px 0 rgba(255,255,255,.85) inset, 0 14px 34px -18px rgba(7,25,47,.10);
   --shadow-md: 0 14px 34px -18px rgba(7, 25, 47, .28), 0 2px 8px -4px rgba(7, 25, 47, .10);
   --shadow-lg: 0 30px 70px -28px rgba(7, 25, 47, .34);
-  /* ponytail: inline SVG noise — no extra asset file */
+  /* ponytail: inline SVG noise - no extra asset file */
   --paper-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
   --ease: cubic-bezier(.4, 0, .2, 1);
@@ -563,7 +563,7 @@ a.navleaf:hover { border-color: var(--zc, var(--brand-red)); transform: translat
 .subject-group__head h2 { margin: 0; font-size: 19px; color: var(--brand-navy); }
 .subject-dot { width: 11px; height: 11px; border-radius: 50%; }
 .subject-group__head .cnt { font-size: 13px; color: var(--text-faint); font-weight: 600; }
-/* sub-skill blocks inside a category (e.g. 雅思真题 → 听力/阅读/口语/写作) */
+/* sub-skill blocks inside a category (e.g. IELTS câu hỏi từ đề thi các năm trước → Nghe hiểu/Đọc hiểu/Nói/Viết) */
 .leaf-wrap { display: flex; flex-direction: column; gap: 22px; }
 .leaf-block { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; background: var(--surface); }
 .leaf-block__head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -577,7 +577,7 @@ a.navleaf:hover { border-color: var(--zc, var(--brand-red)); transform: translat
   background: var(--bg); border: 1px dashed var(--border-strong); border-radius: var(--radius-sm);
 }
 
-/* ---------- Cambridge volume cards (剑桥真题系列) ---------------------- */
+/* ---------- Cambridge volume cards (Cambridge câu hỏi từ đề thi các năm trước loạt) ---------------------- */
 .vol-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
 .vol-card {
   display: flex; flex-direction: column; gap: 16px;
@@ -667,7 +667,7 @@ a.navleaf:hover { border-color: var(--zc, var(--brand-red)); transform: translat
 .cam-hero--mock { background: linear-gradient(165deg, #f3f5f8, var(--surface)); }
 @media (max-width: 640px) { .cam-hero { flex-direction: column; text-align: center; } }
 
-/* ---------- Vocabulary book hub (vocab.html) — Canvas-like modules ------ */
+/* ---------- Vocabulary book hub (vocab.html) - Canvas-like modules ------ */
 .vocab-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 .vocab-search {
   display: flex;
@@ -1435,7 +1435,7 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 
 /* ==========================================================================
-   Premium brand layer — logo theme, motion, zone accents (Phase 1–3)
+   Premium brand layer - logo theme, motion, zone accents (Phase 1–3)
    ========================================================================== */
 
 /* Scroll-reveal */
@@ -1450,7 +1450,7 @@ table.data tr:last-child td { border-bottom: 0; }
   transform: none;
 }
 
-/* Sticky nav — scrolled state */
+/* Sticky nav - scrolled state */
 .minimal-topbar {
   transition: background .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
 }
@@ -1460,7 +1460,7 @@ table.data tr:last-child td { border-bottom: 0; }
   border-bottom-color: rgba(199,164,93,.28);
 }
 
-/* Hero — logo watermark + serif headline */
+/* Hero - logo watermark + serif headline */
 .minimal-hero {
   position: relative;
   overflow: hidden;
@@ -1702,7 +1702,7 @@ table.data tr:last-child td { border-bottom: 0; }
   opacity: .9;
 }
 
-/* Volume cards — shield badge + book hover */
+/* Volume cards - shield badge + book hover */
 .vol-card {
   position: relative;
   overflow: hidden;
@@ -1746,7 +1746,7 @@ table.data tr:last-child td { border-bottom: 0; }
   transform-origin: 70% 80%;
 }
 
-/* Zone pages — accent bar + chip restyle */
+/* Zone pages - accent bar + chip restyle */
 .zone-page .minimal-page-head {
   position: relative;
   padding: 18px 0 16px;
@@ -1786,7 +1786,7 @@ table.data tr:last-child td { border-bottom: 0; }
   background: var(--brand-navy-soft);
 }
 
-/* Exam viewer — logo in bar */
+/* Exam viewer - logo in bar */
 .viewer-bar__logo {
   width: 28px;
   height: 28px;
@@ -1826,7 +1826,7 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 
 /* ==========================================================================
-   Scalable catalog — search, filters, collapse, tabs, compact lists
+   Scalable catalog - search, filters, collapse, tabs, compact lists
    ========================================================================== */
 .minimal-section__head--row {
   display: flex;
@@ -2303,7 +2303,7 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 
 /* ==========================================================================
-   Phase C/D — score toast + vocab LIST transitions
+   Phase C/D - score toast + vocab LIST transitions
    ========================================================================== */
 .score-toast-host {
   position: fixed;
@@ -2648,7 +2648,7 @@ table.data tr:last-child td { border-bottom: 0; }
 }
 
 /* ==========================================================================
-   P0 — paper surfaces, journey path, home dashboard
+   P0 - paper surfaces, journey path, home dashboard
    ========================================================================== */
 .minimal-entry-grid--path {
   position: relative;
@@ -2690,7 +2690,7 @@ table.data tr:last-child td { border-bottom: 0; }
   margin: 0 auto var(--space-block);
 }
 
-/* —— Marketing homepage: Bento Grid (便当盒) —— */
+/* -- Marketing homepage: Bento Grid (tiện lợi hộp nhỏ) -- */
 .home-market-page,
 .home-bento-page {
   --bento-ink: #18181b;
@@ -3773,7 +3773,7 @@ a.bento-tile:focus-visible {
 }
 
 /* ==========================================================================
-   P1 — book spine vol cards, test tabs, Band timeline
+   P1 - book spine vol cards, test tabs, Band timeline
    ========================================================================== */
 .band-timeline {
   margin-bottom: var(--space-block);
@@ -3865,7 +3865,7 @@ a.bento-tile:focus-visible {
   .test-panel.is-entering .skill-panel { animation: none; }
 }
 
-/* —— Login / profile / legal —— */
+/* -- Login / profile / legal -- */
 .auth-main { padding-top: 24px; padding-bottom: 64px; }
 .auth-layout {
   display: grid;
@@ -4082,7 +4082,7 @@ a.site-mps:hover { text-decoration: underline; color: var(--text-muted); }
 .site-mps img { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; }
 
 /* ==========================================================================
-   P0 — Exam viewer bar enhancements
+   P0 - Exam viewer bar enhancements
    ========================================================================== */
 .viewer-bar .v-info {
   display: flex;
@@ -4184,7 +4184,7 @@ a.site-mps:hover { text-decoration: underline; color: var(--text-muted); }
   .viewer-bar a.back { font-size: 13px; }
 }
 
-/* Mock exam lock — parent shell (exam.html) */
+/* Mock exam lock - parent shell (exam.html) */
 body.viewer.is-exam-locked .viewer-bar a.back {
   opacity: .45;
   pointer-events: none;
@@ -4229,7 +4229,7 @@ body.viewer.is-exam-locked .viewer-bar a.back {
 }
 
 /* ==========================================================================
-   P0 — Mobile navigation (drawer + bottom tabs)
+   P0 - Mobile navigation (drawer + bottom tabs)
    ========================================================================== */
 .nav-menu-btn {
   display: none;
@@ -4416,7 +4416,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 }
 
 /* ==========================================================================
-   P1 — results hero, login layout (成绩页 / 登录页)
+   P1 - results hero, login layout (thành tích đầu / đăng ký đầu)
    ========================================================================== */
 .results-hero {
   display: grid;
@@ -4509,7 +4509,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 }
 
 /* ==========================================================================
-   AI word lookup (学习区 · 单词)
+   AI word lookup (học khu vực · Từ vựng)
    ========================================================================== */
 .ai-word {
   margin-bottom: 22px;
@@ -4633,7 +4633,7 @@ body.has-mobile-tabs { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0
 .ai-word__status.is-err { color: var(--brand-red, #c8102e); }
 
 /* ==========================================================================
-   Wrong-word notebook (单词错题本)
+   Wrong-word notebook (từ lỗi chủ đề gốc)
    ========================================================================== */
 .wrong-notebook-strip {
   margin-bottom: 22px;
@@ -5051,7 +5051,7 @@ a.alevel-paper-title:hover { color: var(--c-pte); text-decoration: underline; }
 .alevel-link-sep { margin: 0 4px; color: var(--text-faint); }
 .alevel-paper-missing { color: var(--text-faint); }
 
-/* --- 学为贵-style accordion (真题资料) --- */
+/* --- học làm đắt-style accordion (câu hỏi từ đề thi các năm trước tài liệu) --- */
 .alevel-hero--compact { margin-bottom: 8px; }
 .alevel-hero--compact h1 { font-size: 22px; }
 .alevel-xwg {
@@ -6188,7 +6188,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
 }
 
 /* ==========================================================================
-   I-006 / Phase 0 — product-line topbar + white/orange IELTS mega
+   I-006 / Phase 0 - product-line topbar + white/orange IELTS mega
    ========================================================================== */
 :root {
   --mega-accent: #e8913a;
@@ -6270,7 +6270,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
 .reme-nav a.is-active::after {
   content: none;
 }
-/* 全球大学排行榜 — teal accent (between 国际课程 and AI升学顾问) */
+/* toàn thế giới Đại học bảng xếp hạng - teal accent (between Chương trình quốc tế and AI lên lớp hoặc trường cấp trên cố vấn) */
 .reme-nav a.nav-rankings,
 .nav-drawer__links a.nav-rankings {
   font-weight: 700;
@@ -6297,7 +6297,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-/* AI 升学顾问 — gradient accent in top nav */
+/* AI lên lớp hoặc trường cấp trên cố vấn - gradient accent in top nav */
 .reme-nav a.nav-ai-admit,
 .nav-drawer__links a.nav-ai-admit {
   font-weight: 700;
@@ -6389,7 +6389,7 @@ body.has-teacher-site-banner a[href="teacher-login.html"] {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 24px;
 }
-/* IELTS hub — skill path cards (listening / reading / speaking / writing / mock) */
+/* IELTS hub - skill path cards (listening / reading / speaking / writing / mock) */
 body.is-ielts-hub .catalog-toolbar,
 body.is-vocab-hub .catalog-toolbar {
   display: none !important;
@@ -7225,7 +7225,7 @@ body.is-vocab-hub .catalog-toolbar {
   flex: 1;
   min-height: 0;
   display: grid;
-  /* Slightly narrower copy rail — paper stays the hero */
+  /* Slightly narrower copy rail - paper stays the hero */
   grid-template-columns: minmax(260px, 0.88fr) minmax(0, 1.22fr);
   gap: 0;
   background: #d9e1ec;
@@ -7244,7 +7244,7 @@ body.is-vocab-hub .catalog-toolbar {
   align-items: center;
   box-sizing: border-box;
 }
-/* Centered measure, left-aligned type — Apple editorial pattern */
+/* Centered measure, left-aligned type - Apple editorial pattern */
 .ha-cdt-app__stack {
   width: min(100%, 22rem);
   display: flex;
@@ -7441,7 +7441,7 @@ body.is-vocab-hub .catalog-toolbar {
 
 /* Teacher intro + finale */
 .ha-teacher {
-  /* Book-page cream — intentional, not generic cream+terracotta kit */
+  /* Book-page cream - intentional, not generic cream+terracotta kit */
   background:
     radial-gradient(ellipse 90% 60% at 12% 8%, rgba(255, 252, 247, .7), transparent 55%),
     radial-gradient(ellipse 70% 50% at 92% 88%, rgba(210, 180, 140, .12), transparent 50%),
@@ -7499,7 +7499,7 @@ body.is-vocab-hub .catalog-toolbar {
   border: none;
   box-shadow: none;
 }
-/* Physical teacher folder — open cover, flip pages */
+/* Physical teacher folder - open cover, flip pages */
 .ha-folder {
   perspective: 1800px;
   --folder-manila: #d7b07a;
@@ -7725,7 +7725,7 @@ body.is-vocab-hub .catalog-toolbar {
   .ha-tflow__slide::after { transition: none; }
   .ha-folder.is-open .ha-folder__cover { transform: none; opacity: 0; }
 }
-/* Mini teacher UI — larger, clearer, more premium */
+/* Mini teacher UI - larger, clearer, more premium */
 .ha-tui { display: flex; flex-direction: column; gap: 14px; height: 100%; }
 .ha-tui__shell {
   display: grid;
@@ -8082,7 +8082,7 @@ body.is-vocab-hub .catalog-toolbar {
 }
 .ha-finale .ha-cta { justify-content: center; }
 
-/* Rank Desk feature panel — mirrors /rankings homepage */
+/* Rank Desk feature panel - mirrors /rankings homepage */
 .ha-rank {
   background:
     linear-gradient(rgba(7, 25, 47, .045) 1px, transparent 1px),
@@ -8422,7 +8422,7 @@ body.is-vocab-hub .catalog-toolbar {
   .ha-rd__live > em { display: none; }
 }
 
-/* AI capability matrix — tech blue + silver type */
+/* AI capability matrix - tech blue + silver type */
 .ha-ai {
   text-align: center;
   color: #e8eef7;
@@ -8880,7 +8880,7 @@ body.is-vocab-hub .catalog-toolbar {
 .ha-vocab-list .is-now em { color: var(--ha-orange); }
 .ha-vocab-list .is-done em { color: #34c759; }
 
-/* —— Vocab feature tour (no cursor) —— */
+/* -- Vocab feature tour (no cursor) -- */
 .ha-vtour {
   position: relative;
   width: 100%;
@@ -9051,7 +9051,7 @@ body.is-vocab-hub .catalog-toolbar {
     inset 0 1px 0 rgba(255, 255, 255, .7),
     0 18px 40px rgba(0, 0, 0, .28);
 }
-/* Compact real calendar chrome inside Mac — same classes as dashboard */
+/* Compact real calendar chrome inside Mac - same classes as dashboard */
 .ha-screen--cal .ha-cal-shell {
   flex: 1;
   min-height: 0;
@@ -9334,7 +9334,7 @@ body.is-vocab-hub .catalog-toolbar {
   .home-apple-page .home-btn { width: 100%; }
 }
 
-/* —— Auth pages on Apple home chrome —— */
+/* -- Auth pages on Apple home chrome -- */
 .home-apple-page .auth-main {
   padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 8vw, 96px);
 }
@@ -9518,7 +9518,7 @@ body.is-vocab-hub .catalog-toolbar {
   .home-apple-page .auth-card { order: 1; }
 }
 
-/* —— Home keynote: full-viewport panels + snap —— */
+/* -- Home keynote: full-viewport panels + snap -- */
 html:has(.home-apple-keynote) {
   scroll-snap-type: y mandatory;
   scroll-padding-top: 0;
@@ -9543,7 +9543,7 @@ html:has(.home-apple-keynote) {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-/* ponytail: let AI panel pass through so footer (备案/投诉) can rest in view */
+/* ponytail: let AI panel pass through so footer (đưa vào hồ sơ/phàn nàn) can rest in view */
 .home-apple-keynote .ha-ai.ha-panel {
   scroll-snap-stop: normal;
 }
@@ -9791,13 +9791,13 @@ html:has(.home-apple-keynote) {
   .home-apple-keynote .ha-screen--tasks {
     min-height: 200px;
   }
-  /* ponytail: tall forms on small screens — snap still helps, content can grow */
+  /* ponytail: tall forms on small screens - snap still helps, content can grow */
   .home-apple-keynote .ha-panel {
     scroll-snap-stop: normal;
   }
 }
 
-/* —— Hero product tour (JS-driven, ~60s) —— */
+/* -- Hero product tour (JS-driven, ~60s) -- */
 .ha-screen--demo {
   position: relative;
   min-height: 320px;

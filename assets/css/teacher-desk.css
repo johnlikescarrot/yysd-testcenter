@@ -1,7 +1,7 @@
-/* teacher-desk — 教务工作台皮肤。只挂在 .teacher-page，不碰学生端 page-premium。 */
+/* teacher-desk - quản lý giáo dục bàn làm việc da chỉ treo tồn tại .teacher-page, không biến thể của học sinh cuối page-premium  */
 
 .teacher-page {
-  /* 军绿主体 + 石色底 + 炭黑字；完成/逾期仍用语义色，不跟军绿抢 */
+  /* màu xanh lính phần chính + đơn vị đo lường khô cho ngũ cốc bằng mười đấu màu sắc nền tảng + than củi viết tắt của tỉnh Hắc Long Giang | chữ; Hoàn thành/bị quá hạn vẫn cách chọn từ công lý màu sắc, không gót chân màu xanh lính đập vào */
   --desk-olive: #3a4a36;
   --desk-navy: var(--desk-olive);
   --desk-ink: #1c221c;
@@ -45,7 +45,7 @@
   --ring: var(--desk-navy);
 }
 
-/* —— 顶栏 / 壳对齐 —— */
+/* -- đỉnh hàng rào / biến thể của | căn chỉnh -- */
 .teacher-page .minimal-topbar {
   background: #fff;
   backdrop-filter: none;
@@ -114,7 +114,7 @@
   border-radius: 6px;
 }
 
-/* —— 固定侧栏（sidebar-fixed / 256px） —— */
+/* -- cố định một bên hàng rào(sidebar-fixed / 256px) -- */
 .teacher-page {
   --desk-side: 256px;
   --desk-side-sm: 64px;
@@ -334,7 +334,7 @@
   .teacher-page .stu-home__day { position: static; }
 }
 
-/* —— 页头 —— */
+/* -- đầu đầu -- */
 .teacher-page .minimal-eyebrow { display: none; }
 .teacher-page .minimal-page-head {
   padding: 14px 0 12px;
@@ -409,7 +409,7 @@
   font-size: 12px;
 }
 
-/* —— 控件 —— */
+/* -- một điều khiển -- */
 .teacher-page .btn--primary,
 .teacher-page.page-premium .btn--primary {
   background: var(--desk-navy);
@@ -485,7 +485,7 @@
   color: #fff;
 }
 
-/* —— 花名册行 —— */
+/* -- tên của một người trong sổ hộ khẩu sách hàng -- */
 .teacher-page.page-premium .teacher-students,
 .teacher-page .teacher-students {
   display: flex;
@@ -559,7 +559,7 @@
   margin: 0;
 }
 
-/* —— 月历 —— */
+/* -- lịch tháng -- */
 .teacher-page .cal-month,
 .teacher-page.page-premium .cal-month {
   background: #fff;
@@ -698,7 +698,7 @@
   text-decoration: none;
 }
 
-/* —— 当天作业 —— */
+/* -- vào ngày đó bài tập về nhà -- */
 .teacher-page .stu-home__day {
   position: sticky;
   top: 64px;
@@ -742,7 +742,7 @@
   color: var(--desk-bad);
 }
 
-/* —— 任务发布台残留营销体 —— */
+/* -- nhiệm vụ phát hành Đài Loan còn lại tiếp thị cơ thể -- */
 .teacher-page.page-premium .cal-month__nav strong,
 .teacher-page.page-premium .cal-todo-row__main h3 {
   font-family: inherit;
@@ -775,7 +775,7 @@
   border-radius: 10px;
 }
 
-/* —— 系统字对比：标签用墨色，说明/占位用更深的灰 —— */
+/* -- hệ thống chữ so sánh: nhãn sử dụng thỏi mực màu sắc, Hướng dẫn/biến thể của vị trí sử dụng đêm khuya của tro -- */
 .teacher-page .auth-field > span,
 .teacher-page .assign-filter-label,
 .teacher-page .cal-fieldset > legend,
@@ -820,11 +820,11 @@
   color: var(--desk-navy);
 }
 
-/* —— 诊断页金边 → 海军蓝 —— */
+/* -- chẩn đoán đầu Phnom Penh → xanh hải quân -- */
 .teacher-page .diag-exam-bar { border-bottom-color: var(--desk-navy); }
 .teacher-page .diag-thermo__fill--excellent { background: var(--desk-navy); }
 
-/* —— 页脚 —— */
+/* -- đầu bàn chân -- */
 .teacher-page .minimal-footer,
 .teacher-page .minimal-footer--rich {
   padding: 14px 0 20px;

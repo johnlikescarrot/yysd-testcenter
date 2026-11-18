@@ -44,7 +44,7 @@
       : "library/toefl/set-" + setId() + "-" + skill + ".json";
     return fetch(url, { cache: "no-store" })
       .then(function (r) {
-        if (!r.ok) throw new Error("题库未加载");
+        if (!r.ok) throw new Error(" ngân hàng câu hỏi chưa tải ");
         return r.json();
       })
       .catch(function (err) {
@@ -151,7 +151,7 @@
       w.location.replace(backHref(skill));
       return;
     }
-    // ponytail: preview is a popup from 题库中心. Close it; don't navigate this
+    // ponytail: preview is a popup from ngân hàng câu hỏi trung tâm. Close it; don't navigate this
     // window to tiku (no preload → gate) or the public site login.
     try { w.close(); } catch (e) {}
     if (w.closed) return;

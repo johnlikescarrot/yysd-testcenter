@@ -15,76 +15,76 @@ export type SystemMeta = {
 export const SYSTEMS: Record<SystemKey, SystemMeta> = {
   qs: {
     key: "qs",
-    name: "QS 世界大学排名",
+    name: "QS thế giới Đại học xếp hạng ",
     shortName: "QS",
     sourceUrl: "https://www.topuniversities.com",
     sourceHost: "www.topuniversities.com",
     started: 2004,
     latestYear: 2027,
     blurb:
-      "由 Quacquarelli Symonds 发布，从学术声誉、雇主声誉、师生比、引用率、国际教员与国际学生比例等维度评估全球大学。",
+      " do Quacquarelli Symonds phát hành, biến thể của | học thuật danh tiếng, người thuê lao động danh tiếng, giáo viên và học sinh Bỉ, trích dẫn tỉ lệ, quốc tế giáo viên biến thể của | quốc tế học sinh tỷ lệ đợi chiều đánh giá toàn thế giới Đại học ",
     method:
-      "学术声誉与雇主声誉合计权重较高；另含师生比、单位教员引用、国际教师/学生比例及可持续发展等指标。",
+      " học thuật danh tiếng biến thể của | người thuê lao động danh tiếng cộng tổng trọng số so sánh cao; khác ngậm trong miệng giáo viên và học sinh Bỉ, đơn vị giáo viên trích dẫn, quốc tế giáo viên/học sinh tỷ lệ và phát triển bền vững đợi mục tiêu ",
   },
   the: {
     key: "the",
-    name: "泰晤士高等教育世界大学排名",
+    name: " báo The Times giáo dục cao đẳng và đại học thế giới Đại học xếp hạng ",
     shortName: "THE",
     sourceUrl: "https://www.timeshighereducation.com",
     sourceHost: "www.timeshighereducation.com",
     started: 2004,
     latestYear: 2026,
     blurb:
-      "由《泰晤士高等教育》发布，从教学、研究环境、研究质量、产业与国际展望等维度评估研究型大学。",
+      " do«báo The Times giáo dục cao đẳng và đại học»phát hành, làm giáo viên học, nghiên cứu môi trường, nghiên cứu chất lượng, công nghiệp biến thể của | quốc tế triển vọng đợi chiều đánh giá nghiên cứu khuôn Đại học ",
     method:
-      "教学、研究环境、研究质量、产业收入、国际展望共 13 项绩效指标；引文数据常与 Scopus 合作。",
+      " dạy, nghiên cứu môi trường, nghiên cứu chất lượng, công nghiệp thu vào, quốc tế triển vọng chung 13 sau cổ hiệu suất mục tiêu; trích dẫn dữ liệu luôn luôn biến thể của | Scopus hợp tác ",
   },
   arwu: {
     key: "arwu",
-    name: "软科世界大学学术排名",
+    name: " mềm ngành học thế giới Đại học học thuật xếp hạng ",
     shortName: "ARWU",
     sourceUrl: "https://www.shanghairanking.com",
     sourceHost: "www.shanghairanking.com",
     started: 2003,
     latestYear: 2025,
     blurb:
-      "由上海软科发布，侧重诺奖/菲尔兹奖、高被引学者、Nature/Science 与 SCI/SSCI 等客观学术产出。",
+      " theo Thành phố Thượng Hải mềm ngành học phát hành, đặt sự nhấn mạnh đặc biệt vào Giải Nobel/Giải thưởng Fields, cao chăn kéo học giả, Nature/Science và SCI/SSCI đợi khách quan học thuật sản xuất ",
     method:
-      "获奖校友与教员、高被引学者、Nature & Science、论文数量与生均学术表现等可核验指标。",
+      " giành được giải thưởng bạn học biến thể của | giáo viên, cao chăn kéo học giả, Nature & Science, bài báo số lượng biến thể của | được sinh bằng học thuật thể hiện đợi có thể hạt nhân biến thể của | mục tiêu ",
   },
   usnews: {
     key: "usnews",
-    name: "U.S. News 全球最佳大学排名",
+    name: "U.S. News toàn thế giới tối ưu Đại học xếp hạng ",
     shortName: "US News",
     sourceUrl: "https://www.usnews.com",
     sourceHost: "www.usnews.com",
     started: 2014,
     latestYear: 2027,
     blurb:
-      "由《美国新闻与世界报道》发布，聚焦全球研究声誉、发表、引用与国际合作等研究表现。",
+      " do«Hoa Kỳ tin tức biến thể của | tên của các tờ báo khác nhau đường»phát hành, tập trung toàn thế giới nghiên cứu danh tiếng, phát hành, trích dẫn biến thể của | quốc tế hợp tác đợi nghiên cứu thể hiện ",
     method:
-      "全球/区域研究声誉、发表与会议、归一化引用、高被引论文、国际合作等约 13 项指标。",
+      " toàn thế giới/khu vực nghiên cứu danh tiếng, phát hành tham gia cuộc họp bình luận, trở về một biến thể của trích dẫn, cao chăn kéo bài báo, quốc tế hợp tác đợi cân trong cân đĩa hoặc trên cân 13 sau cổ mục tiêu ",
   },
 };
 
 export const SYSTEM_ORDER: SystemKey[] = ["qs", "the", "arwu", "usnews"];
 
 export const COUNTRY_LABELS: Record<string, string> = {
-  US: "美国",
-  UK: "英国",
-  CA: "加拿大",
-  AU: "澳大利亚",
-  CN: "中国",
-  HK: "中国香港",
-  SG: "新加坡",
-  JP: "日本",
-  KR: "韩国",
-  DE: "德国",
-  FR: "法国",
-  CH: "瑞士",
-  NL: "荷兰",
-  SE: "瑞典",
-  OTHER: "其他",
+  US: " Hoa Kỳ ",
+  UK: " Vương quốc Anh ",
+  CA: " Canada ",
+  AU: " Úc ",
+  CN: " Trung Quốc ",
+  HK: " Trung Quốc Hồng Kông ",
+  SG: " Singapore ",
+  JP: " Nhật Bản ",
+  KR: " Hàn Quốc ",
+  DE: " Đức ",
+  FR: " Pháp ",
+  CH: " Thụy Sĩ ",
+  NL: " Hà Lan ",
+  SE: " Thụy Điển ",
+  OTHER: " Khác ",
 };
 
 /** Tape colors for the four ranking tracks (dashboard UI). */

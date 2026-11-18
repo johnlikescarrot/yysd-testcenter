@@ -29,7 +29,7 @@ async function main() {
         row.id
       );
       ok++;
-      if (ok % 10 === 0) console.log(`… ${ok}/${rows.length}`);
+      if (ok % 10 === 0) console.log(`... ${ok}/${rows.length}`);
       // gentle rate limit
       await new Promise((r) => setTimeout(r, 200));
     } catch (e) {

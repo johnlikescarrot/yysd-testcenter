@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ponytail: bridge scrape + sanitizeWrong — fails if wrong capture regresses
+// ponytail: bridge scrape + sanitizeWrong - fails if wrong capture regresses
 "use strict";
 
 function clipText(v, n) {
@@ -33,12 +33,12 @@ function scrapeWrongFromHtml(html) {
     if (!/\britem\b/i.test(cls) || !/\bwrong\b/i.test(cls)) return;
     var rq = (block.match(/class="rq"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     rq = rq.replace(/<[^>]+>/g, "").trim();
-    var m = rq.match(/第\s*([^\s题]+)\s*题/);
+    var m = rq.match(/Thứ\s*([^\s Câu hỏi]+)\s*Câu hỏi/);
     var yours = (block.match(/class="yours"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     var ans = (block.match(/class="correctv"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     yours = yours.replace(/<[^>]+>/g, "").trim();
     ans = ans.replace(/<[^>]+>/g, "").trim();
-    if (yours === "未作答") yours = "";
+    if (yours === " Chưa trả lời ") yours = "";
     out.push({
       no: m ? m[1] : rq.replace(/^[✘✔✗]\s*/, ""),
       ua: yours,
@@ -54,11 +54,11 @@ function assert(cond, msg) {
 
 var sample =
   '<div id="summary"><div class="item"><span class="num">8 / 10</span></div></div>' +
-  '<div class="ritem wrong"><div class="rq">✘ 第 3 题</div>' +
+  '<div class="ritem wrong"><div class="rq">✘ Thứ 3 Câu hỏi</div>' +
   '<div class="yours">apple</div><div class="correctv">orange</div></div>' +
-  '<div class="ritem wrong"><div class="rq">✘ 第 7 题</div>' +
-  '<div class="yours">未作答</div><div class="correctv">blue</div></div>' +
-  '<div class="ritem correct"><div class="rq">✔ 第 1 题</div>' +
+  '<div class="ritem wrong"><div class="rq">✘ Thứ 7 Câu hỏi</div>' +
+  '<div class="yours">Chưa trả lời</div><div class="correctv">blue</div></div>' +
+  '<div class="ritem correct"><div class="rq">✔ Thứ 1 Câu hỏi</div>' +
   '<div class="yours">yes</div><div class="correctv">yes</div></div>';
 
 var scraped = scrapeWrongFromHtml(sample);
@@ -104,7 +104,7 @@ assert(examJs.indexOf("lastScorePushKey === pushKey") >= 0 && examJs.indexOf("pe
 assert(examJs.indexOf("wrongCaptureOf") >= 0, "exam.js must classify wrongCapture");
 
 var resultsHtml = fs.readFileSync(path.join(__dirname, "..", "results.html"), "utf8");
-assert(resultsHtml.indexOf("AI 错题讲解即将上线") < 0, "results.html must not stub-disable 查看错题");
+assert(resultsHtml.indexOf("AI lỗi chủ đề giải thích sắp lên mạng ") < 0, "results.html must not stub-disable xem xét lỗi chủ đề ");
 assert(resultsHtml.indexOf("results-wrongs.js") >= 0, "results.html must load wrongs hub");
 assert(resultsHtml.indexOf('id="results-wrongs"') >= 0, "results.html must have #results-wrongs");
 assert(resultsHtml.indexOf("wrong-record.html?item=") >= 0, "results rows must link to wrong-record");
@@ -112,12 +112,12 @@ assert(resultsHtml.indexOf("hashchange") >= 0, "results must listen to hashchang
 assert(resultsHtml.indexOf('qs.get("event") ? "wrongs"') >= 0, "results ?event= opens wrongs tab");
 
 var teacherJs = fs.readFileSync(path.join(__dirname, "..", "assets/js/teacher.js"), "utf8");
-assert(teacherJs.indexOf("data-item") >= 0, "teacher 查看错题 must keep item fallback");
+assert(teacherJs.indexOf("data-item") >= 0, "teacher xem xét lỗi chủ đề must keep item fallback");
 assert(teacherJs.indexOf("data-copy-wrong") >= 0, "teacher wrong list must be copyable");
 
 console.log("ok: wrong capture");
 console.log("");
-console.log("冒烟要点（手工）:");
-console.log("1. 上传 HTML 作业交卷 → 教师端「上传作业」查看错题有列表");
-console.log("2. 真题阅读交卷（故意做错）→ 「查看错题」有题号/作答/正解，可复制");
-console.log("3. 日历布置的 practice 交卷 → 「练习/全部」可见且带错题（非管理员老师）");
+console.log(" bốc khói điểm chính(thủ công):");
+console.log("1. Tải lên HTML bài tập về nhà nộp bài thi → Dành cho giáo viên«tải lên bài tập về nhà»xem xét lỗi chủ đề có danh sách ");
+console.log("2. câu hỏi từ đề thi các năm trước đọc nộp bài thi(cố ý mắc lỗi)→ «xem xét lỗi chủ đề»có chủ đề gầm/Trả lời/tháng đầu tiên của năm âm lịch chia, có thể nhân bản ");
+console.log("3. lịch sắp xếp của practice Nộp bài → «luyện tập/Tất cả»có thể thấy rõ và dải lỗi chủ đề(viết tắt của người quản lý giáo viên)");

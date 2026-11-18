@@ -86,7 +86,7 @@ function main() {
       t.type = "sentence";
       t.module = 1;
       t.title = t.title || "Build a Sentence";
-      t.titleZh = t.titleZh || "句子构建";
+      t.titleZh = t.titleZh || " Xây dựng câu ";
       paper.tasks.push(t);
       have[t.set] = 1;
     });

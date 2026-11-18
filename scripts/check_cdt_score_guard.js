@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ponytail: mirrors server isJunkCdtOverwrite — fails if junk-guard regresses
+// ponytail: mirrors server isJunkCdtOverwrite - fails if junk-guard regresses
 function isJunkCdtOverwrite(incoming, existing) {
   if (!incoming || !existing || !existing.cdt) return false;
   var inDur = Number(incoming.durationSec);

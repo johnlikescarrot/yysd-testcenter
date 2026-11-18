@@ -28,8 +28,8 @@ function mergeOne(n) {
       prepSec: t.prepSec != null ? t.prepSec : 3,
       speakSec: t.speakSec != null ? t.speakSec : 8,
       title: t.title || ("LRP " + n),
-      titleZh: t.titleZh || "听后跟读",
-      analysis: t.analysis || ("复述：" + t.sample)
+      titleZh: t.titleZh || " Nghe và đọc lại ",
+      analysis: t.analysis || (" Thuật lại: " + t.sample)
     });
   }));
 }

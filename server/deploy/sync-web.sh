@@ -1,6 +1,6 @@
 #!/bin/bash
-# 优益思达静态站 — 从 GitHub 同步到 nginx 目录（在 ECS 上运行）
-# 用法：sudo bash deploy/sync-web.sh
+# xuất sắc lợi ích suy nghĩ đạt tới tĩnh trạm - từ GitHub đồng bộ đến nginx mục lục(tại ECS dùng trong | di chuyển trên quỹ đạo)
+# cách dùng: sudo bash deploy/sync-web.sh
 set -euo pipefail
 
 REPO_DIR="${REPO_DIR:-/opt/yysd/repo}"
@@ -8,11 +8,11 @@ WEB_ROOT="${WEB_ROOT:-/opt/yysd/web}"
 REPO_URL="${REPO_URL:-https://github.com/wanli4473/yysd-testcenter.git}"
 BRANCH="${BRANCH:-main}"
 
-echo "==> 仓库目录: $REPO_DIR"
-echo "==> 网站目录: $WEB_ROOT"
+echo "==> kho hàng mục lục: $REPO_DIR"
+echo "==> trang web mục lục: $WEB_ROOT"
 
 if ! command -v git &>/dev/null; then
-  echo "!! 请先安装 git: apt-get install -y git"
+  echo "!! mời trước lắp đặt git: apt-get install -y git"
   exit 1
 fi
 
@@ -39,8 +39,8 @@ need=(
 )
 for f in "${need[@]}"; do
   if [ ! -f "$REPO_DIR/$f" ]; then
-    echo "!! 仓库缺少 $f — 中止，避免 rsync --delete 把线上绝密套卷删掉"
-    echo "   先把本机 library/mock/**/secret-set-* 提交并推送后再同步"
+    echo "!! kho hàng thiếu $f - ngừng, ngăn chặn rsync --delete cầm trực tuyến tuyệt mật che đậy cuộn lại xóa "
+    echo "   trước cầm gốc máy móc library/mock/**/secret-set-* nộp và đẩy từ máy chủ hoàng hậu lại đồng bộ "
     exit 1
   fi
 done
@@ -61,36 +61,36 @@ if command -v rsync &>/dev/null; then
     --exclude '.env.local' \
     "$REPO_DIR/" "$WEB_ROOT/"
 else
-  echo "!! rsync 未安装，使用 cp（较慢）"
+  echo "!! rsync chưa lắp đặt, Sử dụng cp(so sánh chậm)"
   find "$WEB_ROOT" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
   for item in assets data library "*.html" "*.json" scripts; do
     [ -e "$REPO_DIR/$item" ] && cp -a "$REPO_DIR/$item" "$WEB_ROOT/" 2>/dev/null || true
   done
 fi
 
-# 旧 HTML 发布会丢掉绝密套卷芯片；同步后强制补回
+# cũ HTML họp báo mất tuyệt mật che đậy cuộn lại chip máy tính; đồng bộ hoàng hậu ép buộc bù đắp
 python3 - <<PY
 from pathlib import Path
 p = Path("${WEB_ROOT}/teacher-calendar.html")
 if not p.is_file():
     raise SystemExit(0)
 t = p.read_text(encoding="utf-8")
-old = '              <button type="button" class="chip" data-ex-cat="rsecret">阅读绝密套卷</button>\\n            </div>'
-new = '              <button type="button" class="chip" data-ex-cat="rsecret">阅读绝密套卷</button>\\n              <button type="button" class="chip" data-ex-cat="lsecret">听力绝密套卷</button>\\n            </div>'
+old = '              <button type="button" class="chip" data-ex-cat="rsecret">đọc tuyệt mật che đậy cuộn lại</button>\\n            </div>'
+new = '              <button type="button" class="chip" data-ex-cat="rsecret">đọc tuyệt mật che đậy cuộn lại</button>\\n              <button type="button" class="chip" data-ex-cat="lsecret">thính giác tuyệt mật che đậy cuộn lại</button>\\n            </div>'
 if 'data-ex-cat="lsecret"' not in t:
     if old not in t:
-        raise SystemExit("teacher-calendar.html missing 听力绝密套卷 chip and cannot patch")
+        raise SystemExit("teacher-calendar.html missing thính giác tuyệt mật che đậy cuộn lại chip and cannot patch")
     p.write_text(t.replace(old, new, 1), encoding="utf-8")
-    print("==> 已补回听力绝密套卷芯片")
+    print("==> đã bù đắp thính giác tuyệt mật che đậy cuộn lại chip máy tính ")
 PY
 
 echo ""
-echo "==> 校验关键文件"
+echo "==> kiểm tra điểm mấu chốt tài liệu "
 check() {
   if [ -f "$WEB_ROOT/$1" ]; then
     echo "  ✓ $1"
   else
-    echo "  ✗ 缺少 $1"
+    echo "  ✗ thiếu $1"
     missing=1
   fi
 }
@@ -140,30 +140,30 @@ check "library/mock/cambridge-listening/secret-set-2-audio1.mp3"
 check "library/mock/cambridge-reading/secret-set-3-reading.html"
 check "library/mock/cambridge-reading/secret-set-4-reading.html"
 if ! grep -q 'data-ex-cat="lsecret"' "$WEB_ROOT/teacher-calendar.html"; then
-  echo "  ✗ teacher-calendar.html 缺少听力绝密套卷芯片"
+  echo "  ✗ teacher-calendar.html thiếu thính giác tuyệt mật che đậy cuộn lại chip máy tính "
   missing=1
 else
-  echo "  ✓ 听力绝密套卷芯片"
+  echo "  ✓ thính giác tuyệt mật che đậy cuộn lại chip máy tính "
 fi
 
 if grep -q "api.youyisida.com" "$WEB_ROOT/library/practice/jingting/cam20-test1-section1.html" 2>/dev/null; then
-  echo "  ✓ 精听页已配置生产 API"
+  echo "  ✓ tinh chất cười đầu đã triển khai sản xuất API"
 else
-  echo "  ✗ 精听页 API_BASE 未指向 api.youyisida.com"
+  echo "  ✗ tinh chất cười đầu API_BASE chưa chỉ về api.youyisida.com"
   missing=1
 fi
 
 if [ -f /etc/nginx/sites-enabled/youyisida.com ] || grep -Rq "youyisida.com" /etc/nginx 2>/dev/null; then
   if nginx -t 2>/dev/null; then
     systemctl reload nginx 2>/dev/null || service nginx reload 2>/dev/null || true
-    echo "  ✓ nginx 已重载"
+    echo "  ✓ nginx đã tải nặng "
   fi
 fi
 
 echo ""
 if [ "$missing" -eq 0 ]; then
-  echo "==> 同步完成。请在浏览器强制刷新（Ctrl+Shift+R）后测试口语与精听。"
+  echo "==> đồng bộ hoàn thành mời tồn tại trình duyệt ép buộc cải tiến(Ctrl+Shift+R)hoàng hậu kiểm tra lời nói thông thường biến thể của | tinh chất cười "
 else
-  echo "==> 同步完成但有缺失项，请检查上方 ✗"
+  echo "==> đồng bộ hoàn thành nhưng có thiếu sau cổ, mời kiểm tra nơi phía trên ✗"
   exit 1
 fi

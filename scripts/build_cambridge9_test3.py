@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T3.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T3.docx")
 TURBINE_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_14.22.37-73c096bc-ffb7-4d11-988d-cf41f52f7a04.png"
@@ -26,10 +26,10 @@ PIE_SRC = Path(
     "__2026-07-01_14.22.48-47fde20d-71f9-4eb0-9605-0aac679d041a.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section4.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test3 Section1.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test3 Section2.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test3 Section3.mp3"),
+    Path("/Users/frankman/Desktop/cua nâng lên mở ra mở ra mở ra zzz - IELTS9 Test3 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-3.html"
@@ -59,7 +59,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + " "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -79,7 +79,7 @@ def patch_listening_meta(html: str) -> str:
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("test2", "test3"),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
+        ("Test 2 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 3 Nghe hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -99,7 +99,7 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
+        ("Test 2 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)", "Test 3 Đọc hiểu(chính phủ trước đây chủ đề + Đáp án chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -135,7 +135,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 UK telephone calls bar chart + Task 2 unpaid community service essay",
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
         ),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Test 2 Viết(Đề thi chính thức)", "Test 3 Viết(Đề thi chính thức)"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -260,7 +260,7 @@ def listening_test() -> dict:
                         "kind": "table",
                         "title": "Questions 6–10",
                         "instruction": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
-                        "tableTitle": "GREEK ISLAND HOLIDAYS — Insurance Benefits",
+                        "tableTitle": "GREEK ISLAND HOLIDAYS - Insurance Benefits",
                         "columns": ["Benefit", "Details"],
                         "rows": [
                             ["Cancellation", "£<Q n=\"6\">"],
@@ -358,7 +358,7 @@ def listening_test() -> dict:
                         "instruction": "Complete the table below. Write ONE WORD AND/OR NUMBERS for each answer.",
                         "columns": ["Feature", "Size", "Biggest challenge", "Target age group"],
                         "rows": [
-                            ["Railway", "1.2 km", "Making tunnels", "—"],
+                            ["Railway", "1.2 km", "Making tunnels", "-"],
                             [
                                 "Go-Kart arena",
                                 "<Q n=\"19\">",
@@ -381,7 +381,7 @@ def listening_test() -> dict:
                         "kind": "note",
                         "title": "Questions 21–30",
                         "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
-                        "noteTitle": "Study Skills Tutorial — Caroline Benning",
+                        "noteTitle": "Study Skills Tutorial - Caroline Benning",
                         "lines": [
                             {"plain": True, "html": "Dissertation topic: the <Q n=\"21\">"},
                             {"plain": True, "html": "<strong>Strengths:</strong> <Q n=\"22\">, computer modelling"},
@@ -588,11 +588,11 @@ def reading_test() -> dict:
             },
             "answerSet": ["A", "D", "E", "F", "J"],
             "questions": [
-                {"id": "Q18", "no": 18, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q19", "no": 19, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q20", "no": 20, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q21", "no": 21, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q22", "no": 22, "explain": "答案：A、D、E、F、J，顺序不限。"},
+                {"id": "Q18", "no": 18, "explain": " Đáp án: A, D, E, F, J, Thứ tự tùy ý "},
+                {"id": "Q19", "no": 19, "explain": " Đáp án: A, D, E, F, J, Thứ tự tùy ý "},
+                {"id": "Q20", "no": 20, "explain": " Đáp án: A, D, E, F, J, Thứ tự tùy ý "},
+                {"id": "Q21", "no": 21, "explain": " Đáp án: A, D, E, F, J, Thứ tự tùy ý "},
+                {"id": "Q22", "no": 22, "explain": " Đáp án: A, D, E, F, J, Thứ tự tùy ý "},
             ],
         },
         {

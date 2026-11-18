@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail CI if a study vocab LIST is missing DOM hooks for the wrong-word bridge.
 
-New LIST HTML only needs to follow the existing template conventions — exam.js
+New LIST HTML only needs to follow the existing template conventions - exam.js
 injects vocab-bridge.js by manifest subject (folder path), no per-file wiring.
 """
 
@@ -61,7 +61,7 @@ def main() -> int:
         )
         return 1
     total = sum(1 for folder in VOCAB_DIRS for _ in (LIB / folder).rglob("*.html") if (LIB / folder).is_dir())
-    print(f"OK — {total} vocab LIST file(s) have wrong-word bridge hooks.")
+    print(f"OK - {total} vocab LIST file(s) have wrong-word bridge hooks.")
     return 0
 
 

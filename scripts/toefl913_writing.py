@@ -48,7 +48,7 @@ DISC_INSTR = (
 def build_writing():
     return {
         "id": "2025-09-13",
-        "title": "新托福 9.13 · 写作",
+        "title": " TOEFL mới 9.13 · Viết ",
         "set": "9.13",
         "skill": "writing",
         "modules": [

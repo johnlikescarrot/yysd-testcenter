@@ -1,4 +1,4 @@
-/* ponytail: sidecar shape for 详解原文条 — fails if a volume is missing or windows invert */
+/* ponytail: sidecar shape for giải thích chi tiết nguyên văn dải - fails if a volume is missing or windows invert */
 var fs = require("fs");
 var path = require("path");
 function assert(cond, msg) { if (!cond) { console.error("FAIL:", msg); process.exit(1); } }

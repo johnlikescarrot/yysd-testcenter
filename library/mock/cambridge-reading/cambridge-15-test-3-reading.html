@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思15 Test 3 阅读</title>
-<meta name="exam:title" content="剑桥雅思15 · Test 3（阅读）">
+<title>YYSD · Cambridge IELTS 15 Test 3 Đọc hiểu</title>
+<meta name="exam:title" content=" Cambridge IELTS 15 · Test 3(Đọc hiểu)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思15 Test 3 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content=" Cambridge IELTS 15 Test 3 Reading học thuật(Đề thi chính thức): 3 tờ bài viết chung 40 Câu hỏi, có thể hóa đơn tờ luyện tập có thể hoàn chỉnh bắt chước đánh, tự động chấm, phân tích biến thể của | IELTS ước tính chia ">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -21,7 +21,7 @@
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Trang bìa */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
   .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
@@ -36,7 +36,7 @@
   .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
   .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* Cửa sổ chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
@@ -58,7 +58,7 @@
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
   .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực trả lời */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
   .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
@@ -71,7 +71,7 @@
   .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
   .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* đọc chia hàng rào: trái bài viết bên phải chủ đề */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
   .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
@@ -119,7 +119,7 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* Kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
@@ -160,93 +160,93 @@
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span> Cambridge IELTS câu hỏi từ đề thi các năm trước kiểm tra</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Trang bìa -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">15</div></div>
     <div>
-      <h2>剑桥雅思 15 · Test 3</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 15 · Test 3</h2>
+      <div class="sub">Reading học thuật · Đề thi chính thức · tự động chấm và cho đi ra IELTS ước tính chia nhấn bên dưới bắt đầu kiểm tra </div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Reading học thuật (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta">tải Trung Quốc...</div>
+      <div class="pc-go">bắt đầu kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Cửa sổ chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc">phù hợp chia tờ đột phá, có thể chỉ luyện tập một vài bàn nhỏ tờ bài viết, hướng về phía trước đo thời gian không tác động áp lực </div>
+        <div class="mb-sub"><span>chọn luyện tập bài viết: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc">hoàn chỉnh mô phỏng thật dự thi: tất cả bài viết đầu tiên hoàn thành, Giới hạn thời gian 60 phút </div>
+        <div class="mb-sub"><span>kiểm tra thông tin: </span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo">hoàn chỉnh kiểm tra(Giới hạn thời gian 60 phút)</div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">bắt đầu bắt chước đánh</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực trả lời -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang bìa</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">nộp và xem xét chấm thông báo</button>
 </div>
 
-<!-- 结果区 -->
+<!-- kết trái khu vực -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 chấm thông báo</div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">trả lời hoặc đáp lại câu hỏi của ai đó chủ đề đếm</div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">Tỉ lệ đúng</div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">IELTS ước tính chia</div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span>hoàn toàn tốc độ tiến triển</span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h">chi tiết kết trái</div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思15 Test 1 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
+   một, bài thi dữ liệu -- Cambridge IELTS 15 Test 1 Reading học thuật(chính phủ trước đây chủ đề + Đáp án chính thức)
+   Hướng dẫn: mỗi tờ bài viết làm một dùng trong | mục tiêu {id, passage:{title,byline,paras[]}, groups:[...]}
+   phát hành lại đến Passage 2, 3 biến thể cũ của | nhấn giống hệt hình thức thêm cái gì đó bổ sung tiến lên passages mảng tương đương với 
    ============================================================ */
 const TEST = {
   meta:{ volume:15, testNo:3 },
@@ -277,13 +277,13 @@ const TEST = {
         { kind:'tfng', title:'Questions 1–7',
           instruction:'Do the following statements agree with the information given in Reading Passage 1? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.',
           questions:[
-            {id:'Q1',no:1,q:'On leaving school, Moore did what his father wanted him to do.',answer:['TRUE'],explain:`第1段：“he complied with his father's wish that he train as a schoolteacher”——遵从父亲意愿去当教师。TRUE。`},
-            {id:'Q2',no:2,q:'Moore began studying sculpture in his first term at the Leeds School of Art.',answer:['FALSE'],explain:`第2段：第一年主要在画画，“no teacher [of sculpture] was appointed until his second year”。FALSE。`},
-            {id:'Q3',no:3,q:'When Moore started at the Royal College of Art, its reputation for teaching sculpture was excellent.',answer:['NOT GIVEN'],explain:`文中未提及皇家艺术学院当时雕塑教学的声誉。NOT GIVEN。`},
-            {id:'Q4',no:4,q:'Moore became aware of ancient sculpture as a result of visiting London museums.',answer:['TRUE'],explain:`第3段：参观大英博物馆等，“discovered the power and beauty of ancient Egyptian and African sculpture”。TRUE。`},
-            {id:'Q5',no:5,q:"The Trocadero Museum's Mayan sculpture attracted a lot of public interest.",answer:['NOT GIVEN'],explain:`文中只说 Moore 本人被打动，未提及公众反响。NOT GIVEN。`},
-            {id:'Q6',no:6,q:'Moore thought the Mayan sculpture was similar in certain respects to other stone sculptures.',answer:['FALSE'],explain:`第4段：他认为该雕塑“had a power and originality that no other stone sculpture possessed”——独一无二。FALSE。`},
-            {id:'Q7',no:7,q:'The artists who belonged to Unit One wanted to make modern art and architecture more popular.',answer:['TRUE'],explain:`第5段：Unit One 旨在“convince the English public of the merits of the emerging international movement in modern art and architecture”。TRUE。`},
+            {id:'Q1',no:1,q:'On leaving school, Moore did what his father wanted him to do.',answer:['TRUE'],explain:`Thứ 1 Đoạn: “he complied with his father's wish that he train as a schoolteacher”--tuân theo cha nguyện vọng đi đong giáo viên TRUE `},
+            {id:'Q2',no:2,q:'Moore began studying sculpture in his first term at the Leeds School of Art.',answer:['FALSE'],explain:`Thứ 2 Đoạn: đầu tiên năm chính tồn tại vẽ, “no teacher [of sculpture] was appointed until his second year” FALSE `},
+            {id:'Q3',no:3,q:'When Moore started at the Royal College of Art, its reputation for teaching sculpture was excellent.',answer:['NOT GIVEN'],explain:`ngôn ngữ Trung Quốc không được đề cập hoàng gia học viện nghệ thuật lúc đó bức tượng dạy của danh tiếng NOT GIVEN `},
+            {id:'Q4',no:4,q:'Moore became aware of ancient sculpture as a result of visiting London museums.',answer:['TRUE'],explain:`Thứ 3 Đoạn: tham quan Bảo tàng Anh đợi, “discovered the power and beauty of ancient Egyptian and African sculpture” TRUE `},
+            {id:'Q5',no:5,q:"The Trocadero Museum's Mayan sculpture attracted a lot of public interest.",answer:['NOT GIVEN'],explain:`ngôn ngữ Trung Quốc chỉ thuyết phục Moore tôi chăn làm cảm động, không được đề cập công chúng dư âm NOT GIVEN `},
+            {id:'Q6',no:6,q:'Moore thought the Mayan sculpture was similar in certain respects to other stone sculptures.',answer:['FALSE'],explain:`Thứ 4 Đoạn: anh ấy tin nên bức tượng“had a power and originality that no other stone sculpture possessed”--độc nhất vô nhị FALSE `},
+            {id:'Q7',no:7,q:'The artists who belonged to Unit One wanted to make modern art and architecture more popular.',answer:['TRUE'],explain:`Thứ 5 Đoạn: Unit One có mục đích là“convince the English public of the merits of the emerging international movement in modern art and architecture” TRUE `},
           ]},
         { kind:'note', title:'Questions 8–13',
           instruction:'Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -302,12 +302,12 @@ const TEST = {
             {plain:true, html:`Moore's series of bronze figures marks a further change in his style`},
           ],
           questions:[
-            {id:'Q8',no:8,answer:['resignation'],explain:`第6段：“There were calls for his resignation from the Royal College”。答案 resignation。`},
-            {id:'Q9',no:9,answer:['materials'],explain:`第8段：“A shortage of materials forced him to focus on drawing”。答案 materials。`},
-            {id:'Q10',no:10,answer:['miners'],explain:`第8段：回到家乡 Castleford 画了一系列 miners（矿工）。答案 miners。`},
-            {id:'Q11',no:11,answer:['family'],explain:`第9段：Harlow 委托他做一座表现 family 的雕塑。答案 family。`},
-            {id:'Q12',no:12,answer:['collectors'],explain:`第9段：作品“became available to collectors all over the world”。答案 collectors。`},
-            {id:'Q13',no:13,answer:['income'],explain:`第9段：“The boost to his income enabled him to take on ambitious projects”。答案 income。`},
+            {id:'Q8',no:8,answer:['resignation'],explain:`Thứ 6 Đoạn: “There were calls for his resignation from the Royal College” Đáp án resignation `},
+            {id:'Q9',no:9,answer:['materials'],explain:`Thứ 8 Đoạn: “A shortage of materials forced him to focus on drawing” Đáp án materials `},
+            {id:'Q10',no:10,answer:['miners'],explain:`Thứ 8 Đoạn: trở về quê hương Castleford vẽ hoàn thành một loạt miners(công nhân mỏ) Đáp án miners `},
+            {id:'Q11',no:11,answer:['family'],explain:`Thứ 9 Đoạn: Harlow ủy thác anh ấy làm một chỗ ngồi thể hiện family của bức tượng Đáp án family `},
+            {id:'Q12',no:12,answer:['collectors'],explain:`Thứ 9 Đoạn: tác phẩm“became available to collectors all over the world” Đáp án collectors `},
+            {id:'Q13',no:13,answer:['income'],explain:`Thứ 9 Đoạn: “The boost to his income enabled him to take on ambitious projects” Đáp án income `},
           ]},
       ]},
 
@@ -334,13 +334,13 @@ const TEST = {
           box:{i:'Getting the finance for production',ii:'An unexpected benefit',iii:'From initial inspiration to new product',iv:'The range of potential customers for the device',v:'What makes the device different from alternatives',vi:'Cleaning water from a range of sources',vii:'Overcoming production difficulties',viii:'Profit not the primary goal',ix:'A warm welcome for the device',x:'The number of people affected by water shortages'},
           subTitle:'Sections',
           questions:[
-            {id:'Q14',no:14,q:'Section A',answer:['iii'],explain:`A 段：Janssen 受泰国屋顶太阳能启发，二十年后做出便携净水设备。iii。`},
-            {id:'Q15',no:15,q:'Section B',answer:['vi'],explain:`B 段：可处理海水、河水、钻井水、雨水等多种来源。vi。`},
-            {id:'Q16',no:16,q:'Section C',answer:['v'],explain:`C 段：不需发电、只需阳光，与常规海水淡化不同。v。`},
-            {id:'Q17',no:17,q:'Section D',answer:['x'],explain:`D 段：全球三分之二人口面临严重缺水。x。`},
-            {id:'Q18',no:18,q:'Section E',answer:['iv'],explain:`E 段：面向发展中国家家庭、美国偏远地区、露营/船只/军队等。iv。`},
-            {id:'Q19',no:19,q:'Section F',answer:['viii'],explain:`F 段：社会使命优先，利润并非首要目标。viii。`},
-            {id:'Q20',no:20,q:'Section G',answer:['i'],explain:`G 段：已筹资、计划月销一千台——为生产获得资金。i。`},
+            {id:'Q14',no:14,q:'Section A',answer:['iii'],explain:`A Đoạn: Janssen nhận Thái Lan mái nhà năng lượng mặt trời khai sáng, hai mươi năm hoàng hậu đưa ra di động nước sạch thiết bị iii `},
+            {id:'Q15',no:15,q:'Section B',answer:['vi'],explain:`B Đoạn: có thể xử lý nước biển, nước sông, khoan nước, Vũ Thủy hoặc Nước Mưa đợi nhiều loại nguồn vi `},
+            {id:'Q16',no:16,q:'Section C',answer:['v'],explain:`C Đoạn: không yêu cầu phát điện, chỉ yêu cầu ánh nắng, biến thể của | quy tắc ứng xử nước biển làm loãng khác v `},
+            {id:'Q17',no:17,q:'Section D',answer:['x'],explain:`D Đoạn: toàn thế giới một chút cua hai dân số đối mặt với cái gì đó nghiêm trọng thiếu nước x `},
+            {id:'Q18',no:18,q:'Section E',answer:['iv'],explain:`E Đoạn: đối mặt quốc gia đang phát triển gia đình, Hoa Kỳ hẻo lánh địa phương, cắm trại/tàu/lực lượng vũ trang đợi iv `},
+            {id:'Q19',no:19,q:'Section F',answer:['viii'],explain:`F Đoạn: xã hội sứ mệnh có ưu tiên, lợi nhuận thật sự không phải quan trọng nhất mục tiêu viii `},
+            {id:'Q20',no:20,q:'Section G',answer:['i'],explain:`G Đoạn: đã huy động nguồn lực, kế hoạch mặt trăng nấu chảy một một nghìn Đài Loan--kiếm sống sinh đẻ đạt được quỹ i `},
           ]},
         { kind:'note', title:'Questions 21–26',
           instruction:'Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -349,12 +349,12 @@ const TEST = {
             {plain:true, html:`The energy required to operate the Desolenator comes from sunlight. The device can be used in different locations, as it has <Q n="21">. Water is fed into a pipe, and a <Q n="22"> of water flows over a solar panel. The water then enters a boiler, where it turns into steam. Any particles in the water are caught in a <Q n="23">. The purified water comes out through one tube, and all types of <Q n="24"> come out through another. A screen displays the <Q n="25"> of the device, and transmits the information to the company so that they know when the Desolenator requires <Q n="26">.`, q:'Q21'},
           ],
           questions:[
-            {id:'Q21',no:21,answer:['wheels'],explain:`C 段：“easy to transport, thanks to its two wheels”。答案 wheels。`},
-            {id:'Q22',no:22,answer:['film'],explain:`C 段：“flows as a thin film... over the surface of a solar panel”。答案 film。`},
-            {id:'Q23',no:23,answer:['filter'],explain:`C 段：“a very simple filter to trap particles”。答案 filter。`},
-            {id:'Q24',no:24,answer:['waste'],explain:`C 段：“one for the waste – salt from seawater, fluoride, etc.”。答案 waste。`},
-            {id:'Q25',no:25,answer:['performance'],explain:`C 段：“The performance of the unit is shown on an LCD screen”。答案 performance。`},
-            {id:'Q26',no:26,answer:['servicing'],explain:`C 段：“the company which provides servicing when necessary”。答案 servicing。`},
+            {id:'Q21',no:21,answer:['wheels'],explain:`C Đoạn: “easy to transport, thanks to its two wheels” Đáp án wheels `},
+            {id:'Q22',no:22,answer:['film'],explain:`C Đoạn: “flows as a thin film... over the surface of a solar panel” Đáp án film `},
+            {id:'Q23',no:23,answer:['filter'],explain:`C Đoạn: “a very simple filter to trap particles” Đáp án filter `},
+            {id:'Q24',no:24,answer:['waste'],explain:`C Đoạn: “one for the waste – salt from seawater, fluoride, etc.” Đáp án waste `},
+            {id:'Q25',no:25,answer:['performance'],explain:`C Đoạn: “The performance of the unit is shown on an LCD screen” Đáp án performance `},
+            {id:'Q26',no:26,answer:['servicing'],explain:`C Đoạn: “the company which provides servicing when necessary” Đáp án servicing `},
           ]},
       ]},
 
@@ -385,11 +385,11 @@ const TEST = {
           box:{A:'may be provided through methods used in biological research.',B:'are the reason for their survival.',C:'show considerable global variation.',D:'contain animals which transform to become humans.',E:'were originally spoken rather than written.',F:'have been developed without factual basis.'},
           subTitle:'Sentence beginnings',
           questions:[
-            {id:'Q27',no:27,q:'In fairy tales, details of the plot',answer:['C'],explain:`第1段：同一故事在世界各地“takes a variety of forms”——全球差异大。C。`},
-            {id:'Q28',no:28,q:'Tehrani rejects the idea that the useful lessons for life in fairy tales',answer:['B'],explain:`Tehrani 否定“警示信息是故事得以流传的原因”这一看法。B。`},
-            {id:'Q29',no:29,q:'Various theories about the social significance of fairy tales',answer:['F'],explain:`第2段：学者们“devising theories”，但缺乏实证依据。F（无事实依据）。`},
-            {id:'Q30',no:30,q:'Insights into the development of fairy tales',answer:['A'],explain:`借用进化生物学的“phylogenetic analysis”方法获得。A。`},
-            {id:'Q31',no:31,q:'All the fairy tales analysed by Tehrani',answer:['E'],explain:`第5段：58 个故事均“recorded from oral traditions”——原本是口头流传。E。`},
+            {id:'Q27',no:27,q:'In fairy tales, details of the plot',answer:['C'],explain:`Thứ 1 Đoạn: giống hệt tục lệ cũ còn sống ranh giới ở khắp mọi nơi“takes a variety of forms”--toàn thế giới sự khác biệt to C `},
+            {id:'Q28',no:28,q:'Tehrani rejects the idea that the useful lessons for life in fairy tales',answer:['B'],explain:`Tehrani phủ định“ cảnh báo thông tin vì vậy sự việc có thể lan truyền của nguyên nhân ”này một cách nhìn B `},
+            {id:'Q29',no:29,q:'Various theories about the social significance of fairy tales',answer:['F'],explain:`Thứ 2 Đoạn: học giả dùng để chỉ số nhiều cho đại từ và danh từ chỉ người“devising theories”, nhưng thiếu bằng chứng thực tế dựa vào F(không có sự thật dựa vào) `},
+            {id:'Q30',no:30,q:'Insights into the development of fairy tales',answer:['A'],explain:`mượn cái gì đó để dùng cho việc khác tiến hóa sinh học của“phylogenetic analysis”phương pháp đạt được A `},
+            {id:'Q31',no:31,q:'All the fairy tales analysed by Tehrani',answer:['E'],explain:`Thứ 5 Đoạn: 58 dùng trong | tục lệ cũ bằng“recorded from oral traditions”--ban đầu là bằng lời lan truyền E `},
           ]},
         { kind:'wbank', title:'Questions 32–36',
           instruction:'Complete the summary using the list of words, A–I, below. Write the correct letter, A–I, in the box next to each question.',
@@ -400,56 +400,56 @@ const TEST = {
             {html:`Tehrani used techniques from evolutionary biology to find out if <Q n="32"> existed among 58 stories from around the world. He also wanted to know which aspects of the stories had fewest <Q n="33">, as he believed these aspects would be the most important ones. Contrary to other beliefs, he found that some <Q n="34"> that were included in a story tended to change over time, and that the middle of a story seemed no more important than the other parts. He was also surprised that parts of a story which seemed to provide some sort of <Q n="35"> were unimportant. The aspect that he found most important in a story's survival was <Q n="36">.`},
           ],
           questions:[
-            {id:'Q32',no:32,answer:['D'],explain:`想知道 58 个故事之间是否存在关联 → D（links）。`},
-            {id:'Q33',no:33,answer:['F'],explain:`哪些方面变化（variations）最少 → F（variations）。`},
-            {id:'Q34',no:34,answer:['B'],explain:`故事中的某些事件（events）会随时间改变 → B（events）。`},
-            {id:'Q35',no:35,answer:['C'],explain:`提供某种警示（warning）的部分反而不重要 → C（warning）。`},
-            {id:'Q36',no:36,answer:['G'],explain:`对故事存续最重要的是恐怖（horror）成分 → G（horror）。`},
+            {id:'Q32',no:32,answer:['D'],explain:`nghĩ biết 58 dùng trong | tục lệ cũ giữa liệu có tồn tại có liên quan → D(links) `},
+            {id:'Q33',no:33,answer:['F'],explain:`những cái nào? khía cạnh thay đổi(variations)ít nhất → F(variations) `},
+            {id:'Q34',no:34,answer:['B'],explain:`tục lệ cũ bắn trúng mục tiêu một vài sự kiện(events)có thể bất kỳ lúc nào giữa thay đổi → B(events) `},
+            {id:'Q35',no:35,answer:['C'],explain:`đề nghị một loại cảnh báo(warning)của phần ngược lại không quan trọng → C(warning) `},
+            {id:'Q36',no:36,answer:['G'],explain:`đúng tục lệ cũ tiếp tục tồn tại biến thể của quan trọng của là khủng khiếp(horror)thành phần → G(horror) `},
           ]},
         { kind:'mcq', title:'Questions 37–40',
           instruction:'Choose the correct letter, A, B, C or D.',
           questions:[
-            {id:'Q37',no:37,q:'What method did Jamie Tehrani use to test his ideas about fairy tales?',options:{A:'He compared oral and written forms of the same stories.',B:'He looked at many different forms of the same basic story.',C:'He looked at unrelated stories from many different countries.',D:'He contrasted the development of fairy tales with that of living creatures.'},answer:['B'],explain:`他聚焦小红帽的多种版本（同一基本故事的不同形式）做分析。B。`},
-            {id:'Q38',no:38,q:"When discussing Tehrani's views, Jack Zipes suggests that",options:{A:'Tehrani ignores key changes in the role of women.',B:'stories which are too horrific are not always taken seriously.',C:'Tehrani overemphasises the importance of violence in stories.',D:'features of stories only survive if they have a deeper significance.'},answer:['D'],explain:`Zipes：“they won't stick unless they matter”——只有有深层意义才会留存。D。`},
-            {id:'Q39',no:39,q:'Why does Tehrani refer to Chinese and Japanese fairy tales?',options:{A:"to indicate that Jack Zipes' theory is incorrect",B:'to suggest that crime is a global problem',C:'to imply that all fairy tales have a similar meaning',D:"to add more evidence for Jack Zipes' ideas"},answer:['A'],explain:`借中日版本（反派是女性、受害者是男孩）反驳 Zipes“女性总是受害者”的说法。A。`},
-            {id:'Q40',no:40,q:'What does Mathias Clasen believe about fairy tales?',options:{A:'They are a safe way of learning to deal with fear.',B:'They are a type of entertainment that some people avoid.',C:'They reflect the changing values of our society.',D:'They reduce our ability to deal with real-world problems.'},answer:['A'],explain:`Clasen：恐怖故事让我们在无真实危险下体验恐惧、增强对负面情绪的抵抗。A。`},
+            {id:'Q37',no:37,q:'What method did Jamie Tehrani use to test his ideas about fairy tales?',options:{A:'He compared oral and written forms of the same stories.',B:'He looked at many different forms of the same basic story.',C:'He looked at unrelated stories from many different countries.',D:'He contrasted the development of fairy tales with that of living creatures.'},answer:['B'],explain:`anh ấy tập trung Cô bé quàng khăn đỏ của nhiều loại phiên bản(giống hệt cơ bản tục lệ cũ của khác bề ngoài)làm phân tích B `},
+            {id:'Q38',no:38,q:"When discussing Tehrani's views, Jack Zipes suggests that",options:{A:'Tehrani ignores key changes in the role of women.',B:'stories which are too horrific are not always taken seriously.',C:'Tehrani overemphasises the importance of violence in stories.',D:'features of stories only survive if they have a deeper significance.'},answer:['D'],explain:`Zipes: “they won't stick unless they matter”--chỉ có có tầng sâu ý nghĩa khả năng có thể giữ gìn D `},
+            {id:'Q39',no:39,q:'Why does Tehrani refer to Chinese and Japanese fairy tales?',options:{A:"to indicate that Jack Zipes' theory is incorrect",B:'to suggest that crime is a global problem',C:'to imply that all fairy tales have a similar meaning',D:"to add more evidence for Jack Zipes' ideas"},answer:['A'],explain:`mượn Trung-Nhật phiên bản(nhân vật phản diện là phụ nữ, thương vong là cậu bé)phản bác Zipes“ phụ nữ luôn luôn thương vong ”của thuyết giảng Phật pháp A `},
+            {id:'Q40',no:40,q:'What does Mathias Clasen believe about fairy tales?',options:{A:'They are a safe way of learning to deal with fear.',B:'They are a type of entertainment that some people avoid.',C:'They reflect the changing values of our society.',D:'They reduce our ability to deal with real-world problems.'},answer:['A'],explain:`Clasen: khủng khiếp tục lệ cũ nhường chúng tôi tồn tại không có thật nguy hiểm cơ thể phần dưới biến thể của | bị khiếp sợ, tăng cường đúng tiêu cực tâm trạng của kháng cự A `},
           ]},
       ]},
   ]
 };
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* chính phủ Reading học thuật đầu tiên chia(0-40) → IELTS chia bảng so sánh */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
+   hai, động cơ
    ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* bìa thông tin */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} tờ bài viết · Tổng cộng ${totalQs()} Câu hỏi`;
 })();
 
-/* 模式弹窗 */
+/* Cửa sổ chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}(${allQs(p).length} Câu hỏi)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent='Bỏ chọn tất cả';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'Bỏ chọn tất cả':'tất cả chọn'; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('mời ít nhất chọn một tờ bài viết '); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -461,8 +461,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思15 · Test 3 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 15 · Test 3 - Đọc hiểu`;
+  document.getElementById('testModeTag').textContent= mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -476,10 +476,10 @@ function passageHtml(p){
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
       <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
+      <div class="sb-meta">đề xuất sử dụng biến thể cũ của | cân trong cân đĩa hoặc trên cân 20 phút · gốc tờ chung ${allQs(p).length} Câu hỏi</div>
     </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // hãy <Q n="x"> biến thể của vị trí thay thế thành công đánh số huy hiệu + nhập khẩu khung
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -515,41 +515,41 @@ function groupHtml(g){
   }
   else if(g.kind==='match'){
     const box=g.noBox ? '' : `<div class="match-box"><div class="mb-h">${g.boxTitle||''}</div>${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
-    const sel=`<select id="REP"><option value="">—</option>${Object.keys(g.box).map(k=>`<option value="${k}">${k}</option>`).join('')}</select>`;
+    const sel=`<select id="REP"><option value="">-</option>${Object.keys(g.box).map(k=>`<option value="${k}">${k}</option>`).join('')}</select>`;
     const qs=(g.subTitle?`<div style="font-weight:700;margin:6px 0 8px;">${g.subTitle}</div>`:'')+g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel.replace('REP',q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
-    const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const sel=k=>`<select id="${k}"><option value="">-</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">chọn một sau cổ(gốc lắp ráp tính toán chọn ra đúng của bàn nhỏ sau cổ, Thứ tự tùy ý)</span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn biến thể cũ của | lấp chỗ trống công việc: kho từ A–H + ngôn ngữ Trung Quốc xuống kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
-    const expand=html=>(html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><select id="Q${n}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`);
+    const expand=html=>(html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><select id="Q${n}"><option value="">-</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`);
     const para=(g.noteTitle?`<div class="note-title">${g.noteTitle}</div>`:'')+g.lines.map(l=>`<div class="note-li plain" style="display:block;">${expand(l.html)}</div>`).join('');
     body=box+`<div class="note-box">${para}</div>`;
   }
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* đồng hồ bấm giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('thời gian đến, tự động nộp '); submitTest(); return; }
       t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -557,14 +557,14 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(`đã trả lời ${answered}/${total} Câu hỏi \n rõ ràng nộp và xem xét chấm thông báo gì?? `)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval);
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* trước xử lý multi ghép đôi chủ đề(Thứ tự tùy ý, không lặp lại tính điểm) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
     if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
@@ -589,29 +589,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思15 · Test 3 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 15 · Test 3 - Đọc hiểu';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?'Chế độ luyện tập':'Chế độ thi thử'} · Thời lượng ${fmt(elapsed)} · thì hoàn thành giữa ${new Date().toLocaleString('vi-VN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent='mức độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+    ? 'IELTS chia nhấn chính phủ học thuật loại đọc 40 chủ đề đầu tiên chia bảng so sánh chuyển đổi '
+    : `gốc tiếp theo hầu như khảo sát ${total} Câu hỏi, ước tính chia nhấn tỷ lệ chuyển đổi đến 40 chủ đề hoàng hậu áp dụng chính phủ bảng so sánh; hoàn thành toàn bộ 3 tờ bài viết biến thể cũ của | làm chính xác chuyển đổi `;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?`bạn của câu trả lời: <span class="yours">${it.ua}</span> `:`<span class="yours">Chưa trả lời</span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Thứ ${it.q.no} Câu hỏi</div>
+        <div class="ra">${it.ok?'<span class="correctv">trả lời đúng</span>':yours+'Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} chủ đề đúng ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -626,7 +626,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD thành tích đồng bộ(theo học trung tâm tự động thêm, không thay đổi trước đây chấm logic) ===== */
 (function(){
   var posted=false;
   function report(){

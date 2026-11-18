@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Build browse-only thematic vocab catalog from scraped raw JSON.
 
-ponytail: no lesson HTML / no test shells — catalog + data/*.json only.
+ponytail: no lesson HTML / no test shells - catalog + data/*.json only.
 """
 from __future__ import annotations
 
@@ -19,52 +19,52 @@ DATA = os.path.join(OUT, "data")
 INCLUDE = [
     ("exam", "cet4", "CET-4"),
     ("exam", "cet6", "CET-6"),
-    ("exam", "tem", "专四专八"),
-    ("exam", "kaoyan", "考研英语"),
-    ("exam", "gaokao", "高考英语"),
+    ("exam", "tem", " cho một người bốn TEM-8 hoặc Kỳ thi chuyên ngành tiếng Anh cấp 8 "),
+    ("exam", "kaoyan", " dự thi đầu vào chương trình sau đại học tiếng Anh "),
+    ("exam", "gaokao", " kỳ thi tuyển sinh đại học tiếng Anh "),
     ("abroad", "bec", "BEC"),
     ("abroad", "gmat", "GMAT"),
     ("abroad", "gre", "GRE"),
     ("abroad", "sat", "SAT"),
-    ("abroad", "toeic", "托业"),
-    ("abroad", "toefl", "托福"),
-    ("abroad", "ielts", "雅思"),
-    ("k12", "primary", "小学词汇"),
-    ("k12", "junior", "初中词汇"),
-    ("k12", "senior", "高中词汇"),
-    ("learning", "nce", "新概念"),
-    ("learning", "oxford3000", "牛津3000词"),
-    ("learning", "collins", "柯林斯星级"),
-    ("learning", "phrases", "常用短语"),
-    ("subject", "chem", "化学"),
-    ("subject", "geo", "地理学"),
-    ("subject", "math", "数学"),
-    ("subject", "phys", "物理"),
-    ("nature", "animals", "动物世界"),
-    ("nature", "plants", "植物王国"),
-    ("life", "food", "吃喝玩乐"),
-    ("life", "urban", "城市规划"),
-    ("life", "travel", "安全出行"),
-    ("life", "edu", "科教兴国"),
-    ("life", "work", "职业职场"),
-    ("life", "festivals", "节日"),
-    ("arts", "literature", "文学艺术"),
-    ("arts", "sports", "体育"),
-    ("arts", "games", "游戏娱乐"),
-    ("media", "film", "影视剧"),
-    ("media", "music", "音乐广播"),
+    ("abroad", "toeic", " TOEIC "),
+    ("abroad", "toefl", " TOEFL "),
+    ("abroad", "ielts", " IELTS "),
+    ("k12", "primary", " trường tiểu học biến thể của | "),
+    ("k12", "junior", " trường trung học cơ sở biến thể của | "),
+    ("k12", "senior", " trường trung học phổ thông biến thể của | "),
+    ("learning", "nce", " viết tắt của Tân Cương khái niệm "),
+    ("learning", "oxford3000", " Oxford 3000 Từ "),
+    ("learning", "collins", " Collins xếp hạng sao "),
+    ("learning", "phrases", " được sử dụng phổ biến cụm từ "),
+    ("subject", "chem", " Hóa học "),
+    ("subject", "geo", " địa lý học "),
+    ("subject", "math", " Toán "),
+    ("subject", "phys", " Vật lý "),
+    ("nature", "animals", " động vật thế giới "),
+    ("nature", "plants", " thực vật vương quốc "),
+    ("life", "food", " ăn uống vui chơi "),
+    ("life", "urban", " quy hoạch đô thị "),
+    ("life", "travel", " an toàn đi ra đâu đó "),
+    ("life", "edu", " chấn hưng đất nước qua khoa học và giáo dục "),
+    ("life", "work", " nghề nghiệp nơi làm việc "),
+    ("life", "festivals", " ngày lễ "),
+    ("arts", "literature", " văn học nghệ thuật "),
+    ("arts", "sports", " thể thao "),
+    ("arts", "games", " trò chơi giải trí "),
+    ("media", "film", " phim và truyền hình tác phẩm sân khấu "),
+    ("media", "music", " âm nhạc phát sóng "),
 ]
 
 CAT_LABEL = {
-    "exam": "英语考试",
-    "abroad": "出国留学",
-    "k12": "中小学",
-    "learning": "英语学习",
-    "subject": "学科分类",
-    "nature": "动植物",
-    "life": "生活日常",
-    "arts": "艺术文体",
-    "media": "影音视听",
+    "exam": " tiếng Anh dự thi ",
+    "abroad": " ra nước ngoài du học ",
+    "k12": " trường trung học và tiểu học ",
+    "learning": " tiếng Anh học ",
+    "subject": " môn học phân loại ",
+    "nature": " động thực vật ",
+    "life": " sống hằng ngày ",
+    "arts": " nghệ thuật thể loại viết ",
+    "media": " phương tiện ghi hình và âm thanh biến thể của | cười ",
 }
 
 
@@ -91,7 +91,7 @@ def main():
         if name.endswith(".json"):
             os.remove(os.path.join(DATA, name))
 
-    categories = [{"id": "all", "label": "全部"}] + [
+    categories = [{"id": "all", "label": " Tất cả "}] + [
         {"id": k, "label": CAT_LABEL[k]}
         for k in ["exam", "abroad", "k12", "learning", "subject", "nature", "life", "arts", "media"]
     ]
@@ -144,7 +144,7 @@ def main():
                 "no": len(themes) + 1,
                 "title": label,
                 "category": cat,
-                "desc": "%s · %d 词（已释义 %d）"
+                "desc": "%s · %d Từ(đã nghĩa của cái gì đó %d)"
                 % (CAT_LABEL[cat], len(words), sum(1 for w in words if w.get("meaning"))),
                 "count": len(words),
                 "defined": sum(1 for w in words if w.get("meaning")),
@@ -155,7 +155,7 @@ def main():
         print("%s/%s %d words" % (cat, sid, len(words)))
 
     catalog = {
-        "sourceNote": "公开分类词表复刻浏览库；暂不含小课/测试。",
+        "sourceNote": " mở phân loại biến thể cũ của | bề mặt bên ngoài tái bản xem lướt nhà kho; tạm thời không ngậm trong miệng nhỏ môn học/kiểm tra ",
         "categories": categories,
         "themes": themes,
     }

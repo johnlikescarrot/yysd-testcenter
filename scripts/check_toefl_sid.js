@@ -1,4 +1,4 @@
-/* one check: 一场完整模考四科共用一个 sid，单科练习各算一场 */
+/* one check: một sân phơi hoàn chỉnh bắt chước đánh bốn ngành học dùng chung một dùng trong | sid, hóa đơn ngành học luyện tập mỗi coi như một sân phơi */
 var path = require("path");
 var FULL = path.join(__dirname, "..", "assets", "js", "toefl-full.js");
 
@@ -17,15 +17,15 @@ global.sessionStorage = {
 };
 
 var single = load("?id=bank-cw&mode=practice");
-ok(single.currentSid() === 0, "单科练习不该有整场 sid");
+ok(single.currentSid() === 0, " hóa đơn ngành học luyện tập không nên có toàn bộ sân phơi sid");
 
 var first = load("?id=set-9&mode=mock&full=1");
 var pack = first.startPack("set-9", "mock");
-ok(first.currentSid() === pack.sid && pack.sid > 0, "整场 sid 应来自 pack.sid");
+ok(first.currentSid() === pack.sid && pack.sid > 0, " toàn bộ sân phơi sid Ưng đến từ pack.sid");
 
 var reload = load("?id=set-9&mode=mock&full=1");
-ok(reload.enterSkill("set-9", "mock", "reading") === true, "reading 该进考试");
-ok(reload.currentSid() === pack.sid, "换页后 sid 必须还是同一场");
+ok(reload.enterSkill("set-9", "mock", "reading") === true, "reading nên tiến lên dự thi ");
+ok(reload.currentSid() === pack.sid, " trao đổi đầu hoàng hậu sid phải vẫn giống hệt sân phơi ");
 
 var key = "yysd:toefl-full:set-9";
 var old = JSON.parse(global.sessionStorage.getItem(key));
@@ -33,6 +33,6 @@ delete old.sid;
 global.sessionStorage.setItem(key, JSON.stringify(old));
 var legacy = load("?id=set-9&mode=mock&full=1");
 legacy.enterSkill("set-9", "mock", "reading");
-ok(legacy.currentSid() > 0 && legacy.load("set-9").sid === legacy.currentSid(), "旧卷包没有 sid 要补一个");
+ok(legacy.currentSid() > 0 && legacy.load("set-9").sid === legacy.currentSid(), " cũ cuộn lại che phủ không có sid yêu cầu sửa một dùng trong | ");
 
 console.log("ok toefl sid");

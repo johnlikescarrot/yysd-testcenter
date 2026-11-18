@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ponytail: YYSD_SURFACE open/close contract — fails if helper regresses
+// ponytail: YYSD_SURFACE open/close contract - fails if helper regresses
 "use strict";
 
 var fs = require("fs");

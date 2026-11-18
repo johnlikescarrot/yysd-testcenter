@@ -21,7 +21,7 @@ def polish(words):
     for w in words:
         w = dict(w)
         tag = dict(w.get("examTag") or {})
-        tag["source"] = "大学英语四级"
+        tag["source"] = " CET-4 (tiếng Anh đại học) "
         w["examTag"] = tag
         w["mnemonic"] = w.get("root") or w.get("mnemonic") or ""
         w["exampleEN"] = w.get("exampleEn") or w.get("exampleEN") or ""
@@ -47,9 +47,9 @@ def write_list(n, words, excel=None):
     meta = {
         "listNo": n,
         "band": band_for(n),
-        "title": "单元 %s" % n,
+        "title": " Đơn vị %s" % n,
         "published": True,
-        "sourceNote": "Headword order from 四级单词List1-35.xlsx; cards rewritten to gaozhong field standard.",
+        "sourceNote": "Headword order from cấp 4 từ List1-35.xlsx; cards rewritten to gaozhong field standard.",
         "words": ws,
     }
     DATA.mkdir(parents=True, exist_ok=True)
@@ -59,7 +59,7 @@ def write_list(n, words, excel=None):
     html = render_html(meta).replace("const wordData = [", "var wordData = [", 1)
     if "yysd-hide-legacy-test" not in html:
         html = html.replace("</style>\n</head>", HIDE, 1)
-    out = HTML_DIR / ("四级单词LIST%s.html" % n)
+    out = HTML_DIR / (" cấp 4 từ LIST%s.html" % n)
     out.write_text(html, encoding="utf-8")
     print("LIST%s %s words → %s" % (n, len(ws), out.name))
     return out

@@ -75,7 +75,7 @@ export async function extractResumeText(
     }
     const cli = extractViaCli(buf, filename);
     if (cli?.trim()) return cli.slice(0, 50000);
-    throw new Error("无法解析 Word（.docx）简历，请另存为 PDF 后重试");
+    throw new Error(" không thể phân tích Word(.docx)sơ yếu lý lịch, mời Lưu dưới dạng PDF hoàng hậu thử lại ");
   }
 
   if (lower.endsWith(".doc")) {
@@ -85,7 +85,7 @@ export async function extractResumeText(
     const scraped = scrapeDocBinary(buf);
     if (scraped.length >= 80) return scraped.slice(0, 50000);
     throw new Error(
-      "无法解析旧版 Word（.doc）简历。请另存为 .docx 或 PDF 后重试"
+      " không thể phân tích phiên bản cũ Word(.doc)sơ yếu lý lịch mời Lưu dưới dạng .docx hoặc PDF hoàng hậu thử lại "
     );
   }
 
@@ -137,7 +137,7 @@ export function hintFromResume(text: string): {
     undergradSchool?: string;
     undergradMajor?: string;
   } = {};
-  const gpaM = text.match(/GPA\s*[:：]?\s*([0-4]\.\d{1,2})\s*\/\s*4/i);
+  const gpaM = text.match(/GPA\s*[:: ]?\s*([0-4]\.\d{1,2})\s*\/\s*4/i);
   if (gpaM) out.gpa = Number(gpaM[1]);
 
   if (/PENNSYLVANIA STATE|Penn State/i.test(text)) {

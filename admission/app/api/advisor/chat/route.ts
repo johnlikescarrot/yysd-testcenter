@@ -44,11 +44,11 @@ export async function POST(req: Request) {
     return NextResponse.json(result);
   } catch (e) {
     if (e instanceof z.ZodError) {
-      return NextResponse.json({ error: "参数无效", details: e.flatten() }, { status: 400 });
+      return NextResponse.json({ error: " tham số không hợp lệ ", details: e.flatten() }, { status: 400 });
     }
     console.error(e);
     return NextResponse.json(
-      { error: e instanceof Error ? e.message : "顾问服务失败" },
+      { error: e instanceof Error ? e.message : " cố vấn phục vụ bị đánh bại " },
       { status: 500 }
     );
   }

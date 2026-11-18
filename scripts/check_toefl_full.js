@@ -23,5 +23,5 @@ if (F.restCopy("reading").indexOf("Listening") < 0) throw new Error("rest copy")
   });
 });
 var html = fs.readFileSync(path.join(root, "toefl-full.html"), "utf8");
-if (html.indexOf("无安排休息") < 0) throw new Error("break rule");
+if (html.indexOf(" không có sắp xếp nghỉ ") < 0) throw new Error("break rule");
 console.log("ok toefl-full R→L→W→S no break");

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-reading">
-    <meta name="exam:title" content="单元3 · 社会与伦理">
-    <meta name="exam:description" content="阅读专项词汇 · 社会与伦理">
+    <meta name="exam:title" content=" Đơn vị 3 · xã hội biến thể của | luân lý ">
+    <meta name="exam:description" content=" đọc chuyên biệt biến thể của | · xã hội biến thể của | luân lý ">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>阅读-单元3-社会与伦理</title>
+    <title>Đọc hiểu-Đơn vị 3-xã hội biến thể của | luân lý</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -131,12 +131,12 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">⚖️</div><span>阅读-单元3-社会与伦理</span></div>
+        <div class="logo"><div class="logo-icon">⚖️</div><span>Đọc hiểu-Đơn vị 3-xã hội biến thể của | luân lý</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 học</button>
+            <button class="nav-tab" data-mode="test">🎯 toàn diện phát hiện</button>
         </nav>
-        <span class="word-count-badge" id="wordCountBadge">词汇加载中</span>
+        <span class="word-count-badge" id="wordCountBadge">biến thể của | tải Trung Quốc</span>
     </div>
 </header>
 <div class="main-container">
@@ -144,23 +144,23 @@
 
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3 id="testTotalTitle">📋 综合检测 · 题目加载中</h3>
-            <p>分三个阶段，依次完成，不可跳转。</p>
+            <h3 id="testTotalTitle">📋 toàn diện phát hiện · chủ đề tải Trung Quốc</h3>
+            <p>chia ba dùng trong | giai đoạn, theo thứ tự hoàn thành, không thể nhảy đến </p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">词义识别<br>英文→中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">同义替换<br>英文→英文近义</div></div>
-                <div class="stage-item"><div class="num">③</div><div class="label">综合应用<br>语境+一词多义</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">nghĩa của một từ phân biệt<br>tiếng Anh→tiếng Trung</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">đồng nghĩa thay thế<br>tiếng Anh→tiếng Anh gần công lý</div></div>
+                <div class="stage-item"><div class="num">③</div><div class="label">toàn diện đưa vào sử dụng<br>ngữ cảnh+một biến thể cũ của | đa nghĩa</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 bắt đầu phát hiện</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 30 题</span>
+                <span id="progLabel">Thứ 1 / 30 Câu hỏi</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：词义识别</div>
+            <div class="stage-badge" id="stageBadge">giai đoạn một: nghĩa của một từ phân biệt</div>
             <div class="quiz-area" id="quizArea">
                 <div class="quiz-question" id="qText"></div>
                 <div id="qOptionsContainer"></div>
@@ -169,111 +169,111 @@
             <div class="test-feedback" id="feedback"></div>
 
             <div class="action-row">
-                <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                <button class="btn-next" id="btnNext">下一题 →</button>
+                <button class="btn-submit" id="btnSubmit">✓ xác nhận câu trả lời</button>
+                <button class="btn-next" id="btnNext">xuống một chủ đề →</button>
             </div>
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 phát hiện thông báo</h3>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 lại phát hiện</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 trở về học</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 阅读 · 社会与伦理 · 32个核心词 ====================
+// ==================== Đọc hiểu · xã hội biến thể của | luân lý · 32 dùng trong | lõi biến thể cũ của | ====================
 const wordData = [
-    // —— 道德与伦理（7个） ——
-    { word:'ethical', ipa:'/ˈeθ.ɪ.kəl/', pos:'adj.', meaning:'伦理的；道德的', synonym:'moral', target:'ethical', example:'The ethical implications of the research must be considered.', accept_meaning:['伦理的','道德的'] },
-    { word:'moral', ipa:'/ˈmɒr.əl/', pos:'adj./n.', meaning:'道德的；道德准则', synonym:'ethical', target:'moral', example:'We have a moral obligation to help those in need.', accept_meaning:['道德的','道德准则'] },
-    { word:'morality', ipa:'/məˈræl.ə.ti/', pos:'n.', meaning:'道德；道德性', synonym:'ethics', target:'morality', example:'The morality of the decision was questioned by many.', accept_meaning:['道德','道德性'] },
-    { word:'justice', ipa:'/ˈdʒʌs.tɪs/', pos:'n.', meaning:'正义；司法；法官', synonym:'fairness', target:'justice', example:'The justice system should protect the rights of all citizens.', accept_meaning:['正义','司法','法官'] },
-    { word:'fairness', ipa:'/ˈfeə.nəs/', pos:'n.', meaning:'公平；公正', synonym:'equity', target:'fairness', example:'The fairness of the policy is under debate.', accept_meaning:['公平','公正'] },
-    { word:'equity', ipa:'/ˈek.wɪ.ti/', pos:'n.', meaning:'公平；公正；权益', synonym:'fairness', target:'equity', example:'The government is promoting equity in education.', accept_meaning:['公平','公正','权益'] },
-    { word:'integrity', ipa:'/ɪnˈteɡ.rə.ti/', pos:'n.', meaning:'正直；诚实；完整', synonym:'honesty', target:'integrity', example:'She is known for her integrity and professionalism.', accept_meaning:['正直','诚实','完整'] },
+    // -- đức hạnh biến thể của | luân lý(7 cái) --
+    { word:'ethical', ipa:'/ˈeθ.ɪ.kəl/', pos:'adj.', meaning:'luân lý của; đức hạnh của', synonym:'moral', target:'ethical', example:'The ethical implications of the research must be considered.', accept_meaning:['luân lý của','đức hạnh của'] },
+    { word:'moral', ipa:'/ˈmɒr.əl/', pos:'adj./n.', meaning:'đức hạnh của; đức hạnh chuẩn mực', synonym:'ethical', target:'moral', example:'We have a moral obligation to help those in need.', accept_meaning:['đức hạnh của','đức hạnh chuẩn mực'] },
+    { word:'morality', ipa:'/məˈræl.ə.ti/', pos:'n.', meaning:'đức hạnh; đức hạnh bản chất', synonym:'ethics', target:'morality', example:'The morality of the decision was questioned by many.', accept_meaning:['đức hạnh','đức hạnh bản chất'] },
+    { word:'justice', ipa:'/ˈdʒʌs.tɪs/', pos:'n.', meaning:'công lý; tư pháp; thẩm phán', synonym:'fairness', target:'justice', example:'The justice system should protect the rights of all citizens.', accept_meaning:['công lý','tư pháp','thẩm phán'] },
+    { word:'fairness', ipa:'/ˈfeə.nəs/', pos:'n.', meaning:'công bằng; công bằng', synonym:'equity', target:'fairness', example:'The fairness of the policy is under debate.', accept_meaning:['công bằng','công bằng'] },
+    { word:'equity', ipa:'/ˈek.wɪ.ti/', pos:'n.', meaning:'công bằng; công bằng; quyền lợi', synonym:'fairness', target:'equity', example:'The government is promoting equity in education.', accept_meaning:['công bằng','công bằng','quyền lợi'] },
+    { word:'integrity', ipa:'/ɪnˈteɡ.rə.ti/', pos:'n.', meaning:'ngay thẳng; thành thật; Hoàn chỉnh', synonym:'honesty', target:'integrity', example:'She is known for her integrity and professionalism.', accept_meaning:['ngay thẳng','thành thật','Hoàn chỉnh'] },
 
-    // —— 权利与义务（5个） ——
-    { word:'rights', ipa:'/raɪts/', pos:'n.', meaning:'权利', synonym:'entitlements', target:'rights', example:'Human rights must be protected in all circumstances.', accept_meaning:['权利'] },
-    { word:'obligation', ipa:'/ˌɒb.lɪˈɡeɪ.ʃən/', pos:'n.', meaning:'义务；责任', synonym:'duty', target:'obligation', example:'Citizens have an obligation to obey the law.', accept_meaning:['义务','责任','职责'] },
-    { word:'liability', ipa:'/ˌlaɪ.əˈbɪl.ə.ti/', pos:'n.', meaning:'责任；负债；倾向', synonym:'responsibility', target:'liability', example:'The company has liability for any damage caused.', accept_meaning:['责任','负债','倾向'] },
-    { word:'responsibility', ipa:'/rɪˌspɒn.səˈbɪl.ə.ti/', pos:'n.', meaning:'责任；职责', synonym:'duty', target:'responsibility', example:'Teachers have a responsibility to educate their students.', accept_meaning:['责任','职责'] },
-    { word:'accountability', ipa:'/əˌkaʊn.təˈbɪl.ə.ti/', pos:'n.', meaning:'有责任；可说明性', synonym:'responsibility', target:'accountability', example:'There is a need for greater accountability in government.', accept_meaning:['有责任','可说明性'] },
+    // -- quyền lợi biến thể của | nhiệm vụ(5 cái) --
+    { word:'rights', ipa:'/raɪts/', pos:'n.', meaning:'quyền lợi', synonym:'entitlements', target:'rights', example:'Human rights must be protected in all circumstances.', accept_meaning:['quyền lợi'] },
+    { word:'obligation', ipa:'/ˌɒb.lɪˈɡeɪ.ʃən/', pos:'n.', meaning:'nhiệm vụ; trách nhiệm', synonym:'duty', target:'obligation', example:'Citizens have an obligation to obey the law.', accept_meaning:['nhiệm vụ','trách nhiệm','nhiệm vụ'] },
+    { word:'liability', ipa:'/ˌlaɪ.əˈbɪl.ə.ti/', pos:'n.', meaning:'trách nhiệm; mắc nợ; xu hướng', synonym:'responsibility', target:'liability', example:'The company has liability for any damage caused.', accept_meaning:['trách nhiệm','mắc nợ','xu hướng'] },
+    { word:'responsibility', ipa:'/rɪˌspɒn.səˈbɪl.ə.ti/', pos:'n.', meaning:'trách nhiệm; nhiệm vụ', synonym:'duty', target:'responsibility', example:'Teachers have a responsibility to educate their students.', accept_meaning:['trách nhiệm','nhiệm vụ'] },
+    { word:'accountability', ipa:'/əˌkaʊn.təˈbɪl.ə.ti/', pos:'n.', meaning:'chịu trách nhiệm; có thể giải thích bản chất', synonym:'responsibility', target:'accountability', example:'There is a need for greater accountability in government.', accept_meaning:['chịu trách nhiệm','có thể giải thích bản chất'] },
 
-    // —— 社会与政治（7个） ——
-    { word:'liberal', ipa:'/ˈlɪb.ər.əl/', pos:'adj./n.', meaning:'自由主义的；自由主义者', synonym:'progressive', target:'liberal', example:'The liberal policies have attracted many supporters.', accept_meaning:['自由主义的','自由主义者'] },
-    { word:'conservatism', ipa:'/kənˈsɜː.və.tɪ.zəm/', pos:'n.', meaning:'保守主义；守旧性', synonym:'traditionalism', target:'conservatism', example:'Conservatism often resists rapid social change.', accept_meaning:['保守主义','守旧性'] },
-    { word:'authority', ipa:'/ɔːˈθɒr.ə.ti/', pos:'n.', meaning:'权威；权力；当局', synonym:'power', target:'authority', example:'The local authority is responsible for education.', accept_meaning:['权威','权力','当局'] },
-    { word:'regime', ipa:'/reɪˈʒiːm/', pos:'n.', meaning:'政权；政体；管理制度', synonym:'government', target:'regime', example:'The regime was overthrown by a popular uprising.', accept_meaning:['政权','政体','管理制度'] },
-    { word:'civil', ipa:'/ˈsɪv.əl/', pos:'adj.', meaning:'公民的；民间的；文明的', synonym:'civic', target:'civil', example:'The civil rights movement changed the course of history.', accept_meaning:['公民的','民间的','文明的'] },
-    { word:'opposition', ipa:'/ˌɒp.əˈzɪʃ.ən/', pos:'n.', meaning:'反对；反对派', synonym:'resistance', target:'opposition', example:'The opposition party criticised the new policy.', accept_meaning:['反对','反对派','敌对'] },
+    // -- xã hội biến thể của | chính trị(7 cái) --
+    { word:'liberal', ipa:'/ˈlɪb.ər.əl/', pos:'adj./n.', meaning:'chủ nghĩa tự do của; chủ nghĩa tự do người mà', synonym:'progressive', target:'liberal', example:'The liberal policies have attracted many supporters.', accept_meaning:['chủ nghĩa tự do của','chủ nghĩa tự do người mà'] },
+    { word:'conservatism', ipa:'/kənˈsɜː.və.tɪ.zəm/', pos:'n.', meaning:'chủ nghĩa bảo thủ; bảo thủ bản chất', synonym:'traditionalism', target:'conservatism', example:'Conservatism often resists rapid social change.', accept_meaning:['chủ nghĩa bảo thủ','bảo thủ bản chất'] },
+    { word:'authority', ipa:'/ɔːˈθɒr.ə.ti/', pos:'n.', meaning:'uy quyền; quyền lực; giới chức trách', synonym:'power', target:'authority', example:'The local authority is responsible for education.', accept_meaning:['uy quyền','quyền lực','giới chức trách'] },
+    { word:'regime', ipa:'/reɪˈʒiːm/', pos:'n.', meaning:'chế độ; hình thức chính phủ; giám sát hệ thống', synonym:'government', target:'regime', example:'The regime was overthrown by a popular uprising.', accept_meaning:['chế độ','hình thức chính phủ','giám sát hệ thống'] },
+    { word:'civil', ipa:'/ˈsɪv.əl/', pos:'adj.', meaning:'công dân của; trong nhân dân của; văn minh của', synonym:'civic', target:'civil', example:'The civil rights movement changed the course of history.', accept_meaning:['công dân của','trong nhân dân của','văn minh của'] },
+    { word:'opposition', ipa:'/ˌɒp.əˈzɪʃ.ən/', pos:'n.', meaning:'phản đối; phe đối lập', synonym:'resistance', target:'opposition', example:'The opposition party criticised the new policy.', accept_meaning:['phản đối','phe đối lập','thù địch'] },
 
-    // —— 伦理问题与现象（7个） ——
-    { word:'corruption', ipa:'/kəˈrʌp.ʃən/', pos:'n.', meaning:'腐败；贪污', synonym:'dishonesty', target:'corruption', example:'Corruption undermines trust in the government.', accept_meaning:['腐败','贪污'] },
-    { word:'fraud', ipa:'/frɔːd/', pos:'n.', meaning:'欺诈；骗局；骗子', synonym:'deception', target:'fraud', example:'The company was accused of financial fraud.', accept_meaning:['欺诈','骗局','骗子'] },
-    { word:'discrimination', ipa:'/dɪˌskrɪm.ɪˈneɪ.ʃən/', pos:'n.', meaning:'歧视；区别对待', synonym:'prejudice', target:'discrimination', example:'Discrimination on the basis of race is illegal.', accept_meaning:['歧视','区别对待'] },
-    { word:'prejudice', ipa:'/ˈpredʒ.ə.dɪs/', pos:'n.', meaning:'偏见；歧视', synonym:'bias', target:'prejudice', example:'Prejudice against minority groups still exists.', accept_meaning:['偏见','歧视'] },
-    { word:'bias', ipa:'/ˈbaɪ.əs/', pos:'n./v.', meaning:'偏见；偏差；使有偏见', synonym:'prejudice', target:'bias', example:'The news report showed a clear bias towards the government.', accept_meaning:['偏见','偏差','倾向'] },
-    { word:'bureaucracy', ipa:'/bjʊəˈrɒk.rə.si/', pos:'n.', meaning:'官僚主义；官僚机构', synonym:'administration', target:'bureaucracy', example:'The bureaucracy is often seen as inefficient.', accept_meaning:['官僚主义','官僚机构'] },
-    { word:'inequality', ipa:'/ˌɪn.ɪˈkwɒl.ə.ti/', pos:'n.', meaning:'不平等；不公平', synonym:'disparity', target:'inequality', example:'Inequality in income distribution is a growing problem.', accept_meaning:['不平等','不公平'] },
+    // -- luân lý câu hỏi biến thể của | hiện tượng(7 cái) --
+    { word:'corruption', ipa:'/kəˈrʌp.ʃən/', pos:'n.', meaning:'tham nhũng; tham nhũng', synonym:'dishonesty', target:'corruption', example:'Corruption undermines trust in the government.', accept_meaning:['tham nhũng','tham nhũng'] },
+    { word:'fraud', ipa:'/frɔːd/', pos:'n.', meaning:'gian lận; một vụ lừa đảo; kẻ lừa đảo', synonym:'deception', target:'fraud', example:'The company was accused of financial fraud.', accept_meaning:['gian lận','một vụ lừa đảo','kẻ lừa đảo'] },
+    { word:'discrimination', ipa:'/dɪˌskrɪm.ɪˈneɪ.ʃən/', pos:'n.', meaning:'phân biệt đối xử; sự khác biệt đối xử', synonym:'prejudice', target:'discrimination', example:'Discrimination on the basis of race is illegal.', accept_meaning:['phân biệt đối xử','sự khác biệt đối xử'] },
+    { word:'prejudice', ipa:'/ˈpredʒ.ə.dɪs/', pos:'n.', meaning:'thành kiến; phân biệt đối xử', synonym:'bias', target:'prejudice', example:'Prejudice against minority groups still exists.', accept_meaning:['thành kiến','phân biệt đối xử'] },
+    { word:'bias', ipa:'/ˈbaɪ.əs/', pos:'n./v.', meaning:'thành kiến; thiên lệch; khiến có thành kiến', synonym:'prejudice', target:'bias', example:'The news report showed a clear bias towards the government.', accept_meaning:['thành kiến','thiên lệch','xu hướng'] },
+    { word:'bureaucracy', ipa:'/bjʊəˈrɒk.rə.si/', pos:'n.', meaning:'chủ nghĩa quan liêu; quan liêu cơ chế', synonym:'administration', target:'bureaucracy', example:'The bureaucracy is often seen as inefficient.', accept_meaning:['chủ nghĩa quan liêu','quan liêu cơ chế'] },
+    { word:'inequality', ipa:'/ˌɪn.ɪˈkwɒl.ə.ti/', pos:'n.', meaning:'bất bình đẳng; bất công phẳng', synonym:'disparity', target:'inequality', example:'Inequality in income distribution is a growing problem.', accept_meaning:['bất bình đẳng','bất công phẳng'] },
 
-    // —— 法律与秩序（6个） ——
-    { word:'legislation', ipa:'/ˌledʒ.ɪˈsleɪ.ʃən/', pos:'n.', meaning:'立法；法律；法规', synonym:'law', target:'legislation', example:'New legislation was passed to protect the environment.', accept_meaning:['立法','法律','法规'] },
-    { word:'enforce', ipa:'/ɪnˈfɔːs/', pos:'v.', meaning:'执行；强制实施', synonym:'implement', target:'enforce', example:'Police must enforce the law fairly.', accept_meaning:['执行','强制实施'] },
-    { word:'violate', ipa:'/ˈvaɪ.ə.leɪt/', pos:'v.', meaning:'违反；侵犯；亵渎', synonym:'break', target:'violate', example:'Companies that violate the law will be fined.', accept_meaning:['违反','侵犯','亵渎'] },
-    { word:'comply', ipa:'/kəmˈplaɪ/', pos:'v.', meaning:'遵守；服从', synonym:'obey', target:'comply', example:'All companies must comply with the new regulations.', accept_meaning:['遵守','服从'] },
-    { word:'penalty', ipa:'/ˈpen.əl.ti/', pos:'n.', meaning:'处罚；刑罚；罚款', synonym:'punishment', target:'penalty', example:'The penalty for breaking the law is severe.', accept_meaning:['处罚','刑罚','罚款'] },
-    { word:'sanction', ipa:'/ˈsæŋk.ʃən/', pos:'n./v.', meaning:'制裁；批准；处罚', synonym:'penalty', target:'sanctions', example:'The government imposed economic sanctions.', accept_meaning:['制裁','批准','处罚'] }
+    // -- pháp luật biến thể của | trật tự(6 cái) --
+    { word:'legislation', ipa:'/ˌledʒ.ɪˈsleɪ.ʃən/', pos:'n.', meaning:'ban hành luật; Luật; luật pháp', synonym:'law', target:'legislation', example:'New legislation was passed to protect the environment.', accept_meaning:['ban hành luật','Luật','luật pháp'] },
+    { word:'enforce', ipa:'/ɪnˈfɔːs/', pos:'v.', meaning:'thực hiện; ép buộc thực hiện', synonym:'implement', target:'enforce', example:'Police must enforce the law fairly.', accept_meaning:['thực hiện','ép buộc thực hiện'] },
+    { word:'violate', ipa:'/ˈvaɪ.ə.leɪt/', pos:'v.', meaning:'vi phạm; xâm phạm; báng bổ', synonym:'break', target:'violate', example:'Companies that violate the law will be fined.', accept_meaning:['vi phạm','xâm phạm','báng bổ'] },
+    { word:'comply', ipa:'/kəmˈplaɪ/', pos:'v.', meaning:'tuân thủ; tuân theo', synonym:'obey', target:'comply', example:'All companies must comply with the new regulations.', accept_meaning:['tuân thủ','tuân theo'] },
+    { word:'penalty', ipa:'/ˈpen.əl.ti/', pos:'n.', meaning:'xử phạt; bản án; phạt tiền', synonym:'punishment', target:'penalty', example:'The penalty for breaking the law is severe.', accept_meaning:['xử phạt','bản án','phạt tiền'] },
+    { word:'sanction', ipa:'/ˈsæŋk.ʃən/', pos:'n./v.', meaning:'trừng phạt; phê duyệt; xử phạt', synonym:'penalty', target:'sanctions', example:'The government imposed economic sanctions.', accept_meaning:['trừng phạt','phê duyệt','xử phạt'] }
 ];
 
-// ==================== 数据完整性自检 ====================
-console.log('✅ wordData 长度:', wordData.length);
-console.log('✅ 预期长度: 32');
+// ==================== dữ liệu sự chính trực tự kiềm chế ====================
+console.log('✅ wordData chiều dài:', wordData.length);
+console.log('✅ mong đợi chiều dài: 32');
 
-const TOTAL_STAGE1 = wordData.length; // 32 — 阶段一覆盖全部单词
+const TOTAL_STAGE1 = wordData.length; // 32 - giai đoạn một che phủ toàn bộ từ
 const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['词义识别', '同义替换', '综合应用'];
-const STAGE_DESC = [`英文→中文（全部${TOTAL_STAGE1}词）`, '英文→英文近义', '语境填空+一词多义'];
+const STAGE_NAMES = ['nghĩa của một từ phân biệt', 'đồng nghĩa thay thế', 'toàn diện đưa vào sử dụng'];
+const STAGE_DESC = [`tiếng Anh→tiếng Trung(Tất cả${TOTAL_STAGE1}Từ)`, 'tiếng Anh→tiếng Anh gần công lý', 'ngữ cảnh lấp chỗ trống công việc+một biến thể cũ của | đa nghĩa'];
 const wordCountBadge = document.getElementById('wordCountBadge');
-if (wordCountBadge) wordCountBadge.textContent = `共 ${TOTAL_STAGE1} 词`;
+if (wordCountBadge) wordCountBadge.textContent = `Tổng cộng ${TOTAL_STAGE1} Từ`;
 const testTotalTitle = document.getElementById('testTotalTitle');
-if (testTotalTitle) testTotalTitle.textContent = `📋 综合检测 · 共${TOTAL}题`;
+if (testTotalTitle) testTotalTitle.textContent = `📋 toàn diện phát hiện · Tổng cộng${TOTAL}Câu hỏi`;
 
-// ==================== 工具 ====================
+// ==================== công cụ ====================
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-// ==================== 题目生成 ====================
+// ==================== chủ đề tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
     const questions = [];
 
-    // 阶段一：词义识别 (32题) — 覆盖全部单词
-    const stage1Data = all; // 全部 32 个
+    // giai đoạn một: nghĩa của một từ phân biệt (32 Câu hỏi) - che phủ toàn bộ từ
+    const stage1Data = all; // Tất cả 32 cái
     stage1Data.forEach(w => {
         const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
-        while(wrongs.length < 3) wrongs.push('未知');
+        while(wrongs.length < 3) wrongs.push('chưa biết');
         const opts = shuffle([w.meaning, ...wrongs]);
         questions.push({
             stage: 0,
             type: 'choice',
-            question: `“${w.word}” 的中文含义是？`,
+            question: `“${w.word}” của ngôn ngữ Trung Quốc ý nghĩa là? `,
             options: opts,
             correct: w.meaning,
-            detail: `“${w.word}” 的正确含义是 “${w.meaning}”。`
+            detail: `“${w.word}” của đúng ý nghĩa là “${w.meaning}” `
         });
     });
 
-    // 阶段二：同义替换 (10题)
+    // giai đoạn hai: đồng nghĩa thay thế (10 Câu hỏi)
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
         const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
@@ -284,19 +284,19 @@ function generateQuestions() {
         questions.push({
             stage: 1,
             type: 'choice',
-            question: `与 “${w.word}” 意思最接近的英文词是？`,
+            question: `và “${w.word}” ý tưởng biến thể của tiếp cận của tiếng Anh biến thể cũ của | là? `,
             options: opts,
             correct: w.synonym,
-            detail: `“${w.word}” 的近义词是 “${w.synonym}”。`
+            detail: `“${w.word}” của từ đồng nghĩa là “${w.synonym}” `
         });
     });
 
-    // 阶段三：综合应用 (10题)
+    // giai đoạn ba: toàn diện đưa vào sử dụng (10 Câu hỏi)
     const stage3Data = shuffle([...wordData]).slice(0, 10);
     let subTypeCounter = 0;
     stage3Data.forEach(w => {
         if (subTypeCounter % 2 === 0) {
-            // 语境填空：使用 target 替换
+            // ngữ cảnh lấp chỗ trống công việc: Sử dụng target thay thế
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
             const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
@@ -307,13 +307,13 @@ function generateQuestions() {
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `“${sentenceDisplay}” 应填入哪个词？`,
+                question: `“${sentenceDisplay}” Ưng lấp hoặc nhồi đi vào nào biến thể cũ của |? `,
                 options: opts,
                 correct: w.word,
-                detail: `正确答案是 “${w.word}”，意为 “${w.meaning}”。${w.example}`
+                detail: `đúng câu trả lời là “${w.word}”, nghĩa là “${w.meaning}” ${w.example}`
             });
         } else {
-            // 一词多义
+            // một biến thể cũ của | đa nghĩa
             const correctMeaning = w.accept_meaning[0];
             const wrongMeanings = w.accept_meaning.slice(1);
             while(wrongMeanings.length < 3) {
@@ -326,16 +326,16 @@ function generateQuestions() {
                     }
                 }
                 if (wrongMeanings.length >= 3) break;
-                wrongMeanings.push('其他含义');
+                wrongMeanings.push('khác ý nghĩa');
             }
             const opts = shuffle([correctMeaning, ...wrongMeanings.slice(0, 3)]);
             questions.push({
                 stage: 2,
                 type: 'choice',
-                question: `在句子 “${w.example}” 中，“${w.word}” 的含义是？`,
+                question: `tồn tại câu “${w.example}” trong, “${w.word}” của ý nghĩa là? `,
                 options: opts,
                 correct: correctMeaning,
-                detail: `在句中，“${w.word}” 的含义是 “${correctMeaning}”。`
+                detail: `tồn tại biến thể của Trung Quốc, “${w.word}” của ý nghĩa là “${correctMeaning}” `
             });
         }
         subTypeCounter++;
@@ -349,7 +349,7 @@ function generateQuestions() {
     return qs;
 }
 
-// ==================== 核心逻辑 ====================
+// ==================== lõi logic ====================
 let questions = [];
 let currentIndex = 0;
 let score = 0;
@@ -382,7 +382,7 @@ const stageResults = document.getElementById('stageResults');
 
 const navTabs = document.querySelectorAll('.nav-tab');
 
-// ==================== 语音（英式女声） ====================
+// ==================== âm thanh lời nói(Anh loại nữ âm thanh) ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -424,7 +424,7 @@ function speakWord(word, callback) {
     synth.speak(utterance);
 }
 
-// ==================== 学习卡片 ====================
+// ==================== học thẻ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
@@ -436,10 +436,10 @@ function buildLearnCards(){
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
             <div class="word-detail">
-                <div class="word-detail-row"><strong>📎 近义词：</strong>${w.synonym}</div>
-                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 例句：</strong>${w.example}</div>
+                <div class="word-detail-row"><strong>📎 từ đồng nghĩa: </strong>${w.synonym}</div>
+                <div class="word-detail-row" style="margin-top:4px;background:#fafaf7;padding:8px 12px;border-radius:6px;border-left:3px solid #e8c97a;"><strong>📖 Câu ví dụ: </strong>${w.example}</div>
             </div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="card-collapse-hint">nhấn nhận dậy ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const was=card.classList.contains('expanded');
@@ -460,7 +460,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== điều hướng kiểm soát ====================
 function switchMode(mode) {
     if (mode === 'test' && isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -480,14 +480,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert(`检测进行中，请先完成全部${TOTAL}题！`);
+            alert(`phát hiện tiến hành Trung Quốc, mời trước hoàn thành toàn bộ${TOTAL}Câu hỏi! `);
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测流程 ====================
+// ==================== phát hiện quy trình ====================
 function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
@@ -517,10 +517,10 @@ function renderQuestion() {
     const q = questions[currentIndex];
     const stage = q.stage;
 
-    progLabel.textContent = `第 ${currentIndex+1} / ${TOTAL} 题`;
+    progLabel.textContent = `Thứ ${currentIndex+1} / ${TOTAL} Câu hỏi`;
     progFill.style.width = Math.round((currentIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段${stage+1}：${STAGE_NAMES[stage]}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
+    stageBadge.textContent = `giai đoạn${stage+1}: ${STAGE_NAMES[stage]}`;
 
     qText.innerHTML = q.question;
 
@@ -566,7 +566,7 @@ function submitAnswer() {
     const q = questions[currentIndex];
 
     if (selected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('mời trước chọn một dùng trong | tùy chọn! '); return; }
         selected = '';
     }
 
@@ -587,7 +587,7 @@ function submitAnswer() {
     });
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.textContent = isCorrect ? '✅ 正确！' : '❌ 错误。';
+    feedback.textContent = isCorrect ? '✅ Đúng! ' : '❌ Sai ';
 
     results.push({
         question: q.question,
@@ -598,7 +598,7 @@ function submitAnswer() {
         stage: q.stage
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
@@ -609,7 +609,7 @@ function nextQuestion() {
     document.getElementById('testActive').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 错题报告 ====================
+// ==================== lỗi chủ đề thông báo ====================
 function showResults() {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -623,9 +623,9 @@ function showResults() {
     const pct = Math.round((totalCorrect / TOTAL) * 100);
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">总正确数</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">错题数</div></div>
+        <div class="item"><div class="num">${totalCorrect} / ${TOTAL}</div><div class="label">tổng thể đúng đếm</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỉ lệ đúng</div></div>
+        <div class="item"><div class="num">${results.filter(r => !r.isCorrect).length}</div><div class="label">lỗi chủ đề đếm</div></div>
     `;
 
     let html = '';
@@ -635,16 +635,16 @@ function showResults() {
         const totalInStage = stageResultsData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${s+1}：${STAGE_NAMES[s]}（${STAGE_DESC[s]}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>giai đoạn${s+1}: ${STAGE_NAMES[s]}(${STAGE_DESC[s]})- Đúng ${correctInStage}/${totalInStage}(${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>bạn của câu trả lời</th><th>Đáp án đúng</th><th>tình trạng</th></tr></thead><tbody>`;
 
         if (stageResultsData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">暂无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">tạm thời không có tiêu đề mắt</td></tr>`;
         } else {
             stageResultsData.forEach((r, i) => {
                 const cls = r.isCorrect ? 'row-correct' : 'row-wrong';
                 const status = r.isCorrect ? '✅' : '❌';
-                const displayUser = r.userAnswer || '未作答';
+                const displayUser = r.userAnswer || 'Chưa trả lời';
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question.replace(/<[^>]+>/g, '')}</td>
@@ -664,7 +664,7 @@ function showResults() {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện ràng buộc ====================
 btnStartTest.addEventListener('click', startTest);
 btnSubmit.addEventListener('click', submitAnswer);
 btnNext.addEventListener('click', nextQuestion);

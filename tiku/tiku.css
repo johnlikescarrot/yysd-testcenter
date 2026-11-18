@@ -1,5 +1,5 @@
-/* 题库中心 · 教师工作站
-   瑞士风：白底无衬线、黑红强调、结构分隔；保留工作台密度。 */
+/* ngân hàng câu hỏi trung tâm · giáo viên trạm làm việc
+   Thụy Sĩ gió: trắng nền tảng chữ không chân, viết tắt của tỉnh Hắc Long Giang | đỏ nhấn mạnh, cấu trúc chia cắt; giữ bàn làm việc mật độ  */
 :root {
   color-scheme: light;
   --paper: #fff;
@@ -12,7 +12,7 @@
   --soft: #f4f4f2;
   --accent-display: #da3025;
   --accent-text: #bb241b;
-  /* 既有内联退回原因和科目标签也用 --accent，需保证小字对比度。 */
+  /* tồn tại bên trong liên minh với trả lại nguyên nhân biến thể cũ của môn học nhãn cũng sử dụng --accent, yêu cầu bảo đảm nhỏ chữ độ tương phản  */
   --accent: var(--accent-text);
   --accent-soft: var(--soft);
   --ok: var(--ink);
@@ -47,7 +47,7 @@ button {
 input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 ::selection { background: var(--ink); color: var(--paper); }
 
-/* ——— 顶栏 ——— */
+/* --- đỉnh hàng rào --- */
 .wrap { max-width: 1340px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
 .top {
   display: flex; justify-content: space-between; align-items: center; gap: 1rem;
@@ -68,7 +68,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
   overflow-wrap: anywhere;
 }
 
-/* ——— 分段 tabs ——— */
+/* --- chia thành các phần tabs --- */
 .tabs {
   display: flex; gap: 1.6rem; margin: 0 0 1.6rem;
   border-bottom: 1px solid var(--line);
@@ -83,7 +83,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 .tabs button.is-on { color: var(--ink); border-bottom-color: var(--accent-display); font-weight: 600; }
 .tabs .tab-refresh { margin-left: auto; color: var(--ink); }
 
-/* ——— 工作台双栏 ——— */
+/* --- bàn làm việc hai hàng rào --- */
 .bench { display: grid; grid-template-columns: minmax(0, 1fr) 25rem; gap: 1.3rem; align-items: start; }
 .card { min-width: 0; background: var(--card); border: 1px solid var(--line); border-top-color: var(--ink); }
 .pool-pane { padding: 1.1rem 1.2rem 1.2rem; }
@@ -97,7 +97,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 }
 .pane-title .n { font-size: .8rem; color: var(--muted); }
 
-/* ——— 筛选工具条 ——— */
+/* --- lọc thanh công cụ --- */
 .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: .9rem; }
 .filters .q {
   flex: 1 1 11rem; min-width: 0;
@@ -110,7 +110,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 }
 .filters .q:focus, .filters select:focus { border-color: var(--accent-text); }
 
-/* ——— 题块池 ——— */
+/* --- chủ đề cục ao --- */
 .pool-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .3rem .8rem; margin: 0 0 .7rem; font-size: .82rem; color: var(--muted); }
 .link-btn {
   border: 0; border-bottom: 1px solid var(--line); background: none;
@@ -152,7 +152,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 }
 .review-label { display: block; margin-top: .5rem; font-size: .8rem; font-weight: 600; color: var(--accent-text); }
 
-/* 只读审阅与共享 reading.js 的显示标记。 */
+/* chỉ đọc xem xét hoặc đọc kỹ cùng trải qua với ai đó hưởng reading.js của hiển thị ký hiệu  */
 .review-bench { grid-template-columns: minmax(19rem, 2fr) minmax(0, 3fr); }
 .review-bench .pool-pane { position: sticky; top: 1rem; }
 .review-bench .pool { grid-template-columns: minmax(0, 1fr); max-height: 65vh; }
@@ -204,7 +204,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
   .review-details > .review-note, .review-details > .review-details { margin-inline: .3rem; }
 }
 
-/* ——— 登录与开通表单 ——— */
+/* --- đăng ký biến thể của | mở biểu mẫu --- */
 .f { display: flex; flex-direction: column; gap: .3rem; min-width: 0; font-size: .82rem; color: var(--muted); }
 .f input, .f select {
   border: 1px solid var(--muted); background: var(--paper); color: var(--ink);
@@ -213,7 +213,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 .f input:focus, .f select:focus { border-color: var(--accent-text); }
 .minis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem .7rem; margin-bottom: 1rem; }
 
-/* 授权台账标题复用。 */
+/* ủy quyền Đài Loan tài khoản tiêu đề đi rồi quay lại sử dụng  */
 .picked-head {
   display: flex; justify-content: space-between; align-items: center; gap: .5rem;
   padding: .5rem .8rem; border-bottom: 1px solid var(--line-soft); background: var(--soft);
@@ -221,7 +221,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 }
 .picked-head > span:last-child { flex-shrink: 0; }
 
-/* 操作行 */
+/* làm việc hàng */
 .actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line-soft); }
 .btn {
   border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
@@ -236,7 +236,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 .btn.primary { background: var(--accent-text); border-color: var(--accent-text); }
 .btn.primary:hover:not(:disabled), .btn.primary:active:not(:disabled) { background: var(--ink); border-color: var(--ink); }
 
-/* ——— 我的卷 ——— */
+/* --- tôi của cuộn lại --- */
 .paper-list { display: grid; border-top: 1px solid var(--ink); }
 .paper-row { padding: 1rem 1.2rem; display: grid; gap: .55rem; border: 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 .paper-row .r1 { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; }
@@ -264,7 +264,7 @@ input:disabled, select:disabled, textarea:disabled { color: var(--muted); backgr
 .pill.unpublished { background: var(--soft); color: var(--accent-text); }
 .pill.kind { background: var(--soft); color: var(--muted); font-weight: 500; }
 
-/* 空态 */
+/* trống không */
 .empty {
   text-align: center; padding: 3.2rem 1rem;
   border-block: 1px solid var(--line); background: var(--soft);
@@ -273,11 +273,11 @@ input:disabled, select:disabled, textarea:disabled { color: var(--muted); backgr
 .empty b { display: block; font-size: 1.1rem; font-weight: 600; margin-bottom: .3rem; }
 .empty p { margin: 0 0 1rem; color: var(--muted); font-size: .88rem; }
 
-/* 骨架屏 */
+/* kết cấu xem | */
 .skel { background: var(--soft); border-bottom: 1px solid var(--line); }
 .skel-row { height: 3.2rem; margin-bottom: .6rem; }
 
-/* ——— 开包 ——— */
+/* --- mở che phủ --- */
 .g-list { border: 1px solid var(--line-soft); background: var(--paper); max-height: 30rem; overflow: auto; }
 .g-row {
   display: flex; align-items: center; gap: .6rem; min-height: 44px;
@@ -300,7 +300,7 @@ input:disabled, select:disabled, textarea:disabled { color: var(--muted); backgr
 .lg-item .sm { flex-shrink: 0; }
 .hint { font-size: .8rem; color: var(--muted); margin: .8rem 0 0; padding: .6rem .8rem; background: var(--soft); border-left: 2px solid var(--line); }
 
-/* ——— toast（原 #msg 重用） ——— */
+/* --- toast(trước đây #msg bổ nhiệm vào vị trí quan trọng) --- */
 .msg {
   position: fixed; left: 50%; bottom: 2rem; transform: translateX(-50%);
   background: var(--accent-text); color: var(--paper);
@@ -311,7 +311,7 @@ input:disabled, select:disabled, textarea:disabled { color: var(--muted); backgr
 .msg.show { opacity: 1; }
 .msg.ok { background: var(--ink); }
 
-/* ——— 登录 / 门禁 ——— */
+/* --- Đăng nhập / hạn chế ra vào --- */
 .gate, .login { max-width: 400px; margin: 14vh auto; padding: 0 1.2rem; }
 .auth-card {
   background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent-display);
@@ -326,7 +326,7 @@ input:disabled, select:disabled, textarea:disabled { color: var(--muted); backgr
 .muted { color: var(--muted); }
 .row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
 
-/* 放在基础 .sheet 之后，避免窄屏的 static 被 sticky 覆盖。 */
+/* đặt tồn tại nền .sheet sau, ngăn chặn hẹp xem | của static chăn sticky che phủ  */
 @media (max-width: 960px) {
   .bench { grid-template-columns: minmax(0, 1fr); }
   .sheet { position: static; }

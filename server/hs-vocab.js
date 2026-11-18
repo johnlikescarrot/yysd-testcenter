@@ -192,17 +192,17 @@ function mountRoutes(app, opts) {
   app.post("/api/hs-vocab/custom/start", authMiddleware, function (req, res) {
     var count = clampCount(req.body && req.body.count);
     if (count == null) {
-      return res.status(400).json({ error: "数量须在 " + MIN_BATCH + "–" + MAX_BATCH + " 之间" });
+      return res.status(400).json({ error: " số lượng phải tồn tại " + MIN_BATCH + "–" + MAX_BATCH + " giữa " });
     }
     var bankTotal = Number(req.body && req.body.bank_total);
     if (!Number.isFinite(bankTotal) || bankTotal <= 0) {
-      return res.status(400).json({ error: "缺少词库总量 bank_total" });
+      return res.status(400).json({ error: " thiếu kho từ tổng bank_total" });
     }
     var prog = ensureProgress(req.user.sub);
     var cur = activeBatch(req.user.sub, prog);
     if (cur) {
       return res.status(409).json({
-        error: "当前批次尚未通关，请先完成检测",
+        error: " thời điểm hiện tại xác minh tiếp theo chưa thông quan, mời trước hoàn thành phát hiện ",
         active_batch: {
           id: cur.id,
           batch_date: cur.batch_date,
@@ -213,14 +213,14 @@ function mountRoutes(app, opts) {
       });
     }
     if (prog.cursor_idx >= bankTotal) {
-      return res.status(400).json({ error: "词库已学完" });
+      return res.status(400).json({ error: " kho từ đã học hoàn thành " });
     }
     var start = prog.cursor_idx;
     var actual = Math.min(count, bankTotal - start);
-    if (actual < 1) return res.status(400).json({ error: "没有可学的单词" });
+    if (actual < 1) return res.status(400).json({ error: " không có có thể học của từ " });
     // ponytail: allow last slice < MIN_BATCH when bank remainder is small
     if (actual < MIN_BATCH && start + actual < bankTotal) {
-      return res.status(400).json({ error: "数量须在 " + MIN_BATCH + "–" + MAX_BATCH + " 之间" });
+      return res.status(400).json({ error: " số lượng phải tồn tại " + MIN_BATCH + "–" + MAX_BATCH + " giữa " });
     }
     var now = new Date().toISOString();
     var info = stmts.insertBatch.run(req.user.sub, todayDate(), start, actual, now);
@@ -234,7 +234,7 @@ function mountRoutes(app, opts) {
     var batchId = Number(body.batch_id);
     var passed = !!body.passed;
     var batch = stmts.findBatch.get(batchId, req.user.sub);
-    if (!batch) return res.status(404).json({ error: "批次不存在" });
+    if (!batch) return res.status(404).json({ error: " xác minh tiếp theo không tồn tại " });
     insertMistakes(req.user.sub, "custom", body.mistakes || []);
     if (!passed) {
       return res.json({ ok: true, passed: false, status: progressPayload(req.user.sub) });
@@ -253,7 +253,7 @@ function mountRoutes(app, opts) {
     var body = req.body || {};
     var listNo = Number(body.list_no);
     var passed = !!body.passed;
-    if (!listNo || listNo < 1) return res.status(400).json({ error: "无效单元号" });
+    if (!listNo || listNo < 1) return res.status(400).json({ error: " không hợp lệ đơn vị gầm " });
     insertMistakes(req.user.sub, "unit:" + listNo, body.mistakes || []);
     if (passed) {
       stmts.upsertUnitClear.run(req.user.sub, listNo, new Date().toISOString());
@@ -297,9 +297,9 @@ function mountRoutes(app, opts) {
 
   app.post("/api/hs-vocab/mistakes/remove", authMiddleware, function (req, res) {
     var id = Number(req.body && req.body.id);
-    if (!id) return res.status(400).json({ error: "缺少错题 id" });
+    if (!id) return res.status(400).json({ error: " thiếu lỗi chủ đề id" });
     var row = stmts.findMistake.get(id, req.user.sub);
-    if (!row || row.is_removed) return res.status(404).json({ error: "错题不存在" });
+    if (!row || row.is_removed) return res.status(404).json({ error: " lỗi chủ đề không tồn tại " });
     stmts.removeMistake.run(id, req.user.sub);
     res.json({ ok: true });
   });
@@ -307,7 +307,7 @@ function mountRoutes(app, opts) {
   app.get("/api/hs-vocab/mistakes/group", authMiddleware, function (req, res) {
     var date = String(req.query.date || "");
     var source = String(req.query.source || "");
-    if (!date || !source) return res.status(400).json({ error: "需要 date 与 source" });
+    if (!date || !source) return res.status(400).json({ error: " cần date và source" });
     var rows = stmts.listMistakesByGroup.all(req.user.sub, date, source);
     res.json({
       ok: true,
@@ -338,12 +338,12 @@ function mountRoutes(app, opts) {
 function formatGroupLabel(date, source) {
   var parts = String(date).split("-");
   var nice = parts.length === 3
-    ? (Number(parts[1]) + "月" + Number(parts[2]) + "日")
+    ? (Number(parts[1]) + " tháng " + Number(parts[2]) + " viết tắt của ")
     : date;
-  if (source === "custom") return nice + "·自定义";
+  if (source === "custom") return nice + "·tùy chỉnh ";
   var m = String(source).match(/^unit:(\d+)$/);
-  if (m) return nice + "·单元" + m[1];
-  if (source.indexOf("wrong") === 0) return nice + "·错题再测";
+  if (m) return nice + "·Đơn vị " + m[1];
+  if (source.indexOf("wrong") === 0) return nice + "·lỗi chủ đề lại khảo sát ";
   return nice + "·" + source;
 }
 
@@ -353,8 +353,8 @@ function selfCheck() {
   console.assert(clampCount(10) === 10);
   console.assert(clampCount(200) === 200);
   console.assert(clampCount(201) === null);
-  console.assert(formatGroupLabel("2026-01-02", "custom") === "1月2日·自定义");
-  console.assert(formatGroupLabel("2026-01-03", "unit:1") === "1月3日·单元1");
+  console.assert(formatGroupLabel("2026-01-02", "custom") === "1 tháng 2 viết tắt của·tùy chỉnh ");
+  console.assert(formatGroupLabel("2026-01-03", "unit:1") === "1 tháng 3 viết tắt của·Đơn vị 1");
   return true;
 }
 

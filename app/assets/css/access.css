@@ -1,4 +1,4 @@
-/* 锁层 z-15 低于导航 z-20，保留退出锁态的入口。 */
+/* khóa chồng lên nhau z-15 thấp hơn so với điều hướng z-20, giữ rút lui khóa của lối vào  */
 .yysd-lock {
   position: fixed;
   inset: 0;
@@ -85,10 +85,10 @@
 .yysd-lock-acts button[disabled] { background: #f4f4f2; color: #656565; border-color: #d9d9d6; cursor: not-allowed; }
 .yysd-lock[hidden], .yysd-cut[hidden] { display: none !important; }
 
-/* 权限行状态（个人资料卡） */
+/* phạm vi quyền hạn bài điếu văn tóm tắt(cá nhân tài liệu dừng) */
 .hit-perm-off { box-sizing: border-box; min-width: 0; max-width: 100%; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 0; background: #f4f4f2; color: #bb241b; white-space: normal; overflow-wrap: anywhere; }
 
-/* 考试页顶栏到期倒计时：琥珀提示，最后一分钟红底白字；不改 ETS 正文。 */
+/* dự thi đầu đỉnh hàng rào đến hạn đếm ngược: hổ phách chỉ ra, cuối cùng một phút đỏ nền tảng chữ viết sai hoặc phát âm sai; không thay đổi ETS văn bản chính  */
 .ets-expire-chip {
   box-sizing: border-box;
   min-width: 0;
@@ -108,7 +108,7 @@
 }
 .ets-expire-chip.is-soon { color: #fff; background: #bb241b; border-color: #bb241b; }
 
-/* 自动交卷提示 */
+/* tự động nộp bài thi chỉ ra */
 .yysd-cut {
   position: fixed;
   inset: 0;
@@ -137,7 +137,7 @@
 .yysd-cut b { display: block; font-size: 20px; line-height: 1.4; margin-bottom: 10px; color: #151515; }
 .yysd-cut p { margin: 0; font-size: 13px; line-height: 1.7; color: #656565; }
 
-/* 首页卡片锁定徽章（无内容时不占位） */
+/* trang chủ thẻ khóa huy hiệu(không có nội dung biến thể cũ của | không biến thể của vị trí) */
 .hit-mode-badge {
   box-sizing: border-box;
   display: inline-block;
@@ -156,7 +156,7 @@
 }
 .hit-mode-badge:empty { display: none; }
 
-/* 考前冲刺模考包：锁态不降低整行透明度，保留文字对比度与原点击提示。 */
+/* đánh trước chạy nước rút bắt chước đánh che phủ: khóa không giảm toàn bộ hàng tính minh bạch, giữ chữ viết độ tương phản biến thể của | điểm bắt đầu đánh chỉ ra  */
 .hit-mock-row.is-locked { background: #f4f4f2; }
 .btn-start.is-lock { background: #f4f4f2; color: #656565; border: 1px solid #d9d9d6; border-radius: 0; box-shadow: none; transform: none; cursor: not-allowed; white-space: normal; overflow-wrap: anywhere; }
 .hit-status.is-warn { color: #bb241b; font-weight: 600; overflow-wrap: anywhere; }

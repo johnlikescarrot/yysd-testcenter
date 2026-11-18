@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Smoke: vocab RPG store + dual-entry split (作业区 / 词境远征). Exit 1 on failure. */
+/** Smoke: vocab RPG store + dual-entry split (bài tập về nhà khu vực / biến thể cũ của | biên giới cuộc viễn chinh). Exit 1 on failure. */
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
@@ -22,7 +22,7 @@ const RPG = sandbox.window.YYSD_VOCAB_RPG;
 assert(RPG, "YYSD_VOCAB_RPG");
 
 const p0 = RPG.progressFromXp(0);
-assert(p0.level === 1 && p0.title === "词芽", "level 1 词芽");
+assert(p0.level === 1 && p0.title === " biến thể cũ của | nụ ", "level 1 biến thể cũ của | nụ ");
 const g1 = RPG.addXp(30, "t");
 assert(g1.gained === 30 && g1.after.totalXp === 30, "addXp");
 assert(g1.leveledUp === true && g1.after.level >= 2, "level up from 30");
@@ -36,10 +36,10 @@ sandbox.window.YYSD = {
   }
 };
 const lists = [
-  { id: "a1", title: "单元1" },
-  { id: "a2", title: "单元2" },
-  { id: "a3", title: "单元3" },
-  { id: "a4", title: "单元4" }
+  { id: "a1", title: " Đơn vị 1" },
+  { id: "a2", title: " Đơn vị 2" },
+  { id: "a3", title: " Đơn vị 3" },
+  { id: "a4", title: " Đơn vị 4" }
 ];
 const nodes0 = RPG.pathNodes(lists, {}, "gaozhong");
 assert(nodes0[0].state === "current", "first current");
@@ -59,7 +59,7 @@ assert(!RPG.claimChest("gaozhong", openChest.chestId, 5), "no double claim");
 
 const zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
 assert(!zone.includes("vocab-realm-banner"), "zone realm promo hidden");
-assert(zone.includes("作业模式") && zone.includes("vocabBentoHTML"), "homework bento restored");
+assert(zone.includes(" bài tập về nhà chế độ ") && zone.includes("vocabBentoHTML"), "homework bento restored");
 assert(!zone.includes("bindVocabRpgPath") && !zone.includes("vocab-bento--rpg"), "rpg path removed from zone");
 
 const zoneHtml = fs.readFileSync(path.join(root, "zone.html"), "utf8");
@@ -71,7 +71,7 @@ assert(realmHtml.includes("vocab-rpg.js") && realmHtml.includes("word-realm-core
 
 const story = fs.readFileSync(path.join(root, "assets/js/word-realm-story.js"), "utf8");
 assert(story.includes("YYSD_WORD_REALM_STORY") && story.includes("prologue") && story.includes("shrineBeat"), "story spine");
-assert(story.includes("晨雾平原") && story.includes("石语峡谷") && story.includes("潮声海域"), "regions");
+assert(story.includes(" buổi sáng sương mù cánh đồng ") && story.includes(" đơn vị đo lường khô cho ngũ cốc bằng mười đấu phương ngữ hẻm núi ") && story.includes(" thuỷ triều âm thanh vùng biển "), "regions");
 assert(story.includes("mist") && !story.includes("gaozhong"), "story regions not books");
 
 const realm = fs.readFileSync(path.join(root, "assets/js/word-realm.js"), "utf8");
@@ -79,11 +79,11 @@ assert(realm.includes("from=realm") && realm.includes("renderPrologue") && realm
 assert(realm.includes("renderHub") && realm.includes("renderCodex"), "hub+codex");
 
 const lesson = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8");
-assert(lesson.includes("YYSD_VOCAB_RPG") && (lesson.includes("升级了") || lesson.includes("LEVEL UP")), "lesson xp wire");
+assert(lesson.includes("YYSD_VOCAB_RPG") && (lesson.includes(" lên một cấp hoàn thành ") || lesson.includes("LEVEL UP")), "lesson xp wire");
 assert(lesson.includes("word-realm.html") && lesson.includes("shrineParam"), "celebrate → realm / shrine");
 
 const nav = fs.readFileSync(path.join(root, "assets/js/nav.js"), "utf8");
-assert(!nav.includes('label: "词境"') && !nav.includes('label: "词境远征"'), "no topbar/mobile realm link");
+assert(!nav.includes('label: " biến thể cũ của | biên giới "') && !nav.includes('label: " biến thể cũ của | biên giới cuộc viễn chinh "'), "no topbar/mobile realm link");
 assert(nav.includes('key: "words"'), "words nav kept");
 
 console.log("vocab-rpg dual-entry smoke ok · Lv." + RPG.snapshot().level, RPG.snapshot().title);

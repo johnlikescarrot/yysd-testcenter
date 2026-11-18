@@ -181,7 +181,7 @@ def main():
         paper = existing["papers"][block["source"] + "|" + block["skill"] + "|" + str(block.get("paperId") or block["set"])]
         tasks = paper["tasks"][block["task"]:block["end"] + 1]
         index.setdefault(signature(tasks), block)
-    papers = {skill: {"id": "prediction-2026-10-17", "skill": skill, "title": "预测包 · 2026-10-17", "source": "prediction", "modules": [], "tasks": []} for skill in {x[0] for x in KINDS.values()}}
+    papers = {skill: {"id": "prediction-2026-10-17", "skill": skill, "title": " dự báo che phủ · 2026-10-17", "source": "prediction", "modules": [], "tasks": []} for skill in {x[0] for x in KINDS.values()}}
     members, counters = [], {skill: 1 for skill in papers}
     for key in KINDS:
         skill, kind = KINDS[key]

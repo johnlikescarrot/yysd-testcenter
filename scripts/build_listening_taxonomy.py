@@ -15,30 +15,30 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from verify_cambridge_mock_pages import load_test  # noqa: E402
 
-TYPE_XLSX = Path("/Users/frankman/Desktop/雅思听力题目分类.xlsx")
-SCENE_XLSX = Path("/Users/frankman/Desktop/雅思听力题目场景分类.xlsx")
+TYPE_XLSX = Path("/Users/frankman/Desktop/IELTS thính giác chủ đề phân loại.xlsx")
+SCENE_XLSX = Path("/Users/frankman/Desktop/IELTS thính giác chủ đề cảnh phân loại.xlsx")
 OUT = ROOT / "library" / "listening-taxonomy.json"
 LISTEN_DIR = ROOT / "library" / "mock" / "cambridge-listening"
 
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 REL_NS = {"r": "http://schemas.openxmlformats.org/package/2006/relationships"}
 
-TYPE_ORDER = ["填空题", "配对题", "单选题", "多选题", "地图题", "流程题", "简答题"]
+TYPE_ORDER = [" lấp chỗ trống công việc chủ đề ", " ghép đôi chủ đề ", " hóa đơn chọn chủ đề ", " câu hỏi trắc nghiệm ", " bản đồ chủ đề ", " quy trình chủ đề ", " đơn giản hình thức gắn liền có nghĩa giống như từ tự do chủ đề "]
 SCENE_ORDER = [
-    "求职", "经营管理", "地理", "旅游", "日常生活", "建筑环境", "健康医疗",
-    "住宿", "运动", "图书馆", "保险", "新生入学", "作业讨论", "人文社科",
-    "生物", "课题研究",
+    " tìm việc làm ", " tham gia giám sát ", " địa lý ", " chuyến đi ", " Đời sống hằng ngày ", " xây dựng môi trường ", " sức khỏe điều trị y tế ",
+    " ở lại ", " di chuyển ", " thư viện ", " bảo hiểm ", " mới vào trường hoặc cao đẳng ", " bài tập về nhà thảo luận ", " nhân văn và khoa học xã hội ",
+    " Sinh học ", " nhiệm vụ nghiên cứu ",
 ]
 TYPE_ALIASES = {
-    "填空": "填空题", "填空题": "填空题", "form": "填空题", "notes": "填空题", "table": "填空题",
-    "配对": "配对题", "配对题": "配对题", "matching": "配对题",
-    "单选": "单选题", "单选题": "单选题", "选择题": "单选题",
-    "多选": "多选题", "多选题": "多选题",
-    "地图": "地图题", "地图题": "地图题", "map": "地图题",
-    "流程": "流程题", "流程题": "流程题", "flowchart": "流程题", "flow chart": "流程题",
-    "简答": "简答题", "简答题": "简答题", "sentence": "简答题",
+    " lấp chỗ trống công việc ": " lấp chỗ trống công việc chủ đề ", " lấp chỗ trống công việc chủ đề ": " lấp chỗ trống công việc chủ đề ", "form": " lấp chỗ trống công việc chủ đề ", "notes": " lấp chỗ trống công việc chủ đề ", "table": " lấp chỗ trống công việc chủ đề ",
+    " ghép đôi ": " ghép đôi chủ đề ", " ghép đôi chủ đề ": " ghép đôi chủ đề ", "matching": " ghép đôi chủ đề ",
+    " hóa đơn chọn ": " hóa đơn chọn chủ đề ", " hóa đơn chọn chủ đề ": " hóa đơn chọn chủ đề ", " câu hỏi trắc nghiệm ": " hóa đơn chọn chủ đề ",
+    " nhiều chọn ": " câu hỏi trắc nghiệm ", " câu hỏi trắc nghiệm ": " câu hỏi trắc nghiệm ",
+    " bản đồ ": " bản đồ chủ đề ", " bản đồ chủ đề ": " bản đồ chủ đề ", "map": " bản đồ chủ đề ",
+    " quy trình ": " quy trình chủ đề ", " quy trình chủ đề ": " quy trình chủ đề ", "flowchart": " quy trình chủ đề ", "flow chart": " quy trình chủ đề ",
+    " đơn giản hình thức gắn liền có nghĩa giống như từ tự do ": " đơn giản hình thức gắn liền có nghĩa giống như từ tự do chủ đề ", " đơn giản hình thức gắn liền có nghĩa giống như từ tự do chủ đề ": " đơn giản hình thức gắn liền có nghĩa giống như từ tự do chủ đề ", "sentence": " đơn giản hình thức gắn liền có nghĩa giống như từ tự do chủ đề ",
 }
-DIFF_ALIASES = {"易": "易", "中": "中", "难": "难", "easy": "易", "medium": "中", "hard": "难"}
+DIFF_ALIASES = {" dễ ": " dễ ", " trong ": " trong ", " Khó ": " Khó ", "easy": " dễ ", "medium": " trong ", "hard": " Khó "}
 
 
 def col_row(ref: str):
@@ -136,7 +136,7 @@ def pick_col(headers: list[str], *needles: str) -> int | None:
 
 def parse_volume(raw: str) -> str:
     s = str(raw or "").strip()
-    m = re.search(r"(?:剑桥?|cam(?:bridge)?|c)\s*(\d{1,2})", s, re.I)
+    m = re.search(r"(?:Cambridge?|cam(?:bridge)?|c)\s*(\d{1,2})", s, re.I)
     if m:
         return str(int(m.group(1)))
     m = re.search(r"^(\d{1,2})(?:\.0)?$", s)
@@ -165,7 +165,7 @@ def parse_part(raw: str) -> int:
 def parse_q_range(a: str, b: str = "") -> tuple[int, int]:
     blob = " ".join([str(a or ""), str(b or "")])
     # ponytail: require Q so "Test 1 Part 2" is not Q1–2
-    m = re.search(r"Q\s*(\d+)\s*[-–—~到至]\s*(\d+)", blob, re.I)
+    m = re.search(r"Q\s*(\d+)\s*[-–-~đến đến]\s*(\d+)", blob, re.I)
     if m:
         return int(m.group(1)), int(m.group(2))
     m = re.search(r"Q\s*(\d+)\b", blob, re.I)
@@ -202,7 +202,7 @@ def norm_type(raw: str) -> str:
     for k, v in TYPE_ALIASES.items():
         if k in key or k in s:
             return v
-    return s if s.endswith("题") else (s + "题" if s else "")
+    return s if s.endswith(" Câu hỏi ") else (s + " Câu hỏi " if s else "")
 
 
 def norm_scene(raw: str) -> str:
@@ -215,34 +215,34 @@ def norm_diff(raw: str) -> str:
     if not s:
         return ""
     key = re.sub(r"\s+", "", s).lower()
-    return DIFF_ALIASES.get(key) or DIFF_ALIASES.get(s) or (s if s in ("易", "中", "难") else "")
+    return DIFF_ALIASES.get(key) or DIFF_ALIASES.get(s) or (s if s in (" dễ ", " trong ", " Khó ") else "")
 
 
 def find_header(rows: list[list[str]]) -> tuple[int, list[str]]:
     for i, row in enumerate(rows[:8]):
         joined = "".join(row)
-        if "剑桥系列" in joined or "题型" in joined or ("科目" in joined and "题号" in joined):
+        if " Cambridge loạt " in joined or " chủ đề khuôn " in joined or (" Môn học " in joined and " chủ đề gầm " in joined):
             return i, row
-    return -1, ["科目", "题号", "剑桥系列"]
+    return -1, [" Môn học ", " chủ đề gầm ", " Cambridge loạt "]
 
 
 def map_row(row: list[str], headers: list[str]) -> dict | None:
-    i_vol = pick_col(headers, "册", "剑桥", "volume", "book", "cam")
-    i_test = pick_col(headers, "test", "套题", "试卷")
-    i_part = pick_col(headers, "part", "section", "部分")
-    i_from = pick_col(headers, "起始", "题号起", "from", "qfrom", "开始题")
-    i_to = pick_col(headers, "结束", "题号止", "to", "qto", "结束题")
-    i_range = pick_col(headers, "题号", "题目", "范围", "questions")
-    i_title = pick_col(headers, "标题", "名称", "练习")
-    i_type = pick_col(headers, "题型", "题类", "type")
-    i_scene = pick_col(headers, "场景", "scene", "话题", "主题")
-    i_diff = pick_col(headers, "难度", "难易", "diff")
+    i_vol = pick_col(headers, " sách ", " Cambridge ", "volume", "book", "cam")
+    i_test = pick_col(headers, "test", " che đậy chủ đề ", " bài thi ")
+    i_part = pick_col(headers, "part", "section", " phần ")
+    i_from = pick_col(headers, " bắt nguồn ", " chủ đề gầm dậy ", "from", "qfrom", " bắt đầu chủ đề ")
+    i_to = pick_col(headers, " chấm dứt ", " chủ đề gầm dừng ", "to", "qto", " chấm dứt chủ đề ")
+    i_range = pick_col(headers, " chủ đề gầm ", " Câu hỏi ", " Phạm vi ", "questions")
+    i_title = pick_col(headers, " tiêu đề ", " tên ", " luyện tập ")
+    i_type = pick_col(headers, " chủ đề khuôn ", " chủ đề loại ", "type")
+    i_scene = pick_col(headers, " cảnh ", "scene", " chủ đề ", " chủ đề ")
+    i_diff = pick_col(headers, " Độ khó ", " độ khó ", "diff")
 
     vol = parse_volume(row[i_vol] if i_vol is not None and i_vol < len(row) else "")
     test = parse_test(row[i_test] if i_test is not None and i_test < len(row) else "")
     part = parse_part(row[i_part] if i_part is not None and i_part < len(row) else "")
     if not vol or not test:
-        # try whole row, e.g. "剑21 Test1 Part1 Q1-6"
+        # try whole row, e.g. " Cambridge 21 Test1 Part1 Q1-6"
         blob = " ".join(row)
         vol = vol or parse_volume(blob)
         test = test or parse_test(blob)
@@ -369,7 +369,7 @@ def main() -> None:
         vol, test, part = rec["volume"], rec["test"], rec["part"]
         q_from, q_to = rec["qFrom"], rec["qTo"]
         if not q_from:
-            # 题型练习 must have a range; skip empty
+            # chủ đề khuôn luyện tập must have a range; skip empty
             continue
         key = (vol, test, part)
         if key not in html:
@@ -387,7 +387,7 @@ def main() -> None:
             "part": part,
             "qFrom": q_from,
             "qTo": q_to,
-            "qType": rec["qType"] or "填空题",
+            "qType": rec["qType"] or " lấp chỗ trống công việc chủ đề ",
             "scene": rec["scene"],
             "diff": rec["diff"],
         })
@@ -437,7 +437,7 @@ def main() -> None:
     payload = {
         "types": types,
         "scenes": scenes,
-        "diffs": ["易", "中", "难"],
+        "diffs": [" dễ ", " trong ", " Khó "],
         "groups": groups,
         "parts": parts,
     }

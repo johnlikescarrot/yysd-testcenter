@@ -1,4 +1,4 @@
-/* IELTS CDT chrome — parent shell for suite mock (exam.html?cdt=1) */
+/* IELTS CDT chrome - parent shell for suite mock (exam.html?cdt=1) */
 
 body.viewer.viewer--cdt {
   background: #d9e1ec;
@@ -6,7 +6,7 @@ body.viewer.viewer--cdt {
   height: 100%;
 }
 
-/* ponytail: parent :fullscreen — size from FS box, not 100vh (vh breaks iframe inset) */
+/* ponytail: parent :fullscreen - size from FS box, not 100vh (vh breaks iframe inset) */
 html:fullscreen,
 html:-webkit-full-screen {
   width: 100%;
@@ -23,7 +23,7 @@ body.viewer.viewer--cdt .viewer-bar {
   display: none !important;
 }
 
-/* Fixed chrome — same stack in windowed + parent fullscreen */
+/* Fixed chrome - same stack in windowed + parent fullscreen */
 body.viewer.viewer--cdt .cdt-header {
   position: fixed !important;
   top: 0;
@@ -406,7 +406,7 @@ body.viewer.viewer--after-cdt .viewer-frame {
   color: #222;
 }
 
-/* —— Header —— */
+/* -- Header -- */
 .cdt-header {
   display: none;
   align-items: center;
@@ -574,7 +574,7 @@ html:-webkit-full-screen body.viewer.viewer--cdt.viewer--cdt-listen-review:not(.
   min-width: 72px;
 }
 
-/* —— Footer —— */
+/* -- Footer -- */
 .cdt-footer {
   display: none;
   align-items: center;
@@ -715,7 +715,7 @@ body.viewer.viewer--cdt .cdt-footer {
   cursor: default;
 }
 
-/* —— Hide screen —— */
+/* -- Hide screen -- */
 .cdt-hide-screen {
   position: fixed;
   inset: 0;
@@ -765,7 +765,7 @@ body.viewer.viewer--cdt .cdt-footer {
   min-width: 140px;
 }
 
-/* —— Modals —— */
+/* -- Modals -- */
 .cdt-modal-mask {
   position: fixed;
   inset: 0;
@@ -938,7 +938,7 @@ body.viewer.viewer--cdt .cdt-footer {
 
 .cdt-help-panel[hidden] { display: none !important; }
 
-/* B4 Notepad — floating private pad (not tied to a highlight) */
+/* B4 Notepad - floating private pad (not tied to a highlight) */
 .cdt-notepad {
   position: fixed;
   z-index: 60;

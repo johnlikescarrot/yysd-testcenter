@@ -1,8 +1,8 @@
-# 模考区 / 托福模考
+# bắt chước khu vực thi / TOEFL bắt chước đánh
 
-**把「托福模考卷」的 HTML 文件上传到这个文件夹即可自动归类。**
+**hãy«TOEFL bắt chước giấy thi»của HTML tài liệu tải lên đến này thư mục tương đương với tự động phân loại **
 
-- 板块：🎯 模考区 (mock)
-- 科目：托福 (toefl)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- tấm: 🎯 bắt chước khu vực thi (mock)
+- Môn học: TOEFL (toefl)
+- tải lên cách thức: tồn tại văn bản này món ép từ hai phía điểm `Add file` → `Upload files` → biến thể của đi vào HTML → `Commit changes`
+- cân trong cân đĩa hoặc trên cân 1 phút hoàng hậu tự động xuất hiện tồn tại trang web tương ứng với phân loại xuống, không cần thiết khác làm việc 

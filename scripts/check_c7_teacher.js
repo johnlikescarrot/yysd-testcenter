@@ -8,8 +8,8 @@ function must(cond, msg) { if (!cond) throw new Error(msg); }
 var t1 = read("cambridge-7-test-1.html");
 must(t1.indexOf('"html": "Greyhound bus"') >= 0, "T1 Greyhound heading");
 must(t1.indexOf("direct to the <Q n=\\\"2\\\">") >= 0, "T1 Q2 own line");
-must(t1.indexOf("Greyhound bus — $15") < 0, "T1 no one-line Greyhound");
-must(t1.indexOf("Airport Shuttle —") < 0, "T1 no one-line Shuttle");
+must(t1.indexOf("Greyhound bus - $15") < 0, "T1 no one-line Greyhound");
+must(t1.indexOf("Airport Shuttle -") < 0, "T1 no one-line Shuttle");
 must(t1.indexOf("need to <Q n=\\\"5\\\">") >= 0, "T1 Q5");
 must(t1.indexOf("Rock art in Namibia may be paintings or engravings") < 0, "T1 P4 not one sentence");
 must(t1.indexOf('"html": "paintings"') >= 0, "T1 paintings bullet");
@@ -30,7 +30,7 @@ must(t2.indexOf("bookshop specialising in the <Q n=\\\"17\\\">") >= 0, "T2 Q17 s
 must(t2.indexOf("Entertainment Complex") >= 0, "T2 Q18 attraction");
 must(t2.indexOf("<Q n=\\\"18\\\"> cinema") >= 0, "T2 Q18 in info col");
 must(t2.indexOf("<Q n=\\\"27\\\"><br>to ........................") >= 0, "T2 Q27 to blanks");
-must(t2.indexOf("此题请以 ___ to ___ 形式作答") >= 0, "T2 Q27 format hint");
+must(t2.indexOf(" này chủ đề mời biến thể cũ của ___ to ___ bề ngoài trả lời ") >= 0, "T2 Q27 format hint");
 
 var t3 = read("cambridge-7-test-3.html");
 must(t3.indexOf("Room No. <Q n=\\\"7\\\">") >= 0, "T3 Q7 under Address");

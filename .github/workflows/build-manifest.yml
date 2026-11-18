@@ -2,7 +2,7 @@ name: Rebuild content list
 
 # Whenever a content HTML file is added, changed, or removed in the library/
 # folder, regenerate library/manifest.json automatically and commit it back.
-# This lets the admin add content just by uploading files — no code needed.
+# This lets the admin add content just by uploading files - no code needed.
 
 on:
   push:
@@ -58,7 +58,7 @@ jobs:
           git config user.name  "yysd-bot"
           git config user.email "actions@github.com"
           if git diff --quiet -- library/manifest.json; then
-            echo "manifest.json unchanged — nothing to commit."
+            echo "manifest.json unchanged - nothing to commit."
           else
             git add library/manifest.json
             git commit -m "chore: rebuild content manifest [skip ci]"
