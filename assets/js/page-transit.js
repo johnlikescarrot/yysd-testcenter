@@ -3,7 +3,7 @@
   "use strict";
 
   /* ponytail: two tiers only; add 'panel' later if in-page swaps need a shared helper */
-  var MS = { light: 160, scene: 280 };
+  var MS = { light: 100, scene: 160 };
   var SCENE = {
     "cdt-report.html": 1,
     "speaking-session.html": 1,
@@ -32,12 +32,10 @@
   css.textContent =
     "@keyframes yysdFadeOut{to{opacity:0}}" +
     "@keyframes yysdFadeIn{from{opacity:0}to{opacity:1}}" +
-    "@keyframes yysdSilkIn{from{opacity:0;transform:translateY(14px) scale(.988);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}" +
-    "@keyframes yysdSilkOut{from{opacity:1;transform:none;filter:none}to{opacity:0;transform:translateY(-8px) scale(.992);filter:blur(2px)}}" +
-    "html.yysd-page-leave--light body{animation:yysdFadeOut .16s cubic-bezier(.4,0,.2,1) both;pointer-events:none}" +
-    "html.yysd-page-enter--light body{animation:yysdFadeIn .2s cubic-bezier(.22,1,.36,1) both}" +
-    "html.yysd-page-leave--scene body{animation:yysdSilkOut .28s cubic-bezier(.4,0,.2,1) both;pointer-events:none}" +
-    "html.yysd-page-enter--scene body{animation:yysdSilkIn .42s cubic-bezier(.22,1,.36,1) both}" +
+    "html.yysd-page-leave--light body{animation:yysdFadeOut .1s ease-out both}" +
+    "html.yysd-page-enter--light body{animation:yysdFadeIn .1s ease-out both}" +
+    "html.yysd-page-leave--scene body{animation:yysdFadeOut .16s ease-out both}" +
+    "html.yysd-page-enter--scene body{animation:yysdFadeIn .16s ease-out both}" +
     "@media (prefers-reduced-motion:reduce){html[class*=yysd-page-] body{animation:none!important}}";
   (document.head || document.documentElement).appendChild(css);
 
@@ -69,7 +67,9 @@
     );
   }
 
+  var pending;
   function go(href, opts) {
+    clearTimeout(pending);
     if (!href) return;
     var explicit = typeof opts === "string" ? opts : opts && opts.tier;
     var tier = resolveTier(href, explicit);
@@ -81,7 +81,7 @@
       sessionStorage.setItem("yysd:silk", tier);
     } catch (e) {}
     document.documentElement.classList.add("yysd-page-leave", "yysd-page-leave--" + tier);
-    window.setTimeout(function () {
+    pending = window.setTimeout(function () {
       location.href = href;
     }, MS[tier] || MS.light);
   }

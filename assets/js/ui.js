@@ -134,3 +134,128 @@
     }
   });
 })();
+
+/* Shared portal surfaces. Native exam dialogs inside timed papers are separate. */
+(function () {
+  "use strict";
+  var script = document.currentScript;
+  var cssHref = new URL("../css/confirm.css", script && script.src || new URL("assets/js/ui.js", document.baseURI)).href;
+  var timers = new WeakMap();
+  var sources = new WeakMap();
+  var lastPtr = null;
+  document.addEventListener("pointerdown", function (e) {
+    lastPtr = { target: e.target, x: e.clientX, y: e.clientY };
+  }, true);
+
+  function anchorPanel(panel, source) {
+    if (!panel || !source) return;
+    var bounds = panel.getBoundingClientRect();
+    var from = source.getBoundingClientRect();
+    var hit = lastPtr && source.contains(lastPtr.target) ? lastPtr : { x: from.x + from.width / 2, y: from.y + from.height / 2 };
+    panel.style.transformOrigin = Math.max(0, Math.min(bounds.width, hit.x - bounds.x)) + "px " +
+      Math.max(0, Math.min(bounds.height, hit.y - bounds.y)) + "px";
+  }
+
+  window.YYSD_SURFACE = function (el, open, trigger) {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    clearTimeout(timers.get(el));
+    el.setAttribute("data-surface", "");
+    if (open) {
+      var source = trigger || document.activeElement;
+      sources.set(el, source);
+      if (source && source !== document.body) source.classList.add("is-surface-source");
+      el.hidden = false;
+      el.inert = false;
+      anchorPanel(el.querySelector(".cal-modal__panel"), source);
+      // Read after unhiding so an opening transition can reverse a closing one.
+      el.getBoundingClientRect();
+      el.classList.add("is-open");
+    } else {
+      el.classList.remove("is-open");
+      el.inert = true;
+      var origin = sources.get(el);
+      if (origin) {
+        origin.classList.remove("is-surface-source");
+        if (origin.isConnected && origin !== document.body) origin.focus();
+      }
+      sources.delete(el);
+      var hide = function () { el.hidden = true; timers.delete(el); };
+      if (reduced) hide();
+      else timers.set(el, setTimeout(hide, 180));
+    }
+  };
+
+  // A sheet can be dismissed using its close button, Escape or a short flick of
+  // its grip. Never take over scrolling, selection, or gestures in the content.
+  function projectY(dy, elapsed) { return dy + 90 * dy / Math.max(32, elapsed); }
+  window.YYSD_BIND_SHEET = function (panel, dismiss) {
+    if (!panel || panel.querySelector(".cal-sheet-grip")) return;
+    var grip = document.createElement("div");
+    grip.className = "cal-sheet-grip";
+    grip.setAttribute("aria-hidden", "true");
+    panel.prepend(grip);
+    var drag;
+    grip.addEventListener("pointerdown", function (e) {
+      drag = { y: e.clientY, start: e.timeStamp, id: e.pointerId };
+      grip.setPointerCapture(e.pointerId);
+    });
+    grip.addEventListener("pointermove", function (e) {
+      if (drag && drag.id === e.pointerId) panel.style.translate = "0 " + Math.max(0, e.clientY - drag.y) + "px";
+    });
+    function end(e) {
+      if (!drag || drag.id !== e.pointerId) return;
+      var dy = Math.max(0, e.clientY - drag.y);
+      var close = e.type === "pointerup" && dy >= 24 && projectY(dy, e.timeStamp - drag.start) > 96;
+      drag = null;
+      panel.style.removeProperty("translate");
+      if (close) dismiss();
+    }
+    grip.addEventListener("pointerup", end);
+    grip.addEventListener("pointercancel", end);
+  };
+
+  function ask(message, alertOnly) {
+    if (document.querySelector("dialog.yysd-decision[open]")) return Promise.resolve(false);
+    if (!document.getElementById("yysd-confirm-css")) {
+      var css = document.createElement("link");
+      css.id = "yysd-confirm-css";
+      css.rel = "stylesheet";
+      css.href = cssHref;
+      document.head.appendChild(css);
+    }
+    var dialog = document.createElement("dialog");
+    dialog.className = "yysd-decision cal-modal--confirm";
+    dialog.setAttribute("aria-labelledby", "yysd-decision-title");
+    dialog.setAttribute("aria-describedby", "yysd-decision-message");
+    var title = document.createElement("h2");
+    title.id = "yysd-decision-title";
+    title.textContent = alertOnly ? "Thông báo" : "Xác nhận";
+    var body = document.createElement("p");
+    body.id = "yysd-decision-message";
+    body.textContent = message;
+    var form = document.createElement("form");
+    form.method = "dialog";
+    function choice(value, label) {
+      var b = document.createElement("button");
+      b.type = "submit";
+      b.value = value;
+      b.textContent = label;
+      form.appendChild(b);
+    }
+    if (!alertOnly) choice("no", "Hủy");
+    choice("yes", alertOnly ? "Đóng" : "Đồng ý");
+    dialog.append(title, body, form);
+    document.body.appendChild(dialog);
+    return new Promise(function (resolve) {
+      dialog.addEventListener("close", function () {
+        var accepted = dialog.returnValue === "yes";
+        dialog.remove();
+        resolve(accepted);
+      }, { once: true });
+      dialog.showModal();
+    });
+  }
+  window.YYSD_CONFIRM = function (message) { return ask(message, false); };
+  window.YYSD_ALERT = function (message) { return ask(message, true); };
+  window.YYSD_ASK = window.YYSD_CONFIRM;
+})();

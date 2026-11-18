@@ -416,7 +416,10 @@
       e.preventDefault();
       var back = exitHref();
       if (state.phase === "play" || state.phase === "feedback") {
-        if (!confirm(battle ? "战斗还没结束，确定撤退？" : "小课还没结束，确定离开？")) return;
+        window.YYSD_ASK(battle ? "Thử thách chưa kết thúc. Bạn muốn rời đi?" : "Bài học chưa hoàn thành. Bạn muốn rời đi?").then(function (leave) {
+          if (leave) location.href = back;
+        });
+        return;
       }
       location.href = back;
     });

@@ -474,13 +474,30 @@
       }).join("") + "</ul>";
     }
     body.innerHTML = head + list;
-    modal.hidden = false;
+    var panel = modal.querySelector(".cal-modal__panel");
+    window.YYSD_BIND_SHEET(panel, closeAttemptDetail);
+    window.YYSD_SURFACE(modal, true, document.activeElement);
+    panel.querySelector("button").focus();
   }
 
   function closeAttemptDetail() {
     var modal = document.getElementById("attempt-modal");
-    if (modal) modal.hidden = true;
+    if (modal) window.YYSD_SURFACE(modal, false);
   }
+
+  document.addEventListener("keydown", function (event) {
+    var modal = document.getElementById("attempt-modal");
+    if (!modal || modal.hidden || modal.inert) return;
+    if (event.key === "Escape") closeAttemptDetail();
+    if (event.key === "Tab") {
+      var controls = modal.querySelectorAll("button, a[href]");
+      var edge = event.shiftKey ? controls[0] : controls[controls.length - 1];
+      if (edge && document.activeElement === edge) {
+        event.preventDefault();
+        (event.shiftKey ? controls[controls.length - 1] : controls[0]).focus();
+      }
+    }
+  });
 
   function setView(studentMode) {
     if (rosterHead) rosterHead.hidden = !!studentMode;

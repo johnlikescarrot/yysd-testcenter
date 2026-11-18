@@ -10173,3 +10173,61 @@ html:has(.home-apple-keynote) {
   .ha-demo__caption,
   .ha-demo__ripple { display: none !important; }
 }
+
+/* Only navigation and modal chrome use glass; CDT content keeps its own rules. */
+:root {
+  --chrome-bg: rgb(255 252 247 / 85%);
+  --chrome-blur: 20px;
+  --press-scale: .985;
+}
+.minimal-topbar.reme-topbar .minimal-topbar__inner, .mobile-tabs {
+  background: var(--chrome-bg);
+  backdrop-filter: blur(var(--chrome-blur)) saturate(180%);
+}
+.minimal-topbar::after, .mobile-tabs::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  height: 5px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgb(7 25 47 / 7%), transparent);
+}
+.minimal-topbar::after { top: 100%; }
+.mobile-tabs::before { bottom: 100%; transform: rotate(180deg); }
+.nav-drawer[hidden], .nav-drawer-overlay[hidden] { display: none; }
+.nav-drawer[data-surface] { transition: transform 180ms ease-out; transform: translateX(100%); }
+.nav-drawer.is-open { transform: translateX(0); }
+.cal-modal[data-surface] .cal-modal__panel {
+  opacity: 0;
+  transform: scale(.98);
+  filter: blur(2px);
+  transition: opacity 180ms ease-out, transform 180ms ease-out, filter 180ms ease-out;
+}
+.cal-modal.is-open .cal-modal__panel { opacity: 1; transform: none; filter: none; }
+.cal-modal--confirm { max-width: calc(100vw - 2rem); }
+.is-surface-source { outline: 2px solid var(--brand-gold); outline-offset: 2px; }
+.exam-card:active { transform: scale(var(--press-scale)); }
+.cal-sheet-grip { display: none; }
+@media (hover: none) and (max-width: 700px) {
+  .cal-modal[data-surface] { align-items: end; padding: 0; }
+  .cal-modal[data-surface] .cal-modal__panel { border-radius: 20px 20px 0 0; }
+  .cal-sheet-grip { display: grid; place-items: center; height: 25px; touch-action: none; }
+  .cal-sheet-grip::after { content: ""; width: 42px; height: 4px; border-radius: 4px; background: #8b959f; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .minimal-topbar.reme-topbar .minimal-topbar__inner, .mobile-tabs { background: #fffcf7; backdrop-filter: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer[data-surface], .cal-modal[data-surface] .cal-modal__panel { transition: none; filter: none; }
+  .exam-card:active { transform: none; }
+}
+
+/* Vietnamese headings need natural word wrapping instead of CJK one-line labels. */
+html[lang="vi"] .ha-line { white-space: normal; text-wrap: balance; }
+html[lang="vi"] .ha-panel .minimal-shell > *, html[lang="vi"] .ha-cdt-app__copy { min-width: 0; }
+@media (max-width: 820px) {
+  .home-apple-keynote .ha-hero__inner,
+  .home-apple-keynote .ha-feature__inner,
+  .home-apple-keynote .ha-feature--flip .ha-feature__inner { grid-template-columns: minmax(0, 1fr); }
+  .ha-planner__cover { flex-wrap: wrap; }
+}

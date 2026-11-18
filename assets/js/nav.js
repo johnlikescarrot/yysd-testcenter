@@ -350,7 +350,8 @@
   function setDrawer(open) {
     if (menuBtn) menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     overlay.hidden = !open;
-    drawer.hidden = !open;
+    if (window.YYSD_SURFACE) window.YYSD_SURFACE(drawer, open, menuBtn);
+    else drawer.hidden = !open;
     document.body.classList.toggle("nav-drawer-open", open);
     if (open) {
       setMega(false);
@@ -361,15 +362,23 @@
   if (menuBtn) {
     menuBtn.addEventListener("click", function () {
       rebuildDrawer();
-      setDrawer(drawer.hidden);
+      setDrawer(menuBtn.getAttribute("aria-expanded") !== "true");
     });
   }
   closeBtn.addEventListener("click", function () { setDrawer(false); });
   overlay.addEventListener("click", function () { setDrawer(false); });
 
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Tab" && !drawer.hidden && !drawer.inert) {
+      var links = drawer.querySelectorAll("a[href],button");
+      var end = e.shiftKey ? links[0] : links[links.length - 1];
+      if (document.activeElement === end) {
+        e.preventDefault();
+        (e.shiftKey ? links[links.length - 1] : links[0]).focus();
+      }
+    }
     if (e.key !== "Escape") return;
-    if (!drawer.hidden) setDrawer(false);
+    if (!drawer.hidden && !drawer.inert) setDrawer(false);
     if (mega && mega.classList.contains("is-open")) setMega(false);
   });
 

@@ -1,0 +1,27 @@
+/* Loaded on demand; embedded study players need not import the full portal CSS. */
+dialog.yysd-decision {
+  box-sizing: border-box;
+  width: min(26rem, calc(100% - 2rem));
+  padding: 1.4rem;
+  border: 1px solid #d8cbb5;
+  border-radius: 1rem;
+  background: #fffcf7;
+  color: #101827;
+  font: 1rem/1.55 system-ui, sans-serif;
+}
+.yysd-decision::backdrop { background: rgb(7 25 47 / 45%); }
+.yysd-decision h2 { margin: 0; font-size: 1.25rem; }
+.yysd-decision p { margin: .8rem 0 1.2rem; white-space: pre-line; }
+.yysd-decision form { display: flex; flex-wrap: wrap; gap: .7rem; justify-content: end; }
+.yysd-decision button {
+  min-height: 44px;
+  padding: .55rem 1.2rem;
+  border: 1px solid #c6baa3;
+  border-radius: .6rem;
+  background: #fff;
+  color: #102a4c;
+  font: inherit;
+  cursor: pointer;
+}
+.yysd-decision button[value="yes"] { background: #102a4c; color: white; }
+.yysd-decision button:focus-visible { outline: 2px solid #775614; outline-offset: 3px; }
