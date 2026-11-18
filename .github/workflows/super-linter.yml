@@ -49,6 +49,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Tạo nhánh tham chiếu main
+        run: git branch -f main HEAD
+
       - name: Super-Linter
         id: lint
         continue-on-error: true
