@@ -60,9 +60,10 @@ jobs:
       - name: Verify the configured checks ran
         shell: bash
         run: |
+          # Super-Linter v9 adds a summary row only for a validator that checked files.
           for kind in GITHUB_ACTIONS HTML CSS JAVASCRIPT_ES JSON; do
-            if ! sudo grep -qF "Linting ${kind} items..." super-linter.log; then
-              printf '::error title=Super-Linter::No files were checked for %s.\n' "$kind"
+            if ! sudo grep -Eq "^\| ${kind} +\| Pass " super-linter-output/super-linter-summary.md; then
+              printf '::error title=Super-Linter::No passing result was recorded for %s.\n' "$kind"
               exit 1
             fi
           done
@@ -104,11 +105,11 @@ jobs:
           cache: npm
           cache-dependency-path: quality/package-lock.json
       - run: npm ci
+      - run: npm run pdf
+      - run: npm run audio
       - name: Verify reproducible handbooks and audio
-        run: |
-          npm run pdf
-          npm run audio
-          git diff --exit-code -- ../ielts-vi/resources/ ../ielts-vi/audio/
+        working-directory: .
+        run: git diff --exit-code -- ielts-vi/resources/ ielts-vi/audio/
       - run: npm test
       - run: npm run build
       - run: npm run test:browser
