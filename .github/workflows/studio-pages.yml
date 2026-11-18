@@ -9,6 +9,8 @@ on:
       - "scripts/studio/**"
       - "package*.json"
       - "data/speaking/**"
+      - "assets/js/exam-bridge.js"
+      - "scripts/cambridge_localized.py"
       - "library/mock/cambridge-*/**"
       - "library/practice/ielts/**"
       - "library/mock/ielts/**"
@@ -25,7 +27,7 @@ permissions:
   contents: read
 jobs:
   verify:
-    if: github.event_name != 'push' || github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, '[publish-pages]')
+    if: github.event_name != 'push' || github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, '[publish-pages]') || contains(github.event.head_commit.message, '[package-pages]')
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
