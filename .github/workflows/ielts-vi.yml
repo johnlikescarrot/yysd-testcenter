@@ -62,6 +62,9 @@ jobs:
             /quality/
             /*.html
             /assets/
+            /app/assets/
+            /app/free.html
+            /app/library/toefl/free/index.json
             /library/*-catalog.json
             /library/*taxonomy.json
             /library/manifest.json

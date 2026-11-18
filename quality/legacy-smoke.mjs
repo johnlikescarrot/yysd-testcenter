@@ -133,6 +133,15 @@ await withChrome(async (browser) => {
   assert.match(await page.$eval('#btn-download', (el) => el.href), /9231_w25_qp_11\.pdf$/);
   assert.ok(await page.$('a[download][href="ielts-vi/resources/tu-de-den-loi-giai.pdf"]'));
   noHan(await titleOf(page, '#view-title'));
+  await go('app/free.html?skill=reading');
+  await page.waitForSelector('[data-free-list] .hit-set-row');
+  await page.type('[name="query"]', 'khoa hoc tu nhien');
+  await page.waitForFunction(() => document.querySelector('[data-free-list] .hit-set-row h4')?.textContent === 'Khoa học tự nhiên');
+  assert.match(await titleOf(page, '[data-free-list] .hit-set-row'), /Độ khó: (Dễ|Trung bình|Khó)/);
+  noHan(await titleOf(page, 'main'));
+  await page.select('[name="status"]', 'done');
+  await page.waitForSelector('.hit-empty');
+  assert.match(await titleOf(page, '.hit-empty'), /Không có bài luyện phù hợp/);
   assert.deepEqual(errors, []);
-  console.log('Hub, Vietnamese account errors, school branding, Cambridge catalog, three skills, report and PDF reader passed.');
+  console.log('Passed: hub and tenant accounts, Cambridge L/R/W, three placement tests, PDF reader, and Vietnamese TOEFL search and filters.');
 });

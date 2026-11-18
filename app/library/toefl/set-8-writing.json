@@ -81,9 +81,9 @@
         "lab",
         "session"
       ],
-      "analysis": "正确顺序：I had a conflict with my lab session.",
+      "analysis": "Thứ tự đúng: I had a conflict with my lab session.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -134,9 +134,9 @@
         "other",
         "students"
       ],
-      "analysis": "正确顺序：Would you recommend it to other students?",
+      "analysis": "Thứ tự đúng: Would you recommend it to other students?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -192,9 +192,9 @@
         "scholarship",
         "program"
       ],
-      "analysis": "正确顺序：She wanted to announce the new scholarship program.",
+      "analysis": "Thứ tự đúng: She wanted to announce the new scholarship program.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -250,9 +250,9 @@
         "by",
         "Friday"
       ],
-      "analysis": "正确顺序：He said we should submit it by Friday.",
+      "analysis": "Thứ tự đúng: He said we should submit it by Friday.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -308,9 +308,9 @@
         "our",
         "paper"
       ],
-      "analysis": "正确顺序：She asked who would be presenting our paper.",
+      "analysis": "Thứ tự đúng: She asked who would be presenting our paper.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -366,9 +366,9 @@
         "it",
         "together"
       ],
-      "analysis": "正确顺序：Do you want to go see it together?",
+      "analysis": "Thứ tự đúng: Do you want to go see it together?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -419,9 +419,9 @@
         "in",
         "it"
       ],
-      "analysis": "正确顺序：Are you planning to enroll in it?",
+      "analysis": "Thứ tự đúng: Are you planning to enroll in it?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -482,9 +482,9 @@
         "recruit",
         "students"
       ],
-      "analysis": "正确顺序：He wanted to learn new ways to recruit students.",
+      "analysis": "Thứ tự đúng: He wanted to learn new ways to recruit students.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -535,9 +535,9 @@
         "this",
         "weekend"
       ],
-      "analysis": "正确顺序：We should go visit it this weekend.",
+      "analysis": "Thứ tự đúng: We should go visit it this weekend.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -588,16 +588,16 @@
         "caused",
         "the issue"
       ],
-      "analysis": "正确顺序：The university bulletin mentioned that they are investigating what caused the issue.",
+      "analysis": "Thứ tự đúng: The university bulletin mentioned that they are investigating what caused the issue.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Damaged Furniture",
-      "titleZh": "家具损坏",
+      "titleZh": "Đồ nội thất bị hư hỏng",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently purchased a piece of furniture for your dorm room from an online store called 'Home Comforts.' When the item arrived, you discovered that it was damaged during shipping. You are disappointed because you were looking forward to using the new furniture. You need to contact customer service to resolve the issue.",
       "bullets": [
@@ -615,7 +615,7 @@
       "module": 3,
       "id": 12,
       "title": "Brand Loyalty vs New Customers",
-      "titleZh": "品牌忠诚与新客",
+      "titleZh": "Khách hàng trung thành và khách hàng mới",
       "class": "Marketing",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {

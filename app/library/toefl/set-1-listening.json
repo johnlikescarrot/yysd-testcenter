@@ -34,7 +34,7 @@
           "analysis": "问课堂笔记在哪。B 说去课程网站上看。A 是课后，C 是长度，D 是格式。"
         }
       ],
-      "titleZh": "听句选回应 01"
+      "titleZh": "Nghe và chọn lời đáp 01"
     },
     {
       "type": "choose_response",
@@ -58,7 +58,7 @@
           "analysis": "问谁负责募款。B 说正在考虑几位人选。"
         }
       ],
-      "titleZh": "听句选回应 02"
+      "titleZh": "Nghe và chọn lời đáp 02"
     },
     {
       "type": "choose_response",
@@ -82,7 +82,7 @@
           "analysis": "问学习小组人数。D 回答至少五人会来。"
         }
       ],
-      "titleZh": "听句选回应 03"
+      "titleZh": "Nghe và chọn lời đáp 03"
     },
     {
       "type": "choose_response",
@@ -106,7 +106,7 @@
           "analysis": "Peter 去找物资。C 说把清单给他。"
         }
       ],
-      "titleZh": "听句选回应 04"
+      "titleZh": "Nghe và chọn lời đáp 04"
     },
     {
       "type": "choose_response",
@@ -130,7 +130,7 @@
           "analysis": "空调坏了。B 说要联系维修。"
         }
       ],
-      "titleZh": "听句选回应 05"
+      "titleZh": "Nghe và chọn lời đáp 05"
     },
     {
       "type": "choose_response",
@@ -154,7 +154,7 @@
           "analysis": "问客座讲师是谁。D 说是一位访问研究员。"
         }
       ],
-      "titleZh": "听句选回应 06"
+      "titleZh": "Nghe và chọn lời đáp 06"
     },
     {
       "type": "choose_response",
@@ -178,7 +178,7 @@
           "analysis": "问今天的辅导老师。C 说大概还是上周那位。"
         }
       ],
-      "titleZh": "听句选回应 07"
+      "titleZh": "Nghe và chọn lời đáp 07"
     },
     {
       "type": "choose_response",
@@ -202,7 +202,7 @@
           "analysis": "怀疑大面积停电。D 说宿舍外路灯还亮着，说明未必全停。"
         }
       ],
-      "titleZh": "听句选回应 08"
+      "titleZh": "Nghe và chọn lời đáp 08"
     },
     {
       "type": "choose_response",
@@ -226,7 +226,7 @@
           "analysis": "问户外比赛怎么了。A 说因雨取消。"
         }
       ],
-      "titleZh": "听句选回应 09"
+      "titleZh": "Nghe và chọn lời đáp 09"
     },
     {
       "type": "choose_response",
@@ -250,7 +250,7 @@
           "analysis": "问园艺课好不好。A 说很有收获。"
         }
       ],
-      "titleZh": "听句选回应 10"
+      "titleZh": "Nghe và chọn lời đáp 10"
     },
     {
       "type": "choose_response",
@@ -274,7 +274,7 @@
           "analysis": "请调低音量。C 表示抱歉并答应。"
         }
       ],
-      "titleZh": "听句选回应 11"
+      "titleZh": "Nghe và chọn lời đáp 11"
     },
     {
       "type": "choose_response",
@@ -298,7 +298,7 @@
           "analysis": "问图书馆几点关。A 直接回答时间。"
         }
       ],
-      "titleZh": "听句选回应 12"
+      "titleZh": "Nghe và chọn lời đáp 12"
     },
     {
       "type": "conversation",
@@ -335,7 +335,7 @@
           "analysis": "店员说 I'll get another in that color for you from our stock。"
         }
       ],
-      "titleZh": "退换毛衣"
+      "titleZh": "Đổi hoặc trả áo len"
     },
     {
       "type": "conversation",
@@ -372,7 +372,7 @@
           "analysis": "女士先去邮局，之后再帮他买菜。下一步是去邮局。"
         }
       ],
-      "titleZh": "晚宴采购"
+      "titleZh": "Mua sắm cho bữa tiệc tối"
     },
     {
       "type": "conversation",
@@ -409,7 +409,7 @@
           "analysis": "草地上坐着听，他也带毯子，表示会和朋友坐草地。"
         }
       ],
-      "titleZh": "校园音乐会"
+      "titleZh": "Buổi hòa nhạc trong trường"
     },
     {
       "type": "conversation",
@@ -446,7 +446,7 @@
           "analysis": "他已有两个社团，解释自己没空参加。"
         }
       ],
-      "titleZh": "校园壁画项目"
+      "titleZh": "Dự án vẽ tranh tường trong trường"
     },
     {
       "type": "conversation",
@@ -483,7 +483,7 @@
           "analysis": "女士说 she is rescheduled for tomorrow，课改到明天，暗示男士明天可以去上瑜伽课。"
         }
       ],
-      "titleZh": "瑜伽课取消"
+      "titleZh": "Hủy lớp yoga"
     },
     {
       "type": "announcement",
@@ -520,7 +520,7 @@
           "analysis": "I'll pass out a detailed map。"
         }
       ],
-      "titleZh": "画作特展导览"
+      "titleZh": "Tham quan triển lãm tranh chuyên đề"
     },
     {
       "type": "announcement",
@@ -557,7 +557,7 @@
           "analysis": "valuable insights for your upcoming group project。"
         }
       ],
-      "titleZh": "气候政策讲座"
+      "titleZh": "Bài giảng về chính sách khí hậu"
     },
     {
       "type": "announcement",
@@ -594,7 +594,7 @@
           "analysis": "refer to what you've learned in your other business courses，到以往商科课里找理论。"
         }
       ],
-      "titleZh": "商科独立研究课"
+      "titleZh": "Học phần nghiên cứu độc lập ngành kinh doanh"
     },
     {
       "type": "lecture",
@@ -655,7 +655,7 @@
           "analysis": "高速要多倾斜但不能过度，否则人车都会倒。"
         }
       ],
-      "titleZh": "自行车转弯与惯性"
+      "titleZh": "Quán tính khi xe đạp rẽ"
     }
   ]
 }

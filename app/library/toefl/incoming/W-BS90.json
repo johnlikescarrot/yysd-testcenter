@@ -14,7 +14,7 @@
       "id": 891,
       "set": "W-BS90-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I need to get to the train station from the university library.",
       "parts": [
         { "t": "The bus route " },
@@ -34,7 +34,7 @@
       "id": 892,
       "set": "W-BS90-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I want to start biking to campus, but I don't know where to park my bicycle.",
       "parts": [
         { "t": "The parking area " },
@@ -55,7 +55,7 @@
       "id": 893,
       "set": "W-BS90-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "The Student Employment Office said they need our documents before we can start working.",
       "parts": [
         { "slot": true },
@@ -77,7 +77,7 @@
       "id": 894,
       "set": "W-BS90-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Which campus resource helped you manage stress during exams week?",
       "parts": [
         { "slot": true },
@@ -99,7 +99,7 @@
       "id": 895,
       "set": "W-BS90-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Are you interested in the job opening in the school's library?",
       "parts": [
         { "t": "I " },

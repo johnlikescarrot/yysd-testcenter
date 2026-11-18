@@ -135,7 +135,6 @@ items.forEach(function (it) {
 });
 I18N.assignListenCodes(items);
 
-fs.writeFileSync(OUT, JSON.stringify({ generated: new Date().toISOString().slice(0, 10), items: items }, null, 2));
 console.log("ok toefl-lab-index", items.length, "cards");
 if (items.length < 50) throw new Error("lab index too small");
 var skills = {};
@@ -145,10 +144,16 @@ items.forEach(function (it) { skills[it.skill] = (skills[it.skill] || 0) + 1; })
 });
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 must(items.filter(function (it) { return it.titleEn === "Campus Bike Repair"; }).length >= 2, "bike titles");
-must(items.some(function (it) { return it.listenCode === "C02" && it.titleEn === "Film Club" && it.titleZh === "电影社"; }), "film set code");
-must(items.some(function (it) { return it.titleEn === "University Registration Office" && it.titleZh.indexOf("注册") >= 0; }), "reg office");
-must(items.some(function (it) { return it.titleEn === "Coral Reefs" && it.titleZh === "珊瑚礁"; }), "coral");
-must(items.some(function (it) { return it.titleEn === "Ancient Greece and Rome" && it.titleZh.indexOf("罗马") >= 0; }), "greece");
-must(items.some(function (it) { return it.skill === "writing" && it.titleEn === "New Library Opening" && it.titleZh.indexOf("图书馆") >= 0; }), "library opening");
+must(items.some(function (it) { return it.listenCode === "C02" && it.titleEn === "Film Club" && it.titleZh === "Câu lạc bộ điện ảnh"; }), "film set code");
+must(items.some(function (it) { return it.titleEn === "University Registration Office" && it.titleZh.indexOf("đăng ký") >= 0; }), "reg office");
+must(items.some(function (it) { return it.titleEn === "Coral Reefs" && it.titleZh === "Rạn san hô"; }), "coral");
+must(items.some(function (it) { return it.titleEn === "Ancient Greece and Rome" && it.titleZh.indexOf("La Mã") >= 0; }), "greece");
+must(items.some(function (it) { return it.skill === "writing" && it.titleEn === "New Library Opening" && it.titleZh.indexOf("thư viện") >= 0; }), "library opening");
 must(items.some(function (it) { return it.listenCode === "T01" && it.titleZh && it.titleZh !== it.titleEn; }), "lecture zh");
 must(items.some(function (it) { return it.type === "announcement" && it.titleZh && it.titleZh !== it.titleEn; }), "announce zh");
+
+// Keep the publication date on a no-op rebuild.
+var previous = fs.existsSync(OUT) && JSON.parse(fs.readFileSync(OUT, "utf8"));
+if (!previous || JSON.stringify(previous.items) !== JSON.stringify(items)) {
+  fs.writeFileSync(OUT, JSON.stringify({ generated: new Date().toISOString().slice(0, 10), items: items }, null, 2));
+}

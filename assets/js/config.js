@@ -117,991 +117,991 @@ window.YYSD = (function () {
   var TOEFL_READING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 阅读",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-04-reading.json",
       duration: 41,
-      desc: "65 题 · 填词 40（16 分钟）+ 学术 25（25 分钟）· 国内线下"
+      desc: "65 câu · Điền từ: 40 (16 phút) + Học thuật 25 (25 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 阅读",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-05-reading.json",
       duration: 27,
-      desc: "45 题 · 填词 40（12 分钟）+ 学术 5（15 分钟）· 国内线下"
+      desc: "45 câu · Điền từ: 40 (12 phút) + Học thuật 5 (15 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 阅读",
+      title: "TOEFL 08/07 · Đọc",
       file: "library/toefl/2025-07-08-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút)"
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 阅读",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-11-reading.json",
       duration: 18,
-      desc: "30 题 · 填词 30 · Module 1（12 分钟）+ Module 2（6 分钟）· 国内线下"
+      desc: "30 câu · Điền từ: 30 · Module 1 (12 phút) + Module 2 (6 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 阅读",
+      title: "TOEFL 13/07 · Đọc",
       file: "library/toefl/2025-07-13-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút)"
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 阅读",
+      title: "TOEFL 16/07 · Đọc",
       file: "library/toefl/2025-07-16-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút)"
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 阅读",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-18-reading.json",
       duration: 53,
-      desc: "113 题 · 填词 80（35 分钟）+ 学术 33（18 分钟）· 国内线下"
+      desc: "113 câu · Điền từ: 80 (35 phút) + Học thuật 33 (18 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 阅读",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-19-reading.json",
       duration: 40,
-      desc: "65 题 · 填词 40（20 分钟）+ 学术 25（20 分钟）· 国内线下"
+      desc: "65 câu · Điền từ: 40 (20 phút) + Học thuật 25 (20 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 阅读",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-25-reading.json",
       duration: 30,
-      desc: "40 题 · 填词 10（10 分钟）+ 学术 30（20 分钟）· 国内线下"
+      desc: "40 câu · Điền từ: 10 (10 phút) + Học thuật 30 (20 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 阅读",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-07-29-reading.json",
       duration: 38,
-      desc: "55 题 · 填词 40（20 分钟）+ 学术 15（18 分钟）· 国内线下"
+      desc: "55 câu · Điền từ: 40 (20 phút) + Học thuật 15 (18 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 阅读",
+      title: "TOEFL 08/08 · Đọc",
       file: "library/toefl/2025-08-08-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút)"
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 阅读",
+      title: "TOEFL 12/08 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-08-12-reading.json",
       duration: 32,
-      desc: "65 题 · 填词 50 + 日常 5（24 分钟）+ 学术 10（8 分钟）· 国内线下"
+      desc: "65 câu · Điền từ: 50 + Đọc đời sống: 5 (24 phút) + Học thuật 10 (8 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 阅读",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-08-19-reading.json",
       duration: 52,
-      desc: "108 题 · 填词 70（28 分钟）+ 日常 3 + 学术 35（24 分钟）· 国内线下"
+      desc: "108 câu · Điền từ: 70 (28 phút) + Đọc đời sống: 3 + Học thuật 35 (24 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 阅读",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-08-22-reading.json",
       duration: 76,
-      desc: "165 题 · 填词 120（48 分钟）+ 日常 10 + 学术 35（28 分钟）· 国内线下"
+      desc: "165 câu · Điền từ: 120 (48 phút) + Đọc đời sống: 10 + Học thuật 35 (28 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 阅读",
+      title: "TOEFL 26/08 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-08-26-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）· 国内线下"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 阅读",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-08-30-reading.json",
       duration: 40,
-      desc: "166 题 · 填词 161（32 分钟）+ 学术 5（8 分钟）· 国内线下"
+      desc: "166 câu · Điền từ: 161 (32 phút) + Học thuật 5 (8 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 阅读",
+      title: "TOEFL 02/09 · Đọc",
       file: "library/toefl/2025-09-02-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút)"
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 阅读",
+      title: "TOEFL 05/09 · Đọc",
       file: "library/toefl/2025-09-05-reading.json",
       duration: 52,
-      desc: "110 题 · 填词 70（28 分钟）+ 学术 40（24 分钟）"
+      desc: "110 câu · Điền từ: 70 (28 phút) + Học thuật 40 (24 phút)"
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 阅读",
+      title: "TOEFL 13/09 · Đọc",
       file: "library/toefl/2025-09-13-reading.json",
       duration: 52,
-      desc: "111 题 · 填词 70（28 分钟）+ 日常 6 + 学术 35（24 分钟）"
+      desc: "111 câu · Điền từ: 70 (28 phút) + Đọc đời sống: 6 + Học thuật 35 (24 phút)"
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 阅读",
+      title: "TOEFL 19/09 (thi trực tiếp ngoài Trung Quốc) · Đọc",
       file: "library/toefl/2025-09-19-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）· 海外线下"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) · thi trực tiếp ngoài Trung Quốc"
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 阅读",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Đọc",
       file: "library/toefl/2025-09-23-reading.json",
       duration: 48,
-      desc: "100 题 · 填词 80（32 分钟）+ 学术 20（16 分钟）· 国内线下"
+      desc: "100 câu · Điền từ: 80 (32 phút) + Học thuật 20 (16 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 阅读",
+      title: "TOEFL 23/09 · Đọc",
       file: "library/toefl/2026-09-23-reading.json",
       duration: 32,
-      desc: "80 题 · 填词 80 · Module 1（16 分钟）+ Module 2（16 分钟）"
+      desc: "80 câu · Điền từ: 80 · Module 1 (16 phút) + Module 2 (16 phút)"
     }
   ];
   // ponytail: 听力 PDF 无模块时长；9.02 按 Enhanced 整段约 36 分钟拆 25+11；9.05 仅 13 讲座
   var TOEFL_LISTENING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 听力",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-04-listening.json",
       duration: 24,
-      desc: "12 题 · 3 篇讲座 · Module 1（16 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "12 câu · 3 bài giảng · Module 1 (16 phút) + Module 2 (8 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 听力",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-05-listening.json",
       duration: 16,
-      desc: "8 题 · 2 篇讲座 · Module 1（8 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "8 câu · 2 bài giảng · Module 1 (8 phút) + Module 2 (8 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 听力",
+      title: "TOEFL 08/07 · Nghe",
       file: "library/toefl/2025-07-08-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút)"
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 听力",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-11-listening.json",
       duration: 16,
-      desc: "8 题 · 2 篇讲座 · Module 1（8 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "8 câu · 2 bài giảng · Module 1 (8 phút) + Module 2 (8 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 听力",
+      title: "TOEFL 13/07 · Nghe",
       file: "library/toefl/2025-07-13-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút)"
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 听力",
+      title: "TOEFL 16/07 · Nghe",
       file: "library/toefl/2025-07-16-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút)"
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 听力",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-18-listening.json",
       duration: 24,
-      desc: "16 题 · 4 篇讲座 · Module 1（12 分钟）+ Module 2（12 分钟）· 国内线下"
+      desc: "16 câu · 4 bài giảng · Module 1 (12 phút) + Module 2 (12 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 听力",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-19-listening.json",
       duration: 32,
-      desc: "30 题 · Module 1（8 分钟）+ Module 2（24 分钟）· 国内线下"
+      desc: "30 câu · Module 1 (8 phút) + Module 2 (24 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 听力",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-25-listening.json",
       duration: 24,
-      desc: "16 题 · 4 篇讲座（24 分钟）· 国内线下"
+      desc: "16 câu · 4 bài giảng (24 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 听力",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-07-29-listening.json",
       duration: 32,
-      desc: "20 题 · Module 1（8 分钟）+ Module 2（24 分钟）· 国内线下"
+      desc: "20 câu · Module 1 (8 phút) + Module 2 (24 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 听力",
+      title: "TOEFL 08/08 · Nghe",
       file: "library/toefl/2025-08-08-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút)"
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 听力",
+      title: "TOEFL 12/08 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-08-12-listening.json",
       duration: 25,
-      desc: "20 题 · 5 篇讲座 · Module 1（15 分钟）+ Module 2（10 分钟）· 国内线下"
+      desc: "20 câu · 5 bài giảng · Module 1 (15 phút) + Module 2 (10 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 听力",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-08-19-listening.json",
       duration: 60,
-      desc: "68 题 · 17 篇讲座 · Module 1（32 分钟）+ Module 2（28 分钟）· 国内线下"
+      desc: "68 câu · 17 bài giảng · Module 1 (32 phút) + Module 2 (28 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 听力",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-08-22-listening.json",
       duration: 40,
-      desc: "30 题 · 6 篇讲座 + 2 段对话 + 1 则通知 · Module 1（24 分钟）+ Module 2（16 分钟）· 国内线下"
+      desc: "30 câu · 6 bài giảng + 2 hội thoại + 1 thông báo · Module 1 (24 phút) + Module 2 (16 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 听力",
+      title: "TOEFL 26/08 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-08-26-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）· 国内线下"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 听力",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-08-30-listening.json",
       duration: 47,
-      desc: "46 题 · 11 篇讲座 + 1 则通知 · Module 1（25 分钟）+ Module 2（22 分钟）· 国内线下"
+      desc: "46 câu · 11 bài giảng + 1 thông báo · Module 1 (25 phút) + Module 2 (22 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 听力",
+      title: "TOEFL 02/09 · Nghe",
       file: "library/toefl/2025-09-02-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút)"
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 听力",
+      title: "TOEFL 05/09 · Nghe",
       file: "library/toefl/2025-09-05-listening.json",
       duration: 45,
-      desc: "52 题 · 13 篇讲座 · Module 1（25 分钟）+ Module 2（20 分钟）"
+      desc: "52 câu · 13 bài giảng · Module 1 (25 phút) + Module 2 (20 phút)"
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 听力",
+      title: "TOEFL 13/09 · Nghe",
       file: "library/toefl/2025-09-13-listening.json",
       duration: 47,
-      desc: "58 题 · 14 篇讲座 + 1 则通知 · Module 1（25 分钟）+ Module 2（22 分钟）"
+      desc: "58 câu · 14 bài giảng + 1 thông báo · Module 1 (25 phút) + Module 2 (22 phút)"
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 听力",
+      title: "TOEFL 19/09 (thi trực tiếp ngoài Trung Quốc) · Nghe",
       file: "library/toefl/2025-09-19-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）· 海外线下"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) · thi trực tiếp ngoài Trung Quốc"
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 听力",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nghe",
       file: "library/toefl/2025-09-23-listening.json",
       duration: 45,
-      desc: "52 题 · 13 篇讲座 · Module 1（25 分钟）+ Module 2（20 分钟）· 国内线下"
+      desc: "52 câu · 13 bài giảng · Module 1 (25 phút) + Module 2 (20 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 听力",
+      title: "TOEFL 23/09 · Nghe",
       file: "library/toefl/2026-09-23-listening.json",
       duration: 20,
-      desc: "16 题 · 4 篇讲座 · Module 1（10 分钟）+ Module 2（10 分钟）"
+      desc: "16 câu · 4 bài giảng · Module 1 (10 phút) + Module 2 (10 phút)"
     }
   ];
   // ponytail: 组句无官方时长；邮件 7 分、讨论 10 分按 ETS Enhanced
   var TOEFL_WRITING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 写作",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-04-writing.json",
       duration: 88,
-      desc: "4 封邮件（28 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "4 thư điện tử (28 phút) + 6 bài thảo luận học thuật (60 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 写作",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-05-writing.json",
       duration: 75,
-      desc: "5 封邮件（35 分钟）+ 4 篇学术讨论（40 分钟）· 无组句 · 国内线下"
+      desc: "5 thư điện tử (35 phút) + 4 bài thảo luận học thuật (40 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 写作",
+      title: "TOEFL 08/07 · Viết",
       file: "library/toefl/2025-07-08-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút)"
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 写作",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-11-writing.json",
       duration: 38,
-      desc: "4 封邮件（28 分钟）+ 1 篇学术讨论（10 分钟）· 无组句 · 国内线下"
+      desc: "4 thư điện tử (28 phút) + 1 bài thảo luận học thuật (10 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 写作",
+      title: "TOEFL 13/07 · Viết",
       file: "library/toefl/2025-07-13-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút)"
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 写作",
+      title: "TOEFL 16/07 · Viết",
       file: "library/toefl/2025-07-16-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút)"
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 写作",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-18-writing.json",
       duration: 88,
-      desc: "4 封邮件（28 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "4 thư điện tử (28 phút) + 6 bài thảo luận học thuật (60 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 写作",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-19-writing.json",
       duration: 44,
-      desc: "2 封邮件（14 分钟）+ 3 篇学术讨论（30 分钟）· 无组句 · 国内线下"
+      desc: "2 thư điện tử (14 phút) + 3 bài thảo luận học thuật (30 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 写作",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-25-writing.json",
       duration: 52,
-      desc: "组句 2 题（8 分钟）+ 2 封邮件（14 分钟）+ 3 篇学术讨论（30 分钟）· 国内线下"
+      desc: "Sắp xếp câu: 2 câu (8 phút) + 2 thư điện tử (14 phút) + 3 bài thảo luận học thuật (30 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 写作",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-07-29-writing.json",
       duration: 54,
-      desc: "2 封邮件（14 分钟）+ 4 篇学术讨论（40 分钟）· 无组句 · 国内线下"
+      desc: "2 thư điện tử (14 phút) + 4 bài thảo luận học thuật (40 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 写作",
+      title: "TOEFL 08/08 · Viết",
       file: "library/toefl/2025-08-08-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút)"
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 写作",
+      title: "TOEFL 12/08 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-08-12-writing.json",
       duration: 78,
-      desc: "4 封邮件（28 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "4 thư điện tử (28 phút) + 5 bài thảo luận học thuật (50 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 写作",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-08-19-writing.json",
       duration: 71,
-      desc: "3 封邮件（21 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "3 thư điện tử (21 phút) + 5 bài thảo luận học thuật (50 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 写作",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-08-22-writing.json",
       duration: 126,
-      desc: "8 封邮件（56 分钟）+ 7 篇学术讨论（70 分钟）· 无组句 · 国内线下"
+      desc: "8 thư điện tử (56 phút) + 7 bài thảo luận học thuật (70 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 写作",
+      title: "TOEFL 26/08 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-08-26-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）· 国内线下"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 写作",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-08-30-writing.json",
       duration: 85,
-      desc: "5 封邮件（35 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "5 thư điện tử (35 phút) + 5 bài thảo luận học thuật (50 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 写作",
+      title: "TOEFL 02/09 · Viết",
       file: "library/toefl/2025-09-02-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút)"
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 写作",
+      title: "TOEFL 05/09 · Viết",
       file: "library/toefl/2025-09-05-writing.json",
       duration: 68,
-      desc: "4 封邮件（28 分钟）+ 4 篇学术讨论（40 分钟）· 无组句"
+      desc: "4 thư điện tử (28 phút) + 4 bài thảo luận học thuật (40 phút) · không có phần sắp xếp câu"
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 写作",
+      title: "TOEFL 13/09 · Viết",
       file: "library/toefl/2025-09-13-writing.json",
       duration: 58,
-      desc: "4 封邮件（28 分钟）+ 3 篇学术讨论（30 分钟）· 无组句"
+      desc: "4 thư điện tử (28 phút) + 3 bài thảo luận học thuật (30 phút) · không có phần sắp xếp câu"
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 写作",
+      title: "TOEFL 19/09 (thi trực tiếp ngoài Trung Quốc) · Viết",
       file: "library/toefl/2025-09-19-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）· 海外线下"
+      desc: "Sắp xếp câu: 10 câu (8 phút) + Thư điện tử (7 phút) + Thảo luận học thuật (10 phút) · thi trực tiếp ngoài Trung Quốc"
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 写作",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Viết",
       file: "library/toefl/2025-09-23-writing.json",
       duration: 109,
-      desc: "7 封邮件（49 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "7 thư điện tử (49 phút) + 6 bài thảo luận học thuật (60 phút) · không có phần sắp xếp câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 写作",
+      title: "TOEFL 23/09 · Viết",
       file: "library/toefl/2026-09-23-writing.json",
       duration: 41,
-      desc: "3 封邮件（21 分钟）+ 2 篇学术讨论（20 分钟）· 无组句"
+      desc: "3 thư điện tử (21 phút) + 2 bài thảo luận học thuật (20 phút) · không có phần sắp xếp câu"
     }
   ];
   var TOEFL_SPEAKING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 口语 Form 1",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-04-speaking.json",
       duration: 10,
-      desc: "选课注册 · 听后复述 7 题 + 历史意识面试 4 题 · 国内线下"
+      desc: "Đăng ký môn học · Nghe và nhắc lại 7 câu + Phỏng vấn về nhận thức về lịch sử 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-04-s2",
-      title: "新托福 7.04 国内线下 · 口语 Form 2",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-04-speaking-f2.json",
       duration: 10,
-      desc: "木工 · 听后复述 + 可再生能源面试 · 国内线下"
+      desc: "Nghề mộc · Nghe và nhắc lại + Phỏng vấn về năng lượng tái tạo · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-04-s3",
-      title: "新托福 7.04 国内线下 · 口语 Form 3",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-04-speaking-f3.json",
       duration: 10,
-      desc: "图书馆资料 · 听后复述 + 环保实践面试 · 国内线下"
+      desc: "Tài liệu thư viện · Nghe và nhắc lại + Phỏng vấn về thực hành bảo vệ môi trường · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-04-s4",
-      title: "新托福 7.04 国内线下 · 口语 Form 4",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-04-speaking-f4.json",
       duration: 10,
-      desc: "课堂演示 · 听后复述 + 历史研究面试 · 国内线下"
+      desc: "Thuyết trình trên lớp · Nghe và nhắc lại + Phỏng vấn về nghiên cứu lịch sử · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-04-s5",
-      title: "新托福 7.04 国内线下 · 口语 Form 5",
+      title: "TOEFL 04/07 (thi trực tiếp tại Trung Quốc) · Nói Form 5",
       file: "library/toefl/2025-07-04-speaking-f5.json",
       duration: 10,
-      desc: "瑜伽 · 听后复述 + 送礼面试 · 国内线下"
+      desc: "Yoga · Nghe và nhắc lại + Phỏng vấn về tặng quà · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 口语 Form 1",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-05-speaking.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 7 题 + 睡眠面试 4 题 · 国内线下"
+      desc: "Quán cà phê trong trường · Nghe và nhắc lại 7 câu + Phỏng vấn về giấc ngủ 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05-s2",
-      title: "新托福 7.05 国内线下 · 口语 Form 2",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-05-speaking-f2.json",
       duration: 10,
-      desc: "缝纽扣 · 听后复述 + 公园面试 · 国内线下"
+      desc: "Đơm khuy áo · Nghe và nhắc lại + Phỏng vấn về công viên · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05-s3",
-      title: "新托福 7.05 国内线下 · 口语 Form 3",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-05-speaking-f3.json",
       duration: 10,
-      desc: "做面包 · 听后复述 + 日常安排面试 · 国内线下"
+      desc: "Làm bánh mì · Nghe và nhắc lại + Phỏng vấn về lịch sinh hoạt hằng ngày · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-05-s4",
-      title: "新托福 7.05 国内线下 · 口语 Form 4",
+      title: "TOEFL 05/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-05-speaking-f4.json",
       duration: 10,
-      desc: "垃圾分类 · 听后复述 + 艺术音乐面试 · 国内线下"
+      desc: "Phân loại rác · Nghe và nhắc lại + Phỏng vấn về nghệ thuật và âm nhạc · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 口语",
+      title: "TOEFL 08/07 · Nói",
       file: "library/toefl/2025-07-08-speaking.json",
       duration: 10,
-      desc: "社区烘焙 · 听后复述 7 题（4 分钟）+ 公园面试 4 题（6 分钟）"
+      desc: "Lớp làm bánh cộng đồng · Nghe và nhắc lại 7 câu (4 phút) + Phỏng vấn về công viên 4 câu (6 phút)"
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 口语 Form 1",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-11-speaking.json",
       duration: 10,
-      desc: "大学艺术展 · 听后复述 7 题 + 气候面试 4 题 · 国内线下"
+      desc: "Triển lãm nghệ thuật đại học · Nghe và nhắc lại 7 câu + Phỏng vấn về khí hậu 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-11-s2",
-      title: "新托福 7.11 国内线下 · 口语 Form 2",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-11-speaking-f2.json",
       duration: 10,
-      desc: "城市地标 · 听后复述 + 居住习惯面试 3 题（源缺 Q4 音频）· 国内线下"
+      desc: "Địa danh nổi bật trong thành phố · Nghe và nhắc lại + Phỏng vấn về thói quen sinh hoạt 3 câu (thiếu trong nguồn Q4 âm thanh) · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-11-s3",
-      title: "新托福 7.11 国内线下 · 口语 Form 3",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-11-speaking-f3.json",
       duration: 10,
-      desc: "学生中心 · 听后复述 + 网购面试 · 国内线下"
+      desc: "Trung tâm sinh viên · Nghe và nhắc lại + Phỏng vấn về mua sắm trực tuyến · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-11-s4",
-      title: "新托福 7.11 国内线下 · 口语 Form 4",
+      title: "TOEFL 11/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-11-speaking-f4.json",
       duration: 4,
-      desc: "美术馆 · 听后复述 7 题 · 国内线下"
+      desc: "Bảo tàng mỹ thuật · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 口语",
+      title: "TOEFL 13/07 · Nói",
       file: "library/toefl/2025-07-13-speaking.json",
       duration: 10,
-      desc: "听后复述 7 题（4 分钟）+ 面试 4 题（6 分钟）"
+      desc: "Nghe và nhắc lại 7 câu (4 phút) + Phỏng vấn 4 câu (6 phút)"
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 口语",
+      title: "TOEFL 16/07 · Nói",
       file: "library/toefl/2025-07-16-speaking.json",
       duration: 10,
-      desc: "图书馆资料 · 听后复述 7 题（4 分钟）+ 回收面试 4 题（6 分钟）"
+      desc: "Tài liệu thư viện · Nghe và nhắc lại 7 câu (4 phút) + Phỏng vấn về tái chế 4 câu (6 phút)"
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 口语 Form 1",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-18-speaking.json",
       duration: 10,
-      desc: "健身中心 · 听后复述 7 题 + 社交媒体面试 4 题 · 国内线下"
+      desc: "Trung tâm thể hình · Nghe và nhắc lại 7 câu + Phỏng vấn về mạng xã hội 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-18-s2",
-      title: "新托福 7.18 国内线下 · 口语 Form 2",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-18-speaking-f2.json",
       duration: 10,
-      desc: "自然中心 · 听后复述 + 网购面试 · 国内线下"
+      desc: "Trung tâm thiên nhiên · Nghe và nhắc lại + Phỏng vấn về mua sắm trực tuyến · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-18-s3",
-      title: "新托福 7.18 国内线下 · 口语 Form 3",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-18-speaking-f3.json",
       duration: 10,
-      desc: "海事博物馆 · 听后复述 + 音乐面试 · 国内线下"
+      desc: "Bảo tàng hàng hải · Nghe và nhắc lại + Phỏng vấn về âm nhạc · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-18-s4",
-      title: "新托福 7.18 国内线下 · 口语 Form 4",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-18-speaking-f4.json",
       duration: 10,
-      desc: "野生动物园 · 听后复述 + 环保面试 · 国内线下"
+      desc: "Công viên động vật hoang dã · Nghe và nhắc lại + Phỏng vấn về bảo vệ môi trường · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-18-s5",
-      title: "新托福 7.18 国内线下 · 口语 Form 5",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 5",
       file: "library/toefl/2025-07-18-speaking-f5.json",
       duration: 4,
-      desc: "图书馆数字资源 · 听后复述 7 题 · 国内线下"
+      desc: "Tài nguyên số của thư viện · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-18-s6",
-      title: "新托福 7.18 国内线下 · 口语 Form 6",
+      title: "TOEFL 18/07 (thi trực tiếp tại Trung Quốc) · Nói Form 6",
       file: "library/toefl/2025-07-18-speaking-f6.json",
       duration: 4,
-      desc: "社区花园 · 听后复述 7 题 · 国内线下"
+      desc: "Vườn cộng đồng · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 口语 Form 1",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-19-speaking.json",
       duration: 10,
-      desc: "攀岩馆 · 听后复述 7 题 + 面试 4 题 · 国内线下"
+      desc: "Nhà tập leo núi · Nghe và nhắc lại 7 câu + Phỏng vấn 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19-s2",
-      title: "新托福 7.19 国内线下 · 口语 Form 2",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-19-speaking-f2.json",
       duration: 10,
-      desc: "社区工作坊 · 听后复述 + 爱好面试 · 国内线下"
+      desc: "Lớp thực hành cộng đồng · Nghe và nhắc lại + Phỏng vấn về sở thích · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19-s3",
-      title: "新托福 7.19 国内线下 · 口语 Form 3",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-19-speaking-f3.json",
       duration: 10,
-      desc: "校园媒体制作 · 听后复述 + 个性面试 · 国内线下"
+      desc: "Sản xuất nội dung truyền thông trong trường · Nghe và nhắc lại + Phỏng vấn về tính cách · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-19-s4",
-      title: "新托福 7.19 国内线下 · 口语 Form 4",
+      title: "TOEFL 19/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-19-speaking-f4.json",
       duration: 10,
-      desc: "社区搭建 · 听后复述 + 购物面试 · 国内线下"
+      desc: "Xây dựng cộng đồng · Nghe và nhắc lại + Phỏng vấn về mua sắm · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 口语 Form 1",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-25-speaking.json",
       duration: 10,
-      desc: "招聘会 · 听后复述 7 题 + 面试 4 题 · 国内线下"
+      desc: "Hội chợ tuyển dụng · Nghe và nhắc lại 7 câu + Phỏng vấn 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25-s2",
-      title: "新托福 7.25 国内线下 · 口语 Form 2",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-25-speaking-f2.json",
       duration: 10,
-      desc: "博物馆 · 听后复述 + 娱乐面试 · 国内线下"
+      desc: "Bảo tàng · Nghe và nhắc lại + Phỏng vấn về giải trí · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25-s3",
-      title: "新托福 7.25 国内线下 · 口语 Form 3",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-25-speaking-f3.json",
       duration: 10,
-      desc: "文化节 · 听后复述 + 文化面试 · 国内线下"
+      desc: "Lễ hội văn hóa · Nghe và nhắc lại + Phỏng vấn về văn hóa · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-25-s4",
-      title: "新托福 7.25 国内线下 · 口语 Form 4",
+      title: "TOEFL 25/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-25-speaking-f4.json",
       duration: 6,
-      desc: "童年教育面试 4 题 · 国内线下"
+      desc: "Phỏng vấn về giáo dục thời thơ ấu 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 口语 Form 1",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-07-29-speaking.json",
       duration: 10,
-      desc: "修自行车 · 听后复述 7 题 + 购物面试 4 题 · 国内线下"
+      desc: "Sửa xe đạp · Nghe và nhắc lại 7 câu + Phỏng vấn về mua sắm 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29-s2",
-      title: "新托福 7.29 国内线下 · 口语 Form 2",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-07-29-speaking-f2.json",
       duration: 4,
-      desc: "旅行社 · 听后复述 7 题 · 国内线下"
+      desc: "Công ty du lịch · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29-s3",
-      title: "新托福 7.29 国内线下 · 口语 Form 3",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-07-29-speaking-f3.json",
       duration: 4,
-      desc: "投影仪 · 听后复述 7 题 · 国内线下"
+      desc: "Máy chiếu · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-07-29-s4",
-      title: "新托福 7.29 国内线下 · 口语 Form 4",
+      title: "TOEFL 29/07 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-07-29-speaking-f4.json",
       duration: 4,
-      desc: "在线学习平台 · 听后复述 7 题 · 国内线下"
+      desc: "Nền tảng học trực tuyến · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 口语",
+      title: "TOEFL 08/08 · Nói",
       file: "library/toefl/2025-08-08-speaking.json",
       duration: 9,
-      desc: "听后复述 7 题（4 分钟）+ 面试 3 题（4.5 分钟）"
+      desc: "Nghe và nhắc lại 7 câu (4 phút) + Phỏng vấn 3 câu (4.5 phút)"
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 口语",
+      title: "TOEFL 12/08 (thi trực tiếp tại Trung Quốc) · Nói",
       file: "library/toefl/2025-08-12-speaking.json",
       duration: 10,
-      desc: "服装店 · 听后复述 7 题 + 购物习惯面试 4 题 · 国内线下"
+      desc: "Cửa hàng quần áo · Nghe và nhắc lại 7 câu + Phỏng vấn về thói quen mua sắm 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 口语 Form 1",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-08-19-speaking.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 7 题 + 艺术音乐面试 4 题 · 国内线下"
+      desc: "Quán cà phê trong trường · Nghe và nhắc lại 7 câu + Phỏng vấn về nghệ thuật và âm nhạc 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19-s2",
-      title: "新托福 8.19 国内线下 · 口语 Form 2",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-08-19-speaking-f2.json",
       duration: 10,
-      desc: "图书馆设施 · 听后复述 + 阅读面试 · 国内线下"
+      desc: "Cơ sở vật chất của thư viện · Nghe và nhắc lại + Phỏng vấn về đọc · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19-s3",
-      title: "新托福 8.19 国内线下 · 口语 Form 3",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-08-19-speaking-f3.json",
       duration: 10,
-      desc: "科学项目展示 · 听后复述 + 文化节面试 · 国内线下"
+      desc: "Trình bày dự án khoa học · Nghe và nhắc lại + Phỏng vấn về lễ hội văn hóa · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19-s4",
-      title: "新托福 8.19 国内线下 · 口语 Form 4",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-08-19-speaking-f4.json",
       duration: 10,
-      desc: "自行车修理 · 听后复述 + 新爱好面试 · 国内线下"
+      desc: "Sửa xe đạp · Nghe và nhắc lại + Phỏng vấn về sở thích mới · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19-s5",
-      title: "新托福 8.19 国内线下 · 口语 Form 5",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 5",
       file: "library/toefl/2025-08-19-speaking-f5.json",
       duration: 6,
-      desc: "爱好面试 4 题 · 国内线下"
+      desc: "Phỏng vấn về sở thích 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-19-s6",
-      title: "新托福 8.19 国内线下 · 口语 Form 6",
+      title: "TOEFL 19/08 (thi trực tiếp tại Trung Quốc) · Nói Form 6",
       file: "library/toefl/2025-08-19-speaking-f6.json",
       duration: 6,
-      desc: "可再生能源面试 4 题 · 国内线下"
+      desc: "Phỏng vấn về năng lượng tái tạo 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 口语 Form 1",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-08-22-speaking.json",
       duration: 10,
-      desc: "校园导览 · 听后复述 7 题 + 音乐经历面试 4 题 · 国内线下"
+      desc: "Tham quan trường · Nghe và nhắc lại 7 câu + Phỏng vấn về trải nghiệm âm nhạc 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22-s2",
-      title: "新托福 8.22 国内线下 · 口语 Form 2",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-08-22-speaking-f2.json",
       duration: 10,
-      desc: "旅行社 · 听后复述 + 园艺面试 · 国内线下"
+      desc: "Công ty du lịch · Nghe và nhắc lại + Phỏng vấn về nghề làm vườn · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22-s3",
-      title: "新托福 8.22 国内线下 · 口语 Form 3",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-08-22-speaking-f3.json",
       duration: 10,
-      desc: "大学美术馆 · 听后复述 + 睡眠习惯面试 · 国内线下"
+      desc: "Bảo tàng mỹ thuật đại học · Nghe và nhắc lại + Phỏng vấn về thói quen ngủ · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-22-s4",
-      title: "新托福 8.22 国内线下 · 口语 Form 4",
+      title: "TOEFL 22/08 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-08-22-speaking-f4.json",
       duration: 6,
-      desc: "音乐体验面试 4 题 · 国内线下"
+      desc: "Phỏng vấn về trải nghiệm âm nhạc 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 口语",
+      title: "TOEFL 26/08 (thi trực tiếp tại Trung Quốc) · Nói",
       file: "library/toefl/2025-08-26-speaking.json",
       duration: 9,
-      desc: "听后复述 5 题（源缺 Q1–Q2 音频）+ 爱好面试 4 题 · 国内线下"
+      desc: "Nghe và nhắc lại 5 câu (thiếu trong nguồn Q1–Q2 âm thanh) + Phỏng vấn về sở thích 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 口语 Form 1",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-08-30-speaking.json",
       duration: 10,
-      desc: "插花 · 听后复述 7 题 + 在线学习面试 4 题 · 国内线下"
+      desc: "Cắm hoa · Nghe và nhắc lại 7 câu + Phỏng vấn về học trực tuyến 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30-s2",
-      title: "新托福 8.30 国内线下 · 口语 Form 2",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-08-30-speaking-f2.json",
       duration: 10,
-      desc: "鸟屋 · 听后复述 + 购物习惯面试 · 国内线下"
+      desc: "Nhà cho chim · Nghe và nhắc lại + Phỏng vấn về thói quen mua sắm · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30-s3",
-      title: "新托福 8.30 国内线下 · 口语 Form 3",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-08-30-speaking-f3.json",
       duration: 4,
-      desc: "服装店 · 听后复述 7 题 · 国内线下"
+      desc: "Cửa hàng quần áo · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-08-30-s4",
-      title: "新托福 8.30 国内线下 · 口语 Form 4",
+      title: "TOEFL 30/08 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-08-30-speaking-f4.json",
       duration: 4,
-      desc: "观鸟 · 听后复述 7 题 · 国内线下"
+      desc: "Quan sát chim · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 口语",
+      title: "TOEFL 02/09 · Nói",
       file: "library/toefl/2025-09-02-speaking.json",
       duration: 10,
-      desc: "听后复述 7 题（4 分钟）+ 面试 4 题（6 分钟）"
+      desc: "Nghe và nhắc lại 7 câu (4 phút) + Phỏng vấn 4 câu (6 phút)"
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 口语 Form 1",
+      title: "TOEFL 05/09 · Nói Form 1",
       file: "library/toefl/2025-09-05-speaking.json",
       duration: 10,
-      desc: "科学展示 · 听后复述 7 题 + 新爱好面试 4 题"
+      desc: "Trình diễn khoa học · Nghe và nhắc lại 7 câu + Phỏng vấn về sở thích mới 4 câu"
     },
     {
       id: "2025-09-05-s2",
-      title: "新托福 9.05 · 口语 Form 2",
+      title: "TOEFL 05/09 · Nói Form 2",
       file: "library/toefl/2025-09-05-speaking-f2.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 + 学习新爱好面试"
+      desc: "Quán cà phê trong trường · Nghe và nhắc lại + Phỏng vấn về học một sở thích mới"
     },
     {
       id: "2025-09-05-s3",
-      title: "新托福 9.05 · 口语 Form 3",
+      title: "TOEFL 05/09 · Nói Form 3",
       file: "library/toefl/2025-09-05-speaking-f3.json",
       duration: 10,
-      desc: "海事博物馆 · 听后复述 + 艺术表达面试"
+      desc: "Bảo tàng hàng hải · Nghe và nhắc lại + Phỏng vấn về biểu đạt nghệ thuật"
     },
     {
       id: "2025-09-05-s4",
-      title: "新托福 9.05 · 口语 Form 4",
+      title: "TOEFL 05/09 · Nói Form 4",
       file: "library/toefl/2025-09-05-speaking-f4.json",
       duration: 10,
-      desc: "博物馆导览 · 听后复述 + 可再生能源面试"
+      desc: "Tham quan bảo tàng · Nghe và nhắc lại + Phỏng vấn về năng lượng tái tạo"
     },
     {
       id: "2025-09-05-s5",
-      title: "新托福 9.05 · 口语 Form 5",
+      title: "TOEFL 05/09 · Nói Form 5",
       file: "library/toefl/2025-09-05-speaking-f5.json",
       duration: 10,
-      desc: "机房值班 · 听后复述 + 文化节面试"
+      desc: "Trực phòng máy · Nghe và nhắc lại + Phỏng vấn về lễ hội văn hóa"
     },
     {
       id: "2025-09-05-s6",
-      title: "新托福 9.05 · 口语 Form 6 面试",
+      title: "TOEFL 05/09 · Nói Form 6 · Phỏng vấn",
       file: "library/toefl/2025-09-05-speaking-f6.json",
       duration: 6,
-      desc: "公共交通习惯 · 面试 4 题"
+      desc: "thói quen đi phương tiện công cộng · Phỏng vấn 4 câu"
     },
     {
       id: "2025-09-05-s7",
-      title: "新托福 9.05 · 口语 Form 7 面试",
+      title: "TOEFL 05/09 · Nói Form 7 · Phỏng vấn",
       file: "library/toefl/2025-09-05-speaking-f7.json",
       duration: 6,
-      desc: "阅读习惯 · 面试 4 题"
+      desc: "Thói quen đọc sách · Phỏng vấn 4 câu"
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 口语 Form 1",
+      title: "TOEFL 13/09 · Nói Form 1",
       file: "library/toefl/2025-09-13-speaking.json",
       duration: 10,
-      desc: "观鸟 · 听后复述 7 题 + 公园休闲面试 4 题"
+      desc: "Quan sát chim · Nghe và nhắc lại 7 câu + Phỏng vấn về giải trí ở công viên 4 câu"
     },
     {
       id: "2025-09-13-s2",
-      title: "新托福 9.13 · 口语 Form 2",
+      title: "TOEFL 13/09 · Nói Form 2",
       file: "library/toefl/2025-09-13-speaking-f2.json",
       duration: 10,
-      desc: "做沙拉 · 听后复述 + 环保习惯面试"
+      desc: "Trộn salad · Nghe và nhắc lại + Phỏng vấn về thói quen bảo vệ môi trường"
     },
     {
       id: "2025-09-13-s3",
-      title: "新托福 9.13 · 口语 Form 3",
+      title: "TOEFL 13/09 · Nói Form 3",
       file: "library/toefl/2025-09-13-speaking-f3.json",
       duration: 10,
-      desc: "烤面包 · 听后复述 + 消费习惯面试"
+      desc: "Nướng bánh mì · Nghe và nhắc lại + Phỏng vấn về thói quen chi tiêu"
     },
     {
       id: "2025-09-13-s4",
-      title: "新托福 9.13 · 口语 Form 4",
+      title: "TOEFL 13/09 · Nói Form 4",
       file: "library/toefl/2025-09-13-speaking-f4.json",
       duration: 10,
-      desc: "图书馆导览 · 听后复述 + 电影娱乐面试"
+      desc: "Tham quan thư viện · Nghe và nhắc lại + Phỏng vấn về phim ảnh và giải trí"
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 口语",
+      title: "TOEFL 19/09 (thi trực tiếp ngoài Trung Quốc) · Nói",
       file: "library/toefl/2025-09-19-speaking.json",
       duration: 10,
-      desc: "选课注册 · 听后复述 7 题 + 个人目标面试 4 题 · 海外线下"
+      desc: "Đăng ký môn học · Nghe và nhắc lại 7 câu + Phỏng vấn về mục tiêu cá nhân 4 câu · thi trực tiếp ngoài Trung Quốc"
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 口语 Form 1",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 1",
       file: "library/toefl/2025-09-23-speaking.json",
       duration: 10,
-      desc: "健身中心 · 听后复述 7 题 + 消费预算面试 4 题 · 国内线下"
+      desc: "Trung tâm thể hình · Nghe và nhắc lại 7 câu + Phỏng vấn về ngân sách chi tiêu 4 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-23-s2",
-      title: "新托福 9.23 国内线下 · 口语 Form 2",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 2",
       file: "library/toefl/2025-09-23-speaking-f2.json",
       duration: 10,
-      desc: "书店协助 · 听后复述 + 公园休闲面试 · 国内线下"
+      desc: "Hỗ trợ tại nhà sách · Nghe và nhắc lại + Phỏng vấn về giải trí ở công viên · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-23-s3",
-      title: "新托福 9.23 国内线下 · 口语 Form 3",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 3",
       file: "library/toefl/2025-09-23-speaking-f3.json",
       duration: 10,
-      desc: "观鸟 · 听后复述 + 环保习惯面试 · 国内线下"
+      desc: "Quan sát chim · Nghe và nhắc lại + Phỏng vấn về thói quen bảo vệ môi trường · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-23-s4",
-      title: "新托福 9.23 国内线下 · 口语 Form 4",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 4",
       file: "library/toefl/2025-09-23-speaking-f4.json",
       duration: 4,
-      desc: "图书馆设施 · 听后复述 7 题 · 国内线下"
+      desc: "Cơ sở vật chất của thư viện · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-23-s5",
-      title: "新托福 9.23 国内线下 · 口语 Form 5",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 5",
       file: "library/toefl/2025-09-23-speaking-f5.json",
       duration: 4,
-      desc: "木工入门 · 听后复述 7 题 · 国内线下"
+      desc: "Nhập môn nghề mộc · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2025-09-23-s6",
-      title: "新托福 9.23 国内线下 · 口语 Form 6",
+      title: "TOEFL 23/09 (thi trực tiếp tại Trung Quốc) · Nói Form 6",
       file: "library/toefl/2025-09-23-speaking-f6.json",
       duration: 4,
-      desc: "烤面包 · 听后复述 7 题 · 国内线下"
+      desc: "Nướng bánh mì · Nghe và nhắc lại 7 câu · thi trực tiếp tại Trung Quốc"
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 口语 Form 1",
+      title: "TOEFL 23/09 · Nói Form 1",
       file: "library/toefl/2026-09-23-speaking.json",
       duration: 4,
-      desc: "图书馆导览 · 听后复述 7 题"
+      desc: "Tham quan thư viện · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s2",
-      title: "新托福 9.23 · 口语 Form 2",
+      title: "TOEFL 23/09 · Nói Form 2",
       file: "library/toefl/2026-09-23-speaking-f2.json",
       duration: 4,
-      desc: "木工入门 · 听后复述 7 题"
+      desc: "Nhập môn nghề mộc · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s3",
-      title: "新托福 9.23 · 口语 Form 3",
+      title: "TOEFL 23/09 · Nói Form 3",
       file: "library/toefl/2026-09-23-speaking-f3.json",
       duration: 4,
-      desc: "观鸟 · 听后复述 7 题"
+      desc: "Quan sát chim · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s4",
-      title: "新托福 9.23 · 口语 Form 4",
+      title: "TOEFL 23/09 · Nói Form 4",
       file: "library/toefl/2026-09-23-speaking-f4.json",
       duration: 4,
-      desc: "做果昔 · 听后复述 7 题"
+      desc: "Làm sinh tố · Nghe và nhắc lại 7 câu"
     }
   ];
   // ponytail: 完整模考 = 四科同 id 齐全的日期卷，从上面四张表派生；加套只改四科表
@@ -1113,9 +1113,9 @@ window.YYSD = (function () {
   }).map(function (r) {
     return {
       id: r.id,
-      title: String(r.title || "").replace(/·\s*阅读$/, "· 完整模考"),
+      title: String(r.title || "").replace(/·\s*(?:Đọc|阅读)$/, "· Thi thử trọn bộ"),
       duration: 101,
-      desc: "阅读→听力→写作→口语 · 约 101 分钟 · 无休息"
+      desc: "Đọc → Nghe → Viết → Nói · Khoảng 101 phút, không có giờ nghỉ"
     };
   });
   function navOf(zone) { return NAV[zone] || []; }

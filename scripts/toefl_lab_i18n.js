@@ -1,5 +1,6 @@
 /* ponytail: keyword + draft ZH for lab cards; edit EXACT to correct a title */
 "use strict";
+var labelsVi = require("./locales/toefl-vi.json");
 
 var EXACT = {
   "3D Printing": "3D 打印",
@@ -813,10 +814,12 @@ function phraseZh(en) {
 }
 
 function titleZh(en) {
-  if (EXACT[en]) return EXACT[en];
+  // The field name is part of the player contract. Return the reviewed Vietnamese
+  // caption, or keep the English title instead of fabricating a word-by-word gloss.
   var key = String(en || "");
   var hit = Object.keys(EXACT).filter(function (k) { return k.toLowerCase() === key.toLowerCase(); })[0];
-  return hit ? EXACT[hit] : phraseZh(en);
+  var source = hit ? EXACT[hit] : phraseZh(key);
+  return labelsVi[source] || (/\p{Script=Han}/u.test(source) ? key : source);
 }
 
 var LISTEN_CODE = {

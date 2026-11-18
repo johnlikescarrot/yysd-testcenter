@@ -16,7 +16,7 @@
       "type": "complete_words",
       "module": 1,
       "title": "Mushrooms",
-      "titleZh": "蘑菇",
+      "titleZh": "Nấm",
       "instruction": "Fill in the missing letters in the paragraph.",
       "translation": "蘑菇由两个主要部分组成：菌丝体和子实体。菌丝体寿命很长，而子实体只有在适合繁殖的条件下（例如雨后）才会出现。菌丝体通常位于地下，由线状结构网络组成，可以从土壤中吸收养分。子实体位于地面以上，负责产生和传播孢子。这些孢子被释放到空气中以帮助蘑菇繁殖。",
       "passage": [
@@ -119,7 +119,7 @@
       "type": "daily_life",
       "module": 1,
       "title": "Gym Rules",
-      "titleZh": "健身房守则",
+      "titleZh": "Nội quy phòng tập",
       "instruction": "Read a sign.",
       "layout": {
         "kind": "card",
@@ -158,7 +158,7 @@
       "type": "academic",
       "module": 1,
       "title": "Expert Systems",
-      "titleZh": "专家系统",
+      "titleZh": "Hệ chuyên gia",
       "instruction": "Read the passage.",
       "translation": "专家系统是人工智能的一个分支，旨在模仿人类专家的决策能力。这些系统利用专门信息和规则组成的知识库来解决特定问题，目标是复制医学和工程等领域专业人员的专长与推理。早期专家系统 MYCIN 于 1970 年代开发，用于诊断细菌感染并推荐抗生素。它使用医学专家提供的规则分析患者数据、推断诊断并建议治疗，表现常与人类专家相当；但系统需要不断更新，依赖大量专业人员输入。专家系统也有局限：依赖静态知识库，若没有人类专家持续输入就会过时，更新过程劳动强度大。机器学习与自然语言处理有望让系统从新数据中学习并自行适应。",
       "paras": [

@@ -81,9 +81,9 @@
         "this",
         "afternoon"
       ],
-      "analysis": "正确顺序：I have a lab report due this afternoon.",
+      "analysis": "Thứ tự đúng: I have a lab report due this afternoon.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -139,9 +139,9 @@
         "state",
         "university"
       ],
-      "analysis": "正确顺序：I hope to go to a state university.",
+      "analysis": "Thứ tự đúng: I hope to go to a state university.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -202,9 +202,9 @@
         "open",
         "seat"
       ],
-      "analysis": "正确顺序：I was not able to find an open seat.",
+      "analysis": "Thứ tự đúng: I was not able to find an open seat.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -255,9 +255,9 @@
         "about",
         "it"
       ],
-      "analysis": "正确顺序：What did you like most about it?",
+      "analysis": "Thứ tự đúng: What did you like most about it?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -308,9 +308,9 @@
         "with",
         "it"
       ],
-      "analysis": "正确顺序：Do you need any help with it?",
+      "analysis": "Thứ tự đúng: Do you need any help with it?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -371,9 +371,9 @@
         "minutes",
         "late"
       ],
-      "analysis": "正确顺序：He said he would be a few minutes late.",
+      "analysis": "Thứ tự đúng: He said he would be a few minutes late.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -424,9 +424,9 @@
         "this",
         "morning"
       ],
-      "analysis": "正确顺序：Yes, I registered for it this morning.",
+      "analysis": "Thứ tự đúng: Yes, I registered for it this morning.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -472,9 +472,9 @@
         "cost",
         "you"
       ],
-      "analysis": "正确顺序：How much did it cost you?",
+      "analysis": "Thứ tự đúng: How much did it cost you?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -525,9 +525,9 @@
         "of",
         "fun"
       ],
-      "analysis": "正确顺序：That sounds like a lot of fun.",
+      "analysis": "Thứ tự đúng: That sounds like a lot of fun.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -571,16 +571,16 @@
         "the most",
         "current policy"
       ],
-      "analysis": "正确顺序：He didn't know which platform provides the most current policy information.",
+      "analysis": "Thứ tự đúng: He didn't know which platform provides the most current policy information.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Hospital Fundraising Event",
-      "titleZh": "医院筹款活动",
+      "titleZh": "Gây quỹ cho bệnh viện",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You and your friend, Jasmine, are planning to host a fundraising event for a local children's hospital. You have some ideas for activities and entertainment to include in the event, but you need Jasmine's input to finalize the plans. You also want to discuss the best time to meet and organize the details.",
       "bullets": [
@@ -598,7 +598,7 @@
       "module": 3,
       "id": 12,
       "title": "Corporate Transparency",
-      "titleZh": "企业透明度",
+      "titleZh": "Tính minh bạch của doanh nghiệp",
       "class": "Business Ethics",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {

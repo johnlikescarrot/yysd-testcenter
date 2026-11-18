@@ -19,7 +19,7 @@
       "id": 91,
       "set": "W-BS10-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Why didn't you attend the seminar?",
       "parts": [
         { "slot": true },
@@ -39,7 +39,7 @@
       "id": 92,
       "set": "W-BS10-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "When are you planning to submit your assignment?",
       "parts": [
         { "slot": true },
@@ -59,7 +59,7 @@
       "id": 93,
       "set": "W-BS10-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Where did you find the article you used in your presentation?",
       "parts": [
         { "slot": true },
@@ -80,7 +80,7 @@
       "id": 94,
       "set": "W-BS10-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Where is the best place to eat around campus?",
       "parts": [
         { "slot": true },
@@ -101,7 +101,7 @@
       "id": 95,
       "set": "W-BS10-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Did you like the painting at the university gallery?",
       "parts": [
         { "slot": true },
@@ -120,7 +120,7 @@
       "id": 96,
       "set": "W-BS10-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I just signed up for the photography workshop.",
       "parts": [
         { "t": "Is " },
@@ -141,7 +141,7 @@
       "id": 97,
       "set": "W-BS10-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I heard there's a music festival near campus this weekend.",
       "parts": [
         { "slot": true },
@@ -160,7 +160,7 @@
       "id": 98,
       "set": "W-BS10-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "What did the teacher say about the museum's history during the field trip?",
       "parts": [
         { "t": "He explained " },
@@ -181,7 +181,7 @@
       "id": 99,
       "set": "W-BS10-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I saw an advertisement for a digital marketing course.",
       "parts": [
         { "t": "Can " },
@@ -201,7 +201,7 @@
       "id": 100,
       "set": "W-BS10-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "The conference on climate change was very informative.",
       "parts": [
         { "slot": true },

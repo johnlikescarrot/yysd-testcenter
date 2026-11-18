@@ -8,6 +8,13 @@ on:
   push:
     paths:
       - "library/**"
+      - "app/library/toefl/**/*.json"
+      - "app/assets/js/hit-shell.js"
+      - "scripts/localize_toefl_labels.py"
+      - "scripts/locales/toefl-vi.json"
+      - "scripts/toefl_lab_i18n.js"
+      - "scripts/build_toefl_lab_index.js"
+      - "scripts/check_hit_swiss.js"
       - "scripts/build_manifest.py"
       - "scripts/*cambridge*.py"
       - "scripts/cambridge_sources/**"
@@ -50,6 +57,15 @@ jobs:
 
       - name: Verify vocab wrong-word hooks
         run: python scripts/verify_vocab_wrongword_hooks.py
+
+      - name: Verify both TOEFL banks and the Vietnamese catalog
+        run: |
+          python scripts/localize_toefl_labels.py
+          node scripts/build_toefl_lab_index.js
+          git diff --exit-code -- library/toefl/lab-index.json
+          node scripts/check_toefl_paper.js
+          node scripts/check_toefl_lab.js
+          node scripts/check_hit_swiss.js
 
       - name: Rebuild manifest
         run: python scripts/build_manifest.py

@@ -81,9 +81,9 @@
         "take",
         "place"
       ],
-      "analysis": "正确顺序：Do you know when it will take place?",
+      "analysis": "Thứ tự đúng: Do you know when it will take place?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -139,9 +139,9 @@
         "of",
         "it"
       ],
-      "analysis": "正确顺序：Can you send me a copy of it?",
+      "analysis": "Thứ tự đúng: Can you send me a copy of it?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -192,9 +192,9 @@
         "very",
         "informative"
       ],
-      "analysis": "正确顺序：Yes, I thought it was very informative.",
+      "analysis": "Thứ tự đúng: Yes, I thought it was very informative.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -245,9 +245,9 @@
         "near",
         "campus"
       ],
-      "analysis": "正确顺序：I really enjoy the trails near campus.",
+      "analysis": "Thứ tự đúng: I really enjoy the trails near campus.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -293,9 +293,9 @@
         "a",
         "classmate"
       ],
-      "analysis": "正确顺序：It was recommended by a classmate.",
+      "analysis": "Thứ tự đúng: It was recommended by a classmate.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -351,9 +351,9 @@
         "study",
         "group"
       ],
-      "analysis": "正确顺序：He asked me to join his study group.",
+      "analysis": "Thứ tự đúng: He asked me to join his study group.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -409,9 +409,9 @@
         "with",
         "them"
       ],
-      "analysis": "正确顺序：How long will you be staying with them?",
+      "analysis": "Thứ tự đúng: How long will you be staying with them?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -467,9 +467,9 @@
         "you",
         "learned"
       ],
-      "analysis": "正确顺序：What was the most useful thing you learned?",
+      "analysis": "Thứ tự đúng: What was the most useful thing you learned?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -520,9 +520,9 @@
         "campus",
         "library"
       ],
-      "analysis": "正确顺序：I borrowed it from the campus library.",
+      "analysis": "Thứ tự đúng: I borrowed it from the campus library.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -569,16 +569,16 @@
         "covers",
         "mathematics"
       ],
-      "analysis": "正确顺序：I'm enrolled in the one that covers advanced mathematics.",
+      "analysis": "Thứ tự đúng: I'm enrolled in the one that covers advanced mathematics.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Recycling Awareness Event",
-      "titleZh": "回收宣传活动",
+      "titleZh": "Chiến dịch tuyên truyền tái chế",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently joined a student organization at your university that focuses on environmental conservation. The group is planning an upcoming event to raise awareness about recycling and reducing waste. You have some ideas for activities and would like to share them with the group leader, Julia.",
       "bullets": [
@@ -596,7 +596,7 @@
       "module": 3,
       "id": 12,
       "title": "Conformity",
-      "titleZh": "从众行为",
+      "titleZh": "Hành vi tuân theo số đông",
       "class": "Social Psychology",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {

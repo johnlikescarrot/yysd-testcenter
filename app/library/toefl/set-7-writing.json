@@ -76,9 +76,9 @@
         "research",
         "there"
       ],
-      "analysis": "正确顺序：Will you be presenting your research there?",
+      "analysis": "Thứ tự đúng: Will you be presenting your research there?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -144,9 +144,9 @@
         "varsity",
         "team"
       ],
-      "analysis": "正确顺序：He asked me to try out for the varsity team.",
+      "analysis": "Thứ tự đúng: He asked me to try out for the varsity team.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -202,9 +202,9 @@
         "with",
         "everyone"
       ],
-      "analysis": "正确顺序：Yes, I had a wonderful time with everyone.",
+      "analysis": "Thứ tự đúng: Yes, I had a wonderful time with everyone.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -255,9 +255,9 @@
         "research",
         "topic"
       ],
-      "analysis": "正确顺序：She asked me about my research topic.",
+      "analysis": "Thứ tự đúng: She asked me about my research topic.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -313,9 +313,9 @@
         "debate",
         "club"
       ],
-      "analysis": "正确顺序：I am thinking about joining the debate club.",
+      "analysis": "Thứ tự đúng: I am thinking about joining the debate club.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -366,9 +366,9 @@
         "the",
         "gathering"
       ],
-      "analysis": "正确顺序：What should I bring to the gathering?",
+      "analysis": "Thứ tự đúng: What should I bring to the gathering?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -424,9 +424,9 @@
         "methodology",
         "section"
       ],
-      "analysis": "正确顺序：He said we should revise the methodology section.",
+      "analysis": "Thứ tự đúng: He said we should revise the methodology section.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -482,9 +482,9 @@
         "to",
         "Thursday"
       ],
-      "analysis": "正确顺序：She said the lecture will move to Thursday.",
+      "analysis": "Thứ tự đúng: She said the lecture will move to Thursday.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -545,9 +545,9 @@
         "the",
         "dorm"
       ],
-      "analysis": "正确顺序：He was complaining about the noise in the dorm.",
+      "analysis": "Thứ tự đúng: He was complaining about the noise in the dorm.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -593,16 +593,16 @@
         "food at",
         "the"
       ],
-      "analysis": "正确顺序：Do you know if there will be food at theevent?",
+      "analysis": "Thứ tự đúng: Do you know if there will be food at theevent?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Yoga Class Schedule",
-      "titleZh": "瑜伽课时间",
+      "titleZh": "Giờ học yoga",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently joined a new yoga class at your local community center. The instructor, Mr. Davis, has been very welcoming and helpful. However, you find the class schedule inconvenient and would prefer if the classes were held at a different time that fits better with your daily routine.",
       "bullets": [
@@ -620,7 +620,7 @@
       "module": 3,
       "id": 12,
       "title": "Fast Fashion",
-      "titleZh": "快时尚",
+      "titleZh": "Thời trang nhanh",
       "class": "Economics",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {

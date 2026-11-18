@@ -16,7 +16,7 @@
       "type": "complete_words",
       "module": 1,
       "title": "Spix's Macaw",
-      "titleZh": "斯皮克斯金刚鹦鹉",
+      "titleZh": "Vẹt đuôi dài Spix",
       "instruction": "Fill in the missing letters in the paragraph.",
       "translation": "斯皮克斯金刚鹦鹉原产于巴西，因动画片《里约大冒险》而闻名，现已极度濒危，野外剩余不足一百只。这种充满活力的蓝鸟数量下降，是因为栖息地丧失以及为销往国外而进行的非法诱捕；私人收藏家和宠物商店曾为此花费巨资。保护人士启动了圈养繁殖与栖息地恢复计划，希望将这种鸟重新引入野外——它于 2019 年被正式宣布野外灭绝。",
       "passage": [
@@ -119,7 +119,7 @@
       "type": "daily_life",
       "module": 1,
       "title": "AI-Generated Art on Campus",
-      "titleZh": "校园 AI 艺术展",
+      "titleZh": "Triển lãm nghệ thuật AI trong trường",
       "instruction": "Read an article.",
       "layout": {
         "kind": "card",
@@ -158,7 +158,7 @@
       "type": "academic",
       "module": 1,
       "title": "Parallel Algorithms: From Challenges to Opportunities",
-      "titleZh": "并行算法：从挑战到机遇",
+      "titleZh": "Thuật toán song song: từ thách thức đến cơ hội",
       "instruction": "Read the passage.",
       "translation": "并行算法是现代计算机中常见的计算方法，通过把任务拆成可同时运行的小部分来加快解题。顺序算法会逐条检查大型数据库，而并行算法可把工作分到多个处理器核心，各自同时检查一部分数据。在医疗领域，并行算法能快速分析大规模数据：研究者模拟病毒在人群中传播时，需要处理感染率、人口统计等上百万个数据点。并行处理后，这些模拟可在数分钟而非数小时内完成，帮助公共卫生官员在疫情中更快决策。但若一次向处理器发送过多数据且缺乏管理，系统反而会变慢。并行算法的优势之一是适应性强。开发者可针对 GPU 等擅长同时处理多项任务的硬件进行优化。这也是深度学习（如面部识别）进展迅速的重要原因：没有并行计算，训练深度学习模型几乎不可能。",
       "paras": [

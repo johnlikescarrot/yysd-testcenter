@@ -19,7 +19,7 @@
       "id": 361,
       "set": "W-BS37-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "What did you talk about at the student club meeting?",
       "parts": [
         { "t": "We discussed " },
@@ -38,7 +38,7 @@
       "id": 362,
       "set": "W-BS37-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Our school is planning a retreat next month.",
       "parts": [
         { "slot": true },
@@ -59,7 +59,7 @@
       "id": 363,
       "set": "W-BS37-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Which team are you supporting in the college baseball championship?",
       "parts": [
         { "slot": true },
@@ -78,7 +78,7 @@
       "id": 364,
       "set": "W-BS37-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I heard you moved to an off-campus apartment. How is it?",
       "parts": [
         { "slot": true },
@@ -99,7 +99,7 @@
       "id": 365,
       "set": "W-BS37-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "What did the professor say about the research proposal?",
       "parts": [
         { "slot": true },
@@ -119,7 +119,7 @@
       "id": 366,
       "set": "W-BS37-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Why did you leave the seminar early last night?",
       "parts": [
         { "slot": true },
@@ -139,7 +139,7 @@
       "id": 367,
       "set": "W-BS37-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Where did you buy your textbooks?",
       "parts": [
         { "slot": true },
@@ -159,7 +159,7 @@
       "id": 368,
       "set": "W-BS37-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "Did you attend the school orchestra concert last night?",
       "parts": [
         { "t": "I " },
@@ -180,7 +180,7 @@
       "id": 369,
       "set": "W-BS37-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "I'm thinking about joining the fitness club on campus.",
       "parts": [
         { "slot": true },
@@ -200,7 +200,7 @@
       "id": 370,
       "set": "W-BS37-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "Sắp xếp thành câu",
       "context": "What was our lab partner concerned about?",
       "parts": [
         { "t": "He wanted " },

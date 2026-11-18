@@ -42,11 +42,11 @@ assert.equal(params(itemHref("listening", "bank-cr", 7, 12), "listening").taskEn
 assert.deepEqual(params(itemHref("writing", 'b"a&nk', 0, 9), "writing"),
   { id: 'b"a&nk', mode: "practice", task: "0", taskEnd: "9" });
 
-const card = { type: "academic", paperId: "bank-rap", code: "R-RAP1", sort: 3, task: 2, end: 2, n: 5, title: "Tigers", zh: "老虎" };
+const card = { type: "academic", paperId: "bank-rap", code: "R-RAP1", sort: 3, task: 2, end: 2, n: 5, title: "Tigers", zh: "Loài hổ" };
 const row = { type: "conversation", paperId: "bank-lcn", code: "L-CV1", task: 0, end: 2, n: 6,
   cells: [{ task: 0, end: 0, label: "C01" }, { task: 1, end: 1, label: "C02" }, { task: 2, end: 2, label: "C03" }] };
-const meta = { type: "academic", en: "Academic Passage", head: "Read an Academic Passage", zh: "学术文章", idx: "set" };
-const dailyMeta = { type: "daily_life", en: "Read in Daily Life", zh: "生活阅读", idx: "set", count: 1 };
+const meta = { type: "academic", en: "Academic Passage", head: "Read an Academic Passage", zh: "Bài đọc học thuật", idx: "set" };
+const dailyMeta = { type: "daily_life", en: "Read in Daily Life", zh: "Đọc trong đời sống", idx: "set", count: 1 };
 const rowMeta = { type: "conversation", en: "Conversation", zh: "对话", idx: "set", prog: 1 };
 const speakingMeta = LIB.speaking[0];
 
@@ -62,67 +62,67 @@ assert.equal(libStateOf("listening", card, one).cls, "todo", "same task number, 
 // 卡面照它：序号 + 标题 + 状态；阅读不显题数也不显中文行
 const c0 = cardHTML("reading", meta, card, 0, {});
 assert.match(c0, /hit-lib-card is-todo/);
-assert.ok(c0.includes("未开始") && c0.includes("<span class=\"hit-lib-idx\">Set 3</span>"), "idx 取数据里的编号，不是渲染位次");
-assert.doesNotMatch(c0, /hit-lib-n|hit-lib-sub|题|老虎/, "阅读卡只英文标题，无题数无中文行");
+assert.ok(c0.includes("Chưa bắt đầu") && c0.includes("<span class=\"hit-lib-idx\">Set 3</span>"), "idx 取数据里的编号，不是渲染位次");
+assert.doesNotMatch(c0, /hit-lib-n|hit-lib-sub|câu hỏi|Loài hổ/, "阅读卡只英文标题，无题数无中文行");
 assert.ok(c0.includes('href="reading.html?id=bank-rap&mode=practice&task=2"'), "card link");
 assert.equal(cardHTML("reading", meta, card, 41, {}).includes("Set 3"), true, "filtered position must not renumber");
 assert.ok(cardHTML("reading", dailyMeta, Object.assign({}, card, { n: 2 }), 0, {}).includes('<span class="hit-lib-n" lang="en">2 questions</span>'));
 assert.ok(cardHTML("reading", dailyMeta, Object.assign({}, card, { n: 1 }), 0, {}).includes("1 question<"));
-const s0 = cardHTML("speaking", speakingMeta, { type: "repeat", paperId: "bank-lr", code: "S-LRP7", sort: 7, task: 0, end: 6, n: 7, title: "Gym", zh: "听后跟读" }, 0, {});
-assert.ok(s0.includes('<span class="hit-lib-idx">#7</span>') && s0.includes('lang="en">Gym</h3>') && s0.includes('<p class="hit-lib-sub">听后跟读</p>'), "口语 #N + 英文标题 + 第三行题型中文名");
+const s0 = cardHTML("speaking", speakingMeta, { type: "repeat", paperId: "bank-lr", code: "S-LRP7", sort: 7, task: 0, end: 6, n: 7, title: "Gym", zh: "Nghe và nhắc lại" }, 0, {});
+assert.ok(s0.includes('<span class="hit-lib-idx">#7</span>') && s0.includes('lang="en">Gym</h3>') && s0.includes('<p class="hit-lib-sub">Nghe và nhắc lại</p>'), "口语 #N + 英文标题 + 第三行题型中文名");
 assert.ok(cardHTML("speaking", speakingMeta, { type: "repeat", paperId: "bank-lr", sort: 7, task: 0, end: 0, n: 1, title: "" }, 0, {}).includes("Listen and Repeat"), "缺标题兜底用题型英文名");
 
 const r0 = rowHTML("listening", rowMeta, row, 3, one);
 assert.match(r0, /hit-lib-row is-todo/);
-assert.ok(r0.includes("完成 0/3") && r0.includes("Set 4"));
+assert.ok(r0.includes("Đã làm 0/3") && r0.includes("Set 4"));
 assert.doesNotMatch(r0, /hit-lib-title/, "行式不显标题");
 assert.equal((r0.match(/hit-lib-num\b/g) || []).length, 3, "one cell per question");
-assert.ok(r0.includes('class="hit-lib-start"') && r0.includes(">开始做题</a>"), "整套入口在套题行右侧");
-assert.ok(r0.includes('href="listening.html?id=bank-lcn&mode=practice&task=0&taskEnd=2"'), "开始做题覆盖 task..end，不是单题");
+assert.ok(r0.includes('class="hit-lib-start"') && r0.includes(">Bắt đầu làm bài</a>"), "整套入口在套题行右侧");
+assert.ok(r0.includes('href="listening.html?id=bank-lcn&mode=practice&task=0&taskEnd=2"'), "Bắt đầu làm bài覆盖 task..end，不是单题");
 const rDone = rowHTML("listening", rowMeta, row, 0, {
   "listening|bank-lcn|0": { at: 1 }, "listening|bank-lcn|1": { at: 1 }, "listening|bank-lcn|2": { at: 1 } });
 assert.match(rDone, /hit-lib-row is-done/);
-assert.ok(rDone.includes("完成 3/3"));
+assert.ok(rDone.includes("Đã làm 3/3"));
 // 写作组句行显状态而不是完成数（照它）
-const bsMeta = { type: "sentence", en: "Build a Sentence", zh: "句子构建", idx: "set" };
+const bsMeta = { type: "sentence", en: "Build a Sentence", zh: "Sắp xếp thành câu", idx: "set" };
 assert.ok(rowHTML("writing", bsMeta, { type: "sentence", paperId: "bank-bs", sort: 1, task: 0, end: 1,
-  cells: [{ task: 0, end: 0, label: "1" }, { task: 1, end: 1, label: "2" }] }, 0, one).includes("未开始"));
+  cells: [{ task: 0, end: 0, label: "1" }, { task: 1, end: 1, label: "2" }] }, 0, one).includes("Chưa bắt đầu"));
 
 // 筛选：todo 去掉已完成；高频按钮只在该题型真有打标时出现；版式由数据定（cells → 行式）
 libView.filter = "all";
 const all = panelHTML("reading", meta, [card, Object.assign({}, card, { code: "R-RAP4", sort: 4, task: 3, end: 3 })], {});
 assert.match(all, /hit-lib-grid/, "cards without cells");
 assert.ok(all.includes('<h2 lang="en">Read an Academic Passage</h2>'), "面板标题用它的 head 文案");
-assert.doesNotMatch(all, /组 · 共|已筛出|高频/, "没有统计行，也没打标时不给高频按钮");
+assert.doesNotMatch(all, /nhóm · Tổng|Đã lọc|Thường gặp/, "没有统计行，也没打标时不给Thường gặp按钮");
 assert.match(panelHTML("listening", rowMeta, [row], {}), /hit-lib-rows/, "rows with cells");
-assert.match(panelHTML("reading", meta, [Object.assign({}, card, { hot: 2 })], {}), /高频/);
+assert.match(panelHTML("reading", meta, [Object.assign({}, card, { hot: 2 })], {}), /Thường gặp/);
 libView.filter = "hot";
-assert.match(panelHTML("reading", meta, [card], one), /这个筛选下没有题目/);
+assert.match(panelHTML("reading", meta, [card], one), /Không có bài khớp bộ lọc/);
 libView.filter = "todo";
 assert.equal(panelHTML("reading", meta, [Object.assign({}, card, { end: 2 })], one).includes("is-todo"), false, "todo 隐藏已完成");
 libView.filter = "all";
 
 // 搜索：跨该科目全部题型，英文标题 / 中文标题 / 题号都能命中，且与筛选叠加
-cat.reading = [card, Object.assign({}, card, { code: "R-RAP4", sort: 4, task: 3, end: 3, title: "好莱坞黄金时代" }),
+cat.reading = [card, Object.assign({}, card, { code: "R-RAP4", sort: 4, task: 3, end: 3, title: "Thời kỳ hoàng kim của Hollywood" }),
   { type: "complete_words", paperId: "bank-cw", code: "R-CW9", sort: 9, task: 40, end: 41, n: 2, title: "Career Fair" }];
 cat.listening = [row];
 const sEn = libSearchHTML("reading", "tigers", {});
 assert.match(sEn, /hit-lib-searchtype/, "命中结果按题型分节");
 assert.equal((sEn.match(/hit-lib-card/g) || []).length, 1, "只渲染命中的那组");
-assert.ok(sEn.includes("命中 1 组") && sEn.includes('href="reading.html?id=bank-rap&mode=practice&task=2"'), "英文标题命中");
-assert.doesNotMatch(sEn, /高频|组 · 共/, "搜索头不给统计行，也没打标时不给高频");
-assert.ok(libSearchHTML("reading", "好莱坞", {}).includes("Set 4"), "中文标题也命中，序号仍取目录 sort");
+assert.ok(sEn.includes("Tìm thấy 1 nhóm") && sEn.includes('href="reading.html?id=bank-rap&mode=practice&task=2"'), "英文标题命中");
+assert.doesNotMatch(sEn, /Thường gặp|nhóm · Tổng/, "搜索头不给统计行，也没打标时不给Thường gặp");
+assert.ok(libSearchHTML("reading", "thoi ky hoang kim", {}).includes("Set 4"), "中文标题也命中，序号仍取目录 sort");
 assert.ok(libSearchHTML("reading", "r-cw9", {}).includes("Career Fair"), "题号也命中");
 const sRow = libSearchHTML("listening", "l-cv1", {});
 assert.match(sRow, /hit-lib-rows/, "行式题型命中后仍是行式");
 assert.ok(sRow.includes("C02"), "题号格渲染");
 libView.filter = "todo";
 const sDone = libSearchHTML("reading", "r-rap1", one);
-assert.ok(sDone.includes("命中 0 组") && sDone.includes("data-clear"), "未做筛选叠在搜索上，空结果给清空按钮");
+assert.ok(sDone.includes("Tìm thấy 0 nhóm") && sDone.includes("data-clear"), "未做筛选叠在搜索上，空结果给清空按钮");
 libView.filter = "all";
 const sNone = libSearchHTML("reading", "  <b>zz ", {});
-assert.ok(sNone.includes("题库里没有「&lt;b&gt;zz」") && sNone.includes("搜索「&lt;b&gt;zz」"), "关键词回显也转义");
-assert.doesNotMatch(sNone, /「<b>/, "关键词里的标签不会漏成真 DOM");
+assert.ok(sNone.includes("Không có bài khớp với “&lt;b&gt;zz”") && sNone.includes("Tìm “&lt;b&gt;zz”"), "关键词回显也转义");
+assert.doesNotMatch(sNone, /“<b>/, "关键词里的标签不会漏成真 DOM");
 cat.reading = []; cat.listening = [];
 
 // XSS：标题、中文行、cells 标签、高频火苗全部转义
@@ -136,9 +136,9 @@ assert.ok(html.includes("&lt;img src=x onerror=&quot;boom&quot;&gt;&amp;"));
 assert.ok(html.includes("<p class=\"hit-lib-sub\">&lt;b&gt;中&lt;/b&gt;</p>"), "中文行也转义");
 assert.ok(html.includes('title="&quot;&gt;&lt;svg&gt;"'));
 assert.doesNotMatch(html, /<(?:img|svg|b|i|script)>/);
-assert.ok(html.includes('role="img" title="高频题">🔥</span>'), "hot chip 一行一火");
-assert.doesNotMatch(html, /开始做题/, "只有跨越多题的套才给整套入口");
-assert.ok(cardHTML("reading", meta, Object.assign({}, hostile, { hot: 3 }), 0, {}).includes('title="超高频题">🔥🔥</span>'), "两级高频");
+assert.ok(html.includes('role="img" title="Thường gặp">🔥</span>'), "hot chip 一行一火");
+assert.doesNotMatch(html, /Bắt đầu làm bài/, "只有跨越多题的套才给整套入口");
+assert.ok(cardHTML("reading", meta, Object.assign({}, hostile, { hot: 3 }), 0, {}).includes('title="Rất thường gặp">🔥🔥</span>'), "两级Thường gặp");
 
 // 一次面板只解析一遍进度表
 storage["yysd:toefl-item-state"] = JSON.stringify(Object.fromEntries(

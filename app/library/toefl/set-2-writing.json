@@ -71,9 +71,9 @@
         "so",
         "far"
       ],
-      "analysis": "正确顺序：How is it going so far?",
+      "analysis": "Thứ tự đúng: How is it going so far?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -124,9 +124,9 @@
         "campus",
         "store"
       ],
-      "analysis": "正确顺序：I got them at the campus store.",
+      "analysis": "Thứ tự đúng: I got them at the campus store.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -177,9 +177,9 @@
         "I",
         "missed"
       ],
-      "analysis": "正确顺序：Can you tell me what I missed?",
+      "analysis": "Thứ tự đúng: Can you tell me what I missed?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -225,9 +225,9 @@
         "be",
         "there"
       ],
-      "analysis": "正确顺序：Yes, I plan to be there.",
+      "analysis": "Thứ tự đúng: Yes, I plan to be there.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -288,9 +288,9 @@
         "my",
         "major"
       ],
-      "analysis": "正确顺序：It seemed like a good fit for my major.",
+      "analysis": "Thứ tự đúng: It seemed like a good fit for my major.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -336,9 +336,9 @@
         "completely",
         "empty"
       ],
-      "analysis": "正确顺序：No, the room was completely empty.",
+      "analysis": "Thứ tự đúng: No, the room was completely empty.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -394,9 +394,9 @@
         "with",
         "you"
       ],
-      "analysis": "正确顺序：Would you like me to go with you?",
+      "analysis": "Thứ tự đúng: Would you like me to go with you?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -452,9 +452,9 @@
         "next",
         "week"
       ],
-      "analysis": "正确顺序：He wants us to submit it next week.",
+      "analysis": "Thứ tự đúng: He wants us to submit it next week.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -505,9 +505,9 @@
         "kitchen",
         "table"
       ],
-      "analysis": "正确顺序：I left them on the kitchen table.",
+      "analysis": "Thứ tự đúng: I left them on the kitchen table.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "sentence",
@@ -553,16 +553,16 @@
         "make",
         "it"
       ],
-      "analysis": "正确顺序：I wasn't able to make it.",
+      "analysis": "Thứ tự đúng: I wasn't able to make it.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "Sắp xếp thành câu"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Car Rental Feedback",
-      "titleZh": "租车反馈",
+      "titleZh": "Nhận xét về dịch vụ thuê xe",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently rented a car for a weekend trip with your dorm mate and were satisfied with the vehicle's performance. However, you had a bad experience with the customer service at the rental office. You want to provide feedback to the rental company manager, Ms. Turner.",
       "bullets": [
@@ -580,7 +580,7 @@
       "module": 3,
       "id": 12,
       "title": "Brand Loyalty",
-      "titleZh": "品牌忠诚度",
+      "titleZh": "Mức độ trung thành với thương hiệu",
       "class": "Marketing 210",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {
