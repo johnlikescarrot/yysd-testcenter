@@ -12,6 +12,11 @@ import zipfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+if __package__:
+    from .cambridge_localized import write_paper
+else:
+    from cambridge_localized import write_paper
+
 ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
@@ -58,7 +63,7 @@ def explain(*values: str) -> str:
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -788,7 +793,7 @@ def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
     html = replace_test(html, test)
     html = patch_meta(html)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
+    write_paper(out, html, test)
     print(f"wrote {out.relative_to(ROOT)}")
 
 

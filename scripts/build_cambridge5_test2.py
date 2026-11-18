@@ -12,6 +12,11 @@ import zipfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+if __package__:
+    from .cambridge_localized import write_paper
+else:
+    from cambridge_localized import write_paper
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from cambridge_scoring import patch_scoring
@@ -66,7 +71,7 @@ def explain(*values: str) -> str:
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -601,7 +606,7 @@ def write_page(template: Path, out: Path, test: dict, patch_meta, *, reading: bo
     html = patch_meta(html)
     html = patch_scoring(html, reading=reading)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
+    write_paper(out, html, test)
     print(f"wrote {out.relative_to(ROOT)}")
 
 

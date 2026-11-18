@@ -9,13 +9,16 @@
     "build": "python3 scripts/studio/build.py",
     "test": "c8 --all --include='studio/src/**/*.mjs' --check-coverage --100 --reporter=text --reporter=lcov node --test tests/studio/*.test.mjs",
     "audit:pages": "node scripts/studio/audit.mjs",
-    "test:papers": "node tests/studio/papers.mjs"
+    "test:papers": "node tests/studio/papers.mjs",
+    "test:browser": "node scripts/studio/browser.mjs"
   },
   "devDependencies": {
     "c8": "11.0.0",
+    "chrome-launcher": "1.2.3",
     "esbuild": "0.28.2",
     "jsdom": "26.1.0",
     "lighthouse": "13.6.0",
-    "prettier": "3.10.1"
+    "prettier": "3.10.1",
+    "puppeteer-core": "25.18.1"
   }
 }

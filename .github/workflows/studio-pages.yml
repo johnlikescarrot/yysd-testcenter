@@ -16,6 +16,11 @@ on:
   pull_request:
     paths: *release-files
   workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the verified artifact (subject to environment rules)
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -34,6 +39,8 @@ jobs:
             /studio/
             /package*.json
             /scripts/studio/
+            /scripts/cambridge_localized.py
+            /scripts/verify_cambridge_mock_pages.py
             /tests/studio/
             /data/speaking/
             /library/practice/ielts/
@@ -64,6 +71,9 @@ jobs:
         run: |
           npm test
           npm run test:papers
+          python -m unittest discover -s tests/studio
+      - name: Chromium · audio, transcription, draft restore and progress across pages
+        run: CHROME_PATH="$(command -v google-chrome)" npm run test:browser
       - name: Lighthouse mobile · four categories, six entry pages
         run: CHROME_PATH="$(command -v google-chrome)" npm run audit:pages
       - uses: actions/upload-artifact@v6
@@ -84,7 +94,7 @@ jobs:
     needs: verify
     # Never deploy PR events. Main publishes after integration; an explicit release
     # commit can request publication from this branch, subject to environment rules.
-    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || (github.ref == 'refs/heads/arena/c5dd90f5-yysd-testcenter' && contains(github.event.head_commit.message, '[publish-pages]')))
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && inputs.publish) || (github.ref == 'refs/heads/arena/c5dd90f5-yysd-testcenter' && contains(github.event.head_commit.message, '[publish-pages]')))
     runs-on: ubuntu-24.04
     permissions:
       pages: write
