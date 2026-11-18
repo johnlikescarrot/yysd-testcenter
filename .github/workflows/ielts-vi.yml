@@ -38,7 +38,10 @@ jobs:
       - uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
           VALIDATE_ALL_CODEBASE: true
-          IGNORE_GITIGNORED_FILES: true
+          # Lint the sparse workspace; full-history Git diffs are unnecessary.
+          USE_FIND_ALGORITHM: true
+          CREATE_LOG_FILE: true
+          LOG_LEVEL: ERROR
           FILTER_REGEX_INCLUDE: '(^|/)(ielts-vi/|\.github/workflows/ielts-vi\.yml$)'
           MULTI_STATUS: false
           VALIDATE_CSS: true
@@ -48,6 +51,16 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_PYTHON_RUFF: true
           VALIDATE_YAML: true
+      - name: Đưa lỗi lint vào phần kiểm tra của PR
+        if: failure()
+        run: |
+          if [[ -s super-linter.log ]]; then
+            message="$(tail -n 30 super-linter.log)"
+            message="${message//%/%25}"
+            message="${message//$'\r'/%0D}"
+            message="${message//$'\n'/%0A}"
+            printf '::error title=Super-Linter::%s\n' "$message"
+          fi
 
   quality:
     name: Độ bao phủ, PDF và Lighthouse
