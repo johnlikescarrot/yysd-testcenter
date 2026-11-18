@@ -147,7 +147,7 @@
       <div class="stat-box"><div class="cap">Số từ Task 1</div><div class="big" id="r1">0</div><div class="req">Yêu cầu ≥ 150 từ</div></div>
       <div class="stat-box"><div class="cap">Số từ Task 2</div><div class="big" id="r2">0</div><div class="req">Yêu cầu ≥ 250 từ</div></div>
     </div>
-    <div style="margin-top:18px;"><button class="copy-btn" onclick="copyAll()">📋 Sao chép toàn bài để gửi giáo viên</button> <span id="copyMsg" style="font-size:13px;color:#1e8449;margin-left:8px;"></span></div>
+    <div style="margin-top:18px;"><button class="copy-btn" onclick="copyAll()">📋 Sao chép toàn bài để gửi giáo viên</button> <span role="status" id="copyMsg" style="font-size:13px;color:#1e8449;margin-left:8px;"></span></div>
     <div style="margin-top:16px;"><strong>Bài Task 1 của bạn: </strong><div class="answer-dump" id="dump1"></div></div>
     <div style="margin-top:12px;"><strong>Bài Task 2 của bạn: </strong><div class="answer-dump" id="dump2"></div></div>
   </div>
@@ -247,8 +247,13 @@ function updateWC(){
   e2.textContent = n2; e2.className = 'n' + (n2 < 250 ? ' low' : '');
 }
 function save(which){
-  try { localStorage.setItem(SKEY, JSON.stringify({ t1:document.getElementById('t1').value, t2:document.getElementById('t2').value, ts:Date.now() })); } catch(e){}
-  var el = document.getElementById('saved'+which); if(el){ el.textContent='Đã lưu nháp ✓'; setTimeout(function(){ el.textContent=''; }, 1500); }
+  var el = document.getElementById('saved'+which);
+  try {
+    localStorage.setItem(SKEY, JSON.stringify({ t1:document.getElementById('t1').value, t2:document.getElementById('t2').value, ts:Date.now() }));
+    el.textContent = 'Đã lưu nháp ✓';
+  } catch(e){
+    el.textContent = 'Trình duyệt không lưu được bản nháp. Hãy sao chép bài trước khi rời trang.';
+  }
 }
 ['t1','t2'].forEach(function(id){
   var which = id === 't1' ? 1 : 2;
@@ -295,9 +300,17 @@ function finishTest(){
 }
 function copyAll(){
   var txt = '[' + document.querySelector('meta[name="exam:title"]').content + ']\n\n--- Task 1 ---\n'+document.getElementById('t1').value+'\n\n--- Task 2 ---\n'+document.getElementById('t2').value;
-  function done(){ var m=document.getElementById('copyMsg'); m.textContent='Đã sao chép ✓'; setTimeout(function(){ m.textContent=''; }, 2000); }
-  if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, done); }
-  else { var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
+  function report(ok){
+    document.getElementById('copyMsg').textContent = ok ? 'Đã sao chép ✓' : 'Không thể sao chép tự động. Hãy chọn bài viết và sao chép thủ công.';
+  }
+  function fallback(){
+    var ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta); ta.select();
+    try { report(document.execCommand('copy')); } catch(e){ report(false); }
+    ta.remove();
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function(){ report(true); }, fallback);
+  else fallback();
 }
 function backToCover(){
   clearInterval(timerInterval);

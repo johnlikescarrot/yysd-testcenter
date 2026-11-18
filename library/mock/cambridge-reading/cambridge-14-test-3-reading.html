@@ -591,7 +591,7 @@ function submitTest(){
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`Bạn trả lời: <span class="yours">${it.ua}</span> `:`<span class="yours">Chưa trả lời</span> `;
+      const yours=it.ua?`Bạn trả lời: <span class="yours">${String(it.ua).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span> `:`<span class="yours">Chưa trả lời</span> `;
       return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
         <div class="ra">${it.ok?'<span class="correctv">Trả lời đúng</span>':yours+'Đáp án: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;

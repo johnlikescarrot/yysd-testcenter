@@ -127,6 +127,13 @@ for (const [skill, file] of [['reading', 'cambridge-20-test-1-reading.html'], ['
     assert.equal(document.getElementById('resCorrect').textContent, '40/40');
     assert.equal(document.getElementById('resBand').textContent, '9.0');
     assert.match(document.getElementById('resultArea').textContent, /Báo cáo kết quả/);
+    window.backToCover();
+    window.openMode();
+    window.startTest('practice');
+    const entry = document.querySelector('#testArea input[type="text"]');
+    entry.value = 'weather <cold> & wind';
+    window.submitTest();
+    assert.ok([...document.querySelectorAll('span.yours')].some((node) => node.textContent === entry.value));
   });
 }
 
@@ -145,6 +152,16 @@ test('writing: word count, persistence by paper, self-review and copied paper id
   window.copyAll();
   assert.match(copied, /^\[Cambridge IELTS 21 · Test 2 \(Viết\)\]\n/);
   assert.ok(copied.includes(draft.value));
+  await Promise.resolve();
+  assert.match(document.getElementById('copyMsg').textContent, /Đã sao chép/);
+  window.navigator.clipboard.writeText = async () => { throw new Error('Clipboard denied'); };
+  document.execCommand = () => false;
+  window.copyAll();
+  await Promise.resolve();
+  assert.match(document.getElementById('copyMsg').textContent, /sao chép thủ công/);
+  Object.defineProperty(window, 'localStorage', { get() { throw new Error('Storage denied'); } });
+  draft.dispatchEvent(new window.Event('input'));
+  assert.match(document.getElementById('saved1').textContent, /không lưu được/);
 });
 
 test('admissions lookup pages the full dataset; country, university and English course search remain linked', async (t) => {

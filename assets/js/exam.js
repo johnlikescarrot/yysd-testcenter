@@ -549,7 +549,7 @@
         return;
       }
       if (!isStudy && item.zone === "mock" && item.subject === "cambridge-writing") {
-        askBeforeLeaving(e, "Bạn muốn thoát? Bản nháp bài viết đã được lưu tự động.");
+        askBeforeLeaving(e, "Bạn muốn thoát? Hãy kiểm tra trạng thái lưu nháp trước khi rời trang.");
       } else if (!isStudy && item.zone === "mock") {
         askBeforeLeaving(e, "Bạn muốn thoát? Phần đã trả lời sẽ được lưu tự động, bạn có thể học tiếp khi mở lại.");
       } else if (!isStudy) {
