@@ -7,8 +7,8 @@
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.addEventListener("click", function () { T.logout(); });
 
-  var LEVEL = { high_school: "高中", cet4: "四级", ielts: "雅思" };
-  var RATING = { excellent: "优秀", good: "良好", weak: "需加强" };
+  var LEVEL = { high_school: "THPT", cet4: "CET-4", ielts: "IELTS" };
+  var RATING = { excellent: "Xuất sắc", good: "Tốt", weak: "Cần củng cố" };
   var students = [];
 
   function esc(s) {
@@ -38,20 +38,20 @@
     });
 
     if (!rows.length) {
-      root.innerHTML = '<p class="diag-lead">暂无诊断数据。</p>';
+      root.innerHTML = '<p class="diag-lead">Chưa có dữ liệu đánh giá.</p>';
       return;
     }
 
     root.innerHTML =
       '<table class="diag-table"><thead><tr>' +
-      "<th>学生</th><th>高中</th><th>四级</th><th>雅思</th><th>推荐起始</th><th>最近测试</th>" +
+      "<th>Học viên</th><th>THPT</th><th>CET-4</th><th>IELTS</th><th>Điểm bắt đầu gợi ý</th><th>Lần kiểm tra gần nhất</th>" +
       "</tr></thead><tbody>" +
       rows
         .map(function (s) {
           var name = s.displayName || s.phone || "#" + s.id;
           var when = s.tested_at
-            ? new Date(s.tested_at).toLocaleString("zh-CN")
-            : "未测";
+            ? new Date(s.tested_at).toLocaleString("vi-VN")
+            : "Chưa kiểm tra";
           return (
             '<tr class="' +
             (s.alert ? "is-alert" : "") +
@@ -79,7 +79,7 @@
   function renderHot(words) {
     if (!hotRoot) return;
     if (!words || !words.length) {
-      hotRoot.innerHTML = '<p class="diag-lead">班级暂无未掌握错词。</p>';
+      hotRoot.innerHTML = '<p class="diag-lead">Lớp chưa có từ sai cần ôn.</p>';
       return;
     }
     var max = words[0].cnt || 1;
@@ -129,7 +129,7 @@
         renderHot((res[1] && res[1].words) || []);
       })
       .catch(function (e) {
-        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "加载失败") + "</p>";
+        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "Không tải được nội dung") + "</p>";
         if (hotRoot) hotRoot.innerHTML = "";
       });
   }

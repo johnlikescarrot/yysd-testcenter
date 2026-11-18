@@ -32,16 +32,16 @@
   var detailEventId = null;
 
   var CAT_HINT = {
-    vocab: "单词检测：可跨词书勾选多个 List；学生逐个 List 闯关，全部通过才算完成。",
-    part: "剑雅单项：先选册与 Test，再勾 Section / Passage（练习规则，可续做）。",
-    qtype: "听力题型：选题型与册，再分别勾「练习」或「详解」（可同时勾；详解不记成绩、不算完成）。",
-    scene: "听力场景练习：选场景与册，再勾 Part（整段练习规则）。",
-    rqtype: "阅读题型练习：选题型与册，再勾题组（只出该组题，文章仍是整篇 Passage）。",
-    rscene: "阅读场景练习：选场景与册，再勾 Passage（整篇练习规则）。",
-    skill: "单项模考：先选册与 Test，再勾单科整卷（机考模考规则）。",
-    suite: "全套模考：先选册，再勾某套 Test 的听力+阅读+写作。",
-    rsecret: "阅读绝密套卷：勾选整卷布置。",
-    lsecret: "听力绝密套卷：勾选整卷或 Section 布置。"
+    vocab: "Có thể giao nhiều danh sách từ thuộc các giáo trình khác nhau. Học viên cần vượt qua thử thách của từng danh sách để hoàn thành nhiệm vụ.",
+    part: "Đề Cambridge theo kỹ năng: chọn tập và Test, rồi chọn Section / Passage (theo quy tắc luyện tập, có thể làm tiếp sau).",
+    qtype: "Dạng câu hỏi Nghe: chọn dạng câu hỏi và tập, rồi chọn Luyện tập hoặc Lời giải (có thể chọn cả hai; lời giải không tính điểm, không đánh dấu hoàn thành).",
+    scene: "Luyện Nghe theo tình huống: chọn tình huống và tập, rồi chọn Part (luyện trọn phần).",
+    rqtype: "Luyện Đọc theo dạng câu hỏi: chọn dạng câu hỏi và tập, rồi chọn nhóm câu (chỉ hiển thị câu hỏi thuộc nhóm đó, vẫn hiển thị toàn bộ bài đọc).",
+    rscene: "Luyện Đọc theo chủ đề: chọn tình huống và tập, rồi chọn Passage (luyện trọn bài đọc).",
+    skill: "Thi thử một kỹ năng: chọn tập và Test, rồi chọn đề của một kỹ năng (theo điều kiện thi trên máy).",
+    suite: "Thi thử trọn bộ: chọn tập, rồi chọn một Test gồm Nghe, Đọc và Viết.",
+    rsecret: "Bộ đề Đọc chuyên sâu: chọn cả đề để giao.",
+    lsecret: "Bộ đề Nghe chuyên sâu: chọn cả đề hoặc từng Section để giao."
   };
 
   function cdtPackForCat(cat) {
@@ -142,7 +142,7 @@
   function vocabRangesForBook(bookId) {
     var lists = vocabListsForBook(bookId);
     var chunk = 10;
-    if (!lists.length) return [{ id: "all", label: "全部", startIdx: 0, endIdx: -1 }];
+    if (!lists.length) return [{ id: "all", label: "Tất cả", startIdx: 0, endIdx: -1 }];
     var ranges = [];
     for (var i = 0; i < lists.length; i += chunk) {
       var slice = lists.slice(i, i + chunk);
@@ -253,16 +253,16 @@
     if (isVocabSubject(it.subject)) {
       if (Y.vocabBookOfSubject) {
         var bk = Y.vocabBookOfSubject(it.subject);
-        if (bk === "gaozhong") return "高中词汇";
-        if (bk === "cet4") return "四级词汇";
-        if (bk === "special") return "雅思专项词汇";
+        if (bk === "gaozhong") return "Từ vựng THPT";
+        if (bk === "cet4") return "Từ vựng CET-4";
+        if (bk === "special") return "Từ vựng theo kỹ năng IELTS";
       }
-      return "单词";
+      return "Từ vựng";
     }
-    if (it.subject === "cambridge-listening") return "听力整卷";
-    if (it.subject === "cambridge-reading") return "阅读整卷";
-    if (it.subject === "cambridge-writing") return "写作整卷";
-    if (it.subject === "ielts") return "模考";
+    if (it.subject === "cambridge-listening") return "Trọn đề Nghe";
+    if (it.subject === "cambridge-reading") return "Trọn đề Đọc";
+    if (it.subject === "cambridge-writing") return "Trọn đề Viết";
+    if (it.subject === "ielts") return "Thi thử";
     return (Y.ZONE[it.zone] || {}).label || it.zone || "";
   }
 
@@ -330,14 +330,14 @@
 
   function groupLabel(g) {
     var unit = isReadingTax() ? "Passage " : "Part ";
-    var bits = ["剑" + g.volume, "Test " + g.test, unit + g.part, "Q" + g.qFrom + "-" + g.qTo];
+    var bits = ["Cambridge IELTS " + g.volume, "Test " + g.test, unit + g.part, "Q" + g.qFrom + "-" + g.qTo];
     var extra = [g.qType, g.scene, g.diff].filter(Boolean);
     return bits.join(" ") + (extra.length ? " · " + extra.join(" · ") : "");
   }
 
   function partSceneLabel(p) {
     var unit = isReadingTax() ? "Passage " : "Part ";
-    return "剑" + p.volume + " Test " + p.test + " " + unit + p.part + (p.scene ? (" · " + p.scene) : "");
+    return "Cambridge IELTS " + p.volume + " Test " + p.test + " " + unit + p.part + (p.scene ? (" · " + p.scene) : "");
   }
 
   function ensureBrowseDefaults() {
@@ -380,7 +380,7 @@
     host.innerHTML = items.map(function (v) {
       var on = String(v) === String(active);
       var label = v ? ((prefix || "") + v)
-        : (attr === "ex-vol" ? "全部册" : (attr === "ex-test" ? "全部 Tests" : "全部"));
+        : (attr === "ex-vol" ? "Tất cả các tập" : (attr === "ex-test" ? "Tất cả Tests" : "Tất cả"));
       return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
         '" data-' + attr + '="' + esc(v) + '">' + esc(label) + "</button>";
     }).join("");
@@ -396,9 +396,9 @@
   document.getElementById("logout-btn").addEventListener("click", function () { T.logout(); });
 
   var TYPE_LABEL = {
-    ASSIGNMENT: "练习作业",
-    LESSON: "课程日程",
-    ANNOUNCEMENT: "提醒事项"
+    ASSIGNMENT: "Bài tập luyện",
+    LESSON: "Lịch học",
+    ANNOUNCEMENT: "Lời nhắc"
   };
 
   function esc(s) { return Y.esc(s); }
@@ -422,7 +422,7 @@
   function fmtDate(iso) {
     if (!iso) return "—";
     try {
-      return new Date(iso).toLocaleString("zh-CN", { hour12: false, month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
+      return new Date(iso).toLocaleString("vi-VN", { hour12: false, month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" });
     } catch (e) { return iso; }
   }
 
@@ -442,7 +442,7 @@
     pickScene = "";
     pickDiff = "";
     var hint = document.getElementById("html-file-hint");
-    if (hint) hint.textContent = "上传后优先生效；学生将在站内打开做题。";
+    if (hint) hint.textContent = "Bài tải lên sẽ được ưu tiên. Học viên làm bài ngay trên trang web.";
     document.getElementById("f-type").value = "ASSIGNMENT";
     syncTypeUi();
     renderStudentList();
@@ -455,12 +455,12 @@
 
   function studentPrintName(s) {
     if (s && s.displayName) return s.displayName;
-    return (s && s.phone) || "学生";
+    return (s && s.phone) || "Học viên";
   }
 
   function exercisePrintLabel(xid, attachmentName) {
-    if (!xid && attachmentName) return "上传练习：" + attachmentName;
-    if (String(xid).indexOf("upload-") === 0) return "上传练习：" + (attachmentName || xid);
+    if (!xid && attachmentName) return "Bài luyện tải lên: " + attachmentName;
+    if (String(xid).indexOf("upload-") === 0) return "Bài luyện tải lên: " + (attachmentName || xid);
     var vLabel = vocabAssignLabel(xid);
     if (vLabel) return vLabel;
     var it = catalog.filter(function (c) { return c.id === xid; })[0]
@@ -483,15 +483,15 @@
       return (a.name || "").localeCompare(b.name || "", "zh");
     });
     var names = file
-      ? ["上传练习：" + file.name]
+      ? ["Bài luyện tải lên: " + file.name]
       : (body.linkedExerciseIds || []).map(function (xid) {
         return exercisePrintLabel(xid, body.htmlFileName);
       }).filter(Boolean);
     var teacher = T.getTeacher() || {};
     return {
-      title: body.title || "作业",
+      title: body.title || "bài tập",
       due: body.dueTime,
-      teacher: teacher.name || teacher.phone || "教师",
+      teacher: teacher.name || teacher.phone || "Giáo viên",
       students: people,
       exercises: names
     };
@@ -499,10 +499,10 @@
 
   function printAssignList(job) {
     if (!job || !job.students.length) return;
-    var due = "未设置截止日期";
+    var due = "Chưa đặt hạn nộp";
     if (job.due) {
       try {
-        due = new Date(job.due).toLocaleString("zh-CN", {
+        due = new Date(job.due).toLocaleString("vi-VN", {
           hour12: false, year: "numeric", month: "numeric", day: "numeric",
           hour: "2-digit", minute: "2-digit"
         });
@@ -510,19 +510,19 @@
     }
     var ex = job.exercises.length
       ? "<ul>" + job.exercises.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>"
-      : "<p>未关联练习</p>";
+      : "<p>Chưa liên kết bài luyện</p>";
     var last = job.students.length - 1;
     var pages = job.students.map(function (s, i) {
       return '<section class="page' + (i === last ? " is-last" : "") + '">' +
         "<h1>" + esc(s.name) + "</h1>" +
-        '<p class="meta">布置教师 ' + esc(job.teacher) + "</p>" +
-        "<p><b>任务</b> " + esc(job.title) + "</p>" +
-        "<p><b>截止日期</b> " + esc(due) + "</p>" +
-        "<p><b>练习</b></p>" + ex +
+        '<p class="meta">Giáo viên giao bài ' + esc(job.teacher) + "</p>" +
+        "<p><b>Nhiệm vụ</b> " + esc(job.title) + "</p>" +
+        "<p><b>hạn chót</b> " + esc(due) + "</p>" +
+        "<p><b>Luyện tập</b></p>" + ex +
         "</section>";
     }).join("");
     var html = "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>" +
-      esc(job.title) + " · 任务列表</title><style>" +
+      esc(job.title) + " · Danh sách nhiệm vụ</title><style>" +
       "body{font:16px/1.55 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#1c1e1a;margin:0}" +
       ".page{padding:36px 40px;page-break-after:always}" +
       ".page.is-last{page-break-after:auto}" +
@@ -534,7 +534,7 @@
       "</style></head><body>" + pages + "</body></html>";
     var w = window.open("", "_blank");
     if (!w) {
-      alert("浏览器拦截了打印窗口，请允许弹窗后重试");
+      alert("Trình duyệt đã chặn cửa sổ in, hãy cho phép mở cửa sổ rồi thử lại");
       return;
     }
     w.document.write(html);
@@ -552,7 +552,7 @@
     dueWrap.hidden = type === "LESSON";
     if (form) form.classList.toggle("assign-desk--meta-only", type !== "ASSIGNMENT");
     document.getElementById("f-start-label").textContent =
-      type === "LESSON" ? "上课时间" : "开始时间（可选）";
+      type === "LESSON" ? "Giờ học" : "Thời gian bắt đầu (không bắt buộc)";
   }
 
   function stampBrowseLabels() {
@@ -565,7 +565,7 @@
   }
 
   function studentLabel(s) {
-    return s.displayName ? s.displayName + "（" + s.phone + "）" : s.phone;
+    return s.displayName ? s.displayName + " (" + s.phone + "）" : s.phone;
   }
 
   function renderStudentList() {
@@ -582,11 +582,11 @@
     document.getElementById("student-list").innerHTML = html ||
       ('<p class="profile-hint">' +
         ((T.isAdmin && T.isAdmin())
-          ? '暂无学生。请先到<a href="admin-assign.html">学生分配</a>绑定。'
-          : "暂无学生。请联系管理员把学生分配给你。") +
+          ? 'Chưa có học viên.hãy vào <a href="admin-assign.html">Phân công học viên</a>để liên kết.'
+          : "Chưa có học viên.hãy liên hệ quản trị viên để được phân công học viên.") +
       "</p>");
     document.getElementById("student-picked").textContent =
-      "已选 " + Object.keys(selectedStudents).length + " 人";
+      "Đã chọn " + Object.keys(selectedStudents).length + " người";
   }
 
   function syncExerciseCatUi() {
@@ -601,9 +601,9 @@
     if (hint) {
       hint.textContent = q && isBrowseMode()
         ? (isVocabBrowse()
-          ? "正在搜索全部词库本与 List（与学生词库相同）；清空可回到分组下钻。"
-          : "正在搜索全部匹配项；清空搜索可回到「册 → Test」下钻。")
-        : (CAT_HINT[exerciseCat] || "先选作业类型，再勾选内容。");
+          ? "Đang tìm trong toàn bộ giáo trình và List (giống với kho từ của học viên); xóa từ khóa để duyệt theo nhóm."
+          : "Đang tìm tất cả mục phù hợp; xóa từ khóa để duyệt lại theo tập và Test.")
+        : (CAT_HINT[exerciseCat] || "Chọn loại bài tập, rồi chọn nội dung.");
     }
     if (!showBrowse) return;
 
@@ -616,28 +616,28 @@
       ensureVocabBrowseDefaults();
       var books = vocabBooksInGroup();
       if (volHost) {
-        volHost.setAttribute("aria-label", "词书大类");
+        volHost.setAttribute("aria-label", "Nhóm giáo trình");
         volHost.innerHTML =
           '<button type="button" class="chip chip--sub' + (pickVocabGroup === "core" ? " is-active" : "") +
-            '" data-ex-vgroup="core">核心词书</button>' +
+            '" data-ex-vgroup="core">Giáo trình chính</button>' +
           '<button type="button" class="chip chip--sub' + (pickVocabGroup === "theme" ? " is-active" : "") +
-            '" data-ex-vgroup="theme">主题词书</button>';
+            '" data-ex-vgroup="theme">Giáo trình theo chủ đề</button>';
       }
       if (bookHost) {
         bookHost.hidden = false;
-        bookHost.setAttribute("aria-label", pickVocabGroup === "theme" ? "主题词本" : "核心词本");
+        bookHost.setAttribute("aria-label", pickVocabGroup === "theme" ? "Sổ từ theo chủ đề" : "Sổ từ cốt lõi");
         bookHost.innerHTML = books.map(function (b) {
           var on = b.id === pickVocabBook;
           var meta = b.listCount != null ? (" · " + b.listCount + " List") : "";
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
             '" data-ex-vbook="' + esc(b.id) + '" title="' + esc((b.tag || "") + meta) + '">' +
             esc(b.label) + "</button>";
-        }).join("") || '<span class="profile-hint">该分组暂无词本</span>';
+        }).join("") || '<span class="profile-hint">Nhóm này chưa có sổ từ</span>';
       }
       var ranges = pickVocabBook ? vocabRangesForBook(pickVocabBook) : [];
       if (testHost) {
         testHost.hidden = false;
-        testHost.setAttribute("aria-label", "List 分段");
+        testHost.setAttribute("aria-label", "List Phân đoạn");
         testHost.innerHTML = ranges.map(function (r) {
           var on = r.id === pickVocabRange;
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
@@ -659,7 +659,7 @@
     }
 
     ensureBrowseDefaults();
-    if (volHost) volHost.setAttribute("aria-label", "剑桥册");
+    if (volHost) volHost.setAttribute("aria-label", "Quyển Cambridge");
     var vols = isTaxonomyBrowse() ? taxonomyVolumes() : cambridgeVolumes();
     renderChipRow(volHost, [""].concat(vols), "ex-vol", pickVol, "Cam ");
 
@@ -671,7 +671,7 @@
       }
       if (skillBar) {
         skillBar.hidden = false;
-        skillBar.setAttribute("aria-label", "题型");
+        skillBar.setAttribute("aria-label", "Dạng bài");
         skillBar.innerHTML = (taxonomy.types || []).map(function (t) {
           var on = t === pickQType;
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
@@ -680,12 +680,12 @@
       }
       if (bookHost) {
         bookHost.hidden = false;
-        bookHost.setAttribute("aria-label", "难度");
+        bookHost.setAttribute("aria-label", "Độ khó");
         var diffs = [""].concat(taxonomy.diffs || ["Dễ", "Trung bình", "Khó"]);
         bookHost.innerHTML = diffs.map(function (d) {
           var on = String(pickDiff || "") === String(d);
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
-            '" data-ex-diff="' + esc(d) + '">' + esc(d || "全部难度") + "</button>";
+            '" data-ex-diff="' + esc(d) + '">' + esc(d || "Mọi độ khó") + "</button>";
         }).join("");
       }
       stampBrowseLabels();
@@ -703,7 +703,7 @@
       }
       if (skillBar) {
         skillBar.hidden = false;
-        skillBar.setAttribute("aria-label", "场景");
+        skillBar.setAttribute("aria-label", "Ngữ cảnh");
         skillBar.innerHTML = (taxonomy.scenes || []).map(function (s) {
           var on = s === pickScene;
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
@@ -722,7 +722,7 @@
     renderChipRow(testHost, tests, "ex-test", pickTest, "Test ");
 
     if (skillBar) {
-      skillBar.setAttribute("aria-label", "技能");
+      skillBar.setAttribute("aria-label", "Kỹ năng");
       if (exerciseCat === "suite") {
         skillBar.hidden = true;
         skillBar.innerHTML = "";
@@ -730,20 +730,20 @@
         skillBar.hidden = false;
         skillBar.innerHTML =
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "listening" ? " is-active" : "") +
-          '" data-ex-skill="listening">听力 Section</button>' +
+          '" data-ex-skill="listening">Nghe Section</button>' +
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "reading" ? " is-active" : "") +
-          '" data-ex-skill="reading">阅读 Passage</button>';
+          '" data-ex-skill="reading">Đọc Passage</button>';
       } else {
         skillBar.hidden = false;
         skillBar.innerHTML =
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "listening" ? " is-active" : "") +
-          '" data-ex-skill="listening">听力</button>' +
+          '" data-ex-skill="listening">Nghe</button>' +
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "reading" ? " is-active" : "") +
-          '" data-ex-skill="reading">阅读</button>' +
+          '" data-ex-skill="reading">Đọc</button>' +
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "writing" ? " is-active" : "") +
-          '" data-ex-skill="writing">写作</button>' +
+          '" data-ex-skill="writing">Viết</button>' +
           '<button type="button" class="chip chip--sub' + (exerciseSkill === "all" ? " is-active" : "") +
-          '" data-ex-skill="all">全部</button>';
+          '" data-ex-skill="all">Tất cả</button>';
       }
     }
     stampBrowseLabels();
@@ -770,11 +770,11 @@
         var vol = Y.camVolume ? Y.camVolume(s.listening) : "";
         var testNo = Y.camTestNo ? Y.camTestNo(s.listening) : "";
         var title = (vol && testNo)
-          ? ("剑桥雅思 " + vol + " · Test " + testNo + " 全套模考")
-          : (Y.displayTitle(s.listening) + " · 全套");
+          ? ("Cambridge IELTS  " + vol + " · Test " + testNo + " Thi thử trọn bộ")
+          : (Y.displayTitle(s.listening) + " · Trọn bộ");
         return '<label class="cal-check cal-suite-li">' +
           '<input type="checkbox" data-suite="' + esc(s.base) + '"' + (allOn ? " checked" : "") + ">" +
-          "<span><b>" + esc(title) + "</b><small>听力 + 阅读 + 写作 · 机考流程</small></span></label>";
+          "<span><b>" + esc(title) + "</b><small>Nghe + Đọc + Viết · quy trình thi trên máy</small></span></label>";
       }).join("");
     } else if (isVocabBrowse()) {
       var shelfRows = [];
@@ -798,7 +798,7 @@
       html = shelfRows.map(function (row) {
         var key = vocabRef(row.book.id, row.list.id);
         var checked = selectedExercises[key] ? " checked" : "";
-        var wc = row.list.wordCount != null ? (row.list.wordCount + " 词") : "词库 List";
+        var wc = row.list.wordCount != null ? (row.list.wordCount + " từ") : "Kho từ List";
         return '<label class="cal-check">' +
           '<input type="checkbox" data-exercise="' + esc(key) + '"' + checked + ">" +
           "<span><b>" + esc(row.list.label || ("List " + row.list.id)) + "</b>" +
@@ -833,7 +833,7 @@
         var title = isQTypeBrowse() ? groupLabel(row) : partSceneLabel(row);
         var small = isQTypeBrowse()
           ? (row.qType + (row.scene ? (" · " + row.scene) : "") + (row.diff ? (" · " + row.diff) : ""))
-          : (row.scene || (isReadingTax() ? "场景 Passage" : "场景 Part"));
+          : (row.scene || (isReadingTax() ? "Ngữ cảnh Passage" : "Ngữ cảnh Part"));
         if (exerciseCat === "qtype") {
           var xId = row.id + "-explain";
           var pOn = selectedExercises[row.id] ? " checked" : "";
@@ -841,8 +841,8 @@
           return '<div class="cal-check cal-check--qtype">' +
             "<span><b>" + esc(title) + "</b><small>" + esc(small) + "</small></span>" +
             '<span class="cal-duals">' +
-              '<label class="cal-dual"><input type="checkbox" data-exercise="' + esc(row.id) + '"' + pOn + ">练习</label>" +
-              '<label class="cal-dual"><input type="checkbox" data-exercise="' + esc(xId) + '"' + xOn + ">详解</label>" +
+              '<label class="cal-dual"><input type="checkbox" data-exercise="' + esc(row.id) + '"' + pOn + ">Luyện tập</label>" +
+              '<label class="cal-dual"><input type="checkbox" data-exercise="' + esc(xId) + '"' + xOn + ">Lời giải</label>" +
             "</span></div>";
         }
         var checked = selectedExercises[row.id] ? " checked" : "";
@@ -877,9 +877,9 @@
         var checked = selectedExercises[it.id] ? " checked" : "";
         var topic = (Y.secretTopicLine && Y.secretTopicLine(it)) || (Y.secretPaperTopics && Y.secretPaperTopics(it));
         var label = exerciseCat === "skill"
-          ? ("单项模考 · " + itemCatLabel(it))
-          : exerciseCat === "rsecret" ? (topic || "阅读绝密套卷")
-          : exerciseCat === "lsecret" ? (topic || "听力绝密套卷")
+          ? ("Thi thử một kỹ năng · " + itemCatLabel(it))
+          : exerciseCat === "rsecret" ? (topic || "Bộ đề Đọc chuyên sâu")
+          : exerciseCat === "lsecret" ? (topic || "Bộ đề Nghe chuyên sâu")
           : itemCatLabel(it);
         return '<label class="cal-check">' +
           '<input type="checkbox" data-exercise="' + esc(it.id) + '"' + checked + ">" +
@@ -888,12 +888,12 @@
     }
 
     var emptyMsg = searching
-      ? "没有匹配的练习"
+      ? "Không có bài luyện phù hợp"
       : (isVocabBrowse()
-        ? (shelfBooks.length ? "该词书 / 分段暂无 List，换一本试试" : "词库加载中或为空")
+        ? (shelfBooks.length ? "Chưa có danh sách từ trong phần đã chọn. Hãy thử một giáo trình khác." : "Kho từ đang tải hoặc chưa có dữ liệu")
         : (isTaxonomyBrowse()
-          ? "该筛选下暂无题目，换题型 / 场景或换一册试试"
-          : (isCambridgeBrowse() ? "该册 / Test 下暂无内容，换一册试试" : "没有匹配的练习")));
+          ? "Không có câu hỏi khớp bộ lọc, hãy đổi dạng câu hỏi / tình huống hoặc tập"
+          : (isCambridgeBrowse() ? "Tập này / Test chưa có nội dung ở mục đã chọn, hãy thử tập khác" : "Không có bài luyện phù hợp")));
     var listEl = document.getElementById("exercise-list");
     listEl.classList.toggle("cal-check-list--lsecret", exerciseCat === "lsecret");
     listEl.classList.toggle("cal-check-list--rsecret", exerciseCat === "rsecret");
@@ -906,10 +906,10 @@
     var el = document.getElementById("exercise-picked");
     if (!el) return;
     if (isVocabBrowse() && nPick) {
-      el.textContent = "已选 " + nPick + " 个 List · 学生将逐个闯关";
+      el.textContent = "Đã chọn " + nPick + " danh sách từ · học viên làm từng thử thách theo thứ tự";
       return;
     }
-    el.textContent = "已选 " + nPick + " 份练习";
+    el.textContent = "Đã chọn " + nPick + " bài luyện";
   }
 
   function renderStats() {
@@ -922,16 +922,16 @@
       if (ev.statusSummary && ev.statusSummary.overdue) overdue += ev.statusSummary.overdue;
     });
     statsEl.innerHTML =
-      '<div class="teacher-stat"><b>' + total + "</b><span>全部任务</span></div>" +
-      '<div class="teacher-stat"><b>' + a + "</b><span>练习作业</span></div>" +
-      '<div class="teacher-stat"><b>' + l + "</b><span>课程日程</span></div>" +
-      '<div class="teacher-stat"><b>' + overdue + "</b><span>逾期人次</span></div>";
+      '<div class="teacher-stat"><b>' + total + "</b><span>Tất cả nhiệm vụ</span></div>" +
+      '<div class="teacher-stat"><b>' + a + "</b><span>Bài tập luyện</span></div>" +
+      '<div class="teacher-stat"><b>' + l + "</b><span>Lịch học</span></div>" +
+      '<div class="teacher-stat"><b>' + overdue + "</b><span>Lượt nộp trễ</span></div>";
   }
 
   var STATUS_LABEL = {
-    PENDING: "未完成",
-    COMPLETED: "已完成",
-    OVERDUE: "已逾期"
+    PENDING: "Chưa hoàn thành",
+    COMPLETED: "Đã hoàn thành",
+    OVERDUE: "Quá hạn"
   };
 
   function statusClass(st) {
@@ -941,11 +941,11 @@
   }
 
   function progressBar(done, total) {
-    if (!total) return '<span class="cal-progress__txt">无关联练习</span>';
+    if (!total) return '<span class="cal-progress__txt">Chưa liên kết bài luyện</span>';
     var pct = Math.round((done / total) * 100);
     return '<div class="cal-progress" title="' + done + "/" + total + '">' +
       '<div class="cal-progress__track"><span class="cal-progress__fill" style="width:' + pct + '%"></span></div>' +
-      '<span class="cal-progress__txt">' + done + "/" + total + " 练习</span></div>";
+      '<span class="cal-progress__txt">' + done + "/" + total + " Luyện tập</span></div>";
   }
 
   function typeClass(t) {
@@ -956,7 +956,7 @@
 
   function renderList() {
     if (!events.length) {
-      viewEl.innerHTML = '<div class="state state--brand teacher-empty"><h3>还没有任务</h3><p>点击「新建任务」布置练习或课程日程。</p></div>';
+      viewEl.innerHTML = '<div class="state state--brand teacher-empty"><h3>Chưa có nhiệm vụ</h3><p>Nhấn Tạo nhiệm vụ để giao bài luyện hoặc lên lịch học.</p></div>';
       return;
     }
     var rows = events.map(function (ev) {
@@ -970,14 +970,14 @@
           "</div>" +
           "<h3>" + esc(ev.title) + "</h3>" +
           '<p class="cal-card__meta">' +
-            (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : "") +
-            (ev.startTime ? (ev.dueTime ? " · " : "") + "开始 " + esc(fmtDate(ev.startTime)) : "") +
-            " · 学生完成 " + done + "/" + total +
-            (sum.overdue ? " · 逾期 " + sum.overdue : "") +
+            (ev.dueTime ? "Hạn nộp " + esc(fmtDate(ev.dueTime)) : "") +
+            (ev.startTime ? (ev.dueTime ? " · " : "") + "Bắt đầu " + esc(fmtDate(ev.startTime)) : "") +
+            " · Học viên hoàn thành " + done + "/" + total +
+            (sum.overdue ? " · Quá hạn " + sum.overdue : "") +
           "</p>" +
         "</div>" +
         '<div class="cal-todo-row__act">' +
-          '<button type="button" class="btn btn--ghost btn--sm" data-detail="' + ev.id + '">查看完成情况</button>' +
+          '<button type="button" class="btn btn--ghost btn--sm" data-detail="' + ev.id + '">Xem tiến độ</button>' +
         "</div>" +
       "</article>";
     }).join("");
@@ -1023,11 +1023,11 @@
       '<div class="cal-month">' +
         '<div class="cal-month__nav">' +
           '<button type="button" class="btn btn--ghost btn--sm" id="month-prev">‹</button>' +
-          "<strong>" + y + " 年 " + (m + 1) + " 月</strong>" +
+          "<strong>Tháng " + (m + 1) + "/" + y + "</strong>" +
           '<button type="button" class="btn btn--ghost btn--sm" id="month-next">›</button>' +
         "</div>" +
         '<div class="cal-month__weekdays">' +
-          "<span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>" +
+          "<span>CN</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span>" +
         "</div>" +
         '<div class="cal-month__grid">' + cells.join("") + "</div>" +
       "</div>";
@@ -1046,7 +1046,7 @@
     detailModal.hidden = false;
     T.api("/api/calendar/events/" + id).then(function (d) {
       var ev = d.event || {};
-      document.getElementById("detail-modal-title").textContent = ev.title || "任务详情";
+      document.getElementById("detail-modal-title").textContent = ev.title || "Chi tiết nhiệm vụ";
       var isVq = String(ev.cdtPack || "").toLowerCase() === "vocab-quiz";
       var studentsHtml = (ev.students || []).map(function (s) {
         var st = s.status || "PENDING";
@@ -1056,28 +1056,28 @@
             var qr = s.quizResult;
             if (qr.passedLists && (ev.linkedExerciseIds || []).length > 1) {
               var n = Object.keys(qr.passedLists).length;
-              prog = "全部通过 " + n + "/" + (ev.linkedExerciseIds || []).length +
-                " List（最近 " + (qr.correct || 0) + "/" + (qr.total || 0) + "）";
+              prog = "Đạt tất cả " + n + "/" + (ev.linkedExerciseIds || []).length +
+                " List (Gần đây: " + (qr.correct || 0) + "/" + (qr.total || 0) + "）";
             } else {
-              prog = "通过 " + (qr.correct || 0) + "/" + (qr.total || 0) +
-                "（错 " + (qr.wrong || 0) + "）";
+              prog = "Đạt " + (qr.correct || 0) + "/" + (qr.total || 0) +
+                " (Sai " + (qr.wrong || 0) + "）";
             }
           } else if (s.quizResult && s.quizResult.passedLists) {
             var pl = Object.keys(s.quizResult.passedLists).length;
             var tot = Math.max(1, (ev.linkedExerciseIds || []).length);
-            prog = "进度 " + pl + "/" + tot + " List";
+            prog = "Tiến độ " + pl + "/" + tot + " List";
           } else {
-            prog = "未通过 / 未完成";
+            prog = "Chưa đạt / Chưa hoàn thành";
           }
         } else {
           prog = s.exerciseTotal
-            ? (s.exerciseDone || 0) + "/" + s.exerciseTotal + " 练习已完成"
+            ? (s.exerciseDone || 0) + "/" + s.exerciseTotal + " Đã hoàn thành bài luyện"
             : "—";
         }
         var stLabel = STATUS_LABEL[st] || st;
         if (Y.isExplainOnlyAssignment && Y.isExplainOnlyAssignment(ev.linkedExerciseIds || [])) {
-          stLabel = "详解";
-          prog = "不记成绩、不算完成";
+          stLabel = "Lời giải";
+          prog = "không tính điểm, không đánh dấu hoàn thành";
         }
         return "<tr class=\"" + statusClass(st) + "\">" +
           "<td><b>" + esc(s.displayName || s.phone) + "</b>" +
@@ -1090,7 +1090,7 @@
       }).join("");
       var exHtml = (ev.linkedExerciseIds || []).map(function (xid) {
         if (String(xid).indexOf("upload-") === 0) {
-          return "<li>上传练习：" + esc(ev.attachmentName || xid) + "</li>";
+          return "<li>Bài luyện tải lên: " + esc(ev.attachmentName || xid) + "</li>";
         }
         var vLabel = vocabAssignLabel(xid);
         if (vLabel) return "<li>" + esc(vLabel) + "</li>";
@@ -1106,22 +1106,22 @@
       document.getElementById("detail-body").innerHTML =
         '<p><span class="cal-tag ' + typeClass(ev.eventType) + '">' +
           esc(TYPE_LABEL[ev.eventType] || ev.eventType) + "</span></p>" +
-        "<p>" + esc(ev.description || "无额外说明") + "</p>" +
-        "<p class=\"cal-card__meta\">开始：" + esc(fmtDate(ev.startTime)) +
-          " · 截止：" + esc(fmtDate(ev.dueTime)) + "</p>" +
+        "<p>" + esc(ev.description || "Không có hướng dẫn thêm") + "</p>" +
+        "<p class=\"cal-card__meta\">Bắt đầu: " + esc(fmtDate(ev.startTime)) +
+          " · Hạn nộp: " + esc(fmtDate(ev.dueTime)) + "</p>" +
         (ev.attachmentName
-          ? "<p class=\"profile-hint\">附件：" + esc(ev.attachmentName) + "</p>"
+          ? "<p class=\"profile-hint\">Tệp đính kèm: " + esc(ev.attachmentName) + "</p>"
           : "") +
-        (exHtml ? "<h3>关联练习</h3><ul>" + exHtml + "</ul>" +
+        (exHtml ? "<h3>Bài tập liên quan</h3><ul>" + exHtml + "</ul>" +
           "<p class=\"profile-hint\">" +
             (isVq
-              ? "学生须在单词检测中闯关通过（错不超过 5 题）后，任务才算完成；未通过须重测。"
-              : "学生须完成以上全部练习后，任务才会自动变为「已完成」。") +
+              ? "Học viên phải vượt qua thử thách trong bài kiểm tra từ vựng (không sai quá 5 câu)thì, mới tính là hoàn thành nhiệm vụ; nếu chưa đạt, cần làm lại."
+              : "Học viên phải hoàn thành tất cả bài luyện ở trên, sau đó trạng thái nhiệm vụ mới tự chuyển thành Đã hoàn thành.") +
           "</p>" : "") +
-        "<h3>学生完成情况 <span class=\"cal-detail__count\">" + doneN + "/" + totalN + " 人已完成</span></h3>" +
+        "<h3>Tiến độ của học viên <span class=\"cal-detail__count\">" + doneN + "/" + totalN + " học viên đã hoàn thành</span></h3>" +
         '<table class="teacher-table cal-status-table"><thead><tr>' +
-          "<th>学生</th><th>状态</th><th>" + (isVq ? "检测结果" : "练习进度") + "</th><th>完成时间</th></tr></thead>" +
-        "<tbody>" + (studentsHtml || '<tr><td colspan="4" class="teacher-empty-row">暂无</td></tr>') +
+          "<th>Học viên</th><th>Trạng thái</th><th>" + (isVq ? "Kết quả kiểm tra" : "Tiến độ luyện tập") + "</th><th>Hoàn thành lúc:</th></tr></thead>" +
+        "<tbody>" + (studentsHtml || '<tr><td colspan="4" class="teacher-empty-row">Chưa có</td></tr>') +
         "</tbody></table>";
     }).catch(function (e) {
       document.getElementById("detail-body").innerHTML = "<p class=\"auth-msg auth-msg--err\">" + esc(e.message) + "</p>";
@@ -1155,8 +1155,8 @@
       render();
     }).catch(function (e) {
       // ponytail: stay put — same as teacher.js
-      viewEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + esc(e.message) +
-        '</p><p><a class="btn btn--ghost btn--sm" href="teacher-login.html">重新登录</a></p></div>';
+      viewEl.innerHTML = '<div class="state state--brand"><h3>Không tải được nội dung</h3><p>' + esc(e.message) +
+        '</p><p><a class="btn btn--ghost btn--sm" href="teacher-login.html">Đăng nhập lại</a></p></div>';
     });
   }
 
@@ -1283,7 +1283,7 @@
     if (t.checked) selectedStudents[id] = true;
     else delete selectedStudents[id];
     document.getElementById("student-picked").textContent =
-      "已选 " + Object.keys(selectedStudents).length + " 人";
+      "Đã chọn " + Object.keys(selectedStudents).length + " người";
   });
 
   document.getElementById("exercise-list").addEventListener("change", function (e) {
@@ -1321,7 +1321,7 @@
 
   document.getElementById("delete-event-btn").addEventListener("click", function () {
     if (!detailEventId) return;
-    if (!confirm("确认删除该任务？学生端将同步消失。")) return;
+    if (!confirm("Xóa nhiệm vụ này? Nhiệm vụ này cũng sẽ biến mất khỏi tài khoản học viên.")) return;
     T.api("/api/calendar/events/" + detailEventId, { method: "DELETE" })
       .then(function () {
         closeDetail();
@@ -1336,34 +1336,34 @@
     var type = document.getElementById("f-type").value;
     var targetStudentIds = Object.keys(selectedStudents).map(Number);
     if (!targetStudentIds.length) {
-      showMsg("请至少选择一名学生");
+      showMsg("Chọn ít nhất một học viên");
       return;
     }
     var fileInput = document.getElementById("f-html");
     var file = fileInput && fileInput.files && fileInput.files[0];
     if (file && type !== "ASSIGNMENT") {
-      showMsg("只有练习作业可以上传 HTML");
+      showMsg("Chỉ bài tập luyện mới cho phép tải lên HTML");
       return;
     }
     if (file && !/\.html?$/i.test(file.name)) {
-      showMsg("仅支持 .html 文件");
+      showMsg("chỉ hỗ trợ.html tệp");
       return;
     }
     if (file && file.size > 2 * 1024 * 1024) {
-      showMsg("HTML 不能超过 2MB");
+      showMsg("HTML không được vượt quá 2MB");
       return;
     }
 
     function post(body) {
-      showMsg("发布中…", null);
+      showMsg("Đang giao bài…", null);
       return T.api("/api/calendar/events", { method: "POST", body: body })
         .then(function () {
           var n = targetStudentIds.length;
-          showMsg("已发给 " + n + " 名学生 · 他们打开待办即可看到", true);
+          showMsg("Đã gửi tới " + n + " học viên · họ có thể xem trong danh sách việc cần làm", true);
           var job = type === "ASSIGNMENT" ? snapshotAssignPrint(body, file) : null;
           closeCreate();
           load();
-          if (job && confirm("是否需要打印学生任务列表？")) printAssignList(job);
+          if (job && confirm("Bạn muốn in danh sách nhiệm vụ của học viên?")) printAssignList(job);
         })
         .catch(function (e) { showMsg(e.message, false); });
     }
@@ -1372,12 +1372,12 @@
     var pack = type === "ASSIGNMENT" && !file ? cdtPackForCat(exerciseCat) : "";
     if (pack === "vocab-quiz") {
       if (!linkedIds.length) {
-        showMsg("请至少勾选 1 个 List", false);
+        showMsg("Chọn ít nhất 1 List", false);
         return;
       }
       for (var vi = 0; vi < linkedIds.length; vi++) {
         if (!parseVocabRef(linkedIds[vi])) {
-          showMsg("词库选择无效，请重新勾选 List", false);
+          showMsg("Danh sách từ đã chọn không hợp lệ, hãy chọn lại List", false);
           return;
         }
       }
@@ -1386,7 +1386,7 @@
     var startTime = fromLocalInput(document.getElementById("f-start").value);
     var dueTime = fromLocalInput(document.getElementById("f-due").value);
     if (type === "ASSIGNMENT" && !startTime && !dueTime) {
-      showMsg("请设置开始时间或截止时间", false);
+      showMsg("Hãy đặt giờ bắt đầu hoặc hạn nộp", false);
       return;
     }
 
@@ -1408,7 +1408,7 @@
         body.htmlFileName = file.name;
         post(body);
       };
-      reader.onerror = function () { showMsg("读取文件失败"); };
+      reader.onerror = function () { showMsg("Không đọc được tệp"); };
       reader.readAsText(file);
       return;
     }
@@ -1422,10 +1422,10 @@
       var hint = document.getElementById("html-file-hint");
       if (!hint) return;
       if (!f) {
-        hint.textContent = "上传后优先生效；学生将在站内打开做题。也可下方勾选网站现有练习。";
+        hint.textContent = "tệp tải lên sẽ được ưu tiên; học viên mở và làm bài ngay trên trang.hoặc chọn bài luyện có sẵn bên dưới.";
         return;
       }
-      hint.textContent = "已选择：" + f.name + "（" + Math.round(f.size / 1024) + " KB）· 将优先生效，下方勾选将被忽略";
+      hint.textContent = "Đã chọn: " + f.name + " (" + Math.round(f.size / 1024) + " KB) · sẽ được ưu tiên, các mục chọn bên dưới sẽ không được dùng";
     });
   }
 

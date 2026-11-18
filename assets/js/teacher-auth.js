@@ -158,7 +158,7 @@ window.YYSD_TEACHER = (function () {
         try { d = raw ? JSON.parse(raw) : null; } catch (e) { d = null; }
         if (!r.ok) {
           if (d && d.code === "seat_required") location.replace("download.html");
-          throw new Error((d && d.error) || (r.status === 502 ? "服务暂不可用，请重试" : "请求失败"));
+          throw new Error((d && d.error) || (r.status === 502 ? "dịch vụ tạm thời không khả dụng, hãy thử lại" : "Yêu cầu không thành công"));
         }
         return d || {};
       });
@@ -210,12 +210,12 @@ window.YYSD_TEACHER = (function () {
         var tok = decodeURIComponent(m[1]);
         if (tok) {
           setToken(tok);
-          setTeacher({ phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true });
+          setTeacher({ phone: "Hỗ trợ", name: "Hỗ trợ nền tảng", isAdmin: true, isPlatformAdmin: true });
           if (window.YYSD_AUTH && YYSD_AUTH.applyLogin) {
             YYSD_AUTH.applyLogin({
               token: tok,
               role: "teacher",
-              teacher: { phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true }
+              teacher: { phone: "Hỗ trợ", name: "Hỗ trợ nền tảng", isAdmin: true, isPlatformAdmin: true }
             });
           }
           history.replaceState({}, "", location.pathname);

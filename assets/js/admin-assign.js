@@ -50,7 +50,7 @@
       body: opts.body ? JSON.stringify(opts.body) : undefined
     }).then(function (r) {
       return r.json().then(function (d) {
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || "Yêu cầu không thành công");
         return d;
       });
     });
@@ -80,8 +80,8 @@
 
   function renderStudents() {
     if (!activeTeacherId) {
-      studentList.innerHTML = '<p class="profile-hint">请先选择教师</p>';
-      pickedHint.textContent = "请先选择教师";
+      studentList.innerHTML = '<p class="profile-hint">Hãy chọn giáo viên trước</p>';
+      pickedHint.textContent = "Hãy chọn giáo viên trước";
       saveBtn.disabled = true;
       return;
     }
@@ -94,14 +94,14 @@
       var checked = selected[s.id] ? " checked" : "";
       return '<label class="cal-check">' +
         '<input type="checkbox" data-sid="' + s.id + '"' + checked + ">" +
-        "<span><b>" + esc(s.displayName || "未命名") + "</b>" +
+        "<span><b>" + esc(s.displayName || "Chưa đặt tên") + "</b>" +
         "<small>" + esc(s.phone) +
-        (s.scoreCount ? " · " + s.scoreCount + " 条成绩" : "") +
+        (s.scoreCount ? " · " + s.scoreCount + " kết quả" : "") +
         "</small></span></label>";
-    }).join("") || '<p class="profile-hint">没有匹配的学生</p>';
+    }).join("") || '<p class="profile-hint">Không có học viên phù hợp</p>';
 
     var n = Object.keys(selected).length;
-    pickedHint.textContent = "已选 " + n + " 名学生（保存后将覆盖该教师当前名单）";
+    pickedHint.textContent = "Đã chọn " + n + " học viên (khi lưu, danh sách mới sẽ thay thế danh sách hiện tại của giáo viên)";
     saveBtn.disabled = false;
   }
 
@@ -132,7 +132,7 @@
     var id = Number(t.getAttribute("data-sid"));
     if (t.checked) selected[id] = true;
     else delete selected[id];
-    pickedHint.textContent = "已选 " + Object.keys(selected).length + " 名学生（保存后将覆盖该教师当前名单）";
+    pickedHint.textContent = "Đã chọn " + Object.keys(selected).length + " học viên (khi lưu, danh sách mới sẽ thay thế danh sách hiện tại của giáo viên)";
   });
 
   document.getElementById("select-all").addEventListener("click", function () {
@@ -152,7 +152,7 @@
 
   saveBtn.addEventListener("click", function () {
     if (!activeTeacherId) return;
-    showMsg("保存中…");
+    showMsg("Đang lưu…");
     saveBtn.disabled = true;
     api("/api/admin/assignments", {
       method: "PUT",
@@ -161,7 +161,7 @@
         studentIds: Object.keys(selected).map(Number)
       }
     }).then(function (d) {
-      showMsg("已保存：该教师现有 " + (d.studentIds || []).length + " 名学生", true);
+      showMsg("đã lưu: giáo viên hiện có " + (d.studentIds || []).length + " học viên", true);
       saveBtn.disabled = false;
     }).catch(function (e) {
       showMsg(e.message);
@@ -175,17 +175,17 @@
   ]).then(function (res) {
     teachers = res[0].teachers || [];
     students = res[1].students || [];
-    teacherSelect.innerHTML = '<option value="">请选择教师</option>' +
+    teacherSelect.innerHTML = '<option value="">Chọn giáo viên</option>' +
       teachers.map(function (t) {
         return '<option value="' + t.id + '">' +
-          esc((t.name || "教师") + " · " + t.phone + "（已分配 " + t.studentCount + " 人）") +
+          esc((t.name || "Giáo viên") + " · " + t.phone + " (Đã phân công " + t.studentCount + " người)") +
           "</option>";
       }).join("");
     renderStudents();
   }).catch(function (e) {
-    showMsg(e.message || "无管理员权限，请使用管理员账号登录");
-    teacherSelect.innerHTML = '<option value="">无法加载</option>';
-    if (String(e.message).indexOf("管理员") >= 0 || String(e.message).indexOf("登录") >= 0) {
+    showMsg(e.message || "Không có quyền quản trị, hãy đăng nhập bằng tài khoản quản trị");
+    teacherSelect.innerHTML = '<option value="">Không tải được</option>';
+    if (/quản trị|đăng nhập|管理员|登录/i.test(String(e.message))) {
       setTimeout(function () {
         location.href = "login.html?next=" + encodeURIComponent("admin-assign.html");
       }, 1200);

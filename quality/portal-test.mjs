@@ -146,3 +146,37 @@ test('writing: word count, persistence by paper, self-review and copied paper id
   assert.match(copied, /^\[Cambridge IELTS 21 · Test 2 \(Viết\)\]\n/);
   assert.ok(copied.includes(draft.value));
 });
+
+test('admissions lookup pages the full dataset; country, university and English course search remain linked', async (t) => {
+  const dom = new JSDOM(await source('requirements.html'), { runScripts: 'dangerously', url: 'https://example.test/project/requirements.html' });
+  t.after(() => dom.window.close());
+  const { document, Event } = dom.window;
+  const field = (id) => document.getElementById(id);
+  const rows = () => [...document.querySelectorAll('tr.main')];
+  const set = (id, value) => { field(id).value = value; field(id).dispatchEvent(new Event('change')); };
+  const total = Number(field('cnt').textContent);
+  assert.equal(total, dom.window.eval('DATA.length'));
+  assert.ok(total > 50);
+  assert.equal(rows().length, 50);
+  const original = rows()[0].textContent;
+  field('next-page').click();
+  assert.notEqual(rows()[0].textContent, original);
+  assert.match(field('page-count').textContent, /^Trang 2 \/ /);
+  const country = field('fCountry').options[1].value;
+  set('fCountry', country);
+  assert.equal(field('prev-page').disabled, true);
+  assert.ok(rows().every((row) => row.querySelector('.cty').textContent === country));
+  set('fUni', field('fUni').options[1].value);
+  set('q', rows()[0].querySelector('.major small').textContent);
+  assert.ok(rows().length > 0);
+  const details = rows()[0].querySelector('.caret');
+  details.click();
+  assert.equal(details.getAttribute('aria-expanded'), 'true');
+  assert.ok(document.getElementById(details.getAttribute('aria-controls')).classList.contains('show'));
+  set('q', 'no-matching-example-99999');
+  assert.equal(rows().length, 0);
+  assert.equal(field('next-page').disabled, true);
+  field('reset').click();
+  assert.equal(Number(field('cnt').textContent), total);
+  assert.equal(rows()[0].textContent, original);
+});

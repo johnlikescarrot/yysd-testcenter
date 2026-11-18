@@ -110,14 +110,14 @@
 
   function enterViaApi() {
     return T.api("/api/teacher/site-mode/enter", { method: "POST" }).then(function (d) {
-      if (!d || !d.token) throw new Error("无法进入网站功能区");
+      if (!d || !d.token) throw new Error("Không thể mở khu học viên");
       applySiteModeLogin(d);
       return d;
     });
   }
 
   function restoreSiteModeToken() {
-    if (!T || !T.api) return Promise.reject(new Error("请先登录教师账号"));
+    if (!T || !T.api) return Promise.reject(new Error("Hãy đăng nhập bằng tài khoản giáo viên"));
     if (A && A.ensureTeacherSiteStudentToken && siteModeNeedsRestore()) {
       return A.ensureTeacherSiteStudentToken().then(function (d) {
         return (d && d.token) ? d : enterViaApi();
@@ -133,7 +133,7 @@
   }
 
   function enterSiteMode() {
-    if (!T || !T.api) return Promise.reject(new Error("请先登录教师账号"));
+    if (!T || !T.api) return Promise.reject(new Error("Hãy đăng nhập bằng tài khoản giáo viên"));
     return enterViaApi().then(function (d) {
       location.href = (d && d.redirect) || "index.html";
     });
@@ -147,13 +147,13 @@
 
   function switchHtml(active) {
     return (
-      '<div class="teacher-mode-switch" role="tablist" aria-label="教师端模式">' +
+      '<div class="teacher-mode-switch" role="tablist" aria-label="Chế độ giáo viên">' +
         '<button type="button" class="teacher-mode-switch__btn' +
           (active === "admin" ? " is-active" : "") +
-          '" data-mode="admin">教室管理区</button>' +
+          '" data-mode="admin">Quản lý lớp học</button>' +
         '<button type="button" class="teacher-mode-switch__btn' +
           (active === "site" ? " is-active" : "") +
-          '" data-mode="site">网站功能区</button>' +
+          '" data-mode="site">Trải nghiệm khu học viên</button>' +
       "</div>"
     );
   }
@@ -172,7 +172,7 @@
         }
         btn.disabled = true;
         enterSiteMode().catch(function (err) {
-          alert((err && err.message) || "无法进入网站功能区");
+          alert((err && err.message) || "Không thể mở khu học viên");
           btn.disabled = false;
         });
         return;
@@ -180,7 +180,7 @@
       if (mode === "admin") {
         var busy = document.body.classList.contains("yysd-ime-gate-open") ||
           document.body.classList.contains("vc-playing");
-        if (busy && !confirm("闯关进行中，离开会暂停本题。确定回到教室管理区？")) return;
+        if (busy && !confirm("Đang làm thử thách, rời đi sẽ tạm dừng câu hiện tại. Bạn muốn quay về khu quản lý lớp?")) return;
         if (isSiteMode()) exitSiteMode();
         else if (location.pathname.indexOf("teacher") < 0) location.href = "teacher.html";
       }
@@ -204,7 +204,7 @@
     bar.className = "teacher-site-banner";
     bar.innerHTML =
       switchHtml("site") +
-      '<span class="teacher-site-banner__hint">体验模式：与学生相同的功能与闯关进度</span>';
+      '<span class="teacher-site-banner__hint">Chế độ trải nghiệm: dùng các chức năng và theo dõi tiến độ thử thách như học viên</span>';
     document.body.insertBefore(bar, document.body.firstChild);
     bindSwitch(bar);
     document.body.classList.add("has-teacher-site-banner");

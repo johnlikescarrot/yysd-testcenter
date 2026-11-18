@@ -22,7 +22,7 @@
     body.classList.toggle("teacher-nav-collapsed", !!on);
     document.querySelectorAll("[data-teacher-nav-collapse]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.setAttribute("aria-label", on ? "展开侧栏" : "收起侧栏");
+      btn.setAttribute("aria-label", on ? "Mở thanh bên" : "Thu gọn thanh bên");
     });
     try { localStorage.setItem(KEY, on ? "1" : "0"); } catch (e) {}
   }

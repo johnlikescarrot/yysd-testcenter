@@ -7,8 +7,8 @@
   if (!T || !root) return;
 
   var ASSIGNABLE = [
-    { id: "gaozhong", label: "布置高中词库" },
-    { id: "cet4-lite", label: "布置四级精简" }
+    { id: "gaozhong", label: "Giao giáo trình THPT" },
+    { id: "cet4-lite", label: "Giao CET-4 rút gọn" }
   ];
 
   function esc(s) {
@@ -17,7 +17,7 @@
   }
 
   function label(s) {
-    return (s && (s.displayName || s.name || s.phone)) || ("学生 #" + (s && s.id));
+    return (s && (s.displayName || s.name || s.phone)) || ("Học viên #" + (s && s.id));
   }
 
   function formatProgress(b) {
@@ -25,21 +25,21 @@
     if (!prog) return "—";
     var total = prog.totalDays || 78;
     if (prog.progressDay) {
-      if (b.programComplete) return "已完成 " + total + " 关";
-      return "第 " + Math.min(prog.progressDay, total) + " 关";
+      if (b.programComplete) return "Đã hoàn thành " + total + " chặng";
+      return "Câu " + Math.min(prog.progressDay, total) + " chặng";
     }
-    return "已通 L" + prog.clearedListNo;
+    return "Đã qua L" + prog.clearedListNo;
   }
 
   function paint(students) {
     if (!students.length) {
-      root.innerHTML = '<div class="state state--brand teacher-empty"><h3>暂无学生</h3><p>' +
-        "当前机构还没有学生账号。</p></div>";
+      root.innerHTML = '<div class="state state--brand teacher-empty"><h3>Chưa có học viên</h3><p>' +
+        "Đơn vị này chưa có tài khoản học viên.</p></div>";
       return;
     }
     root.innerHTML =
       '<div class="table-wrap"><table class="data teacher-table">' +
-        "<thead><tr><th>学生</th><th>已布置词册</th><th>操作</th></tr></thead>" +
+        "<thead><tr><th>Học viên</th><th>Giáo trình đã giao</th><th>Thao tác</th></tr></thead>" +
         "<tbody>" +
         students.map(function (s) {
           var books = s.assignments && s.assignments.length
@@ -60,17 +60,17 @@
                   "<b>" + esc(b.bookLabel || b.bookId) + "</b><br>" +
                   '<span class="teacher-card__meta">' + esc(formatProgress(b)) + "</span><br>" +
                   '<button type="button" class="btn btn--ghost btn--sm" data-unassign="' +
-                    s.studentId + '" data-book="' + esc(b.bookId) + '">取消布置</button>' +
+                    s.studentId + '" data-book="' + esc(b.bookId) + '">Hủy giao</button>' +
                   "</div>";
               }).join("")
-            : "未布置";
+            : "Chưa giao";
           var btns = ASSIGNABLE.map(function (a) {
             if (assigned[a.id]) return "";
             return '<button type="button" class="btn btn--ghost btn--sm" data-assign="' +
               s.studentId + '" data-book="' + a.id + '">' + esc(a.label) + "</button> ";
           }).join("") +
             '<button type="button" class="btn btn--ghost btn--sm" data-refresh="' +
-              s.studentId + '">刷新</button>';
+              s.studentId + '">Làm mới</button>';
           return "<tr data-id=\"" + s.studentId + "\">" +
             "<td><b>" + esc(label(s)) + "</b><br><span class=\"teacher-card__meta\">" +
               esc(s.phone || "") + "</span></td>" +
@@ -104,43 +104,43 @@
   }
 
   function doAssign(studentId, bookId) {
-    msg("布置中…", true);
+    msg("Đang giao…", true);
     T.api("/api/vocab-challenge/teacher/assign", {
       method: "POST",
       body: { studentId: studentId, bookId: bookId }
     }).then(function (d) {
       if (!d || !d.ok) {
-        msg((d && d.error) || "布置失败", false);
+        msg((d && d.error) || "Không giao được bài", false);
         return;
       }
-      msg(d.unchanged ? "已是该词册" : "布置成功", true);
+      msg(d.unchanged ? "Học viên đã có giáo trình này" : "Đã giao thành công", true);
       load();
     }).catch(function (e) {
-      msg((e && e.message) || "布置失败", false);
+      msg((e && e.message) || "Không giao được bài", false);
     });
   }
 
   function doUnassign(studentId, bookId) {
-    msg("取消中…", true);
+    msg("Đang hủy…", true);
     T.api("/api/vocab-challenge/teacher/unassign", {
       method: "POST",
       body: { studentId: studentId, bookId: bookId }
     }).then(function (d) {
       if (!d || !d.ok) {
-        msg((d && d.error) || "取消失败", false);
+        msg((d && d.error) || "Không hủy được", false);
         return;
       }
-      msg("已取消布置（进度保留）", true);
+      msg("Đã hủy giao bài (tiến độ vẫn được giữ lại)", true);
       load();
     }).catch(function (e) {
-      msg((e && e.message) || "取消失败", false);
+      msg((e && e.message) || "Không hủy được", false);
     });
   }
 
   function loadOne(studentId) {
     T.api("/api/vocab-challenge/teacher/student?studentId=" + encodeURIComponent(studentId))
       .then(function () { load(); })
-      .catch(function () { msg("刷新失败", false); });
+      .catch(function () { msg("Không làm mới được", false); });
   }
 
   function load() {
@@ -149,7 +149,7 @@
         paint((roster && roster.students) || []);
       })
       .catch(function () {
-        root.innerHTML = '<p class="vs-empty">加载失败，请确认已登录教师账号。</p>';
+        root.innerHTML = '<p class="vs-empty">Không tải được nội dung, hãy kiểm tra bạn đã đăng nhập bằng tài khoản giáo viên.</p>';
       });
   }
 
