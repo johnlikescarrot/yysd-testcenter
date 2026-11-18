@@ -41,12 +41,15 @@ jobs:
         uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
           VALIDATE_ALL_CODEBASE: true
+          STRIP_DEFAULT_WORKSPACE_FOR_REGEX: true
           FILTER_REGEX_INCLUDE: '^(ielts-vi/|quality/|\.github/workflows/ielts-vi\.yml$)'
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_HTML: true
           VALIDATE_CSS: true
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_JSON: true
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           CREATE_LOG_FILE: true
           SAVE_SUPER_LINTER_SUMMARY: true
       - name: Annotate lint failures
@@ -54,8 +57,8 @@ jobs:
         shell: bash
         run: |
           if [[ -f super-linter.log ]]; then
-            message=$(grep -E ' (ERROR|FATAL) ' super-linter.log | tail -n 8 || true)
-            message=${message//\%/%25}
+            message=$(grep -E '\[(ERROR|FATAL)\]' super-linter.log | tail -n 8 || true)
+            message=${message//%/%25}
             message=${message//$'\r'/%0D}
             message=${message//$'\n'/%0A}
             printf '::error title=Super-Linter::%s\n' "$message"
