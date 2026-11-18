@@ -1,0 +1,67 @@
+name: Super-Linter
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 */6 * * *"
+
+permissions:
+  contents: read
+  statuses: write
+  checks: write
+
+concurrency:
+  group: super-linter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  official:
+    name: super-linter/super-linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Chạy Super-Linter chính thức
+        uses: super-linter/super-linter/slim@v7
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_YAML: true
+          VALIDATE_GITLEAKS: true
+          VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_CHECKOV: false
+          VALIDATE_SHELL_SHFMT: false
+          FILTER_REGEX_EXCLUDE: "(^|/)(node_modules|\\.git|dist|coverage|pdfs|library|data|admission|rankings|desktop|desktop-tiku|server|tiku|assets|app/library|scripts|docs/ai-collab|requirements\\.html)/?"
+          LINTER_RULES_PATH: .
+          MARKDOWN_CONFIG_FILE: .markdown-lint.yml
+          PYTHON_FLAKE8_CONFIG_FILE: .flake8
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          YAML_CONFIG_FILE: .yamllint.yml
+          HTML_FILE_NAME: .htmlhintrc
+          CSS_FILE_NAME: .stylelintrc.json
+          JSON_CONFIG_FILE: .eslintrc.json
+          LOG_LEVEL: WARN
+
+  repo-wide:
+    name: Kiểm tra toàn kho (bản sao nội bộ)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bản địa hoá + vệ sinh toàn kho
+        run: python3 tools/i18n/super_lint.py --all

@@ -1,0 +1,23 @@
+{
+  "name": "yysd-testcenter",
+  "version": "2026.11.0",
+  "private": true,
+  "description": "Nền tảng luyện thi IELTS tiếng Việt — YYSD Test Center",
+  "scripts": {
+    "test": "npm --prefix ielts test",
+    "coverage": "npm --prefix ielts run coverage",
+    "lint": "python3 tools/i18n/super_lint.py --changed",
+    "lint:all": "python3 tools/i18n/super_lint.py --all",
+    "i18n:check": "python3 tools/i18n/check.py",
+    "i18n:translate": "python3 tools/i18n/translate.py",
+    "pages:build": "python3 ielts/scripts/build_pages.py",
+    "pdf:build": "python3 ielts/scripts/build_pdfs.py",
+    "lighthouse": "lhci autorun --config=lighthouserc.json",
+    "verify": "npm run i18n:check && npm run lint:all && npm run coverage && npm run pages:build"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1",
+    "http-server": "^14.1.1",
+    "lighthouse": "^13.0.0"
+  }
+}

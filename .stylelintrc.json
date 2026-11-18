@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "no-eol-whitespace": true,
+    "no-missing-end-of-source-newline": true
+  }
+}

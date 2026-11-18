@@ -48,3 +48,15 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# Bản dựng & công cụ cục bộ (bản cập nhật Việt hoá 2026-11)
+node_modules/
+ielts/node_modules/
+coverage/
+dist/
+.nyc_output/
+.lighthouseci/
+__pycache__/
+*.pyc
+.venv/
+tools/i18n/*.log
