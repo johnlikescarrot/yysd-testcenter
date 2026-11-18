@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: vi-lighthouse-${{ github.ref }}
@@ -35,9 +36,30 @@ jobs:
           node-version: '22'
 
       - name: Chạy Lighthouse CI
-        run: npx --yes @lhci/cli@0.14.x autorun
+        id: lhci
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          npx --yes @lhci/cli@0.14.x autorun 2>&1 | tee lhci.log
+
+      - name: Đăng kết quả chi tiết vào PR
+        if: always() && github.event_name == 'pull_request'
         env:
-          LHCI_BUILD_CONTEXT__CURRENT_BRANCH: ${{ github.head_ref || github.ref_name }}
-          LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
-          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
-          LHCI_BUILD_CONTEXT__GITHUB_REPO_SLUG: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo '<details><summary>Nhật ký Lighthouse CI</summary>'
+            echo
+            echo '```'
+            tail -c 6000 lhci.log
+            echo '```'
+            echo '</details>'
+          } > lhci-report.md
+          gh pr comment "${{ github.event.pull_request.number }}" --body-file lhci-report.md
+
+      - name: Thất bại nếu chưa đạt 100 điểm
+        if: steps.lhci.outcome == 'failure'
+        run: |
+          echo 'Lighthouse CI không đạt ngưỡng 100 — xem bình luận trong PR.'
+          exit 1
