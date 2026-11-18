@@ -8,6 +8,7 @@ from __future__ import annotations
 import os
 import re
 import shutil
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,6 +17,35 @@ DIST = ROOT / "dist"
 EXCLUDE_DIRS = {"tests", "scripts", "node_modules", "coverage", "__pycache__"}
 EXCLUDE_FILES = {"package.json", "package-lock.json", "README.md"}
 BASE = os.environ.get("PAGES_BASE_URL", "https://johnlikescarrot.github.io/yysd-testcenter/").rstrip("/") + "/"
+
+
+def minify_css(css: str) -> str:
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s+", " ", css)
+    css = re.sub(r"\s*([{}:;,])\s*", r"\1", css)
+    return css.strip()
+
+
+def bundle_and_inline() -> None:
+    """Đóng gói JS bằng esbuild và inline CSS để không chặn render."""
+    esbuild = ROOT / "node_modules" / ".bin" / "esbuild"
+    script_tag = 'src="assets/js/boot.mjs"'
+    if esbuild.exists():
+        out = DIST / "assets" / "js" / "bundle.js"
+        subprocess.run([
+            str(esbuild), str(SRC / "assets" / "js" / "boot.mjs"),
+            "--bundle", "--minify", "--format=esm", "--target=es2022",
+            f"--outfile={out}"
+        ], check=True)
+        script_tag = 'src="assets/js/bundle.js"'
+        print(f"[pages] esbuild: bundle.js {out.stat().st_size/1024:.0f} KB")
+    css = minify_css((DIST / "assets" / "css" / "app.css").read_text(encoding="utf-8"))
+    style = f"<style>{css}</style>"
+    for page in DIST.rglob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        html = html.replace('<link rel="stylesheet" href="assets/css/app.css">', style)
+        html = html.replace('src="assets/js/boot.mjs"', script_tag)
+        page.write_text(html, encoding="utf-8")
 
 
 def main() -> None:
@@ -32,6 +62,7 @@ def main() -> None:
                 continue
             src = Path(dirpath) / name
             shutil.copy2(src, out / name)
+    bundle_and_inline()
     # GitHub Pages cần .nojekyll để phục vụ mọi tệp, CNAME cho tên miền riêng
     (DIST / ".nojekyll").touch()
     cname = (ROOT / "CNAME").read_text(encoding="utf-8").strip()

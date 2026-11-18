@@ -1,0 +1,14 @@
+{
+  "name": "YYSD IELTS — Luyện thi IELTS tiếng Việt",
+  "short_name": "YYSD IELTS",
+  "description": "Bài học ngắn bốn kỹ năng, gamification và tài liệu học thuật tiếng Việt.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#173a63",
+  "icons": [
+    { "src": "assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
