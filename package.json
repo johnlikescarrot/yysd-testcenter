@@ -1,0 +1,20 @@
+{
+  "name": "yysd-ielts-atlas",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.19"
+  },
+  "scripts": {
+    "build": "python3 scripts/studio/build.py",
+    "test": "c8 --all --include='studio/src/**/*.mjs' --check-coverage --100 --reporter=text --reporter=lcov node --test tests/studio/*.test.mjs",
+    "audit:pages": "node scripts/studio/audit.mjs",
+    "test:papers": "node tests/studio/papers.mjs"
+  },
+  "devDependencies": {
+    "c8": "11.0.0",
+    "jsdom": "26.1.0",
+    "lighthouse": "13.6.0",
+    "prettier": "3.10.1"
+  }
+}

@@ -1,0 +1,101 @@
+import { createServer } from "node:http";
+import { createReadStream } from "node:fs";
+import { mkdir, stat, writeFile } from "node:fs/promises";
+import { extname, resolve, sep } from "node:path";
+import { once } from "node:events";
+import lighthouse from "lighthouse";
+import { launch } from "chrome-launcher";
+
+// Use a project subpath just like GitHub Pages. No API, CDN or absolute-root fallbacks.
+const prefix = "/yysd-testcenter/",
+  dir = resolve("dist");
+const mime = {
+  ".html": "text/html; charset=utf-8",
+  ".svg": "image/svg+xml",
+  ".css": "text/css",
+  ".mjs": "text/javascript",
+  ".json": "application/json",
+  ".pdf": "application/pdf",
+  ".mp3": "audio/mpeg",
+  ".png": "image/png",
+};
+const server = createServer(async (req, res) => {
+  const { pathname } = new URL(req.url, "http://localhost");
+  const file = resolve(dir, pathname.slice(prefix.length) || "index.html");
+  try {
+    if (!pathname.startsWith(prefix) || !file.startsWith(dir + sep))
+      throw Error();
+    const info = await stat(file);
+    if (!info.isFile()) throw Error();
+    res.writeHead(200, {
+      "Content-Type": mime[extname(file)] || "application/octet-stream",
+      "Content-Length": info.size,
+    });
+    createReadStream(file).pipe(res);
+  } catch {
+    res.writeHead(404).end();
+  }
+});
+server.listen(0, "127.0.0.1");
+await once(server, "listening");
+const categories = ["performance", "accessibility", "best-practices", "seo"];
+const origin = `http://127.0.0.1:${server.address().port}${prefix}`;
+const routes = process.argv.slice(2);
+const summary = {};
+let chrome;
+try {
+  chrome = await launch({
+    chromePath: process.env.CHROME_PATH,
+    chromeFlags: [
+      "--headless",
+      "--disable-dev-shm-usage",
+      "--no-sandbox",
+      "--disable-gpu",
+    ],
+  });
+  await mkdir(".lighthouseci", { recursive: true });
+  for (const route of routes.length
+    ? routes
+    : [
+        "index.html",
+        "atlas-library.html",
+        "library/practice/ielts/sample-academic-reading-1.html",
+        "library/mock/cambridge-reading/cambridge-19-test-1-reading.html",
+        "library/mock/cambridge-listening/cambridge-19-test-1.html",
+        "library/mock/cambridge-writing/cambridge-19-test-1-writing.html",
+      ]) {
+    const { lhr, report } = await lighthouse(origin + route, {
+      port: chrome.port,
+      output: "html",
+      logLevel: "error",
+      onlyCategories: categories,
+    });
+    await writeFile(`.lighthouseci/${route.split("/").at(-1)}`, report);
+    summary[route] = Object.fromEntries(
+      categories.map((k) => [k, lhr.categories[k].score * 100]),
+    );
+    console.log(route, summary[route]);
+    for (const category of categories) {
+      const { auditRefs, score } = lhr.categories[category];
+      if (score !== 1) {
+        process.exitCode = 1;
+        for (const { id, weight } of auditRefs) {
+          const audit = lhr.audits[id];
+          if (weight && audit.score !== null && audit.score < 1)
+            console.error(
+              id,
+              audit.displayValue || "",
+              JSON.stringify(audit.details?.items || []).slice(0, 400),
+            );
+        }
+      }
+    }
+  }
+  await writeFile(
+    ".lighthouseci/scores.json",
+    JSON.stringify(summary, null, 2),
+  );
+} finally {
+  if (chrome) await chrome.kill();
+  server.close();
+}

@@ -1,0 +1,199 @@
+{
+  "sources": {
+    "kim": [
+      "Kim, S. K. & Webb, S. (2022)",
+      "The Effects of Spaced Practice on Second Language Learning: A Meta-Analysis",
+      "Language Learning, 72, 269–319",
+      "10.1111/lang.12479"
+    ],
+    "cepeda": [
+      "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T. & Rohrer, D. (2006)",
+      "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "Psychological Bulletin, 132, 354–380",
+      "10.1037/0033-2909.132.3.354"
+    ],
+    "recall": [
+      "Roediger, H. L. & Karpicke, J. D. (2006)",
+      "Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention",
+      "Psychological Science, 17, 249–255",
+      "10.1111/j.1467-9280.2006.01693.x"
+    ],
+    "dunlosky": [
+      "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J. & Willingham, D. T. (2013)",
+      "Improving Students’ Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology",
+      "Psychological Science in the Public Interest, 14, 4–58",
+      "10.1177/1529100612453266"
+    ],
+    "game": [
+      "Sailer, M. & Homner, L. (2020)",
+      "The Gamification of Learning: a Meta-analysis",
+      "Educational Psychology Review, 32, 77–112",
+      "10.1007/s10648-019-09498-w"
+    ],
+    "reading": [
+      "Nakanishi, T. (2015)",
+      "A Meta-Analysis of Extensive Reading Research",
+      "TESOL Quarterly, 49, 6–37",
+      "10.1002/tesq.157"
+    ],
+    "words": [
+      "Schmitt, N., Jiang, X. & Grabe, W. (2011)",
+      "The Percentage of Words Known in a Text and Reading Comprehension",
+      "The Modern Language Journal, 95, 26–43",
+      "10.1111/j.1540-4781.2011.01146.x"
+    ],
+    "listen": [
+      "Vandergrift, L. & Tafaghodtari, M. H. (2010)",
+      "Teaching L2 Learners How to Listen Does Make a Difference: An Empirical Study",
+      "Language Learning, 60, 470–497",
+      "10.1111/j.1467-9922.2009.00559.x"
+    ],
+    "caption": [
+      "Montero Perez, M., Van Den Noortgate, W. & Desmet, P. (2013)",
+      "Captioned video for L2 listening and vocabulary learning: A meta-analysis",
+      "System, 41, 720–739",
+      "10.1016/j.system.2013.07.013"
+    ],
+    "writing": [
+      "Kang, E. & Han, Z. (2015)",
+      "The Efficacy of Written Corrective Feedback in Improving L2 Written Accuracy: A Meta-Analysis",
+      "The Modern Language Journal, 99, 1–18",
+      "10.1111/modl.12189"
+    ],
+    "ellis": [
+      "Ellis, R. (2009)",
+      "A typology of written corrective feedback types",
+      "ELT Journal, 63, 97–107",
+      "10.1093/elt/ccn023"
+    ],
+    "oral": [
+      "Lyster, R. & Saito, K. (2010)",
+      "Oral feedback in classroom SLA: A meta-analysis",
+      "Studies in Second Language Acquisition, 32, 265–302",
+      "10.1017/S0272263109990520"
+    ],
+    "fluency": [
+      "de Jong, N. & Perfetti, C. A. (2011)",
+      "Fluency Training in the ESL Classroom: An Experimental Study of Fluency Development and Proceduralization",
+      "Language Learning, 61, 533–568",
+      "10.1111/j.1467-9922.2010.00620.x"
+    ]
+  },
+  "guides": [
+    {
+      "id": "nhip-hoc",
+      "label": "PHƯƠNG PHÁP",
+      "title": "Xây nhịp học bền vững",
+      "summary": "Lập lịch ôn, tự kiểm tra và đo tiến bộ bằng điều bạn nhớ được.",
+      "sections": [
+        [
+          "Chọn việc nhỏ có thể lặp lại",
+          "Đặt mục tiêu cụ thể: chẳng hạn phân biệt FALSE với NOT GIVEN trong một đoạn đọc. Điểm XP và chuỗi ngày giúp nhìn lại thói quen; chúng không đo trình độ tiếng Anh. Nghiên cứu về trò chơi hóa xem xét nhiều cách thiết kế và kết quả khác nhau [5]."
+        ],
+        [
+          "Nhớ lại trước khi xem đáp án",
+          "Che lời giải. Viết một câu tiếng Anh giải thích vì sao bạn chọn đáp án, rồi mới đối chiếu. Tự kiểm tra có thể giúp ghi nhớ lâu hơn chỉ đọc lại; cảm giác quen mắt ngay lúc học không đồng nghĩa với việc sẽ nhớ sau một tuần [3, 4]."
+        ],
+        [
+          "Trải bài học ra nhiều ngày",
+          "Thử trả lời lại ngày mai mà không nhìn sổ. Nếu còn nhầm, ghi nguyên nhân rồi rút ngắn khoảng ôn. Nghiên cứu ủng hộ việc phân bố lần học theo thời gian [1, 2]; các mốc 1, 3, 7, 14 và 30 ngày của Atlas là lựa chọn thiết kế, không phải công thức tối ưu cho mọi người."
+        ]
+      ],
+      "task": "Hôm nay: chọn hai câu đã sai. Ngày mai: giải lại và ghi bằng chứng. Cuối tuần: dùng kỹ năng đó vào một đoạn hoàn toàn mới.",
+      "check": "Tôi thực sự nhớ điều gì? Tôi chỉ nhận ra điều gì khi nhìn đáp án?",
+      "refs": ["kim", "cepeda", "recall", "dunlosky", "game"]
+    },
+    {
+      "id": "doc",
+      "label": "READING",
+      "title": "Đọc và tìm bằng chứng",
+      "summary": "Ghép nhận định với câu gốc, thay vì chỉ dò từ giống nhau.",
+      "sections": [
+        [
+          "Hai kiểu đọc, hai mục đích",
+          "Khi đọc mở rộng, chọn văn bản đủ dễ để đọc liên tục; tổng hợp nghiên cứu cho thấy cách này có lợi cho năng lực đọc [1]. Khi chữa đề, đọc chậm hơn: khoanh từ chỉ lượng, thời gian và mức độ chắc chắn."
+        ],
+        [
+          "Từ vựng là một phần của việc hiểu",
+          "Tỷ lệ từ đã biết có liên hệ với mức độ hiểu, nhưng không có một ngưỡng từ vựng bảo đảm hiểu đúng mọi bài [2]. Ghi cả cụm có ngữ cảnh, chẳng hạn a slight increase in visits, thay vì chỉ ghi increase."
+        ],
+        [
+          "Tách sai khỏi thiếu dữ kiện",
+          "Đọc: ‘The library extended its Saturday hours in June.’ Nhận định ‘It opened later on Sundays’ không được xác nhận hay bác bỏ. Chọn NOT GIVEN; lý do là thiếu dữ kiện về Chủ nhật, không phải vì hai câu dùng từ khác nhau. Đóng bài rồi thử kể lại lý do [3]."
+        ]
+      ],
+      "task": "Tạo bảng ba cột: nhận định / trích dẫn ngắn / quan hệ giữa hai câu. Viết một nhận định sai và một nhận định thiếu thông tin từ cùng một đoạn.",
+      "check": "Từ nào trong đoạn khiến tôi đổi đáp án? Nếu không có bằng chứng, tôi đã suy đoán gì?",
+      "refs": ["reading", "words", "recall"]
+    },
+    {
+      "id": "nghe",
+      "label": "LISTENING",
+      "title": "Nghe theo tín hiệu",
+      "summary": "Dự đoán loại đáp án, nghe kiểm chứng rồi mới xem văn bản.",
+      "sections": [
+        [
+          "Trước khi nghe",
+          "Nhìn chỗ trống: ‘Park area: ___ hectares’. Bạn cần một con số, nhưng đơn vị mới quyết định con số nào đúng. Viết dự đoán về loại từ, không đoán đáp án. Dự đoán, tự kiểm tra và đánh giá lại là các bước được nghiên cứu trong lớp học nghe [1]."
+        ],
+        [
+          "Trong khi nghe",
+          "Lần đầu nghe trọn ý. Lần sau tập trung vào chỗ chuyển ý: ‘We first planned Tuesday, but the hall is available on Thursday.’ Ngày được xác nhận là Thursday. Ghi lý do bỏ Tuesday thay vì chỉ chép lại đáp án."
+        ],
+        [
+          "Sau khi nghe",
+          "Đối chiếu bản chép lời hoặc phụ đề để nhận ra âm nối và cụm bị bỏ sót; nghiên cứu về video có phụ đề không đồng nghĩa với việc nên bật chữ trong mọi lượt nghe [2]. Hôm sau nghe lại không nhìn chữ để kiểm tra khả năng nhận ra cụm đó [3]."
+        ]
+      ],
+      "task": "Nghe chặng Bắt đúng con số trong Atlas. Ghi hai cặp số – đơn vị, nghe lại để xác nhận rồi giải thích tại sao chỉ một cặp phù hợp với câu hỏi.",
+      "check": "Lỗi của tôi nằm ở nghe âm, hiểu nghĩa, đơn vị hay chính tả?",
+      "refs": ["listen", "caption", "kim"]
+    },
+    {
+      "id": "viet",
+      "label": "WRITING",
+      "title": "Sửa bài viết có chủ đích",
+      "summary": "Tách phản hồi về nội dung khỏi lỗi ngôn ngữ và viết lại một đoạn.",
+      "sections": [
+        [
+          "Đọc đề trước khi sửa câu",
+          "Với Task 1, dưới mỗi nhận định so sánh hãy ghi một số liệu làm căn cứ. Với Task 2, tóm tắt lập trường trong một câu. Nếu đoạn văn không phục vụ lập trường đó, sửa dàn ý trước khi thay từ."
+        ],
+        [
+          "Hai cách phản hồi",
+          "Phản hồi trực tiếp có thể cung cấp dạng đúng; phản hồi gián tiếp chỉ vị trí lỗi để người viết tự sửa [2]. Ví dụ: ‘Visits increased of 20%.’ Hãy thử thay giới từ, sau đó đối chiếu với ‘Visits increased by 20%.’"
+        ],
+        [
+          "Kiểm tra khả năng chuyển giao",
+          "Viết một câu mới mô tả dữ liệu khác và dùng lại cấu trúc vừa sửa. Phản hồi về lỗi viết có thể hỗ trợ độ chính xác, nhưng kết quả còn tùy người học và dạng bài [1]. Đừng chỉ sửa sạch bản cũ rồi kết luận rằng lỗi sẽ không lặp lại; tự kiểm tra lại sau một khoảng nghỉ [3]."
+        ]
+      ],
+      "task": "So sánh: 100 lượt năm 2020, 120 lượt năm 2021. Viết hai câu, một câu dùng increased by và một câu dùng rose from … to …. Đưa câu cho người khác đọc mà không cho xem bảng.",
+      "check": "Người đọc có thể suy ra đúng số liệu không? Câu nào cần ví dụ hoặc bằng chứng rõ hơn?",
+      "refs": ["writing", "ellis", "dunlosky"]
+    },
+    {
+      "id": "noi",
+      "label": "SPEAKING",
+      "title": "Kể lại để nói trôi chảy",
+      "summary": "Luyện lượt nói dài, nhận góp ý cụ thể và thử lại bằng ví dụ mới.",
+      "sections": [
+        [
+          "Chuẩn bị bằng từ khóa",
+          "Với đề ‘Describe a skill you learned’, ghi bốn gợi ý: when / who / difficulty / result. Nói thành tiếng; không soạn cả bài để đọc. Đánh dấu điểm bạn phải dừng vì thiếu từ hoặc chưa sắp xếp được ý."
+        ],
+        [
+          "Lặp lại có thay đổi",
+          "Kể lại trải nghiệm, lần này thêm chi tiết vào đoạn bị đứt mạch. Thực nghiệm về luyện độ trôi chảy đã khảo sát việc lặp lại nhiệm vụ nói [1]. Sau đó đổi sang một trải nghiệm khác để tránh chỉ thuộc lòng một bài."
+        ],
+        [
+          "Xin một phản hồi có thể dùng ngay",
+          "Nhờ người nghe chỉ ra một chỗ khó hiểu và hỏi lại: ‘What happened next?’ Các nghiên cứu lớp học về phản hồi sửa lỗi khi nói cho thấy phản hồi có thể hỗ trợ phát triển ngôn ngữ [2]. Bạn có thể dành buổi sau để thử lại thay vì dồn mọi lượt vào một lúc [3]."
+        ]
+      ],
+      "task": "Lấy một thẻ Part 2 trong thư viện. Chuẩn bị một phút, nói tối đa hai phút. Ghi ba từ khóa còn thiếu và dùng chúng trong lượt kể thứ hai.",
+      "check": "Tôi có kể được nguyên nhân và kết quả không? Ví dụ nào vừa cụ thể vừa đúng trọng tâm?",
+      "refs": ["fluency", "oral", "kim"]
+    }
+  ]
+}

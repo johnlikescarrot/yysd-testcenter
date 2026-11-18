@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172f40">
+  <meta name="description" content="Bàn học IELTS tiếng Việt của YYSD: luyện bốn kỹ năng theo chặng ngắn, ôn cách quãng và tải cẩm nang có nguồn nghiên cứu. Không cần tài khoản.">
+  <title>Bàn học của bạn · IELTS Atlas</title>
+  <link rel="icon" href="studio/art/compass.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="studio/atlas.css">
+  <script type="module" src="studio/src/main.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Đến nội dung chính</a>
+  <header class="chrome"><div class="wrap nav-row">
+    <a class="brand" href="atlas.html"><img src="studio/art/compass.svg" width="38" height="38" alt=""><span>IELTS <b>Atlas</b></span></a>
+    <nav aria-label="Điều hướng chính"><a href="#main" aria-current="page">Bàn học</a><a href="#lo-trinh">Lộ trình</a><a href="atlas-library.html">Thư viện</a></nav>
+    <span class="local"><i></i> Học trên thiết bị này</span>
+  </div></header>
+  <main class="wrap" id="main">
+    <div class="heading"><div><p class="kicker"><i></i> TRUNG TÂM HỌC TẬP YYSD</p><h1>Bàn học của bạn<span>.</span></h1><p>Bắt đầu một bài ngắn, ôn lại điều đã học và ghi dấu tiến bộ mỗi ngày.</p></div><span class="date"><svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#calendar"/></svg><time id="date"></time></span></div>
+    <noscript><p>Bật JavaScript để lưu tiến độ và làm bài theo chặng. Bạn vẫn có thể mở <a href="atlas-library.html">thư viện học liệu</a>.</p></noscript>
+    <p id="storage-note" class="notice" role="status" hidden>Trình duyệt không cho lưu tiến độ. Bạn vẫn có thể học trong phiên này.</p>
+    <div class="overview">
+      <section class="feature" aria-labelledby="feature-title">
+        <div class="feature-copy"><span class="strap"><i></i> BÀI HỌC ĐỀ XUẤT</span><p class="eyeline" id="feature-unit">CHẶNG 01 / 08 &nbsp; · &nbsp; READING</p><h2 id="feature-title">Đọc để nắm ý chính</h2><p id="feature-topic">Tìm ý bao quát và phân biệt chi tiết hỗ trợ.</p>
+          <div class="hero-actions"><button class="btn warm" id="start" type="button">Vào bài học <svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#arrow"/></svg></button><span><svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#clock"/></svg> 3 phút</span></div>
+        </div>
+        <img class="map" src="studio/art/map.svg" width="400" height="250" alt=""><span class="plate" aria-hidden="true">FIG. 01 &nbsp; / &nbsp; STUDY ATLAS</span>
+      </section>
+      <section class="rhythm panel" aria-labelledby="rhythm-title"><p class="kicker">NHẬT KÝ CÁ NHÂN</p><h2 id="rhythm-title">Nhịp học của bạn</h2>
+        <div class="stats"><div><svg class="ico fire" aria-hidden="true"><use href="studio/art/icons.svg#flame"/></svg><b id="streak">0</b><span>ngày liên tiếp</span></div><div><svg class="ico gold" aria-hidden="true"><use href="studio/art/icons.svg#bolt"/></svg><b id="xp">0</b><span>XP tích lũy</span></div></div>
+        <ol class="week" id="week" aria-label="Hoạt động trong tuần"></ol>
+        <div class="goal"><label for="goal">Mục tiêu mỗi ngày</label><select id="goal"><option value="1">1 bài</option><option value="2">2 bài</option><option value="3">3 bài</option></select></div><progress id="goal-progress" max="1" value="0" aria-label="Số bài hoàn thành hôm nay"></progress><small id="goal-text">Đã hoàn thành 0 / 1 bài</small>
+      </section>
+    </div>
+    <div class="workspace">
+      <section class="path" id="lo-trinh" aria-labelledby="path-title"><div class="section-label"><p class="kicker"><i></i> LỘ TRÌNH CÁ NHÂN</p><span class="section-no">01 / 02</span></div><div class="title-row"><h2 id="path-title">Các chặng kỹ năng</h2><span id="completed" class="counter">0 / 8 chặng</span></div>
+        <p class="desc">Đi theo thứ tự gợi ý hoặc chọn kỹ năng bạn muốn rèn.</p>
+        <div class="filters" role="group" aria-label="Lọc theo kỹ năng"><button type="button" data-skill="all" aria-pressed="true">Tất cả</button><button type="button" data-skill="Reading" aria-pressed="false">Đọc</button><button type="button" data-skill="Listening" aria-pressed="false">Nghe</button><button type="button" data-skill="Writing" aria-pressed="false">Viết</button><button type="button" data-skill="Speaking" aria-pressed="false">Nói</button></div>
+        <ol class="lesson-list" id="lessons"></ol>
+      </section>
+      <aside class="tools" aria-label="Công cụ tự học"><div class="section-label"><p class="kicker"><i></i> TÚI HỌC LIỆU</p><span class="section-no">02 / 02</span></div>
+        <section class="review panel"><div class="tool-top"><span class="tool-icon"><svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#repeat"/></svg></span><span class="mini-tag">ÔN CÁCH QUÃNG</span></div><h2>Sổ ôn tập</h2><p id="due-note">Câu đã học sẽ trở lại theo lịch ôn riêng của bạn.</p><button class="btn quiet" type="button" id="review" disabled>Ôn câu đến hạn <svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#arrow"/></svg></button></section>
+        <a class="library-card panel" href="atlas-library.html"><div class="tool-top"><span class="tool-icon"><svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#stack"/></svg></span><span class="mini-tag">THƯ VIỆN</span></div><h2>Kho học liệu <span aria-hidden="true">↗</span></h2><p>Đề Cambridge, thẻ luyện nói và cẩm nang PDF kèm nghiên cứu gốc.</p></a>
+        <section class="badges" aria-labelledby="badge-title"><h2 id="badge-title">Dấu mốc hành trình</h2><ul id="badges"></ul></section>
+      </aside>
+    </div>
+  </main>
+  <footer><div class="wrap footer-row"><span><b>IELTS Atlas</b> &nbsp; / &nbsp; YYSD Learning Center</span><span>XP ghi nhận việc luyện tập, không phải điểm IELTS.</span></div></footer>
+  <dialog id="session" aria-labelledby="session-title"><header class="dialog-top"><p class="kicker" id="mode"></p><form method="dialog"><button class="icon-btn" aria-label="Đóng bài học"><svg class="ico" aria-hidden="true"><use href="studio/art/icons.svg#close"/></svg></button></form></header><div id="exercise"></div></dialog>
+</body></html>

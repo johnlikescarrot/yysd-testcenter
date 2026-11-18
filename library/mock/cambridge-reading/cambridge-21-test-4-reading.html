@@ -9,6 +9,7 @@
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
 <meta name="exam:description" content="Cambridge IELTS 21 Test 4 Đọc học thuật (Đề Cambridge): 3 bài đọc với 40 câu, luyện từng bài đọc hoặc thi thử trọn bộ, chấm tự động, lời giải và điểm ước tính.">
+<meta name="description" content="Cambridge IELTS 21 Test 4 Đọc học thuật (Đề Cambridge): 3 bài đọc với 40 câu, luyện từng bài đọc hoặc thi thử trọn bộ, chấm tự động, lời giải và điểm ước tính.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -155,9 +156,15 @@
   .ritem .ra .yours { color:#7b1a1a; } .ritem .ra .correctv { color:#145a32; font-weight:700; }
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
+  /* Readable text and keyboard-operable controls on the paper cover. */
+  .header h1 .brandtag { background:#234969; }
+  .cover-hero .sub, .paper-card .pc-meta, .wc, .stat-box .req { color:#495b69; }
+  button.pc-go { border:0; cursor:pointer; font-family:inherit; }
+  :focus-visible { outline:3px solid #99531d; outline-offset:3px; }
 </style>
 </head>
 <body>
+<main>
 
 <div class="header">
   <h1><span class="brandtag">YYSD</span> Luyện đề Cambridge IELTS</h1>
@@ -170,7 +177,7 @@
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">21</div></div>
     <div>
       <h2>Cambridge IELTS 21 · Test 4</h2>
-      <div class="sub">Đọc học thuật · Đề Cambridge · Chấm tự động và ước tính điểm IELTS.Chọn nút bên dưới để làm bài.</div>
+      <div class="sub">Đọc học thuật · Đề Cambridge · Chấm tự động và ước tính điểm IELTS. Chọn nút bên dưới để làm bài.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
@@ -178,7 +185,7 @@
       <div class="pc-icon">📖</div>
       <h3>Đọc học thuật (Academic Reading)</h3>
       <div class="pc-meta" id="coverMeta">Đang tải…</div>
-      <div class="pc-go">Bắt đầu làm bài ›</div>
+      <button type="button" class="pc-go">Bắt đầu làm bài ›</button>
     </div>
   </div>
 </div>
@@ -186,7 +193,7 @@
 <!-- Chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
-    <button class="modal-close" onclick="closeMode()">×</button>
+    <button class="modal-close" aria-label="Đóng lựa chọn chế độ" onclick="closeMode()">×</button>
     <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
@@ -242,6 +249,7 @@
   <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang giới thiệu</button></div>
 </div>
 
+</main>
 <script>
 /* ============================================================
    1, Dữ liệu đề —— Cambridge IELTS 15 Test 4 Đọc học thuật (Đề gốc + Đáp án gốc)
@@ -915,7 +923,7 @@ function passageHtml(p){
     </div><div class="reading-cols">${article}${qs}</div>`;
 }
 function expandQ(html){ // Đổi <Q n="x"> thành số câu + ô trả lời
-  return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
+  return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" aria-label="Câu ${n}" autocomplete="off">`);
 }
 function groupHtml(g){
   let body='';

@@ -9,6 +9,7 @@
 <meta name="exam:subject" content="cambridge-listening">
 <meta name="exam:duration" content="32">
 <meta name="exam:description" content="Cambridge IELTS 15 Test 4 Nghe (Đề Cambridge): 4 phần, luyện từng phần hoặc thi thử trọn bộ, có âm thanh, chấm tự động, lời giải và điểm ước tính.">
+<meta name="description" content="Cambridge IELTS 15 Test 4 Nghe (Đề Cambridge): 4 phần, luyện từng phần hoặc thi thử trọn bộ, có âm thanh, chấm tự động, lời giải và điểm ước tính.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -156,9 +157,15 @@
   .ritem .ra .yours { color:#7b1a1a; } .ritem .ra .correctv { color:#145a32; font-weight:700; }
   .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
+  /* Readable text and keyboard-operable controls on the paper cover. */
+  .header h1 .brandtag { background:#234969; }
+  .cover-hero .sub, .paper-card .pc-meta, .wc, .stat-box .req { color:#495b69; }
+  button.pc-go { border:0; cursor:pointer; font-family:inherit; }
+  :focus-visible { outline:3px solid #99531d; outline-offset:3px; }
 </style>
 </head>
 <body>
+<main>
 
 <div class="header">
   <h1><span class="brandtag">YYSD</span> Luyện đề Cambridge IELTS</h1>
@@ -171,7 +178,7 @@
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">15</div></div>
     <div>
       <h2>Cambridge IELTS 15 · Test 4</h2>
-      <div class="sub">Đề Cambridge · Chấm tự động và ước tính điểm IELTS.Chọn kỹ năng để bắt đầu.</div>
+      <div class="sub">Đề Cambridge · Chấm tự động và ước tính điểm IELTS. Chọn kỹ năng để bắt đầu.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
@@ -179,7 +186,7 @@
       <div class="pc-icon">🎧</div>
       <h3>Nghe (Listening)</h3>
       <div class="pc-meta">4 phần · tổng cộng 40 câu</div>
-      <div class="pc-go">Bắt đầu làm bài ›</div>
+      <button type="button" class="pc-go">Bắt đầu làm bài ›</button>
     </div>
   </div>
 </div>
@@ -187,7 +194,7 @@
 <!-- Chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
-    <button class="modal-close" onclick="closeMode()">×</button>
+    <button class="modal-close" aria-label="Đóng lựa chọn chế độ" onclick="closeMode()">×</button>
     <h2>Chọn chế độ</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
@@ -219,7 +226,7 @@
   </div>
   <div class="audio-bar">
     <div class="audio-row">
-      <button class="audio-play" id="aPlay" onclick="togglePlay()">▶</button>
+      <button class="audio-play" id="aPlay" aria-label="Phát hoặc tạm dừng âm thanh" onclick="togglePlay()">▶</button>
       <span class="audio-cur" id="aCur">Section 1</span>
       <div class="audio-prog" id="aProg" onclick="seekAudio(event)"><div class="fill" id="aFill"></div></div>
       <div class="audio-time" id="aTime">00:00 / 00:00</div>
@@ -253,6 +260,7 @@
   <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang giới thiệu</button></div>
 </div>
 
+</main>
 <script>
 /* ============================================================
    1, Dữ liệu đề —— Cambridge IELTS 15 Test 4 Nghe (Đề gốc + Đáp án gốc)
@@ -278,6 +286,13 @@ const TEST = {"meta": {"volume": 15,"testNo": 4},"durationMin": 32,"sections": [
           "audioEnd": 466,"instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.","noteTitle": "How the Industrial Revolution affected life in Britain","lines": [{"h": "19th century"},{"bullet": true,"html": "For the first time, people's possessions were used to measure Britain's <Q n=\"31\">.","q": "L31"},{"bullet": true,"html": "Developments in production of goods and in <Q n=\"32\"> greatly changed lives.","q": "L32"},{"h": "MAIN AREAS OF CHANGE"},{"h": "Manufacturing"},{"bullet": true,"html": "The Industrial Revolution would not have happened without the new types of <Q n=\"33\"> that were used then.","q": "L33"},{"bullet": true,"html": "The leading industry was <Q n=\"34\"> (its products became widely available).","q": "L34"},{"bullet": true,"html": "New <Q n=\"35\"> made factories necessary and so more people moved into towns.","q": "L35"},{"h": "Transport"},{"bullet": true,"html": "The railways took the place of canals."},{"plain": true,"html": "Because of the new transport:"},{"dash": true,"sub": true,"html": "greater access to <Q n=\"36\"> made people more aware of what they could buy in shops.","q": "L36"},{"dash": true,"sub": true,"html": "when shopping, people were not limited to buying <Q n=\"37\"> goods.","q": "L37"},{"h": "Retailing"},{"bullet": true,"html": "The first department stores were opened."},{"plain": true,"html": "The displays of goods were more visible:"},{"dash": true,"sub": true,"html": "inside stores because of better <Q n=\"38\">.","q": "L38"},{"dash": true,"sub": true,"html": "outside stores, because <Q n=\"39\"> were bigger.","q": "L39"},{"bullet": true,"html": "<Q n=\"40\"> that was persuasive became much more common.","q": "L40"}],"questions": [{"id": "L31","no": 31,"answer": ["wealth"],"explain": "Đáp án: wealth."},{"id": "L32","no": 32,"answer": ["technology"],"explain": "Đáp án: technology."},{"id": "L33","no": 33,"answer": ["power"],"explain": "Đáp án: power."},{"id": "L34","no": 34,"answer": ["textile","textiles"],"explain": "Đáp án: textile, textiles."},{"id": "L35","no": 35,"answer": ["machines"],"explain": "Đáp án: machines."},{"id": "L36","no": 36,"answer": ["newspapers"],"explain": "Đáp án: newspapers."},{"id": "L37","no": 37,"answer": ["local"],"explain": "Đáp án: local."},{"id": "L38","no": 38,"answer": ["lighting"],"explain": "Đáp án: lighting."},{"id": "L39","no": 39,"answer": ["windows"],"explain": "Đáp án: windows."},{"id": "L40","no": 40,"answer": ["Advertising","advertising"],"explain": "Đáp án: Advertising, advertising."}]}]}]};
 
 
+
+
+/* Bảng quy đổi điểm nghe tham khảo (0–40 câu đúng). */
+const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[32,7.5],[30,7.0],[26,6.5],[23,6.0],[18,5.5],[16,5.0],[13,4.5],[10,4.0],[6,3.5],[4,3.0],[0,2.5]];
+const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
+function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.5; }
+function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
@@ -317,7 +332,7 @@ function sectionHtml(s){
     </div>${s.groups.map(groupHtml).join('')}`;
 }
 function expandQ(html){ // Đổi <Q n="x"> thành số câu + ô trả lời
-  return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="L${n}" autocomplete="off">`);
+  return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="L${n}" aria-label="Câu ${n}" autocomplete="off">`);
 }
 function groupHtml(g){
   let body='';
