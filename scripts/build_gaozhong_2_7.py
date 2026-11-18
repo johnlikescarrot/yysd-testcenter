@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from inject_gaozhong_html import inject
 
-EXCEL = Path.home() / "Desktop" / "高中单词List1-40.xlsx"
+EXCEL = Path.home() / "Desktop" / " Từ vựng THPT List1-40.xlsx"
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
 
@@ -53,9 +53,9 @@ def main():
         words = mod.WORDS
         got = [w["word"] for w in words]
         want = excel[n]
-        if got != want:
+        if got!= want:
             for i, (a, b) in enumerate(zip(got, want), 1):
-                if a != b:
+                if a!= b:
                     raise SystemExit("LIST%s #%s: got %r want %r" % (n, i, a, b))
             raise SystemExit("LIST%s length got %s want %s" % (n, len(got), len(want)))
         for w in words:

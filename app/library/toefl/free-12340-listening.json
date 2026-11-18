@@ -1,46 +1,46 @@
 {
- "id": "free-12340",
- "title": "Choose a Response #98",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #98",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12340,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-98"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #98",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/a55f1e85de654c1ebfb649c2e530a9af.mp3",
-   "questions": [
+  "id": "free-12340",
+  "title": "Choose a Response #98",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #98",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12340,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-98"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Why don't you shut the windows?",
-      "B": "Renovation takes a long time.",
-      "C": "It will be completed next year.",
-      "D": "There will be plenty of work."
-     },
-     "answer": "A",
-     "transcript": "The renovation work they're doing is very loud.",
-     "stemZh": "他们正在进行的翻新工程噪音很大。",
-     "analysis": "The renovation work they're doing is very loud. 题干分析 题干意为他们正在做的装修工程噪音特别大。renovation work: 装修工程、翻修工作。 选项分析 选项A：提出关上窗户这个具体的解决办法，可以减弱施工噪音，逻辑上直接回应了对噪音的抱怨，因此正确。 选项B：只说装修要花很久时间，解释的是过程长短，不是解决噪音问题。 选项C：讲工程明年完工，虽然是相关事实，但无法缓解当下的吵闹。 选项D：说会有很多工作要做，与“声音很大”这一抱怨不相干。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #98",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/a55f1e85de654c1ebfb649c2e530a9af.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Why don't you shut the windows?",
+            "B": "Renovation takes a long time.",
+            "C": "It will be completed next year.",
+            "D": "There will be plenty of work."
+          },
+          "answer": "A",
+          "transcript": "The renovation work they're doing is very loud.",
+          "stemZh": "họ đang tiến hành đổi mới công trình tạp âm rất lớn.",
+          "analysis": "The renovation work they're doing is very loud. Câu hỏi phân tích Câu hỏi ý là họ đang làm lắp đặt thiết bị công trình tạp âm đặc biệt lớn. renovation work: lắp đặt thiết bị công trình, sửa chữa lại công tác. Phương án phân tích Phương án A: đưa ra đóng lại cửa sổ này cụ thể biện pháp giải quyết, có thể yếu bớt thi công tạp âm, ăn khớp bên trên trực tiếp đáp lại đối với tiếng ồn phàn nàn, bởi vậy Đúng. Phương án B: chỉ nói lắp đặt thiết bị lên giá thật lâu thời gian, giải thích là quá trình dài ngắn, không phải giải quyết tạp âm vấn đề. Phương án C: giảng công trình sang năm xong việc, mặc dù là tương quan sự thật, nhưng không cách nào giảm bớt lập tức ồn ào. Phương án D: nói sẽ có rất nhiều công tác muốn làm, và “ thanh âm rất lớn ” cái này ôm một cái oán không thể làm chung."
+        }
+      ]
+    }
+  ]
 }

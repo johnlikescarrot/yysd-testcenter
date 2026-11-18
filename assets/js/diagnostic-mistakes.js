@@ -8,15 +8,15 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   var TYPE_LABEL = {
-    listening_choice: "听音选词",
-    english_to_chinese: "看英选中",
-    chinese_to_english: "看中选英",
-    spelling: "拼写填空"
+    listening_choice: " nghe chọn từ ",
+    english_to_chinese: " nhìn Anh chọn trúng ",
+    chinese_to_english: " nhìn trúng chọn Anh ",
+    spelling: " điền chính tả "
   };
   var LEVEL_NAME = {
-    high_school: "高中词汇",
-    cet4: "四级词汇",
-    ielts: "雅思词汇"
+    high_school: " Từ vựng Nền tảng THPT ",
+    cet4: " Từ vựng Đại học Cốt lõi ",
+    ielts: " Từ vựng IELTS "
   };
 
   var mistakes = [];
@@ -25,7 +25,7 @@
   var selected = null;
 
   function esc(s) {
-    return Y && Y.esc ? Y.esc(s) : String(s == null ? "" : s)
+    return Y && Y.esc? Y.esc(s): String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
@@ -36,9 +36,9 @@
     }
   }
 
-  if (!A || !A.getToken || !A.getToken()) {
+  if (!A ||!A.getToken ||!A.getToken()) {
     contentEl.innerHTML =
-      '<div class="diag-card"><p class="diag-lead">请先登录</p><a class="btn btn--primary" href="login.html">去登录</a></div>';
+      '<div class="diag-card"><p class="diag-lead"> Vui lòng đăng nhập trước </p><a class="btn btn--primary" href="login.html"> Đăng nhập ngay </a></div>';
     return;
   }
 
@@ -48,7 +48,7 @@
     var q = [];
     if (level) q.push("level=" + encodeURIComponent(level));
     if (qtype) q.push("question_type=" + encodeURIComponent(qtype));
-    return A.api("/api/diagnostic/mistakes" + (q.length ? "?" + q.join("&") : "")).then(function (d) {
+    return A.api("/api/diagnostic/mistakes" + (q.length? "?" + q.join("&"): "")).then(function (d) {
       mistakes = d.mistakes || [];
       renderList();
     });
@@ -71,9 +71,9 @@
           " · " +
           esc(TYPE_LABEL[m.question_type] || m.question_type) +
           "</div>" +
-          '<div>你的答案：<span class="diag-ua">' +
-          esc(m.user_answer || "（空）") +
-          '</span> · 正确：<span class="diag-ca">' +
+          '<div> Câu trả lời của bạn: <span class="diag-ua">' +
+          esc(m.user_answer || " (chỗ trống) ") +
+          '</span> · Đúng: <span class="diag-ca">' +
           esc(m.correct_answer) +
           "</span></div></div></li>"
         );
@@ -82,23 +82,23 @@
 
     contentEl.innerHTML =
       '<div class="diag-card">' +
-      "<h1>诊断错题本</h1>" +
-      '<p class="diag-lead">来自能力诊断的错题；重练答对后自动移出。</p>' +
+      "<h1> sổ lỗi chẩn đoán </h1>" +
+      '<p class="diag-lead"> đến từ Chẩn đoán năng lực lỗi câu; trọng luyện trả lời sau tự động dời ra. </p>' +
       '<div class="diag-mistakes-toolbar">' +
-      '<select id="filt-level"><option value="">全部词库</option>' +
-      '<option value="high_school">高中</option><option value="cet4">四级</option><option value="ielts">雅思</option></select>' +
-      '<select id="filt-type"><option value="">全部题型</option>' +
-      '<option value="listening_choice">听音选词</option>' +
-      '<option value="english_to_chinese">看英选中</option>' +
-      '<option value="chinese_to_english">看中选英</option>' +
-      '<option value="spelling">拼写填空</option></select>' +
-      '<button type="button" class="btn btn--ghost btn--sm" id="btn-filter">筛选</button>' +
-      '<button type="button" class="btn btn--primary btn--sm" id="btn-retest">重练选中</button>' +
-      '<a class="btn btn--ghost btn--sm" href="diagnostic.html">去诊断</a>' +
+      '<select id="filt-level"><option value=""> Tất cả từ kho </option>' +
+      '<option value="high_school"> THPT </option><option value="cet4"> Đại học B1 </option><option value="ielts"> IELTS </option></select>' +
+      '<select id="filt-type"><option value=""> Tất cả dạng bài </option>' +
+      '<option value="listening_choice"> nghe chọn từ </option>' +
+      '<option value="english_to_chinese"> nhìn Anh chọn trúng </option>' +
+      '<option value="chinese_to_english"> nhìn trúng chọn Anh </option>' +
+      '<option value="spelling"> điền chính tả </option></select>' +
+      '<button type="button" class="btn btn--ghost btn--sm" id="btn-filter"> bộ lọc </button>' +
+      '<button type="button" class="btn btn--primary btn--sm" id="btn-retest"> trọng luyện chọn trúng </button>' +
+      '<a class="btn btn--ghost btn--sm" href="diagnostic.html"> đi chẩn đoán năng lực </a>' +
       "</div>" +
       (mistakes.length
         ? '<ul class="diag-mist-list">' + rows + "</ul>"
-        : '<p class="diag-lead">暂无错题。</p>') +
+        : '<p class="diag-lead"> tạm thời chưa có câu sai. </p>') +
       '<p class="diag-msg" id="mist-err" hidden></p></div>';
 
     document.getElementById("btn-filter").addEventListener("click", function () {
@@ -121,14 +121,14 @@
       ids.push(Number(cb.value));
     });
     if (!ids.length) {
-      showErr(new Error("请先勾选错题"));
+      showErr(new Error(" mời trước phác thảo chọn câu sai "));
       return;
     }
     A.api("/api/diagnostic/mistakes/retest", { method: "POST", body: { ids: ids } })
       .then(function (d) {
         retestQs = d.questions || [];
         retestIdx = 0;
-        if (!retestQs.length) throw new Error("无法生成重练题");
+        if (!retestQs.length) throw new Error(" không cách nào tạo ra trọng luyện câu ");
         renderRetest();
       })
       .catch(showErr);
@@ -137,8 +137,8 @@
   function renderRetest() {
     if (retestIdx >= retestQs.length) {
       contentEl.innerHTML =
-        '<div class="diag-card"><h1>重练完成</h1><p class="diag-lead">答对的题目已移出错题本。</p>' +
-        '<div class="diag-actions"><button type="button" class="btn btn--primary" id="back-list">返回错题本</button></div></div>';
+        '<div class="diag-card"><h1> Hoàn thành ôn luyện lại </h1><p class="diag-lead"> Các câu trả lời đúng đã được gỡ khỏi sổ lỗi sai. </p>' +
+        '<div class="diag-actions"><button type="button" class="btn btn--primary" id="back-list"> Quay lại Sổ lỗi sai </button></div></div>';
       document.getElementById("back-list").addEventListener("click", function () {
         loadList().catch(showErr);
       });
@@ -172,7 +172,7 @@
 
     contentEl.innerHTML =
       '<div class="diag-card">' +
-      "<h1>错题重练 " +
+      "<h1> Luyện lại câu sai " +
       (retestIdx + 1) +
       "/" +
       retestQs.length +
@@ -180,8 +180,8 @@
       body +
       '<div class="diag-feedback" id="rt-fb"></div>' +
       '<div class="diag-actions">' +
-      '<button type="button" class="btn btn--primary" id="rt-submit">提交</button>' +
-      '<button type="button" class="btn btn--ghost" id="rt-next" hidden>下一题</button>' +
+      '<button type="button" class="btn btn--primary" id="rt-submit"> Nộp bài </button>' +
+      '<button type="button" class="btn btn--ghost" id="rt-next" hidden> Câu tiếp theo </button>' +
       "</div></div>";
 
     var play = document.getElementById("rt-play");
@@ -222,7 +222,7 @@
     var ua = selected;
     if (q.question_type === "spelling") {
       var input = document.getElementById("rt-spell");
-      ua = input ? input.value : "";
+      ua = input? input.value: "";
     }
     if (ua == null || String(ua).trim() === "") return;
     A.api("/api/diagnostic/mistakes/retest/answer", {
@@ -230,10 +230,10 @@
       body: { mistake_id: q.mistake_id, user_answer: ua }
     }).then(function (d) {
       var fb = document.getElementById("rt-fb");
-      fb.className = "diag-feedback is-visible " + (d.is_correct ? "is-ok" : "is-bad");
+      fb.className = "diag-feedback is-visible " + (d.is_correct? "is-ok": "is-bad");
       fb.innerHTML = d.is_correct
-        ? "✓ 正确" + (d.removed ? " · 已移出错题本" : "")
-        : "✗ 错误。正确答案：<strong>" + esc(d.correct_answer) + "</strong>";
+        ? "✓ Đúng " + (d.removed? " · đã dời phạm sai lầm câu bản ": "")
+        : "✗ Sai. Đáp án đúng: <strong>" + esc(d.correct_answer) + "</strong>";
       document.getElementById("rt-submit").hidden = true;
       var next = document.getElementById("rt-next");
       next.hidden = false;

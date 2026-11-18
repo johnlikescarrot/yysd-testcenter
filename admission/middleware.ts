@@ -16,16 +16,16 @@ export function middleware(req: NextRequest) {
   const accept = req.headers.get("accept") || "";
   if (accept.includes("application/json") || req.nextUrl.pathname.includes("/api/")) {
     return NextResponse.json(
-      { error: "AI升学顾问暂仅对优益思达开放" },
+      { error: "AI học lên cố vấn tạm chỉ đối với YYSD cởi mở " },
       { status: 403 }
     );
   }
 
   return new NextResponse(
-    `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>暂未开放</title></head>
+    `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title> tạm không cởi mở </title></head>
 <body style="font-family:system-ui;padding:48px;text-align:center;color:#334155">
-  <h1 style="font-size:1.25rem">AI升学顾问暂仅对优益思达开放</h1>
-  <p style="margin-top:12px"><a href="/">返回首页</a></p>
+  <h1 style="font-size:1.25rem">AI học lên cố vấn tạm chỉ đối với YYSD cởi mở </h1>
+  <p style="margin-top:12px"><a href="/"> Về trang chủ </a></p>
 </body></html>`,
     { status: 403, headers: { "content-type": "text/html; charset=utf-8" } }
   );

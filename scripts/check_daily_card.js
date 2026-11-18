@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ponytail: vocab-daily-card 三态 + 满宽 CTA 契约
+// ponytail: vocab-daily-card tam thể + đầy rộng CTA khế ước
 "use strict";
 
 var fs = require("fs");

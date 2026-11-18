@@ -1,81 +1,81 @@
 {
- "id": "free-12435",
- "title": "Lecture #3",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #3",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12435,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-3"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #3",
-   "instruction": "Listen to a talk in a psychology class.",
-   "audio": "library/toefl/free/audio/31f442ec45974e27b586949d19ea8255.mp3",
-   "transcript": "Today we're going to talk about shyness and discuss recent research on ways to help children learn to interact socially. Many people consider themselves shy. In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people. And there are studies to indicate that the tendency toward shyness may be inherited. But just because certain children are timid doesn't mean they are doomed to be shy forever. There are things parents, teachers, and the children themselves can do to overcome this tendency--- and even to prevent it. One researcher found that if parents gently push their shy children to try new things, they can help these children become less afraid and less inhibited. Another way to help shy children is to train them in social skills. For example, there are special training groups where children are taught things like looking at other children while talking to them, talking about other people's interests, and even smiling. These groups have been very successful at giving shy children a place to feel safe and accepted, and at building up their self-esteem.",
-   "questions": [
+  "id": "free-12435",
+  "title": "Lecture #3",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #3",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12435,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-3"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main purpose of the talk?",
-     "options": {
-      "A": "To discuss the causes of shyness in children",
-      "B": "To describe ways to help shy children improve their social skills",
-      "C": "To explain the results of a survey about shyness",
-      "D": "To discuss the emotional effects of shyness on children"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：这次谈话的主要目的是什么？ 定位原文：Today we're going to talk about shyness and discuss recent research on ways to help children learn to interact socially. ... There are things parents, teachers, and the children themselves can do to overcome this tendency... 选项分析： A. 讨论儿童害羞的原因。演讲中虽然提到了害羞可能是遗传的，但这只是一笔带过，并非主要目的，因此A选项错误。 B. 描述帮助害羞儿童提高社交技能的方法。演讲开篇即点明要讨论帮助儿童学习社交的方法，随后具体介绍了两种方式：父母温和地推动孩子尝试新事物，以及通过特殊训练小组培训社交技巧，因此B选项正确。 C. 解释一项关于害羞的调查结果。演讲中提到了一个调查数据（40%的人害羞），但这只是引出话题的背景信息，并非演讲的核心目的，因此C选项错误。 D. 讨论害羞对儿童的情感影响。演讲没有重点讨论害羞带来的情感影响，而是聚焦于如何克服害羞，因此D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "According to the speaker, what is one way to help shy children become less shy?",
-     "options": {
-      "A": "Giving them more independence",
-      "B": "Gently encouraging them to try new things",
-      "C": "Avoiding social situations entirely",
-      "D": "Focusing on academic achievement"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：根据演讲者的说法，帮助害羞儿童变得不那么害羞的一种方法是什么？ 定位原文：One researcher found that if parents gently push their shy children to try new things, they can help these children become less afraid and less inhibited. 选项分析： A. 给他们更多独立性。原文并未提及给予独立性，而是强调在父母的推动下尝试新事物，因此A选项错误。 B. 温和地鼓励他们尝试新事物。这与原文中“gently push their shy children to try new things”的描述完全一致，因此B选项正确。 C. 完全避免社交场合。这与帮助孩子克服害羞的目标背道而驰，因此C选项错误。 D. 专注于学业成就。原文完全没有提及学业，因此D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "Based on the talk, why are special training groups beneficial for shy children?",
-     "options": {
-      "A": "They help children feel less anxious and more confident in social situations",
-      "B": "They allow children to avoid confronting their fears directly",
-      "C": "They focus on academic skills rather than social interactions",
-      "D": "They encourage children to be more independent and self-reliant"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：根据谈话内容，为什么特殊训练小组对害羞的儿童有益？ 定位原文：These groups have been very successful at giving shy children a place to feel safe and accepted, and at building up their self-esteem. 选项分析： A. 它们帮助儿童在社交场合感到不那么焦虑，更加自信。原文提到这些小组为孩子们提供了一个感到安全和被接纳的地方，并建立了他们的自尊，这正对应了减少焦虑、增加自信的效果，因此A选项正确。 B. 它们允许孩子避免直接面对自己的恐惧。这些小组正是通过训练社交技巧来帮助孩子面对恐惧，而非逃避，因此B选项错误。 C. 它们关注学业技能而非社交互动。这些小组专门训练社交技能，如交谈时看着对方、谈论他人兴趣等，因此C选项错误。 D. 它们鼓励孩子更加独立和自力更生。原文强调的是在小组中获得安全感和建立自尊，并未直接讨论独立性的培养，因此D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "What is the function of the sentence \"In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people.\" in the talk?",
-     "options": {
-      "A": "To provide statistical evidence supporting the commonality of shyness",
-      "B": "To introduce the topic of inherited shyness",
-      "C": "To describe the negative effects of shyness on people",
-      "D": "To explain the results of a study on social interaction"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：谈话中“事实上，参与我们调查的人中有百分之四十说自己害羞——也就是每五个人中有两个。”这句话的作用是什么？ 定位原文：Many people consider themselves shy. In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people. 选项分析： A. 提供统计数据证明害羞的普遍性。说话者先提出“很多人认为自己害羞”，然后用具体的调查数据（40%）来支撑这一观点，说明害羞确实很普遍，因此A选项正确。 B. 引入遗传性害羞的话题。遗传性害羞是在这句话之后才提到的（And there are studies to indicate...），这句话本身并未涉及遗传，因此B选项错误。 C. 描述害羞对人的负面影响。这句话仅仅陈述了害羞的人数比例，并未讨论任何负面影响，因此C选项错误。 D. 解释一项关于社交互动的研究结果。这句话是关于害羞普遍性的调查结果，而非关于社交互动的研究，因此D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #3",
+      "instruction": "Listen to a talk in a psychology class.",
+      "audio": "library/toefl/free/audio/31f442ec45974e27b586949d19ea8255.mp3",
+      "transcript": "Today we're going to talk about shyness and discuss recent research on ways to help children learn to interact socially. Many people consider themselves shy. In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people. And there are studies to indicate that the tendency toward shyness may be inherited. But just because certain children are timid doesn't mean they are doomed to be shy forever. There are things parents, teachers, and the children themselves can do to overcome this tendency--- and even to prevent it. One researcher found that if parents gently push their shy children to try new things, they can help these children become less afraid and less inhibited. Another way to help shy children is to train them in social skills. For example, there are special training groups where children are taught things like looking at other children while talking to them, talking about other people's interests, and even smiling. These groups have been very successful at giving shy children a place to feel safe and accepted, and at building up their self-esteem.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main purpose of the talk?",
+          "options": {
+            "A": "To discuss the causes of shyness in children",
+            "B": "To describe ways to help shy children improve their social skills",
+            "C": "To explain the results of a survey about shyness",
+            "D": "To discuss the emotional effects of shyness on children"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: lần nói chuyện này mục đích chủ yếu là gì? Dẫn chứng Bài gốc: Today we're going to talk about shyness and discuss recent research on ways to help children learn to interact socially.... There are things parents, teachers, and the children themselves can do to overcome this tendency... Phương án phân tích: A. thảo luận nhi đồng xấu hổ nguyên nhân. diễn thuyết Vừa mặc dù nhắc tới thẹn thùng có thể là di truyền, nhưng cái này chỉ là một bút mang qua, cũng không phải là mục đích chủ yếu, bởi vậy A Phương án Sai. B. miêu tả trợ giúp thẹn thùng nhi đồng đề cao xã giao kỹ năng phương pháp. diễn thuyết khúc dạo đầu tiếp xúc chỉ ra muốn thảo luận trợ giúp nhi đồng Học tập xã giao phương pháp, sau đó cụ thể giới thiệu hai loại phương thức: cha mẹ ôn hòa thúc đẩy hài tử nếm thử mới sự vật, cũng như thông qua đặc thù huấn luyện tiểu tổ huấn luyện xã giao kỹ xảo, bởi vậy B Phương án Đúng. C. giải thích hạng nhất về xấu hổ kết quả điều tra. diễn thuyết Vừa nhắc tới một cái điều tra số liệu (40% người thẹn thùng), nhưng cái này chẳng qua là dẫn xuất chủ đề đích bối cảnh tin tức, cũng không phải là diễn giảng hạch tâm mục đích, bởi vậy C Phương án Sai. D. thảo luận thẹn thùng đối với nhi đồng tình cảm ảnh hưởng. diễn thuyết không có trọng điểm thảo luận thẹn thùng mang tới tình cảm ảnh hưởng, mà là tập trung tại làm thế nào vượt qua thẹn thùng, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "According to the speaker, what is one way to help shy children become less shy?",
+          "options": {
+            "A": "Giving them more independence",
+            "B": "Gently encouraging them to try new things",
+            "C": "Avoiding social situations entirely",
+            "D": "Focusing on academic achievement"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: dựa theo diễn thuyết người thuyết pháp, trợ giúp thẹn thùng nhi đồng trở nên chẳng phải xấu hổ một loại phương pháp là cái gì? Dẫn chứng Bài gốc: One researcher found that if parents gently push their shy children to try new things, they can help these children become less afraid and less inhibited. Phương án phân tích: A. cho bọn hắn thêm nữa độc lập tính. Bài gốc cũng không đề cập cho độc lập tính, mà là cường điệu tại cha mẹ dưới sự thôi thúc nếm thử mới sự vật, bởi vậy A Phương án Sai. B. ôn hòa cổ vũ họ nếm thử mới sự vật. cái này cùng Bài gốc Vừa “gently push their shy children to try new things” kể xong toàn bộ nhất trí, bởi vậy B Phương án Đúng. C. hoàn toàn tránh cho trường hợp xã giao. cái này cùng trợ giúp hài tử vượt qua xấu hổ mục tiêu đi ngược lại, bởi vậy C Phương án Sai. D. chăm chú tại việc học thành tựu. Bài gốc hoàn toàn không có đề cập việc học, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "Based on the talk, why are special training groups beneficial for shy children?",
+          "options": {
+            "A": "They help children feel less anxious and more confident in social situations",
+            "B": "They allow children to avoid confronting their fears directly",
+            "C": "They focus on academic skills rather than social interactions",
+            "D": "They encourage children to be more independent and self-reliant"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: dựa theo nội dung nói chuyện, vì sao đặc thù huấn luyện tiểu tổ đối với xấu hổ nhi đồng hữu ích? Dẫn chứng Bài gốc: These groups have been very successful at giving shy children a place to feel safe and accepted, and at building up their self-esteem. Phương án phân tích: A. chúng trợ giúp nhi đồng tại trường hợp xã giao cảm thấy chẳng phải lo nghĩ, càng thêm tự tin. Bài gốc nhắc tới những mục này tiểu tổ là bọn nhỏ cung cấp một cái cảm thấy an toàn và bị tiếp nhận địa phương, cũng đã thành lập nên tự ái của bọn hắn, cái này đối diện ứng giảm bớt lo nghĩ, gia tăng tự tin hiệu quả, bởi vậy A Phương án Đúng. B. chúng cho phép hài tử tránh cho trực tiếp đối mặt sợ hãi của mình. những mục này tiểu tổ đúng là thông qua huấn luyện xã giao kỹ xảo đến trợ giúp hài tử đối mặt sợ hãi, mà không phải là trốn tránh, bởi vậy B Phương án Sai. C. chúng chú ý việc học kỹ năng mà không phải là xã giao ảnh hưởng lẫn nhau,tác động qua lại. những mục này tiểu tổ huấn luyện đặc biệt xã giao kỹ năng, ví dụ nói chuyện với nhau lúc nhìn đối phương, đàm luận người khác hứng thú {các loại:đợi}, bởi vậy C Phương án Sai. D. chúng cổ vũ hài tử càng thêm độc lập và tự lực gánh sinh. Bài gốc nhấn mạnh là ở trong tiểu tổ đạt được cảm giác an toàn và thành lập tự tôn, cũng không trực tiếp thảo luận độc lập tính bồi dưỡng, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "What is the function of the sentence \"In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people.\" in the talk?",
+          "options": {
+            "A": "To provide statistical evidence supporting the commonality of shyness",
+            "B": "To introduce the topic of inherited shyness",
+            "C": "To describe the negative effects of shyness on people",
+            "D": "To explain the results of a study on social interaction"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: nói chuyện Vừa “ trên thực tế, tham gia cùng chúng ta điều tra nhân trung có 40% nói mình thẹn thùng —— cũng chính là mỗi năm người trong có hai cái. ” những lời này tác dụng là cái gì? Dẫn chứng Bài gốc: Many people consider themselves shy. In fact, forty percent of people who took part in our survey said they were shy--- that's two out of every five people. Phương án phân tích: A. cung cấp số liệu thống kê chứng minh xấu hổ phổ biến tính. kẻ nói chuyện trước đưa ra “ rất nhiều người cho là mình thẹn thùng ”, sau đó dùng cụ thể điều tra số liệu (40%) đến chèo chống cái này đánh giá chút:điểm, nói rõ thẹn thùng xác thực rất phổ biến, bởi vậy A Phương án Đúng. B. dẫn vào di truyền tính xấu hổ chủ đề. di truyền tính thẹn thùng là ở những lời này về sau mới nhắc tới (And there are studies to indicate...), những lời này bản thân cũng không liên quan đến di truyền, bởi vậy B Phương án Sai. C. miêu tả thẹn thùng đối với người tác dụng phụ. những lời này chỉ trần thuật xấu hổ nhân số tỉ lệ, cũng không thảo luận bất luận cái gì tác dụng phụ, bởi vậy C Phương án Sai. D. giải thích hạng nhất về xã giao hỗ động kết quả nghiên cứu. những lời này là về thẹn thùng phổ biến tính kết quả điều tra, mà không phải là về xã giao hỗ động nghiên cứu, bởi vậy D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

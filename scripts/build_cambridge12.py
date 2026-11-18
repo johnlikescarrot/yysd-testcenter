@@ -51,15 +51,15 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思12"),
-        ("剑桥雅思 20", "剑桥雅思 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
         ('<div class="num">20</div>', '<div class="num">12</div>'),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
         ("test1", f"test{n}"),
         ("ielts20_test1", f"ielts12_test{n}"),
-        ("剑桥雅思20 Test 1 听力", f"剑桥雅思12 Test {n} 听力"),
-        ("剑桥雅思15 Test 1 听力", f"剑桥雅思12 Test {n} 听力"),
+        ("Cambridge IELTS 20 Test 1 Nghe ", f"Cambridge IELTS 12 Test {n} Nghe "),
+        ("Cambridge IELTS 15 Test 1 Nghe ", f"Cambridge IELTS 12 Test {n} Nghe "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -68,12 +68,12 @@ def patch_listening_meta(html: str, n: int) -> str:
 
 def patch_reading_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思12"),
-        ("剑桥雅思 20", "剑桥雅思 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
         ('<div class="num">20</div>', '<div class="num">12</div>'),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
-        ("剑桥雅思20 Test 1 阅读", f"剑桥雅思12 Test {n} 阅读"),
+        ("Cambridge IELTS 20 Test 1 Đọc ", f"Cambridge IELTS 12 Test {n} Đọc "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -82,8 +82,8 @@ def patch_reading_meta(html: str, n: int) -> str:
 
 def patch_writing_meta(html: str, n: int) -> str:
     reps = [
-        ("剑桥雅思20", "剑桥雅思12"),
-        ("剑桥雅思 20", "剑桥雅思 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 12"),
         ('<div class="num">20</div>', '<div class="num">12</div>'),
         ("Test 4", f"Test {n}"),
         ("test-4", f"test-{n}"),
@@ -95,8 +95,8 @@ def patch_writing_meta(html: str, n: int) -> str:
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             WRITING_BLURBS[n],
         ),
-        ("Test 1 写作（官方真题）", f"Test {n} 写作（官方真题）"),
-        ("Test 4 写作（官方真题）", f"Test {n} 写作（官方真题）"),
+        ("Test 1 Viết (Đề thi chính thức) ", f"Test {n} Viết (Đề thi chính thức) "),
+        ("Test 4 Viết (Đề thi chính thức) ", f"Test {n} Viết (Đề thi chính thức) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)

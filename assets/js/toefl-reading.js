@@ -85,7 +85,7 @@
     return Math.round(score / total * 30);
   }
 
-  // ponytail: ETS 不公开原始分表；用官网 0–30 → 1–6 对照，标预估
+  // ponytail: ETS không công khai nguyên thủy điểm bề ngoài; dùng Website Games 0–30 → 1–6 so sánh, nhãn hiệu dự đoán
   function bandFrom30(n) {
     if (n >= 29) return 6;
     if (n >= 27) return 5.5;
@@ -106,7 +106,7 @@
     var ok = 0;
     var wrong = [];
     items.forEach(function (it) {
-      var ua = answers[it.no] == null ? "" : String(answers[it.no]);
+      var ua = answers[it.no] == null? "": String(answers[it.no]);
       var hit = false;
       var ans = "";
       var stem = "";
@@ -126,7 +126,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || " (Chưa trả lời) ",
           ans: ans,
           stem: stem,
           explain: explain
@@ -146,14 +146,14 @@
   }
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function vocabWord(q) {
     var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["“”‘’']([^"“”‘’']+)["“”‘’']/i);
-    return m ? m[1].trim() : "";
+    return m? m[1].trim(): "";
   }
 
   function escapeRe(s) {
@@ -175,7 +175,7 @@
   }
 
   function savedSuffix(part, raw) {
-    var v = String(raw == null ? "" : raw);
+    var v = String(raw == null? "": raw);
     var pre = part.prefix || "";
     if (pre && v.toLowerCase().indexOf(pre.toLowerCase()) === 0) return v.slice(pre.length);
     return v;
@@ -189,7 +189,7 @@
       host.appendChild(h);
     }
     (task.passage || []).forEach(function (part) {
-      if (part.t && !part.id) {
+      if (part.t &&!part.id) {
         var text = document.createElement("span");
         text.className = "hl-body";
         text.textContent = part.t;
@@ -204,7 +204,7 @@
       pre.className = "blank-pre";
       pre.textContent = part.prefix || "";
       wrap.appendChild(pre);
-      // 一个空 = 一个 input；「一字母一横线」由底纹画出，宽度 = n × 1.3ch
+      // một cái chỗ trống = một cái input; « một chữ mẫu quét ngang tuyến » do ngọn nguồn văn vẽ ra, độ rộng = n × 1.3ch
       var inp = document.createElement("input");
       inp.type = "text";
       inp.maxLength = n;
@@ -212,7 +212,7 @@
       inp.spellcheck = false;
       inp.style.setProperty("--n", n);
       inp.setAttribute("aria-label", "blank " + part.id);
-      if (saved && saved[part.id] != null) inp.value = savedSuffix(part, saved[part.id]);
+      if (saved && saved[part.id]!= null) inp.value = savedSuffix(part, saved[part.id]);
       wrap.appendChild(inp);
       host.appendChild(wrap);
     });
@@ -222,7 +222,7 @@
     var out = {};
     host.querySelectorAll(".blank").forEach(function (el) {
       var inp = el.querySelector("input");
-      out[el.dataset.id] = inp ? inp.value : "";
+      out[el.dataset.id] = inp? inp.value: "";
     });
     return out;
   }
@@ -234,14 +234,14 @@
       mark = '<button type="button" class="insert" data-insert="' + esc(p.insert) +
         '" aria-label="insert ' + esc(p.insert) + '">' + esc(p.insert) + "</button> ";
     }
-    if (!p.t) return mark ? "<p>" + mark + "</p>" : "";
+    if (!p.t) return mark? "<p>" + mark + "</p>": "";
     return "<p>" + mark + hl(p.t, word) + "</p>";
   }
 
   function dailyKind(task) {
     var L = task.layout || {};
     var kind = L.kind || "card";
-    if (kind !== "card") return kind;
+    if (kind!== "card") return kind;
     var hint = String((L.kicker || "") + " " + (task.instruction || "")).toLowerCase();
     if (hint.indexOf("email") >= 0) return "email";
     if (/notice|announcement|flyer|poster|sign|schedule|event/.test(hint)) return "notice";
@@ -287,7 +287,7 @@
 
   function applyVocabHighlight(host, q) {
     var word = vocabWord(q);
-    if (!host || !word || !host.querySelectorAll) return;
+    if (!host ||!word ||!host.querySelectorAll) return;
     host.querySelectorAll("mark.vocab-hl").forEach(function (el) {
       var p = el.parentNode;
       if (!p) return;
@@ -298,7 +298,7 @@
     var re = new RegExp("\\b" + escapeRe(word) + "\\b", "i");
     var bodies = host.querySelectorAll(".hl-body");
     for (var i = 0; i < bodies.length; i++) {
-      if (typeof document === "undefined" || !document.createTreeWalker) {
+      if (typeof document === "undefined" ||!document.createTreeWalker) {
         bodies[i].innerHTML = markFirst(bodies[i].innerHTML, word);
         if (bodies[i].querySelector("mark.vocab-hl")) return;
         continue;
@@ -326,18 +326,18 @@
   }
 
   function highlightBodies(host) {
-    return host ? host.querySelectorAll(".hl-body") : [];
+    return host? host.querySelectorAll(".hl-body"): [];
   }
 
   function saveHighlights(task, host, store) {
-    if (!store || !host) return;
+    if (!store ||!host) return;
     store[taskKey(task)] = Array.prototype.map.call(highlightBodies(host), function (el) {
       return el.innerHTML;
     });
   }
 
   function restoreHighlights(task, host, store) {
-    if (!store || !host) return;
+    if (!store ||!host) return;
     var saved = store[taskKey(task)];
     if (!saved) return;
     var bodies = highlightBodies(host);
@@ -346,13 +346,13 @@
 
   function selectionRange(root) {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed || !sel.rangeCount || !root) return null;
+    if (!sel || sel.isCollapsed ||!sel.rangeCount ||!root) return null;
     var range = sel.getRangeAt(0);
     var node = range.commonAncestorContainer;
     if (node.nodeType === 3) node = node.parentNode;
-    var body = node && node.closest ? node.closest(".hl-body") : null;
-    if (!body || !root.contains(body)) return null;
-    if (!body.contains(range.startContainer) || !body.contains(range.endContainer)) return null;
+    var body = node && node.closest? node.closest(".hl-body"): null;
+    if (!body ||!root.contains(body)) return null;
+    if (!body.contains(range.startContainer) ||!body.contains(range.endContainer)) return null;
     return range;
   }
 
@@ -416,7 +416,7 @@
 
   function renderPassage(task, host, showInsert, q) {
     var word = vocabWord(q);
-    // ponytail: kl SRDL/LRDL daily 阅读题面是整图，无 paras；直接铺图
+    // ponytail: kl SRDL/LRDL daily Đọc câu mặt là cả đồ, Không paras; trực tiếp rải đồ
     if (task.image) {
       host.innerHTML = '<img class="passage-img" src="' + esc(task.image) + '" alt="">';
       return;
@@ -434,7 +434,7 @@
   function renderOptions(q, host, saved) {
     var keys = Object.keys(q.options || {});
     host.innerHTML = keys.map(function (k) {
-      var checked = saved === k ? " checked" : "";
+      var checked = saved === k? " checked": "";
       return '<label class="opt"><input type="radio" name="q' + q.id + '" value="' +
         esc(k) + '"' + checked + "> <b>" + esc(k) + "</b> " + esc(q.options[k]) + "</label>";
     }).join("");
@@ -472,7 +472,7 @@
     esc: esc
   };
 
-  if (typeof module !== "undefined" && module.exports) {
+  if (typeof module!== "undefined" && module.exports) {
     module.exports = w.YYSD_TOEFL;
   }
-})(typeof window !== "undefined" ? window : global);
+})(typeof window!== "undefined"? window: global);

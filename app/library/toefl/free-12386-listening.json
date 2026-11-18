@@ -1,46 +1,46 @@
 {
- "id": "free-12386",
- "title": "Choose a Response #144",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #144",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12386,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-144"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #144",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/684632e3b31b4e4b8670794bb654cb20.mp3",
-   "questions": [
+  "id": "free-12386",
+  "title": "Choose a Response #144",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #144",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12386,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-144"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Bosses are important.",
-      "B": "I will bring it along tomorrow.",
-      "C": "He is very kind to me.",
-      "D": "Yes, he's my manager."
-     },
-     "answer": "C",
-     "transcript": "How do you get along with your boss?",
-     "stemZh": "你和你的老板相处得怎么样？",
-     "analysis": "How do you get along with your boss? 题干分析 题干是一句询问人际关系的口语，意为“你和老板相处得怎么样？”，考点是get along with（与……相处）。 选项分析 选项A：此选项偏离了问题核心。它仅泛泛评论了老板的重要性，但完全没有回答“如何相处”这一具体问题，属于答非所问的无效回应。 选项B：此选项存在关键词误解。问题中的“get along”意为“相处融洽”，而选项中的“bring it along”意为“带来某物”，两者含义无关，导致回答完全脱离语境，属于严重误答。 选项C：此选项为正确答案，直接、恰当地回应了问题。通过描述“He is very kind to me”，明确表达了与老板之间的积极关系，间接但清晰地说明了相处融洽，是最佳回答。 选项D：此选项仅确认了老板的身份（他是我的经理），但未提供任何关于相处关系或相处方式的信息，未能满足问题要求，属于不完整回应。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #144",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/684632e3b31b4e4b8670794bb654cb20.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Bosses are important.",
+            "B": "I will bring it along tomorrow.",
+            "C": "He is very kind to me.",
+            "D": "Yes, he's my manager."
+          },
+          "answer": "C",
+          "transcript": "How do you get along with your boss?",
+          "stemZh": "bạn và lão bản của bạn chung đụng được thế nào?",
+          "analysis": "How do you get along with your boss? Câu hỏi phân tích Câu hỏi là một câu hỏi thăm nhân tế quan hệ Nói, ý là “ bạn và lão bản chung đụng được thế nào? ”, địa điểm thi là get along with (và …… ở chung). Phương án phân tích Phương án A: này Phương án trệch hướng vấn đề hạch tâm. nó chỉ hời hợt bình luận rồi ông chủ tầm quan trọng, nhưng hoàn toàn không có trả lời “ làm thế nào ở chung ” cái này một cỗ thể vấn đề, thuộc về đáp không dính vào đâu không có hiệu quả đáp lại. Phương án B: này Phương án tồn tại từ khóa hiểu lầm. vấn đề trong đích “get along” ý là “ ở chung hòa hợp ”, mà Phương án trong đích “bring it along” ý là “ mang đến vật gì đó ”, cả hai Nghĩa không quan hệ, dẫn đến trả lời xong toàn bộ thoát ly ngữ cảnh, thuộc về nghiêm trọng lầm đáp. Phương án C: này Phương án là Đáp án đúng, trực tiếp, thích hợp đáp lại vấn đề. thông qua miêu tả “He is very kind to me”, rõ ràng biểu đạt và lão bản ở giữa tích cực quan hệ, gián tiếp nhưng rõ ràng nói rõ ở chung hòa hợp, là tốt nhất trả lời. Phương án D: này Phương án chỉ xác nhận ông chủ Vai trò (hắn là kinh lý của ta), nhưng không cung cấp bất luận cái gì về ở chung quan hệ hoặc ở chung phương thức tin tức, không thể thỏa mãn vấn đề yêu cầu, thuộc về không hoàn chỉnh đáp lại."
+        }
+      ]
+    }
+  ]
 }

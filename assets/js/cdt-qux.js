@@ -22,13 +22,13 @@
     "vertical-align:middle;font:700 14px/1 Arial,sans-serif;color:#123}" +
     ".yysd-qux-slot.is-over{border-color:#1a6fb5;background:#e8f2fb}" +
     ".yysd-qux-slot.is-filled{border-style:solid;border-color:#4a7aa8;background:#fff;cursor:pointer}" +
-    ".yysd-qux-slot .yysd-qux-chip{cursor:grab;margin:0;min-width:32px;height:28px}" +
+    ".yysd-qux-slot.yysd-qux-chip{cursor:grab;margin:0;min-width:32px;height:28px}" +
     ".yysd-qux-multi{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}" +
-    ".yysd-qux-multi .yysd-qux-chip{cursor:pointer}" +
+    ".yysd-qux-multi.yysd-qux-chip{cursor:pointer}" +
     ".yysd-qux-hide-sel{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;" +
     "pointer-events:none!important;overflow:hidden!important}" +
     ".match-q.yysd-qux-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}" +
-    ".match-q.yysd-qux-row .mq-txt{flex:1;min-width:120px}";
+    ".match-q.yysd-qux-row.mq-txt{flex:1;min-width:120px}";
 
   function injectCss() {
     if (document.getElementById("yysd-cdt-qux-css")) return;
@@ -54,28 +54,28 @@
 
   function sameOptions(a, b) {
     var la = optionLetters(a), lb = optionLetters(b);
-    if (la.length !== lb.length) return false;
-    for (var i = 0; i < la.length; i++) if (la[i] !== lb[i]) return false;
+    if (la.length!== lb.length) return false;
+    for (var i = 0; i < la.length; i++) if (la[i]!== lb[i]) return false;
     return true;
   }
 
   function allowsReuse(group, letterCount, slotCount) {
     var el = group.querySelector(".instruction");
     var t = (el && el.textContent) || "";
-    if (/more than once|一次以上|可重复|任意.*多次/i.test(t)) return true;
-    if (/only once|each (letter|answer) only once|仅.*一次|每个字母.*一次/i.test(t)) return false;
+    if (/more than once| một lần trở lên | có thể lặp lại | tùy ý.* nhiều lần /i.test(t)) return true;
+    if (/only once|each (letter|answer) only once| chỉ.* một lần | từng chữ mẫu.* một lần /i.test(t)) return false;
     // pigeonhole: more gaps than letters ⇒ must reuse
     if (slotCount && letterCount && slotCount > letterCount) return true;
     // exclusive list/heading/map when enough distinct options
     var enough = letterCount && slotCount && letterCount >= slotCount;
-    if (enough && /heading|标题|from the box and write/i.test(t)) return false;
+    if (enough && /heading| tiêu đề |from the box and write/i.test(t)) return false;
     if (enough && group.querySelector && group.querySelector(".map-wrap")) return false;
     // ponytail: default reusable — exclusive-by-default broke paragraph/classify matches
     return true;
   }
 
   function isMultiHint(text) {
-    return /选择一项|两题合计|两项|本组合计|选出正确|Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
+    return / lựa chọn hạng nhất | hai câu cộng lại | hai hạng | bản tổ hợp kế | tuyển ra Đúng |Choose TWO|choose two|TWO letters|two letters/i.test(text || "");
   }
 
   function isMultiGroup(group, pairs) {
@@ -90,7 +90,7 @@
       if (mq && isMultiHint(mq.textContent)) hints++;
     });
     var instr = ((group.querySelector(".instruction") || {}).textContent) || "";
-    var instrMulti = /Choose TWO letters|Choose TWO\b|选出.*两项|两题合计/i.test(instr);
+    var instrMulti = /Choose TWO letters|Choose TWO\b| tuyển ra.* hai hạng | hai câu cộng lại /i.test(instr);
     // ponytail: never infer multi from row count alone — match also shares one letter box
     return hints > 0 || instrMulti;
   }
@@ -141,7 +141,7 @@
     host.setAttribute("data-max", String(max));
     var lead = document.createElement("div");
     lead.className = "yysd-qux-pool__lbl";
-    var qLabel = nums.length ? ("Questions " + nums.join(" & ") + ". ") : "";
+    var qLabel = nums.length? ("Questions " + nums.join(" & ") + ". "): "";
     lead.textContent = qLabel + (max === 2
       ? "Click TWO letters (order does not matter)."
       : ("Click " + max + " letters (order does not matter)."));
@@ -205,7 +205,7 @@
       chipByLetter[L] = chip;
       pool.appendChild(chip);
       chip.addEventListener("dragstart", function (e) {
-        if (chip.classList.contains("is-used") && !reuse) {
+        if (chip.classList.contains("is-used") &&!reuse) {
           e.preventDefault();
           return;
         }
@@ -224,12 +224,12 @@
       letters.forEach(function (L) {
         var chip = chipByLetter[L];
         if (!chip) return;
-        var taken = !!used[L];
+        var taken =!!used[L];
         chip.classList.toggle("is-used", taken);
-        chip.draggable = !taken;
+        chip.draggable =!taken;
         if (taken && chip.parentNode === pool) {
           /* stay in pool visually muted */
-        } else if (!taken && chip.parentNode !== pool) {
+        } else if (!taken && chip.parentNode!== pool) {
           pool.appendChild(chip);
         }
       });
@@ -281,7 +281,7 @@
         var letter = e.dataTransfer.getData("text/plain");
         if (!letter || letters.indexOf(letter) < 0) return;
         var fromId = e.dataTransfer.getData("text/yysd-from-slot");
-        if (fromId && fromId !== p.sel.id) {
+        if (fromId && fromId!== p.sel.id) {
           var other = document.getElementById(fromId);
           if (other) {
             var otherSlot = group.querySelector('.yysd-qux-slot[data-for="' + fromId + '"]');
@@ -331,7 +331,7 @@
 
   function enhanceInlineSelects(root) {
     // wbank / note completion dropdowns inside passage text
-    var sels = root.querySelectorAll(".note-box select, .note-li select, .wbank-box ~ .note-box select");
+    var sels = root.querySelectorAll(".note-box select,.note-li select,.wbank-box ~.note-box select");
     var byGroup = {};
     sels.forEach(function (sel) {
       if (sel.dataset.yysdQux) return;
@@ -374,8 +374,8 @@
       var row = rows[i];
       if (row.dataset.yysdQux) continue;
       var sel = row.querySelector("select");
-      if (!sel || !sel.id) continue;
-      if (sel.closest(".qgroup") !== group) continue;
+      if (!sel ||!sel.id) continue;
+      if (sel.closest(".qgroup")!== group) continue;
       pairs.push({ row: row, sel: sel });
     }
     if (!pairs.length) return;
@@ -400,11 +400,11 @@
   };
 
   // ponytail: smallest check — fails loud if multi detection regresses
-  console.assert(isMultiHint("选择一项（两题合计选出正确的两项，顺序不限）"), "cdt-qux: multi hint");
+  console.assert(isMultiHint(" lựa chọn hạng nhất (hai câu cộng lại tuyển ra chính xác hai hạng, không giới hạn thứ tự) "), "cdt-qux: multi hint");
   console.assert(!isMultiHint("Which gallery has the best collection of ceramics?"), "cdt-qux: not multi");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "You may use any letter more than once." }; } }), "cdt-qux: reuse");
   console.assert(allowsReuse({ querySelector: function () { return { textContent: "Write the correct letter, A, B or C." }; } }, 3, 6), "cdt-qux: pigeonhole reuse");
-  console.assert(allowsReuse({ querySelector: function (s) { return s === ".instruction" ? { textContent: "Which paragraph contains the following information?" } : null; } }, 7, 5), "cdt-qux: paragraph reuse");
+  console.assert(allowsReuse({ querySelector: function (s) { return s === ".instruction"? { textContent: "Which paragraph contains the following information?" }: null; } }, 7, 5), "cdt-qux: paragraph reuse");
   console.assert(!allowsReuse({ querySelector: function () { return { textContent: "Choose FIVE answers from the box and write the correct letter." }; } }, 7, 5), "cdt-qux: exclusive match");
   console.assert(!allowsReuse({ querySelector: function () { return { textContent: "Choose the correct heading for each section." }; } }, 8, 4), "cdt-qux: heading exclusive");
 

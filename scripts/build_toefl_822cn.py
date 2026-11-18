@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.22-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /8 tháng /8.22- Thi trực tiếp /audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-22/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-22"
 SET = "8.22"
-TITLE = "新托福 8.22 国内线下"
+TITLE = "TOEFL iBT 22/8 Thi trực tiếp "
 NEED = []
 
 
@@ -737,9 +737,9 @@ def build_reading():
         insert_q(n + 4, "One study about this danger cited the Irish Potato Famine, in which genetically similar varieties were all susceptible to late blight, causing a major catastrophe.", "C"),
     ]))
     n += 5
-    if n != 166:
+    if n!= 166:
         raise SystemExit("reading expected next id 166, got %s" % n)
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc ", [
         {"n": 1, "timeSec": 2880, "from": 1, "to": 120},
         {"n": 2, "timeSec": 1680, "from": 121, "to": 165},
     ], tasks)
@@ -923,14 +923,14 @@ def build_listening():
             items.append(q(n, stem, options, answer))
             n += 1
         tasks.append(lecture(title, module, fname, src_name, items))
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe ", [
         {"n": 1, "timeSec": 1440, "from": 1, "to": 20},
         {"n": 2, "timeSec": 960, "from": 21, "to": 30},
     ], tasks)
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 3360, "from": 1, "to": 8, "label": "Email"},
         {"n": 2, "timeSec": 4200, "from": 9, "to": 15, "label": "Academic Discussion"},
     ], [
@@ -1191,11 +1191,11 @@ if __name__ == "__main__":
     dump("2025-08-22-listening.json", build_listening())
     dump("2025-08-22-writing.json", build_writing())
     dump("2025-08-22-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-08-22-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-08-22-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
     dump("2025-08-22-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", None, 4))
+        ID + "-s4", TITLE + " · Nói Form 4", None, 4))
     copy_audio()

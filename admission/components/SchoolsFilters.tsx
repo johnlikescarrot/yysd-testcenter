@@ -37,13 +37,13 @@ export function SchoolsFilters({
   return (
     <div className="grid gap-3 sm:grid-cols-3">
       <label className="space-y-1 text-sm">
-        <span className="text-stone-600">国家</span>
+        <span className="text-stone-600"> quốc gia </span>
         <select
           className="flex h-10 w-full rounded-md border border-stone-300 bg-white px-3 text-sm"
           value={country}
           onChange={(e) => push({ country: e.target.value })}
         >
-          <option value="">全部</option>
+          <option value=""> Tất cả </option>
           {COUNTRIES.map((c) => (
             <option key={c} value={c}>
               {COUNTRY_LABELS[c]}
@@ -52,13 +52,13 @@ export function SchoolsFilters({
         </select>
       </label>
       <label className="space-y-1 text-sm">
-        <span className="text-stone-600">学科</span>
+        <span className="text-stone-600"> ngành học </span>
         <select
           className="flex h-10 w-full rounded-md border border-stone-300 bg-white px-3 text-sm"
           value={field}
           onChange={(e) => push({ field: e.target.value })}
         >
-          <option value="">全部</option>
+          <option value=""> Tất cả </option>
           {FIELDS.map((f) => (
             <option key={f} value={f}>
               {FIELD_LABELS[f]}
@@ -67,10 +67,10 @@ export function SchoolsFilters({
         </select>
       </label>
       <label className="space-y-1 text-sm">
-        <span className="text-stone-600">搜索</span>
+        <span className="text-stone-600"> tìm kiếm </span>
         <Input
           defaultValue={q}
-          placeholder="校名 / 项目"
+          placeholder=" trường học tên / hạng mục "
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               push({ q: (e.target as HTMLInputElement).value.trim() });

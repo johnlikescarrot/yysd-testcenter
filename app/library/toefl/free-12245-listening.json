@@ -1,46 +1,46 @@
 {
- "id": "free-12245",
- "title": "Choose a Response #3",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #3",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12245,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-3"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #3",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/a8f8115d5a474bd5a30c86e45ecfa211.mp3",
-   "questions": [
+  "id": "free-12245",
+  "title": "Choose a Response #3",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #3",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12245,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-3"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "I will definitely be there.",
-      "B": "I'm going downstairs to buy coffee.",
-      "C": "No, I will attend to it later.",
-      "D": "Sorry, but I didn't see it."
-     },
-     "answer": "A",
-     "transcript": "Will you be attending the seminar, or do you have too much work? ​​",
-     "stemZh": "你会去参加这场研讨会吗？还是你工作太忙（去不了）？",
-     "analysis": "Will you be attending the seminar, or do you have too much work? 题干分析 这是一个一般疑问句，核心是确认“是否参加研讨会”。 选项分析 选项 A：这是正确答案。直接明确回答“会参加”，并补充原因，完整回应了选择问的核心信息。 选项 B：属于话题偏移。 选项 C：“attend to it later” 指代不清，既不明确是研讨会还是工作内容，无法完成回答功能。 选项 D：表示“没看到”，语义上无法回应是否参加。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #3",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/a8f8115d5a474bd5a30c86e45ecfa211.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "I will definitely be there.",
+            "B": "I'm going downstairs to buy coffee.",
+            "C": "No, I will attend to it later.",
+            "D": "Sorry, but I didn't see it."
+          },
+          "answer": "A",
+          "transcript": "Will you be attending the seminar, or do you have too much work? ​​",
+          "stemZh": "bạn sẽ đi tham gia trận này nghiên cứu thảo luận hội không? cũng là ngươi công tác bận quá (không đi được)?",
+          "analysis": "Will you be attending the seminar, or do you have too much work? Câu hỏi phân tích đây là một cái bình thường câu nghi vấn, hạch tâm là Xác nhận “ có hay không tham gia nghiên cứu thảo luận hội ”. Phương án phân tích Phương án A: đây là Đáp án đúng. trực tiếp rõ ràng trả lời “ sẽ tham gia ”, cũng bổ sung nguyên nhân, Đầy đủ đáp lại lựa chọn hỏi hạch tâm tin tức. Phương án B: thuộc về chủ đề chếch đi. Phương án C: “attend to it later” chỉ thay không rõ, cũng không rõ ràng là nghiên cứu thảo luận hội hay công tác nội dung, không cách nào hoàn thành trả lời công năng. Phương án D: biểu thị “ không thấy được ”, lời nói trên danh nghĩa không cách nào đáp lại có hay không tham gia. ​​"
+        }
+      ]
+    }
+  ]
 }

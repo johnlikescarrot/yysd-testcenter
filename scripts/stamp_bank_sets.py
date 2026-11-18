@@ -12,7 +12,7 @@ OUT_RDL = os.path.join(ROOT, "app/library/toefl/bank-rdl-reading.json")
 
 
 def norm(s):
-    s = re.sub(r"[&＋]", " and ", str(s or "").lower())
+    s = re.sub(r"[&+]", " and ", str(s or "").lower())
     s = re.sub(r"[^a-z0-9]+", " ", s)
     return " ".join(s.split())
 
@@ -38,7 +38,7 @@ def hit_of(kind):
             continue
         paper = json.load(open(os.path.join(lib, name)))
         for t in paper.get("tasks") or []:
-            if t.get("type") != want:
+            if t.get("type")!= want:
                 continue
             out[norm(t.get("title") or "")] = t
     return out

@@ -1,57 +1,57 @@
 {
- "id": "free-13063",
- "title": "Announcement #27",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #27",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13063,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-27"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #27",
-   "instruction": "Listen to an announcement in a classroom.",
-   "audio": "library/toefl/free/audio/e0fdd31a1c3f46abb748b6f68e483c2d.mp3",
-   "transcript": "Man: Before we get started, don't forget that the first draft of your research paper is due on Monday. This draft should include your thesis statement, main arguments, and a preliminary list of sources. It's only a draft, so it's okay if it's not perfect. The goal is to get feedback and refine your ideas. Please submit your draft electronically via the course portal by midnight on Monday.",
-   "questions": [
+  "id": "free-13063",
+  "title": "Announcement #27",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #27",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13063,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-27"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main purpose of the announcement?",
-     "options": {
-      "A": "To point out flaws in a research paper",
-      "B": "To remind students about an assignment",
-      "C": "To explain how to write a thesis statement",
-      "D": "To invite students to a lecture on Monday"
-     },
-     "answer": "B",
-     "analysis": "题干分析 问题询问这则通知的主要目的是什么，属于主旨/目的理解题，需抓住男士整段话的核心意图。 选项分析 选项A：错误。 通知中提醒学生初稿需要包含的内容，但并未指出研究论文中的缺陷，属于无中生有。 选项B：正确。 男士明确提醒学生研究论文初稿周一截止，并说明了提交方式和内容要求，核心目的是提醒学生关于作业的截止日期和要求。 选项C：错误。 通知中提到初稿应包含论点陈述，但并未解释如何撰写论点陈述，属于概念混淆。 选项D：错误。 通知中讨论的是论文初稿提交，而非邀请学生参加周一的讲座，属于无中生有。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the speaker suggest about the first draft?",
-     "options": {
-      "A": "It must contain no errors.",
-      "B": "It should include all final sources.",
-      "C": "It is a major part of the students' grade.",
-      "D": "It is intended for feedback and improvement."
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问说话者对初稿提出了什么看法，属于细节理解题，需抓住男士对初稿目的的描述。 选项分析 选项A：错误。 男士明确说“It's only a draft, so it's okay if it's not perfect”，说明初稿可以有错误，与选项意思相反。 选项B：错误。 男士说初稿应包含初步的参考文献列表（a preliminary list of sources），而非所有最终来源，属于程度错误。 选项C：错误。 通知中没有提到初稿占成绩的多少比重，属于无中生有。 选项D：正确。 男士明确说“The goal is to get feedback and refine your ideas”，即初稿的目的是获取反馈并完善想法。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #27",
+      "instruction": "Listen to an announcement in a classroom.",
+      "audio": "library/toefl/free/audio/e0fdd31a1c3f46abb748b6f68e483c2d.mp3",
+      "transcript": "Man: Before we get started, don't forget that the first draft of your research paper is due on Monday. This draft should include your thesis statement, main arguments, and a preliminary list of sources. It's only a draft, so it's okay if it's not perfect. The goal is to get feedback and refine your ideas. Please submit your draft electronically via the course portal by midnight on Monday.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main purpose of the announcement?",
+          "options": {
+            "A": "To point out flaws in a research paper",
+            "B": "To remind students about an assignment",
+            "C": "To explain how to write a thesis statement",
+            "D": "To invite students to a lecture on Monday"
+          },
+          "answer": "B",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm cái này tức thì thông báo mục đích chủ yếu là gì, thuộc về ý nghĩa chính / mục đích lý giải câu, cần bắt lấy nam sĩ cả đoạn lời hạch tâm ý đồ. Phương án phân tích Phương án A: Sai. thông tri Vừa nhắc nhở Học viên sơ thảo cần bao hàm nội dung, nhưng cũng không chỉ ra nghiên cứu luận văn trong đích chỗ thiếu hụt, thuộc về bịa đặt. Phương án B: Đúng. nam sĩ rõ ràng nhắc nhở Học viên nghiên cứu luận văn sơ thảo thứ hai Hạn chót, cũng nói rõ Nộp bài phương thức và nội dung yêu cầu, hạch tâm mục đích là nhắc nhở Học viên về bài tập Hạn chót ngày và yêu cầu. Phương án C: Sai. thông tri Vừa nhắc tới sơ thảo ứng với bao hàm luận điểm trần thuật, nhưng cũng không giải thích làm thế nào sáng tác luận điểm trần thuật, thuộc về khái niệm lẫn lộn. Phương án D: Sai. thông tri Vừa thảo luận là luận văn sơ thảo Nộp bài, mà không phải là mời Học viên tham gia thứ hai toạ đàm, thuộc về bịa đặt."
+        },
+        {
+          "id": 2,
+          "stem": "What does the speaker suggest about the first draft?",
+          "options": {
+            "A": "It must contain no errors.",
+            "B": "It should include all final sources.",
+            "C": "It is a major part of the students' grade.",
+            "D": "It is intended for feedback and improvement."
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm kẻ nói chuyện đối với sơ thảo đưa ra thấy thế nào, thuộc về chi tiết lý giải câu, cần bắt lấy nam sĩ đối với sơ thảo mục đích là miêu tả. Phương án phân tích Phương án A: Sai. nam sĩ rõ ràng nói “It's only a draft, so it's okay if it's not perfect”, nói rõ sơ thảo có thể có sai lầm, và Phương án ý tứ trái lại. Phương án B: Sai. nam sĩ nói sơ thảo ứng với bao hàm bước đầu tham khảo văn hiến liệt biểu List (a preliminary list of sources), mà không phải là tất cả cuối cùng nơi phát ra, thuộc về trình độ Sai. Phương án C: Sai. thông tri Vừa không có nói tới sơ thảo chiếm thành tích bao nhiêu tỉ trọng, thuộc về bịa đặt. Phương án D: Đúng. nam sĩ rõ ràng nói “The goal is to get feedback and refine your ideas”, tiếp xúc sơ thảo mục đích là thu hoạch phản hồi cũng hoàn thiện ý tưởng."
+        }
+      ]
+    }
+  ]
 }

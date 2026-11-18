@@ -1,57 +1,57 @@
 {
- "id": "free-13697",
- "title": "Conversation #112",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #112",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13697,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-112"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #112",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/3ab817a025864de7b3eb0b3c483e4710.mp3",
-   "transcript": "Man: Have you tried the new app for tracking your workouts?\nWoman: Not yet. Is it any good?\nMan: Yes, it's great. It helps you set goals.\nWoman: I definitely need that. I'll download it tonight and give it a try.\nMan: You won't regret it. It's really motivating, and you'll enjoy tracking your progress.",
-   "questions": [
+  "id": "free-13697",
+  "title": "Conversation #112",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #112",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13697,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-112"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the conversation mainly about?",
-     "options": {
-      "A": "A new gym",
-      "B": "A workout app",
-      "C": "A fitness class",
-      "D": "A diet plan"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：这段对话主要关于什么？ 定位原文：Man: Have you tried the new app for tracking your workouts? （后文围绕该 app 的功能展开讨论） 选项分析： A. A new gym 一个新健身房。对话中未提及健身房，所以A选项错误。 B. A workout app 一个健身应用。男士明确提到“the new app for tracking your workouts”，女士也表示要下载尝试，整段对话围绕该应用展开，所以B选项正确。 C. A fitness class 一个健身课程。对话中未提及课程，所以C选项错误。 D. A diet plan 一个饮食计划。对话中未提及饮食，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the woman need help with?",
-     "options": {
-      "A": "Setting goals",
-      "B": "Tracking progress",
-      "C": "Planning meals",
-      "D": "Buying equipment"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：女士在什么方面需要帮助？ 定位原文：Woman: I definitely need that.（指代前文“It helps you set goals”） 选项分析： A. Setting goals 设定目标。男士说这个 app 帮助设定目标，女士表示自己“definitely need that”（绝对需要那个功能），说明她需要在设定目标方面得到帮助，所以A选项正确。 B. Tracking progress 追踪进展。虽然 app 也有追踪进度功能，但女士明确表示需要的是设定目标，且追踪进度是后续“会喜欢”的事，而非她当前需要的帮助，所以B选项错误。 C. Planning meals 规划餐食。对话中未提及饮食规划，所以C选项错误。 D. Buying equipment 购买器材。对话中未提及器材，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #112",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/3ab817a025864de7b3eb0b3c483e4710.mp3",
+      "transcript": "Man: Have you tried the new app for tracking your workouts?\nWoman: Not yet. Is it any good?\nMan: Yes, it's great. It helps you set goals.\nWoman: I definitely need that. I'll download it tonight and give it a try.\nMan: You won't regret it. It's really motivating, and you'll enjoy tracking your progress.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the conversation mainly about?",
+          "options": {
+            "A": "A new gym",
+            "B": "A workout app",
+            "C": "A fitness class",
+            "D": "A diet plan"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: đoạn đối thoại này chủ yếu về gì? Dẫn chứng Bài gốc: Man: Have you tried the new app for tracking your workouts? (sau văn quay chung quanh nên app công năng triển khai thảo luận) Phương án phân tích: A. A new gym một cái mới phòng tập thể thao. trong lúc nói chuyện với nhau Không được đề cập (Not Given) phòng tập thể thao, nên A Phương án Sai. B. A workout app một cái tập thể hình hữu ích,thiết thực. nam sĩ rõ ràng nhắc tới “the new app for tracking your workouts”, phu nhân cũng biểu thị muốn download nếm thử, cả đoạn đối thoại quay chung quanh nên dùng triển khai, nên B Phương án Đúng. C. A fitness class một cái tập thể hình chương trình học. trong lúc nói chuyện với nhau Không được đề cập (Not Given) chương trình học, nên C Phương án Sai. D. A diet plan một cái Dinh dưỡng kế hoạch. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Dinh dưỡng, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the woman need help with?",
+          "options": {
+            "A": "Setting goals",
+            "B": "Tracking progress",
+            "C": "Planning meals",
+            "D": "Buying equipment"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: phu nhân tại phương diện gì cần giúp đỡ? Dẫn chứng Bài gốc: Woman: I definitely need that. (chỉ thay tiền văn “It helps you set goals”) Phương án phân tích: A. Setting goals thiết lập mục tiêu. nam sĩ nói này app trợ giúp thiết lập mục tiêu, phu nhân biểu thị chính mình “definitely need that” (tuyệt đối cần đó công năng), nói rõ cô ấy cần tại thiết lập mục tiêu phương diện đạt được trợ giúp, nên A Phương án Đúng. B. Tracking progress truy tung tiến triển. mặc dù app cũng có truy tung Tiến độ công năng, nhưng phu nhân rõ ràng biểu thị cần chính là thiết lập mục tiêu, mà lại truy tung Tiến độ là đến tiếp sau “ sẽ thích ” sự tình, mà không phải là cô ấy trước mắt cần trợ giúp, nên B Phương án Sai. C. Planning meals quy hoạch đồ ăn. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Dinh dưỡng quy hoạch, nên C Phương án Sai. D. Buying equipment mua sắm thiết bị. trong lúc nói chuyện với nhau Không được đề cập (Not Given) thiết bị, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

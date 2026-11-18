@@ -47,7 +47,7 @@ function scoreProgram(
 
   let score = 0;
   const tokens = q
-    .split(/[\s,，、/|]+/)
+    .split(/[\s,,, /|]+/)
     .map((t) => t.trim())
     .filter((t) => t.length >= 2);
 
@@ -56,18 +56,18 @@ function scoreProgram(
   }
 
   const aliases: Array<[RegExp, string[]]> = [
-    [/数据|分析|analytics|data/i, ["data", "analytics", "统计", "data science", "business analytics"]],
-    [/人工.?智能|机器学习|ai\b|machine learning/i, ["artificial intelligence", "machine learning", "ai", "数据"]],
-    [/计算机|软件|编程|cs\b|coding|software/i, ["computer science", "software", "cyber"]],
-    [/金融|量化|finance|quant/i, ["finance", "financial engineering", "金融"]],
-    [/商科|管理|mba|business/i, ["business", "management", "analytics"]],
-    [/电气|电子|工程|ee\b|engineering/i, ["electrical", "mechanical", "engineering"]],
-    [/设计|艺术|design|media/i, ["design", "media"]],
-    [/法律|llm|law/i, ["law", "llm"]],
-    [/教育|education/i, ["education"]],
-    [/公共.?卫生|生物|健康|health|bio/i, ["public health", "biotech", "biology"]],
-    [/数学|物理|理科|math|physics/i, ["mathematics", "physics"]],
-    [/国际.?关系|社科|社会/i, ["international relations", "sociology"]],
+    [/ số liệu | phân tích |analytics|data/i, ["data", "analytics", " công tác thống kê ", "data science", "business analytics"]],
+    [/ nhân công.? trí tuệ nhân tạo | máy móc Học tập |ai\b|machine learning/i, ["artificial intelligence", "machine learning", "ai", " số liệu "]],
+    [/ Máy tính | phần mềm | lập trình |cs\b|coding|software/i, ["computer science", "software", "cyber"]],
+    [/ tài chính | định lượng |finance|quant/i, ["finance", "financial engineering", " tài chính "]],
+    [/ Kinh doanh | Quản trị |mba|business/i, ["business", "management", "analytics"]],
+    [/ điện khí | điện tử | công trình |ee\b|engineering/i, ["electrical", "mechanical", "engineering"]],
+    [/ xếp đặt thiết kế | Nghệ thuật |design|media/i, ["design", "media"]],
+    [/ pháp luật |llm|law/i, ["law", "llm"]],
+    [/ Giáo dục |education/i, ["education"]],
+    [/ công cộng.? vệ sinh | Sinh học | Sức khỏe |health|bio/i, ["public health", "biotech", "biology"]],
+    [/ Toán học | Vật lý | khoa học tự nhiên |math|physics/i, ["mathematics", "physics"]],
+    [/ quốc tế.? quan hệ | xã khoa | xã hội /i, ["international relations", "sociology"]],
   ];
   for (const [re, keys] of aliases) {
     if (re.test(query)) {
@@ -90,13 +90,13 @@ export async function matchProgramsForSchool(
     orderBy: [{ tier: "asc" }, { program: "asc" }],
   });
 
-  const verified = programs.filter((p) => p.verifiedAt != null);
+  const verified = programs.filter((p) => p.verifiedAt!= null);
   // ponytail: Top schools hide template filler once any verified row exists
-  const pool = verified.length ? verified : programs;
+  const pool = verified.length? verified: programs;
 
   if (!pool.length) {
     return {
-      reply: `库中暂无 ${schoolName} 的研究生项目，请换一所学校或稍后重试。`,
+      reply: ` trong kho tạm thời chưa có ${schoolName} nghiên cứu sinh hạng mục, mời đổi một chỗ trường học hoặc sau đó Thử lại. `,
       programs: [],
       needClarify: false,
     };
@@ -114,7 +114,7 @@ export async function matchProgramsForSchool(
       blurb: p.blurb,
       duration: p.duration,
       isStem: p.isStem,
-      why: notes.length ? `${why}；${notes[0]}` : why,
+      why: notes.length? `${why}; ${notes[0]}`: why,
       fitNotes: notes,
     };
   }
@@ -127,33 +127,33 @@ export async function matchProgramsForSchool(
     })
     .sort((a, b) => b.score - a.score || a.penalty - b.penalty);
 
-  const topScore = scored[0]?.score ?? 0;
+  const topScore = scored[0]?.score?? 0;
   const needClarify = topScore < 3 || userMessage.trim().length < 4;
 
   if (needClarify) {
     if (verified.length) {
       return {
         reply:
-          "可以再说具体一点吗？例如：数据科学 / 人工智能 / 商业分析 / 工程管理。下面先列出该校已核验的研究生项目，供你浏览（该校未必有传统「计算机 MS」开放项目）。",
-        programs: verified.slice(0, limit).map((p) => toHit(p, "该校已核验项目")),
+          " có thể rồi hãy nói cụ thể một chút sao? tỷ như: số liệu khoa học / trí tuệ nhân tạo / Kinh doanh phân tích / công trình Quản trị. phía dưới trước nhóm ra cai giáo đã hạch nghiệm nghiên cứu sinh hạng mục, tạo điều kiện cho bạn xem (cai giáo chưa chắc có truyền thống « Máy tính MS» cởi mở hạng mục). ",
+        programs: verified.slice(0, limit).map((p) => toHit(p, " cai giáo đã hạch nghiệm hạng mục ")),
         needClarify: true,
       };
     }
     return {
       reply:
-        "可以再说具体一点吗？例如：数据科学 / 人工智能 / 计算机 / 金融工程 / 商业分析 / 电气工程。也可以用一句话描述兴趣方向（偏量化、偏软件开发、偏公共政策等）。",
+        " có thể rồi hãy nói cụ thể một chút sao? tỷ như: số liệu khoa học / trí tuệ nhân tạo / Máy tính / tài chính công trình / Kinh doanh phân tích / điện khí công trình. cũng có thể dùng một câu miêu tả hứng thú phương hướng (thiên định lượng, thiên Sofware Developer, thiên công cộng chính sách {các loại:đợi}). ",
       programs: [],
       needClarify: true,
     };
   }
 
   const hits = scored.filter((s) => s.score > 0).slice(0, limit);
-  const use = hits.length ? hits : scored.slice(0, Math.min(5, scored.length));
+  const use = hits.length? hits: scored.slice(0, Math.min(5, scored.length));
   const mapped = use.map(({ p, score }) =>
-    toHit(p, score > 0 ? "与你的兴趣描述匹配" : "该校热门研究生项目（相关度一般，供浏览）")
+    toHit(p, score > 0? " cùng ngươi hứng thú miêu tả xứng đôi ": " cai giáo đứng đầu nghiên cứu sinh hạng mục (tương quan độ bình thường, cung cấp xem) ")
   );
 
-  let reply = `根据你的兴趣${background ? "与背景" : ""}，我在「${schoolName}」项目库中筛选了以下相关专业。请结合适配提示查看详情，合适可直接申请评估。`;
+  let reply = ` dựa theo hứng thú của bạn ${background? " và bối cảnh ": ""}, tôi tại «${schoolName}» hạng mục trong kho sàng lọc phía dưới tương quan chuyên nghiệp. mời kết hợp thích xứng nhắc nhở Xem chi tiết, phù hợp có thể trực tiếp thân thỉnh ước định. `;
 
   try {
     const raw = await qwenChat(
@@ -161,7 +161,7 @@ export async function matchProgramsForSchool(
         {
           role: "system",
           content:
-            "你是留学选校顾问助手。只能基于给定的项目列表做推荐解释，禁止编造列表外的专业。若提供了申请背景，可简要提及 GPA/语言与门槛的匹配关系，但不要编造未给出的分数。用简体中文，2–4 句，语气专业简洁。",
+            " ngươi là du học chọn trường học cố vấn trợ thủ. chỉ có thể căn cứ vào quy định sẵn hạng mục liệt biểu List làm Đề xuất giải thích, cấm lập liệt biểu List bên ngoài chuyên nghiệp. như cung cấp thân thỉnh bối cảnh, có thể giản yếu đề cập GPA/ ngôn ngữ và ngưỡng cửa xứng đôi quan hệ, nhưng không nên lập không cho ra điểm. dùng tiếng trung giản thể, 2–4 câu, ngữ khí chuyên nghiệp ngắn gọn. ",
         },
         {
           role: "user",

@@ -1,46 +1,46 @@
 {
- "id": "free-12904",
- "title": "Choose a Response #230",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #230",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12904,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-230"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #230",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/0466356b890c48168331235f3621b02e.mp3",
-   "questions": [
+  "id": "free-12904",
+  "title": "Choose a Response #230",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #230",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12904,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-230"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "This evening is fine.",
-      "B": "Sure, let's talk soon.",
-      "C": "No, in the conference room.",
-      "D": "I believe it was cancelled."
-     },
-     "answer": "D",
-     "transcript": "Is the meeting at ten a.m.?",
-     "stemZh": "会议是上午十点吗？",
-     "analysis": "Is the meeting at ten a.m.? 题干分析 题干是一般疑问句，意思是 “会议是上午十点吗？”。本题考查对会议时间相关问题的应答。 选项分析 选项 A：This evening is fine 表示今晚可以。回答的是时间安排，与会议时间是否为十点无关，不符合题意。 选项 B：Sure, let's talk soon 表示好的，我们稍后聊。与问题无关，不符合题意。 选项 C：No, in the conference room 表示不是，在会议室。回答的是地点，不是时间，不符合题意。 选项 D：I believe it was cancelled 表示我想会议已经取消了。此选项为正确答案，对会议时间问题作出合理回应，符合题意。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #230",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/0466356b890c48168331235f3621b02e.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "This evening is fine.",
+            "B": "Sure, let's talk soon.",
+            "C": "No, in the conference room.",
+            "D": "I believe it was cancelled."
+          },
+          "answer": "D",
+          "transcript": "Is the meeting at ten a.m.?",
+          "stemZh": "hội nghị là mười giờ sáng không?",
+          "analysis": "Is the meeting at ten a.m.? Câu hỏi phân tích Câu hỏi là bình thường câu nghi vấn, ý là “ hội nghị là mười giờ sáng không? ”. chủ đề khảo tra đối với hội nghị thời gian vấn đề tương quan trả lời. Phương án phân tích Phương án A: This evening is fine biểu thị đêm nay có thể. trả lời là sắp xếp thời gian, tham dự hội nghị nghị thời gian là hay không là mười điểm không quan hệ, không phù hợp câu ý. Phương án B: Sure, let's talk soon biểu thị tốt, chúng tôi sau đó trò chuyện. và vấn đề không quan hệ, không phù hợp câu ý. Phương án C: No, in the conference room biểu thị không phải, tại phòng họp. trả lời tất nhiên chút:điểm, không phải thời gian, không phù hợp câu ý. Phương án D: I believe it was cancelled biểu thị ta nghĩ hội nghị đã hủy bỏ. này Phương án là Đáp án đúng, đối với hội nghị vấn đề thời gian làm ra hợp lý đáp lại, phù hợp câu ý."
+        }
+      ]
+    }
+  ]
 }

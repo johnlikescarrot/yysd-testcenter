@@ -1,126 +1,126 @@
 {
- "id": "free-13279",
- "title": "Complete the Words #98",
- "set": "free",
- "skill": "reading",
- "titleZh": "阅读填空 #98",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13279,
-  "labelId": 1319,
-  "code": "TOEFL--R-complete the words-98"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "complete_words",
-   "module": 1,
-   "title": "Complete the Words",
-   "instruction": "Fill in the missing letters in the paragraph.",
-   "passage": [
+  "id": "free-13279",
+  "title": "Complete the Words #98",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Đọc lấp chỗ trống #98",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13279,
+    "labelId": 1319,
+    "code": "TOEFL--R-complete the words-98"
+  },
+  "modules": [
     {
-     "t": " European medieval history encompasses the period from the fall of the Roman Empire in the fifth century C.E. to the beginning of the Renaissance in the fifteenth century. This "
-    },
-    {
-     "id": 1,
-     "prefix": "e",
-     "answer": "ra",
-     "word": "era"
-    },
-    {
-     "t": " saw "
-    },
-    {
-     "id": 2,
-     "prefix": "signi",
-     "answer": "ficant",
-     "word": "significant"
-    },
-    {
-     "t": " developments, "
-    },
-    {
-     "id": 3,
-     "prefix": "inc",
-     "answer": "luding",
-     "word": "including"
-    },
-    {
-     "t": " the "
-    },
-    {
-     "id": 4,
-     "prefix": "ri",
-     "answer": "se",
-     "word": "rise"
-    },
-    {
-     "t": " of feudalism "
-    },
-    {
-     "id": 5,
-     "prefix": "a",
-     "answer": "s",
-     "word": "as"
-    },
-    {
-     "t": " a "
-    },
-    {
-     "id": 6,
-     "prefix": "soc",
-     "answer": "ial",
-     "word": "social"
-    },
-    {
-     "t": " system, the "
-    },
-    {
-     "id": 7,
-     "prefix": "estab",
-     "answer": "lishment",
-     "word": "establishment"
-    },
-    {
-     "t": " of "
-    },
-    {
-     "id": 8,
-     "prefix": "powe",
-     "answer": "rful",
-     "word": "powerful"
-    },
-    {
-     "t": " kingdoms, "
-    },
-    {
-     "id": 9,
-     "prefix": "a",
-     "answer": "nd",
-     "word": "and"
-    },
-    {
-     "t": " the spread "
-    },
-    {
-     "id": 10,
-     "prefix": "o",
-     "answer": "f",
-     "word": "of"
-    },
-    {
-     "t": " Christianity throughout Europe. The medieval period also witnessed numerous conflicts, such as the Crusades and the Hundred Years' War, which profoundly influenced the political boundaries, religious dynamics, and power structures of Europe. "
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ],
-   "analysis": "European medieval history encompasses the period from the fall of the Roman Empire in the fifth century C.E. to the beginning of the Renaissance in the fifteenth century. This era saw significant developments, including the rise of feudalism as a social system, the establishment of powerful kingdoms, and the spread of Christianity throughout Europe. The medieval period also witnessed numerous conflicts, such as the Crusades and the Hundred Years' War, which profoundly influenced the political boundaries, religious dynamics, and power structures of Europe. 欧洲中世纪史涵盖公元五世纪罗马帝国灭亡至十五世纪文艺复兴开端的这段时期。这一时代见证了诸多重大发展，包括封建制度作为社会体系的兴起、强大王国的建立，以及基督教在欧洲各地的传播。中世纪同样战火不断，十字军东征、百年战争等一系列冲突，深刻改变了欧洲的政治版图、宗教格局与权力架构。",
-   "titleZh": "阅读填空"
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "complete_words",
+      "module": 1,
+      "title": "Complete the Words",
+      "instruction": "Fill in the missing letters in the paragraph.",
+      "passage": [
+        {
+          "t": " European medieval history encompasses the period from the fall of the Roman Empire in the fifth century C.E. to the beginning of the Renaissance in the fifteenth century. This "
+        },
+        {
+          "id": 1,
+          "prefix": "e",
+          "answer": "ra",
+          "word": "era"
+        },
+        {
+          "t": " saw "
+        },
+        {
+          "id": 2,
+          "prefix": "signi",
+          "answer": "ficant",
+          "word": "significant"
+        },
+        {
+          "t": " developments, "
+        },
+        {
+          "id": 3,
+          "prefix": "inc",
+          "answer": "luding",
+          "word": "including"
+        },
+        {
+          "t": " the "
+        },
+        {
+          "id": 4,
+          "prefix": "ri",
+          "answer": "se",
+          "word": "rise"
+        },
+        {
+          "t": " of feudalism "
+        },
+        {
+          "id": 5,
+          "prefix": "a",
+          "answer": "s",
+          "word": "as"
+        },
+        {
+          "t": " a "
+        },
+        {
+          "id": 6,
+          "prefix": "soc",
+          "answer": "ial",
+          "word": "social"
+        },
+        {
+          "t": " system, the "
+        },
+        {
+          "id": 7,
+          "prefix": "estab",
+          "answer": "lishment",
+          "word": "establishment"
+        },
+        {
+          "t": " of "
+        },
+        {
+          "id": 8,
+          "prefix": "powe",
+          "answer": "rful",
+          "word": "powerful"
+        },
+        {
+          "t": " kingdoms, "
+        },
+        {
+          "id": 9,
+          "prefix": "a",
+          "answer": "nd",
+          "word": "and"
+        },
+        {
+          "t": " the spread "
+        },
+        {
+          "id": 10,
+          "prefix": "o",
+          "answer": "f",
+          "word": "of"
+        },
+        {
+          "t": " Christianity throughout Europe. The medieval period also witnessed numerous conflicts, such as the Crusades and the Hundred Years' War, which profoundly influenced the political boundaries, religious dynamics, and power structures of Europe. "
+        }
+      ],
+      "analysis": "European medieval history encompasses the period from the fall of the Roman Empire in the fifth century C.E. to the beginning of the Renaissance in the fifteenth century. This era saw significant developments, including the rise of feudalism as a social system, the establishment of powerful kingdoms, and the spread of Christianity throughout Europe. The medieval period also witnessed numerous conflicts, such as the Crusades and the Hundred Years' War, which profoundly influenced the political boundaries, religious dynamics, and power structures of Europe. Châu Âu thời Trung cổ lịch sử bao dung công nguyên năm thế kỷ đế quốc La Mã diệt vong đến mười lăm thế kỷ văn hoá phục hưng bắt đầu đoạn thời kỳ này. cái này nhất thời thay chứng kiến rất nhiều trọng đại phát triển, kể cả chế độ phong kiến với tư cách xã hội thể hệ cao hứng, cường đại vương quốc thành lập, cũng như Cơ đốc giáo tại Châu Âu các nơi truyền bá. thời Trung cổ đồng dạng chiến hỏa không ngừng, thập tự quân đông chinh, trăm năm chiến tranh {các loại:đợi} một loạt xung đột, khắc sâu cải biến Châu Âu chính trị bản đồ, tôn giáo bố cục và quyền lực cơ cấu.",
+      "titleZh": "Đọc lấp chỗ trống"
+    }
+  ]
 }

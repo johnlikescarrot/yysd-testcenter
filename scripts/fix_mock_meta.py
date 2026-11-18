@@ -40,10 +40,10 @@ def reading_description(vol: str, test: str, test_data: dict | None) -> str:
             short = " / ".join(titles[:3])
             if len(short) > 80:
                 short = " / ".join(t[:28] + "…" if len(t) > 28 else t for t in titles[:3])
-            topics = f"（{short}）"
+            topics = f" ({short}) "
     return (
-        f"剑桥雅思{vol} Test {test} 学术类阅读（官方真题）：3 篇文章共 40 题{topics}，"
-        "可单篇练习或完整模考，自动批改、解析与雅思预估分。"
+        f" Cambridge IELTS {vol} Test {test} Đọc Học thuật (Academic Reading) (Đề thi chính thức): 3 bài đọc, tổng 40 câu{topics}, "
+        " có thể bài lẻ Luyện tập hoặc Thi thử toàn phần, Chấm điểm tự động, Giải thích đáp án và Điểm Band IELTS dự kiến. "
     )
 
 
@@ -52,18 +52,18 @@ def writing_description(vol: str, test: str, test_data: dict | None) -> str:
     if test_data and test_data.get("task1"):
         prompt = (test_data["task1"].get("prompt") or "").lower()
         if "map" in prompt:
-            task1 = "Task 1 地图对比作文"
-        elif "diagram" in prompt or "process" in prompt or "流程" in prompt:
-            task1 = "Task 1 流程图作文"
+            task1 = "Task 1 Bản đồ đối lập viết văn "
+        elif "diagram" in prompt or "process" in prompt or " quá trình " in prompt:
+            task1 = "Task 1 Lưu đồ quy trình viết văn "
         elif "table" in prompt:
-            task1 = "Task 1 表格作文"
+            task1 = "Task 1 bản khai viết văn "
         elif "graph" in prompt or "chart" in prompt:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 Bài mô tả biểu đồ "
         else:
-            task1 = "Task 1 图表作文"
+            task1 = "Task 1 Bài mô tả biểu đồ "
     return (
-        f"剑桥雅思{vol} Test {test} 学术类写作（官方真题）：{task1} + Task 2 议论文，"
-        "限时 60 分钟，自带字数统计、草稿自动保存与官方评分标准自评。"
+        f" Cambridge IELTS {vol} Test {test} Viết Học thuật (Academic Writing) (Đề thi chính thức): {task1} + Task 2 Bài nghị luận học thuật, "
+        "thời gian 60 phút, kèm theo Đếm số từ, Tự động lưu nháp và Tự đánh giá theo tiêu chí chính thức. "
     )
 
 
@@ -100,7 +100,7 @@ def patch_html(path: Path, description: str, duration: int) -> bool:
             text,
             count=1,
         )
-    if text != orig:
+    if text!= orig:
         path.write_text(text, encoding="utf-8")
         return True
     return False
@@ -112,10 +112,10 @@ def main() -> int:
     html_changed = manifest_changed = 0
 
     for item in data["items"]:
-        if item.get("zone") != "mock":
+        if item.get("zone")!= "mock":
             continue
         dur = mock_duration(item)
-        if item.get("duration") != dur:
+        if item.get("duration")!= dur:
             item["duration"] = dur
             manifest_changed += 1
 
@@ -130,7 +130,7 @@ def main() -> int:
         elif m and "cambridge-writing" in item["file"]:
             desc = writing_description(m.group(1), m.group(2), load_test(path))
 
-        if desc and item.get("description") != desc:
+        if desc and item.get("description")!= desc:
             item["description"] = desc
             manifest_changed += 1
 

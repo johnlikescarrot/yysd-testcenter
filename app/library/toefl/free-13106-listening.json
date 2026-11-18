@@ -1,81 +1,81 @@
 {
- "id": "free-13106",
- "title": "Lecture #38",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #38",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13106,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-38"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #38",
-   "instruction": "Listen to a talk in a science class today.",
-   "audio": "library/toefl/free/audio/c94bd822ce9d46cc8d5c8a1418b22f26.mp3",
-   "transcript": "I want to tell you about an unusual phenomenon that scientists noticed in the Pacific Ocean in the early 1990's. The scientists were recording sounds using hydrophones positioned on the ocean floor in the North Pacific. Hydrophones are specially designed microphones that allow scientists to collect acoustic data underwater. While most of the undersea noises picked up by the hydrophones emanated from whales, ships engines, or earthquakes, the scientists monitoring the hydrophones detected a number of sounds that they could not identify. One was a regular series of rising infrasonic tones that is a very short wavelengths below those humans can hear. The scientists labeled these very low frequency noises up sweep. At first, these sounds were thought to be the songs of whales migrating in the Pacific. However, scientists who study whale acoustics eventually ruled out this possibility and the origin of the up sweep sounds remained unknown. So what is the source of the rising tones detected by the hydrophones? The sounds were ultimately tracked to an area of inferred volcanic seismic activity, a chain of undersea mountains in the South Pacific. Some scientists believe that if these mountains contain an active volcano, the source for the mysterious up sweep sounds may be hot volcanic lava coming in contact with cold sea water.",
-   "questions": [
+  "id": "free-13106",
+  "title": "Lecture #38",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #38",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13106,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-38"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the speaker mainly discussing?",
-     "options": {
-      "A": "Unusual sounds made by migrating whales",
-      "B": "Mysterious sounds recorded in the deep ocean",
-      "C": "The effects of human-generated noise on whales",
-      "D": "How earthquakes create sound waves in the ocean"
-     },
-     "answer": "B",
-     "analysis": "答案: B 题目问的是: 演讲者主要讨论的是什么？ 定位原文: “The scientists were recording sounds using hydrophones positioned on the ocean floor in the North Pacific. [...] the scientists monitoring the hydrophones detected a number of sounds that they could not identify.” 选项分析: A. “Unusual sounds made by migrating whales.”（迁徙鲸鱼发出的异常声音。）起初，科学家认为这些声音是鲸鱼的歌声，但最终排除了这个可能性，因此A选项错误. B. “Mysterious sounds recorded in the deep ocean.”（深海中录制到的神秘声音。）演讲者正讨论这一神秘声音的来源，因此B选项正确。 C. “The effects of human-generated noise on whales.”（人为噪音对鲸鱼的影响。）原文并没有提到人为噪音对鲸鱼的影响，因此C选项错误。 D. “How earthquakes create sound waves in the ocean.（” 地震如何在海洋中产生声波。）虽然地震是声音的来源之一，但这不是演讲的主要讨论内容，因此D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the term \"upsweep\" refer to?",
-     "options": {
-      "A": "A method of collecting data underwater",
-      "B": "The shape of an area on the ocean floor",
-      "C": "A sound with particular characteristics",
-      "D": "The migration pattern of some whales"
-     },
-     "answer": "C",
-     "analysis": "答案: C 题目问的是: “Upsweep”这个术语指的是什么？ 定位原文: “One was a regular series of rising infrasonic tones that is a very short wavelengths below those humans can hear. The scientists labeled these very low frequency noises up sweep.” 选项分析: A. “A method of collecting data underwater.”（一种收集水下数据的方法。）“Upsweep”指的是声音，不是数据收集的方法，因此A选项错误。 B. “The shape of an area on the ocean floor.”（海底某个区域的形状。）“Upsweep”指的是声音的特征，而非海底区域的形状，因此B选项错误。 C. “A sound with particular characteristics.”（具有特定特征的声音。）根据原文，\"upsweep\"是指一种具有特定特征的上升低频声音，因此C选项正确。 D. “The migration pattern of some whales.”（某些鲸鱼的迁徙模式。）“Upsweep”与鲸鱼迁徙无关，因此D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "At first, what did scientists believe was the source of the mysterious tones they recorded?",
-     "options": {
-      "A": "Whale songs",
-      "B": "Ships' engines",
-      "C": "Earthquakes",
-      "D": "Volcanoes"
-     },
-     "answer": "A",
-     "analysis": "答案: A 题目问的是: 起初，科学家认为录到的神秘音调的来源是什么？ 定位原文: “At first, these sounds were thought to be the songs of whales migrating in the Pacific.” 选项分析: A. “Whale songs.”（鲸鱼的歌声。）最初，科学家认为这些声音是鲸鱼的歌声，因此A选项正确。 B. “Ships' engines.”（船只引擎。）没有提到船只引擎发出的声音，因此B选项错误。 C. “Earthquakes.”（地震。）地震是后来的理论之一，但最初并未认为声音来自地震，因此C选项错误。 D. “Volcanoes.”（火山。）最初并未认为这些声音来自火山，因此D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "Why does the speaker mention \"inferred volcanic seismic activity\"?",
-     "options": {
-      "A": "To imply that earthquakes cause upsweep",
-      "B": "To clarify why more data about upsweep is needed",
-      "C": "To suggest that one theory about upsweep is wrong",
-      "D": "To explain a possible origin of upsweep"
-     },
-     "answer": "D",
-     "analysis": "答案: D 题目问的是: 为什么演讲者提到“推测的火山地震活动”？ 定位原文: “Some scientists believe that if these mountains contain an active volcano, the source for the mysterious upsweep sounds may be hot volcanic lava coming in contact with cold sea water.” 选项分析: A. “To imply that earthquakes cause upsweep.”（暗示地震导致了upsweep。）原文提到的是火山地震活动而非地震，因此A选项错误。 B. “To clarify why more data about upsweep is needed.”（澄清为什么需要更多关于upsweep的数据。）原文没有提到数据需要更多的原因，因此B选项错误。 C. “To suggest that one theory about upsweep is wrong.”（暗示关于upsweep的某个理论是错误的。）并没有提出理论错误的观点，因此C选项错误。 D. “To explain a possible origin of upsweep.”（解释upsweep的可能来源。）原文提到这些声音与火山地震活动有关，因此D选项正确。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #38",
+      "instruction": "Listen to a talk in a science class today.",
+      "audio": "library/toefl/free/audio/c94bd822ce9d46cc8d5c8a1418b22f26.mp3",
+      "transcript": "I want to tell you about an unusual phenomenon that scientists noticed in the Pacific Ocean in the early 1990's. The scientists were recording sounds using hydrophones positioned on the ocean floor in the North Pacific. Hydrophones are specially designed microphones that allow scientists to collect acoustic data underwater. While most of the undersea noises picked up by the hydrophones emanated from whales, ships engines, or earthquakes, the scientists monitoring the hydrophones detected a number of sounds that they could not identify. One was a regular series of rising infrasonic tones that is a very short wavelengths below those humans can hear. The scientists labeled these very low frequency noises up sweep. At first, these sounds were thought to be the songs of whales migrating in the Pacific. However, scientists who study whale acoustics eventually ruled out this possibility and the origin of the up sweep sounds remained unknown. So what is the source of the rising tones detected by the hydrophones? The sounds were ultimately tracked to an area of inferred volcanic seismic activity, a chain of undersea mountains in the South Pacific. Some scientists believe that if these mountains contain an active volcano, the source for the mysterious up sweep sounds may be hot volcanic lava coming in contact with cold sea water.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the speaker mainly discussing?",
+          "options": {
+            "A": "Unusual sounds made by migrating whales",
+            "B": "Mysterious sounds recorded in the deep ocean",
+            "C": "The effects of human-generated noise on whales",
+            "D": "How earthquakes create sound waves in the ocean"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: diễn thuyết người chủ yếu thảo luận là cái gì? Dẫn chứng Bài gốc: “The scientists were recording sounds using hydrophones positioned on the ocean floor in the North Pacific. [...] the scientists monitoring the hydrophones detected a number of sounds that they could not identify.” Phương án phân tích: A. “Unusual sounds made by migrating whales.” (di chuyển cá voi phát ra dị thường thanh âm.) mới đầu, nhà khoa học cho rằng những âm thanh này là cá voi tiếng ca, nhưng cuối cùng loại bỏ khả năng này, bởi vậy A Phương án Sai. B. “Mysterious sounds recorded in the deep ocean.” (sâu dưới biển thu đến thanh âm thần bí.) diễn thuyết người đang thảo luận cái này một thanh âm thần bí nơi phát ra, bởi vậy B Phương án Đúng. C. “The effects of human-generated noise on whales.” (con người làm ra tạp âm đối với cá voi ảnh hưởng.) Bài gốc cũng không có nhắc tới con người làm ra tạp âm đối với cá voi ảnh hưởng, bởi vậy C Phương án Sai. D. “How earthquakes create sound waves in the ocean. (” địa chấn như thế nào trong hải dương sinh ra sóng âm.) mặc dù địa chấn là thanh âm nơi phát ra một trong, nhưng cái này không phải diễn giảng chủ yếu nội dung thảo luận, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the term \"upsweep\" refer to?",
+          "options": {
+            "A": "A method of collecting data underwater",
+            "B": "The shape of an area on the ocean floor",
+            "C": "A sound with particular characteristics",
+            "D": "The migration pattern of some whales"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: “Upsweep” thuật này lời nói là chỉ gì? Dẫn chứng Bài gốc: “One was a regular series of rising infrasonic tones that is a very short wavelengths below those humans can hear. The scientists labeled these very low frequency noises up sweep.” Phương án phân tích: A. “A method of collecting data underwater.” (một loại thu thập dưới nước số liệu phương pháp.) “Upsweep” là chỉ thanh âm, không phải số liệu bắt được phương pháp, bởi vậy A Phương án Sai. B. “The shape of an area on the ocean floor.” (đáy biển cái nào đó khu vực hình dạng.) “Upsweep” là chỉ thanh âm đặc thù, mà không phải là đáy biển khu vực hình dạng, bởi vậy B Phương án Sai. C. “A sound with particular characteristics.” (có đặc biệt đặc thù thanh âm.) dựa theo Bài gốc, \"upsweep\" là chỉ một loại có đặc biệt đặc thù bay lên Tần suất thấp thanh âm, bởi vậy C Phương án Đúng. D. “The migration pattern of some whales.” (có chút cá voi di chuyển hình thức.) “Upsweep” và cá voi di chuyển không quan hệ, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "At first, what did scientists believe was the source of the mysterious tones they recorded?",
+          "options": {
+            "A": "Whale songs",
+            "B": "Ships' engines",
+            "C": "Earthquakes",
+            "D": "Volcanoes"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: mới đầu, nhà khoa học cho rằng lục đến thần bí âm điệu nơi phát ra là cái gì? Dẫn chứng Bài gốc: “At first, these sounds were thought to be the songs of whales migrating in the Pacific.” Phương án phân tích: A. “Whale songs.” (cá voi tiếng ca.) lúc ban đầu, nhà khoa học cho rằng những âm thanh này là cá voi tiếng ca, bởi vậy A Phương án Đúng. B. “Ships' engines.” (đội thuyền động cơ.) không có nói tới đội thuyền động cơ phát ra thanh âm, bởi vậy B Phương án Sai. C. “Earthquakes.” (địa chấn.) địa chấn là về sau lý luận một trong, nhưng lúc ban đầu cũng không cho rằng thanh âm đến từ địa chấn, bởi vậy C Phương án Sai. D. “Volcanoes.” (núi lửa.) lúc ban đầu cũng không cho rằng những âm thanh này đến từ núi lửa, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "Why does the speaker mention \"inferred volcanic seismic activity\"?",
+          "options": {
+            "A": "To imply that earthquakes cause upsweep",
+            "B": "To clarify why more data about upsweep is needed",
+            "C": "To suggest that one theory about upsweep is wrong",
+            "D": "To explain a possible origin of upsweep"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: vì sao diễn thuyết người nhắc tới “ suy đoán động đất do núi lửa hoạt động ”? Dẫn chứng Bài gốc: “Some scientists believe that if these mountains contain an active volcano, the source for the mysterious upsweep sounds may be hot volcanic lava coming in contact with cold sea water.” Phương án phân tích: A. “To imply that earthquakes cause upsweep.” (ám chỉ chấn đưa đến upsweep.) Bài gốc nhắc tới là động đất do núi lửa hoạt động mà không phải là địa chấn, bởi vậy A Phương án Sai. B. “To clarify why more data about upsweep is needed.” (làm sáng tỏ vì sao cần thêm nữa về upsweep số liệu.) Bài gốc không có nói tới số liệu cần càng nhiều nữa nguyên nhân, bởi vậy B Phương án Sai. C. “To suggest that one theory about upsweep is wrong.” (ám chỉ về upsweep cái nào đó lý luận là sai lầm.) cũng không có đưa ra lý luận sai lầm quan điểm, bởi vậy C Phương án Sai. D. “To explain a possible origin of upsweep.” (giải thích upsweep khả năng nơi phát ra.) Bài gốc nhắc tới những âm thanh này và động đất do núi lửa hoạt động có quan hệ, bởi vậy D Phương án Đúng."
+        }
+      ]
+    }
+  ]
 }

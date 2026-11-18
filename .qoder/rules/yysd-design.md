@@ -2,50 +2,50 @@
 trigger: always_on
 ---
 
-# YYSD 前端质感
+# YYSD lối vào cảm nhận
 
-目标不是仿 iOS，而是：**内容像纸，壳像玻璃，交互像物理；考场保持官方工具感。**
+ mục tiêu không phải phảng phất iOS, mà là: ** nội dung như giấy, xác như thủy tinh, lẫn nhau như Vật lý; trường thi bảo trì chính thức công cụ cảm giác. **
 
-完整条文见仓库根目录 `YYSD-DESIGN-RULES.md`。冲突时以该文件为准。
+ Đầy đủ điều gặp nhà kho cây mục lục `YYSD-DESIGN-RULES.md`. xung đột lúc dùng nên văn bản tài liệu làm chuẩn.
 
-## 三层人格（勿混用）
+## ba tầng nhân cách (chớ lẫn vào dùng)
 
-| 层 | 性格 | 范围 |
+| tầng | tính cách | phạm vi |
 | --- | --- | --- |
-| **内容** | 象牙纸、沉静、可读 | 真题、单词、报告、Hub 正文 |
-| **壳** | 轻霜化、浮在内容上 | 顶栏、底栏、Drawer、确认 / Sheet |
-| **考场** | 功利、可信、少装饰 | CDT 及防切屏 — 不要苹果化 |
+| ** nội dung ** | ngà voi giấy, trầm tĩnh, có thể đọc | đề thi thật, Từ vựng, báo cáo, Hub chính văn |
+| ** xác ** | nhẹ sương hóa, lơ lửng ở nội dung bên trên | thanh điều hướng, ngọn nguồn lan, Drawer, Xác nhận / Sheet |
+| ** trường thi ** | hiệu quả và lợi ích, có thể tin, chứa đựng ít sức | CDT và phòng cắt bình — không nên quả táo hóa |
 
-新 UI 先问：这是内容、壳，还是考场？
+ mới UI hỏi trước: đây là nội dung, xác, hay trường thi?
 
-## 材料（只许两种）
+## tài liệu (chỉ cho phép hai loại)
 
-1. Paper — `#f6f3ec` / `#fffcf7` + 极轻纸纹。承载阅读。
-2. Chrome — 半透明 + `blur(20px) saturate(180%)` + 亮边高光。承载导航与决策。
+1. Paper — `#f6f3ec` / `#fffcf7` + nhẹ vô cùng giấy văn. thừa nhận Đọc.
+2. Chrome — hơi mờ + `blur(20px) saturate(180%)` + sáng bên cạnh cao quang. thừa nhận Điều hướng và quyết định biện pháp.
 
-禁止第三种材料（紫渐变、重投影装饰卡、到处玻璃）。
+ cấm loại thứ ba tài liệu (tím thay đổi dần, trọng hình chiếu trang trí tạp, khắp nơi thủy tinh).
 
-## 交互物理
+## lẫn nhau Vật lý
 
-- 按压即时：反馈在 pointer-down（约 100ms），不是等 click。
-- 同路径进出：右进右出、底进底出；用 `YYSD_SURFACE`，禁止硬切 `hidden`。
-- 空间锚定：面板从触发源展开。
-- 默认可打断：过渡中允许反向意图。
-- 决策用品牌 Sheet：`YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`。
-- Hover 特效仅限 `@media (hover: hover)`。触控只保留 `:active`。
+- kìm tức thời: phản hồi tại pointer-down (ước 100ms), không phải đợi click.
+- cùng đường kính ra vào: phải tiến phải ra, ngọn nguồn tiến ngọn nguồn ra; dùng `YYSD_SURFACE`, cấm cứng rắn cắt `hidden`.
+- không gian neo định: mặt bản từ gây ra nguyên triển khai.
+- cam chịu có thể cắt ngang: quá độ công chính hứa ngược ý đồ.
+- quyết định biện pháp đồ dùng bài Sheet: `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`.
+- Hover đặc hiệu giới hạn `@media (hover: hover)`. xúc khống chỉ lưu lại `:active`.
 
-## 实现锚点
+## thực hiện neo chút:điểm
 
-- Token：`assets/css/style.css` `:root`
-- 表面：`assets/js/ui.js`
-- 分页转场：`assets/js/page-transit.js`
-- 自检：`node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
+- Token: `assets/css/style.css` `:root`
+- mặt ngoài: `assets/js/ui.js`
+- điểm trang chuyển trận: `assets/js/page-transit.js`
+- tự kiểm: `node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
 
-## 不做
+## không làm
 
-- CDT 按钮 / void lock 加 bounce 或毛玻璃
-- 全站上 spring 动画库
-- 无动量场景的 overshoot
-- 叠两层浅半透明
-- 为炫技加的整页 blur
-- 第二套视觉系统或第二套播放器
+- CDT cái nút / void lock thêm bounce hoặc thuỷ tinh mờ
+- toàn bộ đứng lên spring anime kho
+- Không động lượng tình cảnh overshoot
+- chồng hai tầng thiển hơi mờ
+- là huyễn kỹ thêm cả trang blur
+- thứ hai bộ thị giác hệ thống hoặc thứ hai bộ bá phóng khí

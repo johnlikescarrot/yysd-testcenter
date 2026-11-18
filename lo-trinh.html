@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lộ Trình IELTS Thông Minh — Trung tâm Luyện thi Quốc tế YYSD</title>
+  <meta name="description" content="Lộ trình học IELTS trò chơi hóa toàn diện: cây kỹ năng 8 chặng CEFR A2–C2, lặp lại ngắt quãng Half-Life Regression, chuỗi ngày học &amp; bạn bè, 10 giải đấu tuần, truyện ngắn, nhập vai Speaking và thang điểm 0–160.">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/duo-ielts.css">
+</head>
+<body class="yi-page">
+  <a class="yi-skip" href="#main">Chuyển thẳng tới nội dung chính</a>
+
+  <header class="yi-topbar">
+    <div class="yi-topbar__inner">
+      <a class="yi-brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Biểu trưng YYSD" width="34" height="34">
+        <span>YYSD IELTS</span>
+      </a>
+      <nav class="yi-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="lo-trinh.html" aria-current="page">Lộ trình IELTS</a>
+        <a href="tai-lieu.html">Tài liệu PDF</a>
+        <a href="vocab.html">Từ vựng</a>
+        <a href="zone.html?zone=mock">Đề Cambridge</a>
+        <a href="results.html">Kết quả</a>
+      </nav>
+      <div class="yi-hud" id="duo-hud" aria-label="Chỉ số học tập hiện tại">
+        <span class="yi-pill yi-pill--streak" id="hud-streak">Chuỗi 0 ngày</span>
+        <span class="yi-pill yi-pill--gems" id="hud-gems">150 Đá quý</span>
+        <span class="yi-pill yi-pill--energy" id="hud-energy">25/25 Năng lượng</span>
+        <span class="yi-pill yi-pill--score" id="hud-score">82/160 · Band 5.5</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="yi-container">
+    <section class="yi-hero" aria-labelledby="hero-title">
+      <span class="yi-kicker">Khoa học học tập hiện đại · Miễn phí giải thích mọi câu hỏi</span>
+      <h1 id="hero-title">Lộ Trình Chinh Phục IELTS Cá Nhân Hóa</h1>
+      <p class="yi-hero__lead">
+        Kết hợp các bài học ngắn 4 phút theo chuẩn CEFR A2–C2, lặp lại ngắt quãng Half-Life Regression
+        (Settles &amp; Meeder, 2016), bài tập Câu Bất Ngờ Ngữ Nghĩa (SUS), truyện ngắn học thuật,
+        nhập vai Speaking 4 tiêu chí, 10 giải đấu hàng tuần và Chuỗi Bạn Bè.
+      </p>
+      <div class="yi-hero__actions">
+        <button type="button" class="yi-btn yi-btn--primary" id="btn-quick-lesson">
+          Bắt đầu chặng tiếp theo
+        </button>
+        <button type="button" class="yi-btn yi-btn--emerald" id="btn-adaptive-drill">
+          Luyện thích ứng thông minh (5 câu)
+        </button>
+        <a class="yi-btn" href="tai-lieu.html">Thư viện 6 PDF Học thuật (80 nghiên cứu)</a>
+      </div>
+    </section>
+
+    <div class="yi-tabs" role="tablist" aria-label="Các phân khu học tập IELTS">
+      <button type="button" class="yi-tab" role="tab" aria-selected="true" data-tab="path" id="tab-path">
+        1. Cây Kỹ Năng (8 Chặng)
+      </button>
+      <button type="button" class="yi-tab" role="tab" aria-selected="false" data-tab="hlr" id="tab-hlr">
+        2. Ôn Tập HLR SRS
+      </button>
+      <button type="button" class="yi-tab" role="tab" aria-selected="false" data-tab="stories" id="tab-stories">
+        3. Truyện &amp; Nhập Vai
+      </button>
+      <button type="button" class="yi-tab" role="tab" aria-selected="false" data-tab="leagues" id="tab-leagues">
+        4. 10 Giải Đấu &amp; Bạn Bè
+      </button>
+      <button type="button" class="yi-tab" role="tab" aria-selected="false" data-tab="shop" id="tab-shop">
+        5. Cửa Hàng &amp; Ảnh Đại Diện
+      </button>
+      <button type="button" class="yi-tab" role="tab" aria-selected="false" data-tab="score" id="tab-score">
+        6. Điểm 0–160 &amp; Nhắc Học AI
+      </button>
+    </div>
+
+    <div class="yi-layout">
+      <section id="duo-main-panel" aria-live="polite">
+        <div class="yi-card">
+          <h2>Lộ trình 8 Chặng IELTS Academic (Band 5.0 → 8.5+)</h2>
+          <p class="yi-muted">Đang khởi tạo cây kỹ năng và bài tập tương tác…</p>
+        </div>
+      </section>
+
+      <aside id="duo-side-panel" aria-label="Bảng tiến độ, nhiệm vụ ngày và nhắc học thông minh">
+        <div class="yi-card">
+          <h2>Tiến độ hôm nay</h2>
+          <p class="yi-muted">Theo dõi mục tiêu XP, Nhiệm vụ Hàng ngày và Chuỗi Bạn Bè.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="duo-toast" class="yi-toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="yi-footer">
+    <div class="yi-footer__inner">
+      <span>© 2026 Trung tâm Luyện thi Quốc tế YYSD · Nền tảng học thuật tiếng Việt chuẩn quốc tế</span>
+      <nav class="yi-footer__links" aria-label="Liên kết chân trang">
+        <a href="tai-lieu.html">Thư viện PDF Google Scholar</a>
+        <a href="zone.html?zone=mock">Kho đề Cambridge 6–20</a>
+        <a href="vocab.html">Tủ sách Từ vựng Anh–Việt</a>
+        <a href="privacy.html">Chính sách bảo mật</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/duo-app.js"></script>
+</body>
+</html>

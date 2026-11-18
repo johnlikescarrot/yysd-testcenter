@@ -53,27 +53,27 @@ assert.ok(modeJs.indexOf("site-mode/enter") >= 0, "teacher site mode enter");
 assert.ok(modeJs.indexOf("function enterViaApi") >= 0, "enter always hits teacher api");
 assert.ok(modeJs.indexOf("d && d.redirect") >= 0, "guard missing redirect");
 assert.ok(modeJs.indexOf("teacher-mode-picker.html") >= 0 || modeJs.indexOf("hasChosenMode") >= 0, "teacher mode picker guard");
-assert.ok(modeJs.indexOf("教室管理区") >= 0, "admin mode label");
+assert.ok(modeJs.indexOf(" phòng học quản lý khu ") >= 0, "admin mode label");
 var authJs = read("assets/js/auth.js");
-assert.ok(authJs.indexOf('localStorage.getItem("yysd:teacher:mode") !== "site"') >= 0, "no auto site-mode on student pages");
-assert.ok(ui.indexOf("网站功能区") >= 0, "teacher hub hint");
+assert.ok(authJs.indexOf('localStorage.getItem("yysd:teacher:mode")!== "site"') >= 0, "no auto site-mode on student pages");
+assert.ok(ui.indexOf(" Khu tính năng học tập ") >= 0, "teacher hub hint");
 var zone = read("assets/js/zone.js");
 assert.ok(modeJs.indexOf("writeStudentSession") >= 0, "picker writes student token without auth.js");
 assert.ok(modeJs.indexOf("clearStudentSession") >= 0, "exit site mode drops student token");
-assert.ok(modeJs.indexOf("闯关进行中") >= 0, "confirm before leaving quiz");
+assert.ok(modeJs.indexOf("confirm(") >= 0, "confirm before leaving quiz");
 var teacherAuth = read("assets/js/teacher-auth.js");
 assert.ok(teacherAuth.indexOf("localStorage.getItem(TOKEN_KEY) || localStorage.getItem(STUDENT_TOKEN_KEY)") < 0, "teacher getToken no student fallback");
-assert.ok(ui.indexOf('requireImeGate("start"') >= 0 && ui.indexOf("准备题目") > ui.indexOf('requireImeGate("start"'), "ime before start api");
-assert.ok(ui.indexOf("闯关中") >= 0, "in-progress task copy");
+assert.ok(ui.indexOf('requireImeGate("start"') >= 0 && ui.indexOf(" chuẩn bị đề mục ") > ui.indexOf('requireImeGate("start"'), "ime before start api");
+assert.ok(ui.indexOf(" Đang vượt ải ") >= 0, "in-progress task copy");
 assert.ok(ui.indexOf("teacher-mode-picker.html") >= 0, "teacher blocked link to picker");
-assert.ok(zone.indexOf("查看进度") >= 0, "zone complete cta");
-assert.ok(zone.indexOf("词书学习") >= 0, "zone rail not 词库进度");
+assert.ok(zone.indexOf(" Xem Tiến độ ") >= 0, "zone complete cta");
+assert.ok(zone.indexOf(" từ sách Học tập ") >= 0, "zone rail not từ kho Tiến độ ");
 var previewJs = read("server/teacher-preview.js");
 assert.ok(previewJs.indexOf("function isPreviewUser") >= 0, "preview filter helper");
 var eng = read("server/vocab-challenge.js");
 assert.ok(eng.indexOf("resolveRosterStudentIds") >= 0, "roster null ids");
 assert.ok(ui.indexOf("/api/vocab-challenge/submit-scheduled-review") >= 0, "submit-scheduled-review");
-assert.ok(ui.indexOf("先选中文含义，再拼写") >= 0 || ui.indexOf("先选中文") >= 0, "A then D");
+assert.ok(ui.indexOf(" trước chọn trúng văn Nghĩa, lại Chính tả ") >= 0 || ui.indexOf(" trước chọn trúng văn ") >= 0, "A then D");
 assert.ok(ui.indexOf("TIME_SEC") >= 0 && ui.indexOf("= 18") >= 0, "18s timer");
 assert.ok(ui.indexOf("vl-lives") >= 0 && ui.indexOf("startTimer") >= 0, "lives+timer like quiz");
 assert.ok(ui.indexOf("session.words = shuffle") >= 0, "shuffle question order on enter");
@@ -84,8 +84,8 @@ assert.ok(read("server/vocab-challenge.js").indexOf("list-practice-pool") >= 0, 
 assert.ok(read("server/vocab-challenge-schedule.js").indexOf("buildPlanSummary") >= 0, "ebb plan summary");
 assert.ok(read("server/vocab-challenge.js").indexOf("ebbinghausPlan") >= 0, "lists returns ebb plan");
 assert.ok(ui.indexOf("scheduled_review") >= 0, "review phase ui");
-assert.ok(ui.indexOf("（干扰项）") < 0, "no fake distractor labels");
-assert.ok(ui.indexOf("桌子 / 课桌") < 0, "no generic filler glosses");
+assert.ok(ui.indexOf(" (Phương án nhiễu) ") < 0, "no fake distractor labels");
+assert.ok(ui.indexOf(" cái bàn / bàn học ") < 0, "no generic filler glosses");
 assert.ok(ui.indexOf("optionBank") >= 0, "uses list option bank");
 assert.ok(ui.indexOf("saveQuizDraft") >= 0, "resume draft");
 assert.ok(ui.indexOf("displayProgressDay") >= 0, "cap progress day at 78");
@@ -95,22 +95,22 @@ assert.ok(read("server/vocab-challenge.js").indexOf("resumeSameAttempt") >= 0, "
 var teacher = read("assets/js/teacher-vocab-challenge.js");
 assert.ok(teacher.indexOf("formatProgress") >= 0, "teacher progress day");
 assert.ok(teacher.indexOf("formatTodayTasks") < 0, "no teacher today tasks");
-assert.ok(teacher.indexOf("池 ") < 0 && teacher.indexOf("本 ") < 0, "no pool/notebook on teacher roster");
-assert.ok(teacher.indexOf("布置四级精简") >= 0, "teacher lite assign");
-assert.ok(teacher.indexOf("取消布置") >= 0, "teacher unassign");
+assert.ok(teacher.indexOf(" trì ") < 0 && teacher.indexOf(" bản ") < 0, "no pool/notebook on teacher roster");
+assert.ok(teacher.indexOf(" Giao bộ Đại học Rút gọn ") >= 0, "teacher lite assign");
+assert.ok(teacher.indexOf(" Hủy bố trí ") >= 0, "teacher unassign");
 
 assert.ok(zone.indexOf("vocab-challenge.html") >= 0, "zone links challenge");
-assert.ok(zone.indexOf("单词闯关") >= 0, "zone label");
+assert.ok(zone.indexOf(" Vượt ải từ vựng ") >= 0, "zone label");
 
 assert.ok(read("teacher.html").indexOf("teacher-vocab-challenge.html") >= 0, "teacher nav");
-assert.ok(read("teacher.html").indexOf('id="nav-auth">个人中心') >= 0, "teacher header 个人中心");
+assert.ok(read("teacher.html").indexOf('id="nav-auth"> Hồ sơ cá nhân ') >= 0, "teacher header Hồ sơ cá nhân ");
 assert.ok(read("teacher.html").indexOf('href="profile.html"') < 0, "teacher pages skip student profile");
 assert.ok(read("teacher-student-diagnostic.html").indexOf("zone.html") < 0, "teacher diag has no student zone links");
 assert.ok(teacher.indexOf("/api/teacher/students") < 0, "challenge roster is org-wide");
-assert.ok(teacher.indexOf("联系管理员绑定") < 0, "no student-bind gate");
+assert.ok(teacher.indexOf(" liên hệ Quản trị viên khóa lại ") < 0, "no student-bind gate");
 assert.ok(read("server/server.js").indexOf("canManageStudent: teacherCanAssignChallenge") >= 0, "any org teacher can assign");
 assert.ok(read("server/server.js").indexOf("listManagedStudentIds: listChallengeStudentIds") >= 0, "org-wide challenge ids");
-assert.ok(read("assets/js/tenant-boot.js").indexOf('mode !== "site"') >= 0, "tenant-boot blocks student pages");
+assert.ok(read("assets/js/tenant-boot.js").indexOf('mode!== "site"') >= 0, "tenant-boot blocks student pages");
 var platHtml = read("platform.html");
 assert.ok(platHtml.indexOf("teacher-page") >= 0 && platHtml.indexOf("teacher-side") >= 0, "platform console uses teacher shell");
 assert.ok(read("assets/js/teacher-auth.js").indexOf('n === "platform.html"') >= 0, "teacher-auth treats platform as teacher page");
@@ -124,7 +124,7 @@ assert.ok(eng.indexOf("PHASE_SCHEDULED_REVIEW") >= 0, "scheduled review phase");
 assert.ok(eng.indexOf("getTodayTasks") >= 0, "schedule tasks");
 
 function listWords(n) {
-  var html = read("library/study/vocab/高中单词LIST" + n + ".html");
+  var html = read("library/study/vocab/ Từ vựng THPT LIST" + n + ".html");
   var m = html.match(/const wordData\s*=\s*(\[[\s\S]*?\]);/);
   assert.ok(m, "list " + n + " wordData");
   return JSON.parse(m[1]).map(function (w) { return String(w.word); });
@@ -160,13 +160,13 @@ grade.selfCheck();
       parseWordData(fs.readFileSync(f, "utf8")).forEach(function (w) {
         ["word", "wordUs", "wordUk"].forEach(function (k) {
           var x = String((w && w[k]) || "").trim().toLowerCase();
-          if (x && !/[\s/(]/.test(x)) words[x] = true;
+          if (x &&!/[\s/(]/.test(x)) words[x] = true;
         });
       });
     });
   }
   grade.UK_PAIRS.forEach(function (p) {
-    if (!words[p[0]] && !words[p[1]]) return;
+    if (!words[p[0]] &&!words[p[1]]) return;
     assert.ok(grade.spellMatches(p[0], p[1]) && grade.spellMatches(p[1], p[0]), "library uk/us " + p.join("/"));
   });
 })();

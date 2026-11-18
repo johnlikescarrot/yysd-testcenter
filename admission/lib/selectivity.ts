@@ -16,7 +16,7 @@ export function programDifficulty(school: School): {
   label: string;
   source: string;
 } {
-  let score = school.tier === 1 ? 5 : school.tier === 2 ? 3 : 2;
+  let score = school.tier === 1? 5: school.tier === 2? 3: 2;
 
   if (ELITE_BRAND.test(school.name)) score = Math.max(score, 5);
   else if (HIGH_BRAND.test(school.name)) score = Math.max(score, 4);
@@ -33,14 +33,14 @@ export function programDifficulty(school: School): {
 
   const label =
     score >= 5
-      ? "顶尖极难项目"
+      ? " cực hạn rất khó hạng mục "
       : score === 4
-        ? "高选择性项目"
+        ? " cao lựa chọn tính hạng mục "
         : score === 3
-          ? "中高选择性项目"
+          ? " Vừa cao lựa chọn tính hạng mục "
           : score === 2
-            ? "中等选择性项目"
-            : "相对友好项目";
+            ? " trung đẳng lựa chọn tính hạng mục "
+            : " tương đối hữu hảo hạng mục ";
 
   return { score, label, source: "selectivity_model_v1" };
 }
@@ -60,25 +60,25 @@ export function majorFit(
 
   if (field === "cs") {
     if (/computer|software|cs\b|informatic/.test(m))
-      return { score: 1, label: "专业高度匹配（CS）" };
-    if (stem || socialData) return { score: 0.55, label: "专业部分匹配（量化/数据分析，非强CS）" };
-    return { score: 0.25, label: "专业跨度大（相对CS）" };
+      return { score: 1, label: " chuyên nghiệp độ cao xứng đôi (CS) " };
+    if (stem || socialData) return { score: 0.55, label: " chuyên nghiệp bộ phận xứng đôi (định lượng / số liệu phân tích, không phải mạnh mẽ CS) " };
+    return { score: 0.25, label: " chuyên nghiệp khoảng cách đại (tương đối CS) " };
   }
   if (field === "data_ai") {
     if (/data|statistic|ai|computer|math|informatic/.test(m))
-      return { score: 0.9, label: "专业较匹配（数据/量化）" };
-    if (socialData) return { score: 0.65, label: "专业部分匹配（Social Data Analytics）" };
-    if (stem) return { score: 0.7, label: "专业部分匹配（理工量化）" };
-    return { score: 0.35, label: "专业匹配偏弱" };
+      return { score: 0.9, label: " chuyên nghiệp so sánh xứng đôi (số liệu / định lượng) " };
+    if (socialData) return { score: 0.65, label: " chuyên nghiệp bộ phận xứng đôi (Social Data Analytics) " };
+    if (stem) return { score: 0.7, label: " chuyên nghiệp bộ phận xứng đôi (để ý công định lượng) " };
+    return { score: 0.35, label: " chuyên nghiệp xứng đôi hơi yếu " };
   }
   if (field === "business" || field === "finance") {
     if (business || /data|statistic|math/.test(m))
-      return { score: 0.85, label: "专业较匹配（商科/量化）" };
-    return { score: 0.45, label: "专业匹配一般" };
+      return { score: 0.85, label: " chuyên nghiệp so sánh xứng đôi (Kinh doanh / định lượng) " };
+    return { score: 0.45, label: " chuyên nghiệp xứng đôi bình thường " };
   }
   if (field === "arts_design") {
-    if (design) return { score: 0.9, label: "专业较匹配" };
-    return { score: 0.3, label: "专业跨度大" };
+    if (design) return { score: 0.9, label: " chuyên nghiệp so sánh xứng đôi " };
+    return { score: 0.3, label: " chuyên nghiệp khoảng cách đại " };
   }
-  return { score: 0.6, label: "专业匹配中等（默认）" };
+  return { score: 0.6, label: " chuyên nghiệp xứng đôi trung đẳng (cam chịu) " };
 }

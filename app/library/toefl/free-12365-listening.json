@@ -1,46 +1,46 @@
 {
- "id": "free-12365",
- "title": "Choose a Response #123",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #123",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12365,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-123"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #123",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/4d2133cc759b491b80128d32b090e5ff.mp3",
-   "questions": [
+  "id": "free-12365",
+  "title": "Choose a Response #123",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #123",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12365,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-123"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Coffee is my favorite drink.",
-      "B": "No, I didn't meet him today.",
-      "C": "Yes, she does care about it.",
-      "D": "Sure, that would be very nice."
-     },
-     "answer": "D",
-     "transcript": "Would you care for a cup of coffee after the meeting?",
-     "stemZh": "会议结束后，您想喝杯咖啡吗？",
-     "analysis": "Would you care for a cup of coffee after the meeting? 题干分析 题干这句话礼貌自然，意为“会议结束后，你想来杯咖啡吗？”，其中“Would you care for…”比“Do you want…”更客气，适用于职场和日常邀约。 选项分析 选项A：“咖啡是我最喜欢的饮料。” 虽然这句话表达了对咖啡的喜爱，但它没有直接回答“会议后去不去喝”的问题，答非所问。 选项B：“不，我今天没见到他。” 这个回答谈论的是“见到某人”，与喝咖啡的邀请无关，逻辑混乱。 选项C：“是的，她很在意这个。” 这个回答谈论的是第三人称“她”的感受，与说话者向“你”发出的邀请完全不符。 选项D：正确答案，“当然，那太好了。” 这是一个标准的、礼貌的接受邀请的回应，完全符合语境。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #123",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/4d2133cc759b491b80128d32b090e5ff.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Coffee is my favorite drink.",
+            "B": "No, I didn't meet him today.",
+            "C": "Yes, she does care about it.",
+            "D": "Sure, that would be very nice."
+          },
+          "answer": "D",
+          "transcript": "Would you care for a cup of coffee after the meeting?",
+          "stemZh": "hội nghị sau khi kết thúc, bạn muốn uống ly cà phê không?",
+          "analysis": "Would you care for a cup of coffee after the meeting? Câu hỏi phân tích Câu hỏi những lời này lễ phép tự nhiên, ý là “ hội nghị sau khi kết thúc, ngươi muốn đến ly cà phê không? ”, trong đó “Would you care for…” so với “Do you want…” càng khách khí, áp dụng tại Công sở và Đời sống mời. Phương án phân tích Phương án A: “ cà phê là ta thích nhất đồ uống. ” mặc dù những lời này biểu đạt đối với cà phê yêu thích, nhưng nó không có trực tiếp trả lời “ hội nghị sau có đi không uống ” vấn đề, đáp phi sở vấn. Phương án B: “ không, ta hôm nay không có gặp anh ấy. ” câu trả lời này đàm luận là “ nhìn thấy người nào đó ”, và uống cà phê mời không quan hệ, ăn khớp hỗn loạn. Phương án C: “ đúng vậy, cô ấy rất để trong lòng này. ” câu trả lời này đàm luận là ngôi thứ ba “ cô ấy ” cảm thụ, và kẻ nói chuyện hướng “ bạn ” phát ra mời hoàn toàn không hợp. Phương án D: Đáp án đúng, “ đương nhiên, vậy thì tốt quá. ” đây là một cái tiêu chuẩn, lễ phép tiếp nhận mời đáp lại, hoàn toàn phù hợp ngữ cảnh."
+        }
+      ]
+    }
+  ]
 }

@@ -1,46 +1,46 @@
 {
- "id": "free-12368",
- "title": "Choose a Response #126",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #126",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12368,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-126"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #126",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/0c6ffade648f4f22bb2a119c98b2d41d.mp3",
-   "questions": [
+  "id": "free-12368",
+  "title": "Choose a Response #126",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #126",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12368,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-126"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, and I have to leave soon to get there.",
-      "B": "New branch offices are big.",
-      "C": "You shouldn't worry too much. It'll be all right.",
-      "D": "They are not as big as we had hoped."
-     },
-     "answer": "A",
-     "transcript": "The new branch office is scheduled to have its grand opening today, isn't it?",
-     "stemZh": "新的分公司计划今天盛大开业，不是吗？",
-     "analysis": "The new branch office is scheduled to have its grand opening today, isn't it? 题干分析 题干是反意疑问句，前半句陈述“新分公司定于今天隆重开业”，后半句 isn't it 用于确认，意为“新分公司定于今天盛大开业，不是吗？”。 选项分析 选项A：正确答案，“是的，我得赶紧出发才能赶到那里。” 这个回答首先确认了“是的”（Yes），表示确实今天开业，然后给出了一个符合逻辑的后续动作（需要出发去现场），完全符合语境逻辑。 选项B：“新的分公司办公室很大。” 这个回答谈论的是办公室的大小，与确认开业时间无关。 选项C：“你不要太担心。没事的。” 这个回答是对担忧情绪的安慰，而题干并没有表现出任何担忧的情绪，属于答非所问。 选项D：“它们没有我们希望的那么大。” 这个回答谈论的是规模大小的失望，与确认开业时间无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #126",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/0c6ffade648f4f22bb2a119c98b2d41d.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, and I have to leave soon to get there.",
+            "B": "New branch offices are big.",
+            "C": "You shouldn't worry too much. It'll be all right.",
+            "D": "They are not as big as we had hoped."
+          },
+          "answer": "A",
+          "transcript": "The new branch office is scheduled to have its grand opening today, isn't it?",
+          "stemZh": "mới đích chi nhánh công ty kế hoạch hôm nay long trọng khai trương, không phải sao?",
+          "analysis": "The new branch office is scheduled to have its grand opening today, isn't it? Câu hỏi phân tích Câu hỏi là phản ý câu nghi vấn, nửa câu đầu trần thuật “ mới chi nhánh công ty quyết định hôm nay long trọng khai trương ”, nửa câu sau isn't it dùng cho Xác nhận, ý là “ mới chi nhánh công ty quyết định hôm nay long trọng khai trương, không phải sao? ”. Phương án phân tích Phương án A: Đáp án đúng, “ đúng vậy, ta phải tranh thủ thời gian xuất phát mới có thể đi đến ở đó. ” câu trả lời này đầu tiên xác nhận “ đúng vậy ” (Yes), biểu thị xác thực hôm nay khai trương, sau đó cấp ra một cái phù hợp suy luận động tác tiếp theo (cần xuất phát đi hiện trường), hoàn toàn phù hợp ngữ cảnh ăn khớp. Phương án B: “ mới đích chi nhánh công ty văn phòng rất lớn. ” câu trả lời này đàm luận là phòng làm việc lớn nhỏ, và Xác nhận khai trương thời gian không quan hệ. Phương án C: “ bạn không nên quá lo lắng. không có chuyện gì đâu. ” câu trả lời này là đúng lo lắng háo hức an ủi, mà Câu hỏi cũng không có biểu hiện ra cái gì lo lắng tâm tình, thuộc về đáp phi sở vấn. Phương án D: “ chúng không có chúng tôi hy vọng lớn như vậy. ” câu trả lời này đàm luận là kích thước lớn nho nhỏ thất vọng, và Xác nhận khai trương thời gian không quan hệ."
+        }
+      ]
+    }
+  ]
 }

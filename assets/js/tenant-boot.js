@@ -1,20 +1,25 @@
-/* tenant-boot.js — run in <head>: teacher gate + tenant brand hide */
+/* tenant-boot.js — Khởi tạo cổng giáo viên & nhận diện thương hiệu trước khi vẽ giao diện */
 (function () {
   "use strict";
 
-  // ponytail: 1.0.15 desktop still opens the website; bounce it to the exam host
   if (window.yysdDesktop && location.hostname !== "app.youyisida.com") {
     location.replace("https://app.youyisida.com/login.html");
     return;
   }
 
-  // ponytail: block student practice UI before paint unless they clicked 网站功能区
+  function isCloudHost() {
+    var h = (location.hostname || "").toLowerCase();
+    return h === "youyisida.com" || h.slice(-14) === ".youyisida.com";
+  }
+
+  var page = "";
+  var teacherTok = "";
   try {
-    var teacherTok = localStorage.getItem("yysd:teacher:token");
+    teacherTok = localStorage.getItem("yysd:teacher:token") || "";
     var mode = localStorage.getItem("yysd:teacher:mode") || "";
     if (teacherTok && mode !== "site") {
       var parts = location.pathname.split("/").filter(Boolean);
-      var page = parts.length ? parts[parts.length - 1] : "index.html";
+      page = parts.length ? parts[parts.length - 1] : "index.html";
       var teacherOk = {
         "teacher.html": 1,
         "teacher-login.html": 1,
@@ -31,7 +36,9 @@
         "maintenance.html": 1,
         "agreement.html": 1,
         "privacy.html": 1,
-        "download.html": 1
+        "download.html": 1,
+        "lo-trinh.html": 1,
+        "tai-lieu.html": 1
       };
       if (!teacherOk[page]) {
         location.replace(mode === "admin" ? "teacher.html" : "teacher-mode-picker.html");
@@ -40,32 +47,31 @@
     }
   } catch (e) {}
 
-  // ponytail: maintenance gate — only platform admin phones pass while on
-  try {
-    var maintPage = page || (function () {
-      var p = location.pathname.split("/").filter(Boolean);
-      return p.length ? p[p.length - 1] : "index.html";
-    })();
-    var maintSkip = {
-      "maintenance.html": 1, "login.html": 1, "register.html": 1,
-      "forgot-password.html": 1, "teacher-login.html": 1, "teacher-register.html": 1
-    };
-    if (!maintSkip[maintPage]) {
-      var apiBase = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-        ? (location.protocol + "//" + location.hostname + ":3000")
-        : "https://api.youyisida.com";
-      var tok = teacherTok || "";
-      try { if (!tok) tok = localStorage.getItem("yysd:auth:token") || ""; } catch (e2) {}
-      var headers = {};
-      if (tok) headers.Authorization = "Bearer " + tok;
-      fetch(apiBase + "/api/maintenance", { headers: headers })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          if (d && d.on && !d.allow) location.replace("maintenance.html");
-        })
-        .catch(function () {});
-    }
-  } catch (e) {}
+  /* Chỉ kiểm tra chế độ bảo trì trên máy chủ đám mây chính thức; bỏ qua trên GitHub Pages & máy chủ tĩnh */
+  if (isCloudHost()) {
+    try {
+      var maintPage = page || (function () {
+        var p = location.pathname.split("/").filter(Boolean);
+        return p.length ? p[p.length - 1] : "index.html";
+      })();
+      var maintSkip = {
+        "maintenance.html": 1, "login.html": 1, "register.html": 1,
+        "forgot-password.html": 1, "teacher-login.html": 1, "teacher-register.html": 1
+      };
+      if (!maintSkip[maintPage]) {
+        var tok = teacherTok || "";
+        try { if (!tok) tok = localStorage.getItem("yysd:auth:token") || ""; } catch (e2) {}
+        var headers = {};
+        if (tok) headers.Authorization = "Bearer " + tok;
+        fetch("https://api.youyisida.com/api/maintenance", { headers: headers })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (d && d.on && !d.allow) location.replace("maintenance.html");
+          })
+          .catch(function () {});
+      }
+    } catch (e) {}
+  }
 
   function tenantSlug() {
     try {
@@ -78,7 +84,7 @@
     var m = h.match(/^([a-z0-9-]+)\.youyisida\.com$/);
     if (!m) return "yysd";
     var s = m[1];
-        if (/^(www|api|admin|platform|mail|static|cdn|test|dev|staging|app|jingting|tiku)$/.test(s)) return "yysd";
+    if (/^(www|api|admin|platform|mail|static|cdn|test|dev|staging|app|jingting|tiku)$/.test(s)) return "yysd";
     return s;
   }
 
@@ -97,7 +103,7 @@
     if (org && org.slug === slug && org.name && document.title) {
       if (document.title.indexOf("·") >= 0) {
         document.title = document.title.replace(/^[^·]+·/, org.name + " ·");
-      } else if (document.title.indexOf("优益思达") >= 0 || document.title.indexOf("YYSD") >= 0) {
+      } else if (document.title.indexOf("YYSD") >= 0) {
         document.title = org.name;
       }
     }

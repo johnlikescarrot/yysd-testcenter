@@ -1,46 +1,46 @@
 {
- "id": "free-12351",
- "title": "Choose a Response #109",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #109",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12351,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-109"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #109",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/e949a4ae488249c0a2f3c952ead9e71a.mp3",
-   "questions": [
+  "id": "free-12351",
+  "title": "Choose a Response #109",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #109",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12351,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-109"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Try that window over there.",
-      "B": "Tickets are hard to get.",
-      "C": "Sure, I will pick you up at seven.",
-      "D": "You need to get up a little earlier."
-     },
-     "answer": "A",
-     "transcript": "Where do I go to pick up the tickets?",
-     "stemZh": "我应该去哪里取票？",
-     "analysis": "Where do I go to pick up the tickets? 题干分析 题干意为我应该去哪里取票？询问地点。 选项分析 选项A： “试试那边那个窗口”直接提供了一个具体的地点，完美对应了问题中对取票位置的询问，是最佳回答。 选项B： “票很难买到”谈论的是票的稀缺性或获取难度，与询问取票地点无关，属于答非所问。 选项C： “当然，我会在七点来接你”是对“你能来接我吗？”这类请求的回应。此处的“pick up”意为“接送”，与题干中“pick up the tickets”（取票）的含义不同，属于混淆词义。 选项D： “你需要早点起床一点”是对时间或建议的回应，与询问取票地点无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #109",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/e949a4ae488249c0a2f3c952ead9e71a.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Try that window over there.",
+            "B": "Tickets are hard to get.",
+            "C": "Sure, I will pick you up at seven.",
+            "D": "You need to get up a little earlier."
+          },
+          "answer": "A",
+          "transcript": "Where do I go to pick up the tickets?",
+          "stemZh": "tôi nên đi nơi nào lấy phiếu vé?",
+          "analysis": "Where do I go to pick up the tickets? Câu hỏi phân tích Câu hỏi ý là tôi nên đi nơi nào lấy phiếu vé? hỏi thăm địa điểm. Phương án phân tích Phương án A: “ thử xem bên kia đó cửa sổ ” trực tiếp cung cấp một cái cụ thể địa điểm, hoàn mỹ đối ứng vấn đề Vừa đối với lấy phiếu vé vị trí hỏi thăm, là tốt nhất trả lời. Phương án B: “ phiếu vé rất khó mua được ” đàm luận là phiếu khan hiếm tính hoặc thu hoạch độ khó, và hỏi thăm lấy phiếu vé địa điểm không quan hệ, thuộc về đáp phi sở vấn. Phương án C: “ đương nhiên, ta sẽ tại bảy giờ tới đón bạn ” là đúng “ bạn có thể tới tiếp ta sao? ” cái này thỉnh cầu đáp lại. nơi này “pick up” ý là “ đưa đón ”, và Câu hỏi Vừa “pick up the tickets” (lấy phiếu vé) Nghĩa bất đồng, thuộc về lẫn lộn từ nghĩa. Phương án D: “ bạn cần sớm chút rời giường một điểm ” là đúng thời gian hoặc đề nghị đáp lại, và hỏi thăm lấy phiếu vé địa điểm không quan hệ."
+        }
+      ]
+    }
+  ]
 }

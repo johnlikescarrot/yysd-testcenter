@@ -1,57 +1,57 @@
 {
- "id": "free-13083",
- "title": "Announcement #47",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #47",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13083,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-47"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #47",
-   "instruction": "Listen to an announcement on the campus radio station.",
-   "audio": "library/toefl/free/audio/da16b55349c04293924d92a85b6add39.mp3",
-   "transcript": "Man: Listen to an announcement on the campus radio station.\nGood morning, senior class. Starting next semester, all graduating students must complete a professional development workshop before receiving their diplomas. This requirement ensures you are equipped with essential career skills, including resume writing, interview preparation, and networking strategies. Sessions will be available throughout the semester, but they may fill up fast, so plan ahead and sign up early. Check the university website for details on scheduling and registration. Your future success starts with preparation.",
-   "questions": [
+  "id": "free-13083",
+  "title": "Announcement #47",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #47",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13083,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-47"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main purpose of the announcement?",
-     "options": {
-      "A": "To explain how to prepare for a graduation ceremony",
-      "B": "To provide information about a January job fair",
-      "C": "To explain a new graduation requirement",
-      "D": "To announce a new writing center feature"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：这个公告的主要目的是什么？ 定位原文：Starting next semester, all graduating students must complete a professional development workshop before receiving their diplomas. This requirement ensures you are equipped with essential career skills... 选项分析： A. 解释如何准备毕业典礼。公告内容与毕业典礼无关，因此 A 选项错误。 B. 提供关于一月招聘会的信息。公告中没有提到招聘会，因此 B 选项错误。 C. 解释一项新的毕业要求。公告开篇即说明从下学期开始所有毕业生必须完成专业发展研讨会才能获得文凭，这是新规定，因此 C 选项正确。 D. 宣布写作中心的新功能。公告中没有提到写作中心，因此 D 选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the speaker recommend doing?",
-     "options": {
-      "A": "Preparing a sample résumé",
-      "B": "Visiting the career center",
-      "C": "Scheduling an interview",
-      "D": "Registering early for workshops"
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：说话者建议做什么？ 定位原文：Sessions will be available throughout the semester, but they may fill up fast, so plan ahead and sign up early. 选项分析： A. 准备一份简历样本。说话者提到研讨会内容包括简历写作，但没有建议现在就准备简历样本，因此 A 选项错误。 B. 访问职业中心。公告中没有提到职业中心，因此 B 选项错误。 C. 安排面试。说话者提到研讨会内容包括面试准备，但没有建议安排面试，因此 C 选项错误。 D. 尽早报名参加研讨会。说话者明确说名额可能很快满，要提前计划、尽早报名，因此 D选项正确。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #47",
+      "instruction": "Listen to an announcement on the campus radio station.",
+      "audio": "library/toefl/free/audio/da16b55349c04293924d92a85b6add39.mp3",
+      "transcript": "Man: Listen to an announcement on the campus radio station.\nGood morning, senior class. Starting next semester, all graduating students must complete a professional development workshop before receiving their diplomas. This requirement ensures you are equipped with essential career skills, including resume writing, interview preparation, and networking strategies. Sessions will be available throughout the semester, but they may fill up fast, so plan ahead and sign up early. Check the university website for details on scheduling and registration. Your future success starts with preparation.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main purpose of the announcement?",
+          "options": {
+            "A": "To explain how to prepare for a graduation ceremony",
+            "B": "To provide information about a January job fair",
+            "C": "To explain a new graduation requirement",
+            "D": "To announce a new writing center feature"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: này thông cáo mục đích chủ yếu là gì? Dẫn chứng Bài gốc: Starting next semester, all graduating students must complete a professional development workshop before receiving their diplomas. This requirement ensures you are equipped with essential career skills... Phương án phân tích: A. giải thích làm thế nào chuẩn bị buổi lễ tốt nghiệp. trong thông báo cho và buổi lễ tốt nghiệp không quan hệ, bởi vậy A Phương án Sai. B. cung cấp về một tháng tuyển dụng hội tin tức. trong thông báo không có nói tới tuyển dụng hội, bởi vậy B Phương án Sai. C. giải thích hạng nhất mới đích tốt nghiệp yêu cầu. thông cáo khúc dạo đầu tiếp xúc nói rõ từ dưới học kỳ Bắt đầu tất cả tốt nghiệp phải hoàn thành chuyên nghiệp phát triển nghiên cứu thảo luận hội mới có thể đạt được văn bằng, đây là mới quy định, bởi vậy C Phương án Đúng. D. tuyên bố Viết trung tâm chức năng mới. trong thông báo không có nói tới Viết trung tâm, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the speaker recommend doing?",
+          "options": {
+            "A": "Preparing a sample résumé",
+            "B": "Visiting the career center",
+            "C": "Scheduling an interview",
+            "D": "Registering early for workshops"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: kẻ nói chuyện đề nghị làm cái gì? Dẫn chứng Bài gốc: Sessions will be available throughout the semester, but they may fill up fast, so plan ahead and sign up early. Phương án phân tích: A. chuẩn bị một phần lý lịch sơ lược hàng mẫu. kẻ nói chuyện nhắc tới nghiên cứu thảo luận hội nội dung kể cả lý lịch sơ lược Viết, nhưng không có đề nghị hiện tại liền chuẩn bị lý lịch sơ lược hàng mẫu, bởi vậy A Phương án Sai. B. phỏng vấn Nghề nghiệp trung tâm. trong thông báo không có nói tới Nghề nghiệp trung tâm, bởi vậy B Phương án Sai. C. an bài phỏng vấn. kẻ nói chuyện nhắc tới nghiên cứu thảo luận hội nội dung kể cả phỏng vấn chuẩn bị, nhưng không có đề nghị an bài phỏng vấn, bởi vậy C Phương án Sai. D. nhanh chóng báo danh tham gia nghiên cứu thảo luận hội. kẻ nói chuyện rõ ràng nói danh ngạch khả năng rất nhanh đầy, muốn sớm kế hoạch, nhanh chóng báo danh, bởi vậy D Phương án Đúng."
+        }
+      ]
+    }
+  ]
 }

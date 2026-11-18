@@ -1,4 +1,4 @@
-/* 题库组卷：练习回列表，模考按题块连做 */
+/* Ngân hàng đề tổ cuốn: Luyện tập quay về liệt biểu List, Thi thử theo như câu khối liền làm */
 (function (w) {
   "use strict";
   var KEY = "yysd:tiku-run";
@@ -11,7 +11,7 @@
     sessionStorage.setItem(KEY, JSON.stringify(run));
   }
   function examRoot() {
-    return (typeof location !== "undefined" && location.pathname.indexOf("/app/") >= 0) ? "../" : "";
+    return (typeof location!== "undefined" && location.pathname.indexOf("/app/") >= 0)? "../": "";
   }
   function hrefOf(block, mode, extra) {
     if (block.source === "bank" && block.paperId) {
@@ -24,9 +24,9 @@
       return u;
     }
     if (block.source === "date" && block.paperId) {
-      // ponytail: 日期卷只在官网根有数据；app 播放器读不到，交考场引擎单科页
+      // ponytail: ngày cuốn chỉ ở Website Games cây ít ỏi theo; app bá phóng khí đọc không đến, giao trường thi động cơ Đơn kỹ năng trang
       var u = examRoot() + "toefl-" + block.skill + ".html?id=" + encodeURIComponent(block.paperId) +
-        "&mode=" + encodeURIComponent(mode === "practice" ? "practice" : "mock") +
+        "&mode=" + encodeURIComponent(mode === "practice"? "practice": "mock") +
         "&task=" + encodeURIComponent(block.task) +
         "&taskEnd=" + encodeURIComponent(block.end);
       if (extra) u += extra;
@@ -49,9 +49,9 @@
       blocks: paper.blocks || [],
       i: 0,
       skillEnds: {},
-      preview: !!paper.preview
+      preview:!!paper.preview
     };
-    // 只考一科：从这一科第一个题块开始
+    // chỉ khảo thi một khoa: từ nơi này một danh sách đậu một cái câu khối Bắt đầu
     if (paper.only) {
       run.only = paper.only;
       for (var k = 0; k < run.blocks.length; k++) {
@@ -68,10 +68,10 @@
   }
   function href(i, run) {
     run = run || load();
-    if (!run || !run.blocks[i]) return "practice.html";
+    if (!run ||!run.blocks[i]) return "practice.html";
     var extra = "&bank=" + encodeURIComponent(run.id) + "&bi=" + i;
     if (run.preview) extra += "&preview=1";
-    return hrefOf(run.blocks[i], run.kind === "practice" ? "practice" : "mock", extra);
+    return hrefOf(run.blocks[i], run.kind === "practice"? "practice": "mock", extra);
   }
   function doneHref(run) {
     var u = "bank.html?id=" + encodeURIComponent(run.id) + "&done=1";
@@ -80,9 +80,9 @@
   }
   function advance(skill, rec) {
     var run = load();
-    if (!run || !run.blocks.length) return false;
+    if (!run ||!run.blocks.length) return false;
     if (run.kind === "practice") {
-      if (w.YYSD_APP && w.YYSD_APP.pushScore && !run.preview && rec && rec.total != null) {
+      if (w.YYSD_APP && w.YYSD_APP.pushScore &&!run.preview && rec && rec.total!= null) {
         w.YYSD_APP.pushScore({
           id: "tiku:" + run.id + ":" + (run.blocks[run.i] && run.blocks[run.i].id || skill),
           title: run.title,
@@ -97,8 +97,8 @@
       return false;
     }
     run.i += 1;
-    // 只考一科时跳过其它科题块，做完这一科就到终点
-    if (run.only) while (run.i < run.blocks.length && run.blocks[run.i].skill !== run.only) run.i += 1;
+    // chỉ khảo thi một khoa lúc nhảy qua khác khoa câu khối, làm xong cái này một khoa đi ra tới hạn
+    if (run.only) while (run.i < run.blocks.length && run.blocks[run.i].skill!== run.only) run.i += 1;
     save(run);
     if (run.i >= run.blocks.length) {
       sessionStorage.removeItem(KEY);
@@ -112,7 +112,7 @@
     var run = load();
     if (!run || run.kind === "practice") return;
     var block = run.blocks[run.i];
-    if (!block || !run.skillEnds[block.skill]) return;
+    if (!block ||!run.skillEnds[block.skill]) return;
     var left = run.skillEnds[block.skill] - Date.now();
     if (left <= 0) {
       var next = run.i + 1;

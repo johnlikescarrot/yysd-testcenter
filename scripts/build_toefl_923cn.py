@@ -5,7 +5,7 @@ import os
 import shutil
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/9月/9.23-国内线下/audio"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /9 tháng /9.23- Thi trực tiếp /audio"
 AUDIO = "library/toefl/audio/2025-09-23/"
 PHOTO = "library/toefl/img/2025-09-02/"
 NEED = []
@@ -22,7 +22,7 @@ def dump(name, obj):
 def blank(n, prefix, word):
     if prefix and not word.startswith(prefix) and not word.lower().startswith(prefix.lower()):
         raise SystemExit("prefix %r not in %r" % (prefix, word))
-    return {"id": n, "prefix": prefix, "answer": word[len(prefix) :], "word": word}
+    return {"id": n, "prefix": prefix, "answer": word[len(prefix):], "word": word}
 
 
 def cw(title, module, start, parts):
@@ -428,7 +428,7 @@ def build_reading():
     ]))
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 阅读",
+        "title": "TOEFL iBT 23/9 Thi trực tiếp · Đọc ",
         "set": "9.23",
         "skill": "reading",
         "modules": [
@@ -735,7 +735,7 @@ def build_listening():
         tasks.append(lecture(title, module, instruction, fname, items))
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 听力",
+        "title": "TOEFL iBT 23/9 Thi trực tiếp · Nghe ",
         "set": "9.23",
         "skill": "listening",
         "modules": [
@@ -825,7 +825,7 @@ def build_writing():
     ]
     return {
         "id": "2025-09-23",
-        "title": "新托福 9.23 国内线下 · 写作",
+        "title": "TOEFL iBT 23/9 Thi trực tiếp · Viết ",
         "set": "9.23",
         "skill": "writing",
         "modules": [
@@ -987,15 +987,15 @@ if __name__ == "__main__":
     dump("2025-09-23-listening.json", build_listening())
     dump("2025-09-23-writing.json", build_writing())
     dump("2025-09-23-speaking.json", build_speaking(
-        "2025-09-23", "新托福 9.23 国内线下 · 口语 Form 1", 1, 1))
+        "2025-09-23", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 1", 1, 1))
     dump("2025-09-23-speaking-f2.json", build_speaking(
-        "2025-09-23-s2", "新托福 9.23 国内线下 · 口语 Form 2", 2, 2))
+        "2025-09-23-s2", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 2", 2, 2))
     dump("2025-09-23-speaking-f3.json", build_speaking(
-        "2025-09-23-s3", "新托福 9.23 国内线下 · 口语 Form 3", 3, 3))
+        "2025-09-23-s3", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 3", 3, 3))
     dump("2025-09-23-speaking-f4.json", build_speaking(
-        "2025-09-23-s4", "新托福 9.23 国内线下 · 口语 Form 4", 4))
+        "2025-09-23-s4", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 4", 4))
     dump("2025-09-23-speaking-f5.json", build_speaking(
-        "2025-09-23-s5", "新托福 9.23 国内线下 · 口语 Form 5", 5))
+        "2025-09-23-s5", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 5", 5))
     dump("2025-09-23-speaking-f6.json", build_speaking(
-        "2025-09-23-s6", "新托福 9.23 国内线下 · 口语 Form 6", 6))
-    copy_audio() 
+        "2025-09-23-s6", "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 6", 6))
+    copy_audio()

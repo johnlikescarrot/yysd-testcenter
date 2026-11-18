@@ -81,9 +81,9 @@
         "lab",
         "session"
       ],
-      "analysis": "正确顺序：I had a conflict with my lab session.",
+      "analysis": "Đúng trình tự: I had a conflict with my lab session.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -134,9 +134,9 @@
         "other",
         "students"
       ],
-      "analysis": "正确顺序：Would you recommend it to other students?",
+      "analysis": "Đúng trình tự: Would you recommend it to other students?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -192,9 +192,9 @@
         "scholarship",
         "program"
       ],
-      "analysis": "正确顺序：She wanted to announce the new scholarship program.",
+      "analysis": "Đúng trình tự: She wanted to announce the new scholarship program.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -250,9 +250,9 @@
         "by",
         "Friday"
       ],
-      "analysis": "正确顺序：He said we should submit it by Friday.",
+      "analysis": "Đúng trình tự: He said we should submit it by Friday.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -308,9 +308,9 @@
         "our",
         "paper"
       ],
-      "analysis": "正确顺序：She asked who would be presenting our paper.",
+      "analysis": "Đúng trình tự: She asked who would be presenting our paper.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -366,9 +366,9 @@
         "it",
         "together"
       ],
-      "analysis": "正确顺序：Do you want to go see it together?",
+      "analysis": "Đúng trình tự: Do you want to go see it together?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -419,9 +419,9 @@
         "in",
         "it"
       ],
-      "analysis": "正确顺序：Are you planning to enroll in it?",
+      "analysis": "Đúng trình tự: Are you planning to enroll in it?",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -482,9 +482,9 @@
         "recruit",
         "students"
       ],
-      "analysis": "正确顺序：He wanted to learn new ways to recruit students.",
+      "analysis": "Đúng trình tự: He wanted to learn new ways to recruit students.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -535,9 +535,9 @@
         "this",
         "weekend"
       ],
-      "analysis": "正确顺序：We should go visit it this weekend.",
+      "analysis": "Đúng trình tự: We should go visit it this weekend.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "sentence",
@@ -588,16 +588,16 @@
         "caused",
         "the issue"
       ],
-      "analysis": "正确顺序：The university bulletin mentioned that they are investigating what caused the issue.",
+      "analysis": "Đúng trình tự: The university bulletin mentioned that they are investigating what caused the issue.",
       "title": "Build a Sentence",
-      "titleZh": "句子构建"
+      "titleZh": "câu xây dựng"
     },
     {
       "type": "email",
       "module": 2,
       "id": 11,
       "title": "Damaged Furniture",
-      "titleZh": "家具损坏",
+      "titleZh": "đồ dùng trong nhà hư hao",
       "instruction": "Write an email. In your email, do the following:",
       "prompt": "You recently purchased a piece of furniture for your dorm room from an online store called 'Home Comforts.' When the item arrived, you discovered that it was damaged during shipping. You are disappointed because you were looking forward to using the new furniture. You need to contact customer service to resolve the issue.",
       "bullets": [
@@ -608,14 +608,14 @@
       "to": "Ms. Brown",
       "subject": "Furniture Delivery Problem",
       "sample": "Dear Ms. Brown,\n\nI am writing about a wooden desk I purchased from Home Comforts for my dorm room. When the package arrived yesterday, one of the legs was cracked and the surface had a long scratch, so I cannot assemble or use the desk safely.\n\nI am disappointed because I chose this desk specifically for evening study and had already moved my old table out of the room. I checked the packing list and all parts were included, so the damage appears to have occurred during shipping rather than because of a missing piece.\n\nCould you please arrange a replacement of the same model, or a full refund if a replacement is not available this week? I can send photographs, the order number, and the damaged parts. I would appreciate instructions for return shipping at no additional cost.\n\nSincerely,\n[Your Name]",
-      "analysis": "邮件需覆盖三点：所购物品与损坏、失望原因、要求换货或退款。称呼 Ms. Brown。"
+      "analysis": "Email cần bao trùm ba điểm: chỗ hàng đã mua và hư hao, thất vọng nguyên nhân, yêu cầu đổi hàng hoặc lui khoản. xưng hô Ms. Brown."
     },
     {
       "type": "discussion",
       "module": 3,
       "id": 12,
       "title": "Brand Loyalty vs New Customers",
-      "titleZh": "品牌忠诚与新客",
+      "titleZh": "nhãn hiệu trung thành và mới khách",
       "class": "Marketing",
       "instruction": "Write a discussion response. An effective response contains at least 100 words.",
       "professor": {
@@ -633,7 +633,7 @@
         }
       ],
       "sample": "I believe building brand loyalty is more important than constantly chasing new customers, though the two are connected. Claire is right that loyal buyers provide steady revenue and recommend the brand to others, which is a cheaper form of growth than paid advertising. A coffee shop that remembers regulars and keeps quality consistent will fill seats even in a slow month. Paul is correct that new customers expand market share, but a company that wins people once and then loses them spends more on acquisition than it earns. In my view, a firm should first make current customers want to stay, then use that reputation to attract newcomers. Loyalty creates the advocates Paul hopes new marketing will find.",
-      "analysis": "需在品牌忠诚与拉新之间表态，并回应 Claire、Paul。较好答法：忠诚带来稳定收入与口碑，拉新建立在留存之上。"
+      "analysis": "cần tại nhãn hiệu trung thành và kéo mới giữa tỏ thái độ, cũng đáp lại Claire, Paul. tốt hơn đáp pháp: trung thành mang đến ổn định thu nhập và danh tiếng, kéo mới xây đứng ở bảo tồn phía trên."
     }
   ]
 }

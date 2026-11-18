@@ -53,7 +53,7 @@
     ["gaol", "jail"], ["grey", "gray"], ["blonde", "blond"], ["axe", "ax"]
   ];
   UK_PAIRS.sort(function (a, b) {
-    if (b[0].length !== a[0].length) return b[0].length - a[0].length;
+    if (b[0].length!== a[0].length) return b[0].length - a[0].length;
     if (a[0].indexOf(b[0]) === 0) return -1;
     if (b[0].indexOf(a[0]) === 0) return 1;
     return 0;
@@ -93,8 +93,8 @@
     if (/gramme$/.test(s)) s = s.replace(/gramme$/, "gram");
     if (/isation$/.test(s)) s = s.replace(/isation$/, "ization");
     if (/yse$/.test(s)) s = s.replace(/yse$/, "yze");
-    if (/ise$/.test(s) && !ISE_KEEP[s]) s = s.replace(/ise$/, "ize");
-    if (/ogue$/.test(s) && s !== "rogue" && s !== "vogue" && s !== "synagogue") {
+    if (/ise$/.test(s) &&!ISE_KEEP[s]) s = s.replace(/ise$/, "ize");
+    if (/ogue$/.test(s) && s!== "rogue" && s!== "vogue" && s!== "synagogue") {
       s = s.replace(/ogue$/, "og");
     }
     return s;
@@ -131,7 +131,7 @@
   function matches(user, expected) {
     var u = normalizeSpell(user);
     var e = normalizeSpell(expected);
-    if (!u || !e) return false;
+    if (!u ||!e) return false;
     if (u === e) return true;
     var uForms = spellingForms(u);
     var eForms = spellingForms(e);
@@ -142,7 +142,7 @@
       }
     }
     var optS = e.replace(/\s*\(s\)\s*$/i, "");
-    if (optS !== e && (u === optS || u === optS + "s")) return true;
+    if (optS!== e && (u === optS || u === optS + "s")) return true;
     if (/wards?$/.test(e)) {
       var stem = e.replace(/s$/, "");
       if (u === stem || u === stem + "s") return true;
@@ -156,7 +156,7 @@
   }
 
   function matchesAny(user, expectedList) {
-    var list = Array.isArray(expectedList) ? expectedList : [expectedList];
+    var list = Array.isArray(expectedList)? expectedList: [expectedList];
     for (var i = 0; i < list.length; i++) {
       if (matches(user, list[i])) return true;
     }
@@ -198,7 +198,7 @@
 
     function warn(msg) {
       if (locked()) return;
-      if (opts.onWarn) opts.onWarn(msg || "请切换到英文输入法后再拼写");
+      if (opts.onWarn) opts.onWarn(msg || " mời hoán đổi đến Tiếng Anh đưa vào cú pháp sau lại Chính tả ");
     }
 
     function imeViolation() {
@@ -214,8 +214,8 @@
 
     el.addEventListener("compositionend", function () {
       composing = false;
-      // ponytail: Chinese IME English联想 commits here — discard whole composition
-      if (el.value !== composeBase) {
+      // ponytail: Chinese IME English liên tưởng commits here — discard whole composition
+      if (el.value!== composeBase) {
         el.value = composeBase;
         warn();
       }
@@ -227,7 +227,7 @@
       if (t.indexOf("delete") === 0) return;
       if (BLOCK_TYPES[t]) {
         e.preventDefault();
-        warn(t.indexOf("Paste") >= 0 ? "拼写题不支持粘贴" : undefined);
+        warn(t.indexOf("Paste") >= 0? " Bài chính tả không cho phép dán văn bản ": undefined);
         if (t.indexOf("Composition") >= 0 || t === "insertCompositionText" || t === "insertFromComposition") {
           imeViolation();
         }
@@ -237,23 +237,23 @@
         e.preventDefault();
         return;
       }
-      if (t === "insertText" && e.data != null) {
-        if (e.data.length !== 1 || !SPELL_OK.test(e.data)) {
+      if (t === "insertText" && e.data!= null) {
+        if (e.data.length!== 1 ||!SPELL_OK.test(e.data)) {
           e.preventDefault();
-          if (/[\u4e00-\u9fff]/.test(e.data)) warn();
+          if (/[^\x00-\x7F]/.test(e.data)) warn();
         }
       }
     });
 
     el.addEventListener("paste", function (e) {
       e.preventDefault();
-      warn("拼写题不支持粘贴");
+      warn(" Bài chính tả không cho phép dán văn bản ");
     });
 
     el.addEventListener("input", function () {
       if (composing) return;
       var next = asciiSpell(el.value);
-      if (next !== el.value) {
+      if (next!== el.value) {
         el.value = next;
         warn();
       }

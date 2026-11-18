@@ -1,8 +1,8 @@
-/* ponytail: fixed-sidebar drawer + collapse for .teacher-layout only */
+/* ponytail: fixed-sidebar drawer + collapse for.teacher-layout only */
 (function () {
   "use strict";
   var body = document.body;
-  if (!body || !body.classList.contains("teacher-layout")) return;
+  if (!body ||!body.classList.contains("teacher-layout")) return;
 
   var KEY = "yysd:teacher:nav-collapsed";
   var mq = window.matchMedia("(max-width: 1023px)");
@@ -10,21 +10,21 @@
   function overlay() { return document.querySelector(".teacher-nav-overlay"); }
 
   function setOpen(on) {
-    body.classList.toggle("teacher-nav-open", !!on);
+    body.classList.toggle("teacher-nav-open",!!on);
     document.querySelectorAll("[data-teacher-nav-toggle]").forEach(function (btn) {
-      btn.setAttribute("aria-expanded", on ? "true" : "false");
+      btn.setAttribute("aria-expanded", on? "true": "false");
     });
     var ov = overlay();
-    if (ov) ov.hidden = !on;
+    if (ov) ov.hidden =!on;
   }
 
   function setCollapsed(on) {
-    body.classList.toggle("teacher-nav-collapsed", !!on);
+    body.classList.toggle("teacher-nav-collapsed",!!on);
     document.querySelectorAll("[data-teacher-nav-collapse]").forEach(function (btn) {
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-      btn.setAttribute("aria-label", on ? "展开侧栏" : "收起侧栏");
+      btn.setAttribute("aria-pressed", on? "true": "false");
+      btn.setAttribute("aria-label", on? " Mở rộng thanh bên ": " Thu gọn thanh bên ");
     });
-    try { localStorage.setItem(KEY, on ? "1" : "0"); } catch (e) {}
+    try { localStorage.setItem(KEY, on? "1": "0"); } catch (e) {}
   }
 
   try { if (localStorage.getItem(KEY) === "1") setCollapsed(true); } catch (e) {}

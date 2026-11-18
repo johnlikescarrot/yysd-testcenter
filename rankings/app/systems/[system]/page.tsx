@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { system: string } }): Promise<Metadata> {
   const s = SYSTEMS[params.system as SystemKey];
-  return { title: s?.name || "排名体系" };
+  return { title: s?.name || " bài danh hệ thống " };
 }
 
 export default async function SystemDetailPage({ params }: { params: { system: string } }) {
@@ -18,7 +18,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
   if (!s) notFound();
 
   const years = await listYears(key, "world");
-  const y = years[0] ?? (await latestYear(key));
+  const y = years[0]?? (await latestYear(key));
   const subjects = await prisma.rankingEdition.findMany({
     where: { system: key, isSubject: true },
     distinct: ["categorySlug"],
@@ -52,7 +52,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
 
       <section className="panel">
         <div className="panel-head">
-          <span>综合榜 · 历年</span>
+          <span> tổng hợp bảng · bao năm qua </span>
         </div>
         <div className="flex flex-wrap gap-2 p-4">
           {years.map((year) => (
@@ -60,7 +60,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
               key={year}
               href={`/${key}/world/${year}`}
               className={`mono border px-3 py-1.5 text-sm ${
-                year === y ? "border-[var(--ink)] bg-[var(--ink)] text-white" : "border-[var(--line)] hover:border-[var(--ink)]"
+                year === y? "border-[var(--ink)] bg-[var(--ink)] text-white": "border-[var(--line)] hover:border-[var(--ink)]"
               }`}
             >
               {year}
@@ -72,7 +72,7 @@ export default async function SystemDetailPage({ params }: { params: { system: s
       {subjects.length > 0 && (
         <section className="panel">
           <div className="panel-head">
-            <span>学科轨（示例）</span>
+            <span> ngành học quỹ (thí dụ mẫu) </span>
           </div>
           <ul className="divide-y divide-[var(--line)]">
             {subjects.map((sub) => (

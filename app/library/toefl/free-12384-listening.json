@@ -1,46 +1,46 @@
 {
- "id": "free-12384",
- "title": "Choose a Response #142",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #142",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12384,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-142"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #142",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/3867f56201e6414d8461756e5b3fa72b.mp3",
-   "questions": [
+  "id": "free-12384",
+  "title": "Choose a Response #142",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #142",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12384,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-142"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Mexico is a beautiful country.",
-      "B": "Was it that expensive?",
-      "C": "What's the occasion?",
-      "D": "He is well trained."
-     },
-     "answer": "C",
-     "transcript": "Would you be willing to take a trip to Mexico on company expense?",
-     "stemZh": "公司出钱，你愿意去墨西哥出差一趟吗？",
-     "analysis": "Would you be willing to take a trip to Mexico on company expense? 题干分析 题干是一句委婉提出工作请求的口语，意为“你愿意公司出钱去墨西哥出差吗？”，考点是Would you be willing to…和on company expense（公司报销）。 选项分析 选项A：此选项仅对墨西哥的国家风貌进行了评价，但完全未回应说话者提出的“是否愿意去墨西哥出差”的核心问题，属于偏离话题的无效回答。 选项B：此选项误解了问题中的关键信息“on company expense”（公司承担费用）。它转而询问“费用是否昂贵”，这不仅与问题前提矛盾，而且未对“是否愿意”给出任何直接或间接的回应。 选项C：此选项为正确答案，是唯一与问题逻辑衔接的回应。通过询问“What's the occasion?”，说话者表达了对于此次出差背景或目的的兴趣，这是在接受或拒绝提议前寻求更多信息的常见且合理的反应，有效推动了对话的深入。 选项D：此选项完全脱离对话语境。问题主语是“you”（你），而选项主语是“He”（他），且内容“训练有素”与出差提议无关，属于严重的答非所问。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #142",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/3867f56201e6414d8461756e5b3fa72b.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Mexico is a beautiful country.",
+            "B": "Was it that expensive?",
+            "C": "What's the occasion?",
+            "D": "He is well trained."
+          },
+          "answer": "C",
+          "transcript": "Would you be willing to take a trip to Mexico on company expense?",
+          "stemZh": "công ty xuất tiền, bạn nguyện ý đi Mê-hi-cô đi công tác một chuyến không?",
+          "analysis": "Would you be willing to take a trip to Mexico on company expense? Câu hỏi phân tích Câu hỏi là một câu uyển chuyển đưa ra công tác thỉnh cầu Nói, ý là “ bạn nguyện ý công ty xuất tiền đi Mê-hi-cô đi công tác không? ”, địa điểm thi là Would you be willing to… và on company expense (công ty thanh lý). Phương án phân tích Phương án A: này Phương án chỉ đối với Mê-hi-cô quốc gia phong mạo đã tiến hành đánh giá, nhưng hoàn toàn không đáp lại kẻ nói chuyện nói lên “ có nguyện ý hay không đi Mê-hi-cô đi công tác ” hạch tâm vấn đề, thuộc về đều rời đi chủ đề không có hiệu quả trả lời. Phương án B: này Phương án hiểu lầm vấn đề trong đích mấu chốt tin tức “on company expense” (công ty gánh chịu phí tổn). nó ngược lại hỏi thăm “ phí tổn có hay không đắt đỏ ”, đây không phải là chỉ và vấn đề điều kiện tiên quyết mâu thuẫn, hơn nữa không đối với “ có nguyện ý hay không ” cho ra bất luận cái gì trực tiếp hoặc gián tiếp đáp lại. Phương án C: này Phương án là Đáp án đúng, là duy nhất và vấn đề ăn khớp dính liền đáp lại. thông qua hỏi thăm “What's the occasion?”, kẻ nói chuyện biểu đạt đối với này lần đi công tác bối cảnh hoặc mục đích là hứng thú, đây là ở tiếp nhận hoặc cự tuyệt đề nghị trước tìm kiếm nhiều tin tức hơn thông thường mà lại hợp lý phản ứng, hữu hiệu thúc đẩy đối thoại xâm nhập. Phương án D: này Phương án hoàn toàn thoát ly đối thoại ngữ cảnh. vấn đề Chủ ngữ là “you” (bạn), mà Phương án Chủ ngữ là “He” (anh ấy), mà lại nội dung “ nghiêm chỉnh huấn luyện ” và đi công tác đề nghị không quan hệ, thuộc về nghiêm trọng đáp phi sở vấn."
+        }
+      ]
+    }
+  ]
 }

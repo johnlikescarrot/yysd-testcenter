@@ -1,57 +1,57 @@
 {
- "id": "free-12417",
- "title": "Announcement #3",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #3",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12417,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-3"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #3",
-   "instruction": "Listen to a health teacher talking to students.",
-   "audio": "library/toefl/free/audio/f1838d1eb80a4c63bf3bb4ba048a21a0.mp3",
-   "transcript": "There's no way around it. Smoking is terrible for your health. It can lead to cancer and heart disease. Although it may seem harmless to smoke just one cigarette,smoking one can lead to smoking many more. Cigarettes are filled with special chemicals that make you want to smoke. Once you start smoking, it could be difficult to stop.",
-   "questions": [
+  "id": "free-12417",
+  "title": "Announcement #3",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #3",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12417,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-3"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the announcement?",
-     "options": {
-      "A": "One behavior that can cause damage to our body.",
-      "B": "Why people should not smoke much cigarette.",
-      "C": "The chemical can be found in cigarette.",
-      "D": "The diseases can be caused by smoking."
-     },
-     "answer": "A",
-     "analysis": "题干分析 问题询问这段公告的主要话题，属于主旨/话题识别题，需抓住健康老师整段话的核心内容。 选项分析 选项A：正确。 老师整段话都在讲述吸烟对健康的危害，包括导致疾病、让人上瘾等，即一种对身体造成损害的行为。 选项B：错误。 老师强调的是吸烟的危害，而非“不要吸太多烟”（暗示少量吸烟可以接受），与原文意思不符。 选项C：错误。 老师提到香烟中含有特殊化学物质，但这只是支撑论点的一个细节，并非主要话题。 选项D：错误。 老师提到吸烟可导致癌症和心脏病，但这只是危害的一部分，过于片面，未能涵盖“上瘾”等核心内容。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the teacher say about smoking just one cigarette?",
-     "options": {
-      "A": "It is not very harmful.",
-      "B": "It could lead to smoking more.",
-      "C": "It will make you get heart disease.",
-      "D": "It might make your body very weak."
-     },
-     "answer": "B",
-     "analysis": "题干分析 问题询问老师关于只吸一支烟的说法，属于细节理解题，需抓住老师对“吸一支烟”的具体描述。 选项分析 选项A：错误。 老师明确说“Although it may seem harmless to smoke just one cigarette”，但紧接着指出这只是表面看似无害，实际并非如此。 选项B：正确。 老师明确说“smoking one can lead to smoking many more”，即吸一支烟可能导致吸更多支。 选项C：错误。 老师说吸烟可能导致心脏病，但并未明确说只吸一支烟就会导致心脏病，属于过度推断。 选项D：错误。 对话中没有提到身体虚弱与吸一支烟的直接关系，属于无中生有。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #3",
+      "instruction": "Listen to a health teacher talking to students.",
+      "audio": "library/toefl/free/audio/f1838d1eb80a4c63bf3bb4ba048a21a0.mp3",
+      "transcript": "There's no way around it. Smoking is terrible for your health. It can lead to cancer and heart disease. Although it may seem harmless to smoke just one cigarette,smoking one can lead to smoking many more. Cigarettes are filled with special chemicals that make you want to smoke. Once you start smoking, it could be difficult to stop.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the announcement?",
+          "options": {
+            "A": "One behavior that can cause damage to our body.",
+            "B": "Why people should not smoke much cigarette.",
+            "C": "The chemical can be found in cigarette.",
+            "D": "The diseases can be caused by smoking."
+          },
+          "answer": "A",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm đoạn này thông cáo chủ yếu chủ đề, thuộc về ý nghĩa chính / chủ đề phân biệt câu, cần bắt lấy Sức khỏe Giáo viên cả đoạn lời trong trung tâm cho. Phương án phân tích Phương án A: Đúng. Giáo viên cả đoạn lời nói đều tại giảng thuật hút thuốc lá đối với khỏe mạnh nguy hại, kể cả dẫn đến tật bệnh, làm cho người ta nghiện {các loại:đợi}, tiếp xúc một loại đối với thân thể tạo thành tổn hại hành vi. Phương án B: Sai. Giáo viên nhấn mạnh là hút thuốc nguy hại, mà không phải là “ không nên hấp quá nhiều khói ” (ám chỉ chút ít hút thuốc lá có thể tiếp nhận), và Bài gốc ý tứ không hợp. Phương án C: Sai. Giáo viên nhắc tới trong khói thơm đựng đặc thù Hóa học vật chất, nhưng cái này chẳng qua là chèo chống luận điểm một chi tiết, cũng không phải là chủ yếu chủ đề. Phương án D: Sai. Giáo viên nhắc tới hút thuốc lá có thể dẫn đến ung thư và bệnh tim, nhưng cái này chẳng qua là nguy hại một bộ phận, vô cùng phiến diện, không thể bao dung “ nghiện ” {các loại:đợi} trong trung tâm cho."
+        },
+        {
+          "id": 2,
+          "stem": "What does the teacher say about smoking just one cigarette?",
+          "options": {
+            "A": "It is not very harmful.",
+            "B": "It could lead to smoking more.",
+            "C": "It will make you get heart disease.",
+            "D": "It might make your body very weak."
+          },
+          "answer": "B",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm Giáo viên về chỉ hấp một điếu thuốc lời nói, thuộc về chi tiết lý giải câu, cần bắt lấy Giáo viên đối với “ hấp một điếu thuốc ” cụ thể miêu tả. Phương án phân tích Phương án A: Sai. Giáo viên rõ ràng nói “Although it may seem harmless to smoke just one cigarette”, nhưng ngay sau đó chỉ ra đây chỉ là mặt ngoài nhìn như vô hại, thực tế cũng không phải là như thế. Phương án B: Đúng. Giáo viên rõ ràng nói “smoking one can lead to smoking many more”, tiếp xúc hấp một điếu thuốc khả năng dẫn đến hấp thêm nữa chi. Phương án C: Sai. lão sư nói hút thuốc lá khả năng dẫn đến bệnh tim, nhưng cũng không rõ ràng nói chỉ hấp một điếu thuốc thì sẽ đưa đến bệnh tim, thuộc về quá độ suy đoán. Phương án D: Sai. trong lúc nói chuyện với nhau không có nói tới thân thể suy yếu và hấp một điếu thuốc trực tiếp quan hệ, thuộc về bịa đặt."
+        }
+      ]
+    }
+  ]
 }

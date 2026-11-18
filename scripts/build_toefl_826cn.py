@@ -9,12 +9,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.26-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /8 tháng /8.26- Thi trực tiếp /audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-26/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-26"
 SET = "8.26"
-TITLE = "新托福 8.26 国内线下"
+TITLE = "TOEFL iBT 26/8 Thi trực tiếp "
 
 
 def dump(name, obj):
@@ -179,7 +179,7 @@ def build_reading():
         ("struc", "structures"),
         " that are impossible to produce using traditional methods. In the medical field, 3D printing facilitates the production of patient-specific implants and prosthetics tailored to anatomical data from imaging scans. 3D printing enhances design flexibility and production efficiency by streamlining prototyping and reducing material waste.",
     ])
-    if n != 21:
+    if n!= 21:
         raise SystemExit("m1 cw expected next 21, got %s" % n)
     t3, n = cw("Philosophy of Mind", 2, 36, [
         "In philosophy of mind, questions about consciousness and self-awareness focus on mental capacities like thoughts, beliefs, and desires that shape behavior. Thinkers such as Descartes and Locke examined the nature of inner experience and recognized the limits of understanding other minds. Over ",
@@ -204,9 +204,9 @@ def build_reading():
         ("sta", "states"),
         " in ourselves and others. This shift enabled deeper insights into empathy, communication, and social understanding, offering a bridge between abstract thought and observable human behavior.",
     ])
-    if n != 46:
+    if n!= 46:
         raise SystemExit("m2 cw expected next 46, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
         {"n": 2, "timeSec": 540, "from": 36, "to": 50},
     ], [
@@ -215,7 +215,7 @@ def build_reading():
             "kind": "card",
             "kicker": "Membership Services",
             "title": "Gym Membership Renewal",
-            "subtitle": "To: Mr. Taylor  ·  Subject: Your membership has been renewed",
+            "subtitle": "To: Mr. Taylor · Subject: Your membership has been renewed",
             "body": (
                 "Dear Mr. Taylor,\n\n"
                 "Your gym membership was renewed on March 3. Your new membership card will arrive within five business days. "
@@ -265,7 +265,7 @@ def build_reading():
         daily("North Avenue transportation notice", 1, "Read a transportation notice.", {
             "kind": "card",
             "title": "North Avenue Transportation Notice",
-            "subtitle": "November 6  ·  7:00 A.M. to 7:00 P.M., Monday through Saturday",
+            "subtitle": "November 6 · 7:00 A.M. to 7:00 P.M., Monday through Saturday",
             "body": (
                 "Purpose: Infrastructure improvements. One traffic lane will remain open in each direction.\n\n"
                 "Campus shuttles will operate every 15 minutes instead of every 20 minutes.\n"
@@ -721,14 +721,14 @@ def build_listening():
             }, "B"),
         ]),
     ]
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 32},
         {"n": 2, "timeSec": 660, "from": 33, "to": 47},
     ], m1 + m2)
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email"},
         {"n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion"},
@@ -840,7 +840,7 @@ def build_writing():
 
 
 def build_speaking():
-    # ponytail: source missing listen-repeat q01–q02 audio (answer key also says 答案缺失).
+    # ponytail: source missing listen-repeat q01–q02 audio (answer key also says Đáp án thiếu thốn).
     # Ceiling: paper ships the 5 clips that exist. Upgrade: recover q01–q02 from a full Speaking.mp3 if it appears.
     instr_r = (
         "You are being trained to assist guests during a campus career fair. "
@@ -905,7 +905,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 5),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 180, "from": 1, "to": 5, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 6, "to": 9, "label": "Take an Interview"},
     ], tasks)

@@ -1,46 +1,46 @@
 {
- "id": "free-12768",
- "title": "Choose a Response #150",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #150",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12768,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-150"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #150",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/394855c5486745f485f8b0c09e7b376d.mp3",
-   "questions": [
+  "id": "free-12768",
+  "title": "Choose a Response #150",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #150",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12768,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-150"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, it is.",
-      "B": "No, shopping takes time.",
-      "C": "It’s next to the store.",
-      "D": "I’d rather not."
-     },
-     "answer": "A",
-     "transcript": "Isn’t the grocery store open late tonight?",
-     "stemZh": "杂货店今晚不是营业到很晚吗？",
-     "analysis": "Isn’t the grocery store open late tonight? 题干分析 题干是否定疑问句，意为 “杂货店今晚不是营业到很晚吗？”，考点是对Isn't...?引导的否定疑问句进行正确的肯定或否定回答。 选项分析 选项 A：此选项为正确答案，直接对否定疑问句作出肯定回答，符合英语对话中回应此类问句的语法和逻辑规则。 选项 B：回答内容为 “不，购物需要时间”，理由与店铺是否营业到很晚无关，属于答非所问。 选项 C：回答内容为 “它在商店旁边”，描述位置信息，与题干询问的营业时间无关。 选项 D：回答内容为 “我宁愿不要”，通常用于拒绝提议，无法回应关于营业时间的问题。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #150",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/394855c5486745f485f8b0c09e7b376d.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, it is.",
+            "B": "No, shopping takes time.",
+            "C": "It’s next to the store.",
+            "D": "I’d rather not."
+          },
+          "answer": "A",
+          "transcript": "Isn’t the grocery store open late tonight?",
+          "stemZh": "tiệm tạp hóa đêm nay không phải buôn bán đến đã khuya không?",
+          "analysis": "Isn’t the grocery store open late tonight? Câu hỏi phân tích Câu hỏi là phủ định câu nghi vấn, ý là “ tiệm tạp hóa đêm nay không phải buôn bán đến đã khuya không? ”, địa điểm thi là đúng Isn't...? dẫn dắt chối bỏ câu nghi vấn tiến hành chính xác khẳng định hoặc chối bỏ trả lời. Phương án phân tích Phương án A: này Phương án là Đáp án đúng, trực tiếp đúng hay không định câu nghi vấn làm ra khẳng định trả lời, phù hợp Tiếng Anh trong lúc nói chuyện với nhau đáp lại loại này câu hỏi Ngữ pháp và ăn khớp quy tắc. Phương án B: trả lời nội dung là “ không, mua sắm cần có thời gian ”, lý do và cửa hàng có hay không buôn bán đến đã khuya không quan hệ, thuộc về đáp phi sở vấn. Phương án C: trả lời nội dung là “ nó tại cửa hàng bên cạnh ”, miêu tả vị trí tin tức, và Câu hỏi hỏi thăm buôn bán thời gian không quan hệ. Phương án D: trả lời nội dung là “ tôi tình nguyện không nên ”, bình thường dùng cho cự tuyệt đề nghị, không cách nào đáp lại về buôn bán vấn đề thời gian."
+        }
+      ]
+    }
+  ]
 }

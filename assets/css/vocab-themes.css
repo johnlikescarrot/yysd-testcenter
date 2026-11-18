@@ -1,5 +1,5 @@
-/* 分类词库 — Koolearn-inspired IA, YYSD navy/gold */
-.vt-page .minimal-main { max-width: 1120px; }
+/* Từ vựng theo chủ đề — Koolearn-inspired IA, YYSD navy/gold */
+.vt-page.minimal-main { max-width: 1120px; }
 
 .vt-hero {
   margin: 8px 0 22px;
@@ -169,7 +169,7 @@
   gap: 8px;
   align-items: center;
 }
-.vt-block__actions .btn { text-decoration: none; }
+.vt-block__actions.btn { text-decoration: none; }
 
 .vt-empty {
   padding: 36px 20px;

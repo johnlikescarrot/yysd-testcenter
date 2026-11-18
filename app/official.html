@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>官方全真模考</title>
+  <title>chính thức Thi thử toàn phần</title>
   <link rel="stylesheet" href="assets/css/hit.css?v=20261027win1">
   <link rel="stylesheet" href="assets/css/access.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
@@ -14,16 +14,16 @@
 </head>
 <body class="hit">
   <main class="hit-main">
-    <h1>官方全真模考</h1>
-    <p class="hit-lead">15 套。点一套开始，四科连考。</p>
-    <a class="hit-back" href="home.html">← 返回首页</a>
+    <h1>chính thức Thi thử toàn phần</h1>
+    <p class="hit-lead">15 bộ. chút:điểm một bộ Bắt đầu, bốn khoa liền khảo thi. </p>
+    <a class="hit-back" href="home.html">← Về trang chủ</a>
     <div class="hit-mock-list" id="list"></div>
   </main>
   <script>
     (function () {
       if (!YYSD_HIT.mount("home")) return;
       function esc(s) {
-        return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        return String(s == null? "": s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
       }
       function href(id) {
         return "../toefl-reading.html?id=" + encodeURIComponent(id) + "&mode=mock&full=1&from=kl";
@@ -34,13 +34,13 @@
           sessionStorage.removeItem("yysd:toefl-hw:" + id);
         } catch (e) {}
       }
-      var mocks = (window.YYSD && YYSD.KL_MOCKS) || [];
+      var mocks = (window.YYSD & YYSD.KL_MOCKS) || [];
       document.getElementById("list").innerHTML = mocks.map(function (m) {
         return '<a class="hit-mock-row" href="' + href(m.id) + '" data-kl="' + esc(m.id) + '">' +
           '<div class="hit-mock-thumb" aria-hidden="true">' + esc(m.no) + "</div>" +
           '<div class="hit-mock-info"><h4>' + esc(m.title) + "</h4>" +
-          "<p>约 " + m.duration + " 分钟 · 四科连考</p></div>" +
-          '<span class="btn-start">开始</span></a>';
+          "<p>ước " + m.duration + " phút · bốn khoa liền khảo thi </p></div>" +
+          '<span class="btn-start"> Bắt đầu </span></a>';
       }).join("");
       document.querySelector(".hit-main").addEventListener("click", function (ev) {
         var a = ev.target.closest("a[data-kl]");

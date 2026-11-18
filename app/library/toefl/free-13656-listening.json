@@ -1,57 +1,57 @@
 {
- "id": "free-13656",
- "title": "Announcement #73",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #73",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13656,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-73"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #73",
-   "instruction": "Listen to an announcement at a university club meeting.",
-   "audio": "library/toefl/free/audio/abda07a5258c49c1bfc27b0989d208ae.mp3",
-   "transcript": "Welcome, everyone. Today, we'll be discussing our plans for Earth Day. We'll be organizing a campus cleanup event and planting trees next Friday. Please sign up if you're interested in participating.",
-   "questions": [
+  "id": "free-13656",
+  "title": "Announcement #73",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #73",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13656,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-73"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the announcement?",
-     "options": {
-      "A": "A tree-planting workshop",
-      "B": "A club meeting schedule",
-      "C": "A decision about club membership",
-      "D": "An Earth Day initiative"
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：这则公告的主要话题是什么？ 定位原文：Today, we'll be discussing our plans for Earth Day. We'll be organizing a campus cleanup event and planting trees next Friday. 选项分析： A. A tree-planting workshop 一个植树工作坊。公告中提到植树，但这是地球日活动的一部分，不是主要内容，所以A选项错误。 B. A club meeting schedule 俱乐部会议安排。公告中未提及会议时间安排，所以B选项错误。 C. A decision about club membership 关于俱乐部成员资格的决定。公告中未提及成员资格，所以C选项错误。 D. An Earth Day initiative 一项地球日活动倡议。公告明确讨论地球日的计划（campus cleanup event 和 planting trees），所以D选项正确。"
-    },
-    {
-     "id": 2,
-     "stem": "What are students encouraged to do?",
-     "options": {
-      "A": "Donate to the tree planting fund",
-      "B": "Attend a workshop",
-      "C": "Sign up for the cleanup event",
-      "D": "Join the Environmental Club"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：鼓励学生们做什么？ 定位原文：Please sign up if you're interested in participating. （结合上文提到的“campus cleanup event and planting trees”） 选项分析： A. Donate to the tree planting fund 向植树基金捐款。公告中未提及捐款，所以A选项错误。 B. Attend a workshop 参加工作坊。公告中未提及工作坊，所以B选项错误。 C. Sign up for the cleanup event 报名参加清洁活动。公告明确说“请报名”（sign up），活动内容包括校园清洁和植树，所以C选项正确。 D. Join the Environmental Club 加入环保俱乐部。公告中未提及加入俱乐部，这是俱乐部会议，但鼓励的是参与活动而非加入组织，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #73",
+      "instruction": "Listen to an announcement at a university club meeting.",
+      "audio": "library/toefl/free/audio/abda07a5258c49c1bfc27b0989d208ae.mp3",
+      "transcript": "Welcome, everyone. Today, we'll be discussing our plans for Earth Day. We'll be organizing a campus cleanup event and planting trees next Friday. Please sign up if you're interested in participating.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the announcement?",
+          "options": {
+            "A": "A tree-planting workshop",
+            "B": "A club meeting schedule",
+            "C": "A decision about club membership",
+            "D": "An Earth Day initiative"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: cái này tức thì thông cáo chủ yếu chủ đề là cái gì? Dẫn chứng Bài gốc: Today, we'll be discussing our plans for Earth Day. We'll be organizing a campus cleanup event and planting trees next Friday. Phương án phân tích: A. A tree-planting workshop một cái trồng cây công tác phường. trong thông báo nhắc tới trồng cây, nhưng cái này là địa cầu ngày hoạt động một bộ phận, không phải nội dung chủ yếu, nên A Phương án Sai. B. A club meeting schedule câu lạc bộ hội nghị an bài. trong thông báo Không được đề cập (Not Given) hội nghị sắp xếp thời gian, nên B Phương án Sai. C. A decision about club membership về câu lạc bộ thành viên tư cách quyết định. trong thông báo Không được đề cập (Not Given) thành viên tư cách, nên C Phương án Sai. D. An Earth Day initiative hạng nhất địa cầu ngày hoạt động xướng nghị. thông cáo rõ ràng thảo luận địa cầu ngày kế hoạch (campus cleanup event và planting trees), nên D Phương án Đúng."
+        },
+        {
+          "id": 2,
+          "stem": "What are students encouraged to do?",
+          "options": {
+            "A": "Donate to the tree planting fund",
+            "B": "Attend a workshop",
+            "C": "Sign up for the cleanup event",
+            "D": "Join the Environmental Club"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: cổ vũ các học sinh làm cái gì? Dẫn chứng Bài gốc: Please sign up if you're interested in participating. (kết hợp câu trên nhắc tới “campus cleanup event and planting trees”) Phương án phân tích: A. Donate to the tree planting fund hướng trồng cây quỹ ngân sách quyên tiền. trong thông báo Không được đề cập (Not Given) quyên tiền, nên A Phương án Sai. B. Attend a workshop tham gia công tác phường. trong thông báo Không được đề cập (Not Given) công tác phường, nên B Phương án Sai. C. Sign up for the cleanup event báo danh tham gia sạch sẽ hoạt động. thông cáo rõ ràng nói “ mời báo danh ” (sign up), hoạt động nội dung kể cả sân trường sạch sẽ và trồng cây, nên C Phương án Đúng. D. Join the Environmental Club gia nhập bảo vệ môi trường câu lạc bộ. trong thông báo Không được đề cập (Not Given) gia nhập câu lạc bộ, đây là câu lạc bộ hội nghị, nhưng khích lệ là tham dự hoạt động mà không phải là gia nhập tổ chức, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

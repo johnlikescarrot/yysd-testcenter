@@ -1,4 +1,4 @@
-/* 锁层 z-15 低于导航 z-20，保留退出锁态的入口。 */
+/* Khóa tầng z-15 thấp hơn Điều hướng z-20, giữ lại Đăng xuất Khóa thái cửa vào. */
 .yysd-lock {
   position: fixed;
   inset: 0;
@@ -47,7 +47,7 @@
   color: #151515;
 }
 .yysd-lock-card p { margin: 0 0 8px; font-size: 13.5px; line-height: 1.7; color: #656565; }
-.yysd-lock-card .yysd-lock-count { font-weight: 600; color: #bb241b; font-variant-numeric: tabular-nums; }
+.yysd-lock-card.yysd-lock-count { font-weight: 600; color: #bb241b; font-variant-numeric: tabular-nums; }
 .yysd-lock-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 10px; margin-top: 24px; }
 .yysd-lock-acts button,
 .yysd-lock-acts a {
@@ -81,14 +81,14 @@
 .yysd-lock-acts a:hover { background: #bb241b; border-color: #bb241b; }
 .yysd-lock-acts button:active:not(:disabled),
 .yysd-lock-acts a:active { background: #151515; border-color: #151515; color: #fff; }
-.yysd-lock-acts :focus-visible { outline: 2px solid #bb241b; outline-offset: 3px; }
+.yysd-lock-acts:focus-visible { outline: 2px solid #bb241b; outline-offset: 3px; }
 .yysd-lock-acts button[disabled] { background: #f4f4f2; color: #656565; border-color: #d9d9d6; cursor: not-allowed; }
-.yysd-lock[hidden], .yysd-cut[hidden] { display: none !important; }
+.yysd-lock[hidden],.yysd-cut[hidden] { display: none!important; }
 
-/* 权限行状态（个人资料卡） */
+/* quyền hạn hành trạng thái (tài liệu cá nhân tạp) */
 .hit-perm-off { box-sizing: border-box; min-width: 0; max-width: 100%; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 0; background: #f4f4f2; color: #bb241b; white-space: normal; overflow-wrap: anywhere; }
 
-/* 考试页顶栏到期倒计时：琥珀提示，最后一分钟红底白字；不改 ETS 正文。 */
+/* cuộc thi trang thanh điều hướng đến kỳ đảo kế thì: hổ phách nhắc nhở, cuối cùng một phút đồng hồ hồng ngọn nguồn chữ viết nhầm; không thay đổi ETS chính văn. */
 .ets-expire-chip {
   box-sizing: border-box;
   min-width: 0;
@@ -108,7 +108,7 @@
 }
 .ets-expire-chip.is-soon { color: #fff; background: #bb241b; border-color: #bb241b; }
 
-/* 自动交卷提示 */
+/* tự động Nộp bài nhắc nhở */
 .yysd-cut {
   position: fixed;
   inset: 0;
@@ -137,7 +137,7 @@
 .yysd-cut b { display: block; font-size: 20px; line-height: 1.4; margin-bottom: 10px; color: #151515; }
 .yysd-cut p { margin: 0; font-size: 13px; line-height: 1.7; color: #656565; }
 
-/* 首页卡片锁定徽章（无内容时不占位） */
+/* Trang chủ tạp phiến tập trung huy chương (Không nội dung lúc không chiếm vị) */
 .hit-mode-badge {
   box-sizing: border-box;
   display: inline-block;
@@ -156,12 +156,12 @@
 }
 .hit-mode-badge:empty { display: none; }
 
-/* 考前冲刺模考包：锁态不降低整行透明度，保留文字对比度与原点击提示。 */
+/* trước khi thi chạy nước rút Thi thử bao: Khóa thái không giảm xuống cả đi trong suốt độ, giữ lại văn tự độ tỷ lệ và nguyên nhấn vào nhắc nhở. */
 .hit-mock-row.is-locked { background: #f4f4f2; }
 .btn-start.is-lock { background: #f4f4f2; color: #656565; border: 1px solid #d9d9d6; border-radius: 0; box-shadow: none; transform: none; cursor: not-allowed; white-space: normal; overflow-wrap: anywhere; }
 .hit-status.is-warn { color: #bb241b; font-weight: 600; overflow-wrap: anywhere; }
 .hit-status:empty { display: none; }
 
 @media (max-width: 480px) {
-  body.exam-ets .ets-bar-right:has(.ets-expire-chip) { flex-wrap: wrap; max-width: 100%; }
+  body.exam-ets.ets-bar-right:has(.ets-expire-chip) { flex-wrap: wrap; max-width: 100%; }
 }

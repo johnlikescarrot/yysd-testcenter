@@ -1,83 +1,83 @@
 {
- "id": "free-12854",
- "title": "Interview #21",
- "set": "free",
- "skill": "speaking",
- "titleZh": "虚拟面试 #21",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12854,
-  "labelId": 1332,
-  "code": "TOEFL--S-take an interview-21"
- },
- "modules": [
-  {
-   "n": 2,
-   "timeSec": 0,
-   "from": 1,
-   "to": 4
-  }
- ],
- "tasks": [
-  {
-   "type": "interview",
-   "module": 2,
-   "id": 1,
-   "speakSec": 45,
-   "prepSec": 45,
-   "instruction": "Listen to the question, then respond.",
-   "audio": "library/toefl/free/audio/e960a87409da4680ae0316d9206cbc9a.mp3",
-   "stem": "Thank you for speaking with me today.Now I'd like you to think back to the last time you visited a city in your country,a city that you didn't live in.Why did you travel to that city?What did you like about that city?",
-   "sample": "",
-   "image": "library/toefl/free/img/aaa95d7431a54c28981cab37933a53fb.png",
-   "analysis": "中文：谢谢你今天接受我的访谈。现在请你回想一下最近一次前往本国非你居住的城市的经历。你当时为什么去那座城市？你喜欢这座城市的哪些地方？",
-   "title": "Interview",
-   "titleZh": "虚拟面试"
+  "id": "free-12854",
+  "title": "Interview #21",
+  "set": "free",
+  "skill": "speaking",
+  "titleZh": "giả thuyết phỏng vấn #21",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12854,
+    "labelId": 1332,
+    "code": "TOEFL--S-take an interview-21"
   },
-  {
-   "type": "interview",
-   "module": 2,
-   "id": 2,
-   "speakSec": 45,
-   "prepSec": 45,
-   "instruction": "Listen to the question, then respond.",
-   "audio": "library/toefl/free/audio/d115af7789764340a7b15fe1f9c77908.mp3",
-   "stem": "Great. Cities affect people in different ways. Some people find cities dynamic and exciting.Others find that cities are overwhelming and drain them of energy. What kind of reaction do you have to cities? Why do you think you react in this way?",
-   "sample": "",
-   "image": "library/toefl/free/img/47b70725d9b640de8ca56ce9bfe3d186.png",
-   "analysis": "中文：很好。城市对人们的影响各不相同。有些人觉得城市充满活力、令人兴奋；另一些人则觉得城市让人应接不暇，耗尽精力。你对城市有什么样的感受？你觉得自己为什么会有这样的感受？",
-   "title": "Interview",
-   "titleZh": "虚拟面试"
-  },
-  {
-   "type": "interview",
-   "module": 2,
-   "id": 3,
-   "speakSec": 45,
-   "prepSec": 45,
-   "instruction": "Listen to the question, then respond.",
-   "audio": "library/toefl/free/audio/f4c89effa367428b9fe7cac868bdd024.mp3",
-   "stem": "OK. Next, I'd like to ask your opinion. Some people believe that those who live in cities lead more interesting lives. They would argue, for example, that people who live in cities have more access to professional opportunities and interesting leisure activities. Do you agree that people who live in cities lead more interesting lives? Why or why not?",
-   "sample": "",
-   "image": "library/toefl/free/img/48af602313b4411fb030e5d788de26ac.png",
-   "analysis": "中文：好的。接下来我想听听你的看法。有些人认为，住在城市里的人生活更有趣。比如他们会说，城市居民能获得更多职业机会和丰富的休闲活动。你是否认同住在城市里的人生活更有趣？为什么认同或不认同？",
-   "title": "Interview",
-   "titleZh": "虚拟面试"
-  },
-  {
-   "type": "interview",
-   "module": 2,
-   "id": 4,
-   "speakSec": 45,
-   "prepSec": 45,
-   "instruction": "Listen to the question, then respond.",
-   "audio": "library/toefl/free/audio/86f2f0f0b19a4fb4a10e529aae134556.mp3",
-   "stem": "Good points. Let me ask you one final question. For some time now, researchers have been interested in whether green spaces, such as parks, make people who live in cities happier. Do you think that city governments should create more parks in urban areas to promote a general sense of happiness and life satisfaction? Why or why not?",
-   "sample": "",
-   "image": "library/toefl/free/img/b72d47fbb92e4f1c8b27d91e64c4a2d8.png",
-   "analysis": "中文：说得很有道理。我来问你最后一个问题。一段时间以来，研究者们一直关注像公园这样的绿地是否能让城市居民更幸福。你认为市政府是否应该在城区修建更多公园，以此提升人们的幸福感和生活满意度？为什么应该或不应该？",
-   "title": "Interview",
-   "titleZh": "虚拟面试"
-  }
- ]
+  "modules": [
+    {
+      "n": 2,
+      "timeSec": 0,
+      "from": 1,
+      "to": 4
+    }
+  ],
+  "tasks": [
+    {
+      "type": "interview",
+      "module": 2,
+      "id": 1,
+      "speakSec": 45,
+      "prepSec": 45,
+      "instruction": "Listen to the question, then respond.",
+      "audio": "library/toefl/free/audio/e960a87409da4680ae0316d9206cbc9a.mp3",
+      "stem": "Thank you for speaking with me today.Now I'd like you to think back to the last time you visited a city in your country,a city that you didn't live in.Why did you travel to that city?What did you like about that city?",
+      "sample": "",
+      "image": "library/toefl/free/img/aaa95d7431a54c28981cab37933a53fb.png",
+      "analysis": "Tiếng Việt: Cảm ơn ngươi hôm nay tiếp nhận của tôi thăm hỏi. hiện tại mời ngươi hồi tưởng một chút lần gần đây nhất tiến về trước bổn quốc không phải bạn ở thành phố trải qua. bạn lúc ấy vì sao đi chỗ đó tòa thành thị? bạn ưa thích tòa thành thị này nào địa phương?",
+      "title": "Interview",
+      "titleZh": "giả thuyết phỏng vấn"
+    },
+    {
+      "type": "interview",
+      "module": 2,
+      "id": 2,
+      "speakSec": 45,
+      "prepSec": 45,
+      "instruction": "Listen to the question, then respond.",
+      "audio": "library/toefl/free/audio/d115af7789764340a7b15fe1f9c77908.mp3",
+      "stem": "Great. Cities affect people in different ways. Some people find cities dynamic and exciting.Others find that cities are overwhelming and drain them of energy. What kind of reaction do you have to cities? Why do you think you react in this way?",
+      "sample": "",
+      "image": "library/toefl/free/img/47b70725d9b640de8ca56ce9bfe3d186.png",
+      "analysis": "Tiếng Việt: rất tốt. Đô thị đối với người đám bọn chúng ảnh hưởng mỗi người không giống nhau. có ít người cảm thấy Đô thị tràn ngập sức sống, làm cho người hưng phấn; một số người khác tức thì cảm thấy Đô thị làm cho người ta đáp ứng không xuể, hao hết tinh lực. ngươi đối với Đô thị có bao nhiêu cảm thụ? bạn cảm giác mình tại sao phải có cảm thụ như vậy?",
+      "title": "Interview",
+      "titleZh": "giả thuyết phỏng vấn"
+    },
+    {
+      "type": "interview",
+      "module": 2,
+      "id": 3,
+      "speakSec": 45,
+      "prepSec": 45,
+      "instruction": "Listen to the question, then respond.",
+      "audio": "library/toefl/free/audio/f4c89effa367428b9fe7cac868bdd024.mp3",
+      "stem": "OK. Next, I'd like to ask your opinion. Some people believe that those who live in cities lead more interesting lives. They would argue, for example, that people who live in cities have more access to professional opportunities and interesting leisure activities. Do you agree that people who live in cities lead more interesting lives? Why or why not?",
+      "sample": "",
+      "image": "library/toefl/free/img/48af602313b4411fb030e5d788de26ac.png",
+      "analysis": "Tiếng Việt: tốt. kế tiếp ta nghĩ nghe một chút cái nhìn của bạn. có ít người cho rằng, ở tại trong thành phố nhân sinh sống càng thú vị. ví dụ như họ biết nói, cư dân thành phố có thể đạt được thêm nữa Nghề nghiệp cơ hội hòa phong giàu nghỉ ngơi hoạt động. ngươi là phủ nhận cùng ở tại trong thành phố nhân sinh sống càng thú vị? vì sao nhận đồng hoặc không hỗ trợ?",
+      "title": "Interview",
+      "titleZh": "giả thuyết phỏng vấn"
+    },
+    {
+      "type": "interview",
+      "module": 2,
+      "id": 4,
+      "speakSec": 45,
+      "prepSec": 45,
+      "instruction": "Listen to the question, then respond.",
+      "audio": "library/toefl/free/audio/86f2f0f0b19a4fb4a10e529aae134556.mp3",
+      "stem": "Good points. Let me ask you one final question. For some time now, researchers have been interested in whether green spaces, such as parks, make people who live in cities happier. Do you think that city governments should create more parks in urban areas to promote a general sense of happiness and life satisfaction? Why or why not?",
+      "sample": "",
+      "image": "library/toefl/free/img/b72d47fbb92e4f1c8b27d91e64c4a2d8.png",
+      "analysis": "Tiếng Việt: nói rất có đạo lý. ta tới hỏi ngươi một vấn đề cuối cùng. một đoạn thời gian đến nay, nhà nghiên cứu đám một mực chú ý như công viên như vậy xanh hoá có hay không có thể làm cho cư dân thành phố hạnh phúc hơn. bạn cho rằng thị chánh phủ có hay không nên tại nội thành tu kiến thêm nữa công viên, dùng cái này tăng lên mọi người cảm giác hạnh phúc và sinh hoạt thoả mãn độ? vì sao nên hoặc không nên?",
+      "title": "Interview",
+      "titleZh": "giả thuyết phỏng vấn"
+    }
+  ]
 }

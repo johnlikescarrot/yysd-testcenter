@@ -1,23 +1,23 @@
-# 设计约束与审计（DESIGN-BRIEF）
+# xếp đặt thiết kế ước thúc và thẩm kế (DESIGN-BRIEF)
 
-> Kimi 维护审计章节；Cursor 参考 tasks/ 实现
+> Kimi bảo vệ thẩm kế chương tiết; Cursor tham khảo tasks/ thực hiện
 
-## 品牌规范（不可破）
+## nhãn hiệu quy phạm (không thể phá)
 
-- **Palette：** navy `#07192f` · gold `#c7a45d` · ivory `#f7f3ea`
-- **Typography：** Playfair（hero/标题）· Inter（`.page-premium` 正文 UI）
-- **Motif：** 金色 star crumb、纸感 `--shadow-paper`、细金边 `rgba(199,164,93,.34)`
-- **禁止：** 紫渐变 hero、三列 icon SaaS 模板、CSS 写死机构名
+- **Palette: ** navy `#07192f` · gold `#c7a45d` · ivory `#f7f3ea`
+- **Typography: ** Playfair (hero/ tiêu đề) · Inter (`.page-premium` chính văn UI)
+- **Motif: ** màu vàng star crumb, giấy cảm giác `--shadow-paper`, mảnh viền vàng `rgba(199,164,93,.34)`
+- ** cấm: ** tím thay đổi dần hero, ba nhóm icon SaaS khuôn mô hình, CSS ghi chết máy cấu tên
 
-## 组件 class 体系
+## lắp ráp(bộ phận) class hệ thống
 
-| 前缀 | 用途 |
+| tiền tố | công dụng |
 |------|------|
-| `minimal-*` | 全站 shell：topbar、nav、page-head、footer |
-| `page-premium` | body 级开关，启用 dashboard-premium.css |
-| `dash-*` | 日历、目录、teacher 卡片 |
-| `auth-*` | 登录注册布局 |
-| `results-*` | 成绩 hero / 空状态 |
+| `minimal-*` | toàn bộ đứng shell: topbar, nav, page-head, footer |
+| `page-premium` | body cấp chốt mở, bắt đầu dùng dashboard-premium.css |
+| `dash-*` | lịch ngày, mục lục, teacher tạp phiến |
+| `auth-*` | Đăng nhập Đăng ký bố cục |
+| `results-*` | Điểm số hero / chỗ trống Trạng thái |
 
 ---
 
@@ -25,73 +25,73 @@
 
 ### index.html
 
-**A. 保留：** editorial hero、SVG motif、双列 home-dual 入口  
-**B. 问题：** 与 logged-in premium 路径风格跳跃；hero 动画对 `prefers-reduced-motion` 已部分处理  
-**C. 改法：** 保持首页 editorial，不在此页加 page-premium  
-**D. premium 壳：** 否（ intentional 营销页）
+**A. giữ lại: ** editorial hero, SVG motif, song nhóm home-dual cửa vào
+**B. vấn đề: ** và logged-in premium đường nhỏ phong cách nhảy lên; hero anime đối với `prefers-reduced-motion` đã bộ phận xử lý
+**C. sửa pháp: ** bảo trì Trang chủ editorial, không ở chỗ này trang thêm page-premium
+**D. premium xác: ** hay không (intentional doanh tiêu trang)
 
 ### dashboard.html
 
-**A. 保留：** dash-premium-eyebrow、日历 hero、focus 条动画  
-**B. 问题：** 与 results 返回后视觉不一致（已用 I-001 缓解）  
-**C. 改法：** 维持；作为 premium 参考页  
-**D. premium 壳：** 是（参考标准）
+**A. giữ lại: ** dash-premium-eyebrow, lịch ngày hero, focus đầu anime
+**B. vấn đề: ** và results Quay lại sau thị giác không nhất trí (Đã dùng I-001 giảm bớt)
+**C. sửa pháp: ** duy trì; với tư cách premium tham khảo trang
+**D. premium xác: ** là (tham khảo tiêu chuẩn)
 
-### zone.html（study / practice / mock）
+### zone.html (study / practice / mock)
 
-**A. 保留：** 目录卡片、catalog-search、zone accent  
-**B. 问题：** page-head 与 dashboard  eyebrow 命名不统一（`minimal-eyebrow` vs `dash-premium-eyebrow`）  
-**C. 改法：** P2 统一 eyebrow class；暂不拆 JS  
-**D. premium 壳：** 是
+**A. giữ lại: ** mục lục tạp phiến, catalog-search, zone accent
+**B. vấn đề: ** page-head và dashboard eyebrow mệnh danh không thống nhất (`minimal-eyebrow` vs `dash-premium-eyebrow`)
+**C. sửa pháp: ** P2 thống nhất eyebrow class; tạm không hủy đi JS
+**D. premium xác: ** là
 
 ### login.html / register.html
 
-**A. 保留：** auth-aside  navy 渐变侧栏、双栏布局  
-**B. 问题：** auth-card 阴影偏旧；input focus 无 ring；无 Inter  
-**C. 改法：** I-002 — style.css `.auth-card` border + input `:focus-visible`  
-**D. premium 壳：** 否（侧栏已足够品牌化）
+**A. giữ lại: ** auth-aside navy thay đổi dần bên cạnh lan, song lan bố cục
+**B. vấn đề: ** auth-card bóng râm thiên xưa cũ; input focus Không ring; Không Inter
+**C. sửa pháp: ** I-002 — style.css `.auth-card` border + input `:focus-visible`
+**D. premium xác: ** hay không (bên cạnh lan đã đầy đủ nhãn hiệu hóa)
 
 ### exam.html
 
-**A. 保留：** 沉浸 exam-shell、最小干扰  
-**B. 问题：** `--brand-*` 与 exam-shell 局部变量未完全对齐  
-**C. 改法：** P2 exam-shell.css token 映射  
-**D. premium 壳：** 否
+**A. giữ lại: ** đắm chìm exam-shell, nhỏ nhất quấy nhiễu
+**B. vấn đề: ** `--brand-*` và exam-shell bộ phận lượng biến đổi chưa xong hoàn toàn đúng đủ
+**C. sửa pháp: ** P2 exam-shell.css token chiếu rọi
+**D. premium xác: ** hay không
 
 ### teacher.html / teacher-calendar.html
 
-**A. 保留：** 与 dashboard 一致的 premium topbar  
-**B. 问题：** teacher-search 在窄屏换行  
-**C. 改法：** P2 flex-wrap 微调  
-**D. premium 壳：** 是
+**A. giữ lại: ** và dashboard nhất trí premium topbar
+**B. vấn đề: ** teacher-search tại chật vật bình đổi đi
+**C. sửa pháp: ** P2 flex-wrap điều khiển tinh vi
+**D. premium xác: ** là
 
 ### results.html
 
-**A. 保留：** results-hero 统计、timeline band  
-**B. 问题：** 缺 page-premium；空状态弱；mobile hero 已 stack 但 empty 仍 plain  
-**C. 改法：** I-001 premium 壳 · I-004 空状态卡片  
-**D. premium 壳：** **应为是**（I-001 已实施）
+**A. giữ lại: ** results-hero công tác thống kê, timeline band
+**B. vấn đề: ** thiếu page-premium; chỗ trống Trạng thái yếu; mobile hero đã stack nhưng empty nhưng plain
+**C. sửa pháp: ** I-001 premium xác · I-004 chỗ trống Trạng thái tạp phiến
+**D. premium xác: ** ** ứng với là là ** (I-001 đã áp dụng)
 
 ---
 
-## Implementation Tasks（首批）
+## Implementation Tasks (đám đầu tiên)
 
-| ID | 目标 | 规模 | 规格文件 |
+| ID | mục tiêu | quy mô | quy cách văn bản tài liệu |
 |----|------|------|----------|
-| I-001 | results.html premium 壳 | 小 | [tasks/I-001-results-premium.md](tasks/I-001-results-premium.md) |
-| I-002 | auth 表单 focus + card | 小 | [tasks/I-002-auth-polish.md](tasks/I-002-auth-polish.md) |
-| I-003 | mobile-tabs 毛玻璃 | 小 | [tasks/I-003-mobile-tabs.md](tasks/I-003-mobile-tabs.md) |
-| I-004 | results 空状态 | 小 | [tasks/I-004-results-empty.md](tasks/I-004-results-empty.md) |
-| I-005 | page-premium focus-visible | 小 | [tasks/I-005-focus-rings.md](tasks/I-005-focus-rings.md) |
+| I-001 | results.html premium xác | tiểu | [tasks/I-001-results-premium.md](tasks/I-001-results-premium.md) |
+| I-002 | auth danh sách focus + card | tiểu | [tasks/I-002-auth-polish.md](tasks/I-002-auth-polish.md) |
+| I-003 | mobile-tabs thuỷ tinh mờ | tiểu | [tasks/I-003-mobile-tabs.md](tasks/I-003-mobile-tabs.md) |
+| I-004 | results chỗ trống Trạng thái | tiểu | [tasks/I-004-results-empty.md](tasks/I-004-results-empty.md) |
+| I-005 | page-premium focus-visible | tiểu | [tasks/I-005-focus-rings.md](tasks/I-005-focus-rings.md) |
 
 ---
 
-## 已完成实现（Cursor 2026-07-22）
+## Đã hoàn thành thực hiện (Cursor 2026-07-22)
 
-- **I-001：** `results.html` 增加 Inter、`dashboard-premium.css`、`body.page-premium`
-- **I-002：** `style.css` auth-card 边框/阴影；auth input `:focus-visible` ring
-- **I-003：** `style.css` `.mobile-tabs` backdrop + active 背景
-- **I-004：** `dashboard-premium.css` `.page-premium .results-empty` 卡片样式
-- **I-005：** `dashboard-premium.css` 扩展 `:focus-visible` 到 btn / nav / minimal-nav
+- **I-001: ** `results.html` gia tăng Inter, `dashboard-premium.css`, `body.page-premium`
+- **I-002: ** `style.css` auth-card khung / bóng râm; auth input `:focus-visible` ring
+- **I-003: ** `style.css` `.mobile-tabs` backdrop + active bối cảnh
+- **I-004: ** `dashboard-premium.css` `.page-premium.results-empty` tạp phiến kiểu dáng
+- **I-005: ** `dashboard-premium.css` mở rộng `:focus-visible` đến btn / nav / minimal-nav
 
-Kimi 下一轮请读 WORKLOG + 本节，派 I-006+（建议：profile/vocab premium 迁移、zone eyebrow 统一）。
+Kimi vòng tiếp theo mời đọc WORKLOG + bản tiết, phái I-006+ (đề nghị: profile/vocab premium di chuyển, zone eyebrow thống nhất).

@@ -1,41 +1,41 @@
-# 第一家外部客户试点清单（阶段 6）
+# đệ nhất gia ngoại bộ hộ khách làm thí điểm nơi làm thí điểm danh sách (Giai đoạn 6)
 
-在阶段 0–5 代码上线后，用真实或半真实合作方跑通一次。
+ tại Giai đoạn 0–5 dấu hiệu sau khi lên nết, dùng chân thật hoặc nửa chân thật hợp tác phương chạy thông một lần.
 
-## 开通前（商务）
+## kích hoạt trước (thương vụ)
 
-- [ ] 确认内容转授权（剑桥等资料是否允许合作方使用）
-- [ ] 约定月费/年费与到期日
-- [ ] 对方准备：公司中文名、Logo（PNG/JPG）、希望的小网址 slug、管理员手机号（先注册为教师）
+- [] Xác nhận nội dung uỷ nhiệm quyền (Cambridge đợi tư liệu có hay không cho phép hợp tác phương sử dụng)
+- [] ước định tháng phí / niên liễm và đến kỳ ngày
+- [] đối phương chuẩn bị: trong công ty văn tên, Logo (PNG/JPG), hy vọng tiểu địa chỉ Internet slug, Quản trị viên Số điện thoại (ghi danh trước là Giáo viên)
 
-## 主控台操作
+## bàn điều khiển thao tác
 
-- [ ] 打开 `platform.html`（超管教师账号登录）
-- [ ] 新建公司：名称、slug、管理员手机、到期日
-- [ ] 上传 Logo
-- [ ] 确认列表出现该公司，统计为 0 起步
+- [] mở ra `platform.html` (vượt qua quản giáo sư tài khoản Đăng nhập)
+- [] mới xây công ty: tên, slug, Quản trị viên điện thoại, đến kỳ ngày
+- [] thượng truyền(*upload) Logo
+- [] Xác nhận liệt biểu List xuất hiện cai công ty, công tác thống kê là 0 cất bước
 
-## 对方验收
+## đối phương nghiệm thu
 
-- [ ] 打开 `https://{slug}.youyisida.com`，顶栏显示公司名与 Logo
-- [ ] 管理员登录教师端，能进「学生分配」
-- [ ] 注册/导入学生；学生登录后只能看到自己的数据
-- [ ] 学生完成一套剑桥模考，成绩出现在该公司教师端
-- [ ] 另一家公司（或优益思达）看不到上述学生与成绩
+- [] mở ra `https://{slug}.youyisida.com`, thanh điều hướng biểu hiện tên công ty và Logo
+- [] Quản trị viên Đăng nhập Cổng giáo viên, có thể đi vào « Phân bổ học viên »
+- [] Đăng ký / đạo Nhập học sinh; Học viên Đăng nhập sau chỉ có thể nhìn được mình số liệu
+- [] Học viên hoàn thành một bộ Cambridge Thi thử, Điểm số xuất hiện ở cai công ty Cổng giáo viên
+- [] một công ty khác (hoặc YYSD) nhìn không tới kể trên Học viên và Điểm số
 
-## 你们验收
+## các bạn nghiệm thu
 
-- [ ] 主控台能看到学生数/活跃变化
-- [ ] 「客服进入」能打开对方教师端并排查
-- [ ] 操作日志有记录
-- [ ] 把到期日改到昨天 → 对方进 `suspended.html`；改回未来并「恢复开通」→ 恢复正常
+- [] bàn điều khiển có thể chứng kiến Học viên mấy / sinh động biến hóa
+- [] « phục vụ khách hàng Vào học » có thể mở đối phương Cổng giáo viên song song tra
+- [] thao tác nhật ký có ghi chép
+- [] đem đến kỳ ngày sửa đến hôm qua → đối phương tiến `suspended.html`; đổi lại tương lai cũng « khôi phục kích hoạt »→ khôi phục bình thường
 
-## 体验问题记录
+## Dùng thử vấn đề ghi chép
 
-| 问题 | 严重度 | 处理 |
+| vấn đề | nghiêm trọng độ | xử lý |
 |------|--------|------|
-| ECS `sync-web.sh` 内 git pull 偶发 GitHub 超时 | 中 | 已用手动 `rsync` 从 `/opt/yysd/repo` 同步；可改脚本跳过二次 pull |
-| 任意新 slug 子域 HTTPS 需扩证书 SAN | 低 | DNS 通配符已 OK；待 DNS-01 通配符证书或开户时 certbot --expand |
-| ease 管理员密钥仅 1 次，验收后需为正式负责人换新密钥 | 低 | 主控台 reg-keys 加次或 regenerate |
+| ECS `sync-web.sh` bên trong git pull ngẫu nhiên xảy ra GitHub vượt quá thời gian | Vừa | Đã dùng chủ động `rsync` từ `/opt/yysd/repo` đồng bộ; có thể sửa kịch bản gốc nhảy qua lần thứ hai pull |
+| tùy ý mới slug tử vực HTTPS cần khuếch trương giấy chứng nhận SAN | thấp | DNS thông xứng phù đã OK; đợi DNS-01 thông xứng phù giấy chứng nhận hoặc mở tài khoản lúc certbot --expand |
+| ease Quản trị viên Mã khóa chỉ 1 lần, sau khi kiểm tra cần là chính thức người phụ trách Tạo mới Mã khóa | thấp | bàn điều khiển reg-keys thêm lần hoặc regenerate |
 
-试点通过后再谈规模化拓客。对方自助上传、在线支付等见阶段 7+（延后）。
+ làm thí điểm nơi làm thí điểm thông qua sau bàn lại quy mô hóa thác khách. đối phương tự giúp mình thượng truyền(*upload), online tiền trả đợi gặp Giai đoạn 7+ (theo sau).

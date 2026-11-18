@@ -19,52 +19,52 @@ DATA = os.path.join(OUT, "data")
 INCLUDE = [
     ("exam", "cet4", "CET-4"),
     ("exam", "cet6", "CET-6"),
-    ("exam", "tem", "专四专八"),
-    ("exam", "kaoyan", "考研英语"),
-    ("exam", "gaokao", "高考英语"),
+    ("exam", "tem", " Chuyên ngữ B2 Chuyên ngữ C1 "),
+    ("exam", "kaoyan", " Sau đại học Tiếng Anh "),
+    ("exam", "gaokao", " kỳ thi Đại Học Tiếng Anh "),
     ("abroad", "bec", "BEC"),
     ("abroad", "gmat", "GMAT"),
     ("abroad", "gre", "GRE"),
     ("abroad", "sat", "SAT"),
-    ("abroad", "toeic", "托业"),
-    ("abroad", "toefl", "托福"),
-    ("abroad", "ielts", "雅思"),
-    ("k12", "primary", "小学词汇"),
-    ("k12", "junior", "初中词汇"),
-    ("k12", "senior", "高中词汇"),
-    ("learning", "nce", "新概念"),
-    ("learning", "oxford3000", "牛津3000词"),
-    ("learning", "collins", "柯林斯星级"),
-    ("learning", "phrases", "常用短语"),
-    ("subject", "chem", "化学"),
-    ("subject", "geo", "地理学"),
-    ("subject", "math", "数学"),
-    ("subject", "phys", "物理"),
-    ("nature", "animals", "动物世界"),
-    ("nature", "plants", "植物王国"),
-    ("life", "food", "吃喝玩乐"),
-    ("life", "urban", "城市规划"),
-    ("life", "travel", "安全出行"),
-    ("life", "edu", "科教兴国"),
-    ("life", "work", "职业职场"),
-    ("life", "festivals", "节日"),
-    ("arts", "literature", "文学艺术"),
-    ("arts", "sports", "体育"),
-    ("arts", "games", "游戏娱乐"),
-    ("media", "film", "影视剧"),
-    ("media", "music", "音乐广播"),
+    ("abroad", "toeic", " TOEIC "),
+    ("abroad", "toefl", " TOEFL "),
+    ("abroad", "ielts", " IELTS "),
+    ("k12", "primary", " tiểu học Từ vựng "),
+    ("k12", "junior", " sơ trung Từ vựng "),
+    ("k12", "senior", " Từ vựng Nền tảng THPT "),
+    ("learning", "nce", " mới khái niệm "),
+    ("learning", "oxford3000", " ngưu tân 3000 từ"),
+    ("learning", "collins", " Collins Tinh cấp "),
+    ("learning", "phrases", " thường dùng Cụm từ "),
+    ("subject", "chem", " Hóa học "),
+    ("subject", "geo", " địa lý học "),
+    ("subject", "math", " Toán học "),
+    ("subject", "phys", " Vật lý "),
+    ("nature", "animals", " thế giới động vật "),
+    ("nature", "plants", " Thực vật vương quốc "),
+    ("life", "food", " ăn uống chơi đùa "),
+    ("life", "urban", " Đô thị quy hoạch "),
+    ("life", "travel", " an toàn Di chuyển "),
+    ("life", "edu", " Khoa học & Giáo dục hứng nước "),
+    ("life", "work", " Nghề nghiệp Công sở "),
+    ("life", "festivals", " Lễ hội "),
+    ("arts", "literature", " Văn học Nghệ thuật "),
+    ("arts", "sports", " Thể thao "),
+    ("arts", "games", " Trò chơi giải trí "),
+    ("media", "film", " Điện ảnh & Truyền hình kịch "),
+    ("media", "music", " Âm nhạc Phát thanh "),
 ]
 
 CAT_LABEL = {
-    "exam": "英语考试",
-    "abroad": "出国留学",
-    "k12": "中小学",
-    "learning": "英语学习",
-    "subject": "学科分类",
-    "nature": "动植物",
-    "life": "生活日常",
-    "arts": "艺术文体",
-    "media": "影音视听",
+    "exam": " Tiếng Anh cuộc thi ",
+    "abroad": " ra nước ngoài học ",
+    "k12": " Vừa tiểu học ",
+    "learning": " Tiếng Anh Học tập ",
+    "subject": " ngành học phân loại ",
+    "nature": " động thực vật ",
+    "life": " sinh hoạt Đời sống ",
+    "arts": " Nghệ thuật văn thể ",
+    "media": " ảnh âm nghe nhìn ",
 }
 
 
@@ -91,7 +91,7 @@ def main():
         if name.endswith(".json"):
             os.remove(os.path.join(DATA, name))
 
-    categories = [{"id": "all", "label": "全部"}] + [
+    categories = [{"id": "all", "label": " Tất cả "}] + [
         {"id": k, "label": CAT_LABEL[k]}
         for k in ["exam", "abroad", "k12", "learning", "subject", "nature", "life", "arts", "media"]
     ]
@@ -144,7 +144,7 @@ def main():
                 "no": len(themes) + 1,
                 "title": label,
                 "category": cat,
-                "desc": "%s · %d 词（已释义 %d）"
+                "desc": "%s · %d từ (đã Giải nghĩa %d) "
                 % (CAT_LABEL[cat], len(words), sum(1 for w in words if w.get("meaning"))),
                 "count": len(words),
                 "defined": sum(1 for w in words if w.get("meaning")),
@@ -155,7 +155,7 @@ def main():
         print("%s/%s %d words" % (cat, sid, len(words)))
 
     catalog = {
-        "sourceNote": "公开分类词表复刻浏览库；暂不含小课/测试。",
+        "sourceNote": " công khai phân loại từ bề ngoài phục khắc xem kho; tạm không chứa tiểu khóa / Kiểm tra. ",
         "categories": categories,
         "themes": themes,
     }

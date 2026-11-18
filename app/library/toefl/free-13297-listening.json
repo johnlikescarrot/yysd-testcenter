@@ -1,46 +1,46 @@
 {
- "id": "free-13297",
- "title": "Choose a Response #257",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #257",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13297,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-257"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #257",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/5e5089d4467349d5b39a820423b52857.mp3",
-   "questions": [
+  "id": "free-13297",
+  "title": "Choose a Response #257",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #257",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13297,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-257"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "After my class.",
-      "B": "Check on the class website.",
-      "C": "They are 36 pages long.",
-      "D": "They use the standard format."
-     },
-     "answer": "B",
-     "transcript": "Where can I find the class notes?",
-     "stemZh": "",
-     "analysis": "Where can I find the class notes? 题干分析 本题是 Where 引导的特殊疑问句，核心询问课堂笔记可以在哪里找到，考点为询问获取资料的地点 / 渠道，需要选出能直接回应位置或获取途径的选项。 选项分析 选项 A：表达的是下课之后，回应的是时间，并非寻找笔记的地点或渠道，答非所问，予以排除。 选项 B：建议去课程网站上查看，给出了明确的查找渠道与位置，精准回应 Where 的提问，符合语境，是正确选项。 选项 C：只说明笔记一共有 36 页，描述的是篇幅页数，和在哪里查找没有关系，予以排除。 选项 D：仅介绍笔记采用标准格式，说明的是排版格式，没有回应查找地点，话题不相关，予以排除。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #257",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/5e5089d4467349d5b39a820423b52857.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "After my class.",
+            "B": "Check on the class website.",
+            "C": "They are 36 pages long.",
+            "D": "They use the standard format."
+          },
+          "answer": "B",
+          "transcript": "Where can I find the class notes?",
+          "stemZh": "",
+          "analysis": "Where can I find the class notes? Câu hỏi phân tích chủ đề là Where dẫn dắt đặc thù câu nghi vấn, hạch tâm hỏi thăm lớp học bút ký có thể ở nơi nào tìm được, địa điểm thi là hỏi thăm thu hoạch tư liệu địa điểm / con đường, cần tuyển ra có thể trực tiếp đáp lại vị trí hoặc thu hoạch cách Phương án. Phương án phân tích Phương án A: biểu đạt là tan học về sau, đáp lại là thời gian, cũng không phải là tìm kiếm bút ký địa điểm hoặc con đường, đáp phi sở vấn, giúp cho bài trừ. Phương án B: đề nghị đi chương trình học trên website Xem, cấp ra rõ ràng tra tìm con đường và vị trí, tinh chuẩn đáp lại Where vấn đề, phù hợp ngữ cảnh, là Đúng Phương án. Phương án C: chỉ nói rõ ràng bút ký tổng cộng có 36 trang, miêu tả là độ dài số trang, và ở nơi nào tra tìm không có quan hệ, giúp cho bài trừ. Phương án D: chỉ giới thiệu bút ký chọn dùng tiêu chuẩn cách thức, giải thích rõ là sắp chữ cách thức, không có trả lời tra tìm địa điểm, chủ đề không liên hệ, giúp cho bài trừ."
+        }
+      ]
+    }
+  ]
 }

@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑8T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 8T2.docx")
 PARK_MAP_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_15.38.32-c3b5ac66-f0c8-4ee9-8f2a-cb918fe8a441.png"
@@ -26,10 +26,10 @@ SCHOOL_SPENDING_SRC = Path(
     "__2026-07-01_15.38.40-efe3e7b6-2b5d-4583-8ca7-ea4ad6b9d09b.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-8-test-2.html"
@@ -54,7 +54,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -70,13 +70,13 @@ def inject_state_vars(html: str) -> str:
 
 
 def patch_note_image(html: str) -> str:
-    needle = "  if(g.kind==='note'){\n    body=`"
+    needle = " if(g.kind==='note'){\n body=`"
     insert = (
-        "  if(g.kind==='note'){\n"
-        "    const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " if(g.kind==='note'){\n"
+        " const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.noteTitle||'map'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    body=fig+`"
+        " body=fig+`"
     )
     if needle in html and "const fig=" not in html.split("if(g.kind==='note')")[1][:250]:
         html = html.replace(needle, insert, 1)
@@ -85,10 +85,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 听力", "剑桥雅思8 Test 2 听力"),
-        ("剑桥雅思8 · Test 1（听力）", "剑桥雅思8 · Test 2（听力）"),
-        ("剑桥雅思8 Test 1 听力：", "剑桥雅思8 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 1 Nghe ", "Cambridge IELTS 8 Test 2 Nghe "),
+        ("Cambridge IELTS 8 · Test 1 (Nghe) ", "Cambridge IELTS 8 · Test 2 (Nghe) "),
+        ("Cambridge IELTS 8 Test 1 Nghe: ", "Cambridge IELTS 8 Test 2 Nghe: "),
+        ("Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
         ("test-1", "test-2"),
         ("cam8_test1", "cam8_test2"),
     ]
@@ -100,10 +100,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 阅读", "剑桥雅思8 Test 2 阅读"),
-        ("剑桥雅思8 · Test 1（阅读）", "剑桥雅思8 · Test 2（阅读）"),
-        ("剑桥雅思8 Test 1 学术类阅读", "剑桥雅思8 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 1 Đọc ", "Cambridge IELTS 8 Test 2 Đọc "),
+        ("Cambridge IELTS 8 · Test 1 (Đọc) ", "Cambridge IELTS 8 · Test 2 (Đọc) "),
+        ("Cambridge IELTS 8 Test 1 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 8 Test 2 Đọc Học thuật (Academic Reading) "),
+        ("Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -114,16 +114,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 写作", "剑桥雅思8 Test 2 写作"),
-        ("剑桥雅思8 · Test 1（写作）", "剑桥雅思8 · Test 2（写作）"),
-        ("剑桥雅思8 Test 1 学术类写作", "剑桥雅思8 Test 2 学术类写作"),
+        ("Cambridge IELTS 8 Test 1 Viết ", "Cambridge IELTS 8 Test 2 Viết "),
+        ("Cambridge IELTS 8 · Test 1 (Viết) ", "Cambridge IELTS 8 · Test 2 (Viết) "),
+        ("Cambridge IELTS 8 Test 1 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 8 Test 2 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 land degradation pie chart + Task 2 parents vs school citizenship essay",
             "Task 1 UK school spending pie charts + Task 2 technology and relationships essay",
         ),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Test 1 Viết (Đề thi chính thức) ", "Test 2 Viết (Đề thi chính thức) "),
         ("cambridge-8-test-1-writing-draft", "cambridge-8-test-2-writing-draft"),
-        ("【剑桥雅思8 · Test 1 写作】", "【剑桥雅思8 · Test 2 写作】"),
+        ("[Cambridge IELTS 8 · Test 1 Viết]", "[Cambridge IELTS 8 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("land-degradation", "school-spending"),

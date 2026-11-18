@@ -1,46 +1,46 @@
 {
- "id": "free-12255",
- "title": "Choose a Response #13",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #13",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12255,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-13"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #13",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/1fd3bee6d7044ecea25fbf1e449838e7.mp3",
-   "questions": [
+  "id": "free-12255",
+  "title": "Choose a Response #13",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #13",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12255,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-13"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "The presentation is tomorrow.",
-      "B": "Thanks, I almost forgot about it.",
-      "C": "No, I didn't take notes during the speech.",
-      "D": "Actually, there was nobody present."
-     },
-     "answer": "B",
-     "transcript": "Don't you need this note for your presentation? ​​",
-     "stemZh": "你做演示的时候不需要这张笔记吗？",
-     "analysis": "Don't you need this note for your presentation? 题干分析 本题为否定式反问情景交际句，并非真正需要对方用 Yes/No 生硬作答，而是说话人善意提醒：难道你做演示不需要这份笔记吗？核心考查日常人际提醒语境下的自然应答。 选项分析 选项 A：只说明演示在明天举行，单纯交代时间，没有回应是否需要这份笔记，也没有承接提醒的语境，答非所问，予以排除。 选项 B：承接对方的善意提醒，表示感谢并说自己差点忘了，完美贴合被人提醒后的自然反应，语境匹配度最高，是正确选项。 选项 C：纠结演讲过程中有没有做笔记，偏离题干 “是否需要这份笔记” 的核心话题，曲解句意，逻辑不符，予以排除。 选项 D：表示现场没有任何人出席，和笔记、演示需求毫无关联，话题完全跑偏，予以排除。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #13",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/1fd3bee6d7044ecea25fbf1e449838e7.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "The presentation is tomorrow.",
+            "B": "Thanks, I almost forgot about it.",
+            "C": "No, I didn't take notes during the speech.",
+            "D": "Actually, there was nobody present."
+          },
+          "answer": "B",
+          "transcript": "Don't you need this note for your presentation? ​​",
+          "stemZh": "bạn làm biểu thị thời điểm không cần tờ này bút ký không?",
+          "analysis": "Don't you need this note for your presentation? Câu hỏi phân tích chủ đề là chối bỏ thức hỏi lại tình cảnh giao tiếp câu, cũng không phải là chính thức cần đối phương dùng Yes/No đông cứng đáp lại, mà là người nói chuyện thiện ý nhắc nhở: chẳng lẽ bạn làm biểu thị không cần phần này bút ký không? hạch tâm khảo tra Đời sống nhân tế nhắc nhở ngữ cảnh ở dưới tự nhiên trả lời. Phương án phân tích Phương án A: chỉ nói rõ ràng biểu thị vào ngày mai cử hành, đơn thuần nói rõ thời gian, không có trả lời có hay không cần phần này bút ký, cũng không có hứng lấy nhắc nhở ngữ cảnh, đáp phi sở vấn, giúp cho bài trừ. Phương án B: hứng lấy đối phương thiện ý nhắc nhở, biểu thị cảm tạ cũng nói mình thiếu chút nữa đã quên rồi, hoàn mỹ dán hợp bị người nhắc nhở sau đích phản ứng tự nhiên, ngữ cảnh xứng đôi độ cao nhất, là Đúng Phương án. Phương án C: xoắn xuýt diễn thuyết trong quá trình có hay không làm bút ký, đều rời đi Câu hỏi “ có hay không cần phần này bút ký ” hạch tâm chủ đề, xuyên tạc câu ý, ăn khớp không hợp, giúp cho bài trừ. Phương án D: biểu thị hiện trường không có bất kỳ người nào dự họp, và bút ký, biểu thị nhu cầu không liên hệ chút nào, chủ đề hoàn toàn chạy thiên, giúp cho bài trừ. ​​"
+        }
+      ]
+    }
+  ]
 }

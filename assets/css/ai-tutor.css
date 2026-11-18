@@ -1,4 +1,4 @@
-/* AI 雅思老师 — product UI (preserve YYSD cream/navy) */
+/* AI Trợ giảng IELTS — product UI (preserve YYSD cream/navy) */
 
 .ai-tutor-page {
   --ai-ink: #102a4c;
@@ -18,7 +18,7 @@
 .ai-picker[hidden],
 .ai-practice-bar[hidden],
 #page-back[hidden] {
-  display: none !important;
+  display: none!important;
 }
 
 .ai-tutor {
@@ -33,7 +33,7 @@
   gap: 14px;
 }
 .ai-page-title-row h1 { margin: 0; }
-.ai-page-title-row .minimal-page-desc { margin: 8px 0 0; max-width: 36rem; }
+.ai-page-title-row.minimal-page-desc { margin: 8px 0 0; max-width: 36rem; }
 .ai-page-back {
   flex: 0 0 auto;
   margin-top: 0.55em;
@@ -224,7 +224,7 @@
 .ai-room__sessions li button.is-active {
   background: var(--ai-soft);
 }
-.ai-room__sessions .meta {
+.ai-room__sessions.meta {
   display: block;
   font-size: 0.72rem;
   color: var(--ai-muted);
@@ -416,8 +416,8 @@
   color: var(--ai-ink);
 }
 .ai-mic:disabled,
-.ai-room__input-row .btn--primary:disabled,
-.ai-write__meta .btn--primary:disabled,
+.ai-room__input-row.btn--primary:disabled,
+.ai-write__meta.btn--primary:disabled,
 .ai-side__list button:disabled {
   opacity: 0.55;
   cursor: not-allowed;
@@ -433,12 +433,12 @@
   background: #fff5f4;
   color: #b42318;
 }
-.ai-mic.is-on .ai-mic__icon {
+.ai-mic.is-on.ai-mic__icon {
   background: #b42318;
   box-shadow: 0 0 0 4px rgba(180, 35, 24, 0.18);
   animation: ai-mic-pulse 1s ease-in-out infinite;
 }
-.ai-mic.is-on .ai-mic__label::after { content: "中…"; }
+.ai-mic.is-on.ai-mic__label::after { content: " Vừa …"; }
 @keyframes ai-mic-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }

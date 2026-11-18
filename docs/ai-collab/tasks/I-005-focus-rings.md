@@ -1,32 +1,32 @@
-# I-005 — page-premium 全局 focus-visible
+# I-005 — page-premium toàn cục focus-visible
 
-**状态：** done
+** Trạng thái: ** done
 
-## 目标
+## mục tiêu
 
-键盘导航在 premium 页可见 focus 环（a11y + 品质感）。
+ bàn phím Điều hướng tại premium trang có thể thấy được focus hoàn (a11y + phẩm chất cảm giác).
 
-## 允许改动
+## cho phép cải biến
 
 - `assets/css/dashboard-premium.css`
 
-## 禁止
+## cấm
 
-- 改 `:focus` 去掉 mouse click outline（仅用 `:focus-visible`）
+- sửa `:focus` xóa mouse click outline (chỉ dùng `:focus-visible`)
 
-## 变更
+## thay đổi
 
 ```css
 .page-premium a:focus-visible,
 .page-premium button:focus-visible,
-.page-premium .minimal-nav a:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(... var(--ring) ...); }
+.page-premium.minimal-nav a:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(... var(--ring)...); }
 ```
 
-## 验收
+## nghiệm thu
 
-- dashboard / zone / results：Tab 遍历 nav 与 btn
-- 鼠标点击不出现环（:focus-visible）
+- dashboard / zone / results: Tab lượt lịch nav và btn
+- con chuột nhấn vào không hiện ra hoàn (:focus-visible)
 
-## 回滚
+## quay về lăn
 
-删除 focus-visible 规则块。
+ xóa bỏ focus-visible quy tắc khối.

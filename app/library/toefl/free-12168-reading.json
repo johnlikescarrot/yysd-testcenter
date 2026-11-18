@@ -1,95 +1,95 @@
 {
- "id": "free-12168",
- "title": "Academic Passage #6",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #6",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12168,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-6"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "The Mechanization of Northern Agriculture in the Late Nineteenth Century",
-   "instruction": "Read the passage.",
-   "paras": [
-    "During the second half of the nineteenth century, the production of food and feed crops in the United States rose at an extraordinarily rapid rate. (A)Corn production increased by four and a half times, hay by five times, oats and wheat by seven times. (B)By 1850 horse-drawn reaping machines that cut grain were being introduced into the major grain-growing regions of the country. (C)Horse-powered threshing machines to separate the seeds from the plants were already in general use. (D)However, it was the onset of the Civil War in 1861 that provided the great stimulus for the mechanization of northern agriculture. With much of the labor force inducted into the army and with grain prices on the rise, northern farmers rushed to avail themselves of the new labor-saving equipment.",
-    "After the close of the war in 1865, machinery became ever more important in northern agriculture, and improved equipment was continually introduced. By 1880 a self-binding reaper had been perfected that not only cut the grain, but also gathered the stalks and bound them with twine. Threshing machines were also being improved and enlarged, and after 1870 they were increasingly powered by steam engines rather than by horses. Since steam-powered threshing machines were costly items—running from $1,000 to $4,000—they were usually owned by custom thresher owners who then worked their way from farm to farm during the harvest season."
-   ],
-   "questions": [
+  "id": "free-12168",
+  "title": "Academic Passage #6",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #6",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12168,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-6"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What aspect of farming in the United States in the nineteenth century does the passage mainly discuss?",
-     "options": {
-      "A": "How labor-saving machinery increased crop production",
-      "B": "Why southern farms were not as successful as northern farms",
-      "C": "Farming practices before the Civil War",
-      "D": "The increase in the number of people farming"
-     },
-     "answer": "A",
-     "analysis": "题型：主旨题 正确答案：A. How labor-saving machinery increased crop production 原文定位：首句提到农作物产量迅速增长，接着大量描述各种机械的使用和改进。 正确答案分析：整篇文章围绕农业机械化与产量增长之间的关系。 选项分析： B 没有对比南北农业成功与否。 C 前半段涉及战争前，但不是主旨。 D 农民人数的增加未被提及。"
-    },
-    {
-     "id": 2,
-     "stem": "According to the passage, why was the Civil War a stimulus for mechanization?",
-     "options": {
-      "A": "The army needed more grain in order to feed the soldiers.",
-      "B": "Technology developed for the war could also be used by farmers.",
-      "C": "It was hoped that harvesting more grain would lower the price of grain.",
-      "D": "Machines were needed to replace a disappearing labor force."
-     },
-     "answer": "D",
-     "analysis": "题型：细节题 正确答案：D. Machines were needed to replace a disappearing labor force. 原文定位：“With much of the labor force inducted into the army... farmers rushed to avail themselves of...labor-saving equipment.” 正确答案分析：因战争导致劳动力减少，农民需要依赖机械。 选项分析： A 没有提到军队粮食需求。 B 并未提及战争技术用于农业。 C 并非为了降低粮价，而是因价格上涨。"
-    },
-    {
-     "id": 3,
-     "stem": "The passage supports which of the following statements about machinery after the Civil War?",
-     "options": {
-      "A": "Many farmers preferred not to use the new machinery.",
-      "B": "Returning laborers replaced the use of machinery.",
-      "C": "The use of farm machinery continued to increase.",
-      "D": "Poor-quality machinery slowed the pace of crop production."
-     },
-     "answer": "C",
-     "analysis": "题型：细节题 正确答案：C. The use of farm machinery continued to increase. 原文定位：“After the close of the war... machinery became ever more important... improved equipment was continually introduced.” 正确答案分析：战争后机械化趋势加剧。 选项分析： A 没有说农民不愿意用新设备。 B 没有提到退伍士兵代替机器。 D 没有提到设备质量差。"
-    },
-    {
-     "id": 4,
-     "stem": "It can be inferred from the passage that most farmers did not own threshing machines because",
-     "options": {
-      "A": "farmers did not know how to use the new machines",
-      "B": "farmers had no space to keep the machines",
-      "C": "thresher owners had the chance to buy the machines before farmers did",
-      "D": "the machines were too expensive for every farmer to own"
-     },
-     "answer": "D",
-     "analysis": "题型：推理题 正确答案：D. the machines were too expensive for every farmer to own 原文定位：“they were usually owned by custom thresher owners”且“costly items—running from $1,000 to $4,000” 正确答案分析：机器价格高，导致农民一般不会自己购买，而由服务商提供。 选项分析： A 没有说农民不会操作机器。 B 没有涉及空间存储问题。 C 并非因为别人先买了，而是因价格问题。"
-    },
-    {
-     "id": 5,
-     "stem": "Where would the following sentence best fit in the paragraph? The most crucial factor behind this phenomenal upsurge in productivity was the widespread adoption of labor-saving machinery by northern farmers.",
-     "options": {
-      "A": "【A】",
-      "B": "【B】",
-      "C": "【C】",
-      "D": "【D】"
-     },
-     "answer": "B",
-     "analysis": "题型：句子插入题 正确答案：B 根据原句The most crucial factor behind this phenomenal upsurge in productivity was the widespread adoption of labor-saving machinery by northern farmers.，说明后文会讲机械化，前文会讲upsurge，对应B空格前后内容。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "The Mechanization of Northern Agriculture in the Late Nineteenth Century",
+      "instruction": "Read the passage.",
+      "paras": [
+        "During the second half of the nineteenth century, the production of food and feed crops in the United States rose at an extraordinarily rapid rate. (A)Corn production increased by four and a half times, hay by five times, oats and wheat by seven times. (B)By 1850 horse-drawn reaping machines that cut grain were being introduced into the major grain-growing regions of the country. (C)Horse-powered threshing machines to separate the seeds from the plants were already in general use. (D)However, it was the onset of the Civil War in 1861 that provided the great stimulus for the mechanization of northern agriculture. With much of the labor force inducted into the army and with grain prices on the rise, northern farmers rushed to avail themselves of the new labor-saving equipment.",
+        "After the close of the war in 1865, machinery became ever more important in northern agriculture, and improved equipment was continually introduced. By 1880 a self-binding reaper had been perfected that not only cut the grain, but also gathered the stalks and bound them with twine. Threshing machines were also being improved and enlarged, and after 1870 they were increasingly powered by steam engines rather than by horses. Since steam-powered threshing machines were costly items—running from $1,000 to $4,000—they were usually owned by custom thresher owners who then worked their way from farm to farm during the harvest season."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What aspect of farming in the United States in the nineteenth century does the passage mainly discuss?",
+          "options": {
+            "A": "How labor-saving machinery increased crop production",
+            "B": "Why southern farms were not as successful as northern farms",
+            "C": "Farming practices before the Civil War",
+            "D": "The increase in the number of people farming"
+          },
+          "answer": "A",
+          "analysis": "dạng bài: ý nghĩa chính câu Đáp án đúng: A. How labor-saving machinery increased crop production Bài gốc Dẫn chứng: đầu câu nhắc tới cây nông nghiệp sản lượng nhanh chóng tăng trưởng, tiếp theo đại lượng miêu tả các loại cơ giới sử dụng và cải tiến. Đáp án đúng phân tích: cả thiên văn chương quay chung quanh nông nghiệp cơ giới hoá và sản lượng tăng trưởng quan hệ trong đó. Phương án phân tích: B không có so sánh nam bắc nông nghiệp thành công hay không. C nửa đoạn trước liên quan đến trước chiến tranh, nhưng không phải ý nghĩa chính. D nông dân nhân số gia tăng không bị đề cập."
+        },
+        {
+          "id": 2,
+          "stem": "According to the passage, why was the Civil War a stimulus for mechanization?",
+          "options": {
+            "A": "The army needed more grain in order to feed the soldiers.",
+            "B": "Technology developed for the war could also be used by farmers.",
+            "C": "It was hoped that harvesting more grain would lower the price of grain.",
+            "D": "Machines were needed to replace a disappearing labor force."
+          },
+          "answer": "D",
+          "analysis": "dạng bài: chi tiết câu Đáp án đúng: D. Machines were needed to replace a disappearing labor force. Bài gốc Dẫn chứng: “With much of the labor force inducted into the army... farmers rushed to avail themselves of...labor-saving equipment.” Đáp án đúng phân tích: bởi vì chiến tranh dẫn đến sức lao động giảm bớt, nông dân cần ỷ lại máy móc. Phương án phân tích: A không có nói tới quân đội lương thực nhu cầu. B cũng không đề cập chiến tranh kỹ thuật dùng cho nông nghiệp. C cũng không phải là để giảm xuống giá lương thực, mà là bởi vì về giá cả phát triển."
+        },
+        {
+          "id": 3,
+          "stem": "The passage supports which of the following statements about machinery after the Civil War?",
+          "options": {
+            "A": "Many farmers preferred not to use the new machinery.",
+            "B": "Returning laborers replaced the use of machinery.",
+            "C": "The use of farm machinery continued to increase.",
+            "D": "Poor-quality machinery slowed the pace of crop production."
+          },
+          "answer": "C",
+          "analysis": "dạng bài: chi tiết câu Đáp án đúng: C. The use of farm machinery continued to increase. Bài gốc Dẫn chứng: “After the close of the war... machinery became ever more important... improved equipment was continually introduced.” Đáp án đúng phân tích: chiến tranh sau cơ giới hoá xu thế tăng lên. Phương án phân tích: A cũng không nói gì nông dân không muốn dùng mới thiết bị. B không có nói tới xuất ngũ binh sĩ thay thế máy móc. D không có nói tới thiết bị chất lượng chênh lệch."
+        },
+        {
+          "id": 4,
+          "stem": "It can be inferred from the passage that most farmers did not own threshing machines because",
+          "options": {
+            "A": "farmers did not know how to use the new machines",
+            "B": "farmers had no space to keep the machines",
+            "C": "thresher owners had the chance to buy the machines before farmers did",
+            "D": "the machines were too expensive for every farmer to own"
+          },
+          "answer": "D",
+          "analysis": "dạng bài: suy luận câu Đáp án đúng: D. the machines were too expensive for every farmer to own Bài gốc Dẫn chứng: “they were usually owned by custom thresher owners” mà lại “costly items—running from $1,000 to $4,000” Đáp án đúng phân tích: máy móc giá cả cao, dẫn đến nông dân bình thường sẽ không chính mình mua sắm, mà do phục vụ thương lượng cung cấp. Phương án phân tích: A cũng không nói gì nông dân sẽ không thao tác máy móc. B không có liên quan đến không gian tồn trữ vấn đề. C cũng không phải là vì người khác trước mua, mà là bởi vì giá cả vấn đề."
+        },
+        {
+          "id": 5,
+          "stem": "Where would the following sentence best fit in the paragraph? The most crucial factor behind this phenomenal upsurge in productivity was the widespread adoption of labor-saving machinery by northern farmers.",
+          "options": {
+            "A": "[A]",
+            "B": "[B]",
+            "C": "[C]",
+            "D": "[D]"
+          },
+          "answer": "B",
+          "analysis": "dạng bài: câu cắm vào câu Đáp án đúng: B dựa theo nguyên câu The most crucial factor behind this phenomenal upsurge in productivity was the widespread adoption of labor-saving machinery by northern farmers., nói rõ sau văn sẽ bộ đàm giới hóa, tiền văn sẽ giảng upsurge, đối ứng B khoảng trắng trước sau nội dung."
+        }
+      ]
+    }
+  ]
 }

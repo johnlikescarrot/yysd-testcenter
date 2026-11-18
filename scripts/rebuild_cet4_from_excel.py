@@ -11,7 +11,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCEL = Path("/Users/frankman/Desktop/四级单词List1-35.xlsx")
+EXCEL = Path("/Users/frankman/Desktop/ Từ vựng Đại học List1-35.xlsx")
 DATA = ROOT / "library" / "study" / "vocab-cet4-data"
 HTML_DIR = ROOT / "library" / "study" / "vocab-cet4"
 THEME_DIR = ROOT / "library" / "study" / "vocab-themes" / "data"
@@ -19,8 +19,8 @@ ARCHIVE = ROOT / "library" / ".archive" / "vocab-cet4-legacy"
 NODE = Path("/Users/frankman/.local/node/bin/node")
 
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_cet4_lists import render_html  # noqa: E402
-from draft_cet4_lists import accept_from_meaning, band_for, draft_entry  # noqa: E402
+from build_cet4_lists import render_html # noqa: E402
+from draft_cet4_lists import accept_from_meaning, band_for, draft_entry # noqa: E402
 
 # Prefer CET-4, then nearby exam packs for the few Excel headwords not in cet4.json.
 THEME_PACKS = (
@@ -60,8 +60,8 @@ def variant_keys(word: str) -> list[str]:
         add(p)
     # optional letter in parens: behavio(u)r, instal(l), catalog(ue)
     for m in re.finditer(r"\(([^)]+)\)", w):
-        add(w[: m.start()] + w[m.end() :])  # omit
-        add(w[: m.start()] + m.group(1) + w[m.end() :])  # include
+        add(w[: m.start()] + w[m.end():]) # omit
+        add(w[: m.start()] + m.group(1) + w[m.end():]) # include
     add(w.replace("é", "e").replace("É", "e"))
     return out
 
@@ -109,10 +109,10 @@ def load_bank() -> dict[str, dict]:
         if not key:
             return
         meaning = str(w.get("meaning") or "").strip()
-        weak = (not meaning) or ("待校对" in meaning)
+        weak = (not meaning) or (" đợi so với " in meaning)
         if key in bank:
             old_weak = (not str(bank[key].get("meaning") or "").strip()) or (
-                "待校对" in str(bank[key].get("meaning") or "")
+                " đợi so với " in str(bank[key].get("meaning") or "")
             )
             if weak and not old_weak:
                 return
@@ -122,9 +122,9 @@ def load_bank() -> dict[str, dict]:
         # also index slash/paren variants so center hits centre entry, etc.
         for vk in variant_keys(str(w.get("word") or "")):
             if vk not in bank or (
-                "待校对" in str(bank[vk].get("meaning") or "")
+                " đợi so với " in str(bank[vk].get("meaning") or "")
                 and meaning
-                and "待校对" not in meaning
+                and " đợi so với " not in meaning
             ):
                 bank[vk] = w
 
@@ -171,7 +171,7 @@ def load_excel() -> dict[int, list[str]]:
 
 def entry_for(i: int, word: str, bank: dict[str, dict]) -> dict:
     hit = bank_get(bank, word)
-    if hit and str(hit.get("meaning") or "").strip() and "待校对" not in str(hit.get("meaning") or ""):
+    if hit and str(hit.get("meaning") or "").strip() and " đợi so với " not in str(hit.get("meaning") or ""):
         out = dict(hit)
         out["id"] = i
         out["word"] = word
@@ -186,10 +186,10 @@ def entry_for(i: int, word: str, bank: dict[str, dict]) -> dict:
                 if isinstance(c, dict):
                     ph = c.get("phrase") or ""
                     me = c.get("meaning") or ""
-                    parts.append(f"{ph}（{me}）" if me else ph)
+                    parts.append(f"{ph} ({me}) " if me else ph)
                 else:
                     parts.append(str(c))
-            out["collocations"] = "，".join([p for p in parts if p])
+            out["collocations"] = ", ".join([p for p in parts if p])
             out["phrases"] = out.get("phrases") or out["collocations"]
         if out.get("exampleEn") and not out.get("exampleEN"):
             out["exampleEN"] = out["exampleEn"]
@@ -209,7 +209,7 @@ def main() -> int:
         print("missing excel", EXCEL, file=sys.stderr)
         return 1
     by = load_excel()
-    if sorted(by) != list(range(1, 36)):
+    if sorted(by)!= list(range(1, 36)):
         print("expected lists 1..35 got", sorted(by), file=sys.stderr)
         return 1
     bank = load_bank()
@@ -221,13 +221,13 @@ def main() -> int:
     stub = 0
     for n in range(1, 36):
         words = [entry_for(i, w, bank) for i, w in enumerate(by[n], 1)]
-        stub += sum(1 for w in words if "待校对" in str(w.get("meaning") or ""))
+        stub += sum(1 for w in words if " đợi so với " in str(w.get("meaning") or ""))
         meta = {
             "listNo": n,
             "band": band_for(n),
-            "title": f"单元 {n}",
+            "title": f" Bài {n}",
             "published": True,
-            "sourceNote": "Headword order from 四级单词List1-35.xlsx; definitions from CET-4 bank + theme lexicon.",
+            "sourceNote": "Headword order from Từ vựng Đại học List1-35.xlsx; definitions from CET-4 bank + theme lexicon.",
             "words": words,
         }
         jp = DATA / f"list-{n:02d}.json"
@@ -242,12 +242,12 @@ def main() -> int:
                 1,
             )
         html = html.replace("const wordData = [", "var wordData = [", 1)
-        out = HTML_DIR / f"四级单词LIST{n}.html"
+        out = HTML_DIR / f" Từ vựng Đại học LIST{n}.html"
         out.write_text(html, encoding="utf-8")
         print(f"LIST{n}: {len(words)} words → {out.name}")
 
     print("stub meanings", stub)
-    return 0 if stub == 0 else 0  # still ship; stubs printed for QA
+    return 0 if stub == 0 else 0 # still ship; stubs printed for QA
 
 
 if __name__ == "__main__":

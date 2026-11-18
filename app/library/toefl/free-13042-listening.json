@@ -1,57 +1,57 @@
 {
- "id": "free-13042",
- "title": "Conversation #64",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #64",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13042,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-64"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #64",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/4b51cd0efdd1485294c29405b4a86829.mp3",
-   "transcript": "Man: Have you tried using that new app our physics professor mentioned? I was going to download it, but then I figured I wouldn't have time to figure out how to use it.\nWoman: : I can totally show you. It's not that bad, and it's been helpful for our last couple of homework assignments.\nMan: Great, I was planning to go to the tutoring canter for extra help.\nWoman: You probably won't need to now. Here, I'll show you were to get it. And I have the code the professor gave us for the free trial.\nMan: I actually have that.",
-   "questions": [
+  "id": "free-13042",
+  "title": "Conversation #64",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #64",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13042,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-64"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Why did the man NOT download an app?",
-     "options": {
-      "A": "He did not realize it was required for class.",
-      "B": "He did not have a code he needed.",
-      "C": "He worried it would be difficult to learn.",
-      "D": "He thought it was too expensive."
-     },
-     "answer": "C",
-     "analysis": "答案: C 题目问的是: 男士为什么没有下载那个 App？ 定位原文: Man: \"I was going to download it, but then I figured I wouldn't have time to figure out how to use it.\" 选项分析: A. He did not realize it was required for class. (他没意识到这是课程要求的。) - 错误。对话中提到这是教授推荐的，且男士知道这个 App。 B. He did not have a code he needed. (他没有需要的兑换码。) - 错误。对话最后男士明确说 \"I actually have that\"（其实我有那个码）。 C. He worried it would be difficult to learn. (他担心学起来很难/很费时。) - 正确。男士说\"wouldn't have time to figure out how to use it\"，暗示他认为学习使用这个 App 需要花费大量时间，即担心上手难度大。 D. He thought it was too expensive. (他觉得太贵了。) - 错误。对话中提到了 \"free trial\"（免费试用），并未提及价格顾虑。"
-    },
-    {
-     "id": 2,
-     "stem": "Why does the man mention a tutoring center?",
-     "options": {
-      "A": "To share his original plan",
-      "B": "To describe his new job",
-      "C": "To explain his problem",
-      "D": "To make a recommendation"
-     },
-     "answer": "A",
-     "analysis": "答案: A 题目问的是: 男士为什么要提到辅导中心（tutoring center）？ 定位原文: Man: \"Great, I was planning to go to the tutoring center for extra help.\" 选项分析: A. To share his original plan (为了分享他原本的计划) - 正确。男士使用过去进行时 \"was planning to\"，表明在女士提出帮忙之前，这是他原本的打算，现在因为有了女士的帮助可能不再需要去了。 B. To describe his new job (为了描述他的新工作) - 错误。辅导中心是学生寻求帮助的地方，不是工作地点。 C. To explain his problem (为了解释他的问题) - 错误。他的问题是物理作业难，辅导中心是解决方案，不是问题本身。 D. To make a recommendation (为了给出一个推荐) - 错误。他是陈述自己的计划，而不是建议女士去。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #64",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/4b51cd0efdd1485294c29405b4a86829.mp3",
+      "transcript": "Man: Have you tried using that new app our physics professor mentioned? I was going to download it, but then I figured I wouldn't have time to figure out how to use it.\nWoman: : I can totally show you. It's not that bad, and it's been helpful for our last couple of homework assignments.\nMan: Great, I was planning to go to the tutoring canter for extra help.\nWoman: You probably won't need to now. Here, I'll show you were to get it. And I have the code the professor gave us for the free trial.\nMan: I actually have that.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Why did the man NOT download an app?",
+          "options": {
+            "A": "He did not realize it was required for class.",
+            "B": "He did not have a code he needed.",
+            "C": "He worried it would be difficult to learn.",
+            "D": "He thought it was too expensive."
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: nam sĩ vì sao không có download đó App? Dẫn chứng Bài gốc: Man: \"I was going to download it, but then I figured I wouldn't have time to figure out how to use it.\" Phương án phân tích: A. He did not realize it was required for class. (anh ấy không có ý thức được đây là chương trình học yêu cầu.) - Sai. trong lúc nói chuyện với nhau nhắc tới đây là dạy dỗ đề cử, mà lại nam sĩ biết rõ này App. B. He did not have a code he needed. (hắn không có cần đổi con ngựa.) - Sai. đối thoại cuối cùng nam sĩ rõ ràng nói \"I actually have that\" (kỳ thật ta có đó con ngựa). C. He worried it would be difficult to learn. (anh ấy lo lắng học rất khó / rất tốn thời gian.) - Đúng. nam sĩ nói \"wouldn't have time to figure out how to use it\", ám chỉ anh ấy cho rằng Học tập sử dụng này App cần tiêu phí đại lượng thời gian, tiếp xúc lo lắng thượng thủ độ khó lớn. D. He thought it was too expensive. (anh ấy cảm thấy quá mắc.) - Sai. trong lúc nói chuyện với nhau nhắc tới \"free trial\" (miễn phí dùng thử), cũng không đề cập giá cả băn khoăn."
+        },
+        {
+          "id": 2,
+          "stem": "Why does the man mention a tutoring center?",
+          "options": {
+            "A": "To share his original plan",
+            "B": "To describe his new job",
+            "C": "To explain his problem",
+            "D": "To make a recommendation"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: nam sĩ tại sao phải nhắc tới phụ đạo trung tâm (tutoring center)? Dẫn chứng Bài gốc: Man: \"Great, I was planning to go to the tutoring center for extra help.\" Phương án phân tích: A. To share his original plan (để chia sẻ anh ấy kế hoạch nguyên thủy) - Đúng. nam sĩ sử dụng qua đi tiến hành lúc \"was planning to\", cho thấy tại phu nhân đưa ra hỗ trợ lúc trước, đây là hắn vốn là ý định, hiện tại vì đã có phu nhân trợ giúp khả năng không hề cần phải đi rồi. B. To describe his new job (để miêu tả của anh ấy công tác mới) - Sai. phụ đạo trung tâm là Học viên tìm kiếm trợ giúp địa phương, không phải công tác địa điểm. C. To explain his problem (để giải thích vấn đề của hắn) - Sai. vấn đề của hắn là Vật lý bài tập Khó, phụ đạo trung tâm là phương án giải quyết, không là vấn đề bản thân. D. To make a recommendation (để cho ra một cái Đề xuất) - Sai. hắn là trần thuật kế hoạch của mình, mà không phải đề nghị phu nhân đi."
+        }
+      ]
+    }
+  ]
 }

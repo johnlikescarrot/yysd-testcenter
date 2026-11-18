@@ -1,46 +1,46 @@
 {
- "id": "free-12834",
- "title": "Choose a Response #189",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #189",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12834,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-189"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #189",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/a168c0659bf24a13a60cbd628b161cb4.mp3",
-   "questions": [
+  "id": "free-12834",
+  "title": "Choose a Response #189",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #189",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12834,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-189"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "They usually study together.",
-      "B": "The library is past the cafeteria.",
-      "C": "I think it's time to do it.",
-      "D": "Some new classroom equipment."
-     },
-     "answer": "C",
-     "transcript": "Should we repaint the classrooms in that building?",
-     "stemZh": "我们应该重新粉刷那栋楼的教室吗？",
-     "analysis": "Should we repaint the classrooms in that building? 题干分析 题干是由 Should 引导的建议疑问句，意为 “我们应该重新粉刷那栋楼的教室吗？”，考点是对建议类问题作出合理回应。 选项分析 选项 A：回答内容为 “他们通常一起学习”，与粉刷教室无关，答非所问。 选项 B：回答内容为 “图书馆在自助餐厅旁边”，与话题无关。 选项 C：此选项为正确答案，直接表示赞同，认为是时候粉刷了，符合对话逻辑。 选项 D：回答内容为 “一些新的教室设备”，与问题无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #189",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/a168c0659bf24a13a60cbd628b161cb4.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "They usually study together.",
+            "B": "The library is past the cafeteria.",
+            "C": "I think it's time to do it.",
+            "D": "Some new classroom equipment."
+          },
+          "answer": "C",
+          "transcript": "Should we repaint the classrooms in that building?",
+          "stemZh": "chúng tôi nên một lần nữa trát phấn cái kia tòa nhà lầu phòng học không?",
+          "analysis": "Should we repaint the classrooms in that building? Câu hỏi phân tích Câu hỏi là do Should dẫn dắt đề nghị câu nghi vấn, ý là “ chúng tôi nên một lần nữa trát phấn cái kia tòa nhà lầu phòng học không? ”, địa điểm thi là đúng đề nghị loại vấn đề làm ra hợp lý đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ họ bình thường cùng một chỗ Học tập ”, và trát phấn phòng học không quan hệ, đáp phi sở vấn. Phương án B: trả lời nội dung là “ đồ thư quán tại từ trợ nhà hàng bên cạnh ”, và chủ đề không quan hệ. Phương án C: này Phương án là Đáp án đúng, trực tiếp biểu thị đồng ý, cho rằng là thời điểm quét vôi, phù hợp đối thoại ăn khớp. Phương án D: trả lời nội dung là “ một ít mới đích phòng học thiết bị ”, và vấn đề không quan hệ."
+        }
+      ]
+    }
+  ]
 }

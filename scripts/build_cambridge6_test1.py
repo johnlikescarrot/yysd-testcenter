@@ -18,7 +18,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑6T1.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 6T1.docx")
 SPORTS_CLUB_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-02_14.22.37-3b7dfd8d-bcfd-47f2-a907-072abd1b124c.png"
@@ -32,10 +32,10 @@ WATER_USE_SRC = Path(
     "__2026-07-02_14.22.58-7c41d64f-997e-4b06-bad9-0b72670a13c9.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test1 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test1 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test1 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test1 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test1 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test1 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test1 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test1 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-6-test-1.html"
@@ -59,7 +59,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -75,27 +75,27 @@ def inject_state_vars(html: str) -> str:
 
 
 def patch_note_image(html: str) -> str:
-    if "const fig=(g.image?" not in html and "if(g.kind==='note'){\n    body=`" in html:
+    if "const fig=(g.image?" not in html and "if(g.kind==='note'){\n body=`" in html:
         insert = (
-            "  if(g.kind==='note'){\n"
-            "    const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+            " if(g.kind==='note'){\n"
+            " const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
             "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.noteTitle||'map'}\" "
             "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-            "    body=fig+`"
+            " body=fig+`"
         )
-        html = html.replace("  if(g.kind==='note'){\n    body=`", insert, 1)
+        html = html.replace(" if(g.kind==='note'){\n body=`", insert, 1)
     return html
 
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 4 听力", "剑桥雅思6 Test 1 听力"),
-        ("剑桥雅思7 · Test 4（听力）", "剑桥雅思6 · Test 1（听力）"),
-        ("剑桥雅思7 Test 4 听力：", "剑桥雅思6 Test 1 听力："),
-        ("Test 4 听力（官方原题 + 官方答案）", "Test 1 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 Test 4 Nghe ", "Cambridge IELTS 6 Test 1 Nghe "),
+        ("Cambridge IELTS 7 · Test 4 (Nghe) ", "Cambridge IELTS 6 · Test 1 (Nghe) "),
+        ("Cambridge IELTS 7 Test 4 Nghe: ", "Cambridge IELTS 6 Test 1 Nghe: "),
+        ("Test 4 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
-        ("剑桥雅思 7 · Test 4", "剑桥雅思 6 · Test 1"),
-        ("剑桥雅思7 · Test 4", "剑桥雅思6 · Test 1"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("test-4", "test-1"),
         ("ielts7_test4", "ielts6_test1"),
     ]
@@ -107,13 +107,13 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 4 阅读", "剑桥雅思6 Test 1 阅读"),
-        ("剑桥雅思7 · Test 4（阅读）", "剑桥雅思6 · Test 1（阅读）"),
-        ("剑桥雅思7 Test 4 学术类阅读", "剑桥雅思6 Test 1 学术类阅读"),
+        ("Cambridge IELTS 7 Test 4 Đọc ", "Cambridge IELTS 6 Test 1 Đọc "),
+        ("Cambridge IELTS 7 · Test 4 (Đọc) ", "Cambridge IELTS 6 · Test 1 (Đọc) "),
+        ("Cambridge IELTS 7 Test 4 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 6 Test 1 Đọc Học thuật (Academic Reading) "),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
-        ("剑桥雅思 7 · Test 4", "剑桥雅思 6 · Test 1"),
-        ("剑桥雅思7 · Test 4", "剑桥雅思6 · Test 1"),
-        ("Test 4 阅读（官方原题 + 官方答案）", "Test 1 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
+        ("Test 4 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
     ]
@@ -124,19 +124,19 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 4 写作", "剑桥雅思6 Test 1 写作"),
-        ("剑桥雅思7 · Test 4（写作）", "剑桥雅思6 · Test 1（写作）"),
-        ("剑桥雅思7 Test 4 学术类写作", "剑桥雅思6 Test 1 学术类写作"),
+        ("Cambridge IELTS 7 Test 4 Viết ", "Cambridge IELTS 6 Test 1 Viết "),
+        ("Cambridge IELTS 7 · Test 4 (Viết) ", "Cambridge IELTS 6 · Test 1 (Viết) "),
+        ("Cambridge IELTS 7 Test 4 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 6 Test 1 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 electricity production pie charts + Task 2 university function essay",
             "Task 1 global water use graph + Task 2 consumer goods and advertising essay",
         ),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
-        ("剑桥雅思 7 · Test 4", "剑桥雅思 6 · Test 1"),
-        ("剑桥雅思7 · Test 4", "剑桥雅思6 · Test 1"),
-        ("Test 4 写作（官方真题）", "Test 1 写作（官方真题）"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
+        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
+        ("Test 4 Viết (Đề thi chính thức) ", "Test 1 Viết (Đề thi chính thức) "),
         ("cambridge-7-test-4-writing-draft", "cambridge-6-test-1-writing-draft"),
-        ("【剑桥雅思7 · Test 4 写作】", "【剑桥雅思6 · Test 1 写作】"),
+        ("[Cambridge IELTS 7 · Test 4 Viết]", "[Cambridge IELTS 6 · Test 1 Viết]"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
         ("electricity-production", "water-use"),
@@ -355,8 +355,8 @@ def listening_test() -> dict:
                             {"plain": True, "html": "The Business Resource Centre contains materials such as books and manuals to be used for training. It is possible to hire <Q n=\"26\"> and <Q n=\"27\">. There are materials for working on study skills (e.g. <Q n=\"28\">) and other subjects include finance and <Q n=\"29\">. <Q n=\"30\"> membership costs £50 per year."},
                         ],
                         "questions": [
-                            {"id": "L26", "no": 26, "answer": ans("laptops", "printers"), "explain": "答案：laptops 与 printers，顺序不限。"},
-                            {"id": "L27", "no": 27, "answer": ans("printers", "laptops"), "explain": "答案：laptops 与 printers，顺序不限。"},
+                            {"id": "L26", "no": 26, "answer": ans("laptops", "printers"), "explain": " Đáp án: laptops và printers, không giới hạn thứ tự. "},
+                            {"id": "L27", "no": 27, "answer": ans("printers", "laptops"), "explain": " Đáp án: laptops và printers, không giới hạn thứ tự. "},
                             {"id": "L28", "no": 28, "answer": ans("report writing"), "explain": explain("report writing")},
                             {"id": "L29", "no": 29, "answer": ans("marketing"), "explain": explain("marketing")},
                             {"id": "L30", "no": 30, "answer": ans("Individual"), "explain": explain("Individual")},
@@ -403,8 +403,8 @@ def listening_test() -> dict:
                         ],
                         "questions": [
                             {"id": "L34", "no": 34, "answer": ans("water"), "explain": explain("water")},
-                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "答案：meat 与 cheese，顺序不限。"},
-                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "答案：meat 与 cheese，顺序不限。"},
+                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": " Đáp án: meat và cheese, không giới hạn thứ tự. "},
+                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": " Đáp án: meat và cheese, không giới hạn thứ tự. "},
                             {"id": "L37", "no": 37, "answer": ans("new taste", "5th taste", "fifth taste"), "explain": explain("new taste", "5th taste", "fifth taste")},
                             {"id": "L38", "no": 38, "answer": ans("common"), "explain": explain("common")},
                             {"id": "L39", "no": 39, "answer": ans("bitterness"), "explain": explain("bitterness")},
@@ -577,8 +577,8 @@ def reading_test() -> dict:
             ],
             "questions": [
                 {"id": "Q33", "no": 33, "answer": ans("farming"), "explain": explain("farming")},
-                {"id": "Q34", "no": 34, "answer": ans("sea mammals", "fish"), "explain": "答案：sea mammals 与 fish，顺序不限。"},
-                {"id": "Q35", "no": 35, "answer": ans("fish", "sea mammals"), "explain": "答案：sea mammals 与 fish，顺序不限。"},
+                {"id": "Q34", "no": 34, "answer": ans("sea mammals", "fish"), "explain": " Đáp án: sea mammals và fish, không giới hạn thứ tự. "},
+                {"id": "Q35", "no": 35, "answer": ans("fish", "sea mammals"), "explain": " Đáp án: sea mammals và fish, không giới hạn thứ tự. "},
                 {"id": "Q36", "no": 36, "answer": ans("Thule"), "explain": explain("Thule")},
                 {"id": "Q37", "no": 37, "answer": ans("islands"), "explain": explain("islands")},
                 {"id": "Q38", "no": 38, "answer": ans("nomadic"), "explain": explain("nomadic")},

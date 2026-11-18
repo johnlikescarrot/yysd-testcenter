@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>学情报告 · 优益思达</title>
+  <title>học tin tức báo · YYSD</title>
+  <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <style>
     :root { --ink: #1c1e1a; --muted: #5c6358; --line: #d5d7cf; --olive: #3a4a36; --paper: #f7f7f3; }
     * { box-sizing: border-box; }
-    body { margin: 0; font: 14px/1.55 -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif; color: var(--ink); background: var(--paper); }
+    body { margin: 0; font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Noto Sans SC", sans-serif; color: var(--ink); background: var(--paper); }
     .rpt-bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 12px 20px; background: #fff; border-bottom: 1px solid var(--line); }
-    .rpt-bar a, .rpt-bar button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: #fff; color: var(--ink); text-decoration: none; cursor: pointer; }
+    .rpt-bar a,.rpt-bar button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: #fff; color: var(--ink); text-decoration: none; cursor: pointer; }
     .rpt-bar button.primary { background: var(--olive); border-color: var(--olive); color: #fff; }
     .rpt { max-width: 820px; margin: 24px auto 64px; padding: 0 20px; }
     .rpt-cover { border-bottom: 2px solid var(--olive); padding-bottom: 16px; margin-bottom: 22px; }
-    .rpt-cover .eyebrow { letter-spacing: 0.14em; font-size: 11px; color: var(--olive); font-weight: 700; margin: 0 0 6px; }
+    .rpt-cover.eyebrow { letter-spacing: 0.14em; font-size: 11px; color: var(--olive); font-weight: 700; margin: 0 0 6px; }
     .rpt-cover h1 { margin: 0 0 8px; font-size: 26px; }
     .rpt-cover p { margin: 0; color: var(--muted); }
     .rpt-empty { padding: 48px 0; text-align: center; font-size: 20px; font-weight: 650; }
@@ -37,21 +38,21 @@
     .rpt-wrong li { margin: 0 0 6px; }
     .rpt-essay { white-space: pre-wrap; background: #fff; border: 1px solid var(--line); padding: 10px; font: inherit; }
     .err { color: #8a1f1f; padding: 40px 20px; text-align: center; }
-    @media (max-width: 640px) { .rpt-kpis { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {.rpt-kpis { grid-template-columns: 1fr 1fr; } }
     @media print {
       body { background: #fff; }
-      .no-print { display: none !important; }
+      .no-print { display: none!important; }
       .rpt { max-width: none; margin: 0; padding: 0; }
-      .rpt-kpi, table, .rpt-essay { box-shadow: none; }
+      .rpt-kpi, table,.rpt-essay { box-shadow: none; }
     }
   </style>
 </head>
 <body>
   <div class="rpt-bar no-print">
-    <a id="rpt-back" href="teacher.html">返回学生主页</a>
-    <button type="button" class="primary" id="rpt-print">打印 / 存 PDF</button>
+    <a id="rpt-back" href="teacher.html"> Quay lại Học viên trang chủ</a>
+    <button type="button" class="primary" id="rpt-print">đóng dấu / tồn PDF</button>
   </div>
-  <div class="rpt" id="rpt-root"><p>加载中…</p></div>
+  <div class="rpt" id="rpt-root"><p>Đang tải …</p></div>
   <script src="assets/js/config.js?v=20261020full22"></script>
   <script src="assets/js/auth.js?v=20261013perm1"></script>
   <script src="assets/js/teacher-auth.js?v=20260828rpt1"></script>

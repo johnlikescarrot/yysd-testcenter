@@ -1,57 +1,57 @@
 {
- "id": "free-13024",
- "title": "Conversation #46",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #46",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13024,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-46"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #46",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/9ebdc6dae9c84b07a9edfd5d172477f0.mp3",
-   "transcript": "Woman: My lease is up at the end of the month.\nMan: Have you started looking for a new apartment to rent yet?\nWoman: Yes, but I haven’t found anything that I like.\nMan: Have you tried looking downtown? Now that they’ve finally finished building the giant new hotel there, it’s a much cleaner and quieter area.\nWoman: That’s a good idea. I’ll check online tonight.",
-   "questions": [
+  "id": "free-13024",
+  "title": "Conversation #46",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #46",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13024,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-46"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the woman trying to do?",
-     "options": {
-      "A": "Find a new job",
-      "B": "Rent a new apartment",
-      "C": "Renew a lease",
-      "D": "Book a hotel room"
-     },
-     "answer": "B",
-     "analysis": "题干分析 问题询问女士试图做什么，属于主旨/目的理解题，需抓住女士的核心需求和对话主题。 选项分析 选项A：错误。 对话中讨论的是租房，而非找工作，属于概念混淆。 选项B：正确。 女士说“My lease is up at the end of the month”，男士问她是否开始找新公寓，女士回答“Yes, but I haven't found anything that I like”，说明她正在试图租一套新公寓。 选项C：错误。 女士的租约即将到期，她正在寻找新公寓，而非续租现公寓，属于与原文意思不符。 选项D：错误。 对话中提到新酒店（new hotel）只是作为 downtown 区域环境改善的标志，而非女士要订酒店房间。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the man imply when he mentions a new hotel?",
-     "options": {
-      "A": "The woman should book a room in the new hotel.",
-      "B": "The woman should check information about the new hotel online.",
-      "C": "Downtown apartments are very expensive.",
-      "D": "The downtown area was not a nice place to live until recently."
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问男士提到新酒店时暗示了什么，属于推理判断题，需结合男士对 downtown 区域变化的描述来理解。 选项分析 选项A：错误。 男士建议女士去 downtown 找公寓，而非建议她订酒店房间，属于张冠李戴。 选项B：错误。 女士说晚上会上网查询，但男士并未暗示她要查关于新酒店的信息，他提到酒店是为了说明区域环境的变化。 选项C：错误。 对话中没有提到 downtown 公寓的价格，属于无中生有。 选项D：正确。 男士说“Now that they've finally finished building the giant new hotel there, it's a much cleaner and quieter area”，暗示在过去酒店建成之前，downtown 区域可能更脏更吵，即直到最近才变得宜居。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #46",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/9ebdc6dae9c84b07a9edfd5d172477f0.mp3",
+      "transcript": "Woman: My lease is up at the end of the month.\nMan: Have you started looking for a new apartment to rent yet?\nWoman: Yes, but I haven’t found anything that I like.\nMan: Have you tried looking downtown? Now that they’ve finally finished building the giant new hotel there, it’s a much cleaner and quieter area.\nWoman: That’s a good idea. I’ll check online tonight.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the woman trying to do?",
+          "options": {
+            "A": "Find a new job",
+            "B": "Rent a new apartment",
+            "C": "Renew a lease",
+            "D": "Book a hotel room"
+          },
+          "answer": "B",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm phu nhân ý đồ làm cái gì, thuộc về ý nghĩa chính / mục đích lý giải câu, cần bắt lấy phu nhân hạch tâm nhu cầu và đối thoại chủ đề. Phương án phân tích Phương án A: Sai. trong lúc nói chuyện với nhau thảo luận là phòng cho thuê, mà không phải là tìm việc làm, thuộc về khái niệm lẫn lộn. Phương án B: Đúng. phu nhân nói “My lease is up at the end of the month”, nam sĩ hỏi nàng có hay Chưa bắt đầu tìm mới nhà trọ, phu nhân trả lời “Yes, but I haven't found anything that I like”, nói rõ cô ấy đang ý đồ thuê một bộ mới nhà trọ. Phương án C: Sai. phu nhân khế ước thuê mướn sắp đến kỳ, cô ấy đang tìm mới nhà trọ, mà không phải là tục thuê hiện nhà trọ, thuộc về và Bài gốc ý tứ không hợp. Phương án D: Sai. trong lúc nói chuyện với nhau nhắc tới rượu mới điếm (new hotel) chẳng qua là với tư cách downtown khu vực Môi trường cải thiện tiêu chí, mà không phải là phu nhân muốn đặt khách sạn gian phòng."
+        },
+        {
+          "id": 2,
+          "stem": "What does the man imply when he mentions a new hotel?",
+          "options": {
+            "A": "The woman should book a room in the new hotel.",
+            "B": "The woman should check information about the new hotel online.",
+            "C": "Downtown apartments are very expensive.",
+            "D": "The downtown area was not a nice place to live until recently."
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm nam sĩ nhắc tới rượu mới điếm lúc ám hiệu gì, thuộc về suy luận Đúng / Sai / Không đề cập, cần kết hợp nam sĩ đối với downtown khu vực biến hóa miêu tả đến lý giải. Phương án phân tích Phương án A: Sai. nam sĩ đề nghị phu nhân đi downtown tìm nhà trọ, mà không phải là đề nghị cô ấy đính khách sạn gian phòng, thuộc về râu ông nọ cắm cằm bà kia. Phương án B: Sai. phu nhân nói buổi tối trong buổi họp mạng lưới điều tra, nhưng nam sĩ cũng không ám chỉ cô ấy muốn tra về rượu mới điếm tin tức, anh ấy nhắc tới khách sạn là vì nói rõ khu vực hoàn cảnh biến hóa. Phương án C: Sai. trong lúc nói chuyện với nhau không có nói tới downtown nhà trọ giá cả, thuộc về bịa đặt. Phương án D: Đúng. nam sĩ nói “Now that they've finally finished building the giant new hotel there, it's a much cleaner and quieter area”, ám chỉ trong quá khứ khách sạn xây dựng thành công lúc trước, downtown khu vực khả năng càng bẩn càng nhao nhao, tiếp xúc thẳng đến gần nhất mới trở nên nghi cư."
+        }
+      ]
+    }
+  ]
 }

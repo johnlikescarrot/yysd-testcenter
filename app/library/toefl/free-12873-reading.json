@@ -1,96 +1,96 @@
 {
- "id": "free-12873",
- "title": "Academic Passage #26",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #26",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12873,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-26"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "The Paradox of Choice",
-   "instruction": "Read the passage.",
-   "paras": [
-    "The paradox of choice, a concept popularized by psychologist Barry Schwartz, suggests that more options can lead to less satisfaction. While the freedom to choose is fundamental to consumer culture, an overabundance of choices—from groceries to electronics—can overwhelm individuals, causing anxiety and decision fatigue. This paradox implies that the vast array of possibilities available today might actually diminish consumer contentment, as the fear of making the wrong choice looms large.",
-    "Research supports this notion. In an experiment, psychologist Sheena Iyengar found that shoppers were more likely to purchase jam when offered 6 varieties instead of 24. The limited selection eased the decision process, reducing the pressure to find the ‘perfect’ option and making the experience more enjoyable. This phenomenon reveals that fewer choices can sometimes make consumers happier, which is a valuable insight for marketers and retailers aiming to boost satisfaction by curating their offerings.",
-    "The paradox also has broader implications. In individualistic cultures, where personal choice is highly valued, the burden of decision- making can be significant. Conversely, collectivist cultures, which often provide fewer choices, report higher levels of contentment. This dynamic suggests that understanding cultural differences in consumer psychology can help businesses optimize their product strategies and enhance overall well- being."
-   ],
-   "questions": [
+  "id": "free-12873",
+  "title": "Academic Passage #26",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #26",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12873,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-26"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Which of the following best states a main idea of the passage?",
-     "options": {
-      "A": "Effective marketing strategies focus on increasing product options.",
-      "B": "Modern consumer culture is driven by a demand for fewer products.",
-      "C": "Individualism enhances consumer contentment.",
-      "D": "Limiting consumer choices can lead to higher satisfaction."
-     },
-     "answer": "D",
-     "analysis": "正确答案：D 题型： 主旨题 原文定位（全文核心）： 文章开篇提出 “选择悖论”—— 更多选择反而会降低满意度；随后通过实验证明，较少的选择能减轻决策压力、提升消费者愉悦感；最后拓展到文化层面，说明集体主义文化中较少的选择带来更高的满足感。 正确答案分析： 全文围绕 “选择悖论” 展开，核心观点是 “过多选择会降低满意度，而限制选择反而能提升满意度”，选项 D 准确概括了这一主旨，因此正确。 选项分析： (A) Effective marketing strategies focus on increasing product options. —— 错误，文中明确提到较少选择能提升满意度，对营销者的启示是精选产品，而非增加选项。(B) Modern consumer culture is driven by a demand for fewer products. —— 错误，文中未提及 “现代消费文化由对更少产品的需求驱动”，仅说过多选择会带来问题。 (C) Individualism enhances consumer contentment. —— 错误，文中提到个人主义文化中，选择的负担会降低满足感，与选项表述相反。 (D) Limiting consumer choices can lead to higher satisfaction. —— 正确，符合全文核心观点，实验结果和文化层面的例子均能印证。"
-    },
-    {
-     "id": 2,
-     "stem": "What is one effect of decision fatigue as mentioned in the passage?",
-     "options": {
-      "A": "Desire to make the same choices as other consumers",
-      "B": "Anxiety about making the wrong choice",
-      "C": "Preference for consumer cultures",
-      "D": "Enhanced freedom to choose"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 细节题 原文定位： “While the freedom to choose is fundamental to consumer culture, an overabundance of choices—from groceries to electronics—can overwhelm individuals, causing anxiety and decision fatigue. This paradox implies that the vast array of possibilities available today might actually diminish consumer contentment, as the fear of making the wrong choice looms large.” 正确答案分析： 文中明确提到，过多选择会导致焦虑和决策疲劳，而这种选择悖论的核心影响之一是 “对做出错误选择的恐惧”，即决策疲劳会引发对选错的焦虑，选项 B 是决策疲劳的直接影响之一，因此正确。 选项分析： (A) Desire to make the same choices as other consumers —— 错误，文中未提及 “渴望和其他消费者做相同选择”，无相关信息。 (B) Anxiety about making the wrong choice —— 正确，与原文 “过多选择导致焦虑、决策疲劳，以及对选错的恐惧” 完全对应。 (C) Preference for consumer cultures —— 错误，文中未提及决策疲劳会让人偏好消费文化，二者无关联。 (D) Enhanced freedom to choose —— 错误，决策疲劳是过多选择（自由度过高）带来的结果，而非提升选择自由。"
-    },
-    {
-     "id": 3,
-     "stem": "Why does the author mention Sheena lyengar’s experiment?",
-     "options": {
-      "A": "To highlight the effectiveness of marketing strategies",
-      "B": "To explain the methodology used in consumer psychology",
-      "C": "To provide evidence supporting the paradox of choice",
-      "D": "To criticize the abundance of products in modern markets"
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 修辞目的题 原文定位： “Research supports this notion. In an experiment, psychologist Sheena lyengar found that shoppers were more likely to purchase jam when offered 6 varieties instead of 24.” 正确答案分析： 文中开篇提出 “选择悖论” 这一观点，随后用 “Research supports this notion” 引出实验，实验结果（较少选择让消费者更愿意购买、体验更愉悦）正是为了证明 “选择越多，满意度越低” 的悖论，即提供支持该悖论的证据，选项 C 正确。 选项分析： (A) To highlight the effectiveness of marketing strategies —— 错误，实验给营销者提供了启示，但作者提及实验的核心目的是证明悖论，而非强调营销策略的有效性。(B) To explain the methodology used in consumer psychology —— 错误，文中仅介绍实验结果，未解释实验方法或消费心理学的研究方法。 (C) To provide evidence supporting the paradox of choice —— 正确，符合 “提出观点→用实验提供证据” 的逻辑，实验是对选择悖论的佐证。 (D) To criticize the abundance of products in modern markets —— 错误，实验未体现对 “产品过多” 的批评，仅客观呈现选择数量对消费者的影响。"
-    },
-    {
-     "id": 4,
-     "stem": "The word “curating” in the passage is closest in meaning to",
-     "options": {
-      "A": "eliminating",
-      "B": "organizing",
-      "C": "increasing",
-      "D": "changing"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 词汇题 原文定位： “This phenomenon reveals that fewer choices can sometimes make consumers happier, which is a valuable insight for marketers and retailers aiming to boost satisfaction by curating their offerings.” 正确答案分析： “curating” 意为 “精选、整理、规划”，在上下文中，实验表明较少选择能提升满意度，因此对营销者和零售商的启示是 “通过精选（整理）产品供应来提升消费者满意度”。因此 “organizing”（整理、规划）是最接近的含义，贴合 “筛选、优化产品供应” 的语境。 选项分析： (A) eliminating 消除 —— 错误，curating 是 “精选、整理”，并非完全消除产品，语义过重。 (B) organizing 整理、规划 —— 正确，与 curating 语义一致，符合 “优化产品供应、减少过多选择” 的语境。 (C) increasing 增加 —— 错误，与上下文 “较少选择更有利” 相悖，curating 不是增加产品。 (D) changing 改变 —— 错误，curating 侧重 “筛选、整理”，而非单纯改变产品，语义不匹配。"
-    },
-    {
-     "id": 5,
-     "stem": "What can be inferred about consumers in collectivist cultures?",
-     "options": {
-      "A": "They tend to report lower levels of satisfaction.",
-      "B": "They are more affected by the paradox of choice.",
-      "C": "They generally have fewer choices available.",
-      "D": "They prefer individual decision-making."
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 推理题 原文定位： “Conversely, collectivist cultures, which often provide fewer choices, report higher levels of contentment.” 正确答案分析： 文中明确提到，集体主义文化 “通常提供更少的选择”，并因此有更高的满足感。由此可推断，集体主义文化中的消费者通常能获得的选择更少，选项 C 是可直接推断出的内容，因此正确。 选项分析： (A) They tend to report lower levels of satisfaction. —— 错误，文中明确说集体主义文化的消费者满意度更高，与选项表述相反。 (B) They are more affected by the paradox of choice. —— 错误，集体主义文化选择少，而选择悖论是 “过多选择带来的问题”，因此他们受悖论影响更小。 (C) They generally have fewer choices available. —— 正确，原文 “collectivist cultures, which often provide fewer choices” 直接支持该推断。 (D) They prefer individual decision-making. —— 错误，文中提到个人主义文化重视个人选择，集体主义文化与之相反，不会偏好个人决策。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "The Paradox of Choice",
+      "instruction": "Read the passage.",
+      "paras": [
+        "The paradox of choice, a concept popularized by psychologist Barry Schwartz, suggests that more options can lead to less satisfaction. While the freedom to choose is fundamental to consumer culture, an overabundance of choices—from groceries to electronics—can overwhelm individuals, causing anxiety and decision fatigue. This paradox implies that the vast array of possibilities available today might actually diminish consumer contentment, as the fear of making the wrong choice looms large.",
+        "Research supports this notion. In an experiment, psychologist Sheena Iyengar found that shoppers were more likely to purchase jam when offered 6 varieties instead of 24. The limited selection eased the decision process, reducing the pressure to find the ‘perfect’ option and making the experience more enjoyable. This phenomenon reveals that fewer choices can sometimes make consumers happier, which is a valuable insight for marketers and retailers aiming to boost satisfaction by curating their offerings.",
+        "The paradox also has broader implications. In individualistic cultures, where personal choice is highly valued, the burden of decision- making can be significant. Conversely, collectivist cultures, which often provide fewer choices, report higher levels of contentment. This dynamic suggests that understanding cultural differences in consumer psychology can help businesses optimize their product strategies and enhance overall well- being."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Which of the following best states a main idea of the passage?",
+          "options": {
+            "A": "Effective marketing strategies focus on increasing product options.",
+            "B": "Modern consumer culture is driven by a demand for fewer products.",
+            "C": "Individualism enhances consumer contentment.",
+            "D": "Limiting consumer choices can lead to higher satisfaction."
+          },
+          "answer": "D",
+          "analysis": "Đáp án đúng: D dạng bài: ý nghĩa chính câu Bài gốc Dẫn chứng (toàn văn hạch tâm): văn chương khúc dạo đầu đưa ra “ lựa chọn nghịch biện ”—— thêm nữa lựa chọn ngược lại sẽ giảm xuống thoả mãn độ; sau đó thông qua thí nghiệm chứng minh, ít lựa chọn có thể giảm bớt quyết định biện pháp áp lực, tăng lên người tiêu thụ cảm giác vui thích; cuối cùng mở rộng đến văn hóa mặt, nói rõ chủ nghĩa tập thể văn hóa Vừa ít lựa chọn mang đến cao hơn cảm giác thỏa mãn. Đáp án đúng phân tích: toàn văn quay chung quanh “ lựa chọn nghịch biện ” triển khai, hạch tâm quan điểm là “ quá nhiều lựa chọn sẽ giảm xuống thoả mãn độ, mà hạn chế lựa chọn ngược lại có thể tăng lên thoả mãn độ ”, Phương án D chuẩn xác khái quát cái này một ý nghĩa chính, bởi vậy Đúng. Phương án phân tích: (A) Effective marketing strategies focus on increasing product options. —— Sai, văn trung rõ ràng nhắc tới ít lựa chọn có thể tăng lên thoả mãn độ, đối với doanh tiêu người gợi ý là tinh tuyển sản phẩm, mà không phải là gia tăng Phương án. (B) Modern consumer culture is driven by a demand for fewer products. —— Sai, văn trung Không được đề cập (Not Given) “ hiện đại tiêu phí văn hóa do đối với ít hơn sản phẩm nhu cầu khu động ”, chỉ đã từng nói qua nhiều lựa chọn sẽ mang đến vấn đề. (C) Individualism enhances consumer contentment. —— Sai, văn trung nhắc tới cá nhân chủ nghĩa văn hóa Vừa, lựa chọn gánh nặng sẽ giảm xuống cảm giác thỏa mãn, và Phương án thuyết minh trái lại. (D) Limiting consumer choices can lead to higher satisfaction. —— Đúng, phù hợp toàn văn hạch tâm quan điểm, thí nghiệm kết quả cùng văn hóa tầng diện ví dụ đều có thể xác minh."
+        },
+        {
+          "id": 2,
+          "stem": "What is one effect of decision fatigue as mentioned in the passage?",
+          "options": {
+            "A": "Desire to make the same choices as other consumers",
+            "B": "Anxiety about making the wrong choice",
+            "C": "Preference for consumer cultures",
+            "D": "Enhanced freedom to choose"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: chi tiết câu Bài gốc Dẫn chứng: “While the freedom to choose is fundamental to consumer culture, an overabundance of choices—from groceries to electronics—can overwhelm individuals, causing anxiety and decision fatigue. This paradox implies that the vast array of possibilities available today might actually diminish consumer contentment, as the fear of making the wrong choice looms large.” Đáp án đúng phân tích: văn trung rõ ràng nhắc tới, quá nhiều lựa chọn sẽ dẫn đến lo nghĩ và quyết định biện pháp mệt nhọc, mà loại lựa chọn nghịch biện hạch tâm ảnh hưởng một trong là “ đối với làm ra Sai lựa chọn sợ hãi ”, tiếp xúc quyết định biện pháp mệt nhọc sẽ dẫn phát đối với chọn sai lo nghĩ, Phương án B là quyết định biện pháp mệt mỏi trực tiếp ảnh hưởng một trong, bởi vậy Đúng. Phương án phân tích: (A) Desire to make the same choices as other consumers —— Sai, văn trung Không được đề cập (Not Given) “ khát vọng và Khác người tiêu thụ làm giống nhau lựa chọn ”, vô tướng màn tin tức. (B) Anxiety about making the wrong choice —— Đúng, và Bài gốc “ quá nhiều lựa chọn dẫn đến lo nghĩ, quyết định biện pháp mệt nhọc, cũng như đối với chọn sai sợ hãi ” hoàn toàn đúng ứng với. (C) Preference for consumer cultures —— Sai, văn trung Không được đề cập (Not Given) quyết định biện pháp mệt nhọc sẽ cho người đặc biệt thích tiêu phí văn hóa, hai người không quan hệ liên. (D) Enhanced freedom to choose —— Sai, quyết định biện pháp mệt nhọc là quá nhiều lựa chọn (tự do vượt qua cao) mang tới kết quả, mà không phải là tăng lên lựa chọn tự do."
+        },
+        {
+          "id": 3,
+          "stem": "Why does the author mention Sheena lyengar’s experiment?",
+          "options": {
+            "A": "To highlight the effectiveness of marketing strategies",
+            "B": "To explain the methodology used in consumer psychology",
+            "C": "To provide evidence supporting the paradox of choice",
+            "D": "To criticize the abundance of products in modern markets"
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: tu từ mục đích câu Bài gốc Dẫn chứng: “Research supports this notion. In an experiment, psychologist Sheena lyengar found that shoppers were more likely to purchase jam when offered 6 varieties instead of 24.” Đáp án đúng phân tích: văn trung khúc dạo đầu đưa ra “ lựa chọn nghịch biện ” cái này đánh giá chút:điểm, sau đó dùng “Research supports this notion” dẫn xuất thí nghiệm, thí nghiệm kết quả (ít lựa chọn lại để cho người tiêu thụ càng muốn mua sắm, Dùng thử càng sung sướng) chính là vì chứng minh “ lựa chọn càng nhiều, thoả mãn hơn thấp ” nghịch biện, tiếp xúc cung cấp hỗ trợ nên nghịch biện chứng cứ, Phương án C Đúng. Phương án phân tích: (A) To highlight the effectiveness of marketing strategies —— Sai, thí nghiệm cho doanh tiêu người cung cấp gợi ý, nhưng tác giả đề cập thí nghiệm hạch tâm mục đích là chứng minh nghịch biện, mà không phải là cường điệu doanh tiêu sách lược hữu hiệu tính. (B) To explain the methodology used in consumer psychology —— Sai, văn trung chỉ giới thiệu thí nghiệm kết quả, chưa hiểu thích thí nghiệm phương pháp hoặc tiêu phí tâm lý học nghiên cứu phương pháp. (C) To provide evidence supporting the paradox of choice —— Đúng, phù hợp “ đưa ra quan điểm → dùng thí nghiệm cung cấp chứng cứ ” ăn khớp, thí nghiệm là đúng lựa chọn nghịch biện bằng chứng. (D) To criticize the abundance of products in modern markets —— Sai, thí nghiệm không thể hiện đối với “ sản phẩm quá nhiều ” phê bình, chỉ khách quan hiện ra lựa chọn số lượng bù trừ lẫn nhau phí người ảnh hưởng."
+        },
+        {
+          "id": 4,
+          "stem": "The word “curating” in the passage is closest in meaning to",
+          "options": {
+            "A": "eliminating",
+            "B": "organizing",
+            "C": "increasing",
+            "D": "changing"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: Từ vựng câu Bài gốc Dẫn chứng: “This phenomenon reveals that fewer choices can sometimes make consumers happier, which is a valuable insight for marketers and retailers aiming to boost satisfaction by curating their offerings.” Đáp án đúng phân tích: “curating” ý là “ tinh tuyển, sửa sang lại, quy hoạch ”, ở trên bên dưới Vừa, thí nghiệm cho thấy ít lựa chọn có thể tăng lên thoả mãn độ, bởi vậy đối với doanh tiêu người và bán lẻ thương lượng gợi ý là “ thông qua tinh tuyển (sửa sang lại) sản phẩm cung ứng đến đề thăng người tiêu thụ thoả mãn độ ”. bởi vậy “organizing” (sửa sang lại, quy hoạch) là gần gũi nhất Nghĩa, dán hợp “ bộ lọc, ưu hóa sản phẩm cung ứng ” ngữ cảnh. Phương án phân tích: (A) eliminating tiêu trừ —— Sai, curating là “ tinh tuyển, sửa sang lại ”, cũng không phải là hoàn toàn tiêu trừ sản phẩm, lời nói nghĩa quá nặng. (B) organizing sửa sang lại, quy hoạch —— Đúng, và curating lời nói nghĩa nhất trí, phù hợp “ ưu hóa sản phẩm cung ứng, giảm bớt quá nhiều lựa chọn ” ngữ cảnh. (C) increasing gia tăng —— Sai, và cao thấp văn “ ít lựa chọn càng có lợi ” trái ngược, curating không phải gia tăng sản phẩm. (D) changing cải biến —— Sai, curating trọng điểm “ bộ lọc, sửa sang lại ”, mà không phải là đơn thuần cải biến sản phẩm, lời nói nghĩa không xứng đôi."
+        },
+        {
+          "id": 5,
+          "stem": "What can be inferred about consumers in collectivist cultures?",
+          "options": {
+            "A": "They tend to report lower levels of satisfaction.",
+            "B": "They are more affected by the paradox of choice.",
+            "C": "They generally have fewer choices available.",
+            "D": "They prefer individual decision-making."
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: suy luận câu Bài gốc Dẫn chứng: “Conversely, collectivist cultures, which often provide fewer choices, report higher levels of contentment.” Đáp án đúng phân tích: văn trung rõ ràng nhắc tới, chủ nghĩa tập thể văn hóa “ bình thường cung cấp ít hơn lựa chọn ”, cũng bởi vậy có cao hơn cảm giác thỏa mãn. bởi vậy có thể suy đoán, chủ nghĩa tập thể văn hóa trong đích người tiêu thụ bình thường có thể lấy được lựa chọn ít hơn, Phương án C là có thể trực tiếp suy đoán ra nội dung, bởi vậy Đúng. Phương án phân tích: (A) They tend to report lower levels of satisfaction. —— Sai, văn trung rõ ràng nói chủ nghĩa tập thể văn hóa người tiêu thụ thoả mãn độ cao hơn, và Phương án thuyết minh trái lại. (B) They are more affected by the paradox of choice. —— Sai, chủ nghĩa tập thể văn hóa lựa chọn ít, mà lựa chọn nghịch biện là “ quá nhiều lựa chọn mang tới vấn đề ”, bởi vậy họ được nghịch biện ảnh hưởng nhỏ hơn. (C) They generally have fewer choices available. —— Đúng, Bài gốc “collectivist cultures, which often provide fewer choices” trực tiếp hỗ trợ nên suy đoán. (D) They prefer individual decision-making. —— Sai, văn trung nhắc tới cá nhân chủ nghĩa văn hóa coi trọng cá nhân lựa chọn, chủ nghĩa tập thể văn hóa tới trái lại, sẽ không đặc biệt thích cá nhân quyết định biện pháp."
+        }
+      ]
+    }
+  ]
 }

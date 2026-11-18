@@ -7,7 +7,7 @@ var os = require("os");
 var path = require("path");
 var { execFileSync, spawn } = require("child_process");
 
-app.setName("优益思达题库中心");
+app.setName(" YYSD Ngân hàng đề trung tâm ");
 var START_URL = process.env.YYSD_URL || "https://tiku.youyisida.com/?v=20261015prev1";
 var splashWin = null;
 var siteWin = null;
@@ -21,12 +21,12 @@ function hardwareId() {
     if (process.platform === "darwin") {
       var out = execFileSync("ioreg", ["-rd1", "-c", "IOPlatformExpertDevice"], { encoding: "utf8" });
       var m = /"IOPlatformUUID" = "([^"]+)"/.exec(out);
-      return m ? m[1] : "";
+      return m? m[1]: "";
     }
     if (process.platform === "win32") {
       var win = execFileSync("reg", ["query", "HKLM\\SOFTWARE\\Microsoft\\Cryptography", "/v", "MachineGuid"], { encoding: "utf8" });
       var wm = /MachineGuid\s+REG_SZ\s+([A-Fa-f0-9-]+)/i.exec(win);
-      return wm ? wm[1].trim() : "";
+      return wm? wm[1].trim(): "";
     }
   } catch (e) {}
   return "";
@@ -49,22 +49,22 @@ function fileId() {
 
 function sendProgress(n) {
   progress = Math.max(progress, n);
-  if (splashWin && !splashWin.isDestroyed()) splashWin.webContents.send("splash-progress", progress);
+  if (splashWin &&!splashWin.isDestroyed()) splashWin.webContents.send("splash-progress", progress);
 }
 
 function setProgress(n) {
   progress = n;
-  if (splashWin && !splashWin.isDestroyed()) splashWin.webContents.send("splash-progress", progress);
+  if (splashWin &&!splashWin.isDestroyed()) splashWin.webContents.send("splash-progress", progress);
 }
 
 function splashLabel(text) {
-  if (splashWin && !splashWin.isDestroyed()) splashWin.webContents.send("splash-label", text);
+  if (splashWin &&!splashWin.isDestroyed()) splashWin.webContents.send("splash-label", text);
 }
 
 function appBundlePath() {
   var exe = app.getPath("exe");
   var i = exe.indexOf(".app/");
-  return i < 0 ? "" : exe.slice(0, i + 4);
+  return i < 0? "": exe.slice(0, i + 4);
 }
 
 function fetchJson(url) {
@@ -89,7 +89,7 @@ function isNewer(remote, local) {
   for (var i = 0; i < 3; i++) {
     var x = Number(a[i] || 0);
     var y = Number(b[i] || 0);
-    if (x !== y) return x > y;
+    if (x!== y) return x > y;
   }
   return false;
 }
@@ -103,7 +103,7 @@ function downloadFile(url, dest, onProgress) {
         downloadFile(res.headers.location, dest, onProgress).then(resolve, reject);
         return;
       }
-      if (res.statusCode !== 200) {
+      if (res.statusCode!== 200) {
         res.resume();
         clearTimeout(cap);
         reject(new Error("download " + res.statusCode));
@@ -131,7 +131,7 @@ function downloadFile(url, dest, onProgress) {
         clearTimeout(idle);
         clearTimeout(cap);
         file.close(function () {
-          if (got !== total) reject(new Error("short"));
+          if (got!== total) reject(new Error("short"));
           else resolve();
         });
       });
@@ -148,12 +148,12 @@ function downloadFile(url, dest, onProgress) {
 function installTarget() {
   var running = appBundlePath();
   if (running.indexOf("/Applications/") === 0 && running.indexOf("AppTranslocation") < 0) return running;
-  return "/Applications/优益思达国际课程中心.app";
+  return "/Applications/ Trung tâm Luyện thi Quốc tế YYSD.app";
 }
 
 function bundleVersion(bundle) {
   try {
-    return execFileSync("/usr/libexec/PlistBuddy", ["-c", "Print :CFBundleShortVersionString", path.join(bundle, "Contents/Info.plist")], { encoding: "utf8" }).trim();
+    return execFileSync("/usr/libexec/PlistBuddy", ["-c", "Print:CFBundleShortVersionString", path.join(bundle, "Contents/Info.plist")], { encoding: "utf8" }).trim();
   } catch (e) {
     return "";
   }
@@ -175,7 +175,7 @@ function applyUpdate(zipPath) {
     "APP=$(find " + q(srcDir) + " -maxdepth 1 -name '*.app' | head -1)",
     "test -d \"$APP/Contents/MacOS\"",
     "rm -rf " + q(bak),
-    "if [ -d " + q(dest) + " ]; then mv " + q(dest) + " " + q(bak) + "; fi",
+    "if [-d " + q(dest) + "]; then mv " + q(dest) + " " + q(bak) + "; fi",
     "cp -R \"$APP\" " + q(dest),
     "xattr -dr com.apple.quarantine " + q(dest) + " || true",
     "rm -rf " + q(bak),
@@ -187,7 +187,7 @@ function applyUpdate(zipPath) {
 }
 
 function checkUpdate() {
-  // ponytail: 老师端不走学生桌面自动更新，避免被换成 HIT 客户端
+  // ponytail: Giáo viên đầu không đi Học viên mặt bàn tự động đổi mới, sợ bị đổi thành HIT hộ khách đầu
   return Promise.resolve(false);
 }
 
@@ -199,7 +199,7 @@ function startCreep() {
 }
 
 function reveal() {
-  if (shown || !siteWin || siteWin.isDestroyed()) return;
+  if (shown ||!siteWin || siteWin.isDestroyed()) return;
   shown = true;
   clearTimeout(failTimer);
   clearInterval(creep);
@@ -207,21 +207,21 @@ function reveal() {
   setTimeout(function () {
     if (!siteWin || siteWin.isDestroyed()) return;
     siteWin.show();
-    if (splashWin && !splashWin.isDestroyed()) splashWin.close();
+    if (splashWin &&!splashWin.isDestroyed()) splashWin.close();
   }, 280);
 }
 
 function loadSite() {
   shown = false;
   progress = 0;
-  splashLabel("系统预加载中");
+  splashLabel(" hệ thống dự Đang tải ");
   sendProgress(6);
   startCreep();
-  var url = START_URL + (START_URL.indexOf("?") >= 0 ? "&" : "?") + "t=" + Date.now();
+  var url = START_URL + (START_URL.indexOf("?") >= 0? "&": "?") + "t=" + Date.now();
   session.defaultSession.clearCache().finally(function () {
     siteWin.loadURL(url).catch(function () {
       clearInterval(creep);
-      if (splashWin && !splashWin.isDestroyed()) splashWin.webContents.send("splash-fail");
+      if (splashWin &&!splashWin.isDestroyed()) splashWin.webContents.send("splash-fail");
     });
   });
 }
@@ -262,7 +262,7 @@ function createWindow() {
     }
   });
   splashWin.on("closed", function () {
-    if (!shown && siteWin && !siteWin.isDestroyed()) siteWin.close();
+    if (!shown && siteWin &&!siteWin.isDestroyed()) siteWin.close();
   });
   siteWin.webContents.setWindowOpenHandler(function (details) {
     var u = String(details.url || "");
@@ -281,11 +281,11 @@ function createWindow() {
     if (!isMain || code === -3 || shown) return;
     clearTimeout(failTimer);
     failTimer = setTimeout(function () {
-      if (shown || !siteWin || siteWin.isDestroyed()) return;
+      if (shown ||!siteWin || siteWin.isDestroyed()) return;
       var current = siteWin.webContents.getURL() || "";
       if (current.indexOf("youyisida.com") >= 0) return;
       clearInterval(creep);
-      if (splashWin && !splashWin.isDestroyed()) splashWin.webContents.send("splash-fail");
+      if (splashWin &&!splashWin.isDestroyed()) splashWin.webContents.send("splash-fail");
     }, 2500);
   });
   splashWin.loadFile(path.join(__dirname, "splash.html")).then(function () {
@@ -313,8 +313,8 @@ app.whenReady().then(function () {
   allowMic();
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     { role: "appMenu" },
-    { label: "查看", submenu: [
-      { label: "刷新", accelerator: "CmdOrCtrl+R", click: reloadSite },
+    { label: " Xem ", submenu: [
+      { label: " Làm mới ", accelerator: "CmdOrCtrl+R", click: reloadSite },
       { type: "separator" },
       { role: "togglefullscreen" }
     ]},

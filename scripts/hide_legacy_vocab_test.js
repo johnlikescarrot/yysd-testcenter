@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * Hide embedded 「单词检测」UI in legacy list HTML (data source pages).
+ * Hide embedded « Từ vựng Đánh giá »UI in legacy list HTML (data source pages).
  * ponytail: CSS hide only — wordData parsing untouched.
  */
 var fs = require("fs");
@@ -23,7 +23,7 @@ function walk(dir) {
     if (st.isDirectory()) return walk(fp);
     if (!/\.html$/i.test(name)) return;
     var html = fs.readFileSync(fp, "utf8");
-    if (html.indexOf('data-mode="test"') < 0 && html.indexOf("单词检测") < 0) return;
+    if (html.indexOf('data-mode="test"') < 0 && html.indexOf(" Từ vựng Đánh giá ") < 0) return;
     if (html.indexOf(MARK) >= 0) return;
     if (!/<\/head>/i.test(html)) return;
     var out = html.replace(/<\/head>/i, SNIP + "\n</head>");

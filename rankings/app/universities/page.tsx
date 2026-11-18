@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/db";
 import { countryLabel } from "@/lib/systems";
 
-export const metadata: Metadata = { title: "院校库" };
+export const metadata: Metadata = { title: " viện giáo kho " };
 export const dynamic = "force-dynamic";
 
 export default async function UniversitiesPage({
@@ -38,14 +38,14 @@ export default async function UniversitiesPage({
     <div className="space-y-4">
       <div>
         <p className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Universe</p>
-        <h1 className="mt-1 text-2xl font-bold tracking-tight">院校库</h1>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight"> viện giáo kho </h1>
         <p className="mono mt-1 text-[11px] text-[var(--muted)]">{total} instruments</p>
       </div>
 
       <form method="get" action="/rankings/universities" className="panel flex flex-wrap gap-2 p-3 text-sm">
-        <input name="q" defaultValue={searchParams.q || ""} placeholder="搜校名…" className="input-desk max-w-xs py-2" />
+        <input name="q" defaultValue={searchParams.q || ""} placeholder=" lục soát trường học tên …" className="input-desk max-w-xs py-2" />
         <select name="country" defaultValue={searchParams.country || ""} className="input-desk w-auto py-2">
-          <option value="">全部市场</option>
+          <option value=""> Tất cả thị trường </option>
           {["US", "UK", "CA", "AU", "CN", "HK", "SG", "JP", "KR", "DE", "FR", "CH", "NL", "SE"].map((c) => (
             <option key={c} value={c}>
               {countryLabel(c)}
@@ -53,7 +53,7 @@ export default async function UniversitiesPage({
           ))}
         </select>
         <button type="submit" className="btn-ink py-2">
-          筛选
+           bộ lọc
         </button>
       </form>
 
@@ -76,13 +76,13 @@ export default async function UniversitiesPage({
           {page > 1 && (
             <Link
               href={`/universities?${new URLSearchParams({
-                ...(searchParams.q ? { q: searchParams.q } : {}),
-                ...(searchParams.country ? { country: searchParams.country } : {}),
+                ...(searchParams.q? { q: searchParams.q }: {}),
+                ...(searchParams.country? { country: searchParams.country }: {}),
                 page: String(page - 1),
               }).toString()}`}
               className="btn-ghost py-1.5"
             >
-              上一页
+               trang trước
             </Link>
           )}
           <span className="mono text-[var(--muted)]">
@@ -91,13 +91,13 @@ export default async function UniversitiesPage({
           {page < pages && (
             <Link
               href={`/universities?${new URLSearchParams({
-                ...(searchParams.q ? { q: searchParams.q } : {}),
-                ...(searchParams.country ? { country: searchParams.country } : {}),
+                ...(searchParams.q? { q: searchParams.q }: {}),
+                ...(searchParams.country? { country: searchParams.country }: {}),
                 page: String(page + 1),
               }).toString()}`}
               className="btn-ghost py-1.5"
             >
-              下一页
+               trang kế tiếp
             </Link>
           )}
         </nav>

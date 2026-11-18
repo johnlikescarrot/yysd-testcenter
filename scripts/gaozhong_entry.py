@@ -5,11 +5,11 @@ import re
 
 def entry(i, word, ipa, pos, meaning, accept, phrases, ex_en, ex_zh, root, syn, ant, usage, topic, freq=4):
     coll = []
-    for part in re.split(r"[,，]", phrases):
+    for part in re.split(r"[,,]", phrases):
         part = part.strip()
         if not part:
             continue
-        m = re.match(r"^(.+?)[（(](.+?)[）)]$", part)
+        m = re.match(r"^(.+?)[((](.+?)[))]$", part)
         if m:
             coll.append({"phrase": m.group(1).strip(), "meaning": m.group(2).strip()})
         elif len(coll) < 3:
@@ -22,14 +22,14 @@ def entry(i, word, ipa, pos, meaning, accept, phrases, ex_en, ex_zh, root, syn, 
         "pos": pos,
         "meaning": meaning,
         "phrases": phrases,
-        "example": "%s（%s）" % (ex_en, ex_zh),
+        "example": "%s (%s) " % (ex_en, ex_zh),
         "acceptCN": accept,
         "collocations": coll[:4],
         "root": root,
         "synonyms": syn or [],
         "antonyms": ant or [],
         "examTag": {
-            "source": "高中英语",
+            "source": " THPT Tiếng Anh ",
             "frequency": freq,
             "commonUsage": usage,
             "topic": topic,

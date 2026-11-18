@@ -1,9 +1,9 @@
-/* 听力精听 lyric player — full / line + LightPeek */
+/* Nghe sâu (Intensive Listening) lyric player — full / line + LightPeek */
 (function () {
   "use strict";
 
   var API_BASE = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? (location.port === "8080" ? "http://127.0.0.1:3000" : location.protocol + "//" + location.hostname + ":3000")
+    ? (location.port === "8080"? "http://127.0.0.1:3000": location.protocol + "//" + location.hostname + ":3000")
     : "https://api.youyisida.com";
 
   var params = new URLSearchParams(location.search);
@@ -29,11 +29,11 @@
   function fmt(t) {
     t = Math.max(0, Math.floor(t || 0));
     var m = Math.floor(t / 60), s = t % 60;
-    return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+    return (m < 10? "0": "") + m + ":" + (s < 10? "0": "") + s;
   }
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
@@ -63,7 +63,7 @@
     var el = $("jtGloss"), wEl = $("jtGlossW"), mEl = $("jtGlossM");
     if (!el) return;
     wEl.textContent = word;
-    mEl.textContent = "查询中…";
+    mEl.textContent = " điều tra Vừa …";
     el.classList.remove("is-hidden");
     var left = Math.min(x + 8, window.innerWidth - 280);
     var top = Math.min(y + 12, window.innerHeight - 80);
@@ -79,15 +79,15 @@
       headers: apiHeaders(),
       body: JSON.stringify({ word: word })
     }).then(function (r) {
-      if (r.status === 401) throw new Error("登录后可查词");
-      if (!r.ok) throw new Error("查词失败");
+      if (r.status === 401) throw new Error(" Đăng nhập để tra từ ");
+      if (!r.ok) throw new Error(" Tra từ thất bại ");
       return r.json();
     }).then(function (d) {
-      var g = (d && d.gloss) || "暂无释义";
+      var g = (d && d.gloss) || "Chưa có nghĩa";
       state.glossCache[key] = g;
       if (wEl.textContent === word) mEl.textContent = g;
     }).catch(function (err) {
-      if (wEl.textContent === word) mEl.textContent = (err && err.message) || "查词失败";
+      if (wEl.textContent === word) mEl.textContent = (err && err.message) || " Tra từ thất bại ";
     });
   }
 
@@ -101,7 +101,7 @@
     state.i = Math.max(0, Math.min(n - 1, i));
     renderList();
     renderStage();
-    if (seek !== false) {
+    if (seek!== false) {
       var s = curSent();
       if (s) {
         try { audio.currentTime = s.start; } catch (e) {}
@@ -113,10 +113,10 @@
 
   function renderList() {
     var ol = $("jtSentList");
-    if (!ol || !state.data) return;
+    if (!ol ||!state.data) return;
     ol.innerHTML = state.data.sentences.map(function (s, i) {
-      var cls = i === state.i ? " is-active" : "";
-      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '">第 ' + (i + 1) + " 句</button></li>";
+      var cls = i === state.i? " is-active": "";
+      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '"> thứ ' + (i + 1) + " câu </button></li>";
     }).join("");
     var active = ol.querySelector(".is-active");
     if (active) active.scrollIntoView({ block: "nearest" });
@@ -124,18 +124,18 @@
 
   function renderFull() {
     var body = $("jtFullBody");
-    if (!body || !state.data) return;
-    body.classList.toggle("is-blind", !state.showEn && !state.showZh);
+    if (!body ||!state.data) return;
+    body.classList.toggle("is-blind",!state.showEn &&!state.showZh);
     body.innerHTML = state.data.sentences.map(function (s, i) {
-      var en = state.showEn ? '<span class="jt-full-en">' + linkWords(s.en) + "</span>" : '<span class="jt-full-en">· · ·</span>';
-      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.zh || "") + "</span>" : "";
-      return '<button type="button" class="jt-full-line' + (i === state.i ? " is-active" : "") +
+      var en = state.showEn? '<span class="jt-full-en">' + linkWords(s.en) + "</span>": '<span class="jt-full-en">· · ·</span>';
+      var zh = state.showZh? '<span class="jt-full-zh">' + esc(s.zh || "") + "</span>": "";
+      return '<button type="button" class="jt-full-line' + (i === state.i? " is-active": "") +
         '" data-i="' + i + '" data-start="' + s.start + '">' + en + zh + "</button>";
     }).join("");
   }
 
   function highlightFull() {
-    if (state.mode !== "full") return;
+    if (state.mode!== "full") return;
     var body = $("jtFullBody");
     if (!body) return;
     var prev = body.querySelector(".is-active");
@@ -157,13 +157,13 @@
     var reveal = $("jtReveal");
     var showAny = state.showEn || state.showZh;
     reveal.classList.toggle("is-hidden", showAny);
-    $("jtLineEn").classList.toggle("is-hidden", !state.showEn);
-    $("jtLineZh").classList.toggle("is-hidden", !state.showZh);
+    $("jtLineEn").classList.toggle("is-hidden",!state.showEn);
+    $("jtLineZh").classList.toggle("is-hidden",!state.showZh);
   }
 
   function renderStage() {
-    $("jtStageFull").classList.toggle("is-hidden", state.mode !== "full");
-    $("jtStageLine").classList.toggle("is-hidden", state.mode !== "line");
+    $("jtStageFull").classList.toggle("is-hidden", state.mode!== "full");
+    $("jtStageLine").classList.toggle("is-hidden", state.mode!== "line");
     document.querySelectorAll(".jt-mode").forEach(function (btn) {
       btn.classList.toggle("is-on", btn.getAttribute("data-mode") === state.mode);
     });
@@ -174,7 +174,7 @@
   }
 
   function setMode(mode) {
-    if (mode !== "full" && mode !== "line") mode = "full";
+    if (mode!== "full" && mode!== "line") mode = "full";
     state.mode = mode;
     state.clipMode = mode === "line";
     audio.pause();
@@ -185,14 +185,14 @@
   }
 
   function syncPlayBtn() {
-    $("jtPlay").textContent = state.playing ? "❚❚" : "▶";
+    $("jtPlay").textContent = state.playing? "❚❚": "▶";
   }
 
   function paintTime() {
     var d = audio.duration || 0, c = audio.currentTime || 0;
     $("jtCur").textContent = fmt(c);
     $("jtDur").textContent = fmt(d);
-    $("jtFill").style.width = (d ? (c / d) * 100 : 0) + "%";
+    $("jtFill").style.width = (d? (c / d) * 100: 0) + "%";
   }
 
   function indexAtTime(t) {
@@ -210,7 +210,7 @@
     var s = curSent();
     var t = audio.currentTime || 0;
 
-    // 单句循环：任何模式到句末都回跳；逐句/跟读未开循环则停在句末
+    // Lặp lại câu hiện tại: bất luận cái gì hình thức đến câu mạt đều quay về nhảy; trục câu / Đọc nhại không mở tuần hoàn tức thì đứng ở câu mạt
     if (s && t >= s.end - 0.05) {
       if (state.loop) {
         try { audio.currentTime = s.start; } catch (e) {}
@@ -225,9 +225,9 @@
       }
     }
 
-    if (state.mode === "full" && !state.clipMode) {
+    if (state.mode === "full" &&!state.clipMode) {
       var ni = indexAtTime(t);
-      if (ni !== state.i) {
+      if (ni!== state.i) {
         state.i = ni;
         renderList();
         highlightFull();
@@ -243,7 +243,7 @@
         try { audio.currentTime = s.start; } catch (e) {}
       }
       // if full mode and somehow before first sentence, jump in
-      if (!state.clipMode && !state.loop && audio.currentTime < s.start - 1) {
+      if (!state.clipMode &&!state.loop && audio.currentTime < s.start - 1) {
         try { audio.currentTime = s.start; } catch (e) {}
       }
       audio.playbackRate = state.rate;
@@ -314,7 +314,7 @@
       showGloss(w.getAttribute("data-w"), e.clientX, e.clientY);
     });
     document.addEventListener("click", function (e) {
-      if (!e.target.closest(".jt-w") && !e.target.closest("#jtGloss")) hideGloss();
+      if (!e.target.closest(".jt-w") &&!e.target.closest("#jtGloss")) hideGloss();
     });
 
     $("jtPrev").onclick = $("jtBarPrev").onclick = function () {
@@ -330,20 +330,20 @@
       renderStage();
     };
     $("jtShowEn").onclick = function () {
-      state.showEn = !state.showEn;
+      state.showEn =!state.showEn;
       renderStage();
     };
     $("jtShowZh").onclick = function () {
-      state.showZh = !state.showZh;
+      state.showZh =!state.showZh;
       if (state.showZh && state.mode === "line") state.showEn = true;
       renderStage();
     };
 
     $("jtPlay").onclick = togglePlay;
     $("jtLoop").onclick = function () {
-      state.loop = !state.loop;
+      state.loop =!state.loop;
       $("jtLoop").classList.toggle("is-on", state.loop);
-      $("jtLoop").setAttribute("aria-pressed", state.loop ? "true" : "false");
+      $("jtLoop").setAttribute("aria-pressed", state.loop? "true": "false");
     };
     $("jtRateBtn").onclick = function (e) {
       e.stopPropagation();
@@ -354,8 +354,8 @@
       if (!li) return;
       state.rate = Number(li.getAttribute("data-r"));
       audio.playbackRate = state.rate;
-      $("jtRateBtn").textContent = "倍速 " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
-      if (state.rate === 1) $("jtRateBtn").textContent = "倍速 1.0x";
+      $("jtRateBtn").textContent = " Tốc độ " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
+      if (state.rate === 1) $("jtRateBtn").textContent = " Tốc độ 1.0x";
       $("jtRateMenu").classList.add("is-hidden");
     };
     document.addEventListener("click", function () {
@@ -391,18 +391,18 @@
         if (state.clipMode) playFromCurrent();
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        state.showEn = !state.showEn;
+        state.showEn =!state.showEn;
         renderStage();
       } else if (e.key === "ArrowDown") {
         e.preventDefault();
-        state.showZh = !state.showZh;
+        state.showZh =!state.showZh;
         renderStage();
       } else if (e.key === "Shift") {
-        // ponytail: Shift alone toggles loop (matches 新东方 tip); ignore chord keys
-        if (!e.repeat && !e.ctrlKey && !e.metaKey && !e.altKey) {
-          state.loop = !state.loop;
+        // ponytail: Shift alone toggles loop (matches mới phương Đông tip); ignore chord keys
+        if (!e.repeat &&!e.ctrlKey &&!e.metaKey &&!e.altKey) {
+          state.loop =!state.loop;
           $("jtLoop").classList.toggle("is-on", state.loop);
-          $("jtLoop").setAttribute("aria-pressed", state.loop ? "true" : "false");
+          $("jtLoop").setAttribute("aria-pressed", state.loop? "true": "false");
         }
       }
     });
@@ -411,11 +411,11 @@
   function boot() {
     bind();
     fetch(DATA_URL).then(function (r) {
-      if (!r.ok) throw new Error("找不到精听数据：" + partId);
+      if (!r.ok) throw new Error(" Không tìm thấy Nghe sâu số liệu: " + partId);
       return r.json();
     }).then(function (data) {
       state.data = data;
-      document.title = data.title + " · 听力精听 · 优益思达";
+      document.title = data.title + " · Nghe sâu (Intensive Listening) · YYSD ";
       $("jtTitle").textContent = data.title;
       $("jtExam").href = data.examHref || "cambridge.html";
       audio.src = data.audioUrl;
@@ -433,8 +433,8 @@
       setMode("full");
       seekFirst();
     }).catch(function (err) {
-      $("jtTitle").textContent = "加载失败";
-      $("jtFullBody").textContent = (err && err.message) || "加载失败";
+      $("jtTitle").textContent = "Tải dữ liệu thất bại";
+      $("jtFullBody").textContent = (err && err.message) || "Tải dữ liệu thất bại";
     });
   }
 

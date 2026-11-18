@@ -1,46 +1,46 @@
 {
- "id": "free-12280",
- "title": "Choose a Response #38",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #38",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12280,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-38"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #38",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/6ac0368e813044009ef0bdbcaa7d8caf.mp3",
-   "questions": [
+  "id": "free-12280",
+  "title": "Choose a Response #38",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #38",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12280,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-38"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Work is tiring.",
-      "B": "I'll call him back later.",
-      "C": "I will go home and get them.",
-      "D": "That's what I am planning to do."
-     },
-     "answer": "D",
-     "transcript": "If you get this work done by three, I think you should call it a day. ​​",
-     "stemZh": "要是你三点前把这项工作做完，我觉得你今天就可以收工了。",
-     "analysis": "If you get this work done by three, I think you should call it a day. 题干分析 如果你三点前完成这项工作，就可以手工了。call it a day 为固定搭配，意为收工、结束今天的工作。 选项分析 选项A：只是泛泛评价，没有回应“做完就可以下班”的建议。 选项B：I'll call him back later. 话题转向回电话，与工作安排无关。 选项C：语境不匹配，回应内容跳脱。 选项D：正确答案，句子的意思是“如果三点前把工作做完，就可以下班了”，这是一种建议 / 许可，D选项中That's what I am planning to do. 明确表示同意并呼应对方的建议，语气自然、功能完整。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #38",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/6ac0368e813044009ef0bdbcaa7d8caf.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Work is tiring.",
+            "B": "I'll call him back later.",
+            "C": "I will go home and get them.",
+            "D": "That's what I am planning to do."
+          },
+          "answer": "D",
+          "transcript": "If you get this work done by three, I think you should call it a day. ​​",
+          "stemZh": "nếu bạn ba điểm trước đem công việc hạng này làm xong, ta cảm thấy cho bạn hôm nay có thể kết thúc công việc rồi.",
+          "analysis": "If you get this work done by three, I think you should call it a day. Câu hỏi phân tích nếu bạn ba điểm trước hoàn thành công việc hạng này, có thể thủ công rồi. call it a day là cố định phối hợp, ý là kết thúc công việc, chấm dứt công việc của hôm nay. Phương án phân tích Phương án A: chẳng qua là hời hợt đánh giá, không có trả lời “ làm xong có thể tan tầm ” đề nghị. Phương án B: I'll call him back later. chủ đề chuyển hướng trả lời điện thoại, và an bài công việc không quan hệ. Phương án C: ngữ cảnh không xứng đôi, đáp lại nội dung khiêu thoát:nhanh nhẹn. Phương án D: Đáp án đúng, câu có ý tứ là “ nếu ba điểm trước đem công tác làm xong, có thể tan việc ”, đây là một loại đề nghị / cho phép, D Phương án Vừa That's what I am planning to do. rõ ràng biểu thị đồng ý cũng hô ứng đối phương đề nghị, ngữ khí tự nhiên, công năng Đầy đủ."
+        }
+      ]
+    }
+  ]
 }

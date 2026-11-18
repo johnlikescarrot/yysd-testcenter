@@ -1,57 +1,57 @@
 {
- "id": "free-13688",
- "title": "Conversation #103",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #103",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13688,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-103"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #103",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/9ee962d5b37948849c5ff054f94d52b3.mp3",
-   "transcript": "Man: I'm thinking of renovating my kitchen. Do you have any advice？\nWoman: you should start By setting a budget. Renovations can get expensive quickly.\nMan: That's a good point. I'll also need to decide on the design and materials.\nWoman: Yes, and consider hiring a professional if the project is too big to handle alone.\nMan: Thanks for the tips. I'll start planning right away.",
-   "questions": [
+  "id": "free-13688",
+  "title": "Conversation #103",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #103",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13688,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-103"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the man planning to renovate?",
-     "options": {
-      "A": "His bathroom",
-      "B": "His living room",
-      "C": "His kitchen",
-      "D": "His bedroom"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：男士计划翻新什么？ 定位原文：Man: I'm thinking of renovating my kitchen. 选项分析： A. His bathroom 他的浴室。对话中未提及浴室，所以A选项错误。 B. His living room 他的客厅。对话中未提及客厅，所以B选项错误。 C. His kitchen 他的厨房。男士明确说要翻新厨房，所以C选项正确。 D. His bedroom 他的卧室。对话中未提及卧室，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the woman suggest the man do first?",
-     "options": {
-      "A": "Set a budget",
-      "B": "Hire a professional",
-      "C": "Choose the materials",
-      "D": "Draw up a design"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：女士建议男士首先做什么？ 定位原文：Woman: By setting a budget. Renovations can get expensive quickly. 选项分析： A. Set a budget 设定预算。女士明确说“从设定预算开始”，所以A选项正确。 B. Hire a professional 聘请专业人士。女士提到如果项目太大可以考虑请专业人员，但不是第一步建议，所以B选项错误。 C. Choose the materials 选择材料。男士自己提到需要决定设计和材料，不是女士给的第一步建议，所以C选项错误。 D. Draw up a design 设计图纸。男士自己提到需要决定设计，不是女士给的第一步建议，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #103",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/9ee962d5b37948849c5ff054f94d52b3.mp3",
+      "transcript": "Man: I'm thinking of renovating my kitchen. Do you have any advice?\nWoman: you should start By setting a budget. Renovations can get expensive quickly.\nMan: That's a good point. I'll also need to decide on the design and materials.\nWoman: Yes, and consider hiring a professional if the project is too big to handle alone.\nMan: Thanks for the tips. I'll start planning right away.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the man planning to renovate?",
+          "options": {
+            "A": "His bathroom",
+            "B": "His living room",
+            "C": "His kitchen",
+            "D": "His bedroom"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: nam sĩ kế hoạch đổi mới gì? Dẫn chứng Bài gốc: Man: I'm thinking of renovating my kitchen. Phương án phân tích: A. His bathroom của anh ấy phòng tắm. trong lúc nói chuyện với nhau Không được đề cập (Not Given) phòng tắm, nên A Phương án Sai. B. His living room của anh ấy phòng khách. trong lúc nói chuyện với nhau Không được đề cập (Not Given) phòng khách, nên B Phương án Sai. C. His kitchen của anh ấy phòng bếp. nam sĩ rõ ràng nói muốn đổi mới phòng bếp, nên C Phương án Đúng. D. His bedroom phòng ngủ của hắn. trong lúc nói chuyện với nhau Không được đề cập (Not Given) phòng ngủ, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the woman suggest the man do first?",
+          "options": {
+            "A": "Set a budget",
+            "B": "Hire a professional",
+            "C": "Choose the materials",
+            "D": "Draw up a design"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: phu nhân đề nghị nam sĩ đầu tiên làm cái gì? Dẫn chứng Bài gốc: Woman: By setting a budget. Renovations can get expensive quickly. Phương án phân tích: A. Set a budget thiết lập dự toán. phu nhân rõ ràng nói “ từ thiết lập dự toán Bắt đầu ”, nên A Phương án Đúng. B. Hire a professional thuê nhân sĩ chuyên nghiệp. phu nhân nhắc tới nếu hạng mục quá lớn có thể cân nhắc mời chuyên nghiệp nhân viên, nhưng không phải thứ nhất bước đề nghị, nên B Phương án Sai. C. Choose the materials lựa chọn tài liệu. nam sĩ chính mình nhắc tới cần quyết định xếp đặt thiết kế và tài liệu, không phải phu nhân cho bước đầu tiên đề nghị, nên C Phương án Sai. D. Draw up a design bản vẽ thiết kế. nam sĩ chính mình nhắc tới cần quyết định xếp đặt thiết kế, không phải phu nhân cho bước đầu tiên đề nghị, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

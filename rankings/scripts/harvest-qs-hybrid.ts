@@ -21,7 +21,7 @@ const MIN_OK = 150;
 function harvestExpr(metaJson: string): string {
   return `new Promise(async (resolve) => {
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  let cards=0; for(let i=0;i<60;i++){ cards=document.querySelectorAll('#ranking-data-load .new-ranking-cards').length; if(cards>=50) break; await sleep(250);}
+  let cards=0; for(let i=0;i<60;i++){ cards=document.querySelectorAll('#ranking-data-load.new-ranking-cards').length; if(cards>=50) break; await sleep(250);}
   const TOP_N=500;
   const meta=${metaJson};
   const XO = XMLHttpRequest.prototype.open;
@@ -36,9 +36,9 @@ function harvestExpr(metaJson: string): string {
   let guard=0; while(!window.__qsPages[0] && guard++<40) await sleep(250);
   // if still empty, try 150 once more
   if(!window.__qsPages[0]){ window.__qsPages={}; try { await setPer(150); } catch(e) {} guard=0; while(!window.__qsPages[0] && guard++<40) await sleep(250); }
-  const extractDom=()=>[...document.querySelectorAll('#ranking-data-load .new-ranking-cards')].map(c=>{const rankDisplay=(c.querySelector('.rank-no')?.textContent||'').replace(/\\s+/g,' ').trim();const scoreRaw=(c.querySelector('.rank-score')?.textContent||'').trim();const a=c.querySelector('a.uni-link');const rankNum=(()=>{const range=rankDisplay.match(/^(\\d+)\\s*-\\s*\\d+$/);if(range)return Number(range[1]);return Number(rankDisplay.replace(/^=/,'').replace(/[^\\d].*$/,''))||0;})();return{rankDisplay,rank:rankNum,score:scoreRaw?Number(scoreRaw):null,name:(a?.textContent||'').trim(),href:a?.getAttribute('href')||'',location:''};});
+  const extractDom=()=>[...document.querySelectorAll('#ranking-data-load.new-ranking-cards')].map(c=>{const rankDisplay=(c.querySelector('.rank-no')?.textContent||'').replace(/\\s+/g,' ').trim();const scoreRaw=(c.querySelector('.rank-score')?.textContent||'').trim();const a=c.querySelector('a.uni-link');const rankNum=(()=>{const range=rankDisplay.match(/^(\\d+)\\s*-\\s*\\d+$/);if(range)return Number(range[1]);return Number(rankDisplay.replace(/^=/,'').replace(/[^\\d].*$/,''))||0;})();return{rankDisplay,rank:rankNum,score:scoreRaw?Number(scoreRaw):null,name:(a?.textContent||'').trim(),href:a?.getAttribute('href')||'',location:''};});
   const fromNodes=(nodes)=>{const out=[];for(const n of nodes||[]){const rankDisplay=String(n.rank_display||n.rank||'').trim();const rankNum=(()=>{const range=rankDisplay.match(/^(\\d+)\\s*-\\s*\\d+$/);if(range)return Number(range[1]);return Number(rankDisplay.replace(/^=/,'').replace(/[^\\d].*$/,''))||0;})();if(!rankNum||rankNum>TOP_N)continue;out.push({rankDisplay,rank:rankNum,score:n.overall_score!=null&&n.overall_score!==''?Number(n.overall_score):null,name:String(n.title||'').trim(),href:String(n.path||'').trim(),location:[n.city,n.country].filter(Boolean).join(', '),country:n.country||'',city:n.city||''});}return out;};
-  let all = window.__qsPages[0] ? fromNodes(window.__qsPages[0].score_nodes) : extractDom();
+  let all = window.__qsPages[0]? fromNodes(window.__qsPages[0].score_nodes): extractDom();
   const maxPages=Math.min(window.__qsPages[0]?.total_pages||10, 10);
   for(let p=1;p<maxPages;p++){
     if(all.length>=TOP_N) break;
@@ -68,12 +68,12 @@ async function harvestOne(
 
   for (let i = 0; i < 60; i++) {
     const title = await page.title();
-    if (!/请稍候|Just a moment/i.test(title)) break;
+    if (!/ xin đợi |Just a moment/i.test(title)) break;
     await page.waitForTimeout(1000);
   }
 
   await page.waitForFunction(
-    "document.querySelectorAll('#ranking-data-load .new-ranking-cards').length >= 50",
+    "document.querySelectorAll('#ranking-data-load.new-ranking-cards').length >= 50",
     { timeout: 90000 }
   );
 
@@ -94,13 +94,13 @@ async function harvestOne(
   };
 
   const exportData = await page.evaluate("window.__qsExport");
-  if (!exportData || !(exportData as { count?: number }).count) {
+  if (!exportData ||!(exportData as { count?: number }).count) {
     throw new Error(`empty export for ${t.slug}: ${JSON.stringify(result)}`);
   }
   const out = path.join(OUT, `${t.slug}-${t.year}.json`);
   fs.writeFileSync(out, JSON.stringify(exportData, null, 2));
   console.log(
-    `  wrote ${out} count=${(exportData as { count: number }).count} api=${JSON.stringify(result.api)} first=${result.first}`
+    ` wrote ${out} count=${(exportData as { count: number }).count} api=${JSON.stringify(result.api)} first=${result.first}`
   );
   return result;
 }
@@ -112,7 +112,7 @@ async function main() {
 
   const browser = await chromium.launch({
     executablePath: CHROME,
-    headless: process.env.QS_HEADED === "1" ? false : true,
+    headless: process.env.QS_HEADED === "1"? false: true,
     args: ["--disable-blink-features=AutomationControlled"],
   });
   const context = await browser.newContext({

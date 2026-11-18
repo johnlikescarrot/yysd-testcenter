@@ -20,8 +20,8 @@
       else if (fb.classList.contains("wrong-all")) postHint("wrong");
       else if (fb.classList.contains("partial")) {
         var html = fb.innerHTML || fb.textContent || "";
-        if (html.indexOf("含义正确，拼写有误") >= 0) postHint("partial-spelling");
-        else if (html.indexOf("拼写正确，含义有误") >= 0) postHint("partial-meaning");
+        if (html.indexOf(" Nghĩa Đúng, Chính tả có sai ") >= 0) postHint("partial-spelling");
+        else if (html.indexOf(" Chính tả Đúng, Nghĩa có sai ") >= 0) postHint("partial-meaning");
         else postHint("partial");
       }
     }).observe(fb, { attributes: true, attributeFilter: ["class"] });
@@ -32,7 +32,7 @@
     if (!v) return;
     new MutationObserver(function () {
       if (!v.classList.contains("show")) return;
-      postHint(v.classList.contains("ok") ? "pass" : "fail");
+      postHint(v.classList.contains("ok")? "pass": "fail");
     }).observe(v, { attributes: true, attributeFilter: ["class"] });
   }
 
@@ -43,8 +43,8 @@
     new MutationObserver(function () {
       if (sent || r.style.display === "none") return;
       var txt = r.textContent || "";
-      if (txt.indexOf("得分") < 0) return;
-      var m = txt.match(/得分\s*(\d+)\s*\/\s*(\d+)/);
+      if (txt.indexOf(" Điểm số ") < 0) return;
+      var m = txt.match(/ Điểm số \s*(\d+)\s*\/\s*(\d+)/);
       if (!m) return;
       sent = true;
       var ratio = +m[1] / +m[2];

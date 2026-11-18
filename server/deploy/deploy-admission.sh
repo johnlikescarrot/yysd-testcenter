@@ -1,5 +1,5 @@
 #!/bin/bash
-# Deploy AI 升学顾问 Next.js app on ECS (run on server).
+# Deploy AI học lên cố vấn Next.js app on ECS (run on server).
 # Usage: sudo bash deploy/deploy-admission.sh
 set -euo pipefail
 
@@ -15,9 +15,9 @@ git checkout main
 git pull --ff-only origin main
 
 cd "$APP_DIR"
-if [ ! -f .env.local ] && [ ! -f .env ]; then
+if [! -f.env.local] && [! -f.env]; then
   echo "!! Missing $APP_DIR/.env.local — copy from local and re-run."
-  echo "   Need: DATABASE_URL, DIRECT_URL, DASHSCOPE_API_KEY, NEXT_PUBLIC_USE_MOCK=0"
+  echo " Need: DATABASE_URL, DIRECT_URL, DASHSCOPE_API_KEY, NEXT_PUBLIC_USE_MOCK=0"
   exit 1
 fi
 
@@ -33,7 +33,7 @@ systemctl restart yysd-admission
 systemctl --no-pager --full status yysd-admission | head -20
 
 # nginx snippet already in nginx-site.conf — reload if present
-if [ -f /etc/nginx/sites-available/youyisida ] || [ -f /etc/nginx/conf.d/youyisida.conf ]; then
+if [-f /etc/nginx/sites-available/youyisida] || [-f /etc/nginx/conf.d/youyisida.conf]; then
   nginx -t && systemctl reload nginx
   echo "==> nginx reloaded"
 else

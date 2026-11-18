@@ -5,71 +5,71 @@
    ========================================================================== */
 
 body.yysd-embedded {
-  background: #f6f3ec !important;
-  color: #101827 !important;
+  background: #f6f3ec!important;
+  color: #101827!important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
-  padding-bottom: 48px !important;
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif!important;
+  padding-bottom: 48px!important;
 }
 
-/* Hide duplicate logo/chrome only — vocab LIST mode tabs live in .header */
-body.yysd-embedded > .header .logo,
-body.yysd-embedded > header.header .logo,
-body.yysd-embedded > .header .word-count-badge,
-body.yysd-embedded > header.header .word-count-badge {
-  display: none !important;
+/* Hide duplicate logo/chrome only — vocab LIST mode tabs live in.header */
+body.yysd-embedded >.header.logo,
+body.yysd-embedded > header.header.logo,
+body.yysd-embedded >.header.word-count-badge,
+body.yysd-embedded > header.header.word-count-badge {
+  display: none!important;
 }
 
-body.yysd-embedded > .header,
+body.yysd-embedded >.header,
 body.yysd-embedded > header.header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: linear-gradient(90deg, #061427, #102a4c) !important;
-  color: #fff !important;
-  border-bottom: 1px solid rgba(199, 164, 93, .38) !important;
-  box-shadow: 0 1px 0 rgba(7, 25, 47, .06);
+  background: linear-gradient(90deg, #061427, #102a4c)!important;
+  color: #fff!important;
+  border-bottom: 1px solid rgba(199, 164, 93,.38)!important;
+  box-shadow: 0 1px 0 rgba(7, 25, 47,.06);
 }
 
-body.yysd-embedded > .header h1,
+body.yysd-embedded >.header h1,
 body.yysd-embedded > header.header h1 {
-  color: #fff !important;
+  color: #fff!important;
 }
 
-body.yysd-embedded > .header .header-inner,
-body.yysd-embedded > header.header .header-inner {
-  justify-content: center !important;
+body.yysd-embedded >.header.header-inner,
+body.yysd-embedded > header.header.header-inner {
+  justify-content: center!important;
 }
 
-body.yysd-embedded > .header .nav-tabs,
-body.yysd-embedded > header.header .nav-tabs {
-  display: flex !important;
-  background: rgba(255, 255, 255, .08) !important;
+body.yysd-embedded >.header.nav-tabs,
+body.yysd-embedded > header.header.nav-tabs {
+  display: flex!important;
+  background: rgba(255, 255, 255,.08)!important;
 }
 
-body.yysd-embedded .nav-tab {
-  color: rgba(255, 255, 255, .78) !important;
+body.yysd-embedded.nav-tab {
+  color: rgba(255, 255, 255,.78)!important;
 }
-body.yysd-embedded .nav-tab.active {
-  background: #fffcf7 !important;
-  color: #07192f !important;
+body.yysd-embedded.nav-tab.active {
+  background: #fffcf7!important;
+  color: #07192f!important;
 }
 
 /* Non-fullscreen: parent viewer-bar owns the countdown */
-body.yysd-embedded .header .timer,
-body.yysd-embedded > .header .timer,
+body.yysd-embedded.header.timer,
+body.yysd-embedded >.header.timer,
 body.yysd-embedded #timer.timer:not(.show) {
-  display: none !important;
+  display: none!important;
 }
 
 /* Fullscreen mock: iframe is the FS root, parent bar gone — float paper timer top-right */
-:fullscreen body.yysd-embedded .header .timer.show,
-:-webkit-full-screen body.yysd-embedded .header .timer.show,
-:fullscreen body.yysd-embedded > .header .timer.show,
-:-webkit-full-screen body.yysd-embedded > .header .timer.show,
+:fullscreen body.yysd-embedded.header.timer.show,
+:-webkit-full-screen body.yysd-embedded.header.timer.show,
+:fullscreen body.yysd-embedded >.header.timer.show,
+:-webkit-full-screen body.yysd-embedded >.header.timer.show,
 :fullscreen body.yysd-embedded #timer.timer.show,
 :-webkit-full-screen body.yysd-embedded #timer.timer.show {
-  display: flex !important;
+  display: flex!important;
   position: fixed;
   top: 12px;
   right: 16px;
@@ -77,108 +77,108 @@ body.yysd-embedded #timer.timer:not(.show) {
   margin: 0;
 }
 
-body.yysd-embedded .test-topbar {
-  top: 0 !important;
-  background: #fffcf7 !important;
-  border: 1px solid #e6dfd0 !important;
-  box-shadow: 0 1px 0 rgba(7, 25, 47, .04) !important;
+body.yysd-embedded.test-topbar {
+  top: 0!important;
+  background: #fffcf7!important;
+  border: 1px solid #e6dfd0!important;
+  box-shadow: 0 1px 0 rgba(7, 25, 47,.04)!important;
 }
-body.yysd-embedded .test-topbar .tt-title {
-  color: #07192f !important;
+body.yysd-embedded.test-topbar.tt-title {
+  color: #07192f!important;
 }
-body.yysd-embedded .test-topbar .tt-mode {
-  background: #f6eedf !important;
-  color: #8a6a2f !important;
+body.yysd-embedded.test-topbar.tt-mode {
+  background: #f6eedf!important;
+  color: #8a6a2f!important;
 }
 
 /* Cover & cards */
-body.yysd-embedded .cover-hero,
-body.yysd-embedded .res-card,
-body.yysd-embedded .task,
-body.yysd-embedded .modal,
-body.yysd-embedded .mode-box {
-  background: #fffcf7 !important;
-  border-color: #e6dfd0 !important;
-  box-shadow: 0 14px 34px -18px rgba(7, 25, 47, .10) !important;
+body.yysd-embedded.cover-hero,
+body.yysd-embedded.res-card,
+body.yysd-embedded.task,
+body.yysd-embedded.modal,
+body.yysd-embedded.mode-box {
+  background: #fffcf7!important;
+  border-color: #e6dfd0!important;
+  box-shadow: 0 14px 34px -18px rgba(7, 25, 47,.10)!important;
 }
 
-body.yysd-embedded .cover-badge {
-  background: linear-gradient(135deg, #07192f, #102a4c) !important;
+body.yysd-embedded.cover-badge {
+  background: linear-gradient(135deg, #07192f, #102a4c)!important;
 }
-body.yysd-embedded .cover-badge .lbl {
-  color: rgba(241, 211, 138, .85) !important;
+body.yysd-embedded.cover-badge.lbl {
+  color: rgba(241, 211, 138,.85)!important;
 }
-body.yysd-embedded .cover-badge .num {
-  color: #f1d38a !important;
+body.yysd-embedded.cover-badge.num {
+  color: #f1d38a!important;
 }
 
-body.yysd-embedded .cover-hero h2,
-body.yysd-embedded .modal h2,
-body.yysd-embedded .task__head h3,
-body.yysd-embedded .res-card h2 {
-  color: #07192f !important;
+body.yysd-embedded.cover-hero h2,
+body.yysd-embedded.modal h2,
+body.yysd-embedded.task__head h3,
+body.yysd-embedded.res-card h2 {
+  color: #07192f!important;
 }
 
 /* Paper / mode cards */
-body.yysd-embedded .paper-card.listen,
-body.yysd-embedded .paper-card {
-  background: #fffcf7 !important;
-  border-color: rgba(199, 164, 93, .45) !important;
+body.yysd-embedded.paper-card.listen,
+body.yysd-embedded.paper-card {
+  background: #fffcf7!important;
+  border-color: rgba(199, 164, 93,.45)!important;
 }
-body.yysd-embedded .paper-card.listen h3,
-body.yysd-embedded .paper-card h3 {
-  color: #102a4c !important;
+body.yysd-embedded.paper-card.listen h3,
+body.yysd-embedded.paper-card h3 {
+  color: #102a4c!important;
 }
-body.yysd-embedded .paper-card .pc-go,
-body.yysd-embedded .paper-card.listen .pc-go {
-  background: #07192f !important;
+body.yysd-embedded.paper-card.pc-go,
+body.yysd-embedded.paper-card.listen.pc-go {
+  background: #07192f!important;
 }
-body.yysd-embedded .paper-card .pc-go:hover,
-body.yysd-embedded .paper-card.listen .pc-go:hover {
-  background: #102a4c !important;
+body.yysd-embedded.paper-card.pc-go:hover,
+body.yysd-embedded.paper-card.listen.pc-go:hover {
+  background: #102a4c!important;
 }
 
 /* Kill legacy blue/green accents → navy / gold */
-body.yysd-embedded .mode-box.practice .mode-start,
-body.yysd-embedded .audio-play,
-body.yysd-embedded .listen-here,
-body.yysd-embedded .btn-primary,
+body.yysd-embedded.mode-box.practice.mode-start,
+body.yysd-embedded.audio-play,
+body.yysd-embedded.listen-here,
+body.yysd-embedded.btn-primary,
 body.yysd-embedded button.primary {
-  background: #07192f !important;
-  color: #fff !important;
-  box-shadow: 0 4px 14px rgba(7, 25, 47, .22) !important;
+  background: #07192f!important;
+  color: #fff!important;
+  box-shadow: 0 4px 14px rgba(7, 25, 47,.22)!important;
 }
-body.yysd-embedded .mode-box.exam .mode-start {
-  background: #c7a45d !important;
-  color: #07192f !important;
+body.yysd-embedded.mode-box.exam.mode-start {
+  background: #c7a45d!important;
+  color: #07192f!important;
 }
-body.yysd-embedded .audio-prog .fill,
-body.yysd-embedded .pw-fill {
-  background: linear-gradient(90deg, #102a4c, #c7a45d) !important;
+body.yysd-embedded.audio-prog.fill,
+body.yysd-embedded.pw-fill {
+  background: linear-gradient(90deg, #102a4c, #c7a45d)!important;
 }
 
 /* Primary action buttons */
-body.yysd-embedded .submit-btn,
-body.yysd-embedded .btn-start,
-body.yysd-embedded .start-btn,
+body.yysd-embedded.submit-btn,
+body.yysd-embedded.btn-start,
+body.yysd-embedded.start-btn,
 body.yysd-embedded button[class*="start"],
-body.yysd-embedded .copy-btn {
-  background: linear-gradient(135deg, #07192f, #102a4c) !important;
-  color: #fff !important;
-  box-shadow: 0 4px 14px rgba(7, 25, 47, .22) !important;
+body.yysd-embedded.copy-btn {
+  background: linear-gradient(135deg, #07192f, #102a4c)!important;
+  color: #fff!important;
+  box-shadow: 0 4px 14px rgba(7, 25, 47,.22)!important;
 }
 
-body.yysd-embedded .submit-btn {
-  background: linear-gradient(135deg, #a98234, #c7a45d) !important;
-  color: #07192f !important;
-  box-shadow: 0 4px 14px rgba(169, 130, 52, .28) !important;
+body.yysd-embedded.submit-btn {
+  background: linear-gradient(135deg, #a98234, #c7a45d)!important;
+  color: #07192f!important;
+  box-shadow: 0 4px 14px rgba(169, 130, 52,.28)!important;
 }
 
 /* Accent tags */
-body.yysd-embedded .brandtag,
-body.yysd-embedded .header h1 .brandtag {
-  background: rgba(199, 164, 93, .35) !important;
-  color: #f1d38a !important;
+body.yysd-embedded.brandtag,
+body.yysd-embedded.header h1.brandtag {
+  background: rgba(199, 164, 93,.35)!important;
+  color: #f1d38a!important;
 }
 
 /* Form fields */
@@ -187,62 +187,62 @@ body.yysd-embedded input:focus,
 body.yysd-embedded select:focus,
 body.yysd-embedded input[type=text]:focus,
 body.yysd-embedded select:focus {
-  border-color: #c7a45d !important;
-  box-shadow: 0 0 0 3px rgba(199, 164, 93, .18) !important;
-  outline: none !important;
+  border-color: #c7a45d!important;
+  box-shadow: 0 0 0 3px rgba(199, 164, 93,.18)!important;
+  outline: none!important;
 }
 
-body.yysd-embedded .prompt,
-body.yysd-embedded .stat-box,
+body.yysd-embedded.prompt,
+body.yysd-embedded.stat-box,
 body.yysd-embedded table.wt th {
-  background: #f6eedf !important;
+  background: #f6eedf!important;
 }
 
-body.yysd-embedded .stat-box .big,
-body.yysd-embedded .stat-box.s1 .big,
-body.yysd-embedded .stat-box.s2 .big,
-body.yysd-embedded .stat-box.s3 .big,
+body.yysd-embedded.stat-box.big,
+body.yysd-embedded.stat-box.s1.big,
+body.yysd-embedded.stat-box.s2.big,
+body.yysd-embedded.stat-box.s3.big,
 body.yysd-embedded table.wt caption {
-  color: #102a4c !important;
+  color: #102a4c!important;
 }
 
 /* Reading passage panes */
-body.yysd-embedded .passage-pane,
-body.yysd-embedded .col.passage {
-  background: #fffcf7 !important;
-  border-color: #e6dfd0 !important;
+body.yysd-embedded.passage-pane,
+body.yysd-embedded.col.passage {
+  background: #fffcf7!important;
+  border-color: #e6dfd0!important;
 }
 
-body.yysd-embedded .ritem.correct {
-  background: #f6eedf !important;
-  border-left-color: #c7a45d !important;
+body.yysd-embedded.ritem.correct {
+  background: #f6eedf!important;
+  border-left-color: #c7a45d!important;
 }
-body.yysd-embedded .ritem.wrong {
-  background: #f8eeee !important;
-  border-left-color: #8b3a3a !important;
+body.yysd-embedded.ritem.wrong {
+  background: #f8eeee!important;
+  border-left-color: #8b3a3a!important;
 }
 
 /* Vocab word cards inside iframe */
-body.yysd-embedded .word-card {
-  background: #fffcf7 !important;
-  border-color: #e6dfd0 !important;
+body.yysd-embedded.word-card {
+  background: #fffcf7!important;
+  border-color: #e6dfd0!important;
 }
-body.yysd-embedded .word-headword,
-body.yysd-embedded .logo {
-  color: #07192f !important;
+body.yysd-embedded.word-headword,
+body.yysd-embedded.logo {
+  color: #07192f!important;
 }
-body.yysd-embedded .btn-play {
-  background: #f6eedf !important;
-  color: #07192f !important;
+body.yysd-embedded.btn-play {
+  background: #f6eedf!important;
+  color: #07192f!important;
 }
 
-/* Mock exam lock overlay (模考模式防切屏) */
+/* Mock exam lock overlay (Chế độ thi thử phòng cắt bình) */
 .yysd-exam-lock-overlay {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: rgba(7, 25, 47, .97);
+  background: rgba(7, 25, 47,.97);
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -256,40 +256,40 @@ body.yysd-embedded .btn-play {
   text-shadow: none;
 }
 .yysd-exam-lock-overlay__inner h2 { margin: 0 0 12px; font-size: 22px; font-weight: 800; }
-.yysd-exam-lock-overlay__inner p { margin: 0 0 20px; opacity: .92; line-height: 1.65; font-size: 15px; }
+.yysd-exam-lock-overlay__inner p { margin: 0 0 20px; opacity:.92; line-height: 1.65; font-size: 15px; }
 .yysd-exam-lock-overlay__inner button {
   background: #c7a45d; color: #07192f; border: none; padding: 12px 28px;
   border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer;
   box-shadow: none;
 }
 .yysd-exam-lock-overlay__inner button:hover { filter: brightness(1.06); }
-.yysd-exam-lock-overlay__inner--void .yysd-exam-lock-actions {
+.yysd-exam-lock-overlay__inner--void.yysd-exam-lock-actions {
   display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
 }
-.yysd-exam-lock-overlay__inner--void .yysd-exam-lock-exit {
+.yysd-exam-lock-overlay__inner--void.yysd-exam-lock-exit {
   background: #fff; color: #07192f; border: 1px solid #cbd5e1;
 }
-.yysd-exam-lock-overlay__inner--void .yysd-exam-lock-restart {
+.yysd-exam-lock-overlay__inner--void.yysd-exam-lock-restart {
   background: #c7a45d; color: #07192f; border: none;
 }
-.yysd-exam-lock-overlay__inner--void .yysd-exam-lock-restart:hover {
+.yysd-exam-lock-overlay__inner--void.yysd-exam-lock-restart:hover {
   filter: brightness(1.06);
 }
 
 
 /* Wave S4: accent submit/primary without purple */
-body.yysd-embedded .btn-primary,
+body.yysd-embedded.btn-primary,
 body.yysd-embedded button.primary,
-body.yysd-embedded .btn-start-test,
+body.yysd-embedded.btn-start-test,
 body.yysd-embedded #submitBtn,
 body.yysd-embedded button[type="submit"] {
-  background: #e8913a !important;
-  border-color: #e8913a !important;
-  color: #fff !important;
+  background: #e8913a!important;
+  border-color: #e8913a!important;
+  color: #fff!important;
   box-shadow: 0 8px 18px -8px rgba(232, 145, 58, 0.45);
 }
-body.yysd-embedded .progress-bar > *,
-body.yysd-embedded .progress__bar,
+body.yysd-embedded.progress-bar > *,
+body.yysd-embedded.progress__bar,
 body.yysd-embedded #progressBar {
-  background: linear-gradient(90deg, #e8913a, #c77828) !important;
+  background: linear-gradient(90deg, #e8913a, #c77828)!important;
 }

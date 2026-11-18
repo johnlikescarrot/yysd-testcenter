@@ -1,46 +1,46 @@
 {
- "id": "free-12887",
- "title": "Choose a Response #213",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #213",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12887,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-213"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #213",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/4bcbc796410f41d692921f7028219d9b.mp3",
-   "questions": [
+  "id": "free-12887",
+  "title": "Choose a Response #213",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #213",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12887,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-213"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Sure, I'll call them tomorrow.",
-      "B": "Sorry to hear that.",
-      "C": "I'm on track to finish on time.",
-      "D": "Not such a good idea."
-     },
-     "answer": "C",
-     "transcript": "Will you be able to meet the deadline for your research paper?",
-     "stemZh": "你能赶在截止日期前完成研究论文吗？",
-     "analysis": "Will you be able to meet the deadline for your research paper? 题干分析 题干是一般疑问句，意为 “你能按时完成研究论文的截止日期吗？”，考点是对能否按时完成任务作出回应。 选项分析 选项 A：回答内容为 “当然，我明天会给他们打电话”，与论文截止日期无关。 选项 B：回答内容为 “听到这个我很遗憾”，与问题无关。 选项 C：此选项为正确答案，表示进度正常能按时完成，符合题意。 选项 D：回答内容为 “不是个好主意”，与问题无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #213",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/4bcbc796410f41d692921f7028219d9b.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Sure, I'll call them tomorrow.",
+            "B": "Sorry to hear that.",
+            "C": "I'm on track to finish on time.",
+            "D": "Not such a good idea."
+          },
+          "answer": "C",
+          "transcript": "Will you be able to meet the deadline for your research paper?",
+          "stemZh": "bạn có thể đuổi tại Hạn chót ngày trước hoàn thành nghiên cứu luận văn không?",
+          "analysis": "Will you be able to meet the deadline for your research paper? Câu hỏi phân tích Câu hỏi là bình thường câu nghi vấn, ý là “ bạn có thể đúng hạn hoàn thành nghiên cứu luận văn Hạn chót ngày không? ”, địa điểm thi là đúng có thể hay không đúng hạn hoàn thành nhiệm vụ làm ra đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ đương nhiên, tôi ngày mai sẽ cho họ gọi điện thoại ”, và luận văn Hạn chót ngày không quan hệ. Phương án B: trả lời nội dung là “ nghe được cái này tôi thật đáng tiếc ”, và vấn đề không quan hệ. Phương án C: này Phương án là Đáp án đúng, biểu thị Tiến độ bình thường có thể đúng hạn hoàn thành, phù hợp câu ý. Phương án D: trả lời nội dung là “ không phải là một ý kiến hay ”, và vấn đề không quan hệ."
+        }
+      ]
+    }
+  ]
 }

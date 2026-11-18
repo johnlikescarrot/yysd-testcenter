@@ -24,11 +24,11 @@ function genderPhoto(name) {
   // default: alternate-ish by name hash
   var h = 0;
   for (var i = 0; i < first.length; i++) h = (h + first.charCodeAt(i)) % 2;
-  return h ? PHOTO.female : PHOTO.male;
+  return h? PHOTO.female: PHOTO.male;
 }
 
 function ensurePhotos(t) {
-  if (!t.professor.photo) t.professor.photo = genderPhoto(t.professor.name) === PHOTO.female ? PHOTO.professor : PHOTO.professor;
+  if (!t.professor.photo) t.professor.photo = genderPhoto(t.professor.name) === PHOTO.female? PHOTO.professor: PHOTO.professor;
   // professors always diaz portrait pool
   t.professor.photo = PHOTO.professor;
   (t.posts || []).forEach(function (p) {
@@ -38,21 +38,21 @@ function ensurePhotos(t) {
 
 function mergeFile(filePath) {
   var pack = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  var tasks = Array.isArray(pack) ? pack : pack.tasks;
-  if (!tasks || !tasks.length) throw new Error(filePath + " empty");
+  var tasks = Array.isArray(pack)? pack: pack.tasks;
+  if (!tasks ||!tasks.length) throw new Error(filePath + " empty");
   tasks.forEach(function (t) {
-    if (t.type !== "discussion") throw new Error((t.set || "?") + " not discussion");
-    if (!t.professor || !t.professor.name || !t.professor.text) throw new Error(t.set + " professor");
-    if (!t.posts || t.posts.length !== 2) throw new Error(t.set + " posts");
+    if (t.type!== "discussion") throw new Error((t.set || "?") + " not discussion");
+    if (!t.professor ||!t.professor.name ||!t.professor.text) throw new Error(t.set + " professor");
+    if (!t.posts || t.posts.length!== 2) throw new Error(t.set + " posts");
     ensurePhotos(t);
     if (!t.set) throw new Error("missing set");
   });
   tasks.forEach(function (t) {
-    paper.tasks = paper.tasks.filter(function (x) { return String(x.set || "") !== t.set; });
+    paper.tasks = paper.tasks.filter(function (x) { return String(x.set || "")!== t.set; });
     paper.tasks.push(Object.assign({}, t, {
       type: "discussion",
       title: t.title || "Academic Discussion",
-      titleZh: t.titleZh || "学术讨论",
+      titleZh: t.titleZh || " Thảo luận học thuật ",
       sample: t.sample || "",
       analysis: t.analysis || "",
       instruction: t.instruction || "Your professor is teaching a class. Write a post responding to the professor's question.\nIn your response, you should do the following:\n• Express and support your personal opinion.\n• Make a contribution to the discussion in your own words.\nAn effective response will contain at least 100 words."
@@ -66,7 +66,7 @@ if (arg === "all") {
     .sort()
     .forEach(function (f) { mergeFile(path.join(dir, f)); });
 } else {
-  // accept numeric or full stem filename without .json
+  // accept numeric or full stem filename without.json
   var candidates = [
     path.join(root, "app/library/toefl/incoming/W-AD" + arg + ".json"),
     path.join(root, "app/library/toefl/incoming/" + arg + ".json")
@@ -88,7 +88,7 @@ paper.tasks.sort(function (a, b) {
 paper.tasks.forEach(function (t, i) { t.id = i + 1; t.module = 1; });
 var maxId = paper.tasks.length;
 paper.modules[0].to = maxId;
-paper.modules[0].from = maxId ? 1 : 0;
+paper.modules[0].from = maxId? 1: 0;
 paper.modules[0].timeSec = Math.max(600, maxId * 600);
 fs.writeFileSync(bankPath, JSON.stringify(paper, null, 2) + "\n");
 console.log("merged ad total=" + maxId);

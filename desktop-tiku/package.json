@@ -14,21 +14,35 @@
   },
   "build": {
     "appId": "com.youyisida.tiku",
-    "productName": "优益思达题库中心",
+    "productName": "YYSD Ngân hàng đề trung tâm",
     "mac": {
       "icon": "build/icon.png",
       "identity": null,
       "extendInfo": {
-        "CFBundleDisplayName": "优益思达题库中心",
-        "CFBundleName": "优益思达题库中心"
+        "CFBundleDisplayName": "YYSD Ngân hàng đề trung tâm",
+        "CFBundleName": "YYSD Ngân hàng đề trung tâm"
       },
       "gatekeeperAssess": false,
       "category": "public.app-category.education",
-      "target": [{ "target": "dmg", "arch": ["universal"] }]
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ]
     },
     "win": {
       "icon": "build/icon.png",
-      "target": [{ "target": "nsis", "arch": ["x64"] }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "dmg": {
       "artifactName": "YouYiSiDa-Tiku.dmg"
@@ -38,6 +52,11 @@
       "perMachine": false,
       "artifactName": "YouYiSiDa-Tiku.exe"
     },
-    "files": ["main.js", "preload.js", "splash.html", "splash-preload.js"]
+    "files": [
+      "main.js",
+      "preload.js",
+      "splash.html",
+      "splash-preload.js"
+    ]
   }
 }

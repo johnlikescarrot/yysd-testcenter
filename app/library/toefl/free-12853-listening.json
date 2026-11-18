@@ -1,46 +1,46 @@
 {
- "id": "free-12853",
- "title": "Choose a Response #208",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #208",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12853,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-208"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #208",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/24b95a67acab44208636c1efec26242d.mp3",
-   "questions": [
+  "id": "free-12853",
+  "title": "Choose a Response #208",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #208",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12853,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-208"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "A broken chain.",
-      "B": "Every day.",
-      "C": "Ask Kenny.",
-      "D": "The new trail."
-     },
-     "answer": "C",
-     "transcript": "I can't figure out how to fix my bicycle.",
-     "stemZh": "我不知道怎么修我的自行车。",
-     "analysis": "I can't figure out how to fix my bicycle. 题干分析 题干是陈述句，意为 “我不知道怎么修我的自行车”，考点是对他人遇到困难作出合理建议。 选项分析 选项 A：回答内容为 “链条断了”，只是说明问题，没有给出解决办法。 选项 B：回答内容为 “每天”，与问题无关。 选项 C：此选项为正确答案，建议去问问肯尼，是合适的建议回应。 选项 D：回答内容为 “新的小路”，与修车无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #208",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/24b95a67acab44208636c1efec26242d.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "A broken chain.",
+            "B": "Every day.",
+            "C": "Ask Kenny.",
+            "D": "The new trail."
+          },
+          "answer": "C",
+          "transcript": "I can't figure out how to fix my bicycle.",
+          "stemZh": "tôi không biết như thế nào dài xe đạp của ta.",
+          "analysis": "I can't figure out how to fix my bicycle. Câu hỏi phân tích Câu hỏi là câu trần thuật, ý là “ tôi không biết như thế nào dài xe đạp của ta ”, địa điểm thi là đúng người khác gặp được khó khăn làm ra hợp lý đề nghị. Phương án phân tích Phương án A: trả lời nội dung là “ dây xích đã đoạn ”, chỉ nói là rõ ràng vấn đề, không có cho ra biện pháp giải quyết. Phương án B: trả lời nội dung là “ mỗi ngày ”, và vấn đề không quan hệ. Phương án C: này Phương án là Đáp án đúng, đề nghị đi hỏi một chút Kenny, là thích hợp đề nghị đáp lại. Phương án D: trả lời nội dung là “ mới đích đường nhỏ ”, và sửa xe không quan hệ."
+        }
+      ]
+    }
+  ]
 }

@@ -1,96 +1,96 @@
 {
- "id": "free-13090",
- "title": "Academic Passage #48",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #48",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13090,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-48"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "Expert systems",
-   "instruction": "Read the passage.",
-   "paras": [
-    "Expert systems are a branch of artificial intelligence designed to mimic the decision-making abilities of human experts. These systems use a knowledge base of specialized information and rules to solve specific problems. Their goal is to replicate the expertise and reasoning of professionals in fields like medicine and engineering.",
-    "An early expert system is MYCIN, developed in the 1970s to diagnose bacterial infections and recommend antibiotics. MYCIN used rules provided by medical experts to analyze patient data, infer diagnoses, and suggest treatments. MYCIN often performed as well as human specialists; however, MYCIN's system needed constant updates, requiring extensive input from medical professionals.",
-    "(A)Despite their potential, expert systems have limitations; since they rely on static knowledge databases, they can become outdated without ongoing input from human experts. The process of updating the system can be labor-intensive. (B)Advancements in machine learning and natural language processing could address these issues. (C)By integrating these technologies, expert systems could learn from new data and adapt, improving accuracy and relevance. Researchers are optimistic that these advancements will transform expert systems, enabling them to tackle a wider range of challenges and operate more independently.(D)"
-   ],
-   "questions": [
+  "id": "free-13090",
+  "title": "Academic Passage #48",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #48",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13090,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-48"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "The word\"mimic\"in the passage is closest in meaning to",
-     "options": {
-      "A": "replace",
-      "B": "combine",
-      "C": "imitate",
-      "D": "challenge"
-     },
-     "answer": "C",
-     "analysis": "解析：原文“mimic the decision-making abilities”中，“mimic”意为模仿。C选项：imitate（模仿），正确。 选项分析： A：replace（替代），不符。 B：combine（结合），不符。 D：challenge（挑战），不符。"
-    },
-    {
-     "id": 2,
-     "stem": "How did MYCIN diagnose bacterial infections?",
-     "options": {
-      "A": "It used a human specialist to evaluate patient data.",
-      "B": "It applied set rules to analyze patient data.",
-      "C": "It used data on infection rates to infer the probability of a particular type of bacteria.",
-      "D": "It relied on information provided directly by the patients."
-     },
-     "answer": "B",
-     "analysis": "解析：原文明确：“MYCIN used rules provided by medical experts to analyze patient data, infer diagnoses, and suggest treatments.”匹配B选项：应用既定规则分析患者数据，正确。 选项分析： A：使用人类专家评估数据，错误（MYCIN自身是系统）。 C：使用感染率推断，未提及。 D：依赖患者直接提供的信息，未提及。"
-    },
-    {
-     "id": 3,
-     "stem": "What is a major limitation of current expert systems mentioned in the passage?",
-     "options": {
-      "A": "They are unable to process large datasets.",
-      "B": "They often provide incorrect results.",
-      "C": "They need frequent updating.",
-      "D": "They use databases that are always changing."
-     },
-     "answer": "C",
-     "analysis": "解析：原文指出局限性：“since they rely on static knowledge databases, they can become outdated without ongoing input from human experts. The process of updating the system can be labor-intensive.” 如果没有人类专家的更新和输入就会过时，匹配C选项：需要频繁更新，正确。 选项分析： A：无法处理大数据集，未提及。 B：经常提供错误结果，未明确。 D：使用不断变化的数据库，相反（静态数据库）。"
-    },
-    {
-     "id": 4,
-     "stem": "What can be inferred about the future of expert systems?",
-     "options": {
-      "A": "They will probably be limited to use in medical applications.",
-      "B": "They will one day be able to update themselves without human input.",
-      "C": "They will become less accurate as the amount of new data increases.",
-      "D": "They will soon be replaced by more relevant technologies."
-     },
-     "answer": "B",
-     "analysis": "解析：原文关于未来：“By integrating these technologies, expert systems could learn from new data and adapt... enable them to... operate more independently.” 可推断未来能自我更新。匹配B选项：有一天能在没有人类输入的情况下自我更新，正确。 选项分析： A：限于医疗应用，错误（文中提到工程等领域）。 C：随着新数据增加变得更不准确，相反。 D：被更相关技术取代，未提及。"
-    },
-    {
-     "id": 5,
-     "stem": "There are four locations (A, B, C, and D) in the passage that indicate where the following sentence could be added. Additionally,their performance may decline in unfamiliar or rapidly changing environments where new information is constantly emerging. Where would the sentence best fit? Select a location where the sentence could be added to the passage.",
-     "options": {
-      "A": "Option A",
-      "B": "Option B",
-      "C": "Option C",
-      "D": "Option D"
-     },
-     "answer": "B",
-     "analysis": "解析：插入句子：“Additionally, their performance may decline in unfamiliar or rapidly changing environments where new information is constantly emerging.” 该句补充专家系统的另一个缺点（在快速变化环境中性能下降）。前文需要先有一个缺点描述。 选项分析： 第一个选项位于“requiring extensive input from medical professionals.”之后，其后接“Despite their potential...”，插入会打断转折逻辑。 第二个项位于“labor-intensive.”之后，其后接“Advancements... could address these issues.”。在此插入新缺点，然后说技术进步可以解决这些问题（包括性能下降），逻辑连贯。 第三个选项位于“could address these issues.”之后，其后接“By integrating...”，已是解决方案部分，不适合插入问题。 第四个选项在文末，为总结性位置，不适合添加额外缺点。 因此最佳位置为第二个选项。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "Expert systems",
+      "instruction": "Read the passage.",
+      "paras": [
+        "Expert systems are a branch of artificial intelligence designed to mimic the decision-making abilities of human experts. These systems use a knowledge base of specialized information and rules to solve specific problems. Their goal is to replicate the expertise and reasoning of professionals in fields like medicine and engineering.",
+        "An early expert system is MYCIN, developed in the 1970s to diagnose bacterial infections and recommend antibiotics. MYCIN used rules provided by medical experts to analyze patient data, infer diagnoses, and suggest treatments. MYCIN often performed as well as human specialists; however, MYCIN's system needed constant updates, requiring extensive input from medical professionals.",
+        "(A)Despite their potential, expert systems have limitations; since they rely on static knowledge databases, they can become outdated without ongoing input from human experts. The process of updating the system can be labor-intensive. (B)Advancements in machine learning and natural language processing could address these issues. (C)By integrating these technologies, expert systems could learn from new data and adapt, improving accuracy and relevance. Researchers are optimistic that these advancements will transform expert systems, enabling them to tackle a wider range of challenges and operate more independently.(D)"
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "The word\"mimic\"in the passage is closest in meaning to",
+          "options": {
+            "A": "replace",
+            "B": "combine",
+            "C": "imitate",
+            "D": "challenge"
+          },
+          "answer": "C",
+          "analysis": "Giải thích đáp án: Bài gốc “mimic the decision-making abilities” Vừa, “mimic” ý là bắt chước. C Phương án: imitate (bắt chước), Đúng. Phương án phân tích: A: replace (thay thế), không hợp. B: combine (kết hợp), không hợp. D: challenge (khiêu chiến), không hợp."
+        },
+        {
+          "id": 2,
+          "stem": "How did MYCIN diagnose bacterial infections?",
+          "options": {
+            "A": "It used a human specialist to evaluate patient data.",
+            "B": "It applied set rules to analyze patient data.",
+            "C": "It used data on infection rates to infer the probability of a particular type of bacteria.",
+            "D": "It relied on information provided directly by the patients."
+          },
+          "answer": "B",
+          "analysis": "Giải thích đáp án: Bài gốc rõ ràng: “MYCIN used rules provided by medical experts to analyze patient data, infer diagnoses, and suggest treatments.” xứng đôi B Phương án: hữu ích,thiết thực trước quy tắc phân tích người bệnh số liệu, Đúng. Phương án phân tích: A: sử dụng Nhân loại chuyên gia ước định số liệu, Sai (MYCIN bản thân là hệ thống). C: sử dụng bị nhiễm dẫn đầu suy đoán, Không được đề cập (Not Given). D: ỷ lại người bệnh trực tiếp cung cấp tin tức, Không được đề cập (Not Given)."
+        },
+        {
+          "id": 3,
+          "stem": "What is a major limitation of current expert systems mentioned in the passage?",
+          "options": {
+            "A": "They are unable to process large datasets.",
+            "B": "They often provide incorrect results.",
+            "C": "They need frequent updating.",
+            "D": "They use databases that are always changing."
+          },
+          "answer": "C",
+          "analysis": "Giải thích đáp án: Bài gốc chỉ ra cực hạn tính: “since they rely on static knowledge databases, they can become outdated without ongoing input from human experts. The process of updating the system can be labor-intensive.” nếu như không có Nhân loại chuyên gia đổi mới và đưa vào sẽ quá hạn, xứng đôi C Phương án: cần nhiều lần đổi mới, Đúng. Phương án phân tích: A: không cách nào xử lý toàn cục theo tụ tập, Không được đề cập (Not Given). B: thường xuyên cung cấp Sai kết quả, không rõ xác thực. D: sử dụng không ngừng biến hóa kho số liệu, trái lại (trạng thái tĩnh kho số liệu)."
+        },
+        {
+          "id": 4,
+          "stem": "What can be inferred about the future of expert systems?",
+          "options": {
+            "A": "They will probably be limited to use in medical applications.",
+            "B": "They will one day be able to update themselves without human input.",
+            "C": "They will become less accurate as the amount of new data increases.",
+            "D": "They will soon be replaced by more relevant technologies."
+          },
+          "answer": "B",
+          "analysis": "Giải thích đáp án: Bài gốc về tương lai: “By integrating these technologies, expert systems could learn from new data and adapt... enable them to... operate more independently.” có thể suy đoán tương lai có thể tự mình đổi mới. xứng đôi B Phương án: có một ngày có thể ở không có nhân loại truyền vào dưới tình huống tự mình đổi mới, Đúng. Phương án phân tích: A: giới hạn trong chữa bệnh hữu ích,thiết thực, Sai (văn trung nhắc tới công trình {các loại:đợi} lĩnh vực). C: theo mới số liệu gia tăng trở nên lại càng không chuẩn xác, trái lại. D: bị càng kỹ thuật tương quan thay thế, Không được đề cập (Not Given)."
+        },
+        {
+          "id": 5,
+          "stem": "There are four locations (A, B, C, and D) in the passage that indicate where the following sentence could be added. Additionally,their performance may decline in unfamiliar or rapidly changing environments where new information is constantly emerging. Where would the sentence best fit? Select a location where the sentence could be added to the passage.",
+          "options": {
+            "A": "Option A",
+            "B": "Option B",
+            "C": "Option C",
+            "D": "Option D"
+          },
+          "answer": "B",
+          "analysis": "Giải thích đáp án: cắm vào câu: “Additionally, their performance may decline in unfamiliar or rapidly changing environments where new information is constantly emerging.” nên câu bổ sung chuyên gia hệ thống cái khác khuyết điểm (đang nhanh chóng biến hóa trong hoàn cảnh tính năng hạ thấp). tiền văn cần trước có một cái khuyết điểm miêu tả. Phương án phân tích: cái thứ nhất Phương án ở vào “requiring extensive input from medical professionals.” về sau, phía sau tiếp “Despite their potential...”, cắm vào sẽ cắt ngang chuyển hướng ăn khớp. thứ hai hạng ở vào “labor-intensive.” về sau, phía sau tiếp “Advancements... could address these issues.”. lúc này cắm vào mới khuyết điểm, sau đó nói kỹ thuật tiến bộ có thể giải quyết những vấn đề này (kể cả tính năng hạ thấp), ăn khớp nối liền. người thứ ba Phương án ở vào “could address these issues.” về sau, phía sau tiếp “By integrating...”, đã là phương án giải quyết bộ phận, không thích hợp cắm vào vấn đề. đệ tứ Phương án tại văn mạt, là tổng kết tính vị trí, không thích hợp tăng thêm thêm vào khuyết điểm. bởi vậy vị trí tốt nhất là thứ hai Phương án."
+        }
+      ]
+    }
+  ]
 }

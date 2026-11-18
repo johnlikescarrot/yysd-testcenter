@@ -1,5 +1,5 @@
 /* =========================================================================
-   dashboard.js — 待办事项（今日焦点 + 近期待办；日历由 student-calendar.js）
+   dashboard.js — Việc cần làm (hôm nay tiêu điểm + Nhiệm vụ sắp tới; lịch ngày do student-calendar.js)
    ========================================================================= */
 (function () {
   "use strict";
@@ -12,25 +12,25 @@
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  if (!A || !A.requireLogin || !A.requireLogin()) return;
+  if (!A ||!A.requireLogin ||!A.requireLogin()) return;
   if (A.isTeacher && A.isTeacher()) {
     location.replace("teacher.html");
     return;
   }
 
-  var user = A.getUser ? A.getUser() : {};
+  var user = A.getUser? A.getUser(): {};
   var name = (user.displayName || "").trim();
-  if (hello) hello.textContent = name ? (name + "，你好") : "任务中心";
+  if (hello) hello.textContent = name? (name + ", Xin chào "): " Trung tâm nhiệm vụ ";
 
   var TYPE_LABEL = {
-    ASSIGNMENT: "练习作业",
-    LESSON: "课程日程",
-    ANNOUNCEMENT: "提醒事项"
+    ASSIGNMENT: " Bài tập luyện tập ",
+    LESSON: " Lịch học ",
+    ANNOUNCEMENT: " Lời nhắc "
   };
   var STATUS_LABEL = {
-    PENDING: "未完成",
-    COMPLETED: "已完成",
-    OVERDUE: "已逾期"
+    PENDING: "Chưa hoàn thành",
+    COMPLETED: "Đã hoàn thành",
+    OVERDUE: " Đã quá hạn "
   };
 
   function esc(s) { return Y.esc(s); }
@@ -61,7 +61,7 @@
   }
 
   function isNew(ev) {
-    if (!ev || (ev.status !== "PENDING" && ev.status !== "OVERDUE")) return false;
+    if (!ev || (ev.status!== "PENDING" && ev.status!== "OVERDUE")) return false;
     return readSeen().indexOf(Number(ev.id)) < 0;
   }
 
@@ -75,7 +75,7 @@
       d.getDate() === n.getDate();
   }
 
-  // ponytail: 最新布置(未见) > 今日截止 > 逾期 > 其余未完成
+  // ponytail: mới nhất bố trí (không thấy) > Hạn chót hôm nay > quá hạn > còn lại Chưa hoàn thành
   function pickFocus(events) {
     var open = (events || []).filter(function (ev) {
       if (Y.isExplainOnlyAssignment && Y.isExplainOnlyAssignment(ev.linkedExerciseIds || [])) return false;
@@ -111,7 +111,7 @@
       if (i <= 0) return;
       var b = s.slice(0, i);
       var lid = s.slice(i + 2);
-      if (!b || !lid) return;
+      if (!b ||!lid) return;
       refs.push(b + "||" + lid);
     });
     if (refs.length) {
@@ -123,14 +123,14 @@
     }
     var id0 = String((ids && ids[0]) || "");
     var legacyBook = "gaozhong";
-    if (/cet4|四级/i.test(id0)) legacyBook = "cet4";
-    else if (/listening|reading|writing|special|专项/i.test(id0)) legacyBook = "special";
+    if (/cet4| Đại học B1 /i.test(id0)) legacyBook = "cet4";
+    else if (/listening|reading|writing|special| Chuyên sâu /i.test(id0)) legacyBook = "special";
     return { bookId: legacyBook, listIds: (ids || []).slice(), refs: [] };
   }
 
   function focusCta(ev) {
     var ids = ev.linkedExerciseIds || [];
-    if (ev.status !== "COMPLETED" && ids.length) {
+    if (ev.status!== "COMPLETED" && ids.length) {
       var pack = String(ev.cdtPack || "").toLowerCase();
       if (pack === "vocab-quiz") {
         var parsed = parseVocabLinked(ids);
@@ -140,7 +140,7 @@
           : ("vocab-quiz.html?book=" + encodeURIComponent(parsed.bookId) +
             "&lists=" + parsed.listIds.map(encodeURIComponent).join(",") +
             "&event=" + encodeURIComponent(ev.id));
-        return { href: href, label: "开始单词检测" };
+        return { href: href, label: " Bắt đầu Từ vựng Đánh giá " };
       }
       if (pack === "vocab-learn") {
         var learn = parseVocabLinked(ids);
@@ -148,7 +148,7 @@
           href: "vocab-learn.html?book=" + encodeURIComponent(learn.bookId) +
             "&list=" + encodeURIComponent(learn.listIds[0] || "") +
             "&event=" + encodeURIComponent(ev.id),
-          label: "开始列表学习"
+          label: " Bắt đầu liệt biểu List Học tập "
         };
       }
       var listen = null;
@@ -159,28 +159,28 @@
         return {
           href: "exam.html?id=" + encodeURIComponent(listen) +
             "&event=" + encodeURIComponent(ev.id) +
-            (Y.cambridgeCdtQs ? Y.cambridgeCdtQs(listen, ids, ev.cdtPack) : "&cdt=1&pack=exam&suite=1"),
-          label: "开始全套模考"
+            (Y.cambridgeCdtQs? Y.cambridgeCdtQs(listen, ids, ev.cdtPack): "&cdt=1&pack=exam&suite=1"),
+          label: " Bắt đầu Thi thử trọn bộ "
         };
       }
       if (ids.length === 1) {
         return {
           href: "exam.html?id=" + encodeURIComponent(ids[0]) +
             "&event=" + encodeURIComponent(ev.id) +
-            (Y.cambridgeCdtQs ? Y.cambridgeCdtQs(ids[0], ids, ev.cdtPack) : ""),
-          label: (Y.isExplainId && Y.isExplainId(ids[0])) ? "进入详解" : "开始这项"
+            (Y.cambridgeCdtQs? Y.cambridgeCdtQs(ids[0], ids, ev.cdtPack): ""),
+          label: (Y.isExplainId && Y.isExplainId(ids[0]))? " Xem giải thích chi tiết ": " Bắt đầu cái này "
         };
       }
     }
-    return { href: "#event-" + ev.id, label: ev.status === "COMPLETED" ? "查看" : "查看详情" };
+    return { href: "#event-" + ev.id, label: ev.status === "COMPLETED"? " Xem ": " Xem chi tiết " };
   }
 
   function reasonLabel(reason, ev) {
-    if (reason === "new") return "老师刚布置";
-    if (reason === "today") return "今日截止";
-    if (reason === "overdue") return "已逾期";
-    if (ev.dueTime) return "截止 " + fmtDate(ev.dueTime);
-    return TYPE_LABEL[ev.eventType] || "待办";
+    if (reason === "new") return " Giáo viên vừa giao ";
+    if (reason === "today") return " Hạn chót hôm nay ";
+    if (reason === "overdue") return " Đã quá hạn ";
+    if (ev.dueTime) return " Hạn chót " + fmtDate(ev.dueTime);
+    return TYPE_LABEL[ev.eventType] || " Cần làm ";
   }
 
   function renderFocus(events) {
@@ -196,10 +196,10 @@
       focusEl.innerHTML =
         '<div class="dash-focus dash-focus--clear">' +
           '<div class="dash-focus__text">' +
-            "<b>今日任务已清</b>" +
-            "<span>去真题区加练，或等老师布置新任务</span>" +
+            "<b> hôm nay nhiệm vụ đã thanh </b>" +
+            "<span> đi Khu đề thi thêm luyện, hoặc đợi Giáo viên bố trí nhiệm vụ mới </span>" +
           "</div>" +
-          '<a class="btn btn--primary btn--sm" href="zone.html?zone=mock">去真题区</a>' +
+          '<a class="btn btn--primary btn--sm" href="zone.html?zone=mock"> đi Khu đề thi </a>' +
         "</div>";
       return;
     }
@@ -209,22 +209,22 @@
     var neu = isNew(ev);
     focusEl.hidden = false;
     focusEl.innerHTML =
-      '<div class="dash-focus' + (neu ? " is-new" : "") + '" data-focus-id="' + esc(String(ev.id)) + '">' +
+      '<div class="dash-focus' + (neu? " is-new": "") + '" data-focus-id="' + esc(String(ev.id)) + '">' +
         '<div class="dash-focus__text">' +
           '<p class="dash-focus__eyebrow">' +
-            (neu ? '<span class="dash-focus__dot" aria-hidden="true"></span>' : "") +
+            (neu? '<span class="dash-focus__dot" aria-hidden="true"></span>': "") +
             esc(reasonLabel(hit.reason, ev)) +
-            (openN > 1 ? " · 另有 " + (openN - 1) + " 项" : "") +
+            (openN > 1? " · có khác " + (openN - 1) + " hạng ": "") +
           "</p>" +
           "<b>" + esc(ev.title) + "</b>" +
           '<span>' +
-            (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "开始 " + esc(fmtDate(ev.startTime)) : "")) +
+            (ev.dueTime? " Hạn chót " + esc(fmtDate(ev.dueTime)): (ev.startTime? " Bắt đầu " + esc(fmtDate(ev.startTime)): "")) +
           "</span>" +
         "</div>" +
         '<div class="dash-focus__acts">' +
           '<a class="btn btn--primary btn--sm" href="' + esc(cta.href) + '" data-focus-cta="1">' +
             esc(cta.label) + "</a>" +
-          '<a class="btn btn--ghost btn--sm" href="#dash-calendar">全部任务</a>' +
+          '<a class="btn btn--ghost btn--sm" href="#dash-calendar"> Tất cả nhiệm vụ </a>' +
         "</div>" +
       "</div>";
 
@@ -239,41 +239,41 @@
     var open = (events || []).filter(function (ev) {
       return ev.status === "PENDING" || ev.status === "OVERDUE";
     }).sort(function (a, b) {
-      if (a.status === "OVERDUE" && b.status !== "OVERDUE") return -1;
-      if (b.status === "OVERDUE" && a.status !== "OVERDUE") return 1;
+      if (a.status === "OVERDUE" && b.status!== "OVERDUE") return -1;
+      if (b.status === "OVERDUE" && a.status!== "OVERDUE") return 1;
       return String(a.dueTime || a.startTime || "").localeCompare(String(b.dueTime || b.startTime || ""));
     }).slice(0, 6);
 
     var body;
     if (!open.length) {
-      body = '<p class="dash-empty">暂无待办。老师布置作业后会出现在这里。</p>' +
-        '<a class="btn btn--ghost btn--sm" href="#dash-calendar">查看任务日历</a>';
+      body = '<p class="dash-empty"> tạm thời chưa có Cần làm. Giáo viên bố trí bài tập sau sẽ xuất hiện ở chỗ này. </p>' +
+        '<a class="btn btn--ghost btn--sm" href="#dash-calendar"> Xem Lịch nhiệm vụ </a>';
     } else {
       body = '<ul class="dash-todo-list">' + open.map(function (ev) {
         var st = ev.status || "PENDING";
         return '<li class="dash-todo">' +
           '<div class="dash-todo__main">' +
             '<span class="cal-tag cal-tag--' +
-              (ev.eventType === "ASSIGNMENT" ? "assignment" : ev.eventType === "LESSON" ? "lesson" : "announce") +
+              (ev.eventType === "ASSIGNMENT"? "assignment": ev.eventType === "LESSON"? "lesson": "announce") +
               '">' + esc(TYPE_LABEL[ev.eventType] || "") + "</span> " +
             '<span class="cal-status-pill cal-status--' +
-              (st === "COMPLETED" ? "done" : st === "OVERDUE" ? "overdue" : "pending") +
+              (st === "COMPLETED"? "done": st === "OVERDUE"? "overdue": "pending") +
               '">' + esc(STATUS_LABEL[st] || st) + "</span>" +
-            (isNew(ev) ? ' <span class="dash-todo__new">新</span>' : "") +
+            (isNew(ev)? ' <span class="dash-todo__new"> mới </span>': "") +
             "<b>" + esc(ev.title) + "</b>" +
             '<span class="dash-todo__meta">' +
-              (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : (ev.startTime ? "开始 " + esc(fmtDate(ev.startTime)) : "")) +
+              (ev.dueTime? " Hạn chót " + esc(fmtDate(ev.dueTime)): (ev.startTime? " Bắt đầu " + esc(fmtDate(ev.startTime)): "")) +
             "</span></div>" +
-          '<a class="btn btn--primary btn--sm" href="#event-' + esc(String(ev.id)) + '">查看</a></li>';
+          '<a class="btn btn--primary btn--sm" href="#event-' + esc(String(ev.id)) + '"> Xem </a></li>';
       }).join("") + "</ul>" +
-        '<a class="dash-more" href="#dash-calendar">全部任务 →</a>';
+        '<a class="dash-more" href="#dash-calendar"> Tất cả nhiệm vụ →</a>';
     }
 
-    return '<div class="dash-section__head"><h2 class="bento-panel__title">近期待办</h2><p class="bento-panel__desc">本周作业与截止</p></div>' + body;
+    return '<div class="dash-section__head"><h2 class="bento-panel__title"> Nhiệm vụ sắp tới </h2><p class="bento-panel__desc"> tuần này bài tập và Hạn chót </p></div>' + body;
   }
 
   function fail(msg) {
-    root.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + esc(msg) + "</p></div>";
+    root.innerHTML = '<div class="state state--brand"><h3> Tải dữ liệu thất bại </h3><p>' + esc(msg) + "</p></div>";
     if (focusEl) focusEl.hidden = true;
   }
 
@@ -282,6 +282,6 @@
     renderFocus(events);
     root.innerHTML = todosHTML(events);
   }).catch(function (e) {
-    fail(e.message || "请刷新重试");
+    fail(e.message || " mời Làm mới Thử lại ");
   });
 })();

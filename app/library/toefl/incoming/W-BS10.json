@@ -19,19 +19,45 @@
       "id": 91,
       "set": "W-BS10-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you attend the seminar?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " for today conflicted " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " for today conflicted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["my other commitments", "was scheduled", "the seminar", "with", "that"],
-      "answer": ["the seminar", "that", "was scheduled", "with", "my other commitments"]
+      "bank": [
+        "my other commitments",
+        "was scheduled",
+        "the seminar",
+        "with",
+        "that"
+      ],
+      "answer": [
+        "the seminar",
+        "that",
+        "was scheduled",
+        "with",
+        "my other commitments"
+      ]
     },
     {
       "type": "sentence",
@@ -39,19 +65,47 @@
       "id": 92,
       "set": "W-BS10-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "When are you planning to submit your assignment?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " is." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " is."
+        }
       ],
-      "bank": ["need", "check", "I", "the deadline", "to", "when"],
-      "answer": ["I", "need", "to", "check", "when", "the deadline"]
+      "bank": [
+        "need",
+        "check",
+        "I",
+        "the deadline",
+        "to",
+        "when"
+      ],
+      "answer": [
+        "I",
+        "need",
+        "to",
+        "check",
+        "when",
+        "the deadline"
+      ]
     },
     {
       "type": "sentence",
@@ -59,20 +113,50 @@
       "id": 93,
       "set": "W-BS10-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Where did you find the article you used in your presentation?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " magazine that " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " magazine that "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["I", "it was", "at", "read", "the library", "in the"],
-      "answer": ["it was", "in the", "I", "read", "at", "the library"]
+      "bank": [
+        "I",
+        "it was",
+        "at",
+        "read",
+        "the library",
+        "in the"
+      ],
+      "answer": [
+        "it was",
+        "in the",
+        "I",
+        "read",
+        "at",
+        "the library"
+      ]
     },
     {
       "type": "sentence",
@@ -80,20 +164,52 @@
       "id": 94,
       "set": "W-BS10-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Where is the best place to eat around campus?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["of restaurant", "me", "you're", "looking", "for", "what type", "can you tell"],
-      "answer": ["can you tell", "me", "what type", "of restaurant", "you're", "looking", "for"]
+      "bank": [
+        "of restaurant",
+        "me",
+        "you're",
+        "looking",
+        "for",
+        "what type",
+        "can you tell"
+      ],
+      "answer": [
+        "can you tell",
+        "me",
+        "what type",
+        "of restaurant",
+        "you're",
+        "looking",
+        "for"
+      ]
     },
     {
       "type": "sentence",
@@ -101,18 +217,42 @@
       "id": 95,
       "set": "W-BS10-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you like the painting at the university gallery?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " it." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " it."
+        }
       ],
-      "bank": ["about", "interesting", "found", "nothing", "I"],
-      "answer": ["I", "found", "nothing", "interesting", "about"]
+      "bank": [
+        "about",
+        "interesting",
+        "found",
+        "nothing",
+        "I"
+      ],
+      "answer": [
+        "I",
+        "found",
+        "nothing",
+        "interesting",
+        "about"
+      ]
     },
     {
       "type": "sentence",
@@ -120,20 +260,50 @@
       "id": 96,
       "set": "W-BS10-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I just signed up for the photography workshop.",
       "parts": [
-        { "t": "Is " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Is "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["time", "first", "one", "it", "your", "taking"],
-      "answer": ["it", "your", "first", "time", "taking", "one"]
+      "bank": [
+        "time",
+        "first",
+        "one",
+        "it",
+        "your",
+        "taking"
+      ],
+      "answer": [
+        "it",
+        "your",
+        "first",
+        "time",
+        "taking",
+        "one"
+      ]
     },
     {
       "type": "sentence",
@@ -141,18 +311,40 @@
       "id": 97,
       "set": "W-BS10-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard there's a music festival near campus this weekend.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " it " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " it "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["being", "where", "is", "held"],
-      "answer": ["where", "is", "being", "held"]
+      "bank": [
+        "being",
+        "where",
+        "is",
+        "held"
+      ],
+      "answer": [
+        "where",
+        "is",
+        "being",
+        "held"
+      ]
     },
     {
       "type": "sentence",
@@ -160,20 +352,50 @@
       "id": 98,
       "set": "W-BS10-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did the teacher say about the museum's history during the field trip?",
       "parts": [
-        { "t": "He explained " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "He explained "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["as", "a", "originally used", "how the", "building was", "courthouse"],
-      "answer": ["how the", "building was", "originally used", "as", "a", "courthouse"]
+      "bank": [
+        "as",
+        "a",
+        "originally used",
+        "how the",
+        "building was",
+        "courthouse"
+      ],
+      "answer": [
+        "how the",
+        "building was",
+        "originally used",
+        "as",
+        "a",
+        "courthouse"
+      ]
     },
     {
       "type": "sentence",
@@ -181,19 +403,45 @@
       "id": 99,
       "set": "W-BS10-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I saw an advertisement for a digital marketing course.",
       "parts": [
-        { "t": "Can " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Can "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["for beginners", "tell", "it's suitable", "me whether", "you"],
-      "answer": ["you", "tell", "me whether", "it's suitable", "for beginners"]
+      "bank": [
+        "for beginners",
+        "tell",
+        "it's suitable",
+        "me whether",
+        "you"
+      ],
+      "answer": [
+        "you",
+        "tell",
+        "me whether",
+        "it's suitable",
+        "for beginners"
+      ]
     },
     {
       "type": "sentence",
@@ -201,18 +449,42 @@
       "id": 100,
       "set": "W-BS10-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "The conference on climate change was very informative.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " online?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " online?"
+        }
       ],
-      "bank": ["do you", "be available", "the keynote", "know if", "speech will"],
-      "answer": ["do you", "know if", "the keynote", "speech will", "be available"]
+      "bank": [
+        "do you",
+        "be available",
+        "the keynote",
+        "know if",
+        "speech will"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "the keynote",
+        "speech will",
+        "be available"
+      ]
     }
   ]
 }

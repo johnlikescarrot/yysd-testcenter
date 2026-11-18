@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Copy listening MP3s from Desktop 剑雅 folders into library. Prefer largest/newest."""
+"""Copy listening MP3s from Desktop Cambridge IELTS folders into library. Prefer largest/newest."""
 import hashlib
 import re
 import shutil
@@ -11,7 +11,7 @@ DESKTOP = Path("/Users/frankman/Desktop")
 
 EXTRA = [
     # ielts19_test1_audio1: run scripts/splice_cam19_t1p1.sh (intro + dialogue), not a single source
-    (DESKTOP / "之昂张张张zzz - 【最新】IELTS20 Text2 Part1.mp3", "ielts20_test2_audio1.mp3"),
+    (DESKTOP / " chi ngang trương trương trương zzz - [mới nhất]IELTS20 Text2 Part1.mp3", "ielts20_test2_audio1.mp3"),
 ]
 
 
@@ -32,7 +32,7 @@ def deployed_name(vol: int, test: int, part: int) -> str:
 
 
 def parse_source(name: str):
-    name = name.replace("【新】", "")
+    name = name.replace("[mới]", "")
     m = re.search(r"IELTS\s*(\d+)\s*Test\s*(\d+)\s*(?:Section|Part)\s*(\d+)", name, re.I)
     if not m:
         return None
@@ -41,7 +41,7 @@ def parse_source(name: str):
 
 def collect_sources():
     by_key: dict[tuple, list[Path]] = {}
-    for base in [DESKTOP, DESKTOP / "剑雅"]:
+    for base in [DESKTOP, DESKTOP / " Cambridge IELTS "]:
         if not base.exists():
             continue
         for p in base.rglob("*.mp3"):

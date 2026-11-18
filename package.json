@@ -1,0 +1,24 @@
+{
+  "name": "yysd-ielts-vn",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Trung tâm Luyện thi IELTS Quốc tế YYSD — Phiên bản Việt hóa toàn diện, Lộ trình học thông minh phong cách Duolingo & Thư viện PDF học thuật Google Scholar",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "check:vi": "node scripts/check_vietnamese.mjs",
+    "check:cambridge": "python3 scripts/verify_cambridge_mock_pages.py && python3 scripts/verify_vocab_wrongword_hooks.py",
+    "build:pdfs": "python3 scripts/build_scholar_pdfs.py",
+    "build:pages": "node scripts/build_pages.mjs",
+    "lint": "eslint src/ tests/ scripts/check_vietnamese.mjs scripts/build_pages.mjs scripts/serve_static.mjs && node scripts/check_vietnamese.mjs",
+    "serve": "node scripts/serve_static.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@vitest/coverage-v8": "^3.0.7",
+    "eslint": "^9.20.0",
+    "globals": "^15.15.0",
+    "vitest": "^3.0.7"
+  }
+}

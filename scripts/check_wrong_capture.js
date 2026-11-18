@@ -3,7 +3,7 @@
 "use strict";
 
 function clipText(v, n) {
-  var s = v == null ? "" : String(v);
+  var s = v == null? "": String(v);
   if (s.length > n) s = s.slice(0, n);
   return s.trim();
 }
@@ -11,9 +11,9 @@ function clipText(v, n) {
 function sanitizeWrong(arr) {
   if (!Array.isArray(arr)) return [];
   return arr.slice(0, 80).map(function (w) {
-    if (!w || typeof w !== "object") return null;
+    if (!w || typeof w!== "object") return null;
     var out = {
-      no: clipText(w.no != null ? String(w.no) : "", 20),
+      no: clipText(w.no!= null? String(w.no): "", 20),
       ua: clipText(w.ua, 200),
       ans: clipText(w.ans, 200)
     };
@@ -23,24 +23,24 @@ function sanitizeWrong(arr) {
   }).filter(Boolean);
 }
 
-// mirrors SCORE_BRIDGE scrapeWrong (DOM-free: split on .ritem blocks)
+// mirrors SCORE_BRIDGE scrapeWrong (DOM-free: split on.ritem blocks)
 function scrapeWrongFromHtml(html) {
   var out = [];
   // ponytail: ceiling = nested-div papers; upgrade to jsdom if samples get complex
   String(html || "").split(/(?=<div[^>]*class="[^"]*\britem\b)/i).forEach(function (block) {
     if (out.length >= 80) return;
     var cls = (block.match(/^<div[^>]*class="([^"]*)"/i) || [])[1] || "";
-    if (!/\britem\b/i.test(cls) || !/\bwrong\b/i.test(cls)) return;
+    if (!/\britem\b/i.test(cls) ||!/\bwrong\b/i.test(cls)) return;
     var rq = (block.match(/class="rq"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     rq = rq.replace(/<[^>]+>/g, "").trim();
-    var m = rq.match(/第\s*([^\s题]+)\s*题/);
+    var m = rq.match(/ thứ \s*([^\s câu]+)\s* câu /);
     var yours = (block.match(/class="yours"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     var ans = (block.match(/class="correctv"[^>]*>([\s\S]*?)<\//i) || [])[1] || "";
     yours = yours.replace(/<[^>]+>/g, "").trim();
     ans = ans.replace(/<[^>]+>/g, "").trim();
-    if (yours === "未作答") yours = "";
+    if (yours === "Chưa trả lời") yours = "";
     out.push({
-      no: m ? m[1] : rq.replace(/^[✘✔✗]\s*/, ""),
+      no: m? m[1]: rq.replace(/^[✘✔✗]\s*/, ""),
       ua: yours,
       ans: ans
     });
@@ -54,11 +54,11 @@ function assert(cond, msg) {
 
 var sample =
   '<div id="summary"><div class="item"><span class="num">8 / 10</span></div></div>' +
-  '<div class="ritem wrong"><div class="rq">✘ 第 3 题</div>' +
+  '<div class="ritem wrong"><div class="rq">✘ Câu 3</div>' +
   '<div class="yours">apple</div><div class="correctv">orange</div></div>' +
-  '<div class="ritem wrong"><div class="rq">✘ 第 7 题</div>' +
-  '<div class="yours">未作答</div><div class="correctv">blue</div></div>' +
-  '<div class="ritem correct"><div class="rq">✔ 第 1 题</div>' +
+  '<div class="ritem wrong"><div class="rq">✘ Câu 7</div>' +
+  '<div class="yours"> Chưa trả lời </div><div class="correctv">blue</div></div>' +
+  '<div class="ritem correct"><div class="rq">✔ Câu 1</div>' +
   '<div class="yours">yes</div><div class="correctv">yes</div></div>';
 
 var scraped = scrapeWrongFromHtml(sample);
@@ -104,20 +104,20 @@ assert(examJs.indexOf("lastScorePushKey === pushKey") >= 0 && examJs.indexOf("pe
 assert(examJs.indexOf("wrongCaptureOf") >= 0, "exam.js must classify wrongCapture");
 
 var resultsHtml = fs.readFileSync(path.join(__dirname, "..", "results.html"), "utf8");
-assert(resultsHtml.indexOf("AI 错题讲解即将上线") < 0, "results.html must not stub-disable 查看错题");
+assert(resultsHtml.indexOf("AI câu sai giảng giải Sắp ra mắt ") < 0, "results.html must not stub-disable Xem câu sai ");
 assert(resultsHtml.indexOf("results-wrongs.js") >= 0, "results.html must load wrongs hub");
 assert(resultsHtml.indexOf('id="results-wrongs"') >= 0, "results.html must have #results-wrongs");
 assert(resultsHtml.indexOf("wrong-record.html?item=") >= 0, "results rows must link to wrong-record");
 assert(resultsHtml.indexOf("hashchange") >= 0, "results must listen to hashchange");
-assert(resultsHtml.indexOf('qs.get("event") ? "wrongs"') >= 0, "results ?event= opens wrongs tab");
+assert(resultsHtml.indexOf('qs.get("event")? "wrongs"') >= 0, "results?event= opens wrongs tab");
 
 var teacherJs = fs.readFileSync(path.join(__dirname, "..", "assets/js/teacher.js"), "utf8");
-assert(teacherJs.indexOf("data-item") >= 0, "teacher 查看错题 must keep item fallback");
+assert(teacherJs.indexOf("data-item") >= 0, "teacher Xem câu sai must keep item fallback");
 assert(teacherJs.indexOf("data-copy-wrong") >= 0, "teacher wrong list must be copyable");
 
 console.log("ok: wrong capture");
 console.log("");
-console.log("冒烟要点（手工）:");
-console.log("1. 上传 HTML 作业交卷 → 教师端「上传作业」查看错题有列表");
-console.log("2. 真题阅读交卷（故意做错）→ 「查看错题」有题号/作答/正解，可复制");
-console.log("3. 日历布置的 practice 交卷 → 「练习/全部」可见且带错题（非管理员老师）");
+console.log(" hơi nước yếu điểm (thủ công):");
+console.log("1. thượng truyền(*upload) HTML bài tập Nộp bài → Cổng giáo viên « thượng truyền(*upload) bài tập » Xem câu sai có liệt biểu List ");
+console.log("2. đề thi thật Đọc Nộp bài (cố ý làm sai) → « Xem câu sai » có câu số / đáp lại / đang giải, có thể phục chế ");
+console.log("3. lịch ngày bố trí practice Nộp bài → « Luyện tập / Tất cả » có thể thấy được mà lại mang câu sai (không phải Quản trị viên Giáo viên) ");

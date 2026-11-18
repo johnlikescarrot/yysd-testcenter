@@ -31,7 +31,7 @@
   }
 
   function save(pack) {
-    if (typeof sessionStorage === "undefined" || !pack) return;
+    if (typeof sessionStorage === "undefined" ||!pack) return;
     sessionStorage.setItem(storeKey(pack.id), JSON.stringify(pack));
   }
 
@@ -43,7 +43,7 @@
     return pack;
   }
 
-  // 一场模考四科共用一个 sid，成绩单才把四科算作同一场
+  // một cuộc Thi thử bốn khoa dùng chung một cái sid, Bảng điểm mới đem bốn khoa tính làm đồng nhất trận
   function useSid(sid) {
     try { sessionStorage.setItem("yysd:toefl-sid", String(sid)); } catch (e) {}
   }
@@ -55,7 +55,7 @@
 
   function nextSkill(skill) {
     var i = ORDER.indexOf(skill);
-    return i < 0 || i >= ORDER.length - 1 ? "" : ORDER[i + 1];
+    return i < 0 || i >= ORDER.length - 1? "": ORDER[i + 1];
   }
 
   function label(skill) { return LABELS[skill] || skill; }
@@ -68,13 +68,13 @@
 
   function mockHubHref(kind) {
     var q = "mock.html?kind=" + encodeURIComponent(kind || "full");
-    if (typeof location !== "undefined" && location.hostname === "app.youyisida.com") return q;
+    if (typeof location!== "undefined" && location.hostname === "app.youyisida.com") return q;
     return "app/" + q;
   }
 
-  /* 全真模考从套题列表进，返回列表而非冲刺包 */
+  /* Thi thử toàn phần từ bộ câu liệt biểu List tiến, Về danh sách mà không phải là chạy nước rút bao */
   function homeHubHref() {
-    if (typeof location !== "undefined" && location.hostname === "app.youyisida.com") return "home.html";
+    if (typeof location!== "undefined" && location.hostname === "app.youyisida.com") return "home.html";
     return "app/home.html";
   }
 
@@ -85,7 +85,7 @@
   }
 
   function klListHref() {
-    if (typeof location !== "undefined" && location.hostname === "app.youyisida.com") return "official.html";
+    if (typeof location!== "undefined" && location.hostname === "app.youyisida.com") return "official.html";
     return "app/official.html";
   }
 
@@ -98,7 +98,7 @@
 
   function labHref(skill) {
     return ["reading", "listening", "writing", "speaking"].indexOf(skill) >= 0
-      ? "practice.html?skill=" + skill : "home.html";
+      ? "practice.html?skill=" + skill: "home.html";
   }
 
   function listBack(skill, opts) {
@@ -107,10 +107,10 @@
     if (fromKl()) return klListHref();
     // app.youyisida.com has no zone.html; sending Exit or a failed preview there is a nginx 404
     if (onAppHost()) {
-      if (isFull() || opts.mock) return mockHubHref(isFull() ? "full" : "single");
+      if (isFull() || opts.mock) return mockHubHref(isFull()? "full": "single");
       return labHref(skill);
     }
-    if (isFull() || fromApp()) return mockHubHref(isFull() ? "full" : "single");
+    if (isFull() || fromApp()) return mockHubHref(isFull()? "full": "single");
     if (opts.lab) return "zone.html?zone=toefl&s=lab&skill=" + encodeURIComponent(skill);
     return "zone.html?zone=toefl&s=" + encodeURIComponent(skill);
   }
@@ -122,7 +122,7 @@
 
   function go(href) {
     markLeave();
-    if (typeof location !== "undefined") location.replace(href);
+    if (typeof location!== "undefined") location.replace(href);
   }
 
   function withFrom(href) {
@@ -138,7 +138,7 @@
 
   function introHref(id, mode) {
     var q = "toefl-full.html?id=" + encodeURIComponent(id);
-    return withFrom(mode ? q + "&mode=" + encodeURIComponent(mode) : q);
+    return withFrom(mode? q + "&mode=" + encodeURIComponent(mode): q);
   }
 
   function resultsHref(id, mode) {
@@ -147,14 +147,14 @@
 
   function nextHref(id, mode, skill) {
     var n = nextSkill(skill);
-    return n ? skillHref(id, mode, n) : resultsHref(id, mode);
+    return n? skillHref(id, mode, n): resultsHref(id, mode);
   }
 
   function firstIncomplete(pack) {
     if (!pack || pack.voided) return "";
     var i;
     for (i = 0; i < ORDER.length; i++) {
-      if (!pack.sections || !pack.sections[ORDER[i]]) return ORDER[i];
+      if (!pack.sections ||!pack.sections[ORDER[i]]) return ORDER[i];
     }
     return "";
   }
@@ -177,7 +177,7 @@
       go(resultsHref(id, mode));
       return false;
     }
-    if (need !== skill) {
+    if (need!== skill) {
       go(skillHref(id, mode, need));
       return false;
     }
@@ -196,7 +196,7 @@
   function paperFile(skill, id) {
     var stem = String(id || "");
     var underApp = /^set-\d+$/.test(stem) || stem.indexOf("bank-") === 0;
-    var prefix = (!onAppHost() && underApp) ? "app/" : "";
+    var prefix = (!onAppHost() && underApp)? "app/": "";
     return prefix + "library/toefl/" + stem + "-" + skill + ".json";
   }
 
@@ -217,14 +217,14 @@
   function reviewHref(skill) {
     var preview = false;
     try {
-      preview = typeof location !== "undefined" && new URLSearchParams(location.search).get("preview") === "1";
+      preview = typeof location!== "undefined" && new URLSearchParams(location.search).get("preview") === "1";
     } catch (e0) {}
-    var href = (onAppHost() ? "" : "app/") + "review.html?skill=" + encodeURIComponent(skill);
+    var href = (onAppHost()? "": "app/") + "review.html?skill=" + encodeURIComponent(skill);
     if (preview) href += "&preview=1";
     return href;
   }
 
-  /* 复盘页只有 sessionStorage 里这一份答卷，整场其余科目由页面自己按 sid 从模考历史重建 */
+  /* phục bàn trang chỉ có sessionStorage dặm cái này một phần giải bài thi, cả trận còn lại kỹ năng do trang web chính mình theo như sid từ Thi thử Lịch sử xây dựng lại */
   function reviewGo(skill, paper, payload) {
     stashReview(skill, paper, payload);
     go(reviewHref(skill));
@@ -279,11 +279,11 @@
     if (exit) exit.setAttribute("href", listBack());
   }
 
-  /* 作废/退出 = 本场结束：上报完成，宽限不再允许续考（best-effort，失败不影响流程） */
+  /* hết hiệu lực / Đăng xuất = bổn tràng chấm dứt: báo cáo hoàn thành, thư thả không hề cho phép tục khảo thi (best-effort, thất bại không ảnh hưởng quá trình) */
   function examDone(id) {
     try {
       var A = w.YYSD_AUTH;
-      if (!A || !A.api || !id) return;
+      if (!A ||!A.api ||!id) return;
       A.api("/api/toefl/exam-done", { method: "POST", body: { packageId: id } }).catch(function () {});
     } catch (e) {}
   }
@@ -303,7 +303,7 @@
 
   function voidRestartHref(id, skill) {
     if (isFull() || fromApp()) {
-      var kind = isFull() ? "full" : "single";
+      var kind = isFull()? "full": "single";
       var href = mockHubHref(kind) + "&id=" + encodeURIComponent(id);
       if (kind === "single" && skill) href += "&skill=" + encodeURIComponent(skill);
       return href;
@@ -321,7 +321,7 @@
     return {
       score: r.score,
       total: r.total,
-      essays: (r.detail || []).filter(function (d) { return d.type !== "sentence"; }).map(function (d) {
+      essays: (r.detail || []).filter(function (d) { return d.type!== "sentence"; }).map(function (d) {
         return { type: d.type, words: d.words || 0, ua: d.ua || "" };
       })
     };
@@ -362,5 +362,5 @@
   };
 
   w.YYSD_TOEFL_FULL = api;
-  if (typeof module !== "undefined" && module.exports) module.exports = api;
-})(typeof window !== "undefined" ? window : global);
+  if (typeof module!== "undefined" && module.exports) module.exports = api;
+})(typeof window!== "undefined"? window: global);

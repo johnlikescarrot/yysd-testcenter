@@ -34,16 +34,16 @@
   var cdtWanted = qs.get("cdt") === "1" || qs.get("pick") === "1";
   var pickMode = false;
   var cdtPack = (qs.get("pack") || "").toLowerCase();
-  if (cdtPack !== "drill" && cdtPack !== "exam") cdtPack = "";
+  if (cdtPack!== "drill" && cdtPack!== "exam") cdtPack = "";
   var cdtSuite = qs.get("suite") === "1";
-  if (cdtSuite && !cdtPack) cdtPack = "exam";
+  if (cdtSuite &&!cdtPack) cdtPack = "exam";
   var explainMode = qs.get("explain") === "1" || /-explain$/i.test(String(id || ""));
 
-  if (!id) { fail("缺少内容编号。"); return; }
+  if (!id) { fail(" thiếu khuyết nội dung đánh số. "); return; }
 
   var uploadMatch = String(id).match(/^upload-(\d+)$/);
   if (uploadMatch) {
-    if (!window.YYSD_AUTH || !YYSD_AUTH.getToken || !YYSD_AUTH.getToken()) {
+    if (!window.YYSD_AUTH ||!YYSD_AUTH.getToken ||!YYSD_AUTH.getToken()) {
       location.href = "login.html?next=" + encodeURIComponent(location.pathname + location.search);
       return;
     }
@@ -61,7 +61,7 @@
         var ev = d.event || {};
         item = {
           id: id,
-          title: ev.title || ("上传练习 #" + eventId),
+          title: ev.title || (" thượng truyền(*upload) Luyện tập #" + eventId),
           zone: "assignment",
           subject: "teacher-upload",
           duration: 0,
@@ -75,29 +75,29 @@
         startUpload(html);
       })
       .catch(function (e) {
-        fail((e && e.message) || "无法加载老师布置的练习。");
+        fail((e && e.message) || " không cách nào thêm năm Giáo viên bố trí Luyện tập. ");
       });
   } else {
     Y.load().then(function (items) {
-      item = Y.resolveItem ? Y.resolveItem(items, id) : items.filter(function (e) { return e.id === id; })[0];
-      if (!item) { fail("找不到该内容，可能已被移除。"); return; }
+      item = Y.resolveItem? Y.resolveItem(items, id): items.filter(function (e) { return e.id === id; })[0];
+      if (!item) { fail(" Không tìm thấy nên nội dung, khả năng đã bị dời trừ. "); return; }
       start();
     }).catch(function () {
       fail(location.protocol === "file:"
-        ? "请通过网址（http://）访问本站，本地双击打开会被浏览器拦截。"
-        : "内容信息加载失败。");
+        ? " xin thông qua địa chỉ Internet (http://) truy cập trang web, bản địa double-click mở ra sẽ bị trình duyệt chặn đường. "
+        : " nội dung tin tức Tải dữ liệu thất bại. ");
     });
   }
 
   function fail(msg) {
-    titleEl.textContent = "无法打开";
+    titleEl.textContent = " không cách nào mở ra ";
     frame.removeAttribute("src");
     try {
       var doc = frame.contentDocument;
       doc.open();
       doc.write('<div style="font-family:sans-serif;padding:60px;text-align:center;color:#6b7589">' +
         '<h2 style="color:#14213d">😕 ' + Y.esc(msg) + '</h2>' +
-        '<p><a href="index.html" style="color:#c8102e">← 返回首页</a></p></div>');
+        '<p><a href="index.html" style="color:#c8102e">← Về trang chủ </a></p></div>');
       doc.close();
     } catch (e) {
       metaEl.textContent = msg;
@@ -108,14 +108,14 @@
     var m = (it.id || "").match(/cambridge-(\d+)-test-(\d+)/);
     if (!m) return null;
     return {
-      vol: "剑" + m[1],
+      vol: " kiếm " + m[1],
       test: "Test " + m[2],
       skill: (Y.SUBJECT[it.subject] || {}).label || ""
     };
   }
 
   function renderBadges(badges) {
-    if (!badgesEl || !badges) {
+    if (!badgesEl ||!badges) {
       if (badgesEl) badgesEl.hidden = true;
       return;
     }
@@ -123,11 +123,11 @@
     badgesEl.innerHTML =
       '<span class="v-badge v-badge--vol">' + Y.esc(badges.vol) + "</span>" +
       '<span class="v-badge v-badge--test">' + Y.esc(badges.test) + "</span>" +
-      (badges.skill ? '<span class="v-badge v-badge--skill">' + Y.esc(badges.skill) + "</span>" : "");
+      (badges.skill? '<span class="v-badge v-badge--skill">' + Y.esc(badges.skill) + "</span>": "");
   }
 
   function isScoredReveal(payload) {
-    // ponytail: paper already paints 批改报告 — full-screen reveal stacked "交卷中/成绩揭晓" on top of it
+    // ponytail: paper already paints Báo cáo chấm bài — full-screen reveal stacked " Nộp bài Vừa / Điểm số công bố " on top of it
     return false;
   }
 
@@ -155,32 +155,32 @@
     var isWriting = item.subject === "cambridge-writing" || item.subject === "ielts-writing" ||
       (payload.completed && payload.score == null);
     var reveal = isScoredReveal(payload);
-    var heading = isStudy ? "学习进度已保存" : (isWriting ? "写作练习已保存" : "成绩已保存");
-    var sub = payload.syncSub || "正在同步到云端…";
+    var heading = isStudy? " Học tập Tiến độ đã Lưu ": (isWriting? " Viết Luyện tập đã Lưu ": " Điểm số đã Lưu ");
+    var sub = payload.syncSub || " đang cùng với bước đến đám mây …";
     var scoreLine = "";
     var wrongN = payload.wrongWords && payload.wrongWords.length;
     var deltaLine = "";
 
-    if (payload.score != null) {
+    if (payload.score!= null) {
       scoreLine = String(payload.score);
-      if (payload.total != null) scoreLine += " / " + payload.total;
-      if (payload.band != null) scoreLine += " · Band " + payload.band;
-      if (prevScore != null && isFinite(Number(prevScore)) && Number(prevScore) !== Number(payload.score)) {
+      if (payload.total!= null) scoreLine += " / " + payload.total;
+      if (payload.band!= null) scoreLine += " · Band " + payload.band;
+      if (prevScore!= null && isFinite(Number(prevScore)) && Number(prevScore)!== Number(payload.score)) {
         var dlt = Number(payload.score) - Number(prevScore);
-        deltaLine = dlt > 0 ? "比上次 +" + dlt : (dlt < 0 ? "比上次 " + dlt : "");
+        deltaLine = dlt > 0? " so sánh với lần +" + dlt: (dlt < 0? " so sánh với lần " + dlt: "");
       }
     } else if (isWriting) {
-      scoreLine = payload.writingWords ? payload.writingWords + " 词" : "已完成";
+      scoreLine = payload.writingWords? payload.writingWords + " từ ": "Đã hoàn thành";
     } else if (isStudy) {
-      scoreLine = "已完成";
+      scoreLine = "Đã hoàn thành";
     }
-    if (wrongN && !payload.syncSub) {
-      sub = "本次新增 " + wrongN + " 个错词，可在单词区错题本复习";
+    if (wrongN &&!payload.syncSub) {
+      sub = " lần này mới tăng " + wrongN + " cái sai lầm từ, có thể tại Khu từ vựng Sổ lỗi sai Ôn tập ";
     }
-    if (deltaLine) sub = deltaLine + (sub ? " · " + sub : "");
+    if (deltaLine) sub = deltaLine + (sub? " · " + sub: "");
 
-    var primaryHref = wrongN ? "wrong-words.html" : "results.html";
-    var primaryLabel = wrongN ? "看错题 →" : "我的成绩 →";
+    var primaryHref = wrongN? "wrong-words.html": "results.html";
+    var primaryLabel = wrongN? " nhìn lầm câu →": " Kết quả của tôi →";
 
     if (reveal) {
       toastHost.innerHTML =
@@ -188,19 +188,19 @@
           '<div class="score-reveal__card">' +
             '<p class="score-reveal__eyebrow">' + Y.esc(heading) + "</p>" +
             '<div class="score-reveal__num" data-score-num>0</div>' +
-            (payload.total != null
+            (payload.total!= null
               ? '<div class="score-reveal__denom">/ ' + Y.esc(String(payload.total)) +
-                (payload.band != null ? " · Band " + Y.esc(String(payload.band)) : "") + "</div>"
-              : (payload.band != null
+                (payload.band!= null? " · Band " + Y.esc(String(payload.band)): "") + "</div>"
+              : (payload.band!= null
                 ? '<div class="score-reveal__denom">Band ' + Y.esc(String(payload.band)) + "</div>"
                 : "")) +
-            (deltaLine ? '<p class="score-reveal__delta">' + Y.esc(deltaLine) + "</p>" : "") +
+            (deltaLine? '<p class="score-reveal__delta">' + Y.esc(deltaLine) + "</p>": "") +
             '<p class="score-reveal__sub">' + Y.esc(sub) + "</p>" +
             '<div class="score-reveal__acts">' +
               '<a class="btn btn--primary btn--sm" href="' + primaryHref + '">' + primaryLabel + "</a>" +
-              '<a class="btn btn--ghost btn--sm" href="dashboard.html">回待办</a>' +
+              '<a class="btn btn--ghost btn--sm" href="dashboard.html"> quay về Cần làm </a>' +
             "</div>" +
-            '<button type="button" class="score-toast__close score-reveal__x" aria-label="关闭">×</button>' +
+            '<button type="button" class="score-toast__close score-reveal__x" aria-label=" Đóng ">×</button>' +
           "</div>" +
         "</div>";
       toastHost.classList.add("is-visible", "is-reveal");
@@ -215,13 +215,13 @@
         '<div class="score-toast__icon" aria-hidden="true">✓</div>' +
         '<div class="score-toast__body">' +
           '<b>' + Y.esc(heading) + '</b>' +
-          (scoreLine ? '<span class="score-toast__score">' + Y.esc(scoreLine) + '</span>' : '') +
+          (scoreLine? '<span class="score-toast__score">' + Y.esc(scoreLine) + '</span>': '') +
           '<span class="score-toast__sub">' + Y.esc(sub) + '</span>' +
         '</div>' +
         (wrongN
-          ? '<a class="score-toast__link" href="wrong-words.html">错题本 →</a>'
-          : '<a class="score-toast__link" href="results.html">我的成绩 →</a>') +
-        '<button type="button" class="score-toast__close" aria-label="关闭">×</button>' +
+          ? '<a class="score-toast__link" href="wrong-words.html"> Sổ lỗi sai →</a>'
+          : '<a class="score-toast__link" href="results.html"> Kết quả của tôi →</a>') +
+        '<button type="button" class="score-toast__close" aria-label=" Đóng ">×</button>' +
       '</div>';
 
     toastHost.classList.remove("is-reveal");
@@ -233,7 +233,7 @@
 
   function setToastSyncSub(text) {
     if (!toastHost) return;
-    var el = toastHost.querySelector(".score-toast__sub, .score-reveal__sub");
+    var el = toastHost.querySelector(".score-toast__sub,.score-reveal__sub");
     if (el) el.textContent = text;
   }
 
@@ -301,11 +301,11 @@
         '</div></div>';
     } else {
       el.innerHTML =
-        '<div><h2>模考已中止</h2>' +
-        '<p>检测到切换页面或离开考试窗口，本次模考无效，无法继续作答。</p>' +
+        '<div><h2> Thi thử đã bỏ dở </h2>' +
+        '<p> Đánh giá đến hoán đổi trang web hoặc ly khai cuộc thi cửa sổ, lần này Thi thử không có hiệu quả, không cách nào Tiếp tục đáp lại. </p>' +
         '<div class="yysd-exam-lock-actions">' +
-        '<button type="button" class="yysd-exam-lock-exit">强制退出</button>' +
-        '<button type="button" class="yysd-exam-lock-restart">重新开始</button>' +
+        '<button type="button" class="yysd-exam-lock-exit"> cưỡng chế Đăng xuất </button>' +
+        '<button type="button" class="yysd-exam-lock-restart"> bắt đầu lại </button>' +
         '</div></div>';
     }
     el.querySelector(".yysd-exam-lock-exit").onclick = forceExitExam;
@@ -387,7 +387,7 @@
   function setExamLock(active, voided) {
     if (voided) examLockVoided = true;
     else if (!active) examLockVoided = false;
-    examLockOn = !!active && !examLockVoided;
+    examLockOn =!!active &&!examLockVoided;
     document.body.classList.toggle("is-exam-locked", examLockOn);
     if (voided) {
       unbindParentExamLock();
@@ -413,14 +413,14 @@
 
   function forceCdtForAssignment() {
     // Teacher calendar links may omit cdt=1 (cached dashboard / old href).
-    // Any Cambridge L/R/W opened with ?event= must use CDT chrome.
+    // Any Cambridge L/R/W opened with?event= must use CDT chrome.
     if (!assignmentEventId || cdtWanted) return;
-    if (!item || item.zone !== "mock" || !Y.isCambridge(item.subject)) return;
+    if (!item || item.zone!== "mock" ||!Y.isCambridge(item.subject)) return;
     cdtWanted = true;
     if (!cdtPack) {
       // ponytail: full L/R/W papers are exam assigns; parts/q-ranges stay drill
       var fullPaper = /^(cambridge-\d+-test-\d+(-reading|-writing)?|secret-set-\d+(-reading)?)$/.test(item.id || "");
-      cdtPack = (cdtSuite || fullPaper) ? "exam" : "drill";
+      cdtPack = (cdtSuite || fullPaper)? "exam": "drill";
     }
     try {
       var u = new URL(location.href);
@@ -441,46 +441,46 @@
     titleEl.textContent = shown;
     if (cdtWanted) {
       // B5/C18: tab title English during CDT
-      var vol = Y.camVolume ? Y.camVolume(item) : "";
-      var test = Y.camTestNo ? Y.camTestNo(item) : "";
+      var vol = Y.camVolume? Y.camVolume(item): "";
+      var test = Y.camTestNo? Y.camTestNo(item): "";
       var skill =
-        item.subject === "cambridge-listening" ? "Listening" :
-        item.subject === "cambridge-reading" ? "Reading" :
-        item.subject === "cambridge-writing" ? "Writing" : "IELTS";
+        item.subject === "cambridge-listening"? "Listening":
+        item.subject === "cambridge-reading"? "Reading":
+        item.subject === "cambridge-writing"? "Writing": "IELTS";
       document.title = (vol && test)
         ? ("Cambridge IELTS " + vol + " · Test " + test + " (" + skill + ")")
         : (shown + " · IELTS");
     } else {
-      document.title = shown + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "学习中心");
+      document.title = shown + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "Trung tâm Học tập");
     }
     renderBadges(badges);
 
     if (badges) {
       metaEl.textContent = [
         zoneLabel,
-        (!isStudy && item.duration ? item.duration + " 分钟" : "")
+        (!isStudy && item.duration? item.duration + " phút ": "")
       ].filter(Boolean).join(" · ");
     } else {
       metaEl.textContent = [subjLabel, zoneLabel,
-        (!isStudy && item.duration ? item.duration + " 分钟" : "")].filter(Boolean).join(" · ");
+        (!isStudy && item.duration? item.duration + " phút ": "")].filter(Boolean).join(" · ");
     }
 
     if (hintEl && (explainMode || (item && item.explain))) {
       hintEl.hidden = false;
-      hintEl.textContent = "详解可答题看对错，不记成绩、不算完成";
+      hintEl.textContent = " Giải thích chi tiết có thể bài thi nhìn đúng sai, không nhớ Điểm số, còn chưa xong thành ";
     } else if (hintEl && (Y.isReadingExam(item) || item.subject === "cambridge-listening")) {
       hintEl.hidden = false;
-      hintEl.textContent = "选中文字可高亮 · 右键做笔记";
+      hintEl.textContent = " chọn trúng văn tự có thể cao sáng · phải khóa làm bút ký ";
     }
 
-    backBtn.textContent = isStudy ? "← 返回单词" : "← 退出考场";
+    backBtn.textContent = isStudy? "← Quay lại Từ vựng ": "← Đăng xuất trường thi ";
     if (isStudy && (Y.isVocabListSubject(item.subject) || Y.isVocabSpecial(item.subject))) {
       var backBook = Y.vocabBookOfSubject(item.subject) || "special";
       backBtn.href = "vocab-shelf.html?book=" + encodeURIComponent(backBook);
-      backBtn.textContent = "← 返回词库";
+      backBtn.textContent = "← Quay lại từ kho ";
     } else if (isStudy) {
       backBtn.href = "zone.html?zone=study&s=vocab";
-      backBtn.textContent = "← 返回单词区";
+      backBtn.textContent = "← Quay lại Khu từ vựng ";
     } else if (item.zone === "mock") {
       var mockS = "mock";
       if (item.subject === "cambridge-listening") mockS = "listening";
@@ -512,28 +512,28 @@
     if (!isStudy && item.duration > 0) {
       left = item.duration * 60;
       // ponytail: suite CDT must not inherit practice-draft elapsed time
-      if (!cdtWanted && !explainMode && !(item && item.explain)) {
+      if (!cdtWanted &&!explainMode &&!(item && item.explain)) {
         var elapsed = practiceDraftElapsed();
         if (elapsed) left = Math.max(0, left - elapsed);
       }
     }
 
-    // B1: Cambridge mock L/R/W with ?cdt=1 (or legacy pick=1) → CDT shell
-    var useCdt = cdtWanted && !isStudy && item.zone === "mock" && Y.isCambridge(item.subject) && window.YYSD_CDT;
+    // B1: Cambridge mock L/R/W with?cdt=1 (or legacy pick=1) → CDT shell
+    var useCdt = cdtWanted &&!isStudy && item.zone === "mock" && Y.isCambridge(item.subject) && window.YYSD_CDT;
     if (useCdt) {
       // timer starts after gate "Start test" (listening: after audio playing)
       // drill also uses official countdown (constitution); do not subtract practice elapsed
       YYSD_CDT.activate({
         item: item,
         frame: frame,
-        seconds: item.duration > 0 ? item.duration * 60 : (left || 0),
+        seconds: item.duration > 0? item.duration * 60: (left || 0),
         pack: cdtPack,
         suite: cdtSuite,
         onStart: function (secs) {
           if (secs > 0) startTimer(secs);
         }
       });
-    } else if (left > 0 && item.subject !== "cambridge-listening") {
+    } else if (left > 0 && item.subject!== "cambridge-listening") {
       // ponytail: listening waits for yysd:timer-sync after audio `playing`
       startTimer(left);
     }
@@ -544,32 +544,32 @@
         return;
       }
       if (examLockOn) {
-        alert("模考进行中，请先提交试卷并查看成绩后再退出。");
+        alert(" Thi thử đang tiến hành, mời trước Nộp bài cũng Xem Điểm số sau lại Đăng xuất. ");
         e.preventDefault();
         return;
       }
       if (!isStudy && item.zone === "mock" && item.subject === "cambridge-writing") {
-        if (!confirm("确定退出吗？写作内容已自动保存草稿。")) e.preventDefault();
+        if (!confirm(" Đồng ý thối lui ra không? Viết nội dung đã tự động Lưu bản nháp. ")) e.preventDefault();
       } else if (!isStudy && item.zone === "mock") {
-        if (!confirm("确定退出吗？已作答的内容会自动保存，下次打开可继续练习。")) e.preventDefault();
+        if (!confirm(" Đồng ý thối lui ra không? đã tác đáp nội dung sẽ tự động Lưu, lần sau mở ra có thể Tiếp tục Luyện tập. ")) e.preventDefault();
       } else if (!isStudy) {
-        if (!confirm("确定退出吗？未交卷的作答可能不会被保存。")) e.preventDefault();
+        if (!confirm(" Đồng ý thối lui ra không? không Nộp bài đáp lại có thể sẽ không bị Lưu. ")) e.preventDefault();
       }
     });
   }
 
   function startUpload(html) {
     var zoneLabel = (Y.ZONE[item.zone] || {}).label || "";
-    var subjLabel = "老师布置";
+    var subjLabel = " Giáo viên bố trí ";
     titleEl.textContent = item.title;
-    document.title = item.title + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "学习中心");
+    document.title = item.title + " · " + ((window.YYSD_AUTH && YYSD_AUTH.brandName && YYSD_AUTH.brandName(YYSD_AUTH.getOrg && YYSD_AUTH.getOrg())) || "Trung tâm Học tập");
     renderBadges(null);
     metaEl.textContent = [subjLabel, zoneLabel, item._attachmentName || ""].filter(Boolean).join(" · ");
     if (hintEl) {
       hintEl.hidden = false;
-      hintEl.textContent = "交卷后成绩会自动同步到「我的成绩」与待办事项";
+      hintEl.textContent = " Nộp bài sau Điểm số sẽ tự động đồng bộ đến « Kết quả của tôi » và Việc cần làm ";
     }
-    backBtn.textContent = "← 返回待办事项";
+    backBtn.textContent = "← Quay lại Việc cần làm ";
     backBtn.href = "dashboard.html";
 
     // ponytail: no allow-same-origin — upload HTML cannot read parent JWT; score via postMessage + server bridge
@@ -582,13 +582,13 @@
     }, { once: true });
 
     backBtn.addEventListener("click", function (e) {
-      if (!confirm("确定退出吗？未交卷的作答可能不会被保存。")) e.preventDefault();
+      if (!confirm(" Đồng ý thối lui ra không? không Nộp bài đáp lại có thể sẽ không bị Lưu. ")) e.preventDefault();
     });
   }
 
   function injectExamShell() {
     var doc = frame.contentDocument;
-    if (!doc || !doc.body || doc.getElementById("yysd-exam-shell-css")) return;
+    if (!doc ||!doc.body || doc.getElementById("yysd-exam-shell-css")) return;
 
     var v = encodeURIComponent(Y.CONTENT_VER || "1");
     var base = new URL("./", location.href).href;
@@ -610,7 +610,7 @@
       (cdtWanted && item.subject === "cambridge-writing");
     if (!want) return;
     var doc = frame.contentDocument;
-    if (!doc || !doc.body || doc.getElementById("yysd-reading-tools-js")) return;
+    if (!doc ||!doc.body || doc.getElementById("yysd-reading-tools-js")) return;
 
     var v = encodeURIComponent(Y.CONTENT_VER || "1");
     var base = new URL("./", location.href).href;
@@ -618,26 +618,26 @@
     var link = doc.createElement("link");
     link.id = "yysd-reading-tools-css";
     link.rel = "stylesheet";
-    link.href = base + "assets/css/reading-tools.css?v=" + v + (cdtWanted ? "b4" : "");
+    link.href = base + "assets/css/reading-tools.css?v=" + v + (cdtWanted? "b4": "");
     doc.head.appendChild(link);
 
     var script = doc.createElement("script");
     script.id = "yysd-reading-tools-js";
-    script.src = base + "assets/js/reading-tools.js?v=" + v + (cdtWanted ? "b4" : "");
+    script.src = base + "assets/js/reading-tools.js?v=" + v + (cdtWanted? "b4": "");
     script.dataset.examId = item.id;
-    script.dataset.persist = item.zone === "mock" ? "session" : "local";
+    script.dataset.persist = item.zone === "mock"? "session": "local";
     if (cdtWanted) script.dataset.cdt = "1";
     doc.body.appendChild(script);
   }
 
   function injectVocabBridge() {
-    if (!item || (!Y.needsVocabBridge(item.subject) && item.subject !== "teacher-upload")) return;
+    if (!item || (!Y.needsVocabBridge(item.subject) && item.subject!== "teacher-upload")) return;
     var doc = frame.contentDocument;
-    if (!doc || !doc.body || doc.getElementById("yysd-vocab-bridge-js")) return;
+    if (!doc ||!doc.body || doc.getElementById("yysd-vocab-bridge-js")) return;
 
     var v = encodeURIComponent(Y.CONTENT_VER || "1");
     var base = new URL("./", location.href).href;
-    var book = Y.vocabBookOfSubject(item.subject) || (item.subject === "teacher-upload" ? "assignment" : "gaozhong");
+    var book = Y.vocabBookOfSubject(item.subject) || (item.subject === "teacher-upload"? "assignment": "gaozhong");
 
     function appendBridge() {
       if (!doc.body || doc.getElementById("yysd-vocab-bridge-js")) return;
@@ -663,9 +663,9 @@
   }
 
   function injectExamBridge() {
-    if (!item || item.zone !== "mock") return;
+    if (!item || item.zone!== "mock") return;
     var doc = frame.contentDocument;
-    if (!doc || !doc.body) return;
+    if (!doc ||!doc.body) return;
     var existing = doc.getElementById("yysd-exam-bridge-js");
     if (existing) {
       if (cdtWanted && window.YYSD_CDT && YYSD_CDT.onFrameReady) YYSD_CDT.onFrameReady();
@@ -677,8 +677,8 @@
 
     var script = doc.createElement("script");
     script.id = "yysd-exam-bridge-js";
-    script.src = base + "assets/js/exam-bridge.js?v=" + v + (cdtWanted ? "cdt29" : "");
-    script.dataset.mode = item.subject === "cambridge-writing" ? "writing" : "exam";
+    script.src = base + "assets/js/exam-bridge.js?v=" + v + (cdtWanted? "cdt29": "");
+    script.dataset.mode = item.subject === "cambridge-writing"? "writing": "exam";
     script.dataset.examId = item.id;
     if (explainMode || (item && item.explain)) script.dataset.explain = "1";
     if (cdtWanted) {
@@ -702,10 +702,10 @@
 
   // B3: DnD / multi letter UX — injected before startTest enhances the paper
   function injectCdtQux() {
-    if (!cdtWanted || !item || item.zone !== "mock") return;
+    if (!cdtWanted ||!item || item.zone!== "mock") return;
     if (item.subject === "cambridge-writing") return;
     var doc = frame.contentDocument;
-    if (!doc || !doc.body || doc.getElementById("yysd-cdt-qux-js")) return;
+    if (!doc ||!doc.body || doc.getElementById("yysd-cdt-qux-js")) return;
     var v = encodeURIComponent(Y.CONTENT_VER || "1");
     var base = new URL("./", location.href).href;
     var script = doc.createElement("script");
@@ -723,7 +723,7 @@
   }
 
   function practiceDraftElapsed() {
-    if (!item || item.zone !== "mock") return 0;
+    if (!item || item.zone!== "mock") return 0;
     try {
       var d = JSON.parse(localStorage.getItem("yysd:draft:" + item.id) || "null");
       if (d && d.mode === "practice" && d.elapsedSec) return d.elapsedSec;
@@ -734,7 +734,7 @@
   function fmtClock(sec) {
     var n = Math.max(0, Math.floor(sec || 0));
     var m = Math.floor(n / 60), s = n % 60;
-    return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+    return (m < 10? "0": "") + m + ":" + (s < 10? "0": "") + s;
   }
 
   // practice: count-up only — no limit, no time-up
@@ -764,7 +764,7 @@
       }
       if (seconds <= 0) {
         clearInterval(timerHandle);
-        timerEl.textContent = "时间到";
+        timerEl.textContent = " đã đến giờ ";
         // ponytail: bridge owns auto-submit; parent only signals (avoids stacked alerts)
         try { frame.contentWindow.postMessage({ type: "yysd:time-up" }, "*"); } catch (e) {}
         return;
@@ -810,17 +810,17 @@
       for (var i = 0; i < nodes.length && out.length < 80; i++) {
         var el = nodes[i];
         var rq = ((el.querySelector(".rq") || {}).textContent || "").trim();
-        var m = rq.match(/第\s*([^\s题]+)\s*题/);
+        var m = rq.match(/ thứ \s*([^\s câu]+)\s* câu /);
         var yoursEl = el.querySelector(".yours");
         var ansEl = el.querySelector(".correctv");
         var rexEl = el.querySelector(".rex");
-        var ua = yoursEl ? yoursEl.textContent.trim() : "";
-        if (ua === "未作答") ua = "";
-        var explain = rexEl ? rexEl.textContent.replace(/^\s*💡\s*/, "").trim() : "";
+        var ua = yoursEl? yoursEl.textContent.trim(): "";
+        if (ua === "Chưa trả lời") ua = "";
+        var explain = rexEl? rexEl.textContent.replace(/^\s*💡\s*/, "").trim(): "";
         var row = {
-          no: m ? m[1] : rq.replace(/^[✘✔]\s*/, ""),
+          no: m? m[1]: rq.replace(/^[✘✔]\s*/, ""),
           ua: ua,
-          ans: ansEl ? ansEl.textContent.trim() : ""
+          ans: ansEl? ansEl.textContent.trim(): ""
         };
         if (explain) row.explain = explain;
         out.push(row);
@@ -833,10 +833,10 @@
 
   window.addEventListener("message", function (e) {
     var d = e.data;
-    if (!d || !frame.contentWindow || e.source !== frame.contentWindow) return;
+    if (!d ||!frame.contentWindow || e.source!== frame.contentWindow) return;
 
     if (d.type === "yysd:exam-lock") {
-      if (d.active && !sessionStartedMs) sessionStartedMs = Date.now();
+      if (d.active &&!sessionStartedMs) sessionStartedMs = Date.now();
       setExamLock(d.active, d.voided);
       return;
     }
@@ -847,7 +847,7 @@
     }
 
     if (d.type === "yysd:timer-sync") {
-      if (!sessionStartedMs && d.elapsedSec != null) {
+      if (!sessionStartedMs && d.elapsedSec!= null) {
         sessionStartedMs = Date.now() - Math.max(0, Number(d.elapsedSec) || 0) * 1000;
       }
       // B1: CDT parent owns minutes-left for both drill and exam — ignore paper count-up
@@ -882,12 +882,12 @@
           }, payload), "*");
         } catch (err) { /* iframe gone */ }
       }
-      if (!window.YYSD_AUTH || !YYSD_AUTH.getToken || !YYSD_AUTH.getToken()) {
-        replyGrade({ error: "请先登录后再使用 AI 批改" });
+      if (!window.YYSD_AUTH ||!YYSD_AUTH.getToken ||!YYSD_AUTH.getToken()) {
+        replyGrade({ error: " Vui lòng đăng nhập trước sau lại sử dụng AI phê chữa " });
         return;
       }
       if (YYSD_AUTH.isTeacher && YYSD_AUTH.isTeacher()) {
-        replyGrade({ error: "老师账号请在学生端体验 AI 批改" });
+        replyGrade({ error: " Giáo viên tài khoản mời đang học sinh đầu Dùng thử AI phê chữa " });
         return;
       }
       YYSD_AUTH.api("/api/ai-tutor/writing-grade", {
@@ -905,18 +905,18 @@
           quota: res.quota
         });
       }).catch(function (err) {
-        var msg = (err && err.message) || "批改失败";
-        if (/上限|用完|额度/i.test(msg) && !/明日|明天/.test(msg)) {
-          msg = msg.replace(/[。！!]?$/, "") + "，明日再来";
-        } else if (/解析|失败|稍后/i.test(msg)) {
-          msg = msg.replace(/[。！!]?$/, "") + " — 可再点按钮重试";
+        var msg = (err && err.message) || " Chấm bài thất bại ";
+        if (/ hạn mức cao nhất | sử dụng hết | khoản độ /i.test(msg) &&!/ ngày mai | ngày mai /.test(msg)) {
+          msg = msg.replace(/[.!!]?$/, "") + ", hẹn gặp lại ngày mai ";
+        } else if (/ Giải thích đáp án | thất bại | sau đó /i.test(msg)) {
+          msg = msg.replace(/[.!!]?$/, "") + " — có thể gọi thêm cái nút Thử lại ";
         }
         replyGrade({ error: msg });
       });
       return;
     }
 
-    if (d.type !== "yysd:score" || !item) return;
+    if (d.type!== "yysd:score" ||!item) return;
     if (explainMode || item.explain) return;
 
     var key = scoreKeyOf(d);
@@ -927,11 +927,11 @@
 
     var store = {};
     try { store = JSON.parse(localStorage.getItem("yysd:results") || "{}"); } catch (err) {}
-    var prevScore = store[item.id] && store[item.id].score != null ? store[item.id].score : null;
+    var prevScore = store[item.id] && store[item.id].score!= null? store[item.id].score: null;
     var attemptAt = new Date().toISOString();
     var startedAt = resolveStartedAt(d);
     var durationSec = null;
-    if (d.durationSec != null && isFinite(Number(d.durationSec))) {
+    if (d.durationSec!= null && isFinite(Number(d.durationSec))) {
       durationSec = Math.max(0, Math.round(Number(d.durationSec)));
     } else if (startedAt) {
       var startMs = Date.parse(startedAt);
@@ -940,12 +940,12 @@
         durationSec = Math.round((endMs - startMs) / 1000);
       }
     }
-    var wrong = Array.isArray(d.wrong) && d.wrong.length ? d.wrong : scrapeWrongFromFrame();
+    var wrong = Array.isArray(d.wrong) && d.wrong.length? d.wrong: scrapeWrongFromFrame();
     var record = {
       id: item.id, title: item.title, zone: item.zone, subject: item.subject,
-      score: (d.score != null ? d.score : null),
-      total: (d.total != null ? d.total : null),
-      band: (d.band != null ? d.band : null),
+      score: (d.score!= null? d.score: null),
+      total: (d.total!= null? d.total: null),
+      band: (d.band!= null? d.band: null),
       writingWords: d.writingWords || null,
       writingTask1: d.writingTask1 || null,
       writingTask2: d.writingTask2 || null,
@@ -995,12 +995,12 @@
     if (window.YYSD_AUTH && YYSD_AUTH.pushScoreRecord) {
       pendingScorePush = YYSD_AUTH.pushScoreRecord(pushBody)
         .then(function (ok) {
-          if (ok) setToastSyncSub("已同步至云端，可在「我的成绩」查看");
-          else setToastSyncSub("已保存在本浏览器（未登录则不同步云端）");
-          return !!ok;
+          if (ok) setToastSyncSub(" đã đồng bộ đến đám mây, có thể tại « Kết quả của tôi » Xem ");
+          else setToastSyncSub(" đã Lưu tại bản trình duyệt (Chưa đăng nhập tức thì bất đồng bước đám mây) ");
+          return!!ok;
         })
         .catch(function () {
-          setToastSyncSub("本地已保存，云端同步失败");
+          setToastSyncSub(" bản địa đã Lưu, đám mây đồng bộ thất bại ");
           return false;
         });
     } else {

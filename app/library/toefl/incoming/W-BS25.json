@@ -19,19 +19,45 @@
       "id": 241,
       "set": "W-BS25-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did Professor Reid want to know about our project?",
       "parts": [
-        { "t": "She was " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "She was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["we had used", "a solution", "curious about", "what resources", "to find"],
-      "answer": ["curious about", "what resources", "we had used", "to find", "a solution"]
+      "bank": [
+        "we had used",
+        "a solution",
+        "curious about",
+        "what resources",
+        "to find"
+      ],
+      "answer": [
+        "curious about",
+        "what resources",
+        "we had used",
+        "to find",
+        "a solution"
+      ]
     },
     {
       "type": "sentence",
@@ -39,20 +65,50 @@
       "id": 242,
       "set": "W-BS25-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you find any good supplies at the campus store?",
       "parts": [
-        { "slot": true },
-        { "t": " were " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "t": " were "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["my", "none", "that", "there", "eye", "caught"],
-      "answer": ["there", "none", "that", "caught", "my", "eye"]
+      "bank": [
+        "my",
+        "none",
+        "that",
+        "there",
+        "eye",
+        "caught"
+      ],
+      "answer": [
+        "there",
+        "none",
+        "that",
+        "caught",
+        "my",
+        "eye"
+      ]
     },
     {
       "type": "sentence",
@@ -60,20 +116,50 @@
       "id": 243,
       "set": "W-BS25-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why did you attend the job recruitment seminar?",
       "parts": [
-        { "t": "I was " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["what types", "curious to", "beneficial", "learn", "of courses", "are most"],
-      "answer": ["curious to", "learn", "what types", "of courses", "are most", "beneficial"]
+      "bank": [
+        "what types",
+        "curious to",
+        "beneficial",
+        "learn",
+        "of courses",
+        "are most"
+      ],
+      "answer": [
+        "curious to",
+        "learn",
+        "what types",
+        "of courses",
+        "are most",
+        "beneficial"
+      ]
     },
     {
       "type": "sentence",
@@ -81,18 +167,42 @@
       "id": 244,
       "set": "W-BS25-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I attended a lecture on renewable energy yesterday.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["the slides", "do you", "know if", "available online", "will be"],
-      "answer": ["do you", "know if", "the slides", "will be", "available online"]
+      "bank": [
+        "the slides",
+        "do you",
+        "know if",
+        "available online",
+        "will be"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "the slides",
+        "will be",
+        "available online"
+      ]
     },
     {
       "type": "sentence",
@@ -100,16 +210,30 @@
       "id": 245,
       "set": "W-BS25-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm reading the novel assigned for the English class.",
       "parts": [
-        { "t": "Is " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Is "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["interesting", "it"],
-      "answer": ["it", "interesting"]
+      "bank": [
+        "interesting",
+        "it"
+      ],
+      "answer": [
+        "it",
+        "interesting"
+      ]
     },
     {
       "type": "sentence",
@@ -117,17 +241,37 @@
       "id": 246,
       "set": "W-BS25-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm excited to start my new job on campus next week.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " be?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " be?"
+        }
       ],
-      "bank": ["what", "responsibilities", "your", "will"],
-      "answer": ["what", "will", "your", "responsibilities"]
+      "bank": [
+        "what",
+        "responsibilities",
+        "your",
+        "will"
+      ],
+      "answer": [
+        "what",
+        "will",
+        "your",
+        "responsibilities"
+      ]
     },
     {
       "type": "sentence",
@@ -135,19 +279,47 @@
       "id": 247,
       "set": "W-BS25-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did the professor say about the syllabus?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["she wanted", "to explain", "would help", "achieve", "learning goals", "how it"],
-      "answer": ["she wanted", "to explain", "how it", "would help", "achieve", "learning goals"]
+      "bank": [
+        "she wanted",
+        "to explain",
+        "would help",
+        "achieve",
+        "learning goals",
+        "how it"
+      ],
+      "answer": [
+        "she wanted",
+        "to explain",
+        "how it",
+        "would help",
+        "achieve",
+        "learning goals"
+      ]
     },
     {
       "type": "sentence",
@@ -155,19 +327,47 @@
       "id": 248,
       "set": "W-BS25-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "The university just announced that it will provide health benefits for students.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " coverage?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " coverage?"
+        }
       ],
-      "bank": ["includes", "do you", "if", "dental", "it", "know"],
-      "answer": ["do you", "know", "if", "it", "includes", "dental"]
+      "bank": [
+        "includes",
+        "do you",
+        "if",
+        "dental",
+        "it",
+        "know"
+      ],
+      "answer": [
+        "do you",
+        "know",
+        "if",
+        "it",
+        "includes",
+        "dental"
+      ]
     },
     {
       "type": "sentence",
@@ -175,18 +375,42 @@
       "id": 249,
       "set": "W-BS25-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "The seminar on financial management was very insightful.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " online?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " online?"
+        }
       ],
-      "bank": ["know if", "available", "the slides", "do you", "will be"],
-      "answer": ["do you", "know if", "the slides", "will be", "available"]
+      "bank": [
+        "know if",
+        "available",
+        "the slides",
+        "do you",
+        "will be"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "the slides",
+        "will be",
+        "available"
+      ]
     },
     {
       "type": "sentence",
@@ -194,19 +418,47 @@
       "id": 250,
       "set": "W-BS25-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why did you buy that particular laptop for school?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " choice." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " choice."
+        }
       ],
-      "bank": ["top", "that has", "the model", "the longest", "was my", "battery life"],
-      "answer": ["the model", "that has", "the longest", "battery life", "was my", "top"]
+      "bank": [
+        "top",
+        "that has",
+        "the model",
+        "the longest",
+        "was my",
+        "battery life"
+      ],
+      "answer": [
+        "the model",
+        "that has",
+        "the longest",
+        "battery life",
+        "was my",
+        "top"
+      ]
     }
   ]
 }

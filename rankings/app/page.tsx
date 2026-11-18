@@ -25,7 +25,7 @@ export default async function HomePage() {
           <span className="mono text-[10px] font-semibold tracking-[0.2em] text-[var(--gold)]">LIVE</span>
           <div className="ticker flex-1 py-1.5 text-[12px]">
             <div className="ticker-track">
-              {[...tickerItems, ...tickerItems].map((t, i) => (
+              {[...tickerItems,...tickerItems].map((t, i) => (
                 <span key={`${t.system}-${i}`} className="inline-flex items-center gap-2 text-[rgba(232,237,242,0.85)]">
                   <span className="track-dot" style={{ background: SYSTEM_TRACK[t.system] }} />
                   <span className="mono">{t.text}</span>
@@ -43,28 +43,28 @@ export default async function HomePage() {
       <section className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.35fr)]">
         <div className="panel flex flex-col">
           <div className="panel-head">
-            <span>选校检索</span>
+            <span> chọn trường học kiểm tra </span>
             <span className="mono text-[var(--gold)]">DESK</span>
           </div>
           <div className="flex flex-1 flex-col justify-between gap-6 p-5">
             <div>
               <h1 className="text-[1.75rem] font-bold leading-tight tracking-tight sm:text-[2rem]">
-                这所学校，
+                 trường này,
                 <br />
-                在四大榜站哪？
+                 tại tứ đại bảng đứng cái đó?
               </h1>
               <p className="mt-3 text-sm text-[var(--muted)]">
-                把 QS / THE / ARWU / US News 当成四条行情轨。查名次、比差距，再决定要不要估录取。
+                 đem QS / THE / ARWU / US News trở thành bốn đầu giá thị trường quỹ. tra thứ tự, so với chênh lệch, rồi quyết định có muốn hay không đánh giá trúng tuyển.
               </p>
             </div>
             <form action="/rankings/universities" method="get" className="space-y-3">
-              <input name="q" placeholder="输入校名 / 别名，回车检索" className="input-desk" autoComplete="off" />
+              <input name="q" placeholder=" đưa vào trường học tên / biệt danh, quay về xe kiểm tra " className="input-desk" autoComplete="off" />
               <div className="flex flex-wrap gap-2">
                 <button type="submit" className="btn-ink">
-                  查行情
+                   tra giá thị trường
                 </button>
                 <Link href="/compare" className="btn-ghost inline-flex items-center">
-                  开对比盘
+                   mở đối lập bàn
                 </Link>
               </div>
             </form>
@@ -97,7 +97,7 @@ export default async function HomePage() {
               </label>
             ))}
             <span className="mono ml-auto px-2 text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
-              行情轨
+               giá thị trường quỹ
             </span>
           </div>
           {tapes.map((tape) => (
@@ -128,24 +128,24 @@ export default async function HomePage() {
       {/* three asks as rail, not cards */}
       <section>
         <div className="mb-2 flex items-end justify-between">
-          <h2 className="text-sm font-semibold tracking-wide">下一步</h2>
+          <h2 className="text-sm font-semibold tracking-wide"> bước tiếp theo </h2>
           <span className="mono text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">Action rail</span>
         </div>
         <div className="ask-rail">
           <Link href="/compare">
             <p className="mono text-[10px] text-[var(--gold)]">01</p>
-            <p className="mt-2 text-base font-semibold">四大榜差多少？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">开对比盘，并排看同一所学校的轨位。</p>
+            <p className="mt-2 text-base font-semibold"> tứ đại bảng kém bao nhiêu? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]"> mở đối lập bàn, song song nhìn cùng một trường quỹ vị. </p>
           </Link>
           <a href="/admission">
             <p className="mono text-[10px] text-[var(--gold)]">02</p>
-            <p className="mt-2 text-base font-semibold">背景够不够？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">跳转 AI 升学顾问，估项目录取区间。</p>
+            <p className="mt-2 text-base font-semibold"> bối cảnh có đủ hay không? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]"> nhảy chuyển AI học lên cố vấn, đánh giá hạng mục trúng tuyển khu lúc giữa. </p>
           </a>
           <a href="/">
             <p className="mono text-[10px] text-[var(--gold)]">03</p>
-            <p className="mt-2 text-base font-semibold">语言分还差多少？</p>
-            <p className="mt-1 text-[12px] text-[var(--muted)]">回主站练雅思 / 国际课程。</p>
+            <p className="mt-2 text-base font-semibold"> ngôn ngữ điểm còn thiếu bao nhiêu? </p>
+            <p className="mt-1 text-[12px] text-[var(--muted)]"> quay về chủ đứng luyện IELTS / Chương trình quốc tế. </p>
           </a>
         </div>
       </section>
@@ -153,19 +153,19 @@ export default async function HomePage() {
       {/* destinations — large type cells */}
       <section>
         <div className="mb-2 flex items-end justify-between">
-          <h2 className="text-sm font-semibold tracking-wide">目的地</h2>
+          <h2 className="text-sm font-semibold tracking-wide"> chỗ mục đích </h2>
           <Link href="/universities" className="mono text-[10px] text-[var(--muted)] hover:text-[var(--ink)]">
             ALL MARKETS →
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
           {[
-            ["US", "美国", "US"],
-            ["UK", "英国", "UK"],
-            ["CA", "加拿大", "CA"],
-            ["AU", "澳大利亚", "AU"],
-            ["CN", "中国", "CN"],
-            ["HK", "中国香港", "HK"],
+            ["US", " Hoa Kỳ ", "US"],
+            ["UK", " Vương quốc Anh ", "UK"],
+            ["CA", " Canada ", "CA"],
+            ["AU", " Úc ", "AU"],
+            ["CN", " Châu Á ", "CN"],
+            ["HK", " Hồng Kông ", "HK"],
           ].map(([code, label, tag]) => (
             <Link key={code} href={`/universities?country=${code}`} className="dest-cell">
               <span className="mono text-[10px] text-[var(--muted)]">{tag}</span>
@@ -178,9 +178,9 @@ export default async function HomePage() {
       {/* track legend — one row, not essays */}
       <section className="panel">
         <div className="panel-head">
-          <span>四条行情轨</span>
+          <span> bốn đầu giá thị trường quỹ </span>
           <Link href="/systems" className="mono text-[10px] hover:text-[var(--ink)]">
-            方法论 →
+             phương pháp luận →
           </Link>
         </div>
         <div className="grid sm:grid-cols-4">
@@ -190,13 +190,13 @@ export default async function HomePage() {
               <Link
                 key={key}
                 href={`/systems/${key}`}
-                className={`flex flex-col gap-2 p-4 transition hover:bg-white ${i < 3 ? "sm:border-r sm:border-[var(--line)]" : ""}`}
+                className={`flex flex-col gap-2 p-4 transition hover:bg-white ${i < 3? "sm:border-r sm:border-[var(--line)]": ""}`}
               >
                 <span className="inline-flex items-center gap-2">
                   <span className="track-dot" style={{ background: SYSTEM_TRACK[key as SystemKey] }} />
                   <span className="font-semibold">{s.shortName}</span>
                 </span>
-                <span className="mono text-[11px] text-[var(--muted)]">最新 {s.latestYear}</span>
+                <span className="mono text-[11px] text-[var(--muted)]"> mới nhất {s.latestYear}</span>
                 <span className="line-clamp-2 text-[12px] text-[var(--muted)]">{s.blurb}</span>
               </Link>
             );

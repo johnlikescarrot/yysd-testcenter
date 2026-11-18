@@ -1,57 +1,57 @@
 {
- "id": "free-13634",
- "title": "Announcement #51",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #51",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13634,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-51"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #51",
-   "instruction": "Listen to an announcement at a gathering of student club leaders.",
-   "audio": "library/toefl/free/audio/0577d7b21fd14f62bb73c6c4a70f68d3.mp3",
-   "transcript": "Man: The university is making some changes to the policies governing student organizations. One of these changes pertains to scheduling events at the last minute. This creates extra work for the Student Affairs office and so effective immediately. All student clubs must submit their event plans to the Office for approval at least two weeks in advance. Failure to comply with this rule may result in the cancellation of events. If you have questions, please contact the Student Affairs Office.",
-   "questions": [
+  "id": "free-13634",
+  "title": "Announcement #51",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #51",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13634,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-51"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What can be inferred about the new policy?",
-     "options": {
-      "A": "It aims to reduce the number of student events.",
-      "B": "It is designed to ensure proper event planning.",
-      "C": "It will be enforced starting next semester.",
-      "D": "It was implemented because of budget cuts."
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：关于这项新政策可以推断出什么？ 定位原文：Man: This creates extra work for the Student Affairs Office and so effective immediately. All student clubs must submit their event plans to the Office for approval at least two weeks in advance. 选项分析： A. It aims to reduce the number of student events. 旨在减少学生活动的数量。因为通知中只提到要规范审批时间，并未提及限制活动的总数量，所以A选项错误。 B. It is designed to ensure proper event planning. 旨在确保合理的活动规划。由于通知指出临时安排会增加额外工作，因此要求提前两周提交计划，这显然是为了保证规划过程更加有序和合理，所以B选项正确。 C. It will be enforced starting next semester. 将从下个学期开始执行。因为通知中明确说是“立即生效”，而不是下个学期，所以C选项错误。 D. It was implemented because of budget cuts. 因为预算削减而实施。因为通知中提到的原因是临时安排造成了额外工作，并未提到预算问题，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What can be concluded about previously held events?",
-     "options": {
-      "A": "They were sometimes submitted for approval at the last minute.",
-      "B": "They were often canceled because of a lack of proper planning.",
-      "C": "They did not involve the Student Affairs Office.",
-      "D": "They usually created extra work for student clubs."
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：关于以前举办的活动可以得出什么结论？ 定位原文：Man: One of these changes pertains to scheduling events at the last minute. This creates extra work for the Student Affairs office... 选项分析： A. They were sometimes submitted for approval at the last minute. 它们有时是在最后一刻提交审批的。由于新政策是为了应对“最后一刻安排活动”这一问题而制定的，由此可以推断出过去的活动确实存在临时提交审批的情况，所以A选项正确。 B. They were often canceled because of a lack of proper planning. 它们经常因为缺乏合理规划而被取消。因为通知中说的是如果不遵守新规“可能导致”取消，而不是说过去经常取消，所以B选项错误。 C. They did not involve the Student Affairs Office. 它们不涉及学生事务办公室。因为通知提到临时安排会给该办公室增加工作，说明过去也是涉及该办公室的，所以C选项错误。 D. They usually created extra work for student clubs. 它们通常给学生社团制造了额外工作。因为通知中明确指出是给学生事务办公室造成了额外工作，而不是社团本身，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #51",
+      "instruction": "Listen to an announcement at a gathering of student club leaders.",
+      "audio": "library/toefl/free/audio/0577d7b21fd14f62bb73c6c4a70f68d3.mp3",
+      "transcript": "Man: The university is making some changes to the policies governing student organizations. One of these changes pertains to scheduling events at the last minute. This creates extra work for the Student Affairs office and so effective immediately. All student clubs must submit their event plans to the Office for approval at least two weeks in advance. Failure to comply with this rule may result in the cancellation of events. If you have questions, please contact the Student Affairs Office.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What can be inferred about the new policy?",
+          "options": {
+            "A": "It aims to reduce the number of student events.",
+            "B": "It is designed to ensure proper event planning.",
+            "C": "It will be enforced starting next semester.",
+            "D": "It was implemented because of budget cuts."
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: về cái này chính sách mới có thể suy đoán ra gì? Dẫn chứng Bài gốc: Man: This creates extra work for the Student Affairs Office and so effective immediately. All student clubs must submit their event plans to the Office for approval at least two weeks in advance. Phương án phân tích: A. It aims to reduce the number of student events. chỉ tại giảm bớt Học viên hoạt động số lượng. vì thông tri Vừa chỉ nhắc tới muốn quy phạm phê duyệt thời gian, cũng không đề cập hạn chế hoạt động tổng số số lượng, nên A Phương án Sai. B. It is designed to ensure proper event planning. chỉ tại bảo đảm hợp lý hoạt động quy hoạch. bởi vì thông tri chỉ ra tạm thời an bài sẽ gia tăng thêm vào công tác, bởi vậy yêu cầu sớm hai tuần Nộp bài kế hoạch, điều này hiển nhiên là vì cam đoan quy hoạch quá trình càng thêm tự động hòa hợp để ý, nên B Phương án Đúng. C. It will be enforced starting next semester. đem từ dưới học kỳ Bắt đầu chấp hành. vì thông tri Vừa rõ ràng nói là “ lập tức có hiệu lực ”, mà không phải học kỳ kế, nên C Phương án Sai. D. It was implemented because of budget cuts. vì dự toán cắt giảm mà áp dụng. vì thông tri Vừa nhắc tới nguyên nhân là tạm thời an bài đã tạo thành thêm vào công tác, cũng không nhắc tới dự toán vấn đề, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What can be concluded about previously held events?",
+          "options": {
+            "A": "They were sometimes submitted for approval at the last minute.",
+            "B": "They were often canceled because of a lack of proper planning.",
+            "C": "They did not involve the Student Affairs Office.",
+            "D": "They usually created extra work for student clubs."
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: về trước kia cử hành hoạt động có thể được ra gì kết luận? Dẫn chứng Bài gốc: Man: One of these changes pertains to scheduling events at the last minute. This creates extra work for the Student Affairs office... Phương án phân tích: A. They were sometimes submitted for approval at the last minute. chúng có lúc là tại một khắc cuối cùng Nộp bài phê duyệt. bởi vì chính sách mới là vì ứng đối “ một khắc cuối cùng an bài hoạt động ” một vấn đề này mà chế định, bởi vậy có thể suy đoán ra quá khứ đích hoạt động xác thực tồn tại tạm thời Nộp bài phê duyệt tình huống, nên A Phương án Đúng. B. They were often canceled because of a lack of proper planning. chúng thường xuyên vì khuyết thiếu hợp lý quy hoạch mà bị Hủy. vì thông tri Vừa nói rất đúng nếu không tuân thủ mới quy “ khả năng dẫn đến ” Hủy, mà không phải đã từng nói qua đi thường xuyên Hủy, nên B Phương án Sai. C. They did not involve the Student Affairs Office. chúng không liên quan đến Học viên sự vụ văn phòng. vì thông tri nhắc tới tạm thời an bài sẽ cho nên làm công thất gia tăng công tác, nói rõ qua cũng là liên quan đến nên làm công thất, nên C Phương án Sai. D. They usually created extra work for student clubs. chúng bình thường cho học sinh xã đoàn chế tạo thêm vào công tác. vì thông tri Vừa rõ ràng chỉ ra là cho Học viên sự vụ văn phòng đã tạo thành thêm vào công tác, mà không phải xã đoàn bản thân, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

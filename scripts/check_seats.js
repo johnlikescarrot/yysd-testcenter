@@ -26,7 +26,7 @@ seats.commitBind(auth);
 var again = seats.authorize({
   role: "student", phone: "13800000000", device: devA, purpose: "login", isAdmin: false
 });
-assert(again.ok && !again.bindId, "same mac logs in without code");
+assert(again.ok &&!again.bindId, "same mac logs in without code");
 var other = seats.authorize({
   role: "student", phone: "13800000000", device: devB, purpose: "login", isAdmin: false
 });
@@ -48,7 +48,7 @@ var row = seats.list()[0];
 seats.setDisabled(row.id, true);
 assert(seats.authorize({
   role: "student", phone: "13800000000", device: devA, purpose: "login", isAdmin: false
-}).error === "账号已停用", "disable blocks");
+}).error === " tài khoản Đã tạm ngưng ", "disable blocks");
 seats.setDisabled(row.id, false);
 seats.unbind(row.id);
 var rebound = seats.authorize({

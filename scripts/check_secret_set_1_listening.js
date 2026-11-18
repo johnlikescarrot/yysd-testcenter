@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-// ponytail: assert 听力绝密套卷1 is 40 keyed questions + calendar cat
+// ponytail: assert Nghe tuyệt mật bộ cuốn 1 is 40 keyed questions + calendar cat
 var fs = require("fs");
 var path = require("path");
 var root = path.join(__dirname, "..");
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
 var html = fs.readFileSync(path.join(root, "library/mock/cambridge-listening/secret-set-1.html"), "utf8");
-must(html.indexOf('exam:title" content="绝密套卷1（听力）"') >= 0, "title meta");
+must(html.indexOf('exam:title" content=" tuyệt mật bộ cuốn 1 (Nghe) "') >= 0, "title meta");
 must(html.indexOf("secret-set-1-map.png") >= 0, "map ref");
 must(html.indexOf("secret-set-1-audio1.mp3") >= 0, "audio1");
-must(html.indexOf("剑桥雅思12") < 0, "leftover cam12");
+must(html.indexOf("Cambridge IELTS 12") < 0, "leftover cam12");
 ["1", "2", "3", "4"].forEach(function (n) {
   must(fs.existsSync(path.join(root, "library/mock/cambridge-listening/secret-set-1-audio" + n + ".mp3")), "audio" + n);
 });
@@ -33,12 +33,12 @@ TEST.sections.forEach(function (s) {
     g.questions.forEach(function (q) {
       got.push(q.answer[0]);
       must(q.answer.map(norm).indexOf(norm(q.answer[0])) >= 0, "self-grade Q" + q.no);
-      must(q.explain && q.explain.indexOf("定位") >= 0 && q.explain.length > 40, "explain Q" + q.no);
+      must(q.explain && q.explain.indexOf(" Dẫn chứng ") >= 0 && q.explain.length > 40, "explain Q" + q.no);
     });
   });
 });
 must(got.length === 40, "need 40 got " + got.length);
-got.forEach(function (a, i) { must(a === expect[i], "Q" + (i + 1) + " " + a + " != " + expect[i]); });
+got.forEach(function (a, i) { must(a === expect[i], "Q" + (i + 1) + " " + a + "!= " + expect[i]); });
 
 var cal = fs.readFileSync(path.join(root, "teacher-calendar.html"), "utf8");
 must(cal.indexOf('data-ex-cat="lsecret"') >= 0, "calendar chip");
@@ -46,12 +46,12 @@ var js = fs.readFileSync(path.join(root, "assets/js/teacher-calendar.js"), "utf8
 must(js.indexOf("function isSecretListening") >= 0, "isSecretListening");
 must(js.indexOf('cat === "lsecret"') >= 0, "itemInCat lsecret");
 must(/cat === "skill" \|\| cat === "suite" \|\| cat === "rsecret" \|\| cat === "lsecret"/.test(js), "exam pack");
-must(js.indexOf("it.subject !== \"cambridge-reading\"") >= 0, "reading gated by subject");
+must(js.indexOf("it.subject!== \"cambridge-reading\"") >= 0, "reading gated by subject");
 function isSecretReading(it) {
-  if (!it || it.subject !== "cambridge-reading") return false;
+  if (!it || it.subject!== "cambridge-reading") return false;
   return /^secret-set-\d+/.test(it.id || "");
 }
-must(!isSecretReading({ id: "secret-set-1", subject: "cambridge-listening", title: "绝密套卷1 (听力)" }), "listen not in rsecret");
+must(!isSecretReading({ id: "secret-set-1", subject: "cambridge-listening", title: " tuyệt mật bộ cuốn 1 (Nghe)" }), "listen not in rsecret");
 must(isSecretReading({ id: "secret-set-1-reading", subject: "cambridge-reading" }), "read in rsecret");
 
 var man = JSON.parse(fs.readFileSync(path.join(root, "library/manifest.json"), "utf8"));
@@ -59,7 +59,7 @@ var items = man.items || man;
 var hit = (items || []).filter(function (it) { return it.id === "secret-set-1"; });
 must(hit.length === 1, "manifest id");
 must(hit[0].subject === "cambridge-listening", "manifest subject");
-must(/绝密套卷1（听力）/.test(hit[0].title), "manifest title " + hit[0].title);
+must(/ tuyệt mật bộ cuốn 1 (Nghe) /.test(hit[0].title), "manifest title " + hit[0].title);
 must(man.count === items.length, "count " + man.count + " vs " + items.length);
 
 var cfg = fs.readFileSync(path.join(root, "assets/js/config.js"), "utf8");

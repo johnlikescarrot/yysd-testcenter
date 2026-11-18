@@ -1,46 +1,46 @@
 {
- "id": "free-12832",
- "title": "Choose a Response #187",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #187",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12832,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-187"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #187",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/42f9f59b85fa408ba2d21cc247794239.mp3",
-   "questions": [
+  "id": "free-12832",
+  "title": "Choose a Response #187",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #187",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12832,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-187"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Sure, you can borrow my charging cord.",
-      "B": "The door should remain shut and locked.",
-      "C": "Because the schedule was changed at the last minute.",
-      "D": "Sounds like it needs to be repaired."
-     },
-     "answer": "D",
-     "transcript": "Why does my computer keep shutting down?",
-     "stemZh": "我的电脑为什么总是自动关机？",
-     "analysis": "Why does my computer keep shutting down? 题干分析 题干是由 Why 引导的特殊疑问句，意为 “我的电脑为什么总是关机？”，考点是对询问设备故障原因的问题作出合理回应。 选项分析 选项 A：回答内容为 “当然，你可以借我的充电线”，与关机故障无关，答非所问。 选项 B：回答内容为 “门应该保持关闭并锁好”，与电脑问题完全无关。 选项 C：回答内容为 “因为日程在最后一刻被更改了”，与设备故障无关。 选项 D：此选项为正确答案，合理推测电脑需要维修，符合故障咨询的对话逻辑。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #187",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/42f9f59b85fa408ba2d21cc247794239.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Sure, you can borrow my charging cord.",
+            "B": "The door should remain shut and locked.",
+            "C": "Because the schedule was changed at the last minute.",
+            "D": "Sounds like it needs to be repaired."
+          },
+          "answer": "D",
+          "transcript": "Why does my computer keep shutting down?",
+          "stemZh": "của tôi máy tính vì sao luôn tự động đóng cơ?",
+          "analysis": "Why does my computer keep shutting down? Câu hỏi phân tích Câu hỏi là do Why dẫn dắt đặc thù câu nghi vấn, ý là “ của tôi máy tính vì sao luôn tắt máy? ”, địa điểm thi là đúng hỏi thăm thiết bị nguyên nhân hư vấn đề làm ra hợp lý đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ đương nhiên, bạn có thể cho ta mượn nạp điện tuyến ”, và tắt máy trục trặc không quan hệ, đáp phi sở vấn. Phương án B: trả lời nội dung là “ môn nên bảo trì Đóng cũng khóa kỹ ”, và máy tính vấn đề hoàn toàn không liên quan. Phương án C: trả lời nội dung là “ vì nhật trình,chương trình trong một ngày tại một khắc cuối cùng bị sửa lại ”, và thiết bị trục trặc không quan hệ. Phương án D: này Phương án là Đáp án đúng, hợp lý phỏng đoán máy tính cần bảo hành sửa chữa, phù hợp trục trặc hỏi ý kiến đối thoại ăn khớp."
+        }
+      ]
+    }
+  ]
 }

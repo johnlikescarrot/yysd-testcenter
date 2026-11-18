@@ -5,14 +5,14 @@ build_manifest.py
 =================
 Recursively scans the `library/` folder for content HTML files (mock exams,
 study materials, practice sets) and regenerates `library/manifest.json`, the
-index the website reads to build the 模考区 / 学习区 / 练习区 sections.
+index the website reads to build the Khu thi thử / Khu học tập / Khu luyện tập sections.
 
 Runs automatically via GitHub Actions whenever a file changes in `library/`,
 so the admin never edits JSON by hand.
 
 CLASSIFICATION IS BY FOLDER. The folder a file lives in decides its category:
     library/<zone>/<subject>/<file>.html
-e.g. library/study/vocab/xxx.html  ->  zone=study, subject=vocab
+e.g. library/study/vocab/xxx.html -> zone=study, subject=vocab
 The admin just drops a file into the matching folder — no tags required.
 
 Study vocab LISTs opened via exam.html auto-sync test wrong words to the
@@ -20,12 +20,12 @@ matching wrong-word notebook (gaozhong / cet4 / special) when they include
 the standard result DOM hooks checked by verify_vocab_wrongword_hooks.py.
 
 Metadata per file (priority order):
-  - zone / subject : the folder path (library/<zone>/<subject>/). If a file
+  - zone / subject: the folder path (library/<zone>/<subject>/). If a file
     sits loose in library/ root, fall back to <meta> tags / keyword guessing.
-  - title       -> <meta exam:title>, else <title>, else prettified filename
-  - duration    -> <meta exam:duration>, else 0 (untimed)
+  - title -> <meta exam:title>, else <title>, else prettified filename
+  - duration -> <meta exam:duration>, else 0 (untimed)
   - description -> <meta exam:description>, else ""
-  - added       -> first git commit date of the file, else file mtime
+  - added -> first git commit date of the file, else file mtime
 
 Standard library only — no third-party dependencies.
 """
@@ -44,29 +44,29 @@ MANIFEST = os.path.join(LIB_DIR, "manifest.json")
 
 # zone -> list of valid subjects (first = default for that zone)
 ZONE_SUBJECTS = {
-    "study":    ["grammar", "vocab", "vocab-cet4", "vocab-cet4-lite",
+    "study": ["grammar", "vocab", "vocab-cet4", "vocab-cet4-lite",
                  "vocab-special-listening", "vocab-special-reading", "vocab-special-writing",
                  "vocab-themes"],
     "practice": ["changnanju", "shuzi-tingxie", "jingting", "ielts"],
-    "mock":     ["cambridge-listening", "cambridge-reading", "cambridge-writing", "ielts",
+    "mock": ["cambridge-listening", "cambridge-reading", "cambridge-writing", "ielts",
                  "ielts-speaking", "ielts-writing", "alevel", "ap", "toefl", "sat"],
 }
 VALID_ZONES = set(ZONE_SUBJECTS.keys())
 
 ZONE_KEYWORDS = [
-    ("study",    ["study", "lesson", "grammar", "vocab", "语法", "单词", "词汇", "学习", "讲解", "精讲"]),
-    ("practice", ["practice", "exercise", "drill", "练习", "习题", "专项"]),
-    ("mock",     ["mock", "test", "full", "exam", "模考", "模拟", "全真", "套卷", "入学测试"]),
+    ("study", ["study", "lesson", "grammar", "vocab", " Ngữ pháp ", " Từ vựng ", " Từ vựng ", " Học tập ", " giảng giải ", " tinh giảng "]),
+    ("practice", ["practice", "exercise", "drill", " Luyện tập ", " bài tập ", " Chuyên sâu "]),
+    ("mock", ["mock", "test", "full", "exam", " Thi thử ", " mô phỏng ", " Toàn Chân ", " bộ cuốn ", " Nhập học Kiểm tra "]),
 ]
 SUBJECT_KEYWORDS = [
-    ("cambridge-listening", ["剑桥听力", "cambridge listening", "剑听", "剑桥雅思 listening"]),
-    ("cambridge-reading",   ["剑桥阅读", "cambridge reading", "剑阅"]),
-    ("cambridge", ["cambridge", "剑桥", "剑"]),
-    ("ielts",   ["ielts", "雅思"]),
-    ("pte",     ["pte"]),
-    ("toefl",   ["toefl", "托福"]),
-    ("grammar", ["grammar", "语法"]),
-    ("vocab",   ["vocab", "word", "单词", "词汇"]),
+    ("cambridge-listening", [" Cambridge Listening ", "cambridge listening", " kiếm nghe ", " Cambridge IELTS listening"]),
+    ("cambridge-reading", [" Cambridge Reading ", "cambridge reading", " kiếm duyệt "]),
+    ("cambridge", ["cambridge", " Cambridge ", " kiếm "]),
+    ("ielts", ["ielts", " IELTS "]),
+    ("pte", ["pte"]),
+    ("toefl", ["toefl", " TOEFL "]),
+    ("grammar", ["grammar", " Ngữ pháp "]),
+    ("vocab", ["vocab", "word", " Từ vựng ", " Từ vựng "]),
 ]
 
 
@@ -100,7 +100,7 @@ def guess(haystack, table, default):
 
 
 def slugify(name):
-    s = re.sub(r"[^a-z0-9一-鿿]+", "-", name.lower())
+    s = re.sub(r"[^a-z0-9 một -]+", "-", name.lower())
     return s.strip("-") or "item"
 
 
@@ -172,7 +172,7 @@ def main():
         print("library/ folder not found", file=sys.stderr)
         sys.exit(1)
 
-    # recursively collect every .html under library/ (any depth)
+    # recursively collect every.html under library/ (any depth)
     files = []
     for root, dirs, names in os.walk(LIB_DIR):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
@@ -221,7 +221,7 @@ def main():
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
+                "description": " toàn văn / trục câu Nghe sâu: thực âm tần, chính thức Bài gốc thời gian trục, văn dịch, hoa từ. ",
                 "added": git_added_date(path),
             })
 
@@ -239,7 +239,7 @@ def main():
                     if n.lower().endswith((".html", ".htm")) and not n.startswith(".")
                 )
             sub_n = sum(1 for e in items if e.get("zone") == zone and e.get("subject") == subj)
-            if html_n and sub_n != html_n:
+            if html_n and sub_n!= html_n:
                 print(
                     "%s/%s not indexed: %d html on disk, %d manifest items"
                     % (zone, subj, html_n, sub_n),
@@ -258,7 +258,7 @@ def main():
 
     print("Wrote %s with %d item(s)." % (os.path.relpath(MANIFEST, ROOT), len(items)))
     for e in items:
-        print("  - [%s/%s] %s  (%s)" % (e["zone"], e["subject"], e["title"], e["file"]))
+        print(" - [%s/%s] %s (%s)" % (e["zone"], e["subject"], e["title"], e["file"]))
 
 
 if __name__ == "__main__":

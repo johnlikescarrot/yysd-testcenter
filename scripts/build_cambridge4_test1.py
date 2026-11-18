@@ -19,7 +19,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑4T1.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 4T1.docx")
 ASSETS = Path("/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets")
 SOCIAL_SRC = ASSETS / "__2026-07-03_11.44.45-516f5392-b8df-4845-9095-a7b2562e537c.png"
 TRIPS_SRC = ASSETS / "__2026-07-03_11.44.51-88fa0c1d-050c-4bca-ad35-7bb7ce45789d.png"
@@ -29,10 +29,10 @@ WHALE_SRC = ASSETS / "__2026-07-03_11.45.16-cc484cfa-09a7-4cf9-8b37-2d9a0f923679
 CIRCLE_SRC = ASSETS / "__2026-07-03_11.45.27-1831a803-1fda-4e05-9362-46508accf830.png"
 POVERTY_SRC = ASSETS / "__2026-07-03_11.45.37-ec51ae85-23b7-4a17-bfc3-d4de8b7d9c56.png"
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test1 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test1 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test1 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test1 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test1 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-4-test-1.html"
@@ -57,7 +57,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -73,13 +73,13 @@ def inject_state_vars(html: str) -> str:
 
 
 def patch_listening_table_image(html: str) -> str:
-    needle = "  else if(g.kind==='table'){\n    const cols = g.cols || g.columns || [];"
+    needle = " else if(g.kind==='table'){\n const cols = g.cols || g.columns || [];"
     insert = (
-        "  else if(g.kind==='table'){\n"
-        "    const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " else if(g.kind==='table'){\n"
+        " const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.tableTitle||'table'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const cols = g.cols || g.columns || [];"
+        " const cols = g.cols || g.columns || [];"
     )
     old_body = "body=`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
     new_body = "body=tfig+`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
@@ -90,13 +90,13 @@ def patch_listening_table_image(html: str) -> str:
 
 
 def patch_listening_match_image(html: str) -> str:
-    needle = "  else if(g.kind==='match'){\n    const box="
+    needle = " else if(g.kind==='match'){\n const box="
     insert = (
-        "  else if(g.kind==='match'){\n"
-        "    const mfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " else if(g.kind==='match'){\n"
+        " const mfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.boxTitle||'chart'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const box="
+        " const box="
     )
     old = "body=box+qs;"
     new = "body=mfig+box+qs;"
@@ -120,13 +120,13 @@ def patch_reading_passage_image(html: str) -> str:
 
 
 def patch_reading_table_image(html: str) -> str:
-    needle = "  else if(g.kind==='table'){\n    const cols = g.cols || g.columns || [];"
+    needle = " else if(g.kind==='table'){\n const cols = g.cols || g.columns || [];"
     insert = (
-        "  else if(g.kind==='table'){\n"
-        "    const tfig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
+        " else if(g.kind==='table'){\n"
+        " const tfig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.tableTitle||'table'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const cols = g.cols || g.columns || [];"
+        " const cols = g.cols || g.columns || [];"
     )
     old_body = "body=`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
     new_body = "body=tfig+`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
@@ -138,12 +138,12 @@ def patch_reading_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 听力", "剑桥雅思4 Test 1 听力"),
-        ("剑桥雅思5 · Test 4（听力）", "剑桥雅思4 · Test 1（听力）"),
-        ("剑桥雅思5 Test 4 听力：", "剑桥雅思4 Test 1 听力："),
-        ("Test 4 听力（官方原题 + 官方答案）", "Test 1 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
+        ("Cambridge IELTS 5 Test 4 Nghe ", "Cambridge IELTS 4 Test 1 Nghe "),
+        ("Cambridge IELTS 5 · Test 4 (Nghe) ", "Cambridge IELTS 4 · Test 1 (Nghe) "),
+        ("Cambridge IELTS 5 Test 4 Nghe: ", "Cambridge IELTS 4 Test 1 Nghe: "),
+        ("Test 4 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
         ("ielts5_test4", "ielts4_test1"),
@@ -156,16 +156,16 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 阅读", "剑桥雅思4 Test 1 阅读"),
-        ("剑桥雅思5 · Test 4（阅读）", "剑桥雅思4 · Test 1（阅读）"),
-        ("剑桥雅思5 Test 4 学术类阅读", "剑桥雅思4 Test 1 学术类阅读"),
-        ("Test 4 阅读（官方原题 + 官方答案）", "Test 1 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 5 Test 4 Đọc ", "Cambridge IELTS 4 Test 1 Đọc "),
+        ("Cambridge IELTS 5 · Test 4 (Đọc) ", "Cambridge IELTS 4 · Test 1 (Đọc) "),
+        ("Cambridge IELTS 5 Test 4 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 4 Test 1 Đọc Học thuật (Academic Reading) "),
+        ("Test 4 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         (
-            "Wilderness Tourism、Toughened Glass、Effects of Light",
-            "Rainforests、What Do Whales Feel?、Visual Symbols and the Blind",
+            "Wilderness Tourism, Toughened Glass, Effects of Light",
+            "Rainforests, What Do Whales Feel?, Visual Symbols and the Blind",
         ),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
     ]
@@ -177,18 +177,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 4 写作", "剑桥雅思4 Test 1 写作"),
-        ("剑桥雅思5 · Test 4（写作）", "剑桥雅思4 · Test 1（写作）"),
-        ("剑桥雅思5 Test 4 学术类写作", "剑桥雅思4 Test 1 学术类写作"),
+        ("Cambridge IELTS 5 Test 4 Viết ", "Cambridge IELTS 4 Test 1 Viết "),
+        ("Cambridge IELTS 5 · Test 4 (Viết) ", "Cambridge IELTS 4 · Test 1 (Viết) "),
+        ("Cambridge IELTS 5 Test 4 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 4 Test 1 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 underground railway table + Task 2 nature vs nurture essay",
             "Task 1 poverty table + Task 2 media for communicating information essay",
         ),
-        ("剑桥雅思 5 · Test 4", "剑桥雅思 4 · Test 1"),
-        ("剑桥雅思5 · Test 4", "剑桥雅思4 · Test 1"),
-        ("Test 4 写作（官方真题）", "Test 1 写作（官方真题）"),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
+        ("Cambridge IELTS 5 · Test 4", "Cambridge IELTS 4 · Test 1"),
+        ("Test 4 Viết (Đề thi chính thức) ", "Test 1 Viết (Đề thi chính thức) "),
         ("cambridge-5-test-4-writing-draft", "cambridge-4-test-1-writing-draft"),
-        ("【剑桥雅思5 · Test 4 写作】", "【剑桥雅思4 · Test 1 写作】"),
+        ("[Cambridge IELTS 5 · Test 4 Viết]", "[Cambridge IELTS 4 · Test 1 Viết]"),
         ("Test 4", "Test 1"),
         ("test-4", "test-1"),
         ("underground-railway", "poverty-table"),

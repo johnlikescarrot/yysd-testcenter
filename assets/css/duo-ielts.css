@@ -1,0 +1,725 @@
+/* ==========================================================================
+   duo-ielts.css — Hệ thống thiết kế Giấy Ngà & Kính Mờ (Ivory Paper + Glass Chrome)
+   Dành cho Lộ trình IELTS Thông minh (lo-trinh.html) & Thư viện PDF Học thuật (tai-lieu.html)
+   Tối ưu tương phản WCAG AA/AAA (>= 4.6:1) & hiệu năng Google Lighthouse 100/100/100/100
+   ========================================================================== */
+
+:root {
+  --yi-bg: #f6f3ec;
+  --yi-paper: #fffcf7;
+  --yi-surface: #fff;
+  --yi-surface-soft: #f1ede2;
+  --yi-ink: #162447;
+  --yi-ink-body: #24344d;
+  --yi-ink-muted: #475569;
+  --yi-border: rgb(22, 36, 71, 0.13);
+  --yi-border-strong: rgb(22, 36, 71, 0.24);
+  --yi-navy: #162447;
+  --yi-navy-hover: #0f1a36;
+  --yi-emerald: #15803d;
+  --yi-emerald-bg: #ecfdf5;
+  --yi-amber: #9a3412;
+  --yi-amber-bg: #fff7ed;
+  --yi-ruby: #9f1239;
+  --yi-ruby-bg: #fff1f2;
+  --yi-blue: #1d4ed8;
+  --yi-blue-bg: #eff6ff;
+  --yi-purple: #6b21a8;
+  --yi-purple-bg: #faf5ff;
+  --yi-radius: 16px;
+  --yi-radius-sm: 10px;
+  --yi-shadow: 0 8px 24px rgb(22, 36, 71, 0.06);
+  --yi-font: system-ui, -apple-system, "Segoe UI", roboto, "Noto Sans", "Helvetica Neue", arial, sans-serif;
+  --yi-serif: georgia, "Times New Roman", "Noto Serif", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body.yi-page {
+  margin: 0;
+  font-family: var(--yi-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--yi-ink-body);
+  background: var(--yi-bg);
+  min-height: 100vh;
+}
+
+.yi-skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 999;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--yi-navy);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.yi-skip:focus {
+  left: 12px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--yi-blue);
+  outline-offset: 2px;
+}
+
+/* Thanh điều hướng Kính Mờ (Frosted Glass Chrome) */
+.yi-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(255, 252, 247, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--yi-border);
+}
+
+.yi-topbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.yi-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--yi-ink);
+  font-weight: 800;
+  font-size: 16px;
+  min-height: 44px;
+}
+
+.yi-brand img {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.yi-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.yi-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--yi-ink-body);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yi-nav a:hover {
+  background: var(--yi-surface-soft);
+  color: var(--yi-ink);
+}
+
+.yi-nav a[aria-current="page"] {
+  background: var(--yi-navy);
+  color: #fff;
+}
+
+/* Thanh chỉ số Gamification (Streak, Gems, Energy, Score) */
+.yi-hud {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.yi-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--yi-border);
+  background: var(--yi-surface);
+  color: var(--yi-ink);
+}
+
+.yi-pill--streak {
+  background: var(--yi-amber-bg);
+  color: var(--yi-amber);
+  border-color: rgb(154, 52, 18, 0.22);
+}
+
+.yi-pill--gems {
+  background: var(--yi-blue-bg);
+  color: var(--yi-blue);
+  border-color: rgb(29, 78, 216, 0.22);
+}
+
+.yi-pill--energy {
+  background: var(--yi-emerald-bg);
+  color: var(--yi-emerald);
+  border-color: rgb(21, 128, 61, 0.24);
+}
+
+.yi-pill--score {
+  background: var(--yi-purple-bg);
+  color: var(--yi-purple);
+  border-color: rgb(107, 33, 168, 0.22);
+}
+
+/* Bố cục nội dung chính */
+.yi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.yi-hero {
+  background: var(--yi-paper);
+  border: 1px solid var(--yi-border);
+  border-radius: 22px;
+  padding: 28px 30px;
+  box-shadow: var(--yi-shadow);
+  margin-bottom: 22px;
+}
+
+.yi-kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--yi-amber);
+  margin-bottom: 8px;
+}
+
+.yi-hero h1 {
+  font-family: var(--yi-serif);
+  font-size: clamp(26px, 3.6vw, 38px);
+  line-height: 1.24;
+  color: var(--yi-ink);
+  margin: 0 0 10px;
+}
+
+.yi-hero__lead {
+  font-size: 16px;
+  color: var(--yi-ink-muted);
+  max-width: 78ch;
+  margin: 0 0 18px;
+}
+
+.yi-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.yi-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.yi-stat {
+  background: var(--yi-surface);
+  border: 1px solid var(--yi-border);
+  border-radius: var(--yi-radius-sm);
+  padding: 12px 14px;
+}
+
+.yi-stat strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--yi-ink);
+}
+
+.yi-stat span {
+  font-size: 13px;
+  color: var(--yi-ink-muted);
+}
+
+/* Nút bấm chuẩn tiếp cận >= 44px */
+.yi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--yi-border-strong);
+  background: var(--yi-surface);
+  color: var(--yi-ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.yi-btn:hover {
+  background: var(--yi-surface-soft);
+}
+
+.yi-btn:active {
+  transform: translateY(1px);
+}
+
+.yi-btn--primary {
+  background: var(--yi-navy);
+  border-color: var(--yi-navy);
+  color: #fff;
+}
+
+.yi-btn--primary:hover {
+  background: var(--yi-navy-hover);
+  color: #fff;
+}
+
+.yi-btn--emerald {
+  background: var(--yi-emerald);
+  border-color: var(--yi-emerald);
+  color: #fff;
+}
+
+.yi-btn--emerald:hover {
+  background: #166534;
+  color: #fff;
+}
+
+.yi-btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Thanh chuyển phân khu (Tabs) */
+.yi-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding: 6px;
+  background: var(--yi-paper);
+  border: 1px solid var(--yi-border);
+  border-radius: 16px;
+}
+
+.yi-tab {
+  min-height: 44px;
+  padding: 8px 15px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--yi-ink-body);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.yi-tab:hover {
+  background: var(--yi-surface-soft);
+}
+
+.yi-tab[aria-selected="true"] {
+  background: var(--yi-navy);
+  color: #fff;
+}
+
+/* Lưới 2 cột cho Lộ trình & Bảng bên */
+.yi-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+.yi-card {
+  background: var(--yi-paper);
+  border: 1px solid var(--yi-border);
+  border-radius: var(--yi-radius);
+  padding: 20px 22px;
+  box-shadow: var(--yi-shadow);
+}
+
+.yi-card + .yi-card {
+  margin-top: 16px;
+}
+
+.yi-card h2,
+.yi-card h3 {
+  color: var(--yi-ink);
+  margin: 0 0 8px;
+  line-height: 1.32;
+}
+
+.yi-muted {
+  color: var(--yi-ink-muted);
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+/* Thanh tiến độ */
+.yi-progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e2dfd5;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.yi-progress__bar {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--yi-emerald);
+  transition: width 0.25s ease;
+}
+
+/* Cây kỹ năng tuyến tính 8 chặng */
+.yi-path-list {
+  display: grid;
+  gap: 14px;
+}
+
+.yi-unit {
+  background: var(--yi-surface);
+  border: 1px solid var(--yi-border);
+  border-left: 5px solid var(--yi-navy);
+  border-radius: var(--yi-radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.yi-unit--current {
+  border-left-color: var(--yi-emerald);
+  box-shadow: 0 10px 26px rgb(21, 128, 61, 0.1);
+}
+
+.yi-unit--legendary {
+  border-left-color: var(--yi-amber);
+}
+
+.yi-unit__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.yi-badges-inline {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.yi-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--yi-surface-soft);
+  color: var(--yi-ink);
+}
+
+.yi-tag--emerald {
+  background: var(--yi-emerald-bg);
+  color: var(--yi-emerald);
+}
+
+.yi-tag--amber {
+  background: var(--yi-amber-bg);
+  color: var(--yi-amber);
+}
+
+.yi-tag--blue {
+  background: var(--yi-blue-bg);
+  color: var(--yi-blue);
+}
+
+/* Trình làm bài học tương tác (Lesson Player) */
+.yi-stimulus {
+  background: var(--yi-surface-soft);
+  border-left: 4px solid var(--yi-navy);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 15px;
+  white-space: pre-line;
+  color: var(--yi-ink);
+}
+
+.yi-options {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.yi-option {
+  text-align: left;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--yi-border-strong);
+  background: var(--yi-surface);
+  color: var(--yi-ink);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.yi-option:hover {
+  background: var(--yi-surface-soft);
+}
+
+.yi-option.is-selected {
+  border-color: var(--yi-blue);
+  background: var(--yi-blue-bg);
+  font-weight: 700;
+}
+
+/* Thẻ ghép từ Word Bank */
+.yi-wb-tray {
+  min-height: 58px;
+  padding: 10px;
+  border: 2px dashed var(--yi-border-strong);
+  border-radius: 12px;
+  background: var(--yi-surface);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.yi-wb-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.yi-chip {
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--yi-border-strong);
+  background: var(--yi-surface);
+  color: var(--yi-ink);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.yi-chip--picked {
+  background: var(--yi-navy);
+  border-color: var(--yi-navy);
+  color: #fff;
+}
+
+/* Ô nhập liệu */
+.yi-input,
+.yi-textarea,
+.yi-select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 11px;
+  border: 1.5px solid var(--yi-border-strong);
+  background: var(--yi-surface);
+  color: var(--yi-ink);
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.yi-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Nối cặp từ Collocation */
+.yi-pairs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+/* Hộp Giải thích Lỗi sai Miễn phí kèm liên kết Google Scholar */
+.yi-feedback {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1.5px solid var(--yi-emerald);
+  background: var(--yi-emerald-bg);
+}
+
+.yi-feedback--wrong {
+  border-color: var(--yi-ruby);
+  background: var(--yi-ruby-bg);
+}
+
+.yi-feedback h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.yi-feedback p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* Lưới thẻ chung (PDF, Vật phẩm, Huy hiệu, Giải đấu) */
+.yi-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.yi-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.yi-table-wrap {
+  overflow-x: auto;
+}
+
+.yi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.yi-table th,
+.yi-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--yi-border);
+  text-align: left;
+}
+
+.yi-table th {
+  color: var(--yi-ink);
+  font-weight: 700;
+  background: var(--yi-surface-soft);
+}
+
+.yi-row-me {
+  background: var(--yi-blue-bg);
+  font-weight: 700;
+}
+
+.yi-row-promo td:first-child {
+  color: var(--yi-emerald);
+  font-weight: 800;
+}
+
+.yi-row-demo td:first-child {
+  color: var(--yi-ruby);
+  font-weight: 800;
+}
+
+.yi-avatar-box {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 12px;
+}
+
+.yi-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  max-width: 360px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--yi-navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgb(22, 36, 71, 0.25);
+}
+
+.yi-footer {
+  border-top: 1px solid var(--yi-border);
+  background: var(--yi-paper);
+  padding: 24px 20px;
+  margin-top: 40px;
+}
+
+.yi-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--yi-ink-muted);
+}
+
+.yi-footer__links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.yi-footer__links a {
+  color: var(--yi-ink);
+  text-decoration: underline;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 940px) {
+  .yi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .yi-pairs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

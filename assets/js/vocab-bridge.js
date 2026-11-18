@@ -28,12 +28,12 @@
   }
 
   function collectWrongWordsFromData() {
-    if (typeof testResultsData === "undefined" || !Array.isArray(testResultsData)) return null;
+    if (typeof testResultsData === "undefined" ||!Array.isArray(testResultsData)) return null;
     var out = [];
     testResultsData.forEach(function (r) {
-      if (r.earned !== 0) return;
+      if (r.earned!== 0) return;
       var acceptCN = [];
-      if (typeof wordData !== "undefined" && Array.isArray(wordData)) {
+      if (typeof wordData!== "undefined" && Array.isArray(wordData)) {
         for (var i = 0; i < wordData.length; i++) {
           if (String(wordData[i].word).toLowerCase() === String(r.word).toLowerCase()) {
             acceptCN = wordData[i].acceptCN || [];
@@ -55,15 +55,15 @@
     if (cells.length < 4) return null;
     var wordCell = cells[1];
     var strong = wordCell.querySelector("strong");
-    var word = strong ? strong.textContent.trim() : "";
+    var word = strong? strong.textContent.trim(): "";
     if (!word) {
       var line = wordCell.textContent.trim().split("\n")[0].trim();
       word = line.split(/\s+/)[0] || "";
     }
     if (!word) return null;
     var spans = wordCell.querySelectorAll("span");
-    var ipa = spans[0] ? spans[0].textContent.trim() : "";
-    var meaning = spans[1] ? spans[1].textContent.trim() : "";
+    var ipa = spans[0]? spans[0].textContent.trim(): "";
+    var meaning = spans[1]? spans[1].textContent.trim(): "";
     if (!meaning && spans.length === 1) meaning = "";
     if (!meaning) {
       var parts = wordCell.textContent.trim().split("\n");
@@ -96,11 +96,11 @@
     question = String(question || "").replace(/<[^>]+>/g, "").trim();
     correct = String(correct || "").trim();
     userAnswer = String(userAnswer || "").trim();
-    if (userAnswer === "未作答") userAnswer = "";
+    if (userAnswer === "Chưa trả lời") userAnswer = "";
 
     var word = "";
     var meaning = "";
-    var dict = question.match(/听写[：:]\s*(.+)/);
+    var dict = question.match(/ Nghe chép [::]\s*(.+)/);
     if (dict) word = dict[1].trim();
 
     var correctParts = correct.split(/\s*[—–]\s*/);
@@ -108,20 +108,20 @@
     if (correctParts.length > 1) meaning = correctParts.slice(1).join(" — ").trim();
 
     if (!meaning) {
-      var meanM = question.match(/[「『](.+?)[」』]/);
+      var meanM = question.match(/[««](.+?)[»»]/);
       if (meanM) meaning = meanM[1];
     }
 
     var userSpelling = "";
     var userMeaning = "";
-    var spellM = userAnswer.match(/拼写[：:]\s*([^/]+)/);
-    var meanM2 = userAnswer.match(/含义[：:]\s*(.+)/);
+    var spellM = userAnswer.match(/ Chính tả [::]\s*([^/]+)/);
+    var meanM2 = userAnswer.match(/ Nghĩa [::]\s*(.+)/);
     if (spellM) userSpelling = spellM[1].trim();
     if (meanM2) userMeaning = meanM2[1].trim();
-    if (!userSpelling && !userMeaning && userAnswer) userSpelling = userAnswer;
+    if (!userSpelling &&!userMeaning && userAnswer) userSpelling = userAnswer;
 
     if (!word) word = (correctParts[0] || correct).trim();
-    if (!meaning) meaning = question.replace(/^辨析[：:]\s*/, "");
+    if (!meaning) meaning = question.replace(/^ Phân biệt từ [::]\s*/, "");
 
     if (!word) return null;
 
@@ -171,7 +171,7 @@
   function parseScore() {
     var summary = document.getElementById("summary");
     if (summary) {
-      var num = summary.querySelector(".item .num");
+      var num = summary.querySelector(".item.num");
       if (num) {
         var sm = String(num.textContent || "").match(/(\d+)\s*\/\s*(\d+)/);
         if (sm) return { score: Number(sm[1]), total: Number(sm[2]) };
@@ -182,9 +182,9 @@
       var m = String(scoreEl.textContent || "").match(/(\d+)\s*\/\s*(\d+)/);
       if (m) return { score: Number(m[1]), total: Number(m[2]) };
     }
-    if (typeof testResultsData !== "undefined" && Array.isArray(testResultsData)) {
+    if (typeof testResultsData!== "undefined" && Array.isArray(testResultsData)) {
       var earned = testResultsData.reduce(function (s, r) { return s + (r.earned || 0); }, 0);
-      var total = typeof TOTAL_QUESTIONS !== "undefined" ? TOTAL_QUESTIONS : testResultsData.length;
+      var total = typeof TOTAL_QUESTIONS!== "undefined"? TOTAL_QUESTIONS: testResultsData.length;
       return { score: earned, total: total };
     }
     return { score: 0, total: 0 };
@@ -231,7 +231,7 @@
   }
 
   function hookShowFinalResults() {
-    if (typeof showFinalResults !== "function" || showFinalResults.__yysdHooked) return false;
+    if (typeof showFinalResults!== "function" || showFinalResults.__yysdHooked) return false;
     var orig = showFinalResults;
     showFinalResults = function () {
       var ret = orig.apply(this, arguments);
@@ -243,7 +243,7 @@
   }
 
   function hookShowResults() {
-    if (typeof showResults !== "function" || showResults.__yysdHooked) return false;
+    if (typeof showResults!== "function" || showResults.__yysdHooked) return false;
     var orig = showResults;
     showResults = function () {
       var ret = orig.apply(this, arguments);
@@ -255,7 +255,7 @@
   }
 
   function hookStartTest() {
-    if (typeof startTest !== "function" || startTest.__yysdHooked) return false;
+    if (typeof startTest!== "function" || startTest.__yysdHooked) return false;
     var orig = startTest;
     startTest = function () {
       testStartedMs = Date.now();
@@ -296,7 +296,7 @@
   }
 
   function visiblePlayButtons() {
-    return playButtons().filter(function (b) { return b.offsetParent !== null; });
+    return playButtons().filter(function (b) { return b.offsetParent!== null; });
   }
 
   function ensureTimerUI() {
@@ -306,10 +306,10 @@
     style.textContent =
       "#yysd-vocab-timer{display:none;margin:10px auto 0;max-width:280px;font:600 0.95rem/1.3 system-ui,sans-serif;color:#1a3a5c;text-align:center}" +
       "#yysd-vocab-timer.is-on{display:block}" +
-      "#yysd-vocab-timer .yysd-vocab-timer__secs{font-variant-numeric:tabular-nums;font-size:1.35rem}" +
+      "#yysd-vocab-timer.yysd-vocab-timer__secs{font-variant-numeric:tabular-nums;font-size:1.35rem}" +
       "#yysd-vocab-timer.is-low{color:#c0392b}" +
       "#yysd-vocab-timer-bar{height:4px;margin-top:6px;border-radius:2px;background:#e8eef4;overflow:hidden}" +
-      "#yysd-vocab-timer-bar>i{display:block;height:100%;width:100%;background:#3a7d5a;transform-origin:left center;transition:transform .2s linear}" +
+      "#yysd-vocab-timer-bar>i{display:block;height:100%;width:100%;background:#3a7d5a;transform-origin:left center;transition:transform.2s linear}" +
       "#yysd-vocab-timer.is-low #yysd-vocab-timer-bar>i{background:#c0392b}" +
       "#yysd-vocab-timer.is-wait{color:#888;font-weight:500}";
     document.head.appendChild(style);
@@ -323,9 +323,9 @@
     el.id = "yysd-vocab-timer";
     el.setAttribute("aria-live", "polite");
     el.innerHTML =
-      '<div><span class="yysd-vocab-timer__label">剩余 </span>' +
+      '<div><span class="yysd-vocab-timer__label"> còn thừa </span>' +
       '<span class="yysd-vocab-timer__secs">20</span>' +
-      '<span class="yysd-vocab-timer__unit"> 秒</span></div>' +
+      '<span class="yysd-vocab-timer__unit"> giây </span></div>' +
       '<div id="yysd-vocab-timer-bar"><i></i></div>';
     var root = activeRoot();
     var progress = root && root.querySelector(".test-progress");
@@ -362,21 +362,21 @@
       el.classList.add("is-wait");
       el.classList.remove("is-low");
       if (label) label.textContent = "";
-      if (secsEl) secsEl.textContent = "听读音中…";
+      if (secsEl) secsEl.textContent = " nghe âm đọc Vừa …";
       if (unit) unit.textContent = "";
       if (bar) bar.style.transform = "scaleX(1)";
       return;
     }
     el.classList.remove("is-wait");
-    if (label) label.textContent = "剩余 ";
+    if (label) label.textContent = " còn thừa ";
     if (secsEl) secsEl.textContent = String(secs);
-    if (unit) unit.textContent = " 秒";
+    if (unit) unit.textContent = " giây ";
     el.classList.toggle("is-low", secs <= 5);
     if (bar) bar.style.transform = "scaleX(" + Math.max(0, secs / QUESTION_SECS) + ")";
   }
 
   function startCountdown() {
-    if (!isTestRunning() || !submitReady()) return;
+    if (!isTestRunning() ||!submitReady()) return;
     if (countdownStarted) return;
     countdownStarted = true;
     if (tickTimer) { clearInterval(tickTimer); tickTimer = null; }
@@ -400,7 +400,7 @@
   }
 
   function onQuestionTimeout() {
-    if (!isTestRunning() || !submitReady()) return;
+    if (!isTestRunning() ||!submitReady()) return;
     window.__vocabTestTimedOut = true;
     try {
       elSubmit().click();
@@ -419,7 +419,7 @@
   }
 
   function maybeStartWithoutAudio() {
-    if (!isTestRunning() || !submitReady()) return;
+    if (!isTestRunning() ||!submitReady()) return;
     if (visiblePlayButtons().length) {
       if (!countdownStarted) renderTimer(QUESTION_SECS, true);
       return;
@@ -488,7 +488,7 @@
     watchNextButton();
     // #btnStartTest may reveal active area without class mutation if already wired
     var startBtn = document.getElementById("btnStartTest");
-    if (startBtn && !startBtn.__yysdTimerHook) {
+    if (startBtn &&!startBtn.__yysdTimerHook) {
       startBtn.__yysdTimerHook = true;
       startBtn.addEventListener("click", function () {
         testStartedMs = Date.now();
@@ -508,14 +508,14 @@
     } catch (e) {}
     if (!mode) {
       try {
-        if (window.parent && window.parent !== window) {
+        if (window.parent && window.parent!== window) {
           mode = new URLSearchParams(window.parent.location.search).get("vocabMode") || "";
         }
       } catch (e2) { /* cross-origin */ }
     }
-    if (mode !== "learn" && mode !== "test") return;
+    if (mode!== "learn" && mode!== "test") return;
     var tab = document.querySelector('.nav-tab[data-mode="' + mode + '"]');
-    if (tab && !tab.classList.contains("active")) tab.click();
+    if (tab &&!tab.classList.contains("active")) tab.click();
   }
 
   function boot() {

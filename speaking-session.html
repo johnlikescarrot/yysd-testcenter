@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>口语练习 · 实战 · 优益思达</title>
+  <title>Luyện kỹ năng Nói · thực chiến · YYSD</title>
+  <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/speaking.css?v=20260722polish">
@@ -19,7 +17,7 @@
     <div class="minimal-shell minimal-topbar__inner">
       <a href="speaking.html" class="minimal-brand">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
-        <span class="minimal-brand__text"><b>优益思达</b><span>口语实战</span></span>
+        <span class="minimal-brand__text"><b>YYSD</b><span> Nói thực chiến </span></span>
       </a>
     </div>
   </header>
@@ -28,10 +26,10 @@
     <div class="spk-session-top">
       <div>
         <span class="spk-badge">P1</span>
-        <b class="spk-session-title">Part 1：日常话题问答</b>
-        <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait spk-ai-banner--session">正在连接 AI 服务…</div>
+        <b class="spk-session-title">Part 1: Đời sống chủ đề vấn đáp</b>
+        <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait spk-ai-banner--session"> đang liên tiếp AI phục vụ …</div>
       </div>
-      <button type="button" class="spk-end-btn" id="end-btn">结束练习</button>
+      <button type="button" class="spk-end-btn" id="end-btn">chấm dứt Luyện tập</button>
     </div>
 
     <div class="spk-session">
@@ -41,35 +39,35 @@
           <div><b>John Smith</b><span>IELTS Examiner</span></div>
         </div>
         <dl>
-          <dt>当前阶段</dt><dd id="side-stage">基础问答</dd>
-          <dt>当前话题</dt><dd id="side-topic">—</dd>
-          <dt>当前题目</dt><dd id="side-qnum">—</dd>
+          <dt> trước mắt Giai đoạn </dt><dd id="side-stage"> trụ cột vấn đáp </dd>
+          <dt> đề tài trước mặt </dt><dd id="side-topic">—</dd>
+          <dt> trước mắt đề mục </dt><dd id="side-qnum">—</dd>
         </dl>
         <div class="spk-timer">
-          <div style="font-size:0.8rem;color:#6b7c90">Part 1 限时</div>
+          <div style="font-size:0.8rem;color:#6b7c90">Part 1 Thời gian </div>
           <b id="timer-text">4:30 / 4:30</b>
           <div class="spk-timer__bar"><div class="spk-timer__fill" id="timer-fill" style="width:100%"></div></div>
         </div>
-        <div class="spk-tip" id="side-tip">请根据你的实际情况回答。说完后点「停止录音」，再点「下一题」。</div>
+        <div class="spk-tip" id="side-tip"> mời dựa theo của bạn tình huống thực tế trả lời. sau khi nói xong chút:điểm « đình chỉ ghi âm », gọi thêm « Câu tiếp theo ». </div>
       </aside>
 
       <section class="spk-main">
         <div class="spk-qbox">
-          <div class="spk-qbox__label">考官提问</div>
-          <p class="spk-qbox__text" id="question-text">加载中…</p>
-          <button type="button" class="spk-qbox__replay" id="replay-btn">🔊 重播题目</button>
+          <div class="spk-qbox__label"> giám khảo vấn đề </div>
+          <p class="spk-qbox__text" id="question-text">Đang tải …</p>
+          <button type="button" class="spk-qbox__replay" id="replay-btn">🔊 phát lại đề mục</button>
         </div>
 
         <div class="spk-answer">
-          <div class="spk-answer__label">你的回答</div>
+          <div class="spk-answer__label"> câu trả lời của bạn </div>
           <div class="spk-answer__area">
-            <div class="spk-answer__transcript" id="transcript">点击下方按钮开始录音</div>
+            <div class="spk-answer__transcript" id="transcript"> nhấn vào phía dưới cái nút Bắt đầu ghi âm </div>
             <div class="spk-answer__status" id="rec-status"></div>
           </div>
           <div class="spk-rec-controls">
-            <button type="button" class="spk-rec-btn spk-rec-btn--start" id="rec-start">🎙 开始录音</button>
-            <button type="button" class="spk-rec-btn spk-rec-btn--stop" id="rec-stop" disabled>停止录音</button>
-            <button type="button" class="spk-rec-btn" id="next-btn" disabled style="background:#c7a45d;color:#102a4c">下一题 →</button>
+            <button type="button" class="spk-rec-btn spk-rec-btn--start" id="rec-start">🎙 Bắt đầu ghi âm</button>
+            <button type="button" class="spk-rec-btn spk-rec-btn--stop" id="rec-stop" disabled>đình chỉ ghi âm</button>
+            <button type="button" class="spk-rec-btn" id="next-btn" disabled style="background:#c7a45d;color:#102a4c">Câu tiếp theo →</button>
           </div>
         </div>
       </section>
@@ -78,7 +76,7 @@
 
   <div class="spk-loading" id="loading" hidden>
     <div class="spinner spinner--brand"></div>
-    <p id="loading-msg">正在生成评分报告…</p>
+    <p id="loading-msg">đang tạo ra cho điểm báo cáo …</p>
   </div>
 
   <script src="assets/js/auth.js?v=20261013perm1"></script>
@@ -87,7 +85,7 @@
   (function () {
     var S = window.YYSD_SPEAKING;
     var pending = S.getPending();
-    if (!pending || !pending.topics || !pending.topics.length) {
+    if (!pending ||!pending.topics ||!pending.topics.length) {
       location.replace("speaking-select.html");
       return;
     }
@@ -148,42 +146,42 @@
       var item = currentItem();
       if (!item) return;
       document.getElementById("side-topic").textContent = item.topicTitle;
-      document.getElementById("side-qnum").textContent = "第 " + (step + 1) + " / " + queue.length + " 题";
+      document.getElementById("side-qnum").textContent = " thứ " + (step + 1) + " / " + queue.length + " câu ";
     }
 
     function playQuestion(cb) {
       var item = currentItem();
       if (!item) return;
-      var text = (item.opener ? item.opener + " " : "") + item.question;
+      var text = (item.opener? item.opener + " ": "") + item.question;
       qText.textContent = item.question;
       updateSide();
       recStart.disabled = false;
       nextBtn.disabled = true;
       hasAnswer = false;
       lastHeard = "";
-      transcript.textContent = "听清题目后，点击「开始录音」作答";
-      recStatus.textContent = "可点 🔊 重播题目";
+      transcript.textContent = " nghe rõ đề mục sau, nhấn vào « Bắt đầu ghi âm » đáp lại ";
+      recStatus.textContent = " có thể chút:điểm 🔊 phát lại đề mục ";
       S.speak(text, function () {});
       if (cb) cb();
     }
 
     function setRecUi(on) {
       recStart.disabled = on;
-      recStop.disabled = !on;
+      recStop.disabled =!on;
       recStart.classList.toggle("is-recording", on);
     }
 
     function startRec() {
       if (!SR) {
-        recStatus.textContent = "请用 Chrome 浏览器并允许麦克风权限";
+        recStatus.textContent = " mời dùng Chrome trình duyệt cũng cho phép microphone quyền hạn ";
         return;
       }
       if (wantRec) return;
       window.speechSynthesis.cancel();
       wantRec = true;
       lastHeard = "";
-      transcript.textContent = "🎙 正在听…";
-      recStatus.textContent = "说完后点「停止录音」";
+      transcript.textContent = "🎙 đang nghe …";
+      recStatus.textContent = " sau khi nói xong chút:điểm « đình chỉ ghi âm »";
       recog = new SR();
       recog.lang = "en-GB";
       recog.continuous = true;
@@ -198,7 +196,7 @@
         if (ev.error === "no-speech" || ev.error === "aborted") return;
         wantRec = false;
         setRecUi(false);
-        recStatus.textContent = "识别出错：" + ev.error;
+        recStatus.textContent = " phân biệt phạm sai lầm: " + ev.error;
       };
       recog.onend = function () {
         if (wantRec) { try { recog.start(); } catch (e) {} return; }
@@ -209,7 +207,7 @@
         setRecUi(true);
       } catch (e) {
         wantRec = false;
-        recStatus.textContent = "无法启动麦克风";
+        recStatus.textContent = " không cách nào khởi động microphone ";
       }
     }
 
@@ -221,16 +219,16 @@
       if (lastHeard) {
         hasAnswer = true;
         nextBtn.disabled = false;
-        recStatus.textContent = "已记录，可点「下一题」继续";
+        recStatus.textContent = " đã ghi chép, có thể chút:điểm « Câu tiếp theo » Tiếp tục ";
       } else {
-        transcript.textContent = "未识别到语音，请再试";
-        recStatus.textContent = "提示：等题目播完再答，尽量说满 15 秒以上";
+        transcript.textContent = " vị thức đừng đến Âm thanh, mời thử lại ";
+        recStatus.textContent = " nhắc nhở: đợi đề mục truyền hình xong lại đáp, tận lực nói đầy 15 giây trở lên ";
       }
     }
 
     function saveCurrentAnswer() {
       var item = currentItem();
-      if (!item || !hasAnswer || !lastHeard) return;
+      if (!item ||!hasAnswer ||!lastHeard) return;
       answers.push({
         question: item.question,
         transcript: lastHeard,
@@ -258,7 +256,7 @@
       if (wantRec) stopRec();
 
       if (!answers.length) {
-        alert("没有有效回答，请重新开始练习。");
+        alert(" không có hữu hiệu trả lời, mời bắt đầu lại Luyện tập. ");
         location.href = "speaking-select.html";
         return;
       }
@@ -288,9 +286,9 @@
         .catch(function (err) {
           loading.hidden = true;
           finished = false;
-          var msg = err && err.name === "AbortError"
-            ? "评分超时（90秒），请确认 API 已启动后重试"
-            : (err.message || "评分失败");
+          var msg = err & err.name === "AbortError"
+            ? " cho điểm vượt quá thời gian (90 giây), xin xác nhận API đã sau khi khởi động Thử lại "
+            : (err.message || " cho điểm thất bại ");
           alert(msg);
         });
     }
@@ -300,28 +298,28 @@
     nextBtn.onclick = nextStep;
     replayBtn.onclick = function () {
       var item = currentItem();
-      if (item) S.speak((item.opener ? item.opener + " " : "") + item.question);
+      if (item) S.speak((item.opener? item.opener + " ": "") + item.question);
     };
     document.getElementById("end-btn").onclick = function () {
-      if (confirm("确定结束练习？已答题目将提交评分。")) finishSession();
+      if (confirm(" Đồng ý chấm dứt Luyện tập? đã bài thi mắt đem Nộp bài cho điểm. ")) finishSession();
     };
 
     if (!SR) {
-      recStatus.textContent = "⚠️ 请用电脑版 Chrome 以使用语音识别";
+      recStatus.textContent = "⚠️ mời dùng máy tính bản Chrome dùng sử dụng Âm thanh phân biệt ";
       recStart.disabled = true;
     }
     if (!S.API_BASE) {
       document.getElementById("side-tip").textContent =
-        "AI 评分需连接服务器，请检查网络后重试。";
+        "AI cho điểm cần liên tiếp Server, mời kiểm tra mạng lưới *internet sau Thử lại. ";
     }
 
     S.mountAiBanner(document.getElementById("ai-banner")).then(function (r) {
-      if (r.ok && r.ai) {
+      if (r.ok & r.ai) {
         document.getElementById("side-tip").textContent =
-          "AI 已连接。请根据你的实际情况回答，说完后点「停止录音」，再点「下一题」。";
+          "AI đã liên tiếp. mời dựa theo của bạn tình huống thực tế trả lời, sau khi nói xong chút:điểm « đình chỉ ghi âm », gọi thêm « Câu tiếp theo ». ";
       } else if (S.API_BASE) {
         document.getElementById("side-tip").textContent =
-          "AI 连接失败，评分可能不可用，请刷新页面重试。";
+          "AI liên tiếp thất bại, cho điểm khả năng không thể dùng, mời refesh trang web Thử lại. ";
       }
     });
 
@@ -334,7 +332,7 @@
         playQuestion();
       })
       .catch(function () {
-        alert("加载题目失败");
+        alert(" thêm năm đề mục thất bại ");
         location.href = "speaking-select.html";
       });
   })();

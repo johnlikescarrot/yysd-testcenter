@@ -1,81 +1,81 @@
 {
- "id": "free-13107",
- "title": "Lecture #39",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #39",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13107,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-39"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #39",
-   "instruction": "Listen to a talk in a biology class.",
-   "audio": "library/toefl/free/audio/d070589a147247aab56a250b9b49c90d.mp3",
-   "transcript": "In the early 1900s, sea otters, marine mammals that feed on invertebrates including sea urchins, were nearly wiped out along the United States Pacific Coast by fur hunters. With otters gone, urchin numbers exploded, destroying kelp forests. That kelp is a type of seaweed and it's sea urchins favorite food. This left countless marine species without the protective habitat that kelp forest provided to them. In 1972, hunting sea otters was banned. As otters made a comeback, urchin numbers dropped, kelp forest grew back, and biodiversity flourished. Scientists realized otters were a keystone species, organisms whose impact on ecosystems is far greater than their numbers suggest. A similar case occurred in Yellowstone National Park. Wolves, the parks top predator, had been eradicated. Populations of elk, a deer like animal and a favorite prey for wolves, soared and their huge populations damaged local vegetation, including the Willow and Aspen trees for which the park had been famous. In the 1990s, wolves were reintroduced to the park to get the elk population under control. But the wolves didn't just cut elk numbers, they changed elk behavior. Afraid of being eaten by wolves, the elk avoided stream side areas where they're especially vulnerable. This helped Willow and Aspen trees reestablish themselves there, and the trees brought back Beavers, animals that live in streams and build dams to create ponds for themselves. The Beaver dams created habitats for fish, birds and amphibians, a huge cascading effect because of this other keystone species.",
-   "questions": [
+  "id": "free-13107",
+  "title": "Lecture #39",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #39",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13107,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-39"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What was the cause for the near disappearance of sea otters from waters along the United States Pacific coast?",
-     "options": {
-      "A": "Disease",
-      "B": "Overhunting by humans",
-      "C": "Competition from other species",
-      "D": "Habitat destruction"
-     },
-     "answer": "B",
-     "analysis": "答案: B 题目问的是: 美国太平洋海岸海獺几乎消失的原因是什么？ 定位原文: “Sea otters were nearly wiped out along the United States Pacific Coast by fur hunters.” 选项分析: A. “Disease.”（疾病。）并没有提到疾病，原文提到的是人为的过度捕猎，因此A选项错误。 B. “Overhunting by humans.”（人为的过度捕猎。）原文明确说明了海獺几乎因毛皮猎人的过度捕猎而几乎消失，因此B选项正确。 C. “Competition from other species.”（其他物种的竞争。）并没有提到这种竞争，原文提到的是人为捕猎的问题，因此C选项错误。 D. “Habitat destruction.”（栖息地破坏。）虽然栖息地的改变对海獺的生存有影响，但问题的核心是过度捕猎，因此D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "According to the speaker, what happened to kelp forests when sea otters almost disappeared?",
-     "options": {
-      "A": "They became overgrown and crowded out other marine life.",
-      "B": "They returned to their original size.",
-      "C": "They were destroyed by expanding populations of sea urchins.",
-      "D": "They began to attract species that the otters had previously preyed on"
-     },
-     "answer": "C",
-     "analysis": "答案: C 题目问的是: 根据演讲者的说法，海獺几乎消失时，海藻森林发生了什么变化？ 定位原文: “Urchin numbers exploded, destroying kelp forests.” 选项分析: A. “They became overgrown and crowded out other marine life.”（它们过度生长，挤压了其他海洋生物。）并没有提到海藻过度生长的问题，因此A选项错误。 B. “They returned to their original size.”（它们恢复到原来的大小。）并没有恢复，海藻森林被摧毁了，因此B选项错误。 C. “They were destroyed by expanding populations of sea urchins.”（它们被海胆数量的激增摧毁。）原文确实提到海藻森林被海胆的数量暴增摧毁，因此C选项正确。 D. “They began to attract species that the otters had previously preyed on.”（它们开始吸引海獺之前捕食的物种。）并没有提到吸引其他物种的问题，因此D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "How did elk behavior change after wolves were reintroduced to Yellowstone National Park?",
-     "options": {
-      "A": "Elk began to be more active at night",
-      "B": "Elk began to form larger groups.",
-      "C": "Elk began to feed less near streams",
-      "D": "Elk began to hide among willow and aspen trees."
-     },
-     "answer": "C",
-     "analysis": "答案: C 题目问的是: 在狼重新引入黄石公园后，麋鹿的行为发生了什么变化？ 定位原文: “Afraid of being eaten by wolves, the elk avoided stream side areas where they're especially vulnerable.” 选项分析: A. “Elk began to be more active at night.”（麋鹿开始在晚上更活跃。）原文并没有提到麋鹿的夜间活动，因此A选项错误。 B. “Elk began to form larger groups.”（麋鹿开始组成更大的群体。）并没有提到群体大小的变化，因此B选项错误。 C. “Elk began to feed less near streams.”（麋鹿开始减少在溪流附近觅食。）由于害怕狼，麋鹿避免了在溪流旁边活动，因此C选项正确。 D. “Elk began to hide among willow and aspen trees.”（麋鹿开始藏在柳树和白杨树中。）虽然树木恢复了，但原文没有提到麋鹿藏在树中的情况，因此D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "What does the speaker emphasize about beavers in Yellowstone?",
-     "options": {
-      "A": "Their presence benefits many other animal species.",
-      "B": "They are often preyed on by wolves.",
-      "C": "They often damage vegetation.",
-      "D": "They compete with elk for food."
-     },
-     "answer": "A",
-     "analysis": "答案: A 题目问的是: 演讲者强调了黄石公园中海狸的什么特性？ 定位原文: “The Beaver dams created habitats for fish, birds and amphibians, a huge cascading effect because of this other keystone species.” 选项分析: A. “Their presence benefits many other animal species.”（它们的存在惠及许多其他动物物种。）海狸通过筑坝为鱼类、鸟类和两栖动物提供栖息地，原文明确强调了海狸对其他物种的益处，因此A选项正确。 B. “They are often preyed on by wolves.”（它们经常被狼捕食。）并没有提到狼捕食海狸的问题，因此B选项错误。 C. “They often damage vegetation.”（它们经常破坏植物。）海狸通过其筑坝行为帮助恢复了树木，因此C选项错误。 D. “They compete with elk for food.”（它们与麋鹿争夺食物。）并没有提到海狸与麋鹿的食物竞争问题，因此D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #39",
+      "instruction": "Listen to a talk in a biology class.",
+      "audio": "library/toefl/free/audio/d070589a147247aab56a250b9b49c90d.mp3",
+      "transcript": "In the early 1900s, sea otters, marine mammals that feed on invertebrates including sea urchins, were nearly wiped out along the United States Pacific Coast by fur hunters. With otters gone, urchin numbers exploded, destroying kelp forests. That kelp is a type of seaweed and it's sea urchins favorite food. This left countless marine species without the protective habitat that kelp forest provided to them. In 1972, hunting sea otters was banned. As otters made a comeback, urchin numbers dropped, kelp forest grew back, and biodiversity flourished. Scientists realized otters were a keystone species, organisms whose impact on ecosystems is far greater than their numbers suggest. A similar case occurred in Yellowstone National Park. Wolves, the parks top predator, had been eradicated. Populations of elk, a deer like animal and a favorite prey for wolves, soared and their huge populations damaged local vegetation, including the Willow and Aspen trees for which the park had been famous. In the 1990s, wolves were reintroduced to the park to get the elk population under control. But the wolves didn't just cut elk numbers, they changed elk behavior. Afraid of being eaten by wolves, the elk avoided stream side areas where they're especially vulnerable. This helped Willow and Aspen trees reestablish themselves there, and the trees brought back Beavers, animals that live in streams and build dams to create ponds for themselves. The Beaver dams created habitats for fish, birds and amphibians, a huge cascading effect because of this other keystone species.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What was the cause for the near disappearance of sea otters from waters along the United States Pacific coast?",
+          "options": {
+            "A": "Disease",
+            "B": "Overhunting by humans",
+            "C": "Competition from other species",
+            "D": "Habitat destruction"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: Hoa Kỳ Thái Bình Dương bờ biển hải thát hầu như biến mất nguyên nhân là gì? Dẫn chứng Bài gốc: “Sea otters were nearly wiped out along the United States Pacific Coast by fur hunters.” Phương án phân tích: A. “Disease.” (tật bệnh.) cũng không có nhắc tới tật bệnh, Bài gốc nhắc tới là người vì cái gì quá độ đi săn, bởi vậy A Phương án Sai. B. “Overhunting by humans.” (vì sao quá độ đi săn.) Bài gốc rõ ràng nói rõ hải thát hầu như bởi vì da lông thợ săn quá độ đi săn mà hầu như biến mất, bởi vậy B Phương án Đúng. C. “Competition from other species.” (những loài vật khác cạnh tranh.) cũng không có nhắc tới loại này cạnh tranh, Bài gốc nhắc tới là người là đi săn vấn đề, bởi vậy C Phương án Sai. D. “Habitat destruction.” (chỗ ở phá hư.) mặc dù chỗ ở cải biến đối với hải thát sinh tồn có ảnh hưởng, nhưng vấn đề hạch tâm là quá độ đi săn, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "According to the speaker, what happened to kelp forests when sea otters almost disappeared?",
+          "options": {
+            "A": "They became overgrown and crowded out other marine life.",
+            "B": "They returned to their original size.",
+            "C": "They were destroyed by expanding populations of sea urchins.",
+            "D": "They began to attract species that the otters had previously preyed on"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: dựa theo diễn thuyết người thuyết pháp, hải thát hầu như biến mất lúc, rong biển rừng rậm phát sanh biến hóa gì? Dẫn chứng Bài gốc: “Urchin numbers exploded, destroying kelp forests.” Phương án phân tích: A. “They became overgrown and crowded out other marine life.” (chúng quá độ sinh trưởng, đè ép rồi Khác sinh vật biển.) cũng không có nhắc tới rong biển quá độ sinh trưởng vấn đề, bởi vậy A Phương án Sai. B. “They returned to their original size.” (chúng khôi phục lại nguyên lai lớn nhỏ.) cũng không có khôi phục, rong biển rừng rậm bị phá hủy, bởi vậy B Phương án Sai. C. “They were destroyed by expanding populations of sea urchins.” (chúng bị hải đảm số lượng tăng vọt phá hủy.) Bài gốc xác thực nhắc tới rong biển rừng rậm bị hải đảm số lượng bạo tăng phá hủy, bởi vậy C Phương án Đúng. D. “They began to attract species that the otters had previously preyed on.” (chúng Bắt đầu hấp dẫn hải thát lúc trước vồ mồi giống.) cũng không có nhắc tới hấp dẫn những loài vật khác vấn đề, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "How did elk behavior change after wolves were reintroduced to Yellowstone National Park?",
+          "options": {
+            "A": "Elk began to be more active at night",
+            "B": "Elk began to form larger groups.",
+            "C": "Elk began to feed less near streams",
+            "D": "Elk began to hide among willow and aspen trees."
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: tại Sói một lần nữa dẫn vào hoàng thạch công viên sau, nai hành vi phát sanh biến hóa gì? Dẫn chứng Bài gốc: “Afraid of being eaten by wolves, the elk avoided stream side areas where they're especially vulnerable.” Phương án phân tích: A. “Elk began to be more active at night.” (con nai bắt đầu ở buổi tối càng sinh động.) Bài gốc cũng không có nhắc tới nai ban đêm hoạt động, bởi vậy A Phương án Sai. B. “Elk began to form larger groups.” (con nai Bắt đầu tạo thành lớn hơn quần thể.) cũng không có nhắc tới quần thể lớn nhỏ biến hóa, bởi vậy B Phương án Sai. C. “Elk began to feed less near streams.” (con nai Bắt đầu giảm bớt tại dòng suối phụ cận kiếm ăn.) bởi vì sợ hãi Sói, con nai tránh khỏi tại dòng suối bên cạnh hoạt động, bởi vậy C Phương án Đúng. D. “Elk began to hide among willow and aspen trees.” (con nai Bắt đầu giấu ở cây liễu và cây bạch dương Vừa.) mặc dù cây cối khôi phục, nhưng Bài gốc không có nói tới con nai giấu ở cây trong đích tình huống, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "What does the speaker emphasize about beavers in Yellowstone?",
+          "options": {
+            "A": "Their presence benefits many other animal species.",
+            "B": "They are often preyed on by wolves.",
+            "C": "They often damage vegetation.",
+            "D": "They compete with elk for food."
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: diễn thuyết người nhấn mạnh hoàng thạch trong công viên hải ly gì đặc tính? Dẫn chứng Bài gốc: “The Beaver dams created habitats for fish, birds and amphibians, a huge cascading effect because of this other keystone species.” Phương án phân tích: A. “Their presence benefits many other animal species.” (sự hiện hữu của bọn nó ban ơn cho rất nhiều Khác Động vật giống.) hải ly thông qua đập là loài cá, loài chim và động vật lưỡng thê cung cấp chỗ ở, Bài gốc rõ ràng nhấn mạnh hải ly đáp lời anh ấy loại vật ích lợi, bởi vậy A Phương án Đúng. B. “They are often preyed on by wolves.” (chúng thường xuyên bị Sói săn mồi.) cũng không có nhắc tới Sói săn mồi hải ly vấn đề, bởi vậy B Phương án Sai. C. “They often damage vegetation.” (chúng thường xuyên phá hư Thực vật.) hải ly thông qua kia đập hành vi trợ giúp khôi phục cây cối, bởi vậy C Phương án Sai. D. “They compete with elk for food.” (chúng và con nai tranh đoạt Thực phẩm.) cũng không có nhắc tới hải ly và nai Thực phẩm cạnh tranh vấn đề, bởi vậy D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

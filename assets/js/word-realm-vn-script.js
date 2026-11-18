@@ -33,27 +33,27 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
       {
         id: "p0", type: "line", speaker: "Narrator", portrait: "map-mist",
         en: "In the age before kingdoms learned their own names, there was Lex World — where every remembered word was a line of living law.",
-        zh: "在王国学会呼唤自己名字之前，先有词之世界——每一个被记住的词，都是现实运行的一条律法。"
+        zh: " tại vương quốc học được kêu gọi tên mình lúc trước, trước có từ chi thế giới —— mỗi một bị nhớ từ, đều là sự thật vận hành một cái luật pháp. "
       },
       {
         id: "p1", type: "line", speaker: "Narrator", portrait: "map-mist",
         en: "Sky stayed blue only while someone still knew the word blue. Bridges held because weight still meant something.",
-        zh: "天空因有人记得「蔚蓝」而保持蔚蓝；桥梁因「承重」仍有意义而咬合。"
+        zh: " bầu trời bởi vì có người nhớ rõ « xanh thẳm » mà bảo trì xanh thẳm; cầu bởi vì « thừa trọng » nhưng có ý nghĩa mà cắn hợp. "
       },
       {
         id: "p2", type: "line", speaker: "Narrator", portrait: "map-ash",
         en: "Then the Word-Eaters came. They did not swing swords. They made people forget.",
-        zh: "然后噬词者来了。他们不动刀剑——他们让人遗忘。"
+        zh: " sau đó phệ từ người đã đến. họ không động đao kiếm —— họ làm cho người ta quên đi. "
       },
       {
         id: "p3", type: "line", speaker: "Narrator", portrait: "map-ash",
         en: "Soldiers forgot passwords. Markets forgot fairness. The first city crumbled in silence — walls intact, the word home gone.",
-        zh: "士兵忘了口令，市集忘了公平。第一座城在沉默中碎裂：墙还在，home 却没了。"
+        zh: " binh sĩ đã quên khẩu lệnh, chợ đã quên công bằng. tòa thành thứ nhất đang trầm mặc Vừa vỡ vụn: tường vẫn còn, home lại không có. "
       },
       {
         id: "p4", type: "line", speaker: "Narrator", portrait: "map-throne",
         en: "People fought bravely — while they could still speak. Then courage itself began to vanish from their tongues.",
-        zh: "人们曾英勇反抗——在还能说话的日子里。直到勇气一词，也从舌尖消失。"
+        zh: " mọi người từng anh dũng phản kháng —— tại còn có thể nói chuyện trong cuộc sống. thẳng đến dũng khí một từ, cũng từ đầu lưỡi biến mất. "
       },
       {
         id: "p5", type: "cutscene",
@@ -61,29 +61,29 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "map-throne",
             en: "On the third night, Prince Lex stood alone in the Word Hospital, reading wounded words back into the page.",
-            zh: "第三夜，王子莱克斯独自守在词医院，把伤损的词朗读回纸面。"
+            zh: " thứ ba đêm, Vương tử Lai Khắc Tư một mình canh giữ ở từ bệnh viện, đem thương tổn từ đọc chậm quay về mặt giấy. "
           },
           {
             art: "map-throne",
             en: "A nameless god answered: Memory Power is loaned only to those who remember for others.",
-            zh: "无名神明回应：记忆之力，只借给愿意替别人记住的人。"
+            zh: " vô danh thần minh đáp lại: trí nhớ chi lực, chỉ cấp cho nguyện ý thay người khác nhớ người. "
           },
           {
             art: "map-ash",
             en: "He trained. He rose. He burned his life to reclaim half a world of stolen words — and shattered into starlight.",
-            zh: "他历练、崛起，燃尽生命夺回半个世界的词——然后碎成星屑。"
+            zh: " anh ấy rèn luyện, quật khởi, hết sinh mệnh đoạt lại nửa cái thế giới từ —— sau đó vỡ thành sao mảnh. "
           }
         ]
       },
       {
         id: "p6", type: "line", speaker: "Ella", portrait: "ella",
         en: "Hey. Don't freeze. Starlight doesn't pick statues.",
-        zh: "喂，别僵住。星屑可不会选一座雕像。"
+        zh: " cho ăn, đừng cứng đờ. sao mảnh cũng sẽ không chọn một pho tượng. "
       },
       {
         id: "p7", type: "line", speaker: "Ella", portrait: "ella",
         en: "I'm Ella — scribe of the old hospital. I kept the scraps. Tonight the scraps kept you.",
-        zh: "我是艾拉，旧医院的书吏。我守着残页；今夜，残页守住了你。"
+        zh: " ta là Ella, xưa cũ bệnh viện thư lại. tôi trông coi Trang cổ; tối nay, Trang cổ giữ được bạn. "
       },
       {
         id: "p8", type: "cutscene",
@@ -91,38 +91,38 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "hero",
             en: "Starlight settles on your shoulders. The second invasion has already begun — softer, crueler: doubt, delay, and the lie that remembering is worthless.",
-            zh: "星屑落在你肩上。第二次进攻已经开始——更软，也更狠：怀疑、拖延，以及「记住毫无意义」的谎言。"
+            zh: " sao mảnh rơi vào bạn trên vai. tấn công lần thứ hai đã bắt đầu —— mềm hơn, cũng càng hung ác: hoài nghi, kéo dài, cũng như « nhớ kỹ không có chút ý nghĩa nào » nói dối. "
           },
           {
             art: "map-mist",
             en: "Mistvale waits. Fog-Tongues lick names off the stone. Your first quest is simple: remember, and strike.",
-            zh: "晨雾平原在等待。雾舌正舔掉石碑上的名字。你的第一项任务很简单：记住，然后出剑。"
+            zh: " sương sớm bình nguyên đang chờ đợi. sương mù lưỡi đang liếm sạch trên tấm bia đá tên. của bạn hạng thứ nhất nhiệm vụ rất đơn giản: nhớ kỹ, sau đó xuất kiếm. "
           }
         ]
       },
       {
         id: "p9", type: "choice", portrait: "ella",
         en: "Ella watches you. How do you answer the starlight?",
-        zh: "艾拉看着你。你要如何回应星屑？",
+        zh: " Ella nhìn xem bạn. ngươi muốn như thế nào đáp lại sao mảnh? ",
         options: [
-          { en: "I'll remember for others.", zh: "我愿意替别人记住。", flag: "vow_others", next: "p10a" },
-          { en: "I'll get strong enough to win.", zh: "我会变得足够强，去赢下这一仗。", flag: "vow_strength", next: "p10b" }
+          { en: "I'll remember for others.", zh: " tôi nguyện ý thay người khác nhớ kỹ. ", flag: "vow_others", next: "p10a" },
+          { en: "I'll get strong enough to win.", zh: " ta sẽ trở nên đầy đủ mạnh mẽ, đi thắng được một trận. ", flag: "vow_strength", next: "p10b" }
         ]
       },
       {
         id: "p10a", type: "line", speaker: "Ella", portrait: "ella", next: "p11",
         en: "Good. That's the prince's condition. Don't forget it when the fog gets loud.",
-        zh: "很好。那是王子的条件。雾太大的时候，别忘了。"
+        zh: " rất tốt. đó là vương tử điều kiện. sương mù quá lớn thời điểm, đừng quên. "
       },
       {
         id: "p10b", type: "line", speaker: "Ella", portrait: "ella", next: "p11",
         en: "Strength is fine — just aim it outward. Memory Power hates hoarders.",
-        zh: "变强可以——但要把刀锋朝外。记忆之力讨厌囤积的人。"
+        zh: " trở nên mạnh mẽ có thể —— nhưng muốn đem lưỡi đao hướng ra ngoài. trí nhớ chi lực chán ghét trữ hàng người. "
       },
       {
         id: "p11", type: "line", speaker: "Ella", portrait: "ella", next: "end",
         en: "Open the map. Mistvale has eight shrine-lights. Clear them — and the Adult Fog-Tongue will wake.",
-        zh: "打开地图。晨雾有八座祠灯。点亮它们——雾舌成体就会醒来。"
+        zh: " mở bản đồ. sương sớm có tám tòa từ đèn. thắp sáng chúng —— sương mù lưỡi thành thể sẽ tỉnh lại. "
       },
       { id: "end", type: "end" }
     ]
@@ -138,34 +138,34 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-road",
             en: "Mistvale was once a land of naming festivals. Lanterns sang the names of children into the dusk.",
-            zh: "晨雾平原曾有命名的节日。灯笼把孩子们的名字唱进黄昏。"
+            zh: " sương sớm bình nguyên từng có đặt tên Lễ hội. đèn lồng đem con đám bọn chúng tên hát tiến hoàng hôn. "
           },
           {
             art: "cut-road",
             en: "Now the road-signs are licked blank. Fog curls where words used to stand.",
-            zh: "如今路标被舔成空白。词曾经站立的地方，只剩卷曲的雾。"
+            zh: " hôm nay biển báo giao thông bị thè lưỡi ra liếm thành chỗ trống. từ đã từng đứng yên địa phương, chỉ còn quyển khúc sương mù. "
           }
         ]
       },
       {
         id: "e1", type: "line", speaker: "Ella", portrait: "ella-worry",
         en: "Welcome to Mistvale — first wound of Lex World. Ordinary words dry up like dew.",
-        zh: "欢迎来到晨雾平原——词境最先被撕裂的伤口。日常之词像露水，一忘就干。"
+        zh: " hoan nghênh đi vào sương sớm bình nguyên —— Vương quốc Từ trước hết nhất bị xé nứt miệng vết thương. Đời sống chi từ như sương sớm, một quên tựu giữ. "
       },
       {
         id: "e2", type: "line", speaker: "Ella", portrait: "enemy",
         en: "Those curling shapes? Fog-Tongues. They lick names, hope, even the color of the sky.",
-        zh: "那些卷曲的影子？雾舌。它们舔走名字、希望，甚至天空的颜色。"
+        zh: " những mục đó quyển khúc bóng dáng? sương mù lưỡi. chúng thè lưỡi ra liếm đi tên, hy vọng, thậm chí bầu trời màu sắc. "
       },
       {
         id: "e3", type: "line", speaker: "Ella", portrait: "ella-fierce",
         en: "Light the shrines one by one. Each true spelling is a sword-stroke. I'll mark every deed.",
-        zh: "一座一座点亮祠庙。每一次正确的拼写都是一剑。我记下你的每一笔功业。"
+        zh: " một tòa một tòa thắp sáng từ miếu. mỗi một lần chính xác Chính tả đều là một kiếm. ta nhớ hạ của bạn mỗi một bút công lao sự nghiệp. "
       },
       {
         id: "e4", type: "line", speaker: "Narrator", portrait: "hero-determined", next: "end",
         en: "Three lights make a first legend. Eight lights wake the Adult. How far will your fire go tonight?",
-        zh: "三盏灯，写成初传；八盏灯，唤醒成体。今夜你的火，能走多远？"
+        zh: " ba chén đèn, ghi thành sơ truyền; tám chụp đèn, tỉnh lại thành thể. tối nay của bạn Hỏa, có thể đi thật xa? "
       },
       { id: "end", type: "end" }
     ]
@@ -180,19 +180,19 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-shrine",
             en: "The first shrine answers. Golden runes climb the stone like waking veins.",
-            zh: "第一座祠回应了。金色符文沿石面爬升，像苏醒的脉络。"
+            zh: " đệ nhất tòa từ đáp lại. màu vàng ký hiệu(*phù văn) xuôi theo mặt đá trèo lên, như thức tỉnh mạch lạc. "
           }
         ]
       },
       { id: "a", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "First shrine lit. Feel that? The fog stepped back half a pace — for you.",
-        zh: "第一座祠亮了。感觉到了吗？雾为你退了半步。" },
+        zh: " đệ nhất tòa từ sáng. cảm thấy không? sương mù cho bạn lui bán bộ. " },
       { id: "b", type: "line", speaker: "Villager", portrait: "cut-village",
         en: "I… I remember my name again. It was almost gone. Thank you, traveler.",
-        zh: "我……又想起自己的名字了。它差一点消失。谢谢你，旅人。" },
+        zh: " tôi …… lại nghĩ tới tên của mình rồi. nó thiếu một ít biến mất. Cảm ơn bạn, lữ nhân. " },
       { id: "c", type: "line", speaker: "Ella", portrait: "ella", next: "end",
         en: "Write that feeling down in your bones. This is what Memory Power is for.",
-        zh: "把这种感觉写进骨头里。记忆之力，就是为这种瞬间存在的。" },
+        zh: " đem loại cảm giác này ghi vào đầu khớp xương. trí nhớ chi lực, chính là vì loại này lập tức tồn tại. " },
       { id: "end", type: "end" }
     ]
   },
@@ -202,13 +202,13 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
     nodes: [
       { id: "a", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "The melted letters crawled back onto the stele. Ugly handwriting — but alive.",
-        zh: "融化的字爬回碑面。字迹难看——但活着。" },
+        zh: " hòa tan chữ bò lại bia mặt. chữ viết khó coi —— nhưng còn sống. " },
       { id: "b", type: "line", speaker: "Ella", portrait: "enemy",
         en: "Fog-Tongues hate letters that refuse to blur. Keep your blade sharp — every syllable a cut.",
-        zh: "雾舌讨厌不肯模糊的字母。剑锋再利些——每个音节都是一斩。" },
+        zh: " sương mù lưỡi chán ghét không chịu mơ hồ chữ cái. mũi kiếm lại lợi chút ít —— từng âm tiết đều là chém. " },
       { id: "c", type: "line", speaker: "Hero", portrait: "hero-determined", next: "end",
         en: "(You tighten your grip. The mist flinches first.)",
-        zh: "（你握紧掌心。雾，先退缩了。）" },
+        zh: " (bạn nắm chặt lòng bàn tay. sương mù, trước tiên lui rụt.) " },
       { id: "end", type: "end" }
     ]
   },
@@ -218,25 +218,25 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
     nodes: [
       { id: "a", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "Three shrines lit. Not bad for a newborn host.",
-        zh: "三座祠亮了。作为新宿主，还不赖。" },
+        zh: " ba tòa từ sáng. với tư cách mới kí sinh chủ, còn không lại. " },
       {
         id: "b", type: "cutscene",
         panels: [
           {
             art: "cut-village",
             en: "In a half-swallowed village, a child reaches for a name almost faded from stone.",
-            zh: "半座村庄被雾吞着。孩子伸手去够石上快消失的名字。"
+            zh: " nửa tòa thôn trang bị sương mù nuốt. hài tử thò tay đi đủ trên đá nhanh biến mất tên. "
           },
           {
             art: "cut-shrine",
             en: "Your third light reaches them first. The name holds — trembling, then true.",
-            zh: "你的第三盏灯先到了。名字稳住了：先是颤抖，然后真实。"
+            zh: " của bạn thứ ba chụp đèn tới trước. tên ổn định: vốn là run rẩy, sau đó chân thật. "
           }
         ]
       },
       { id: "c", type: "line", speaker: "Ella", portrait: "ella-worry", next: "end",
         en: "Rest if you need. The Adult still sleeps under the eighth stone — for now.",
-        zh: "需要就休息。成体还睡在第八块石下——暂时如此。" },
+        zh: " cần liền nghỉ ngơi. thành thể còn ngủ ở thứ tám khối dưới đá —— tạm thời như thế. " },
       { id: "end", type: "end" }
     ]
   },
@@ -246,13 +246,13 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
     nodes: [
       { id: "a", type: "line", speaker: "Ella", portrait: "enemy",
         en: "That beast stopped spinning. It remembered what it was called — briefly.",
-        zh: "那头兽不再打转了。它短暂想起了自己的名字。" },
+        zh: " đầu kia thú không hề đảo quanh. nó ngắn ngủi nhớ tới tên của mình. " },
       { id: "b", type: "line", speaker: "Ella", portrait: "ella",
         en: "Memory Power isn't only for humans. Even monsters want a name.",
-        zh: "记忆之力不只给人。连怪物也想要一个名字。" },
+        zh: " trí nhớ chi lực không chỉ làm cho người ta. ngay cả quái vật cũng muốn một cái tên. " },
       { id: "c", type: "line", speaker: "Ella", portrait: "ella-smile", next: "end",
         en: "If you can name a fear, you can cut it. Remember that when the Adult wakes.",
-        zh: "能命名恐惧，就能斩断它。成体醒来时，记得这句话。" },
+        zh: " có thể mệnh danh sợ hãi, có thể chặt đứt nó. thành thể tỉnh lại thì, nhớ rõ những lời này. " },
       { id: "end", type: "end" }
     ]
   },
@@ -266,16 +266,16 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-sky",
             en: "A missing patch of sky stitches itself shut. Gold light writes the word blue back into heaven.",
-            zh: "天空缺的那一块被缝合。金色的光，把 blue 写回天穹。"
+            zh: " bầu trời thiếu một ít khối bị khâu lại. màu vàng quang, đem blue ghi xoay chuyển trời đất khung. "
           }
         ]
       },
       { id: "a", type: "line", speaker: "Narrator", portrait: "cut-sky",
         en: "Someone nearby whispers the word as if tasting rain for the first time.",
-        zh: "有人轻声念出那个词，像第一次尝到雨水。" },
+        zh: " có người nhẹ giọng đọc lên cái từ kia, như lần thứ nhất nếm đến mưa. " },
       { id: "b", type: "line", speaker: "Ella", portrait: "ella-smile", next: "end",
         en: "Color is a word too. Never let them tell you adjectives are useless.",
-        zh: "颜色也是词。别信谁说形容词没用。" },
+        zh: " màu sắc cũng là từ. đừng tin ai nói tính từ vô dụng. " },
       { id: "end", type: "end" }
     ]
   },
@@ -285,13 +285,13 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
     nodes: [
       { id: "a", type: "line", speaker: "Child", portrait: "cut-village",
         en: "Hope… hope… I can say it again!",
-        zh: "希望……希望……我又能说出来了！" },
+        zh: " hy vọng …… hy vọng …… tôi lại có thể nói ra! " },
       { id: "b", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "Smoke from the chimneys again. That's what a correct answer looks like on a map.",
-        zh: "炊烟又起来了。正确答案在地图上，长这样。" },
+        zh: " khói bếp lại nổi lên đã đến. Đáp án đúng tại trên địa đồ, dài như vậy. " },
       { id: "c", type: "line", speaker: "Ella", portrait: "ella-fierce", next: "end",
         en: "Two lights left before the ground starts knocking. Stay with me.",
-        zh: "再两盏灯，地下就会敲门。跟紧我。" },
+        zh: " lại hai ngọn đèn, dưới mặt đất sẽ gõ cửa. theo sát tôi. " },
       { id: "end", type: "end" }
     ]
   },
@@ -305,19 +305,19 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-boss",
             en: "Seven lights. The plain holds its breath. Something under the eighth stone rewrites foundation.",
-            zh: "七盏灯。平原屏住呼吸。第八块石下，有东西在改写「根基」。"
+            zh: " bảy chụp đèn. bình nguyên ngừng thở. thứ tám khối dưới đá, có cái gì tại sửa « căn cơ ». "
           }
         ]
       },
       { id: "a", type: "line", speaker: "Ella", portrait: "ella-worry",
         en: "The Adult Fog-Tongue is waking. It will try to erase who you are — and who they are.",
-        zh: "雾舌·成体在醒来。它会抹掉你是谁——以及他们是谁。" },
+        zh: " sương mù lưỡi · thành thể tại tỉnh lại. nó sẽ biến mất ngươi là ai —— cũng như bọn họ là ai. " },
       { id: "b", type: "line", speaker: "Ella", portrait: "ella-fierce",
         en: "Check your title. Steady your breath. Then we go loud.",
-        zh: "看清称号。稳住呼吸。然后，大声出剑。" },
+        zh: " thấy rõ danh xưng. ổn định hô hấp. sau đó, lớn tiếng xuất kiếm. " },
       { id: "c", type: "line", speaker: "Hero", portrait: "hero-determined", next: "end",
         en: "(Starlight burns hotter. You step toward the last shrine.)",
-        zh: "（星屑更烫。你走向最后一座祠。）" },
+        zh: " (sao mảnh càng bị phỏng. bạn đi về hướng cuối cùng một tòa từ.) " },
       { id: "end", type: "end" }
     ]
   },
@@ -332,48 +332,48 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-boss",
             en: "The mist wrings itself dry. Lamps die until only your shrine remains.",
-            zh: "雾像被拧干的布。灯火熄灭，只剩你这一处祠光。"
+            zh: " sương mù như bị vắt khô bố. ngọn đèn dầu dập tắt, chỉ còn bạn chỗ này từ quang. "
           },
           {
             art: "boss",
             en: "From the fog rises a tongue large enough to lick a name off a city.",
-            zh: "雾中升起一截舌头，大到能舔掉一座城的名字。"
+            zh: " trong sương mù bay lên một đoạn đầu lưỡi, lớn đến có thể liếm sạch một tòa thành tên. "
           }
         ]
       },
       {
         id: "b1", type: "line", speaker: "Ella", portrait: "ella-fierce",
         en: "Don't look for me — look at its tongue. It's trying to erase who am I.",
-        zh: "别找我——看它的舌头。它在抹掉 who am I。"
+        zh: " đừng tìm tôi —— xem nó đầu lưỡi. nó tại biến mất who am I. "
       },
       {
         id: "b2", type: "line", speaker: "Adult Fog-Tongue", portrait: "boss",
         en: "Forget… forget… you were never anyone…",
-        zh: "忘了……忘了……你从来不是谁……"
+        zh: " đã quên …… đã quên …… bạn chưa bao giờ là ai ……"
       },
       {
         id: "b3", type: "choice", portrait: "hero-determined",
         en: "Your Memory Power flares. What do you declare?",
-        zh: "记忆之力燃起。你要宣告什么？",
+        zh: " trí nhớ chi lực dấy lên. ngươi muốn tuyên cáo gì? ",
         options: [
-          { en: "I remember my name!", zh: "我记得我的名字！", flag: "boss_name", next: "b4" },
-          { en: "I remember theirs!", zh: "我记得他们的名字！", flag: "boss_others", next: "b4a" }
+          { en: "I remember my name!", zh: " ta nhớ được tên của ta! ", flag: "boss_name", next: "b4" },
+          { en: "I remember theirs!", zh: " ta nhớ được tên của bọn hắn! ", flag: "boss_others", next: "b4a" }
         ]
       },
       {
         id: "b4", type: "line", speaker: "Ella", portrait: "ella-fierce", next: "b5",
         en: "Good. Then prove it — every correct spelling is a slash across that tongue!",
-        zh: "很好。那就证明——每一次正确拼写，都是斩向那截舌头的一剑！"
+        zh: " rất tốt. vậy chứng minh —— mỗi một lần Đúng Chính tả, đều là chém về phía cái kia đoạn đầu lưỡi một kiếm! "
       },
       {
         id: "b4a", type: "line", speaker: "Ella", portrait: "ella-smile", next: "b5",
         en: "That's the prince's vow. Hold it when the fog screams loudest.",
-        zh: "那是王子的誓言。雾最响的时候，抓住它。"
+        zh: " đó là vương tử lời thề. sương mù rất vang lên thời điểm, bắt lấy nó. "
       },
       {
         id: "b5", type: "line", speaker: "Ella", portrait: "ella-fierce", next: "end",
         en: "Timed answers. Miss and it bites. Hit true — and cut.",
-        zh: "限时作答。错过就挨咬。答对——就斩！"
+        zh: " Thời gian đáp lại. bỏ qua liền lần lượt cắn. trả lời —— liền trảm! "
       },
       { id: "end", type: "end" }
     ]
@@ -389,34 +389,34 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-boss",
             en: "The Adult Fog-Tongue tears into dew. Mistvale exhales for the first time in years.",
-            zh: "雾舌·成体碎成露水。晨雾平原多年来第一次呼出一口气。"
+            zh: " sương mù lưỡi · thành thể vỡ thành sương sớm. sương sớm bình nguyên nhiều năm qua lần thứ nhất thở ra một hơi. "
           },
           {
             art: "cut-names",
             en: "Children shout their names across the plain. Lanterns answer like a second sunrise.",
-            zh: "孩子们在平原上喊出自己的名字。灯笼回应，像第二轮日出。"
+            zh: " bọn nhỏ tại bên trên bình nguyên hô lên tên của mình. đèn lồng đáp lại, như đợt thứ hai mặt trời mọc. "
           },
           {
             art: "cut-clear",
             en: "Far east, empty stelae begin to open their eyes.",
-            zh: "远东，空碑正在睁眼。"
+            zh: " Viễn Đông, chỗ trống bia đang trợn mắt. "
           }
         ]
       },
       {
         id: "c1", type: "line", speaker: "Prince Lex (echo)", portrait: "prince",
         en: "Names are the shortest epics. You learned to fight. Next — remember for others.",
-        zh: "名字是最短的史诗。你学会了战斗。下一步——替别人记得。"
+        zh: " tên là ngắn nhất sử thi. bạn học xong chiến đấu. bước tiếp theo —— thay người khác nhớ rõ. "
       },
       {
         id: "c2", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "Chapter I — done. I'm writing it down before I cry. Don't look.",
-        zh: "第一章——完。我先记下来，免得哭出来。别看我。"
+        zh: " Chương 1: —— hết. tôi trước nhớ kỹ, miễn cho khóc lên. đừng nhìn tôi. "
       },
       {
         id: "c3", type: "line", speaker: "Ella", portrait: "map-stone", next: "end",
         en: "Glyph Gorge waits when you're ready. Definitions have been hollowed out — and something worse learned to yawn.",
-        zh: "准备好就去石语峡谷。定义被挖空了——有更糟的东西学会了打哈欠。"
+        zh: " chuẩn bị cho tốt liền đi thạch lời nói hạp cốc. định nghĩa bị đào rỗng —— có càng hỏng bét đồ vật học xong ngáp. "
       },
       { id: "end", type: "end" }
     ]
@@ -433,38 +433,38 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-road",
             en: "Halfway across Mistvale, the road forgets it is a road. Stones rearrange into a question.",
-            zh: "雾原中途，路忘记了自己是路。石块排成一个问号。"
+            zh: " sương mù nguyên trên đường, đường quên mất mình là đường. hòn đá xếp thành một cái dấu chấm hỏi(???). "
           }
         ]
       },
       {
         id: "m1", type: "line", speaker: "Lost Traveler", portrait: "cut-village",
         en: "Which way to the village? I… I forgot the word for left.",
-        zh: "去村子哪边走？我……忘了「左」这个词。"
+        zh: " đi thôn bên nào đi? tôi …… đã quên « trái » cái từ này. "
       },
       {
         id: "m2", type: "choice", portrait: "ella-worry",
         en: "Ella glances at you. How do you answer?",
-        zh: "艾拉看你一眼。你怎么答？",
+        zh: " Ella nhìn ngươi liếc. bạn như thế nào đáp? ",
         options: [
-          { en: "Point left. Say the word aloud.", zh: "指向左边，大声说出那个词。", flag: "mid_left", next: "m3a" },
-          { en: "Walk with them until the word returns.", zh: "陪他们走，直到词回来。", flag: "mid_walk", next: "m3b" }
+          { en: "Point left. Say the word aloud.", zh: " chỉ hướng bên trái, nói lớn tiếng ra cái từ kia. ", flag: "mid_left", next: "m3a" },
+          { en: "Walk with them until the word returns.", zh: " cùng họ đi, thẳng đến từ trở về. ", flag: "mid_walk", next: "m3b" }
         ]
       },
       {
         id: "m3a", type: "line", speaker: "Ella", portrait: "ella-fierce", next: "m4",
         en: "Good. Speaking a word into the fog is half a sword-stroke.",
-        zh: "很好。对着雾说出一个词，就已经是半剑。"
+        zh: " rất tốt. đối với sương mù nói ra một cái từ, cũng đã là nửa kiếm. "
       },
       {
         id: "m3b", type: "line", speaker: "Ella", portrait: "ella-smile", next: "m4",
         en: "Patience is also Memory Power. The fog hates company.",
-        zh: "耐心也是记忆之力。雾最讨厌有人陪。"
+        zh: " kiên nhẫn cũng là trí nhớ chi lực. sương mù ghét nhất có người cùng. "
       },
       {
         id: "m4", type: "line", speaker: "Lost Traveler", portrait: "cut-village", next: "end",
         en: "Left… left! Thank you. The fourth shrine is ahead — it smells like fear.",
-        zh: "左……左！谢谢。第四座祠在前头——闻起来像恐惧。"
+        zh: " trái …… trái! Cảm ơn. thứ tư tòa từ ở phía trước —— ngửi như sợ hãi. "
       },
       { id: "end", type: "end" }
     ]
@@ -480,29 +480,29 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-village",
             en: "Smoke climbs again from three chimneys. A mother writes hope on a child's palm.",
-            zh: "三缕炊烟又升起来。母亲在孩子掌心写下 hope。"
+            zh: " ba sợi khói bếp lại thăng lên. mẫu thân tại hài tử lòng bàn tay viết xuống hope. "
           },
           {
             art: "cut-sky",
             en: "Above them, a thin ribbon of blue refuses to fade.",
-            zh: "在他们上方，一道细细的蓝，拒绝褪色。"
+            zh: " khi bọn hắn phía trên, nhất đạo tế tế lam, cự tuyệt phai màu. "
           }
         ]
       },
       {
         id: "n1", type: "line", speaker: "Ella", portrait: "ella-worry",
         en: "Six lights almost. The Adult under the eighth stone is dreaming louder.",
-        zh: "快六盏灯了。第八块石下的成体，梦得更响。"
+        zh: " nhanh sáu chụp đèn rồi. thứ tám khối dưới đá thành thể, giấc mơ được vang hơn. "
       },
       {
         id: "n2", type: "line", speaker: "Child", portrait: "cut-village",
         en: "Hero! When you win… will the sky stay blue?",
-        zh: "勇者！你赢了以后……天空会一直是蓝色的吗？"
+        zh: " dũng giả! ngươi thắng về sau …… bầu trời sẽ vẫn là màu xanh không? "
       },
       {
         id: "n3", type: "line", speaker: "Hero", portrait: "hero-determined", next: "end",
         en: "(You nod. The spark in your palm answers for you.)",
-        zh: "（你点头。掌心的星屑替你回答。）"
+        zh: " (bạn gật đầu. lòng bàn tay sao mảnh thay bạn trả lời.) "
       },
       { id: "end", type: "end" }
     ]
@@ -515,17 +515,17 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
       {
         id: "r0", type: "line", speaker: "Ella", portrait: "ella-smile",
         en: "You're back. Mistvale smells like wet stone and remembered names.",
-        zh: "你回来了。晨雾闻起来像湿石头，还有被记起的名字。"
+        zh: " bạn đã trở về. sương sớm ngửi như ẩm ướt tảng đá, còn có bị nhớ lại tên. "
       },
       {
         id: "r1", type: "line", speaker: "Villager", portrait: "cut-names",
         en: "The Adult is gone. We keep a lamp on the eighth shrine for you.",
-        zh: "成体没了。第八座祠我们给你留着一盏灯。"
+        zh: " thành thể không có. thứ tám tòa từ chúng tôi giữ lại cho bạn một chiếc đèn. "
       },
       {
         id: "r2", type: "line", speaker: "Ella", portrait: "map-stone", next: "end",
         en: "Revisit if you want. The real road is east — Glyph Gorge won't wait forever.",
-        zh: "想回访就回访。真正的路在东边——石语峡谷不会永远等你。"
+        zh: " muốn thăm đáp lễ trở về tìm hiểu. chân chính đường tại phía đông —— thạch lời nói hạp cốc sẽ không vĩnh viễn chờ ngươi. "
       },
       { id: "end", type: "end" }
     ]

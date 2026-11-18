@@ -1,94 +1,94 @@
 {
- "id": "free-12879",
- "title": "Academic Passage #33",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #33",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12879,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-33"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "Mysterious Viking Sunstones",
-   "instruction": "Read the passage.",
-   "paras": [
-    "The Vikings, seafaring warriors from Scandinavia, are believed to have navigated their ships with remarkable precision across the North Atlantic during the medieval period (about 500-1500 C.E.). (A)One key to their navigational success may have been the use of so-called “sunstones,” as described in Icelandic sagas (medieval Icelandic texts). Some argue the sagas’ content is mythical, while others suggest these stones were real tools used by the Vikings, probably crystals, such as Iceland spar. Iceland spar is a transparent variety of calcite that possesses unique optical properties. (B)It polarizes light by splitting light into two beams, creating a double image when the stone is held up to the sky. By rotating the crystal, the Vikings could determine the location of the sun in the sky on cloudy days, which would help them maintain their course. (C)However, evidence of actual sunstone use remains scarce. Archaeologists have yet to uncover these stones in the remains of Viking settlements or ships. But an Iceland spar sunstone was recovered from a ship that sank in 1592, suggesting that this navigational tool was indeed used for quite some time. (D)The theoretical use of sunstones remains a fascinating example of Viking ingenuity."
-   ],
-   "questions": [
+  "id": "free-12879",
+  "title": "Academic Passage #33",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #33",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12879,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-33"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Why does debate continue about the sunstones mentioned in Icelandic sagas?",
-     "options": {
-      "A": "The sagas describe other uses for sunstones.",
-      "B": "Archaeologists have not found any such stones when examining Viking sites.",
-      "C": "Research indicates that sunstones are not actually an effective navigation tool.",
-      "D": "Researchers suspect that sunstones were not easy to obtain in the medieval period."
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 细节题 原文定位： “However, evidence of actual sunstone use remains scarce. Archaeologists have yet to uncover these stones in the remains of Viking settlements or ships.” 正确答案分析： 文中明确指出，关于萨迦中描述的“太阳石”的争议持续存在，因为考古学家尚未在维京人定居点或船只遗迹中发现这些石头。因此选项 B 正确。 选项分析： (A) The sagas describe other uses for sunstones. 萨迦中描述了太阳石的其他用途 —— 错误，文中未提及。 (B) Archaeologists have not found any such stones when examining Viking sites. 考古学家在检查维京遗址时尚未发现任何此类石头 —— 正确。 (C) Research indicates that sunstones are not actually an effective navigation tool. 研究表明太阳石实际上并不是有效的导航工具 —— 错误，文中未提及有效性争议。 (D) Researchers suspect that sunstones were not easy to obtain in the medieval period. 研究人员怀疑太阳石在中世纪时期不易获得 —— 错误，文中未提及。"
-    },
-    {
-     "id": 2,
-     "stem": "In what way was Iceland spar useful to Vikings?",
-     "options": {
-      "A": "It helped them predict when clouds would disappear.",
-      "B": "It was used as a tool to help maintain ships.",
-      "C": "It helped them figure out where the sun was when it could not be seen.",
-      "D": "It was used to improve seafarers’ vision."
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 细节题 原文定位： “By rotating the crystal, the Vikings could determine the location of the sun in the sky on cloudy days, which would help them maintain their course.” 正确答案分析： 文中明确指出，通过旋转冰洲石晶体，维京人可以在阴天确定太阳在天空中的位置，从而帮助他们保持航向。因此选项 C 正确。 选项分析： (A) It helped them predict when clouds would disappear. 它帮助他们预测云层何时消散 —— 错误，文中未提及。 (B) It was used as a tool to help maintain ships. 它被用作帮助维护船只的工具 —— 错误，文中未提及。 (C) It helped them figure out where the sun was when it could not be seen. 它帮助他们在看不到太阳时找出太阳的位置 —— 正确。 (D) It was used to improve seafarers' vision. 它被用来改善航海者的视力 —— 错误，文中未提及。"
-    },
-    {
-     "id": 3,
-     "stem": "Why does the author mention a ship that sank in 1592 ?",
-     "options": {
-      "A": "To explain how Elizabethans refined a technology invented by Vikings",
-      "B": "To support the theory that Vikings used Iceland spar for navigation",
-      "C": "To give an example of a more modern navigational tool",
-      "D": "To provide information about archaeological methods"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 修辞目的题 原文定位： “But an Iceland spar sunstone was recovered from a ship that sank in 1592, suggesting that this navigational tool was indeed used for quite some time.” 正确答案分析： 作者提到一艘 1592 年沉没的船只上发现了一颗冰洲石太阳石，是为了提供证据支持太阳石确实作为导航工具被使用了相当长的时间，从而间接支持维京人使用太阳石导航的理论。因此选项 B 正确。 选项分析： (A) To explain how Elizabethans refined a technology invented by Vikings 解释伊丽莎白时代的人如何改进了维京人发明的技术 —— 错误，文中未提及。 (B) To support the theory that Vikings used Iceland spar for navigation 支持维京人使用冰洲石导航的理论 —— 正确。 (C) To give an example of a more modern navigational tool 给出一个更现代导航工具的例子 —— 错误，该船只沉没于 1592 年，并非更现代的导航工具。 (D) To provide information about archaeological methods 提供关于考古方法的信息 —— 错误，文中未讨论考古方法。"
-    },
-    {
-     "id": 4,
-     "stem": "The word “ingenuity” in the passage is closest in meaning to",
-     "options": {
-      "A": "education",
-      "B": "cleverness",
-      "C": "luck",
-      "D": "fame"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 词汇题 原文定位： “The theoretical use of sunstones remains a fascinating example of Viking ingenuity.” 正确答案分析： “ingenuity” 意为“ ingenuity 意为“ ingenuity 意为“创造力、足智多谋”，在句中指维京人的智慧。因此 “cleverness”（聪明、机智）是最接近的含义。 选项分析： (A) education 教育 —— 错误。 (B) cleverness 聪明、机智 —— 正确。 (C) luck 运气 —— 错误。 (D) fame 名声 —— 错误。"
-    },
-    {
-     "id": 5,
-     "stem": "There are four locations in the passage that indicate where the following sentence could be added: This is all the more remarkable considering the lack of technology at the time. Where would the sentence best fit?",
-     "options": {
-      "A": "Option A",
-      "B": "Option B",
-      "C": "Option C",
-      "D": "Option D"
-     },
-     "answer": "A",
-     "analysis": "正确答案：A 题型： 句子插入题 原文定位（各选项所在句子上下文）： (A) 位于：“...across the North Atlantic during the medieval period (about 500-1500 C.E.). (A) One key to their navigational success may have been the use of so-called ‘sunstones’...” (B) 位于：“...possesses unique optical properties. (B) It polarizes light by splitting light into two beams...” (C) 位于：“...help them maintain their course. (C) However, evidence of actual sunstone use remains scarce.” (D) 位于：“...indeed used for quite some time. (D) The theoretical use of sunstones remains a fascinating example...” 正确答案分析： 待插入句子 “This is all the more remarkable considering the lack of technology at the time.” 意为“考虑到当时缺乏技术，这一点就更加非凡了”。其中的 “this” 应指代前文提到的维京人的航海成就或太阳石的使用。在 (A) 位置，前文提到维京人“以非凡的精度”横跨北大西洋，后文开始介绍太阳石。插入此句可以总结维京人航海成就的非凡性，并引出对其方法的探讨，逻辑连贯。 选项分析： (A) 正确 —— 位于描述维京人航海精度之后，强调其非凡性，与后文太阳石的介绍衔接自然。 (B) 错误 —— 前文已在详细介绍冰洲石的光学特性，插入此句会打断技术性描述。 (C) 错误 —— 前文讨论太阳石的使用方法，后文转向证据稀缺，插入此句不连贯。 (D) 错误 —— 位于段落末尾，前文已总结太阳石的使用，插入此句显得突兀。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "Mysterious Viking Sunstones",
+      "instruction": "Read the passage.",
+      "paras": [
+        "The Vikings, seafaring warriors from Scandinavia, are believed to have navigated their ships with remarkable precision across the North Atlantic during the medieval period (about 500-1500 C.E.). (A)One key to their navigational success may have been the use of so-called “sunstones,” as described in Icelandic sagas (medieval Icelandic texts). Some argue the sagas’ content is mythical, while others suggest these stones were real tools used by the Vikings, probably crystals, such as Iceland spar. Iceland spar is a transparent variety of calcite that possesses unique optical properties. (B)It polarizes light by splitting light into two beams, creating a double image when the stone is held up to the sky. By rotating the crystal, the Vikings could determine the location of the sun in the sky on cloudy days, which would help them maintain their course. (C)However, evidence of actual sunstone use remains scarce. Archaeologists have yet to uncover these stones in the remains of Viking settlements or ships. But an Iceland spar sunstone was recovered from a ship that sank in 1592, suggesting that this navigational tool was indeed used for quite some time. (D)The theoretical use of sunstones remains a fascinating example of Viking ingenuity."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Why does debate continue about the sunstones mentioned in Icelandic sagas?",
+          "options": {
+            "A": "The sagas describe other uses for sunstones.",
+            "B": "Archaeologists have not found any such stones when examining Viking sites.",
+            "C": "Research indicates that sunstones are not actually an effective navigation tool.",
+            "D": "Researchers suspect that sunstones were not easy to obtain in the medieval period."
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: chi tiết câu Bài gốc Dẫn chứng: “However, evidence of actual sunstone use remains scarce. Archaeologists have yet to uncover these stones in the remains of Viking settlements or ships.” Đáp án đúng phân tích: văn trung rõ ràng chỉ ra, về tát già Vừa miêu tả “ đá mặt trời ” tranh luận tiếp tục tồn tại, vì các nhà khảo cổ học chưa tại duy kinh người điểm định cư hoặc đội thuyền trong di tích Khám phá những đá này. bởi vậy Phương án B Đúng. Phương án phân tích: (A) The sagas describe other uses for sunstones. tát già Vừa miêu tả đá mặt trời cách dùng khác —— Sai, văn trung Không được đề cập (Not Given). (B) Archaeologists have not found any such stones when examining Viking sites. các nhà khảo cổ học tại kiểm tra duy kinh di chỉ thời thượng không Khám phá bất luận cái gì loại này tảng đá —— Đúng. (C) Research indicates that sunstones are not actually an effective navigation tool. nghiên cứu cho thấy đá mặt trời trên thực tế cũng không phải hữu hiệu Điều hướng công cụ —— Sai, văn trung Không được đề cập (Not Given) hữu hiệu tính tranh luận. (D) Researchers suspect that sunstones were not easy to obtain in the medieval period. nhân viên nghiên cứu hoài nghi đá mặt trời tại thời Trung cổ thời kì không dễ đạt được —— Sai, văn trung Không được đề cập (Not Given)."
+        },
+        {
+          "id": 2,
+          "stem": "In what way was Iceland spar useful to Vikings?",
+          "options": {
+            "A": "It helped them predict when clouds would disappear.",
+            "B": "It was used as a tool to help maintain ships.",
+            "C": "It helped them figure out where the sun was when it could not be seen.",
+            "D": "It was used to improve seafarers’ vision."
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: chi tiết câu Bài gốc Dẫn chứng: “By rotating the crystal, the Vikings could determine the location of the sun in the sky on cloudy days, which would help them maintain their course.” Đáp án đúng phân tích: văn trung rõ ràng chỉ ra, thông qua xoay tròn băng châu thạch tinh thể, duy kinh người có thể tại trời đầy mây Đồng ý mặt trời ở trên trời vị trí, do đó trợ giúp họ bảo trì hướng đi. bởi vậy Phương án C Đúng. Phương án phân tích: (A) It helped them predict when clouds would disappear. nó trợ giúp họ dự đoán tầng mây khi nào tiêu tán —— Sai, văn trung Không được đề cập (Not Given). (B) It was used as a tool to help maintain ships. nó bị dùng làm trợ giúp bảo vệ thuyền bè công cụ —— Sai, văn trung Không được đề cập (Not Given). (C) It helped them figure out where the sun was when it could not be seen. nó trợ giúp họ đang nhìn không đến mặt trời lúc tìm ra vị trí của mặt trời —— Đúng. (D) It was used to improve seafarers' vision. nó bị dùng để cải thiện hàng hải người thị lực —— Sai, văn trung Không được đề cập (Not Given)."
+        },
+        {
+          "id": 3,
+          "stem": "Why does the author mention a ship that sank in 1592 ?",
+          "options": {
+            "A": "To explain how Elizabethans refined a technology invented by Vikings",
+            "B": "To support the theory that Vikings used Iceland spar for navigation",
+            "C": "To give an example of a more modern navigational tool",
+            "D": "To provide information about archaeological methods"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: tu từ mục đích câu Bài gốc Dẫn chứng: “But an Iceland spar sunstone was recovered from a ship that sank in 1592, suggesting that this navigational tool was indeed used for quite some time.” Đáp án đúng phân tích: tác giả nhắc tới một chiếc năm 1592 chìm trên đội thuyền phát hiện một viên băng châu thạch đá mặt trời, là vì cung cấp chứng cứ hỗ trợ đá mặt trời xác thực với tư cách Điều hướng công cụ bị sử dụng thời gian tương đối dài, do đó gián tiếp hỗ trợ duy kinh người sử dụng đá mặt trời Điều hướng lý luận. bởi vậy Phương án B Đúng. Phương án phân tích: (A) To explain how Elizabethans refined a technology invented by Vikings giải thích Y Lệ Toa Bạch thời đại người làm thế nào cải tiến duy kinh người phát minh kỹ thuật —— Sai, văn trung Không được đề cập (Not Given). (B) To support the theory that Vikings used Iceland spar for navigation hỗ trợ duy kinh người sử dụng băng châu thạch Điều hướng lý luận —— Đúng. (C) To give an example of a more modern navigational tool cho ra một cái càng hiện đại Điều hướng công cụ ví dụ —— Sai, nên đội thuyền chìm nghỉm tại năm 1592, cũng không phải là càng hiện đại Điều hướng công cụ. (D) To provide information about archaeological methods cung cấp về khảo cổ phương pháp tin tức —— Sai, văn trung không thảo luận khảo cổ phương pháp."
+        },
+        {
+          "id": 4,
+          "stem": "The word “ingenuity” in the passage is closest in meaning to",
+          "options": {
+            "A": "education",
+            "B": "cleverness",
+            "C": "luck",
+            "D": "fame"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: Từ vựng câu Bài gốc Dẫn chứng: “The theoretical use of sunstones remains a fascinating example of Viking ingenuity.” Đáp án đúng phân tích: “ingenuity” ý là “ ingenuity ý là “ ingenuity ý là “ sức sáng tạo, túc trí đa mưu ”, tại câu ngón giữa duy kinh người trí tuệ. bởi vậy “cleverness” (thông minh, cơ trí) là gần gũi nhất Nghĩa. Phương án phân tích: (A) education Giáo dục —— Sai. (B) cleverness thông minh, cơ trí —— Đúng. (C) luck vận khí —— Sai. (D) fame thanh danh —— Sai."
+        },
+        {
+          "id": 5,
+          "stem": "There are four locations in the passage that indicate where the following sentence could be added: This is all the more remarkable considering the lack of technology at the time. Where would the sentence best fit?",
+          "options": {
+            "A": "Option A",
+            "B": "Option B",
+            "C": "Option C",
+            "D": "Option D"
+          },
+          "answer": "A",
+          "analysis": "Đáp án đúng: A dạng bài: câu cắm vào câu Bài gốc Dẫn chứng (lựa chọn hạng chỗ câu cao thấp văn): (A) ở vào: “...across the North Atlantic during the medieval period (about 500-1500 C.E.). (A) One key to their navigational success may have been the use of so-called ‘sunstones’...” (B) ở vào: “...possesses unique optical properties. (B) It polarizes light by splitting light into two beams...” (C) ở vào: “...help them maintain their course. (C) However, evidence of actual sunstone use remains scarce.” (D) ở vào: “...indeed used for quite some time. (D) The theoretical use of sunstones remains a fascinating example...” Đáp án đúng phân tích: đợi cắm vào câu “This is all the more remarkable considering the lack of technology at the time.” ý là “ cân nhắc đến lúc ấy khuyết thiếu kỹ thuật, điểm này thì càng thêm phi phàm ”. trong đó “this” ứng với chỉ thay tiền văn nhắc tới duy kinh người hàng hải thành tựu hoặc đá mặt trời sử dụng. tại (A) vị trí, tiền văn nhắc tới duy kinh người “ dùng phi phàm độ chính xác ” kéo dài qua bắc đại Tây Dương, sau văn Bắt đầu giới thiệu đá mặt trời. cắm vào này câu có thể tổng kết duy kinh người hàng hải thành tựu phi phàm tính, cũng dẫn xuất đáp lời phương pháp nghiên cứu thảo luận, ăn khớp nối liền. Phương án phân tích: (A) Đúng —— ở vào miêu tả duy kinh người hàng hải độ chính xác về sau, cường điệu kia phi phàm tính, và sau văn đá mặt trời giới thiệu dính liền tự nhiên. (B) Sai —— tiền văn đã ở kỹ càng giới thiệu băng châu thạch quang học đặc tính, cắm vào này câu sẽ cắt ngang tính kỹ thuật miêu tả. (C) Sai —— tiền văn thảo luận đá mặt trời phương pháp sử dụng, sau văn chuyển hướng chứng cứ khan hiếm, cắm vào này câu không nối quan. (D) Sai —— ở vào đoạn cuối cùng, tiền văn đã tổng kết đá mặt trời sử dụng, cắm vào này câu lộ ra đột ngột."
+        }
+      ]
+    }
+  ]
 }

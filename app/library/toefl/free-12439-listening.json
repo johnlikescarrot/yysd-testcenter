@@ -1,81 +1,81 @@
 {
- "id": "free-12439",
- "title": "Lecture #7",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #7",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12439,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-7"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #7",
-   "instruction": "Listen to a talk in a psychology class.",
-   "audio": "library/toefl/free/audio/deed9c954697419b83057318435c835f.mp3",
-   "transcript": "",
-   "questions": [
+  "id": "free-12439",
+  "title": "Lecture #7",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #7",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12439,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-7"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the talk?",
-     "options": {
-      "A": "The benefits of long-term financial planning",
-      "B": "A psychological bias in decision-making",
-      "C": "How to recover lost investments in business",
-      "D": "The history of cognitive research"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：这段讲话的主题是什么？ 定位原文：Today, we're exploring the sunk cost fallacy, a cognitive bias that often leads to irrational decision-making. 选项分析： A. The benefits of long-term financial planning（长期财务规划的好处）。由于长期财务规划只是结尾提到的下一节内容，并非本节主题，所以A选项错误。 B. A psychological bias in decision-making（决策中的心理偏差）。因为教授开篇就明确指出本节探讨的是沉没成本谬误，这是一种导致非理性决策的认知偏差，因此B选项正确。 C. How to recover lost investments in business（如何在商业中收回损失的投资）。基于讲话没有讨论如何收回损失，而是讲解一种心理偏差，所以C选项错误。 D. The history of cognitive research（认知研究的历史）。由于讲话完全没有涉及认知研究的历史，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "According to the speaker, what is a sunk cost?",
-     "options": {
-      "A": "A resource that can be recovered in the future",
-      "B": "A future expense that must be avoided",
-      "C": "An investment that has already been made and cannot be recovered",
-      "D": "A profit that exceeds initial expectations"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：根据演讲者，什么是沉没成本？ 定位原文：In reality, the money is gone—it's a \"sunk cost\"—and by staying, they are only wasting two more hours of their time. 选项分析： A. A resource that can be recovered in the future（未来可以收回的资源）。因为教授明确说钱已经花出去了，无法收回，所以A选项错误。 B. A future expense that must be avoided（必须避免的未来开支）。由于沉没成本指的是已经发生的投入，而非未来开支，所以B选项错误。 C. An investment that has already been made and cannot be recovered（已经发生且无法收回的投资）。基于教授举例说明电影票的钱已经花出去了，无法要回来，这正是沉没成本的定义，因此C选项正确。 D. A profit that exceeds initial expectations（超出初始预期的利润）。因为沉没成本与利润无关，所以D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "Why does the speaker mention a three-hour movie?",
-     "options": {
-      "A": "To illustrate how the sunk cost fallacy affects daily choices",
-      "B": "To argue that people should watch more films",
-      "C": "To explain the importance of finishing what one starts",
-      "D": "To compare the cost of movies with business investments"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：演讲者为什么提到一场三小时的电影？ 定位原文：For instance, imagine you bought a ticket to a three-hour movie. After thirty minutes, you realize the movie is terrible and you aren't enjoying it. However, most people will stay until the end because they already paid for the ticket. 选项分析： A. To illustrate how the sunk cost fallacy affects daily choices（说明沉没成本谬误如何影响日常选择）。由于教授用\"For instance\"引出这个例子，生动展示了人们因为已经买了票而坚持看完烂片的日常场景，这正是沉没成本谬误的典型表现，所以A选项正确。 B. To argue that people should watch more films（主张人们应该多看电影）。因为教授没有表达这个观点，所以B选项错误。 C. To explain the importance of finishing what one starts（解释善始善终的重要性）。基于教授实际上是在批评这种做法，认为留下来只是在浪费更多时间，所以C选项错误。 D. To compare the cost of movies with business investments（比较电影花费与商业投资）。由于电影例子是为了通俗解释概念，而非与商业投资做对比，所以D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "What will the speaker discuss next?",
-     "options": {
-      "A": "The psychological effects of wasting time",
-      "B": "Techniques to identify and prevent the fallacy in finance",
-      "C": "Case studies of successful business ventures",
-      "D": "The origin of the term \"sunk cost\""
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：演讲者接下来将讨论什么？ 定位原文：Next, we will discuss how to recognize and avoid the sunk cost fallacy in long-term financial planning. 选项分析： A. The psychological effects of wasting time（浪费时间的心理影响）。因为教授没有提到要讨论这个话题，所以A选项错误。 B. Techniques to identify and prevent the fallacy in finance（在财务中识别和预防这一谬误的技巧）。由于教授明确说接下来要讨论如何识别和避免沉没成本谬误在长期财务规划中的应用，因此B选项正确。 C. Case studies of successful business ventures（成功商业案例研究）。基于教授没有提及案例研究，所以C选项错误。 D. The origin of the term \"sunk cost\"（\"沉没成本\"一词的起源）。因为教授没有说要讨论这个术语的起源，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #7",
+      "instruction": "Listen to a talk in a psychology class.",
+      "audio": "library/toefl/free/audio/deed9c954697419b83057318435c835f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the talk?",
+          "options": {
+            "A": "The benefits of long-term financial planning",
+            "B": "A psychological bias in decision-making",
+            "C": "How to recover lost investments in business",
+            "D": "The history of cognitive research"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: đoạn này nói chuyện chủ đề là cái gì? Dẫn chứng Bài gốc: Today, we're exploring the sunk cost fallacy, a cognitive bias that often leads to irrational decision-making. Phương án phân tích: A. The benefits of long-term financial planning (trường kỳ tài vụ hoạch định chỗ tốt). bởi vì trường kỳ tài vụ quy hoạch chẳng qua là phần cuối nhắc tới tiếp theo đoạn nội dung, cũng không phải là bản tiết chủ đề, nên A Phương án Sai. B. A psychological bias in decision-making (quyết định biện pháp trong đích tâm lý độ lệch). vì dạy dỗ khúc dạo đầu minh xác chỉ ra bản tiết tham khảo là chìm nghỉm thành phẩm sai lầm, đây là một loại dẫn đến không phải lý tính quyết sách nhận thức độ lệch, bởi vậy B Phương án Đúng. C. How to recover lost investments in business (như thế nào Kinh doanh Vừa thu hồi tổn thất đầu tư). căn cứ vào nói chuyện không có thảo luận làm thế nào thu hồi tổn thất, mà là giảng giải một loại tâm lý độ lệch, nên C Phương án Sai. D. The history of cognitive research (nhận thức nghiên cứu Lịch sử). bởi vì nói chuyện hoàn toàn không có liên quan đến nhận thức nghiên cứu Lịch sử, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "According to the speaker, what is a sunk cost?",
+          "options": {
+            "A": "A resource that can be recovered in the future",
+            "B": "A future expense that must be avoided",
+            "C": "An investment that has already been made and cannot be recovered",
+            "D": "A profit that exceeds initial expectations"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: dựa theo diễn thuyết người, cái gì là chìm nghỉm thành phẩm? Dẫn chứng Bài gốc: In reality, the money is gone—it's a \"sunk cost\"—and by staying, they are only wasting two more hours of their time. Phương án phân tích: A. A resource that can be recovered in the future (tương lai có thể thu hồi tài nguyên). vì dạy dỗ rõ ràng nói tiền đã tốn ra rồi, không cách nào thu hồi, nên A Phương án Sai. B. A future expense that must be avoided (phải tránh khỏi tương lai chi tiêu). bởi vì chìm nghỉm thành phẩm là chỉ đã phát sinh đưa vào, mà không phải là tương lai chi tiêu, nên B Phương án Sai. C. An investment that has already been made and cannot be recovered (đã phát sinh mà lại không cách nào thu hồi đầu tư). căn cứ vào dạy dỗ nêu ví dụ nói rõ vé xem phim tiền đã tốn ra rồi, không cách nào muốn trở về, đây chính là chìm nghỉm thành phẩm định nghĩa, bởi vậy C Phương án Đúng. D. A profit that exceeds initial expectations (vượt qua mới bắt đầu dự trù lợi nhuận). vì chìm nghỉm thành phẩm và lợi nhuận không quan hệ, nên D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "Why does the speaker mention a three-hour movie?",
+          "options": {
+            "A": "To illustrate how the sunk cost fallacy affects daily choices",
+            "B": "To argue that people should watch more films",
+            "C": "To explain the importance of finishing what one starts",
+            "D": "To compare the cost of movies with business investments"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: diễn thuyết người vì sao nhắc tới một cuộc 3h Điện ảnh? Dẫn chứng Bài gốc: For instance, imagine you bought a ticket to a three-hour movie. After thirty minutes, you realize the movie is terrible and you aren't enjoying it. However, most people will stay until the end because they already paid for the ticket. Phương án phân tích: A. To illustrate how the sunk cost fallacy affects daily choices (nói rõ chìm nghỉm thành phẩm sai lầm làm thế nào ảnh hưởng Đời sống lựa chọn). bởi vì dạy dỗ dùng \"For instance\" dẫn xuất này ví dụ, sinh động phô bày mọi người vì đã mua phiếu vé mà kiên trì xem hết nát mảnh Đời sống tình cảnh, đây chính là chìm nghỉm thành phẩm sai lầm điển hình biểu hiện, nên A Phương án Đúng. B. To argue that people should watch more films (chủ trương mọi người nên nhìn nhiều Điện ảnh). vì dạy dỗ không có biểu đạt cái quan điểm này, nên B Phương án Sai. C. To explain the importance of finishing what one starts (giải thích trước sau vẹn toàn tầm quan trọng). căn cứ vào dạy dỗ trên thực tế là đang phê bình loại làm này, cho rằng lưu lại chẳng qua là đang lãng phí nhiều thời gian hơn, nên C Phương án Sai. D. To compare the cost of movies with business investments (so sánh Điện ảnh tiêu phí và Kinh doanh đầu tư). bởi vì Điện ảnh ví dụ là vì thông tục giải thích khái niệm, mà không phải là và Kinh doanh đầu tư đối đầu so với, nên D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "What will the speaker discuss next?",
+          "options": {
+            "A": "The psychological effects of wasting time",
+            "B": "Techniques to identify and prevent the fallacy in finance",
+            "C": "Case studies of successful business ventures",
+            "D": "The origin of the term \"sunk cost\""
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: diễn thuyết người kế tiếp đem thảo luận gì? Dẫn chứng Bài gốc: Next, we will discuss how to recognize and avoid the sunk cost fallacy in long-term financial planning. Phương án phân tích: A. The psychological effects of wasting time (lãng phí thời gian tâm lý ảnh hưởng). vì dạy dỗ không có nói tới muốn thảo luận cái đề tài này, nên A Phương án Sai. B. Techniques to identify and prevent the fallacy in finance (tại tài vụ Vừa phân biệt và dự phòng cái này một sai lầm kỹ xảo). bởi vì dạy dỗ rõ ràng nói kế tiếp muốn thảo luận làm thế nào phân biệt và tránh cho chìm nghỉm thành phẩm sai lầm tại trường kỳ tài vụ trong hoạch định hữu ích,thiết thực, bởi vậy B Phương án Đúng. C. Case studies of successful business ventures (thành công Kinh doanh án lệ nghiên cứu). căn cứ vào dạy dỗ không có đề cập án lệ nghiên cứu, nên C Phương án Sai. D. The origin of the term \"sunk cost\" (\" chìm nghỉm thành phẩm \" một từ khởi nguyên). vì dạy dỗ cũng không nói gì muốn thảo luận thuật này lời nói khởi nguyên, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

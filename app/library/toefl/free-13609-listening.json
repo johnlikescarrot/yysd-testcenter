@@ -1,81 +1,81 @@
 {
- "id": "free-13609",
- "title": "Lecture #59",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #59",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13609,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-59"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #59",
-   "instruction": "Listen to a talk on a biology podcast.",
-   "audio": "library/toefl/free/audio/5f0b84ccf782454ab7fc45020895c439.mp3",
-   "transcript": "Man: Listen to a talk on a biology podcast.\nPicture a creature that's smaller than a mouse, yet as territorial as a lion. Does it sound like a cartoon character? It's actually the real life Scarlet Badis, a freshwater fish. It's only about 2 cm long at most.\nIn the wild,it generally thrives peacefully in the slow moving streams of India. Because of its size and attractive coloring, it's also a popular choice for aquariums and fish tanks. However, in captive environments like aquariums, males are more aggressive. They'll chase and nip at other males if they encroach on their territory, so it's crucial to include lots of vegetation. Plants act as hiding places and borderline between males’ territories.\nNow male scarlet bodice are a vivid orangish red, scarlet with light bluish stripes. When a male isn't having a confrontation with another male in the aquarium though, his scarlet is less bright, it can almost, but not quite resemble female coloring, which is dull gray. This could make it hard to tell the sexes apart, except if you can see any scarlet at all on the fish, it's a male. Plus, unlike in most fish species, males are also usually a bit larger than females, and the other time a male scarlet badness shows his brightest coloring is during breeding season. In aquariums, he can be observed doing a sort of dance to impress females. Showing himself off, his dance also involves following the female around until she decides whether to mate with him.",
-   "questions": [
+  "id": "free-13609",
+  "title": "Lecture #59",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #59",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13609,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-59"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What does the speaker mainly discuss?",
-     "options": {
-      "A": "The ways that the Scarlet Badis male defends itself against larger fish",
-      "B": "The characteristics of Scarlet Badis males in captive environments",
-      "C": "The ways that Scarlet Badis choose their territories",
-      "D": "The breeding behaviors of male and female Scarlet Badis"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：演讲者主要讨论了什么？ 定位原文：Man: ...However, in captive environments like aquariums, males are more aggressive... so it's crucial to include lots of vegetation... Now male scarlet bodice are a vivid orangish red... This could make it hard to tell the sexes apart... 选项分析： A. The ways that the Scarlet Badis male defends itself against larger fish 雄性猩红拟丽鱼防御大鱼的方式。因为演讲者提到的是雄性之间互相攻击和争夺领地，而不是防御大鱼，所以A选项错误。 B. The characteristics of Scarlet Badis males in captive environments 圈养环境中雄性猩红拟丽鱼的特征。由于演讲者详细描述了这种鱼在水族箱（圈养环境）中的攻击性、颜色变化、体型以及求偶行为，这些都是雄性在圈养环境下的特征，所以B选项正确。 C. The ways that Scarlet Badis choose their territories 猩红拟丽鱼选择领地的方式。因为虽然提到了领地意识，但这只是演讲内容的一部分，不足以概括全文，所以C选项错误。 D. The breeding behaviors of male and female Scarlet Badis 雄性和雌性猩红拟丽鱼的繁殖行为。因为繁殖行为只在最后提到，演讲主要聚焦于雄性的特征，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the speaker imply about Scarlet Badis that live instreams?",
-     "options": {
-      "A": "They are not usually violent toward each other.",
-      "B": "They may be hunted by land animals.",
-      "C": "They swim at a slower speed than those in aquariums.",
-      "D": "They have a brighter color than those in aquariums."
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：关于生活在溪流中的猩红拟丽鱼，演讲者暗示了什么？ 定位原文：Man: In the wild, it generally thrives peacefully in the slow moving streams of India. 选项分析： A. They are not usually violent toward each other. 它们通常彼此不暴力。由于演讲者对比了野生环境（和平共处）和圈养环境（雄性具有攻击性），暗示野生环境下的它们通常比较平和，所以A选项正确。 B. They may be hunted by land animals. 它们可能会被陆地动物捕食。因为演讲中未提及捕食者，所以B选项错误。 C. They swim at a slower speed than those in aquariums. 它们的游动速度比水族箱里的慢。因为演讲只提到溪流流速慢，未提及鱼的游动速度对比，所以C选项错误。 D. They have a brighter color than those in aquariums. 它们的颜色比水族箱里的更鲜艳。因为演讲提到雄性在非对抗状态下颜色较暗，并未说野生的颜色更鲜艳，所以D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "What point does the speaker make about plants in aquariums?",
-     "options": {
-      "A": "They should be the same plants as those found in streams in India.",
-      "B": "They should be orange-red to match male Scarlet Badis.",
-      "C": "They help keep male Scarlet Badis separate from one another.",
-      "D": "They are the primary food source for the Scarlet Badis."
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：关于水族箱中的植物，演讲者提出了什么观点？ 定位原文：Man: ...so it's crucial to include lots of vegetation. Plants act as hiding places and borderline between males’ territories. 选项分析： A. They should be the same plants as those found in streams in India. 它们应该和印度溪流中发现的植物相同。因为演讲中未对植物种类做具体要求，所以A选项错误。 B. They should be orange-red to match male Scarlet Badis. 它们应该是橙红色以匹配雄性猩红拟丽鱼。因为演讲中未提及植物颜色的要求，所以B选项错误。 C. They help keep male Scarlet Badis separate from one another. 它们有助于将雄性猩红拟丽鱼彼此隔开。由于演讲者明确指出植物充当了雄性领地之间的边界，起到了隔离作用，所以C选项正确。 D. They are the primary food source for the Scarlet Badis. 它们是猩红拟丽鱼的主要食物来源。因为演讲提到植物是藏身之处，未提及作为食物，所以D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "What can be inferred about female Scarlet Badis?",
-     "options": {
-      "A": "They may dance during the breeding season.",
-      "B": "They sometimes look very similar to males.",
-      "C": "They usually have orange-red coloring.",
-      "D": "They can be aggressive toward males."
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：关于雌性猩红拟丽鱼，可以推断出什么？ 定位原文：Man: ...his scarlet is less bright, it can almost, but not quite resemble female coloring, which is dull gray. 选项分析： A. They may dance during the breeding season. 它们在繁殖季节可能会跳舞。因为演讲中提到跳舞的是雄性为了求偶，而不是雌性，所以A选项错误。 B. They sometimes look very similar to males. 它们有时看起来和雄性非常相似。由于演讲者提到雄性在不打架时颜色变暗，几乎像雌性的灰色，这意味着两者在某些时候外观非常相似，所以B选项正确。 C. They usually have orange-red coloring. 它们通常有橙红色。因为演讲明确指出雌性是暗灰色的，橙红色是雄性的特征，所以C选项错误。 D. They can be aggressive toward males. 它们可能对雄性具有攻击性。因为演讲中提到的是雄性之间互相攻击，未提及雌性攻击雄性，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #59",
+      "instruction": "Listen to a talk on a biology podcast.",
+      "audio": "library/toefl/free/audio/5f0b84ccf782454ab7fc45020895c439.mp3",
+      "transcript": "Man: Listen to a talk on a biology podcast.\nPicture a creature that's smaller than a mouse, yet as territorial as a lion. Does it sound like a cartoon character? It's actually the real life Scarlet Badis, a freshwater fish. It's only about 2 cm long at most.\nIn the wild,it generally thrives peacefully in the slow moving streams of India. Because of its size and attractive coloring, it's also a popular choice for aquariums and fish tanks. However, in captive environments like aquariums, males are more aggressive. They'll chase and nip at other males if they encroach on their territory, so it's crucial to include lots of vegetation. Plants act as hiding places and borderline between males’ territories.\nNow male scarlet bodice are a vivid orangish red, scarlet with light bluish stripes. When a male isn't having a confrontation with another male in the aquarium though, his scarlet is less bright, it can almost, but not quite resemble female coloring, which is dull gray. This could make it hard to tell the sexes apart, except if you can see any scarlet at all on the fish, it's a male. Plus, unlike in most fish species, males are also usually a bit larger than females, and the other time a male scarlet badness shows his brightest coloring is during breeding season. In aquariums, he can be observed doing a sort of dance to impress females. Showing himself off, his dance also involves following the female around until she decides whether to mate with him.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What does the speaker mainly discuss?",
+          "options": {
+            "A": "The ways that the Scarlet Badis male defends itself against larger fish",
+            "B": "The characteristics of Scarlet Badis males in captive environments",
+            "C": "The ways that Scarlet Badis choose their territories",
+            "D": "The breeding behaviors of male and female Scarlet Badis"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: diễn thuyết người chủ yếu thảo luận gì? Dẫn chứng Bài gốc: Man:...However, in captive environments like aquariums, males are more aggressive... so it's crucial to include lots of vegetation... Now male scarlet bodice are a vivid orangish red... This could make it hard to tell the sexes apart... Phương án phân tích: A. The ways that the Scarlet Badis male defends itself against larger fish giống đực màu đỏ tươi mô phỏng lệ cá phòng ngự cá lớn phương thức. vì diễn thuyết người nhắc tới là giống đực giữa công kích lẫn nhau và tranh đoạt lãnh địa, mà không phải phòng ngự cá lớn, nên A Phương án Sai. B. The characteristics of Scarlet Badis males in captive environments nuôi nhốt trong hoàn cảnh giống đực màu đỏ tươi mô phỏng lệ cá đặc thù. bởi vì diễn thuyết người kỹ càng miêu tả loại cá này tại bể thủy tộc (nuôi nhốt Môi trường) trong đích tính công kích, màu sắc biến hóa, hình thể cũng như tìm phối ngẫu hành vi, những thứ này đều là giống đực tại nuôi nhốt trong hoàn cảnh đặc thù, nên B Phương án Đúng. C. The ways that Scarlet Badis choose their territories màu đỏ tươi mô phỏng lệ cá lựa chọn lãnh địa phương thức. vì mặc dù nhắc tới lãnh địa ý thức, nhưng cái này chẳng qua là diễn thuyết nội dung một bộ phận, không đủ để khái quát toàn văn, nên C Phương án Sai. D. The breeding behaviors of male and female Scarlet Badis giống đực và giống cái màu đỏ tươi mô phỏng lệ cá sinh sôi nẩy nở hành vi. vì sinh sôi nẩy nở hành vi chỉ ở cuối cùng nhắc tới, diễn thuyết chủ yếu tập trung tại hùng tính đặc thù, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the speaker imply about Scarlet Badis that live instreams?",
+          "options": {
+            "A": "They are not usually violent toward each other.",
+            "B": "They may be hunted by land animals.",
+            "C": "They swim at a slower speed than those in aquariums.",
+            "D": "They have a brighter color than those in aquariums."
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: về sinh hoạt tại trong khe nước màu đỏ tươi mô phỏng lệ cá, diễn thuyết người ám hiệu gì? Dẫn chứng Bài gốc: Man: In the wild, it generally thrives peacefully in the slow moving streams of India. Phương án phân tích: A. They are not usually violent toward each other. chúng bình thường lẫn nhau không bạo lực. bởi vì diễn thuyết người so sánh hoang dại Môi trường (chung sống hoà bình) và nuôi nhốt Môi trường (giống đực có tính công kích), ám chỉ hoang dại trong hoàn cảnh chúng bình thường so sánh bình thản, nên A Phương án Đúng. B. They may be hunted by land animals. chúng có thể sẽ bị lục địa Động vật săn mồi. vì diễn thuyết Vừa Không được đề cập (Not Given) kẻ săn mồi, nên B Phương án Sai. C. They swim at a slower speed than those in aquariums. họ du động tốc độ so với bể thủy tộc bên trong chậm. vì diễn thuyết chỉ nhắc tới dòng suối tốc độ chảy chậm, Không được đề cập (Not Given) cá du động tốc độ đối lập, nên C Phương án Sai. D. They have a brighter color than those in aquariums. màu sắc của bọn họ so với bể thủy tộc bên trong càng tươi đẹp. vì diễn thuyết nhắc tới giống đực tại không phải đối kháng dưới trạng thái màu sắc so sánh ám, cũng không nói hoang dại màu sắc càng tươi đẹp, nên D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "What point does the speaker make about plants in aquariums?",
+          "options": {
+            "A": "They should be the same plants as those found in streams in India.",
+            "B": "They should be orange-red to match male Scarlet Badis.",
+            "C": "They help keep male Scarlet Badis separate from one another.",
+            "D": "They are the primary food source for the Scarlet Badis."
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: về bể thủy tộc trong đích Thực vật, diễn thuyết người đưa ra gì quan điểm? Dẫn chứng Bài gốc: Man:...so it's crucial to include lots of vegetation. Plants act as hiding places and borderline between males’ territories. Phương án phân tích: A. They should be the same plants as those found in streams in India. chúng phải cùng Ấn Độ trong khe nước phát hiện Thực vật giống nhau. vì diễn thuyết Vừa không đối với Thực vật chủng loại làm yêu cầu cụ thể, nên A Phương án Sai. B. They should be orange-red to match male Scarlet Badis. chúng hẳn là màu cam sắc dùng xứng đôi giống đực màu đỏ tươi mô phỏng lệ cá. vì diễn thuyết Vừa Không được đề cập (Not Given) Thực vật màu sắc yêu cầu, nên B Phương án Sai. C. They help keep male Scarlet Badis separate from one another. chúng có trợ giúp đem giống đực màu đỏ tươi mô phỏng lệ cá lẫn nhau ngăn cách. bởi vì diễn thuyết người rõ ràng chỉ ra Thực vật sung đương giống đực lãnh địa ở giữa biên giới, làm ra cách ly tác dụng, nên C Phương án Đúng. D. They are the primary food source for the Scarlet Badis. chúng là màu đỏ tươi mô phỏng lệ cá chủ yếu nơi cung cấp thực vật. vì diễn thuyết nhắc tới Thực vật là chỗ ẩn thân, Không được đề cập (Not Given) với tư cách Thực phẩm, nên D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "What can be inferred about female Scarlet Badis?",
+          "options": {
+            "A": "They may dance during the breeding season.",
+            "B": "They sometimes look very similar to males.",
+            "C": "They usually have orange-red coloring.",
+            "D": "They can be aggressive toward males."
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: về giống cái màu đỏ tươi mô phỏng lệ cá, có thể suy đoán ra gì? Dẫn chứng Bài gốc: Man:...his scarlet is less bright, it can almost, but not quite resemble female coloring, which is dull gray. Phương án phân tích: A. They may dance during the breeding season. chúng tại sinh sôi nẩy nở mùa có thể sẽ khiêu vũ. vì diễn thuyết Vừa nhắc tới khiêu vũ là giống đực để tìm phối ngẫu, mà không phải giống cái, nên A Phương án Sai. B. They sometimes look very similar to males. chúng có khi thoạt nhìn và giống đực vô cùng tương tự. bởi vì diễn thuyết người nhắc tới giống đực có ở đây không đánh nhau lúc màu sắc trở tối, hầu như như giống cái màu xám, ý vị này cả hai tại có chút thời điểm vẻ ngoài vô cùng tương tự, nên B Phương án Đúng. C. They usually have orange-red coloring. chúng bình thường có màu cam sắc. vì diễn thuyết rõ ràng chỉ ra giống cái là màu xám tro, màu cam sắc là hùng tính đặc thù, nên C Phương án Sai. D. They can be aggressive toward males. chúng khả năng đối với giống đực có tính công kích. vì diễn thuyết Vừa nhắc tới là giống đực giữa công kích lẫn nhau, Không được đề cập (Not Given) giống cái công kích giống đực, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

@@ -12,11 +12,11 @@ var server = read("server/server.js");
   assert(re.test(server), "jingting/" + name + " auth");
 });
 assert(/app\.post\("\/api\/speaking\/grade",\s*authMiddleware/.test(server), "speaking/grade auth");
-assert(/已下线/.test(server) && /\/test\/jingting/.test(server), "test jingting closed");
+assert(/ đã tạm ẩn /.test(server) && /\/test\/jingting/.test(server), "test jingting closed");
 
 var speaking = read("assets/js/speaking-common.js");
 assert(speaking.indexOf("Authorization") >= 0, "speaking sends token");
-assert(speaking.indexOf("请先登录后再使用 AI 评分") >= 0, "speaking 401 copy");
+assert(speaking.indexOf(" Vui lòng đăng nhập trước sau lại sử dụng AI cho điểm ") >= 0, "speaking 401 copy");
 
 var bak = read("server/deploy/backup-yysd-db.sh");
 var m = bak.match(/KEEP=(\d+)/);

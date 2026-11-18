@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>管理后台 · 优益思达国际课程中心</title>
+  <title>Quản trị hậu trường · Trung tâm Luyện thi Quốc tế YYSD</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,12 @@
   (function () {
     var A = window.YYSD_AUTH;
     var next = encodeURIComponent(location.pathname + location.search);
-    if (!A || !A.getToken || !A.getToken()) {
+    if (!A ||!A.getToken ||!A.getToken()) {
       location.replace("../login.html?next=" + next);
       return;
     }
     // ponytail: content-upload console is staff-only; nginx already blocks anon
-    if (!(A.isAdmin && A.isAdmin()) && !(A.isTeacher && A.isTeacher())) {
+    if (!(A.isAdmin & A.isAdmin()) &!(A.isTeacher & A.isTeacher())) {
       location.replace("../index.html");
       return;
     }
@@ -34,16 +34,16 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="../index.html" class="brand">
-        <img src="../assets/img/logo.svg?v=20260702-logo" alt="优益思达国际课程中心" class="brand__logo">
+        <img src="../assets/img/logo.svg?v=20260702-logo" alt="Trung tâm Luyện thi Quốc tế YYSD" class="brand__logo">
         <span class="brand__name">
-          <b>优益思达国际课程中心</b>
-          <span>管理后台 · Admin</span>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
+          <span> Quản trị hậu trường · Admin</span>
         </span>
       </a>
       <nav class="nav">
-        <a href="../index.html">返回前台</a>
-        <a href="../results.html">成绩</a>
-        <a href="index.html" class="is-active">管理后台</a>
+        <a href="../index.html"> Quay lại trước sân khấu</a>
+        <a href="../results.html"> Điểm số</a>
+        <a href="index.html" class="is-active"> Quản trị hậu trường</a>
       </nav>
     </div>
   </header>
@@ -51,74 +51,74 @@
   <main class="container section">
     <div class="section__head">
       <div>
-        <h2>上传内容（按文件夹自动分类）</h2>
-        <p>想加哪类内容，就点对应分类的「上传」按钮，把 HTML 拖进去即可——系统按文件夹自动归类，无需填任何标签。</p>
+        <h2>thượng truyền(*upload) nội dung (theo như cặp văn kiện tự động phân loại)</h2>
+        <p>muốn thêm cái đó loại nội dung, liền chút:điểm đối ứng phân loại « thượng truyền(*upload) » cái nút, đem HTML kéo vào là được —— hệ thống theo như cặp văn kiện tự động phân loại, không cần điền bất luận cái gì nhãn hiệu. </p>
       </div>
     </div>
 
     <!-- ============ ONE-CLICK UPLOAD GRID ============ -->
     <div class="panel">
-      <h3>📤 选择分类上传</h3>
-      <p class="sub">点击下方任一分类的「上传到这里」，会直接打开该文件夹的 GitHub 上传页面：拖入 HTML → 点绿色按钮 <code class="inline">Commit changes</code> → 约 1 分钟后自动上线。</p>
+      <h3>📤 lựa chọn phân loại thượng truyền(*upload)</h3>
+      <p class="sub">nhấn vào phía dưới đảm nhiệm một phần loại « thượng truyền(*upload) đến nơi đây », sẽ trực tiếp mở ra nên cặp văn kiện GitHub thượng truyền(*upload) trang web: kéo vào HTML → chút:điểm màu xanh lá cái nút <code class="inline">Commit changes</code> → khoảng 1 phút sau tự động phát hành. </p>
       <div id="cat-area">
-        <div class="state"><div class="spinner"></div>正在加载分类…</div>
+        <div class="state"><div class="spinner"></div> Đang tải phân loại …</div>
       </div>
     </div>
 
     <!-- ============ HOW IT WORKS ============ -->
     <div class="panel">
-      <h3>🔁 上传后会发生什么</h3>
+      <h3>🔁 thượng truyền(*upload) sau sẽ phát sinh gì</h3>
       <ol class="steps">
-        <li><b>你上传文件</b>到某个分类文件夹（例如「单词」文件夹）。</li>
-        <li><b>系统自动识别</b>该文件夹对应的板块与科目，重建内容列表（约 1 分钟）。</li>
-        <li><b>学生刷新</b>前台即可在对应分类看到新内容，<b>你无需做任何其他操作</b>。</li>
+        <li><b>bạn thượng truyền(*upload) văn bản tài liệu</b> đến cái nào đó phân loại cặp văn kiện (tỷ như « Từ vựng » cặp văn kiện). </li>
+        <li><b>hệ thống tự động phân biệt</b> nên cặp văn kiện đối ứng khối và kỹ năng, xây dựng lại nội dung liệt biểu List (khoảng 1 phút). </li>
+        <li><b>Học viên Làm mới</b> trước sân khấu là được đang đối với bổn phận loại chứng kiến mới nội dung, <b>bạn không cần làm bất kỳ thao tác</b>. </li>
       </ol>
-      <p class="note">删除内容：进入对应分类文件夹，点开文件 → 右上角垃圾桶图标删除即可，列表会自动更新。</p>
+      <p class="note">xóa bỏ nội dung: Vào học đối ứng phân loại cặp văn kiện, ấn mở văn bản tài liệu → góc trên bên phải thùng rác ô biểu tượng xóa bỏ là được, liệt biểu List sẽ tự động đổi mới. </p>
     </div>
 
     <!-- ============ OPTIONAL: PRETTIFY TITLE ============ -->
     <div class="panel">
-      <h3>✨ 可选：给文件美化标题 / 简介</h3>
-      <p class="sub">分类已由文件夹决定，这一步不是必须的。若想自定义卡片上显示的标题、时长或简介，可用此工具处理后再上传。</p>
+      <h3>✨ có thể chọn: cho văn bản tài liệu điểm tô cho đẹp tiêu đề / giới thiệu vắn tắt</h3>
+      <p class="sub">phân loại đã do cặp văn kiện quyết định, một bước này không phải nhất định. nếu muốn từ định nghĩa trên thẻ biểu hiện tiêu đề, lúc dài hoặc giới thiệu vắn tắt, có thể dùng này công cụ xử lý sau lại thượng truyền(*upload). </p>
 
       <div class="dropzone" id="dropzone">
         <div style="font-size:30px;margin-bottom:8px">📄</div>
-        <b>点击选择</b> 或把 HTML 文件拖到这里
+        <b>nhấn vào lựa chọn</b> hoặc đem HTML văn bản tài liệu kéo dài tới tại đây
         <input type="file" id="file-input" accept=".html,.htm" hidden>
         <div class="hint" id="file-name" style="margin-top:8px"></div>
       </div>
 
       <div id="meta-form" style="display:none;margin-top:22px">
         <div class="field">
-          <label>标题（显示给学生）</label>
-          <input id="m-title" placeholder="例如：学术高频词 第二组">
+          <label>tiêu đề (biểu hiện cho học sinh)</label>
+          <input id="m-title" placeholder="tỷ như: Học thuật Tần suất cao từ tổ thứ hai">
         </div>
         <div class="field">
-          <label>建议时长（分钟，0 = 不限时；学习/单词类一般填 0）</label>
+          <label>đề nghị lúc dài (phút, 0 = không Thời gian; Học tập / Từ vựng loại bình thường điền 0)</label>
           <input id="m-duration" type="number" min="0" value="0">
         </div>
         <div class="field">
-          <label>简介（可选，显示在卡片上）</label>
-          <textarea id="m-desc" rows="2" placeholder="例如：50 个高频学术词，含例句与自测。"></textarea>
+          <label>giới thiệu vắn tắt (có thể chọn, biểu hiện tại trên thẻ)</label>
+          <textarea id="m-desc" rows="2" placeholder="tỷ như: 50 Tần suất cao Học thuật từ, hàm Câu ví dụ và tự kiểm tra."></textarea>
         </div>
-        <button class="btn btn--primary" id="generate">生成并下载 ↓</button>
-        <p class="hint" style="margin-top:10px">下载后，把这个新文件上传到对应分类文件夹即可（见最上方「选择分类上传」）。</p>
+        <button class="btn btn--primary" id="generate">tạo ra cũng download ↓</button>
+        <p class="hint" style="margin-top:10px">download sau, đem cái này mới trên văn kiện rơi vào tay đối ứng phân loại cặp văn kiện là được (gặp phía trên nhất « lựa chọn phân loại thượng truyền(*upload) »). </p>
       </div>
     </div>
 
     <!-- ============ OPTIONAL SCORE INTEGRATION ============ -->
     <div class="panel">
-      <h3>📊 进阶：让成绩自动记录到「我的成绩」</h3>
-      <p class="sub">内容自带批改即可正常使用。若希望分数自动同步，在算出分数后加一行：</p>
+      <h3>📊 tiến giai: lại để cho Điểm số tự động ghi vào « Kết quả của tôi »</h3>
+      <p class="sub">nội dung kèm theo phê chữa là được sử dụng bình thường. như hy vọng điểm tự động đồng bộ, tại tính ra điểm sau thêm một nhóm: </p>
       <div class="codeblock">window.parent.postMessage(
   { type: "yysd:score", score: 32, total: 40, band: 7 }, "*");</div>
-      <p class="hint" style="margin-top:12px">示范文件（语法、单词、阅读、入学模考）均已内置该写法，可参考各分类文件夹。</p>
+      <p class="hint" style="margin-top:12px">làm mẫu văn bản tài liệu (Ngữ pháp, Từ vựng, Đọc, Nhập học Thi thử) đều đã bên trong đưa nên phương pháp sáng tác, có thể tham khảo mỗi người chia loại cặp văn kiện. </p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <span>© <span id="year"></span> 优益思达国际课程中心 · 管理后台</span>
+      <span>© <span id="year"></span> Trung tâm Luyện thi Quốc tế YYSD · Quản trị hậu trường </span>
     </div>
   </footer>
 
@@ -126,7 +126,7 @@
   (function () {
     if (!document.body.classList.contains("is-staff")) return;
     var Y = window.YYSD;
-    var REPO = "wanli4473/yysd-testcenter";   // GitHub 仓库
+    var REPO = "wanli4473/yysd-testcenter"; // GitHub nhà kho
     var BRANCH = "main";
     var catArea = document.getElementById("cat-area");
 
@@ -150,13 +150,13 @@
           html += '<div class="cat-card">' +
             '<div class="cat-card__top">' +
               '<span class="badge badge--' + s + '">' + Y.esc(sub.label) + '</span>' +
-              '<span class="cnt">' + n + ' 份</span>' +
+              '<span class="cnt">' + n + ' bài </span>' +
             '</div>' +
             '<h4>' + Y.esc(sub.label) + '</h4>' +
             '<div class="path">library/' + zone + '/' + s + '</div>' +
             '<div class="acts">' +
-              '<a class="btn btn--primary btn--sm" target="_blank" rel="noopener" href="' + uploadUrl(zone, s) + '">📤 上传到这里</a>' +
-              '<a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="' + treeUrl(zone, s) + '">📂 查看</a>' +
+              '<a class="btn btn--primary btn--sm" target="_blank" rel="noopener" href="' + uploadUrl(zone, s) + '">📤 thượng truyền(*upload) đến nơi đây</a>' +
+              '<a class="btn btn--ghost btn--sm" target="_blank" rel="noopener" href="' + treeUrl(zone, s) + '">📂 Xem</a>' +
             '</div>' +
           '</div>';
         });
@@ -174,21 +174,21 @@
 
     // ---- optional prettify tool ----
     var fileInput = document.getElementById("file-input");
-    var dropzone  = document.getElementById("dropzone");
+    var dropzone = document.getElementById("dropzone");
     var fileNameEl= document.getElementById("file-name");
-    var metaForm  = document.getElementById("meta-form");
+    var metaForm = document.getElementById("meta-form");
     var loadedText = "", loadedName = "";
 
     function handleFile(file) {
       if (!file) return;
       loadedName = file.name;
-      fileNameEl.textContent = "已选择：" + file.name;
+      fileNameEl.textContent = " Đã chọn chọn: " + file.name;
       var reader = new FileReader();
       reader.onload = function (e) {
         loadedText = e.target.result;
         var m = loadedText.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
         var stem = file.name.replace(/\.html?$/i, "").replace(/[-_]+/g, " ");
-        document.getElementById("m-title").value = (m ? m[1].trim() : stem) || stem;
+        document.getElementById("m-title").value = (m? m[1].trim(): stem) || stem;
         metaForm.style.display = "block";
         metaForm.scrollIntoView({ behavior: "smooth", block: "nearest" });
       };
@@ -205,14 +205,14 @@
     dropzone.addEventListener("drop", function (e) { handleFile(e.dataTransfer.files[0]); });
 
     document.getElementById("generate").addEventListener("click", function () {
-      if (!loadedText) { alert("请先选择一个 HTML 文件。"); return; }
+      if (!loadedText) { alert(" mời trước lựa chọn một cái HTML văn bản tài liệu. "); return; }
       var title = document.getElementById("m-title").value.trim();
       var duration = document.getElementById("m-duration").value || "0";
       var desc = document.getElementById("m-desc").value.trim();
       var tags =
-        '\n  <meta name="exam:title" content="' + Y.esc(title) + '">' +
-        '\n  <meta name="exam:duration" content="' + Y.esc(duration) + '">' +
-        '\n  <meta name="exam:description" content="' + Y.esc(desc) + '">\n';
+        '\n <meta name="exam:title" content="' + Y.esc(title) + '">' +
+        '\n <meta name="exam:duration" content="' + Y.esc(duration) + '">' +
+        '\n <meta name="exam:description" content="' + Y.esc(desc) + '">\n';
       var out = loadedText.replace(/\s*<meta[^>]*name=["']exam:(title|duration|description)["'][^>]*>/gi, "");
       if (/<head[^>]*>/i.test(out)) out = out.replace(/<head[^>]*>/i, function (h) { return h + tags; });
       else out = tags + out;

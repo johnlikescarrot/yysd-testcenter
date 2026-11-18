@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * Build 四级词汇（精简版） List HTML + ebbinghaus schedule + manifest entries
+ * Build Từ vựng Đại học Cốt lõi (Bản rút gọn) List HTML + ebbinghaus schedule + manifest entries
  * from Desktop Excel + existing CET4/gaozhong cards.
  */
 var fs = require("fs");
@@ -10,7 +10,7 @@ var { execFileSync } = require("child_process");
 
 var ROOT = path.join(__dirname, "..");
 var OUT_DIR = path.join(ROOT, "library/study/vocab-cet4-lite");
-var XLSX = "/Users/frankman/Desktop/四级单词精简版.xlsx";
+var XLSX = "/Users/frankman/Desktop/ Từ vựng Đại học Bản rút gọn.xlsx";
 var TODAY = "2026-08-21";
 
 function parseWordData(html) {
@@ -18,7 +18,7 @@ function parseWordData(html) {
   if (!m) return [];
   try {
     var arr = Function('"use strict"; return (' + m[1] + ");")();
-    return Array.isArray(arr) ? arr : [];
+    return Array.isArray(arr)? arr: [];
   } catch (e) {
     return [];
   }
@@ -27,7 +27,7 @@ function parseWordData(html) {
 function addWords(map, words) {
   (words || []).forEach(function (w) {
     var k = String((w && w.word) || "").trim().toLowerCase();
-    if (k && !map[k]) map[k] = w;
+    if (k &&!map[k]) map[k] = w;
   });
 }
 
@@ -153,17 +153,17 @@ function loadExcel() {
     "ss=[]",
     "r=ET.fromstring(z.read('xl/sharedStrings.xml'))",
     "for si in r.findall('m:si', ns):",
-    "    ss.append(''.join(t.text or '' for t in si.iter('{http://schemas.openxmlformats.org/spreadsheetml/2006/main}t')))",
+    " ss.append(''.join(t.text or '' for t in si.iter('{http://schemas.openxmlformats.org/spreadsheetml/2006/main}t')))",
     "ws=ET.fromstring(z.read('xl/worksheets/sheet1.xml'))",
     "def cell_val(c):",
-    "    t=c.get('t'); v=c.find('m:v', ns)",
-    "    if t=='s' and v is not None: return ss[int(v.text)]",
-    "    return (v.text or '') if v is not None else ''",
+    " t=c.get('t'); v=c.find('m:v', ns)",
+    " if t=='s' and v is not None: return ss[int(v.text)]",
+    " return (v.text or '') if v is not None else ''",
     "rows=[]",
     "for row in ws.findall('m:sheetData/m:row', ns)[1:]:",
-    "    vals=[cell_val(c) for c in row.findall('m:c', ns)]",
-    "    if len(vals)>=3 and str(vals[2]).strip():",
-    "        rows.append({'list':vals[0],'n':int(float(vals[1])),'word':vals[2].strip()})",
+    " vals=[cell_val(c) for c in row.findall('m:c', ns)]",
+    " if len(vals)>=3 and str(vals[2]).strip():",
+    " rows.append({'list':vals[0],'n':int(float(vals[1])),'word':vals[2].strip()})",
     "print(json.dumps(rows, ensure_ascii=False))"
   ].join("\n");
   var tmp = path.join("/tmp", "dump_cet4_lite.py");
@@ -204,15 +204,15 @@ function cloneCard(src, excelWord, id) {
     example: src.example || "",
     exampleEn: src.exampleEn || src.exampleEN || "",
     exampleZh: src.exampleZh || src.exampleCN || "",
-    acceptCN: Array.isArray(src.acceptCN) ? src.acceptCN.slice() : [],
-    collocations: Array.isArray(src.collocations) ? src.collocations : [],
+    acceptCN: Array.isArray(src.acceptCN)? src.acceptCN.slice(): [],
+    collocations: Array.isArray(src.collocations)? src.collocations: [],
     root: src.root || src.mnemonic || "",
-    synonyms: Array.isArray(src.synonyms) ? src.synonyms : [],
-    antonyms: Array.isArray(src.antonyms) ? src.antonyms : [],
-    examTag: src.examTag || { source: "大学英语四级", frequency: 4, commonUsage: "", topic: "精简版" }
+    synonyms: Array.isArray(src.synonyms)? src.synonyms: [],
+    antonyms: Array.isArray(src.antonyms)? src.antonyms: [],
+    examTag: src.examTag || { source: " đại học Tiếng Anh Đại học B1 ", frequency: 4, commonUsage: "", topic: " Bản rút gọn " }
   };
   if (!out.exampleEn && out.example) {
-    var em = String(out.example).match(/^(.+?)[（(](.+)[）)]\s*$/);
+    var em = String(out.example).match(/^(.+?)[((](.+)[))]\s*$/);
     if (em) {
       out.exampleEn = em[1].trim();
       out.exampleZh = out.exampleZh || em[2].trim();
@@ -222,14 +222,14 @@ function cloneCard(src, excelWord, id) {
 }
 
 function htmlFor(listNo, words) {
-  var title = "四级词汇（精简版） List " + listNo;
+  var title = " Từ vựng Đại học Cốt lõi (Bản rút gọn) List " + listNo;
   return "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n" +
     "<meta charset=\"UTF-8\">\n" +
     "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
     "<meta name=\"exam:title\" content=\"" + title + "\">\n" +
     "<title>" + title + "</title>\n" +
     "</head>\n<body>\n" +
-    "<p>" + title + " · " + words.length + " 词</p>\n" +
+    "<p>" + title + " · " + words.length + " từ </p>\n" +
     "<script>\nconst wordData = " + JSON.stringify(words, null, 2) + ";\n</script>\n" +
     "</body>\n</html>\n";
 }
@@ -268,7 +268,7 @@ function buildSchedule(listCount) {
   for (var d = 1; d <= maxDay; d++) {
     var p = days[d] || { new: null, reviews: [] };
     outDays[String(d)] = {
-      new: p.new == null ? null : p.new,
+      new: p.new == null? null: p.new,
       reviews: (p.reviews || []).slice().sort(function (a, b) { return a - b; })
     };
   }
@@ -297,7 +297,7 @@ function main() {
       }
       return cloneCard(src, r.word, i + 1);
     });
-    var file = "四级精简LIST" + n + ".html";
+    var file = " Đại học Rút gọn LIST" + n + ".html";
     fs.writeFileSync(path.join(OUT_DIR, file), htmlFor(n, words));
     console.log("wrote", file, words.length);
   });
@@ -313,17 +313,17 @@ function main() {
   var manPath = path.join(ROOT, "library/manifest.json");
   var man = JSON.parse(fs.readFileSync(manPath, "utf8"));
   man.items = (man.items || []).filter(function (it) {
-    return it.subject !== "vocab-cet4-lite";
+    return it.subject!== "vocab-cet4-lite";
   });
   Object.keys(byList).map(Number).sort(function (a, b) { return a - b; }).forEach(function (n) {
     man.items.push({
-      id: "四级精简list" + n,
-      file: "study/vocab-cet4-lite/四级精简LIST" + n + ".html",
-      title: "四级词汇（精简版） List " + n,
+      id: " Đại học Rút gọn list" + n,
+      file: "study/vocab-cet4-lite/ Đại học Rút gọn LIST" + n + ".html",
+      title: " Từ vựng Đại học Cốt lõi (Bản rút gọn) List " + n,
       zone: "study",
       subject: "vocab-cet4-lite",
       duration: 0,
-      description: byList[n].length + " 词 · 按 Excel 顺序",
+      description: byList[n].length + " từ · theo như Excel trình tự ",
       added: TODAY
     });
   });

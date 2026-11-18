@@ -1,57 +1,57 @@
 {
- "id": "free-13693",
- "title": "Conversation #108",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #108",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13693,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-108"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #108",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/ee4f12655f8f4de1952930ce279521ee.mp3",
-   "transcript": "Man: Hi, Anna. Do you happen to know whether the library is staying open late tonight? I heard there might be a schedule change due to the maintenance work.\nWoman: Actually, yes, it's still open until 10 p.m. on weekdays. Even during the renovations, they've just relocated the study areas to the east wing temporarily.\nMan: That's a relief. I've got a big exam tomorrow and I really need a quiet place to focus. My apartment is too noisy lately.\nWoman: I get that. Just make sure you pace yourself, take breaks so you don't burn out. Studying nonstop can backfire.",
-   "questions": [
+  "id": "free-13693",
+  "title": "Conversation #108",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #108",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13693,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-108"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Why is the man planning to go to the library?",
-     "options": {
-      "A": "To avoid distractions at home",
-      "B": "To check on the renovation progress",
-      "C": "To meet with a study group",
-      "D": "To return borrowed materials"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：男士为什么计划去图书馆？ 定位原文：Man: I've got a big exam tomorrow and I really need a quiet place to focus. My apartment is too noisy lately. 选项分析： A. To avoid distractions at home 为了避开家里的干扰。男士明确说公寓太吵，需要安静的地方集中注意力，所以A选项正确。 B. To check on the renovation progress 去查看翻新的进度。男士只是询问图书馆是否因维修而改变开放时间，并不是为了查看进度，所以B选项错误。 C. To meet with a study group 与学习小组见面。对话中未提及学习小组，所以C选项错误。 D. To return borrowed materials 归还借阅的资料。对话中未提及还书或还资料，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What is the woman's advice about studying?",
-     "options": {
-      "A": "Group study is best.",
-      "B": "Start several weeks before an exam.",
-      "C": "Don't try to do too much at once.",
-      "D": "Study early in the morning."
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：女士关于学习给出了什么建议？ 定位原文：Woman: Just make sure you pace yourself, take breaks so you don't burn out. Studying nonstop can backfire. 选项分析： A. Group study is best. 小组学习最好。对话中未提及小组学习，所以A选项错误。 B. Start several weeks before an exam. 考试前几周就开始学习。对话中未提及提前多久开始学习，所以B选项错误。 C. Don't try to do too much at once. 不要试图一次做太多。女士建议要“pace yourself”（掌握好节奏）并“take breaks”（休息），不要“burn out”（过度疲劳），这正对应不要一次性学太多，所以C选项正确。 D. Study early in the morning. 早上学习。对话中未提及早上学习，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #108",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/ee4f12655f8f4de1952930ce279521ee.mp3",
+      "transcript": "Man: Hi, Anna. Do you happen to know whether the library is staying open late tonight? I heard there might be a schedule change due to the maintenance work.\nWoman: Actually, yes, it's still open until 10 p.m. on weekdays. Even during the renovations, they've just relocated the study areas to the east wing temporarily.\nMan: That's a relief. I've got a big exam tomorrow and I really need a quiet place to focus. My apartment is too noisy lately.\nWoman: I get that. Just make sure you pace yourself, take breaks so you don't burn out. Studying nonstop can backfire.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Why is the man planning to go to the library?",
+          "options": {
+            "A": "To avoid distractions at home",
+            "B": "To check on the renovation progress",
+            "C": "To meet with a study group",
+            "D": "To return borrowed materials"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: nam sĩ vì sao kế hoạch đi đồ thư quán? Dẫn chứng Bài gốc: Man: I've got a big exam tomorrow and I really need a quiet place to focus. My apartment is too noisy lately. Phương án phân tích: A. To avoid distractions at home để tránh đi nhà quấy nhiễu. nam sĩ rõ ràng nói nhà trọ quá ồn, cần địa phương an tĩnh tập trung lực chú ý, nên A Phương án Đúng. B. To check on the renovation progress đi kiểm tra tân trang Tiến độ. nam sĩ chẳng qua là hỏi thăm đồ thư quán có hay không bởi vì bảo hành sửa chữa mà thay đổi cởi mở thời gian, cũng không phải để Xem Tiến độ, nên B Phương án Sai. C. To meet with a study group và Học tập tiểu tổ gặp mặt. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Học tập tiểu tổ, nên C Phương án Sai. D. To return borrowed materials trả lại mượn đọc tư liệu. trong lúc nói chuyện với nhau Không được đề cập (Not Given) trả sách hoặc còn tư liệu, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What is the woman's advice about studying?",
+          "options": {
+            "A": "Group study is best.",
+            "B": "Start several weeks before an exam.",
+            "C": "Don't try to do too much at once.",
+            "D": "Study early in the morning."
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: phu nhân về Học tập cấp ra gì đề nghị? Dẫn chứng Bài gốc: Woman: Just make sure you pace yourself, take breaks so you don't burn out. Studying nonstop can backfire. Phương án phân tích: A. Group study is best. tiểu tổ Học tập tốt nhất. trong lúc nói chuyện với nhau Không được đề cập (Not Given) tiểu tổ Học tập, nên A Phương án Sai. B. Start several weeks before an exam. cuộc thi trước vài tuần mà bắt đầu Học tập. trong lúc nói chuyện với nhau Không được đề cập (Not Given) sớm bao lâu Bắt đầu học, nên B Phương án Sai. C. Don't try to do too much at once. không nên ý đồ một lần làm quá nhiều. phu nhân đề nghị muốn “pace yourself” (nắm giữ tốt tiết tấu) cũng “take breaks” (nghỉ ngơi), không nên “burn out” (quá độ mệt nhọc), cái này đối diện ứng với không nên duy nhất một lần học quá nhiều, nên C Phương án Đúng. D. Study early in the morning. buổi sáng Học tập. trong lúc nói chuyện với nhau Không được đề cập (Not Given) buổi sáng Học tập, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

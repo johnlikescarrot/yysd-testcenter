@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T3.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T3.docx")
 TURBINE_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_14.22.37-73c096bc-ffb7-4d11-988d-cf41f52f7a04.png"
@@ -26,10 +26,10 @@ PIE_SRC = Path(
     "__2026-07-01_14.22.48-47fde20d-71f9-4eb0-9605-0aac679d041a.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test3 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test3 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test3 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test3 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test3 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-3.html"
@@ -59,7 +59,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -79,7 +79,7 @@ def patch_listening_meta(html: str) -> str:
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("test2", "test3"),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
+        ("Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -99,18 +99,18 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
+        ("Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
     html = inject_state_vars(html)
-    note_needle = "if(g.kind==='note'){\n    body=`<div class=\"note-box\">"
+    note_needle = "if(g.kind==='note'){\n body=`<div class=\"note-box\">"
     note_insert = (
         "if(g.kind==='note'){\n"
-        "    const fig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
+        " const fig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.noteTitle||'diagram'}\" style=\"max-width:100%;height:auto;\"></div>`"
         ":(g.svg?`<div style=\"margin:14px auto 20px;max-width:900px;\">${g.svg}</div>`:''));\n"
-        "    body=fig+`<div class=\"note-box\">"
+        " body=fig+`<div class=\"note-box\">"
     )
     if note_needle in html and "const fig=" not in html:
         html = html.replace(note_needle, note_insert, 1)
@@ -135,7 +135,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 UK telephone calls bar chart + Task 2 unpaid community service essay",
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
         ),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Test 2 Viết (Đề thi chính thức) ", "Test 3 Viết (Đề thi chính thức) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -588,11 +588,11 @@ def reading_test() -> dict:
             },
             "answerSet": ["A", "D", "E", "F", "J"],
             "questions": [
-                {"id": "Q18", "no": 18, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q19", "no": 19, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q20", "no": 20, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q21", "no": 21, "explain": "答案：A、D、E、F、J，顺序不限。"},
-                {"id": "Q22", "no": 22, "explain": "答案：A、D、E、F、J，顺序不限。"},
+                {"id": "Q18", "no": 18, "explain": " Đáp án: A, D, E, F, J, không giới hạn thứ tự. "},
+                {"id": "Q19", "no": 19, "explain": " Đáp án: A, D, E, F, J, không giới hạn thứ tự. "},
+                {"id": "Q20", "no": 20, "explain": " Đáp án: A, D, E, F, J, không giới hạn thứ tự. "},
+                {"id": "Q21", "no": 21, "explain": " Đáp án: A, D, E, F, J, không giới hạn thứ tự. "},
+                {"id": "Q22", "no": 22, "explain": " Đáp án: A, D, E, F, J, không giới hạn thứ tự. "},
             ],
         },
         {

@@ -22,7 +22,7 @@ data/yysd.db
 # Local extract / leftover dumps (not the live site)
 .staging/
 library/.archive/
-# 本地改题库时的自动备份；sync-app.sh 会整目录 rsync 到线上，绝不能进仓库
+# bản địa sửa Ngân hàng đề lúc tự động dành trước; sync-app.sh sẽ chỉnh mục lục rsync đến tuyến thượng, không có khả năng vào kho kho
 app/library/toefl/backups/
 
 # Desktop installers and Mac-built binaries (rebuild on the target machine)
@@ -48,3 +48,11 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# Thu muc kiem thu, bao phu ma nguon va ban dong goi GitHub Pages
+node_modules/
+coverage/
+_site/
+.lighthouseci/
+__pycache__/
+*.pyc

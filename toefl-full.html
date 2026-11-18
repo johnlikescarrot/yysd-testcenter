@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOEFL Complete Test</title>
+  <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/toefl-exam.css?v=20261020gate1">
@@ -27,11 +28,8 @@
 
   <section id="intro" class="result hidden">
     <h1 id="intro-title">Complete Test</h1>
-    <p>网考顺序固定，四科一次完成，<b>无安排休息</b>。离开某一科后不能返回。</p>
-    <p class="sample" style="max-width:640px;margin:16px auto;text-align:left">
-      练习：科内可回看、重听、重录；科与科之间可暂停，计时不跑。<br>
-      模考：按各科官方时限连考；切换页面或离开窗口则整场作废，四科均不记分。<br>
-      阅读、听力当场给出 1–6 预估。写组句自动对错，两篇作文只对照范文。口语不自动估分，提交后请先导出录音。
+    <p>mạng lưới khảo thi trình tự cố định, bốn khoa một lần hoàn thành, <b>Không có lịch nghỉ ngơi</b>. ly khai một loại khoa sau không thể Quay lại. </p>
+    <p class="sample" style="max-width:640px;margin:16px auto;text-align:left">Luyện tập: khoa bên trong có thể quay về nhìn, lảng tai, trọng lục; khoa và khoa giữa có thể tạm dừng, tính theo thời gian không chạy. <br>Thi thử: theo như tất cả khoa chính thức thời hạn liền khảo thi; hoán đổi trang web hoặc ly khai cửa sổ tức thì cả trận hết hiệu lực, bốn khoa đều không ghi điểm. <br>Đọc, Nghe tại chỗ cho ra 1–6 dự đoán. ghi Sắp xếp câu tự động đúng sai, hai bài luận văn đối với theo bài văn mẫu. Nói không tự động cổ phân, Nộp bài sau mời dẫn đường ra ghi âm.
     </p>
     <p id="start-wrap"></p>
   </section>
@@ -49,20 +47,20 @@
       var F = window.YYSD_TOEFL_FULL;
       var Y = window.YYSD;
       var qs = new URLSearchParams(location.search);
-      var mode = qs.get("mode") === "mock" ? "mock" : (qs.get("mode") === "practice" ? "practice" : "");
+      var mode = qs.get("mode") === "mock"? "mock": (qs.get("mode") === "practice"? "practice": "");
       var paperId = qs.get("id") || "";
       var view = qs.get("view") || "";
-      if (A && A.requireLogin && !A.requireLogin()) return;
-      var zoneBack = (F && F.mockHubHref) ? F.mockHubHref("full") : "app/mock.html?kind=full";
+      if (A & A.requireLogin &!A.requireLogin()) return;
+      var zoneBack = (F & F.mockHubHref)? F.mockHubHref("full"): "app/mock.html?kind=full";
       var backZone = document.getElementById("back-zone");
       if (backZone) backZone.href = zoneBack;
       if (!paperId) { location.replace(zoneBack); return; }
-      var meta = ((Y && Y.TOEFL_FULL) || []).filter(function (p) { return p.id === paperId; })[0];
+      var meta = ((Y & Y.TOEFL_FULL) || []).filter(function (p) { return p.id === paperId; })[0];
       if (!meta) { location.replace(zoneBack); return; }
 
-      document.title = (meta.title || "Complete Test") + (mode === "mock" ? " · 模考" : mode === "practice" ? " · 练习" : "");
+      document.title = (meta.title || "Complete Test") + (mode === "mock"? " · Thi thử ": mode === "practice"? " · Luyện tập ": "");
       document.getElementById("set-title").textContent = meta.title || "Complete Test";
-      document.getElementById("mode-tag").textContent = mode === "mock" ? "Mock" : (mode === "practice" ? "Practice" : "");
+      document.getElementById("mode-tag").textContent = mode === "mock"? "Mock": (mode === "practice"? "Practice": "");
       document.getElementById("intro-title").textContent = meta.title || "Complete Test";
 
       function show(el) {
@@ -79,9 +77,9 @@
       if (view === "done") {
         var pack = F.load(paperId);
         if (!pack || pack.voided) { location.replace(F.introHref(paperId, mode)); return; }
-        if (mode === "mock" && A && A.api) {
-          // 完成上报：关掉模考包的关停宽限（best-effort，失败不影响看成绩）
-          A.api("/api/toefl/exam-done", { method: "POST", body: { packageId: paperId } }).catch(function () {});
+        if (mode === "mock" & A & A.api) {
+          // hoàn thành báo cáo: tắt đi Thi thử túi màn ngừng thư thả (best-effort, thất bại không ảnh hưởng nhìn Điểm số)
+          A.api("/api/toefl/exam-done", { method: "POST", body:  paperId  }).catch(function () {});
         }
         var r = pack.sections.reading || {};
         var l = pack.sections.listening || {};
@@ -91,23 +89,23 @@
           return '<div class="review-row"><span>' + name + "</span><span>" + body + "</span></div>";
         }
         var html = "";
-        html += row("Reading", r.total != null
-          ? (r.score + " / " + r.total + " · 预估 " + r.band + "（0–30 为 " + r.scaled30 + "）")
-          : "未完成");
-        html += row("Listening", l.total != null
-          ? (l.score + " / " + l.total + " · 预估 " + l.band + "（0–30 为 " + l.scaled30 + "）")
-          : "未完成");
-        html += row("Writing", w.total != null
-          ? ("句子 " + w.score + " / " + w.total + " · 两篇作文不自动估分")
-          : "未完成");
+        html += row("Reading", r.total!= null
+          ? (r.score + " / " + r.total + " · dự đoán " + r.band + " (0–30 là " + r.scaled30 + ") ")
+          : " Chưa hoàn thành ");
+        html += row("Listening", l.total!= null
+          ? (l.score + " / " + l.total + " · dự đoán " + l.band + " (0–30 là " + l.scaled30 + ") ")
+          : " Chưa hoàn thành ");
+        html += row("Writing", w.total!= null
+          ? (" câu " + w.score + " / " + w.total + " · hai bài luận văn không tự động cổ phân ")
+          : " Chưa hoàn thành ");
         (w.essays || []).forEach(function (e) {
-          html += '<div class="review-row"><span>' + (e.type === "email" ? "Email" : "Discussion") +
-            " · " + (e.words || 0) + " 词</span></div><p class=\"sample\">" +
-            String(e.ua || "（未作答）").replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</p>";
+          html += '<div class="review-row"><span>' + (e.type === "email"? "Email": "Discussion") +
+            " · " + (e.words || 0) + " từ </span></div><p class=\"sample\">" +
+            String(e.ua || " (Chưa trả lời) ").replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</p>";
         });
-        html += row("Speaking", s.total != null
-          ? ("已录 " + (s.recorded || 0) + " / " + s.total + " · 不自动估分")
-          : "未完成");
+        html += row("Speaking", s.total!= null
+          ? (" đã lục " + (s.recorded || 0) + " / " + s.total + " · không tự động cổ phân ")
+          : " Chưa hoàn thành ");
         document.getElementById("summary").innerHTML = html;
         show(document.getElementById("done"));
         return;
@@ -115,13 +113,13 @@
 
       var wrap = document.getElementById("start-wrap");
       if (mode) {
-        wrap.innerHTML = '<button class="btn" type="button" id="start-btn">开始' +
-          (mode === "mock" ? "模考" : "练习") + "</button>";
+        wrap.innerHTML = '<button class="btn" type="button" id="start-btn">Bắt đầu ' +
+          (mode === "mock"? " Thi thử ": " Luyện tập ") + "</button>";
         document.getElementById("start-btn").onclick = function () { start(mode); };
       } else {
         wrap.innerHTML =
-          '<button class="btn" type="button" id="start-practice">开始练习</button> ' +
-          '<button class="btn" type="button" id="start-mock">开始模考</button>';
+          '<button class="btn" type="button" id="start-practice">Bắt đầu luyện tập</button> ' +
+          '<button class="btn" type="button" id="start-mock">Bắt đầu thi thử</button>';
         document.getElementById("start-practice").onclick = function () { start("practice"); };
         document.getElementById("start-mock").onclick = function () { start("mock"); };
       }

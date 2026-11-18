@@ -1,29 +1,29 @@
-# I-004 — results 空状态 premium 卡片
+# I-004 — results chỗ trống Trạng thái premium tạp phiến
 
-**状态：** done
+** Trạng thái: ** done
 
-## 目标
+## mục tiêu
 
-无成绩时 `.results-empty` 从 plain state 升级为纸感卡片。
+ không làm nổi tích lúc `.results-empty` từ plain state thăng cấp làm giấy cảm giác tạp phiến.
 
-## 允许改动
+## cho phép cải biến
 
-- `assets/css/dashboard-premium.css`：`.page-premium .results-empty` 及子元素
+- `assets/css/dashboard-premium.css`: `.page-premium.results-empty` và tử nguyên tố
 
-## 禁止
+## cấm
 
-- results.html inline script 模板字符串（除非仅加 class `results-empty`）
+- results.html inline script khuôn mô hình ký tự chuỗi (trừ phi chỉ thêm class `results-empty`)
 
-## 变更
+## thay đổi
 
-- results inline：空状态 div 增加 class `results-empty`（若尚未有）
-- CSS：padding、border、shadow-paper、居中 typography
+- results inline: chỗ trống Trạng thái div gia tăng class `results-empty` (như chưa có)
+- CSS: padding, border, shadow-paper, trung tâm typography
 
-## 验收
+## nghiệm thu
 
-- 清空 localStorage 成绩 → `/results.html` 见卡片化空状态
-- CTA 按钮间距保持
+- Xóa trống localStorage Điểm số → `/results.html` gặp tạp phiến hóa chỗ trống Trạng thái
+- CTA cái nút khoảng thời gian bảo trì
 
-## 回滚
+## quay về lăn
 
-删除 dashboard-premium 中 `.results-empty` 规则。
+ xóa bỏ dashboard-premium Vừa `.results-empty` quy tắc.

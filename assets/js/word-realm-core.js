@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm-core.js — 混合词库加载、祠进度、训练营抽词（与作业 results 隔离）
+   word-realm-core.js — hỗn hợp từ kho thêm năm, từ Tiến độ, trại huấn luyện rút từ (và bài tập results cách ly)
    ========================================================================= */
 window.YYSD_WORD_REALM = (function () {
   "use strict";
@@ -14,11 +14,11 @@ window.YYSD_WORD_REALM = (function () {
   function loadProgress() {
     try {
       var s = JSON.parse(localStorage.getItem(PROGRESS_KEY) || "null");
-      if (!s || typeof s !== "object") return emptyProgress();
-      if (!s.cleared || typeof s.cleared !== "object") s.cleared = {};
-      if (!s.chests || typeof s.chests !== "object") s.chests = {};
-      if (!s.dreams || typeof s.dreams !== "object") s.dreams = {};
-      if (typeof s.pendingDream !== "string") s.pendingDream = "";
+      if (!s || typeof s!== "object") return emptyProgress();
+      if (!s.cleared || typeof s.cleared!== "object") s.cleared = {};
+      if (!s.chests || typeof s.chests!== "object") s.chests = {};
+      if (!s.dreams || typeof s.dreams!== "object") s.dreams = {};
+      if (typeof s.pendingDream!== "string") s.pendingDream = "";
       return s;
     } catch (e) {
       return emptyProgress();
@@ -30,7 +30,7 @@ window.YYSD_WORD_REALM = (function () {
   }
 
   function isCleared(id) {
-    return !!loadProgress().cleared[id];
+    return!!loadProgress().cleared[id];
   }
 
   function markCleared(id) {
@@ -44,7 +44,7 @@ window.YYSD_WORD_REALM = (function () {
 
   function maybeQueueDream() {
     var STORY = window.YYSD_WORD_REALM_STORY;
-    if (!STORY || !STORY.dreamAt) return;
+    if (!STORY ||!STORY.dreamAt) return;
     var n = clearedCount();
     var dream = STORY.dreamAt(n);
     if (!dream) return;
@@ -59,7 +59,7 @@ window.YYSD_WORD_REALM = (function () {
   }
 
   function dreamSeen(id) {
-    return !!loadProgress().dreams[id];
+    return!!loadProgress().dreams[id];
   }
 
   function consumeDream(id) {
@@ -81,7 +81,7 @@ window.YYSD_WORD_REALM = (function () {
 
   function peekDream(id) {
     var STORY = window.YYSD_WORD_REALM_STORY;
-    if (!STORY || !STORY.dreams) return null;
+    if (!STORY ||!STORY.dreams) return null;
     for (var i = 0; i < STORY.dreams.length; i++) {
       if (STORY.dreams[i].id === id) return STORY.dreams[i];
     }
@@ -93,7 +93,7 @@ window.YYSD_WORD_REALM = (function () {
   }
 
   function hasChest(chestId) {
-    return !!loadProgress().chests[chestId];
+    return!!loadProgress().chests[chestId];
   }
 
   function claimChest(chestId, xp) {
@@ -102,9 +102,9 @@ window.YYSD_WORD_REALM = (function () {
     p.chests[chestId] = new Date().toISOString();
     saveProgress(p);
     if (window.YYSD_VOCAB_RPG) {
-      return window.YYSD_VOCAB_RPG.addXp(xp == null ? 5 : xp, "realm-chest");
+      return window.YYSD_VOCAB_RPG.addXp(xp == null? 5: xp, "realm-chest");
     }
-    return { gained: xp == null ? 5 : xp };
+    return { gained: xp == null? 5: xp };
   }
 
   function libraryUrl(rel) {
@@ -115,7 +115,7 @@ window.YYSD_WORD_REALM = (function () {
   function loadLexicon() {
     if (cache) return Promise.resolve(cache);
     return fetch(libraryUrl(LEXICON_URL)).then(function (r) {
-      if (!r.ok) throw new Error("词库加载失败 HTTP " + r.status);
+      if (!r.ok) throw new Error(" từ kho Tải dữ liệu thất bại HTTP " + r.status);
       return r.json();
     }).then(function (data) {
       cache = data;
@@ -161,21 +161,21 @@ window.YYSD_WORD_REALM = (function () {
     var nodes = [];
     var currentSet = false;
     shrines.forEach(function (s, i) {
-      var done = !!prog.cleared[s.id];
-      var unlocked = i === 0 || !!prog.cleared[shrines[i - 1].id];
+      var done =!!prog.cleared[s.id];
+      var unlocked = i === 0 ||!!prog.cleared[shrines[i - 1].id];
       var state;
       if (done) state = "done";
-      else if (unlocked && !currentSet) { state = "current"; currentSet = true; }
+      else if (unlocked &&!currentSet) { state = "current"; currentSet = true; }
       else state = "locked";
       nodes.push({ shrine: s, state: state, isChest: false });
       if ((i + 1) % 3 === 0) {
         var ck = "chest-" + s.id;
         var open = done;
-        var claimed = !!prog.chests[ck];
+        var claimed =!!prog.chests[ck];
         nodes.push({
           shrine: s,
           chestId: ck,
-          state: !open ? "chest-locked" : (claimed ? "claimed" : "chest"),
+          state:!open? "chest-locked": (claimed? "claimed": "chest"),
           isChest: true
         });
       }
@@ -208,8 +208,8 @@ window.YYSD_WORD_REALM = (function () {
   function weeklyTheme() {
     var STORY = window.YYSD_WORD_REALM_STORY;
     var RPG = window.YYSD_VOCAB_RPG;
-    if (!STORY || !STORY.weeklyTheme) return null;
-    var wid = RPG && RPG.weekId ? RPG.weekId() : "W0";
+    if (!STORY ||!STORY.weeklyTheme) return null;
+    var wid = RPG && RPG.weekId? RPG.weekId(): "W0";
     return STORY.weeklyTheme(wid);
   }
 
@@ -239,29 +239,29 @@ window.YYSD_WORD_REALM = (function () {
     return 48;
   }
 
-  /** 连对 ≥4 暴击 2，否则普攻 1（难度上调） */
+  /** liền đối ≥4 bạo kích 2, nếu không phổ công 1 (về độ khó điều) */
   function battleDamage(comboAfterHit) {
-    return comboAfterHit >= 4 ? 2 : 1;
+    return comboAfterHit >= 4? 2: 1;
   }
 
   function enemyFor(regionOrCamp) {
     var STORY = window.YYSD_WORD_REALM_STORY;
-    var key = regionOrCamp === "camp" ? "camp" : (regionOrCamp || "mist");
+    var key = regionOrCamp === "camp"? "camp": (regionOrCamp || "mist");
     var enemies = (STORY && STORY.enemies) || {};
     return enemies[key] || enemies.mist || {
-      id: "fog-tongue", name: "雾舌", title: "噬词者", skin: "mist", glyph: "〰", intro: ""
+      id: "fog-tongue", name: " sương mù lưỡi ", title: " phệ từ người ", skin: "mist", glyph: " ", intro: ""
     };
   }
 
   /**
-   * 开战状态：敌人 HP 可由 opts.enemyMaxHp 指定；勇者 HP = heartsMax。
-   * 答对扣敌；答错/超时扣己；敌 HP≤0 击破；己 HP≤0 战败不推进祠。
+   * khai chiến Trạng thái: địch nhân HP có thể do opts.enemyMaxHp chỉ định; dũng giả HP = heartsMax.
+   * trả lời khấu trừ địch; đáp sai / vượt quá thời gian khấu trừ mình; địch HP≤0 đánh bại; mình HP≤0 chiến bại không đẩy mạnh từ.
    */
   function createBattle(opts) {
     opts = opts || {};
     var enemyMax = Math.max(1, Math.floor(opts.enemyMaxHp || opts.queueLen || 1));
     var heroMax = Math.max(1, Math.floor(opts.heroMaxHp || 5));
-    var enemy = enemyFor(opts.region || (opts.camp ? "camp" : "mist"));
+    var enemy = enemyFor(opts.region || (opts.camp? "camp": "mist"));
     return {
       enemy: enemy,
       enemyMaxHp: enemyMax,
@@ -277,9 +277,9 @@ window.YYSD_WORD_REALM = (function () {
     };
   }
 
-  /** Boss 噬咬更重 */
+  /** Boss cắn xé quá nặng */
   function enemyAttackDamage(isBoss) {
-    return isBoss ? 2 : 1;
+    return isBoss? 2: 1;
   }
 
   return {

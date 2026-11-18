@@ -1,46 +1,46 @@
 {
- "id": "free-12339",
- "title": "Choose a Response #97",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #97",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12339,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-97"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #97",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/e095e87b056842e9bc98ee1ee45e524b.mp3",
-   "questions": [
+  "id": "free-12339",
+  "title": "Choose a Response #97",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #97",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12339,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-97"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Sure, let's take off at five.",
-      "B": "After work I usually go home.",
-      "C": "He works on the first floor.",
-      "D": "No, let's look it over now."
-     },
-     "answer": "A",
-     "transcript": "Couldn't we just head over after work?",
-     "stemZh": "我们下班后直接过去不行吗？",
-     "analysis": "Couldn't we just head over after work? 题干分析 题干意为我们何不下班后直接过去呢？Couldn't we…？委婉提建议，我们何不……呢？ 选项分析 选项A：同意下班后一起过去，并提出大约五点出发，既回应了建议又补充细节，是最自然的正确回答。 选项B：只是说自己下班后通常直接回家，没有正面回应能不能一起过去。 选项C：提到有人在一楼工作，与是否一起过去地点无关。 选项D：建议现在就看一看，明显在改变原本“下班后过去”的计划。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #97",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/e095e87b056842e9bc98ee1ee45e524b.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Sure, let's take off at five.",
+            "B": "After work I usually go home.",
+            "C": "He works on the first floor.",
+            "D": "No, let's look it over now."
+          },
+          "answer": "A",
+          "transcript": "Couldn't we just head over after work?",
+          "stemZh": "chúng tôi sau khi tan việc trực tiếp đi qua không được sao?",
+          "analysis": "Couldn't we just head over after work? Câu hỏi phân tích Câu hỏi ý là chúng tôi sao không sau khi tan việc trực tiếp đi qua nhỉ? Couldn't we…? uyển chuyển đề nghị, chúng tôi sao không …… nhỉ? Phương án phân tích Phương án A: đồng ý sau khi tan việc cùng đi, cũng đưa ra ước chừng năm giờ xuất phát, đã đáp lại đề nghị lại bổ sung chi tiết, là tự nhiên nhất Đúng trả lời. Phương án B: chỉ nói là dưới mình lớp sau bình thường trực tiếp về nhà, không có chính diện đáp lại có thể hay không cùng đi. Phương án C: nhắc tới có người ở lầu một công tác, và có hay không cùng đi địa điểm không quan hệ. Phương án D: đề nghị hiện tại thì nhìn vừa nhìn, rõ ràng đang thay đổi nguyên bản “ sau khi tan việc qua ” kế hoạch."
+        }
+      ]
+    }
+  ]
 }

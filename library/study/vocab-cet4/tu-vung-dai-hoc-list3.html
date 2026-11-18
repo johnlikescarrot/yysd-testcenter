@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="exam:title" content="Từ vựng Đại học Cốt lõi Bài 3">
+<meta name="exam:duration" content="0">
+<meta name="exam:description" content="tần đoạn high · 77 từ · bên cạnh học bên cạnh trắc">
+<meta name="exam:band" content="high">
+<title>Từ vựng Đại học Cốt lõi Bài 3 · ngữ tốc 0.8 · rộng thùng thình bình phán</title>
+<style>
+:root {
+  --bg:#f5f3f0; --card:#fff; --primary:#2c3e6b; --primary-light:#3d5a99;
+  --accent:#2f6f4e; --text:#2d2d2d; --muted:#888; --border:#e0dcd5;
+  --shadow:0 1px 4px rgba(0,0,0,.04); --radius:12px; --ok:#3a7d5a; --bad:#c0392b;
+}
+* { box-sizing:border-box; margin:0; padding:0 }
+body { font-family:"Inter",sans-serif; background:var(--bg); color:var(--text); line-height:1.55 }
+.header { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10 }
+.header-inner { max-width:1100px; margin:0 auto; height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; gap:12px }
+.logo { font-weight:700; color:var(--primary); display:flex; align-items:center; gap:8px }
+.nav-tabs { display:flex; gap:4px; background:#f0ebe4; border-radius:999px; padding:3px }
+.nav-tab { border:0; background:transparent; padding:8px 16px; border-radius:999px; cursor:pointer; font-weight:600; color:#666 }
+.nav-tab.active { background:#fff; color:var(--primary); box-shadow:var(--shadow) }
+.badge { font-size:.8rem; color:var(--muted); background:#f0ebe4; padding:4px 10px; border-radius:999px }
+.main { max-width:1100px; margin:0 auto; padding:20px 16px 40px }
+.learn-section,.test-section none 
+.learn-section.active,.test-section.active block 
+.learn-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px }
+.word-card { background:var(--card); border:1px solid transparent; border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow); cursor:pointer }
+.word-card:hover { border-color:#d5cec4 }
+.word-card.expanded { border-color:var(--primary); grid-column:1/-1 }
+.word-head { display:flex; justify-content:space-between; gap:8px; align-items:flex-start }
+.word-headword { font-size:1.2rem; font-weight:700; color:var(--primary) }
+.word-ipa { color:#666; font-size:.92rem }
+.btn-play { border:0; background:#eef2fb; color:var(--primary); width:34px; height:34px; border-radius:50%; cursor:pointer }
+.btn-play.playing { background:var(--primary); color:#fff }
+.word-pos { color:var(--accent); font-weight:600; margin-right:6px }
+.word-blocks { display:none; margin-top:10px; border-top:1px dashed var(--border); padding-top:10px }
+.word-card.expanded.word-blocks block 
+.block { margin:8px 0; font-size:.92rem }
+.block b { display:inline-block; min-width:2em; color:var(--accent); margin-right:4px }
+.hint { color:var(--muted); font-size:.8rem; margin-top:6px; display:none }
+.word-card.expanded.hint block 
+.test-setup,.test-active-area,.test-results { background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow) }
+.test-active-area,.test-results none 
+.test-active-area.visible,.test-results.visible block 
+.btn-start-test,.btn-submit,.btn-next,.btn-retry { border:0; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; background:var(--primary); color:#fff; margin-top:12px }
+.btn-next none .btn-next.visible { display:inline-block }
+.test-input-group { margin:12px 0 }
+.test-input-group input { width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:1rem }
+.test-feedback { margin-top:12px; padding:12px; border-radius:8px; display:none }
+.test-feedback.visible block 
+.test-feedback.correct-all { background:#eaf5ee; color:var(--ok) }
+.test-feedback.partial { background:#fef9ee; color:#b8860b }
+.test-feedback.wrong-all { background:#fdf0ee; color:var(--bad) }
+.progress-bar-wrap { flex:1; height:8px; background:#eee; border-radius:999px; overflow:hidden; margin:0 10px }
+.progress-bar-fill { height:100%; background:var(--primary); width:0 }
+.test-progress { display:flex; align-items:center; margin-bottom:16px; font-size:.9rem }
+.history-title { margin-top:20px; font-weight:700 }
+.btn-clear-history { margin-left:8px; border:0; background:#eee; padding:4px 8px; border-radius:6px; cursor:pointer }
+</style>
+<!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+</head>
+<body>
+<header class="header"><div class="header-inner">
+  <div class="logo"><span>📖</span><span> Từ vựng Đại học Cốt lõi Bài 3</span></div>
+  <nav class="nav-tabs" id="navTabs">
+    <button class="nav-tab active" data-mode="learn">Từ vựng quan sát</button>
+    <button class="nav-tab" data-mode="test">Từ vựng Đánh giá</button>
+  </nav>
+  <span class="badge">tổng 77 từ</span>
+</div></header>
+<div class="main">
+  <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+  <section class="test-section" id="testSection">
+    <div class="test-setup" id="testSetup">
+      <h3>Từ vựng Đại học Cốt lõi Bài 3 · Từ vựng Đánh giá</h3>
+      <p>nghe âm đọc sau điền Chính tả và Tiếng Việt Nghĩa (rộng thùng thình bình phán). </p>
+      <button class="btn-start-test" id="btnStartTest">Bắt đầu Đánh giá (77 câu)</button>
+      <div class="history-title"> Lịch sử ghi chép <button class="btn-clear-history" id="btnClearHistory">thanh trừ</button></div>
+      <div id="historyContent"></div>
+    </div>
+    <div class="test-active-area" id="testActiveArea">
+      <div class="test-progress"><span id="testProgressLabel"> thứ 1 / 77 câu</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel"> Điểm số: 0</span></div>
+      <button class="btn-play" id="btnPlayTest" style="width:64px;height:64px;font-size:1.4rem">▶</button>
+      <div class="test-inputs">
+        <div class="test-input-group"><label>Tiếng Anh Chính tả</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div class="test-input-group"><label>Tiếng Việt Nghĩa</label><input id="inputMeaning" autocomplete="off"></div>
+      </div>
+      <button class="btn-submit" id="btnSubmit">Nộp bài Đáp án</button>
+      <div class="test-feedback" id="testFeedback"></div>
+      <button class="btn-next" id="btnNext">Câu tiếp theo</button>
+    </div>
+    <div class="test-results" id="testResults">
+      <h3>Đánh giá hoàn thành</h3>
+      <div id="resultsScore" style="font-size:2rem;font-weight:700;color:var(--primary)"></div>
+      <div id="resultsDetail"></div>
+      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>Từ vựng</th><th>Chính tả</th><th>Nghĩa</th><th>kết quả</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
+      <button class="btn-retry" id="btnRetry">một lần nữa Đánh giá</button>
+      <button class="btn-retry" id="btnBackToSetup" style="background:#666">Quay lại</button>
+    </div>
+  </section>
+</div>
+<script>
+  // var (not let/const): vocab-bridge reads these as iframe globals
+  var wordData = [
+{
+  id: 1,
+  word: "particularly",
+  ipa: "/pəˈtɪkjələli/ · /pərˈtɪkjələrli/",
+  pos: "adv.",
+  meaning: "đặc biệt, cá biệt, riêng biệt; tỉ mỉ, chi tiết",
+  mnemonic: "particular (đặc định) + -ly → liền đặc biệt phương diện mà nói → thực tế ",
+  root: "particular (đặc định) + -ly → liền đặc biệt phương diện mà nói → thực tế ",
+  collocations: [{"phrase": "particularly important", "meaning": " thực tế trọng yếu "}, {"phrase": "in particular", "meaning": " thực tế "}, {"phrase": "be particular about", "meaning": " đối với … bắt bẻ "}],
+  phrases: "particularly important (thực tế trọng yếu), in particular (thực tế), be particular about (đối với … bắt bẻ) ",
+  example: "Air pollution is particularly harmful to children and the elderly. (không khí Ô nhiễm đối với nhi đồng và người già thực tế có hại.) ",
+  exampleEN: "Air pollution is particularly harmful to children and the elderly.",
+  exampleCN: " không khí Ô nhiễm đối với nhi đồng và người già thực tế có hại. ",
+  exampleEn: "Air pollution is particularly harmful to children and the elderly.",
+  exampleZh: " không khí Ô nhiễm đối với nhi đồng và người già thực tế có hại. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["especially"],
+  antonyms: ["generally"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thực tế ", "topic": " Học thuật "},
+  acceptCN: [" thực tế ", " đặc biệt ", " đặc biệt "]
+},
+{
+  id: 2,
+  word: "saving",
+  ipa: "/ˈseɪvɪŋ/",
+  pos: "n. / adj.",
+  meaning: "sự tiết kiệm; (số nhiều) tiền tiết kiệm",
+  mnemonic: "save (tiết kiệm) + -ing → tiết kiệm tiền một chút hoặc hành vi ",
+  root: "save (tiết kiệm) + -ing → tiết kiệm tiền một chút hoặc hành vi ",
+  collocations: [{"phrase": "savings account", "meaning": " dự trữ tài khoản "}, {"phrase": "a saving of", "meaning": " tiết kiệm …"}, {"phrase": "energy saving", "meaning": " tiết kiệm năng lượng "}],
+  phrases: "savings account (dự trữ tài khoản), a saving of (tiết kiệm …), energy saving (tiết kiệm năng lượng) ",
+  example: "Energy-saving measures led to a 15 per cent saving on electricity bills. (tiết kiệm năng lượng biện pháp khiến cho tiền điện tiết kiệm 15%.) ",
+  exampleEN: "Energy-saving measures led to a 15 per cent saving on electricity bills.",
+  exampleCN: " tiết kiệm năng lượng biện pháp khiến cho tiền điện tiết kiệm 15%. ",
+  exampleEn: "Energy-saving measures led to a 15 per cent saving on electricity bills.",
+  exampleZh: " tiết kiệm năng lượng biện pháp khiến cho tiền điện tiết kiệm 15%. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["economy"],
+  antonyms: ["spending"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tiết kiệm ", "topic": " Kinh tế học "},
+  acceptCN: [" tiết kiệm ", " gởi ngân hàng ", " tiết kiệm "]
+},
+{
+  id: 3,
+  word: "ancient",
+  ipa: "/ˈeɪnʃənt/",
+  pos: "adj.",
+  meaning: "xưa, cổ (trước khi đế quốc La mã tan rã); (từ cổ,nghĩa cổ) lá cờ, cờ hiệu; người cầm cờ hiệu",
+  mnemonic: "ante (phía trước) đồng nguyên → trước đây thật lâu ",
+  root: "ante (phía trước) đồng nguyên → trước đây thật lâu ",
+  collocations: [{"phrase": "ancient history", "meaning": " cổ đại lịch sử "}, {"phrase": "ancient civilisation", "meaning": " cổ đại văn minh "}, {"phrase": "ancient times", "meaning": " cổ đại "}],
+  phrases: "ancient history (cổ đại lịch sử), ancient civilisation (cổ đại văn minh), ancient times (cổ đại) ",
+  example: "The museum exhibition focuses on ancient civilisation in the Mediterranean. (uyên bác vật quán triển lãm tập trung Địa Trung Hải địa khu cổ đại văn minh.) ",
+  exampleEN: "The museum exhibition focuses on ancient civilisation in the Mediterranean.",
+  exampleCN: " uyên bác vật quán triển lãm tập trung Địa Trung Hải địa khu cổ đại văn minh. ",
+  exampleEn: "The museum exhibition focuses on ancient civilisation in the Mediterranean.",
+  exampleZh: " uyên bác vật quán triển lãm tập trung Địa Trung Hải địa khu cổ đại văn minh. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["old"],
+  antonyms: ["modern"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cổ đại ", "topic": " Học thuật "},
+  acceptCN: [" cổ đại ", " cổ xưa "]
+},
+{
+  id: 4,
+  word: "calorie",
+  ipa: "/ˈkæləri/",
+  pos: "n.",
+  meaning: "calo",
+  mnemonic: "calor (nhiệt) + -ie → nhiệt lượng đơn vị ",
+  root: "calor (nhiệt) + -ie → nhiệt lượng đơn vị ",
+  collocations: [{"phrase": "calorie intake", "meaning": " Ca-lo-ri thu hút "}, {"phrase": "low-calorie", "meaning": " sốt nhẹ lượng "}, {"phrase": "empty calories", "meaning": " chỗ trống nhiệt lượng "}],
+  phrases: "calorie intake (Ca-lo-ri thu hút), low-calorie (sốt nhẹ lượng), empty calories (chỗ trống nhiệt lượng) ",
+  example: "Public health advice recommends reducing daily calorie intake. (vệ sinh công cộng đề nghị chủ trương giảm xuống mỗi ngày Ca-lo-ri thu hút.) ",
+  exampleEN: "Public health advice recommends reducing daily calorie intake.",
+  exampleCN: " vệ sinh công cộng đề nghị chủ trương giảm xuống mỗi ngày Ca-lo-ri thu hút. ",
+  exampleEn: "Public health advice recommends reducing daily calorie intake.",
+  exampleZh: " vệ sinh công cộng đề nghị chủ trương giảm xuống mỗi ngày Ca-lo-ri thu hút. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["energy"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " Ca-lo-ri ", "topic": " Sức khỏe "},
+  acceptCN: [" Ca-lo-ri ", " nhiệt lượng "]
+},
+{
+  id: 5,
+  word: "expand",
+  ipa: "/ɪkˈspænd/",
+  pos: "v.",
+  meaning: "mở rộng, trải ra; nở ra, phồng ra, giãn",
+  mnemonic: "ex- (hướng ra phía ngoài) + pand (triển khai) → hướng ra phía ngoài triển khai ",
+  root: "ex- (hướng ra phía ngoài) + pand (triển khai) → hướng ra phía ngoài triển khai ",
+  collocations: [{"phrase": "expand into", "meaning": " mở rộng đến "}, {"phrase": "expand on", "meaning": " tường thuật "}, {"phrase": "economic expansion", "meaning": " Kinh tế học khuếch trương "}],
+  phrases: "expand into (mở rộng đến), expand on (tường thuật), economic expansion (Kinh tế học khuếch trương) ",
+  example: "The university plans to expand its online courses over the next five years. (nên đại học kế hoạch trong tương lai năm năm mở rộng online chương trình học.) ",
+  exampleEN: "The university plans to expand its online courses over the next five years.",
+  exampleCN: " nên đại học kế hoạch trong tương lai năm năm mở rộng online chương trình học. ",
+  exampleEn: "The university plans to expand its online courses over the next five years.",
+  exampleZh: " nên đại học kế hoạch trong tương lai năm năm mở rộng online chương trình học. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["extend", "grow"],
+  antonyms: ["shrink"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mở rộng ", "topic": " Giáo dục "},
+  acceptCN: [" mở rộng ", " mở rộng ", " bành trướng "]
+},
+{
+  id: 6,
+  word: "fashion",
+  ipa: "/ˈfæʃn/",
+  pos: "n.",
+  meaning: "kiểu cách; hình dáng; mốt, thời trang",
+  mnemonic: "fac (làm) đồng nguyên → làm thành kiểu dáng → thời thượng / phương thức ",
+  root: "fac (làm) đồng nguyên → làm thành kiểu dáng → thời thượng / phương thức ",
+  collocations: [{"phrase": "fashion industry", "meaning": " thời trang nghiệp "}, {"phrase": "in a timely fashion", "meaning": " kịp thời mà "}, {"phrase": "out of fashion", "meaning": " quá hạn "}],
+  phrases: "fashion industry (thời trang nghiệp), in a timely fashion (kịp thời mà), out of fashion (quá hạn) ",
+  example: "The fashion industry has been criticised for encouraging waste. (thời trang nghiệp bởi vì cổ vũ lãng phí mà đã bị phê bình.) ",
+  exampleEN: "The fashion industry has been criticised for encouraging waste.",
+  exampleCN: " thời trang nghiệp bởi vì cổ vũ lãng phí mà đã bị phê bình. ",
+  exampleEn: "The fashion industry has been criticised for encouraging waste.",
+  exampleZh: " thời trang nghiệp bởi vì cổ vũ lãng phí mà đã bị phê bình. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["style", "trend"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thời thượng ", "topic": " xã hội "},
+  acceptCN: [" thời thượng ", " thời trang ", " phương thức "]
+},
+{
+  id: 7,
+  word: "figure",
+  ipa: "/ˈfɪɡə(r)/ · /ˈfɪɡjər/",
+  pos: "n. / v.",
+  meaning: "hình dáng; (toán học) hình",
+  mnemonic: " nguyên nghĩa ‘ hình dạng ’, nghĩa rộng số lượng chữ, nhân vật hình dáng ",
+  root: " nguyên nghĩa ‘ hình dạng ’, nghĩa rộng số lượng chữ, nhân vật hình dáng ",
+  collocations: [{"phrase": "official figures", "meaning": " chính thức con số "}, {"phrase": "public figure", "meaning": " nhân vật công chúng "}, {"phrase": "figure out", "meaning": " hiểu rõ "}],
+  phrases: "official figures (chính thức con số), public figure (nhân vật công chúng), figure out (hiểu rõ) ",
+  example: "Official figures show a decline in smoking among young adults. (chính thức con số biểu hiện, trẻ tuổi người trưởng thành trong đích hút thuốc lá dẫn đầu có chỗ hạ thấp.) ",
+  exampleEN: "Official figures show a decline in smoking among young adults.",
+  exampleCN: " chính thức con số biểu hiện, trẻ tuổi người trưởng thành trong đích hút thuốc lá dẫn đầu có chỗ hạ thấp. ",
+  exampleEn: "Official figures show a decline in smoking among young adults.",
+  exampleZh: " chính thức con số biểu hiện, trẻ tuổi người trưởng thành trong đích hút thuốc lá dẫn đầu có chỗ hạ thấp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["number", "shape"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " con số ", "topic": " Học thuật "},
+  acceptCN: [" con số ", " nhân vật ", " hình thể "]
+},
+{
+  id: 8,
+  word: "muscle",
+  ipa: "/ˈmʌsl/",
+  pos: "n.",
+  meaning: "bắp thịt, cơ; (nghĩa bóng) sức lực",
+  mnemonic: " tiếng Latinh musculus (con chuột nhỏ) → cơ bắp chuyển động như chuột ",
+  root: " tiếng Latinh musculus (con chuột nhỏ) → cơ bắp chuyển động như chuột ",
+  collocations: [{"phrase": "muscle strength", "meaning": " cơ bắp lực lượng "}, {"phrase": "pull a muscle", "meaning": " lạp thương cơ bắp "}, {"phrase": "political muscle", "meaning": " chính trị thực lực "}],
+  phrases: "muscle strength (cơ bắp lực lượng), pull a muscle (lạp thương cơ bắp), political muscle (chính trị thực lực) ",
+  example: "Regular exercise increases muscle strength and improves sleep. (quy luật rèn luyện có thể tăng cường cơ bắp lực lượng cũng cải thiện giấc ngủ.) ",
+  exampleEN: "Regular exercise increases muscle strength and improves sleep.",
+  exampleCN: " quy luật rèn luyện có thể tăng cường cơ bắp lực lượng cũng cải thiện giấc ngủ. ",
+  exampleEn: "Regular exercise increases muscle strength and improves sleep.",
+  exampleZh: " quy luật rèn luyện có thể tăng cường cơ bắp lực lượng cũng cải thiện giấc ngủ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["strength"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cơ bắp ", "topic": " Sức khỏe "},
+  acceptCN: [" cơ bắp ", " thực lực ", " lực lượng "]
+},
+{
+  id: 9,
+  word: "network",
+  ipa: "/ˈnetwɜːk/ · /ˈnetwɜːrk/",
+  pos: "n. / v.",
+  meaning: "mạng lưới, hệ thống kết nối",
+  mnemonic: "net (mạng lưới) + work → hình lưới hệ thống ",
+  root: "net (mạng lưới) + work → hình lưới hệ thống ",
+  collocations: [{"phrase": "social network", "meaning": " xã giao mạng lưới *internet "}, {"phrase": "a network of", "meaning": "… mạng lưới *internet "}, {"phrase": "network with", "meaning": " và … thành lập liên hệ "}],
+  phrases: "social network (xã giao mạng lưới *internet), a network of (… mạng lưới *internet), network with (và … thành lập liên hệ) ",
+  example: "Professional networks can improve graduates' access to internships. (Nghề nghiệp mạng lưới quan hệ có thể thay đổi thiện tốt nghiệp đạt được thực tập cơ hội.) ",
+  exampleEN: "Professional networks can improve graduates' access to internships.",
+  exampleCN: " Nghề nghiệp mạng lưới quan hệ có thể thay đổi thiện tốt nghiệp đạt được thực tập cơ hội. ",
+  exampleEn: "Professional networks can improve graduates' access to internships.",
+  exampleZh: " Nghề nghiệp mạng lưới quan hệ có thể thay đổi thiện tốt nghiệp đạt được thực tập cơ hội. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["system", "web"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mạng lưới *internet ", "topic": " vào nghề "},
+  acceptCN: [" mạng lưới *internet ", " mạng lưới quan hệ ", " network "]
+},
+{
+  id: 10,
+  word: "positive",
+  ipa: "/ˈpɒzətɪv/ · /ˈpɑːzətɪv/",
+  pos: "adj.",
+  meaning: "xác thực, rõ ràng; quả quyết, khẳng định, chắc chắn",
+  mnemonic: "posit (để đặt) + -ive → rõ ràng cho ra → khẳng định / tích cực ",
+  root: "posit (để đặt) + -ive → rõ ràng cho ra → khẳng định / tích cực ",
+  collocations: [{"phrase": "a positive effect", "meaning": " chính diện ảnh hưởng "}, {"phrase": "positive attitude", "meaning": " tích cực thái độ "}, {"phrase": "test positive", "meaning": " Đánh giá hiện lên dương tính "}],
+  phrases: "a positive effect (chính diện ảnh hưởng), positive attitude (tích cực thái độ), test positive (Đánh giá hiện lên dương tính) ",
+  example: "The training programme had a positive effect on student confidence. (nên huấn luyện hạng mục đối với Học viên lòng tự tin sinh ra tích cực ảnh hưởng.) ",
+  exampleEN: "The training programme had a positive effect on student confidence.",
+  exampleCN: " nên huấn luyện hạng mục đối với Học viên lòng tự tin sinh ra tích cực ảnh hưởng. ",
+  exampleEn: "The training programme had a positive effect on student confidence.",
+  exampleZh: " nên huấn luyện hạng mục đối với Học viên lòng tự tin sinh ra tích cực ảnh hưởng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["optimistic"],
+  antonyms: ["negative"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tích cực ", "topic": " Giáo dục "},
+  acceptCN: [" tích cực ", " ngay mặt ", " khẳng định "]
+},
+{
+  id: 11,
+  word: "range",
+  ipa: "/reɪndʒ/",
+  pos: "n. / v.",
+  meaning: "dãy, hàng; phạm vị, lĩnh vực; trình độ",
+  mnemonic: " nguyên nghĩa ‘ xếp thành một nhóm ’→ từ một mặt đến một chỗ khác khoảng cách ",
+  root: " nguyên nghĩa ‘ xếp thành một nhóm ’→ từ một mặt đến một chỗ khác khoảng cách ",
+  collocations: [{"phrase": "a range of", "meaning": " một loạt "}, {"phrase": "range from A to B", "meaning": " từ A đến B không đều "}, {"phrase": "age range", "meaning": " tuổi phạm vi "}],
+  phrases: "a range of (một loạt), range from A to B (từ A đến B không đều), age range (tuổi phạm vi) ",
+  example: "The survey covered a wide range of academic subjects. (nên điều tra bao hàm rộng rãi ngành học phạm vi.) ",
+  exampleEN: "The survey covered a wide range of academic subjects.",
+  exampleCN: " nên điều tra bao hàm rộng rãi ngành học phạm vi. ",
+  exampleEn: "The survey covered a wide range of academic subjects.",
+  exampleZh: " nên điều tra bao hàm rộng rãi ngành học phạm vi. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["scope", "variety"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phạm vi ", "topic": " Học thuật "},
+  acceptCN: [" phạm vi ", " một loạt ", " thay đổi "]
+},
+{
+  id: 12,
+  word: "suppose",
+  ipa: "/səˈpəʊz/ · /səˈpoʊz/",
+  pos: "v.",
+  meaning: "giả sử, giả thiết, giả định; đòi hỏi, cần có (lý thuyết, kết quả...)",
+  mnemonic: "sup- (tôi) + pose (để đặt) → đặt ở điều kiện tiên quyết phía dưới → giả định ",
+  root: "sup- (tôi) + pose (để đặt) → đặt ở điều kiện tiên quyết phía dưới → giả định ",
+  collocations: [{"phrase": "be supposed to", "meaning": " nên "}, {"phrase": "suppose that", "meaning": " giả định …"}, {"phrase": "I suppose", "meaning": " ta nghĩ "}],
+  phrases: "be supposed to (nên), suppose that (giả định …), I suppose (ta nghĩ) ",
+  example: "Students are supposed to submit the assignment by Friday. (Học viên ứng với tại thứ sáu lúc trước Nộp bài bài tập.) ",
+  exampleEN: "Students are supposed to submit the assignment by Friday.",
+  exampleCN: " Học viên ứng với tại thứ sáu lúc trước Nộp bài bài tập. ",
+  exampleEn: "Students are supposed to submit the assignment by Friday.",
+  exampleZh: " Học viên ứng với tại thứ sáu lúc trước Nộp bài bài tập. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["assume"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cho rằng ", "topic": " sân trường "},
+  acceptCN: [" cho rằng ", " giả định ", " nên "]
+},
+{
+  id: 13,
+  word: "approach",
+  ipa: "/əˈprəʊtʃ/ · /əˈproʊtʃ/",
+  pos: "n. / v.",
+  meaning: "sự đến gần, sự lại gần; sự gần như, sự gần giống như",
+  mnemonic: "ap- (hướng) + proach (gần) → đến gần → phương pháp / tiếp cận ",
+  root: "ap- (hướng) + proach (gần) → đến gần → phương pháp / tiếp cận ",
+  collocations: [{"phrase": "an approach to", "meaning": "… phương pháp "}, {"phrase": "approach a problem", "meaning": " bắt tay vào làm xử lý vấn đề "}, {"phrase": "as sb approaches", "meaning": " lúc người nào đó tiếp cận lúc "}],
+  phrases: "an approach to (… phương pháp), approach a problem (bắt tay vào làm xử lý vấn đề), as sb approaches (lúc người nào đó tiếp cận lúc) ",
+  example: "A problem-based approach to teaching can improve critical thinking. (căn cứ vào vấn đề dạy học phương pháp có thể đề cao phê phán tính tư duy.) ",
+  exampleEN: "A problem-based approach to teaching can improve critical thinking.",
+  exampleCN: " căn cứ vào vấn đề dạy học phương pháp có thể đề cao phê phán tính tư duy. ",
+  exampleEn: "A problem-based approach to teaching can improve critical thinking.",
+  exampleZh: " căn cứ vào vấn đề dạy học phương pháp có thể đề cao phê phán tính tư duy. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["method", "come near"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phương pháp ", "topic": " Giáo dục "},
+  acceptCN: [" phương pháp ", " tiếp cận ", " xử lý "]
+},
+{
+  id: 14,
+  word: "campus",
+  ipa: "/ˈkæmpəs/",
+  pos: "n.",
+  meaning: "(từ Mỹ,nghĩa Mỹ) khu sân bãi (của các trường trung học, đại học); khu trường sở",
+  mnemonic: " tiếng Latinh campus (đất bằng, sân bãi) → đại học sân bãi ",
+  root: " tiếng Latinh campus (đất bằng, sân bãi) → đại học sân bãi ",
+  collocations: [{"phrase": "on campus", "meaning": " ở bên trong sân trường "}, {"phrase": "off campus", "meaning": " ở bên ngoài trường "}, {"phrase": "campus life", "meaning": " sân trường sinh hoạt "}],
+  phrases: "on campus (ở bên trong sân trường), off campus (ở bên ngoài trường), campus life (sân trường sinh hoạt) ",
+  example: "New sports facilities will be built on campus next year. (sang năm đem ở bên trong sân trường mới xây Thể thao phương tiện.) ",
+  exampleEN: "New sports facilities will be built on campus next year.",
+  exampleCN: " sang năm đem ở bên trong sân trường mới xây Thể thao phương tiện. ",
+  exampleEn: "New sports facilities will be built on campus next year.",
+  exampleZh: " sang năm đem ở bên trong sân trường mới xây Thể thao phương tiện. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["university grounds"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sân trường ", "topic": " sân trường "},
+  acceptCN: [" sân trường ", " đại học giáo viên "]
+},
+{
+  id: 15,
+  word: "describe",
+  ipa: "/dɪˈskraɪb/",
+  pos: "v.",
+  meaning: "tả, diễn tả, mô tả, miêu tả; vạch, vẽ",
+  mnemonic: "de- (hướng phía dưới) + scribe (ghi) → viết xuống → miêu tả ",
+  root: "de- (hướng phía dưới) + scribe (ghi) → viết xuống → miêu tả ",
+  collocations: [{"phrase": "describe as", "meaning": " đem … miêu tả là "}, {"phrase": "a detailed description", "meaning": " kỹ càng miêu tả "}, {"phrase": "describe how", "meaning": " miêu tả làm thế nào "}],
+  phrases: "describe as (đem … miêu tả là), a detailed description (kỹ càng miêu tả), describe how (miêu tả làm thế nào) ",
+  example: "Participants were asked to describe how they prepared for examinations. (người tham dự bị yêu cầu miêu tả họ làm thế nào chuẩn bị cuộc thi.) ",
+  exampleEN: "Participants were asked to describe how they prepared for examinations.",
+  exampleCN: " người tham dự bị yêu cầu miêu tả họ làm thế nào chuẩn bị cuộc thi. ",
+  exampleEn: "Participants were asked to describe how they prepared for examinations.",
+  exampleZh: " người tham dự bị yêu cầu miêu tả họ làm thế nào chuẩn bị cuộc thi. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["portray"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " miêu tả ", "topic": " Học thuật "},
+  acceptCN: [" miêu tả ", " miêu tả ", " hình dung "]
+},
+{
+  id: 16,
+  word: "event",
+  ipa: "/ɪˈvent/",
+  pos: "n.",
+  meaning: "sự việc, sự kiện; sự kiện quan trọng",
+  mnemonic: "e- (ra) + vent (đến) → phát sinh ra tới sự tình ",
+  root: "e- (ra) + vent (đến) → phát sinh ra tới sự tình ",
+  collocations: [{"phrase": "in the event of", "meaning": " nếu phát sinh "}, {"phrase": "sporting event", "meaning": " Thể thao thi đấu sự tình "}, {"phrase": "a major event", "meaning": " sự kiện trọng đại "}],
+  phrases: "in the event of (nếu phát sinh), sporting event (Thể thao thi đấu sự tình), a major event (sự kiện trọng đại) ",
+  example: "The conference is the most important academic event of the year. (nên hội nghị là năm nay là quan trọng nhất Học thuật hoạt động.) ",
+  exampleEN: "The conference is the most important academic event of the year.",
+  exampleCN: " nên hội nghị là năm nay là quan trọng nhất Học thuật hoạt động. ",
+  exampleEn: "The conference is the most important academic event of the year.",
+  exampleZh: " nên hội nghị là năm nay là quan trọng nhất Học thuật hoạt động. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["incident", "occasion"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sự kiện ", "topic": " Học thuật "},
+  acceptCN: [" sự kiện ", " hoạt động ", " thi đấu sự tình "]
+},
+{
+  id: 17,
+  word: "climate",
+  ipa: "/ˈklaɪmət/",
+  pos: "n.",
+  meaning: "khí hậu, thời tiết; miền khí hậu",
+  mnemonic: "clima (nghiêng / khu vực) → giải đất trường kỳ thời tiết → Khí hậu ",
+  root: "clima (nghiêng / khu vực) → giải đất trường kỳ thời tiết → Khí hậu ",
+  collocations: [{"phrase": "climate change", "meaning": " Khí hậu biến hóa "}, {"phrase": "economic climate", "meaning": " Kinh tế học Khí hậu "}, {"phrase": "a climate of", "meaning": "… bầu không khí "}],
+  phrases: "climate change (Khí hậu biến hóa), economic climate (Kinh tế học Khí hậu), a climate of (… bầu không khí) ",
+  example: "Climate change poses a serious challenge to food production. (Khí hậu biến hóa đối với lương thực sinh sản cấu thành nghiêm trọng khiêu chiến.) ",
+  exampleEN: "Climate change poses a serious challenge to food production.",
+  exampleCN: " Khí hậu biến hóa đối với lương thực sinh sản cấu thành nghiêm trọng khiêu chiến. ",
+  exampleEn: "Climate change poses a serious challenge to food production.",
+  exampleZh: " Khí hậu biến hóa đối với lương thực sinh sản cấu thành nghiêm trọng khiêu chiến. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["weather"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " Khí hậu ", "topic": " Môi trường "},
+  acceptCN: [" Khí hậu ", " bầu không khí ", " bầu không khí "]
+},
+{
+  id: 18,
+  word: "finally",
+  ipa: "/ˈfaɪnəli/",
+  pos: "adv.",
+  meaning: "cuối cùng, sau cùng; dứt khoát",
+  mnemonic: "final (cuối cùng) + -ly",
+  root: "final (cuối cùng) + -ly",
+  collocations: [{"phrase": "finally decide", "meaning": " quyết định cuối cùng "}, {"phrase": "the final report", "meaning": " cuối cùng báo cáo "}, {"phrase": "at the final stage", "meaning": " tại giai đoạn sau cùng "}],
+  phrases: "finally decide (quyết định cuối cùng), the final report (cuối cùng báo cáo), at the final stage (tại giai đoạn sau cùng) ",
+  example: "The committee finally approved the new assessment policy. (uỷ ban cuối cùng phê chuẩn mới đích ước định chính sách.) ",
+  exampleEN: "The committee finally approved the new assessment policy.",
+  exampleCN: " uỷ ban cuối cùng phê chuẩn mới đích ước định chính sách. ",
+  exampleEn: "The committee finally approved the new assessment policy.",
+  exampleZh: " uỷ ban cuối cùng phê chuẩn mới đích ước định chính sách. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["eventually", "lastly"],
+  antonyms: ["initially"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cuối cùng ", "topic": " Học thuật "},
+  acceptCN: [" cuối cùng ", " rút cuộc ", " cuối cùng "]
+},
+{
+  id: 19,
+  word: "plastic",
+  ipa: "/ˈplæstɪk/",
+  pos: "n. / adj.",
+  meaning: "chất dẻo ((cũng) plastics)",
+  mnemonic: "plast (đắp nặn) + -ic → đáng làm tạo tài liệu ",
+  root: "plast (đắp nặn) + -ic → đáng làm tạo tài liệu ",
+  collocations: [{"phrase": "plastic waste", "meaning": " nhựa plastic rác rưởi "}, {"phrase": "plastic bag", "meaning": " túi nhựa "}, {"phrase": "plastic pollution", "meaning": " nhựa plastic Ô nhiễm "}],
+  phrases: "plastic waste (nhựa plastic rác rưởi), plastic bag (túi nhựa), plastic pollution (nhựa plastic Ô nhiễm) ",
+  example: "Many cities have restricted the use of single-use plastic bags. (rất nhiều Đô thị đã hạn chế duy nhất một lần túi nhựa sử dụng.) ",
+  exampleEN: "Many cities have restricted the use of single-use plastic bags.",
+  exampleCN: " rất nhiều Đô thị đã hạn chế duy nhất một lần túi nhựa sử dụng. ",
+  exampleEn: "Many cities have restricted the use of single-use plastic bags.",
+  exampleZh: " rất nhiều Đô thị đã hạn chế duy nhất một lần túi nhựa sử dụng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhựa plastic ", "topic": " Môi trường "},
+  acceptCN: [" nhựa plastic ", " này lon ", " đáng làm "]
+},
+{
+  id: 20,
+  word: "creative",
+  ipa: "/kriˈeɪtɪv/",
+  pos: "adj.",
+  meaning: "sáng tạo",
+  mnemonic: "create (sáng tạo) + -ive → có thể sáng tạo ",
+  root: "create (sáng tạo) + -ive → có thể sáng tạo ",
+  collocations: [{"phrase": "creative thinking", "meaning": " tính sáng tạo tư duy "}, {"phrase": "creative writing", "meaning": " sáng ý Viết "}, {"phrase": "creative industries", "meaning": " sáng ý sản nghiệp "}],
+  phrases: "creative thinking (tính sáng tạo tư duy), creative writing (sáng ý Viết), creative industries (sáng ý sản nghiệp) ",
+  example: "The course aims to develop students' creative thinking skills. (nên chương trình học chỉ tại bồi dưỡng học viên tính sáng tạo tư duy năng lực.) ",
+  exampleEN: "The course aims to develop students' creative thinking skills.",
+  exampleCN: " nên chương trình học chỉ tại bồi dưỡng học viên tính sáng tạo tư duy năng lực. ",
+  exampleEn: "The course aims to develop students' creative thinking skills.",
+  exampleZh: " nên chương trình học chỉ tại bồi dưỡng học viên tính sáng tạo tư duy năng lực. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["inventive"],
+  antonyms: ["unimaginative"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " có sức sáng tạo ", "topic": " Giáo dục "},
+  acceptCN: [" có sức sáng tạo ", " tính sáng tạo "]
+},
+{
+  id: 21,
+  word: "extra",
+  ipa: "/ˈekstrə/",
+  pos: "adj. / adv. / n.",
+  meaning: "thêm, phụ, ngoại; thượng hạng, đặc biệt",
+  mnemonic: "extra- (bên ngoài) → tại quy định ra ",
+  root: "extra- (bên ngoài) → tại quy định ra ",
+  collocations: [{"phrase": "extra time", "meaning": " thêm vào thời gian "}, {"phrase": "extra cost", "meaning": " thêm vào phí tổn "}, {"phrase": "extra-curricular activities", "meaning": " khóa ngoại hoạt động "}],
+  phrases: "extra time (thêm vào thời gian), extra cost (thêm vào phí tổn), extra-curricular activities (khóa ngoại hoạt động) ",
+  example: "Students may need extra time to complete laboratory reports. (Học viên khả năng cần thêm vào thời gian để hoàn thành thí nghiệm báo cáo.) ",
+  exampleEN: "Students may need extra time to complete laboratory reports.",
+  exampleCN: " Học viên khả năng cần thêm vào thời gian để hoàn thành thí nghiệm báo cáo. ",
+  exampleEn: "Students may need extra time to complete laboratory reports.",
+  exampleZh: " Học viên khả năng cần thêm vào thời gian để hoàn thành thí nghiệm báo cáo. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["additional"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " quá mức ", "topic": " sân trường "},
+  acceptCN: [" quá mức ", " cộng thêm ", " thêm vào "]
+},
+{
+  id: 22,
+  word: "poverty",
+  ipa: "/ˈpɒvəti/ · /ˈpɑːvərti/",
+  pos: "n.",
+  meaning: "sự nghèo nàn; cảnh nghèo nàn, cảnh bần cùng; (nghĩa bóng) sự nghèo nàn, sự thiếu thốn; sự thấp kém, sự tồi tàn",
+  mnemonic: "poor (cùng) danh từ hình thức, -ty bề ngoài Trạng thái ",
+  root: "poor (cùng) danh từ hình thức, -ty bề ngoài Trạng thái ",
+  collocations: [{"phrase": "in poverty", "meaning": " ở vào nghèo khó Vừa "}, {"phrase": "poverty line", "meaning": " nghèo khó tuyến "}, {"phrase": "reduce poverty", "meaning": " giảm bớt nghèo khó "}],
+  phrases: "in poverty (ở vào nghèo khó Vừa), poverty line (nghèo khó tuyến), reduce poverty (giảm bớt nghèo khó) ",
+  example: "Education is often seen as an effective way to reduce poverty. (Giáo dục thường bị coi là giảm bớt nghèo khổ hữu hiệu cách.) ",
+  exampleEN: "Education is often seen as an effective way to reduce poverty.",
+  exampleCN: " Giáo dục thường bị coi là giảm bớt nghèo khổ hữu hiệu cách. ",
+  exampleEn: "Education is often seen as an effective way to reduce poverty.",
+  exampleZh: " Giáo dục thường bị coi là giảm bớt nghèo khổ hữu hiệu cách. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["need"],
+  antonyms: ["wealth"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nghèo khó ", "topic": " xã hội "},
+  acceptCN: [" nghèo khó ", " nghèo khó "]
+},
+{
+  id: 23,
+  word: "release",
+  ipa: "/rɪˈliːs/",
+  pos: "v. / n.",
+  meaning: "sự giải thoát, sự thoát khỏi (điều lo lắng, sầu muộn, bệnh tật...); sự thả, sự phóng thích",
+  mnemonic: "re- (quay về) + lease (buông ra) → buông ra ",
+  root: "re- (quay về) + lease (buông ra) → buông ra ",
+  collocations: [{"phrase": "release a report", "meaning": " tuyên bố báo cáo "}, {"phrase": "press release", "meaning": " tin tức bản thảo "}, {"phrase": "release from", "meaning": " từ … Vừa giải thoát "}],
+  phrases: "release a report (tuyên bố báo cáo), press release (tin tức bản thảo), release from (từ … Vừa giải thoát) ",
+  example: "The government released a report on air quality last month. (chính phủ tháng trước ban bố một phần về không khí chất lượng báo cáo.) ",
+  exampleEN: "The government released a report on air quality last month.",
+  exampleCN: " chính phủ tháng trước ban bố một phần về không khí chất lượng báo cáo. ",
+  exampleEn: "The government released a report on air quality last month.",
+  exampleZh: " chính phủ tháng trước ban bố một phần về không khí chất lượng báo cáo. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["publish", "free"],
+  antonyms: ["hold"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tuyên bố ", "topic": " xã hội "},
+  acceptCN: [" phóng thích ", " tuyên bố ", " phát hành "]
+},
+{
+  id: 24,
+  word: "solution",
+  ipa: "/səˈluːʃn/",
+  pos: "n.",
+  meaning: "sự hoà tan; dung dịch",
+  mnemonic: "solve (giải quyết) + -tion → giải quyết kết quả ",
+  root: "solve (giải quyết) + -tion → giải quyết kết quả ",
+  collocations: [{"phrase": "a solution to", "meaning": "… biện pháp giải quyết "}, {"phrase": "find a solution", "meaning": " tìm được biện pháp giải quyết "}, {"phrase": "chemical solution", "meaning": " Hóa học dung dịch "}],
+  phrases: "a solution to (… biện pháp giải quyết), find a solution (tìm được biện pháp giải quyết), chemical solution (Hóa học dung dịch) ",
+  example: "There is no simple solution to the shortage of affordable housing. (nhà ở gánh nặng năng lực chưa đủ vấn đề không có đơn giản biện pháp giải quyết.) ",
+  exampleEN: "There is no simple solution to the shortage of affordable housing.",
+  exampleCN: " nhà ở gánh nặng năng lực chưa đủ vấn đề không có đơn giản biện pháp giải quyết. ",
+  exampleEn: "There is no simple solution to the shortage of affordable housing.",
+  exampleZh: " nhà ở gánh nặng năng lực chưa đủ vấn đề không có đơn giản biện pháp giải quyết. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["answer", "remedy"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " biện pháp giải quyết ", "topic": " xã hội "},
+  acceptCN: [" biện pháp giải quyết ", " dung dịch ", " Đáp án "]
+},
+{
+  id: 25,
+  word: "rent",
+  ipa: "/rent/",
+  pos: "n. / v.",
+  meaning: "chỗ rách (ở quần áo); kẽ hở (ở đám mây); khe lá; chỗ nẻ, kẽ nứt (ở mặt đất), khe núi",
+  mnemonic: " nguyên nghĩa ‘ trả cho tiền ’→ tiền thuê nhà / cho thuê ",
+  root: " nguyên nghĩa ‘ trả cho tiền ’→ tiền thuê nhà / cho thuê ",
+  collocations: [{"phrase": "pay rent", "meaning": " giao tiền thuê "}, {"phrase": "rent a flat", "meaning": " thuê một bộ nhà trọ "}, {"phrase": "for rent", "meaning": " đợi thuê "}],
+  phrases: "pay rent (giao tiền thuê), rent a flat (thuê một bộ nhà trọ), for rent (đợi thuê) ",
+  example: "Rising rent has increased the cost of living for university students. (tăng lên không ngừng tiền thuê đề cao sinh viên sinh hoạt thành phẩm.) ",
+  exampleEN: "Rising rent has increased the cost of living for university students.",
+  exampleCN: " tăng lên không ngừng tiền thuê đề cao sinh viên sinh hoạt thành phẩm. ",
+  exampleEn: "Rising rent has increased the cost of living for university students.",
+  exampleZh: " tăng lên không ngừng tiền thuê đề cao sinh viên sinh hoạt thành phẩm. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["hire", "let"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tiền thuê ", "topic": " xã hội "},
+  acceptCN: [" tiền thuê ", " cho thuê ", " cho thuê "]
+},
+{
+  id: 26,
+  word: "budget",
+  ipa: "/ˈbʌdʒɪt/",
+  pos: "n. / v.",
+  meaning: "ngân sách, ngân quỹ; túi (đầy), bao (đầy)",
+  mnemonic: " nguyên chỉ túi tiền, nghĩa rộng là trong túi có thể tốn tiền → dự toán ",
+  root: " nguyên chỉ túi tiền, nghĩa rộng là trong túi có thể tốn tiền → dự toán ",
+  collocations: [{"phrase": "on a tight budget", "meaning": " dự toán khẩn trương "}, {"phrase": "education budget", "meaning": " Giáo dục dự toán "}, {"phrase": "budget cut", "meaning": " dự toán cắt giảm "}],
+  phrases: "on a tight budget (dự toán khẩn trương), education budget (Giáo dục dự toán), budget cut (dự toán cắt giảm) ",
+  example: "Many students have to live on a tight budget during term time. (rất nhiều Học viên đang học kỳ nào lúc giữa không thể không tính toán tỉ mỉ.) ",
+  exampleEN: "Many students have to live on a tight budget during term time.",
+  exampleCN: " rất nhiều Học viên đang học kỳ nào lúc giữa không thể không tính toán tỉ mỉ. ",
+  exampleEn: "Many students have to live on a tight budget during term time.",
+  exampleZh: " rất nhiều Học viên đang học kỳ nào lúc giữa không thể không tính toán tỉ mỉ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["plan"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " dự toán ", "topic": " Kinh tế học "},
+  acceptCN: [" dự toán ", " an bài chi tiêu "]
+},
+{
+  id: 27,
+  word: "mission",
+  ipa: "/ˈmɪʃn/",
+  pos: "n.",
+  meaning: "sứ mệnh, nhiệm vụ; sự đi công cán, sự đi công tác",
+  mnemonic: "miss (tống xuất) + -ion → bị phái đi ra làm sự tình ",
+  root: "miss (tống xuất) + -ion → bị phái đi ra làm sự tình ",
+  collocations: [{"phrase": "a mission to", "meaning": "… sứ mạng "}, {"phrase": "mission statement", "meaning": " sứ mạng tuyên ngôn "}, {"phrase": "space mission", "meaning": " vũ trụ nhiệm vụ "}],
+  phrases: "a mission to (… sứ mạng), mission statement (sứ mạng tuyên ngôn), space mission (vũ trụ nhiệm vụ) ",
+  example: "The mission of the university is to widen access to higher education. (nên đại học sứ mạng là mở rộng giáo dục cao đẳng Nhập học cơ hội.) ",
+  exampleEN: "The mission of the university is to widen access to higher education.",
+  exampleCN: " nên đại học sứ mạng là mở rộng giáo dục cao đẳng Nhập học cơ hội. ",
+  exampleEn: "The mission of the university is to widen access to higher education.",
+  exampleZh: " nên đại học sứ mạng là mở rộng giáo dục cao đẳng Nhập học cơ hội. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["task", "aim"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sứ mạng ", "topic": " Giáo dục "},
+  acceptCN: [" sứ mạng ", " nhiệm vụ ", " đoàn đại biểu "]
+},
+{
+  id: 28,
+  word: "complain",
+  ipa: "/kəmˈpleɪn/",
+  pos: "v.",
+  meaning: "kêu ca, kêu, phàn nàn, than phiền; oán trách; kêu nài, thưa thưa kiện",
+  mnemonic: "com- (tăng cường) + plain (than thở) → tố khổ → phàn nàn ",
+  root: "com- (tăng cường) + plain (than thở) → tố khổ → phàn nàn ",
+  collocations: [{"phrase": "complain about", "meaning": " phàn nàn …"}, {"phrase": "make a complaint", "meaning": " đưa ra khiếu nại "}, {"phrase": "complain that", "meaning": " phàn nàn nói "}],
+  phrases: "complain about (phàn nàn …), make a complaint (đưa ra khiếu nại), complain that (phàn nàn nói) ",
+  example: "Several residents complained about noise from the construction site. (mấy vị cư dân khiếu nại kiến trúc công trường tạp âm.) ",
+  exampleEN: "Several residents complained about noise from the construction site.",
+  exampleCN: " mấy vị cư dân khiếu nại kiến trúc công trường tạp âm. ",
+  exampleEn: "Several residents complained about noise from the construction site.",
+  exampleZh: " mấy vị cư dân khiếu nại kiến trúc công trường tạp âm. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["protest"],
+  antonyms: ["praise"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phàn nàn ", "topic": " xã hội "},
+  acceptCN: [" phàn nàn ", " khiếu nại "]
+},
+{
+  id: 29,
+  word: "display",
+  ipa: "/dɪˈspleɪ/",
+  pos: "v. / n.",
+  meaning: "bày ra, phô bày, trưng bày; phô trương, khoe khoang (kiến thức...)",
+  mnemonic: "dis- (tách ra) + play (gấp) → triển khai làm cho người ta nhìn ",
+  root: "dis- (tách ra) + play (gấp) → triển khai làm cho người ta nhìn ",
+  collocations: [{"phrase": "on display", "meaning": " tại thi triển "}, {"phrase": "display a skill", "meaning": " biểu hiện ra kỹ năng "}, {"phrase": "a public display", "meaning": " công khai biểu hiện ra "}],
+  phrases: "on display (tại thi triển), display a skill (biểu hiện ra kỹ năng), a public display (công khai biểu hiện ra) ",
+  example: "The museum has a new display of scientific instruments. (nhà bảo tàng mới xếp đặt dụng cụ khoa học giương.) ",
+  exampleEN: "The museum has a new display of scientific instruments.",
+  exampleCN: " nhà bảo tàng mới xếp đặt dụng cụ khoa học giương. ",
+  exampleEn: "The museum has a new display of scientific instruments.",
+  exampleZh: " nhà bảo tàng mới xếp đặt dụng cụ khoa học giương. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["show", "exhibit"],
+  antonyms: ["hide"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " biểu hiện ra ", "topic": " Học thuật "},
+  acceptCN: [" biểu hiện ra ", " trưng bày ", " biểu hiện "]
+},
+{
+  id: 30,
+  word: "educate",
+  ipa: "/ˈedʒukeɪt/",
+  pos: "v.",
+  meaning: "giáo dục, cho ăn học; dạy (súc vật...)",
+  mnemonic: "e- (ra) + duc (dẫn đạo) → dẫn đạo đi ra → Giáo dục ",
+  root: "e- (ra) + duc (dẫn đạo) → dẫn đạo đi ra → Giáo dục ",
+  collocations: [{"phrase": "educate sb about", "meaning": " khiến cho người nào đó hiểu rõ "}, {"phrase": "higher education", "meaning": " giáo dục cao đẳng "}, {"phrase": "an educated guess", "meaning": " có căn cứ suy đoán "}],
+  phrases: "educate sb about (khiến cho người nào đó hiểu rõ), higher education (giáo dục cao đẳng), an educated guess (có căn cứ suy đoán) ",
+  example: "Public campaigns aim to educate young people about healthy eating. (công ích tuyên truyền chỉ đang để cho người tuổi trẻ giải Sức khỏe Dinh dưỡng.) ",
+  exampleEN: "Public campaigns aim to educate young people about healthy eating.",
+  exampleCN: " công ích tuyên truyền chỉ đang để cho người tuổi trẻ giải Sức khỏe Dinh dưỡng. ",
+  exampleEn: "Public campaigns aim to educate young people about healthy eating.",
+  exampleZh: " công ích tuyên truyền chỉ đang để cho người tuổi trẻ giải Sức khỏe Dinh dưỡng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["teach", "train"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " Giáo dục ", "topic": " Giáo dục "},
+  acceptCN: [" Giáo dục ", " bồi dưỡng ", " dạy bảo "]
+},
+{
+  id: 31,
+  word: "image",
+  ipa: "/ˈɪmɪdʒ/",
+  pos: "n.",
+  meaning: "hình, hình ảnh, ảnh (trong gương...); vật giống hệt (vật khác); người giống hệt (người khác)",
+  mnemonic: "imit (bắt chước) đồng nguyên → mô phỏng ra tới bộ dạng ",
+  root: "imit (bắt chước) đồng nguyên → mô phỏng ra tới bộ dạng ",
+  collocations: [{"phrase": "public image", "meaning": " công chúng hình tượng "}, {"phrase": "body image", "meaning": " thân thể ý tưởng "}, {"phrase": "digital image", "meaning": " con số hình vẽ "}],
+  phrases: "public image (công chúng hình tượng), body image (thân thể ý tưởng), digital image (con số hình vẽ) ",
+  example: "Universities pay increasing attention to their public image. (đại học càng ngày càng coi trọng tự thân công chúng hình tượng.) ",
+  exampleEN: "Universities pay increasing attention to their public image.",
+  exampleCN: " đại học càng ngày càng coi trọng tự thân công chúng hình tượng. ",
+  exampleEn: "Universities pay increasing attention to their public image.",
+  exampleZh: " đại học càng ngày càng coi trọng tự thân công chúng hình tượng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["picture", "impression"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hình tượng ", "topic": " xã hội "},
+  acceptCN: [" hình tượng ", " hình vẽ ", " ấn tượng "]
+},
+{
+  id: 32,
+  word: "occur",
+  ipa: "/əˈkɜː(r)/ · /əˈkɜːr/",
+  pos: "v.",
+  meaning: "xảy ra, xảy đên; nảy ra (ý nghĩ)",
+  mnemonic: "oc- (hướng) + cur (chạy) → chạy đến trước mắt → phát sinh / xuất hiện ",
+  root: "oc- (hướng) + cur (chạy) → chạy đến trước mắt → phát sinh / xuất hiện ",
+  collocations: [{"phrase": "occur to sb", "meaning": " người nào đó nghĩ đến "}, {"phrase": "it occurred to me that", "meaning": " tôi đột nhiên nghĩ đến "}, {"phrase": "a rare occurrence", "meaning": " hiếm thấy sự tình "}],
+  phrases: "occur to sb (người nào đó nghĩ đến), it occurred to me that (tôi đột nhiên nghĩ đến), a rare occurrence (hiếm thấy sự tình) ",
+  example: "Similar errors occur when students translate too literally. (Học viên vô cùng dịch thẳng lúc, cùng loại Sai sẽ xuất hiện.) ",
+  exampleEN: "Similar errors occur when students translate too literally.",
+  exampleCN: " Học viên vô cùng dịch thẳng lúc, cùng loại Sai sẽ xuất hiện. ",
+  exampleEn: "Similar errors occur when students translate too literally.",
+  exampleZh: " Học viên vô cùng dịch thẳng lúc, cùng loại Sai sẽ xuất hiện. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["happen", "take place"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phát sinh ", "topic": " Học thuật "},
+  acceptCN: [" phát sinh ", " xuất hiện ", " nhớ tới "]
+},
+{
+  id: 33,
+  word: "species",
+  ipa: "/ˈspiːʃiːz/",
+  pos: "n.",
+  meaning: "(sinh vật học) loài; loại, hạng, thứ",
+  mnemonic: "spec (nhìn / loại) → bị quy về một loại Sinh học ",
+  root: "spec (nhìn / loại) → bị quy về một loại Sinh học ",
+  collocations: [{"phrase": "endangered species", "meaning": " lâm nguy giống "}, {"phrase": "a species of", "meaning": " một loại …"}, {"phrase": "species diversity", "meaning": " giống đa dạng tính "}],
+  phrases: "endangered species (lâm nguy giống), a species of (một loại …), species diversity (giống đa dạng tính) ",
+  example: "Climate change threatens many endangered species. (Khí hậu biến hóa uy hiếp rất nhiều lâm nguy giống.) ",
+  exampleEN: "Climate change threatens many endangered species.",
+  exampleCN: " Khí hậu biến hóa uy hiếp rất nhiều lâm nguy giống. ",
+  exampleEn: "Climate change threatens many endangered species.",
+  exampleZh: " Khí hậu biến hóa uy hiếp rất nhiều lâm nguy giống. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["kind"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " giống ", "topic": " Môi trường "},
+  acceptCN: [" giống ", " loại "]
+},
+{
+  id: 34,
+  word: "performance",
+  ipa: "/pəˈfɔːməns/ · /pərˈfɔːrməns/",
+  pos: "n.",
+  meaning: "sự làm; sự thực hiện; sự thi hành (lệnh...); sự cử hành (lễ...); sự hoàn thành (nhiệm vụ)",
+  mnemonic: "perform (thực hiện / biểu diễn) + -ance → thực hiện kết quả ",
+  root: "perform (thực hiện / biểu diễn) + -ance → thực hiện kết quả ",
+  collocations: [{"phrase": "academic performance", "meaning": " việc học biểu hiện "}, {"phrase": "job performance", "meaning": " công tác biểu hiện "}, {"phrase": "a live performance", "meaning": " hiện trường diễn xuất "}],
+  phrases: "academic performance (việc học biểu hiện), job performance (công tác biểu hiện), a live performance (hiện trường diễn xuất) ",
+  example: "Sleep quality is closely related to academic performance. (giấc ngủ chất lượng và việc học biểu hiện mật thiết tương quan.) ",
+  exampleEN: "Sleep quality is closely related to academic performance.",
+  exampleCN: " giấc ngủ chất lượng và việc học biểu hiện mật thiết tương quan. ",
+  exampleEn: "Sleep quality is closely related to academic performance.",
+  exampleZh: " giấc ngủ chất lượng và việc học biểu hiện mật thiết tương quan. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["achievement"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " biểu hiện ", "topic": " Giáo dục "},
+  acceptCN: [" biểu hiện ", " diễn xuất ", " tính năng "]
+},
+{
+  id: 35,
+  word: "quit",
+  ipa: "/kwɪt/",
+  pos: "v.",
+  meaning: "bỏ, rời, buông; (từ Mỹ,nghĩa Mỹ) thôi, ngừng, nghỉ",
+  mnemonic: " nguyên nghĩa ‘ giải trừ nghĩa vụ ’→ buông mặc kệ ",
+  root: " nguyên nghĩa ‘ giải trừ nghĩa vụ ’→ buông mặc kệ ",
+  collocations: [{"phrase": "quit smoking", "meaning": " cai thuốc "}, {"phrase": "quit a job", "meaning": " từ chức "}, {"phrase": "quit doing", "meaning": " đình chỉ làm "}],
+  phrases: "quit smoking (cai thuốc), quit a job (từ chức), quit doing (đình chỉ làm) ",
+  example: "A number of teachers quit the profession because of heavy workloads. (một ít Giáo viên bởi vì công tác gánh nặng quá nặng mà đã đi ra cái này chức nghiệp.) ",
+  exampleEN: "A number of teachers quit the profession because of heavy workloads.",
+  exampleCN: " một ít Giáo viên bởi vì công tác gánh nặng quá nặng mà đã đi ra cái này chức nghiệp. ",
+  exampleEn: "A number of teachers quit the profession because of heavy workloads.",
+  exampleZh: " một ít Giáo viên bởi vì công tác gánh nặng quá nặng mà đã đi ra cái này chức nghiệp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["stop", "resign"],
+  antonyms: ["continue"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " từ chức ", "topic": " vào nghề "},
+  acceptCN: [" đình chỉ ", " từ chức ", " từ bỏ "]
+},
+{
+  id: 36,
+  word: "rare",
+  ipa: "/reə(r)/ · /rer/",
+  pos: "adj.",
+  meaning: "hiếm, hiếm có, ít có; loãng",
+  mnemonic: " và raw có Lịch sử liên hệ, sau cố định là ‘ thưa thớt ’",
+  root: " và raw có Lịch sử liên hệ, sau cố định là ‘ thưa thớt ’",
+  collocations: [{"phrase": "rare species", "meaning": " vật hi hữu loại "}, {"phrase": "a rare opportunity", "meaning": " cơ hội khó được "}, {"phrase": "rarely", "meaning": " rất ít "}],
+  phrases: "rare species (vật hi hữu loại), a rare opportunity (cơ hội khó được), rarely (rất ít) ",
+  example: "It is rare for first-year students to publish in academic journals. (năm nhất Học viên đang học thuật tập san bên trên phát biểu văn chương là hiếm thấy.) ",
+  exampleEN: "It is rare for first-year students to publish in academic journals.",
+  exampleCN: " năm nhất Học viên đang học thuật tập san bên trên phát biểu văn chương là hiếm thấy. ",
+  exampleEn: "It is rare for first-year students to publish in academic journals.",
+  exampleZh: " năm nhất Học viên đang học thuật tập san bên trên phát biểu văn chương là hiếm thấy. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["uncommon"],
+  antonyms: ["common"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hiếm thấy ", "topic": " Học thuật "},
+  acceptCN: [" hi hữu đích ", " hiếm thấy ", " nửa chín "]
+},
+{
+  id: 37,
+  word: "official",
+  ipa: "/əˈfɪʃl/",
+  pos: "adj. / n.",
+  meaning: "(thuộc) chính quyền; (thuộc) văn phòng; chính thức",
+  mnemonic: "office (công chức) + -ial → và công chức có liên quan ",
+  root: "office (công chức) + -ial → và công chức có liên quan ",
+  collocations: [{"phrase": "official figures", "meaning": " chính thức con số "}, {"phrase": "official language", "meaning": " chính thức ngôn ngữ "}, {"phrase": "government officials", "meaning": " quan viên chính phủ "}],
+  phrases: "official figures (chính thức con số), official language (chính thức ngôn ngữ), government officials (quan viên chính phủ) ",
+  example: "Official figures suggest that unemployment has fallen slightly. (chính thức con số biểu hiện thất nghiệp dẫn đầu hơi có hạ thấp.) ",
+  exampleEN: "Official figures suggest that unemployment has fallen slightly.",
+  exampleCN: " chính thức con số biểu hiện thất nghiệp dẫn đầu hơi có hạ thấp. ",
+  exampleEn: "Official figures suggest that unemployment has fallen slightly.",
+  exampleZh: " chính thức con số biểu hiện thất nghiệp dẫn đầu hơi có hạ thấp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["formal"],
+  antonyms: ["unofficial"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " quan phương ", "topic": " xã hội "},
+  acceptCN: [" quan phương ", " chính thức ", " quan viên "]
+},
+{
+  id: 38,
+  word: "regulation",
+  ipa: "/ˌreɡjuˈleɪʃn/",
+  pos: "n.",
+  meaning: "sự điều chỉnh, sự sửa lại cho đúng; sự sắp đặt, sự quy định, sự chỉnh lý, sự chỉnh đốn (công việc...)",
+  mnemonic: "reg (thống trị) + -ulation → quy định làm thế nào vận hành ",
+  root: "reg (thống trị) + -ulation → quy định làm thế nào vận hành ",
+  collocations: [{"phrase": "safety regulations", "meaning": " an toàn điều lệ "}, {"phrase": "government regulation", "meaning": " chính phủ quản giáo "}, {"phrase": "regulate the market", "meaning": " điều tiết khống chế thị trường "}],
+  phrases: "safety regulations (an toàn điều lệ), government regulation (chính phủ quản giáo), regulate the market (điều tiết khống chế thị trường) ",
+  example: "New safety regulations will apply to all campus laboratories. (mới đích an toàn điều lệ đem áp dụng tại tất cả sân trường phòng thí nghiệm.) ",
+  exampleEN: "New safety regulations will apply to all campus laboratories.",
+  exampleCN: " mới đích an toàn điều lệ đem áp dụng tại tất cả sân trường phòng thí nghiệm. ",
+  exampleEn: "New safety regulations will apply to all campus laboratories.",
+  exampleZh: " mới đích an toàn điều lệ đem áp dụng tại tất cả sân trường phòng thí nghiệm. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["rule"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " điều lệ ", "topic": " xã hội "},
+  acceptCN: [" điều lệ ", " điều lệ ", " điều tiết khống chế "]
+},
+{
+  id: 39,
+  word: "site",
+  ipa: "/saɪt/",
+  pos: "n.",
+  meaning: "nơi, chỗ, vị trí; đất xây dựng",
+  mnemonic: "sit (tọa lạc) đồng nguyên → chỗ ",
+  root: "sit (tọa lạc) đồng nguyên → chỗ ",
+  collocations: [{"phrase": "construction site", "meaning": " kiến trúc công trường "}, {"phrase": "on site", "meaning": " tại hiện trường "}, {"phrase": "heritage site", "meaning": " di sản mà "}],
+  phrases: "construction site (kiến trúc công trường), on site (tại hiện trường), heritage site (di sản mà) ",
+  example: "The new library will be built on the site of the old sports hall. (bản đồ mới thư quán đem xây dựng tại xưa cũ quán thể dục nguyên chỉ thượng.) ",
+  exampleEN: "The new library will be built on the site of the old sports hall.",
+  exampleCN: " bản đồ mới thư quán đem xây dựng tại xưa cũ quán thể dục nguyên chỉ thượng. ",
+  exampleEn: "The new library will be built on the site of the old sports hall.",
+  exampleZh: " bản đồ mới thư quán đem xây dựng tại xưa cũ quán thể dục nguyên chỉ thượng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["location", "place"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " địa điểm ", "topic": " xã hội "},
+  acceptCN: [" địa điểm ", " nơi ", " trang web "]
+},
+{
+  id: 40,
+  word: "beyond",
+  ipa: "/bɪˈjɒnd/ · /bɪˈjɑːnd/",
+  pos: "prep. / adv.",
+  meaning: "prep. ① vượt qua, lướt qua (beyond control / doubt); ② tại … bên kia. adv. tại xa hơn chỗ. beyond one's means. the back of beyond (xa xôi chi địa). ",
+  mnemonic: "be- + yond (bên kia) → tại xa hơn chỗ / vượt qua phạm vi ",
+  root: "be- + yond (bên kia) → tại xa hơn chỗ / vượt qua phạm vi ",
+  collocations: [{"phrase": "beyond control", "meaning": " không cách nào khống chế "}, {"phrase": "beyond doubt", "meaning": " không hề nghi ngờ "}, {"phrase": "go beyond", "meaning": " vượt qua "}],
+  phrases: "beyond control (không cách nào khống chế), beyond doubt (không hề nghi ngờ), go beyond (vượt qua) ",
+  example: "The cost of housing is now beyond the means of many young graduates. (nhà ở thành phẩm hiện đã vượt qua rất nhiều năm nhẹ người tốt nghiệp gánh nặng năng lực.) ",
+  exampleEN: "The cost of housing is now beyond the means of many young graduates.",
+  exampleCN: " nhà ở thành phẩm hiện đã vượt qua rất nhiều năm nhẹ người tốt nghiệp gánh nặng năng lực. ",
+  exampleEn: "The cost of housing is now beyond the means of many young graduates.",
+  exampleZh: " nhà ở thành phẩm hiện đã vượt qua rất nhiều năm nhẹ người tốt nghiệp gánh nặng năng lực. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["past"],
+  antonyms: ["within"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " vượt qua ", "topic": " xã hội "},
+  acceptCN: [" vượt qua ", " lướt qua ", " tại … bên ngoài "]
+},
+{
+  id: 41,
+  word: "connect",
+  ipa: "/kəˈnekt/",
+  pos: "v.",
+  meaning: "nối, nối lại, chấp nối; liên hệ (trong ý nghĩ)",
+  mnemonic: "con- (cộng đồng) + nect (buộc) → buộc chung một chỗ ",
+  root: "con- (cộng đồng) + nect (buộc) → buộc chung một chỗ ",
+  collocations: [{"phrase": "connect to", "meaning": " liên tiếp đến "}, {"phrase": "be connected with", "meaning": " và … có quan hệ "}, {"phrase": "internet connection", "meaning": " mạng lưới *internet liên tiếp "}],
+  phrases: "connect to (liên tiếp đến), be connected with (và … có quan hệ), internet connection (mạng lưới *internet liên tiếp) ",
+  example: "The railway will connect the airport with the city centre. (này đường sắt đem đem sân bay và trung tâm chợ liên tiếp.) ",
+  exampleEN: "The railway will connect the airport with the city centre.",
+  exampleCN: " này đường sắt đem đem sân bay và trung tâm chợ liên tiếp. ",
+  exampleEn: "The railway will connect the airport with the city centre.",
+  exampleZh: " này đường sắt đem đem sân bay và trung tâm chợ liên tiếp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["link", "join"],
+  antonyms: ["disconnect"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " liên tiếp ", "topic": " Giao thông "},
+  acceptCN: [" liên tiếp ", " liên hệ "]
+},
+{
+  id: 42,
+  word: "expense",
+  ipa: "/ɪkˈspens/",
+  pos: "n.",
+  meaning: "sự tiêu; phí tổn; (số nhiều) phụ phí, công tác phí",
+  mnemonic: "ex- (ra) + pens (ước lượng trả tiền) → tốn ra tiền ",
+  root: "ex- (ra) + pens (ước lượng trả tiền) → tốn ra tiền ",
+  collocations: [{"phrase": "living expenses", "meaning": " tiền sinh hoạt "}, {"phrase": "at the expense of", "meaning": " dùng … làm đại giới "}, {"phrase": "travel expenses", "meaning": " chênh lệch lộ phí "}],
+  phrases: "living expenses (tiền sinh hoạt), at the expense of (dùng … làm đại giới), travel expenses (chênh lệch lộ phí) ",
+  example: "Higher tuition fees have increased students' living expenses. (cao hơn học phí gia tăng lên học viên sinh hoạt chi tiêu.) ",
+  exampleEN: "Higher tuition fees have increased students' living expenses.",
+  exampleCN: " cao hơn học phí gia tăng lên học viên sinh hoạt chi tiêu. ",
+  exampleEn: "Higher tuition fees have increased students' living expenses.",
+  exampleZh: " cao hơn học phí gia tăng lên học viên sinh hoạt chi tiêu. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["cost"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phí tổn ", "topic": " Kinh tế học "},
+  acceptCN: [" phí tổn ", " chi tiêu ", " một cái giá lớn "]
+},
+{
+  id: 43,
+  word: "nature",
+  ipa: "/ˈneɪtʃə(r)/ · /ˈneɪtʃər/",
+  pos: "n.",
+  meaning: "tự nhiên, thiên nhiên, tạo hoá; trạng thái tự nhiên; trạng thái nguyên thuỷ",
+  mnemonic: "nat (sinh ra) + -ure → trời sanh Trạng thái / vạn vật ",
+  root: "nat (sinh ra) + -ure → trời sanh Trạng thái / vạn vật ",
+  collocations: [{"phrase": "human nature", "meaning": " nhân tính "}, {"phrase": "the nature of", "meaning": "… tính chất "}, {"phrase": "by nature", "meaning": " trời sinh tính "}],
+  phrases: "human nature (nhân tính), the nature of (… tính chất), by nature (trời sinh tính) ",
+  example: "The nature of academic work has changed with digital technology. (Học thuật công tác tính chất đã theo con số kỹ thuật mà thay đổi.) ",
+  exampleEN: "The nature of academic work has changed with digital technology.",
+  exampleCN: " Học thuật công tác tính chất đã theo con số kỹ thuật mà thay đổi. ",
+  exampleEn: "The nature of academic work has changed with digital technology.",
+  exampleZh: " Học thuật công tác tính chất đã theo con số kỹ thuật mà thay đổi. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["character"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tự nhiên ", "topic": " Học thuật "},
+  acceptCN: [" tự nhiên ", " bản tính ", " tính chất "]
+},
+{
+  id: 44,
+  word: "negative",
+  ipa: "/ˈneɡətɪv/",
+  pos: "adj. / n.",
+  meaning: "không; phủ định, phủ nhận, cự tuyệt, phản đối, từ chối; cấm đoán; (điện học), (toán học); (nhiếp ảnh) âm",
+  mnemonic: "neg (chối bỏ) + -ative → phủ định / mặt trái ",
+  root: "neg (chối bỏ) + -ative → phủ định / mặt trái ",
+  collocations: [{"phrase": "a negative effect", "meaning": " tác dụng phụ "}, {"phrase": "negative attitude", "meaning": " tiêu cực thái độ "}, {"phrase": "test negative", "meaning": " Đánh giá hiện lên âm tính "}],
+  phrases: "a negative effect (tác dụng phụ), negative attitude (tiêu cực thái độ), test negative (Đánh giá hiện lên âm tính) ",
+  example: "Lack of sleep can have a negative effect on concentration. (giấc ngủ chưa đủ sẽ đối với lực chú ý sinh ra tác dụng phụ.) ",
+  exampleEN: "Lack of sleep can have a negative effect on concentration.",
+  exampleCN: " giấc ngủ chưa đủ sẽ đối với lực chú ý sinh ra tác dụng phụ. ",
+  exampleEn: "Lack of sleep can have a negative effect on concentration.",
+  exampleZh: " giấc ngủ chưa đủ sẽ đối với lực chú ý sinh ra tác dụng phụ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["adverse"],
+  antonyms: ["positive"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mặt trái ", "topic": " Sức khỏe "},
+  acceptCN: [" tiêu cực ", " mặt trái ", " phủ định "]
+},
+{
+  id: 45,
+  word: "object",
+  ipa: "/ˈɒbdʒɪkt/ · /ˈɑːbdʒɪkt/",
+  pos: "n. / v.",
+  meaning: "đồ vật, vật thể; đối tượng; (triết học) khách thể",
+  mnemonic: "ob- (hướng) + ject (quăng) → quăng đến trước mặt thứ đồ vật; làm động từ tức thì ‘ đối với ném ’→ phản đối ",
+  root: "ob- (hướng) + ject (quăng) → quăng đến trước mặt thứ đồ vật; làm động từ tức thì ‘ đối với ném ’→ phản đối ",
+  collocations: [{"phrase": "object to", "meaning": " phản đối "}, {"phrase": "the object of", "meaning": "… rất đúng giống như "}, {"phrase": "an object of study", "meaning": " đối tượng nghiên cứu "}],
+  phrases: "object to (phản đối), the object of (… rất đúng giống như), an object of study (đối tượng nghiên cứu) ",
+  example: "Several teachers objected to the proposed changes in assessment. (mấy vị Giáo viên phản đối dự tính trong đích ước định cải cách.) ",
+  exampleEN: "Several teachers objected to the proposed changes in assessment.",
+  exampleCN: " mấy vị Giáo viên phản đối dự tính trong đích ước định cải cách. ",
+  exampleEn: "Several teachers objected to the proposed changes in assessment.",
+  exampleZh: " mấy vị Giáo viên phản đối dự tính trong đích ước định cải cách. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["thing", "oppose"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " vật thể ", "topic": " Học thuật "},
+  acceptCN: [" vật thể ", " đối tượng ", " phản đối "]
+},
+{
+  id: 46,
+  word: "perform",
+  ipa: "/pəˈfɔːm/ · /pərˈfɔːrm/",
+  pos: "v.",
+  meaning: "làm (công việc...); thực hiện (lời hứa...); thi hành (lệnh); cử hành (lễ); hoàn thành (nhiệm vụ)",
+  mnemonic: "per- (hoàn toàn) + form (hình thức) → đem hình thức làm được → thực hiện / biểu diễn ",
+  root: "per- (hoàn toàn) + form (hình thức) → đem hình thức làm được → thực hiện / biểu diễn ",
+  collocations: [{"phrase": "perform a task", "meaning": " chấp hành nhiệm vụ "}, {"phrase": "perform well", "meaning": " biểu hiện Tốt "}, {"phrase": "perform an experiment", "meaning": " làm thí nghiệm "}],
+  phrases: "perform a task (chấp hành nhiệm vụ), perform well (biểu hiện Tốt), perform an experiment (làm thí nghiệm) ",
+  example: "The new software performed well in the laboratory tests. (mới phần mềm tại phòng thí nghiệm trong khảo nghiệm biểu hiện Tốt.) ",
+  exampleEN: "The new software performed well in the laboratory tests.",
+  exampleCN: " mới phần mềm tại phòng thí nghiệm trong khảo nghiệm biểu hiện Tốt. ",
+  exampleEn: "The new software performed well in the laboratory tests.",
+  exampleZh: " mới phần mềm tại phòng thí nghiệm trong khảo nghiệm biểu hiện Tốt. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["carry out", "act"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thực hiện ", "topic": " Học thuật "},
+  acceptCN: [" thực hiện ", " biểu diễn ", " biểu hiện "]
+},
+{
+  id: 47,
+  word: "recession",
+  ipa: "/rɪˈseʃn/",
+  pos: "n.",
+  meaning: "sự lùi lại, sự thụt lại, sự lùi vào, sự thụt vào; chỗ thụt vào, chỗ lõm vào (ở tường); sự rút đi",
+  mnemonic: "re- (quay về) + cess (đi) → đi trở về → suy yếu ",
+  root: "re- (quay về) + cess (đi) → đi trở về → suy yếu ",
+  collocations: [{"phrase": "economic recession", "meaning": " Kinh tế học suy yếu "}, {"phrase": "in recession", "meaning": " ở vào suy yếu Vừa "}, {"phrase": "a deep recession", "meaning": " nghiêm trọng suy yếu "}],
+  phrases: "economic recession (Kinh tế học suy yếu), in recession (ở vào suy yếu Vừa), a deep recession (nghiêm trọng suy yếu) ",
+  example: "Youth unemployment often rises during a recession. (Kinh tế học suy yếu trong lúc, thanh niên thất nghiệp dẫn đầu thường thường trong buổi họp thăng.) ",
+  exampleEN: "Youth unemployment often rises during a recession.",
+  exampleCN: " Kinh tế học suy yếu trong lúc, thanh niên thất nghiệp dẫn đầu thường thường trong buổi họp thăng. ",
+  exampleEn: "Youth unemployment often rises during a recession.",
+  exampleZh: " Kinh tế học suy yếu trong lúc, thanh niên thất nghiệp dẫn đầu thường thường trong buổi họp thăng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["downturn"],
+  antonyms: ["boom"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " suy yếu ", "topic": " Kinh tế học "},
+  acceptCN: [" suy yếu ", " Kinh tế học suy yếu "]
+},
+{
+  id: 48,
+  word: "score",
+  ipa: "/skɔː(r)/ · /skɔːr/",
+  pos: "n. / v.",
+  meaning: "(thể dục,thể thao) sổ điểm, sổ bán thắng; vết rạch, đường vạch",
+  mnemonic: " nguyên nghĩa ‘ vết khắc tính toán ’→ điểm ",
+  root: " nguyên nghĩa ‘ vết khắc tính toán ’→ điểm ",
+  collocations: [{"phrase": "test scores", "meaning": " cuộc thi điểm "}, {"phrase": "score well", "meaning": " Điểm số cao "}, {"phrase": "a high score", "meaning": " cao phân "}],
+  phrases: "test scores (cuộc thi điểm), score well (Điểm số cao), a high score (cao phân) ",
+  example: "Students who slept longer tended to score higher in the test. (thời gian ngủ dài hơn Học viên thường thường tại trong khảo nghiệm Điểm số cao hơn.) ",
+  exampleEN: "Students who slept longer tended to score higher in the test.",
+  exampleCN: " thời gian ngủ dài hơn Học viên thường thường tại trong khảo nghiệm Điểm số cao hơn. ",
+  exampleEn: "Students who slept longer tended to score higher in the test.",
+  exampleZh: " thời gian ngủ dài hơn Học viên thường thường tại trong khảo nghiệm Điểm số cao hơn. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["mark", "point"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " điểm ", "topic": " sân trường "},
+  acceptCN: [" điểm ", " Điểm số ", " cho điểm "]
+},
+{
+  id: 49,
+  word: "agency",
+  ipa: "/ˈeɪdʒənsi/",
+  pos: "n.",
+  meaning: "tác dụng, lực; sự môi giới, sự trung gian",
+  mnemonic: "ag (làm) + -ency → làm việc cơ cấu / năng lực ",
+  root: "ag (làm) + -ency → làm việc cơ cấu / năng lực ",
+  collocations: [{"phrase": "government agency", "meaning": " chính phủ cơ cấu "}, {"phrase": "travel agency", "meaning": " cơ quan du lịch "}, {"phrase": "news agency", "meaning": " thông tấn xã "}],
+  phrases: "government agency (chính phủ cơ cấu), travel agency (cơ quan du lịch), news agency (thông tấn xã) ",
+  example: "A government agency published new guidelines on food safety. (một nhà chính phủ cơ cấu ban bố thực phẩm an toàn mới chỉ nam.) ",
+  exampleEN: "A government agency published new guidelines on food safety.",
+  exampleCN: " một nhà chính phủ cơ cấu ban bố thực phẩm an toàn mới chỉ nam. ",
+  exampleEn: "A government agency published new guidelines on food safety.",
+  exampleZh: " một nhà chính phủ cơ cấu ban bố thực phẩm an toàn mới chỉ nam. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["organisation"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cơ cấu ", "topic": " xã hội "},
+  acceptCN: [" cơ cấu ", " đại lý ", " tác dụng "]
+},
+{
+  id: 50,
+  word: "apartment",
+  ipa: "/əˈpɑːtmənt/ · /əˈpɑːrtmənt/",
+  pos: "n.",
+  meaning: "căn phòng, buồng; (số nhiều) (Mỹ số ít) dãy buồng ở một tầng (cho một gia đình)",
+  mnemonic: "a- (tách ra) + part (bộ phận) → chia làm một bộ bộ nhà ở ",
+  root: "a- (tách ra) + part (bộ phận) → chia làm một bộ bộ nhà ở ",
+  collocations: [{"phrase": "share an apartment", "meaning": " cùng thuê nhà trọ "}, {"phrase": "apartment building", "meaning": " lầu trọ "}, {"phrase": "a rented apartment", "meaning": " mướn được nhà trọ "}],
+  phrases: "share an apartment (cùng thuê nhà trọ), apartment building (lầu trọ), a rented apartment (mướn được nhà trọ) ",
+  example: "Many first-year students share an apartment near the campus. (rất nhiều năm nhất Học viên ở sân trường phụ cận cùng thuê nhà trọ.) ",
+  exampleEN: "Many first-year students share an apartment near the campus.",
+  exampleCN: " rất nhiều năm nhất Học viên ở sân trường phụ cận cùng thuê nhà trọ. ",
+  exampleEn: "Many first-year students share an apartment near the campus.",
+  exampleZh: " rất nhiều năm nhất Học viên ở sân trường phụ cận cùng thuê nhà trọ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["flat"],
+  antonyms: ["house"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhà trọ ", "topic": " xã hội "},
+  acceptCN: [" nhà trọ ", " phòng "]
+},
+{
+  id: 51,
+  word: "assignment",
+  ipa: "/əˈsaɪnmənt/",
+  pos: "n.",
+  meaning: "sự giao việc, sự phân công; (từ Mỹ,nghĩa Mỹ) việc được giao, việc được phân công; sự chia phần",
+  mnemonic: "assign (chỉ định) + -ment → chỉ định cho người khác nhiệm vụ ",
+  root: "assign (chỉ định) + -ment → chỉ định cho người khác nhiệm vụ ",
+  collocations: [{"phrase": "written assignment", "meaning": " văn bản bài tập "}, {"phrase": "hand in an assignment", "meaning": " giao bài tập "}, {"phrase": "assign a task", "meaning": " bố trí nhiệm vụ "}],
+  phrases: "written assignment (văn bản bài tập), hand in an assignment (giao bài tập), assign a task (bố trí nhiệm vụ) ",
+  example: "Students were given two weeks to complete the written assignment. (Học viên có hai tuần thời gian hoàn thành phần này văn bản bài tập.) ",
+  exampleEN: "Students were given two weeks to complete the written assignment.",
+  exampleCN: " Học viên có hai tuần thời gian hoàn thành phần này văn bản bài tập. ",
+  exampleEn: "Students were given two weeks to complete the written assignment.",
+  exampleZh: " Học viên có hai tuần thời gian hoàn thành phần này văn bản bài tập. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["task", "homework"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bài tập ", "topic": " sân trường "},
+  acceptCN: [" bài tập ", " nhiệm vụ ", " phân phối "]
+},
+{
+  id: 52,
+  word: "boost",
+  ipa: "/buːst/",
+  pos: "v. / n.",
+  meaning: "nâng lên, đưa lên; quảng cáo rùm beng (cho ai)",
+  mnemonic: " nguyên nghĩa ‘ từ phía sau đẩy một cái ’→ thúc đẩy đề cao ",
+  root: " nguyên nghĩa ‘ từ phía sau đẩy một cái ’→ thúc đẩy đề cao ",
+  collocations: [{"phrase": "boost confidence", "meaning": " tăng cường tin tưởng "}, {"phrase": "boost growth", "meaning": " thúc đẩy tăng trưởng "}, {"phrase": "a boost to", "meaning": " đối với … thúc đẩy "}],
+  phrases: "boost confidence (tăng cường tin tưởng), boost growth (thúc đẩy tăng trưởng), a boost to (đối với … thúc đẩy) ",
+  example: "The scholarship is expected to boost applications from rural students. (nên học bổng có hi vọng gia tăng nông thôn học viên thân thỉnh nhân số.) ",
+  exampleEN: "The scholarship is expected to boost applications from rural students.",
+  exampleCN: " nên học bổng có hi vọng gia tăng nông thôn học viên thân thỉnh nhân số. ",
+  exampleEn: "The scholarship is expected to boost applications from rural students.",
+  exampleZh: " nên học bổng có hi vọng gia tăng nông thôn học viên thân thỉnh nhân số. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["increase", "promote"],
+  antonyms: ["reduce"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " xúc tiến ", "topic": " Giáo dục "},
+  acceptCN: [" xúc tiến ", " đề cao ", " thúc đẩy "]
+},
+{
+  id: 53,
+  word: "boring",
+  ipa: "/ˈbɔːrɪŋ/",
+  pos: "adj.",
+  meaning: "sự khoan, sự đào; lỗ khoan",
+  mnemonic: "bore (khoan / khiến người phiền) + -ing → làm cho người chán ghét ",
+  root: "bore (khoan / khiến người phiền) + -ing → làm cho người chán ghét ",
+  collocations: [{"phrase": "a boring lecture", "meaning": " nhàm chán toạ đàm "}, {"phrase": "get bored", "meaning": " cảm thấy nhàm chán "}, {"phrase": "bore sb", "meaning": " khiến cho người nào đó phiền chán "}],
+  phrases: "a boring lecture (nhàm chán toạ đàm), get bored (cảm thấy nhàm chán), bore sb (khiến cho người nào đó phiền chán) ",
+  example: "Students described the online lectures as repetitive and boring. (Học viên cho rằng những mục này online toạ đàm lặp lại mà lại không thú vị.) ",
+  exampleEN: "Students described the online lectures as repetitive and boring.",
+  exampleCN: " Học viên cho rằng những mục này online toạ đàm lặp lại mà lại không thú vị. ",
+  exampleEn: "Students described the online lectures as repetitive and boring.",
+  exampleZh: " Học viên cho rằng những mục này online toạ đàm lặp lại mà lại không thú vị. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["dull"],
+  antonyms: ["interesting"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhàm chán ", "topic": " sân trường "},
+  acceptCN: [" nhàm chán ", " buồn chán "]
+},
+{
+  id: 54,
+  word: "conduct",
+  ipa: "/kənˈdʌkt/",
+  pos: "v. / n.",
+  meaning: "dẫn tới (đường đi); chỉ huy, chỉ đạo, điều khiển, hướng dẫn; quản, quản lý, trông nom",
+  mnemonic: "con- (cộng đồng) + duct (dẫn đạo) → dẫn đạo tiến hành → áp dụng / phẩm hạnh ",
+  root: "con- (cộng đồng) + duct (dẫn đạo) → dẫn đạo tiến hành → áp dụng / phẩm hạnh ",
+  collocations: [{"phrase": "conduct a survey", "meaning": " tiến hành điều tra "}, {"phrase": "conduct research", "meaning": " khai triển,mở rộng nghiên cứu "}, {"phrase": "code of conduct", "meaning": " hành vi chuẩn tắc "}],
+  phrases: "conduct a survey (tiến hành điều tra), conduct research (khai triển,mở rộng nghiên cứu), code of conduct (hành vi chuẩn tắc) ",
+  example: "The team conducted a survey of more than one thousand graduates. (nên đoàn đội đối với hơn một nghìn tên tốt nghiệp đã tiến hành điều tra.) ",
+  exampleEN: "The team conducted a survey of more than one thousand graduates.",
+  exampleCN: " nên đoàn đội đối với hơn một nghìn tên tốt nghiệp đã tiến hành điều tra. ",
+  exampleEn: "The team conducted a survey of more than one thousand graduates.",
+  exampleZh: " nên đoàn đội đối với hơn một nghìn tên tốt nghiệp đã tiến hành điều tra. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["carry out", "behaviour"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tiến hành ", "topic": " Học thuật "},
+  acceptCN: [" tiến hành ", " áp dụng ", " hành vi "]
+},
+{
+  id: 55,
+  word: "consume",
+  ipa: "/kənˈsjuːm/ · /kənˈsuːm/",
+  pos: "v.",
+  meaning: "thiêu, đốt, cháy hết, tàn phá (lửa); dùng, tiêu thụ",
+  mnemonic: "con- (tăng cường) + sume (lấy) → lấy cố gắng hết sức → tiêu hao ",
+  root: "con- (tăng cường) + sume (lấy) → lấy cố gắng hết sức → tiêu hao ",
+  collocations: [{"phrase": "consume energy", "meaning": " tiêu hao nguồn năng lượng "}, {"phrase": "energy consumption", "meaning": " nguồn năng lượng tiêu hao "}, {"phrase": "time-consuming", "meaning": " tốn thời gian "}],
+  phrases: "consume energy (tiêu hao nguồn năng lượng), energy consumption (nguồn năng lượng tiêu hao), time-consuming (tốn thời gian) ",
+  example: "Private cars consume a large share of urban energy. (xe cá nhân tiêu hao Đô thị nhiên liệu rất lớn một bộ phận.) ",
+  exampleEN: "Private cars consume a large share of urban energy.",
+  exampleCN: " xe cá nhân tiêu hao Đô thị nhiên liệu rất lớn một bộ phận. ",
+  exampleEn: "Private cars consume a large share of urban energy.",
+  exampleZh: " xe cá nhân tiêu hao Đô thị nhiên liệu rất lớn một bộ phận. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["use up"],
+  antonyms: ["produce"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tiêu hao ", "topic": " Môi trường "},
+  acceptCN: [" tiêu hao ", " tiêu phí ", " ăn tươi "]
+},
+{
+  id: 56,
+  word: "craft",
+  ipa: "/krɑːft/ · /kræft/",
+  pos: "n. / v.",
+  meaning: "nghề, nghề thủ công; tập thể những người cùng nghề (thủ công)",
+  mnemonic: " nguyên nghĩa ‘ khí lực / kỹ năng ’→ tay nghề; cũng chỉ thuyền ",
+  root: " nguyên nghĩa ‘ khí lực / kỹ năng ’→ tay nghề; cũng chỉ thuyền ",
+  collocations: [{"phrase": "arts and crafts", "meaning": " thủ công mỹ nghệ "}, {"phrase": "craft a policy", "meaning": " tỉ mỉ chế định chính sách "}, {"phrase": "spacecraft", "meaning": " hàng thiên khí "}],
+  phrases: "arts and crafts (thủ công mỹ nghệ), craft a policy (tỉ mỉ chế định chính sách), spacecraft (hàng thiên khí) ",
+  example: "The authors crafted a clear argument based on recent evidence. (tác giả dựa theo gần đây chứng cứ tỉ mỉ xây cất một cái rõ ràng luận điểm.) ",
+  exampleEN: "The authors crafted a clear argument based on recent evidence.",
+  exampleCN: " tác giả dựa theo gần đây chứng cứ tỉ mỉ xây cất một cái rõ ràng luận điểm. ",
+  exampleEn: "The authors crafted a clear argument based on recent evidence.",
+  exampleZh: " tác giả dựa theo gần đây chứng cứ tỉ mỉ xây cất một cái rõ ràng luận điểm. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["skill", "make"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tay nghề ", "topic": " Học thuật "},
+  acceptCN: [" tay nghề ", " công nghệ ", " tỉ mỉ chế tác "]
+},
+{
+  id: 57,
+  word: "following",
+  ipa: "/ˈfɒləʊɪŋ/ · /ˈfɑːloʊɪŋ/",
+  pos: "adj. / n. / prep.",
+  meaning: "tiếp theo, theo sau, sau đây",
+  mnemonic: "follow (đi theo) + -ing → theo ở phía sau ",
+  root: "follow (đi theo) + -ing → theo ở phía sau ",
+  collocations: [{"phrase": "the following day", "meaning": " ngày hôm sau "}, {"phrase": "the following reasons", "meaning": " dưới đây nguyên nhân "}, {"phrase": "as follows", "meaning": " như sau "}],
+  phrases: "the following day (ngày hôm sau), the following reasons (dưới đây nguyên nhân), as follows (như sau) ",
+  example: "The following reasons were given for the decline in applications. (thân thỉnh nhân số hạ thấp bị cấp ra dưới đây nguyên nhân.) ",
+  exampleEN: "The following reasons were given for the decline in applications.",
+  exampleCN: " thân thỉnh nhân số hạ thấp bị cấp ra dưới đây nguyên nhân. ",
+  exampleEn: "The following reasons were given for the decline in applications.",
+  exampleZh: " thân thỉnh nhân số hạ thấp bị cấp ra dưới đây nguyên nhân. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["next", "subsequent"],
+  antonyms: ["previous"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " dưới đây ", "topic": " Học thuật "},
+  acceptCN: [" dưới đây ", " tiếp theo ", " tại … về sau "]
+},
+{
+  id: 58,
+  word: "immigrant",
+  ipa: "/ˈɪmɪɡrənt/",
+  pos: "n. / adj.",
+  meaning: "dân nhập cư",
+  mnemonic: "im- (nhập) + migr (di chuyển) → dời vào người ",
+  root: "im- (nhập) + migr (di chuyển) → dời vào người ",
+  collocations: [{"phrase": "immigrant workers", "meaning": " di dân công nhân "}, {"phrase": "immigration policy", "meaning": " di dân chính sách "}, {"phrase": "recent immigrants", "meaning": " gần đây di dân "}],
+  phrases: "immigrant workers (di dân công nhân), immigration policy (di dân chính sách), recent immigrants (gần đây di dân) ",
+  example: "The study examined the educational experiences of immigrant students. (nên nghiên cứu khảo sát di dân học viên Giáo dục trải qua.) ",
+  exampleEN: "The study examined the educational experiences of immigrant students.",
+  exampleCN: " nên nghiên cứu khảo sát di dân học viên Giáo dục trải qua. ",
+  exampleEn: "The study examined the educational experiences of immigrant students.",
+  exampleZh: " nên nghiên cứu khảo sát di dân học viên Giáo dục trải qua. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: ["emigrant"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " di dân ", "topic": " xã hội "},
+  acceptCN: [" di dân ", " Nhập Cảnh di dân "]
+},
+{
+  id: 59,
+  word: "instance",
+  ipa: "/ˈɪnstəns/",
+  pos: "n.",
+  meaning: "thí dụ, ví dụ (chứng minh, minh hoạ); trường hợp cá biệt",
+  mnemonic: "in- (hướng) + stance (đứng) → bày ra làm cho người ta nhìn ví dụ ",
+  root: "in- (hướng) + stance (đứng) → bày ra làm cho người ta nhìn ví dụ ",
+  collocations: [{"phrase": "for instance", "meaning": " tỷ như "}, {"phrase": "an instance of", "meaning": "… ví dụ thực tế "}, {"phrase": "in this instance", "meaning": " dưới loại tình huống này "}],
+  phrases: "for instance (tỷ như), an instance of (… ví dụ thực tế), in this instance (dưới loại tình huống này) ",
+  example: "Some courses, for instance statistics, require additional laboratory work. (có chút chương trình học, tỷ như môn thống kê, cần quá mức thí nghiệm công tác.) ",
+  exampleEN: "Some courses, for instance statistics, require additional laboratory work.",
+  exampleCN: " có chút chương trình học, tỷ như môn thống kê, cần quá mức thí nghiệm công tác. ",
+  exampleEn: "Some courses, for instance statistics, require additional laboratory work.",
+  exampleZh: " có chút chương trình học, tỷ như môn thống kê, cần quá mức thí nghiệm công tác. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["example"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tỷ như ", "topic": " Học thuật "},
+  acceptCN: [" ví dụ ", " ví dụ thực tế ", " tình huống "]
+},
+{
+  id: 60,
+  word: "partner",
+  ipa: "/ˈpɑːtnə(r)/ · /ˈpɑːrtnər/",
+  pos: "n.",
+  meaning: "người cùng chung phần; người cùng canh ty; hội viên (của một công ty, một minh ước quốc tế)",
+  mnemonic: "part (bộ phận) + -ner → cộng đồng chia sẻ người ",
+  root: "part (bộ phận) + -ner → cộng đồng chia sẻ người ",
+  collocations: [{"phrase": "research partner", "meaning": " nghiên cứu đồng bọn "}, {"phrase": "business partner", "meaning": " Kinh doanh đồng bọn "}, {"phrase": "partnership", "meaning": " tính hợp quần "}],
+  phrases: "research partner (nghiên cứu đồng bọn), business partner (Kinh doanh đồng bọn), partnership (tính hợp quần) ",
+  example: "The university signed an agreement with an industry partner. (nên đại học cùng một gia sản nghiệp đồng bạn hợp tác ký tên hiệp nghị.) ",
+  exampleEN: "The university signed an agreement with an industry partner.",
+  exampleCN: " nên đại học cùng một gia sản nghiệp đồng bạn hợp tác ký tên hiệp nghị. ",
+  exampleEn: "The university signed an agreement with an industry partner.",
+  exampleZh: " nên đại học cùng một gia sản nghiệp đồng bạn hợp tác ký tên hiệp nghị. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["colleague", "associate"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " đồng bọn ", "topic": " vào nghề "},
+  acceptCN: [" đồng bọn ", " phía đối tác ", " bầu bạn "]
+},
+{
+  id: 61,
+  word: "private",
+  ipa: "/ˈpraɪvət/",
+  pos: "adj.",
+  meaning: "riêng, tư, cá nhân; riêng, mật, kín",
+  mnemonic: "priv (cá nhân) + -ate → thuộc về một người ",
+  root: "priv (cá nhân) + -ate → thuộc về một người ",
+  collocations: [{"phrase": "private school", "meaning": " tư nhân trường học "}, {"phrase": "in private", "meaning": " lén lút "}, {"phrase": "private information", "meaning": " tin tức tư nhân "}],
+  phrases: "private school (tư nhân trường học), in private (lén lút), private information (tin tức tư nhân) ",
+  example: "Private schools often charge higher fees than state schools. (tư nhân trường học thu phí thường thường cao hơn trường công.) ",
+  exampleEN: "Private schools often charge higher fees than state schools.",
+  exampleCN: " tư nhân trường học thu phí thường thường cao hơn trường công. ",
+  exampleEn: "Private schools often charge higher fees than state schools.",
+  exampleZh: " tư nhân trường học thu phí thường thường cao hơn trường công. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["personal"],
+  antonyms: ["public"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tư nhân ", "topic": " Giáo dục "},
+  acceptCN: [" tư nhân ", " tư nhân ", " thầm lén "]
+},
+{
+  id: 62,
+  word: "publish",
+  ipa: "/ˈpʌblɪʃ/",
+  pos: "v.",
+  meaning: "công bố; ban bố (sắc lệnh...); xuất bản (sách...)",
+  mnemonic: "public (công khai) + -ish → khiến cho công khai → xuất bản / phát biểu ",
+  root: "public (công khai) + -ish → khiến cho công khai → xuất bản / phát biểu ",
+  collocations: [{"phrase": "publish a paper", "meaning": " phát biểu luận văn "}, {"phrase": "published research", "meaning": " đã phát biểu nghiên cứu "}, {"phrase": "publication", "meaning": " ấn phẩm; phát biểu "}],
+  phrases: "publish a paper (phát biểu luận văn), published research (đã phát biểu nghiên cứu), publication (ấn phẩm; phát biểu) ",
+  example: "The findings will be published in an international journal. (những mục này Khám phá đem phát biểu tại một phần quốc tế tập san bên trên.) ",
+  exampleEN: "The findings will be published in an international journal.",
+  exampleCN: " những mục này Khám phá đem phát biểu tại một phần quốc tế tập san bên trên. ",
+  exampleEn: "The findings will be published in an international journal.",
+  exampleZh: " những mục này Khám phá đem phát biểu tại một phần quốc tế tập san bên trên. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["issue", "print"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phát biểu ", "topic": " Học thuật "},
+  acceptCN: [" xuất bản ", " phát biểu ", " công bố "]
+},
+{
+  id: 63,
+  word: "significant",
+  ipa: "/sɪɡˈnɪfɪkənt/",
+  pos: "adj.",
+  meaning: "đầy ý nghĩa, có tính chất gợi ý; quan trọng, trọng đại, đáng chú ý",
+  mnemonic: "sign (dấu hiệu) + -ificant → có chứa trọng yếu ký hiệu ",
+  root: "sign (dấu hiệu) + -ificant → có chứa trọng yếu ký hiệu ",
+  collocations: [{"phrase": "a significant increase", "meaning": " rõ rệt gia tăng "}, {"phrase": "significant difference", "meaning": " rõ rệt sai biệt "}, {"phrase": "social significance", "meaning": " xã hội ý nghĩa "}],
+  phrases: "a significant increase (rõ rệt gia tăng), significant difference (rõ rệt sai biệt), social significance (xã hội ý nghĩa) ",
+  example: "There was a significant increase in applications after fees were reduced. (học phí giảm xuống sau, thân thỉnh nhân số rõ rệt gia tăng.) ",
+  exampleEN: "There was a significant increase in applications after fees were reduced.",
+  exampleCN: " học phí giảm xuống sau, thân thỉnh nhân số rõ rệt gia tăng. ",
+  exampleEn: "There was a significant increase in applications after fees were reduced.",
+  exampleZh: " học phí giảm xuống sau, thân thỉnh nhân số rõ rệt gia tăng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["important", "notable"],
+  antonyms: ["insignificant"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " rõ rệt ", "topic": " Học thuật "},
+  acceptCN: [" trọng yếu ", " rõ rệt ", " có ý nghĩa "]
+},
+{
+  id: 64,
+  word: "strategy",
+  ipa: "/ˈstrætədʒi/",
+  pos: "n.",
+  meaning: "chiến lược",
+  mnemonic: " nguyên chỉ tướng quân chi thuật → toàn cục tính biện pháp ",
+  root: " nguyên chỉ tướng quân chi thuật → toàn cục tính biện pháp ",
+  collocations: [{"phrase": "learning strategy", "meaning": " Học tập sách lược "}, {"phrase": "a strategy for", "meaning": "… sách lược "}, {"phrase": "long-term strategy", "meaning": " trường kỳ chiến lược "}],
+  phrases: "learning strategy (Học tập sách lược), a strategy for (… sách lược), long-term strategy (trường kỳ chiến lược) ",
+  example: "The government announced a long-term strategy to cut carbon emissions. (chính phủ tuyên bố hạng nhất cắt giảm các-bon bài phóng trường kỳ chiến lược.) ",
+  exampleEN: "The government announced a long-term strategy to cut carbon emissions.",
+  exampleCN: " chính phủ tuyên bố hạng nhất cắt giảm các-bon bài phóng trường kỳ chiến lược. ",
+  exampleEn: "The government announced a long-term strategy to cut carbon emissions.",
+  exampleZh: " chính phủ tuyên bố hạng nhất cắt giảm các-bon bài phóng trường kỳ chiến lược. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["plan", "tactic"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sách lược ", "topic": " xã hội "},
+  acceptCN: [" sách lược ", " chiến lược "]
+},
+{
+  id: 65,
+  word: "understanding",
+  ipa: "/ˌʌndəˈstændɪŋ/ · /ˌʌndərˈstændɪŋ/",
+  pos: "n. / adj.",
+  meaning: "sự hiểu biết, sự am hiểu; óc thông minh, óc suy xét, trí tuệ",
+  mnemonic: "understand (lý giải) + -ing → hiểu Trạng thái ",
+  root: "understand (lý giải) + -ing → hiểu Trạng thái ",
+  collocations: [{"phrase": "an understanding of", "meaning": " đối với … lý giải "}, {"phrase": "mutual understanding", "meaning": " lẫn nhau lý giải "}, {"phrase": "come to an understanding", "meaning": " đạt thành thông cảm "}],
+  phrases: "an understanding of (đối với … lý giải), mutual understanding (lẫn nhau lý giải), come to an understanding (đạt thành thông cảm) ",
+  example: "The course develops a deeper understanding of climate policy. (nên chương trình học làm sâu sắc đối với Khí hậu chánh sách lý giải.) ",
+  exampleEN: "The course develops a deeper understanding of climate policy.",
+  exampleCN: " nên chương trình học làm sâu sắc đối với Khí hậu chánh sách lý giải. ",
+  exampleEn: "The course develops a deeper understanding of climate policy.",
+  exampleZh: " nên chương trình học làm sâu sắc đối với Khí hậu chánh sách lý giải. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["comprehension"],
+  antonyms: ["misunderstanding"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " lý giải ", "topic": " Giáo dục "},
+  acceptCN: [" lý giải ", " hiểu rõ ", " thông cảm "]
+},
+{
+  id: 66,
+  word: "appeal",
+  ipa: "/əˈpiːl/",
+  pos: "n. / v.",
+  meaning: "sự kêu gọi; lời kêu gọi; lời thỉnh cầu, sự cầu khẩn",
+  mnemonic: "ap- (hướng) + peal (đẩy) → đẩy hướng người nào đó → hô hào / hấp dẫn ",
+  root: "ap- (hướng) + peal (đẩy) → đẩy hướng người nào đó → hô hào / hấp dẫn ",
+  collocations: [{"phrase": "appeal to", "meaning": " hấp dẫn; hướng … hô hào "}, {"phrase": "an appeal for", "meaning": " là … phát ra hô hào "}, {"phrase": "popular appeal", "meaning": " đại chúng lực hấp dẫn "}],
+  phrases: "appeal to (hấp dẫn; hướng … hô hào), an appeal for (là … phát ra hô hào), popular appeal (đại chúng lực hấp dẫn) ",
+  example: "The charity appealed to the public for donations after the flood. (hồng thủy qua đi, nên cơ quan từ thiện hô hào công chúng quyên tiền.) ",
+  exampleEN: "The charity appealed to the public for donations after the flood.",
+  exampleCN: " hồng thủy qua đi, nên cơ quan từ thiện hô hào công chúng quyên tiền. ",
+  exampleEn: "The charity appealed to the public for donations after the flood.",
+  exampleZh: " hồng thủy qua đi, nên cơ quan từ thiện hô hào công chúng quyên tiền. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["attract", "call"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hô hào ", "topic": " xã hội "},
+  acceptCN: [" hô hào ", " hấp dẫn ", " chống án "]
+},
+{
+  id: 67,
+  word: "application",
+  ipa: "/ˌæplɪˈkeɪʃn/",
+  pos: "n.",
+  meaning: "sự gắn vào, sự áp vào, sự ghép vào, sự đính vào, sự đắp vào, sự tra vào ((cũng) appliance)",
+  mnemonic: "apply (thân thỉnh / hữu ích,thiết thực) + -ation",
+  root: "apply (thân thỉnh / hữu ích,thiết thực) + -ation",
+  collocations: [{"phrase": "job application", "meaning": " tìm việc thân thỉnh "}, {"phrase": "application form", "meaning": " thân thỉnh bề ngoài "}, {"phrase": "the application of", "meaning": "… hữu ích,thiết thực "}],
+  phrases: "job application (tìm việc thân thỉnh), application form (thân thỉnh bề ngoài), the application of (… hữu ích,thiết thực) ",
+  example: "Online application forms have reduced the time needed to apply. (online thân thỉnh bề ngoài rút ngắn thân thỉnh cần thời gian.) ",
+  exampleEN: "Online application forms have reduced the time needed to apply.",
+  exampleCN: " online thân thỉnh bề ngoài rút ngắn thân thỉnh cần thời gian. ",
+  exampleEn: "Online application forms have reduced the time needed to apply.",
+  exampleZh: " online thân thỉnh bề ngoài rút ngắn thân thỉnh cần thời gian. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["request", "use"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thân thỉnh ", "topic": " vào nghề "},
+  acceptCN: [" thân thỉnh ", " hữu ích,thiết thực ", " hữu ích,thiết thực trình tự "]
+},
+{
+  id: 68,
+  word: "being",
+  ipa: "/ˈbiːɪŋ/",
+  pos: "n.",
+  meaning: "sinh vật; con người; sự tồn tại; sự sống",
+  mnemonic: "be (là / tồn tại) + -ing → tồn tại chi vật ",
+  root: "be (là / tồn tại) + -ing → tồn tại chi vật ",
+  collocations: [{"phrase": "human being", "meaning": " người "}, {"phrase": "come into being", "meaning": " hình thành "}, {"phrase": "well-being", "meaning": " an khang "}],
+  phrases: "human being (người), come into being (hình thành), well-being (an khang) ",
+  example: "The committee came into being after the 2018 education reform. (nên uỷ ban là ở năm 2018 Giáo dục cải cách về sau thành lập.) ",
+  exampleEN: "The committee came into being after the 2018 education reform.",
+  exampleCN: " nên uỷ ban là ở năm 2018 Giáo dục cải cách về sau thành lập. ",
+  exampleEn: "The committee came into being after the 2018 education reform.",
+  exampleZh: " nên uỷ ban là ở năm 2018 Giáo dục cải cách về sau thành lập. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["creature"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " người ", "topic": " Học thuật "},
+  acceptCN: [" Sinh học ", " người ", " tồn tại "]
+},
+{
+  id: 69,
+  word: "carrot",
+  ipa: "/ˈkærət/",
+  pos: "n.",
+  meaning: "cây cà rốt; củ cà rốt; (số nhiều) (từ lóng) tóc đỏ hoe; người tóc đỏ hoe",
+  mnemonic: " nghĩa gốc rau quả; chính sách ngữ cảnh trung bình làm ‘ ban thưởng thủ đoạn ’",
+  root: " nghĩa gốc rau quả; chính sách ngữ cảnh trung bình làm ‘ ban thưởng thủ đoạn ’",
+  collocations: [{"phrase": "carrot and stick", "meaning": " vừa đấm vừa xoa "}, {"phrase": "a carrot for", "meaning": " cho … chỗ tốt "}, {"phrase": "carrot juice", "meaning": " cà rốt nước "}],
+  phrases: "carrot and stick (vừa đấm vừa xoa), a carrot for (cho … chỗ tốt), carrot juice (cà rốt nước) ",
+  example: "The new tax cut is seen as a carrot to encourage investment. (mới đích giảm thuế bị coi là cổ vũ đầu tư một loại lợi dụ.) ",
+  exampleEN: "The new tax cut is seen as a carrot to encourage investment.",
+  exampleCN: " mới đích giảm thuế bị coi là cổ vũ đầu tư một loại lợi dụ. ",
+  exampleEn: "The new tax cut is seen as a carrot to encourage investment.",
+  exampleZh: " mới đích giảm thuế bị coi là cổ vũ đầu tư một loại lợi dụ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["incentive"],
+  antonyms: ["stick"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cà rốt ", "topic": " Kinh tế học "},
+  acceptCN: [" cà rốt ", " lợi dụ ", " chỗ tốt "]
+},
+{
+  id: 70,
+  word: "claim",
+  ipa: "/kleɪm/",
+  pos: "v. / n.",
+  meaning: "đòi, yêu sách; thỉnh cầu; đòi hỏi, bắt phải, đáng để",
+  mnemonic: "clam (la lên) đồng nguyên → lớn tiếng đưa ra yêu cầu / thuyết pháp ",
+  root: "clam (la lên) đồng nguyên → lớn tiếng đưa ra yêu cầu / thuyết pháp ",
+  collocations: [{"phrase": "claim that", "meaning": " công bố …"}, {"phrase": "make a claim", "meaning": " đưa ra chủ trương / bắt đền "}, {"phrase": "claim compensation", "meaning": " bắt đền "}],
+  phrases: "claim that (công bố …), make a claim (đưa ra chủ trương / bắt đền), claim compensation (bắt đền) ",
+  example: "The authors claim that shorter lectures improve attention. (tác giả công bố, ngắn hơn toạ đàm có thể đề cao lực chú ý.) ",
+  exampleEN: "The authors claim that shorter lectures improve attention.",
+  exampleCN: " tác giả công bố, ngắn hơn toạ đàm có thể đề cao lực chú ý. ",
+  exampleEn: "The authors claim that shorter lectures improve attention.",
+  exampleZh: " tác giả công bố, ngắn hơn toạ đàm có thể đề cao lực chú ý. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["assert", "demand"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " công bố ", "topic": " Học thuật "},
+  acceptCN: [" công bố ", " yêu cầu ", " chủ trương "]
+},
+{
+  id: 71,
+  word: "colleague",
+  ipa: "/ˈkɒliːɡ/ · /ˈkɑːliːɡ/",
+  pos: "n.",
+  meaning: "bạn đồng nghiệp, bạn đồng sự",
+  mnemonic: "col- (cộng đồng) + league (liên minh) → đồng nhất trong đoàn thể người ",
+  root: "col- (cộng đồng) + league (liên minh) → đồng nhất trong đoàn thể người ",
+  collocations: [{"phrase": "a colleague at work", "meaning": " trong công việc đồng sự "}, {"phrase": "former colleague", "meaning": " trước kia đồng sự "}, {"phrase": "academic colleagues", "meaning": " Học thuật cùng nghề "}],
+  phrases: "a colleague at work (trong công việc đồng sự), former colleague (trước kia đồng sự), academic colleagues (Học thuật cùng nghề) ",
+  example: "She discussed the findings with colleagues in the same department. (cô ấy và đồng nhất hệ đồng sự thảo luận những mục này Khám phá.) ",
+  exampleEN: "She discussed the findings with colleagues in the same department.",
+  exampleCN: " cô ấy và đồng nhất hệ đồng sự thảo luận những mục này Khám phá. ",
+  exampleEn: "She discussed the findings with colleagues in the same department.",
+  exampleZh: " cô ấy và đồng nhất hệ đồng sự thảo luận những mục này Khám phá. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["co-worker"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " đồng sự ", "topic": " vào nghề "},
+  acceptCN: [" đồng sự ", " đồng liêu "]
+},
+{
+  id: 72,
+  word: "determine",
+  ipa: "/dɪˈtɜːmɪn/ · /dɪˈtɜːrmɪn/",
+  pos: "v.",
+  meaning: "định, xác định, định rõ; quyết định, định đoạt",
+  mnemonic: "de- (hoàn toàn) + termin (giới hạn) → xác định giới hạn → Đồng ý ",
+  root: "de- (hoàn toàn) + termin (giới hạn) → xác định giới hạn → Đồng ý ",
+  collocations: [{"phrase": "determine the cause", "meaning": " Đồng ý nguyên nhân "}, {"phrase": "be determined by", "meaning": " do … quyết định "}, {"phrase": "determination", "meaning": " quyết tâm "}],
+  phrases: "determine the cause (Đồng ý nguyên nhân), be determined by (do … quyết định), determination (quyết tâm) ",
+  example: "Further tests are needed to determine the cause of the decline. (còn cần tiến thêm một bước Đánh giá mới có thể xác định một chút xuống nguyên nhân.) ",
+  exampleEN: "Further tests are needed to determine the cause of the decline.",
+  exampleCN: " còn cần tiến thêm một bước Đánh giá mới có thể xác định một chút xuống nguyên nhân. ",
+  exampleEn: "Further tests are needed to determine the cause of the decline.",
+  exampleZh: " còn cần tiến thêm một bước Đánh giá mới có thể xác định một chút xuống nguyên nhân. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["decide", "establish"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " Đồng ý ", "topic": " Học thuật "},
+  acceptCN: [" quyết định ", " Đồng ý ", " hạ quyết tâm "]
+},
+{
+  id: 73,
+  word: "essential",
+  ipa: "/ɪˈsenʃl/",
+  pos: "adj. / n.",
+  meaning: "(thuộc) bản chất, (thuộc) thực chất; cần thiết, thiết yếu, cốt yếu, chủ yếu",
+  mnemonic: "essenc (bản chất) + -ial → thuộc về bản chất ",
+  root: "essenc (bản chất) + -ial → thuộc về bản chất ",
+  collocations: [{"phrase": "essential for", "meaning": " đối với … ắt không thể thiếu "}, {"phrase": "it is essential that", "meaning": " phải …"}, {"phrase": "the essentials", "meaning": " yếu điểm; nhu yếu phẩm "}],
+  phrases: "essential for (đối với … ắt không thể thiếu), it is essential that (phải …), the essentials (yếu điểm; nhu yếu phẩm) ",
+  example: "Digital literacy is now essential for most university courses. (con số rèn luyện hàng ngày bây giờ đối với đại đa số đại học chương trình học đều ắt không thể thiếu.) ",
+  exampleEN: "Digital literacy is now essential for most university courses.",
+  exampleCN: " con số rèn luyện hàng ngày bây giờ đối với đại đa số đại học chương trình học đều ắt không thể thiếu. ",
+  exampleEn: "Digital literacy is now essential for most university courses.",
+  exampleZh: " con số rèn luyện hàng ngày bây giờ đối với đại đa số đại học chương trình học đều ắt không thể thiếu. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["necessary", "vital"],
+  antonyms: ["optional"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " không thể thiếu được ", "topic": " Giáo dục "},
+  acceptCN: [" không thể thiếu được ", " bản chất ", " yếu điểm "]
+},
+{
+  id: 74,
+  word: "handle",
+  ipa: "/ˈhændl/",
+  pos: "v. / n.",
+  meaning: "cầm, sờ mó; vận dụng, sử dụng, điều khiển (bằng tay)",
+  mnemonic: "hand (tay) + -le → lấy tay cầm / ứng phó ",
+  root: "hand (tay) + -le → lấy tay cầm / ứng phó ",
+  collocations: [{"phrase": "handle a problem", "meaning": " xử lý vấn đề "}, {"phrase": "handle pressure", "meaning": " ứng đối áp lực "}, {"phrase": "the handle of", "meaning": "… bắt tay "}],
+  phrases: "handle a problem (xử lý vấn đề), handle pressure (ứng đối áp lực), the handle of (… bắt tay) ",
+  example: "The training helps new teachers handle classroom pressure. (nên huấn luyện trợ giúp đạo Tin Lành sư ứng đối lớp học áp lực.) ",
+  exampleEN: "The training helps new teachers handle classroom pressure.",
+  exampleCN: " nên huấn luyện trợ giúp đạo Tin Lành sư ứng đối lớp học áp lực. ",
+  exampleEn: "The training helps new teachers handle classroom pressure.",
+  exampleZh: " nên huấn luyện trợ giúp đạo Tin Lành sư ứng đối lớp học áp lực. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["deal with", "manage"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " xử lý ", "topic": " vào nghề "},
+  acceptCN: [" xử lý ", " ứng phó ", " bắt tay "]
+},
+{
+  id: 75,
+  word: "launch",
+  ipa: "/lɔːntʃ/",
+  pos: "v. / n.",
+  meaning: "hạ thuỷ (tàu)",
+  mnemonic: " nguyên sai khiến dưới thuyền nước → khiến cho chuyện gì vật Bắt đầu vận hành ",
+  root: " nguyên sai khiến dưới thuyền nước → khiến cho chuyện gì vật Bắt đầu vận hành ",
+  collocations: [{"phrase": "launch a campaign", "meaning": " khởi xướng một cuộc vận động "}, {"phrase": "launch a product", "meaning": " đẩy ra sản phẩm "}, {"phrase": "the launch of", "meaning": "… khởi động / đưa ra thị trường "}],
+  phrases: "launch a campaign (khởi xướng một cuộc vận động), launch a product (đẩy ra sản phẩm), the launch of (… khởi động / đưa ra thị trường) ",
+  example: "The university launched a campaign to promote mental health. (nên đại học phát khởi một cuộc xúc tiến tâm lý khỏe mạnh vận động.) ",
+  exampleEN: "The university launched a campaign to promote mental health.",
+  exampleCN: " nên đại học phát khởi một cuộc xúc tiến tâm lý khỏe mạnh vận động. ",
+  exampleEn: "The university launched a campaign to promote mental health.",
+  exampleZh: " nên đại học phát khởi một cuộc xúc tiến tâm lý khỏe mạnh vận động. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["start", "introduce"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " khởi xướng ", "topic": " xã hội "},
+  acceptCN: [" khởi xướng ", " đẩy ra ", " phóng ra "]
+},
+{
+  id: 76,
+  word: "scientific",
+  ipa: "/ˌsaɪənˈtɪfɪk/",
+  pos: "adj.",
+  meaning: "khoa học; có hệ thống; chính xác; có kỹ thuật",
+  mnemonic: "science (khoa học) + -ific → thuộc về khoa học ",
+  root: "science (khoa học) + -ific → thuộc về khoa học ",
+  collocations: [{"phrase": "scientific research", "meaning": " khoa học nghiên cứu "}, {"phrase": "scientific evidence", "meaning": " khoa học chứng cứ "}, {"phrase": "scientific method", "meaning": " khoa học phương pháp "}],
+  phrases: "scientific research (khoa học nghiên cứu), scientific evidence (khoa học chứng cứ), scientific method (khoa học phương pháp) ",
+  example: "The conclusion is based on scientific evidence from several studies. (nên kết luận căn cứ vào nhiều mục nghiên cứu cung cấp khoa học chứng cứ.) ",
+  exampleEN: "The conclusion is based on scientific evidence from several studies.",
+  exampleCN: " nên kết luận căn cứ vào nhiều mục nghiên cứu cung cấp khoa học chứng cứ. ",
+  exampleEn: "The conclusion is based on scientific evidence from several studies.",
+  exampleZh: " nên kết luận căn cứ vào nhiều mục nghiên cứu cung cấp khoa học chứng cứ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["empirical"],
+  antonyms: ["unscientific"],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " khoa học ", "topic": " Học thuật "},
+  acceptCN: [" khoa học ", " khoa học tính "]
+},
+{
+  id: 77,
+  word: "spot",
+  ipa: "/spɒt/ · /spɑːt/",
+  pos: "n. / v.",
+  meaning: "dấu, đốm, vết; vết nhơ, vết đen",
+  mnemonic: " nguyên nghĩa ‘ chút:điểm ’, nghĩa rộng là một điểm nào đó vị trí hoặc nhìn ra một chút:điểm ",
+  root: " nguyên nghĩa ‘ chút:điểm ’, nghĩa rộng là một điểm nào đó vị trí hoặc nhìn ra một chút:điểm ",
+  collocations: [{"phrase": "on the spot", "meaning": " tại chỗ; tại hiện trường "}, {"phrase": "spot a mistake", "meaning": " Khám phá Sai "}, {"phrase": "a tourist spot", "meaning": " địa điểm du lịch "}],
+  phrases: "on the spot (tại chỗ; tại hiện trường), spot a mistake (Khám phá Sai), a tourist spot (địa điểm du lịch) ",
+  example: "The inspector spotted several safety problems in the laboratory. (kiểm tra thành viên tại phòng thí nghiệm phát hiện mấy chỗ vấn đề về an toàn.) ",
+  exampleEN: "The inspector spotted several safety problems in the laboratory.",
+  exampleCN: " kiểm tra thành viên tại phòng thí nghiệm phát hiện mấy chỗ vấn đề về an toàn. ",
+  exampleEn: "The inspector spotted several safety problems in the laboratory.",
+  exampleZh: " kiểm tra thành viên tại phòng thí nghiệm phát hiện mấy chỗ vấn đề về an toàn. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: ["place", "notice"],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " Khám phá ", "topic": " Học thuật "},
+  acceptCN: [" địa điểm ", " Khám phá ", " điểm lấm tấm "]
+}
+  ];
+  var TOTAL_QUESTIONS = 77;
+  var testResultsData = [];
+(function(){
+  const HISTORY_KEY = 'cet4_vocab_history_list3';
+
+  function esc(s){
+    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  }
+  function block(label, text){
+    if(!text) return '';
+    return '<div class="block"><b>'+label+'</b>'+esc(text)+'</div>';
+  }
+
+  let synth = window.speechSynthesis, voice = null;
+  function loadVoices(){
+    if(!synth) return;
+    const pick = () => {
+      const vs = synth.getVoices();
+      voice = vs.find(v => v.lang.startsWith('en-GB')) || vs.find(v => v.lang.startsWith('en')) || vs(0);
+    };
+    pick();
+    if(synth.onvoiceschanged!== undefined) synth.onvoiceschanged = pick;
+  }
+  function speakWord(word, cb){
+    if(!synth){ if(cb) cb(); return; }
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    if(voice) u.voice = voice;
+    u.lang = 'en-GB'; u.rate = 0.8;
+    if(cb){ u.onend = cb; u.onerror = () => cb(); }
+    synth.speak(u);
+  }
+  loadVoices();
+
+  const learnGrid = document.getElementById('learnGrid');
+  wordData.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'word-card';
+    card.innerHTML =
+      '<div class="word-head"><div><span class="word-headword">'+esc(w.word)+'</span> <span class="word-ipa">'+esc(w.ipa)+'</span></div>'+
+      '<button class="btn-play btn-play-card" data-word="'+esc(w.word)+'">▶</button></div>'+
+      '<div><span class="word-pos">'+esc(w.pos)+'</span><span>'+esc(w.meaning)+'</span></div>'+
+      '<div class="word-blocks">'+
+        block(' nhớ ', w.mnemonic || w.root)+
+        block(' khảo thi ', w.phrases || w.collocations)+
+        block(' lệ ', w.example)+
+        block(' phái ', w.derivatives)+
+        block(' phân biệt ', w.distinguish)+
+      '</div><div class="hint"> nhấn vào thu hồi </div>';
+    card.addEventListener('click', e => {
+      if(e.target.closest('.btn-play-card')) return;
+      const open = card.classList.contains('expanded');
+      document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
+      if(!open) card.classList.add('expanded');
+    });
+    card.querySelector('.btn-play-card').addEventListener('click', function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.btn-play.playing').forEach(b => b.classList.remove('playing'));
+      this.classList.add('playing');
+      speakWord(w.word, () => this.classList.remove('playing'));
+    });
+    learnGrid.appendChild(card);
+  });
+
+  const navTabs = document.getElementById('navTabs');
+  const learnSection = document.getElementById('learnSection');
+  const testSection = document.getElementById('testSection');
+  let currentMode = 'learn';
+  navTabs.addEventListener('click', e => {
+    const tab = e.target.closest('.nav-tab'); if(!tab) return;
+    const mode = tab.dataset.mode; if(mode === currentMode) return;
+    currentMode = mode;
+    navTabs.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t === tab));
+    learnSection.classList.toggle('active', mode === 'learn');
+    testSection.classList.toggle('active', mode === 'test');
+    if(mode === 'test'){ showTestSetup(); renderHistory(); }
+    if(synth) synth.cancel();
+  });
+
+  const testSetup = document.getElementById('testSetup');
+  const testActiveArea = document.getElementById('testActiveArea');
+  const testResults = document.getElementById('testResults');
+  const btnStartTest = document.getElementById('btnStartTest');
+  const btnPlayTest = document.getElementById('btnPlayTest');
+  const btnSubmit = document.getElementById('btnSubmit');
+  const btnNext = document.getElementById('btnNext');
+  const btnRetry = document.getElementById('btnRetry');
+  const btnBackToSetup = document.getElementById('btnBackToSetup');
+  const btnClearHistory = document.getElementById('btnClearHistory');
+  const inputSpelling = document.getElementById('inputSpelling');
+  const inputMeaning = document.getElementById('inputMeaning');
+  const testFeedback = document.getElementById('testFeedback');
+  const testProgressLabel = document.getElementById('testProgressLabel');
+  const testScoreLabel = document.getElementById('testScoreLabel');
+  const progressBarFill = document.getElementById('progressBarFill');
+  const resultsScore = document.getElementById('resultsScore');
+  const resultsDetail = document.getElementById('resultsDetail');
+  const resultsTableBody = document.getElementById('resultsTableBody');
+  const historyContent = document.getElementById('historyContent');
+
+  function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e){ return []; } }
+  function saveHistory(r){ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
+  function renderHistory(){
+    const h = getHistory();
+    if(!h.length){ historyContent.innerHTML = '<div style="color:#888;margin-top:8px"> tạm thời chưa có ghi chép </div>'; return; }
+    historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {
+      const t = new Date(r.timestamp);
+      return '<li>'+r.score+'/'+r.total+' ('+r.percent+'%) · '+t.toLocaleString()+'</li>';
+    }).join('')+'</ul>';
+  }
+  btnClearHistory.addEventListener('click', () => { if(confirm(' thanh trừ Lịch sử? ')){ localStorage.removeItem(HISTORY_KEY); renderHistory(); } });
+
+  let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
+  function shuffle(a){ const x=(...a); for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; } return x; }
+  function resetTestState(){
+    testSetup.style.display=''; testActiveArea.classList.remove('visible'); testResults.classList.remove('visible');
+    testFeedback.className='test-feedback'; testFeedback.textContent=''; btnNext.classList.remove('visible');
+    inputSpelling.value=''; inputMeaning.value=''; btnSubmit.disabled=false; btnSubmit.style.display='';
+  }
+  function showTestSetup(){ resetTestState(); }
+  btnStartTest.addEventListener('click', () => {
+    testWords = shuffle(wordData).slice(0, TOTAL_QUESTIONS);
+    testCurrentIndex=0; testScore=0; testResultsData=[]; testSubmitted=false;
+    testSetup.style.display='none'; testActiveArea.classList.add('visible'); testResults.classList.remove('visible');
+    updateProgress(); setTimeout(playCurrent, 300);
+  });
+  function updateProgress(){
+    testProgressLabel.textContent = ' thứ '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' câu ';
+    testScoreLabel.textContent = ' Điểm số: '+testScore;
+    progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
+  }
+  function playCurrent(){ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }
+  btnPlayTest.addEventListener('click', () => { if(!testSubmitted) playCurrent(); });
+
+  function cleanCN(s){ return String(s||'').replace(/[,,,.;;::!!?? () ()[]\[\]""''\s]/g,''); }
+  function submitAnswer(){
+    if(testSubmitted || testCurrentIndex>=testWords.length) return;
+    testSubmitted = true; btnSubmit.disabled = true;
+    const w = testWords(testCurrentIndex);
+    const userSpelling = inputSpelling.value.trim();
+    const userMeaningClean = cleanCN(inputMeaning.value);
+    const spellingOk = userSpelling.toLowerCase() === w.word.toLowerCase();
+    let meaningOk = false;
+    if(userMeaningClean){
+      for(const a of (w.acceptCN||[])){
+        const ac = cleanCN(a);
+        if(ac & (userMeaningClean.includes(ac) || ac.includes(userMeaningClean))){ meaningOk = true; break; }
+      }
+      if(!meaningOk){
+        const m = cleanCN(w.meaning);
+        if(m & (userMeaningClean.includes(m) || m.includes(userMeaningClean))) meaningOk = true;
+      }
+    }
+    const both = spellingOk & meaningOk;
+    const earned = both? 1: ((spellingOk || meaningOk)? 0.5: 0);
+    testScore += earned;
+    testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
+    testFeedback.innerHTML = (both?' hoàn toàn đúng ':(spellingOk||meaningOk?' bộ phận Đúng ':' nhìn lại một chút '))+
+      '<div style="margin-top:6px;font-size:.9rem"> Đáp án: '+esc(w.word)+' · '+esc(w.meaning)+'</div>';
+    testResultsData.push({
+      word: w.word, ipa: w.ipa || '', meaning: w.meaning,
+      userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
+      spellingCorrect: spellingOk, meaningCorrect: meaningOk, earned: earned
+    });
+    btnNext.classList.add('visible');
+  }
+  btnSubmit.addEventListener('click', submitAnswer);
+  inputMeaning.addEventListener('keydown', e => { if(e.key==='Enter') submitAnswer(); });
+  inputSpelling.addEventListener('keydown', e => { if(e.key==='Enter') inputMeaning.focus(); });
+
+  function nextQ(){
+    testCurrentIndex++; testSubmitted=false; btnSubmit.disabled=false; btnNext.classList.remove('visible');
+    testFeedback.className='test-feedback'; inputSpelling.value=''; inputMeaning.value='';
+    if(testCurrentIndex >= TOTAL_QUESTIONS){ finish(); return; }
+    updateProgress(); setTimeout(playCurrent, 250); inputSpelling.focus();
+  }
+  btnNext.addEventListener('click', nextQ);
+
+  function finish(){
+    testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
+    const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
+    resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
+    resultsDetail.textContent = ' Tỷ lệ đúng '+percent+'%';
+    resultsTableBody.innerHTML = testResultsData.map((r,i) => {
+      const ok = r.earned === 1;
+      const cls = ok? 'row-ok': 'row-wrong';
+      return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
+    }).join('');
+    saveHistory({ score:testScore, total:TOTAL_QUESTIONS, percent, timestamp:Date.now() });
+  }
+  btnRetry.addEventListener('click', () => btnStartTest.click());
+  btnBackToSetup.addEventListener('click', showTestSetup);
+
+  // URL mode from parent
+  try {
+    const m = new URLSearchParams(location.search).get('vocabMode') ||
+      (parent!== window? new URLSearchParams(parent.location.search).get('vocabMode'): null);
+    if(m === 'test'){
+      const tab = navTabs.querySelector('[data-mode="test"]');
+      if(tab) tab.click();
+    }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>

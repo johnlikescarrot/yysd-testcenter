@@ -12,7 +12,7 @@ from pathlib import Path
 import fitz
 from PIL import Image
 
-PDF = Path("/Users/frankman/Desktop/2024四级词汇2024版新东方绿宝书乱序.pdf")
+PDF = Path("/Users/frankman/Desktop/2024 Từ vựng Đại học Cốt lõi 2024 bản mới phương Đông lục sách quý loạn tự.pdf")
 OCR_BIN = Path("/tmp/ocr_vision")
 OUT_DIR = Path(__file__).resolve().parents[1] / "library" / "study" / "vocab-cet4-data" / "ocr"
 TMP = Path("/tmp/lvbaoshu_ocr")
@@ -132,7 +132,7 @@ def main(argv: list[str]) -> int:
         payload = {
             "listNo": n,
             "band": band_for(n),
-            "title": f"单元 {n}",
+            "title": f" Bài {n}",
             "words": words,
             "count": len(words),
         }

@@ -19,19 +19,45 @@
       "id": 401,
       "set": "W-BS41-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you meet the new student?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " haven't had the " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " haven't had the "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["yet", "introduce myself", "no,", "chance to", "I"],
-      "answer": ["no,", "I", "chance to", "introduce myself", "yet"]
+      "bank": [
+        "yet",
+        "introduce myself",
+        "no,",
+        "chance to",
+        "I"
+      ],
+      "answer": [
+        "no,",
+        "I",
+        "chance to",
+        "introduce myself",
+        "yet"
+      ]
     },
     {
       "type": "sentence",
@@ -39,18 +65,42 @@
       "id": 402,
       "set": "W-BS41-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm planning a party for some of the computer science majors.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["else", "you", "have", "invited", "who"],
-      "answer": ["who", "else", "have", "you", "invited"]
+      "bank": [
+        "else",
+        "you",
+        "have",
+        "invited",
+        "who"
+      ],
+      "answer": [
+        "who",
+        "else",
+        "have",
+        "you",
+        "invited"
+      ]
     },
     {
       "type": "sentence",
@@ -58,20 +108,50 @@
       "id": 403,
       "set": "W-BS41-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why did he request additional feedback on his research paper?",
       "parts": [
-        { "t": "He wanted " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "He wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["to know", "resolved before", "be", "what issues", "proceeding", "needed to"],
-      "answer": ["to know", "what issues", "needed to", "be", "resolved before", "proceeding"]
+      "bank": [
+        "to know",
+        "resolved before",
+        "be",
+        "what issues",
+        "proceeding",
+        "needed to"
+      ],
+      "answer": [
+        "to know",
+        "what issues",
+        "needed to",
+        "be",
+        "resolved before",
+        "proceeding"
+      ]
     },
     {
       "type": "sentence",
@@ -79,18 +159,38 @@
       "id": 404,
       "set": "W-BS41-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you see Emily at the class event yesterday?",
       "parts": [
-        { "slot": true },
-        { "t": ", " },
-        { "slot": true },
-        { "t": " able " },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "t": ", "
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " able "
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["she wasn't", "no", "to make it"],
-      "answer": ["no", "she wasn't", "to make it"]
+      "bank": [
+        "she wasn't",
+        "no",
+        "to make it"
+      ],
+      "answer": [
+        "no",
+        "she wasn't",
+        "to make it"
+      ]
     },
     {
       "type": "sentence",
@@ -98,19 +198,47 @@
       "id": 405,
       "set": "W-BS41-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I've enrolled in a dance class for this semester.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " learning?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " learning?"
+        }
       ],
-      "bank": ["of", "dance", "what style", "will", "you", "be"],
-      "answer": ["what style", "of", "dance", "will", "you", "be"]
+      "bank": [
+        "of",
+        "dance",
+        "what style",
+        "will",
+        "you",
+        "be"
+      ],
+      "answer": [
+        "what style",
+        "of",
+        "dance",
+        "will",
+        "you",
+        "be"
+      ]
     },
     {
       "type": "sentence",
@@ -118,18 +246,42 @@
       "id": 406,
       "set": "W-BS41-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm going to finish studying for this exam tomorrow.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " material?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " material?"
+        }
       ],
-      "bank": ["need", "any help", "you", "with the", "do"],
-      "answer": ["do", "you", "need", "any help", "with the"]
+      "bank": [
+        "need",
+        "any help",
+        "you",
+        "with the",
+        "do"
+      ],
+      "answer": [
+        "do",
+        "you",
+        "need",
+        "any help",
+        "with the"
+      ]
     },
     {
       "type": "sentence",
@@ -137,18 +289,42 @@
       "id": 407,
       "set": "W-BS41-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you participate in the linguistics competition?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["didn't", "enough", "feel", "prepared", "I"],
-      "answer": ["I", "didn't", "feel", "prepared", "enough"]
+      "bank": [
+        "didn't",
+        "enough",
+        "feel",
+        "prepared",
+        "I"
+      ],
+      "answer": [
+        "I",
+        "didn't",
+        "feel",
+        "prepared",
+        "enough"
+      ]
     },
     {
       "type": "sentence",
@@ -156,20 +332,52 @@
       "id": 408,
       "set": "W-BS41-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "When did the professor say the assignment is due?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["needs to", "she mentioned", "the week", "that it", "by the", "be submitted", "end of"],
-      "answer": ["she mentioned", "that it", "needs to", "be submitted", "by the", "end of", "the week"]
+      "bank": [
+        "needs to",
+        "she mentioned",
+        "the week",
+        "that it",
+        "by the",
+        "be submitted",
+        "end of"
+      ],
+      "answer": [
+        "she mentioned",
+        "that it",
+        "needs to",
+        "be submitted",
+        "by the",
+        "end of",
+        "the week"
+      ]
     },
     {
       "type": "sentence",
@@ -177,19 +385,47 @@
       "id": 409,
       "set": "W-BS41-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you join us for the science club meeting?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " time." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " time."
+        }
       ],
-      "bank": ["another", "same", "at", "appointment", "I had", "the"],
-      "answer": ["I had", "another", "appointment", "at", "the", "same"]
+      "bank": [
+        "another",
+        "same",
+        "at",
+        "appointment",
+        "I had",
+        "the"
+      ],
+      "answer": [
+        "I had",
+        "another",
+        "appointment",
+        "at",
+        "the",
+        "same"
+      ]
     },
     {
       "type": "sentence",
@@ -197,17 +433,37 @@
       "id": 410,
       "set": "W-BS41-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm planning to join the cooking class next month.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " yet?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " yet?"
+        }
       ],
-      "bank": ["signed", "have", "up", "you"],
-      "answer": ["have", "you", "signed", "up"]
+      "bank": [
+        "signed",
+        "have",
+        "up",
+        "you"
+      ],
+      "answer": [
+        "have",
+        "you",
+        "signed",
+        "up"
+      ]
     }
   ]
 }

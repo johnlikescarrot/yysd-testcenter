@@ -16,9 +16,9 @@
       "type": "complete_words",
       "module": 1,
       "title": "Mushrooms",
-      "titleZh": "蘑菇",
+      "titleZh": "cây nấm",
       "instruction": "Fill in the missing letters in the paragraph.",
-      "translation": "蘑菇由两个主要部分组成：菌丝体和子实体。菌丝体寿命很长，而子实体只有在适合繁殖的条件下（例如雨后）才会出现。菌丝体通常位于地下，由线状结构网络组成，可以从土壤中吸收养分。子实体位于地面以上，负责产生和传播孢子。这些孢子被释放到空气中以帮助蘑菇繁殖。",
+      "translation": "cây nấm do hai cái bộ phận chủ yếu tạo thành: sợi nấm chân khuẩn thể và hạt thể. sợi nấm chân khuẩn thể tuổi thọ rất dài, mà hạt thể chỉ có tại thích hợp sinh sôi nẩy nở dưới điều kiện (tỷ như sau cơn mưa) mới phải xuất hiện. sợi nấm chân khuẩn thể bình thường ở vào dưới mặt đất, do hình đường thẳng kết cấu mạng lưới *internet tạo thành, có thể từ trong đất hấp thu chất dinh dưỡng. hạt tư thế cơ thể đầy đất mặt trở lên, chịu trách nhiệm sinh ra và truyền bá bào tử. những mục này bào tử được phóng thích đến trong không khí để giúp cây nấm sinh sôi nẩy nở.",
       "passage": [
         {
           "t": "Mushrooms are made up of two main parts: the mycelium and the fruiting body. The mycelium "
@@ -119,7 +119,7 @@
       "type": "daily_life",
       "module": 1,
       "title": "Gym Rules",
-      "titleZh": "健身房守则",
+      "titleZh": "phòng tập thể thao quy tắc",
       "instruction": "Read a sign.",
       "layout": {
         "kind": "card",
@@ -138,7 +138,7 @@
             "D": "A hospital"
           },
           "answer": "C",
-          "analysis": "标牌包含会员卡、器械、团体课、locker room 和 cardio machine 等健身中心规则。"
+          "analysis": "nhãn hiệu bao hàm thẻ hội viên, khí giới, đoàn thể khóa, locker room và cardio machine {các loại:đợi} tập thể hình trung tâm quy tắc."
         },
         {
           "id": 2,
@@ -150,7 +150,7 @@
             "D": "People who arrive the earliest"
           },
           "answer": "D",
-          "analysis": "Lockers are available on a first-come, first-served basis，最早到的人最可能拿到储物柜。"
+          "analysis": "Lockers are available on a first-come, first-served basis, sớm nhất đến người khả năng nhất bắt được tủ chứa đồ."
         }
       ]
     },
@@ -158,9 +158,9 @@
       "type": "academic",
       "module": 1,
       "title": "Expert Systems",
-      "titleZh": "专家系统",
+      "titleZh": "chuyên gia hệ thống",
       "instruction": "Read the passage.",
-      "translation": "专家系统是人工智能的一个分支，旨在模仿人类专家的决策能力。这些系统利用专门信息和规则组成的知识库来解决特定问题，目标是复制医学和工程等领域专业人员的专长与推理。早期专家系统 MYCIN 于 1970 年代开发，用于诊断细菌感染并推荐抗生素。它使用医学专家提供的规则分析患者数据、推断诊断并建议治疗，表现常与人类专家相当；但系统需要不断更新，依赖大量专业人员输入。专家系统也有局限：依赖静态知识库，若没有人类专家持续输入就会过时，更新过程劳动强度大。机器学习与自然语言处理有望让系统从新数据中学习并自行适应。",
+      "translation": "chuyên gia hệ thống là người công trí năng một cái chi nhánh, chỉ tại bắt chước Nhân loại chuyên gia quyết định biện pháp năng lực. những mục này hệ thống lợi dụng chuyên môn tin tức và quy tắc tạo thành tri thức căn bản đến giải quyết đặc biệt vấn đề, mục tiêu là phục chế y học và công trình {các loại:đợi} lĩnh vực nhân viên chuyên nghiệp sở trường và suy luận. lúc đầu chuyên gia hệ thống MYCIN tại năm 1970 thay khai phát, dùng cho chẩn đoán năng lực vi khuẩn bị nhiễm cũng Đề xuất chất kháng sinh. nó sử dụng chuyên gia y học cung cấp quy tắc phân tích người bệnh số liệu, suy đoán chẩn đoán năng lực cũng đề nghị trị liệu, biểu hiện thường cùng nhân loại chuyên gia tương đối; nhưng hệ thống cần không ngừng đổi mới, ỷ lại đại lượng nhân viên chuyên nghiệp đưa vào. chuyên gia hệ thống cũng có cực hạn: ỷ lại trạng thái tĩnh tri thức căn bản, nếu không có Nhân loại chuyên gia tiếp tục đưa vào sẽ quá hạn, đổi mới quá trình cường độ lao động đại. máy móc Học tập và tự nhiên ngôn ngữ xử lý có hi vọng lại để cho hệ thống lại lần nữa số liệu trung học tập cũng tự hành thích ứng.",
       "paras": [
         "Expert systems are a branch of artificial intelligence designed to mimic the decision-making abilities of human experts. These systems use a knowledge base of specialized information and rules to solve specific problems. Their goal is to replicate the expertise and reasoning of professionals in fields like medicine and engineering.",
         "An early expert system is MYCIN, developed in the 1970s to diagnose bacterial infections and recommend antibiotics. MYCIN used rules provided by medical experts to analyze patient data, infer diagnoses, and suggest treatments. MYCIN often performed as well as human specialists; however, MYCIN's system needed constant updates, requiring extensive input from medical professionals.",
@@ -177,7 +177,7 @@
             "D": "challenge"
           },
           "answer": "C",
-          "analysis": "系统旨在复制人类专家的专业知识和推理，mimic 即 imitate（模仿）。"
+          "analysis": "hệ thống chỉ tại phục chế Nhân loại chuyên gia kiến thức chuyên nghiệp và suy luận, mimic tiếp xúc imitate (bắt chước)."
         },
         {
           "id": 2,
@@ -213,7 +213,7 @@
             "D": "To show that medicine no longer needs human experts"
           },
           "answer": "C",
-          "analysis": "Advancements in ML and NLP could address these issues，使系统从新数据中学习。"
+          "analysis": "Advancements in ML and NLP could address these issues, khiến cho hệ thống lại lần nữa số liệu trung học tập."
         },
         {
           "id": 5,

@@ -1,46 +1,46 @@
 {
- "id": "free-13302",
- "title": "Choose a Response #262",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #262",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13302,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-262"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #262",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/e8fce7fea6e44497addd6adbbf0e530d.mp3",
-   "questions": [
+  "id": "free-13302",
+  "title": "Choose a Response #262",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #262",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13302,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-262"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "It's on modern technology.",
-      "B": "Because students requested it.",
-      "C": "It's part of the lecture series.",
-      "D": "A visiting researcher."
-     },
-     "answer": "D",
-     "transcript": "Who is the guest lecturer today?",
-     "stemZh": "",
-     "analysis": "Who is the guest lecturer today? 题干分析 本题是 Who 引导的特殊疑问句，句意是 “今天的客座讲师是谁？”，核心考点是询问人物身份，需要选出能直接回应人物身份、匹配问答逻辑的选项。 选项分析 选项 A：讲述讲座的内容主题，回应的是讲座话题，没有回答讲师是谁，答非所问，予以排除。 选项 B：说明举办讲座的缘由，回答的是原因，和询问讲师身份无关，话题错位，予以排除。 选项 C：介绍讲座属于系列活动之一，只是说明活动性质安排，没有回应人物问题，予以排除。 选项 D：直接点明客座讲师的身份，精准回应问句询问人物的核心诉求，逻辑契合，是正确选项。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #262",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/e8fce7fea6e44497addd6adbbf0e530d.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "It's on modern technology.",
+            "B": "Because students requested it.",
+            "C": "It's part of the lecture series.",
+            "D": "A visiting researcher."
+          },
+          "answer": "D",
+          "transcript": "Who is the guest lecturer today?",
+          "stemZh": "",
+          "analysis": "Who is the guest lecturer today? Câu hỏi phân tích chủ đề là Who dẫn dắt đặc thù câu nghi vấn, câu ý là “ hôm nay ghế khách giảng sư là ai? ”, hạch tâm địa điểm thi là hỏi thăm nhân vật Vai trò, cần tuyển ra có thể trực tiếp đáp lại nhân vật Vai trò, xứng đôi vấn đáp suy luận Phương án. Phương án phân tích Phương án A: giảng thuật toạ đàm nội dung chủ đề, đáp lại là toạ đàm chủ đề, không có trả lời giảng sư là ai, đáp phi sở vấn, giúp cho bài trừ. Phương án B: nói rõ tổ chức toạ đàm nguyên do, trả lời là nguyên nhân, và hỏi thăm giảng sư Vai trò không quan hệ, chủ đề sai chỗ, giúp cho bài trừ. Phương án C: giới thiệu toạ đàm thuộc về hàng loạt một trong hoạt động, chỉ nói là rõ ràng hoạt động tính chất an bài, không có trả lời nhân vật vấn đề, giúp cho bài trừ. Phương án D: trực tiếp một chút rõ ràng ghế khách giảng sư Vai trò, tinh chuẩn đáp lại câu hỏi hỏi thăm nhân vật hạch tâm tố cầu, ăn khớp phù hợp, là Đúng Phương án."
+        }
+      ]
+    }
+  ]
 }

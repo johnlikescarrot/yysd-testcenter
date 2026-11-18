@@ -1,57 +1,57 @@
 {
- "id": "free-13016",
- "title": "Conversation #38",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #38",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13016,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-38"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #38",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/03853d53e17a4b638a415c37a358b702.mp3",
-   "transcript": "Man: Are you going to the book club meeting tonight?\nWoman: I haven't finished the book yet.\nMan: That's OK! And yeah, Jake Homgren's novels can be a slog sometimes. But the philosophical insights in them are fascinating.\nWoman: Maybe if I hear other club members’ perspectives, it'll help me follow the book better and make the reading go faster.\nMan: This was exactly my experience when we discussed Chen Wang's poems last week.",
-   "questions": [
+  "id": "free-13016",
+  "title": "Conversation #38",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #38",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13016,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-38"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What do the speakers imply about the book that will be discussed tonight?",
-     "options": {
-      "A": "It provides diverse perspectives.",
-      "B": "It is less philosophical than its author's other books.",
-      "C": "It is very popular among book club members.",
-      "D": "It is difficult to understand."
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问说话者暗示今晚要讨论的书有什么特点，属于推断题，需抓住对话中对书籍的评价。 选项分析 选项 A：错误。文中说的是听成员的不同观点，并非书本身提供多样视角，属于细节曲解。 选项 B：错误。对话未将本书与作者其他书做哲学性对比，属于无中生有。 选项 C：错误。对话未提及这本书在读书俱乐部很受欢迎，属于凭空捏造。 选项 D：正确。男士说这本书can be a slog（很难读、费劲），女士也说听完讨论才能更好理解，说明书难以理解。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the man say about Chen Wang's poems?",
-     "options": {
-      "A": "They are similar to novels in some ways.",
-      "B": "They lack philosophical insights.",
-      "C": "He could read them more quickly after a book club discussion.",
-      "D": "A book of them took him a week to read."
-     },
-     "answer": "C",
-     "analysis": "题干分析 问题询问男士如何评价陈望的诗，属于细节题，需定位男士关于诗歌讨论的关键信息。 选项分析 选项 A：错误。男士未说诗歌与小说有相似之处，属于无中生有。 选项 B：错误。对话未提及诗歌缺乏哲学内涵，属于凭空捏造。 选项 C：正确。男士说上周讨论诗歌时他也是如此，对应女士 “听了讨论更好理解、读得更快”，说明讨论后他能读得更快。 选项 D：错误。男士只说上周讨论，并未说花一周读完，属于细节错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #38",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/03853d53e17a4b638a415c37a358b702.mp3",
+      "transcript": "Man: Are you going to the book club meeting tonight?\nWoman: I haven't finished the book yet.\nMan: That's OK! And yeah, Jake Homgren's novels can be a slog sometimes. But the philosophical insights in them are fascinating.\nWoman: Maybe if I hear other club members’ perspectives, it'll help me follow the book better and make the reading go faster.\nMan: This was exactly my experience when we discussed Chen Wang's poems last week.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What do the speakers imply about the book that will be discussed tonight?",
+          "options": {
+            "A": "It provides diverse perspectives.",
+            "B": "It is less philosophical than its author's other books.",
+            "C": "It is very popular among book club members.",
+            "D": "It is difficult to understand."
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm kẻ nói chuyện ám chỉ đêm nay muốn thảo luận sách có cái gì đặc điểm, thuộc về suy đoán câu, cần bắt lấy trong lúc nói chuyện với nhau đối với sách đánh giá. Phương án phân tích Phương án A: Sai. văn trung nói rất đúng nghe thành viên bất đồng quan điểm, cũng không phải là sách vở thân cung cấp đa dạng thị giác, thuộc về chi tiết xuyên tạc. Phương án B: Sai. đối thoại không đem quyển sách và tác giả sách khác làm triết học tính đối lập, thuộc về bịa đặt. Phương án C: Sai. đối thoại Không được đề cập (Not Given) quyển sách này đang đi học câu lạc bộ rất được hoan nghênh, thuộc về lăng không bịa đặt. Phương án D: Đúng. nam sĩ nói quyển sách này can be a slog (rất khó đọc, tốn sức), phu nhân cũng nói nghe xong thảo luận mới có thể rất tốt lý giải, bản thuyết minh khó hiểu."
+        },
+        {
+          "id": 2,
+          "stem": "What does the man say about Chen Wang's poems?",
+          "options": {
+            "A": "They are similar to novels in some ways.",
+            "B": "They lack philosophical insights.",
+            "C": "He could read them more quickly after a book club discussion.",
+            "D": "A book of them took him a week to read."
+          },
+          "answer": "C",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm nam sĩ đánh giá như thế nào trần trông thơ, thuộc về chi tiết câu, cần Dẫn chứng nam sĩ về thơ ca thảo luận mấu chốt tin tức. Phương án phân tích Phương án A: Sai. nam sĩ không thơ ca và tiểu thuyết có chỗ tương tự, thuộc về bịa đặt. Phương án B: Sai. đối thoại Không được đề cập (Not Given) thơ ca khuyết thiếu triết học nội hàm, thuộc về lăng không bịa đặt. Phương án C: Đúng. nam sĩ nói lên chu thảo luận thơ ca lúc anh ấy cũng là như thế, đối ứng phu nhân “ nghe xong thảo luận rất tốt lý giải, đọc được nhanh hơn ”, nói rõ thảo luận sau anh ấy có thể đọc được nhanh hơn. Phương án D: Sai. nam sĩ chỉ nói đầu tuần thảo luận, cũng không nói hao phí một vòng đọc xong, thuộc về chi tiết Sai."
+        }
+      ]
+    }
+  ]
 }

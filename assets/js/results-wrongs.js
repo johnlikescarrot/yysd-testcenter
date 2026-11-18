@@ -1,5 +1,5 @@
 /* =========================================================================
-   results-wrongs.js — 我的成绩 · 错题行动区
+   results-wrongs.js — Kết quả của tôi · câu sai hành động khu
    ========================================================================= */
 (function () {
   "use strict";
@@ -7,7 +7,7 @@
   var Y = window.YYSD;
   var AUTH = window.YYSD_AUTH;
   var root = document.getElementById("results-wrongs");
-  if (!root || !Y) return;
+  if (!root ||!Y) return;
 
   var FILTER_KEY = "yysd:wrongs-filter";
   var qs = new URLSearchParams(location.search);
@@ -24,7 +24,7 @@
   var activePanel = "listening";
 
   function esc(s) {
-    return Y.esc ? Y.esc(s) : String(s == null ? "" : s)
+    return Y.esc? Y.esc(s): String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
@@ -75,11 +75,11 @@
     if (!isLR(a.subject)) return "";
     if (a.cdt) {
       var k = "cdt|" + suiteBase(a.id) + "|" + (a.assignmentEventId || "") + "|" + String(a.date || "").slice(0, 10);
-      return keys[k] ? k : "";
+      return keys[k]? k: "";
     }
     if (!a.assignmentEventId) return "";
     var k2 = "ev|" + a.assignmentEventId + "|" + suiteBase(a.id);
-    return keys[k2] ? k2 : "";
+    return keys[k2]? k2: "";
   }
 
   function localAttempts() {
@@ -97,8 +97,8 @@
         band: r.band,
         date: r.date,
         assignmentEventId: r.assignmentEventId || null,
-        cdt: !!r.cdt,
-        wrong: Array.isArray(r.wrong) ? r.wrong : [],
+        cdt:!!r.cdt,
+        wrong: Array.isArray(r.wrong)? r.wrong: [],
         _local: true
       };
     }).filter(function (a) {
@@ -130,7 +130,7 @@
         mockMap[mk].wrongN += wrongCount(a);
         if (!mockMap[mk].date || String(a.date) > String(mockMap[mk].date)) mockMap[mk].date = a.date;
         var base = suiteBase(a.id);
-        mockMap[mk].title = (a.title || base).replace(/（听力）|（阅读）|（写作）/g, "").trim() || base;
+        mockMap[mk].title = (a.title || base).replace(/ (Nghe) | (Đọc) | (Viết) /g, "").trim() || base;
         return;
       }
       if (a.subject === "cambridge-listening") listening.push(a);
@@ -161,10 +161,10 @@
       '<span class="wrong-hub-row__main">' +
         "<b>" + esc(a.title || a.id) + "</b>" +
         '<span class="wrong-hub-row__meta">' + esc(fmtDate(a.date)) +
-          (a.assignmentEventId ? " · 作业" : "") +
+          (a.assignmentEventId? " · bài tập ": "") +
         "</span>" +
       "</span>" +
-      '<span class="wrong-hub-row__stat">错 ' + n + " 题</span>" +
+      '<span class="wrong-hub-row__stat"> sai ' + n + " câu </span>" +
       '<span class="wrong-hub-row__go" aria-hidden="true">›</span>' +
     "</a>";
   }
@@ -172,13 +172,13 @@
   function mockRowHTML(g) {
     return '<a class="wrong-hub-row" href="' + esc(mockHref(g)) + '">' +
       '<span class="wrong-hub-row__main">' +
-        "<b>" + esc(g.title || "雅思模考") + "</b>" +
+        "<b>" + esc(g.title || " IELTS Thi thử ") + "</b>" +
         '<span class="wrong-hub-row__meta">' + esc(fmtDate(g.date)) +
-          (g.assignmentEventId ? " · 作业" : "") +
-          " · 听+读" +
+          (g.assignmentEventId? " · bài tập ": "") +
+          " · nghe + đọc " +
         "</span>" +
       "</span>" +
-      '<span class="wrong-hub-row__stat">错 ' + g.wrongN + " 题</span>" +
+      '<span class="wrong-hub-row__stat"> sai ' + g.wrongN + " câu </span>" +
       '<span class="wrong-hub-row__go" aria-hidden="true">›</span>' +
     "</a>";
   }
@@ -196,7 +196,7 @@
       { k: "reading", n: b.reading.length },
       { k: "mock", n: b.mock.length }
     ].sort(function (a, c) { return c.n - a.n; });
-    return scores[0].n > 0 ? scores[0].k : "listening";
+    return scores[0].n > 0? scores[0].k: "listening";
   }
 
   function setTabBadge(total) {
@@ -204,7 +204,7 @@
     if (!badge) return;
     if (total > 0) {
       badge.hidden = false;
-      badge.textContent = String(total > 99 ? "99+" : total);
+      badge.textContent = String(total > 99? "99+": total);
     } else {
       badge.hidden = true;
     }
@@ -216,19 +216,19 @@
     var changed = false;
     var latestByItem = {};
     attempts.forEach(function (a) {
-      if (!a || !a.id || wrongCount(a) <= 0) return;
+      if (!a ||!a.id || wrongCount(a) <= 0) return;
       var prev = latestByItem[a.id];
       if (!prev || String(a.date || "") > String(prev.date || "")) latestByItem[a.id] = a;
     });
     Object.keys(latestByItem).forEach(function (id) {
       var a = latestByItem[id];
       var cur = store[id] || { id: id, title: a.title, subject: a.subject, zone: a.zone };
-      if (!cur.wrong || !cur.wrong.length) {
+      if (!cur.wrong ||!cur.wrong.length) {
         cur.wrong = a.wrong;
         changed = true;
       }
-      if (a.cdt && !cur.cdt) { cur.cdt = true; changed = true; }
-      if (a.assignmentEventId && !cur.assignmentEventId) {
+      if (a.cdt &&!cur.cdt) { cur.cdt = true; changed = true; }
+      if (a.assignmentEventId &&!cur.assignmentEventId) {
         cur.assignmentEventId = a.assignmentEventId;
         changed = true;
       }
@@ -245,35 +245,35 @@
     if (!area) return;
     area.querySelectorAll(".results-row[data-item-id]").forEach(function (row) {
       var id = row.getAttribute("data-item-id");
-      if (!id || !latestByItem[id]) return;
+      if (!id ||!latestByItem[id]) return;
       var disabled = row.querySelector("[data-wrong-disabled]");
       if (!disabled) return;
       var a = document.createElement("a");
       a.className = "btn btn--ghost btn--sm";
       a.setAttribute("data-wrong-link", "");
       a.href = "wrong-record.html?item=" + encodeURIComponent(id);
-      a.textContent = "错题";
+      a.textContent = " câu sai ";
       disabled.replaceWith(a);
     });
   }
 
   function panelListHTML(key, b, empty) {
     var cta = '<p class="wrong-hub-empty">' + esc(empty) +
-      ' <a href="zone.html?zone=mock">去练一套</a></p>';
+      ' <a href="zone.html?zone=mock"> đi luyện một bộ </a></p>';
     if (key === "listening") {
-      return b.listening.length ? b.listening.map(rowHTML).join("") : cta;
+      return b.listening.length? b.listening.map(rowHTML).join(""): cta;
     }
     if (key === "reading") {
-      return b.reading.length ? b.reading.map(rowHTML).join("") : cta;
+      return b.reading.length? b.reading.map(rowHTML).join(""): cta;
     }
-    return b.mock.length ? b.mock.map(mockRowHTML).join("") : cta;
+    return b.mock.length? b.mock.map(mockRowHTML).join(""): cta;
   }
 
   function bindUI(b, empty) {
     root.querySelectorAll("[data-seg]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         assignmentOnly = btn.getAttribute("data-seg") === "hw";
-        try { sessionStorage.setItem(FILTER_KEY, assignmentOnly ? "hw" : "all"); } catch (e) {}
+        try { sessionStorage.setItem(FILTER_KEY, assignmentOnly? "hw": "all"); } catch (e) {}
         load();
       });
     });
@@ -297,12 +297,12 @@
     }
     var forEnrich = attempts.slice();
     var filtered = assignmentOnly
-      ? attempts.filter(function (a) { return !!a.assignmentEventId; })
+      ? attempts.filter(function (a) { return!!a.assignmentEventId; })
       : attempts;
     var b = bucket(filtered);
-    var emptyHw = "还没有作业错题。完成老师布置的听力/阅读后会出现在这里。";
-    var emptyAll = "还没有练习错题记录。交卷后错题会自动收录。";
-    var empty = assignmentOnly ? emptyHw : emptyAll;
+    var emptyHw = " còn không có bài tập câu sai. hoàn thành Giáo viên bố trí Nghe / Đọc sau sẽ xuất hiện ở chỗ này. ";
+    var emptyAll = " còn không có Luyện tập sai lời tựa lục. Nộp bài sau câu sai sẽ tự động thu nhận sử dụng. ";
+    var empty = assignmentOnly? emptyHw: emptyAll;
 
     var lN = totalWrongItems(b.listening, false);
     var rN = totalWrongItems(b.reading, false);
@@ -313,24 +313,24 @@
     activePanel = pickDefaultPanel(b);
 
     root.innerHTML =
-      '<div class="wrong-hub results-panel premium-enter" aria-label="错题记录">' +
+      '<div class="wrong-hub results-panel premium-enter" aria-label=" sai lời tựa lục ">' +
         '<div class="wrong-hub__head">' +
           "<div>" +
             '<span class="wrong-hub__eyebrow">WRONG ANSWERS</span>' +
-            "<h2>错题记录</h2>" +
+            "<h2> sai lời tựa lục </h2>" +
           "</div>" +
-          '<div class="results-seg" role="group" aria-label="错题范围">' +
-            '<button type="button" class="results-seg__btn' + (assignmentOnly ? " is-active" : "") + '" data-seg="hw">作业</button>' +
-            '<button type="button" class="results-seg__btn' + (!assignmentOnly ? " is-active" : "") + '" data-seg="all">全部</button>' +
+          '<div class="results-seg" role="group" aria-label=" câu sai phạm vi ">' +
+            '<button type="button" class="results-seg__btn' + (assignmentOnly? " is-active": "") + '" data-seg="hw"> bài tập </button>' +
+            '<button type="button" class="results-seg__btn' + (!assignmentOnly? " is-active": "") + '" data-seg="all"> Tất cả </button>' +
           "</div>" +
         "</div>" +
         '<div class="wrong-stats">' +
-          '<button type="button" class="wrong-stat' + (activePanel === "listening" ? " is-active" : "") + '" data-panel="listening">' +
-            "<b>" + lN + "</b><span>听力</span></button>" +
-          '<button type="button" class="wrong-stat' + (activePanel === "reading" ? " is-active" : "") + '" data-panel="reading">' +
-            "<b>" + rN + "</b><span>阅读</span></button>" +
-          '<button type="button" class="wrong-stat' + (activePanel === "mock" ? " is-active" : "") + '" data-panel="mock">' +
-            "<b>" + mN + "</b><span>模考</span></button>" +
+          '<button type="button" class="wrong-stat' + (activePanel === "listening"? " is-active": "") + '" data-panel="listening">' +
+            "<b>" + lN + "</b><span> Nghe </span></button>" +
+          '<button type="button" class="wrong-stat' + (activePanel === "reading"? " is-active": "") + '" data-panel="reading">' +
+            "<b>" + rN + "</b><span> Đọc </span></button>" +
+          '<button type="button" class="wrong-stat' + (activePanel === "mock"? " is-active": "") + '" data-panel="mock">' +
+            "<b>" + mN + "</b><span> Thi thử </span></button>" +
         "</div>" +
         '<div class="wrong-hub-list" data-panel-body>' + panelListHTML(activePanel, b, empty) + "</div>" +
       "</div>";
@@ -341,7 +341,7 @@
   }
 
   function load() {
-    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>加载错题记录…</div>';
+    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div> thêm năm sai lời tựa lục …</div>';
     var local = localAttempts();
     var p = AUTH && AUTH.fetchScoreAttempts
       ? AUTH.fetchScoreAttempts({ assignmentOnly: false, limit: 150 })
@@ -351,7 +351,7 @@
       var byKey = {};
       cloud.forEach(function (a) {
         if (wrongCount(a) <= 0) return;
-        var k = (a.attemptId != null ? "a:" + a.attemptId : "i:" + a.id + ":" + a.date);
+        var k = (a.attemptId!= null? "a:" + a.attemptId: "i:" + a.id + ":" + a.date);
         byKey[k] = a;
       });
       local.forEach(function (a) {

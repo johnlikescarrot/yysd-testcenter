@@ -10,24 +10,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_listening_taxonomy import (  # noqa: E402
+from build_listening_taxonomy import (# noqa: E402
     dump_preview,
     find_header,
     load_workbook,
     map_row,
     unique_keep_order,
 )
-from verify_cambridge_mock_pages import load_test  # noqa: E402
+from verify_cambridge_mock_pages import load_test # noqa: E402
 
-TYPE_XLSX = Path("/Users/frankman/Desktop/雅思阅读题目分类.xlsx")
-SCENE_XLSX = Path("/Users/frankman/Desktop/雅思阅读场景分类.xlsx")
+TYPE_XLSX = Path("/Users/frankman/Desktop/ IELTS Reading đề mục phân loại.xlsx")
+SCENE_XLSX = Path("/Users/frankman/Desktop/ IELTS Reading tình cảnh phân loại.xlsx")
 OUT = ROOT / "library" / "reading-taxonomy.json"
 READ_DIR = ROOT / "library" / "mock" / "cambridge-reading"
 
-TYPE_ORDER = ["总结题", "判断题", "单选题", "多选题", "段落匹配题", "细节匹配题", "填空题", "选段意题"]
+TYPE_ORDER = [" tổng kết câu ", " Đúng / Sai / Không đề cập ", " Chọn một đáp án ", " Chọn nhiều đáp án ", " đoạn xứng đôi câu ", " chi tiết xứng đôi câu ", " Điền vào chỗ trống ", " chọn đoạn ý câu "]
 SCENE_ORDER = [
-    "历史发展", "自然科技", "社会人文", "生态环保",
-    "语言教育", "生物研究", "财经商业", "医疗健康",
+    " Lịch sử phát triển ", " tự nhiên Công nghệ ", " xã hội nhân văn ", " sinh thái bảo vệ môi trường ",
+    " ngôn ngữ Giáo dục ", " Sinh học nghiên cứu ", " tài chính và kinh tế Kinh doanh ", " chữa bệnh Sức khỏe ",
 ]
 
 
@@ -136,7 +136,7 @@ def main() -> None:
             "part": part,
             "qFrom": q_from,
             "qTo": q_to,
-            "qType": rec["qType"] or rec.get("_sheet") or "填空题",
+            "qType": rec["qType"] or rec.get("_sheet") or " Điền vào chỗ trống ",
             "scene": rec["scene"],
             "diff": rec["diff"],
         })
@@ -184,7 +184,7 @@ def main() -> None:
     payload = {
         "types": types,
         "scenes": scenes,
-        "diffs": ["易", "中", "难"],
+        "diffs": [" Dễ ", " Vừa ", " Khó "],
         "groups": groups,
         "parts": parts,
     }
@@ -200,8 +200,8 @@ def main() -> None:
     assert groups[0]["id"].startswith("cambridge-") and "-reading-p" in groups[0]["id"]
     assert "-q" in groups[0]["id"]
     assert parts[0]["id"].endswith("-p" + str(parts[0]["part"])) or "-reading-p" in parts[0]["id"]
-    assert "判断题" in types or "填空题" in types
-    assert "社会人文" in scenes or scenes
+    assert " Đúng / Sai / Không đề cập " in types or " Điền vào chỗ trống " in types
+    assert " xã hội nhân văn " in scenes or scenes
 
 
 if __name__ == "__main__":

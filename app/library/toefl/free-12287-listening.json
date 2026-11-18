@@ -1,46 +1,46 @@
 {
- "id": "free-12287",
- "title": "Choose a Response #45",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #45",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12287,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-45"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #45",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/5aa190f5300241aeb0a16be53840d2e0.mp3",
-   "questions": [
+  "id": "free-12287",
+  "title": "Choose a Response #45",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #45",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12287,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-45"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Why don't you turn down the heat then?​​",
-      "B": "He went over there an hour ago.",
-      "C": "Yes, and the humidity level is unbelievable.",
-      "D": "I forgot to bring my raincoat."
-     },
-     "answer": "C",
-     "transcript": "It's really hot out there.",
-     "stemZh": "外面真的好热啊。",
-     "analysis": "It's really hot out there. 题干分析 题目问的是：外面真的很热。哪一项是最合适的回应？ 定位原文：第一句话\"It's really hot out there.\"表达了对天气炎热的评论，需要选择一个自然、相关的回应。 选项分析： A. Why don't you turn down the heat then?（那你为什么不把暖气调低呢？）因为“turn down the heat”指的是调低室内暖气，而对话讨论的是室外天气炎热，逻辑不匹配，所以A选项错误。 B. He went over there an hour ago.（他一个小时前去那边了。）这个回应完全与天气话题无关，属于答非所问，因此B选项错误。 C. Yes, and the humidity level is unbelievable.（是的，而且湿度水平高得难以置信。）这个回应首先表示赞同，然后补充了关于湿度的相关信息，符合日常对话中关于天气的自然交流方式，所以C选项正确。 D. I forgot to bring my raincoat.（我忘记带雨衣了。）雨衣与炎热天气没有直接关联，通常用于下雨场景，因此D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #45",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/5aa190f5300241aeb0a16be53840d2e0.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Why don't you turn down the heat then?​​",
+            "B": "He went over there an hour ago.",
+            "C": "Yes, and the humidity level is unbelievable.",
+            "D": "I forgot to bring my raincoat."
+          },
+          "answer": "C",
+          "transcript": "It's really hot out there.",
+          "stemZh": "bên ngoài thật tốt nhiệt a.",
+          "analysis": "It's really hot out there. Câu hỏi phân tích đề mục hỏi là: bên ngoài thật sự rất nóng. vậy một hạng là thích hợp nhất đáp lại? Dẫn chứng Bài gốc: câu nói đầu tiên \"It's really hot out there.\" biểu đạt nhìn trời khí nóng bức bình luận, cần lựa chọn một cái tự nhiên, tương quan đáp lại. Phương án phân tích: A. Why don't you turn down the heat then? (vậy ngươi vì sao không đem hơi ấm điều thấp nhỉ?) vì “turn down the heat” là chỉ điều thấp trong phòng hơi ấm, còn đối với lời nói thảo luận là bên ngoài khí trời nóng bức, ăn khớp không xứng đôi, nên A Phương án Sai. B. He went over there an hour ago. (anh ấy một giờ tiến đến bên kia.) này đáp lại hoàn toàn và thời tiết chủ đề không quan hệ, thuộc về đáp phi sở vấn, bởi vậy B Phương án Sai. C. Yes, and the humidity level is unbelievable. (đúng vậy, hơn nữa độ ẩm Trình độ cao đến khó có thể tin.) này đáp lại đầu tiên biểu thị đồng ý, sau đó bổ sung về độ ẩm tin tức tương quan, phù hợp Đời sống trong lúc nói chuyện với nhau về thời tiết tự nhiên trao đổi phương thức, nên C Phương án Đúng. D. I forgot to bring my raincoat. (tôi quên mang áo mưa rồi.) áo mưa và nóng bức thời tiết không có trực tiếp liên quan, bình thường dùng cho trời mưa tình cảnh, bởi vậy D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

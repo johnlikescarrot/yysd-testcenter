@@ -255,7 +255,7 @@ def main():
             "module": 1,
             "set": "L-CR" + n,
             "title": "L-CR%s-%s" % (n, k),
-            "titleZh": "听句选回应",
+            "titleZh": " nghe câu chọn đáp lại ",
             "code": "L-CR%s-%s" % (n, k),
             "instruction": "Choose the best response.",
             "audio": "library/toefl/audio/bank-l-cr/" + audio_name,
@@ -270,7 +270,7 @@ def main():
         qid += 1
     paper = {
         "id": "bank-cr",
-        "title": "题块库 · 听句选回应",
+        "title": " Ngân hàng dạng bài · nghe câu chọn đáp lại ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": len(tasks)}],

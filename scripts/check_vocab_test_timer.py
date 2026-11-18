@@ -35,7 +35,7 @@ def main() -> int:
         text = p.read_text(encoding="utf-8")
         if not any(
             s in text
-            for s in ("请先选择一个选项", "请同时填写英文拼写", "请输入英文短语")
+            for s in (" mời trước lựa chọn một cái Phương án ", " mời đồng thời điền Tiếng Anh Chính tả ", " xin điền vào Tiếng Anh Cụm từ ")
         ):
             continue
         need += 1
@@ -43,7 +43,7 @@ def main() -> int:
             missing += 1
             errors.append(f"missing timeout guard: {p.relative_to(ROOT)}")
         if re.search(
-            r"if \(selected === null\) \{\n\s*alert\('请先选择一个选项！'\)",
+            r"if \(selected === null\) \{\n\s*alert\(' mời trước lựa chọn một cái Phương án! '\)",
             text,
         ):
             errors.append(f"unpatched selected guard: {p.relative_to(ROOT)}")

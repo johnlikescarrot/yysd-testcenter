@@ -5,15 +5,15 @@
 (function () {
   "use strict";
 
-  if (document.body.dataset.noMascot != null) return;
+  if (document.body.dataset.noMascot!= null) return;
 
   var ONBOARD_KEY = "yysd:mascot-onboarded";
   var OFF_KEY = "yysd:mascot-off";
   var IDLE_MS = 45000;
   var ONBOARD_STEPS = [
-    "你好，我是思达，你的错题本陪练。",
-    "单词区背单词、练习区精听长难句、真题区剑桥真题——点我都能给建议。",
-    "做题时我会实时反馈；模考完我会帮你复盘 Band。"
+    " Xin chào, ta là tư đạt, lỗi của bạn câu bản bồi luyện. ",
+    " Khu từ vựng lưng Từ vựng, Khu luyện tập Nghe sâu Câu phức học thuật, Khu đề thi Đề Cambridge IELTS —— chút:điểm tôi đều có thể cho xây nghị. ",
+    " làm bài lúc ta sẽ thực thì phản hồi; Thi thử hết ta sẽ giúp ngươi phục bàn Band. "
   ];
 
   var examPage = /exam\.html/.test(location.pathname);
@@ -38,8 +38,8 @@
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "yysd-mascot-restore";
-    btn.textContent = "召唤思达";
-    btn.setAttribute("aria-label", "重新启用思达学习助手");
+    btn.textContent = " triệu hoán tư đạt ";
+    btn.setAttribute("aria-label", " một lần nữa bắt đầu dùng tư đạt Học tập trợ thủ ");
     btn.addEventListener("click", enableMascot);
     document.body.appendChild(btn);
   }
@@ -61,19 +61,19 @@
     var blush = "#FFB8C8";
 
     function blushPair(op) {
-      op = op != null ? op : ".45";
+      op = op!= null? op: ".45";
       return '<ellipse class="sida-blush" cx="70" cy="124" rx="11" ry="6.5" fill="' + blush + '" opacity="' + op + '"/>' +
         '<ellipse class="sida-blush" cx="130" cy="124" rx="11" ry="6.5" fill="' + blush + '" opacity="' + op + '"/>';
     }
 
     function roundEye(cx, cy, opts) {
       opts = opts || {};
-      var side = cx < 100 ? "l" : "r";
-      var py = opts.py != null ? opts.py : cy + 1;
-      var px = opts.px != null ? opts.px : cx;
-      var pr = opts.pr != null ? opts.pr : 4.5;
-      var hx = opts.hx != null ? opts.hx : cx + (cx < 100 ? 2.5 : -2.5);
-      var hy = opts.hy != null ? opts.hy : cy - 2;
+      var side = cx < 100? "l": "r";
+      var py = opts.py!= null? opts.py: cy + 1;
+      var px = opts.px!= null? opts.px: cx;
+      var pr = opts.pr!= null? opts.pr: 4.5;
+      var hx = opts.hx!= null? opts.hx: cx + (cx < 100? 2.5: -2.5);
+      var hy = opts.hy!= null? opts.hy: cy - 2;
       return '<circle cx="' + cx + '" cy="' + cy + '" r="9" fill="#fff"/>' +
         '<circle class="sida-pupil sida-pupil-' + side + '" cx="' + px + '" cy="' + py + '" r="' + pr + '" fill="' + ink + '"/>' +
         '<circle cx="' + hx + '" cy="' + hy + '" r="1.8" fill="#fff"/>';
@@ -151,136 +151,136 @@
 
   var TIPS = {
     home: [
-      "学习打基础，练习强技能，模考验真章——三步走最稳。",
-      "首页 A-Level 专区可直接选考试局和科目，真题免费预览下载。",
-      "雅思专项词汇按听说读写分册，比盲目刷词效率高。",
-      "剑桥真题从 Vol.19+ 最新册开始模考，感受最接近考场。"
+      " Học tập đặt nền móng, Luyện tập mạnh mẽ kỹ năng, Thi thử nghiệm chân chương —— ba bước đi ổn nhất. ",
+      " Trang chủ A-Level chuyên khu có thể trực tiếp chọn hội đồng thi và kỹ năng, đề thi thật miễn phí Xem trước download. ",
+      " Từ vựng IELTS chuyên sâu theo như nghe nói đọc ghi tập, so với mù quáng xoát từ hiệu suất cao. ",
+      " Đề Cambridge IELTS từ Vol.19+ mới nhất quyển Bắt đầu thi thử, cảm thụ tiếp cận nhất trường thi. "
     ],
     study: [
-      "高中词汇和四级词汇分开刷，别混在一个 LIST 里。",
-      "背单词要同时过关拼写和释义，两个都记牢才算会。",
-      "语法精讲做完随堂小测，错题回头再看一遍解析。",
-      "听力/阅读/写作专项词汇，对应你接下来要攻的科目。",
-      "不会的词会自动进错题本，记得去复习。"
+      " Từ vựng Nền tảng THPT và Từ vựng Đại học Cốt lõi tách ra xoát, đừng xen lẫn trong một cái LIST dặm. ",
+      " lưng Từ vựng phải đồng thời vượt qua kiểm tra Chính tả và Giải nghĩa, hai cái đều nhớ lao mới tính sẽ. ",
+      " Ngữ pháp tinh giảng làm xong theo nhà tiểu trắc, câu sai hồi đầu lại nhìn một lần Giải thích đáp án. ",
+      " Nghe / Đọc / Từ vựng Viết chuyên sâu, đối ứng bạn kế tiếp muốn công kỹ năng. ",
+      " không biết từ sẽ tự động tiến Sổ lỗi sai, nhớ rõ đi Ôn tập. "
     ],
     practice: [
-      "练习区有长难句拆解和听力精听，专项提分最快。",
-      "精听跟读要逐句过关，注意连读、弱读和吞音。",
-      "长难句先找主干，再拆定语、状语和同位语。",
-      "阅读练习卷交卷后可以看得分，非模考也能练手感。"
+      " Khu luyện tập có Câu phức học thuật hóa giải và Nghe sâu (Intensive Listening), Chuyên sâu xách điểm nhanh nhất. ",
+      " Nghe sâu Đọc nhại muốn trục câu vượt qua kiểm tra, chú ý liền đọc, yếu đọc và nuốt âm. ",
+      " Câu phức học thuật trước tìm trụ cột, lại hủy đi định ngữ, trạng ngữ và đồng vị lời nói. ",
+      " Đọc Luyện tập cuốn Nộp bài sau có thể xem trọng điểm, không phải Thi thử cũng có thể luyện tập cảm giác. "
     ],
     mock: [
-      "真题区剑桥雅思听力阅读支持计时，尽量按真考节奏。",
-      "阅读题可高亮、做笔记，和机考习惯保持一致。",
-      "交卷后 Band 和成绩会记在「我的成绩」。",
-      "同一套题可以二刷，对比两次得分看进步。",
-      "A-Level 真题在「国际课程」里，和雅思分区互不混用。"
+      " Khu đề thi Cambridge IELTS Nghe Đọc hỗ trợ tính theo thời gian, tận lực theo như thực khảo thi tiết tấu. ",
+      " Đọc câu có thể cao sáng, làm bút ký, và cơ khảo thi thói quen bảo trì nhất trí. ",
+      " Nộp bài sau Band và Điểm số sẽ ghi tạc « Kết quả của tôi ». ",
+      " đồng nhất bộ câu có thể hai xoát, đối lập hai lần Điểm số nhìn vào bước. ",
+      "A-Level đề thi thật tại « Chương trình quốc tế » dặm, hòa nhã tư phân khu lẫn nhau không lẫn vào dùng. "
     ],
     vocab: {
       gaozhong: [
-        "高中词汇按 LIST 推进，完成一个勾一个。",
-        "测试模式会同时考拼写和中文释义。",
-        "错词自动收入错题本，隔天复习效果最好。"
+        " Từ vựng Nền tảng THPT theo như LIST đẩy mạnh, hoàn thành một cái phác thảo một cái. ",
+        " Kiểm tra hình thức cùng lúc khảo thi Chính tả và Tiếng Việt Giải nghĩa. ",
+        " từ sai tự động thu nhập Sổ lỗi sai, hôm sau Ôn tập hiệu quả tốt nhất. "
       ],
       cet4: [
-        "四级词汇量和雅思有重叠，打好底子两头受益。",
-        "释义写关键词即可，不用背完整词典例句。",
-        "今天目标：稳稳记住 15 个，比贪多更有效。"
+        " Từ vựng Đại học Cốt lõi số lượng hòa nhã tư có trùng điệp, đánh tốt nội tình hai đầu được lợi. ",
+        " Giải nghĩa ghi từ khóa là được, không cần học thuộc lòng cả từ điển Câu ví dụ. ",
+        " hôm nay mục tiêu: vững vàng nhớ kỹ 15, so với ham hố càng hữu hiệu. "
       ],
       special: [
-        "专项词汇按听说读写分单元，哪科弱就先刷哪科。",
-        "这些词在剑桥真题里出现频率高，值得精读。",
-        "配合同科目的模考/练习，记得更牢。"
+        " Từ vựng chuyên sâu theo như nghe nói đọc ghi điểm Bài, cái đó khoa yếu trước hết xoát cái đó khoa. ",
+        " những mục này từ tại Đề Cambridge IELTS dặm xuất hiện tần suất cao, đáng giá đọc kỹ. ",
+        " phối hợp đồng kỹ năng đích Thi thử / Luyện tập, nhớ rõ càng lao. "
       ]
     },
     results: [
-      "成绩已同步云端，换设备登录后可在「我的成绩」查看。",
-      "Band 轨迹能看最近几次模考走势。",
-      "得分低的科目，去练习区做专项往往比硬刷题管用。"
+      " Điểm số đã đồng bộ đám mây, đổi thiết bị Đăng nhập sau có thể tại « Kết quả của tôi » Xem. ",
+      "Band quỹ tích có thể nhìn gần nhất mấy lần Thi thử xu thế. ",
+      " Điểm số thấp kỹ năng, đi luyện tập khu làm Chuyên sâu thường thường so với cứng rắn xoát câu có tác dụng. "
     ],
     general: [
-      "每天精听 15 分钟，比盲目刷三套阅读更有效。",
-      "阅读先看题干再定位，别从第一段读到尾。",
-      "听力填空注意单复数、大小写和词性变形。",
-      "写作留 5 分钟检查拼写、时态和主谓一致。",
-      "口语不是背答案，是练流利度和观点展开。"
+      " mỗi ngày Nghe sâu 15 phút, so với mù quáng xoát ba bộ Đọc càng hữu hiệu. ",
+      " Đọc xem trước Câu hỏi lại Dẫn chứng, đừng từ đoạn thứ nhất đọc được vĩ. ",
+      " Nghe lấp chỗ trống chú ý đơn số nhiều, chữ hoa hay thường và từ tính biến hình. ",
+      " Viết lưu 5 phút kiểm tra Chính tả, lúc thái và chủ vị nhất trí. ",
+      " Nói không phải lưng Đáp án, là luyện lưu loát độ và quan điểm triển khai. "
     ]
   };
 
   var HINT_LINES = {
     correct: [
-      "对了！继续保持。",
-      "准确！这个掌握了。",
-      "漂亮，下一题稳住。",
-      "就是这个感觉，节奏很好。"
+      " đúng rồi! Tiếp tục bảo trì. ",
+      " chuẩn xác! này nắm giữ. ",
+      " xinh đẹp, Câu tiếp theo ổn định. ",
+      " chính là cái này cảm giác, tiết tấu rất tốt. "
     ],
     "partial-spelling": [
-      "含义对了！拼写再核对一下字母顺序。",
-      "意思掌握了，写法记一记就满分。",
-      "释义过关，拼写差一点点，再看一眼。"
+      " Nghĩa đúng rồi! Chính tả lại thẩm tra đối chiếu thoáng một phát chữ cái trình tự. ",
+      " ý tứ nắm giữ, phương pháp sáng tác nhớ một cái liền điểm tối đa. ",
+      " Giải nghĩa vượt qua kiểm tra, Chính tả kém một ít, lại nhìn liếc. "
     ],
     "partial-meaning": [
-      "拼写对了！中文释义再想想。",
-      "写法没问题，含义再巩固一下。",
-      "字母全对，意思还差一口气。"
+      " Chính tả đúng rồi! Tiếng Việt Giải nghĩa lại suy nghĩ một chút. ",
+      " phương pháp sáng tác không có vấn đề, Nghĩa lại củng cố thoáng một phát. ",
+      " chữ cái hoàn toàn đúng, ý tứ còn kém một hơi. "
     ],
     partial: [
-      "接近了，看看反馈里的细节。",
-      "一半对了，离全对不远。",
-      "方向对了，再调整一下。"
+      " tiếp cận, nhìn xem phản hồi bên trong chi tiết. ",
+      " một nửa đúng rồi, cách hoàn toàn đúng không xa. ",
+      " phương hướng đúng rồi, điều chỉnh lại một chút. "
     ],
     wrong: [
-      "这题值得进错题本，晚点再刷一遍。",
-      "没关系，搞懂比蒙对更重要。",
-      "先标记，等会儿回头复盘。",
-      "错了就记住了，下次注意。"
+      " cái này câu đáng giá tiến Sổ lỗi sai, trễ giờ lại xoát một lần. ",
+      " Không sao, hiểu Bỉ Mông đối với quan trọng hơn. ",
+      " trước dấu hiệu, đợi lát nữa quay đầu lại phục bàn. ",
+      " sai rồi liền nhớ kỹ, lần sau chú ý. "
     ],
     pass: [
-      "过关！这句跟读到位了。",
-      "精听通过，继续保持这个语速。",
-      "结构提交成功，对照参考完善一下。",
-      "语法小测这题拿下了。"
+      " vượt qua kiểm tra! câu này Đọc nhại đúng chỗ. ",
+      " Nghe sâu thông qua, Tiếp tục bảo trì này ngữ tốc. ",
+      " kết cấu Nộp bài thành công, so sánh tham khảo hoàn thiện thoáng một phát. ",
+      " Ngữ pháp tiểu trắc cái này câu bắt lại. "
     ],
     fail: [
-      "再听一遍，注意连读和弱读。",
-      "没达标，放慢语速逐词跟读。",
-      "长难句别急，先圈出主干再找从句。",
-      "再看看解析，下次会更好。"
+      " nghe nữa một lần, chú ý liền đọc và yếu đọc. ",
+      " không có đạt tiêu chuẩn, thả chậm ngữ tốc trục từ Đọc nhại. ",
+      " Câu phức học thuật đừng nóng vội, trước vòng ra trụ cột sẽ tìm từ câu. ",
+      " nhìn lại một chút Giải thích đáp án, lần sau sẽ tốt hơn. "
     ]
   };
 
   var STREAK_CELEBRATE = [
-    "三连对！状态来了。",
-    "厉害，连续答对！",
-    "节奏很好，保持这个手感。",
-    "连对三道，今天词汇手感不错。"
+    " tam liên đối với! Trạng thái đã đến. ",
+    " lợi hại, liên tục trả lời! ",
+    " tiết tấu rất tốt, bảo trì này xúc cảm. ",
+    " liền đối ba đạo, hôm nay Từ vựng xúc cảm không sai. "
   ];
 
   var GREET_DEFAULTS = {
     home: [
-      "你好，我是思达。学习、练习、模考，我都在。",
-      "欢迎来到优益思达。备考路上，有事点我就行。"
+      " Xin chào, ta là tư đạt. Học tập, Luyện tập, Thi thử, tôi đều tại. ",
+      " hoan nghênh đi vào YYSD. phụ lục trên đường, có việc chút:điểm tôi là được. "
     ],
     study: [
-      "单词区到了。词汇、语法、专项词——稳扎稳打。",
-      "先学好词汇语法，模考才能稳。"
+      " Khu từ vựng đã đến. Từ vựng, Ngữ pháp, Chuyên sâu từ —— làm gì chắc đó. ",
+      " trước học giỏi Từ vựng Ngữ pháp, Thi thử mới có thể ổn. "
     ],
     practice: [
-      "练习区！精听、长难句、阅读卷，专项提分。",
-      "针对性练习比盲目刷题更有效，选一个开始吧。"
+      " Khu luyện tập! Nghe sâu, Câu phức học thuật, Đọc cuốn, Chuyên sâu xách điểm. ",
+      " tính nhắm vào Luyện tập so với mù quáng xoát câu càng hữu hiệu, chọn một bắt đầu đi. "
     ],
     mock: [
-      "真题区。剑桥真题计时练，交卷自动估 Band。",
-      "全真环境练一次，比刷十套碎片题管用。"
+      " Khu đề thi. Đề Cambridge IELTS tính theo thời gian luyện, Nộp bài tự động đánh giá Band. ",
+      " Toàn phần Môi trường luyện một lần, so với xoát mười bộ mảnh vỡ câu có tác dụng. "
     ],
     results: [
-      "来看看战绩。每次模考都值得记录。",
-      "Band 轨迹在这，进步一目了然。"
+      " đến xem chiến tích. mỗi lần Thi thử đều đáng giá ghi chép. ",
+      "Band quỹ tích tại đây, tiến bộ vừa xem hiểu ngay. "
     ],
     vocab: {
-      gaozhong: "高中词汇 LIST 到了。拼写和释义都要过关。",
-      cet4: "四级词汇练习。今天先稳拿一批核心词。",
-      special: "雅思专项词汇。按科目刷，效率更高。"
+      gaozhong: " Từ vựng Nền tảng THPT LIST đã đến. Chính tả và Giải nghĩa đều phải qua màn. ",
+      cet4: " Từ vựng Đại học Cốt lõi Luyện tập. hôm nay trước ổn cầm một đám hạch tâm từ. ",
+      special: " Từ vựng IELTS chuyên sâu. theo như kỹ năng xoát, hiệu suất cao hơn. "
     }
   };
 
@@ -306,19 +306,19 @@
     host = document.createElement("div");
     host.className = "yysd-mascot";
     host.setAttribute("role", "complementary");
-    host.setAttribute("aria-label", "思达学习助手");
+    host.setAttribute("aria-label", " tư đạt Học tập trợ thủ ");
     host.dataset.state = "default";
     host.innerHTML =
       '<div class="yysd-mascot__bubble" id="sida-bubble" hidden>' +
-        '<button type="button" class="yysd-mascot__min" aria-label="收起气泡">—</button>' +
-        '<button type="button" class="yysd-mascot__close" aria-label="关闭思达">×</button>' +
+        '<button type="button" class="yysd-mascot__min" aria-label=" thu hồi bong bóng khí ">—</button>' +
+        '<button type="button" class="yysd-mascot__close" aria-label=" Đóng tư đạt ">×</button>' +
         '<div class="yysd-mascot__head">' +
-          '<b>思达</b><span class="yysd-mascot__streak" id="sida-streak" hidden></span>' +
+          '<b> tư đạt </b><span class="yysd-mascot__streak" id="sida-streak" hidden></span>' +
         '</div>' +
         '<p id="sida-text"></p>' +
-        '<button type="button" class="yysd-mascot__next" id="sida-next" hidden>下一步</button>' +
+        '<button type="button" class="yysd-mascot__next" id="sida-next" hidden> bước tiếp theo </button>' +
       '</div>' +
-      '<button type="button" class="yysd-mascot__figure" id="sida-figure" aria-expanded="false" aria-label="展开思达提示">' +
+      '<button type="button" class="yysd-mascot__figure" id="sida-figure" aria-expanded="false" aria-label=" triển khai tư đạt nhắc nhở ">' +
         sidaSvg("widget") +
       '</button>';
     document.body.appendChild(host);
@@ -340,7 +340,7 @@
     var el = host.querySelector("#sida-streak");
     if (!el) return;
     var Y = window.YYSD;
-    if (!Y || !Y.touchStreak) { el.hidden = true; return; }
+    if (!Y ||!Y.touchStreak) { el.hidden = true; return; }
     var s = Y.touchStreak();
     if (s.visit >= 2) {
       el.textContent = "\uD83D\uDD25 " + s.visit;
@@ -354,7 +354,7 @@
     state = s || "default";
     if (!host) return;
     host.dataset.state = state;
-    host.classList.toggle("is-expressive", state !== "default");
+    host.classList.toggle("is-expressive", state!== "default");
   }
 
   function bumpFigure() {
@@ -367,7 +367,7 @@
   }
 
   function closeBubble() {
-    if (!host || !bubble) return;
+    if (!host ||!bubble) return;
     bubble.hidden = true;
     host.classList.remove("is-bubble-open", "is-minimized", "is-onboarding", "is-speaking");
     clearTimeout(drain._t);
@@ -382,9 +382,9 @@
   function syncFigureAria() {
     var fig = host && host.querySelector("#sida-figure");
     if (!fig) return;
-    var open = !bubble.hidden;
-    fig.setAttribute("aria-expanded", open ? "true" : "false");
-    fig.setAttribute("aria-label", open ? "收起思达提示" : "展开思达提示");
+    var open =!bubble.hidden;
+    fig.setAttribute("aria-expanded", open? "true": "false");
+    fig.setAttribute("aria-label", open? " thu hồi tư đạt nhắc nhở ": " triển khai tư đạt nhắc nhở ");
   }
 
   function show(text, opts) {
@@ -393,9 +393,9 @@
     queue.push({
       text: text,
       state: opts.state || "default",
-      ms: opts.ms != null ? opts.ms : 5000,
-      pinned: !!opts.pinned,
-      onboard: !!opts.onboard
+      ms: opts.ms!= null? opts.ms: 5000,
+      pinned:!!opts.pinned,
+      onboard:!!opts.onboard
     });
     if (!busy) drain();
   }
@@ -411,10 +411,10 @@
     else host.classList.remove("is-bubble-open");
     if (item.onboard) host.classList.add("is-onboarding");
     else host.classList.remove("is-onboarding");
-    host.classList.toggle("is-speaking", !item.pinned && !item.onboard);
+    host.classList.toggle("is-speaking",!item.pinned &&!item.onboard);
     host.querySelector("#sida-text").textContent = item.text;
     var nextBtn = host.querySelector("#sida-next");
-    if (nextBtn) nextBtn.hidden = !item.onboard;
+    if (nextBtn) nextBtn.hidden =!item.onboard;
     syncFigureAria();
     clearTimeout(drain._t);
     if (item.pinned || item.onboard) { busy = false; return; }
@@ -441,28 +441,28 @@
     var sub = ctx.subject || "";
     if (ctx.page === "exam") {
       if (ctx.zone === "study") {
-        if (sub.indexOf("grammar") >= 0) return "语法题慢慢想，吃透一道是一道。";
-        if (sub.indexOf("vocab") >= 0) return "还在背单词？错词会自动进错题本。";
-        return pick(["词汇练习别赶，拼写和释义都要稳。", "单词区进度会保存，做完记得看错题本。"]);
+        if (sub.indexOf("grammar") >= 0) return " Ngữ pháp câu từ từ suy nghĩ, hiểu rõ nhất đạo là nhất đạo. ";
+        if (sub.indexOf("vocab") >= 0) return " vẫn còn lưng Từ vựng? từ sai sẽ tự động tiến Sổ lỗi sai. ";
+        return pick([" Từ vựng Luyện tập đừng đuổi, Chính tả và Giải nghĩa đều muốn ổn. ", " Khu từ vựng Tiến độ sẽ Lưu, làm xong nhớ rõ nhìn lầm câu bản. "]);
       }
       if (ctx.zone === "practice") {
-        if (sub === "jingting") return "精听卡住了？退回半速再跟一遍。";
-        if (sub === "changnanju") return "长难句先找主谓宾，别被修饰成分吓到。";
-        return "专项练习贵在坚持，再练一句？";
+        if (sub === "jingting") return " Nghe sâu kẹt? lui về nửa nhanh chóng lại theo một lần. ";
+        if (sub === "changnanju") return " Câu phức học thuật trước tìm chủ vị tân, đừng để bên ngoài tân trang thành phần hù đến. ";
+        return " Chuyên sâu Luyện tập quý ở kiên trì, luyện thêm một câu? ";
       }
     }
     if (ctx.page === "zone") {
-      if (ctx.zone === "mock") return pick(["搜「剑19」「Test 1」能快速找到卷子。", "模考记得开计时，习惯真考节奏。"]);
-      if (ctx.zone === "practice") return "精听和长难句都在这，选一个专项开始。";
-      if (ctx.zone === "study") return "高中词、四级词、专项词——今天想攻哪块？";
+      if (ctx.zone === "mock") return pick([" lục soát «Cambridge 19»«Test 1» có thể rất nhanh tìm được bài thi. ", " Thi thử nhớ rõ mở tính theo thời gian, thói quen thực khảo thi tiết tấu. "]);
+      if (ctx.zone === "practice") return " Nghe sâu và Câu phức học thuật đều ở đây, chọn một Chuyên sâu Bắt đầu. ";
+      if (ctx.zone === "study") return " THPT từ, Đại học B1 từ, Chuyên sâu từ —— hôm nay muốn công khối kia? ";
     }
     if (ctx.page === "vocab") {
-      if (ctx.book === "cet4") return "四级 LIST 推进中？今天记住 15 个就很棒。";
-      if (ctx.book === "special") return "专项词汇配合同科目练习，记得更牢。";
-      return "高中词汇稳扎稳打，错题本记得复习。";
+      if (ctx.book === "cet4") return " Đại học B1 LIST đẩy mạnh Vừa? hôm nay nhớ kỹ 15 cũng rất bổng. ";
+      if (ctx.book === "special") return " Từ vựng chuyên sâu phối hợp đồng khoa mắt Luyện tập, nhớ rõ càng lao. ";
+      return " Từ vựng Nền tảng THPT làm gì chắc đó, Sổ lỗi sai nhớ rõ Ôn tập. ";
     }
-    if (ctx.page === "results") return "可以挑一套分低的卷子，去练习区补专项。";
-    return pick(["还在吗？点我获取一条备考小贴士。", "学习·练习·模考，有事随时点我。"]);
+    if (ctx.page === "results") return " có thể chọn một bộ điểm thấp bài thi, đi luyện tập khu bổ Chuyên sâu. ";
+    return pick([" vẫn còn không? chút:điểm tôi thu hoạch một cái phụ lục tiểu dán sĩ. ", " Học tập · Luyện tập · Thi thử, có việc tùy thời chút:điểm tôi. "]);
   }
 
   function onTap() {
@@ -499,14 +499,14 @@
     onboardActive = true;
     var nextBtn = host.querySelector("#sida-next");
     if (nextBtn) {
-      nextBtn.textContent = i >= ONBOARD_STEPS.length - 1 ? "知道了" : "下一步 (" + (i + 1) + "/" + ONBOARD_STEPS.length + ")";
+      nextBtn.textContent = i >= ONBOARD_STEPS.length - 1? " đã biết ": " bước tiếp theo (" + (i + 1) + "/" + ONBOARD_STEPS.length + ")";
     }
-    show(ONBOARD_STEPS[i], { state: i === 0 ? "wave" : "happy", pinned: true, onboard: true });
+    show(ONBOARD_STEPS[i], { state: i === 0? "wave": "happy", pinned: true, onboard: true });
   }
 
   function needsOnboard() {
     if (examPage) return false;
-    try { return !localStorage.getItem(ONBOARD_KEY); } catch (e) { return false; }
+    try { return!localStorage.getItem(ONBOARD_KEY); } catch (e) { return false; }
   }
 
   function runOnboard(done) {
@@ -525,18 +525,18 @@
 
   function streakMsg() {
     var Y = window.YYSD;
-    if (!Y || !Y.touchStreak) return "";
+    if (!Y ||!Y.touchStreak) return "";
     var s = Y.touchStreak();
-    if (s.visit >= 7) return pick(["连续 " + s.visit + " 天，你是备考钉子户！", "第 " + s.visit + " 天打卡，习惯已经养成了。"]);
-    if (s.visit >= 3) return pick(["连续 " + s.visit + " 天，保持！", "连续 " + s.visit + " 天来了，节奏很好。"]);
-    if (s.visit === 2) return "连续 2 天来了，好习惯！";
+    if (s.visit >= 7) return pick([" liên tục " + s.visit + " ngày, ngươi là phụ lục hộ bị cưỡng chế! ", " thứ " + s.visit + " trời giáng tạp, thói quen đã dưỡng thành. "]);
+    if (s.visit >= 3) return pick([" liên tục " + s.visit + " ngày, bảo trì! ", " liên tục " + s.visit + " ngày qua rồi, tiết tấu rất tốt. "]);
+    if (s.visit === 2) return "Chuỗi 2 ngày đã đến, thói quen tốt! ";
     return "";
   }
 
   function greetDefault(key, book) {
     if (key === "vocab") {
       var v = GREET_DEFAULTS.vocab[book || "gaozhong"] || GREET_DEFAULTS.vocab.gaozhong;
-      return typeof v === "string" ? v : pick(v);
+      return typeof v === "string"? v: pick(v);
     }
     return pick(GREET_DEFAULTS[key] || GREET_DEFAULTS.home);
   }
@@ -545,16 +545,16 @@
     if (onboardActive) return;
     var ctx = pageCtx();
     var zone = ctx.zone || "mock";
-    var key = ctx.page === "zone" ? (GREET_DEFAULTS[zone] ? zone : "mock") : ctx.page;
+    var key = ctx.page === "zone"? (GREET_DEFAULTS[zone]? zone: "mock"): ctx.page;
     if (key === "other") return;
     var st = { home: "wave", study: "default", practice: "default", mock: "default", results: "happy", vocab: "happy", zone: "default" };
-    var stKey = key === "zone" ? zone : key;
+    var stKey = key === "zone"? zone: key;
 
     function deliver(line) {
       updateStreakBadge();
       var s = streakMsg();
       if (s) line = s + " " + line;
-      show(line, { state: st[stKey] || "default", ms: stKey === "home" ? 6500 : 6000 });
+      show(line, { state: st[stKey] || "default", ms: stKey === "home"? 6500: 6000 });
     }
 
     var Y = window.YYSD;
@@ -564,7 +564,7 @@
             return Y.mascotResultsLine(Object.keys(Y.results()).map(function (k) { return Y.results()[k]; }));
           })
         : Y.load().then(function (items) {
-            return Y.mascotSmartLine ? Y.mascotSmartLine(items, key === "home" ? null : zone) : Y.mascotPathLine(items);
+            return Y.mascotSmartLine? Y.mascotSmartLine(items, key === "home"? null: zone): Y.mascotPathLine(items);
           });
       ctxPromise.then(function (ctxLine) {
         deliver(ctxLine || greetDefault(stKey, ctx.book));
@@ -576,19 +576,19 @@
 
   function examStartLine(zone, subject, title) {
     var sub = subject || "";
-    var t = title ? "「" + title + "」" : "";
+    var t = title? "«" + title + "»": "";
     if (zone === "study") {
-      if (sub === "grammar") return "语法精讲" + t + "开始了，随堂小测我帮你盯。";
-      if (sub === "vocab-cet4") return "四级词汇" + t + "，拼写和释义都要过关。";
-      if (sub.indexOf("vocab-special") === 0) return "专项词汇" + t + "，结合科目记更牢。";
-      if (sub.indexOf("vocab") >= 0) return "词汇" + t + "开练，错词会自动进错题本。";
-      return pick(["学习模式启动，我陪你一道一道来。", "边学边测，不会的记下来。"]);
+      if (sub === "grammar") return " Ngữ pháp tinh giảng " + t + " đã bắt đầu, theo nhà tiểu trắc ta giúp ngươi chằm chằm. ";
+      if (sub === "vocab-cet4") return " Từ vựng Đại học Cốt lõi " + t + ", Chính tả và Giải nghĩa đều phải qua màn. ";
+      if (sub.indexOf("vocab-special") === 0) return " Từ vựng chuyên sâu " + t + ", kết hợp kỹ năng nhớ càng lao. ";
+      if (sub.indexOf("vocab") >= 0) return "Từ vựng" + t + " mở luyện, từ sai sẽ tự động tiến Sổ lỗi sai. ";
+      return pick([" Học tập hình thức khởi động, tôi cùng ngươi nhất đạo nhất đạo đến. ", " bên cạnh học bên cạnh trắc, không biết nhớ kỹ. "]);
     }
     if (zone === "practice") {
-      if (sub === "jingting") return "精听" + t + "，跟读过关要反复练，别急。";
-      if (sub === "changnanju") return "长难句" + t + "，先拆主干再对译文。";
-      if (sub === "ielts") return "阅读练习" + t + "，按题干定位，别通读全文。";
-      return "专项练习" + t + "，量变才能质变。";
+      if (sub === "jingting") return " Nghe sâu " + t + ", Đọc nhại vượt qua kiểm tra muốn nhiều lần luyện, đừng nóng vội. ";
+      if (sub === "changnanju") return " Câu phức học thuật " + t + ", trước hủy đi trụ cột lại đối với văn dịch. ";
+      if (sub === "ielts") return " Đọc Luyện tập " + t + ", theo như Câu hỏi Dẫn chứng, đừng đọc một lượt toàn văn. ";
+      return " Chuyên sâu Luyện tập " + t + ", lượng biến mới có thể biến chất. ";
     }
     return "";
   }
@@ -596,13 +596,13 @@
   function greetExamZone(zone) {
     var line = examStartLine(zone, examSubject, examTitle);
     if (!line) return;
-    var st = zone === "practice" ? "think" : "happy";
+    var st = zone === "practice"? "think": "happy";
     if (examSubject === "jingting") st = "think";
     show(line, { state: st, ms: 5500 });
   }
 
   function onHint(result) {
-    if (examZone === "mock" || !result) return;
+    if (examZone === "mock" ||!result) return;
     var now = Date.now();
     if (now - lastHintAt < 1200) return;
     lastHintAt = now;
@@ -622,8 +622,8 @@
 
     var lines = HINT_LINES[result];
     if (!lines) return;
-    var st = isCorrect ? "happy"
-      : (result === "wrong" || result === "fail") ? "confused" : "think";
+    var st = isCorrect? "happy"
+      : (result === "wrong" || result === "fail")? "confused": "think";
     show(lines[Math.floor(Math.random() * lines.length)], { state: st, ms: 3200 });
   }
 
@@ -631,9 +631,9 @@
     if (d.wrongWords && d.wrongWords.length) {
       var n = d.wrongWords.length;
       show(pick([
-        "完成！有 " + n + " 个错词已收入错题本，去复习一下吧。",
-        n + " 个词进了错题本，隔天再刷一遍记得更牢。",
-        "本轮有 " + n + " 个错词，错题本已更新。"
+        " hoàn thành! có " + n + " cái sai lầm từ đã thu nhập Sổ lỗi sai, đi Ôn tập một chút đi. ",
+        n + " từ Vào học Sổ lỗi sai, hôm sau lại xoát một lần nhớ rõ càng lao. ",
+        " bản luân phiên có " + n + " cái sai lầm từ, Sổ lỗi sai đã đổi mới mới. "
       ]), { state: "happy", ms: 6500 });
       return;
     }
@@ -641,66 +641,66 @@
   }
 
   function onScore(d) {
-    if (d.score == null || d.total == null || !d.total) {
-      show(pick(["完成了！成绩已保存。", "交卷成功，去「我的成绩」看看吧。"]), { state: "celebrate", ms: 6000 });
+    if (d.score == null || d.total == null ||!d.total) {
+      show(pick([" hoàn thành! Điểm số đã Lưu. ", " Nộp bài thành công, đi « Kết quả của tôi » xem một chút đi. "]), { state: "celebrate", ms: 6000 });
       return;
     }
     var ratio = d.score / d.total;
     var s = d.score + "/" + d.total;
     if (ratio >= 0.85) {
       show(pick([
-        "太棒了！" + s + "，保持这个状态。",
-        s + "，几乎全对！可以挑战更难的内容了。",
-        s + "，漂亮！错题再过一遍就稳了。"
+        " quá tuyệt vời! " + s + ", bảo trì cái trạng thái này. ",
+        s + ", hầu như hoàn toàn đúng! có thể khiêu chiến càng khó nội dung. ",
+        s + ", xinh đẹp! câu sai tiếp qua một lần liền ổn. "
       ]), { state: "celebrate", ms: 7000 });
     } else if (ratio >= 0.6) {
       show(pick([
-        s + "，不错。看看错题再巩固一下。",
-        s + "，及格线以上了，查漏补缺还能再涨。",
-        s + "，有基础了，专项练习能再推一把。"
+        s + ", không sai. nhìn xem câu sai lại củng cố thoáng một phát. ",
+        s + ", đạt tiêu chuẩn tuyến trở lên, tra lậu bổ khuyết còn có thể lại phát triển. ",
+        s + ", có cơ sở, Chuyên sâu Luyện tập có thể đẩy nữa một chút. "
       ]), { state: "happy", ms: 6500 });
     } else {
       show(pick([
-        s + "，别灰心。搞懂错题比分数更重要。",
-        s + "，先复盘错题，比急着刷下一套管用。",
-        s + "，薄弱点找到了，去练习区补专项试试。"
+        s + ", đừng nản chí. hiểu câu sai điểm số mấy quan trọng hơn. ",
+        s + ", trước phục um tùm câu, so với vội vã xoát một bộ kế có tác dụng. ",
+        s + ", bạc nhược yếu kém chút:điểm đã tìm được, đi luyện tập khu bổ Chuyên sâu thử xem. "
       ]), { state: "confused", ms: 7000 });
     }
   }
 
   function mockSkillTip(d, band, ratio) {
     var sub = String(d.subject || "");
-    var low = (band != null && !isNaN(band) && band < 6.5) || (ratio != null && ratio < 0.65);
+    var low = (band!= null &&!isNaN(band) && band < 6.5) || (ratio!= null && ratio < 0.65);
     if (sub.indexOf("listening") >= 0) {
-      return pick(low ? [
-        "听力：拼写和单复数是失分重灾区，精听跟读很有用。",
-        "听力：Section 4 学术词多听几遍，去练习区精听补一下。"
-      ] : [
-        "听力：节奏不错，保持预判下一题题型。",
-        "听力：拼写稳住了，下次试试更高册的剑桥题。"
+      return pick(low? [
+        " Nghe: Chính tả và đơn số nhiều là mất điểm trọng tai khu, Nghe sâu Đọc nhại rất hữu dụng. ",
+        " Nghe: Section 4 Học thuật từ nhiều nghe mấy lần, đi luyện tập khu Nghe sâu bổ thoáng một phát. "
+      ]: [
+        " Nghe: tiết tấu không sai, bảo trì dự phán Câu tiếp theo dạng bài. ",
+        " Nghe: Chính tả ổn định, lần sau thử xem cao hơn quyển Cambridge câu. "
       ]);
     }
     if (sub.indexOf("reading") >= 0) {
-      return pick(low ? [
-        "阅读：错题定位词再找一遍，别通读全文。",
-        "阅读：时间紧就先保简单题，判断/填空优先。"
-      ] : [
-        "阅读：定位准确，注意 Passage 3 的时间分配。",
-        "阅读：发挥不错，试试限时刷下一套保持手感。"
+      return pick(low? [
+        " Đọc: câu sai Dẫn chứng từ sẽ tìm một lần, đừng đọc một lượt toàn văn. ",
+        " Đọc: thời gian eo hẹp trước hết bảo vệ đơn giản câu, phán đoán / lấp chỗ trống ưu tiên. "
+      ]: [
+        " Đọc: Dẫn chứng chuẩn xác, chú ý Passage 3 thời gian phân phối. ",
+        " Đọc: triển khai không sai, thử xem Thời gian xoát một bộ kế bảo trì xúc cảm. "
       ]);
     }
     if (sub.indexOf("writing") >= 0) {
-      return pick(low ? [
-        "写作：检查段落结构和衔接词，比堆词更重要。",
-        "写作：Task 2 先列提纲再动笔，逻辑比辞藻要紧。"
-      ] : [
-        "写作：结构清晰，下次试试更高阶的论证。",
-        "写作：表达稳住了，注意字数和段落均衡。"
+      return pick(low? [
+        " Viết: kiểm tra đoạn kết cấu và dính liền từ, so với chồng chất từ quan trọng hơn. ",
+        " Viết: Task 2 trước nhóm đề cương cử động nữa bút, ăn khớp so với từ ngữ trau chuốt quan trọng hơn. "
+      ]: [
+        " Viết: kết cấu rõ ràng, lần sau thử xem cao cấp hơn luận chứng. ",
+        " Viết: biểu đạt ổn định, chú ý Số từ và đoạn cân đối. "
       ]);
     }
     if (sub.indexOf("speaking") >= 0) {
-      return low ? "口语：流利度优先，观点展开用 because / for example 串联。"
-        : "口语：表达流畅，下次试试更复杂的话题词汇。";
+      return low? " Nói: lưu loát độ ưu tiên, quan điểm triển khai dùng because / for example xâu chuỗi. "
+        : " Nói: biểu đạt trôi chảy, lần sau thử xem phức tạp hơn chủ đề Từ vựng. ";
     }
     return "";
   }
@@ -708,27 +708,27 @@
   function onMockScore(d) {
     mount();
     var line, st = "happy", tip = "";
-    var band = d.band != null ? Number(d.band) : null;
-    var ratio = (d.score != null && d.total) ? d.score / d.total : null;
+    var band = d.band!= null? Number(d.band): null;
+    var ratio = (d.score!= null && d.total)? d.score / d.total: null;
 
-    if (band != null && !isNaN(band)) {
-      if (band >= 7.5) { line = pick(["Band " + band + "，非常出色！", "Band " + band + "，稳了！保持节奏。"]); st = "celebrate"; }
-      else if (band >= 6.5) { line = pick(["Band " + band + "，达标了。", "Band " + band + "，不错，继续巩固弱项。"]); st = "happy"; }
-      else if (band >= 5.5) { line = pick(["Band " + band + "，有进步空间。", "Band " + band + "，弱项找准了就能再涨。"]); st = "default"; }
-      else { line = pick(["Band " + band + "，别灰心，复盘比刷题重要。", "Band " + band + "，先搞懂错题，分数会跟上。"]); st = "confused"; }
-    } else if (d.score != null && d.total) {
-      line = d.score + "/" + d.total + " 完成。";
-      if (ratio >= 0.85) { line += pick([" 表现很好！", " 接近满分手感！"]); st = "celebrate"; }
-      else if (ratio >= 0.6) { line += pick([" 不错，继续巩固。", " 有基础，专项还能再推。"]); st = "happy"; }
-      else { line += pick([" 看看错题解析。", " 去练习区补一下薄弱项。"]); st = "confused"; }
+    if (band!= null &&!isNaN(band)) {
+      if (band >= 7.5) { line = pick(["Band " + band + ", vô cùng xuất sắc! ", "Band " + band + ", ổn! bảo trì tiết tấu. "]); st = "celebrate"; }
+      else if (band >= 6.5) { line = pick(["Band " + band + ", đạt tiêu chuẩn. ", "Band " + band + ", không sai, Tiếp tục củng cố yếu hạng. "]); st = "happy"; }
+      else if (band >= 5.5) { line = pick(["Band " + band + ", có tiến bộ không gian. ", "Band " + band + ", yếu hạng tìm đúng rồi có thể lại phát triển. "]); st = "default"; }
+      else { line = pick(["Band " + band + ", đừng nản chí, phục bàn so với xoát câu trọng yếu. ", "Band " + band + ", trước hiểu câu sai, điểm sẽ cùng bên trên. "]); st = "confused"; }
+    } else if (d.score!= null && d.total) {
+      line = d.score + "/" + d.total + " hoàn thành. ";
+      if (ratio >= 0.85) { line += pick([" biểu hiện rất tốt! ", " tiếp cận điểm tối đa xúc cảm! "]); st = "celebrate"; }
+      else if (ratio >= 0.6) { line += pick([" không sai, Tiếp tục củng cố. ", " có trụ cột, Chuyên sâu còn có thể đẩy nữa. "]); st = "happy"; }
+      else { line += pick([" nhìn xem sai lời giải trong đề bài tích. ", " đi luyện tập khu bổ thoáng một phát bạc nhược yếu kém hạng. "]); st = "confused"; }
     } else {
-      line = pick(["模考完成，成绩已保存。", "交卷成功！去「我的成绩」看详情。"]);
+      line = pick([" Thi thử hoàn thành, Điểm số đã Lưu. ", " Nộp bài thành công! đi « Kết quả của tôi » nhìn tình hình cụ thể và tỉ mỉ. "]);
       st = "celebrate";
     }
 
     tip = mockSkillTip(d, band, ratio);
     if (tip) line += " " + tip;
-    else line += pick([" 去「我的成绩」查看详情。", " 成绩在「我的成绩」里，随时能复盘。"]);
+    else line += pick([" đi « Kết quả của tôi » Xem chi tiết. ", " Điểm số tại « Kết quả của tôi » dặm, tùy thời có thể phục bàn. "]);
 
     show(line, { state: st, ms: 10000 });
   }
@@ -737,15 +737,15 @@
     if (examZone === "mock") return;
     if (level === "danger") {
       show(pick([
-        "时间不多了！抓紧检查答题卡。",
-        "最后 1 分钟！没写的先猜上，别留空。",
-        "快交卷了，确认题号有没有涂错行。"
+        " thời gian không nhiều lắm! nắm chặt kiểm tra bài thi tạp. ",
+        " cuối cùng 1 phút! không có viết trước đoán bên trên, đừng lưu chỗ trống. ",
+        " nhanh Nộp bài rồi, Xác nhận câu số có hay không bôi thác hành. "
       ]), { state: "panic", ms: 5000 });
     } else if (level === "low") {
       show(pick([
-        "还剩不到 5 分钟，留意一下节奏。",
-        "时间偏紧，优先做有把握的题目。",
-        "5 分钟倒计时，阅读题别在一道难题上耗太久。"
+        " còn lại không đến 5 phút, lưu ý thoáng một phát tiết tấu. ",
+        " thời gian thiên nhanh, ưu tiên làm có nắm chắc đề mục. ",
+        "5 phút đảo kế thì, Đọc câu đừng tại nhất đạo nan đề bên trên hao tổn quá lâu. "
       ]), { state: "confused", ms: 4500 });
     }
   }
@@ -799,7 +799,7 @@
     var d = e.data;
     if (!d) return;
     if (d.type === "yysd:mascot-hint") { onHint(d.result); return; }
-    if (d.type !== "yysd:score") return;
+    if (d.type!== "yysd:score") return;
     if (examPage && examZone === "mock") return;
     else if (examPage && examZone === "study") onStudyScore(d);
     else if (examPage) onScore(d);

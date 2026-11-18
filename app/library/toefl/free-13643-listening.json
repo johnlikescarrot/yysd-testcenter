@@ -1,57 +1,57 @@
 {
- "id": "free-13643",
- "title": "Announcement #60",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #60",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13643,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-60"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #60",
-   "instruction": "Listen to an announcement at a university club meeting.",
-   "audio": "library/toefl/free/audio/66b0e8de2b1140b186ac6a29a2ae4c7b.mp3",
-   "transcript": "Welcome everyone. Today we'll be discussing the details for our annual fundraising event. This year we'll be hosting a charity bake sale next Friday in the student center. All proceeds will go to local food banks. We hope you all can participate and make a difference.",
-   "questions": [
+  "id": "free-13643",
+  "title": "Announcement #60",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #60",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13643,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-60"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the announcement?",
-     "options": {
-      "A": "A new club member",
-      "B": "A sporting event",
-      "C": "An upcoming charity event",
-      "D": "A change in the club's meeting schedule"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：这则公告的主要话题是什么？ 定位原文：Today we'll be discussing the details for our annual fundraising event. This year we'll be hosting a charity bake sale next Friday in the student center. 选项分析： A. A new club member 一名新俱乐部成员。公告中未提及新成员，所以A选项错误。 B. A sporting event 一场体育赛事。公告中未提及体育赛事，所以B选项错误。 C. An upcoming charity event 一场即将到来的慈善活动。公告明确说明年度筹款活动是慈善烘焙义卖，所以C选项正确。 D. A change in the club's meeting schedule 俱乐部会议时间的变更。公告中未提及会议时间变化，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What are students encouraged to do?",
-     "options": {
-      "A": "Donate food items",
-      "B": "Join a club",
-      "C": "Visit the Student Center",
-      "D": "Participate in a bake sale"
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：鼓励学生们做什么？ 定位原文：We hope you all can participate and make a difference. （结合上文提到的“charity bake sale”） 选项分析： A. Donate food items 捐赠食物。公告中说的是举办烘焙义卖（bake sale），并未明确要求直接捐赠食物，而是希望参与活动，所以A选项不如D准确。 B. Join a club 加入一个俱乐部。公告中未提及招募新成员，所以B选项错误。 C. Visit the Student Center 去学生中心。公告中说活动地点在学生中心，但鼓励的核心是“participate and make a difference”，不仅仅是去学生中心，所以C选项不够完整准确。 D. Participate in a bake sale 参与烘焙义卖。说话者明确希望大家都参与（participate），活动内容是慈善烘焙义卖，所以D选项正确。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #60",
+      "instruction": "Listen to an announcement at a university club meeting.",
+      "audio": "library/toefl/free/audio/66b0e8de2b1140b186ac6a29a2ae4c7b.mp3",
+      "transcript": "Welcome everyone. Today we'll be discussing the details for our annual fundraising event. This year we'll be hosting a charity bake sale next Friday in the student center. All proceeds will go to local food banks. We hope you all can participate and make a difference.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the announcement?",
+          "options": {
+            "A": "A new club member",
+            "B": "A sporting event",
+            "C": "An upcoming charity event",
+            "D": "A change in the club's meeting schedule"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: cái này tức thì thông cáo chủ yếu chủ đề là cái gì? Dẫn chứng Bài gốc: Today we'll be discussing the details for our annual fundraising event. This year we'll be hosting a charity bake sale next Friday in the student center. Phương án phân tích: A. A new club member một gã mới câu lạc bộ thành viên. trong thông báo Không được đề cập (Not Given) thành viên mới, nên A Phương án Sai. B. A sporting event một cuộc Thể thao thi đấu sự tình. trong thông báo Không được đề cập (Not Given) Thể thao thi đấu sự tình, nên B Phương án Sai. C. An upcoming charity event một cuộc sắp đến từ thiện hoạt động. thông cáo rõ ràng nói rõ niên độ trù khoản hoạt động là từ thiện sấy khô bán hàng từ thiện, nên C Phương án Đúng. D. A change in the club's meeting schedule câu lạc bộ hội nghị thời gian thay đổi. trong thông báo Không được đề cập (Not Given) hội nghị thời gian thay đổi, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What are students encouraged to do?",
+          "options": {
+            "A": "Donate food items",
+            "B": "Join a club",
+            "C": "Visit the Student Center",
+            "D": "Participate in a bake sale"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: cổ vũ các học sinh làm cái gì? Dẫn chứng Bài gốc: We hope you all can participate and make a difference. (kết hợp câu trên nhắc tới “charity bake sale”) Phương án phân tích: A. Donate food items quyên tặng Thực phẩm. trong thông báo nói rất đúng tổ chức sấy khô bán hàng từ thiện (bake sale), cũng không rõ ràng yêu cầu trực tiếp quyên tặng Thực phẩm, mà là hy vọng tham dự hoạt động, nên A Phương án không bằng D chuẩn xác. B. Join a club gia nhập một cái câu lạc bộ. trong thông báo Không được đề cập (Not Given) chiêu mộ thành viên mới, nên B Phương án Sai. C. Visit the Student Center đi học sinh trung tâm. trong thông báo nói hoạt động địa điểm đang học sinh trung tâm, nhưng khích lệ hạch tâm là “participate and make a difference”, không chỉ là đi học sinh trung tâm, nên C Phương án không đủ Đầy đủ chuẩn xác. D. Participate in a bake sale tham dự sấy khô bán hàng từ thiện. kẻ nói chuyện rõ ràng hy vọng tất cả mọi người tham dự (participate), hoạt động nội dung là từ thiện sấy khô bán hàng từ thiện, nên D Phương án Đúng."
+        }
+      ]
+    }
+  ]
 }

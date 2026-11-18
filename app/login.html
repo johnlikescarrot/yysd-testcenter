@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>登录 · 机考系统</title>
+  <title>Đăng nhập · cơ khảo thi hệ thống</title>
   <link rel="stylesheet" href="assets/css/app.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261008ui15"></script>
 </head>
 <body class="auth-page">
-  <header class="top"><b>优益思达机考系统<small lang="en">YYSD TEST CENTER</small></b>
-    <span class="top-acts"><button type="button" id="hit-reload">刷新</button></span>
+  <header class="top"><b>YYSD cơ khảo thi hệ thống <small lang="en">YYSD TEST CENTER</small></b>
+    <span class="top-acts"><button type="button" id="hit-reload">Làm mới</button></span>
   </header>
   <main class="shell">
     <div class="card">
       <p class="auth-eyebrow" lang="en">SIGN IN</p>
-      <h1>登录</h1>
-      <p class="lead">手机号和密码登录。新用户请先注册。</p>
+      <h1>Đăng nhập</h1>
+      <p class="lead">Số điện thoại và Mật khẩu Đăng nhập. mới người sử dụng mời ghi danh trước. </p>
       <form id="f">
-        <label class="field">手机号
+        <label class="field">Số điện thoại
           <input type="tel" id="phone" maxlength="11" inputmode="numeric" autocomplete="tel" required>
         </label>
-        <label class="field">密码
+        <label class="field">Mật khẩu
           <input type="password" id="password" minlength="6" autocomplete="current-password">
         </label>
-        <label class="field">激活码
-          <input id="activationCode" autocomplete="off" placeholder="这台电脑已绑定可留空">
+        <label class="field">Mã kích hoạt
+          <input id="activationCode" autocomplete="off" placeholder="máy vi tính này đã khóa lại có thể lưu chỗ trống">
         </label>
         <p class="msg" id="msg"></p>
-        <button class="btn btn-block" type="submit">进入机考</button>
+        <button class="btn btn-block" type="submit">Vào học cơ khảo thi</button>
       </form>
-      <p class="auth-switch">还没有账号？<a href="register.html">用激活码注册</a></p>
+      <p class="auth-switch">còn không có tài khoản? <a href="register.html"> dùng Mã kích hoạt Đăng ký</a></p>
     </div>
   </main>
   <script>
@@ -54,7 +54,7 @@
           A.applyLogin(d);
           location.replace(next);
         }).catch(function (e) {
-          msg.textContent = e.message || "登录失败";
+          msg.textContent = e.message || " Đăng nhập thất bại ";
         });
       });
     })();

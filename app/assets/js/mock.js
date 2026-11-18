@@ -1,22 +1,22 @@
-/* ponytail: 考前冲刺包 picker — exam engine stays on toefl-*.html */
+/* ponytail: Gói tăng tốc trước kỳ thi picker — exam engine stays on toefl-*.html */
 (function (w) {
   "use strict";
 
   var SKILLS = [
-    { key: "reading", label: "阅读", page: "toefl-reading.html", list: "TOEFL_READING" },
-    { key: "listening", label: "听力", page: "toefl-listening.html", list: "TOEFL_LISTENING" },
-    { key: "writing", label: "写作", page: "toefl-writing.html", list: "TOEFL_WRITING" }
+    { key: "reading", label: "Đọc", page: "toefl-reading.html", list: "TOEFL_READING" },
+    { key: "listening", label: "Nghe", page: "toefl-listening.html", list: "TOEFL_LISTENING" },
+    { key: "writing", label: "Viết", page: "toefl-writing.html", list: "TOEFL_WRITING" }
   ];
 
   function yysd() { return w.YYSD || {}; }
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function examRoot() {
-    return (location.pathname.indexOf("/app/") >= 0) ? "../" : "";
+    return (location.pathname.indexOf("/app/") >= 0)? "../": "";
   }
 
   function packOf(id) {
@@ -27,12 +27,12 @@
     return (yysd()[listName] || []).filter(function (p) { return p.id === id; })[0] || null;
   }
 
-  /* ---- 包锁态：/api/toefl/access 是唯一事实来源；取不到时只当未知（开始前服务端再兜底） ---- */
+  /* ---- bao Khóa thái: /api/toefl/access là duy nhất sự thật nơi phát ra; không lấy được lúc chỉ coi không biết (Bắt đầu trước Server lại lật tẩy) ---- */
   var access = null;
   function fetchAccess() {
     if (access) return Promise.resolve(access);
     var A = w.YYSD_APP;
-    if (!A || !A.api) return Promise.resolve(null);
+    if (!A ||!A.api) return Promise.resolve(null);
     return A.api("/api/toefl/access").then(function (d) {
       access = (d && d.access) || null;
       return access;
@@ -43,12 +43,12 @@
     if (!access || access.staff) return { locked: false };
     var st = (access.packages || {})[id];
     if (st && st.on) return { locked: false };
-    return { locked: true, reason: st ? st.reason : "none" };
+    return { locked: true, reason: st? st.reason: "none" };
   }
 
   function confirmHref(kind, id, skill) {
     var href = "mock.html?kind=" + encodeURIComponent(kind) + "&id=" + encodeURIComponent(id);
-    return skill ? href + "&skill=" + encodeURIComponent(skill) : href;
+    return skill? href + "&skill=" + encodeURIComponent(skill): href;
   }
 
   function startFull(id) {
@@ -63,30 +63,30 @@
 
   function startSingle(id, skill) {
     var spec = SKILLS.filter(function (s) { return s.key === skill; })[0];
-    var page = spec ? spec.page : "toefl-speaking.html";
+    var page = spec? spec.page: "toefl-speaking.html";
     location.href = examRoot() + page + "?id=" + encodeURIComponent(id) + "&mode=mock&from=app";
   }
 
-  /* 开始前服务端硬校验（卡面只渲染已开通的卷；被绕过后这里仍会拦） */
+  /* Bắt đầu trước Server cứng rắn kiểm tra (tạp diện chỉ phủ lên Đã kích hoạt cuốn; bị vượt qua sau tại đây nhưng sẽ ngăn đón) */
   function startGuard(packageId, go) {
     var A = w.YYSD_APP;
-    if (!A || !A.api) { go(); return; }
+    if (!A ||!A.api) { go(); return; }
     A.api("/api/toefl/exam-start", { method: "POST", body: { packageId: packageId } }).then(function () {
       go();
     }).catch(function (e) {
       var err = document.getElementById("mock-err");
-      if (err) err.textContent = (e && e.message) || "暂时不能开始";
+      if (err) err.textContent = (e && e.message) || " tạm thời không thể Bắt đầu ";
       var btn = document.getElementById("mock-go");
       if (btn) btn.disabled = false;
     });
   }
 
-  /* ---- 便当盒：wofo 式卡片，卡面只有「TOEFL Mock N」+ 全科模考 + 四格只考X ---- */
+  /* ---- liền đem hộp: wofo thức tạp phiến, tạp diện chỉ có «TOEFL Mock N»+ toàn khoa Thi thử + bốn cách chỉ khảo thi X ---- */
   var SLOTS = [
-    { key: "reading", label: "只考阅读", list: "TOEFL_READING" },
-    { key: "listening", label: "只考听力", list: "TOEFL_LISTENING" },
-    { key: "speaking", label: "只考口语", list: "TOEFL_SPEAKING" },
-    { key: "writing", label: "只考写作", list: "TOEFL_WRITING" }
+    { key: "reading", label: " chỉ khảo thi Đọc ", list: "TOEFL_READING" },
+    { key: "listening", label: " chỉ khảo thi Nghe ", list: "TOEFL_LISTENING" },
+    { key: "speaking", label: " chỉ khảo thi Nói ", list: "TOEFL_SPEAKING" },
+    { key: "writing", label: " chỉ khảo thi Viết ", list: "TOEFL_WRITING" }
   ];
   var PER_PAGE = 10;
   var page = 1;
@@ -99,20 +99,20 @@
 
   function fullPapers(stock) {
     return (yysd().TOEFL_FULL || []).filter(function (p) {
-      if (!stock || !stock.mocks || !stock.mocks.length) return true;
+      if (!stock ||!stock.mocks ||!stock.mocks.length) return true;
       return stock.mocks.indexOf(p.id) >= 0;
     });
   }
 
-  /* 编号按全量清单算，再按权限过滤 —— 不同学生看到的同一张卷卷号一致，会跳号 */
+  /* đánh số theo như toàn bộ số lượng danh sách tính, lại theo như quyền hạn loại bỏ —— bất đồng Học viên thấy cùng một tờ cuốn cuốn số nhất trí, sẽ nhảy số */
   function buildList(stock, papers) {
     var out = fullPapers(stock).map(function (p) {
       return {
         id: p.id,
         made: false,
-        skills: SLOTS.filter(function (s) { return !!skillPaper(s.list, p.id); })
+        skills: SLOTS.filter(function (s) { return!!skillPaper(s.list, p.id); })
           .map(function (s) { return s.key; }),
-        href: function (skill) { return confirmHref(skill ? "single" : "full", p.id, skill); }
+        href: function (skill) { return confirmHref(skill? "single": "full", p.id, skill); }
       };
     });
     (papers || []).forEach(function (p) {
@@ -125,7 +125,7 @@
         }),
         href: function (skill) {
           return "bank.html?id=" + encodeURIComponent(p.id) +
-            (skill ? "&skill=" + encodeURIComponent(skill) : "");
+            (skill? "&skill=" + encodeURIComponent(skill): "");
         }
       });
     });
@@ -134,7 +134,7 @@
 
   function visiblePacks() {
     return packs.filter(function (p) {
-      return previewOn() || !access || access.staff || !lockInfoOf(p.id).locked;
+      return previewOn() ||!access || access.staff ||!lockInfoOf(p.id).locked;
     });
   }
 
@@ -144,9 +144,9 @@
     }).join("");
     return '<div class="hit-mock-card">' +
       '<div class="hit-mock-id"><b>TOEFL Mock ' + p.no + "</b>" +
-      "<span>真题模考 · 自动评分</span></div>" +
+      "<span> đề thi thật Thi thử · tự động cho điểm </span></div>" +
       '<a class="hit-mock-main" href="' + s2(p.href("")) + '">' +
-      (p.skills.length === 1 ? "开始模考" : "全科模考") + "</a>" +
+      (p.skills.length === 1? " Bắt đầu thi thử ": " toàn khoa Thi thử ") + "</a>" +
       '<div class="hit-mock-skill">' + skills + "</div></div>";
   }
 
@@ -156,8 +156,8 @@
     if (total <= PER_PAGE) return "";
     var pages = Math.ceil(total / PER_PAGE);
     function btn(label, n, on, off) {
-      return '<button type="button" data-page="' + n + '"' + (on ? ' class="is-on"' : "") +
-        (off ? " disabled" : "") + ">" + label + "</button>";
+      return '<button type="button" data-page="' + n + '"' + (on? ' class="is-on"': "") +
+        (off? " disabled": "") + ">" + label + "</button>";
     }
     var html = btn("&lt;", page - 1, false, page === 1);
     for (var n = 1; n <= pages; n++) html += btn(String(n), n, n === page, false);
@@ -169,9 +169,9 @@
     var last = Math.max(1, Math.ceil(visible.length / PER_PAGE));
     if (page > last) page = last;
     var shown = visible.slice((page - 1) * PER_PAGE, page * PER_PAGE);
-    return "<h1>考前冲刺包</h1>" + '<div class="hit-mock-cards">' +
-      (shown.length ? shown.map(mockCardHTML).join("") :
-        '<div class="hit-empty"><b>这里还没有下发给你的卷子</b><p>联系老师开通考前冲刺包。</p></div>') +
+    return "<h1> Gói tăng tốc trước kỳ thi </h1>" + '<div class="hit-mock-cards">' +
+      (shown.length? shown.map(mockCardHTML).join(""):
+        '<div class="hit-empty"><b> tại đây còn không có cấp phát cho của bạn bài thi </b><p> liên hệ Giáo viên kích hoạt Gói tăng tốc trước kỳ thi. </p></div>') +
       "</div>" + pagerHTML(visible.length);
   }
 
@@ -184,32 +184,32 @@
 
   function titleOf(id, skill) {
     var p = packs.filter(function (x) { return x.id === id; })[0];
-    if (!p) return "模考";
+    if (!p) return "Thi thử";
     var slot = SLOTS.filter(function (s) { return s.key === skill; })[0];
-    return "TOEFL Mock " + p.no + (slot ? " · " + slot.label : "");
+    return "TOEFL Mock " + p.no + (slot? " · " + slot.label: "");
   }
 
   function confirmHTML(kind, id, skill) {
     var pack = packOf(id);
-    var speak = skill === "speaking" ? skillPaper("TOEFL_SPEAKING", id) : null;
+    var speak = skill === "speaking"? skillPaper("TOEFL_SPEAKING", id): null;
     var spec = SKILLS.filter(function (s) { return s.key === skill; })[0];
-    var single = spec ? skillPaper(spec.list, id) : speak;
-    var mins = kind === "full" ? (pack && pack.duration) : (single && single.duration);
+    var single = spec? skillPaper(spec.list, id): speak;
+    var mins = kind === "full"? (pack && pack.duration): (single && single.duration);
     var back = "mock.html";
     var rules = kind === "full"
-      ? "<li>阅读 → 听力 → 写作 → 口语，无安排休息，科与科之间不能返回。</li>" +
-        "<li>按各科官方时限连考，约 " + (mins || "—") + " 分钟。</li>" +
-        "<li>切换页面或离开窗口则整场作废，四科均不记分。</li>"
-      : "<li>只考" + (spec ? spec.label : "口语") + "一科，时限约 " + (mins || "—") + " 分钟。</li>" +
-        "<li>切换页面或离开窗口则本场作废，不记分。</li>" +
-        "<li>开始后不能返回题目列表。</li>";
-    if (!pack && kind === "full") return '<p class="hit-status">找不到这套题。</p><a class="hit-back" href="mock.html">← 返回</a>';
-    if (kind === "single" && !single) return '<p class="hit-status">找不到这一科。</p><a class="hit-back" href="' + back + '">← 返回</a>';
-    return '<h1>开始前确认</h1>' +
-      '<a class="hit-back" href="' + back + '">← 返回列表</a>' +
-      '<div class="hit-confirm"><h2 id="mock-title">' + esc(titleOf(id, kind === "full" ? "" : skill)) + "</h2><ul>" + rules + "</ul>" +
+      ? "<li> Đọc → Nghe → Viết → Nói, Không có lịch nghỉ ngơi, khoa và khoa giữa không thể Quay lại. </li>" +
+        "<li> theo như tất cả khoa chính thức thời hạn liền khảo thi, ước " + (mins || "—") + " phút. </li>" +
+        "<li> hoán đổi trang web hoặc ly khai cửa sổ tức thì cả trận hết hiệu lực, bốn khoa đều không ghi điểm. </li>"
+      : "<li> chỉ khảo thi " + (spec? spec.label: "Nói") + " một khoa, thời hạn ước " + (mins || "—") + " phút. </li>" +
+        "<li> hoán đổi trang web hoặc ly khai cửa sổ tức thì bổn tràng hết hiệu lực, không ghi điểm. </li>" +
+        "<li> Bắt đầu sau không thể Quay lại đề mục liệt biểu List. </li>";
+    if (!pack && kind === "full") return '<p class="hit-status"> Không tìm thấy bộ này câu. </p><a class="hit-back" href="mock.html">← Quay lại </a>';
+    if (kind === "single" &&!single) return '<p class="hit-status"> Không tìm thấy cái này một khoa. </p><a class="hit-back" href="' + back + '">← Quay lại </a>';
+    return '<h1> Bắt đầu trước Xác nhận </h1>' +
+      '<a class="hit-back" href="' + back + '">← Về danh sách </a>' +
+      '<div class="hit-confirm"><h2 id="mock-title">' + esc(titleOf(id, kind === "full"? "": skill)) + "</h2><ul>" + rules + "</ul>" +
       '<p class="hit-status is-warn" id="mock-err"></p>' +
-      '<button type="button" class="hit-go" id="mock-go">开始模考</button></div>';
+      '<button type="button" class="hit-go" id="mock-go"> Bắt đầu thi thử </button></div>';
   }
 
   function bindConfirm(kind, id, skill) {
@@ -246,7 +246,7 @@
       bindConfirm(kind, id, skill);
       loadPacks(function () {
         var t = document.getElementById("mock-title");
-        if (t) t.textContent = titleOf(id, kind === "full" ? "" : skill);
+        if (t) t.textContent = titleOf(id, kind === "full"? "": skill);
       });
       return "mock";
     }
@@ -262,5 +262,5 @@
     paint: paint
   };
   w.YYSD_HIT_MOCK = api;
-  if (typeof module !== "undefined" && module.exports) module.exports = api;
-})(typeof window !== "undefined" ? window : global);
+  if (typeof module!== "undefined" && module.exports) module.exports = api;
+})(typeof window!== "undefined"? window: global);

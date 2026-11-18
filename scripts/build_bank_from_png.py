@@ -118,15 +118,15 @@ def segment_run(run, words, freq):
         take = 0
         rare = 0
         for L in range(min(22, n - i), 0, -1):
-            w = s[i : i + L]
+            w = s[i: i + L]
             if not is_lex(w, words):
                 continue
             if L < 4 and w not in freq and w not in TWO and w not in ("a", "i"):
                 continue
-            if L >= 7 and rest_ok(s[i + L :], words, freq):
+            if L >= 7 and rest_ok(s[i + L:], words, freq):
                 take = L
                 break
-            if (w in freq or w in TWO or w in ("a", "i")) and rest_ok(s[i + L :], words, freq):
+            if (w in freq or w in TWO or w in ("a", "i")) and rest_ok(s[i + L:], words, freq):
                 take = L
                 break
             if not rare:
@@ -134,7 +134,7 @@ def segment_run(run, words, freq):
         take = take or rare
         if not take:
             take = 1
-        parts.append(run[i : i + take])
+        parts.append(run[i: i + take])
         i += take
     # glue leftover 1–2 letter crumbs into a neighbor if that makes a word
     out = []
@@ -190,7 +190,7 @@ def clean_option(text):
     m = re.search(r"\s+(?:[A-Za-z]*[A-Z]{3,}[^a-zA-Z]{0,6}){2,}", s)
     if m:
         s = s[: m.start()]
-    return s.strip(" .")
+    return s.strip(".")
 
 
 def still_jammed(text):
@@ -202,7 +202,7 @@ def still_jammed(text):
 
 
 def norm(s):
-    s = re.sub(r"[&＋]", " and ", str(s or "").lower())
+    s = re.sub(r"[&+]", " and ", str(s or "").lower())
     s = re.sub(r"[^a-z0-9]+", " ", s)
     return " ".join(s.split())
 
@@ -424,7 +424,7 @@ def parse_rdl(path, lines):
                 if is_green(r["rgb"]):
                     answer = k
                 continue
-            if re.match(r"^Question\s+\d+", t, re.I) or t in ("解析",) or t.startswith("##"):
+            if re.match(r"^Question\s+\d+", t, re.I) or t in (" Giải thích đáp án ",) or t.startswith("##"):
                 continue
             last = next(reversed(options), None)
             if last and col_of(r["x"]) == col_of(rows[0]["x"]) and not re.match(r"^Question\s+\d+", t, re.I):
@@ -479,7 +479,7 @@ def parse_rdl(path, lines):
         "title": title,
         "titleZh": title,
         "instruction": instruction,
-        "layout": {"kind": kind, "kicker": instruction.replace("Read an ", "").replace("Read a ", "").strip(" .").title(), "title": title, "body": body},
+        "layout": {"kind": kind, "kicker": instruction.replace("Read an ", "").replace("Read a ", "").strip(".").title(), "title": title, "body": body},
         "questions": qs,
     }
 
@@ -609,8 +609,8 @@ def main():
                 failed.append(path + " " + str(e))
     parsed["cw"].sort(key=lambda t: t["title"].lower())
     parsed["rdl"].sort(key=lambda t: t["title"].lower())
-    json.dump(paper("bank-cw", "题块库 · 单词填空", parsed["cw"]), open(OUT_CW, "w"), ensure_ascii=False, indent=2)
-    json.dump(paper("bank-rdl", "题块库 · 生活阅读", parsed["rdl"]), open(OUT_RDL, "w"), ensure_ascii=False, indent=2)
+    json.dump(paper("bank-cw", " Ngân hàng dạng bài · Từ vựng lấp chỗ trống ", parsed["cw"]), open(OUT_CW, "w"), ensure_ascii=False, indent=2)
+    json.dump(paper("bank-rdl", " Ngân hàng dạng bài · sinh hoạt Đọc ", parsed["rdl"]), open(OUT_RDL, "w"), ensure_ascii=False, indent=2)
     for path in (OUT_CW, OUT_RDL):
         bad = jam_report(json.load(open(path)))
         if bad:

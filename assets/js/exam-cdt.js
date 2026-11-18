@@ -37,7 +37,7 @@
 
   var LISTEN_REVIEW_SECS = 120;
 
-  /** Pure hop matrix — also used by ?cdtCheck=1 self-check */
+  /** Pure hop matrix — also used by?cdtCheck=1 self-check */
   function resolveAfterSubmit(pack, suite, item) {
     if (pack === "drill") return { action: "review" };
     if (suite) {
@@ -77,8 +77,8 @@
 
   function suiteTitle(item) {
     var Y = window.YYSD;
-    var vol = Y && Y.camVolume ? Y.camVolume(item) : "";
-    var test = Y && Y.camTestNo ? Y.camTestNo(item) : "";
+    var vol = Y && Y.camVolume? Y.camVolume(item): "";
+    var test = Y && Y.camTestNo? Y.camTestNo(item): "";
     // B5/C18: in-exam chrome English only
     if (vol && test) return "Cambridge IELTS " + vol + " · Test " + test;
     return (item && item.title) || "IELTS Mock Test";
@@ -199,12 +199,12 @@
   /** Listening sections / reading passages from iframe TEST, else Part count */
   function discoverDrillParts() {
     var reading = isReading(state.item);
-    var fallbackN = reading ? 3 : 4;
-    var label = reading ? "Passage" : "Section";
+    var fallbackN = reading? 3: 4;
+    var label = reading? "Passage": "Section";
     try {
       var win = state.frame && state.frame.contentWindow;
       var test = win && win.TEST;
-      var list = test && (reading ? test.passages : test.sections);
+      var list = test && (reading? test.passages: test.sections);
       if (list && list.length) {
         return list.map(function (s) {
           return { id: +s.id, label: label + " " + s.id };
@@ -236,7 +236,7 @@
       from = Number(qs.get("qFrom") || 0);
       to = Number(qs.get("qTo") || 0);
     } catch (e) { return null; }
-    return (from && to) ? { from: from, to: to } : null;
+    return (from && to)? { from: from, to: to }: null;
   }
 
   // ponytail: student calendar homework (?event=) + drill slice; self-study / teacher try has no event
@@ -244,7 +244,7 @@
     try {
       if (!(new URLSearchParams(location.search).get("event") || "").replace(/\D/g, "")) return false;
     } catch (e) { return false; }
-    if (state.pack !== "drill") return false;
+    if (state.pack!== "drill") return false;
     if (isWriting(state.item)) return false;
     return assignedPartNum() > 0;
   }
@@ -271,16 +271,16 @@
     var lead = $("cdt-gate-sections-lead");
     var lab = $("cdt-gate-sec-label");
     if (isReading(state.item)) {
-      if (lead) lead.textContent = "适合分项突破，可只练某几篇文章；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习文章：";
+      if (lead) lead.textContent = " thích hợp điểm hạng đột phá, có thể chỉ luyện một mấy thiên văn chương; đang hướng tính theo thời gian không gây thêm vào áp lực. ";
+      if (lab) lab.textContent = " lựa chọn Luyện tập văn chương: ";
     } else {
-      if (lead) lead.textContent = "适合分项突破，可只练某几个部分；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习部分：";
+      if (lead) lead.textContent = " thích hợp điểm hạng đột phá, có thể chỉ luyện một mấy cái bộ phận; đang hướng tính theo thời gian không gây thêm vào áp lực. ";
+      if (lab) lab.textContent = " Chọn phần luyện tập: ";
     }
     host.innerHTML = parts.map(function (p) {
-      var on = !prefer || prefer === p.id;
+      var on =!prefer || prefer === p.id;
       return '<label><input type="checkbox" class="cdt-gate-secbox" value="' + p.id + '"' +
-        (on ? " checked" : "") + "> " + p.label + "</label>";
+        (on? " checked": "") + "> " + p.label + "</label>";
     }).join("");
     syncSecToggleLabel();
     var err = $("cdt-gate-sec-err");
@@ -290,12 +290,12 @@
   function syncSecToggleLabel() {
     var boxes = document.querySelectorAll(".cdt-gate-secbox");
     var btn = $("cdt-gate-sec-toggle");
-    if (!btn || !boxes.length) return;
+    if (!btn ||!boxes.length) return;
     var allOn = true;
     for (var i = 0; i < boxes.length; i++) {
       if (!boxes[i].checked) { allOn = false; break; }
     }
-    btn.textContent = allOn ? "取消全选" : "全选";
+    btn.textContent = allOn? " Bỏ chọn tất cả ": " Chọn tất cả ";
   }
 
   function selectedGateSections() {
@@ -330,11 +330,11 @@
 
   /** Footer Parts follow selected sections (Q numbers stay absolute) */
   function applyDrillPartsFilter() {
-    if (state.pack !== "drill" || !state.drillSections || !state.drillSections.length) return;
+    if (state.pack!== "drill" ||!state.drillSections ||!state.drillSections.length) return;
     if (isWriting(state.item)) return;
     var ids = state.drillSections;
     state.parts = buildParts(state.item).filter(function (p, idx) {
-      return ids.indexOf(idx + 1) !== -1;
+      return ids.indexOf(idx + 1)!== -1;
     });
     var q = assignedQRange();
     if (q) {
@@ -348,14 +348,14 @@
   }
 
   function draftAnswerCount(item) {
-    if (!item || !item.id) return 0;
+    if (!item ||!item.id) return 0;
     try {
       var d = JSON.parse(localStorage.getItem("yysd:draft:" + item.id) || "null");
       if (!d || d.mode === "exam") return 0;
       var a = d.answers || {};
       var n = 0;
       Object.keys(a).forEach(function (k) {
-        if (a[k] != null && String(a[k]).trim() !== "") n++;
+        if (a[k]!= null && String(a[k]).trim()!== "") n++;
       });
       if (!n && (d.writingTask1 || d.writingTask2)) n = 1;
       return n;
@@ -363,7 +363,7 @@
   }
 
   function writingDraftExists(item) {
-    if (!item || !item.id) return false;
+    if (!item ||!item.id) return false;
     try {
       if (localStorage.getItem(item.id + "-draft")) return true;
     } catch (e) { /* ignore */ }
@@ -385,7 +385,7 @@
   function proceedAfterPack() {
     syncPackToUrl();
     if (state.pack === "drill") {
-      var has = isWriting(state.item) ? writingDraftExists(state.item) : draftAnswerCount(state.item) > 0;
+      var has = isWriting(state.item)? writingDraftExists(state.item): draftAnswerCount(state.item) > 0;
       if (has) {
         var t = $("cdt-gate-resume-text");
         var n = draftAnswerCount(state.item);
@@ -449,7 +449,7 @@
 
   function syncStartEnabled() {
     var btn = $("cdt-gate-start");
-    if (btn) btn.disabled = !state.frameReady;
+    if (btn) btn.disabled =!state.frameReady;
   }
 
   function playTestSound() {
@@ -480,32 +480,32 @@
       "body.yysd-cdt-listening #coverArea,body.yysd-cdt-listening #modeModal,",
       "body.yysd-cdt-listening #resultArea{display:none!important}",
       "body.yysd-cdt-listening #testArea{display:block!important}",
-      "body.yysd-cdt-listening .test-topbar{display:none!important}",
-      "body.yysd-cdt-listening .submit-btn{display:none!important}",
-      "body.yysd-cdt-listening .listen-here{display:none!important}",
-      "body.yysd-cdt-listening .audio-note{display:none!important}",
-      "body.yysd-cdt-listening .sb-meta{display:none!important}",
-      "body.yysd-cdt-listening .container{max-width:960px}",
-      "body.yysd-cdt-listening .audio-bar{",
+      "body.yysd-cdt-listening.test-topbar{display:none!important}",
+      "body.yysd-cdt-listening.submit-btn{display:none!important}",
+      "body.yysd-cdt-listening.listen-here{display:none!important}",
+      "body.yysd-cdt-listening.audio-note{display:none!important}",
+      "body.yysd-cdt-listening.sb-meta{display:none!important}",
+      "body.yysd-cdt-listening.container{max-width:960px}",
+      "body.yysd-cdt-listening.audio-bar{",
       "position:sticky;top:0;z-index:40;margin:0 0 14px;padding:8px 14px;",
       "background:#e8eef6;border:1px solid #b7c4d6;border-radius:0;box-shadow:none}",
       "body.yysd-cdt-listening.yysd-cdt-listen-locked #aProg{",
       "pointer-events:none!important;cursor:default;opacity:.85}",
-      "body.yysd-cdt-listening.yysd-cdt-listen-locked .audio-play{",
+      "body.yysd-cdt-listening.yysd-cdt-listen-locked.audio-play{",
       "pointer-events:none!important;opacity:.5;cursor:default}",
-      "body.yysd-cdt-listening .audio-play{",
+      "body.yysd-cdt-listening.audio-play{",
       "width:34px;height:34px;font-size:14px;border-radius:50%;background:#4a90c2}",
       "body.yysd-cdt-listening #questionsHolder{",
       "background:#fff;border:1px solid #9aabbf;border-radius:2px;",
       "padding:18px 26px 28px;box-shadow:none}",
-      "body.yysd-cdt-listening .section-banner{",
+      "body.yysd-cdt-listening.section-banner{",
       "background:transparent;border:0;box-shadow:none;padding:14px 0 6px;margin:0}",
-      "body.yysd-cdt-listening .sb-title{font-size:22px;font-weight:700;color:#111}",
-      "body.yysd-cdt-listening .sb-top{justify-content:flex-start}",
-      "body.yysd-cdt-listening .qgroup{margin:12px 0 22px}",
-      "body.yysd-cdt-listening .qgroup h4{font-size:15px;font-weight:700;color:#111;margin:0 0 6px}",
-      "body.yysd-cdt-listening .instruction{font-style:italic;color:#222;margin:0 0 12px}",
-      "body.yysd-cdt-listening .qnum-badge{",
+      "body.yysd-cdt-listening.sb-title{font-size:22px;font-weight:700;color:#111}",
+      "body.yysd-cdt-listening.sb-top{justify-content:flex-start}",
+      "body.yysd-cdt-listening.qgroup{margin:12px 0 22px}",
+      "body.yysd-cdt-listening.qgroup h4{font-size:15px;font-weight:700;color:#111;margin:0 0 6px}",
+      "body.yysd-cdt-listening.instruction{font-style:italic;color:#222;margin:0 0 12px}",
+      "body.yysd-cdt-listening.qnum-badge{",
       "background:transparent;color:#111;border-radius:0;min-width:0;height:auto;",
       "padding:0 4px 0 0;font-size:15px;font-weight:700}",
       "body.yysd-cdt-listening input[type=text]{",
@@ -514,51 +514,51 @@
       "padding:2px 4px!important;font:700 15px/1.4 Arial,sans-serif!important}",
       "body.yysd-cdt-listening input[type=text]:focus{",
       "outline:none;border-bottom-color:#1a6fb5!important;background:#f3f8fd!important}",
-      "body.yysd-cdt-listening .note-table th{background:#eef2f7;font-weight:700}",
-      "body.yysd-cdt-listening .note-table td,body.yysd-cdt-listening .note-table th{",
+      "body.yysd-cdt-listening.note-table th{background:#eef2f7;font-weight:700}",
+      "body.yysd-cdt-listening.note-table td,body.yysd-cdt-listening.note-table th{",
       "border-color:#b0bccb;padding:8px 10px}",
-      "body.yysd-cdt-listening .map-wrap{margin:8px 0 18px;padding:10px 8px 14px}",
-      "body.yysd-cdt-listening .map-img{width:100%;max-width:920px;height:auto;margin:0 auto;display:block;cursor:zoom-in}",
-      "body.yysd-cdt-listening .map-wrap.is-zoom .map-img{max-width:none;width:min(1400px,96vw);cursor:zoom-out}",
+      "body.yysd-cdt-listening.map-wrap{margin:8px 0 18px;padding:10px 8px 14px}",
+      "body.yysd-cdt-listening.map-img{width:100%;max-width:920px;height:auto;margin:0 auto;display:block;cursor:zoom-in}",
+      "body.yysd-cdt-listening.map-wrap.is-zoom.map-img{max-width:none;width:min(1400px,96vw);cursor:zoom-out}",
     ].join("");
   }
 
   function readingPaperCss() {
     return [
       "html,body.yysd-cdt-reading{height:100%;margin:0;background:#d9e1ec!important;overflow:hidden}",
-      "body.yysd-cdt-reading .header,body.yysd-cdt-reading .test-topbar,",
-      "body.yysd-cdt-reading .submit-btn,body.yysd-cdt-reading .section-banner{display:none!important}",
+      "body.yysd-cdt-reading.header,body.yysd-cdt-reading.test-topbar,",
+      "body.yysd-cdt-reading.submit-btn,body.yysd-cdt-reading.section-banner{display:none!important}",
       "body.yysd-cdt-reading #coverArea,body.yysd-cdt-reading #resultArea{display:none!important}",
       "body.yysd-cdt-reading #testArea.container{",
       "display:block!important;max-width:none!important;width:100%!important;height:100%!important;",
       "padding:0!important;margin:0!important}",
       "body.yysd-cdt-reading #questionsHolder{height:100%}",
-      "body.yysd-cdt-reading .reading-cols{",
+      "body.yysd-cdt-reading.reading-cols{",
       "display:none;gap:0;height:100%;align-items:stretch;margin:0}",
-      "body.yysd-cdt-reading .reading-cols.yysd-cdt-part-on{display:flex!important}",
-      "body.yysd-cdt-reading .passage-pane,body.yysd-cdt-reading .qcol{",
+      "body.yysd-cdt-reading.reading-cols.yysd-cdt-part-on{display:flex!important}",
+      "body.yysd-cdt-reading.passage-pane,body.yysd-cdt-reading.qcol{",
       "flex:1 1 50%;min-width:0;max-height:none;height:100%;overflow:auto;",
       "position:static;border-radius:0;box-shadow:none;background:#fff;",
       "padding:20px 24px;border:0;border-right:0}",
-      "body.yysd-cdt-reading .qcol{background:#f7f9fc}",
-      "body.yysd-cdt-reading .yysd-cdt-split{",
+      "body.yysd-cdt-reading.qcol{background:#f7f9fc}",
+      "body.yysd-cdt-reading.yysd-cdt-split{",
       "flex:0 0 5px;cursor:col-resize;background:#c5d0de;align-self:stretch}",
-      "body.yysd-cdt-reading .yysd-cdt-split:hover,body.yysd-cdt-reading .yysd-cdt-split.is-drag{",
+      "body.yysd-cdt-reading.yysd-cdt-split:hover,body.yysd-cdt-reading.yysd-cdt-split.is-drag{",
       "background:#7a90a8}",
-      "body.yysd-cdt-reading .passage-pane .pp-kicker{",
+      "body.yysd-cdt-reading.passage-pane.pp-kicker{",
       "font-size:12px;letter-spacing:1px;color:#555;font-weight:700}",
-      "body.yysd-cdt-reading .passage-pane .ptitle{",
+      "body.yysd-cdt-reading.passage-pane.ptitle{",
       "margin:6px 0 10px;font-size:20px;font-weight:700;color:#111}",
-      "body.yysd-cdt-reading .passage-pane .pp-byline{color:#444;font-size:13px}",
-      "body.yysd-cdt-reading .passage-pane p{",
+      "body.yysd-cdt-reading.passage-pane.pp-byline{color:#444;font-size:13px}",
+      "body.yysd-cdt-reading.passage-pane p{",
       "margin:0 0 12px;font-size:15px;line-height:1.55;color:#111;text-align:justify}",
-      "body.yysd-cdt-reading .passage-pane .para-label{color:#111;font-weight:800}",
-      "body.yysd-cdt-reading .qgroup{",
+      "body.yysd-cdt-reading.passage-pane.para-label{color:#111;font-weight:800}",
+      "body.yysd-cdt-reading.qgroup{",
       "background:transparent;border:0;border-radius:0;padding:8px 4px 18px;margin:0 0 8px;",
       "box-shadow:none}",
-      "body.yysd-cdt-reading .qgroup h4{font-size:15px;font-weight:700;color:#111;margin:0 0 6px}",
-      "body.yysd-cdt-reading .instruction{font-style:italic;color:#222;margin:0 0 12px}",
-      "body.yysd-cdt-reading .qnum-badge{",
+      "body.yysd-cdt-reading.qgroup h4{font-size:15px;font-weight:700;color:#111;margin:0 0 6px}",
+      "body.yysd-cdt-reading.instruction{font-style:italic;color:#222;margin:0 0 12px}",
+      "body.yysd-cdt-reading.qnum-badge{",
       "background:transparent;color:#111;border-radius:0;min-width:0;height:auto;",
       "padding:0 4px 0 0;font-size:15px;font-weight:700}",
       "body.yysd-cdt-reading input[type=text]{",
@@ -567,64 +567,64 @@
       "padding:2px 4px!important;font:700 15px/1.4 Arial,sans-serif!important}",
       "body.yysd-cdt-reading input[type=text]:focus{",
       "outline:none;border-bottom-color:#1a6fb5!important;background:#f3f8fd!important}",
-      "body.yysd-cdt-reading .note-box{",
+      "body.yysd-cdt-reading.note-box{",
       "border:1px solid #b0bccb;border-radius:2px;background:#fff;padding:14px 16px}",
-      "body.yysd-cdt-reading .note-table th{background:#eef2f7}",
-      "body.yysd-cdt-reading .mcq label:hover{background:#e8eef6}"
+      "body.yysd-cdt-reading.note-table th{background:#eef2f7}",
+      "body.yysd-cdt-reading.mcq label:hover{background:#e8eef6}"
     ].join("");
   }
 
   function writingPaperCss() {
     return [
       "html,body.yysd-cdt-writing{height:100%;margin:0;background:#d9e1ec!important;overflow:hidden}",
-      "body.yysd-cdt-writing .header,body.yysd-cdt-writing .test-topbar,",
-      "body.yysd-cdt-writing .submit-btn{display:none!important}",
+      "body.yysd-cdt-writing.header,body.yysd-cdt-writing.test-topbar,",
+      "body.yysd-cdt-writing.submit-btn{display:none!important}",
       "body.yysd-cdt-writing #coverArea,body.yysd-cdt-writing #resultArea{display:none!important}",
       "body.yysd-cdt-writing #testArea.container{",
       "display:block!important;max-width:none!important;width:100%!important;height:100%!important;",
       "padding:0!important;margin:0!important}",
-      "body.yysd-cdt-writing .task{",
+      "body.yysd-cdt-writing.task{",
       "display:none;height:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent}",
-      "body.yysd-cdt-writing .task.yysd-cdt-part-on{display:block!important}",
-      "body.yysd-cdt-writing .yysd-cdt-wcols{",
+      "body.yysd-cdt-writing.task.yysd-cdt-part-on{display:block!important}",
+      "body.yysd-cdt-writing.yysd-cdt-wcols{",
       "display:flex;height:100%;align-items:stretch}",
-      "body.yysd-cdt-writing .yysd-cdt-wprompt,body.yysd-cdt-writing .yysd-cdt-wanswer{",
+      "body.yysd-cdt-writing.yysd-cdt-wprompt,body.yysd-cdt-writing.yysd-cdt-wanswer{",
       "flex:1 1 50%;min-width:0;height:100%;overflow:auto;padding:20px 24px}",
-      "body.yysd-cdt-writing .yysd-cdt-wprompt{",
+      "body.yysd-cdt-writing.yysd-cdt-wprompt{",
       "background:#fff;border-right:1px solid #9aabbf}",
-      "body.yysd-cdt-writing .yysd-cdt-wanswer{",
+      "body.yysd-cdt-writing.yysd-cdt-wanswer{",
       "background:#f7f9fc;display:flex;flex-direction:column}",
-      "body.yysd-cdt-writing .task__head{margin:0 0 10px}",
-      "body.yysd-cdt-writing .task__head h3{",
+      "body.yysd-cdt-writing.task__head{margin:0 0 10px}",
+      "body.yysd-cdt-writing.task__head h3{",
       "margin:0;font:700 18px/1.3 Arial,sans-serif;color:#111}",
-      "body.yysd-cdt-writing .task__time{display:none!important}",
-      "body.yysd-cdt-writing .prompt{",
+      "body.yysd-cdt-writing.task__time{display:none!important}",
+      "body.yysd-cdt-writing.prompt{",
       "margin:0 0 14px;padding:0;border:0;border-radius:0;background:transparent;",
       "font:15px/1.55 Arial,sans-serif;color:#111}",
-      "body.yysd-cdt-writing .wtables{margin:0 0 8px}",
-      "body.yysd-cdt-writing .wplan{",
+      "body.yysd-cdt-writing.wtables{margin:0 0 8px}",
+      "body.yysd-cdt-writing.wplan{",
       "border:0;border-radius:0;padding:0;background:transparent;text-align:left}",
-      "body.yysd-cdt-writing .wplan figcaption{",
+      "body.yysd-cdt-writing.wplan figcaption{",
       "font:700 13px/1.4 Arial,sans-serif;color:#333;margin:0 0 8px}",
-      "body.yysd-cdt-writing .wplan-img{max-width:100%;height:auto;border-radius:0}",
-      "body.yysd-cdt-writing .yysd-cdt-wanswer textarea{",
+      "body.yysd-cdt-writing.wplan-img{max-width:100%;height:auto;border-radius:0}",
+      "body.yysd-cdt-writing.yysd-cdt-wanswer textarea{",
       "flex:1 1 auto;min-height:0;width:100%;resize:none;border:1px solid #9aabbf;",
       "border-radius:2px;background:#fff;padding:14px 16px;",
       "font:15px/1.6 Arial,sans-serif;color:#111;box-shadow:none}",
-      "body.yysd-cdt-writing .yysd-cdt-wanswer textarea:focus{",
+      "body.yysd-cdt-writing.yysd-cdt-wanswer textarea:focus{",
       "outline:none;border-color:#1a6fb5;box-shadow:none}",
-      "body.yysd-cdt-writing .wc{",
+      "body.yysd-cdt-writing.wc{",
       "margin:10px 0 0;font:13px/1.4 Arial,sans-serif;color:#333;",
       "justify-content:flex-start;gap:12px}",
-      "body.yysd-cdt-writing .wc .n{font-weight:700;font-size:14px;color:#111}",
-      "body.yysd-cdt-writing .wc .n.low{color:#b42318}",
-      "body.yysd-cdt-writing .wc .saved{display:none!important}"
+      "body.yysd-cdt-writing.wc.n{font-weight:700;font-size:14px;color:#111}",
+      "body.yysd-cdt-writing.wc.n.low{color:#b42318}",
+      "body.yysd-cdt-writing.wc.saved{display:none!important}"
     ].join("");
   }
 
   function ensureWritingSplit(doc) {
     if (!doc) return;
-    var tasks = doc.querySelectorAll("#testArea .task");
+    var tasks = doc.querySelectorAll("#testArea.task");
     for (var i = 0; i < tasks.length; i++) {
       var task = tasks[i];
       if (task.querySelector(".yysd-cdt-wcols")) continue;
@@ -648,11 +648,11 @@
       // Word count label → CDT English
       if (wc) {
         var nEl = wc.querySelector(".n");
-        var n = nEl ? nEl.textContent : "0";
-        var id = nEl ? nEl.id : "";
+        var n = nEl? nEl.textContent: "0";
+        var id = nEl? nEl.id: "";
         wc.innerHTML = 'Word count: <span class="n' +
-          (nEl && /low/.test(nEl.className) ? " low" : "") + '"' +
-          (id ? ' id="' + id + '"' : "") + ">" + n + "</span>";
+          (nEl && /low/.test(nEl.className)? " low": "") + '"' +
+          (id? ' id="' + id + '"': "") + ">" + n + "</span>";
       }
       // B5/C18: English placeholder (papers ship Chinese)
       if (i === 0) {
@@ -668,12 +668,12 @@
     try {
       var doc = state.frame && state.frame.contentDocument;
       if (!doc) return;
-      var part = partNo === 2 ? 2 : 1;
-      var tasks = doc.querySelectorAll("#testArea .task");
+      var part = partNo === 2? 2: 1;
+      var tasks = doc.querySelectorAll("#testArea.task");
       for (var i = 0; i < tasks.length; i++) {
         var on = i + 1 === part;
         tasks[i].classList.toggle("yysd-cdt-part-on", on);
-        tasks[i].style.display = on ? "block" : "none";
+        tasks[i].style.display = on? "block": "none";
       }
     } catch (e) { /* ignore */ }
   }
@@ -681,7 +681,7 @@
   function applyCdtPaperSkin() {
     try {
       var doc = state.frame && state.frame.contentDocument;
-      if (!doc || !doc.head || !doc.body) return;
+      if (!doc ||!doc.head ||!doc.body) return;
       doc.body.classList.add("yysd-embedded");
       if (isListening(state.item)) doc.body.classList.add("yysd-cdt-listening");
       else if (isReading(state.item)) doc.body.classList.add("yysd-cdt-reading");
@@ -694,13 +694,13 @@
         doc.head.appendChild(style);
       }
       style.textContent =
-        "body.yysd-embedded > .header,body.yysd-embedded > header.header{display:none!important}" +
-        "body.yysd-embedded .test-topbar .timer,body.yysd-embedded #timer.timer{display:none!important}" +
+        "body.yysd-embedded >.header,body.yysd-embedded > header.header{display:none!important}" +
+        "body.yysd-embedded.test-topbar.timer,body.yysd-embedded #timer.timer{display:none!important}" +
         "body.yysd-embedded #modeModal{display:none!important}" +
         "body.yysd-embedded{background:#d9e1ec!important}" +
-        (isListening(state.item) ? listeningPaperCss() : "") +
-        (isReading(state.item) ? readingPaperCss() : "") +
-        (isWriting(state.item) ? writingPaperCss() : "");
+        (isListening(state.item)? listeningPaperCss(): "") +
+        (isReading(state.item)? readingPaperCss(): "") +
+        (isWriting(state.item)? writingPaperCss(): "");
       if (isWriting(state.item)) {
         ensureWritingSplit(doc);
         syncWritingPartView(state.current + 1);
@@ -723,9 +723,9 @@
     for (var i = 0; i < colsList.length; i++) {
       var col = colsList[i];
       if (col.querySelector(".yysd-cdt-split")) continue;
-      var left = col.querySelector(".passage-pane, .pcol");
+      var left = col.querySelector(".passage-pane,.pcol");
       var right = col.querySelector(".qcol");
-      if (!left || !right) continue;
+      if (!left ||!right) continue;
       var split = doc.createElement("div");
       split.className = "yysd-cdt-split";
       split.setAttribute("role", "separator");
@@ -769,7 +769,7 @@
 
   function scrollHostInPane(host) {
     if (!host) return;
-    var pane = host.closest(".qcol, .passage-pane");
+    var pane = host.closest(".qcol,.passage-pane");
     if (!pane) {
       try { host.scrollIntoView({ block: "nearest" }); } catch (e) { /* ignore */ }
       return;
@@ -794,7 +794,7 @@
         var cols = el.closest(".reading-cols");
         if (cols) {
           var banner = cols.previousElementSibling;
-          var id = banner && banner.id ? Number(String(banner.id).replace(/\D/g, "")) : 0;
+          var id = banner && banner.id? Number(String(banner.id).replace(/\D/g, "")): 0;
           if (id) part = id;
           else {
             var all = doc.querySelectorAll(".reading-cols");
@@ -804,7 +804,7 @@
           }
         }
       } else {
-        part = qNo <= 13 ? 1 : qNo <= 26 ? 2 : 3;
+        part = qNo <= 13? 1: qNo <= 26? 2: 3;
       }
       var banners = doc.querySelectorAll(".section-banner");
       for (var b = 0; b < banners.length; b++) {
@@ -814,7 +814,7 @@
         var pair = ban.nextElementSibling;
         if (pair && pair.classList.contains("reading-cols")) {
           pair.classList.toggle("yysd-cdt-part-on", on);
-          pair.style.display = on ? "flex" : "none";
+          pair.style.display = on? "flex": "none";
         }
       }
       // ponytail: if no banners matched, show first cols
@@ -852,9 +852,9 @@
     if (byId) return byId;
     var badges = doc.querySelectorAll(".qnum-badge");
     for (var i = 0; i < badges.length; i++) {
-      if (String(badges[i].textContent || "").trim() !== String(n)) continue;
-      // ponytail: no bare `div` — .qtext wins over .mcq and misses radios
-      var root = badges[i].closest(".mcq, .match-q, td, tr, .fill-row, .qgroup");
+      if (String(badges[i].textContent || "").trim()!== String(n)) continue;
+      // ponytail: no bare `div` —.qtext wins over.mcq and misses radios
+      var root = badges[i].closest(".mcq,.match-q, td, tr,.fill-row,.qgroup");
       if (!root) continue;
       var text = root.querySelector("input[type='text'], select");
       if (text) return text;
@@ -866,7 +866,7 @@
 
   function isControlAnswered(el) {
     if (!el) return false;
-    if (el.tagName === "SELECT") return !!el.value;
+    if (el.tagName === "SELECT") return!!el.value;
     if (el.type === "radio") {
       var group = el.form
         ? el.form.querySelectorAll('input[type="radio"][name="' + el.name + '"]')
@@ -883,7 +883,7 @@
     var m = id.match(/^[LQ](\d+)$/i);
     if (m) return Number(m[1]);
     var badge = null;
-    var root = el.closest(".mcq, .match-q, td, .qgroup");
+    var root = el.closest(".mcq,.match-q, td,.qgroup");
     if (root) badge = root.querySelector(".qnum-badge");
     if (badge) {
       var n = parseInt(String(badge.textContent || "").trim(), 10);
@@ -894,7 +894,7 @@
 
   function writingControl(doc, n) {
     if (!doc) return null;
-    return doc.getElementById(n === 2 ? "t2" : "t1");
+    return doc.getElementById(n === 2? "t2": "t1");
   }
 
   function refreshAnsweredFlags() {
@@ -902,7 +902,7 @@
       var doc = state.frame && state.frame.contentDocument;
       if (!doc) return;
       for (var n = 1; n <= state.total; n++) {
-        var el = isWriting(state.item) ? writingControl(doc, n) : controlForQuestion(doc, n);
+        var el = isWriting(state.item)? writingControl(doc, n): controlForQuestion(doc, n);
         if (isControlAnswered(el)) state.answered[n] = true;
         else delete state.answered[n];
       }
@@ -911,16 +911,16 @@
 
   function bindPaperNav() {
     if (state.paperBound) return;
-    if (!isListening(state.item) && !isReading(state.item) && !isWriting(state.item)) return;
+    if (!isListening(state.item) &&!isReading(state.item) &&!isWriting(state.item)) return;
     try {
       var doc = state.frame && state.frame.contentDocument;
-      if (!doc || !doc.body) return;
+      if (!doc ||!doc.body) return;
       state.paperBound = true;
       doc.body.addEventListener("focusin", function (e) {
         if (isWriting(state.item)) {
           var id = e.target && e.target.id;
           if (id === "t1" || id === "t2") {
-            state.current = id === "t2" ? 1 : 0;
+            state.current = id === "t2"? 1: 0;
             syncWritingPartView(state.current + 1);
             renderPages();
           }
@@ -935,8 +935,8 @@
       doc.body.addEventListener("input", function (e) {
         if (isWriting(state.item)) {
           var id = e.target && e.target.id;
-          if (id !== "t1" && id !== "t2") return;
-          var wn = id === "t2" ? 2 : 1;
+          if (id!== "t1" && id!== "t2") return;
+          var wn = id === "t2"? 2: 1;
           if (isControlAnswered(e.target)) state.answered[wn] = true;
           else delete state.answered[wn];
           state.current = wn - 1;
@@ -972,7 +972,7 @@
   function beginIframeExam() {
     try {
       var win = state.frame && state.frame.contentWindow;
-      if (!win || typeof win.startTest !== "function") return false;
+      if (!win || typeof win.startTest!== "function") return false;
       // pack may be chosen after bridge inject — sync before startTest
       try {
         var bridge = state.frame.contentDocument &&
@@ -980,7 +980,7 @@
         if (bridge) {
           bridge.dataset.pack = state.pack || "exam";
           // resume uses draft.sections; fresh drill uses gate selection
-          if (state.pack === "drill" && state.drillSections && state.drillSections.length && !state.resumeDraft) {
+          if (state.pack === "drill" && state.drillSections && state.drillSections.length &&!state.resumeDraft) {
             bridge.dataset.sections = state.drillSections.join(",");
           } else {
             delete bridge.dataset.sections;
@@ -990,7 +990,7 @@
       // drill → paper "practice" (draft/no void); exam → paper "exam" (lock)
       // UI chrome is identical either way
       if (isWriting(state.item)) win.startTest();
-      else win.startTest(state.pack === "drill" ? "practice" : "exam");
+      else win.startTest(state.pack === "drill"? "practice": "exam");
       applyDrillPartsFilter();
       applyCdtPaperSkin();
       bindPaperNav();
@@ -1012,15 +1012,15 @@
   }
 
   function startParentTimer(overrideSecs) {
-    if (overrideSecs != null) state.seconds = overrideSecs;
+    if (overrideSecs!= null) state.seconds = overrideSecs;
     if (state.parentTimerStarted && overrideSecs == null) return;
-    if (typeof state.onStart !== "function") return;
+    if (typeof state.onStart!== "function") return;
     state.parentTimerStarted = true;
     state.onStart(state.seconds);
   }
 
   function enterListeningReview() {
-    if (!state.active || !state.started || !isListening(state.item)) return;
+    if (!state.active ||!state.started ||!isListening(state.item)) return;
     if (state.listeningPhase === "review" || state.hopping) return;
     state.listeningPhase = "review";
     state.timeUpHop = false;
@@ -1123,7 +1123,7 @@
   function syncReviewCheckbox() {
     var cb = $("cdt-review");
     if (!cb) return;
-    cb.checked = !!state.review[state.current + 1];
+    cb.checked =!!state.review[state.current + 1];
   }
 
   function setCurrent(idx) {
@@ -1141,7 +1141,7 @@
       if (!doc) return;
       if (isWriting(state.item)) {
         syncWritingPartView(idx + 1);
-        var ta = doc.getElementById(idx === 0 ? "t1" : "t2");
+        var ta = doc.getElementById(idx === 0? "t1": "t2");
         if (ta) ta.focus();
         return;
       }
@@ -1154,7 +1154,7 @@
         el = inputs[idx];
       }
       if (el) {
-        var host = el.type === "radio" ? (el.closest(".mcq, .match-q") || el) : el;
+        var host = el.type === "radio"? (el.closest(".mcq,.match-q") || el): el;
         if (isReading(state.item)) {
           pinReadingDocScroll(doc);
           scrollHostInPane(host);
@@ -1162,7 +1162,7 @@
         } else {
           try { host.scrollIntoView({ block: "nearest" }); } catch (eS) { /* ignore */ }
         }
-        if (el.type !== "radio") {
+        if (el.type!== "radio") {
           try { el.focus({ preventScroll: true }); } catch (eF) { try { el.focus(); } catch (eF2) {} }
         }
       }
@@ -1180,13 +1180,13 @@
   }
 
   function applyBgColor(color) {
-    state.bgColor = BG_MAP[color] ? color : "white";
+    state.bgColor = BG_MAP[color]? color: "white";
     var hex = BG_MAP[state.bgColor];
     document.documentElement.style.setProperty("--cdt-paper-bg", hex);
     document.body.setAttribute("data-cdt-bg", state.bgColor);
     try {
       var doc = state.frame && state.frame.contentDocument;
-      if (!doc || !doc.body) return;
+      if (!doc ||!doc.body) return;
       doc.documentElement.style.setProperty("--cdt-paper-bg", hex);
       doc.body.style.setProperty("--cdt-paper-bg", hex);
       // paper panels that are white by default
@@ -1198,14 +1198,14 @@
       }
       style.textContent =
         "body.yysd-embedded #testArea," +
-        "body.yysd-cdt-listening .note-box," +
-        "body.yysd-cdt-listening .match-box," +
-        "body.yysd-cdt-listening .mcq," +
-        "body.yysd-cdt-reading .pcol," +
-        "body.yysd-cdt-reading .qcol," +
-        "body.yysd-cdt-writing .yysd-cdt-wprompt," +
-        "body.yysd-cdt-writing .yysd-cdt-wanswer," +
-        "body.yysd-cdt-writing .yysd-cdt-wanswer textarea{" +
+        "body.yysd-cdt-listening.note-box," +
+        "body.yysd-cdt-listening.match-box," +
+        "body.yysd-cdt-listening.mcq," +
+        "body.yysd-cdt-reading.pcol," +
+        "body.yysd-cdt-reading.qcol," +
+        "body.yysd-cdt-writing.yysd-cdt-wprompt," +
+        "body.yysd-cdt-writing.yysd-cdt-wanswer," +
+        "body.yysd-cdt-writing.yysd-cdt-wanswer textarea{" +
         "background:" + hex + "!important}";
     } catch (e) { /* ignore */ }
   }
@@ -1229,7 +1229,7 @@
   function toggleNotepad(force) {
     var panel = $("cdt-notepad-panel");
     if (!panel) return;
-    var on = force != null ? !!force : panel.hasAttribute("hidden");
+    var on = force!= null?!!force: panel.hasAttribute("hidden");
     if (on) {
       loadNotepad();
       panel.removeAttribute("hidden");
@@ -1271,7 +1271,7 @@
 
   function showSubmitLoading(msg) {
     var text = $("cdt-submit-loading-text");
-    if (text) text.textContent = msg || "正在加载成绩报告…";
+    if (text) text.textContent = msg || " Đang tải báo cáo kết quả …";
     showMask("cdt-submit-loading", true);
   }
 
@@ -1280,21 +1280,21 @@
   }
 
   function submitLoadingMsg(plan) {
-    if (!plan) return "正在加载成绩报告…";
-    if (plan.action === "hop") return "正在进入下一科…";
-    if (plan.action === "report") return "正在加载成绩报告…";
-    return "正在生成成绩单…";
+    if (!plan) return " Đang tải báo cáo kết quả …";
+    if (plan.action === "hop") return " Đang chuyển sang kỹ năng tiếp theo …";
+    if (plan.action === "report") return " Đang tải báo cáo kết quả …";
+    return " đang Đang tạo bảng điểm …";
   }
 
   function updateTimer(seconds) {
     var el = $("cdt-timer");
-    if (!el || !state.active) return;
+    if (!el ||!state.active) return;
     if (seconds <= 0) {
       el.textContent = "0 minutes left";
       el.classList.add("is-danger");
       el.classList.remove("is-flash", "is-low");
       // ponytail: parent clock owns after-submit — don't leave student stuck on timed-out section
-      if (state.started && !state.timeUpHop) {
+      if (state.started &&!state.timeUpHop) {
         state.timeUpHop = true;
         setTimeout(function () { hopAfterSubmit(); }, 600);
       }
@@ -1303,10 +1303,10 @@
     var mins = Math.max(1, Math.ceil(seconds / 60));
     if (state.listeningPhase === "review") {
       // review shows clearer seconds in the last minute
-      if (seconds < 60) el.textContent = seconds + (seconds === 1 ? " second left" : " seconds left");
-      else el.textContent = mins + (mins === 1 ? " minute left" : " minutes left");
+      if (seconds < 60) el.textContent = seconds + (seconds === 1? " second left": " seconds left");
+      else el.textContent = mins + (mins === 1? " minute left": " minutes left");
     } else {
-      el.textContent = mins + (mins === 1 ? " minute left" : " minutes left");
+      el.textContent = mins + (mins === 1? " minute left": " minutes left");
     }
     // official CDT: clock flashes at 10 and 5 minutes remaining
     el.classList.toggle("is-flash", seconds <= 600);
@@ -1330,7 +1330,7 @@
   }
 
   function suiteNextId(item) {
-    if (!item || !item.id) return "";
+    if (!item ||!item.id) return "";
     if (item.subject === "cambridge-listening") return item.id + "-reading";
     if (item.subject === "cambridge-reading") {
       return String(item.id).replace(/-reading$/, "") + "-writing";
@@ -1339,7 +1339,7 @@
   }
 
   function suiteBaseId(item) {
-    if (!item || !item.id) return "";
+    if (!item ||!item.id) return "";
     return String(item.id).replace(/-reading$/, "").replace(/-writing$/, "");
   }
 
@@ -1396,8 +1396,8 @@
     }
     function onScore(e) {
       // ponytail: only accept score from the exam iframe
-      if (state.frame && e.source !== state.frame.contentWindow) return;
-      if (!e.data || e.data.type !== "yysd:score") return;
+      if (state.frame && e.source!== state.frame.contentWindow) return;
+      if (!e.data || e.data.type!== "yysd:score") return;
       state.scoredThisSession = true;
       afterScoreSynced();
     }
@@ -1412,7 +1412,7 @@
       else if (typeof win.confirmSubmit === "function") win.confirmSubmit();
       else win.postMessage({ type: "yysd:time-up" }, "*");
     } catch (e) { /* ignore */ }
-    // ponytail: 详解不发 yysd:score — Finish 只出批改
+    // ponytail: Giải thích chi tiết không gửi yysd:score — Finish xuất ra phê chữa
     if (isExplainMode()) {
       state.scoredThisSession = true;
       setTimeout(finish, 300);
@@ -1440,7 +1440,7 @@
   }
 
   function injectReviewStyles(doc, unlockAudio) {
-    if (!doc || !doc.head) return;
+    if (!doc ||!doc.head) return;
     if (!doc.getElementById("yysd-cdt-review-link")) {
       var link = doc.createElement("link");
       link.id = "yysd-cdt-review-link";
@@ -1459,8 +1459,8 @@
       (unlockAudio
         ? "body.yysd-cdt-review #testArea{display:block!important}" +
           "body.yysd-cdt-review #questionsHolder,.submit-btn,.header,.test-topbar{display:none!important}" +
-          "body.yysd-cdt-review .audio-bar{display:block!important}" +
-          "body.yysd-cdt-review .audio-play,body.yysd-cdt-review #aProg{" +
+          "body.yysd-cdt-review.audio-bar{display:block!important}" +
+          "body.yysd-cdt-review.audio-play,body.yysd-cdt-review #aProg{" +
             "pointer-events:auto!important;opacity:1!important}"
         : "body.yysd-cdt-review #testArea,.test-area,#questionsHolder{display:none!important}");
   }
@@ -1470,7 +1470,7 @@
     var ra = doc.getElementById("resultArea") || doc.querySelector(".result-area");
     if (!ra) return;
     var card = ra.querySelector(".res-card");
-    if (card && !card.getAttribute("data-yysd-res")) {
+    if (card &&!card.getAttribute("data-yysd-res")) {
       card.setAttribute("data-yysd-res", "1");
       var nodes = card.children;
       var i, el, t;
@@ -1478,14 +1478,14 @@
         el = nodes[i];
         if (el.children && el.children.length) continue;
         t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/批改报告|写作完成/.test(t)) {
+        if (/ Báo cáo chấm bài | Hoàn thành bài viết /.test(t)) {
           el.className = "yysd-res-eyebrow";
-          el.textContent = /写作/.test(t) ? "Writing report" : "Practice result";
+          el.textContent = / Viết /.test(t)? "Writing report": "Practice result";
           break;
         }
       }
     }
-    ra.querySelectorAll(".ritem .rex").forEach(function (ex) {
+    ra.querySelectorAll(".ritem.rex").forEach(function (ex) {
       var raw = ex.textContent || "";
       if (raw.indexOf("💡") >= 0) ex.textContent = raw.split("💡").join("").replace(/^\s+/, "");
     });
@@ -1536,7 +1536,7 @@
         ra.scrollIntoView({ block: "start" });
       }
       var ta = doc.getElementById("testArea");
-      if (ta && !unlockAudio) {
+      if (ta &&!unlockAudio) {
         try { ta.style.setProperty("display", "none", "important"); } catch (e1) { ta.style.display = "none"; }
       }
     } catch (e) { /* ignore */ }
@@ -1544,12 +1544,12 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? "详解批改如下，不计入成绩。"
+        ? " Giải thích chi tiết phê chữa như sau, bất kể nhập Điểm số. "
         : (state.pack === "drill"
           ? (isListening(state.item)
-            ? "练习已交卷 · 成绩单与解析如下；可用顶部播放器回放听力。"
-            : "练习已交卷 · 成绩单与解析如下。")
-          : "模考已交卷 · 下方为本次作答与解析。");
+            ? " Luyện tập đã Nộp bài · Bảng điểm và Giải thích đáp án như sau; có thể dùng đỉnh bá phóng khí cất đi Nghe. "
+            : " Luyện tập đã Nộp bài · Bảng điểm và Giải thích đáp án như sau. ")
+          : " Thi thử đã Nộp bài · phía dưới làm gốc lần đáp lại và Giải thích đáp án. ");
     }
   }
 
@@ -1607,10 +1607,10 @@
       // footer filter; paper restore still uses draft.sections via bridge
       try {
         var d = JSON.parse(localStorage.getItem("yysd:draft:" + state.item.id) || "null");
-        state.drillSections = d && Array.isArray(d.sections) && d.sections.length ? d.sections : null;
+        state.drillSections = d && Array.isArray(d.sections) && d.sections.length? d.sections: null;
       } catch (e) { state.drillSections = null; }
       if (isAssignedStudentDrill()) {
-        if (!state.drillSections || !state.drillSections.length) lockAssignedDrillSlice();
+        if (!state.drillSections ||!state.drillSections.length) lockAssignedDrillSlice();
         skipAssignedGatesToStart();
       } else {
         enterDrillGates();
@@ -1694,9 +1694,9 @@
     var settingOk = $("cdt-setting-ok");
     if (settingOk) settingOk.addEventListener("click", function () {
       var picked = document.querySelector('input[name="cdt-text-size"]:checked');
-      applyTextSize(picked ? picked.value : "standard");
+      applyTextSize(picked? picked.value: "standard");
       var bg = document.querySelector('input[name="cdt-bg-color"]:checked');
-      applyBgColor(bg ? bg.value : "white");
+      applyBgColor(bg? bg.value: "white");
       showMask("cdt-setting-mask", false);
     });
     var settingX = $("cdt-setting-x");
@@ -1765,11 +1765,11 @@
     });
 
     window.addEventListener("message", function (e) {
-      if (!state.active || !state.frame || e.source !== state.frame.contentWindow) return;
+      if (!state.active ||!state.frame || e.source!== state.frame.contentWindow) return;
       var d = e.data;
-      if (!d || !state.started || !isListening(state.item)) return;
+      if (!d ||!state.started ||!isListening(state.item)) return;
       if (d.type === "yysd:audio-ready" || d.type === "yysd:timer-sync") {
-        if (state.listeningPhase !== "review") {
+        if (state.listeningPhase!== "review") {
           state.listeningPhase = "audio";
           startParentTimer();
         }
@@ -1791,9 +1791,9 @@
     state.frame = opts.frame;
     state.seconds = opts.seconds || 0;
     state.onStart = opts.onStart || null;
-    state.pack = opts.pack === "drill" || opts.pack === "exam" ? opts.pack : "";
-    state.suite = !!opts.suite && state.pack !== "drill";
-    if (state.suite && !state.pack) state.pack = "exam";
+    state.pack = opts.pack === "drill" || opts.pack === "exam"? opts.pack: "";
+    state.suite =!!opts.suite && state.pack!== "drill";
+    if (state.suite &&!state.pack) state.pack = "exam";
     state.resumeDraft = false;
     state.drillSections = null;
     state.scoredThisSession = false;
@@ -1810,7 +1810,7 @@
     document.body.classList.add("viewer--cdt");
     document.body.classList.remove("viewer--after-cdt");
     bindOnce();
-    // ponytail: only drop leftover iframe :fullscreen (covers CDT chrome); keep parent FS
+    // ponytail: only drop leftover iframe:fullscreen (covers CDT chrome); keep parent FS
     try {
       var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
       if (fsEl && String(fsEl.tagName || "").toUpperCase() === "IFRAME") {
@@ -1842,8 +1842,8 @@
     applyTextSize(state.textSize);
     applyBgColor(state.bgColor);
     // refresh section list once TEST is available in iframe
-    if (state.gateStep === "sections" && !state.started) populateSectionsPanel();
-    if (state.autoStartAssigned && !state.started) skipAssignedGatesToStart();
+    if (state.gateStep === "sections" &&!state.started) populateSectionsPanel();
+    if (state.autoStartAssigned &&!state.started) skipAssignedGatesToStart();
     if (state.started) {
       applyCdtPaperSkin();
       bindPaperNav();
@@ -1860,7 +1860,7 @@
     isActive: function () { return state.active; },
     hasStarted: function () { return state.started; },
     getPack: function () { return state.pack; },
-    isSuite: function () { return !!state.suite; },
+    isSuite: function () { return!!state.suite; },
     listeningPhase: function () { return state.listeningPhase; },
     resolveAfterSubmit: resolveAfterSubmit,
     LISTEN_REVIEW_SECS: LISTEN_REVIEW_SECS
@@ -1878,7 +1878,7 @@
     ];
     var fail = 0;
     cases.forEach(function (pair, i) {
-      if (JSON.stringify(pair[0]) !== JSON.stringify(pair[1])) {
+      if (JSON.stringify(pair[0])!== JSON.stringify(pair[1])) {
         fail++;
         console.error("[CDT hop #" + i + "]", pair[0], "!=", pair[1]);
       } else {
@@ -1904,6 +1904,6 @@
       fail++;
       console.error("[CDT chrome] missing bg colour radios");
     }
-    console.log(fail ? ("[CDT B5] FAIL " + fail) : "[CDT B5] PASS hops+chrome");
+    console.log(fail? ("[CDT B5] FAIL " + fail): "[CDT B5] PASS hops+chrome");
   }
 })();

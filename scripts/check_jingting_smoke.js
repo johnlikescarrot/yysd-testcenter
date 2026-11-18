@@ -31,12 +31,12 @@ assert(js.includes("ArrowLeft") && js.includes("Space"), "hotkeys");
 assert(!js.includes("/api/jingting/shadow"), "no shadow in player");
 
 const html = fs.readFileSync(path.join(root, "jingting-player.html"), "utf8");
-assert(html.includes("全文精听") && html.includes("逐句精听"), "modes UI");
-assert(!html.includes("AI 跟读"), "no shadow tab");
+assert(html.includes(" toàn văn Nghe sâu ") && html.includes(" trục câu Nghe sâu "), "modes UI");
+assert(!html.includes("AI Đọc nhại "), "no shadow tab");
 
 const cfg = fs.readFileSync(path.join(root, "assets/js/config.js"), "utf8");
 assert(/JINGTING_OPEN\s*=\s*true/.test(cfg), "student entrance open");
-assert(cfg.includes("开始精听 ›"), "jingting vol card CTA");
+assert(cfg.includes(" Bắt đầu nghe sâu ›"), "jingting vol card CTA");
 assert(cfg.includes("zone.html?zone=mock&s=jingting&vol="), "jingting vol card href");
 
 function indexAtTime(t) {

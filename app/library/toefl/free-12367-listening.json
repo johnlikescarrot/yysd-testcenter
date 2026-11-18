@@ -1,46 +1,46 @@
 {
- "id": "free-12367",
- "title": "Choose a Response #125",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #125",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12367,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-125"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #125",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/9e3e7927a9514294810fd510591d537a.mp3",
-   "questions": [
+  "id": "free-12367",
+  "title": "Choose a Response #125",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #125",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12367,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-125"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Paid vacations are great.",
-      "B": "As far as I know, it's two weeks.",
-      "C": "I will be going to Mexico for two weeks.",
-      "D": "Yes, I am thinking of doing that as well."
-     },
-     "answer": "B",
-     "transcript": "How many paid vacation days do you get this year?",
-     "stemZh": "你今年有多少天带薪年假？",
-     "analysis": "How many paid vacation days do you get this year? 题干分析 题干是特殊疑问句，How many 提问可数名词数量，paid vacation days 指带薪假期天数，整句意为“你今年有多少天带薪假期？”。 选项分析 选项A：“带薪假期很棒。” 这是一个关于带薪假期的评价，没有回答具体有多少天，属于答非所问。 选项B：正确答案，“据我所知，是两周。” 这个回答直接提供了具体的时间长度（两周），准确地回答了关于假期数量的问题。 选项C：“我要去墨西哥待两周。” 这个回答谈论的是具体的旅行计划，而不是拥有的假期天数。 选项D：“是的，我也在考虑那样做。” 这个回答没有明确的指代对象，且没有提供具体的天数信息。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #125",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/9e3e7927a9514294810fd510591d537a.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Paid vacations are great.",
+            "B": "As far as I know, it's two weeks.",
+            "C": "I will be going to Mexico for two weeks.",
+            "D": "Yes, I am thinking of doing that as well."
+          },
+          "answer": "B",
+          "transcript": "How many paid vacation days do you get this year?",
+          "stemZh": "bạn năm nay có bao nhiêu ngày mang lương nghỉ đông?",
+          "analysis": "How many paid vacation days do you get this year? Câu hỏi phân tích Câu hỏi là đặc thù câu nghi vấn, How many vấn đề có thể đếm được danh từ số lượng, paid vacation days chỉ được nghỉ phép kỳ thiên mấy, cả câu ý là “ bạn năm nay có bao nhiêu ngày được nghỉ phép thời hạn? ”. Phương án phân tích Phương án A: “ được nghỉ phép thời hạn rất tuyệt. ” đây là một cái về được nghỉ phép kỳ đánh giá, không có trả lời cụ thể có bao nhiêu ngày, thuộc về đáp phi sở vấn. Phương án B: Đáp án đúng, “ theo ta được biết, là hai tuần. ” câu trả lời này trực tiếp cung cấp thời gian cụ thể chiều dài (hai tuần), chuẩn xác trả lời về ngày nghỉ số lượng vấn đề. Phương án C: “ ta muốn đi Mê-hi-cô đợi hai tuần. ” câu trả lời này đàm luận là cụ thể Du lịch kế hoạch, mà không phải có ngày nghỉ số trời. Phương án D: “ đúng vậy, tôi đã ở cân nhắc làm như vậy. ” câu trả lời này không có rõ ràng chỉ thay đối tượng, mà lại không có nói cung cấp cụ thể số trời tin tức."
+        }
+      ]
+    }
+  ]
 }

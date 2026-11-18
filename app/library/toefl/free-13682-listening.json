@@ -1,57 +1,57 @@
 {
- "id": "free-13682",
- "title": "Conversation #97",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #97",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13682,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-97"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #97",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/7ae8324c5a364873ac678be5f802d866.mp3",
-   "transcript": "Man: I need to buy birthday gift for my sister. She loves reading, but I'm not sure which book to get her.\nWoman: Why don't you get her the latest mystery novel? She's really into that genre.\nMan: That's a great idea. Do you know of any popular titles right now?\nWoman: Yes, the Silent Witness is getting rave reviews. She might enjoy that.\nMan: Perfect. I'll get that one.",
-   "questions": [
+  "id": "free-13682",
+  "title": "Conversation #97",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #97",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13682,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-97"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the man looking for?",
-     "options": {
-      "A": "A birthday card",
-      "B": "A book",
-      "C": "A movie",
-      "D": "A game"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：男士在寻找什么？ 定位原文：Man: I need to buy a birthday gift for my sister. She loves reading, but I'm not sure which book to get her. 选项分析： A. A birthday card 生日卡片。对话中未提及卡片，所以A选项错误。 B. A book 一本书。男士明确说要给喜欢阅读的妹妹买书作为生日礼物，所以B选项正确。 C. A movie 一部电影。对话中未提及电影，所以C选项错误。 D. A game 一款游戏。对话中未提及游戏，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What genre does the woman suggest?",
-     "options": {
-      "A": "Romance",
-      "B": "Science fiction",
-      "C": "Mystery",
-      "D": "Historical fiction"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：女士建议了哪种类型的小说？ 定位原文：Woman: Why don't you get her the latest mystery novel? She's really into that genre. 选项分析： A. Romance 浪漫爱情小说。对话中未提及浪漫爱情类，所以A选项错误。 B. Science fiction 科幻小说。对话中未提及科幻类，所以B选项错误。 C. Mystery 悬疑推理小说。女士明确建议购买“mystery novel”（悬疑推理小说），所以C选项正确。 D. Historical fiction 历史小说。对话中未提及历史类，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #97",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/7ae8324c5a364873ac678be5f802d866.mp3",
+      "transcript": "Man: I need to buy birthday gift for my sister. She loves reading, but I'm not sure which book to get her.\nWoman: Why don't you get her the latest mystery novel? She's really into that genre.\nMan: That's a great idea. Do you know of any popular titles right now?\nWoman: Yes, the Silent Witness is getting rave reviews. She might enjoy that.\nMan: Perfect. I'll get that one.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the man looking for?",
+          "options": {
+            "A": "A birthday card",
+            "B": "A book",
+            "C": "A movie",
+            "D": "A game"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: nam sĩ đang tìm cái gì? Dẫn chứng Bài gốc: Man: I need to buy a birthday gift for my sister. She loves reading, but I'm not sure which book to get her. Phương án phân tích: A. A birthday card sinh nhật tạp phiến. trong lúc nói chuyện với nhau Không được đề cập (Not Given) tạp phiến, nên A Phương án Sai. B. A book một quyển sách. nam sĩ rõ ràng nói cấp cho ưa thích đọc muội muội mua sách với tư cách quà sinh nhật, nên B Phương án Đúng. C. A movie một bộ phim. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Điện ảnh, nên C Phương án Sai. D. A game một cái Trò chơi. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Trò chơi, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What genre does the woman suggest?",
+          "options": {
+            "A": "Romance",
+            "B": "Science fiction",
+            "C": "Mystery",
+            "D": "Historical fiction"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: phu nhân đề nghị loại nào kiểu tiểu thuyết? Dẫn chứng Bài gốc: Woman: Why don't you get her the latest mystery novel? She's really into that genre. Phương án phân tích: A. Romance tình yêu lãng mạn tiểu thuyết. trong lúc nói chuyện với nhau Không được đề cập (Not Given) tình yêu lãng mạn loại, nên A Phương án Sai. B. Science fiction tiểu thuyết khoa huyễn. trong lúc nói chuyện với nhau Không được đề cập (Not Given) loại khoa huyễn, nên B Phương án Sai. C. Mystery huyền nghi suy luận tiểu thuyết. phu nhân rõ ràng đề nghị mua sắm “mystery novel” (huyền nghi suy luận tiểu thuyết), nên C Phương án Đúng. D. Historical fiction tiểu thuyết lịch sử. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Lịch sử loại, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

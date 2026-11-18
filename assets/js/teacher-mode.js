@@ -1,4 +1,4 @@
-/* teacher-mode.js — 教室管理区 ⇄ 网站功能区 切换 */
+/* teacher-mode.js — phòng học quản lý khu ⇄ Khu tính năng học tập hoán đổi */
 (function () {
   "use strict";
 
@@ -9,7 +9,7 @@
 
   function pageName() {
     var parts = location.pathname.split("/").filter(Boolean);
-    return parts.length ? parts[parts.length - 1] : "index.html";
+    return parts.length? parts[parts.length - 1]: "index.html";
   }
 
   function getMode() {
@@ -27,7 +27,7 @@
 
   function hasTeacherToken() {
     try {
-      return !!localStorage.getItem(TEACHER_TOKEN_KEY);
+      return!!localStorage.getItem(TEACHER_TOKEN_KEY);
     } catch (e) {
       return false;
     }
@@ -35,7 +35,7 @@
 
   function setMode(mode) {
     try {
-      localStorage.setItem(MODE_KEY, mode === "site" ? "site" : "admin");
+      localStorage.setItem(MODE_KEY, mode === "site"? "site": "admin");
     } catch (e) {}
   }
 
@@ -62,15 +62,15 @@
 
   function setStudentAuthCookie(on) {
     try {
-      var secure = location.protocol === "https:" ? "; Secure" : "";
-      document.cookie = "yysd_auth=" + (on ? "1" : "") +
-        "; path=/; max-age=" + (on ? 2592000 : 0) + "; SameSite=Lax" + secure;
+      var secure = location.protocol === "https:"? "; Secure": "";
+      document.cookie = "yysd_auth=" + (on? "1": "") +
+        "; path=/; max-age=" + (on? 2592000: 0) + "; SameSite=Lax" + secure;
     } catch (e) {}
   }
 
   // ponytail: picker.html does not load auth.js — write student keys here
   function writeStudentSession(d) {
-    if (!d || !d.token) return;
+    if (!d ||!d.token) return;
     try {
       localStorage.setItem("yysd:auth:token", d.token);
       var u = d.user || {};
@@ -79,8 +79,8 @@
         role: "student",
         displayName: u.displayName || "",
         avatarUrl: u.avatarUrl || "",
-        isAdmin: !!u.isAdmin,
-        isPlatformAdmin: !!u.isPlatformAdmin
+        isAdmin:!!u.isAdmin,
+        isPlatformAdmin:!!u.isPlatformAdmin
       }));
     } catch (e) {}
     setStudentAuthCookie(true);
@@ -110,17 +110,17 @@
 
   function enterViaApi() {
     return T.api("/api/teacher/site-mode/enter", { method: "POST" }).then(function (d) {
-      if (!d || !d.token) throw new Error("无法进入网站功能区");
+      if (!d ||!d.token) throw new Error(" không cách nào Vào học Khu tính năng học tập ");
       applySiteModeLogin(d);
       return d;
     });
   }
 
   function restoreSiteModeToken() {
-    if (!T || !T.api) return Promise.reject(new Error("请先登录教师账号"));
+    if (!T ||!T.api) return Promise.reject(new Error(" Vui lòng đăng nhập trước Giáo viên tài khoản "));
     if (A && A.ensureTeacherSiteStudentToken && siteModeNeedsRestore()) {
       return A.ensureTeacherSiteStudentToken().then(function (d) {
-        return (d && d.token) ? d : enterViaApi();
+        return (d && d.token)? d: enterViaApi();
       });
     }
     return enterViaApi();
@@ -133,7 +133,7 @@
   }
 
   function enterSiteMode() {
-    if (!T || !T.api) return Promise.reject(new Error("请先登录教师账号"));
+    if (!T ||!T.api) return Promise.reject(new Error(" Vui lòng đăng nhập trước Giáo viên tài khoản "));
     return enterViaApi().then(function (d) {
       location.href = (d && d.redirect) || "index.html";
     });
@@ -147,13 +147,13 @@
 
   function switchHtml(active) {
     return (
-      '<div class="teacher-mode-switch" role="tablist" aria-label="教师端模式">' +
+      '<div class="teacher-mode-switch" role="tablist" aria-label=" Cổng giáo viên hình thức ">' +
         '<button type="button" class="teacher-mode-switch__btn' +
-          (active === "admin" ? " is-active" : "") +
-          '" data-mode="admin">教室管理区</button>' +
+          (active === "admin"? " is-active": "") +
+          '" data-mode="admin"> phòng học quản lý khu </button>' +
         '<button type="button" class="teacher-mode-switch__btn' +
-          (active === "site" ? " is-active" : "") +
-          '" data-mode="site">网站功能区</button>' +
+          (active === "site"? " is-active": "") +
+          '" data-mode="site"> Khu tính năng học tập </button>' +
       "</div>"
     );
   }
@@ -172,7 +172,7 @@
         }
         btn.disabled = true;
         enterSiteMode().catch(function (err) {
-          alert((err && err.message) || "无法进入网站功能区");
+          alert((err && err.message) || " không cách nào Vào học Khu tính năng học tập ");
           btn.disabled = false;
         });
         return;
@@ -180,7 +180,7 @@
       if (mode === "admin") {
         var busy = document.body.classList.contains("yysd-ime-gate-open") ||
           document.body.classList.contains("vc-playing");
-        if (busy && !confirm("闯关进行中，离开会暂停本题。确定回到教室管理区？")) return;
+        if (busy &&!confirm(" vượt ải đang tiến hành, ly khai sẽ tạm dừng chủ đề. Đồng ý trở lại phòng học quản lý khu? ")) return;
         if (isSiteMode()) exitSiteMode();
         else if (location.pathname.indexOf("teacher") < 0) location.href = "teacher.html";
       }
@@ -204,7 +204,7 @@
     bar.className = "teacher-site-banner";
     bar.innerHTML =
       switchHtml("site") +
-      '<span class="teacher-site-banner__hint">体验模式：与学生相同的功能与闯关进度</span>';
+      '<span class="teacher-site-banner__hint"> Dùng thử hình thức: và Học viên giống nhau công năng và vượt ải Tiến độ </span>';
     document.body.insertBefore(bar, document.body.firstChild);
     bindSwitch(bar);
     document.body.classList.add("has-teacher-site-banner");
@@ -220,7 +220,7 @@
     }
 
     if (document.body.classList.contains("teacher-page")) {
-      if (hasTeacherToken() && !hasChosenMode()) {
+      if (hasTeacherToken() &&!hasChosenMode()) {
         redirectToPicker();
         return;
       }
@@ -237,8 +237,8 @@
         redirectToPicker();
         return;
       }
-      if (getMode() !== "site") {
-        location.replace(getMode() === "admin" ? "teacher.html" : "teacher-mode-picker.html");
+      if (getMode()!== "site") {
+        location.replace(getMode() === "admin"? "teacher.html": "teacher-mode-picker.html");
         return;
       }
     }

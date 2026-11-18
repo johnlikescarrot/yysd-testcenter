@@ -1,6 +1,6 @@
-/* 新东方 26托福官方套题 view JSON → 引擎 schema 四科 JSON + 媒体下载清单。
-   输入: /tmp/kl-out/kl-set-N-view.json (页内爬虫落盘)
-   输出: library/toefl/kl-set-N-{reading,listening,writing,speaking}.json
+/* mới phương Đông 26 Bộ đề TOEFL chính thức view JSON → động cơ schema bốn khoa JSON + truyền thông download danh sách.
+    đưa vào: /tmp/kl-out/kl-set-N-view.json (trang bên trong loài bò sát rơi bàn)
+    phát ra: library/toefl/kl-set-N-{reading,listening,writing,speaking}.json
         /tmp/kl-out/media-download.json [{url,dest}] */
 "use strict";
 const fs = require("fs");
@@ -27,9 +27,9 @@ function stripHtml(s, keepEdge) {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&apos;/g, "'")
-    .replace(/[ \t]+\n/g, "\n");
-  // ponytail: keepEdge 保段间空格——CW 按 <a> 切段后各 chunk 的首尾空格是渲染所依赖的
-  return keepEdge ? r : r.trim();
+    .replace(/[\t]+\n/g, "\n");
+  // ponytail: keepEdge bảo vệ đoạn lúc giữa khoảng trắng ——CW theo như <a> cắt đoạn sau tất cả chunk đầu đuôi khoảng trắng là phủ lên chỗ ỷ lại
+  return keepEdge? r: r.trim();
 }
 
 function oneLine(s) {
@@ -39,8 +39,8 @@ function oneLine(s) {
 function localize(url, kind) {
   if (!url) return "";
   const base = url.split("/").pop().split("?")[0];
-  const dir = kind === "audio" ? AUDIO_DIR : IMG_DIR;
-  const seen = kind === "audio" ? audioNames : imgNames;
+  const dir = kind === "audio"? AUDIO_DIR: IMG_DIR;
+  const seen = kind === "audio"? audioNames: imgNames;
   if (!seen.has(base)) {
     seen.add(base);
     downloads.push({ url, dest: dir + "/" + base });
@@ -50,7 +50,7 @@ function localize(url, kind) {
 
 function firstImg(html) {
   const m = String(html || "").match(/<img[^>]+src="([^"]+)"/i);
-  return m ? m[1] : "";
+  return m? m[1]: "";
 }
 
 function parasOf(article) {
@@ -68,7 +68,7 @@ function convertReading(view, setNo) {
 
   sec.questionList.forEach((part, pi) => {
     const modNo = pi + 1;
-    const timeSec = (part.channelList[0].examTime || 0) * (part.channelList[0].examTime > 90 ? 1 : 60);
+    const timeSec = (part.channelList[0].examTime || 0) * (part.channelList[0].examTime > 90? 1: 60);
     const from = qid + 1;
 
     part.channelList.forEach((ch) => {
@@ -87,8 +87,8 @@ function convertReading(view, setNo) {
             const word = String(rv.optionName || "").trim();
             const mask = String(rv.optionValue || "");
             const star = mask.indexOf("*");
-            const prefix = star >= 0 ? mask.slice(0, star) : "";
-            const answer = star >= 0 ? mask.slice(star).replace(/\*/g, "") : word;
+            const prefix = star >= 0? mask.slice(0, star): "";
+            const answer = star >= 0? mask.slice(star).replace(/\*/g, ""): word;
             segs.push({ id: qid + bi, prefix: prefix, answer: answer, word: word });
             prevEnd = abs + m[0].length;
           }
@@ -137,7 +137,7 @@ function convertReading(view, setNo) {
 
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 阅读",
+    title: " Bộ đề TOEFL chính thức " + String(setNo).padStart(2, "0") + " · Đọc ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "reading",
     modules: modules,
@@ -161,11 +161,11 @@ function convertListening(view, setNo) {
       const name = String(ch.channelName || "").trim();
       const isLR = /_LR_/.test(name);
       const instruction = oneLine((ch.questionBase || {}).subTitle) ||
-        (isLR ? "Listen to a statement or question. Choose the best response." : "Listen to the recording.");
+        (isLR? "Listen to a statement or question. Choose the best response.": "Listen to the recording.");
 
       const mp3Of = (q) => {
         const a = ((q && q.affixList) || []).filter((x) => /\.mp3$/i.test(x.affixUrl || ""))[0];
-        return a ? a.affixUrl : "";
+        return a? a.affixUrl: "";
       };
 
       if (isLR) {
@@ -201,7 +201,7 @@ function convertListening(view, setNo) {
 
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 听力",
+    title: " Bộ đề TOEFL chính thức " + String(setNo).padStart(2, "0") + " · Nghe ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "listening",
     modules: modules,
@@ -222,15 +222,15 @@ function convertWriting(view, setNo) {
           qid += 1;
           // name: table[context(img+text), response(img + ▩…template)]
           const cells = String(q.name || "").match(/<td>([\s\S]*?)<\/td>/gi) || [];
-          const context = cells.length ? oneLine(cells[0]) : "";
-          const respHtml = cells.length > 1 ? cells[1] : "";
+          const context = cells.length? oneLine(cells[0]): "";
+          const respHtml = cells.length > 1? cells[1]: "";
           const respText = stripHtml(respHtml).replace(/\s+/g, " ").trim();
           const m = respText.match(/(▩+)\s*(.*)/);
-          const slotN = m ? m[1].length : 0;
-          const tail = m ? m[2] : respText;
+          const slotN = m? m[1].length: 0;
+          const tail = m? m[2]: respText;
           const parts = [];
           for (let i = 0; i < slotN; i++) parts.push({ slot: true });
-          if (tail) parts.push({ t: tail.startsWith(" ") ? tail : " " + tail });
+          if (tail) parts.push({ t: tail.startsWith(" ")? tail: " " + tail });
           const answer = (q.rightValue || []).slice().sort((a, b) => a.blockNo - b.blockNo).map((r) => String(r.optionValue || "").trim());
           const bank = (q.optionList || []).slice().sort((a, b) => a.rankNo - b.rankNo).map((o) => String(o.value || "").trim());
           tasks.push({ type: "sentence", module: 1, id: qid, context: context, parts: parts, bank: bank, answer: answer });
@@ -272,7 +272,7 @@ function convertWriting(view, setNo) {
           const imgM = row.match(/<img[^>]+src="([^"]+)"/i);
           const nameM = row.match(/<figcaption>[\s\S]*?<strong>([^<]+)<\/strong>/i);
           const tds = row.match(/<td>([\s\S]*?)<\/td>/gi) || [];
-          const text = tds.length > 1 ? oneLine(tds[1]) : "";
+          const text = tds.length > 1? oneLine(tds[1]): "";
           if (imgM && nameM) posts.push({ name: oneLine(nameM[1]), photo: localize(imgM[1], "img"), text: text });
         });
         const instrBlocks = String(article).split(/<\/p>\s*/i).map(stripHtml).filter(Boolean);
@@ -280,8 +280,8 @@ function convertWriting(view, setNo) {
         tasks.push({
           type: "discussion", module: 3, id: qid,
           instruction: instruction || "Write for an Academic Discussion.",
-          "class": classM ? classM[1].trim() : "Class Discussion",
-          professor: profFig ? { name: oneLine(profFig[2]), photo: localize(profFig[1], "img"), text: profText } : { name: "", photo: "", text: profText },
+          "class": classM? classM[1].trim(): "Class Discussion",
+          professor: profFig? { name: oneLine(profFig[2]), photo: localize(profFig[1], "img"), text: profText }: { name: "", photo: "", text: profText },
           posts: posts,
           samples: []
         });
@@ -292,7 +292,7 @@ function convertWriting(view, setNo) {
   const sentenceCount = tasks.filter((t) => t.type === "sentence").length;
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 写作",
+    title: " Bộ đề TOEFL chính thức " + String(setNo).padStart(2, "0") + " · Viết ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "writing",
     modules: [
@@ -312,7 +312,7 @@ function convertSpeaking(view, setNo) {
 
   sec.questionList.forEach((part) => {
     const isRepeat = /Repeat/i.test(part.partName || "");
-    const modNo = isRepeat ? 1 : 2;
+    const modNo = isRepeat? 1: 2;
     part.channelList.forEach((ch) => {
       ch.questionList.forEach((q) => {
         qid += 1;
@@ -342,7 +342,7 @@ function convertSpeaking(view, setNo) {
   const rep = tasks.filter((t) => t.type === "repeat").length;
   return {
     id: "kl-set-" + setNo,
-    title: "托福官方套题 " + String(setNo).padStart(2, "0") + " · 口语",
+    title: " Bộ đề TOEFL chính thức " + String(setNo).padStart(2, "0") + " · Nói ",
     set: "kl-" + String(setNo).padStart(2, "0"),
     skill: "speaking",
     modules: [

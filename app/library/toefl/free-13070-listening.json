@@ -1,57 +1,57 @@
 {
- "id": "free-13070",
- "title": "Announcement #34",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #34",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13070,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-34"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #34",
-   "instruction": "Listen to a university radio announcement.",
-   "audio": "library/toefl/free/audio/1b37bbdbdd1144b381dac2216d646527.mp3",
-   "transcript": "Man: Hello students. Our end of semester celebration is next Friday at 6 PM in the student Lounge. It's a great chance to relax before finals week. We'll have food, music, and a few games and activities, including trivia and a raffle with small prizes. Faculty from several departments will be there too, so it's a great opportunity to connect with instructors outside of class. We still need a few volunteers to help set up before the event. If interested, please contact the Student Activities Coordinator by Wednesday.",
-   "questions": [
+  "id": "free-13070",
+  "title": "Announcement #34",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #34",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13070,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-34"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the purpose of the event described in the announcement?",
-     "options": {
-      "A": "To provide students an enjoyable break",
-      "B": "To introduce new faculty members",
-      "C": "To showcase student musicians",
-      "D": "To provide information about final exams"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：公告中描述的活动目的是什么？属于目的主旨题。 定位原文：Man: It's a great chance to relax before finals week. 选项分析： A. To provide students an enjoyable break 为学生提供愉快的休息。因为男士提到这是期末考试周前放松的好机会，所以 A 选项正确。 B. To introduce new faculty members 介绍新教职员工。因为虽然提到会有教职员工参加，但目的是课外交流，而非介绍新人，所以 B 选项错误。 C. To showcase student musicians 展示学生音乐家。因为通知只提到会有音乐，未提及是学生音乐家的表演展示，所以 C 选项错误。 D. To provide information about final exams 提供关于期末考试的信息。因为活动是为了放松，而不是发布考试信息，所以 D 选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "Why should students contact the activities coordinator?",
-     "options": {
-      "A": "To suggest games or activities",
-      "B": "To indicate whether they will be attending",
-      "C": "To offer to help set up",
-      "D": "To donate prizes"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：学生为什么要联系活动协调员？属于细节理解题。 定位原文：Man: We still need a few volunteers to help set up before the event. If interested,please contact the Student Activities Coordinator by Wednesday. 选项分析： A. To suggest games or activities 建议游戏或活动。因为通知中未提及征集建议，所以 A选项错误。 B. To indicate whether they will be attending 表明他们是否会参加。因为联系协调员是针对志愿者的，而不是普通参加者，所以 B 选项错误。 C. To offer to help set up 主动提供帮助进行布置。由于男士明确说需要志愿者在活动前帮忙布置，感兴趣的人请联系协调员，所以 C 选项正确。 D. To donate prizes 捐赠奖品。因为通知中提到的是抽奖活动，未提及征集奖品捐赠，所以 D 选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #34",
+      "instruction": "Listen to a university radio announcement.",
+      "audio": "library/toefl/free/audio/1b37bbdbdd1144b381dac2216d646527.mp3",
+      "transcript": "Man: Hello students. Our end of semester celebration is next Friday at 6 PM in the student Lounge. It's a great chance to relax before finals week. We'll have food, music, and a few games and activities, including trivia and a raffle with small prizes. Faculty from several departments will be there too, so it's a great opportunity to connect with instructors outside of class. We still need a few volunteers to help set up before the event. If interested, please contact the Student Activities Coordinator by Wednesday.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the purpose of the event described in the announcement?",
+          "options": {
+            "A": "To provide students an enjoyable break",
+            "B": "To introduce new faculty members",
+            "C": "To showcase student musicians",
+            "D": "To provide information about final exams"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: trong thông báo miêu tả hoạt động mục đích là gì? thuộc về mục đích ý nghĩa chính câu. Dẫn chứng Bài gốc: Man: It's a great chance to relax before finals week. Phương án phân tích: A. To provide students an enjoyable break là Học viên cung cấp khoái trá nghỉ ngơi. vì nam sĩ nhắc tới đây là kỳ thi cuối chu trước buông lỏng cơ hội tốt, nên A Phương án Đúng. B. To introduce new faculty members giới thiệu đạo Tin Lành viên chức công. vì mặc dù nhắc tới sẽ có giáo chức tham gia, nhưng mục đích là khóa ngoại trao đổi, mà không phải là giới thiệu người mới, nên B Phương án Sai. C. To showcase student musicians biểu hiện ra Học viên Âm nhạc gia. vì thông tri chỉ nhắc tới sẽ có Âm nhạc, Không được đề cập (Not Given) là Học viên Âm nhạc nhà đích biểu diễn biểu hiện ra, nên C Phương án Sai. D. To provide information about final exams cung cấp về kỳ thi cuối tin tức. vì hoạt động là vì buông lỏng, mà không phải tuyên bố cuộc thi tin tức, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "Why should students contact the activities coordinator?",
+          "options": {
+            "A": "To suggest games or activities",
+            "B": "To indicate whether they will be attending",
+            "C": "To offer to help set up",
+            "D": "To donate prizes"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: Học viên tại sao phải liên hệ hoạt động cân đối thành viên? thuộc về chi tiết lý giải câu. Dẫn chứng Bài gốc: Man: We still need a few volunteers to help set up before the event. If interested,please contact the Student Activities Coordinator by Wednesday. Phương án phân tích: A. To suggest games or activities đề nghị Trò chơi hoặc hoạt động. vì thông tri Vừa Không được đề cập (Not Given) thu thập đề nghị, nên A Phương án Sai. B. To indicate whether they will be attending cho thấy bọn họ là hay không sẽ tham gia. vì liên hệ cân đối thành viên là nhằm vào người tình nguyện, mà không phải bình thường người tham gia, nên B Phương án Sai. C. To offer to help set up chủ động cung cấp trợ giúp tiến hành bố trí. bởi vì nam sĩ rõ ràng nói cần người tình nguyện đang hoạt động trước hỗ trợ bố trí, cảm thấy hứng thú người xin liên lạc cân đối thành viên, nên C Phương án Đúng. D. To donate prizes quyên tặng phần thưởng. vì thông tri Vừa nhắc tới là rút thưởng hoạt động, Không được đề cập (Not Given) thu thập phần thưởng quyên tặng, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

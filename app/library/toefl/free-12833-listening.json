@@ -1,46 +1,46 @@
 {
- "id": "free-12833",
- "title": "Choose a Response #188",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #188",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12833,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-188"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #188",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/35634eb0fd6947b9b819b19b54e5df06.mp3",
-   "questions": [
+  "id": "free-12833",
+  "title": "Choose a Response #188",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #188",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12833,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-188"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "I just met his assistant.",
-      "B": "The cafeteria closes at 2 o'clock.",
-      "C": "He's working late tonight.",
-      "D": "Because I lost mine."
-     },
-     "answer": "C",
-     "transcript": "Why didn't Andy come to the business dinner?",
-     "stemZh": "安迪为什么没来参加商务晚宴？",
-     "analysis": "Why didn't Andy come to the business dinner? 题干分析 题干是由 Why 引导的特殊疑问句，意为 “安迪为什么没来参加商务晚宴？”，考点是对询问缺席原因的问题作出合理相关的回应。 选项分析 选项 A：回答内容为 “我刚见过他的助理”，与缺席原因无关，答非所问。 选项 B：回答内容为 “自助餐厅两点关门”，与商务晚宴话题无关。 选项 C：此选项为正确答案，说明他今晚要工作到很晚，合理解释了缺席原因。 选项 D：回答内容为 “因为我把我的弄丢了”，与问题完全无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #188",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/35634eb0fd6947b9b819b19b54e5df06.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "I just met his assistant.",
+            "B": "The cafeteria closes at 2 o'clock.",
+            "C": "He's working late tonight.",
+            "D": "Because I lost mine."
+          },
+          "answer": "C",
+          "transcript": "Why didn't Andy come to the business dinner?",
+          "stemZh": "An Địch vì sao không có tới tham gia thương vụ tiệc tối?",
+          "analysis": "Why didn't Andy come to the business dinner? Câu hỏi phân tích Câu hỏi là do Why dẫn dắt đặc thù câu nghi vấn, ý là “ An Địch vì sao không có tới tham gia thương vụ tiệc tối? ”, địa điểm thi là đúng hỏi thăm vắng họp nguyên nhân vấn đề làm ra hợp lý tương quan đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ tôi vừa bái kiến phụ tá của hắn ”, và vắng họp nguyên nhân không quan hệ, đáp phi sở vấn. Phương án B: trả lời nội dung là “ phòng tự lấy thức ăn hai điểm đóng cửa ”, và thương vụ tiệc tối chủ đề không quan hệ. Phương án C: này Phương án là Đáp án đúng, nói rõ anh ấy đêm nay muốn công tác đến đã khuya, giải thích hợp lý rồi vắng họp nguyên nhân. Phương án D: trả lời nội dung là “ bởi vì ta đem của tôi vứt bỏ ”, và vấn đề hoàn toàn không liên quan."
+        }
+      ]
+    }
+  ]
 }

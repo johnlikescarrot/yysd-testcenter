@@ -19,20 +19,50 @@
       "id": 641,
       "set": "W-BS65-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you attend the workshop yesterday?",
       "parts": [
-        { "t": "My morning class ended " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "My morning class ended "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["me", "late", "to attend", "the workshop", "too", "for"],
-      "answer": ["too", "late", "for", "me", "to attend", "the workshop"]
+      "bank": [
+        "me",
+        "late",
+        "to attend",
+        "the workshop",
+        "too",
+        "for"
+      ],
+      "answer": [
+        "too",
+        "late",
+        "for",
+        "me",
+        "to attend",
+        "the workshop"
+      ]
     },
     {
       "type": "sentence",
@@ -40,18 +70,42 @@
       "id": 642,
       "set": "W-BS65-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you attend the team-building exercise last weekend?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["able", "participate", "to", "wasn't", "I"],
-      "answer": ["I", "wasn't", "able", "to", "participate"]
+      "bank": [
+        "able",
+        "participate",
+        "to",
+        "wasn't",
+        "I"
+      ],
+      "answer": [
+        "I",
+        "wasn't",
+        "able",
+        "to",
+        "participate"
+      ]
     },
     {
       "type": "sentence",
@@ -59,20 +113,50 @@
       "id": 643,
       "set": "W-BS65-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did you discuss with the professor during the meeting?",
       "parts": [
-        { "slot": true },
-        { "t": " wanted to " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "t": " wanted to "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["he", "know", "plan to", "grades", "improve my", "how I"],
-      "answer": ["he", "know", "how I", "plan to", "improve my", "grades"]
+      "bank": [
+        "he",
+        "know",
+        "plan to",
+        "grades",
+        "improve my",
+        "how I"
+      ],
+      "answer": [
+        "he",
+        "know",
+        "how I",
+        "plan to",
+        "improve my",
+        "grades"
+      ]
     },
     {
       "type": "sentence",
@@ -80,20 +164,50 @@
       "id": 644,
       "set": "W-BS65-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What time does class start?",
       "parts": [
-        { "slot": true },
-        { "t": " also wanted " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "t": " also wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["know", "begins", "to", "another classmate", "when", "it"],
-      "answer": ["another classmate", "to", "know", "when", "it", "begins"]
+      "bank": [
+        "know",
+        "begins",
+        "to",
+        "another classmate",
+        "when",
+        "it"
+      ],
+      "answer": [
+        "another classmate",
+        "to",
+        "know",
+        "when",
+        "it",
+        "begins"
+      ]
     },
     {
       "type": "sentence",
@@ -101,18 +215,40 @@
       "id": 645,
       "set": "W-BS65-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why did you set up a meeting with your biology professor?",
       "parts": [
-        { "t": "I wanted " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["influenced my", "how my lab scores", "to understand", "final grade"],
-      "answer": ["to understand", "how my lab scores", "influenced my", "final grade"]
+      "bank": [
+        "influenced my",
+        "how my lab scores",
+        "to understand",
+        "final grade"
+      ],
+      "answer": [
+        "to understand",
+        "how my lab scores",
+        "influenced my",
+        "final grade"
+      ]
     },
     {
       "type": "sentence",
@@ -120,19 +256,45 @@
       "id": 646,
       "set": "W-BS65-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you participate in the time management workshop last week?",
       "parts": [
-        { "t": "There were " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "There were "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["when I", "tried to", "spots", "no available", "register"],
-      "answer": ["no available", "spots", "when I", "tried to", "register"]
+      "bank": [
+        "when I",
+        "tried to",
+        "spots",
+        "no available",
+        "register"
+      ],
+      "answer": [
+        "no available",
+        "spots",
+        "when I",
+        "tried to",
+        "register"
+      ]
     },
     {
       "type": "sentence",
@@ -140,19 +302,45 @@
       "id": 647,
       "set": "W-BS65-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What concerns do you have about the university's new advertising strategy?",
       "parts": [
-        { "t": "I am " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I am "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["curious to", "how market", "research shaped", "the plan", "learn"],
-      "answer": ["curious to", "learn", "how market", "research shaped", "the plan"]
+      "bank": [
+        "curious to",
+        "how market",
+        "research shaped",
+        "the plan",
+        "learn"
+      ],
+      "answer": [
+        "curious to",
+        "learn",
+        "how market",
+        "research shaped",
+        "the plan"
+      ]
     },
     {
       "type": "sentence",
@@ -160,18 +348,40 @@
       "id": 648,
       "set": "W-BS65-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you take the train to class today?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " drove " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " drove "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["my", "I", "no,", "car"],
-      "answer": ["no,", "I", "my", "car"]
+      "bank": [
+        "my",
+        "I",
+        "no,",
+        "car"
+      ],
+      "answer": [
+        "no,",
+        "I",
+        "my",
+        "car"
+      ]
     },
     {
       "type": "sentence",
@@ -179,20 +389,50 @@
       "id": 649,
       "set": "W-BS65-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why is everyone gathering in that classroom?",
       "parts": [
-        { "t": "They want " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "They want "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["find", "is about", "out", "what the", "to", "announcement"],
-      "answer": ["to", "find", "out", "what the", "announcement", "is about"]
+      "bank": [
+        "find",
+        "is about",
+        "out",
+        "what the",
+        "to",
+        "announcement"
+      ],
+      "answer": [
+        "to",
+        "find",
+        "out",
+        "what the",
+        "announcement",
+        "is about"
+      ]
     },
     {
       "type": "sentence",
@@ -200,19 +440,45 @@
       "id": 650,
       "set": "W-BS65-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Who did you want to work with on the geology project?",
       "parts": [
-        { "t": "I " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["is available", "if he", "to work", "am planning", "with Michael"],
-      "answer": ["am planning", "to work", "with Michael", "if he", "is available"]
+      "bank": [
+        "is available",
+        "if he",
+        "to work",
+        "am planning",
+        "with Michael"
+      ],
+      "answer": [
+        "am planning",
+        "to work",
+        "with Michael",
+        "if he",
+        "is available"
+      ]
     }
   ]
 }

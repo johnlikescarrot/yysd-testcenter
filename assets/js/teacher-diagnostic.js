@@ -7,12 +7,12 @@
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) logoutBtn.addEventListener("click", function () { T.logout(); });
 
-  var LEVEL = { high_school: "高中", cet4: "四级", ielts: "雅思" };
-  var RATING = { excellent: "优秀", good: "良好", weak: "需加强" };
+  var LEVEL = { high_school: " THPT ", cet4: " Đại học B1 ", ielts: "IELTS" };
+  var RATING = { excellent: " Xuất sắc ", good: " Tốt ", weak: " Cần củng cố " };
   var students = [];
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
@@ -38,23 +38,23 @@
     });
 
     if (!rows.length) {
-      root.innerHTML = '<p class="diag-lead">暂无诊断数据。</p>';
+      root.innerHTML = '<p class="diag-lead"> tạm thời chưa có chẩn đoán năng lực số liệu. </p>';
       return;
     }
 
     root.innerHTML =
       '<table class="diag-table"><thead><tr>' +
-      "<th>学生</th><th>高中</th><th>四级</th><th>雅思</th><th>推荐起始</th><th>最近测试</th>" +
+      "<th> Học viên </th><th> THPT </th><th> Đại học B1 </th><th> IELTS </th><th> Đề xuất lúc đầu </th><th> gần nhất Kiểm tra </th>" +
       "</tr></thead><tbody>" +
       rows
         .map(function (s) {
           var name = s.displayName || s.phone || "#" + s.id;
           var when = s.tested_at
             ? new Date(s.tested_at).toLocaleString("zh-CN")
-            : "未测";
+            : " không trắc ";
           return (
             '<tr class="' +
-            (s.alert ? "is-alert" : "") +
+            (s.alert? "is-alert": "") +
             '"><td><a href="teacher-student-diagnostic.html?id=' +
             s.id +
             '">' +
@@ -78,8 +78,8 @@
 
   function renderHot(words) {
     if (!hotRoot) return;
-    if (!words || !words.length) {
-      hotRoot.innerHTML = '<p class="diag-lead">班级暂无未掌握错词。</p>';
+    if (!words ||!words.length) {
+      hotRoot.innerHTML = '<p class="diag-lead"> lớp tạm thời chưa có không nắm giữ từ sai. </p>';
       return;
     }
     var max = words[0].cnt || 1;
@@ -129,7 +129,7 @@
         renderHot((res[1] && res[1].words) || []);
       })
       .catch(function (e) {
-        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "加载失败") + "</p>";
+        root.innerHTML = '<p class="diag-msg">' + esc(e.message || "Tải dữ liệu thất bại") + "</p>";
         if (hotRoot) hotRoot.innerHTML = "";
       });
   }
@@ -139,7 +139,7 @@
   var refresh = document.getElementById("refresh-btn");
   if (refresh) refresh.addEventListener("click", load);
 
-  if (!T.getToken || !T.getToken()) {
+  if (!T.getToken ||!T.getToken()) {
     location.replace("teacher-login.html?next=" + encodeURIComponent(location.pathname));
     return;
   }

@@ -1,46 +1,46 @@
 {
- "id": "free-12782",
- "title": "Choose a Response #164",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #164",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12782,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-164"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #164",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/5ca87e322f8145f2932ddcd5fda97a4e.mp3",
-   "questions": [
+  "id": "free-12782",
+  "title": "Choose a Response #164",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #164",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12782,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-164"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, you’re allowed to do that.",
-      "B": "Use the convenient chat feature.",
-      "C": "No, I don’t mind.",
-      "D": "They provide good service."
-     },
-     "answer": "B",
-     "transcript": "How do I contact customer service?",
-     "stemZh": "我如何联系客服？",
-     "analysis": "How do I contact customer service? 题干分析 题干是由 How 引导的特殊疑问句，意为“我该如何联系客服？”，考点是对询问方式方法的问题作出合理相关的回应。 选项分析 选项 A：回答内容为 “是的，你可以那么做”，用于回应许可类问题，与联系客服的方式无关，属于答非所问。 选项 B：此选项为正确答案，直接给出具体的联系方式，精准回应了题干中 How 的提问，符合对话逻辑。 选项 C：回答内容为 “不，我不介意”，通常用于回应征求意见的问句，无法回应问题。选项 D：回答内容为 “他们服务很好”，评价服务质量，与询问联系方式的问题毫无关联，不符合题干要求。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #164",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/5ca87e322f8145f2932ddcd5fda97a4e.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, you’re allowed to do that.",
+            "B": "Use the convenient chat feature.",
+            "C": "No, I don’t mind.",
+            "D": "They provide good service."
+          },
+          "answer": "B",
+          "transcript": "How do I contact customer service?",
+          "stemZh": "tôi làm thế nào liên hệ phục vụ khách hàng?",
+          "analysis": "How do I contact customer service? Câu hỏi phân tích Câu hỏi là do How dẫn dắt đặc thù câu nghi vấn, ý là “ tôi nên như thế nào liên hệ phục vụ khách hàng? ”, địa điểm thi là đúng hỏi thăm phương thức phương pháp vấn đề làm ra hợp lý tương quan đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ đúng vậy, bạn có thể làm như vậy ”, dùng cho đáp lại cho phép loại vấn đề, và liên hệ phục vụ khách hàng phương thức không quan hệ, thuộc về đáp phi sở vấn. Phương án B: này Phương án là Đáp án đúng, trực tiếp cho ra cụ thể phương thức liên lạc, tinh chuẩn đáp lại Câu hỏi Vừa How vấn đề, phù hợp đối thoại ăn khớp. Phương án C: trả lời nội dung là “ không, tôi không ngại ”, bình thường dùng cho đáp lại trưng cầu ý kiến câu hỏi, không cách nào đáp lại vấn đề. Phương án D: trả lời nội dung là “ họ phục vụ rất tốt ”, đánh giá chất lượng phục vụ, và hỏi thăm phương thức liên lạc vấn đề không liên hệ chút nào, không phù hợp Câu hỏi yêu cầu."
+        }
+      ]
+    }
+  ]
 }

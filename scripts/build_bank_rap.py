@@ -24,11 +24,11 @@ SKIP_LEFT = re.compile(
     re.I,
 )
 CHROME_RIGHT = re.compile(
-    r"^(question\s+\d+\s+of\s+\d+|解析|#|sentence to insert)",
+    r"^(question\s+\d+\s+of\s+\d+| Giải thích đáp án |#|sentence to insert)",
     re.I,
 )
 INSERT_STEM = re.compile(
-    r"four locations|where would the (?:following )?sentence best fit|could be added",
+    r"four locations|where would the (?:following)?sentence best fit|could be added",
     re.I,
 )
 VOCAB = re.compile(
@@ -55,7 +55,7 @@ def zh_header(lines):
         t = r["t"] or ""
         if not re.search(r"[\u4e00-\u9fff]", t):
             continue
-        t = re.sub(r"[^\u4e00-\u9fffA-Za-z0-9·，、：:（）()\- ]+", "", t)
+        t = re.sub(r"[^\u4e00-\u9fffA-Za-z0-9·,,:: () ()\-]+", "", t)
         t = t.strip(" |·-")
         if t and t not in chunks:
             chunks.append(t)
@@ -141,7 +141,7 @@ def parse_question(rows):
     seen_opts = False
     for r in rows:
         t = (r["t"] or "").strip()
-        if not t or CHROME_RIGHT.match(t) or t in ("解析", "##"):
+        if not t or CHROME_RIGHT.match(t) or t in (" Giải thích đáp án ", "##"):
             continue
         if re.match(r"^#", t) or re.match(r"^[A-Z0-9.*#]{3,}$", t):
             continue
@@ -167,7 +167,7 @@ def parse_question(rows):
         low = t.lower()
         if "sentence to insert" in low:
             continue
-        if seen_opts and re.match(r"^Applications |^[A-Z][a-z]+ .*inorganic", t):
+        if seen_opts and re.match(r"^Applications |^[A-Z][a-z]+.*inorganic", t):
             insert_sent = (insert_sent + " " + t).strip()
             continue
         stem_parts.append(t)
@@ -189,7 +189,7 @@ def parse_question(rows):
         return q
     if INSERT_STEM.search(stem) and len(options) < 2:
         options = {"A": "Location A", "B": "Location B", "C": "Location C", "D": "Location D"}
-        am = re.search(r"选\s*([A-D])", analysis)
+        am = re.search(r" chọn \s*([A-D])", analysis)
         answer = answer or (am.group(1) if am else "A")
     if len(options) < 2 or not answer:
         return None
@@ -202,7 +202,7 @@ def parse_question(rows):
         if not sent:
             for line in stem.split(". "):
                 if line and not INSERT_STEM.search(line) and len(line) > 20:
-                    sent = line.strip(" .")
+                    sent = line.strip(".")
                     break
         if sent:
             q["_insertSentence"] = sent
@@ -230,11 +230,11 @@ def fill_sentence_q(q, paras):
         para = re.sub(r"^Para[a-z]*\s*\d+\s*", "", para, flags=re.I)
     sents = split_sents(para)
     pick = 0
-    m = re.search(r"第\s*(\d+)\s*句", analysis)
+    m = re.search(r" thứ \s*(\d+)\s* câu ", analysis)
     if m:
         pick = max(0, int(m.group(1)) - 1)
     else:
-        quoted = re.findall(r"[A-Za-z][A-Za-z ,;:'\"-]{18,}", analysis)
+        quoted = re.findall(r"[A-Za-z][A-Za-z,;:'\"-]{18,}", analysis)
         for frag in quoted:
             frag_n = B.norm(frag[:40])
             for i, s in enumerate(sents):
@@ -247,7 +247,7 @@ def fill_sentence_q(q, paras):
         return None
     if len(sents) > 4:
         chosen = sents[pick]
-        others = [s for i, s in enumerate(sents) if i != pick][:3]
+        others = [s for i, s in enumerate(sents) if i!= pick][:3]
         sents = [chosen] + others
         pick = 0
     keys = "ABCD"
@@ -273,7 +273,7 @@ def mark_insert(paras, q):
     letters = []
     for m in marks:
         key = m.group(1) or m.group(2)
-        chunk = blob[last : m.start()].strip()
+        chunk = blob[last: m.start()].strip()
         if chunk:
             if letters:
                 out.append({"insert": letters[-1], "t": chunk + " "})
@@ -305,7 +305,7 @@ def hit_academic():
             continue
         paper = json.load(open(os.path.join(lib, name)))
         for t in paper.get("tasks") or []:
-            if t.get("type") != "academic":
+            if t.get("type")!= "academic":
                 continue
             out[B.norm(t.get("title") or "")] = t
     return out
@@ -395,7 +395,7 @@ def paper(tasks):
     tasks = sorted(tasks, key=lambda t: int(re.search(r"\d+", t["set"]).group()))
     return {
         "id": "bank-rap",
-        "title": "题块库 · 学术文章",
+        "title": " Ngân hàng dạng bài · Học thuật văn chương ",
         "skill": "reading",
         "source": "bank",
         "tasks": tasks,
@@ -451,7 +451,7 @@ def build():
                 failed.append(path + " " + str(e))
     for n, title, _ in ocr_jobs:
         task = merge_ocr(pages_by_n.get(n) or [])
-        if not task or len(task.get("questions") or []) != 5:
+        if not task or len(task.get("questions") or [])!= 5:
             failed.append("R-RAP" + str(n) + " " + title)
             continue
         tasks.append(task)
@@ -466,10 +466,10 @@ def build():
 def calibrate():
     hit = hit_academic()
     src = hit[B.norm("The Dynamics of Hollywood's Golden Age")]
-    t = clone_hit(src, 1, "The Dynamics of Hollywood's Golden Age", "好莱坞黄金时代")
+    t = clone_hit(src, 1, "The Dynamics of Hollywood's Golden Age", " Hollywood thời đại hoàng kim ")
     assert t["set"] == "R-RAP1"
     assert t["questions"][0]["answer"] == "D"
-    assert t["titleZh"] == "好莱坞黄金时代"
+    assert t["titleZh"] == " Hollywood thời đại hoàng kim "
     p = "/tmp/yysd-rap/03-R-RAP (1)/R-RAP2-Augmented Reality for Training-Q1.png"
     page = parse_page(p, B.ocr_one(p))
     assert page["q"]["answer"] == "C", page["q"]

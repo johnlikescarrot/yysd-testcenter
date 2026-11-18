@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Stamp listening 题型 groups with audioStart/audioEnd (and section.audioClips).
+"""Stamp listening đề hình groups with audioStart/audioEnd (and section.audioClips).
 
 Usage: python3 scripts/mark_listen_group_audio.py --volume 21
        python3 scripts/mark_listen_group_audio.py --volume 20-5
-ponytail: Whisper tiny + look-at cues; equal-split when one 口播 covers two 题型组.
+ponytail: Whisper tiny + look-at cues; equal-split when one miệng truyền bá covers two đề hình tổ.
 """
 from __future__ import annotations
 
@@ -57,7 +57,7 @@ def tnum(x: float) -> str:
 
 def words_to_nums(s: str) -> str:
     s = s.lower().replace("—", " ").replace("–", "-").replace("/", " ")
-    s = re.sub(r"[^a-z0-9'\- ]+", " ", s)
+    s = re.sub(r"[^a-z0-9'\-]+", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     for w, n in sorted(WORDN.items(), key=lambda kv: -len(kv[0])):
         s = re.sub(r"\b" + re.escape(w) + r"\b", str(n), s)
@@ -94,9 +94,9 @@ def load_wav16(path: Path):
     audio = np.frombuffer(raw, dtype="<i2").astype("float32") / 32768.0
     if ch == 2:
         audio = audio.reshape(-1, 2).mean(axis=1)
-    elif ch != 1:
+    elif ch!= 1:
         raise SystemExit("wav channels %s in %s" % (ch, path))
-    if sr != 16000:
+    if sr!= 16000:
         raise SystemExit("expected 16 kHz wav, got %s from %s" % (sr, path))
     return audio
 
@@ -163,7 +163,7 @@ def extract_cues(segments: list[dict]) -> list[dict]:
 
 
 def is_subset(a: dict, b: dict) -> bool:
-    return a["qFrom"] >= b["qFrom"] and a["qTo"] <= b["qTo"] and (a["qFrom"], a["qTo"]) != (b["qFrom"], b["qTo"])
+    return a["qFrom"] >= b["qFrom"] and a["qTo"] <= b["qTo"] and (a["qFrom"], a["qTo"])!= (b["qFrom"], b["qTo"])
 
 
 def map_clips(groups: list[dict], cues: list[dict], duration: float) -> tuple[list[dict], list[str]]:
@@ -293,7 +293,7 @@ def inject_audio_clips(html: str, audio_file: str, clips: list[dict]) -> str:
     json_style = bool(re.match(r"""["']audio["']""", m.group(1)))
     arr = ",".join(fmt_clip_obj(c, json_style) for c in clips)
     if json_style:
-        block = '\n      "audioClips": [%s],' % arr
+        block = '\n "audioClips": [%s],' % arr
     else:
         block = " audioClips:[%s]," % arr
     start = m.end()
@@ -319,7 +319,7 @@ def inject_group_times(html: str, clip: dict) -> str:
     json_style = '"title"' in head or "'title'" in head[:8]
     a, b = tnum(clip["start"]), tnum(clip["end"])
     if json_style:
-        ins = '%s\n          "audioStart": %s,\n          "audioEnd": %s,' % (head, a, b)
+        ins = '%s\n "audioStart": %s,\n "audioEnd": %s,' % (head, a, b)
     else:
         ins = "%s audioStart:%s, audioEnd:%s," % (head, a, b)
     return html[: m.start()] + ins + html[m.end():]
@@ -340,7 +340,7 @@ def load_groups(vol: int) -> dict[tuple[int, int], list[dict]]:
     data = json.loads(TAX.read_text())
     by: dict[tuple[int, int], list[dict]] = {}
     for g in data["groups"]:
-        if str(g.get("volume")) != str(vol):
+        if str(g.get("volume"))!= str(vol):
             continue
         if "qFrom" not in g:
             continue
@@ -365,7 +365,7 @@ def process_volume(vol: int, model, dry: bool) -> list[str]:
             continue
         html = path.read_text()
         audios = extract_audios(html)
-        if len(audios) != 4:
+        if len(audios)!= 4:
             report.append("AUDIO count %s → %s" % (path.name, audios))
         for part, name in enumerate(audios, 1):
             src = AUDIO_DIR / name
@@ -375,22 +375,22 @@ def process_volume(vol: int, model, dry: bool) -> list[str]:
                 continue
             if not groups:
                 continue
-            print("  %s T%d S%d %s (%d groups)" % (vol, test, part, name, len(groups)))
+            print(" %s T%d S%d %s (%d groups)" % (vol, test, part, name, len(groups)))
             segs = transcribe(model, src)
             dur = duration_of(src, segs)
             cues = extract_cues(segs)
             clips, flags = map_clips(groups, cues, dur)
             clips = apply_overrides(vol, test, part, clips)
             for f in flags:
-                print("    !", f)
-                report.append("剑%d T%d S%d %s" % (vol, test, part, f))
+                print("!", f)
+                report.append(" kiếm %d T%d S%d %s" % (vol, test, part, f))
             looks = [c for c in cues if c["kind"] == "look"]
-            print("    looks", [(c["q1"], c["q2"], round(c["start"], 1)) for c in looks], "dur", round(dur, 1))
+            print(" looks", [(c["q1"], c["q2"], round(c["start"], 1)) for c in looks], "dur", round(dur, 1))
             if not looks:
                 for s in segs[:6]:
-                    print("    txt", round(s["start"], 1), (s["text"] or "")[:90])
+                    print(" txt", round(s["start"], 1), (s["text"] or "")[:90])
             for c in clips:
-                print("    clip Q%d-%d %s→%s" % (c["qFrom"], c["qTo"], tnum(c["start"]), tnum(c["end"])))
+                print(" clip Q%d-%d %s→%s" % (c["qFrom"], c["qTo"], tnum(c["start"]), tnum(c["end"])))
             if dry:
                 continue
             html = inject_audio_clips(html, name, clips)
@@ -398,7 +398,7 @@ def process_volume(vol: int, model, dry: bool) -> list[str]:
                 html = inject_group_times(html, c)
         if not dry:
             path.write_text(html)
-            print("  wrote", path.name)
+            print(" wrote", path.name)
     return report
 
 
@@ -468,9 +468,9 @@ def main() -> None:
         if vol < 5 or vol > 21:
             print("skip vol", vol)
             continue
-        print("\n=== 剑", vol, "===")
+        print("\n=== kiếm ", vol, "===")
         all_report.extend(process_volume(vol, model, args.dry_run))
-    print("\n=== 难段清单 (%d) ===" % len(all_report))
+    print("\n=== Khó đoạn danh sách (%d) ===" % len(all_report))
     for line in all_report:
         print(line)
     out = CACHE / "hard_cases.txt"

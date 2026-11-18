@@ -1,57 +1,57 @@
 {
- "id": "free-13029",
- "title": "Conversation #51",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #51",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13029,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-51"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #51",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/76ef8ed51b92424bbd5df78c0eef9b6d.mp3",
-   "transcript": "Man: I'm looking for a good restaurant to celebrate finishing my thesis. Do you have any recommendations?\nWoman: How about that new French restaurant downtown? I went last week and I had a chicken dish that was delicious.\nMan: That sounds perfect. My advisor loves French food. I'll check if they have any availability for Friday night.\nWoman: You might want to call them soon. I think they fill up fast.",
-   "questions": [
+  "id": "free-13029",
+  "title": "Conversation #51",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #51",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13029,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-51"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the man looking for?",
-     "options": {
-      "A": "A place to have a business meeting",
-      "B": "A place to celebrate a special occasion",
-      "C": "A new recipe to try at home",
-      "D": "A gift for his advisor"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：男士在寻找什么？属于细节理解题。 定位原文：Man: I'm looking for a good restaurant to celebrate finishing my thesis. 选项分析： A. A place to have a business meeting 一个举行商务会议的地方。因为男士是为了庆祝完成论文，不是为了商务会议，所以 A 选项错误。 B. A place to celebrate a special occasion 一个庆祝特殊场合的地方。由于完成论文是一个重要的个人成就，男士寻找餐厅是为了庆祝这一特殊时刻，所以 B 选项正确。 C. A new recipe to try at home 一个在家尝试的新食谱。因为男士是在寻找餐厅，而不是食谱，所以 C 选项错误。 D. A gift for his advisor 给他导师的礼物。虽然提到了导师，但男士是想请导师吃饭，而不是寻找实物礼物，所以 D 选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the woman suggest the man do next?",
-     "options": {
-      "A": "Order a chicken dish",
-      "B": "Look for a different restaurant",
-      "C": "Make a reservation soon",
-      "D": "Cook a meal at home"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：女士建议男士接下来做什么？属于预测题。 定位原文：Woman: You might want to call them soon. I think they fill up fast. 选项分析： A. Order a chicken dish 点一份鸡肉菜。因为这是在讨论预订餐厅，而不是点菜，所以 A选项错误。 B. Look for a different restaurant 寻找另一家餐厅。因为女士是在建议尽快预订这家餐厅，而不是换一家，所以 B 选项错误。 C. Make a reservation soon 尽快预订。由于女士提到餐厅订位很快，建议男士快点打电话，这暗示了要尽快预订，所以 C 选项正确。 D. Cook a meal at home 在家做饭。因为对话全程都在讨论去餐厅用餐，所以 D 选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #51",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/76ef8ed51b92424bbd5df78c0eef9b6d.mp3",
+      "transcript": "Man: I'm looking for a good restaurant to celebrate finishing my thesis. Do you have any recommendations?\nWoman: How about that new French restaurant downtown? I went last week and I had a chicken dish that was delicious.\nMan: That sounds perfect. My advisor loves French food. I'll check if they have any availability for Friday night.\nWoman: You might want to call them soon. I think they fill up fast.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the man looking for?",
+          "options": {
+            "A": "A place to have a business meeting",
+            "B": "A place to celebrate a special occasion",
+            "C": "A new recipe to try at home",
+            "D": "A gift for his advisor"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: nam sĩ đang tìm cái gì? thuộc về chi tiết lý giải câu. Dẫn chứng Bài gốc: Man: I'm looking for a good restaurant to celebrate finishing my thesis. Phương án phân tích: A. A place to have a business meeting một cái cử hành thương vụ hội nghị địa phương. vì nam sĩ là vì chúc mừng hoàn thành luận văn, không phải là vì thương vụ hội nghị, nên A Phương án Sai. B. A place to celebrate a special occasion một cái chúc mừng trường hợp đặc thù địa phương. bởi vì hoàn thành luận văn là một trọng yếu cá nhân thành tựu, nam sĩ tìm kiếm nhà hàng là vì chúc mừng cái này một đặc thù thời khắc, nên B Phương án Đúng. C. A new recipe to try at home một cái ở nhà thử mới sách dạy nấu ăn. vì nam sĩ là ở tìm kiếm nhà hàng, mà không phải sách dạy nấu ăn, nên C Phương án Sai. D. A gift for his advisor cho hắn đạo sư lễ vật. mặc dù nhắc tới đạo sư, nhưng nam sĩ là muốn mời đạo sư ăn cơm, mà không phải tìm kiếm vật dụng thực tế lễ vật, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the woman suggest the man do next?",
+          "options": {
+            "A": "Order a chicken dish",
+            "B": "Look for a different restaurant",
+            "C": "Make a reservation soon",
+            "D": "Cook a meal at home"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: phu nhân đề nghị nam sĩ kế tiếp làm cái gì? thuộc về dự đoán câu. Dẫn chứng Bài gốc: Woman: You might want to call them soon. I think they fill up fast. Phương án phân tích: A. Order a chicken dish chút:điểm một phần thịt gà đồ ăn. bởi vì đây là đang thảo luận đặt trước nhà hàng, mà không phải gọi món ăn, nên A Phương án Sai. B. Look for a different restaurant tìm kiếm một nhà khác nhà hàng. vì phu nhân là ở đề nghị mau chóng đặt trước nhà này nhà hàng, mà không phải đổi một nhà khác, nên B Phương án Sai. C. Make a reservation soon mau chóng đặt trước. bởi vì phu nhân nhắc tới nhà hàng đính vị rất nhanh, đề nghị nam sĩ nhanh lên gọi điện thoại, cái này ám hiệu phải nhanh một chút đặt trước, nên C Phương án Đúng. D. Cook a meal at home ở nhà nấu cơm. vì đối thoại toàn bộ hành trình cũng đang thảo luận đi nhà hàng dùng cơm, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

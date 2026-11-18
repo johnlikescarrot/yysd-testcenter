@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 "use strict";
 /**
- * Enrich 高中单词 LIST1–5 wordData with boss-case fields.
- * ponytail: heuristic enrichment for sample; 教研抽查后再精修.
+ * Enrich Từ vựng THPT LIST1–5 wordData with boss-case fields.
+ * ponytail: heuristic enrichment for sample; dạy nghiên kiểm tra thí điểm sau lại tinh tu.
  */
 var fs = require("fs");
 var path = require("path");
@@ -11,9 +11,9 @@ var ROOT = path.join(__dirname, "..");
 var DIR = path.join(ROOT, "library/study/vocab");
 
 function listPath(n) {
-  var a = path.join(DIR, "高中单词LIST" + n + ".html");
+  var a = path.join(DIR, " Từ vựng THPT LIST" + n + ".html");
   if (fs.existsSync(a)) return a;
-  var b = path.join(DIR, "高中词汇LIST" + n + ".html");
+  var b = path.join(DIR, " Từ vựng Nền tảng THPT LIST" + n + ".html");
   if (fs.existsSync(b)) return b;
   return null;
 }
@@ -26,10 +26,10 @@ function parseWordData(html) {
 
 function splitPhrases(phrases) {
   if (!phrases) return [];
-  return String(phrases).split(/[,，]/).map(function (s) {
+  return String(phrases).split(/[,,]/).map(function (s) {
     s = s.trim();
     if (!s) return null;
-    var m = s.match(/^(.+?)[（(](.+?)[）)]$/);
+    var m = s.match(/^(.+?)[((](.+?)[))]$/);
     if (m) return { phrase: m[1].trim(), meaning: m[2].trim() };
     return { phrase: s, meaning: "" };
   }).filter(Boolean).slice(0, 4);
@@ -37,14 +37,14 @@ function splitPhrases(phrases) {
 
 function splitExample(example) {
   var s = String(example || "");
-  var m = s.match(/^(.+?)[（(](.+)[）)]\s*$/);
+  var m = s.match(/^(.+?)[((](.+)[))]\s*$/);
   if (m) return { en: m[1].trim(), zh: m[2].trim() };
   return { en: s, zh: "" };
 }
 
 function makeParaphrase(w, enEx) {
   var word = w.word;
-  var meaning = String(w.meaning || "").split(/[；;]/)[0].trim();
+  var meaning = String(w.meaning || "").split(/[;;]/)[0].trim();
   var original = enEx || ("Students should learn the word " + word + " carefully.");
   var correct = original.replace(new RegExp("\\b" + word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i"), meaning) ||
     ("The idea is related to " + meaning + ".");
@@ -71,16 +71,16 @@ function enrich(w) {
   var out = Object.assign({}, w);
   out.collocations = coll;
   if (!out.root) {
-    out.root = "（样板）结合词形与语境理解「" + w.word + "」→ " + String(w.meaning || "").split(/[；;]/)[0];
+    out.root = " (bản mẫu) kết hợp từ hình và ngữ cảnh lý giải «" + w.word + "»→ " + String(w.meaning || "").split(/[;;]/)[0];
   }
   if (!out.synonyms) out.synonyms = [];
   if (!out.antonyms) out.antonyms = [];
   if (!out.examTag) {
     out.examTag = {
-      source: "高中英语",
+      source: " THPT Tiếng Anh ",
       frequency: 3,
-      commonUsage: String(w.meaning || "").split(/[；;]/)[0] || "基础词汇",
-      topic: "通用"
+      commonUsage: String(w.meaning || "").split(/[;;]/)[0] || " trụ cột Từ vựng ",
+      topic: " thông dụng "
     };
   }
   if (!out.exampleEn && ex.en) out.exampleEn = ex.en;

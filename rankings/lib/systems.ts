@@ -15,76 +15,76 @@ export type SystemMeta = {
 export const SYSTEMS: Record<SystemKey, SystemMeta> = {
   qs: {
     key: "qs",
-    name: "QS 世界大学排名",
+    name: "QS thế giới đại học bài danh ",
     shortName: "QS",
     sourceUrl: "https://www.topuniversities.com",
     sourceHost: "www.topuniversities.com",
     started: 2004,
     latestYear: 2027,
     blurb:
-      "由 Quacquarelli Symonds 发布，从学术声誉、雇主声誉、师生比、引用率、国际教员与国际学生比例等维度评估全球大学。",
+      " do Quacquarelli Symonds tuyên bố, từ Học thuật danh dự, cố chủ danh dự, thầy trò so với, trích dẫn dẫn đầu, quốc tế giáo viên và quốc tế Học viên tỉ lệ {các loại:đợi} duy độ ước định toàn cầu đại học. ",
     method:
-      "学术声誉与雇主声誉合计权重较高；另含师生比、单位教员引用、国际教师/学生比例及可持续发展等指标。",
+      " Học thuật danh dự và cố chủ danh dự cộng lại quyền trọng tương đối cao; khác hàm thầy trò so với, đơn vị giáo viên trích dẫn, quốc tế Giáo viên / Học viên tỉ lệ và có thể tiếp tục phát triển {các loại:đợi} chỉ tiêu. ",
   },
   the: {
     key: "the",
-    name: "泰晤士高等教育世界大学排名",
+    name: " Thames giáo dục cao đẳng thế giới đại học bài danh ",
     shortName: "THE",
     sourceUrl: "https://www.timeshighereducation.com",
     sourceHost: "www.timeshighereducation.com",
     started: 2004,
     latestYear: 2026,
     blurb:
-      "由《泰晤士高等教育》发布，从教学、研究环境、研究质量、产业与国际展望等维度评估研究型大学。",
+      " do « Thames giáo dục cao đẳng » tuyên bố, từ dạy học, nghiên cứu Môi trường, nghiên cứu chất lượng, sản nghiệp và quốc tế triển vọng {các loại:đợi} duy độ ước định nghiên cứu hình đại học. ",
     method:
-      "教学、研究环境、研究质量、产业收入、国际展望共 13 项绩效指标；引文数据常与 Scopus 合作。",
+      " dạy học, nghiên cứu Môi trường, nghiên cứu chất lượng, sản nghiệp thu nhập, quốc tế triển vọng tổng 13 hạng tích hiệu quả chỉ tiêu; lời trích dẫn số liệu thường và Scopus hợp tác. ",
   },
   arwu: {
     key: "arwu",
-    name: "软科世界大学学术排名",
+    name: " mềm khoa thế giới đại học Học thuật bài danh ",
     shortName: "ARWU",
     sourceUrl: "https://www.shanghairanking.com",
     sourceHost: "www.shanghairanking.com",
     started: 2003,
     latestYear: 2025,
     blurb:
-      "由上海软科发布，侧重诺奖/菲尔兹奖、高被引学者、Nature/Science 与 SCI/SSCI 等客观学术产出。",
+      " do Thượng Hải mềm khoa tuyên bố, trọng điểm dạ thưởng / Phil tư thưởng, cao bị dẫn học giả, Nature/Science và SCI/SSCI {các loại:đợi} khách quan Học thuật sản xuất. ",
     method:
-      "获奖校友与教员、高被引学者、Nature & Science、论文数量与生均学术表现等可核验指标。",
+      " trúng thưởng đồng học và giáo viên, cao bị dẫn học giả, Nature & Science, luận văn số lượng và sinh đều Học thuật biểu hiện {các loại:đợi} có thể hạch nghiệm chỉ tiêu. ",
   },
   usnews: {
     key: "usnews",
-    name: "U.S. News 全球最佳大学排名",
+    name: "U.S. News toàn cầu tốt nhất đại học bài danh ",
     shortName: "US News",
     sourceUrl: "https://www.usnews.com",
     sourceHost: "www.usnews.com",
     started: 2014,
     latestYear: 2027,
     blurb:
-      "由《美国新闻与世界报道》发布，聚焦全球研究声誉、发表、引用与国际合作等研究表现。",
+      " do « Hoa Kỳ tin tức và thế giới đưa tin » tuyên bố, tập trung toàn cầu nghiên cứu danh dự, phát biểu, trích dẫn và quốc tế hợp tác {các loại:đợi} nghiên cứu biểu hiện. ",
     method:
-      "全球/区域研究声誉、发表与会议、归一化引用、高被引论文、国际合作等约 13 项指标。",
+      " toàn cầu / khu vực nghiên cứu danh dự, phát biểu tham dự hội nghị nghị, quy nhất hóa trích dẫn, cao bị dẫn luận văn, quốc tế hợp tác {các loại:đợi} ước 13 hạng chỉ tiêu. ",
   },
 };
 
 export const SYSTEM_ORDER: SystemKey[] = ["qs", "the", "arwu", "usnews"];
 
 export const COUNTRY_LABELS: Record<string, string> = {
-  US: "美国",
-  UK: "英国",
-  CA: "加拿大",
-  AU: "澳大利亚",
-  CN: "中国",
-  HK: "中国香港",
-  SG: "新加坡",
-  JP: "日本",
-  KR: "韩国",
-  DE: "德国",
-  FR: "法国",
-  CH: "瑞士",
-  NL: "荷兰",
-  SE: "瑞典",
-  OTHER: "其他",
+  US: " Hoa Kỳ ",
+  UK: " Vương quốc Anh ",
+  CA: " Canada ",
+  AU: " Úc ",
+  CN: " Châu Á ",
+  HK: " Hồng Kông ",
+  SG: " Singapore ",
+  JP: " Nhật Bản ",
+  KR: " Hàn Quốc ",
+  DE: " Đức ",
+  FR: " Pháp ",
+  CH: " Thụy Sĩ ",
+  NL: " Hà Lan ",
+  SE: " Thuỵ Điển ",
+  OTHER: " Khác ",
 };
 
 /** Tape colors for the four ranking tracks (dashboard UI). */

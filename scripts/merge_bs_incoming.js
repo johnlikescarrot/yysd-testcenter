@@ -17,7 +17,7 @@ function reconstruct(t) {
   var s = "";
   (t.parts || []).forEach(function (p) {
     if (p.slot) {
-      if (s && !/\s$/.test(s)) s += " ";
+      if (s &&!/\s$/.test(s)) s += " ";
       s += t.answer[si++];
     } else s += p.t || "";
   });
@@ -33,19 +33,19 @@ function titlecaseChip(w) {
 function verify(pack) {
   var fails = [];
   var setN = pack.set;
-  var qMax = setN === 90 ? 5 : 10;
-  if (!pack.tasks || pack.tasks.length !== qMax) fails.push("W-BS" + setN + " expected " + qMax + " tasks");
+  var qMax = setN === 90? 5: 10;
+  if (!pack.tasks || pack.tasks.length!== qMax) fails.push("W-BS" + setN + " expected " + qMax + " tasks");
   (pack.tasks || []).forEach(function (t, i) {
     var q = i + 1;
     var id = "W-BS" + setN + "-Q" + q;
-    if (t.set !== id) fails.push(id + " bad set " + t.set);
+    if (t.set!== id) fails.push(id + " bad set " + t.set);
     var g = (pack.greens || {})[id];
     if (!g) fails.push(id + " missing green");
-    else if (norm(reconstruct(t)) !== norm(g)) {
+    else if (norm(reconstruct(t))!== norm(g)) {
       fails.push(id + " reconstruct=[" + reconstruct(t) + "] green=[" + g + "]");
     }
     var slots = (t.parts || []).filter(function (p) { return p.slot; }).length;
-    if (slots !== (t.answer || []).length) fails.push(id + " slots");
+    if (slots!== (t.answer || []).length) fails.push(id + " slots");
     (t.answer || []).forEach(function (w) {
       if ((t.bank || []).indexOf(w) < 0) fails.push(id + " missing " + w);
     });
@@ -86,7 +86,7 @@ function main() {
       t.type = "sentence";
       t.module = 1;
       t.title = t.title || "Build a Sentence";
-      t.titleZh = t.titleZh || "句子构建";
+      t.titleZh = t.titleZh || " câu xây dựng ";
       paper.tasks.push(t);
       have[t.set] = 1;
     });

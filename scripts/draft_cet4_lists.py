@@ -35,11 +35,11 @@ def load_lexicon() -> dict:
 
 
 def accept_from_meaning(meaning: str) -> list[str]:
-    parts = re.split(r"[；;，,/、]", meaning or "")
+    parts = re.split(r"[;;,,/,]", meaning or "")
     out = []
     for p in parts:
-        p = re.sub(r"[（(].*?[）)]", "", p).strip()
-        p = re.sub(r"^(to |a |an |the )", "", p, flags=re.I).strip()
+        p = re.sub(r"[((].*?[))]", "", p).strip()
+        p = re.sub(r"^(to |a |an |the)", "", p, flags=re.I).strip()
         if 1 <= len(p) <= 12 and re.search(r"[\u4e00-\u9fff]", p):
             out.append(p)
     # dedupe
@@ -53,20 +53,20 @@ def accept_from_meaning(meaning: str) -> list[str]:
 
 def draft_entry(i: int, word: str, lex: dict) -> dict:
     hit = lex.get(word.lower()) or {}
-    meaning = (hit.get("meaning") or "").strip() or f"（待校对）{word}"
+    meaning = (hit.get("meaning") or "").strip() or f" (đợi so với) {word}"
     ipa = (hit.get("ipa") or "").strip() or ""
     pos = (hit.get("pos") or "").strip() or "n."
     # original-ish helpers (not copied from green book)
-    mnemonic = f"联想：结合词形与释义记住「{meaning.split('；')[0].split('，')[0][:12]}」"
-    core = meaning.split("；")[0].split("，")[0].strip()[:10] or word
-    collo = f"{word} skills（{core}相关能力）, use {word}（使用/运用该词）"
+    mnemonic = f" liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ «{meaning.split('; ')[0].split(', ')[0][:12]}»"
+    core = meaning.split("; ")[0].split(", ")[0].strip()[:10] or word
+    collo = f"{word} skills ({core} tương quan năng lực), use {word} (sử dụng / vận dụng nên từ) "
     if " " in word:
-        collo = f"phrases with {word}（含 {word} 的表达）"
+        collo = f"phrases with {word} (hàm {word} biểu đạt) "
     ex_en = f"Students should learn how to use \"{word}\" in real contexts."
-    ex_cn = f"学生应学会在真实语境中使用 “{word}”。"
+    ex_cn = f" Học viên ứng với học được tại chân thật ngữ cảnh Vừa sử dụng “{word}”. "
     if hit.get("meaning"):
         ex_en = f"It is useful to understand the meaning of {word} in this sentence."
-        ex_cn = f"理解这句话中 {word} 的含义很有帮助。"
+        ex_cn = f" lý giải trong những lời này {word} Nghĩa rất có trợ giúp. "
     return {
         "id": i,
         "word": word,
@@ -76,7 +76,7 @@ def draft_entry(i: int, word: str, lex: dict) -> dict:
         "mnemonic": mnemonic,
         "collocations": collo,
         "phrases": collo,
-        "example": f"{ex_en}（{ex_cn}）",
+        "example": f"{ex_en} ({ex_cn}) ",
         "exampleEN": ex_en,
         "exampleCN": ex_cn,
         "derivatives": "",
@@ -90,7 +90,7 @@ def draft_list(n: int, force: bool = False) -> Path | None:
     if out.exists() and not force and n == 1:
         print("keep handcrafted", out.name)
         return out
-    if out.exists() and not force and n != 1:
+    if out.exists() and not force and n!= 1:
         # allow rebuild for 2+
         pass
     ocr_path = OCR / f"list-{n:02d}-headwords.json"
@@ -105,7 +105,7 @@ def draft_list(n: int, force: bool = False) -> Path | None:
     meta = {
         "listNo": n,
         "band": band_for(n),
-        "title": f"单元 {n}",
+        "title": f" Bài {n}",
         "published": True,
         "sourceNote": "Headword order from frequency-list OCR; definitions from in-house lexicon + rewritten helpers.",
         "words": entries,
@@ -119,7 +119,7 @@ def draft_list(n: int, force: bool = False) -> Path | None:
 
 def main(argv: list[str]) -> int:
     force = "--force" in argv
-    args = [a for a in argv[1:] if a != "--force"]
+    args = [a for a in argv[1:] if a!= "--force"]
     want = [int(x) for x in args] or list(range(1, 36))
     # preload lexicon once
     _ = load_lexicon()

@@ -5,8 +5,8 @@ var path = require("path");
 var root = path.join(__dirname, "..");
 
 function same(a, b) {
-  if (!a || !b || a.length !== b.length) return false;
-  for (var i = 0; i < a.length; i++) if (String(a[i]) !== String(b[i])) return false;
+  if (!a ||!b || a.length!== b.length) return false;
+  for (var i = 0; i < a.length; i++) if (String(a[i])!== String(b[i])) return false;
   return true;
 }
 
@@ -15,14 +15,14 @@ function audioOk(rel) {
   if (fs.existsSync(path.join(root, rel)) || fs.existsSync(path.join(root, "app", rel))) return true;
   var dir = path.dirname(rel);
   // ponytail: mp3s often live only on the server; skip if the audio folder is not in this checkout
-  return !fs.existsSync(path.join(root, dir)) && !fs.existsSync(path.join(root, "app", dir));
+  return!fs.existsSync(path.join(root, dir)) &&!fs.existsSync(path.join(root, "app", dir));
 }
 
 function passageText(task) {
   var parts = [];
   function add(s) { if (s) parts.push(String(s)); }
   add(task.transcript);
-  (task.paras || []).forEach(function (p) { add(typeof p === "string" ? p : (p && p.t)); });
+  (task.paras || []).forEach(function (p) { add(typeof p === "string"? p: (p && p.t)); });
   (task.passage || []).forEach(function (p) {
     if (!p) return;
     add(p.t);
@@ -45,7 +45,7 @@ function passageText(task) {
 
 function vocabWord(stem) {
   var m = String(stem || "").match(/the (?:word|phrase)\s+["“”‘’']([^"“”‘’']+)["“”‘’']/i);
-  return m ? m[1].trim() : "";
+  return m? m[1].trim(): "";
 }
 
 function dailyNeedsBreaks(task) {
@@ -111,7 +111,7 @@ function writingBlob(t) {
   return parts.join(" ");
 }
 
-var WRITE_HUD = /Question\s+\d+\s+of\s+\d+|WORD BANK|正确答案|BUILD A SENTENCE|Save Draft|Clear Draft|收藏|AI批改|Your Response:/i;
+var WRITE_HUD = /Question\s+\d+\s+of\s+\d+|WORD BANK| Đáp án đúng |BUILD A SENTENCE|Save Draft|Clear Draft| cất chứa |AI phê chữa |Your Response:/i;
 var WRITE_JUNK = /[▩▒�]/;
 var WRITE_CJK = /[\u4e00-\u9fff]/;
 
@@ -121,7 +121,7 @@ function checkPhoto(rel, tag, errs) {
 }
 
 function checkFile(file) {
-  var abs = path.isAbsolute(file) ? file : path.join(root, file);
+  var abs = path.isAbsolute(file)? file: path.join(root, file);
   var paper = JSON.parse(fs.readFileSync(abs, "utf8"));
   var errs = [];
   var seenClip = {};
@@ -132,21 +132,21 @@ function checkFile(file) {
     var tag = path.basename(abs) + " task[" + ti + "] id=" + (t.id || "?");
     if (t.type === "complete_words") {
       (t.passage || []).forEach(function (p) {
-        if (!p || !p.id) return;
-        if (!p.answer || !/^[A-Za-z]+$/.test(p.answer)) {
+        if (!p ||!p.id) return;
+        if (!p.answer ||!/^[A-Za-z]+$/.test(p.answer)) {
           errs.push(tag + " blank " + p.id + " needs letter answer (one slot per letter)");
         }
       });
     }
-    if (t.type === "daily_life" && dailyNeedsBreaks(t) && !dailyStructured(t)) {
+    if (t.type === "daily_life" && dailyNeedsBreaks(t) &&!dailyStructured(t)) {
       errs.push(tag + " daily_life is one block — break email/notice/schedule with newlines or fields");
     }
     if (t.type === "sentence") {
       var slots = (t.parts || []).filter(function (p) { return p && p.slot; }).length;
       if (!t.context) errs.push(tag + " empty context");
-      if (!t.answer || !t.answer.length) errs.push(tag + " no answer");
-      if (!t.bank || !t.bank.length) errs.push(tag + " no bank");
-      if (t.answer && slots !== t.answer.length) errs.push(tag + " slots " + slots + " != answer " + t.answer.length);
+      if (!t.answer ||!t.answer.length) errs.push(tag + " no answer");
+      if (!t.bank ||!t.bank.length) errs.push(tag + " no bank");
+      if (t.answer && slots!== t.answer.length) errs.push(tag + " slots " + slots + "!= answer " + t.answer.length);
       if (t.answer && t.bank) {
         t.answer.forEach(function (w) {
           if (t.bank.indexOf(w) < 0) errs.push(tag + " answer missing from bank: " + w);
@@ -161,17 +161,17 @@ function checkFile(file) {
     }
     if (t.type === "email") {
       if (!t.prompt) errs.push(tag + " email missing prompt");
-      if (!t.bullets || !t.bullets.length) errs.push(tag + " email missing bullets");
+      if (!t.bullets ||!t.bullets.length) errs.push(tag + " email missing bullets");
       if (!t.to) errs.push(tag + " email missing to");
       if (!t.subject) errs.push(tag + " email missing subject");
     }
     if (t.type === "discussion") {
-      if (!t.professor || !t.professor.name || !t.professor.text) {
+      if (!t.professor ||!t.professor.name ||!t.professor.text) {
         errs.push(tag + " discussion missing professor name/text");
       }
-      if (!t.posts || t.posts.length !== 2) errs.push(tag + " discussion needs 2 student posts");
+      if (!t.posts || t.posts.length!== 2) errs.push(tag + " discussion needs 2 student posts");
       (t.posts || []).forEach(function (p, pi) {
-        if (!p || !p.name || !p.text) errs.push(tag + " post[" + pi + "] missing name/text");
+        if (!p ||!p.name ||!p.text) errs.push(tag + " post[" + pi + "] missing name/text");
         checkPhoto(p && p.photo, tag + " post[" + pi + "]", errs);
       });
       checkPhoto(t.professor && t.professor.photo, tag + " professor", errs);
@@ -192,14 +192,14 @@ function checkFile(file) {
       errs.push(tag + " missing audio");
     }
     if (t.type === "repeat") {
-      var akey = (t.audio || "") + "\0" + (t.fromSec != null ? t.fromSec : "") + "\0" + (t.toSec != null ? t.toSec : "");
+      var akey = (t.audio || "") + "\0" + (t.fromSec!= null? t.fromSec: "") + "\0" + (t.toSec!= null? t.toSec: "");
       if (seenClip[akey]) errs.push(tag + " Listen and Repeat shares this clip — one file or fromSec/toSec per sentence");
       seenClip[akey] = 1;
       if (t.audio && intros[t.audio]) errs.push(tag + " scene intro audio is a numbered question");
       if (clipIsSceneReel(t.audio)) errs.push(tag + " full scene reel or intro file used as a question");
       if (sampleIsDirections(t.sample)) errs.push(tag + " sample is directions text, not the sentence to repeat");
     }
-    if (t.image && !audioOk(t.image)) errs.push(tag + " missing image " + t.image);
+    if (t.image &&!audioOk(t.image)) errs.push(tag + " missing image " + t.image);
     (t.questions || []).forEach(function (q) {
       if (!q.answer) errs.push(tag + " Q" + q.id + " no answer");
       var opts = q.options || [];

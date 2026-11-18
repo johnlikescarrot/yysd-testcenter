@@ -1,43 +1,43 @@
-/* 真题题库区门禁：能不能进以后端 /api/toefl/access 为准。取不到=锁（fail-safe）。
-   免费卷(id=)/考前冲刺包(bank + 非 practice)/老师预览(preview=1) 不锁。 */
+/* đề thi thật Ngân hàng đề khu gác cổng: có thể hay không tiến về sau đầu /api/toefl/access làm chuẩn. không lấy được = Khóa (fail-safe).
+    miễn phí cuốn (id=)/ Gói tăng tốc trước kỳ thi (bank + không phải practice)/ Giáo viên Xem trước (preview=1) không Khóa. */
 (function (w) {
   "use strict";
 
   var LOCKED = { on: false, reason: "error" };
   var REASONS = {
-    none: { t: "练习区还没开通", d: "真题题库需要老师开通后才能进入。免费题库不用开通，登录即做。" },
-    scheduled: { t: "练习区尚未开启", d: "老师已为你安排开通，时间到了就能进去练习。" },
-    expired: { t: "练习权限已到期", d: "已做完的记录仍可在个人页查看。想继续练习，请联系老师续期。" },
-    off: { t: "练习区已停用", d: "老师已停用你的练习权限。如需继续，请联系老师重新开通。" },
-    error: { t: "暂时无法确认权限", d: "网络或服务异常，为安全起见先锁住。请稍后重新检查。" }
+    none: { t: " Khu luyện tập còn chưa mở thông ", d: " đề thi thật Ngân hàng đề cần Giáo viên kích hoạt sau mới có thể tiến nhập. miễn phí Ngân hàng đề không cần kích hoạt, Đăng nhập tiếp xúc làm. " },
+    scheduled: { t: " Khu luyện tập chưa Mở ", d: " Giáo viên đã cho bạn an bài kích hoạt, thời gian đến có thể đi vào Luyện tập. " },
+    expired: { t: " Luyện tập quyền hạn Đã hết hạn ", d: " đã làm xong ghi chép nhưng có thể tại cá nhân trang Xem. muốn tiếp tục Luyện tập, xin liên lạc Giáo viên tục thời hạn. " },
+    off: { t: " Khu luyện tập Đã tạm ngưng ", d: " Giáo viên Đã tạm ngưng của bạn Luyện tập quyền hạn. ví dụ cần Tiếp tục, xin liên lạc Giáo viên một lần nữa kích hoạt. " },
+    error: { t: " tạm thời không cách nào Xác nhận quyền hạn ", d: " mạng lưới *internet hoặc phục vụ dị thường, là lý do an toàn trước khóa lại. xin sau một lần nữa kiểm tra. " }
   };
 
-  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function pad(n) { return (n < 10? "0": "") + n; }
   function fmtWhen(iso) {
     if (!iso) return "";
     var d = new Date(iso);
-    return (d.getMonth() + 1) + "月" + d.getDate() + "日 " + pad(d.getHours()) + ":" + pad(d.getMinutes());
+    return (d.getMonth() + 1) + " tháng " + d.getDate() + " ngày " + pad(d.getHours()) + ":" + pad(d.getMinutes());
   }
   function fmtLeft(ms) {
     var s = Math.max(0, Math.floor(ms / 1000));
     var day = Math.floor(s / 86400);
     var h = Math.floor((s % 86400) / 3600);
     var m = Math.floor((s % 3600) / 60);
-    if (day > 0) return day + " 天 " + pad(h) + ":" + pad(m) + ":" + pad(s % 60);
+    if (day > 0) return day + " ngày " + pad(h) + ":" + pad(m) + ":" + pad(s % 60);
     if (h > 0) return h + ":" + pad(m) + ":" + pad(s % 60);
     return m + ":" + pad(s % 60);
   }
 
   function fetchAccess() {
     var A = w.YYSD_APP;
-    if (!A || !A.api) return Promise.resolve(LOCKED);
+    if (!A ||!A.api) return Promise.resolve(LOCKED);
     return A.api("/api/toefl/access").then(function (d) {
       var ac = d && d.access;
       if (ac && ac.staff) return { on: true, staff: true };
       return (ac && ac.practice) || LOCKED;
     }).catch(function (e) {
       var m = (e && e.message) || "";
-      if (m.indexOf("登录") >= 0) {
+      if (m.indexOf("Đăng nhập") >= 0) {
         w.location.replace("login.html?next=" + encodeURIComponent(location.pathname.split("/").pop() + location.search));
         return new Promise(function () {});
       }
@@ -45,17 +45,17 @@
     });
   }
 
-  // 免费卷 / 考前冲刺包 / 老师预览直接放行；其余（含状态不明）都要过锁
+  // miễn phí cuốn / Gói tăng tốc trước kỳ thi / Giáo viên Xem trước trực tiếp cho đi; còn lại (hàm Trạng thái không rõ) đều phải qua Khóa
   function exemptOf(search, run) {
     var qs = new URLSearchParams(search);
     if (qs.get("preview") === "1") return true;
     if (qs.get("id")) return true;
-    if (qs.get("bank")) return !!(run && run.kind && run.kind !== "practice");
+    if (qs.get("bank")) return !!(run && run.kind && run.kind!== "practice");
     return false;
   }
   function exempt() {
     var run = null;
-    try { run = w.YYSD_TIKU_RUN && w.YYSD_TIKU_RUN.load ? w.YYSD_TIKU_RUN.load() : null; } catch (e) {}
+    try { run = w.YYSD_TIKU_RUN && w.YYSD_TIKU_RUN.load? w.YYSD_TIKU_RUN.load(): null; } catch (e) {}
     return exemptOf(location.search, run);
   }
 
@@ -71,9 +71,9 @@
       "<h2>" + meta.t + "</h2><p>" + meta.d + "</p>" +
       '<p class="yysd-lock-count" id="yysd-lock-count"></p>' +
       '<div class="yysd-lock-acts">' +
-        '<button type="button" id="yysd-lock-retry">重新检查</button>' +
-        '<a href="free.html">去免费题库</a>' +
-        '<a href="home.html">返回首页</a>' +
+        '<button type="button" id="yysd-lock-retry"> một lần nữa kiểm tra </button>' +
+        '<a href="free.html"> đi miễn phí Ngân hàng đề </a>' +
+        '<a href="home.html"> Về trang chủ </a>' +
       "</div></div>";
     document.body.appendChild(box);
 
@@ -88,18 +88,18 @@
           });
           return;
         }
-        countEl.textContent = "距开启还有 " + fmtLeft(left);
+        countEl.textContent = " cách Mở còn có " + fmtLeft(left);
         setTimeout(tick, 1000);
       };
       tick();
     } else if (st.reason === "expired" && st.expireAt) {
-      countEl.textContent = "到期时间：" + fmtWhen(st.expireAt);
+      countEl.textContent = " đến kỳ thời gian: " + fmtWhen(st.expireAt);
     }
 
     box.querySelector("#yysd-lock-retry").onclick = function () {
       var btn = this;
       btn.disabled = true;
-      btn.textContent = "检查中…";
+      btn.textContent = " kiểm tra Vừa …";
       fetchAccess().then(function (next) {
         if (next.on) location.reload();
         else showLock(next);
@@ -107,14 +107,14 @@
     };
   }
 
-  // 自动交卷：题做一半被到期/收回时用
+  // tự động Nộp bài: câu làm một nửa bị đến kỳ / thu hồi lúc dùng
   function cut(reason, onCut) {
     if (w.__yysdCut) return;
     w.__yysdCut = true;
     var box = document.createElement("div");
     box.className = "yysd-cut";
-    box.innerHTML = "<div><b>" + (reason === "expired" ? "练习时间已到" : "练习权限已被收回") + "</b><p>" +
-      (reason === "expired" ? "已为你自动交卷，正在跳转…" : "老师收回了练习权限，已为你自动交卷。") + "</p></div>";
+    box.innerHTML = "<div><b>" + (reason === "expired"? " Luyện tập thời gian đã đến ": " Luyện tập quyền hạn đã bị thu hồi ") + "</b><p>" +
+      (reason === "expired"? " đã cho bạn tự động Nộp bài, đang nhảy chuyển …": " Giáo viên thu hồi Luyện tập quyền hạn, đã cho bạn tự động Nộp bài. ") + "</p></div>";
     document.body.appendChild(box);
     setTimeout(function () {
       if (onCut) onCut();
@@ -136,7 +136,7 @@
       var left = Date.parse(st.expireAt) - Date.now();
       if (left <= 5000) { cut("expired", onCut); return; }
       if (chip) {
-        chip.textContent = "剩余 " + fmtLeft(left);
+        chip.textContent = " còn thừa " + fmtLeft(left);
         if (left < 60000) chip.classList.add("is-soon");
       }
       setTimeout(tick, 1000);
@@ -148,7 +148,7 @@
       fetchAccess().then(function (next) {
         if (w.__yysdCut) return;
         if (!next.on) {
-          cut(next.reason === "expired" ? "expired" : "off", onCut);
+          cut(next.reason === "expired"? "expired": "off", onCut);
           return;
         }
         st = next;
@@ -158,10 +158,10 @@
     setTimeout(poll, 300000);
 
     document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState !== "visible" || w.__yysdCut) return;
+      if (document.visibilityState!== "visible" || w.__yysdCut) return;
       fetchAccess().then(function (next) {
-        if (!next.on && !w.__yysdCut) {
-          cut(next.reason === "expired" ? "expired" : "off", onCut);
+        if (!next.on &&!w.__yysdCut) {
+          cut(next.reason === "expired"? "expired": "off", onCut);
         }
       });
     });
@@ -172,7 +172,7 @@
     return fetchAccess();
   }
 
-  // 入口页（practice / 四个 lab / bank）：锁住就铺锁卡，返回 false
+  // cửa vào trang (practice / bốn cái lab / bank): khóa lại tràn lan Khóa tạp, Quay lại false
   function boot() {
     return gate().then(function (st) {
       if (st.on) return true;
@@ -181,7 +181,7 @@
     });
   }
 
-  // 做题页：放行后挂倒计时 chip + 轮询；到期/被收回调 onCut 自动交卷
+  // làm bài trang: cho đi sau treo đảo kế thì chip + bỏ phiếu; đến kỳ / bị bắt quay về điều onCut tự động Nộp bài
   function paper(onCut) {
     return gate().then(function (st) {
       if (!st.on) {

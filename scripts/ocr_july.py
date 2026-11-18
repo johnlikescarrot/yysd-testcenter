@@ -10,15 +10,15 @@ if not os.path.isfile(OCR):
 SWIFT = os.path.join(ROOT, "scripts/.ocr_cache/toefl-819cn/render.swift")
 RENDER = os.path.join(ROOT, "scripts/.ocr_cache/toefl-819cn/render")
 CACHE = os.path.join(ROOT, "scripts/.ocr_cache")
-BASE = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月"
+BASE = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /7 tháng "
 
 PDFS = [
-    (os.path.join(BASE, "7.18-国内线下", "Answers-18.pdf"), "toefl-july-7.18-国内线下", "answers"),
-    (os.path.join(BASE, "7.19-国内线下", "Answers-19.pdf"), "toefl-july-7.19-国内线下", "answers"),
-    (os.path.join(BASE, "7.25国内线下", "Answers.pdf"), "toefl-july-7.25国内线下", "answers"),
-    (os.path.join(BASE, "7.25国内线下", "Writing.pdf"), "toefl-july-7.25国内线下", "writing"),
-    (os.path.join(BASE, "7.29-国内线下", "Answers.pdf"), "toefl-july-7.29-国内线下", "answers"),
-    (os.path.join(BASE, "7.29-国内线下", "Reading.pdf"), "toefl-july-7.29-国内线下", "reading"),
+    (os.path.join(BASE, "7.18- Thi trực tiếp ", "Answers-18.pdf"), "toefl-july-7.18- Thi trực tiếp ", "answers"),
+    (os.path.join(BASE, "7.19- Thi trực tiếp ", "Answers-19.pdf"), "toefl-july-7.19- Thi trực tiếp ", "answers"),
+    (os.path.join(BASE, "7.25 Thi trực tiếp ", "Answers.pdf"), "toefl-july-7.25 Thi trực tiếp ", "answers"),
+    (os.path.join(BASE, "7.25 Thi trực tiếp ", "Writing.pdf"), "toefl-july-7.25 Thi trực tiếp ", "writing"),
+    (os.path.join(BASE, "7.29- Thi trực tiếp ", "Answers.pdf"), "toefl-july-7.29- Thi trực tiếp ", "answers"),
+    (os.path.join(BASE, "7.29- Thi trực tiếp ", "Reading.pdf"), "toefl-july-7.29- Thi trực tiếp ", "reading"),
 ]
 
 

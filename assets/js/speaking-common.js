@@ -1,4 +1,4 @@
-/* speaking-common.js — shared store, API, report modal for 雅思口语专项练习 */
+/* speaking-common.js — shared store, API, report modal for IELTS Speaking Chuyên sâu Luyện tập */
 window.YYSD_SPEAKING = (function () {
   "use strict";
 
@@ -12,12 +12,12 @@ window.YYSD_SPEAKING = (function () {
 
   function apiUnavailableMsg() {
     return (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-      ? "未连接 AI 服务，请运行 ./scripts/start-local-ai.sh 启动 API（端口 3000）"
-      : "AI 服务暂不可用，请稍后再试";
+      ? " không liên tiếp AI phục vụ, mời vận hành./scripts/start-local-ai.sh khởi động API (cảng 3000) "
+      : "AI phục vụ tạm không thể dùng, xin sau lại thử ";
   }
 
   function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+    return String(s == null? "": s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
@@ -46,8 +46,8 @@ window.YYSD_SPEAKING = (function () {
   function stats() {
     var list = loadRecords();
     var scores = list.map(function (r) { return r.overallBand; }).filter(function (n) { return typeof n === "number"; });
-    var avg = scores.length ? scores.reduce(function (a, b) { return a + b; }, 0) / scores.length : 0;
-    var high = scores.length ? Math.max.apply(null, scores) : 0;
+    var avg = scores.length? scores.reduce(function (a, b) { return a + b; }, 0) / scores.length: 0;
+    var high = scores.length? Math.max.apply(null, scores): 0;
     return {
       practiceCount: list.length,
       averageScore: Math.round(avg * 10) / 10,
@@ -105,8 +105,8 @@ window.YYSD_SPEAKING = (function () {
     return fetch(API_BASE + "/api/health", { method: "GET" })
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        aiReady = !!(d && d.ok && d.ai);
-        return { ok: !!(d && d.ok), ai: aiReady };
+        aiReady =!!(d && d.ok && d.ai);
+        return { ok:!!(d && d.ok), ai: aiReady };
       })
       .catch(function () {
         aiReady = false;
@@ -116,17 +116,17 @@ window.YYSD_SPEAKING = (function () {
 
   function mountAiBanner(el) {
     if (!el) return probeAi();
-    el.textContent = "正在连接 AI 服务…";
+    el.textContent = " đang liên tiếp AI phục vụ …";
     el.className = "spk-ai-banner spk-ai-banner--wait";
     return probeAi().then(function (r) {
       if (r.ok && r.ai) {
-        el.textContent = "✓ AI 已连接，练习中将自动调用智能评分";
+        el.textContent = "✓ AI đã liên tiếp, trong luyện tập đem tự động thuyên chuyển trí tuệ nhân tạo cho điểm ";
         el.className = "spk-ai-banner spk-ai-banner--ok";
       } else if (!API_BASE) {
         el.textContent = apiUnavailableMsg();
         el.className = "spk-ai-banner spk-ai-banner--err";
       } else {
-        el.textContent = "AI 连接失败，请检查网络后刷新页面";
+        el.textContent = "AI liên tiếp thất bại, mời kiểm tra mạng lưới *internet sau refesh trang web ";
         el.className = "spk-ai-banner spk-ai-banner--err";
       }
       return r;
@@ -156,18 +156,18 @@ window.YYSD_SPEAKING = (function () {
     }).then(function (r) {
       return r.text().then(function (text) {
         var d = null;
-        try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("评分失败（" + r.status + "）— 请稍后重试");
+        try { d = text? JSON.parse(text): {}; } catch (e) {
+          throw new Error(" cho điểm thất bại (" + r.status + ") — xin sau Thử lại ");
         }
-        if (r.status === 401) throw new Error("请先登录后再使用 AI 评分");
+        if (r.status === 401) throw new Error(" Vui lòng đăng nhập trước sau lại sử dụng AI cho điểm ");
         if (!r.ok) {
-          var msg = (d && d.error) || ("评分失败（" + r.status + "）");
-          if (/上限|用完|额度/i.test(msg) && !/明日/.test(msg)) msg = msg.replace(/[。！!]?$/, "") + "，明日再来";
-          else if (/失败|稍后|502|503|解析/.test(msg)) msg = msg.replace(/[。！!]?$/, "") + " — 请稍后重试";
+          var msg = (d && d.error) || (" cho điểm thất bại (" + r.status + ") ");
+          if (/ hạn mức cao nhất | sử dụng hết | khoản độ /i.test(msg) &&!/ ngày mai /.test(msg)) msg = msg.replace(/[.!!]?$/, "") + ", hẹn gặp lại ngày mai ";
+          else if (/ thất bại | sau đó |502|503| Giải thích đáp án /.test(msg)) msg = msg.replace(/[.!!]?$/, "") + " — xin sau Thử lại ";
           throw new Error(msg);
         }
         if (d.error) throw new Error(d.error);
-        if (!d.ok || !d.report) throw new Error("评分返回无效，请稍后重试");
+        if (!d.ok ||!d.report) throw new Error(" cho điểm Quay lại không có hiệu quả, xin sau Thử lại ");
         return d.report;
       });
     })
@@ -176,10 +176,10 @@ window.YYSD_SPEAKING = (function () {
 
   function criteriaLabel(key) {
     var map = {
-      fluencyAndCoherence: "流利度与连贯性",
-      lexicalResource: "词汇资源",
-      grammaticalRangeAndAccuracy: "语法与准确性",
-      pronunciation: "发音"
+      fluencyAndCoherence: " lưu loát độ và tính liên quán ",
+      lexicalResource: " Từ vựng tài nguyên ",
+      grammaticalRangeAndAccuracy: " Ngữ pháp và độ chuẩn xác ",
+      pronunciation: " phát âm "
     };
     return map[key] || key;
   }
@@ -195,7 +195,7 @@ window.YYSD_SPEAKING = (function () {
     var ds = rec.detailedScores || {};
     var critKeys = ["fluencyAndCoherence", "lexicalResource", "grammaticalRangeAndAccuracy", "pronunciation"];
     var critCards = critKeys.map(function (k) {
-      var v = ds[k] != null ? ds[k] : "—";
+      var v = ds[k]!= null? ds[k]: "—";
       return '<div class="spk-crit"><span class="spk-crit__label">' + esc(criteriaLabel(k)) + "</span>" +
         '<span class="spk-crit__score">' + esc(String(v)) + " / 9</span></div>";
     }).join("");
@@ -213,9 +213,9 @@ window.YYSD_SPEAKING = (function () {
     var qfb = (rec.questionFeedbacks || []).map(function (q, i) {
       return '<div class="spk-qfb">' +
         '<p class="spk-qfb__q"><b>Q' + (i + 1) + ".</b> " + esc(q.question) + "</p>" +
-        '<p class="spk-qfb__a"><span>你的回答</span> ' + esc(q.answer || "—") + "</p>" +
-        (q.fixed ? '<p class="spk-qfb__fix"><span>修正</span> ' + esc(q.fixed) + "</p>" : "") +
-        (q.feedback ? '<p class="spk-qfb__fb">' + esc(q.feedback) + "</p>" : "") +
+        '<p class="spk-qfb__a"><span> câu trả lời của bạn </span> ' + esc(q.answer || "—") + "</p>" +
+        (q.fixed? '<p class="spk-qfb__fix"><span> tu chỉnh </span> ' + esc(q.fixed) + "</p>": "") +
+        (q.feedback? '<p class="spk-qfb__fb">' + esc(q.feedback) + "</p>": "") +
         "</div>";
     }).join("");
 
@@ -223,13 +223,13 @@ window.YYSD_SPEAKING = (function () {
       '<div class="spk-report__hero">' +
         '<div class="spk-report__band"><span class="spk-report__num">' + esc(String(rec.overallBand)) + '</span><span class="spk-report__of">/ 9.0</span></div>' +
         '<div class="spk-report__meta"><b>' + esc(bandLabel(rec.overallBand)) + "</b>" +
-          "<p>口语专项练习 · " + esc((rec.topics || []).join(" · ")) + "</p></div>" +
+          "<p> Nói Chuyên sâu Luyện tập · " + esc((rec.topics || []).join(" · ")) + "</p></div>" +
       "</div>" +
       '<div class="spk-report__crits">' + critCards + "</div>" +
-      (strengths ? '<div class="spk-box spk-box--ok"><h4>表现亮点</h4><ul>' + strengths + "</ul></div>" : "") +
-      (weaknesses ? '<div class="spk-box spk-box--warn"><h4>改进方向</h4><ul>' + weaknesses + "</ul></div>" : "") +
-      (advice ? '<div class="spk-box spk-box--tip"><h4>学习建议</h4><ul>' + advice + "</ul></div>" : "") +
-      (qfb ? '<div class="spk-qfb-list"><h4>逐题反馈</h4>' + qfb + "</div>" : "") +
+      (strengths? '<div class="spk-box spk-box--ok"><h4> biểu hiện điểm sáng </h4><ul>' + strengths + "</ul></div>": "") +
+      (weaknesses? '<div class="spk-box spk-box--warn"><h4> cải tiến phương hướng </h4><ul>' + weaknesses + "</ul></div>": "") +
+      (advice? '<div class="spk-box spk-box--tip"><h4> Học tập đề nghị </h4><ul>' + advice + "</ul></div>": "") +
+      (qfb? '<div class="spk-qfb-list"><h4> trục câu phản hồi </h4>' + qfb + "</div>": "") +
       "</div>";
   }
 
@@ -238,7 +238,7 @@ window.YYSD_SPEAKING = (function () {
     overlay.className = "spk-modal-overlay";
     overlay.innerHTML =
       '<div class="spk-modal" role="dialog" aria-modal="true">' +
-        '<button type="button" class="spk-modal__close" aria-label="关闭">×</button>' +
+        '<button type="button" class="spk-modal__close" aria-label=" Đóng ">×</button>' +
         renderReportHTML(rec) +
       "</div>";
     document.body.appendChild(overlay);
@@ -258,7 +258,7 @@ window.YYSD_SPEAKING = (function () {
       queue.push({
         topicId: "fixed",
         topicTitle: fixedTopic.topic,
-        opener: i === 0 ? fixedTopic.title : null,
+        opener: i === 0? fixedTopic.title: null,
         question: q
       });
     });
@@ -267,7 +267,7 @@ window.YYSD_SPEAKING = (function () {
         queue.push({
           topicId: topic.id,
           topicTitle: topic.topic,
-          opener: i === 0 ? topic.title : null,
+          opener: i === 0? topic.title: null,
           question: q
         });
       });

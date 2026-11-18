@@ -1,13 +1,13 @@
 /* =========================================================================
-   vocab-rpg.js — 词境远征：XP / 等级 / 称号 / 周XP / 宝箱
+   vocab-rpg.js — Hành trình Vương quốc Từ: XP / đẳng cấp / danh xưng / chu XP / bảo rương
    localStorage key: yysd:vocab-rpg
    ========================================================================= */
 window.YYSD_VOCAB_RPG = (function () {
   "use strict";
   var KEY = "yysd:vocab-rpg";
   var TITLES = [
-    "词芽", "识途", "破雾", "猎词手", "词境旅人",
-    "远征者", "破关客", "词锋", "境主", "传奇词士"
+    " từ mầm mỏ ", " nhận thức đồ ", " phá sương mù ", " săn từ tay ", " Vương quốc Từ lữ nhân ",
+    " viễn chinh người ", " phá quan khách ", " lời lẽ sắc bén ", " cảnh chủ ", " truyền kỳ từ sĩ "
   ];
 
   function weekId() {
@@ -16,7 +16,7 @@ window.YYSD_VOCAB_RPG = (function () {
     d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
     var week1 = new Date(d.getFullYear(), 0, 4);
     var n = 1 + Math.round(((d - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
-    return d.getFullYear() + "-W" + (n < 10 ? "0" : "") + n;
+    return d.getFullYear() + "-W" + (n < 10? "0": "") + n;
   }
 
   function empty() {
@@ -25,21 +25,21 @@ window.YYSD_VOCAB_RPG = (function () {
       weekId: weekId(),
       weekXp: 0,
       chests: {},
-      nick: "词境旅人"
+      nick: " Vương quốc Từ lữ nhân "
     };
   }
 
   function load() {
     var s;
     try { s = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { s = null; }
-    if (!s || typeof s !== "object") s = empty();
-    if (s.weekId !== weekId()) {
+    if (!s || typeof s!== "object") s = empty();
+    if (s.weekId!== weekId()) {
       s.weekId = weekId();
       s.weekXp = 0;
     }
-    if (typeof s.totalXp !== "number") s.totalXp = 0;
-    if (typeof s.weekXp !== "number") s.weekXp = 0;
-    if (!s.chests || typeof s.chests !== "object") s.chests = {};
+    if (typeof s.totalXp!== "number") s.totalXp = 0;
+    if (typeof s.weekXp!== "number") s.weekXp = 0;
+    if (!s.chests || typeof s.chests!== "object") s.chests = {};
     return s;
   }
 
@@ -70,7 +70,7 @@ window.YYSD_VOCAB_RPG = (function () {
       level: level,
       into: left,
       need: need,
-      pct: need ? Math.min(100, Math.round((left / need) * 100)) : 0,
+      pct: need? Math.min(100, Math.round((left / need) * 100)): 0,
       title: title
     };
   }
@@ -80,7 +80,7 @@ window.YYSD_VOCAB_RPG = (function () {
     var p = progressFromXp(s.totalXp);
     p.weekXp = s.weekXp;
     p.weekId = s.weekId;
-    p.nick = s.nick || "词境旅人";
+    p.nick = s.nick || " Vương quốc Từ lữ nhân ";
     return p;
   }
 
@@ -108,7 +108,7 @@ window.YYSD_VOCAB_RPG = (function () {
   }
 
   function hasChest(book, listId) {
-    return !!load().chests[chestKey(book, listId)];
+    return!!load().chests[chestKey(book, listId)];
   }
 
   function claimChest(book, listId, xp) {
@@ -117,7 +117,7 @@ window.YYSD_VOCAB_RPG = (function () {
     if (s.chests[k]) return null;
     s.chests[k] = new Date().toISOString();
     save(s);
-    return addXp(xp == null ? 5 : xp, "chest");
+    return addXp(xp == null? 5: xp, "chest");
   }
 
   /** Build path nodes for one book: lists sorted, done/current/locked + chest every 3. */
@@ -131,11 +131,11 @@ window.YYSD_VOCAB_RPG = (function () {
     var nodes = [];
     var currentSet = false;
     sorted.forEach(function (it, i) {
-      var done = !!res[it.id];
-      var unlocked = i === 0 || !!res[sorted[i - 1].id];
+      var done =!!res[it.id];
+      var unlocked = i === 0 ||!!res[sorted[i - 1].id];
       var state;
       if (done) state = "done";
-      else if (unlocked && !currentSet) { state = "current"; currentSet = true; }
+      else if (unlocked &&!currentSet) { state = "current"; currentSet = true; }
       else state = "locked";
       nodes.push({ item: it, state: state, index: i, isChest: false });
       if ((i + 1) % 3 === 0) {
@@ -143,8 +143,8 @@ window.YYSD_VOCAB_RPG = (function () {
         var open = done;
         var claimed = hasChest(bookKey || "book", ck);
         nodes.push({
-          item: { id: ck, title: "远征宝箱", _chestAfter: it.id },
-          state: !open ? "chest-locked" : (claimed ? "claimed" : "chest"),
+          item: { id: ck, title: " viễn chinh bảo rương ", _chestAfter: it.id },
+          state:!open? "chest-locked": (claimed? "claimed": "chest"),
           index: i,
           isChest: true,
           chestId: ck

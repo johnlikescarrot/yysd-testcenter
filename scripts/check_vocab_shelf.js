@@ -33,8 +33,8 @@ var tLesson = shelf.resolveLesson(root, toeic, "1");
 assert.strictEqual(tLesson.words.length, 50, "theme list1 = 50");
 assert.strictEqual(shelf.quizSampleSize(10), 6, "60%");
 assert.strictEqual(shelf.quizSampleSize(1), 1, "min sample");
-assert.ok(shelf.sessionTitle("2026-03-12", "高中词汇", ["List 1", "List 2"]).indexOf("3月12日") >= 0);
-assert.strictEqual(shelf.legacyHsSourceLabel("unit:3"), "单元3");
+assert.ok(shelf.sessionTitle("2026-03-12", " Từ vựng Nền tảng THPT ", ["List 1", "List 2"]).indexOf("ngày 12/3") >= 0);
+assert.strictEqual(shelf.legacyHsSourceLabel("unit:3"), "Bài 3");
 
 [
   "vocab-shelf.html",
@@ -49,9 +49,9 @@ assert.strictEqual(shelf.legacyHsSourceLabel("unit:3"), "单元3");
 });
 var zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
 assert.ok(zone.indexOf("vocab-shelf.html") >= 0, "zone links shelf");
-assert.ok(zone.indexOf("vocab-shelf.html") >= 0 && zone.indexOf('"词库"') >= 0, "zone 词库 module");
+assert.ok(zone.indexOf("vocab-shelf.html") >= 0 && zone.indexOf('" từ kho "') >= 0, "zone từ kho module");
 var learnJs = fs.readFileSync(path.join(root, "assets/js/vocab-learn.js"), "utf8");
-assert.ok(learnJs.indexOf("去学后自测") < 0, "no quick-test CTA");
+assert.ok(learnJs.indexOf(" đi học sau tự kiểm tra ") < 0, "no quick-test CTA");
 assert.ok(learnJs.indexOf("learnView") >= 0, "card/list toggle");
 var quizJs = fs.readFileSync(path.join(root, "assets/js/vocab-quiz.js"), "utf8");
 assert.ok(quizJs.indexOf("/api/vocab-shelf/quiz-pool") >= 0, "quiz pool");
@@ -59,10 +59,10 @@ assert.ok(quizJs.indexOf("/api/vocab-shelf/quiz/finish") >= 0, "quiz finish");
 assert.ok(quizJs.indexOf("wrongbook/retest-finish") >= 0, "retest finish");
 var ww = fs.readFileSync(path.join(root, "assets/js/wrong-words.js"), "utf8");
 assert.ok(ww.indexOf("/api/vocab-shelf/wrongbook") >= 0, "wrongbook api");
-assert.ok(ww.indexOf("错词重测") >= 0, "retest entry");
+assert.ok(ww.indexOf(" Kiểm tra lại từ sai ") >= 0, "retest entry");
 var hsv = fs.readFileSync(path.join(root, "assets/js/hs-vocab-player.js"), "utf8");
 assert.ok(hsv.indexOf("vocab-quiz.html") >= 0, "hs redirect quiz");
-var list1 = fs.readFileSync(path.join(root, "library/study/vocab/高中单词LIST1.html"), "utf8");
+var list1 = fs.readFileSync(path.join(root, "library/study/vocab/tu-vung-thpt-list1.html"), "utf8");
 assert.ok(list1.indexOf("yysd:hide-legacy-test") >= 0, "legacy test hidden");
 
 try {
@@ -78,7 +78,7 @@ try {
     repoRoot: root
   });
   db.prepare(
-    "INSERT INTO vocab_learn_progress (student_id, book_id, list_id, word_idx, done, updated_at) VALUES (1, ?, '1', 3, 0, ?)"
+    "INSERT INTO vocab_learn_progress (student_id, book_id, list_id, word_idx, done, updated_at) VALUES (1,?, '1', 3, 0,?)"
   ).run("gaozhong", new Date().toISOString());
   // seed legacy hs mistakes for migration
   db.exec(
@@ -98,7 +98,7 @@ try {
   );
   db.prepare(
     "INSERT INTO hs_vocab_mistakes (student_id, mistake_date, source, word, ipa, meaning, word_json, user_answer, is_removed, created_at) " +
-    "VALUES (1, '2026-01-02', 'unit:1', 'apple', '/æ/', '苹果', NULL, 'appl', 0, ?)"
+    "VALUES (1, '2026-01-02', 'unit:1', 'apple', '/æ/', ' quả táo ', NULL, 'appl', 0,?)"
   ).run(new Date().toISOString());
 
   var srv = app.listen(0, function () {
@@ -189,7 +189,7 @@ try {
             method: "POST",
             body: JSON.stringify({
               sessionId: sid,
-              mistakes: [{ word: "still", meaning: "仍错", listId: listId }]
+              mistakes: [{ word: "still", meaning: "im, yên, tĩnh mịch; làm thinh, nín lặng", listId: listId }]
             })
           });
         }).then(function (rt) {
@@ -213,7 +213,7 @@ try {
         assert.strictEqual(r.status, 200);
         assert.strictEqual(r.d.clearedLearnProgress, true);
         var left = db.prepare(
-          "SELECT COUNT(*) AS n FROM vocab_learn_progress WHERE student_id = 1 AND book_id = ?"
+          "SELECT COUNT(*) AS n FROM vocab_learn_progress WHERE student_id = 1 AND book_id =?"
         ).get("gaozhong");
         assert.strictEqual(left.n, 0, "learn progress cleared");
         var migratedLeft = db.prepare(

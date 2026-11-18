@@ -19,7 +19,7 @@ def dump(name, obj):
 def blank(n, prefix, word, alts=None):
     if prefix and not word.lower().startswith(prefix.lower()):
         raise SystemExit("prefix %r not in %r" % (prefix, word))
-    item = {"id": n, "prefix": prefix, "answer": word[len(prefix) :], "word": word}
+    item = {"id": n, "prefix": prefix, "answer": word[len(prefix):], "word": word}
     if alts:
         item["alts"] = alts
     return item
@@ -294,7 +294,7 @@ def build_reading():
         ],
     )
     tasks.append(t)
-    if n != 71:
+    if n!= 71:
         raise SystemExit("expected 70 CW blanks, next id %s" % n)
 
     tasks.append(
@@ -479,7 +479,7 @@ def build_reading():
     )
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 阅读",
+        "title": "TOEFL iBT 05/9 · Đọc ",
         "set": "9.05",
         "modules": [
             {"n": 1, "timeSec": 1680, "from": 1, "to": 70},
@@ -660,11 +660,11 @@ def build_listening():
     for title, module, instruction, form, items in talks:
         tasks.append(lecture(title, module, instruction, form, q4(qid, items)))
         qid += 4
-    if qid != 53:
+    if qid!= 53:
         raise SystemExit("expected 52 listening items, next id %s" % qid)
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 听力",
+        "title": "TOEFL iBT 05/9 · Nghe ",
         "set": "9.05",
         "skill": "listening",
         "modules": [
@@ -718,7 +718,7 @@ DISC_INSTR = (
 def build_writing():
     return {
         "id": "2025-09-05",
-        "title": "新托福 9.05 · 写作",
+        "title": "TOEFL iBT 05/9 · Viết ",
         "set": "9.05",
         "skill": "writing",
         "modules": [
@@ -1040,10 +1040,10 @@ if __name__ == "__main__":
     dump("2025-09-05-reading.json", build_reading())
     dump("2025-09-05-listening.json", build_listening())
     dump("2025-09-05-writing.json", build_writing())
-    dump("2025-09-05-speaking.json", build_speaking("2025-09-05", "新托福 9.05 · 口语 Form 1", 1, 1))
-    dump("2025-09-05-speaking-f2.json", build_speaking("2025-09-05-s2", "新托福 9.05 · 口语 Form 2", 2, 2))
-    dump("2025-09-05-speaking-f3.json", build_speaking("2025-09-05-s3", "新托福 9.05 · 口语 Form 3", 3, 3))
-    dump("2025-09-05-speaking-f4.json", build_speaking("2025-09-05-s4", "新托福 9.05 · 口语 Form 4", 4, 4))
-    dump("2025-09-05-speaking-f5.json", build_speaking("2025-09-05-s5", "新托福 9.05 · 口语 Form 5", 5, 5))
-    dump("2025-09-05-speaking-f6.json", build_speaking("2025-09-05-s6", "新托福 9.05 · 口语 Form 6 面试", None, 6))
-    dump("2025-09-05-speaking-f7.json", build_speaking("2025-09-05-s7", "新托福 9.05 · 口语 Form 7 面试", None, 7))
+    dump("2025-09-05-speaking.json", build_speaking("2025-09-05", "TOEFL iBT 05/9 · Nói Form 1", 1, 1))
+    dump("2025-09-05-speaking-f2.json", build_speaking("2025-09-05-s2", "TOEFL iBT 05/9 · Nói Form 2", 2, 2))
+    dump("2025-09-05-speaking-f3.json", build_speaking("2025-09-05-s3", "TOEFL iBT 05/9 · Nói Form 3", 3, 3))
+    dump("2025-09-05-speaking-f4.json", build_speaking("2025-09-05-s4", "TOEFL iBT 05/9 · Nói Form 4", 4, 4))
+    dump("2025-09-05-speaking-f5.json", build_speaking("2025-09-05-s5", "TOEFL iBT 05/9 · Nói Form 5", 5, 5))
+    dump("2025-09-05-speaking-f6.json", build_speaking("2025-09-05-s6", "TOEFL iBT 05/9 · Nói Form 6 phỏng vấn ", None, 6))
+    dump("2025-09-05-speaking-f7.json", build_speaking("2025-09-05-s7", "TOEFL iBT 05/9 · Nói Form 7 phỏng vấn ", None, 7))

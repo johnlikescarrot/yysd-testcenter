@@ -1,46 +1,46 @@
 {
- "id": "free-12273",
- "title": "Choose a Response #31",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #31",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12273,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-31"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #31",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/079c547cdf1e4266b3d17634ce6f2acb.mp3",
-   "questions": [
+  "id": "free-12273",
+  "title": "Choose a Response #31",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #31",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12273,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-31"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "No, I am not sure what it is called.",
-      "B": "He called me yesterday.",
-      "C": "Tuesday would be a good day to meet.",
-      "D": "Yes, it was a day before you left for New York."
-     },
-     "answer": "D",
-     "transcript": "Do you recall which day I spoke to Jack? ​​",
-     "stemZh": "你还记得我是哪一天和杰克谈过话吗？",
-     "analysis": "Do you recall which day I spoke to Jack? 题干分析 题干是一个关于过去具体时间点的记忆确认问题，核心是询问“我与Jack通话的确切日期”。此类问题在听力中常考察对相对时间表达（如“the day before…”）的理解和回应能力。 选项分析 选项D：这是正确答案。使用“Yes”直接确认记忆存在，并用“a day before you left for New York”这一相对时间结构准确回答了“哪一天”，既符合英语表达习惯，也契合日常对话中依赖事件锚点回忆时间的逻辑。 选项A：仅泛泛回答“I’m not sure”，虽诚实但未提供任何有效信息，无法满足提问者的需求，属于回避型错误选项。 选项B：主语错误，将“you spoke to Jack”偷换为“He called me”，完全扭曲了原事件主体，属于事实错位干扰项。 选项C：提出未来建议“Let’s meet him tomorrow”，与问题所问的过去事件毫无关联，属于时间错乱型干扰。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #31",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/079c547cdf1e4266b3d17634ce6f2acb.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "No, I am not sure what it is called.",
+            "B": "He called me yesterday.",
+            "C": "Tuesday would be a good day to meet.",
+            "D": "Yes, it was a day before you left for New York."
+          },
+          "answer": "D",
+          "transcript": "Do you recall which day I spoke to Jack? ​​",
+          "stemZh": "bạn còn nhớ rõ ta là có một ngày và Jake nói qua lời nói không?",
+          "analysis": "Do you recall which day I spoke to Jack? Câu hỏi phân tích Câu hỏi là một về qua thời gian cụ thể điểm trí nhớ Xác nhận vấn đề, hạch tâm là hỏi thăm “ ta cùng với Jack nói chuyện điện thoại xác thực ngày ”. loại này vấn đề đang nghe lực trung bình khảo sát đối với tương đối bảng giờ giấc đạt (ví dụ “the day before…”) lý giải và đáp lại năng lực. Phương án phân tích Phương án D: đây là Đáp án đúng. sử dụng “Yes” trực tiếp Xác nhận trí nhớ tồn tại, cùng sử dụng “a day before you left for New York” cái này một tương đối thời gian kết cấu chuẩn xác trả lời “ có một ngày ”, đã phù hợp Tiếng Anh biểu đạt thói quen, cũng phù hợp Đời sống trong lúc nói chuyện với nhau ỷ lại sự kiện neo chút:điểm nhớ lại thời gian ăn khớp. Phương án A: chỉ hời hợt trả lời “I’m not sure”, mặc dù thành thật nhưng không cung cấp bất luận cái gì hữu hiệu tin tức, không cách nào thỏa mãn vấn đề người nhu cầu, thuộc về lảng tránh hình Sai Phương án. Phương án B: Chủ ngữ Sai, đem “you spoke to Jack” trộm đổi thành “He called me”, hoàn toàn bóp méo nguyên sự kiện chủ thể, thuộc về sự thật sai chỗ Phương án nhiễu. Phương án C: đưa ra tương lai đề nghị “Let’s meet him tomorrow”, và vấn đề hỏi qua sự kiện không liên hệ chút nào, thuộc về thời gian thác loạn hình quấy nhiễu. ​​"
+        }
+      ]
+    }
+  ]
 }

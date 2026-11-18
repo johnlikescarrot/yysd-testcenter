@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assert vocab display titles resolve to 高中/四级/听读写词汇单元N for all manifest items."""
+"""Assert vocab display titles resolve to THPT / Đại học B1 / nghe đọc viết chữ hợp thành Bài N for all manifest items."""
 from __future__ import annotations
 import json
 import re
@@ -10,15 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "library" / "manifest.json"
 
 SPECIAL_PREFIX = {
-    "vocab-special-listening": "听力词汇单元",
-    "vocab-special-reading": "阅读词汇单元",
-    "vocab-special-writing": "写作词汇单元",
+    "vocab-special-listening": " Nghe Từ vựng Bài ",
+    "vocab-special-reading": " Đọc Từ vựng Bài ",
+    "vocab-special-writing": " Viết Từ vựng Bài ",
 }
 
 
 def list_no(item: dict) -> int:
     t = str(item.get("title") or "")
-    for pat in (r"LIST\s*0*(\d+)", r"单元\s*0*(\d+)", r"第\s*0*(\d+)\s*篇"):
+    for pat in (r"LIST\s*0*(\d+)", r" Bài \s*0*(\d+)", r" thứ \s*0*(\d+)\s* bài "):
         m = re.search(pat, t, re.I)
         if m:
             return int(m.group(1))
@@ -35,13 +35,13 @@ def display_title(item: dict) -> str:
     if not n:
         return item.get("title") or ""
     if s == "vocab":
-        return f"高中词汇单元{n}"
+        return f" Từ vựng Nền tảng THPT Bài {n}"
     if s == "vocab-cet4":
-        return f"四级词汇单元{n}"
+        return f" Từ vựng Đại học Cốt lõi Bài {n}"
     if s in SPECIAL_PREFIX:
         return f"{SPECIAL_PREFIX[s]}{n}"
     if str(s).startswith("vocab-special-"):
-        return f"雅思词汇单元{n}"
+        return f" Từ vựng IELTS Bài {n}"
     return item.get("title") or ""
 
 
@@ -52,7 +52,7 @@ def main() -> int:
     bad = []
     for it in vocab:
         got = display_title(it)
-        if not re.fullmatch(r"(高中|四级|听力|阅读|写作|雅思)词汇单元\d+", got):
+        if not re.fullmatch(r"(THPT | Đại học B1 | Nghe | Đọc | Viết | IELTS) Từ vựng Bài \d+", got):
             bad.append((it.get("id"), it.get("title"), got))
     if bad:
         print("FAIL", len(bad), "items")
@@ -68,7 +68,7 @@ def main() -> int:
         if not got.startswith(SPECIAL_PREFIX[s]):
             print("FAIL special prefix", it.get("id"), got)
             return 1
-    print(f"ok {len(vocab)} vocab titles → 高中/四级/听力|阅读|写作词汇单元N")
+    print(f"ok {len(vocab)} vocab titles → THPT / Đại học B1 / Nghe | Đọc | Viết Từ vựng Bài N")
     return 0
 
 

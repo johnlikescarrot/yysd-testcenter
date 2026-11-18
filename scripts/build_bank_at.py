@@ -33,7 +33,7 @@ STEM_START = re.compile(
 )
 STEM_LEAD = re.compile(
     r"^(?:At the (?:end|beginning) of the (?:conversation|announcement|lecture|talk),\s+"
-    r"|According to (?:the )?(?:conversation|speakers|man|woman|announcement|speaker|lecture|talk|professor),\s+"
+    r"|According to (?:the)?(?:conversation|speakers|man|woman|announcement|speaker|lecture|talk|professor),\s+"
     r"|Based on the (?:conversation|announcement|lecture|talk),\s+)",
     re.I,
 )
@@ -177,7 +177,7 @@ def transcript_of(lines):
         if looks_like_stem(t) and started:
             break
         low = t.lower()
-        if "transcript:" in low or re.match(r"listen(?:ing)? to (?:a |an )?(?:talk|lecture)\b", low):
+        if "transcript:" in low or re.match(r"listen(?:ing)? to (?:a |an)?(?:talk|lecture)\b", low):
             started = True
             t = re.sub(r"^.*?transcript:\s*", "", t, flags=re.I)
             if re.fullmatch(r"Listen to an announcement\.?", t.strip(), re.I):
@@ -273,7 +273,7 @@ def green_answers(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if not any(p[1] for p in group) or len(group) != 4:
+        if not any(p[1] for p in group) or len(group)!= 4:
             continue
         out.append("ABCD"[next(i for i, p in enumerate(group) if p[1])])
     json.dump(out, open(cache, "w"))
@@ -390,7 +390,7 @@ def pill_sets(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if len(group) != 4 or not any(p[1] for p in group):
+        if len(group)!= 4 or not any(p[1] for p in group):
             continue
         opts = {}
         answer = ""
@@ -464,7 +464,7 @@ def attach_stems(stem, found):
         else:
             groups[-1].append(pill)
     tops = [g[0][0] for g in groups if len(g) == 4 and any(p[1] for p in g)]
-    if len(tops) != len(found):
+    if len(tops)!= len(found):
         return found
     for pill, y in zip(found, tops):
         crop = im.crop((x0, max(0, y - 120), x1, max(0, y - 2)))
@@ -499,7 +499,7 @@ def from_pills(lines, stem):
         elif "?" in s:
             s = s[:s.index("?") + 1].strip()
         elif englishish(s) and len(s) > 20:
-            s = s.rstrip(" .") + "?"
+            s = s.rstrip(".") + "?"
         if s.endswith("?") and englishish(s):
             stems.append(s)
         elif len(page) == len(found):
@@ -531,7 +531,7 @@ def clean_stem(s):
     s = re.sub(r"\s+TA[A-Za-z]{0,3}\s*$", "", (s or "")).strip()
     if "?" in s and not s.endswith("?"):
         pre, post = s.split("?", 1)
-        post = re.sub(r"\s+TA\w*$", "", post).strip(" .")
+        post = re.sub(r"\s+TA\w*$", "", post).strip(".")
         pre = pre.strip()
         if re.match(r"^(What|Why|How|Where|When|Who|Which|According|At|Based)\b", post, re.I):
             s = (post + " " + pre).strip() + "?"
@@ -544,7 +544,7 @@ def topic_of(lines):
     for t in lines:
         m = re.match(r"^Q\d+\s*-\s*(.+)$", (t or "").strip())
         if m and englishish(m.group(1)) and len(m.group(1)) > 3:
-            return re.sub(r"\s+", " ", m.group(1)).strip(" .")
+            return re.sub(r"\s+", " ", m.group(1)).strip(".")
     return ""
 
 
@@ -753,7 +753,7 @@ def main():
             "set": "L-AT" + n,
             "title": "L-AT%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "学术讲座",
+            "titleZh": " Học thuật toạ đàm ",
             "code": item["code"] or ("AT%s" % n),
             "instruction": "Listen to a lecture.",
             "audio": "library/toefl/audio/bank-l-at/" + audio_name,
@@ -763,7 +763,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-at",
-        "title": "题块库 · 学术讲座",
+        "title": " Ngân hàng dạng bài · Học thuật toạ đàm ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

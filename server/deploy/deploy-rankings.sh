@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Deploy 全球大学排行榜 Next.js app on ECS (run on server).
+# Deploy Xếp hạng Đại học Thế giới Next.js app on ECS (run on server).
 # Usage: sudo bash deploy/deploy-rankings.sh
 set -euo pipefail
 
@@ -15,9 +15,9 @@ git checkout main
 git pull --ff-only origin main
 
 cd "$APP_DIR"
-if [ ! -f .env ] && [ ! -f .env.local ]; then
-  echo 'DATABASE_URL="file:./dev.db"' > .env
-  echo "==> wrote default SQLite .env"
+if [! -f.env] && [! -f.env.local]; then
+  echo 'DATABASE_URL="file:./dev.db"' >.env
+  echo "==> wrote default SQLite.env"
 fi
 
 npm install --registry=https://registry.npmmirror.com
@@ -33,11 +33,11 @@ systemctl enable yysd-rankings
 systemctl restart yysd-rankings
 systemctl --no-pager --full status yysd-rankings | head -20
 
-# Ensure nginx has /rankings → :3002
+# Ensure nginx has /rankings →:3002
 NGINX_SRC="$REPO_DIR/server/deploy/nginx-site.conf"
 for cand in /etc/nginx/sites-available/youyisida.com /etc/nginx/sites-available/youyisida /etc/nginx/conf.d/youyisida.conf; do
-  if [ -f "$cand" ]; then
-    if ! grep -q 'location ^~ /rankings' "$cand" 2>/dev/null; then
+  if [-f "$cand"]; then
+    if! grep -q 'location ^~ /rankings' "$cand" 2>/dev/null; then
       echo "==> patching $cand with /rankings location from repo template"
       cp "$NGINX_SRC" "$cand"
     else

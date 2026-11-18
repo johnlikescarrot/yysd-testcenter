@@ -1,63 +1,63 @@
-# 多租户约定（阶段 0）
+# nhiều người thuê ước định (Giai đoạn 0)
 
-## 子域名规则
+## tử vực tên quy tắc
 
-- 格式：`{slug}.youyisida.com`（小写英文字母、数字、连字符；2–32 字符）
-- 默认租户 slug：`yysd`（优益思达）
-- 根域 `youyisida.com` / `www.youyisida.com` / 本地 `localhost` 一律映射到 `yysd`
-- **保留字（不可作租户 slug）**：`www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`
+- cách thức: `{slug}.youyisida.com` (viết chữ đơn chữ Anh mẫu, con số, liền ký tự; 2–32 ký tự)
+- cam chịu người thuê slug: `yysd` (YYSD)
+- cây vực `youyisida.com` / `www.youyisida.com` / bản địa `localhost` hết thảy chiếu rọi đến `yysd`
+- ** giữ lại chữ (không thể làm người thuê slug) **: `www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`
 
-## DNS / HTTPS（运维）
+## DNS / HTTPS (vận duy)
 
-1. 阿里云 DNS：`*.youyisida.com` CNAME 或 A 到网站服务器（与主站相同）。
-2. 通配符证书（需 DNS 验证）：
+1. a lý vân DNS: `*.youyisida.com` CNAME hoặc A đến trang web Server (và chủ đứng giống nhau).
+2. thông xứng phù giấy chứng nhận (cần DNS nghiệm chứng):
    ```bash
    certbot certonly --dns-<provider> -d youyisida.com -d '*.youyisida.com'
    ```
-3. Nginx：使用仓库内 `server/deploy/nginx-site.conf`（已含 `*.youyisida.com`）。
-4. 备案：子域名通配一般随主域；若备案系统要求逐条接入，按阿里云控制台提示处理。
+3. Nginx: sử dụng trong kho hàng `server/deploy/nginx-site.conf` (đã hàm `*.youyisida.com`).
+4. lập hồ sơ: tử vực tên thông xứng bình thường theo chủ vực; như lập hồ sơ hệ thống yêu cầu trục đầu tiếp nhập, theo như a lý vân đài điều khiển nhắc nhở xử lý.
 
-## 默认租户与超管
+## cam chịu người thuê và vượt qua quản
 
-| 项 | 约定 |
+| hạng | ước định |
 |----|------|
-| 默认公司 | 名称「优益思达」，slug `yysd`；现有用户/老师/成绩全部迁入 |
-| 平台超管 | 环境变量 `ADMIN_PHONES`（与现网一致）；可进 `platform.html` 主控台 |
-| 公司管理员 | 主控台为该公司填写的 `admin_phone`（教师账号）；管本公司师生分配 |
+| cam chịu công ty | tên « YYSD », slug `yysd`; hiện hữu người sử dụng / Giáo viên / Điểm số Tất cả dời vào |
+| bình đài vượt qua quản | Môi trường lượng biến đổi `ADMIN_PHONES` (và hiện mạng lưới nhất trí); có thể tiến `platform.html` bàn điều khiển |
+| công ty Quản trị viên | bàn điều khiển là cai công ty điền `admin_phone` (Giáo viên tài khoản); quản bổn công ty thầy trò phân phối |
 
-## 字段与权限清单
+## chữ đoạn và quyền hạn danh sách
 
-### 表 `orgs`
+### bề ngoài `orgs`
 
-| 字段 | 含义 |
+| chữ đoạn | Nghĩa |
 |------|------|
-| id | 主键 |
-| slug | 子域名短码 |
-| name | 公司显示名 |
-| logo_url | Logo（可空，用默认） |
+| id | chủ khóa |
+| slug | tử vực tên ngắn con ngựa |
+| name | công ty biểu hiện tên |
+| logo_url | Logo (có thể chỗ trống, dùng cam chịu) |
 | status | `trial` / `active` / `suspended` |
-| expires_at | 到期日 ISO（可空=不限期） |
-| admin_phone | 公司管理员手机号 |
-| contract_note | 合同备注（可选） |
-| created_at | 创建时间 |
+| expires_at | đến kỳ ngày ISO (có thể chỗ trống = không ngày quy định) |
+| admin_phone | công ty Quản trị viên Số điện thoại |
+| contract_note | hợp đồng ghi chú (có thể chọn) |
+| created_at | sáng tạo thời gian |
 
-### 用户隔离
+### người sử dụng cách ly
 
-- `users.org_id` / `teachers.org_id`：每人只属一家公司；手机号全局唯一。
-- 成绩、日历、师生关系：经用户/老师间接归属公司；列表接口按 `org_id` 过滤。
-- 题库 `library/`：全平台共用（第一版）。
+- `users.org_id` / `teachers.org_id`: mỗi người chỉ thuộc một công ty; Số điện thoại toàn cục duy nhất.
+- Điểm số, lịch ngày, thầy trò quan hệ: trải qua người sử dụng / Giáo viên gián tiếp thuộc sở hữu công ty; liệt biểu List tiếp lời theo như `org_id` loại bỏ.
+- Ngân hàng đề `library/`: toàn bộ bình đài xài chung (đệ nhất bản).
 
-### 谁能看谁
+### ai có thể xem ai
 
-| 角色 | 范围 |
+| nhân vật | phạm vi |
 |------|------|
-| 平台超管 | 主控台管所有公司；客服进入某公司时临时可见该公司 |
-| 公司管理员 | 仅本公司老师/学生/分配 |
-| 老师 | 仅被分配的本公司学生（管理员可见本公司全部） |
-| 学生 | 仅自己的成绩与任务 |
+| bình đài vượt qua quản | bàn điều khiển quản tất cả công ty; phục vụ khách hàng Vào học một công ty lúc tạm thời có thể thấy được cai công ty |
+| công ty Quản trị viên | chỉ bổn công ty Giáo viên / Học viên / phân phối |
+| Giáo viên | chỉ bị phân phối bổn công ty Học viên (Quản trị viên có thể thấy được bổn công ty Tất cả) |
+| Học viên | chỉ thành tích của mình và nhiệm vụ |
 
-## 验收（阶段 0）
+## nghiệm thu (Giai đoạn 0)
 
-- [x] DNS `*.youyisida.com` 已解析（2026-07-22 验证 random slug → 139.224.0.221）
-- [ ] HTTPS 通配符证书生效（当前为 SAN 列表；ease/youyisi 已覆盖）
-- [x] 打开 `https://ease.youyisida.com/` 能出页面（品牌改造已完成）
+- [x] DNS `*.youyisida.com` đã giải tích (2026-07-22 nghiệm chứng random slug → 139.224.0.221)
+- [] HTTPS thông xứng phù giấy chứng nhận có hiệu lực (trước mắt là SAN liệt biểu List; ease/youyisi đã bao trùm)
+- [x] mở ra `https://ease.youyisida.com/` có thể ra trang web (nhãn hiệu cải tạo Đã hoàn thành)

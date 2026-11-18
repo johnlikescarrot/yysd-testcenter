@@ -19,7 +19,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑5T3.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 5T3.docx")
 FEEDBACK_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-03_09.16.15-73f21af1-6151-427b-a0e0-eb94fdaaf7ac.png"
@@ -37,10 +37,10 @@ GARLSDON_SRC = Path(
     "__2026-07-03_09.16.44-1d5b12b6-5a06-4e67-a587-f396f7494d30.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test3 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test3 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test3 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS5 Test3 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS5 Test3 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS5 Test3 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS5 Test3 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS5 Test3 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-5-test-3.html"
@@ -65,7 +65,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -94,13 +94,13 @@ def patch_reading_passage_image(html: str) -> str:
 
 
 def patch_listening_table_image(html: str) -> str:
-    needle = "  else if(g.kind==='table'){\n    const cols = g.cols || g.columns || [];"
+    needle = " else if(g.kind==='table'){\n const cols = g.cols || g.columns || [];"
     insert = (
-        "  else if(g.kind==='table'){\n"
-        "    const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " else if(g.kind==='table'){\n"
+        " const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.tableTitle||'table'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const cols = g.cols || g.columns || [];"
+        " const cols = g.cols || g.columns || [];"
     )
     old_body = "body=`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
     new_body = "body=tfig+`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
@@ -112,12 +112,12 @@ def patch_listening_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 2 听力", "剑桥雅思5 Test 3 听力"),
-        ("剑桥雅思5 · Test 2（听力）", "剑桥雅思5 · Test 3（听力）"),
-        ("剑桥雅思5 Test 2 听力：", "剑桥雅思5 Test 3 听力："),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 2", "剑桥雅思 5 · Test 3"),
-        ("剑桥雅思5 · Test 2", "剑桥雅思5 · Test 3"),
+        ("Cambridge IELTS 5 Test 2 Nghe ", "Cambridge IELTS 5 Test 3 Nghe "),
+        ("Cambridge IELTS 5 · Test 2 (Nghe) ", "Cambridge IELTS 5 · Test 3 (Nghe) "),
+        ("Cambridge IELTS 5 Test 2 Nghe: ", "Cambridge IELTS 5 Test 3 Nghe: "),
+        ("Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("ielts5_test2", "ielts5_test3"),
@@ -129,13 +129,13 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 2 阅读", "剑桥雅思5 Test 3 阅读"),
-        ("剑桥雅思5 · Test 2（阅读）", "剑桥雅思5 · Test 3（阅读）"),
-        ("剑桥雅思5 Test 2 学术类阅读", "剑桥雅思5 Test 3 学术类阅读"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
-        ("Bakelite、What's so funny?、The Birth of Scientific English", "Early Childhood Education、Nile Delta、The Return of Artificial Intelligence"),
-        ("剑桥雅思 5 · Test 2", "剑桥雅思 5 · Test 3"),
-        ("剑桥雅思5 · Test 2", "剑桥雅思5 · Test 3"),
+        ("Cambridge IELTS 5 Test 2 Đọc ", "Cambridge IELTS 5 Test 3 Đọc "),
+        ("Cambridge IELTS 5 · Test 2 (Đọc) ", "Cambridge IELTS 5 · Test 3 (Đọc) "),
+        ("Cambridge IELTS 5 Test 2 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 5 Test 3 Đọc Học thuật (Academic Reading) "),
+        ("Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Bakelite, What's so funny?, The Birth of Scientific English", "Early Childhood Education, Nile Delta, The Return of Artificial Intelligence"),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
     ]
@@ -146,18 +146,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 2 写作", "剑桥雅思5 Test 3 写作"),
-        ("剑桥雅思5 · Test 2（写作）", "剑桥雅思5 · Test 3（写作）"),
-        ("剑桥雅思5 Test 2 学术类写作", "剑桥雅思5 Test 3 学术类写作"),
+        ("Cambridge IELTS 5 Test 2 Viết ", "Cambridge IELTS 5 Test 3 Viết "),
+        ("Cambridge IELTS 5 · Test 2 (Viết) ", "Cambridge IELTS 5 · Test 3 (Viết) "),
+        ("Cambridge IELTS 5 Test 2 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 5 Test 3 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 study reasons/employer support charts + Task 2 gap year essay",
             "Task 1 Garlsdon supermarket map + Task 2 competition vs cooperation essay",
         ),
-        ("剑桥雅思 5 · Test 2", "剑桥雅思 5 · Test 3"),
-        ("剑桥雅思5 · Test 2", "剑桥雅思5 · Test 3"),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
+        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
+        ("Test 2 Viết (Đề thi chính thức) ", "Test 3 Viết (Đề thi chính thức) "),
         ("cambridge-5-test-2-writing-draft", "cambridge-5-test-3-writing-draft"),
-        ("【剑桥雅思5 · Test 2 写作】", "【剑桥雅思5 · Test 3 写作】"),
+        ("[Cambridge IELTS 5 · Test 2 Viết]", "[Cambridge IELTS 5 · Test 3 Viết]"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("study-charts", "garlsdon-map"),
@@ -296,8 +296,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["C", "E"],
                         "questions": [
-                            {"id": "L11", "no": 11, "explain": "答案：C 与 E，顺序不限。"},
-                            {"id": "L12", "no": 12, "explain": "答案：C 与 E，顺序不限。"},
+                            {"id": "L11", "no": 11, "explain": " Đáp án: C và E, không giới hạn thứ tự. "},
+                            {"id": "L12", "no": 12, "explain": " Đáp án: C và E, không giới hạn thứ tự. "},
                         ],
                     },
                     {

@@ -1,46 +1,46 @@
 {
- "id": "free-12359",
- "title": "Choose a Response #117",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #117",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12359,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-117"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #117",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/b32ab440a4094634bd408aee5b1259f5.mp3",
-   "questions": [
+  "id": "free-12359",
+  "title": "Choose a Response #117",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #117",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12359,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-117"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Letters of recommendation are useful.",
-      "B": "At the post office.",
-      "C": "I already did.",
-      "D": "From a college friend."
-     },
-     "answer": "C",
-     "transcript": "Why don't you ask the boss to write a letter of recommendation for you?",
-     "stemZh": "你为什么不请老板给你写一封推荐信呢？",
-     "analysis": "Why don't you ask the boss to write a letter of recommendation for you? 题干分析 题干是Why don’t you…? 表建议的句型，意思是“你为什么不请老板为你写一封推荐信呢？”，核心结构是 ask sb. to do sth.（请求某人做某事），重点短语是 a letter of recommendation（推荐信）。 选项分析 选项A： “推荐信很有用” 是一个泛泛而谈的评价，没有回应是否采纳了建议。 选项B： “在邮局” 是对地点的询问的回答，与建议无关。 选项C：正确答案， “我已经问过了” 表明已经执行了该建议，是符合逻辑的回应。 选项D： “来自一个大学朋友” 通常用于回答“推荐信是谁写的”这类问题，不符合对建议的回应逻辑。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #117",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/b32ab440a4094634bd408aee5b1259f5.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Letters of recommendation are useful.",
+            "B": "At the post office.",
+            "C": "I already did.",
+            "D": "From a college friend."
+          },
+          "answer": "C",
+          "transcript": "Why don't you ask the boss to write a letter of recommendation for you?",
+          "stemZh": "bạn vì sao không mời lão bản cho bạn ghi một phong thư đề cử nhỉ?",
+          "analysis": "Why don't you ask the boss to write a letter of recommendation for you? Câu hỏi phân tích Câu hỏi là Why don’t you…? bề ngoài đề nghị câu hình, ý là “ bạn vì sao không mời lão bản cho bạn ghi một phong thư đề cử nhỉ? ”, hạch tâm kết cấu là ask sb. to do sth. (thỉnh cầu người nào đó làm chuyện gì), trọng điểm Cụm từ là a letter of recommendation (thư đề cử). Phương án phân tích Phương án A: “ thư đề cử rất hữu dụng ” là một nói sơ lược đánh giá, không có trả lời có hay không tiếp nhận đề nghị. Phương án B: “ tại bưu cục ” là đúng điểm hỏi thăm trả lời, và đề nghị không quan hệ. Phương án C: Đáp án đúng, “ ta đã hỏi qua rồi ” cho thấy đã thi hành nên đề nghị, là phù hợp suy luận đáp lại. Phương án D: “ đến từ một cái đại học bằng hữu ” bình thường dùng cho trả lời “ thư đề cử là ” loại vấn đề này, không phù hợp đối với đề nghị đáp lại ăn khớp."
+        }
+      ]
+    }
+  ]
 }

@@ -1,57 +1,57 @@
 {
- "id": "free-13633",
- "title": "Announcement #50",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #50",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13633,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-50"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #50",
-   "instruction": "Listen to an announcement in a classroom.",
-   "audio": "library/toefl/free/audio/e23fb4ad483044aab49d254b15488694.mp3",
-   "transcript": "W: As you know, this is the final course required for your business degree. The course will operate as an independent study. You will each select an area of focus that interests you. Some examples are available on my website. Then every week you'll be required to submit short essays that respond to questions I give you on this topic. You'll need to refer to what you've learned in your other business courses so you can cite theories or strategies that support your responses.",
-   "questions": [
+  "id": "free-13633",
+  "title": "Announcement #50",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #50",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13633,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-50"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is available on the speaker's website?",
-     "options": {
-      "A": "Some topic ideas",
-      "B": "Some examples of essays",
-      "C": "An updated course schedule",
-      "D": "A new degree requirement"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：说话者的网站上有什么？ 定位原文：You will each select an area of focus that interests you. Some examples are available on my website. 选项分析： A. 一些话题想法。原文提到网站上提供了一些examples（例子），而这些例子是供学生选择focus area（重点领域）时参考的，因此它们就是一些可选的话题想法，所以A选项正确。 B. 一些论文的例子。原文虽然提到学生需要每周提交short essays（短论文），但并未说明网站上提供了论文范例，所以B选项错误。 C. 更新的课程安排。原文只介绍了课程的形式和要求，并未提及课程安排（schedule），更未说网站上有更新，所以C选项错误。 D. 一个新的学位要求。原文第一句就指出这是学位要求的最后一门课（the final course required），但网站上的内容与新的学位要求无关，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "Where should the listeners look for theories and strategies?",
-     "options": {
-      "A": "In books assigned by the speaker",
-      "B": "In work from previous classes",
-      "C": "In the university library",
-      "D": "On an academic website"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：听众应该去哪里寻找理论和策略？ 定位原文：You'll need to refer to what you've learned in your other business courses so you can cite theories or strategies that support your responses. 选项分析： A. 在说话者指定的书籍里。原文明确指出要参考在其他商科课程中学到的内容（what you've learned in your other business courses），并未提及需要从指定的书籍中寻找，所以A选项错误。 B. 在以前课堂的作业/内容里。原文要求参考在其他课程中学到的东西，这意味着他们应该回顾以前课堂上的学习成果，包括作业、笔记等，所以B选项正确。 C. 在大学图书馆里。原文并未提及需要去图书馆查找资料，所以C选项错误。 D. 在学术网站上。原文同样没有提及任何网站，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #50",
+      "instruction": "Listen to an announcement in a classroom.",
+      "audio": "library/toefl/free/audio/e23fb4ad483044aab49d254b15488694.mp3",
+      "transcript": "W: As you know, this is the final course required for your business degree. The course will operate as an independent study. You will each select an area of focus that interests you. Some examples are available on my website. Then every week you'll be required to submit short essays that respond to questions I give you on this topic. You'll need to refer to what you've learned in your other business courses so you can cite theories or strategies that support your responses.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is available on the speaker's website?",
+          "options": {
+            "A": "Some topic ideas",
+            "B": "Some examples of essays",
+            "C": "An updated course schedule",
+            "D": "A new degree requirement"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: kẻ nói chuyện trên website có cái gì? Dẫn chứng Bài gốc: You will each select an area of focus that interests you. Some examples are available on my website. Phương án phân tích: A. một ít lời câu ý tưởng. Bài gốc nhắc tới trên website cung cấp một ít examples (ví dụ), mà chút ít ví dụ là cung cấp Học viên lựa chọn focus area (trọng điểm lĩnh vực) lúc tham khảo, bởi vậy chúng chính là một ít có thể chọn chủ đề ý tưởng, nên A Phương án Đúng. B. một ít luận văn ví dụ. Bài gốc mặc dù nhắc tới Học viên cần mỗi tuần Nộp bài short essays (bài tiểu luận văn), nhưng cũng không nói rõ trên website cung cấp luận văn kiểu mẫu, nên B Phương án Sai. C. đổi mới chương trình học an bài. Bài gốc chỉ giới thiệu rồi chương trình học hình thức và yêu cầu, cũng không đề cập chương trình học an bài (schedule), càng không trên website có đổi mới, nên C Phương án Sai. D. một cái mới đích học vị yêu cầu. Bài gốc câu đầu tiên liền chỉ ra đây là học vị yêu cầu cuối cùng một số khóa (the final course required), nhưng trên trang mạng nội dung và mới đích học vị yêu cầu không quan hệ, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "Where should the listeners look for theories and strategies?",
+          "options": {
+            "A": "In books assigned by the speaker",
+            "B": "In work from previous classes",
+            "C": "In the university library",
+            "D": "On an academic website"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: người nghe nên đi nơi nào tìm kiếm lý luận và sách lược? Dẫn chứng Bài gốc: You'll need to refer to what you've learned in your other business courses so you can cite theories or strategies that support your responses. Phương án phân tích: A. đang nói chuyện người chỉ định sách vở dặm. Bài gốc rõ ràng chỉ ra muốn tham khảo tại cái khác Kinh doanh trong khóa học học được nội dung (what you've learned in your other business courses), cũng không đề cập cần từ chỉ định trong thư tịch tìm kiếm, nên A Phương án Sai. B. tại trước kia lớp học bài tập / nội dung dặm. Bài gốc yêu cầu tham khảo tại cái khác trong khóa học thứ học được, ý vị này họ nên xem trước kia trên lớp học Học tập thành quả, kể cả bài tập, bút ký {các loại:đợi}, nên B Phương án Đúng. C. tại đại học trong tiệm sách. Bài gốc cũng không đề cập cần phải đi đồ thư quán tra tìm tư liệu, nên C Phương án Sai. D. đang học thuật trên website. Bài gốc đồng dạng không có đề cập bất luận cái gì trang web, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

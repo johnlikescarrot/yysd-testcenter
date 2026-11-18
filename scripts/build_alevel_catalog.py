@@ -4,7 +4,7 @@
 build_alevel_catalog.py — scan library/mock/alevel/**/papers/*.pdf → alevel-catalog.json
 
 Filename: {code}_{session}{yy}_{qp|ms}_{paper}.pdf
-  e.g. 9709_s24_qp_12.pdf  |  9MA0_s24_qp_01.pdf  |  7367_w23_ms_02.pdf
+  e.g. 9709_s24_qp_12.pdf | 9MA0_s24_qp_01.pdf | 7367_w23_ms_02.pdf
 """
 
 import json
@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from alevel_subjects import BOARDS, BOARD_ORDER, SUBJECTS  # noqa: E402
+from alevel_subjects import BOARDS, BOARD_ORDER, SUBJECTS # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 ALEVEL_ROOT = os.path.join(ROOT, "library", "mock", "alevel")
@@ -27,12 +27,12 @@ FILE_RE = re.compile(
 )
 
 SEASON_LABEL = {
-    "m": {"en": "Feb/Mar", "zh": "春季 (Feb/Mar)"},
-    "s": {"en": "May/Jun", "zh": "夏季 (May/Jun)"},
-    "w": {"en": "Oct/Nov", "zh": "冬季 (Oct/Nov)"},
+    "m": {"en": "Feb/Mar", "zh": " mùa xuân (Feb/Mar)"},
+    "s": {"en": "May/Jun", "zh": " mùa hạ (May/Jun)"},
+    "w": {"en": "Oct/Nov", "zh": " mùa đông (Oct/Nov)"},
 }
 
-# 同一年份内：冬季 → 夏季 → 春季（考试日期新→旧）
+# đồng nhất năm bên trong: mùa đông → mùa hạ → mùa xuân (cuộc thi ngày mới → xưa cũ)
 SEASON_SORT = {"w": 0, "s": 1, "m": 2}
 
 
@@ -58,7 +58,7 @@ def parse_pdf_name(fname, meta):
         return None
     code_raw, season, yy, kind, paper = m.groups()
     code_key = norm_code(code_raw)
-    if code_key != norm_code(meta["code"]):
+    if code_key!= norm_code(meta["code"]):
         return None
     season, kind = season.lower(), kind.lower()
     year = 2000 + int(yy)
@@ -67,7 +67,7 @@ def parse_pdf_name(fname, meta):
     code = meta["code"]
     sid = f"{board_id}-{code_key.lower()}-{year}-{season}-{paper}-{kind}"
     season_info = SEASON_LABEL.get(season, {"en": season, "zh": season})
-    type_zh = "真题" if kind == "qp" else "官方答案"
+    type_zh = " thực câu " if kind == "qp" else " chính thức Đáp án "
     title = (
         f"{board_label} {code} {meta['nameZh']} · {year} {season_info['zh']} · "
         f"Paper {paper} · {type_zh}"
@@ -94,7 +94,7 @@ def parse_pdf_name(fname, meta):
 def board_subjects(board_id, items):
     out = []
     for slug, meta in SUBJECTS.items():
-        if meta["board"] != board_id:
+        if meta["board"]!= board_id:
             continue
         code = meta["code"]
         out.append({

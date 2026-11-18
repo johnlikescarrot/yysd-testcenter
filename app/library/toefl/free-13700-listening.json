@@ -1,57 +1,57 @@
 {
- "id": "free-13700",
- "title": "Conversation #115",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #115",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13700,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-115"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #115",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/41d982704d0f43b581605590a62c786d.mp3",
-   "transcript": "Woman: Hey, did you ever return that architecture book you borrowed from the library?\nMan: Not yet. I was planning to drop it off tomorrow.\nWoman: You might want to go sooner. I heard a few people in our class are waiting to use it for the group project.\nMan: Oh no, I didn't realize they were in such high demand. Can't they just look at the online version?\nWoman: Yes, but the photos aren't as sharp. There are some design details that are easier to see in the larger version.\nMan: Right. In that case, I'll take it back this afternoon right after lunch. If anybody asks, tell them it'll be there then.",
-   "questions": [
+  "id": "free-13700",
+  "title": "Conversation #115",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #115",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13700,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-115"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What does the woman encourage the man to do?",
-     "options": {
-      "A": "Bring her some snacks from the cafeteria",
-      "B": "Submit a class assignment soon",
-      "C": "Take some materials back to the library",
-      "D": "Join a study group with some classmates"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：女士鼓励男士做什么？ 定位原文：Woman: You might want to go sooner. I heard a few people in our class are waiting to use it for the group project. （结合上文，男士还未归还从图书馆借的建筑书） 选项分析： A. Bring her some snacks from the cafeteria 帮她从 cafeteria 带零食。对话中未提及零食，所以A选项错误。 B. Submit a class assignment soon 尽快提交课堂作业。对话中未提及提交作业，所以B选项错误。 C. Take some materials back to the library 把一些材料还回图书馆。女士提醒男士有同学在等这本书，暗示他应尽快归还，所以C选项正确。 D. Join a study group with some classmates 和同学一起参加学习小组。对话中未提及学习小组，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the woman imply about an online book?",
-     "options": {
-      "A": "It has beautiful photographs.",
-      "B": "It is not useful for a project.",
-      "C": "It can be downloaded for free.",
-      "D": "It is required reading for a class."
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：女士关于电子书暗示了什么？ 定位原文：Woman: Yes, but the photos aren‘t as sharp. There are some design details that are easier to see in the larger version. （男士问同学是否能看电子版） 选项分析： A. It has beautiful photographs. 它有漂亮的照片。女士说电子版照片不够清晰，暗示纸质版效果更好，所以A选项错误。 B. It is not useful for a project. 它对项目没用。女士指出电子版照片不清晰、设计细节不如大版本书好，暗示电子版对需要看清细节的作业项目帮助有限，所以B选项正确。 C. It can be downloaded for free. 它可以免费下载。对话中未提及下载或费用，所以C选项错误。 D. It is required reading for a class. 它是某门课的必读书目。对话中提到的是“group project”（小组项目），而非课程必读，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #115",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/41d982704d0f43b581605590a62c786d.mp3",
+      "transcript": "Woman: Hey, did you ever return that architecture book you borrowed from the library?\nMan: Not yet. I was planning to drop it off tomorrow.\nWoman: You might want to go sooner. I heard a few people in our class are waiting to use it for the group project.\nMan: Oh no, I didn't realize they were in such high demand. Can't they just look at the online version?\nWoman: Yes, but the photos aren't as sharp. There are some design details that are easier to see in the larger version.\nMan: Right. In that case, I'll take it back this afternoon right after lunch. If anybody asks, tell them it'll be there then.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What does the woman encourage the man to do?",
+          "options": {
+            "A": "Bring her some snacks from the cafeteria",
+            "B": "Submit a class assignment soon",
+            "C": "Take some materials back to the library",
+            "D": "Join a study group with some classmates"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: phu nhân cổ vũ nam sĩ làm cái gì? Dẫn chứng Bài gốc: Woman: You might want to go sooner. I heard a few people in our class are waiting to use it for the group project. (kết hợp câu trên, nam sĩ còn chưa trả lại từ đồ thư quán mượn kiến trúc sách) Phương án phân tích: A. Bring her some snacks from the cafeteria giúp nàng từ cafeteria mang đồ ăn vặt. trong lúc nói chuyện với nhau Không được đề cập (Not Given) đồ ăn vặt, nên A Phương án Sai. B. Submit a class assignment soon mau chóng Nộp bài lớp học bài tập. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Nộp bài bài tập, nên B Phương án Sai. C. Take some materials back to the library đem một vài tài liệu còn quay về đồ thư quán. phu nhân nhắc nhở nam sĩ có đồng học đang đợi quyển sách này, ám chỉ anh ấy ứng với mau chóng trả lại, nên C Phương án Đúng. D. Join a study group with some classmates và đồng học cùng một chỗ tham gia Học tập tiểu tổ. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Học tập tiểu tổ, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the woman imply about an online book?",
+          "options": {
+            "A": "It has beautiful photographs.",
+            "B": "It is not useful for a project.",
+            "C": "It can be downloaded for free.",
+            "D": "It is required reading for a class."
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: phu nhân về sách điện tử ám hiệu gì? Dẫn chứng Bài gốc: Woman: Yes, but the photos aren‘t as sharp. There are some design details that are easier to see in the larger version. (nam sĩ hỏi đồng học có hay không có thể nhìn điện tử bản) Phương án phân tích: A. It has beautiful photographs. nó có xinh đẹp ảnh chụp. phu nhân nói điện tử bản ảnh chụp không đủ rõ ràng, ám chỉ bằng giấy bản hiệu quả rất tốt, nên A Phương án Sai. B. It is not useful for a project. nó đối với hạng mục vô dụng. phu nhân chỉ ra điện tử bản ảnh chụp không rõ rệt, xếp đặt thiết kế chi tiết không bằng đại phiên bản sách tốt, ám chỉ điện tử bản đối với cần thấy rõ chi tiết bài tập hạng mục trợ giúp có hạn, nên B Phương án Đúng. C. It can be downloaded for free. nó có thể miễn phí download. trong lúc nói chuyện với nhau Không được đề cập (Not Given) download hoặc phí tổn, nên C Phương án Sai. D. It is required reading for a class. nó là một môn khóa tất đọc sách mắt. trong lúc nói chuyện với nhau nhắc tới là “group project” (tiểu tổ hạng mục), mà không phải là chương trình học tất đọc, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

@@ -1,57 +1,57 @@
 {
- "id": "free-12431",
- "title": "Announcement #17",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #17",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12431,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-17"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #17",
-   "instruction": "Listen to a teacher talking to a group of students.",
-   "audio": "library/toefl/free/audio/490b4a8cfc03426891f530c8ba4d8549.mp3",
-   "transcript": "The new computer laboratory is looking to hire several students as part time employees. These jobs are available only to students specialized in Computer Science or Computer Engineering. Since the lab is open 24 hours a day and has just opened, students can work at just about any time.\nStudent employees will be expected to advise student users on how to operate the computers and to fix any problems that arise.",
-   "questions": [
+  "id": "free-12431",
+  "title": "Announcement #17",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #17",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12431,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-17"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the announcement mainly about?",
-     "options": {
-      "A": "Hiring student helpers at the computer lab",
-      "B": "Fixing broken computers at the school",
-      "C": "The open hour of the newly opened computer lab",
-      "D": "Instructions on how to use the computer at school"
-     },
-     "answer": "A",
-     "analysis": "题干分析 问题询问这段通知主要关于什么，属于主旨/话题识别题，需抓住老师整段话的核心内容。 选项分析 选项A：正确。 老师明确说“The new computer laboratory is looking to hire several students as part time employees”，并说明了招聘对象、工作时间以及工作职责，整段话的核心内容是招聘计算机实验室的学生助理。 选项B：错误。 老师提到学生员工需要解决出现的任何问题，但通知的主要目的是招聘，而非修理电脑。 选项C：错误。 老师提到实验室24小时开放，但这只是招聘信息中的一个细节，并非通知的主要话题。 选项D：错误。 老师提到学生员工需要指导学生用户操作电脑，但通知的目的是招聘，而非提供电脑使用说明。"
-    },
-    {
-     "id": 2,
-     "stem": "What can be inferred about the computer lab?",
-     "options": {
-      "A": "It is available to students at any time of the day.",
-      "B": "It is only available to the students who are specialized in computer science and computer engineering.",
-      "C": "Students in it need to fix any problems themselves.",
-      "D": "Students working in it need to operate computer for users."
-     },
-     "answer": "A",
-     "analysis": "题干分析 问题询问关于计算机实验室可以推断出什么，属于推理判断题，需抓住老师对实验室的描述进行推断。 选项分析 选项A：正确。 老师明确说“the lab is open 24 hours a day”，说明实验室全天任何时间都对学生开放。 选项B：错误。 实验室对所有学生开放使用，只是招聘的员工限定为计算机科学或计算机工程专业的学生，属于张冠李戴。 选项C：错误。 老师说明学生员工会帮助用户解决问题，而非用户自己解决，属于概念混淆。 选项D：错误。 老师说明学生员工需要“advise student users on how to operate the computers”（指导用户如何操作），而非替用户操作电脑，属于过度推断。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #17",
+      "instruction": "Listen to a teacher talking to a group of students.",
+      "audio": "library/toefl/free/audio/490b4a8cfc03426891f530c8ba4d8549.mp3",
+      "transcript": "The new computer laboratory is looking to hire several students as part time employees. These jobs are available only to students specialized in Computer Science or Computer Engineering. Since the lab is open 24 hours a day and has just opened, students can work at just about any time.\nStudent employees will be expected to advise student users on how to operate the computers and to fix any problems that arise.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the announcement mainly about?",
+          "options": {
+            "A": "Hiring student helpers at the computer lab",
+            "B": "Fixing broken computers at the school",
+            "C": "The open hour of the newly opened computer lab",
+            "D": "Instructions on how to use the computer at school"
+          },
+          "answer": "A",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm đoạn này thông tri chủ yếu về gì, thuộc về ý nghĩa chính / chủ đề phân biệt câu, cần bắt lấy Giáo viên cả đoạn lời trong trung tâm cho. Phương án phân tích Phương án A: Đúng. Giáo viên rõ ràng nói “The new computer laboratory is looking to hire several students as part time employees”, cũng nói rõ thông báo tuyển dụng đối tượng, thời gian làm việc cũng như công tác chức trách, cả đoạn lời trong trung tâm cho là thông báo tuyển dụng Máy tính phòng thí nghiệm Học viên trợ lý. Phương án B: Sai. Giáo viên nhắc tới Học viên công nhân cần giải quyết xuất hiện vấn đề gì, nhưng thông báo mục đích chủ yếu là thông báo tuyển dụng, mà không phải là sửa chữa máy tính. Phương án C: Sai. Giáo viên nhắc tới phòng thí nghiệm 24 giờ cởi mở, nhưng cái này chẳng qua là thông báo tuyển dụng trong tin tức một chi tiết, cũng không phải là thông báo chủ yếu chủ đề. Phương án D: Sai. Giáo viên nhắc tới Học viên công nhân cần chỉ đạo Học viên người sử dụng thao tác máy tính, nhưng thông báo mục đích là thông báo tuyển dụng, mà không phải là cung cấp máy tính sử dụng nói rõ."
+        },
+        {
+          "id": 2,
+          "stem": "What can be inferred about the computer lab?",
+          "options": {
+            "A": "It is available to students at any time of the day.",
+            "B": "It is only available to the students who are specialized in computer science and computer engineering.",
+            "C": "Students in it need to fix any problems themselves.",
+            "D": "Students working in it need to operate computer for users."
+          },
+          "answer": "A",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm về Máy tính phòng thí nghiệm có thể suy đoán ra gì, thuộc về suy luận Đúng / Sai / Không đề cập, cần bắt lấy Giáo viên đối với phòng thí nghiệm miêu tả tiến hành suy đoán. Phương án phân tích Phương án A: Đúng. Giáo viên rõ ràng nói “the lab is open 24 hours a day”, nói rõ phòng thí nghiệm toàn bộ ngày bất luận cái gì thời gian đều đối với Học viên cởi mở. Phương án B: Sai. phòng thí nghiệm đối với tất cả Học viên cởi mở sử dụng, chẳng qua là tuyển mộ công nhân hạn định là Khoa học máy tính hoặc Máy tính công trình chuyên nghiệp Học viên, thuộc về râu ông nọ cắm cằm bà kia. Phương án C: Sai. lão sư nói rõ ràng Học viên công nhân sẽ giúp trợ người sử dụng giải quyết vấn đề, mà không phải là người sử dụng tự mình giải quyết, thuộc về khái niệm lẫn lộn. Phương án D: Sai. lão sư nói rõ ràng Học viên công nhân cần “advise student users on how to operate the computers” (chỉ đạo người sử dụng làm thế nào thao tác), mà không phải là thay người sử dụng thao tác máy tính, thuộc về quá độ suy đoán."
+        }
+      ]
+    }
+  ]
 }

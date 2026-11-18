@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Từ vựng THPT LIST 3 (1-57) - Giọng Anh chuẩn</title>
+    <style>
+        :root {
+            --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
+            --accent: #c8963e; --accent-light: #e8c97a; --text: #2d2d2d; --text-light: #5a5a5a;
+            --text-muted: #888; --border: #e0dcd5; --shadow: 0 2px 12px rgba(0,0,0,0.06);
+            --shadow-hover: 0 6px 24px rgba(0,0,0,0.1); --shadow-card: 0 1px 4px rgba(0,0,0,0.04);
+            --radius: 12px; --radius-sm: 8px; --radius-xs: 6px; --transition: 0.22s ease;
+            --font-heading: 'Georgia', serif; --font-body: 'Inter', sans-serif;
+            --font-ipa: 'Gentium Plus', serif; --success: #3a7d5a; --success-bg: #eaf5ee;
+            --error: #c0392b; --error-bg: #fdf0ee; --warning: #b8860b; --warning-bg: #fef9ee;
+            --tag-bg: #f0ede6; --history-bg: #f9f8f5;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:var(--font-body); background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+        .header { background:var(--card-bg); border-bottom:1px solid var(--border); padding:0 24px; position:sticky; top:0; z-index:100; box-shadow:0 1px 3px rgba(0,0,0,0.04); backdrop-filter:blur(8px); }
+        .header-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:60px; gap:16px; }
+        .logo { display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--primary); }
+        .logo-icon { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--primary),var(--primary-light)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; }
+        .nav-tabs { display:flex; gap:4px; background:#f5f3ef; border-radius:28px; padding:3px; }
+        .nav-tab { padding:9px 20px; border-radius:26px; border:none; cursor:pointer; font-size:0.9rem; font-weight:600; transition:var(--transition); background:transparent; color:var(--text-light); font-family:var(--font-body); }
+        .nav-tab.active { background:#fff; color:var(--primary); box-shadow:0 1px 4px rgba(0,0,0,0.08); }
+        .nav-tab:hover:not(.active) { color:var(--primary); background:rgba(255,255,255,0.5); }
+        .word-count-badge { font-size:0.8rem; color:var(--text-muted); background:var(--tag-bg); padding:5px 12px; border-radius:20px; font-weight:500; }
+        .main-container { max-width:1200px; margin:0 auto; padding:24px 20px 40px; }
+        .learn-section,.test-section { display:none; }
+        .learn-section.active,.test-section.active { display:block; }
+        .learn-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:14px; }
+        .word-card { background:var(--card-bg); border-radius:var(--radius); padding:16px 18px; cursor:pointer; transition:var(--transition); border:1.5px solid transparent; box-shadow:var(--shadow-card); display:flex; flex-direction:column; gap:6px; user-select:none; }
+        .word-card:hover { box-shadow:var(--shadow-hover); border-color:#d5cec4; transform:translateY(-2px); }
+        .word-card.expanded { border-color:var(--primary-light); box-shadow:var(--shadow-hover); grid-column:1/-1; cursor:default; z-index:10; background:#fefefd; }
+        .word-card-top { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+        .word-headword { font-family:var(--font-heading); font-size:1.25rem; font-weight:700; color:var(--primary); }
+        .word-ipa { font-family:var(--font-ipa); font-size:0.85rem; color:var(--text-muted); }
+        .btn-play { width:34px; height:34px; border-radius:50%; border:none; cursor:pointer; background:#f0ede6; color:var(--primary); font-size:0.85rem; transition:var(--transition); display:flex; align-items:center; justify-content:center; }
+        .btn-play:hover { background:var(--primary); color:#fff; }
+        .btn-play.playing { background:var(--accent); color:#fff; animation:pulse-play 0.8s infinite; }
+        @keyframes pulse-play { 0%,100%{ box-shadow:0 0 0 0 rgba(200,150,62,0.5); } 50%{ box-shadow:0 0 0 14px rgba(200,150,62,0); } }
+        .word-pos { display:inline-block; font-size:0.75rem; font-weight:600; color:var(--accent); background:#fdf8f0; padding:3px 8px; border-radius:4px; }
+        .word-meaning { font-size:0.9rem; color:var(--text); font-weight:500; }
+        .word-detail { display:none; margin-top:8px; padding-top:10px; border-top:1px dashed var(--border); animation:fadeIn 0.25s ease; }
+        .word-card.expanded.word-detail { display:block; }
+        @keyframes fadeIn { from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:translateY(0); } }
+        .word-detail-row { font-size:0.85rem; margin-bottom:6px; color:var(--text-light); line-height:1.5; }
+        .word-detail-row strong { color:var(--primary); font-weight:600; }
+        .word-detail-example { background:#fafaf7; padding:8px 12px; border-radius:var(--radius-xs); color:#555; border-left:3px solid var(--accent-light); margin-top:4px; font-size:0.85rem; }
+        .card-collapse-hint { font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:4px; display:none; }
+        .word-card.expanded.card-collapse-hint { display:block; }
+        .test-setup { background:var(--card-bg); border-radius:var(--radius); padding:28px 24px; text-align:center; box-shadow:var(--shadow); max-width:520px; margin:0 auto; }
+        .test-setup h3 { font-family:var(--font-heading); font-size:1.3rem; color:var(--primary); margin-bottom:8px; }
+        .test-setup p { color:var(--text-light); margin-bottom:20px; font-size:0.9rem; }
+        .btn-start-test { padding:12px 36px; border-radius:26px; border:none; cursor:pointer; font-size:1rem; font-weight:700; background:var(--primary); color:#fff; transition:var(--transition); font-family:var(--font-body); }
+        .btn-start-test:hover { background:var(--primary-light); box-shadow:0 4px 16px rgba(44,62,107,0.3); transform:translateY(-1px); }
+        .test-active-area,.test-results { display:none; max-width:600px; margin:0 auto; background:var(--card-bg); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow); text-align:center; }
+        .test-active-area.visible,.test-results.visible { display:block; }
+        .test-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; font-size:0.85rem; color:var(--text-muted); font-weight:500; }
+        .progress-bar-wrap { flex:1; height:6px; background:#e8e4dc; border-radius:3px; margin:0 12px; overflow:hidden; }
+        .progress-bar-fill { height:100%; background:var(--primary); border-radius:3px; transition:width 0.35s ease; }
+        .test-play-area { margin:20px 0; }
+        .btn-play-large { width:70px; height:70px; border-radius:50%; border:none; cursor:pointer; background:var(--primary); color:#fff; font-size:1.6rem; transition:var(--transition); box-shadow:0 4px 16px rgba(44,62,107,0.25); }
+        .btn-play-large:hover { background:var(--primary-light); transform:scale(1.05); }
+        .btn-play-large.playing { background:var(--accent); animation:pulse-play-large 0.8s infinite; }
+        @keyframes pulse-play-large { 0%,100%{ box-shadow:0 0 0 0 rgba(200,150,62,0.6); } 50%{ box-shadow:0 0 0 22px rgba(200,150,62,0); } }
+        .test-inputs { display:flex; flex-direction:column; gap:12px; margin:20px 0; text-align:left; }
+        .test-input-group label { display:block; font-size:0.85rem; font-weight:600; margin-bottom:4px; }
+        .test-input-group input { width:100%; padding:12px 14px; border-radius:var(--radius-sm); border:2px solid var(--border); font-size:1rem; transition:var(--transition); background:#fafaf8; }
+        .test-input-group input:focus { outline:none; border-color:var(--primary-light); box-shadow:0 0 0 3px rgba(61,90,153,0.08); }
+        .correct-input { border-color:var(--success)!important; background:var(--success-bg)!important; }
+        .wrong-input { border-color:var(--error)!important; background:var(--error-bg)!important; }
+        .btn-submit { padding:12px 32px; border-radius:26px; border:none; cursor:pointer; font-size:1rem; font-weight:700; background:var(--primary); color:#fff; }
+        .btn-submit:disabled { opacity:0.5; cursor:not-allowed; }
+        .test-feedback { margin-top:16px; padding:14px 16px; border-radius:var(--radius-sm); font-size:0.9rem; display:none; animation:fadeIn 0.3s ease; text-align:left; line-height:1.7; }
+        .test-feedback.visible { display:block; }
+        .test-feedback.correct-all { background:var(--success-bg); border:1px solid #c3e0cd; color:#2d5a3d; }
+        .test-feedback.partial { background:var(--warning-bg); border:1px solid #f0d78c; color:#6b4f1a; }
+        .test-feedback.wrong-all { background:var(--error-bg); border:1px solid #f5c6cb; color:#6b2020; }
+        .btn-next { margin-top:12px; padding:10px 24px; border-radius:22px; border:2px solid var(--primary); cursor:pointer; font-size:0.9rem; font-weight:600; background:#fff; color:var(--primary); display:none; }
+        .btn-next.visible { display:inline-block; }
+        .btn-next:hover { background:var(--primary); color:#fff; }
+        .results-score { font-family:var(--font-heading); font-size:3.5rem; font-weight:700; color:var(--primary); }
+        .results-detail { font-size:0.9rem; color:var(--text-light); margin:8px 0 20px; }
+        .results-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.85rem; text-align:left; }
+        .results-table th,.results-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
+        .results-table th { background:#fafaf7; color:var(--primary); }
+        .row-correct { background:#f9fdf9; }.row-wrong { background:#fefbfb; }
+        .btn-retry { margin-top:16px; padding:12px 28px; border-radius:26px; border:none; cursor:pointer; font-weight:700; background:var(--accent); color:#fff; }
+        .btn-back-setup { margin-left:10px; background:#fff; color:var(--primary); border:2px solid var(--primary); }
+        .history-section { margin-top:32px; background:var(--history-bg); border-radius:var(--radius); padding:20px; max-width:520px; margin-left:auto; margin-right:auto; text-align:left; box-shadow:var(--shadow-card); }
+        .history-title { font-family:var(--font-heading); font-size:1.1rem; color:var(--primary); margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; }
+        .history-list { list-style:none; max-height:240px; overflow-y:auto; padding-right:4px; }
+        .history-list li { padding:10px 12px; background:#fff; border-radius:var(--radius-sm); margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; border:1px solid var(--border); }
+        .history-time { color:var(--text-muted); font-size:0.75rem; }
+        .history-score { font-weight:700; color:var(--primary); }
+        .history-empty { color:var(--text-muted); text-align:center; padding:16px; font-size:0.85rem; }
+        .btn-clear-history { background:none; border:none; color:#c0392b; font-size:0.75rem; cursor:pointer; text-decoration:underline; }
+        @media (max-width:768px) {
+            .learn-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+            .word-card { padding:12px 14px; }
+            .word-headword { font-size:1.1rem; }
+            .word-count-badge { display:none; }
+            .btn-play-large { width:56px; height:56px; font-size:1.3rem; }
+            .results-score { font-size:2.5rem; }
+        }
+    </style>
+<!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="logo"><div class="logo-icon">📖</div><span> THPT LIST 3</span></div>
+        <nav class="nav-tabs" id="navTabs">
+            <button class="nav-tab active" data-mode="learn">📚 Học tập hình thức</button>
+            <button class="nav-tab" data-mode="test">✅ Từ vựng Đánh giá</button>
+        </nav>
+        <span class="word-count-badge">tổng 57 từ</span>
+    </div>
+</header>
+<div class="main-container">
+    <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+    <section class="test-section" id="testSection">
+        <div class="test-setup" id="testSetup">
+            <h3>📝 LIST 3 Từ vựng Đánh giá</h3>
+            <p>click mở mới Đánh giá Tất cả <strong>57 Từ vựng</strong>. <br>phát ra âm đọc sau điền Chính tả và Nghĩa. </p>
+            <button class="btn-start-test" id="btnStartTest">🎯 Bắt đầu Đánh giá (57 câu)</button>
+            <div class="history-section"><div class="history-title">📋 Lịch sử ghi chép <button class="btn-clear-history" id="btnClearHistory">thanh trừ ghi chép</button></div><div id="historyContent"></div></div>
+        </div>
+        <div class="test-active-area" id="testActiveArea">
+            <div class="test-progress"><span id="testProgressLabel"> thứ 1 / 57 câu</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill" style="width:0%;"></div></div><span id="testScoreLabel"> Điểm số: 0</span></div>
+            <div class="test-play-area"><button class="btn-play-large" id="btnPlayTest">▶</button><p class="play-hint">nhấn cái nút nghe Từ vựng âm đọc </p></div>
+            <div class="test-inputs">
+                <div class="test-input-group"><label>🔤 Tiếng Anh Chính tả</label><input type="text" id="inputSpelling" placeholder="xin điền vào Tiếng Anh Chính tả..." autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+                <div class="test-input-group"><label>🈶 Tiếng Việt Nghĩa</label><input type="text" id="inputMeaning" placeholder="xin điền vào Tiếng Việt Nghĩa..." autocomplete="off"></div>
+            </div>
+            <button class="btn-submit" id="btnSubmit">✓ Nộp bài Đáp án</button>
+            <div class="test-feedback" id="testFeedback"></div>
+            <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
+        </div>
+        <div class="test-results" id="testResults">
+            <h3 style="font-family:var(--font-heading);color:var(--primary);">🏆 Đánh giá hoàn thành!</h3>
+            <div class="results-score" id="resultsScore">0</div><div class="results-detail" id="resultsDetail"></div>
+            <div style="overflow-x:auto;"><table class="results-table"><thead><tr><th>#</th><th>Từ vựng</th><th>của bạn Chính tả</th><th>của bạn Nghĩa</th><th>kết quả</th></tr></thead><tbody id="resultsTableBody"></tbody></table></div>
+            <button class="btn-retry" id="btnRetry">🔄 một lần nữa Đánh giá</button>
+            <button class="btn-retry btn-back-setup" id="btnBackToSetup">📋 Quay lại</button>
+        </div>
+    </section>
+</div>
+<script>
+(function() {
+// ==================== LIST 3 Từ vựng số liệu ====================
+const wordData = [{"id":1,"word":"ward","ipa":"/wɔːd/ · /wɔːrd/","pos":"n. / v.","meaning":"sự trông nom, sự bảo trợ; sự giam giữ; khu, khu vực (thành phố)","phrases":"hospital ward (phòng bệnh), ward off (tránh đi; phòng ngừa) ","example":"The patient was moved to another ward. (người bệnh bị chuyển đến một gian khác phòng bệnh.) ","acceptCN":[" phòng bệnh "," được người giám hộ "," tránh đi "],"collocations":[{"phrase":"hospital ward","meaning":" phòng bệnh "},{"phrase":"ward off","meaning":" tránh đi; phòng ngừa "}],"root":" cũng có thể làm động từ Cụm từ ward off","synonyms":["room"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" phòng bệnh ","topic":" Sức khỏe "},"exampleEn":"The patient was moved to another ward.","exampleZh":" người bệnh bị chuyển đến một gian khác phòng bệnh. "},{"id":2,"word":"tense","ipa":"/tens/","pos":"adj. / n. / v.","meaning":"căng; căng thẳng, găng","phrases":"past tense (qua lúc), tense atmosphere (không khí khẩn trương) ","example":"The atmosphere in the room was tense. (không khí trong phòng rất khẩn trương.) ","acceptCN":[" khẩn trương "," lúc thái "," kéo căng "],"collocations":[{"phrase":"past tense","meaning":" qua lúc "},{"phrase":"tense atmosphere","meaning":" không khí khẩn trương "}],"root":" cùng hình: tâm tình khẩn trương / Ngữ pháp lúc thái ","synonyms":["nervous","tight"],"antonyms":["relaxed"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khẩn trương ","topic":" Ngữ pháp / tình cảm "},"exampleEn":"The atmosphere in the room was tense.","exampleZh":" không khí trong phòng rất khẩn trương. "},{"id":3,"word":"clarify","ipa":"/ˈklærəfaɪ/","pos":"v.","meaning":"v. làm sáng tỏ, tỏ rõ, khiến cho rõ ràng. clarify one's meaning / the situation. danh từ clarification. ","phrases":"clarify the meaning (làm sáng tỏ ý tứ), ask sb to clarify (mời người nào đó nói rõ) ","example":"Could you clarify what you mean by 'success'? (bạn có thể nói rõ ngươi một chút nói “ thành công ” là có ý gì không?) ","acceptCN":[" làm sáng tỏ "," tỏ rõ "," nói rõ ràng "],"collocations":[{"phrase":"clarify the meaning","meaning":" làm sáng tỏ ý tứ "},{"phrase":"ask sb to clarify","meaning":" mời người nào đó nói rõ "}],"root":"clar(rõ ràng) + -ify → khiến cho rõ ràng ","synonyms":["explain","clear up"],"antonyms":["confuse"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" làm sáng tỏ ","topic":" Học tập "},"exampleEn":"Could you clarify what you mean by 'success'?","exampleZh":" bạn có thể nói rõ ngươi một chút nói “ thành công ” là có ý gì không? "},{"id":4,"word":"puzzle","ipa":"/ˈpʌzl/","pos":"n. / v.","meaning":"sự bối rối, sự khó xử; vấn đề khó xử, vấn đề khó giải quyết, vấn đề nan giải","phrases":"jigsaw puzzle (bính đồ), be puzzled by (đối với … cảm thấy hoang mang) ","example":"The question puzzled even the teacher. (đạo đề này liền Giáo viên đều cảm thấy hoang mang.) ","acceptCN":[" mê "," nan đề "," khiến cho hoang mang "],"collocations":[{"phrase":"jigsaw puzzle","meaning":" bính đồ "},{"phrase":"be puzzled by","meaning":" đối với … cảm thấy hoang mang "}],"root":" đã là “ câu đố ” cũng là “ khiến cho mê hoặc ”","synonyms":["mystery","confuse"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" mê ","topic":" Học tập "},"exampleEn":"The question puzzled even the teacher.","exampleZh":" đạo đề này liền Giáo viên đều cảm thấy hoang mang. "},{"id":5,"word":"affair","ipa":"/əˈfeə/ · /əˈfer/","pos":"n.","meaning":"việc; (số nhiều) công việc, việc làm, sự vụ","phrases":"current affairs (thời sự), public affairs (công cộng sự vụ), love affair (tình yêu) ","example":"It's a private affair; don't ask too much. (đây là việc tư, đừng hỏi quá nhiều.) ","acceptCN":[" sự vụ "," sự tình "," sự kiện "],"collocations":[{"phrase":"current affairs","meaning":" thời sự "},{"phrase":"public affairs","meaning":" công cộng sự vụ "},{"phrase":"love affair","meaning":" tình yêu "}],"root":" thường chỉ công cộng sự vụ hoặc hơi nặng muốn sự tình ","synonyms":["matter","business"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" sự vụ ","topic":" xã hội "},"exampleEn":"It's a private affair; don't ask too much.","exampleZh":" đây là việc tư, đừng hỏi quá nhiều. "},{"id":6,"word":"cheer","ipa":"/tʃɪə/ · /tʃɪr/","pos":"v. / n.","meaning":"làm vui mừng, làm phấn khởi; làm hớn hở ((cũng) cheer up); (+ on) khích lệ, cổ vũ","phrases":"cheer up (tỉnh lại đi), cheer for (là … cố gắng lên) ","example":"The fans cheered when their team scored. (đội chủ nhà Điểm số lúc, fans hâm mộ hoan hô lên.) ","acceptCN":[" hoan hô "," cố gắng lên "," khiến cho phấn khởi "],"collocations":[{"phrase":"cheer up","meaning":" tỉnh lại đi "},{"phrase":"cheer for","meaning":" là … cố gắng lên "}],"root":" cũng có thể làm danh từ: hoan hô / vui sướng ","synonyms":["applaud","encourage"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" hoan hô ","topic":" Thể thao "},"exampleEn":"The fans cheered when their team scored.","exampleZh":" đội chủ nhà Điểm số lúc, fans hâm mộ hoan hô lên. "},{"id":7,"word":"admire","ipa":"/ədˈmaɪə/ · /ədˈmaɪr/","pos":"v.","meaning":"ngắm nhìn một cách vui thích; khâm phục, ((thông tục)) thán phục, cảm phục; hâm mộ, ngưỡng mộ; khen ngợi, ca tụng","phrases":"admire sb for (bởi vì … khâm phục người nào đó), with admiration (khâm phục mà) ","example":"I admire her courage in speaking out. (tôi khâm phục cô ấy có can đảm nói ra được dũng khí.) ","acceptCN":[" khâm phục "," hâm mộ "," thưởng thức "],"collocations":[{"phrase":"admire sb for","meaning":" bởi vì … khâm phục người nào đó "},{"phrase":"with admiration","meaning":" khâm phục mà "}],"root":"ad-(hướng) + mire(nhìn) → nhìn chăm chú mà sống kính ","synonyms":["respect","appreciate"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khâm phục ","topic":" tình cảm "},"exampleEn":"I admire her courage in speaking out.","exampleZh":" tôi khâm phục cô ấy có can đảm nói ra được dũng khí. "},{"id":8,"word":"paperwork","ipa":"/ˈpeɪpəwɜːk/ · /ˈpeɪpərwɜːrk/","pos":"n.","meaning":"công việc giấy tờ","phrases":"do paperwork (làm công văn công tác), official paperwork (chính thức văn bản tài liệu thủ tục) ","example":"Teachers spend hours on paperwork every week. (Giáo viên mỗi tuần lên giá vài giờ làm công văn công tác.) ","acceptCN":[" công văn công tác "," văn bản bài tập "],"collocations":[{"phrase":"do paperwork","meaning":" làm công văn công tác "},{"phrase":"official paperwork","meaning":" chính thức văn bản tài liệu thủ tục "}],"root":"paper + work → trên giấy công tác ","synonyms":["administration"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" công văn công tác ","topic":" Công sở "},"exampleEn":"Teachers spend hours on paperwork every week.","exampleZh":" Giáo viên mỗi tuần lên giá vài giờ làm công văn công tác. "},{"id":9,"word":"suspect","ipa":"/səˈspekt/ (v.) · /ˈsʌspekt/ (n./adj.)","pos":"v. / n. / adj.","meaning":"nghi, ngờ, nghi ngờ, hoài nghi","phrases":"suspect sb of (hoài nghi người nào đó …), the main suspect (chủ yếu người hiềm nghi) ","example":"The police suspect him of stealing the bike. (cảnh sát hoài nghi anh ấy trộm xe đạp.) ","acceptCN":[" hoài nghi "," người bị tình nghi "," khả nghi "],"collocations":[{"phrase":"suspect sb of","meaning":" hoài nghi người nào đó …"},{"phrase":"the main suspect","meaning":" chủ yếu người hiềm nghi "}],"root":" danh chấn trọng âm bất đồng: SUSpect / susPECT","synonyms":["doubt","guess"],"antonyms":["trust"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" hoài nghi ","topic":" pháp luật "},"exampleEn":"The police suspect him of stealing the bike.","exampleZh":" cảnh sát hoài nghi anh ấy trộm xe đạp. "},{"id":10,"word":"piece","ipa":"/piːs/","pos":"n. / v.","meaning":"mảnh, mẩu, miếng, viên, cục, khúc; bộ phận, mảnh rời","phrases":"a piece of (một khối / một cái), piece together (chắp vá), a piece of music (một bài nhạc khúc) ","example":"Can I give you a piece of advice? (ta có thể cho bạn một cái đề nghị không?) ","acceptCN":[" một khối "," một kiện "," tác phẩm "],"collocations":[{"phrase":"a piece of","meaning":" một khối / một cái "},{"phrase":"piece together","meaning":" chắp vá "},{"phrase":"a piece of music","meaning":" một bài nhạc khúc "}],"root":" không thể mấy tên từ tính toán thường dùng a piece of","synonyms":["bit","item"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" một khối ","topic":" Đời sống "},"exampleEn":"Can I give you a piece of advice?","exampleZh":" ta có thể cho bạn một cái đề nghị không? "},{"id":11,"word":"variety","ipa":"/vəˈraɪəti/","pos":"n.","meaning":"trạng thái khác nhau, trạng thái muôn màu muôn vẻ; tính chất bất đồng; nhiều thứ; mớ","phrases":"a variety of (các loại các dạng), variety show (tống nghệ tiết mục) ","example":"The shop sells a variety of fruits. (tiệm này bán ra các loại các dạng hoa quả.) ","acceptCN":[" đa dạng tính "," giống "," đủ loại "],"collocations":[{"phrase":"a variety of","meaning":" các loại các dạng "},{"phrase":"variety show","meaning":" tống nghệ tiết mục "}],"root":"vary(biến hóa) → variety biến hóa hình dạng thái ","synonyms":["diversity","range"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" đa dạng tính ","topic":" nói rõ "},"exampleEn":"The shop sells a variety of fruits.","exampleZh":" tiệm này bán ra các loại các dạng hoa quả. "},{"id":12,"word":"pull","ipa":"/pʊl/","pos":"v. / n.","meaning":"v. kéo, kéo, rút. pull down (phá hủy); pull up (đỗ xe); pull through (vượt qua cửa ải khó); pull one's weight. n. sức kéo, lực hấp dẫn. Trái nghĩa push. ","phrases":"pull down (phá hủy), pull through (vượt qua cửa ải khó), pull up (đỗ xe) ","example":"Pull the door, don't push it. (kéo môn, đừng đẩy.) ","acceptCN":[" kéo "," kéo "," rút "],"collocations":[{"phrase":"pull down","meaning":" phá hủy "},{"phrase":"pull through","meaning":" vượt qua cửa ải khó "},{"phrase":"pull up","meaning":" đỗ xe "}],"root":" và push tương đối; Cụm từ động từ nhiều ","synonyms":["drag","draw"],"antonyms":["push"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" kéo ","topic":" Đời sống "},"exampleEn":"Pull the door, don't push it.","exampleZh":" kéo môn, đừng đẩy. "},{"id":13,"word":"lamp","ipa":"/læmp/","pos":"n.","meaning":"đèn; mặt trời, mặt trăng, sao","phrases":"desk lamp (đèn bàn), street lamp (đèn đường) ","example":"She turned on the desk lamp to read. (cô ấy mở ra đèn bàn đọc sách.) ","acceptCN":[" đèn "," đèn bàn "],"collocations":[{"phrase":"desk lamp","meaning":" đèn bàn "},{"phrase":"street lamp","meaning":" đèn đường "}],"root":" chỉ đèn đóm, light cũng có thể chỉ ánh sáng ","synonyms":["light"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" đèn ","topic":" sinh hoạt "},"exampleEn":"She turned on the desk lamp to read.","exampleZh":" cô ấy mở ra đèn bàn đọc sách. "},{"id":14,"word":"questionnaire","ipa":"/ˌkwestʃəˈneə/ · /ˌkwestʃəˈner/","pos":"n.","meaning":"bản câu hỏi (để điều tra, để thăm dò ý kiến)","phrases":"fill in a questionnaire (điền sách câu hỏi), online questionnaire (online sách câu hỏi) ","example":"Please complete this questionnaire after class. (sau khi tan học mời điền xong phần này sách câu hỏi.) ","acceptCN":[" sách câu hỏi "," điều tra bề ngoài "],"collocations":[{"phrase":"fill in a questionnaire","meaning":" điền sách câu hỏi "},{"phrase":"online questionnaire","meaning":" online sách câu hỏi "}],"root":"question + -naire → vấn đề danh sách ","synonyms":["survey"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" sách câu hỏi ","topic":" Học tập "},"exampleEn":"Please complete this questionnaire after class.","exampleZh":" sau khi tan học mời điền xong phần này sách câu hỏi. "},{"id":15,"word":"sale","ipa":"/seɪl/","pos":"n.","meaning":"sự bán; hàng hoá bán, số hàng hoá bán được","phrases":"for sale (đợi bán), on sale (bán ra; giá đặc biệt), sales (tiêu thụ ngạch) ","example":"The house is for sale. (căn nhà này đợi bán.) ","acceptCN":[" bán ra "," tiêu thụ "," bán hạ giá "],"collocations":[{"phrase":"for sale","meaning":" đợi bán "},{"phrase":"on sale","meaning":" bán ra; giá đặc biệt "},{"phrase":"sales","meaning":" tiêu thụ ngạch "}],"root":"for sale đợi bán; on sale tại bán / đánh gãy ","synonyms":["selling"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" tiêu thụ ","topic":" Kinh doanh "},"exampleEn":"The house is for sale.","exampleZh":" căn nhà này đợi bán. "},{"id":16,"word":"assume","ipa":"/əˈsjuːm/ · /əˈsuːm/","pos":"v.","meaning":"mang, khoác, có, lấy (cái vẻ, tính chất...); làm ra vẻ, giả bộ","phrases":"assume that (giả định …), assume responsibility (gánh chịu trách nhiệm) ","example":"Don't assume that he is guilty without evidence. (không có chứng cứ cũng đừng có giả định anh ấy có tội.) ","acceptCN":[" giả định "," cho rằng "," gánh chịu "],"collocations":[{"phrase":"assume that","meaning":" giả định …"},{"phrase":"assume responsibility","meaning":" gánh chịu trách nhiệm "}],"root":"as-(hướng) + sume(cầm) → lấy ra coi như điều kiện tiên quyết ","synonyms":["suppose","undertake"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" giả định ","topic":" Học thuật "},"exampleEn":"Don't assume that he is guilty without evidence.","exampleZh":" không có chứng cứ cũng đừng có giả định anh ấy có tội. "},{"id":17,"word":"rag","ipa":"/ræɡ/","pos":"n.","meaning":"giẻ, giẻ rách; (số nhiều) quần áo rách tả tơi","phrases":"in rags (quần áo tả tơi), cleaning rag (khăn lau) ","example":"He wiped the table with an old rag. (hắn dùng một khối xưa cũ khăn lau lau bàn.) ","acceptCN":[" vải rách "," khăn lau "," áo thủng "],"collocations":[{"phrase":"in rags","meaning":" quần áo tả tơi "},{"phrase":"cleaning rag","meaning":" khăn lau "}],"root":" số nhiều rags thường chỉ y phục rách rưới ","synonyms":["cloth"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" vải rách ","topic":" sinh hoạt "},"exampleEn":"He wiped the table with an old rag.","exampleZh":" hắn dùng một khối xưa cũ khăn lau lau bàn. "},{"id":18,"word":"miss","ipa":"/mɪs/","pos":"v. / n.","meaning":"trượt, hỏng, trệch, không trúng (đích); lỡ, nhỡ","phrases":"miss the bus (không có bắt kịp xe), miss out (bỏ qua), go missing (mất tích) ","example":"I miss my grandparents very much. (tôi vô cùng tưởng niệm gia gia nãi nãi.) ","acceptCN":[" bỏ qua "," tưởng niệm "," đổ vào "],"collocations":[{"phrase":"miss the bus","meaning":" không có bắt kịp xe "},{"phrase":"miss out","meaning":" bỏ qua "},{"phrase":"go missing","meaning":" mất tích "}],"root":" từ đa nghĩa: tưởng niệm / bỏ qua / không đánh trúng ","synonyms":["long for","fail to catch"],"antonyms":["catch","hit"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" bỏ qua ","topic":" Đời sống "},"exampleEn":"I miss my grandparents very much.","exampleZh":" tôi vô cùng tưởng niệm gia gia nãi nãi. "},{"id":19,"word":"sacrifice","ipa":"/ˈsækrɪfaɪs/","pos":"n. / v.","meaning":"sự giết (người, vật) để cúng thần; người bị giết để cúng thần; vật bị giết để cúng thần","phrases":"make sacrifices (làm ra hi sinh), sacrifice … for (là … hi sinh) ","example":"Parents often sacrifice their free time for children. (cha mẹ thường thường là hài tử hi sinh mình thời gian ở không.) ","acceptCN":[" hi sinh "," dâng ra "],"collocations":[{"phrase":"make sacrifices","meaning":" làm ra hi sinh "},{"phrase":"sacrifice … for","meaning":" là … hi sinh "}],"root":"sacri(thần thánh) + fice(làm) → hiến tế ","synonyms":["give up"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" hi sinh ","topic":" phẩm đức "},"exampleEn":"Parents often sacrifice their free time for children.","exampleZh":" cha mẹ thường thường là hài tử hi sinh mình thời gian ở không. "},{"id":20,"word":"partly","ipa":"/ˈpɑːtli/ · /ˈpɑːrtli/","pos":"adv.","meaning":"một phần, phần nào","phrases":"partly because (bộ phận vì), only partly true (đối với rồi một bộ phận) ","example":"The accident was partly caused by heavy rain. (sự cố bộ phận là do mưa to tạo thành.) ","acceptCN":[" bộ phận mà "," tại trình độ nhất định "],"collocations":[{"phrase":"partly because","meaning":" bộ phận vì "},{"phrase":"only partly true","meaning":" đối với rồi một bộ phận "}],"root":"part + -ly","synonyms":["partially"],"antonyms":["completely"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" bộ phận mà ","topic":" nói rõ "},"exampleEn":"The accident was partly caused by heavy rain.","exampleZh":" sự cố bộ phận là do mưa to tạo thành. "},{"id":21,"word":"update","ipa":"/ˌʌpˈdeɪt/ (v.) · /ˈʌpdeɪt/ (n.)","pos":"v. / n.","meaning":"làm cho cập nhật, hiện đại hoá; cho ai thông tin mới nhất (về cái gì)","phrases":"update the information (đổi mới tin tức), software update (phần mềm đổi mới) ","example":"Please update me on the latest news. (xin đem tin tức mới nhất nói cho ta biết.) ","acceptCN":[" đổi mới "," tin tức mới nhất "],"collocations":[{"phrase":"update the information","meaning":" đổi mới tin tức "},{"phrase":"software update","meaning":" phần mềm đổi mới "}],"root":"up + date → làm được mới nhất ngày ","synonyms":["renew"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" đổi mới ","topic":" Công nghệ "},"exampleEn":"Please update me on the latest news.","exampleZh":" xin đem tin tức mới nhất nói cho ta biết. "},{"id":22,"word":"key","ipa":"/kiː/","pos":"n. / adj. / v.","meaning":"hòn đảo nhỏ; bâi cát nông; đá ngần","phrases":"the key to (… mấu chốt), key point (yếu điểm), key in (khóa nhập) ","example":"Practice is the key to success. (Luyện tập là thành công mấu chốt.) ","acceptCN":[" cái chìa khóa "," mấu chốt "," khóa "],"collocations":[{"phrase":"the key to","meaning":"… mấu chốt "},{"phrase":"key point","meaning":" yếu điểm "},{"phrase":"key in","meaning":" khóa nhập "}],"root":"the key to doing / n. Vừa to là giới từ ","synonyms":["crucial"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" mấu chốt ","topic":" thông dụng "},"exampleEn":"Practice is the key to success.","exampleZh":" Luyện tập là thành công mấu chốt. "},{"id":23,"word":"determine","ipa":"/dɪˈtɜːmɪn/ · /dɪˈtɜːrmɪn/","pos":"v.","meaning":"định, xác định, định rõ; quyết định, định đoạt","phrases":"be determined to (quyết tâm làm), determine the cause (tra ra nguyên nhân) ","example":"She is determined to study medicine. (cô ấy quyết tâm học y.) ","acceptCN":[" quyết định "," Đồng ý "," hạ quyết tâm "],"collocations":[{"phrase":"be determined to","meaning":" quyết tâm làm "},{"phrase":"determine the cause","meaning":" tra ra nguyên nhân "}],"root":"de-(hoàn toàn) + termin(giới hạn) → xác định giới hạn ","synonyms":["decide","resolve"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" quyết tâm ","topic":" phẩm đức "},"exampleEn":"She is determined to study medicine.","exampleZh":" cô ấy quyết tâm học y. "},{"id":24,"word":"taxpayer","ipa":"/ˈtækspeɪə/ · /ˈtækspeɪər/","pos":"n.","meaning":"người đóng thuế","phrases":"taxpayer money (người đóng thuế tiền), individual taxpayer (thuế lợi tức cá nhân người đóng thuế) ","example":"Taxpayers have the right to know how money is spent. (người đóng thuế có quyền biết tiền là thế nào hoa.) ","acceptCN":[" người đóng thuế "," nộp thuế người "],"collocations":[{"phrase":"taxpayer money","meaning":" người đóng thuế tiền "},{"phrase":"individual taxpayer","meaning":" thuế lợi tức cá nhân người đóng thuế "}],"root":"tax + pay + -er","synonyms":[],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" người đóng thuế ","topic":" xã hội "},"exampleEn":"Taxpayers have the right to know how money is spent.","exampleZh":" người đóng thuế có quyền biết tiền là thế nào hoa. "},{"id":25,"word":"disaster","ipa":"/dɪˈzɑːstə/ · /dɪˈzæstər/","pos":"n.","meaning":"tai hoạ, thảm hoạ, tai ách; điều bất hạnh","phrases":"natural disaster (thiên tai), a complete disaster (triệt để thất bại) ","example":"The flood was the worst disaster in years. (trận này hồng thủy là nhiều năm qua nghiêm trọng nhất tai nạn.) ","acceptCN":[" tai nạn "," tai hoạ "],"collocations":[{"phrase":"natural disaster","meaning":" thiên tai "},{"phrase":"a complete disaster","meaning":" triệt để thất bại "}],"root":"dis-(không) + aster(sao) → tinh vị không lành ","synonyms":["catastrophe"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" tai nạn ","topic":" xã hội "},"exampleEn":"The flood was the worst disaster in years.","exampleZh":" trận này hồng thủy là nhiều năm qua nghiêm trọng nhất tai nạn. "},{"id":26,"word":"unbearable","ipa":"/ʌnˈbeərəbl/ · /ʌnˈberəbl/","pos":"adj.","meaning":"không thể chịu nổi","phrases":"unbearable pain (khó có thể chịu được đau đớn), find sth unbearable (cảm thấy không thể chịu đựng được) ","example":"The heat in the room was unbearable. (trong phòng nóng đến làm cho người ta chịu không được.) ","acceptCN":[" khó có thể chịu được "," không cách nào nhịn được "],"collocations":[{"phrase":"unbearable pain","meaning":" khó có thể chịu được đau đớn "},{"phrase":"find sth unbearable","meaning":" cảm thấy không thể chịu đựng được "}],"root":"un- + bear + -able","synonyms":["intolerable"],"antonyms":["bearable"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khó có thể chịu được ","topic":" miêu tả "},"exampleEn":"The heat in the room was unbearable.","exampleZh":" trong phòng nóng đến làm cho người ta chịu không được. "},{"id":27,"word":"example","ipa":"/ɪɡˈzɑːmpl/ · /ɪɡˈzæmpl/","pos":"n.","meaning":"n. ví dụ, tấm gương. for example; set an example; follow sb's example. động từ exemplify. ","phrases":"for example (tỷ như), set an example (dựng nên tấm gương), take … for example (dùng … làm thí dụ) ","example":"She set a good example for her classmates. (cô ấy là đồng học tạo gương tốt.) ","acceptCN":[" ví dụ "," tấm gương "],"collocations":[{"phrase":"for example","meaning":" tỷ như "},{"phrase":"set an example","meaning":" dựng nên tấm gương "},{"phrase":"take … for example","meaning":" dùng … làm thí dụ "}],"root":" kỳ thi Đại Học: for example / such as cách dùng sai biệt thường khảo thi ","synonyms":["instance","model"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" ví dụ ","topic":" Học tập "},"exampleEn":"She set a good example for her classmates.","exampleZh":" cô ấy là đồng học tạo gương tốt. "},{"id":28,"word":"punctual","ipa":"/ˈpʌŋktʃuəl/","pos":"adj.","meaning":"(thuộc) điểm; như một điểm; đúng giờ (không chậm trễ)","phrases":"be punctual for (đúng giờ đến), punctuality (đúng giờ) ","example":"Please be punctual for the interview. (phỏng vấn mời đến đúng giờ.) ","acceptCN":[" đúng lúc "," đúng giờ "],"collocations":[{"phrase":"be punctual for","meaning":" đúng giờ đến "},{"phrase":"punctuality","meaning":" đúng giờ "}],"root":"punct(chút:điểm) → vừa vặn rơi vào thời gian đốt ","synonyms":["on time"],"antonyms":["late"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" đúng lúc ","topic":" phẩm đức "},"exampleEn":"Please be punctual for the interview.","exampleZh":" phỏng vấn mời đến đúng giờ. "},{"id":29,"word":"prohibit","ipa":"/prəˈhɪbɪt/","pos":"v.","meaning":"cấm, ngăn cấm, cấm chỉ","phrases":"prohibit sb from doing (cấm người nào đó làm), be prohibited (bị cấm chỉ) ","example":"The school prohibits students from using phones in class. (trường học cấm Học viên tại trên lớp học sử dụng điện thoại.) ","acceptCN":[" cấm "," ngăn cản "],"collocations":[{"phrase":"prohibit sb from doing","meaning":" cấm người nào đó làm "},{"phrase":"be prohibited","meaning":" bị cấm chỉ "}],"root":"pro-(trước) + hibit(bắt được) → ngăn ở phía trước ","synonyms":["forbid","ban"],"antonyms":["allow"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" cấm ","topic":" quy tắc "},"exampleEn":"The school prohibits students from using phones in class.","exampleZh":" trường học cấm Học viên tại trên lớp học sử dụng điện thoại. "},{"id":30,"word":"valid","ipa":"/ˈvælɪd/","pos":"adj.","meaning":"vững chắc, có căn cứ; (pháp lý) có giá trị, có hiệu lực; hợp lệ","phrases":"valid passport (hữu hiệu hộ chiếu), a valid reason (lý do chánh đáng) ","example":"Your ticket is valid for three months. (của bạn phiếu vé thời hạn có hiệu lực là ba tháng.) ","acceptCN":[" hữu hiệu "," hợp lý "],"collocations":[{"phrase":"valid passport","meaning":" hữu hiệu hộ chiếu "},{"phrase":"a valid reason","meaning":" lý do chánh đáng "}],"root":"val(giá trị) + -id → đứng được ở ","synonyms":["effective","sound"],"antonyms":["invalid"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" hữu hiệu ","topic":" nói rõ "},"exampleEn":"Your ticket is valid for three months.","exampleZh":" của bạn phiếu vé thời hạn có hiệu lực là ba tháng. "},{"id":31,"word":"overcome","ipa":"/ˌəʊvəˈkʌm/ · /ˌoʊvərˈkʌm/","pos":"v.","meaning":"thắng, chiến thắng; vượt qua, khắc phục (khó khăn...)","phrases":"overcome difficulties (vượt qua khó khăn), overcome fear (vượt qua sợ hãi) ","example":"She overcame her fear of speaking in public. (cô ấy khắc phục trước mặt mọi người nói chuyện sợ hãi.) ","acceptCN":[" vượt qua "," chiến thắng "],"collocations":[{"phrase":"overcome difficulties","meaning":" vượt qua khó khăn "},{"phrase":"overcome fear","meaning":" vượt qua sợ hãi "}],"root":"over + come → từ bên trên áp qua ","synonyms":["conquer","defeat"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" vượt qua ","topic":" phẩm đức "},"exampleEn":"She overcame her fear of speaking in public.","exampleZh":" cô ấy khắc phục trước mặt mọi người nói chuyện sợ hãi. "},{"id":32,"word":"address","ipa":"/əˈdres/","pos":"n. / v.","meaning":"địa chỉ; bài nói chuyện, diễn văn","phrases":"email address (email địa chỉ), address a problem (giải quyết vấn đề) ","example":"We must address the problem of pollution. (chúng tôi phải bắt tay vào làm giải quyết Ô nhiễm vấn đề.) ","acceptCN":[" địa chỉ "," diễn thuyết "," xử lý "],"collocations":[{"phrase":"email address","meaning":" email địa chỉ "},{"phrase":"address a problem","meaning":" giải quyết vấn đề "}],"root":" kỳ thi Đại Học thường khảo thi động từ nghĩa: xử lý vấn đề ","synonyms":["speech","deal with"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" địa chỉ ","topic":" thông dụng "},"exampleEn":"We must address the problem of pollution.","exampleZh":" chúng tôi phải bắt tay vào làm giải quyết Ô nhiễm vấn đề. "},{"id":33,"word":"tailor","ipa":"/ˈteɪlə/ · /ˈteɪlər/","pos":"n. / v.","meaning":"thợ may","phrases":"tailor-made (lượng thân định tố), tailor … to (khiến cho thích ứng) ","example":"The course is tailored to beginners. (cái từ khóa này là chuyên môn là người mới học thiết kế.) ","acceptCN":[" thợ may "," lượng thân định chế(*hàng đặt theo yêu cầu) "],"collocations":[{"phrase":"tailor-made","meaning":" lượng thân định tố "},{"phrase":"tailor … to","meaning":" khiến cho thích ứng "}],"root":" do “ thợ may ” nghĩa rộng là “ theo như cần chế tạo ”","synonyms":["customize"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" thợ may ","topic":" sinh hoạt "},"exampleEn":"The course is tailored to beginners.","exampleZh":" cái từ khóa này là chuyên môn là người mới học thiết kế. "},{"id":34,"word":"donate","ipa":"/dəʊˈneɪt/ · /ˈdoʊneɪt/","pos":"v.","meaning":"(từ Mỹ,nghĩa Mỹ) tặng, cho, biếu; quyên cúng","phrases":"donate money to (hướng … quyên tiền), blood donor (hiến máu người) ","example":"He donated books to the school library. (anh ấy đem sách hiến cho trường học đồ thư quán.) ","acceptCN":[" quyên tặng "," hiến cho "],"collocations":[{"phrase":"donate money to","meaning":" hướng … quyên tiền "},{"phrase":"blood donor","meaning":" hiến máu người "}],"root":"don(cho) + -ate","synonyms":["give","contribute"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" quyên tặng ","topic":" xã hội "},"exampleEn":"He donated books to the school library.","exampleZh":" anh ấy đem sách hiến cho trường học đồ thư quán. "},{"id":35,"word":"focus","ipa":"/ˈfəʊkəs/ · /ˈfoʊkəs/","pos":"n. / v.","meaning":"(toán học), (vật lý) tiêu điểm; (nghĩa bóng) trung tâm, trọng điểm tâm","phrases":"focus on (tập trung ở), the focus of (… tiêu điểm) ","example":"Please focus on your homework. (xin đem lực chú ý tập trung ở bài tập bên trên.) ","acceptCN":[" tiêu điểm "," tập trung "," tập trung "],"collocations":[{"phrase":"focus on","meaning":" tập trung ở "},{"phrase":"the focus of","meaning":"… tiêu điểm "}],"root":" nguyên nghĩa là “ trong lò lửa chút:điểm ”","synonyms":["concentrate"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" tập trung ","topic":" Học tập "},"exampleEn":"Please focus on your homework.","exampleZh":" xin đem lực chú ý tập trung ở bài tập bên trên. "},{"id":36,"word":"disadvantage","ipa":"/ˌdɪsədˈvɑːntɪdʒ/ · /ˌdɪsədˈvæntɪdʒ/","pos":"n.","meaning":"sự bất lợi; thế bất lợi; sự thiệt hại, mối tổn thất","phrases":"at a disadvantage (ở vào bất lợi), advantages and disadvantages (lợi và hại) ","example":"One disadvantage of living here is the noise. (ở chỗ này một cái khuyết điểm là tạp âm.) ","acceptCN":[" khuyết điểm "," điều kiện bất lợi "],"collocations":[{"phrase":"at a disadvantage","meaning":" ở vào bất lợi "},{"phrase":"advantages and disadvantages","meaning":" lợi và hại "}],"root":"dis- + advantage","synonyms":["drawback"],"antonyms":["advantage"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khuyết điểm ","topic":" nói rõ "},"exampleEn":"One disadvantage of living here is the noise.","exampleZh":" ở chỗ này một cái khuyết điểm là tạp âm. "},{"id":37,"word":"matter","ipa":"/ˈmætə/ · /ˈmætər/","pos":"n. / v.","meaning":"n. sự tình, vấn đề; vật chất. v. quan trọng hơn, có quan hệ (It doesn't matter.; What matters is…). as a matter of fact; no matter how. ","phrases":"it doesn't matter (Không sao), no matter how (vô luận như thế nào), as a matter of fact (trên thực tế) ","example":"What matters most is your health. (khẩn yếu nhất là của bạn Sức khỏe.) ","acceptCN":[" sự tình "," quan trọng hơn "," vật chất "],"collocations":[{"phrase":"it doesn't matter","meaning":" Không sao "},{"phrase":"no matter how","meaning":" vô luận như thế nào "},{"phrase":"as a matter of fact","meaning":" trên thực tế "}],"root":" kỳ thi Đại Học Tần suất cao: It doesn't matter / no matter + nghi vấn từ ","synonyms":["issue","count"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" sự tình ","topic":" thông dụng "},"exampleEn":"What matters most is your health.","exampleZh":" khẩn yếu nhất là của bạn Sức khỏe. "},{"id":38,"word":"especially","ipa":"/ɪˈspeʃəli/","pos":"adv.","meaning":"đặc biệt là, nhất là","phrases":"especially when (thực tế lúc … lúc), especially important (thực tế trọng yếu) ","example":"I love sports, especially basketball. (ta thích vận động, nhất là bóng rổ.) ","acceptCN":[" thực tế "," đặc biệt "],"collocations":[{"phrase":"especially when","meaning":" thực tế lúc … lúc "},{"phrase":"especially important","meaning":" thực tế trọng yếu "}],"root":"especially thực tế; specially chuyên môn ","synonyms":["particularly"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" thực tế ","topic":" Ngữ pháp "},"exampleEn":"I love sports, especially basketball.","exampleZh":" ta thích vận động, nhất là bóng rổ. "},{"id":39,"word":"scare","ipa":"/skeə/ · /sker/","pos":"v. / n.","meaning":"làm kinh hãi, làm sợ hãi, doạ (ngáo ộp)","phrases":"scare away (dọa chạy), be scared of (sợ hãi) ","example":"The loud noise scared the birds away. (to lớn tiếng vang đem chim hù chạy.) ","acceptCN":[" khiến cho sợ hãi "," dọa "," khủng hoảng "],"collocations":[{"phrase":"scare away","meaning":" dọa chạy "},{"phrase":"be scared of","meaning":" sợ hãi "}],"root":"scare động tác; scared người sợ; scary sự vật dọa người ","synonyms":["frighten"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khiến cho sợ hãi ","topic":" tình cảm "},"exampleEn":"The loud noise scared the birds away.","exampleZh":" to lớn tiếng vang đem chim hù chạy. "},{"id":40,"word":"wear","ipa":"/weə/ · /wer/","pos":"v. / n.","meaning":"mang, đeo; mặc; để (râu, tóc); đội (mũ)","phrases":"wear out (xuyên phá; khiến cho mỏi mệt), wear a smile (mặt mỉm cười) ","example":"She wore a red dress to the party. (nàng mặc lấy váy đỏ đi tham gia tụ hội.) ","acceptCN":[" mặc "," mang "," mài mòn "],"collocations":[{"phrase":"wear out","meaning":" xuyên phá; khiến cho mỏi mệt "},{"phrase":"wear a smile","meaning":" mặt mỉm cười "}],"root":"wear–wore–worn; cường điệu mặc Trạng thái ","synonyms":["put on"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" mặc ","topic":" Đời sống "},"exampleEn":"She wore a red dress to the party.","exampleZh":" nàng mặc lấy váy đỏ đi tham gia tụ hội. "},{"id":41,"word":"numb","ipa":"/nʌm/","pos":"adj. / v.","meaning":"tê, tê cóng; tê liệt; chết lặng đi","phrases":"numb with cold (đông cứng), feel numb (cảm thấy chết lặng) ","example":"My fingers were numb with cold. (ngón tay của ta cóng đến run lên.) ","acceptCN":[" chết lặng "," mất đi cảm giác "],"collocations":[{"phrase":"numb with cold","meaning":" đông cứng "},{"phrase":"feel numb","meaning":" cảm thấy chết lặng "}],"root":" từ vĩ b không phát âm ","synonyms":["deadened"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" chết lặng ","topic":" Sức khỏe "},"exampleEn":"My fingers were numb with cold.","exampleZh":" ngón tay của ta cóng đến run lên. "},{"id":42,"word":"about","ipa":"/əˈbaʊt/","pos":"prep. / adv.","meaning":"về; quanh quất, quanh quẩn đây đó, rải rác","phrases":"be about to (sắp), what about (… thế nào), about 10 students (ước chừng mười tên Học viên) ","example":"She was about to leave when it began to rain. (cô ấy đang muốn ly khai, ngày mà bắt đầu trời mưa.) ","acceptCN":[" về "," ước chừng "," sắp "],"collocations":[{"phrase":"be about to","meaning":" sắp "},{"phrase":"what about","meaning":"… thế nào "},{"phrase":"about 10 students","meaning":" ước chừng mười tên Học viên "}],"root":" Tần suất cao: be about to / What about","synonyms":["concerning","around"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" về ","topic":" Ngữ pháp "},"exampleEn":"She was about to leave when it began to rain.","exampleZh":" cô ấy đang muốn ly khai, ngày mà bắt đầu trời mưa. "},{"id":43,"word":"praise","ipa":"/preɪz/","pos":"n. / v.","meaning":"sự khen ngợi, sự ca ngợi, sự tán tụng, sự tán dương, sự ca tụng, lời khen ngợi, lời ca ngợi, lời ca tụng, lời tán tụng, lời tán dương","phrases":"praise sb for (bởi vì … khen ngợi người nào đó), in praise of (tán dương) ","example":"The teacher praised him for his honesty. (Giáo viên biểu dương sự thành thật của hắn.) ","acceptCN":[" tán dương "," tán thưởng "],"collocations":[{"phrase":"praise sb for","meaning":" bởi vì … khen ngợi người nào đó "},{"phrase":"in praise of","meaning":" tán dương "}],"root":" và prize (phần thưởng) Chính tả gần ","synonyms":["compliment"],"antonyms":["criticize"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" tán dương ","topic":" sân trường "},"exampleEn":"The teacher praised him for his honesty.","exampleZh":" Giáo viên biểu dương sự thành thật của hắn. "},{"id":44,"word":"radiation","ipa":"/ˌreɪdiˈeɪʃn/","pos":"n.","meaning":"sự bức xạ, sự phát xạ, sự toả ra; bức xạ","phrases":"solar radiation (mặt trời phóng xạ), radiation therapy (phóng xạ trị liệu) ","example":"Too much radiation from the sun can harm the skin. (quá nhiều mặt trời phóng xạ hội thương tổn làn da.) ","acceptCN":[" phóng xạ "," phóng xạ "],"collocations":[{"phrase":"solar radiation","meaning":" mặt trời phóng xạ "},{"phrase":"radiation therapy","meaning":" phóng xạ trị liệu "}],"root":"radi(ánh sáng) + -ation","synonyms":[],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" phóng xạ ","topic":" khoa học "},"exampleEn":"Too much radiation from the sun can harm the skin.","exampleZh":" quá nhiều mặt trời phóng xạ hội thương tổn làn da. "},{"id":45,"word":"but","ipa":"/bʌt/","pos":"conj. / prep. / adv.","meaning":"nhưng, nhưng mà; nếu không; không còn cách nào khác","phrases":"not only…but also (chẳng những … hơn nữa), nothing but (chẳng qua là), cannot help but (không thể không) ","example":"The book is short but interesting. (quyển sách này rất ngắn nhưng thú vị.) ","acceptCN":[" nhưng "," ngoại trừ "," chỉ "],"collocations":[{"phrase":"not only…but also","meaning":" chẳng những … hơn nữa "},{"phrase":"nothing but","meaning":" chẳng qua là "},{"phrase":"cannot help but","meaning":" không thể không "}],"root":" liên từ bề ngoài chuyển hướng; giới từ bề ngoài “ ngoại trừ ”","synonyms":["however","except"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" nhưng ","topic":" Ngữ pháp "},"exampleEn":"The book is short but interesting.","exampleZh":" quyển sách này rất ngắn nhưng thú vị. "},{"id":46,"word":"afraid","ipa":"/əˈfreɪd/","pos":"adj.","meaning":"adj. sợ; lo lắng; tiếc nuối (I'm afraid… uyển chuyển). be afraid of / to do / that. chỉ làm vị ngữ, không làm định ngữ. ","phrases":"be afraid of (sợ hãi), I'm afraid (chỉ sợ), afraid to do (không dám làm) ","example":"I'm afraid I can't go with you today. (chỉ sợ ta hôm nay không thể cùng đi với bạn.) ","acceptCN":[" sợ "," lo lắng "," chỉ sợ "],"collocations":[{"phrase":"be afraid of","meaning":" sợ hãi "},{"phrase":"I'm afraid","meaning":" chỉ sợ "},{"phrase":"afraid to do","meaning":" không dám làm "}],"root":" vị ngữ tính từ; I'm afraid bề ngoài uyển chuyển cự tuyệt ","synonyms":["scared","sorry"],"antonyms":["brave"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" sợ ","topic":" tình cảm "},"exampleEn":"I'm afraid I can't go with you today.","exampleZh":" chỉ sợ ta hôm nay không thể cùng đi với bạn. "},{"id":47,"word":"diagram","ipa":"/ˈdaɪəɡræm/","pos":"n.","meaning":"biểu đồ","phrases":"draw a diagram (họa sơ đồ), a diagram of (… đồ giải) ","example":"The diagram shows how the machine works. (tờ này sơ đồ phô bày máy móc làm thế nào hoạt động.) ","acceptCN":[" biểu đồ "," sơ đồ "],"collocations":[{"phrase":"draw a diagram","meaning":" họa sơ đồ "},{"phrase":"a diagram of","meaning":"… đồ giải "}],"root":"dia-(xuyên qua) + gram(ghi / họa)","synonyms":["chart","figure"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" biểu đồ ","topic":" Học tập "},"exampleEn":"The diagram shows how the machine works.","exampleZh":" tờ này sơ đồ phô bày máy móc làm thế nào hoạt động. "},{"id":48,"word":"family","ipa":"/ˈfæməli/","pos":"n.","meaning":"gia đình, gia quyến; con cái trong gia đình","phrases":"family member (thành viên gia đình), a family of four (một nhà bốn miệng) ","example":"My family is very supportive. (người nhà của ta vô cùng hỗ trợ tôi.) ","acceptCN":[" gia đình "," người nhà "," gia tộc "],"collocations":[{"phrase":"family member","meaning":" thành viên gia đình "},{"phrase":"a family of four","meaning":" một nhà bốn miệng "}],"root":" tập hợp danh từ, chủ vị nhất trí nhìn trọng điểm ","synonyms":["household"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" gia đình ","topic":" Đời sống "},"exampleEn":"My family is very supportive.","exampleZh":" người nhà của ta vô cùng hỗ trợ tôi. "},{"id":49,"word":"importance","ipa":"/ɪmˈpɔːtns/ · /ɪmˈpɔːrtns/","pos":"n.","meaning":"sự quan trọng, tầm quan trọng; quyền thế, thế lực","phrases":"of great importance (rất trọng yếu), the importance of (… tầm quan trọng) ","example":"He stressed the importance of teamwork. (anh ấy nhấn mạnh đoàn đội hợp tác tầm quan trọng.) ","acceptCN":[" tầm quan trọng "," trọng yếu "],"collocations":[{"phrase":"of great importance","meaning":" rất trọng yếu "},{"phrase":"the importance of","meaning":"… tầm quan trọng "}],"root":"important danh từ; of + trừu tượng danh từ = tính từ ","synonyms":["significance"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" tầm quan trọng ","topic":" nói rõ "},"exampleEn":"He stressed the importance of teamwork.","exampleZh":" anh ấy nhấn mạnh đoàn đội hợp tác tầm quan trọng. "},{"id":50,"word":"health","ipa":"/helθ/","pos":"n.","meaning":"sức khoẻ; sự lành mạnh","phrases":"in good health (thân thể Sức khỏe), health care (chữa bệnh bảo vệ sức khoẻ) ","example":"Regular exercise is good for your health. (quy luật rèn luyện hữu ích Sức khỏe.) ","acceptCN":[" Sức khỏe "," tình trạng thân thể "],"collocations":[{"phrase":"in good health","meaning":" thân thể Sức khỏe "},{"phrase":"health care","meaning":" chữa bệnh bảo vệ sức khoẻ "}],"root":"heal(khép lại) tương quan ","synonyms":["fitness"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" Sức khỏe ","topic":" Sức khỏe "},"exampleEn":"Regular exercise is good for your health.","exampleZh":" quy luật rèn luyện hữu ích Sức khỏe. "},{"id":51,"word":"accommodation","ipa":"/əˌkɒməˈdeɪʃn/ · /əˌkɑːməˈdeɪʃn/","pos":"n.","meaning":"sự điều tiết, sự thích nghi, sự làm cho phù hợp; sự điều tiết (sức nhìn của mắt)","phrases":"book accommodation (đặt trước dừng chân), student accommodation (Học viên ký túc xá) ","example":"The school provides accommodation for foreign students. (trường học là du học sinh cung cấp chỗ ở.) ","acceptCN":[" chỗ ở "," ăn ở "],"collocations":[{"phrase":"book accommodation","meaning":" đặt trước dừng chân "},{"phrase":"student accommodation","meaning":" Học viên ký túc xá "}],"root":"ac-(hướng) + commode(thích hợp) → nghỉ ngơi ","synonyms":["lodging","housing"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" chỗ ở ","topic":" sinh hoạt "},"exampleEn":"The school provides accommodation for foreign students.","exampleZh":" trường học là du học sinh cung cấp chỗ ở. "},{"id":52,"word":"or","ipa":"/ɔː/ · /ɔːr/","pos":"conj.","meaning":"conj. hoặc; nếu không (Hurry up, or you'll be late.). either…or…; or else; or so (ước chừng). liên tiếp Chủ ngữ lúc vị ngữ gần đây. ","phrases":"either…or… (hoặc là … hoặc là), or else (nếu không), or so (ước chừng) ","example":"Hurry up, or you will miss the train. (nhanh lên, nếu không bạn sẽ lầm xe lửa.) ","acceptCN":[" hoặc "," nếu không "],"collocations":[{"phrase":"either…or…","meaning":" hoặc là … hoặc là "},{"phrase":"or else","meaning":" nếu không "},{"phrase":"or so","meaning":" ước chừng "}],"root":" lựa chọn hoặc “ nếu không ”; gần đây nhất trí ","synonyms":["otherwise"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" hoặc ","topic":" Ngữ pháp "},"exampleEn":"Hurry up, or you will miss the train.","exampleZh":" nhanh lên, nếu không bạn sẽ lầm xe lửa. "},{"id":53,"word":"barbecue","ipa":"/ˈbɑːbɪkjuː/ · /ˈbɑːrbɪkjuː/","pos":"n. / v.","meaning":"lợn (bò, cừu) nướng (quay) cả con; vỉ để nướng (quay) cả con (lợn bò, cừu...)","phrases":"have a barbecue (cử hành đồ nướng), barbecue sauce (đồ nướng tương) ","example":"We had a barbecue in the garden last Sunday. (tuần lễ trước ngày chúng tôi tại trong hoa viên đồ nướng.) ","acceptCN":[" đồ nướng "," thịt nướng "],"collocations":[{"phrase":"have a barbecue","meaning":" cử hành đồ nướng "},{"phrase":"barbecue sauce","meaning":" đồ nướng tương "}],"root":" đến từ Caribê lời nói, hiện là thông thường hoạt động xã giao ","synonyms":["grill"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" đồ nướng ","topic":" sinh hoạt "},"exampleEn":"We had a barbecue in the garden last Sunday.","exampleZh":" tuần lễ trước ngày chúng tôi tại trong hoa viên đồ nướng. "},{"id":54,"word":"distance","ipa":"/ˈdɪstəns/","pos":"n. / v.","meaning":"n. khoảng cách, xa xa. in the distance (ở phía xa); at a distance; keep one's distance. v. và … làm bất hòa. tính từ distant. ","phrases":"in the distance (ở phía xa), keep one's distance (giữ một khoảng cách) ","example":"We saw a light in the distance. (chúng tôi trông thấy xa xa có ngọn đèn.) ","acceptCN":[" khoảng cách "," xa xa "],"collocations":[{"phrase":"in the distance","meaning":" ở phía xa "},{"phrase":"keep one's distance","meaning":" giữ một khoảng cách "}],"root":"in the distance ở phía xa; at a distance ngăn cách một khoảng cách ","synonyms":["space"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" khoảng cách ","topic":" thông dụng "},"exampleEn":"We saw a light in the distance.","exampleZh":" chúng tôi trông thấy xa xa có ngọn đèn. "},{"id":55,"word":"take","ipa":"/teɪk/","pos":"v.","meaning":"cầm, nắm, giữ; bắt, chiếm","phrases":"take place (phát sinh), take off (cất cánh; cởi), take up (Bắt đầu làm; chiếm dụng) ","example":"It takes about two hours to finish the test. (hoàn thành trắc nghiệm ước chừng phải hai giờ.) ","acceptCN":[" cầm "," tiêu phí "," cưỡi "],"collocations":[{"phrase":"take place","meaning":" phát sinh "},{"phrase":"take off","meaning":" cất cánh; cởi "},{"phrase":"take up","meaning":" Bắt đầu làm; chiếm dụng "}],"root":" Cụm từ động từ rất nhiều, là kỳ thi Đại Học trọng điểm động từ ","synonyms":["bring"],"antonyms":["give"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" cầm ","topic":" Đời sống "},"exampleEn":"It takes about two hours to finish the test.","exampleZh":" hoàn thành trắc nghiệm ước chừng phải hai giờ. "},{"id":56,"word":"leave","ipa":"/liːv/","pos":"v. / n.","meaning":"để lại, bỏ lại, bỏ quên; để lại (sau khi chết), di tặng","phrases":"leave for (khởi hành đi), ask for leave (xin phép nghỉ), leave sb alone (không quấy rầy) ","example":"Don't leave your bag on the bus. (đừng đem bao rơi vào trên xe buýt.) ","acceptCN":[" ly khai "," lưu lại "," ngày nghỉ "],"collocations":[{"phrase":"leave for","meaning":" khởi hành đi "},{"phrase":"ask for leave","meaning":" xin phép nghỉ "},{"phrase":"leave sb alone","meaning":" không quấy rầy "}],"root":"leave–left–left; “ lưu lại / quên đi ” thường khảo thi ","synonyms":["depart","remain"],"antonyms":["arrive"],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" ly khai ","topic":" Đời sống "},"exampleEn":"Don't leave your bag on the bus.","exampleZh":" đừng đem bao rơi vào trên xe buýt. "},{"id":57,"word":"guidance","ipa":"/ˈɡaɪdns/","pos":"n.","meaning":"sự chỉ đạo, sự hướng dẫn; sự dìu dắt","phrases":"under the guidance of (tại … dưới sự chỉ đạo), career guidance (Nghề nghiệp chỉ đạo) ","example":"Students need guidance when choosing subjects. (Học viên đang chọn khoa lúc cần chỉ đạo.) ","acceptCN":[" chỉ đạo "," dẫn đạo "],"collocations":[{"phrase":"under the guidance of","meaning":" tại … dưới sự chỉ đạo "},{"phrase":"career guidance","meaning":" Nghề nghiệp chỉ đạo "}],"root":"guide + -ance","synonyms":["advice","direction"],"antonyms":[],"examTag":{"source":" THPT Tiếng Anh ","frequency":4,"commonUsage":" chỉ đạo ","topic":" sân trường "},"exampleEn":"Students need guidance when choosing subjects.","exampleZh":" Học viên đang chọn khoa lúc cần chỉ đạo. "}];
+
+const TOTAL_QUESTIONS = 57;
+const HISTORY_KEY = 'ielts_vocab_history_list3';
+
+// ==================== DOM ====================
+const navTabs = document.getElementById('navTabs');
+const learnSection = document.getElementById('learnSection');
+const testSection = document.getElementById('testSection');
+const learnGrid = document.getElementById('learnGrid');
+const testSetup = document.getElementById('testSetup');
+const testActiveArea = document.getElementById('testActiveArea');
+const testResults = document.getElementById('testResults');
+const btnStartTest = document.getElementById('btnStartTest');
+const btnPlayTest = document.getElementById('btnPlayTest');
+const btnSubmit = document.getElementById('btnSubmit');
+const btnNext = document.getElementById('btnNext');
+const btnRetry = document.getElementById('btnRetry');
+const btnBackToSetup = document.getElementById('btnBackToSetup');
+const btnClearHistory = document.getElementById('btnClearHistory');
+const inputSpelling = document.getElementById('inputSpelling');
+const inputMeaning = document.getElementById('inputMeaning');
+const testFeedback = document.getElementById('testFeedback');
+const testProgressLabel = document.getElementById('testProgressLabel');
+const testScoreLabel = document.getElementById('testScoreLabel');
+const progressBarFill = document.getElementById('progressBarFill');
+const resultsScore = document.getElementById('resultsScore');
+const resultsDetail = document.getElementById('resultsDetail');
+const resultsTableBody = document.getElementById('resultsTableBody');
+const historyContent = document.getElementById('historyContent');
+
+// ==================== Âm thanh hợp thành ====================
+let synth = window.speechSynthesis;
+let britishFemaleVoice = null;
+
+async function loadVoices() {
+    if (!synth) return;
+    const getBestVoice = () => {
+        const voices = synth.getVoices();
+        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
+        for (const name of preferred) {
+            const found = voices.find(v => v.name === name & v.lang.startsWith('en'));
+            if (found) return found;
+        }
+        let voice = voices.find(v => v.lang.startsWith('en-GB') & (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
+        if (voice) return voice;
+        voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
+        return voice || voices(0);
+    };
+    if (synth.getVoices().length > 0) {
+        britishFemaleVoice = getBestVoice();
+    } else {
+        await new Promise(resolve => {
+            const handler = () => {
+                britishFemaleVoice = getBestVoice();
+                synth.removeEventListener('voiceschanged', handler);
+                resolve();
+            };
+            synth.addEventListener('voiceschanged', handler);
+            setTimeout(() => {
+                if (!britishFemaleVoice) britishFemaleVoice = getBestVoice();
+                synth.removeEventListener('voiceschanged', handler);
+                resolve();
+            }, 2000);
+        });
+    }
+}
+
+function speakWord(word, callback) {
+    if (!synth) { if(callback) callback(); return; }
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(word);
+    if (britishFemaleVoice) utterance.voice = britishFemaleVoice;
+    utterance.lang = 'en-GB';
+    utterance.rate = 0.9;
+    utterance.pitch = 1.0;
+    utterance.volume = 1.0;
+    if (callback) { utterance.onend = callback; utterance.onerror = () => callback(); }
+    synth.speak(utterance);
+}
+
+loadVoices();
+
+// ==================== Lịch sử ghi chép ====================
+function getHistory() {
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e) { return []; }
+}
+function saveHistory(record) {
+    const history = getHistory();
+    history.unshift(record);
+    if (history.length > 50) history.length = 50;
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+}
+function clearHistory() {
+    if (confirm(' nhất định phải thanh trừ tất cả Lịch sử ghi chép không? ')) {
+        localStorage.removeItem(HISTORY_KEY);
+        renderHistory();
+    }
+}
+function renderHistory() {
+    const history = getHistory();
+    if (!history.length) {
+        historyContent.innerHTML = '<div class="history-empty"> tạm thời chưa có Đánh giá ghi chép </div>';
+        return;
+    }
+    const list = document.createElement('ul');
+    list.className = 'history-list';
+    history.forEach(record => {
+        const li = document.createElement('li');
+        const time = new Date(record.timestamp);
+        const timeStr = `${time.getFullYear()}-${String(time.getMonth()+1).padStart(2,'0')}-${String(time.getDate()).padStart(2,'0')} ${String(time.getHours()).padStart(2,'0')}:${String(time.getMinutes()).padStart(2,'0')}`;
+        li.innerHTML = `<div><span class="history-score">${record.score} / ${record.total}</span><span style="margin-left:8px;color:${record.percent>=80?'#3a7d5a':record.percent>=60?'#b8860b':'#c0392b'};">${record.percent}%</span></div><div class="history-time">${timeStr}</div>`;
+        list.appendChild(li);
+    });
+    historyContent.innerHTML = '';
+    historyContent.appendChild(list);
+}
+
+// ==================== Điều hướng ====================
+let currentMode = 'learn';
+navTabs.addEventListener('click', e => {
+    const tab = e.target.closest('.nav-tab');
+    if (!tab) return;
+    const mode = tab.dataset.mode;
+    if (mode === currentMode) return;
+    currentMode = mode;
+    navTabs.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    if (mode === 'learn') {
+        learnSection.classList.add('active');
+        testSection.classList.remove('active');
+        resetTestState();
+    } else {
+        learnSection.classList.remove('active');
+        testSection.classList.add('active');
+        showTestSetup();
+        renderHistory();
+    }
+    if (synth) synth.cancel();
+    document.querySelectorAll('.playing').forEach(el => el.classList.remove('playing'));
+});
+
+function resetTestState() {
+    testSetup.style.display = '';
+    testActiveArea.classList.remove('visible');
+    testResults.classList.remove('visible');
+    testFeedback.classList.remove('visible','correct-all','partial','wrong-all');
+    testFeedback.textContent = '';
+    btnNext.classList.remove('visible');
+    inputSpelling.value = ''; inputMeaning.value = '';
+    inputSpelling.className = ''; inputMeaning.className = '';
+    btnSubmit.disabled = false; btnSubmit.style.display = '';
+    btnPlayTest.classList.remove('playing');
+}
+function showTestSetup() {
+    resetTestState();
+    testSetup.style.display = '';
+    testActiveArea.classList.remove('visible');
+    testResults.classList.remove('visible');
+}
+
+// ==================== Học tập hình thức xây dựng ====================
+function buildLearnCards() {
+    learnGrid.innerHTML = '';
+    wordData.forEach(w => {
+        const card = document.createElement('div');
+        card.className = 'word-card';
+        card.innerHTML = `
+            <div class="word-card-top">
+                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+                <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
+            </div>
+            <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
+            <div class="word-detail">
+                <div class="word-detail-row"><strong>📎 thông thường từ tổ / câu hình:</strong>${w.phrases}</div>
+                <div class="word-detail-example">📖 ${w.example}</div>
+            </div>
+            <div class="card-collapse-hint"> nhấn vào tạp phiến thu hồi tình hình cụ thể và tỉ mỉ ▲</div>
+        `;
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.btn-play-card')) return;
+            const wasExpanded = card.classList.contains('expanded');
+            document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
+            if (!wasExpanded) { card.classList.add('expanded'); card.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+        });
+        card.querySelector('.btn-play-card').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelectorAll('.btn-play.playing').forEach(b => b.classList.remove('playing'));
+            this.classList.add('playing');
+            speakWord(w.word, () => this.classList.remove('playing'));
+        });
+        learnGrid.appendChild(card);
+    });
+}
+buildLearnCards();
+document.addEventListener('click', function(e) {
+    if (currentMode!== 'learn') return;
+    if (!e.target.closest('.word-card')) {
+        document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
+    }
+});
+
+// ==================== Đánh giá hình thức ====================
+let testWords = [];
+let testCurrentIndex = 0;
+let testScore = 0;
+let testResultsData = [];
+let testSubmitted = false;
+
+function shuffleArray(arr) {
+    const a = (...arr);
+    for (let i = a.length-1; i>0; i--) {
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+}
+
+btnStartTest.addEventListener('click', () => {
+    testWords = shuffleArray(wordData).slice(0, TOTAL_QUESTIONS);
+    testCurrentIndex = 0; testScore = 0; testResultsData = []; testSubmitted = false;
+    testSetup.style.display = 'none';
+    testActiveArea.classList.add('visible');
+    testResults.classList.remove('visible');
+    testFeedback.classList.remove('visible','correct-all','partial','wrong-all'); testFeedback.textContent = '';
+    btnNext.classList.remove('visible');
+    btnSubmit.disabled = false; btnSubmit.style.display = '';
+    inputSpelling.value = ''; inputMeaning.value = '';
+    inputSpelling.className = ''; inputMeaning.className = '';
+    btnPlayTest.classList.remove('playing');
+    updateTestProgress();
+    setTimeout(() => playCurrentWord(), 400);
+});
+
+function updateTestProgress() {
+    testProgressLabel.textContent = ` thứ ${testCurrentIndex+1} / ${TOTAL_QUESTIONS} câu`;
+    testScoreLabel.textContent = ` Điểm số: ${testScore}`;
+    progressBarFill.style.width = Math.round((testCurrentIndex / TOTAL_QUESTIONS)*100) + '%';
+}
+
+function playCurrentWord() {
+    if (testCurrentIndex >= testWords.length) return;
+    btnPlayTest.classList.add('playing');
+    speakWord(testWords[testCurrentIndex].word, () => btnPlayTest.classList.remove('playing'));
+}
+btnPlayTest.addEventListener('click', () => { if (!testSubmitted) playCurrentWord(); });
+
+function submitAnswer() {
+    if (testSubmitted || testCurrentIndex >= testWords.length) return;
+    testSubmitted = true; btnSubmit.disabled = true;
+    const w = testWords(testCurrentIndex);
+    const userSpelling = inputSpelling.value.trim();
+    const userMeaning = inputMeaning.value.trim();
+    const spellingCorrect = userSpelling.toLowerCase() === w.word.toLowerCase();
+    let meaningCorrect = false;
+    if (userMeaning.length > 0) {
+        const userCN = userMeaning.replace(/\s+/g, '');
+        for (const accept of w.acceptCN) {
+            if (userCN.includes(accept) || accept.includes(userCN)) { meaningCorrect = true; break; }
+        }
+        if (!meaningCorrect) {
+            const meaningClean = w.meaning.replace(/[;;,,, \s]/g, '');
+            if (userCN.includes(meaningClean.substring(0, Math.min(3,meaningClean.length))) || meaningClean.includes(userCN)) {
+                meaningCorrect = true;
+            }
+        }
+    }
+    inputSpelling.className = spellingCorrect? 'correct-input': 'wrong-input';
+    inputMeaning.className = meaningCorrect? 'correct-input': 'wrong-input';
+    const earned = (spellingCorrect & meaningCorrect)? 1: 0;
+    if (earned) testScore++;
+    testFeedback.classList.add('visible');
+    if (spellingCorrect & meaningCorrect) {
+        testFeedback.classList.add('correct-all'); testFeedback.classList.remove('partial','wrong-all');
+        testFeedback.innerHTML = `✅ <strong>Chính xác hoàn toàn!</strong><br>${w.word} — ${w.meaning}`;
+    } else if (!spellingCorrect &!meaningCorrect) {
+        testFeedback.classList.add('wrong-all'); testFeedback.classList.remove('correct-all','partial');
+        testFeedback.innerHTML = `❌ <strong>Chính tả và Nghĩa đều không chính xác</strong><br>📝 Đúng Chính tả: <strong>${w.word}</strong> (của bạn: ${userSpelling||' Chưa điền '}) <br>🈶 Đúng Nghĩa: <strong>${w.meaning}</strong> (của bạn: ${userMeaning||' Chưa điền '}) `;
+    } else if (!spellingCorrect) {
+        testFeedback.classList.add('partial'); testFeedback.classList.remove('correct-all','wrong-all');
+        testFeedback.innerHTML = `⚠️ <strong>Nghĩa Đúng, Chính tả có sai</strong><br>📝 Đúng Chính tả: <strong>${w.word}</strong> (của bạn: ${userSpelling||' Chưa điền '}) <br>🈶 Nghĩa: ${w.meaning} ✅`;
+    } else {
+        testFeedback.classList.add('partial'); testFeedback.classList.remove('correct-all','wrong-all');
+        testFeedback.innerHTML = `⚠️ <strong>Chính tả Đúng, Nghĩa có sai</strong><br>📝 ${w.word} ✅<br>🈶 Đúng Nghĩa: <strong>${w.meaning}</strong> (của bạn: ${userMeaning||' Chưa điền '}) `;
+    }
+    testResultsData.push({
+        word: w.word, ipa: w.ipa, meaning: w.meaning,
+        userSpelling, userMeaning, spellingCorrect, meaningCorrect, earned
+    });
+    updateTestProgress();
+    btnNext.classList.add('visible');
+    btnSubmit.style.display = 'none';
+    testFeedback.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+btnSubmit.addEventListener('click', submitAnswer);
+inputMeaning.addEventListener('keydown', e => { if (e.key==='Enter' &!testSubmitted) submitAnswer(); });
+inputSpelling.addEventListener('keydown', e => { if (e.key==='Enter' &!testSubmitted) inputMeaning.focus(); });
+
+btnNext.addEventListener('click', () => {
+    testCurrentIndex++; testSubmitted = false;
+    if (testCurrentIndex >= testWords.length) { showFinalResults(); return; }
+    inputSpelling.value = ''; inputMeaning.value = '';
+    inputSpelling.className = ''; inputMeaning.className = '';
+    testFeedback.classList.remove('visible','correct-all','partial','wrong-all'); testFeedback.textContent = '';
+    btnNext.classList.remove('visible');
+    btnSubmit.disabled = false; btnSubmit.style.display = '';
+    updateTestProgress();
+    setTimeout(() => playCurrentWord(), 300);
+    inputSpelling.focus();
+});
+
+function showFinalResults() {
+    testActiveArea.classList.remove('visible');
+    testResults.classList.add('visible');
+    const earnedTotal = testResultsData.reduce((s,r) => s + r.earned, 0);
+    const percent = Math.round((earnedTotal / TOTAL_QUESTIONS)*100);
+    resultsScore.textContent = `${earnedTotal} / ${TOTAL_QUESTIONS}`;
+    resultsDetail.textContent = ` Tỷ lệ đúng ${percent}% — ${percent>=80?'🎉 vô cùng bổng! ':percent>=60?'👍 không sai, Tiếp tục cố gắng lên! ':'💪 cần thêm nữa Luyện tập, cố gắng lên! '}`;
+    resultsTableBody.innerHTML = '';
+    testResultsData.forEach((r,i) => {
+        const tr = document.createElement('tr');
+        tr.className = r.earned? 'row-correct': 'row-wrong';
+        const icon = r.earned? '✅': (r.spellingCorrect||r.meaningCorrect? '⚠️': '❌');
+        tr.innerHTML = `
+            <td>${i+1}</td>
+            <td><strong>${r.word}</strong> <span style="color:#888;font-size:0.8rem;">${r.ipa}</span><br><span style="font-size:0.8rem;">${r.meaning}</span></td>
+            <td style="color:${r.spellingCorrect?'#3a7d5a':'#c0392b'}">${r.userSpelling||'—'}</td>
+            <td style="color:${r.meaningCorrect?'#3a7d5a':'#c0392b'}">${r.userMeaning||'—'}</td>
+            <td>${icon}</td>
+        `;
+        resultsTableBody.appendChild(tr);
+    });
+    saveHistory({ timestamp: Date.now(), score: earnedTotal, total: TOTAL_QUESTIONS, percent });
+    testResults.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+btnRetry.addEventListener('click', () => {
+    testResults.classList.remove('visible');
+    testActiveArea.classList.add('visible');
+    testWords = shuffleArray(wordData).slice(0, TOTAL_QUESTIONS);
+    testCurrentIndex = 0; testScore = 0; testResultsData = []; testSubmitted = false;
+    inputSpelling.value = ''; inputMeaning.value = '';
+    inputSpelling.className = ''; inputMeaning.className = '';
+    testFeedback.classList.remove('visible','correct-all','partial','wrong-all'); testFeedback.textContent = '';
+    btnNext.classList.remove('visible'); btnSubmit.disabled = false; btnSubmit.style.display = '';
+    btnPlayTest.classList.remove('playing');
+    updateTestProgress();
+    setTimeout(() => playCurrentWord(), 400);
+});
+
+btnBackToSetup.addEventListener('click', () => {
+    showTestSetup();
+    testResults.classList.remove('visible');
+    renderHistory();
+});
+
+btnClearHistory.addEventListener('click', clearHistory);
+
+document.addEventListener('keydown', function(e) {
+    if (currentMode!== 'test' || testResults.classList.contains('visible')) return;
+    if (testActiveArea.classList.contains('visible') &!testSubmitted) {
+        if (e.key === ' ' & document.activeElement!== inputSpelling & document.activeElement!== inputMeaning) {
+            e.preventDefault(); playCurrentWord();
+        }
+    }
+});
+
+renderHistory();
+})();
+</script>
+</body>
+</html>

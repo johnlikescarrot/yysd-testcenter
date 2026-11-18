@@ -45,7 +45,7 @@ function parseWordData(html) {
   if (!m) return [];
   try {
     const arr = Function('"use strict"; return (' + m[1] + ");")();
-    return Array.isArray(arr) ? arr : [];
+    return Array.isArray(arr)? arr: [];
   } catch (e) {
     return [];
   }
@@ -81,7 +81,7 @@ function shuffleSeeded(arr, seed) {
 }
 
 function weightsForShrine(n) {
-  // 六章难度：前易后难，终章偏学术/高难
+  // sáu chương độ khó: trước dễ sau khó, chương cuối thiên Học thuật / yêu cầu cao
   if (n <= 8) return { 1: 0.55, 2: 0.35, 3: 0.08, 4: 0.02 };
   if (n <= 16) return { 1: 0.3, 2: 0.4, 3: 0.22, 4: 0.08 };
   if (n <= 24) return { 1: 0.15, 2: 0.3, 3: 0.35, 4: 0.2 };
@@ -119,7 +119,7 @@ function main() {
     for (const w of words) {
       const word = String(w.word || "").trim();
       const meaning = String(w.meaning || "").trim();
-      if (!word || !meaning) continue;
+      if (!word ||!meaning) continue;
       const key = word.toLowerCase();
       const prev = byKey.get(key);
       if (prev) {
@@ -133,7 +133,7 @@ function main() {
         meaning,
         ipa: String(w.ipa || "").trim(),
         pos: String(w.pos || "").trim(),
-        acceptCN: Array.isArray(w.acceptCN) ? w.acceptCN.slice(0, 8) : [],
+        acceptCN: Array.isArray(w.acceptCN)? w.acceptCN.slice(0, 8): [],
         example: String(w.example || "").trim(),
         tier,
         source: subj
@@ -145,7 +145,7 @@ function main() {
   for (const w of hard) {
     const word = String(w.word || "").trim();
     const meaning = String(w.meaning || "").trim();
-    if (!word || !meaning) continue;
+    if (!word ||!meaning) continue;
     const key = word.toLowerCase();
     const prev = byKey.get(key);
     if (prev) {
@@ -185,7 +185,7 @@ function main() {
     while (picked.length < WORDS_PER_SHRINE && guard < 400) {
       guard++;
       const tier = pickTier(weights, rnd);
-      const pool = byTier[tier].length ? byTier[tier] : words;
+      const pool = byTier[tier].length? byTier[tier]: words;
       const cand = pool[Math.floor(rnd() * pool.length)];
       const k = cand.word.toLowerCase();
       if (used.has(k) && used.size < words.length - 20) continue;

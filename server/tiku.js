@@ -1,6 +1,6 @@
 "use strict";
 /**
- * 题库中心 — papers are block-id lists pointing at existing Set / dated JSON.
+ * Ngân hàng đề trung tâm — papers are block-id lists pointing at existing Set / dated JSON.
  */
 var crypto = require("crypto");
 var fs = require("fs");
@@ -8,7 +8,7 @@ var path = require("path");
 
 var KINDS = { practice: 1, full: 1, single: 1 };
 var SKILLS = ["reading", "listening", "writing", "speaking"];
-var SKILL_ZH = { reading: "阅读", listening: "听力", writing: "写作", speaking: "口语" };
+var SKILL_ZH = { reading: "Đọc", listening: "Nghe", writing: "Viết", speaking: "Nói" };
 var STATUSES = { draft: 1, pending: 1, live: 1, unpublished: 1 };
 var GROUP_TYPES = {
   complete_words: 1,
@@ -18,20 +18,20 @@ var GROUP_TYPES = {
   interview: 1
 };
 var TYPE_ZH = {
-  complete_words: "单词填空",
-  daily_life: "生活阅读",
-  academic: "学术文章",
-  choose_response: "听句选回应",
-  conversation: "对话",
-  announcement: "通知",
-  lecture: "学术讲座",
-  sentence: "句子构建",
-  email: "邮件写作",
-  discussion: "学术讨论",
-  repeat: "听力复述",
-  interview: "模拟面试"
+  complete_words: " Từ vựng lấp chỗ trống ",
+  daily_life: " sinh hoạt Đọc ",
+  academic: " Học thuật văn chương ",
+  choose_response: " nghe câu chọn đáp lại ",
+  conversation: " đối thoại ",
+  announcement: " thông tri ",
+  lecture: " Học thuật toạ đàm ",
+  sentence: " câu xây dựng ",
+  email: " Email Viết ",
+  discussion: " Thảo luận học thuật ",
+  repeat: " Nghe thuật lại ",
+  interview: " mô phỏng phỏng vấn "
 };
-// 冲刺包日期卷 = library/toefl 里四科齐全的同名日期；老师上传即上架，不再硬编码清单
+// chạy nước rút bao ngày cuốn = library/toefl dặm bốn khoa đầy đủ hết cùng tên ngày; Giáo viên thượng truyền(*upload) tiếp xúc lên khung(vào VIP), không hề cứng rắn mã hóa danh sách
 function stockMocks(repoRoot) {
   var dir = path.join(repoRoot || path.join(__dirname, ".."), "library", "toefl");
   var names;
@@ -52,13 +52,13 @@ function nowIso() {
 }
 
 function clip(s, n) {
-  return String(s == null ? "" : s).trim().slice(0, n || 200);
+  return String(s == null? "": s).trim().slice(0, n || 200);
 }
 
 function parseJson(raw, fallback) {
   try {
     var v = JSON.parse(raw);
-    return v == null ? fallback : v;
+    return v == null? fallback: v;
   } catch (e) {
     return fallback;
   }
@@ -104,7 +104,7 @@ function isLoopback(ip) {
 
 function v4(s) {
   var p = String(s).split(".");
-  if (p.length !== 4) return null;
+  if (p.length!== 4) return null;
   var n = 0;
   for (var i = 0; i < 4; i++) {
     if (!/^\d{1,3}$/.test(p[i]) || +p[i] > 255) return null;
@@ -113,22 +113,22 @@ function v4(s) {
   return n;
 }
 
-/* 条目可是单 IP，也可是 IPv4 网段（CIDR）。宽带重拨会在段内换出口 IP，纯精确匹配会把老师挡在外面。 */
+/* điều mục thế nhưng là đơn IP, cũng có thể là IPv4 mạng lưới đoạn (CIDR). băng thông rộng trọng đám sẽ ở đoạn bên trong đổi ra khỏi miệng IP, thuần túy chính xác xứng đôi sẽ đem Giáo viên ngăn tại bên ngoài. */
 function ipMatches(ip, entry) {
   var slash = entry.indexOf("/");
   if (slash < 0) return ip === entry;
   var bits = entry.slice(slash + 1);
   var a = v4(ip), net = v4(entry.slice(0, slash));
-  if (a === null || net === null || !/^\d{1,2}$/.test(bits) || +bits > 32) return false;
-  var mask = +bits === 0 ? 0 : ((-1 << (32 - +bits)) >>> 0);
+  if (a === null || net === null ||!/^\d{1,2}$/.test(bits) || +bits > 32) return false;
+  var mask = +bits === 0? 0: ((-1 << (32 - +bits)) >>> 0);
   return ((a & mask) >>> 0) === ((net & mask) >>> 0);
 }
 
-// shortcut: IPv6 条目只做精确匹配，不支持前缀；真要放行 IPv6 网段再补解析。
+// shortcut: IPv6 điều mục chỉ làm chính xác xứng đôi, không hỗ trợ tiền tố; thật muốn cho đi IPv6 mạng lưới đoạn lại bổ Giải thích đáp án.
 function validIpEntry(s) {
   var slash = s.indexOf("/");
-  if (slash < 0) return v4(s) !== null;
-  return v4(s.slice(0, slash)) !== null && /^\d{1,2}$/.test(s.slice(slash + 1)) && +s.slice(slash + 1) <= 32;
+  if (slash < 0) return v4(s)!== null;
+  return v4(s.slice(0, slash))!== null && /^\d{1,2}$/.test(s.slice(slash + 1)) && +s.slice(slash + 1) <= 32;
 }
 
 function ipAllowed(db, ip) {
@@ -147,31 +147,31 @@ function listIps(db) {
 
 function upsertIp(db, ip, note) {
   ip = clip(ip, 80);
-  if (!ip || !validIpEntry(ip) || isLoopback(ip)) return { error: "无效 IP 或网段" };
+  if (!ip ||!validIpEntry(ip) || isLoopback(ip)) return { error: " không có hiệu quả IP hoặc mạng lưới đoạn " };
   db.prepare(
-    "INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES (?, ?, ?) " +
+    "INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES (?,?,?) " +
     "ON CONFLICT(ip) DO UPDATE SET note = excluded.note"
   ).run(ip, clip(note, 80), nowIso());
   return { ok: true };
 }
 
 function deleteIp(db, ip) {
-  db.prepare("DELETE FROM tiku_ip_allow WHERE ip = ?").run(clip(ip, 80));
+  db.prepare("DELETE FROM tiku_ip_allow WHERE ip =?").run(clip(ip, 80));
   return { ok: true };
 }
 
 function teacherCanTiku(db, teacher, isAdmin) {
   if (isAdmin) return true;
-  if (!teacher || !teacher.id) return false;
-  var row = db.prepare("SELECT can_tiku FROM teachers WHERE id = ?").get(teacher.id);
+  if (!teacher ||!teacher.id) return false;
+  var row = db.prepare("SELECT can_tiku FROM teachers WHERE id =?").get(teacher.id);
   return !!(row && row.can_tiku);
 }
 
 function setCanTiku(db, teacherId, on) {
   var id = Math.floor(Number(teacherId) || 0);
-  if (!id) return { error: "无效老师" };
-  var r = db.prepare("UPDATE teachers SET can_tiku = ? WHERE id = ?").run(on ? 1 : 0, id);
-  if (!r.changes) return { error: "老师不存在" };
+  if (!id) return { error: " không có hiệu quả Giáo viên " };
+  var r = db.prepare("UPDATE teachers SET can_tiku =? WHERE id =?").run(on? 1: 0, id);
+  if (!r.changes) return { error: " Giáo viên không tồn tại " };
   return { ok: true };
 }
 
@@ -185,7 +185,7 @@ var PREDICTION_DIR = "server/data/toefl-prediction-2026-10-17";
 
 function predictionManifest(repoRoot) {
   var file = path.join(repoRoot, PREDICTION_DIR, "manifest.json");
-  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+  return fs.existsSync(file)? JSON.parse(fs.readFileSync(file, "utf8")): null;
 }
 
 function readJson(file) {
@@ -197,19 +197,19 @@ function blockDetail(repoRoot, id) {
   if (!block) return null;
   var file = block.source === "prediction"
     ? path.join(repoRoot, PREDICTION_DIR, block.skill + ".json")
-    : path.join(repoRoot, block.source === "date" ? "library" : "app/library", "toefl",
+    : path.join(repoRoot, block.source === "date"? "library": "app/library", "toefl",
       (block.paperId || "set-" + block.set) + "-" + block.skill + ".json");
   var paper = readJson(file);
-  if (!paper) throw new Error("题目文件缺失");
+  if (!paper) throw new Error(" đề mục văn bản tài liệu thiếu thốn ");
   var prediction = predictionManifest(repoRoot);
   var sourceItems = [];
   var assets = {};
   if (prediction && (block.sources || []).indexOf("prediction") >= 0) {
     var snapshot = readJson(path.join(repoRoot, PREDICTION_DIR, "snapshot.json"));
-    if (!snapshot) throw new Error("预测包原始资料缺失");
+    if (!snapshot) throw new Error(" dự đoán bao nguyên thủy tư liệu thiếu thốn ");
     prediction.members.filter(function (m) { return m.blockId === id; }).forEach(function (m) {
       var item = snapshot.sections[m.key].items.filter(function (x) { return x.num === m.num; })[0];
-      if (!item) throw new Error("预测包来源关系缺失");
+      if (!item) throw new Error(" dự đoán bao nơi phát ra quan hệ thiếu thốn ");
       sourceItems.push(item);
     });
     prediction.assets.forEach(function (a) { assets[a.path] = a; });
@@ -222,11 +222,11 @@ function blockDetail(repoRoot, id) {
       Object.keys(value).forEach(function (k) { out[k] = rewrite(value[k]); });
       return out;
     }
-    if (typeof value !== "string") return value;
+    if (typeof value!== "string") return value;
     var asset = assets[value];
     if (asset) {
       var url = "/api/tiku/prediction/media/" + asset.filename;
-      media[url] = { path: url, label: path.basename(asset.path), kind: asset.type, available: !asset.error };
+      media[url] = { path: url, label: path.basename(asset.path), kind: asset.type, available:!asset.error };
       return url;
     }
     if (value.indexOf(PREDICTION_DIR + "/media/") === 0) {
@@ -242,7 +242,7 @@ function blockDetail(repoRoot, id) {
 function taskHay(t) {
   var parts = [];
   function add(s) {
-    if (s != null && s !== "") parts.push(String(s));
+    if (s!= null && s!== "") parts.push(String(s));
   }
   function walk(obj, depth) {
     if (obj == null || depth > 6) return;
@@ -254,7 +254,7 @@ function taskHay(t) {
       obj.forEach(function (x) { walk(x, depth + 1); });
       return;
     }
-    if (typeof obj !== "object") return;
+    if (typeof obj!== "object") return;
     Object.keys(obj).forEach(function (k) {
       if (/^(audio|image|fromSec|toSec|module|id|prefix)$/i.test(k)) return;
       walk(obj[k], depth + 1);
@@ -264,13 +264,13 @@ function taskHay(t) {
   return parts.join(" ").toLowerCase();
 }
 
-// 题干里没有可读小标题时，subject/class/code 里往往才是（邮件题目、讲座篇名）。无空格且带连字符的多半是编号。
+// Câu hỏi dặm không có có thể đọc tiểu tiêu đề lúc, subject/class/code dặm thường thường mới là (Email đề mục, toạ đàm bài tên). vô không cách mà lại mang liền ký tự hơn nửa là đánh số.
 var CODE_LIKE = /^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$/;
 function blockTitle(t, typ) {
   var fields = ["subject", "class", "code", "title", "titleZh"];
   for (var i = 0; i < fields.length; i++) {
     var v = t[fields[i]];
-    if (typeof v === "string" && v.length > 1 && !CODE_LIKE.test(v)) return v;
+    if (typeof v === "string" && v.length > 1 &&!CODE_LIKE.test(v)) return v;
   }
   return TYPE_ZH[typ] || typ;
 }
@@ -283,7 +283,7 @@ function blocksFromPaper(paper, meta) {
     var t = tasks[i] || {};
     var typ = String(t.type || "");
     var end = i;
-    if (GROUP_TYPES[typ] && !(meta && meta.noGroup)) {
+    if (GROUP_TYPES[typ] &&!(meta && meta.noGroup)) {
       while (end + 1 < tasks.length && tasks[end + 1].type === typ) end++;
     }
     var title = clip(blockTitle(t, typ), 120);
@@ -397,14 +397,14 @@ function buildPool(repoRoot) {
         b = Object.assign({}, member.block);
         var paper = predictionPapers[b.skill];
         if (!paper) paper = predictionPapers[b.skill] = readJson(path.join(repoRoot, PREDICTION_DIR, b.skill + ".json"));
-        if (!paper) throw new Error("预测包题目文件缺失");
+        if (!paper) throw new Error(" dự đoán bao đề mục văn bản tài liệu thiếu thốn ");
         b.hay = paper.tasks.slice(b.task, b.end + 1).map(taskHay).join(" ");
         out.push(b);
         byId[b.id] = b;
       }
-      if (!b) throw new Error("预测包复用题块不存在：" + member.blockId);
+      if (!b) throw new Error(" dự đoán bao phục dùng câu khối không tồn tại: " + member.blockId);
       b.sources = [b.source];
-      if (b.source !== "prediction") b.sources.push("prediction");
+      if (b.source!== "prediction") b.sources.push("prediction");
     });
   }
   return out;
@@ -418,7 +418,7 @@ function poolIndex(pool) {
 
 function normalizeMinutes(kind, raw) {
   if (kind === "practice") return {};
-  var src = raw && typeof raw === "object" ? raw : {};
+  var src = raw && typeof raw === "object"? raw: {};
   var out = {};
   SKILLS.forEach(function (s) {
     var n = Math.floor(Number(src[s]) || 0);
@@ -428,29 +428,29 @@ function normalizeMinutes(kind, raw) {
 }
 
 function normalizeBlocks(raw, index) {
-  if (!Array.isArray(raw) || !raw.length) return { error: "至少选一个题块" };
-  if (raw.length > 80) return { error: "题块太多" };
+  if (!Array.isArray(raw) ||!raw.length) return { error: " ít nhất chọn một câu khối " };
+  if (raw.length > 80) return { error: " câu khối quá nhiều " };
   var out = [];
   var seen = Object.create(null);
   for (var i = 0; i < raw.length; i++) {
     var id = clip((raw[i] && (raw[i].id || raw[i])) || "", 80);
     var b = index[id];
-    if (!b) return { error: "题块不存在：" + id };
+    if (!b) return { error: " câu khối không tồn tại: " + id };
     if (seen[id]) continue;
     seen[id] = 1;
     out.push(b);
   }
-  if (!out.length) return { error: "至少选一个题块" };
+  if (!out.length) return { error: " ít nhất chọn một câu khối " };
   return { blocks: out };
 }
 
 function validateKind(kind, blocks) {
-  if (!KINDS[kind]) return "类型无效";
-  if (blocks.some(function (b) { return b.source === "prediction"; })) return "预测包仅供教师审阅，不能上架给学生";
-  if (kind !== "single") return "";
+  if (!KINDS[kind]) return " loại hình không có hiệu quả ";
+  if (blocks.some(function (b) { return b.source === "prediction"; })) return " dự đoán bao chỉ cung Giáo viên thẩm duyệt, không thể lên khung(vào VIP) cho học sinh ";
+  if (kind!== "single") return "";
   var skill = blocks[0] && blocks[0].skill;
   for (var i = 0; i < blocks.length; i++) {
-    if (blocks[i].skill !== skill) return "单项模考不能混科";
+    if (blocks[i].skill!== skill) return " Thi thử từng kỹ năng không thể lẫn vào khoa ";
   }
   return "";
 }
@@ -483,7 +483,7 @@ function publicPaper(row, live) {
     kind: body.kind,
     skillMinutes: body.skillMinutes || {},
     blocks: body.blocks || [],
-    makerName: row.owner === "hq" ? "总部" : (row.maker_name || ""),
+    makerName: row.owner === "hq"? " tổng bộ ": (row.maker_name || ""),
     owner: row.owner,
     status: row.status
   };
@@ -514,12 +514,12 @@ function snapshot(row) {
 }
 
 function getPaper(db, id) {
-  return db.prepare("SELECT * FROM tiku_papers WHERE id = ?").get(id);
+  return db.prepare("SELECT * FROM tiku_papers WHERE id =?").get(id);
 }
 
 function titleTaken(db, title, exceptId) {
-  var row = db.prepare("SELECT id FROM tiku_papers WHERE title = ?").get(title);
-  return !!(row && row.id !== exceptId);
+  var row = db.prepare("SELECT id FROM tiku_papers WHERE title =?").get(title);
+  return !!(row && row.id!== exceptId);
 }
 
 function canEdit(row, teacher, isAdmin) {
@@ -531,7 +531,7 @@ function canEdit(row, teacher, isAdmin) {
 }
 
 function canUnpublish(row, teacher, isAdmin) {
-  if (!row || row.status !== "live" && !(row.live_json && row.status === "pending")) return false;
+  if (!row || row.status!== "live" &&!(row.live_json && row.status === "pending")) return false;
   if (row.status === "unpublished") return false;
   if (isAdmin) return true;
   if (row.owner === "hq") return false;
@@ -541,21 +541,21 @@ function canUnpublish(row, teacher, isAdmin) {
 function createPaper(db, teacher, body, isAdmin, index) {
   var title = clip(body && body.title, 80);
   var kind = clip(body && body.kind, 20);
-  if (!title) return { error: "请填写卷名" };
-  if (titleTaken(db, title, "")) return { error: "卷名已存在" };
+  if (!title) return { error: " mời điền cuốn tên " };
+  if (titleTaken(db, title, "")) return { error: " cuốn tên đã tồn tại " };
   var nb = normalizeBlocks(body && body.blocks, index);
   if (nb.error) return nb;
   var kindErr = validateKind(kind, nb.blocks);
   if (kindErr) return { error: kindErr };
   var minutes = normalizeMinutes(kind, body && body.skillMinutes);
   var id = clip(body && body.id, 40) || newId();
-  if (getPaper(db, id)) return { error: "卷已存在" };
-  var owner = isAdmin && body && body.owner === "hq" ? "hq" : "teacher";
+  if (getPaper(db, id)) return { error: " cuốn đã tồn tại " };
+  var owner = isAdmin && body && body.owner === "hq"? "hq": "teacher";
   if (!isAdmin) owner = "teacher";
   db.prepare(
     "INSERT INTO tiku_papers (id, title, kind, status, owner, maker_id, maker_phone, maker_name, " +
     "skill_minutes, blocks, live_json, reject_note, created_at, updated_at, published_at) " +
-    "VALUES (?, ?, ?, 'draft', ?, ?, ?, ?, ?, ?, NULL, '', ?, ?, NULL)"
+    "VALUES (?,?,?, 'draft',?,?,?,?,?,?, NULL, '',?,?, NULL)"
   ).run(
     id, title, kind, owner,
     teacher && teacher.id || null,
@@ -570,21 +570,21 @@ function createPaper(db, teacher, body, isAdmin, index) {
 
 function savePaper(db, id, teacher, body, isAdmin, index) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
-  if (!canEdit(row, teacher, isAdmin)) return { error: "不能改这套卷" };
+  if (!row) return { error: " cuốn không tồn tại " };
+  if (!canEdit(row, teacher, isAdmin)) return { error: " không thể sửa bộ này cuốn " };
   var title = clip(body && body.title, 80) || row.title;
-  if (titleTaken(db, title, id)) return { error: "卷名已存在" };
+  if (titleTaken(db, title, id)) return { error: " cuốn tên đã tồn tại " };
   var kind = clip(body && body.kind, 20) || row.kind;
   var nb = normalizeBlocks(body && body.blocks, index);
   if (nb.error) return nb;
   var kindErr = validateKind(kind, nb.blocks);
   if (kindErr) return { error: kindErr };
   var minutes = normalizeMinutes(kind, body && body.skillMinutes);
-  // 免审：改已上架的卷直接保持上架并刷新 live_json，学生端立即生效
+  // miễn tra xét: sửa đã lên khung(vào VIP) cuốn trực tiếp bảo trì lên khung(vào VIP) cũng Làm mới live_json, Học viên đầu lập tức có hiệu lực
   var wasLive = row.status === "live";
   db.prepare(
     "UPDATE tiku_papers SET title=?, kind=?, skill_minutes=?, blocks=?, status=?, updated_at=? WHERE id=?"
-  ).run(title, kind, JSON.stringify(minutes), JSON.stringify(nb.blocks), wasLive ? "live" : row.status, nowIso(), id);
+  ).run(title, kind, JSON.stringify(minutes), JSON.stringify(nb.blocks), wasLive? "live": row.status, nowIso(), id);
   if (wasLive) {
     db.prepare("UPDATE tiku_papers SET live_json=? WHERE id=?").run(snapshot(getPaper(db, id)), id);
   }
@@ -593,9 +593,9 @@ function savePaper(db, id, teacher, body, isAdmin, index) {
 
 function submitPaper(db, id, teacher, isAdmin, index) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
-  if (!canEdit(row, teacher, isAdmin)) return { error: "不能上架这套卷" };
-  if (row.status === "unpublished") return { error: "已下架，请重新组卷" };
+  if (!row) return { error: " cuốn không tồn tại " };
+  if (!canEdit(row, teacher, isAdmin)) return { error: " không thể lên khung(vào VIP) bộ này cuốn " };
+  if (row.status === "unpublished") return { error: " đã loại bỏ, mời trùng tân tổ cuốn " };
   var blocks = parseJson(row.blocks, []);
   var kindErr = validateKind(row.kind, blocks);
   if (kindErr) return { error: kindErr };
@@ -603,36 +603,36 @@ function submitPaper(db, id, teacher, isAdmin, index) {
     var nb = normalizeBlocks(blocks, index);
     if (nb.error) return nb;
   }
-  // 免审：机构组卷直接上架（SaaS 自治，平台不审内容）
+  // miễn tra xét: cơ cấu tổ cuốn trực tiếp lên khung(vào VIP) (SaaS tự trị, bình đài không tra xét nội dung)
   var t = nowIso();
   db.prepare(
     "UPDATE tiku_papers SET status='live', live_json=?, reject_note='', " +
-    "published_at=COALESCE(published_at, ?), updated_at=? WHERE id=?"
+    "published_at=COALESCE(published_at,?), updated_at=? WHERE id=?"
   ).run(snapshot(row), t, t, id);
   return { ok: true, paper: staffPaper(getPaper(db, id)) };
 }
 
 function approvePaper(db, id, body) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
-  if (row.status !== "pending") return { error: "不在待审" };
+  if (!row) return { error: " cuốn không tồn tại " };
+  if (row.status!== "pending") return { error: " không có ở đây đợi tra xét " };
   var kindErr = validateKind(row.kind, parseJson(row.blocks, []));
   if (kindErr) return { error: kindErr };
   var title = clip(body && body.title, 80) || row.title;
-  if (titleTaken(db, title, id)) return { error: "卷名已存在" };
+  if (titleTaken(db, title, id)) return { error: " cuốn tên đã tồn tại " };
   var t = nowIso();
   db.prepare(
     "UPDATE tiku_papers SET title=?, live_json=?, status='live', reject_note='', " +
-    "published_at=COALESCE(published_at, ?), updated_at=? WHERE id=?"
+    "published_at=COALESCE(published_at,?), updated_at=? WHERE id=?"
   ).run(title, snapshot(Object.assign({}, row, { title: title })), t, t, id);
   return { ok: true, paper: staffPaper(getPaper(db, id)) };
 }
 
 function rejectPaper(db, id, note) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
-  if (row.status !== "pending") return { error: "不在待审" };
-  var next = row.live_json ? "live" : "draft";
+  if (!row) return { error: " cuốn không tồn tại " };
+  if (row.status!== "pending") return { error: " không có ở đây đợi tra xét " };
+  var next = row.live_json? "live": "draft";
   db.prepare("UPDATE tiku_papers SET status=?, reject_note=?, updated_at=? WHERE id=?")
     .run(next, clip(note, 200), nowIso(), id);
   return { ok: true, paper: staffPaper(getPaper(db, id)) };
@@ -640,11 +640,11 @@ function rejectPaper(db, id, note) {
 
 function unpublishPaper(db, id, teacher, isAdmin) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
-  if (row.status === "unpublished") return { error: "已经下架" };
-  if (!row.live_json && row.status !== "live") return { error: "还未上架" };
-  if (!isAdmin && (row.owner === "hq" || !teacher || row.maker_id !== teacher.id)) {
-    return { error: "不能下架这套卷" };
+  if (!row) return { error: " cuốn không tồn tại " };
+  if (row.status === "unpublished") return { error: " đã loại bỏ " };
+  if (!row.live_json && row.status!== "live") return { error: " còn chưa lên khung(vào VIP) " };
+  if (!isAdmin && (row.owner === "hq" ||!teacher || row.maker_id!== teacher.id)) {
+    return { error: " không thể loại bỏ bộ này cuốn " };
   }
   db.prepare("UPDATE tiku_papers SET status='unpublished', updated_at=? WHERE id=?")
     .run(nowIso(), id);
@@ -654,7 +654,7 @@ function unpublishPaper(db, id, teacher, isAdmin) {
 function listStaff(db, teacher, isAdmin) {
   var rows = isAdmin
     ? db.prepare("SELECT * FROM tiku_papers ORDER BY updated_at DESC").all()
-    : db.prepare("SELECT * FROM tiku_papers WHERE maker_id = ? ORDER BY updated_at DESC").all(teacher.id);
+    : db.prepare("SELECT * FROM tiku_papers WHERE maker_id =? ORDER BY updated_at DESC").all(teacher.id);
   return rows.map(staffPaper);
 }
 
@@ -674,7 +674,7 @@ function catalog(db, kind) {
     }
     var hm = /^hq-(\d{4}-\d{2}-\d{2})$/.exec(String(row.id));
     if (hm && mocks.indexOf(hm[1]) < 0) mocks.push(hm[1]);
-    if (kind && live.kind !== kind) return;
+    if (kind && live.kind!== kind) return;
     if (String(row.id).indexOf("hq-set-") === 0) return;
     if (String(row.id).indexOf("hq-20") === 0) return;
     papers.push(publicPaper(row, live));
@@ -687,25 +687,25 @@ function catalog(db, kind) {
 
 function playPaper(db, id) {
   var row = getPaper(db, id);
-  if (!row) return { error: "卷不存在" };
+  if (!row) return { error: " cuốn không tồn tại " };
   var live = liveOf(row);
-  if (!live) return { error: "这套卷还没上架" };
+  if (!live) return { error: " bộ này cuốn còn chưa lên khung " };
   return { ok: true, paper: publicPaper(row, live) };
 }
 
-/* 考前冲刺包 = 已上线的 full/single 卷（含总部日期卷，前端的裸日期 id 与 hq- 前缀都认） */
+/* Gói tăng tốc trước kỳ thi = đã phát hành full/single cuốn (hàm tổng bộ ngày cuốn, lối vào khỏa thân ngày id và hq- tiền tố đều nhận thức) */
 function normPackageId(dbId) {
   var s = String(dbId || "");
-  return s.indexOf("hq-") === 0 ? s.slice(3) : s;
+  return s.indexOf("hq-") === 0? s.slice(3): s;
 }
 
-// ponytail: status 也卡 live/pending —— 下架卷 live_json 还在，但不能再算包
+// ponytail: status cũng tạp live/pending —— loại bỏ cuốn live_json vẫn còn, nhưng không thể tính lại bao
 function resolvePackage(db, id) {
   id = clip(id, 64);
-  var row = id ? (getPaper(db, id) || getPaper(db, "hq-" + id)) : null;
-  if (!row || (row.status !== "live" && row.status !== "pending")) return null;
+  var row = id? (getPaper(db, id) || getPaper(db, "hq-" + id)): null;
+  if (!row || (row.status!== "live" && row.status!== "pending")) return null;
   var live = liveOf(row);
-  if (!live || (live.kind !== "full" && live.kind !== "single")) return null;
+  if (!live || (live.kind!== "full" && live.kind!== "single")) return null;
   return { id: normPackageId(row.id), kind: live.kind, title: live.title, row: row };
 }
 
@@ -715,13 +715,13 @@ function listPackages(db) {
   ).all();
   return rows.map(function (row) {
     var live = liveOf(row);
-    if (!live || (live.kind !== "full" && live.kind !== "single")) return null;
+    if (!live || (live.kind!== "full" && live.kind!== "single")) return null;
     return {
       id: normPackageId(row.id),
       title: live.title,
       kind: live.kind,
       owner: row.owner,
-      makerName: row.owner === "hq" ? "总部" : (row.maker_name || "")
+      makerName: row.owner === "hq"? " tổng bộ ": (row.maker_name || "")
     };
   }).filter(Boolean);
 }
@@ -729,8 +729,8 @@ function listPackages(db) {
 function seedStock(db, repoRoot) {
   var index = poolIndex(buildPool(repoRoot));
   var titles = {
-    1: "Set 1 练习", 2: "Set 2 练习", 3: "Set 3 练习", 4: "Set 4 练习", 5: "Set 5 练习",
-    6: "Set 6 练习", 7: "Set 7 练习", 8: "Set 8 练习", 9: "Set 9 练习", 10: "Set 10 练习"
+    1: "Set 1 Luyện tập ", 2: "Set 2 Luyện tập ", 3: "Set 3 Luyện tập ", 4: "Set 4 Luyện tập ", 5: "Set 5 Luyện tập ",
+    6: "Set 6 Luyện tập ", 7: "Set 7 Luyện tập ", 8: "Set 8 Luyện tập ", 9: "Set 9 Luyện tập ", 10: "Set 10 Luyện tập "
   };
   var n;
   for (n = 1; n <= 10; n++) {
@@ -746,8 +746,8 @@ function seedStock(db, repoRoot) {
       if (index[bid].paperId === id) seedBlocks.push(index[bid]);
     });
     var rp = readJson(path.join(repoRoot, "library", "toefl", id + "-reading.json"));
-    var title = clip(String((rp && rp.title) || "").replace(/·\s*阅读$/, "· 完整模考"), 80) ||
-      "新托福 " + id + " · 完整模考";
+    var title = clip(String((rp && rp.title) || "").replace(/·\s* Đọc $/, "· Thi thử toàn phần "), 80) ||
+      " TOEFL iBT " + id + " · Thi thử toàn phần ";
     upsertSeed(db, "hq-" + id, title, "full", seedBlocks, {
       reading: 36, listening: 36, writing: 29, speaking: 16
     });
@@ -762,7 +762,7 @@ function upsertSeed(db, id, title, kind, blocks, minutes) {
   db.prepare(
     "INSERT INTO tiku_papers (id, title, kind, status, owner, maker_id, maker_phone, maker_name, " +
     "skill_minutes, blocks, live_json, reject_note, created_at, updated_at, published_at) " +
-    "VALUES (?, ?, ?, 'live', 'hq', NULL, '', '总部', ?, ?, ?, '', ?, ?, ?)"
+    "VALUES (?,?,?, 'live', 'hq', NULL, '', ' tổng bộ ',?,?,?, '',?,?,?)"
   ).run(id, title, kind, JSON.stringify(minutes || {}), JSON.stringify(blocks), JSON.stringify(working), t, t, t);
 }
 
@@ -775,7 +775,7 @@ function mountRoutes(app, deps) {
   var repoRoot = deps.repoRoot;
   ensureSchema(db);
   try { seedStock(db, repoRoot); } catch (e) { console.error("[tiku] seed", e && e.message); }
-  // ponytail: no process cache — 刷新要立刻吃到新 JSON；教师接口，读几十个文件可接受
+  // ponytail: no process cache — Làm mới phải lập tức ăn vào mới JSON; Giáo viên tiếp lời, đọc mười mấy cái văn bản tài liệu có thể tiếp nhận
   function pool() {
     return buildPool(repoRoot);
   }
@@ -784,12 +784,12 @@ function mountRoutes(app, deps) {
   function tikuAuth(req, res, next) {
     deps.teacherAuthMiddleware(req, res, function () {
       var ip = clientIp(req);
-      if (!req.user.masterKey && !ipAllowed(db, ip)) return sendErr(res, 403, "当前网络不能打开题库中心");
-      var teacher = db.prepare("SELECT * FROM teachers WHERE phone = ?").get(req.user.phone);
+      if (!req.user.masterKey &&!ipAllowed(db, ip)) return sendErr(res, 403, " trước mắt mạng lưới *internet không thể mở ra Ngân hàng đề trung tâm ");
+      var teacher = db.prepare("SELECT * FROM teachers WHERE phone =?").get(req.user.phone);
       var admin = deps.isAdminPhone(req.user.phone);
-      if (!teacher && !admin) return sendErr(res, 403, "请使用教师账号登录");
-      if (!teacherCanTiku(db, teacher, admin)) return sendErr(res, 403, "未开通题库中心");
-      req.tikuTeacher = teacher || { id: 0, phone: req.user.phone, name: "总部" };
+      if (!teacher &&!admin) return sendErr(res, 403, " xin sử dụng Giáo viên tài khoản Đăng nhập ");
+      if (!teacherCanTiku(db, teacher, admin)) return sendErr(res, 403, " không kích hoạt Ngân hàng đề trung tâm ");
+      req.tikuTeacher = teacher || { id: 0, phone: req.user.phone, name: " tổng bộ " };
       req.tikuAdmin = admin;
       req.tikuCanGrant = admin || deps.isOrgAdminReq(req);
       next();
@@ -798,7 +798,7 @@ function mountRoutes(app, deps) {
 
   function hqOnly(req, res, next) {
     tikuAuth(req, res, function () {
-      if (!req.tikuAdmin) return sendErr(res, 403, "只有总部能审核");
+      if (!req.tikuAdmin) return sendErr(res, 403, " chỉ có tổng bộ có thể xét duyệt ");
       next();
     });
   }
@@ -810,8 +810,8 @@ function mountRoutes(app, deps) {
         id: req.tikuTeacher.id,
         phone: req.tikuTeacher.phone,
         name: req.tikuTeacher.name || "",
-        isAdmin: !!req.tikuAdmin,
-        canGrant: !!req.tikuCanGrant,
+        isAdmin:!!req.tikuAdmin,
+        canGrant:!!req.tikuCanGrant,
         canTiku: true
       }
     });
@@ -820,27 +820,27 @@ function mountRoutes(app, deps) {
   app.get("/api/tiku/pool", tikuAuth, function (req, res) {
     res.setHeader("Cache-Control", "private, no-store");
     var prediction = predictionManifest(repoRoot);
-    res.json({ ok: true, blocks: pool(), prediction: prediction ? {
+    res.json({ ok: true, blocks: pool(), prediction: prediction? {
       groups: prediction.members.length,
       questions: prediction.questionCount,
       media: prediction.assets.length,
-      unavailableMedia: prediction.assets.filter(function (a) { return !!a.error; }).length
-    } : null });
+      unavailableMedia: prediction.assets.filter(function (a) { return!!a.error; }).length
+    }: null });
   });
 
   app.get("/api/tiku/blocks/:id", tikuAuth, function (req, res) {
     var out = blockDetail(repoRoot, req.params.id);
-    if (!out) return sendErr(res, 404, "题块不存在");
+    if (!out) return sendErr(res, 404, " câu khối không tồn tại ");
     res.setHeader("Cache-Control", "private, no-store");
     res.json(out);
   });
 
   app.get("/api/tiku/prediction/media/:file", tikuAuth, function (req, res) {
     var filename = req.params.file;
-    if (!/^[a-f0-9]{24}\.[a-z0-9]+$/.test(filename)) return sendErr(res, 404, "资源不存在");
+    if (!/^[a-f0-9]{24}\.[a-z0-9]+$/.test(filename)) return sendErr(res, 404, " tài nguyên không tồn tại ");
     var manifest = predictionManifest(repoRoot);
-    var asset = manifest && manifest.assets.filter(function (a) { return a.filename === filename && !a.error; })[0];
-    if (!asset) return sendErr(res, 404, "原包资源不可用");
+    var asset = manifest && manifest.assets.filter(function (a) { return a.filename === filename &&!a.error; })[0];
+    if (!asset) return sendErr(res, 404, " nguyên bao tài nguyên không thể dùng ");
     res.setHeader("Cache-Control", "private, no-store");
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.type(asset.contentType);
@@ -853,12 +853,12 @@ function mountRoutes(app, deps) {
 
   app.get("/api/tiku/papers/:id", tikuAuth, function (req, res) {
     var row = getPaper(db, req.params.id);
-    if (!row) return sendErr(res, 404, "卷不存在");
-    if (!req.tikuAdmin && row.maker_id !== req.tikuTeacher.id && row.owner !== "hq") {
-      return sendErr(res, 404, "卷不存在");
+    if (!row) return sendErr(res, 404, " cuốn không tồn tại ");
+    if (!req.tikuAdmin && row.maker_id!== req.tikuTeacher.id && row.owner!== "hq") {
+      return sendErr(res, 404, " cuốn không tồn tại ");
     }
-    if (!req.tikuAdmin && row.owner === "hq" && row.maker_id !== req.tikuTeacher.id) {
-      return sendErr(res, 403, "总部卷只有总部能看详情");
+    if (!req.tikuAdmin && row.owner === "hq" && row.maker_id!== req.tikuTeacher.id) {
+      return sendErr(res, 403, " tổng bộ cuốn chỉ có tổng bộ có thể nhìn tình hình cụ thể và tỉ mỉ ");
     }
     res.json({ ok: true, paper: staffPaper(row) });
   });
@@ -918,7 +918,7 @@ function mountRoutes(app, deps) {
           id: t.id,
           phone: t.phone,
           name: t.name || "",
-          canTiku: !!t.can_tiku,
+          canTiku:!!t.can_tiku,
           lastLoginAt: t.last_login_at
         };
       })
@@ -926,7 +926,7 @@ function mountRoutes(app, deps) {
   });
 
   app.post("/api/platform/tiku/teachers/:id", deps.platformAuthMiddleware, function (req, res) {
-    var out = setCanTiku(db, req.params.id, !!(req.body && req.body.canTiku));
+    var out = setCanTiku(db, req.params.id,!!(req.body && req.body.canTiku));
     if (out.error) return sendErr(res, 400, out.error);
     res.json(out);
   });
@@ -951,52 +951,52 @@ function selfCheck(repoRoot) {
   var Database = require("better-sqlite3");
   var db = new Database(":memory:");
   db.exec("CREATE TABLE teachers (id INTEGER PRIMARY KEY, phone TEXT, name TEXT, can_tiku INTEGER DEFAULT 0)");
-  db.prepare("INSERT INTO teachers (id, phone, name, can_tiku) VALUES (1,'13800000001','甲',1)").run();
-  db.prepare("INSERT INTO teachers (id, phone, name, can_tiku) VALUES (2,'13800000002','乙',1)").run();
+  db.prepare("INSERT INTO teachers (id, phone, name, can_tiku) VALUES (1,'13800000001',' giáp ',1)").run();
+  db.prepare("INSERT INTO teachers (id, phone, name, can_tiku) VALUES (2,'13800000002',' ất ',1)").run();
   ensureSchema(db);
-  db.prepare("INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES ('36.33.245.0/24','网段','t')").run();
-  db.prepare("INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES ('10.0.0.7','单 IP','t')").run();
+  db.prepare("INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES ('36.33.245.0/24',' mạng lưới đoạn ','t')").run();
+  db.prepare("INSERT INTO tiku_ip_allow (ip, note, created_at) VALUES ('10.0.0.7',' đơn IP','t')").run();
   if (!ipAllowed(db, "36.33.245.222")) throw new Error("cidr should allow");
   if (ipAllowed(db, "36.33.246.222")) throw new Error("cidr leaks out of /24");
   if (!ipAllowed(db, "10.0.0.7") || ipAllowed(db, "10.0.0.8")) throw new Error("exact ip");
-  if (!validIpEntry("1.2.3.4") || !validIpEntry("1.2.3.0/24")) throw new Error("valid entry rejected");
+  if (!validIpEntry("1.2.3.4") ||!validIpEntry("1.2.3.0/24")) throw new Error("valid entry rejected");
   if (validIpEntry("1.2.3.256") || validIpEntry("1.2.3.0/33") || validIpEntry("::1")) throw new Error("bad entry accepted");
-  if (upsertIp(db, "1.2.3.0/33", "x").error !== "无效 IP 或网段") throw new Error("upsert keeps bad mask");
+  if (upsertIp(db, "1.2.3.0/33", "x").error!== " không có hiệu quả IP hoặc mạng lưới đoạn ") throw new Error("upsert keeps bad mask");
   var pool = buildPool(repoRoot);
   if (pool.length < 40) throw new Error("pool too small " + pool.length);
   var index = poolIndex(pool);
   var b1 = pool.filter(function (b) { return b.skill === "reading"; })[0];
   var b2 = pool.filter(function (b) { return b.skill === "listening"; })[0];
-  if (!b1 || !b2) throw new Error("need mixed blocks");
-  var t1 = { id: 1, phone: "13800000001", name: "甲" };
-  var created = createPaper(db, t1, { title: "九月阅读练", kind: "single", blocks: [b1.id], skillMinutes: { reading: 20 } }, false, index);
+  if (!b1 ||!b2) throw new Error("need mixed blocks");
+  var t1 = { id: 1, phone: "13800000001", name: " giáp " };
+  var created = createPaper(db, t1, { title: " chín tháng Đọc luyện ", kind: "single", blocks: [b1.id], skillMinutes: { reading: 20 } }, false, index);
   if (!created.ok) throw new Error(created.error);
-  if (validateKind("single", [b1, b2]) !== "单项模考不能混科") throw new Error("mix single");
-  var mixed = createPaper(db, t1, { title: "混科单项", kind: "single", blocks: [b1.id, b2.id] }, false, index);
+  if (validateKind("single", [b1, b2])!== " Thi thử từng kỹ năng không thể lẫn vào khoa ") throw new Error("mix single");
+  var mixed = createPaper(db, t1, { title: " lẫn vào khoa thi đơn ", kind: "single", blocks: [b1.id, b2.id] }, false, index);
   if (!mixed.error) throw new Error("should block mixed single");
-  var dup = createPaper(db, t1, { title: "九月阅读练", kind: "practice", blocks: [b1.id] }, false, index);
+  var dup = createPaper(db, t1, { title: " chín tháng Đọc luyện ", kind: "practice", blocks: [b1.id] }, false, index);
   if (!dup.error) throw new Error("dup title");
-  // 免审：submit 直接上架，学生端立即可见
+  // miễn tra xét: submit trực tiếp lên khung(vào VIP), Học viên đầu lập tức có thể thấy được
   var sub = submitPaper(db, created.paper.id, t1, false, index);
-  if (sub.paper.status !== "live") throw new Error("submit goes straight live");
-  if (liveOf(getPaper(db, created.paper.id)).skillMinutes.reading !== 20) throw new Error("students see submit");
-  // 免审：改已上架的卷保持上架并刷新 live_json
-  var saved = savePaper(db, created.paper.id, t1, { title: "九月阅读练", kind: "single", blocks: [b1.id], skillMinutes: { reading: 15 } }, false, index);
-  if (saved.paper.status !== "live") throw new Error("edit keeps live");
-  if (liveOf(getPaper(db, created.paper.id)).skillMinutes.reading !== 15) throw new Error("students see edit");
-  // 免审后不再产生 pending；approve/reject 仅兼容历史 pending 行
+  if (sub.paper.status!== "live") throw new Error("submit goes straight live");
+  if (liveOf(getPaper(db, created.paper.id)).skillMinutes.reading!== 20) throw new Error("students see submit");
+  // miễn tra xét: sửa đã lên khung(vào VIP) cuốn bảo trì lên khung(vào VIP) cũng Làm mới live_json
+  var saved = savePaper(db, created.paper.id, t1, { title: " chín tháng Đọc luyện ", kind: "single", blocks: [b1.id], skillMinutes: { reading: 15 } }, false, index);
+  if (saved.paper.status!== "live") throw new Error("edit keeps live");
+  if (liveOf(getPaper(db, created.paper.id)).skillMinutes.reading!== 15) throw new Error("students see edit");
+  // miễn tra xét sau không hề sinh ra pending; approve/reject chỉ kiêm dung Lịch sử pending đi
   if (!rejectPaper(db, created.paper.id, "x").error) throw new Error("reject needs pending");
   if (!approvePaper(db, created.paper.id, {}).error) throw new Error("approve needs pending");
   db.prepare("UPDATE tiku_papers SET status='pending' WHERE id=?").run(created.paper.id);
-  var rej = rejectPaper(db, created.paper.id, "改时间");
-  if (rej.paper.status !== "live") throw new Error("reject keeps live");
+  var rej = rejectPaper(db, created.paper.id, " sửa thời gian ");
+  if (rej.paper.status!== "live") throw new Error("reject keeps live");
   db.prepare("UPDATE tiku_papers SET status='pending' WHERE id=?").run(created.paper.id);
-  var ok = approvePaper(db, created.paper.id, { title: "九月阅读练" });
-  if (ok.paper.status !== "live" || !ok.paper.live) throw new Error("approve");
-  var t2 = { id: 2, phone: "13800000002", name: "乙" };
+  var ok = approvePaper(db, created.paper.id, { title: " chín tháng Đọc luyện " });
+  if (ok.paper.status!== "live" ||!ok.paper.live) throw new Error("approve");
+  var t2 = { id: 2, phone: "13800000002", name: " ất " };
   if (canEdit(getPaper(db, created.paper.id), t2, false)) throw new Error("other teacher");
   var dead = unpublishPaper(db, created.paper.id, t1, false);
-  if (dead.paper.status !== "unpublished") throw new Error("unpub");
+  if (dead.paper.status!== "unpublished") throw new Error("unpub");
   var again = submitPaper(db, created.paper.id, t1, false, index);
   if (!again.error) throw new Error("no relist");
   if (!ipAllowed(db, "127.0.0.1")) throw new Error("loopback");
@@ -1006,18 +1006,18 @@ function selfCheck(repoRoot) {
   seedStock(db, repoRoot);
   var cat = catalog(db, "practice");
   var mockCount = stockMocks(repoRoot).length;
-  if (cat.stock.sets.length !== 10) throw new Error("seed sets " + cat.stock.sets);
-  if (cat.stock.mocks.length !== mockCount) throw new Error("seed mocks " + cat.stock.mocks.length + "/" + mockCount);
+  if (cat.stock.sets.length!== 10) throw new Error("seed sets " + cat.stock.sets);
+  if (cat.stock.mocks.length!== mockCount) throw new Error("seed mocks " + cat.stock.mocks.length + "/" + mockCount);
   if (mockCount < 22) throw new Error("date mocks on disk " + mockCount);
   if (playPaper(db, created.paper.id).error) throw new Error("in-progress after unpub");
   var pkg = resolvePackage(db, "2025-07-16");
-  if (!pkg || pkg.id !== "2025-07-16" || pkg.kind !== "full") throw new Error("resolve date pkg");
+  if (!pkg || pkg.id!== "2025-07-16" || pkg.kind!== "full") throw new Error("resolve date pkg");
   if (!resolvePackage(db, "hq-2025-07-16")) throw new Error("resolve hq prefix");
   if (resolvePackage(db, "hq-set-1")) throw new Error("practice is not a package");
   if (resolvePackage(db, "tp_nope")) throw new Error("missing package");
   var pkgs = listPackages(db);
-  if (pkgs.length !== mockCount) throw new Error("packages " + pkgs.length + "/" + mockCount);
-  if (normPackageId("hq-2025-09-02") !== "2025-09-02") throw new Error("normPackageId");
+  if (pkgs.length!== mockCount) throw new Error("packages " + pkgs.length + "/" + mockCount);
+  if (normPackageId("hq-2025-09-02")!== "2025-09-02") throw new Error("normPackageId");
   db.close();
 }
 

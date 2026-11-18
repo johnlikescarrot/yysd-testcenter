@@ -1,84 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思12 Test 4 阅读</title>
-<meta name="exam:title" content="剑桥雅思12 · Test 4（阅读）">
+<title>YYSD · Cambridge IELTS 12 Test 4 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 12 · Test 4 (Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思12 Test 4 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 12 Test 4 Đọc Học thuật (Academic Reading) (Đề thi chính thức): 3 bài đọc, tổng 40 câu, có thể bài lẻ Luyện tập hoặc Thi thử toàn phần, Chấm điểm tự động, Giải thích đáp án và Điểm Band IELTS dự kiến.">
 <style>
   * { box-sizing:border-box; }
-  body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
   .header { background:linear-gradient(135deg,#1e1b4b,#312e81); color:#fff; padding:12px 28px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 18px rgba(0,0,0,.25); flex-wrap:wrap; gap:10px; }
   .header h1 { margin:0; font-size:19px; font-weight:600; display:flex; align-items:center; gap:8px; }
-  .header h1 .brandtag { font-size:11px; background:#6366f1; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
-  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background .4s; }
+  .header h1.brandtag { font-size:11px; background:#6366f1; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
+  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background.4s; }
   .timer.show { display:flex; }
-  .timer.warn { background:#e67e22; } .timer.danger { background:#c0392b; animation:pulse 1s infinite; }
+  .timer.warn { background:#e67e22; }.timer.danger { background:#c0392b; animation:pulse 1s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Trang bìa */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
-  .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
-  .cover-badge .num { font-size:54px; font-weight:800; color:#4338ca; line-height:1; margin-top:4px; }
+  .cover-badge.lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
+  .cover-badge.num { font-size:54px; font-weight:800; color:#4338ca; line-height:1; margin-top:4px; }
   .cover-hero h2 { margin:0; font-size:30px; color:#1e1b4b; }
-  .cover-hero .sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
+  .cover-hero.sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
   .paper-card-wrap { margin-top:24px; }
-  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform .15s,box-shadow .2s; background:#eef2ff; border-color:#c7d2fe; cursor:pointer; }
+  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform.15s,box-shadow.2s; background:#eef2ff; border-color:#c7d2fe; cursor:pointer; }
   .paper-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10); }
-  .paper-card .pc-icon { font-size:40px; }
+  .paper-card.pc-icon { font-size:40px; }
   .paper-card h3 { margin:10px 0 4px; font-size:24px; color:#3730a3; }
-  .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
-  .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
+  .paper-card.pc-meta { font-size:13px; color:#6b7a8f; }
+  .paper-card.pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* Hộp thoại chọn chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
   .modal h2 { margin:0 0 20px; font-size:24px; color:#111; }
   .modal-close { position:absolute; right:20px; top:18px; border:none; background:none; font-size:24px; color:#8a96a5; cursor:pointer; }
   .mode-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  @media(max-width:680px){ .mode-grid{grid-template-columns:1fr;} }
+  @media(max-width:680px){.mode-grid{grid-template-columns:1fr;} }
   .mode-box { border:1px solid #e2e8f0; border-radius:14px; padding:24px 22px; }
-  .mode-box .mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
-  .mode-box.practice .mb-ic { background:#e0e7ff; } .mode-box.exam .mb-ic { background:#ffe8cf; }
+  .mode-box.mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
+  .mode-box.practice.mb-ic { background:#e0e7ff; }.mode-box.exam.mb-ic { background:#ffe8cf; }
   .mode-box h3 { text-align:center; margin:0 0 6px; font-size:20px; }
-  .mode-box .mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
-  .mode-box .mb-sub { font-weight:700; color:#3730a3; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
-  .mode-box .mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
+  .mode-box.mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
+  .mode-box.mb-sub { font-weight:700; color:#3730a3; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
+  .mode-box.mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
   .sec-check { display:flex; align-items:center; gap:10px; padding:8px 4px; font-size:15px; font-weight:600; color:#3730a3; cursor:pointer; }
   .sec-check input { width:18px; height:18px; accent-color:#4338ca; }
   .exam-list { list-style:none; padding:0; margin:10px 0 0; color:#445; font-size:14.5px; }
   .exam-list li { padding:3px 0; }
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
-  .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
+  .mode-box.practice.mode-start { background:#4f46e5; }.mode-box.exam.mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực làm bài */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
-  .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
-  .test-topbar .tt-mode { font-size:13px; background:#eef2ff; color:#3730a3; padding:3px 12px; border-radius:20px; font-weight:600; }
+  .test-topbar.tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
+  .test-topbar.tt-mode { font-size:13px; background:#eef2ff; color:#3730a3; padding:3px 12px; border-radius:20px; font-weight:600; }
   .btn-ghost { border:1px solid #cdd7e2; background:#fff; border-radius:8px; padding:8px 16px; font-size:14px; cursor:pointer; color:#33475b; }
   .btn-ghost:hover { background:#f3f6fa; }
 
   .section-banner { background:#eef2ff; border:1px solid #c7d2fe; border-radius:12px; padding:14px 20px; margin:26px 0 14px; }
-  .section-banner .sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-  .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
-  .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
+  .section-banner.sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .section-banner.sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
+  .section-banner.sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Đọc điểm lan: trái văn chương phải đề mục */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
-  .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
-  .passage-pane .ptitle { margin:6px 0 4px; font-size:21px; color:#1e1b4b; }
-  .passage-pane .pp-byline { font-style:italic; color:#6b7a8f; font-size:13.5px; margin-bottom:12px; }
+  .passage-pane.pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
+  .passage-pane.ptitle { margin:6px 0 4px; font-size:21px; color:#1e1b4b; }
+  .passage-pane.pp-byline { font-style:italic; color:#6b7a8f; font-size:13.5px; margin-bottom:12px; }
   .passage-pane p { margin:0 0 13px; font-size:15px; text-align:justify; }
-  .passage-pane .para-label { font-weight:800; color:#4338ca; margin-right:6px; }
+  .passage-pane.para-label { font-weight:800; color:#4338ca; margin-right:6px; }
   .qcol { flex:1 1 50%; min-width:0; }
   @media(max-width:900px){
     .reading-cols { flex-direction:column; }
@@ -93,8 +93,8 @@
   .note-title { text-align:center; font-weight:800; font-size:17px; margin-bottom:12px; color:#22303f; }
   .note-h { font-weight:700; margin:12px 0 4px; }
   .note-li { margin:6px 0 6px 4px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
-  .note-li .bull { color:#7a8aa0; }
-  .note-li.sub { margin-left:26px; } .note-li.sub2 { margin-left:48px; }
+  .note-li.bull { color:#7a8aa0; }
+  .note-li.sub { margin-left:26px; }.note-li.sub2 { margin-left:48px; }
   .qnum-badge { background:#e0e7ff; color:#3730a3; font-weight:700; min-width:30px; height:30px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; padding:0 6px; }
   input[type=text]{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:15px; width:150px; }
   input[type=text]:focus{ border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.14); outline:none; }
@@ -102,7 +102,7 @@
   table.note-table th, table.note-table td { border:1px solid #d3dce6; padding:10px 12px; font-size:14.5px; vertical-align:top; text-align:left; }
   table.note-table th { background:#eef2ff; }
   .mcq { margin:6px 0 16px; }
-  .mcq .qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
+  .mcq.qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
   .mcq label { display:flex; gap:9px; align-items:flex-start; padding:6px 10px; border-radius:7px; cursor:pointer; }
   .mcq label:hover { background:#eef2fa; }
   .mcq input{ accent-color:#1e1b4b; margin-top:3px; }
@@ -111,142 +111,142 @@
   select{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:14.5px; min-width:70px; }
   select:focus{ border-color:#4f46e5; outline:none; }
   .match-box { border:1px solid #d8e0ea; border-radius:10px; background:#f6f8ff; padding:14px 18px; margin-bottom:14px; }
-  .match-box .mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
-  .match-box .mb-row { display:flex; gap:10px; padding:2px 0; }
+  .match-box.mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
+  .match-box.mb-row { display:flex; gap:10px; padding:2px 0; }
   .match-q { display:flex; align-items:center; gap:10px; margin:8px 0; }
-  .match-q .mq-txt { flex:1; }
+  .match-q.mq-txt { flex:1; }
 
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
   .res-meta { color:#6b7a8f; font-size:13px; margin-bottom:20px; }
   .res-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media(max-width:680px){ .res-stats{grid-template-columns:1fr;} }
+  @media(max-width:680px){.res-stats{grid-template-columns:1fr;} }
   .stat-box { border-radius:14px; padding:26px 16px; text-align:center; }
-  .stat-box.s1 { background:#eef2ff; } .stat-box.s2 { background:#eefaf2; } .stat-box.s3 { background:#f5f3ff; }
-  .stat-box .big { font-size:40px; font-weight:800; line-height:1; }
-  .stat-box.s1 .big { color:#4f46e5; } .stat-box.s2 .big { color:#1e8449; } .stat-box.s3 .big { color:#5b3fd6; }
-  .stat-box .cap { color:#5a7184; margin-top:8px; font-size:14px; }
-  .stat-box .sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
+  .stat-box.s1 { background:#eef2ff; }.stat-box.s2 { background:#eefaf2; }.stat-box.s3 { background:#f5f3ff; }
+  .stat-box.big { font-size:40px; font-weight:800; line-height:1; }
+  .stat-box.s1.big { color:#4f46e5; }.stat-box.s2.big { color:#1e8449; }.stat-box.s3.big { color:#5b3fd6; }
+  .stat-box.cap { color:#5a7184; margin-top:8px; font-size:14px; }
+  .stat-box.sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
   .progress-wrap { margin-top:22px; }
-  .progress-wrap .pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
+  .progress-wrap.pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
   .pw-track { height:14px; background:#e2e8f0; border-radius:10px; overflow:hidden; }
-  .pw-fill { height:100%; background:linear-gradient(90deg,#6366f1,#27ae60); width:0; transition:width .8s; }
+  .pw-fill { height:100%; background:linear-gradient(90deg,#6366f1,#27ae60); width:0; transition:width.8s; }
 
   .detail-h { font-size:20px; font-weight:800; color:#1e1b4b; margin:26px 0 12px; }
   .sec-result { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,.05); margin-bottom:12px; overflow:hidden; }
-  .sec-result .sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
-  .sec-result .sr-head h5 { margin:0; font-size:17px; }
-  .sec-result .sr-head .sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
-  .sec-result .sr-head .sr-sum .ok { color:#1e8449; font-weight:700; } .sec-result .sr-head .sr-sum .bad { color:#c0392b; font-weight:700; }
+  .sec-result.sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
+  .sec-result.sr-head h5 { margin:0; font-size:17px; }
+  .sec-result.sr-head.sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
+  .sec-result.sr-head.sr-sum.ok { color:#1e8449; font-weight:700; }.sec-result.sr-head.sr-sum.bad { color:#c0392b; font-weight:700; }
   .sr-body { display:none; padding:0 22px 16px; }
-  .sec-result.open .sr-body { display:block; }
-  .sr-chevron { transition:transform .2s; color:#8a96a5; }
-  .sec-result.open .sr-chevron { transform:rotate(180deg); }
+  .sec-result.open.sr-body { display:block; }
+  .sr-chevron { transition:transform.2s; color:#8a96a5; }
+  .sec-result.open.sr-chevron { transform:rotate(180deg); }
   .ritem { padding:12px 16px; border-radius:9px; margin:8px 0; border-left:5px solid transparent; }
   .ritem.correct { background:#e8f8ee; border-left-color:#27ae60; }
   .ritem.wrong { background:#fdeaea; border-left-color:#e74c3c; }
-  .ritem .rq { font-weight:700; color:#22303f; }
-  .ritem .ra { font-size:14px; margin-top:4px; }
-  .ritem .ra .yours { color:#7b1a1a; } .ritem .ra .correctv { color:#145a32; font-weight:700; }
-  .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
+  .ritem.rq { font-weight:700; color:#22303f; }
+  .ritem.ra { font-size:14px; margin-top:4px; }
+  .ritem.ra.yours { color:#7b1a1a; }.ritem.ra.correctv { color:#145a32; font-weight:700; }
+  .ritem.rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag"> YYSD </span> Bài thi Cambridge IELTS chính thức</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Trang bìa -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">12</div></div>
     <div>
-      <h2>剑桥雅思 12 · Test 4</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 12 · Test 4</h2>
+      <div class="sub"> Đọc Học thuật (Academic Reading) · Đề thi chính thức · Chấm điểm tự động cũng cho ra Điểm Band IELTS dự kiến. nhấn vào phía dưới Bắt đầu kiểm tra. </div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Đọc Học thuật (Academic Reading) (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta"> Đang tải …</div>
+      <div class="pc-go"> Bắt đầu kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Hộp thoại chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>lựa chọn hình thức</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc"> thích hợp điểm bài đột phá, có thể chỉ luyện một mấy thiên văn chương, đang hướng tính theo thời gian không làm áp lực. </div>
+        <div class="mb-sub"><span> lựa chọn Luyện tập văn chương: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc"> Đầy đủ mô phỏng chân thật cuộc thi: tất cả văn chương một lần hoàn thành, thời gian 60 phút. </div>
+        <div class="mb-sub"><span> Kiểm tra tin tức: </span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo"> Đầy đủ Kiểm tra (thời gian 60 phút) </div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang bìa</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài cũng Xem Báo cáo chấm bài</button>
 </div>
 
-<!-- 结果区 -->
+<!-- kết quả khu -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Báo cáo chấm bài </div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap"> trả lời câu mấy </div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap"> Tỷ lệ đúng </div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap"> Điểm Band IELTS dự kiến </div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span> tổng thể Tiến độ </span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h"> kỹ càng kết quả </div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思15 Test 4 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
+    một, bài thi số liệu —— Cambridge IELTS 15 Test 4 Đọc Học thuật (Academic Reading) (chính thức nguyên câu + chính thức Đáp án)
+    nói rõ: mỗi thiên văn chương làm một cái đối tượng {id, passage:{title,byline,paras[]}, groups:[...]}
+    tái phát đến Passage 2, 3 lúc theo như giống nhau cách thức thêm vào tiến passages mấy tổ là được.
    ============================================================ */
 const TEST = {
   "meta": {
@@ -313,7 +313,7 @@ const TEST = {
               "answer": [
                 "obsidian"
               ],
-              "explain": "答案：obsidian。"
+              "explain": " Đáp án: obsidian. "
             },
             {
               "id": "Q2",
@@ -321,7 +321,7 @@ const TEST = {
               "answer": [
                 "spears"
               ],
-              "explain": "答案：spears。"
+              "explain": " Đáp án: spears. "
             },
             {
               "id": "Q3",
@@ -329,7 +329,7 @@ const TEST = {
               "answer": [
                 "beads"
               ],
-              "explain": "答案：beads。"
+              "explain": " Đáp án: beads. "
             },
             {
               "id": "Q4",
@@ -337,7 +337,7 @@ const TEST = {
               "answer": [
                 "impurities"
               ],
-              "explain": "答案：impurities。"
+              "explain": " Đáp án: impurities. "
             },
             {
               "id": "Q5",
@@ -345,7 +345,7 @@ const TEST = {
               "answer": [
                 "Romans"
               ],
-              "explain": "答案：Romans。"
+              "explain": " Đáp án: Romans. "
             },
             {
               "id": "Q6",
@@ -353,7 +353,7 @@ const TEST = {
               "answer": [
                 "lead"
               ],
-              "explain": "答案：lead。"
+              "explain": " Đáp án: lead. "
             },
             {
               "id": "Q7",
@@ -361,7 +361,7 @@ const TEST = {
               "answer": [
                 "clouding"
               ],
-              "explain": "答案：clouding。"
+              "explain": " Đáp án: clouding. "
             },
             {
               "id": "Q8",
@@ -369,7 +369,7 @@ const TEST = {
               "answer": [
                 "taxes"
               ],
-              "explain": "答案：taxes。"
+              "explain": " Đáp án: taxes. "
             }
           ]
         },
@@ -384,7 +384,7 @@ const TEST = {
               "answer": [
                 "TRUE"
               ],
-              "explain": "答案：TRUE。",
+              "explain": " Đáp án: TRUE. ",
               "q": "In 1887, HM Ashley had the fastest bottle-producing machine that existed at the time."
             },
             {
@@ -393,7 +393,7 @@ const TEST = {
               "answer": [
                 "FALSE"
               ],
-              "explain": "答案：FALSE。",
+              "explain": " Đáp án: FALSE. ",
               "q": "Michael Owens was hired by a large US company to design a fully-automated bottle manufacturing machine for them."
             },
             {
@@ -402,7 +402,7 @@ const TEST = {
               "answer": [
                 "NOT GIVEN"
               ],
-              "explain": "答案：NOT GIVEN。",
+              "explain": " Đáp án: NOT GIVEN. ",
               "q": "Nowadays, most glass is produced by large international manufacturers."
             },
             {
@@ -411,7 +411,7 @@ const TEST = {
               "answer": [
                 "TRUE"
               ],
-              "explain": "答案：TRUE。",
+              "explain": " Đáp án: TRUE. ",
               "q": "Concern for the environment is leading to an increased demand for glass containers."
             },
             {
@@ -420,7 +420,7 @@ const TEST = {
               "answer": [
                 "FALSE"
               ],
-              "explain": "答案：FALSE。",
+              "explain": " Đáp án: FALSE. ",
               "q": "It is more expensive to produce recycled glass than to manufacture new glass."
             }
           ]
@@ -457,7 +457,7 @@ const TEST = {
               "answer": [
                 "D"
               ],
-              "explain": "答案：D。",
+              "explain": " Đáp án: D. ",
               "q": "What did the 2006 discovery of the animal bone reveal about the lynx?",
               "options": {
                 "A": "Its physical appearance was very distinctive.",
@@ -472,7 +472,7 @@ const TEST = {
               "answer": [
                 "A"
               ],
-              "explain": "答案：A。",
+              "explain": " Đáp án: A. ",
               "q": "What point does the writer make about large predators in the third paragraph?",
               "options": {
                 "A": "Their presence can increase biodiversity.",
@@ -487,7 +487,7 @@ const TEST = {
               "answer": [
                 "C"
               ],
-              "explain": "答案：C。",
+              "explain": " Đáp án: C. ",
               "q": "What does the writer suggest about British conservation in the fourth paragraph?",
               "options": {
                 "A": "It has failed to achieve its aims.",
@@ -502,7 +502,7 @@ const TEST = {
               "answer": [
                 "A"
               ],
-              "explain": "答案：A。",
+              "explain": " Đáp án: A. ",
               "q": "Protecting large areas of the sea from commercial fishing would result in",
               "options": {
                 "A": "practical benefits for the fishing industry.",
@@ -517,7 +517,7 @@ const TEST = {
               "answer": [
                 "C"
               ],
-              "explain": "答案：C。",
+              "explain": " Đáp án: C. ",
               "q": "According to the author, what distinguishes rewilding from other environmental campaigns?",
               "options": {
                 "A": "Its objective is more achievable.",
@@ -553,7 +553,7 @@ const TEST = {
               "answer": [
                 "E"
               ],
-              "explain": "答案：E。"
+              "explain": " Đáp án: E. "
             },
             {
               "id": "Q20",
@@ -561,7 +561,7 @@ const TEST = {
               "answer": [
                 "D"
               ],
-              "explain": "答案：D。"
+              "explain": " Đáp án: D. "
             },
             {
               "id": "Q21",
@@ -569,7 +569,7 @@ const TEST = {
               "answer": [
                 "F"
               ],
-              "explain": "答案：F。"
+              "explain": " Đáp án: F. "
             },
             {
               "id": "Q22",
@@ -577,7 +577,7 @@ const TEST = {
               "answer": [
                 "A"
               ],
-              "explain": "答案：A。"
+              "explain": " Đáp án: A. "
             }
           ]
         },
@@ -593,7 +593,7 @@ const TEST = {
               "answer": [
                 "NO"
               ],
-              "explain": "答案：NO。",
+              "explain": " Đáp án: NO. ",
               "q": "Britain could become the first European country to reintroduce the lynx."
             },
             {
@@ -602,7 +602,7 @@ const TEST = {
               "answer": [
                 "NOT GIVEN"
               ],
-              "explain": "答案：NOT GIVEN。",
+              "explain": " Đáp án: NOT GIVEN. ",
               "q": "The large growth in the European lynx population since 1970 has exceeded conservationists' expectations."
             },
             {
@@ -611,7 +611,7 @@ const TEST = {
               "answer": [
                 "YES"
               ],
-              "explain": "答案：YES。",
+              "explain": " Đáp án: YES. ",
               "q": "Changes in agricultural practices have extended the habitat of the lynx in Europe."
             },
             {
@@ -620,7 +620,7 @@ const TEST = {
               "answer": [
                 "YES"
               ],
-              "explain": "答案：YES。",
+              "explain": " Đáp án: YES. ",
               "q": "It has become apparent that species reintroduction has commercial advantages."
             }
           ]
@@ -665,7 +665,7 @@ const TEST = {
               "answer": [
                 "iv"
               ],
-              "explain": "答案：iv。",
+              "explain": " Đáp án: iv. ",
               "q": "Paragraph A"
             },
             {
@@ -674,7 +674,7 @@ const TEST = {
               "answer": [
                 "ii"
               ],
-              "explain": "答案：ii。",
+              "explain": " Đáp án: ii. ",
               "q": "Paragraph B"
             },
             {
@@ -683,7 +683,7 @@ const TEST = {
               "answer": [
                 "vi"
               ],
-              "explain": "答案：vi。",
+              "explain": " Đáp án: vi. ",
               "q": "Paragraph C"
             },
             {
@@ -692,7 +692,7 @@ const TEST = {
               "answer": [
                 "viii"
               ],
-              "explain": "答案：viii。",
+              "explain": " Đáp án: viii. ",
               "q": "Paragraph D"
             },
             {
@@ -701,7 +701,7 @@ const TEST = {
               "answer": [
                 "vii"
               ],
-              "explain": "答案：vii。",
+              "explain": " Đáp án: vii. ",
               "q": "Paragraph E"
             },
             {
@@ -710,7 +710,7 @@ const TEST = {
               "answer": [
                 "i"
               ],
-              "explain": "答案：i。",
+              "explain": " Đáp án: i. ",
               "q": "Paragraph F"
             },
             {
@@ -719,7 +719,7 @@ const TEST = {
               "answer": [
                 "iii"
               ],
-              "explain": "答案：iii。",
+              "explain": " Đáp án: iii. ",
               "q": "Paragraph G"
             }
           ]
@@ -736,7 +736,7 @@ const TEST = {
               "answer": [
                 "YES"
               ],
-              "explain": "答案：YES。",
+              "explain": " Đáp án: YES. ",
               "q": "Close scrutiny of the behaviour of boards has increased since the economic downturn."
             },
             {
@@ -745,7 +745,7 @@ const TEST = {
               "answer": [
                 "NOT GIVEN"
               ],
-              "explain": "答案：NOT GIVEN。",
+              "explain": " Đáp án: NOT GIVEN. ",
               "q": "Banks have been mismanaged to a greater extent than other businesses."
             },
             {
@@ -754,7 +754,7 @@ const TEST = {
               "answer": [
                 "NO"
               ],
-              "explain": "答案：NO。",
+              "explain": " Đáp án: NO. ",
               "q": "Board meetings normally continue for as long as necessary to debate matters in full."
             },
             {
@@ -763,7 +763,7 @@ const TEST = {
               "answer": [
                 "NO"
               ],
-              "explain": "答案：NO。",
+              "explain": " Đáp án: NO. ",
               "q": "Using a committee structure would ensure that board members are fully informed about significant issues."
             }
           ]
@@ -793,7 +793,7 @@ const TEST = {
               "answer": [
                 "information"
               ],
-              "explain": "答案：information。"
+              "explain": " Đáp án: information. "
             },
             {
               "id": "Q39",
@@ -801,7 +801,7 @@ const TEST = {
               "answer": [
                 "financial"
               ],
-              "explain": "答案：financial。"
+              "explain": " Đáp án: financial. "
             },
             {
               "id": "Q40",
@@ -810,7 +810,7 @@ const TEST = {
                 "shareholders",
                 "investors"
               ],
-              "explain": "答案：shareholders / investors。"
+              "explain": " Đáp án: shareholders / investors. "
             }
           ]
         }
@@ -819,38 +819,38 @@ const TEST = {
   ]
 };
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* chính thức Đọc Học thuật (Academic Reading) nguyên thủy điểm (0-40) → Điểm IELTS so sánh bề ngoài */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
+    hai, động cơ
    ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* Trang bìa tin tức */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} thiên văn chương · tổng ${totalQs()} câu`;
 })();
 
-/* 模式弹窗 */
+/* Hộp thoại chọn chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id} (${allQs(p).length} câu)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent=' Bỏ chọn tất cả ';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?' Bỏ chọn tất cả ':' Chọn tất cả '; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert(' mời ít nhất lựa chọn một thiên văn chương. '); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -862,8 +862,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思12 · Test 4 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 12 · Test 4 — Đọc `;
+  document.getElementById('testModeTag').textContent= mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử ';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -877,10 +877,10 @@ function passageHtml(p){
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
       <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
+      <div class="sb-meta"> đề nghị thời gian sử dụng khoảng 20 phút · bổn thiên tổng ${allQs(p).length} câu</div>
     </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // đem <Q n="x"> giành chỗ thay thế thành đánh số huy hiệu + đưa vào khung
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -902,7 +902,7 @@ function groupHtml(g){
     body=`${g.tableTitle?`<div class="note-title">${g.tableTitle}</div>`:''}<table class="note-table">${head}${rows}</table>`;
   }
   else if(g.kind==='tfng'){
-    const opts = g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN'];
+    const opts = g.variant==='yn'? ['YES','NO','NOT GIVEN']: ['TRUE','FALSE','NOT GIVEN'];
     body=g.questions.map(q=>{
       const radios=opts.map(v=>`<label><input type="radio" name="${q.id}" value="${v}"> <span>${v}</span></label>`).join('');
       return `<div class="mcq"><div class="qtext"><span class="qnum-badge">${q.no}</span><span>${q.q}</span></div><div class="tfng-opts">${radios}</div></div>`;
@@ -915,7 +915,7 @@ function groupHtml(g){
     }).join('');
   }
   else if(g.kind==='match'){
-    const box=g.noBox ? '' : `<div class="match-box"><div class="mb-h">${g.boxTitle||''}</div>${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
+    const box=g.noBox? '': `<div class="match-box"><div class="mb-h">${g.boxTitle||''}</div>${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=`<select id="REP"><option value="">—</option>${Object.keys(g.box).map(k=>`<option value="${k}">${k}</option>`).join('')}</select>`;
     const qs=(g.subTitle?`<div style="font-weight:700;margin:6px 0 8px;">${g.subTitle}</div>`:'')+g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel.replace('REP',q.id)}</div>`).join('');
     body=box+qs;
@@ -923,11 +923,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> lựa chọn hạng nhất (bản tổ hợp kế tuyển ra chính xác mấy hạng, không giới hạn thứ tự) </span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn từ lấp chỗ trống: từ kho A–H + văn trung hạ kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -938,19 +938,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* máy tính giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
-      t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert(' đã đến giờ, tự động Nộp bài. '); submitTest(); return; }
+      t.classList.toggle('warn',left<=600&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* phê chữa */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -958,17 +958,17 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(` đã đáp lại ${answered}/${total} câu. \n Đồng ý Nộp bài cũng Xem Báo cáo chấm bài không? `)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval);
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* trước xử lý multi Nối thông tin (không giới hạn thứ tự, không tái diễn tỉ số) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
   }));
 
   let correct=0,total=0; const detail=[];
@@ -977,7 +977,7 @@ function submitTest(){
     s.groups.forEach(g=>g.questions.forEach(q=>{
       const ua=readAns(q); let ok;
       if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+      else ok = ua!=='' & [].concat(q.answer).map(norm).includes(norm(ua));
       total++; if(ok){correct++;sc++;}
       items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
     }));
@@ -990,29 +990,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思12 · Test 4 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 12 · Test 4 — Đọc ';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử '} · thời gian sử dụng ${fmt(elapsed)} · thời gian hoàn thành ${new Date().toLocaleString('zh-CN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+    ? ' Điểm IELTS theo như chính thức Đọc Học thuật (Academic Reading) 40 câu nguyên thủy điểm so sánh bề ngoài đổi. '
+    : ` lần này chỉ trắc ${total} câu, dự đoán điểm theo như tỉ lệ tương đương đến 40 câu sau sử dụng chính thức so sánh bề ngoài; làm xong cả 3 bài đọc lúc là chính xác đổi. `;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?` Câu trả lời của bạn: <span class="yours">${it.ua}</span> `:`<span class="yours"> Chưa trả lời </span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
+        <div class="ra">${it.ok?'<span class="correctv"> Trả lời chính xác </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / đúng ${d.total} câu ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -1027,7 +1027,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Đồng bộ điểm số (do Trung tâm Học tập tự động tăng thêm, không thay đổi di chuyển nguyên phê chữa ăn khớp) ===== */
 (function(){
   var posted=false;
   function report(){

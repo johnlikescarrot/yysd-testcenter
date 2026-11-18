@@ -8,33 +8,33 @@
   var contentEl = document.getElementById("content");
   var board = (new URLSearchParams(location.search).get("board") || "caie").trim();
 
-  document.title = "A-Level 真题库 · 优益思达国际课程中心";
+  document.title = "A-Level thực Ngân hàng đề · Trung tâm Luyện thi Quốc tế YYSD ";
   document.getElementById("year").textContent = new Date().getFullYear();
 
   function render(catalog) {
     var qp = A.qpCount(catalog);
     var current = A.boardOf(catalog, board) || catalog.boards[0];
-    if (current && current.id !== board) {
+    if (current && current.id!== board) {
       board = current.id;
     }
-    var boardLabel = current ? (current.labelZh || current.label) : "A-Level";
+    var boardLabel = current? (current.labelZh || current.label): "A-Level";
 
     var crumb = '<div class="minimal-crumb cam-crumb">' +
-      '<a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
-      '<span>国际课程</span> <span class="crumb-sep" aria-hidden="true">★</span> ' +
-      "A-Level 真题库</div>";
+      '<a href="index.html"> Trang chủ </a> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      '<span> Chương trình quốc tế </span> <span class="crumb-sep" aria-hidden="true">★</span> ' +
+      "A-Level thực Ngân hàng đề </div>";
 
     var hero = '<div class="cam-hero alevel-hero">' +
       '<div class="cam-hero__badge alevel-hero__badge"><div class="lbl">A-LEVEL</div><div class="num">📚</div></div>' +
-      "<div><h1>A-Level 历年真题</h1>" +
-      '<div class="meta">CAIE · Edexcel · Oxford AQA · 已收录 ' + qp + " 套真题 · 免费预览下载</div></div></div>";
+      "<div><h1>A-Level đề thi các năm </h1>" +
+      '<div class="meta">CAIE · Edexcel · Oxford AQA · đã thu nhận sử dụng ' + qp + " bộ đề thi thật · miễn phí Xem trước download </div></div></div>";
 
     var tabs = (catalog.boards || []).map(function (b) {
       var active = b.id === board;
-      var empty = !b.subjects || !b.subjects.length;
-      return '<button type="button" class="alevel-board-tab' + (active ? " is-active" : "") +
-        (empty ? " is-soon" : "") + '" data-board="' + Y.esc(b.id) + '"' +
-        (empty ? ' disabled title="筹备中"' : "") + ">" +
+      var empty =!b.subjects ||!b.subjects.length;
+      return '<button type="button" class="alevel-board-tab' + (active? " is-active": "") +
+        (empty? " is-soon": "") + '" data-board="' + Y.esc(b.id) + '"' +
+        (empty? ' disabled title=" trù bị Vừa "': "") + ">" +
         Y.esc(b.labelZh || b.label) + "</button>";
     }).join("");
 
@@ -42,22 +42,22 @@
       '<div class="alevel-board-tabs" role="tablist">' + tabs + "</div>" +
       '<div class="alevel-board-heading"><span class="subject-dot"></span><h2>' + Y.esc(boardLabel) + "</h2></div>" +
       A.hubBoardHTML(catalog, board, "") +
-      '<p class="alevel-footnote">解析与逐步详解将在后续版本开放付费解锁；当前真题与 Mark Scheme 均可免费使用。</p>';
+      '<p class="alevel-footnote"> Giải thích đáp án và từng bước Giải thích chi tiết đem ở phía sau tục phiên bản cởi mở trả tiền giải tỏa; trước mắt đề thi thật và Mark Scheme đều có thể miễn phí sử dụng. </p>';
   }
 
   contentEl.addEventListener("click", function (e) {
     var tab = e.target.closest(".alevel-board-tab:not(.is-soon)");
     if (!tab) return;
     var next = tab.getAttribute("data-board");
-    if (next && next !== board) {
+    if (next && next!== board) {
       location.href = "alevel.html?board=" + encodeURIComponent(next);
     }
   });
 
   A.loadCatalog().then(render).catch(function (err) {
     var msg = location.protocol === "file:"
-      ? "请通过网址（http://）访问本站，本地双击打开会被浏览器拦截。"
+      ? " xin thông qua địa chỉ Internet (http://) truy cập trang web, bản địa double-click mở ra sẽ bị trình duyệt chặn đường. "
       : err.message;
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(msg) + "</p></div>";
+    contentEl.innerHTML = '<div class="state state--brand"><h3> Tải dữ liệu thất bại </h3><p>' + Y.esc(msg) + "</p></div>";
   });
 })();

@@ -33,7 +33,7 @@ STEM_START = re.compile(
 )
 STEM_LEAD = re.compile(
     r"^(?:At the (?:end|beginning) of the (?:conversation|announcement),\s+"
-    r"|According to (?:the )?(?:conversation|speakers|man|woman|announcement|speaker),\s+"
+    r"|According to (?:the)?(?:conversation|speakers|man|woman|announcement|speaker),\s+"
     r"|Based on the (?:conversation|announcement),\s+)",
     re.I,
 )
@@ -273,7 +273,7 @@ def green_answers(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if not any(p[1] for p in group) or len(group) != 4:
+        if not any(p[1] for p in group) or len(group)!= 4:
             continue
         out.append("ABCD"[next(i for i, p in enumerate(group) if p[1])])
     json.dump(out, open(cache, "w"))
@@ -389,7 +389,7 @@ def pill_sets(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if len(group) != 4 or not any(p[1] for p in group):
+        if len(group)!= 4 or not any(p[1] for p in group):
             continue
         opts = {}
         answer = ""
@@ -463,7 +463,7 @@ def attach_stems(stem, found):
         else:
             groups[-1].append(pill)
     tops = [g[0][0] for g in groups if len(g) == 4 and any(p[1] for p in g)]
-    if len(tops) != len(found):
+    if len(tops)!= len(found):
         return found
     for pill, y in zip(found, tops):
         crop = im.crop((x0, max(0, y - 120), x1, max(0, y - 2)))
@@ -496,7 +496,7 @@ def from_pills(lines, stem):
         if "?" in s:
             s = s[:s.index("?") + 1].strip()
         elif englishish(s) and len(s) > 20:
-            s = s.rstrip(" .") + "?"
+            s = s.rstrip(".") + "?"
         if s.endswith("?") and englishish(s):
             stems.append(s)
         elif len(page) == len(found):
@@ -703,7 +703,7 @@ def main():
             "set": "L-ANO" + n,
             "title": "L-ANO%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "通知",
+            "titleZh": " thông tri ",
             "code": item["code"] or ("A%02d" % int(k)),
             "instruction": "Listen to an announcement.",
             "audio": "library/toefl/audio/bank-l-ano/" + audio_name,
@@ -713,7 +713,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-ano",
-        "title": "题块库 · 通知",
+        "title": " Ngân hàng dạng bài · thông tri ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

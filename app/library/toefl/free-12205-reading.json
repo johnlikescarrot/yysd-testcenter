@@ -1,73 +1,73 @@
 {
- "id": "free-12205",
- "title": "Daily Life Reading #2",
- "set": "free",
- "skill": "reading",
- "titleZh": "日常生活阅读 #2",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12205,
-  "labelId": 1320,
-  "code": "TOEFL--read in daily life-2"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "daily_life",
-   "module": 1,
-   "title": "Daily Life",
-   "instruction": "Read an email.",
-   "layout": {
-    "kind": "card",
-    "kicker": "Email",
-    "title": "",
-    "body": "Hi everyone,\nJust a quick update about our long-awaited trip this Friday afternoon (June 21). We’ll meet at Riverside Park’s West Gate at 2:00 P.M.. Please send an email to Tom by this Wednesday to confirm your attendance. We’ll have a discussion after the trip. This is your chance to shine!\nDon’t forget to:\n• Wear comfy shoes (we’ll cover 3+ miles!);\n• Bring reusable water bottles – let’s go green;\n• Pack a rain jacket – weather’s been up in the air lately.\nPlease double-check the task list so that everyone can be on the same page.\nQuestions? Swing by my desk before Thursday. Let’s make this unforgettable!\nCheers,\nAlex Chen\nTeam Coordinator"
-   },
-   "questions": [
+  "id": "free-12205",
+  "title": "Daily Life Reading #2",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "sinh hoạt hàng ngày Đọc #2",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12205,
+    "labelId": 1320,
+    "code": "TOEFL--read in daily life-2"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What does the phrase \"on the same page\" most likely mean?",
-     "options": {
-      "A": "Sitting in the same physical location",
-      "B": "Having a shared understanding",
-      "C": "Reading the same page of the list",
-      "D": "Using identical notebooks"
-     },
-     "answer": "B",
-     "analysis": "What does the phrase \"on the same page\" most likely mean? 原文：Please double-check the task list so that everyone can be on the same page. on the same page 是英语常用习语，意思是达成共识、信息一致、有共同理解，不是指坐在同一个地方或看同一页书。 B：有共同的理解 → 正确"
-    },
-    {
-     "id": 2,
-     "stem": "What can be inferred about the weather forecast for Friday?",
-     "options": {
-      "A": "Heavy rain is guaranteed",
-      "B": "Temperatures will be extremely high",
-      "C": "Conditions are unpredictable",
-      "D": "Sunshine has been confirmed"
-     },
-     "answer": "C",
-     "analysis": "What can be inferred about the weather forecast for Friday? 原文：Pack a rain jacket – weather’s been up in the air lately. up in the air = 悬而未决、无法预测、不稳定。所以天气是 ** unpredictable（不可预测的）**。 C：情况不可预测 → 正确"
-    },
-    {
-     "id": 3,
-     "stem": "What must team members do by Wednesday?",
-     "options": {
-      "A": "Meet at Riverside Park’s West Gate",
-      "B": "Collect reusable water bottles",
-      "C": "Confirm attendance with Tom",
-      "D": "Visit Alex’s desk"
-     },
-     "answer": "C",
-     "analysis": "What must team members do by Wednesday? 原文：Please send an email to Tom by this Wednesday to confirm your attendance. 要求周三前给 Tom 发邮件确认出席。 C：向 Tom 确认出席 → 正确"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "daily_life",
+      "module": 1,
+      "title": "Daily Life",
+      "instruction": "Read an email.",
+      "layout": {
+        "kind": "card",
+        "kicker": "Email",
+        "title": "",
+        "body": "Hi everyone,\nJust a quick update about our long-awaited trip this Friday afternoon (June 21). We’ll meet at Riverside Park’s West Gate at 2:00 P.M.. Please send an email to Tom by this Wednesday to confirm your attendance. We’ll have a discussion after the trip. This is your chance to shine!\nDon’t forget to:\n• Wear comfy shoes (we’ll cover 3+ miles!);\n• Bring reusable water bottles – let’s go green;\n• Pack a rain jacket – weather’s been up in the air lately.\nPlease double-check the task list so that everyone can be on the same page.\nQuestions? Swing by my desk before Thursday. Let’s make this unforgettable!\nCheers,\nAlex Chen\nTeam Coordinator"
+      },
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What does the phrase \"on the same page\" most likely mean?",
+          "options": {
+            "A": "Sitting in the same physical location",
+            "B": "Having a shared understanding",
+            "C": "Reading the same page of the list",
+            "D": "Using identical notebooks"
+          },
+          "answer": "B",
+          "analysis": "What does the phrase \"on the same page\" most likely mean? Bài gốc: Please double-check the task list so that everyone can be on the same page. on the same page là Tiếng Anh thường dùng tập lời nói, ý là đạt thành chung nhận thức, tin tức nhất trí, có cộng đồng lý giải, không phải chỉ ngồi ở cùng một cái địa phương hoặc nhìn đồng nhất trang sách. B: có chung lý giải → Đúng"
+        },
+        {
+          "id": 2,
+          "stem": "What can be inferred about the weather forecast for Friday?",
+          "options": {
+            "A": "Heavy rain is guaranteed",
+            "B": "Temperatures will be extremely high",
+            "C": "Conditions are unpredictable",
+            "D": "Sunshine has been confirmed"
+          },
+          "answer": "C",
+          "analysis": "What can be inferred about the weather forecast for Friday? Bài gốc: Pack a rain jacket – weather’s been up in the air lately. up in the air = treo mà không quyết, không cách nào dự đoán, không ổn định. nên thời tiết là ** unpredictable (không thể dự đoán) **. C: tình huống không thể dự đoán → Đúng"
+        },
+        {
+          "id": 3,
+          "stem": "What must team members do by Wednesday?",
+          "options": {
+            "A": "Meet at Riverside Park’s West Gate",
+            "B": "Collect reusable water bottles",
+            "C": "Confirm attendance with Tom",
+            "D": "Visit Alex’s desk"
+          },
+          "answer": "C",
+          "analysis": "What must team members do by Wednesday? Bài gốc: Please send an email to Tom by this Wednesday to confirm your attendance. yêu cầu thứ tư trước cho Tom gởi điện thư Xác nhận dự họp. C: hướng Tom Xác nhận dự họp → Đúng"
+        }
+      ]
+    }
+  ]
 }

@@ -128,7 +128,7 @@
     seenTask[type] = 1;
     var intro = $("ets-intro");
     var next = $("next-btn");
-    if (!intro || !next) return false;
+    if (!intro ||!next) return false;
     ["exam", "review", "rest", "done"].forEach(function (id) {
       var n = $(id);
       if (n) n.classList.add("hidden");
@@ -202,7 +202,7 @@
   }
 
   function setPaused(on) {
-    paused = !!on;
+    paused =!!on;
     var box = $("ets-pause");
     if (box) box.classList.toggle("is-on", paused);
     document.querySelectorAll("audio").forEach(function (a) {
@@ -242,12 +242,12 @@
       for (i = 0; i < 20; i++) box.appendChild(document.createElement("i"));
     }
     Array.prototype.forEach.call(box.children, function (el, i) {
-      el.className = i < n ? (i < 7 ? "is-quiet" : (i < 15 ? "is-good" : "is-loud")) : "";
+      el.className = i < n? (i < 7? "is-quiet": (i < 15? "is-good": "is-loud")): "";
     });
   }
 
   function askMic() {
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    if (!navigator.mediaDevices ||!navigator.mediaDevices.getUserMedia) {
       return Promise.reject(new Error("no-mic"));
     }
     return navigator.mediaDevices.getUserMedia({
@@ -342,19 +342,19 @@
   function examMode(on) {
     examBtns.forEach(function (el) {
       if (!el) return;
-      el.classList.toggle("hidden", !on);
+      el.classList.toggle("hidden",!on);
     });
     var next = $("next-btn");
     if (next && on) {
       next.textContent = "Next";
       next.disabled = false;
     }
-    document.body.classList.toggle("ets-booting", !on);
+    document.body.classList.toggle("ets-booting",!on);
     var pop = $("ets-vol");
     if (on && pop) pop.classList.add("hidden");
   }
 
-  /* wofo: 交卷后先停在「生成成绩单」屏，点 View 才把答卷交给复盘页 */
+  /* wofo: Nộp bài trước tiên đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới đem giải bài thi giao cho phục bàn trang */
   function reportGate(onView) {
     examMode(false);
     document.body.classList.add("ets-gate-on");
@@ -373,7 +373,7 @@
     $("ets-gate-go").onclick = function () { if (onView) onView(); };
   }
 
-  // ponytail: confirmExit 与 confirmSubmit 共用 #ets-exit 浮层，每次全量写文案防止上一次的残留
+  // ponytail: confirmExit và confirmSubmit xài chung #ets-exit phù tầng, mỗi lần toàn bộ số lượng ghi văn án phòng ngừa lần trước lưu lại
   function confirmExit(onYes, mock) {
     var box = $("ets-exit");
     if (!box) { if (onYes) onYes(); return; }
@@ -381,11 +381,11 @@
     var p = box.querySelector("p");
     var yes = $("ets-exit-yes");
     var no = $("ets-exit-no");
-    if (h) h.textContent = mock ? "Exit Test" : "Exit Section";
+    if (h) h.textContent = mock? "Exit Test": "Exit Section";
     if (p) p.textContent = mock
       ? "This ends the mock test and returns you to the mock list. This attempt will not be scored."
       : "If you exit this section, unanswered questions will not be scored and you cannot return.";
-    if (yes) yes.textContent = mock ? "Exit Test" : "Exit Section";
+    if (yes) yes.textContent = mock? "Exit Test": "Exit Section";
     if (no) no.textContent = "Return";
     box.classList.add("is-on");
     if (yes) yes.onclick = function () { box.classList.remove("is-on"); if (onYes) onYes(); };
@@ -423,7 +423,7 @@
     }
     if (no) {
       no.textContent = "Return";
-      no.onclick = backHref ? function () { location.href = backHref; } : null;
+      no.onclick = backHref? function () { location.href = backHref; }: null;
     }
     box.classList.add("is-on");
     return true;
@@ -437,7 +437,7 @@
     exitBtn.classList.remove("hidden");
     exitBtn.onclick = function () {
       var F = w.YYSD_TOEFL_FULL;
-      var mock = !!(opts.isFull || opts.mode === "mock");
+      var mock =!!(opts.isFull || opts.mode === "mock");
       confirmExit(function () {
         markLeaving();
         var preview = false;
@@ -470,7 +470,7 @@
       if (label) titleEl.textContent = label;
     }
     var queue = [];
-    if (opts.isFull && opts.skill === "reading" && !hwDone(opts.id)) {
+    if (opts.isFull && opts.skill === "reading" &&!hwDone(opts.id)) {
       queue.push(COPY.general, COPY.hardware, COPY.volume, COPY.microphone);
     } else if (!opts.isFull && opts.skill === "listening") {
       queue.push(COPY.volume);
@@ -491,19 +491,19 @@
     examBtns = [$("hide-time"), $("help-btn"), $("review-btn"), $("back-btn"), $("clock")];
     examMode(false);
     if (volBtn) {
-      volBtn.classList.toggle("hidden", opts.skill !== "listening" && opts.skill !== "speaking" && !opts.isFull);
+      volBtn.classList.toggle("hidden", opts.skill!== "listening" && opts.skill!== "speaking" &&!opts.isFull);
     }
     if (intro) intro.classList.remove("hidden");
     if (next) next.textContent = "Continue";
 
     function paint() {
       var scr = queue[i];
-      if (!scr || !intro) return;
+      if (!scr ||!intro) return;
       stopMic();
       intro.innerHTML = "<h2>" + scr.title + "</h2>" + scr.html;
       if (next) {
         next.disabled = false;
-        next.textContent = i === queue.length - 1 ? "Begin" : "Continue";
+        next.textContent = i === queue.length - 1? "Begin": "Continue";
       }
       if (scr.id === "volume") {
         var tone = $("ets-tone");
@@ -563,21 +563,21 @@
   else bindChrome();
 
   function escHtml(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
   function renderReview(detail) {
     return (detail || []).map(function (d) {
-      var ua = d.ua ? escHtml(d.ua) : "无";
-      var mark = d.ok === true ? "is-correct" : (d.ok === false ? "is-incorrect" : "");
-      var stem = d.stem ? " · " + escHtml(d.stem) : "";
+      var ua = d.ua? escHtml(d.ua): " Không ";
+      var mark = d.ok === true? "is-correct": (d.ok === false? "is-incorrect": "");
+      var stem = d.stem? " · " + escHtml(d.stem): "";
       var explain = d.explain
-        ? '<p class="rv-explain"><b>解析</b> ' + escHtml(d.explain) + "</p>"
+        ? '<p class="rv-explain"><b> Giải thích đáp án </b> ' + escHtml(d.explain) + "</p>"
         : "";
       return '<article class="rv-item"><p class="rv-stem">Q' + escHtml(d.id) + stem + "</p>" +
-        '<p class="rv-line"><span class="rv-k">我的答案：</span><span class="' + mark + '">' + ua + "</span></p>" +
-        '<p class="rv-line"><span class="rv-k">正确答案：</span><span class="is-correct">' + escHtml(d.expect || "") + "</span></p>" +
+        '<p class="rv-line"><span class="rv-k"> đáp án của ta: </span><span class="' + mark + '">' + ua + "</span></p>" +
+        '<p class="rv-line"><span class="rv-k"> Đáp án đúng: </span><span class="is-correct">' + escHtml(d.expect || "") + "</span></p>" +
         explain + "</article>";
     }).join("");
   }

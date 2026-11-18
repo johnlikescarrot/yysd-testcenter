@@ -16,12 +16,12 @@ var ids = [
 ids.forEach(function (id) {
   must(cfg.indexOf('"' + id + '"') >= 0, "missing title " + id);
 });
-must(cfg.indexOf("图书馆服务") >= 0 && cfg.indexOf("Library services") >= 0, "set1 s1 zh/en");
-must(cfg.indexOf("历代玩偶") >= 0 && cfg.indexOf("Dolls through the ages") >= 0, "set1 p1 zh/en");
-must(cfg.indexOf("悉尼歌剧院") >= 0 && cfg.indexOf("Sydney Opera House") >= 0, "set3 p1 zh/en");
-must(cfg.indexOf("当人们对音乐失聪") >= 0, "set3 p3 zh");
-must(cfg.indexOf("澳大利亚空中牙医") >= 0 && cfg.indexOf("Australia's Airborne Dentists") >= 0, "set4 p1 zh/en");
-must(cfg.indexOf("塔斯马尼亚虎") >= 0, "set4 p2 zh");
+must(cfg.indexOf(" đồ thư quán phục vụ ") >= 0 && cfg.indexOf("Library services") >= 0, "set1 s1 zh/en");
+must(cfg.indexOf(" các thời kỳ con rối ") >= 0 && cfg.indexOf("Dolls through the ages") >= 0, "set1 p1 zh/en");
+must(cfg.indexOf(" Xít-ni ca kịch viện ") >= 0 && cfg.indexOf("Sydney Opera House") >= 0, "set3 p1 zh/en");
+must(cfg.indexOf(" khi mọi người đối với Âm nhạc mất thông ") >= 0, "set3 p3 zh");
+must(cfg.indexOf(" Úc không trung nha sĩ ") >= 0 && cfg.indexOf("Australia's Airborne Dentists") >= 0, "set4 p1 zh/en");
+must(cfg.indexOf(" tháp tư ngựa ni hơn kém Hổ ") >= 0, "set4 p2 zh");
 must(cal.indexOf("secretTopicLine") >= 0, "calendar uses topic line");
 must(cal.indexOf("secretSearchText") >= 0, "calendar searches topics");
 must(cal.indexOf("cal-check-list--lsecret") >= 0, "lsecret 5-col class");

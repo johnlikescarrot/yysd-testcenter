@@ -6,19 +6,19 @@ const root = path.join(__dirname, "..");
 
 const man = JSON.parse(fs.readFileSync(path.join(root, "library/manifest.json"), "utf8"));
 const cet = man.items.filter((i) => i.subject === "vocab-cet4");
-if (cet.length !== 35) throw new Error("expected 35 cet4 units, got " + cet.length);
+if (cet.length!== 35) throw new Error("expected 35 cet4 units, got " + cet.length);
 
-const html1 = fs.readFileSync(path.join(root, "library/study/vocab-cet4/四级单词LIST1.html"), "utf8");
+const html1 = fs.readFileSync(path.join(root, "library/study/vocab-cet4/tu-vung-dai-hoc-list1.html"), "utf8");
 const m = html1.match(/(?:const|var|let)\s+wordData\s*=\s*(\[[\s\S]*?\]);/);
 if (!m) throw new Error("wordData missing");
 const words = Function("return (" + m[1] + ")")();
 if (words.length < 70) throw new Error("unit1 too few words: " + words.length);
 for (const w of words) {
-  if (!w.mnemonic || !w.collocations || !w.example || !Array.isArray(w.acceptCN) || !w.acceptCN.length) {
+  if (!w.mnemonic ||!w.collocations ||!w.example ||!Array.isArray(w.acceptCN) ||!w.acceptCN.length) {
     throw new Error("unit1 incomplete: " + w.word);
   }
 }
-if (fs.existsSync(path.join(root, "library/study/vocab-cet4/四级单词LIST55.html"))) {
+if (fs.existsSync(path.join(root, "library/study/vocab-cet4/tu-vung-dai-hoc-list55.html"))) {
   throw new Error("legacy LIST55 still in active folder");
 }
 if (!fs.existsSync(path.join(root, "assets/js/config.js")) ||

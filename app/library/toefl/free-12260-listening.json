@@ -1,46 +1,46 @@
 {
- "id": "free-12260",
- "title": "Choose a Response #18",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #18",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12260,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-18"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #18",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/494b8e54b986418a93453c3194289c3a.mp3",
-   "questions": [
+  "id": "free-12260",
+  "title": "Choose a Response #18",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #18",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12260,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-18"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, I read it over twice.",
-      "B": "Thank you. That would be very nice of you.",
-      "C": "The summary is more important.",
-      "D": "Either is okay with me."
-     },
-     "answer": "D",
-     "transcript": "Do you want to proofread this proposal, or would you prefer typing up the summary? ​",
-     "stemZh": "你是想校对这份提案，还是更愿意把总结打出来？",
-     "analysis": "Do you want to proofread this proposal, or would you prefer typing up the summary? 题干分析 本题是or 连接的选择疑问句，给出两项任务供对方二选一：校对提案 还是 录入总结。这类题型不需要用 Yes/No 回答，只需明确选其一、或表示两者都可以、无偏好即可。 选项分析 选项 A：只说自己已经通读两遍，只是陈述过往行为，没有对两个任务做出任何选择表态，回避问题核心，予以排除。 选项 B：只是礼貌道谢，没有回应到底想做哪一项工作，和二选一的提问无关，答非所问，予以排除。 选项 C：主观评判总结更重要，只是评价任务价值，并没有做出自己要选哪一个的选择，不符合选择疑问句作答逻辑，予以排除。 选项 D：表示两项任选其一都可以，属于选择疑问句标准回应里的无偏好型回答，完美契合语境，是正确选项。​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #18",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/494b8e54b986418a93453c3194289c3a.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, I read it over twice.",
+            "B": "Thank you. That would be very nice of you.",
+            "C": "The summary is more important.",
+            "D": "Either is okay with me."
+          },
+          "answer": "D",
+          "transcript": "Do you want to proofread this proposal, or would you prefer typing up the summary? ​",
+          "stemZh": "ngươi là muốn so với phần này đề án, hay càng muốn quản lý kết đánh ra?",
+          "analysis": "Do you want to proofread this proposal, or would you prefer typing up the summary? Câu hỏi phân tích chủ đề là or liên tiếp lựa chọn câu nghi vấn, cho ra hai hạng nhiệm vụ cung cấp đối phương hai chọn một: so với đề án hay ghi vào tổng kết. cái này dạng bài không cần dùng Yes/No trả lời, chỉ cần rõ ràng chọn một mà thôi, hoặc biểu thị cả hai cũng có thể, Không đặc biệt thích là được. Phương án phân tích Phương án A: chỉ nói mình đã đọc một lượt hai lần, chẳng qua là trần thuật qua lại hành vi, không có đối với hai nhiệm vụ làm ra bất luận cái gì lựa chọn tỏ thái độ, lảng tránh vấn đề hạch tâm, giúp cho bài trừ. Phương án B: chẳng qua là lễ phép nói tạ, không có trả lời đến cùng muốn làm vậy một hạng công tác, và hai chọn một vấn đề không quan hệ, đáp phi sở vấn, giúp cho bài trừ. Phương án C: chủ quan bình phán tổng kết quan trọng hơn, chẳng qua là đánh giá nhiệm vụ giá trị, cũng không có làm ra chính mình muốn chọn bao nhiêu cái lựa chọn, không phù hợp lựa chọn câu nghi vấn đáp lại ăn khớp, giúp cho bài trừ. Phương án D: biểu thị hai hạng tùy chọn thứ nhất cũng có thể, thuộc về lựa chọn câu nghi vấn tiêu chuẩn đáp lại bên trong Không đặc biệt thích hình trả lời, hoàn mỹ phù hợp ngữ cảnh, là Đúng Phương án. ​"
+        }
+      ]
+    }
+  ]
 }

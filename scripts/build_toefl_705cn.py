@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.05-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /7 tháng /7.05- Thi trực tiếp /audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-05/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-05"
 SET = "7.05"
-TITLE = "新托福 7.05 国内线下"
+TITLE = "TOEFL iBT 05/7 Thi trực tiếp "
 NEED = []
 
 
@@ -240,7 +240,7 @@ def build_reading():
         " monitor weather systems in great detail. Accurate weather forecasting is crucial for agriculture, disaster preparedness, and daily planning. It should be noted, however, that despite technological advancements, weather is inherently unpredictable due to the numerous atmospheric variables that can change rapidly.",
     ])
     tasks.append(t)
-    if n != 41:
+    if n!= 41:
         raise SystemExit("cw expected next 41, got %s" % n)
     tasks.append(academic("Expert Systems", 2, [
         "Expert systems are a branch of artificial intelligence designed to mimic the decision-making abilities of human experts. These systems are built to solve complex problems by applying a set of rules to specific problems. Their goal is to replicate the expertise and reasoning of professionals in fields like medicine and engineering.",
@@ -273,14 +273,14 @@ def build_reading():
         }, "B"),
         insert_q(45, "Additionally, their performance may decline in unfamiliar or rapidly changing environments where new information is constantly emerging.", "B"),
     ]))
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc ", [
         {"n": 1, "timeSec": 720, "from": 1, "to": 20},
         {"n": 2, "timeSec": 900, "from": 21, "to": 45},
     ], tasks)
 
 
 def build_listening():
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 4},
         {"n": 2, "timeSec": 480, "from": 5, "to": 8},
     ], [
@@ -340,7 +340,7 @@ def build_listening():
 
 
 def build_writing():
-    p = paper(ID, "writing", "写作", [
+    p = paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 2100, "from": 1, "to": 5, "label": "Email"},
         {"n": 2, "timeSec": 2400, "from": 6, "to": 9, "label": "Academic Discussion"},
     ], [
@@ -584,11 +584,11 @@ if __name__ == "__main__":
     dump("2025-07-05-listening.json", build_listening())
     dump("2025-07-05-writing.json", build_writing())
     dump("2025-07-05-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-07-05-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-07-05-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, 3))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, 3))
     dump("2025-07-05-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", 4, 4))
+        ID + "-s4", TITLE + " · Nói Form 4", 4, 4))
     copy_audio()

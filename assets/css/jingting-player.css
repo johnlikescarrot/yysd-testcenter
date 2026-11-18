@@ -1,4 +1,4 @@
-/* 听力精听 lyric player — brand navy/gold, New Oriental–style layout */
+/* Nghe sâu (Intensive Listening) lyric player — brand navy/gold, New Oriental–style layout */
 .jt-page {
   --jt-navy: var(--brand-navy, #07192f);
   --jt-navy-soft: var(--brand-navy-soft, #102a4c);
@@ -72,7 +72,7 @@
 .jt-btn--solid:hover { filter: brightness(1.05); }
 .jt-btn--rec { background: #c45c5c; color: #fff; }
 .jt-btn--rec.on { background: #9a2828; animation: jt-pulse 1.2s infinite; }
-@keyframes jt-pulse { 50% { opacity: .75; } }
+@keyframes jt-pulse { 50% { opacity:.75; } }
 
 .jt-body {
   flex: 1;
@@ -219,13 +219,13 @@
   color: var(--jt-muted);
   font-weight: 400;
 }
-.jt-full.is-blind .jt-full-en,
-.jt-full.is-blind .jt-full-zh { visibility: hidden; }
-.jt-full.is-blind .jt-full-line.is-active {
+.jt-full.is-blind.jt-full-en,
+.jt-full.is-blind.jt-full-zh { visibility: hidden; }
+.jt-full.is-blind.jt-full-line.is-active {
   background: #e8eef8;
 }
-.jt-full.is-blind .jt-full-line.is-active::after {
-  content: "（当前句 · 原文已隐藏）";
+.jt-full.is-blind.jt-full-line.is-active::after {
+  content: " (trước mắt câu · Bài gốc đã che giấu) ";
   visibility: visible;
   color: var(--jt-muted);
   font-weight: 500;
@@ -348,15 +348,15 @@
   font-size: 14px;
   margin-bottom: 8px;
 }
-.jt-heard .ph { color: var(--jt-muted); }
+.jt-heard.ph { color: var(--jt-muted); }
 .jt-verdict { font-size: 14px; line-height: 1.6; }
-.jt-verdict .ok { color: #14633f; }
-.jt-verdict .bad { color: #9a2828; }
-.jt-verdict .w-ok { color: #14633f; font-weight: 600; }
-.jt-verdict .w-bad { color: #9a2828; font-weight: 600; text-decoration: underline; }
-.jt-verdict .w-miss { color: #9a927f; }
+.jt-verdict.ok { color: #14633f; }
+.jt-verdict.bad { color: #9a2828; }
+.jt-verdict.w-ok { color: #14633f; font-weight: 600; }
+.jt-verdict.w-bad { color: #9a2828; font-weight: 600; text-decoration: underline; }
+.jt-verdict.w-miss { color: #9a927f; }
 .jt-note { font-size: 12.5px; color: var(--jt-muted); margin: 8px 0 0; }
-.is-hidden { display: none !important; }
+.is-hidden { display: none!important; }
 
 .jt-player {
   display: flex;

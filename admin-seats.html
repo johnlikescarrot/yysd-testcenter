@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>激活码 · 优益思达</title>
+  <title>Mã kích hoạt · YYSD</title>
+  <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
 </head>
 <body class="home-minimal teacher-page">
   <main class="minimal-shell minimal-main" style="max-width:880px">
-    <p><a href="platform.html">返回主控台</a></p>
-    <h1>激活码</h1>
+    <p><a href="platform.html"> Quay lại bàn điều khiển</a></p>
+    <h1>Mã kích hoạt</h1>
     <p id="switch-line"></p>
     <p>
-      <button type="button" id="switch-on" class="btn btn--primary">打开总开关</button>
-      <button type="button" id="switch-off" class="btn">关闭总开关</button>
+      <button type="button" id="switch-on" class="btn btn--primary">mở ra tổng chốt mở</button>
+      <button type="button" id="switch-off" class="btn">Đóng tổng chốt mở</button>
     </p>
     <p class="auth-msg" id="msg"></p>
     <form id="create" class="auth-form">
-      <label class="auth-field"><span>身份</span>
-        <select id="role"><option value="student">学生</option><option value="teacher">老师</option></select>
+      <label class="auth-field"><span> Vai trò </span>
+        <select id="role"><option value="student">Học viên</option><option value="teacher">Giáo viên</option></select>
       </label>
-      <label class="auth-field"><span>手机号</span>
-        <input id="phone" inputmode="numeric" maxlength="11" placeholder="老用户必填，新用户留空">
+      <label class="auth-field"><span> Số điện thoại </span>
+        <input id="phone" inputmode="numeric" maxlength="11" placeholder="lão người sử dụng tất điền, mới người sử dụng lưu chỗ trống">
       </label>
-      <button class="btn btn--primary" type="submit">生成激活码</button>
+      <button class="btn btn--primary" type="submit">tạo ra Mã kích hoạt</button>
     </form>
     <div id="list"></div>
   </main>
@@ -36,27 +37,27 @@
     function load() {
       A.api("/api/platform/seats").then(function (d) {
         document.getElementById("switch-line").textContent = d.on
-          ? "总开关已打开：学生和老师只能用机考程序。"
-          : "总开关关着：浏览器仍可登录。程序里登录成功会绑定这台电脑。";
-        var html = "<table><tr><th>码</th><th>身份</th><th>手机号</th><th>电脑</th><th>状态</th><th></th></tr>";
+          ? " tổng chốt mở đã mở ra: Học viên và Giáo viên chỉ có thể dùng cơ khảo thi trình tự. "
+          : " tổng chốt mở giam giữ: trình duyệt nhưng có thể Đăng nhập. trình tự dặm Đăng nhập thành công sẽ khóa lại máy vi tính này. ";
+        var html = "<table><tr><th>con ngựa</th><th>Vai trò</th><th>Số điện thoại</th><th>máy tính</th><th>Trạng thái</th><th></th></tr>";
         (d.seats || []).forEach(function (s) {
-          html += "<tr><td>" + s.code + "</td><td>" + (s.role === "teacher" ? "老师" : "学生") +
-            "</td><td>" + (s.phone || "空白") + "</td><td>" + (s.device_key ? "已绑定" : "未绑定") +
-            "</td><td>" + (s.disabled ? "停用" : "可用") + "</td><td>" +
-            "<button data-act='unbind' data-id='" + s.id + "'>解除</button> " +
+          html += "<tr><td>" + s.code + "</td><td>" + (s.role === "teacher"? " Giáo viên ": " Học viên ") +
+            "</td><td>" + (s.phone || " chỗ trống ") + "</td><td>" + (s.device_key? " đã khóa lại ": " không khóa lại ") +
+            "</td><td>" + (s.disabled? " Tạm ngưng ": " có thể dùng ") + "</td><td>" +
+            "<button data-act='unbind' data-id='" + s.id + "'>giải trừ</button> " +
             (s.disabled
-              ? "<button data-act='enable' data-id='" + s.id + "'>恢复</button> "
-              : "<button data-act='disable' data-id='" + s.id + "'>停用</button> ") +
-            "<button data-act='password' data-id='" + s.id + "'>设密码</button></td></tr>";
+              ? "<button data-act='enable' data-id='" + s.id + "'>khôi phục</button> "
+              : "<button data-act='disable' data-id='" + s.id + "'>Tạm ngưng</button> ") +
+            "<button data-act='password' data-id='" + s.id + "'>thiết Mật khẩu</button></td></tr>";
         });
         document.getElementById("list").innerHTML = html + "</table>";
       }).catch(function (e) { show(e.message); });
     }
     document.getElementById("switch-on").onclick = function () {
-      A.api("/api/platform/seat-switch", { method: "POST", body: { on: true } }).then(load).catch(function (e) { show(e.message); });
+      A.api("/api/platform/seat-switch", { method: "POST", body:  true  }).then(load).catch(function (e) { show(e.message); });
     };
     document.getElementById("switch-off").onclick = function () {
-      A.api("/api/platform/seat-switch", { method: "POST", body: { on: false } }).then(load).catch(function (e) { show(e.message); });
+      A.api("/api/platform/seat-switch", { method: "POST", body:  false  }).then(load).catch(function (e) { show(e.message); });
     };
     document.getElementById("create").onsubmit = function (ev) {
       ev.preventDefault();
@@ -71,10 +72,10 @@
       var id = btn.getAttribute("data-id");
       var act = btn.getAttribute("data-act");
       if (act === "password") {
-        var password = window.prompt("新密码（至少 6 位）");
+        var password = window.prompt(" Mật khẩu mới (Tối thiểu 6 ký tự) ");
         if (!password) return;
-        A.api("/api/platform/seats/" + id + "/password", { method: "POST", body: { password: password } })
-          .then(function () { show("密码已设置"); }).catch(function (e) { show(e.message); });
+        A.api("/api/platform/seats/" + id + "/password", { method: "POST", body:  password  })
+          .then(function () { show(" Mật khẩu đã thiết trí "); }).catch(function (e) { show(e.message); });
         return;
       }
       A.api("/api/platform/seats/" + id + "/" + act, { method: "POST", body: {} })
