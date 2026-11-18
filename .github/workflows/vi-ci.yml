@@ -121,7 +121,8 @@ jobs:
           } > "${body}"
           number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
           if [ -n "${number}" ]; then
-            gh pr comment "${number}" --body-file "${body}" --edit-last --create-if-none
+            gh pr comment "${number}" --body-file "${body}" \
+              --edit-last --create-if-none
           fi
 
       - name: Kết luận Lighthouse
