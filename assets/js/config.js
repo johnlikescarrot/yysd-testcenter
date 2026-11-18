@@ -1483,13 +1483,13 @@ window.YYSD = (function () {
     var n = vocabListNo(item);
     var s = (item && item.subject) || "";
     if (!n) return (item && item.title) || "";
-    if (s === "vocab") return "高中词汇单元" + n;
-    if (s === "vocab-cet4") return "单元 " + n;
-    if (s === "vocab-cet4-lite") return "精简 List " + n;
-    if (s === "vocab-special-listening") return "听力词汇单元" + n;
-    if (s === "vocab-special-reading") return "阅读词汇单元" + n;
-    if (s === "vocab-special-writing") return "写作词汇单元" + n;
-    if (isVocabSpecial(s)) return "雅思词汇单元" + n;
+    if (s === "vocab") return "Từ vựng THPT · Bài " + n;
+    if (s === "vocab-cet4") return "Bài " + n;
+    if (s === "vocab-cet4-lite") return "Bộ rút gọn · List " + n;
+    if (s === "vocab-special-listening") return item.title || ("Từ vựng Nghe · Bài " + n);
+    if (s === "vocab-special-reading") return "Từ vựng Đọc · Bài " + n;
+    if (s === "vocab-special-writing") return "Từ vựng Viết · Bài " + n;
+    if (isVocabSpecial(s)) return "Từ vựng IELTS · Bài " + n;
     return (item && item.title) || "";
   }
 

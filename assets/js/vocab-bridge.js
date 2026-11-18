@@ -32,7 +32,7 @@
     var out = [];
     testResultsData.forEach(function (r) {
       if (r.earned !== 0) return;
-      var acceptCN = [];
+      var acceptCN = Array.isArray(r.acceptCN) ? r.acceptCN : [];
       if (typeof wordData !== "undefined" && Array.isArray(wordData)) {
         for (var i = 0; i < wordData.length; i++) {
           if (String(wordData[i].word).toLowerCase() === String(r.word).toLowerCase()) {
@@ -323,9 +323,9 @@
     el.id = "yysd-vocab-timer";
     el.setAttribute("aria-live", "polite");
     el.innerHTML =
-      '<div><span class="yysd-vocab-timer__label">剩余 </span>' +
+      '<div><span class="yysd-vocab-timer__label">Còn </span>' +
       '<span class="yysd-vocab-timer__secs">20</span>' +
-      '<span class="yysd-vocab-timer__unit"> 秒</span></div>' +
+      '<span class="yysd-vocab-timer__unit"> giây</span></div>' +
       '<div id="yysd-vocab-timer-bar"><i></i></div>';
     var root = activeRoot();
     var progress = root && root.querySelector(".test-progress");
@@ -362,15 +362,15 @@
       el.classList.add("is-wait");
       el.classList.remove("is-low");
       if (label) label.textContent = "";
-      if (secsEl) secsEl.textContent = "听读音中…";
+      if (secsEl) secsEl.textContent = "Đang phát âm…";
       if (unit) unit.textContent = "";
       if (bar) bar.style.transform = "scaleX(1)";
       return;
     }
     el.classList.remove("is-wait");
-    if (label) label.textContent = "剩余 ";
+    if (label) label.textContent = "Còn ";
     if (secsEl) secsEl.textContent = String(secs);
-    if (unit) unit.textContent = " 秒";
+    if (unit) unit.textContent = " giây";
     el.classList.toggle("is-low", secs <= 5);
     if (bar) bar.style.transform = "scaleX(" + Math.max(0, secs / QUESTION_SECS) + ")";
   }

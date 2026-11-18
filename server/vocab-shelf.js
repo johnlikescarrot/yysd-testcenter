@@ -90,9 +90,9 @@ function listLabel(item, bookId) {
   if (bookId === "gaozhong" || s === "vocab") return "List " + n;
   if (bookId === "cet4" || s === "vocab-cet4") return "List " + n;
   if (bookId === "cet4-lite" || s === "vocab-cet4-lite") return "List " + n;
-  if (s === "vocab-special-listening") return "听力 List " + n;
-  if (s === "vocab-special-reading") return "阅读 List " + n;
-  if (s === "vocab-special-writing") return "写作 List " + n;
+  if (s === "vocab-special-listening") return item.title || ("Từ vựng Nghe · Bài " + n);
+  if (s === "vocab-special-reading") return "Từ vựng Đọc · Bài " + n;
+  if (s === "vocab-special-writing") return "Từ vựng Viết · Bài " + n;
   return "List " + n;
 }
 
