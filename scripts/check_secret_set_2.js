@@ -31,7 +31,7 @@ TEST.passages.forEach(function (p) {
     g.questions.forEach(function (q) {
       got.push(q.answer[0]);
       must(q.answer.map(norm).indexOf(norm(q.answer[0])) >= 0, "self-grade Q" + q.no);
-      must(q.explain && q.explain.indexOf("定位") >= 0 && q.explain.length > 40, "explain Q" + q.no);
+      must(q.explain && /定位|Vị trí/.test(q.explain) && q.explain.length > 40, "explain Q" + q.no);
     });
   });
 });

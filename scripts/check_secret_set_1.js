@@ -38,7 +38,7 @@ got.forEach(function (a, i) { must(a === expect[i], "Q" + (i + 1) + " " + a + " 
 TEST.passages.forEach(function (p) {
   p.groups.forEach(function (g) {
     g.questions.forEach(function (q) {
-      must(q.explain && q.explain.indexOf("定位") >= 0 && q.explain.length > 40, "explain Q" + q.no);
+      must(q.explain && /定位|Vị trí/.test(q.explain) && q.explain.length > 40, "explain Q" + q.no);
     });
   });
 });
