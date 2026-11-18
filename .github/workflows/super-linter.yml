@@ -116,9 +116,11 @@ jobs:
         run: |
           {
             echo "== cây tệp =="
-            find . -maxdepth 3 -iname "*super-linter*" -o -maxdepth 2 -iname "*.log"
+            find . -maxdepth 3 -iname "*super-linter*" \
+              -o -maxdepth 2 -iname "*.log"
             echo "== tóm tắt =="
-            find . -maxdepth 4 -name "*.md" -path "*super-linter*" -exec head -n 60 {} \;
+            find . -maxdepth 4 -name "*.md" -path "*super-linter*" \
+              -exec head -n 60 {} \;
             echo "== log =="
             find . -maxdepth 4 -name "*.log" -exec tail -n 40 {} \;
           } 2>&1 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
