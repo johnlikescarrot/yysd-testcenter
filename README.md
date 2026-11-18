@@ -4,7 +4,7 @@ YYSD là kho học tập và luyện thi có sẵn từ trước, gồm giao di�
 
 ## Lộ trình tiếng Việt
 
-- Bốn bài luyện ngắn: từ vựng, đọc hiểu, viết và nghe từ/số. Câu hỏi tiếng Anh được giữ nguyên; hướng dẫn và giải thích bằng tiếng Việt.
+- Năm bài luyện ngắn: từ vựng, đọc hiểu, viết, nghe từ/số và gợi ý luyện nói. Câu hỏi tiếng Anh được giữ nguyên; hướng dẫn và giải thích bằng tiếng Việt.
 - Phản hồi sau từng câu, điểm kinh nghiệm, chuỗi ngày học, lịch sử bảy ngày và danh sách câu đến hạn ôn tập. Lịch ôn là gợi ý, không phải đánh giá năng lực hoặc dự đoán điểm IELTS.
 - Tiến độ chỉ được lưu trong `localStorage` trên thiết bị. Xóa dữ liệu trình duyệt hoặc chuyển thiết bị sẽ không tự đồng bộ; có nút xóa tiến độ trong phần chân trang.
 - Bài nghe sử dụng giọng đọc của trình duyệt/thiết bị, có bản chép lời dự phòng. Đây không phải bản ghi IELTS chính thức.

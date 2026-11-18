@@ -83,6 +83,8 @@ jobs:
         uses: super-linter/super-linter/slim@v9.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CREATE_LOG_FILE: true
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: true
           FILTER_REGEX_INCLUDE: '(^|/)(index\.html|study\.html|README\.md|assets/(css/ielts-vi\.css|js/ielts-vi-[^/]+\.mjs)|tests/[^/]+\.mjs|scripts/(audit-ielts|build-ielts-pages)\.mjs|scripts/build_ielts_guide\.py|docs/ielts/nghien-cuu\.md|\.github/workflows/ielts-vi\.yml)$'
@@ -92,6 +94,20 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_PYTHON_RUFF: true
           VALIDATE_YAML: true
+      - name: Ghi chú lỗi lint để dễ chẩn đoán
+        if: failure()
+        shell: bash
+        run: |
+          if [ -f super-linter.log ]; then
+            grep -aEi 'error|fatal|failed' super-linter.log | tail -25 | while IFS= read -r line; do
+              line=${line//'%'/'%25'}
+              line=${line//$'\r'/'%0D'}
+              line=${line//$'\n'/'%0A'}
+              echo "::error::$line"
+            done
+          else
+            echo '::error::Super-Linter không tạo được tệp nhật ký.'
+          fi
 
   pages:
     name: Xuất bản GitHub Pages

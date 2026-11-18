@@ -166,6 +166,46 @@ export const lessons = [
         explanation: '“By Friday afternoon” cho biết cần nộp trước hoặc vào chiều thứ Sáu.'
       }
     ]
+  },
+  {
+    id: 'speaking',
+    title: 'Tự tin diễn đạt',
+    label: 'NÓI',
+    description: 'Tập phát triển câu trả lời và tự luyện nói thành tiếng.',
+    questions: [
+      {
+        id: 'speak-hometown',
+        prompt: 'Hãy thử trả lời thành tiếng, rồi chọn câu phát triển ý rõ nhất.',
+        context: 'What do you enjoy about your hometown?',
+        options: ['I like its quiet streets because they make it a relaxing place to live.', 'Yes.', 'I have two books on my desk.'],
+        optionLanguage: 'en',
+        answer: 0,
+        explanation: 'Câu đầu đưa ra một ý liên quan và giải thích lý do. Bạn có thể dùng trải nghiệm thật của mình thay vì học thuộc câu mẫu.'
+      },
+      {
+        id: 'speak-part-two',
+        prompt: 'Trong IELTS Speaking Part 2, thí sinh thường có bao lâu để chuẩn bị?',
+        options: ['Một phút', 'Mười phút', 'Không có thời gian chuẩn bị'],
+        answer: 0,
+        explanation: 'Bạn thường có một phút để chuẩn bị và ghi chú trước khi nói tối đa hai phút. Hãy xem hướng dẫn chính thức cho hình thức thi của mình.'
+      },
+      {
+        id: 'speak-preference',
+        prompt: 'Câu nào trả lời câu hỏi và đưa ra một lý do?',
+        context: 'Do you prefer studying alone or with others?',
+        options: ['I prefer studying with others because we can exchange ideas.', 'Studying is a word.', 'I went to the market yesterday.'],
+        optionLanguage: 'en',
+        answer: 0,
+        explanation: 'Câu đầu nêu sở thích và lý do liên quan. Khi luyện nói, hãy thử bổ sung một ví dụ ngắn của riêng bạn.'
+      },
+      {
+        id: 'speak-feedback',
+        prompt: 'Khi nghe lại phần tự luyện nói, điều gì hữu ích nhất để kiểm tra?',
+        options: ['Ý có rõ ràng và người nghe có dễ hiểu không', 'Có bắt chước hoàn hảo một giọng bản ngữ không', 'Có nói càng nhanh càng tốt không'],
+        answer: 0,
+        explanation: 'Tập trung vào khả năng truyền đạt, độ rõ và sự mạch lạc. Bạn không cần bắt chước một giọng bản ngữ cụ thể.'
+      }
+    ]
   }
 ];
 

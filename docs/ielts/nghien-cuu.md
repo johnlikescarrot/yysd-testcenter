@@ -20,4 +20,4 @@ Bài nghe dùng giọng đọc do thiết bị tạo; trình duyệt không có 
 
 ## Phạm vi kỹ thuật
 
-Bản Pages chứa trang chủ và trình bài học mới, biểu tượng và cẩm nang. API và kho cũ không được triển khai kèm; các giao diện cũ vẫn còn tiếng Trung. Kiểm thử bao phủ 100% dòng, nhánh và hàm chỉ đối với `ielts-vi-core.mjs` và `ielts-vi-data.mjs`. Bộ kiểm thử trình duyệt đi qua bốn bài, ôn tập, xử lý lỗi lưu trữ và các kích thước màn hình. Lighthouse đo riêng các trang trong bản dựng tĩnh; kết quả không bảo đảm cho mọi thiết bị, trạng thái hoặc trang cũ.
+Bản Pages chứa trang chủ và trình bài học mới, biểu tượng và cẩm nang. API và kho cũ không được triển khai kèm; các giao diện cũ vẫn còn tiếng Trung. Kiểm thử bao phủ 100% dòng, nhánh và hàm chỉ đối với `ielts-vi-core.mjs` và `ielts-vi-data.mjs`. Bộ kiểm thử trình duyệt đi qua năm bài, ôn tập, xử lý lỗi lưu trữ và các kích thước màn hình. Lighthouse đo riêng các trang trong bản dựng tĩnh; kết quả không bảo đảm cho mọi thiết bị, trạng thái hoặc trang cũ.
