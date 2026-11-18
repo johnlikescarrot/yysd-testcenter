@@ -57,11 +57,14 @@ jobs:
         shell: bash
         run: |
           if [[ -f super-linter.log ]]; then
-            message=$(grep -E '\[(ERROR|FATAL)\]' super-linter.log | tail -n 8 || true)
+            # The container may write the file as root with mode 0600.
+            message=$(sudo tail -n 100 super-linter.log | tail -c 5500)
             message=${message//%/%25}
             message=${message//$'\r'/%0D}
             message=${message//$'\n'/%0A}
             printf '::error title=Super-Linter::%s\n' "$message"
+          else
+            printf '::warning title=Super-Linter::No container log was saved.\n'
           fi
 
   quality:
