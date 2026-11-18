@@ -30,6 +30,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: vi-ci-${{ github.ref }}
