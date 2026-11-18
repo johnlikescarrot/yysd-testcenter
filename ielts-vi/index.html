@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luyện IELTS Academic bằng tiếng Việt: học cả bốn kỹ năng, ôn ngắt quãng và theo dõi tiến độ riêng tư.">
+  <meta name="theme-color" content="#f6f3ec">
+  <title>Sải bước · Luyện IELTS Academic</title>
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#noi-dung">Bỏ qua điều hướng</a>
+  <header class="site-header" id="dau-trang">
+    <div class="shell header-inner">
+      <a class="brand" href="#dau-trang" aria-label="Sải bước – đầu trang">
+        <img src="assets/mark.svg" width="44" height="44" alt="">
+        <span><strong>Sải bước</strong><small>TRUNG TÂM LUYỆN IELTS</small></span>
+      </a>
+      <nav class="navigation" aria-label="Điều hướng chính">
+        <a href="#lo-trinh">Lộ trình</a>
+        <a href="#on-tap">Ôn tập</a>
+        <a href="#tien-do">Tiến độ</a>
+        <a href="#tai-lieu">Tài liệu</a>
+      </nav>
+      <span class="header-tag"><span aria-hidden="true"></span> Học theo nhịp của bạn</span>
+    </div>
+  </header>
+
+  <main id="noi-dung" class="shell" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow hero-tag"><span aria-hidden="true">✦</span> LỘ TRÌNH IELTS ACADEMIC</p>
+        <h1 id="hero-title">Luyện IELTS,<br><em>từng bước một.</em></h1>
+        <p class="hero-description">Luyện cả bốn kỹ năng qua các bài học ngắn, ôn lại đúng lúc và thấy rõ mình đã tiến bộ ở đâu.</p>
+        <div class="hero-actions">
+          <button type="button" class="button primary" id="continue-lesson" hidden>Bắt đầu bài đầu tiên <span aria-hidden="true">→</span></button>
+          <a class="button quiet" href="#tai-lieu">Xem tài liệu</a>
+        </div>
+        <p class="hero-note">Không cần tài khoản. Tiến độ chỉ lưu trên trình duyệt này.</p>
+      </div>
+      <img class="hero-art" src="assets/trail.svg" width="520" height="400" alt="" fetchpriority="high">
+    </section>
+
+    <noscript><p class="notice">Hãy bật JavaScript để làm bài và lưu tiến độ. Bạn vẫn có thể tải tài liệu ở cuối trang.</p></noscript>
+    <p id="storage-note" class="notice" role="status" hidden>Trình duyệt không cho lưu dữ liệu. Bạn vẫn có thể luyện, nhưng tiến độ chỉ giữ đến khi đóng hoặc tải lại trang.</p>
+
+    <section id="lo-trinh" class="section" aria-labelledby="path-title">
+      <header class="section-heading">
+        <div>
+          <p class="eyebrow">01 / HỌC MỖI NGÀY</p>
+          <h2 id="path-title">Lộ trình của bạn</h2>
+          <p>Học lần lượt hoặc chọn kỹ năng bạn muốn luyện trước.</p>
+        </div>
+        <ul class="skill-key" aria-label="Bốn kỹ năng">
+          <li class="tone-listen">Nghe</li>
+          <li class="tone-read">Đọc</li>
+          <li class="tone-write">Viết</li>
+          <li class="tone-speak">Nói</li>
+        </ul>
+      </header>
+      <div class="study-grid">
+        <div id="learning-path" class="learning-path"></div>
+        <aside class="study-sidebar" aria-label="Kế hoạch học">
+          <section class="side-card" aria-labelledby="goal-title">
+            <div class="side-title"><span class="side-icon tone-write"><svg aria-hidden="true"><use href="assets/icons.svg#target"></use></svg></span><h3 id="goal-title">Mục tiêu hôm nay</h3></div>
+            <output id="goal-count" class="metric">0 / 1</output>
+            <progress id="goal-meter" max="1" value="0" aria-labelledby="goal-title"></progress>
+            <p id="goal-note" class="muted">Hoàn thành một lượt học hoặc ôn tập để đạt mục tiêu.</p>
+            <label class="goal-setting" for="goal-select">Lượt học mỗi ngày
+              <select id="goal-select" disabled>
+                <option value="1">1 lượt</option>
+                <option value="2">2 lượt</option>
+                <option value="3">3 lượt</option>
+              </select>
+            </label>
+          </section>
+          <section class="side-card" aria-labelledby="streak-title">
+            <div class="side-title"><span class="side-icon tone-speak"><svg aria-hidden="true"><use href="assets/icons.svg#flame"></use></svg></span><h3 id="streak-title">Chuỗi ngày luyện</h3></div>
+            <p id="streak-count" class="metric">0 ngày</p>
+            <ul id="week" class="week" aria-label="Bảy ngày gần nhất"></ul>
+            <p class="muted">Chỉ cần hoàn thành một lượt mỗi ngày để duy trì chuỗi.</p>
+          </section>
+          <section id="on-tap" class="side-card review-card" aria-labelledby="review-title">
+            <div class="side-title"><span class="side-icon tone-listen"><svg aria-hidden="true"><use href="assets/icons.svg#repeat"></use></svg></span><h3 id="review-title">Ôn tập ngắt quãng</h3></div>
+            <p id="review-count" class="metric">0 câu</p>
+            <p id="review-note" class="muted">Chưa có câu đến hạn. Các câu đã làm sẽ tự lên lịch ôn.</p>
+            <button type="button" id="begin-review" class="button secondary" disabled>Ôn các câu đến hạn <span aria-hidden="true">→</span></button>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section id="tien-do" class="section report" aria-labelledby="report-title">
+      <header class="section-heading">
+        <div><p class="eyebrow">02 / NHÌN LẠI</p><h2 id="report-title">Tiến độ &amp; cột mốc</h2></div>
+        <p id="xp-summary" class="xp-chip">0 điểm kinh nghiệm</p>
+      </header>
+      <ul id="skill-progress" class="skill-progress" aria-label="Số bài đã hoàn thành theo kỹ năng"></ul>
+      <ul id="badges" class="badges" aria-label="Huy hiệu học tập"></ul>
+      <p class="fine-print">Điểm kinh nghiệm và số câu đúng chỉ phản ánh bài luyện, không dự đoán điểm thi IELTS.</p>
+    </section>
+
+    <section id="tai-lieu" class="section materials" aria-labelledby="materials-title">
+      <header class="section-heading">
+        <div>
+          <p class="eyebrow">03 / ĐỌC THÊM</p>
+          <h2 id="materials-title">Thư viện học tập</h2>
+          <p>Sổ tay bằng tiếng Việt, có trích dẫn bài nghiên cứu gốc và đường dẫn tra cứu Google Scholar.</p>
+        </div>
+      </header>
+      <div class="material-grid">
+        <article class="material-card">
+          <span class="side-icon tone-listen"><svg aria-hidden="true"><use href="assets/icons.svg#book"></use></svg></span>
+          <p class="eyebrow">SỔ TAY 01</p>
+          <h3>Học ít, nhớ lâu</h3>
+          <p>Cách tự kiểm tra, chia buổi học và ghi lỗi trong một tuần luyện IELTS.</p>
+          <div class="material-actions">
+            <a class="button secondary" href="resources/hoc-it-nho-lau.pdf" download>Tải PDF<span class="visually-hidden"> Học ít, nhớ lâu</span></a>
+            <a class="button quiet" href="resources/hoc-it-nho-lau.html">Đọc trên web<span class="visually-hidden">: Học ít, nhớ lâu</span></a>
+          </div>
+        </article>
+        <article class="material-card">
+          <span class="side-icon tone-read"><svg aria-hidden="true"><use href="assets/icons.svg#guide"></use></svg></span>
+          <p class="eyebrow">SỔ TAY 02</p>
+          <h3>Chiến lược bốn kỹ năng</h3>
+          <p>Hiểu cấu trúc IELTS Academic và thực hành từng kỹ năng với bảng tự kiểm.</p>
+          <div class="material-actions">
+            <a class="button secondary" href="resources/bon-ky-nang.pdf" download>Tải PDF<span class="visually-hidden"> Chiến lược bốn kỹ năng</span></a>
+            <a class="button quiet" href="resources/bon-ky-nang.html">Đọc trên web<span class="visually-hidden">: Chiến lược bốn kỹ năng</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p><strong>Sải bước</strong> · Dự án học tập độc lập, không phải sản phẩm chính thức của IELTS.</p>
+    <a href="#dau-trang">Về đầu trang <span aria-hidden="true">↑</span></a>
+  </footer>
+
+  <dialog id="lesson-dialog" aria-labelledby="session-title">
+    <form id="session-form" novalidate>
+      <header class="dialog-head">
+        <div><p id="session-label" class="eyebrow">BÀI LUYỆN</p><h2 id="session-title">Bài luyện</h2></div>
+        <button type="button" class="close-button" id="close-dialog" aria-label="Đóng bài luyện">×</button>
+      </header>
+      <progress id="session-meter" value="0" max="1" aria-label="Tiến độ bài luyện"></progress>
+      <div id="question-host"></div>
+      <p id="response-error" class="response-error" role="alert" hidden></p>
+      <div id="feedback" class="feedback" hidden></div>
+      <footer class="dialog-footer">
+        <small id="session-note">Tiến độ được cập nhật khi bạn hoàn thành lượt này.</small>
+        <button type="submit" id="session-action" class="button primary">Kiểm tra</button>
+      </footer>
+    </form>
+  </dialog>
+  <script type="module" src="assets/main.js"></script>
+</body>
+</html>

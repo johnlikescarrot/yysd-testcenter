@@ -1,0 +1,28 @@
+{
+  "name": "yysd-ielts-vi-quality",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "pdf": "node make-pdfs.mjs",
+    "test": "c8 --all --allow-external --src ../ielts-vi/assets --include '**/ielts-vi/assets/*.js' --100 --per-file --reporter=text --reporter=lcov node --test test/*.test.mjs",
+    "test:browser": "node browser-test.mjs",
+    "lighthouse": "node audit.mjs",
+    "audio": "node make-audio.mjs"
+  },
+  "devDependencies": {
+    "@breezystack/lamejs": "1.2.7",
+    "@echogarden/flite-wasi": "0.1.1",
+    "@expo-google-fonts/noto-sans": "0.4.2",
+    "@sparticuz/chromium": "153.0.0",
+    "c8": "12.0.0",
+    "jsdom": "31.0.1",
+    "lighthouse": "13.6.0",
+    "pdfkit": "0.20.2",
+    "puppeteer-core": "25.18.1"
+  }
+}
