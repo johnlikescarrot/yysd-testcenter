@@ -98,15 +98,15 @@ jobs:
         if: failure()
         shell: bash
         run: |
-          if [ -f super-linter.log ]; then
-            grep -aEi 'error|fatal|failed' super-linter.log | tail -25 | while IFS= read -r line; do
+          if [ -s super-linter.log ]; then
+            tail -40 super-linter.log | while IFS= read -r line; do
               line=${line//'%'/'%25'}
               line=${line//$'\r'/'%0D'}
               line=${line//$'\n'/'%0A'}
-              echo "::error::$line"
+              echo "::warning::$line"
             done
           else
-            echo '::error::Super-Linter không tạo được tệp nhật ký.'
+            echo '::warning::Super-Linter không tạo được nhật ký có nội dung.'
           fi
 
   pages:
