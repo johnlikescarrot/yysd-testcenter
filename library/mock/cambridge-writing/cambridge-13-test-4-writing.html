@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思13 Test 4 写作</title>
-<meta name="exam:title" content="剑桥雅思13 · Test 4（写作）">
+<title>YYSD · Cambridge IELTS 13 Test 4 Viết</title>
+<meta name="exam:title" content="Cambridge IELTS 13 · Test 4 (Viết)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-writing">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思13 Test 4 学术类写作（官方真题）：Task 1 + Task 2 议论文，限时 60 分钟，自带字数统计、草稿自动保存与官方评分标准自评。">
+<meta name="exam:description" content="Cambridge IELTS 13 Test 4 Viết học thuật (đề Cambridge): Task 1 + Task 2 bài nghị luận, thời gian: 60 phút, có bộ đếm từ, lưu nháp tự động và bảng tiêu chí tự đánh giá.">
 <style>
   * { box-sizing:border-box; }
   body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
@@ -94,86 +94,86 @@
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag">YYSD</span> Luyện đề Cambridge IELTS</h1>
   <div class="timer" id="timer"><span id="timerText">60:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Trang giới thiệu -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">13</div></div>
     <div>
-      <h2>剑桥雅思 13 · Test 4</h2>
-      <div class="sub">学术类写作 · 官方真题 · Task 1 图表作文 + Task 2 议论文，限时 60 分钟。</div>
+      <h2>Cambridge IELTS 13 · Test 4</h2>
+      <div class="sub">Viết học thuật · đề Cambridge · Task 1 mô tả biểu đồ + Task 2 bài nghị luận, thời gian: 60 phút.</div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="startTest()">
       <div class="pc-icon">✍️</div>
-      <h3>学术类写作 (Academic Writing)</h3>
-      <div class="pc-meta">Task 1（约 20 分钟，≥150 词）+ Task 2（约 40 分钟，≥250 词）</div>
-      <div class="pc-go">开始写作 ›</div>
+      <h3>Viết học thuật (Academic Writing)</h3>
+      <div class="pc-meta">Task 1 (khoảng 20 phút, ≥150 từ)+ Task 2 (khoảng 40 phút, ≥250 từ)</div>
+      <div class="pc-go">Bắt đầu viết ›</div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
-    <div class="tt-title">剑桥雅思13 · Test 4 — 写作</div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <div class="tt-title">Cambridge IELTS 13 · Test 4 — Viết</div>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang đầu đề thi</button>
   </div>
 
   <div class="task">
-    <div class="task__head"><h3>Writing Task 1</h3><span class="task__time">建议用时约 20 分钟</span></div>
+    <div class="task__head"><h3>Writing Task 1</h3><span class="task__time">Thời gian gợi ý: 20 phút</span></div>
     <div class="prompt" id="task1Prompt"></div>
     <div class="wtables" id="task1Tables"></div>
-    <textarea id="t1" placeholder="在此作答 Task 1（至少 150 词）……"></textarea>
-    <div class="wc"><span>字数：<span class="n" id="wc1">0</span> 词（建议 ≥ 150）</span><span class="saved" id="saved1"></span></div>
+    <textarea lang="en" id="t1" placeholder="Viết bài Task 1 tại đây (ít nhất 150 từ)……"></textarea>
+    <div class="wc"><span>Số từ: <span class="n" id="wc1">0</span> từ (mục tiêu ≥ 150)</span><span class="saved" id="saved1"></span></div>
   </div>
 
   <div class="task">
-    <div class="task__head"><h3>Writing Task 2</h3><span class="task__time">建议用时约 40 分钟</span></div>
+    <div class="task__head"><h3>Writing Task 2</h3><span class="task__time">Thời gian gợi ý: 40 phút</span></div>
     <div class="prompt" id="task2Prompt"></div>
-    <textarea id="t2" placeholder="在此作答 Task 2（至少 250 词）……"></textarea>
-    <div class="wc"><span>字数：<span class="n" id="wc2">0</span> 词（建议 ≥ 250）</span><span class="saved" id="saved2"></span></div>
+    <textarea lang="en" id="t2" placeholder="Viết bài Task 2 tại đây (ít nhất 250 từ)……"></textarea>
+    <div class="wc"><span>Số từ: <span class="n" id="wc2">0</span> từ (mục tiêu ≥ 250)</span><span class="saved" id="saved2"></span></div>
   </div>
 
-  <button class="submit-btn" onclick="confirmFinish()">完成并查看自评报告</button>
+  <button class="submit-btn" onclick="confirmFinish()">Hoàn tất và tự đánh giá</button>
 </div>
 
-<!-- 结果区 -->
+<!-- Kết quả -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">📝 写作完成</div>
-    <h2>剑桥雅思13 · Test 4 — 写作</h2>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">📝 Đã hoàn thành bài Viết</div>
+    <h2>Cambridge IELTS 13 · Test 4 — Viết</h2>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box"><div class="cap">Task 1 字数</div><div class="big" id="r1">0</div><div class="req">要求 ≥ 150 词</div></div>
-      <div class="stat-box"><div class="cap">Task 2 字数</div><div class="big" id="r2">0</div><div class="req">要求 ≥ 250 词</div></div>
+      <div class="stat-box"><div class="cap">Số từ Task 1</div><div class="big" id="r1">0</div><div class="req">Yêu cầu ≥ 150 từ</div></div>
+      <div class="stat-box"><div class="cap">Số từ Task 2</div><div class="big" id="r2">0</div><div class="req">Yêu cầu ≥ 250 từ</div></div>
     </div>
-    <div style="margin-top:18px;"><button class="copy-btn" onclick="copyAll()">📋 复制全文（交给老师批改）</button> <span id="copyMsg" style="font-size:13px;color:#1e8449;margin-left:8px;"></span></div>
-    <div style="margin-top:16px;"><strong>你的 Task 1：</strong><div class="answer-dump" id="dump1"></div></div>
-    <div style="margin-top:12px;"><strong>你的 Task 2：</strong><div class="answer-dump" id="dump2"></div></div>
+    <div style="margin-top:18px;"><button class="copy-btn" onclick="copyAll()">📋 Sao chép toàn bài để gửi giáo viên</button> <span id="copyMsg" style="font-size:13px;color:#1e8449;margin-left:8px;"></span></div>
+    <div style="margin-top:16px;"><strong>Bài Task 1 của bạn: </strong><div class="answer-dump" id="dump1"></div></div>
+    <div style="margin-top:12px;"><strong>Bài Task 2 của bạn: </strong><div class="answer-dump" id="dump2"></div></div>
   </div>
 
   <div class="crit">
-    <h3>对照官方评分标准自评（四项各占 25%）</h3>
-    <p style="font-size:14px;color:#445;margin:0 0 6px;">雅思写作由考官人工评分，无法自动出分。请对照下面四项标准给自己打分（每项 0–9），再请老师复核：</p>
+    <h3>Tự đánh giá theo tiêu chí chính thức (mỗi tiêu chí chiếm 25%)</h3>
+    <p style="font-size:14px;color:#445;margin:0 0 6px;">Bài thi Viết IELTS do giám khảo chấm. Công cụ này không tự cho điểm. Hãy đối chiếu bốn tiêu chí dưới đây (mỗi tiêu chí 0–9) rồi nhờ giáo viên nhận xét:</p>
     <ul>
-      <li><strong>任务完成 / 回应 (Task Achievement / Response)</strong>：Task 1 是否概括了主要特征并做了恰当比较、字数够 150；Task 2 是否清楚回应题目、立场明确、论证充分、字数够 250。</li>
-      <li><strong>连贯与衔接 (Coherence & Cohesion)</strong>：分段是否合理，逻辑是否清晰，衔接词使用是否自然准确。</li>
-      <li><strong>词汇丰富度 (Lexical Resource)</strong>：用词是否多样、准确、得体，拼写错误是否少。</li>
-      <li><strong>语法多样性与准确性 (Grammatical Range & Accuracy)</strong>：句式是否多样（含复杂句），语法与标点错误是否少。</li>
+      <li><strong>Hoàn thành / đáp ứng yêu cầu (Task Achievement / Response)</strong>: Task 1: Bài có tóm tắt đặc điểm chính, so sánh phù hợp và đủ 150 từ không? Task 2: Bài có trả lời đúng đề, nêu rõ quan điểm, lập luận thuyết phục và đủ 250 từ không?</li>
+      <li><strong>Mạch lạc và liên kết (Coherence & Cohesion)</strong>: Các đoạn có được sắp xếp hợp lý, lập luận rõ ràng và các ý liên kết tự nhiên, chính xác không?</li>
+      <li><strong>Vốn từ (Lexical Resource)</strong>: Bạn có dùng từ đa dạng, chính xác, phù hợp và ít mắc lỗi chính tả không?</li>
+      <li><strong>Phạm vi và độ chính xác ngữ pháp (Grammatical Range & Accuracy)</strong>: Bạn có dùng cấu trúc đa dạng, kể cả câu phức, và ít mắc lỗi ngữ pháp, dấu câu không?</li>
     </ul>
-    <div class="tip">💡 提示：字数不足会直接扣「任务完成」分；Task 2 的权重是 Task 1 的两倍。点上方「复制全文」把作文发给老师，可获得更准确的批改与分数。</div>
+    <div class="tip">💡 Lưu ý: Bài quá ngắn có thể chưa đáp ứng đầy đủ yêu cầu. Task 2 có trọng số gấp đôi Task 1. Chọn “Sao chép toàn bài” để gửi giáo viên nhận xét.</div>
   </div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang đầu đề thi</button></div>
 </div>
 
 <script>
 /* ============================================================
-   剑桥雅思13 Test 4 写作（官方真题）
+   Cambridge IELTS 13 Test 4 Viết (đề Cambridge)
    ============================================================ */
 const TEST = {
   durationMin: 60,
@@ -247,7 +247,7 @@ document.getElementById('task1Tables').innerHTML = TEST.task1.charts.map(functio
   if(p.svg) return '<figure class="wplan"><figcaption>'+p.caption+'</figcaption>'+p.svg+'</figure>';
   return '<figure class="wplan"><figcaption>'+p.caption+'</figcaption>'+
     '<img class="wplan-img" src="'+p.image+'" alt="'+p.caption+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\';">'+
-    '<div class="wplan-missing" style="display:none;">📊 柱状图待上传：请把书上剑13 Test 3 Task 1 电力生产/消费前十国柱状图发给老师，上传后此处会显示。</div></figure>';
+    '<div class="wplan-missing" style="display:none;">📊 Đang chờ biểu đồ cột: Gửi giáo viên biểu đồ cột về mười nước sản xuất và tiêu thụ điện nhiều nhất trong Cambridge IELTS 13, Test 3, Task 1 để bổ sung hình.</div></figure>';
 }).join('');
 
 const SKEY = "cambridge-13-test-4-writing-draft";
@@ -270,7 +270,7 @@ function updateWC(){
 }
 function save(which){
   try { localStorage.setItem(SKEY, JSON.stringify({ t1:document.getElementById('t1').value, t2:document.getElementById('t2').value, ts:Date.now() })); } catch(e){}
-  var el = document.getElementById('saved'+which); if(el){ el.textContent='已自动保存 ✓'; setTimeout(function(){ el.textContent=''; }, 1500); }
+  var el = document.getElementById('saved'+which); if(el){ el.textContent='Đã lưu nháp ✓'; setTimeout(function(){ el.textContent=''; }, 1500); }
 }
 ['t1','t2'].forEach(function(id){
   var which = id === 't1' ? 1 : 2;
@@ -297,7 +297,7 @@ function startTest(){
 
 function confirmFinish(){
   var n1 = wordCount(document.getElementById('t1').value), n2 = wordCount(document.getElementById('t2').value);
-  if (window.confirm('Task 1：'+n1+' 词　Task 2：'+n2+' 词\n确定完成并查看自评报告吗？')) finishTest();
+  if (window.confirm('Task 1: '+n1+' từ Task 2: '+n2+' từ\nKết thúc và xem phần tự đánh giá?')) finishTest();
 }
 function finishTest(){
   finished = true; clearInterval(timerInterval);
@@ -308,16 +308,16 @@ function finishTest(){
   var r1 = document.getElementById('r1'), r2 = document.getElementById('r2');
   r1.textContent = n1; r1.className = 'big ' + (n1>=150?'ok':'bad');
   r2.textContent = n2; r2.className = 'big ' + (n2>=250?'ok':'bad');
-  document.getElementById('resMeta').textContent = '用时 '+fmt(elapsed)+' · 完成时间 '+new Date().toLocaleString('zh-CN');
-  document.getElementById('dump1').textContent = v1 || '（未作答）';
-  document.getElementById('dump2').textContent = v2 || '（未作答）';
+  document.getElementById('resMeta').textContent = 'Thời gian làm bài: '+fmt(elapsed)+' · Hoàn thành lúc: '+new Date().toLocaleString('vi-VN');
+  document.getElementById('dump1').textContent = v1 || ' (Chưa trả lời)';
+  document.getElementById('dump2').textContent = v2 || ' (Chưa trả lời)';
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
   window.scrollTo(0,0);
 }
 function copyAll(){
-  var txt = '【剑桥雅思16 · Test 4 写作】\n\n--- Task 1 ---\n'+document.getElementById('t1').value+'\n\n--- Task 2 ---\n'+document.getElementById('t2').value;
-  function done(){ var m=document.getElementById('copyMsg'); m.textContent='已复制 ✓'; setTimeout(function(){ m.textContent=''; }, 2000); }
+  var txt = '[' + document.querySelector('meta[name="exam:title"]').content + ']\n\n--- Task 1 ---\n'+document.getElementById('t1').value+'\n\n--- Task 2 ---\n'+document.getElementById('t2').value;
+  function done(){ var m=document.getElementById('copyMsg'); m.textContent='Đã sao chép ✓'; setTimeout(function(){ m.textContent=''; }, 2000); }
   if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, done); }
   else { var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done(); }
 }

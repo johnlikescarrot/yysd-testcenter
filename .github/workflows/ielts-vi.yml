@@ -1,0 +1,132 @@
+name: IELTS tiếng Việt · chất lượng và Pages
+
+on:
+  pull_request:
+  push:
+    branches: [main, arena/617c061a-yysd-testcenter]
+  schedule:
+    - cron: '27 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ielts-vi-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  super-linter:
+    name: Super-Linter · IELTS tiếng Việt
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the Vietnamese edition
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            ielts-vi
+            quality
+            .github
+      - name: Run Super-Linter
+        id: lint
+        uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          USE_FIND_ALGORITHM: true # Scan the sparse checkout, not the legacy bank tree.
+          STRIP_DEFAULT_WORKSPACE_FOR_REGEX: true
+          FILTER_REGEX_INCLUDE: '^(ielts-vi/|quality/|\.github/workflows/ielts-vi\.yml$)'
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
+          CREATE_LOG_FILE: true
+          SAVE_SUPER_LINTER_SUMMARY: true
+      - name: Annotate lint failures
+        if: failure() && steps.lint.outcome == 'failure'
+        shell: bash
+        run: |
+          if [[ -f super-linter.log ]]; then
+            message=$(grep -E '\[(ERROR|FATAL)\]' super-linter.log | tail -n 8 || true)
+            message=${message//%/%25}
+            message=${message//$'\r'/%0D}
+            message=${message//$'\n'/%0A}
+            printf '::error title=Super-Linter::%s\n' "$message"
+          fi
+
+  quality:
+    name: Coverage, trình duyệt và Lighthouse
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: quality
+    steps:
+      - name: Check out the Vietnamese edition
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            ielts-vi
+            quality
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22.22.3'
+          cache: npm
+          cache-dependency-path: quality/package-lock.json
+      - run: npm ci
+      - name: Verify reproducible handbooks and audio
+        run: |
+          npm run pdf
+          npm run audio
+          git diff --exit-code -- ../ielts-vi/resources/ ../ielts-vi/audio/
+      - run: npm test
+      - run: npm run build
+      - run: npm run test:browser
+      - run: npm run lighthouse
+      - name: Save reports
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: ielts-vi-quality-reports
+          path: |
+            quality/coverage/
+            quality/reports/
+          if-no-files-found: ignore
+      - name: Save static preview for the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: ielts-vi-static-preview
+          path: |
+            quality/dist/
+          include-hidden-files: true
+      - name: Save site for deployment
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/arena/617c061a-yysd-testcenter')
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: quality/dist
+
+  deploy:
+    name: Triển khai GitHub Pages
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/arena/617c061a-yysd-testcenter')
+    needs: [super-linter, quality]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read Pages settings
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Deploy the validated edition
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

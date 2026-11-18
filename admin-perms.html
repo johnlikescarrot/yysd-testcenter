@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>权限管理 · 管理 · 优益思达</title>
+  <title>Quản lý quyền · Quản trị YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260723read">
   <link rel="stylesheet" href="assets/css/teacher-desk.css?v=20260828olive2">
@@ -27,74 +27,74 @@
 <body class="home-minimal teacher-page teacher-layout shell-compact-nav">
 
   <header class="teacher-mobilebar">
-    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">菜单</button>
-    <span class="teacher-mobilebar__title">权限管理</span>
+    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">Trình đơn</button>
+    <span class="teacher-mobilebar__title">Quản lý quyền</span>
   </header>
   <div class="teacher-nav-overlay" data-teacher-nav-close hidden></div>
 
   <div class="teacher-shell">
-    <aside class="teacher-side" id="teacher-side" aria-label="导航">
+    <aside class="teacher-side" id="teacher-side" aria-label="Điều hướng">
       <div class="teacher-side__head">
         <a href="teacher.html" class="teacher-side__brand">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
-          <span class="teacher-side__brand-text"><b>优益思达</b><span>教务</span></span>
+          <span class="teacher-side__brand-text"><b>YYSD</b><span>Giáo vụ</span></span>
         </a>
-        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="收起侧栏">‹</button>
+        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="Thu gọn thanh bên">‹</button>
       </div>
       <nav class="teacher-side__nav">
-        <p class="teacher-side__label">教务</p>
-        <a href="teacher.html" class="teacher-side__link" title="我的学生">我的学生</a>
-        <a href="teacher-calendar.html" class="teacher-side__link" title="任务日历">任务日历</a>
-        <a href="teacher-diagnostic.html" class="teacher-side__link" title="词汇诊断">词汇诊断</a>
-        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="单词闯关">单词闯关</a>
-        <a href="admin-assign.html" class="teacher-side__link" title="学生分配">学生分配</a>
-        <a href="admin-perms.html" class="teacher-side__link is-active" title="权限管理">权限管理</a>
+        <p class="teacher-side__label">Giáo vụ</p>
+        <a href="teacher.html" class="teacher-side__link" title="Học viên của tôi">Học viên của tôi</a>
+        <a href="teacher-calendar.html" class="teacher-side__link" title="Lịch nhiệm vụ">Lịch nhiệm vụ</a>
+        <a href="teacher-diagnostic.html" class="teacher-side__link" title="Đánh giá vốn từ">Đánh giá vốn từ</a>
+        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="Thử thách từ vựng">Thử thách từ vựng</a>
+        <a href="admin-assign.html" class="teacher-side__link" title="Phân công học viên">Phân công học viên</a>
+        <a href="admin-perms.html" class="teacher-side__link is-active" title="Quản lý quyền">Quản lý quyền</a>
       </nav>
       <div class="teacher-side__foot">
-        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">个人中心</a>
-        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">退出</button>
+        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">Hồ sơ cá nhân</a>
+        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">Đăng xuất</button>
       </div>
     </aside>
 
     <div class="teacher-content">
       <section class="minimal-page-head">
-        <h1>权限管理</h1>
-        <p class="minimal-page-desc">选择对象，勾选学生一键开通/停用。练习区到期自动交卷锁定，旧记录仍可查看；考前冲刺包关停后，正在考的可以考完本场，未开始的不能再进。</p>
+        <h1>Quản lý quyền</h1>
+        <p class="minimal-page-desc">Chọn tính năng và học viên để cấp hoặc thu hồi quyền. Khi quyền luyện tập hết hạn, hệ thống tự nộp và khóa bài; học viên vẫn xem được lịch sử. Khi tắt gói ôn nước rút, học viên được hoàn tất bài đang thi nhưng không thể bắt đầu bài mới.</p>
       </section>
 
       <main class="minimal-main">
         <div class="admin-assign">
           <label class="auth-field perm-scope">
-            <span>权限对象</span>
+            <span>Tính năng được cấp quyền</span>
             <select id="scope-select">
-              <option value="practice">真题题库（整个练习区）</option>
+              <option value="practice">Kho đề (toàn bộ khu luyện tập)</option>
             </select>
           </label>
           <div class="cal-picker-toolbar">
-            <input type="search" id="student-q" placeholder="搜索学生姓名或手机号" autocomplete="off">
-            <button type="button" class="btn btn--ghost btn--sm" id="select-all">全选可见</button>
-            <button type="button" class="btn btn--ghost btn--sm" id="clear-all">清空勾选</button>
+            <input type="search" id="student-q" placeholder="Tìm theo tên học viên hoặc số điện thoại" autocomplete="off">
+            <button type="button" class="btn btn--ghost btn--sm" id="select-all">Chọn tất cả mục đang hiển thị</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="clear-all">Bỏ chọn tất cả</button>
           </div>
-          <p class="profile-hint" id="picked-hint">加载中…</p>
+          <p class="profile-hint" id="picked-hint">Đang tải…</p>
           <div class="cal-check-list cal-check-list--tall" id="student-list"></div>
           <div class="perm-when">
             <label class="auth-field">
-              <span>开始时间（留空立即生效）</span>
+              <span>Có hiệu lực từ (để trống để áp dụng ngay)</span>
               <input type="datetime-local" id="start-at">
             </label>
             <label class="auth-field">
-              <span>到期时间（留空长期有效）</span>
+              <span>Hết hạn (để trống nếu không giới hạn)</span>
               <input type="datetime-local" id="expire-at">
             </label>
           </div>
           <p class="auth-msg" id="msg" role="status"></p>
           <div class="cal-form__foot" style="justify-content:flex-start;margin-top:16px">
-            <button type="button" class="btn btn--primary" id="grant-btn" disabled>开通权限</button>
-            <button type="button" class="btn btn--ghost" id="revoke-btn" disabled>停用权限</button>
+            <button type="button" class="btn btn--primary" id="grant-btn" disabled>Cấp quyền</button>
+            <button type="button" class="btn btn--ghost" id="revoke-btn" disabled>Thu hồi quyền</button>
           </div>
 
-          <h2 class="perm-h2">当前授权</h2>
-          <div id="grant-list"><p class="profile-hint">加载中…</p></div>
+          <h2 class="perm-h2">Quyền hiện tại</h2>
+          <div id="grant-list"><p class="profile-hint">Đang tải…</p></div>
         </div>
       </main>
     </div>
@@ -102,7 +102,7 @@
 
   <footer class="minimal-footer">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达 · 管理</p>
+      <p class="minimal-footer__copy">© <span id="year"></span> YYSD · Quản trị</p>
     </div>
   </footer>
 

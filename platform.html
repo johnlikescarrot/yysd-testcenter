@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>平台主控台 · 教师端</title>
+  <title>Bảng quản trị · Góc giáo viên</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260828ym1">
@@ -39,43 +39,43 @@
 <body class="home-minimal teacher-page teacher-layout shell-compact-nav page-premium">
 
   <header class="teacher-mobilebar">
-    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">菜单</button>
-    <span class="teacher-mobilebar__title">平台主控台</span>
+    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">Trình đơn</button>
+    <span class="teacher-mobilebar__title">Bảng quản trị</span>
   </header>
   <div class="teacher-nav-overlay" data-teacher-nav-close hidden></div>
 
   <div class="teacher-shell">
-    <aside class="teacher-side" id="teacher-side" aria-label="教师导航">
+    <aside class="teacher-side" id="teacher-side" aria-label="Điều hướng giáo viên">
       <div class="teacher-side__head">
         <a href="teacher.html" class="teacher-side__brand">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
-          <span class="teacher-side__brand-text"><b>优益思达</b><span>教务</span></span>
+          <span class="teacher-side__brand-text"><b>YYSD</b><span>Giáo vụ</span></span>
         </a>
-        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="收起侧栏">‹</button>
+        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="Thu gọn thanh bên">‹</button>
       </div>
       <nav class="teacher-side__nav">
-        <p class="teacher-side__label">教务</p>
-        <a href="teacher.html" class="teacher-side__link" title="我的学生">我的学生</a>
-        <a href="teacher-calendar.html" class="teacher-side__link" title="任务日历">任务日历</a>
-        <a href="teacher-diagnostic.html" class="teacher-side__link" title="词汇诊断">词汇诊断</a>
-        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="单词闯关">单词闯关</a>
-        <a href="admin-assign.html" class="teacher-side__link" title="学生分配" data-admin-only hidden>学生分配</a>
-        <a href="admin-perms.html" class="teacher-side__link" title="权限管理" data-admin-only hidden>权限管理</a>
-        <a href="platform.html" class="teacher-side__link is-active" title="平台主控台">平台主控台</a>
-        <a href="admin-seats.html" class="teacher-side__link" title="激活码">激活码</a>
+        <p class="teacher-side__label">Giáo vụ</p>
+        <a href="teacher.html" class="teacher-side__link" title="Học viên của tôi">Học viên của tôi</a>
+        <a href="teacher-calendar.html" class="teacher-side__link" title="Lịch nhiệm vụ">Lịch nhiệm vụ</a>
+        <a href="teacher-diagnostic.html" class="teacher-side__link" title="Đánh giá vốn từ">Đánh giá vốn từ</a>
+        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="Thử thách từ vựng">Thử thách từ vựng</a>
+        <a href="admin-assign.html" class="teacher-side__link" title="Phân công học viên" data-admin-only hidden>Phân công học viên</a>
+        <a href="admin-perms.html" class="teacher-side__link" title="Quản lý quyền" data-admin-only hidden>Quản lý quyền</a>
+        <a href="platform.html" class="teacher-side__link is-active" title="Bảng quản trị">Bảng quản trị</a>
+        <a href="admin-seats.html" class="teacher-side__link" title="Mã kích hoạt">Mã kích hoạt</a>
       </nav>
       <div class="teacher-side__foot">
-        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">个人中心</a>
-        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">退出</button>
+        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">Hồ sơ cá nhân</a>
+        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">Đăng xuất</button>
       </div>
     </aside>
 
     <div class="teacher-content">
       <section class="minimal-page-head">
-        <div class="minimal-crumb"><a href="teacher.html">我的学生</a> <span class="crumb-sep" aria-hidden="true">/</span> 平台主控台</div>
+        <div class="minimal-crumb"><a href="teacher.html">Học viên của tôi</a> <span class="crumb-sep" aria-hidden="true">/</span> Bảng quản trị</div>
         <div class="minimal-eyebrow">PLATFORM</div>
-        <h1>平台主控台</h1>
-        <p class="minimal-page-desc">开户、设小网址与 Logo、注册密钥与次数、到期关停、统计与客服进入。收款仍在线下完成。超管账号尾号 4473。若看不到列表请先退出再登录。</p>
+        <h1>Bảng quản trị</h1>
+        <p class="minimal-page-desc">Tạo đơn vị, đặt tên miền phụ và logo, cấp mã đăng ký, giới hạn lượt dùng, quản lý thời hạn và hỗ trợ. Thanh toán thực hiện ngoài hệ thống. Tài khoản quản trị hệ thống có số điện thoại kết thúc bằng 4473. Nếu không thấy danh sách, hãy đăng xuất rồi đăng nhập lại.</p>
       </section>
 
       <main class="minimal-main plat">
@@ -83,41 +83,41 @@
         <p class="plat-msg" id="plat-msg" role="status"></p>
 
         <section class="plat-form" id="plat-tiku">
-          <h2>题库中心</h2>
-          <p class="minimal-page-desc">勾选能进 tiku.youyisida.com 的老师。出口 IP 白名单：只有这些网络能登录老师端。本机检查始终放行。</p>
+          <h2>Trung tâm ngân hàng đề</h2>
+          <p class="minimal-page-desc">Chọn giáo viên được vào tiku.youyisida.com. Chỉ các mạng có IP trong danh sách cho phép mới đăng nhập được vào khu giáo viên; kết nối cục bộ được chấp nhận.</p>
           <div id="tiku-teachers"></div>
           <div class="row" style="margin-top:.75rem">
-            <label class="auth-field"><span>允许的出口 IP</span><input id="tiku-ip" placeholder="如 1.2.3.4 或网段 1.2.3.0/24" maxlength="80"></label>
-            <label class="auth-field"><span>备注</span><input id="tiku-ip-note" placeholder="办公室" maxlength="80"></label>
+            <label class="auth-field"><span>IP được phép</span><input id="tiku-ip" placeholder="Ví dụ: 1.2.3.4 hoặc dải 1.2.3.0/24" maxlength="80"></label>
+            <label class="auth-field"><span>Ghi chú</span><input id="tiku-ip-note" placeholder="Văn phòng" maxlength="80"></label>
           </div>
-          <button type="button" class="btn btn--primary" id="tiku-ip-add">添加 IP</button>
+          <button type="button" class="btn btn--primary" id="tiku-ip-add">Thêm IP</button>
           <ul id="tiku-ips"></ul>
         </section>
 
         <section class="plat-form" id="plat-maint">
-          <h2>全站维护</h2>
-          <p class="minimal-page-desc">打开后，只有 15901754473、18956023079 能进网站，其他人只看到更新中页面。改完记得关掉。</p>
-          <button type="button" class="btn btn--primary" id="maint-toggle">打开维护</button>
+          <h2>Bảo trì toàn trang</h2>
+          <p class="minimal-page-desc">Khi bật, chỉ hai tài khoản quản trị được chỉ định mới vào được trang web. Người khác sẽ thấy thông báo bảo trì. Hãy tắt chế độ này khi hoàn tất.</p>
+          <button type="button" class="btn btn--primary" id="maint-toggle">Bật bảo trì</button>
         </section>
 
         <section class="plat-form" id="plat-create">
-          <h2>新建教育公司</h2>
+          <h2>Tạo đơn vị đào tạo</h2>
           <div class="row">
-            <label class="auth-field"><span>公司名称</span><input id="c-name" placeholder="如：星辰教育" maxlength="80"></label>
-            <label class="auth-field"><span>小网址 slug</span><input id="c-slug" placeholder="如：xingchen → xingchen.youyisida.com" maxlength="32"></label>
+            <label class="auth-field"><span>Tên đơn vị</span><input id="c-name" placeholder="Ví dụ: Trung tâm Sao Mai" maxlength="80"></label>
+            <label class="auth-field"><span>Tên miền phụ (slug)</span><input id="c-slug" placeholder="Ví dụ: xingchen → xingchen.youyisida.com" maxlength="32"></label>
           </div>
           <div class="row">
-            <label class="auth-field"><span>管理员手机号</span><input id="c-admin" type="tel" maxlength="11" placeholder="须已是教师账号"></label>
-            <label class="auth-field"><span>到期日</span><input id="c-expires" type="date"></label>
+            <label class="auth-field"><span>Số điện thoại quản trị viên</span><input id="c-admin" type="tel" maxlength="11" placeholder="Phải là tài khoản giáo viên đã đăng ký"></label>
+            <label class="auth-field"><span>Ngày hết hạn</span><input id="c-expires" type="date"></label>
           </div>
-          <label class="auth-field"><span>合同备注（可选）</span><input id="c-note" maxlength="200" placeholder="合同号 / 备注"></label>
-          <button type="button" class="btn btn--primary" id="c-submit">创建</button>
+          <label class="auth-field"><span>Ghi chú hợp đồng (không bắt buộc)</span><input id="c-note" maxlength="200" placeholder="Số hợp đồng / Ghi chú"></label>
+          <button type="button" class="btn btn--primary" id="c-submit">Tạo</button>
         </section>
 
         <div class="plat-grid" id="plat-list"></div>
 
         <section class="plat-audit">
-          <h2>最近操作日志</h2>
+          <h2>Nhật ký thao tác gần đây</h2>
           <ul id="plat-audit-list"></ul>
         </section>
       </main>
@@ -126,83 +126,83 @@
 
   <dialog id="plat-edit">
     <form method="dialog" id="plat-edit-form" style="padding:1rem;min-width:min(92vw,420px)">
-      <h2 style="margin-top:0">编辑机构</h2>
+      <h2 style="margin-top:0">Chỉnh sửa đơn vị</h2>
       <input type="hidden" id="e-id">
-      <label class="auth-field"><span>公司名称</span><input id="e-name" maxlength="80"></label>
-      <label class="auth-field"><span>小网址 slug</span><input id="e-slug" maxlength="32"></label>
-      <label class="auth-field"><span>管理员手机号</span><input id="e-admin" type="tel" maxlength="11"></label>
-      <label class="auth-field"><span>到期日</span><input id="e-expires" type="date"></label>
-      <label class="auth-field"><span>状态</span>
+      <label class="auth-field"><span>Tên đơn vị</span><input id="e-name" maxlength="80"></label>
+      <label class="auth-field"><span>Tên miền phụ (slug)</span><input id="e-slug" maxlength="32"></label>
+      <label class="auth-field"><span>Số điện thoại quản trị viên</span><input id="e-admin" type="tel" maxlength="11"></label>
+      <label class="auth-field"><span>Ngày hết hạn</span><input id="e-expires" type="date"></label>
+      <label class="auth-field"><span>Trạng thái</span>
         <select id="e-status">
-          <option value="trial">试用</option>
-          <option value="active">正常</option>
-          <option value="suspended">停用</option>
+          <option value="trial">Dùng thử</option>
+          <option value="active">Đang hoạt động</option>
+          <option value="suspended">Vô hiệu hóa</option>
         </select>
       </label>
-      <label class="auth-field"><span>合同备注</span><input id="e-note" maxlength="200"></label>
-      <label class="auth-field"><span>Logo 图片</span><input id="e-logo" type="file" accept="image/*"></label>
+      <label class="auth-field"><span>Ghi chú hợp đồng</span><input id="e-note" maxlength="200"></label>
+      <label class="auth-field"><span>Hình logo</span><input id="e-logo" type="file" accept="image/*"></label>
       <div style="display:flex;gap:.5rem;margin-top:.75rem">
-        <button type="submit" class="btn btn--primary" value="save">保存</button>
-        <button type="submit" class="btn btn--ghost" value="cancel">取消</button>
+        <button type="submit" class="btn btn--primary" value="save">Lưu</button>
+        <button type="submit" class="btn btn--ghost" value="cancel">Hủy</button>
       </div>
     </form>
   </dialog>
 
   <dialog id="plat-keys">
     <form method="dialog" id="plat-keys-form" style="padding:1rem;min-width:min(94vw,520px)">
-      <h2 style="margin-top:0">注册密钥</h2>
+      <h2 style="margin-top:0">Mã đăng ký</h2>
       <p style="margin:0 0 1rem;color:#666;font-size:.9rem" id="k-org-name"></p>
       <p style="margin:0 0 1rem;font-size:.85rem;color:#555;line-height:1.5">
-        每站三类密钥各一把。注册成功扣 1 次；次数用尽后需在此加次或换新密钥。明文可复制发给客户。
+        Mỗi trang có một mã cho mỗi vai trò. Mỗi lần đăng ký thành công trừ một lượt. Khi hết lượt, tăng hạn mức hoặc đổi mã. Bạn có thể sao chép mã để gửi cho khách hàng.
       </p>
       <div class="plat-key-row">
-        <strong>学生</strong>
-        <label class="auth-field"><span>密钥</span>
-          <input id="k-student-key" maxlength="120" placeholder="如 STU-xxxx">
+        <strong>Học viên</strong>
+        <label class="auth-field"><span>Mã đăng ký</span>
+          <input id="k-student-key" maxlength="120" placeholder="Ví dụ: STU-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
-          <label class="auth-field" style="flex:1;min-width:100px"><span>次数上限</span>
+          <label class="auth-field" style="flex:1;min-width:100px"><span>Giới hạn lượt dùng</span>
             <input id="k-student-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="student">+10 次</button>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="student">换新</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="student">+10 lượt</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="student">Đổi mã</button>
         </div>
-        <p class="plat-key-used" id="k-student-used">已用 0 / 0</p>
-        <label style="font-size:.85rem"><input type="checkbox" id="k-student-reset"> 保存时清零已用次数</label>
+        <p class="plat-key-used" id="k-student-used">Đã dùng 0 / 0</p>
+        <label style="font-size:.85rem"><input type="checkbox" id="k-student-reset"> Đặt lại số lượt đã dùng về 0 khi lưu</label>
       </div>
       <div class="plat-key-row">
-        <strong>老师</strong>
-        <label class="auth-field"><span>密钥</span>
-          <input id="k-teacher-key" maxlength="120" placeholder="如 TCH-xxxx">
+        <strong>Giáo viên</strong>
+        <label class="auth-field"><span>Mã đăng ký</span>
+          <input id="k-teacher-key" maxlength="120" placeholder="Ví dụ: TCH-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
-          <label class="auth-field" style="flex:1;min-width:100px"><span>次数上限</span>
+          <label class="auth-field" style="flex:1;min-width:100px"><span>Giới hạn lượt dùng</span>
             <input id="k-teacher-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="teacher">+10 次</button>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="teacher">换新</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="teacher">+10 lượt</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="teacher">Đổi mã</button>
         </div>
-        <p class="plat-key-used" id="k-teacher-used">已用 0 / 0</p>
-        <label style="font-size:.85rem"><input type="checkbox" id="k-teacher-reset"> 保存时清零已用次数</label>
+        <p class="plat-key-used" id="k-teacher-used">Đã dùng 0 / 0</p>
+        <label style="font-size:.85rem"><input type="checkbox" id="k-teacher-reset"> Đặt lại số lượt đã dùng về 0 khi lưu</label>
       </div>
       <div class="plat-key-row">
-        <strong>管理员</strong>
-        <label class="auth-field"><span>密钥</span>
-          <input id="k-org_admin-key" maxlength="120" placeholder="如 ADM-xxxx">
+        <strong>Quản trị viên</strong>
+        <label class="auth-field"><span>Mã đăng ký</span>
+          <input id="k-org_admin-key" maxlength="120" placeholder="Ví dụ: ADM-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
-          <label class="auth-field" style="flex:1;min-width:100px"><span>次数上限</span>
+          <label class="auth-field" style="flex:1;min-width:100px"><span>Giới hạn lượt dùng</span>
             <input id="k-org_admin-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="org_admin">+10 次</button>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="org_admin">换新</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="org_admin">+10 lượt</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="org_admin">Đổi mã</button>
         </div>
-        <p class="plat-key-used" id="k-org_admin-used">已用 0 / 0</p>
-        <label style="font-size:.85rem"><input type="checkbox" id="k-org_admin-reset"> 保存时清零已用次数</label>
+        <p class="plat-key-used" id="k-org_admin-used">Đã dùng 0 / 0</p>
+        <label style="font-size:.85rem"><input type="checkbox" id="k-org_admin-reset"> Đặt lại số lượt đã dùng về 0 khi lưu</label>
       </div>
       <div style="display:flex;gap:.5rem;margin-top:1rem">
-        <button type="submit" class="btn btn--primary" value="save">保存</button>
-        <button type="submit" class="btn btn--ghost" value="cancel">取消</button>
+        <button type="submit" class="btn btn--primary" value="save">Lưu</button>
+        <button type="submit" class="btn btn--ghost" value="cancel">Hủy</button>
       </div>
     </form>
   </dialog>

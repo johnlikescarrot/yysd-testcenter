@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-// ponytail: assert 听力绝密套卷1 is 40 keyed questions + calendar cat
+// ponytail: assert 听力Bộ đề chuyên sâu 1 is 40 keyed questions + calendar cat
 var fs = require("fs");
 var path = require("path");
 var root = path.join(__dirname, "..");
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
 var html = fs.readFileSync(path.join(root, "library/mock/cambridge-listening/secret-set-1.html"), "utf8");
-must(html.indexOf('exam:title" content="绝密套卷1（听力）"') >= 0, "title meta");
+must(html.indexOf('exam:title" content="Bộ đề chuyên sâu 1 (Nghe)"') >= 0, "title meta");
 must(html.indexOf("secret-set-1-map.png") >= 0, "map ref");
 must(html.indexOf("secret-set-1-audio1.mp3") >= 0, "audio1");
-must(html.indexOf("剑桥雅思12") < 0, "leftover cam12");
+must(html.indexOf("Cambridge IELTS 12") < 0, "leftover cam12");
 ["1", "2", "3", "4"].forEach(function (n) {
   must(fs.existsSync(path.join(root, "library/mock/cambridge-listening/secret-set-1-audio" + n + ".mp3")), "audio" + n);
 });
@@ -51,7 +51,7 @@ function isSecretReading(it) {
   if (!it || it.subject !== "cambridge-reading") return false;
   return /^secret-set-\d+/.test(it.id || "");
 }
-must(!isSecretReading({ id: "secret-set-1", subject: "cambridge-listening", title: "绝密套卷1 (听力)" }), "listen not in rsecret");
+must(!isSecretReading({ id: "secret-set-1", subject: "cambridge-listening", title: "Bộ đề chuyên sâu 1 (听力)" }), "listen not in rsecret");
 must(isSecretReading({ id: "secret-set-1-reading", subject: "cambridge-reading" }), "read in rsecret");
 
 var man = JSON.parse(fs.readFileSync(path.join(root, "library/manifest.json"), "utf8"));
@@ -59,7 +59,7 @@ var items = man.items || man;
 var hit = (items || []).filter(function (it) { return it.id === "secret-set-1"; });
 must(hit.length === 1, "manifest id");
 must(hit[0].subject === "cambridge-listening", "manifest subject");
-must(/绝密套卷1（听力）/.test(hit[0].title), "manifest title " + hit[0].title);
+must(/Bộ đề chuyên sâu 1 \(Nghe\)/.test(hit[0].title), "manifest title " + hit[0].title);
 must(man.count === items.length, "count " + man.count + " vs " + items.length);
 
 var cfg = fs.readFileSync(path.join(root, "assets/js/config.js"), "utf8");

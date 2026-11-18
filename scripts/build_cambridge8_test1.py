@@ -71,13 +71,13 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思9 Test 1 听力", "剑桥雅思8 Test 1 听力"),
-        ("剑桥雅思9 · Test 1（听力）", "剑桥雅思8 · Test 1（听力）"),
-        ("剑桥雅思9 Test 1 听力：", "剑桥雅思8 Test 1 听力："),
+        ("Cambridge IELTS 9 Test 1 Nghe", "Cambridge IELTS 8 Test 1 Nghe"),
+        ("Cambridge IELTS 9 · Test 1 (Nghe)", "Cambridge IELTS 8 · Test 1 (Nghe)"),
+        ("Cambridge IELTS 9 Test 1 Nghe: ", "Cambridge IELTS 8 Test 1 Nghe: "),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
-        ("剑桥雅思 9 · Test 1", "剑桥雅思 8 · Test 1"),
-        ("剑桥雅思9 · Test 1", "剑桥雅思8 · Test 1"),
-        ("剑桥雅思9 Test 1 听力（官方原题 + 官方答案）", "剑桥雅思8 Test 1 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 9 · Test 1", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 · Test 1", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 Test 1 Nghe (đề và đáp án Cambridge)", "Cambridge IELTS 8 Test 1 Nghe (đề và đáp án Cambridge)"),
         ("ielts9_test1", "cam8_test1"),
         ("cam9_test1", "cam8_test1"),
     ]
@@ -88,13 +88,13 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思9 Test 3 阅读", "剑桥雅思8 Test 1 阅读"),
-        ("剑桥雅思9 · Test 3（阅读）", "剑桥雅思8 · Test 1（阅读）"),
-        ("剑桥雅思9 Test 3 学术类阅读", "剑桥雅思8 Test 1 学术类阅读"),
+        ("Cambridge IELTS 9 Test 3 Đọc", "Cambridge IELTS 8 Test 1 Đọc"),
+        ("Cambridge IELTS 9 · Test 3 (Đọc)", "Cambridge IELTS 8 · Test 1 (Đọc)"),
+        ("Cambridge IELTS 9 Test 3 Đọc học thuật", "Cambridge IELTS 8 Test 1 Đọc học thuật"),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
-        ("剑桥雅思 9 · Test 3", "剑桥雅思 8 · Test 1"),
-        ("剑桥雅思9 · Test 3", "剑桥雅思8 · Test 1"),
-        ("剑桥雅思9 Test 3 阅读（官方原题 + 官方答案）", "剑桥雅思8 Test 1 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 Test 3 Đọc (đề và đáp án Cambridge)", "Cambridge IELTS 8 Test 1 Đọc (đề và đáp án Cambridge)"),
         ("Test 3", "Test 1"),
         ("test-3", "test-1"),
     ]
@@ -114,19 +114,19 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思9 Test 3 写作", "剑桥雅思8 Test 1 写作"),
-        ("剑桥雅思9 · Test 3（写作）", "剑桥雅思8 · Test 1（写作）"),
-        ("剑桥雅思9 Test 3 学术类写作", "剑桥雅思8 Test 1 学术类写作"),
+        ("Cambridge IELTS 9 Test 3 Viết", "Cambridge IELTS 8 Test 1 Viết"),
+        ("Cambridge IELTS 9 · Test 3 (Viết)", "Cambridge IELTS 8 · Test 1 (Viết)"),
+        ("Cambridge IELTS 9 Test 3 Viết học thuật", "Cambridge IELTS 8 Test 1 Viết học thuật"),
         (
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             "Task 1 land degradation pie chart + Task 2 parents vs school citizenship essay",
         ),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
-        ("剑桥雅思 9 · Test 3", "剑桥雅思 8 · Test 1"),
-        ("剑桥雅思9 · Test 3", "剑桥雅思8 · Test 1"),
-        ("剑桥雅思9 Test 3 写作（官方真题）", "剑桥雅思8 Test 1 写作（官方真题）"),
+        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
+        ("Cambridge IELTS 9 Test 3 Viết (đề Cambridge)", "Cambridge IELTS 8 Test 1 Viết (đề Cambridge)"),
         ("cambridge-9-test-3-writing-draft", "cambridge-8-test-1-writing-draft"),
-        ("【剑桥雅思9 · Test 3 写作】", "【剑桥雅思8 · Test 1 写作】"),
+        ("[Cambridge IELTS 9 · Test 3 Viết]", "[Cambridge IELTS 8 · Test 1 Viết]"),
         ("Test 3", "Test 1"),
         ("test-3", "test-1"),
     ]

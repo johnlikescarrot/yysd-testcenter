@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-// ponytail: assert 听力绝密套卷2 is 40 keyed questions
+// ponytail: assert 听力Bộ đề chuyên sâu 2 is 40 keyed questions
 var fs = require("fs");
 var path = require("path");
 var root = path.join(__dirname, "..");
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
 var html = fs.readFileSync(path.join(root, "library/mock/cambridge-listening/secret-set-2.html"), "utf8");
-must(html.indexOf('exam:title" content="绝密套卷2（听力）"') >= 0, "title meta");
+must(html.indexOf('exam:title" content="Bộ đề chuyên sâu 2 (Nghe)"') >= 0, "title meta");
 must(html.indexOf("secret-set-2-map.png") >= 0, "map ref");
 must(html.indexOf("secret-set-2-audio1.mp3") >= 0, "audio1");
-must(html.indexOf("绝密套卷1") < 0, "leftover 套卷1");
+must(html.indexOf("Bộ đề chuyên sâu 1") < 0, "leftover 套卷1");
 ["1", "2", "3", "4"].forEach(function (n) {
   must(fs.existsSync(path.join(root, "library/mock/cambridge-listening/secret-set-2-audio" + n + ".mp3")), "audio" + n);
 });
@@ -45,7 +45,7 @@ var items = man.items || man;
 var hit = (items || []).filter(function (it) { return it.id === "secret-set-2"; });
 must(hit.length === 1, "manifest id");
 must(hit[0].subject === "cambridge-listening", "manifest subject");
-must(/绝密套卷2（听力）/.test(hit[0].title), "manifest title");
+must(/Bộ đề chuyên sâu 2 \(Nghe\)/.test(hit[0].title), "manifest title");
 must(man.count === items.length, "count " + man.count + " vs " + items.length);
 
 console.log("check_secret_set_2_listening: ok");

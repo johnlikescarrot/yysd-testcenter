@@ -130,7 +130,7 @@
         mockMap[mk].wrongN += wrongCount(a);
         if (!mockMap[mk].date || String(a.date) > String(mockMap[mk].date)) mockMap[mk].date = a.date;
         var base = suiteBase(a.id);
-        mockMap[mk].title = (a.title || base).replace(/（听力）|（阅读）|（写作）/g, "").trim() || base;
+        mockMap[mk].title = (a.title || base).replace(/（听力）|（阅读）|（写作）|\s*\((?:Nghe|Đọc|Viết)\)/g, "").trim() || base;
         return;
       }
       if (a.subject === "cambridge-listening") listening.push(a);

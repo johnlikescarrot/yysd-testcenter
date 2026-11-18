@@ -48,3 +48,13 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# IELTS Vietnamese edition tooling and static output
+/quality/node_modules/
+/quality/coverage/
+/quality/dist/
+/quality/reports/
+
+# Python content-build tools
+__pycache__/
+*.pyc
