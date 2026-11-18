@@ -3,7 +3,7 @@ import test from 'node:test';
 import { byLesson, lessons, questions, skills, units } from '../../ielts-vi/assets/course.js';
 import {
   assess, currentQuestion, dueCards, emptyProgress, finish, localDay, makeSession,
-  previousWeek, readProgress, reviewLimit, saveProgress, storageKey, streak, summary, wordCount,
+  previousWeek, readProgress, reviewLimit, saveProgress, storageKey, streak, summary, weeklyMission, wordCount,
 } from '../../ielts-vi/assets/progress.js';
 
 function allAnswers(session, correct = true) {
@@ -73,7 +73,7 @@ test('invalid saved records are ignored without losing trusted fields', () => {
     activity: { 28: 2, '029': 1, 30: '1', 31: 0 },
   };
   assert.deepEqual(readProgress(storage(JSON.stringify(mixed))), {
-    version: 1, goal: 3, xp: 12, completed: { booking: 2, repair: 0 },
+    version: 1, goal: 3, xp: 12, completed: { booking: 2, repair: 0 }, lastSkillDay: {}, balanced: false,
     cards: { 'booking-1': { stage: 2, due: 35 } }, activity: { 28: 2 },
   });
   assert.equal(saveProgress(() => ({ setItem(key, raw) {
@@ -151,4 +151,25 @@ test('review prioritizes mistakes, sorts by date, limits each batch and caps int
   assert.deepEqual(fifth.cards['booking-1'], { stage: 4, due: 69 });
   const lapse = finish(fifth, allAnswers(makeSession('review', fifth, 69), false), 69).state;
   assert.deepEqual(lapse.cards['booking-1'], { stage: 0, due: 69 });
+});
+
+
+test('four-skill mission uses finished lessons, seven local dates, and a lasting badge', () => {
+  let state = emptyProgress();
+  assert.deepEqual(weeklyMission({ listen: 100, read: 107, speak: 101, write: 109 }, 107), {
+    count: 2, missing: ['listen', 'write'],
+  });
+  for (const [id, day] of [['booking', 101], ['shade', 101], ['overview', 104], ['routine', 107]]) {
+    state = finish(state, allAnswers(makeSession(id, state, day)), day).state;
+  }
+  assert.deepEqual(summary(state, 107).mission, { count: 4, missing: [] });
+  assert.equal(state.balanced, true);
+  const stored = JSON.stringify({ ...state, lastSkillDay: { ...state.lastSkillDay, bad: 101 } });
+  const restored = readProgress(() => ({ getItem: () => stored }));
+  assert.deepEqual(restored, state);
+  const later = summary(restored, 114);
+  assert.equal(later.mission.count, 0);
+  assert.equal(later.badges[3].earned, true);
+  const reviewed = finish(state, allAnswers(makeSession('review', state, 115)), 115).state;
+  assert.deepEqual(reviewed.lastSkillDay, state.lastSkillDay, 'reviewing a card is not a complete four-skill lesson');
 });

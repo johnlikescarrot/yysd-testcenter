@@ -1,49 +1,39 @@
-# 优益思达国际课程中心
+# Trung tâm Khóa học Quốc tế YYSD
 
-官网 + 题库 + 教师端 + 机考 app + 桌面端。设计看 @YYSD-DESIGN-RULES.md。本机部署看 @AGENTS.local.md。
+Kho gồm cổng học tập, ngân hàng đề, khu giáo viên, ứng dụng thi trên máy và ứng dụng desktop. Xem [quy tắc thiết kế](YYSD-DESIGN-RULES.md). Hướng dẫn triển khai riêng trên máy của người vận hành nằm ở `AGENTS.local.md` (nếu có).
 
-## 这是什么
+## Các thành phần
 
-- 官网 / Hub：根目录 `index.html`、`assets/`、`library/`
-- 新托福机考：`app/`（HIT Sets 在 `app/library/toefl/`）
-- 网站日期卷：`library/toefl/`（不要把 HIT set JSON 丢进这里）
-- 后端：`server/server.js`（Node，多租户、座位、词书、题库）
-- 桌面端：`desktop/`（Electron）
-- 申请子站：`admission/`（Next.js）
-- 题库页：`tiku/`
+- Cổng học tập: `index.html`, `assets/`, `library/`. Trang chủ có các khu Từ vựng → Luyện tập → Đề thi. Phân loại dùng chung ở `assets/js/config.js`.
+- Ứng dụng TOEFL: `app/`, với HIT Sets trong `app/library/toefl/`. Đề TOEFL theo ngày của **website** nằm ở `library/toefl/`; không đưa JSON của HIT Sets vào đó.
+- Máy chủ: `server/server.js` (Node, nhiều đơn vị đào tạo, quyền sử dụng máy, bộ từ và ngân hàng đề).
+- Desktop: `desktop/` (Electron). Tuyển sinh: `admission/` (Next.js). Cổng kho đề: `tiku/`.
+- `ielts-vi/` là bản học tĩnh không cần API. Không đóng gói máy chủ, `CNAME` hay toàn bộ kho đề vào bản Pages. Xem [hướng dẫn phát triển](ielts-vi/README.md).
 
-首页分区：单词区 → 练习区 → 真题区。共享分类在 `assets/js/config.js`。
+## Thiết kế
 
-## 设计（始终遵守）
+Nội dung như giấy, khung điều hướng như kính mờ; tương tác phản hồi ngay khi nhấn. Phòng thi lại cần cảm giác của một công cụ làm bài chính thức.
 
-内容像纸，壳像玻璃，交互像物理；考场保持官方工具感。
+- Nền nội dung màu giấy ngà `#f6f3ec` / `#fffcf7`.
+- Khung điều hướng bán trong suốt, `blur(20px) saturate(180%)`, dùng `--chrome-bg` và `--chrome-blur`. Token chính ở `:root` trong `assets/css/style.css`.
+- CDT phải thực dụng, dễ tin cậy, ít trang trí. Không thêm nảy nút hoặc kính mờ vào phòng thi.
+- Quy ước đóng/mở bề mặt: `YYSD_SURFACE` trong `assets/js/ui.js`. Quy ước xác nhận trong khung ứng dụng: `YYSD_CONFIRM`, `YYSD_ALERT`, `YYSD_ASK` thay cho hộp thoại hệ thống (ngoại trừ CDT).
+- Kiểm tra: `node scripts/check_surface.js` và `node scripts/check_apple_shell.js`.
+- Trước khi tạo giao diện, xác định đó là **nội dung, điều hướng hay phòng thi**. Dùng lại trình phát và hệ thống thiết kế hiện có.
 
-- 内容：象牙纸 `#f6f3ec` / `#fffcf7`
-- 壳：半透明 + `blur(20px) saturate(180%)`，token `--chrome-bg` / `--chrome-blur`
-- 考场 / CDT：功利、可信、少装饰 — **不要苹果化**
-- Token：`assets/css/style.css` `:root`
-- 表面开关：`YYSD_SURFACE` → `assets/js/ui.js`
-- 品牌确认：`YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`，不用系统 `confirm`/`alert`（CDT 例外）
-- 自检：`node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
+## Ràng buộc ngân hàng TOEFL
 
-新 UI 先问：这是内容、壳，还是考场？不要做第二套播放器或第二套视觉系统。
+Quy tắc đầy đủ: `.qoder/rules/toefl-papers.md` và `.qoder/rules/toefl-listening.md`.
 
-## 题库硬规则（摘要）
+- Trong Writing, thứ tự từ trong `bank` không được trùng `answer`; dùng `scripts/toefl_sent.py`. Kiểm tra cả `bank-*-*.json`.
+- Không viết hoa chữ đầu các thẻ từ trong Build a Sentence (`Do`/`Have` dễ lộ từ đầu câu). Khi nhập đề Writing từ bản viết tay: một ảnh PNG cho mỗi câu; thanh màu xanh chỉ để đối chiếu.
+- Complete the Words: một ô cho mỗi **chữ cái** còn thiếu. Câu hỏi từ vựng học thuật phải trích từ trong bài. Email, thông báo và thời khóa biểu cần có xuống dòng hoặc bố cục có cấu trúc.
+- Listen and Repeat: một bản thu cho mỗi câu → 3 giây suy nghĩ → tiếng bíp → 8 giây ghi âm. Không hiện `sample` trong lúc làm bài.
+- Ảnh nghe: chân dung trên nền trắng theo phong cách đề chính thức, nhân vật phù hợp với giọng nói. Hội thoại có hai người; chọn lời đáp có một người (thường cầm điện thoại); thông báo và bài giảng có một người đứng. Không dùng phong cảnh hoặc chữ trong ảnh. Cùng một người phải dùng lại cùng tệp; đặt ở `library/toefl/img/listen/`, ghi vào `task.image`.
+- Chạy `node scripts/check_toefl_paper.js`. Không phát hành nếu kiểm tra chưa đạt. Không dùng `rsync --delete` với cổng đang hoạt động.
 
-完整规则在 `.qoder/rules/toefl-papers.md` 和 `toefl-listening.md`。
+## Không làm
 
-- Writing sentence `bank` 不得与 `answer` 同序。用 `scripts/toefl_sent.py`。默认门禁包含 `bank-*-*.json`。
-- Bank chips 禁止 Titlecase（`Do`/`Have` 会漏出首词）。手写 writing：一 PNG 一题，绿条只核对。
-- Complete the Words = 每个缺字母一个空。学术词汇题干必须引用原文单词。
-- 日常邮件/通知/课表必须有换行或结构化 layout。
-- Listen and Repeat：一句一音频 → 3 秒想 → beep → 8 秒录。作答中不显示 `sample`。
-- 听力配图用正式考试的白底人物照，按说话人口音配人。对话两人对谈；听句选回应一个人（常拿手机）；通知和讲座各一个人站立。图里不要场景、不要文字。同一人复用同一张。路径 `library/toefl/img/listen/`，写入 `task.image`。
-- 过门禁：`node scripts/check_toefl_paper.js`。不过不要上线。
-- 不要 `rsync --delete` 官网。
-
-## 不要做
-
-- 第二套阅读 / 听力 / 口语 / 写作引擎
-- 全站上 spring 动画库
-- CDT 按钮加 bounce 或毛玻璃
-- 把密钥写进仓库
+- Không xây thêm một bộ máy Nghe/Đọc/Nói/Viết trùng chức năng.
+- Không cài thư viện hoạt ảnh lò xo cho toàn trang.
+- Không lưu khóa bí mật trong kho.

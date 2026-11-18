@@ -17,6 +17,7 @@ export function mount(document, window, clock) {
   const error = get('response-error');
   const continueButton = get('continue-lesson');
   const reviewButton = get('begin-review');
+  const missionButton = get('mission-start');
   const goalSelect = get('goal-select');
   const getStorage = () => window.localStorage;
   let state = readProgress(getStorage);
@@ -131,9 +132,21 @@ export function mount(document, window, clock) {
     }));
   }
 
+  function renderMission({ count, missing }) {
+    get('mission-count').textContent = `${count} / 4 kỹ năng trong 7 ngày gần nhất`;
+    const skill = missing[0];
+    missionButton.hidden = !skill;
+    missionButton.disabled = !skill;
+    if (!skill) return;
+    const options = lessons.filter((lesson) => lesson.skill === skill);
+    const next = options.find(({ id }) => !Object.hasOwn(state.completed, id)) ?? options[0];
+    missionButton.dataset.lesson = next.id;
+    missionButton.textContent = `Luyện ${skills[skill].name}: ${next.title} →`;
+  }
+
   function renderDashboard() {
     day = localDay(clock.now());
-    const { badges, completed, days, due, nextLesson, today } = summary(state, day);
+    const { badges, completed, days, due, nextLesson, today, mission } = summary(state, day);
     const target = nextLesson?.id ?? (due ? 'review' : lessons[0].id);
     const label = completed === 0 ? 'Bắt đầu bài đầu tiên'
       : nextLesson ? 'Tiếp tục lộ trình' : due ? 'Ôn các câu đến hạn' : 'Luyện lại từ đầu';
@@ -156,6 +169,7 @@ export function mount(document, window, clock) {
     reviewButton.disabled = !due;
     renderPath(nextLesson?.id);
     renderWeek();
+    renderMission(mission);
     renderReport(badges);
   }
 
@@ -369,6 +383,7 @@ export function mount(document, window, clock) {
     (previous.disabled ? continueButton : previous).focus();
   });
   continueButton.addEventListener('click', () => start(continueButton.dataset.lesson, continueButton.id));
+  missionButton.addEventListener('click', () => start(missionButton.dataset.lesson, missionButton.id));
   reviewButton.addEventListener('click', () => start('review', reviewButton.id));
   goalSelect.addEventListener('change', () => {
     const goal = Number(goalSelect.value);

@@ -189,3 +189,20 @@ test('boot module binds the browser clock and stops a running timer on exit', as
     delete globalThis.window;
   }
 });
+
+
+test('mission links open an unpractised skill and retire when all four are done', (t) => {
+  const state = { ...emptyProgress(), completed: Object.fromEntries(lessons.map(({ id }) => [id, 0])),
+    lastSkillDay: { read: day, write: day, speak: day } };
+  const { get, dialog, respond, document, submit } = setup(t, { state });
+  assert.match(get('mission-count').textContent, /^3 \/ 4/);
+  assert.equal(get('mission-start').dataset.lesson, 'booking');
+  get('mission-start').click();
+  assert.equal(dialog.open, true);
+  respond(1); respond(0);
+  document.querySelector('.response-label input').value = 'notebook';
+  submit(); submit(); submit();
+  assert.match(get('mission-count').textContent, /^4 \/ 4/);
+  assert.equal(get('mission-start').hidden, true);
+  assert.equal(document.activeElement, get('continue-lesson'));
+});

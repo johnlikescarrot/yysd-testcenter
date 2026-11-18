@@ -1,131 +1,68 @@
 # YYSD Design Rules
 
-优益思达前端质感约定。目标不是仿 iOS，而是：**内容像纸，壳像玻璃，交互像物理；考场保持官方工具感。**
+Giao diện không nhằm bắt chước iOS. **Nội dung như giấy, điều hướng như kính mờ, thao tác phản hồi như một vật thể; phòng thi giữ dáng dấp của công cụ thi chính thức.** Khi người dùng nhấn, phản hồi phải xuất hiện ngay. Chuyển động bắt đầu từ trạng thái hiện tại và có thể ngắt giữa chừng.
 
-核心句：界面像身体的延伸——按下立刻有反应，运动从当前值出发，带着速度，随时可打断。
+## 1. Ba lớp giao diện
 
----
-
-## 1. 三层人格（勿混用）
-
-| 层 | 性格 | 范围 |
+| Lớp | Đặc điểm | Ví dụ |
 | --- | --- | --- |
-| **内容** | 象牙纸、沉静、可读 | 真题、单词、报告、Hub 正文 |
-| **壳** | 轻霜化、浮在内容上 | 顶栏、底栏、Drawer、确认 / Sheet |
-| **考场** | 功利、可信、少装饰 | CDT 及防切屏 —— **不要苹果化** |
+| Nội dung | Giấy ngà, tĩnh, dễ đọc | Đề thi, bộ từ, báo cáo, nội dung chính của Hub |
+| Điều hướng | Mờ nhẹ, nổi trên nội dung | Thanh trên/dưới, ngăn điều hướng, bảng xác nhận |
+| Phòng thi | Thực dụng, đáng tin, ít trang trí | CDT và khóa khi chuyển cửa sổ; không áp dụng hiệu ứng kiểu Apple |
 
-新 UI 先问：这是内容、壳，还是考场？
+Trước khi tạo giao diện, chọn **một** trong ba lớp.
 
----
+## 2. Vật liệu
 
-## 2. 材料（只许两种）
+1. **Paper:** `#f6f3ec` / `#fffcf7`, có thể thêm vân rất nhẹ. Dành cho nội dung đọc.
+2. **Chrome:** bán trong suốt, `blur(20px) saturate(180%)`, viền sáng. Dành cho điều hướng và quyết định.
 
-1. **Paper** — `#f6f3ec` / `#fffcf7` + 极轻纸纹。承载阅读。  
-2. **Chrome** — 半透明 + `blur(20px) saturate(180%)` + 亮边高光。承载导航与决策。
+Không tạo vật liệu thứ ba bằng chuyển sắc tím, thẻ đổ bóng nặng hoặc phủ kính khắp nơi. Bề mặt lớn trông dày hơn: sheet > thẻ > chip. Khi người dùng chọn `prefers-reduced-transparency`, chuyển sang nền đặc. Dùng `--chrome-bg`, `--chrome-blur`, `--chrome-saturate`, `--chrome-edge`.
 
-- 禁止第三种材料（紫渐变、重投影装饰卡、到处玻璃）。  
-- 更大表面更「厚」：Sheet > 卡片 > Chip。  
-- 尊重 `prefers-reduced-transparency`：降级为实心底。  
-- Token：`--chrome-bg` / `--chrome-blur` / `--chrome-saturate` / `--chrome-edge`。
+## 3. Kiểu chữ
 
----
+- Tiêu đề trưng bày: Playfair hoặc serif tương tự Song; khoảng cách chữ từ `-0.02em` đến `-0.03em`, chiều cao dòng khoảng 1.1.
+- Nội dung điều khiển: phông hệ thống; PingFang cho chữ Hán khi cần. Chiều cao dòng khoảng 1.5, khoảng cách chữ gần 0.
+- Nhãn nhỏ: tăng nhẹ độ đậm và khoảng cách chữ để đọc được trên nền mờ.
+- Không thêm Inter hay bộ sans-serif thứ hai vào khung điều hướng. Tạo phân cấp bằng cả độ đậm, cỡ chữ **và** chiều cao dòng. Dùng `font-optical-sizing: auto` khi phù hợp.
 
-## 3. 字体
+## 4. Phản hồi khi tương tác
 
-| 用途 | 规则 |
+- **Nhấn:** phản hồi ngay ở `pointer-down` (khoảng 100 ms), không chờ `click`. Token: `--press-ms`, `--press-scale`.
+- **Vào/ra cùng đường:** ngăn trượt từ phải vào thì trượt sang phải khi đóng. Dùng `YYSD_SURFACE` cho bề mặt, tránh chỉ bật/tắt `hidden` đột ngột.
+- **Điểm neo:** bảng điều khiển mở từ nơi kích hoạt (`transform-origin`, `.is-surface-source`); sheet trên điện thoại neo ở dưới.
+- **Có thể đảo chiều:** không khóa `pointer-events` quá lâu. Quyết định trong khung giao diện dùng `YYSD_CONFIRM`, `YYSD_ALERT` hoặc `YYSD_ASK`; CDT có thể dùng hộp thoại hệ thống.
+- Mặc định dùng chuyển động không nảy. Chỉ cử chỉ hất có quán tính mới được vượt nhẹ vị trí đích. Menu và hiệu ứng hiện dần không nảy.
+- Chỉ dùng hiệu ứng nâng/di chuột trong `@media (hover: hover)`. Màn hình cảm ứng dùng `:active`.
+- Chuyển trang trong Hub: đổi độ mờ nhẹ, khoảng 100 ms. Chuyển cảnh dùng fade ngắn, không làm mờ toàn trang. Khi có ý định điều hướng lần hai, chuyển ngay. Sheet có thể kéo xuống để đóng, bám theo ngón tay và vận tốc thả.
+
+## 5. Bố cục và thông tin
+
+Mỗi khu vực giải quyết một việc, với một tiêu đề chính, tối đa một câu giải thích và nhóm thao tác chính. Dùng thẻ cho nội dung có tương tác, không phải để trang trí. Trang đầu ít thẻ hơn Hub.
+
+Xanh hải quân dành cho cấu trúc và thao tác chính, vàng chỉ để nhấn điểm quan trọng. Màu từng kỹ năng chỉ xuất hiện ở biểu tượng hoặc vạch nhỏ. Mép thanh điều hướng trên/dưới nên chuyển nhẹ theo cuộn thay vì dùng ngay đường kẻ cứng 1 px. Sheet/ngăn kéo dùng nền giấy mờ; đổi nội dung cùng trang bằng cross-fade ngắn (`YYSD_UI_SWAP`), tránh di chuyển xa. Tôn trọng `prefers-reduced-motion` và `prefers-reduced-transparency`.
+
+### Hub từ vựng và IELTS
+
+Hub là công cụ học, không phải trang quảng cáo. Dùng nền gần trắng `#f5f5f7`, bề mặt trắng và thao tác chính xanh hải quân; hạn chế màu vàng. Tiêu đề cấp một khoảng 28–34 px, phông hệ thống; không dùng tiêu đề serif khổng lồ để lấp khoảng trống. Gom các dòng vào `.yysd-group` / `.yysd-row` theo cùng một cách trình bày. Một thao tác chính và vài nhóm danh sách là đủ. Tránh tiêu đề kép, cụm thẻ trang trí và dải màu rải rác. Khoảng cách nhóm khoảng 20–28 px, chiều cao dòng khoảng 48–56 px.
+
+## 6. Năm câu hỏi trước khi phát hành
+
+1. Đây là nội dung, điều hướng hay phòng thi? Hình thức có phù hợp không?
+2. Thao tác nhấn có phản hồi trong khoảng 100 ms không?
+3. Đường vào và đường ra có khớp nhau không?
+4. Có thể bỏ bớt một thẻ, đường viền hoặc lớp bóng không?
+5. Chuyển động giúp người dùng hiểu thao tác hay chỉ để phô diễn? Nếu chỉ để phô diễn, hãy bỏ.
+
+## 7. Điểm tích hợp
+
+| Chức năng | Vị trí |
 | --- | --- |
-| 展示标题 | Playfair / 宋体系；字距 `-0.02em`～`-0.03em`；行高 ~1.1 |
-| 界面正文 | 系统字体 + PingFang；行高 ~1.5；字距近 0 |
-| 小标签 | 略加 tracking；字重略提（霜化底上要可读） |
+| Token thiết kế | `:root` trong `assets/css/style.css` |
+| Đóng/mở bề mặt, xác nhận | `YYSD_SURFACE`, `YYSD_CONFIRM`, `YYSD_ALERT`, `YYSD_ASK` → `assets/js/ui.js` |
+| Chuyển trang | `assets/js/page-transit.js` |
+| Kiểm tra | `node scripts/check_surface.js` · `node scripts/check_apple_shell.js` |
 
-- **壳层禁止 Inter 及第二套无衬线网红体。**  
-- 层级靠「字重 + 字号 + 行高」成套，不只放大字号。  
-- `font-optical-sizing: auto`。
+## 8. Tránh
 
----
-
-## 4. 交互物理
-
-### 必须
-1. **按压即时** — 反馈在 pointer-down（约 100ms），不是等 click。Token：`--press-ms` / `--press-scale`。  
-2. **同路径进出** — 右进右出、底进底出；用 `YYSD_SURFACE`，禁止硬切 `hidden`。  
-3. **空间锚定** — 面板从触发源展开（`transform-origin` + `.is-surface-source`）；手机 Sheet 锚定底部。  
-4. **默认可打断** — 过渡中允许反向意图；勿长时间 `pointer-events: none`。  
-5. **决策用品牌 Sheet** — 壳层用 `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`，不用系统 `confirm`/`alert`（CDT 例外可保留）。
-
-### 弹簧
-- 默认：无弹跳（critically damped）。  
-- 仅「甩出去」的动量手势可轻微 overshoot。  
-- 菜单 / 淡入禁止弹跳。
-
-### Hover
-- 抬起、悬停特效仅限 `@media (hover: hover)`。  
-- 触控只保留 `:active` 按压。
-
-### 整页转场（Silk）
-- Hub 内 hop：短、轻（opacity，~100ms）。  
-- Scene：短 fade，**禁止 blur**；二次意图立刻导航。  
-- Sheet：支持下拉关闭（跟手 + 速度投影）；学习工具要快而连。
-
----
-
-## 5. 布局与信息
-
-- 每区块一件事：一个主标题 +（可选）一句说明 + 一组主操作。  
-- 卡片是交互容器，不是装饰；去掉边框/阴影后仍清楚 → 不该是卡。  
-- Landing / 首屏少卡；Hub 可用卡。  
-- Navy = 结构与主操作；Gold = 稀用强调；技能色只作细条 / 图标。  
-- 顶栏 / 底栏用**滚动边缘渐隐**，少用硬 1px 分割线。  
-- Sheet / Drawer：霜化纸 + 进出时 blur 与 scale 同到（materialize）。  
-- 同页内容切换：短 opacity cross-fade（`YYSD_UI_SWAP`），少位移。  
-- 尊重 `prefers-reduced-motion` / `prefers-reduced-transparency`。
-
----
-
-## 5b. Hub 密度（单词 / 雅思）
-
-像 Apple 教育产品，不像营销落地页。
-
-| 规则 | 约定 |
-| --- | --- |
-| 配色 | 冷近白 `#f5f5f7` + 白表面 + 海军主操作；金极稀 |
-| 标题 | 一级约 28–34px 系统无衬线；禁止巨型 Playfair 撑留白 |
-| 列表语言 | `.yysd-group` / `.yysd-row` inset 分组列表；一种语言贯穿 |
-| 结构 | 一个主 CTA + 若干组；禁止双大标题 / bento 拼盘 / 色脊横条散落 |
-| 密度 | 组间距 ~20–28px，行高 ~48–56px |
-
----
-
-## 6. 上线前五问
-
-1. 这是内容、壳，还是考场？性格对了吗？  
-2. 按下有没有在 ~100ms 内说话？  
-3. 进出是同一条路径吗？  
-4. 能不能少一层卡片 / 边框 / 阴影？  
-5. 这里的动效是在表达物理，还是在表演？——表演则删。
-
----
-
-## 7. 实现锚点（已有代码）
-
-| 能力 | 位置 |
-| --- | --- |
-| 设计 token | `assets/css/style.css` `:root` |
-| 表面开关 | `YYSD_SURFACE` → `assets/js/ui.js` |
-| 品牌确认 | `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK` → `assets/js/ui.js` |
-| 分页转场 | `assets/js/page-transit.js` |
-| 自检 | `node scripts/check_surface.js` · `node scripts/check_apple_shell.js` |
-
----
-
-## 8. 不做清单
-
-- CDT 按钮 / void lock 加 bounce 或毛玻璃「假高级」  
-- 全站上 spring 动画库（无示范件需求前）  
-- 无动量场景的 overshoot  
-- 叠两层浅半透明（可读性崩）  
-- 为炫技加的整页 blur
-
----
-
-*修订时只改规则，不堆案例。新模式先过「五问」，再进代码。*
+Không gắn hiệu ứng nảy hay kính mờ cho nút và khóa của CDT. Không thêm thư viện lò xo toàn trang nếu chưa có trường hợp cụ thể cần dùng. Không vượt vị trí đích trong chuyển động không có quán tính, chồng hai nền trong mờ làm giảm độ đọc được, hoặc làm mờ toàn trang để trang trí. Khi cập nhật tài liệu này, sửa quy tắc thay vì chất thêm ví dụ.

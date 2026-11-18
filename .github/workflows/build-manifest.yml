@@ -11,6 +11,7 @@ on:
       - "app/library/toefl/**/*.json"
       - "app/assets/js/hit-shell.js"
       - "scripts/localize_toefl_labels.py"
+      - "scripts/audit_vietnamese.py"
       - "scripts/locales/toefl-vi.json"
       - "scripts/toefl_lab_i18n.js"
       - "scripts/build_toefl_lab_index.js"
@@ -48,6 +49,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      - name: Report remaining localization scope (informational)
+        run: python scripts/audit_vietnamese.py >> "$GITHUB_STEP_SUMMARY"
 
       - name: Verify Cambridge mock pages
         run: python scripts/verify_cambridge_mock_pages.py

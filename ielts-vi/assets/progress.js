@@ -1,4 +1,4 @@
-import { byLesson, lessons, questions } from './course.js';
+import { byLesson, lessons, questions, skills } from './course.js';
 
 export const storageKey = 'yysd:ielts-vi:progress:v1';
 export const goals = [1, 2, 3];
@@ -19,7 +19,7 @@ export function previousWeek(day) {
 }
 
 export function emptyProgress() {
-  return { version: 1, goal: 1, xp: 0, completed: {}, cards: {}, activity: {} };
+  return { version: 1, goal: 1, xp: 0, completed: {}, cards: {}, activity: {}, lastSkillDay: {}, balanced: false };
 }
 
 const bounded = (value, max = 1_000_000) => Number.isSafeInteger(value) && value >= 0 && value <= max;
@@ -43,6 +43,12 @@ export function readProgress(getStorage) {
     for (const [day, count] of Object.entries(stored.activity ?? {})) {
       if (/^(0|[1-9]\d{0,5})$/.test(day) && bounded(count) && count > 0) empty.activity[day] = count;
     }
+    // Older v1 saves have no per-skill dates. Keep their XP and never invent past lessons.
+    for (const skill of Object.keys(skills)) {
+      const date = stored.lastSkillDay?.[skill];
+      if (bounded(date, 999_999)) empty.lastSkillDay[skill] = date;
+    }
+    empty.balanced = stored.balanced === true;
     if (goals.includes(stored.goal)) empty.goal = stored.goal;
     if (bounded(stored.xp)) empty.xp = stored.xp;
   } catch {
@@ -73,17 +79,27 @@ export function streak(state, day) {
   return (state.activity[day] ? day : day - 1) - cursor;
 }
 
+export function weeklyMission(lastSkillDay, day) {
+  const missing = Object.keys(skills).filter((skill) => {
+    const last = lastSkillDay[skill];
+    return last === undefined || last < day - 6 || last > day;
+  });
+  return { count: Object.keys(skills).length - missing.length, missing };
+}
+
 export function summary(state, day) {
   const completed = Object.keys(state.completed).length;
   const days = streak(state, day);
   const due = dueCards(state, day).length;
   return {
+    mission: weeklyMission(state.lastSkillDay, day),
     completed, days, due, today: state.activity[day] ?? 0,
     nextLesson: lessons.find((lesson) => !Object.hasOwn(state.completed, lesson.id)),
     badges: [
       { title: 'Bước đầu tiên', detail: 'Hoàn thành bài học đầu tiên', earned: completed > 0 },
       { title: 'Ba ngày bền bỉ', detail: 'Duy trì chuỗi 3 ngày', earned: consecutiveThree(state) },
       { title: 'Đi hết lộ trình', detail: `Hoàn thành ${lessons.length} bài học`, earned: completed === lessons.length },
+      { title: 'Bốn kỹ năng, một tuần', detail: 'Học đủ bốn kỹ năng trong bảy ngày', earned: state.balanced },
     ],
   };
 }
@@ -129,6 +145,7 @@ export function finish(state, session, day) {
   if (session.results.length !== session.ids.length) return null;
   const completed = { ...state.completed };
   const cards = { ...state.cards };
+  const lastSkillDay = { ...state.lastSkillDay };
   let correct = 0;
   let total = 0;
   session.results.forEach((result, index) => {
@@ -141,6 +158,7 @@ export function finish(state, session, day) {
   });
   let earned = 0;
   if (session.lessonId) {
+    lastSkillDay[byLesson[session.lessonId].skill] = day;
     const best = completed[session.lessonId];
     if (best === undefined) earned = 10;
     earned += Math.max(0, correct - (best ?? 0)) * 2;
@@ -151,7 +169,9 @@ export function finish(state, session, day) {
   return {
     earned, correct, total,
     state: {
-      ...state, completed, cards, xp: state.xp + earned,
+      ...state, completed, cards, lastSkillDay,
+      balanced: state.balanced || weeklyMission(lastSkillDay, day).missing.length === 0,
+      xp: state.xp + earned,
       activity: { ...state.activity, [day]: (state.activity[day] ?? 0) + 1 },
     },
   };
