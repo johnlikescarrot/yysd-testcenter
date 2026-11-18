@@ -21,7 +21,7 @@ Lệnh đầu là điều kiện phát hành cho **bản tĩnh**, kiểm tra c�
 | Kiểm tra | Phạm vi |
 | --- | --- |
 | `npm test --prefix quality` | 25 test về bài học, chấm đáp án, ngày học và chuỗi ngày, ôn đến hạn, lưu trữ, DOM, dữ liệu học liệu, PDF. C8 bắt buộc **100% từng mô-đun** của `ielts-vi/assets/*.js` cho dòng, câu lệnh, nhánh và hàm. Không phải coverage cho máy chủ hay toàn bộ monorepo. |
-| `npm run test:portal --prefix quality` | 15 test hồi quy: mã đề, dữ liệu danh mục, đề đọc mẫu, đáp án 40/40, bài viết nháp, nộp đủ 4 đề xếp lớp, hiển thị bản dịch theo câu và ngôn ngữ phản hồi. Kiểm tra hợp đồng lời nhắc AI, không mô phỏng điểm thật của dịch vụ bên ngoài. |
+| `npm run test:portal --prefix quality` | 16 test hồi quy: mã đề, dữ liệu danh mục, đề đọc mẫu, đáp án 40/40, bài viết nháp, nộp đủ 4 đề xếp lớp, hiển thị bản dịch theo câu và ngôn ngữ phản hồi. Kiểm tra nghĩa từ tiếng Việt có dấu, không dấu và phân biệt dữ liệu cũ. Kiểm tra hợp đồng lời nhắc AI, không mô phỏng điểm thật của dịch vụ bên ngoài. |
 | `npm run test:browser --prefix quality` | Chromium thật ở hai kích thước màn hình, bàn phím, âm thanh giải mã được, lưu kết quả qua tải lại, ôn câu sai, tải PDF và đọc sổ tay. Chạy `npm run build --prefix quality` trước. |
 | `npm run lighthouse --prefix quality` | Lighthouse 13.6.0 kiểm tra trang học và 6 sổ tay dưới đường dẫn dự án, cấu hình mobile **và** desktop. Cả 14 báo cáo đều phải đạt 100 ở Performance, Accessibility, Best Practices và SEO; không bỏ qua audit tính điểm. Cho URL công khai qua `IELTS_PAGES_URL` để đo lại sau triển khai. |
 | `python3 scripts/verify_cambridge_mock_pages.py` | 226 trang đề; số câu, cấu trúc và dữ liệu chấm. |

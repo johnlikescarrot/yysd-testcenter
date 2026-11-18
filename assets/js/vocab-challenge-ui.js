@@ -120,15 +120,15 @@
     return String(w.meaning || "").trim();
   }
 
-  function isRealCn(s) {
-    return !!(s && s.indexOf("暂无释义") < 0 && /[\u4e00-\u9fff]/.test(s));
+  function usableGloss(s) {
+    return typeof s === "string" && /\p{L}/u.test(s) && !/(?:暂无释义|chưa có nghĩa)/i.test(s);
   }
 
   function mergeOptionBank(extra) {
     var seen = {};
     var out = [];
     (session.optionBank || []).concat(extra || []).forEach(function (g) {
-      if (!isRealCn(g) || seen[g]) return;
+      if (!usableGloss(g) || seen[g]) return;
       seen[g] = true;
       out.push(g);
     });
@@ -137,7 +137,7 @@
 
   function meaningOptions(w, pool, n) {
     n = n || 4;
-    var correct = isRealCn(quizMeaning(w)) ? quizMeaning(w) : "";
+    var correct = usableGloss(quizMeaning(w)) ? quizMeaning(w) : "";
     var used = {};
     if (correct) used[correct] = true;
     var distract = [];
@@ -145,7 +145,7 @@
       var shuffled = shuffle(arr || []);
       for (var i = 0; i < shuffled.length && distract.length < n - 1; i++) {
         var m = shuffled[i];
-        if (!isRealCn(m) || used[m]) continue;
+        if (!usableGloss(m) || used[m]) continue;
         used[m] = true;
         distract.push(m);
       }

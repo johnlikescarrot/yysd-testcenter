@@ -174,8 +174,14 @@ function emptyDraft() {
   return { poolByWord: {}, notebookUpserts: {}, wordMeta: {}, remaining: [], notices: [], optionBank: [] };
 }
 
-function hasCnGloss(s) {
-  return /[\u4e00-\u9fff]/.test(String(s || ""));
+function usableGloss(s) {
+  return typeof s === "string" && /\p{L}/u.test(s) && !/(?:暂无释义|chưa có nghĩa)/i.test(s);
+}
+
+// Unlabelled older imports sometimes contain an English-only fallback, not
+// a translation. Explicit accepted glosses may be unaccented, e.g. “da”.
+function hasLocalizedGloss(s) {
+  return usableGloss(s) && /[\u3400-\u9fffđĐ]|\p{M}/u.test(s.normalize("NFD"));
 }
 
 function glossFromWord(w) {
@@ -191,10 +197,10 @@ function glossFromWord(w) {
     : (wj && Array.isArray(wj.acceptCN) ? wj.acceptCN : []);
   if (accept.length) {
     var cn = accept.filter(Boolean).join(" / ");
-    if (hasCnGloss(cn)) return cn;
+    if (usableGloss(cn)) return cn;
   }
   var m = String(w.meaning || (wj && wj.meaning) || "").trim();
-  return hasCnGloss(m) ? m : "";
+  return hasLocalizedGloss(m) ? m : "";
 }
 
 function optionBankFromWords(words) {
@@ -1732,9 +1738,11 @@ function selfCheck() {
     { word: "include", acceptCN: ["包括", "包含"] },
     { word: "desk", meaning: "桌子" },
     { word: "run", acceptCN: ["跑步"] },
-    { word: "enonly", meaning: "only-english" }
+    { word: "enonly", meaning: "only-english" },
+    { word: "garden", meaning: "khu vườn" },
+    { word: "skin", acceptCN: ["da"] }
   ]);
-  if (bank.length !== 3 || bank.indexOf("桌子") < 0 || bank.indexOf("包括 / 包含") < 0) {
+  if (bank.length !== 5 || !bank.includes("khu vườn") || !bank.includes("da") || bank.indexOf("桌子") < 0 || bank.indexOf("包括 / 包含") < 0) {
     throw new Error("optionBankFromWords " + JSON.stringify(bank));
   }
 

@@ -7,7 +7,7 @@ var path = require("path");
 var root = path.join(__dirname, "..");
 var lesson = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8");
 ["parsePhrasePairs", "blankWord", "englishOnly", "tryCollocation", "tryExampleCloze",
-  "collocation", "example_cloze", "补全常见搭配", "vl-cloze"].forEach(function (k) {
+  "collocation", "example_cloze", "Hoàn thành cụm từ", "vl-cloze"].forEach(function (k) {
   if (lesson.indexOf(k) < 0) throw new Error("vocab-lesson.js missing " + k);
 });
 var css = fs.readFileSync(path.join(root, "assets/css/vocab-lesson.css"), "utf8");
@@ -86,7 +86,7 @@ function tryExampleCloze(w) {
 
 function cover(dir, label) {
   var files = fs.readdirSync(path.join(root, dir)).filter(function (f) {
-    return f.endsWith(".html");
+    return f.endsWith(".html") && !f.startsWith("教师模版-"); // Teacher downloads include illustrative (non-executable) wordData comments.
   }).slice(0, 6);
   var words = 0, colo = 0, cloze = 0;
   files.forEach(function (f) {

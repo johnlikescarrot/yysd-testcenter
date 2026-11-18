@@ -410,6 +410,7 @@
           '<li><span>Tuần này đã học</span><b data-desk="weekWords">—</b></li>' +
         "</ul>" +
         '<div class="vocab-desk__chips">' +
+          '<a class="vocab-desk__chip" href="vocab-lesson.html?id=listening-vocab-01-leisure-sports">Học nhanh 8 từ IELTS</a>' +
           '<a class="vocab-desk__chip" href="diagnostic.html">Đánh giá năng lực</a>' +
           '<a class="vocab-desk__chip vocab-desk__chip--' + dw.state + '" href="' + Y.esc(dw.href) + '">' +
             Y.esc(dw.label) + "</a>" +

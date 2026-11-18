@@ -240,3 +240,20 @@ test('the API asks for Vietnamese coaching but keeps examiner turns, answers and
   }
   assert.match(load('buildWordLookupSystem')(), /WORD_JSON:.*meaning/);
 });
+
+test('the legacy bookshelf and option bank preserve Vietnamese glosses and accepted unaccented answers', async () => {
+  const learn = await source('assets/js/vocab-learn.js');
+  const beforeBoot = learn.slice(0, learn.indexOf('(function ()'));
+  const short = new Script(`${beforeBoot}; yysdMeaningForList`).runInNewContext();
+  assert.equal(short('căn hộ (Anh-Anh)', []), 'căn hộ (Anh-Anh)');
+  assert.equal(short('khoản vay', ['vay', 'khoản vay']), 'vay; khoản vay');
+  const backend = await source('server/vocab-challenge.js');
+  const start = backend.indexOf('function usableGloss(');
+  const end = backend.indexOf('function optionBankFromDraft(');
+  const bank = new Script(`${backend.slice(start, end)}; optionBankFromWords`).runInNewContext();
+  const words = [
+    { word: 'loan', meaning: 'khoản vay' }, { word: 'skin', acceptCN: ['da'] },
+    { word: 'missing', meaning: '(chưa có nghĩa)' }, { word: 'legacy', meaning: 'only-english' },
+  ];
+  assert.deepEqual([...bank(words)], ['khoản vay', 'da']);
+});

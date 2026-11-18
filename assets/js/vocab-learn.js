@@ -2,9 +2,9 @@
 
 // ponytail: list = short gloss; card keeps full meaning 详解
 function yysdMeaningForList(raw, accept) {
-  if (accept && accept.length) return accept.join("；");
+  if (accept && accept.length) return accept.join("; ");
   var s = String(raw == null ? "" : raw).trim();
-  if (!s) return "";
+  if (!s || !/[\u3400-\u9fff]/.test(s)) return s; // Preserve Vietnamese words, qualifiers and diacritics.
   if (!/[A-Za-z]/.test(s) && !/(?:该词高中|须熟记|反义|同义|不规则|源自|易混|高考)/.test(s)) return s;
 
   s = s.replace(/[（(]([^）)]*)[）)]/g, function (_, inner) {
@@ -136,9 +136,9 @@ function yysdMeaningForList(raw, accept) {
   function learnViewToggleHtml() {
     return '<div class="vl-view-tabs" id="learnViewTabs">' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "card" ? " active" : "") +
-        '" data-v="card">卡片</button>' +
+        '" data-v="card">Thẻ</button>' +
       '<button type="button" class="vl-view-tab' + (state.learnView === "list" ? " active" : "") +
-        '" data-v="list">列表</button>' +
+        '" data-v="list">Danh sách</button>' +
       "</div>";
   }
 
@@ -189,11 +189,11 @@ function yysdMeaningForList(raw, accept) {
     ov.className = "vl-overlay show";
     ov.innerHTML =
       '<div class="vl-result-box" role="dialog" aria-modal="true">' +
-        "<h2>单词检测</h2>" +
-        '<div style="color:#4d625b;font-size:14px;margin-top:6px">确定开始本 List 的单词检测吗？</div>' +
+        "<h2>Kiểm tra từ vựng</h2>" +
+        '<div style="color:#4d625b;font-size:14px;margin-top:6px">Bắt đầu kiểm tra các từ trong danh sách này?</div>' +
         '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px">' +
-          '<button type="button" class="vl-btn" id="vl-quiz-cancel">退出</button>' +
-          '<button type="button" class="vl-btn vl-btn-primary" id="vl-quiz-ok">确定</button>' +
+          '<button type="button" class="vl-btn" id="vl-quiz-cancel">Thoát</button>' +
+          '<button type="button" class="vl-btn vl-btn-primary" id="vl-quiz-ok">Xác nhận</button>' +
         "</div></div>";
     document.body.appendChild(ov);
     document.getElementById("vl-quiz-cancel").onclick = function () { ov.remove(); };
@@ -210,7 +210,7 @@ function yysdMeaningForList(raw, accept) {
   function shell(inner) {
     app.innerHTML =
       '<div class="vl-top-bar">' +
-        '<div class="vl-brand">优益思达 · <span>词库学习</span></div>' +
+        '<div class="vl-brand">YYSD · <span>Học từ vựng</span></div>' +
         '<div class="vl-list-badge">' + esc(meta.stageLabel || "") + "</div>" +
       "</div>" +
       '<div class="vl-info-row"><div id="counter"></div></div>' +
@@ -222,41 +222,41 @@ function yysdMeaningForList(raw, accept) {
     var blurMeaning = state.blurMeaningList;
     shell("");
     document.getElementById("counter").innerHTML =
-      esc(meta.title || "") + " · 列表总览 <strong>" + words.length + "</strong> 词 · 点击一行进入卡片";
+      esc(meta.title || "") + " · Danh sách gồm <strong>" + words.length + "</strong> từ · Chọn một dòng để mở thẻ";
     var rows = words.map(function (w, i) {
       var acc = accentOf(w);
       var ipaHtml = acc.dual
-        ? '<div class="w-ipa">美 ' + esc(acc.usW !== w.word ? acc.usW + " " : "") + esc(acc.usI) +
-          "</div><div class=\"w-ipa\">英 " + esc(acc.ukW !== acc.usW ? acc.ukW + " " : "") + esc(acc.ukI) + "</div>"
+        ? '<div class="w-ipa">Mỹ ' + esc(acc.usW !== w.word ? acc.usW + " " : "") + esc(acc.usI) +
+          "</div><div class=\"w-ipa\">Anh " + esc(acc.ukW !== acc.usW ? acc.ukW + " " : "") + esc(acc.ukI) + "</div>"
         : '<span class="w-ipa">' + esc(acc.usI || w.ipa || "") + "</span>";
       return '<tr class="word-row" data-i="' + i + '">' +
         '<td class="w-no">' + (i + 1) + "</td>" +
         '<td><div class="w-en' + (blurWord ? " blurred" : "") + '" title="' +
-          (blurWord ? "点击暂时显示单词" : "") + '">' + esc(w.word) + "</div></td>" +
+          (blurWord ? "Chạm để hiện từ" : "") + '">' + esc(w.word) + "</div></td>" +
         '<td class="col-ipa">' + ipaHtml + "</td>" +
         '<td class="col-pos"><span class="w-pos">' + esc(w.pos || "") + "</span></td>" +
         '<td><span class="w-meaning' + (blurMeaning ? " blurred" : "") + '" title="' +
-          (blurMeaning ? "点击暂时显示释义" : "") + '">' +
+          (blurMeaning ? "Chạm để hiện nghĩa" : "") + '">' +
           esc(yysdMeaningForList(w.meaning, w.acceptCN)) + "</span></td>" +
         '<td class="col-speak">' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(acc.ukW) +
-            '" data-accent="1" style="padding:6px 8px;font-size:12px" title="英音">英</button> ' +
+            '" data-accent="1" style="padding:6px 8px;font-size:12px" title="Giọng Anh">Anh</button> ' +
           '<button type="button" class="vl-btn btn-speak-row" data-w="' + esc(acc.usW) +
-            '" data-accent="2" style="padding:6px 8px;font-size:12px" title="美音">美</button></td>' +
+            '" data-accent="2" style="padding:6px 8px;font-size:12px" title="Giọng Mỹ">Mỹ</button></td>' +
         "</tr>";
     }).join("");
     document.getElementById("panel").innerHTML =
       '<div class="vl-toolbar">' +
         learnViewToggleHtml() +
         '<button type="button" class="vl-btn' + (blurWord ? " is-on" : "") + '" id="btnBlurWord">' +
-          (blurWord ? "显示单词" : "模糊单词") + "</button>" +
+          (blurWord ? "Hiện từ" : "Che từ") + "</button>" +
         '<button type="button" class="vl-btn' + (blurMeaning ? " is-on" : "") + '" id="btnBlurMeaning">' +
-          (blurMeaning ? "显示释义" : "模糊释义") + "</button>" +
+          (blurMeaning ? "Hiện nghĩa" : "Che nghĩa") + "</button>" +
       "</div>" +
       '<div style="overflow-x:auto">' +
         '<table class="vl-word-table">' +
-          "<thead><tr><th>#</th><th>单词</th><th class=\"col-ipa\">音标</th>" +
-          "<th class=\"col-pos\">词性</th><th>释义</th><th>发音</th></tr></thead>" +
+          "<thead><tr><th>#</th><th>Từ vựng</th><th class=\"col-ipa\">Phiên âm</th>" +
+          "<th class=\"col-pos\">Từ loại</th><th>Nghĩa</th><th>Phát âm</th></tr></thead>" +
           "<tbody>" + rows + "</tbody></table></div>";
     bindLearnChrome();
     app.querySelectorAll(".word-row").forEach(function (tr) {
@@ -290,11 +290,11 @@ function yysdMeaningForList(raw, accept) {
     var blur = state.blurAllOff ? false : state.blurOne;
     shell("");
     document.getElementById("counter").innerHTML =
-      esc(meta.title || "") + " · 第 <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " 词";
+      esc(meta.title || "") + " · Thẻ <strong>" + (state.learnIdx + 1) + "</strong> / " + words.length + " từ";
 
     var coll = "";
     if (w.collocations && w.collocations.length) {
-      coll = '<div class="vl-section"><div class="vl-section-title">搭配</div><div class="vl-collocs">' +
+      coll = '<div class="vl-section"><div class="vl-section-title">Cụm từ</div><div class="vl-collocs">' +
         w.collocations.map(function (c) {
           return '<span class="vl-coloc">' + esc(c.phrase) +
             (c.meaning ? ' <span style="color:#6b7e78">→ ' + esc(c.meaning) + "</span>" : "") + "</span>";
@@ -303,17 +303,17 @@ function yysdMeaningForList(raw, accept) {
     var exam = "";
     if (w.examTag) {
       exam = '<div class="vl-section"><div class="vl-exam">' +
-        '<span><span class="lbl">来源 </span>' + esc(w.examTag.source || "") + "</span>" +
-        '<span><span class="lbl">话题 </span>' + esc(w.examTag.topic || "") + "</span>" +
-        '<span><span class="lbl">用法 </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
+        '<span><span class="lbl">Nguồn </span>' + esc(w.examTag.source || "") + "</span>" +
+        '<span><span class="lbl">Chủ đề </span>' + esc(w.examTag.topic || "") + "</span>" +
+        '<span><span class="lbl">Cách dùng </span>' + esc(w.examTag.commonUsage || "") + "</span>" +
         "</div></div>";
     }
     var note = w.note
-      ? '<div class="vl-section"><div class="vl-section-title">解析</div><div class="vl-root-text">' +
+      ? '<div class="vl-section"><div class="vl-section-title">Giải thích</div><div class="vl-root-text">' +
         esc(w.note) + "</div></div>"
       : "";
     var root = w.root
-      ? '<div class="vl-section"><div class="vl-section-title">词根拆解</div><div class="vl-root-text">' +
+      ? '<div class="vl-section"><div class="vl-section-title">Cấu tạo từ</div><div class="vl-root-text">' +
         esc(w.root) + "</div></div>"
       : "";
     var ex = "";
@@ -325,23 +325,23 @@ function yysdMeaningForList(raw, accept) {
           function (m) { return '<span class="vl-hl">' + m + "</span>"; }
         );
       } catch (e) {}
-      ex = '<div class="vl-section"><div class="vl-section-title">例句</div><div class="vl-ex-en">' + en +
+      ex = '<div class="vl-section"><div class="vl-section-title">Ví dụ</div><div class="vl-ex-en">' + en +
         "</div>" + (w.exampleZh ? '<div class="vl-ex-zh">' + esc(w.exampleZh) + "</div>" : "") + "</div>";
     }
     var syn = "";
     if ((w.synonyms && w.synonyms.length) || (w.antonyms && w.antonyms.length)) {
       syn = '<div class="vl-section">' +
-        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">同义：' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
-        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">反义：' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
+        (w.synonyms && w.synonyms.length ? '<div class="vl-syn">Đồng nghĩa: ' + esc(w.synonyms.join(" · ")) + "</div>" : "") +
+        (w.antonyms && w.antonyms.length ? '<div class="vl-syn">Trái nghĩa: ' + esc(w.antonyms.join(" · ")) + "</div>" : "") +
         "</div>";
     }
 
     var acc = accentOf(w);
     var wordBlock = acc.dual
-      ? '<div class="vl-accent"><div class="vl-accent-row"><span class="vl-accent-tag">美</span>' +
+      ? '<div class="vl-accent"><div class="vl-accent-row"><span class="vl-accent-tag">Mỹ</span>' +
           '<div class="vl-word" style="font-size:1.6rem">' + esc(acc.usW) + "</div>" +
           '<div class="vl-ipa">' + esc(acc.usI) + "</div></div>" +
-          '<div class="vl-accent-row"><span class="vl-accent-tag">英</span>' +
+          '<div class="vl-accent-row"><span class="vl-accent-tag">Anh</span>' +
           '<div class="vl-word" style="font-size:1.35rem">' + esc(acc.ukW) + "</div>" +
           '<div class="vl-ipa">' + esc(acc.ukI) + "</div></div></div>"
       : '<div class="vl-word">' + esc(w.word) + "</div>" +
@@ -351,20 +351,20 @@ function yysdMeaningForList(raw, accept) {
       '<div class="vl-toolbar">' +
         learnViewToggleHtml() +
         '<button type="button" class="vl-btn" id="btnBlurAll">' +
-          (state.blurAllOff ? "恢复默认模糊" : "本课全部明文") + "</button>" +
-        '<button type="button" class="vl-btn" id="btnSpeakUk">🔊 英音</button>' +
-        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 美音</button>' +
-        '<button type="button" class="vl-btn" id="btnQuizList">单词检测</button>' +
+          (state.blurAllOff ? "Khôi phục chế độ che" : "Hiện tất cả trong bài") + "</button>" +
+        '<button type="button" class="vl-btn" id="btnSpeakUk">🔊 Giọng Anh</button>' +
+        '<button type="button" class="vl-btn" id="btnSpeakUs">🔊 Giọng Mỹ</button>' +
+        '<button type="button" class="vl-btn" id="btnQuizList">Kiểm tra từ vựng</button>' +
       "</div>" +
       wordBlock +
       (w.pos ? '<div class="vl-pos">' + esc(w.pos) + "</div>" : "") +
       '<div class="vl-meaning' + (blur ? " blurred" : "") + '" id="meaning">' +
-        esc(w.meaning) + '<span class="vl-hint">点击显示/隐藏</span></div>' +
+        esc(w.meaning) + '<span class="vl-hint">Chạm để hiện hoặc ẩn</span></div>' +
       exam + coll + ex + note + root + syn +
       '<div class="vl-nav-row">' +
-        '<button type="button" class="vl-btn" id="prev">← 上一个</button>' +
+        '<button type="button" class="vl-btn" id="prev">← Từ trước</button>' +
         '<button type="button" class="vl-btn vl-btn-primary" id="next">' +
-          (atEnd ? "完成本 List" : "下一个 →") + "</button>" +
+          (atEnd ? "Hoàn thành danh sách" : "Từ tiếp theo →") + "</button>" +
       "</div>";
 
     bindLearnChrome();
@@ -391,7 +391,7 @@ function yysdMeaningForList(raw, accept) {
             ? "dashboard.html"
             : ("vocab-shelf.html?book=" + encodeURIComponent(bookId));
         }).catch(function (e) {
-          alert((e && e.message) || "保存失败，请重试");
+          alert((e && e.message) || "Không lưu được. Hãy thử lại.");
         });
         return;
       }
@@ -410,20 +410,20 @@ function yysdMeaningForList(raw, accept) {
   function fail(msg, href) {
     app.innerHTML = '<div class="vl-state"><p>' + esc(msg) + '</p>' +
       (href ? '<p style="margin-top:12px"><a class="vl-btn vl-btn-primary" href="' + href +
-        '" style="display:inline-block;text-decoration:none">返回</a></p>' : "") +
+        '" style="display:inline-block;text-decoration:none">Quay lại</a></p>' : "") +
       "</div>";
   }
 
   function boot() {
     if (!bookId || !listId) {
-      fail("缺少词书或 List 参数", "vocab-shelf.html");
+      fail("Chưa chọn sách hoặc danh sách từ.", "vocab-shelf.html");
       return;
     }
     if (!A || !A.getToken || !A.getToken()) {
       location.href = "login.html?next=" + encodeURIComponent(location.pathname + location.search);
       return;
     }
-    app.innerHTML = '<div class="vl-state">正在加载…</div>';
+    app.innerHTML = '<div class="vl-state">Đang tải…</div>';
     // ponytail: same as quiz — homework deep-link must not require prior shelf add
     A.api("/api/vocab-shelf/add", { method: "POST", body: { bookId: bookId } })
       .catch(function () {})
@@ -433,7 +433,7 @@ function yysdMeaningForList(raw, accept) {
       })
       .then(function (d) {
         if (!d.words || !d.words.length) {
-          fail("该 List 没有单词", "vocab-shelf.html?book=" + encodeURIComponent(bookId));
+          fail("Danh sách này chưa có từ.", "vocab-shelf.html?book=" + encodeURIComponent(bookId));
           return;
         }
         words = d.words;
@@ -442,13 +442,13 @@ function yysdMeaningForList(raw, accept) {
         state.learnIdx = Math.max(0, Math.min(d.progress && d.progress.wordIdx || 0, words.length - 1));
         if (backEl) {
           backEl.innerHTML = '<a href="vocab-shelf.html?book=' + encodeURIComponent(bookId) +
-            '">← 返回 ' + esc(meta.title) + "</a>";
+            '">← Quay lại ' + esc(meta.title) + "</a>";
         }
-        document.title = meta.stageLabel + " · " + meta.title + " · 优益思达";
+        document.title = meta.stageLabel + " · " + meta.title + " · YYSD";
         renderLearn();
       })
       .catch(function (e) {
-        fail((e && e.message) || "加载失败", "vocab-shelf.html");
+        fail((e && e.message) || "Không tải được dữ liệu", "vocab-shelf.html");
       });
   }
 

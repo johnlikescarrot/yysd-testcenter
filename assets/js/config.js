@@ -2031,7 +2031,7 @@ window.YYSD = (function () {
     list = list.slice().sort(function (a, b) {
       return (Number(jingtingTestNo(a)) - Number(jingtingTestNo(b))) ||
         (Number(jingtingPartNo(a)) - Number(jingtingPartNo(b))) ||
-        String(a.title).localeCompare(String(b.title), "zh");
+        String(a.title).localeCompare(String(b.title), "vi");
     });
     var byTest = {};
     list.forEach(function (it) {

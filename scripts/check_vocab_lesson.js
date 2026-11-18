@@ -17,7 +17,8 @@ function parseWordData(html) {
 const listPath = path.join(root, "library/study/vocab/高中单词LIST1.html");
 assert(fs.existsSync(listPath), "LIST1 exists");
 const words = parseWordData(fs.readFileSync(listPath, "utf8"));
-assert(words[0].word === "firm", "first word firm");
+const sourceWords = JSON.parse(fs.readFileSync(path.join(root, "library/study/vocab/gaozhong-list01.json"), "utf8"));
+assert(words.map(w => w.word).join("|") === sourceWords.map(w => w.word).join("|"), "first word list matches canonical source order");
 
 const cet4 = path.join(root, "library/study/vocab-cet4/四级单词LIST1.html");
 assert(fs.existsSync(cet4), "cet4 LIST1");
@@ -41,8 +42,8 @@ const js = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8")
   "listen_meaning",
   "scramble",
   "type_spell",
-  "错题重练",
-  "免费重新注入",
+  "Ôn câu sai",
+  "Hồi sức miễn phí",
   "parseWordData",
   "mergeWrongWords",
   "yysd:vocab-lesson-streak"
@@ -53,10 +54,10 @@ assert(html.includes("vocab-lesson.js") && html.includes("vl-root"), "lesson she
 
 const zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
 assert(!zone.includes("vocab-realm-banner"), "zone realm promo hidden");
-assert(zone.includes("开始背单词") || zone.includes("开始 ›"), "zone homework CTA");
+assert(zone.includes('href="vocab-lesson.html?id=listening-vocab-01-leisure-sports"'), "word hub opens the existing lesson engine");
 
 const vocab = fs.readFileSync(path.join(root, "assets/js/vocab.js"), "utf8");
-assert(vocab.includes("vocabLessonHref") && vocab.includes("开始小课"), "vocab hub CTA");
+assert(vocab.includes('location.replace("vocab-shelf.html"') && vocab.includes("?book="), "legacy book links preserve the selected shelf");
 
 const realm = fs.readFileSync(path.join(root, "assets/js/word-realm.js"), "utf8");
 assert(realm.includes("from=realm") && realm.includes("vocab-lesson.html"), "realm → lesson");

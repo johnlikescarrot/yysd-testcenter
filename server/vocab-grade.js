@@ -42,13 +42,13 @@ function metaFromWord(w) {
 }
 
 function quizMeaning(meta) {
-  if (!meta) return "（暂无释义）";
+  if (!meta) return "(chưa có nghĩa)";
   if (meta.acceptCN && meta.acceptCN.length) {
     var cn = meta.acceptCN.filter(Boolean).join(" / ");
     if (cn) return cn;
   }
   var m = String(meta.meaning || "").trim();
-  return m || "（暂无释义）";
+  return m || "(chưa có nghĩa)";
 }
 
 function normalizeSpell(s) {

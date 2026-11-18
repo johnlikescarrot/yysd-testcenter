@@ -88,19 +88,19 @@
   }
 
   function quizMeaning(w) {
-    if (!w) return "（暂无释义）";
+    if (!w) return "(chưa có nghĩa)";
     var cn = w.acceptCN;
     if (Array.isArray(cn) && cn.length) {
       var joined = cn.filter(Boolean).join(" / ");
       if (joined) return joined;
     }
     var m = String(w.meaning || "").trim();
-    return m || "（暂无释义）";
+    return m || "(chưa có nghĩa)";
   }
 
   var FALLBACK_CN = [
-    "桌子 / 课桌", "跑步 / 奔跑", "窗户 / 窗口", "黄色 / 金黄",
-    "安静 / 平静", "朋友 / 友人", "天气 / 气候", "学校 / 校园"
+    "bàn / bàn học", "chạy / chạy bộ", "cửa sổ / ô cửa", "vàng / vàng óng",
+    "yên tĩnh / bình lặng", "bạn / bạn bè", "thời tiết / khí hậu", "trường học / khuôn viên trường"
   ];
 
   function meaningOptions(w, n) {
@@ -136,8 +136,8 @@
     root.innerHTML =
       '<div class="vl-app">' +
         '<div class="vl-top-bar">' +
-          '<div class="vl-brand">优益思达 · <span>单词检测</span></div>' +
-          '<div class="vl-list-badge">' + esc(meta.bookLabel || "检测") + "</div>" +
+          '<div class="vl-brand">YYSD · <span>Kiểm tra từ vựng</span></div>' +
+          '<div class="vl-list-badge">' + esc(meta.bookLabel || "Kiểm tra") + "</div>" +
           (opts.showLives ? '<div class="vl-lives" id="lives">' + livesHtml + "</div>" : "") +
         "</div>" +
         '<div class="vl-info-row">' +
@@ -160,7 +160,7 @@
     }).join("");
 
     var listRows = lists.map(function (l) {
-      var wc = l.wordCount != null ? l.wordCount + " 词" : "";
+      var wc = l.wordCount != null ? l.wordCount + " từ" : "";
       return '<label class="vq-check">' +
         '<input type="checkbox" name="list" value="' + esc(l.id) + '">' +
         "<span><b>" + esc(l.label) + "</b> · " + esc(wc || "List") + "</span></label>";
@@ -168,27 +168,27 @@
 
     root.innerHTML =
       '<div class="vs-hero bento-panel">' +
-        '<h1 class="bento-panel__title">单词检测</h1>' +
-        '<p class="bento-panel__desc">选书架词书 → 多选 List → 合并抽 60% · 听音选义 + 拼写 · 5 命 · 每题 20 秒</p>' +
+        '<h1 class="bento-panel__title">Kiểm tra từ vựng</h1>' +
+        '<p class="bento-panel__desc">Chọn sách và danh sách từ. Mỗi lượt lấy 60% số từ để nghe, chọn nghĩa và viết chính tả. Bạn có 5 mạng và 20 giây cho mỗi câu.</p>' +
         '<div class="vs-actions">' +
-          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← 单词区</a>' +
-          '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">词库书架</a>' +
+          '<a class="btn btn--ghost btn--sm" href="zone.html?zone=study&s=vocab">← Góc từ vựng</a>' +
+          '<a class="btn btn--ghost btn--sm" href="vocab-shelf.html">Kệ sách từ vựng</a>' +
         "</div>" +
       "</div>" +
       (books.length
         ? '<div class="bento-panel vq-setup">' +
-            '<label class="vq-field">词书' +
+            '<label class="vq-field">Sách' +
               '<select id="vq-book">' + bookOpts + "</select></label>" +
             '<div class="vq-lists-head">' +
-              '<span>选择 List（可多选）</span>' +
-              '<button type="button" class="btn btn--ghost btn--sm" id="vq-all">全选</button>' +
+              '<span>Chọn danh sách (có thể chọn nhiều)</span>' +
+              '<button type="button" class="btn btn--ghost btn--sm" id="vq-all">Chọn tất cả</button>' +
             "</div>" +
             '<div class="vq-lists" id="vq-lists">' +
-              (listRows || '<p class="vs-empty">该词书暂无 List</p>') +
+              (listRows || '<p class="vs-empty">Sách này chưa có danh sách từ.</p>') +
             "</div>" +
-            '<button type="button" class="btn btn--primary" id="vq-start" disabled>开始检测</button>' +
+            '<button type="button" class="btn btn--primary" id="vq-start" disabled>Bắt đầu kiểm tra</button>' +
           "</div>"
-        : '<div class="bento-panel"><p class="vs-empty">书架还是空的，请先<a href="vocab-shelf.html?view=catalog">添加词书</a>。</p></div>');
+        : '<div class="bento-panel"><p class="vs-empty">Kệ sách còn trống. Hãy <a href="vocab-shelf.html?view=catalog">thêm sách từ vựng</a>.</p></div>');
 
     if (!books.length) return;
 
@@ -202,7 +202,7 @@
       meta.bookId = id;
       A.api("/api/vocab-shelf/book?bookId=" + encodeURIComponent(id))
         .then(function (d) { renderSetup(shelf, d); })
-        .catch(function (e) { alert((e && e.message) || "加载失败"); });
+        .catch(function (e) { alert((e && e.message) || "Không tải được dữ liệu"); });
     }
 
     document.getElementById("vq-book").onchange = function () {
@@ -250,19 +250,19 @@
           (bookIdOfRef(ref) ? '<span style="color:#6a7c74"> · ' + esc(bookIdOfRef(ref)) + "</span>" : "") +
         "</span>" +
         (ok
-          ? '<span style="color:#1f7a4d;font-weight:600">已通过</span>'
-          : '<button type="button" class="btn btn--primary btn--sm" data-vq-ref="' + esc(ref) + '">开始检测</button>') +
+          ? '<span style="color:#1f7a4d;font-weight:600">Đã đạt</span>'
+          : '<button type="button" class="btn btn--primary btn--sm" data-vq-ref="' + esc(ref) + '">Bắt đầu kiểm tra</button>') +
       "</div>";
     }).join("");
     root.innerHTML =
       '<div class="vs-hero bento-panel">' +
-        '<h1 class="bento-panel__title">作业 · 单词检测</h1>' +
-        '<p class="bento-panel__desc">共 ' + refs.length + " 个 List，请逐个闯关（" +
-          passedN + "/" + refs.length + " 已通过）。全部通过后作业才算完成。</p>" +
-        '<div class="vs-actions"><a class="btn btn--ghost btn--sm" href="dashboard.html">← 返回待办</a></div>' +
+        '<h1 class="bento-panel__title">Bài được giao · Kiểm tra từ vựng</h1>' +
+        '<p class="bento-panel__desc">Tổng cộng: ' + refs.length + "  danh sách. Hoàn thành từng danh sách (" +
+          passedN + "/" + refs.length + " đã đạt). Bài được tính là hoàn thành khi bạn đạt tất cả các danh sách.</p>" +
+        '<div class="vs-actions"><a class="btn btn--ghost btn--sm" href="dashboard.html">← Về nhiệm vụ</a></div>' +
       "</div>" +
       '<div class="bento-panel vq-setup">' +
-        '<div class="vq-lists">' + (rows || '<p class="vs-empty">无 List</p>') + "</div>" +
+        '<div class="vq-lists">' + (rows || '<p class="vs-empty">Chưa có danh sách</p>') + "</div>" +
       "</div>";
     root.querySelectorAll("[data-vq-ref]").forEach(function (btn) {
       btn.onclick = function () {
@@ -291,7 +291,7 @@
     lastQuizPayload = d;
     lastQuizOpts = opts;
     words = shuffle(d.words || []);
-    if (!words.length) throw new Error("没有可测单词");
+    if (!words.length) throw new Error("Không có từ để kiểm tra.");
     meta.bookId = d.bookId || (d.book && d.book.id) || meta.bookId;
     meta.bookLabel = d.bookLabel || (d.book && d.book.label) || meta.bookId;
     meta.listIds = d.listIds || meta.listIds || [];
@@ -315,7 +315,7 @@
       clearTimeout(state.imeDebounce);
       state.imeDebounce = null;
     }
-    document.title = (opts.sessionId ? "错词重测 · " : "检测 · ") + meta.bookLabel + " · 优益思达";
+    document.title = (opts.sessionId ? "Kiểm tra lại từ sai · " : "Kiểm tra · ") + meta.bookLabel + " · YYSD";
     requireImeGate("start", renderQuizActive);
   }
 
@@ -327,7 +327,7 @@
   }
 
   function startQuiz(bookId, listIds) {
-    root.innerHTML = '<div class="vl-state">正在组卷…</div>';
+    root.innerHTML = '<div class="vl-state">Đang tạo bài kiểm tra…</div>';
     var ids = listIds || [];
     var asRefs = ids.length && ids.every(function (id) { return String(id).indexOf("||") > 0; });
     var url = asRefs
@@ -343,10 +343,10 @@
         beginWithWords(d, {});
       })
       .catch(function (e) {
-        alert((e && e.message) || "组卷失败");
+        alert((e && e.message) || "Không tạo được bài kiểm tra.");
         if (assignEventId && (preRefs.length || preListIds.length)) {
-          root.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "组卷失败") +
-            '</p><p><a href="dashboard.html">返回待办</a></p></div>';
+          root.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "Không tạo được bài kiểm tra.") +
+            '</p><p><a href="dashboard.html">Về nhiệm vụ</a></p></div>';
         } else {
           boot();
         }
@@ -354,7 +354,7 @@
   }
 
   function startRetest(sessionId) {
-    root.innerHTML = '<div class="vl-state">正在加载错词…</div>';
+    root.innerHTML = '<div class="vl-state">Đang tải từ cần ôn…</div>';
     A.api("/api/vocab-shelf/wrongbook/session?id=" + encodeURIComponent(sessionId))
       .then(function (d) {
         var s = d.session || {};
@@ -370,7 +370,7 @@
         }, { sessionId: sessionId });
       })
       .catch(function (e) {
-        alert((e && e.message) || "加载失败");
+        alert((e && e.message) || "Không tải được dữ liệu");
         location.href = "wrong-words.html?session=" + encodeURIComponent(sessionId);
       });
   }
@@ -473,7 +473,7 @@
     if (window.YYSD_IME_GATE) YYSD_IME_GATE.reset();
     var gate = window.YYSD_IME_GATE;
     if (!gate || !gate.showCheat) {
-      alert("多次切换中文输入法，本次测试已作废。");
+      alert("Bạn đã nhiều lần rời chế độ gõ tiếng Anh. Lượt kiểm tra này không còn hợp lệ.");
       location.href = meta.sessionId
         ? ("wrong-words.html?session=" + encodeURIComponent(meta.sessionId))
         : "vocab-shelf.html";
@@ -575,8 +575,8 @@
     state.waiting = false;
     state.selectedMeaning = null;
     shell(
-      '<p class="vl-listen-hint">听发音，先选中文含义，再拼写英文</p>' +
-      '<button type="button" class="vl-btn" id="listen">🔊 播放发音</button>' +
+      '<p class="vl-listen-hint">Nghe cách phát âm, chọn nghĩa rồi viết từ bằng tiếng Anh.</p>' +
+      '<button type="button" class="vl-btn" id="listen">🔊 Nghe phát âm</button>' +
       '<div class="vl-opts" id="opts">' +
         opts.map(function (o, i) {
           return '<button type="button" class="vl-opt" data-v="' + esc(o) + '"><span class="label">' +
@@ -584,21 +584,21 @@
         }).join("") +
       "</div>" +
       '<div class="vl-spell-row" id="spellRow" hidden>' +
-        '<input type="text" id="spell" lang="en" inputmode="latin" placeholder="英文拼写（请用英文输入法）" ' +
+        '<input type="text" id="spell" lang="en" inputmode="latin" placeholder="Nhập từ bằng bộ gõ tiếng Anh" ' +
           'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />' +
-        '<button type="button" class="vl-btn vl-btn-primary" id="submit" disabled>提交</button>' +
+        '<button type="button" class="vl-btn vl-btn-primary" id="submit" disabled>Nộp</button>' +
       "</div>" +
       '<div class="vl-feedback" id="fb"></div>' +
-      '<div class="vl-nav-row"><button type="button" class="vl-btn vl-btn-primary" id="qnext" disabled>下一题 →</button></div>',
+      '<div class="vl-nav-row"><button type="button" class="vl-btn vl-btn-primary" id="qnext" disabled>Câu tiếp theo →</button></div>',
       { showLives: true }
     );
     document.getElementById("counter").innerHTML =
-      (meta.sessionId ? "错词重测 · " : "") +
-      "第 <strong>" + (state.quizIdx + 1) + "</strong> / " + state.quizOrder.length +
-      " · 正确 " + state.correct +
+      (meta.sessionId ? "Kiểm tra lại từ sai · " : "") +
+      "Câu <strong>" + (state.quizIdx + 1) + "</strong> / " + state.quizOrder.length +
+      " · Đúng: " + state.correct +
       (meta.sessionId
         ? ""
-        : ' <span style="color:#8a9e96">（选自 ' + state.poolTotal + " 词的 60%）</span>");
+        : ' <span style="color:#8a9e96"> (chọn từ ' + state.poolTotal + " từ, tỷ lệ 60%)</span>");
     document.getElementById("listen").onclick = function () { speak(w.word); };
     speak(w.word);
     document.getElementById("opts").onclick = function (e) {
@@ -626,14 +626,14 @@
   function submitQuiz() {
     if (state.answered || state.gameOver) return;
     if (!state.selectedMeaning) {
-      softPrompt("请先选择中文含义");
+      softPrompt("Hãy chọn nghĩa trước.");
       return;
     }
     revealSpellRow(false);
     var spellEl = document.getElementById("spell");
     var spell = spellEl ? spellEl.value.trim().toLowerCase() : "";
     if (!spell) {
-      softPrompt("请先拼写英文");
+      softPrompt("Hãy nhập từ tiếng Anh.");
       if (spellEl) spellEl.focus();
       return;
     }
@@ -651,13 +651,13 @@
     var fb = document.getElementById("fb");
     if (ok) {
       fb.className = "vl-feedback show ok";
-      fb.textContent = "✅ 完全正确！";
+      fb.textContent = "✅ Chính xác!";
       state.correct++;
     } else {
       state.lives--;
       state.wrong++;
       fb.className = "vl-feedback show fail";
-      fb.textContent = "❌ 正确答案：" + w.word + "（" + quizMeaning(w) + "）";
+      fb.textContent = "❌ Đáp án: " + w.word + " (" + quizMeaning(w) + ")";
       updateLives();
     }
     recordQuizResult(w, spell, state.selectedMeaning, ok);
@@ -684,14 +684,14 @@
     var fb = document.getElementById("fb");
     if (ok) {
       fb.className = "vl-feedback show ok";
-      fb.textContent = "✅ 时间到，但作答正确！";
+      fb.textContent = "✅ Hết giờ, nhưng bạn đã trả lời đúng!";
       state.correct++;
     } else {
       state.lives--;
       state.wrong++;
       updateLives();
       fb.className = "vl-feedback show timeout";
-      fb.textContent = "⏰ 时间到！答案：" + w.word + "（" + quizMeaning(w) + "）";
+      fb.textContent = "⏰ Hết giờ! Đáp án: " + w.word + " (" + quizMeaning(w) + ")";
     }
     recordQuizResult(w, spellRaw || "(timeout)", state.selectedMeaning || "", ok);
     afterAnswer();
@@ -750,7 +750,7 @@
     var box = document.getElementById("resultBox");
     var isRetest = !!meta.sessionId;
     var isAssign = !!(meta.assignmentEventId || assignEventId);
-    box.innerHTML = '<div class="vl-state">正在提交结果…</div>';
+    box.innerHTML = '<div class="vl-state">Đang gửi kết quả…</div>';
     ov.classList.add("show");
 
     finishReq.then(function (d) {
@@ -760,62 +760,62 @@
       var title;
       var sub;
       if (isRetest) {
-        title = "重测结束";
-        sub = "本场错词列表已更新为仍错的 " + state.mistakes.length + " 个（记录保留，可手动删除）。";
+        title = "Đã kiểm tra lại xong";
+        sub = "Danh sách đã được cập nhật. Bạn còn " + state.mistakes.length + " từ sai (có thể tự xóa bản ghi sau).";
       } else if (passed && assignPartial) {
-        title = "本 List 通过";
-        sub = "已过 " + (assign.passedCount || 0) + "/" + (assign.totalLists || 0) +
-          " 个 List。请继续完成剩余 List，全部通过后作业才算完成。错词已写入错题本。";
+        title = "Đã đạt danh sách này";
+        sub = "Đã đạt " + (assign.passedCount || 0) + "/" + (assign.totalLists || 0) +
+          " danh sách. Hoàn thành các danh sách còn lại để kết thúc nhiệm vụ. Từ sai đã được lưu.";
         if (assign.quizResult) meta.assignProgress = assign.quizResult;
       } else if (passed && assignOk) {
-        title = isAssign ? "检测通过 · 作业已完成" : "闯关成功！";
+        title = isAssign ? "Đạt · Đã hoàn thành nhiệm vụ" : "Vượt chặng thành công!";
         sub = isAssign
-          ? "成绩已提交给老师。错词已写入错题本。"
-          : "已通关。错词已写入错题本。";
+          ? "Đã gửi kết quả cho giáo viên và lưu các từ sai để ôn lại."
+          : "Đã vượt chặng. Từ sai được lưu để ôn lại.";
       } else if (passed && !assignOk) {
-        title = "检测通过 · 作业未同步";
-        sub = "闯关已通过，但作业状态提交失败，请重试或稍后在待办查看。";
+        title = "Đạt · Nhiệm vụ chưa đồng bộ";
+        sub = "Bạn đã đạt nhưng chưa gửi được trạng thái nhiệm vụ. Hãy thử lại hoặc kiểm tra mục Nhiệm vụ sau.";
       } else {
-        title = isAssign ? "未通过 · 作业未完成" : "闯关失败";
+        title = isAssign ? "Chưa đạt · Nhiệm vụ chưa hoàn thành" : "Chưa vượt chặng";
         sub = isAssign
-          ? "错误已达 5 题，须立即重测；未通过不算完成作业。"
-          : "生命耗尽，可重试。错词已收录。";
+          ? "Bạn đã sai 5 câu và cần làm lại. Nhiệm vụ chỉ hoàn thành khi đạt."
+          : "Đã hết mạng; bạn có thể thử lại. Từ sai đã được lưu.";
       }
       var acts;
       if (isAssign && !passed) {
         acts =
-          '<button type="button" class="vl-btn vl-btn-primary" id="retry">立即重测</button>' +
-          '<a class="vl-btn" href="dashboard.html">退出（作业未完成）</a>';
+          '<button type="button" class="vl-btn vl-btn-primary" id="retry">Làm lại ngay</button>' +
+          '<a class="vl-btn" href="dashboard.html">Thoát (chưa hoàn thành bài được giao)</a>';
       } else if (isAssign && passed && assignPartial) {
         acts =
-          '<button type="button" class="vl-btn vl-btn-primary" id="nextList">继续下一 List</button>' +
-          '<a class="vl-btn" href="dashboard.html">稍后再做</a>';
+          '<button type="button" class="vl-btn vl-btn-primary" id="nextList">Sang danh sách tiếp theo</button>' +
+          '<a class="vl-btn" href="dashboard.html">Để sau</a>';
       } else if (isAssign && passed && !assignOk) {
         acts =
-          '<button type="button" class="vl-btn vl-btn-primary" id="retry">重新提交</button>' +
-          '<a class="vl-btn" href="dashboard.html">返回待办</a>';
+          '<button type="button" class="vl-btn vl-btn-primary" id="retry">Gửi lại</button>' +
+          '<a class="vl-btn" href="dashboard.html">Về nhiệm vụ</a>';
       } else if (isAssign && passed) {
         acts =
-          '<a class="vl-btn vl-btn-primary" href="dashboard.html">返回待办</a>' +
-          '<a class="vl-btn" href="wrong-words.html">错题本</a>';
+          '<a class="vl-btn vl-btn-primary" href="dashboard.html">Về nhiệm vụ</a>' +
+          '<a class="vl-btn" href="wrong-words.html">Sổ câu sai</a>';
       } else {
         acts =
           '<button type="button" class="vl-btn vl-btn-primary" id="retry">' +
-            (isRetest ? "再测错词" : "重新检测") + "</button>" +
+            (isRetest ? "Kiểm tra lại từ sai" : "Kiểm tra lại") + "</button>" +
           '<a class="vl-btn" href="wrong-words.html' +
             (isRetest ? ("?session=" + meta.sessionId) : "") +
-            '">错题本</a>' +
+            '">Sổ câu sai</a>' +
           (isRetest
-            ? '<a class="vl-btn" href="dashboard.html">返回待办</a>'
-            : '<button type="button" class="vl-btn" id="backSetup">重选 List</button>');
+            ? '<a class="vl-btn" href="dashboard.html">Về nhiệm vụ</a>'
+            : '<button type="button" class="vl-btn" id="backSetup">Chọn lại danh sách</button>');
       }
       box.innerHTML =
         '<div style="font-size:40px">' + (passed ? "🎉" : "💪") + "</div>" +
         "<h2>" + title + "</h2>" +
         '<div style="color:#4d625b;font-size:14px;margin-top:6px">' + sub + "</div>" +
         '<div class="vl-score">' + state.correct + "<span> / " + state.quizOrder.length + "</span></div>" +
-        '<div style="color:#4d625b;font-size:14px">错误 ' + state.wrong +
-          " · 剩余生命 " + Math.max(0, state.lives) + "</div>" +
+        '<div style="color:#4d625b;font-size:14px">Số câu sai: ' + state.wrong +
+          " · Mạng còn lại: " + Math.max(0, state.lives) + "</div>" +
         '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px">' +
           acts + "</div>";
       var retry = document.getElementById("retry");
@@ -842,12 +842,12 @@
       }
     }).catch(function (e) {
       box.innerHTML =
-        "<h2>结果提交失败</h2>" +
+        "<h2>Không gửi được kết quả</h2>" +
         '<div style="color:#4d625b;font-size:14px;margin-top:6px">' +
-          esc((e && e.message) || "网络异常") + "。请重试，勿直接关闭。</div>" +
+          esc((e && e.message) || "Lỗi kết nối") + ". Hãy thử lại trước khi đóng trang.</div>" +
         '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px">' +
-          '<button type="button" class="vl-btn vl-btn-primary" id="retry">重试提交</button>' +
-          '<a class="vl-btn" href="dashboard.html">返回待办</a></div>';
+          '<button type="button" class="vl-btn vl-btn-primary" id="retry">Thử gửi lại</button>' +
+          '<a class="vl-btn" href="dashboard.html">Về nhiệm vụ</a></div>';
       var retry = document.getElementById("retry");
       if (retry) {
         retry.onclick = function () {
@@ -860,7 +860,7 @@
 
   function boot() {
     if (!needAuth()) return;
-    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>正在加载…</div>';
+    root.innerHTML = '<div class="state state--brand"><div class="spinner spinner--brand"></div>Đang tải…</div>';
     if (retestSessionId) {
       startRetest(retestSessionId);
       return;
@@ -889,7 +889,7 @@
       loadAssignProgress().then(function () { renderAssignPicker(); });
       return;
     }
-    // Free deep-link from List 学习：只测指定 List，跳过准备页
+    // A deep link from a lesson starts that list without repeating setup.
     if (!assignEventId && preRefs.length) {
       meta.listIds = preRefs.slice();
       startQuiz("", preRefs);
@@ -912,7 +912,7 @@
           .then(function (detail) { renderSetup(shelf, detail); });
       })
       .catch(function (e) {
-        root.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "加载失败") + "</p></div>";
+        root.innerHTML = '<div class="state"><p>' + esc((e && e.message) || "Không tải được dữ liệu") + "</p></div>";
       });
   }
 
