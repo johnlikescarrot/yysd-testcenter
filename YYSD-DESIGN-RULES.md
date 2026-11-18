@@ -75,7 +75,7 @@ Trước khi làm UI mới hãy hỏi: đây là nội dung, lớp vỏ, hay ph�
 
 ## 5. Bố cục & thông tin
 
-- Mỗi区块 làm một việc: một tiêu đề chính + (tùy chọn) một câu giải thích + một nhóm thao tác chính.
+- Mỗi khối làm một việc: một tiêu đề chính + (tùy chọn) một câu giải thích + một nhóm thao tác chính.
 - Card là vùng chứa có tương tác, không phải đồ trang trí; bỏ viền/bóng đi vẫn rõ → không nên là card.
 - Landing / màn đầu ít card; Hub dùng card được.
 - Navy = cấu trúc & thao tác chính; Gold = nhấn rất hiếm; màu kĩ năng chỉ làm vạch mảnh / icon.
