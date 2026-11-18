@@ -1,24 +1,19 @@
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { WASI } from 'node:wasi';
 import { Mp3Encoder } from '@breezystack/lamejs';
 import { lessons } from '../ielts-vi/assets/course.js';
 
-const require = createRequire(import.meta.url);
-const wasm = await WebAssembly.compile(await readFile(require.resolve('@echogarden/flite-wasi/flite.wasm')));
+const worker = fileURLToPath(new URL('./flite-wav.mjs', import.meta.url));
 const temp = await mkdtemp(join(tmpdir(), 'ielts-audio-'));
 const voices = ['slt', 'rms', 'awb'];
 let index = 0;
 try {
   for (const { context } of lessons.filter((lesson) => lesson.context?.audio)) {
-    const wasi = new WASI({
-      version: 'preview1', args: ['flite', '-voice', voices[index++ % voices.length], '-t', context.text, '/out/speech.wav'],
-      preopens: { '/out': temp },
-    });
-    const program = await WebAssembly.instantiate(wasm, wasi.getImportObject());
-    if (wasi.start(program) !== 0) throw new Error(`Flite failed: ${context.audio}`);
+    console.log(`Synthesizing ${context.audio}`);
+    execFileSync(process.execPath, [worker, temp, voices[index++ % voices.length], context.text], { stdio: 'inherit' });
     const wav = await readFile(join(temp, 'speech.wav'));
     const audioStart = wav.indexOf('data', 32, 'ascii');
     if (audioStart < 0 || wav.readUInt16LE(22) !== 1 || wav.readUInt16LE(34) !== 16) {

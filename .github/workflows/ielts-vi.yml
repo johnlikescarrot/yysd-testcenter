@@ -78,6 +78,8 @@ jobs:
             /assets/js/
             /library/manifest.json
             /library/mock/cambridge-*/*.html
+            /library/mock/ielts/*.html
+            /library/practice/jingting/data/cam10-t1-p*.json
             /library/practice/ielts/*.html
             /library/study/vocab-special-listening/*.html
       - name: Set up Node.js

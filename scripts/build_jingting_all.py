@@ -8,6 +8,7 @@ ponytail: Whisper only for timing; student text must come from PDF audioscripts.
 from __future__ import annotations
 
 import json
+from collections import defaultdict, deque
 import os
 import re
 import subprocess
@@ -263,22 +264,29 @@ def convert_vol(vol: int) -> int:
             sec = int(part["section"])
             pid = f"cam{vol}-t{test}-p{sec}"
             dest = OUT_DIR / f"{pid}.json"
-            old_zh = {}
+            old_lines = []
             if dest.exists():
                 old = json.loads(dest.read_text())
-                old_zh = {s["en"]: s.get("zh", "") for s in old.get("sentences") or []}
+                old_lines = old.get("sentences") or []
+            old_zh = {s["en"]: s.get("zh", "") for s in old_lines}
+            # Match by text and occurrence: repeated utterances can have different translations.
+            old_vi = defaultdict(deque)
+            for line in old_lines:
+                old_vi[line["en"]].append(line.get("vi"))
             obj = {
                 "id": pid,
-                "title": f"剑{vol} Test {test} Part {sec}",
+                "title": f"Cambridge IELTS {vol} Test {test} Part {sec}",
                 "audioUrl": f"library/mock/cambridge-listening/{part['audio']}",
                 "examHref": f"library/mock/cambridge-listening/cambridge-{vol}-test-{test}.html",
                 "sentences": [],
             }
             for s in part.get("sentences") or []:
                 en = s.get("text") or s.get("en") or ""
+                vi = old_vi[en].popleft() if old_vi[en] else s.get("vi")
+                translation = {"vi": vi} if vi else {"zh": (s.get("zh") or old_zh.get(en) or "").strip()}
                 obj["sentences"].append({
                     "en": en,
-                    "zh": (s.get("zh") or old_zh.get(en) or "").strip(),
+                    **translation,
                     "start": float(s["start"]),
                     "end": float(s["end"]),
                 })
@@ -298,7 +306,7 @@ def fill_zh(vols: list[int], batch_size: int = 40):
     for vol in vols:
         for path in sorted(OUT_DIR.glob(f"cam{vol}-t*-p*.json")):
             obj = json.loads(path.read_text())
-            missing = [i for i, s in enumerate(obj["sentences"]) if not (s.get("zh") or "").strip()]
+            missing = [i for i, s in enumerate(obj["sentences"]) if not (s.get("vi") or s.get("zh") or "").strip()]
             if not missing:
                 print(f"{path.name}: zh ok")
                 continue

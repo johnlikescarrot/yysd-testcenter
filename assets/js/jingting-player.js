@@ -15,11 +15,12 @@
     mode: "full", // full | line
     i: 0,
     showEn: false,
-    showZh: false,
+    showTranslation: false,
     loop: false,
     rate: 1,
     playing: false,
     clipMode: false, // playing [start,end] then pause (line)
+    translationLang: "vi",
     glossCache: {}
   };
 
@@ -122,15 +123,19 @@
     if (active) active.scrollIntoView({ block: "nearest" });
   }
 
+  function translation(sentence) {
+    return sentence[state.translationLang] || "Chưa có bản dịch cho câu này.";
+  }
+
   function renderFull() {
     var body = $("jtFullBody");
     if (!body || !state.data) return;
-    body.classList.toggle("is-blind", !state.showEn && !state.showZh);
+    body.classList.toggle("is-blind", !state.showEn && !state.showTranslation);
     body.innerHTML = state.data.sentences.map(function (s, i) {
-      var en = state.showEn ? '<span class="jt-full-en">' + linkWords(s.en) + "</span>" : '<span class="jt-full-en">· · ·</span>';
-      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.zh || "") + "</span>" : "";
+      var en = state.showEn ? '<span class="jt-full-en" lang="en">' + linkWords(s.en) + "</span>" : '<span class="jt-full-en" lang="en">· · ·</span>';
+      var translated = state.showTranslation ? '<span class="jt-full-zh" lang="' + state.translationLang + '">' + esc(translation(s)) + "</span>" : "";
       return '<button type="button" class="jt-full-line' + (i === state.i ? " is-active" : "") +
-        '" data-i="' + i + '" data-start="' + s.start + '">' + en + zh + "</button>";
+        '" data-i="' + i + '" data-start="' + s.start + '">' + en + translated + "</button>";
     }).join("");
   }
 
@@ -153,12 +158,13 @@
     $("jtIdx").textContent = String(state.i + 1);
     $("jtTotal").textContent = String(state.data.sentences.length);
     $("jtLineEn").innerHTML = linkWords(s.en);
-    $("jtLineZh").textContent = s.zh || "";
+    $("jtLineZh").lang = state.translationLang;
+    $("jtLineZh").textContent = translation(s);
     var reveal = $("jtReveal");
-    var showAny = state.showEn || state.showZh;
+    var showAny = state.showEn || state.showTranslation;
     reveal.classList.toggle("is-hidden", showAny);
     $("jtLineEn").classList.toggle("is-hidden", !state.showEn);
-    $("jtLineZh").classList.toggle("is-hidden", !state.showZh);
+    $("jtLineZh").classList.toggle("is-hidden", !state.showTranslation);
   }
 
   function renderStage() {
@@ -168,7 +174,9 @@
       btn.classList.toggle("is-on", btn.getAttribute("data-mode") === state.mode);
     });
     $("jtShowEn").classList.toggle("is-on", state.showEn);
-    $("jtShowZh").classList.toggle("is-on", state.showZh);
+    $("jtShowEn").setAttribute("aria-pressed", String(state.showEn));
+    $("jtShowZh").setAttribute("aria-pressed", String(state.showTranslation));
+    $("jtShowZh").classList.toggle("is-on", state.showTranslation);
     if (state.mode === "full") renderFull();
     else renderLineCard();
   }
@@ -334,8 +342,8 @@
       renderStage();
     };
     $("jtShowZh").onclick = function () {
-      state.showZh = !state.showZh;
-      if (state.showZh && state.mode === "line") state.showEn = true;
+      state.showTranslation = !state.showTranslation;
+      if (state.showTranslation && state.mode === "line") state.showEn = true;
       renderStage();
     };
 
@@ -395,7 +403,7 @@
         renderStage();
       } else if (e.key === "ArrowDown") {
         e.preventDefault();
-        state.showZh = !state.showZh;
+        state.showTranslation = !state.showTranslation;
         renderStage();
       } else if (e.key === "Shift") {
         // ponytail: Shift alone toggles loop (matches 新东方 tip); ignore chord keys
@@ -415,6 +423,8 @@
       return r.json();
     }).then(function (data) {
       state.data = data;
+      state.translationLang = data.sentences.some(function (sentence) { return sentence.vi; }) ? "vi" : "zh";
+      $("jtShowZh").textContent = state.translationLang === "vi" ? "Bản dịch tiếng Việt" : "Bản dịch gốc (tiếng Trung)";
       document.title = data.title + " · Luyện nghe chuyên sâu · YYSD";
       $("jtTitle").textContent = data.title;
       $("jtExam").href = data.examHref || "cambridge.html";

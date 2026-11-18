@@ -146,3 +146,49 @@ test('writing: word count, persistence by paper, self-review and copied paper id
   assert.match(copied, /^\[Cambridge IELTS 21 · Test 2 \(Viết\)\]\n/);
   assert.ok(copied.includes(draft.value));
 });
+
+for (const file of ['placement-junior-1', 'placement-test-1', 'placement-test-2', 'placement-test-3']) {
+  test(`${file}: Vietnamese instructions, exam inputs and full score report`, async (t) => {
+    const { document, window } = await paperWindow(t, `mock/ielts/${file}.html`);
+    assert.equal(document.documentElement.lang, 'vi');
+    const key = window.eval('answerKey');
+    const count = file.includes('junior') ? 35 : 36;
+    assert.equal(Object.keys(key).length, count);
+    for (const [id, answers] of Object.entries(key)) {
+      const el = document.getElementById(id);
+      if (el?.tagName === 'SELECT') {
+        const option = [...el.options].find(({ value }) => value.toLowerCase() === answers[0].toLowerCase());
+        assert.ok(option, `option ${id}`);
+        el.value = option.value;
+      } else if (el) el.value = answers[0];
+      else {
+        const radio = [...document.getElementsByName(id)].find(({ value }) => value.toLowerCase() === answers[0].toLowerCase());
+        assert.ok(radio, `radio ${id}`);
+        radio.checked = true;
+      }
+    }
+    document.getElementById('W_Q9').value = 'A personal response in English.';
+    window.submitTest();
+    assert.ok(document.getElementById('scoreText').textContent.endsWith(`${count} / ${count}`));
+    assert.equal(document.getElementById('accuracyText').textContent, 'Tỷ lệ đúng: 100%');
+    assert.match(document.getElementById('writingContent').textContent, /A personal response in English\./);
+    assert.doesNotMatch(document.body.textContent, oldScript);
+    assert.equal(document.querySelectorAll('.rubric-row input').length, 8);
+  });
+}
+
+test('four localized listening parts keep their English transcripts, clocks and audio identities', async () => {
+  const expected = [56, 36, 73, 34];
+  for (let i = 0; i < expected.length; i += 1) {
+    const part = i + 1;
+    const id = `cam10-t1-p${part}`;
+    const data = JSON.parse(await source(`library/practice/jingting/data/${id}.json`));
+    assert.equal(data.id, id);
+    assert.equal(data.audioUrl, `library/mock/cambridge-listening/ielts10_test1_audio${part}.mp3`);
+    assert.equal(data.sentences.length, expected[i]);
+    for (const { en, vi, start, end } of data.sentences) {
+      assert.ok(en.length && vi.length && start >= 0 && end >= start);
+      assert.doesNotMatch(vi, oldScript);
+    }
+  }
+});

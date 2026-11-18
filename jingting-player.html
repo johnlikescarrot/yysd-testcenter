@@ -37,8 +37,8 @@
           <button type="button" class="jt-mode" data-mode="line" role="tab">Nghe từng câu</button>
         </div>
         <div class="jt-toggles">
-          <button type="button" class="jt-chip" id="jtShowEn" title="Phím tắt ↑">Bản chép lời</button>
-          <button type="button" class="jt-chip" id="jtShowZh" title="Phím tắt ↓">Bản dịch</button>
+          <button type="button" class="jt-chip" id="jtShowEn" aria-pressed="false" title="Phím tắt ↑">Bản chép lời</button>
+          <button type="button" class="jt-chip" id="jtShowZh" aria-pressed="false" title="Phím tắt ↓">Bản dịch</button>
           <button type="button" class="jt-chip jt-chip--ghost" id="jtHotkeys" title="Hướng dẫn phím tắt">Phím tắt</button>
         </div>
       </div>
@@ -56,7 +56,7 @@
               <span class="jt-eye" aria-hidden="true">◉</span>
               <span>Nhấn để hiện bản chép lời</span>
             </button>
-            <div class="jt-line-en is-hidden" id="jtLineEn"></div>
+            <div class="jt-line-en is-hidden" lang="en" id="jtLineEn"></div>
             <div class="jt-line-zh is-hidden" id="jtLineZh"></div>
           </div>
           <button type="button" class="jt-nav-arrow" id="jtNext" aria-label="Câu sau">›</button>
