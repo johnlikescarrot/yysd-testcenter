@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>我的成绩 · 优益思达国际课程中心</title>
+  <title>Kết quả của tôi · Trung tâm YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,34 +17,34 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ Trung tâm YYSD">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>YYSD International Course Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="dashboard.html" data-nav="dashboard">待办事项</a>
-        <a href="zone.html?zone=study" data-zone="study">单词区</a>
-        <a href="zone.html?zone=practice" data-zone="practice">练习区</a>
-        <a href="zone.html?zone=mock" data-zone="mock">真题区</a>
-        <a href="results.html" data-nav="results">我的成绩</a>
-        <a href="login.html" id="nav-auth">登录</a>
+      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
+        <a href="dashboard.html" data-nav="dashboard">Việc cần làm</a>
+        <a href="zone.html?zone=study" data-zone="study">Khu từ vựng</a>
+        <a href="zone.html?zone=practice" data-zone="practice">Khu luyện tập</a>
+        <a href="zone.html?zone=mock" data-zone="mock">Kho đề</a>
+        <a href="results.html" data-nav="results">Kết quả của tôi</a>
+        <a href="login.html" id="nav-auth">Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <section class="minimal-shell minimal-page-head">
-    <div class="minimal-crumb"><a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> 我的成绩</div>
+    <div class="minimal-crumb"><a href="index.html">Trang chủ</a> <span class="crumb-sep" aria-hidden="true">★</span> Kết quả của tôi</div>
     <p class="dash-premium-eyebrow">Results</p>
-    <h1>我的成绩</h1>
-    <p class="minimal-page-desc">记录保存在本浏览器中。完成模考或练习并交卷后，成绩会自动出现在这里。</p>
+    <h1>Kết quả của tôi</h1>
+    <p class="minimal-page-desc">Kết quả được lưu trên trình duyệt này. Sau khi nộp bài luyện hoặc bài thi thử, bạn sẽ thấy kết quả tại đây.</p>
   </section>
 
   <main class="minimal-shell minimal-main">
     <div class="section__head section__head--actions">
-      <button class="btn btn--ghost btn--sm" id="clear-btn">清空记录</button>
+      <button class="btn btn--ghost btn--sm" id="clear-btn">Xóa lịch sử</button>
     </div>
     <div id="results-summary"></div>
     <div id="results-timeline"></div>
@@ -56,16 +56,16 @@
       <div class="minimal-footer__brand">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-footer__logo">
         <div>
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>YYSD International Course Center</span>
         </div>
       </div>
-      <nav class="minimal-footer__links" aria-label="页脚导航">
-        <a href="zone.html?zone=study">单词区</a>
-        <a href="zone.html?zone=practice">练习区</a>
-        <a href="zone.html?zone=mock">真题区</a>
+      <nav class="minimal-footer__links" aria-label="Điều hướng cuối trang">
+        <a href="zone.html?zone=study">Khu từ vựng</a>
+        <a href="zone.html?zone=practice">Khu luyện tập</a>
+        <a href="zone.html?zone=mock">Kho đề</a>
       </nav>
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · YYSD International Course Center
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm YYSD · YYSD International Course Center
         <span class="site-icp" data-icp></span>
       </p>
     </div>
@@ -105,11 +105,11 @@
         if (timelineEl) timelineEl.innerHTML = "";
         if (summaryEl) summaryEl.innerHTML = "";
         area.innerHTML = '<div class="state state--brand results-empty premium-empty premium-enter">' +
-          '<h3>还没有成绩记录</h3>' +
-          '<p>完成一份剑桥真题并交卷后，得分和 Band 预估会自动出现在这里。</p>' +
+          '<h3>Chưa có kết quả</h3>' +
+          '<p>Làm và nộp một đề Cambridge để xem số câu đúng và điểm band ước tính.</p>' +
           '<div class="results-empty__actions premium-empty__actions">' +
-          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts">去做第一套真题 →</a>' +
-          '<a class="btn btn--ghost" href="zone.html?zone=study">先去单词区</a>' +
+          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts">Làm bộ đề đầu tiên →</a>' +
+          '<a class="btn btn--ghost" href="zone.html?zone=study">Đến khu từ vựng</a>' +
           '</div></div>';
         return;
       }
@@ -117,7 +117,7 @@
       var html = '<div class="results-list premium-enter">';
       rows.forEach(function (r) {
         var score = (r.score != null) ? (r.score + (r.total != null ? " / " + r.total : "")) : "—";
-        var date = r.date ? new Date(r.date).toLocaleString("zh-CN") : "—";
+        var date = r.date ? new Date(r.date).toLocaleString("vi-VN") : "—";
         var zone = (Y.ZONE[r.zone] || {}).label || "—";
         var subj = (Y.SUBJECT[r.subject] || {}).label || "—";
         var band = r.band != null ? String(r.band) : "—";
@@ -132,11 +132,11 @@
           '</div>' +
           '<div class="results-row__acts">' +
             (String(r.id || "").indexOf("toefl-") === 0
-              ? '<span class="btn btn--ghost btn--sm is-disabled" title="系统试卷只在桌面端打开">请在桌面端打开</span>'
-              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '">再练一次</a>') +
+              ? '<span class="btn btn--ghost btn--sm is-disabled" title="Đề của hệ thống chỉ mở được trên máy tính">Vui lòng mở trên máy tính</span>'
+              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '">Luyện lại</a>') +
             (r.wrong && r.wrong.length
-              ? '<a class="btn btn--ghost btn--sm" href="wrong-record.html?item=' + encodeURIComponent(r.id) + '&local=1">查看错题</a>'
-              : '<span class="btn btn--ghost btn--sm is-disabled" title="本次无错题或尚未收录">查看错题</span>') +
+              ? '<a class="btn btn--ghost btn--sm" href="wrong-record.html?item=' + encodeURIComponent(r.id) + '&local=1">Xem câu sai</a>'
+              : '<span class="btn btn--ghost btn--sm is-disabled" title="Không có câu sai hoặc câu sai chưa được ghi lại">Xem câu sai</span>') +
           '</div></article>';
       });
       html += '</div>';
@@ -144,7 +144,7 @@
     }
 
     document.getElementById("clear-btn").addEventListener("click", function () {
-      if (confirm("确定清空全部成绩记录吗？此操作不可撤销。")) {
+      if (confirm("Xóa toàn bộ lịch sử kết quả? Thao tác này không thể hoàn tác.")) {
         localStorage.removeItem("yysd:results"); render();
       }
     });

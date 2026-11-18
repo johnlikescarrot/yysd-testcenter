@@ -461,7 +461,7 @@
         }
         var sliced = Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ) : paper;
         var tasks = (sliced.tasks || []).map(function (_, i) { return i; });
-        // wofo: 交卷先停在「生成成绩单」屏，点 View 才进成绩+解析合一页
+        // wofo: Show the report generation screen before opening results with View.
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("writing", sliced, { tasks: tasks, answers: answers, score: r.score, total: r.total });
         });
@@ -529,7 +529,7 @@
           screens = W.screensOf(p);
           if (Lab) screens = Lab.clipScreens(p, screens, taskQ, taskEndQ);
           if (!screens.length) throw new Error("Unable to load this task");
-          document.title = (p.title || "TOEFL Writing") + (mode === "mock" ? " · 模考" : " · 练习");
+          document.title = (p.title || "TOEFL Writing") + (mode === "mock" ? " · Thi thử" : " · Luyện tập");
           document.getElementById("mode-tag").textContent = mode === "mock" ? "Mock" : "Practice";
           function goStart() {
             startModule(Lab ? Lab.firstModule(screens) : 1);

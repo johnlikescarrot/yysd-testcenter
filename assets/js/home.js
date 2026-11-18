@@ -108,7 +108,7 @@
         .then(function () { return wait(900); })
         .then(function () {
           if (token !== gen) return;
-          setCaption("剑桥雅思真题");
+          setCaption("Đề Cambridge IELTS");
           var p = hitPoint("ielts");
           hot("ielts", true);
           return moveCursor(p.x, p.y, 900);
@@ -121,36 +121,36 @@
           if (token !== gen) return;
           hot("ielts", false);
           showScene("ielts-menu");
-          setCaption("雅思备考 · 完整技能路径");
+          setCaption("Lộ trình đủ bốn kỹ năng IELTS");
           return wait(700);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("listen", "听力真题 · 顺序练习，熟悉题型", 1500);
+          return scanItem("listen", "Luyện Nghe lần lượt để quen dạng câu hỏi", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("read", "阅读真题 · 高亮与笔记", 1500);
+          return scanItem("read", "Luyện Đọc với đánh dấu và ghi chú", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("write", "写作真题 · 按官方任务练习", 1500);
+          return scanItem("write", "Luyện Viết theo dạng đề chính thức", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("speak", "口语练习 · AI 陪练与模考", 1500);
+          return scanItem("speak", "Luyện Nói và thi thử với AI", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("full", "全套模考 · 还原雅思机考节奏", 2200);
+          return scanItem("full", "Thi thử trọn bộ theo nhịp thi trên máy", 2200);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("aiw", "AI 写作批改 · 即时反馈", 1400);
+          return scanItem("aiw", "Nhận phản hồi bài viết từ AI", 1400);
         })
         .then(function () {
           if (token !== gen) return;
-          setCaption("进入全套模考 · 机考体验");
+          setCaption("Bắt đầu thi thử trên máy");
           hot("full", true);
           var p = hitPoint("full");
           return moveCursor(p.x, p.y, 600).then(clickPulse);
@@ -159,7 +159,7 @@
           if (token !== gen) return;
           hot("full", false);
           showScene("cdt");
-          setCaption("雅思机考模拟 · 计时作答");
+          setCaption("Làm bài IELTS có bấm giờ");
           return wait(900);
         })
         .then(function () {
@@ -172,19 +172,19 @@
           return clickPulse().then(function () {
             var opt = root.querySelector('[data-hit="optB"]');
             if (opt) opt.classList.add("is-picked");
-            setCaption("选定答案 · 继续下一题");
+            setCaption("Chọn đáp án và sang câu tiếp theo");
           });
         })
         .then(function () { return wait(2800); })
         .then(function () {
           if (token !== gen) return;
           showScene("hub");
-          setCaption("回到学习中心");
+          setCaption("Trở về trung tâm học tập");
           return moveCursor(78, 76, 500).then(function () { return wait(700); });
         })
         .then(function () {
           if (token !== gen) return;
-          setCaption("今日单词 · 稳扎稳打");
+          setCaption("Từ vựng hôm nay");
           hot("vocab", true);
           var p = hitPoint("vocab");
           return moveCursor(p.x, p.y, 900);
@@ -197,32 +197,32 @@
           if (token !== gen) return;
           hot("vocab", false);
           showScene("vocab-menu");
-          setCaption("系统背词 · 完整学习路径");
+          setCaption("Lộ trình học từ có hệ thống");
           return wait(700);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("daily", "每日背词 · 今日计划可完成", 1700);
+          return scanItem("daily", "Ôn từ theo mục tiêu hôm nay", 1700);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("books", "系统词书 · 高中 / 四级 / 雅思", 1500);
+          return scanItem("books", "Giáo trình từ vựng · THPT / CET-4 / IELTS", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("themes", "分类词库 · 按话题拓展", 1500);
+          return scanItem("themes", "Mở rộng vốn từ theo chủ đề", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("wrong", "错题本 · 错词自动收录", 1500);
+          return scanItem("wrong", "Sổ câu sai tự lưu từ cần ôn", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          return scanItem("diag", "能力诊断 · 推荐起始词库", 1500);
+          return scanItem("diag", "Đánh giá vốn từ để chọn bài đầu tiên", 1500);
         })
         .then(function () {
           if (token !== gen) return;
-          setCaption("开始今日背词");
+          setCaption("Bắt đầu ôn từ hôm nay");
           hot("daily", true);
           var p = hitPoint("daily");
           return moveCursor(p.x, p.y, 600).then(clickPulse);
@@ -231,7 +231,7 @@
           if (token !== gen) return;
           hot("daily", false);
           showScene("daily");
-          setCaption("认词选义");
+          setCaption("Chọn nghĩa phù hợp");
           return wait(800);
         })
         .then(function () {
@@ -244,7 +244,7 @@
           return clickPulse().then(function () {
             var btn = root.querySelector('[data-hit="meanA"]');
             if (btn) btn.classList.add("is-picked");
-            setCaption("回答正确");
+            setCaption("Trả lời đúng");
           });
         })
         .then(function () { return wait(1400); })
@@ -254,7 +254,7 @@
           var s2 = root.querySelector('.ha-daily__card[data-step="2"]');
           if (s1) s1.hidden = true;
           if (s2) s2.hidden = false;
-          setCaption("下一词 · 保持节奏");
+          setCaption("Tiếp tục với từ kế tiếp");
           return wait(500);
         })
         .then(function () {
@@ -265,7 +265,7 @@
         .then(function () {
           if (token !== gen) return;
           return clickPulse().then(function () {
-            setCaption("稳扎稳打，继续提分");
+            setCaption("Mỗi ngày luyện thêm một chút");
           });
         })
         .then(function () { return wait(2200); })
@@ -577,7 +577,7 @@
 
   document.querySelectorAll(".home-market__cta").forEach(function (cta) {
     cta.innerHTML =
-      '<a class="home-btn home-btn--primary" href="zone.html?zone=study&s=vocab">去背单词</a>' +
-      '<a class="home-btn home-btn--ghost" href="zone.html?zone=mock&s=ielts">练雅思真题</a>';
+      '<a class="home-btn home-btn--primary" href="ielts-vi/">Luyện IELTS miễn phí</a>' +
+      '<a class="home-btn home-btn--ghost" href="zone.html?zone=mock&s=ielts">Luyện đề IELTS</a>';
   });
 })();

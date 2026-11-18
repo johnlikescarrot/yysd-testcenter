@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>试卷预览 · A-Level · 优益思达</title>
+  <title>Xem trước đề thi · A-Level · YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,49 +16,49 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ Trung tâm YYSD">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>YYSD International Course Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="dashboard.html" data-nav="dashboard">待办事项</a>
-        <a href="zone.html?zone=study" data-zone="study">单词区</a>
-        <a href="zone.html?zone=practice" data-zone="practice">练习区</a>
-        <a href="zone.html?zone=mock" data-zone="mock">真题区</a>
-        <a href="results.html" data-nav="results">我的成绩</a>
-        <a href="login.html" id="nav-auth">登录</a>
+      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
+        <a href="dashboard.html" data-nav="dashboard">Việc cần làm</a>
+        <a href="zone.html?zone=study" data-zone="study">Khu từ vựng</a>
+        <a href="zone.html?zone=practice" data-zone="practice">Khu luyện tập</a>
+        <a href="zone.html?zone=mock" data-zone="mock">Kho đề</a>
+        <a href="results.html" data-nav="results">Kết quả của tôi</a>
+        <a href="login.html" id="nav-auth">Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main" id="content">
-    <div class="state state--brand"><div class="spinner spinner--brand"></div>正在加载试卷…</div>
+    <div class="state state--brand"><div class="spinner spinner--brand"></div>Đang tải đề thi…</div>
 
     <div class="alevel-view-shell" id="view-shell" hidden>
       <div class="minimal-back">
-        <a class="minimal-back__link" id="back-subject" href="alevel.html">← 返回科目列表</a>
+        <a class="minimal-back__link" id="back-subject" href="alevel.html">← Về danh sách môn</a>
       </div>
       <div class="alevel-view-head">
         <div>
-          <h1 id="view-title">试卷预览</h1>
+          <h1 id="view-title">Xem trước đề thi</h1>
           <p class="alevel-view-meta" id="view-meta"></p>
         </div>
         <div class="alevel-view-actions">
-          <a class="btn btn--primary" id="btn-download" href="#" download>下载 PDF</a>
+          <a class="btn btn--primary" id="btn-download" href="#" download>Tải PDF</a>
         </div>
       </div>
       <div class="alevel-pdf-frame-wrap">
-        <iframe id="pdf-frame" class="alevel-pdf-frame" title="PDF 预览"></iframe>
+        <iframe id="pdf-frame" class="alevel-pdf-frame" title="Xem trước PDF"></iframe>
       </div>
     </div>
   </main>
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · YYSD International Course Center</p>
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm YYSD · YYSD International Course Center</p>
     </div>
   </footer>
 
