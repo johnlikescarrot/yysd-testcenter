@@ -125,3 +125,41 @@ test("browser entry point mounts the shipped HTML", async () => {
     delete globalThis.window;
   }
 });
+
+test("weekly top tier is personal and rendered without an invented leaderboard", () => {
+  const { w, $ } = setup();
+  const day = localDay(new Date());
+  const entries = lessons.map((l) => ({
+    day,
+    unit: l.id,
+    picks: l.items.map((q, i) => [`${l.id}:${i}`, q[2]]),
+  }));
+  // Use a Sunday, so two full distinct study days in this week can reach platinum.
+  const sun = day + ((7 - new Date().getDay()) % 7);
+  const original = globalThis.Date;
+  globalThis.Date = class extends original {
+    constructor(...args) {
+      super(
+        ...(args.length
+          ? args
+          : [new original().setDate(new original().getDate() + sun - day)]),
+      );
+    }
+  };
+  try {
+    const sessions = [sun - 1, sun].flatMap((d) =>
+      entries.map((e) => ({ ...e, day: d })),
+    );
+    w.dispatchEvent(
+      new w.StorageEvent("storage", {
+        key: storageKey,
+        newValue: JSON.stringify({ ...empty(), sessions }),
+      }),
+    );
+    assert.match($("#league").textContent, /Bạch kim · 400 XP/);
+    assert.match($("#league-next").textContent, /cao nhất/);
+  } finally {
+    globalThis.Date = original;
+    w.close();
+  }
+});

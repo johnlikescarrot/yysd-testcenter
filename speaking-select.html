@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi-VN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>口语练习 · 选题 · 优益思达</title>
+  <title>Luyện nói · Chọn chủ đề · YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,53 +17,53 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="speaking.html" class="minimal-brand" aria-label="口语首页">
+      <a href="speaking.html" class="minimal-brand" aria-label="Trang luyện nói">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
-        <span class="minimal-brand__text"><b>优益思达</b><span>雅思口语练习</span></span>
+        <span class="minimal-brand__text"><b>YYSD</b><span>Luyện IELTS Speaking</span></span>
       </a>
       <nav class="minimal-nav">
-        <a href="speaking.html">口语首页</a>
-        <a href="zone.html?zone=practice">练习区</a>
+        <a href="speaking.html">Trang luyện nói</a>
+        <a href="zone.html?zone=practice">Luyện tập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell">
     <div class="spk-hero bento-panel spk-hero--select">
-      <span class="spk-badge">雅思全真模拟环境</span>
-      <h1>口语练习</h1>
-      <p>点击卡片勾选练习话题，选满后即可进入实战演练。</p>
-      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait">正在连接 AI 服务…</div>
+      <span class="spk-badge">Mô phỏng phòng thi IELTS</span>
+      <h1>Luyện nói</h1>
+      <p>Chọn thẻ chủ đề muốn luyện, chọn đủ số chủ đề để bắt đầu.</p>
+      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait">Đang kết nối AI dịch vụ…</div>
     </div>
 
     <div class="spk-select-head">
       <div>
         <div class="spk-tabs">
           <button type="button" class="spk-tab is-active" id="tab-p1">Part 1</button>
-          <button type="button" class="spk-tab" id="tab-p2" disabled title="Phase 2 上线">Part 2 &amp; 3</button>
+          <button type="button" class="spk-tab" id="tab-p2" disabled title="Phase 2 trực tuyến">Part 2 &amp; 3</button>
         </div>
-        <p class="spk-select-hint">日常对话：4–5 分钟，围绕生活、工作学习等日常话题交流</p>
+        <p class="spk-select-hint">Hội thoại hằng ngày: 4–5 phút, Trao đổi về đời sống, công việc và học tập</p>
       </div>
       <div class="spk-progress">
-        <div>Part 1 选题进度</div>
-        <b id="prog-text">已选 0 / 2</b>
-        <span id="prog-hint">还需选择 2 个话题</span>
+        <div>Part 1 Tiến độ chọn chủ đề</div>
+        <b id="prog-text">Đã chọn 0 / 2</b>
+        <span id="prog-hint">Cần chọn thêm 2 chủ đề</span>
       </div>
     </div>
 
     <div class="spk-toolbar">
       <label class="spk-search">
         <span aria-hidden="true">⌕</span>
-        <input type="search" id="search" placeholder="搜索话题 title..." autocomplete="off">
+        <input type="search" id="search" placeholder="Tìm chủ đề title..." autocomplete="off">
       </label>
     </div>
 
     <div class="spk-grid" id="grid"></div>
-    <div class="spk-empty" id="empty" hidden>没有匹配的话题</div>
+    <div class="spk-empty" id="empty" hidden>Không tìm thấy chủ đề phù hợp</div>
   </main>
 
   <div class="spk-start-bar" id="start-bar">
-    <button type="button" class="btn btn--primary pressable" id="start-btn">开始测试</button>
+    <button type="button" class="btn btn--primary pressable" id="start-btn">Bắt đầu làm bài</button>
   </div>
 
   <script src="assets/js/auth.js?v=20261013perm1"></script>
@@ -84,9 +84,9 @@
     var emptyEl = document.getElementById("empty");
 
     function updateProgress() {
-      progText.textContent = "已选 " + selected.length + " / " + REQUIRED;
+      progText.textContent = "Đã chọn " + selected.length + " / " + REQUIRED;
       var left = REQUIRED - selected.length;
-      progHint.textContent = left > 0 ? "还需选择 " + left + " 个话题" : "可以开始测试了";
+      progHint.textContent = left > 0 ? "Cần chọn thêm " + left + " chủ đề" : "Bạn đã có thể bắt đầu";
       startBar.classList.toggle("is-visible", selected.length >= REQUIRED);
     }
 
@@ -104,10 +104,10 @@
       grid.innerHTML = list.map(function (t, idx) {
         var sel = selected.indexOf(t.id) >= 0;
         var hf = (t.tags || []).indexOf("high-frequency") >= 0
-          ? '<span class="spk-tag-hf">🔥 高频考题</span>' : "";
+          ? '<span class="spk-tag-hf">🔥 Câu hỏi thường gặp</span>' : "";
         return '<div role="button" tabindex="0" class="spk-card' + (sel ? " is-selected" : "") + '" data-id="' + S.esc(t.id) + '">' +
-          '<button type="button" class="spk-card__play" data-play="' + S.esc(t.id) + '" aria-label="试听开场">▶</button>' +
-          '<div class="spk-card__num">话题 ' + String(idx + 1).padStart(2, "0") + '</div>' +
+          '<button type="button" class="spk-card__play" data-play="' + S.esc(t.id) + '" aria-label="Nghe thử lời mở đầu">▶</button>' +
+          '<div class="spk-card__num">Chủ đề ' + String(idx + 1).padStart(2, "0") + '</div>' +
           '<div class="spk-card__title">' + S.esc(t.topic) + '</div>' +
           '<p class="spk-card__intro">' + S.esc(t.title) + '</p>' +
           '<div class="spk-card__foot"><span>≈ ' + (t.estMinutes || 2) + ' mins</span>' + hf + '</div></div>';
@@ -147,7 +147,7 @@
     startBtn.addEventListener("click", function () {
       if (selected.length < REQUIRED) return;
       if (!aiConnected) {
-        alert("AI 正在连接或连接失败，请稍候或刷新页面后重试");
+        alert("AI Đang kết nối hoặc kết nối không thành công, Hãy đợi hoặc tải lại trang");
         return;
       }
       var picked = topics.filter(function (t) { return selected.indexOf(t.id) >= 0; });
@@ -179,7 +179,7 @@
         updateProgress();
       })
       .catch(function () {
-        grid.innerHTML = '<div class="spk-empty">题库加载失败：服务器上缺少 data/speaking/part1-topics.json。<br>请在 ECS 执行 <code>bash server/deploy/sync-web.sh</code> 同步网站文件后刷新。</div>';
+        grid.innerHTML = '<div class="spk-empty">Không tải được ngân hàng câu hỏi: Máy chủ thiếu data/speaking/part1-topics.json.<br>Hãy mở ECS và chạy <code>bash server/deploy/sync-web.sh</code> Sau khi đồng bộ tệp, hãy tải lại trang.</div>';
       });
   })();
   </script>

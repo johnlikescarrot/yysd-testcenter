@@ -52,6 +52,11 @@ export function mount(doc, env) {
     $("feature-topic").textContent = next.topic;
     $("streak").textContent = s.streak;
     $("xp").textContent = s.xp;
+    $("league").textContent = `Hạng ${s.league.name} · ${s.league.xp} XP`;
+    $("league-next").textContent =
+      s.league.next === null
+        ? "Bạn đã đạt hạng cao nhất tuần này."
+        : `Cần thêm ${s.league.next - s.league.xp} XP để lên hạng tiếp theo.`;
     const monday = day - ((date.getDay() + 6) % 7);
     $("week").innerHTML = weekLabels
       .map((label, i) => {

@@ -139,3 +139,23 @@ test("review queue oldest first; empty progress and completing all skills", () =
   assert.deepEqual(v.badges, [true, true, false]);
   assert.equal(v.next, lessons[14 % lessons.length]);
 });
+
+test("weekly tier resets on Monday; lifetime XP and streak do not", () => {
+  const s = empty();
+  const sunday = localDay(new Date(2026, 10, 22));
+  const monday = sunday + 1;
+  for (const l of lessons.slice(0, 3))
+    s.sessions.push(session(sunday, l.id, lessonCards(l)));
+  assert.deepEqual(summarize(s, sunday).league, {
+    name: "Bạc",
+    xp: 75,
+    next: 150,
+  });
+  assert.deepEqual(summarize(s, monday).league, {
+    name: "Đồng",
+    xp: 0,
+    next: 75,
+  });
+  assert.equal(summarize(s, monday).xp, 75);
+  assert.equal(summarize(s, monday).streak, 1);
+});

@@ -2,7 +2,8 @@ name: Super-Linter · IELTS
 on:
   push:
     paths: &paths
-      - "atlas*.html"
+      - "*.html"
+      - "assets/js/**"
       - "package*.json"
       - "library/mock/cambridge-*/**"
       - "studio/**"
@@ -48,6 +49,9 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_PYTHON_RUFF: true
           ENABLE_GITHUB_ACTIONS_STEP_SUMMARY: true
+      - name: Read the container-owned diagnostic log
+        if: failure()
+        run: sudo chmod a+r super-linter.log
       - name: Annotate actionable lint failures on the check
         if: failure()
         shell: python

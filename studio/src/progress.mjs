@@ -64,9 +64,12 @@ export function summarize(state, today) {
     days = new Map(),
     completed = new Set(),
     credited = new Set();
-  let xp = 0;
+  const weekStart = Math.floor((today + 3) / 7) * 7 - 3; // Monday, in local-day ordinals.
+  let xp = 0,
+    weeklyXp = 0;
   for (const { day, unit, picks } of state.sessions) {
     if (day > today) continue;
+    const before = xp;
     const units = days.get(day) ?? new Set();
     if (unit !== "review") {
       completed.add(unit);
@@ -88,6 +91,7 @@ export function summarize(state, today) {
         boxes.set(id, { due: day + intervals[step], step: step + 1 });
       }
     }
+    if (day >= weekStart) weeklyXp += xp - before;
   }
   let cursor = days.has(today) ? today : today - 1,
     streak = 0;
@@ -105,7 +109,20 @@ export function summarize(state, today) {
       .size === 4,
     [...days.keys()].some((d) => days.has(d - 1) && days.has(d - 2)),
   ];
+  const ranks = [
+    [0, "Đồng"],
+    [75, "Bạc"],
+    [150, "Vàng"],
+    [300, "Bạch kim"],
+  ];
+  const index = ranks.findLastIndex(([threshold]) => weeklyXp >= threshold);
+  const league = {
+    name: ranks[index][1],
+    xp: weeklyXp,
+    next: ranks[index + 1]?.[0] ?? null,
+  };
   return {
+    league,
     xp,
     streak,
     due,
