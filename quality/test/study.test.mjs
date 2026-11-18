@@ -4,14 +4,15 @@ import test from 'node:test';
 import { JSDOM } from 'jsdom';
 import { lessons, questions } from '../../ielts-vi/assets/course.js';
 import { emptyProgress, localDay, storageKey } from '../../ielts-vi/assets/progress.js';
+import { mountPortalSummary } from '../../ielts-vi/assets/portal-summary.js';
 import { mount } from '../../ielts-vi/assets/study.js';
 
 const html = await readFile(new URL('../../ielts-vi/index.html', import.meta.url), 'utf8');
 const baseDate = new Date(2026, 10, 18, 12);
 const day = localDay(baseDate);
 
-function setup(t, { state, denied = false, manualMount = false } = {}) {
-  const { window } = new JSDOM(html, { url: 'https://example.test/yysd-testcenter/' });
+function setup(t, { state, denied = false, manualMount = false, suffix = '' } = {}) {
+  const { window } = new JSDOM(html, { url: `https://example.test/yysd-testcenter/${suffix}` });
   const { document } = window;
   const get = (id) => document.getElementById(id);
   const dialog = get('lesson-dialog');
@@ -213,4 +214,40 @@ test('focus controls explain their recommendation and weekly activity survives r
   reload();
   assert.equal(get('begin-focus').disabled, true);
   assert.match(get('focus-note').textContent, /quay lại/);
+});
+
+test('dashboard links are one-shot, keep other URL parameters and tolerate a stale review', (t) => {
+  const { dialog, window, get } = setup(t, { suffix: '?from=desk&lesson=honeybees#lo-trinh' });
+  assert.equal(dialog.open, true);
+  assert.match(get('session-title').textContent, /Ong mật/);
+  assert.equal(window.location.search, '?from=desk');
+  assert.equal(window.location.hash, '#lo-trinh');
+  assert.equal(setup(t, { suffix: '?lesson=review' }).dialog.open, false);
+});
+
+test('original student desk mirrors anonymous local progress and refreshes after study in another tab', (t) => {
+  const { window, document } = setup(t, { manualMount: true });
+  const panel = document.createElement('section');
+  panel.innerHTML = '<p data-study-note></p><a data-study-link></a>';
+  mountPortalSummary(panel, window, () => baseDate);
+  const link = panel.querySelector('a');
+  assert.equal(link.getAttribute('href'), 'ielts-vi/?lesson=booking');
+  const state = emptyProgress();
+  state.xp = 14;
+  state.cards['booking-1'] = { stage: 0, due: day };
+  window.localStorage.setItem(storageKey, JSON.stringify(state));
+  window.dispatchEvent(new window.StorageEvent('storage', { key: 'irrelevant' }));
+  assert.match(link.textContent, /Học:/);
+  window.dispatchEvent(new window.StorageEvent('storage', { key: storageKey }));
+  assert.equal(link.textContent, 'Ôn 1 câu đến hạn');
+  assert.equal(link.getAttribute('href'), 'ielts-vi/?lesson=review');
+  assert.match(panel.textContent, /14 XP/);
+  state.cards = {};
+  state.completed = Object.fromEntries(lessons.map(({ id }) => [id, 1]));
+  window.localStorage.setItem(storageKey, JSON.stringify(state));
+  window.dispatchEvent(new window.Event('pageshow'));
+  assert.equal(link.getAttribute('href'), 'ielts-vi/#lo-trinh');
+  window.localStorage.clear();
+  window.dispatchEvent(new window.StorageEvent('storage', { key: null }));
+  assert.match(link.textContent, /Học:/);
 });

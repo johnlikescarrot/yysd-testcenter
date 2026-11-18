@@ -399,4 +399,13 @@ export function mount(document, window, clock) {
     }
   });
   renderDashboard();
+  // One-shot entry from the original dashboard. Never reopen a stale review
+  // when reloading or navigating back, and ignore unknown lesson IDs.
+  const url = new URL(window.location.href);
+  const requested = url.searchParams.get('lesson');
+  if (requested) {
+    url.searchParams.delete('lesson');
+    window.history.replaceState(null, '', url);
+    start(requested, continueButton.id);
+  }
 }

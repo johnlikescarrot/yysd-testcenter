@@ -64,6 +64,15 @@
     <aside id="dash-root" class="dash-aside bento-panel bento-panel--md" aria-label="Việc sắp tới">
       <div class="state state--brand"><div class="spinner spinner--brand"></div></div>
     </aside>
+    <section id="ielts-study" class="bento-panel dash-study" aria-labelledby="dash-study-title">
+      <div>
+        <p class="dash-premium-eyebrow">SẢI BƯỚC · IELTS ACADEMIC</p>
+        <h2 class="bento-panel__title" id="dash-study-title">Buổi tự học tiếp theo</h2>
+        <p data-study-note>Luyện bốn kỹ năng và ôn lại những câu đã học.</p>
+        <small>Tiến độ riêng của trình duyệt này, không phải kết quả bài tập giáo viên giao.</small>
+      </div>
+      <a class="btn btn--primary" data-study-link href="ielts-vi/">Mở lộ trình IELTS</a>
+    </section>
   </main>
 
   <div class="cal-modal" id="stu-detail-modal" hidden>
@@ -100,5 +109,9 @@
   <script src="assets/js/ui.js?v=20260723motion"></script>
   <script src="assets/js/dashboard.js?v=20260908explain1"></script>
   <script src="assets/js/student-calendar.js?v=20260908explain1"></script>
+  <script type="module">
+    import { mountPortalSummary } from './ielts-vi/assets/portal-summary.js';
+    mountPortalSummary(document.getElementById('ielts-study'), window, () => new Date());
+  </script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 
   var user = A.getUser ? A.getUser() : {};
   var name = (user.displayName || "").trim();
-  if (hello) hello.textContent = name ? (name + ", Xin chào") : "Nhiệm vụ";
+  if (hello) hello.textContent = name ? ("Xin chào, " + name) : "Nhiệm vụ";
 
   var TYPE_LABEL = {
     ASSIGNMENT: "Bài tập luyện",
