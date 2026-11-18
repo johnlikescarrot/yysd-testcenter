@@ -10,7 +10,17 @@ function files(dir) {
     e.isDirectory() ? files(join(dir, e.name)) : [join(dir, e.name)],
   );
 }
-const pages = files(root).filter((p) => p.endsWith(".html"));
+const pages = process.argv.includes("--source")
+  ? [
+      ...new Set(
+        [
+          ...new JSDOM(
+            readFileSync("atlas-library.html", "utf8"),
+          ).window.document.querySelectorAll('a[href^="library/"]'),
+        ].map((a) => a.getAttribute("href")),
+      ),
+    ]
+  : files(root).filter((p) => p.endsWith(".html"));
 const failures = [];
 for (const path of pages) {
   const dom = new JSDOM(readFileSync(path, "utf8"), {

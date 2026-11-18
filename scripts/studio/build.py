@@ -9,11 +9,13 @@ from html import escape
 from pathlib import Path
 from urllib.parse import urlencode
 
+from audio import prepare
+
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).parent
 OUT = ROOT / 'dist'
 HAN = re.compile(r'[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]')
-MEDIA = re.compile(r'''["'`]([\w.-]+\.(?:png|jpe?g|svg|mp3|json))(?:\?[^"'`]*)?["'`]''', re.I)
+MEDIA = re.compile(r'''["'`]([\w.-]+\.(?:png|jpe?g|svg|mp3|m4a|json))(?:\?[^"'`]*)?["'`]''', re.IGNORECASE)
 
 
 def content(name):
@@ -88,6 +90,12 @@ def library_page(books):
 
 def build():
     books = catalog()
+    papers = [p for items in books.values() for _, _, p in items]
+    papers.append(Path('library/practice/ielts/sample-academic-reading-1.html'))
+    media = {p: {p.parent/m for m in MEDIA.findall((ROOT/p).read_text())} for p in papers}
+    tracks = {ROOT/asset for assets in media.values() for asset in assets if asset.suffix in {'.mp3', '.m4a'}}
+    print(f'Preparing {len(tracks)} listening tracks (cached by source and encoder)…', flush=True)
+    audio = prepare(tracks, ROOT / '.cache/atlas-audio')
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
@@ -109,8 +117,6 @@ def build():
     if page != (ROOT/'atlas-library.html').read_text():
         raise ValueError('Regenerate atlas-library.html: python3 scripts/studio/build.py --catalog')
     (OUT/'atlas-library.html').write_text(page.replace(css_link, style))
-    papers = [p for items in books.values() for _, _, p in items]
-    papers.append(Path('library/practice/ielts/sample-academic-reading-1.html'))
     for p in papers:
         src = (ROOT/p).read_text()
         dest = OUT/p
@@ -119,8 +125,8 @@ def build():
         icon = '../' * (len(p.parts)-1) + 'studio/art/compass.svg'
         src = src.replace('</head>', f'<link rel="icon" href="{icon}" type="image/svg+xml">\n</head>', 1)
         dest.write_text(src.replace('<body>', f'<body><nav aria-label="Quay lại"><a style="display:inline-block;padding:8px 16px;color:#173648" href="{back}">← Thư viện IELTS Atlas</a></nav>', 1))
-        for asset in set(MEDIA.findall(src)):
-            shutil.copyfile(ROOT/p.parent/asset, dest.parent/asset)
+        for asset in media[p]:
+            shutil.copyfile(audio.get(ROOT/asset, ROOT/asset), OUT/asset)
     (OUT/'.nojekyll').touch()
     size = 0
     for path in OUT.rglob('*'):
@@ -130,8 +136,8 @@ def build():
             text = path.read_text()
             if HAN.search(text) or re.search(r'''lang=["']zh\b''', text):
                 raise ValueError(f'Untranslated content in {path.relative_to(OUT)}')
-    if size > 240 * 1024**2:
-        raise ValueError('Publication exceeds the 240 MiB asset budget')
+    if size > 780 * 1024**2:
+        raise ValueError('Publication exceeds the 780 MiB asset budget')
     print(f'Pages: {len(papers)} exam sheets; {size/1024**2:.1f} MiB → dist/')
 
 

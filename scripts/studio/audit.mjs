@@ -18,6 +18,7 @@ const mime = {
   ".json": "application/json",
   ".pdf": "application/pdf",
   ".mp3": "audio/mpeg",
+  ".m4a": "audio/mp4",
   ".png": "image/png",
 };
 const server = createServer(async (req, res) => {
