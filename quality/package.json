@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node build.mjs",
     "pdf": "node make-pdfs.mjs",
-    "test": "c8 --all --src ../ielts-vi/assets --include '../ielts-vi/assets/*.js' --100 --per-file --reporter=text --reporter=lcov node --test test/*.test.mjs",
+    "test": "c8 --all --allow-external --src ../ielts-vi/assets --include '**/ielts-vi/assets/*.js' --100 --per-file --reporter=text --reporter=lcov node --test test/*.test.mjs",
     "test:browser": "node browser-test.mjs",
     "lighthouse": "node audit.mjs",
     "audio": "node make-audio.mjs"

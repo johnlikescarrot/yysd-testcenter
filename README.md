@@ -1,5 +1,7 @@
 # 优益思达学习中心
 
+> **Tiếng Việt:** [Sải bước · Luyện IELTS Academic](ielts-vi/) — [hướng dẫn phát triển và GitHub Pages](ielts-vi/README.md).
+
 雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
 
 静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
