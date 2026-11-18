@@ -46,8 +46,8 @@ def generate():
                                 leftMargin=46, rightMargin=46, topMargin=62, bottomMargin=52)
         story = []
 
-        def add(style, text):
-            story.append(Paragraph(escape(text), styles[style]))
+        def add(style, text, target=story):
+            target.append(Paragraph(escape(text), styles[style]))
 
         add('label', f"SỔ TAY {i:02d}   /   {g['label']}")
         add('title', g['title'])

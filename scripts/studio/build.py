@@ -4,6 +4,7 @@ import json
 import re
 import shutil
 import subprocess
+import tempfile
 from collections import defaultdict
 from html import escape
 from pathlib import Path
@@ -88,7 +89,7 @@ def library_page(books):
     return head+'\n'.join(body)+'</section><a class="backlink" href="atlas.html">← Trở về bàn học</a></main><footer>'+foot+'</footer></body></html>\n'
 
 
-def build():
+def assemble(stage):
     books = catalog()
     papers = [p for items in books.values() for _, _, p in items]
     papers.append(Path('library/practice/ielts/sample-academic-reading-1.html'))
@@ -96,15 +97,13 @@ def build():
     tracks = {ROOT/asset for assets in media.values() for asset in assets if asset.suffix in {'.mp3', '.m4a'}}
     print(f'Preparing {len(tracks)} listening tracks (cached by source and encoder)…', flush=True)
     audio = prepare(tracks, ROOT / '.cache/atlas-audio')
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir()
+    stage.mkdir()
     for folder in ['art', 'pdf', 'audio']:
-        shutil.copytree(ROOT/'studio'/folder, OUT/'studio'/folder)
+        shutil.copytree(ROOT/'studio'/folder, stage/'studio'/folder)
     esbuild = ROOT / 'node_modules/.bin/esbuild'
     if not esbuild.exists():
         raise SystemExit('Install the pinned build tools with npm ci first')
-    bundle = OUT/'studio/src/main.mjs'
+    bundle = stage/'studio/src/main.mjs'
     subprocess.run([esbuild, ROOT/'studio/src/main.mjs', '--bundle', '--minify', '--format=esm',
                     f'--outfile={bundle}'], check=True)
     styles = subprocess.check_output([esbuild, ROOT/'studio/atlas.css', '--minify'], text=True)
@@ -112,33 +111,51 @@ def build():
     style = '<style>' + styles + '</style>'
     css_link = '<link rel="stylesheet" href="studio/atlas.css">'
     for name in ['index.html', 'atlas.html']:
-        (OUT/name).write_text((ROOT/'atlas.html').read_text().replace(css_link, style))
+        (stage/name).write_text((ROOT/'atlas.html').read_text().replace(css_link, style))
     page = library_page(books)
     if page != (ROOT/'atlas-library.html').read_text():
         raise ValueError('Regenerate atlas-library.html: python3 scripts/studio/build.py --catalog')
-    (OUT/'atlas-library.html').write_text(page.replace(css_link, style))
+    (stage/'atlas-library.html').write_text(page.replace(css_link, style))
     for p in papers:
         src = (ROOT/p).read_text()
-        dest = OUT/p
+        dest = stage/p
         dest.parent.mkdir(parents=True, exist_ok=True)
         back = '../' * (len(p.parts)-1) + 'atlas-library.html#de-thi'
         icon = '../' * (len(p.parts)-1) + 'studio/art/compass.svg'
         src = src.replace('</head>', f'<link rel="icon" href="{icon}" type="image/svg+xml">\n</head>', 1)
         dest.write_text(src.replace('<body>', f'<body><nav aria-label="Quay lại"><a style="display:inline-block;padding:8px 16px;color:#173648" href="{back}">← Thư viện IELTS Atlas</a></nav>', 1))
         for asset in media[p]:
-            shutil.copyfile(audio.get(ROOT/asset, ROOT/asset), OUT/asset)
-    (OUT/'.nojekyll').touch()
+            shutil.copyfile(audio.get(ROOT/asset, ROOT/asset), stage/asset)
+    (stage/'.nojekyll').touch()
     size = 0
-    for path in OUT.rglob('*'):
+    for path in stage.rglob('*'):
         if path.is_file():
             size += path.stat().st_size
         if path.suffix in {'.css', '.svg', '.html', '.json', '.mjs'}:
             text = path.read_text()
             if HAN.search(text) or re.search(r'''lang=["']zh\b''', text):
-                raise ValueError(f'Untranslated content in {path.relative_to(OUT)}')
+                raise ValueError(f'Untranslated content in {path.relative_to(stage)}')
     if size > 780 * 1024**2:
         raise ValueError('Publication exceeds the 780 MiB asset budget')
     print(f'Pages: {len(papers)} exam sheets; {size/1024**2:.1f} MiB → dist/')
+
+
+def build():
+    # A failed build must never remove the last serving copy. Stage on the same filesystem.
+    cache = ROOT/'.cache'
+    cache.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=cache) as tmp:
+        stage = Path(tmp)/'site'
+        assemble(stage)
+        previous = Path(tmp)/'previous'
+        if OUT.exists():
+            OUT.rename(previous)
+        try:
+            stage.rename(OUT)
+        except OSError:
+            if previous.exists():
+                previous.rename(OUT)
+            raise
 
 
 if __name__ == '__main__':
