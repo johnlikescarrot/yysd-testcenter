@@ -1,812 +1,154 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>Trung tâm Luyện thi Quốc tế YYSD · IELTS & A-Level phụ lục bình đài</title>
-  <meta name="description" content="Luyện thi hiệu quả · Lộ trình rõ ràng · Tăng band vững chắc · tinh tuyển Đề thi Cambridge IELTS và hệ thống Luyện tập, Đăng nhập là được Bắt đầu">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@700&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trung Tâm Luyện Thi IELTS Quốc Tế YYSD — Lộ Trình Thông Minh &amp; Kho Đề Cambridge</title>
+  <meta name="description" content="Nền tảng luyện thi IELTS toàn diện bằng tiếng Việt: 226 đề Cambridge IELTS 6–20, lộ trình 8 chặng phong cách Duolingo, lặp lại ngắt quãng HLR, hơn 24.800 từ vựng Anh–Việt và 6 cẩm nang PDF tích hợp 80 nghiên cứu Google Scholar.">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/duo-ielts.css">
 </head>
-<body class="home-minimal home-apple-page home-apple-keynote">
+<body class="yi-page">
+  <a class="yi-skip" href="#main">Chuyển thẳng tới nội dung chính</a>
 
-  <header class="minimal-topbar home-chrome-bar">
-    <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="Trang chủ">
-        <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
-        <span class="minimal-brand__text">
-          <b>Trung tâm Học tập</b>
-          <span>Learning Center</span>
-        </span>
+  <header class="yi-topbar">
+    <div class="yi-topbar__inner">
+      <a class="yi-brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Biểu trưng Trung tâm Luyện thi Quốc tế YYSD" width="34" height="34">
+        <span>YYSD IELTS</span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
-        <a href="index.html" data-key="home"> Trang chủ</a>
-        <a href="zone.html?zone=study&s=vocab" data-key="words"> Từ vựng</a>
-        <a href="zone.html?zone=mock&s=ielts" data-key="ielts"> IELTS</a>
-        <a href="alevel.html" data-key="intl"> Chương trình quốc tế</a>
-        <a href="dashboard.html" data-key="tasks"> Trung tâm nhiệm vụ</a>
-        <a href="download.html" data-key="download"> Tải ứng dụng thi máy</a>
+      <nav class="yi-nav" aria-label="Điều hướng chính">
+        <a href="index.html" aria-current="page">Trang chủ</a>
+        <a href="lo-trinh.html">Lộ trình IELTS</a>
+        <a href="tai-lieu.html">Tài liệu PDF</a>
+        <a href="vocab.html">Từ vựng</a>
+        <a href="zone.html?zone=mock">Đề Cambridge</a>
+        <a href="speaking.html">Luyện Nói</a>
+        <a href="results.html">Kết quả</a>
       </nav>
+      <div class="yi-hud" aria-label="Tóm tắt tiến độ cá nhân">
+        <a class="yi-pill yi-pill--streak" href="lo-trinh.html" id="home-streak" style="text-decoration:none;">Chuỗi 0 ngày</a>
+        <a class="yi-pill yi-pill--score" href="lo-trinh.html" id="home-score" style="text-decoration:none;">82/160 · Band 5.5</a>
+      </div>
     </div>
   </header>
 
-  <main class="home-apple">
-
-    <!-- 1. Value hero -->
-    <section class="ha-hero ha-panel" aria-label="Giá trị cốt lõi">
-      <div class="minimal-shell ha-hero__inner">
-        <div class="ha-hero__copy reveal">
-          <p class="ha-eyebrow">Trung tâm Luyện thi Quốc tế </p>
-          <h1>
-            <span class="ha-line"> Luyện thi hiệu quả </span>
-            <span class="ha-line"> Lộ trình rõ ràng </span>
-            <span class="ha-line ha-accent"> Tăng band vững chắc </span>
-          </h1>
-          <p class="ha-lead">đem đề thi thật, Từ vựng và mỗi ngày nhiệm vụ thu vào cùng một chỗ Trung tâm Học tập —— ít hoán đổi, nhiều hoàn thành </p>
-          <div class="home-market__cta ha-cta">
-            <a class="home-btn home-btn--primary" href="register.html"> Đăng ký</a>
-            <a class="home-btn home-btn--ghost" href="login.html"> Đăng nhập</a>
-          </div>
-        </div>
-        <div class="ha-hero__stage reveal" style="--reveal-delay:140ms">
-          <div class="ha-mbp" aria-hidden="true">
-            <div class="ha-mbp__lid">
-              <div class="ha-mbp__bezel">
-                <div class="ha-mbp__camera"></div>
-                <div class="ha-screen ha-screen--demo">
-                  <div class="ha-demo" id="ha-product-tour" aria-hidden="true">
-                    <!-- 1. Home hub -->
-                    <div class="ha-demo__scene is-active" data-scene="hub">
-                      <div class="ha-screen__bar">
-                        <span></span><span></span><span></span>
-                        <b>Trung tâm Học tập</b>
-                      </div>
-                      <div class="ha-screen__grid">
-                        <div class="ha-chip ha-chip--navy" data-hit="ielts">
-                          <em>IELTS</em>
-                          <strong>Đề Cambridge IELTS</strong>
-                          <small>nghe · đọc · ghi · nói</small>
-                        </div>
-                        <div class="ha-chip ha-chip--warm" data-hit="vocab">
-                          <em>VOCAB</em>
-                          <strong>Hôm nay 28 từ</strong>
-                          <small>Hoàn thành 64%</small>
-                        </div>
-                        <div class="ha-chip ha-chip--soft">
-                          <em>TASK</em>
-                          <strong>3 việc cần làm</strong>
-                          <small>Lộ trình hôm nay</small>
-                        </div>
-                        <div class="ha-chip ha-chip--soft">
-                          <em>PROGRESS</em>
-                          <strong>Chuỗi 12 ngày</strong>
-                          <small>Tiến bộ mỗi ngày</small>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 2. IELTS feature menu -->
-                    <div class="ha-demo__scene" data-scene="ielts-menu">
-                      <div class="ha-menu">
-                        <div class="ha-menu__bar">
-                          <b>Luyện thi IELTS</b>
-                          <em>IELTS</em>
-                        </div>
-                        <div class="ha-menu__list">
-                          <div class="ha-menu__item" data-hit="listen"><b>Đề thi Nghe</b><span> Luyện theo thứ tự </span></div>
-                          <div class="ha-menu__item" data-hit="read"><b>Đề thi Đọc</b><span> Tô sáng & ghi chú </span></div>
-                          <div class="ha-menu__item" data-hit="write"><b>Đề thi Viết</b><span> Nhiệm vụ chuẩn thi </span></div>
-                          <div class="ha-menu__item" data-hit="speak"><b>Luyện kỹ năng Nói</b><span>AI bồi luyện </span></div>
-                          <div class="ha-menu__item ha-menu__item--feature" data-hit="full"><b>Thi thử trọn bộ</b><span> Trải nghiệm thi máy CDT </span></div>
-                          <div class="ha-menu__item" data-hit="aiw"><b>AI Viết phê chữa</b><span> Phản hồi tức thì </span></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 3. CDT full mock -->
-                    <div class="ha-demo__scene" data-scene="cdt">
-                      <div class="ha-exam">
-                        <div class="ha-exam__top">
-                          <b>Thi thử trọn bộ · Listening</b>
-                          <em>12:48</em>
-                        </div>
-                        <div class="ha-exam__nums">
-                          <i>1</i><i>2</i><i class="is-now">3</i><i>4</i><i>5</i><i>6</i>
-                        </div>
-                        <div class="ha-exam__q">
-                          <strong>Question 3</strong>
-                          <p>What does the speaker say about the museum tour?</p>
-                          <div class="ha-exam__opts">
-                            <label class="ha-exam__opt" data-hit="optA"><i></i><span>A. It starts at the main gate</span></label>
-                            <label class="ha-exam__opt" data-hit="optB"><i></i><span>B. It includes a short film</span></label>
-                            <label class="ha-exam__opt" data-hit="optC"><i></i><span>C. It ends at the café</span></label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 4. Vocab feature menu -->
-                    <div class="ha-demo__scene" data-scene="vocab-menu">
-                      <div class="ha-menu">
-                        <div class="ha-menu__bar">
-                          <b>Học từ vựng hệ thống</b>
-                          <em>VOCAB</em>
-                        </div>
-                        <div class="ha-menu__list ha-menu__list--5">
-                          <div class="ha-menu__item ha-menu__item--feature" data-hit="daily"><b>Từ vựng mỗi ngày</b><span> Kế hoạch hôm nay </span></div>
-                          <div class="ha-menu__item" data-hit="books"><b>Bộ sách từ vựng</b><span> THPT / Đại học B1 / IELTS </span></div>
-                          <div class="ha-menu__item" data-hit="themes"><b>Từ vựng theo chủ đề</b><span> Duyệt theo chủ đề </span></div>
-                          <div class="ha-menu__item" data-hit="wrong"><b>Sổ lỗi sai</b><span> Tự động lưu lại </span></div>
-                          <div class="ha-menu__item" data-hit="diag"><b>Chẩn đoán năng lực</b><span> Đề xuất điểm khởi đầu </span></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 5. Daily word two-step -->
-                    <div class="ha-demo__scene" data-scene="daily">
-                      <div class="ha-daily">
-                        <div class="ha-daily__top">
-                          <b>Từ vựng mỗi ngày</b>
-                          <em>12 / 28</em>
-                        </div>
-                        <div class="ha-daily__card" data-step="1">
-                          <strong class="ha-daily__word">coherent</strong>
-                          <span class="ha-daily__phon">/kəʊˈhɪərənt/</span>
-                          <div class="ha-daily__opts">
-                            <button type="button" data-hit="meanA">liên tục; nhất trí</button>
-                            <button type="button" data-hit="meanB">do dự; không tình nguyện</button>
-                            <button type="button" data-hit="meanC">chính xác; tinh vi</button>
-                          </div>
-                        </div>
-                        <div class="ha-daily__card ha-daily__card--next" data-step="2" hidden>
-                          <p class="ha-daily__ok">Trả lời chính xác </p>
-                          <strong class="ha-daily__word">substantial</strong>
-                          <span class="ha-daily__phon"> Từ tiếp theo · Tiếp tục </span>
-                          <div class="ha-daily__acts">
-                            <span data-hit="review"> Ôn lại vừa học </span>
-                            <span class="is-primary" data-hit="next"> Từ tiếp theo </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="ha-demo__caption"></div>
-                    <div class="ha-demo__cursor"></div>
-                    <div class="ha-demo__ripple"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ha-mbp__chin"></div>
-            <div class="ha-mbp__base"></div>
-          </div>
-        </div>
+  <main id="main" class="yi-container">
+    <section class="yi-hero" aria-labelledby="home-h1">
+      <span class="yi-kicker">Trung tâm Luyện thi Quốc tế YYSD · Phiên bản Việt hóa Toàn diện 2.0</span>
+      <h1 id="home-h1">Luyện Thi IELTS Hiệu Quả, Lộ Trình Khoa Học, Bứt Phá Band 8.5+</h1>
+      <p class="yi-hero__lead">
+        Hợp nhất kho 226 đề thi Cambridge IELTS chính thức (Nghe · Đọc · Viết), cây kỹ năng trò chơi hóa
+        lấy cảm hứng từ Duolingo, thuật toán lặp lại ngắt quãng Half-Life Regression, hơn 24.800 mục từ
+        vựng Anh – Việt chuẩn xác và thư viện 6 cẩm nang PDF trích dẫn 80 công trình khoa học từ Google Scholar.
+      </p>
+      <div class="yi-hero__actions">
+        <a class="yi-btn yi-btn--primary" href="lo-trinh.html">Bắt đầu Lộ trình IELTS (4 phút/bài)</a>
+        <a class="yi-btn yi-btn--emerald" href="zone.html?zone=mock">Vào Phòng Thi Cambridge 6–20</a>
+        <a class="yi-btn" href="tai-lieu.html">Thư viện PDF Học thuật (80 nghiên cứu)</a>
+        <a class="yi-btn" href="vocab.html">Tủ sách Từ vựng Anh–Việt</a>
       </div>
-      <button type="button" class="ha-scroll-cue" data-ha-next aria-label="Màn tiếp theo">
-        <span></span>
-      </button>
-    </section>
-
-    <!-- 2. IELTS CDT desk -->
-    <section class="ha-feature ha-feature--cdt ha-panel" aria-labelledby="ha-ielts-title">
-      <div class="ha-cdt-app reveal">
-        <header class="ha-cdt-app__bar">
-          <div class="ha-cdt-app__left">
-            <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="ha-cdt-app__logo">
-            <span>Listening · Part 1</span>
-          </div>
-          <div class="ha-cdt-app__timer">32:16</div>
-          <button type="button" class="ha-cdt-app__finish" tabindex="-1">Finish</button>
-        </header>
-        <div class="ha-cdt-app__rail" aria-hidden="true">
-          <b class="is-on">1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b>
-        </div>
-        <div class="ha-cdt-app__body">
-          <aside class="ha-cdt-app__copy">
-            <div class="ha-cdt-app__stack">
-              <p class="ha-cdt-app__eyebrow">Cambridge IELTS · Computer-delivered</p>
-              <h2 id="ha-ielts-title">
-                <span class="ha-line"> trọn bộ Thi thử </span>
-                <span class="ha-line"> trở lại như cũ cơ khảo thi </span>
-                <span class="ha-line"> Đơn kỹ năng Luyện tập </span>
-                <span class="ha-line"> tự do tổ hợp </span>
-              </h2>
-              <p class="ha-cdt-app__lead">tinh tuyển Đề Cambridge IELTS và Thi thử trọn bộ, dạng bài rõ ràng, tiết tấu quen thuộc, Luyện tập càng tiếp cận chân thật trường thi. </p>
-              <a class="ha-cdt-app__link" href="zone.html?zone=mock&amp;s=ielts"> Vào học Đề thi IELTS</a>
-            </div>
-          </aside>
-          <div class="ha-cdt-app__paper">
-            <div class="ha-cdt-app__qhead">
-              <strong>Questions 1–3</strong>
-              <span>Choose the correct letter, <b>A</b>, <b>B</b> or <b>C</b>.</span>
-            </div>
-            <article class="ha-cdt-app__q">
-              <h3>Question 1</h3>
-              <p>What does the speaker say about the museum tour?</p>
-              <div class="ha-cdt-app__opts">
-                <label class="ha-cdt-app__opt"><i></i><span><b>A</b> It starts at the main gate</span></label>
-                <label class="ha-cdt-app__opt is-on"><i></i><span><b>B</b> It includes a short film</span></label>
-                <label class="ha-cdt-app__opt"><i></i><span><b>C</b> It ends at the café</span></label>
-              </div>
-            </article>
-            <article class="ha-cdt-app__q">
-              <h3>Question 2</h3>
-              <p>Where should visitors leave their bags?</p>
-              <div class="ha-cdt-app__opts">
-                <label class="ha-cdt-app__opt"><i></i><span><b>A</b> At the information desk</span></label>
-                <label class="ha-cdt-app__opt"><i></i><span><b>B</b> In the cloakroom</span></label>
-                <label class="ha-cdt-app__opt"><i></i><span><b>C</b> Beside the café entrance</span></label>
-              </div>
-            </article>
-          </div>
-        </div>
-        <footer class="ha-cdt-app__foot">
-          <span class="ha-cdt-app__navbtn">◀ Previous</span>
-          <span class="ha-cdt-app__navbtn is-primary">Next ▶</span>
-        </footer>
+      <div class="yi-stats-row">
+        <div class="yi-stat"><strong>226 đề thi</strong><span>Cambridge IELTS 6–20 (Nghe, Đọc, Viết &amp; Nghe sâu)</span></div>
+        <div class="yi-stat"><strong>24.871 từ vựng</strong><span>Định nghĩa Anh–Việt, phiên âm Anh/Mỹ &amp; 36 chủ đề</span></div>
+        <div class="yi-stat"><strong>10 giải đấu</strong><span>Đồng → Kim cương, Chuỗi Ngày Học &amp; 5 Chuỗi Bạn Bè</span></div>
+        <div class="yi-stat"><strong>80 nghiên cứu</strong><span>6 PDF học thuật có 540 liên kết Google Scholar &amp; DOI</span></div>
       </div>
     </section>
 
-    <!-- 3. Vocab -->
-    <section class="ha-feature ha-feature--flip ha-panel" aria-labelledby="ha-vocab-title">
-      <div class="minimal-shell ha-feature__inner">
-        <div class="ha-feature__copy ha-feature__copy--vocab reveal">
-          <p class="ha-eyebrow">Học từ vựng hệ thống </p>
-          <h2 id="ha-vocab-title">
-            <span class="ha-line"> chủ đề Từ vựng theo chủ đề </span>
-            <span class="ha-line"> định chế(*hàng đặt theo yêu cầu) mỗi ngày kế hoạch </span>
-            <span class="ha-line"> tiến hành theo chất lượng đầm Từ vựng </span>
-          </h2>
-          <p class="ha-lead">theo như chủ đề và kế hoạch đẩy mạnh, Ôn tập có tiết tấu, đem Từ vựng tích lũy biến thành mỗi ngày có thể hoàn thành một bước nhỏ </p>
-          <a class="ha-text-link" href="zone.html?zone=study&s=vocab"> Vào học Khu từ vựng</a>
-        </div>
-        <div class="ha-feature__stage reveal" style="--reveal-delay:100ms">
-          <div class="ha-vtour is-scrolling" id="ha-vocab-tour" aria-hidden="true">
-            <div class="ha-mbp">
-              <div class="ha-mbp__lid">
-                <div class="ha-mbp__bezel">
-                  <div class="ha-mbp__camera"></div>
-                  <div class="ha-screen ha-screen--vocab">
-                    <div class="ha-vscene is-active" data-vscene="library">
-                      <div class="ha-screen__bar">
-                        <span></span><span></span><span></span>
-                        <b>Từ vựng theo chủ đề</b>
-                      </div>
-                      <div class="ha-vlib">
-                        <div class="ha-vlib__tags">
-                          <em class="is-on">Học thuật Viết</em><em>thương vụ câu thông</em><em>sân trường sinh hoạt</em><em>Công nghệ truyền thông</em><em>Du lịch Di chuyển</em>
-                        </div>
-                        <div class="ha-vlib__rail">
-                          <div class="ha-vlib__track">
-                            <div><b>thesis</b><span> luận văn; mệnh đề </span></div>
-                            <div><b>criterion</b><span> tiêu chuẩn; chuẩn tắc </span></div>
-                            <div><b>negotiate</b><span> đàm phán; hiệp thương </span></div>
-                            <div><b>deadline</b><span> Hạn chót ngày </span></div>
-                            <div><b>curriculum</b><span> chương trình học </span></div>
-                            <div><b>seminar</b><span> nghiên cứu thảo luận hội </span></div>
-                            <div><b>algorithm</b><span> phép tính </span></div>
-                            <div><b>bandwidth</b><span> giải thông </span></div>
-                            <div><b>itinerary</b><span> sắp xếp hành trình </span></div>
-                            <div><b>landmark</b><span> tiêu chí </span></div>
-                            <div><b>thesis</b><span> luận văn; mệnh đề </span></div>
-                            <div><b>criterion</b><span> tiêu chuẩn; chuẩn tắc </span></div>
-                            <div><b>negotiate</b><span> đàm phán; hiệp thương </span></div>
-                            <div><b>deadline</b><span> Hạn chót ngày </span></div>
-                            <div><b>curriculum</b><span> chương trình học </span></div>
-                            <div><b>seminar</b><span> nghiên cứu thảo luận hội </span></div>
-                            <div><b>algorithm</b><span> phép tính </span></div>
-                            <div><b>bandwidth</b><span> giải thông </span></div>
-                            <div><b>itinerary</b><span> sắp xếp hành trình </span></div>
-                            <div><b>landmark</b><span> tiêu chí </span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ha-mbp__chin"></div>
-              <div class="ha-mbp__base"></div>
-            </div>
-          </div>
-        </div>
+    <section class="yi-card" aria-labelledby="ecosystem-h2">
+      <h2 id="ecosystem-h2">Hệ Sinh Thái Luyện Thi IELTS Toàn Diện Trong Một Nền Tảng</h2>
+      <p class="yi-muted">Lựa chọn phân khu phù hợp với mục tiêu hôm nay — toàn bộ điểm số, XP và từ vựng cần ôn được đồng bộ tự động.</p>
+      <div class="yi-grid-3">
+        <article class="yi-unit yi-unit--current">
+          <span class="yi-tag yi-tag--emerald">Mới · Phong cách Duolingo</span>
+          <h3>Lộ Trình 8 Chặng CEFR A2+ → C2</h3>
+          <p class="yi-muted">7 dạng bài tương tác, ghép thẻ paraphrase, Câu Bất Ngờ Ngữ Nghĩa (SUS) và Giải thích Lỗi sai Miễn phí.</p>
+          <a class="yi-btn yi-btn--primary" href="lo-trinh.html">Học ngay trên Cây Kỹ Năng</a>
+        </article>
+
+        <article class="yi-unit">
+          <span class="yi-tag yi-tag--blue">Phòng thi máy tính CDT</span>
+          <h3>Đề Thi Cambridge IELTS 6–20</h3>
+          <p class="yi-muted">Luyện từng phần hoặc thi thử trọn bộ Nghe – Đọc – Viết có bấm giờ, tô sáng văn bản và chấm Band tự động.</p>
+          <a class="yi-btn" href="zone.html?zone=mock">Mở kho đề Cambridge</a>
+        </article>
+
+        <article class="yi-unit yi-unit--legendary">
+          <span class="yi-tag yi-tag--amber">scholar.google.com</span>
+          <h3>Thư Viện 6 Cẩm Nang PDF Học Thuật</h3>
+          <p class="yi-muted">Tải miễn phí 6 ấn phẩm PDF tiếng Việt kèm 257 liên kết Google Scholar, 283 liên kết DOI, APA 7 &amp; BibTeX.</p>
+          <a class="yi-btn" href="tai-lieu.html">Đọc &amp; Tải Cẩm nang PDF</a>
+        </article>
+
+        <article class="yi-unit">
+          <span class="yi-tag yi-tag--blue">Settles &amp; Meeder (2016)</span>
+          <h3>Từ Vựng Anh–Việt &amp; Ôn Tập HLR</h3>
+          <p class="yi-muted">Bộ từ THPT, Đại học, IELTS chuyên sâu Nghe–Đọc–Viết và 36 chủ đề kết hợp đường cong ghi nhớ HLR.</p>
+          <a class="yi-btn" href="vocab.html">Khám phá Tủ sách Từ vựng</a>
+        </article>
+
+        <article class="yi-unit">
+          <span class="yi-tag yi-tag--emerald">Truyện &amp; Nhập vai AI</span>
+          <h3>IELTS Speaking &amp; Truyện Tương Tác</h3>
+          <p class="yi-muted">Luyện Part 1–2–3 cùng Cô Linh &amp; Thầy Hùng, chấm 4 tiêu chí FC, LR, GRA, P và sửa lỗi chuyển di Việt–Anh.</p>
+          <a class="yi-btn" href="speaking.html">Luyện phản xạ Speaking</a>
+        </article>
+
+        <article class="yi-unit">
+          <span class="yi-tag">Du học Quốc tế</span>
+          <h3>Tuyển Sinh Đại Học &amp; Đề A-Level</h3>
+          <p class="yi-muted">Tra cứu điều kiện IELTS đầu vào của các đại học Anh, Úc, Mỹ, Canada, Singapore và kho đề A-Level.</p>
+          <a class="yi-btn" href="requirements.html">Tra cứu yêu cầu IELTS</a>
+        </article>
       </div>
     </section>
 
-    <!-- 4. Tasks — navy dark accent -->
-    <section class="ha-feature ha-feature--dark ha-panel" aria-labelledby="ha-task-title">
-      <div class="minimal-shell ha-feature__inner">
-        <div class="ha-feature__copy reveal">
-          <p class="ha-eyebrow">Trung tâm nhiệm vụ </p>
-          <h2 id="ha-task-title">
-            <span class="ha-line"> hôm nay làm cái gì </span>
-            <span class="ha-line"> vừa xem hiểu ngay </span>
-          </h2>
-          <p class="ha-lead">đem lưng từ, đề thi thật và phục bàn thu vào cùng một cái nhiệm vụ chảy —— Tiến độ có thể thấy được, kiên trì có thể cảm giác </p>
-          <a class="ha-text-link" href="dashboard.html"> mở ra Trung tâm nhiệm vụ</a>
+    <section class="yi-card" aria-labelledby="science-h2">
+      <h2 id="science-h2">Được Thiết Kế Dựa Trên Khoa Học Nhận Thức &amp; Khảo Thí Quốc Tế</h2>
+      <p class="yi-muted">Mỗi tính năng trong ứng dụng đều bắt nguồn từ nghiên cứu bình duyệt thực nghiệm đã kiểm chứng.</p>
+      <div class="yi-grid-2">
+        <div class="yi-unit">
+          <h3>Hồi Quy Chu Kỳ Bán Rã &amp; Nhắc Học Softmax Bandit</h3>
+          <p class="yi-muted" style="margin:0;">
+            Dự đoán chính xác thời điểm từ vựng học thuật chạm ngưỡng quên theo công thức
+            <code>p = 2^(-Δ/h)</code> (Settles &amp; Meeder, 2016) và tối ưu hóa thông điệp nhắc học
+            hàng ngày bằng thuật toán Recovering-Difference Softmax Bandit (Yancey &amp; Settles, 2020).
+          </p>
         </div>
-        <div class="ha-feature__stage reveal" style="--reveal-delay:100ms">
-          <div class="ha-ctour" id="ha-cal-tour" aria-hidden="true">
-            <div class="ha-planner">
-              <div class="ha-planner__rings" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <div class="ha-planner__cover">
-                <span>TASK PLANNER</span>
-                <b>Lịch nhiệm vụ</b>
-                <em>August 2026</em>
-              </div>
-              <div class="ha-planner__page ha-screen--cal">
-                <div class="ha-cal-shell">
-                  <div class="teacher-toolbar cal-toolbar">
-                    <div class="teacher-filters" aria-hidden="true">
-                      <span class="teacher-filter"> Lịch tháng </span>
-                      <span class="teacher-filter is-active"> Xem theo tuần </span>
-                      <span class="teacher-filter"> Danh sách cần làm </span>
-                    </div>
-                    <div class="cal-toolbar__acts">
-                      <span class="btn btn--ghost btn--sm"> Làm mới </span>
-                    </div>
-                  </div>
-                  <div class="teacher-stats ha-cal-stats">
-                    <div class="teacher-stat"><b>4</b><span> Tất cả nhiệm vụ </span></div>
-                    <div class="teacher-stat"><b>3</b><span> đợi hoàn thành </span></div>
-                    <div class="teacher-stat"><b>1</b><span> Đã hoàn thành </span></div>
-                    <div class="teacher-stat"><b>0</b><span> Đã quá hạn </span></div>
-                  </div>
-                  <div class="cal-view">
-                    <div class="cal-week ha-cal-week">
-                      <div class="cal-month__nav">
-                        <span class="btn btn--ghost btn--sm" aria-hidden="true">‹</span>
-                        <strong>8/10 – 8/16</strong>
-                        <span class="btn btn--ghost btn--sm" aria-hidden="true">›</span>
-                      </div>
-                      <div class="cal-week__grid">
-                        <div class="cal-week__day" data-cal-day="0">
-                          <div class="cal-week__head"><b>8/10</b><span> một </span></div>
-                          <div class="cal-week__list"><p class="profile-hint">Không có lịch </p></div>
-                        </div>
-                        <div class="cal-week__day" data-cal-day="1">
-                          <div class="cal-week__head"><b>8/11</b><span> hai </span></div>
-                          <div class="cal-week__list">
-                            <button type="button" class="cal-month__chip cal-tag--lesson" tabindex="-1">Nói bồi luyện · Part 2</button>
-                          </div>
-                        </div>
-                        <div class="cal-week__day" data-cal-day="2">
-                          <div class="cal-week__head"><b>8/12</b><span> ba </span></div>
-                          <div class="cal-week__list"><p class="profile-hint">Không có lịch </p></div>
-                        </div>
-                        <div class="cal-week__day" data-cal-day="3">
-                          <div class="cal-week__head"><b>8/13</b><span> bốn </span></div>
-                          <div class="cal-week__list">
-                            <button type="button" class="cal-month__chip cal-tag--assignment" tabindex="-1">Cambridge 16 Test 2 Listening</button>
-                          </div>
-                        </div>
-                        <div class="cal-week__day" data-cal-day="4">
-                          <div class="cal-week__head"><b>8/14</b><span> năm </span></div>
-                          <div class="cal-week__list">
-                            <button type="button" class="cal-month__chip cal-tag--assignment" tabindex="-1">Từ vựng mỗi ngày · List 12</button>
-                          </div>
-                        </div>
-                        <div class="cal-week__day" data-cal-day="5">
-                          <div class="cal-week__head"><b>8/15</b><span> sáu </span></div>
-                          <div class="cal-week__list"><p class="profile-hint">Không có lịch </p></div>
-                        </div>
-                        <div class="cal-week__day is-today" data-cal-day="6">
-                          <div class="cal-week__head"><b>8/16</b><span> ngày </span></div>
-                          <div class="cal-week__list">
-                            <button type="button" class="cal-month__chip cal-tag--announce" tabindex="-1">cuối tuần Ôn tập nhắc nhở</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ha-cal-pop">
-                  <div class="cal-modal__panel">
-                    <div class="cal-modal__head">
-                      <h2>Cambridge 16 Test 2 Listening</h2>
-                      <span class="cal-modal__x" aria-hidden="true">×</span>
-                    </div>
-                    <div class="cal-detail">
-                      <p>
-                        <span class="cal-tag cal-tag--assignment"> Bài tập luyện tập </span>
-                        <span class="cal-status-pill cal-status--pending"> Chưa hoàn thành </span>
-                      </p>
-                      <p>Giáo viên đã phân phối đưa cho bạn Đề thi Nghe, sau khi hoàn thành tự động ghi vào Tiến độ. </p>
-                      <p class="cal-card__meta">Bắt đầu: 8/11 09:00 · Hạn chót: 8/13 23:59 · Luyện tập Tiến độ 0/1</p>
-                      <h3>liên quan Luyện tập</h3>
-                      <ul class="cal-ex-list">
-                        <li class="cal-ex-row">
-                          <span><b>Cambridge 16 Test 2 Listening</b></span>
-                          <span class="btn btn--primary btn--sm"> lập tức đi làm </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="yi-unit">
+          <h3>Thang Điểm 0–160 ↔ CEFR A1–C2 ↔ IELTS 2.0–9.0</h3>
+          <p class="yi-muted" style="margin:0;">
+            Theo dõi từng bước tiến nhỏ trên thang điểm 0–160, đối chiếu minh bạch với khung tham chiếu
+            châu Âu CEFR và Band IELTS chính thức, xuất báo cáo PDF học thuật và chia sẻ trực tiếp lên LinkedIn.
+          </p>
         </div>
       </div>
     </section>
-
-    <!-- 5. Teacher end -->
-    <section class="ha-teacher ha-panel" aria-labelledby="ha-teacher-title">
-      <div class="minimal-shell ha-teacher__inner reveal">
-        <div class="ha-teacher__copy">
-          <p class="ha-eyebrow">Cổng giáo viên </p>
-          <h2 id="ha-teacher-title">
-            <span class="ha-line"> bố trí nhiệm vụ </span>
-            <span class="ha-line"> trông thấy Tiến độ </span>
-          </h2>
-          <p class="ha-lead">bài tập, lịch ngày và Chẩn đoán từ vựng hợp thành bế hoàn —— Giáo viên bố trí, Học viên hoàn thành, Tiến độ vừa xem hiểu ngay </p>
-          <a class="ha-text-link" href="teacher-login.html"> Vào cổng giáo viên</a>
-        </div>
-        <div class="ha-teacher__stage" id="ha-teacher-flow" aria-hidden="true">
-          <div class="ha-folder">
-            <div class="ha-folder__body">
-              <div class="ha-folder__back" aria-hidden="true"></div>
-              <div class="ha-folder__pocket">
-                <div class="ha-tflow__tabs" role="tablist" aria-label="Cổng giáo viên năng lực">
-                  <button type="button" class="ha-tflow__tab is-on" role="tab" aria-selected="true" data-tflow="assign">bài tập bế hoàn</button>
-                  <button type="button" class="ha-tflow__tab" role="tab" aria-selected="false" data-tflow="cal">Lịch nhiệm vụ</button>
-                  <button type="button" class="ha-tflow__tab" role="tab" aria-selected="false" data-tflow="diag">Chẩn đoán từ vựng</button>
-                </div>
-                <div class="ha-tflow__viewport">
-            <div class="ha-tflow__slide is-on" data-tflow-panel="assign">
-              <div class="ha-tui">
-                <div class="ha-tui__shell">
-                  <aside class="ha-tui__side">
-                    <p>COURSE</p>
-                    <span class="is-on"> Bảng theo dõi học tập </span>
-                    <span> Chẩn đoán từ vựng </span>
-                    <span> Lịch nhiệm vụ </span>
-                  </aside>
-                  <div class="ha-tui__main">
-                    <div class="ha-tui__head">
-                      <b>bố trí nhiệm vụ hoàn thành ghi chép</b>
-                      <em>Teacher Dashboard</em>
-                    </div>
-                    <div class="ha-tui__filters">
-                      <i class="is-on"> Tất cả </i><i> đề thi thật Thi thử </i><i> thượng truyền(*upload) bài tập </i><i> Từ vựng bài tập </i>
-                    </div>
-                    <div class="ha-tui__stats">
-                      <div><b>12</b><span> Học viên </span></div>
-                      <div><b>8</b><span> Đã hoàn thành </span></div>
-                      <div><b>3</b><span> đang tiến hành </span></div>
-                      <div><b>1</b><span> Chưa bắt đầu </span></div>
-                    </div>
-                    <div class="ha-tui__rows">
-                      <div class="ha-tui__row">
-                        <div class="ha-tui__avatar"> lâm </div>
-                        <div class="ha-tui__meta">
-                          <b>lâm hiểu</b>
-                          <span>Cambridge 16 T2 Listening</span>
-                        </div>
-                        <em class="ha-tui__pill is-done">Đã hoàn thành</em>
-                      </div>
-                      <div class="ha-tui__row is-focus">
-                        <div class="ha-tui__avatar"> trần </div>
-                        <div class="ha-tui__meta">
-                          <b>trần có thể</b>
-                          <span> Từ vựng mỗi ngày · List 12 · Tiến độ 18/30</span>
-                          <div class="ha-tui__bar"><i style="width:60%"></i></div>
-                        </div>
-                        <em class="ha-tui__pill is-pending">đang tiến hành</em>
-                      </div>
-                      <div class="ha-tui__row">
-                        <div class="ha-tui__avatar"> chu </div>
-                        <div class="ha-tui__meta">
-                          <b>chu yên tĩnh</b>
-                          <span>Cambridge 16 T2 Listening</span>
-                        </div>
-                        <em class="ha-tui__pill is-wait">Chưa bắt đầu</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="ha-tui__cap">Học viên sau khi hoàn thành, Tiến độ tự động quay về viết lên Cổng giáo viên Bảng theo dõi học tập </p>
-              </div>
-            </div>
-            <div class="ha-tflow__slide" data-tflow-panel="cal">
-              <div class="ha-tui">
-                <div class="ha-tui__shell">
-                  <aside class="ha-tui__side">
-                    <p>COURSE</p>
-                    <span> Bảng theo dõi học tập </span>
-                    <span> Chẩn đoán từ vựng </span>
-                    <span class="is-on"> Lịch nhiệm vụ </span>
-                  </aside>
-                  <div class="ha-tui__main">
-                    <div class="ha-tui__head">
-                      <b>nhiệm vụ và nhật trình,chương trình trong một ngày đài tuyên bố</b>
-                      <em class="ha-tui__cta">mới xây nhiệm vụ</em>
-                    </div>
-                    <div class="ha-tui__filters">
-                      <i> Danh sách cần làm </i><i class="is-on"> Xem theo tuần </i><i> Lịch tháng </i>
-                    </div>
-                    <div class="ha-tui__week">
-                      <div class="ha-tui__day">
-                        <b>8/11<span> hai </span></b>
-                        <button type="button" class="cal-month__chip cal-tag--lesson" tabindex="-1">Nói bồi luyện</button>
-                      </div>
-                      <div class="ha-tui__day is-hot">
-                        <b>8/13<span> bốn </span></b>
-                        <button type="button" class="cal-month__chip cal-tag--assignment" tabindex="-1">C16 T2 Listening</button>
-                      </div>
-                      <div class="ha-tui__day">
-                        <b>8/14<span> năm </span></b>
-                        <button type="button" class="cal-month__chip cal-tag--assignment" tabindex="-1">Từ vựng mỗi ngày</button>
-                      </div>
-                      <div class="ha-tui__day">
-                        <b>8/16<span> ngày </span></b>
-                        <button type="button" class="cal-month__chip cal-tag--announce" tabindex="-1">cuối tuần Ôn tập</button>
-                      </div>
-                    </div>
-                    <div class="ha-tui__note">
-                      <span class="cal-tag cal-tag--assignment"> Bài tập luyện tập </span>
-                       đã đồng bộ đến Học viên Trung tâm nhiệm vụ · Hạn chót 8/13 23:59
-                    </div>
-                  </div>
-                </div>
-                <p class="ha-tui__cap">Giáo viên sắp xếp nhật trình,chương trình trong một ngày sau, Học viên đầu Lịch nhiệm vụ đồng bộ có thể thấy được </p>
-              </div>
-            </div>
-            <div class="ha-tflow__slide" data-tflow-panel="diag">
-              <div class="ha-tui">
-                <div class="ha-tui__shell">
-                  <aside class="ha-tui__side">
-                    <p>COURSE</p>
-                    <span> Bảng theo dõi học tập </span>
-                    <span class="is-on"> Chẩn đoán từ vựng </span>
-                    <span> Lịch nhiệm vụ </span>
-                  </aside>
-                  <div class="ha-tui__main">
-                    <div class="ha-tui__head">
-                      <b>lớp Chẩn đoán từ vựng quan sát</b>
-                      <em>Tỷ lệ đúng và Đề xuất điểm khởi đầu</em>
-                    </div>
-                    <table class="ha-tui__table">
-                      <thead>
-                        <tr><th>Học viên</th><th>THPT</th><th>Đại học B1</th><th>Đề xuất</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>lâm hiểu</td><td>82%</td><td>76%</td><td>IELTS</td>
-                        </tr>
-                        <tr class="is-warn">
-                          <td>trần có thể</td><td>54%</td><td>61%</td><td>THPT</td>
-                        </tr>
-                        <tr>
-                          <td>chu yên tĩnh</td><td>71%</td><td>68%</td><td>Đại học B1</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <div class="ha-tui__hot">
-                      <b>lớp Tần suất cao từ sai</b>
-                      <div>
-                        <em>criterion</em><em>negotiate</em><em>thesis</em><em>reluctant</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="ha-tui__cap">kết quả chẩn đoán chỉ đạo lưng từ khởi điểm, bạc nhược yếu kém từ tự động tập hợp </p>
-              </div>
-            </div>
-                </div>
-              </div>
-              <div class="ha-folder__cover" aria-hidden="true">
-                <span class="ha-folder__tag">TEACHER</span>
-                <b>Giáo viên công tác kẹp</b>
-                <em>bài tập · lịch ngày · chẩn đoán năng lực</em>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Rankings desk -->
-    <section class="ha-rank ha-panel" aria-labelledby="ha-rank-title">
-      <div class="minimal-shell ha-rank__inner reveal">
-        <div class="ha-rank__copy">
-          <p class="ha-eyebrow">Xếp hạng Đại học Thế giới </p>
-          <h2 id="ha-rank-title">
-            <span class="ha-line"> tứ đại bảng so sánh </span>
-            <span class="ha-line"> liếc thấy rõ chỗ đứng </span>
-          </h2>
-          <p class="ha-lead">đem QS / THE / ARWU / US News trở thành bốn đầu giá thị trường quỹ —— tra thứ tự, so với chênh lệch, rồi quyết định bước tiếp theo </p>
-          <a class="ha-text-link" href="/rankings"> mở ra chọn trường học giá thị trường đài</a>
-        </div>
-        <div class="ha-rank__stage" aria-hidden="true">
-          <div class="ha-rd">
-            <div class="ha-rd__top">
-              <b>YYSD</b>
-              <em>Rank Desk</em>
-              <nav>
-                <span class="is-on"> giá thị trường </span>
-                <span> hệ thống </span>
-                <span> viện giáo </span>
-                <span> đối lập </span>
-              </nav>
-            </div>
-            <div class="ha-rd__live">
-              <strong>LIVE</strong>
-              <div class="ha-rd__ticker">
-                <div class="ha-rd__track">
-                  <span><i style="background:#e11d48"></i>QS 2027 #1 Viện Công nghệ Massachusetts (MIT) </span>
-                  <span><i style="background:#2563eb"></i>THE 2026 #1 Đại học Oxford </span>
-                  <span><i style="background:#ca8a04"></i>ARWU 2025 #1 Đại học Harvard </span>
-                  <span><i style="background:#0d9488"></i>US News 2027 #1 Đại học Harvard </span>
-                  <span><i style="background:#e11d48"></i>QS 2027 #1 Viện Công nghệ Massachusetts (MIT) </span>
-                  <span><i style="background:#2563eb"></i>THE 2026 #1 Đại học Oxford </span>
-                  <span><i style="background:#ca8a04"></i>ARWU 2025 #1 Đại học Harvard </span>
-                  <span><i style="background:#0d9488"></i>US News 2027 #1 Đại học Harvard </span>
-                </div>
-              </div>
-              <em>1078 UNI · 16 ED</em>
-            </div>
-            <div class="ha-rd__desk">
-              <div class="ha-rd__panel ha-rd__search">
-                <div class="ha-rd__head"><span> chọn trường học kiểm tra </span><em>DESK</em></div>
-                <div class="ha-rd__search-body">
-                  <h3>trường này, <br>tại tứ đại bảng đứng cái đó?</h3>
-                  <p>tra thứ tự, so với chênh lệch, rồi quyết định có muốn hay không đánh giá trúng tuyển. </p>
-                  <div class="ha-rd__input"> đưa vào trường học tên / biệt danh, quay về xe kiểm tra </div>
-                  <div class="ha-rd__acts">
-                    <span class="ha-rd__btn"> tra giá thị trường </span>
-                    <span class="ha-rd__ghost"> mở đối lập bàn </span>
-                  </div>
-                  <div class="ha-rd__hots">
-                    <span><b>#1</b> Viện Công nghệ Massachusetts (MIT) </span>
-                    <span><b>#1</b> Đại học Oxford </span>
-                    <span><b>#1</b> Đại học Harvard </span>
-                  </div>
-                </div>
-              </div>
-              <div class="ha-rd__panel ha-rd__tracks">
-                <input type="radio" name="ha-home-track" id="ha-track-qs" class="ha-rd__radio" checked>
-                <input type="radio" name="ha-home-track" id="ha-track-the" class="ha-rd__radio">
-                <input type="radio" name="ha-home-track" id="ha-track-arwu" class="ha-rd__radio">
-                <input type="radio" name="ha-home-track" id="ha-track-usnews" class="ha-rd__radio">
-                <div class="ha-rd__tabs">
-                  <label for="ha-track-qs"><i style="background:#e11d48"></i>QS</label>
-                  <label for="ha-track-the"><i style="background:#2563eb"></i>THE</label>
-                  <label for="ha-track-arwu"><i style="background:#ca8a04"></i>ARWU</label>
-                  <label for="ha-track-usnews"><i style="background:#0d9488"></i>US News</label>
-                  <em>giá thị trường quỹ</em>
-                </div>
-                <div class="ha-rd__pane ha-rd__pane--qs">
-                  <div class="ha-rd__meta"><span>QS · 2027 · TOP 8</span><span>FULL →</span></div>
-                  <div class="ha-rd__row"><b>01</b><span> Viện Công nghệ Massachusetts (MIT) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>02</b><span> Imperial College London </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>03</b><span> Đại học Stanford </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>04</b><span> Đại học Oxford </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>05</b><span> Đại học Harvard </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>06</b><span> Đại học Cambridge </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>07</b><span> Viện Công nghệ California (Caltech) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>08</b><span> tô lê thế liên bang để ý công học viện </span><em>Thụy Sĩ</em></div>
-                </div>
-                <div class="ha-rd__pane ha-rd__pane--the">
-                  <div class="ha-rd__meta"><span>THE · 2026 · TOP 8</span><span>FULL →</span></div>
-                  <div class="ha-rd__row"><b>01</b><span> Đại học Oxford </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>02</b><span> Viện Công nghệ Massachusetts (MIT) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>03</b><span> Đại học Harvard </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>04</b><span> Đại học Princeton </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>05</b><span> Đại học Cambridge </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>06</b><span> Đại học Stanford </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>07</b><span> Viện Công nghệ California (Caltech) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>08</b><span> Đại học California, Berkeley </span><em>Hoa Kỳ</em></div>
-                </div>
-                <div class="ha-rd__pane ha-rd__pane--arwu">
-                  <div class="ha-rd__meta"><span>ARWU · 2025 · TOP 8</span><span>FULL →</span></div>
-                  <div class="ha-rd__row"><b>01</b><span> Đại học Harvard </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>02</b><span> Đại học Stanford </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>03</b><span> Viện Công nghệ Massachusetts (MIT) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>04</b><span> Đại học Cambridge </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>05</b><span> Đại học California, Berkeley </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>06</b><span> Đại học Oxford </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>07</b><span> Đại học Princeton </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>08</b><span> Viện Công nghệ California (Caltech) </span><em>Hoa Kỳ</em></div>
-                </div>
-                <div class="ha-rd__pane ha-rd__pane--usnews">
-                  <div class="ha-rd__meta"><span>US News · 2027 · TOP 8</span><span>FULL →</span></div>
-                  <div class="ha-rd__row"><b>01</b><span> Đại học Harvard </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>02</b><span> Viện Công nghệ Massachusetts (MIT) </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>03</b><span> Đại học Stanford </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>04</b><span> Đại học Oxford </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>05</b><span> Đại học Cambridge </span><em>Vương quốc Anh</em></div>
-                  <div class="ha-rd__row"><b>06</b><span> Đại học California, Berkeley </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>07</b><span> Đại học Columbia </span><em>Hoa Kỳ</em></div>
-                  <div class="ha-rd__row"><b>08</b><span> Oa-sinh-tơn Hoa Thịnh Đốn đại học </span><em>Hoa Kỳ</em></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. AI capabilities -->
-    <section class="ha-ai ha-panel" aria-labelledby="ha-ai-title">
-      <div class="minimal-shell ha-ai__inner reveal">
-        <p class="ha-ai__eyebrow">AI LAB</p>
-        <h2 id="ha-ai-title">
-          <span class="ha-line"> trí tuệ nhân tạo năng lực </span>
-          <span class="ha-line"> toàn diện tiếp nhập </span>
-        </h2>
-        <p class="ha-ai__lead">Nói, Viết, tra từ và học lên ước định đã tiếp nhập AI—— năng lực tiếp tục hoàn thiện, hiện tại Đăng ký là được Dùng thử </p>
-        <div class="ha-ai__grid">
-          <a class="ha-ai__card" href="ai-tutor.html">
-            <em>01</em>
-            <b>AI Trợ giảng IELTS</b>
-            <span> đối thoại phụ đạo · cơ trải qua bồi luyện </span>
-          </a>
-          <a class="ha-ai__card" href="speaking.html">
-            <em>02</em>
-            <b>AI Nói cho điểm</b>
-            <span> ghi âm đáp lại · tứ duy phản hồi </span>
-          </a>
-          <a class="ha-ai__card" href="ai-tutor.html?track=writing">
-            <em>03</em>
-            <b>AI Viết phê chữa</b>
-            <span> dán viết văn · Phản hồi tức thì </span>
-          </a>
-          <a class="ha-ai__card" href="zone.html?zone=study&amp;s=vocab">
-            <em>04</em>
-            <b>AI tra từ</b>
-            <span> Giải nghĩa phối hợp · một khóa cất chứa </span>
-          </a>
-          <a class="ha-ai__card" href="/admission">
-            <em>05</em>
-            <b>AI học lên cố vấn</b>
-            <span> bối cảnh ước định · đánh giá trúng tuyển khu lúc giữa </span>
-          </a>
-        </div>
-        <p class="ha-ai__note">AI công năng đang tiếp tục hoàn thiện, đến tiếp sau năng lực sẽ lần lượt phát hành </p>
-        <div class="home-market__cta ha-cta ha-ai__cta">
-          <a class="home-btn home-btn--primary" href="register.html"> hiện tại Đăng ký, lập tức Dùng thử</a>
-          <a class="home-btn home-btn--ghost" href="login.html"> Đăng nhập</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="minimal-footer minimal-footer--rich home-chrome-footer">
-    <div class="minimal-shell minimal-footer__inner">
-      <div class="minimal-footer__brand">
-        <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-footer__logo">
-        <div>
-          <b>Trung tâm Học tập</b>
-          <span>Learning Center</span>
-        </div>
-      </div>
-      <nav class="minimal-footer__links" aria-label="Điều hướng chân trang">
-        <a href="zone.html?zone=study&s=vocab"> Từ vựng</a>
-        <a href="zone.html?zone=mock"> đề thi thật</a>
-        <a href="alevel.html"> Chương trình quốc tế</a>
-        <a href="teacher-login.html"> Cổng giáo viên</a>
-        <a href="download.html"> Tải ứng dụng thi máy</a>
+  <footer class="yi-footer">
+    <div class="yi-footer__inner">
+      <span>© 2026 Trung tâm Luyện thi Quốc tế YYSD · Việt hóa toàn diện · Chuẩn học thuật quốc tế</span>
+      <nav class="yi-footer__links" aria-label="Liên kết chân trang">
+        <a href="lo-trinh.html">Lộ trình IELTS</a>
+        <a href="tai-lieu.html">Thư viện PDF Học thuật</a>
+        <a href="dashboard.html">Trung tâm nhiệm vụ</a>
+        <a href="results.html">Bảng điểm của tôi</a>
+        <a href="agreement.html">Điều khoản sử dụng</a>
+        <a href="privacy.html">Chính sách bảo mật</a>
       </nav>
-      <p class="minimal-footer__copy">© <span id="year"></span>
-        <a href="agreement.html"> Điều khoản sử dụng</a> · <a href="privacy.html"> Chính sách bảo mật</a> · <a href="report.html" data-report> Góp ý & Báo cáo</a>
-        <span class="site-icp" data-icp></span>
-      </p>
     </div>
   </footer>
 
-  <script src="assets/js/config.js?v=20261020full22"></script>
-  <script src="assets/js/auth.js?v=20261013perm1"></script>
-  <script src="assets/js/nav.js?v=20261016req1"></script>
-  <script src="assets/js/ui.js?v=20260723motion"></script>
-  <script src="assets/js/home.js?v=20260808flip2"></script>
+  <script type="module">
+    import { loadAppState, scoreToProfile } from "./src/index.js";
+    const st = loadAppState(window.localStorage);
+    const prof = scoreToProfile(st.profile.proficiencyScore);
+    const sEl = document.getElementById("home-streak");
+    const pEl = document.getElementById("home-score");
+    if (sEl) sEl.textContent = `Chuỗi ${st.gamification.streak} ngày · ${st.gamification.totalXp} XP`;
+    if (pEl) pEl.textContent = `${prof.score}/160 · Band ${prof.ieltsBand.toFixed(1)}`;
+  </script>
 </body>
 </html>

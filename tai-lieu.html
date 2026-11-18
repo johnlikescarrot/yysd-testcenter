@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thư Viện PDF Học Thuật &amp; Trích Dẫn Google Scholar — YYSD IELTS</title>
+  <meta name="description" content="Tải miễn phí 6 bộ cẩm nang PDF luyện thi IELTS tiếng Việt tích hợp 80 công trình khoa học bình duyệt và 540 liên kết trực tiếp tới scholar.google.com và DOI.">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/duo-ielts.css">
+</head>
+<body class="yi-page">
+  <a class="yi-skip" href="#main">Chuyển thẳng tới nội dung chính</a>
+
+  <header class="yi-topbar">
+    <div class="yi-topbar__inner">
+      <a class="yi-brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Biểu trưng YYSD" width="34" height="34">
+        <span>YYSD IELTS</span>
+      </a>
+      <nav class="yi-nav" aria-label="Điều hướng chính">
+        <a href="index.html">Trang chủ</a>
+        <a href="lo-trinh.html">Lộ trình IELTS</a>
+        <a href="tai-lieu.html" aria-current="page">Tài liệu PDF</a>
+        <a href="vocab.html">Từ vựng</a>
+        <a href="zone.html?zone=mock">Đề Cambridge</a>
+        <a href="results.html">Kết quả</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="yi-container">
+    <section class="yi-hero" aria-labelledby="scholar-title">
+      <span class="yi-kicker">Thư viện khoa học mở · Kiểm chứng từ scholar.google.com</span>
+      <h1 id="scholar-title">Thư Viện Cẩm Nang PDF IELTS &amp; 80 Nghiên Cứu Học Thuật</h1>
+      <p class="yi-hero__lead">
+        Toàn bộ 6 ấn phẩm PDF tiếng Việt dưới đây được biên soạn dựa trên các công trình bình duyệt
+        hàng đầu thế giới về IELTS Reading, Listening, Writing, Speaking, danh sách từ khối liệu
+        (AWL, AVL, ACL, ASWL), lặp lại ngắt quãng Half-Life Regression, trò chơi hóa và bối cảnh
+        người học Việt Nam — kèm 257 liên kết nhấp trực tiếp tới Google Scholar và 283 liên kết DOI.
+      </p>
+      <div class="yi-hero__actions">
+        <a class="yi-btn yi-btn--primary" href="assets/docs/cam-nang-khoa-hoc-ielts-toan-dien.pdf" download>
+          Tải Cẩm nang Toàn diện (80 trích dẫn PDF)
+        </a>
+        <button type="button" class="yi-btn yi-btn--emerald" id="btn-export-personal-pdf">
+          Xuất Báo cáo Tiến độ Cá nhân (In / Lưu PDF)
+        </button>
+        <a class="yi-btn" href="lo-trinh.html">Vào Lộ trình IELTS Thông minh</a>
+      </div>
+      <div class="yi-stats-row">
+        <div class="yi-stat"><strong>6 bộ PDF</strong><span>Ấn phẩm A4 tiếng Việt chuẩn in ấn</span></div>
+        <div class="yi-stat"><strong>80 công trình</strong><span>Tạp chí bình duyệt &amp; chuyên khảo Cambridge</span></div>
+        <div class="yi-stat"><strong>257 liên kết</strong><span>Tra cứu trực tiếp trên scholar.google.com</span></div>
+        <div class="yi-stat"><strong>8 lĩnh vực</strong><span>4 kỹ năng IELTS, Từ vựng, SRS, CALL &amp; Việt Nam</span></div>
+      </div>
+    </section>
+
+    <section class="yi-card" aria-labelledby="pdf-shelf-heading">
+      <h2 id="pdf-shelf-heading">6 Ấn Phẩm PDF Học Thuật Luyện Thi IELTS Tiếng Việt</h2>
+      <p class="yi-muted">Tải trực tiếp về máy hoặc mở xem ngay trên trình duyệt — mỗi tài liệu đều nhúng liên kết Google Scholar và DOI có thể nhấp.</p>
+      <div class="yi-grid-2" id="pdf-catalog-grid"></div>
+    </section>
+
+    <section class="yi-card" id="pdf-preview-section" hidden aria-labelledby="pdf-preview-title">
+      <div class="yi-unit__top">
+        <h2 id="pdf-preview-title">Xem trước tài liệu PDF</h2>
+        <button type="button" class="yi-btn" id="btn-close-preview">Đóng khung xem trước</button>
+      </div>
+      <iframe
+        id="pdf-preview-frame"
+        title="Khung đọc tài liệu PDF học thuật IELTS"
+        style="width:100%;height:620px;border:1px solid rgba(22,36,71,0.18);border-radius:12px;background:#fff;"
+      ></iframe>
+    </section>
+
+    <section class="yi-card" aria-labelledby="bib-heading">
+      <h2 id="bib-heading">Cơ Sở Dữ Liệu 80 Trích Dẫn Khoa Học Google Scholar (Chuẩn APA 7 &amp; BibTeX)</h2>
+      <p class="yi-muted">Tìm theo tên học giả (Settles, Bax, Field, Hyland, Coxhead, Nation, Dang, Vu…), năm xuất bản, DOI hoặc chủ đề tiếng Việt.</p>
+      <div class="yi-grid-2" style="margin-bottom:14px;">
+        <label>
+          <span class="yi-tag" style="margin-bottom:6px;">Từ khóa tìm kiếm</span>
+          <input type="search" class="yi-input" id="scholar-search" placeholder="Ví dụ: Half-Life Regression, True/False, Việt Nam, collocation…">
+        </label>
+        <label>
+          <span class="yi-tag" style="margin-bottom:6px;">Lọc theo chuyên ngành</span>
+          <select class="yi-select" id="scholar-domain">
+            <option value="all">Tất cả 8 chuyên ngành (80 công trình)</option>
+          </select>
+        </label>
+      </div>
+      <p id="scholar-count" class="yi-muted" role="status" aria-live="polite"></p>
+      <div id="scholar-list" class="yi-path-list"></div>
+    </section>
+  </main>
+
+  <div id="scholar-toast" class="yi-toast" role="status" aria-live="polite" hidden></div>
+
+  <footer class="yi-footer">
+    <div class="yi-footer__inner">
+      <span>© 2026 Trung tâm Luyện thi Quốc tế YYSD · Mọi trích dẫn đều liên kết trực tiếp tới Google Scholar</span>
+      <nav class="yi-footer__links" aria-label="Liên kết chân trang">
+        <a href="index.html">Trang chủ</a>
+        <a href="lo-trinh.html">Lộ trình IELTS</a>
+        <a href="zone.html?zone=mock">Đề Cambridge IELTS</a>
+        <a href="agreement.html">Điều khoản dịch vụ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/tai-lieu.js"></script>
+</body>
+</html>

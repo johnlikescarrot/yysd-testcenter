@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Kiểm toán Việt hóa toàn diện (check_vietnamese.mjs)
- * Xác minh 0 ký tự không phải tiếng Anh / tiếng Việt (CJK, Kana, Hangul, Cyrillic,
+ * Kiểm toán Việt hóa toàn diện (scripts/check_vietnamese.mjs)
+ * Xác minh 0 ký tự phi tiếng Anh / phi tiếng Việt (CJK, Kana, Hangul, Cyrillic,
  * Hebrew, Arabic, Thai, Devanagari), 0 tên tệp phi ASCII, 0 thuộc tính lang="zh",
- * và 0 liên kết ICP cũ trên toàn bộ kho mã nguồn.
+ * và 0 tham chiếu ICP / phông chữ CJK cũ trên toàn bộ kho mã nguồn.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -41,10 +41,36 @@ const BINARY_EXTS = new Set([
   ".zip",
 ]);
 
-const NON_EN_VI_SCRIPT_RE =
-  /[\u3000-\u303f\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef\uac00-\ud7af\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f]/u;
+const FORBIDDEN_RANGES = [
+  [0x3000, 0x303f], // Dấu câu CJK
+  [0x3040, 0x30ff], // Hiragana & Katakana
+  [0x3400, 0x4dbf], // CJK Mở rộng A
+  [0x4e00, 0x9fff], // CJK Hợp nhất
+  [0xf900, 0xfaff], // CJK Tương thích
+  [0xff00, 0xffef], // Ký tự toàn độ rộng CJK
+  [0xac00, 0xd7af], // Hangul
+  [0x0400, 0x04ff], // Cyrillic
+  [0x0590, 0x05ff], // Hebrew
+  [0x0600, 0x06ff], // Arabic
+  [0x0900, 0x097f], // Devanagari
+  [0x0e00, 0x0e7f], // Thai
+];
+
 const LANG_ZH_RE = /\blang=["']zh(?:-[A-Za-z]+)?["']/i;
 const BANNED_LEGACY_RE = /beian\.(?:miit|mps)\.gov\.cn|Noto\+Serif\+SC|Noto\+Sans\+SC/i;
+
+function findForbiddenChar(text) {
+  for (let i = 0; i < text.length; i += 1) {
+    const cp = text.codePointAt(i);
+    for (const [lo, hi] of FORBIDDEN_RANGES) {
+      if (cp >= lo && cp <= hi) {
+        return { ch: String.fromCodePoint(cp), cp };
+      }
+    }
+    if (cp > 0xffff) i += 1;
+  }
+  return null;
+}
 
 const errors = [];
 let scannedFiles = 0;
@@ -81,10 +107,10 @@ function walk(dir) {
     }
 
     scannedFiles += 1;
-    const match = NON_EN_VI_SCRIPT_RE.exec(text);
-    if (match) {
-      const cp = match[0].codePointAt(0).toString(16).toUpperCase().padStart(4, "0");
-      errors.push(`Phát hiện ký tự ngoại ngữ U+${cp} (${match[0]}) trong ${rel}`);
+    const hit = findForbiddenChar(text);
+    if (hit) {
+      const hex = hit.cp.toString(16).toUpperCase().padStart(4, "0");
+      errors.push(`Phát hiện ký tự ngoại ngữ U+${hex} (${hit.ch}) trong ${rel}`);
     }
     if ((ext === ".html" || ext === ".htm" || ext === ".tsx") && LANG_ZH_RE.test(text)) {
       errors.push(`Thuộc tính lang="zh" chưa chuyển sang lang="vi" trong ${rel}`);
@@ -105,4 +131,6 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`ĐẠT 100%: Đã kiểm toán ${scannedFiles} tệp văn bản — 0 ký tự phi Anh/Việt, 0 tên tệp phi ASCII, 100% lang="vi".`);
+console.log(
+  `ĐẠT 100%: Đã kiểm toán ${scannedFiles} tệp văn bản — 0 ký tự phi Anh/Việt, 0 tên tệp phi ASCII, 100% lang="vi".`,
+);

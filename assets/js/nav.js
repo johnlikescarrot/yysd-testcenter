@@ -26,19 +26,23 @@
     );
   }
 
-  // ponytail: Vương quốc Từ chỉ từ Khu từ vựng banner tiến, không chiếm thanh điều hướng
+  function isStaticMode() {
+    return !!(window.YYSD_AUTH && window.YYSD_AUTH.isStaticMode && window.YYSD_AUTH.isStaticMode());
+  }
+
   var TOP_LINKS = [
     { href: "index.html", key: "home", label: "Trang chủ" },
+    { href: "lo-trinh.html", key: "duo-path", label: "Lộ trình IELTS" },
+    { href: "tai-lieu.html", key: "scholar-pdf", label: "Tài liệu PDF" },
     { href: "zone.html?zone=study&s=vocab", key: "words", label: "Từ vựng", zone: "study" },
-    { href: "zone.html?zone=mock", key: "ielts", label: "IELTS", mega: true },
-    { href: "alevel.html", key: "intl", label: " Chương trình quốc tế " },
-    { href: "/rankings", key: "rankings", label: " Xếp hạng Đại học Thế giới ", special: "nav-rankings", rankings: true },
-    { href: "/admission", key: "ai-admit", label: "AI học lên cố vấn ", special: "nav-ai-admit", aiAdmit: true },
-    { href: "dashboard.html", key: "tasks", label: " Trung tâm nhiệm vụ " },
-    { href: "download.html", key: "download", label: " Tải ứng dụng thi máy " },
-    { href: "requirements.html", key: "requirements", label: " Tra cứu tuyển sinh " }
+    { href: "zone.html?zone=mock", key: "ielts", label: "Đề IELTS", mega: true },
+    { href: "alevel.html", key: "intl", label: "Chương trình quốc tế" },
+    { href: "/rankings", key: "rankings", label: "Xếp hạng Đại học", special: "nav-rankings", rankings: true },
+    { href: "/admission", key: "ai-admit", label: "Cố vấn Du học AI", special: "nav-ai-admit", aiAdmit: true },
+    { href: "dashboard.html", key: "tasks", label: "Nhiệm vụ" },
+    { href: "requirements.html", key: "requirements", label: "Tuyển sinh" }
   ].filter(function (l) {
-    if ((l.aiAdmit || l.rankings) &&!canAiAdmit()) return false;
+    if ((l.aiAdmit || l.rankings) && (!canAiAdmit() || isStaticMode())) return false;
     return true;
   });
 
@@ -198,16 +202,16 @@
     var tools = document.createElement("div");
     tools.className = "reme-tools";
     tools.innerHTML =
-      '<button type="button" class="reme-tool" id="nav-bell" aria-label=" thông tri ">' +
+      '<button type="button" class="reme-tool" id="nav-bell" aria-label="Thông báo học tập">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>' +
       "</button>" +
-      '<span class="reme-badge" id="nav-sub">Pro</span>' +
+      '<span class="reme-badge" id="nav-sub">IELTS</span>' +
       renderUser();
 
     var menuBtn = document.createElement("button");
     menuBtn.type = "button";
     menuBtn.className = "nav-menu-btn";
-    menuBtn.setAttribute("aria-label", " mở ra Trình đơn ");
+    menuBtn.setAttribute("aria-label", "Mở trình đơn điều hướng");
     menuBtn.setAttribute("aria-expanded", "false");
     menuBtn.innerHTML =
       '<span class="nav-menu-btn__bar" aria-hidden="true"></span>' +

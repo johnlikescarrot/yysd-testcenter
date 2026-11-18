@@ -1,0 +1,72 @@
+name: Kiểm Định Chất Lượng (100% Coverage · Việt Hóa · Lighthouse 100)
+
+on:
+  push:
+    branches:
+      - main
+      - "arena/**"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Coverage 100% + Kiểm toán Việt hóa + Lighthouse 100
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tải mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài đặt Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Cài đặt gói phụ thuộc
+        run: npm ci
+
+      - name: Kiểm tra ESLint & 100% Việt hóa toàn kho mã nguồn
+        run: npm run lint
+
+      - name: Chạy kiểm thử đơn vị với ngưỡng Code Coverage bắt buộc 100%
+        run: npm run test:coverage
+
+      - name: Xác minh 226 đề Cambridge IELTS & 110 danh sách từ vựng
+        run: npm run check:cambridge
+
+      - name: Đóng gói bản phát hành tĩnh GitHub Pages (_site)
+        run: npm run build:pages
+
+      - name: Kiểm định Google Lighthouse đạt điểm tuyệt đối 100/100/100/100
+        run: |
+          npm install --no-save lighthouse
+          STATIC_ROOT=_site PORT=8090 node scripts/serve_static.mjs &
+          SERVER_PID=$!
+          sleep 2
+          for PAGE in index.html lo-trinh.html tai-lieu.html vocab.html; do
+            npx lighthouse "http://127.0.0.1:8090/${PAGE}" \
+              --output=json \
+              --output-path="/tmp/lh-${PAGE}.json" \
+              --quiet \
+              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage"
+            node --input-type=commonjs -e "
+              const fs = require('node:fs');
+              const r = JSON.parse(fs.readFileSync('/tmp/lh-${PAGE}.json', 'utf8')).categories;
+              const scores = {
+                performance: Math.round(r.performance.score * 100),
+                accessibility: Math.round(r.accessibility.score * 100),
+                bestPractices: Math.round(r['best-practices'].score * 100),
+                seo: Math.round(r.seo.score * 100),
+              };
+              console.log('${PAGE}:', scores);
+              for (const [k, v] of Object.entries(scores)) {
+                if (v < 100) { console.error('Chưa đạt 100 ở ' + k + ': ' + v); process.exit(1); }
+              }
+            "
+          done
+          kill $SERVER_PID || true
