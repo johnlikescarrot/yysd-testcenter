@@ -54,6 +54,11 @@ jobs:
           STATIC_ROOT=_site PORT=8090 node scripts/serve_static.mjs &
           SERVER_PID=$!
           sleep 2
+          # Khởi động ấm trình duyệt Chrome để tránh nhiễu CPU lần chạy đầu trên máy chủ CI
+          npx lighthouse "http://127.0.0.1:8090/index.html" \
+            --output=json --output-path=/tmp/warmup.json --quiet \
+            --only-categories=performance \
+            --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu" || true
           for PAGE in index.html lo-trinh.html tai-lieu.html vocab.html; do
             npx lighthouse "http://127.0.0.1:8090/${PAGE}" \
               --output=json \
