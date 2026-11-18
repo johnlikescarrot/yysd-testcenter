@@ -34,7 +34,11 @@ Các tệp PDF/HTML và MP3 nhỏ được lưu trong Git để dùng được n
 ## GitHub Pages
 
 1. Người có quyền quản trị kho mở **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-2. Workflow **IELTS tiếng Việt · chất lượng và Pages** chạy khi PR cập nhật, khi đẩy lên `main`, khi kích hoạt thủ công và mỗi sáu giờ trên nhánh mặc định sau khi workflow được chấp nhận. Chỉ `main` triển khai sau khi Super-Linter, kiểm thử trình duyệt, Lighthouse và coverage đều đạt. Có thể chạy thủ công workflow từ `main` sau khi workflow đã có trên nhánh đó.
+2. Workflow **IELTS tiếng Việt · chất lượng và Pages** chạy khi PR cập nhật, khi đẩy lên `main`, khi kích hoạt thủ công và mỗi sáu giờ trên nhánh mặc định sau khi workflow được chấp nhận. Mặc định chỉ `main` được triển khai, sau khi Super-Linter, kiểm thử trình duyệt, Lighthouse và coverage đều đạt. Có thể chạy thủ công workflow từ `main` sau khi workflow đã có trên nhánh đó.
 3. Chỉ nội dung được liệt kê trong `quality/build.mjs` được công bố (không mang theo `CNAME` cũ, máy chủ, kho đề hay dữ liệu khác). Đường dẫn tương đối hỗ trợ URL dự án dạng `https://<tài-khoản>.github.io/<tên-kho>/`.
 
 Ngưỡng 100% coverage áp dụng cho từng mô-đun JavaScript của bản IELTS tiếng Việt (dòng, nhánh, hàm, câu lệnh), không áp dụng cho mã cũ. Lighthouse kiểm tra bốn hạng mục trên trang học và bốn sổ tay HTML, ở cấu hình di động và máy tính. Điểm đo tại bản dựng kiểm thử không bảo đảm kết quả giống hệt trên mọi thiết bị hay đường truyền.
+
+### Công bố từ nhánh PR (không merge)
+
+GitHub Pages chỉ có **một** trang công khai cho kho. Nếu muốn thay bản đang phục vụ bằng bản của một PR mà không hợp nhất, người quản trị cần cho phép **đúng tên nhánh** trong **Settings → Environments → github-pages → Deployment branches and tags** và đặt biến kho **`IELTS_PAGES_BRANCH`** bằng cùng tên đó (Settings → Secrets and variables → Actions → Variables). Không mở cho mọi nhánh. Lần push tiếp theo lên nhánh `arena/…` đã chọn, hoặc lần chạy thủ công từ nhánh đó nếu GitHub cho phép, sẽ đóng gói và triển khai sau kiểm thử. Các sự kiện `pull_request` và `schedule` không bao giờ triển khai. Nếu chỉ muốn xem trước thì dùng Live Preview hoặc artifact, không cần thay chính sách.
