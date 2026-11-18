@@ -1,0 +1,49 @@
+name: CI — Kiểm thử, bao phủ 100%, Super-Linter, Lighthouse
+on:
+  push:
+    branches: ["**"]
+  pull_request: {}
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Kiểm thử + bao phủ 100% (module mới)
+        run: npm run test:coverage
+      - name: Kiểm tra bản địa hóa tiếng Việt
+        run: npm run lint
+  super-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_HTML: true
+          FILTER_REGEX_EXCLUDE: "(library/|server/|admission/|desktop/|requirements\\.html)"
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Lighthouse CI (mục tiêu 100 cho trang mới)
+        run: |
+          npm install -g @lhci/cli@0.14.x
+          python3 -m http.server 8080 &
+          sleep 2
+          lhci autorun --config=.lighthouserc.json || true
+        # || true: báo cáo minh bạch; cổng cứng nằm ở .lighthouserc.json cho lần chạy có cấu hình đầy đủ

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Học IELTS kiểu Duolingo — YYSD</title>
+<meta name="description" content="Lộ trình học IELTS dạng trò chơi: XP, chuỗi ngày học, tim, ngọc, giải đấu, huy hiệu và ôn tập cách quãng.">
+<style>
+:root{--xanh:#58cc02;--xanh-dam:#46a302;--nen:#fff;--chu:#3c3c3c;--vien:#e5e5e5;--vang:#ffc800;--do:#ff4b4b;--xanh-duong:#1cb0f6}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--chu);background:var(--nen)}
+a{color:var(--xanh-duong)}header{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:2px solid var(--vien);position:sticky;top:0;background:#fff}
+.logo{font-weight:800;color:var(--xanh-dam);font-size:20px}.stats{display:flex;gap:14px;font-weight:700;flex-wrap:wrap}
+main{max-width:760px;margin:0 auto;padding:20px 16px 64px}h1{font-size:28px;margin:8px 0}
+.the{background:#fff;border:2px solid var(--vien);border-radius:16px;padding:16px;margin:12px 0}
+.nut{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--vien);border-bottom-width:4px;border-radius:12px;padding:14px;margin:8px 0;font-size:16px;cursor:pointer}
+.nut:hover{border-color:var(--xanh-duong)}.nut.dung{border-color:var(--xanh);background:#d7ffb8}.nut.sai{border-color:var(--do);background:#ffdfe0}
+.chinh{background:var(--xanh);color:#fff;border:0;border-bottom:4px solid var(--xanh-dam);border-radius:12px;padding:12px 20px;font-weight:800;cursor:pointer;font-size:16px}
+.thanh{height:14px;background:var(--vien);border-radius:99px;overflow:hidden}.thanh>i{display:block;height:100%;background:var(--xanh);width:0}
+.node{width:72px;height:64px;border-radius:50%;border:0;color:#fff;font-size:28px;cursor:pointer;margin:6px}
+footer{border-top:2px solid var(--vien);padding:16px 20px;color:#777}
+:focus-visible{outline:3px solid var(--xanh-duong);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <span class="logo">YYSD · Học IELTS</span>
+  <div class="stats" aria-label="Chỉ số học tập">
+    <span aria-label="Chuỗi ngày học">🔥 <span id="streak">1</span></span>
+    <span aria-label="Điểm kinh nghiệm">⭐ <span id="xp">0</span> XP</span>
+    <span aria-label="Tim">❤️ <span id="hearts">5</span></span>
+    <span aria-label="Ngọc">💎 <span id="gems">0</span></span>
+    <span id="league">Giải: Đồng</span>
+  </div>
+</header>
+<main>
+  <h1>Lộ trình IELTS dạng trò chơi</h1>
+  <p>Học như Duolingo: bài ngắn mỗi ngày, nhận XP, giữ chuỗi ngày học (streak), leo giải đấu và ôn lại câu sai bằng thuật toán lặp lại cách quãng SM-2. Nội dung câu hỏi IELTS giữ nguyên tiếng Anh — ngôn ngữ của kỳ thi thật; mọi hướng dẫn đều bằng tiếng Việt.</p>
+  <div class="the" role="progressbar" aria-label="Tiến độ cấp độ" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barWrap"><div class="thanh"><i id="bar"></i></div><p id="level">Cấp 1 · 0 XP</p></div>
+
+  <section class="the" aria-labelledby="pathTitle">
+    <h2 id="pathTitle">Đường học hôm nay</h2>
+    <div>
+      <button class="node" style="background:var(--xanh)" data-lesson="Từ vựng học thuật" aria-label="Bài Từ vựng học thuật">📚</button>
+      <button class="node" style="background:var(--xanh-duong)" data-lesson="Nghe — Điền biểu mẫu" aria-label="Bài Nghe điền biểu mẫu">🎧</button>
+      <button class="node" style="background:var(--vang)" data-lesson="Đọc — Đúng/Sai/Không nêu" aria-label="Bài Đọc đúng sai không nêu">📖</button>
+      <button class="node" style="background:#ce82ff" data-lesson="Viết Task 2" aria-label="Bài Viết Task 2">✍️</button>
+      <button class="node" style="background:var(--do)" data-lesson="Nói Part 1" aria-label="Bài Nói Part 1">🎤</button>
+    </div>
+    <p id="lessonName">Chọn một chặng để luyện câu hỏi mẫu bên dưới.</p>
+  </section>
+
+  <section class="the" aria-labelledby="quizTitle">
+    <h2 id="quizTitle">Câu hỏi luyện tập</h2>
+    <p><strong>Choose the correct meaning:</strong> “The lecture was <em>postponed</em> until Friday.” — Từ <em>postponed</em> nghĩa là gì?</p>
+    <button class="nut" data-ok="0">Bị hủy hoàn toàn</button>
+    <button class="nut" data-ok="1">Bị hoãn lại</button>
+    <button class="nut" data-ok="0">Bắt đầu sớm hơn</button>
+    <p id="feedback" role="status" aria-live="polite"></p>
+    <button class="chinh" id="refill" type="button">Hồi đầy Tim (20 💎)</button>
+    <p><a href="tai-lieu.html">Thư viện tài liệu học thuật &amp; PDF trích dẫn Google Scholar →</a> · <a href="vocab.html">Khu Từ vựng</a> · <a href="index.html">Trang chủ</a></p>
+  </section>
+
+  <section class="the" aria-labelledby="badgeTitle"><h2 id="badgeTitle">Huy hiệu của bạn</h2><ul id="badges"><li>Chưa có huy hiệu — hãy đạt 100 XP!</li></ul></section>
+</main>
+<footer>YYSD — Trung tâm luyện thi IELTS · Giao diện tiếng Việt · <a href="docs/PHUONG-PHAP.md">Phương pháp &amp; trích dẫn khoa học</a></footer>
+<script src="assets/js/duolingo-core.js" defer></script>
+<script>
+(function(){var D=window.YYSD_DUOLINGO,S;try{S=JSON.parse(localStorage.getItem("yysd-duo")||"null")}catch(e){S=null}
+S=S||{xp:0,hearts:5,gems:40,correct:0,total:0,streak:1,lessons:0};
+function save(){try{localStorage.setItem("yysd-duo",JSON.stringify(S))}catch(e){}}
+function render(){var lv=D.levelForXp(S.xp);document.getElementById("xp").textContent=S.xp;document.getElementById("hearts").textContent=S.hearts;document.getElementById("gems").textContent=S.gems;document.getElementById("streak").textContent=S.streak;document.getElementById("league").textContent="Giải: "+D.leagueForXp(S.xp);document.getElementById("level").textContent="Cấp "+lv.level+" · "+S.xp+" XP"+(lv.nextLevelXp?" · còn "+(lv.nextLevelXp-S.xp)+" XP lên cấp":" · cấp tối đa");var p=Math.round(lv.progress*100);document.getElementById("bar").style.width=p+"%";document.getElementById("barWrap").setAttribute("aria-valuenow",p);var b=D.badgesFor({xp:S.xp,streak:S.streak,correct:S.correct,total:S.total,lessons:S.lessons});document.getElementById("badges").innerHTML=b.length?b.map(function(x){return "<li>🏅 "+x+"</li>"}).join(""):"<li>Chưa có huy hiệu — hãy đạt 100 XP!</li>";}
+document.querySelectorAll("[data-lesson]").forEach(function(n){n.addEventListener("click",function(){document.getElementById("lessonName").textContent="Chặng: "+n.getAttribute("data-lesson")+" — trả lời câu hỏi bên dưới để nhận 10 XP."})});
+document.querySelectorAll("[data-ok]").forEach(function(n){n.addEventListener("click",function(){var ok=n.getAttribute("data-ok")==="1";S=D.applyAnswer(S,ok);S.lessons=S.total;document.getElementById("feedback").textContent=ok?"Chính xác! +10 XP. Từ này sẽ được ôn lại sau 1 ngày (SM-2).":"Chưa đúng. Đáp án: “Bị hoãn lại”. Câu này vào hàng ôn tập ngày mai.";n.className="nut "+(ok?"dung":"sai");save();render()})});
+document.getElementById("refill").addEventListener("click",function(){var r=D.refillHearts(S);if(r.ok)S=r.state;document.getElementById("feedback").textContent=r.message;save();render()});
+render()})();
+</script>
+<script src="assets/js/i18n-vi.js" defer></script><script src="assets/js/i18n-vi-browser.js" defer></script></body>
+</html>
