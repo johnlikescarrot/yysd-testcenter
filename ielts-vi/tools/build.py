@@ -18,9 +18,19 @@ VOLUMES = {
     "listening": (4, 5, 6, 7, 10, 11, 12),
 }
 LABEL = {"writing": "Viết", "reading": "Đọc", "listening": "Nghe"}
+GRAMMAR = {
+    "c10-t1p1": "Stepwells",
+    "c10-t1p2": "European transport systems",
+    "c10-t1p3": "The psychology of innovation",
+    "c10-t2p1": "Tea and the Industrial Revolution",
+    "c10-t2p2": "Gifted children and learning",
+    "c10-t2p3": "Museums of fine art and their public",
+    "c11-t3p1": "The story of silk",
+}
 PRACTICE = [
     "practice/ielts/sample-academic-reading-1.html",
     "practice/shuzi-tingxie/numbers-1.html",
+    *(f"practice/changnanju/{id}.html" for id in GRAMMAR),
 ]
 HAN = re.compile(r"[\u3400-\u9fff\uf900-\ufaff]")
 MEDIA = re.compile(
@@ -103,10 +113,14 @@ def catalogue(prefix):
     entries = defaultdict(lambda: defaultdict(dict))
     for skill, vol, test, file in papers():
         entries[vol][test][skill] = f"{prefix}{file.relative_to(ROOT)}"
+    grammar_links = "".join(
+        f'<li><a lang="en" href="{prefix}library/practice/changnanju/{slug}.html">{title}</a></li>'
+        for slug, title in GRAMMAR.items()
+    )
     body = [
         '<p class="eyebrow">Bộ sưu tập · Cambridge IELTS</p><h1>Thư viện đề</h1><p class="lead">Chọn tập và kỹ năng để mở đề gốc. Câu hỏi và đáp án bằng tiếng Anh; hướng dẫn, nhận xét và báo cáo bằng tiếng Việt.</p>',
         "<h2>Bài luyện theo chủ điểm</h2>",
-        f'<p><a href="{prefix}library/{PRACTICE[0]}">Đọc: Ong mật tìm đường về tổ</a> · <a href="{prefix}library/{PRACTICE[1]}">Nghe: Ghi số điện thoại</a> · <a href="doi-thoai.html">Nghe kỹ: Đặt bàn ở nhà hàng</a></p><h2>Đề theo tập</h2><p>Chấm câu khách quan ngay trên máy. Phần viết có bộ đếm từ, bản nháp và bảng tự đánh giá; không tự cấp band. Với đề thiếu hình, hãy đối chiếu sách gốc.</p>',
+        f'<p><a href="{prefix}library/{PRACTICE[0]}">Đọc: Ong mật tìm đường về tổ</a> · <a href="{prefix}library/{PRACTICE[1]}">Nghe: Ghi số điện thoại</a> · <a href="doi-thoai.html">Nghe kỹ: Đặt bàn ở nhà hàng</a></p><details><summary>Phân tích và dịch câu phức · 7 bài</summary><ul>{grammar_links}</ul></details><h2>Đề theo tập</h2><p>Chấm câu khách quan ngay trên máy. Phần viết có bộ đếm từ, bản nháp và bảng tự đánh giá; không tự cấp band. Với đề thiếu hình, hãy đối chiếu sách gốc.</p>',
     ]
     for v in sorted(entries, reverse=True):
         body.append(
@@ -162,7 +176,7 @@ def package_paper(skill, path):
     text = text.replace(
         '<div class="passage-pane">', '<div class="passage-pane" lang="en">'
     )
-    text = text.replace('<textarea id="t', '<textarea lang="en" id="t')
+    text = re.sub(r'<textarea id="(t[12])"', r'<textarea lang="en" id="\1"', text)
     text = re.sub(
         r'(<textarea lang="en" id="t([12])")', r'\1 aria-label="Writing Task \2"', text
     )

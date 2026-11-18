@@ -112,6 +112,22 @@ await withBrowser(async (browser, base) => {
       assert.equal(await p.$$eval(".ritem", (es) => es.length), 40, path);
     }
   }
+  const grammar = "library/practice/changnanju/";
+  for (const name of await readdir(new URL(grammar, root))) {
+    await p.goto(base + grammar + name);
+    await p.type("#main_0", "SUBJECT & verb");
+    await p.click(".struct-btn");
+    await p.type("#trans_0", "Bản dịch thử");
+    await p.click(".trans-btn");
+    assert.match(
+      await p.$eval("#structResult_0", (el) => el.textContent),
+      /SUBJECT & verb/,
+    );
+    assert.match(
+      await p.$eval("#transResult_0", (el) => el.textContent),
+      /Bản dịch thử/,
+    );
+  }
   await p.goto(base + "library/practice/ielts/sample-academic-reading-1.html");
   await p.click("[name=q1][value=FALSE]");
   await p.type("[name=q6]", "polarized");
@@ -133,5 +149,5 @@ await withBrowser(async (browser, base) => {
 });
 assert.deepEqual(errors, []);
 console.log(
-  `Chromium: daily lesson, recovery, review, mobile, audio, ${files.length} full papers and both practice tools passed under a project subpath.`,
+  `Chromium: daily lesson, recovery, review, mobile, audio, ${files.length} full papers, seven sentence-analysis lessons and both practice tools passed under a project subpath.`,
 );

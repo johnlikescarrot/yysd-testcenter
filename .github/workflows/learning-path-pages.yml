@@ -19,7 +19,6 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             /ielts-vi/
-            /scripts/cambridge_scoring.py
             /scripts/verify_cambridge_mock_pages.py
             /library/mock/cambridge-reading/
             /library/mock/cambridge-writing/
@@ -32,6 +31,7 @@ jobs:
             /library/mock/cambridge-listening/ielts12_test*_audio*.mp3
             /library/mock/cambridge-listening/*.png
             /library/mock/cambridge-listening/*.jpg
+            /library/practice/changnanju/
             /library/practice/ielts/sample-academic-reading-1.html
             /library/practice/shuzi-tingxie/numbers-1.html
             /app/library/toefl/audio/set-1-s-lr-*.mp3
