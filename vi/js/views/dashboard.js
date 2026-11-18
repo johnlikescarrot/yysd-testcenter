@@ -116,7 +116,7 @@ export function renderDashboard({ state, data, now }) {
     <article class="card">
       <div class="section-head">
         <h2>Hạng đấu tuần này</h2>
-        <span class="pill" style="color:${leagueInfo.current.color}">${icon('crown')}${esc(leagueInfo.current.name)}</span>
+        <span class="pill"><span class="dot" style="background:${leagueInfo.current.color}"></span>${icon('crown')}${esc(leagueInfo.current.name)}</span>
       </div>
       <p class="small muted" style="margin:0 0 .6rem">
         Bạn đang ở vị trí <strong>${league.rank}/${league.total}</strong>.

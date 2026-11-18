@@ -128,7 +128,7 @@ function standings(state, now) {
   <article class="card">
     <div class="section-head">
       <h2>Bảng hạng tuần</h2>
-      <span class="pill" style="color:${info.current.color}">${icon('crown')}${esc(info.current.name)}</span>
+      <span class="pill"><span class="dot" style="background:${info.current.color}"></span>${icon('crown')}${esc(info.current.name)}</span>
     </div>
     <p class="small muted" style="margin:0 0 .6rem">
       Vị trí ${league.rank}/${league.total} · top ${league.cutoff} được thăng hạng.
