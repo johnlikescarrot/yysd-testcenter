@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-      - "arena/3cddb9e1-yysd-testcenter"
+      - "arena/**"
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -13,12 +16,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
   build:
-    name: Đóng gói ứng dụng IELTS tĩnh (_site)
+    name: Đóng gói & kiểm chứng gói GitHub Pages (_site)
     runs-on: ubuntu-latest
     steps:
       - name: Tải mã nguồn
@@ -29,7 +32,8 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Cấu hình GitHub Pages
+      - name: Cấu hình & kích hoạt GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -37,13 +41,14 @@ jobs:
       - name: Tạo gói triển khai tối ưu _site/
         run: node scripts/build_pages.mjs
 
-      - name: Tải gói _site/ lên GitHub Pages
+      - name: Tải gói _site/ lên GitHub Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "_site"
 
   deploy:
-    name: Xuất bản lên GitHub Pages
+    name: Xuất bản chính thức lên GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

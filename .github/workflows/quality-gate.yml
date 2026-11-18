@@ -27,13 +27,17 @@ jobs:
           node-version: "22"
           cache: "npm"
 
+      - name: Cài đặt Google Chrome cho Lighthouse
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Cài đặt gói phụ thuộc
         run: npm ci
 
       - name: Kiểm tra ESLint & 100% Việt hóa toàn kho mã nguồn
         run: npm run lint
 
-      - name: Chạy kiểm thử đơn vị với ngưỡng Code Coverage bắt buộc 100%
+      - name: Chạy kiểm thử đơn vị & tích hợp với Code Coverage bắt buộc 100%
         run: npm run test:coverage
 
       - name: Xác minh 226 đề Cambridge IELTS & 110 danh sách từ vựng
@@ -43,8 +47,10 @@ jobs:
         run: npm run build:pages
 
       - name: Kiểm định Google Lighthouse đạt điểm tuyệt đối 100/100/100/100
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: |
-          npm install --no-save lighthouse
+          npm install --no-save lighthouse@13
           STATIC_ROOT=_site PORT=8090 node scripts/serve_static.mjs &
           SERVER_PID=$!
           sleep 2
@@ -53,7 +59,7 @@ jobs:
               --output=json \
               --output-path="/tmp/lh-${PAGE}.json" \
               --quiet \
-              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage"
+              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu"
             node --input-type=commonjs -e "
               const fs = require('node:fs');
               const r = JSON.parse(fs.readFileSync('/tmp/lh-${PAGE}.json', 'utf8')).categories;
