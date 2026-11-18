@@ -65,12 +65,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -117,7 +117,6 @@ def patch_listening_meta(html: str) -> str:
         ("Cambridge IELTS 5 Test 2 Nghe: ", "Cambridge IELTS 5 Test 3 Nghe: "),
         ("Test 2 Nghe (đề và đáp án Cambridge)", "Test 3 Nghe (đề và đáp án Cambridge)"),
         ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
-        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("ielts5_test2", "ielts5_test3"),
@@ -134,7 +133,6 @@ def patch_reading_meta(html: str) -> str:
         ("Cambridge IELTS 5 Test 2 Đọc học thuật", "Cambridge IELTS 5 Test 3 Đọc học thuật"),
         ("Test 2 Đọc (đề và đáp án Cambridge)", "Test 3 Đọc (đề và đáp án Cambridge)"),
         ("Bakelite、What's so funny?、The Birth of Scientific English", "Early Childhood Education、Nile Delta、The Return of Artificial Intelligence"),
-        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
@@ -153,7 +151,6 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 study reasons/employer support charts + Task 2 gap year essay",
             "Task 1 Garlsdon supermarket map + Task 2 competition vs cooperation essay",
         ),
-        ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Cambridge IELTS 5 · Test 2", "Cambridge IELTS 5 · Test 3"),
         ("Test 2 Viết (đề Cambridge)", "Test 3 Viết (đề Cambridge)"),
         ("cambridge-5-test-2-writing-draft", "cambridge-5-test-3-writing-draft"),
@@ -631,8 +628,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta, *, reading: bool = False) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     html = patch_scoring(html, reading=reading)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")

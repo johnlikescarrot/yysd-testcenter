@@ -121,7 +121,7 @@ def prettify(stem):
     return re.sub(r"[-_]+", " ", stem).strip().title()
 
 
-def build_entry(relpath):
+def build_entry(relpath, added=None):
     """relpath is the file path relative to library/, using '/' separators."""
     path = os.path.join(LIB_DIR, relpath.replace("/", os.sep))
     stem = os.path.splitext(os.path.basename(relpath))[0]
@@ -163,7 +163,7 @@ def build_entry(relpath):
         "subject": subject,
         "duration": duration,
         "description": find_meta(html, "description") or "",
-        "added": git_added_date(path),
+        "added": added or git_added_date(path),
     }
 
 
@@ -182,10 +182,14 @@ def main():
                 files.append(rel)
     files.sort()
 
+    # A first-added date does not change when the page is edited. Reuse it in
+    # shallow checkouts too: their oldest commit can look like a file creation.
+    previous = json.loads(read_text(MANIFEST)) if os.path.isfile(MANIFEST) else {}
+    dates = {item["file"]: item["added"] for item in previous.get("items", [])}
     items, seen = [], set()
     for f in files:
         try:
-            e = build_entry(f)
+            e = build_entry(f, dates.get(f))
         except Exception as ex:
             print("Skipping %s: %s" % (f, ex), file=sys.stderr)
             continue
@@ -221,8 +225,8 @@ def main():
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
-                "added": git_added_date(path),
+                "description": "Nghe toàn bài hoặc từng câu với âm thanh, bản chép theo mốc thời gian, bản dịch và công cụ tra từ.",
+                "added": dates.get("practice/jingting/data/" + n) or git_added_date(path),
             })
 
     # ponytail: refuse to write a manifest that drops HTML sitting in a known subject folder
@@ -246,6 +250,10 @@ def main():
                     file=sys.stderr,
                 )
                 sys.exit(1)
+
+    if previous.get("items") == items and previous.get("count") == len(items):
+        print("library/manifest.json unchanged (%d items)." % len(items))
+        return
 
     manifest = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

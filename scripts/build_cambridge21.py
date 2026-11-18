@@ -43,7 +43,7 @@ WRITING_BLURBS = {
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -56,12 +56,10 @@ def inject_state_vars(html: str) -> str:
 def patch_listening_meta(html: str, n: int) -> str:
     reps = [
         ("Cambridge IELTS 20", "Cambridge IELTS 21"),
-        ("Cambridge IELTS 20", "Cambridge IELTS 21"),
         ("CAMBRIDGE IELTS", "CAMBRIDGE IELTS"),
         ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
-        ("test1", f"test{n}"),
         ("ielts20_test1", f"cam21_test{n}"),
         ("Cambridge IELTS 20 Test 1 Nghe", f"Cambridge IELTS 21 Test {n} Nghe"),
         ("Test 1 Nghe (đề và đáp án Cambridge)", f"Test {n} Nghe (đề và đáp án Cambridge)"),
@@ -75,7 +73,6 @@ def patch_listening_meta(html: str, n: int) -> str:
 def patch_reading_meta(html: str, n: int) -> str:
     reps = [
         ("Cambridge IELTS 20", "Cambridge IELTS 21"),
-        ("Cambridge IELTS 20", "Cambridge IELTS 21"),
         ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
         ("Test 1", f"Test {n}"),
         ("test-1", f"test-{n}"),
@@ -88,16 +85,14 @@ def patch_reading_meta(html: str, n: int) -> str:
 
 
 def patch_writing_meta(html: str, n: int) -> str:
+    # The C20 Test 4 template is reused for every destination. Replace its
+    # draft ID before generic test-number substitutions, or two books share drafts.
     reps = [
-        ("Cambridge IELTS 20", "Cambridge IELTS 21"),
-        ("Cambridge IELTS 20", "Cambridge IELTS 21"),
-        ("<div class=\"num\">20</div>", f"<div class=\"num\">21</div>"),
-        ("Test 4", f"Test {n}"),  # template is cambridge-20-test-4-writing
-        ("test-4", f"test-{n}"),
-        ("Test 1", f"Test {n}"),
-        ("test-1", f"test-{n}"),
         ("cambridge-20-test-4-writing", f"cambridge-21-test-{n}-writing"),
-        ("cambridge-20-test-1-writing", f"cambridge-21-test-{n}-writing"),
+        ("Cambridge IELTS 20", "Cambridge IELTS 21"),
+        ('<div class="num">20</div>', '<div class="num">21</div>'),
+        ("Test 4", f"Test {n}"),
+        ("test-4", f"test-{n}"),
         (
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             WRITING_BLURBS[n],
@@ -115,8 +110,8 @@ def patch_writing_meta(html: str, n: int) -> str:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)}")

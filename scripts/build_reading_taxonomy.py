@@ -17,6 +17,7 @@ from build_listening_taxonomy import (  # noqa: E402
     map_row,
     unique_keep_order,
 )
+from taxonomy_vi import display_taxonomy
 from verify_cambridge_mock_pages import load_test  # noqa: E402
 
 TYPE_XLSX = Path("/Users/frankman/Desktop/雅思阅读题目分类.xlsx")
@@ -188,7 +189,7 @@ def main() -> None:
         "groups": groups,
         "parts": parts,
     }
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(display_taxonomy(payload), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("wrote", OUT, "groups", len(groups), "parts", len(parts), "types", types, "scenes", scenes)
     if skip_no_html:
         uniq = sorted(set(skip_no_html))

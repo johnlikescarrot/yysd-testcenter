@@ -79,10 +79,10 @@
     var strikeHint = "";
     if (isViolation && strikes > 0) {
       strikeHint =
-        '<p class="ime-gate-strikes">已切换中文输入法 <strong>' + strikes + "</strong> 次" +
+        '<p class="ime-gate-strikes">Đã chuyển khỏi bộ gõ tiếng Anh <strong>' + strikes + "</strong> lần" +
         (strikes >= CHEAT_LIMIT
-          ? "（再次切换将作废本次测试）"
-          : "（超过 " + CHEAT_LIMIT + " 次将作废本次测试）") +
+          ? " (nếu chuyển lần nữa, bài kiểm tra sẽ mất hiệu lực)"
+          : " (quá " + CHEAT_LIMIT + " lần sẽ làm bài kiểm tra mất hiệu lực)") +
         "</p>";
     }
     overlay = document.createElement("div");
@@ -92,18 +92,18 @@
     overlay.setAttribute("aria-labelledby", "ime-gate-title");
     overlay.innerHTML =
       '<div class="ime-gate-panel">' +
-        '<h2 id="ime-gate-title">请调整成英文输入模式</h2>' +
+        '<h2 id="ime-gate-title">Chuyển sang bộ gõ tiếng Anh</h2>' +
         (isViolation
-          ? '<p class="ime-gate-lead ime-gate-lead--warn">检测到中文输入法，请切换回英文后再继续测试。</p>'
-          : '<p class="ime-gate-lead">单词检测要求使用英文输入法。中文输入法的英文联想会自动补全，无法用于拼写。</p>') +
+          ? '<p class="ime-gate-lead ime-gate-lead--warn">Đã phát hiện bộ gõ không ở chế độ tiếng Anh, hãy chuyển về tiếng Anh để tiếp tục.</p>'
+          : '<p class="ime-gate-lead">Bài chính tả yêu cầu dùng bộ gõ tiếng Anh. Hãy tắt tính năng gợi ý để tự viết từng chữ cái.</p>') +
         strikeHint +
-        '<p class="ime-gate-tip">Mac：Caps Lock 或 Control+Space 切换到 ABC/英文<br>' +
-        "Windows：Shift 或 Win+Space 切换到 ENG</p>" +
-        '<p class="ime-gate-probe-label">请在下方<strong>逐字</strong>输入 <code>test</code> 以确认：</p>' +
+        '<p class="ime-gate-tip">Mac: Caps Lock hoặc Control+Space chuyển sang ABC/tiếng Anh<br>' +
+        "Windows: Shift hoặc Win+Space chuyển sang ENG</p>" +
+        '<p class="ime-gate-probe-label">Hãy gõ <code>test</code> <strong>từng chữ cái</strong> để xác nhận:</p>' +
         '<div class="ime-gate-progress"></div>' +
         '<input type="text" class="ime-gate-input yysd-en-spell" id="ime-gate-probe" ' +
           'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ' +
-          'lang="en" inputmode="latin" aria-label="输入 test 确认英文输入法" />' +
+          'lang="en" inputmode="latin" aria-label="gõ test để xác nhận bộ gõ tiếng Anh" />' +
         '<p class="ime-gate-err" hidden></p>' +
       "</div>";
     document.body.appendChild(overlay);
@@ -115,14 +115,14 @@
 
     input.addEventListener("compositionstart", function () {
       composing = true;
-      showError("检测到中文输入法，请切换到英文输入法");
+      showError("Đã phát hiện bộ gõ không ở chế độ tiếng Anh, Hãy chuyển sang bộ gõ tiếng Anh");
       resetProbe(input);
     });
 
     input.addEventListener("compositionend", function () {
       composing = false;
       if (input.value) {
-        showError("检测到中文输入法，请切换到英文输入法");
+        showError("Đã phát hiện bộ gõ không ở chế độ tiếng Anh, Hãy chuyển sang bộ gõ tiếng Anh");
         resetProbe(input);
       }
     });
@@ -137,7 +137,7 @@
       if (composing || t.indexOf("Composition") >= 0 || t === "insertReplacementText" ||
           t === "insertFromPaste" || t === "insertFromComposition" || t === "insertFromDrop") {
         e.preventDefault();
-        showError("检测到中文输入法，请切换到英文输入法");
+        showError("Đã phát hiện bộ gõ không ở chế độ tiếng Anh, Hãy chuyển sang bộ gõ tiếng Anh");
         resetProbe(input);
         return;
       }
@@ -145,14 +145,14 @@
         if (e.data.length !== 1 || /[^a-zA-Z]/.test(e.data)) {
           e.preventDefault();
           if (/[\u4e00-\u9fff]/.test(e.data)) {
-            showError("请使用英文输入法");
+            showError("Hãy dùng bộ gõ tiếng Anh");
             resetProbe(input);
           }
           return;
         }
         if (e.data.toLowerCase() !== PROBE[probeIdx]) {
           e.preventDefault();
-          showError("请按顺序逐字输入 test");
+          showError("Hãy gõ lần lượt từng chữ cái test");
           resetProbe(input);
           return;
         }
@@ -170,7 +170,7 @@
 
     input.addEventListener("paste", function (e) {
       e.preventDefault();
-      showError("请手动逐字输入，不可粘贴");
+      showError("Hãy tự gõ từng chữ cái, không dán văn bản");
       resetProbe(input);
     });
 
@@ -198,13 +198,13 @@
     overlay.setAttribute("aria-labelledby", "ime-cheat-title");
     overlay.innerHTML =
       '<div class="ime-gate-panel ime-gate-panel--cheat">' +
-        '<h2 id="ime-cheat-title">检测到作弊行为</h2>' +
-        '<p class="ime-gate-lead ime-gate-lead--warn">测试中途多次切换到中文输入法（已超过 ' +
-          CHEAT_LIMIT + " 次），本次作答无效。</p>" +
-        '<p class="ime-gate-tip">请使用英文输入法完成拼写。可选择重新开始，或退出本次测试。</p>' +
+        '<h2 id="ime-cheat-title">Bài kiểm tra đã dừng</h2>' +
+        '<p class="ime-gate-lead ime-gate-lead--warn">Bộ gõ đã chuyển khỏi tiếng Anh nhiều lần trong khi kiểm tra (vượt giới hạn ' +
+          CHEAT_LIMIT + " lần), lượt trả lời này không còn hiệu lực.</p>" +
+        '<p class="ime-gate-tip">Dùng bộ gõ tiếng Anh để hoàn thành bài chính tả. Có thể bắt đầu lại, hoặc thoát bài kiểm tra này.</p>' +
         '<div class="ime-gate-actions">' +
-          '<button type="button" class="vl-btn vl-btn-primary" id="ime-cheat-restart">重新开始</button>' +
-          '<button type="button" class="vl-btn" id="ime-cheat-exit">退出测试</button>' +
+          '<button type="button" class="vl-btn vl-btn-primary" id="ime-cheat-restart">Bắt đầu lại</button>' +
+          '<button type="button" class="vl-btn" id="ime-cheat-exit">Thoát bài kiểm tra</button>' +
         "</div>" +
       "</div>";
     document.body.appendChild(overlay);

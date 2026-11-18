@@ -13,7 +13,9 @@
     "test:browser": "node browser-test.mjs",
     "lighthouse": "node audit.mjs",
     "audio": "node make-audio.mjs",
-    "deck": "node make-deck.mjs"
+    "deck": "node make-deck.mjs",
+    "reading": "node import-reading.mjs",
+    "test:portal": "node --test portal-test.mjs"
   },
   "devDependencies": {
     "@breezystack/lamejs": "1.2.7",

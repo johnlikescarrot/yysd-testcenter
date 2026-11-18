@@ -49,12 +49,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -610,8 +610,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)}")

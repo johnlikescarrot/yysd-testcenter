@@ -14,7 +14,7 @@ let index = 0;
 try {
   for (const { context } of lessons.filter((lesson) => lesson.context?.audio)) {
     const wasi = new WASI({
-      version: 'preview1', args: ['flite', '-voice', voices[index++], '-t', context.text, '/out/speech.wav'],
+      version: 'preview1', args: ['flite', '-voice', voices[index++ % voices.length], '-t', context.text, '/out/speech.wav'],
       preopens: { '/out': temp },
     });
     const program = await WebAssembly.instantiate(wasm, wasi.getImportObject());

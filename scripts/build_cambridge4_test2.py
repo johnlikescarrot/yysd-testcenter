@@ -49,12 +49,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -141,7 +141,6 @@ def patch_listening_meta(html: str) -> str:
         ("Cambridge IELTS 4 Test 1 Nghe: ", "Cambridge IELTS 4 Test 2 Nghe: "),
         ("Test 1 Nghe (đề và đáp án Cambridge)", "Test 2 Nghe (đề và đáp án Cambridge)"),
         ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
-        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts4_test1", "ielts4_test2"),
@@ -166,7 +165,6 @@ def patch_reading_meta(html: str) -> str:
             "Lost for Words、Alternative Medicine in Australia、Play Is a Serious Business",
         ),
         ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
-        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -188,7 +186,6 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 mô tả bảng số liệu + Task 2 bài nghị luận",
             "Task 1 电力图表 + Task 2 幸福话câubài nghị luận",
         ),
-        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1 Viết (đề Cambridge)", "Test 2 Viết (đề Cambridge)"),
         ("cambridge-4-test-1-writing-draft", "cambridge-4-test-2-writing-draft"),
@@ -674,8 +671,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta, *, reading: bool = False) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     html = patch_scoring(html, reading=reading)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")

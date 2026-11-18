@@ -54,12 +54,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -76,7 +76,6 @@ def patch_listening_meta(html: str) -> str:
         ("Cambridge IELTS 9 Test 1 Nghe: ", "Cambridge IELTS 8 Test 1 Nghe: "),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
         ("Cambridge IELTS 9 · Test 1", "Cambridge IELTS 8 · Test 1"),
-        ("Cambridge IELTS 9 · Test 1", "Cambridge IELTS 8 · Test 1"),
         ("Cambridge IELTS 9 Test 1 Nghe (đề và đáp án Cambridge)", "Cambridge IELTS 8 Test 1 Nghe (đề và đáp án Cambridge)"),
         ("ielts9_test1", "cam8_test1"),
         ("cam9_test1", "cam8_test1"),
@@ -92,7 +91,6 @@ def patch_reading_meta(html: str) -> str:
         ("Cambridge IELTS 9 · Test 3 (Đọc)", "Cambridge IELTS 8 · Test 1 (Đọc)"),
         ("Cambridge IELTS 9 Test 3 Đọc học thuật", "Cambridge IELTS 8 Test 1 Đọc học thuật"),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
-        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
         ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
         ("Cambridge IELTS 9 Test 3 Đọc (đề và đáp án Cambridge)", "Cambridge IELTS 8 Test 1 Đọc (đề và đáp án Cambridge)"),
         ("Test 3", "Test 1"),
@@ -122,7 +120,6 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 land degradation pie chart + Task 2 parents vs school citizenship essay",
         ),
         ('<div class="num">9</div>', '<div class="num">8</div>'),
-        ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
         ("Cambridge IELTS 9 · Test 3", "Cambridge IELTS 8 · Test 1"),
         ("Cambridge IELTS 9 Test 3 Viết (đề Cambridge)", "Cambridge IELTS 8 Test 1 Viết (đề Cambridge)"),
         ("cambridge-9-test-3-writing-draft", "cambridge-8-test-1-writing-draft"),
@@ -640,8 +637,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)}")

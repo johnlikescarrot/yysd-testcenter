@@ -271,11 +271,11 @@
     var lead = $("cdt-gate-sections-lead");
     var lab = $("cdt-gate-sec-label");
     if (isReading(state.item)) {
-      if (lead) lead.textContent = "适合分项突破，可只练某几篇文章；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习文章：";
+      if (lead) lead.textContent = "Luyện riêng từng phần, có thể chọn một số bài đọc; đồng hồ đếm lên nên bạn có thể làm theo nhịp của mình.";
+      if (lab) lab.textContent = "Chọn bài đọc để luyện: ";
     } else {
-      if (lead) lead.textContent = "适合分项突破，可只练某几个部分；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习部分：";
+      if (lead) lead.textContent = "Chọn một hoặc nhiều phần cần luyện. Đồng hồ đếm thời gian đã làm thay vì đếm ngược.";
+      if (lab) lab.textContent = "Chọn phần luyện tập:";
     }
     host.innerHTML = parts.map(function (p) {
       var on = !prefer || prefer === p.id;
@@ -295,7 +295,7 @@
     for (var i = 0; i < boxes.length; i++) {
       if (!boxes[i].checked) { allOn = false; break; }
     }
-    btn.textContent = allOn ? "取消全选" : "全选";
+    btn.textContent = allOn ? "Bỏ chọn tất cả" : "Chọn tất cả";
   }
 
   function selectedGateSections() {
@@ -1271,7 +1271,7 @@
 
   function showSubmitLoading(msg) {
     var text = $("cdt-submit-loading-text");
-    if (text) text.textContent = msg || "正在加载成绩报告…";
+    if (text) text.textContent = msg || "Đang tải báo cáo kết quả…";
     showMask("cdt-submit-loading", true);
   }
 
@@ -1280,10 +1280,10 @@
   }
 
   function submitLoadingMsg(plan) {
-    if (!plan) return "正在加载成绩报告…";
-    if (plan.action === "hop") return "正在进入下一科…";
-    if (plan.action === "report") return "正在加载成绩报告…";
-    return "正在生成成绩单…";
+    if (!plan) return "Đang tải báo cáo kết quả…";
+    if (plan.action === "hop") return "Đang mở kỹ năng tiếp theo…";
+    if (plan.action === "report") return "Đang tải báo cáo kết quả…";
+    return "Đang tạo bảng điểm…";
   }
 
   function updateTimer(seconds) {
@@ -1544,12 +1544,12 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? "详解批改如下，不计入成绩。"
+        ? "Xem phần chấm và lời giải bên dưới, không tính vào kết quả."
         : (state.pack === "drill"
           ? (isListening(state.item)
-            ? "练习已交卷 · 成绩单与解析如下；可用顶部播放器回放听力。"
-            : "练习已交卷 · 成绩单与解析如下。")
-          : "模考已交卷 · 下方为本次作答与解析。");
+            ? "Đã nộp bài luyện · xem kết quả và lời giải bên dưới; bạn có thể nghe lại bằng trình phát ở trên."
+            : "Đã nộp bài luyện · xem kết quả và lời giải bên dưới.")
+          : "Đã nộp bài thi thử · xem câu trả lời và lời giải bên dưới.");
     }
   }
 

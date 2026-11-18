@@ -17,14 +17,14 @@ function allAnswers(session, correct = true) {
   return session;
 }
 
-test('curriculum: three sequences, four skills, unique questions and valid models', () => {
-  assert.equal(units.length, 3);
-  assert.equal(lessons.length, 12);
-  assert.equal(lessons.reduce((n, lesson) => n + lesson.questions.length, 0), 36);
+test('curriculum: four sequences, four skills, unique questions and valid models', () => {
+  assert.equal(units.length, 4);
+  assert.equal(lessons.length, 16);
+  assert.equal(lessons.reduce((n, lesson) => n + lesson.questions.length, 0), 53);
   for (const unit of units) assert.deepEqual(unit.lessons.map(({ skill }) => skill), Object.keys(skills));
   for (const lesson of lessons) {
     assert.equal(byLesson[lesson.id], lesson);
-    assert.equal(lesson.questions.length, 3);
+    assert.equal(lesson.questions.length, lesson.id === 'honeybees' ? 8 : 3);
     for (const question of lesson.questions) {
       assert.equal(question.lessonId, lesson.id);
       if (question.type === 'choice') {
@@ -33,7 +33,7 @@ test('curriculum: three sequences, four skills, unique questions and valid model
       }
       if (question.type === 'write') assert.ok(wordCount(question.example) >= question.minimum);
     }
-    if (lesson.skill === 'listen') assert.match(lesson.context.audio, /^\w+\.mp3$/);
+    if (lesson.skill === 'listen') assert.match(lesson.context.audio, /^[\w-]+\.mp3$/);
   }
 });
 
