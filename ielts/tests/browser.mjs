@@ -48,6 +48,8 @@ test('di động: làm bài Nghe, ôn câu sai và lưu mục tiêu qua tải l�
   assert.equal(media.status(), 206);
   assert.match(media.headers()['content-type'], /audio\/mpeg/);
   assert.equal((await media.body()).length, 32);
+  await page.locator('audio').evaluate((audio) => audio.load());
+  await page.waitForFunction(() => document.querySelector('audio')?.duration > 10);
   await page.getByRole('radio', { name: '2:00 p.m.' }).check();
   await page.getByRole('button', { name: 'Kiểm tra' }).click();
   await page.getByRole('heading', { name: 'Chưa chính xác' }).waitFor();
