@@ -1423,11 +1423,15 @@ a:hover {
 }
 
 #profile-badges {
-  min-height: 430px;
+  min-height: 470px;
 }
 
 #profile-due {
-  min-height: 280px;
+  min-height: 320px;
+}
+
+#profile-soon {
+  min-height: 1.6em;
 }
 
 #league-rows {

@@ -120,6 +120,37 @@ jobs:
             head -c 5000 .lighthouseci/assertion-results.json 2>/dev/null \
               || echo "không có tệp vi phạm"
             echo '```'
+            echo ""
+            echo "### Dịch bố cục"
+            echo ""
+            echo '```text'
+            for f in .lighthouseci/lhr-*.json; do
+              [ -f "${f}" ] || continue
+              jq -r '.finalUrl as $u
+                | .audits["layout-shift-elements"].details.items[]?
+                | "\($u) \(.node.selector) \(.score)"' "${f}"
+            done | sort -u | head -n 25
+            echo '```'
+            echo ""
+            echo "### Lỗi console"
+            echo ""
+            echo '```text'
+            for f in .lighthouseci/lhr-*.json; do
+              [ -f "${f}" ] || continue
+              jq -r '.audits["errors-in-console"].details.items[]?
+                | "\(.source) | \(.description)"' "${f}"
+            done | sort -u | head -n 20
+            echo '```'
+            echo ""
+            echo "### Tương phản"
+            echo ""
+            echo '```text'
+            for f in .lighthouseci/lhr-*.json; do
+              [ -f "${f}" ] || continue
+              jq -r '.audits["color-contrast"].details.items[]?
+                | "\(.node.selector) :: \(.node.snippet)"' "${f}"
+            done | sort -u | head -n 20
+            echo '```'
           } > "${body}"
           number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
           if [ -n "${number}" ]; then
