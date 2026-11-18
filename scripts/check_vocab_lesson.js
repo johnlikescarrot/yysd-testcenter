@@ -17,7 +17,7 @@ function parseWordData(html) {
 const listPath = path.join(root, "library/study/vocab/高中单词LIST1.html");
 assert(fs.existsSync(listPath), "LIST1 exists");
 const words = parseWordData(fs.readFileSync(listPath, "utf8"));
-assert(words[0].word === "firm", "first word firm");
+assert(words.length === 57 && words[0].word === "include", "published LIST1 workbook order");
 
 const cet4 = path.join(root, "library/study/vocab-cet4/四级单词LIST1.html");
 assert(fs.existsSync(cet4), "cet4 LIST1");
@@ -41,8 +41,8 @@ const js = fs.readFileSync(path.join(root, "assets/js/vocab-lesson.js"), "utf8")
   "listen_meaning",
   "scramble",
   "type_spell",
-  "错题重练",
-  "免费重新注入",
+  "vl-retry-go",
+  "vl-refill",
   "parseWordData",
   "mergeWrongWords",
   "yysd:vocab-lesson-streak"
@@ -53,10 +53,15 @@ assert(html.includes("vocab-lesson.js") && html.includes("vl-root"), "lesson she
 
 const zone = fs.readFileSync(path.join(root, "assets/js/zone.js"), "utf8");
 assert(!zone.includes("vocab-realm-banner"), "zone realm promo hidden");
-assert(zone.includes("开始背单词") || zone.includes("开始 ›"), "zone homework CTA");
+assert(zone.includes('mod("shelf", "vocab-shelf.html"') && zone.includes('setCta("shelf-cta", d.continueLearn.href'), "bookshelf and resume links");
 
 const vocab = fs.readFileSync(path.join(root, "assets/js/vocab.js"), "utf8");
-assert(vocab.includes("vocabLessonHref") && vocab.includes("开始小课"), "vocab hub CTA");
+// The obsolete hub now redirects into the shelf. Test the destinations, not button copy.
+for (const [search, expected] of [["", "vocab-shelf.html"], ["?book=special", "vocab-shelf.html?book=special"], ["?book=themes", "vocab-shelf.html?view=catalog"]]) {
+  let destination;
+  require("node:vm").runInNewContext(vocab, { URLSearchParams, location: { search, replace: href => { destination = href; } } });
+  assert(destination === expected, "vocab shelf redirect: " + search);
+}
 
 const realm = fs.readFileSync(path.join(root, "assets/js/word-realm.js"), "utf8");
 assert(realm.includes("from=realm") && realm.includes("vocab-lesson.html"), "realm → lesson");

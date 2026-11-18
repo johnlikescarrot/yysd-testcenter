@@ -10,6 +10,12 @@ on:
       - "library/**"
       - "app/library/toefl/**/*.json"
       - "app/assets/js/hit-shell.js"
+      - "assets/js/config.js"
+      - "assets/js/exam*.js"
+      - "assets/js/zone.js"
+      - "assets/js/vocab-*.js"
+      - "scripts/check_cdt_p1.js"
+      - "scripts/check_vocab_lesson.js"
       - "scripts/localize_toefl_labels.py"
       - "scripts/audit_vietnamese.py"
       - "scripts/locales/toefl-vi.json"
@@ -58,6 +64,11 @@ jobs:
 
       - name: Rebuild the portable Cambridge sources in a temporary directory
         run: python scripts/verify_cambridge_sources.py
+
+      - name: Verify CDT and vocabulary routes
+        run: |
+          node scripts/check_cdt_p1.js
+          node scripts/check_vocab_lesson.js
 
       - name: Verify vocab wrong-word hooks
         run: python scripts/verify_vocab_wrongword_hooks.py

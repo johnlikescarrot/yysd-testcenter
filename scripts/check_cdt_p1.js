@@ -147,7 +147,11 @@ assert(/cal-dual/.test(teach) && /row\.id \+ "-explain"/.test(teach), "teacher q
 assert(/function isExplainExerciseId/.test(server) && /practiceExerciseIds/.test(server), "server skips explain complete");
 assert(/function isExplainMode/.test(bridge) && /mountExplainTranscript/.test(bridge), "bridge explain transcript");
 assert(/dataset.explain/.test(exam) && /src \+= "&explain=1"/.test(exam), "exam explain qs");
-assert(/20260909jtopen/.test(cfg), "CONTENT_VER explain");
+// The release tag can advance; both consumers must still request the same edition.
+var contentVersion = cfg.match(/var CONTENT_VER = "(\d{8})[^"]*"/);
+assert(contentVersion && Number(contentVersion[1]) >= 20260909, "post-transcript content version");
+assert(cfg.includes('"library/manifest.json?v=" + encodeURIComponent(CONTENT_VER)') &&
+  exam.includes('item.file + "?v=" + encodeURIComponent(Y.CONTENT_VER'), "versioned manifest and paper URLs");
 
 var c9 = fs.readFileSync("library/mock/cambridge-listening/cambridge-9-test-4.html", "utf8");
 function c9clip(title, start, end) {
