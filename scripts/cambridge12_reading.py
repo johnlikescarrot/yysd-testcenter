@@ -8,7 +8,7 @@ def ans(*v):
 
 
 def explain(*v):
-    return "答案：" + " / ".join(v) + "。"
+    return "Đáp án: " + " / ".join(v) + "."
 
 
 def Q(no, *answers, q=None, options=None):

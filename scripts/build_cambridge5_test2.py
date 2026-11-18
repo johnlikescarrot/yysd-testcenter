@@ -61,7 +61,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -93,12 +93,11 @@ def patch_reading_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 听力", "剑桥雅思5 Test 2 听力"),
-        ("剑桥雅思5 · Test 1（听力）", "剑桥雅思5 · Test 2（听力）"),
-        ("剑桥雅思5 Test 1 听力：", "剑桥雅思5 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
+        ("Cambridge IELTS 5 Test 1 Nghe", "Cambridge IELTS 5 Test 2 Nghe"),
+        ("Cambridge IELTS 5 · Test 1 (Nghe)", "Cambridge IELTS 5 · Test 2 (Nghe)"),
+        ("Cambridge IELTS 5 Test 1 Nghe: ", "Cambridge IELTS 5 Test 2 Nghe: "),
+        ("Test 1 Nghe (đề và đáp án gốc)", "Test 2 Nghe (đề và đáp án gốc)"),
+        ("Cambridge IELTS 5 · Test 1", "Cambridge IELTS 5 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts5_test1", "ielts5_test2"),
@@ -110,13 +109,12 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 阅读", "剑桥雅思5 Test 2 阅读"),
-        ("剑桥雅思5 · Test 1（阅读）", "剑桥雅思5 · Test 2（阅读）"),
-        ("剑桥雅思5 Test 1 学术类阅读", "剑桥雅思5 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 5 Test 1 Đọc", "Cambridge IELTS 5 Test 2 Đọc"),
+        ("Cambridge IELTS 5 · Test 1 (Đọc)", "Cambridge IELTS 5 · Test 2 (Đọc)"),
+        ("Cambridge IELTS 5 Test 1 Kỹ năng Đọc học thuật", "Cambridge IELTS 5 Test 2 Kỹ năng Đọc học thuật"),
+        ("Test 1 Đọc (đề và đáp án gốc)", "Test 2 Đọc (đề và đáp án gốc)"),
         ("Johnson Dictionary、Nature or Nurture、The Truth about the Environment", "Bakelite、What's so funny?、The Birth of Scientific English"),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
+        ("Cambridge IELTS 5 · Test 1", "Cambridge IELTS 5 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -127,18 +125,17 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 1 写作", "剑桥雅思5 Test 2 写作"),
-        ("剑桥雅思5 · Test 1（写作）", "剑桥雅思5 · Test 2（写作）"),
-        ("剑桥雅思5 Test 1 学术类写作", "剑桥雅思5 Test 2 学术类写作"),
+        ("Cambridge IELTS 5 Test 1 Viết", "Cambridge IELTS 5 Test 2 Viết"),
+        ("Cambridge IELTS 5 · Test 1 (Viết)", "Cambridge IELTS 5 · Test 2 (Viết)"),
+        ("Cambridge IELTS 5 Test 1 Kỹ năng Viết học thuật", "Cambridge IELTS 5 Test 2 Kỹ năng Viết học thuật"),
         (
             "Task 1 population 65+ graph + Task 2 equal male/female university places essay",
             "Task 1 study reasons/employer support charts + Task 2 gap year essay",
         ),
-        ("剑桥雅思 5 · Test 1", "剑桥雅思 5 · Test 2"),
-        ("剑桥雅思5 · Test 1", "剑桥雅思5 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Cambridge IELTS 5 · Test 1", "Cambridge IELTS 5 · Test 2"),
+        ("Test 1 Viết (Đề Cambridge)", "Test 2 Viết (Đề Cambridge)"),
         ("cambridge-10-test-1-writing-draft", "cambridge-5-test-2-writing-draft"),
-        ("【剑桥雅思5 · Test 1 写作】", "【剑桥雅思5 · Test 2 写作】"),
+        ("[Cambridge IELTS 5 · Test 1 Viết]", "[Cambridge IELTS 5 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("population-65", "study-charts"),
@@ -283,9 +280,9 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["C", "E", "F"],
                         "questions": [
-                            {"id": "L18", "no": 18, "explain": "答案：C、E、F，顺序不限。"},
-                            {"id": "L19", "no": 19, "explain": "答案：C、E、F，顺序不限。"},
-                            {"id": "L20", "no": 20, "explain": "答案：C、E、F，顺序不限。"},
+                            {"id": "L18", "no": 18, "explain": "Đáp án: C, E, F (không yêu cầu thứ tự)."},
+                            {"id": "L19", "no": 19, "explain": "Đáp án: C, E, F (không yêu cầu thứ tự)."},
+                            {"id": "L20", "no": 20, "explain": "Đáp án: C, E, F (không yêu cầu thứ tự)."},
                         ],
                     },
                 ],
@@ -415,7 +412,7 @@ def reading_test() -> dict:
         {
             "kind": "multi",
             "title": "Questions 9 and 10",
-            "instruction": "Choose TWO letters, A–E. Which TWO of the following factors influencing the design of Bakelite objects are mentioned in the text? (顺序不限)",
+            "instruction": "Choose TWO letters, A–E. Which TWO of the following factors influencing the design of Bakelite objects are mentioned in the text? (không yêu cầu thứ tự)",
             "box": {
                 "A": "the function which the object would serve",
                 "B": "the ease with which the resin could fill the mould",
@@ -425,8 +422,8 @@ def reading_test() -> dict:
             },
             "answerSet": ["B", "C"],
             "questions": [
-                {"id": "Q9", "no": 9, "explain": "答案：B 与 C，顺序不限。"},
-                {"id": "Q10", "no": 10, "explain": "答案：B 与 C，顺序不限。"},
+                {"id": "Q9", "no": 9, "explain": "Đáp án: B và C (không yêu cầu thứ tự)."},
+                {"id": "Q10", "no": 10, "explain": "Đáp án: B và C (không yêu cầu thứ tự)."},
             ],
         },
         {

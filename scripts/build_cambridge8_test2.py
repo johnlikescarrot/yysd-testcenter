@@ -54,7 +54,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -85,10 +85,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 听力", "剑桥雅思8 Test 2 听力"),
-        ("剑桥雅思8 · Test 1（听力）", "剑桥雅思8 · Test 2（听力）"),
-        ("剑桥雅思8 Test 1 听力：", "剑桥雅思8 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 1 Nghe", "Cambridge IELTS 8 Test 2 Nghe"),
+        ("Cambridge IELTS 8 · Test 1 (Nghe)", "Cambridge IELTS 8 · Test 2 (Nghe)"),
+        ("Cambridge IELTS 8 Test 1 Nghe: ", "Cambridge IELTS 8 Test 2 Nghe: "),
+        ("Test 1 Nghe (đề và đáp án gốc)", "Test 2 Nghe (đề và đáp án gốc)"),
         ("test-1", "test-2"),
         ("cam8_test1", "cam8_test2"),
     ]
@@ -100,10 +100,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 阅读", "剑桥雅思8 Test 2 阅读"),
-        ("剑桥雅思8 · Test 1（阅读）", "剑桥雅思8 · Test 2（阅读）"),
-        ("剑桥雅思8 Test 1 学术类阅读", "剑桥雅思8 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 1 Đọc", "Cambridge IELTS 8 Test 2 Đọc"),
+        ("Cambridge IELTS 8 · Test 1 (Đọc)", "Cambridge IELTS 8 · Test 2 (Đọc)"),
+        ("Cambridge IELTS 8 Test 1 Kỹ năng Đọc học thuật", "Cambridge IELTS 8 Test 2 Kỹ năng Đọc học thuật"),
+        ("Test 1 Đọc (đề và đáp án gốc)", "Test 2 Đọc (đề và đáp án gốc)"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -114,16 +114,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 1 写作", "剑桥雅思8 Test 2 写作"),
-        ("剑桥雅思8 · Test 1（写作）", "剑桥雅思8 · Test 2（写作）"),
-        ("剑桥雅思8 Test 1 学术类写作", "剑桥雅思8 Test 2 学术类写作"),
+        ("Cambridge IELTS 8 Test 1 Viết", "Cambridge IELTS 8 Test 2 Viết"),
+        ("Cambridge IELTS 8 · Test 1 (Viết)", "Cambridge IELTS 8 · Test 2 (Viết)"),
+        ("Cambridge IELTS 8 Test 1 Kỹ năng Viết học thuật", "Cambridge IELTS 8 Test 2 Kỹ năng Viết học thuật"),
         (
             "Task 1 land degradation pie chart + Task 2 parents vs school citizenship essay",
             "Task 1 UK school spending pie charts + Task 2 technology and relationships essay",
         ),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Test 1 Viết (Đề Cambridge)", "Test 2 Viết (Đề Cambridge)"),
         ("cambridge-8-test-1-writing-draft", "cambridge-8-test-2-writing-draft"),
-        ("【剑桥雅思8 · Test 1 写作】", "【剑桥雅思8 · Test 2 写作】"),
+        ("[Cambridge IELTS 8 · Test 1 Viết]", "[Cambridge IELTS 8 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("land-degradation", "school-spending"),

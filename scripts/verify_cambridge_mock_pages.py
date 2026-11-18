@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -131,6 +132,16 @@ def check_page(path: Path) -> list[str]:
         test = load_test(path)
     except Exception as exc:  # noqa: BLE001 - report all parse failures
         return [f"{path}: cannot parse TEST block: {exc}"]
+
+    # Never infer a language from the IELTS passages/answers. The surrounding
+    # learner UI, including strings rendered only after submission, is Vietnamese.
+    shell = text.replace(extract_test_object(text), "", 1)
+    if '<html lang="vi">' not in shell or re.search(r"[\u3400-\u9fff]", shell):
+        errors.append(f"{path}: check the page language and untranslated exam UI")
+    if "cambridge-writing" in str(path):
+        for task in ("task1", "task2"):
+            if not test.get(task, {}).get("prompt"):
+                errors.append(f"{path}: missing {task} prompt")
 
     total_questions = 0
     table_groups = []

@@ -54,3 +54,6 @@ library/study/vocab-themes/raw/exam__*_book.json
 /quality/coverage/
 /quality/dist/
 /quality/reports/
+
+# Python content verification
+__pycache__/

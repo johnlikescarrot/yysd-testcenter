@@ -49,7 +49,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -80,10 +80,10 @@ def patch_note_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 听力", "剑桥雅思8 Test 3 听力"),
-        ("剑桥雅思8 · Test 2（听力）", "剑桥雅思8 · Test 3（听力）"),
-        ("剑桥雅思8 Test 2 听力：", "剑桥雅思8 Test 3 听力："),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 2 Nghe", "Cambridge IELTS 8 Test 3 Nghe"),
+        ("Cambridge IELTS 8 · Test 2 (Nghe)", "Cambridge IELTS 8 · Test 3 (Nghe)"),
+        ("Cambridge IELTS 8 Test 2 Nghe: ", "Cambridge IELTS 8 Test 3 Nghe: "),
+        ("Test 2 Nghe (đề và đáp án gốc)", "Test 3 Nghe (đề và đáp án gốc)"),
         ("test-2", "test-3"),
         ("cam8_test2", "cam8_test3"),
     ]
@@ -95,10 +95,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 阅读", "剑桥雅思8 Test 3 阅读"),
-        ("剑桥雅思8 · Test 2（阅读）", "剑桥雅思8 · Test 3（阅读）"),
-        ("剑桥雅思8 Test 2 学术类阅读", "剑桥雅思8 Test 3 学术类阅读"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 2 Đọc", "Cambridge IELTS 8 Test 3 Đọc"),
+        ("Cambridge IELTS 8 · Test 2 (Đọc)", "Cambridge IELTS 8 · Test 3 (Đọc)"),
+        ("Cambridge IELTS 8 Test 2 Kỹ năng Đọc học thuật", "Cambridge IELTS 8 Test 3 Kỹ năng Đọc học thuật"),
+        ("Test 2 Đọc (đề và đáp án gốc)", "Test 3 Đọc (đề và đáp án gốc)"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
     ]
@@ -109,16 +109,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 写作", "剑桥雅思8 Test 3 写作"),
-        ("剑桥雅思8 · Test 2（写作）", "剑桥雅思8 · Test 3（写作）"),
-        ("剑桥雅思8 Test 2 学术类写作", "剑桥雅思8 Test 3 学术类写作"),
+        ("Cambridge IELTS 8 Test 2 Viết", "Cambridge IELTS 8 Test 3 Viết"),
+        ("Cambridge IELTS 8 · Test 2 (Viết)", "Cambridge IELTS 8 · Test 3 (Viết)"),
+        ("Cambridge IELTS 8 Test 2 Kỹ năng Viết học thuật", "Cambridge IELTS 8 Test 3 Kỹ năng Viết học thuật"),
         (
             "Task 1 UK school spending pie charts + Task 2 technology and relationships essay",
             "Task 1 cement and concrete production diagrams + Task 2 petrol price traffic pollution essay",
         ),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Test 2 Viết (Đề Cambridge)", "Test 3 Viết (Đề Cambridge)"),
         ("cambridge-8-test-2-writing-draft", "cambridge-8-test-3-writing-draft"),
-        ("【剑桥雅思8 · Test 2 写作】", "【剑桥雅思8 · Test 3 写作】"),
+        ("[Cambridge IELTS 8 · Test 2 Viết]", "[Cambridge IELTS 8 · Test 3 Viết]"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("school-spending", "cement-concrete"),
@@ -253,8 +253,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["B", "E"],
                         "questions": [
-                            {"id": "L9", "no": 9, "explain": "答案：B 与 E，顺序不限。"},
-                            {"id": "L10", "no": 10, "explain": "答案：B 与 E，顺序不限。"},
+                            {"id": "L9", "no": 9, "explain": "Đáp án: B và E (không yêu cầu thứ tự)."},
+                            {"id": "L10", "no": 10, "explain": "Đáp án: B và E (không yêu cầu thứ tự)."},
                         ],
                     },
                 ],
@@ -482,11 +482,11 @@ def reading_test() -> dict:
             },
             "answerSet": ["B", "C", "F", "H", "J"],
             "questions": [
-                {"id": "Q14", "no": 14, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q15", "no": 15, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q16", "no": 16, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q17", "no": 17, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q18", "no": 18, "explain": "答案：B、C、F、H、J，顺序不限。"},
+                {"id": "Q14", "no": 14, "explain": "Đáp án: B, C, F, H, J (không yêu cầu thứ tự)."},
+                {"id": "Q15", "no": 15, "explain": "Đáp án: B, C, F, H, J (không yêu cầu thứ tự)."},
+                {"id": "Q16", "no": 16, "explain": "Đáp án: B, C, F, H, J (không yêu cầu thứ tự)."},
+                {"id": "Q17", "no": 17, "explain": "Đáp án: B, C, F, H, J (không yêu cầu thứ tự)."},
+                {"id": "Q18", "no": 18, "explain": "Đáp án: B, C, F, H, J (không yêu cầu thứ tự)."},
             ],
         },
         {

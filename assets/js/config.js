@@ -6,7 +6,7 @@ window.YYSD = (function () {
   "use strict";
 
   // Bump when library HTML changes so exam iframe skips stale browser cache.
-  var CONTENT_VER = "20260909jtopen";
+  var CONTENT_VER = "20261118vi";
   // ponytail: 剑7/12 与剑10 T4P2 仍缺，目录只列出已有册
   var JINGTING_OPEN = true;
   var WRONG_WORDS_KEY = "yysd:wrong-words";
@@ -16,14 +16,14 @@ window.YYSD = (function () {
   var ZONES = ["study", "practice", "mock"];
 
   var ZONE = {
-    study:    { label: "单词区", en: "Words", icon: "📚",
-                desc: "词书、错题本与 AI 查词，边学边测，打牢基础。" },
-    practice: { label: "练习区", en: "Practice", icon: "✏️",
-                desc: "长难句、数字听写等专项训练，针对性提分。" },
-    mock:     { label: "雅思真题", en: "IELTS Past Papers", icon: "🎯",
-                desc: "剑桥雅思听力 / 阅读 / 写作历年真题，在线练习。" },
-    toefl:    { label: "托福真题", en: "TOEFL", icon: "🎯",
-                desc: "新托福阅读机考：练习不限时，模考按模块计时。" }
+    study:    { label: "Từ vựng", en: "Words", icon: "📚",
+                desc: "Học theo bộ từ, ôn lỗi sai và tra từ với AI." },
+    practice: { label: "Luyện tập", en: "Practice", icon: "✏️",
+                desc: "Luyện đọc câu phức, nghe số và củng cố từng kỹ năng." },
+    mock:     { label: "Đề IELTS", en: "IELTS Past Papers", icon: "🎯",
+                desc: "Luyện trực tuyến với các đề Nghe, Đọc và Viết Cambridge IELTS." },
+    toefl:    { label: "Đề TOEFL", en: "TOEFL", icon: "🎯",
+                desc: "TOEFL trên máy: tự luyện không giới hạn hoặc thi thử có đồng hồ theo từng phần." }
   };
 
   // ordered subjects per zone (leaf keys used by the manifest / folder classification)
@@ -38,78 +38,78 @@ window.YYSD = (function () {
   };
 
   var SUBJECT = {
-    "cambridge-listening": { label: "听力", en: "Listening", color: "var(--c-cambridge-listening)" },
-    "cambridge-reading":   { label: "阅读", en: "Reading", color: "var(--c-cambridge-reading)" },
-    "cambridge-writing":   { label: "写作", en: "Writing", color: "var(--c-writing)" },
-    "ielts-speaking":      { label: "口语", en: "Speaking", color: "var(--c-ielts)" },
-    "ielts-writing":       { label: "写作", en: "Writing", color: "var(--c-ielts)" },
-    cambridge: { label: "剑桥真题", en: "Cambridge", color: "var(--c-cambridge)" },
-    ielts:   { label: "雅思真题", en: "IELTS", color: "var(--c-ielts)" },
-    alevel:  { label: "A-Level 真题", en: "A-Level", color: "var(--c-pte)" },
-    ap:      { label: "AP 真题", en: "AP", color: "var(--c-toefl)" },
-    toefl:   { label: "托福真题", en: "TOEFL", color: "var(--c-toefl)" },
-    "toefl-reading": { label: "托福阅读", en: "TOEFL Reading", color: "var(--c-toefl)" },
-    "toefl-listening": { label: "托福听力", en: "TOEFL Listening", color: "var(--c-toefl)" },
-    "toefl-writing": { label: "托福写作", en: "TOEFL Writing", color: "var(--c-toefl)" },
-    "toefl-speaking": { label: "托福口语", en: "TOEFL Speaking", color: "var(--c-toefl)" },
-    sat:     { label: "SAT 真题", en: "SAT", color: "var(--c-grammar)" },
-    grammar: { label: "语法", en: "Grammar", color: "var(--c-grammar)" },
-    vocab:   { label: "高中词汇", en: "Vocabulary", color: "var(--c-vocab)" },
-    "vocab-cet4":    { label: "四级词汇", en: "CET-4", color: "var(--c-vocab)" },
-    "vocab-cet4-lite": { label: "四级词汇（精简版）", en: "CET-4 Compact", color: "var(--c-vocab)" },
-    "vocab-special-listening": { label: "听力专项词汇", en: "Listening Words", color: "var(--c-cambridge-listening)" },
-    "vocab-special-reading":   { label: "阅读专项词汇", en: "Reading Words", color: "var(--c-cambridge-reading)" },
-    "vocab-special-writing":   { label: "写作专项词汇", en: "Writing Vocabulary", color: "var(--c-writing)" },
-    "vocab-themes": { label: "分类词库", en: "Thematic Vocab", color: "var(--c-vocab)" },
-    changnanju: { label: "长难句", en: "Complex Sentences", color: "var(--c-zone-practice)" },
-    "shuzi-tingxie": { label: "数字听写", en: "Number Dictation", color: "var(--c-zone-practice)" },
-    jingting:   { label: "听力精听", en: "Intensive Listening", color: "var(--c-listening)" }
+    "cambridge-listening": { label: "Nghe", en: "Listening", color: "var(--c-cambridge-listening)" },
+    "cambridge-reading":   { label: "Đọc", en: "Reading", color: "var(--c-cambridge-reading)" },
+    "cambridge-writing":   { label: "Viết", en: "Writing", color: "var(--c-writing)" },
+    "ielts-speaking":      { label: "Nói", en: "Speaking", color: "var(--c-ielts)" },
+    "ielts-writing":       { label: "Viết", en: "Writing", color: "var(--c-ielts)" },
+    cambridge: { label: "Đề Cambridge", en: "Cambridge", color: "var(--c-cambridge)" },
+    ielts:   { label: "Đề IELTS", en: "IELTS", color: "var(--c-ielts)" },
+    alevel:  { label: "Đề A-Level", en: "A-Level", color: "var(--c-pte)" },
+    ap:      { label: "Đề AP", en: "AP", color: "var(--c-toefl)" },
+    toefl:   { label: "Đề TOEFL", en: "TOEFL", color: "var(--c-toefl)" },
+    "toefl-reading": { label: "Đọc TOEFL", en: "TOEFL Reading", color: "var(--c-toefl)" },
+    "toefl-listening": { label: "Nghe TOEFL", en: "TOEFL Listening", color: "var(--c-toefl)" },
+    "toefl-writing": { label: "Viết TOEFL", en: "TOEFL Writing", color: "var(--c-toefl)" },
+    "toefl-speaking": { label: "Nói TOEFL", en: "TOEFL Speaking", color: "var(--c-toefl)" },
+    sat:     { label: "Đề SAT", en: "SAT", color: "var(--c-grammar)" },
+    grammar: { label: "Ngữ pháp", en: "Grammar", color: "var(--c-grammar)" },
+    vocab:   { label: "Từ vựng THPT", en: "Vocabulary", color: "var(--c-vocab)" },
+    "vocab-cet4":    { label: "Từ vựng CET-4", en: "CET-4", color: "var(--c-vocab)" },
+    "vocab-cet4-lite": { label: "Từ vựng CET-4 (rút gọn)", en: "CET-4 Compact", color: "var(--c-vocab)" },
+    "vocab-special-listening": { label: "Từ vựng Nghe", en: "Listening Words", color: "var(--c-cambridge-listening)" },
+    "vocab-special-reading":   { label: "Từ vựng Đọc", en: "Reading Words", color: "var(--c-cambridge-reading)" },
+    "vocab-special-writing":   { label: "Từ vựng Viết", en: "Writing Vocabulary", color: "var(--c-writing)" },
+    "vocab-themes": { label: "Từ theo chủ đề", en: "Thematic Vocab", color: "var(--c-vocab)" },
+    changnanju: { label: "Câu phức", en: "Complex Sentences", color: "var(--c-zone-practice)" },
+    "shuzi-tingxie": { label: "Nghe và ghi số", en: "Number Dictation", color: "var(--c-zone-practice)" },
+    jingting:   { label: "Nghe chi tiết", en: "Intensive Listening", color: "var(--c-listening)" }
   };
 
   // Display tree for homepage + zone pages (mirrors the course-centre diagram).
   // Each leaf maps to a manifest `subject`; categories may have `children`.
   var NAV = {
     study: [
-      { key: "vocab", label: "单词", children: [
-        { label: "高中词汇", subject: "vocab" },
-        { label: "四级词汇", subject: "vocab-cet4" },
-        { label: "四级词汇（精简版）", subject: "vocab-cet4-lite" },
-        { key: "vocab-special", label: "雅思专项词汇", children: [
-          { label: "听力专项词汇", subject: "vocab-special-listening" },
-          { label: "阅读专项词汇", subject: "vocab-special-reading" },
-          { label: "写作专项词汇", subject: "vocab-special-writing" }
+      { key: "vocab", label: "Từ vựng", children: [
+        { label: "Từ vựng THPT", subject: "vocab" },
+        { label: "Từ vựng CET-4", subject: "vocab-cet4" },
+        { label: "Từ vựng CET-4 (rút gọn)", subject: "vocab-cet4-lite" },
+        { key: "vocab-special", label: "Từ vựng theo kỹ năng IELTS", children: [
+          { label: "Từ vựng Nghe", subject: "vocab-special-listening" },
+          { label: "Từ vựng Đọc", subject: "vocab-special-reading" },
+          { label: "Từ vựng Viết", subject: "vocab-special-writing" }
         ] },
-        { label: "分类词库", subject: "vocab-themes", href: "vocab-shelf.html?view=catalog" }
+        { label: "Từ theo chủ đề", subject: "vocab-themes", href: "vocab-shelf.html?view=catalog" }
       ] }
     ],
     practice: [
-      { key: "changnanju", label: "长难句", subject: "changnanju" },
-      { key: "shuzi-tingxie", label: "数字听写", subject: "shuzi-tingxie" },
-      { key: "ielts-speaking", label: "雅思口语", subject: "ielts-speaking" }
+      { key: "changnanju", label: "Câu phức", subject: "changnanju" },
+      { key: "shuzi-tingxie", label: "Nghe và ghi số", subject: "shuzi-tingxie" },
+      { key: "ielts-speaking", label: "Nói IELTS", subject: "ielts-speaking" }
     ],
     mock: [
-      { key: "listening", label: "听力", subject: "cambridge-listening", desc: "听力真题顺序练习", skill: "listening",
+      { key: "listening", label: "Nghe", subject: "cambridge-listening", desc: "Luyện lần lượt đề Nghe", skill: "listening",
         links: [
-          { label: "听力真题顺序练习", href: "zone.html?zone=mock&s=listening" }
+          { label: "Luyện lần lượt đề Nghe", href: "zone.html?zone=mock&s=listening" }
         ].concat(JINGTING_OPEN ? [
-          { label: "听力真题精听", href: "zone.html?zone=mock&s=jingting" }
+          { label: "Luyện nghe chi tiết theo đề", href: "zone.html?zone=mock&s=jingting" }
         ] : []) },
-      { key: "reading", label: "阅读", subject: "cambridge-reading", desc: "阅读真题顺序练习", skill: "reading" },
-      { key: "speaking", label: "口语", subject: "ielts-speaking", desc: "AI口语练习/模考", href: "speaking.html" },
-      { key: "writing", label: "写作", subject: "cambridge-writing", desc: "写作真题顺序练习", skill: "writing",
+      { key: "reading", label: "Đọc", subject: "cambridge-reading", desc: "Luyện lần lượt đề Đọc", skill: "reading" },
+      { key: "speaking", label: "Nói", subject: "ielts-speaking", desc: "Luyện nói và thi thử với AI", href: "speaking.html" },
+      { key: "writing", label: "Viết", subject: "cambridge-writing", desc: "Luyện lần lượt đề Viết", skill: "writing",
         links: [
-          { label: "写作真题顺序练习", href: "zone.html?zone=mock&s=writing" },
-          { label: "AI写作批改", href: "ai-tutor.html?track=writing" }
+          { label: "Luyện lần lượt đề Viết", href: "zone.html?zone=mock&s=writing" },
+          { label: "Nhận xét bài viết bằng AI", href: "ai-tutor.html?track=writing" }
         ] },
-      { key: "mock", label: "模考", subject: "ielts", desc: "剑桥套题模考" },
-      // ponytail: under 听力 links only — excluded from hub columns/chips in zone.js
-      { key: "jingting", label: "听力精听", subject: "jingting", desc: "听力真题精听" }
+      { key: "mock", label: "Thi thử", subject: "ielts", desc: "Thi thử trọn bộ Cambridge" },
+      // ponytail: under Nghe links only — excluded from hub columns/chips in zone.js
+      { key: "jingting", label: "Nghe chi tiết", subject: "jingting", desc: "Luyện nghe chi tiết theo đề" }
     ],
     toefl: [
-      { key: "reading", label: "阅读", subject: "toefl-reading", desc: "阅读真题顺序练习", skill: "reading" },
-      { key: "listening", label: "听力", subject: "toefl-listening", desc: "听力真题顺序练习", skill: "listening" },
-      { key: "speaking", label: "口语", subject: "toefl-speaking", desc: "口语真题顺序练习", skill: "speaking" },
-      { key: "writing", label: "写作", subject: "toefl-writing", desc: "写作真题顺序练习", skill: "writing" }
+      { key: "reading", label: "Đọc", subject: "toefl-reading", desc: "Luyện lần lượt đề Đọc", skill: "reading" },
+      { key: "listening", label: "Nghe", subject: "toefl-listening", desc: "Luyện lần lượt đề Nghe", skill: "listening" },
+      { key: "speaking", label: "Nói", subject: "toefl-speaking", desc: "Luyện lần lượt đề Nói", skill: "speaking" },
+      { key: "writing", label: "Viết", subject: "toefl-writing", desc: "Luyện lần lượt đề Viết", skill: "writing" }
     ]
   };
 
@@ -1797,18 +1797,20 @@ window.YYSD = (function () {
     return /reading|阅读/i.test(blob);
   }
 
-  // Pull the volume number (e.g. "15") out of a title like "剑桥雅思15 · Test 1（听力）".
-  function camVolume(item) {
-    var m = String((item && item.title) || "").match(/剑(?:桥雅思)?\s*0*(\d+)/);
+  // IDs and filenames are stable across locales; saved attempts can have a title only.
+  function camPaperNumber(item, field) {
+    if (!item) return "";
+    var pattern = /(?:^|\/)cambridge-0*(\d+)-test-0*(\d+)(?=[.\/-]|$)/i;
+    var m = pattern.exec(item.id || "") || pattern.exec(item.file || "");
+    if (m) return m[field];
+    var title = String(item.title || "");
+    m = field === 1 ? /(?:Cambridge IELTS|剑(?:桥雅思)?(?:真题)?)\s*0*(\d+)/i.exec(title)
+      : /Test\s*0*(\d+)/i.exec(title);
     return m ? m[1] : "";
   }
 
-  // Summarise cambridge items into [{vol, listening, reading, total}], newest volume first.
-  // Pull the test number out of a title like "… · Test 1（听力）".
-  function camTestNo(item) {
-    var m = String((item && item.title) || "").match(/Test\s*0*(\d+)/i);
-    return m ? m[1] : "";
-  }
+  function camVolume(item) { return camPaperNumber(item, 1); }
+  function camTestNo(item) { return camPaperNumber(item, 2); }
 
   function camVolumes(items) {
     var map = {};
@@ -1830,9 +1832,9 @@ window.YYSD = (function () {
   // Tag a volume by recency (cosmetic, like the mockup's 最新/进阶/基础).
   function camVolTag(vol) {
     var n = Number(vol);
-    if (n >= 19) return { t: "最新", c: "new" };
-    if (n >= 13) return { t: "进阶", c: "mid" };
-    return { t: "基础", c: "base" };
+    if (n >= 19) return { t: "Mới", c: "new" };
+    if (n >= 13) return { t: "Nâng cao", c: "mid" };
+    return { t: "Cơ bản", c: "base" };
   }
 
   /* ponytail: one glyph set for hub / vol-card / skill-panel */
@@ -1877,8 +1879,8 @@ window.YYSD = (function () {
     var tag = camVolTag(v.vol);
     var prog = items ? camVolumeProgress(items, v.vol) : null;
     var cntText = prog && prog.done
-      ? "已完成 " + prog.done + "/" + prog.total + " 份 · " + v.tests + " 套"
-      : "包含 " + v.tests + " 套";
+      ? "Đã làm " + prog.done + "/" + prog.total + " bài · " + v.tests + " đề"
+      : "Gồm " + v.tests + " đề";
     var doneClass = prog && prog.total && prog.done >= prog.total ? " vol-card--done" : "";
     var markIcon = '<svg class="vol-card__shield" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 1.2 12 3v5.2c0 3.4-2.1 5.9-5 7.3-2.9-1.4-5-3.9-5-7.3V3L7 1.2Z" fill="currentColor"/></svg>';
     var skills = accent === "mock"
@@ -1890,7 +1892,7 @@ window.YYSD = (function () {
           : '<span class="vc-skill vc-skill--w">T1</span><span class="vc-skill vc-skill--w">T2</span>';
     var href = opts.href || ((prefix || "") + "cambridge.html?vol=" + encodeURIComponent(v.vol) +
       (skill ? "&skill=" + encodeURIComponent(skill) : ""));
-    var goLabel = opts.goLabel || (skill ? "开始练习 ›" : "开始模考 ›");
+    var goLabel = opts.goLabel || (skill ? "Vào luyện ›" : "Vào thi thử ›");
     return '' +
       '<a class="vol-card vol-card--' + accent + ' vol-card--tier-' + tag.c + doneClass +
         (opts.cardClass ? " " + opts.cardClass : "") +
@@ -1902,7 +1904,7 @@ window.YYSD = (function () {
         '</div>' +
         '<div class="vol-card__body">' +
           '<span class="vol-card__ico">' + skillGlyph(accent) + '</span>' +
-          '<div><h3>剑桥雅思 ' + esc(v.vol) + '</h3>' +
+          '<div><h3>Cambridge IELTS ' + esc(v.vol) + '</h3>' +
           '<div class="vol-card__cnt">' + cntText + '</div></div>' +
         '</div>' +
         '<div class="vol-card__foot">' +
@@ -1927,14 +1929,14 @@ window.YYSD = (function () {
       if (tier === "mid" && (n < 13 || n > 18)) return false;
       if (tier === "base" && n >= 13) return false;
       if (q) {
-        var hay = ("剑桥雅思 vol " + v.vol + " cambridge " + v.vol).toLowerCase();
+        var hay = ("Cambridge IELTS vol " + v.vol + " cambridge " + v.vol).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
       }
       return true;
     });
 
     if (!filtered.length) {
-      return '<div class="soon-box">没有匹配的册数，试试其他筛选条件。</div>';
+      return '<div class="soon-box">Không có tập nào khớp. Hãy thử bộ lọc khác.</div>';
     }
 
     function cards(vols) {
@@ -1956,8 +1958,8 @@ window.YYSD = (function () {
     var html = '<div class="vol-grid">' + cards(recent) + "</div>";
     if (legacy.length) {
       html += '<details class="catalog-collapse">' +
-        '<summary><span class="catalog-collapse__label">更多基础册</span>' +
-        '<span class="catalog-collapse__meta">' + legacy.length + " 册 · Vol." +
+        '<summary><span class="catalog-collapse__label">Các tập cơ bản khác</span>' +
+        '<span class="catalog-collapse__meta">' + legacy.length + " tập · Vol." +
         legacy[legacy.length - 1].vol + "–" + legacy[0].vol + "</span></summary>" +
         '<div class="vol-grid">' + cards(legacy) + "</div></details>";
     }

@@ -52,7 +52,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -69,12 +69,11 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 3 听力", "剑桥雅思5 Test 4 听力"),
-        ("剑桥雅思5 · Test 3（听力）", "剑桥雅思5 · Test 4（听力）"),
-        ("剑桥雅思5 Test 3 听力：", "剑桥雅思5 Test 4 听力："),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 5 · Test 3", "剑桥雅思 5 · Test 4"),
-        ("剑桥雅思5 · Test 3", "剑桥雅思5 · Test 4"),
+        ("Cambridge IELTS 5 Test 3 Nghe", "Cambridge IELTS 5 Test 4 Nghe"),
+        ("Cambridge IELTS 5 · Test 3 (Nghe)", "Cambridge IELTS 5 · Test 4 (Nghe)"),
+        ("Cambridge IELTS 5 Test 3 Nghe: ", "Cambridge IELTS 5 Test 4 Nghe: "),
+        ("Test 3 Nghe (đề và đáp án gốc)", "Test 4 Nghe (đề và đáp án gốc)"),
+        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("ielts5_test3", "ielts5_test4"),
@@ -86,16 +85,15 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 3 阅读", "剑桥雅思5 Test 4 阅读"),
-        ("剑桥雅思5 · Test 3（阅读）", "剑桥雅思5 · Test 4（阅读）"),
-        ("剑桥雅思5 Test 3 学术类阅读", "剑桥雅思5 Test 4 学术类阅读"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 5 Test 3 Đọc", "Cambridge IELTS 5 Test 4 Đọc"),
+        ("Cambridge IELTS 5 · Test 3 (Đọc)", "Cambridge IELTS 5 · Test 4 (Đọc)"),
+        ("Cambridge IELTS 5 Test 3 Kỹ năng Đọc học thuật", "Cambridge IELTS 5 Test 4 Kỹ năng Đọc học thuật"),
+        ("Test 3 Đọc (đề và đáp án gốc)", "Test 4 Đọc (đề và đáp án gốc)"),
         (
             "Early Childhood Education、Nile Delta、The Return of Artificial Intelligence",
             "Wilderness Tourism、Toughened Glass、Effects of Light",
         ),
-        ("剑桥雅思 5 · Test 3", "剑桥雅思 5 · Test 4"),
-        ("剑桥雅思5 · Test 3", "剑桥雅思5 · Test 4"),
+        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
     ]
@@ -106,18 +104,17 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思5 Test 3 写作", "剑桥雅思5 Test 4 写作"),
-        ("剑桥雅思5 · Test 3（写作）", "剑桥雅思5 · Test 4（写作）"),
-        ("剑桥雅思5 Test 3 学术类写作", "剑桥雅思5 Test 4 学术类写作"),
+        ("Cambridge IELTS 5 Test 3 Viết", "Cambridge IELTS 5 Test 4 Viết"),
+        ("Cambridge IELTS 5 · Test 3 (Viết)", "Cambridge IELTS 5 · Test 4 (Viết)"),
+        ("Cambridge IELTS 5 Test 3 Kỹ năng Viết học thuật", "Cambridge IELTS 5 Test 4 Kỹ năng Viết học thuật"),
         (
             "Task 1 Garlsdon supermarket map + Task 2 competition vs cooperation essay",
             "Task 1 underground railway table + Task 2 nature vs nurture essay",
         ),
-        ("剑桥雅思 5 · Test 3", "剑桥雅思 5 · Test 4"),
-        ("剑桥雅思5 · Test 3", "剑桥雅思5 · Test 4"),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
+        ("Test 3 Viết (Đề Cambridge)", "Test 4 Viết (Đề Cambridge)"),
         ("cambridge-5-test-3-writing-draft", "cambridge-5-test-4-writing-draft"),
-        ("【剑桥雅思5 · Test 3 写作】", "【剑桥雅思5 · Test 4 写作】"),
+        ("[Cambridge IELTS 5 · Test 3 Viết]", "[Cambridge IELTS 5 · Test 4 Viết]"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("garlsdon-map", "underground-railway"),

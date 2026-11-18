@@ -33,6 +33,14 @@ SPECIAL_EXTRA = ('id="stageResults"',)
 
 def check_file(path: Path, kind: str) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="ignore")
+    # These two teacher downloads are a standalone spelling quiz and a card
+    # reader, not student LIST result tables. Check their actual contracts.
+    templates = {
+        "教师模版-单词检测.html": ('id="quiz"', 'id="doneScore"'),
+        "教师模版-词库学习List.html": ('id="vl-app"', 'id="learnViewTabs"'),
+    }
+    if path.parent == LIB / "study/vocab" and path.name in templates:
+        return [token for token in ("const wordData = [", *templates[path.name]) if token not in text]
     missing = [token for token in COMMON if token not in text]
     extra = STANDARD_EXTRA if kind == "standard" else SPECIAL_EXTRA
     missing.extend(token for token in extra if token not in text)
@@ -61,7 +69,7 @@ def main() -> int:
         )
         return 1
     total = sum(1 for folder in VOCAB_DIRS for _ in (LIB / folder).rglob("*.html") if (LIB / folder).is_dir())
-    print(f"OK — {total} vocab LIST file(s) have wrong-word bridge hooks.")
+    print(f"OK — {total} vocab LIST and teacher template file(s) passed their DOM checks.")
     return 0
 
 

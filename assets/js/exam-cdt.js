@@ -271,11 +271,11 @@
     var lead = $("cdt-gate-sections-lead");
     var lab = $("cdt-gate-sec-label");
     if (isReading(state.item)) {
-      if (lead) lead.textContent = "适合分项突破，可只练某几篇文章；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习文章：";
+      if (lead) lead.textContent = "Chọn những bài đọc bạn muốn luyện. Đồng hồ ghi thời gian đã dùng, không đếm ngược.";
+      if (lab) lab.textContent = "Chọn bài đọc:";
     } else {
-      if (lead) lead.textContent = "适合分项突破，可只练某几个部分；正向计时不施加额外压力。";
-      if (lab) lab.textContent = "选择练习部分：";
+      if (lead) lead.textContent = "Chọn những phần bạn muốn luyện. Đồng hồ ghi thời gian đã dùng, không đếm ngược.";
+      if (lab) lab.textContent = "Chọn phần muốn luyện:";
     }
     host.innerHTML = parts.map(function (p) {
       var on = !prefer || prefer === p.id;
@@ -295,7 +295,7 @@
     for (var i = 0; i < boxes.length; i++) {
       if (!boxes[i].checked) { allOn = false; break; }
     }
-    btn.textContent = allOn ? "取消全选" : "全选";
+    btn.textContent = allOn ? "Bỏ chọn tất cả" : "Chọn tất cả";
   }
 
   function selectedGateSections() {
@@ -1271,7 +1271,7 @@
 
   function showSubmitLoading(msg) {
     var text = $("cdt-submit-loading-text");
-    if (text) text.textContent = msg || "正在加载成绩报告…";
+    if (text) text.textContent = msg || "Đang tải báo cáo kết quả…";
     showMask("cdt-submit-loading", true);
   }
 
@@ -1280,10 +1280,10 @@
   }
 
   function submitLoadingMsg(plan) {
-    if (!plan) return "正在加载成绩报告…";
-    if (plan.action === "hop") return "正在进入下一科…";
-    if (plan.action === "report") return "正在加载成绩报告…";
-    return "正在生成成绩单…";
+    if (!plan) return "Đang tải báo cáo kết quả…";
+    if (plan.action === "hop") return "Đang chuyển sang kỹ năng tiếp theo…";
+    if (plan.action === "report") return "Đang tải báo cáo kết quả…";
+    return "Đang lập bảng kết quả…";
   }
 
   function updateTimer(seconds) {
@@ -1472,17 +1472,14 @@
     var card = ra.querySelector(".res-card");
     if (card && !card.getAttribute("data-yysd-res")) {
       card.setAttribute("data-yysd-res", "1");
-      var nodes = card.children;
-      var i, el, t;
-      for (i = 0; i < nodes.length; i++) {
-        el = nodes[i];
-        if (el.children && el.children.length) continue;
-        t = (el.textContent || "").replace(/\s+/g, " ").trim();
-        if (/批改报告|写作完成/.test(t)) {
-          el.className = "yysd-res-eyebrow";
-          el.textContent = /写作/.test(t) ? "Writing report" : "Practice result";
-          break;
-        }
+      var heading = card.querySelector("[data-report-heading]");
+      // Older cached papers do not have the semantic marker yet.
+      if (!heading) heading = Array.prototype.find.call(card.children, function (el) {
+        return !el.children.length && /批改报告|写作完成/.test(el.textContent);
+      });
+      if (heading) {
+        heading.className = "yysd-res-eyebrow";
+        heading.textContent = doc.getElementById("dump1") ? "Writing report" : "Practice result";
       }
     }
     ra.querySelectorAll(".ritem .rex").forEach(function (ex) {
@@ -1544,12 +1541,12 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? "详解批改如下，不计入成绩。"
+        ? "Xem lời giải bên dưới. Lượt này không được ghi điểm."
         : (state.pack === "drill"
           ? (isListening(state.item)
-            ? "练习已交卷 · 成绩单与解析如下；可用顶部播放器回放听力。"
-            : "练习已交卷 · 成绩单与解析如下。")
-          : "模考已交卷 · 下方为本次作答与解析。");
+            ? "Đã nộp bài luyện. Xem kết quả và lời giải bên dưới; dùng thanh phát phía trên để nghe lại."
+            : "Đã nộp bài luyện. Xem kết quả và lời giải bên dưới.")
+          : "Đã nộp bài thi thử. Xem câu trả lời và lời giải bên dưới.");
     }
   }
 
