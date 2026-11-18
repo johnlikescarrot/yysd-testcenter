@@ -62,5 +62,5 @@ jobs:
           VALIDATE_YAML: true
           VALIDATE_MARKDOWN: true
           PYTHON_FLAKE8_CONFIG_FILE: .flake8
-          MARKDOWN_CONFIG_FILE: .markdown-lint.yml
+          MARKDOWN_CONFIG_FILE: .markdownlint.json
           YAML_CONFIG_FILE: .yaml-lint.yml
