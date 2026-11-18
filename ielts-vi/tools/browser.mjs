@@ -1,3 +1,4 @@
+import chromium from "@sparticuz/chromium";
 // Serve the release under a project-site prefix in tests. No server code is shipped.
 import http from "node:http";
 import { createReadStream } from "node:fs";
@@ -48,7 +49,8 @@ export async function withBrowser(run) {
   let browser;
   try {
     browser = await puppeteer.launch({
-      executablePath: process.env.CHROME_PATH || "/usr/bin/google-chrome",
+      executablePath:
+        process.env.CHROME_PATH || (await chromium.executablePath()),
       args: ["--no-sandbox", "--disable-dev-shm-usage"],
     });
     await run(browser, `http://127.0.0.1:${server.address().port}${prefix}`);

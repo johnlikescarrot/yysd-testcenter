@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Không gian tự học tiếng Việt dành cho người luyện IELTS Academic. Đề bài, đáp án và ví dụ tiếng Anh được giữ nguyên. Bản GitHub Pages dùng tài liệu tĩnh; không gửi bài làm, thông tin đăng nhập hoặc bản thu âm tới máy chủ.",
   "devDependencies": {
+    "@sparticuz/chromium": "149.0.0",
     "jsdom": "26.1.0",
     "lighthouse": "13.6.0",
     "prettier": "3.10.1",

@@ -40,7 +40,12 @@ await withBrowser(async (browser, base) => {
   await p.waitForFunction(() => !document.querySelector("dialog").open);
   await p.click('[data-lesson="listen-detail"]');
   const src = await p.$eval("audio", (a) => a.src);
-  assert.equal((await p.goto(src)).status(), 200);
+  assert.ok(
+    await p.evaluate(async (url) => {
+      const r = await fetch(url);
+      return r.ok && (await r.blob()).size > 0;
+    }, src),
+  );
   await p.goto(base + "thu-vien.html");
   assert.equal(await p.$$eval(".paper-row a", (a) => a.length), files.length);
   for (const { kind, path } of files) {

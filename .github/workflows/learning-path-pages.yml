@@ -43,7 +43,18 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: python -m pip install pypdf==5.9.0 && python tools/verify.py
-      - run: npm run smoke
+      - name: Browser regression tests
+        run: |
+          set -o pipefail
+          npm run smoke 2>&1 | tee "$RUNNER_TEMP/browser.log"
+      - name: Surface browser diagnostics
+        if: failure()
+        run: |
+          if test -f "$RUNNER_TEMP/browser.log"; then
+            grep -E -A 3 'Error|not found|!==|Missing' "$RUNNER_TEMP/browser.log" | head -10 | while IFS= read -r line; do
+              printf '::error::%s\n' "$line"
+            done
+          fi
       - run: npm run audit:pages
       - uses: actions/upload-artifact@v4
         if: always()

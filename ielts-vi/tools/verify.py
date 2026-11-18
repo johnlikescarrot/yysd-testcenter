@@ -3,13 +3,14 @@
 import re
 import sys
 from html.parser import HTMLParser
+from importlib import import_module
 from urllib.parse import unquote, urlsplit
 
 from build import HAN, OUT, ROOT, papers
 from pypdf import PdfReader
 
 sys.path.insert(0, str(ROOT / "scripts"))
-from verify_cambridge_mock_pages import load_test  # noqa: E402
+load_test = import_module("verify_cambridge_mock_pages").load_test
 
 
 class Page(HTMLParser):
