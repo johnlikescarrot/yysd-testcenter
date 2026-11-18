@@ -95,11 +95,7 @@
   try {
     var org = JSON.parse(localStorage.getItem("yysd:org") || "null");
     if (org && org.slug === slug && org.name && document.title) {
-      if (document.title.indexOf("·") >= 0) {
-        document.title = document.title.replace(/^[^·]+·/, org.name + " ·");
-      } else if (document.title.indexOf("优益思达") >= 0 || document.title.indexOf("YYSD") >= 0) {
-        document.title = org.name;
-      }
+      document.title = document.title.replace(/Trung tâm Khóa học Quốc tế YYSD|优益思达(?:国际课程中心|备考|学习中心)?|\bYYSD\b/gi, function () { return org.name; });
     }
   } catch (e) {}
 })();

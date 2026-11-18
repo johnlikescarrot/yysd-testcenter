@@ -1,5 +1,5 @@
 /* =========================================================================
-   auth.js — 登录态、导航、API 调用、成绩云端同步（优益思达国际课程中心）
+   auth.js — account, tenant branding, navigation and result sync
    ========================================================================= */
 window.YYSD_AUTH = (function () {
   "use strict";
@@ -87,22 +87,18 @@ window.YYSD_AUTH = (function () {
   }
 
   function brandName(org) {
-    return (org && org.name) || "优益思达国际课程中心";
+    var name = org && org.name;
+    if (name && (!isHqSite() || !/^优益思达(?:国际课程中心|备考|学习中心)?$/.test(name))) return name;
+    return "Trung tâm Khóa học Quốc tế YYSD";
   }
 
-  /** 客户站白标：去掉可见的优益思达/YYSD（备案号除外） */
+  function brandedText(text, name) {
+    if (!text || text.indexOf(name) >= 0) return text;
+    return text.replace(/Trung tâm Khóa học Quốc tế YYSD|优益思达(?:国际课程中心|备考|学习中心)?|YYSD International Course Center|YYSD\s*·\s*IELTS|\bYYSD\b/gi, function () { return name; });
+  }
+
   function scrubTenantBrandText(orgName) {
     if (isHqSite()) return;
-    var replacers = [
-      [/优益思达国际课程中心/g, orgName],
-      [/优益思达备考/g, orgName],
-      [/优益思达学习中心/g, orgName],
-      [/优益思达/g, orgName],
-      [/YYSD International Course Center/gi, orgName],
-      [/YYSD\s*·\s*IELTS/gi, orgName],
-      [/YYSD\s*·\s*TEACHER/gi, orgName + " · 教师端"],
-      [/\bYYSD\b/g, orgName]
-    ];
     var walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
     var node;
     while ((node = walk.nextNode())) {
@@ -114,10 +110,7 @@ window.YYSD_AUTH = (function () {
       if (p.closest && (p.closest("[data-icp]") || p.closest("[data-report]") || p.closest("[data-mps]"))) continue;
       var t = node.nodeValue;
       if (!t || (t.indexOf("优益思达") < 0 && t.indexOf("YYSD") < 0 && t.indexOf("Yysd") < 0)) continue;
-      var next = t;
-      replacers.forEach(function (pair) {
-        next = next.replace(pair[0], pair[1]);
-      });
+      var next = brandedText(t, orgName);
       if (next !== t) node.nodeValue = next;
     }
     document.querySelectorAll(".auth-aside__eyebrow").forEach(function (el) {
@@ -153,7 +146,7 @@ window.YYSD_AUTH = (function () {
     var tenant = !isHqSite();
 
     document.querySelectorAll(".minimal-brand").forEach(function (a) {
-      a.setAttribute("aria-label", name + "首页");
+      a.setAttribute("aria-label", "Trang chủ · " + name);
     });
     document.querySelectorAll(".minimal-brand__text b, .minimal-brand b, .minimal-footer__brand b").forEach(function (el) {
       el.textContent = name;
@@ -186,13 +179,7 @@ window.YYSD_AUTH = (function () {
     var sideLabel = document.querySelector(".student-side__label");
     if (sideLabel) sideLabel.textContent = name;
 
-    if (document.title) {
-      if (document.title.indexOf("·") >= 0) {
-        document.title = document.title.replace(/^[^·]+·/, name + " ·");
-      } else if (tenant) {
-        document.title = name;
-      }
-    }
+    if (document.title) document.title = brandedText(document.title, name);
 
     if (tenant) scrubTenantBrandText(name);
   }
@@ -206,7 +193,7 @@ window.YYSD_AUTH = (function () {
       headers: { "X-Tenant-Slug": tenantSlug() }
     }).then(function (r) {
       return r.json().then(function (d) {
-        if (!r.ok) throw new Error((d && d.error) || "机构加载失败");
+        if (!r.ok) throw new Error((d && d.error) || "Không tải được thông tin trung tâm.");
         return d.org;
       });
     }).then(function (org) {
@@ -218,7 +205,7 @@ window.YYSD_AUTH = (function () {
       return org;
     }).catch(function () {
       var fallback = getOrg();
-      if (fallback) applyOrgBrand(fallback);
+      if (fallback && fallback.slug === tenantSlug()) applyOrgBrand(fallback);
       return fallback;
     }).finally(function () {
       if (!isHqSite()) {
@@ -431,9 +418,9 @@ window.YYSD_AUTH = (function () {
   function compressAvatar(file) {
     return new Promise(function (resolve, reject) {
       if (!file || !/^image\/(jpeg|jpg|png|webp|gif)$/i.test(file.type)) {
-        return reject(new Error("请选择 JPG / PNG / WebP 图片"));
+        return reject(new Error("Hãy chọn ảnh JPG, PNG hoặc WebP."));
       }
-      if (file.size > 5 * 1024 * 1024) return reject(new Error("图片不能超过 5MB"));
+      if (file.size > 5 * 1024 * 1024) return reject(new Error("Ảnh không được vượt quá 5 MB."));
       var img = new Image();
       var objectUrl = URL.createObjectURL(file);
       img.onload = function () {
@@ -451,7 +438,7 @@ window.YYSD_AUTH = (function () {
       };
       img.onerror = function () {
         URL.revokeObjectURL(objectUrl);
-        reject(new Error("图片读取失败"));
+        reject(new Error("Không đọc được ảnh."));
       };
       img.src = objectUrl;
     });
@@ -516,7 +503,7 @@ window.YYSD_AUTH = (function () {
       return r.text().then(function (text) {
         var d = null;
         try { d = text ? JSON.parse(text) : null; } catch (e) { d = null; }
-        if (!r.ok) throw new Error((d && d.error) || "无法恢复体验模式");
+        if (!r.ok) throw new Error((d && d.error) || "Không khôi phục được chế độ trải nghiệm.");
         applyLogin({ token: d.token, user: d.user, role: "student" });
         return d;
       });
@@ -542,6 +529,41 @@ window.YYSD_AUTH = (function () {
     return { hw: String(d.hw), file: String(d.file) };
   }
 
+  // Localize known messages from older API deployments; never discard an unknown diagnostic.
+  var apiMessages = {
+    "请输入正确的手机号": "Hãy nhập số điện thoại Trung Quốc đại lục hợp lệ (11 chữ số).",
+    "本站不支持短信验证，请联系学校管理员": "Trang này không hỗ trợ xác minh qua SMS. Vui lòng liên hệ quản trị viên trường.",
+    "该手机号已注册，请直接登录": "Số điện thoại đã được đăng ký. Hãy đăng nhập.",
+    "请下载机考程序后继续": "Hãy tải ứng dụng thi trên máy để tiếp tục.",
+    "该手机号未注册": "Số điện thoại này chưa được đăng ký.",
+    "短信发送失败，请稍后再试": "Không gửi được SMS. Vui lòng thử lại sau.",
+    "两次密码不一致": "Hai mật khẩu không khớp.",
+    "手机号或验证码格式不正确": "Số điện thoại hoặc mã xác minh không đúng định dạng.",
+    "验证码错误或已过期": "Mã xác minh không đúng hoặc đã hết hạn.",
+    "注册失败": "Đăng ký không thành công.",
+    "服务未配置 JWT_SECRET": "Dịch vụ đăng nhập chưa được cấu hình. Hãy liên hệ quản trị viên.",
+    "该账号不属于当前机构，请从正确的网址登录": "Tài khoản thuộc trung tâm khác. Hãy dùng địa chỉ đăng nhập của trung tâm đó.",
+    "手机号或密码错误": "Số điện thoại hoặc mật khẩu không đúng.",
+    "本站不支持短信重置密码，请联系学校管理员或超级管理员": "Trang này không hỗ trợ đặt lại mật khẩu qua SMS. Hãy liên hệ quản trị viên trường hoặc hệ thống.",
+    "密码至少 6 位": "Mật khẩu cần ít nhất 6 ký tự.",
+    "密码过长": "Mật khẩu không được vượt quá 64 ký tự.",
+    "请输入注册密钥": "Hãy nhập mã đăng ký.",
+    "无效的注册角色": "Vai trò đăng ký không hợp lệ.",
+    "本校尚未配置该角色的注册密钥，请联系超级管理员": "Trường chưa thiết lập mã đăng ký cho vai trò này. Hãy liên hệ quản trị viên hệ thống.",
+    "本校尚未配置教师/管理员注册密钥，请联系超级管理员": "Trường chưa thiết lập mã cho giáo viên hoặc quản trị viên. Hãy liên hệ quản trị viên hệ thống.",
+    "注册密钥不正确": "Mã đăng ký không đúng.",
+    "注册次数已用尽，请联系超级管理员增加次数": "Mã đã hết lượt đăng ký. Hãy xin cấp thêm lượt.",
+    "请 60 秒后再试": "Hãy đợi 60 giây trước khi thử lại.",
+    "今日验证码次数已达上限": "Đã hết lượt nhận mã xác minh hôm nay.",
+    "尝试过多，请稍后再试": "Bạn đã thử quá nhiều lần. Vui lòng thử lại sau.",
+    "请稍后再试": "Vui lòng thử lại sau."
+  };
+
+  function apiError(data) {
+    var message = data && data.error;
+    return Object.hasOwn(apiMessages, message) ? apiMessages[message] : message || "Yêu cầu không thành công.";
+  }
+
   function api(path, opts) {
     opts = opts || {};
     if (opts.body && typeof opts.body === "object" && desktopDevice()) {
@@ -559,20 +581,20 @@ window.YYSD_AUTH = (function () {
           // ponytail: 304/empty used to parse as {} and wipe yysd:results on sync
           if (!text) {
             throw new Error(r.status === 304
-              ? "成绩同步失败，请强刷后重试"
-              : "服务器返回空响应（" + r.status + "）");
+              ? "Không đồng bộ được kết quả. Hãy tải lại trang rồi thử lại."
+              : "Máy chủ trả về phản hồi trống (" + r.status + ")");
           }
           try { d = JSON.parse(text); } catch (e) {
             throw new Error(r.status === 502 || r.status === 504
-              ? "服务器暂时不可用，请稍后重试"
-              : "服务器返回异常（" + r.status + "），请确认已部署最新版本");
+              ? "Máy chủ tạm thời không hoạt động. Vui lòng thử lại sau."
+              : "Phản hồi máy chủ bất thường (" + r.status + "). Hãy kiểm tra phiên bản đã triển khai.");
           }
           if (!r.ok) {
             if (d && d.code === "seat_required" && location.pathname.indexOf("download.html") < 0) {
               clearSession();
               location.replace("download.html");
             }
-            throw new Error((d && d.error) || "请求失败");
+            throw new Error(apiError(d));
           }
           return d;
         });
@@ -590,10 +612,10 @@ window.YYSD_AUTH = (function () {
         if (!r.ok) {
           try {
             var d = JSON.parse(text);
-            throw new Error((d && d.error) || "请求失败");
+            throw new Error(apiError(d));
           } catch (e) {
-            if (e.message && e.message !== "请求失败" && e.name !== "SyntaxError") throw e;
-            throw new Error("加载练习失败（" + r.status + "）");
+            if (e.message && e.message !== "Yêu cầu không thành công." && e.name !== "SyntaxError") throw e;
+            throw new Error("Không tải được bài luyện (" + r.status + ")");
           }
         }
         return text;
@@ -681,12 +703,12 @@ window.YYSD_AUTH = (function () {
   }
 
   function fetchScoreAttempt(attemptId) {
-    if (!getToken() || isTeacher()) return Promise.reject(new Error("请先登录学生账号"));
+    if (!getToken() || isTeacher()) return Promise.reject(new Error("Hãy đăng nhập bằng tài khoản học viên."));
     return api("/api/student/score-attempts/" + encodeURIComponent(String(attemptId)));
   }
 
   function analyzeWrongItem(body) {
-    if (!getToken() || isTeacher()) return Promise.reject(new Error("请先登录学生账号"));
+    if (!getToken() || isTeacher()) return Promise.reject(new Error("Hãy đăng nhập bằng tài khoản học viên."));
     return api("/api/exam/wrong-analyze", { method: "POST", body: body || {} });
   }
 
@@ -696,7 +718,7 @@ window.YYSD_AUTH = (function () {
     btn.type = "button";
     btn.className = "btn btn--ghost btn--sm nav-persist";
     btn.id = "nav-logout";
-    btn.textContent = "退出";
+    btn.textContent = "Đăng xuất";
     btn.addEventListener("click", function () { logout(); });
     nav.appendChild(btn);
   }
@@ -723,7 +745,7 @@ window.YYSD_AUTH = (function () {
       el.classList.add("nav-persist");
       var user = getUser();
       var phone = (user.phone || "").trim();
-      var label = (user.displayName || "").trim() || "个人中心";
+      var label = (user.displayName || "").trim() || "Tài khoản cá nhân";
       var src = avatarSrc(user.avatarUrl);
       if (phone.length >= 4 || src) {
         el.classList.add("is-logged-in");
@@ -731,10 +753,10 @@ window.YYSD_AUTH = (function () {
           ? '<img class="nav-auth__avatar nav-auth__avatar--img" src="' + src.replace(/"/g, "") + '" alt="">'
           : '<span class="nav-auth__avatar" aria-hidden="true">' + (phone.slice(-4) || "·") + "</span>";
         el.innerHTML = avatarHtml + '<span class="nav-auth__label">' + label + "</span>";
-        el.setAttribute("aria-label", label + (phone.length >= 4 ? "，尾号 " + phone.slice(-4) : ""));
+        el.setAttribute("aria-label", label + (phone.length >= 4 ? ", số điện thoại kết thúc bằng " + phone.slice(-4) : ""));
       } else {
         el.classList.remove("is-logged-in");
-        el.textContent = "个人中心";
+        el.textContent = "Tài khoản cá nhân";
         el.removeAttribute("aria-label");
       }
       applyCompactShell();
@@ -742,7 +764,7 @@ window.YYSD_AUTH = (function () {
       el.href = "login.html";
       el.classList.remove("is-logged-in");
       el.classList.remove("nav-persist");
-      el.textContent = "登录";
+      el.textContent = "Đăng nhập";
       el.removeAttribute("aria-label");
     }
   }
@@ -794,7 +816,7 @@ window.YYSD_AUTH = (function () {
       a.href = "report.html";
       a.className = "site-report";
       a.setAttribute("data-report", "");
-      a.textContent = "投诉举报";
+      a.textContent = "Gửi phản ánh";
       var icp = el.querySelector("[data-icp]");
       if (icp) el.insertBefore(a, icp);
       else el.appendChild(a);
@@ -865,28 +887,28 @@ window.YYSD_AUTH = (function () {
 
     var side = document.createElement("aside");
     side.className = "student-side";
-    side.setAttribute("aria-label", "课程导航");
+    side.setAttribute("aria-label", "Điều hướng khóa học");
 
     var links = [
-      { href: "dashboard.html", label: "工作台", key: "dashboard" },
-      { href: "zone.html?zone=study", label: "学习区", key: "study" },
-      { href: "zone.html?zone=practice", label: "练习区", key: "practice" },
-      { href: "zone.html?zone=mock", label: "模考区", key: "mock" },
-      { href: "calendar.html", label: "任务日历", key: "calendar" },
-      { href: "results.html", label: "我的成绩", key: "results" },
-      { href: "profile.html", label: "个人中心", key: "profile" }
+      { href: "dashboard.html", label: "Bảng học tập", key: "dashboard" },
+      { href: "zone.html?zone=study", label: "Học tập", key: "study" },
+      { href: "zone.html?zone=practice", label: "Luyện tập", key: "practice" },
+      { href: "zone.html?zone=mock", label: "Thi thử", key: "mock" },
+      { href: "calendar.html", label: "Lịch học", key: "calendar" },
+      { href: "results.html", label: "Kết quả của tôi", key: "results" },
+      { href: "profile.html", label: "Tài khoản cá nhân", key: "profile" }
     ];
     if (isAdmin()) {
-      links.push({ href: "admin-assign.html", label: "学生分配", key: "admin" });
+      links.push({ href: "admin-assign.html", label: "Phân công học viên", key: "admin" });
     }
     if (isPlatformAdmin() && isHqSite()) {
-      links.push({ href: "platform.html", label: "平台主控台", key: "platform" });
+      links.push({ href: "platform.html", label: "Quản trị hệ thống", key: "platform" });
     }
 
     var path = location.pathname + location.search;
     var label = document.createElement("p");
     label.className = "student-side__label";
-    label.textContent = (getOrg() && getOrg().name) || (isHqSite() ? "优益思达备考" : "学习中心");
+    label.textContent = brandName(getOrg());
     side.appendChild(label);
 
     links.forEach(function (L) {
@@ -1072,7 +1094,7 @@ window.YYSD_AUTH = (function () {
   if (window.yysdDesktop && form && !document.getElementById("activationCode")) {
     var label = document.createElement("label");
     label.className = "auth-field";
-    label.innerHTML = "<span>激活码</span><input id=\"activationCode\" autocomplete=\"off\" placeholder=\"这台电脑已绑定可留空\">";
+    label.innerHTML = "<span>Mã kích hoạt</span><input id=\"activationCode\" autocomplete=\"off\" placeholder=\"Có thể để trống nếu máy này đã được liên kết\">";
     var btn = form.querySelector("button[type=submit], button");
     form.insertBefore(label, btn);
   }
@@ -1081,10 +1103,10 @@ window.YYSD_AUTH = (function () {
     if (!d || !d.on || !form) return;
     var p = document.createElement("p");
     p.className = "auth-msg auth-msg--err";
-    p.textContent = "学生和老师请下载机考程序。管理员仍可在此登录。";
+    p.textContent = "Học viên và giáo viên cần tải ứng dụng thi trên máy. Quản trị viên vẫn có thể đăng nhập tại đây.";
     var a = document.createElement("a");
     a.href = "download.html";
-    a.textContent = "下载机考程序";
+    a.textContent = "Tải ứng dụng thi trên máy";
     form.parentNode.insertBefore(p, form);
     form.parentNode.insertBefore(a, form);
   }).catch(function () {});

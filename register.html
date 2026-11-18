@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>注册 · 优益思达国际课程中心</title>
+  <title>Đăng ký · Trung tâm Khóa học Quốc tế YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260818mps">
 </head>
@@ -13,75 +13,75 @@
 
   <header class="minimal-topbar home-chrome-bar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>学习中心</b>
+          <b>Trung tâm học tập</b>
           <span>Learning Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="index.html" data-key="home">首页</a>
-        <a href="zone.html?zone=study&s=vocab" data-key="words">单词</a>
-        <a href="zone.html?zone=mock&s=ielts" data-key="ielts">雅思</a>
-        <a href="alevel.html" data-key="intl">国际课程</a>
-        <a href="dashboard.html" data-key="tasks">任务中心</a>
+      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
+        <a href="index.html" data-key="home">Trang chủ</a>
+        <a href="zone.html?zone=study&s=vocab" data-key="words">Từ vựng</a>
+        <a href="zone.html?zone=mock&s=ielts" data-key="ielts">IELTS</a>
+        <a href="alevel.html" data-key="intl">Khóa quốc tế</a>
+        <a href="dashboard.html" data-key="tasks">Nhiệm vụ</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="平台介绍">
-        <p class="auth-aside__eyebrow">雅思 · 国际课程</p>
-        <h2 class="auth-aside__title">注册账号。<br>开始备考。</h2>
-        <p class="auth-aside__desc" id="aside-desc">验证手机号后设置登录密码，即可进入学习中心。</p>
+      <aside class="auth-aside reveal" aria-label="Giới thiệu nền tảng">
+        <p class="auth-aside__eyebrow">IELTS · Khóa quốc tế</p>
+        <h2 class="auth-aside__title">Tạo tài khoản.<br>Bắt đầu ôn thi.</h2>
+        <p class="auth-aside__desc" id="aside-desc">Xác minh số điện thoại và đặt mật khẩu để vào trung tâm học tập.</p>
         <ul class="auth-aside__points" id="aside-points">
-          <li>剑桥雅思真题</li>
-          <li>系统背词计划</li>
-          <li>任务与进度同步</li>
+          <li>Đề Cambridge IELTS</li>
+          <li>Kế hoạch học từ</li>
+          <li>Đồng bộ nhiệm vụ và tiến độ</li>
         </ul>
       </aside>
       <section class="auth-card reveal">
         <div class="auth-tabs">
-          <a class="auth-tabs__item" href="login.html">登录</a>
-          <span class="auth-tabs__item is-active">注册</span>
+          <a class="auth-tabs__item" href="login.html">Đăng nhập</a>
+          <span class="auth-tabs__item is-active">Đăng ký</span>
         </div>
-        <h1 class="auth-card__title">注册账号</h1>
-        <p class="auth-card__desc" id="card-desc">每个手机号只能注册一次，请牢记您设置的密码。</p>
+        <h1 class="auth-card__title">Tạo tài khoản</h1>
+        <p class="auth-card__desc" id="card-desc">Mỗi số điện thoại chỉ đăng ký được một lần. Hãy lưu mật khẩu ở nơi an toàn.</p>
 
         <form class="auth-form" id="register-form" novalidate>
           <label class="auth-field">
-            <span>手机号</span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位中国大陆手机号" required>
+            <span>Số điện thoại</span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="Số điện thoại Trung Quốc đại lục (11 chữ số)" required>
           </label>
           <label class="auth-field" id="reg-key-field" hidden>
-            <span>注册密钥</span>
-            <input type="text" id="reg-key" autocomplete="off" maxlength="120" placeholder="向学校索取的注册密钥">
+            <span>Mã đăng ký</span>
+            <input type="text" id="reg-key" autocomplete="off" maxlength="120" placeholder="Mã đăng ký do trường cấp">
           </label>
           <label class="auth-field auth-field--row" id="code-field">
-            <span>验证码</span>
-            <input type="text" id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="6 位验证码" required>
-            <button type="button" class="btn btn--ghost btn--sm" id="send-btn">获取验证码</button>
+            <span>Mã xác minh</span>
+            <input type="text" id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="Mã xác minh gồm 6 chữ số" required>
+            <button type="button" class="btn btn--ghost btn--sm" id="send-btn">Nhận mã</button>
           </label>
           <label class="auth-field">
-            <span>设置密码</span>
-            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="至少 6 位" required>
+            <span>Đặt mật khẩu</span>
+            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="Ít nhất 6 ký tự" required>
           </label>
           <label class="auth-field">
-            <span>确认密码</span>
-            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="再次输入密码" required>
+            <span>Xác nhận mật khẩu</span>
+            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="Nhập lại mật khẩu" required>
           </label>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable">注册并登录</button>
+          <button type="submit" class="btn btn--primary btn--block pressable">Đăng ký và đăng nhập</button>
         </form>
 
         <p class="auth-legal">
-          已有账号？<a href="login.html">去登录</a>
-          · 注册即表示同意
-          <a href="agreement.html">《用户服务协议》</a>
-          与
-          <a href="privacy.html">《隐私政策》</a>
+          Đã có tài khoản? <a href="login.html">Đăng nhập</a>
+          · Khi đăng ký, bạn đồng ý với
+          <a href="agreement.html">Thỏa thuận sử dụng</a>
+          và
+          <a href="privacy.html">Chính sách riêng tư</a>
         </p>
       </section>
     </div>
@@ -92,12 +92,12 @@
       <div class="minimal-footer__brand">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-footer__logo">
         <div>
-          <b>学习中心</b>
+          <b>Trung tâm học tập</b>
           <span>Learning Center</span>
         </div>
       </div>
       <p class="minimal-footer__copy">© <span id="year"></span>
-        <a href="agreement.html">用户协议</a> · <a href="privacy.html">隐私政策</a>
+        <a href="agreement.html">Thỏa thuận sử dụng</a> · <a href="privacy.html">Chính sách riêng tư</a>
         <span class="site-icp" data-icp></span>
       </p>
     </div>
@@ -141,11 +141,11 @@
       sendBtn.disabled = true;
       regKeyEl.required = true;
       document.getElementById("aside-desc").textContent =
-        "向学校索取注册密钥后，用手机号设置密码即可注册。登录仍用手机号 + 密码。";
+        "Xin mã đăng ký từ trường, nhập số điện thoại và đặt mật khẩu. Sau đó dùng số điện thoại và mật khẩu để đăng nhập.";
       document.getElementById("aside-points").innerHTML =
-        "<li>学校发放的注册密钥</li><li>手机号 + 密码登录</li><li>成绩自动云端同步</li>";
+        "<li>Mã đăng ký do trường cấp</li><li>Đăng nhập bằng số điện thoại và mật khẩu</li><li>Tự đồng bộ kết quả lên máy chủ</li>";
       document.getElementById("card-desc").textContent =
-        "请向学校管理员索取注册密钥。密钥有次数限制，每个手机号只能注册一次。";
+        "Hãy xin mã đăng ký từ quản trị viên của trường. Mỗi mã có giới hạn số lượt dùng; mỗi số điện thoại chỉ được đăng ký một lần.";
     }
 
     function showMsg(text, ok) {
@@ -158,7 +158,7 @@
       sendBtn.disabled = true;
       tick = setInterval(function () {
         cooldown -= 1;
-        sendBtn.textContent = cooldown > 0 ? cooldown + "s" : "获取验证码";
+        sendBtn.textContent = cooldown > 0 ? cooldown + "s" : "Nhận mã";
         if (cooldown <= 0) {
           clearInterval(tick);
           sendBtn.disabled = false;
@@ -173,7 +173,7 @@
         body: { phone: phoneEl.value.trim(), purpose: "register" }
       })
         .then(function () {
-          showMsg("验证码已发送，请查收短信。", true);
+          showMsg("Đã gửi mã xác minh. Hãy kiểm tra tin nhắn.", true);
           startCooldown(60);
         })
         .catch(function (e) { showMsg(e.message); });
@@ -183,7 +183,7 @@
       ev.preventDefault();
       showMsg("");
       if (passwordEl.value !== confirmEl.value) {
-        showMsg("两次密码不一致");
+        showMsg("Hai mật khẩu không khớp.");
         return;
       }
       var body = {

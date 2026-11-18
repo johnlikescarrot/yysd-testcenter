@@ -92,7 +92,7 @@
   function orgName() {
     var A = window.YYSD_AUTH;
     var org = A && A.getOrg && A.getOrg();
-    return (org && org.name) || "Trung tâm học tập";
+    return A && A.brandName ? A.brandName(org) : "Trung tâm học tập";
   }
 
   function renderUser() {
@@ -104,7 +104,7 @@
     var src = logged && A.avatarSrc ? A.avatarSrc(user.avatarUrl) : "";
     var digits = phone.replace(/\D/g, "");
     var avatarText = "·";
-    if (/体验/.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
+    if (/体验|trải nghiệm/i.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
       avatarText = "Thử";
     } else if (phone) {
       avatarText = phone.slice(-4);
