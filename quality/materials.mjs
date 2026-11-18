@@ -33,6 +33,19 @@ const sources = {
     'Studies in Second Language Acquisition, 32(2), 265–302', '10.1017/S0272263109990520'),
   lee: paper('Lee, J., Jang, J., & Plonsky, L.', 2015, 'The Effectiveness of Second Language Pronunciation Instruction: A Meta-Analysis',
     'Applied Linguistics, 36(3), 345–366', '10.1093/applin/amu040'),
+  pan: paper('Pan, S. C., & Rickard, T. C.', 2018, 'Transfer of Test-Enhanced Learning: Meta-Analytic Review and Synthesis',
+    'Psychological Bulletin, 144(7), 710–756', '10.1037/bul0000151'),
+  nguyen: paper('Nguyen, H. T. M.', 2023,
+    'The Washback of the International English Language Testing System (IELTS) as an English Language Proficiency Exit Test on the Learning of Final-Year English Majors',
+    'TESL-EJ, 27(2)', '10.55593/ej.27106a8'),
+  dalman: paper('Dalman, M., & Plonsky, L.', 2025, 'The Effectiveness of Second-Language Listening Strategy Instruction: A Meta-Analysis',
+    'Language Teaching Research, 29(3), 1039–1068', '10.1177/13621688211072981'),
+  bax: paper('Bax, S.', 2013, 'The Cognitive Processing of Candidates During Reading Tests: Evidence From Eye-Tracking',
+    'Language Testing, 30(4), 441–465', '10.1177/0265532212473244'),
+  green: paper('Green, A.', 2007, 'Washback to Learning Outcomes: A Comparative Study of IELTS Preparation and University Pre-Sessional Language Courses',
+    'Assessment in Education: Principles, Policy & Practice, 14(1), 75–97', '10.1080/09695940701272880'),
+  seedhouse: paper('Seedhouse, P.', 2019, 'The Dual Personality of ‘Topic’ in the IELTS Speaking Test',
+    'ELT Journal, 73(3), 247–256', '10.1093/elt/ccz009'),
   format: { title: 'Cấu trúc IELTS Academic', url: 'https://ielts.org/take-a-test/test-types/ielts-academic-test' },
   scoring: { title: 'Mô tả thang điểm Viết và Nói', url: 'https://ielts.org/organisations/ielts-for-organisations/understanding-ielts-scoring/resources-for-setting-your-ielts-scores' },
   samples: { title: 'Câu hỏi mẫu IELTS Academic', url: 'https://ielts.org/take-a-test/preparation-resources/sample-test-questions/academic-test' },
@@ -43,19 +56,19 @@ export const guides = [
   {
     slug: 'hoc-it-nho-lau', number: '01', title: 'Học ít, nhớ lâu',
     description: 'Lập lịch và tự kiểm tra khi luyện IELTS Academic.',
-    sources: ['dunlosky', 'roediger', 'rowland', 'yang', 'cepeda', 'kim', 'hattie', 'sailer'],
+    sources: ['dunlosky', 'roediger', 'rowland', 'yang', 'pan', 'cepeda', 'kim', 'hattie', 'sailer', 'nguyen'],
     pages: [
       [
         section('1. Tự nhớ trước khi xem đáp án', [
           'Sau một đoạn đọc hoặc đoạn nghe, hãy tạm đóng tài liệu. Viết lại ý chính hoặc thử trả lời từ trí nhớ, rồi đối chiếu với nguồn. Tự kiểm tra và học giãn cách có bằng chứng tốt hơn việc chỉ đọc lại trong nhiều bối cảnh [1]. Thí nghiệm và tổng quan về luyện truy hồi cho thấy lợi ích đối với việc nhớ sau một khoảng thời gian; tổng quan lớp học cũng ghi nhận lợi ích trong nhiều tình huống [2, 3, 4].',
-          'Ví dụ: nghe một thông báo rồi ghi địa điểm, giờ tập trung và một thay đổi. Sau khi đối chiếu, tự giải thích vì sao mình chọn giờ cũ thay vì giờ mới.',
+          'Ví dụ: nghe một thông báo rồi ghi địa điểm, giờ tập trung và một thay đổi. Sau khi đối chiếu, tự giải thích vì sao mình chọn giờ cũ thay vì giờ mới. Ở buổi sau, thử một thông báo khác. Phân tích tổng hợp cho thấy việc tự nhớ có thể giúp vận dụng sang câu mới, nhưng mức độ còn tùy độ tương đồng giữa các nhiệm vụ [5].',
         ]),
         section('2. Chia bài ôn thành nhiều lượt', [
-          'Luyện rải ra nhiều ngày thường có lợi cho ghi nhớ hơn việc dồn vào một buổi. Khoảng cách phù hợp phụ thuộc tài liệu và thời điểm cần nhớ lại [5, 6].',
+          'Luyện rải ra nhiều ngày thường có lợi cho ghi nhớ hơn việc dồn vào một buổi. Khoảng cách phù hợp phụ thuộc tài liệu và thời điểm cần nhớ lại [6, 7].',
           'Sải bước dùng mốc 1, 3, 7, 14 ngày sau các lượt trả lời đúng và ưu tiên câu sai ngay trong lượt ôn tiếp theo. Đây là quy tắc thiết kế đơn giản, không phải công thức tối ưu cho mọi người. Bạn vẫn có thể mở lại bài bất kỳ lúc nào.',
         ]),
         section('3. Biến phản hồi thành việc làm tiếp theo', [
-          'Phản hồi hữu ích giúp làm rõ mục tiêu, kết quả hiện tại và bước tiếp theo [7]. Khi làm sai, hãy ghi loại lỗi và một cách sửa có thể thử ở câu mới, thay vì chỉ chép đáp án.',
+          'Phản hồi hữu ích giúp làm rõ mục tiêu, kết quả hiện tại và bước tiếp theo [8]. Khi làm sai, hãy ghi loại lỗi và một cách sửa có thể thử ở câu mới, thay vì chỉ chép đáp án.',
         ], [
           'Nghe: nhận ra thông tin bị đính chính sau từ chỉ đối lập.',
           'Đọc: chỉ đúng câu làm bằng chứng; nếu không thấy, ghi rõ điều còn thiếu.',
@@ -80,7 +93,7 @@ export const guides = [
           'Cách sửa có thể thử ở câu tiếp theo ___  |  Ngày tự kiểm lại ___',
         ]),
         section('Dùng điểm để giữ nhịp, không để đo trình độ', [
-          'Điểm kinh nghiệm, mục tiêu ngày và huy hiệu giúp bạn nhìn lại thói quen. Tổng quan về trò chơi hóa cho thấy kết quả phụ thuộc cách triển khai và bối cảnh [8]. Điểm luyện trong ứng dụng không tương đương điểm thi IELTS.',
+          'Điểm kinh nghiệm, mục tiêu ngày và huy hiệu giúp bạn nhìn lại thói quen. Tổng quan về trò chơi hóa cho thấy kết quả phụ thuộc cách triển khai và bối cảnh [9]. Một khảo sát sinh viên ngành tiếng Anh ở miền Trung Việt Nam ghi nhận cả động lực lẫn áp lực khi dùng IELTS làm chuẩn đầu ra [10]. Nếu bị cuốn vào điểm hoặc chuỗi ngày, hãy đặt một mục tiêu kỹ năng cụ thể, chẳng hạn tìm được bằng chứng cho hai câu Đọc. Điểm luyện trong ứng dụng không tương đương điểm thi IELTS.',
         ]),
       ],
     ],
@@ -88,7 +101,7 @@ export const guides = [
   {
     slug: 'bon-ky-nang', number: '02', title: 'Chiến lược bốn kỹ năng',
     description: 'Cấu trúc IELTS Academic, bài tập mẫu và bảng tự kiểm.',
-    sources: ['format', 'scoring', 'samples', 'nation', 'vandergrift', 'jeon', 'kang', 'lyster', 'lee', 'kim'],
+    sources: ['format', 'scoring', 'samples', 'nation', 'vandergrift', 'dalman', 'jeon', 'bax', 'kang', 'green', 'lyster', 'lee', 'seedhouse', 'kim'],
     pages: [
       [
         section('Nhận biết cấu trúc bài thi', [
@@ -96,21 +109,22 @@ export const guides = [
           'Lộ trình này bổ sung cho việc làm đề mẫu chính thức [3], không thay thế bài thi. Khi lập kế hoạch, dành thời gian cho đầu vào, diễn đạt, chú ý đến hình thức ngôn ngữ và phát triển độ trôi chảy [4].',
         ]),
         section('Nghe · Kiểm tra dự đoán', [
-          'Trước khi nghe, dự đoán loại thông tin cần điền: giờ, địa điểm, tên, số lượng hay danh từ. Sau khi nghe lần đầu, xác định đoạn đã bỏ lỡ; khi luyện ở nhà, có thể nghe lại rồi mới đọc bản chép. Nghiên cứu về dạy nghe theo quy trình gợi ý lợi ích của dự đoán, theo dõi và tự kiểm tra; nghiên cứu này không trực tiếp đo điểm IELTS [5].',
+          'Trước khi nghe, dự đoán loại thông tin cần điền: giờ, địa điểm, tên, số lượng hay danh từ. Sau khi nghe lần đầu, xác định đoạn đã bỏ lỡ; khi luyện ở nhà, có thể nghe lại rồi mới đọc bản chép. Một nghiên cứu dạy nghe theo quy trình sử dụng dự đoán, theo dõi và tự kiểm tra [5]. Phân tích tổng hợp cho thấy dạy chiến lược nghe có lợi trung bình, nhưng hiệu quả thay đổi theo cách luyện và bối cảnh [6]. Đây không phải bằng chứng về mức tăng điểm IELTS.',
         ], ['Tự kiểm: Mình đã phân biệt được phương án được nhắc đến và phương án cuối cùng chưa?']),
         section('Đọc · Tìm câu làm bằng chứng', [
-          'Đọc lướt để hiểu cấu trúc, sau đó quay lại đoạn liên quan. Với dạng đúng, sai hoặc không có thông tin, tìm câu xác nhận hoặc bác bỏ; nếu không có đủ dữ kiện cho cả hai, đừng dùng kiến thức ngoài bài. Vốn từ và ngữ pháp có liên hệ với khả năng đọc hiểu ngôn ngữ thứ hai [6]; mối liên hệ đó không tự chứng minh hiệu quả của một mẹo làm bài.',
+          'Đọc lướt để hiểu cấu trúc, sau đó quay lại đoạn liên quan. Với dạng đúng, sai hoặc không có thông tin, tìm câu xác nhận hoặc bác bỏ; nếu không có đủ dữ kiện cho cả hai, đừng dùng kiến thức ngoài bài. Vốn từ và ngữ pháp có liên hệ với khả năng đọc hiểu ngôn ngữ thứ hai [7]. Trong nghiên cứu theo dõi chuyển động mắt khi làm câu hỏi IELTS, người trả lời đúng và sai có cách tìm thông tin khác nhau ở một số dạng câu [8]. Hãy kết hợp tìm vị trí nhanh với đọc kỹ câu chứa bằng chứng, thay vì đoán theo từ khóa trùng.',
         ], ['Tự kiểm: Mình có thể chỉ rõ từ hoặc cụm từ nào giới hạn nhận định không?']),
       ],
       [
         section('Viết · Viết, nhận phản hồi rồi sửa', [
           'Phần 1 yêu cầu ít nhất 150 từ để mô tả thông tin trực quan. Phần 2 cần ít nhất 250 từ và có trọng số lớn hơn. Thử phân bổ khoảng 20 và 40 phút. Đối chiếu bài với các tiêu chí chính thức như đáp ứng yêu cầu, mạch lạc và liên kết, từ vựng, phạm vi và độ chính xác ngữ pháp [1, 2].',
-          'Phản hồi sửa lỗi có thể giúp tăng độ chính xác ngữ pháp khi viết bằng ngôn ngữ thứ hai, nhưng hiệu quả thay đổi theo người học, bối cảnh và thể loại [7]. Hãy sửa một lỗi thường gặp trong chính đoạn mình vừa viết, sau đó dùng cấu trúc đã sửa ở đề mới.',
+          'Phản hồi sửa lỗi có thể giúp tăng độ chính xác ngữ pháp khi viết bằng ngôn ngữ thứ hai, nhưng hiệu quả thay đổi theo người học, bối cảnh và thể loại [9]. Hãy sửa một lỗi thường gặp trong đoạn vừa viết, sau đó dùng cấu trúc đã sửa ở đề mới.',
+          'Một nghiên cứu so sánh các khóa học không thấy lợi thế rõ ràng về điểm Viết khi chỉ tập trung luyện thi so với học viết học thuật [10]. Bên cạnh làm đề mẫu, hãy tập giải thích lý do và dùng ví dụ cụ thể thay cho học thuộc bài mẫu.',
         ], ['Tự kiểm phần 1: Có câu tổng quan, so sánh nổi bật và số liệu đúng không?',
           'Tự kiểm phần 2: Quan điểm có trả lời trực tiếp đề và được giải thích bằng lý do, ví dụ hay không?']),
         section('Nói · Phát triển ý, không học thuộc', [
           'Phần 1 hỏi về chủ đề quen thuộc. Phần 2 cho bạn một phút chuẩn bị rồi nói trong một đến hai phút. Phần 3 thảo luận câu hỏi khái quát hơn [1]. Khi luyện, nói theo từ khóa và thử tự nghe lại hoặc nhờ người khác phản hồi. Hãy đối chiếu với bốn tiêu chí chính thức, trong đó phát âm là một tiêu chí riêng [2].',
-          'Nghiên cứu về phản hồi nói và dạy phát âm nhìn chung ủng hộ luyện tập có phản hồi [8, 9]. Làm lại vào ngày khác với chủ đề mới để tập áp dụng chứ không học thuộc câu mẫu [10].',
+          'Nghiên cứu về phản hồi nói và dạy phát âm nhìn chung ủng hộ luyện tập có phản hồi [11, 12]. Phân tích hội thoại IELTS nhấn mạnh cách thí sinh phát triển chủ đề sau khi trả lời câu hỏi [13]. Hãy trả lời, thêm một lý do và minh họa bằng ví dụ. Thử lại vào ngày khác với chủ đề mới [14].',
         ], ['Tự kiểm: Đã trả lời thẳng, giải thích, đưa ví dụ rõ và nói đủ rõ để người khác theo kịp chưa?']),
       ],
     ],

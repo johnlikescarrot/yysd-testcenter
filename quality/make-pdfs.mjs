@@ -67,7 +67,7 @@ ${references.join('\n')}
 
 async function pdf(guide) {
   const doc = new PDFDocument({
-    size: 'A4', margin: 51, autoFirstPage: false, lang: 'vi-VN',
+    size: 'A4', margin: 51, autoFirstPage: false, bufferPages: true, lang: 'vi-VN',
     info: {
       Title: guide.title, Subject: guide.description, Author: 'Sải bước · YYSD',
       CreationDate: new Date('2026-11-18T00:00:00Z'),
@@ -91,7 +91,9 @@ async function pdf(guide) {
   };
   let pageNumber = 0;
   const footer = () => {
-    if (doc.y > 758) throw new Error(`Too much content on ${guide.slug}, page ${pageNumber + 1}`);
+    if (doc.y > 758 || doc.bufferedPageRange().count !== pageNumber + 1) {
+      throw new Error(`Too much content on ${guide.slug}, page ${pageNumber + 1} (y=${Math.round(doc.y)})`);
+    }
     doc.font('regular').fontSize(9).fillColor(muted).text(`SẢI BƯỚC  /  ${++pageNumber}`, 51, 778, { ...fontFeatureOptions, lineBreak: false });
   };
   for (const [index, page] of guide.pages.entries()) {
@@ -107,12 +109,12 @@ async function pdf(guide) {
     footer();
   }
   newPage(`IELTS ACADEMIC  /  SỔ TAY ${guide.number}`, 'Tài liệu tham khảo');
-  paragraph('Tra cứu trên Google Scholar hoặc mở DOI để xem bài gốc. Một số nhà xuất bản có thể yêu cầu quyền truy cập.');
+  paragraph('Tra Google Scholar hoặc mở DOI. Một số bài yêu cầu quyền truy cập.');
   for (const [index, source] of guide.sources.entries()) {
     const prefix = `[${index + 1}] `;
-    doc.font('regular').fontSize(9.75).fillColor(ink);
+    doc.font('regular').fontSize(9.4).fillColor(ink);
     if (source.doi) {
-      print(`${prefix}${citation(source)}`, { lineGap: 1.6 });
+      print(`${prefix}${citation(source)}`, { lineGap: 1.2 });
       doc.fontSize(9).fillColor(purple);
       print(`DOI ${source.doi}`, { link: doiLink(source.doi), underline: true, continued: true });
       print('     ', { link: null, underline: false, continued: true });
@@ -122,7 +124,7 @@ async function pdf(guide) {
       doc.fillColor(purple);
       print(source.title, { link: source.url, underline: true });
     }
-    doc.moveDown(.52);
+    doc.moveDown(.32);
   }
   doc.moveDown(.5);
   paragraph('Tài liệu học tập độc lập, không phải ấn phẩm chính thức của IELTS.');

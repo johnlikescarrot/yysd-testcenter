@@ -7,7 +7,7 @@ Sải bước là bản luyện IELTS Academic bằng tiếng Việt, chạy tĩ
 - Ba chặng, 12 bài và 36 hoạt động tự soạn cho Nghe, Đọc, Viết, Nói. Đoạn nghe sử dụng giọng tổng hợp và có bản chép tiếng Anh. Bài Viết và Nói có gợi ý tự kiểm, không chấm điểm tự động. Bộ đếm của phần Nói không bật mic.
 - Kết quả bài học, mục tiêu ngày, điểm kinh nghiệm và huy hiệu lưu trên trình duyệt. Bản nháp Viết không được lưu. Xóa dữ liệu trang sẽ xóa tiến độ; không có đồng bộ giữa thiết bị.
 - Câu sai vào lượt ôn tiếp theo. Tùy vào số lần trả lời đúng khi đến hạn, một câu được ôn lại sau 1, 3, 7 hoặc 14 ngày. Mỗi lượt ôn có tối đa 8 câu. Lịch này là quy tắc thực hành, không phải ước lượng điểm thi.
-- Hai sổ tay tiếng Việt có bản PDF và HTML cùng nội dung. Sổ tay dẫn 14 công trình học thuật khác nhau bằng DOI và liên kết tra cứu Google Scholar; tài liệu định dạng/chấm điểm dẫn trực tiếp IELTS. Tên bài nghiên cứu giữ nguyên để tra cứu. Không phân phối lại bài nghiên cứu của nhà xuất bản.
+- Hai sổ tay tiếng Việt có bản PDF và HTML cùng nội dung. Sổ tay dẫn 20 công trình học thuật khác nhau bằng DOI và liên kết tra cứu Google Scholar, gồm nghiên cứu trực tiếp về IELTS và một khảo sát ở miền Trung Việt Nam. Tài liệu định dạng và chấm điểm dẫn trực tiếp IELTS. Tên bài nghiên cứu giữ nguyên để tra cứu; không phân phối lại bài gốc.
 
 ## Phát triển và kiểm tra
 
