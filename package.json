@@ -1,0 +1,11 @@
+{
+  "name": "yysd-ielts-vi",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:coverage": "node --experimental-test-coverage --test-coverage-include=vi/core.js --test-coverage-lines=100 --test-coverage-functions=100 --test tests/core.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}

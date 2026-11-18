@@ -1,0 +1,35 @@
+name: Deploy Vietnamese IELTS to GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'vi/**'
+      - '.github/workflows/vietnamese-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: vietnamese-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Prepare standalone static site
+        run: |
+          mkdir -p _site/vi
+          cp -R vi/. _site/vi/
+          printf '%s\n' '<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=vi/"><title>IELTS mỗi ngày</title></head><body><a href="vi/">IELTS mỗi ngày</a></body></html>' > _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

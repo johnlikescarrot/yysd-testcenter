@@ -1,0 +1,53 @@
+name: Vietnamese IELTS quality
+on:
+  push:
+    paths:
+      - 'vi/**'
+      - 'tests/**'
+      - 'package*.json'
+      - 'lighthouserc.json'
+      - '.github/linters/eslint.config.mjs'
+      - '.github/workflows/vietnamese-quality.yml'
+  pull_request:
+    paths:
+      - 'vi/**'
+      - 'tests/**'
+      - 'package*.json'
+      - 'lighthouserc.json'
+      - '.github/linters/eslint.config.mjs'
+      - '.github/workflows/vietnamese-quality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:coverage
+  super-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: super-linter/super-linter@v8.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          FILTER_REGEX_INCLUDE: '.*/vi/.*\.js$'
+          VALIDATE_JAVASCRIPT_ES: true
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npx --yes @lhci/cli@0.15.1 autorun
