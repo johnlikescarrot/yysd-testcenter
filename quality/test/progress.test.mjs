@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { byLesson, lessons, questions, skills, units } from '../../ielts-vi/assets/course.js';
 import {
-  assess, currentQuestion, dueCards, emptyProgress, finish, localDay, makeSession,
-  previousWeek, readProgress, reviewLimit, saveProgress, storageKey, streak, summary, wordCount,
+  assess, currentQuestion, dueCards, emptyProgress, finish, focusPlan, localDay, makeSession,
+  previousWeek, readProgress, reviewLimit, saveProgress, storageKey, streak, summary, weeklyChallenge, wordCount,
 } from '../../ielts-vi/assets/progress.js';
 
 function allAnswers(session, correct = true) {
@@ -151,4 +151,37 @@ test('review prioritizes mistakes, sorts by date, limits each batch and caps int
   assert.deepEqual(fifth.cards['booking-1'], { stage: 4, due: 69 });
   const lapse = finish(fifth, allAnswers(makeSession('review', fifth, 69), false), 69).state;
   assert.deepEqual(lapse.cards['booking-1'], { stage: 0, due: 69 });
+});
+
+test('focus drills prefer unresolved mistakes then due cards, and never rehearse an early card for XP', () => {
+  let state = emptyProgress();
+  assert.equal(focusPlan(state, 10).skill, 'listen');
+  state.cards['booking-1'] = { stage: 2, due: 50 };
+  assert.equal(focusPlan(state, 10).skill, 'read');
+  state.cards['outdoors-2'] = { stage: 1, due: 8 };
+  assert.equal(focusPlan(state, 10).skill, 'speak');
+  state.cards['observations-2'] = { stage: 0, due: 10 };
+  const session = makeSession('focus', state, 10);
+  assert.equal(session.focusSkill, 'write');
+  assert.equal(session.ids[0], 'observations-2');
+  assert.equal(session.ids.length, 4);
+  assert.ok(session.ids.every((id) => ['fill', 'choice'].includes(questions[id].type)));
+  const result = finish(state, allAnswers(session), 10);
+  assert.deepEqual(result.state.completed, {});
+  assert.equal(result.earned, 8);
+  assert.equal(result.state.activity[10], 1);
+  for (const lesson of lessons) state = finish(state, allAnswers(makeSession(lesson.id, state, 10)), 10).state;
+  assert.equal(makeSession('focus', state, 10), null);
+  assert.equal(makeSession('focus', state, 11).ids.length, 4);
+});
+
+test('weekly tiers count distinct local study days, reset on Monday and exclude future records', () => {
+  const mon = localDay(new Date(2026, 10, 16, 12));
+  const state = { ...emptyProgress(), activity: { [mon - 8]: 1, [mon - 7]: 1, [mon - 1]: 2, [mon + 6]: 1 } };
+  assert.deepEqual(weeklyChallenge(state, mon), { days: 0, tier: 'Khởi động', previous: 2 });
+  for (let i = 0; i < 5; i += 1) state.activity[mon + i] = 3;
+  assert.equal(weeklyChallenge(state, mon).tier, 'Đồng');
+  assert.equal(weeklyChallenge(state, mon + 2).tier, 'Bạc');
+  assert.deepEqual(weeklyChallenge(state, mon + 4), { days: 5, tier: 'Vàng', previous: 2 });
+  assert.deepEqual(weeklyChallenge(state, mon + 7), { days: 0, tier: 'Khởi động', previous: 6 });
 });

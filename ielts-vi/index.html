@@ -87,6 +87,11 @@
             <p id="review-note" class="muted">Chưa có câu đến hạn. Các câu đã làm sẽ tự lên lịch ôn.</p>
             <button type="button" id="begin-review" class="button secondary" disabled>Ôn các câu đến hạn <span aria-hidden="true">→</span></button>
           </section>
+          <section class="side-card" aria-labelledby="focus-title">
+            <div class="side-title"><span class="side-icon tone-read"><svg aria-hidden="true"><use href="assets/icons.svg#target"></use></svg></span><h3 id="focus-title">Luyện có trọng tâm</h3></div>
+            <p id="focus-note" class="muted">Tối đa 4 câu cùng kỹ năng. Ưu tiên câu sai, câu đến hạn rồi mới đến câu chưa làm.</p>
+            <button type="button" id="begin-focus" class="button secondary" disabled>Làm lượt gợi ý</button>
+          </section>
         </aside>
       </div>
     </section>
@@ -96,6 +101,13 @@
         <div><p class="eyebrow">02 / NHÌN LẠI</p><h2 id="report-title">Tiến độ &amp; cột mốc</h2></div>
         <p id="xp-summary" class="xp-chip">0 điểm kinh nghiệm</p>
       </header>
+      <div class="weekly-challenge">
+        <p class="eyebrow">THỬ THÁCH TUẦN · THỨ HAI ĐẾN CHỦ NHẬT</p>
+        <h3 id="weekly-title">Hạng cá nhân: Khởi động</h3>
+        <p id="weekly-count">Chưa có lượt học trong tuần này.</p>
+        <progress id="weekly-meter" max="7" value="0" aria-label="Số ngày đã học trong tuần"></progress>
+        <p class="fine-print">Đồng: 1 ngày · Bạc: 3 ngày · Vàng: 5 ngày. Mỗi ngày chỉ tính một lần. Không có bảng xếp hạng công khai.</p>
+      </div>
       <ul id="skill-progress" class="skill-progress" aria-label="Số bài đã hoàn thành theo kỹ năng"></ul>
       <ul id="badges" class="badges" aria-label="Huy hiệu học tập"></ul>
       <p class="fine-print">Điểm kinh nghiệm và số câu đúng chỉ phản ánh bài luyện, không dự đoán điểm thi IELTS.</p>

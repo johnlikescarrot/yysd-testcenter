@@ -189,3 +189,28 @@ test('boot module binds the browser clock and stops a running timer on exit', as
     delete globalThis.window;
   }
 });
+
+test('focus controls explain their recommendation and weekly activity survives reload', (t) => {
+  const state = emptyProgress();
+  state.cards['shade-1'] = { stage: 0, due: day };
+  state.activity[day] = 2;
+  const { get, window, dialog } = setup(t, { state });
+  assert.match(get('focus-note').textContent, /Đọc.*từng sai/);
+  assert.equal(get('weekly-title').textContent, 'Hạng cá nhân: Đồng');
+  assert.equal(get('weekly-meter').value, 1);
+  get('begin-focus').click();
+  assert.equal(dialog.open, true);
+  assert.match(get('session-title').textContent, /trọng tâm · Đọc/);
+  get('close-dialog').click();
+  state.cards['shade-1'] = { stage: 2, due: day };
+  const reload = () => {
+    window.localStorage.setItem(storageKey, JSON.stringify(state));
+    window.dispatchEvent(new window.StorageEvent('storage', { key: storageKey }));
+  };
+  reload();
+  assert.match(get('focus-note').textContent, /đến hạn/);
+  for (const q of Object.values(questions)) state.cards[q.id] = { stage: 2, due: day + 1 };
+  reload();
+  assert.equal(get('begin-focus').disabled, true);
+  assert.match(get('focus-note').textContent, /quay lại/);
+});

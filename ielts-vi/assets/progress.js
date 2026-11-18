@@ -1,4 +1,4 @@
-import { byLesson, lessons, questions } from './course.js';
+import { byLesson, lessons, questions, skills } from './course.js';
 
 export const storageKey = 'yysd:ielts-vi:progress:v1';
 export const goals = [1, 2, 3];
@@ -93,7 +93,39 @@ function consecutiveThree(state) {
     && state.activity[Number(key) - 2]);
 }
 
+// A focus session is a short drill, not a completed curriculum lesson. Never
+// move a scheduled card forward just to fill a batch or hand out extra XP.
+export function focusPlan(state, day) {
+  const due = dueCards(state, day);
+  const candidates = Object.keys(skills).map((skill) => {
+    const pool = lessons.filter((lesson) => lesson.skill === skill).flatMap((lesson) => lesson.questions.filter(objective));
+    const skillIds = new Set(pool.map(({ id }) => id));
+    const ready = due.filter((id) => skillIds.has(id));
+    const unseen = pool.filter(({ id }) => !Object.hasOwn(state.cards, id));
+    return {
+      skill, mistakes: ready.filter((id) => state.cards[id].stage === 0).length,
+      due: ready.length, unseenShare: unseen.length / pool.length,
+      ids: ready.concat(unseen.map(({ id }) => id)).slice(0, 4),
+    };
+  }).filter(({ ids }) => ids.length);
+  // Prioritize unresolved errors, then due reviews, then the least explored skill.
+  candidates.sort((a, b) => b.mistakes - a.mistakes || b.due - a.due || b.unseenShare - a.unseenShare);
+  return candidates[0];
+}
+
+export function weeklyChallenge(state, day) {
+  const monday = day - (new Date(day * dayMs).getUTCDay() + 6) % 7;
+  const active = (start, end) => Object.keys(state.activity).filter((key) => Number(key) >= start && Number(key) <= end).length;
+  const days = active(monday, day);
+  const tier = days >= 5 ? 'Vàng' : days >= 3 ? 'Bạc' : days >= 1 ? 'Đồng' : 'Khởi động';
+  return { days, tier, previous: active(monday - 7, monday - 1) };
+}
+
 export function makeSession(lessonId, state, day) {
+  if (lessonId === 'focus') {
+    const plan = focusPlan(state, day);
+    return plan ? { lessonId: null, focusSkill: plan.skill, ids: plan.ids, results: [] } : null;
+  }
   if (lessonId === 'review') {
     const ids = dueCards(state, day).slice(0, reviewLimit);
     return ids.length ? { lessonId: null, ids, results: [] } : null;

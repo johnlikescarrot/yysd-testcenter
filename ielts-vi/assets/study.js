@@ -1,7 +1,7 @@
 import { byLesson, lessons, skills, units } from './course.js';
 import {
-  assess, currentQuestion, finish, goals, localDay, makeSession, previousWeek,
-  readProgress, saveProgress, storageKey, summary, wordCount,
+  assess, currentQuestion, finish, focusPlan, goals, localDay, makeSession, previousWeek,
+  readProgress, saveProgress, storageKey, summary, weeklyChallenge, wordCount,
 } from './progress.js';
 
 const svgNs = 'http://www.w3.org/2000/svg';
@@ -110,6 +110,10 @@ export function mount(document, window, clock) {
   }
 
   function renderReport(badges) {
+    const weekly = weeklyChallenge(state, day);
+    get('weekly-title').textContent = `Hạng cá nhân: ${weekly.tier}`;
+    get('weekly-count').textContent = `Tuần này: ${weekly.days} ngày học. Tuần trước: ${weekly.previous} ngày.`;
+    get('weekly-meter').value = weekly.days;
     get('xp-summary').textContent = `${state.xp} điểm kinh nghiệm`;
     get('skill-progress').replaceChildren(...Object.entries(skills).map(([key, skill]) => {
       const group = lessons.filter((lesson) => lesson.skill === key);
@@ -154,6 +158,11 @@ export function mount(document, window, clock) {
     get('review-note').textContent = due ? 'Câu từng sai được ưu tiên. Mỗi lượt có tối đa 8 câu.'
       : 'Chưa có câu đến hạn. Các câu đã làm sẽ tự lên lịch ôn.';
     reviewButton.disabled = !due;
+    const plan = focusPlan(state, day);
+    get('begin-focus').disabled = !plan;
+    get('focus-note').textContent = !plan ? 'Bạn đã luyện hết các câu hiện có. Hãy quay lại khi đến lịch ôn.'
+      : `${skills[plan.skill].name} · ${plan.ids.length} câu. ` + (plan.mistakes ? 'Làm lại các câu từng sai trước.'
+        : plan.due ? 'Có câu đã đến hạn ôn.' : 'Khám phá một kỹ năng bạn chưa luyện nhiều.');
     renderPath(nextLesson?.id);
     renderWeek();
     renderReport(badges);
@@ -285,7 +294,8 @@ export function mount(document, window, clock) {
       return;
     }
     origin = trigger;
-    get('session-title').textContent = session.lessonId ? byLesson[id].title : 'Ôn tập ngắt quãng';
+    get('session-title').textContent = session.lessonId ? byLesson[id].title
+      : session.focusSkill ? `Luyện có trọng tâm · ${skills[session.focusSkill].name}` : 'Ôn tập ngắt quãng';
     get('session-meter').max = session.ids.length;
     dialog.showModal();
     renderQuestion();
@@ -369,6 +379,7 @@ export function mount(document, window, clock) {
     (previous.disabled ? continueButton : previous).focus();
   });
   continueButton.addEventListener('click', () => start(continueButton.dataset.lesson, continueButton.id));
+  get('begin-focus').addEventListener('click', () => start('focus', 'begin-focus'));
   reviewButton.addEventListener('click', () => start('review', reviewButton.id));
   goalSelect.addEventListener('change', () => {
     const goal = Number(goalSelect.value);

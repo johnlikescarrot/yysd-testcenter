@@ -16,9 +16,9 @@ const plain = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
 const htmlCitations = (value) => plain(value).replaceAll(/\[(\d+(?:, \d+)*)\]/g, (_, ids) => (
   `[${ids.split(', ').map((id) => `<a href="#nguon-${id}">${id}</a>`).join(', ')}]`
 ));
-const ink = '#241c32';
-const muted = '#5c5369';
-const purple = '#4b31a2';
+const ink = '#192a3c';
+const muted = '#4f5e6a';
+const navy = '#102e4a';
 // Preserve individual Unicode characters for PDF search and copy/paste.
 const fontFeatureOptions = { features: { ccmp: false, liga: false, clig: false, dlig: false } };
 
@@ -79,8 +79,8 @@ async function pdf(guide) {
   const print = (value, options) => doc.text(value, { ...fontFeatureOptions, ...options });
   const newPage = (label, title) => {
     doc.addPage();
-    doc.roundedRect(51, 48, 493, 90, 12).fill('#eee7fb');
-    doc.font('bold').fontSize(10).fillColor(purple).text(label, 67, 62, { ...fontFeatureOptions, width: 460 });
+    doc.roundedRect(51, 48, 493, 90, 12).fill('#e9eff2');
+    doc.font('bold').fontSize(10).fillColor(navy).text(label, 67, 62, { ...fontFeatureOptions, width: 460 });
     doc.font('bold').fontSize(24).fillColor(ink).text(title, 67, 81, { ...fontFeatureOptions, width: 460 });
     doc.x = 51;
     doc.y = 156;
@@ -98,7 +98,7 @@ async function pdf(guide) {
     newPage(`IELTS ACADEMIC  /  SỔ TAY ${guide.number}`, guide.title);
     if (index === 0) paragraph(guide.description);
     for (const { heading, paragraphs, list } of page) {
-      doc.font('bold').fontSize(13).fillColor(purple);
+      doc.font('bold').fontSize(13).fillColor(navy);
       print(heading).moveDown(.32);
       paragraphs.forEach(paragraph);
       list.forEach((item) => paragraph(`•  ${item}`));
@@ -113,13 +113,13 @@ async function pdf(guide) {
     doc.font('regular').fontSize(9.75).fillColor(ink);
     if (source.doi) {
       print(`${prefix}${citation(source)}`, { lineGap: 1.6 });
-      doc.fontSize(9).fillColor(purple);
+      doc.fontSize(9).fillColor(navy);
       print(`DOI ${source.doi}`, { link: doiLink(source.doi), underline: true, continued: true });
       print('     ', { link: null, underline: false, continued: true });
       print('Tra Google Scholar', { link: scholarLink(source.doi), underline: true });
     } else {
       print(`${prefix}IELTS. `, { continued: true });
-      doc.fillColor(purple);
+      doc.fillColor(navy);
       print(source.title, { link: source.url, underline: true });
     }
     doc.moveDown(.52);

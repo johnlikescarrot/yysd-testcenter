@@ -1,74 +1,56 @@
-# 优益思达学习中心
+# Trung tâm học tập YYSD
 
-> **Tiếng Việt:** [Sải bước · Luyện IELTS Academic](ielts-vi/) — [hướng dẫn phát triển và GitHub Pages](ielts-vi/README.md).
+**[Sải bước · Luyện IELTS Academic bằng tiếng Việt](ielts-vi/)** có 16 bài luyện, lịch ôn theo câu từng làm và bốn sổ tay có nguồn học thuật. Không cần tài khoản. Xem [cách chạy thử, đo chất lượng và triển khai GitHub Pages](ielts-vi/README.md).
 
-雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
+Cổng YYSD tại [youyisida.com](https://youyisida.com) phục vụ IELTS và các chương trình quốc tế như A-Level. Cổng chính kết hợp giao diện tĩnh với Node API cho đăng nhập bằng số điện thoại, lưu kết quả, giao bài và các tính năng AI. Bản Sải bước không phụ thuộc API này.
 
-静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
+## Dành cho học viên
 
-## 学生端
+| Mục | Nội dung |
+| --- | --- |
+| Từ vựng | Từ THPT, CET-4 và IELTS theo kỹ năng hoặc chủ đề; sổ từ sai |
+| Đề IELTS | Nghe, Đọc, Viết Cambridge; luyện từng Section/Passage hoặc thi thử trên máy |
+| Bài luyện | Phân tích câu phức, nghe chép số và luyện Nói |
+| Chương trình quốc tế | Đề và tài liệu A-Level |
+| Nhiệm vụ | Lịch học, bài tập giáo viên giao và hạn nộp |
+| Nói / AI | Luyện Nói và nhận xét bài Viết theo hạn mức tài khoản |
 
-| 入口 | 说明 |
-|------|------|
-| 单词 | 高中 / 四级 / 雅思听读写专项词书、分类词库、错题本 |
-| 雅思真题 | 剑桥听力 / 阅读 / 写作；补弱 Section·Passage；单项模考；全套模考（CDT 机考壳） |
-| 练习 | 长难句、数字听写、口语练习等 |
-| 国际课程 | A-Level 等资料入口 |
-| 任务中心 | 教师布置的作业、日程与待办 |
-| 口语 / AI | 口语练习、写作 AI 批改（额度受限） |
+Sau một bài thi thử trọn bộ, `cdt-report.html` hiển thị kết quả ba phần Nghe, Đọc và Viết. Bài Viết giữ bản nháp để người học xem lại; điểm tham khảo không phải kết quả IELTS chính thức.
 
-全套模考结束进入三科成绩报告（`cdt-report.html`）；交卷等待时有加载提示。
+## Dành cho giáo viên
 
-## 教师端
+Đăng nhập tại `teacher-login.html`. Trong `teacher-calendar.html`, chọn từ vựng, bài luyện bổ trợ, đề theo kỹ năng hoặc cả bộ đề; cũng có thể giao tệp HTML của mình. Các trang `teacher-*.html` còn có báo cáo tiến độ và chẩn đoán học tập.
 
-- 登录：`teacher-login.html`
-- 日历布置：`teacher-calendar.html` — 按类型（单词 / 补弱 / 单项模考 / 全套）下钻勾选，支持上传自有 HTML
-- 学生诊断与其它教师页见仓库内 `teacher-*.html`
+## Cấu trúc
 
-## 技术结构
+| Thư mục | Vai trò |
+| --- | --- |
+| `*.html`, `assets/` | Trang chính, điều hướng, phòng thi CDT, tài khoản và giao diện giáo viên |
+| `ielts-vi/`, `quality/` | Lộ trình IELTS tĩnh, nguồn sổ tay, bản dựng Pages và kiểm thử |
+| `library/<zone>/<subject>/` | Đề và giáo trình; `library/manifest.json` là danh mục được sinh tự động |
+| `app/`, `desktop/` | Ứng dụng thi TOEFL và ứng dụng máy tính |
+| `server/` | Express + SQLite: tài khoản, điểm, lịch, đồng bộ và dịch vụ AI |
+| `rankings/`, `admission/` | Các ứng dụng phụ về xếp hạng và tuyển sinh |
+| `scripts/` | Công cụ nhập đề, tạo danh mục và kiểm tra |
 
-```
-├── *.html                 # 站点页面（首页、考场、单词、教师端等）
-├── assets/                # CSS / JS（config 分类、exam CDT、auth）
-├── library/               # 题目与词书 HTML（按 zone/subject 分目录）
-│   └── manifest.json      # 内容索引（脚本/CI 生成，勿手改）
-├── server/                # Express API + SQLite（登录、成绩、日历、AI 代理等）
-├── rankings/              # 排行榜子应用（可选）
-├── admission/             # 招生相关子应用（可选）
-└── scripts/               # manifest、词库、自检脚本
-```
+## Chạy tại máy
 
-API 依赖见 [`server/package.json`](server/package.json)；环境变量模板见 [`server/.env.example`](server/.env.example)。生产部署脚本在 [`server/deploy/`](server/deploy/)。
+Dùng máy chủ HTTP thay vì mở HTML qua `file://`:
 
-## 本地预览
-
-前端不要直接双击打开 HTML，需本地静态服务；API 另开进程。
-
-```bash
-# 前端
+```sh
 python3 -m http.server 8080
-# → http://localhost:8080
-
-# API（需 Node ≥ 18）
-cd server && cp -n .env.example .env && npm i && npm start
-# → 默认 http://localhost:3000
 ```
 
-前端如何指向本地 API，以 `assets/js/auth.js` / 环境配置为准。
+Mở `http://localhost:8080/ielts-vi/` để luyện miễn phí hoặc `http://localhost:8080/` để xem cổng chính. Để chạy các chức năng cần tài khoản, thiết lập API theo [`server/.env.example`](server/.env.example), cài các gói trong [`server/package.json`](server/package.json) và chạy riêng `npm start` trong `server/` (Node ≥18, cổng mặc định 3000). Xem `assets/js/auth.js` về địa chỉ API và `server/deploy/` về triển khai. **Pages chỉ phục vụ tệp tĩnh**; không đặt máy chủ, thông tin đăng nhập hoặc dữ liệu học viên trong bản xuất bản.
 
-## 内容与成绩
+## Thêm nội dung và đồng bộ kết quả
 
-- 新题放入 `library/<zone>/<subject>/`，提交后由 Actions 或 `scripts/build_manifest.py` 重建 `manifest.json`。
-- 可选 meta：`exam:title` / `exam:duration` / `exam:description`。
-- 试卷批改后向父页同步分数：
+Thêm đề vào `library/<zone>/<subject>/`, đặt các thẻ `exam:title`, `exam:duration` và `exam:description` nếu cần. Chạy `python3 scripts/build_manifest.py` để cập nhật danh mục; không sửa JSON bằng tay. URL và mã bài là khóa tham chiếu cho lịch và kết quả cũ; không đổi chúng chỉ để dịch nhãn hiển thị.
+
+Đề tự chấm có thể thông báo kết quả cho trang chứa nó:
 
 ```js
 parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
 ```
 
-写作模考另可附带 `writingTask1` / `writingTask2` 等字段供报告页使用。
-
-## 相关文档
-
-- 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
-- A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)
+Bài Viết có thể gửi thêm `writingTask1` và `writingTask2` cho trang báo cáo. Xem thêm [thư viện Nghe Cambridge](library/mock/cambridge-listening/README.md) và [thư viện A-Level](library/mock/alevel/README.md).
