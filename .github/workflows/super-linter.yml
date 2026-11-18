@@ -114,8 +114,12 @@ jobs:
       - name: Xuất chẩn đoán lint
         if: always()
         run: |
-          file=/tmp/super-linter.log
-          test -f "${file}" || exit 0
-          tail -n 40 "${file}" \
-            | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+          {
+            echo "== cây tệp =="
+            find . -maxdepth 3 -iname "*super-linter*" -o -maxdepth 2 -iname "*.log"
+            echo "== tóm tắt =="
+            find . -maxdepth 4 -name "*.md" -path "*super-linter*" -exec head -n 60 {} \;
+            echo "== log =="
+            find . -maxdepth 4 -name "*.log" -exec tail -n 40 {} \;
+          } 2>&1 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
             | awk '{ print "::error title=Super-Linter::" substr($0, 1, 350) }'
