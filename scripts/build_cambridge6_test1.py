@@ -59,12 +59,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -95,7 +95,6 @@ def patch_listening_meta(html: str) -> str:
         ("Test 4 Nghe (đề và đáp án Cambridge)", "Test 1 Nghe (đề và đáp án Cambridge)"),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
         ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
-        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("test-4", "test-1"),
         ("ielts7_test4", "ielts6_test1"),
     ]
@@ -111,7 +110,6 @@ def patch_reading_meta(html: str) -> str:
         ("Cambridge IELTS 7 · Test 4 (Đọc)", "Cambridge IELTS 6 · Test 1 (Đọc)"),
         ("Cambridge IELTS 7 Test 4 Đọc học thuật", "Cambridge IELTS 6 Test 1 Đọc học thuật"),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
-        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("Test 4 Đọc (đề và đáp án Cambridge)", "Test 1 Đọc (đề và đáp án Cambridge)"),
         ("Test 4", "Test 1"),
@@ -132,7 +130,6 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 global water use graph + Task 2 consumer goods and advertising essay",
         ),
         ('<div class="num">7</div>', '<div class="num">6</div>'),
-        ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("Cambridge IELTS 7 · Test 4", "Cambridge IELTS 6 · Test 1"),
         ("Test 4 Viết (đề Cambridge)", "Test 1 Viết (đề Cambridge)"),
         ("cambridge-7-test-4-writing-draft", "cambridge-6-test-1-writing-draft"),
@@ -644,8 +641,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta, *, reading: bool = False) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     html = patch_scoring(html, reading=reading)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")

@@ -10,7 +10,7 @@ def ans(*v):
 
 
 def explain(*v):
-    return "答案：" + " / ".join(v) + "。"
+    return "Đáp án: " + " / ".join(v) + "."
 
 
 def listening_test(n: int) -> dict:

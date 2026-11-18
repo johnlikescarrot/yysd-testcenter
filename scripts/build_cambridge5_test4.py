@@ -52,12 +52,12 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return "Đáp án: " + " / ".join(values) + "."
 
 
 def replace_test(html: str, test: dict) -> str:
     block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
+    return TEST_RE.sub(lambda _: block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -73,7 +73,6 @@ def patch_listening_meta(html: str) -> str:
         ("Cambridge IELTS 5 · Test 3 (Nghe)", "Cambridge IELTS 5 · Test 4 (Nghe)"),
         ("Cambridge IELTS 5 Test 3 Nghe: ", "Cambridge IELTS 5 Test 4 Nghe: "),
         ("Test 3 Nghe (đề và đáp án Cambridge)", "Test 4 Nghe (đề và đáp án Cambridge)"),
-        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
@@ -95,7 +94,6 @@ def patch_reading_meta(html: str) -> str:
             "Wilderness Tourism、Toughened Glass、Effects of Light",
         ),
         ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
-        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
     ]
@@ -113,7 +111,6 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 Garlsdon supermarket map + Task 2 competition vs cooperation essay",
             "Task 1 underground railway table + Task 2 nature vs nurture essay",
         ),
-        ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Cambridge IELTS 5 · Test 3", "Cambridge IELTS 5 · Test 4"),
         ("Test 3 Viết (đề Cambridge)", "Test 4 Viết (đề Cambridge)"),
         ("cambridge-5-test-3-writing-draft", "cambridge-5-test-4-writing-draft"),
@@ -596,8 +593,8 @@ def copy_assets() -> None:
 
 def write_page(template: Path, out: Path, test: dict, patch_meta, *, reading: bool = False) -> None:
     html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
     html = patch_meta(html)
+    html = replace_test(html, test)
     html = patch_scoring(html, reading=reading)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")

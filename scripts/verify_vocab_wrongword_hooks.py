@@ -33,6 +33,15 @@ SPECIAL_EXTRA = ('id="stageResults"',)
 
 def check_file(path: Path, kind: str) -> list[str]:
     text = path.read_text(encoding="utf-8", errors="ignore")
+    # These two teacher downloads are authoring previews, not hybrid student LISTs:
+    # their words are imported, then the site's quiz/lesson player handles scoring.
+    # Check their own required hooks; never exempt a published learner list.
+    preview = {
+        "教师模版-单词检测.html": ('const wordData = [', 'id="quiz"', 'id="spell"', 'id="doneScore"'),
+        "教师模版-词库学习List.html": ('const wordData = [', 'id="vl-app"', 'id="learnViewTabs"'),
+    }.get(path.name) if path.parent == LIB / "study/vocab" else None
+    if preview:
+        return [token for token in preview if token not in text]
     missing = [token for token in COMMON if token not in text]
     extra = STANDARD_EXTRA if kind == "standard" else SPECIAL_EXTRA
     missing.extend(token for token in extra if token not in text)
@@ -61,7 +70,7 @@ def main() -> int:
         )
         return 1
     total = sum(1 for folder in VOCAB_DIRS for _ in (LIB / folder).rglob("*.html") if (LIB / folder).is_dir())
-    print(f"OK — {total} vocab LIST file(s) have wrong-word bridge hooks.")
+    print(f"OK — {total} vocab LISTs / authoring previews verified.")
     return 0
 
 

@@ -10,8 +10,8 @@
   var events = [];
   var students = [];
   var catalog = [];
-  var listenTax = { types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] };
-  var readTax = { types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] };
+  var listenTax = { types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] };
+  var readTax = { types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] };
   var taxonomy = listenTax;
   var shelfBooks = []; // /api/vocab-shelf/catalog — same books as student 词库
   var monthCursor = new Date();
@@ -681,7 +681,7 @@
       if (bookHost) {
         bookHost.hidden = false;
         bookHost.setAttribute("aria-label", "难度");
-        var diffs = [""].concat(taxonomy.diffs || ["易", "中", "难"]);
+        var diffs = [""].concat(taxonomy.diffs || ["Dễ", "Trung bình", "Khó"]);
         bookHost.innerHTML = diffs.map(function (d) {
           var on = String(pickDiff || "") === String(d);
           return '<button type="button" class="chip chip--sub' + (on ? " is-active" : "") +
@@ -1137,11 +1137,11 @@
       Y.load().catch(function () { return []; }),
       T.api("/api/vocab-shelf/catalog").catch(function () { return { books: shelfBooks }; }),
       (Y.loadListeningTaxonomy
-        ? Y.loadListeningTaxonomy().catch(function () { return { types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] }; })
-        : Promise.resolve({ types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] })),
+        ? Y.loadListeningTaxonomy().catch(function () { return { types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] }; })
+        : Promise.resolve({ types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] })),
       (Y.loadReadingTaxonomy
-        ? Y.loadReadingTaxonomy().catch(function () { return { types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] }; })
-        : Promise.resolve({ types: [], scenes: [], diffs: ["易", "中", "难"], groups: [], parts: [] }))
+        ? Y.loadReadingTaxonomy().catch(function () { return { types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] }; })
+        : Promise.resolve({ types: [], scenes: [], diffs: ["Dễ", "Trung bình", "Khó"], groups: [], parts: [] }))
     ]).then(function (res) {
       events = res[0].events || [];
       students = (res[1].students || []).map(function (s) {
