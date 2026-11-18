@@ -59,13 +59,6 @@ jobs:
             -e VALIDATE_ALL_CODEBASE=true \
             -e DEFAULT_BRANCH=main \
             -e IGNORE_GITIGNORED_FILES=true \
-            -e FILTER_REGEX_INCLUDE='(^|/)(vi|tests|docs)/' \
-            -e VALIDATE_CSS=true \
-            -e VALIDATE_HTML=true \
-            -e VALIDATE_MARKDOWN=true \
-            -e VALIDATE_JSON=true \
-            -e VALIDATE_YAML=true \
-            -e VALIDATE_GITHUB_ACTIONS=true \
             -e VALIDATE_JAVASCRIPT_ES=false \
             -e VALIDATE_JAVASCRIPT_STANDARD=false \
             -e VALIDATE_JAVASCRIPT_PRETTIER=false \
@@ -80,6 +73,7 @@ jobs:
             -e VALIDATE_CHECKOV=false \
             -e VALIDATE_TRIVY=false \
             -e VALIDATE_JSCPD=false \
+            -e FILTER_REGEX_INCLUDE='(^|/)(vi|tests|docs)/' \
             -v "$PWD":/tmp/lint \
             ghcr.io/super-linter/super-linter:v7.4.0 \
             2>&1 | tee /tmp/super-linter.log
