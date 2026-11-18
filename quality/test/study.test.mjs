@@ -189,3 +189,27 @@ test('boot module binds the browser clock and stops a running timer on exit', as
     delete globalThis.window;
   }
 });
+
+test('daily vocabulary uses Vietnamese choices, awards one mission, then unlocks the next day', (t) => {
+  const { get, document, window, dialog, select, submit, advance } = setup(t);
+  const daily = get('begin-daily');
+  daily.click();
+  assert.equal(get('session-title').textContent, 'Thử thách 5 từ');
+  for (let i = 0; i < 5; i += 1) {
+    assert.match(get('session-label').textContent, /TỪ VỰNG/);
+    assert.equal(get('question-prompt').lang, 'en');
+    assert.equal(document.querySelector('.option span').lang, 'vi');
+    select(i % 4);
+    submit();
+    assert.equal(get('feedback').querySelector('strong').lang, 'vi');
+    submit();
+  }
+  submit();
+  assert.equal(dialog.open, false);
+  assert.equal(daily.disabled, true);
+  assert.equal(document.activeElement, get('continue-lesson'));
+  assert.equal(JSON.parse(window.localStorage.getItem(storageKey)).lastDaily, day);
+  advance(86_400_000);
+  window.dispatchEvent(new window.Event('focus'));
+  assert.equal(daily.disabled, false);
+});

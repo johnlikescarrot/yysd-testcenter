@@ -1,3 +1,5 @@
+import { dailyQuestions } from './daily.js';
+
 export const skills = {
   listen: { name: 'Nghe', icon: 'headphones' },
   read: { name: 'Đọc', icon: 'book' },
@@ -266,6 +268,11 @@ export const lessons = units.flatMap(({ lessons: unitLessons }) => unitLessons.m
     ...question, id: `${lesson.id}-${index + 1}`, lessonId: lesson.id,
   })),
 })));
-export const byLesson = Object.fromEntries(lessons.map((lesson) => [lesson.id, lesson]));
-export const questions = Object.fromEntries(lessons.flatMap((lesson) => lesson.questions
+const vocabulary = {
+  id: 'daily', title: 'Thử thách 5 từ', activityLabel: 'Từ vựng',
+  instruction: 'Đọc câu ví dụ tiếng Anh, tự nhớ nghĩa của từ rồi chọn cách hiểu phù hợp nhất.',
+  questions: dailyQuestions,
+};
+export const byLesson = Object.fromEntries([...lessons, vocabulary].map((lesson) => [lesson.id, lesson]));
+export const questions = Object.fromEntries(Object.values(byLesson).flatMap((lesson) => lesson.questions
   .map((question) => [question.id, question])));

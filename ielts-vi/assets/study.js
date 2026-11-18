@@ -17,6 +17,7 @@ export function mount(document, window, clock) {
   const error = get('response-error');
   const continueButton = get('continue-lesson');
   const reviewButton = get('begin-review');
+  const dailyButton = get('begin-daily');
   const goalSelect = get('goal-select');
   const getStorage = () => window.localStorage;
   let state = readProgress(getStorage);
@@ -154,6 +155,8 @@ export function mount(document, window, clock) {
     get('review-note').textContent = due ? 'Câu từng sai được ưu tiên. Mỗi lượt có tối đa 8 câu.'
       : 'Chưa có câu đến hạn. Các câu đã làm sẽ tự lên lịch ôn.';
     reviewButton.disabled = !due;
+    dailyButton.disabled = state.lastDaily === day;
+    dailyButton.textContent = dailyButton.disabled ? 'Đã hoàn thành hôm nay' : 'Luyện 5 từ hôm nay →';
     renderPath(nextLesson?.id);
     renderWeek();
     renderReport(badges);
@@ -187,7 +190,9 @@ export function mount(document, window, clock) {
       input.type = 'radio';
       input.name = 'answer';
       input.value = String(index);
-      label.append(input, english('span', option));
+      const caption = text('span', option);
+      caption.lang = question.optionLang ?? 'en';
+      label.append(input, caption);
       field.append(label);
     });
     host.append(field);
@@ -262,7 +267,7 @@ export function mount(document, window, clock) {
     error.hidden = true;
     const question = currentQuestion(session);
     const lesson = byLesson[question.lessonId];
-    get('session-label').textContent = `CÂU ${session.results.length + 1} / ${session.ids.length} · ${skills[lesson.skill].name.toUpperCase()}`;
+    get('session-label').textContent = `CÂU ${session.results.length + 1} / ${session.ids.length} · ${(lesson.activityLabel ?? skills[lesson.skill].name).toUpperCase()}`;
     get('session-note').textContent = 'Tiến độ được cập nhật khi bạn hoàn thành lượt này.';
     get('session-meter').value = session.results.length;
     const prompt = english('h3', question.prompt, 'prompt');
@@ -307,7 +312,9 @@ export function mount(document, window, clock) {
     } else {
       const answer = question.type === 'choice' ? question.options[question.answer] : question.answers[0];
       const line = text('p', 'Đáp án: ');
-      line.append(english('strong', answer));
+      const solution = text('strong', answer);
+      solution.lang = question.optionLang ?? 'en';
+      line.append(solution);
       feedback.append(line, text('p', question.explanation));
     }
     feedback.hidden = false;
@@ -369,6 +376,7 @@ export function mount(document, window, clock) {
     (previous.disabled ? continueButton : previous).focus();
   });
   continueButton.addEventListener('click', () => start(continueButton.dataset.lesson, continueButton.id));
+  dailyButton.addEventListener('click', () => start('daily', dailyButton.id));
   reviewButton.addEventListener('click', () => start('review', reviewButton.id));
   goalSelect.addEventListener('change', () => {
     const goal = Number(goalSelect.value);

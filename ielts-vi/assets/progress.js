@@ -1,5 +1,7 @@
 import { byLesson, lessons, questions } from './course.js';
 
+import { dailyIds } from './daily.js';
+
 export const storageKey = 'yysd:ielts-vi:progress:v1';
 export const goals = [1, 2, 3];
 export const reviewLimit = 8;
@@ -43,6 +45,7 @@ export function readProgress(getStorage) {
     for (const [day, count] of Object.entries(stored.activity ?? {})) {
       if (/^(0|[1-9]\d{0,5})$/.test(day) && bounded(count) && count > 0) empty.activity[day] = count;
     }
+    if (bounded(stored.lastDaily)) empty.lastDaily = stored.lastDaily;
     if (goals.includes(stored.goal)) empty.goal = stored.goal;
     if (bounded(stored.xp)) empty.xp = stored.xp;
   } catch {
@@ -94,6 +97,9 @@ function consecutiveThree(state) {
 }
 
 export function makeSession(lessonId, state, day) {
+  if (lessonId === 'daily') {
+    return state.lastDaily === day ? null : { lessonId, day, ids: dailyIds(day), results: [] };
+  }
   if (lessonId === 'review') {
     const ids = dueCards(state, day).slice(0, reviewLimit);
     return ids.length ? { lessonId: null, ids, results: [] } : null;
@@ -127,6 +133,11 @@ function nextCard(previous, correct, day) {
 
 export function finish(state, session, day) {
   if (session.results.length !== session.ids.length) return null;
+  const daily = session.lessonId === 'daily';
+  // A second tab may already have finished this day's challenge.
+  if (daily && state.lastDaily === session.day) {
+    return { earned: 0, correct: session.results.filter((result) => result.correct).length, total: session.ids.length, state };
+  }
   const completed = { ...state.completed };
   const cards = { ...state.cards };
   let correct = 0;
@@ -140,7 +151,9 @@ export function finish(state, session, day) {
     }
   });
   let earned = 0;
-  if (session.lessonId) {
+  if (daily) {
+    earned = 5 + correct * 2;
+  } else if (session.lessonId) {
     const best = completed[session.lessonId];
     if (best === undefined) earned = 10;
     earned += Math.max(0, correct - (best ?? 0)) * 2;
@@ -151,7 +164,7 @@ export function finish(state, session, day) {
   return {
     earned, correct, total,
     state: {
-      ...state, completed, cards, xp: state.xp + earned,
+      ...state, ...(daily ? { lastDaily: session.day } : {}), completed, cards, xp: state.xp + earned,
       activity: { ...state.activity, [day]: (state.activity[day] ?? 0) + 1 },
     },
   };

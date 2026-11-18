@@ -20,7 +20,7 @@ function allAnswers(session, correct = true) {
 test('curriculum: three sequences, four skills, unique questions and valid models', () => {
   assert.equal(units.length, 3);
   assert.equal(lessons.length, 12);
-  assert.equal(Object.keys(questions).length, 36);
+  assert.equal(lessons.reduce((n, lesson) => n + lesson.questions.length, 0), 36);
   for (const unit of units) assert.deepEqual(unit.lessons.map(({ skill }) => skill), Object.keys(skills));
   for (const lesson of lessons) {
     assert.equal(byLesson[lesson.id], lesson);

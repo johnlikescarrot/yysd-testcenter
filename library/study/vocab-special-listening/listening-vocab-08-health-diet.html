@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-listening">
-    <meta name="exam:title" content="第八篇 · 健康与饮食">
-    <meta name="exam:description" content="雅思听力专项词汇 · 健康与饮食">
+    <meta name="exam:title" content="Bài 08 · Sức khỏe và dinh dưỡng">
+    <meta name="exam:description" content="Từ vựng Nghe IELTS · Sức khỏe và dinh dưỡng">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>第八篇 · 健康与饮食</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 08 · Sức khỏe và dinh dưỡng</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -161,65 +161,65 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">🍎</div><span>雅思听力 · 健康与饮食</span></div>
+        <div class="logo"><div class="logo-icon">🍎</div><span>Nghe IELTS · Sức khỏe và dinh dưỡng</span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học từ</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
-        <span class="word-count-badge">共 32 词</span>
+        <span class="word-count-badge">32 từ</span>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- Chế độ học -->
     <section class="section active" id="learnSection">
         <div class="learn-grid" id="learnGrid"></div>
     </section>
 
-    <!-- 检测模式 -->
+    <!-- Chế độ kiểm tra -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共32题</h3>
-            <p>分两个阶段，依次完成，不可跳转。</p>
+            <h3>📋 Kiểm tra tổng hợp · 32 câu</h3>
+            <p>Làm lần lượt hai phần theo thứ tự.</p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">听写<br>听音拼写+中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">辨析<br>中文选英文</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label">Nghe chép<br>Nghe, viết từ và nghĩa tiếng Việt</div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label">Nhận diện từ<br>Chọn từ tiếng Anh theo nghĩa tiếng Việt</div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu kiểm tra</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 32 题</span>
+                <span id="progLabel">Câu 1 / 32</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel">Điểm: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：听写</div>
+            <div class="stage-badge" id="stageBadge">Phần 1: Nghe chép</div>
 
             <div id="dictationUI">
                 <div class="test-play-area">
-                    <button class="btn-play-large" id="btnPlayDict">▶</button>
-                    <p class="play-hint">点击按钮听单词读音</p>
+                    <button class="btn-play-large" id="btnPlayDict" aria-label="Phát âm từ tiếng Anh">▶</button>
+                    <p class="play-hint">Nhấn nút phát để nghe cách đọc từ.</p>
                 </div>
                 <div class="test-inputs">
-                    <div class="test-input-group"><label>🔤 英文拼写</label><input type="text" id="inputSpelling" placeholder="请输入英文拼写..." autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-                    <div class="test-input-group"><label>🈶 中文含义</label><input type="text" id="inputMeaning" placeholder="请输入中文含义..." autocomplete="off"></div>
+                    <div class="test-input-group"><label for="inputSpelling">🔤 Cách viết tiếng Anh</label><input type="text" lang="en" id="inputSpelling" placeholder="Nhập từ tiếng Anh…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+                    <div class="test-input-group"><label for="inputMeaning">📖 Nghĩa tiếng Việt</label><input type="text" id="inputMeaning" placeholder="Nhập nghĩa tiếng Việt…" autocomplete="off"></div>
                 </div>
             </div>
 
             <div id="quizUI" style="display:none;">
                 <div class="quiz-area" id="quizArea">
-                    <div class="quiz-question" id="qText">加载题目...</div>
+                    <div class="quiz-question" id="qText">Đang tải câu hỏi…</div>
                     <div class="quiz-options" id="qOpts"></div>
                 </div>
             </div>
 
             <div class="action-bar">
                 <div class="left">
-                    <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                    <button class="btn-next" id="btnNext">下一题 →</button>
+                    <button class="btn-submit" id="btnSubmit">✓ Kiểm tra đáp án</button>
+                    <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
                 </div>
                 <div class="right">
-                    <button class="btn-quit" id="btnQuit">⏹ 提前交卷</button>
+                    <button class="btn-quit" id="btnQuit">⏹ Nộp bài sớm</button>
                 </div>
             </div>
 
@@ -227,64 +227,64 @@
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Kết quả kiểm tra</h3>
             <div id="resultsBadge" style="text-align:center;"></div>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 Làm lại bài kiểm tra</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại học từ</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 健康与饮食 · 32个核心词（完整版） ====================
+// ==================== Sức khỏe và dinh dưỡng · 32 từ chủ đề (bản đầy đủ) ====================
 const wordData = [
-    // —— 疾病与症状（8个） ——
-    { word:'Obesity', ipa:'/əʊˈbiː.sə.ti/', pos:'n.', meaning:'肥胖', acceptCN:['肥胖','肥胖症'], example:'Obesity is a major health problem in many countries.' },
-    { word:'Diabetes', ipa:'/ˌdaɪ.əˈbiː.tiːz/', pos:'n.', meaning:'糖尿病', acceptCN:['糖尿病'], example:'Diabetes can cause serious health complications.' },
-    { word:'Hypertension', ipa:'/ˌhaɪ.pəˈten.ʃən/', pos:'n.', meaning:'高血压', acceptCN:['高血压','高血压症'], example:'Hypertension is often called the silent killer.' },
-    { word:'Insomnia', ipa:'/ɪnˈsɒm.ni.ə/', pos:'n.', meaning:'失眠', acceptCN:['失眠','失眠症'], example:'Stress and anxiety can cause insomnia.' },
-    { word:'Chronic disease', ipa:'/ˈkrɒn.ɪk dɪˈziːz/', pos:'n.', meaning:'慢性病', acceptCN:['慢性病','慢性疾病'], example:'Many elderly people suffer from chronic diseases.' },
-    { word:'Anxiety', ipa:'/æŋˈzaɪ.ə.ti/', pos:'n.', meaning:'焦虑', acceptCN:['焦虑','焦虑症'], example:'Anxiety can affect both mental and physical health.' },
-    { word:'Allergy', ipa:'/ˈæl.ə.dʒi/', pos:'n.', meaning:'过敏', acceptCN:['过敏','过敏症'], example:'Some children have food allergies.' },
-    { word:'Malnutrition', ipa:'/ˌmæl.njuːˈtrɪʃ.ən/', pos:'n.', meaning:'营养不良', acceptCN:['营养不良'], example:'Malnutrition is common in developing countries.' },
+    // —— Bệnh và triệu chứng (8 mục) ——
+    { word:'Obesity', ipa:'/əʊˈbiː.sə.ti/', pos:'n.', meaning:'béo phì', acceptCN:['béo phì'], example:'Obesity is a major health problem in many countries.' },
+    { word:'Diabetes', ipa:'/ˌdaɪ.əˈbiː.tiːz/', pos:'n.', meaning:'bệnh tiểu đường; đái tháo đường', acceptCN:['bệnh tiểu đường', 'đái tháo đường'], example:'Diabetes can cause serious health complications.' },
+    { word:'Hypertension', ipa:'/ˌhaɪ.pəˈten.ʃən/', pos:'n.', meaning:'tăng huyết áp; cao huyết áp', acceptCN:['tăng huyết áp', 'cao huyết áp'], example:'Hypertension is often called the silent killer.' },
+    { word:'Insomnia', ipa:'/ɪnˈsɒm.ni.ə/', pos:'n.', meaning:'mất ngủ', acceptCN:['mất ngủ'], example:'Stress and anxiety can cause insomnia.' },
+    { word:'Chronic disease', ipa:'/ˈkrɒn.ɪk dɪˈziːz/', pos:'n.', meaning:'bệnh mạn tính; bệnh mãn tính', acceptCN:['bệnh mạn tính', 'bệnh mãn tính'], example:'Many elderly people suffer from chronic diseases.' },
+    { word:'Anxiety', ipa:'/æŋˈzaɪ.ə.ti/', pos:'n.', meaning:'lo âu; lo lắng', acceptCN:['lo âu', 'lo lắng'], example:'Anxiety can affect both mental and physical health.' },
+    { word:'Allergy', ipa:'/ˈæl.ə.dʒi/', pos:'n.', meaning:'dị ứng', acceptCN:['dị ứng'], example:'Some children have food allergies.' },
+    { word:'Malnutrition', ipa:'/ˌmæl.njuːˈtrɪʃ.ən/', pos:'n.', meaning:'suy dinh dưỡng', acceptCN:['suy dinh dưỡng'], example:'Malnutrition is common in developing countries.' },
 
-    // —— 饮食与营养（10个） ——
-    { word:'Diet', ipa:'/ˈdaɪ.ət/', pos:'n.', meaning:'饮食；日常食物', acceptCN:['饮食','日常饮食','膳食'], example:'A healthy diet is essential for good health.' },
-    { word:'Balanced diet', ipa:'/ˌbæl.ənst ˈdaɪ.ət/', pos:'n.', meaning:'均衡饮食', acceptCN:['均衡饮食','平衡膳食'], example:'You should eat a balanced diet every day.' },
-    { word:'Nutrition', ipa:'/njuːˈtrɪʃ.ən/', pos:'n.', meaning:'营养', acceptCN:['营养','营养学'], example:'Good nutrition is important for children\'s development.' },
-    { word:'Additive', ipa:'/ˈæd.ə.tɪv/', pos:'n.', meaning:'添加剂', acceptCN:['添加剂','食品添加剂'], example:'Many processed foods contain artificial additives.' },
-    { word:'Preservative', ipa:'/prɪˈzɜː.və.tɪv/', pos:'n.', meaning:'防腐剂', acceptCN:['防腐剂','保鲜剂'], example:'Some preservatives may be harmful to health.' },
-    { word:'Ingredient', ipa:'/ɪnˈɡriː.di.ənt/', pos:'n.', meaning:'配料；成分', acceptCN:['配料','成分','食材'], example:'Check the list of ingredients before buying.' },
-    { word:'Home-made food', ipa:'/ˌhəʊmˈmeɪd ˈfuːd/', pos:'n.', meaning:'家常饭菜', acceptCN:['家常饭菜','自制食品','家常菜'], example:'Home-made food is healthier than fast food.' },
-    { word:'Convenience food', ipa:'/kənˈviː.ni.əns ˌfuːd/', pos:'n.', meaning:'方便食品', acceptCN:['方便食品','速食','即食食品'], example:'Many people eat convenience food due to busy lifestyles.' },
-    { word:'Sugary food', ipa:'/ˈʃʊɡ.ər.i ˌfuːd/', pos:'n.', meaning:'甜食', acceptCN:['甜食','高糖食品'], example:'Eating too much sugary food can lead to obesity.' },
-    { word:'Appetite', ipa:'/ˈæp.ɪ.taɪt/', pos:'n.', meaning:'食欲', acceptCN:['食欲','胃口'], example:'Exercise can improve your appetite.' },
+    // —— Ăn uống và dinh dưỡng (10 mục) ——
+    { word:'Diet', ipa:'/ˈdaɪ.ət/', pos:'n.', meaning:'chế độ ăn; khẩu phần ăn', acceptCN:['chế độ ăn', 'khẩu phần ăn'], example:'A healthy diet is essential for good health.' },
+    { word:'Balanced diet', ipa:'/ˌbæl.ənst ˈdaɪ.ət/', pos:'n.', meaning:'chế độ ăn cân bằng', acceptCN:['chế độ ăn cân bằng'], example:'You should eat a balanced diet every day.' },
+    { word:'Nutrition', ipa:'/njuːˈtrɪʃ.ən/', pos:'n.', meaning:'dinh dưỡng', acceptCN:['dinh dưỡng'], example:'Good nutrition is important for children\'s development.' },
+    { word:'Additive', ipa:'/ˈæd.ə.tɪv/', pos:'n.', meaning:'chất phụ gia; phụ gia', acceptCN:['chất phụ gia', 'phụ gia'], example:'Many processed foods contain artificial additives.' },
+    { word:'Preservative', ipa:'/prɪˈzɜː.və.tɪv/', pos:'n.', meaning:'chất bảo quản', acceptCN:['chất bảo quản'], example:'Some preservatives may be harmful to health.' },
+    { word:'Ingredient', ipa:'/ɪnˈɡriː.di.ənt/', pos:'n.', meaning:'nguyên liệu; thành phần', acceptCN:['nguyên liệu', 'thành phần'], example:'Check the list of ingredients before buying.' },
+    { word:'Home-made food', ipa:'/ˌhəʊmˈmeɪd ˈfuːd/', pos:'n.', meaning:'thức ăn tự làm; đồ ăn nhà làm', acceptCN:['thức ăn tự làm', 'đồ ăn nhà làm'], example:'Home-made food is healthier than fast food.' },
+    { word:'Convenience food', ipa:'/kənˈviː.ni.əns ˌfuːd/', pos:'n.', meaning:'thực phẩm chế biến sẵn; đồ ăn tiện lợi', acceptCN:['thực phẩm chế biến sẵn', 'đồ ăn tiện lợi'], example:'Many people eat convenience food due to busy lifestyles.' },
+    { word:'Sugary food', ipa:'/ˈʃʊɡ.ər.i ˌfuːd/', pos:'n.', meaning:'thức ăn nhiều đường; đồ ngọt', acceptCN:['thức ăn nhiều đường', 'đồ ngọt'], example:'Eating too much sugary food can lead to obesity.' },
+    { word:'Appetite', ipa:'/ˈæp.ɪ.taɪt/', pos:'n.', meaning:'cảm giác thèm ăn', acceptCN:['cảm giác thèm ăn'], example:'Exercise can improve your appetite.' },
 
-    // —— 生活方式（10个） ——
-    { word:'Unhealthy lifestyle', ipa:'/ʌnˈhel.θi ˈlaɪf.staɪl/', pos:'n.', meaning:'不健康的生活方式', acceptCN:['不健康的生活方式','不良生活习惯'], example:'An unhealthy lifestyle can cause many diseases.' },
-    { word:'Keep fit', ipa:'/ˌkiːp ˈfɪt/', pos:'v.', meaning:'保持健康', acceptCN:['保持健康','健身','保持体型'], example:'She does exercise every day to keep fit.' },
-    { word:'Lose weight', ipa:'/ˌluːz ˈweɪt/', pos:'v.', meaning:'减肥', acceptCN:['减肥','减轻体重'], example:'He is trying to lose weight by eating less.' },
-    { word:'Gain weight', ipa:'/ˌɡeɪn ˈweɪt/', pos:'v.', meaning:'增重', acceptCN:['增重','增加体重','发胖'], example:'Some people want to gain weight for health reasons.' },
-    { word:'Fall ill', ipa:'/ˌfɔːl ˈɪl/', pos:'v.', meaning:'生病', acceptCN:['生病','患病','染病'], example:'She fell ill with the flu last week.' },
-    { word:'Intake', ipa:'/ˈɪn.teɪk/', pos:'n.', meaning:'摄入量；摄取量', acceptCN:['摄入量','摄取量','吸入'], example:'You should reduce your daily intake of salt.' },
-    { word:'Digestion', ipa:'/daɪˈdʒes.tʃən/', pos:'n.', meaning:'消化', acceptCN:['消化','消化作用'], example:'Good digestion is important for overall health.' },
-    { word:'Circulation', ipa:'/ˌsɜː.kjəˈleɪ.ʃən/', pos:'n.', meaning:'血液循环', acceptCN:['血液循环','循环','流通'], example:'Regular exercise improves blood circulation.' },
-    { word:'Respiration', ipa:'/ˌres.pəˈreɪ.ʃən/', pos:'n.', meaning:'呼吸', acceptCN:['呼吸','呼吸作用'], example:'Deep respiration can help you relax.' },
-    { word:'Stress', ipa:'/stres/', pos:'n.', meaning:'压力', acceptCN:['压力','精神压力'], example:'Stress can have negative effects on health.' },
+    // —— Lối sống (10 mục) ——
+    { word:'Unhealthy lifestyle', ipa:'/ʌnˈhel.θi ˈlaɪf.staɪl/', pos:'n.', meaning:'lối sống không lành mạnh', acceptCN:['lối sống không lành mạnh'], example:'An unhealthy lifestyle can cause many diseases.' },
+    { word:'Keep fit', ipa:'/ˌkiːp ˈfɪt/', pos:'v.', meaning:'giữ gìn sức khỏe; giữ cơ thể cân đối', acceptCN:['giữ gìn sức khỏe', 'giữ cơ thể cân đối'], example:'She does exercise every day to keep fit.' },
+    { word:'Lose weight', ipa:'/ˌluːz ˈweɪt/', pos:'v.', meaning:'giảm cân', acceptCN:['giảm cân'], example:'He is trying to lose weight by eating less.' },
+    { word:'Gain weight', ipa:'/ˌɡeɪn ˈweɪt/', pos:'v.', meaning:'tăng cân', acceptCN:['tăng cân'], example:'Some people want to gain weight for health reasons.' },
+    { word:'Fall ill', ipa:'/ˌfɔːl ˈɪl/', pos:'v.', meaning:'đổ bệnh; bị ốm', acceptCN:['đổ bệnh', 'bị ốm'], example:'She fell ill with the flu last week.' },
+    { word:'Intake', ipa:'/ˈɪn.teɪk/', pos:'n.', meaning:'lượng nạp vào; lượng tiêu thụ', acceptCN:['lượng nạp vào', 'lượng tiêu thụ'], example:'You should reduce your daily intake of salt.' },
+    { word:'Digestion', ipa:'/daɪˈdʒes.tʃən/', pos:'n.', meaning:'sự tiêu hóa; tiêu hóa', acceptCN:['sự tiêu hóa', 'tiêu hóa'], example:'Good digestion is important for overall health.' },
+    { word:'Circulation', ipa:'/ˌsɜː.kjəˈleɪ.ʃən/', pos:'n.', meaning:'tuần hoàn máu; sự tuần hoàn', acceptCN:['tuần hoàn máu', 'sự tuần hoàn'], example:'Regular exercise improves blood circulation.' },
+    { word:'Respiration', ipa:'/ˌres.pəˈreɪ.ʃən/', pos:'n.', meaning:'hô hấp', acceptCN:['hô hấp'], example:'Deep respiration can help you relax.' },
+    { word:'Stress', ipa:'/stres/', pos:'n.', meaning:'căng thẳng; áp lực', acceptCN:['căng thẳng', 'áp lực'], example:'Stress can have negative effects on health.' },
 
-    // —— 健康相关（4个） ——
-    { word:'Physical health', ipa:'/ˈfɪz.ɪ.kəl ˈhelθ/', pos:'n.', meaning:'身体健康', acceptCN:['身体健康','生理健康'], example:'Physical health is just as important as mental health.' },
-    { word:'Mental health', ipa:'/ˈmen.təl ˈhelθ/', pos:'n.', meaning:'心理健康', acceptCN:['心理健康','精神健康'], example:'Mental health issues should be taken seriously.' },
-    { word:'Sleep', ipa:'/sliːp/', pos:'n./v.', meaning:'睡眠', acceptCN:['睡眠','睡觉'], example:'Getting enough sleep is essential for health.' },
-    { word:'Wellness', ipa:'/ˈwel.nəs/', pos:'n.', meaning:'健康；康乐', acceptCN:['健康','康乐','身心健全'], example:'The company promotes employee wellness programs.' }
+    // —— Sức khỏe (4 mục) ——
+    { word:'Physical health', ipa:'/ˈfɪz.ɪ.kəl ˈhelθ/', pos:'n.', meaning:'sức khỏe thể chất', acceptCN:['sức khỏe thể chất'], example:'Physical health is just as important as mental health.' },
+    { word:'Mental health', ipa:'/ˈmen.təl ˈhelθ/', pos:'n.', meaning:'sức khỏe tinh thần', acceptCN:['sức khỏe tinh thần'], example:'Mental health issues should be taken seriously.' },
+    { word:'Sleep', ipa:'/sliːp/', pos:'n./v.', meaning:'giấc ngủ', acceptCN:['giấc ngủ'], example:'Getting enough sleep is essential for health.' },
+    { word:'Wellness', ipa:'/ˈwel.nəs/', pos:'n.', meaning:'trạng thái khỏe mạnh; sức khỏe toàn diện', acceptCN:['trạng thái khỏe mạnh', 'sức khỏe toàn diện'], example:'The company promotes employee wellness programs.' }
 ];
 
-// 验证数据完整性（应为32个词）
-console.log('wordData 长度:', wordData.length);
+// Kiểm tra toàn vẹn dữ liệu (dự kiến32 từ)
+console.log('wordData độ dài:', wordData.length);
 
 const TOTAL_DICT = 22;
 const TOTAL_QUIZ = 10;
@@ -326,7 +326,7 @@ const summary = document.getElementById('summary');
 const stageResults = document.getElementById('stageResults');
 const resultsBadge = document.getElementById('resultsBadge');
 
-// ==================== 语音 ====================
+// ==================== Phát âm ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -379,19 +379,19 @@ function playCurrentDictWord() {
     }
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
         const card = document.createElement('div'); card.className='word-card';
         card.innerHTML = `
             <div class="word-card-top">
-                <div><span class="word-headword">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
-                <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
+                <div><span class="word-headword" lang="en">${w.word}</span><span class="word-ipa"> ${w.ipa}</span></div>
+                <button class="btn-play btn-play-card" data-word="${w.word}" aria-label="Phát âm từ tiếng Anh">▶</button>
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
-            <div class="word-detail"><div class="word-detail-row"><strong>📎 例句：</strong>${w.example}</div></div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="word-detail"><div class="word-detail-row"><strong>📎 Ví dụ: </strong><span lang="en">${w.example}</span></div></div>
+            <div class="card-collapse-hint">Thu gọn ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const wasExpanded = card.classList.contains('expanded');
@@ -412,7 +412,7 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== Điều hướng ====================
 let isTestActive = false;
 
 function switchMode(mode) {
@@ -434,14 +434,14 @@ navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部题目！');
+            alert('Bạn đang làm bài. Hãy hoàn thành trước khi chuyển phần.');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测核心 ====================
+// ==================== Luồng kiểm tra ====================
 function shuffleArray(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
 let dictWords = [];
@@ -476,13 +476,13 @@ function generateQuizQuestions(count){
             meaning: item.meaning,
             options: options,
             correct: item.word,
-            detail: `「${item.meaning}」对应 ${item.word}`
+            detail: `“${item.meaning}” tương ứng với ${item.word}`
         };
     });
 }
 
 function startTest() {
-    dictWords = shuffleArray([...wordData]);
+    dictWords = shuffleArray([...wordData]).slice(0, TOTAL_DICT);
     dictIndex = 0;
     quizQuestions = generateQuizQuestions(TOTAL_QUIZ);
     quizIndex = 0;
@@ -499,9 +499,9 @@ function startTest() {
         allQuestionsMeta.push({
             index: idx,
             stage: 'dictation',
-            question: `听写：${w.word}`,
+            question: `Nghe chép: ${w.word}`,
             correct: `${w.word} — ${w.meaning}`,
-            detail: `正确拼写：${w.word}，正确含义：${w.meaning}`,
+            detail: `Cách viết đúng: ${w.word}. Nghĩa đúng: ${w.meaning}`,
             word: w.word,
             meaning: w.meaning
         });
@@ -511,7 +511,7 @@ function startTest() {
         allQuestionsMeta.push({
             index: globalIdx,
             stage: 'quiz',
-            question: `辨析：「${q.meaning}」`,
+            question: `Nhận diện từ: “${q.meaning}”`,
             correct: q.correct,
             detail: q.detail,
             meaning: q.meaning,
@@ -530,7 +530,7 @@ function startTest() {
     renderDictationQuestion();
 }
 
-// ==================== 渲染听写 ====================
+// ==================== Hiển thị câu nghe chép ====================
 function renderDictationQuestion() {
     if (dictIndex >= TOTAL_DICT) {
         currentStage = 'quiz';
@@ -540,10 +540,10 @@ function renderDictationQuestion() {
 
     currentStage = 'dictation';
     const globalIndex = dictIndex + 1;
-    progLabel.textContent = `第 ${globalIndex} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${globalIndex} / ${TOTAL}`;
     progFill.style.width = Math.round((globalIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段一：听写（${dictIndex+1}/${TOTAL_DICT}）`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần 1: Nghe chép (${dictIndex+1}/${TOTAL_DICT})`;
 
     dictationUI.style.display = '';
     quizUI.style.display = 'none';
@@ -567,7 +567,7 @@ function renderDictationQuestion() {
     inputSpelling.focus();
 }
 
-// ==================== 提交听写 ====================
+// ==================== Chấm câu nghe chép ====================
 function submitDictation() {
     if (submitted) return;
     const w = dictWords[dictIndex];
@@ -575,7 +575,7 @@ function submitDictation() {
     const userMeaning = inputMeaning.value.trim();
 
     if ((!userSpelling || !userMeaning) && !window.__vocabTestTimedOut) {
-        alert('请同时填写英文拼写和中文含义！');
+        alert('Hãy nhập cả từ tiếng Anh và nghĩa tiếng Việt.');
         return;
     }
 
@@ -586,23 +586,8 @@ function submitDictation() {
 
     const spellingCorrect = userSpelling.toLowerCase() === w.word.toLowerCase();
 
-    let meaningCorrect = false;
-    if (userMeaning.length > 0) {
-        const userCN = userMeaning.replace(/\s/g,'');
-        for (const accept of w.acceptCN) {
-            const aNorm = accept.replace(/\s/g,'');
-            if (userCN.includes(aNorm) || aNorm.includes(userCN)) {
-                meaningCorrect = true;
-                break;
-            }
-        }
-        if (!meaningCorrect) {
-            const clean = w.meaning.replace(/[；;，,、\s]/g,'');
-            if (userCN.includes(clean.substring(0, Math.min(3, clean.length))) || clean.includes(userCN)) {
-                meaningCorrect = true;
-            }
-        }
-    }
+    const normalizeMeaning = value => value.normalize('NFC').trim().toLocaleLowerCase('vi').replace(/\s+/g, ' ');
+    const meaningCorrect = w.acceptCN.some(value => normalizeMeaning(value) === normalizeMeaning(userMeaning));
 
     inputSpelling.className = spellingCorrect ? 'correct-input' : 'wrong-input';
     inputMeaning.className = meaningCorrect ? 'correct-input' : 'wrong-input';
@@ -613,16 +598,16 @@ function submitDictation() {
     let feedbackText = '';
     if (spellingCorrect && meaningCorrect) {
         feedback.className = 'test-feedback visible correct';
-        feedbackText = `✅ 完全正确！${w.word} — ${w.meaning}`;
+        feedbackText = `✅ Chính xác! ${w.word} — ${w.meaning}`;
     } else if (!spellingCorrect && !meaningCorrect) {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `❌ 拼写和含义均不正确。正确拼写：${w.word}，正确含义：${w.meaning}`;
+        feedbackText = `❌ Sai cả cách viết lẫn nghĩa. Cách viết đúng: ${w.word}. Nghĩa đúng: ${w.meaning}`;
     } else if (!spellingCorrect) {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `⚠️ 含义正确，拼写有误。正确拼写：${w.word}`;
+        feedbackText = `⚠️ Đúng nghĩa nhưng sai cách viết. Cách viết đúng: ${w.word}`;
     } else {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `⚠️ 拼写正确，含义有误。正确含义：${w.meaning}`;
+        feedbackText = `⚠️ Đúng cách viết nhưng sai nghĩa. Nghĩa đúng: ${w.meaning}`;
     }
     feedback.textContent = feedbackText;
 
@@ -630,14 +615,14 @@ function submitDictation() {
     results.push({
         index: globalIdx,
         stage: 'dictation',
-        question: `听写：${w.word}`,
-        userAnswer: `拼写: ${userSpelling} / 含义: ${userMeaning}`,
+        question: `Nghe chép: ${w.word}`,
+        userAnswer: `Cách viết: ${userSpelling} / Nghĩa: ${userMeaning}`,
         correct: `${w.word} — ${w.meaning}`,
         isCorrect: earned === 1,
-        detail: `正确拼写：${w.word}，正确含义：${w.meaning}`
+        detail: `Cách viết đúng: ${w.word}. Nghĩa đúng: ${w.meaning}`
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 
@@ -645,7 +630,7 @@ function submitDictation() {
     btnPlayDict.classList.remove('playing');
 }
 
-// ==================== 渲染辨析 ====================
+// ==================== Hiển thị câu nhận diện ====================
 function renderQuizQuestion() {
     if (quizIndex >= TOTAL_QUIZ) {
         showResults(false);
@@ -654,16 +639,16 @@ function renderQuizQuestion() {
 
     currentStage = 'quiz';
     const globalIndex = TOTAL_DICT + quizIndex + 1;
-    progLabel.textContent = `第 ${globalIndex} / ${TOTAL} 题`;
+    progLabel.textContent = `Câu ${globalIndex} / ${TOTAL}`;
     progFill.style.width = Math.round((globalIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段二：辨析（${quizIndex+1}/${TOTAL_QUIZ}）`;
+    scoreLabel.textContent = `Điểm: ${score}`;
+    stageBadge.textContent = `Phần 2: Nhận diện từ (${quizIndex+1}/${TOTAL_QUIZ})`;
 
     dictationUI.style.display = 'none';
     quizUI.style.display = '';
 
     const q = quizQuestions[quizIndex];
-    qText.textContent = `请选择「${q.meaning}」对应的英文单词：`;
+    qText.textContent = `Từ tiếng Anh nào có nghĩa là “${q.meaning}”?`;
     qOpts.innerHTML = '';
     quizSelected = null;
     submitted = false;
@@ -698,11 +683,11 @@ function renderQuizQuestion() {
     });
 }
 
-// ==================== 提交辨析 ====================
+// ==================== Chấm câu nhận diện ====================
 function submitQuiz() {
     if (submitted) return;
     if (quizSelected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert('Hãy chọn một đáp án.'); return; }
         quizSelected = '';
     }
 
@@ -726,26 +711,26 @@ function submitQuiz() {
 
     feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
     feedback.textContent = isCorrect
-        ? `✅ 正确！「${q.meaning}」对应 ${q.correct}`
-        : `❌ 错误。「${q.meaning}」的正确选项是 ${q.correct}`;
+        ? `✅ Chính xác! “${q.meaning}” tương ứng với ${q.correct}`
+        : `❌ Chưa đúng. Đáp án cho “${q.meaning}” là ${q.correct}`;
 
     const globalIdx = TOTAL_DICT + quizIndex;
     results.push({
         index: globalIdx,
         stage: 'quiz',
-        question: `辨析：「${q.meaning}」`,
+        question: `Nhận diện từ: “${q.meaning}”`,
         userAnswer: quizSelected,
         correct: q.correct,
         isCorrect: isCorrect,
-        detail: `「${q.meaning}」对应 ${q.correct}`
+        detail: `“${q.meaning}” tương ứng với ${q.correct}`
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = `Điểm: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
 
-// ==================== 下一题 ====================
+// ==================== Câu tiếp theo ====================
 function nextQuestion() {
     if (currentStage === 'dictation') {
         dictIndex++;
@@ -757,20 +742,20 @@ function nextQuestion() {
     testActive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 提前交卷 ====================
+// ==================== Nộp bài sớm ====================
 function quitTest() {
     if (!isTestActive) return;
     if (results.length === 0) {
-        alert('你还没有完成任何题目，确定要交卷吗？');
-        if (!confirm('确认提前交卷？')) return;
+        alert('Bạn chưa trả lời câu nào.');
+        if (!confirm('Bạn muốn nộp bài ngay?')) return;
     } else {
-        if (!confirm('确定要提前交卷吗？已答题目将计入成绩，未答题目视为错误。')) return;
+        if (!confirm('Nộp bài ngay? Những câu chưa trả lời sẽ được tính là sai.')) return;
     }
     isQuit = true;
     showResults(true);
 }
 
-// ==================== 错题报告（包含全部题目） ====================
+// ==================== Báo cáo câu sai (gồm tất cả câu hỏi) ====================
 function showResults(isQuitMode) {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -789,7 +774,7 @@ function showResults(isQuitMode) {
                 index: meta.index,
                 stage: meta.stage,
                 question: meta.question,
-                userAnswer: '未作答',
+                userAnswer: 'Chưa trả lời',
                 correct: meta.correct,
                 isCorrect: false,
                 detail: meta.detail,
@@ -804,22 +789,22 @@ function showResults(isQuitMode) {
     const pct = Math.round((totalCorrect / totalQuestions) * 100);
 
     if (isQuitMode) {
-        resultsBadge.innerHTML = `<span class="results-badge quit">⏹ 提前交卷 · 已完成 ${answeredCount}/${totalQuestions} 题</span>`;
+        resultsBadge.innerHTML = `<span class="results-badge quit">⏹ Nộp bài sớm · Đã làm ${answeredCount}/${totalQuestions} câu</span>`;
     } else {
-        resultsBadge.innerHTML = `<span class="results-badge completed">✅ 已完成全部 ${totalQuestions} 题</span>`;
+        resultsBadge.innerHTML = `<span class="results-badge completed">✅ Đã hoàn thành ${totalQuestions} câu</span>`;
     }
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${totalQuestions}</div><div class="label">总正确数（未答计错）</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${fullReport.filter(r => !r.isCorrect).length}</div><div class="label">错题数（含未答）</div></div>
-        ${isQuitMode ? `<div class="item"><div class="num">${totalQuestions - answeredCount}</div><div class="label">未答题数</div></div>` : ''}
+        <div class="item"><div class="num">${totalCorrect} / ${totalQuestions}</div><div class="label">Tổng số câu đúng (bỏ trống tính là sai)</div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label">Tỷ lệ đúng</div></div>
+        <div class="item"><div class="num">${fullReport.filter(r => !r.isCorrect).length}</div><div class="label">Số câu sai (kể cả bỏ trống)</div></div>
+        ${isQuitMode ? `<div class="item"><div class="num">${totalQuestions - answeredCount}</div><div class="label">Số câu bỏ trống</div></div>` : ''}
     `;
 
     let html = '';
     const stages = [
-        { key: 'dictation', name: '听写', desc: '听音拼写+中文' },
-        { key: 'quiz', name: '辨析', desc: '中文选英文' }
+        { key: 'dictation', name: 'Nghe chép', desc: 'Nghe, viết từ và nghĩa tiếng Việt' },
+        { key: 'quiz', name: 'Nhận diện từ', desc: 'Chọn từ tiếng Anh theo nghĩa tiếng Việt' }
     ];
 
     for (const s of stages) {
@@ -828,17 +813,17 @@ function showResults(isQuitMode) {
         const totalInStage = stageData.length;
         const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
 
-        html += `<div class="results-stage"><h4>阶段${stages.indexOf(s)+1}：${s.name}（${s.desc}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Phần ${stages.indexOf(s)+1}: ${s.name} (${s.desc}) — Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>Câu hỏi</th><th>Câu trả lời của bạn</th><th>Đáp án</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">Không có câu hỏi</td></tr>`;
         } else {
             stageData.forEach((r, i) => {
                 const isUnanswered = r.isUnanswered || false;
                 let cls = r.isCorrect ? 'row-correct' : (isUnanswered ? 'row-unanswered' : 'row-wrong');
-                let status = r.isCorrect ? '✅' : (isUnanswered ? '❌ 未答' : '❌');
-                let userDisplay = isUnanswered ? '未作答' : r.userAnswer;
+                let status = r.isCorrect ? '✅' : (isUnanswered ? '❌ Bỏ trống' : '❌');
+                let userDisplay = isUnanswered ? 'Chưa trả lời' : r.userAnswer.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question}</td>
@@ -858,7 +843,7 @@ function showResults(isQuitMode) {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== Gắn sự kiện ====================
 btnStartTest.addEventListener('click', startTest);
 
 btnSubmit.addEventListener('click', function() {
