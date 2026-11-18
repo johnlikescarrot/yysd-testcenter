@@ -19,17 +19,19 @@ jobs:
     name: Kiểm tra mã nguồn với GitHub Super-Linter
     runs-on: ubuntu-latest
     steps:
-      - name: Tải mã nguồn đầy đủ lịch sử nhánh
+      - name: Tải mã nguồn
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+
+      - name: Cài đặt gói phụ thuộc cho ESLint
+        run: npm ci
 
       - name: Chạy GitHub Super-Linter v7
         uses: super-linter/super-linter/slim@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
+          MULTI_STATUS: true
           LINTER_RULES_PATH: .
           # yamllint disable-line rule:line-length
           FILTER_REGEX_INCLUDE: "^(src/.*\\.js|tests/.*\\.js|assets/css/duo-ielts\\.css|assets/js/(duo-app|tai-lieu|duo-hud)\\.js|scripts/(check_vietnamese|build_pages|serve_static)\\.mjs|scripts/build_scholar_pdfs\\.py|(index|lo-trinh|tai-lieu|vocab)\\.html|(README|AGENTS|MEMORIES|YYSD-DESIGN-RULES)\\.md|\\.github/workflows/(super-linter|quality-gate|deploy-pages)\\.yml)$"
@@ -44,5 +46,3 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true
           VALIDATE_PYTHON_RUFF: true
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_JSCPD: false
