@@ -1,0 +1,21 @@
+{
+  "name": "ielts-vi",
+  "version": "1.0.0",
+  "description": "Không gian tự học tiếng Việt dành cho người luyện IELTS Academic. Đề bài, đáp án và ví dụ tiếng Anh được giữ nguyên. Bản GitHub Pages dùng tài liệu tĩnh; không gửi bài làm, thông tin đăng nhập hoặc bản thu âm tới máy chủ.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "lighthouse": "13.6.0",
+    "prettier": "3.10.1",
+    "puppeteer-core": "24.40.0"
+  }
+}

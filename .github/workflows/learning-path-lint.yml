@@ -15,7 +15,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
           sparse-checkout: |
@@ -24,6 +24,9 @@ jobs:
       - name: Check the learning workspace and its workflows
         uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
+          USE_FIND_ALGORITHM: true
+          MULTI_STATUS: false
+          CREATE_LOG_FILE: true
           VALIDATE_ALL_CODEBASE: true
           FILTER_REGEX_INCLUDE: '(^|/)(ielts-vi/|\.github/workflows/learning-path-)'
           VALIDATE_GITHUB_ACTIONS: true
@@ -31,3 +34,11 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_CSS_PRETTIER: true
           VALIDATE_PYTHON_RUFF: true
+      - name: Show lint diagnostics
+        if: failure()
+        run: |
+          if test -f super-linter.log; then
+            grep -Ei 'error|fatal|failed' super-linter.log | tail -10 | while IFS= read -r line; do
+              echo "::error::$line"
+            done
+          fi
