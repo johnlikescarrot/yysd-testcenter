@@ -97,12 +97,12 @@ export function mount(document, window, clock) {
   function renderWeek() {
     const items = previousWeek(day).map(({ ordinal, date }) => {
       const practiced = Boolean(state.activity[ordinal]);
-      const li = text('li', weekday.format(date), practiced ? 'practiced' : '');
+      const li = text('li', '', practiced ? 'practiced' : '');
       const label = `${fullDay.format(date)}: ${practiced ? 'đã luyện' : 'chưa luyện'}`;
       li.title = label;
-      li.firstChild.replaceWith(text('span', weekday.format(date)));
-      li.firstChild.setAttribute('aria-hidden', 'true');
-      li.append(text('span', label, 'visually-hidden'));
+      const visible = text('span', weekday.format(date));
+      visible.setAttribute('aria-hidden', 'true');
+      li.append(visible, text('span', label, 'visually-hidden'));
       if (ordinal === day) li.classList.add('current');
       return li;
     });
@@ -365,7 +365,8 @@ export function mount(document, window, clock) {
     // Remove media and drafts when leaving, including when the learner presses Escape.
     host.replaceChildren();
     feedback.replaceChildren();
-    get(origin).focus();
+    const previous = get(origin);
+    (previous.disabled ? continueButton : previous).focus();
   });
   continueButton.addEventListener('click', () => start(continueButton.dataset.lesson, continueButton.id));
   reviewButton.addEventListener('click', () => start('review', reviewButton.id));
