@@ -1,0 +1,94 @@
+name: IELTS Atlas · quality and Pages
+on:
+  push:
+    branches: [main, "arena/c5dd90f5-yysd-testcenter"]
+    paths: &release-files
+      - "atlas*.html"
+      - "studio/**"
+      - "tests/studio/**"
+      - "scripts/studio/**"
+      - "package*.json"
+      - "data/speaking/**"
+      - "library/mock/cambridge-*/**"
+      - "library/practice/ielts/**"
+      - ".github/workflows/studio-pages.yml"
+  pull_request:
+    paths: *release-files
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /atlas*.html
+            /studio/
+            /package*.json
+            /scripts/studio/
+            /tests/studio/
+            /data/speaking/
+            /library/practice/ielts/
+            /library/mock/cambridge-reading/
+            /library/mock/cambridge-writing/
+            /library/mock/cambridge-listening/cambridge-12-test-*.html
+            /library/mock/cambridge-listening/cambridge-19-test-1.html
+            /library/mock/cambridge-listening/*12*mp3
+            /library/mock/cambridge-listening/*12*png
+            /library/mock/cambridge-listening/ielts19_test1_*
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: python -m pip install -r scripts/studio/requirements.txt
+      - name: Build static site and check links, Vietnamese text and PDF citations
+        run: |
+          npm run build
+          python scripts/studio/check_release.py
+      - name: Unit and DOM coverage, plus all published exam player smoke tests
+        run: |
+          npm test
+          npm run test:papers
+      - name: Lighthouse mobile · four categories, six entry pages
+        run: CHROME_PATH="$(command -v google-chrome)" npm run audit:pages
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-reports
+          path: |
+            coverage/
+            .lighthouseci/
+          include-hidden-files: true
+          retention-days: 14
+      - name: Package only the verified publication
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+  publish:
+    needs: verify
+    # Never deploy PR events. Main publishes after integration; an explicit release
+    # commit can request publication from this branch, subject to environment rules.
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || (github.ref == 'refs/heads/arena/c5dd90f5-yysd-testcenter' && contains(github.event.head_commit.message, '[publish-pages]')))
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

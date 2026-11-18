@@ -2,6 +2,9 @@ name: Super-Linter · IELTS
 on:
   push:
     paths: &paths
+      - "atlas*.html"
+      - "package*.json"
+      - "library/mock/cambridge-*/**"
       - "studio/**"
       - "tests/studio/**"
       - "scripts/studio/**"
@@ -35,7 +38,7 @@ jobs:
           MULTI_STATUS: false
           VALIDATE_ALL_CODEBASE: true
           USE_FIND_ALGORITHM: true
-          FILTER_REGEX_INCLUDE: (^|/)(studio/|tests/studio/|scripts/studio/|\.github/workflows/studio-|README\.md$)
+          FILTER_REGEX_INCLUDE: (^|/)(studio/|tests/studio/|scripts/studio/|\.github/workflows/studio-|atlas[^/]*\.html$|package(-lock)?\.json$|README\.md$)
           VALIDATE_HTML: true
           VALIDATE_JAVASCRIPT_PRETTIER: true
           VALIDATE_CSS_PRETTIER: true
