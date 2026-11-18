@@ -12,7 +12,7 @@
     "test": "c8 --all --allow-external --src ../ielts-vi/assets --include '**/ielts-vi/assets/*.js' --100 --per-file --reporter=text --reporter=lcov node --test test/*.test.mjs",
     "test:browser": "node browser-test.mjs",
     "lighthouse": "node audit.mjs",
-    "audio": "node make-audio.mjs"
+    "audio": "node --no-wasm-tier-up make-audio.mjs"
   },
   "devDependencies": {
     "@breezystack/lamejs": "1.2.7",

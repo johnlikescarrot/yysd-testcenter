@@ -1,3 +1,5 @@
+import { honeybees } from './honeybees.js';
+
 export const skills = {
   listen: { name: 'Nghe', icon: 'headphones' },
   read: { name: 'Đọc', icon: 'book' },
@@ -254,6 +256,64 @@ export const units = [
           speak('How might online learning affect access to education in rural areas?',
             'Online courses can give learners access to teachers who live far away. That matters when the nearest training centre is a long bus ride away. On the other hand, courses that require live video may exclude families with unstable internet. Downloadable lessons could reduce that problem.',
             ['Nêu ít nhất một lợi ích và một giới hạn.', 'Cho ví dụ hoặc mô tả hệ quả.', 'Duy trì tốc độ nói mà người nghe theo kịp.']),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'fieldwork', title: 'Một ngày ở vườn thực nghiệm', label: 'Vận dụng',
+    summary: 'Nghe hướng dẫn, đọc nghiên cứu và trình bày điều quan sát được.',
+    lessons: [
+      {
+        id: 'garden-visit', skill: 'listen', title: 'Chuẩn bị cho chuyến thực địa', minutes: 5,
+        description: 'Ghi đúng điểm hẹn, dụng cụ và chi tiết cần quan sát.',
+        instruction: 'Bạn sắp tham quan một khu vườn. Đọc câu hỏi rồi nghe người phụ trách dặn dò.',
+        context: { audio: 'garden.mp3', text: 'Here are the arrangements for our garden visit on Tuesday. We used to meet by the fountain, but the path is closed for repairs. Please wait at the greenhouse instead. We will walk to the flower beds together. You do not need a camera. We have pencils, but please bring a ruler so that you can measure the flowers. Each pair will watch one plant for ten minutes. Count the visits made by insects, not the number of insects. The same bee may return several times.' },
+        questions: [
+          fill('Meet the group at the ______. (ONE WORD ONLY)', ['greenhouse'],
+            'Đài phun nước là điểm hẹn cũ. Sau “instead”, hướng dẫn viên chốt điểm hẹn ở nhà kính.'),
+          choice('What does each visitor need to bring?', ['A camera', 'A pencil', 'A ruler'], 2,
+            'Không cần máy ảnh, vườn đã có bút chì. Thước là vật người tham gia phải tự mang.'),
+          choice('If one bee returns three times, what should the pair record?', ['One plant', 'Three visits', 'Three insects'], 1,
+            'Đơn vị quan sát là lượt ghé hoa, không phải số cá thể khác nhau.'),
+        ],
+      },
+      {
+        id: 'honeybees', skill: 'read', title: 'Ong mật tìm đường về tổ', minutes: 20,
+        description: 'Bài mẫu từ kho YYSD · 4 câu nhận định và 4 câu điền từ.',
+        instruction: 'Đọc bài rồi trả lời theo văn bản. Với câu điền khuyết, chỉ dùng MỘT từ trong bài.',
+        ...honeybees,
+      },
+      {
+        id: 'observations', skill: 'write', title: 'So sánh số liệu quan sát', minutes: 8,
+        description: 'Phân biệt số lượt với số cá thể, mô tả mà không suy diễn.',
+        instruction: 'Hai nhóm ghi số lượt côn trùng ghé hoa trong các khoảng quan sát bằng nhau. Đây là bài luyện ngắn, không phải toàn bộ Task 1.',
+        context: { text: 'Insect visits in ten minutes\nHerb garden: 12 on Monday, 18 on Friday.\nRose garden: 9 on Monday, 8 on Friday.' },
+        questions: [
+          choice('Which statement is supported by both sets of figures?', [
+            'Both gardens attracted more visits on Friday.', 'The herb garden recorded more visits on both days.', 'There were eighteen different insects on Friday.',
+          ], 1, '12 lớn hơn 9 và 18 lớn hơn 8. Bảng đếm lượt ghé, không đếm các cá thể riêng biệt.'),
+          fill('The gap between the gardens was ______ visits on Friday. (ONE NUMBER)', ['10'],
+            'Lấy số lượt ở vườn rau thơm trừ số lượt ở vườn hồng vào cùng ngày: 18 − 8 = 10.'),
+          write('Compare the two gardens in two sentences. Include figures and do not speculate about the cause.', 18,
+            'The herb garden recorded more visits on both days, rising from twelve to eighteen. In contrast, the figure for the rose garden fell slightly from nine to eight.',
+            ['Dùng đúng đơn vị “visits”.', 'Nêu ít nhất một so sánh có số liệu.', 'Không thêm nguyên nhân mà bảng không cung cấp.']),
+        ],
+      },
+      {
+        id: 'outdoors', skill: 'speak', title: 'Kể một lần học ngoài lớp', minutes: 6,
+        description: 'Dùng mốc thời gian và ví dụ để tổ chức câu chuyện.',
+        instruction: 'Chọn một trải nghiệm thật. Ghi ba từ khóa: nơi chốn, điều bạn làm và điều bạn hiểu ra.',
+        questions: [
+          choice('Which detail best illustrates learning by observation?', ['The garden is somewhere in my town.',
+            'There are many things to learn in life.', 'I counted each visit, then realised one bee could visit twice.'], 2,
+          'Chi tiết đếm lượt cho thấy chính xác điều người nói đã làm và phát hiện.'),
+          choice('Which phrase introduces a change in understanding?', ['At first I thought …, but then I noticed …',
+            'It is located next to …', 'In addition to the ticket price …'], 0,
+          'Cặp “at first … but then …” giúp đối chiếu suy nghĩ ban đầu với quan sát sau đó.'),
+          speak('Describe a time you learned something outside a classroom. Say where you were, what you did and why it stayed with you.',
+            'Last spring I went to a garden with my cousin. I thought counting bees would be easy, but I kept losing track of one that came back to the same flower. My cousin suggested counting visits instead. That small change taught me to decide what I want to measure before I start.',
+            ['Người nghe có hình dung được bối cảnh không?', 'Kể lại một hành động cụ thể.', 'Kết thúc bằng điều bạn rút ra từ trải nghiệm.']),
         ],
       },
     ],

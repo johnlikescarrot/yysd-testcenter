@@ -17,14 +17,14 @@ function allAnswers(session, correct = true) {
   return session;
 }
 
-test('curriculum: three sequences, four skills, unique questions and valid models', () => {
-  assert.equal(units.length, 3);
-  assert.equal(lessons.length, 12);
-  assert.equal(Object.keys(questions).length, 36);
+test('curriculum: four sequences, four skills, unique questions and valid models', () => {
+  assert.equal(units.length, 4);
+  assert.equal(lessons.length, 16);
+  assert.equal(Object.keys(questions).length, 53);
   for (const unit of units) assert.deepEqual(unit.lessons.map(({ skill }) => skill), Object.keys(skills));
   for (const lesson of lessons) {
     assert.equal(byLesson[lesson.id], lesson);
-    assert.equal(lesson.questions.length, 3);
+    assert.equal(lesson.questions.length, lesson.id === 'honeybees' ? 8 : 3);
     for (const question of lesson.questions) {
       assert.equal(question.lessonId, lesson.id);
       if (question.type === 'choice') {
