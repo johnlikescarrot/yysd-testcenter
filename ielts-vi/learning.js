@@ -59,7 +59,7 @@ export function save(getStorage, progress) {
 }
 
 const normalize = value => value.normalize('NFKC').toLowerCase().replace(/[’‘]/gu, "'").trim().replace(/\s+/gu, ' ');
-export const wordCount = text => (text.match(/[\p{Letter}\p{Number}]+(?:['’\-][\p{Letter}\p{Number}]+)*/gu) ?? []).length;
+export const wordCount = text => (text.match(/[\p{Letter}\p{Number}]+(?:['’-][\p{Letter}\p{Number}]+)*/gu) ?? []).length;
 export const checkAnswer = (question, answer) => question.answers.some(value => normalize(value) === normalize(answer));
 export const nextLesson = progress => lessons.find(lesson => !Object.hasOwn(progress.completed, lesson.id));
 export const lessonState = (lesson, progress) => {

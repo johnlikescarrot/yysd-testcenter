@@ -16,6 +16,7 @@ let progress = loaded.progress;
 let session;
 let timer;
 let returnFocus;
+let renderedDay;
 const dialog = byId('session');
 const exercise = byId('exercise');
 const views = [...document.querySelectorAll('[data-view]')];
@@ -67,9 +68,14 @@ function drawStats(today) {
 
 function draw() {
   const today = day();
+  renderedDay = today;
   drawPath();
   drawReview(today);
   drawStats(today);
+}
+
+function refreshCalendar() {
+  if (day() !== renderedDay) draw();
 }
 
 function persist() {
@@ -94,6 +100,7 @@ function startTimer() {
   const button = byId('timer-start');
   const end = Date.now() + 60_000;
   button.disabled = true;
+  text('timer-announcement', '');
   text('timer-status', '60 giây');
   timer = window.setInterval(() => {
     const seconds = Math.ceil((end - Date.now()) / 1000);
@@ -239,7 +246,11 @@ byId('confirm-delete').addEventListener('click', () => {
   progress = newProgress();
   persist();
 });
-window.addEventListener('hashchange', () => route(true));
+window.addEventListener('focus', refreshCalendar);
+window.addEventListener('hashchange', () => {
+  refreshCalendar();
+  route(true);
+});
 byId('storage-notice').hidden = loaded.available;
 route(false);
 draw();

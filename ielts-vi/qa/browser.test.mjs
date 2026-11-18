@@ -52,7 +52,10 @@ const next = page => page.locator('#advance').click();
 const pick = (page, index) => page.locator('#answer-form input[type=radio]').nth(index).check();
 const closeResult = page => page.locator('#result-close').click();
 const content = (page, id) => page.locator(`#${id}`).innerText();
-const nav = (page, id) => page.locator(`nav a[data-nav=${id}]`).click();
+const nav = async (page, id) => {
+  await page.locator(`nav a[data-nav=${id}]`).click();
+  await page.locator(`#${id}`).waitFor({ state: 'visible' });
+};
 const draft = 'Longer opening hours would help many people study and use the internet after they finish work.';
 
 async function answer(page, question) {
@@ -155,6 +158,12 @@ test('học bốn kỹ năng, kiểm tra lỗi và mẫu, ôn theo hạn, mở k
   await closeResult(page);
 
   await page.clock.setSystemTime(date(19));
+  await nav(page, 'on-tap');
+  assert.equal(await content(page, 'review-heading'), '8 câu đến hạn');
+  await page.locator('#start-review').click();
+  assert.equal(await content(page, 'step-label'), 'Câu 1 / 6');
+  await page.locator('#exit').click();
+  await nav(page, 'lo-trinh');
   await page.locator('[data-lesson=routine]').click();
   await answer(page, lessons[3].questions[0]);
   const timer = page.locator('#timer-start');
