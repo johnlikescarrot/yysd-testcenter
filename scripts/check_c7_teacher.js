@@ -30,7 +30,7 @@ must(t2.indexOf("bookshop specialising in the <Q n=\\\"17\\\">") >= 0, "T2 Q17 s
 must(t2.indexOf("Entertainment Complex") >= 0, "T2 Q18 attraction");
 must(t2.indexOf("<Q n=\\\"18\\\"> cinema") >= 0, "T2 Q18 in info col");
 must(t2.indexOf("<Q n=\\\"27\\\"><br>to ........................") >= 0, "T2 Q27 to blanks");
-must(t2.indexOf("此题请以 ___ to ___ 形式作答") >= 0, "T2 Q27 format hint");
+must(t2.indexOf("Trả lời theo mẫu “___ to ___”") >= 0, "T2 Q27 format hint");
 
 var t3 = read("cambridge-7-test-3.html");
 must(t3.indexOf("Room No. <Q n=\\\"7\\\">") >= 0, "T3 Q7 under Address");

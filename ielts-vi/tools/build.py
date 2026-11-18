@@ -43,11 +43,10 @@ DIALOGUE = ROOT / "library/practice/jingting/data/cam20-t1-p1.json"
 
 
 def checked(text, path):
-    leftover = sorted(
-        set(re.findall(r'[^<>\n`"\']{0,25}[\u3400-\u9fff]+[^<>\n`"\']{0,35}', text))
-    )
-    if leftover:
-        raise ValueError(f"{path}: missing translation(s): {leftover[:12]}")
+    match = HAN.search(text)
+    if match:
+        context = text[max(0, match.start() - 24) : match.end() + 40]
+        raise ValueError(f"{path}: missing translation near {context!r}")
     return text
 
 
@@ -197,21 +196,34 @@ def package_paper(skill, path):
     dest.write_text(checked(text, path.name))
 
 
-def build():
+def check_budget(folder, limit=900):
+    mib = sum(p.stat().st_size for p in folder.rglob("*") if p.is_file()) / 1048576
+    if mib >= limit:
+        raise ValueError(f"Pages budget exceeded: {mib:.1f} MiB (limit {limit} MiB)")
+    return mib
+
+
+def generated(name, render):
+    if (HERE / name).read_text() != render("../"):
+        raise ValueError(f"Stale {name}: run python tools/build.py --catalogue")
+    (OUT / name).write_text(render(""))
+
+
+def stage_assets():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(HERE / "assets", OUT / "assets")
+
+
+def build():
+    stage_assets()
     for page in ("index.html", "cam-nang.html", "so-thuc-hanh.html"):
         shutil.copyfile(HERE / page, OUT / page)
-    (OUT / "doi-thoai.html").write_text(transcript(""))
-    if (HERE / "doi-thoai.html").read_text() != transcript("../"):
-        raise ValueError("Stale transcript: run python tools/build.py --catalogue")
+    generated("doi-thoai.html", transcript)
     track = Path(json.loads(DIALOGUE.read_text())["audioUrl"])
     (OUT / track.parent).mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / track, OUT / track)
-    (OUT / "thu-vien.html").write_text(catalogue(""))
-    if (HERE / "thu-vien.html").read_text() != catalogue("../"):
-        raise ValueError("Stale catalogue: run python tools/build.py --catalogue")
+    generated("thu-vien.html", catalogue)
     (OUT / ".nojekyll").touch()
     # Reuse the five short recordings without copying the TOEFL application.
     audio = OUT / "audio"
@@ -230,9 +242,7 @@ def build():
     for file in OUT.rglob("*"):
         if file.suffix in {".html", ".mjs", ".json", ".svg"}:
             checked(file.read_text(), file)
-    size_mib = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file()) / 1048576
-    if size_mib >= 900:
-        raise ValueError(f"Pages budget exceeded: {size_mib:.1f} MiB (limit 900 MiB)")
+    size_mib = check_budget(OUT)
     print(
         f"{count} Cambridge papers, {len(PRACTICE)} standalone practice tools; {size_mib:.1f} MiB"
     )

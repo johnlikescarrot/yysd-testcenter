@@ -1,12 +1,11 @@
 """Check release links, bibliographies, PDF text and the English assessment data."""
 
-import re
 import sys
 from html.parser import HTMLParser
 from importlib import import_module
 from urllib.parse import unquote, urlsplit
 
-from build import HAN, OUT, ROOT, papers
+from build import OUT, ROOT, papers
 from pypdf import PdfReader
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -48,16 +47,12 @@ def exam_data(a, b, path):
         assert a.keys() == b.keys(), path
         for k, x in a.items():
             exam_data(x, b[k], (*path, k))
-    elif isinstance(a, str) and (
-        HAN.search(a) or re.search("[（）：，。；？　【】]", a)
-    ):
-        assert isinstance(b, str) and b.strip() and not HAN.search(b), path
     else:
         assert a == b, path
 
 
-def verify():
-    for file in OUT.rglob("*.html"):
+def verify_links(folder):
+    for file in folder.rglob("*.html"):
         doc = Page(file)
         for link in doc.hrefs:
             parts = urlsplit(link)
@@ -67,9 +62,16 @@ def verify():
             assert not parts.netloc and not parts.path.startswith("/"), (file, link)
             if parts.path:
                 target = (file.parent / unquote(parts.path)).resolve()
-                assert target.is_relative_to(OUT) and target.is_file(), (file, link)
-            elif parts.fragment:
-                assert unquote(parts.fragment) in doc.ids, (file, link)
+                assert target.is_relative_to(folder) and target.is_file(), (file, link)
+            else:
+                assert parts.fragment and unquote(parts.fragment) in doc.ids, (
+                    file,
+                    link,
+                )
+
+
+def verify():
+    verify_links(OUT)
     for name, n in [("cam-nang", 12), ("so-thuc-hanh", 7)]:
         html = Page(OUT / (name + ".html"))
         refs = {

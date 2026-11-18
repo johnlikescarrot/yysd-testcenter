@@ -34,15 +34,15 @@ python3 -m http.server 4173 --bind 0.0.0.0 --directory dist
 Mở `http://localhost:4173` trên cùng máy, hoặc URL preview nếu dùng môi trường phát triển từ xa. Không trỏ máy chủ công cộng tới gốc repository. `dist/` là đầu ra dựng lại được, khoảng **774 MiB**, chủ yếu là âm thanh gốc; trang chủ không tải các bản ghi của thư viện. Trình dựng dừng nếu gặp tệp thiếu, nội dung chưa dịch trong gói hoặc vượt ngân sách 900 MiB. Không sao chép `CNAME`, `.git`, API, dữ liệu người dùng hoặc toàn bộ kho đa gigabyte.
 
 ```sh
-python3 -m pip install pypdf==5.9.0  # dùng trong môi trường Python riêng
-python3 tools/verify.py              # liên kết, bản PDF, dữ liệu đề giữa nguồn và gói
+python3 -m pip install -r requirements-qa.txt  # dùng trong môi trường Python riêng
+npm run test:release                 # dựng, kiểm tra gói và đo coverage Python
 npm run smoke                       # làm bài thực trong Chromium dưới đường dẫn /yysd-testcenter/
 npm run audit:pages                 # Lighthouse mobile, 3 lượt/URL; JSON trong reports/
 ```
 
 Kiểm thử trình duyệt mặc định dùng Chromium ghim phiên bản cho Linux x64. Trên nền tảng khác, đặt `CHROME_PATH` tới Chrome/Chromium cục bộ. Muốn làm lại PDF: `CHROME_PATH=/path/to/chrome npm run pdf`, soát bản in và liên kết rồi dựng lại. Sau khi thay lựa chọn đề hoặc lời thoại, chạy `python3 tools/build.py --catalogue` để cập nhật các trang liên kết cho bản đầy đủ của trung tâm.
 
-`npm test` đo **tất cả module JS chạy trong trình duyệt của bàn học** (`assets/*.mjs`, kể cả điểm khởi động và giao diện), ngưỡng 100% cho dòng, nhánh và hàm. Không gộp các script nội tuyến trong ngân hàng đề, công cụ dựng, các app khác hay Node API vào tỷ lệ này. `npm run smoke` kiểm tra tất cả đề được phát hành: điền đáp án vào ô thật, kiểm tra 40/40 ở nghe/đọc, số từ và bài nộp ở viết. Kiểm tra PDF đọc các liên kết **trong tệp nhị phân**, không chỉ đếm thẻ trong HTML.
+`npm test` đo **tất cả module JS chạy trong trình duyệt của bàn học** (`assets/*.mjs`, kể cả điểm khởi động và giao diện), ngưỡng 100% cho dòng, nhánh và hàm. Không gộp các script nội tuyến trong ngân hàng đề, công cụ dựng, các app khác hay Node API vào tỷ lệ này. `npm run test:release` đo riêng hai module Python đóng gói và kiểm tra bản phát hành với ngưỡng 100% câu lệnh/nhánh. `npm run smoke` kiểm tra tất cả đề được phát hành: điền đáp án vào ô thật, kiểm tra 40/40 ở nghe/đọc, số từ và bài nộp ở viết. Kiểm tra PDF đọc các liên kết **trong tệp nhị phân**, không chỉ đếm thẻ trong HTML.
 
 ## Pages và CI
 

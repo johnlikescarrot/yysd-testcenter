@@ -3,12 +3,15 @@
 ## Phần đã kiểm chứng
 
 - **7 bài kiểm thử Node** cho 4 module trình duyệt của Atlas: 100% dòng, nhánh và hàm. Kiểm tra chọn đáp án, phiên bỏ dở, tải lại, dữ liệu lưu hỏng, hạn mức lưu, chống cộng XP trùng, ôn đến hạn, mốc ngày địa phương, hạng tuần và huy hiệu. Tái hiện bằng `npm test`. Đây **không phải coverage toàn repository**.
+- **Công cụ phát hành Python:** `npm run test:release` chạy dựng gói thật, đọc lại đề/PDF và 5 bài kiểm thử trường hợp lỗi. `coverage.py 7.10.7` đo `tools/build.py` + `tools/verify.py`: 202 câu lệnh và 82 nhánh, không bỏ sót câu lệnh hoặc nhánh nào (100%).
 - **Chromium, dưới `/yysd-testcenter/`:** hoàn thành phiên học, tải lại để kiểm tra XP, mở bài ôn, kiểm tra âm thanh, bàn phím và bề rộng 360 px. Làm cả **153 đề** qua bộ chấm gốc (79 đề nghe/đọc và 74 đề viết), cả bảy bài phân tích câu, bài đọc 8 câu và bài nghe ghi số. Không bỏ qua lỗi console hay tài nguyên 404 khi làm bài.
 - **Kho nguồn:** `python3 scripts/verify_cambridge_mock_pages.py` kiểm tra 226 đề. So sánh cây dữ liệu `TEST` trước/sau với commit gốc `de5ee6b`: **6.080 câu khách quan**, không phát hiện thay đổi ở giá trị tiếng Anh, ID hoặc đáp án có từ trước. Với hai tệp JSON đã dịch của Cambridge 20 Test 1, lời tiếng Anh và mốc bắt đầu/kết thúc được giữ nguyên.
 - **PDF:** mỗi tệp 3 trang A4, có văn bản tiếng Việt tìm kiếm được. `pypdf` đọc lại annotation của từng PDF và đối chiếu các cặp DOI/Google Scholar với bản HTML: 12 cặp trong cẩm nang và 7 cặp trong phiếu thực hành. Không tính hai lần thành 19 công trình riêng biệt.
-- **Tích hợp cũ:** kiểm tra hook sổ từ sai, chỉ mục CET-4 Lite và đề TOEFL đều chạy thành công. Hai kiểm tra giao diện cũ `scripts/check_surface.js` và `scripts/check_apple_shell.js` vẫn báo thiếu `YYSD_SURFACE` và `--chrome-bg` trong các tệp chung từ bản gốc. Đây không phải các kiểm tra của bản Atlas và không được tính như đã đạt.
+- **Tích hợp cũ:** kiểm tra hook sổ từ sai, chỉ mục CET-4 Lite và đề TOEFL đều chạy thành công. Cả 23 kiểm tra nội dung chuyên biệt `check_c*_reading.js` / `check_c*_teacher.js` cũng đạt. Hai kiểm tra giao diện cũ `scripts/check_surface.js` và `scripts/check_apple_shell.js` vẫn báo thiếu `YYSD_SURFACE` và `--chrome-bg` trong các tệp chung từ bản gốc. Đây không phải các kiểm tra của bản Atlas và không được tính như đã đạt.
 
 ## Lighthouse
+
+**Kết quả tại máy:** 11 URL × 3 lượt = **33 lần đo**. Cả 33 lần đều đạt **100/100/100/100**. [Biên nhận JSON theo từng URL và từng lượt](qa/lighthouse-mobile.json) ghi cả phiên bản trình duyệt, công cụ và commit được đo.
 
 [Workflow kiểm thử](../.github/workflows/learning-path-pages.yml) lưu LHR JSON đầy đủ dưới artifact `lighthouse-mobile`. Lệnh `npm run audit:pages` dùng mobile mặc định của Lighthouse 13.6.0 và Chromium 149, không tắt audit, không bỏ qua category. Phục vụ **gói xuất bản** dưới đường dẫn con thay vì đo HTML mẫu hoặc URL trên nhánh khác. Báo cáo các lượt độc lập và trung vị theo từng tiêu chí; ngưỡng CI là 100 cho Performance, Accessibility, Best Practices và SEO. Đây là số đo phòng thử nghiệm ở thời điểm tải trang, không phải dữ liệu người dùng thật, mọi trạng thái sau đăng nhập hay điểm của một bản Pages chưa được triển khai.
 

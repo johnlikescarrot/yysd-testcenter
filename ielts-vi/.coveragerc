@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = tools
+data_file = coverage/.coverage
+
+[report]
+show_missing = True
+fail_under = 100
