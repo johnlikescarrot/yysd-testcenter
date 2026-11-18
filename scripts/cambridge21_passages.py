@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+import argparse
+import json
 import re
 import sys
 from pathlib import Path
 
-import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -19,8 +20,6 @@ from scripts.reading_paras import (
     resplit_long as _resplit_long,
     to_plain as _to_plain,
 )
-
-PDF = Path("/Users/frankman/Desktop/剑21/剑桥雅思21（A类）.pdf")
 
 # ponytail: hard-coded page ranges — upgrade path: scan for PASSAGE markers dynamically
 PASSAGE_PAGES: dict[int, list[tuple[int, int]]] = {
@@ -277,8 +276,10 @@ def _merge(lines: list[str]) -> list[str]:
     return _merge_unlabeled(lines)
 
 
-def passages_for_test(test_no: int) -> list[dict]:
-    doc = fitz.open(str(PDF))
+def passages_for_test(test_no: int, pdf: Path) -> list[dict]:
+    import fitz  # Only the optional PDF importer needs PyMuPDF.
+
+    doc = fitz.open(str(pdf))
     out: list[dict] = []
     for idx, (start, end) in enumerate(PASSAGE_PAGES[test_no], start=1):
         raw: list[str] = []
@@ -307,6 +308,7 @@ def passages_for_test(test_no: int) -> list[dict]:
                 },
             }
         )
+    doc.close()
     return out
 
 
@@ -327,24 +329,31 @@ _EXACT_PARAS: dict[tuple[int, int], int] = {
 }
 
 
-def _self_check() -> None:
+def _self_check(pages) -> None:
     for (test, pid), need in _MIN_PARAS.items():
-        got = len(passages_for_test(test)[pid - 1]["passage"]["paras"])
+        got = len(pages[test][pid - 1]["passage"]["paras"])
         assert got >= need, f"T{test} P{pid}: {got} paras, need >={need}"
     for (test, pid), need in _EXACT_PARAS.items():
-        got = len(passages_for_test(test)[pid - 1]["passage"]["paras"])
+        got = len(pages[test][pid - 1]["passage"]["paras"])
         assert got == need, f"T{test} P{pid}: {got} paras, need exactly {need}"
     for test in range(1, 5):
-        for p in passages_for_test(test):
+        for p in pages[test]:
             paras = p["passage"]["paras"]
             mx = max(len(_to_plain(x)) for x in paras)
             assert mx <= _MAX_PARA_CHARS, f"T{test} P{p['id']}: max para {mx} chars"
 
 
 if __name__ == "__main__":
-    _self_check()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('pdf', type=Path, help='Local Cambridge 21 source PDF')
+    parser.add_argument('--output', type=Path, help='Write extracted source JSON after validation')
+    args = parser.parse_args()
+    pages = {n: passages_for_test(n, args.pdf) for n in range(1, 5)}
+    _self_check(pages)
+    if args.output:
+        args.output.write_text(json.dumps(pages, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for test in range(1, 5):
-        for p in passages_for_test(test):
+        for p in pages[test]:
             paras = p["passage"]["paras"]
             labels = sum(1 for t in paras if "para-label" in t)
             print(

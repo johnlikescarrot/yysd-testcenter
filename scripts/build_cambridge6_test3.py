@@ -344,8 +344,8 @@ def listening_test() -> dict:
                         ],
                         "questions": [
                             {"id": "L35", "no": 35, "answer": ans("people"), "explain": explain("people")},
-                            {"id": "L36", "no": 36, "answer": ans("water", "sand"), "explain": "答案：water 与 sand，顺序不限。"},
-                            {"id": "L37", "no": 37, "answer": ans("sand", "water"), "explain": "答案：water 与 sand，顺序不限。"},
+                            {"id": "L36", "no": 36, "answer": ans("water", "sand"), "explain": "Đáp án: water và sand (không yêu cầu thứ tự)."},
+                            {"id": "L37", "no": 37, "answer": ans("sand", "water"), "explain": "Đáp án: water và sand (không yêu cầu thứ tự)."},
                             {"id": "L38", "no": 38, "answer": ans("Scotland"), "explain": explain("Scotland")},
                             {"id": "L39", "no": 39, "answer": ans("outside"), "explain": explain("outside")},
                             {"id": "L40", "no": 40, "answer": ans("tops"), "explain": explain("tops")},

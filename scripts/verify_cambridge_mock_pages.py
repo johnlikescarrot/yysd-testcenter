@@ -139,6 +139,8 @@ def check_page(path: Path) -> list[str]:
     if '<html lang="vi">' not in shell or re.search(r"[\u3400-\u9fff]", shell):
         errors.append(f"{path}: check the page language and untranslated exam UI")
     if "cambridge-writing" in str(path):
+        if f'const SKEY = "{path.stem}-draft";' not in shell:
+            errors.append(f"{path}: the writing draft must be scoped to this paper")
         for task in ("task1", "task2"):
             if not test.get(task, {}).get("prompt"):
                 errors.append(f"{path}: missing {task} prompt")

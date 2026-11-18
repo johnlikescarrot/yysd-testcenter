@@ -377,8 +377,8 @@ def listening_test() -> dict:
                         ],
                         "questions": [
                             {"id": "L34", "no": 34, "answer": ans("water"), "explain": explain("water")},
-                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "答案：meat 与 cheese，顺序不限。"},
-                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "答案：meat 与 cheese，顺序不限。"},
+                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "Đáp án: meat và cheese (không yêu cầu thứ tự)."},
+                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "Đáp án: meat và cheese (không yêu cầu thứ tự)."},
                             {"id": "L37", "no": 37, "answer": ans("new taste", "5th taste", "fifth taste"), "explain": explain("new taste", "5th taste", "fifth taste")},
                             {"id": "L38", "no": 38, "answer": ans("common"), "explain": explain("common")},
                             {"id": "L39", "no": 39, "answer": ans("bitterness"), "explain": explain("bitterness")},

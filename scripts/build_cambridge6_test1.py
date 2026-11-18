@@ -352,8 +352,8 @@ def listening_test() -> dict:
                             {"plain": True, "html": "The Business Resource Centre contains materials such as books and manuals to be used for training. It is possible to hire <Q n=\"26\"> and <Q n=\"27\">. There are materials for working on study skills (e.g. <Q n=\"28\">) and other subjects include finance and <Q n=\"29\">. <Q n=\"30\"> membership costs £50 per year."},
                         ],
                         "questions": [
-                            {"id": "L26", "no": 26, "answer": ans("laptops", "printers"), "explain": "答案：laptops 与 printers，顺序不限。"},
-                            {"id": "L27", "no": 27, "answer": ans("printers", "laptops"), "explain": "答案：laptops 与 printers，顺序不限。"},
+                            {"id": "L26", "no": 26, "answer": ans("laptops", "printers"), "explain": "Đáp án: laptops và printers (không yêu cầu thứ tự)."},
+                            {"id": "L27", "no": 27, "answer": ans("printers", "laptops"), "explain": "Đáp án: laptops và printers (không yêu cầu thứ tự)."},
                             {"id": "L28", "no": 28, "answer": ans("report writing"), "explain": explain("report writing")},
                             {"id": "L29", "no": 29, "answer": ans("marketing"), "explain": explain("marketing")},
                             {"id": "L30", "no": 30, "answer": ans("Individual"), "explain": explain("Individual")},
@@ -400,8 +400,8 @@ def listening_test() -> dict:
                         ],
                         "questions": [
                             {"id": "L34", "no": 34, "answer": ans("water"), "explain": explain("water")},
-                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "答案：meat 与 cheese，顺序不限。"},
-                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "答案：meat 与 cheese，顺序不限。"},
+                            {"id": "L35", "no": 35, "answer": ans("meat", "cheese"), "explain": "Đáp án: meat và cheese (không yêu cầu thứ tự)."},
+                            {"id": "L36", "no": 36, "answer": ans("cheese", "meat"), "explain": "Đáp án: meat và cheese (không yêu cầu thứ tự)."},
                             {"id": "L37", "no": 37, "answer": ans("new taste", "5th taste", "fifth taste"), "explain": explain("new taste", "5th taste", "fifth taste")},
                             {"id": "L38", "no": 38, "answer": ans("common"), "explain": explain("common")},
                             {"id": "L39", "no": 39, "answer": ans("bitterness"), "explain": explain("bitterness")},
@@ -574,8 +574,8 @@ def reading_test() -> dict:
             ],
             "questions": [
                 {"id": "Q33", "no": 33, "answer": ans("farming"), "explain": explain("farming")},
-                {"id": "Q34", "no": 34, "answer": ans("sea mammals", "fish"), "explain": "答案：sea mammals 与 fish，顺序不限。"},
-                {"id": "Q35", "no": 35, "answer": ans("fish", "sea mammals"), "explain": "答案：sea mammals 与 fish，顺序不限。"},
+                {"id": "Q34", "no": 34, "answer": ans("sea mammals", "fish"), "explain": "Đáp án: sea mammals và fish (không yêu cầu thứ tự)."},
+                {"id": "Q35", "no": 35, "answer": ans("fish", "sea mammals"), "explain": "Đáp án: sea mammals và fish (không yêu cầu thứ tự)."},
                 {"id": "Q36", "no": 36, "answer": ans("Thule"), "explain": explain("Thule")},
                 {"id": "Q37", "no": 37, "answer": ans("islands"), "explain": explain("islands")},
                 {"id": "Q38", "no": 38, "answer": ans("nomadic"), "explain": explain("nomadic")},

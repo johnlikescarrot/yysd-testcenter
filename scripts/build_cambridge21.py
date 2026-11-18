@@ -3,8 +3,7 @@
 
 from __future__ import annotations
 
-import json
-import re
+import argparse
 import shutil
 import subprocess
 import sys
@@ -16,17 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from scripts.cambridge21_data import listening_test, reading_test, writing_test
-TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
+from scripts.cambridge_page import write_page
 
-TPL_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-20-test-1.html"
+# This paper is the listening template with the practice-only transcript pane.
+TPL_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-21-test-1.html"
 TPL_READING = ROOT / "library/mock/cambridge-reading/cambridge-20-test-1-reading.html"
 TPL_WRITING = ROOT / "library/mock/cambridge-writing/cambridge-20-test-4-writing.html"
 
 LISTENING_DIR = ROOT / "library/mock/cambridge-listening"
 READING_DIR = ROOT / "library/mock/cambridge-reading"
 WRITING_DIR = ROOT / "library/mock/cambridge-writing"
-
-AUDIO_ZIP = Path("/Users/frankman/Desktop/C21音频.zip")
 
 STATE_VARS = (
     "let currentPaper=[], selectedSections=[], mode='practice', "
@@ -39,11 +37,6 @@ WRITING_BLURBS = {
     3: "Task 1 rain-shadow desert diagram + Task 2 study abroad essay",
     4: "Task 1 library survey chart + Task 2 primary school learning essay",
 }
-
-
-def replace_test(html: str, test: dict) -> str:
-    block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -98,10 +91,6 @@ def patch_writing_meta(html: str, n: int) -> str:
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             WRITING_BLURBS[n],
         ),
-        (
-            "Task 1 (khoảng 20 phút, ≥150 từ) + Task 2 (khoảng 40 phút, ≥250 từ)",
-            "Task 1 (khoảng 20 phút, ≥150 từ) + Task 2 (khoảng 40 phút, ≥250 từ)",
-        ),
         ("Test 1 Viết (Đề Cambridge)", f"Test {n} Viết (Đề Cambridge)"),
     ]
     for old, new in reps:
@@ -109,21 +98,10 @@ def patch_writing_meta(html: str, n: int) -> str:
     return inject_state_vars(html)
 
 
-def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
-    html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
-    html = patch_meta(html)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
-    print(f"wrote {out.relative_to(ROOT)}")
-
-
-def prepare_audio() -> None:
-    if not AUDIO_ZIP.exists():
-        raise FileNotFoundError(AUDIO_ZIP)
+def prepare_audio(audio_zip: Path) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
-        with zipfile.ZipFile(AUDIO_ZIP) as zf:
+        with zipfile.ZipFile(audio_zip) as zf:
             zf.extractall(tmp_path)
         for n in range(1, 5):
             for sec in range(1, 5):
@@ -176,12 +154,16 @@ def run_checks(paths: list[Path]) -> int:
 
 
 def main() -> int:
-    tests = [int(x) for x in sys.argv[1:]] if len(sys.argv) > 1 else list(range(1, 5))
-    if len(tests) == 4 and tests == list(range(1, 5)):
-        prepare_audio()
-        rename_map_image()
-    elif any(n not in range(1, 5) for n in tests):
-        raise SystemExit("usage: build_cambridge21.py [1 2 3 4]")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('tests', nargs='*', type=int, help='Test numbers 1–4 (default: all)')
+    parser.add_argument('--audio-zip', type=Path, help='Optional: reimport audio from a local archive')
+    args = parser.parse_args()
+    tests = args.tests or [1, 2, 3, 4]
+    if any(n not in range(1, 5) for n in tests):
+        parser.error('test numbers must be between 1 and 4')
+    if args.audio_zip:
+        prepare_audio(args.audio_zip)
+    rename_map_image()
     all_paths: list[Path] = []
     for n in tests:
         write_page(

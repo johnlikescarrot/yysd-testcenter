@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from scripts.cambridge_page import with_clip_windows
 from scripts.cambridge12_listening import listening_tests
 from scripts.cambridge12_reading import reading_tests
 from scripts.cambridge12_writing import writing_tests
@@ -12,7 +13,7 @@ _W = writing_tests()
 
 
 def listening_test(n: int) -> dict:
-    return _L[n]
+    return with_clip_windows(_L[n])
 
 
 def reading_test(n: int) -> dict:

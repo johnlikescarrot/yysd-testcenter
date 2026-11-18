@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
-from scripts.cambridge21_passages import passages_for_test
+import json
+from pathlib import Path
+
+from scripts.cambridge_page import with_clip_windows
 
 
 def ans(*v):
@@ -14,11 +17,12 @@ def explain(*v):
 
 
 def listening_test(n: int) -> dict:
-    return _LISTENING[n]
+    return with_clip_windows(_LISTENING[n])
 
 
 def reading_test(n: int) -> dict:
-    passages = passages_for_test(n)
+    source = Path(__file__).with_name("cambridge_sources") / "volume21_passages.json"
+    passages = json.loads(source.read_text(encoding="utf-8"))[str(n)]
     for passage, groups in zip(passages, _READING_GROUPS[n]):
         passage["groups"] = groups
     return {"meta": {"volume": 21, "testNo": n}, "durationMin": 60, "passages": passages}
@@ -48,7 +52,7 @@ _LISTENING = {1: {'meta': {'volume': 21, 'testNo': 1},
                                          '£200<br><Q n="4"> available for club members<br>all inclusive (plus a useful '
                                          '<Q n="5">)',
                                          'a <Q n="6"> at the end of the course for all participants']],
-                               'questions': [{'id': 'L1', 'no': 1, 'answer': ['10', 'ten'], 'explain': '答案：10 / ten。'},
+                               'questions': [{'id': 'L1', 'no': 1, 'answer': ['10', 'ten'], 'explain': 'Đáp án: 10 / ten.'},
                                              {'id': 'L2', 'no': 2, 'answer': ['weather'], 'explain': 'Đáp án: weather.'},
                                              {'id': 'L3', 'no': 3, 'answer': ['safety'], 'explain': 'Đáp án: safety.'},
                                              {'id': 'L4', 'no': 4, 'answer': ['discount'], 'explain': 'Đáp án: discount.'},
@@ -325,17 +329,17 @@ _LISTENING = {1: {'meta': {'volume': 21, 'testNo': 1},
                                'questions': [{'id': 'L1',
                                               'no': 1,
                                               'answer': ['13th January', '13.01', '13 January'],
-                                              'explain': '答案：13th January / 13.01 / 13 January。'},
-                                             {'id': 'L2', 'no': 2, 'answer': ['48'], 'explain': '答案：48。'},
+                                              'explain': 'Đáp án: 13th January / 13.01 / 13 January.'},
+                                             {'id': 'L2', 'no': 2, 'answer': ['48'], 'explain': 'Đáp án: 48.'},
                                              {'id': 'L3', 'no': 3, 'answer': ['pizza'], 'explain': 'Đáp án: pizza.'},
                                              {'id': 'L4', 'no': 4, 'answer': ['India'], 'explain': 'Đáp án: India.'},
                                              {'id': 'L5', 'no': 5, 'answer': ['mirror'], 'explain': 'Đáp án: mirror.'},
                                              {'id': 'L6',
                                               'no': 6,
                                               'answer': ['6th April', '6 April'],
-                                              'explain': '答案：6th April / 6 April。'},
+                                              'explain': 'Đáp án: 6th April / 6 April.'},
                                              {'id': 'L7', 'no': 7, 'answer': ['natural'], 'explain': 'Đáp án: natural.'},
-                                             {'id': 'L8', 'no': 8, 'answer': ['67.50'], 'explain': '答案：67.50。'},
+                                             {'id': 'L8', 'no': 8, 'answer': ['67.50'], 'explain': 'Đáp án: 67.50.'},
                                              {'id': 'L9', 'no': 9, 'answer': ['shirt'], 'explain': 'Đáp án: shirt.'},
                                              {'id': 'L10', 'no': 10, 'answer': ['hammer'], 'explain': 'Đáp án: hammer.'}]}]},
                   {'id': 2,
@@ -548,7 +552,7 @@ _LISTENING = {1: {'meta': {'volume': 21, 'testNo': 1},
                                              {'id': 'L3',
                                               'no': 3,
                                               'answer': ['250', 'two hundred and fifty'],
-                                              'explain': '答案：250 / two hundred and fifty。'},
+                                              'explain': 'Đáp án: 250 / two hundred and fifty.'},
                                              {'id': 'L4', 'no': 4, 'answer': ['voucher'], 'explain': 'Đáp án: voucher.'},
                                              {'id': 'L5', 'no': 5, 'answer': ['window'], 'explain': 'Đáp án: window.'},
                                              {'id': 'L6', 'no': 6, 'answer': ['books'], 'explain': 'Đáp án: books.'},

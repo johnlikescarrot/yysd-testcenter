@@ -9,7 +9,8 @@ on:
     paths:
       - "library/**"
       - "scripts/build_manifest.py"
-      - "scripts/verify_cambridge_mock_pages.py"
+      - "scripts/*cambridge*.py"
+      - "scripts/cambridge_sources/**"
       - "scripts/verify_vocab_wrongword_hooks.py"
       - "scripts/check_cet4_lite.js"
       - ".github/workflows/build-manifest.yml"
@@ -43,6 +44,9 @@ jobs:
 
       - name: Verify Cambridge mock pages
         run: python scripts/verify_cambridge_mock_pages.py
+
+      - name: Rebuild the portable Cambridge sources in a temporary directory
+        run: python scripts/verify_cambridge_sources.py
 
       - name: Verify vocab wrong-word hooks
         run: python scripts/verify_vocab_wrongword_hooks.py

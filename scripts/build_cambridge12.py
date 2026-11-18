@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-import json
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -14,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 from scripts.cambridge12_data import listening_test, reading_test, writing_test
 
-TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
+from scripts.cambridge_page import write_page
 
 TPL_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-20-test-1.html"
 TPL_READING = ROOT / "library/mock/cambridge-reading/cambridge-20-test-1-reading.html"
@@ -35,11 +33,6 @@ WRITING_BLURBS = {
     3: "Task 1 US fast-food frequency chart + Task 2 high-speed rail essay",
     4: "Task 1 geothermal electricity diagram + Task 2 children making choices essay",
 }
-
-
-def replace_test(html: str, test: dict) -> str:
-    block = "const TEST = " + json.dumps(test, ensure_ascii=False, indent=2) + ";"
-    return TEST_RE.sub(block, html, count=1)
 
 
 def inject_state_vars(html: str) -> str:
@@ -98,15 +91,6 @@ def patch_writing_meta(html: str, n: int) -> str:
     for old, new in reps:
         html = html.replace(old, new)
     return inject_state_vars(html)
-
-
-def write_page(template: Path, out: Path, test: dict, patch_meta) -> None:
-    html = template.read_text(encoding="utf-8")
-    html = replace_test(html, test)
-    html = patch_meta(html)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html, encoding="utf-8")
-    print(f"wrote {out.relative_to(ROOT)}")
 
 
 def outputs_for_test(n: int) -> list[Path]:
