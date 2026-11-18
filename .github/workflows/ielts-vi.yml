@@ -66,14 +66,25 @@ jobs:
       run:
         working-directory: quality
     steps:
-      - name: Check out the Vietnamese edition
+      - name: Check out the edition and portal test inputs (no legacy media)
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+          sparse-checkout-cone-mode: false
           sparse-checkout: |
-            ielts-vi
-            quality
-            library/practice/ielts
+            /quality/
+            /ielts-vi/
+            /*.html
+            /assets/js/
+            /library/manifest.json
+            /library/**/*.html
+            /library/**/*.htm
+            /library/practice/jingting/data/*.json
+            /library/study/
+            /server/*.js
+            /server/schedules/
+            /scripts/*.py
+            /scripts/*.js
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
@@ -87,6 +98,16 @@ jobs:
           npm run pdf
           npm run audio
           git diff --exit-code -- ../ielts-vi/assets/honeybees.js ../ielts-vi/resources/ ../ielts-vi/audio/
+      - name: Verify the original catalog, Cambridge players and study lists
+        working-directory: .
+        run: |
+          python3 scripts/build_manifest.py
+          git diff --exit-code -- library/manifest.json
+          python3 scripts/verify_cambridge_mock_pages.py
+          python3 scripts/verify_vocab_wrongword_hooks.py
+          node scripts/check_cet4_lite.js
+          node scripts/check_drill_sections.js
+          npm run test:portal --prefix quality
       - run: npm test
       - run: npm run build
       - run: npm run test:browser

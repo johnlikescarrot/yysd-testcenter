@@ -1600,7 +1600,7 @@ window.YYSD = (function () {
   function makePartItem(parent, kind, num) {
     if (!parent || !num) return null;
     var label = kind === "s" ? ("Section " + num) : ("Passage " + num);
-    var base = String(parent.title || "").replace(/（[^）]*）\s*$/, "").replace(/\s+$/, "");
+    var base = String(parent.title || "").replace(/(?:（[^）]*）|\s*\((?:Nghe|Đọc|Viết)\))\s*$/, "").replace(/\s+$/, "");
     return Object.assign({}, parent, {
       id: parent.id + "-" + kind + num,
       title: base + " · " + label,
