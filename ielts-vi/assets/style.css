@@ -638,6 +638,7 @@ dialog::backdrop { background: #22163388; }
 }
 
 .prompt {
+  white-space: pre-line;
   margin-block-start: .25rem;
   font-size: clamp(1.1rem, 3vw, 1.38rem);
   overflow-wrap: anywhere;

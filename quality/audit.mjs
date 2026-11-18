@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { appendFile, mkdir, writeFile } from 'node:fs/promises';
 import lighthouse from 'lighthouse';
 import desktop from 'lighthouse/core/config/desktop-config.js';
 import { guides } from './materials.mjs';
@@ -21,10 +21,13 @@ const audit = (url) => withChrome(async (browser) => {
       await writeFile(new URL(`${label}.json`, reports), report[1]);
       if (lhr.runtimeError) throw new Error(`${label}: ${lhr.runtimeError.message}`);
       const scores = categories.map((category) => [category, lhr.categories[category].score]);
-      console.log(`${label}: ${scores.map(([key, score]) => `${key}=${Math.round(score * 100)}`).join(', ')}`);
+      const summary = `${label}: ${scores.map(([key, score]) => `${key}=${Math.round(score * 100)}`).join(', ')}`;
+      console.log(summary);
+      if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `- ${summary}\n`);
       for (const [key, score] of scores) {
         if (score === 1) continue;
         failures += 1;
+        if (process.env.GITHUB_ACTIONS) console.error(`::error title=Lighthouse::${summary}`);
         for (const { id, weight } of lhr.categories[key].auditRefs) {
           const entry = lhr.audits[id];
           if (weight > 0 && entry.score !== null && entry.score < 1) console.error(`  ${id}: ${entry.displayValue ?? entry.title}`);
