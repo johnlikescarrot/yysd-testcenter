@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { PDFDocument, PDFName } from 'pdf-lib';
 import { JSDOM } from 'jsdom';
 import { guides, scholarLink } from '../materials.mjs';
 
@@ -24,15 +25,27 @@ test('the published app declares Vietnamese and avoids untranslated legacy scrip
 for (const { slug, sources, pages } of guides) {
   test(`${slug}: short PDF, correctly linked references, and matching accessible HTML`, async () => {
     const raw = await readFile(source(`resources/${slug}.html`), 'utf8');
-    const pdf = await readFile(source(`resources/${slug}.pdf`), 'latin1');
+    const bytes = await readFile(source(`resources/${slug}.pdf`));
+    const pdf = await PDFDocument.load(bytes);
+    const uris = new Set();
+    for (const page of pdf.getPages()) {
+      for (const ref of page.node.Annots()?.asArray() ?? []) {
+        const annotation = pdf.context.lookup(ref);
+        const action = annotation.lookup(PDFName.of('A'));
+        const uri = action?.lookup(PDFName.of('URI'));
+        if (uri) uris.add(uri.decodeText());
+      }
+    }
     const dom = new JSDOM(raw, { url: 'https://example.test/resources/' });
     const { document } = dom.window;
     assert.doesNotMatch(raw, scriptsOutsideScope);
     assert.equal(document.documentElement.lang, 'vi');
-    assert.match(pdf, /^%PDF-/);
-    assert.match(pdf, /\/Lang \(vi-VN\)/);
-    assert.equal([...pdf.matchAll(/\/Type \/Page\b/g)].length, pages.length + 1);
-    assert.ok(pdf.length < 100_000);
+    assert.equal(pdf.catalog.lookup(PDFName.of('Lang')).decodeText(), 'vi-VN');
+    assert.equal(pdf.getPageCount(), pages.length + 1);
+    assert.ok(bytes.length < 100_000);
+    for (const link of document.querySelectorAll('section a[href^="#nguon-"]')) {
+      assert.ok(document.getElementById(link.hash.slice(1)), `broken citation: ${link.hash}`);
+    }
     assert.equal(document.querySelectorAll('.references li').length, sources.length);
     for (const [index, entry] of sources.entries()) {
       const id = `nguon-${index + 1}`;
@@ -42,11 +55,11 @@ for (const { slug, sources, pages } of guides) {
         assert.equal(sourceEntry.querySelector('span').lang, 'en');
         assert.ok(sourceEntry.querySelector(`a[href="https://doi.org/${entry.doi}"]`));
         assert.ok(sourceEntry.querySelector(`a[href="${scholarLink(entry.doi)}"]`));
-        assert.ok(pdf.includes(`https://doi.org/${entry.doi}`));
-        assert.ok(pdf.includes(scholarLink(entry.doi)));
+        assert.ok(uris.has(`https://doi.org/${entry.doi}`));
+        assert.ok(uris.has(scholarLink(entry.doi)));
       } else {
         assert.ok(sourceEntry.querySelector(`a[href="${entry.url}"]`));
-        assert.ok(pdf.includes(entry.url));
+        assert.ok(uris.has(entry.url));
       }
     }
     dom.window.close();

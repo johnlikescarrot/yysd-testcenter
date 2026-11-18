@@ -1,5 +1,5 @@
 import { createWriteStream } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { once } from 'node:events';
 import { createRequire } from 'node:module';
 import PDFDocument from 'pdfkit';
@@ -135,3 +135,19 @@ for (const guide of guides) {
   await writeFile(resource(`${guide.slug}.html`), html(guide));
   await pdf(guide);
 }
+
+// Keep the library usable without JavaScript. Its links and PDFs share one catalog.
+const cards = guides.map(({ slug, number, title, description, sources }) => `        <article class="material-card">
+          <p class="eyebrow">SỔ TAY ${number} · ${sources.filter((source) => source.doi).length} NGUỒN NGHIÊN CỨU</p>
+          <h3>${plain(title)}</h3>
+          <p>${plain(description)}</p>
+          <div class="material-actions">
+            <a class="button secondary" href="resources/${slug}.pdf" download>Tải PDF<span class="visually-hidden">: ${plain(title)}</span></a>
+            <a class="button quiet" href="resources/${slug}.html">Đọc trên web<span class="visually-hidden">: ${plain(title)}</span></a>
+          </div>
+        </article>`);
+const home = new URL('../ielts-vi/index.html', import.meta.url);
+const contents = await readFile(home, 'utf8');
+const marker = /<!-- handbooks:start -->[\s\S]*?<!-- handbooks:end -->/;
+if (!marker.test(contents)) throw new Error('Cannot locate static library');
+await writeFile(home, contents.replace(marker, `<!-- handbooks:start -->\n      <div class="material-grid">\n${cards.join('\n')}\n      </div>\n      <!-- handbooks:end -->`));

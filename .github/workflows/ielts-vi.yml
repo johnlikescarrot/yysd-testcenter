@@ -86,7 +86,7 @@ jobs:
           npm run deck
           npm run pdf
           npm run audio
-          git diff --exit-code -- ../ielts-vi/assets/deck.js ../ielts-vi/resources/ ../ielts-vi/audio/
+          git diff --exit-code -- ../ielts-vi/index.html ../ielts-vi/assets/deck.js ../ielts-vi/resources/ ../ielts-vi/audio/
       - run: npm test
       - run: npm run build
       - run: npm run test:browser
