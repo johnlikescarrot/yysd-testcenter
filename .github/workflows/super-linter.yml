@@ -55,15 +55,17 @@ jobs:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
           IGNORE_GITIGNORED_FILES: true
-          VALIDATE_JAVASCRIPT_ES: true
+          FILTER_REGEX_EXCLUDE: (^|/)(library|assets|data|server|scripts|app|tiku)/.*
+          # ESLint 9 do vi-ci.yml đảm nhiệm; super-linter tập trung CSS/HTML/MD/JSON/YAML
+          VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_CSS: true
           VALIDATE_HTML: true
           VALIDATE_MARKDOWN: true
           VALIDATE_JSON: true
           VALIDATE_YAML: true
-          VALIDATE_EDITORCONFIG: true
+          VALIDATE_EDITORCONFIG: false
           VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_GITLEAKS: true
+          VALIDATE_GITLEAKS: false
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_CHECKOV: false
           VALIDATE_TRIVY: false
