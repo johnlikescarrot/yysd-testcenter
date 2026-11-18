@@ -1,0 +1,21 @@
+{
+  "name": "yysd-ielts-vi",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "node qa/build.mjs",
+    "test": "c8 --all --src . --include='*.js' --exclude='qa/**' --reporter=text --check-coverage --lines=100 --statements=100 --functions=100 --branches=100 node --test qa/*.test.mjs",
+    "audit": "node qa/audit.mjs",
+    "pdf": "node qa/pdf.mjs",
+    "preview": "python3 -m http.server 8080 --bind 0.0.0.0 --directory dist"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "c8": "9.1.0",
+    "lighthouse": "13.6.0",
+    "playwright-core": "1.65.1"
+  }
+}

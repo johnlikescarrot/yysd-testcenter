@@ -48,3 +48,9 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# Vietnamese IELTS release: local dependencies and quality/build output
+/ielts-vi/node_modules/
+/ielts-vi/coverage/
+/ielts-vi/dist/
+/ielts-vi/audit-results/
