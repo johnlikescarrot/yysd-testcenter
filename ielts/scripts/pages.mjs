@@ -13,7 +13,7 @@ const menu = [
 ];
 const storageNotice = `<p class="notice" role="status" data-storage-notice hidden>Không thể lưu hoặc đọc tiến độ trên thiết bị này. Bạn vẫn có thể luyện, nhưng tiến độ có thể mất khi rời trang.</p>`;
 
-function layout({ title, description, view = '', active = view, body, mainClass = 'page shell page--narrow', mainAttributes = '' }) {
+function layout({ title, description, view = '', active = view, body, mainClass = 'page shell page--narrow' }) {
   return `<!doctype html>
 <html lang="vi">
 <head>
@@ -24,7 +24,7 @@ function layout({ title, description, view = '', active = view, body, mainClass 
   <title>${escape(title)}</title>
   <link rel="icon" type="image/svg+xml" href="media/mark.svg">
   <link rel="stylesheet" href="style.css">
-  ${view ? '<script type="module" src="app.mjs"></script>' : ''}
+  ${view ? '<script type="module" src="app.js"></script>' : ''}
 </head>
 <body${view ? ` data-view="${view}"` : ''}>
   <a class="skip" href="#main">Chuyển đến nội dung chính</a>
@@ -34,7 +34,7 @@ function layout({ title, description, view = '', active = view, body, mainClass 
     <nav class="site-nav" aria-label="Điều hướng chính">${menu.map(([id, href, pictogram, name]) =>
       `<a href="${href}"${active === id ? ' aria-current="page"' : ''}>${icon(pictogram)} ${name}</a>`).join('')}</nav>
   </div></header>
-  <main id="main" tabindex="-1" class="${mainClass}"${mainAttributes ? ` ${mainAttributes}` : ''}>
+  <main id="main" tabindex="-1" class="${mainClass}">
     ${view ? `${storageNotice}<noscript><p class="notice">Hãy bật JavaScript để lưu tiến độ và làm bài. Bạn vẫn có thể <a href="resources.html">đọc tài liệu luyện thi</a>.</p></noscript>` : ''}
     ${body}
   </main>

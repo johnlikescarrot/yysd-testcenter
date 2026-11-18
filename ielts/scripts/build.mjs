@@ -15,7 +15,7 @@ await Promise.all([
   cp(source('media'), join(output, 'media'), { recursive: true }),
   writeFile(join(output, '.nojekyll'), ''),
   writeFile(join(output, 'robots.txt'), 'User-agent: *\nAllow: /\n'),
-  build({ entryPoints: [source('entry.mjs')], outfile: join(output, 'app.mjs'), bundle: true, minify: true, charset: 'utf8', format: 'esm' }),
+  build({ entryPoints: [source('entry.mjs')], outfile: join(output, 'app.js'), bundle: true, minify: true, charset: 'utf8', format: 'esm' }),
   build({ entryPoints: [source('style.css')], outfile: join(output, 'style.css'), minify: true }),
 ]);
 

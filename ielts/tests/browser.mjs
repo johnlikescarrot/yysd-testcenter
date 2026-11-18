@@ -38,6 +38,9 @@ test('di động: làm bài Nghe, ôn câu sai và lưu mục tiêu qua tải l�
   const initial = await page.goto(app.url);
   assert.equal(initial.status(), 200);
   assert.equal(await page.locator('html').getAttribute('lang'), 'vi');
+  const module = await page.request.get(new URL('app.js', app.url).href);
+  assert.equal(module.status(), 200);
+  assert.match(module.headers()['content-type'], /javascript/);
   assert.equal(await page.locator('.lesson-row').count(), 8);
   await page.getByRole('link', { name: 'Bắt đầu luyện' }).click();
   await page.getByRole('button', { name: 'Kiểm tra' }).waitFor();
