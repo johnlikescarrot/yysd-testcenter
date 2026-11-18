@@ -42,7 +42,7 @@ const BINARY_EXTS = new Set([
 ]);
 
 const NON_EN_VI_SCRIPT_RE =
-  /[\u3000-\u303f\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef\uac00-\ud7af\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f]/;
+  /[\u3000-\u303f\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef\uac00-\ud7af\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f]/u;
 const LANG_ZH_RE = /\blang=["']zh(?:-[A-Za-z]+)?["']/i;
 const BANNED_LEGACY_RE = /beian\.(?:miit|mps)\.gov\.cn|Noto\+Serif\+SC|Noto\+Sans\+SC/i;
 
