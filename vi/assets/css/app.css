@@ -1150,8 +1150,18 @@ a:hover {
 }
 
 .badge--locked {
-  opacity: 0.5;
+  background: #ece7dc;
+  border-style: dashed;
+  color: #3d4552;
+}
+
+.badge--locked .badge__icon {
   filter: grayscale(1);
+  opacity: 0.75;
+}
+
+.badge--locked small {
+  color: #4a5260;
 }
 
 .badge--earned {
@@ -1392,4 +1402,34 @@ a:hover {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Giữ chỗ cho vùng nạp bất đồng bộ, tránh dịch bố cục (CLS = 0) */
+#home-path {
+  min-height: 620px;
+}
+
+#home-quests,
+#home-badges {
+  min-height: 220px;
+}
+
+#home-library {
+  min-height: 320px;
+}
+
+#library-list {
+  min-height: 78vh;
+}
+
+#profile-badges {
+  min-height: 300px;
+}
+
+#profile-due {
+  min-height: 240px;
+}
+
+#league-rows {
+  min-height: 60vh;
 }

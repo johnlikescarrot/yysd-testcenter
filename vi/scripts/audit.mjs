@@ -114,7 +114,7 @@ for (const icon of manifest.icons || []) {
   if (!fs.existsSync(path.join(ROOT, icon.src))) fail(`manifest trỏ tới icon không tồn tại: ${icon.src}`);
 }
 if (manifest.display !== "standalone") fail("manifest.display nên là standalone");
-if (!fs.existsSync(path.join(ROOT, "assets/js/sw.js"))) fail("thiếu service worker");
+if (!fs.existsSync(path.join(ROOT, "sw.js"))) fail("thiếu service worker ở gốc");
 
 // Màu chữ trên nền phải đạt WCAG AA (>= 4.5:1)
 const pairs = [

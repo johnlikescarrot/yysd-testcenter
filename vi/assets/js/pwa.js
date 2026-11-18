@@ -2,7 +2,7 @@
    pwa.js — đăng ký service worker và nhận diện chế độ cài đặt.
    ========================================================================= */
 
-export const SW_URL = "./assets/js/sw.js";
+export const SW_URL = "./sw.js";
 
 /** Có service worker không. */
 export function supportsServiceWorker(nav) {

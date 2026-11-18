@@ -6,6 +6,7 @@ export const CACHE_NAME = "yysd-ielts-vi-v1";
 
 export const CORE_ASSETS = [
   "./",
+  "./sw.js",
   "./index.html",
   "./hoc.html",
   "./luyen-tap.html",

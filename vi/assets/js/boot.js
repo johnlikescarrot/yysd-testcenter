@@ -11,7 +11,7 @@ import { initLeague } from "./page-league.js";
 import { initProfile } from "./page-profile.js";
 import { initPractice } from "./page-practice.js";
 import { loadJson, markActiveNav, setText, showBanner } from "./page-common.js";
-import { registerServiceWorker, watchConnectivity } from "./pwa.js";
+import { registerServiceWorker, watchConnectivity, SW_URL } from "./pwa.js";
 import { buildSession, findLesson, nextLesson, practiceSession } from "./quiz.js";
 import { dueCards } from "./srs.js";
 import { dayKey, hashString } from "./util.js";
@@ -93,7 +93,7 @@ export async function bootPage(env = {}) {
   }
 
   if (env.register !== false) {
-    await registerServiceWorker(win?.navigator, { url: "./assets/js/sw.js" });
+    await registerServiceWorker(win?.navigator, { url: SW_URL });
   }
   let unwatch = null;
   if (env.watch !== false) {
