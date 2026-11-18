@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>C11 T3 P1长难句分析</title>
-    <meta name="exam:title"       content="C11 T3 P1长难句分析">
+    <title>C11 T3 P1 Phân tích câu phức</title>
+    <meta name="exam:title"       content="C11 T3 P1 Phân tích câu phức">
     <meta name="exam:zone"        content="practice">
     <meta name="exam:subject"     content="changnanju">
     <meta name="exam:duration"    content="0">
-    <meta name="exam:description" content="剑桥雅思11 Test 3 Passage 1（THE STORY OF SILK）共8个长难句，拆解主干与附属成分并对照参考译文。">
+    <meta name="exam:description" content="Cambridge IELTS 11 Test 3 Passage 1 (THE STORY OF SILK): 8 câu phức, xác định nòng cốt và thành phần bổ nghĩa, sau đó đối chiếu với bản dịch gợi ý.">
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background-color: #f5f7fa; margin: 0; padding: 20px; color: #1e2a3a; }
@@ -44,111 +44,112 @@
 <body>
 <div class="container">
     <div class="header">
-        <h1>📐 THE STORY OF SILK · 长难句分析</h1>
-        <p>先尝试自己拆解句子结构，再对照参考答案 · 共8个长难句</p>
+        <h1>📐 THE STORY OF SILK · Phân tích câu phức</h1>
+        <p>Hãy tự phân tích câu trước khi xem gợi ý. · 8 câu phức</p>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📌 句子拆解练习</div>
+        <div class="section-title">📌 Luyện phân tích câu</div>
         <div id="sentencesArea"></div>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📖 长难句学习要点</div>
+        <div class="section-title">📖 Cách phân tích một câu dài</div>
         <ul style="line-height:1.8; color:#3a4a5a;">
-            <li><strong>主干部分</strong>：句子的核心成分，通常包括主语、谓语动词和主要宾语，去掉修饰成分后句子仍然成立。</li>
-            <li><strong>附属成分</strong>：包括定语从句、状语从句、分词短语、介词短语、同位语等修饰性成分。</li>
-            <li><strong>翻译要点</strong>：注意从句的语序调整，将长句按意群拆分为短句理解。</li>
+            <li><strong>Nòng cốt câu</strong>: thường gồm chủ ngữ, động từ chính và tân ngữ. Khi bỏ các thành phần bổ nghĩa, phần này vẫn tạo thành một câu.</li>
+            <li><strong>Thành phần bổ nghĩa</strong>: có thể là mệnh đề quan hệ, mệnh đề trạng ngữ, cụm phân từ, cụm giới từ hoặc thành phần đồng vị.</li>
+            <li><strong>Khi dịch sang tiếng Việt</strong>: xác định quan hệ giữa các mệnh đề rồi chia câu thành từng cụm ý; không cần giữ nguyên trật tự từ khi dịch.</li>
         </ul>
     </div>
 
-    <footer>基于剑桥雅思真题11 Test 3 Passage 1 制作 | 禁止复制粘贴，请手动输入分析</footer>
+    <footer>Dựa trên Cambridge IELTS 11 Test 3 Passage 1 | Vui lòng tự nhập phần phân tích.</footer>
 </div>
 
 <script>
-    // ======================= 长难句数据 =======================
-    // 包含原文5个句子 + 用户指定的3个句子
+    // ======================= Dữ liệu câu phức =======================
+    // Năm câu trong bản đầu và ba câu bổ sung
     const longSentences = [
-        // 原文句子1
+        // Câu gốc 1
         {
             text: 'Legend has it that it was Lei Tzu, wife of the Yellow Emperor, ruler of China in about 3000 BC, who discovered silkworms.',
             mainPart: 'Legend has it that it was Lei Tzu who discovered silkworms',
-            subordinate: 'wife of the Yellow Emperor, ruler of China in about 3000 BC (插入语/同位语)',
-            translation: '传说中，是黄帝的妻子嫘祖——约公元前3000年中国统治者——发现了蚕。'
+            subordinate: 'wife of the Yellow Emperor, ruler of China in about 3000 BC (thành phần xen vào/thành phần đồng vị)',
+            translation: 'Theo truyền thuyết, chính Luy Tổ, vợ của Hoàng Đế (người cai trị Trung Hoa khoảng năm 3000 trước Công nguyên), đã phát hiện ra con tằm.'
         },
-        // 原文句子2
+        // Câu gốc 2
         {
             text: 'It just so happened that while she was sipping some tea, one of the cocoons that she had collected landed in the hot tea and started to unravel into a fine thread.',
             mainPart: 'one of the cocoons landed in the hot tea and started to unravel into a fine thread',
-            subordinate: 'while she was sipping some tea (时间状语从句); that she had collected (定语从句修饰cocoons)',
-            translation: '恰巧在她喝茶时，她收集的一个蚕茧掉进热茶里，开始散开成一根细丝。'
+            subordinate: 'while she was sipping some tea (mệnh đề chỉ thời gian); that she had collected (mệnh đề quan hệ bổ nghĩacocoons)',
+            translation: 'Tình cờ, trong lúc bà đang nhấp trà, một chiếc kén bà đã thu nhặt rơi vào trà nóng và bắt đầu bung ra thành một sợi tơ mảnh.'
         },
-        // 原文句子3
+        // Câu gốc 3
         {
             text: 'She also devised a special reel to draw the fibres from the cocoon into a single thread so that they would be strong enough to be woven into fabric.',
             mainPart: 'She also devised a special reel to draw the fibres from the cocoon into a single thread',
-            subordinate: 'so that they would be strong enough to be woven into fabric (目的状语从句)',
-            translation: '她还设计了一种特殊的卷线轴，将蚕茧中的纤维抽成单根丝线，使其足够结实以便织成织物。'
+            subordinate: 'so that they would be strong enough to be woven into fabric (mệnh đề chỉ mục đích)',
+            translation: 'Bà còn nghĩ ra một chiếc guồng đặc biệt để rút các xơ tơ từ kén thành một sợi duy nhất, đủ chắc để dệt thành vải.'
         },
-        // 原文句子4
+        // Câu gốc 4
         {
             text: 'Demand for this exotic fabric eventually created the lucrative trade route now known as the Silk Road, taking silk westward and bringing gold, silver and wool to the East.',
             mainPart: 'Demand created the lucrative trade route',
-            subordinate: 'now known as the Silk Road (过去分词短语作定语); taking silk westward and bringing... (现在分词短语作伴随状语)',
-            translation: '对这种异域织物的需求最终创造了利润丰厚的贸易路线，即现在的丝绸之路，将丝绸运往西方，将黄金、白银和羊毛带回东方。'
+            subordinate: 'now known as the Silk Road (cụm phân từ quá khứ làm định ngữ); taking silk westward and bringing... (cụm phân từ hiện tại chỉ hành động đi kèm)',
+            translation: 'Nhu cầu về loại vải ngoại lai này cuối cùng đã tạo nên tuyến giao thương sinh lợi mà nay ta gọi là Con đường Tơ lụa: đưa lụa về phía tây và mang vàng, bạc, len về phương đông.'
         },
-        // 原文句子5
+        // Câu gốc 5
         {
             text: 'The secret of silk-making eventually reached the rest of the world via the Byzantine Empire, which ruled over the Mediterranean region of southern Europe, North Africa and the Middle East during the period 330-1453 AD.',
             mainPart: 'The secret reached the rest of the world via the Byzantine Empire',
-            subordinate: 'which ruled over the Mediterranean region... (非限制性定语从句)',
-            translation: '丝绸制作的秘密最终通过拜占庭帝国传到世界其他地方，该帝国在公元330-1453年间统治着南欧、北非和中东的地中海地区。'
+            subordinate: 'which ruled over the Mediterranean region... (mệnh đề quan hệ không xác định)',
+            translation: 'Bí quyết làm tơ lụa cuối cùng truyền đến những vùng khác trên thế giới qua Đế quốc Byzantine, đế quốc từng cai trị vùng Địa Trung Hải thuộc nam Âu, bắc Phi và Trung Đông trong giai đoạn 330–1453 sau Công nguyên.'
         },
-        // ===== 用户指定的3个新句子 =====
+        // ===== Ba câu bổ sung =====
         {
             text: 'Originally, silkworm farming was solely restricted to women, and it was they who were responsible for the growing, harvesting and weaving.',
             mainPart: 'silkworm farming was solely restricted to women, and it was they who were responsible for the growing, harvesting and weaving',
-            subordinate: 'who were responsible for... (定语从句，强调句型 it was they who...)',
-            translation: '最初，养蚕完全由女性负责，正是她们承担了种植、收获和纺织工作。'
+            subordinate: 'who were responsible for... (mệnh đề quan hệ, cấu trúc chẻ để nhấn mạnh it was they who...)',
+            translation: 'Ban đầu việc nuôi tằm chỉ dành cho phụ nữ; chính họ đảm nhiệm cả việc nuôi trồng, thu hoạch và dệt.'
         },
         {
             text: 'The earliest indication of silk paper being used was discovered in the tomb of a noble who is estimated to have died around 168 AD.',
             mainPart: 'The earliest indication was discovered in the tomb of a noble',
-            subordinate: 'of silk paper being used (介词短语作定语); who is estimated to have died around 168 AD (定语从句修饰noble)',
-            translation: '最早使用丝绸纸张的证据是在一位贵族的墓中发现的，据估计该贵族死于公元168年左右。'
+            subordinate: 'of silk paper being used (cụm giới từ bổ nghĩa cho danh từ); who is estimated to have died around 168 AD (mệnh đề quan hệ bổ nghĩanoble)',
+            translation: 'Dấu tích sớm nhất cho thấy giấy lụa từng được dùng đã được phát hiện trong ngôi mộ của một quý tộc, người được ước tính là mất vào khoảng năm 168 sau Công nguyên.'
         },
         {
             text: 'Cheaper Japanese silk, trade in which was greatly facilitated by the opening of the Suez Canal, was one of the many factors driving the trend.',
             mainPart: 'Cheaper Japanese silk was one of the many factors',
-            subordinate: 'trade in which was greatly facilitated by the opening of the Suez Canal (非限制性定语从句); driving the trend (现在分词短语作定语)',
-            translation: '更便宜的日本丝绸——其贸易因苏伊士运河的开通而大大便利——是推动这一趋势的众多因素之一。'
+            subordinate: 'trade in which was greatly facilitated by the opening of the Suez Canal (mệnh đề quan hệ không xác định); driving the trend (cụm phân từ hiện tại bổ nghĩa cho danh từ)',
+            translation: 'Lụa Nhật Bản rẻ hơn là một trong nhiều yếu tố thúc đẩy xu hướng này; việc mở kênh đào Suez đã tạo thuận lợi lớn cho việc buôn bán loại lụa ấy.'
         }
     ];
 
-    // ======================= 渲染长难句 =======================
+    // ======================= Hiển thị bài tập =======================
+    const escapeText = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
     function renderLongSentences() {
         let html = '';
         longSentences.forEach((s, idx) => {
             html += `
                 <div class="sentence-card">
-                    <div class="sentence-text">📌 ${idx+1}. ${s.text}</div>
+                    <div class="sentence-text" lang="en">📌 ${idx+1}. ${s.text}</div>
                     <div class="analysis-row">
                         <div class="analysis-box">
-                            <label>🌿 主干部分（你标记）</label>
-                            <textarea id="main_${idx}" placeholder="写出句子主干（去掉所有修饰成分）..."></textarea>
+                            <label for="main_${idx}">🌿 Nòng cốt câu (bạn xác định)</label>
+                            <textarea id="main_${idx}" placeholder="Ghi nòng cốt sau khi bỏ thành phần bổ nghĩa…"></textarea>
                         </div>
                         <div class="analysis-box">
-                            <label>🍃 附属部分（你标记）</label>
-                            <textarea id="sub_${idx}" placeholder="写出从句、状语、定语等修饰成分..."></textarea>
+                            <label for="sub_${idx}">🍃 Thành phần bổ nghĩa (bạn xác định)</label>
+                            <textarea id="sub_${idx}" placeholder="Ghi mệnh đề phụ, trạng ngữ, định ngữ…"></textarea>
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 提交结构并对照</button>
-                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 提交翻译并对照</button>
+                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 Đối chiếu cấu trúc</button>
+                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 Đối chiếu bản dịch</button>
                     </div>
                     <div id="structResult_${idx}" class="ref-answer"></div>
                     <div style="margin-top:12px;">
-                        <textarea id="trans_${idx}" placeholder="请输入本句的中文翻译..." rows="2"></textarea>
+                        <textarea aria-label="Bản dịch câu ${idx+1}" id="trans_${idx}" placeholder="Nhập bản dịch tiếng Việt của bạn…" rows="2"></textarea>
                     </div>
                     <div id="transResult_${idx}" class="ref-answer"></div>
                 </div>
@@ -156,66 +157,66 @@
         });
         document.getElementById("sentencesArea").innerHTML = html;
 
-        // 绑定结构检查按钮
+        // Đối chiếu cấu trúc
         document.querySelectorAll('.struct-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userMain = document.getElementById(`main_${idx}`).value.trim();
                 const userSub = document.getElementById(`sub_${idx}`).value.trim();
                 if (!userMain && !userSub) {
-                    alert('请先填写你的主干或附属分析！');
+                    alert('Hãy nhập phần nòng cốt hoặc thành phần bổ nghĩa trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`structResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考答案主干：</span><span class="main-part">${ref.mainPart}</span></div>
-                    <div><span class="label">📖 参考答案附属：</span><span class="sub-part">${ref.subordinate}</span></div>
+                    <div><span class="label">📖 Nòng cốt gợi ý: </span><span class="main-part" lang="en">${ref.mainPart}</span></div>
+                    <div><span class="label">📖 Thành phần bổ nghĩa gợi ý: </span><span class="sub-part">${ref.subordinate}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">✨ 你的分析：</span>
-                        主干「${userMain || '未填'}」 | 附属「${userSub || '未填'}」
+                        <span class="label">✨ Phân tích của bạn: </span>
+                        Nòng cốt: “${escapeText(userMain) || 'chưa nhập'}” | Thành phần bổ nghĩa: “${escapeText(userSub) || 'chưa nhập'}”
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 请对照参考答案完善句子结构拆解。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Hãy đối chiếu để bổ sung hoặc sửa phần phân tích của mình.</div>
                 `;
                 resultDiv.style.display = 'block';
-                // 自动滚动到结果区域
+                // Cuộn đến kết quả
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 绑定翻译检查按钮
+        // Đối chiếu bản dịch
         document.querySelectorAll('.trans-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userTrans = document.getElementById(`trans_${idx}`).value.trim();
                 if (!userTrans) {
-                    alert('请先填写你的中文翻译！');
+                    alert('Hãy nhập bản dịch tiếng Việt trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`transResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考译文：</span><span class="trans-part">${ref.translation}</span></div>
+                    <div><span class="label">📖 Bản dịch gợi ý: </span><span class="trans-part">${ref.translation}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">🔍 你的译文：</span>${userTrans}
+                        <span class="label">🔍 Bản dịch của bạn: </span>${escapeText(userTrans)}
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 注意语序和从句的准确转换。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Kiểm tra trật tự từ và quan hệ giữa các mệnh đề trong bản dịch.</div>
                 `;
                 resultDiv.style.display = 'block';
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 禁止复制粘贴（所有textarea）
+        // Yêu cầu tự nhập trong các ô trả lời
         document.querySelectorAll('.sentence-card textarea').forEach(ta => {
-            ta.addEventListener('paste', e => { e.preventDefault(); alert('禁止复制粘贴，请手动输入。'); });
+            ta.addEventListener('paste', e => { e.preventDefault(); alert('Vui lòng tự nhập thay vì sao chép hoặc dán.'); });
             ta.addEventListener('copy', e => e.preventDefault());
             ta.addEventListener('cut', e => e.preventDefault());
             ta.addEventListener('contextmenu', e => e.preventDefault());
         });
     }
 
-    // ======================= 页面加载 =======================
+    // ======================= Khởi tạo trang =======================
     window.onload = () => {
         renderLongSentences();
     };

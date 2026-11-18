@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-        <title>C10 T2 P3 长难句分析</title>
-    <meta name="exam:title"       content="C10 T2 P3 长难句分析">
+        <title>C10 T2 P3 Phân tích câu phức</title>
+    <meta name="exam:title"       content="C10 T2 P3 Phân tích câu phức">
     <meta name="exam:zone"        content="practice">
     <meta name="exam:subject"     content="changnanju">
     <meta name="exam:duration"    content="0">
-    <meta name="exam:description" content="剑桥雅思10 Test 2 Passage 3（Museums of fine art and their public）共6个长难句，拆解主干与附属成分并对照参考译文。">
+    <meta name="exam:description" content="Cambridge IELTS 10 Test 2 Passage 3 (Museums of fine art and their public): 6 câu phức, xác định nòng cốt và thành phần bổ nghĩa, sau đó đối chiếu với bản dịch gợi ý.">
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background-color: #f5f7fa; margin: 0; padding: 20px; color: #1e2a3a; }
@@ -44,92 +44,93 @@
 <body>
 <div class="container">
     <div class="header">
-        <h1>🖼️ Museums of fine art and their public · 长难句分析</h1>
-        <p>剑桥雅思真题10 Test 2 Passage 3 | 先自己拆解句子结构，再对照参考答案</p>
+        <h1>🖼️ Museums of fine art and their public · Phân tích câu phức</h1>
+        <p>Cambridge IELTS 10 Test 2 Passage 3 | Hãy tự phân tích câu trước khi xem gợi ý.</p>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📌 句子拆解练习 <span class="sentence-count">共 6 个长难句</span></div>
+        <div class="section-title">📌 Luyện phân tích câu <span class="sentence-count">6 câu phức</span></div>
         <div id="sentencesArea"></div>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📖 长难句学习要点</div>
+        <div class="section-title">📖 Cách phân tích một câu dài</div>
         <ul style="line-height:1.8; color:#3a4a5a;">
-            <li><strong>主干部分</strong>：句子的核心成分，通常包括主语、谓语动词和主要宾语，去掉修饰成分后句子仍然成立。</li>
-            <li><strong>附属成分</strong>：包括定语从句、状语从句、分词短语、介词短语、同位语等修饰性成分。</li>
-            <li><strong>翻译要点</strong>：注意从句的语序调整，将长句按意群拆分为短句理解。</li>
+            <li><strong>Nòng cốt câu</strong>: thường gồm chủ ngữ, động từ chính và tân ngữ. Khi bỏ các thành phần bổ nghĩa, phần này vẫn tạo thành một câu.</li>
+            <li><strong>Thành phần bổ nghĩa</strong>: có thể là mệnh đề quan hệ, mệnh đề trạng ngữ, cụm phân từ, cụm giới từ hoặc thành phần đồng vị.</li>
+            <li><strong>Khi dịch sang tiếng Việt</strong>: xác định quan hệ giữa các mệnh đề rồi chia câu thành từng cụm ý; không cần giữ nguyên trật tự từ khi dịch.</li>
         </ul>
     </div>
 
-    <footer>基于剑桥雅思真题10 Test 2 Reading Passage 3 制作 | 禁止复制粘贴，请手动输入分析</footer>
+    <footer>Dựa trên Cambridge IELTS 10 Test 2 Reading Passage 3 | Vui lòng tự nhập phần phân tích.</footer>
 </div>
 
 <script>
-    // ======================= 长难句数据（6个指定句子） =======================
+    // ======================= Dữ liệu câu phức (6 câu) =======================
     const longSentences = [
         {
             text: 'This might be explained by the fact that the novel has evolved precisely because of technological developments that made it possible to print out huge numbers of texts, whereas oil paintings have always been produced as unique objects.',
             mainPart: 'This might be explained by the fact that the novel has evolved whereas oil paintings have always been produced as unique objects',
-            subordinate: 'that the novel has evolved precisely because of technological developments that made it possible to print out huge numbers of texts (同位语从句); that made it possible to print out huge numbers of texts (定语从句修饰developments); whereas oil paintings have always been produced as unique objects (对比状语从句)',
-            translation: '这或许可以用这样一个事实来解释：小说的发展恰恰是因为技术进步使得大量印刷文本成为可能，而油画则一直作为独一无二的作品被创作出来。'
+            subordinate: 'that the novel has evolved precisely because of technological developments that made it possible to print out huge numbers of texts (mệnh đề đồng vị); that made it possible to print out huge numbers of texts (mệnh đề quan hệ bổ nghĩadevelopments); whereas oil paintings have always been produced as unique objects (mệnh đề chỉ sự tương phản)',
+            translation: 'Có thể giải thích điều này như sau: tiểu thuyết phát triển chính nhờ những tiến bộ kỹ thuật cho phép in ấn văn bản với số lượng lớn, trong khi tranh sơn dầu luôn được tạo ra như những tác phẩm độc bản.'
         },
         {
             text: 'With novels, the reader attends mainly to the meaning of words rather than the way they are printed on the page, whereas the \'reader\' of a painting must attend just as closely to the material form of marks and shapes in the picture as to any ideas they may signify.',
             mainPart: 'the reader attends mainly to the meaning of words rather than the way, whereas the \'reader\' of a painting must attend just as closely to the material form of marks and shapes as to any ideas',
-            subordinate: 'they are printed on the page (定语从句修饰way); they may signify (定语从句修饰ideas)',
-            translation: '对于小说，读者主要关注文字的意义，而不是它们在页面上的印刷方式；然而，绘画的“读者”必须同样关注画面中标记和形状的物质形式，以及它们可能表达的任何思想。'
+            subordinate: 'they are printed on the page (mệnh đề quan hệ bổ nghĩaway); they may signify (mệnh đề quan hệ bổ nghĩaideas)',
+            translation: 'Khi đọc tiểu thuyết, người đọc chủ yếu chú ý đến nghĩa của từ chứ không phải cách chúng được in trên trang. Còn người “đọc” một bức tranh phải chú ý đến hình thức vật chất của các nét và hình khối không kém gì những ý tưởng mà chúng có thể biểu đạt.'
         },
         {
             text: 'And today the task of reproducing pictures is incomparably more simple and reliable, with reprographic techniques that allow the production of high-quality prints made exactly to the original scale, with faithful colour values, and even with duplication of the surface relief of the painting.',
             mainPart: 'the task of reproducing pictures is incomparably more simple and reliable',
-            subordinate: 'with reprographic techniques (介词短语作状语); that allow the production of high-quality prints (定语从句); made exactly to the original scale, with faithful colour values, and even with duplication of the surface relief of the painting (过去分词短语和介词短语作定语修饰prints)',
-            translation: '如今，复制图片的任务变得无比简单和可靠，这得益于复制技术，可以制作出与原作比例完全一致、色彩忠实还原、甚至表面纹理也得以复制的高质量印刷品。'
+            subordinate: 'with reprographic techniques (cụm giới từ làm trạng ngữ); that allow the production of high-quality prints (mệnh đề quan hệ); made exactly to the original scale, with faithful colour values, and even with duplication of the surface relief of the painting (cụm phân từ quá khứ và cụm giới từ bổ nghĩa cho danh từprints)',
+            translation: 'Ngày nay việc sao lại tranh đơn giản và đáng tin cậy hơn hẳn. Kỹ thuật sao chụp cho phép tạo ra bản in chất lượng cao đúng tỷ lệ gốc, tái hiện trung thực sắc độ và thậm chí cả độ nổi của bề mặt tranh.'
         },
         {
             text: 'We are reminded of this even before we view a collection by the presence of security guards, attendants, ropes and display cases to keep us away from the exhibits.',
             mainPart: 'We are reminded of this by the presence of security guards, attendants, ropes and display cases',
-            subordinate: 'even before we view a collection (时间状语从句); to keep us away from the exhibits (不定式作目的状语)',
-            translation: '甚至在观看藏品之前，安保人员、工作人员、绳索和展柜的存在就提醒了我们这一点——它们将我们与展品隔开。'
+            subordinate: 'even before we view a collection (mệnh đề chỉ thời gian); to keep us away from the exhibits (động từ nguyên mẫu chỉ mục đích)',
+            translation: 'Ngay trước khi xem bộ sưu tập, chúng ta đã được nhắc nhở về điều đó bởi sự hiện diện của bảo vệ, nhân viên phục vụ, dây chắn và tủ kính ngăn chúng ta đến gần hiện vật.'
         },
         {
             text: 'Furthermore, consideration of the \'value\' of the original work in its treasure house setting impresses upon the viewer that, since these works were originally produced, they have been assigned a huge monetary value by some person or institution more powerful than themselves.',
             mainPart: 'consideration impresses upon the viewer that they have been assigned a huge monetary value',
-            subordinate: 'of the \'value\' of the original work in its treasure house setting (介词短语作定语); since these works were originally produced (时间状语从句); by some person or institution more powerful than themselves (介词短语作状语)',
-            translation: '此外，在“珍宝馆”环境中对原作“价值”的考量会让参观者深刻意识到：这些作品自创作以来，就被某个比他们更有权势的个人或机构赋予了巨大的金钱价值。'
+            subordinate: 'of the \'value\' of the original work in its treasure house setting (cụm giới từ bổ nghĩa cho danh từ); since these works were originally produced (mệnh đề chỉ thời gian); by some person or institution more powerful than themselves (cụm giới từ làm trạng ngữ)',
+            translation: 'Hơn nữa, việc nghĩ đến “giá trị” của nguyên tác trong khung cảnh như một kho báu khiến người xem cảm nhận rõ rằng kể từ khi ra đời, các tác phẩm ấy đã được cá nhân hoặc tổ chức có thế lực hơn họ nhiều gán cho giá trị tiền bạc rất lớn.'
         },
         {
             text: 'If appropriate works of fine art could be rendered permanently accessible to the public by means of high-fidelity reproductions, as literature and music already are, the public may feel somewhat less in awe of them.',
             mainPart: 'the public may feel somewhat less in awe of them',
-            subordinate: 'If appropriate works of fine art could be rendered permanently accessible to the public by means of high-fidelity reproductions (条件状语从句); as literature and music already are (方式状语从句)',
-            translation: '如果合适的艺术作品能够像文学和音乐一样，通过高保真复制品永久地向公众开放，那么公众可能对它们不再那么敬畏。'
+            subordinate: 'If appropriate works of fine art could be rendered permanently accessible to the public by means of high-fidelity reproductions (mệnh đề điều kiện); as literature and music already are (mệnh đề chỉ cách thức)',
+            translation: 'Nếu có thể giúp công chúng luôn tiếp cận được những tác phẩm mỹ thuật thích hợp qua các bản sao trung thực, như người ta đã làm với văn học và âm nhạc, công chúng có lẽ sẽ bớt cảm giác choáng ngợp trước chúng.'
         }
     ];
 
-    // ======================= 渲染长难句 =======================
+    // ======================= Hiển thị bài tập =======================
+    const escapeText = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
     function renderLongSentences() {
         let html = '';
         longSentences.forEach((s, idx) => {
             html += `
                 <div class="sentence-card">
-                    <div class="sentence-text">📌 ${idx+1}. ${s.text}</div>
+                    <div class="sentence-text" lang="en">📌 ${idx+1}. ${s.text}</div>
                     <div class="analysis-row">
                         <div class="analysis-box">
-                            <label>🌿 主干部分（你标记）</label>
-                            <textarea id="main_${idx}" placeholder="写出句子主干（去掉所有修饰成分）..."></textarea>
+                            <label for="main_${idx}">🌿 Nòng cốt câu (bạn xác định)</label>
+                            <textarea id="main_${idx}" placeholder="Ghi nòng cốt sau khi bỏ thành phần bổ nghĩa…"></textarea>
                         </div>
                         <div class="analysis-box">
-                            <label>🍃 附属部分（你标记）</label>
-                            <textarea id="sub_${idx}" placeholder="写出从句、状语、定语等修饰成分..."></textarea>
+                            <label for="sub_${idx}">🍃 Thành phần bổ nghĩa (bạn xác định)</label>
+                            <textarea id="sub_${idx}" placeholder="Ghi mệnh đề phụ, trạng ngữ, định ngữ…"></textarea>
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 提交结构并对照</button>
-                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 提交翻译并对照</button>
+                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 Đối chiếu cấu trúc</button>
+                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 Đối chiếu bản dịch</button>
                     </div>
                     <div id="structResult_${idx}" class="ref-answer"></div>
                     <div class="trans-area">
-                        <textarea id="trans_${idx}" placeholder="请输入本句的中文翻译..." rows="2"></textarea>
+                        <textarea aria-label="Bản dịch câu ${idx+1}" id="trans_${idx}" placeholder="Nhập bản dịch tiếng Việt của bạn…" rows="2"></textarea>
                     </div>
                     <div id="transResult_${idx}" class="ref-answer"></div>
                 </div>
@@ -137,65 +138,65 @@
         });
         document.getElementById("sentencesArea").innerHTML = html;
 
-        // 绑定结构检查按钮
+        // Đối chiếu cấu trúc
         document.querySelectorAll('.struct-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userMain = document.getElementById(`main_${idx}`).value.trim();
                 const userSub = document.getElementById(`sub_${idx}`).value.trim();
                 if (!userMain && !userSub) {
-                    alert('请先填写你的主干或附属分析！');
+                    alert('Hãy nhập phần nòng cốt hoặc thành phần bổ nghĩa trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`structResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考答案主干：</span><span class="main-part">${ref.mainPart}</span></div>
-                    <div><span class="label">📖 参考答案附属：</span><span class="sub-part">${ref.subordinate}</span></div>
+                    <div><span class="label">📖 Nòng cốt gợi ý: </span><span class="main-part" lang="en">${ref.mainPart}</span></div>
+                    <div><span class="label">📖 Thành phần bổ nghĩa gợi ý: </span><span class="sub-part">${ref.subordinate}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">✨ 你的分析：</span>
-                        主干「${userMain || '未填'}」 | 附属「${userSub || '未填'}」
+                        <span class="label">✨ Phân tích của bạn: </span>
+                        Nòng cốt: “${escapeText(userMain) || 'chưa nhập'}” | Thành phần bổ nghĩa: “${escapeText(userSub) || 'chưa nhập'}”
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 请对照参考答案完善句子结构拆解。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Hãy đối chiếu để bổ sung hoặc sửa phần phân tích của mình.</div>
                 `;
                 resultDiv.style.display = 'block';
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 绑定翻译检查按钮
+        // Đối chiếu bản dịch
         document.querySelectorAll('.trans-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userTrans = document.getElementById(`trans_${idx}`).value.trim();
                 if (!userTrans) {
-                    alert('请先填写你的中文翻译！');
+                    alert('Hãy nhập bản dịch tiếng Việt trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`transResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考译文：</span><span class="trans-part">${ref.translation}</span></div>
+                    <div><span class="label">📖 Bản dịch gợi ý: </span><span class="trans-part">${ref.translation}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">🔍 你的译文：</span>${userTrans}
+                        <span class="label">🔍 Bản dịch của bạn: </span>${escapeText(userTrans)}
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 注意语序和从句的准确转换。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Kiểm tra trật tự từ và quan hệ giữa các mệnh đề trong bản dịch.</div>
                 `;
                 resultDiv.style.display = 'block';
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 禁止复制粘贴（所有textarea）
+        // Yêu cầu tự nhập trong các ô trả lời
         document.querySelectorAll('.sentence-card textarea').forEach(ta => {
-            ta.addEventListener('paste', e => { e.preventDefault(); alert('禁止复制粘贴，请手动输入。'); });
+            ta.addEventListener('paste', e => { e.preventDefault(); alert('Vui lòng tự nhập thay vì sao chép hoặc dán.'); });
             ta.addEventListener('copy', e => e.preventDefault());
             ta.addEventListener('cut', e => e.preventDefault());
             ta.addEventListener('contextmenu', e => e.preventDefault());
         });
     }
 
-    // ======================= 页面加载 =======================
+    // ======================= Khởi tạo trang =======================
     window.onload = () => {
         renderLongSentences();
     };

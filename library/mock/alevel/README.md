@@ -1,25 +1,7 @@
-# A-Level 真题库
+# Kho đề A-Level
 
-三大考试局：**CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
+Kho lưu đề và hướng dẫn chấm của CAIE, Edexcel A Level và Oxford AQA A Level. Giao diện tra cứu dùng nhãn tiếng Việt; nội dung tiếng Anh trong PDF được giữ nguyên.
 
-目录结构：
+Đặt PDF trong `library/mock/alevel/<hội-đồng>/<môn>/papers/`, ví dụ `caie/9709-mathematics/papers/`. Tên tệp có dạng `{code}_{season}{yy}_{qp|ms}_{paper}.pdf`: `9709_s24_qp_12.pdf` là đề, `9709_s24_ms_12.pdf` là hướng dẫn chấm cùng kỳ. Các mã `m`, `s`, `w` lần lượt chỉ kỳ tháng 2–3, 5–6 và 10–11.
 
-```
-library/mock/alevel/
-  caie/9709-mathematics/papers/
-  edexcel/9ma0-mathematics/papers/
-  oxford-aqa/7367-mathematics/papers/
-```
-
-PDF 命名：`{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
-
-- CAIE 示例：`9709_s24_qp_12.pdf`
-- Edexcel 示例：`9MA0_s24_qp_01.pdf`
-- Oxford AQA 示例：`7367_w23_ms_02.pdf`
-
-```bash
-python3 scripts/seed_alevel_demo.py      # 可选 demo
-python3 scripts/build_alevel_catalog.py  # 更新 catalog
-```
-
-科目清单见 `scripts/alevel_subjects.py`。
+Sau khi bổ sung tài liệu, chạy `python3 scripts/build_alevel_catalog.py`. Danh sách hội đồng và mã môn được khai báo trong `scripts/alevel_subjects.py`. Tệp không khớp quy tắc đặt tên sẽ không có trong danh mục. Không dùng công cụ sinh PDF minh họa thay cho đề thật.

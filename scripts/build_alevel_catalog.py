@@ -27,12 +27,12 @@ FILE_RE = re.compile(
 )
 
 SEASON_LABEL = {
-    "m": {"en": "Feb/Mar", "zh": "春季 (Feb/Mar)"},
-    "s": {"en": "May/Jun", "zh": "夏季 (May/Jun)"},
-    "w": {"en": "Oct/Nov", "zh": "冬季 (Oct/Nov)"},
+    "m": {"en": "Feb/Mar", "vi": "Tháng 2–3"},
+    "s": {"en": "May/Jun", "vi": "Tháng 5–6"},
+    "w": {"en": "Oct/Nov", "vi": "Tháng 10–11"},
 }
 
-# 同一年份内：冬季 → 夏季 → 春季（考试日期新→旧）
+# Sort sessions newest first within each year.
 SEASON_SORT = {"w": 0, "s": 1, "m": 2}
 
 
@@ -66,11 +66,11 @@ def parse_pdf_name(fname, meta):
     board_label = BOARDS[board_id]["label"]
     code = meta["code"]
     sid = f"{board_id}-{code_key.lower()}-{year}-{season}-{paper}-{kind}"
-    season_info = SEASON_LABEL.get(season, {"en": season, "zh": season})
-    type_zh = "真题" if kind == "qp" else "官方答案"
+    season_info = SEASON_LABEL.get(season, {"en": season, "vi": season})
+    type_vi = "Đề thi" if kind == "qp" else "Hướng dẫn chấm chính thức"
     title = (
-        f"{board_label} {code} {meta['nameZh']} · {year} {season_info['zh']} · "
-        f"Paper {paper} · {type_zh}"
+        f"{board_label} {code} {meta['nameVi']} · {year} {season_info['vi']} · "
+        f"Paper {paper} · {type_vi}"
     )
     return {
         "id": sid,
@@ -80,11 +80,11 @@ def parse_pdf_name(fname, meta):
         "year": year,
         "season": season,
         "seasonLabel": season_info["en"],
-        "seasonLabelZh": season_info["zh"],
+        "seasonLabelVi": season_info["vi"],
         "paper": paper,
         "type": kind,
         "typeLabel": "Question Paper" if kind == "qp" else "Mark Scheme",
-        "typeLabelZh": type_zh,
+        "typeLabelVi": type_vi,
         "title": title,
         "access": "free",
         "file": None,
@@ -101,7 +101,7 @@ def board_subjects(board_id, items):
             "slug": slug,
             "code": code,
             "name": meta["name"],
-            "nameZh": meta["nameZh"],
+            "nameVi": meta["nameVi"],
             "icon": meta["icon"],
             "board": board_id,
             "paperCount": sum(
@@ -114,7 +114,7 @@ def board_subjects(board_id, items):
                 default=None,
             ),
         })
-    out.sort(key=lambda s: s["nameZh"])
+    out.sort(key=lambda s: s["nameVi"])
     return out
 
 
@@ -154,11 +154,11 @@ def build_catalog():
         boards.append({
             "id": board_id,
             "label": meta["label"],
-            "labelZh": meta["labelZh"],
+            "labelVi": meta["labelVi"],
             "subjects": subjects,
         })
     return {
-        "version": 1,
+        "version": 2,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "boards": boards,
         "items": items,

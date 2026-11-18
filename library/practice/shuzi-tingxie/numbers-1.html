@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>数字听写 1（号码听写）</title>
-<meta name="exam:title"       content="数字听写 1（号码听写）">
+<title>Nghe chép số · Bài 1</title>
+<meta name="exam:title"       content="Nghe chép số · Bài 1">
 <meta name="exam:zone"        content="practice">
 <meta name="exam:subject"     content="shuzi-tingxie">
 <meta name="exam:duration"    content="0">
-<meta name="exam:description" content="听 AI 按块播报号码并听写，共 56 题；忽略空格与连字符，即时对错反馈。">
+<meta name="exam:description" content="Nghe giọng tổng hợp đọc từng cụm số và nhập đáp án cho 56 câu. Khi chấm, ứng dụng bỏ qua khoảng trắng và dấu gạch nối.">
 <style>
   :root{ --navy:#14213d; --ink:#1f2a3a; --muted:#667085; --line:#e4e8ef;
          --green:#1e9e6a; --red:#c8102e; --bg:#f3f5f8; --accent:#4c6a9e; }
@@ -52,38 +52,38 @@
 <body>
 <div class="wrap">
   <div class="card">
-    <h1>数字听写 1（号码听写）</h1>
-    <p class="lead">按块听写号码 · 空格/连字符不计入对错 · 可切换英音/美音并重播</p>
+    <h1>Nghe chép số · Bài 1</h1>
+    <p class="lead">Nghe và chép số theo cụm. Bạn có thể đổi giọng Anh hoặc Mỹ và phát lại. Khoảng trắng và dấu gạch nối không ảnh hưởng đến kết quả.</p>
     <div class="progress-bar"><div class="fill" id="progFill"></div></div>
-    <div class="progress-text" id="progText">进度 0 / 56</div>
+    <div class="progress-text" id="progText">Tiến độ 0 / 56</div>
   </div>
 
   <div class="card" id="stagePlay">
     <div class="meta">
-      <span class="tag" id="itemTag">第 1 组 · 第 1 题</span>
-      <div class="accent-tog" role="group" aria-label="口音">
-        <button type="button" id="btnGB" class="is-on">英音</button>
-        <button type="button" id="btnUS">美音</button>
+      <span class="tag" id="itemTag">Nhóm 1 · Câu 1</span>
+      <div class="accent-tog" role="group" aria-label="Giọng đọc">
+        <button type="button" id="btnGB" class="is-on">Anh</button>
+        <button type="button" id="btnUS">Mỹ</button>
       </div>
     </div>
-    <p class="prompt">先点「播放」，听完后在下方输入听到的数字，再点「核对」。</p>
+    <p class="prompt">Chọn Phát, nhập các số bạn nghe được rồi chọn Kiểm tra.</p>
     <div class="row">
-      <button type="button" class="btn" id="playBtn">▶ 播放</button>
-      <button type="button" class="btn ghost" id="replayBtn">↻ 重播</button>
+      <button type="button" class="btn" id="playBtn">▶ Phát</button>
+      <button type="button" class="btn ghost" id="replayBtn">↻ Phát lại</button>
     </div>
-    <label for="answer" class="hint">听写（可含空格）</label>
-    <input type="text" id="answer" autocomplete="off" spellcheck="false" inputmode="text" placeholder="例如 041 965 7156">
+    <label for="answer" class="hint">Số bạn nghe được (có thể dùng khoảng trắng)</label>
+    <input type="text" id="answer" autocomplete="off" spellcheck="false" inputmode="text" placeholder="Ví dụ: 041 965 7156">
     <div class="verdict" id="verdict"></div>
     <div class="row" style="margin-top:14px;margin-bottom:0;">
-      <button type="button" class="btn" id="checkBtn">核对</button>
-      <button type="button" class="btn next" id="nextBtn" disabled>下一题 →</button>
+      <button type="button" class="btn" id="checkBtn">Kiểm tra</button>
+      <button type="button" class="btn next" id="nextBtn" disabled>Câu tiếp theo →</button>
     </div>
   </div>
 
   <div class="card finish" id="stageFinish" style="display:none;">
-    <h2>听写完成</h2>
-    <p id="finishSummary">你完成了全部题目。</p>
-    <button type="button" class="btn" id="restartBtn">再练一遍</button>
+    <h2>Hoàn tất bài nghe chép</h2>
+    <p id="finishSummary">Bạn đã làm hết các câu.</p>
+    <button type="button" class="btn" id="restartBtn">Làm lại</button>
   </div>
 </div>
 
@@ -91,7 +91,7 @@
 (function () {
   "use strict";
 
-  // 第一组 28 + 第二组 28（空格分块 = TTS 停顿）
+  // Mỗi nhóm 28 câu. Khoảng trắng phân tách các cụm khi đọc.
   var G1 = [
     "041 965 7156","02 777 89472","378 4775","9463 5550","021 8561 325",
     "968 55 22 71","077 896 2451","033 835 0717","992 81444","020 768 6121",
@@ -173,7 +173,7 @@
 
   function speak() {
     if (!window.speechSynthesis) {
-      alert("当前浏览器不支持语音播报，请使用 Chrome。");
+      alert("Trình duyệt này không hỗ trợ giọng đọc. Hãy thử một trình duyệt có hỗ trợ tổng hợp giọng nói.");
       return;
     }
     window.speechSynthesis.cancel();
@@ -195,12 +195,12 @@
     var done = 0;
     for (var i = 0; i < ITEMS.length; i++) if (correct[i] != null) done++;
     progFill.style.width = (done / ITEMS.length * 100) + "%";
-    progText.textContent = "进度 " + done + " / " + ITEMS.length + " · 答对 " + countCorrect();
+    progText.textContent = "Tiến độ " + done + " / " + ITEMS.length + " · Số câu đúng: " + countCorrect();
   }
 
   function paint() {
     var it = ITEMS[cur];
-    itemTag.textContent = "第 " + it.group + " 组 · 第 " + it.no + " 题";
+    itemTag.textContent = "Nhóm " + it.group + " · Câu " + it.no;
     answerEl.value = "";
     answerEl.className = "";
     verdict.textContent = "";
@@ -230,8 +230,8 @@
     answerEl.className = ok ? "ok" : "bad";
     verdict.className = "verdict " + (ok ? "ok" : "bad");
     verdict.textContent = ok
-      ? "正确"
-      : ("不正确 · 答案：" + ITEMS[cur].answer);
+      ? "Chính xác"
+      : ("Chưa đúng · Đáp án: " + ITEMS[cur].answer);
     updateProgress();
   };
 
@@ -249,7 +249,7 @@
     stageFinish.style.display = "";
     var n = countCorrect();
     document.getElementById("finishSummary").textContent =
-      "答对 " + n + " / " + ITEMS.length + " 题。";
+      "Số câu đúng: " + n + " / " + ITEMS.length + " câu.";
     try {
       window.parent.postMessage({ type: "yysd:score", score: n, total: ITEMS.length }, "*");
     } catch (err) {}

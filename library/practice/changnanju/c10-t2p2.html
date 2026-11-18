@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-        <title>C10 T2 P2 长难句分析</title>
-    <meta name="exam:title"       content="C10 T2 P2 长难句分析">
+        <title>C10 T2 P2 Phân tích câu phức</title>
+    <meta name="exam:title"       content="C10 T2 P2 Phân tích câu phức">
     <meta name="exam:zone"        content="practice">
     <meta name="exam:subject"     content="changnanju">
     <meta name="exam:duration"    content="0">
-    <meta name="exam:description" content="剑桥雅思10 Test 2 Passage 2（Gifted children and learning）共6个长难句，拆解主干与附属成分并对照参考译文。">
+    <meta name="exam:description" content="Cambridge IELTS 10 Test 2 Passage 2 (Gifted children and learning): 6 câu phức, xác định nòng cốt và thành phần bổ nghĩa, sau đó đối chiếu với bản dịch gợi ý.">
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; background-color: #f5f7fa; margin: 0; padding: 20px; color: #1e2a3a; }
@@ -44,92 +44,93 @@
 <body>
 <div class="container">
     <div class="header">
-        <h1>🧠 Gifted children and learning · 长难句分析</h1>
-        <p>剑桥雅思真题10 Test 2 Passage 2 | 先自己拆解句子结构，再对照参考答案</p>
+        <h1>🧠 Gifted children and learning · Phân tích câu phức</h1>
+        <p>Cambridge IELTS 10 Test 2 Passage 2 | Hãy tự phân tích câu trước khi xem gợi ý.</p>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📌 句子拆解练习 <span class="sentence-count">共 6 个长难句</span></div>
+        <div class="section-title">📌 Luyện phân tích câu <span class="sentence-count">6 câu phức</span></div>
         <div id="sentencesArea"></div>
     </div>
 
     <div class="section-card">
-        <div class="section-title">📖 长难句学习要点</div>
+        <div class="section-title">📖 Cách phân tích một câu dài</div>
         <ul style="line-height:1.8; color:#3a4a5a;">
-            <li><strong>主干部分</strong>：句子的核心成分，通常包括主语、谓语动词和主要宾语，去掉修饰成分后句子仍然成立。</li>
-            <li><strong>附属成分</strong>：包括定语从句、状语从句、分词短语、介词短语、同位语等修饰性成分。</li>
-            <li><strong>翻译要点</strong>：注意从句的语序调整，将长句按意群拆分为短句理解。</li>
+            <li><strong>Nòng cốt câu</strong>: thường gồm chủ ngữ, động từ chính và tân ngữ. Khi bỏ các thành phần bổ nghĩa, phần này vẫn tạo thành một câu.</li>
+            <li><strong>Thành phần bổ nghĩa</strong>: có thể là mệnh đề quan hệ, mệnh đề trạng ngữ, cụm phân từ, cụm giới từ hoặc thành phần đồng vị.</li>
+            <li><strong>Khi dịch sang tiếng Việt</strong>: xác định quan hệ giữa các mệnh đề rồi chia câu thành từng cụm ý; không cần giữ nguyên trật tự từ khi dịch.</li>
         </ul>
     </div>
 
-    <footer>基于剑桥雅思真题10 Test 2 Reading Passage 2 制作 | 禁止复制粘贴，请手动输入分析</footer>
+    <footer>Dựa trên Cambridge IELTS 10 Test 2 Reading Passage 2 | Vui lòng tự nhập phần phân tích.</footer>
 </div>
 
 <script>
-    // ======================= 长难句数据（6个指定句子） =======================
+    // ======================= Dữ liệu câu phức (6 câu) =======================
     const longSentences = [
         {
             text: 'To reach an exceptionally high standard in any area very able children need the means to learn, which includes material to work with and focused challenging tuition - and the encouragement to follow their dream.',
             mainPart: 'very able children need the means to learn',
-            subordinate: 'To reach an exceptionally high standard in any area (不定式作目的状语); which includes material to work with and focused challenging tuition - and the encouragement to follow their dream (非限制性定语从句)',
-            translation: '为了在任何领域达到极高的标准，非常有天赋的儿童需要学习的手段，这包括可供使用的材料、有针对性的挑战性辅导，以及追求梦想的鼓励。'
+            subordinate: 'To reach an exceptionally high standard in any area (động từ nguyên mẫu chỉ mục đích); which includes material to work with and focused challenging tuition - and the encouragement to follow their dream (mệnh đề quan hệ không xác định)',
+            translation: 'Để đạt trình độ đặc biệt cao trong bất cứ lĩnh vực nào, trẻ có năng lực vượt trội cần có điều kiện học tập: tài liệu và phương tiện thực hành, sự hướng dẫn có trọng tâm và đủ thách thức, cùng lời động viên theo đuổi ước mơ.'
         },
         {
             text: 'There appears to be a qualitative difference in the way the intellectually highly able think, compared with more average-ability or older pupils, for whom external regulation by the teacher often compensates for lack of internal regulation.',
             mainPart: 'There appears to be a qualitative difference in the way',
-            subordinate: 'the intellectually highly able think (定语从句修饰way); compared with more average-ability or older pupils (过去分词短语作状语); for whom external regulation by the teacher often compensates for lack of internal regulation (非限制性定语从句)',
-            translation: '智力超常者的思维方式与普通能力或年长学生相比，似乎存在质的差异——教师的外部调节往往弥补了后者内部调节的不足。'
+            subordinate: 'the intellectually highly able think (mệnh đề quan hệ bổ nghĩaway); compared with more average-ability or older pupils (cụm phân từ quá khứ làm trạng ngữ); for whom external regulation by the teacher often compensates for lack of internal regulation (mệnh đề quan hệ không xác định)',
+            translation: 'Dường như có khác biệt về chất trong cách tư duy giữa học sinh có trí lực vượt trội với học sinh có năng lực trung bình hơn hoặc lớn tuổi hơn; ở nhóm sau, sự điều chỉnh từ giáo viên thường bù đắp cho khả năng tự điều chỉnh còn thiếu.'
         },
         {
             text: 'Emotional awareness is also part of metacognition, so children should be helped to be aware of their feelings around the area to be learned, feelings of curiosity or confidence, for example.',
             mainPart: 'Emotional awareness is also part of metacognition, so children should be helped to be aware of their feelings',
-            subordinate: 'around the area to be learned (介词短语作定语); feelings of curiosity or confidence (同位语); for example (插入语)',
-            translation: '情绪意识也是元认知的一部分，因此应该帮助儿童意识到他们在学习领域周围的感受，例如好奇心或自信的感受。'
+            subordinate: 'around the area to be learned (cụm giới từ bổ nghĩa cho danh từ); feelings of curiosity or confidence (thành phần đồng vị); for example (thành phần xen vào)',
+            translation: 'Ý thức về cảm xúc cũng là một phần của siêu nhận thức. Vì vậy, cần giúp trẻ nhận ra cảm xúc của mình đối với nội dung sắp học, chẳng hạn sự tò mò hoặc tự tin.'
         },
         {
             text: 'Although \'spoon-feeding\' can produce extremely high examination results, these are not always followed by equally impressive life successes.',
             mainPart: 'these are not always followed by equally impressive life successes',
-            subordinate: 'Although \'spoon-feeding\' can produce extremely high examination results (让步状语从句)',
-            translation: '尽管“填鸭式教学”可以产生极高的考试成绩，但这些成绩并不总是伴随着同样令人印象深刻的人生成功。'
+            subordinate: 'Although \'spoon-feeding\' can produce extremely high examination results (mệnh đề nhượng bộ)',
+            translation: 'Mặc dù kiểu dạy mớm sẵn kiến thức có thể đem lại điểm thi rất cao, những điểm số đó không phải lúc nào cũng dẫn đến thành công ấn tượng tương xứng trong cuộc sống.'
         },
         {
             text: 'Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils, improving pupils\' learning to learn techniques should be a major outcome of the school experience, especially for the highly competent.',
             mainPart: 'improving pupils\' learning to learn techniques should be a major outcome of the school experience',
-            subordinate: 'Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils (条件状语从句); especially for the highly competent (介词短语作补充说明)',
-            translation: '考虑到教育的一个根本目标是将学习的控制权从教师转移到学生身上，提高学生学习“如何学习”的技巧应该成为学校经历的一个主要成果，尤其是对能力强的学生而言。'
+            subordinate: 'Given that a fundamental goal of education is to transfer the control of learning from teachers to pupils (mệnh đề điều kiện); especially for the highly competent (cụm giới từ bổ sung thông tin)',
+            translation: 'Một mục tiêu căn bản của giáo dục là chuyển quyền chủ động học tập từ giáo viên sang học sinh. Vì thế, cải thiện kỹ năng học cách học phải là một kết quả quan trọng của việc đi học, nhất là với học sinh có năng lực cao.'
         },
         {
             text: 'They were not only curious, but often had a strong desire to control their environment, improve their learning efficiency, and increase their own learning resources.',
             mainPart: 'They were not only curious, but often had a strong desire to control their environment, improve their learning efficiency, and increase their own learning resources',
-            subordinate: 'to control their environment, improve their learning efficiency, and increase their own learning resources (不定式短语作定语修饰desire)',
-            translation: '他们不仅充满好奇心，而且常常有强烈的愿望去控制自己的环境、提高学习效率并增加自己的学习资源。'
+            subordinate: 'to control their environment, improve their learning efficiency, and increase their own learning resources (cụm động từ nguyên mẫu bổ nghĩa cho danh từdesire)',
+            translation: 'Các em không chỉ tò mò mà còn thường rất muốn làm chủ môi trường của mình, học hiệu quả hơn và mở rộng nguồn lực học tập của bản thân.'
         }
     ];
 
-    // ======================= 渲染长难句 =======================
+    // ======================= Hiển thị bài tập =======================
+    const escapeText = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
     function renderLongSentences() {
         let html = '';
         longSentences.forEach((s, idx) => {
             html += `
                 <div class="sentence-card">
-                    <div class="sentence-text">📌 ${idx+1}. ${s.text}</div>
+                    <div class="sentence-text" lang="en">📌 ${idx+1}. ${s.text}</div>
                     <div class="analysis-row">
                         <div class="analysis-box">
-                            <label>🌿 主干部分（你标记）</label>
-                            <textarea id="main_${idx}" placeholder="写出句子主干（去掉所有修饰成分）..."></textarea>
+                            <label for="main_${idx}">🌿 Nòng cốt câu (bạn xác định)</label>
+                            <textarea id="main_${idx}" placeholder="Ghi nòng cốt sau khi bỏ thành phần bổ nghĩa…"></textarea>
                         </div>
                         <div class="analysis-box">
-                            <label>🍃 附属部分（你标记）</label>
-                            <textarea id="sub_${idx}" placeholder="写出从句、状语、定语等修饰成分..."></textarea>
+                            <label for="sub_${idx}">🍃 Thành phần bổ nghĩa (bạn xác định)</label>
+                            <textarea id="sub_${idx}" placeholder="Ghi mệnh đề phụ, trạng ngữ, định ngữ…"></textarea>
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 提交结构并对照</button>
-                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 提交翻译并对照</button>
+                        <button class="check-btn struct-btn" data-idx="${idx}">🔎 Đối chiếu cấu trúc</button>
+                        <button class="check-btn trans-btn" data-idx="${idx}">🌏 Đối chiếu bản dịch</button>
                     </div>
                     <div id="structResult_${idx}" class="ref-answer"></div>
                     <div class="trans-area">
-                        <textarea id="trans_${idx}" placeholder="请输入本句的中文翻译..." rows="2"></textarea>
+                        <textarea aria-label="Bản dịch câu ${idx+1}" id="trans_${idx}" placeholder="Nhập bản dịch tiếng Việt của bạn…" rows="2"></textarea>
                     </div>
                     <div id="transResult_${idx}" class="ref-answer"></div>
                 </div>
@@ -137,65 +138,65 @@
         });
         document.getElementById("sentencesArea").innerHTML = html;
 
-        // 绑定结构检查按钮
+        // Đối chiếu cấu trúc
         document.querySelectorAll('.struct-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userMain = document.getElementById(`main_${idx}`).value.trim();
                 const userSub = document.getElementById(`sub_${idx}`).value.trim();
                 if (!userMain && !userSub) {
-                    alert('请先填写你的主干或附属分析！');
+                    alert('Hãy nhập phần nòng cốt hoặc thành phần bổ nghĩa trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`structResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考答案主干：</span><span class="main-part">${ref.mainPart}</span></div>
-                    <div><span class="label">📖 参考答案附属：</span><span class="sub-part">${ref.subordinate}</span></div>
+                    <div><span class="label">📖 Nòng cốt gợi ý: </span><span class="main-part" lang="en">${ref.mainPart}</span></div>
+                    <div><span class="label">📖 Thành phần bổ nghĩa gợi ý: </span><span class="sub-part">${ref.subordinate}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">✨ 你的分析：</span>
-                        主干「${userMain || '未填'}」 | 附属「${userSub || '未填'}」
+                        <span class="label">✨ Phân tích của bạn: </span>
+                        Nòng cốt: “${escapeText(userMain) || 'chưa nhập'}” | Thành phần bổ nghĩa: “${escapeText(userSub) || 'chưa nhập'}”
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 请对照参考答案完善句子结构拆解。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Hãy đối chiếu để bổ sung hoặc sửa phần phân tích của mình.</div>
                 `;
                 resultDiv.style.display = 'block';
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 绑定翻译检查按钮
+        // Đối chiếu bản dịch
         document.querySelectorAll('.trans-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
                 const userTrans = document.getElementById(`trans_${idx}`).value.trim();
                 if (!userTrans) {
-                    alert('请先填写你的中文翻译！');
+                    alert('Hãy nhập bản dịch tiếng Việt trước.');
                     return;
                 }
                 const ref = longSentences[idx];
                 const resultDiv = document.getElementById(`transResult_${idx}`);
                 resultDiv.innerHTML = `
-                    <div><span class="label">📖 参考译文：</span><span class="trans-part">${ref.translation}</span></div>
+                    <div><span class="label">📖 Bản dịch gợi ý: </span><span class="trans-part">${ref.translation}</span></div>
                     <div style="margin-top:8px; border-top:1px solid #d4dde8; padding-top:8px;">
-                        <span class="label">🔍 你的译文：</span>${userTrans}
+                        <span class="label">🔍 Bản dịch của bạn: </span>${escapeText(userTrans)}
                     </div>
-                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 注意语序和从句的准确转换。</div>
+                    <div style="margin-top:6px; color:#6b7c8e; font-size:0.85rem;">💡 Kiểm tra trật tự từ và quan hệ giữa các mệnh đề trong bản dịch.</div>
                 `;
                 resultDiv.style.display = 'block';
                 resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             });
         });
 
-        // 禁止复制粘贴（所有textarea）
+        // Yêu cầu tự nhập trong các ô trả lời
         document.querySelectorAll('.sentence-card textarea').forEach(ta => {
-            ta.addEventListener('paste', e => { e.preventDefault(); alert('禁止复制粘贴，请手动输入。'); });
+            ta.addEventListener('paste', e => { e.preventDefault(); alert('Vui lòng tự nhập thay vì sao chép hoặc dán.'); });
             ta.addEventListener('copy', e => e.preventDefault());
             ta.addEventListener('cut', e => e.preventDefault());
             ta.addEventListener('contextmenu', e => e.preventDefault());
         });
     }
 
-    // ======================= 页面加载 =======================
+    // ======================= Khởi tạo trang =======================
     window.onload = () => {
         renderLongSentences();
     };

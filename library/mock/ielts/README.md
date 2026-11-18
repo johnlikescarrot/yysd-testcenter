@@ -1,8 +1,5 @@
-# 模考区 / 雅思模考
+# Đề thi thử IELTS
 
-**把「雅思模考卷」的 HTML 文件上传到这个文件夹即可自动归类。**
+Thêm đề HTML vào `library/mock/ielts/` để phân loại vào mục thi thử (`mock`), môn IELTS (`ielts`). Có thể tải tệp lên GitHub hoặc thêm từ lúc phát triển; hãy kiểm tra quyền sử dụng trước khi phát hành đề.
 
-- 板块：🎯 模考区 (mock)
-- 科目：雅思 (ielts)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+Dùng các thẻ `exam:title`, `exam:description` và `exam:duration` cho tên, mô tả và thời lượng. Chạy `python3 scripts/build_manifest.py` từ thư mục gốc để cập nhật danh mục. Không đổi tên tệp đã phát hành nếu chưa có phương án giữ mã bài và kết quả cũ.

@@ -14,27 +14,27 @@
   if (navLink) navLink.classList.add("is-active");
 
   if (!id) {
-    contentEl.innerHTML = '<div class="state state--brand"><h3>缺少试卷 ID</h3>' +
-      '<p><a href="alevel.html">返回 A-Level 首页</a></p></div>';
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Thiếu mã đề thi</h3>' +
+      '<p><a href="alevel.html">Về kho đề A-Level</a></p></div>';
     return;
   }
 
   A.loadCatalog().then(function (catalog) {
     var item = A.itemById(catalog, id);
     if (!item) {
-      contentEl.innerHTML = '<div class="state state--brand"><h3>未找到该试卷</h3>' +
-        '<p><a href="alevel.html">返回 A-Level 首页</a></p></div>';
+      contentEl.innerHTML = '<div class="state state--brand"><h3>Không tìm thấy đề thi này</h3>' +
+        '<p><a href="alevel.html">Về kho đề A-Level</a></p></div>';
       return;
     }
-    document.title = item.title + " · 优益思达";
+    document.title = item.title + " · YYSD";
 
     document.getElementById("view-title").textContent = item.title;
     var comp = P.componentMeta(item.code, item.paper);
     var off = P.officialCode(item.code, item.paper);
     document.getElementById("view-meta").textContent =
-      off + " · " + comp.short + " " + comp.nameZh + " · " +
-      item.year + " · " + (item.seasonLabelZh || item.season) + " · " +
-      (item.typeLabelZh || item.type);
+      off + " · " + comp.short + " " + comp.nameVi + " · " +
+      item.year + " · " + (item.seasonLabelVi || item.season) + " · " +
+      (item.typeLabelVi || item.type);
 
     document.getElementById("back-subject").setAttribute("href", A.subjectHref(item.board, item.code, ""));
 
@@ -47,6 +47,6 @@
     var loading = contentEl.querySelector(".state");
     if (loading) loading.remove();
   }).catch(function (err) {
-    contentEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + Y.esc(err.message) + "</p></div>";
+    contentEl.innerHTML = '<div class="state state--brand"><h3>Không tải được tài liệu</h3><p>' + Y.esc(err.message) + "</p></div>";
   });
 })();
