@@ -19,11 +19,37 @@ jobs:
     name: Kiểm tra mã nguồn với GitHub Super-Linter
     runs-on: ubuntu-latest
     steps:
-      - name: Tải mã nguồn
+      - name: Tải mã nguồn tối ưu
         uses: actions/checkout@v4
-
-      - name: Cài đặt gói phụ thuộc cho ESLint
-        run: npm ci
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /src/**
+            /tests/**
+            /assets/css/duo-ielts.css
+            /assets/js/duo-app.js
+            /assets/js/tai-lieu.js
+            /assets/js/duo-hud.js
+            /scripts/check_vietnamese.mjs
+            /scripts/build_pages.mjs
+            /scripts/serve_static.mjs
+            /scripts/build_scholar_pdfs.py
+            /index.html
+            /lo-trinh.html
+            /tai-lieu.html
+            /vocab.html
+            /README.md
+            /AGENTS.md
+            /MEMORIES.md
+            /YYSD-DESIGN-RULES.md
+            /.github/workflows/super-linter.yml
+            /.github/workflows/quality-gate.yml
+            /.github/workflows/deploy-pages.yml
+            /.eslintrc.yml
+            /.stylelintrc.json
+            /.htmlhintrc
+            /.markdownlint.json
+            /.yamllint.yml
 
       - name: Chạy GitHub Super-Linter v7
         uses: super-linter/super-linter/slim@v7
@@ -33,9 +59,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           MULTI_STATUS: true
           LINTER_RULES_PATH: .
-          # yamllint disable-line rule:line-length
-          FILTER_REGEX_INCLUDE: "^/github/workspace/(src/.*\\.js|tests/.*\\.js|assets/css/duo-ielts\\.css|assets/js/(duo-app|tai-lieu|duo-hud)\\.js|scripts/(check_vietnamese|build_pages|serve_static)\\.mjs|scripts/build_scholar_pdfs\\.py|(index|lo-trinh|tai-lieu|vocab)\\.html|(README|AGENTS|MEMORIES|YYSD-DESIGN-RULES)\\.md|\\.github/workflows/(super-linter|quality-gate|deploy-pages)\\.yml)$"
-          JAVASCRIPT_ES_CONFIG_FILE: eslint.config.mjs
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.yml
           CSS_FILE_NAME: .stylelintrc.json
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           YAML_CONFIG_FILE: .yamllint.yml
