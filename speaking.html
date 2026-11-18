@@ -37,42 +37,42 @@
     <div class="spk-hero bento-panel">
       <span class="spk-badge"> IELTS Chuyên sâu Luyện tập </span>
       <h1>IELTS Speaking</h1>
-      <p>lựa chọn chủ đề Vào học thực chiến diễn luyện, AI đem dựa theo IELTS chính thức tứ duy cho điểm tiêu chuẩn cho ra phản hồi, giúp ngươi hiệu suất cao tăng lên Nói năng lực. </p>
-      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait"> đang liên tiếp AI phục vụ …</div>
+      <p>Lựa chọn chủ đề để luyện tập thực chiến, AI sẽ đánh giá theo 4 tiêu chí chấm điểm IELTS chính thức và đưa ra phản hồi chi tiết, giúp bạn nâng cao năng lực Speaking hiệu quả.</p>
+      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait"> Đang kết nối dịch vụ AI...</div>
     </div>
 
     <div class="spk-cta-grid bento-grid bento-grid--3" aria-label="Nói cửa vào">
       <a class="bento-cta" href="speaking-select.html">
         <span class="bento-cta__badge">Part 1</span>
         <div>
-          <p class="bento-cta__title">Nói Thi thử </p>
-          <p class="bento-cta__desc">Chọn đề · ghi âm đáp lại · AI tứ duy cho điểm </p>
+          <p class="bento-cta__title">Thi thử Speaking </p>
+          <p class="bento-cta__desc">Chọn đề · Ghi âm trả lời · Chấm điểm theo 4 tiêu chí </p>
         </div>
         <span class="spk-cta-go"> Bắt đầu ›</span>
       </a>
       <a class="bento-cta bento-cta--teal" href="speaking-select.html">
         <span class="bento-cta__badge"> Chuyên sâu </span>
         <div>
-          <p class="bento-cta__title">Chuyên sâu Chọn đề </p>
-          <p class="bento-cta__desc">theo như chủ đề phác thảo chọn, tổ một bộ mình Part 1</p>
+          <p class="bento-cta__title">Chọn đề chuyên sâu </p>
+          <p class="bento-cta__desc">Tự chọn chủ đề yêu thích, tạo bộ đề Part 1 riêng cho bạn</p>
         </div>
         <span class="spk-cta-go"> Chọn đề ›</span>
       </a>
       <a class="bento-cta bento-cta--orange" href="ai-tutor.html">
         <span class="bento-cta__badge">AI</span>
         <div>
-          <p class="bento-cta__title">AI Trợ giảng IELTS </p>
-          <p class="bento-cta__desc">Nói cơ trải qua / Viết phê chữa, tùy thời mở luyện </p>
+          <p class="bento-cta__title">Gia sư AI luyện thi </p>
+          <p class="bento-cta__desc">Luyện Nói đề dự đoán / Chấm chữa bài Viết, mở luyện mọi lúc mọi nơi</p>
         </div>
-        <span class="spk-cta-go"> Vào học ›</span>
+        <span class="spk-cta-go"> Bắt đầu ›</span>
       </a>
     </div>
 
     <div class="spk-stats" id="stats"></div>
 
     <section class="spk-section bento-panel bento-panel--md">
-      <h2 class="bento-panel__title">Chuyên sâu Luyện tập ghi chép</h2>
-      <p class="bento-panel__desc">nhấn vào ghi chép Xem AI cho điểm báo cáo </p>
+      <h2 class="bento-panel__title">Lịch sử luyện tập chuyên sâu</h2>
+      <p class="bento-panel__desc">Nhấn vào bài làm để xem báo cáo đánh giá chi tiết từ AI</p>
       <div class="spk-records" id="records"></div>
     </section>
   </main>
@@ -94,22 +94,22 @@
     var list = S.loadRecords();
     var lastTopics = (list[0] & list[0].topics)? list[0].topics.slice(0, 2).join(" · "): "—";
     document.getElementById("stats").innerHTML =
-      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> bình quân điểm </span><span class="bento-stat__value">' + (st.averageScore || "—") + '</span></div>' +
-      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> cao nhất điểm </span><span class="bento-stat__value">' + (st.highestScore || "—") + '</span></div>' +
-      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> Luyện tập số lần </span><span class="bento-stat__value">' + st.practiceCount + '</span></div>' +
-      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> gần nhất chủ đề </span><span class="bento-stat__value spk-stat__topic">' +
+      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> Điểm trung bình </span><span class="bento-stat__value">' + (st.averageScore || "—") + '</span></div>' +
+      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> Điểm cao nhất </span><span class="bento-stat__value">' + (st.highestScore || "—") + '</span></div>' +
+      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> Lượt luyện tập </span><span class="bento-stat__value">' + st.practiceCount + '</span></div>' +
+      '<div class="bento-stat spk-stat"><span class="bento-stat__label"> Chủ đề gần nhất </span><span class="bento-stat__value spk-stat__topic">' +
         S.esc(lastTopics) +
       '</span></div>';
 
     var el = document.getElementById("records");
     if (!list.length) {
-      el.innerHTML = '<div class="spk-empty"> còn không có Luyện tập ghi chép, nhấn vào phía trên « Nói Thi thử » thử xem nhé. </div>';
+      el.innerHTML = '<div class="spk-empty"> Chưa có lịch sử luyện tập, hãy nhấn vào « Thi thử Speaking » ở trên để bắt đầu nhé. </div>';
     } else {
       el.innerHTML = list.map(function (r) {
-        var date = r.createdAt? new Date(r.createdAt).toLocaleString("zh-CN"): "";
+        var date = r.createdAt? new Date(r.createdAt).toLocaleString("vi-VN"): "";
         return '<button type="button" class="spk-record" data-id="' + S.esc(r.id) + '">' +
           '<span class="spk-record__band">' + S.esc(String(r.overallBand)) + '</span>' +
-          '<span class="spk-record__meta"><b>Nói Chuyên sâu Luyện tập · Part 1</b><span>' +
+          '<span class="spk-record__meta"><b>Luyện tập Speaking chuyên sâu · Part 1</b><span>' +
             S.esc((r.topics || []).join(" · ")) + ' · ' + S.esc(date) + '</span></span></button>';
       }).join("");
       el.querySelectorAll(".spk-record").forEach(function (btn) {

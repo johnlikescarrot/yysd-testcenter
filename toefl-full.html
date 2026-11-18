@@ -28,8 +28,8 @@
 
   <section id="intro" class="result hidden">
     <h1 id="intro-title">Complete Test</h1>
-    <p>mạng lưới khảo thi trình tự cố định, bốn khoa một lần hoàn thành, <b>Không có lịch nghỉ ngơi</b>. ly khai một loại khoa sau không thể Quay lại. </p>
-    <p class="sample" style="max-width:640px;margin:16px auto;text-align:left">Luyện tập: khoa bên trong có thể quay về nhìn, lảng tai, trọng lục; khoa và khoa giữa có thể tạm dừng, tính theo thời gian không chạy. <br>Thi thử: theo như tất cả khoa chính thức thời hạn liền khảo thi; hoán đổi trang web hoặc ly khai cửa sổ tức thì cả trận hết hiệu lực, bốn khoa đều không ghi điểm. <br>Đọc, Nghe tại chỗ cho ra 1–6 dự đoán. ghi Sắp xếp câu tự động đúng sai, hai bài luận văn đối với theo bài văn mẫu. Nói không tự động cổ phân, Nộp bài sau mời dẫn đường ra ghi âm.
+    <p>Thứ tự các phần thi trực tuyến là cố định, làm liền mạch cả 4 kỹ năng và <b>không có thời gian nghỉ giữa hiệp</b>. Sau khi hoàn thành một kỹ năng sẽ không thể quay lại kỹ năng trước đó. </p>
+    <p class="sample" style="max-width:640px;margin:16px auto;text-align:left"><b>Chế độ Luyện tập:</b> Trong từng kỹ năng có thể xem lại câu trước, nghe lại, ghi âm lại; giữa các phần có thể tạm dừng và đồng hồ bấm giờ sẽ dừng chạy. <br><b>Chế độ Thi thử:</b> Làm bài theo đúng giới hạn thời gian thực tế của kỳ thi; chuyển tab hoặc rời khỏi cửa sổ sẽ làm bài thi mất hiệu lực và cả 4 kỹ năng đều không tính điểm. <br>Kỹ năng Đọc và Nghe sẽ trả về ước tính band điểm 1–6 ngay sau khi hoàn thành. Phần Sắp xếp câu tự động chấm đúng sai, hai bài viết đi kèm bài mẫu tham khảo. Phần Nói không chấm điểm tự động, sau khi nộp bài vui lòng xuất file ghi âm để gửi giáo viên chấm.
     </p>
     <p id="start-wrap"></p>
   </section>
@@ -77,9 +77,9 @@
       if (view === "done") {
         var pack = F.load(paperId);
         if (!pack || pack.voided) { location.replace(F.introHref(paperId, mode)); return; }
-        if (mode === "mock" & A & A.api) {
-          // hoàn thành báo cáo: tắt đi Thi thử túi màn ngừng thư thả (best-effort, thất bại không ảnh hưởng nhìn Điểm số)
-          A.api("/api/toefl/exam-done", { method: "POST", body:  paperId  }).catch(function () {});
+        if (mode === "mock" && A && A.api) {
+          // Báo cáo hoàn thành bài thi thử (best-effort, thất bại không ảnh hưởng xem điểm)
+          A.api("/api/toefl/exam-done", { method: "POST", body: { paperId: paperId } }).catch(function () {});
         }
         var r = pack.sections.reading || {};
         var l = pack.sections.listening || {};
@@ -89,22 +89,22 @@
           return '<div class="review-row"><span>' + name + "</span><span>" + body + "</span></div>";
         }
         var html = "";
-        html += row("Reading", r.total!= null
-          ? (r.score + " / " + r.total + " · dự đoán " + r.band + " (0–30 là " + r.scaled30 + ") ")
+        html += row("Reading", r.total != null
+          ? (r.score + " / " + r.total + " · Dự đoán Band " + r.band + " (thang 0–30: " + r.scaled30 + ") ")
           : " Chưa hoàn thành ");
-        html += row("Listening", l.total!= null
-          ? (l.score + " / " + l.total + " · dự đoán " + l.band + " (0–30 là " + l.scaled30 + ") ")
+        html += row("Listening", l.total != null
+          ? (l.score + " / " + l.total + " · Dự đoán Band " + l.band + " (thang 0–30: " + l.scaled30 + ") ")
           : " Chưa hoàn thành ");
-        html += row("Writing", w.total!= null
-          ? (" câu " + w.score + " / " + w.total + " · hai bài luận văn không tự động cổ phân ")
+        html += row("Writing", w.total != null
+          ? (" Câu: " + w.score + " / " + w.total + " · 2 bài luận không chấm điểm tự động ")
           : " Chưa hoàn thành ");
         (w.essays || []).forEach(function (e) {
-          html += '<div class="review-row"><span>' + (e.type === "email"? "Email": "Discussion") +
+          html += '<div class="review-row"><span>' + (e.type === "email" ? "Email" : "Discussion") +
             " · " + (e.words || 0) + " từ </span></div><p class=\"sample\">" +
             String(e.ua || " (Chưa trả lời) ").replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</p>";
         });
-        html += row("Speaking", s.total!= null
-          ? (" đã lục " + (s.recorded || 0) + " / " + s.total + " · không tự động cổ phân ")
+        html += row("Speaking", s.total != null
+          ? (" Đã ghi âm " + (s.recorded || 0) + " / " + s.total + " · Không chấm điểm tự động ")
           : " Chưa hoàn thành ");
         document.getElementById("summary").innerHTML = html;
         show(document.getElementById("done"));

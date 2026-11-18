@@ -1,10 +1,10 @@
 /* Bộ đề TOEFL chính thức 01-15 (mới phương Đông chính thức Thi thử) — miễn phí Thi thử toàn phần, không vào mở bao hệ thống.
-    số liệu văn bản tài liệu tại library/toefl/kl-set-*.json (loài bò sát kết quả); lúc dài là tất cả cuốn modules timeSec chân thật cộng lại. */
+    Tệp dữ liệu tại library/toefl/kl-set-*.json; thời lượng là tổng timeSec thực tế của tất cả modules. */
 (function (w) {
   "use strict";
   var Y = w.YYSD = w.YYSD || {};
   var MOCKS = [
-    { id: "kl-set-1", no: "01", title: " Bộ đề TOEFL chính thức 01", en: "Official Mock 01", tag: "new", tagZh: " mới nhất ", desc: " chính thức mới nhất bộ câu, bốn khoa Đầy đủ quá trình, giao diện và tính theo thời gian cùng chân thật trường thi. ", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-1", no: "01", title: " Bộ đề TOEFL chính thức 01", en: "Official Mock 01", tag: "new", tagZh: " mới nhất ", desc: " Bộ đề chính thức mới nhất, đầy đủ quy trình 4 kỹ năng, giao diện và thời gian bấm giờ giống như phòng thi thật. ", duration: 99, r: 27, l: 40, w: 21, s: 11 },
     { id: "kl-set-2", no: "02", title: " Bộ đề TOEFL chính thức 02", en: "Official Mock 02", tag: "hot", tagZh: " Tần suất cao ", desc: " Tần suất cao chủ đề trọn bộ luyện, thích hợp giai đoạn thứ hai tính theo thời gian huấn luyện. ", duration: 99, r: 27, l: 40, w: 21, s: 11 },
     { id: "kl-set-3", no: "03", title: " Bộ đề TOEFL chính thức 03", en: "Official Mock 03", tag: "forecast", tagZh: " dự đoán ", desc: " đứng đầu phương hướng dự đoán cuốn, trước khi thi hiểu rõ tra rò. ", duration: 92, r: 21, l: 40, w: 21, s: 11 },
     { id: "kl-set-4", no: "04", title: " Bộ đề TOEFL chính thức 04", en: "Official Mock 04", duration: 92, r: 21, l: 40, w: 21, s: 11 },
@@ -21,7 +21,7 @@
     { id: "kl-set-15", no: "15", title: " Bộ đề TOEFL chính thức 15", en: "Official Mock 15", duration: 92, r: 21, l: 40, w: 21, s: 11 }
   ];
   Y.KL_MOCKS = MOCKS;
-  /* Đơn kỹ năng lúc dài phút, đến từ tất cả cuốn modules timeSec chân thật cộng lại */
+  /* Thời lượng từng kỹ năng (phút), tính từ tổng timeSec thực tế của tất cả modules */
   function skillMin(m, skill) { return m[skill[0]]; }
   var SKILL_ZH = { reading: "Đọc", listening: "Nghe", writing: "Viết", speaking: "Nói" };
   function reg(listName, skill) {

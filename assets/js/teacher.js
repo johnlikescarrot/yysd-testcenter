@@ -94,7 +94,7 @@
       var file = this.files && this.files[0];
       this.value = "";
       if (!file ||!window.YYSD_AUTH ||!window.YYSD_AUTH.uploadAvatar) return;
-      showAvatarMsg(" thượng truyền(*upload) Vừa …");
+      showAvatarMsg(" Đang tải lên…");
       window.YYSD_AUTH.uploadAvatar(file)
         .then(function (d) {
           renderTeacherAvatar(d.avatarUrl, (T.getTeacher() || {}).phone);

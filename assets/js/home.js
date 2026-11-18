@@ -146,7 +146,7 @@
         })
         .then(function () {
           if (token!== gen) return;
-          return scanItem("aiw", "AI Viết phê chữa · Phản hồi tức thì ", 1400);
+          return scanItem("aiw", "AI Chấm bài Viết · Phản hồi tức thì ", 1400);
         })
         .then(function () {
           if (token!== gen) return;
@@ -222,7 +222,7 @@
         })
         .then(function () {
           if (token!== gen) return;
-          setCaption(" Bắt đầu hôm nay lưng từ ");
+          setCaption(" Bắt đầu học từ vựng hôm nay ");
           hot("daily", true);
           var p = hitPoint("daily");
           return moveCursor(p.x, p.y, 600).then(clickPulse);
@@ -577,7 +577,7 @@
 
   document.querySelectorAll(".home-market__cta").forEach(function (cta) {
     cta.innerHTML =
-      '<a class="home-btn home-btn--primary" href="zone.html?zone=study&s=vocab"> đi lưng Từ vựng </a>' +
+      '<a class="home-btn home-btn--primary" href="zone.html?zone=study&s=vocab"> Học từ vựng </a>' +
       '<a class="home-btn home-btn--ghost" href="zone.html?zone=mock&s=ielts"> luyện Đề thi IELTS </a>';
   });
 })();

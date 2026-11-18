@@ -294,7 +294,7 @@
       };
       document.getElementById("hsv-begin-quiz").onclick = function () {
         var n = mode === "unit"? maxQ: Number(document.getElementById("hsv-qcount").value);
-        if (!n || n < 1 || n > maxQ) { alert(" xin điền vào hữu hiệu kiểm tra thí điểm số lượng "); return; }
+        if (!n || n < 1 || n > maxQ) { alert(" Vui lòng nhập số lượng câu kiểm tra hợp lệ "); return; }
         beginQuiz(n);
       };
       return;

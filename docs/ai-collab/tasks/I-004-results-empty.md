@@ -1,29 +1,29 @@
-# I-004 — results chỗ trống Trạng thái premium tạp phiến
+# I-004 — Nâng cấp Thẻ Trạng thái Trống trên Trang Kết quả
 
-** Trạng thái: ** done
+**Trạng thái:** Đã hoàn thành
 
-## mục tiêu
+## Mục tiêu
 
- không làm nổi tích lúc `.results-empty` từ plain state thăng cấp làm giấy cảm giác tạp phiến.
+Khi học viên chưa có lịch sử làm bài, nâng cấp khối thông báo `.results-empty` từ kiểu chữ đơn điệu cũ thành thẻ phong cách giấy cao cấp đồng bộ với hệ thống.
 
-## cho phép cải biến
+## Phạm vi Cho phép Thay đổi
 
-- `assets/css/dashboard-premium.css`: `.page-premium.results-empty` và tử nguyên tố
+- `assets/css/dashboard-premium.css`: Bổ sung quy tắc cho `.page-premium.results-empty` và các phần tử con
 
-## cấm
+## Điều Nghiêm cấm
 
-- results.html inline script khuôn mô hình ký tự chuỗi (trừ phi chỉ thêm class `results-empty`)
+- Thay đổi các chuỗi mẫu trong script nội tuyến của `results.html` (trừ trường hợp chỉ thêm class `results-empty`)
 
-## thay đổi
+## Các Thay đổi Kỹ thuật
 
-- results inline: chỗ trống Trạng thái div gia tăng class `results-empty` (như chưa có)
-- CSS: padding, border, shadow-paper, trung tâm typography
+- Phần script nội tuyến của results: Khối thông báo trống được bổ sung thêm class `results-empty` (nếu chưa có).
+- Bổ sung CSS: Khoảng cách đệm padding, đường viền border, đổ bóng dạng giấy shadow-paper, căn giữa nghệ thuật chữ typography.
 
-## nghiệm thu
+## Tiêu chí Nghiệm thu
 
-- Xóa trống localStorage Điểm số → `/results.html` gặp tạp phiến hóa chỗ trống Trạng thái
-- CTA cái nút khoảng thời gian bảo trì
+- Xóa sạch điểm số trong localStorage → Mở `/results.html` sẽ thấy giao diện trạng thái trống dạng thẻ giấy cao cấp.
+- Khoảng cách lề của nút bấm kêu gọi hành động (CTA button) được duy trì cân đối.
 
-## quay về lăn
+## Phương án Rollback
 
- xóa bỏ dashboard-premium Vừa `.results-empty` quy tắc.
+Xóa bỏ các quy tắc CSS của `.results-empty` trong `dashboard-premium.css`.

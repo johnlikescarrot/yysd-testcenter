@@ -99,7 +99,7 @@ window.YYSD = (function () {
       { key: "writing", label: "Viết", subject: "cambridge-writing", desc: " Luyện đề Viết theo thứ tự ", skill: "writing",
         links: [
           { label: " Luyện đề Viết theo thứ tự ", href: "zone.html?zone=mock&s=writing" },
-          { label: "AI Viết phê chữa ", href: "ai-tutor.html?track=writing" }
+          { label: "AI Chấm bài Viết ", href: "ai-tutor.html?track=writing" }
         ] },
       { key: "mock", label: "Thi thử", subject: "ielts", desc: " Thi thử trọn bộ Cambridge " },
       // ponytail: under Nghe links only — excluded from hub columns/chips in zone.js
@@ -1104,7 +1104,7 @@ window.YYSD = (function () {
       desc: " làm quả xưa kia · Nghe và nhắc lại 7 câu"
     }
   ];
-  // ponytail: Thi thử toàn phần = bốn khoa cùng id đầy đủ hết ngày cuốn, từ phía trên bốn tờ bề ngoài đẻ ra; thêm bộ chỉ sửa bốn khoa bề ngoài
+  // Thi thử toàn phần = bộ đề 4 kỹ năng cùng ngày, tạo từ bảng dữ liệu trên
   // chính thức TOEFL iBT liền khảo thi 101 phút không ngừng hơi thở, tạp diện lúc dài dùng thống nhất đường kính (tất cả kỹ năng trang nhưng theo như mình cuốn thời hạn chạy)
   var TOEFL_FULL = TOEFL_READING.filter(function (r) {
     return [TOEFL_LISTENING, TOEFL_WRITING, TOEFL_SPEAKING].every(function (L) {
@@ -1544,7 +1544,7 @@ window.YYSD = (function () {
     return qs;
   }
 
-  // tuyệt mật bộ cuốn Section / Passage Vừa Anh tiêu đề (Giáo viên bố trí kiểm tra dùng)
+  // Tiêu đề tiếng Việt - Anh của Section / Passage trong bộ đề đặc biệt (dùng khi giáo viên giao bài kiểm tra)
   var SECRET_PART_TITLES = {
     "secret-set-1-s1": [" đồ thư quán phục vụ ", "Library services"],
     "secret-set-1-s2": [" sinh viên phòng cho thuê ", "Types of accommodation"],
@@ -1964,7 +1964,7 @@ window.YYSD = (function () {
     return html;
   }
 
-  // Nghe sâu (Intensive Listening): quyển liệt biểu List đi vol-grid; chút:điểm tiến một quyển lại nhóm Test / Part
+  // Nghe sâu (Intensive Listening): danh sách sách hiển thị dạng lưới; nhấn vào một sách để chọn Test / Part
   function jingtingVol(item) {
     var m = String((item && item.title) || "").match(/(?:Cambridge(?:\s*IELTS)?)\s*0*(\d+)/i);
     if (m) return m[1];
@@ -2232,7 +2232,7 @@ window.YYSD = (function () {
           "<div>" +
             '<span class="home-ielts__eyebrow">IELTS PREPARATION</span>' +
             "<h2> Luyện thi IELTS </h2>" +
-            "<p> Từ vựng · Luyện tập · đề thi thật vừa đứng hoàn thành · Đề thi Cambridge IELTS · Từ vựng Ngữ pháp hệ thống tinh giảng </p>" +
+            "<p> Từ vựng · Luyện tập · Đề thi thật trọn gói một điểm chạm · Đề thi Cambridge IELTS · Từ vựng Ngữ pháp hệ thống tinh giảng </p>" +
           "</div>" +
           '<div class="home-ielts__actions">' +
             '<a class="btn btn--primary pressable" href="' + p + 'zone.html?zone=study"> Vào học Khu từ vựng </a>' +
@@ -2268,10 +2268,10 @@ window.YYSD = (function () {
         "</a>";
     }).join("");
 
-    return '<section class="home-journey reveal" aria-label=" phụ lục đường nhỏ ">' +
+    return '<section class="home-journey reveal" aria-label=" lộ trình ôn luyện ">' +
       '<div class="home-journey__head">' +
         '<span class="home-journey__eyebrow">LEARNING PATH</span>' +
-        '<h2> của bạn phụ lục đường nhỏ </h2>' +
+        '<h2> của bạn lộ trình ôn luyện </h2>' +
         '<p> Học tập đặt nền móng → Luyện tập mạnh mẽ kỹ năng → Thi thử nghiệm chân chương </p>' +
       "</div>" +
       '<div class="home-journey__track">' + nodes + "</div>" +
@@ -2284,10 +2284,10 @@ window.YYSD = (function () {
     var p = prefix || "";
 
     if (!acts.length) {
-      return '<section class="home-dashboard home-dashboard--empty reveal" aria-label=" phụ lục đồng hồ đo ">' +
+      return '<section class="home-dashboard home-dashboard--empty reveal" aria-label=" bảng tiến độ ôn luyện ">' +
         '<div class="home-dashboard__inner">' +
           '<span class="home-dashboard__eyebrow">YOUR COCKPIT</span>' +
-          "<h2> Bắt đầu của bạn phụ lục đường nhỏ </h2>" +
+          "<h2> Bắt đầu của bạn lộ trình ôn luyện </h2>" +
           "<p> từ Khu từ vựng hoặc Khu đề thi tùy chọn cửa vào, Tiến độ sẽ Lưu tại bản trình duyệt. </p>" +
           '<div class="home-dashboard__actions">' +
             '<a class="btn btn--gold btn--sm" href="' + p + 'zone.html?zone=mock"> Bắt đầu đề thi thật </a>' +
@@ -2306,11 +2306,11 @@ window.YYSD = (function () {
         '<span class="home-dashboard__row-meta">' + esc(meta) + " ›</span></a>";
     }).join("");
 
-    return '<section class="home-dashboard reveal" aria-label=" phụ lục đồng hồ đo ">' +
+    return '<section class="home-dashboard reveal" aria-label=" bảng tiến độ ôn luyện ">' +
       '<div class="home-dashboard__inner">' +
         '<div class="home-dashboard__top">' +
           '<div><span class="home-dashboard__eyebrow">YOUR COCKPIT</span>' +
-          "<h2> Tiếp tục phụ lục </h2>" +
+          "<h2> Tiếp tục ôn luyện </h2>" +
           "<p> từ lần trước dừng lại địa phương tiếp theo học </p></div>" +
           '<div class="home-dashboard__metrics">' +
             '<div class="home-dashboard__metric"><b>' + counts.total + '</b><span> đã làm </span></div>' +

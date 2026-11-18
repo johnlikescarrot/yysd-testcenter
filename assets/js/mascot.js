@@ -12,8 +12,8 @@
   var IDLE_MS = 45000;
   var ONBOARD_STEPS = [
     " Xin chào, ta là tư đạt, lỗi của bạn câu bản bồi luyện. ",
-    " Khu từ vựng lưng Từ vựng, Khu luyện tập Nghe sâu Câu phức học thuật, Khu đề thi Đề Cambridge IELTS —— chút:điểm tôi đều có thể cho xây nghị. ",
-    " làm bài lúc ta sẽ thực thì phản hồi; Thi thử hết ta sẽ giúp ngươi phục bàn Band. "
+    " Khu từ vựng để học từ vựng, Khu luyện tập Nghe sâu câu phức học thuật, Khu đề thi Cambridge IELTS —— nhấn vào tôi, tôi luôn sẵn sàng hỗ trợ bạn. ",
+    " Khi làm bài tôi sẽ phản hồi theo thời gian thực; thi thử xong tôi sẽ giúp bạn phân tích Band điểm. "
   ];
 
   var examPage = /exam\.html/.test(location.pathname);
@@ -158,7 +158,7 @@
     ],
     study: [
       " Từ vựng Nền tảng THPT và Từ vựng Đại học Cốt lõi tách ra xoát, đừng xen lẫn trong một cái LIST dặm. ",
-      " lưng Từ vựng phải đồng thời vượt qua kiểm tra Chính tả và Giải nghĩa, hai cái đều nhớ lao mới tính sẽ. ",
+      " Học từ vựng cần vượt qua cả kiểm tra chính tả và giải nghĩa, nhớ vững cả hai mới tính là thuộc. ",
       " Ngữ pháp tinh giảng làm xong theo nhà tiểu trắc, câu sai hồi đầu lại nhìn một lần Giải thích đáp án. ",
       " Nghe / Đọc / Từ vựng Viết chuyên sâu, đối ứng bạn kế tiếp muốn công kỹ năng. ",
       " không biết từ sẽ tự động tiến Sổ lỗi sai, nhớ rõ đi Ôn tập. "
@@ -173,7 +173,7 @@
       " Khu đề thi Cambridge IELTS Nghe Đọc hỗ trợ tính theo thời gian, tận lực theo như thực khảo thi tiết tấu. ",
       " Đọc câu có thể cao sáng, làm bút ký, và cơ khảo thi thói quen bảo trì nhất trí. ",
       " Nộp bài sau Band và Điểm số sẽ ghi tạc « Kết quả của tôi ». ",
-      " đồng nhất bộ câu có thể hai xoát, đối lập hai lần Điểm số nhìn vào bước. ",
+      " Cùng một bộ đề có thể làm lại lần hai để so sánh điểm số và thấy sự tiến bộ. ",
       "A-Level đề thi thật tại « Chương trình quốc tế » dặm, hòa nhã tư phân khu lẫn nhau không lẫn vào dùng. "
     ],
     vocab: {
@@ -185,7 +185,7 @@
       cet4: [
         " Từ vựng Đại học Cốt lõi số lượng hòa nhã tư có trùng điệp, đánh tốt nội tình hai đầu được lợi. ",
         " Giải nghĩa ghi từ khóa là được, không cần học thuộc lòng cả từ điển Câu ví dụ. ",
-        " hôm nay mục tiêu: vững vàng nhớ kỹ 15, so với ham hố càng hữu hiệu. "
+        " Mục tiêu hôm nay: ghi nhớ vững chắc 15 từ, hiệu quả hơn nhiều so với học vội vàng. "
       ],
       special: [
         " Từ vựng chuyên sâu theo như nghe nói đọc ghi điểm Bài, cái đó khoa yếu trước hết xoát cái đó khoa. ",
@@ -199,7 +199,7 @@
       " Điểm số thấp kỹ năng, đi luyện tập khu làm Chuyên sâu thường thường so với cứng rắn xoát câu có tác dụng. "
     ],
     general: [
-      " mỗi ngày Nghe sâu 15 phút, so với mù quáng xoát ba bộ Đọc càng hữu hiệu. ",
+      " Mỗi ngày luyện Nghe sâu 15 phút hiệu quả hơn nhiều so với cắm đầu làm ba đề Đọc. ",
       " Đọc xem trước Câu hỏi lại Dẫn chứng, đừng từ đoạn thứ nhất đọc được vĩ. ",
       " Nghe lấp chỗ trống chú ý đơn số nhiều, chữ hoa hay thường và từ tính biến hình. ",
       " Viết lưu 5 phút kiểm tra Chính tả, lúc thái và chủ vị nhất trí. ",
@@ -232,7 +232,7 @@
     wrong: [
       " cái này câu đáng giá tiến Sổ lỗi sai, trễ giờ lại xoát một lần. ",
       " Không sao, hiểu Bỉ Mông đối với quan trọng hơn. ",
-      " trước dấu hiệu, đợi lát nữa quay đầu lại phục bàn. ",
+      " Hãy đánh dấu lại trước, lát nữa quay lại xem lại nhé. ",
       " sai rồi liền nhớ kỹ, lần sau chú ý. "
     ],
     pass: [
@@ -259,7 +259,7 @@
   var GREET_DEFAULTS = {
     home: [
       " Xin chào, ta là tư đạt. Học tập, Luyện tập, Thi thử, tôi đều tại. ",
-      " hoan nghênh đi vào YYSD. phụ lục trên đường, có việc chút:điểm tôi là được. "
+      " Chào mừng bạn đến với YYSD. Trên con đường ôn luyện thi, có khó khăn gì cứ nhấn vào tôi nhé. "
     ],
     study: [
       " Khu từ vựng đã đến. Từ vựng, Ngữ pháp, Chuyên sâu từ —— làm gì chắc đó. ",
@@ -267,7 +267,7 @@
     ],
     practice: [
       " Khu luyện tập! Nghe sâu, Câu phức học thuật, Đọc cuốn, Chuyên sâu xách điểm. ",
-      " tính nhắm vào Luyện tập so với mù quáng xoát câu càng hữu hiệu, chọn một bắt đầu đi. "
+      " Luyện tập đúng trọng tâm hiệu quả hơn nhiều so với làm đề tràn lan, hãy chọn một phần để bắt đầu nào. "
     ],
     mock: [
       " Khu đề thi. Đề Cambridge IELTS tính theo thời gian luyện, Nộp bài tự động đánh giá Band. ",
@@ -275,7 +275,7 @@
     ],
     results: [
       " đến xem chiến tích. mỗi lần Thi thử đều đáng giá ghi chép. ",
-      "Band quỹ tích tại đây, tiến bộ vừa xem hiểu ngay. "
+      "Biểu đồ Band điểm tại đây, tiến bộ thấy rõ ngay lập tức. "
     ],
     vocab: {
       gaozhong: " Từ vựng Nền tảng THPT LIST đã đến. Chính tả và Giải nghĩa đều phải qua màn. ",
@@ -442,7 +442,7 @@
     if (ctx.page === "exam") {
       if (ctx.zone === "study") {
         if (sub.indexOf("grammar") >= 0) return " Ngữ pháp câu từ từ suy nghĩ, hiểu rõ nhất đạo là nhất đạo. ";
-        if (sub.indexOf("vocab") >= 0) return " vẫn còn lưng Từ vựng? từ sai sẽ tự động tiến Sổ lỗi sai. ";
+        if (sub.indexOf("vocab") >= 0) return " Bạn vẫn đang học từ vựng chứ? Các từ làm sai sẽ tự động được thêm vào Sổ từ hay sai. ";
         return pick([" Từ vựng Luyện tập đừng đuổi, Chính tả và Giải nghĩa đều muốn ổn. ", " Khu từ vựng Tiến độ sẽ Lưu, làm xong nhớ rõ nhìn lầm câu bản. "]);
       }
       if (ctx.zone === "practice") {
@@ -462,7 +462,7 @@
       return " Từ vựng Nền tảng THPT làm gì chắc đó, Sổ lỗi sai nhớ rõ Ôn tập. ";
     }
     if (ctx.page === "results") return " có thể chọn một bộ điểm thấp bài thi, đi luyện tập khu bổ Chuyên sâu. ";
-    return pick([" vẫn còn không? chút:điểm tôi thu hoạch một cái phụ lục tiểu dán sĩ. ", " Học tập · Luyện tập · Thi thử, có việc tùy thời chút:điểm tôi. "]);
+    return pick([" Bạn còn ở đó không? Nhấn vào tôi để nhận một mẹo ôn thi hữu ích nhé. ", " Học tập · Luyện tập · Thi thử, có thắc mắc gì cứ nhấn vào tôi bất cứ lúc nào. "]);
   }
 
   function onTap() {
@@ -527,7 +527,7 @@
     var Y = window.YYSD;
     if (!Y ||!Y.touchStreak) return "";
     var s = Y.touchStreak();
-    if (s.visit >= 7) return pick([" liên tục " + s.visit + " ngày, ngươi là phụ lục hộ bị cưỡng chế! ", " thứ " + s.visit + " trời giáng tạp, thói quen đã dưỡng thành. "]);
+    if (s.visit >= 7) return pick([" liên tục " + s.visit + " ngày, bạn đúng là chiến thần ôn thi kiên trì! ", " thứ " + s.visit + " trời giáng tạp, thói quen đã dưỡng thành. "]);
     if (s.visit >= 3) return pick([" liên tục " + s.visit + " ngày, bảo trì! ", " liên tục " + s.visit + " ngày qua rồi, tiết tấu rất tốt. "]);
     if (s.visit === 2) return "Chuỗi 2 ngày đã đến, thói quen tốt! ";
     return "";
@@ -663,7 +663,7 @@
       show(pick([
         s + ", đừng nản chí. hiểu câu sai điểm số mấy quan trọng hơn. ",
         s + ", trước phục um tùm câu, so với vội vã xoát một bộ kế có tác dụng. ",
-        s + ", bạc nhược yếu kém chút:điểm đã tìm được, đi luyện tập khu bổ Chuyên sâu thử xem. "
+        s + ", đã xác định được điểm cần cải thiện, bạn hãy vào khu luyện tập để củng cố chuyên sâu nhé. "
       ]), { state: "confused", ms: 7000 });
     }
   }
@@ -715,12 +715,12 @@
       if (band >= 7.5) { line = pick(["Band " + band + ", vô cùng xuất sắc! ", "Band " + band + ", ổn! bảo trì tiết tấu. "]); st = "celebrate"; }
       else if (band >= 6.5) { line = pick(["Band " + band + ", đạt tiêu chuẩn. ", "Band " + band + ", không sai, Tiếp tục củng cố yếu hạng. "]); st = "happy"; }
       else if (band >= 5.5) { line = pick(["Band " + band + ", có tiến bộ không gian. ", "Band " + band + ", yếu hạng tìm đúng rồi có thể lại phát triển. "]); st = "default"; }
-      else { line = pick(["Band " + band + ", đừng nản chí, phục bàn so với xoát câu trọng yếu. ", "Band " + band + ", trước hiểu câu sai, điểm sẽ cùng bên trên. "]); st = "confused"; }
+      else { line = pick(["Band " + band + ", đừng nản chí, phân tích câu sai quan trọng hơn làm đề tràn lan. ", "Band " + band + ", trước hiểu câu sai, điểm sẽ cùng bên trên. "]); st = "confused"; }
     } else if (d.score!= null && d.total) {
       line = d.score + "/" + d.total + " hoàn thành. ";
       if (ratio >= 0.85) { line += pick([" biểu hiện rất tốt! ", " tiếp cận điểm tối đa xúc cảm! "]); st = "celebrate"; }
       else if (ratio >= 0.6) { line += pick([" không sai, Tiếp tục củng cố. ", " có trụ cột, Chuyên sâu còn có thể đẩy nữa. "]); st = "happy"; }
-      else { line += pick([" nhìn xem sai lời giải trong đề bài tích. ", " đi luyện tập khu bổ thoáng một phát bạc nhược yếu kém hạng. "]); st = "confused"; }
+      else { line += pick([" nhìn xem sai lời giải trong đề bài tích. ", " vào khu luyện tập để củng cố các phần còn yếu nhé. "]); st = "confused"; }
     } else {
       line = pick([" Thi thử hoàn thành, Điểm số đã Lưu. ", " Nộp bài thành công! đi « Kết quả của tôi » nhìn tình hình cụ thể và tỉ mỉ. "]);
       st = "celebrate";
@@ -728,7 +728,7 @@
 
     tip = mockSkillTip(d, band, ratio);
     if (tip) line += " " + tip;
-    else line += pick([" đi « Kết quả của tôi » Xem chi tiết. ", " Điểm số tại « Kết quả của tôi » dặm, tùy thời có thể phục bàn. "]);
+    else line += pick([" đi « Kết quả của tôi » Xem chi tiết. ", " Điểm số lưu trong mục «Kết quả của tôi», bạn có thể xem lại bất cứ lúc nào. "]);
 
     show(line, { state: st, ms: 10000 });
   }

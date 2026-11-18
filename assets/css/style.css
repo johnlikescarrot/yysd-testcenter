@@ -79,7 +79,7 @@
 
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
           "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: "Playfair Display", "Songti SC", "Noto Serif SC", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 }
 
 * { box-sizing: border-box; }
@@ -7131,7 +7131,7 @@ body.is-vocab-hub.catalog-toolbar {
 }
 .ha-cdt-app {
   --cdt-font: Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  --cdt-serif: "Noto Serif SC", "Libre Baskerville", "Songti SC", Georgia, serif;
+  --cdt-serif: "Libre Baskerville", Georgia, serif;
   flex: 1;
   min-height: 0;
   width: 100%;

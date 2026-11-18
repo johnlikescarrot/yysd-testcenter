@@ -8,7 +8,7 @@ export type ResumeFeatures = {
   tags: string[];
 };
 
-const SYSTEM = ` ngươi là du học thân thỉnh tài liệu Giải thích đáp án trợ thủ. giản lược lịch văn bản chắt lọc kết cấu hóa đặc thù, chỉ Quay lại JSON, không nên tính danh / điện thoại / hòm thư {các loại:đợi} việc riêng tư chữ đoạn.
+const SYSTEM = ` Bạn là trợ lý phân tích hồ sơ du học. Trích xuất đặc điểm cấu trúc từ văn bản CV/sơ yếu lý lịch, chỉ trả về JSON, không lấy thông tin riêng tư như họ tên / số điện thoại / email.
  cách thức: {"research":[],"internships":[],"papers":[],"contests":[],"tags":[]}
 tags dùng ngắn Tiếng Anh nhãn hiệu, ví dụ research, internship, publication, competition, leadership. `;
 

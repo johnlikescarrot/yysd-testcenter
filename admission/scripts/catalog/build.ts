@@ -279,7 +279,7 @@ const PROGRAMS_BY_FIELD: Record<Field, ProgMeta[]> = {
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: " vượt qua ngành học định chế(*hàng đặt theo yêu cầu) hình nghiên cứu sinh hạng mục. ",
+      blurb: " Chương trình sau đại học liên ngành thiết kế theo yêu cầu. ",
     },
   ],
 };
@@ -310,20 +310,20 @@ function thresholds(country: Country, tier: number, field: Field) {
 function tuitionNote(country: Country, tier: number): string {
   if (country === "US") {
     return tier === 1
-      ? " ước USD 50,000–80,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) "
+      ? " ước USD 50,000–80,000 / năm (học phí, bởi vì hạng mục mà khác; theo website chính thức của trường) "
       : tier === 2
-        ? " ước USD 35,000–60,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) "
-        : " ước USD 25,000–45,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) ";
+        ? " ước USD 35,000–60,000 / năm (học phí, bởi vì hạng mục mà khác; theo website chính thức của trường) "
+        : " ước USD 25,000–45,000 / năm (học phí, bởi vì hạng mục mà khác; theo website chính thức của trường) ";
   }
   if (country === "UK") {
     return tier === 1
-      ? " ước GBP 28,000–45,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) "
-      : " ước GBP 20,000–35,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
+      ? " ước GBP 28,000–45,000 / năm (quốc tế sinh học phí, theo website chính thức của trường) "
+      : " ước GBP 20,000–35,000 / năm (quốc tế sinh học phí, theo website chính thức của trường) ";
   }
   if (country === "CA") {
-    return " ước CAD 25,000–55,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
+    return " ước CAD 25,000–55,000 / năm (quốc tế sinh học phí, theo website chính thức của trường) ";
   }
-  return " ước AUD 35,000–55,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
+  return " ước AUD 35,000–55,000 / năm (quốc tế sinh học phí, theo website chính thức của trường) ";
 }
 
 function greRequired(country: Country, field: Field, tier: number): boolean | null {
@@ -379,7 +379,7 @@ export function expandInstitutions(list: Institution[]): SchoolSeed[] {
           gpaScale: 4.0,
           website: inst.website,
           officialUrl: inst.website,
-          admissionRequirements: `${inst.name} ${meta.program} (${degree}). đề nghị GPA ≥ ${t.minGpa.toFixed(1)} (4.0 chế xấp xỉ), chia đều tham khảo ước ${t.avgGpa.toFixed(2)}; ngôn ngữ ${lang}. quy tắc chi tiết dùng Website Games làm chuẩn. `,
+          admissionRequirements: `${inst.name} ${meta.program} (${degree}). đề nghị GPA ≥ ${t.minGpa.toFixed(1)} (4.0 chế xấp xỉ), chia đều tham khảo ước ${t.avgGpa.toFixed(2)}; ngôn ngữ ${lang}. quy tắc chi tiết theo website chính thức của trường. `,
           tier: inst.tier,
           duration,
           tuitionNote: tuitionNote(inst.country, inst.tier),

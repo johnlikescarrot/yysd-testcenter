@@ -63,7 +63,7 @@
     var el = $("jtGloss"), wEl = $("jtGlossW"), mEl = $("jtGlossM");
     if (!el) return;
     wEl.textContent = word;
-    mEl.textContent = " điều tra Vừa …";
+    mEl.textContent = " Đang tải…";
     el.classList.remove("is-hidden");
     var left = Math.min(x + 8, window.innerWidth - 280);
     var top = Math.min(y + 12, window.innerHeight - 80);

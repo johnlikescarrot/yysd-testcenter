@@ -1,39 +1,39 @@
 ---
 name: yysd-site
 description: >
-   chế tác hoặc sửa YYSD trang web và hệ thống. Website Games Hub, Ngân hàng đề, Cổng giáo viên, TOEFL iBT cơ khảo thi app,
-  Electron mặt bàn đầu, từ sách, phát hành. người sử dụng nhắc tới sửa Trang chủ, làm trang web, bên trên bài thi, sửa bá phóng khí,
-   Cổng giáo viên, chỗ ngồi, người thuê, bố trí lúc sử dụng.
+  Xây dựng hoặc tinh chỉnh hệ thống và trang web YYSD: Cổng thông tin chính (Official Hub), Ngân hàng đề thi, Cổng giáo viên, Ứng dụng thi thử máy tính TOEFL iBT,
+  Ứng dụng máy tính để bàn (Desktop App), Tủ từ vựng, Quy trình phát hành. Sử dụng khi người dùng nhắc đến việc sửa Trang chủ, xây dựng trang web, đưa bài thi lên hệ thống, sửa bộ trình phát,
+  Cổng giáo viên, quản lý chỗ ngồi, người thuê (tenant), hoặc cấu hình hệ thống.
 ---
 
-# YYSD trang web / hệ thống
+# Hệ thống & Trang web YYSD
 
- trước đọc `AGENTS.md` và `YYSD-DESIGN-RULES.md`. thiết bị này bố trí nhìn `AGENTS.local.md`.
+Vui lòng đọc trước `AGENTS.md` và `YYSD-DESIGN-RULES.md`. Xem cấu hình thiết bị tại `AGENTS.local.md`.
 
-## trước khi động thủ
+## Nguyên tắc trước khi bắt đầu
 
-1. đây là nội dung, xác, hay trường thi? tính cách không nên lẫn vào.
-2. đã có trang web / helper / bá phóng khí có thể hay không phục dùng? cấm thứ hai bộ động cơ.
-3. rơi xuống đất trang xúc cảm dùng `design-taste-frontend`; xác tầng di chuyển hiệu dụng `apple-design`; sửa xưa cũ đứng dùng `redesign-existing-projects`. trường thi không nên quả táo hóa.
+1. Xác định rõ: Đây là nội dung, khung viền hay phòng thi? Tuyệt đối không lẫn lộn định vị phong cách.
+2. Kiểm tra xem trang web / helper / bộ trình phát hiện có có thể tái sử dụng không? Cấm tạo ra bộ động cơ thứ hai trùng lặp.
+3. Trang thông tin chính dùng quy chuẩn `design-taste-frontend`; hiệu ứng tầng khung viền dùng `apple-design`; nâng cấp trang cũ dùng `redesign-existing-projects`. Phòng thi cần chuẩn mực, không chạy theo phong cách hoa mỹ.
 
-## sửa ở đâu
+## Vị trí chỉnh sửa mã nguồn
 
-| chuyện cần làm | đi đâu |
+| Yêu cầu công việc | Vị trí tệp tin |
 | --- | --- |
-| Website Games / Hub | `index.html`, `assets/css/style.css`, `assets/js/` |
-| mặt ngoài / Xác nhận khung | `assets/js/ui.js` (`YYSD_SURFACE` / `YYSD_CONFIRM`) |
-| phân khu và kỹ năng | `assets/js/config.js` |
-| TOEFL iBT cơ khảo thi | `app/` + `app/library/toefl/` |
-| trang web ngày cuốn | `library/toefl/` |
-| sau đầu / chỗ ngồi / người thuê | `server/server.js` |
-| mặt bàn đầu | `desktop/` |
-| Ngân hàng đề trang | `tiku/` |
+| Trang web chính / Hub | `index.html`, `assets/css/style.css`, `assets/js/` |
+| Bề mặt giao diện / Hộp thoại xác nhận | `assets/js/ui.js` (`YYSD_SURFACE` / `YYSD_CONFIRM`) |
+| Phân khu và kỹ năng | `assets/js/config.js` |
+| Phòng thi máy tính TOEFL iBT | `app/` + `app/library/toefl/` |
+| Bộ đề thi theo ngày trên web | `library/toefl/` |
+| Backend / Quản lý chỗ ngồi / Đa người thuê | `server/server.js` |
+| Ứng dụng máy tính để bàn (Desktop App) | `desktop/` |
+| Trang ngân hàng đề thi | `tiku/` |
 
-## cứng rắn gác cổng
+## Tiêu chí kiểm soát chất lượng nghiêm ngặt
 
-- Writing sentence: `bank` không được cùng `answer` cùng tự. `scripts/toefl_sent.py`. chips cấm Titlecase.
-- về nhà chồng trở lên: `node scripts/check_toefl_paper.js`
-- nghe xong tục nói: `conversation` / `announcement` / `lecture` trước để hết âm tần ra lại câu
-- Listen and Repeat: một câu một âm tần → 3 giây muốn → beep → 8 giây lục. đáp lại Vừa không biểu hiện `sample`
-- không nên `rsync --delete` Website Games
-- UI đổi xong tại trình duyệt dặm chút:điểm một lần, không phải chỉ nhìn Screenshots
+- Ghép câu phần Writing: Mảng `bank` không được sắp xếp theo đúng thứ tự câu trả lời `answer`. Dùng `scripts/toefl_sent.py` để xáo trộn. Thẻ từ cấm viết hoa chữ cái đầu (Titlecase) trừ trường hợp đặc biệt.
+- Trước khi đưa lên môi trường chính thức: Chạy kiểm tra bằng `node scripts/check_toefl_paper.js`.
+- Nghe xong mới nói: Các dạng bài `conversation` / `announcement` / `lecture` phải phát hết âm thanh rồi mới hiển thị câu hỏi.
+- Dạng bài Listen and Repeat: Một câu tương ứng một tệp âm thanh → chuẩn bị 3 giây → tiếng bíp → ghi âm 8 giây. Màn hình làm bài không hiển thị câu mẫu `sample`.
+- Tuyệt đối không chạy lệnh `rsync --delete` trên trang web chính thức.
+- Sau khi chỉnh sửa giao diện, bắt buộc phải nhấp chuột kiểm tra thực tế trên trình duyệt ít nhất một lần, không chỉ dựa vào ảnh chụp màn hình (screenshots).

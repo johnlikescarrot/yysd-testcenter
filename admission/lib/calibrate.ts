@@ -69,10 +69,10 @@ export function calibrateAdmission(opts: {
   let caseSource: string;
   if (peerReal.length >= 5) {
     useCases = peerReal;
-    caseSource = `GradCafe chân thật tự báo (cùng đương n=${peerReal.length}) `;
+    caseSource = `GradCafe tự báo cáo thực tế (cùng đương n=${peerReal.length}) `;
   } else if (realAll.length >= 5) {
     useCases = realAll;
-    caseSource = `GradCafe chân thật tự báo (vượt qua đương lẫn vào, cùng đương chỉ ${peerReal.length}) `;
+    caseSource = `GradCafe tự báo cáo thực tế (vượt qua đương lẫn vào, cùng đương chỉ ${peerReal.length}) `;
   } else if (peerReal.length + peerSynth.length >= 5) {
     useCases = [...peerReal,...peerSynth];
     caseSource = ` chân thật ${peerReal.length} + hợp thành cùng đương ${peerSynth.length} (chân thật hàng mẫu chưa đủ) `;
@@ -193,7 +193,7 @@ export function calibrateAdmission(opts: {
     {
       type: "peer_cases",
       title: " án lệ hàng mẫu ",
-      detail: `${caseSource}. sử dụng n=${useCases.length}${admitRate!= null? `, cùng trì tỷ số trúng tuyển ước ${(admitRate * 100).toFixed(0)}%`: ""}. chân thật án lệ ưu tiên tại hợp thành cởi mẫn hàng mẫu. `,
+      detail: `${caseSource}. sử dụng n=${useCases.length}${admitRate!= null? `, cùng trì tỷ số trúng tuyển ước ${(admitRate * 100).toFixed(0)}%`: ""}. chân thật án lệ ưu tiên tại hợp thành đã ẩn danh hàng mẫu. `,
       weight: peerReal.length >= 5? " Vừa cao ": realN >= 5? " Vừa ": " thấp ",
     },
     {

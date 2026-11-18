@@ -373,7 +373,7 @@
   function realmHint() {
     var lines = [
       " chữ cái là mũi kiếm. nhớ chuẩn âm tiết, phệ từ người sẽ lui về phía sau. ",
-      " liên kích sử kiếm quang tăng vọt —— trí nhớ chi lực chỉ đáp lại dũng cảm lặp lại. ",
+      " liên kích sử kiếm quang tăng vọt —— sức mạnh ghi nhớ chỉ được tôi luyện qua việc kiên trì lặp lại. ",
       " ngắn từ là đoản kiếm, dài từ là trọng dao. hôm nay bạn lại nhiều dài một cây cầu. ",
       " thay người khác nhớ kỹ một cái từ, sao mảnh sẽ tại lòng bàn tay nhiều ngừng một giây. "
     ];
@@ -823,7 +823,7 @@
       function paintScramble() {
         out.innerHTML = state.scramblePicked.map(function (ch, i) {
           return '<button type="button" class="vl-chip" data-from="out" data-i="' + i + '">' + esc(ch) + "</button>";
-        }).join("") || '<span class="vl-scramble-ph"> chút:điểm chọn chữ cái </span>';
+        }).join("") || '<span class="vl-scramble-ph"> Nhấn chọn chữ cái </span>';
         pool.innerHTML = poolLeft.map(function (ch, i) {
           return '<button type="button" class="vl-chip" data-from="pool" data-i="' + i + '">' + esc(ch) + "</button>";
         }).join("");
@@ -971,7 +971,7 @@
     showModal(
       '<div class="vl-refill">' +
         '<div class="vl-mascot" aria-hidden="true">✦</div>' +
-        "<h2> trí nhớ chi lực đem tán </h2>" +
+        "<h2> Sức mạnh ghi nhớ sắp tiêu tán </h2>" +
         "<p> thần minh cho bạn mượn một lần một lần nữa ngưng tụ —— rót nữa hạ liền muốn lui lại. </p>" +
         '<button type="button" class="vl-btn vl-btn--primary vl-btn--wide" id="vl-refill"> miễn phí một lần nữa ngưng tụ </button>' +
       "</div>"
@@ -1174,7 +1174,7 @@
       var softLine;
       var enemyName = state.battle && state.battle.enemy? state.battle.enemy.name: "";
       if (state.camp) {
-        softLine = " tu luyện cọc gỗ ngã xuống. không đẩy mạnh nội dung cốt truyện, không rơi xuống Trang cổ —— trí nhớ chi lực tăng trưởng. " +
+        softLine = " Cọc gỗ tu luyện đổ xuống. Không đẩy mạnh cốt truyện, không rơi cổ thư —— nhưng điểm ghi nhớ vẫn gia tăng. " +
           (weekly? (" tuần này chủ đề «" + weekly.name + "» thêm vào +" + (weekly.bonusXp || 0) + ". "): "");
       } else if (state.shrineId) {
         var clearLine = "";
@@ -1217,7 +1217,7 @@
               '<p class="vl-levelup__kicker">Memory Power surges</p>' +
               "<h3>Lv." + rpgGain.before.level + " → Lv." + rpgGain.after.level + "</h3>" +
               '<p class="vl-levelup__en">Title: ' + esc(rpgGain.after.title) + "</p>" +
-              '<p class="vl-levelup__zh"> danh xưng đổi mới: ' + esc(rpgGain.after.title) + " · trí nhớ chi lực đáp lại của bạn lặp lại. </p>" +
+              '<p class="vl-levelup__zh"> danh xưng đổi mới: ' + esc(rpgGain.after.title) + " · Sức mạnh ghi nhớ ghi nhận sự kiên trì của bạn. </p>" +
             "</div>";
         }
       }
@@ -1344,7 +1344,7 @@
           ? '<p class="vl-start__guide">' + esc(opts.enterLine) + "</p>"
           : "");
       var startVisual = enemyVisualHTML(enemy);
-      var cta = realmFight? (" Bắt đầu khiêu chiến +" + xpShow + " trí nhớ chi lực "): (" Bắt đầu +" + xpShow + " kinh nghiệm ");
+      var cta = realmFight? (" Bắt đầu khiêu chiến +" + xpShow + " điểm ghi nhớ "): (" Bắt đầu +" + xpShow + " kinh nghiệm ");
       document.getElementById("vl-main").innerHTML =
         '<div class="vl-start">' + startVisual +
           "<h1>" + esc(title) + "</h1>" +
@@ -1390,7 +1390,7 @@
   function startShrine(lex, shrine) {
     var words = padRealmWords(lex, CORE.shrineWords(lex, shrine.id), REALM_WORDS_MIN);
     if (words.length < 4) {
-      fail(" chỗ này từ từ bề ngoài không hoàn chỉnh. ");
+      fail(" Danh sách từ vựng của bài này chưa hoàn chỉnh. ");
       return;
     }
     state.item = null;
@@ -1452,7 +1452,7 @@
         return;
       }
       if (!item.file) {
-        fail(" nên nội dung không có từ bề ngoài văn bản tài liệu. ");
+        fail(" Nội dung này chưa có tệp danh sách từ vựng. ");
         return;
       }
       root.innerHTML = '<div class="vl-loading"> đang chuẩn bị tiểu khóa …</div>';
@@ -1461,7 +1461,7 @@
         return r.text();
       }).then(function (html) {
         var words = parseWordData(html);
-        if (words.length < 4) throw new Error(" không thể Giải thích đáp án từ bề ngoài (cần wordData) ");
+        if (words.length < 4) throw new Error(" Không thể phân tích danh sách từ vựng (cần wordData) ");
         startWithItem(item, words);
       });
     });
@@ -1485,7 +1485,7 @@
       }
       // pilot: chỉ sương mù nguyên chương tiết có thể chiến
       if (shrine.region && shrine.region!== "mist") {
-        fail(" đến tiếp sau chương tiết chưa cởi mở, mời hoàn thành trước sương sớm bình nguyên. ");
+        fail(" Các chương tiếp theo chưa mở, vui lòng hoàn thành Đồng Bằng Sương Sớm trước. ");
         return;
       }
       startShrine(lex, shrine);

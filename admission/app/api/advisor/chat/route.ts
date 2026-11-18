@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     return NextResponse.json(result);
   } catch (e) {
     if (e instanceof z.ZodError) {
-      return NextResponse.json({ error: " tham số không có hiệu quả ", details: e.flatten() }, { status: 400 });
+      return NextResponse.json({ error: " Tham số không hợp lệ ", details: e.flatten() }, { status: 400 });
     }
     console.error(e);
     return NextResponse.json(

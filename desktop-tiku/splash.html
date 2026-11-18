@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Trung tâm Luyện thi Quốc tế YYSD</title>
   <style>
-    html, body { height: 100%; margin: 0; background: #f4f1ea; color: #1c1915; font-family: "Songti SC", "Noto Serif SC", serif; }
+    html, body { height: 100%; margin: 0; background: #f4f1ea; color: #1c1915; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     body { display: flex; align-items: center; justify-content: center; }
     main { width: 420px; text-align: center; }
     h1 { font-size: 22px; font-weight: 600; letter-spacing: 0.08em; margin: 0 0 28px; }
@@ -16,8 +16,8 @@
 </head>
 <body>
   <main>
-    <h1>YYSD Ngân hàng đề trung tâm</h1>
-    <p id="label">hệ thống dự Đang tải </p>
+    <h1>Trung tâm ngân hàng đề thi YYSD</h1>
+    <p id="label">Đang khởi động hệ thống…</p>
     <div class="track"><div class="bar" id="bar"></div></div>
     <button id="retry" hidden type="button">Thử lại</button>
   </main>
@@ -35,7 +35,7 @@
       retry.hidden = false;
     });
     retry.onclick = function () {
-      label.textContent = " hệ thống dự Đang tải ";
+      label.textContent = " Đang khởi động hệ thống… ";
       retry.hidden = true;
       bar.style.width = "0";
       window.yysdSplash.retry();

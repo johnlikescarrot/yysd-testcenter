@@ -1,32 +1,35 @@
-# I-005 — page-premium toàn cục focus-visible
+# I-005 — Chuẩn hóa Vòng Tiêu điểm focus-visible Toàn cục cho page-premium
 
-** Trạng thái: ** done
+**Trạng thái:** Đã hoàn thành
 
-## mục tiêu
+## Mục tiêu
 
- bàn phím Điều hướng tại premium trang có thể thấy được focus hoàn (a11y + phẩm chất cảm giác).
+Hỗ trợ điều hướng bằng bàn phím trên các trang Premium với vòng tiêu điểm hiển thị rõ ràng, sắc nét (nâng cao khả năng tiếp cận a11y và chất lượng hoàn thiện sản phẩm).
 
-## cho phép cải biến
+## Phạm vi Cho phép Thay đổi
 
 - `assets/css/dashboard-premium.css`
 
-## cấm
+## Điều Nghiêm cấm
 
-- sửa `:focus` xóa mouse click outline (chỉ dùng `:focus-visible`)
+- Chỉnh sửa quy tắc `:focus` làm mất đường viền outline khi nhấp chuột (chỉ sử dụng `:focus-visible`)
 
-## thay đổi
+## Các Thay đổi Kỹ thuật
 
 ```css
 .page-premium a:focus-visible,
 .page-premium button:focus-visible,
-.page-premium.minimal-nav a:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(... var(--ring)...); }
+.page-premium .minimal-nav a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-gold) 35%, transparent);
+}
 ```
 
-## nghiệm thu
+## Tiêu chí Nghiệm thu
 
-- dashboard / zone / results: Tab lượt lịch nav và btn
-- con chuột nhấn vào không hiện ra hoàn (:focus-visible)
+- Trên các trang dashboard / zone / results: Dùng phím Tab duyệt qua các liên kết điều hướng và nút bấm.
+- Khi nhấp chuột thông thường: Không làm xuất hiện vòng viền focus (nhờ cơ chế của `:focus-visible`).
 
-## quay về lăn
+## Phương án Rollback
 
- xóa bỏ focus-visible quy tắc khối.
+Xóa bỏ khối quy tắc `focus-visible` mới được thêm vào.

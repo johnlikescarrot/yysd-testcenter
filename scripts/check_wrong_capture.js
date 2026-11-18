@@ -118,6 +118,6 @@ assert(teacherJs.indexOf("data-copy-wrong") >= 0, "teacher wrong list must be co
 console.log("ok: wrong capture");
 console.log("");
 console.log(" hơi nước yếu điểm (thủ công):");
-console.log("1. thượng truyền(*upload) HTML bài tập Nộp bài → Cổng giáo viên « thượng truyền(*upload) bài tập » Xem câu sai có liệt biểu List ");
+console.log("1. tải lên HTML bài tập Nộp bài → Cổng giáo viên « tải lên bài tập » Xem câu sai có liệt biểu List ");
 console.log("2. đề thi thật Đọc Nộp bài (cố ý làm sai) → « Xem câu sai » có câu số / đáp lại / đang giải, có thể phục chế ");
 console.log("3. lịch ngày bố trí practice Nộp bài → « Luyện tập / Tất cả » có thể thấy được mà lại mang câu sai (không phải Quản trị viên Giáo viên) ");

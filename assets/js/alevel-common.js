@@ -106,7 +106,7 @@ window.YYSD_ALEVEL = (function () {
   }
 
   function subjectCardHTML(sub, prefix, boardLabel) {
-    var updated = sub.updatedYear? " đã đổi mới mới đến " + sub.updatedYear + " năm ": " tiếp tục đổi mới Vừa ";
+    var updated = sub.updatedYear? " đã đổi mới mới đến " + sub.updatedYear + " năm ": " Đang tiếp tục cập nhật ";
     var count = sub.paperCount? sub.paperCount + " bộ đề thi thật ": " Sắp ra mắt ";
     var tag = boardLabel || sub.board || "";
     return '<a class="alevel-subject-card pressable" href="' + subjectHref(sub.board, sub.code, prefix) + '">' +
@@ -120,7 +120,7 @@ window.YYSD_ALEVEL = (function () {
   function hubBoardHTML(catalog, boardId, prefix) {
     var board = boardOf(catalog, boardId);
     if (!board ||!board.subjects.length) {
-      return '<div class="soon-box"> nên cuộc thi trong cục cho trù bị Vừa, kính xin đợi. </div>';
+      return '<div class="soon-box"> nên cuộc thi trong cục cho Đang chuẩn bị, kính xin đợi. </div>';
     }
     return '<div class="alevel-subject-grid">' +
       board.subjects.map(function (s) {
@@ -185,7 +185,7 @@ window.YYSD_ALEVEL = (function () {
         '<div class="home-alevel__inner">' +
           '<span class="home-alevel__eyebrow">A-LEVEL PAST PAPERS</span>' +
           "<h2>A-Level thực Ngân hàng đề </h2>" +
-          "<p>CAIE · Edexcel · Oxford AQA đề thi thật trù bị Vừa, kính xin đợi. </p>" +
+          "<p>CAIE · Edexcel · Oxford AQA đề thi thật Đang chuẩn bị, kính xin đợi. </p>" +
           '<a class="btn btn--ghost-dark pressable" href="' + hubHref(p) + '"> hiểu rõ thêm nữa →</a>' +
         "</div></section>";
     }
@@ -216,7 +216,7 @@ window.YYSD_ALEVEL = (function () {
         : p + "alevel.html?board=" + encodeURIComponent(board.id);
       var meta = active
         ? stats.subjects + " kỹ năng · " + stats.papers + " bộ "
-        : " trù bị Vừa ";
+        : " Đang chuẩn bị ";
       return '<a class="' + cls + '" href="' + href + '">' +
         '<span class="home-alevel__board-label">' + Y.esc(board.label) + "</span>" +
         '<span class="home-alevel__board-zh">' + Y.esc(board.labelZh || board.label) + "</span>" +

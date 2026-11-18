@@ -202,7 +202,7 @@ ROWS = [
 ("whatever", "/wɒtˈevə(r)/ · /wɑːtˈevər/", "pron. / det. / adv.",
  "pron. / det. vô luận gì, bất luận cái gì … sự vật (whatever happens; whatever the cost). adv. chút nào (not … whatever). or whatever (mọi việc như thế, Nói). ",
  [" vô luận gì ", " bất luận cái gì ", " mặc kệ gì "],
- "whatever happens (vô luận phát sinh gì), whatever the cost (vô luận một cái giá lớn làm thế nào), or whatever (mọi việc như thế) ",
+ "whatever happens (dù xảy ra chuyện gì), whatever the cost (vô luận một cái giá lớn làm thế nào), or whatever (mọi việc như thế) ",
  "Students should keep a record of sources, whatever the assignment.", " vô luận gì bài tập, Học viên đều nên ghi chép tư liệu nơi phát ra. ",
  "what + ever → vô luận là gì ",
  ["no matter what"], [], " vô luận gì ", " thông dụng "),

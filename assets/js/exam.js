@@ -61,7 +61,7 @@
         var ev = d.event || {};
         item = {
           id: id,
-          title: ev.title || (" thượng truyền(*upload) Luyện tập #" + eventId),
+          title: ev.title || (" Bài tập tải lên #" + eventId),
           zone: "assignment",
           subject: "teacher-upload",
           duration: 0,
@@ -302,7 +302,7 @@
     } else {
       el.innerHTML =
         '<div><h2> Thi thử đã bỏ dở </h2>' +
-        '<p> Đánh giá đến hoán đổi trang web hoặc ly khai cuộc thi cửa sổ, lần này Thi thử không có hiệu quả, không cách nào Tiếp tục đáp lại. </p>' +
+        '<p> Hệ thống phát hiện bạn chuyển tab hoặc rời khỏi cửa sổ thi, bài thi thử này không còn hợp lệ và không thể tiếp tục làm bài. </p>' +
         '<div class="yysd-exam-lock-actions">' +
         '<button type="button" class="yysd-exam-lock-exit"> cưỡng chế Đăng xuất </button>' +
         '<button type="button" class="yysd-exam-lock-restart"> bắt đầu lại </button>' +
@@ -883,11 +883,11 @@
         } catch (err) { /* iframe gone */ }
       }
       if (!window.YYSD_AUTH ||!YYSD_AUTH.getToken ||!YYSD_AUTH.getToken()) {
-        replyGrade({ error: " Vui lòng đăng nhập trước sau lại sử dụng AI phê chữa " });
+        replyGrade({ error: " Vui lòng đăng nhập trước khi sử dụng tính năng AI chấm bài " });
         return;
       }
       if (YYSD_AUTH.isTeacher && YYSD_AUTH.isTeacher()) {
-        replyGrade({ error: " Giáo viên tài khoản mời đang học sinh đầu Dùng thử AI phê chữa " });
+        replyGrade({ error: " Tài khoản Giáo viên vui lòng chuyển sang giao diện học sinh để trải nghiệm AI chấm bài " });
         return;
       }
       YYSD_AUTH.api("/api/ai-tutor/writing-grade", {
@@ -909,7 +909,7 @@
         if (/ hạn mức cao nhất | sử dụng hết | khoản độ /i.test(msg) &&!/ ngày mai | ngày mai /.test(msg)) {
           msg = msg.replace(/[.!!]?$/, "") + ", hẹn gặp lại ngày mai ";
         } else if (/ Giải thích đáp án | thất bại | sau đó /i.test(msg)) {
-          msg = msg.replace(/[.!!]?$/, "") + " — có thể gọi thêm cái nút Thử lại ";
+          msg = msg.replace(/[.!!]?$/, "") + " — có thể nhấn nút Thử lại ";
         }
         replyGrade({ error: msg });
       });

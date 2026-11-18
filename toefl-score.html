@@ -14,7 +14,7 @@
 <body>
 <div class="tf-page">
   <div class="tf-report" id="report"></div>
-  <p class="tf-actions"><button type="button" id="print-btn">đóng dấu / tồn là PDF</button></p>
+  <p class="tf-actions"><button type="button" id="print-btn">In / Lưu dưới dạng PDF</button></p>
 </div>
 
 <script src="assets/js/toefl-lab.js?v=20261020lib2"></script>
@@ -77,9 +77,9 @@
           + SECTIONS.map(function (s) { return col(s, data.best[s], true); }).join("")
           + '</div></div>';
 
-    html += '<p class="tf-est">* bản Bảng điểm là Thi thử dự đoán điểm: chính thức không công bố bài thi mấy và số điểm so sánh bề ngoài, '
-          + ' đương vị theo như bản bộ câu Tỷ lệ đúng tương đương, chỉ cung Luyện tập tham khảo, không có nghĩa là chân thật thành tích cuộc thi. </p>';
-    if (data.empty) html += '<p class="tf-est">còn không có Thi thử ghi chép: hoàn thành trước một bộ Đọc hoặc Nghe Thi thử, Nộp bài sau Bảng điểm sẽ tự động tính gộp lại MyBest. </p>';
+    html += '<p class="tf-est">* Bảng điểm này là điểm số dự đoán từ bài thi thử: do ETS không công bố bảng quy đổi điểm cho từng đề, '
+          + 'điểm số được ước tính theo tỷ lệ đúng tương đương, chỉ dùng làm tài liệu tham khảo khi luyện tập, không đại diện cho điểm thi chính thức. </p>';
+    if (data.empty) html += '<p class="tf-est">Chưa có lịch sử làm bài thi thử: sau khi bạn hoàn thành một đề thi thử Đọc hoặc Nghe và nộp bài, hệ thống sẽ tự động tổng hợp điểm MyBest®. </p>';
 
     document.getElementById("report").innerHTML = html;
   }

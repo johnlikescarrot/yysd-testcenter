@@ -10,12 +10,12 @@
 </head>
 <body class="home-minimal teacher-page">
   <main class="minimal-shell minimal-main" style="max-width:880px">
-    <p><a href="platform.html"> Quay lại bàn điều khiển</a></p>
+    <p><a href="platform.html"> Quay lại bảng điều khiển</a></p>
     <h1>Mã kích hoạt</h1>
     <p id="switch-line"></p>
     <p>
-      <button type="button" id="switch-on" class="btn btn--primary">mở ra tổng chốt mở</button>
-      <button type="button" id="switch-off" class="btn">Đóng tổng chốt mở</button>
+      <button type="button" id="switch-on" class="btn btn--primary">Bật công tắc tổng</button>
+      <button type="button" id="switch-off" class="btn">Tắt công tắc tổng</button>
     </p>
     <p class="auth-msg" id="msg"></p>
     <form id="create" class="auth-form">
@@ -23,9 +23,9 @@
         <select id="role"><option value="student">Học viên</option><option value="teacher">Giáo viên</option></select>
       </label>
       <label class="auth-field"><span> Số điện thoại </span>
-        <input id="phone" inputmode="numeric" maxlength="11" placeholder="lão người sử dụng tất điền, mới người sử dụng lưu chỗ trống">
+        <input id="phone" inputmode="numeric" maxlength="11" placeholder="Người dùng cũ bắt buộc điền, người dùng mới để trống">
       </label>
-      <button class="btn btn--primary" type="submit">tạo ra Mã kích hoạt</button>
+      <button class="btn btn--primary" type="submit">Tạo mã kích hoạt</button>
     </form>
     <div id="list"></div>
   </main>
@@ -37,18 +37,18 @@
     function load() {
       A.api("/api/platform/seats").then(function (d) {
         document.getElementById("switch-line").textContent = d.on
-          ? " tổng chốt mở đã mở ra: Học viên và Giáo viên chỉ có thể dùng cơ khảo thi trình tự. "
-          : " tổng chốt mở giam giữ: trình duyệt nhưng có thể Đăng nhập. trình tự dặm Đăng nhập thành công sẽ khóa lại máy vi tính này. ";
-        var html = "<table><tr><th>con ngựa</th><th>Vai trò</th><th>Số điện thoại</th><th>máy tính</th><th>Trạng thái</th><th></th></tr>";
+          ? " Công tắc tổng đang BẬT: Học viên và giáo viên chỉ có thể sử dụng ứng dụng thi trên máy tính. "
+          : " Công tắc tổng đang TẮT: Vẫn có thể đăng nhập trên trình duyệt. Khi đăng nhập trên ứng dụng thi, thiết bị sẽ được liên kết cố định. ";
+        var html = "<table><tr><th>Mã kích hoạt</th><th>Vai trò</th><th>Số điện thoại</th><th>Thiết bị</th><th>Trạng thái</th><th></th></tr>";
         (d.seats || []).forEach(function (s) {
           html += "<tr><td>" + s.code + "</td><td>" + (s.role === "teacher"? " Giáo viên ": " Học viên ") +
-            "</td><td>" + (s.phone || " chỗ trống ") + "</td><td>" + (s.device_key? " đã khóa lại ": " không khóa lại ") +
-            "</td><td>" + (s.disabled? " Tạm ngưng ": " có thể dùng ") + "</td><td>" +
-            "<button data-act='unbind' data-id='" + s.id + "'>giải trừ</button> " +
+            "</td><td>" + (s.phone || " Trống ") + "</td><td>" + (s.device_key? " Đã liên kết ": " Chưa liên kết ") +
+            "</td><td>" + (s.disabled? " Đã tạm dừng ": " Khả dụng ") + "</td><td>" +
+            "<button data-act='unbind' data-id='" + s.id + "'>Hủy liên kết</button> " +
             (s.disabled
-              ? "<button data-act='enable' data-id='" + s.id + "'>khôi phục</button> "
-              : "<button data-act='disable' data-id='" + s.id + "'>Tạm ngưng</button> ") +
-            "<button data-act='password' data-id='" + s.id + "'>thiết Mật khẩu</button></td></tr>";
+              ? "<button data-act='enable' data-id='" + s.id + "'>Khôi phục</button> "
+              : "<button data-act='disable' data-id='" + s.id + "'>Tạm dừng</button> ") +
+            "<button data-act='password' data-id='" + s.id + "'>Đặt mật khẩu</button></td></tr>";
         });
         document.getElementById("list").innerHTML = html + "</table>";
       }).catch(function (e) { show(e.message); });
@@ -72,10 +72,10 @@
       var id = btn.getAttribute("data-id");
       var act = btn.getAttribute("data-act");
       if (act === "password") {
-        var password = window.prompt(" Mật khẩu mới (Tối thiểu 6 ký tự) ");
+        var password = window.prompt("Nhập mật khẩu mới (tối thiểu 6 ký tự):");
         if (!password) return;
         A.api("/api/platform/seats/" + id + "/password", { method: "POST", body:  password  })
-          .then(function () { show(" Mật khẩu đã thiết trí "); }).catch(function (e) { show(e.message); });
+          .then(function () { show("Mật khẩu đã được thiết lập thành công."); }).catch(function (e) { show(e.message); });
         return;
       }
       A.api("/api/platform/seats/" + id + "/" + act, { method: "POST", body: {} })

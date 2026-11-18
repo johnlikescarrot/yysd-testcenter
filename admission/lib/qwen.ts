@@ -39,7 +39,7 @@ export async function qwenChat(
     throw new Error(data?.error?.message || "DashScope Yêu cầu thất bại ");
   }
   const content = data?.choices?.[0]?.message?.content;
-  if (content == null || content === "") throw new Error("AI Quay lại là chỗ trống ");
+  if (content == null || content === "") throw new Error("Dữ liệu phản hồi từ AI bị trống ");
   return typeof content === "string"? content: JSON.stringify(content);
 }
 
@@ -65,7 +65,7 @@ export async function qwenEmbed(text: string): Promise<number[]> {
     throw new Error(data?.error?.message || "Embedding Yêu cầu thất bại ");
   }
   const emb = data?.data?.[0]?.embedding;
-  if (!Array.isArray(emb)) throw new Error("Embedding Quay lại là chỗ trống ");
+  if (!Array.isArray(emb)) throw new Error("Dữ liệu Embedding từ AI bị trống ");
   return emb as number[];
 }
 

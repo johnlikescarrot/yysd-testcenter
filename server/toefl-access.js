@@ -1,7 +1,7 @@
 "use strict";
 /**
  * TOEFL trao quyền — Khu luyện tập (scope=practice) + Gói tăng tốc trước kỳ thi (scope=package:< cuốn id>).
- * Quản trị viên đại lượng mở / màn; Giáo viên hạn chính mình danh hạ đệ tử bắt đầu thi vọt tới trước đâm bao.
+ * Quản trị viên đại lượng mở / màn; Giáo viên hạn học viên thuộc quyền quản lý của mình bắt đầu thi vọt tới trước đâm bao.
  * lối vào chỉ phụ trách biểu hiện Khóa thái; có thể hay không tiến dùng bản module /api/toefl/access và /api/toefl/exam-start làm chuẩn.
  * thư thả lời nói nghĩa: Thi thử màn ngừng / đến kỳ lúc, đã mở khảo thi Chưa hoàn thành buổi diễn 24h bên trong có thể trở về thi xong, không cắt ngang đang tiến hành đáp lại.
  */
@@ -112,13 +112,13 @@ function mountRoutes(app, deps) {
   var db = deps.db;
   ensureSchema(db);
 
-  // practice hoặc package:< đã lên khung(vào VIP) full/single cuốn >; bao id thống nhất đi hq- tiền tố
+  // practice hoặc package:< đã phát hành full/single cuốn >; bao id thống nhất đi hq- tiền tố
   function scopeInfo(scope) {
     scope = String(scope || "practice").trim();
     if (scope === "practice") return { scope: "practice" };
     if (scope.indexOf(PKG_PREFIX) === 0) {
       var p = deps.tiku.resolvePackage(db, scope.slice(PKG_PREFIX.length));
-      if (!p) return { error: " Không tìm thấy này Gói tăng tốc trước kỳ thi (khả năng còn chưa lên khung) " };
+      if (!p) return { error: " Không tìm thấy gói luyện thi cấp tốc này (có thể chưa được phát hành) " };
       return { scope: PKG_PREFIX + p.id, packageId: p.id };
     }
     return { error: " không biết phạm vi " };
@@ -194,7 +194,7 @@ function mountRoutes(app, deps) {
   // đã mở khảo thi Chưa hoàn thành phục dùng nguyên started_at (phòng thư thả vô hạn lăn); hoàn thành trôi qua một lần nữa tính theo thời gian.
   app.post("/api/toefl/exam-start", deps.authMiddleware, function (req, res) {
     var info = scopeInfo(PKG_PREFIX + String((req.body && req.body.packageId) || ""));
-    if (info.error ||!info.packageId) return res.status(404).json({ error: " bộ này Thi thử còn chưa lên khung " });
+    if (info.error ||!info.packageId) return res.status(404).json({ error: " Bộ đề thi thử này chưa được phát hành " });
     if (req.user.role === "teacher" || deps.isOrgAdminReq(req)) return res.json({ ok: true, staff: true });
     var now = Date.now();
     var grant = db.prepare("SELECT * FROM toefl_grants WHERE user_id =? AND scope =?").get(req.user.sub, info.scope);
@@ -238,7 +238,7 @@ function mountRoutes(app, deps) {
     res.json({ ok: true, packages: deps.tiku.listPackages(db) });
   });
 
-  // Quản trị viên đầu: trước mắt trao quyền đài sổ sách (hàm Trạng thái, lối vào không cần chính mình tính thời gian). scope= hoặc scopes= dấu phẩy đại lượng
+  // Quản trị viên đầu: trước mắt trao quyền đài sổ sách (hàm Trạng thái, lối vào không cần tự tính thời gian). scope= hoặc scopes= dấu phẩy đại lượng
   app.get("/api/admin/grants", deps.adminAuthMiddleware, function (req, res) {
     var rs = resolveScopes(splitScopes(req.query.scopes!= null? req.query.scopes: req.query.scope));
     if (rs.error) return res.status(400).json({ error: rs.error });
@@ -254,7 +254,7 @@ function mountRoutes(app, deps) {
     var rs = resolveScopes(rawScopes);
     if (rs.error) return res.status(400).json({ error: rs.error });
     var ids = (Array.isArray(body.studentIds)? body.studentIds: []).map(Number).filter(Boolean);
-    if (!ids.length) return res.status(400).json({ error: " mời trước phác thảo chọn Học viên " });
+    if (!ids.length) return res.status(400).json({ error: " Vui lòng chọn học viên trước " });
     if (ids.length > 500) return res.status(400).json({ error: " một lần tối đa 500 người " });
     var win = validateGrantWindow(body);
     if (win.error) return res.status(400).json({ error: win.error });

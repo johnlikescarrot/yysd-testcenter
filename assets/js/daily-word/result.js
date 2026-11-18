@@ -54,7 +54,7 @@
     lines.push(" nắm giữ dẫn đầu: " + rate + "% (nắm giữ " + mastered + " / " + total + ") ");
     lines.push(" thời gian sử dụng: " + fmtTime(r.elapsedSec));
     lines.push("");
-    lines.push(" phát âm bạc nhược yếu kém từ: " + ((r.weakSpeak && r.weakSpeak.length)? r.weakSpeak.join(", "): " Không "));
+    lines.push(" Các từ phát âm còn yếu: " + ((r.weakSpeak && r.weakSpeak.length)? r.weakSpeak.join(", "): " Không "));
     lines.push(" Chính tả Dễ từ sai: " + ((r.weakSpell && r.weakSpell.length)? r.weakSpell.join(", "): " Không "));
     lines.push(" Giải nghĩa Dễ từ sai: " + ((r.weakMeaning && r.weakMeaning.length)? r.weakMeaning.join(", "): " Không "));
     lines.push("");
@@ -195,17 +195,17 @@
           '<div class="dw-stats">' +
             '<div class="dw-stat"><div class="dw-stat__n">' + total + '</div><div class="dw-stat__l"> hôm nay Học tập </div></div>' +
             '<div class="dw-stat"><div class="dw-stat__n">' + rate + '%</div><div class="dw-stat__l"> nắm giữ dẫn đầu </div></div>' +
-            '<div class="dw-stat"><div class="dw-stat__n">' + speakN + '</div><div class="dw-stat__l"> phát âm bạc nhược yếu kém </div></div>' +
+            '<div class="dw-stat"><div class="dw-stat__n">' + speakN + '</div><div class="dw-stat__l"> Phát âm cần cải thiện </div></div>' +
             '<div class="dw-stat"><div class="dw-stat__n">' + (spellN + meaningN) + '</div><div class="dw-stat__l"> Chính tả / Giải nghĩa yếu </div></div>' +
           "</div>" +
-          '<div class="dw-weak"><h3> phát âm bạc nhược yếu kém từ </h3><ul>' + listHtml(r.weakSpeak) + "</ul></div>" +
+          '<div class="dw-weak"><h3> Các từ phát âm cần cải thiện </h3><ul>' + listHtml(r.weakSpeak) + "</ul></div>" +
           '<div class="dw-weak"><h3> Chính tả Dễ từ sai </h3><ul>' + listHtml(r.weakSpell) + "</ul></div>" +
           '<div class="dw-weak"><h3> Giải nghĩa Dễ từ sai </h3><ul>' + listHtml(r.weakMeaning) + "</ul></div>" +
           '<div class="dw-weak"><h3> hôm nay Từ vựng rõ ràng chi tiết </h3>' + wordsTable() + "</div>" +
-          '<p class="dw-report__foot"> mời Lưu hoặc phát bản báo cáo nhanh cho Giáo viên </p>' +
+          '<p class="dw-report__foot"> Vui lòng lưu hoặc gửi báo cáo nhanh cho Giáo viên </p>' +
         "</div>" +
         '<div class="dw-result-actions no-print">' +
-          '<button type="button" class="dw-btn dw-btn--primary" id="dw-copy"> phục chế báo cáo nhanh cho Giáo viên </button>' +
+          '<button type="button" class="dw-btn dw-btn--primary" id="dw-copy"> Sao chép báo cáo nhanh gửi Giáo viên </button>' +
           '<button type="button" class="dw-btn dw-btn--ghost" id="dw-download"> download TXT báo cáo </button>' +
           '<button type="button" class="dw-btn dw-btn--ghost" id="dw-print"> đóng dấu / tồn PDF</button>' +
           '<a class="dw-btn dw-btn--ghost" href="daily-word-setup.html"> lại học một tổ </a>' +

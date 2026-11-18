@@ -121,7 +121,7 @@
       ids.push(Number(cb.value));
     });
     if (!ids.length) {
-      showErr(new Error(" mời trước phác thảo chọn câu sai "));
+      showErr(new Error(" Vui lòng chọn câu sai trước "));
       return;
     }
     A.api("/api/diagnostic/mistakes/retest", { method: "POST", body: { ids: ids } })

@@ -313,7 +313,7 @@ const TEST = {
           instruction:'Choose the correct letter, A, B or C.',
           questions:[
             {id:'L13',no:13,q:`How much does childcare cost for a complete afternoon session per child?`,options:{A:`3.50`,B:`5.70`,C:`7.20`},answer:['C'],explain:` Đáp án: C — mỗi người buổi chiều toàn trường £7.20. `},
-            {id:'L14',no:14,q:`What does the manager say about food?`,options:{A:`Children with allergies should bring their own food.`,B:`Children may bring healthy snacks with them.`,C:`Children are given a proper meal at 5 p.m.`},answer:['C'],explain:` Đáp án: C — buổi chiều 5 chút:điểm cung cấp bữa ăn chính. `},
+            {id:'L14',no:14,q:`What does the manager say about food?`,options:{A:`Children with allergies should bring their own food.`,B:`Children may bring healthy snacks with them.`,C:`Children are given a proper meal at 5 p.m.`},answer:['C'],explain:` Đáp án: C — buổi chiều 5 giờ cung cấp bữa ăn chính. `},
             {id:'L15',no:15,q:`What is different about arrangements in the school holidays?`,options:{A:`Children from other schools can attend.`,B:`Older children can attend.`,C:`A greater number of children can attend.`},answer:['A'],explain:` Đáp án: A — trường học khác hài tử cũng có thể tham gia. `},
           ]},
         { kind:'match', title:'Questions 16–20', audioStart:242.2, audioEnd:422.2,
@@ -483,7 +483,7 @@ function groupHtml(g){
   else if(g.kind==='map'){
     const letters=g.letters||['A','B','C','D','E','F','G','H','I'];
     const inner=g.svg?g.svg:`<img class="map-img" src="${g.image}" alt="${g.mapTitle||'map'}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">` +
-      `<div class="map-missing" style="display:none;">📍 Bản đồ hình ảnh nghỉ ngơi truyền: xin đem trên sách tấm bản đồ này chia Giáo viên, thượng truyền(*upload) về sau chỗ sẽ biểu hiện Bản đồ, là được so sánh đáp lại. </div>`;
+      `<div class="map-missing" style="display:none;">📍 Bản đồ hình ảnh nghỉ ngơi truyền: xin đem trên sách tấm bản đồ này chia Giáo viên, tải lên về sau chỗ sẽ biểu hiện Bản đồ, là được so sánh đáp lại. </div>`;
     const img=`<div class="map-wrap">${g.mapTitle?`<div class="note-title">${g.mapTitle}</div>`:''}${inner}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
     const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel(q.id)}</div>`).join('');
@@ -504,7 +504,7 @@ function setupTimer(){
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* âm tần (chân thật văn bản tài liệu, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
+/* âm tần (tệp âm thanh thực tế, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }

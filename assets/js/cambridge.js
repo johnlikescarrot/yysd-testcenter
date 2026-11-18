@@ -28,7 +28,7 @@
   var backHref = skillFilter
     ? "zone.html?zone=mock&s=" + encodeURIComponent(skillFilter.key)
     : "zone.html?zone=mock&s=mock";
-  var backLabel = skillFilter? skillFilter.name + " Luyện theo thứ tự ": " bộ câu Thi thử ";
+  var backLabel = skillFilter? skillFilter.name + " Luyện theo thứ tự ": " Thi thử trọn bộ ";
 
   var backLink = document.querySelector(".minimal-back__link");
   if (backLink) {
@@ -94,10 +94,10 @@
 
     var metaLine = skillFilter
       ? " thi đơn Luyện theo thứ tự · chỉ " + skillFilter.name
-      : " Đề thi chính thức bộ cuốn · lựa chọn Test Bắt đầu bộ câu Thi thử ";
+      : " Bộ đề thi chính thức · Chọn Test để bắt đầu thi thử trọn bộ ";
     var hint = skillFilter
       ? " lựa chọn một bộ Test, Vào học cơ khảo thi giao diện sau lựa chọn « Luyện tập » hoặc « Thi thử » (giao diện giống nhau, chỉ quy tắc bất đồng). "
-      : " lựa chọn một bộ Test, theo như Nghe → Đọc → Viết trình tự hoàn thành bộ câu Thi thử toàn phần. ";
+      : " Chọn một bài Test, hoàn thành thi thử toàn phần theo thứ tự Nghe → Đọc → Viết. ";
 
     var hero = '<div class="cam-hero cam-hero--' + accent + '">' +
       '<div class="cam-hero__badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">' + Y.esc(vol) + "</div></div>" +

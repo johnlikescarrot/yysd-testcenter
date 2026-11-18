@@ -16,15 +16,15 @@ export function middleware(req: NextRequest) {
   const accept = req.headers.get("accept") || "";
   if (accept.includes("application/json") || req.nextUrl.pathname.includes("/api/")) {
     return NextResponse.json(
-      { error: "AI học lên cố vấn tạm chỉ đối với YYSD cởi mở " },
+      { error: "AI tư vấn du học tạm thời chỉ dành cho YYSD " },
       { status: 403 }
     );
   }
 
   return new NextResponse(
-    `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title> tạm không cởi mở </title></head>
+    `<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><title> Tạm thời chưa mở </title></head>
 <body style="font-family:system-ui;padding:48px;text-align:center;color:#334155">
-  <h1 style="font-size:1.25rem">AI học lên cố vấn tạm chỉ đối với YYSD cởi mở </h1>
+  <h1 style="font-size:1.25rem">AI tư vấn du học tạm thời chỉ dành cho YYSD </h1>
   <p style="margin-top:12px"><a href="/"> Về trang chủ </a></p>
 </body></html>`,
     { status: 403, headers: { "content-type": "text/html; charset=utf-8" } }

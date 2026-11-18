@@ -34,7 +34,7 @@
       var empty =!b.subjects ||!b.subjects.length;
       return '<button type="button" class="alevel-board-tab' + (active? " is-active": "") +
         (empty? " is-soon": "") + '" data-board="' + Y.esc(b.id) + '"' +
-        (empty? ' disabled title=" trù bị Vừa "': "") + ">" +
+        (empty? ' disabled title=" Đang chuẩn bị "': "") + ">" +
         Y.esc(b.labelZh || b.label) + "</button>";
     }).join("");
 
@@ -42,7 +42,7 @@
       '<div class="alevel-board-tabs" role="tablist">' + tabs + "</div>" +
       '<div class="alevel-board-heading"><span class="subject-dot"></span><h2>' + Y.esc(boardLabel) + "</h2></div>" +
       A.hubBoardHTML(catalog, board, "") +
-      '<p class="alevel-footnote"> Giải thích đáp án và từng bước Giải thích chi tiết đem ở phía sau tục phiên bản cởi mở trả tiền giải tỏa; trước mắt đề thi thật và Mark Scheme đều có thể miễn phí sử dụng. </p>';
+      '<p class="alevel-footnote"> Lời giải chi tiết và hướng dẫn từng bước sẽ được mở trong các phiên bản tiếp theo; hiện tại đề thi thật và Mark Scheme đều có thể sử dụng miễn phí. </p>';
   }
 
   contentEl.addEventListener("click", function (e) {

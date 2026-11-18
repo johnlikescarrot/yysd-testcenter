@@ -253,7 +253,7 @@ function mountRoutes(app, opts) {
     var body = req.body || {};
     var listNo = Number(body.list_no);
     var passed =!!body.passed;
-    if (!listNo || listNo < 1) return res.status(400).json({ error: " không có hiệu quả Bài số " });
+    if (!listNo || listNo < 1) return res.status(400).json({ error: " Số bài học không hợp lệ " });
     insertMistakes(req.user.sub, "unit:" + listNo, body.mistakes || []);
     if (passed) {
       stmts.upsertUnitClear.run(req.user.sub, listNo, new Date().toISOString());

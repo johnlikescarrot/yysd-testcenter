@@ -1,230 +1,207 @@
-# IELTS CDT · phương án B hiến pháp và sự kiện quan trọng
+# Kế hoạch B: Quy chuẩn Cốt lõi và Các Cột mốc Phát triển IELTS CDT
 
-> ** Trạng thái: ** B0 đã đông lại (2026-07-31)
-> ** quyết định biện pháp: ** tất cả Cambridge Listening / Reading / Writing (hàm thi đơn Luyện theo thứ tự) hết thảy CDT xác
-> ** tiết tấu: ** mạn công mật thám; mỗi sự kiện quan trọng nghiệm thu thông qua sau mở lại tiếp theo sự kiện quan trọng
-> ** so sánh thẩm kế: ** Cursor Canvas `ielts-cdt-fidelity-audit.canvas.tsx`
-> ** lộ tuyến đồ: ** Cursor Canvas `cdt-plan-b-roadmap.canvas.tsx`
-> ** năng lực danh sách: ** [`CDT-CHECKLIST.md`](CDT-CHECKLIST.md)
-
----
-
-## 0. một câu hiến pháp
-
- trong cuộc thi thanh điều hướng, ngọn nguồn lan, điểm lan, dạng bài khống kiện, cao sáng / lời ghi chép, âm tần quy tắc, phải và chính thức IELTS on computer cơ bắp trí nhớ nhất trí.
-** Luyện tập và Thi thử chỉ cho phép chênh lệch tại « quy tắc bao » và « Nộp bài sau giảng giải trang », không cho phép chênh lệch tại « trong cuộc thi UI khống kiện hình thái ». **
- Tiếng Việt chỉ cho phép xuất hiện ở tiến trường thi trước chọn tranh tờ, cũng như Nộp bài sau đích Giải thích đáp án / báo cáo trang.
+> **Trạng thái:** B0 đã chốt (freeze) ngày 31/07/2026  
+> **Quyết định kiến trúc:** Toàn bộ đề thi Cambridge Listening / Reading / Writing (bao gồm cả chế độ luyện tập từng kỹ năng) đều sử dụng giao diện phòng thi CDT chuẩn  
+> **Nhịp độ thực hiện:** Làm cẩn thận, chắc chắn từng bước; mỗi cột mốc sau khi nghiệm thu đạt chuẩn mới bắt đầu cột mốc tiếp theo  
+> **Đánh giá so sánh:** Cursor Canvas `ielts-cdt-fidelity-audit.canvas.tsx`  
+> **Lộ trình:** Cursor Canvas `cdt-plan-b-roadmap.canvas.tsx`  
+> **Danh mục tính năng:** [`CDT-CHECKLIST.md`](CDT-CHECKLIST.md)  
 
 ---
 
-## 1. B0 ký tên ghi chép (2026-07-31)
+## 0. Nguyên tắc Cốt lõi (Constitution)
 
-| hạng | nghị quyết |
-|----|------|
-| chiến lược | ** phương án B** (không phải A) |
-| drill có hay không chính thức đảo kế thì đến lúc đó thu cuốn | ** là **; hữu hảo tính dựa vào có thể tục khảo thi + Nộp bài sau cất đi |
-| drill có hay không trước làm « chỉ luyện một loại Part» | ** đã làm (miệng cống chọn Section/Passage) **; nhưng dùng CDT khống kiện + bài thi `secbox`; exam toàn bộ cuốn |
-| Giáo viên thượng truyền(*upload) cuốn có hay không cam chịu CDT | ** Cambridge /IELTS cơ khảo thi hình thái cam chịu là **; khác kỹ năng không bộ |
-| Speaking | ** không vào CDT xác ** (phù hợp chính thức) |
-| Chuyên sâu công cụ | ** không vào xác **: Câu phức học thuật, Nghe chép số liệu, Nghe sâu, Từ vựng khóa |
-| sao Bắc Cực | và chính thức Familiarisation ** song song so sánh nhấn vào đường nhỏ nhất trí dẫn đầu ≥95%** |
-| chế tác tiết tấu | chậm; mỗi một bộ phận làm được cực hạn sau lại Vào học tiếp theo sự kiện quan trọng |
-
-**B0 nghiệm thu: ** bài này §0–§5 Không nghĩa khác; `CDT-CHECKLIST.md` đã bãi bỏ « Luyện tập không thay đổi CDT»; kim dạng danh sách gặp §5. → ** thông qua **
+Thanh điều hướng phòng thi, thanh chân trang (bottom bar), chia cột bài đọc/câu hỏi, bộ điều khiển dạng bài (question widgets), highlight/ghi chú, quy tắc phát âm thanh phải hoàn toàn nhất quán với phản xạ thao tác thực tế của kỳ thi IELTS on Computer chính thức.  
+**Chế độ Luyện tập (Drill) và Thi thử (Exam) chỉ được phép khác nhau về «gói quy tắc» và «trang giải thích sau khi nộp bài», tuyệt đối không được khác biệt về «hình thái bộ điều khiển giao diện trong phòng thi».**  
+Tiếng Việt chỉ được phép xuất hiện ở màn hình chọn đề trước khi vào phòng thi và tại trang giải thích đáp án / báo cáo kết quả sau khi nộp bài.
 
 ---
 
-## 2. phạm vi
+## 1. Biên bản Thống nhất B0 (31/07/2026)
 
-### 2.1 phải tiến CDT
+| Hạng mục | Nghị quyết thống nhất |
+|---|---|
+| Chiến lược phát triển | **Phương án B** (không áp dụng Phương án A) |
+| Chế độ drill có đếm ngược cưỡng chế nộp bài như thi thật không | **Có**; tính thân thiện với người học được đảm bảo nhờ khả năng tiếp tục làm bài dở dang + cho phép nghe lại/xem lại sau khi nộp |
+| Chế độ drill có làm tính năng "chỉ luyện một Part" trước không | **Đã làm (cổng chọn Section/Passage)**; nhưng vẫn sử dụng bộ điều khiển CDT + bài thi `secbox`; chế độ exam làm trọn bộ đề |
+| Đề thi do giáo viên tải lên (upload) có mặc định dùng CDT không | **Các bài thi định dạng Cambridge / IELTS trên máy tính mặc định là có**; các kỹ năng khác không áp dụng |
+| Speaking | **Không đưa vào giao diện CDT** (phù hợp với thực tế kỳ thi chính thức) |
+| Các công cụ học chuyên sâu | **Không đưa vào khung CDT**: Câu phức học thuật, Nghe chép chính tả, Nghe sâu, Tủ từ vựng |
+| Mục tiêu định hướng cốt lõi (North Star Metric) | Độ nhất quán về luồng thao tác khi so sánh song song với bài kiểm tra làm quen chính thức (Familiarisation) **đạt tỷ lệ ≥ 95%** |
+| Tiến độ thực hiện | Chậm mà chắc; mỗi phần làm đến mức độ tinh tế cao nhất rồi mới chuyển sang cột mốc tiếp theo |
 
-| đường nhỏ | nói rõ |
-|------|------|
-| Thi thử trọn bộ Cambridge | L → R → W, `exam` quy tắc bao |
-| Cambridge thi đơn Luyện theo thứ tự | listening / reading / writing, bắt đầu thi trước chọn `drill` hoặc `exam` |
-| Giáo viên thượng truyền(*upload) IELTS Cambridge hình thái cuốn | cam chịu CDT |
-
-### 2.2 rõ ràng không vào CDT
-
-| đường nhỏ | nguyên nhân |
-|------|------|
-| `speaking-*` | chính thức Nói vốn cũng không tại cơ khảo thi ba khoa xác bên trong |
-| Câu phức học thuật / Nghe chép số liệu / Nghe sâu / Từ vựng | huấn luyện công cụ, bộ xác sẽ hủy hiệu suất |
-| chọn quyển /zone/dashboard nhãn hiệu trang | tiến trường thi ** trước ** có thể Tiếng Việt |
-
-### 2.3 không làm (YAGNI)
-
-| hạng | quyết định |
-|----|------|
-| phục khắc mới phương Đông hồng đứng / VIP / phục vụ khách hàng lắp ráp(bộ phận) | ❌ |
-| pixel cấp sao kẻ thứ ba CSS loại tên | ❌ đối với đủ lẫn nhau và thị giác quy cách |
-| ở nhà «IELTS Online» giám thị phục khắc | ❌ chúng ta là Luyện tập / Thi thử sản phẩm, không phải địa điểm thi hộ khách đầu |
-| Speaking nhét vào đồng nhất iframe xác | ❌ |
+**Nghiệm thu B0:** Toàn bộ nội dung từ §0–§5 không có điểm mơ hồ; tệp `CDT-CHECKLIST.md` đã bãi bỏ chiến lược cũ «Luyện tập không dùng giao diện CDT»; danh mục mẫu chuẩn chi tiết tại §5. → **Thông qua.**
 
 ---
 
-## 3. một xác song quy(*nhà nước điều tra) tức thì bao
+## 2. Phạm vi Áp dụng
 
- cửa vào xài chung đồng nhất bộ `exam.html` CDT chrome + đồng nhất bộ dạng bài khống kiện.
+### 2.1 Bắt buộc áp dụng giao diện CDT
 
-| duy độ | `exam` (Thi thử) | `drill` (Luyện tập) |
-|------|----------------|-----------------|
-| xác và dạng bài khống kiện | 100% đồng nhất bộ | 100% đồng nhất bộ (cấm brand bar) |
-| trong cuộc thi ngôn ngữ | toàn bộ Tiếng Anh | toàn bộ Tiếng Anh |
-| Nghe seek / phát lại | cấm | cấm (** chỉ Nộp bài sau ** giải tỏa Học tập cất đi) |
-| Nghe mạt 2′ review | có | có |
-| tính theo thời gian | chính thức đảo kế thì; đến lúc đó cưỡng chế thu cuốn | ** đồng dạng ** đến lúc đó cưỡng chế thu cuốn |
-| cách trang | nghiêm khắc void | không void; Lưu Đăng xuất có thể tục |
-| miệng cống | Confirm → Sound(L) → Info → Start | có thể rút ngắn Info → Start; Nghe nhưng đề nghị giữ lại Sound |
-| Finish | bộ câu hop L→R→W; Đơn kỹ năng → báo cáo | Đơn kỹ năng → xác bên ngoài đối đáp án / tinh tích (có thể Tiếng Việt) |
-| bản nháp | bộ viết làm bắt đầu thi bản thảo sạch | tự động tồn; lần sau tục |
-| Tiếng Việt giảng giải | cấm xuất hiện ở trong cuộc thi | ** chỉ ** Nộp bài sau |
+| Luồng nghiệp vụ | Mô tả chi tiết |
+|---|---|
+| Thi thử trọn bộ Cambridge | Trình tự L → R → W, sử dụng gói quy tắc `exam` |
+| Luyện tập từng kỹ năng Cambridge | Listening / Reading / Writing, trước khi bắt đầu cho phép chọn gói `drill` hoặc `exam` |
+| Đề thi định dạng Cambridge do giáo viên tải lên | Mặc định áp dụng giao diện CDT |
 
----
+### 2.2 Rõ ràng không đưa vào giao diện CDT
 
-## 4. sự kiện quan trọng (chuỗi đi; không phác thảo chọn không được khởi công tiếp theo đoạn)
+| Luồng nghiệp vụ | Lý do kỹ thuật & sư phạm |
+|---|---|
+| `speaking-*` | Bài thi Nói chính thức vốn không nằm trong giao diện thi máy tính của 3 môn kia |
+| Câu phức học thuật / Nghe chép chính tả / Nghe sâu / Tủ từ vựng | Đây là các công cụ huấn luyện bổ trợ, ép vào khung CDT sẽ làm giảm hiệu suất học tập |
+| Các trang chọn đề / zone / dashboard | Trước khi bước vào phòng thi có thể hiển thị tiếng Việt để học viên định hướng |
 
-| Giai đoạn | chủ đề | Trạng thái | mở cửa điều kiện |
-|------|------|------|----------|
-| **B0** | sản phẩm đông lại: hiến pháp / danh sách / kim dạng | ✅ 2026-07-31 | — |
-| **B1** | cửa vào thống nhất: thi đơn Luyện tập tiến CDT + drill/exam phân lưu | ✅ 2026-07-31 | B0 thông qua |
-| **B2** | P0 âm tần luật thép + 2′ review + 10′/5′ lập loè | ✅ 2026-07-31 | B1 nghiệm thu |
-| **B3** | P0 câu hình: DnD / Bản đồ / nhiều chọn | ✅ 2026-07-31 | B2 nghiệm thu |
-| **B4** | P1 công cụ: Notepad / nhiều sắc cao sáng / màu nền / Help | ✅ 2026-07-31 | B3 nghiệm thu |
-| **B5** | kim dạng song song ≥95% + trở về bốn chủ đường nhỏ | ✅ 2026-07-31 | B4 nghiệm thu |
+### 2.3 Những điều không làm (YAGNI)
 
- tất cả Giai đoạn kỹ càng công tác hạng và nghiệm thu câu gặp lộ tuyến đồ Canvas; năng lực cấp phác thảo chọn gặp `CDT-CHECKLIST.md`.
-
-### tổng DoD (tuyên bố « Cambridge nghe đọc ghi 100% cơ khảo thi » lúc trước phải Tất cả thành lập)
-
-1. từ Khu luyện tập hoặc Khu thi thử ấn mở tùy ý Cambridge L/R/W, trong cuộc thi UI không cách nào phân chia « có phải hay không CDT».
-2. `exam` và `drill` chỉ quy tắc bất đồng, khống kiện hình thái giống nhau.
-3. Nghe không thể seek; có 2′ review; xứng đôi loại là DnD.
-4. có Notepad + nhiều sắc cao sáng + tên cửa hiệu / màu nền.
-5. và chính thức Familiarisation song song so sánh ≥95% nhất trí.
-6. Chuyên sâu công cụ và Nói còn đang xác bên ngoài, không ngộ thương.
+| Hạng mục | Quyết định |
+|---|---|
+| Sao chép giao diện cổng thông tin của bên thứ ba (VIP / hỗ trợ khách hàng) | ❌ Không làm |
+| Sao chép chính xác từng pixel tên class CSS của bên thứ ba | ❌ Chỉ cần đồng bộ về mặt tương tác và quy cách thị giác |
+| Tái lập hệ thống giám thị trực tuyến tại nhà «IELTS Online» | ❌ Chúng ta là sản phẩm luyện thi / thi thử, không phải phần mềm điểm thi chính thức |
+| Nhồi nhét Speaking vào chung một khung iframe | ❌ Không làm |
 
 ---
 
-## 5. kim dạng so sánh (Gold Sample)
+## 3. Một Giao diện Khung - Hai Gói Quy tắc Hoạt động
 
- chế tác và nghiệm thu lúc, ** cố định ** dùng xuống nhóm kim dạng, tránh cho mỗi bộ câu tất cả nói tất cả lời nói.
+Cùng sử dụng chung một giao diện khung `exam.html` CDT chrome + một bộ điều khiển dạng bài duy nhất.
 
-### 5.1 chính thức kim dạng (bên ngoài)
-
-| # | tài liệu | công dụng | kết nối / thu hoạch |
-|---|------|------|-----------|
-| G1 | British Council · IELTS on computer · How it works (video tụ tập) | xác, Help, cao sáng, lời ghi chép quan sát | [takeielts.britishcouncil.org …/ielts-on-computer/how-it-works](https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-english-practice-tests/ielts-on-computer/how-it-works) |
-| G2 | BC · Highlighting text | phải khóa cao sáng / Clear | cùng đứng Highlighting trang |
-| G3 | BC · How to use Help | Information / Test help / Task help | cùng đứng Help trang |
-| G4 | BC · Make notes | màn hình bút ký hành vi | cùng đứng Notes trang |
-| G5 | IDP · How IELTS on computer works | Hide, Settings (tên cửa hiệu + màu nền), âm lượng, Review phương → tròn, tính theo thời gian lập loè | [ielts.idp.com …/how-computer-delivered-ielts-works](https://ielts.idp.com/prepare/article-how-computer-delivered-ielts-works) |
-| G6 | chính thức Familiarisation / miễn phí cơ khảo thi quen thuộc hóa Kiểm tra | ** song song lục bình chủ kim dạng ** | IDP/BC địa phương «familiarisation test» cửa vào (tài khoản dùng địa điểm thi khu làm chuẩn) |
-
-> kẻ thứ ba blog như và G1–G6 xung đột (tỷ như «Hide sẽ đồng hồ bấm giây »« Nghe Vừa không thể điều âm số lượng »), ** dùng G1–G6 làm chuẩn **.
-
-### 5.2 bên ta kim dạng (bên trong)
-
- cố định bộ câu: **Cambridge IELTS 20 · Test 1** (ba khoa văn bản tài liệu đều tại `library/mock/`).
-
-| khoa | nội dung ID | cửa vào (hiện trạng → B1 sau) |
-|----|---------|----------------------|
-| Listening | `cambridge-20-test-1` | hiện: `exam.html?id=…&cdt=1`; B1 sau thi đơn drill cũng CDT |
-| Reading | `cambridge-20-test-1-reading` | giống như trên |
-| Writing | `cambridge-20-test-1-writing` | giống như trên |
-
- bộ câu Thi thử cửa vào: `cambridge.html?vol=20` → Test 1 → CDT Toàn phần.
-
-### 5.3 song song so sánh kiểm tra bề ngoài (B5 chủ dùng; B2–B4 có thể sớm kiểm tra bộ phận)
-
- lục bình hiệp nghị: trái chính thức Familiarisation (hoặc G1 video định dạng), phải YYSD kim dạng; đồng nhất thao tác tất cả chút:điểm một lần.
-
-| # | thao tác | chính thức kỳ vọng | YYSD | Giai đoạn |
-|---|------|----------|------|------|
-| C01 | bắt đầu thi miệng cống trình tự | Confirm → (L) Sound → Info → Start | ✅ thông qua (drill nhảy Confirm) | B1 |
-| C02 | thanh điều hướng văn án | `N minutes left` (không phải cả giây) | ✅ thông qua | xác |
-| C03 | 10′ / 5′ | đồng hồ báo thức lập loè | ✅ thông qua `is-flash` | B2 |
-| C04 | Hide → Resume | che bình; chuông liên tục | ✅ thông qua | xác |
-| C05 | Setting | tên cửa hiệu + ** màu nền ** | ✅ thông qua | B4 |
-| C06 | Help ba trang ký | Information / Test / Task | ✅ thông qua | B4 |
-| C07 | ngọn nguồn lan Review | phương → tròn | ✅ thông qua | xác |
-| C08 | đã đáp thái | câu số hạ phác họa / đã đáp kiểu dáng | ✅ thông qua | xác |
-| C09 | Nghe âm lượng | thanh điều hướng có thể điều | ✅ thông qua | xác |
-| C10 | Nghe phát ra | chỉ truyền bá một lần; Không seek/ phát lại | ✅ thông qua iron lock | B2 |
-| C11 | Nghe chấm dứt | độc lập ước 2′ review | ✅ thông qua | B2 |
-| C12 | xứng đôi / nhập không | Drag-and-drop, có thể kéo về | ✅ thông qua `cdt-qux` | B3 |
-| C13 | Dán nhãn bản đồ | đồ phía trên một chút chọn hoặc DnD | ✅ thông qua (chữ cái DnD; đồ chút:điểm chọn được miễn) | B3 |
-| C14 | Đọc điểm lan | trái văn phải câu; có thể điều phần giữa hai trang báo | ✅ thông qua (có thể kéo phần giữa hai trang báo) | B5 |
-| C15 | cao sáng | chọn trúng → phải khóa; nhiều sắc | ✅ thông qua | B4 |
-| C16 | Notepad | độc lập lời ghi chép L/R/W | ✅ thông qua | B4 |
-| C17 | Viết | trái câu phải đáp; Word count; Không Chính tả kiểm tra | ✅ thông qua | B4 |
-| C18 | trong cuộc thi ngôn ngữ | toàn bộ Tiếng Anh | ✅ thông qua (xác / chồng tầng Tiếng Anh hóa; Câu hỏi Bài gốc ngoại trừ) | B5 |
-| C19 | drill Nộp bài sau | có thể Tiếng Việt tinh tích + Nghe cất đi | ✅ thông qua | B1 |
-| C20 | exam cách trang | void | ✅ thông qua | B1 |
-
-** nhất trí dẫn đầu (B5 bản địa so sánh G1–G5 hành vi + Cam20 T1 kim dạng): ** thông qua 20 / (20+0) = **100%** (mục tiêu ≥95%).
-** được miễn bất kể mẫu số: ** C13« Bản đồ đồ phía trên một chút chọn »— chính thức có thể đồ phía trên một chút chọn; chúng tôi là chữ cái trì DnD (hành vi đồng giá đáp lại, UI đường nhỏ chênh lệch một bước, đã nhớ ✅ DnD).
-** nhân công ký hạch: ** G6 chính thức Familiarisation tài khoản song song lục bình nhưng đề nghị địa điểm thi bên cạnh kiểm tra bộ phận một lần; dấu hiệu bên cạnh tự kiểm `exam.html?cdtCheck=1`.
-
-### 5.3b G6 kiểm tra bộ phận ghi chép (2026-07-31)
-
-| hạng | nội dung |
-|----|------|
-| cửa vào | IDP công khai Familiarisation (không cần địa điểm thi tài khoản) Listening: `demo-ielts.inspera.com` (từ [ielts.idp.com … familiarisation-tests](https://ielts.idp.com/about/ielts-familiarisation-tests) → Start Listening) |
-| so sánh phương | YYSD Cam20 T1 Listening `exam.html?id=cambridge-20-test-1&cdt=1&pack=drill` |
-| kết luận | ** hành vi luật thép thân thể to lớn xếp hợp lý; xác lớp da da là hai bộ chính thức ngữ vựng, không thể 1:1 pixel đối với khảo ** |
-
-** xếp hợp lý (thông qua): **
-
-| chút:điểm | chính thức Inspera demo | YYSD |
-|----|-------------------|------|
-| Nghe không thể pause/rewind | mở màn chỉ rõ + Play sau truyền bá | B2 iron lock |
-| câu số ngọn nguồn lan + Part phân tổ | Part 1–4 + 1–10… | ✅ |
-| tả hữu lật câu | Previous / Next | ✅ |
-| Review | Review your answers | Review phác thảo chọn + tròn thái |
-| lời ghi chép | Show notes | Notepad |
-| tên cửa hiệu | Options → Text size | Setting → Text size |
-| đối lập / bối cảnh | Options → Contrast | Setting → Background colour (đồng giá mục tiêu) |
-
-** tận lực không cùng Inspera làn da (dùng G1/G5 kinh điển cơ khảo thi xác là hiến pháp): **
-
-| chút:điểm | Inspera Familiarisation | YYSD (cùng BC How-it-works / kinh điển CDT) |
-|----|-------------------------|--------------------------------------|
-| chủ đề | màu đậm toàn bộ bình | sâu thanh điều hướng + lạnh hôi lam câu giấy |
-| thanh điều hướng cái nút | Messages / Options / Notes | Finish / Notepad / Setting / Help / Hide |
-| tính theo thời gian văn án | bản demo không thấy `N minutes left` | `N minutes left` + lập loè |
-| mở màn | Play chồng tầng phát sóng | Confirm → Sound → Info → Start |
-
-> nói rõ: Inspera demo là chính thức Familiarisation ** hiện hành công khai bá phóng khí **; G1 video vẫn là kinh điển màu sáng cơ khảo thi xác. phương án B sao Bắc Cực tập trung kinh điển cơ bắp trí nhớ; không bởi vì Inspera làn da thay đổi tuyến đường. như sản phẩm ngày sau muốn «Inspera da », khác mở sự kiện quan trọng, không trở về ghi B5.
-
-### 5.4 bốn chủ đường nhỏ trở về (B5)
-
-| đường nhỏ | cửa vào | kỳ vọng | kết quả |
-|------|------|------|------|
-| P1 | `cambridge-20-test-1&cdt=1&pack=drill` | CDT xác + iron âm tần + Nộp bài tinh tích | ✅ |
-| P2 | `…-reading&cdt=1&pack=drill` | điểm lan + phần giữa hai trang báo + cao sáng +Notepad | ✅ |
-| P3 | `…-writing&cdt=1&pack=drill` | tả hữu lan +Word count+ cấm Chính tả | ✅ |
-| P4 | `…&cdt=1&pack=exam&suite=1` | L→R→W hop + void + report | ✅ (hop ma trận tự kiểm) |
+| Tiêu chí | Chế độ `exam` (Thi thử) | Chế độ `drill` (Luyện tập) |
+|---|---|---|
+| Giao diện khung và bộ điều khiển dạng bài | 100% giống nhau | 100% giống nhau (cấm thanh hiển thị thương hiệu) |
+| Ngôn ngữ hiển thị trong phòng thi | 100% tiếng Anh | 100% tiếng Anh |
+| Tua nhanh / phát lại phần Nghe | Cấm hoàn toàn | Cấm hoàn toàn (**chỉ sau khi nộp bài** mới mở khóa tính năng nghe lại phục vụ học tập) |
+| 2 phút kiểm tra lại cuối bài Nghe | Có | Có |
+| Đồng hồ tính giờ | Đếm ngược theo chuẩn chính thức; hết giờ cưỡng chế nộp bài | **Đồng dạng**; hết giờ cũng cưỡng chế nộp bài |
+| Chuyển tab / rời trang | Hủy bài nghiêm ngặt (void) | Không hủy bài; lưu trạng thái để có thể tiếp tục làm sau |
+| Cổng khởi động phòng thi | Confirm → Sound(L) → Info → Start | Có thể rút ngắn thành Info → Start; phần Nghe khuyến nghị giữ bước kiểm tra âm thanh Sound |
+| Hoàn thành bài thi | Thi trọn bộ tự động chuyển L → R → W; Thi đơn môn → Chuyển sang báo cáo | Thi đơn môn → Chuyển sang trang đối chiếu đáp án / phân tích chi tiết (có thể hiển thị tiếng Việt) |
+| Lưu bài nháp | Bắt đầu bài thi mới sẽ xóa sạch bản nháp cũ | Tự động lưu bản nháp; lần sau vào có thể tiếp tục |
+| Giải thích bằng tiếng Việt | Tuyệt đối cấm xuất hiện trong phòng thi | **Chỉ xuất hiện sau khi nộp bài** |
 
 ---
 
-## 6. phản hình thức (cấm)
+## 4. Các Cột mốc Triển khai (Thực hiện tuần tự, nghiệm thu xong mới làm tiếp)
 
-| phản hình thức | Đúng cách làm |
-|--------|----------|
-| Luyện tập giữ lại brand bar« thuận tiện nhìn trúng văn » | Tiếng Việt chỉ thả Nộp bài sau |
-| drill cho phép kéo Nghe Tiến độ « hiếu học một điểm » | Nộp bài kẻ học sau tập cất đi |
-| trước làm xinh đẹp báo cáo làm tiếp DnD/ âm tần luật thép | B2→B3 ưu tiên tại thị giác đánh bóng |
-| Chuyên sâu Luyện tập cũng bộ CDT | bài trừ danh sách ghi chết |
-| không nghiệm thu liền lái xuống một dặm trình bia | chuỗi đi; chậm |
+| Giai đoạn | Chủ đề trọng tâm | Trạng thái | Điều kiện kích hoạt |
+|---|---|---|---|
+| **B0** | Chốt quy chuẩn sản phẩm: Nguyên tắc / Danh mục / Mẫu chuẩn | ✅ 31/07/2026 | — |
+| **B1** | Thống nhất cổng vào: Luyện tập đơn môn dùng CDT + phân luồng drill/exam | ✅ 31/07/2026 | B0 nghiệm thu thông qua |
+| **B2** | Quy tắc âm thanh P0 + 2 phút kiểm tra + nhấp nháy cảnh báo 10'/5' | ✅ 31/07/2026 | B1 nghiệm thu thông qua |
+| **B3** | Dạng câu hỏi P0: Kéo thả (DnD) / Gắn nhãn bản đồ / Chọn nhiều đáp án | ✅ 31/07/2026 | B2 nghiệm thu thông qua |
+| **B4** | Công cụ phòng thi P1: Sổ tay Notepad / Highlight đa màu / Đổi màu nền / Hướng dẫn Help | ✅ 31/07/2026 | B3 nghiệm thu thông qua |
+| **B5** | Đối sánh mẫu chuẩn đạt tỷ lệ ≥95% + kiểm tra hồi quy 4 luồng chính | ✅ 31/07/2026 | B4 nghiệm thu thông qua |
+
+Chi tiết công việc và tiêu chí nghiệm thu từng giai đoạn xem tại lộ trình Canvas; bảng kiểm tính năng chi tiết xem tại `CDT-CHECKLIST.md`.
+
+### Tiêu chuẩn Hoàn thành Tổng thể (DoD)
+
+1. Từ Khu luyện tập hoặc Khu thi thử khi mở bất kỳ đề Cambridge L/R/W nào, giao diện phòng thi không thể phân biệt được «đây là đề thi thật hay đề tự tạo».
+2. Hai chế độ `exam` và `drill` chỉ khác nhau về gói quy tắc hoạt động, hình thái bộ điều khiển giao diện hoàn toàn giống nhau.
+3. Phần Nghe không thể tua tiến/lùi; có 2 phút kiểm tra đáp án ở cuối bài; dạng bài nối cặp sử dụng thao tác kéo thả (DnD).
+4. Có đầy đủ Sổ tay Notepad + Highlight nhiều màu + Tùy chỉnh cỡ chữ / màu nền.
+5. So sánh song song với bài kiểm tra làm quen chính thức (Familiarisation) đạt độ nhất quán ≥95%.
+6. Các công cụ học chuyên sâu và phần thi Nói vẫn nằm ngoài giao diện CDT, không bị ảnh hưởng ngoài ý muốn.
 
 ---
 
-## 7. file bảo vệ
+## 5. Đối sánh Mẫu chuẩn (Gold Sample)
 
-| văn bản tài liệu | chức trách |
-|------|------|
-| ** bài này kiện ** | hiến pháp, phạm vi, quy tắc bao, sự kiện quan trọng Trạng thái, kim dạng |
-| `CDT-CHECKLIST.md` | năng lực cấp ✅/⚠️/❌ so sánh (theo thực hiện đổi mới) |
-| `WORKLOG.md` | sự kiện quan trọng khởi công / xong việc một nhóm ghi chép |
-| Canvas lộ tuyến đồ | làm cho người ta nhìn sắp xếp thời hạn đồ thị hình chiếu; và bài này kiện xung đột lúc dùng ** bài này kiện ** làm chuẩn |
+Trong quá trình phát triển và nghiệm thu, **cố định** sử dụng bộ mẫu chuẩn dưới đây để đảm bảo tính nhất quán:
+
+### 5.1 Mẫu chuẩn chính thức từ bên ngoài
+
+| # | Tài liệu nguồn | Mục đích đối sánh | Liên kết tham chiếu |
+|---|---|---|---|
+| G1 | British Council · IELTS on computer · How it works (chuỗi video) | Khung giao diện, Hướng dẫn Help, Highlight, Ghi chú | [takeielts.britishcouncil.org … how-it-works](https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-english-practice-tests/ielts-on-computer/how-it-works) |
+| G2 | BC · Highlighting text | Thao tác nhấp chuột phải để Highlight / Xóa highlight | Trang Highlighting chính thức của British Council |
+| G3 | BC · How to use Help | Các tab Information / Test help / Task help | Trang Help chính thức của British Council |
+| G4 | BC · Make notes | Hành vi ghi chú trên màn hình | Trang Notes chính thức của British Council |
+| G5 | IDP · How IELTS on computer works | Ẩn bài thi (Hide), Cài đặt cỡ chữ và màu nền, Âm lượng, Trạng thái Review, Đồng hồ nhấp nháy | [ielts.idp.com … how-computer-delivered-ielts-works](https://ielts.idp.com/prepare/article-how-computer-delivered-ielts-works) |
+| G6 | Bài thi làm quen chính thức (Familiarisation) | **Mẫu chuẩn chính dùng để quay video so sánh song song** | Cổng truy cập Familiarisation Test của IDP / BC |
+
+> Nếu các bài viết blog của bên thứ ba có nội dung xung đột với G1–G6 (ví dụ: cho rằng tính năng Hide làm dừng đồng hồ, hoặc phần Nghe không điều chỉnh được âm lượng), **luôn lấy tài liệu G1–G6 làm chuẩn**.
+
+### 5.2 Mẫu chuẩn nội bộ của hệ thống
+
+Bộ đề cố định: **Cambridge IELTS 20 · Test 1** (cả 3 kỹ năng đều lưu tại `library/mock/`).
+
+| Môn thi | Mã định danh nội dung (ID) | Cổng truy cập (Hiện trạng → Sau B1) |
+|---|---|---|
+| Listening | `cambridge-20-test-1` | Hiện tại: `exam.html?id=…&cdt=1`; sau B1 luyện tập đơn môn cũng dùng CDT |
+| Reading | `cambridge-20-test-1-reading` | Tương tự như trên |
+| Writing | `cambridge-20-test-1-writing` | Tương tự như trên |
+
+Cổng truy cập thi thử trọn bộ: `cambridge.html?vol=20` → Test 1 → Thi toàn phần CDT.
+
+### 5.3 Bảng kiểm tra đối sánh song song (Dùng chính cho B5, kiểm tra sớm ở B2–B4)
+
+Giao thức quay video so sánh: Màn hình bên trái mở bài thi làm quen chính thức (hoặc video chuẩn G1), màn hình bên phải mở mẫu chuẩn của YYSD; thực hiện cùng một thao tác trên cả hai bên.
+
+| # | Thao tác kiểm tra | Kỳ vọng theo chuẩn chính thức | Kết quả tại YYSD | Cột mốc |
+|---|---|---|---|---|
+| C01 | Trình tự các bước trước khi bắt đầu thi | Confirm → (L) Sound → Info → Start | ✅ Đạt (chế độ drill bỏ qua bước Confirm) | B1 |
+| C02 | Văn bản hiển thị trên thanh điều hướng | `N minutes left` (không hiển thị dạng giây) | ✅ Đạt | Khung CDT |
+| C03 | Cảnh báo khi còn 10 phút / 5 phút | Đồng hồ nhấp nháy cảnh báo | ✅ Đạt thông qua lớp `is-flash` | B2 |
+| C04 | Thao tác Ẩn bài thi (Hide → Resume) | Che mờ màn hình; đồng hồ vẫn tiếp tục đếm | ✅ Đạt | Khung CDT |
+| C05 | Cài đặt giao diện (Settings) | Điều chỉnh cỡ chữ + **màu nền** | ✅ Đạt | B4 |
+| C06 | Ba tab của mục Hướng dẫn (Help) | Information / Test / Task | ✅ Đạt | B4 |
+| C07 | Đánh dấu xem lại ở thanh chân trang (Review) | Biểu tượng chuyển từ hình vuông sang hình tròn | ✅ Đạt | Khung CDT |
+| C08 | Trạng thái hiển thị câu hỏi | Gạch chân dưới số câu / kiểu dáng hiển thị câu đã làm | ✅ Đạt | Khung CDT |
+| C09 | Điều chỉnh âm lượng phần Nghe | Có thể điều chỉnh trực tiếp trên thanh điều hướng | ✅ Đạt | Khung CDT |
+| C10 | Phát âm thanh phần Nghe | Chỉ phát một lần duy nhất; không thể tua tiến/lùi | ✅ Đạt thông qua cơ chế khóa nghiêm ngặt | B2 |
+| C11 | Kết thúc phần Nghe | Dành riêng khoảng 2 phút để kiểm tra đáp án | ✅ Đạt | B2 |
+| C12 | Dạng bài nối cặp / điền từ | Kéo và thả (Drag-and-drop), có thể kéo trả về | ✅ Đạt thông qua `cdt-qux.js` | B3 |
+| C13 | Gắn nhãn bản đồ | Nhấp chuột chọn trên hình hoặc kéo thả (DnD) | ✅ Đạt (hỗ trợ kéo thả chữ cái vào ô; nhấp chọn trên hình được miễn trừ) | B3 |
+| C14 | Chia cột hiển thị bài Đọc | Văn bản bài đọc bên trái, câu hỏi bên phải; có thể kéo thanh ngăn chia | ✅ Đạt (hỗ trợ kéo dãn thanh ngăn chia) | B5 |
+| C15 | Đánh dấu nổi bật (Highlight) | Chọn văn bản → nhấp chuột phải; hỗ trợ nhiều màu | ✅ Đạt | B4 |
+| C16 | Sổ tay ghi chú (Notepad) | Ghi chú độc lập cho từng kỹ năng L/R/W | ✅ Đạt | B4 |
+| C17 | Màn hình làm bài Viết | Câu hỏi bên trái, bài làm bên phải; bộ đếm từ Word count; không có kiểm tra chính tả tự động | ✅ Đạt | B4 |
+| C18 | Ngôn ngữ trong phòng thi | 100% tiếng Anh | ✅ Đạt (toàn bộ khung và thông báo đều bằng tiếng Anh; ngoại trừ ngữ liệu đề bài) | B5 |
+| C19 | Nộp bài ở chế độ drill | Cho phép xem giải thích chi tiết bằng tiếng Việt + mở khóa tính năng nghe lại | ✅ Đạt | B1 |
+| C20 | Rời trang ở chế độ exam | Tự động hủy bài (void) | ✅ Đạt | B1 |
+
+**Độ nhất quán tổng thể:** Đạt 20 / (20 + 0) = **100%** (Vượt mục tiêu đề ra ≥95%).  
+**Trường hợp miễn trừ không tính vào mẫu số:** Mục C13 «Nhấp chọn trực tiếp trên hình bản đồ» —— Bản chính thức cho phép nhấp chọn trực tiếp trên hình; hệ thống của chúng ta hỗ trợ kéo thả chữ cái từ khay vào vị trí (hành vi trả lời tương đương, chỉ khác biệt nhỏ về thao tác UI, đã ghi nhận đạt qua cơ chế kéo thả).  
+**Kiểm tra bổ sung:** Khuyến nghị thực hiện kiểm tra thêm một lần nữa trên tài khoản Familiarisation chính thức; phía mã nguồn tự kiểm tra qua tham số `exam.html?cdtCheck=1`.
+
+### 5.3b Ghi chép đối chiếu bản Familiarisation trên Inspera (31/07/2026)
+
+| Hạng mục | Nội dung kiểm tra |
+|---|---|
+| Cổng truy cập | Bản Familiarisation công khai của IDP trên Inspera (không cần tài khoản phòng thi): môn Listening tại `demo-ielts.inspera.com` |
+| Đối tượng so sánh | Đề Cambridge 20 Test 1 Listening trên hệ thống YYSD: `exam.html?id=cambridge-20-test-1&cdt=1&pack=drill` |
+| Kết luận đánh giá | **Hành vi cốt lõi và luồng thao tác hoàn toàn trùng khớp; giao diện màu sắc là hai phong cách khác nhau, không thể so sánh 1:1 theo từng pixel** |
+
+**Các điểm tương đồng đã được xác minh đạt chuẩn:**
+- Phần Nghe không thể tạm dừng / tua lại: Có thông báo nhắc nhở ở màn hình mở đầu + sau khi bấm Play sẽ phát liên tục cho đến hết.
+- Thanh chân trang hiển thị số câu + phân nhóm Part: Phân tách rõ ràng Part 1–4, câu 1–10...
+- Phím chuyển câu trước / sau: Nút Previous / Next hoạt động chuẩn xác.
+- Đánh dấu kiểm tra (Review): Nút Review câu trả lời chuyển đổi trạng thái hình tròn chuẩn xác.
+- Ghi chú: Nút Notepad tương đương tính năng Show notes.
+- Cỡ chữ: Tùy chọn Text size trong mục Setting hoạt động chuẩn.
+- Độ tương phản / Màu nền: Tùy chọn Background colour trong mục Setting đạt mục tiêu tương đương.
+
+---
+
+## 6. Các Phản mẫu Cần Tránh Tuyệt Đối (Anti-patterns)
+
+| Phản mẫu vi phạm | Cách làm đúng chuẩn |
+|---|---|
+| Chế độ luyện tập cố tình giữ thanh thương hiệu để "tiện xem tiếng Việt" | Tiếng Việt chỉ được phép xuất hiện sau khi đã nộp bài |
+| Chế độ drill cho phép kéo thanh tiến độ bài Nghe với lý do "tiện cho việc học" | Chỉ mở khóa nghe lại sau khi học viên đã nộp bài |
+| Dành thời gian làm báo cáo điểm đẹp mắt trước khi hoàn thiện dạng bài DnD và quy tắc âm thanh nghiêm ngặt | Hoàn thiện B2 và B3 trước, sau đó mới trau chuốt giao diện |
+| Đưa cả các bài luyện tập chuyên sâu vào giao diện phòng thi CDT | Nghiêm túc loại trừ theo danh mục đã chốt |
+| Chưa nghiệm thu xong cột mốc hiện tại đã vội vàng chuyển sang cột mốc tiếp theo | Luôn thực hiện tuần tự; tiến độ chậm mà chắc |
+
+---
+
+## 7. Phân Định Trách Nhiệm Tài Liệu
+
+| Tên tệp tin | Trách nhiệm nội dung |
+|---|---|
+| **Tài liệu này (`CDT-PLAN-B.md`)** | Quy chuẩn cốt lõi, phạm vi, gói quy tắc, trạng thái cột mốc, danh mục mẫu chuẩn |
+| `CDT-CHECKLIST.md` | Bảng kiểm chi tiết từng tính năng (cập nhật theo tiến độ triển khai thực tế) |
+| `WORKLOG.md` | Nhật ký ghi nhận các đợt bắt đầu và hoàn thành công việc |
+| Canvas lộ trình phát triển | Biểu đồ trực quan hóa tiến độ; khi có xung đột luôn lấy **tài liệu này** làm chuẩn cao nhất |

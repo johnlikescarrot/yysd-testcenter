@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng ký · cơ khảo thi hệ thống</title>
+  <title>Đăng ký · Hệ thống thi trên máy YYSD</title>
   <link rel="stylesheet" href="assets/css/app.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261008ui15"></script>
 </head>
 <body class="auth-page">
-  <header class="top"><b>YYSD cơ khảo thi hệ thống <small lang="en">YYSD TEST CENTER</small></b>
+  <header class="top"><b>Hệ thống thi trên máy YYSD <small lang="en">YYSD TEST CENTER</small></b>
     <span class="top-acts"><button type="button" id="hit-reload">Làm mới</button></span>
   </header>
   <main class="shell">
     <div class="card">
       <p class="auth-eyebrow" lang="en">CREATE ACCOUNT</p>
       <h1>Đăng ký</h1>
-      <p class="lead">dùng Quản trị viên chia của bạn Mã kích hoạt mở tài khoản cũng khóa lại máy vi tính này. </p>
+      <p class="lead">Sử dụng mã kích hoạt do quản trị viên cấp để mở tài khoản và liên kết với thiết bị này. </p>
       <form id="f">
         <label class="field">Số điện thoại
           <input type="tel" id="phone" maxlength="11" inputmode="numeric" autocomplete="tel" required>
         </label>
-        <label class="field">thiết trí Mật khẩu
+        <label class="field">Thiết lập mật khẩu
           <input type="password" id="password" minlength="6" maxlength="64" autocomplete="new-password" required>
         </label>
         <label class="field">Xác nhận mật khẩu
@@ -31,9 +31,9 @@
           <input id="activationCode" autocomplete="off" placeholder="ABCD-EFGH" required>
         </label>
         <p class="msg" id="msg"></p>
-        <button class="btn btn-block" type="submit">Đăng ký đồng tiến nhập</button>
+        <button class="btn btn-block" type="submit">Đăng ký và vào thi</button>
       </form>
-      <p class="auth-switch">đã có tài khoản? <a href="login.html"> Đăng nhập ngay</a></p>
+      <p class="auth-switch">Đã có tài khoản? <a href="login.html"> Đăng nhập ngay</a></p>
     </div>
   </main>
   <script>
@@ -47,7 +47,7 @@
         var password = document.getElementById("password").value;
         var confirm = document.getElementById("confirm").value;
         msg.textContent = "";
-        if (password!== confirm) { msg.textContent = " hai lần Mật khẩu không nhất trí "; return; }
+        if (password !== confirm) { msg.textContent = " Mật khẩu xác nhận không khớp "; return; }
         A.api("/api/auth/register", {
           method: "POST",
           body: {

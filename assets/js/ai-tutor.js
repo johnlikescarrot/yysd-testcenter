@@ -155,20 +155,20 @@
       crumb.textContent = "AI Trợ giảng IELTS ";
     } else if (name === "speaking-home") {
       title.textContent = "Nói";
-      desc.textContent = " Thi thử theo như thực khảo thi tiết tấu; Luyện tập có thể chọn câu đều xem trọng lục; phụ đạo có thể đánh chữ. ";
+      desc.textContent = " Thi thử theo nhịp độ thi thật; Luyện tập có thể chọn câu và ghi âm lại; Trợ giảng có thể gõ chữ. ";
       crumb.textContent = "Nói";
     } else if (name === "practice") {
-      title.textContent = " cơ trải qua Luyện tập ";
-      desc.textContent = " phác thảo chọn chủ đề sau Bắt đầu; chỉ dùng microphone đáp lại, có thể lảng tai / trọng lục. ";
+      title.textContent = " Luyện tập đề thi thật ";
+      desc.textContent = " Chọn chủ đề rồi bắt đầu; trả lời bằng micro, có thể nghe lại / ghi âm lại. ";
       crumb.textContent = " Nói · Luyện tập ";
     } else if (name === "tutor") {
-      title.textContent = " phụ đạo nói chuyện phiếm ";
+      title.textContent = " Trò chuyện cùng Trợ giảng ";
       desc.textContent = " Nói mạch suy nghĩ và biểu đạt vấn đề có thể đánh chữ, cũng có thể Âm thanh. ";
       crumb.textContent = " Nói · phụ đạo ";
     } else if (name === "writing") {
-      title.textContent = " Viết phê chữa ";
-      desc.textContent = " trước Chọn đề làm, lại dán viết văn Nộp bài phê chữa. ";
-      crumb.textContent = writingOnly? " IELTS · AI Viết phê chữa ": "Viết";
+      title.textContent = " Chấm bài Viết ";
+      desc.textContent = " Chọn đề làm trước, sau đó dán bài viết và nộp để chấm bài. ";
+      crumb.textContent = writingOnly? " IELTS · AI Chấm bài Viết ": "Viết";
     }
 
     var examOn =!document.getElementById("exam-overlay").hidden;
@@ -261,7 +261,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "btn btn--ghost btn--sm";
-      btn.textContent = " lảng tai ";
+      btn.textContent = " Nghe lại ";
       btn.addEventListener("click", function () { playTts(content); });
       actions.appendChild(btn);
       div.appendChild(actions);
@@ -460,8 +460,8 @@
         if (reason === "silence") {
           var url = URL.createObjectURL(blob);
           turnLog.push({ q: currentQ, a: "(silence — invalid)", valid: false, audioUrl: url });
-          if (track === "mock") setExamStatus(" yên lặng vượt quá thời gian, chủ đề không có hiệu quả, Vào học Câu tiếp theo …");
-          else hint(" yên lặng vượt quá thời gian, chủ đề nhớ là không có hiệu quả ", "error");
+          if (track === "mock") setExamStatus(" Hết thời gian chờ do im lặng, câu trả lời không hợp lệ, chuyển sang câu tiếp theo…");
+          else hint(" Hết thời gian chờ do im lặng, câu trả lời tính là không hợp lệ ", "error");
           sendChat({ answerInvalid: true, audioSec: sec });
           return;
         }
@@ -512,7 +512,7 @@
 
       if (opts.auto) {
         document.getElementById("btn-exam-submit").hidden = false;
-        setExamStatus(inPart2Speak? " xin bắt đầu trần thuật (dài nhất 2 phút, nói xong có thể chút:điểm Nộp bài) ": " mời đáp lại (nói xong chút:điểm Nộp bài; yên lặng 5 giây chủ đề không có hiệu quả) ");
+        setExamStatus(inPart2Speak? " Vui lòng bắt đầu nói (tối đa 2 phút, nói xong có thể nhấn Nộp bài) ": " Mời bạn trả lời (nói xong nhấn Nộp bài; im lặng quá 5 giây câu trả lời sẽ không hợp lệ) ");
         watchSilence(stream, function () { finishRec("silence"); });
         if (inPart2Speak) {
           var left = PART2_SPEAK;
@@ -532,7 +532,7 @@
           document.getElementById("exam-subwrap").hidden = true;
         }
       } else {
-        hint(" ghi âm Vừa … gọi thêm microphone chấm dứt ", "rec");
+        hint(" Đang ghi âm… nhấn lại biểu tượng micro để kết thúc ", "rec");
       }
     }).catch(function () {
       hint(" không cách nào sử dụng microphone, mời kiểm tra quyền hạn ", "error");
@@ -555,7 +555,7 @@
     if (!opts.answerInvalid && track!== "mock") {
       appendMsg("user", body.content);
     } else if (opts.answerInvalid && track!== "mock") {
-      appendMsg("user", " (yên lặng vượt quá thời gian · chủ đề không có hiệu quả) ", { answerInvalid: true });
+      appendMsg("user", " (Hết thời gian chờ · câu trả lời không hợp lệ) ", { answerInvalid: true });
     }
     if (track === "mock") {
       setExamStatus(" giám khảo trong suy tính …");
@@ -581,7 +581,7 @@
       }
       if (track === "practice" || track === "tutor") {
         return playTts(d.reply || "").then(function () {
-          hint(track === "practice"? " chút:điểm microphone đáp lại; có thể lảng tai giám khảo vấn đề ": "");
+          hint(track === "practice"? " Nhấn vào micro để trả lời; có thể nghe lại câu hỏi của giám khảo ": "");
         });
       }
     }).catch(function (e) {
@@ -712,7 +712,7 @@
   function syncSpeakRoomUI() {
     var isPractice = track === "practice";
     var isTutor = track === "tutor";
-    document.getElementById("room-label").textContent = isPractice? " cơ trải qua Luyện tập ": " phụ đạo nói chuyện phiếm ";
+    document.getElementById("room-label").textContent = isPractice? " Luyện tập đề thi thật ": " Trò chuyện cùng Trợ giảng ";
     document.getElementById("side-title").textContent = isPractice? " Luyện tập hội thoại ": " phụ đạo hội thoại ";
     elPicker.hidden =!(isPractice &&!sessionId);
     elPracticeBar.hidden =!isPractice;
@@ -721,15 +721,15 @@
     elMic.hidden = false;
     elInputRow.classList.toggle("is-mic-only", isPractice);
     if (isPractice) {
-      hint(sessionId? " chỉ microphone đáp lại · có thể lảng tai / trọng lục ": " mời trước Chọn đề, lại bắt đầu Luyện tập ");
+      hint(sessionId? " Chỉ trả lời bằng micro · có thể nghe lại / ghi âm lại ": " Vui lòng chọn đề trước khi bắt đầu luyện tập ");
     } else {
-      hint(" có thể đánh chữ, cũng có thể chút:điểm microphone ");
+      hint(" Có thể gõ chữ hoặc nhấn vào micro ");
     }
   }
 
   function renderBankLists() {
     if (!bank) return;
-    document.getElementById("bank-title").textContent = (bank.title || " cơ trải qua Ngân hàng đề ") +
+    document.getElementById("bank-title").textContent = (bank.title || " Ngân hàng đề thi thật ") +
       (bank.source? " · " + bank.source: "");
     document.getElementById("part1-list").innerHTML = (bank.part1 || []).map(function (t) {
       return '<label><input type="checkbox" name="p1" value="' + esc(t.id) + '"> <span>' +
@@ -1006,12 +1006,12 @@
       }
       var emptyMsg = lastQuota &&!lastQuota.unlimited && lastQuota.textLeft <= 0
         ? " Kết quả chấm bài không hoàn chỉnh (hôm nay văn tự khoản độ Đã dùng hết, hẹn gặp lại ngày mai) "
-        : " không Quay lại kết cấu hóa cho điểm, mời gọi thêm một lần « Nộp bài phê chữa » Thử lại ";
+        : " Không nhận được kết quả chấm điểm có cấu trúc, vui lòng nhấn lại «Nộp bài chấm điểm» để thử lại ";
       document.getElementById("w-result").innerHTML = html || "<p>" + emptyMsg + "</p>";
       if (!html) wh.textContent = emptyMsg;
     }).catch(function (e) {
       if (e.quota) renderQuota(e.quota);
-      wh.textContent = (e.message || " Chấm bài thất bại ") + (e.status === 502? " — có thể gọi thêm Nộp bài Thử lại ": "");
+      wh.textContent = (e.message || " Chấm bài thất bại ") + (e.status === 502? " — có thể nhấn Nộp bài để thử lại ": "");
       wh.className = "ai-write__hint is-error";
     }).then(function () {
       busy = false;
@@ -1068,7 +1068,7 @@
       syncSpeakRoomUI();
       loadBank();
       loadSessions();
-      elMsgs.innerHTML = '<div class="ai-tutor__empty"> phác thảo chọn Part 1 cùng một đạo Part 2, Bắt đầu luyện tập. chỉ microphone đáp lại. </div>';
+      elMsgs.innerHTML = '<div class="ai-tutor__empty"> Chọn chủ đề Part 1 và một câu Part 2 để bắt đầu luyện tập. Chỉ trả lời bằng micro. </div>';
       return;
     }
     if (kind === "tutor") {
@@ -1147,7 +1147,7 @@
     var file = document.getElementById("jiijing-file").files[0];
     var uh = document.getElementById("upload-hint");
     if (!file) { uh.textContent = " mời trước lựa chọn PDF"; return; }
-    uh.textContent = " thượng truyền(*upload) Giải thích đáp án Vừa …";
+    uh.textContent = " Đang tải lên giải thích đáp án…";
     var fr = new FileReader();
     fr.onload = function () {
       api("/api/admin/jiijing/upload", {
@@ -1157,7 +1157,7 @@
         bank = d.bank;
         uh.textContent = " đã hoán đổi Ngân hàng đề: " + (bank.title || bank.id);
       }).catch(function (e) {
-        uh.textContent = e.message || " thượng truyền(*upload) thất bại ";
+        uh.textContent = e.message || " Tải lên thất bại ";
       });
     };
     fr.readAsDataURL(file);

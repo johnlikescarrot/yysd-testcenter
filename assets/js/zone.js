@@ -187,7 +187,7 @@
     activeCat = next;
     jtVol = "";
     if (searchInput && zone === "toefl") {
-      searchInput.placeholder = next === "lab"? " tìm kiếm đề mục tên …": " tìm kiếm TOEFL bộ câu …";
+      searchInput.placeholder = next === "lab"? " tìm kiếm đề mục tên …": " Tìm kiếm bộ đề TOEFL…";
     }
     syncZoneQuery();
     buildSubFilters();
@@ -267,7 +267,7 @@
 
   if (searchInput) {
     searchInput.placeholder = zone === "mock"? " tìm kiếm Thi thử, quyển mấy, Test…"
-      : (zone === "toefl"? (activeCat === "lab"? " tìm kiếm đề mục tên …": " tìm kiếm TOEFL bộ câu …"): " tìm kiếm nội dung tên …");
+      : (zone === "toefl"? (activeCat === "lab"? " tìm kiếm đề mục tên …": " Tìm kiếm bộ đề TOEFL…"): " tìm kiếm nội dung tên …");
     var onSearch = window.YYSD_DEBOUNCE? window.YYSD_DEBOUNCE(function () {
       searchQuery = searchInput.value.trim();
       buildSubFilters();
@@ -308,12 +308,12 @@
         '<a class="bento-cta bento-cta--teal" href="speaking-select.html">' +
           '<span class="bento-cta__badge"> Chuyên sâu </span>' +
           '<div><p class="bento-cta__title"> Chuyên sâu Chọn đề </p>' +
-          '<p class="bento-cta__desc"> phác thảo chọn chủ đề, tổ một bộ Part 1</p></div>' +
+          '<p class="bento-cta__desc"> Chọn chủ đề, ghép bộ Part 1</p></div>' +
           '<span class="spk-cta-go"> Chọn đề ›</span></a>' +
         '<a class="bento-cta bento-cta--orange" href="ai-tutor.html">' +
           '<span class="bento-cta__badge">AI</span>' +
           '<div><p class="bento-cta__title">AI Trợ giảng IELTS </p>' +
-          '<p class="bento-cta__desc"> Nói cơ trải qua / Viết phê chữa </p></div>' +
+          '<p class="bento-cta__desc"> Nói đề thi thật / Viết chấm bài </p></div>' +
           '<span class="spk-cta-go"> Vào học ›</span></a></div>';
     }
     if (Y.isCambridge(subject)) {
@@ -592,14 +592,14 @@
       '<header class="ielts-hub__intro">' +
         '<p class="ielts-hub__kicker">Cambridge IELTS</p>' +
         "<h2> lựa chọn huấn luyện của bạn đường nhỏ </h2>" +
-        "<p> thi đơn chặt chẽ đặt nền móng, bộ câu Thi thử luyện trường thi. bốn khoa khẩu âm rõ ràng, chút:điểm đi vào chính là đối ứng Ngân hàng đề. </p>" +
+        "<p> Luyện từng kỹ năng để vững nền tảng, thi thử trọn bộ để làm quen phòng thi. Cả 4 kỹ năng phát âm chuẩn xác, nhấn vào để đến kho đề thi tương ứng. </p>" +
       "</header>" +
       '<div class="ielts-hub__grid">' + cards + "</div>" +
     "</section>";
   }
 
   var TOEFL_SKILL = {
-    full: { list: "TOEFL_FULL", page: "toefl-full.html", badge: " toàn bộ cuốn ", empty: " tạm thời chưa có Đầy đủ bộ câu " },
+    full: { list: "TOEFL_FULL", page: "toefl-full.html", badge: " Trọn bộ đề ", empty: " Tạm thời chưa có trọn bộ đề thi " },
     reading: { list: "TOEFL_READING", page: "toefl-reading.html", badge: "Đọc", empty: " tạm thời chưa có Đề thi Đọc " },
     listening: { list: "TOEFL_LISTENING", page: "toefl-listening.html", badge: "Nghe", empty: " tạm thời chưa có Đề thi Nghe " },
     writing: { list: "TOEFL_WRITING", page: "toefl-writing.html", badge: "Viết", empty: " tạm thời chưa có Đề thi Viết " },
@@ -610,7 +610,7 @@
     var spec = TOEFL_SKILL[skill] || TOEFL_SKILL.reading;
     var papers = Y[spec.list] || [];
     if (!papers.length) {
-      return emptyBox(spec.empty, " đề mục thượng truyền(*upload) sau sẽ xuất hiện ở chỗ này. ", "zone.html?zone=toefl", " Quay lại TOEFL quan sát ");
+      return emptyBox(spec.empty, " Đề thi sau khi tải lên sẽ xuất hiện tại đây. ", "zone.html?zone=toefl", " Quay lại TOEFL quan sát ");
     }
     return '<div class="exam-grid">' + papers.map(function (p) {
       var practice = spec.page + "?id=" + encodeURIComponent(p.id) + "&mode=practice";
@@ -679,7 +679,7 @@
     return toeflDoorCards(["reading", "listening", "speaking", "writing"], {
       aria: " theo như cuộc thi ngày Thi thử ",
       h2: " theo như cuộc thi ngày Thi thử ",
-      p: " theo như cuộc thi nhật tiến nhập thi đơn Luyện tập và Thi thử. Đầy đủ liền khảo thi mời được cơ khảo thi hệ thống Mock Test. ",
+      p: " Truy cập luyện tập và thi thử từng kỹ năng theo ngày thi. Để thi liên tục trọn bộ, vui lòng dùng hệ thống thi trên máy tính Mock Test. ",
       grid: "ielts-hub__grid"
     });
   }
@@ -779,8 +779,8 @@
         }).join("") + "</div>"
         : emptyBox(" không có phù hợp bộ lọc đề mục ", " đổi một cái dạng bài hoặc bộ lọc thử lại. ", "zone.html?zone=toefl&s=lab", " Xem Tất cả ");
     }
-    return '<section class="hit-lab" aria-label=" theo như dạng bài chặt chẽ ">' +
-      '<header class="hit-lab__intro"><h2> theo như dạng bài chặt chẽ </h2><p> trước Trắc nghiệm hình, gọi thêm đề mục Vào học ETS cơ khảo thi giao diện. </p></header>' +
+    return '<section class="hit-lab" aria-label=" Luyện theo dạng bài ">' +
+      '<header class="hit-lab__intro"><h2> Luyện theo dạng bài </h2><p> trước Trắc nghiệm hình, nhấn vào câu hỏi để vào giao diện thi trên máy chuẩn ETS. </p></header>' +
       chipRow("skill", Lab.SKILLS, labSkill) +
       chipRow("type", types, labType) +
       chipRow("filter", filters, labFilter) +
@@ -807,7 +807,7 @@
       var vols = Y.camVolumes(allItems);
       body = vols.length
         ? Y.cambridgeCatalogHTML(vols, allItems, "", { tier: camTier, query: searchQuery, collapseLegacy: true })
-        : emptyBox(" tạm thời chưa có Đề Cambridge IELTS ", " Giáo viên thượng truyền(*upload) bộ câu sau sẽ xuất hiện ở chỗ này. cũng có thể trước làm thi đơn Nghe hoặc Đọc Luyện tập. ", "zone.html?zone=mock&s=listening", " đi luyện Nghe ");
+        : emptyBox(" tạm thời chưa có Đề Cambridge IELTS ", " Bộ đề do giáo viên tải lên sẽ xuất hiện tại đây. Bạn cũng có thể luyện trước từng phần Nghe hoặc Đọc. ", "zone.html?zone=mock&s=listening", " đi luyện Nghe ");
     } else if (zone === "toefl" && cat.soon) {
       body = emptyBox(cat.label + " Sắp ra mắt ", " bốn khoa cơ khảo thi đã mở thả, cái này một khoa sau đó gia nhập. ", "zone.html?zone=toefl", " Quay lại TOEFL quan sát ");
     } else if (zone === "toefl" && TOEFL_SKILL[cat.key]) {
@@ -931,7 +931,7 @@
             '<span class="ai-tutor-entry__body">' +
               '<span class="ai-tutor-entry__kicker">Featured</span>' +
               "<b>AI Trợ giảng IELTS </b>" +
-              "<span> Nói cơ trải qua Luyện tập / Thi thử toàn phần · Viết phê chữa · tùy thời mở luyện </span>" +
+              "<span> Luyện tập Nói đề thi thật / Thi thử toàn phần · Chấm bài Viết · Mở luyện bất cứ lúc nào </span>" +
             "</span>" +
             '<span class="ai-tutor-entry__cta"> lập tức bắt đầu <span aria-hidden="true">→</span></span>' +
           "</a>"

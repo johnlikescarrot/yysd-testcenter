@@ -63,7 +63,7 @@
   }
 
   function catalogTitle(xid, uploadName, pack) {
-    if (String(xid).indexOf("upload-") === 0) return uploadName || " Giáo viên thượng truyền(*upload) Luyện tập ";
+    if (String(xid).indexOf("upload-") === 0) return uploadName || " Bài tập giáo viên tải lên ";
     var p = String(pack || "").toLowerCase();
     if (p === "vocab-quiz" || p === "vocab-learn" || String(xid).indexOf("||") > 0) {
       var vt = vocabLinkedTitle(xid);
@@ -430,7 +430,7 @@
       (exList
         ? "<h3> liên quan Luyện tập </h3><ul class=\"cal-ex-list\">" + exList + "</ul>" + progHint
         : (ev.eventType === "ASSIGNMENT"
-          ? "<p class=\"profile-hint\"> không đóng liên cụ thể Luyện tập, có thể lẽ ra rõ ràng hoàn thành cũng chủ động phác thảo chọn. </p>"
+          ? "<p class=\"profile-hint\"> Không gắn với bài tập cụ thể, học viên có thể chủ động đánh dấu hoàn thành sau khi tự ôn luyện. </p>"
           : ""));
 
     var acts = '<button type="button" class="btn btn--ghost" data-close="1"> Đóng </button>';

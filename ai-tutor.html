@@ -55,15 +55,15 @@
       <div class="ai-path-grid">
         <button type="button" class="ai-path" data-track="speaking">
           <span class="ai-path__kicker">Speaking</span>
-          <strong>Nói</strong>
-          <span class="ai-path__desc"> cơ trải qua Luyện tập, Thi thử toàn phần, phụ đạo nói chuyện phiếm </span>
-          <span class="ai-path__cta"> Vào học Nói →</span>
+          <strong>Speaking</strong>
+          <span class="ai-path__desc"> Luyện tập theo đề dự đoán, thi thử như thi thật, trợ lý AI trò chuyện sửa lỗi </span>
+          <span class="ai-path__cta"> Luyện Nói ngay →</span>
         </button>
         <button type="button" class="ai-path" data-track="writing">
           <span class="ai-path__kicker">Writing</span>
-          <strong>Viết</strong>
-          <span class="ai-path__desc"> Chọn đề làm, dán viết văn, bốn hạng cho điểm và bài văn mẫu </span>
-          <span class="ai-path__cta"> Vào học Viết →</span>
+          <strong>Writing</strong>
+          <span class="ai-path__desc"> Chọn đề bài, nộp bài viết, chấm điểm theo 4 tiêu chí và xem bài mẫu </span>
+          <span class="ai-path__cta"> Luyện Viết ngay →</span>
         </button>
       </div>
       <p class="ai-quota-line" id="quota-hub">Đang tải hạn mức …</p>
@@ -74,28 +74,28 @@
       <div class="ai-mode-list">
         <button type="button" class="ai-mode" data-speak="mock">
           <span class="ai-mode__badge"> Đề xuất </span>
-          <strong>cơ trải qua Thi thử</strong>
-          <span> Toàn phần trường thi tính theo thời gian · giám khảo tự động lên tiếng · nói xong chút:điểm Nộp bài </span>
+          <strong>Thi thử đề dự đoán</strong>
+          <span> Đầy đủ các phần thi tính giờ chuẩn · Giám khảo AI tự động hỏi · Nói xong nhấn Nộp bài </span>
         </button>
         <button type="button" class="ai-mode" data-speak="practice">
-          <strong>cơ trải qua Luyện tập</strong>
-          <span> tự do Part 1 / Part 2 · có thể lảng tai, trọng lục </span>
+          <strong>Luyện tập đề dự đoán</strong>
+          <span> Tùy chọn Part 1 / Part 2 · Hỗ trợ nghe lại câu hỏi và ghi âm lại </span>
         </button>
         <button type="button" class="ai-mode" data-speak="tutor">
-          <strong>phụ đạo nói chuyện phiếm</strong>
-          <span> có thể đánh chữ giảng giải · microphone có thể chọn </span>
+          <strong>Trò chuyện cùng gia sư AI</strong>
+          <span> Nhắn tin trao đổi thắc mắc · Tùy chọn sử dụng microphone </span>
         </button>
         <button type="button" class="ai-mode" data-speak="omni">
-          <strong>thực thì Nói (Omni)</strong>
-          <span> microphone thẳng liền nghìn hỏi Omni · giám khảo / Giáo viên vừa cắt đổi </span>
+          <strong>Hội thoại thời gian thực (Omni)</strong>
+          <span> Kết nối trực tiếp qua micro với mô hình Omni · Linh hoạt chuyển đổi vai giám khảo hoặc giáo viên </span>
         </button>
       </div>
       <p class="ai-quota-line" id="quota-box">Đang tải hạn mức …</p>
       <details class="ai-admin" id="admin-upload" hidden>
-        <summary> đổi mới cơ trải qua Ngân hàng đề (Quản trị viên / Giáo viên) </summary>
+        <summary> Cập nhật ngân hàng đề dự đoán (Quản trị viên / Giáo viên) </summary>
         <div class="ai-admin__body">
           <input type="file" id="jiijing-file" accept="application/pdf,.pdf">
-          <button type="button" class="btn btn--ghost btn--sm" id="btn-upload-jiijing">thượng truyền(*upload) PDF</button>
+          <button type="button" class="btn btn--ghost btn--sm" id="btn-upload-jiijing">Tải lên tệp PDF</button>
           <p class="ai-admin__hint" id="upload-hint"></p>
         </div>
       </details>
@@ -105,7 +105,7 @@
     <section class="ai-view ai-room" id="view-speak-room" hidden>
       <aside class="ai-room__side" aria-label="Lịch sử hội thoại">
         <div class="ai-room__side-head">
-          <strong id="side-title">hội thoại</strong>
+          <strong id="side-title">Lịch sử hội thoại</strong>
         </div>
         <ul class="ai-room__sessions" id="session-list"></ul>
       </aside>
@@ -117,14 +117,14 @@
         </div>
 
         <div class="ai-picker" id="topic-picker" hidden>
-          <div class="ai-picker__title" id="bank-title"> cơ trải qua Ngân hàng đề </div>
+          <div class="ai-picker__title" id="bank-title"> Ngân hàng đề dự đoán </div>
           <div class="ai-picker__cols">
             <div>
-              <h3>Part 1 (có thể nhiều chọn)</h3>
+              <h3>Part 1 (có thể chọn nhiều chủ đề)</h3>
               <div class="ai-picker__list" id="part1-list"></div>
             </div>
             <div>
-              <h3>Part 2 (đơn tuyển, hàm Part 3)</h3>
+              <h3>Part 2 (chọn một chủ đề, bao gồm Part 3)</h3>
               <div class="ai-picker__list" id="part2-list"></div>
             </div>
           </div>
@@ -135,17 +135,17 @@
 
         <div class="ai-room__composer" id="composer">
           <div class="ai-practice-bar" id="practice-bar" hidden>
-            <button type="button" class="btn btn--ghost btn--sm" id="btn-replay">lảng tai giám khảo</button>
-            <button type="button" class="btn btn--ghost btn--sm" id="btn-rerecord" hidden>ghi lần nữa chế</button>
-            <button type="button" class="btn btn--primary btn--sm" id="btn-confirm-rec" hidden>Xác nhận gửi đi</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="btn-replay">Nghe lại câu hỏi</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="btn-rerecord" hidden>Ghi âm lại</button>
+            <button type="button" class="btn btn--primary btn--sm" id="btn-confirm-rec" hidden>Xác nhận gửi bài</button>
           </div>
           <div class="ai-room__input-row" id="input-row">
-            <textarea id="input" rows="2" placeholder="đưa vào tin tức …" maxlength="8000"></textarea>
-            <button type="button" class="ai-mic" id="btn-mic" aria-pressed="false" title="chút:điểm thoáng một phát Bắt đầu ghi âm, gọi thêm chấm dứt">
+            <textarea id="input" rows="2" placeholder="Nhập tin nhắn..." maxlength="8000"></textarea>
+            <button type="button" class="ai-mic" id="btn-mic" aria-pressed="false" title="Nhấn một lần để bắt đầu ghi âm, nhấn lại để kết thúc">
               <span class="ai-mic__icon" aria-hidden="true"></span>
               <span class="ai-mic__label"> ghi âm </span>
             </button>
-            <button type="button" class="btn btn--primary" id="btn-send">gửi đi</button>
+            <button type="button" class="btn btn--primary" id="btn-send">Gửi</button>
           </div>
         </div>
       </div>
@@ -154,13 +154,13 @@
     <!-- Writing -->
     <section class="ai-view ai-write" id="view-writing" hidden>
       <ol class="ai-write__steps" aria-hidden="true">
-        <li class="is-on"> Chọn đề </li>
-        <li> dán </li>
-        <li> phê chữa </li>
+        <li class="is-on"> Chọn đề bài </li>
+        <li> Dán bài viết </li>
+        <li> Chấm bài &amp; Nhận xét </li>
       </ol>
       <div class="ai-write__select">
         <label>
-          <span> dạng bài </span>
+          <span> Dạng bài </span>
           <select id="w-task">
             <option value="task1">Task 1</option>
             <option value="task2">Task 2</option>
@@ -173,17 +173,17 @@
       </div>
       <pre class="ai-write__prompt" id="w-prompt-text"></pre>
       <label class="ai-write__chart" id="w-chart-wrap" hidden>
-        <span>Task 1 biểu đồ hình ảnh (có thể chọn, tăng lên số liệu độ chính xác) </span>
+        <span>Hình ảnh biểu đồ Task 1 (tùy chọn, nâng cao độ chính xác số liệu) </span>
         <input type="file" id="w-chart" accept="image/*">
       </label>
-      <label class="ai-write__essay-label" for="w-essay">viết văn</label>
-      <textarea id="w-essay" rows="14" maxlength="8000" placeholder="lúc này dán của bạn viết văn …"></textarea>
-      <p class="ai-write__disclaimer">cho điểm chỉ là AI mô phỏng huấn luyện điểm, không nghi thức chính thức Điểm số. </p>
+      <label class="ai-write__essay-label" for="w-essay">Bài viết của bạn</label>
+      <textarea id="w-essay" rows="14" maxlength="8000" placeholder="Dán bài viết của bạn vào đây..."></textarea>
+      <p class="ai-write__disclaimer">Điểm số và đánh giá từ AI mang tính chất luyện tập tham khảo, không thay thế cho điểm thi thực tế.</p>
       <div class="ai-write__meta">
         <span id="w-wordcount">0 từ</span>
         <p class="ai-quota-line" id="quota-writing">Đang tải hạn mức …</p>
         <p class="ai-write__hint" id="w-hint"></p>
-        <button type="button" class="btn btn--primary" id="btn-grade">Nộp bài phê chữa</button>
+        <button type="button" class="btn btn--primary" id="btn-grade">Nộp bài chấm điểm</button>
       </div>
       <div class="ai-write__result" id="w-result"></div>
     </section>
@@ -200,26 +200,26 @@
         <div><span>Total</span><strong id="exam-total">00:00</strong></div>
         <div id="exam-subwrap" hidden><span id="exam-sublabel">Prep</span><strong id="exam-sub">01:00</strong></div>
       </div>
-      <button type="button" class="btn btn--ghost btn--sm" id="btn-abandon">Đăng xuất (Chưa hoàn thành)</button>
+      <button type="button" class="btn btn--ghost btn--sm" id="btn-abandon">Thoát bài thi (Chưa hoàn thành)</button>
     </div>
     <div class="ai-exam__stage">
       <div class="ai-exam__cue" id="exam-cue" hidden></div>
-      <p class="ai-exam__status" id="exam-status">chuẩn bị bắt đầu …</p>
+      <p class="ai-exam__status" id="exam-status">Chuẩn bị bắt đầu...</p>
       <div class="ai-exam__viz" id="exam-viz" aria-hidden="true"></div>
     </div>
     <div class="ai-exam__bottom">
-      <button type="button" class="btn btn--primary" id="btn-exam-start">Bắt đầu cuộc thi (giải tỏa thanh âm)</button>
-      <button type="button" class="btn btn--primary" id="btn-exam-submit" hidden>nói xong / Nộp bài</button>
+      <button type="button" class="btn btn--primary" id="btn-exam-start">Bắt đầu thi thử (Bật âm thanh)</button>
+      <button type="button" class="btn btn--primary" id="btn-exam-submit" hidden>Đã nói xong / Nộp bài</button>
     </div>
   </div>
 
   <div class="ai-review" id="review-overlay" hidden>
     <div class="ai-review__panel">
-      <h2>Thi thử xem</h2>
+      <h2>Xem kết quả thi thử</h2>
       <div id="review-score"></div>
       <div id="review-tips"></div>
       <div id="review-turns"></div>
-      <button type="button" class="btn btn--primary" id="btn-review-close">Quay lại Nói</button>
+      <button type="button" class="btn btn--primary" id="btn-review-close">Quay lại phòng luyện Nói</button>
     </div>
   </div>
 

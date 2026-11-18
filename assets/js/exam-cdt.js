@@ -1412,7 +1412,7 @@
       else if (typeof win.confirmSubmit === "function") win.confirmSubmit();
       else win.postMessage({ type: "yysd:time-up" }, "*");
     } catch (e) { /* ignore */ }
-    // ponytail: Giải thích chi tiết không gửi yysd:score — Finish xuất ra phê chữa
+    // Lời giải chi tiết không gửi yysd:score — Finish hiển thị chấm bài
     if (isExplainMode()) {
       state.scoredThisSession = true;
       setTimeout(finish, 300);
@@ -1544,7 +1544,7 @@
     if (hint) {
       hint.hidden = false;
       hint.textContent = isExplainMode()
-        ? " Giải thích chi tiết phê chữa như sau, bất kể nhập Điểm số. "
+        ? " Giải thích chi tiết và nhận xét như sau, không tính vào điểm số. "
         : (state.pack === "drill"
           ? (isListening(state.item)
             ? " Luyện tập đã Nộp bài · Bảng điểm và Giải thích đáp án như sau; có thể dùng đỉnh bá phóng khí cất đi Nghe. "

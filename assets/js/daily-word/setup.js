@@ -75,9 +75,9 @@
       var cur = state.resume.bookLabel || " hôm nay nhiệm vụ ";
       var next = bookLabelOf(state.bookId);
       if (next && state.bookId!== state.resume.bookId) {
-        note.textContent = " bắt đầu lại đem cải thành «" + next + "», trước mắt «" + cur + "» Tiến độ sẽ thanh trừ. ";
+        note.textContent = " Bắt đầu lại sẽ đổi thành «" + next + "», tiến độ của «" + cur + "» sẽ bị xóa. ";
       } else {
-        note.textContent = " có thể sửa từ sách hoặc số lượng sau bắt đầu lại; chút:điểm bắt đầu lại đem thanh trừ trước mắt Tiến độ. ";
+        note.textContent = " Có thể đổi sách từ vựng hoặc số lượng rồi bắt đầu lại; nhấn Bắt đầu lại sẽ xóa tiến độ hiện tại. ";
       }
     }
   }
@@ -147,7 +147,7 @@
               " · " + DW.esc(resume.bookLabel || " hôm nay nhiệm vụ ") + "</p>" +
             '<a class="dw-resume-banner__link" href="daily-word-learn.html"> Tiếp tục ›</a>' +
           "</div>" +
-          '<p class="dw-hint" id="dw-resume-note"> có thể sửa từ sách hoặc số lượng sau bắt đầu lại; chút:điểm bắt đầu lại đem thanh trừ trước mắt Tiến độ. </p>' +
+          '<p class="dw-hint" id="dw-resume-note"> Có thể đổi sách từ vựng hoặc số lượng rồi bắt đầu lại; nhấn Bắt đầu lại sẽ xóa tiến độ hiện tại. </p>' +
         "</div>";
     }
 
@@ -223,10 +223,10 @@
     if (start) {
       start.addEventListener("click", function () {
         if (!state.bookId) return;
-        if (state.resume &&!window.confirm(" bắt đầu lại đem thanh trừ trước mắt Tiến độ, Đồng ý không? ")) return;
+        if (state.resume &&!window.confirm(" Bắt đầu lại sẽ xóa tiến độ hiện tại, bạn có đồng ý không? ")) return;
         persist();
         start.disabled = true;
-        start.textContent = " rút từ Vừa …";
+        start.textContent = " Đang chọn từ…";
         DW.fetchBookPool(state.bookId, 0).then(function (data) {
           var picked = DW.pickDaily(data.pool, state.bookId, state.count, DW.getRecords());
           if (!picked.length) throw new Error(" từ kho tạm thời chưa có có thể dùng Từ vựng ");

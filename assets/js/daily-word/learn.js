@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/learn.js — Học tập trang chủ mặt: bốn bước Trạng thái cơ, ghi âm, tục học, phối đồ dự lấy
+   daily-word/learn.js — Học tập trang chủ mặt: bốn bước Trạng thái cơ, ghi âm, tục học, tải trước hình minh họa
    ========================================================================= */
 (function () {
   "use strict";
@@ -365,7 +365,7 @@
       syncMicUi();
       return;
     }
-    ui.speakStatus = " đánh giá Vừa …";
+    ui.speakStatus = " Đang đánh giá…";
     scoring = true;
     syncMicUi();
     try { mediaRec.stop(); } catch (e) {
@@ -403,7 +403,7 @@
       ui.speakTries = task.speakTries[w];
       ui.speakStatus = (e && e.message) || " đánh giá thất bại ";
       // ponytail: billing/key failures — unlock skip immediately, don't burn 3 retries
-      if (/ thiếu nợ phí | Mã khóa không có hiệu quả | Âm thanh phục vụ /.test(ui.speakStatus)) {
+      if (/ thiếu nợ phí | Mã khóa không hợp lệ | Âm thanh phục vụ /.test(ui.speakStatus)) {
         ui.speakTries = Math.max(ui.speakTries, 3);
         markSpeakFail();
       } else if (ui.speakTries >= 3) {

@@ -362,7 +362,7 @@
       el.classList.add("is-wait");
       el.classList.remove("is-low");
       if (label) label.textContent = "";
-      if (secsEl) secsEl.textContent = " nghe âm đọc Vừa …";
+      if (secsEl) secsEl.textContent = " Đang phát âm…";
       if (unit) unit.textContent = "";
       if (bar) bar.style.transform = "scaleX(1)";
       return;

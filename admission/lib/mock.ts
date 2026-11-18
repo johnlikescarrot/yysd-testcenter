@@ -37,7 +37,7 @@ export const MOCK_EVAL = {
       backgroundTags: ["internship"],
       admissionResult: false,
       year: 2025,
-      description: " cởi mẫn án lệ: cùng đương bối cảnh thân thỉnh cực hạn DS, đa số bị cự. ",
+      description: " Hồ sơ thực tế đã ẩn danh: cùng phân khúc nộp ngành Khoa học Dữ liệu cạnh tranh cao, đa số bị từ chối. ",
       similarity: 0.7,
       peerBand: true,
     },

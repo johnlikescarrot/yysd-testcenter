@@ -339,7 +339,7 @@
     return "";
   }
 
-  /* phục bàn tam thể (theo wofo.cc): điền đối với = màu xanh lá mẫu; điền sai = màu đỏ mẫu + lục (Đáp án đúng); Chưa điền = hồng hư tuyến đoạn + lục (Đáp án đúng) */
+  /* đối chiếu ba trạng thái kết quả (theo wofo.cc): điền đúng = màu xanh lá; điền sai = màu đỏ + xanh lá (Đáp án đúng); Chưa điền = viền nét đứt đỏ + xanh lá (Đáp án đúng) */
   function blankReviewHTML(part, raw) {
     var ok = matchBlank(part, raw);
     var got = savedSuffix(part, raw);

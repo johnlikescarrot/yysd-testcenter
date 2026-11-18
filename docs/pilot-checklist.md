@@ -1,41 +1,41 @@
-# đệ nhất gia ngoại bộ hộ khách làm thí điểm nơi làm thí điểm danh sách (Giai đoạn 6)
+# Danh mục Nghiệm thu Khách hàng Thí điểm Đầu tiên (Pilot Checklist - Giai đoạn 6)
 
- tại Giai đoạn 0–5 dấu hiệu sau khi lên nết, dùng chân thật hoặc nửa chân thật hợp tác phương chạy thông một lần.
+Sau khi mã nguồn của Giai đoạn 0–5 được triển khai lên môi trường chính thức (production), phối hợp cùng đối tác thực tế hoặc bán thực tế để vận hành kiểm thử toàn diện toàn bộ quy trình.
 
-## kích hoạt trước (thương vụ)
+## 1. Trước khi kích hoạt (Nghiệp vụ & Thương mại)
 
-- [] Xác nhận nội dung uỷ nhiệm quyền (Cambridge đợi tư liệu có hay không cho phép hợp tác phương sử dụng)
-- [] ước định tháng phí / niên liễm và đến kỳ ngày
-- [] đối phương chuẩn bị: trong công ty văn tên, Logo (PNG/JPG), hy vọng tiểu địa chỉ Internet slug, Quản trị viên Số điện thoại (ghi danh trước là Giáo viên)
+- [ ] Xác nhận quyền ủy quyền nội dung (tài liệu ôn tập Cambridge IELTS và các tài nguyên liên quan đã được cấp phép sử dụng cho đối tác).
+- [ ] Thống nhất mức phí dịch vụ theo tháng / năm và thời hạn hiệu lực của hợp đồng.
+- [ ] Yêu cầu đối tác chuẩn bị: Tên pháp nhân / thương hiệu chính thức, tệp Logo định dạng PNG/JPG sắc nét, slug tên miền con mong muốn, số điện thoại của Quản trị viên (đã đăng ký sẵn tài khoản Giáo viên trên hệ thống).
 
-## bàn điều khiển thao tác
+## 2. Thao tác trên Bảng điều khiển Trung tâm
 
-- [] mở ra `platform.html` (vượt qua quản giáo sư tài khoản Đăng nhập)
-- [] mới xây công ty: tên, slug, Quản trị viên điện thoại, đến kỳ ngày
-- [] thượng truyền(*upload) Logo
-- [] Xác nhận liệt biểu List xuất hiện cai công ty, công tác thống kê là 0 cất bước
+- [ ] Mở trang quản trị `platform.html` (đăng nhập bằng tài khoản Super Admin).
+- [ ] Tạo tổ chức mới: Nhập tên tổ chức, slug tên miền con, số điện thoại Quản trị viên, ngày hết hạn.
+- [ ] Tải lên (Upload) tệp Logo của đối tác.
+- [ ] Xác nhận tổ chức mới xuất hiện trong danh sách quản lý, với các chỉ số thống kê ban đầu khởi tạo từ mức 0.
 
-## đối phương nghiệm thu
+## 3. Quy trình nghiệm thu phía Đối tác
 
-- [] mở ra `https://{slug}.youyisida.com`, thanh điều hướng biểu hiện tên công ty và Logo
-- [] Quản trị viên Đăng nhập Cổng giáo viên, có thể đi vào « Phân bổ học viên »
-- [] Đăng ký / đạo Nhập học sinh; Học viên Đăng nhập sau chỉ có thể nhìn được mình số liệu
-- [] Học viên hoàn thành một bộ Cambridge Thi thử, Điểm số xuất hiện ở cai công ty Cổng giáo viên
-- [] một công ty khác (hoặc YYSD) nhìn không tới kể trên Học viên và Điểm số
+- [ ] Mở liên kết `https://{slug}.youyisida.com`, thanh điều hướng hiển thị đúng tên tổ chức và logo tương ứng.
+- [ ] Quản trị viên chi nhánh đăng nhập vào Cổng giáo viên, truy cập thành công mục «Phân bổ học viên».
+- [ ] Đăng ký tài khoản mới hoặc nhập danh sách học viên; học viên sau khi đăng nhập chỉ nhìn thấy dữ liệu học tập của chính mình.
+- [ ] Học viên hoàn thành một đề thi thử Cambridge IELTS, điểm số được ghi nhận chính xác và hiển thị trên Cổng giáo viên của chi nhánh đó.
+- [ ] Đăng nhập từ chi nhánh khác (hoặc trang chính YYSD), xác nhận tuyệt đối không nhìn thấy học viên và điểm số của chi nhánh đối tác (cô lập dữ liệu hoàn toàn).
 
-## các bạn nghiệm thu
+## 4. Nghiệm thu nội bộ (Phía Đội ngũ Kỹ thuật)
 
-- [] bàn điều khiển có thể chứng kiến Học viên mấy / sinh động biến hóa
-- [] « phục vụ khách hàng Vào học » có thể mở đối phương Cổng giáo viên song song tra
-- [] thao tác nhật ký có ghi chép
-- [] đem đến kỳ ngày sửa đến hôm qua → đối phương tiến `suspended.html`; đổi lại tương lai cũng « khôi phục kích hoạt »→ khôi phục bình thường
+- [ ] Bảng điều khiển trung tâm theo dõi được số lượng học viên và mức độ hoạt động của chi nhánh.
+- [ ] Tính năng «Đăng nhập hỗ trợ khách hàng» cho phép mở Cổng giáo viên của đối tác để cùng kiểm tra khi cần thiết.
+- [ ] Nhật ký thao tác hệ thống ghi nhận đầy đủ các sự kiện liên quan.
+- [ ] Chỉnh sửa ngày hết hạn của tổ chức về ngày hôm qua → trang của đối tác chuyển hướng sang `suspended.html`; chỉnh lại thời hạn tương lai và chọn «Khôi phục kích hoạt» → hệ thống trở lại hoạt động bình thường.
 
-## Dùng thử vấn đề ghi chép
+## 5. Nhật ký xử lý vấn đề trong đợt thử nghiệm
 
-| vấn đề | nghiêm trọng độ | xử lý |
-|------|--------|------|
-| ECS `sync-web.sh` bên trong git pull ngẫu nhiên xảy ra GitHub vượt quá thời gian | Vừa | Đã dùng chủ động `rsync` từ `/opt/yysd/repo` đồng bộ; có thể sửa kịch bản gốc nhảy qua lần thứ hai pull |
-| tùy ý mới slug tử vực HTTPS cần khuếch trương giấy chứng nhận SAN | thấp | DNS thông xứng phù đã OK; đợi DNS-01 thông xứng phù giấy chứng nhận hoặc mở tài khoản lúc certbot --expand |
-| ease Quản trị viên Mã khóa chỉ 1 lần, sau khi kiểm tra cần là chính thức người phụ trách Tạo mới Mã khóa | thấp | bàn điều khiển reg-keys thêm lần hoặc regenerate |
+| Vấn đề phát sinh | Mức độ nghiêm trọng | Giải pháp xử lý |
+|---|---|---|
+| Lệnh `git pull` trong `sync-web.sh` trên ECS đôi khi bị quá thời gian (timeout) kết nối với GitHub | Trung bình | Chuyển sang đồng bộ chủ động bằng `rsync` từ `/opt/yysd/repo`; tinh chỉnh kịch bản để bỏ qua lần pull thứ hai khi không cần thiết |
+| Tên miền con (slug) mới tạo cần mở rộng danh sách SAN trong chứng chỉ HTTPS | Thấp | Bản ghi DNS wildcard đã sẵn sàng; chờ chuyển sang chứng chỉ wildcard tự động qua DNS-01 hoặc chạy lệnh `certbot --expand` khi mở tài khoản mới |
+| Mã kích hoạt Quản trị viên của Ease chỉ có 1 lượt dùng, sau khi nghiệm thu cần cấp mã mới cho người phụ trách chính thức | Thấp | Sử dụng tính năng thêm lượt hoặc tạo lại mã mới (regenerate) trên bảng điều khiển `reg-keys` |
 
- làm thí điểm nơi làm thí điểm thông qua sau bàn lại quy mô hóa thác khách. đối phương tự giúp mình thượng truyền(*upload), online tiền trả đợi gặp Giai đoạn 7+ (theo sau).
+Sau khi hoàn tất nghiệm thu điểm thí điểm, đội ngũ sẽ tiến hành mở rộng quy mô phát triển khách hàng. Các tính năng cho phép đối tác tự tải lên tài liệu và cổng thanh toán trực tuyến sẽ được triển khai trong Giai đoạn 7+ tiếp theo.

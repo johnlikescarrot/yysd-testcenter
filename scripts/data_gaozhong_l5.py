@@ -160,7 +160,7 @@ ROWS = [
  "v. theo như, áp; thúc giục. n. báo chí, giới truyền thông; kìm. press the button; the press; be pressed for time. ",
  [" theo như ", " áp ", " giới truyền thông "],
  "press the button (xoa bóp tay cầm), the press (giới truyền thông), be pressed for time (thời gian cấp bách) ",
- "Press this button to start the machine.", " theo như cái nút này khởi động máy móc. ",
+ "Press this button to start the machine.", " nhấn nút này để khởi động máy móc. ",
  " đã là động tác “ theo như ” cũng là “ truyền thông ”",
  ["push", "media"], [], " theo như ", " thông dụng "),
 ("something", "/ˈsʌmθɪŋ/", "pron.",

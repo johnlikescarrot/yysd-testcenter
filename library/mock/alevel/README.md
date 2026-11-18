@@ -1,8 +1,8 @@
-# A-Level thực Ngân hàng đề
+# Ngân hàng Đề thi Thật A-Level
 
- ba đại hội đồng thi: **CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
+Ba hội đồng thi quốc tế chính: **CAIE** · **Edexcel A Level** · **Oxford AQA A Level**
 
- mục lục kết cấu:
+Cấu trúc thư mục:
 
 ```
 library/mock/alevel/
@@ -11,15 +11,15 @@ library/mock/alevel/
   oxford-aqa/7367-mathematics/papers/
 ```
 
-PDF mệnh danh: `{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
+Quy tắc đặt tên tệp PDF: `{code}_{season}{yy}_{qp|ms}_{paper}.pdf`
 
-- CAIE thí dụ mẫu: `9709_s24_qp_12.pdf`
-- Edexcel thí dụ mẫu: `9MA0_s24_qp_01.pdf`
-- Oxford AQA thí dụ mẫu: `7367_w23_ms_02.pdf`
+- Ví dụ CAIE: `9709_s24_qp_12.pdf`
+- Ví dụ Edexcel: `9MA0_s24_qp_01.pdf`
+- Ví dụ Oxford AQA: `7367_w23_ms_02.pdf`
 
 ```bash
-python3 scripts/seed_alevel_demo.py # có thể chọn demo
-python3 scripts/build_alevel_catalog.py # đổi mới catalog
+python3 scripts/seed_alevel_demo.py     # Tùy chọn tạo dữ liệu thi thử demo
+python3 scripts/build_alevel_catalog.py # Cập nhật danh mục catalog
 ```
 
- kỹ năng danh sách gặp `scripts/alevel_subjects.py`.
+Danh sách môn học chi tiết xem tại `scripts/alevel_subjects.py`.

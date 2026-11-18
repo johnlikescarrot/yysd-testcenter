@@ -416,7 +416,7 @@
 
   function fetchThemePool(bookKey) {
     var themeId = themeIdOf(bookKey);
-    if (!themeId) return Promise.reject(new Error(" Từ vựng theo chủ đề không có hiệu quả "));
+    if (!themeId) return Promise.reject(new Error(" Chủ đề từ vựng không hợp lệ "));
     return fetchThemesCatalog().then(function (cat) {
       var t = null;
       var i;
@@ -457,7 +457,7 @@
     // 0 / null / undefined → whole book (needed for true random)
     return Y.load().then(function (items) {
       var stats = Y.vocabBookStats(items, bookKey);
-      if (!stats ||!stats.lists.length) throw new Error(" từ sách là chỗ trống hoặc không tồn tại ");
+      if (!stats ||!stats.lists.length) throw new Error(" Sách từ vựng đang trống hoặc không tồn tại ");
       var lists = stats.lists;
       if (maxLists > 0) lists = lists.slice(0, maxLists);
       // ponytail: parallel fetch; ceiling = whole book (~40 LISTs)

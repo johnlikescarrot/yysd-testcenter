@@ -45,7 +45,7 @@
         "</label></div>";
 
     if (!words.length) {
-      html += '<div class="soon-box premium-empty">' + (n? " không có thất phối chử mới. ": " còn không có chử mới. trở lại Khu từ vựng dùng AI tra từ, gọi thêm « gia nhập Sổ từ đã lưu ». ") + "</div>";
+      html += '<div class="soon-box premium-empty">' + (n? " Không có từ mới phù hợp. ": " Chưa có từ mới nào. Hãy quay lại Khu từ vựng dùng AI tra từ và nhấn «Lưu vào sổ từ». ") + "</div>";
     } else {
       html += '<div class="wrong-words-list">' + words.map(function (w) {
         var key = String(w.word).toLowerCase();

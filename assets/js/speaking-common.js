@@ -167,7 +167,7 @@ window.YYSD_SPEAKING = (function () {
           throw new Error(msg);
         }
         if (d.error) throw new Error(d.error);
-        if (!d.ok ||!d.report) throw new Error(" cho điểm Quay lại không có hiệu quả, xin sau Thử lại ");
+        if (!d.ok ||!d.report) throw new Error(" Kết quả chấm điểm trả về không hợp lệ, vui lòng thử lại sau ");
         return d.report;
       });
     })

@@ -352,7 +352,7 @@ const TEST = {
           instruction:'Choose the correct letter, A, B or C.',
           questions:[
             {id:'L27',no:27,q:'What do the speakers say about the evidence relating to birth order and academic success?',options:{A:'There is conflicting evidence about whether oldest children perform best in intelligence tests.',B:'There is little doubt that birth order has less influence on academic achievement than socio-economic status.',C:'Some studies have neglected to include important factors such as family size.'},answer:['C'],explain:' về sinh ra trình tự và việc học chứng cớ thuyết pháp. Đáp án: C. '},
-            {id:'L28',no:28,q:'What does Ruth think is surprising about the difference in oldest children’s academic performance?',options:{A:'It is mainly thanks to their roles as teachers for their younger siblings.',B:'The advantages they have only lead to a slightly higher level of achievement.',C:'The extra parental attention they receive at a young age makes little difference.'},answer:['A'],explain:'Ruth cảm thấy bất ngờ chút:điểm. Đáp án: A. '},
+            {id:'L28',no:28,q:'What does Ruth think is surprising about the difference in oldest children’s academic performance?',options:{A:'It is mainly thanks to their roles as teachers for their younger siblings.',B:'The advantages they have only lead to a slightly higher level of achievement.',C:'The extra parental attention they receive at a young age makes little difference.'},answer:['A'],explain:'Ruth cảm thấy bất ngờ điểm. Đáp án: A. '},
           ]},
         { kind:'multi', title:'Questions 29 and 30', audioStart:334, audioEnd:443,
           instruction:'Choose TWO letters, A–E. Which TWO experiences of sibling rivalry do the speakers agree has been valuable for them?',
@@ -510,7 +510,7 @@ function setupTimer(){
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* âm tần (chân thật văn bản tài liệu, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
+/* âm tần (tệp âm thanh thực tế, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }

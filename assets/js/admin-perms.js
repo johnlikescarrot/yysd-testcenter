@@ -95,7 +95,7 @@
   /* st = Server coi là tốt state ({on,reason,startAt,expireAt}) */
   function stateInfo(st) {
     if (!st) return { cls: "cal-status--none", text: " không kích hoạt ", when: "" };
-    if (st.on) return { cls: "cal-status--done", text: " Đã kích hoạt ", when: st.expireAt? fmtWhen(st.expireAt) + " đến kỳ ": " trường kỳ hữu hiệu " };
+    if (st.on) return { cls: "cal-status--done", text: " Đã kích hoạt ", when: st.expireAt? fmtWhen(st.expireAt) + " đến kỳ ": " Hiệu lực dài hạn " };
     if (st.reason === "scheduled") return { cls: "cal-status--pending", text: " Hẹn giờ mở ", when: fmtWhen(st.startAt) + " Mở " };
     if (st.reason === "expired") return { cls: "cal-status--overdue", text: " Đã hết hạn ", when: " Hết hạn lúc " + fmtWhen(st.expireAt) };
     return { cls: "cal-status--off", text: " Đã tạm ngưng ", when: "" };
@@ -135,7 +135,7 @@
 
   function updateFoot() {
     var n = Object.keys(selected).length;
-    pickedHint.textContent = n? (" Đã chọn " + n + " danh học sinh "): " phác thảo chọn Học viên, thiết trí thời gian sau kích hoạt ";
+    pickedHint.textContent = n? (" Đã chọn " + n + " danh học sinh "): " Chọn học viên, thiết lập thời gian và kích hoạt ";
     grantBtn.disabled =!n;
     revokeBtn.disabled =!n;
   }
@@ -184,7 +184,7 @@
   }
 
   function post(body) {
-    showMsg(" Lưu Vừa …", true);
+    showMsg(" Đang lưu…", true);
     grantBtn.disabled = true;
     revokeBtn.disabled = true;
     return api("/api/admin/grants", { method: "POST", body: body }).then(function (d) {

@@ -462,7 +462,7 @@
         }
         var sliced = Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ): paper;
         var tasks = (sliced.tasks || []).map(function (_, i) { return i; });
-        // wofo: Nộp bài trước đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới tiến Điểm số + Giải thích đáp án hợp nhất trang
+        // Trước khi nộp bài hiển thị màn hình « Đang tạo bảng điểm », bấm View để vào trang tổng hợp Điểm số + Giải thích đáp án
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("writing", sliced, { tasks: tasks, answers: answers, score: r.score, total: r.total });
         });

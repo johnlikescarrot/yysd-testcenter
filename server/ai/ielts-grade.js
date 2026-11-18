@@ -75,7 +75,7 @@ async function dashscopeChat(messages, opts) {
   var content = data && data.choices && data.choices[0] && data.choices[0].message
     ? data.choices[0].message.content
     : null;
-  if (content == null || content === "") throw new Error("AI Quay lại là chỗ trống ");
+  if (content == null || content === "") throw new Error("Dữ liệu phản hồi từ AI bị trống ");
   return { text: typeof content === "string"? content: JSON.stringify(content), raw: data };
 }
 
@@ -118,7 +118,7 @@ async function streamChat(key, body) {
       } catch (e) { /* skip partial */ }
     }
   }
-  if (!text &&!audioB64) throw new Error("AI chảy thức Quay lại là chỗ trống ");
+  if (!text &&!audioB64) throw new Error("Dữ liệu phản hồi luồng (stream) từ AI bị trống ");
   return { text: text, audioBase64: audioB64 || null };
 }
 

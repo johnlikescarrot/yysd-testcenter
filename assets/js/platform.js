@@ -112,7 +112,7 @@
       if (!file) return resolve("");
       var r = new FileReader();
       r.onload = function () { resolve(String(r.result || "")); };
-      r.onerror = function () { reject(new Error(" đọc đến hình ảnh thất bại ")); };
+      r.onerror = function () { reject(new Error(" Đọc hình ảnh thất bại ")); };
       r.readAsDataURL(file);
     });
   }

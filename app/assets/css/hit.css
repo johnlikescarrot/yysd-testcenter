@@ -148,7 +148,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover.hit-row-arr
 .hit-confirm { border-top: 1px solid var(--hit-ink); padding: 28px 0; max-width: 620px; }
 .hit-confirm h2 { margin: 0 0 16px; font-size: 22px; font-weight: 600; }
 .hit-confirm ul { color: var(--hit-muted); padding-left: 18px; margin: 0 0 8px; line-height: 1.8; }
-/* chạy nước rút bao liền đem hộp: tạp diện nhỏ và làn da 1:1 theo wofo (tròn giác bạch tạp + thiển sao chép bên cạnh + tro ngọn nguồn cái nút), toàn khoa Thi thử chiếm chính giữa một cách */
+/* chạy nước rút bao liền đem hộp: tạp diện nhỏ và làn da 1:1 theo wofo (tròn giác bạch tạp + thiển sao chép bên cạnh + nút bấm màu xám), toàn khoa Thi thử chiếm chính giữa một cách */
 .hit-mock-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
 .hit-mock-card { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 16px; padding: 18px 22px; background: #fff; border: 1px solid #ececee; border-radius: 12px; box-shadow: 0 1px 2px rgba(20, 20, 20,.04); }
 .hit-mock-card:hover { border-color: #d8d8dd; box-shadow: 0 6px 18px rgba(20, 20, 20,.07); }
@@ -528,7 +528,7 @@ a.hit-set-row:hover h4, a.hit-mock-row:hover h4, a.hit-set-row:hover.hit-row-arr
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none!important; scroll-behavior: auto!important; } }
 
-/* ===== Nộp bài sau phục bàn: wofo thức thanh điều hướng Tab (điểm và tất cả khoa Giải thích đáp án cùng trang hoán đổi) ===== */
+/* ===== Nộp bài và xem lại kết quả: wofo thức thanh điều hướng Tab (điểm và tất cả khoa Giải thích đáp án cùng trang hoán đổi) ===== */
 .rev-shell.hit-top { background: #2b8084; border-bottom-color: #2b8084; color: #fff; }
 .rev-shell.hit-brand { color: #fff; }
 .rev-shell.hit-logo-mark { background: #fff; color: #077f83; }

@@ -33,14 +33,14 @@
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="bình đài giới thiệu">
+      <aside class="auth-aside reveal" aria-label="Giới thiệu nền tảng">
         <p class="auth-aside__eyebrow">IELTS · Chương trình quốc tế </p>
         <h2 class="auth-aside__title">Luyện thi hiệu quả. <br>Lộ trình rõ ràng. <br>Tăng band vững chắc.</h2>
-        <p class="auth-aside__desc" id="aside-desc">sử dụng Số điện thoại và Mật khẩu Đăng nhập; mới người sử dụng mời ghi danh trước cũng thiết trí Mật khẩu. </p>
+        <p class="auth-aside__desc" id="aside-desc">Đăng nhập bằng số điện thoại và mật khẩu; học viên mới vui lòng đăng ký và thiết lập mật khẩu trước. </p>
         <ul class="auth-aside__points">
-          <li> Đề thi Cambridge IELTS </li>
-          <li> Học từ vựng hệ thống kế hoạch </li>
-          <li> nhiệm vụ và Tiến độ đồng bộ </li>
+          <li> Kho đề thi Cambridge IELTS chuẩn hóa </li>
+          <li> Kế hoạch học từ vựng bài bản </li>
+          <li> Đồng bộ tiến độ và nhiệm vụ học tập </li>
         </ul>
       </aside>
       <section class="auth-card reveal">
@@ -48,13 +48,13 @@
           <span class="auth-tabs__item is-active"> Đăng nhập </span>
           <a class="auth-tabs__item" href="register.html"> Đăng ký</a>
         </div>
-        <h1 class="auth-card__title">tài khoản Đăng nhập</h1>
-        <p class="auth-card__desc" id="card-desc">sử dụng Đăng ký lúc Số điện thoại và Mật khẩu Đăng nhập; Giáo viên tài khoản cũng có thể lúc này Đăng nhập. </p>
+        <h1 class="auth-card__title">Đăng nhập tài khoản</h1>
+        <p class="auth-card__desc" id="card-desc">Đăng nhập bằng số điện thoại và mật khẩu đã đăng ký; tài khoản giáo viên cũng có thể đăng nhập tại đây. </p>
 
         <form class="auth-form" id="login-form" novalidate>
           <label class="auth-field">
             <span> Số điện thoại </span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 chữ số điện thoại" required>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="Nhập số điện thoại" required>
           </label>
           <label class="auth-field">
             <span> Mật khẩu </span>
@@ -65,9 +65,9 @@
           <button type="submit" class="btn btn--primary btn--block pressable">Đăng nhập</button>
         </form>
 
-        <p class="auth-legal">còn không có tài khoản? <a href="register.html" id="reg-link"> lập tức Đăng ký</a>
-          <span id="teacher-entry-wrap"> · <a href="teacher-login.html" id="teacher-entry-link"> Giáo viên cửa vào</a></span>
-          · Đăng nhập tiếp xúc biểu thị đồng ý
+        <p class="auth-legal">Chưa có tài khoản? <a href="register.html" id="reg-link"> Đăng ký ngay</a>
+          <span id="teacher-entry-wrap"> · <a href="teacher-login.html" id="teacher-entry-link"> Cổng giáo viên</a></span>
+          · Đăng nhập đồng nghĩa với việc bạn đồng ý với
           <a href="agreement.html">« Điều khoản dịch vụ »</a>
            và
           <a href="privacy.html">« Chính sách bảo mật »</a>
@@ -113,23 +113,23 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    if (A.isHqSite &!A.isHqSite()) {
+    if (A.isHqSite && !A.isHqSite()) {
       document.getElementById("aside-desc").textContent =
-        " sử dụng Số điện thoại và Mật khẩu Đăng nhập. mới người sử dụng mời dùng trước trường học phát ra Mã khóa đăng ký hoàn thành Đăng ký. ";
+        " Đăng nhập bằng số điện thoại và mật khẩu. Người dùng mới vui lòng sử dụng mã đăng ký do cơ sở cấp để hoàn tất đăng ký. ";
       document.getElementById("card-desc").textContent =
-        " Số điện thoại + Mật khẩu Đăng nhập; Học viên và nhân viên công tác tài khoản đều lúc này Đăng nhập. ";
-      document.getElementById("reg-link").textContent = " Mã khóa Đăng ký ";
+        " Đăng nhập bằng số điện thoại và mật khẩu; áp dụng cho cả tài khoản học viên và cán bộ nhân viên. ";
+      document.getElementById("reg-link").textContent = " Đăng ký bằng mã kích hoạt ";
       var tWrap = document.getElementById("teacher-entry-wrap");
       if (tWrap) tWrap.hidden = true;
     }
 
     function showMsg(text, ok) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
+      msgEl.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
     }
 
     if (new URLSearchParams(location.search).get("reset") === "1") {
-      showMsg(" Mật khẩu đã trọng đưa, xin sử dụng Mật khẩu mới Đăng nhập. ", true);
+      showMsg(" Mật khẩu đã được đặt lại thành công, vui lòng sử dụng mật khẩu mới để đăng nhập. ", true);
     }
 
     form.addEventListener("submit", function (ev) {

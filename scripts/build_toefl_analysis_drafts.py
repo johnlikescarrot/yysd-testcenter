@@ -107,7 +107,7 @@ def clean(zh, got, blanks):
 
 
 def hint_lines(task):
-    """ từng chỗ trống xứng một câu Bài gốc neo chút:điểm, tránh cho mô hình đem Giải thích đáp án an đến hàng xóm từ bên trên. """
+    """ từng chỗ trống xứng một câu điểm neo của bài gốc, tránh cho mô hình đem Giải thích đáp án an đến hàng xóm từ bên trên. """
     sents = re.split(r"(?<=[.!?])\s+", passage_view(task))
     out = []
     for p in task.get("passage") or []:

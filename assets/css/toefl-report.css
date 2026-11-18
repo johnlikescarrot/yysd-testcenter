@@ -114,7 +114,7 @@
   color: #4a4746;
 }
 
-/* chính thức không có raw→scaled so sánh bề ngoài, trạm[trang web] đương vị theo như Tỷ lệ đúng sắp xếp hồ sơ tính ra, phải chi tiết đánh dấu */
+/* ETS không công bố bảng quy đổi điểm raw→scaled chính thức, hệ thống ước tính theo tỷ lệ đúng tương đương, cần chú thích rõ */
 .tf-est {
   margin: 12px 2px 0;
   font-size: 12px;
@@ -136,7 +136,7 @@
   color: var(--tf-ink);
 }
 
-/* ---------- phục bàn: CW tam thể + trục chỗ trống Giải thích đáp án ---------- */
+/* ---------- Xem lại: CW 3 trạng thái + giải thích đáp án từng chỗ trống ---------- */
 
 .tf-cloze { font-size: 15.68px; line-height: 1.6; color: #000; }
 .tf-cloze.tf-blank { white-space: nowrap; }
@@ -187,7 +187,7 @@
 .tf-explain ol { margin: 0; padding-left: 20px; }
 .tf-explain li { margin-bottom: 8px; line-height: 1.55; }
 
-/* ---------- phục bàn: Phương án trục đầu Giải thích đáp án ---------- */
+/* ---------- Xem lại: Giải thích đáp án từng phương án ---------- */
 
 .tf-opt { padding: 0 0 12px; }
 .tf-opt-line { display: flex; align-items: flex-start; gap: 8px; }

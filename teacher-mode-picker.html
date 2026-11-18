@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lựa chọn sử dụng hình thức · Cổng giáo viên</title>
+  <title>Chọn chế độ làm việc · Cổng giáo viên</title>
   <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260821tfix1">
@@ -29,17 +29,17 @@
   <main class="minimal-shell minimal-main auth-main">
     <section class="auth-card reveal teacher-mode-picker">
       <div class="minimal-eyebrow">TEACHER MODE</div>
-      <h1 class="auth-card__title">mời lựa chọn sử dụng hình thức</h1>
-      <p class="auth-card__desc">Đăng nhập sau mời trước lựa chọn muốn đi vào khu vực. về sau ví dụ cần hoán đổi, xin sử dụng trang web đỉnh hình thức hoán đổi cái nút. </p>
+      <h1 class="auth-card__title">Vui lòng chọn chế độ làm việc</h1>
+      <p class="auth-card__desc">Sau khi đăng nhập, vui lòng chọn khu vực bạn muốn truy cập. Bạn có thể chuyển đổi chế độ bất cứ lúc nào qua nút chuyển đổi ở thanh điều hướng trên cùng. </p>
 
       <div class="teacher-mode-picker__choices">
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-admin">
-          <strong>phòng học quản lý khu</strong>
-          <span> Xem học chuyện, bố trí nhiệm vụ, Chẩn đoán từ vựng, Vượt ải từ vựng Quản trị và Học viên Điểm số. </span>
+          <strong>Khu quản lý giáo vụ</strong>
+          <span> Theo dõi học tập, giao nhiệm vụ, chẩn đoán từ vựng, quản lý vượt ải từ vựng và bảng điểm học viên. </span>
         </button>
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-site">
-          <strong>Khu tính năng học tập</strong>
-          <span> dùng Học viên thị giác Dùng thử Khu từ vựng, Khu luyện tập, Khu đề thi đợi công năng và vượt ải Tiến độ. </span>
+          <strong>Trải nghiệm giao diện học viên</strong>
+          <span> Trải nghiệm toàn bộ các tính năng từ vựng, luyện đề, thi thử và tiến độ học tập dưới góc nhìn của học viên. </span>
         </button>
       </div>
 
@@ -63,14 +63,14 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    if (!T ||!T.getToken()) {
+    if (!T || !T.getToken()) {
       location.replace("teacher-login.html?next=" + encodeURIComponent("teacher-mode-picker.html"));
       return;
     }
 
     function showMsg(text) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (text? " auth-msg--err": "");
+      msgEl.className = "auth-msg" + (text ? " auth-msg--err" : "");
     }
 
     document.getElementById("logout-btn").addEventListener("click", function () {
@@ -87,7 +87,7 @@
       var btn = this;
       btn.disabled = true;
       M.enterSiteMode().catch(function (err) {
-        showMsg((err & err.message) || " không cách nào Vào học Khu tính năng học tập ");
+        showMsg((err && err.message) || " Không thể truy cập giao diện học viên ");
         btn.disabled = false;
       });
     });

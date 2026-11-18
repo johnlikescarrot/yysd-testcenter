@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse New Oriental IELTS speaking cơ trải qua PDF (thuần túy đề mục bản) into jiijing JSON bank."""
+"""Parse New Oriental bộ đề dự đoán IELTS Speaking PDF (thuần túy đề mục bản) into jiijing JSON bank."""
 from __future__ import annotations
 
 import argparse
@@ -258,7 +258,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf", type=Path)
     ap.add_argument("--bank-id", default="2026-q2")
-    ap.add_argument("--title", default="năm 2026 thứ hai quý IELTS Speaking cơ trải qua ")
+    ap.add_argument("--title", default="năm 2026 thứ hai quý bộ đề dự đoán IELTS Speaking ")
     ap.add_argument(
         "--out-dir",
         type=Path,

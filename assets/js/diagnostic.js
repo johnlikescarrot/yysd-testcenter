@@ -193,7 +193,7 @@
       "<h1>" + esc(title) + "</h1>" +
       (state.gate
         ? '<p class="diag-lead diag-lead--gate"><strong> lần đầu Vào học Khu từ vựng trước tu hoàn thành một lần năng lực Kiểm tra. </strong> sau khi kết thúc tạo ra kỹ càng báo cáo, Học tập đề nghị và Đề xuất bộ từ khởi đầu. </p>'
-        : '<p class="diag-lead"> cứng rắn cánh cửa tiến giai: THPT ≥90%, Đại học B1 ≥80% lại vừa Vào học tiếp theo Giai đoạn; Xuất sắc tuyến dùng cho báo cáo bình xét cấp bậc. </p>') +
+        : '<p class="diag-lead"> cứng rắn cánh cửa tiến giai: THPT ≥90%, Đại học B1 ≥80% mới được chuyển sang giai đoạn tiếp theo; Xuất sắc tuyến dùng cho báo cáo bình xét cấp bậc. </p>') +
       '<div class="diag-meta-row">' +
       '<span class="diag-meta-pill"> dự tính 20–40 phút</span>' +
       '<span class="diag-meta-pill"> tối đa 95 câu</span>' +

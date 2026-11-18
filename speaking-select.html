@@ -30,38 +30,38 @@
     <div class="spk-hero bento-panel spk-hero--select">
       <span class="spk-badge"> IELTS Toàn phần mô phỏng Môi trường </span>
       <h1>Luyện kỹ năng Nói</h1>
-      <p>nhấn vào tạp phiến phác thảo chọn Luyện tập chủ đề, chọn đầy sau là được Vào học thực chiến diễn luyện. </p>
-      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait"> đang liên tiếp AI phục vụ …</div>
+      <p>Nhấn vào thẻ chủ đề để chọn bài luyện tập. Sau khi chọn đủ chủ đề, bạn có thể bắt đầu phần luyện nói thực chiến.</p>
+      <div id="ai-banner" class="spk-ai-banner spk-ai-banner--wait"> Đang kết nối dịch vụ AI...</div>
     </div>
 
     <div class="spk-select-head">
       <div>
         <div class="spk-tabs">
           <button type="button" class="spk-tab is-active" id="tab-p1">Part 1</button>
-          <button type="button" class="spk-tab" id="tab-p2" disabled title="Phase 2 phát hành">Part 2 &amp; 3</button>
+          <button type="button" class="spk-tab" id="tab-p2" disabled title="Sắp ra mắt ở giai đoạn tiếp theo">Part 2 &amp; 3</button>
         </div>
-        <p class="spk-select-hint">Đời sống đối thoại: 4–5 phút, quay chung quanh sinh hoạt, công tác Học tập ít hôm nữa thường chủ đề trao đổi </p>
+        <p class="spk-select-hint">Hội thoại đời sống: 4–5 phút, xoay quanh các chủ đề quen thuộc hàng ngày như cuộc sống, công việc, học tập</p>
       </div>
       <div class="spk-progress">
-        <div>Part 1 Chọn đề Tiến độ </div>
+        <div>Tiến độ chọn chủ đề Part 1</div>
         <b id="prog-text">Đã chọn 0 / 2</b>
-        <span id="prog-hint"> còn cần lựa chọn 2 đề tài </span>
+        <span id="prog-hint"> Cần chọn thêm 2 chủ đề </span>
       </div>
     </div>
 
     <div class="spk-toolbar">
       <label class="spk-search">
         <span aria-hidden="true">⌕</span>
-        <input type="search" id="search" placeholder="tìm kiếm chủ đề title..." autocomplete="off">
+        <input type="search" id="search" placeholder="Tìm kiếm chủ đề..." autocomplete="off">
       </label>
     </div>
 
     <div class="spk-grid" id="grid"></div>
-    <div class="spk-empty" id="empty" hidden> không có thất phối chủ đề </div>
+    <div class="spk-empty" id="empty" hidden> Không tìm thấy chủ đề phù hợp </div>
   </main>
 
   <div class="spk-start-bar" id="start-bar">
-    <button type="button" class="btn btn--primary pressable" id="start-btn">Bắt đầu kiểm tra</button>
+    <button type="button" class="btn btn--primary pressable" id="start-btn">Bắt đầu luyện tập</button>
   </div>
 
   <script src="assets/js/auth.js?v=20261013perm1"></script>
@@ -84,7 +84,7 @@
     function updateProgress() {
       progText.textContent = " Đã chọn " + selected.length + " / " + REQUIRED;
       var left = REQUIRED - selected.length;
-      progHint.textContent = left > 0? " còn cần lựa chọn " + left + " đề tài ": " có thể Bắt đầu kiểm tra rồi ";
+      progHint.textContent = left > 0 ? " Cần chọn thêm " + left + " chủ đề " : " Đã sẵn sàng bắt đầu luyện tập ";
       startBar.classList.toggle("is-visible", selected.length >= REQUIRED);
     }
 
@@ -177,7 +177,7 @@
         updateProgress();
       })
       .catch(function () {
-        grid.innerHTML = '<div class="spk-empty"> Ngân hàng đề Tải dữ liệu thất bại: Server bên trên thiếu khuyết data/speaking/part1-topics.json. <br>mời tại ECS chấp hành <code>bash server/deploy/sync-web.sh</code> đồng bộ trang web văn bản tài liệu sau Làm mới. </div>';
+        grid.innerHTML = '<div class="spk-empty"> Tải ngân hàng đề thất bại: Máy chủ thiếu tệp data/speaking/part1-topics.json. <br>Vui lòng thực thi lệnh <code>bash server/deploy/sync-web.sh</code> trên máy chủ để đồng bộ tài liệu rồi làm mới trang. </div>';
       });
   })();
   </script>

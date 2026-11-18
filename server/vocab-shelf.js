@@ -906,7 +906,7 @@ function mountRoutes(app, opts) {
     var book = cat.byId[bookId];
     if (!book) return res.status(404).json({ error: " từ sách không tồn tại " });
     var lesson = resolveLesson(repoRoot, book, listId);
-    if (!lesson) return res.status(404).json({ error: "List không tồn tại hoặc từ bề ngoài thiếu thốn " });
+    if (!lesson) return res.status(404).json({ error: "Danh sách không tồn tại hoặc danh sách từ vựng bị thiếu " });
     var prog = progressMap(req.user.sub, bookId)[listId] || { wordIdx: 0, done: false };
     var idx = Math.max(0, Math.min(Number(prog.wordIdx) || 0, Math.max(0, lesson.words.length - 1)));
     res.json({
@@ -1134,7 +1134,7 @@ function mountRoutes(app, opts) {
       } catch (e) {
         pendingWords = [];
       }
-      if (!pendingWords.length) return res.status(400).json({ error: " trắc nghiệm số liệu không có hiệu quả " });
+      if (!pendingWords.length) return res.status(400).json({ error: " Dữ liệu bài trắc nghiệm không hợp lệ " });
       bookId = pending.book_id || bookId;
       listIds = parseJsonArr(pending.list_ids);
       listLabels = parseJsonArr(pending.list_labels);

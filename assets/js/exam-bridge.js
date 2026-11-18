@@ -630,7 +630,7 @@
         if (examLock.isOn() &&!isTestDone() && isTesting()) {
           alert(cdtShell
             ? "You cannot leave during a mock test. Use Finish section to end this part."
-            : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời chút:điểm « hoàn thành cũng Xem báo cáo ». ");
+            : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời nhấn «Hoàn thành và Xem báo cáo». ");
           return;
         }
         examLock.disable();
@@ -748,7 +748,7 @@
       if (fb &&!looksLikeJsonLeak(fb)) {
         html += "<div class=\"yysd-ai-grade__feedback\">" + escHtml(fb) + "</div>";
       }
-      return html || "<p> không Quay lại kết cấu hóa cho điểm, mời gọi thêm phía trên cái nút Thử lại </p>";
+      return html || "<p> Không nhận được kết quả chấm điểm có cấu trúc, vui lòng nhấn nút Thử lại ở trên </p>";
     }
 
     function ensureAiPanel() {
@@ -779,13 +779,13 @@
         ".yysd-ai-grade__feedback{font-size:13px;white-space:pre-wrap;color:#334155;margin-top:8px;}" +
         ".yysd-ai-grade ul{margin:6px 0 0;padding-left:1.2em;font-size:13px;line-height:1.5;}" +
         "</style>" +
-        "<h3>AI giám khảo phê chữa </h3>" +
+        "<h3>AI Giám khảo chấm bài </h3>" +
         '<p class="yysd-ai-grade__note"> theo như IELTS bốn hạng tiêu chuẩn cổ phân, cũng cho ra lời bình, sửa chữa sai và bài văn mẫu. ' +
-        "<b>AI cổ phân chỉ cung Luyện tập tham khảo, không nghi thức điểm thi </b>. Task 1 bản bản không học nguyên đồ, chỉ căn cứ Câu hỏi và biểu đồ lời thuyết minh chữ. " +
-        " mỗi lần phê chữa tiêu hao 1 lần ngày đó AI văn tự khoản độ. </p>" +
+        "<b>Điểm ước tính của AI chỉ mang tính tham khảo luyện tập, không phải điểm thi chính thức </b>. Task 1 bản bản không học nguyên đồ, chỉ căn cứ Câu hỏi và biểu đồ lời thuyết minh chữ. " +
+        " Mỗi lần chấm bài sẽ tiêu hao 1 lượt trong hạn mức AI văn bản của ngày hôm đó. </p>" +
         '<div class="yysd-ai-grade__actions">' +
-        '<button type="button" data-task="task1">AI phê chữa Task 1</button>' +
-        '<button type="button" data-task="task2">AI phê chữa Task 2</button>' +
+        '<button type="button" data-task="task1">AI Chấm bài Task 1</button>' +
+        '<button type="button" data-task="task2">AI Chấm bài Task 2</button>' +
         "</div>" +
         '<p class="yysd-ai-grade__hint" id="yysd-ai-grade-hint"></p>' +
         '<div class="yysd-ai-grade__block" id="yysd-ai-grade-task1" hidden></div>' +
@@ -826,7 +826,7 @@
       }
       var prompt = promptForTask(taskType);
       if (!prompt) {
-        setGradeHint(" không thể đọc đến chủ đề Câu hỏi ", true);
+        setGradeHint(" Không thể đọc nội dung câu hỏi ", true);
         return;
       }
       var reqId = "wg-" + (++gradeReqSeq);
@@ -838,7 +838,7 @@
         delete gradePending[reqId];
         delete gradeTimers[reqId];
         setGradeButtonsBusy(Object.keys(gradePending).length > 0);
-        setGradeHint(" phê chữa vượt quá thời gian, mời gọi thêm cái nút Thử lại ", true);
+        setGradeHint(" Chấm bài quá thời gian chờ, vui lòng nhấn nút Thử lại ", true);
       }, 120000);
       try {
         window.parent.postMessage({
@@ -872,7 +872,7 @@
         if (/ hạn mức cao nhất | sử dụng hết | khoản độ /i.test(err) &&!/ ngày mai | ngày mai /.test(err)) {
           err = err.replace(/[.!!]?$/, "") + ", hẹn gặp lại ngày mai ";
         } else if (/ Giải thích đáp án | thất bại | sau đó /i.test(err)) {
-          err = err.replace(/[.!!]?$/, "") + " — có thể gọi thêm cái nút Thử lại ";
+          err = err.replace(/[.!!]?$/, "") + " — có thể nhấn nút Thử lại ";
         }
         setGradeHint(err, true);
         return;
@@ -1426,7 +1426,7 @@
       if (examLock.isOn() &&!isTestDone() && isTestingLR()) {
         alert(cdtShell
           ? "You cannot leave during a mock test. Use Finish section to end this part."
-          : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời chuyển động đến dưới đáy nhấn vào « Nộp bài cũng phê chữa ». ");
+          : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời chuyển động đến dưới đáy nhấn «Nộp bài và chấm điểm». ");
         return;
       }
       examLock.disable();

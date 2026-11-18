@@ -1,78 +1,78 @@
-# nhất tức thì Giáo dục (ease) kích hoạt và làm thí điểm nơi làm thí điểm nghiệm thu
+# Hướng dẫn Kích hoạt và Nghiệm thu Điểm Thí điểm Ease Education (ease)
 
-## trạm điểm[web] cửa vào
+## Các cổng truy cập (Web Portal Endpoints)
 
-| công dụng | địa chỉ |
-|------|------|
-| Trang chủ | https://ease.youyisida.com |
+| Mục đích sử dụng | Địa chỉ truy cập |
+|---|---|
+| Trang chủ chi nhánh | https://ease.youyisida.com |
 | Đăng nhập (Học viên / Giáo viên / Quản trị viên) | https://ease.youyisida.com/login.html |
-| Học viên Đăng ký | https://ease.youyisida.com/register.html |
-| nhân viên công tác Đăng ký (Giáo viên / Quản trị viên) | https://ease.youyisida.com/teacher-register.html |
-| Giáo viên bàn làm việc | https://ease.youyisida.com/teacher.html |
-| Phân bổ học viên (Quản trị viên) | https://ease.youyisida.com/admin-assign.html |
+| Đăng ký học viên | https://ease.youyisida.com/register.html |
+| Đăng ký nhân viên (Giáo viên / Quản trị viên) | https://ease.youyisida.com/teacher-register.html |
+| Bàn làm việc giáo viên | https://ease.youyisida.com/teacher.html |
+| Phân bổ học viên (Quản trị viên chi nhánh) | https://ease.youyisida.com/admin-assign.html |
 
- tổng bộ bàn điều khiển (chỉ youyisida.com): https://youyisida.com/platform.html
+Bảng điều khiển trung tâm (chỉ dành cho quản trị viên tại youyisida.com): https://youyisida.com/platform.html
 
-## trước mắt cơ cấu phối trí (đã nghiệm chứng 2026-07-22)
+## Cấu hình tổ chức hiện tại (Đã xác minh ngày 22/07/2026)
 
-- tên: ** nhất tức thì Giáo dục **
-- slug: `ease`
-- Trạng thái: bình thường (đến kỳ 2026-10-21)
-- Quản trị viên điện thoại (tạm dùng nghiệm thu): 15901754473
-- Logo: đã thượng truyền(*upload)
+- Tên tổ chức: **Ease Education**
+- Mã định danh (slug): `ease`
+- Trạng thái: Bình thường (hạn sử dụng đến ngày 21/10/2026)
+- Số điện thoại Quản trị viên (dùng tạm để nghiệm thu): 15901754473
+- Logo: Đã tải lên hệ thống
 
-## Mã khóa đăng ký (mời thích đáng phát, chớ công khai dán hồ)
+## Mã kích hoạt đăng ký (Vui lòng gửi đúng người nhận, không phổ biến công khai)
 
-| nhân vật | Mã khóa | còn thừa số lần |
-|------|------|----------|
-| công ty Quản trị viên | `EaseAdm7760` | 1 / 1 |
+| Vai trò người dùng | Mã kích hoạt | Lượt sử dụng còn lại |
+|---|---|---|
+| Quản trị viên chi nhánh | `EaseAdm7760` | 1 / 1 |
 | Giáo viên | `EaseTch5508` | 4 / 5 (Đã dùng 1 lần) |
 | Học viên | `EaseStu2273` | 10 / 10 |
 
- điểm trang web Đăng ký tu điền đối ứng Mã khóa; tổng bộ `youyisida.com` nhưng dùng tin nhắn Mã xác thực Đăng ký.
+Tại trang web của chi nhánh, người dùng cần nhập mã kích hoạt tương ứng để hoàn tất đăng ký; riêng tại trang trung tâm `youyisida.com`, người dùng có thể đăng ký trực tiếp bằng mã xác thực SMS.
 
-## Đề xuất nghiệm thu trình tự (Quản trị viên = 15901754473)
+## Quy trình nghiệm thu khuyến nghị (Quản trị viên = 15901754473)
 
-1. ** Quản trị viên Đăng ký **
-    mở ra https://ease.youyisida.com/teacher-register.html
-    điền Số điện thoại, Mật khẩu, ** Đăng ký giáo viên Mã khóa chỗ điền Quản trị viên Mã khóa `EaseAdm7760`** (không nên dùng Giáo viên Mã khóa).
-    Đăng ký sau khi thành công có thể tiến Cổng giáo viên, cũng chứng kiến « Phân bổ học viên ».
+1. **Đăng ký Quản trị viên:**
+   - Mở https://ease.youyisida.com/teacher-register.html
+   - Điền Số điện thoại, Mật khẩu, **tại ô Mã kích hoạt đăng ký giáo viên, nhập Mã kích hoạt Quản trị viên `EaseAdm7760`** (không dùng mã giáo viên thông thường).
+   - Sau khi đăng ký thành công, truy cập Cổng giáo viên và kiểm tra chức năng «Phân bổ học viên».
 
-2. ** Phân bổ học viên **
-    Cổng giáo viên → Phân bổ học viên: đạo nhập hoặc đợi đợi Học viên Đăng ký sau, đem Phân bổ học viên cho Giáo viên.
+2. **Phân bổ học viên:**
+   - Tại Cổng giáo viên → Phân bổ học viên: Nhập danh sách hoặc đợi học viên đăng ký, sau đó phân bổ học viên cho giáo viên phụ trách.
 
-3. ** Kiểm tra Học viên Đăng ký **
-    dùng ** không tại tổng bộ Đăng ký trôi qua điện thoại mới số **, mở ra https://ease.youyisida.com/register.html
-    điền ** Học viên Mã khóa `EaseStu2273`**, hoàn thành Đăng ký.
+3. **Kiểm tra đăng ký Học viên:**
+   - Sử dụng **số điện thoại mới chưa từng đăng ký trên hệ thống trung tâm**, mở https://ease.youyisida.com/register.html
+   - Nhập **Mã kích hoạt học viên `EaseStu2273`** và hoàn tất đăng ký.
 
-4. ** Thi thử và Điểm số **
-    Học viên Đăng nhập → Khu đề thi → hoàn thành một bộ Cambridge Thi thử → Giáo viên tại ease Cổng giáo viên Xem Điểm số.
+4. **Làm bài thi thử và Ghi nhận điểm số:**
+   - Học viên đăng nhập → Khu đề thi → hoàn thành một đề thi Cambridge IELTS → Giáo viên kiểm tra điểm số hiển thị trên Cổng giáo viên của Ease.
 
-5. ** cách ly nghiệm chứng **
-    tại https://youyisida.com dùng vượt qua quản Đăng nhập, Xác nhận ** nhìn không tới ** ease đứng Kiểm tra học viên số liệu.
+5. **Xác minh tính cô lập dữ liệu:**
+   - Đăng nhập tài khoản Super Admin tại https://youyisida.com, xác nhận **không nhìn thấy** dữ liệu học viên của chi nhánh Ease khi xem ở chế độ thông thường.
 
-6. ** đến kỳ màn ngừng (có thể chọn) **
-    bàn điều khiển đem ease đến kỳ ngày cải thành hôm qua → ease đứng ứng với nhảy chuyển `suspended.html` → khôi phục kích hoạt sau khôi phục bình thường.
+6. **Tạm ngưng hoạt động khi hết hạn (Kiểm thử tùy chọn):**
+   - Tại bảng điều khiển trung tâm, chỉnh ngày hết hạn của Ease thành ngày hôm qua → trang web của Ease sẽ tự động chuyển hướng sang `suspended.html` → kích hoạt lại hạn dùng thì hệ thống trở lại hoạt động bình thường.
 
-## cho nhất tức thì người phụ trách phát lời nói thuật (có thể phục chế)
+## Mẫu thông báo gửi người phụ trách Ease (Có thể sao chép trực tiếp)
 
-> nhất tức thì Giáo dục online Học tập bình đài Đã kích hoạt.
-> địa chỉ Internet: https://ease.youyisida.com
-> Đăng nhập cửa vào: https://ease.youyisida.com/login.html (Học viên, Giáo viên, Quản trị viên thống nhất Đăng nhập).
-> Quản trị viên lần đầu Đăng ký mời mở ra « nhân viên công tác Đăng ký », sử dụng chúng tôi cung cấp ** Quản trị viên Mã khóa đăng ký ** (Mã khóa một mình gửi bạn, chớ truyền ra bên ngoài).
-> Học viên Đăng ký cần ** Học viên Mã khóa đăng ký **; mỗi vị Học viên một số điện thoại di động, không thể và YYSD tổng bộ đứng lặp lại.
-> Đăng ký sau Đăng nhập là được sử dụng Cambridge Thi thử và Luyện tập công năng. Logo và trang web đã biểu hiện « nhất tức thì Giáo dục ».
+> Nền tảng học tập trực tuyến Ease Education đã chính thức được kích hoạt.
+> Địa chỉ website: https://ease.youyisida.com
+> Cổng đăng nhập: https://ease.youyisida.com/login.html (Dành cho Học viên, Giáo viên và Quản trị viên).
+> Quản trị viên đăng ký lần đầu vui lòng mở mục «Đăng ký nhân viên», sử dụng **Mã kích hoạt Quản trị viên** được cấp riêng (mã này gửi riêng cho bạn, vui lòng không chia sẻ ra ngoài).
+> Học viên khi đăng ký cần nhập **Mã kích hoạt Học viên**; mỗi học viên sử dụng một số điện thoại riêng biệt, không trùng lặp với hệ thống trung tâm YYSD.
+> Sau khi đăng ký và đăng nhập, học viên có thể làm bài thi thử và luyện tập các đề thi Cambridge IELTS. Logo và thương hiệu của Ease Education đã được tích hợp đồng bộ trên toàn bộ giao diện.
 
-## thông thường vấn đề
+## Các câu hỏi thường gặp
 
-| vấn đề | xử lý |
-|------|------|
-| Số điện thoại đã Đăng ký | toàn bộ đứng Số điện thoại duy nhất; mời dùng mới số, hoặc liên hệ YYSD xử lý |
-| Mã khóa số lần dùng hết | tổng bộ bàn điều khiển → nên cơ cấu →« Mã khóa đăng ký » thêm lần hoặc Tạo mới Mã khóa |
-| trang web nhưng biểu hiện YYSD | lần đầu phỏng vấn một trang khả năng ngắn ngủi chỗ trống (phòng thoáng hiện); như nhưng chứng kiến YYSD chữ, cưỡng chế Làm mới `Cmd+Shift+R` hoặc không dấu vết cửa sổ |
-| Quên mật khẩu (điểm trang web) | liên hệ trường chúng ta Quản trị viên hoặc YYSD vượt qua quản, điểm trang web không hỗ trợ Đặt lại qua SMS |
+| Tình huống phát sinh | Cách xử lý |
+|---|---|
+| Số điện thoại đã được đăng ký | Toàn hệ thống quản lý số điện thoại duy nhất; vui lòng dùng số điện thoại khác hoặc liên hệ ban quản trị YYSD để hỗ trợ |
+| Mã kích hoạt đã dùng hết lượt | Bảng điều khiển trung tâm → chọn tổ chức → mục «Mã kích hoạt đăng ký» bấm thêm lượt hoặc tạo mã mới |
+| Trang web vẫn hiển thị logo YYSD | Lần đầu truy cập trang có thể xuất hiện màn hình trắng ngắn để chống nhấp nháy giao diện; nếu vẫn thấy thương hiệu YYSD, hãy nhấn tổ hợp phím `Ctrl+Shift+R` (hoặc `Cmd+Shift+R`) để làm mới triệt để bộ nhớ đệm, hoặc mở cửa sổ ẩn danh |
+| Quên mật khẩu tại trang chi nhánh | Vui lòng liên hệ Quản trị viên của cơ sở hoặc Super Admin YYSD để hỗ trợ, trang web chi nhánh hiện chưa hỗ trợ đặt lại mật khẩu qua SMS |
 
-## vận duy ghi chú
+## Ghi chú Vận hành Hệ thống (DevOps Notes)
 
-- DNS thông xứng phù `*.youyisida.com` đã có hiệu lực; Nginx đã cải thành thông xứng phù `server_name`.
-- HTTPS giấy chứng nhận trước mắt bao trùm `youyisida.com`, `www`, `api`, `ease`, `youyisi`; ** mới mở khác slug tử vực lúc ** cần chấp hành một lần `certbot --nginx --expand` tăng thêm SAN, hoặc đến tiếp sau phối trí DNS-01 thông xứng phù giấy chứng nhận (gặp `docs/multi-tenant.md`).
+- Bản ghi DNS ký tự đại diện (wildcard) `*.youyisida.com` đã có hiệu lực; cấu hình Nginx đã được cập nhật với `server_name` tương ứng.
+- Chứng chỉ HTTPS hiện tại đã bao phủ các tên miền: `youyisida.com`, `www`, `api`, `ease`, `youyisi`. Khi **mở thêm tên miền con (slug) mới**, cần chạy lệnh `certbot --nginx --expand` để bổ sung SAN, hoặc cấu hình chứng chỉ wildcard qua phương thức xác thực DNS-01 (xem chi tiết tại `docs/multi-tenant.md`).

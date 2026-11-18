@@ -137,9 +137,9 @@
   var LIB_SKILLS = ["reading", "listening", "speaking", "writing"];
   var LIB_FILTERS = [{ key: "all", zh: "Tất cả" }, { key: "todo", zh: " không làm " }, { key: "hot", zh: " Tần suất cao " }];
   var LIB_HEAD = {
-    reading: { kicker: "TOEFL READING LAB", zh: " Đọc Luyện tập ", lead: " trước Trắc nghiệm hình, gọi thêm kích câu số Vào học Luyện tập. " },
-    listening: { kicker: "TOEFL LISTENING LAB", zh: " Nghe Luyện tập ", lead: " trước Trắc nghiệm hình, gọi thêm kích đề mục Vào học Luyện tập. " },
-    speaking: { kicker: "TOEFL SPEAKING LAB", zh: " Luyện kỹ năng Nói ", lead: " trước Trắc nghiệm hình, gọi thêm kích đề mục Vào học Luyện tập. " },
+    reading: { kicker: "TOEFL READING LAB", zh: " Đọc Luyện tập ", lead: " Luyện theo dạng bài, nhấn vào số câu để vào làm bài. " },
+    listening: { kicker: "TOEFL LISTENING LAB", zh: " Nghe Luyện tập ", lead: " Luyện theo dạng bài, nhấn vào đề mục để vào làm bài. " },
+    speaking: { kicker: "TOEFL SPEAKING LAB", zh: " Luyện kỹ năng Nói ", lead: " Luyện theo dạng bài, nhấn vào đề mục để vào làm bài. " },
     writing: { kicker: "TOEFL WRITING LAB", zh: " Viết Luyện tập ", lead: " theo như dạng bài Luyện tập đề thi thật, bản nháp sẽ tự động Lưu tại thiết bị này. " }
   };
   var libCatalog = {};
@@ -192,7 +192,7 @@
       (meta.sub? '<p class="hit-lib-sub">' + esc(g.zh || meta.zh) + "</p>": "") +
       '<div class="hit-lib-foot">' + stateLabel(st) + "</div></a>";
   }
-  // câu số cách chỉ có tiến đạo này. trọn vẹn (task..end) muốn đơn độc cửa vào, nếu không Windows đồng học chỉ có thể một câu một câu chút:điểm.
+  // câu số cách chỉ có tiến đạo này. trọn vẹn (task..end) muốn đơn độc cửa vào, nếu không Windows đồng học chỉ có thể nhấp chọn từng câu một.
   function setStartHTML(skill, g) {
     if (!(Number(g.end) > Number(g.task))) return "";
     return '<a class="hit-lib-start" href="' + itemHref(skill, g.paperId, g.task, g.end) + '"> Bắt đầu làm bài </a>';
@@ -522,12 +522,12 @@
         var f = this.files && this.files[0];
         this.value = "";
         if (!f ||!A ||!A.uploadAvatar) return;
-        msg(" thượng truyền(*upload) Vừa …");
+        msg("Đang tải lên…");
         A.uploadAvatar(f).then(function () {
           draw();
           refreshChrome();
           msg(" ảnh chân dung đã đổi mới mới ", true);
-        }).catch(function (e) { msg(e.message || " thượng truyền(*upload) thất bại "); });
+        }).catch(function (e) { msg(e.message || "Tải lên thất bại"); });
       };
       var form = document.getElementById("hit-name-form");
       if (form) form.onsubmit = function (ev) {
@@ -590,7 +590,7 @@
         '<a class="hit-go" href="official.html"> Xem Thi thử cửa vào <span aria-hidden="true">↗</span></a></div>' +
         '<div class="hit-mode-number">15<span> bộ Thi thử toàn phần </span></div></article>' +
         '<a class="hit-home-practice" href="free.html"><div><p class="hit-mode-label">Focused practice</p><h2> Ngân hàng đề phân loại Luyện tập </h2>' +
-        '<p> theo như kỹ năng, theo như dạng bài, <br> đem mỗi một bạc nhược yếu kém chút:điểm luyện vững chắc. </p></div><span class="hit-mode-bottom"> Vào học Ngân hàng đề <span aria-hidden="true">↗</span></span></a></section>' +
+        '<p> theo như kỹ năng, theo như dạng bài, <br> đem mỗi một luyện chắc từng điểm kiến thức còn yếu. </p></div><span class="hit-mode-bottom"> Vào học Ngân hàng đề <span aria-hidden="true">↗</span></span></a></section>' +
       '<section class="hit-home-subjects"><div class="hit-section-heading"><h2> từ một cái kỹ năng Bắt đầu </h2><span> Chuyên sâu Luyện tập, từng cái đột phá </span></div>' +
         '<div class="hit-subject-strip">' + SUBJECTS.map(function (subject) {
           return '<a href="free.html?skill=' + subject.skill + '"><span>' + subject.zh + '<span aria-hidden="true">↗</span></span><h3 lang="en">' +

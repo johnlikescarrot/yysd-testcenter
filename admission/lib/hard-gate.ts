@@ -9,7 +9,7 @@ export function checkHardGate(school: School, input: EvaluateInput): GateResult 
   const reasons: string[] = [];
   if (input.gpa < school.minGpa) {
     reasons.push(
-      `GPA ${input.gpa.toFixed(2)} thấp hơn cai giáo yêu cầu thấp nhất ${school.minGpa.toFixed(2)}`
+      `GPA ${input.gpa.toFixed(2)} thấp hơn yêu cầu tối thiểu của trường ${school.minGpa.toFixed(2)}`
     );
   }
   const hasLang =
@@ -36,7 +36,7 @@ export function checkHardGate(school: School, input: EvaluateInput): GateResult 
           reasons.push(`IELTS ${input.ielts} thấp hơn yêu cầu thấp nhất ${school.minIelts}`);
         }
         if (reasons.length === 0) {
-          reasons.push(" ngôn ngữ Điểm số không đạt tới cai giáo yêu cầu thấp nhất ");
+          reasons.push(" Điểm ngoại ngữ chưa đạt yêu cầu tối thiểu của trường ");
         }
       }
     }

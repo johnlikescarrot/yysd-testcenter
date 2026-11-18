@@ -99,7 +99,7 @@
     box.querySelector("#yysd-lock-retry").onclick = function () {
       var btn = this;
       btn.disabled = true;
-      btn.textContent = " kiểm tra Vừa …";
+      btn.textContent = "Đang kiểm tra…";
       fetchAccess().then(function (next) {
         if (next.on) location.reload();
         else showLock(next);

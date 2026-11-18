@@ -354,7 +354,7 @@
     if (on && pop) pop.classList.add("hidden");
   }
 
-  /* wofo: Nộp bài trước tiên đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới đem giải bài thi giao cho phục bàn trang */
+  /* Nộp bài xong trước tiên hiển thị màn hình «Đang tạo bảng điểm», nhấn View mới chuyển bài làm sang trang xem lại kết quả */
   function reportGate(onView) {
     examMode(false);
     document.body.classList.add("ets-gate-on");

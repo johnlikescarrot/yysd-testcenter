@@ -621,7 +621,7 @@ function mountRoutes(app, opts) {
   function ownSession(req, res) {
     var id = Number(req.params.sessionId || req.params.id);
     if (!id) {
-      res.status(400).json({ error: " không có hiệu quả hội thoại " });
+      res.status(400).json({ error: " Phiên hội thoại không hợp lệ " });
       return null;
     }
     var row = stmts.findSession.get(id);

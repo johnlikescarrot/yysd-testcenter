@@ -60,15 +60,15 @@
     <div class="teacher-content">
       <section class="minimal-page-head">
         <h1>Quản lý quyền truy cập</h1>
-        <p class="minimal-page-desc">lựa chọn đối tượng, phác thảo chọn Học viên một khóa kích hoạt / Tạm ngưng. Khu luyện tập đến kỳ tự động Nộp bài tập trung, xưa cũ ghi chép nhưng có thể tra nhìn; Gói tăng tốc trước kỳ thi màn ngừng sau, đang thi có thể thi xong bổn tràng, không bắt đầu không thể lại vào. </p>
+        <p class="minimal-page-desc">Chọn phạm vi, tích chọn học viên để kích hoạt hoặc tạm dừng quyền truy cập nhanh chóng. Khi hết hạn truy cập khu luyện tập, bài làm dang dở sẽ được tự động nộp, lịch sử làm bài trước đó vẫn có thể tra cứu; sau khi gói tăng tốc trước kỳ thi tạm dừng, học viên đang làm bài vẫn có thể hoàn thành lượt thi hiện tại, nhưng chưa bắt đầu thì không thể vào mới.</p>
       </section>
 
       <main class="minimal-main">
         <div class="admin-assign">
           <label class="auth-field perm-scope">
-            <span> quyền hạn đối tượng </span>
+            <span> Phạm vi cấp quyền </span>
             <select id="scope-select">
-              <option value="practice">đề thi thật Ngân hàng đề (toàn bộ Khu luyện tập)</option>
+              <option value="practice">Ngân hàng đề thi thật (toàn bộ Khu luyện tập)</option>
             </select>
           </label>
           <div class="cal-picker-toolbar">
@@ -80,21 +80,21 @@
           <div class="cal-check-list cal-check-list--tall" id="student-list"></div>
           <div class="perm-when">
             <label class="auth-field">
-              <span> lúc bắt đầu lúc giữa (lưu chỗ trống lập tức có hiệu lực) </span>
+              <span> Thời gian bắt đầu (để trống nếu có hiệu lực ngay) </span>
               <input type="datetime-local" id="start-at">
             </label>
             <label class="auth-field">
-              <span> đến kỳ thời gian (lưu chỗ trống trường kỳ hữu hiệu) </span>
+              <span> Thời gian hết hạn (để trống nếu có hiệu lực vô thời hạn) </span>
               <input type="datetime-local" id="expire-at">
             </label>
           </div>
           <p class="auth-msg" id="msg" role="status"></p>
           <div class="cal-form__foot" style="justify-content:flex-start;margin-top:16px">
-            <button type="button" class="btn btn--primary" id="grant-btn" disabled>kích hoạt quyền hạn</button>
-            <button type="button" class="btn btn--ghost" id="revoke-btn" disabled>Tạm ngưng quyền hạn</button>
+            <button type="button" class="btn btn--primary" id="grant-btn" disabled>Kích hoạt quyền truy cập</button>
+            <button type="button" class="btn btn--ghost" id="revoke-btn" disabled>Tạm dừng quyền truy cập</button>
           </div>
 
-          <h2 class="perm-h2">trước mắt trao quyền</h2>
+          <h2 class="perm-h2">Danh sách cấp quyền hiện tại</h2>
           <div id="grant-list"><p class="profile-hint">Đang tải …</p></div>
         </div>
       </main>

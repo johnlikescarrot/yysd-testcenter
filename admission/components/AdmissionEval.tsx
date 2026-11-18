@@ -118,10 +118,10 @@ export function AdmissionEval({
       // basePath=/admission — absolute /api/* would hit the static site (HTML 404)
       const res = await fetch("/admission/api/evaluate", { method: "POST", body: fd });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || " ước định thất bại ");
+      if (!res.ok) throw new Error(data.error || " Đánh giá thất bại ");
       setResult(data);
     } catch (err) {
-      setError(err instanceof Error? err.message: " ước định thất bại ");
+      setError(err instanceof Error? err.message: " Đánh giá thất bại ");
     } finally {
       setLoading(false);
     }
@@ -140,7 +140,7 @@ export function AdmissionEval({
       <Panel tech={tech}>
         <PanelHead
           tech={tech}
-          title=" điền bối cảnh cũng ước định "
+          title=" Điền thông tin và đánh giá "
           desc={` mục tiêu: ${schoolName}${useMock? " · Mock": " · hiệu chỉnh động cơ tập trung xác suất "}`}
         />
         <FormBody tech={tech}>
@@ -218,11 +218,11 @@ export function AdmissionEval({
             <div className="sm:col-span-2">
               {tech? (
                 <button type="submit" disabled={loading} className="tech-btn w-full sm:w-auto">
-                  {loading? " ước định Vừa …": " Bắt đầu ước định "}
+                  {loading? " Đang đánh giá…": " Bắt đầu đánh giá "}
                 </button>
               ): (
                 <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-                  {loading? " ước định Vừa …": " Bắt đầu ước định "}
+                  {loading? " Đang đánh giá…": " Bắt đầu đánh giá "}
                 </Button>
               )}
             </div>
@@ -262,7 +262,7 @@ export function AdmissionEval({
                tương tự án lệ
             </h3>
             <p className={`mb-3 text-xs ${tech? "text-slate-500": "text-stone-500"}`}>
-               chỉ biểu hiện ra trường chúng ta GradCafe chân thật tự báo; trước mắt hạng mục chưa đủ lúc lui trở về cùng trường gần hạng mục. không biểu hiện ra hợp thành hàng mẫu cùng với khác đại học án lệ.
+               Chỉ hiển thị các hồ sơ thực tế do người dùng tự báo cáo trên GradCafe; khi chương trình hiện tại chưa đủ dữ liệu sẽ tham chiếu đến các chương trình tương đương cùng trường.
               {result.similar_scope === "field" || result.similar_scope === "school"
                 ? " (dưới đây hàm cùng trường Khác tương quan hạng mục) "
                 : ""}
@@ -270,7 +270,7 @@ export function AdmissionEval({
             <div className="grid gap-3">
               {result.similar_cases.length === 0 && (
                 <p className={`text-sm ${tech? "text-slate-500": "text-stone-500"}`}>
-                   cai giáo tạm thời chưa có đầy đủ GradCafe công khai chân thật án lệ, cố không biểu hiện ra tương tự án lệ (tránh cho hợp thành / vượt qua so mẫu bản).
+                   Trường này tạm thời chưa có đủ hồ sơ thực tế công khai trên GradCafe, nên hệ thống không hiển thị hồ sơ tương tự (tránh sai lệch dữ liệu).
                 </p>
               )}
               {result.similar_cases.map((c) => {
@@ -460,14 +460,14 @@ function EvidencePanel({ items, tech }: { items: EvidenceItem[]; tech?: boolean 
         <div className={`flex items-center justify-between ${tech? "p-5 pb-2": ""}`}>
           {tech? (
             <div>
-              <h3 className="text-lg font-semibold text-slate-50"> căn cứ và nơi phát ra </h3>
-              <p className="text-sm text-slate-400"> có thể ngược dòng tìm hiểu ước định căn cứ </p>
+              <h3 className="text-lg font-semibold text-slate-50"> Căn cứ và nguồn dữ liệu </h3>
+              <p className="text-sm text-slate-400"> Xem căn cứ đánh giá chi tiết </p>
             </div>
           ): (
             <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0">
               <div>
-                <CardTitle> căn cứ và nơi phát ra </CardTitle>
-                <CardDescription> có thể ngược dòng tìm hiểu ước định căn cứ (nhấn vào triển khai) </CardDescription>
+                <CardTitle> Căn cứ và nguồn dữ liệu </CardTitle>
+                <CardDescription> Xem căn cứ đánh giá chi tiết (nhấn để mở rộng) </CardDescription>
               </div>
             </CardHeader>
           )}

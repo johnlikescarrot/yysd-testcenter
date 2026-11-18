@@ -1,63 +1,63 @@
-# nhiều người thuê ước định (Giai đoạn 0)
+# Quy ước Kiến trúc Đa người thuê (Multi-tenant Specifications - Giai đoạn 0)
 
-## tử vực tên quy tắc
+## Quy tắc đặt tên miền con (Subdomain)
 
-- cách thức: `{slug}.youyisida.com` (viết chữ đơn chữ Anh mẫu, con số, liền ký tự; 2–32 ký tự)
-- cam chịu người thuê slug: `yysd` (YYSD)
-- cây vực `youyisida.com` / `www.youyisida.com` / bản địa `localhost` hết thảy chiếu rọi đến `yysd`
-- ** giữ lại chữ (không thể làm người thuê slug) **: `www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`
+- Định dạng: `{slug}.youyisida.com` (chữ cái tiếng Anh viết thường, chữ số, dấu gạch nối; độ dài từ 2 đến 32 ký tự).
+- Slug tổ chức mặc định: `yysd` (YYSD).
+- Tên miền gốc `youyisida.com` / `www.youyisida.com` / môi trường cục bộ `localhost` đều được ánh xạ về tổ chức mặc định `yysd`.
+- **Từ khóa bảo lưu (không được dùng làm slug tổ chức):** `www` `api` `admin` `platform` `mail` `static` `cdn` `test` `dev` `staging`.
 
-## DNS / HTTPS (vận duy)
+## Cấu hình DNS & Chứng chỉ HTTPS (DevOps)
 
-1. a lý vân DNS: `*.youyisida.com` CNAME hoặc A đến trang web Server (và chủ đứng giống nhau).
-2. thông xứng phù giấy chứng nhận (cần DNS nghiệm chứng):
+1. DNS Alibaba Cloud: Cấu hình bản ghi CNAME hoặc A cho `*.youyisida.com` trỏ về máy chủ ứng dụng web (cùng IP với trang web chính).
+2. Chứng chỉ SSL Wildcard (xác thực qua bản ghi DNS):
    ```bash
    certbot certonly --dns-<provider> -d youyisida.com -d '*.youyisida.com'
    ```
-3. Nginx: sử dụng trong kho hàng `server/deploy/nginx-site.conf` (đã hàm `*.youyisida.com`).
-4. lập hồ sơ: tử vực tên thông xứng bình thường theo chủ vực; như lập hồ sơ hệ thống yêu cầu trục đầu tiếp nhập, theo như a lý vân đài điều khiển nhắc nhở xử lý.
+3. Cấu hình Nginx: Sử dụng tệp `server/deploy/nginx-site.conf` trong kho lưu trữ (đã bao gồm cấu hình `*.youyisida.com`).
+4. Khai báo ICP: Tên miền con ký tự đại diện áp dụng theo tên miền chính; nếu cơ quan quản lý yêu cầu khai báo chi tiết từng tên miền con, xử lý theo hướng dẫn trên bảng điều khiển đám mây.
 
-## cam chịu người thuê và vượt qua quản
+## Tổ chức mặc định và Phân quyền Quản trị
 
-| hạng | ước định |
-|----|------|
-| cam chịu công ty | tên « YYSD », slug `yysd`; hiện hữu người sử dụng / Giáo viên / Điểm số Tất cả dời vào |
-| bình đài vượt qua quản | Môi trường lượng biến đổi `ADMIN_PHONES` (và hiện mạng lưới nhất trí); có thể tiến `platform.html` bàn điều khiển |
-| công ty Quản trị viên | bàn điều khiển là cai công ty điền `admin_phone` (Giáo viên tài khoản); quản bổn công ty thầy trò phân phối |
+| Hạng mục | Quy ước |
+|---|---|
+| Tổ chức mặc định | Tên: «YYSD», slug: `yysd`; toàn bộ người dùng, giáo viên và điểm thi hiện có đều thuộc tổ chức này |
+| Super Admin nền tảng | Xác thực qua biến môi trường `ADMIN_PHONES`; có quyền truy cập bảng điều khiển trung tâm `platform.html` |
+| Quản trị viên chi nhánh | Được chỉ định qua trường `admin_phone` trong bảng điều khiển (tài khoản giáo viên); quản lý phân bổ học viên và giáo viên trong chi nhánh |
 
-## chữ đoạn và quyền hạn danh sách
+## Danh mục bảng dữ liệu và Trường thông tin
 
-### bề ngoài `orgs`
+### Bảng `orgs` (Quản lý tổ chức)
 
-| chữ đoạn | Nghĩa |
-|------|------|
-| id | chủ khóa |
-| slug | tử vực tên ngắn con ngựa |
-| name | công ty biểu hiện tên |
-| logo_url | Logo (có thể chỗ trống, dùng cam chịu) |
-| status | `trial` / `active` / `suspended` |
-| expires_at | đến kỳ ngày ISO (có thể chỗ trống = không ngày quy định) |
-| admin_phone | công ty Quản trị viên Số điện thoại |
-| contract_note | hợp đồng ghi chú (có thể chọn) |
-| created_at | sáng tạo thời gian |
+| Trường dữ liệu | Ý nghĩa |
+|---|---|
+| `id` | Khóa chính (Primary Key) |
+| `slug` | Mã định danh tên miền con |
+| `name` | Tên hiển thị của tổ chức |
+| `logo_url` | Đường dẫn Logo (có thể để trống, sử dụng logo mặc định) |
+| `status` | Trạng thái hoạt động: `trial` / `active` / `suspended` |
+| `expires_at` | Ngày hết hạn theo chuẩn ISO (để trống nghĩa là không giới hạn thời gian) |
+| `admin_phone` | Số điện thoại của Quản trị viên tổ chức |
+| `contract_note` | Ghi chú hợp đồng (tùy chọn) |
+| `created_at` | Thời điểm tạo bản ghi |
 
-### người sử dụng cách ly
+### Cơ chế cô lập người dùng
 
-- `users.org_id` / `teachers.org_id`: mỗi người chỉ thuộc một công ty; Số điện thoại toàn cục duy nhất.
-- Điểm số, lịch ngày, thầy trò quan hệ: trải qua người sử dụng / Giáo viên gián tiếp thuộc sở hữu công ty; liệt biểu List tiếp lời theo như `org_id` loại bỏ.
-- Ngân hàng đề `library/`: toàn bộ bình đài xài chung (đệ nhất bản).
+- `users.org_id` / `teachers.org_id`: Mỗi người dùng chỉ thuộc về một tổ chức duy nhất; số điện thoại mang tính duy nhất trên toàn hệ thống.
+- Điểm số bài thi, lịch biểu, quan hệ học viên - giáo viên: Liên kết gián tiếp với tổ chức thông qua tài khoản người dùng; các API danh sách đều lọc dữ liệu nghiêm ngặt theo `org_id`.
+- Kho ngân hàng đề thi `library/`: Dùng chung trên toàn bộ nền tảng (phiên bản ban đầu).
 
-### ai có thể xem ai
+### Ma trận phạm vi truy cập dữ liệu
 
-| nhân vật | phạm vi |
-|------|------|
-| bình đài vượt qua quản | bàn điều khiển quản tất cả công ty; phục vụ khách hàng Vào học một công ty lúc tạm thời có thể thấy được cai công ty |
-| công ty Quản trị viên | chỉ bổn công ty Giáo viên / Học viên / phân phối |
-| Giáo viên | chỉ bị phân phối bổn công ty Học viên (Quản trị viên có thể thấy được bổn công ty Tất cả) |
-| Học viên | chỉ thành tích của mình và nhiệm vụ |
+| Vai trò người dùng | Phạm vi dữ liệu được phép xem |
+|---|---|
+| Super Admin nền tảng | Bảng điều khiển quản lý toàn bộ các tổ chức; khi dùng chế độ hỗ trợ khách hàng để vào một tổ chức cụ thể thì xem được dữ liệu của tổ chức đó |
+| Quản trị viên chi nhánh | Chỉ xem được danh sách Giáo viên, Học viên và phân bổ học viên trong nội bộ tổ chức của mình |
+| Giáo viên | Chỉ xem được danh sách học viên được phân công phụ trách trong tổ chức (Quản trị viên chi nhánh xem được toàn bộ giáo viên và học viên) |
+| Học viên | Chỉ xem được kết quả học tập và bài tập của chính mình |
 
-## nghiệm thu (Giai đoạn 0)
+## Tiêu chí nghiệm thu (Giai đoạn 0)
 
-- [x] DNS `*.youyisida.com` đã giải tích (2026-07-22 nghiệm chứng random slug → 139.224.0.221)
-- [] HTTPS thông xứng phù giấy chứng nhận có hiệu lực (trước mắt là SAN liệt biểu List; ease/youyisi đã bao trùm)
-- [x] mở ra `https://ease.youyisida.com/` có thể ra trang web (nhãn hiệu cải tạo Đã hoàn thành)
+- [x] Phân giải DNS `*.youyisida.com` thành công (đã xác minh ngày 22/07/2026 với slug ngẫu nhiên trỏ về IP 139.224.0.221).
+- [ ] Chứng chỉ SSL Wildcard có hiệu lực đầy đủ (hiện đang dùng danh sách SAN; đã bao phủ các tên miền ease/youyisi).
+- [x] Truy cập `https://ease.youyisida.com/` hiển thị giao diện chuẩn xác (đã hoàn thành tùy chỉnh nhận diện thương hiệu).

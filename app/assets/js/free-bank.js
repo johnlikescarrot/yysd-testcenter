@@ -9,7 +9,7 @@
     { skill: "writing", zh: "Viết" },
     { skill: "speaking", zh: "Nói" }
   ];
-  // ponytail: thuật lại hằng 7 tử câu, phỏng vấn hằng 4 hỏi, loài bò sát trục tử câu sản xuất task; còn lại loại hình mỗi câu đơn task
+  // ponytail: thuật lại hằng 7 tử câu, phỏng vấn hằng 4 hỏi, crawler tự động tạo task theo từng câu; còn lại loại hình mỗi câu đơn task
   var SPAN = { 1331: 6, 1332: 3 };
 
   var index = null;
@@ -95,7 +95,7 @@
     });
     host.querySelector("[data-free-count]").textContent = " tổng " + rows.length + " tổ Luyện tập ";
     host.querySelector("[data-free-list]").innerHTML = rows.length? rows.join(""):
-      '<div class="hit-empty"><b> không có điều kiện phù hợp Luyện tập </b><p> thử xem Khác từ khóa, hoặc thanh trừ bộ lọc Xem Tất cả đề mục. </p><button type="button" class="hit-go" data-reset> thanh trừ bộ lọc </button></div>';
+      '<div class="hit-empty"><b> không có điều kiện phù hợp Luyện tập </b><p> thử xem Khác từ khóa, hoặc xóa bộ lọc Xem Tất cả đề mục. </p><button type="button" class="hit-go" data-reset> xóa bộ lọc </button></div>';
   }
 
   function render() {

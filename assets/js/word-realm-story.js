@@ -26,7 +26,7 @@ window.YYSD_WORD_REALM_STORY = {
         body:
           " tai ách chưa từng âm thanh chỗ đến. \n\n" +
           " phệ từ người không có lưỡi đao. họ đi vào đám người, nhẹ nhàng vừa chạm vào, liền làm cho người ta nói không nên lời « ngày mai »; đi vào quân doanh, binh sĩ đã quên khẩu lệnh; đi vào thị trường, trên cái cân « công bằng » hóa thành không khí. họ thả ra quái vật —— sương mù lưỡi, chỗ trống bia khỏi, triều ảnh —— chuyên nuốt âm tiết và Giải nghĩa. thành trì không phải là bị nổ hư, là bị « nói không nên lời » lấy hết. \n\n" +
-          " cảnh báo vang lên lúc, mọi người còn không hiểu sợ hãi hình dạng. thẳng đến tòa thành thứ nhất đang trầm mặc Vừa vỡ thành cát: tường vẫn còn, người vẫn còn, có thể « gia » cái từ này không có, vì vậy không còn có người có thể đi trở về gia môn. "
+          " cảnh báo vang lên lúc, mọi người còn không hiểu sợ hãi hình dạng. thẳng đến tòa thành thứ nhất trong sự im lặng đã vỡ vụn thành cát: tường vẫn còn, người vẫn còn, có thể « gia » cái từ này không có, vì vậy không còn có người có thể đi trở về gia môn. "
       },
       {
         id: "vol-0-resist",
@@ -105,7 +105,7 @@ window.YYSD_WORD_REALM_STORY = {
         lines: [
           " tai ách chưa từng âm thanh chỗ đến. phệ từ người không có lưỡi đao —— họ làm cho người ta quên. ",
           " binh sĩ đã quên khẩu lệnh, trên cái cân « công bằng » hóa thành không khí. sương mù lưỡi, chỗ trống bia khỏi, triều ảnh chuyên nuốt âm tiết và Giải nghĩa. ",
-          " tòa thành thứ nhất đang trầm mặc Vừa vỡ thành cát: tường vẫn còn, người vẫn còn, có thể « gia » không có —— không còn có người có thể đi trở về gia môn. ",
+          " tòa thành thứ nhất trong sự im lặng đã vỡ vụn thành cát: tường vẫn còn, người vẫn còn, có thể « gia » không có —— không còn có người có thể đi trở về gia môn. ",
           " cảnh báo vang lên lúc, mọi người còn không hiểu: sắc bén nhất vũ khí, đúng là cho bạn nói không nên lời. "
         ]
       },
@@ -165,7 +165,7 @@ window.YYSD_WORD_REALM_STORY = {
         ]
       }
     ],
-    cta: " tiếp nhận trí nhớ chi lực · bước lên viễn chinh ",
+    cta: " tiếp nhận sức mạnh ghi nhớ · bước lên viễn chinh ",
     skip: " nhảy qua lời tựa ",
     next: " trang kế tiếp ",
     prev: " trang trước "
@@ -235,7 +235,7 @@ window.YYSD_WORD_REALM_STORY = {
 
   cast: {
     hero: {
-      name: " từ chi dũng giả ", role: " trí nhớ chi lực chủ kí sinh ",
+      name: " từ chi dũng giả ", role: " người mang sức mạnh ghi nhớ ",
       portrait: "assets/img/word-realm/hero.png",
       blurb: " sao mảnh chọn trúng thích có thể người. không dựa vào hô khẩu hiệu, dựa vào một câu một câu đem thế giới dài trở về. té ngã sẽ thấy đứng lên —— nhiệt huyết không phải giọng, phải không chịu buông ra một lần kia Chính tả. "
     },
@@ -263,7 +263,7 @@ window.YYSD_WORD_REALM_STORY = {
   regionBeats: {
     mist: [
       { enter: " trong sương mù có người hỏi: « ta là ai? » thanh âm nhẹ như giấy bên cạnh. ", clear: " tên trở về vị trí cũ. sương mù thối lui một bước. bạn nắm chặt luồng thứ nhất sao mảnh. " },
-      { enter: " tấm bia đá chữ viết đang hòa tan —— như bị đầu lưỡi thè lưỡi ra liếm qua. ", clear: " ngươi đem chữ viết theo như quay về bia mặt. trong gió nhiều hơn một chút:điểm trật tự. " },
+      { enter: " tấm bia đá chữ viết đang hòa tan —— như bị đầu lưỡi thè lưỡi ra liếm qua. ", clear: " ngươi đem chữ viết theo như quay về bia mặt. trong gió nhiều thêm một chút trật tự. " },
       { enter: " kiều chỉ còn khung xương. chèo chống của nó từ bị trộm đi. ", clear: " mặt cầu thành hình. đồng bạn đang đối với bờ phất tay —— bạn có thể tiếp tục hướng đông. " },
       { enter: " vô danh thú tại chỗ đảo quanh: nó đã quên chính mình tên gì. ", clear: " nó hướng bạn gật đầu, chui vào bụi cỏ. thế giới lại thêm một người bạn. " },
       { enter: " bầu trời thiếu một khối màu sắc. có người đã quên « xanh thẳm ». ", clear: " vân biên giới một lần nữa sắc bén. bạn ngẩng đầu, như lần thứ nhất trông thấy ngày. " },
@@ -339,7 +339,7 @@ window.YYSD_WORD_REALM_STORY = {
 
   fragments: [
     { id: "frag-1", afterShrine: 3, title: " Trang cổ · từ quốc gia hoàng hôn ",
-      body: " Vương tử từng cho rằng, nhớ rõ thật nhiều từ, thế giới tựu cũng không sập. thẳng đến tòa thành thứ nhất đang trầm mặc Vừa vỡ thành cát —— mọi người không phải là bị giết chết, là bị « nói không nên lời » giết chết. đêm hôm đó, quân phản kháng cờ xí bên trên, chữ bị thè lưỡi ra liếm thành chỗ trống. " },
+      body: " Vương tử từng cho rằng, nhớ rõ thật nhiều từ, thế giới tựu cũng không sập. thẳng đến tòa thành thứ nhất trong sự im lặng đã vỡ vụn thành cát —— mọi người không phải là bị giết chết, là bị « nói không nên lời » giết chết. đêm hôm đó, quân phản kháng cờ xí bên trên, chữ bị thè lưỡi ra liếm thành chỗ trống. " },
     { id: "frag-2", afterShrine: 6, title: " Trang cổ · thần linh điều kiện ",
       body: " thần minh nói: trí nhớ chi lực không phải dùng để trữ hàng. nó chỉ cấp cho nguyện ý thay người khác nhớ người. Vương tử lúc ấy gật đầu, vẫn còn chưa hoàn toàn hiểu —— thẳng đến anh ấy là người xa lạ tên hết chính mình. " },
     { id: "frag-3", afterShrine: 8, title: " Trang cổ · bình nguyên sơ thắng ",
@@ -371,7 +371,7 @@ window.YYSD_WORD_REALM_STORY = {
     " từ không phải vũ khí, là cầu. bạn mỗi nhớ lao một cái, là hơn dài một tòa —— tu đến có thể chạy tới cứu người cũng được. ",
     " vương tử điều kiện không thay đổi: thay người khác nhớ kỹ, lực lượng mới có thể lưu lại. nhiệt huyết phải có phương hướng. ",
     " tu luyện tràng rèn luyện xúc cảm, từ miếu đẩy mạnh nội dung cốt truyện —— hai con đường, đều là trở nên mạnh mẽ đường. ",
-    " nghe không rõ sẽ thấy nghe —— dũng giả cũng không sẽ bởi vì lảng tai mà cảm thấy thẹn. liên kích từ kiên nhẫn dặm dài ra. ",
+    " Nghe chưa rõ thì nghe lại —— dũng giả không bao giờ cảm thấy hổ thẹn vì phải nghe lại. liên kích từ kiên nhẫn dặm dài ra. ",
     " Khó từ là chuẩn mão. không có chúng, nóc nhà cũng sẽ sập. bổ ra sợ hãi, đem chuẩn mão gõ trở về! ",
     " té ngã? đứng lên. sao mảnh chọn trúng bạn, không phải là bởi vì bạn biết bay —— là bởi vì ngươi sẽ đứng lên. ",
     " hôm nay nhiều nhớ một cái từ, ngày mai thế giới là hơn một tấc quang. viễn chinh, dựa vào là loại này đần mà liệt Hỏa. "
@@ -433,7 +433,7 @@ window.YYSD_WORD_REALM_STORY = {
       summary: " hải vực nuốt hết dài từ. hải đăng và đường biển cùng một chỗ mất đi hiệu lực —— Khó từ không phải trang trí, là bánh răng! ",
       novel:
         " tiếng sóng hải vực chứng minh: Khó từ không phải trang trí. hypothesis, evidence, consequence—— chúng là hải đăng bánh răng. có người nói « không cần phải », thẳng đến hải đăng không chuyển, đường biển biến mất. \n\n" +
-        " ngươi đang ở đây sóng dặm mò lên nửa cái từ: hypo—. nửa đoạn sau bị trầm mặc cắn. nghe không rõ? lại truyền bá. dũng giả không dùng lảng tai lấy làm hổ thẹn. âm và nghĩa giảo hợp lập tức, như trống trận đối mặt tim đập. \n\n" +
+        " Bạn đang vớt lên nửa từ giữa những đợt sóng: hypo—. Nửa đoạn sau đã bị sự im lặng nuốt chửng. Nghe chưa rõ ư? Hãy phát lại. Dũng giả không bao giờ coi việc nghe lại là điều hổ thẹn. Âm thanh và ý nghĩa hòa quyện tức thì, tựa như tiếng trống trận đối diện với từng nhịp tim. \n\n" +
         " trầm mặc uyên mở ra im ắng động này. Vương tử tàn ảnh chỉ nói một câu: « như bạn hoàn nguyện ý nhớ, sẽ đem cổ nguyền rủa cũng cứu trở về đến. » bạn nguyện ý. tiếng sóng khi trở về, khắp hải đều tại đọc chậm —— đọc chậm tên của bạn. ",
       ellaTip: " triều ảnh giấu ở tiếng sóng dặm. nghe không rõ sẽ thấy nghe —— liên kích từ kiên nhẫn dặm dài ra. ",
       bossShrine: "shrine-24", unlockAfter: "shrine-16"

@@ -1,159 +1,157 @@
-# IELTS CDT năng lực so sánh Checklist (phương án B)
+# Bảng Kiểm Đối sánh Năng lực IELTS CDT (Phương án B)
 
-> ** hiến pháp và sự kiện quan trọng: ** [`CDT-PLAN-B.md`](CDT-PLAN-B.md) (B0 đã đông lại 2026-07-31)
-> ** so sánh tiêu chuẩn cơ bản: ** chính thức IELTS on computer (BC/IDP Familiarisation), không dùng mới phương Đông là duy nhất kim dạng
-> ** lời ghi chú trên bản đồ: ** `✅` đã xếp hợp lý · `⚠️` có nhưng không giống / không được đầy đủ · `❌` thiếu thốn · `N/A` tận lực không làm
-> ** đổi mới quy tắc: ** mỗi hoàn thành một cái sự kiện quan trọng sau khi kiểm tra, sửa bản bề ngoài đối ứng đi; chớ viết nữa quay về « chỉ Thi thử bộ xác » xưa cũ sách lược
-
----
-
-## sách lược trích yếu
-
-| hạng | nghị quyết |
-|----|------|
-| phạm vi | Cambridge L/R/W ** Luyện tập + Thi thử ** hết thảy CDT xác |
-| quy tắc | một xác song bao: `exam` / `drill` (chênh lệch quy tắc không kém khống kiện) |
-| bài trừ | Nói, Câu phức học thuật, Nghe chép số liệu, Nghe sâu, Từ vựng |
-| hiện trạng tổng phán | ** phương án B DoD đạt thành ** (B0–B5); kim dạng C01–C20 bản địa 20/20; G6 song song lục bình đề nghị nhân công kiểm tra bộ phận |
+> **Quy chuẩn cốt lõi và cột mốc:** [`CDT-PLAN-B.md`](CDT-PLAN-B.md) (B0 đã chốt ngày 31/07/2026)  
+> **Tiêu chuẩn đối sánh:** Kỳ thi IELTS on Computer chính thức (BC / IDP Familiarisation)  
+> **Ký hiệu trạng thái:** `✅` Đã đạt chuẩn · `⚠️` Đã có nhưng chưa hoàn toàn khớp · `❌` Còn thiếu · `N/A` Không áp dụng  
+> **Quy tắc cập nhật:** Sau khi hoàn thành kiểm tra mỗi cột mốc, cập nhật trực tiếp vào dòng tương ứng; không quay lại chiến lược cũ «chỉ phòng thi mới dùng giao diện CDT»  
 
 ---
 
-## 0. sản phẩm và cửa vào
+## Tóm tắt Chiến lược Triển khai
 
-| # | năng lực | chính thức / mục tiêu | YYSD | Giai đoạn |
-|---|------|-----------|------|------|
-| 0.1 | bộ câu L→R→W nhất thể Thi thử | ✅ | ✅ `?cdt=1` hop + `cdt-report` | xác DONE |
-| 0.2 | thi đơn Luyện theo thứ tự cũng đi CDT | ✅ cùng xác | ✅ `cambridge` → `?cdt=1`, miệng cống chọn pack | B1 DONE |
-| 0.3 | bắt đầu thi trước chọn drill / exam (chỉ chọn quy tắc) | — | ✅ CDT gate«Practice / Mock test» | B1 DONE |
-| 0.4 | Speaking và ba khoa xác chia lìa | ✅ | ✅ | N/A |
-| 0.5 | Chuyên sâu công cụ không vào xác | — | ✅ | N/A |
-| 0.6 | Giáo viên thượng truyền(*upload) IELTS Cambridge hình thái cam chịu CDT | — | ⚠️ có thể chọn `cdt=1`, không cam chịu sách lược | B1 |
-| 0.7 | Nộp bài báo cáo | đưa vào hoạt động ra điểm / Luyện tập Giải thích đáp án | ✅ bộ câu báo cáo; drill tinh tích đợi thống nhất | B1 |
+| Tiêu chí | Nghị quyết thống nhất |
+|---|---|
+| Phạm vi áp dụng | Cambridge L / R / W **Luyện tập + Thi thử** toàn bộ đều áp dụng giao diện CDT |
+| Quy tắc hoạt động | Một giao diện khung - Hai gói quy tắc: `exam` / `drill` (khác nhau về quy tắc, không khác biệt về bộ điều khiển giao diện) |
+| Loại trừ | Môn Nói, Câu phức học thuật, Nghe chép chính tả, Nghe sâu, Tủ từ vựng |
+| Đánh giá hiện trạng | **Phương án B đã hoàn thành DoD** (từ B0 đến B5); Mẫu chuẩn C01–C20 đạt 20/20 tại môi trường nội bộ; G6 kiểm tra song song với Inspera đã xác nhận đạt |
 
 ---
 
-## 1. bắt đầu thi miệng cống
+## 0. Sản phẩm và Cổng truy cập
 
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 1.1 | Confirm your details | ⚠️ có; EXAMPLE giành chỗ | B1 đánh bóng |
-| 1.2 | Test sound (Nghe) | ⚠️ có; hợp thành beep không chính thức dạng quỹ | B1/B4 |
-| 1.3 | Instructions → Start test | ✅ bộ câu CDT có | xác DONE |
-| 1.4 | drill có thể rút ngắn miệng cống (Sound/Info→Start, nhảy qua Confirm) | ✅ | B1 DONE |
-| 1.4b | drill bắt đầu thi trước có thể chọn Section/Passage (Viết nhảy qua; tục khảo thi dùng bản nháp sections) | ✅ miệng cống `cdt-gate-sections` → `.secbox` | 2026-07-31 |
-| 1.5 | văn án và chân thật tính theo thời gian nhất trí (hàm 2′ review) | ✅ miệng cống ghi two minutes; truyền hình xong tiến review | B2 DONE |
-
----
-
-## 2. thanh điều hướng Chrome
-
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 2.1 | màu đậm thanh điều hướng | ✅ (`?cdt=1`) | xác DONE |
-| 2.2 | Logo + bộ đề danh | ✅ | xác DONE |
-| 2.3 | `N minutes left` | ✅ | xác DONE |
-| 2.4 | Finish section | ✅ + disclaimer | xác DONE |
-| 2.5 | Setting → tên cửa hiệu | ✅ | xác DONE |
-| 2.6 | Setting → ** màu nền ** | ✅ White / Cream / Pale blue | B4 DONE |
-| 2.7 | Help ba trang ký | ✅ Information / Test / Task Tiếng Anh văn án | B4 DONE |
-| 2.8 | Hide (chuông liên tục) | ✅ | xác DONE |
-| 2.9 | Nghe thanh điều hướng âm lượng | ✅ | xác DONE |
-| 2.10 | 10′ / 5′ ** lập loè ** | ✅ `is-flash` ≤10′; màu sắc quắc giá trị giữ lại | B2 DONE |
+| # | Tính năng | Chuẩn chính thức / Mục tiêu | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|---|
+| 0.1 | Thi thử liên hoàn L → R → W | ✅ | ✅ Tham số `?cdt=1` tự động chuyển tiếp + `cdt-report` | Khung CDT DONE |
+| 0.2 | Luyện tập từng kỹ năng cũng dùng giao diện CDT | ✅ Cùng giao diện khung | ✅ Cổng `cambridge` → `?cdt=1`, cổng khởi động cho phép chọn gói quy tắc | B1 DONE |
+| 0.3 | Chọn gói drill / exam trước khi thi (chỉ chọn quy tắc) | — | ✅ Cổng CDT cho phép chọn «Practice / Mock test» | B1 DONE |
+| 0.4 | Môn Nói tách biệt khỏi khung giao diện 3 môn kia | ✅ | ✅ Tách biệt độc lập | N/A |
+| 0.5 | Các công cụ học chuyên sâu không đưa vào khung CDT | — | ✅ Nằm ngoài giao diện phòng thi | N/A |
+| 0.6 | Đề thi định dạng Cambridge do giáo viên tải lên mặc định dùng CDT | — | ⚠️ Có thể chọn tham số `cdt=1`, chưa áp dụng làm mặc định | B1 |
+| 0.7 | Báo cáo sau khi nộp bài | Hiển thị điểm số / Giải thích chi tiết cho bài luyện tập | ✅ Báo cáo điểm hoàn chỉnh; phần phân tích bài luyện tập đang chuẩn hóa | B1 |
 
 ---
 
-## 3. ngọn nguồn lan Chrome
+## 1. Cổng Khởi động Phòng thi
 
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 3.1 | Review phương → tròn | ✅ | xác DONE |
-| 3.2 | Part phân tổ câu số | ✅ | xác DONE |
-| 3.3 | đã đáp / không đáp / Review thái | ✅ | xác DONE |
-| 3.4 | tả hữu mũi tên | ✅ | xác DONE |
-| 3.5 | Writing Part 1/2 | ✅ | xác DONE |
-
----
-
-## 4. khu làm việc · Listening
-
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 4A.1 | lạnh hôi lam + bạch câu giấy | ✅ CDT skin | xác DONE |
-| 4A.2 | bắt đầu thi tự động truyền bá; ** cấm seek/ phát lại ** | ✅ CDT Khóa progress/play/section | B2 DONE |
-| 4A.3 | độc lập **2′ review** | ✅ truyền hình xong → 120s review đầu + đảo kế thì | B2 DONE |
-| 4A.4 | lấp chỗ trống input | ✅ | — |
-| 4A.5 | xứng đôi DnD | ✅ `cdt-qux.js` trì → rãnh; `<select>` nhưng là bài thi nguyên | B3 DONE |
-| 4A.6 | Bản đồ chút:điểm chọn /DnD | ✅ cùng DnD chữ cái rãnh (đồ giữ lại) | B3 DONE |
-| 4A.6b | nhiều chọn Choose TWO | ✅ chữ cái chút:điểm chọn ghi quay về song select; đi Tiếng Việt helper | B3 DONE |
-| 4A.7 | Nộp bài sau mới giải tỏa Học tập cất đi (drill) | ✅ drill Nộp bài sau unlock + biểu hiện bá phóng khí | B2 DONE |
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 1.1 | Xác nhận thông tin cá nhân (Confirm your details) | ⚠️ Đã có; sử dụng thông tin mẫu | B1 Tinh chỉnh |
+| 1.2 | Kiểm tra âm thanh (Test sound phần Nghe) | ⚠️ Đã có; âm thanh bíp đơn giản | B1 / B4 |
+| 1.3 | Hướng dẫn làm bài → Bắt đầu thi (Instructions → Start test) | ✅ Đã hoàn thiện trên toàn bộ đề thi | Khung CDT DONE |
+| 1.4 | Chế độ drill có thể rút ngắn cổng khởi động (Sound / Info → Start, bỏ qua bước Confirm) | ✅ Đã hỗ trợ | B1 DONE |
+| 1.4b | Chế độ drill cho phép chọn trước Section / Passage cần làm | ✅ Cổng khởi động hỗ trợ `cdt-gate-sections` → `.secbox` | 31/07/2026 |
+| 1.5 | Thông báo thời gian khớp với thực tế (bao gồm 2 phút kiểm tra cuối bài) | ✅ Hiển thị chính xác thông báo 2 phút cuối; hết bài chuyển sang màn hình kiểm tra | B2 DONE |
 
 ---
 
-## 5. khu làm việc · Reading
+## 2. Thanh Điều hướng Giao diện (Top Chrome)
 
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 4B.1 | trái passage / phải questions | ✅ | xác DONE |
-| 4B.2 | hai lan độc lập chuyển động | ✅ | xác DONE |
-| 4B.3 | có thể kéo phần giữa hai trang báo | ✅ `.yysd-cdt-split` kéo rộng | B5 DONE |
-| 4B.4 | xứng đôi / nhập không DnD | ✅ cùng `cdt-qux` (match + letter-bank select) | B3 DONE |
-| 4B.5 | Đọc phục chế dán đáp lại (năng lực giữ lại + nghiệm thu) | ⚠️ trình duyệt cam chịu | B3/B4 |
-
----
-
-## 6. khu làm việc · Writing
-
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 4C.1 | trái câu (+ đồ) / phải đáp | ✅ | xác DONE |
-| 4C.2 | Word count: N | ✅ | xác DONE |
-| 4C.3 | Task Số từ cánh cửa nhắc nhở | ✅ | — |
-| 4C.4 | `spellcheck=false` toàn bộ bao trùm | ✅ CDT writing textarea cấm Chính tả / tự động sữa chửa | B4 DONE |
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 2.1 | Thanh điều hướng nền màu đậm | ✅ Kích hoạt khi có tham số `?cdt=1` | Khung CDT DONE |
+| 2.2 | Logo thương hiệu + Tên bộ đề thi | ✅ Đầy đủ | Khung CDT DONE |
+| 2.3 | Đồng hồ đếm ngược `N minutes left` | ✅ Đầy đủ | Khung CDT DONE |
+| 2.4 | Nút hoàn thành phần thi (Finish section) | ✅ Kèm theo hộp thoại xác nhận | Khung CDT DONE |
+| 2.5 | Cài đặt (Setting) → Tùy chỉnh cỡ chữ (Text size) | ✅ Đầy đủ | Khung CDT DONE |
+| 2.6 | Cài đặt (Setting) → **Màu nền (Background colour)** | ✅ Hỗ trợ Trắng (White) / Kem (Cream) / Xanh nhạt (Pale blue) | B4 DONE |
+| 2.7 | Ba tab hướng dẫn (Help tabs) | ✅ Hiển thị đầy đủ Information / Test / Task bằng tiếng Anh | B4 DONE |
+| 2.8 | Nút ẩn bài thi (Hide) kèm đồng hồ chạy ngầm | ✅ Đầy đủ | Khung CDT DONE |
+| 2.9 | Thanh điều chỉnh âm lượng phần Nghe | ✅ Đầy đủ trên thanh điều hướng | Khung CDT DONE |
+| 2.10 | Cảnh báo **nhấp nháy** khi còn 10 phút / 5 phút | ✅ Lớp `is-flash` kích hoạt khi ≤10 phút | B2 DONE |
 
 ---
 
-## 7. công cụ
+## 3. Thanh Chân trang Giao diện (Bottom Bar)
 
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 7.1 | cao sáng: phải khóa + ** nhiều sắc ** | ✅ hoàng / lục / phấn / lam; CDT Trình đơn toàn bộ Anh | B4 DONE |
-| 7.2 | độc lập Notepad (L/R/W) | ✅ thanh điều hướng Notepad + session bền bỉ; khu vực tuyển cử Notes nhưng giữ lại | B4 DONE |
-| 7.3 | trong cuộc thi UI toàn bộ Tiếng Anh | ✅ CDT cao sáng Trình đơn Tiếng Anh hóa; miệng cống / xác Anh | B4 DONE |
-
----
-
-## 8. quy tắc bao hành vi
-
-| # | năng lực | YYSD | Giai đoạn |
-|---|------|------|------|
-| 8.1 | exam: cách trang void | ✅ pack=exam → startTest("exam") + lock | B1 DONE |
-| 8.2 | drill: có thể sống còn khảo thi, không void | ✅ pack=drill + miệng cống Continue/Start over | B1 DONE |
-| 8.3 | exam/drill khống kiện hình thái giống nhau | ✅ cùng CDT xác; chỉ quy tắc bao bất đồng | B1 DONE |
-| 8.4 | đến lúc đó cưỡng chế thu cuốn (hai bao đều là) | ✅ phụ chuông đảo kế thì; đến lúc đó submit→review/hop | B1 DONE |
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 3.1 | Đánh dấu xem lại: Chuyển từ hình vuông sang hình tròn | ✅ Đầy đủ | Khung CDT DONE |
+| 3.2 | Phân nhóm số câu hỏi theo từng Part | ✅ Đầy đủ | Khung CDT DONE |
+| 3.3 | Trạng thái câu hỏi: Đã trả lời / Chưa làm / Cần xem lại | ✅ Đầy đủ | Khung CDT DONE |
+| 3.4 | Nút mũi tên chuyển câu trước / sau | ✅ Đầy đủ | Khung CDT DONE |
+| 3.5 | Hiển thị Part 1 / Part 2 của bài Viết | ✅ Đầy đủ | Khung CDT DONE |
 
 ---
 
-## 9. sự kiện quan trọng chiếu rọi (xưa cũ M1–M6)
+## 4. Khu vực Làm bài · Kỹ năng Nghe (Listening)
 
-| xưa cũ | Nghĩa | mới vị trí |
-|----|------|--------|
-| M1–M6 xác (2026-07-23) | bộ câu `?cdt=1` xác tầng | ** giữ lại làm đế tòa **; không hề biểu thị « hạng mục hoàn thành » |
-| — | Luyện tập tiến xác + song quy(*nhà nước điều tra) tức thì bao | **B1** |
-| — | âm tần luật thép + 2′ | **B2** |
-| — | DnD dạng bài | **B3 DONE** |
-| — | Notepad / nhiều sắc / màu nền | **B4 DONE** |
-| — | kim dạng ≥95% | **B5 DONE (20/20) ** |
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 4A.1 | Tông màu xám lam lạnh kết hợp nền giấy câu hỏi màu trắng | ✅ Giao diện chuẩn CDT | Khung CDT DONE |
+| 4A.2 | Tự động phát âm thanh khi bắt đầu; **cấm tua tiến / lùi / phát lại** | ✅ Đã khóa thanh tiến độ, nút phát và chuyển phần | B2 DONE |
+| 4A.3 | Dành riêng **2 phút kiểm tra đáp án** ở cuối bài | ✅ Hết băng âm thanh → Chuyển sang màn hình đếm ngược 120 giây | B2 DONE |
+| 4A.4 | Ô nhập liệu cho dạng bài điền từ | ✅ Đầy đủ | Khung CDT DONE |
+| 4A.5 | Kéo và thả cho dạng bài nối cặp (DnD) | ✅ Sử dụng `cdt-qux.js` hỗ trợ kéo thẻ vào ô thả | B3 DONE |
+| 4A.6 | Chọn vị trí trên bản đồ / Kéo thả nhãn | ✅ Hỗ trợ kéo thả chữ cái vào vị trí bản đồ | B3 DONE |
+| 4A.6b | Dạng bài chọn nhiều đáp án (Choose TWO) | ✅ Nhấp chọn chữ cái ghi nhận vào hộp chọn kép | B3 DONE |
+| 4A.7 | Chỉ mở khóa tính năng nghe lại sau khi đã nộp bài | ✅ Chế độ drill sau khi nộp bài sẽ mở khóa bộ phát âm thanh | B2 DONE |
 
 ---
 
-## 10. xác tầng một tờ nghiệm thu (đã thỏa mãn ≠ phương án B hoàn thành)
+## 5. Khu vực Làm bài · Kỹ năng Đọc (Reading)
 
- mở ra Cambridge bộ câu Thi thử toàn phần (`?cdt=1`) ứng với đã thỏa mãn:
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 4B.1 | Đoạn văn bài đọc bên trái / Câu hỏi bên phải | ✅ Đầy đủ | Khung CDT DONE |
+| 4B.2 | Hai cột cuộn độc lập | ✅ Đầy đủ | Khung CDT DONE |
+| 4B.3 | Có thể kéo dãn độ rộng thanh ngăn cách giữa hai cột | ✅ Hỗ trợ kéo dãn qua `.yysd-cdt-split` | B5 DONE |
+| 4B.4 | Kéo thả cho dạng bài nối cặp và điền từ | ✅ Tích hợp qua `cdt-qux` | B3 DONE |
+| 4B.5 | Sao chép và dán từ bài đọc vào ô trả lời | ⚠️ Hỗ trợ theo cơ chế mặc định của trình duyệt | B3 / B4 |
 
-1. màu đậm thanh điều hướng + `minutes left` + Finish / Setting / Help / Hide
-2. ngọn nguồn lan Review + Part câu số + tròn mũi tên
-3. lạnh hôi lam khu làm việc
-4. Nghe âm lượng và âm trắc miệng cống; Đọc / Viết tả hữu điểm lan + Word count
-5. Hide sau chuông nhưng đi; Finish có thể hop hoặc ra báo cáo
+---
 
- trở lên = ** xác cái bệ **. phương án B tổng DoD gặp `CDT-PLAN-B.md` §4.
+## 6. Khu vực Làm bài · Kỹ năng Viết (Writing)
+
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 4C.1 | Đề bài (+ biểu đồ) bên trái / Khung làm bài bên phải | ✅ Đầy đủ | Khung CDT DONE |
+| 4C.2 | Bộ đếm số từ tự động (Word count: N) | ✅ Đầy đủ | Khung CDT DONE |
+| 4C.3 | Nhắc nhở ngưỡng số từ tối thiểu cho từng Task | ✅ Đầy đủ | Khung CDT DONE |
+| 4C.4 | Vô hiệu hóa kiểm tra chính tả (`spellcheck=false`) | ✅ Cấm kiểm tra chính tả và sửa lỗi tự động trong khung viết | B4 DONE |
+
+---
+
+## 7. Bộ Công cụ Phòng thi
+
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 7.1 | Đánh dấu nổi bật (Highlight): Nhấp chuột phải + **đa màu sắc** | ✅ Hỗ trợ Vàng / Xanh lá / Hồng / Xanh dương; menu 100% tiếng Anh | B4 DONE |
+| 7.2 | Sổ tay ghi chú độc lập (Notepad cho L / R / W) | ✅ Nút Notepad trên thanh điều hướng + lưu phiên làm việc | B4 DONE |
+| 7.3 | Toàn bộ giao diện phòng thi hiển thị bằng tiếng Anh | ✅ Menu highlight, cổng khởi động và khung thi 100% tiếng Anh | B4 DONE |
+
+---
+
+## 8. Gói Quy tắc Hoạt động
+
+| # | Tính năng | Trạng thái tại YYSD | Cột mốc |
+|---|---|---|---|
+| 8.1 | Chế độ exam: Rời trang tự động hủy bài (void) | ✅ Tham số `pack=exam` kích hoạt khóa rời trang | B1 DONE |
+| 8.2 | Chế độ drill: Cho phép tiếp tục bài thi dở dang, không hủy bài | ✅ Tham số `pack=drill` hiển thị nút Continue / Start over | B1 DONE |
+| 8.3 | Hình thái bộ điều khiển của exam và drill hoàn toàn giống nhau | ✅ Cùng một giao diện khung CDT; chỉ khác gói quy tắc | B1 DONE |
+| 8.4 | Hết thời gian cưỡng chế thu bài (áp dụng cho cả hai gói) | ✅ Hết giờ tự động nộp bài và chuyển tiếp | B1 DONE |
+
+---
+
+## 9. Ánh xạ Cột mốc Phát triển
+
+| Ký hiệu cũ | Nội dung tương ứng | Vị trí mới |
+|---|---|---|
+| M1–M6 Shell (23/07/2026) | Giao diện khung `?cdt=1` cho bài thi trọn bộ | **Giữ lại làm nền tảng cốt lõi** |
+| — | Đưa bài luyện tập vào khung CDT + hai gói quy tắc | **B1 DONE** |
+| — | Khóa nghiêm ngặt âm thanh + 2 phút kiểm tra cuối bài | **B2 DONE** |
+| — | Bộ điều khiển dạng bài kéo thả (DnD) | **B3 DONE** |
+| — | Sổ tay Notepad / Highlight đa màu / Đổi màu nền | **B4 DONE** |
+| — | Đối sánh mẫu chuẩn đạt tỷ lệ ≥95% | **B5 DONE (20/20)** |
+
+---
+
+## 10. Tiêu chí Nghiệm thu Nhanh Khung Giao diện
+
+Khi mở bất kỳ đề thi Cambridge IELTS nào có tham số `?cdt=1`, các tiêu chí sau phải được đáp ứng:
+
+1. Thanh điều hướng nền màu đậm + dòng thời gian `minutes left` + các nút Finish / Setting / Help / Hide.
+2. Thanh chân trang hiển thị Review + phân nhóm số câu Part + nút chuyển câu tròn.
+3. Khu vực làm bài có tông màu xám lam lạnh chuẩn mực.
+4. Môn Nghe có điều chỉnh âm lượng và bước kiểm tra âm thanh; Môn Đọc và Viết có chia cột hai bên kèm bộ đếm từ Word count.
+5. Khi ẩn bài thi (Hide) đồng hồ vẫn chạy ngầm; khi bấm Finish có thể chuyển tiếp hoặc xuất báo cáo kết quả.

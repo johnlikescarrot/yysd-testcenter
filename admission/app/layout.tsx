@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI học lên cố vấn · YYSD ",
-  description: " Công nghệ lam đơn trang tiến bước: chọn trường học → bằng cấp → kỹ năng → trúng tuyển ước định ",
+  title: "AI tư vấn du học · YYSD ",
+  description: " Quy trình từng bước: chọn trường → bậc học → kỹ năng → đánh giá trúng tuyển ",
 };
 
 export default function RootLayout({
@@ -16,11 +16,11 @@ export default function RootLayout({
         <header className="border-b border-sky-500/15 bg-slate-950/40 backdrop-blur-md">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
             <Link href="/" className="tech-title text-base tracking-wide">
-              AI học lên cố vấn
+              AI tư vấn du học
             </Link>
             <nav className="flex gap-4 text-sm text-slate-400">
               <Link href="/" className="hover:text-sky-300">
-                 Bắt đầu ước định
+                 Bắt đầu đánh giá
               </Link>
               <a href="/rankings" className="hover:text-sky-300">
                  đại học bài danh

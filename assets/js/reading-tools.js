@@ -203,8 +203,8 @@
       ctxMenu.innerHTML =
         '<button type="button" data-act="highlight" data-color="yellow"><span class="ico ico--hl">🖍</span> cao sáng Highlight</button>' +
         '<button type="button" data-act="notes"><span class="ico ico--note">📝</span> bút ký Notes</button>' +
-        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span> thanh trừ Clear</button>' +
-        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span> Tất cả thanh trừ Clear all</button>';
+        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span> Xóa (Clear)</button>' +
+        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span> Xóa tất cả (Clear all)</button>';
     }
     document.body.appendChild(ctxMenu);
 

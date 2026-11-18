@@ -72,7 +72,7 @@
           (rec? " buông ra chấm dứt ghi âm ": (status || " đè lại microphone Đọc nhại, buông ra chấm dứt ")) +
         "</p>" +
         (canSkip
-          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="skip-speak"> nhảy qua cũng dấu hiệu bạc nhược yếu kém </button>'
+          ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="skip-speak"> Bỏ qua và đánh dấu cần cải thiện </button>'
           : "") +
         (tries > 0 &&!canSkip
           ? '<button type="button" class="dw-btn dw-btn--ghost" data-act="retry-speak"> thử một lần nữa </button>'

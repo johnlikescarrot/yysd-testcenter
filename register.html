@@ -33,14 +33,14 @@
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="bình đài giới thiệu">
+      <aside class="auth-aside reveal" aria-label="Giới thiệu nền tảng">
         <p class="auth-aside__eyebrow">IELTS · Chương trình quốc tế </p>
-        <h2 class="auth-aside__title">Đăng ký tài khoản. <br>Bắt đầu phụ lục.</h2>
-        <p class="auth-aside__desc" id="aside-desc">nghiệm chứng Số điện thoại sau thiết trí Đăng nhập Mật khẩu, là được Vào học học tập trung tâm. </p>
+        <h2 class="auth-aside__title">Đăng ký tài khoản. <br>Bắt đầu học tập.</h2>
+        <p class="auth-aside__desc" id="aside-desc">Xác thực số điện thoại và thiết lập mật khẩu đăng nhập để bắt đầu học tập tại trung tâm. </p>
         <ul class="auth-aside__points" id="aside-points">
-          <li> Đề thi Cambridge IELTS </li>
-          <li> Học từ vựng hệ thống kế hoạch </li>
-          <li> nhiệm vụ và Tiến độ đồng bộ </li>
+          <li> Kho đề thi Cambridge IELTS chuẩn hóa </li>
+          <li> Kế hoạch học từ vựng bài bản </li>
+          <li> Đồng bộ tiến độ và nhiệm vụ học tập </li>
         </ul>
       </aside>
       <section class="auth-card reveal">
@@ -49,16 +49,16 @@
           <span class="auth-tabs__item is-active"> Đăng ký </span>
         </div>
         <h1 class="auth-card__title">Đăng ký tài khoản</h1>
-        <p class="auth-card__desc" id="card-desc">từng Số điện thoại chỉ có thể Đăng ký một lần, mời nhớ kỹ bạn thiết trí Mật khẩu. </p>
+        <p class="auth-card__desc" id="card-desc">Mỗi số điện thoại chỉ có thể đăng ký một lần. Vui lòng ghi nhớ mật khẩu bạn đã thiết lập. </p>
 
         <form class="auth-form" id="register-form" novalidate>
           <label class="auth-field">
             <span> Số điện thoại </span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 chữ số điện thoại" required>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="Nhập số điện thoại" required>
           </label>
           <label class="auth-field" id="reg-key-field" hidden>
-            <span> Mã khóa đăng ký </span>
-            <input type="text" id="reg-key" autocomplete="off" maxlength="120" placeholder="dốc lòng cầu học trường học cố gắng Mã khóa đăng ký">
+            <span> Mã kích hoạt đăng ký </span>
+            <input type="text" id="reg-key" autocomplete="off" maxlength="120" placeholder="Nhập mã đăng ký do nhà trường cấp">
           </label>
           <label class="auth-field auth-field--row" id="code-field">
             <span> Mã xác thực </span>
@@ -66,19 +66,19 @@
             <button type="button" class="btn btn--ghost btn--sm" id="send-btn">Lấy mã xác thực</button>
           </label>
           <label class="auth-field">
-            <span> thiết trí Mật khẩu </span>
+            <span> Thiết lập mật khẩu </span>
             <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="Tối thiểu 6 ký tự" required>
           </label>
           <label class="auth-field">
             <span> Xác nhận mật khẩu </span>
-            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="lần nữa điền mật mã vào" required>
+            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="Nhập lại mật khẩu" required>
           </label>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable">Đăng ký cũng Đăng nhập</button>
+          <button type="submit" class="btn btn--primary btn--block pressable">Đăng ký và Đăng nhập</button>
         </form>
 
-        <p class="auth-legal">đã có tài khoản? <a href="login.html"> Đăng nhập ngay</a>
-          · Đăng ký tiếp xúc biểu thị đồng ý
+        <p class="auth-legal">Đã có tài khoản? <a href="login.html"> Đăng nhập ngay</a>
+          · Đăng ký đồng nghĩa với việc bạn đồng ý với
           <a href="agreement.html">« Điều khoản dịch vụ »</a>
            và
           <a href="privacy.html">« Chính sách bảo mật »</a>
@@ -141,16 +141,16 @@
       sendBtn.disabled = true;
       regKeyEl.required = true;
       document.getElementById("aside-desc").textContent =
-        " dốc lòng cầu học trường học cố gắng Mã khóa đăng ký sau, dùng di động số thiết trí Mật khẩu là được Đăng ký. Đăng nhập nhưng dùng di động số + Mật khẩu. ";
+        " Sau khi nhận mã đăng ký từ nhà trường, nhập số điện thoại và thiết lập mật khẩu để đăng ký tài khoản. Đăng nhập bằng số điện thoại và mật khẩu. ";
       document.getElementById("aside-points").innerHTML =
-        "<li> trường học phát ra Mã khóa đăng ký </li><li> Số điện thoại + Mật khẩu Đăng nhập </li><li> Điểm số tự động đám mây đồng bộ </li>";
+        "<li> Mã kích hoạt do trường cấp </li><li> Đăng nhập bằng số điện thoại và mật khẩu </li><li> Tự động đồng bộ điểm số lên đám mây </li>";
       document.getElementById("card-desc").textContent =
-        " mời dốc lòng cầu học trường học Quản trị viên cố gắng Mã khóa đăng ký. Mã khóa có lần mấy hạn chế, từng Số điện thoại chỉ có thể Đăng ký một lần. ";
+        " Vui lòng liên hệ quản trị viên nhà trường để nhận mã đăng ký. Mỗi mã có giới hạn số lượt sử dụng; mỗi số điện thoại chỉ được đăng ký một lần. ";
     }
 
     function showMsg(text, ok) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
+      msgEl.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
     }
 
     function startCooldown(sec) {
@@ -158,7 +158,7 @@
       sendBtn.disabled = true;
       tick = setInterval(function () {
         cooldown -= 1;
-        sendBtn.textContent = cooldown > 0? cooldown + "s": " Lấy mã xác thực ";
+        sendBtn.textContent = cooldown > 0 ? cooldown + "s" : " Lấy mã xác thực ";
         if (cooldown <= 0) {
           clearInterval(tick);
           sendBtn.disabled = false;
@@ -173,7 +173,7 @@
         body: { phone: phoneEl.value.trim(), purpose: "register" }
       })
         .then(function () {
-          showMsg(" Mã xác thực đã gửi đi, mời kiểm tra và nhận tin nhắn. ", true);
+          showMsg(" Mã xác thực đã được gửi, vui lòng kiểm tra tin nhắn SMS. ", true);
           startCooldown(60);
         })
         .catch(function (e) { showMsg(e.message); });
@@ -182,8 +182,8 @@
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       showMsg("");
-      if (passwordEl.value!== confirmEl.value) {
-        showMsg(" hai lần Mật khẩu không nhất trí ");
+      if (passwordEl.value !== confirmEl.value) {
+        showMsg(" Mật khẩu xác nhận không khớp ");
         return;
       }
       var body = {

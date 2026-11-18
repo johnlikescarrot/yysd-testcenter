@@ -383,7 +383,7 @@ ROWS = [
  ["therefore"], [], " bởi vậy ", " Học thuật "),
 ("resign", "/rɪˈzaɪn/", "v.",
  "v. ① từ chức (resign from / as); ② mặc cho (resign oneself to). resignation; resigned. hand in one's resignation. Dễ nhầm re-sign (lại ký tên). ",
- [" từ chức ", " buông tha cho ", " mặc cho "],
+ [" từ chức ", " từ bỏ ", " mặc cho "],
  "resign from (từ … từ chức), resign oneself to (mặc cho), resignation (từ chức; mặc cho) ",
  "The minister resigned after the report was published.", " báo cáo công bố sau, nên bộ trưởng từ chức. ",
  "re- (quay về) + sign (ký tên) → giao về ủy nhiệm → từ chức ",

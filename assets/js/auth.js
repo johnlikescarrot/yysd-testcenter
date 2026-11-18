@@ -75,12 +75,12 @@ window.YYSD_AUTH = (function () {
     return false;
   }
 
-  /** AI học lên cố vấn: tạm thời chỉ YYSD tổng bộ đứng ra thả, Khác người thuê tử vực che giấu lại không có thể tiến */
+  /** AI tư vấn du học: tạm thời chỉ YYSD tổng bộ đứng ra thả, Khác người thuê tử vực che giấu lại không có thể tiến */
   function canAiAdmit() {
     return isHqSite();
   }
 
-  /** IELTS khu vực: đã đối với toàn thể thầy trò cởi mở (nhưng cần Đăng nhập) */
+  /** Khu vực IELTS: đã mở cho toàn thể thầy trò (cần Đăng nhập) */
   function canIeltsArea() {
     return true;
   }
@@ -465,7 +465,7 @@ window.YYSD_AUTH = (function () {
       };
       img.onerror = function () {
         URL.revokeObjectURL(objectUrl);
-        reject(new Error(" hình ảnh đọc đến thất bại "));
+        reject(new Error(" Đọc hình ảnh thất bại "));
       };
       img.src = objectUrl;
     });
@@ -800,7 +800,7 @@ window.YYSD_AUTH = (function () {
     });
   }
 
-  // ponytail: footer công nhiên bày tỏ khiếu nại con đường, thỏa mãn công an lập hồ sơ an toàn ước định phác thảo chọn
+  // ponytail: footer công nhiên bày tỏ khiếu nại con đường, đáp ứng quy định an toàn và điều khoản bảo mật
   function bindReport() {
     document.querySelectorAll(".minimal-footer__copy").forEach(function (el) {
       if (el.querySelector("[data-report], a[href$='report.html']")) return;
@@ -850,7 +850,7 @@ window.YYSD_AUTH = (function () {
   function redirectLoggedInAwayFromMarketing() {
     if (!getToken()) return false;
     if (pageName()!== "index.html") return false;
-    // Học viên Đăng nhập sau ở lại trang chủ tự hành chút:điểm khối; chỉ Giáo viên nhảy bàn làm việc
+    // Học viên đăng nhập xong ở lại trang chủ tự chọn khối học; chỉ giáo viên chuyển sang bàn làm việc
     if (isTeacher()) {
       location.replace("teacher.html");
       return true;

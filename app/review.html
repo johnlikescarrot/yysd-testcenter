@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ôn tập</title>
+  <title>Xem lại bài làm · Hệ thống thi trên máy YYSD</title>
   <link rel="stylesheet" href="assets/css/hit.css?v=20261027win1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261015prev1"></script>
@@ -18,7 +18,7 @@
   <section id="pane-rep" hidden>
     <iframe id="rep-frame" title="Bảng điểm Score Report" scrolling="no"></iframe>
     <div class="rep-foot">
-      <p class="rep-note">Bảng điểm theo như lần này cuộc thi (đồng nhất trận) bốn khoa tập hợp; không khảo thi kỹ năng biểu hiện «--». </p>
+      <p class="rep-note">Bảng điểm tổng hợp kết quả 4 kỹ năng trong cùng đợt thi; kỹ năng chưa thi sẽ hiển thị «--». </p>
       <p><button type="button" class="rep-btn" id="rep-print">Lưu Bảng điểm</button></p>
     </div>
   </section>
@@ -26,14 +26,14 @@
     <h1 id="title">Xem ghi chép</h1>
     <p class="hit-lead" id="score"></p>
     <p class="rev-sub" id="rev-sub"></p>
-    <p class="hit-lead" id="sw-choice" hidden>Nói / Viết có thể dẫn xuất âm tần và viết văn; muốn AI điểm lại đi nguyên lai cho điểm. chỉ dẫn xuất tức thì Nói Viết nhớ « đã Nộp bài, không cho điểm ». </p>
-    <p><button type="button" class="hit-go" id="export-all" hidden>dẫn xuất Tất cả ghi âm</button></p>
+    <p class="hit-lead" id="sw-choice" hidden>Phần Nói / Viết có thể xuất file ghi âm và bài luận. Chỉ xuất file sẽ ghi nhận « Đã nộp bài, chưa chấm điểm ». </p>
+    <p><button type="button" class="hit-go" id="export-all" hidden>Xuất tất cả file ghi âm</button></p>
     <div id="list"></div>
     <audio id="model-clip" hidden></audio>
   </section>
   <div id="rev-ov" hidden>
     <div class="rev-ov-in">
-      <header><b>hướng dẫn tra cứu</b><button type="button" id="rev-ov-x" aria-label="Đóng">Đóng</button></header>
+      <header><b>Danh mục câu hỏi</b><button type="button" id="rev-ov-x" aria-label="Đóng">Đóng</button></header>
       <div id="rev-index"></div>
     </div>
   </div>
@@ -49,32 +49,32 @@
       var att = P.readAttempt();
       var recs = S & S.readRecs? S.readRecs(): {};
       var rows = [];
-      if (!att ||!att.paper) {
-        document.getElementById("score").textContent = " không có lần này đáp lại ghi chép. ";
+      if (!att || !att.paper) {
+        document.getElementById("score").textContent = " Không có lịch sử làm bài lần này. ";
         return;
       }
 
       /* wofo: điểm và tất cả khoa Giải thích đáp án tại đồng nhất trang, dựa vào thanh điều hướng Tab hoán đổi; còn lại kỹ năng theo như sid từ Thi thử Lịch sử xây dựng lại */
-      var NAMES = { report: " điểm ", reading: " Đọc ", listening: " Nghe ", writing: " Viết ", speaking: " Nói " };
+      var NAMES = { report: " Bảng điểm ", reading: " Đọc ", listening: " Nghe ", writing: " Viết ", speaking: " Nói " };
       var ORDER = ["report", "reading", "listening", "writing", "speaking"];
       var sid = att.sid || 0;
       var sit = {};
-      if (LAB & LAB.attempts & sid) {
+      if (LAB && LAB.attempts && sid) {
         LAB.attempts().forEach(function (a) { if (a.sid === sid) sit[a.skill] = a; });
       }
       var own = { paperId: att.set || att.paper.id || "", title: att.paper.title || "" };
-      if (own.paperId &!sit[skill]) sit[skill] = own;
+      if (own.paperId && !sit[skill]) sit[skill] = own;
       var tab = "report";
-      var REP = (location.pathname.indexOf("/app/") === 0? "../": "") + "toefl-score.html" +
-        (sid? "?sid=" + sid: "");
+      var REP = (location.pathname.indexOf("/app/") === 0 ? "../" : "") + "toefl-score.html" +
+        (sid ? "?sid=" + sid : "");
       // preview=1 lúc phía trên vậy được sẽ nhảy qua mount, tại đây bổ treo, nếu không Tab lan không chỗ có thể chọc vào
       var top = document.querySelector(".hit-top");
-      if (!top & YYSD_HIT.mount(skill)) top = document.querySelector(".hit-top");
+      if (!top && YYSD_HIT.mount(skill)) top = document.querySelector(".hit-top");
       var mid = document.createElement("div");
       mid.className = "rev-mid";
       top.insertBefore(mid, top.querySelector(".hit-user"));
       top.querySelector(".hit-brand").insertAdjacentHTML("afterend",
-        '<a class="rev-out" id="rev-exit" href="' + esc(P.backHref(skill)) + '"> Đăng xuất Ôn tập</a>');
+        '<a class="rev-out" id="rev-exit" href="' + esc(P.backHref(skill)) + '"> Thoát xem lại</a>');
       document.getElementById("rev-exit").addEventListener("click", function (e) {
         e.preventDefault();
         P.goBack(skill);
@@ -84,8 +84,8 @@
 
       function go(t) {
         tab = t;
-        if (t!== "report" & t!== skill & sit[t]) { otherSection(t, finish); return; }
-        if (t!== "report") t = skill;
+        if (t !== "report" && t !== skill && sit[t]) { otherSection(t, finish); return; }
+        if (t !== "report") t = skill;
         tab = t;
         panes();
         if (t === "report") openReport();
@@ -93,7 +93,7 @@
         finish();
       }
       function panes() {
-        document.getElementById("pane-rep").hidden = tab!== "report";
+        document.getElementById("pane-rep").hidden = tab !== "report";
         document.getElementById("pane-rev").hidden = tab === "report";
       }
       function finish() {
@@ -102,20 +102,20 @@
       function mockLabel() {
         var r = sit[skill] || own;
         var n = 0;
-        ORDER.forEach(function (k) { if (k!== "report" & sit[k]) n += 1; });
-        return (r.title || r.paperId || " Thi thử ") + " · " + NAMES[skill] + (n > 1? " · toàn bộ cuốn ": " · Đơn kỹ năng ");
+        ORDER.forEach(function (k) { if (k !== "report" && sit[k]) n += 1; });
+        return (r.title || r.paperId || " Thi thử ") + " · " + NAMES[skill] + (n > 1 ? " · Đề thi đầy đủ " : " · Đơn kỹ năng ");
       }
       function paintBar() {
         mid.innerHTML = '<span class="rev-mock">' + esc(mockLabel()) + '</span><nav class="rev-tabs">' +
           ORDER.map(function (k) {
-            var dis = k!== "report" &!sit[k];
-            return '<button type="button" class="rev-tab' + (tab === k? " is-on": "") + '" data-t="' + k + '"' +
-              (dis? " disabled": "") + ">" + NAMES[k] + "</button>";
+            var dis = k !== "report" && !sit[k];
+            return '<button type="button" class="rev-tab' + (tab === k ? " is-on" : "") + '" data-t="' + k + '"' +
+              (dis ? " disabled" : "") + ">" + NAMES[k] + "</button>";
           }).join("") + "</nav>" +
-          (tab === "report"? "": '<span class="rev-acts">' +
-            '<button type="button" id="rev-index-btn"' + (rows.length? "": " disabled") + ">hướng dẫn tra cứu</button>" +
-            '<button type="button" id="rev-prev"' + (rows.length? "": " disabled") + ">Back</button>" +
-            '<button type="button" id="rev-next"' + (rows.length? "": " disabled") + ">Next</button></span>");
+          (tab === "report" ? "" : '<span class="rev-acts">' +
+            '<button type="button" id="rev-index-btn"' + (rows.length ? "" : " disabled") + ">Danh mục câu hỏi</button>" +
+            '<button type="button" id="rev-prev"' + (rows.length ? "" : " disabled") + ">Back</button>" +
+            '<button type="button" id="rev-next"' + (rows.length ? "" : " disabled") + ">Next</button></span>");
         mid.querySelector(".rev-tabs").onclick = function (e) {
           var b = e.target.closest? e.target.closest("[data-t]"): null;
           if (b &!b.disabled & b.getAttribute("data-t")!== tab) go(b.getAttribute("data-t"));
@@ -435,19 +435,19 @@
         return '<article class="rev-card ' + cls + '"' + (id? ' id="' + id + '"': "") + '><header class="rev-head"><span class="rev-mark" aria-hidden="true"></span><strong>' + esc(name) + "</strong></header>" + inner + "</article>";
       }
       function resOf(q, picked) {
-        if (!String(picked || "").trim()) return " không đáp ";
-        return String(picked) === String(q.answer || "")? " đối với ": " sai ";
+        if (!String(picked || "").trim()) return " Chưa làm ";
+        return String(picked) === String(q.answer || "") ? " Đúng " : " Sai ";
       }
       function resOfBlank(b, raw) {
-        if (T.matchBlank(b, raw)) return " đối với ";
-        return String(raw || "").trim()? " sai ": " không đáp ";
+        if (T.matchBlank(b, raw)) return " Đúng ";
+        return String(raw || "").trim() ? " Sai " : " Chưa làm ";
       }
       function paintIndex() {
         var host = document.getElementById("rev-index");
         if (!rows.length) { host.innerHTML = ""; return; }
-        host.innerHTML = '<table class="rev-index"><thead><tr><th>câu số</th><th>đề mục</th><th>kết quả</th></tr></thead><tbody>'
+        host.innerHTML = '<table class="rev-index"><thead><tr><th>Câu hỏi</th><th>Nội dung</th><th>Kết quả</th></tr></thead><tbody>'
           + rows.map(function (r, i) {
-            var cls = r.res === " đối với "? "is-ok": r.res === " sai "? "is-bad": "is-skip";
+            var cls = r.res === " Đúng " ? "is-ok" : r.res === " Sai " ? "is-bad" : "is-skip";
             return '<tr data-i="' + i + '"><td>' + esc(r.no) + "</td><td>" + esc(r.label) + '</td><td class="' + cls + '">' + esc(r.res) + "</td></tr>";
           }).join("") + "</tbody></table>";
         host.onclick = function (e) {

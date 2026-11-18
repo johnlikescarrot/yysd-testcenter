@@ -24,7 +24,7 @@
       return u;
     }
     if (block.source === "date" && block.paperId) {
-      // ponytail: ngày cuốn chỉ ở Website Games cây ít ỏi theo; app bá phóng khí đọc không đến, giao trường thi động cơ Đơn kỹ năng trang
+      // đề thi ngày chỉ có trên website chính thức; trình phát app không đọc đượcng
       var u = examRoot() + "toefl-" + block.skill + ".html?id=" + encodeURIComponent(block.paperId) +
         "&mode=" + encodeURIComponent(mode === "practice"? "practice": "mock") +
         "&task=" + encodeURIComponent(block.task) +

@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập · cơ khảo thi hệ thống</title>
+  <title>Đăng nhập · Hệ thống thi trên máy YYSD</title>
   <link rel="stylesheet" href="assets/css/app.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
   <script src="assets/js/auth.js?v=20261008ui15"></script>
 </head>
 <body class="auth-page">
-  <header class="top"><b>YYSD cơ khảo thi hệ thống <small lang="en">YYSD TEST CENTER</small></b>
+  <header class="top"><b>Hệ thống thi trên máy YYSD <small lang="en">YYSD TEST CENTER</small></b>
     <span class="top-acts"><button type="button" id="hit-reload">Làm mới</button></span>
   </header>
   <main class="shell">
     <div class="card">
       <p class="auth-eyebrow" lang="en">SIGN IN</p>
       <h1>Đăng nhập</h1>
-      <p class="lead">Số điện thoại và Mật khẩu Đăng nhập. mới người sử dụng mời ghi danh trước. </p>
+      <p class="lead">Đăng nhập bằng số điện thoại và mật khẩu. Người dùng mới vui lòng đăng ký trước. </p>
       <form id="f">
         <label class="field">Số điện thoại
           <input type="tel" id="phone" maxlength="11" inputmode="numeric" autocomplete="tel" required>
@@ -25,12 +25,12 @@
           <input type="password" id="password" minlength="6" autocomplete="current-password">
         </label>
         <label class="field">Mã kích hoạt
-          <input id="activationCode" autocomplete="off" placeholder="máy vi tính này đã khóa lại có thể lưu chỗ trống">
+          <input id="activationCode" autocomplete="off" placeholder="Nếu thiết bị này đã liên kết, có thể để trống">
         </label>
         <p class="msg" id="msg"></p>
-        <button class="btn btn-block" type="submit">Vào học cơ khảo thi</button>
+        <button class="btn btn-block" type="submit">Vào phòng thi trên máy</button>
       </form>
-      <p class="auth-switch">còn không có tài khoản? <a href="register.html"> dùng Mã kích hoạt Đăng ký</a></p>
+      <p class="auth-switch">Chưa có tài khoản? <a href="register.html"> Đăng ký bằng mã kích hoạt</a></p>
     </div>
   </main>
   <script>

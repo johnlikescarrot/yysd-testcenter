@@ -103,22 +103,22 @@
         if (timelineEl) timelineEl.innerHTML = "";
         if (summaryEl) summaryEl.innerHTML = "";
         area.innerHTML = '<div class="state state--brand results-empty premium-empty premium-enter">' +
-          '<h3>còn không có Điểm số ghi chép</h3>' +
-          '<p>hoàn thành một phần Đề Cambridge IELTS cũng Nộp bài sau, Điểm số và Band dự kiến sẽ tự động xuất hiện ở nơi này. </p>' +
+          '<h3>Chưa có kết quả làm bài</h3>' +
+          '<p>Sau khi hoàn thành và nộp bài một đề Cambridge IELTS, điểm số và band ước tính sẽ tự động hiển thị tại đây. </p>' +
           '<div class="results-empty__actions premium-empty__actions">' +
-          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts"> đi làm bộ thứ nhất đề thi thật →</a>' +
-          '<a class="btn btn--ghost" href="zone.html?zone=study"> đi trước Khu từ vựng</a>' +
+          '<a class="btn btn--primary pressable" href="zone.html?zone=mock&s=ielts"> Làm đề thi thử đầu tiên →</a>' +
+          '<a class="btn btn--ghost" href="zone.html?zone=study"> Đến Khu từ vựng</a>' +
           '</div></div>';
         return;
       }
 
       var html = '<div class="results-list premium-enter">';
       rows.forEach(function (r) {
-        var score = (r.score!= null)? (r.score + (r.total!= null? " / " + r.total: "")): "—";
-        var date = r.date? new Date(r.date).toLocaleString("zh-CN"): "—";
+        var score = (r.score != null) ? (r.score + (r.total != null ? " / " + r.total : "")) : "—";
+        var date = r.date ? new Date(r.date).toLocaleString("vi-VN") : "—";
         var zone = (Y.ZONE[r.zone] || {}).label || "—";
         var subj = (Y.SUBJECT[r.subject] || {}).label || "—";
-        var band = r.band!= null? String(r.band): "—";
+        var band = r.band != null ? String(r.band) : "—";
         html += '<article class="results-row">' +
           '<div class="results-row__main">' +
             '<h3 class="results-row__title">' + Y.esc(r.title) + '</h3>' +
@@ -130,11 +130,11 @@
           '</div>' +
           '<div class="results-row__acts">' +
             (String(r.id || "").indexOf("toefl-") === 0
-              ? '<span class="btn btn--ghost btn--sm is-disabled" title="hệ thống bài thi chỉ ở mặt bàn đầu mở ra"> mời tại mặt bàn đầu mở ra </span>'
-              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '"> luyện thêm một lần</a>') +
-            (r.wrong & r.wrong.length
+              ? '<span class="btn btn--ghost btn--sm is-disabled" title="Đề thi này chỉ hỗ trợ mở trên ứng dụng máy tính"> Mở trên ứng dụng máy tính </span>'
+              : '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(r.id) + '"> Luyện tập lại</a>') +
+            (r.wrong && r.wrong.length
               ? '<a class="btn btn--ghost btn--sm" href="wrong-record.html?item=' + encodeURIComponent(r.id) + '&local=1"> Xem câu sai</a>'
-              : '<span class="btn btn--ghost btn--sm is-disabled" title="lần này Không câu sai hoặc chưa thu nhận sử dụng"> Xem câu sai </span>') +
+              : '<span class="btn btn--ghost btn--sm is-disabled" title="Lần làm bài này không có câu sai hoặc chưa được lưu"> Xem câu sai </span>') +
           '</div></article>';
       });
       html += '</div>';
@@ -142,7 +142,7 @@
     }
 
     document.getElementById("clear-btn").addEventListener("click", function () {
-      if (confirm(" Đồng ý Xóa trống Tất cả Điểm số ghi chép không? thao tác này không thể huỷ bỏ. ")) {
+      if (confirm(" Bạn có chắc chắn muốn xóa toàn bộ lịch sử điểm số không? Thao tác này không thể hoàn tác. ")) {
         localStorage.removeItem("yysd:results"); render();
       }
     });

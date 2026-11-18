@@ -48,7 +48,7 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
       {
         id: "p3", type: "line", speaker: "Narrator", portrait: "map-ash",
         en: "Soldiers forgot passwords. Markets forgot fairness. The first city crumbled in silence — walls intact, the word home gone.",
-        zh: " binh sĩ đã quên khẩu lệnh, chợ đã quên công bằng. tòa thành thứ nhất đang trầm mặc Vừa vỡ vụn: tường vẫn còn, home lại không có. "
+        zh: " binh sĩ đã quên khẩu lệnh, chợ đã quên công bằng. tòa thành thứ nhất trong sự im lặng đã vỡ vụn: tường vẫn còn, home lại không có. "
       },
       {
         id: "p4", type: "line", speaker: "Narrator", portrait: "map-throne",
@@ -180,7 +180,7 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-shrine",
             en: "The first shrine answers. Golden runes climb the stone like waking veins.",
-            zh: " đệ nhất tòa từ đáp lại. màu vàng ký hiệu(*phù văn) xuôi theo mặt đá trèo lên, như thức tỉnh mạch lạc. "
+            zh: " đệ nhất tòa từ đáp lại. những ký tự cổ màu vàng men theo mặt đá lan dần lên, tựa như mạch lạc đang thức tỉnh. "
           }
         ]
       },
@@ -230,7 +230,7 @@ window.YYSD_WORD_REALM_VN_SCRIPT = {
           {
             art: "cut-shrine",
             en: "Your third light reaches them first. The name holds — trembling, then true.",
-            zh: " của bạn thứ ba chụp đèn tới trước. tên ổn định: vốn là run rẩy, sau đó chân thật. "
+            zh: " của bạn thứ ba chụp đèn tới trước. tên ổn định: vốn là run rẩy, sau đó rõ ràng chân thực. "
           }
         ]
       },

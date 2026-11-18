@@ -46,13 +46,13 @@
     <div class="teacher-content">
       <section class="minimal-page-head">
         <h1>Phân bổ học viên</h1>
-        <p class="minimal-page-desc">trước lựa chọn Giáo viên, lại câu chọn muốn phân phối cho hắn Học viên. một tên đệ tử có thể đồng thời thuộc về nhiều vị Giáo viên. </p>
+        <p class="minimal-page-desc">Chọn giáo viên trước, sau đó tích chọn các học viên cần phân bổ cho giáo viên phụ trách. Một học viên có thể thuộc danh sách phụ trách của nhiều giáo viên.</p>
       </section>
 
       <main class="minimal-main">
         <div class="admin-assign">
           <label class="auth-field">
-            <span> lựa chọn Giáo viên </span>
+            <span> Chọn giáo viên </span>
             <select id="teacher-select">
               <option value="">Đang tải …</option>
             </select>
@@ -62,11 +62,11 @@
             <button type="button" class="btn btn--ghost btn--sm" id="select-all">Chọn tất cả mục hiển thị</button>
             <button type="button" class="btn btn--ghost btn--sm" id="clear-all">Xóa lựa chọn</button>
           </div>
-          <p class="profile-hint" id="picked-hint">mời trước lựa chọn Giáo viên </p>
+          <p class="profile-hint" id="picked-hint">Vui lòng chọn giáo viên trước</p>
           <div class="cal-check-list cal-check-list--tall" id="student-list"></div>
           <p class="auth-msg" id="msg" role="status"></p>
           <div class="cal-form__foot" style="justify-content:flex-start;margin-top:16px">
-            <button type="button" class="btn btn--primary" id="save-btn" disabled>Lưu phân phối</button>
+            <button type="button" class="btn btn--primary" id="save-btn" disabled>Lưu phân bổ</button>
           </div>
         </div>
       </main>

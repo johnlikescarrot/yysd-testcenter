@@ -149,7 +149,7 @@
         });
         document.getElementById("sentencesArea").innerHTML = html;
 
-        // khóa lại kết cấu kiểm tra cái nút
+        // khóa lại kết cấu kiểm tra nút bấm
         document.querySelectorAll('.struct-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');
@@ -175,7 +175,7 @@
             });
         });
 
-        // khóa lại phiên dịch kiểm tra cái nút
+        // khóa lại phiên dịch kiểm tra nút bấm
         document.querySelectorAll('.trans-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-idx');

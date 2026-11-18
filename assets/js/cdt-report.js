@@ -88,7 +88,7 @@
     }
     var fb = d && d.feedback? String(d.feedback).trim(): "";
     if (fb &&!looksLikeJsonLeak(fb)) html += "<p>" + esc(fb) + "</p>";
-    return html || "<p> không Quay lại kết cấu hóa cho điểm, mời gọi thêm cái nút Thử lại </p>";
+    return html || "<p> Không nhận được kết quả chấm điểm có cấu trúc, vui lòng nhấn nút Thử lại </p>";
   }
 
   function setHint(msg, isError) {
@@ -118,11 +118,11 @@
       return;
     }
     if (!window.YYSD_AUTH ||!YYSD_AUTH.getToken ||!YYSD_AUTH.getToken()) {
-      setHint(" Vui lòng đăng nhập trước sau lại sử dụng AI phê chữa ", true);
+      setHint(" Vui lòng đăng nhập trước khi sử dụng tính năng AI chấm bài ", true);
       return;
     }
     if (YYSD_AUTH.isTeacher && YYSD_AUTH.isTeacher()) {
-      setHint(" Giáo viên tài khoản mời đang học sinh đầu Dùng thử AI phê chữa ", true);
+      setHint(" Tài khoản Giáo viên vui lòng chuyển sang giao diện học sinh để trải nghiệm AI chấm bài ", true);
       return;
     }
     var btn1 = $("rpt-ai-t1");
@@ -150,7 +150,7 @@
         qHint = " hôm nay văn tự khoản độ còn thừa " + res.quota.textLeft + "/" + res.quota.textLimit;
         if (res.quota.textLeft <= 0) qHint += " (Đã dùng hết, hẹn gặp lại ngày mai) ";
       }
-      setHint(qHint || " phê chữa hoàn thành ");
+      setHint(qHint || " Chấm bài hoàn thành ");
     }).catch(function (err) {
       var msg = (err && err.message) || " Chấm bài thất bại ";
       setHint(msg, true);
@@ -164,7 +164,7 @@
     if (!suite) {
       $("rpt-skills").innerHTML =
         '<article class="cdt-report__card is-empty"><h3> báo cáo </h3>' +
-        '<div class="big"> thiếu khuyết bộ câu tham số </div>' +
+        '<div class="big"> Thiếu tham số bộ đề thi </div>' +
         '<div class="meta"> mời từ Thi thử Finish section Vào học </div></article>';
       return;
     }

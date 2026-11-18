@@ -140,7 +140,7 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
         text: ` đã ghi chép bối cảnh của bạn: GPA ${bg.gpa} · ${bg.undergradSchool} / ${bg.undergradMajor}${
           bg.toefl!= null? ` · TOEFL ${bg.toefl}`: ""
         }${bg.ielts!= null? ` · IELTS ${bg.ielts}`: ""}. ${
-          picked?.verified? " cai giáo hạng mục kho đã hạch nghiệm. ": " cai giáo trước mắt là tham khảo mục lục. "
+          picked?.verified? " Danh mục chương trình của trường này đã được kiểm chứng. ": " Chương trình của trường này hiện tại là danh mục tham khảo. "
         } mời dùng một câu miêu tả cảm thấy hứng thú nghiên cứu sinh phương hướng, tỷ như « số liệu khoa học »« trí tuệ nhân tạo thiên định lượng ». ta sẽ kết hợp bối cảnh của bạn xứng đôi chuyên nghiệp cũng cho ra cánh cửa thích xứng nhắc nhở. `,
       },
     ]);
@@ -229,13 +229,13 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
       <header className="space-y-4">
         <div>
           <p className="text-sm font-medium tracking-wide text-sky-300/80">YYSD · AI Advisor</p>
-          <h1 className="tech-title mt-1 text-3xl sm:text-4xl">AI học lên cố vấn </h1>
+          <h1 className="tech-title mt-1 text-3xl sm:text-4xl">AI tư vấn du học </h1>
           <p className="mt-2 max-w-xl text-sm text-slate-400">
-             chọn trường học → điền bối cảnh → đối thoại xứng đôi chuyên nghiệp → thân thỉnh ước định.
+             Chọn trường → Điền hồ sơ → Trao đổi chọn ngành → Đánh giá hồ sơ.
           </p>
         </div>
 
-        <nav className="flex flex-wrap items-center gap-3 sm:gap-5" aria-label=" ước định trình tự ">
+        <nav className="flex flex-wrap items-center gap-3 sm:gap-5" aria-label=" Quy trình đánh giá ">
           <StepItem n={1} label=" chọn trường học " active={step === 1} done={step > 1} onClick={() => goStep(1)} />
           <span className="text-slate-600">›</span>
           <StepItem
@@ -249,7 +249,7 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
           <span className="text-slate-600">›</span>
           <StepItem
             n={3}
-            label=" ước định "
+            label=" Đánh giá "
             active={step === 3}
             done={false}
             onClick={() => goStep(3)}
@@ -326,7 +326,7 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
                   <span className="mt-0.5 block truncate text-sm text-slate-400">{s.nameEn}</span>
                   <span className="mt-1 block text-xs text-sky-300/80">
                     {flag(s.country as Country)} {s.countryLabel} · {s.programCount} nghiên cứu sinh hạng mục
-                    {s.verified? " · đã hạch nghiệm ": ""}
+                    {s.verified? " · Đã xác thực ": ""}
                   </span>
                 </span>
               </button>
@@ -340,9 +340,9 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
           {editingBg ||!background? (
             <form onSubmit={saveBackground} className="tech-card-static space-y-4 p-5">
               <div>
-                <p className="font-semibold text-slate-50"> trước điền thân thỉnh bối cảnh </p>
+                <p className="font-semibold text-slate-50"> Điền thông tin hồ sơ ứng tuyển trước </p>
                 <p className="mt-1 text-xs text-slate-500">
-                   cố vấn đem dùng những tin tức này so với hạng mục cánh cửa; Vào học ước định tình hình đặc biệt lúc ấy tự động dẫn vào, không cần trọng điền.
+                   Cố vấn sẽ dùng thông tin này để đối chiếu với tiêu chí chương trình; khi vào trang đánh giá dữ liệu sẽ tự động điền, không cần nhập lại.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -444,7 +444,7 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
                 <div className="border-b border-sky-500/15 px-4 py-3">
                   <p className="font-semibold text-slate-50">AI Advisor · {picked.nameZh}</p>
                   <p className="text-xs text-slate-500">
-                     miêu tả hứng thú, xứng đôi cai giáo nghiên cứu sinh chuyên nghiệp; kết hợp bối cảnh của bạn cho ra cánh cửa thích xứng nhắc nhở.
+                     Mô tả sở thích để tìm ngành sau đại học phù hợp tại trường này; kết hợp hồ sơ của bạn để đánh giá mức độ tương thích nhắc nhở.
                   </p>
                 </div>
                 <div className="flex-1 space-y-3 overflow-y-auto p-4">
@@ -590,26 +590,26 @@ export function AdvisorWizard({ institutions }: { institutions: InstitutionCard[
             </div>
             {!undergradSoon? (
               <>
-                <p className="mb-4 text-sm text-slate-400"> mời lựa chọn thân thỉnh bằng cấp </p>
+                <p className="mb-4 text-sm text-slate-400"> Vui lòng chọn bậc học muốn nộp hồ sơ </p>
                 <div className="grid gap-3">
                   <button type="button" className="tech-btn w-full" onClick={chooseGraduate}>
-                     thân thỉnh nghiên cứu sinh
+                     Sau đại học / Thạc sĩ
                   </button>
                   <button
                     type="button"
                     className="tech-btn-ghost w-full"
                     onClick={() => setUndergradSoon(true)}
                   >
-                     thân thỉnh Đại học
+                     Đại học
                   </button>
                 </div>
               </>
             ): (
               <div className="space-y-4 py-2 text-center">
-                <p className="text-base font-medium text-sky-200"> Đại học ước định sắp cởi mở </p>
-                <p className="text-sm text-slate-400"> trước mắt phiên bản chỉ hỗ trợ nghiên cứu sinh thân thỉnh cố vấn và ước định. </p>
+                <p className="text-base font-medium text-sky-200"> Tính năng đánh giá bậc Đại học sắp ra mắt </p>
+                <p className="text-sm text-slate-400"> Phiên bản hiện tại chỉ hỗ trợ tư vấn và đánh giá hồ sơ sau đại học. </p>
                 <button type="button" className="tech-btn" onClick={chooseGraduate}>
-                   cải thành thân thỉnh nghiên cứu sinh
+                   Đổi sang Sau đại học / Thạc sĩ
                 </button>
               </div>
             )}
@@ -635,7 +635,7 @@ function ProgramDetailPanel({
       ? " cần GRE"
       : detail.greRequired === false
         ? " không cần GRE"
-        : "GRE có thể chọn / dùng Website Games làm chuẩn ";
+        : "GRE có thể chọn / theo website chính thức của trường ";
   return (
     <div className="space-y-3 text-sm">
       <button type="button" className="inline-flex items-center gap-1 text-sky-400" onClick={onBack}>
@@ -646,7 +646,7 @@ function ProgramDetailPanel({
           {detail.fieldLabel}
           {detail.verified? (
             <span className="ml-2 rounded bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-medium normal-case tracking-normal text-emerald-300">
-               đã hạch nghiệm
+               Đã xác thực
             </span>
           ): (
             <span className="ml-2 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-medium normal-case tracking-normal text-amber-200/90">
@@ -677,11 +677,11 @@ function ProgramDetailPanel({
               ? `TOEFL ≥ ${detail.minToefl}${detail.minIelts!= null? ` / IELTS ≥ ${detail.minIelts}`: ""}`
               : detail.minIelts!= null
                 ? `IELTS ≥ ${detail.minIelts}`
-                : " dùng Website Games làm chuẩn "
+                : " theo website chính thức của trường "
           }
         />
-        <KV k=" thân thỉnh Hạn chót " v={detail.applicationDeadline || " dùng Website Games làm chuẩn "} />
-        <KV k=" học phí " v={detail.tuitionNote || " dùng Website Games làm chuẩn "} />
+        <KV k=" Hạn chót nộp hồ sơ " v={detail.applicationDeadline || " theo website chính thức của trường "} />
+        <KV k=" học phí " v={detail.tuitionNote || " theo website chính thức của trường "} />
         <KV k="STEM" v={detail.isStem == null? " không đánh dấu ": detail.isStem? " là ": " hay không "} />
         <KV k="GRE" v={gre} />
       </dl>
@@ -697,7 +697,7 @@ function ProgramDetailPanel({
         </a>
       )}
       <button type="button" className="tech-btn w-full" onClick={onEval}>
-         thân thỉnh ước định
+         Đánh giá hồ sơ
       </button>
     </div>
   );

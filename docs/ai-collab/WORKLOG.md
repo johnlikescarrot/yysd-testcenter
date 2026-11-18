@@ -1,50 +1,50 @@
-# AI hợp tác thời gian làm việc chí
+# Nhật ký Cộng tác AI (Worklog)
 
-> Kimi chỉ viết bài này kiện + `DESIGN-BRIEF.md` + `CONTEXT.md` + `tasks/`
-> Cursor chỉ viết dấu hiệu + đổi mới bài này kiện thực hiện Trạng thái
+> Kimi chỉ viết tài liệu này + `DESIGN-BRIEF.md` + `CONTEXT.md` + các tệp trong `tasks/`  
+> Cursor chỉ viết mã nguồn + cập nhật trạng thái triển khai trong tài liệu này  
 
-## trước mắt người phụ trách
+## Phân công Trách nhiệm Hiện tại
 
-| nhân vật | chức trách | có thể ghi đường nhỏ |
-|------|------|----------|
-| Kimi | xếp đặt thiết kế thẩm kế, nhiệm vụ quy cách, đồng bộ | `docs/ai-collab/**` |
-| Cursor | dấu hiệu thực hiện, bản địa nghiệm chứng | `*.html` `assets/**` `server/**` |
+| Vai trò | Trách nhiệm chính | Phạm vi tệp tin được phép chỉnh sửa |
+|---|---|---|
+| Kimi | Kiểm toán thiết kế giao diện, viết đặc tả nhiệm vụ, đồng bộ tiến độ | `docs/ai-collab/**` |
+| Cursor | Triển khai mã nguồn, kiểm chứng thực tế tại môi trường cục bộ | `*.html`, `assets/**`, `server/**` |
 
-## đang tiến hành
+## Đang Triển khai
 
-| ID | người phụ trách | văn bản tài liệu phạm vi | Trạng thái | ghi chú |
-|----|--------|----------|------|------|
-| — | — | — | — | ** phương án B sự kiện quan trọng bế hoàn **; đến tiếp sau là đưa vào hoạt động / nội dung khuếch trương cuốn, không phải B danh sách |
+| Mã nhiệm vụ | Người phụ trách | Phạm vi tệp tin | Trạng thái | Ghi chú |
+|---|---|---|---|---|
+| — | — | — | — | **Các cột mốc của Phương án B đã hoàn thành khép kín**; giai đoạn tiếp theo là mở rộng nội dung và vận hành, không thuộc danh mục B |
 
-## Cần làm (Cursor)
+## Danh mục Cần làm (Cursor)
 
-| ID | văn bản tài liệu | Trạng thái | quy cách |
-|----|------|------|------|
-| — | — | — | Không B danh sách Cần làm; G6 Familiarisation nhân công song song lục bình có thể chọn |
+| Mã nhiệm vụ | Phạm vi tệp tin | Trạng thái | Đặc tả kỹ thuật |
+|---|---|---|---|
+| — | — | — | Hiện không còn đầu việc tồn đọng thuộc danh mục B; việc kiểm tra song song tài khoản Familiarisation G6 là tùy chọn |
 
-## Đã hoàn thành
+## Các Nhiệm vụ Đã Hoàn thành
 
-| ID | người phụ trách | hoàn thành ngày | trích yếu |
-|----|--------|--------|------|
-| drill-sec | Cursor | 2026-07-31 | drill miệng cống chọn Section/Passage; `dataset.sections`→ bài thi secbox; tục khảo thi giữ lại bản nháp bộ phận |
-| G6 | Cursor | 2026-07-31 | IDP Inspera Familiarisation công khai Listening kiểm tra bộ phận; ghi vào PLAN-B §5.3b |
-| B5 | Cursor | 2026-07-31 | C01–C20 điểm tối đa; Đọc phần giữa hai trang báo; C18 Tiếng Anh hóa; bốn chủ đường nhỏ + `cdtCheck` |
-| B4 | Cursor | 2026-07-31 | Notepad; nhiều sắc cao sáng; Setting màu nền; Help văn án; Viết cấm Chính tả |
-| B3 | Cursor | 2026-07-31 | `cdt-qux.js`: match/map DnD; multi chút:điểm chọn; giữ lại select tỉ số; thuận tiện dài drill Không secbox chỗ trống cuốn |
-| B2 | Cursor | 2026-07-31 | Nghe cấm seek; truyền hình xong 2′ review; 10′/5′ tính theo thời gian lập loè; drill Nộp bài giải tỏa cất đi |
-| B1 | Cursor | 2026-07-31 | Cambridge thi đơn tiến CDT; miệng cống chọn drill/exam; suite=1 hop; Nộp bài review |
-| B0 | Cursor | 2026-07-31 | phương án B hiến pháp đông lại: `CDT-PLAN-B.md` + viết lại `CDT-CHECKLIST.md` + kim dạng Cam20 T1 |
-| D-001 | Cursor | 2026-07-22 | toàn bộ đứng CONTEXT.md (đầu luân phiên chiều sâu Học tập) |
-| D-002 | Cursor | 2026-07-22 | DESIGN-BRIEF thẩm kế + I-001~I-005 nhiệm vụ đơn |
-| setup | Cursor | 2026-07-22 | sáng tạo `docs/ai-collab/` hợp tác khung xương + KIMI-PROMPTS.md |
-| I-001 | Cursor | 2026-07-22 | results.html tiếp nhập page-premium xác |
-| I-002 | Cursor | 2026-07-22 | login/register danh sách focus và auth-card thị giác thống nhất |
-| I-003 | Cursor | 2026-07-22 | di động đầu bottom tabs thuỷ tinh mờ và active thái |
-| I-004 | Cursor | 2026-07-22 | results chỗ trống Trạng thái premium tạp phiến hóa |
-| I-005 | Cursor | 2026-07-22 | page-premium toàn cục focus-visible hoàn |
+| Mã nhiệm vụ | Người phụ trách | Ngày hoàn thành | Tóm tắt kết quả |
+|---|---|---|---|
+| drill-sec | Cursor | 31/07/2026 | Cổng khởi động chế độ drill cho phép chọn Section/Passage; liên kết `dataset.sections` → `secbox` của đề thi; tiếp tục bài thi giữ lại bản nháp |
+| G6 | Cursor | 31/07/2026 | Kiểm tra đối chiếu với bài Listening công khai trên Inspera của IDP; ghi nhận vào PLAN-B §5.3b |
+| B5 | Cursor | 31/07/2026 | Đạt điểm tối đa tiêu chí C01–C20; hỗ trợ kéo dãn cột bài Đọc; hoàn tất C18 tiếng Anh hóa; kiểm tra hồi quy 4 luồng chính + tính năng `cdtCheck` |
+| B4 | Cursor | 31/07/2026 | Tích hợp Sổ tay Notepad; highlight đa màu; tùy chỉnh màu nền trong Setting; hoàn thiện nội dung Help; cấm kiểm tra chính tả khi làm bài Viết |
+| B3 | Cursor | 31/07/2026 | Tích hợp `cdt-qux.js`: dạng bài kéo thả nối cặp và bản đồ; hỗ trợ chọn nhiều đáp án; lưu trữ tỷ lệ chọn chính xác |
+| B2 | Cursor | 31/07/2026 | Khóa nghiêm ngặt phần Nghe không cho tua; 2 phút kiểm tra đáp án cuối bài; đồng hồ nhấp nháy cảnh báo 10'/5'; mở khóa nghe lại sau khi nộp bài drill |
+| B1 | Cursor | 31/07/2026 | Đưa các đề luyện tập đơn môn Cambridge vào giao diện CDT; cổng khởi động chọn gói drill/exam; tự động chuyển tiếp môn thi khi `suite=1`; xem lại sau khi nộp bài |
+| B0 | Cursor | 31/07/2026 | Chốt quy chuẩn Phương án B: hoàn thiện `CDT-PLAN-B.md` + viết lại `CDT-CHECKLIST.md` + chọn mẫu chuẩn Cam20 T1 |
+| D-001 | Cursor | 22/07/2026 | Khởi tạo tài liệu bản đồ dự án toàn hệ thống `CONTEXT.md` |
+| D-002 | Cursor | 22/07/2026 | Kiểm toán thiết kế `DESIGN-BRIEF.md` + tạo danh mục nhiệm vụ từ I-001 đến I-005 |
+| setup | Cursor | 22/07/2026 | Thiết lập khung sườn thư mục cộng tác `docs/ai-collab/` + tệp câu lệnh `KIMI-PROMPTS.md` |
+| I-001 | Cursor | 22/07/2026 | Tích hợp giao diện khung `page-premium` cho trang `results.html` |
+| I-002 | Cursor | 22/07/2026 | Chuẩn hóa vòng tiêu điểm các ô nhập liệu và đường viền thẻ `auth-card` trên trang login/register |
+| I-003 | Cursor | 22/07/2026 | Bổ sung hiệu ứng kính mờ và màu nền trạng thái active cho thanh tab di động |
+| I-004 | Cursor | 22/07/2026 | Nâng cấp trạng thái kết quả trống trên trang results thành thẻ phong cách giấy cao cấp |
+| I-005 | Cursor | 22/07/2026 | Mở rộng vòng tiêu điểm `focus-visible` áp dụng nhất quán trên toàn bộ giao diện page-premium |
 
-## Kimi bước tiếp theo (người sử dụng thao tác)
+## Hướng dẫn Bước Tiếp theo cho Kimi
 
-1. mở ra Kimi mặt bàn bản, đeo lên cặp văn kiện: `/Users/frankman/yysd test center`
-2. dán [`KIMI-PROMPTS.md`](KIMI-PROMPTS.md) Vừa **§0 hệ thống nhân vật **
-3. dán **§4 chu kỳ tính đồng bộ **, căn cứ vào Cursor Đã hoàn thành hạng phát một đám I-006+
+1. Mở ứng dụng Kimi, chọn mở thư mục dự án: `/Users/frankman/yysd test center`.
+2. Sao chép nội dung **§0 Khởi tạo Vai trò Hệ thống** trong [`KIMI-PROMPTS.md`](KIMI-PROMPTS.md).
+3. Dán tiếp nội dung **§4 Đồng bộ Tiến độ Định kỳ**, dựa trên các hạng mục Cursor đã hoàn thành để phát hành đợt nhiệm vụ tiếp theo từ I-006 trở đi.

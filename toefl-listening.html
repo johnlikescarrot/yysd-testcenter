@@ -355,7 +355,7 @@
           if (act === "rest") { F.fillRest("listening", paperId, mode); view = "rest"; show(rest); return; }
         }
         var scored = Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ): paper;
-        // wofo: Nộp bài trước đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới tiến Điểm số + Giải thích đáp án hợp nhất trang
+        // Trước khi nộp bài hiển thị màn hình « Đang tạo bảng điểm », bấm View để vào trang tổng hợp Điểm số + Giải thích đáp án
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("listening", scored, {
             tasks: (scored.tasks || []).map(function (_, i) { return i; }),

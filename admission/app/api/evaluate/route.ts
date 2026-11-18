@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
       const analysis = {
         strengths: [] as string[],
         weaknesses: gate.reasons,
-        suggestions: [" trước thỏa mãn cai giáo cứng nhắc yêu cầu thấp nhất sau lại ước định xứng đôi độ "],
+        suggestions: [" Cần thỏa mãn yêu cầu tối thiểu của trường trước khi đánh giá độ phù hợp "],
       };
       const ug = classifyUndergrad(input.undergradSchool);
       await prisma.userQuery.create({
@@ -187,7 +187,7 @@ export async function POST(req: NextRequest) {
         ` cấp bậc: Đại học ${calibrated.undergrad.label} vs hạng mục ${calibrated.difficulty.label}, gap=${calibrated.gap}`,
         ` chuyên nghiệp xứng đôi: ${calibrated.major.label}`,
         ` cánh cửa: minGPA=${school.minGpa} avgGPA=${school.avgGpa} TOEFL>=${school.minToefl?? "-"} IELTS>=${school.minIelts?? "-"}`,
-        ` thân thỉnh người: ${profileText}`,
+        ` Hồ sơ ứng viên: ${profileText}`,
         ` tương tự án lệ (ưu tiên chân thật GradCafe): ${JSON.stringify(
           similar.map((c) => ({
             year: c.year,
@@ -218,12 +218,12 @@ export async function POST(req: NextRequest) {
       analysis = ai.analysis || analysis;
       comparison = ai.comparison || comparison;
     } catch {
-      comparison = ` hiệu chỉnh kết quả: ${calibrated.category}, tính ra khu lúc giữa ${calibrated.range.low}–${calibrated.range.high}% (chút:điểm đoán chừng ${calibrated.probability}%). căn cứ gặp evidence. `;
+      comparison = ` hiệu chỉnh kết quả: ${calibrated.category}, tính ra khu lúc giữa ${calibrated.range.low}–${calibrated.range.high}% (ước tính điểm ${calibrated.probability}%). tham khảo bằng chứng hồ sơ. `;
       analysis = {
         strengths:
           calibrated.gap <= 0
-            ? [" Điểm số Đã qua cai giáo cứng rắn cánh cửa, và hạng mục lựa chọn tính chênh lệch không lớn "]
-            : [" Đã đạt thấp nhất cứng nhắc cánh cửa, có đủ Nộp bài thân thỉnh cơ bản tư cách "],
+            ? [" Điểm số đã đạt yêu cầu chuẩn của trường, và hạng mục lựa chọn tính chênh lệch không lớn "]
+            : [" Đã đạt ngưỡng tối thiểu, đủ điều kiện cơ bản để nộp hồ sơ "],
         weaknesses:
           calibrated.gap >= 2
             ? [
@@ -283,7 +283,7 @@ export async function POST(req: NextRequest) {
 
 function num(v: unknown): number {
   const n = typeof v === "number"? v: Number(v);
-  if (Number.isNaN(n)) throw new Error(" trị số chữ đoạn không có hiệu quả ");
+  if (Number.isNaN(n)) throw new Error(" Trường giá trị số không hợp lệ ");
   return n;
 }
 

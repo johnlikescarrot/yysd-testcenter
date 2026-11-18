@@ -141,7 +141,7 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     tuitionNote: " dùng CMU năm đó công bố học phí làm chuẩn ",
     isStem: true,
     greRequired: false,
-    applicationDeadline: " dùng MSE Website Games làm chuẩn ",
+    applicationDeadline: " theo thông tin trên website chính thức MSE của trường ",
     blurb: "CMU phần mềm công trình chuyên nghiệp Thạc sĩ, thiên công trình thực tế và đoàn đội giao phó. ",
     summaryOfficial:
       "Master of Software Engineering hạng mục do Software and Societal Systems {các loại:đợi} đơn vị tương quan cung cấp, cường điệu công trình thực tế. chính thức cửa vào: https://mse.isri.cmu.edu/",
@@ -249,7 +249,7 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     summaryOfficial: "Stanford EE nghiên cứu sinh hạng mục trang: https://ee.stanford.edu/academics/graduate",
   }),
 
-  // ——— MIT (Không đối ngoại cởi mở đầu cuối(*bộ phận kết nối) MSCS; chi tiết đánh dấu) ———
+  // ——— MIT (Không tuyển sinh ngoài chương trình MSCS độc lập; chi tiết xem ghi chú) ———
   v({
     name: "MIT",
     program: "Business Analytics",
@@ -273,7 +273,7 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     applicationDeadline: " nhiều luân phiên Hạn chót, dùng Sloan MBAn trang làm chuẩn ",
     blurb: "Sloan một năm chế Kinh doanh phân tích Thạc sĩ, định lượng và số liệu khu động quyết định biện pháp. ",
     summaryOfficial:
-      "MIT Sloan Master of Business Analytics (MBAn). chính thức: https://mitsloan.mit.edu/master-of-business-analytics. nói rõ: MIT EECS không đối ngoại bộ phận Thân thỉnh giả cởi mở độc lập đầu cuối(*bộ phận kết nối) MSCS. ",
+      "MIT Sloan Master of Business Analytics (MBAn). Website chính thức: https://mitsloan.mit.edu/master-of-business-analytics. Ghi chú: MIT EECS không tuyển sinh ngoài chương trình MSCS độc lập (terminal MSCS). ",
   }),
   v({
     name: "MIT",
@@ -289,7 +289,7 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     minIelts: 7.0,
     website: "https://www.mit.edu/",
     officialUrl: "https://sdm.mit.edu/",
-    admissionRequirements: " bình thường yêu cầu công tác tương quan kinh nghiệm; tài liệu gặp SDM Website Games. ",
+    admissionRequirements: " thông thường yêu cầu kinh nghiệm làm việc liên quan; xem chi tiết trên website SDM của trường. ",
     tier: 1,
     duration: " ước 12–24 tháng (đường nhỏ có thể chọn) ",
     tuitionNote: " dùng SDM / MIT năm đó học phí làm chuẩn ",
@@ -860,14 +860,14 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     minIelts: 7.0,
     website: "https://www.upenn.edu/",
     officialUrl: "https://www.cis.upenn.edu/graduate/program-offerings/mcit-on-campus/",
-    admissionRequirements: " mặt hướng không phải CS Đại học bối cảnh chuyển con ngựa hình Thạc sĩ; có khác Online MCIT. ",
+    admissionRequirements: " Dành cho người tốt nghiệp đại học không chuyên ngành CS, là Thạc sĩ chuyển tiếp ngành CNTT/Lập trình (CS conversion); có thêm hệ Online MCIT. ",
     tier: 2,
     duration: " bình thường 1.5–2 năm ",
     tuitionNote: " dùng Penn Engineering làm chuẩn ",
     isStem: true,
     greRequired: null,
     applicationDeadline: " dùng CIS làm chuẩn ",
-    blurb: " tân đại MCIT, thích hợp chuyển con ngựa bối cảnh. ",
+    blurb: " Chương trình MCIT tại UPenn, rất phù hợp cho người học chuyển ngành sang CNTT. ",
     summaryOfficial: "https://www.cis.upenn.edu/graduate/program-offerings/mcit-on-campus/",
   }),
   v({
@@ -1462,7 +1462,7 @@ export const VERIFIED_PROGRAMS: VerifiedProgram[] = [
     minIelts: 6.5,
     website: "https://www.unimelb.edu.au/",
     officialUrl: "https://study.unimelb.edu.au/find/courses/graduate/master-of-information-technology/",
-    admissionRequirements: " còn có chuyển con ngựa đường nhỏ; IELTS thông thường 6.5. ",
+    admissionRequirements: " Có lộ trình chuyển ngành sang CNTT; IELTS thông thường 6.5. ",
     tier: 1,
     duration: "2 years (có thể creditable rút ngắn) ",
     tuitionNote: " quốc tế sinh học phí dùng Trang khóa học làm chuẩn ",

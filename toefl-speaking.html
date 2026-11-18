@@ -444,7 +444,7 @@
           F.afterSection("speaking", paperId, mode, { recorded: n, total: screens.length });
         }
         var sliced = Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ): paper;
-        // wofo: Nộp bài trước đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới tiến Điểm số + Giải thích đáp án hợp nhất trang
+        // Trước khi nộp bài hiển thị màn hình « Đang tạo bảng điểm », bấm View để vào trang tổng hợp Điểm số + Giải thích đáp án
         YYSD_TOEFL_SHELL.reportGate(function () {
           S.stashRecs(recs, function () {
             F.reviewGo("speaking", sliced, {

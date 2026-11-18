@@ -491,7 +491,7 @@ ROWS = [
  [" thêm ", " chỗ tốt ", " đang "],
  "a plus for (đối với … chỗ tốt), plus benefits (cộng thêm phúc lợi), a plus point (ưu điểm) ",
  "Flexible hours were a plus for students with part-time jobs.", " co dãn giờ công đối với có kiêm chức Học viên là một chỗ tốt. ",
- " bọn đầu gấu plus (thêm nữa) → thêm bộ phận ",
+ " tiếng La-tinh plus (thêm nữa) → thêm bộ phận ",
  ["extra"], ["minus"], " cộng thêm ", " vào nghề "),
 ("intense", "/ɪnˈtens/", "adj.",
  "adj. mãnh liệt, khẩn trương (intense pressure / competition / heat). intensity; intensify; intensive gần nghĩa nhưng càng thiên ‘ dày đặc đưa vào ’. ",

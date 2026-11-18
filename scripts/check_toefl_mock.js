@@ -33,7 +33,7 @@ full.forEach(function (p) {
     assert.ok(Y[L].some(function (x) { return x.id === p.id; }), p.id + " thiếu " + L);
   });
   assert.ok(/· Thi thử toàn phần $/.test(p.title), p.id + " tiêu đề: " + p.title);
-  assert.ok(p.duration > 0, p.id + " không có lúc dài, tạp diện cái nút văn án sẽ thiếu con số ");
+  assert.ok(p.duration > 0, p.id + " không có lúc dài, tạp diện văn bản trên nút bấm sẽ thiếu con số ");
 });
 
 // một bình tạp phiến: thực chạy paint nhìn tuyển ra tới HTML
@@ -92,7 +92,7 @@ var mixed = new Promise(function (r) { setTimeout(r, 5); }).then(function () {
   packHost.onclick({ target: { closest: function () { return { disabled: false, getAttribute: function () { return "3"; } }; } } });
   var h = packHost.innerHTML;
   assert.ok(h.indexOf(">TOEFL Mock 23<") >= 0, " Giáo viên tổ cuốn tiếp tại ngày cuốn đánh số đằng sau ");
-  assert.ok(h.indexOf("bank.html?id=pk-9") >= 0, " Giáo viên tổ cuốn chủ cái nút đi tổ khảo hạch trận ");
+  assert.ok(h.indexOf("bank.html?id=pk-9") >= 0, " Giáo viên tổ cuốn nút bấm chính đi tổ khảo hạch trận ");
   assert.ok(h.indexOf("bank.html?id=pk-9&amp;skill=speaking") >= 0, " Giáo viên tổ cuốn Đơn kỹ năng cửa vào mang skill");
   var pkCard = h.split('class="hit-mock-card"').filter(function (x) { return x.indexOf("bank.html?id=pk-9") >= 0; })[0];
   assert.ok(pkCard, " Giáo viên tổ cuốn tạp phiến ");

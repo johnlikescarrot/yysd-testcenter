@@ -75,7 +75,7 @@
       href: "zone.html?zone=mock&s=writing",
       links: [
         { href: "zone.html?zone=mock&s=writing", label: " Luyện đề Viết theo thứ tự " },
-        { href: "ai-tutor.html?track=writing", label: "AI Viết phê chữa " }
+        { href: "ai-tutor.html?track=writing", label: "AI Chấm bài Viết " }
       ]
     },
     {

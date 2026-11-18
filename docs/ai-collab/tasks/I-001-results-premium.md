@@ -1,35 +1,35 @@
-# I-001 — results.html tiếp nhập page-premium xác
+# I-001 — Tích hợp Khung Giao diện page-premium cho results.html
 
-** Trạng thái: ** done (Cursor 2026-07-22)
+**Trạng thái:** Đã hoàn thành (Cursor 22/07/2026)
 
-## mục tiêu
+## Mục tiêu
 
- Học viên đường sống kính dashboard → zone → **results** thị giác nối liền, và premium thanh điều hướng / bối cảnh nhất trí.
+Đảm bảo tính liền mạch thị giác trên luồng trải nghiệm của học viên: dashboard → zone → **results**, đồng bộ phong cách thanh điều hướng và màu nền chuẩn Premium.
 
-## cho phép cải biến
+## Phạm vi Cho phép Thay đổi
 
-- `results.html`: `<head>` kiểu chữ /CSS; `body` class
-- `assets/css/dashboard-premium.css`: `.page-premium` hạ results trang đầu (có thể chọn)
+- `results.html`: Thẻ `<head>` nạp phông chữ / CSS; thêm class vào thẻ `body`
+- `assets/css/dashboard-premium.css`: Bổ sung kiểu dáng cho trang kết quả dưới bộ chọn `.page-premium` (tùy chọn)
 
-## cấm
+## Điều Nghiêm cấm
 
-- `results.html` bên trong liên script ăn khớp
-- `config.js` results số liệu kết cấu
+- Thay đổi logic các đoạn mã script nội tuyến trong `results.html`
+- Thay đổi cấu trúc dữ liệu kết quả trong `config.js`
 
-## thay đổi
+## Các Thay đổi Kỹ thuật
 
-1. gia tăng Inter Google Font link (và dashboard nhất trí)
-2. gia tăng `dashboard-premium.css` link
-3. `body class="home-minimal page-premium"`
-4. page-head eyebrow đổi dùng `dash-premium-eyebrow` (có thể chọn)
+1. Bổ sung liên kết Google Fonts cho phông chữ Inter (đồng bộ với trang dashboard).
+2. Nạp thêm tệp kiểu dáng `dashboard-premium.css`.
+3. Cập nhật thẻ body: `body class="home-minimal page-premium"`.
+4. Thay đổi tiêu đề phụ page-head eyebrow sang class `dash-premium-eyebrow` (tùy chọn).
 
-## nghiệm thu
+## Tiêu chí Nghiệm thu
 
-- URL: `/results.html` (Đăng nhập thái)
-- 1280px: topbar thuỷ tinh mờ, bối cảnh `#fbf8f1`
-- 375px: mobile-tabs bình thường; hero stack không thay đổi
-- `?tenant=ease`: nhãn hiệu tên /logo bình thường
+- Đường dẫn kiểm tra: `/results.html` (trạng thái đã đăng nhập).
+- Khung nhìn 1280px: Thanh điều hướng trên cùng hiển thị hiệu ứng kính mờ, màu nền trang `#fbf8f1`.
+- Khung nhìn 375px: Thanh tab di động hiển thị bình thường; khối kết quả hero tự động co dãn chuẩn xác.
+- Khi truy cập với tham số `?tenant=ease`: Tên tổ chức và logo của đối tác hiển thị đúng vị trí.
 
-## quay về lăn
+## Phương án Rollback
 
- dời trừ premium CSS link và `page-premium` class.
+Xóa bỏ liên kết CSS premium và bỏ class `page-premium` khỏi thẻ body.

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>Dịch vụ tạm ngưng</title>
+  <title>Dịch vụ tạm ngừng · YYSD</title>
   <meta name="description" content="Trung tâm Luyện thi IELTS Quốc tế YYSD — Kho đề Cambridge IELTS, từ vựng Anh–Việt, lộ trình thông minh và thư viện PDF học thuật Google Scholar.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260723read">
@@ -18,16 +18,16 @@
 <body class="home-minimal">
   <main class="sus">
     <img id="sus-logo" src="assets/img/logo.svg?v=20260702-logo" alt="" width="64" height="64">
-    <h1 id="sus-title">Dịch vụ tạm ngưng</h1>
-    <p id="sus-desc">nên cơ cấu Học tập bình đài tạm không thể dùng. xin liên lạc trường chúng ta Quản trị viên xử lý tục phí và kích hoạt. </p>
+    <h1 id="sus-title">Dịch vụ tạm ngừng</h1>
+    <p id="sus-desc">Hệ thống học tập của cơ sở này hiện đang tạm ngừng hoạt động. Vui lòng liên hệ quản trị viên cơ sở để hoàn tất gia hạn và kích hoạt lại dịch vụ. </p>
   </main>
   <script src="assets/js/auth.js?v=20261013perm1"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      var org = window.YYSD_AUTH & YYSD_AUTH.getOrg & YYSD_AUTH.getOrg();
-      if (org & org.name) {
-        document.getElementById("sus-title").textContent = org.name + " · Dịch vụ tạm ngưng ";
-        if (org.logoUrl & YYSD_AUTH.logoSrc) {
+      var org = window.YYSD_AUTH && YYSD_AUTH.getOrg && YYSD_AUTH.getOrg();
+      if (org && org.name) {
+        document.getElementById("sus-title").textContent = org.name + " · Dịch vụ tạm ngừng ";
+        if (org.logoUrl && YYSD_AUTH.logoSrc) {
           document.getElementById("sus-logo").src = YYSD_AUTH.logoSrc(org.logoUrl);
         }
       }

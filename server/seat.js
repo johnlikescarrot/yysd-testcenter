@@ -109,7 +109,7 @@ function init(db) {
     var code = normalizeCode(opts.code);
     if (!code) return { error: " máy vi tính này chưa kích hoạt, mời điền Mã kích hoạt ", status: 403 };
     var row = stmts.byCode.get(code);
-    if (!row) return { error: " Mã kích hoạt không có hiệu quả ", status: 400 };
+    if (!row) return { error: " Mã kích hoạt không hợp lệ ", status: 400 };
     if (row.role!== role) {
       return {
         error: row.role === "teacher"? " đây là Giáo viên Mã kích hoạt, mời dùng nên Giáo viên tài khoản Đăng nhập ": " đây là Học viên Mã kích hoạt, mời dùng tài khoản học viên Đăng nhập ",

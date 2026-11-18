@@ -1,8 +1,8 @@
-# Khu luyện tập / IELTS Luyện tập
+# Khu luyện tập / Luyện tập IELTS
 
-** đem « IELTS Luyện tập câu » HTML trên văn kiện rơi vào tay này cặp văn kiện là được tự động phân loại. **
+**Chỉ cần đặt tệp HTML «Bài luyện tập IELTS» vào thư mục này, hệ thống sẽ tự động phân loại.**
 
-- khối: ✏️ Khu luyện tập (practice)
-- kỹ năng: IELTS (ielts)
-- thượng truyền(*upload) phương thức: tại bài này kiện kẹp chút:điểm `Add file` → `Upload files` → kéo vào HTML → `Commit changes`
-- khoảng 1 phút sau tự động xuất hiện ở trang web đối ứng phân loại hạ, không cần Khác thao tác.
+- Phân khu: 🎯 Khu luyện tập (practice)
+- Kỹ năng: IELTS (ielts)
+- Cách tải lên (upload): Trong thư mục này, nhấp `Add file` → `Upload files` → kéo tệp HTML vào → nhấp `Commit changes`.
+- Sau khoảng 1 phút, bài tập sẽ tự động hiển thị trong danh mục tương ứng trên trang web, không cần thao tác gì thêm.

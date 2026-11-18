@@ -193,7 +193,7 @@ async function main() {
       backgroundTags: tags,
       admissionResult: admitted,
       year,
-      description: `GradCafe chân thật tự báo (cởi mẫn): ${ug}, GPA ${gpa.toFixed(2)}${gre!= null? `, GRE ${gre}`: ""}, ${year} ${r.season} thân thỉnh ${catalog} ${school.program}, ${admitted? " trúng tuyển ": " cự tuyệt "}${note? `. ghi chú: ${note}`: ""}. nơi phát ra: The GradCafe (Lịch sử công khai số liệu tụ tập). `,
+      description: `GradCafe tự báo cáo thực tế (đã ẩn danh): ${ug}, GPA ${gpa.toFixed(2)}${gre!= null? `, GRE ${gre}`: ""}, ${year} ${r.season} thân thỉnh ${catalog} ${school.program}, ${admitted? " trúng tuyển ": " cự tuyệt "}${note? `. ghi chú: ${note}`: ""}. nơi phát ra: The GradCafe (Lịch sử công khai số liệu tụ tập). `,
       source: "gradcafe",
       externalId: `gradcafe-deedy-${r.rowId}`,
     });

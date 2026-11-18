@@ -45,32 +45,32 @@
       <div class="profile-avatar-block">
         <div class="profile-avatar" id="avatar-preview" aria-hidden="true">—</div>
         <div class="profile-avatar__meta">
-          <label class="btn btn--ghost btn--sm pressable profile-avatar__btn">thay đổi ảnh chân dung
+          <label class="btn btn--ghost btn--sm pressable profile-avatar__btn">Thay đổi ảnh đại diện
             <input type="file" id="avatar-input" accept="image/jpeg,image/png,image/webp" hidden>
           </label>
-          <p class="profile-hint">hỗ trợ JPG / PNG / WebP, tự động tài toa thuốc hình cũng áp súc. </p>
+          <p class="profile-hint">Hỗ trợ JPG / PNG / WebP, tự động cắt hình vuông và nén ảnh.</p>
           <p class="auth-msg" id="avatar-msg" role="status"></p>
         </div>
       </div>
       <dl class="profile-dl">
-        <dt> Tên người dùng </dt>
+        <dt> Tên hiển thị </dt>
         <dd id="p-name-wrap">
           <form class="profile-name-form" id="name-form">
-            <input type="text" id="display-name" maxlength="20" placeholder="ví dụ: Lý Minh / IELTS 2 lớp Trương Tam" autocomplete="nickname">
+            <input type="text" id="display-name" maxlength="20" placeholder="ví dụ: Nguyễn Văn A / Lớp IELTS 6.5" autocomplete="nickname">
             <button type="submit" class="btn btn--primary btn--sm pressable">Lưu</button>
           </form>
           <p class="auth-msg" id="name-msg" role="status"></p>
-          <p class="profile-hint">thiết trí Tên người dùng sau, Giáo viên có thể theo đạo sư đầu theo như tính danh tra tìm của bạn Điểm số. </p>
+          <p class="profile-hint">Sau khi đặt tên hiển thị, giáo viên có thể tìm kiếm kết quả của bạn theo họ tên trên bảng điều khiển giảng viên.</p>
         </dd>
         <dt> Số điện thoại </dt><dd id="p-phone">—</dd>
-        <dt> Đăng ký thời gian </dt><dd id="p-created">—</dd>
-        <dt> gần nhất Đăng nhập </dt><dd id="p-login">—</dd>
+        <dt> Thời gian đăng ký </dt><dd id="p-created">—</dd>
+        <dt> Đăng nhập gần nhất </dt><dd id="p-login">—</dd>
       </dl>
       <section class="profile-section" id="password-section">
-        <h2 class="profile-section__title">đổi mật mã</h2>
+        <h2 class="profile-section__title">Đổi mật khẩu</h2>
         <form class="auth-form profile-password-form" id="password-form">
           <label class="auth-field">
-            <span> trước mắt Mật khẩu </span>
+            <span> Mật khẩu hiện tại </span>
             <input type="password" id="old-password" autocomplete="current-password" minlength="6" maxlength="64" required>
           </label>
           <label class="auth-field">
@@ -115,7 +115,7 @@
     function fmt(iso) {
       if (!iso) return "—";
       try {
-        return new Date(iso).toLocaleString("zh-CN", { hour12: false });
+        return new Date(iso).toLocaleString("vi-VN", { hour12: false });
       } catch (e) { return iso; }
     }
 
@@ -165,14 +165,14 @@
         if (u.role === "teacher") {
           document.getElementById("p-name-wrap").hidden = true;
           document.getElementById("profile-desc").textContent =
-            " Giáo viên tài khoản đã Đăng nhập, có thể thượng truyền(*upload) ảnh chân dung, xem Học viên đầu nội dung, cũng có thể Vào cổng giáo viên Xem học chuyện. ";
+            "Tài khoản giáo viên đã đăng nhập. Bạn có thể tải lên ảnh đại diện, xem giao diện học viên hoặc truy cập Cổng giáo viên để theo dõi tình hình học tập.";
           document.getElementById("profile-note").textContent =
-            " Giáo viên làm Luyện tập / Thi thử lúc Điểm số sẽ không ghi Nhập học sinh đám mây ghi chép. ";
+            "Khi giáo viên làm luyện tập hoặc thi thử, điểm số sẽ không ghi vào dữ liệu học tập của học viên trên hệ thống.";
           document.getElementById("teacher-link").hidden = false;
         } else {
           document.getElementById("display-name").value = u.displayName || "";
           document.getElementById("profile-desc").textContent =
-            " hoan nghênh trở về. mời thiết trí Tên người dùng và ảnh chân dung, thuận tiện Giáo viên tra tìm của bạn Học tập ghi chép. ";
+            "Chào mừng bạn quay trở lại! Vui lòng thiết lập tên hiển thị và ảnh đại diện để giáo viên thuận tiện tra cứu lịch sử học tập của bạn.";
         }
       })
       .catch(function () {
@@ -181,14 +181,14 @@
       });
 
     document.getElementById("avatar-input").addEventListener("change", function () {
-      var file = this.files & this.files[0];
+      var file = this.files && this.files[0];
       this.value = "";
       if (!file) return;
-      showAvatarMsg(" thượng truyền(*upload) Vừa …");
+      showAvatarMsg("Đang tải lên ảnh đại diện...");
       A.uploadAvatar(file)
         .then(function (d) {
           renderAvatar(d.avatarUrl, A.getUser().phone);
-          showAvatarMsg(" ảnh chân dung đã đổi mới mới ", true);
+          showAvatarMsg("Ảnh đại diện đã được cập nhật thành công.", true);
         })
         .catch(function (e) { showAvatarMsg(e.message); });
     });

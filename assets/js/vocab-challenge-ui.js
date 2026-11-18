@@ -381,7 +381,7 @@
 
   function ebbinghausIntroHtml(plan, progressDay, todayPlan) {
     if (!plan ||!plan.dayRows) {
-      return noticesHtml([" ngải tân hạo tư vượt ải: mỗi màn trước Từ mới (5 mạng · 18 giây) → Ôn tập (20 câu · 3 mạng). "]);
+      return noticesHtml([" Vượt ải Ebbinghaus: mỗi màn trước hết học Từ mới (5 mạng · 18 giây) → Ôn tập (20 câu · 3 mạng). "]);
     }
     progressDay = Math.floor(Number(progressDay) || 0) || 1;
     var stageNew = todayPlan && todayPlan.new? ("List " + todayPlan.new): "—";
@@ -417,12 +417,12 @@
     return (
       '<details class="vc-ebb-intro">' +
         '<summary class="vc-ebb-intro-sum">' +
-          '<span class="vc-ebb-intro-title"> ngải tân hạo Tư Khoa học vượt ải </span>' +
+          '<span class="vc-ebb-intro-title"> Khoa học vượt ải Ebbinghaus </span>' +
           '<span class="vc-ebb-intro-teaser"> kết hợp trí nhớ đường cong an bài Từ mới và Ôn tập · nhấn vào triển khai quy tắc và ' +
             plan.totalDays + " màn kế hoạch hoàn hảo </span>" +
         "</summary>" +
         '<div class="vc-ebb-intro-body">' +
-          '<p class="vc-ebb-intro-lead"> bản vượt ải đem <strong> ngải tân hạo tư quên đi đường cong </strong> rả thành <strong>' + plan.totalDays +
+          '<p class="vc-ebb-intro-lead"> bản vượt ải đem <strong> đường cong quên lãng Ebbinghaus </strong> rả thành <strong>' + plan.totalDays +
             " màn </strong> Học tập nhiệm vụ: tại Từ mới Học tập sau đích mấu chốt tiết điểm tự động an bài Ôn tập, trợ giúp ngươi đang ở đây chính xác thời gian củng cố trí nhớ. </p>" +
           '<p class="vc-ebb-intro-note"> màn mấy theo như bạn <strong> hoàn thành nhiệm vụ Tiến độ </strong> đẩy mạnh, và lịch ngày ngày không quan hệ; Tiến độ mau, trong một ngày có thể liên tục hoàn thành nhiều màn. </p>' +
           '<ul class="vc-ebb-rules">' +
@@ -430,7 +430,7 @@
             "<li><strong> Từ mới Đánh giá </strong>: nghe phát âm → chọn trúng văn nghĩa → Chính tả Tiếng Anh; <strong>5 mạng </strong>, mỗi câu <strong>18 giây</strong>; từ sai tại chỗ Làm lại đến hoàn toàn đúng. </li>" +
             "<li><strong> Kiểm tra ôn tập </strong>: từ Đã học List rút <strong>20 câu</strong> (câu sai thêm quyền); <strong>3 mạng </strong>; thông qua sau ghi nhập trắc nghiệm bộ phận trì. </li>" +
             "<li><strong> chỉnh thể tiết tấu </strong>: " + plan.totalLists + " List phân tán tại <strong>" + plan.totalDays +
-              " màn </strong> Vừa hoàn thành; càng về sau Ôn tập nhiệm vụ càng nhiều, mời bảo trì Học tập tiết tấu. </li>" +
+              " màn </strong> đã hoàn thành; càng về sau nhiệm vụ ôn tập càng nhiều, bạn hãy duy trì nhịp độ học tập đều đặn nhé. </li>" +
           "</ul>" +
           '<div class="vc-ebb-today-plan">' +
             "<strong> bạn trước mắt Tiến độ: thứ " + progressDay + " màn </strong>" +
@@ -701,7 +701,7 @@
       var todayHtml = "";
       if (isEbb) {
         if (programComplete) {
-          todayHtml = '<p class="vc-notice"> ngải tân hạo tư ' +
+          todayHtml = '<p class="vc-notice"> Ebbinghaus ' +
             (((lists.ebbinghausPlan && lists.ebbinghausPlan.totalDays) || (prog.totalDays) || 78)) +
             " màn kế hoạch đã Tất cả hoàn thành. Sổ lỗi sai nhưng thể luyện tập. </p>";
         } else {
@@ -1184,7 +1184,7 @@
 
   function finishPhase() {
     clearQuizDraft(session.attemptId);
-    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div> Nộp bài Vừa …</div>', " Nộp bài ");
+    shell('<div class="state state--brand"><div class="spinner spinner--brand"></div> Đang nộp bài…</div>', " Nộp bài ");
     var path = session.phase === "new_words"
       ? "/api/vocab-challenge/submit-new"
       : session.phase === "scheduled_review"

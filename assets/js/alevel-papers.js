@@ -21,9 +21,9 @@ window.YYSD_ALEVEL_PAPERS = (function () {
       { d: 4, short: "M1", name: "Mechanics", nameZh: " cơ học M1", level: "AS/A2",
         desc: "41/42/43 · lực và cân bằng, thẳng tắp vận động, động lượng, ngưu ngừng định luật, công và có thể " },
       { d: 5, short: "S1", name: "Probability & Statistics 1", nameZh: " xác suất công tác thống kê S1", level: "AS/A2",
-        desc: "51/52/53 · số liệu biểu thị, xếp đặt tổ hợp, xác suất, ly tán tùy cơ hội lượng biến đổi, đang thái phân bố " },
+        desc: "51/52/53 · Biểu diễn dữ liệu, tổ hợp chỉnh hợp, xác suất, biến ngẫu nhiên rời rạc, phân phối chuẩn " },
       { d: 6, short: "S2", name: "Probability & Statistics 2", nameZh: " xác suất công tác thống kê S2", level: "A2",
-        desc: "61/62/63 · đỗ lỏng phân bố, liên tục tùy cơ hội lượng biến đổi, đoán chừng và giả thiết kiểm nghiệm " }
+        desc: "61/62/63 · Phân phối Poisson, biến ngẫu nhiên liên tục, ước lượng và kiểm định giả thuyết " }
     ],
     "9231": [
       { d: 1, short: "FP1", name: "Further Pure Mathematics 1", nameZh: " cao mấy FP1", level: "AS/A2",
@@ -70,7 +70,7 @@ window.YYSD_ALEVEL_PAPERS = (function () {
     { d: 4, short: "P4", name: "A Level Structured Questions", nameZh: "P4 A2 kết cấu câu ", level: "A2",
       desc: "41/42/43 · kết cấu hóa đề vấn đáp, khảo tra A2 khảo thi cương " },
     { d: 5, short: "P5", name: "Planning, Analysis and Evaluation", nameZh: "P5 A2 thí nghiệm câu ", level: "A2",
-      desc: "51/52/53 · thí nghiệm xếp đặt thiết kế, số liệu phân tích và ước định " }
+      desc: "51/52/53 · Thiết kế thí nghiệm, phân tích dữ liệu và đánh giá " }
   ];
 
   // đồng nhất năm bên trong: mùa đông → mùa hạ → mùa xuân (cuộc thi ngày mới → xưa cũ)

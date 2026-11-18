@@ -187,7 +187,7 @@ var overlay = {
   },
   telescope: {
     pos: "n. / v.",
-    meaning: "n. kính viễn vọng (look through a telescope; space / radio telescope). v. chồng co lại, rút ngắn (khiến cho bộ chồng; thời gian / sự kiện áp súc). tele-(xa) + scope(nhìn). ",
+    meaning: "n. kính viễn vọng (look through a telescope; space / radio telescope). v. chồng co lại, rút ngắn (khiến cho bộ chồng; thời gian / cô đọng sự kiện). tele-(xa) + scope(nhìn). ",
     acceptCN: [" kính viễn vọng ", " chồng co lại "]
   },
   copy: {

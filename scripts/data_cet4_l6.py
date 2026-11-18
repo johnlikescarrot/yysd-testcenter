@@ -60,7 +60,7 @@ ROWS = [
  "ex- (ra) + sequ/sec (đi theo) → đem quyết định chấp hành ra tới người ",
  ["manager"], [], " cao quản ", " vào nghề "),
 ("legal", "/ˈliːɡl/", "adj.",
- "adj. ① luật pháp (legal advice / system); ② hợp pháp (it is legal to). legally; illegal; legislation. legal rights. so với lawful càng thường dùng tại chế độ và văn bản tài liệu. ",
+ "adj. ① luật pháp (legal advice / system); ② hợp pháp (it is legal to). legally; illegal; legislation. legal rights. so với lawful càng thường dùng tại chế độ và tài liệu. ",
  [" luật pháp ", " hợp pháp ", " pháp định "],
  "legal advice (pháp luật cố vấn), legal system (pháp luật chế độ), it is legal to (… là hợp pháp) ",
  "International students should seek legal advice before signing a tenancy contract.", " quốc tế Học viên tại ký tên khế ước thuê mướn trước ứng với tìm kiếm pháp luật cố vấn. ",

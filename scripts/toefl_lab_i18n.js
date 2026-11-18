@@ -224,7 +224,7 @@ var EXACT = {
   "Neolithic Pottery": " mới thạch khí đồ gốm ",
   "Carthage's Trade Network": " già quá cơ mậu dịch mạng lưới ",
   "Social Networks and Influence": " xã giao mạng lưới *internet và lực ảnh hưởng ",
-  "Quantum Dots": " lượng tử chút:điểm ",
+  "Quantum Dots": " chấm lượng tử ",
   "Sedimentary Rocks": " đá trầm tích ",
   "The Gupta Empire": " cấp nhiều đế quốc ",
   "The Role of AI in Diagnosing Diseases": " trí tuệ nhân tạo và tật bệnh chẩn đoán năng lực ",

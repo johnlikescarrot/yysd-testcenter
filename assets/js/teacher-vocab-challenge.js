@@ -104,7 +104,7 @@
   }
 
   function doAssign(studentId, bookId) {
-    msg(" bố trí Vừa …", true);
+    msg(" Đang giao bài…", true);
     T.api("/api/vocab-challenge/teacher/assign", {
       method: "POST",
       body: { studentId: studentId, bookId: bookId }
@@ -121,7 +121,7 @@
   }
 
   function doUnassign(studentId, bookId) {
-    msg(" Hủy Vừa …", true);
+    msg(" Đang hủy…", true);
     T.api("/api/vocab-challenge/teacher/unassign", {
       method: "POST",
       body: { studentId: studentId, bookId: bookId }

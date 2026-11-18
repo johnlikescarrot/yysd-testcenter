@@ -263,7 +263,7 @@
       return '<li class="' + (r.me? "is-me": "") + '">' +
         '<span><em>' + (i + 1) + "</em> " + esc(r.name) + "</span><b>" + r.xp + " XP</b></li>";
     }).join("") +
-      '<li class="wr-board__soon"><span> cùng cơ cấu thực thì bảng </span><em> sắp cởi mở </em></li></ol>';
+      '<li class="wr-board__soon"><span> Bảng xếp hạng thời gian thực của cơ sở </span><em> Sắp ra mắt </em></li></ol>';
   }
 
   function saveVnFlags(flags) {
@@ -355,7 +355,7 @@
         '<div class="wr-clear__ella">' +
           portraitHTML(ella.portrait, "✎", "wr-ella__face") +
           '<div><p class="wr-kicker"> thư lại Ella · ghi việc </p>' +
-          "<p>« Chương 1: hết. sương mù nguyên nhớ rõ tên của các ngươi rồi. phía đông đường vẫn còn trong sương mù —— về trước Trại chính nghỉ ngơi và hồi phục, chương sau cởi mở lúc ta sẽ đánh thức bạn. »</p></div>" +
+          "<p>« Chương 1: hết. sương mù nguyên nhớ rõ tên của các ngươi rồi. phía đông đường vẫn còn trong sương mù —— về trước Trại chính nghỉ ngơi và hồi phục, khi chương sau ra mắt tôi sẽ thông báo cho bạn. »</p></div>" +
         "</div>" +
         '<p class="wr-clear__lead"> Chương 1: qua cửa · sương mù nguyên thử chơi </p>' +
         '<div class="wr-clear__actions">' +
@@ -448,7 +448,7 @@
       ? ('<section class="wr-clear-banner">' +
           '<p class="wr-kicker">Chapter I · Cleared</p>' +
           "<h2> Chương 1: qua cửa · sương mù nguyên thử chơi </h2>" +
-          "<p> sương sớm đã quét sạch. đến tiếp sau chương tiết chưa cởi mở —— trước tiên ở tu luyện tràng bảo trì kiếm cảm giác, hoặc trọng tuần sương mù nguyên. </p>" +
+          "<p> sương sớm đã quét sạch. Các chương tiếp theo chưa ra mắt —— hãy tạm thời ở đấu trường tu luyện để duy trì cảm giác làm bài, hoặc tuần tra lại Bình nguyên sương mù. </p>" +
           '<a class="wr-btn wr-btn--gold" href="' + hrefView("map", "mist") + '"> lại tuần sương mù nguyên ›</a>' +
           (seenCh1Settle()
             ? (' <a class="wr-btn wr-btn--ghost" href="' + hrefView("clear") + '"> trọng nhìn kết toán </a>')
@@ -534,7 +534,7 @@
               '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", cur.shrine.region) + '"> tại trên địa đồ Xem </a>')
             : (mistDone
               ? ("<h2> sương mù nguyên Hoàn thành màn </h2>" +
-                "<p> đến tiếp sau chương tiết chưa cởi mở. đi tu luyện trận bảo trì kiếm cảm giác, hoặc trọng tuần sương mù nguyên Ôn tập từ luật. </p>" +
+                "<p> Các chương tiếp theo chưa ra mắt. Hãy vào đấu trường tu luyện để duy trì phong độ, hoặc tuần tra lại Bình nguyên sương mù để ôn tập. </p>" +
                 '<a class="wr-btn wr-btn--gold" href="' + campHref() + '"> sao mảnh tu luyện tràng ›</a>' +
                 '<a class="wr-btn wr-btn--ghost" href="' + hrefView("map", "mist") + '"> lại tuần sương mù nguyên </a>')
               : ("<h2> viễn chinh tạm thời chưa có tiếp theo từ </h2><p> đi Từ điển bách khoa đọc âm nặng Trang cổ, hoặc bồi dưỡng luyện trận bảo trì kiếm cảm giác. </p>"))) +
@@ -547,7 +547,7 @@
         sagaProgressHTML(doneCount) +
         '<section class="wr-panel wr-panel--board">' +
           "<h2> tuần này Vương quốc Từ bảng </h2>" +
-          "<p> theo như tuần này trí nhớ chi lực sắp xếp. u linh đối thủ chỉ cung so sánh, cơ cấu thực thì bảng sau đó phát hành. </p>" +
+          "<p> Xếp hạng theo điểm ghi nhớ tuần này. Đối thủ mô phỏng chỉ dùng để so sánh, bảng xếp hạng thời gian thực của cơ sở sẽ ra mắt sau. </p>" +
           boardHTML(snap) +
         "</section>" +
       "</section>";
@@ -719,7 +719,7 @@
           '<div class="wr-map-board__head">' +
             "<h1>" + esc(region.name) + "</h1>" +
             "<p>" + esc(region.blurb) + "</p>" +
-            '<p class="wr-map__hint"> chút:điểm chọn sáng lên đinh chút:điểm · đã thắp sáng ' + doneCount + "/" +
+            '<p class="wr-map__hint"> Nhấn để thắp sáng các mốc · Đã thắp sáng ' + doneCount + "/" +
               (CORE.shrineTotal? CORE.shrineTotal(): 48) + "</p>" +
           "</div>" +
           '<div class="wr-map-stage' + (region.mapImage? " has-art": "") +
@@ -743,7 +743,7 @@
           "</section>" +
           '<section class="wr-panel">' +
             "<h2> tuần này Vương quốc Từ bảng </h2>" +
-            "<p> tuần này trí nhớ chi lực so sánh. </p>" +
+            "<p> So sánh điểm ghi nhớ tuần này. </p>" +
             boardHTML(snap) +
           "</section>" +
         "</aside>" +

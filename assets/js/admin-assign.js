@@ -101,7 +101,7 @@
     }).join("") || '<p class="profile-hint"> không có thất phối Học viên </p>';
 
     var n = Object.keys(selected).length;
-    pickedHint.textContent = " Đã chọn " + n + " danh học sinh (Lưu sau đem bao trùm nên Giáo viên trước mắt danh sách) ";
+    pickedHint.textContent = " Đã chọn " + n + " danh học sinh (Lưu sẽ ghi đè lên danh sách hiện tại của Giáo viên) ";
     saveBtn.disabled = false;
   }
 
@@ -132,7 +132,7 @@
     var id = Number(t.getAttribute("data-sid"));
     if (t.checked) selected[id] = true;
     else delete selected[id];
-    pickedHint.textContent = " Đã chọn " + Object.keys(selected).length + " danh học sinh (Lưu sau đem bao trùm nên Giáo viên trước mắt danh sách) ";
+    pickedHint.textContent = " Đã chọn " + Object.keys(selected).length + " danh học sinh (Lưu sẽ ghi đè lên danh sách hiện tại của Giáo viên) ";
   });
 
   document.getElementById("select-all").addEventListener("click", function () {
@@ -152,7 +152,7 @@
 
   saveBtn.addEventListener("click", function () {
     if (!activeTeacherId) return;
-    showMsg(" Lưu Vừa …");
+    showMsg(" Đang lưu…");
     saveBtn.disabled = true;
     api("/api/admin/assignments", {
       method: "PUT",

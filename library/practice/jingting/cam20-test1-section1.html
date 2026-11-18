@@ -137,7 +137,7 @@
         <div class="divider"></div>
         <div class="row">
           <button class="btn rec" id="recBtn">🎙 click mở mới thuật lại</button>
-          <button class="btn ghost" id="stopBtn" disabled>■ nói xong chút:điểm đình chỉ</button>
+          <button class="btn ghost" id="stopBtn" disabled>■ nói xong điểm đình chỉ</button>
         </div>
         <div class="heard" id="heard"><span class="ph"> bạn thuật lại nội dung sẽ biểu hiện ở chỗ này …</span></div>
         <div class="verdict" id="verdict"></div>
@@ -205,7 +205,7 @@ var SENTENCES = [
   {who:"M",en:"The chef used to work at Don Felipe's, apparently.",zh:" nghe nói chủ bếp trước kia tại Don Felipe's công tác. "},
   {who:"M",en:"I was really sorry when that closed down.",zh:" nó đóng cửa thời điểm tôi rất tiếc nuối. "},
   {who:"W",en:"So is all the food they serve Spanish, then?",zh:" vậy bọn họ cung ứng đều là Tây Ban Nha đồ ăn không? "},
-  {who:"M",en:"Yeah, you can get lots of small dishes to share, which always works really well if you're in a group.",zh:" đối với, bạn có thể chút:điểm rất nhiều điểm tâm cùng một chỗ chia sẻ, nhiều người lời nói luôn đặc biệt phù hợp. "},
+  {who:"M",en:"Yeah, you can get lots of small dishes to share, which always works really well if you're in a group.",zh:" đối với, bạn có thể điểm rất nhiều điểm tâm cùng một chỗ chia sẻ, nhiều người lời nói luôn đặc biệt phù hợp. "},
   {who:"W",en:"Hmm... worth thinking about.",zh:" ừ …… đáng giá suy tính một chút. "},
   {who:"M",en:"Yeah, there's a lively atmosphere and the waiters are really friendly.",zh:" đối với, chỗ ấy bầu không khí rất náo nhiệt, phục vụ viên cũng đặc biệt hữu hảo. "},
   {who:"M",en:"The only thing is that you need to pay a £50 deposit to book a table.",zh:" vấn đề duy nhất là đính vị trước phải giao 50 bảng Anh tiền thế chấp. "},
@@ -320,7 +320,7 @@ function startRec(){
   window.speechSynthesis.cancel();
   lastHeard = '';
   wantRec = true;
-  heard.innerHTML = '<span class="ph">🎙 đang nghe … nói xong cả câu sau chút:điểm « nói xong chút:điểm đình chỉ »</span>';
+  heard.innerHTML = '<span class="ph">🎙 đang nghe … nói xong cả câu sau điểm « nói xong điểm đình chỉ »</span>';
   verdict.classList.remove('show');
   srNote.textContent = '';
   recog = new SR();

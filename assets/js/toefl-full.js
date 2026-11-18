@@ -72,7 +72,7 @@
     return "app/" + q;
   }
 
-  /* Thi thử toàn phần từ bộ câu liệt biểu List tiến, Về danh sách mà không phải là chạy nước rút bao */
+  /* Thi thử toàn phần từ danh sách bộ đề, quay về danh sách chứ không phải gói cấp tốc */
   function homeHubHref() {
     if (typeof location!== "undefined" && location.hostname === "app.youyisida.com") return "home.html";
     return "app/home.html";
@@ -224,7 +224,7 @@
     return href;
   }
 
-  /* phục bàn trang chỉ có sessionStorage dặm cái này một phần giải bài thi, cả trận còn lại kỹ năng do trang web chính mình theo như sid từ Thi thử Lịch sử xây dựng lại */
+  /* Trang xem lại chỉ có một phần bài làm trong sessionStorage, các kỹ năng còn lại do hệ thống tự tái hiện từ lịch sử thi thử theo sid */
   function reviewGo(skill, paper, payload) {
     stashReview(skill, paper, payload);
     go(reviewHref(skill));

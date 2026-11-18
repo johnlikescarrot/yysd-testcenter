@@ -268,7 +268,7 @@ h1 {
 
 .hidden, [hidden] { display: none!important; }
 
-/* trường thi động cơ trang bảo trì màu sáng ETS làn da (exam.css tại phía sau thêm năm, cùng đặc dị tính nó ưu tiên) */
+/* trường thi động cơ trang bảo trì màu sáng ETS làn da (exam.css được nạp sau, cùng độ ưu tiên đặc hiệu) */
 body.exam-ets.exam-card { background: transparent; }
 body.exam-ets.opt { background: #fff; border-color: #c5c9d0; color: #1b1b1b; }
 body.exam-ets.insert { background: #eef1f4; border-color: #9aa8b5; color: #1b1b1b; }

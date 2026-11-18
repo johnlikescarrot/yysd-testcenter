@@ -130,7 +130,7 @@ function textOf(html) {
   return decodeEntities(s);
 }
 
-// đơn hành áp súc (Phương án / Câu hỏi)
+// nén một dòng (Phương án / Câu hỏi)
 function oneLine(html) { return textOf(html).replace(/\s+/g, " ").trim(); }
 
 // đoạn hóa: không phải chỗ trống đi mấy tổ

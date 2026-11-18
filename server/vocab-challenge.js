@@ -884,14 +884,14 @@ function startListChallenge(db, opts) {
   if (!studentId ||!bookId ||!listId || listNo < 1) {
     return { ok: false, error: " thiếu khuyết studentId / bookId / listId / listNo" };
   }
-  if (!words.length) return { ok: false, error: " từ bề ngoài là chỗ trống " };
+  if (!words.length) return { ok: false, error: " Danh sách từ vựng đang trống " };
 
   var prog = getProgress(db, studentId, bookId);
   var today = null;
   if (schedule.isEbbinghausBook(bookId)) {
     today = getTodayTasks(db, studentId, bookId);
     if (today.programComplete) {
-      return { ok: false, error: " ngải tân hạo tư kế hoạch Đã hoàn thành ", programComplete: true };
+      return { ok: false, error: " Kế hoạch ôn tập Ebbinghaus đã hoàn thành ", programComplete: true };
     }
     if (opts.skipScheduleGate!== true) {
       var match = (today.tasks || []).filter(function (t) {
@@ -975,11 +975,11 @@ function startScheduledReview(db, opts) {
     return { ok: false, error: " thiếu khuyết studentId / bookId / listId / listNo" };
   }
   if (!schedule.isEbbinghausBook(bookId)) {
-    return { ok: false, error: " trước mắt từ quyển không hỗ trợ ngải tân hạo tư Ôn tập " };
+    return { ok: false, error: " Tập từ vựng hiện tại không hỗ trợ ôn tập Ebbinghaus " };
   }
   var today = getTodayTasks(db, studentId, bookId);
   if (today.programComplete) {
-    return { ok: false, error: " ngải tân hạo tư kế hoạch Đã hoàn thành ", programComplete: true };
+    return { ok: false, error: " Kế hoạch ôn tập Ebbinghaus đã hoàn thành ", programComplete: true };
   }
   if (opts.skipScheduleGate!== true) {
     var match = (today.tasks || []).filter(function (t) {
@@ -1730,7 +1730,7 @@ function selfCheck() {
 
   var bank = optionBankFromWords([
     { word: "include", acceptCN: [" kể cả ", " bao hàm "] },
-    { word: "desk", meaning: "bàn học sinh, bàn viết, bàn làm việc; (the desk) công việc văn phòng, công tác văn thư; nghiệp bút nghiên" },
+    { word: "desk", meaning: " cái bàn " },
     { word: "run", acceptCN: [" chạy bộ "] },
     { word: "enonly", meaning: "only-english" }
   ]);
@@ -2617,7 +2617,7 @@ function mountRoutes(app, opts) {
     if (!list) return res.status(404).json({ error: "List không tồn tại " });
     var lesson = shelf.resolveLesson(resolveRoot, book, list.id);
     if (!lesson ||!lesson.words.length) {
-      return res.status(404).json({ error: " từ bề ngoài thiếu thốn " });
+      return res.status(404).json({ error: " Danh sách từ vựng bị thiếu " });
     }
     var result;
     if (schedule.isEbbinghausBook(asg.book_id) && taskType === TASK_REVIEW) {
@@ -2746,7 +2746,7 @@ function mountRoutes(app, opts) {
     var list = findListByNo(book, listNo);
     if (!list) return res.status(404).json({ error: "List không tồn tại " });
     var lesson = shelf.resolveLesson(resolveRoot, book, list.id);
-    if (!lesson ||!lesson.words.length) return res.status(404).json({ error: " từ bề ngoài thiếu thốn " });
+    if (!lesson ||!lesson.words.length) return res.status(404).json({ error: " Danh sách từ vựng bị thiếu " });
     var words = lesson.words;
     if (tt === TASK_REVIEW) {
       var statsRows = db

@@ -88,12 +88,12 @@ const bsMeta = { type: "sentence", en: "Build a Sentence", zh: " câu xây dựn
 assert.ok(rowHTML("writing", bsMeta, { type: "sentence", paperId: "bank-bs", sort: 1, task: 0, end: 1,
   cells: [{ task: 0, end: 0, label: "1" }, { task: 1, end: 1, label: "2" }] }, 0, one).includes(" Chưa bắt đầu "));
 
-// bộ lọc: todo xóa Đã hoàn thành; Tần suất cao cái nút chỉ ở nên dạng bài thật sự có đánh nhãn hiệu lúc xuất hiện; ma-két trang in do số liệu định (cells → đi thức)
+// bộ lọc: todo xóa Đã hoàn thành; nút bấm thường dùng chỉ ở nên dạng bài thật sự có đánh nhãn hiệu lúc xuất hiện; ma-két trang in do số liệu định (cells → đi thức)
 libView.filter = "all";
 const all = panelHTML("reading", meta, [card, Object.assign({}, card, { code: "R-RAP4", sort: 4, task: 3, end: 3 })], {});
 assert.match(all, /hit-lib-grid/, "cards without cells");
 assert.ok(all.includes('<h2 lang="en">Read an Academic Passage</h2>'), " mặt bản tiêu đề dùng của nó head văn án ");
-assert.doesNotMatch(all, / tổ · tổng | đã si ra | Tần suất cao /, " không có công tác thống kê đi, cũng không còn đánh nhãn hiệu lúc không cho Tần suất cao cái nút ");
+assert.doesNotMatch(all, / tổ · tổng | đã si ra | Tần suất cao /, " không có công tác thống kê đi, cũng không còn đánh nhãn hiệu lúc không cho nút bấm thường dùng ");
 assert.match(panelHTML("listening", rowMeta, [row], {}), /hit-lib-rows/, "rows with cells");
 assert.match(panelHTML("reading", meta, [Object.assign({}, card, { hot: 2 })], {}), / Tần suất cao /);
 libView.filter = "hot";
@@ -118,7 +118,7 @@ assert.match(sRow, /hit-lib-rows/, " đi thức dạng bài trúng mục tiêu s
 assert.ok(sRow.includes("C02"), " câu số cách phủ lên ");
 libView.filter = "todo";
 const sDone = libSearchHTML("reading", "r-rap1", one);
-assert.ok(sDone.includes(" trúng mục tiêu 0 tổ ") && sDone.includes("data-clear"), " không làm bộ lọc xếp ở tìm kiếm bên trên, chỗ trống kết quả cho Xóa trống cái nút ");
+assert.ok(sDone.includes(" trúng mục tiêu 0 tổ ") && sDone.includes("data-clear"), " không làm bộ lọc xếp ở tìm kiếm bên trên, chỗ trống kết quả cho nút xóa trống ");
 libView.filter = "all";
 const sNone = libSearchHTML("reading", " <b>zz ", {});
 assert.ok(sNone.includes(" Ngân hàng đề dặm không có «&lt;b&gt;zz»") && sNone.includes(" tìm kiếm «&lt;b&gt;zz»"), " từ khóa quay về lộ ra cũng chuyển nghĩa ");

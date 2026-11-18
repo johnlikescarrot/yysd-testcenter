@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chính thức Thi thử toàn phần</title>
+  <title>Đề thi thử chính thức · Hệ thống thi trên máy YYSD</title>
   <link rel="stylesheet" href="assets/css/hit.css?v=20261027win1">
   <link rel="stylesheet" href="assets/css/access.css?v=20261015swiss1">
   <script src="assets/js/gate.js?v=20261020gate1"></script>
@@ -14,8 +14,8 @@
 </head>
 <body class="hit">
   <main class="hit-main">
-    <h1>chính thức Thi thử toàn phần</h1>
-    <p class="hit-lead">15 bộ. chút:điểm một bộ Bắt đầu, bốn khoa liền khảo thi. </p>
+    <h1>Đề thi thử chính thức toàn phần</h1>
+    <p class="hit-lead">15 bộ đề thi. Nhấn vào một bộ để bắt đầu làm bài liền mạch 4 kỹ năng. </p>
     <a class="hit-back" href="home.html">← Về trang chủ</a>
     <div class="hit-mock-list" id="list"></div>
   </main>
@@ -39,7 +39,7 @@
         return '<a class="hit-mock-row" href="' + href(m.id) + '" data-kl="' + esc(m.id) + '">' +
           '<div class="hit-mock-thumb" aria-hidden="true">' + esc(m.no) + "</div>" +
           '<div class="hit-mock-info"><h4>' + esc(m.title) + "</h4>" +
-          "<p>ước " + m.duration + " phút · bốn khoa liền khảo thi </p></div>" +
+          "<p>Khoảng " + m.duration + " phút · Làm bài liền 4 kỹ năng </p></div>" +
           '<span class="btn-start"> Bắt đầu </span></a>';
       }).join("");
       document.querySelector(".hit-main").addEventListener("click", function (ev) {

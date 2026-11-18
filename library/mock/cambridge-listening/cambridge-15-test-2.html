@@ -498,7 +498,7 @@ function groupHtml(g){
     const letters=g.letters||['A','B','C','D','E','F','G','H','I'];
     const img=`<div class="map-wrap">${g.mapTitle?`<div class="note-title">${g.mapTitle}</div>`:''}`+
       `<img class="map-img" src="${g.image}" alt="${g.mapTitle||'map'}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">`+
-      `<div class="map-missing" style="display:none;">📍 Bản đồ hình ảnh nghỉ ngơi truyền: xin đem trên sách tấm bản đồ này chia Giáo viên, thượng truyền(*upload) về sau chỗ sẽ biểu hiện Bản đồ, là được so sánh đáp lại. </div></div>`;
+      `<div class="map-missing" style="display:none;">📍 Bản đồ hình ảnh nghỉ ngơi truyền: xin đem trên sách tấm bản đồ này chia Giáo viên, tải lên về sau chỗ sẽ biểu hiện Bản đồ, là được so sánh đáp lại. </div></div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
     const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel(q.id)}</div>`).join('');
     body=img+qs;
@@ -518,7 +518,7 @@ function setupTimer(){
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* âm tần (chân thật văn bản tài liệu, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
+/* âm tần (tệp âm thanh thực tế, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }

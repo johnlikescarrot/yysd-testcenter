@@ -540,7 +540,7 @@ ROWS = [
  [" địa điểm ", " Khám phá ", " điểm lấm tấm "],
  "on the spot (tại chỗ; tại hiện trường), spot a mistake (Khám phá Sai), a tourist spot (địa điểm du lịch) ",
  "The inspector spotted several safety problems in the laboratory.", " kiểm tra thành viên tại phòng thí nghiệm phát hiện mấy chỗ vấn đề về an toàn. ",
- " nguyên nghĩa ‘ chút:điểm ’, nghĩa rộng {vì:là} một điểm nào đó vị trí hoặc nhìn ra một chút:điểm ",
+ " nguyên nghĩa ‘ điểm ’, nghĩa rộng {vì:là} một điểm nào đó vị trí hoặc nhìn ra một điểm ",
  ["place", "notice"], [], " Khám phá ", " Học thuật "),
 ]
 

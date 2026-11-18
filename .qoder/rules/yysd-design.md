@@ -2,50 +2,50 @@
 trigger: always_on
 ---
 
-# YYSD lối vào cảm nhận
+# Cảm nhận Thiết kế Giao diện YYSD (Look & Feel)
 
- mục tiêu không phải phảng phất iOS, mà là: ** nội dung như giấy, xác như thủy tinh, lẫn nhau như Vật lý; trường thi bảo trì chính thức công cụ cảm giác. **
+Mục tiêu không phải là sao chép iOS một cách máy móc, mà là: **Nội dung như giấy, khung viền như kính mờ, tương tác chân thực như vật lý; phòng thi duy trì cảm giác chuẩn mực như công cụ chính thức.**
 
- Đầy đủ điều gặp nhà kho cây mục lục `YYSD-DESIGN-RULES.md`. xung đột lúc dùng nên văn bản tài liệu làm chuẩn.
+Toàn bộ quy tắc chi tiết xem tại tệp gốc `YYSD-DESIGN-RULES.md`. Khi có xung đột, lấy tài liệu đó làm chuẩn.
 
-## ba tầng nhân cách (chớ lẫn vào dùng)
+## Ba tầng trải nghiệm (Tránh dùng lẫn lộn)
 
-| tầng | tính cách | phạm vi |
+| Tầng | Định vị phong cách | Phạm vi áp dụng |
 | --- | --- | --- |
-| ** nội dung ** | ngà voi giấy, trầm tĩnh, có thể đọc | đề thi thật, Từ vựng, báo cáo, Hub chính văn |
-| ** xác ** | nhẹ sương hóa, lơ lửng ở nội dung bên trên | thanh điều hướng, ngọn nguồn lan, Drawer, Xác nhận / Sheet |
-| ** trường thi ** | hiệu quả và lợi ích, có thể tin, chứa đựng ít sức | CDT và phòng cắt bình — không nên quả táo hóa |
+| **Nội dung (Content)** | Giấy ngà, trầm tĩnh, tối ưu trải nghiệm đọc | Đề thi thật, Từ vựng, Báo cáo điểm, Nội dung chính của Hub |
+| **Khung viền (Shell)** | Kính mờ nhẹ, nổi lơ lửng phía trên nội dung | Thanh điều hướng, Thanh chân trang (bottom bar), Drawer, Hộp thoại xác nhận / Action Sheet |
+| **Phòng thi (Exam)** | Hiệu quả, tin cậy, tối giản chi tiết thừa | Phòng thi CDT và màn hình thi thực tế — không chạy theo xu hướng bóng bẩy kiểu Apple |
 
- mới UI hỏi trước: đây là nội dung, xác, hay trường thi?
+Khi làm UI mới, hãy tự hỏi: Đây là tầng nội dung, khung viền hay phòng thi?
 
-## tài liệu (chỉ cho phép hai loại)
+## Chất liệu (Chỉ cho phép hai loại)
 
-1. Paper — `#f6f3ec` / `#fffcf7` + nhẹ vô cùng giấy văn. thừa nhận Đọc.
-2. Chrome — hơi mờ + `blur(20px) saturate(180%)` + sáng bên cạnh cao quang. thừa nhận Điều hướng và quyết định biện pháp.
+1. Paper (Giấy) — `#f6f3ec` / `#fffcf7` kết hợp vân giấy tinh tế, phục vụ trải nghiệm đọc.
+2. Chrome (Kính mờ) — Bán trong suốt kết hợp `blur(20px) saturate(180%)` cùng viền sáng nổi bật, phục vụ điều hướng và thao tác quyết định.
 
- cấm loại thứ ba tài liệu (tím thay đổi dần, trọng hình chiếu trang trí tạp, khắp nơi thủy tinh).
+Cấm chất liệu thứ ba (như dải chuyển màu tím gradient, đổ bóng trang trí quá dày, lạm dụng kính mờ khắp nơi).
 
-## lẫn nhau Vật lý
+## Tương tác Vật lý
 
-- kìm tức thời: phản hồi tại pointer-down (ước 100ms), không phải đợi click.
-- cùng đường kính ra vào: phải tiến phải ra, ngọn nguồn tiến ngọn nguồn ra; dùng `YYSD_SURFACE`, cấm cứng rắn cắt `hidden`.
-- không gian neo định: mặt bản từ gây ra nguyên triển khai.
-- cam chịu có thể cắt ngang: quá độ công chính hứa ngược ý đồ.
-- quyết định biện pháp đồ dùng bài Sheet: `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`.
-- Hover đặc hiệu giới hạn `@media (hover: hover)`. xúc khống chỉ lưu lại `:active`.
+- Phản hồi tức thì: Phản hồi ngay khi chạm/nhấn chuột (`pointer-down`, khoảng 100ms), không đợi nhả chuột (`click`).
+- Vào ra nhất quán: Vào từ bên phải thì thoát ra bên phải, vào từ đáy thì thoát về đáy; sử dụng `YYSD_SURFACE`, cấm chuyển đổi trạng thái bằng `hidden` đột ngột.
+- Neo không gian: Bảng điều khiển mở ra trực tiếp từ phần tử kích hoạt.
+- Cho phép ngắt quãng: Hiệu ứng chuyển cảnh có thể bị ngắt nếu người dùng đổi ý thao tác.
+- Hộp thoại quyết định dùng Action Sheet: `YYSD_CONFIRM` / `YYSD_ALERT` / `YYSD_ASK`.
+- Hiệu ứng rê chuột (`hover`) chỉ áp dụng trên thiết bị hỗ trợ chuột `@media (hover: hover)`. Màn hình cảm ứng chỉ giữ lại trạng thái `:active`.
 
-## thực hiện neo chút:điểm
+## Điểm neo triển khai kỹ thuật
 
 - Token: `assets/css/style.css` `:root`
-- mặt ngoài: `assets/js/ui.js`
-- điểm trang chuyển trận: `assets/js/page-transit.js`
-- tự kiểm: `node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
+- Bề mặt giao diện: `assets/js/ui.js`
+- Chuyển trang: `assets/js/page-transit.js`
+- Tự kiểm tra: `node scripts/check_surface.js` · `node scripts/check_apple_shell.js`
 
-## không làm
+## Những điều cấm kỵ (Anti-patterns)
 
-- CDT cái nút / void lock thêm bounce hoặc thuỷ tinh mờ
-- toàn bộ đứng lên spring anime kho
-- Không động lượng tình cảnh overshoot
-- chồng hai tầng thiển hơi mờ
-- là huyễn kỹ thêm cả trang blur
-- thứ hai bộ thị giác hệ thống hoặc thứ hai bộ bá phóng khí
+- Thêm hiệu ứng nảy (bounce) hay kính mờ vào nút bấm / khóa thi của phòng thi CDT.
+- Nhúng thư viện hoạt họa lò xo nặng nề trên toàn trang.
+- Hiệu ứng cuộn quá đà (overshoot) trong các tình huống không có quán tính.
+- Xếp chồng hai lớp bán trong suốt mờ.
+- Lạm dụng làm mờ toàn trang chỉ để khoe kỹ xảo.
+- Tạo ra hệ thống thị giác thứ hai hoặc bộ trình phát âm thanh thứ hai.

@@ -1,29 +1,29 @@
-# I-003 — di động đầu bottom tabs thuỷ tinh mờ
+# I-003 — Hiệu ứng Kính mờ cho Thanh Tab Di động
 
-** Trạng thái: ** done
+**Trạng thái:** Đã hoàn thành
 
-## mục tiêu
+## Mục tiêu
 
-≤820px chủ đường nhỏ dưới đáy `mobile-tabs` và premium topbar đồng cấp cảm nhận.
+Đảm bảo thanh điều hướng dưới đáy `mobile-tabs` trên màn hình di động (≤820px) có cùng độ tinh tế và hiệu ứng chất liệu như thanh điều hướng Premium trên cùng.
 
-## cho phép cải biến
+## Phạm vi Cho phép Thay đổi
 
-- `assets/css/style.css`: `.mobile-tabs`, `.mobile-tabs__item.is-active`
+- `assets/css/style.css`: Quy tắc CSS cho `.mobile-tabs` và `.mobile-tabs__item.is-active`
 
-## cấm
+## Điều Nghiêm cấm
 
-- nav.js drawer ăn khớp
+- Thay đổi logic đóng mở menu drawer trong `nav.js`
 
-## thay đổi
+## Các Thay đổi Kỹ thuật
 
-- tabs vật chứa: `backdrop-filter` + hơi mờ bạch ngọn nguồn + đỉnh bên cạnh `var(--border)`
-- active item: thiển kim ngọn nguồn `color-mix(in srgb, var(--brand-gold) 12%, transparent)`
+- Khung chứa thanh tab: Bổ sung `backdrop-filter`, màu nền trắng bán trong suốt và đường viền trên `var(--border)`.
+- Mục đang hoạt động (active): Bổ sung màu nền vàng nhạt `color-mix(in srgb, var(--brand-gold) 12%, transparent)`.
 
-## nghiệm thu
+## Tiêu chí Nghiệm thu
 
-- 375px dashboard / zone / results
-- active tab có thể đọc; safe-area nhưng có hiệu lực
+- Kiểm tra trên khung nhìn 375px tại các trang dashboard / zone / results.
+- Tab đang hoạt động hiển thị rõ ràng, dễ đọc; vùng an toàn của thiết bị (safe-area) hoạt động chuẩn xác.
 
-## quay về lăn
+## Phương án Rollback
 
- khôi phục `.mobile-tabs` nguyên background.
+Khôi phục lại thuộc tính background gốc của `.mobile-tabs`.

@@ -80,7 +80,7 @@
       '<div class="vt-chips">' + chips + "</div>" +
       '<div class="vt-block__actions">' +
         '<a class="btn btn--primary btn--sm" href="?cat=' + encodeURIComponent(state.cat) +
-          "&theme=" + encodeURIComponent(t.id) + '"> Xem từ bề ngoài ›</a>' +
+          "&theme=" + encodeURIComponent(t.id) + '"> Xem danh sách từ ›</a>' +
       "</div></article>";
   }
 
@@ -210,11 +210,11 @@
 
   function renderDetail(t) {
     root.innerHTML = sideHTML() + '<div class="vt-main"><div class="state state--brand">' +
-      '<div class="spinner spinner--brand"></div> thêm năm từ bề ngoài …</div></div>';
+      '<div class="spinner spinner--brand"></div> Đang tải danh sách từ vựng…</div></div>';
     bindChrome(null);
     var url = "library/" + t.dataFile;
     fetch(url).then(function (r) {
-      if (!r.ok) throw new Error(" từ bề ngoài Tải dữ liệu thất bại ");
+      if (!r.ok) throw new Error(" Tải danh sách từ vựng thất bại ");
       return r.json();
     }).then(function (data) {
       setUrl();

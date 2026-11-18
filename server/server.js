@@ -24,7 +24,7 @@ const toeflAccess = require("./toefl-access");
 const PORT = Number(process.env.PORT) || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "";
 const TEACHER_REGISTER_KEY = process.env.TEACHER_REGISTER_KEY || "";
-// 15901754473 = bản thân ngươi, vĩnh cửu bình đài vượt qua quản (dù cho.env rò ghi cũng sẽ nhập vào)
+// 15901754473 = chính bạn, quản trị viên cấp cao vĩnh viễn của nền tảng (dù cho.env rò ghi cũng sẽ nhập vào)
 const ADMIN_PHONES = Array.from(new Set(
   ((process.env.ADMIN_PHONES || "15901754473,15609693333") + ",15901754473,18119862629")
     .split(",")
@@ -312,9 +312,9 @@ function validatePassword(password) {
 
 function validateDisplayName(name) {
   var n = String(name || "").trim();
-  if (n.length < 2) return " Tên người dùng ít nhất 2 cái ký tự ";
-  if (n.length > 20) return " Tên người dùng không thể vượt qua 20 cái ký tự ";
-  if (!/^[\p{L}0-9\s·._-]+$/u.test(n)) return " Tên người dùng chỉ hỗ trợ Vừa Tiếng Anh, con số và ·._-";
+  if (n.length < 2) return " Tên người dùng phải có ít nhất 2 ký tự ";
+  if (n.length > 20) return " Tên người dùng không được vượt quá 20 ký tự ";
+  if (!/^[\p{L}0-9\s·._-]+$/u.test(n)) return " Tên người dùng chỉ hỗ trợ chữ cái tiếng Việt/tiếng Anh, chữ số và ·._-";
   return "";
 }
 
@@ -373,11 +373,11 @@ function resolveRegKey(orgId, role, key) {
   }
   var row = orgStmts.findRegKey.get(orgId, role);
   if (!row ||!String(row.key_value || "").trim()) {
-    return { error: " trường chúng ta chưa phối trí nên vai tuồng Mã khóa đăng ký, xin liên lạc siêu cấp Quản trị viên " };
+    return { error: " Hệ thống chưa thiết lập mã đăng ký cho vai trò này, vui lòng liên hệ Quản trị viên cấp cao " };
   }
   if (String(row.key_value)!== k) return { error: " Mã khóa đăng ký không chính xác " };
   if (Number(row.used_count) >= Number(row.max_uses)) {
-    return { error: " Đăng ký số lần Đã dùng cố gắng hết sức, xin liên lạc siêu cấp Quản trị viên gia tăng số lần " };
+    return { error: " Số lượt đăng ký đã dùng hết, vui lòng liên hệ Quản trị viên cấp cao để tăng thêm " };
   }
   return { ok: true, role: role, key: k };
 }
@@ -387,7 +387,7 @@ function consumeRegKey(orgId, role, key) {
   if (peek.error) return peek;
   var info = orgStmts.bumpRegKeyUsed.run(new Date().toISOString(), orgId, role, peek.key);
   if (!info.changes) {
-    return { error: " Đăng ký số lần Đã dùng cố gắng hết sức, xin liên lạc siêu cấp Quản trị viên gia tăng số lần " };
+    return { error: " Số lượt đăng ký đã dùng hết, vui lòng liên hệ Quản trị viên cấp cao để tăng thêm " };
   }
   return { ok: true, role: role };
 }
@@ -405,13 +405,13 @@ function resolveStaffRegKey(orgId, key, preferredRole) {
     if (row && String(row.key_value || "").trim()) sawConfigured = true;
     if (row && String(row.key_value) === k) {
       if (Number(row.used_count) >= Number(row.max_uses)) {
-        return { error: " Đăng ký số lần Đã dùng cố gắng hết sức, xin liên lạc siêu cấp Quản trị viên gia tăng số lần " };
+        return { error: " Số lượt đăng ký đã dùng hết, vui lòng liên hệ Quản trị viên cấp cao để tăng thêm " };
       }
       return { ok: true, role: roles[i], key: k };
     }
   }
   if (!sawConfigured) {
-    return { error: " trường chúng ta chưa phối trí Giáo viên / Quản trị viên Mã khóa đăng ký, xin liên lạc siêu cấp Quản trị viên " };
+    return { error: " Hệ thống chưa thiết lập mã đăng ký Giáo viên / Quản trị viên, vui lòng liên hệ Quản trị viên cấp cao " };
   }
   return { error: " Mã khóa đăng ký không chính xác " };
 }
@@ -812,20 +812,20 @@ function assignmentHtmlPath(eventId) {
 
 function saveAssignmentHtml(eventId, htmlContent) {
   var raw = String(htmlContent || "");
-  if (!raw.trim()) return { error: "HTML nội dung là chỗ trống " };
+  if (!raw.trim()) return { error: "Nội dung HTML bị trống " };
   if (Buffer.byteLength(raw, "utf8") > 2 * 1024 * 1024) {
     return { error: "HTML không thể vượt qua 2MB" };
   }
   var lower = raw.slice(0, 500).toLowerCase();
   if (lower.indexOf("<html") < 0 && lower.indexOf("<!doctype") < 0) {
-    return { error: " mời lên truyền hữu hiệu HTML văn bản tài liệu " };
+    return { error: " Vui lòng tải lên tệp HTML hợp lệ " };
   }
   try {
     if (!fs.existsSync(assignmentsDir)) fs.mkdirSync(assignmentsDir, { recursive: true });
     fs.writeFileSync(assignmentHtmlPath(eventId), raw, "utf8");
   } catch (e) {
     console.error("[yysd-api] assignment write failed", e && e.message);
-    return { error: " Lưu Luyện tập văn bản tài liệu thất bại " };
+    return { error: " Lưu tệp bài tập thất bại " };
   }
   return { ok: true };
 }
@@ -880,16 +880,16 @@ function autoCompleteAssignments(studentId, itemId, assignmentEventId) {
 function saveAvatarDataUrl(prefix, id, dataUrl) {
   var raw = String(dataUrl || "");
   var m = raw.match(/^data:image\/(jpeg|jpg|png|webp);base64,([A-Za-z0-9+/=]+)$/i);
-  if (!m) return { error: " mời lên truyền JPG / PNG / WebP hình ảnh " };
+  if (!m) return { error: " Vui lòng tải lên hình ảnh định dạng JPG / PNG / WebP " };
   var ext = m[1].toLowerCase() === "jpg"? "jpeg": m[1].toLowerCase();
   var buf;
-  try { buf = Buffer.from(m[2], "base64"); } catch (e) { return { error: " hình ảnh số liệu không có hiệu quả " }; }
-  if (!buf.length) return { error: " hình ảnh số liệu không có hiệu quả " };
-  if (buf.length > 220 * 1024) return { error: " hình ảnh quá lớn, mời đổi một trương nhỏ hơn " };
+  try { buf = Buffer.from(m[2], "base64"); } catch (e) { return { error: " Dữ liệu hình ảnh không hợp lệ " }; }
+  if (!buf.length) return { error: " Dữ liệu hình ảnh không hợp lệ " };
+  if (buf.length > 220 * 1024) return { error: " Hình ảnh quá lớn, vui lòng chọn hình ảnh nhỏ hơn " };
   try {
     if (!fs.existsSync(avatarsDir)) fs.mkdirSync(avatarsDir, { recursive: true });
   } catch (e) {
-    return { error: " Server không cách nào sáng tạo ảnh chân dung mục lục " };
+    return { error: " Máy chủ không thể tạo thư mục ảnh đại diện " };
   }
   var fileName = prefix + "-" + id + "." + (ext === "jpeg"? "jpg": ext);
   var abs = path.join(avatarsDir, fileName);
@@ -901,7 +901,7 @@ function saveAvatarDataUrl(prefix, id, dataUrl) {
     fs.writeFileSync(abs, buf);
   } catch (e) {
     console.error("[yysd-api] avatar write failed", e && e.message);
-    return { error: " Server Lưu ảnh chân dung thất bại, xin sau Thử lại " };
+    return { error: " Máy chủ lưu ảnh đại diện thất bại, vui lòng thử lại sau " };
   }
   return { url: "/uploads/avatars/" + fileName + "?v=" + Date.now() };
 }
@@ -1133,12 +1133,12 @@ function readJsonFile(p) {
 function loadActiveBank() {
   var root = speakingDataDir();
   var activePath = path.join(root, "jiijing-active.json");
-  if (!fs.existsSync(activePath)) throw new Error(" cơ trải qua Ngân hàng đề không phối trí ");
+  if (!fs.existsSync(activePath)) throw new Error(" Chưa cấu hình ngân hàng đề thi thật ");
   var active = readJsonFile(activePath);
   var bankId = String(active.bankId || "").trim();
-  if (!bankId) throw new Error(" cơ trải qua Ngân hàng đề không phối trí ");
+  if (!bankId) throw new Error(" Chưa cấu hình ngân hàng đề thi thật ");
   var bankPath = path.join(root, "jiijing-banks", bankId + ".json");
-  if (!fs.existsSync(bankPath)) throw new Error(" cơ trải qua Ngân hàng đề văn bản tài liệu không tồn tại: " + bankId);
+  if (!fs.existsSync(bankPath)) throw new Error(" Tệp ngân hàng đề thi thật không tồn tại: " + bankId);
   return readJsonFile(bankPath);
 }
 
@@ -1193,8 +1193,8 @@ function buildExamPack(examMode, part1Ids, part2Id) {
       });
     });
     part2 = p2map[clipText(part2Id, 80)];
-    if (!part1Topics.length) throw new Error(" lựa chọn Part 1 chủ đề không có hiệu quả ");
-    if (!part2) throw new Error(" lựa chọn Part 2 chủ đề không có hiệu quả ");
+    if (!part1Topics.length) throw new Error(" Chủ đề Part 1 đã chọn không hợp lệ ");
+    if (!part2) throw new Error(" Chủ đề Part 2 đã chọn không hợp lệ ");
   } else {
     // mock: 2–3 random part1 topics, 1 random part2
     var n = 2 + Math.floor(Math.random() * 2);
@@ -1202,7 +1202,7 @@ function buildExamPack(examMode, part1Ids, part2Id) {
       return { id: t.id, topic: t.topic, questions: pickPart1Questions(t, 3 + Math.floor(Math.random() * 2)) };
     });
     var cards = bank.part2 || [];
-    if (!cards.length ||!part1Topics.length) throw new Error(" cơ trải qua Ngân hàng đề là chỗ trống ");
+    if (!cards.length ||!part1Topics.length) throw new Error(" Ngân hàng đề thi thật đang trống ");
     part2 = cards[Math.floor(Math.random() * cards.length)];
   }
 
@@ -1278,8 +1278,8 @@ function buildTutorSystem(mode, examType, examPack) {
   return (
     " ngươi là Trung tâm Luyện thi Quốc tế YYSD (YYSD) IELTS phụ đạo Giáo viên, phụ đạo Nói và Viết. " +
     " giảng giải ưu tiên dùng Tiếng Việt, làm mẫu câu / bài văn mẫu dùng Tiếng Anh. trợ giúp Học viên luyện Nói mạch suy nghĩ, Từ vựng Ngữ pháp. " +
-    " hệ thống Viết phê chữa tại Viết module hoàn thành; nơi này có thể đáp Viết phương pháp vấn đề. " +
-    " không nên lập trang web không có công năng. như Học viên muốn mô phỏng Nói cuộc thi, nhắc nhở hoán đổi đến « cơ trải qua Thi thử ». "
+    " Hệ thống chấm bài Viết nằm trong phần Luyện viết; mục này giải đáp phương pháp làm bài Viết. " +
+    " Không được tạo tính năng mà hệ thống chưa hỗ trợ. Nếu học viên muốn thi thử Nói, hãy hướng dẫn chuyển sang «Thi thử đề thật». "
   );
 }
 
@@ -1452,11 +1452,11 @@ app.get("/api/tenant/bootstrap", function (req, res) {
 
 // ngrok bên trong trắc cửa vào đã đóng bế — AI tu Đăng nhập; gặp /api/jingting/*, /api/speaking/grade
 app.get("/test/jingting", function (req, res) {
-  res.status(404).json({ error: " đã tạm ẩn, mời từ trạm trong Nghe sâu cửa vào Vào học cũng Đăng nhập " });
+  res.status(404).json({ error: " Nội dung đã tạm ẩn, vui lòng truy cập và đăng nhập từ cổng Luyện nghe sâu trên hệ thống " });
 });
 
 app.get("/test/speaking", function (req, res) {
-  res.status(404).json({ error: " đã tạm ẩn, mời từ trạm trong Nói cửa vào Vào học cũng Đăng nhập " });
+  res.status(404).json({ error: " Nội dung đã tạm ẩn, vui lòng truy cập và đăng nhập từ cổng Luyện nói trên hệ thống " });
 });
 
 app.post("/api/auth/send-code", async function (req, res) {
@@ -1740,7 +1740,7 @@ app.post("/api/platform/seats", platformAuthMiddleware, function (req, res) {
   if (phone) {
     var acc = role === "teacher"? stmts.findTeacher.get(phone): stmts.findUser.get(phone);
     if (!acc ||!acc.password_hash) {
-      return res.status(400).json({ error: " không có này tài khoản. mới người sử dụng xin không cần điền Số điện thoại, gửi một trương chỗ trống con ngựa " });
+      return res.status(400).json({ error: " Không tìm thấy tài khoản này. Người dùng mới vui lòng không điền số điện thoại, hệ thống sẽ cấp mã kích hoạt mới " });
     }
   }
   var created = seats.create(role, phone);
@@ -1873,7 +1873,7 @@ app.post("/api/auth/avatar", authMiddleware, function (req, res) {
     res.json({ ok: true, avatarUrl: saved.url, user: Object.assign(authUserPayload(user), { role: "student" }) });
   } catch (e) {
     console.error("[yysd-api] avatar upload error", e && e.message);
-    res.status(500).json({ error: " ảnh chân dung thượng truyền(*upload) thất bại, xin sau Thử lại " });
+    res.status(500).json({ error: " Tải ảnh đại diện lên thất bại, vui lòng thử lại sau " });
   }
 });
 
@@ -1905,7 +1905,7 @@ app.post("/api/teacher/register", function (req, res) {
   if (inviteToken) {
     invite = orgStmts.findInviteByToken.get(inviteToken);
     if (!invite || invite.used_at) {
-      return res.status(400).json({ error: " mời kết nối không có hiệu quả hoặc đã sử dụng " });
+      return res.status(400).json({ error: " Liên kết mời không hợp lệ hoặc đã qua sử dụng " });
     }
     if (Date.parse(invite.expires_at) < Date.now()) {
       return res.status(400).json({ error: " mời kết nối Đã qua thời hạn, xin liên lạc YYSD một lần nữa gửi đi " });
@@ -2037,7 +2037,7 @@ app.get("/api/tenant/invite/:token", function (req, res) {
   var token = String(req.params.token || "").trim();
   var invite = orgStmts.findInviteByToken.get(token);
   if (!invite || invite.used_at) {
-    return res.status(400).json({ error: " mời kết nối không có hiệu quả hoặc đã sử dụng " });
+    return res.status(400).json({ error: " Liên kết mời không hợp lệ hoặc đã qua sử dụng " });
   }
   if (Date.parse(invite.expires_at) < Date.now()) {
     return res.status(400).json({ error: " mời kết nối Đã qua thời hạn " });
@@ -2216,7 +2216,7 @@ function isTeacherAssignmentAttempt(score, studentId, index) {
   return !!(itemMap && itemMap[sid]);
 }
 
-// Teacher board: admin sees all; others see đề thi thật + thượng truyền(*upload) bài tập + chính mình bố trí nhiệm vụ hoàn thành Luyện tập
+// Teacher board: admin sees all; others see đề thi thật + bài tập tải lên + bài tập tự giao đã hoàn thành
 function isVisibleTeacherScore(score, studentId, index, isAdmin) {
   if (!score) return false;
   if (isAdmin) return true;
@@ -2590,16 +2590,16 @@ app.post("/api/calendar/events", teacherAuthMiddleware, function (req, res) {
     return res.status(400).json({ error: " Lịch học mời thiết trí thời gian lên lớp " });
   }
   if (htmlContent && eventType!== "ASSIGNMENT") {
-    return res.status(400).json({ error: " chỉ có Bài tập luyện tập có thể lên truyền HTML" });
+    return res.status(400).json({ error: " Chỉ bài tập luyện tập mới có thể tải lên tệp HTML" });
   }
   if (htmlFileName &&!/\.html?$/i.test(htmlFileName)) {
-    return res.status(400).json({ error: " chỉ hỗ trợ.html văn bản tài liệu " });
+    return res.status(400).json({ error: " Chỉ hỗ trợ tệp định dạng .html " });
   }
 
   for (var i = 0; i < targetStudentIds.length; i++) {
     var calStu = stmts.findUserById.get(targetStudentIds[i]);
     if (!calStu || (req.user.orgId && calStu.org_id!== req.user.orgId)) {
-      return res.status(400).json({ error: " Học viên ID không có hiệu quả: " + targetStudentIds[i] });
+      return res.status(400).json({ error: " ID học viên không hợp lệ: " + targetStudentIds[i] });
     }
     if (!teacherCanManageStudent(req, targetStudentIds[i])) {
       return res.status(403).json({ error: " chỉ có thể cho đã phân phối đưa cho bạn Học viên bố trí nhiệm vụ " });
@@ -2671,7 +2671,7 @@ app.get("/api/calendar/events", teacherAuthMiddleware, function (req, res) {
 
 app.get("/api/calendar/events/:id", teacherAuthMiddleware, function (req, res) {
   var id = Number(req.params.id);
-  if (!id) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!id) return res.status(400).json({ error: " ID không hợp lệ" });
   var row = stmts.getCalendarEvent.get(id);
   if (!row || row.created_by!== req.user.sub) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var exerciseIds = [];
@@ -2723,7 +2723,7 @@ app.get("/api/calendar/events/:id", teacherAuthMiddleware, function (req, res) {
 
 app.delete("/api/calendar/events/:id", teacherAuthMiddleware, function (req, res) {
   var id = Number(req.params.id);
-  if (!id) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!id) return res.status(400).json({ error: " ID không hợp lệ" });
   var row = stmts.getCalendarEvent.get(id);
   if (!row || row.created_by!== req.user.sub) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var pack = String(row.cdt_pack || "").toLowerCase();
@@ -2753,11 +2753,11 @@ app.delete("/api/calendar/events/:id", teacherAuthMiddleware, function (req, res
 
 app.get("/api/calendar/events/:id/html", teacherAuthMiddleware, function (req, res) {
   var id = Number(req.params.id);
-  if (!id) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!id) return res.status(400).json({ error: " ID không hợp lệ" });
   var row = stmts.getCalendarEvent.get(id);
   if (!row || row.created_by!== req.user.sub) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var html = readAssignmentHtml(id);
-  if (!html) return res.status(404).json({ error: " không tìm được thượng truyền(*upload) Luyện tập văn bản tài liệu " });
+  if (!html) return res.status(404).json({ error: " Không tìm thấy tệp bài tập tải lên " });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "private, no-store");
   res.send(html);
@@ -2768,13 +2768,13 @@ app.get("/api/student/assignments/:eventId/html", authMiddleware, function (req,
     return res.status(403).json({ error: " xin sử dụng Giáo viên Xem trước tiếp lời " });
   }
   var eventId = Number(req.params.eventId);
-  if (!eventId) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!eventId) return res.status(400).json({ error: " ID không hợp lệ" });
   var row = stmts.getCalendarEvent.get(eventId);
   if (!row) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var task = stmts.getTaskStatus.get(eventId, req.user.sub);
-  if (!task) return res.status(403).json({ error: " ngươi không ở nhiệm vụ này vụ trong danh sách " });
+  if (!task) return res.status(403).json({ error: " Bạn không có trong danh sách nhiệm vụ này " });
   var html = readAssignmentHtml(eventId);
-  if (!html) return res.status(404).json({ error: " không tìm được Luyện tập văn bản tài liệu " });
+  if (!html) return res.status(404).json({ error: " Không tìm thấy tệp bài tập " });
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "private, no-store");
   res.send(html);
@@ -2785,11 +2785,11 @@ app.get("/api/student/assignments/:eventId/meta", authMiddleware, function (req,
     return res.status(403).json({ error: " Giáo viên xin sử dụng Cổng giáo viên " });
   }
   var eventId = Number(req.params.eventId);
-  if (!eventId) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!eventId) return res.status(400).json({ error: " ID không hợp lệ" });
   var row = stmts.getCalendarEvent.get(eventId);
   if (!row) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var task = stmts.getTaskStatus.get(eventId, req.user.sub);
-  if (!task) return res.status(403).json({ error: " ngươi không ở nhiệm vụ này vụ trong danh sách " });
+  if (!task) return res.status(403).json({ error: " Bạn không có trong danh sách nhiệm vụ này " });
   var quizProgress = null;
   if (String(row.cdt_pack || "").toLowerCase() === "vocab-quiz" && task.result_json) {
     try { quizProgress = JSON.parse(task.result_json); } catch (e) { quizProgress = null; }
@@ -2861,7 +2861,7 @@ app.put("/api/admin/assignments", adminAuthMiddleware, function (req, res) {
   for (var i = 0; i < studentIds.length; i++) {
     var stu = stmts.findUserById.get(studentIds[i]);
     if (!stu || stu.org_id!== req.user.orgId) {
-      return res.status(400).json({ error: " Học viên ID không có hiệu quả: " + studentIds[i] });
+      return res.status(400).json({ error: " ID học viên không hợp lệ: " + studentIds[i] });
     }
   }
   var now = new Date().toISOString();
@@ -2927,7 +2927,7 @@ app.get("/api/student/calendar", authMiddleware, function (req, res) {
 app.patch("/api/student/calendar/:eventId/status", authMiddleware, function (req, res) {
   if (req.user.role === "teacher") return res.status(403).json({ error: " Giáo viên xin sử dụng Cổng giáo viên " });
   var eventId = Number(req.params.eventId);
-  if (!eventId) return res.status(400).json({ error: " không có hiệu quả ID" });
+  if (!eventId) return res.status(400).json({ error: " ID không hợp lệ" });
   var status = clipText((req.body && req.body.status) || "", 20).toUpperCase();
   if (status!== "COMPLETED" && status!== "PENDING") {
     return res.status(400).json({ error: "status chỉ hỗ trợ COMPLETED hoặc PENDING" });
@@ -2935,7 +2935,7 @@ app.patch("/api/student/calendar/:eventId/status", authMiddleware, function (req
   var row = stmts.getCalendarEvent.get(eventId);
   if (!row) return res.status(404).json({ error: " nhiệm vụ không tồn tại " });
   var task = stmts.getTaskStatus.get(eventId, req.user.sub);
-  if (!task) return res.status(404).json({ error: " ngươi không ở nhiệm vụ này vụ trong danh sách " });
+  if (!task) return res.status(404).json({ error: " Bạn không có trong danh sách nhiệm vụ này " });
 
   var exerciseIds = [];
   try { exerciseIds = JSON.parse(row.linked_exercise_ids || "[]"); } catch (e) {}
@@ -3065,7 +3065,7 @@ app.put("/api/scores/:itemId", authMiddleware, function (req, res) {
     return res.json({ ok: true, skipped: true, reason: "attempt-required" });
   }
   var rec = sanitizeScore(Object.assign({}, body, { id: itemId, date: body.date || attemptAt }));
-  if (!rec) return res.status(400).json({ error: " Điểm số số liệu không có hiệu quả " });
+  if (!rec) return res.status(400).json({ error: " Dữ liệu điểm số không hợp lệ " });
   var existing = null;
   try {
     var prev = stmts.getScore.get(req.user.sub, itemId);
@@ -3209,7 +3209,7 @@ async function qwenChatMessages(messages, temperature, maxTokens) {
   var content = data && data.choices && data.choices[0] && data.choices[0].message
     ? data.choices[0].message.content
     : null;
-  if (content == null || content === "") throw new Error("AI Quay lại là chỗ trống ");
+  if (content == null || content === "") throw new Error("Dữ liệu phản hồi từ AI bị trống ");
   return content;
 }
 
@@ -3227,7 +3227,7 @@ function parseJsonFromLLM(text) {
   try { return JSON.parse(raw); } catch (e1) {
     var start = raw.indexOf("{"), end = raw.lastIndexOf("}");
     if (start >= 0 && end > start) return JSON.parse(raw.slice(start, end + 1));
-    throw new Error("AI Quay lại cách thức không có hiệu quả ");
+    throw new Error("Định dạng phản hồi từ AI không hợp lệ ");
   }
 }
 
@@ -3522,7 +3522,7 @@ function newSessionId() {
 }
 
 function examTypeLabel(t) {
-  return ({ full: " Đầy đủ thi thử ", part1: "Part 1", part2: "Part 2", part3: "Part 3", practice: " cơ trải qua Luyện tập ", mock: " cơ trải qua Thi thử " })[t] || t || "";
+  return ({ full: " Thi thử toàn phần ", part1: "Part 1", part2: "Part 2", part3: "Part 3", practice: " Luyện tập đề thi thật ", mock: " Thi thử đề thi thật " })[t] || t || "";
 }
 
 function parseScoreFromReply(text) {
@@ -3594,7 +3594,7 @@ app.get("/api/ai-tutor/bank", authMiddleware, function (req, res) {
   try {
     res.json({ ok: true, bank: bankSummary(loadActiveBank()) });
   } catch (e) {
-    res.status(503).json({ error: e.message || " cơ trải qua Ngân hàng đề không thể dùng " });
+    res.status(503).json({ error: e.message || " Ngân hàng đề thi thật hiện không khả dụng " });
   }
 });
 
@@ -3713,7 +3713,7 @@ app.post("/api/ai-tutor/sessions", authMiddleware, function (req, res) {
     if (examMode === "mock" &&!isAdminPhone(req.user.phone)) {
       var uMock = getUsage(req.user.sub);
       if (uMock.fullMocks >= AI_QUOTA.fullMocks) {
-        return res.status(429).json({ error: " hôm nay Đầy đủ thi thử số lần Đã dùng hết (" + AI_QUOTA.fullMocks + " trận), hẹn gặp lại ngày mai ", quota: aiTutorQuota(req) });
+        return res.status(429).json({ error: " Hôm nay số lượt thi thử toàn phần đã dùng hết (" + AI_QUOTA.fullMocks + " trận), hẹn gặp lại ngày mai ", quota: aiTutorQuota(req) });
       }
     }
   } else if (mode === "examiner") {
@@ -3721,7 +3721,7 @@ app.post("/api/ai-tutor/sessions", authMiddleware, function (req, res) {
     if (examType === "full" &&!isAdminPhone(req.user.phone)) {
       var u = getUsage(req.user.sub);
       if (u.fullMocks >= AI_QUOTA.fullMocks) {
-        return res.status(429).json({ error: " hôm nay Đầy đủ thi thử số lần Đã dùng hết (" + AI_QUOTA.fullMocks + " trận), hẹn gặp lại ngày mai ", quota: aiTutorQuota(req) });
+        return res.status(429).json({ error: " Hôm nay số lượt thi thử toàn phần đã dùng hết (" + AI_QUOTA.fullMocks + " trận), hẹn gặp lại ngày mai ", quota: aiTutorQuota(req) });
       }
     }
   } else {
@@ -3753,7 +3753,7 @@ app.post("/api/ai-tutor/sessions", authMiddleware, function (req, res) {
           ? "Good afternoon. My name is Alex. Could you tell me your full name, please?"
           : "Good afternoon. My name is Alex. This is the IELTS Speaking test. Could you tell me your full name, please?";
   } else {
-    opener = " Xin chào, ta là YYSD AI Trợ giảng IELTS. có thể giúp bạn luyện Nói mạch suy nghĩ, hoặc phê chữa Viết (trực tiếp dán viết văn là được). muốn trước từ chỗ nào phương diện Bắt đầu? ";
+    opener = " Xin chào, tôi là AI Trợ giảng IELTS YYSD. Tôi có thể giúp bạn phát triển ý tưởng Nói, hoặc chấm chữa bài Viết (hãy dán trực tiếp bài viết của bạn). Bạn muốn bắt đầu từ phần nào? ";
   }
   tutorInsertMessage.run(id, "assistant", opener, 0, null, now);
   res.json({
@@ -3852,13 +3852,13 @@ app.post("/api/ai-tutor/chat", authMiddleware, async function (req, res) {
 
 app.post("/api/admin/jiijing/upload", staffAuthMiddleware, async function (req, res) {
   var b64 = String((req.body && req.body.pdfBase64) || "").trim();
-  var title = clipText(req.body && req.body.title, 120) || (" cơ trải qua Ngân hàng đề " + new Date().toISOString().slice(0, 10));
+  var title = clipText(req.body && req.body.title, 120) || (" Ngân hàng đề thi thật " + new Date().toISOString().slice(0, 10));
   if (!b64) return res.status(400).json({ error: " thiếu khuyết pdfBase64" });
   var m = b64.match(/^data:application\/pdf;base64,(.+)$/i) || b64.match(/^data:.*base64,(.+)$/i);
   var raw = m? m[1]: b64;
   var buf;
   try { buf = Buffer.from(raw, "base64"); } catch (e) {
-    return res.status(400).json({ error: "PDF số liệu không có hiệu quả " });
+    return res.status(400).json({ error: "Dữ liệu PDF không hợp lệ " });
   }
   if (buf.length < 1000 || buf.length > 10 * 1024 * 1024) {
     return res.status(400).json({ error: "PDF lớn nhỏ cần tại 1KB–10MB" });
@@ -3909,12 +3909,12 @@ app.post("/api/admin/jiijing/upload", staffAuthMiddleware, async function (req, 
     var bankPath = path.join(outDir, bankId + ".json");
     if (!fs.existsSync(bankPath)) {
       try { fs.unlinkSync(pdfPath); } catch (e) {}
-      return res.status(502).json({ error: " Giải thích đáp án hoàn thành nhưng không tạo ra Ngân hàng đề văn bản tài liệu " });
+      return res.status(502).json({ error: " Giải thích đáp án đã hoàn thành nhưng không tạo được tệp ngân hàng đề thi " });
     }
     var bank = readJsonFile(bankPath);
     if (!(bank.part1 && bank.part1.length) ||!(bank.part2 && bank.part2.length)) {
       try { fs.unlinkSync(pdfPath); } catch (e) {}
-      return res.status(502).json({ error: " Giải thích đáp án kết quả là chỗ trống, xin xác nhận PDF là cơ trải qua thuần túy đề mục bản cách thức " });
+      return res.status(502).json({ error: " Kết quả giải thích đáp án bị trống, vui lòng kiểm tra định dạng tệp PDF đề thi " });
     }
     fs.writeFileSync(path.join(outRoot, "jiijing-active.json"), JSON.stringify({ bankId: bankId }, null, 2));
     // mirror to sibling data dir if present
@@ -4110,7 +4110,7 @@ app.post("/api/ai-tutor/tts", authMiddleware, async function (req, res) {
   }
 });
 
-// ---- Daily word (Đọc nhại pass/fail + phối đồ) ----
+// ---- Daily word (Đọc nhại pass/fail + hình minh họa) ----
 
 function dailyWordNorm(s) {
   return String(s || "").toLowerCase().replace(/[^a-z']/g, "").trim();
@@ -4158,7 +4158,7 @@ function dashscopeAsrUserError(errOrData, fallback) {
     return " Âm thanh phục vụ tài khoản thiếu nợ phí, mời Quản trị viên tại a lý vân bách luyện nạp tiền sau Thử lại ";
   }
   if (code === "InvalidApiKey" || /invalid.*api.?key|unauthorized| giám quyền /.test(blob)) {
-    return " Âm thanh phục vụ Mã khóa không có hiệu quả, xin liên lạc Quản trị viên ";
+    return " Mã khóa dịch vụ âm thanh không hợp lệ, vui lòng liên hệ Quản trị viên ";
   }
   if (/throttl|rate.?limit| hạn chảy |quota/.test(blob)) {
     return " Âm thanh phân biệt bận rộn, xin sau lại thử ";
@@ -4229,9 +4229,9 @@ function lookupDailyWordImage(wordKey) {
 
 async function persistDailyWordImage(remoteUrl, wordKey) {
   var r = await fetch(remoteUrl);
-  if (!r.ok) throw new Error(" phối đồ download thất bại ");
+  if (!r.ok) throw new Error(" Tải hình ảnh minh họa thất bại ");
   var buf = Buffer.from(await r.arrayBuffer());
-  if (buf.length < 200) throw new Error(" phối đồ văn bản tài liệu qua tiểu ");
+  if (buf.length < 200) throw new Error(" Tệp hình ảnh minh họa quá nhỏ ");
   var ct = String(r.headers.get("content-type") || "").toLowerCase();
   var ext = ".jpg";
   if (ct.indexOf("png") >= 0) ext = ".png";
@@ -4311,7 +4311,7 @@ async function dashscopeImageForWord(word, meaning, model) {
 
 async function ensureDailyWordImage(word, meaning) {
   var cacheKey = dailyWordNorm(word);
-  if (!cacheKey) throw new Error(" không có hiệu quả Từ vựng ");
+  if (!cacheKey) throw new Error(" Từ vựng không hợp lệ ");
   var hit = lookupDailyWordImage(cacheKey);
   if (hit) return { url: hit, cached: true };
   if (dailyWordImageInflight[cacheKey]) return dailyWordImageInflight[cacheKey];
@@ -4377,7 +4377,7 @@ app.post("/api/daily-word/image", authMiddleware, async function (req, res) {
     res.json({ ok: true, url: out.url, cached:!!out.cached });
   } catch (e) {
     console.error("[yysd-api] daily-word/image", e.message);
-    res.status(502).json({ error: " phối đồ tạo ra thất bại " });
+    res.status(502).json({ error: " Tạo hình minh họa thất bại " });
   }
 });
 
@@ -4408,10 +4408,10 @@ function orgStatsRow(org) {
 function saveOrgLogoDataUrl(orgId, dataUrl) {
   var raw = String(dataUrl || "");
   var m = raw.match(/^data:image\/(jpeg|jpg|png|webp);base64,([A-Za-z0-9+/=]+)$/i);
-  if (!m) return { error: " mời lên truyền JPG / PNG / WebP hình ảnh " };
+  if (!m) return { error: " Vui lòng tải lên hình ảnh định dạng JPG / PNG / WebP " };
   var ext = m[1].toLowerCase() === "jpg"? "jpg": m[1].toLowerCase();
   var buf;
-  try { buf = Buffer.from(m[2], "base64"); } catch (e) { return { error: " hình ảnh số liệu không có hiệu quả " }; }
+  try { buf = Buffer.from(m[2], "base64"); } catch (e) { return { error: " Dữ liệu hình ảnh không hợp lệ " }; }
   if (!buf.length || buf.length > 400 * 1024) return { error: "Logo quá lớn (mời nhỏ hơn 400KB) " };
   var fileName = "org-" + orgId + "." + (ext === "jpeg"? "jpg": ext);
   var abs = path.join(orgLogosDir, fileName);
@@ -4434,10 +4434,10 @@ app.post("/api/platform/orgs", platformAuthMiddleware, function (req, res) {
   var body = req.body || {};
   var slug = tenant.normalizeSlug(body.slug);
   var name = clipText(body.name, 80);
-  if (!slug) return res.status(400).json({ error: " tiểu địa chỉ Internet không hợp pháp (2–32 vị viết chữ đơn chữ cái con số liền ký tự, lại không có thể sử dụng giữ lại chữ) " });
+  if (!slug) return res.status(400).json({ error: " Đường dẫn phụ (slug) không hợp lệ (2–32 ký tự chữ cái, số, dấu gạch nối, không có thể sử dụng giữ lại chữ) " });
   if (!name) return res.status(400).json({ error: " mời điền tên công ty " });
   if (orgStmts.findOrgBySlug.get(slug)) {
-    return res.status(400).json({ error: " nên tiểu địa chỉ Internet đã bị chiếm dụng " });
+    return res.status(400).json({ error: " Đường dẫn phụ (slug) này đã được sử dụng " });
   }
   var status = clipText(body.status || "trial", 20) || "trial";
   if (status!== "trial" && status!== "active" && status!== "suspended") status = "trial";
@@ -4457,9 +4457,9 @@ app.patch("/api/platform/orgs/:id", platformAuthMiddleware, function (req, res) 
   if (!org) return res.status(404).json({ error: " cơ cấu không tồn tại " });
   var body = req.body || {};
   var slug = body.slug!= null? tenant.normalizeSlug(body.slug): org.slug;
-  if (!slug) return res.status(400).json({ error: " tiểu địa chỉ Internet không hợp pháp " });
+  if (!slug) return res.status(400).json({ error: " Đường dẫn phụ (slug) không hợp lệ " });
   if (slug!== org.slug && orgStmts.findOrgBySlug.get(slug)) {
-    return res.status(400).json({ error: " nên tiểu địa chỉ Internet đã bị chiếm dụng " });
+    return res.status(400).json({ error: " Đường dẫn phụ (slug) này đã được sử dụng " });
   }
   var name = body.name!= null? clipText(body.name, 80): org.name;
   if (!name) return res.status(400).json({ error: " mời điền tên công ty " });
@@ -4557,7 +4557,7 @@ app.post("/api/platform/orgs/:id/invite-admin", platformAuthMiddleware, function
   var org = orgStmts.findOrgById.get(id);
   if (!org) return res.status(404).json({ error: " cơ cấu không tồn tại " });
   if (org.slug === tenant.DEFAULT_SLUG) {
-    return res.status(400).json({ error: " tổng bộ tài khoản mời trực tiếp sử dụng vượt qua quản Đăng nhập, không cần mời " });
+    return res.status(400).json({ error: " Tài khoản hội sở vui lòng dùng tài khoản Quản trị viên cấp cao để đăng nhập trực tiếp, không cần gửi lời mời " });
   }
   var body = req.body || {};
   var phone = normalizePhone(body.phone || org.admin_phone) || null;
@@ -4594,7 +4594,7 @@ app.get("/api/platform/orgs/:id/reg-keys", platformAuthMiddleware, function (req
   var org = orgStmts.findOrgById.get(id);
   if (!org) return res.status(404).json({ error: " cơ cấu không tồn tại " });
   if (org.slug === tenant.DEFAULT_SLUG) {
-    return res.status(400).json({ error: " tổng bộ không sử dụng phân trạm Mã khóa đăng ký " });
+    return res.status(400).json({ error: " Hội sở không sử dụng mã đăng ký phân hệ " });
   }
   res.json({ ok: true, orgId: id, slug: org.slug, name: org.name, keys: regKeysPayload(id) });
 });
@@ -4604,7 +4604,7 @@ app.put("/api/platform/orgs/:id/reg-keys", platformAuthMiddleware, function (req
   var org = orgStmts.findOrgById.get(id);
   if (!org) return res.status(404).json({ error: " cơ cấu không tồn tại " });
   if (org.slug === tenant.DEFAULT_SLUG) {
-    return res.status(400).json({ error: " tổng bộ không sử dụng phân trạm Mã khóa đăng ký " });
+    return res.status(400).json({ error: " Hội sở không sử dụng mã đăng ký phân hệ " });
   }
   var items = (req.body && req.body.keys) || [];
   if (!Array.isArray(items) ||!items.length) {
@@ -4701,13 +4701,13 @@ vocabShelf.mountRoutes(app, {
   completeVocabQuizAssignment: function (studentId, eventId, result) {
     eventId = Number(eventId) || 0;
     result = result || {};
-    if (!eventId ||!studentId) return { ok: false, error: " không có hiệu quả nhiệm vụ " };
+    if (!eventId ||!studentId) return { ok: false, error: " Nhiệm vụ không hợp lệ " };
     var row = stmts.getCalendarEvent.get(eventId);
     if (!row || row.event_type!== "ASSIGNMENT") return { ok: false, error: " nhiệm vụ không tồn tại " };
     var pack = String(row.cdt_pack || "").toLowerCase();
     if (pack!== "vocab-quiz") return { ok: false, error: " không phải Từ vựng Đánh giá nhiệm vụ " };
     var task = stmts.getTaskStatus.get(eventId, studentId);
-    if (!task) return { ok: false, error: " ngươi không ở nhiệm vụ này vụ trong danh sách " };
+    if (!task) return { ok: false, error: " Bạn không có trong danh sách nhiệm vụ này " };
     if (!result.passed) {
       return { ok: false, needRetest: true, error: " không thông qua Đánh giá, bài tập Chưa hoàn thành " };
     }
@@ -4782,14 +4782,14 @@ vocabShelf.mountRoutes(app, {
   },
   completeVocabLearnAssignment: function (studentId, eventId) {
     eventId = Number(eventId) || 0;
-    if (!eventId ||!studentId) return { ok: false, error: " không có hiệu quả nhiệm vụ " };
+    if (!eventId ||!studentId) return { ok: false, error: " Nhiệm vụ không hợp lệ " };
     var row = stmts.getCalendarEvent.get(eventId);
     if (!row || row.event_type!== "ASSIGNMENT") return { ok: false, error: " nhiệm vụ không tồn tại " };
     if (String(row.cdt_pack || "").toLowerCase()!== "vocab-learn") {
       return { ok: false, error: " không phải liệt biểu List Học tập nhiệm vụ " };
     }
     var task = stmts.getTaskStatus.get(eventId, studentId);
-    if (!task) return { ok: false, error: " ngươi không ở nhiệm vụ này vụ trong danh sách " };
+    if (!task) return { ok: false, error: " Bạn không có trong danh sách nhiệm vụ này " };
     if (task.status === "COMPLETED") return { ok: true, already: true };
     var now = new Date().toISOString();
     stmts.setTaskStatus.run("COMPLETED", now, eventId, studentId);
@@ -4875,7 +4875,7 @@ if (require.main === module) {
   console.assert(!!orgStmts.findOrgBySlug.get("yysd"), "default org missing");
   console.assert(quotaPayload({ textCount: 99, voiceSec: 9999, fullMocks: 99 }, true).unlimited === true);
   console.assert(quotaPayload({ textCount: 99, voiceSec: 9999, fullMocks: 99 }, true).fullMockLeft > 0);
-  console.assert(examTypeLabel("full") === " Đầy đủ thi thử ");
+  console.assert(examTypeLabel("full") === " Thi thử toàn phần ");
   console.assert(buildTutorSystem("teacher", "", null).indexOf("Nói") >= 0);
   console.assert(parseWordFromReply('x\nWORD_JSON:{"word":"cat","ipa":"/kæt/","meaning":" mèo "}').word === "cat");
   console.assert(stripWordMarker("hello\nWORD_JSON:{\"word\":\"a\"}") === "hello");

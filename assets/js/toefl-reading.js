@@ -85,7 +85,7 @@
     return Math.round(score / total * 30);
   }
 
-  // ponytail: ETS không công khai nguyên thủy điểm bề ngoài; dùng Website Games 0–30 → 1–6 so sánh, nhãn hiệu dự đoán
+  // ETS không công khai bảng điểm gốc; tham chiếu website chính thức 0–30 → 1–6 để quy đổi
   function bandFrom30(n) {
     if (n >= 29) return 6;
     if (n >= 27) return 5.5;

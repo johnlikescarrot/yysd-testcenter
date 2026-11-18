@@ -200,7 +200,7 @@
       '<div class="ime-gate-panel ime-gate-panel--cheat">' +
         '<h2 id="ime-cheat-title"> Đánh giá đến hành vi ăn gian </h2>' +
         '<p class="ime-gate-lead ime-gate-lead--warn"> trong khảo nghiệm đồ nhiều lần hoán đổi đến Tiếng Việt đưa vào cú pháp (đã vượt qua ' +
-          CHEAT_LIMIT + " lần), lần này đáp lại không có hiệu quả. </p>" +
+          CHEAT_LIMIT + " lần), câu trả lời lần này không hợp lệ. </p>" +
         '<p class="ime-gate-tip"> xin sử dụng Tiếng Anh đưa vào cú pháp hoàn thành Chính tả. có thể chọn chọn bắt đầu lại, hoặc Đăng xuất lần này Kiểm tra. </p>' +
         '<div class="ime-gate-actions">' +
           '<button type="button" class="vl-btn vl-btn-primary" id="ime-cheat-restart"> bắt đầu lại </button>' +

@@ -32,16 +32,16 @@
   var detailEventId = null;
 
   var CAT_HINT = {
-    vocab: " Từ vựng Đánh giá: có thể vượt qua từ sách phác thảo chọn nhiều List; Học viên từng cái List vượt ải, Tất cả thông qua mới tính hoàn thành. ",
-    part: " Cambridge IELTS thi đơn: trước chọn quyển và Test, lại câu Section / Passage (Luyện tập quy tắc, có thể tục làm). ",
+    vocab: " Đánh giá từ vựng: có thể chọn nhiều List từ sách từ vựng; học viên vượt ải từng List, đạt tất cả mới tính là hoàn thành. ",
+    part: " Luyện tập từng phần Cambridge IELTS: chọn sách và Test trước, sau đó chọn Section / Passage (luyện tập linh hoạt, có thể làm tiếp). ",
     qtype: " Nghe dạng bài: Chọn dạng bài và quyển, lại chia đừng phác thảo « Luyện tập » hoặc « Giải thích chi tiết » (có thể đồng thời phác thảo; Giải thích chi tiết không nhớ Điểm số, còn chưa xong thành). ",
     scene: " Nghe tình cảnh Luyện tập: chọn tình cảnh và quyển, lại câu Part (cả đoạn Luyện tập quy tắc). ",
     rqtype: " Đọc dạng bài Luyện tập: Chọn dạng bài và quyển, lại câu câu tổ (xuất ra nên tổ câu, văn chương vẫn là cả bài Passage). ",
     rscene: " Đọc tình cảnh Luyện tập: chọn tình cảnh và quyển, lại câu Passage (cả bài Luyện tập quy tắc). ",
     skill: " Thi thử từng kỹ năng: trước chọn quyển và Test, lại câu Đơn kỹ năng cả cuốn (cơ khảo thi Thi thử quy tắc). ",
     suite: " Thi thử trọn bộ: trước chọn quyển, lại câu một bộ Test Nghe + Đọc + Viết. ",
-    rsecret: " Đọc tuyệt mật bộ cuốn: phác thảo chọn cả cuốn bố trí. ",
-    lsecret: " Nghe tuyệt mật bộ cuốn: phác thảo chọn cả cuốn hoặc Section bố trí. "
+    rsecret: " Bộ đề Đọc đặc biệt: chọn cả bộ đề để giao bài. ",
+    lsecret: " Bộ đề Nghe đặc biệt: chọn cả bộ đề hoặc từng Section để giao bài. "
   };
 
   function cdtPackForCat(cat) {
@@ -405,7 +405,7 @@
 
   function showMsg(text, ok) {
     createMsg.textContent = text || "";
-    // ok===null → neutral (tuyên bố Vừa …); true→ok; false/omit with text→err
+    // ok===null → neutral (Đang xuất bản…); true→ok; false/omit with text→err
     var cls = "auth-msg";
     if (ok === true) cls += " auth-msg--ok";
     else if (ok === false || (text && ok!== null)) cls += " auth-msg--err";
@@ -442,7 +442,7 @@
     pickScene = "";
     pickDiff = "";
     var hint = document.getElementById("html-file-hint");
-    if (hint) hint.textContent = " thượng truyền(*upload) sau ưu tiên có hiệu lực; Học viên đem tại trạm trong mở ra làm bài. ";
+    if (hint) hint.textContent = " Tệp tải lên sẽ được ưu tiên áp dụng; học viên sẽ làm bài trực tiếp trên hệ thống. ";
     document.getElementById("f-type").value = "ASSIGNMENT";
     syncTypeUi();
     renderStudentList();
@@ -459,8 +459,8 @@
   }
 
   function exercisePrintLabel(xid, attachmentName) {
-    if (!xid && attachmentName) return " thượng truyền(*upload) Luyện tập: " + attachmentName;
-    if (String(xid).indexOf("upload-") === 0) return " thượng truyền(*upload) Luyện tập: " + (attachmentName || xid);
+    if (!xid && attachmentName) return " Bài tập tải lên: " + attachmentName;
+    if (String(xid).indexOf("upload-") === 0) return " Bài tập tải lên: " + (attachmentName || xid);
     var vLabel = vocabAssignLabel(xid);
     if (vLabel) return vLabel;
     var it = catalog.filter(function (c) { return c.id === xid; })[0]
@@ -483,7 +483,7 @@
       return (a.name || "").localeCompare(b.name || "", "zh");
     });
     var names = file
-      ? [" thượng truyền(*upload) Luyện tập: " + file.name]
+      ? [" Bài tập tải lên: " + file.name]
       : (body.linkedExerciseIds || []).map(function (xid) {
         return exercisePrintLabel(xid, body.htmlFileName);
       }).filter(Boolean);
@@ -890,7 +890,7 @@
     var emptyMsg = searching
       ? " không có thất phối Luyện tập "
       : (isVocabBrowse()
-        ? (shelfBooks.length? " nên từ sách / phân đoạn tạm thời chưa có List, đổi một quyển thử xem ": " từ kho Đang tải hoặc là chỗ trống ")
+        ? (shelfBooks.length? " nên từ sách / phân đoạn tạm thời chưa có List, đổi một quyển thử xem ": " Kho từ vựng đang tải hoặc đang trống ")
         : (isTaxonomyBrowse()
           ? " nên bộ lọc hạ tạm thời chưa có đề mục, đổi dạng bài / tình cảnh hoặc đổi một quyển thử xem "
           : (isCambridgeBrowse()? " nên quyển / Test hạ tạm thời chưa có nội dung, đổi một quyển thử xem ": " không có thất phối Luyện tập ")));
@@ -1090,7 +1090,7 @@
       }).join("");
       var exHtml = (ev.linkedExerciseIds || []).map(function (xid) {
         if (String(xid).indexOf("upload-") === 0) {
-          return "<li> thượng truyền(*upload) Luyện tập: " + esc(ev.attachmentName || xid) + "</li>";
+          return "<li> Bài tập tải lên: " + esc(ev.attachmentName || xid) + "</li>";
         }
         var vLabel = vocabAssignLabel(xid);
         if (vLabel) return "<li>" + esc(vLabel) + "</li>";
@@ -1115,7 +1115,7 @@
         (exHtml? "<h3> liên quan Luyện tập </h3><ul>" + exHtml + "</ul>" +
           "<p class=\"profile-hint\">" +
             (isVq
-              ? " Học viên tu tại Từ vựng Đánh giá Vừa vượt ải thông qua (không sai vượt qua 5 câu) sau, nhiệm vụ mới tính hoàn thành; không thông qua tu Làm lại. "
+              ? " Học viên cần vượt ải trong phần Đánh giá từ vựng (sai không quá 5 câu) thì nhiệm vụ mới tính là hoàn thành; nếu không đạt phải làm lại. "
               : " Học viên tu hoàn thành trở lên Tất cả Luyện tập sau, nhiệm vụ mới có thể tự động biến thành « Đã hoàn thành ». ") +
           "</p>": "") +
         "<h3> Học viên hoàn thành tình huống <span class=\"cal-detail__count\">" + doneN + "/" + totalN + " người đã hoàn thành </span></h3>" +
@@ -1342,11 +1342,11 @@
     var fileInput = document.getElementById("f-html");
     var file = fileInput && fileInput.files && fileInput.files[0];
     if (file && type!== "ASSIGNMENT") {
-      showMsg(" chỉ có Bài tập luyện tập có thể lên truyền HTML");
+      showMsg(" Chỉ bài tập luyện tập mới có thể tải lên tệp HTML");
       return;
     }
     if (file &&!/\.html?$/i.test(file.name)) {
-      showMsg(" chỉ hỗ trợ.html văn bản tài liệu ");
+      showMsg(" Chỉ hỗ trợ tệp định dạng .html ");
       return;
     }
     if (file && file.size > 2 * 1024 * 1024) {
@@ -1355,7 +1355,7 @@
     }
 
     function post(body) {
-      showMsg(" tuyên bố Vừa …", null);
+      showMsg(" Đang xuất bản…", null);
       return T.api("/api/calendar/events", { method: "POST", body: body })
         .then(function () {
           var n = targetStudentIds.length;
@@ -1372,12 +1372,12 @@
     var pack = type === "ASSIGNMENT" &&!file? cdtPackForCat(exerciseCat): "";
     if (pack === "vocab-quiz") {
       if (!linkedIds.length) {
-        showMsg(" mời ít nhất phác thảo chọn 1 List", false);
+        showMsg(" Vui lòng chọn ít nhất 1 List", false);
         return;
       }
       for (var vi = 0; vi < linkedIds.length; vi++) {
         if (!parseVocabRef(linkedIds[vi])) {
-          showMsg(" từ kho lựa chọn không có hiệu quả, mời một lần nữa phác thảo chọn List", false);
+          showMsg(" Lựa chọn kho từ vựng không hợp lệ, vui lòng chọn lại List", false);
           return;
         }
       }
@@ -1408,7 +1408,7 @@
         body.htmlFileName = file.name;
         post(body);
       };
-      reader.onerror = function () { showMsg(" đọc đến văn bản tài liệu thất bại "); };
+      reader.onerror = function () { showMsg(" Đọc tệp tài liệu thất bại "); };
       reader.readAsText(file);
       return;
     }
@@ -1422,7 +1422,7 @@
       var hint = document.getElementById("html-file-hint");
       if (!hint) return;
       if (!f) {
-        hint.textContent = " thượng truyền(*upload) sau ưu tiên có hiệu lực; Học viên đem tại trạm trong mở ra làm bài. cũng có thể phía dưới phác thảo chọn trang web hiện hữu Luyện tập. ";
+        hint.textContent = " Tệp tải lên sẽ được ưu tiên áp dụng; học viên sẽ làm bài trực tiếp trên hệ thống. cũng có thể chọn các bài tập có sẵn trên trang web ở bên dưới. ";
         return;
       }
       hint.textContent = " Đã chọn chọn: " + f.name + " (" + Math.round(f.size / 1024) + " KB) · đem ưu tiên có hiệu lực, phía dưới phác thảo tuyển tướng bị xem nhẹ ";

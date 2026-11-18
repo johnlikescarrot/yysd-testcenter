@@ -1,8 +1,8 @@
 # Xếp hạng Đại học Thế giới (YYSD)
 
-Next.js hữu ích,thiết thực, đeo lên tại `youyisida.com/rankings` (`basePath: /rankings`, cảng 3002).
+Ứng dụng Next.js, được gắn tại `youyisida.com/rankings` (`basePath: /rankings`, cổng 3002).
 
-## bản địa khai phát
+## Phát triển cục bộ
 
 ```bash
 cd rankings
@@ -12,16 +12,16 @@ npm run seed
 npm run dev
 ```
 
- mở ra http://localhost:3002/rankings
+Mở trình duyệt tại: http://localhost:3002/rankings
 
-## số liệu
+## Dữ liệu xếp hạng
 
-- `npm run seed`: thẻ giương THE/ARWU/US News + hợp nhất `data/raw/qs-official` QS thực bề ngoài → đạo nhập SQLite
-- `npm run fetch:qs`: dùng Chrome từ TopUniversities trảo QS World + ưu tiên ngành học (tất cả bảng tối đa trước 500)
-- `npm run build:qs`: chỉ trọng chạy chính thức JSON → editions hợp nhất
-- đồng thời QS đã đổi Website Games công khai bề ngoài; THE / mềm khoa / US News nhưng là có thể thay thế thẻ giương số liệu
+- `npm run seed`: Nạp dữ liệu mẫu THE / ARWU / US News + hợp nhất dữ liệu thực tế QS từ `data/raw/qs-official` → nhập vào SQLite.
+- `npm run fetch:qs`: Dùng Chrome để thu thập dữ liệu QS World từ TopUniversities + các môn học ưu tiên (tất cả các bảng lấy tối đa top 500).
+- `npm run build:qs`: Chỉ chạy lại quá trình xử lý tệp JSON chính thức → hợp nhất các phiên bản phát hành.
+- Đồng thời, QS đã thay đổi cấu trúc bảng công khai trên trang web chính thức; THE / ARWU (Shanghai Ranking) / US News hiện vẫn dùng dữ liệu mẫu thay thế.
 
-## kiểm tra
+## Kiểm tra
 
 ```bash
 npm run check

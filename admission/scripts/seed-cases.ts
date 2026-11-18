@@ -298,7 +298,7 @@ async function main() {
         backgroundTags: tags,
         admissionResult,
         year,
-        description: ` cởi mẫn án lệ: ${undergradSchool}${undergradMajor} bối cảnh, GPA ${gpa.toFixed(2)}, ${lang}${grePart}, nhãn hiệu ${tags.join("/")}, ${year} năm thân thỉnh ${school.country} ${school.name} ${school.program}, ${resultCn}. `,
+        description: ` Hồ sơ thực tế đã ẩn danh: ${undergradSchool}${undergradMajor} bối cảnh, GPA ${gpa.toFixed(2)}, ${lang}${grePart}, nhãn hiệu ${tags.join("/")}, ${year} năm thân thỉnh ${school.country} ${school.name} ${school.program}, ${resultCn}. `,
         source: "synthetic",
       });
     }

@@ -230,7 +230,7 @@ ROWS = [
  "n. lời răn, cách ngôn, khẩu hiệu của trường. school motto; live by a motto. ",
  [" lời răn ", " cách ngôn ", " khẩu hiệu của trường "],
  "school motto (khẩu hiệu của trường), live by a motto (theo như cách ngôn sinh hoạt) ",
- "Our school motto is 'Never give up'.", " chúng ta khẩu hiệu của trường là “ không bao giờ buông tha cho ”. ",
+ "Our school motto is 'Never give up'.", " chúng ta khẩu hiệu của trường là “ không bao giờ từ bỏ ”. ",
  " tiếng ý motto → ngắn gọn đề từ ",
  ["slogan", "saying"], [], " lời răn ", " sân trường "),
 ("award", "/əˈwɔːd/ · /əˈwɔːrd/", "n. / v.",

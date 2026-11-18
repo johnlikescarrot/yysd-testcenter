@@ -134,8 +134,8 @@ export async function matchProgramsForSchool(
     if (verified.length) {
       return {
         reply:
-          " có thể rồi hãy nói cụ thể một chút sao? tỷ như: số liệu khoa học / trí tuệ nhân tạo / Kinh doanh phân tích / công trình Quản trị. phía dưới trước nhóm ra cai giáo đã hạch nghiệm nghiên cứu sinh hạng mục, tạo điều kiện cho bạn xem (cai giáo chưa chắc có truyền thống « Máy tính MS» cởi mở hạng mục). ",
-        programs: verified.slice(0, limit).map((p) => toHit(p, " cai giáo đã hạch nghiệm hạng mục ")),
+          "Bạn có thể chia sẻ cụ thể hơn một chút được không? Ví dụ: Khoa học dữ liệu / Trí tuệ nhân tạo / Phân tích kinh doanh / Quản lý kỹ thuật. Dưới đây là các chương trình sau đại học đã được kiểm chứng của trường này để bạn tham khảo (trường có thể không mở chương trình Thạc sĩ Khoa học Máy tính truyền thống).",
+        programs: verified.slice(0, limit).map((p) => toHit(p, " Chương trình đã kiểm chứng của trường này ")),
         needClarify: true,
       };
     }
@@ -150,10 +150,10 @@ export async function matchProgramsForSchool(
   const hits = scored.filter((s) => s.score > 0).slice(0, limit);
   const use = hits.length? hits: scored.slice(0, Math.min(5, scored.length));
   const mapped = use.map(({ p, score }) =>
-    toHit(p, score > 0? " cùng ngươi hứng thú miêu tả xứng đôi ": " cai giáo đứng đầu nghiên cứu sinh hạng mục (tương quan độ bình thường, cung cấp xem) ")
+    toHit(p, score > 0? " Phù hợp với mô tả sở thích của bạn ": " Chương trình sau đại học hàng đầu của trường này (tương quan độ bình thường, cung cấp xem) ")
   );
 
-  let reply = ` dựa theo hứng thú của bạn ${background? " và bối cảnh ": ""}, tôi tại «${schoolName}» hạng mục trong kho sàng lọc phía dưới tương quan chuyên nghiệp. mời kết hợp thích xứng nhắc nhở Xem chi tiết, phù hợp có thể trực tiếp thân thỉnh ước định. `;
+  let reply = ` dựa theo hứng thú của bạn ${background? " và bối cảnh ": ""}, tôi tại «${schoolName}» hạng mục trong kho sàng lọc phía dưới tương quan chuyên nghiệp. mời kết hợp thích xứng nhắc nhở Xem chi tiết, phù hợp có thể trực tiếp đánh giá hồ sơ. `;
 
   try {
     const raw = await qwenChat(
@@ -161,7 +161,7 @@ export async function matchProgramsForSchool(
         {
           role: "system",
           content:
-            " ngươi là du học chọn trường học cố vấn trợ thủ. chỉ có thể căn cứ vào quy định sẵn hạng mục liệt biểu List làm Đề xuất giải thích, cấm lập liệt biểu List bên ngoài chuyên nghiệp. như cung cấp thân thỉnh bối cảnh, có thể giản yếu đề cập GPA/ ngôn ngữ và ngưỡng cửa xứng đôi quan hệ, nhưng không nên lập không cho ra điểm. dùng tiếng trung giản thể, 2–4 câu, ngữ khí chuyên nghiệp ngắn gọn. ",
+            " Bạn là trợ lý tư vấn chọn trường du học. chỉ có thể căn cứ vào quy định sẵn hạng mục liệt biểu List làm Đề xuất giải thích, cấm lập liệt biểu List bên ngoài chuyên nghiệp. như cung cấp thân thỉnh bối cảnh, có thể giản yếu đề cập GPA/ ngôn ngữ và ngưỡng cửa xứng đôi quan hệ, nhưng không nên lập không cho ra điểm. dùng tiếng trung giản thể, 2–4 câu, ngữ khí chuyên nghiệp ngắn gọn. ",
         },
         {
           role: "user",

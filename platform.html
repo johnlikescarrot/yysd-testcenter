@@ -76,7 +76,7 @@
         <div class="minimal-crumb"><a href="teacher.html"> Học viên của tôi</a> <span class="crumb-sep" aria-hidden="true">/</span> Bảng điều khiển hệ thống </div>
         <div class="minimal-eyebrow">PLATFORM</div>
         <h1>Bảng điều khiển hệ thống</h1>
-        <p class="minimal-page-desc">mở tài khoản, thiết tiểu địa chỉ Internet và Logo, Mã khóa đăng ký và số lần, đến kỳ màn ngừng, công tác thống kê và phục vụ khách hàng Vào học. thu khoản còn đang tuyến hạ hoàn thành. vượt qua quản trướng số số đuôi 4473. như nhìn không tới liệt biểu List mời trước tiên lui ra lại Đăng nhập. </p>
+        <p class="minimal-page-desc">Quản lý mở tài khoản, tên miền con và logo thương hiệu, mã kích hoạt đăng ký, gia hạn thời hạn, thống kê vận hành và hỗ trợ học viên. Thanh toán hiện được xử lý ngoại tuyến. Tài khoản siêu quản trị có số đuôi 4473. Nếu không nhìn thấy danh sách, vui lòng đăng xuất rồi đăng nhập lại. </p>
       </section>
 
       <main class="minimal-main plat">
@@ -84,41 +84,41 @@
         <p class="plat-msg" id="plat-msg" role="status"></p>
 
         <section class="plat-form" id="plat-tiku">
-          <h2>Ngân hàng đề trung tâm</h2>
-          <p class="minimal-page-desc">phác thảo chọn có thể đi vào tiku.youyisida.com Giáo viên. ra khỏi miệng IP {chữ trắng} đơn: chỉ có những màng lưới này có thể Đăng nhập Giáo viên đầu. thiết bị này kiểm tra thủy chung cho đi. </p>
+          <h2>Trung tâm ngân hàng đề thi</h2>
+          <p class="minimal-page-desc">Chọn giáo viên được phép truy cập tiku.youyisida.com. Danh sách trắng IP truy cập: chỉ các địa chỉ mạng này mới có thể đăng nhập cổng giáo viên. Thiết bị kiểm tra này luôn được cấp quyền. </p>
           <div id="tiku-teachers"></div>
           <div class="row" style="margin-top:.75rem">
-            <label class="auth-field"><span> cho phép ra khỏi miệng IP</span><input id="tiku-ip" placeholder="ví dụ 1.2.3.4 hoặc mạng lưới đoạn 1.2.3.0/24" maxlength="80"></label>
-            <label class="auth-field"><span> ghi chú </span><input id="tiku-ip-note" placeholder="văn phòng" maxlength="80"></label>
+            <label class="auth-field"><span> IP mạng được phép truy cập </span><input id="tiku-ip" placeholder="Ví dụ: 1.2.3.4 hoặc dải mạng 1.2.3.0/24" maxlength="80"></label>
+            <label class="auth-field"><span> Ghi chú </span><input id="tiku-ip-note" placeholder="Văn phòng" maxlength="80"></label>
           </div>
-          <button type="button" class="btn btn--primary" id="tiku-ip-add">tăng thêm IP</button>
+          <button type="button" class="btn btn--primary" id="tiku-ip-add">Thêm IP</button>
           <ul id="tiku-ips"></ul>
         </section>
 
         <section class="plat-form" id="plat-maint">
-          <h2>toàn bộ đứng bảo vệ</h2>
-          <p class="minimal-page-desc">sau khi mở ra, chỉ có 15901754473, 18956023079 có thể đi vào trang web, những người khác chỉ thấy đổi mới Vừa trang web. đổi xong nhớ rõ tắt đi. </p>
-          <button type="button" class="btn btn--primary" id="maint-toggle">mở ra bảo vệ</button>
+          <h2>Bảo trì toàn hệ thống</h2>
+          <p class="minimal-page-desc">Sau khi bật chế độ bảo trì, chỉ các số quản trị viên được chỉ định mới có thể truy cập hệ thống, người dùng khác sẽ thấy thông báo bảo trì. Sau khi cập nhật xong, hãy nhớ tắt chế độ này. </p>
+          <button type="button" class="btn btn--primary" id="maint-toggle">Bật chế độ bảo trì</button>
         </section>
 
         <section class="plat-form" id="plat-create">
-          <h2>mới xây Giáo dục công ty</h2>
+          <h2>Thêm tổ chức giáo dục mới</h2>
           <div class="row">
-            <label class="auth-field"><span> tên công ty </span><input id="c-name" placeholder="ví dụ: ngôi sao Giáo dục" maxlength="80"></label>
-            <label class="auth-field"><span> tiểu địa chỉ Internet slug</span><input id="c-slug" placeholder="ví dụ: xingchen → xingchen.youyisida.com" maxlength="32"></label>
+            <label class="auth-field"><span> Tên tổ chức/cơ sở </span><input id="c-name" placeholder="Ví dụ: Anh ngữ Ngôi Sao" maxlength="80"></label>
+            <label class="auth-field"><span> Tên miền con (slug) </span><input id="c-slug" placeholder="Ví dụ: ngoisao → ngoisao.youyisida.com" maxlength="32"></label>
           </div>
           <div class="row">
-            <label class="auth-field"><span> Quản trị viên Số điện thoại </span><input id="c-admin" type="tel" maxlength="11" placeholder="tu đã là Giáo viên tài khoản"></label>
-            <label class="auth-field"><span> đến kỳ ngày </span><input id="c-expires" type="date"></label>
+            <label class="auth-field"><span> Số điện thoại quản trị viên </span><input id="c-admin" type="tel" maxlength="11" placeholder="Phải là tài khoản giáo viên đã có"></label>
+            <label class="auth-field"><span> Ngày hết hạn </span><input id="c-expires" type="date"></label>
           </div>
-          <label class="auth-field"><span> hợp đồng ghi chú (có thể chọn) </span><input id="c-note" maxlength="200" placeholder="hợp đồng số / ghi chú"></label>
-          <button type="button" class="btn btn--primary" id="c-submit">sáng tạo</button>
+          <label class="auth-field"><span> Ghi chú hợp đồng (tùy chọn) </span><input id="c-note" maxlength="200" placeholder="Số hợp đồng / ghi chú"></label>
+          <button type="button" class="btn btn--primary" id="c-submit">Tạo tổ chức</button>
         </section>
 
         <div class="plat-grid" id="plat-list"></div>
 
         <section class="plat-audit">
-          <h2>gần nhất thao tác nhật ký</h2>
+          <h2>Nhật ký thao tác gần đây</h2>
           <ul id="plat-audit-list"></ul>
         </section>
       </main>
@@ -127,21 +127,21 @@
 
   <dialog id="plat-edit">
     <form method="dialog" id="plat-edit-form" style="padding:1rem;min-width:min(92vw,420px)">
-      <h2 style="margin-top:0">biên tập cơ cấu</h2>
+      <h2 style="margin-top:0">Chỉnh sửa thông tin cơ sở</h2>
       <input type="hidden" id="e-id">
-      <label class="auth-field"><span> tên công ty </span><input id="e-name" maxlength="80"></label>
-      <label class="auth-field"><span> tiểu địa chỉ Internet slug</span><input id="e-slug" maxlength="32"></label>
-      <label class="auth-field"><span> Quản trị viên Số điện thoại </span><input id="e-admin" type="tel" maxlength="11"></label>
-      <label class="auth-field"><span> đến kỳ ngày </span><input id="e-expires" type="date"></label>
+      <label class="auth-field"><span> Tên cơ sở/tổ chức </span><input id="e-name" maxlength="80"></label>
+      <label class="auth-field"><span> Tên miền con (slug) </span><input id="e-slug" maxlength="32"></label>
+      <label class="auth-field"><span> Số điện thoại quản trị viên </span><input id="e-admin" type="tel" maxlength="11"></label>
+      <label class="auth-field"><span> Ngày hết hạn </span><input id="e-expires" type="date"></label>
       <label class="auth-field"><span> Trạng thái </span>
         <select id="e-status">
-          <option value="trial">dùng thử</option>
-          <option value="active">bình thường</option>
-          <option value="suspended">Tạm ngưng</option>
+          <option value="trial">Dùng thử</option>
+          <option value="active">Đang hoạt động</option>
+          <option value="suspended">Tạm ngừng</option>
         </select>
       </label>
-      <label class="auth-field"><span> hợp đồng ghi chú </span><input id="e-note" maxlength="200"></label>
-      <label class="auth-field"><span>Logo hình ảnh </span><input id="e-logo" type="file" accept="image/*"></label>
+      <label class="auth-field"><span> Ghi chú hợp đồng </span><input id="e-note" maxlength="200"></label>
+      <label class="auth-field"><span> Tệp hình ảnh Logo </span><input id="e-logo" type="file" accept="image/*"></label>
       <div style="display:flex;gap:.5rem;margin-top:.75rem">
         <button type="submit" class="btn btn--primary" value="save">Lưu</button>
         <button type="submit" class="btn btn--ghost" value="cancel">Hủy</button>
@@ -151,20 +151,20 @@
 
   <dialog id="plat-keys">
     <form method="dialog" id="plat-keys-form" style="padding:1rem;min-width:min(94vw,520px)">
-      <h2 style="margin-top:0">Mã khóa đăng ký</h2>
+      <h2 style="margin-top:0">Mã kích hoạt đăng ký</h2>
       <p style="margin:0 0 1rem;color:#666;font-size:.9rem" id="k-org-name"></p>
-      <p style="margin:0 0 1rem;font-size:.85rem;color:#555;line-height:1.5">mỗi đứng ba loại Mã khóa tất cả một chút. Đăng ký thành công khấu trừ 1 lần; số lần dùng hết sau cần lúc này thêm lần hoặc Tạo mới Mã khóa. văn bản rõ ràng có thể phục chế chia hộ khách.
+      <p style="margin:0 0 1rem;font-size:.85rem;color:#555;line-height:1.5">Mỗi cơ sở có ba loại mã kích hoạt riêng biệt. Mỗi lần học viên/giáo viên đăng ký thành công sẽ trừ 1 lượt. Khi hết lượt, bạn có thể cộng thêm lượt hoặc tạo mã mới. Có thể sao chép văn bản để gửi cho học viên/giáo viên.
       </p>
       <div class="plat-key-row">
         <strong>Học viên</strong>
-        <label class="auth-field"><span> Mã khóa </span>
-          <input id="k-student-key" maxlength="120" placeholder="ví dụ STU-xxxx">
+        <label class="auth-field"><span> Mã kích hoạt </span>
+          <input id="k-student-key" maxlength="120" placeholder="Ví dụ: STU-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
           <label class="auth-field" style="flex:1;min-width:100px"><span> Giới hạn lượt dùng </span>
             <input id="k-student-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="student">+10 lần</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="student">+10 lượt</button>
           <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="student">Tạo mới</button>
         </div>
         <p class="plat-key-used" id="k-student-used">Đã dùng 0 / 0</p>
@@ -172,14 +172,14 @@
       </div>
       <div class="plat-key-row">
         <strong>Giáo viên</strong>
-        <label class="auth-field"><span> Mã khóa </span>
-          <input id="k-teacher-key" maxlength="120" placeholder="ví dụ TCH-xxxx">
+        <label class="auth-field"><span> Mã kích hoạt </span>
+          <input id="k-teacher-key" maxlength="120" placeholder="Ví dụ: TCH-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
           <label class="auth-field" style="flex:1;min-width:100px"><span> Giới hạn lượt dùng </span>
             <input id="k-teacher-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="teacher">+10 lần</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="teacher">+10 lượt</button>
           <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="teacher">Tạo mới</button>
         </div>
         <p class="plat-key-used" id="k-teacher-used">Đã dùng 0 / 0</p>
@@ -187,14 +187,14 @@
       </div>
       <div class="plat-key-row">
         <strong>Quản trị viên</strong>
-        <label class="auth-field"><span> Mã khóa </span>
-          <input id="k-org_admin-key" maxlength="120" placeholder="ví dụ ADM-xxxx">
+        <label class="auth-field"><span> Mã kích hoạt </span>
+          <input id="k-org_admin-key" maxlength="120" placeholder="Ví dụ: ADM-xxxx">
         </label>
         <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:end">
           <label class="auth-field" style="flex:1;min-width:100px"><span> Giới hạn lượt dùng </span>
             <input id="k-org_admin-max" type="number" min="0" step="1">
           </label>
-          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="org_admin">+10 lần</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-k-act="add" data-role="org_admin">+10 lượt</button>
           <button type="button" class="btn btn--ghost btn--sm" data-k-act="gen" data-role="org_admin">Tạo mới</button>
         </div>
         <p class="plat-key-used" id="k-org_admin-used">Đã dùng 0 / 0</p>
