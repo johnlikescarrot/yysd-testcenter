@@ -48,3 +48,12 @@ library/study/vocab-themes/raw/wd_cache/
 
 # Unused oversized Koolearn exam book dumps (abroad_* used instead)
 library/study/vocab-themes/raw/exam__*_book.json
+
+# Node tooling, coverage output and generated virtual environments
+node_modules/
+coverage/
+.nyc_output/
+__pycache__/
+*.pyc
+.venv/
+tools/data/*.tmp

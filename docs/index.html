@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luyện thi IELTS cùng Cú Luyện | Trung tâm YYSD</title>
+<meta name="description" content="Ứng dụng luyện thi IELTS hoàn toàn bằng tiếng Việt: lộ trình Nghe – Đọc – Viết – Nói, chuỗi ngày học, điểm kinh nghiệm, giải đấu, ôn tập ngắt quãng và thư viện tài liệu PDF có trích dẫn học thuật từ Google Scholar.">
+<meta name="theme-color" content="#14513d">
+<link rel="canonical" href="https://johnlikescarrot.github.io/yysd-testcenter/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Chuyển tới nội dung chính</a>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="./" aria-label="Trang chủ Luyện thi IELTS YYSD">
+      <svg class="brand__mark" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="23" fill="#14513d"></circle>
+        <path d="M12 20c0-7 5-12 12-12s12 5 12 12v9c0 7-5 12-12 12S12 36 12 29z" fill="#9ae6b4"></path>
+        <circle cx="18" cy="22" r="4.5" fill="#14213d"></circle><circle cx="30" cy="22" r="4.5" fill="#14213d"></circle>
+        <path d="M20 33l4-4 4 4" fill="none" stroke="#14213d" stroke-width="2.5" stroke-linecap="round"></path>
+      </svg>
+      <span class="brand__text"><strong>Cú Luyện</strong><small>Luyện thi IELTS · YYSD</small></span>
+    </a>
+    <nav class="topnav" aria-label="Điều hướng chính">
+      <a href="#hoc" aria-current="page">Học</a>
+      <a href="#lo-trinh">Lộ trình</a>
+      <a href="#giai-dau">Giải đấu</a>
+      <a href="#huy-hieu">Huy hiệu</a>
+      <a href="#tai-lieu">Tài liệu PDF</a>
+      <a href="#thong-ke">Thống kê</a>
+    </nav>
+    <button class="btn btn--ghost" type="button" data-action="theme" aria-pressed="false">Đổi giao diện</button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">Phiên bản tiếng Việt · Cập nhật toàn diện 2026</p>
+      <h1 id="hero-title">Luyện IELTS mỗi ngày, tiến bộ rõ rệt từng giờ</h1>
+      <p class="lead">Bốn kỹ năng Nghe, Đọc, Viết, Nói trong một lộ trình ngắn gọn. Bài học tương tác phản hồi ngay, chuỗi ngày học giữ nhịp, điểm kinh nghiệm và giải đấu tạo động lực, còn ôn tập ngắt quãng giúp nhớ lâu hơn.</p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" type="button" data-action="start">Bắt đầu bài học hôm nay</button>
+        <a class="btn btn--secondary" href="#tai-lieu">Xem thư viện tài liệu</a>
+      </div>
+      <p class="hero__note">Miễn phí, không quảng cáo, hoạt động ngoại tuyến và không gửi dữ liệu của bạn đi đâu cả.</p>
+    </div>
+    <aside class="hero__stats" aria-label="Tiến độ của bạn">
+      <h2>Thẻ tiến độ</h2>
+      <dl class="stat-grid">
+        <div class="stat"><dt>Chuỗi ngày</dt><dd><span id="stat-streak">0</span> ngày</dd></div>
+        <div class="stat"><dt>Điểm kinh nghiệm</dt><dd><span id="stat-xp">0</span> XP</dd></div>
+        <div class="stat"><dt>Cấp độ</dt><dd>Cấp <span id="stat-level">1</span></dd></div>
+        <div class="stat"><dt>Năng lượng</dt><dd><span id="stat-hearts">5</span>/5</dd></div>
+        <div class="stat"><dt>Mục tiêu ngày</dt><dd><span id="stat-goal">50</span> XP</dd></div>
+        <div class="stat"><dt>Điểm ước tính</dt><dd><span id="stat-band">0.0</span> IELTS</dd></div>
+      </dl>
+      <div class="goal">
+        <label for="goal-bar">Hoàn thành mục tiêu hôm nay</label>
+        <progress id="goal-bar" max="100" value="0">0%</progress>
+        <span id="goal-text">0 / 50 XP</span>
+      </div>
+      <button class="btn btn--secondary btn--small" type="button" data-action="goal">Đổi mục tiêu</button>
+    </aside>
+  </section>
+
+  <section id="hoc" class="panel" aria-labelledby="hoc-title">
+    <div class="panel__head">
+      <div><p class="eyebrow">Bài học tương tác</p><h2 id="hoc-title">Luyện tập ngay</h2></div>
+      <span class="pill" id="lesson-status">Sẵn sàng</span>
+    </div>
+    <div id="lesson-area" class="lesson">
+      <p class="lesson__intro">Nhấn <strong>Bắt đầu bài học hôm nay</strong> để mở câu hỏi đầu tiên. Mỗi câu trả lời đúng được điểm kinh nghiệm; câu sai được giải thích chi tiết bằng tiếng Việt và đưa vào hàng đợi ôn tập.</p>
+      <ol class="lesson__steps">
+        <li>Đọc câu hỏi và chọn đáp án.</li>
+        <li>Xem giải thích, ghi nhận điểm kinh nghiệm.</li>
+        <li>Chuyển câu tiếp theo hoặc ôn tập các câu cần nhớ lại.</li>
+      </ol>
+    </div>
+    <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+    <div class="row-actions">
+      <button class="btn btn--primary" type="button" data-action="start">Bắt đầu</button>
+      <button class="btn btn--secondary" type="button" data-action="review">Ôn tập ngắt quãng</button>
+      <button class="btn btn--secondary" type="button" data-action="heart">Luyện thêm để hồi năng lượng</button>
+    </div>
+  </section>
+
+  <section id="lo-trinh" class="panel" aria-labelledby="lo-trinh-title">
+    <p class="eyebrow">Lộ trình tuyến tính</p>
+    <h2 id="lo-trinh-title">Tám đơn vị, bốn kỹ năng</h2>
+    <p>Cấu trúc đường học tuyến tính giúp người mới không bối rối: mỗi đơn vị mở khoá sau đơn vị trước, giống cách các ứng dụng học ngôn ngữ hàng đầu tổ chức khoá học.</p>
+    <div id="unit-list" class="units"></div>
+    <h3>Thang điểm năng lực</h3>
+    <p>Điểm trong ứng dụng được quy đổi sang khung tham chiếu châu Âu và dải điểm IELTS để bạn biết mình đang ở đâu.</p>
+    <div class="table-scroll">
+      <table>
+        <caption>Quy đổi điểm Cú Luyện sang CEFR và IELTS</caption>
+        <thead><tr><th scope="col">Điểm</th><th scope="col">CEFR</th><th scope="col">IELTS ước tính</th><th scope="col">Bạn có thể</th></tr></thead>
+        <tbody>
+          <tr><td>0–29</td><td>A1</td><td>2.5–3.5</td><td>Hiểu câu quen thuộc, trả lời câu hỏi đơn giản.</td></tr>
+          <tr><td>30–59</td><td>A2</td><td>4.0–4.5</td><td>Trò chuyện về chủ đề quen thuộc, đọc thông báo ngắn.</td></tr>
+          <tr><td>60–79</td><td>B1 sớm</td><td>5.0–5.5</td><td>Xử lý tình huống khi đi lại, hỏi đường, đặt chỗ.</td></tr>
+          <tr><td>80–99</td><td>B1 cao</td><td>6.0</td><td>Kể chuyện, nêu ý kiến, xử lý hầu hết tình huống hằng ngày.</td></tr>
+          <tr><td>100–114</td><td>B2 sớm</td><td>6.5</td><td>Thảo luận sở thích, hiểu tin tức, phim và chuyện đùa.</td></tr>
+          <tr><td>115–129</td><td>B2 cao</td><td>7.0–7.5</td><td>Dùng tiếng Anh trong bối cảnh học thuật và công việc.</td></tr>
+          <tr><td>130–160</td><td>C1–C2</td><td>8.0–9.0</td><td>Hiểu hầu hết điều nghe hoặc đọc, diễn đạt sắc thái tinh tế.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="giai-dau" class="panel" aria-labelledby="giai-dau-title">
+    <p class="eyebrow">Giải đấu tuần</p>
+    <h2 id="giai-dau-title">Bảng xếp hạng và bạn bè</h2>
+    <p>Mỗi tuần bạn được xếp vào một nhóm tối đa 30 người. Thứ hạng dựa trên điểm kinh nghiệm trong tuần; chuỗi bạn bè giúp cả nhóm giữ nhịp học.</p>
+    <p>Hạng hiện tại: <strong id="league-name">Đồng</strong> · <button class="btn btn--link" type="button" data-action="friend">Bật chuỗi bạn bè</button></p>
+    <div class="table-scroll">
+      <table>
+        <caption>Bảng xếp hạng giải đấu tuần này</caption>
+        <thead><tr><th scope="col">Hạng</th><th scope="col">Người học</th><th scope="col">XP tuần</th><th scope="col">Chuỗi</th></tr></thead>
+        <tbody id="league-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="huy-hieu" class="panel" aria-labelledby="huy-hieu-title">
+    <p class="eyebrow">Thành tích</p>
+    <h2 id="huy-hieu-title">Huy hiệu và phần thưởng</h2>
+    <p>Huy hiệu ghi nhận những cột mốc cụ thể: giữ chuỗi, hoàn thành mục tiêu, trả lời chính xác liên tục và ôn tập đều đặn.</p>
+    <ul id="badge-list" class="badges"></ul>
+    <h3>Nhân vật đồng hành</h3>
+    <p>Cú Luyện là linh vật xanh lá của ứng dụng. Cú xuất hiện ở mỗi bài học để nhắc nhở nhẹ nhàng, đưa gợi ý và ăn mừng khi bạn hoàn thành mục tiêu — không gây áp lực, không làm gián đoạn việc học.</p>
+  </section>
+
+  <section id="tai-lieu" class="panel" aria-labelledby="tai-lieu-title">
+    <p class="eyebrow">Thư viện học thuật</p>
+    <h2 id="tai-lieu-title">Tài liệu PDF có trích dẫn Google Scholar</h2>
+    <p>Mỗi tài liệu được biên soạn bằng tiếng Việt, có phần <strong>Cơ sở khoa học</strong> với đường dẫn tới <span lang="en">scholar.google.com</span> cho từng công trình. Toàn bộ thư viện có hơn 100 lượt trích dẫn học thuật, được kiểm chứng bằng script tự động.</p>
+    <ul id="pdf-list" class="pdfs"></ul>
+    <p><a href="tai-lieu/index.html">Mở danh mục tài liệu đầy đủ</a> · <a href="nghien-cuu/duolingo-va-ielts.html">Đọc báo cáo nghiên cứu về mô hình học gamification</a></p>
+  </section>
+
+  <section id="thong-ke" class="panel" aria-labelledby="thong-ke-title">
+    <p class="eyebrow">Dữ liệu của riêng bạn</p>
+    <h2 id="thong-ke-title">Thống kê và cài đặt</h2>
+    <dl class="stat-grid">
+      <div class="stat"><dt>Câu đã trả lời</dt><dd><span id="stat-answered">0</span></dd></div>
+      <div class="stat"><dt>Tỉ lệ đúng</dt><dd><span id="stat-accuracy">0</span>%</dd></div>
+      <div class="stat"><dt>Thẻ cần ôn</dt><dd><span id="stat-due">0</span></dd></div>
+      <div class="stat"><dt>Ngày học cuối</dt><dd><span id="stat-lastday">Chưa có</span></dd></div>
+    </dl>
+    <h3>Ưu tiên học tập</h3>
+    <p><button class="btn btn--secondary" type="button" data-action="goal">Chu kỳ mục tiêu 10 · 20 · 50 XP</button></p>
+    <p><button class="btn btn--ghost" type="button" data-action="reset-open">Đặt lại tiến độ</button></p>
+    <div id="reset-dialog" class="dialog" hidden>
+      <p>Bạn có chắc muốn đặt lại toàn bộ tiến độ trên thiết bị này không?</p>
+      <button class="btn btn--primary" type="button" data-action="reset-yes">Đặt lại</button>
+      <button class="btn btn--secondary" type="button" data-action="reset-no">Giữ nguyên</button>
+    </div>
+    <h3>Câu hỏi thường gặp</h3>
+    <details><summary>Ứng dụng có lưu dữ liệu trên máy chủ không?</summary><p>Không. Tiến độ được lưu trong bộ nhớ cục bộ của trình duyệt. Bạn có thể xoá bất cứ lúc nào bằng nút đặt lại.</p></details>
+    <details><summary>Ôn tập ngắt quãng hoạt động thế nào?</summary><p>Mỗi câu trả lời tạo một thẻ ghi nhớ. Trả lời đúng thì khoảng cách ôn tập dài dần; trả lời sai thì thẻ quay lại ôn ngay ngày hôm sau. Mô hình lấy cảm hứng từ lịch Pimsleur, hồi quy chu kỳ bán rã và các nghiên cứu về thực hành phân tán.</p></details>
+    <details><summary>Tài liệu PDF lấy nguồn từ đâu?</summary><p>Từ các công trình về khảo thí ngôn ngữ, tâm lý học nhận thức, học tập trên thiết bị di động và gamification; mỗi trích dẫn kèm liên kết tìm kiếm trên Google Scholar.</p></details>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Trung tâm YYSD · Ứng dụng luyện thi IELTS phiên bản tiếng Việt.</p>
+    <p><a href="robots.txt">Robots</a> · <a href="sitemap.xml">Sơ đồ trang</a> · <a href="nghien-cuu/duolingo-va-ielts.html">Nghiên cứu</a></p>
+  </div>
+</footer>
+</body>
+</html>
