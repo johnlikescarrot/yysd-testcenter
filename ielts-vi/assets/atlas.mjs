@@ -8,7 +8,7 @@ import {
   summary,
 } from "./progress.mjs";
 
-const icon = (name, cls = "") =>
+const icon = (name, cls) =>
   `<svg class="${cls}" aria-hidden="true"><use href="assets/marks.svg#${name}"/></svg>`;
 const filters = [["all", "Tất cả"], ...Object.entries(skills)];
 const weekdays = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
@@ -36,7 +36,7 @@ export function mount(doc, storage, now) {
     el("next-title").textContent = next.title;
     el("next-note").textContent = next.subtitle;
     el("next-tag").textContent =
-      `${String(lessons.indexOf(next) + 1).padStart(2, "0")} / 08 · ${next.skill.toUpperCase()}`;
+      `${String(lessons.indexOf(next) + 1).padStart(2, "0")} / ${String(lessons.length).padStart(2, "0")} · ${next.skill.toUpperCase()}`;
     el("week").innerHTML = week
       .map((done, i) => {
         const label = weekdays[(date.getDay() + i + 1) % 7];

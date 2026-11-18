@@ -55,6 +55,10 @@ select:focus-visible {
   outline-offset: 4px;
 }
 svg {
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   width: 20px;
   height: 20px;
   display: inline-block;

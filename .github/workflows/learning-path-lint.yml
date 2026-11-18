@@ -26,6 +26,7 @@ jobs:
         env:
           USE_FIND_ALGORITHM: true
           MULTI_STATUS: false
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           CREATE_LOG_FILE: true
           VALIDATE_ALL_CODEBASE: true
           FILTER_REGEX_INCLUDE: '(^|/)(ielts-vi/|\.github/workflows/learning-path-)'
