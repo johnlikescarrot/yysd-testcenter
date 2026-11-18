@@ -715,7 +715,7 @@ const TEST = {
           "lines": [
             {
               "plain": true,
-              "html": "The probe transmitted pictures of both <Q n=\"33\"> and <Q n=\"34\"> and then left the <Q n=\"35\">. The freezing temperatures were found to have a negative effect on parts of the space probe. Scientists feared that both the <span class=\"qnum-badge\">36</span><input type=\"text\" id=\"Q36a\" autocomplete=\"off\"> and <span class=\"qnum-badge\">36</span><input type=\"text\" id=\"Q36b\" autocomplete=\"off\"> were about to stop working. The only hope was to tell the probe to replace them with <Q n=\"37\"> but distance made communication with the probe difficult."
+              "html": "The probe transmitted pictures of both <Q n=\"33\"> and <Q n=\"34\"> and then left the <Q n=\"35\">. The freezing temperatures were found to have a negative effect on parts of the space probe. Scientists feared that both the <span class=\"qnum-badge\">36</span><input type=\"text\" id=\"Q36a\" aria-label=\"Câu 36, ô đầu\" autocomplete=\"off\"> and <span class=\"qnum-badge\">36</span><input type=\"text\" id=\"Q36b\" aria-label=\"Câu 36, ô sau\" autocomplete=\"off\"> were about to stop working. The only hope was to tell the probe to replace them with <Q n=\"37\"> but distance made communication with the probe difficult."
             }
           ],
           "questions": [
@@ -941,7 +941,10 @@ function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+
 
 /* Chấm bài */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
-function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
+function readAns(q){
+  const a=document.getElementById(q.id+'a'), b=document.getElementById(q.id+'b');
+  if(a && b) return [a.value.trim(), b.value.trim()].filter(Boolean).join(' ');
+  const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
 
 function confirmSubmit(){

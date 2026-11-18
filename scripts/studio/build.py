@@ -91,12 +91,15 @@ def build():
         shutil.rmtree(OUT)
     OUT.mkdir()
     shutil.copytree(ROOT/'studio', OUT/'studio')
+    # Ship the small, first-paint stylesheet with each hub entry point.
+    style = '<style>' + (ROOT/'studio/atlas.css').read_text() + '</style>'
+    css_link = '<link rel="stylesheet" href="studio/atlas.css">'
     for name in ['index.html', 'atlas.html']:
-        shutil.copyfile(ROOT/'atlas.html', OUT/name)
+        (OUT/name).write_text((ROOT/'atlas.html').read_text().replace(css_link, style))
     page = library_page(books)
     if page != (ROOT/'atlas-library.html').read_text():
         raise ValueError('Regenerate atlas-library.html: python3 scripts/studio/build.py --catalog')
-    (OUT/'atlas-library.html').write_text(page)
+    (OUT/'atlas-library.html').write_text(page.replace(css_link, style))
     papers = [p for items in books.values() for _, _, p in items]
     papers.append(Path('library/practice/ielts/sample-academic-reading-1.html'))
     for p in papers:

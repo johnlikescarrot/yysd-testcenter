@@ -75,6 +75,14 @@ try {
       categories.map((k) => [k, lhr.categories[k].score * 100]),
     );
     console.log(route, summary[route]);
+    if (
+      process.env.GITHUB_ACTIONS &&
+      categories.some((k) => lhr.categories[k].score !== 1)
+    ) {
+      console.error(
+        `::error title=Lighthouse ${route}::${JSON.stringify(summary[route])}`,
+      );
+    }
     for (const category of categories) {
       const { auditRefs, score } = lhr.categories[category];
       if (score !== 1) {

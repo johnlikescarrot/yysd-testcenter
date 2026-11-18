@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { Script } from "node:vm";
 import { JSDOM } from "jsdom";
 
 const root = "dist/library";
@@ -23,7 +24,9 @@ for (const path of pages) {
   w.HTMLMediaElement.prototype.pause = () => {};
   w.HTMLMediaElement.prototype.play = () => Promise.resolve();
   try {
-    for (const s of d.scripts) w.eval(s.textContent);
+    const context = dom.getInternalVMContext();
+    for (const script of d.scripts)
+      new Script(script.textContent, { filename: path }).runInContext(context);
     if (path.includes("sample-academic")) {
       d.querySelectorAll(".q").forEach((q) => {
         const key = q.dataset.answer.split("|")[0];
@@ -53,6 +56,35 @@ for (const path of pages) {
       assert.ok(d.querySelector("#questionsHolder").children.length, path);
       w.submitTest();
       assert.match(d.querySelector("#resCorrect").textContent, /0\s*\/\s*40/);
+      w.backToCover();
+      w.openMode();
+      w.startTest("exam");
+      const data = new Script("TEST").runInContext(context);
+      for (const section of data.sections ?? data.passages)
+        for (const group of section.groups) {
+          group.questions.forEach((q, i) => {
+            const correct =
+              group.kind === "multi"
+                ? group.answerSet[i]
+                : [].concat(q.answer)[0];
+            const field = d.getElementById(q.id);
+            if (field) field.value = correct;
+            else if (d.getElementById(q.id + "a")) {
+              const [a, b] = correct.split(" ");
+              d.getElementById(q.id + "a").value = a;
+              d.getElementById(q.id + "b").value = b;
+            } else {
+              const radio = Array.from(d.getElementsByName(q.id)).find(
+                (r) => r.value === correct,
+              );
+              assert.ok(radio, `Missing answer control: ${q.id}, ${correct}`);
+              radio.checked = true;
+            }
+            assert.equal(w.readAns(q), correct, `Unselectable answer: ${q.id}`);
+          });
+        }
+      w.confirmSubmit();
+      assert.match(d.querySelector("#resCorrect").textContent, /40\s*\/\s*40/);
       w.backToCover();
     }
   } catch (e) {
