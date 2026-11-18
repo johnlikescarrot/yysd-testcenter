@@ -84,10 +84,11 @@ jobs:
 
       - name: Đăng nhật ký lint
         if: always()
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           body=/tmp/sl-body.md
           {
             echo "### Nhật ký Super-Linter"
@@ -98,7 +99,7 @@ jobs:
           } > "${body}"
           number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
           if [ -n "${number}" ]; then
-            gh pr comment "${number}" --body-file "${body}"
+            gh pr comment "${number}" --body-file "${body}" || true
           fi
 
       - name: Lưu kết quả lint

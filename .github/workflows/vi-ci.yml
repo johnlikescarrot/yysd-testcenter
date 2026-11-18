@@ -100,10 +100,11 @@ jobs:
 
       - name: Đăng nhật ký Lighthouse
         if: always()
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           body=/tmp/lh-body.md
           {
             echo "### Nhật ký Lighthouse CI"
@@ -121,8 +122,7 @@ jobs:
           } > "${body}"
           number=$(jq -r '.pull_request.number // empty' "${GITHUB_EVENT_PATH}")
           if [ -n "${number}" ]; then
-            gh pr comment "${number}" --body-file "${body}" \
-              --edit-last --create-if-none
+            gh pr comment "${number}" --body-file "${body}" || true
           fi
 
       - name: Kết luận Lighthouse
