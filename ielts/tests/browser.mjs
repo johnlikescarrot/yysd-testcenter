@@ -137,3 +137,21 @@ test('các bản PDF tại đường dẫn dự án có ngôn ngữ, cấu trúc
   for (const entry of files.filter((file) => file.isFile())) bytes += (await stat(join(entry.parentPath, entry.name))).size;
   assert.ok(bytes < 1024 * 1024, `Ngân sách xuất bản 1 MiB: ${bytes} byte`);
 });
+
+test('trang Tiến độ giữ vị trí khi JavaScript được tải chậm', async (t) => {
+  const page = await tab(t, { viewport: { width: 390, height: 844 }, locale: 'vi-VN' });
+  let releaseJavaScript;
+  const gate = new Promise((resolve) => { releaseJavaScript = resolve; });
+  t.after(releaseJavaScript);
+  await page.route('**/app.js', async (route) => {
+    await gate;
+    await route.continue();
+  });
+  await page.goto(new URL('progress.html', app.url).href, { waitUntil: 'commit' });
+  await page.locator('[data-progress-summary] dt').first().waitFor();
+  const getPositions = () => page.locator('.progress-grid h2').evaluateAll((headings) => headings.map((h) => h.getBoundingClientRect().top));
+  const before = await getPositions();
+  releaseJavaScript();
+  await page.waitForLoadState('load');
+  assert.deepEqual(await getPositions(), before);
+});

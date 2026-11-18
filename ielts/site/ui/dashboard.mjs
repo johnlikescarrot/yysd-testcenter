@@ -6,7 +6,7 @@ function meter(label, value, max) {
   return `<progress aria-label="${label}" value="${value}" max="${max}">${value}/${max}</progress>`;
 }
 
-function weeklyStrip(state, today) {
+export function weeklyStrip(state, today) {
   return `<ul class="week" aria-label="Bảy ngày gần nhất">${week(state, today).map(({ day, active }) => {
     const short = dayLabel(day, { weekday: 'short' });
     const date = dayLabel(day, { weekday: 'long', day: 'numeric', month: 'long' });
@@ -15,7 +15,7 @@ function weeklyStrip(state, today) {
   }).join('')}</ul>`;
 }
 
-function todayPanel(state, today) {
+export function todayPanel(state, today) {
   const xp = dailyPoints(state, today);
   const reached = xp >= state.goal;
   return `<div class="metric-line"><strong>${xp}</strong><span>/ ${state.goal} XP</span></div>
@@ -63,22 +63,29 @@ export function review({ doc, state, today }) {
     : 'Sau bài đầu tiên, câu trả lời sẽ được xếp vào lịch ôn của riêng bạn.', './#lo-trinh', 'Xem lộ trình');
 }
 
+export function progressContents(state, today) {
+  return {
+    'progress-summary': `<div><dt>Điểm luyện tập</dt><dd>${totalPoints(state)} <small>XP</small></dd></div>
+      <div><dt>Chuỗi ngày học</dt><dd>${streak(state, today)} <small>ngày</small></dd></div>
+      <div><dt>Bài đã học</dt><dd>${state.done.length} <small>/ ${lessons.length}</small></dd></div>`,
+    week: weeklyStrip(state, today),
+    skills: skillProgress(state).map((skill) => `<li><div class="skill-progress-label">
+      <span class="tile tile--${skill.id}">${icon(skill.id)}</span><strong>${skill.label}</strong><span>${skill.done} / ${skill.total}</span></div>
+      ${meter(`Số bài đã học: ${skill.label}`, skill.done, skill.total)}</li>`).join(''),
+    milestones: milestones(state, today).map(({ name, hint, icon: symbol, earned }) => `
+      <li><span class="tile ${earned ? 'tile--award' : ''}">${icon(symbol)}</span><div><strong>${name}</strong><p>${hint}</p></div>
+        <span class="pill ${earned ? 'pill--done' : ''}">${earned ? 'Đã đạt' : 'Chưa đạt'}</span></li>`).join(''),
+    'goal-today': todayPanel(state, today),
+  };
+}
+
 export function progress(runtime) {
   const { doc, state, today } = runtime;
-  doc.querySelector('[data-progress-summary]').innerHTML = `
-    <div><dt>Điểm luyện tập</dt><dd>${totalPoints(state)} <small>XP</small></dd></div>
-    <div><dt>Chuỗi ngày học</dt><dd>${streak(state, today)} <small>ngày</small></dd></div>
-    <div><dt>Bài đã học</dt><dd>${state.done.length} <small>/ ${lessons.length}</small></dd></div>`;
-  doc.querySelector('[data-week]').innerHTML = weeklyStrip(state, today);
-  doc.querySelector('[data-skills]').innerHTML = skillProgress(state).map((skill) => `<li><div class="skill-progress-label">
-    <span class="tile tile--${skill.id}">${icon(skill.id)}</span><strong>${skill.label}</strong><span>${skill.done} / ${skill.total}</span></div>
-    ${meter(`Số bài đã học: ${skill.label}`, skill.done, skill.total)}</li>`).join('');
-  doc.querySelector('[data-milestones]').innerHTML = milestones(state, today).map(({ name, hint, icon: symbol, earned }) => `
-    <li><span class="tile ${earned ? 'tile--award' : ''}">${icon(symbol)}</span><div><strong>${name}</strong><p>${hint}</p></div>
-      <span class="pill ${earned ? 'pill--done' : ''}">${earned ? 'Đã đạt' : 'Chưa đạt'}</span></li>`).join('');
+  for (const [key, html] of Object.entries(progressContents(state, today))) {
+    doc.querySelector(`[data-${key}]`).innerHTML = html;
+  }
   const select = doc.querySelector('#daily-goal');
   const current = doc.querySelector('[data-goal-today]');
-  current.innerHTML = todayPanel(state, today);
   select.value = state.goal;
   select.addEventListener('change', () => {
     const goal = Number(select.value);

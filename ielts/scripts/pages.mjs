@@ -1,10 +1,13 @@
 import guides from '../content/guides.json' with { type: 'json' };
 import references from '../content/references.json' with { type: 'json' };
 import { lessons, skills, units } from '../site/catalog.mjs';
-import { goals } from '../site/study.mjs';
+import { dayKey, goals, parseState } from '../site/study.mjs';
+import { progressContents, todayPanel, weeklyStrip } from '../site/ui/dashboard.mjs';
 import { escape, icon, lessonLink } from '../site/ui/html.mjs';
 
 const brand = 'IELTS Mỗi Ngày';
+const initialState = parseState('{}');
+const buildDay = dayKey();
 const menu = [
   ['home', './#lo-trinh', 'compass', 'Lộ trình'],
   ['review', 'review.html', 'review', 'Ôn tập'],
@@ -78,10 +81,10 @@ function homePage() {
         ${units.map(pathGroup).join('')}
       </section>
       <aside class="sidebar" aria-label="Theo dõi việc học">
-        <section class="panel"><h2 class="panel-title">${icon('target')} Mục tiêu hôm nay</h2><div data-goal-today></div>
+        <section class="panel"><h2 class="panel-title">${icon('target')} Mục tiêu hôm nay</h2><div data-goal-today>${todayPanel(initialState, buildDay)}</div>
           <a class="panel-link" href="progress.html#my-goal">Đổi mục tiêu ${icon('chevron')}</a></section>
         <section class="panel"><h2 class="panel-title panel-title--gold">${icon('flame')} Chuỗi ngày học</h2>
-          <p><strong class="streak-count" data-streak>0</strong> ngày liên tiếp</p><div data-week></div>
+          <p><strong class="streak-count" data-streak>0</strong> ngày liên tiếp</p><div data-week>${weeklyStrip(initialState, buildDay)}</div>
           <a class="panel-link" href="review.html"><span data-review-note>Lịch ôn tập của bạn</span> ${icon('chevron')}</a></section>
         <section class="panel side-note"><h2 class="panel-title">${icon('spark')} Mẹo học hôm nay</h2><p>Thử tự trả lời trước khi xem lời giải. Hôm sau, quay lại thử một lần nữa mà không nhìn tài liệu.</p>
           <a class="panel-link" href="14-ngay-hoc-deu.html">Đọc kế hoạch 14 ngày ${icon('chevron')}</a></section>
@@ -97,20 +100,21 @@ function reviewPage() {
 }
 
 function progressPage() {
+  const initial = progressContents(initialState, buildDay);
   const description = 'Theo dõi bài đã hoàn thành, điểm luyện tập và thói quen học của bạn.';
   return layout({ title: `Tiến độ · ${brand}`, description, view: 'progress', body: `
     ${heading('SỔ THEO DÕI', 'Tiến độ của bạn', description)}
-    <dl class="summary-grid" data-progress-summary></dl>
+    <dl class="summary-grid" data-progress-summary>${initial['progress-summary']}</dl>
     <div class="progress-grid"><div>
-      <section class="panel" id="my-goal"><h2>Mục tiêu hôm nay</h2><div data-goal-today></div>
+      <section class="panel" id="my-goal"><h2>Mục tiêu hôm nay</h2><div data-goal-today>${initial['goal-today']}</div>
         <div class="goal-field"><label for="daily-goal">Mục tiêu mỗi ngày</label><select id="daily-goal">
-          ${goals.map((goal) => `<option value="${goal}">${goal} XP</option>`).join('')}
+          ${goals.map((goal) => `<option value="${goal}"${goal === initialState.goal ? ' selected' : ''}>${goal} XP</option>`).join('')}
         </select></div><p class="mini-note" role="status" data-goal-message></p></section>
-      <section class="panel"><h2>Bảy ngày gần nhất</h2><div data-week></div>
+      <section class="panel"><h2>Bảy ngày gần nhất</h2><div data-week>${initial.week}</div>
         <p class="mini-note">Hoàn thành một bài hoặc lượt ôn để thêm một ngày học.</p></section>
     </div><div>
-      <section class="panel"><h2>Bốn kỹ năng</h2><ul class="skill-list" data-skills></ul></section>
-      <section class="panel"><h2>Cột mốc học tập</h2><ul class="achievement-list" data-milestones></ul></section>
+      <section class="panel"><h2>Bốn kỹ năng</h2><ul class="skill-list" data-skills>${initial.skills}</ul></section>
+      <section class="panel"><h2>Cột mốc học tập</h2><ul class="achievement-list" data-milestones>${initial.milestones}</ul></section>
     </div></div>
     <p class="mini-note privacy-note">Tiến độ lưu trên trình duyệt này, không đồng bộ qua thiết bị. XP không phải điểm thi IELTS.</p>` });
 }
