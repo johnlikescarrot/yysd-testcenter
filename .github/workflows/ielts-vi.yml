@@ -25,38 +25,24 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
-          fetch-depth: 0
           sparse-checkout: |
             ielts-vi
             quality
             .github
       - name: Run Super-Linter
-        id: lint
-        uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
-        env:
-          VALIDATE_ALL_CODEBASE: true
-          STRIP_DEFAULT_WORKSPACE_FOR_REGEX: true
-          FILTER_REGEX_INCLUDE: '^(ielts-vi/|quality/|\.github/workflows/ielts-vi\.yml$)'
-          VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_HTML: true
-          VALIDATE_CSS: true
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_JSON: true
-          MULTI_STATUS: false
-          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
-          CREATE_LOG_FILE: true
-          SAVE_SUPER_LINTER_SUMMARY: true
-      - name: Annotate lint failures
-        if: failure() && steps.lint.outcome == 'failure'
         shell: bash
         run: |
-          if [[ -f super-linter.log ]]; then
-            message=$(grep -E '\[(ERROR|FATAL)\]' super-linter.log | tail -n 8 || true)
-            message=${message//%/%25}
-            message=${message//$'\r'/%0D}
-            message=${message//$'\n'/%0A}
-            printf '::error title=Super-Linter::%s\n' "$message"
-          fi
+          set -o pipefail
+          quality/super-lint.sh 2>&1 | tee "$RUNNER_TEMP/lint.log"
+      - name: Report lint diagnostics
+        if: failure()
+        shell: bash
+        run: |
+          message=$(tail -n 40 "$RUNNER_TEMP/lint.log" | cut -c1-450)
+          message=${message//%/%25}
+          message=${message//$'\r'/%0D}
+          message=${message//$'\n'/%0A}
+          printf '::error title=Super-Linter::%s\n' "$message"
 
   quality:
     name: Coverage, trình duyệt và Lighthouse
