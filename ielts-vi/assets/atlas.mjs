@@ -27,7 +27,16 @@ export function mount(doc, storage, now) {
   function render() {
     const date = now(),
       day = dayOf(date);
-    const { streak, xp, next, week, skills: learned } = summary(s, day);
+    const {
+      streak,
+      best,
+      weekXp,
+      tier,
+      xp,
+      next,
+      week,
+      skills: learned,
+    } = summary(s, day);
     const due = dueCards(s, day).length;
     el("xp").textContent = xp;
     el("streak").textContent = streak;
@@ -43,8 +52,9 @@ export function mount(doc, storage, now) {
         return `<li class="${done ? "done" : ""}" aria-label="${label}: ${done ? "đã học" : "chưa học"}"><b aria-hidden="true">${done ? "✓" : "·"}</b><span>${label}</span></li>`;
       })
       .join("");
+    el("tier").textContent = `Hạng tuần: ${tier} · ${weekXp} XP`;
     el("badge").textContent =
-      streak >= 7
+      best >= 7
         ? "Huy hiệu Bền bỉ · Học 7 ngày liên tiếp"
         : learned === 4
           ? "Huy hiệu Toàn diện · Đã luyện cả bốn kỹ năng"

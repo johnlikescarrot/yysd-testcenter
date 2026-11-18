@@ -905,3 +905,28 @@ dialog details {
     margin: 5px 0;
   }
 }
+
+.transcript-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.transcript-list li b {
+  margin-right: 0.4em;
+  color: var(--muted);
+}
+.transcript-list details {
+  border: 0;
+  font-size: 0.88rem;
+}
+.doc audio {
+  width: min(100%, 34rem);
+}
+.tier {
+  font-size: 0.73rem;
+  font-weight: 650;
+  color: #42584c;
+  margin: 8px 0 0;
+}
+.tier span {
+  font-weight: 400;
+}

@@ -24,6 +24,10 @@ jobs:
             /library/mock/cambridge-reading/
             /library/mock/cambridge-writing/
             /library/mock/cambridge-listening/*.html
+            /library/mock/cambridge-listening/ielts[4567]_test*_audio*.mp3
+            /library/mock/cambridge-listening/ielts11_test*_audio*.mp3
+            /library/mock/cambridge-listening/ielts20_test1_audio1.mp3
+            /library/practice/jingting/data/cam20-t1-p1.json
             /library/mock/cambridge-listening/ielts10_test*_audio*.mp3
             /library/mock/cambridge-listening/ielts12_test*_audio*.mp3
             /library/mock/cambridge-listening/*.png

@@ -121,7 +121,7 @@ def prettify(stem):
     return re.sub(r"[-_]+", " ", stem).strip().title()
 
 
-def build_entry(relpath):
+def build_entry(relpath, prior_dates=None):
     """relpath is the file path relative to library/, using '/' separators."""
     path = os.path.join(LIB_DIR, relpath.replace("/", os.sep))
     stem = os.path.splitext(os.path.basename(relpath))[0]
@@ -163,7 +163,7 @@ def build_entry(relpath):
         "subject": subject,
         "duration": duration,
         "description": find_meta(html, "description") or "",
-        "added": git_added_date(path),
+        "added": (prior_dates or {}).get(relpath) or git_added_date(path),
     }
 
 
@@ -171,6 +171,13 @@ def main():
     if not os.path.isdir(LIB_DIR):
         print("library/ folder not found", file=sys.stderr)
         sys.exit(1)
+
+    try:
+        previous = json.loads(read_text(MANIFEST))
+    except (FileNotFoundError, ValueError):
+        previous = {}
+    prior_dates = {e.get("file"): e["added"] for e in previous.get("items", [])
+                   if re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(e.get("added", "")))}
 
     # recursively collect every .html under library/ (any depth)
     files = []
@@ -185,7 +192,7 @@ def main():
     items, seen = [], set()
     for f in files:
         try:
-            e = build_entry(f)
+            e = build_entry(f, prior_dates)
         except Exception as ex:
             print("Skipping %s: %s" % (f, ex), file=sys.stderr)
             continue
@@ -221,8 +228,8 @@ def main():
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
-                "added": git_added_date(path),
+                "description": "Nghe toàn bài hoặc từng câu với bản ghi âm, lời thoại theo thời gian và bản dịch." if any("vi" in row for row in obj.get("sentences", [])) else "全文/逐句精听：真音频、官方原文时间轴、译文、划词。",
+                "added": prior_dates.get("practice/jingting/data/" + n) or git_added_date(path),
             })
 
     # ponytail: refuse to write a manifest that drops HTML sitting in a known subject folder
@@ -246,6 +253,10 @@ def main():
                     file=sys.stderr,
                 )
                 sys.exit(1)
+
+    if previous.get("count") == len(items) and previous.get("items") == items:
+        print("Content manifest already up to date.")
+        return
 
     manifest = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

@@ -156,3 +156,29 @@ test("storage recovery drops untrusted records and malformed shapes; quotas are 
     false,
   );
 });
+
+test("weekly ranks reset on local Monday; earned streak milestones persist", () => {
+  const s = fresh(),
+    monday = dayOf(new Date(2026, 10, 16));
+  for (let i = 0; i < 7; i++) finish(s, monday - 7 + i, answer("sky"), null);
+  assert.equal(summary(s, monday).weekXp, 0);
+  assert.equal(summary(s, monday).best, 7);
+  for (const [count, tier] of [
+    [1, "Đồng"],
+    [6, "Bạc"],
+    [15, "Vàng"],
+  ]) {
+    finish(
+      s,
+      monday,
+      cards.slice(0, count).map((c) => ({ id: c.id, correct: true })),
+      null,
+    );
+    assert.equal(summary(s, monday).tier, tier);
+    assert.equal(summary(s, monday).weekXp, count * 5);
+  }
+  finish(s, monday + 7, answer("sky"), null);
+  assert.equal(summary(s, monday).weekXp, 75);
+  assert.equal(summary(s, monday + 7).weekXp, 5);
+  assert.equal(summary(s, monday + 7).best, 8);
+});

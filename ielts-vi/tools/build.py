@@ -1,5 +1,6 @@
 """Build only the reviewed Vietnamese IELTS release, never the whole checkout."""
 
+import json
 import re
 import shutil
 import sys
@@ -13,8 +14,8 @@ OUT = HERE / "dist"
 # Explicit editorial selection. Do not silently omit an untranslated paper.
 VOLUMES = {
     "writing": range(3, 22),
-    "reading": (*range(3, 13), 21),
-    "listening": (10, 12),
+    "reading": (*range(3, 19), 21),
+    "listening": (4, 5, 6, 7, 10, 11, 12),
 }
 LABEL = {"writing": "Viết", "reading": "Đọc", "listening": "Nghe"}
 PRACTICE = [
@@ -23,45 +24,12 @@ PRACTICE = [
 ]
 HAN = re.compile(r"[\u3400-\u9fff\uf900-\ufaff]")
 MEDIA = re.compile(
-    r"""["'`]([\w.-]+\.(?:mp3|m4a|png|jpe?g|webp|svg|json))["'`]""", re.IGNORECASE
+    r"""["'`]([\w.-]+\.(?:mp3|m4a|png|jpe?g|webp|svg|json))(?:\?[^"'`\s<>]+)?["'`]""",
+    re.IGNORECASE,
 )
-LABELS = dict(
-    line.split("\t", 1)
-    for line in (HERE / "content/paper-vi.tsv").read_text().splitlines()
-    if line and not line.startswith("#")
-)
-PHRASES = re.compile("|".join(map(re.escape, sorted(LABELS, key=len, reverse=True))))
-
-
-def translate(text):
-    # Only remove comments containing legacy Chinese. Preserve English study
-    # material, IDs, JS interpolation, filenames, keys and the grading engine.
-    text = re.sub(
-        r"<!--[\s\S]*?-->|/\*[\s\S]*?\*/|(?m:(?<=\s)//[^\n]*[\u3400-\u9fff][^\n]*$)",
-        lambda m: "" if HAN.search(m[0]) and not m[0].startswith("//www") else m[0],
-        text,
-    )
-    text = PHRASES.sub(lambda m: LABELS[m[0]].replace("␠", " "), text)
-    return (
-        text.translate(
-            str.maketrans(
-                {
-                    "（": " (",
-                    "）": ")",
-                    "：": ": ",
-                    "，": ", ",
-                    "。": ". ",
-                    "；": "; ",
-                    "？": "?",
-                    "　": " ",
-                    "【": "[",
-                    "】": "]",
-                }
-            )
-        )
-        .replace('lang="zh-CN"', 'lang="vi"')
-        .replace("'zh-CN'", "'vi-VN'")
-    )
+# Additional reading papers whose detailed explanations have been fully reviewed.
+READING_TESTS = {13: (1, 2), 14: (2,), 15: (4,), 16: (1, 2), 17: (), 18: (1, 3, 4)}
+DIALOGUE = ROOT / "library/practice/jingting/data/cam20-t1-p1.json"
 
 
 def checked(text, path):
@@ -79,8 +47,8 @@ def document(title, description, body, active):
         home[home.index("<body>") : home.index("<main")]
         .replace(' aria-current="page"', "")
         .replace(
-            f'href="{active}">{title if active == "thu-vien.html" else "Cẩm nang"}',
-            f'href="{active}" aria-current="page">{title if active == "thu-vien.html" else "Cẩm nang"}',
+            f'href="{active}">{"Thư viện đề" if active == "thu-vien.html" else "Cẩm nang"}',
+            f'href="{active}" aria-current="page">{"Thư viện đề" if active == "thu-vien.html" else "Cẩm nang"}',
         )
     )
     footer = home[home.index("<footer>") : home.index("</footer>") + len("</footer>")]
@@ -91,7 +59,10 @@ def papers():
     for skill, volumes in VOLUMES.items():
         suffix = "" if skill == "listening" else f"-{skill}"
         for vol in volumes:
-            for test in range(1, 3 if vol == 3 else 5):
+            tests = range(1, 3 if vol == 3 else 5)
+            if skill == "reading":
+                tests = READING_TESTS.get(vol, tests)
+            for test in tests:
                 name = f"cambridge-{vol}-test-{test}{suffix}.html"
                 yield (
                     skill,
@@ -101,6 +72,33 @@ def papers():
                 )
 
 
+def transcript(prefix):
+    data = json.loads(DIALOGUE.read_text())
+    audio = prefix + data["audioUrl"]
+    rows = []
+    for line in data["sentences"]:
+        start, end = line["start"], line["end"]
+        assert 0 <= start < end and line["vi"]
+        minute, sec = divmod(int(start), 60)
+        rows.append(
+            f'<li><b>{minute:02}:{sec:02}</b> <span lang="en">{escape(line["en"])}</span><details><summary>Xem nghĩa tiếng Việt</summary><p>{escape(line["vi"])}</p></details></li>'
+        )
+    body = (
+        '<p class="eyebrow">Bàn nghe · Cambridge IELTS 20</p><h1>Đặt bàn ở nhà hàng</h1>'
+        '<p class="lead">Nghe Test 1, Part 1. Bắt đầu ở phút 01:34. Ghi địa điểm, giá hoặc điều kiện đặt bàn trước khi mở nghĩa tiếng Việt.</p>'
+        f'<audio controls preload="none" aria-label="Cambridge IELTS 20 Test 1 Part 1" src="{audio}#t=94"></audio>'
+        '<h2>Lời thoại theo thời gian</h2><ol class="transcript-list">'
+        + "".join(rows)
+        + "</ol>"
+    )
+    return document(
+        "Đặt bàn ở nhà hàng",
+        "Luyện nghe hội thoại tiếng Anh, có mốc thời gian và bản dịch tiếng Việt để tự đối chiếu.",
+        body,
+        "thu-vien.html",
+    )
+
+
 def catalogue(prefix):
     entries = defaultdict(lambda: defaultdict(dict))
     for skill, vol, test, file in papers():
@@ -108,7 +106,7 @@ def catalogue(prefix):
     body = [
         '<p class="eyebrow">Bộ sưu tập · Cambridge IELTS</p><h1>Thư viện đề</h1><p class="lead">Chọn tập và kỹ năng để mở đề gốc. Câu hỏi và đáp án bằng tiếng Anh; hướng dẫn, nhận xét và báo cáo bằng tiếng Việt.</p>',
         "<h2>Bài luyện theo chủ điểm</h2>",
-        f'<p><a href="{prefix}library/{PRACTICE[0]}">Đọc: Ong mật tìm đường về tổ</a> · <a href="{prefix}library/{PRACTICE[1]}">Nghe: Ghi số điện thoại</a></p><h2>Đề theo tập</h2><p>Chấm câu khách quan ngay trên máy. Phần viết có bộ đếm từ, bản nháp và bảng tự đánh giá; không tự cấp band. Với đề thiếu hình, hãy đối chiếu sách gốc.</p>',
+        f'<p><a href="{prefix}library/{PRACTICE[0]}">Đọc: Ong mật tìm đường về tổ</a> · <a href="{prefix}library/{PRACTICE[1]}">Nghe: Ghi số điện thoại</a> · <a href="doi-thoai.html">Nghe kỹ: Đặt bàn ở nhà hàng</a></p><h2>Đề theo tập</h2><p>Chấm câu khách quan ngay trên máy. Phần viết có bộ đếm từ, bản nháp và bảng tự đánh giá; không tự cấp band. Với đề thiếu hình, hãy đối chiếu sách gốc.</p>',
     ]
     for v in sorted(entries, reverse=True):
         body.append(
@@ -191,6 +189,12 @@ def build():
     shutil.copytree(HERE / "assets", OUT / "assets")
     for page in ("index.html", "cam-nang.html", "so-thuc-hanh.html"):
         shutil.copyfile(HERE / page, OUT / page)
+    (OUT / "doi-thoai.html").write_text(transcript(""))
+    if (HERE / "doi-thoai.html").read_text() != transcript("../"):
+        raise ValueError("Stale transcript: run python tools/build.py --catalogue")
+    track = Path(json.loads(DIALOGUE.read_text())["audioUrl"])
+    (OUT / track.parent).mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(ROOT / track, OUT / track)
     (OUT / "thu-vien.html").write_text(catalogue(""))
     if (HERE / "thu-vien.html").read_text() != catalogue("../"):
         raise ValueError("Stale catalogue: run python tools/build.py --catalogue")
@@ -212,13 +216,17 @@ def build():
     for file in OUT.rglob("*"):
         if file.suffix in {".html", ".mjs", ".json", ".svg"}:
             checked(file.read_text(), file)
+    size_mib = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file()) / 1048576
+    if size_mib >= 900:
+        raise ValueError(f"Pages budget exceeded: {size_mib:.1f} MiB (limit 900 MiB)")
     print(
-        f"{count} Cambridge papers, {len(PRACTICE)} standalone practice tools; {sum(p.stat().st_size for p in OUT.rglob('*') if p.is_file()) / 1048576:.1f} MiB"
+        f"{count} Cambridge papers, {len(PRACTICE)} standalone practice tools; {size_mib:.1f} MiB"
     )
 
 
 if __name__ == "__main__":
     if sys.argv[1:] == ["--catalogue"]:
         (HERE / "thu-vien.html").write_text(catalogue("../"))
+        (HERE / "doi-thoai.html").write_text(transcript("../"))
     else:
         build()

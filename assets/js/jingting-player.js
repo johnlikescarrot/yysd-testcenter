@@ -63,7 +63,7 @@
     var el = $("jtGloss"), wEl = $("jtGlossW"), mEl = $("jtGlossM");
     if (!el) return;
     wEl.textContent = word;
-    mEl.textContent = "查询中…";
+    mEl.textContent = "Đang tra từ…";
     el.classList.remove("is-hidden");
     var left = Math.min(x + 8, window.innerWidth - 280);
     var top = Math.min(y + 12, window.innerHeight - 80);
@@ -79,15 +79,15 @@
       headers: apiHeaders(),
       body: JSON.stringify({ word: word })
     }).then(function (r) {
-      if (r.status === 401) throw new Error("登录后可查词");
-      if (!r.ok) throw new Error("查词失败");
+      if (r.status === 401) throw new Error("Hãy đăng nhập để tra từ");
+      if (!r.ok) throw new Error("Không tra được từ");
       return r.json();
     }).then(function (d) {
-      var g = (d && d.gloss) || "暂无释义";
+      var g = (d && d.gloss) || "Chưa có nghĩa của từ này";
       state.glossCache[key] = g;
       if (wEl.textContent === word) mEl.textContent = g;
     }).catch(function (err) {
-      if (wEl.textContent === word) mEl.textContent = (err && err.message) || "查词失败";
+      if (wEl.textContent === word) mEl.textContent = (err && err.message) || "Không tra được từ";
     });
   }
 
@@ -116,7 +116,7 @@
     if (!ol || !state.data) return;
     ol.innerHTML = state.data.sentences.map(function (s, i) {
       var cls = i === state.i ? " is-active" : "";
-      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '">第 ' + (i + 1) + " 句</button></li>";
+      return '<li><button type="button" data-i="' + i + '" class="' + cls.trim() + '">Câu ' + (i + 1) + "</button></li>";
     }).join("");
     var active = ol.querySelector(".is-active");
     if (active) active.scrollIntoView({ block: "nearest" });
@@ -128,7 +128,7 @@
     body.classList.toggle("is-blind", !state.showEn && !state.showZh);
     body.innerHTML = state.data.sentences.map(function (s, i) {
       var en = state.showEn ? '<span class="jt-full-en">' + linkWords(s.en) + "</span>" : '<span class="jt-full-en">· · ·</span>';
-      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.zh || "") + "</span>" : "";
+      var zh = state.showZh ? '<span class="jt-full-zh">' + esc(s.vi || s.zh || "") + "</span>" : "";
       return '<button type="button" class="jt-full-line' + (i === state.i ? " is-active" : "") +
         '" data-i="' + i + '" data-start="' + s.start + '">' + en + zh + "</button>";
     }).join("");
@@ -153,7 +153,7 @@
     $("jtIdx").textContent = String(state.i + 1);
     $("jtTotal").textContent = String(state.data.sentences.length);
     $("jtLineEn").innerHTML = linkWords(s.en);
-    $("jtLineZh").textContent = s.zh || "";
+    $("jtLineZh").textContent = s.vi || s.zh || "";
     var reveal = $("jtReveal");
     var showAny = state.showEn || state.showZh;
     reveal.classList.toggle("is-hidden", showAny);
@@ -354,8 +354,8 @@
       if (!li) return;
       state.rate = Number(li.getAttribute("data-r"));
       audio.playbackRate = state.rate;
-      $("jtRateBtn").textContent = "倍速 " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
-      if (state.rate === 1) $("jtRateBtn").textContent = "倍速 1.0x";
+      $("jtRateBtn").textContent = "Tốc độ " + state.rate.toFixed(2).replace(/\.?0+$/, "") + "x";
+      if (state.rate === 1) $("jtRateBtn").textContent = "Tốc độ 1.0x";
       $("jtRateMenu").classList.add("is-hidden");
     };
     document.addEventListener("click", function () {
@@ -411,11 +411,11 @@
   function boot() {
     bind();
     fetch(DATA_URL).then(function (r) {
-      if (!r.ok) throw new Error("找不到精听数据：" + partId);
+      if (!r.ok) throw new Error("Không tìm thấy dữ liệu bài nghe: " + partId);
       return r.json();
     }).then(function (data) {
       state.data = data;
-      document.title = data.title + " · 听力精听 · 优益思达";
+      document.title = data.title + " · Luyện nghe kỹ · YYSD";
       $("jtTitle").textContent = data.title;
       $("jtExam").href = data.examHref || "cambridge.html";
       audio.src = data.audioUrl;
@@ -433,8 +433,8 @@
       setMode("full");
       seekFirst();
     }).catch(function (err) {
-      $("jtTitle").textContent = "加载失败";
-      $("jtFullBody").textContent = (err && err.message) || "加载失败";
+      $("jtTitle").textContent = "Không tải được nội dung";
+      $("jtFullBody").textContent = (err && err.message) || "Không tải được nội dung";
     });
   }
 

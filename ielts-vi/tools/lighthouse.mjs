@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { withBrowser } from "./browser.mjs";
 const urls = {
   home: "",
+  dialogue: "doi-thoai.html",
   catalogue: "thu-vien.html",
   guide: "cam-nang.html",
   workbook: "so-thuc-hanh.html",

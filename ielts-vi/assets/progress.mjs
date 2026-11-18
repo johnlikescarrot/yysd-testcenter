@@ -92,7 +92,26 @@ export function summary(s, day) {
   let cursor = s.history[day] ? day : day - 1;
   let streak = 0;
   while (s.history[cursor--]) streak++;
+  // Local Monday through today. An achievement, not a simulated social leaderboard.
+  const monday = day - ((day + 3) % 7);
+  const weekXp = Object.entries(s.history)
+    .filter(([d]) => +d >= monday && +d <= day)
+    .reduce((sum, [, ids]) => sum + 5 * ids.length, 0);
+  const days = Object.keys(s.history)
+    .map(Number)
+    .sort((a, b) => a - b);
+  let best = 0,
+    run = 0,
+    prev = -2;
+  for (const d of days) {
+    run = d === prev + 1 ? run + 1 : 1;
+    best = Math.max(best, run);
+    prev = d;
+  }
   return {
+    best,
+    weekXp,
+    tier: weekXp >= 75 ? "Vàng" : weekXp >= 30 ? "Bạc" : "Đồng",
     streak,
     xp: Object.values(s.history).reduce((n, ids) => n + ids.length * 5, 0),
     week: Array.from({ length: 7 }, (_, i) => Boolean(s.history[day - 6 + i])),

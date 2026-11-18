@@ -911,7 +911,7 @@ function groupHtml(g){
     body=`${(g.tableTitle||g.noteTitle)?`<div class="note-title">${g.tableTitle||g.noteTitle}</div>`:''}<table class="note-table">${head}${rows}</table>`;
   }
   else if(g.kind==='tfng'){
-    const opts = g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN'];
+    const opts = g.labels || g.options || (g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN']);
     body=g.questions.map(q=>{
       const radios=opts.map(v=>`<label><input type="radio" name="${q.id}" value="${v}"> <span>${v}</span></label>`).join('');
       return `<div class="mcq"><div class="qtext"><span class="qnum-badge">${q.no}</span><span>${q.q}</span></div><div class="tfng-opts">${radios}</div></div>`;
