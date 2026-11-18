@@ -821,3 +821,7 @@ fieldset {
   .lesson { grid-template-columns: 2.4rem minmax(0, 1fr); }
   .lesson-status { grid-column: 2; }
 }
+
+.handbook .appendix details { border-block-end: 1px solid var(--line); }
+.handbook .appendix summary { padding-block: .8rem; color: var(--purple-dark); }
+.handbook .appendix li { margin-block-end: .75rem; }

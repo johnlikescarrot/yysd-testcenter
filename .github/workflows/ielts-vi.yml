@@ -81,7 +81,7 @@ jobs:
             /library/mock/ielts/*.html
             /library/practice/jingting/data/cam10-t1-p*.json
             /library/practice/ielts/*.html
-            /library/study/vocab-special-listening/*.html
+            /library/study/vocab-special-*/*.html
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:

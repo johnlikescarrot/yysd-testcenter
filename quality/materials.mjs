@@ -149,7 +149,7 @@ export const guides = [
     ],
   },
   {
-    slug: 'nghe-va-doi-chieu', number: '03', title: 'Nghe lại để tìm chỗ vướng',
+    appendix: 'listening', slug: 'nghe-va-doi-chieu', number: '03', title: 'Nghe lại để tìm chỗ vướng',
     description: 'Phân biệt lỗi nghe âm, lỗi nhận từ và lỗi chọn thông tin qua một thông báo đặt chỗ.',
     sources: ['goh', 'field', 'vandergrift', 'coverage', 'roediger', 'repetition', 'kim', 'samples'],
     pages: [
@@ -181,7 +181,7 @@ export const guides = [
     ],
   },
   {
-    slug: 'tu-trong-ngu-canh', number: '04', title: 'Học từ trong ngữ cảnh',
+    appendix: 'reading', slug: 'tu-trong-ngu-canh', number: '04', title: 'Học từ trong ngữ cảnh',
     description: 'Dùng thử thách năm từ để chuyển từ nhận diện nghĩa sang tự dùng từ trong một tình huống mới.',
     sources: ['coverage', 'schmitt', 'jeon', 'gloss', 'intentional', 'repetition', 'incidental', 'kim', 'rowland'],
     pages: [
@@ -210,7 +210,7 @@ export const guides = [
     ],
   },
   {
-    slug: 'sua-doan-viet', number: '05', title: 'Tự sửa một đoạn lập luận',
+    appendix: 'writing', slug: 'sua-doan-viet', number: '05', title: 'Tự sửa một đoạn lập luận',
     description: 'Viết một đoạn ngắn, xin phản hồi đúng chỗ và thử lại ý tưởng ở đề mới.',
     sources: ['format', 'scoring', 'hyland', 'hattie', 'kang', 'peer', 'teng', 'nation'],
     pages: [

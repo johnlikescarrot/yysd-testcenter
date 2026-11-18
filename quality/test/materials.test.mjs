@@ -22,8 +22,8 @@ test('the published app declares Vietnamese and avoids untranslated legacy scrip
   dom.window.close();
 });
 
-for (const { slug, sources, pages } of guides) {
-  test(`${slug}: short PDF, correctly linked references, and matching accessible HTML`, async () => {
+for (const { slug, sources, pages, appendix } of guides) {
+  test(`${slug}: PDF, correctly linked references, and matching accessible HTML`, async () => {
     const raw = await readFile(source(`resources/${slug}.html`), 'utf8');
     const bytes = await readFile(source(`resources/${slug}.pdf`));
     const pdf = await PDFDocument.load(bytes);
@@ -41,8 +41,12 @@ for (const { slug, sources, pages } of guides) {
     assert.doesNotMatch(raw, scriptsOutsideScope);
     assert.equal(document.documentElement.lang, 'vi');
     assert.equal(pdf.catalog.lookup(PDFName.of('Lang')).decodeText(), 'vi-VN');
-    assert.equal(pdf.getPageCount(), pages.length + 1);
-    assert.ok(bytes.length < 100_000);
+    const topics = [...document.querySelectorAll('#phu-luc details')];
+    const expectedEntries = { listening: 257, reading: 331, writing: 398 };
+    assert.equal(document.querySelectorAll('#phu-luc li').length, expectedEntries[appendix] ?? 0);
+    const pagesInAppendix = topics.reduce((sum, topic) => sum + Math.ceil(topic.querySelectorAll('li').length / (appendix === 'writing' ? 7 : 10)), 0);
+    assert.equal(pdf.getPageCount(), pages.length + 1 + pagesInAppendix);
+    assert.ok(bytes.length < (appendix ? 420_000 : 100_000));
     for (const link of document.querySelectorAll('section a[href^="#nguon-"]')) {
       assert.ok(document.getElementById(link.hash.slice(1)), `broken citation: ${link.hash}`);
     }
