@@ -1,81 +1,81 @@
 {
- "id": "free-12438",
- "title": "Lecture #6",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #6",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12438,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-6"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #6",
-   "instruction": "Listen to a lecture in an Earth Science class.",
-   "audio": "library/toefl/free/audio/1057c0bbd395441eaeef3cdfac07613e.mp3",
-   "transcript": "Today I’d like to explain the Mohs’ scale, used in what is called the “scratch test.” This scale is based on the simple fact that harder minerals scratch softer ones. For example, a diamond; a quartz crystal can scratch a feldspar crystal, but not the other around. The scale is named for Friedrich Mohs, the mineralogist who devised it in 1812. His scale spans the range of minerals known at that time, from the softest to the hardest. By performing a scratch test using known minerals and a few common tools, an unidentified mineral sample can be placed between two points on the scale. By referring to the scale, the mineral can then be identified. I have here a collection of the minerals included on the Mohs’ scale, as well as the tools necessary to complete this exercise. I’d like you each to take a mineral sample from the basket at the front of the room and classify it according to its place on the Mohs’ scale. First, however, I should give you a little warning. The hardness of any mineral depends on the strength of the bonds between ions or between atoms – the stronger the bond, the harder the mineral. Because bond strength may differ in various angles of a crystal, the hardness may vary slightly depending on the direction in which the mineral sample is scratched, so be sure to scratch each sample in several different directions.",
-   "questions": [
+  "id": "free-12438",
+  "title": "Lecture #6",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #6",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12438,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-6"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the lecture mainly about?",
-     "options": {
-      "A": "The properties of quartz crystals.",
-      "B": "A method of identifying minerals.",
-      "C": "The life of Friedrich Mohs.",
-      "D": "A famous collection of minerals."
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：这堂课主要讲什么？ 定位原文：Today I'd like to explain the Mohs' scale, used in what is called the \"scratch test.\" This scale is based on the simple fact that harder minerals scratch softer ones. By performing a scratch test using known minerals and a few common tools, an unidentified mineral sample can be placed between two points on the scale. By referring to the scale, the mineral can then be identified. 选项分析： A. The properties of quartz crystals.（石英晶体的性质。）。由于石英只是课堂中举的一个例子，并非主要内容，所以A选项错误。 B. A method of identifying minerals.（一种鉴定矿物的方法。）。因为整堂课围绕莫氏硬度计和划痕测试展开，讲解如何通过硬度对比来鉴定未知矿物，所以B选项正确。 C. The life of Friedrich Mohs.（弗里德里希·莫斯的生平。）。基于演讲者只是简单提到莫斯是发明硬度计的矿物学家，并未详细介绍其生平，所以C选项错误。 D. A famous collection of minerals.（一个著名的矿物收藏。）。由于矿物收藏只是用于课堂练习的工具，并非讲课主题，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What aspect of a mineral is the Mohs’ scale used to identify?",
-     "options": {
-      "A": "Its estimated value.",
-      "B": "Its crystalline structure.",
-      "C": "Its chemical composition.",
-      "D": "Its relative hardness."
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：莫氏硬度计用于鉴定矿物的哪个方面？ 定位原文：This scale is based on the simple fact that harder minerals scratch softer ones. His scale spans the range of minerals known at that time, from the softest to the hardest. 选项分析： A. Its estimated value.（其估计价值。）。由于莫氏硬度计与矿物价值无关，所以A选项错误。 B. Its crystalline structure.（其晶体结构。）。因为硬度计测量的是硬度而非晶体结构，所以B选项错误。 C. Its chemical composition.（其化学成分。）。基于硬度计不涉及化学成分的测定，所以C选项错误。 D. Its relative hardness.（其相对硬度。）。由于莫氏硬度计通过划痕测试来比较矿物的相对硬度，从最软到最硬排列，因此D选项正确。"
-    },
-    {
-     "id": 3,
-     "stem": "What does the teacher ask the class to do?",
-     "options": {
-      "A": "Collect some minerals as homework.",
-      "B": "Identify the tools he is using.",
-      "C": "Apply the information given in the talk.",
-      "D": "Pass their papers to the front of the room."
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：老师要求全班做什么？ 定位原文：I'd like you each to take a mineral sample from the basket at the front of the room and classify it according to its place on the Mohs' scale. 选项分析： A. Collect some minerals as homework.（作为家庭作业收集一些矿物。）。由于老师是让学生当场从篮子里取样进行分类，而非布置收集作业，所以A选项错误。 B. Identify the tools he is using.（识别他正在使用的工具。）。因为老师没有要求学生识别工具，所以B选项错误。 C. Apply the information given in the talk.（应用讲座中给出的信息。）。基于老师讲解完莫氏硬度计后，要求学生实际操作，用划痕测试法对矿物样本进行分类，这正是将所学知识付诸实践，所以C选项正确。 D. Pass their papers to the front of the room.（把他们的纸传到教室前面。）。由于没有提到传递纸张，所以D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "According to the teacher, when might the hardness of the same mineral seem to vary?",
-     "options": {
-      "A": "When it is scratched in different directions.",
-      "B": "When greater pressure is applied.",
-      "C": "When its surface is scratched too frequently.",
-      "D": "When the tester uses the wrong tools."
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：根据老师的说法，同一种矿物的硬度在什么情况下可能会有所不同？ 定位原文：Because bond strength may differ in various angles of a crystal, the hardness may vary slightly depending on the direction in which the mineral sample is scratched, so be sure to scratch each sample in several different directions. 选项分析： A. When it is scratched in different directions.（当沿不同方向划刻时。）。由于老师解释说晶体中离子或原子间的键合强度在不同角度可能不同，因此沿不同方向划刻时硬度会略有差异，所以A选项正确。 B. When greater pressure is applied.（当施加更大压力时。）。因为老师没有提到压力大小会影响硬度测试结果，所以B选项错误。 C. When its surface is scratched too frequently.（当表面被划刻过于频繁时。）。基于老师没有讨论划刻频率对结果的影响，所以C选项错误。 D. When the tester uses the wrong tools.（当测试者使用错误的工具时。）。由于老师没有提及工具使用不当会导致硬度变化，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #6",
+      "instruction": "Listen to a lecture in an Earth Science class.",
+      "audio": "library/toefl/free/audio/1057c0bbd395441eaeef3cdfac07613e.mp3",
+      "transcript": "Today I’d like to explain the Mohs’ scale, used in what is called the “scratch test.” This scale is based on the simple fact that harder minerals scratch softer ones. For example, a diamond; a quartz crystal can scratch a feldspar crystal, but not the other around. The scale is named for Friedrich Mohs, the mineralogist who devised it in 1812. His scale spans the range of minerals known at that time, from the softest to the hardest. By performing a scratch test using known minerals and a few common tools, an unidentified mineral sample can be placed between two points on the scale. By referring to the scale, the mineral can then be identified. I have here a collection of the minerals included on the Mohs’ scale, as well as the tools necessary to complete this exercise. I’d like you each to take a mineral sample from the basket at the front of the room and classify it according to its place on the Mohs’ scale. First, however, I should give you a little warning. The hardness of any mineral depends on the strength of the bonds between ions or between atoms – the stronger the bond, the harder the mineral. Because bond strength may differ in various angles of a crystal, the hardness may vary slightly depending on the direction in which the mineral sample is scratched, so be sure to scratch each sample in several different directions.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the lecture mainly about?",
+          "options": {
+            "A": "The properties of quartz crystals.",
+            "B": "A method of identifying minerals.",
+            "C": "The life of Friedrich Mohs.",
+            "D": "A famous collection of minerals."
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: lớp này chủ yếu nói cái gì? Dẫn chứng Bài gốc: Today I'd like to explain the Mohs' scale, used in what is called the \"scratch test.\" This scale is based on the simple fact that harder minerals scratch softer ones. By performing a scratch test using known minerals and a few common tools, an unidentified mineral sample can be placed between two points on the scale. By referring to the scale, the mineral can then be identified. Phương án phân tích: A. The properties of quartz crystals. (thạch anh tinh thể tính chất.). bởi vì thạch anh chẳng qua là trong lớp học giơ một ví dụ, cũng không phải là nội dung chủ yếu, nên A Phương án Sai. B. A method of identifying minerals. (một loại xem xét khoáng vật phương pháp.). vì cả tiết học quay chung quanh Mạc thị độ cứng kế và vết cắt Kiểm tra triển khai, giảng giải làm thế nào thông qua độ cứng đối lập đến xem xét không biết khoáng vật, nên B Phương án Đúng. C. The life of Friedrich Mohs. (Phất Lý Đức dặm hi · Mạc Tư cuộc đời.). căn cứ vào diễn thuyết người chẳng qua là đơn giản nhắc tới Mạc Tư là phát minh độ cứng kế khoáng vật học giả, cũng không kỹ càng giới thiệu kia cuộc đời, nên C Phương án Sai. D. A famous collection of minerals. (một cái nổi tiếng khoáng vật cất chứa.). bởi vì khoáng vật cất chứa chẳng qua là dùng cho lớp học luyện tập công cụ, cũng không phải là giảng bài chủ đề, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What aspect of a mineral is the Mohs’ scale used to identify?",
+          "options": {
+            "A": "Its estimated value.",
+            "B": "Its crystalline structure.",
+            "C": "Its chemical composition.",
+            "D": "Its relative hardness."
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: Mạc thị độ cứng kế dùng cho xem xét khoáng vật phương diện nào? Dẫn chứng Bài gốc: This scale is based on the simple fact that harder minerals scratch softer ones. His scale spans the range of minerals known at that time, from the softest to the hardest. Phương án phân tích: A. Its estimated value. (kia đoán chừng giá trị.). bởi vì Mạc thị độ cứng kế và khoáng vật giá trị không quan hệ, nên A Phương án Sai. B. Its crystalline structure. (kia tinh thể kết cấu.). vì độ cứng kế đo lường là độ cứng mà không phải là tinh thể kết cấu, nên B Phương án Sai. C. Its chemical composition. (kia Hóa học thành phần.). căn cứ vào độ cứng kế không liên quan đến Hóa học thành phần xác định, nên C Phương án Sai. D. Its relative hardness. (kia tương đối độ cứng.). bởi vì Mạc thị độ cứng kế thông qua vết cắt Kiểm tra đến so sánh khoáng vật tương đối độ cứng, từ mềm nhất đến rất cứng rắn xếp đặt, bởi vậy D Phương án Đúng."
+        },
+        {
+          "id": 3,
+          "stem": "What does the teacher ask the class to do?",
+          "options": {
+            "A": "Collect some minerals as homework.",
+            "B": "Identify the tools he is using.",
+            "C": "Apply the information given in the talk.",
+            "D": "Pass their papers to the front of the room."
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: Giáo viên yêu cầu toàn lớp làm cái gì? Dẫn chứng Bài gốc: I'd like you each to take a mineral sample from the basket at the front of the room and classify it according to its place on the Mohs' scale. Phương án phân tích: A. Collect some minerals as homework. (với tư cách bài tập ở nhà thu thập một ít khoáng vật.). bởi vì Giáo viên là để cho Học viên tại chỗ từ trong giỏ xách lấy mẫu tiến hành phân loại, mà không phải là bố trí thu thập bài tập, nên A Phương án Sai. B. Identify the tools he is using. (phân biệt anh ấy đang sử dụng công cụ.). vì Giáo viên không có cần học ở trường sinh phân biệt công cụ, nên B Phương án Sai. C. Apply the information given in the talk. (hữu ích,thiết thực toạ đàm Vừa cho ra tin tức.). căn cứ vào Giáo viên giảng giải hết Mạc thị độ cứng kế sau, yêu cầu Học viên thực tế thao tác, dùng vết cắt Kiểm tra pháp đối với khoáng vật hàng mẫu tiến hành phân loại, đây chính là đem sở học tri thức thay đổi thực tế, nên C Phương án Đúng. D. Pass their papers to the front of the room. (đem bọn họ giấy rơi vào tay trước phòng học mặt.). bởi vì không có nói tới truyền lại trang giấy, nên D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "According to the teacher, when might the hardness of the same mineral seem to vary?",
+          "options": {
+            "A": "When it is scratched in different directions.",
+            "B": "When greater pressure is applied.",
+            "C": "When its surface is scratched too frequently.",
+            "D": "When the tester uses the wrong tools."
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: dựa theo thầy thuyết pháp, cùng một loại khoáng vật độ cứng tại dưới tình huống nào có thể sẽ có chỗ bất đồng? Dẫn chứng Bài gốc: Because bond strength may differ in various angles of a crystal, the hardness may vary slightly depending on the direction in which the mineral sample is scratched, so be sure to scratch each sample in several different directions. Phương án phân tích: A. When it is scratched in different directions. ({làm:lúc} xuôi theo bất đồng phương hướng hoa khắc lúc.). bởi vì Giáo viên giải thích nói tinh thể Vừa ly tử i-ông hoặc nguyên tử giữa khóa hợp cường độ có ở đây không cùng góc độ khả năng bất đồng, bởi vậy xuôi theo bất đồng phương hướng hoa khắc lúc độ cứng sẽ hơi có sai biệt, nên A Phương án Đúng. B. When greater pressure is applied. ({làm:lúc} gây càng lớn áp lực lúc.). vì Giáo viên không có nói tới áp lực lớn tiểu hội ảnh hưởng độ cứng kết quả khảo nghiệm, nên B Phương án Sai. C. When its surface is scratched too frequently. ({làm:lúc} mặt ngoài bị hoa khắc vô cùng nhiều lần lúc.). căn cứ vào Giáo viên không có thảo luận hoa khắc tần suất đối với kết quả ảnh hưởng, nên C Phương án Sai. D. When the tester uses the wrong tools. ({làm:lúc} trắc thí giả sử dụng sai lầm công cụ lúc.). bởi vì Giáo viên không có đề cập công cụ sử dụng không lo sẽ dẫn đến độ cứng biến hóa, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

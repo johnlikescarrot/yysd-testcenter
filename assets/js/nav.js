@@ -14,7 +14,7 @@
 
   function canAiAdmit() {
     var A = window.YYSD_AUTH;
-    if (A && typeof A.canAiAdmit === "function") return !!A.canAiAdmit();
+    if (A && typeof A.canAiAdmit === "function") return!!A.canAiAdmit();
     // fallback when auth.js cache lacks helper — HQ host only
     var h = (location.hostname || "").toLowerCase();
     return (
@@ -26,64 +26,64 @@
     );
   }
 
-  // ponytail: 词境只从单词区 banner 进，不占顶栏
+  // ponytail: Vương quốc Từ chỉ từ Khu từ vựng banner tiến, không chiếm thanh điều hướng
   var TOP_LINKS = [
-    { href: "index.html", key: "home", label: "首页" },
-    { href: "zone.html?zone=study&s=vocab", key: "words", label: "单词", zone: "study" },
-    { href: "zone.html?zone=mock", key: "ielts", label: "雅思", mega: true },
-    { href: "alevel.html", key: "intl", label: "国际课程" },
-    { href: "/rankings", key: "rankings", label: "全球大学排行榜", special: "nav-rankings", rankings: true },
-    { href: "/admission", key: "ai-admit", label: "AI升学顾问", special: "nav-ai-admit", aiAdmit: true },
-    { href: "dashboard.html", key: "tasks", label: "任务中心" },
-    { href: "download.html", key: "download", label: "下载机考" },
-    { href: "requirements.html", key: "requirements", label: "录取查询" }
+    { href: "index.html", key: "home", label: "Trang chủ" },
+    { href: "zone.html?zone=study&s=vocab", key: "words", label: "Từ vựng", zone: "study" },
+    { href: "zone.html?zone=mock", key: "ielts", label: "IELTS", mega: true },
+    { href: "alevel.html", key: "intl", label: " Chương trình quốc tế " },
+    { href: "/rankings", key: "rankings", label: " Xếp hạng Đại học Thế giới ", special: "nav-rankings", rankings: true },
+    { href: "/admission", key: "ai-admit", label: "AI học lên cố vấn ", special: "nav-ai-admit", aiAdmit: true },
+    { href: "dashboard.html", key: "tasks", label: " Trung tâm nhiệm vụ " },
+    { href: "download.html", key: "download", label: " Tải ứng dụng thi máy " },
+    { href: "requirements.html", key: "requirements", label: " Tra cứu tuyển sinh " }
   ].filter(function (l) {
-    if ((l.aiAdmit || l.rankings) && !canAiAdmit()) return false;
+    if ((l.aiAdmit || l.rankings) &&!canAiAdmit()) return false;
     return true;
   });
 
   var MEGA_COLS = [
     {
       key: "listening",
-      title: "听力",
+      title: "Nghe",
       href: "zone.html?zone=mock&s=listening",
       links: [
-        { href: "zone.html?zone=mock&s=listening", label: "听力真题顺序练习" }
-      ].concat((window.YYSD && window.YYSD.JINGTING_OPEN) ? [
-        { href: "zone.html?zone=mock&s=jingting", label: "听力真题精听" }
-      ] : [])
+        { href: "zone.html?zone=mock&s=listening", label: " Luyện đề Nghe theo thứ tự " }
+      ].concat((window.YYSD && window.YYSD.JINGTING_OPEN)? [
+        { href: "zone.html?zone=mock&s=jingting", label: " Nghe sâu chép chính tả đề thật " }
+      ]: [])
     },
     {
       key: "reading",
-      title: "阅读",
+      title: "Đọc",
       href: "zone.html?zone=mock&s=reading",
-      links: [{ href: "zone.html?zone=mock&s=reading", label: "阅读真题顺序练习" }]
+      links: [{ href: "zone.html?zone=mock&s=reading", label: " Luyện đề Đọc theo thứ tự " }]
     },
     {
       key: "speaking",
-      title: "口语",
+      title: "Nói",
       href: "speaking.html",
-      links: [{ href: "speaking.html", label: "AI口语练习/模考" }]
+      links: [{ href: "speaking.html", label: "AI Luyện kỹ năng Nói / Thi thử " }]
     },
     {
       key: "writing",
-      title: "写作",
+      title: "Viết",
       href: "zone.html?zone=mock&s=writing",
       links: [
-        { href: "zone.html?zone=mock&s=writing", label: "写作真题顺序练习" },
-        { href: "ai-tutor.html?track=writing", label: "AI写作批改" }
+        { href: "zone.html?zone=mock&s=writing", label: " Luyện đề Viết theo thứ tự " },
+        { href: "ai-tutor.html?track=writing", label: "AI Viết phê chữa " }
       ]
     },
     {
       key: "mock",
-      title: "模考",
+      title: "Thi thử",
       href: "zone.html?zone=mock&s=mock",
-      links: [{ href: "zone.html?zone=mock&s=mock", label: "剑桥套题模考" }]
+      links: [{ href: "zone.html?zone=mock&s=mock", label: " Thi thử trọn bộ Cambridge " }]
     }
   ];
 
   function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+    return String(s == null? "": s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
@@ -91,20 +91,20 @@
   function orgName() {
     var A = window.YYSD_AUTH;
     var org = A && A.getOrg && A.getOrg();
-    return (org && org.name) || "学习中心";
+    return (org && org.name) || "Trung tâm Học tập";
   }
 
   function renderUser() {
     var A = window.YYSD_AUTH;
-    var logged = !!(A && A.getToken && A.getToken());
-    var user = logged && A.getUser ? A.getUser() : {};
+    var logged =!!(A && A.getToken && A.getToken());
+    var user = logged && A.getUser? A.getUser(): {};
     var phone = (user.phone || "").trim();
-    var label = (user.displayName || "").trim() || "个人中心";
-    var src = logged && A.avatarSrc ? A.avatarSrc(user.avatarUrl) : "";
+    var label = (user.displayName || "").trim() || "Hồ sơ cá nhân";
+    var src = logged && A.avatarSrc? A.avatarSrc(user.avatarUrl): "";
     var digits = phone.replace(/\D/g, "");
     var avatarText = "·";
-    if (/体验/.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
-      avatarText = "体验";
+    if (/ Dùng thử /.test(label) || /^900/.test(digits) || /^19900000/.test(digits)) {
+      avatarText = " Dùng thử ";
     } else if (phone) {
       avatarText = phone.slice(-4);
     }
@@ -112,13 +112,13 @@
       ? '<img class="nav-auth__avatar nav-auth__avatar--img" src="' + esc(src) + '" alt="">'
       : '<span class="nav-auth__avatar" aria-hidden="true">' + esc(avatarText) + "</span>";
     return '<div class="reme-user" id="nav-user">' +
-      '<a href="' + (logged ? "profile.html" : "login.html") + '" id="nav-auth" class="reme-avatar' + (logged ? " is-logged-in" : "") + '">' +
-        avatar + '<span class="nav-auth__label">' + (logged ? esc(label) : "登录") + "</span>" +
+      '<a href="' + (logged? "profile.html": "login.html") + '" id="nav-auth" class="reme-avatar' + (logged? " is-logged-in": "") + '">' +
+        avatar + '<span class="nav-auth__label">' + (logged? esc(label): "Đăng nhập") + "</span>" +
       "</a>" +
       '<div class="reme-dropdown" id="nav-dropdown" hidden>' +
         (logged
-          ? '<a href="profile.html">个人中心</a><a href="results.html">我的成绩</a><button type="button" id="nav-logout">退出登录</button>'
-          : '<a href="login.html">登录</a><a href="register.html">注册</a>') +
+          ? '<a href="profile.html"> Hồ sơ cá nhân </a><a href="results.html"> Kết quả của tôi </a><button type="button" id="nav-logout"> Đăng xuất </button>'
+          : '<a href="login.html"> Đăng nhập </a><a href="register.html"> Đăng ký </a>') +
       "</div>" +
     "</div>";
   }
@@ -142,10 +142,10 @@
   function setMega(open) {
     if (!mega) return;
     mega.classList.toggle("is-open", open);
-    mega.setAttribute("aria-hidden", open ? "false" : "true");
+    mega.setAttribute("aria-hidden", open? "false": "true");
     topbar.classList.toggle("is-mega-open", open);
     var trigger = nav && nav.querySelector('[data-key="ielts"]');
-    if (trigger) trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    if (trigger) trigger.setAttribute("aria-expanded", open? "true": "false");
   }
 
   function openMegaSoon() {
@@ -173,7 +173,7 @@
       brand = document.createElement("a");
       brand.href = "index.html";
       brand.className = "minimal-brand";
-      brand.setAttribute("aria-label", orgName() + "首页");
+      brand.setAttribute("aria-label", orgName() + "Trang chủ");
       brand.innerHTML = '<img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">' +
         '<span class="minimal-brand__text"><b>' + esc(orgName()) + '</b><span>Learning Center</span></span>';
     }
@@ -181,14 +181,14 @@
     var newNav = document.createElement("nav");
     newNav.className = "reme-nav";
     newNav.id = "nav";
-    newNav.setAttribute("aria-label", "主导航");
+    newNav.setAttribute("aria-label", " Điều hướng chính ");
     newNav.innerHTML = TOP_LINKS.map(function (l) {
       var cls = [];
       if (l.mega) cls.push("reme-nav__ielts");
       if (l.special) cls.push(l.special);
-      var extra = (l.zone ? ' data-zone="' + l.zone + '"' : "") +
-        (l.mega ? ' aria-haspopup="true" aria-expanded="false"' : "") +
-        (cls.length ? ' class="' + cls.join(" ") + '"' : "");
+      var extra = (l.zone? ' data-zone="' + l.zone + '"': "") +
+        (l.mega? ' aria-haspopup="true" aria-expanded="false"': "") +
+        (cls.length? ' class="' + cls.join(" ") + '"': "");
       var label = l.special
         ? '<span class="' + l.special + '__text">' + esc(l.label) + "</span>"
         : esc(l.label);
@@ -198,7 +198,7 @@
     var tools = document.createElement("div");
     tools.className = "reme-tools";
     tools.innerHTML =
-      '<button type="button" class="reme-tool" id="nav-bell" aria-label="通知">' +
+      '<button type="button" class="reme-tool" id="nav-bell" aria-label=" thông tri ">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>' +
       "</button>" +
       '<span class="reme-badge" id="nav-sub">Pro</span>' +
@@ -207,7 +207,7 @@
     var menuBtn = document.createElement("button");
     menuBtn.type = "button";
     menuBtn.className = "nav-menu-btn";
-    menuBtn.setAttribute("aria-label", "打开菜单");
+    menuBtn.setAttribute("aria-label", " mở ra Trình đơn ");
     menuBtn.setAttribute("aria-expanded", "false");
     menuBtn.innerHTML =
       '<span class="nav-menu-btn__bar" aria-hidden="true"></span>' +
@@ -250,7 +250,7 @@
     }
 
     document.addEventListener("click", function (e) {
-      if (!mega || !mega.classList.contains("is-open")) return;
+      if (!mega ||!mega.classList.contains("is-open")) return;
       if (topbar.contains(e.target)) return;
       setMega(false);
     });
@@ -262,7 +262,7 @@
         var A = window.YYSD_AUTH;
         if (A && A.getToken && A.getToken()) {
           e.preventDefault();
-          dropdown.hidden = !dropdown.hidden;
+          dropdown.hidden =!dropdown.hidden;
         }
       });
       var logout = document.getElementById("nav-logout");
@@ -273,7 +273,7 @@
         });
       }
       document.addEventListener("click", function (e) {
-        if (!dropdown.hidden && !userToggle.contains(e.target) && !dropdown.contains(e.target)) {
+        if (!dropdown.hidden &&!userToggle.contains(e.target) &&!dropdown.contains(e.target)) {
           dropdown.hidden = true;
         }
       });
@@ -294,22 +294,22 @@
   drawer.className = "nav-drawer";
   drawer.setAttribute("role", "dialog");
   drawer.setAttribute("aria-modal", "true");
-  drawer.setAttribute("aria-label", "站点菜单");
+  drawer.setAttribute("aria-label", " trạm điểm[web] Trình đơn ");
   drawer.hidden = true;
 
   var drawerHead = document.createElement("div");
   drawerHead.className = "nav-drawer__head";
-  drawerHead.innerHTML = "<b>菜单</b>";
+  drawerHead.innerHTML = "<b> Trình đơn </b>";
   var closeBtn = document.createElement("button");
   closeBtn.type = "button";
   closeBtn.className = "nav-drawer__close";
-  closeBtn.setAttribute("aria-label", "关闭菜单");
+  closeBtn.setAttribute("aria-label", " Đóng Trình đơn ");
   closeBtn.textContent = "×";
   drawerHead.appendChild(closeBtn);
 
   var drawerNav = document.createElement("nav");
   drawerNav.className = "nav-drawer__links";
-  drawerNav.setAttribute("aria-label", "页面导航");
+  drawerNav.setAttribute("aria-label", " trang web Điều hướng ");
 
   function rebuildDrawer() {
     drawerNav.innerHTML = "";
@@ -347,9 +347,9 @@
 
   var menuBtn = document.querySelector(".nav-menu-btn");
   function setDrawer(open) {
-    if (menuBtn) menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    overlay.hidden = !open;
-    drawer.hidden = !open;
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", open? "true": "false");
+    overlay.hidden =!open;
+    drawer.hidden =!open;
     document.body.classList.toggle("nav-drawer-open", open);
     if (open) {
       setMega(false);
@@ -367,7 +367,7 @@
   overlay.addEventListener("click", function () { setDrawer(false); });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
+    if (e.key!== "Escape") return;
     if (!drawer.hidden) setDrawer(false);
     if (mega && mega.classList.contains("is-open")) setMega(false);
   });
@@ -380,16 +380,16 @@
 
   var tabs = document.createElement("nav");
   tabs.className = "mobile-tabs";
-  tabs.setAttribute("aria-label", "快捷导航");
+  tabs.setAttribute("aria-label", " mau lẹ Điều hướng ");
   [
-    { href: "index.html", label: "首页", key: "home" },
-    { href: "zone.html?zone=study&s=vocab", label: "单词", key: "words" },
-    { href: "zone.html?zone=mock", label: "雅思", key: "ielts" },
-    { href: "dashboard.html", label: "任务", key: "tasks" },
-    { href: meHref(), label: "我的", key: "me", dynamic: true }
+    { href: "index.html", label: "Trang chủ", key: "home" },
+    { href: "zone.html?zone=study&s=vocab", label: "Từ vựng", key: "words" },
+    { href: "zone.html?zone=mock", label: "IELTS", key: "ielts" },
+    { href: "dashboard.html", label: " nhiệm vụ ", key: "tasks" },
+    { href: meHref(), label: " của tôi ", key: "me", dynamic: true }
   ].forEach(function (t) {
     var a = document.createElement("a");
-    a.href = t.dynamic ? meHref() : t.href;
+    a.href = t.dynamic? meHref(): t.href;
     a.className = "mobile-tabs__item";
     a.dataset.key = t.key;
     a.innerHTML =

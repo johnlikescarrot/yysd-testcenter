@@ -1,57 +1,57 @@
 {
- "id": "free-13026",
- "title": "Conversation #48",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #48",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13026,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-48"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #48",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/a407b65c04c24df3a7a0794d4020ba0e.mp3",
-   "transcript": "Man：What main dish should we prepare for our dinner party this weekend?\nWoman：The steak we ate at your parents’ place last week was fabulous. We could do something similar.\nMan：Hmm, I don’t think the Johnsons eat meat. I was thinking more along the lines of veggie lasagna.\nWoman：Oh, I do have a great recipe for that actually.\nMan：We have a winner then. I’ll need the list of ingredients for my trip to the supermarket tonight.",
-   "questions": [
+  "id": "free-13026",
+  "title": "Conversation #48",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #48",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13026,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-48"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Why does the woman mention the man’s parents?",
-     "options": {
-      "A": "To identify people that should be invited",
-      "B": "To request an item from the supermarket",
-      "C": "To explain the source of a lasagna recipe",
-      "D": "To propose a dish for a party"
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问女士为什么提到男士的父母，属于组织结构题，需结合上下文理解她举例的用意。 选项分析 选项A：错误。 女士提到的是在男士父母家吃的牛排，而非建议邀请他们参加聚会，属于无中生有。 选项B：错误。 对话末尾男士要去超市购物，但女士提到男士父母时并非为了索要超市商品。 选项C：错误。 千层面的食谱是女士自己拥有的（I do have a great recipe for that actually），而非来自男士父母。 选项D：正确。 男士问周末晚餐聚会准备什么主菜，女士说“The steak we ate at your parents' place last week was fabulous. We could do something similar.”，她提到男士父母是为了举例说明一种可行的主菜选择，即提议做类似牛排的菜品。"
-    },
-    {
-     "id": 2,
-     "stem": "What will the man most likely do in the evening?",
-     "options": {
-      "A": "Buy some food",
-      "B": "Speak with the Johnsons",
-      "C": "Cook steak",
-      "D": "Visit his parents"
-     },
-     "answer": "A",
-     "analysis": "题干分析 问题询问男士晚上最可能做什么，属于预测题，需抓住男士在对话末尾明确表达的计划。 选项分析 选项A：正确。 男士明确说“I'll need the list of ingredients for my trip to the supermarket tonight”，说明他晚上最可能去超市购买食材。 选项B：错误。 对话中提到约翰逊一家不吃肉，但并未表示男士要和他们沟通，属于无中生有。 选项C：错误。 最终决定做蔬菜千层面，而非牛排，男士不需要做牛排。 选项D：错误。 对话中没有提到男士要去看望父母，属于无关干扰。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #48",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/a407b65c04c24df3a7a0794d4020ba0e.mp3",
+      "transcript": "Man: What main dish should we prepare for our dinner party this weekend?\nWoman: The steak we ate at your parents’ place last week was fabulous. We could do something similar.\nMan: Hmm, I don’t think the Johnsons eat meat. I was thinking more along the lines of veggie lasagna.\nWoman: Oh, I do have a great recipe for that actually.\nMan: We have a winner then. I’ll need the list of ingredients for my trip to the supermarket tonight.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Why does the woman mention the man’s parents?",
+          "options": {
+            "A": "To identify people that should be invited",
+            "B": "To request an item from the supermarket",
+            "C": "To explain the source of a lasagna recipe",
+            "D": "To propose a dish for a party"
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm phu nhân vì sao nhắc tới nam sĩ cha mẹ, thuộc về tổ chức kết cấu câu, cần kết hợp cao thấp văn lý cởi nàng nêu ví dụ dụng ý. Phương án phân tích Phương án A: Sai. phu nhân nhắc tới là ở nam sĩ cha mẹ gia ăn bò bít-tết, mà không phải là đề nghị mời họ tham gia tụ hội, thuộc về bịa đặt. Phương án B: Sai. đối thoại cuối cùng nam sĩ muốn đi siêu thị mua sắm, nhưng phu nhân nhắc tới nam sĩ cha mẹ lúc cũng không phải là để yêu cầu siêu thị hàng hoá. Phương án C: Sai. nghìn tầng diện sách dạy nấu ăn là tự nữ sĩ có (I do have a great recipe for that actually), mà không phải là đến từ nam sĩ cha mẹ. Phương án D: Đúng. nam sĩ hỏi cuối tuần bữa tối tụ hội chuẩn bị gì món chính, phu nhân nói “The steak we ate at your parents' place last week was fabulous. We could do something similar.”, cô ấy nhắc tới nam sĩ cha mẹ là vì nêu ví dụ nói rõ một loại có thể được món chính lựa chọn, tiếp xúc đề nghị làm cùng loại bò bít-tết thái phẩm."
+        },
+        {
+          "id": 2,
+          "stem": "What will the man most likely do in the evening?",
+          "options": {
+            "A": "Buy some food",
+            "B": "Speak with the Johnsons",
+            "C": "Cook steak",
+            "D": "Visit his parents"
+          },
+          "answer": "A",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm nam sĩ buổi tối khả năng nhất làm cái gì, thuộc về dự đoán câu, cần bắt lấy nam sĩ đang đối thoại cuối cùng rõ ràng biểu đạt kế hoạch. Phương án phân tích Phương án A: Đúng. nam sĩ rõ ràng nói “I'll need the list of ingredients for my trip to the supermarket tonight”, nói rõ anh ấy buổi tối khả năng nhất đi siêu thị mua sắm nguyên liệu nấu ăn. Phương án B: Sai. trong lúc nói chuyện với nhau nhắc tới Ước Hàn Tốn một nhà không ăn thịt, nhưng cũng không biểu thị nam sĩ cùng với họ câu thông, thuộc về bịa đặt. Phương án C: Sai. quyết định cuối cùng làm rau quả nghìn mặt, mà không phải là bò bít-tết, nam sĩ không cần làm bò bít-tết. Phương án D: Sai. trong lúc nói chuyện với nhau không có nói tới nam sĩ muốn đi vấn an cha mẹ, thuộc về không quan hệ quấy nhiễu."
+        }
+      ]
+    }
+  ]
 }

@@ -2,7 +2,7 @@
 # ponytail: intro + reading pause + cue + dialogue; loudnorm each segment before concat
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OLD="${1:-$HOME/Desktop/之昂张张张zzz - 【新】IELTS19 Test1 Part1.mp3}"
+OLD="${1:-$HOME/Desktop/ chi ngang trương trương trương zzz - [mới]IELTS19 Test1 Part1.mp3}"
 NEW="${2:-$HOME/Desktop/401cccf7032647eab197f46ab565676e.mp3}"
 C16="${3:-$ROOT/library/mock/cambridge-listening/ielts16_test1_audio1.mp3}"
 OUT="$ROOT/library/mock/cambridge-listening/ielts19_test1_audio1.mp3"

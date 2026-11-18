@@ -1,61 +1,61 @@
 {
- "id": "free-12989",
- "title": "Daily Life Reading #76",
- "set": "free",
- "skill": "reading",
- "titleZh": "日常生活阅读 #76",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12989,
-  "labelId": 1320,
-  "code": "TOEFL--read in daily life-76"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "daily_life",
-   "module": 1,
-   "title": "Daily Life",
-   "instruction": "Read an excerpt from a syllabus.",
-   "layout": {
-    "kind": "card",
-    "kicker": "Excerpt from a syllabus",
-    "title": "",
-    "body": "This course explores classical mechanics, thermodynamics, and electromagnetism through lectures, labs, and problem-solving sessions.\nStudents will develop analytical skills and apply mathematical models to physical systems. Weekly assignments, lab reports, and exams assess understanding.\nPrerequisites include calculus.\nAttendance and participation are essential for success."
-   },
-   "questions": [
+  "id": "free-12989",
+  "title": "Daily Life Reading #76",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "sinh hoạt hàng ngày Đọc #76",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12989,
+    "labelId": 1320,
+    "code": "TOEFL--read in daily life-76"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the most likely subject of the course?",
-     "options": {
-      "A": "Biology",
-      "B": "Calculus",
-      "C": "Physics",
-      "D": "Sociology"
-     },
-     "answer": "C",
-     "analysis": "​​​What is the most likely subject of the course? 原文依据：This course explores classical mechanics, thermodynamics, and electromagnetism. 翻译：本课程涵盖经典力学、热力学与电磁学内容。 选项分析： (A) Biology 生物学 → 错误（原文无任何生物相关内容） (B) Calculus 微积分 → 错误（微积分是课程先修要求，并非课程科目） (C) Physics 物理学 → 正确（力学、热力学、电磁学均为物理核心内容） (D) Sociology 社会学 → 错误（和文本自然科学内容完全无关）"
-    },
-    {
-     "id": 2,
-     "stem": "What is NOT mentioned as an assessment method?",
-     "options": {
-      "A": "Weekly exercises",
-      "B": "Lab reports",
-      "C": "Tests",
-      "D": "Essays"
-     },
-     "answer": "D",
-     "analysis": "What is NOT mentioned as an assessment method? 原文依据：Weekly assignments, lab reports, and exams assess understanding. 翻译：每周作业、实验报告和考试用于考核学习掌握情况。 选项分析： (A) Weekly exercises 每周练习 → 对应原文 Weekly assignments，原文提及，正确 (B) Lab reports 实验报告 → 原文直接提及，正确 (C) Tests 测验 / 考试 → 对应原文 exams，原文提及，正确 (D) Essays 短文 / 论文 → 原文未出现，为未提及内容，符合题意"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "daily_life",
+      "module": 1,
+      "title": "Daily Life",
+      "instruction": "Read an excerpt from a syllabus.",
+      "layout": {
+        "kind": "card",
+        "kicker": "Excerpt from a syllabus",
+        "title": "",
+        "body": "This course explores classical mechanics, thermodynamics, and electromagnetism through lectures, labs, and problem-solving sessions.\nStudents will develop analytical skills and apply mathematical models to physical systems. Weekly assignments, lab reports, and exams assess understanding.\nPrerequisites include calculus.\nAttendance and participation are essential for success."
+      },
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the most likely subject of the course?",
+          "options": {
+            "A": "Biology",
+            "B": "Calculus",
+            "C": "Physics",
+            "D": "Sociology"
+          },
+          "answer": "C",
+          "analysis": "​​​What is the most likely subject of the course? Bài gốc căn cứ: This course explores classical mechanics, thermodynamics, and electromagnetism. phiên dịch: bản chương trình học bao dung kinh điển cơ học, nhiệt lực học và điện từ học nội dung. Phương án phân tích: (A) Biology sinh vật học → Sai (Bài gốc không cái gì Sinh học nội dung tương quan) (B) Calculus vi phân và tích phân → Sai (vi phân và tích phân là chương trình học trước dài yêu cầu, cũng không phải là chương trình học kỹ năng) (C) Physics vật lý học → Đúng (cơ học, nhiệt lực học, điện từ học đều là Vật lý trong trung tâm cho) (D) Sociology xã hội học → Sai (chữ Nhật bản khoa học tự nhiên nội dung hoàn toàn không liên quan)"
+        },
+        {
+          "id": 2,
+          "stem": "What is NOT mentioned as an assessment method?",
+          "options": {
+            "A": "Weekly exercises",
+            "B": "Lab reports",
+            "C": "Tests",
+            "D": "Essays"
+          },
+          "answer": "D",
+          "analysis": "What is NOT mentioned as an assessment method? Bài gốc căn cứ: Weekly assignments, lab reports, and exams assess understanding. phiên dịch: mỗi tuần bài tập, thí nghiệm báo cáo và cuộc thi dùng cho khảo hạch Học tập nắm giữ tình huống. Phương án phân tích: (A) Weekly exercises mỗi tuần Luyện tập → đối ứng Bài gốc Weekly assignments, Bài gốc đề cập, Đúng (B) Lab reports thí nghiệm báo cáo → Bài gốc trực tiếp đề cập, Đúng (C) Tests trắc nghiệm / cuộc thi → đối ứng Bài gốc exams, Bài gốc đề cập, Đúng (D) Essays đoản văn / luận văn → Bài gốc không xuất hiện, là Không được đề cập (Not Given) nội dung, phù hợp câu ý"
+        }
+      ]
+    }
+  ]
 }

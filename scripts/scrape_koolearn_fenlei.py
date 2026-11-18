@@ -25,103 +25,103 @@ CACHE = os.path.join(OUT, "wd_cache")
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 BASE = "https://www.koolearn.com"
 
-# L1 from Koolearn sidebar (skip 行业分类 for now — user asked these)
+# L1 from Koolearn sidebar (skip ngành sản xuất phân loại for now — user asked these)
 CATALOG = [
     {
         "id": "exam",
-        "label": "英语考试",
+        "label": " Tiếng Anh cuộc thi ",
         "subs": [
-            ("cet4", "CET-4考试", "https://www.koolearn.com/dict/fenlei_2_52_1.html"),
-            ("cet6", "CET-6考试", "https://www.koolearn.com/dict/fenlei_2_53_1.html"),
-            ("tem", "专四专八考试", "https://www.koolearn.com/dict/fenlei_2_56_1.html"),
-            ("kaoyan", "考研", "https://www.koolearn.com/dict/fenlei_2_60_1.html"),
-            ("gaokao", "高考", "https://www.koolearn.com/dict/fenlei_2_63_1.html"),
-            ("bec_book", "BEC词汇书", "https://www.koolearn.com/dict/fenlei_2_93_1.html"),
-            ("gmat_book", "GMAT词汇书", "https://www.koolearn.com/dict/fenlei_2_94_1.html"),
-            ("gre_book", "GRE词汇书", "https://www.koolearn.com/dict/fenlei_2_95_1.html"),
-            ("sat_book", "SAT词汇书", "https://www.koolearn.com/dict/fenlei_2_96_1.html"),
-            ("toeic_book", "托业考试词汇书", "https://www.koolearn.com/dict/fenlei_2_101_1.html"),
-            ("toefl_book", "托福词汇书", "https://www.koolearn.com/dict/fenlei_2_102_1.html"),
-            ("ielts_book", "雅思词汇书", "https://www.koolearn.com/dict/fenlei_2_105_1.html"),
+            ("cet4", "CET-4 cuộc thi ", "https://www.koolearn.com/dict/fenlei_2_52_1.html"),
+            ("cet6", "CET-6 cuộc thi ", "https://www.koolearn.com/dict/fenlei_2_53_1.html"),
+            ("tem", " Chuyên ngữ B2 Chuyên ngữ C1 cuộc thi ", "https://www.koolearn.com/dict/fenlei_2_56_1.html"),
+            ("kaoyan", " Sau đại học ", "https://www.koolearn.com/dict/fenlei_2_60_1.html"),
+            ("gaokao", " kỳ thi Đại Học ", "https://www.koolearn.com/dict/fenlei_2_63_1.html"),
+            ("bec_book", "BEC Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_93_1.html"),
+            ("gmat_book", "GMAT Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_94_1.html"),
+            ("gre_book", "GRE Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_95_1.html"),
+            ("sat_book", "SAT Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_96_1.html"),
+            ("toeic_book", " TOEIC cuộc thi Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_101_1.html"),
+            ("toefl_book", " TOEFL Từ vựng sách ", "https://www.koolearn.com/dict/fenlei_2_102_1.html"),
+            ("ielts_book", " Từ vựng IELTS sách ", "https://www.koolearn.com/dict/fenlei_2_105_1.html"),
         ],
     },
     {
         "id": "abroad",
-        "label": "出国留学",
+        "label": " ra nước ngoài học ",
         "subs": [
             ("bec", "BEC", "https://www.koolearn.com/dict/fenlei_3_64_1.html"),
-            ("gmat", "GMAT考试", "https://www.koolearn.com/dict/fenlei_3_65_1.html"),
-            ("gre", "GRE考试", "https://www.koolearn.com/dict/fenlei_3_66_1.html"),
-            ("sat", "SAT考试", "https://www.koolearn.com/dict/fenlei_3_67_1.html"),
-            ("toeic", "托业考试", "https://www.koolearn.com/dict/fenlei_3_68_1.html"),
-            ("toefl", "托福考试", "https://www.koolearn.com/dict/fenlei_3_69_1.html"),
-            ("ielts", "雅思考试", "https://www.koolearn.com/dict/fenlei_3_70_1.html"),
+            ("gmat", "GMAT cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_65_1.html"),
+            ("gre", "GRE cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_66_1.html"),
+            ("sat", "SAT cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_67_1.html"),
+            ("toeic", " TOEIC cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_68_1.html"),
+            ("toefl", " TOEFL cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_69_1.html"),
+            ("ielts", " IELTS cuộc thi ", "https://www.koolearn.com/dict/fenlei_3_70_1.html"),
         ],
     },
     {
         "id": "k12",
-        "label": "中小学",
+        "label": " Vừa tiểu học ",
         "subs": [
-            ("junior", "初中", "https://www.koolearn.com/dict/fenlei_4_71_1.html"),
-            ("primary", "小学", "https://www.koolearn.com/dict/fenlei_4_72_1.html"),
-            ("senior", "高中", "https://www.koolearn.com/dict/fenlei_4_73_1.html"),
+            ("junior", " sơ trung ", "https://www.koolearn.com/dict/fenlei_4_71_1.html"),
+            ("primary", " tiểu học ", "https://www.koolearn.com/dict/fenlei_4_72_1.html"),
+            ("senior", " THPT ", "https://www.koolearn.com/dict/fenlei_4_73_1.html"),
         ],
     },
     {
         "id": "learning",
-        "label": "英语学习",
+        "label": " Tiếng Anh Học tập ",
         "subs": [
-            ("nce", "新概念", "https://www.koolearn.com/dict/fenlei_5_77_1.html"),
-            ("collins", "柯林斯星级词汇", "https://www.koolearn.com/dict/fenlei_5_78_1.html"),
-            ("oxford3000", "牛津3000词", "https://www.koolearn.com/dict/fenlei_5_79_1.html"),
-            ("phrases", "短语", "https://www.koolearn.com/dict/fenlei_5_80_1.html"),
+            ("nce", " mới khái niệm ", "https://www.koolearn.com/dict/fenlei_5_77_1.html"),
+            ("collins", " Collins Tinh cấp Từ vựng ", "https://www.koolearn.com/dict/fenlei_5_78_1.html"),
+            ("oxford3000", " ngưu tân 3000 từ", "https://www.koolearn.com/dict/fenlei_5_79_1.html"),
+            ("phrases", " Cụm từ ", "https://www.koolearn.com/dict/fenlei_5_80_1.html"),
         ],
     },
     {
         "id": "subject",
-        "label": "学科分类",
+        "label": " ngành học phân loại ",
         "subs": [
-            ("chem", "化学", "https://www.koolearn.com/dict/fenlei_6_13_1.html"),
-            ("geo", "地理学", "https://www.koolearn.com/dict/fenlei_6_14_1.html"),
-            ("math", "数学", "https://www.koolearn.com/dict/fenlei_6_15_1.html"),
-            ("phys", "物理", "https://www.koolearn.com/dict/fenlei_6_16_1.html"),
+            ("chem", " Hóa học ", "https://www.koolearn.com/dict/fenlei_6_13_1.html"),
+            ("geo", " địa lý học ", "https://www.koolearn.com/dict/fenlei_6_14_1.html"),
+            ("math", " Toán học ", "https://www.koolearn.com/dict/fenlei_6_15_1.html"),
+            ("phys", " Vật lý ", "https://www.koolearn.com/dict/fenlei_6_16_1.html"),
         ],
     },
     {
         "id": "nature",
-        "label": "动植物",
+        "label": " động thực vật ",
         "subs": [
-            ("animals", "动物世界", "https://www.koolearn.com/dict/fenlei_7_11_1.html"),
-            ("plants", "植物王国", "https://www.koolearn.com/dict/fenlei_7_12_1.html"),
+            ("animals", " thế giới động vật ", "https://www.koolearn.com/dict/fenlei_7_11_1.html"),
+            ("plants", " Thực vật vương quốc ", "https://www.koolearn.com/dict/fenlei_7_12_1.html"),
         ],
     },
     {
         "id": "life",
-        "label": "生活日常",
+        "label": " sinh hoạt Đời sống ",
         "subs": [
-            ("food", "吃喝玩乐", "https://www.koolearn.com/dict/fenlei_8_23_1.html"),
-            ("urban", "城市规划", "https://www.koolearn.com/dict/fenlei_8_24_1.html"),
-            ("travel", "安全出行", "https://www.koolearn.com/dict/fenlei_8_25_1.html"),
-            ("edu", "科教兴国", "https://www.koolearn.com/dict/fenlei_8_29_1.html"),
-            ("work", "职业职场", "https://www.koolearn.com/dict/fenlei_8_30_1.html"),
-            ("festivals", "节日", "https://www.koolearn.com/dict/fenlei_8_83_1.html"),
+            ("food", " ăn uống chơi đùa ", "https://www.koolearn.com/dict/fenlei_8_23_1.html"),
+            ("urban", " Đô thị quy hoạch ", "https://www.koolearn.com/dict/fenlei_8_24_1.html"),
+            ("travel", " an toàn Di chuyển ", "https://www.koolearn.com/dict/fenlei_8_25_1.html"),
+            ("edu", " Khoa học & Giáo dục hứng nước ", "https://www.koolearn.com/dict/fenlei_8_29_1.html"),
+            ("work", " Nghề nghiệp Công sở ", "https://www.koolearn.com/dict/fenlei_8_30_1.html"),
+            ("festivals", " Lễ hội ", "https://www.koolearn.com/dict/fenlei_8_83_1.html"),
         ],
     },
     {
         "id": "arts",
-        "label": "艺术文体",
+        "label": " Nghệ thuật văn thể ",
         "subs": [
-            ("literature", "文学艺术", "https://www.koolearn.com/dict/fenlei_9_31_1.html"),
-            ("sports", "体育", "https://www.koolearn.com/dict/fenlei_9_32_1.html"),
-            ("games", "游戏娱乐", "https://www.koolearn.com/dict/fenlei_9_34_1.html"),
+            ("literature", " Văn học Nghệ thuật ", "https://www.koolearn.com/dict/fenlei_9_31_1.html"),
+            ("sports", " Thể thao ", "https://www.koolearn.com/dict/fenlei_9_32_1.html"),
+            ("games", " Trò chơi giải trí ", "https://www.koolearn.com/dict/fenlei_9_34_1.html"),
         ],
     },
     {
         "id": "media",
-        "label": "影音视听",
+        "label": " ảnh âm nghe nhìn ",
         "subs": [
-            ("film", "影视剧", "https://www.koolearn.com/dict/fenlei_10_17_1.html"),
-            ("music", "音乐广播", "https://www.koolearn.com/dict/fenlei_10_18_1.html"),
+            ("film", " Điện ảnh & Truyền hình kịch ", "https://www.koolearn.com/dict/fenlei_10_17_1.html"),
+            ("music", " Âm nhạc Phát thanh ", "https://www.koolearn.com/dict/fenlei_10_18_1.html"),
         ],
     },
 ]
@@ -155,7 +155,7 @@ def left_content(html: str) -> str:
 def fenlei_tags(html: str):
     left = left_content(html)
     pairs = re.findall(
-        r'<div class="word-title">\s*([^<]+?)\s*<a class="word-more" href="/dict/tag_(\d+)_\d+\.html">\s*更多\s*</a>',
+        r'<div class="word-title">\s*([^<]+?)\s*<a class="word-more" href="/dict/tag_(\d+)_\d+\.html">\s* thêm nữa \s*</a>',
         left,
     )
     out = []
@@ -207,7 +207,7 @@ def scrape_tag(tag_id: int, title: str, max_pages: int = 80):
             seen.add(key)
             items.append({"word": word, "wd_id": wid})
             new += 1
-        print("    tag %s p%d +%d (total %d)" % (tag_id, page, new, len(items)))
+        print(" tag %s p%d +%d (total %d)" % (tag_id, page, new, len(items)))
         if new == 0:
             break
         time.sleep(0.25 + random.random() * 0.2)
@@ -216,22 +216,22 @@ def scrape_tag(tag_id: int, title: str, max_pages: int = 80):
 
 def parse_wd(html: str):
     ipa = ""
-    m = re.search(r'class="word-spell"[^>]*>\s*英\s*\[([^\]]+)\]', html)
+    m = re.search(r'class="word-spell"[^>]*>\s* Anh \s*\[([^\]]+)\]', html)
     if not m:
-        m = re.search(r"英\s*\[([^\]]+)\]", html)
+        m = re.search(r" Anh \s*\[([^\]]+)\]", html)
     if m:
         ipa = "/" + m.group(1).strip() + "/"
     else:
-        m = re.search(r'class="word-spell"[^>]*>\s*美\s*\[([^\]]+)\]', html)
+        m = re.search(r'class="word-spell"[^>]*>\s* Mỹ \s*\[([^\]]+)\]', html)
         if not m:
-            m = re.search(r"美\s*\[([^\]]+)\]", html)
+            m = re.search(r" Mỹ \s*\[([^\]]+)\]", html)
         if m:
             ipa = "/" + m.group(1).strip() + "/"
 
     meaning = ""
     pos = ""
-    i = html.find("是什么意思</div>")
-    chunk = html[i : i + 4000] if i >= 0 else html
+    i = html.find(" là có ý gì </div>")
+    chunk = html[i: i + 4000] if i >= 0 else html
 
     # A: standard prop + span glosses
     m = re.search(
@@ -243,10 +243,10 @@ def parse_wd(html: str):
         if pos and not pos.endswith("."):
             pos = pos + "."
         spans = re.findall(r"<span>([^<]*)</span>", m.group(2))
-        meaning = "；".join(unescape(s).strip("；; ，, ") for s in spans if s.strip())
-        meaning = re.sub(r"[；]{2,}", "；", meaning).strip("；; ")
+        meaning = "; ".join(unescape(s).strip(";;,, ") for s in spans if s.strip())
+        meaning = re.sub(r"[;]{2,}", "; ", meaning).strip(";; ")
 
-    # B: dictionary sense lines like <strong>[C]狐,狐狸</strong>
+    # B: dictionary sense lines like <strong>[C] hồ, hồ ly </strong>
     if not meaning:
         senses = re.findall(r"<strong>\[[A-Za-z]+\]\s*([^<]+)</strong>", chunk)
         if not senses:
@@ -256,27 +256,27 @@ def parse_wd(html: str):
             for s in senses[:6]:
                 s = unescape(s).strip()
                 # drop trailing English gloss after CJK
-                s = re.split(r"\s{2,}|\b[a-z]{3,}\b", s, maxsplit=1)[0].strip(" ,，;；")
+                s = re.split(r"\s{2,}|\b[a-z]{3,}\b", s, maxsplit=1)[0].strip(",,;; ")
                 # keep CJK-leading glosses
                 if re.search(r"[\u4e00-\u9fff]", s):
                     # cut at first long latin run
-                    s = re.sub(r"[A-Za-z].*$", "", s).strip(" ,，;；")
+                    s = re.sub(r"[A-Za-z].*$", "", s).strip(",,;; ")
                     if s:
                         cleaned.append(s)
             if cleaned:
-                meaning = "；".join(cleaned)
+                meaning = "; ".join(cleaned)
                 if not pos:
                     pos = "n."
 
     # C: name-meaning pages
     if not meaning:
-        m = re.search(r"名字含义：</label><span>([^<]+)</span>", chunk)
+        m = re.search(r" tên Nghĩa: </label><span>([^<]+)</span>", chunk)
         if m and re.search(r"[\u4e00-\u9fff]", m.group(1)):
             meaning = unescape(m.group(1)).strip()
 
-    # D: first 中文拼写 is usually a name — skip unless nothing else
+    # D: first Tiếng Việt Chính tả is usually a name — skip unless nothing else
     if not meaning:
-        m = re.search(r"中文拼写：</label><span>([^<]*[\u4e00-\u9fff][^<]*)</span>", chunk)
+        m = re.search(r" Tiếng Việt Chính tả: </label><span>([^<]*[\u4e00-\u9fff][^<]*)</span>", chunk)
         if m:
             meaning = unescape(m.group(1)).strip()
 
@@ -304,14 +304,14 @@ def enrich_words(words, workers: int = 6, limit: int = 0):
     os.makedirs(CACHE, exist_ok=True)
     todo = words if not limit else words[:limit]
     need = [w for w in todo if w.get("wd_id") and not os.path.isfile(os.path.join(CACHE, "%d.json" % w["wd_id"]))]
-    print("  enrich: %d cached-miss / %d" % (len(need), len(todo)))
+    print(" enrich: %d cached-miss / %d" % (len(need), len(todo)))
     done = 0
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futs = {ex.submit(enrich_one, w["wd_id"]): w for w in need}
         for fut in as_completed(futs):
             done += 1
             if done % 50 == 0:
-                print("    enriched %d/%d" % (done, len(need)))
+                print(" enriched %d/%d" % (done, len(need)))
             time.sleep(0.05)
     # merge
     for w in todo:
@@ -352,11 +352,11 @@ def scrape_all(enrich_priority=None, enrich_limit_per_sub=0):
             try:
                 html = fetch(url)
             except Exception as e:
-                print("   FAIL fenlei", e)
+                print(" FAIL fenlei", e)
                 continue
             tags = fenlei_tags(html)
             if not tags:
-                print("   no tags in left-content")
+                print(" no tags in left-content")
                 continue
             sub_words = []
             tag_dumps = []
@@ -391,7 +391,7 @@ def scrape_all(enrich_priority=None, enrich_limit_per_sub=0):
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(sub, f, ensure_ascii=False, indent=2)
                 f.write("\n")
-            print("   saved", path, "words", len(deduped))
+            print(" saved", path, "words", len(deduped))
             cat_out["subs"].append(
                 {"id": sid, "label": label, "count": len(deduped), "file": os.path.basename(path), "tags": tag_dumps}
             )

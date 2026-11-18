@@ -1,0 +1,347 @@
+<!--
+================================================================
+ YYSD · Từ vựng Đánh giá Giáo viên mẫu
+================================================================
+ cho cơ cấu Giáo viên: phục chế bài này kiện → chỉ sửa phía dưới wordData → dùng trình duyệt mở ra là được trắc.
+
+ hai loại cách dùng:
+A. Cổng giáo viên bố trí bài tập lúc, thượng truyền(*upload) bản HTML (Bài tập luyện tập → lựa chọn văn bản tài liệu)
+B. giao cho kỹ thuật để vào library/study/vocab/ cũng đăng ký từ kho sau, trạm trong « Từ vựng Đánh giá » cũng có thể đọc
+
+ bình đài chỉ Giải thích đáp án:
+  const wordData = (...); ← phải dùng chi nhánh phần cuối
+ tất điền: word (Tiếng Anh), meaning (Tiếng Việt)
+ đề nghị: ipa, pos, acceptCN (bổn trang lấp chỗ trống phán Tiếng Việt lúc càng rộng thùng thình)
+
+ Đánh giá quy tắc (và trạm trong vượt ải tiếp cận):
+   trước chọn trúng văn ý tư (bốn chọn một) → lại Chính tả Tiếng Anh
+  5 đầu sinh mệnh · mỗi câu 20 giây · sai 5 câu tiếp xúc thất bại
+================================================================
+-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YYSD · Từ vựng Đánh giá mẫu (mời sửa tiêu đề)</title>
+  <style>
+    :root {
+      --bg: #f4f1ec; --card: #fff; --ink: #1c1917; --muted: #78716c;
+      --line: #e7e5e4; --brand: #c2410c; --ok: #15803d; --bad: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink);
+      font: 16px/1.5 "Hiragino Sans GB", sans-serif;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 28px 18px 48px; }
+    h1 { font-size: 1.35rem; margin: 0 0 6px; }
+    .sub { color: var(--muted); font-size:.9rem; margin: 0 0 22px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px 20px; box-shadow: 0 8px 24px rgba(28,25,23,.04);
+    }
+    .meta { display: flex; justify-content: space-between; font-size:.85rem; color: var(--muted); }
+    .hearts { letter-spacing: 2px; }
+    .hearts.lost { opacity:.25; }
+    .timer { font-variant-numeric: tabular-nums; font-weight: 700; }
+    .timer.warn { color: var(--brand); }
+    .word-ipa { color: var(--muted); font-size:.9rem; margin: 8px 0 16px; min-height: 1.2em; }
+    .opts { display: grid; gap: 8px; margin: 0 0 14px; }
+    .opt {
+      text-align: left; padding: 12px 14px; border-radius: 10px; cursor: pointer;
+      border: 1px solid var(--line); background: #fff; font-size:.95rem;
+    }
+    .opt:hover:not(:disabled) { border-color: #d6d3d1; }
+    .opt.pick { border-color: var(--brand); background: #fff7ed; }
+    .opt.correct { border-color: var(--ok); background: #f0fdf4; }
+    .opt.wrong { border-color: var(--bad); background: #fef2f2; }
+    .opt:disabled { cursor: default; }
+    .spell { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 1rem; }
+    .spell:focus { outline: 2px solid #fdba74; border-color: var(--brand); }
+    .spell.ok { border-color: var(--ok); background: #f0fdf4; }
+    .spell.bad { border-color: var(--bad); background: #fef2f2; }
+    .fb { min-height: 1.4em; margin: 12px 0; font-size:.92rem; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    button.btn {
+      border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; font-weight: 600;
+    }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-ghost { background: #fff; border: 1px solid var(--line); }
+    .hidden { display: none!important; }
+    .score { font-size: 2.4rem; font-weight: 800; margin: 8px 0; }
+    .setup p { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="pageTitle">Từ vựng Đánh giá</h1>
+    <p class="sub" id="pageSub">điền xong wordData sau, dùng trình duyệt mở ra bài này kiện là được Xem trước. </p>
+
+    <div class="card setup" id="setup">
+      <p id="setupHint">tổng 0 từ · trước chọn trúng văn ý tư, lại Chính tả Tiếng Anh · 5 đầu sinh mệnh · mỗi câu 20 giây</p>
+      <div class="row">
+        <button type="button" class="btn btn-primary" id="btnStart">Bắt đầu Đánh giá</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="quiz">
+      <div class="meta">
+        <span id="progress">1 / 1</span>
+        <span class="hearts" id="lives"></span>
+        <span class="timer" id="timer">20</span>
+      </div>
+      <div class="word-ipa" id="ipa"></div>
+      <div class="opts" id="opts"></div>
+      <input class="spell hidden" id="spell" type="text" lang="en" inputmode="latin"
+        placeholder="Chính tả Tiếng Anh …" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <div class="fb" id="fb"></div>
+      <div class="row">
+        <button type="button" class="btn btn-primary hidden" id="btnNext">Câu tiếp theo</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="done">
+      <h2 id="doneTitle"></h2>
+      <div class="score" id="doneScore"></div>
+      <p class="sub" id="doneSub"></p>
+      <div class="row">
+        <button type="button" class="btn btn-primary" id="btnRetry">một lần nữa Đánh giá</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function () {
+  /* ★ Giáo viên chỉ sửa một đoạn này. từng đối tượng = 1 Từ vựng. phục chế cuối cùng hạng nhất đổi nữa là được. */
+  const wordData = [
+    { id: 1, word: "include", ipa: "/ɪnˈkluːd/", pos: "v.", meaning: "bao gồm, gồm có; tính đến, kể cả", acceptCN: [" kể cả ", " bao hàm "] },
+    { id: 2, word: "challenge", ipa: "/ˈtʃælɪndʒ/", pos: "n. / v.", meaning: "(quân sự) tiếng hô \"đứng lại\" (của lính đứng gác); sự thách thức", acceptCN: [" khiêu chiến ", " nghi vấn "] },
+    { id: 3, word: "accurate", ipa: "/ˈækjərət/", pos: "adj.", meaning: "đúng đắn, chính xác, xác đáng", acceptCN: [" chuẩn xác ", " chính xác "] },
+    { id: 4, word: "survive", ipa: "/səˈvaɪv/", pos: "v.", meaning: "sống lâu hơn; sống qua, qua khỏi được", acceptCN: [" may mắn còn sống sót ", " còn sống ", " sinh tồn "] },
+    { id: 5, word: "grateful", ipa: "/ˈɡreɪtfl/", pos: "adj.", meaning: "biết ơn; dễ chịu, khoan khoái", acceptCN: [" cảm kích ", " cảm tạ "] }
+  ];
+
+  const MAX_LIVES = 5;
+  const TIME_SEC = 20;
+  const words = wordData.filter(function (w) {
+    return w & String(w.word || "").trim() & String(w.meaning || "").trim();
+  });
+
+  const setup = document.getElementById("setup");
+  const quiz = document.getElementById("quiz");
+  const done = document.getElementById("done");
+  const optsEl = document.getElementById("opts");
+  const spell = document.getElementById("spell");
+  const fb = document.getElementById("fb");
+  const btnNext = document.getElementById("btnNext");
+
+  var order = [];
+  var idx = 0;
+  var lives = MAX_LIVES;
+  var correct = 0;
+  var wrong = 0;
+  var selected = null;
+  var waiting = false;
+  var timer = null;
+  var left = TIME_SEC;
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a(i); a[i] = a(j); a[j] = t;
+    }
+    return a;
+  }
+
+  function meaningOptions(correctMeaning) {
+    var pool = words.map(function (w) { return w.meaning; })
+      .filter(function (m) { return m!== correctMeaning; });
+    pool = shuffle(pool).slice(0, 3);
+    pool.push(correctMeaning);
+    return shuffle(pool);
+  }
+
+  function paintLives() {
+    var h = "";
+    for (var i = 0; i < MAX_LIVES; i++) h += '<span class="' + (i >= lives? "lost": "") + '">❤</span>';
+    document.getElementById("lives").innerHTML = h;
+  }
+
+  function clearTimer() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  function startTimer() {
+    clearTimer();
+    left = TIME_SEC;
+    var el = document.getElementById("timer");
+    el.textContent = left;
+    el.classList.remove("warn");
+    timer = setInterval(function () {
+      left--;
+      el.textContent = Math.max(0, left);
+      el.classList.toggle("warn", left <= 5);
+      if (left <= 0) {
+        clearTimer();
+        if (!waiting) judge(true);
+      }
+    }, 1000);
+  }
+
+  function speak(word) {
+    try {
+      var a = new Audio("https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(word) + "&type=1");
+      var p = a.play();
+      if (p & p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function show(el) {
+    setup.classList.add("hidden");
+    quiz.classList.add("hidden");
+    done.classList.add("hidden");
+    el.classList.remove("hidden");
+  }
+
+  function renderQ() {
+    var w = words[order[idx]];
+    waiting = false;
+    selected = null;
+    spell.value = "";
+    spell.className = "spell hidden";
+    spell.disabled = false;
+    btnNext.classList.add("hidden");
+    fb.textContent = "";
+    document.getElementById("progress").textContent = (idx + 1) + " / " + order.length;
+    document.getElementById("ipa").textContent = (w.ipa || "") + (w.pos? " · " + w.pos: "");
+    paintLives();
+    optsEl.innerHTML = meaningOptions(w.meaning).map(function (m) {
+      return '<button type="button" class="opt" data-v="' +
+        String(m).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;") +
+        '">' + String(m).replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</button>";
+    }).join("");
+    speak(w.word);
+    startTimer();
+  }
+
+  function paintMeaning(ok) {
+    var w = words[order[idx]];
+    Array.prototype.forEach.call(optsEl.querySelectorAll(".opt"), function (b) {
+      b.disabled = true;
+      var v = b.getAttribute("data-v");
+      if (v === w.meaning) b.classList.add("correct");
+      else if (v === selected &!ok) b.classList.add("wrong");
+    });
+  }
+
+  function failLife(msg) {
+    lives--;
+    wrong++;
+    paintLives();
+    fb.textContent = msg;
+    waiting = true;
+    clearTimer();
+    spell.classList.remove("hidden");
+    spell.disabled = true;
+    if (lives <= 0) {
+      setTimeout(endQuiz, 900);
+      return;
+    }
+    btnNext.classList.remove("hidden");
+  }
+
+  function judge(timeout) {
+    if (waiting) return;
+    var w = words[order[idx]];
+    var meaningOk = selected === w.meaning;
+    if (!meaningOk) {
+      paintMeaning(false);
+      failLife(timeout
+        ? ("⏱ vượt quá thời gian. Đáp án đúng: " + w.word + " (" + w.meaning + ") ")
+        : ("❌ ý tứ không đúng. Đáp án đúng: " + w.word + " (" + w.meaning + ") "));
+      return;
+    }
+    paintMeaning(true);
+    spell.classList.remove("hidden");
+    spell.focus();
+    if (timeout) {
+      spell.classList.add("bad");
+      failLife("⏱ vượt quá thời gian không Chính tả. Đáp án đúng: " + w.word);
+      return;
+    }
+  }
+
+  function judgeSpell() {
+    if (waiting) return;
+    var w = words[order[idx]];
+    var typed = spell.value.trim().toLowerCase();
+    if (!typed) { spell.focus(); return; }
+    var ok = typed === String(w.word).toLowerCase();
+    waiting = true;
+    clearTimer();
+    spell.disabled = true;
+    spell.classList.add(ok? "ok": "bad");
+    paintMeaning(true);
+    if (ok) {
+      correct++;
+      fb.textContent = "✅ Đúng ";
+      btnNext.classList.remove("hidden");
+    } else {
+      failLife("❌ Chính tả ứng với là: " + w.word + " (" + w.meaning + ") ");
+    }
+  }
+
+  function next() {
+    idx++;
+    if (idx >= order.length || lives <= 0) endQuiz();
+    else renderQ();
+  }
+
+  function endQuiz() {
+    clearTimer();
+    var passed = lives > 0 & (idx >= order.length || correct + wrong >= order.length);
+    show(done);
+    document.getElementById("doneTitle").textContent = passed? " Đánh giá thông qua ": " không thông qua ";
+    document.getElementById("doneScore").textContent = correct + " / " + order.length;
+    document.getElementById("doneSub").textContent = passed
+      ? (" sai " + wrong + " câu · còn thừa sinh mệnh " + lives)
+      : (" Sai đã đạt " + MAX_LIVES + " câu, tu Làm lại. sai " + wrong + " · đối với " + correct);
+  }
+
+  function start() {
+    if (words.length < 2) {
+      alert(" mời ít nhất điền 2 Từ vựng (word + meaning), nếu không không cách nào tạo thành bốn chọn một. ");
+      return;
+    }
+    order = shuffle(words.map(function (_, i) { return i; }));
+    idx = 0; lives = MAX_LIVES; correct = 0; wrong = 0;
+    show(quiz);
+    renderQ();
+  }
+
+  document.getElementById("setupHint").textContent =
+    " tổng " + words.length + " từ · trước chọn trúng văn ý tư, lại Chính tả Tiếng Anh · 5 đầu sinh mệnh · mỗi câu 20 giây";
+  document.getElementById("btnStart").onclick = start;
+  document.getElementById("btnRetry").onclick = start;
+  btnNext.onclick = next;
+  optsEl.onclick = function (e) {
+    var b = e.target.closest(".opt");
+    if (!b || waiting ||!spell.classList.contains("hidden")) return;
+    selected = b.getAttribute("data-v");
+    Array.prototype.forEach.call(optsEl.querySelectorAll(".opt"), function (x) {
+      x.classList.toggle("pick", x === b);
+    });
+    judge(false);
+  };
+  spell.onkeydown = function (e) {
+    if (e.key === "Enter") { e.preventDefault(); judgeSpell(); }
+  };
+
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/ (mời sửa tiêu đề) $/, "") || " Từ vựng Đánh giá ";
+})();
+</script>
+</body>
+</html>

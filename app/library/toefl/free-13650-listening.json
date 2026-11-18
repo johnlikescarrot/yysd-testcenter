@@ -1,57 +1,57 @@
 {
- "id": "free-13650",
- "title": "Announcement #67",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #67",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13650,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-67"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #67",
-   "instruction": "Listen to an announcement at a student meeting.",
-   "audio": "library/toefl/free/audio/211df1a807104676b96b56fb9c0f22d3.mp3",
-   "transcript": "Our mentorship program is back this year with some great new features like regularly scheduled one on one sessions and extra resources to support participants. Senior students will once again be paired with freshmen to help them navigate their first year. As a mentor, you'll gain real leadership experience and feel the reward of helping someone succeed. Sign up at the Student Center, Room 104. Fill out a quick application, including a short statement about why you're interested. Nothing too formal, just a few lines.",
-   "questions": [
+  "id": "free-13650",
+  "title": "Announcement #67",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #67",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13650,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-67"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Which of the following is true about the mentorship program?",
-     "options": {
-      "A": "Each mentor is paired with a faculty advisor.",
-      "B": "The program will replace orientation for freshmen.",
-      "C": "Only students with prior mentoring experience can apply.",
-      "D": "Some improvements have been made since last year."
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：关于这个导师项目，以下哪项是正确的？ 定位原文：Our mentorship program is back this year with some great new features like regularly scheduled one on one sessions and extra resources to support participants. 选项分析： A. Each mentor is paired with a faculty advisor. 每位导师都配有一名教师顾问。公告中说的是高年级学生与新生结对，未提及教师顾问，所以A选项错误。 B. The program will replace orientation for freshmen. 该项目将取代新生的入学导向活动。公告中未提及取代任何活动，所以B选项错误。 C. Only students with prior mentoring experience can apply. 只有有导师经验的学生才能申请。公告中未要求有经验，所以C选项错误。 D. Some improvements have been made since last year. 自去年以来已经做出了一些改进。公告明确说项目今年回归，并带有“great new features”（很棒的新功能），说明有改进，所以D选项正确。"
-    },
-    {
-     "id": 2,
-     "stem": "What should a student submit when signing up?",
-     "options": {
-      "A": "A letter of recommendation",
-      "B": "A copy of their class schedule",
-      "C": "A brief explanation of their interest",
-      "D": "A résumé and cover letter"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：学生在报名时需要提交什么？ 定位原文：Fill out a quick application, including a short statement about why you're interested. Nothing too formal, just a few lines. 选项分析： A. A letter of recommendation 一封推荐信。公告中未提及推荐信，所以A选项错误。 B. A copy of their class schedule 一份课程表副本。公告中未提及课程表，所以B选项错误。 C. A brief explanation of their interest 一份关于自己兴趣的简要说明。公告要求写“why you're interested”（为什么感兴趣），“just a few lines”（几句话），所以C选项正确。 D. A r&eacute;sum&eacute; and cover letter 一份简历和求职信。公告中未要求简历或正式的求职信，并强调“nothing too formal”（不需要太正式），所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #67",
+      "instruction": "Listen to an announcement at a student meeting.",
+      "audio": "library/toefl/free/audio/211df1a807104676b96b56fb9c0f22d3.mp3",
+      "transcript": "Our mentorship program is back this year with some great new features like regularly scheduled one on one sessions and extra resources to support participants. Senior students will once again be paired with freshmen to help them navigate their first year. As a mentor, you'll gain real leadership experience and feel the reward of helping someone succeed. Sign up at the Student Center, Room 104. Fill out a quick application, including a short statement about why you're interested. Nothing too formal, just a few lines.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Which of the following is true about the mentorship program?",
+          "options": {
+            "A": "Each mentor is paired with a faculty advisor.",
+            "B": "The program will replace orientation for freshmen.",
+            "C": "Only students with prior mentoring experience can apply.",
+            "D": "Some improvements have been made since last year."
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: về người đạo sư này hạng mục, phía dưới cái đó hạng là chính xác? Dẫn chứng Bài gốc: Our mentorship program is back this year with some great new features like regularly scheduled one on one sessions and extra resources to support participants. Phương án phân tích: A. Each mentor is paired with a faculty advisor. mỗi vị đạo sư đều phân phối một gã Giáo viên cố vấn. trong thông báo nói rất đúng cấp cao Học viên và tân sinh kết đối, Không được đề cập (Not Given) Giáo viên cố vấn, nên A Phương án Sai. B. The program will replace orientation for freshmen. nên hạng mục đem thay thế học sinh mới Nhập học hướng phát triển hoạt động. trong thông báo Không được đề cập (Not Given) thay thế bất kỳ hoạt động gì, nên B Phương án Sai. C. Only students with prior mentoring experience can apply. chỉ có có đạo sư kinh nghiệm Học viên mới có thể thân thỉnh. trong thông báo không yêu cầu có kinh nghiệm, nên C Phương án Sai. D. Some improvements have been made since last year. từ năm trước đến nay đã làm ra một ít cải tiến. thông cáo rõ ràng nói tốt cho người hiện nay năm trở về, cũng có chứa “great new features” (rất tuyệt chức năng mới), nói rõ có cải tiến, nên D Phương án Đúng."
+        },
+        {
+          "id": 2,
+          "stem": "What should a student submit when signing up?",
+          "options": {
+            "A": "A letter of recommendation",
+            "B": "A copy of their class schedule",
+            "C": "A brief explanation of their interest",
+            "D": "A résumé and cover letter"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: Học viên tại báo danh lúc cần Nộp bài gì? Dẫn chứng Bài gốc: Fill out a quick application, including a short statement about why you're interested. Nothing too formal, just a few lines. Phương án phân tích: A. A letter of recommendation một phong thư đề cử. trong thông báo Không được đề cập (Not Given) thư đề cử, nên A Phương án Sai. B. A copy of their class schedule một phần thời khóa biểu phó bản. trong thông báo Không được đề cập (Not Given) thời khóa biểu, nên B Phương án Sai. C. A brief explanation of their interest một phần về chính mình hứng thú giản yếu nói rõ. thông cáo yêu cầu ghi “why you're interested” (vì sao cảm thấy hứng thú), “just a few lines” (mấy câu), nên C Phương án Đúng. D. A r&eacute;sum&eacute; and cover letter một phần lý lịch sơ lược và tìm việc thư. trong thông báo không yêu cầu lý lịch sơ lược hoặc chính thức tìm việc thư, cũng cường điệu “nothing too formal” (không cần quá chính thức), nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

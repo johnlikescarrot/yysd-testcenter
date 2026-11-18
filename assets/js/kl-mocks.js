@@ -1,29 +1,29 @@
-/* 托福官方套题 01-15（新东方官方模考）— 免费全真模考，不进开包体系。
-   数据文件在 library/toefl/kl-set-*.json（爬虫产物）；时长为各卷 modules timeSec 真实合计。 */
+/* Bộ đề TOEFL chính thức 01-15 (mới phương Đông chính thức Thi thử) — miễn phí Thi thử toàn phần, không vào mở bao hệ thống.
+    số liệu văn bản tài liệu tại library/toefl/kl-set-*.json (loài bò sát kết quả); lúc dài là tất cả cuốn modules timeSec chân thật cộng lại. */
 (function (w) {
   "use strict";
   var Y = w.YYSD = w.YYSD || {};
   var MOCKS = [
-    { id: "kl-set-1", no: "01", title: "托福官方套题 01", en: "Official Mock 01", tag: "new", tagZh: "最新", desc: "官方最新套题，四科完整流程，界面与计时同真实考场。", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-2", no: "02", title: "托福官方套题 02", en: "Official Mock 02", tag: "hot", tagZh: "高频", desc: "高频话题整套练，适合第二阶段计时训练。", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-3", no: "03", title: "托福官方套题 03", en: "Official Mock 03", tag: "forecast", tagZh: "预测", desc: "热门方向预测卷，考前摸底查漏。", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-4", no: "04", title: "托福官方套题 04", en: "Official Mock 04", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-5", no: "05", title: "托福官方套题 05", en: "Official Mock 05", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-6", no: "06", title: "托福官方套题 06", en: "Official Mock 06", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-7", no: "07", title: "托福官方套题 07", en: "Official Mock 07", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-8", no: "08", title: "托福官方套题 08", en: "Official Mock 08", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-9", no: "09", title: "托福官方套题 09", en: "Official Mock 09", duration: 99, r: 28, l: 40, w: 21, s: 11 },
-    { id: "kl-set-10", no: "10", title: "托福官方套题 10", en: "Official Mock 10", duration: 99, r: 27, l: 40, w: 21, s: 11 },
-    { id: "kl-set-11", no: "11", title: "托福官方套题 11", en: "Official Mock 11", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-12", no: "12", title: "托福官方套题 12", en: "Official Mock 12", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-13", no: "13", title: "托福官方套题 13", en: "Official Mock 13", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-14", no: "14", title: "托福官方套题 14", en: "Official Mock 14", duration: 92, r: 21, l: 40, w: 21, s: 11 },
-    { id: "kl-set-15", no: "15", title: "托福官方套题 15", en: "Official Mock 15", duration: 92, r: 21, l: 40, w: 21, s: 11 }
+    { id: "kl-set-1", no: "01", title: " Bộ đề TOEFL chính thức 01", en: "Official Mock 01", tag: "new", tagZh: " mới nhất ", desc: " chính thức mới nhất bộ câu, bốn khoa Đầy đủ quá trình, giao diện và tính theo thời gian cùng chân thật trường thi. ", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-2", no: "02", title: " Bộ đề TOEFL chính thức 02", en: "Official Mock 02", tag: "hot", tagZh: " Tần suất cao ", desc: " Tần suất cao chủ đề trọn bộ luyện, thích hợp giai đoạn thứ hai tính theo thời gian huấn luyện. ", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-3", no: "03", title: " Bộ đề TOEFL chính thức 03", en: "Official Mock 03", tag: "forecast", tagZh: " dự đoán ", desc: " đứng đầu phương hướng dự đoán cuốn, trước khi thi hiểu rõ tra rò. ", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-4", no: "04", title: " Bộ đề TOEFL chính thức 04", en: "Official Mock 04", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-5", no: "05", title: " Bộ đề TOEFL chính thức 05", en: "Official Mock 05", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-6", no: "06", title: " Bộ đề TOEFL chính thức 06", en: "Official Mock 06", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-7", no: "07", title: " Bộ đề TOEFL chính thức 07", en: "Official Mock 07", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-8", no: "08", title: " Bộ đề TOEFL chính thức 08", en: "Official Mock 08", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-9", no: "09", title: " Bộ đề TOEFL chính thức 09", en: "Official Mock 09", duration: 99, r: 28, l: 40, w: 21, s: 11 },
+    { id: "kl-set-10", no: "10", title: " Bộ đề TOEFL chính thức 10", en: "Official Mock 10", duration: 99, r: 27, l: 40, w: 21, s: 11 },
+    { id: "kl-set-11", no: "11", title: " Bộ đề TOEFL chính thức 11", en: "Official Mock 11", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-12", no: "12", title: " Bộ đề TOEFL chính thức 12", en: "Official Mock 12", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-13", no: "13", title: " Bộ đề TOEFL chính thức 13", en: "Official Mock 13", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-14", no: "14", title: " Bộ đề TOEFL chính thức 14", en: "Official Mock 14", duration: 92, r: 21, l: 40, w: 21, s: 11 },
+    { id: "kl-set-15", no: "15", title: " Bộ đề TOEFL chính thức 15", en: "Official Mock 15", duration: 92, r: 21, l: 40, w: 21, s: 11 }
   ];
   Y.KL_MOCKS = MOCKS;
-  /* 单科时长分钟，来自各卷 modules timeSec 真实合计 */
+  /* Đơn kỹ năng lúc dài phút, đến từ tất cả cuốn modules timeSec chân thật cộng lại */
   function skillMin(m, skill) { return m[skill[0]]; }
-  var SKILL_ZH = { reading: "阅读", listening: "听力", writing: "写作", speaking: "口语" };
+  var SKILL_ZH = { reading: "Đọc", listening: "Nghe", writing: "Viết", speaking: "Nói" };
   function reg(listName, skill) {
     if (!Y[listName]) Y[listName] = [];
     MOCKS.forEach(function (m) {
@@ -40,4 +40,4 @@
   reg("TOEFL_LISTENING", "listening");
   reg("TOEFL_WRITING", "writing");
   reg("TOEFL_SPEAKING", "speaking");
-})(typeof window !== "undefined" ? window : global);
+})(typeof window!== "undefined"? window: global);

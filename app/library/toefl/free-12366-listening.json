@@ -1,46 +1,46 @@
 {
- "id": "free-12366",
- "title": "Choose a Response #124",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #124",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12366,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-124"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #124",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/695275dde78c4e79a535ca8021397a56.mp3",
-   "questions": [
+  "id": "free-12366",
+  "title": "Choose a Response #124",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #124",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12366,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-124"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, about a year ago.",
-      "B": "Shows are interesting.",
-      "C": "Okay, I will show it to you later.",
-      "D": "It will air this Tuesday."
-     },
-     "answer": "A",
-     "transcript": "Hasn't she been on the show before?",
-     "stemZh": "她以前没上过这个节目吗？",
-     "analysis": "Hasn't she been on the show before? 题干分析 题干是一个否定疑问句，意为“她之前不是上过这个节目吗？”，用于表达惊讶或确认语气。 选项分析 选项A：正确答案，“是的，大约一年前。” 这个回答首先用“Yes”确认了说话者的猜测，然后补充了具体的时间信息（大约一年前），是对反义疑问句最标准、最完整的回答。 选项B：“演出很有趣。” 这是一个泛泛而谈的评论，没有回答“她是否上过节目”这个问题。 选项C：“好的，我稍后指给你看。” 这个回答是对“展示”（show）这个动作的回应，误解了题干中 show 作为“节目”或“演出”的意思。 选项D：“这周二会播出。” 这个回答谈论的是节目未来的播出时间，没有回答“她以前是否上过节目”的历史事实。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #124",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/695275dde78c4e79a535ca8021397a56.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, about a year ago.",
+            "B": "Shows are interesting.",
+            "C": "Okay, I will show it to you later.",
+            "D": "It will air this Tuesday."
+          },
+          "answer": "A",
+          "transcript": "Hasn't she been on the show before?",
+          "stemZh": "cô ấy trước kia không có lên qua cái tiết mục này không?",
+          "analysis": "Hasn't she been on the show before? Câu hỏi phân tích Câu hỏi là một chối bỏ câu nghi vấn, ý là “ cô ấy lúc trước không phải trải qua cái tiết mục này không? ”, dùng cho biểu đạt kinh ngạc hoặc Xác nhận ngữ khí. Phương án phân tích Phương án A: Đáp án đúng, “ đúng vậy, ước chừng một năm trước. ” câu trả lời này đầu tiên dùng “Yes” xác nhận kẻ nói chuyện suy đoán, sau đó bổ sung thời gian cụ thể tin tức (ước chừng một năm trước), là đúng Trái nghĩa câu nghi vấn tiêu chuẩn nhất, hoàn chỉnh nhất trả lời. Phương án B: “ diễn xuất rất thú vị. ” đây là một cái nói sơ lược bình luận, không có trả lời “ nàng là hay không trải qua tiết mục ” vấn đề này. Phương án C: “ tốt, tôi sau đó chỉ cho bạn xem. ” câu trả lời này là đúng “ biểu hiện ra ” (show) động tác này đáp lại, hiểu lầm Câu hỏi Vừa show với tư cách “ tiết mục ” hoặc “ diễn xuất ” ý tứ. Phương án D: “ tuần này hai sẽ truyền ra. ” câu trả lời này đàm luận là tiết mục tương lai truyền ra thời gian, không có trả lời “ cô ấy trước kia là hay không trải qua tiết mục ” Lịch sử sự thật."
+        }
+      ]
+    }
+  ]
 }

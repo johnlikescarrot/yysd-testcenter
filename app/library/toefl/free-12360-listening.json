@@ -1,46 +1,46 @@
 {
- "id": "free-12360",
- "title": "Choose a Response #118",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #118",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12360,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-118"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #118",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/5a74c2d3db264ed4839d29a978cce535.mp3",
-   "questions": [
+  "id": "free-12360",
+  "title": "Choose a Response #118",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #118",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12360,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-118"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "There is one on the corner.",
-      "B": "Bank machines are convenient.",
-      "C": "No, it didn't happen that way.",
-      "D": "The machine is out of order."
-     },
-     "answer": "A",
-     "transcript": "You didn't happen to see a bank machine near this hotel, did you?",
-     "stemZh": "你碰巧看到这家酒店附近有自动取款机吗？没有的话也没关系。",
-     "analysis": "You didn't happen to see a bank machine near this hotel, did you? 题干分析 题干是一个反意疑问句，前否后肯，语气委婉，意思是“你有没有碰巧在这家酒店附近看到自动取款机？”；didn't happen to 表示“碰巧、恰好”，bank machine 指“自动取款机（ATM）”。 选项分析 选项A：正确答案， “街角有一个。” 这个回答直接提供了ATM的位置信息，是对询问的最直接、最有用的回答。 选项B： “自动取款机很方便。” 这是一个关于ATM的评论，没有回答问题，属于答非所问。 选项C： “不，事情不是那样发生的。” 这是对“Did it happen that way?”（事情是那样发生的吗？）这类问题的回答，误解了题干中“didn't happen to see”的意思（“碰巧看到”），属于逻辑错误。 选项D： “机器坏了。” 在没有先确认是否有机器的情况下直接说坏了，逻辑上不连贯，且不如A选项直接有效。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #118",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/5a74c2d3db264ed4839d29a978cce535.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "There is one on the corner.",
+            "B": "Bank machines are convenient.",
+            "C": "No, it didn't happen that way.",
+            "D": "The machine is out of order."
+          },
+          "answer": "A",
+          "transcript": "You didn't happen to see a bank machine near this hotel, did you?",
+          "stemZh": "bạn trùng hợp chứng kiến quán rượu này phụ cận là tự nhiên di chuyển máy rút tiền không? không đúng sự thật cũng không còn quan hệ.",
+          "analysis": "You didn't happen to see a bank machine near this hotel, did you? Câu hỏi phân tích Câu hỏi là một phản ý câu nghi vấn, trước hay không sau chịu, ngữ khí uyển chuyển, ý là “ bạn có hay không trùng hợp ở nhà này khách sạn phụ cận chứng kiến tự động máy rút tiền? ”; didn't happen to biểu thị “ trùng hợp, vừa mới ”, bank machine chỉ “ tự động máy rút tiền (ATM) ”. Phương án phân tích Phương án A: Đáp án đúng, “ góc đường có một cái. ” câu trả lời này trực tiếp cung cấp ATM vị trí tin tức, là đúng hỏi thăm trực tiếp nhất, hữu dụng nhất trả lời. Phương án B: “ tự động máy rút tiền rất thuận tiện. ” đây là một cái về ATM bình luận, không có trả lời vấn đề, thuộc về đáp phi sở vấn. Phương án C: “ không, sự tình không phải như vậy phát sinh. ” đây là đối với “Did it happen that way?” (sự tình là như vậy phát sinh không?) loại vấn đề này trả lời, hiểu lầm Câu hỏi Vừa “didn't happen to see” ý tứ (“ trùng hợp chứng kiến ”), thuộc về ăn khớp Sai. Phương án D: “ máy móc hư mất. ” đang không có trước Xác nhận có hay không hữu cơ khí dưới tình huống nói thẳng hư mất, ăn khớp bên trên không nối quan, lại không ví dụ A Phương án trực tiếp hữu hiệu."
+        }
+      ]
+    }
+  ]
 }

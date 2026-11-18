@@ -1,4 +1,4 @@
-/* 词境远征 — Zelda-like adventure shell (navy/gold, map & shrine feel) */
+/* Hành trình Vương quốc Từ — Zelda-like adventure shell (navy/gold, map & shrine feel) */
 :root {
   --wr-bg0: #071018;
   --wr-bg1: #0f1c2e;
@@ -24,7 +24,7 @@ html, body.wr-page {
 
 .wr-page #wr-root { min-height: 100vh; box-sizing: border-box; padding: 0 1.1rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 
-.wr-loading, .wr-empty { padding: 20vh 1rem; text-align: center; color: var(--wr-muted); }
+.wr-loading,.wr-empty { padding: 20vh 1rem; text-align: center; color: var(--wr-muted); }
 
 .wr-prologue {
   max-width: 38rem;
@@ -100,7 +100,7 @@ html, body.wr-page {
   font-family: var(--wr-display);
   font-size: 1.25rem;
 }
-.wr-lore-card p, .wr-codex-prose p, .wr-ella__novel p {
+.wr-lore-card p,.wr-codex-prose p,.wr-ella__novel p {
   margin: 0 0 0.75rem;
   color: rgba(247,243,234,0.9);
   line-height: 1.65;
@@ -199,7 +199,7 @@ html, body.wr-page {
 .wr-xp i { display: block; height: 100%; background: linear-gradient(90deg, var(--wr-gold), #e0c37a); }
 .wr-xp__txt { margin: 0.4rem 0 0; font-size: 0.8rem; color: var(--wr-muted); font-weight: 600; }
 .wr-mentor {
-  margin: 0.75rem 0 0 !important;
+  margin: 0.75rem 0 0!important;
   font-size: 0.9rem;
   color: rgba(247,243,234,0.88);
   border-left: 2px solid var(--wr-gold);
@@ -236,13 +236,13 @@ html, body.wr-page {
   .wr-camp { flex-direction: row; }
 }
 
-.wr-map, .wr-panel {
+.wr-map,.wr-panel {
   border-radius: 20px;
   border: 1px solid var(--wr-line);
   background: var(--wr-panel);
   padding: 1.15rem 1.2rem 1.35rem;
 }
-.wr-map h2, .wr-panel h2 {
+.wr-map h2,.wr-panel h2 {
   margin: 0 0 0.35rem;
   font-family: var(--wr-display);
   font-size: 1.2rem;
@@ -295,13 +295,13 @@ a.wr-node, button.wr-node { cursor: pointer; }
   box-shadow: 0 12px 28px rgba(199,164,93,0.35);
   animation: wr-pulse 2.4s ease-in-out infinite;
 }
-.wr-node--done .wr-shrine {
+.wr-node--done.wr-shrine {
   border-color: rgba(61,155,106,0.55);
   color: #8fd4ad;
   background: rgba(61,155,106,0.12);
 }
-.wr-node--locked .wr-shrine { opacity: 0.4; }
-.wr-node--chest .wr-shrine { border-radius: 50%; border-color: rgba(199,164,93,0.45); }
+.wr-node--locked.wr-shrine { opacity: 0.4; }
+.wr-node--chest.wr-shrine { border-radius: 50%; border-color: rgba(199,164,93,0.45); }
 
 .wr-bubble {
   display: flex;
@@ -338,7 +338,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
   border: 1px solid rgba(255,255,255,0.08);
 }
 .wr-frags h3 { margin: 0 0 0.35rem; font-size: 0.88rem; color: var(--wr-gold); }
-.wr-frags p { margin: 0 !important; font-size: 0.8rem !important; line-height: 1.5; }
+.wr-frags p { margin: 0!important; font-size: 0.8rem!important; line-height: 1.5; }
 .wr-frags__empty { font-size: 0.85rem; color: var(--wr-muted); }
 
 @keyframes wr-fade {
@@ -351,7 +351,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wr-prologue__lines li, .wr-shrine--lit, .wr-pin.is-current .wr-pin__dot { animation: none; }
+  .wr-prologue__lines li,.wr-shrine--lit,.wr-pin.is-current.wr-pin__dot { animation: none; }
 }
 
 /* —— Phase 2: Hub / pin map / codex —— */
@@ -470,7 +470,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
 }
 .wr-quest h2 { font-family: var(--wr-display); margin: 0.15rem 0 0.4rem; font-size: 1.3rem; }
 .wr-quest > p { margin: 0 0 0.75rem; color: var(--wr-muted); line-height: 1.5; }
-.wr-quest .wr-btn { margin: 0.25rem 0.35rem 0.25rem 0; }
+.wr-quest.wr-btn { margin: 0.25rem 0.35rem 0.25rem 0; }
 
 .wr-transit {
   margin: 0 0 0.75rem;
@@ -507,33 +507,33 @@ a.wr-node, button.wr-node { cursor: pointer; }
   border: 1px solid rgba(255,255,255,0.08);
 }
 /* Fallback tones only when no art image */
-.wr-map-board--mist .wr-map-stage:not(.has-art) {
+.wr-map-board--mist.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(50% 40% at 20% 80%, rgba(120,160,190,0.25), transparent 60%),
     radial-gradient(40% 50% at 80% 20%, rgba(199,164,93,0.15), transparent 55%),
     linear-gradient(165deg, #1a3048, #0c1826 60%, #152818);
 }
-.wr-map-board--stone .wr-map-stage:not(.has-art) {
+.wr-map-board--stone.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(45% 40% at 70% 70%, rgba(140,120,90,0.28), transparent 60%),
     linear-gradient(160deg, #2a261f, #12100c 55%, #1c2420);
 }
-.wr-map-board--tide .wr-map-stage:not(.has-art) {
+.wr-map-board--tide.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(55% 45% at 30% 30%, rgba(60,150,170,0.28), transparent 60%),
     linear-gradient(170deg, #0f2a34, #071820 50%, #10222a);
 }
-.wr-map-board--ash .wr-map-stage:not(.has-art) {
+.wr-map-board--ash.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(50% 45% at 60% 40%, rgba(160,100,70,0.28), transparent 60%),
     linear-gradient(165deg, #2a1c16, #140e0c 55%, #1f1812);
 }
-.wr-map-board--archive .wr-map-stage:not(.has-art) {
+.wr-map-board--archive.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(45% 50% at 40% 30%, rgba(180,170,120,0.22), transparent 55%),
     linear-gradient(160deg, #1e2430, #0e1218 50%, #1a2228);
 }
-.wr-map-board--throne .wr-map-stage:not(.has-art) {
+.wr-map-board--throne.wr-map-stage:not(.has-art) {
   background:
     radial-gradient(40% 40% at 50% 20%, rgba(120,90,140,0.2), transparent 55%),
     linear-gradient(175deg, #121018, #08070c 55%, #16101a);
@@ -556,7 +556,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
   pointer-events: none;
   background: linear-gradient(180deg, rgba(7,16,24,0.22), rgba(7,16,24,0.38) 70%, rgba(7,16,24,0.5));
 }
-.wr-map-stage:not(.has-art) .wr-map-wash { display: none; }
+.wr-map-stage:not(.has-art).wr-map-wash { display: none; }
 .wr-map-fog {
   position: absolute; inset: 0;
   z-index: 1;
@@ -595,22 +595,22 @@ a.wr-node, button.wr-node { cursor: pointer; }
   color: var(--wr-muted);
   white-space: nowrap;
 }
-.wr-pin.is-done .wr-pin__dot {
+.wr-pin.is-done.wr-pin__dot {
   border-color: rgba(61,155,106,0.7);
   color: #8fd4ad;
   background: rgba(61,155,106,0.2);
 }
-.wr-pin.is-current .wr-pin__dot {
+.wr-pin.is-current.wr-pin__dot {
   width: 3rem; height: 3rem;
   border-color: var(--wr-gold);
   background: linear-gradient(145deg, #f1d38a, #c7a45d);
   color: #102033;
   animation: wr-pulse 2.2s ease-in-out infinite;
 }
-.wr-pin.is-current .wr-pin__tag { color: var(--wr-gold); }
+.wr-pin.is-current.wr-pin__tag { color: var(--wr-gold); }
 .wr-pin.is-locked { opacity: 0.45; pointer-events: none; }
-.wr-pin.is-boss .wr-pin__dot { border-radius: 12px; }
-.wr-pin.is-selected .wr-pin__dot { box-shadow: 0 0 0 3px rgba(199,164,93,0.35); }
+.wr-pin.is-boss.wr-pin__dot { border-radius: 12px; }
+.wr-pin.is-selected.wr-pin__dot { box-shadow: 0 0 0 3px rgba(199,164,93,0.35); }
 
 .wr-detail {
   padding: 0 1.2rem 1.25rem;
@@ -712,11 +712,11 @@ a.wr-node, button.wr-node { cursor: pointer; }
 }
 .wr-ella__body > p { margin: 0; color: var(--wr-muted); font-size: 0.9rem; line-height: 1.5; }
 .wr-ella__tip {
-  margin: 0.65rem 0 0 !important;
-  color: rgba(247,243,234,0.92) !important;
+  margin: 0.65rem 0 0!important;
+  color: rgba(247,243,234,0.92)!important;
   border-left: 2px solid var(--wr-gold);
   padding-left: 0.7rem;
-  font-size: 0.92rem !important;
+  font-size: 0.92rem!important;
 }
 .wr-quest--boss {
   border-color: rgba(196,122,74,0.55);
@@ -812,7 +812,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
 .wr-saga__ch > p { margin: 0; color: var(--wr-muted); font-size: 0.85rem; line-height: 1.45; }
 .wr-saga__ch.is-locked { opacity: 0.55; filter: grayscale(0.4); }
 .wr-saga__ch.is-done { border-color: rgba(199,164,93,0.45); }
-.wr-saga__prog, .wr-saga__lock {
+.wr-saga__prog,.wr-saga__lock {
   display: inline-block;
   margin-top: 0.65rem;
   font-size: 0.75rem;
@@ -917,7 +917,7 @@ a.wr-node, button.wr-node { cursor: pointer; }
   transform: scale(1.08);
   z-index: 0;
 }
-.wr-vn__stage--char .wr-vn__frame { position: relative; z-index: 1; }
+.wr-vn__stage--char.wr-vn__frame { position: relative; z-index: 1; }
 .wr-vn__frame {
   width: min(52vw, 360px);
   height: min(72%, 560px);
@@ -1019,10 +1019,10 @@ a.wr-node, button.wr-node { cursor: pointer; }
   cursor: pointer;
 }
 .wr-vn__choice:hover { border-color: var(--wr-gold); }
-.wr-vn__choice .wr-vn__en { font-size: 1rem; margin-bottom: 0.2rem; }
-.wr-vn__choice .wr-vn__zh { font-size: 0.85rem; }
+.wr-vn__choice.wr-vn__en { font-size: 1rem; margin-bottom: 0.2rem; }
+.wr-vn__choice.wr-vn__zh { font-size: 0.85rem; }
 /* cutscene shares scene stage layout */
-.wr-vn--cut .wr-vn__scene-stage { flex: 1 1 auto; }
+.wr-vn--cut.wr-vn__scene-stage { flex: 1 1 auto; }
 .wr-vn__kicker {
   margin: 0 0 0.35rem;
   font-size: 0.72rem;

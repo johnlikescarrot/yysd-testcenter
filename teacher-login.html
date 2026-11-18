@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>教师登录 · 优益思达国际课程中心</title>
+  <title>Giáo viên đăng nhập · Trung tâm Luyện thi Quốc tế YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260722polish">
   <script>
-  /* ponytail: 分网站统一登录，避免 teacher-login 闪出优益思达品牌 */
+  /* ponytail: điểm trang web thống nhất Đăng nhập, tránh cho teacher-login lòe ra YYSD nhãn hiệu */
   (function () {
     try {
       var q = new URLSearchParams(location.search).get("tenant");
-      if (q && /^[a-z0-9]([a-z0-9-]{0,30}[a-z0-9])?$/.test(q)) {
+      if (q & /^[a-z0-9]([a-z0-9-]{0,30}[a-z0-9])?$/.test(q)) {
         location.replace("login.html?next=" + encodeURIComponent(
           new URLSearchParams(location.search).get("next") || "teacher.html"
         ));
@@ -23,10 +23,10 @@
       }
     } catch (e) {}
     var h = (location.hostname || "").toLowerCase();
-    if (h && h !== "localhost" && h !== "127.0.0.1" &&
-        h !== "youyisida.com" && h !== "www.youyisida.com") {
+    if (h & h!== "localhost" & h!== "127.0.0.1" &
+        h!== "youyisida.com" & h!== "www.youyisida.com") {
       var m = h.match(/^([a-z0-9-]+)\.youyisida\.com$/);
-      if (m && !/^(www|api|admin|platform|mail|static|cdn|test|dev|staging|app|jingting|tiku)$/.test(m[1])) {
+      if (m &!/^(www|api|admin|platform|mail|static|cdn|test|dev|staging|app|jingting|tiku)$/.test(m[1])) {
         location.replace("login.html?next=" + encodeURIComponent(
           new URLSearchParams(location.search).get("next") || "teacher.html"
         ));
@@ -39,64 +39,63 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ Trung tâm Quốc tế YYSD">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <a href="index.html">返回学生端</a>
-        <a href="teacher-login.html" class="is-active">教师登录</a>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <a href="index.html"> Quay lại Học viên đầu</a>
+        <a href="teacher-login.html" class="is-active"> Giáo viên đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="教师端介绍">
+      <aside class="auth-aside reveal" aria-label="Cổng giáo viên giới thiệu">
         <div class="auth-aside__logo" aria-hidden="true">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
         </div>
         <span class="auth-aside__eyebrow">YYSD · TEACHER</span>
-        <h2 class="auth-aside__title">教师端<br>学情一览</h2>
-        <p class="auth-aside__desc">查看学生模考与练习成绩，掌握整体备考进度。</p>
+        <h2 class="auth-aside__title">Cổng giáo viên <br>học chuyện vừa xem</h2>
+        <p class="auth-aside__desc">Xem Học viên Thi thử và Luyện tập Điểm số, nắm giữ chỉnh thể phụ lục Tiến độ. </p>
         <ul class="auth-aside__points">
-          <li>学生成绩汇总</li>
-          <li>模考记录追踪</li>
-          <li>按板块筛选</li>
+          <li> Học viên Điểm số tập hợp </li>
+          <li> Thi thử ghi chép truy tung </li>
+          <li> theo như khối bộ lọc </li>
         </ul>
       </aside>
       <section class="auth-card reveal">
         <div class="auth-tabs">
-          <span class="auth-tabs__item is-active">登录</span>
-          <a class="auth-tabs__item" href="teacher-register.html">注册</a>
+          <span class="auth-tabs__item is-active"> Đăng nhập </span>
+          <a class="auth-tabs__item" href="teacher-register.html"> Đăng ký</a>
         </div>
-        <h1 class="auth-card__title">教师登录</h1>
-        <p class="auth-card__desc">使用教师账号的手机号与密码登录。</p>
+        <h1 class="auth-card__title">Giáo viên đăng nhập</h1>
+        <p class="auth-card__desc">sử dụng Giáo viên tài khoản Số điện thoại và Mật khẩu Đăng nhập. </p>
 
         <form class="auth-form" id="login-form" novalidate>
           <label class="auth-field">
-            <span>手机号</span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位中国大陆手机号" required>
+            <span> Số điện thoại </span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 chữ số điện thoại" required>
           </label>
           <label class="auth-field">
-            <span>密码</span>
-            <input type="password" id="password" autocomplete="current-password" minlength="6" maxlength="64" placeholder="至少 6 位">
+            <span> Mật khẩu </span>
+            <input type="password" id="password" autocomplete="current-password" minlength="6" maxlength="64" placeholder="Tối thiểu 6 ký tự">
           </label>
           <label class="auth-field">
-            <span>激活码</span>
-            <input id="activationCode" autocomplete="off" placeholder="这台电脑已绑定可留空">
+            <span> Mã kích hoạt </span>
+            <input id="activationCode" autocomplete="off" placeholder="máy vi tính này đã khóa lại có thể lưu chỗ trống">
           </label>
-          <p class="auth-forgot"><a href="forgot-password.html">忘记密码？</a></p>
+          <p class="auth-forgot"><a href="forgot-password.html"> Quên mật khẩu?</a></p>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable">进入教师端</button>
+          <button type="submit" class="btn btn--primary btn--block pressable">Vào cổng giáo viên</button>
         </form>
 
-        <p class="auth-legal">
-          还没有教师账号？<a href="teacher-register.html">注册教师账号</a>
-          · <a href="login.html">学生登录</a>
+        <p class="auth-legal">còn không có Giáo viên tài khoản? <a href="teacher-register.html"> Đăng ký Giáo viên tài khoản</a>
+          · <a href="login.html"> Học viên Đăng nhập</a>
         </p>
       </section>
     </div>
@@ -104,7 +103,7 @@
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · 教师端</p>
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm Luyện thi Quốc tế YYSD · Cổng giáo viên </p>
     </div>
   </footer>
 
@@ -132,7 +131,7 @@
 
     function showMsg(text, ok) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
+      msgEl.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
     }
 
     form.addEventListener("submit", function (ev) {

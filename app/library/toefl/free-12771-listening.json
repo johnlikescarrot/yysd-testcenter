@@ -1,46 +1,46 @@
 {
- "id": "free-12771",
- "title": "Choose a Response #153",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #153",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12771,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-153"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #153",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/b6fa729a6d99424fa0feecde28f629c3.mp3",
-   "questions": [
+  "id": "free-12771",
+  "title": "Choose a Response #153",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #153",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12771,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-153"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "So am I.",
-      "B": "It takes a while.",
-      "C": "I didn’t mean it.",
-      "D": "Well, I understand."
-     },
-     "answer": "D",
-     "transcript": "I’m not available this afternoon.",
-     "stemZh": "我今天下午没空。",
-     "analysis": "I’m not available this afternoon. 题干分析 题干是表达时间安排的日常口语句，意为 “我今天下午没空。”，考点是对他人告知没空的情况作出恰当、礼貌的回应。 选项分析 选项 A：回答内容为 “我也是”，虽然表示情况相同，但并非对此类告知最得体的回应方式，不符合本题最佳选项要求。 选项 B：回答内容为 “这需要一段时间”，与对方下午没空的表述无关，属于答非所问。 选项 C：回答内容为 “我不是故意的”，话题与时间安排毫无关联，无法回应问题。 选项 D：此选项为正确答案，对对方没空的情况表示理解，是日常交流中最礼貌、最符合语境的回应。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #153",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/b6fa729a6d99424fa0feecde28f629c3.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "So am I.",
+            "B": "It takes a while.",
+            "C": "I didn’t mean it.",
+            "D": "Well, I understand."
+          },
+          "answer": "D",
+          "transcript": "I’m not available this afternoon.",
+          "stemZh": "ta hôm nay buổi chiều không rảnh.",
+          "analysis": "I’m not available this afternoon. Câu hỏi phân tích Câu hỏi là biểu đạt sắp xếp thời gian Đời sống Nói câu, ý là “ ta hôm nay buổi chiều không rảnh. ”, địa điểm thi là đúng người khác báo cho biết không rảnh tình huống làm ra thỏa đáng, lễ phép đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ ta cũng là ”, mặc dù biểu thị tình huống giống nhau, nhưng cũng không phải là đối với cái này loại báo cho biết rất đắc thể đáp lại phương thức, không phù hợp chủ đề tốt nhất Phương án yêu cầu. Phương án B: trả lời nội dung là “ điều này cần một đoạn thời gian ”, và đối phương buổi chiều không rảnh thuyết minh không quan hệ, thuộc về đáp phi sở vấn. Phương án C: trả lời nội dung là “ tôi không phải cố ý ”, chủ đề và sắp xếp thời gian không liên hệ chút nào, không cách nào đáp lại vấn đề. Phương án D: này Phương án là Đáp án đúng, đối với đối phương không rảnh tình huống biểu thị lý giải, là Đời sống trao đổi Vừa rất lễ phép, phù hợp nhất ngữ cảnh đáp lại."
+        }
+      ]
+    }
+  ]
 }

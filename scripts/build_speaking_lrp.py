@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from speaking_hand_assets import (  # noqa: E402
+from speaking_hand_assets import (# noqa: E402
     HAND_LR,
     copy_lrp_audio,
     ensure_dirs,
@@ -31,10 +31,10 @@ def load_hit_by_title() -> dict[str, list[str]]:
         cur = None
         samples: list[str] = []
         for t in p.get("tasks") or []:
-            if t.get("type") != "repeat":
+            if t.get("type")!= "repeat":
                 continue
             title = (t.get("title") or "").lower()
-            if title != cur:
+            if title!= cur:
                 if cur and len(samples) == 7:
                     by.setdefault(cur, samples)
                 cur = title
@@ -54,7 +54,7 @@ def load_hit_instr() -> dict[str, str]:
     for f in glob.glob(str(ROOT / "app/library/toefl/set-*-speaking.json")):
         p = json.load(open(f))
         for t in p.get("tasks") or []:
-            if t.get("type") != "repeat":
+            if t.get("type")!= "repeat":
                 continue
             title = (t.get("title") or "").lower()
             instr = (t.get("instruction") or "").strip()
@@ -216,7 +216,7 @@ def build_one(n: int) -> Path:
     audio = copy_lrp_audio(n, slot)
     title = slot.get("title") or f"LRP {n}"
     scene = scene_for(n, title, slot.get("png"))
-    title_zh = "听后跟读"
+    title_zh = " nghe xong Đọc nhại "
 
     key = title.lower().strip()
     key2 = re.sub(r"\s+2$", "", key)
@@ -245,15 +245,15 @@ def build_one(n: int) -> Path:
     (INCOMING / "ocr" / f"S-LRP{n}.txt").write_text(ocr)
     o_instr, o_samples = parse_samples_from_ocr(ocr)
 
-    if len(samples) != 7:
+    if len(samples)!= 7:
         samples = [s for s in o_samples if s and len(s.split()) >= 2]
-    if len(samples) != 7:
+    if len(samples)!= 7:
         # audio STT fallback (source of truth for what to repeat)
         stt = whisper_samples(audio["qs"])
         if len(stt) == 7 and all(len(s.split()) >= 2 for s in stt):
             samples = stt
             print(f"S-LRP{n} used whisper STT")
-    if len(samples) != 7:
+    if len(samples)!= 7:
         raise SystemExit(f"S-LRP{n} got {len(samples)} samples, need 7")
 
     instruction = HIT_INSTR.get(key) or HIT_INSTR.get(key2) or sanitize_instruction(
@@ -274,7 +274,7 @@ def build_one(n: int) -> Path:
                 "instruction": instruction,
                 "audio": audio["qs"][q],
                 "sample": sample,
-                "analysis": f"复述：{sample}",
+                "analysis": f" thuật lại: {sample}",
                 "title": title,
                 "titleZh": title_zh,
                 "image": scene,

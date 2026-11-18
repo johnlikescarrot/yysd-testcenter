@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
     <meta name="exam:zone" content="study">
     <meta name="exam:subject" content="vocab-special-listening">
-    <meta name="exam:title" content="第三篇 · 图书馆与学习">
-    <meta name="exam:description" content="雅思听力专项词汇 · 图书馆与学习">
+    <meta name="exam:title" content="đệ tam thiên · đồ thư quán và Học tập">
+    <meta name="exam:description" content="IELTS Listening Từ vựng chuyên sâu · đồ thư quán và Học tập">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>第三篇 · 图书馆与学习</title>
+    <title>đệ tam thiên · đồ thư quán và Học tập</title>
     <style>
         :root {
             --bg: #f5f3f0; --card-bg: #ffffff; --primary: #2c3e6b; --primary-light: #3d5a99;
@@ -16,7 +16,7 @@
             --text-muted: #888; --border: #e0dcd5; --shadow: 0 2px 12px rgba(0,0,0,0.06);
             --shadow-hover: 0 6px 24px rgba(0,0,0,0.1); --shadow-card: 0 1px 4px rgba(0,0,0,0.04);
             --radius: 12px; --radius-sm: 8px; --radius-xs: 6px; --transition: 0.22s ease;
-            --font-heading: 'Georgia', serif; --font-body: 'Inter', 'PingFang SC', sans-serif;
+            --font-heading: 'Georgia', serif; --font-body: 'Inter', sans-serif;
             --font-ipa: 'Gentium Plus', serif; --success: #3a7d5a; --success-bg: #eaf5ee;
             --error: #c0392b; --error-bg: #fdf0ee; --warning: #b8860b; --warning-bg: #fef9ee;
             --tag-bg: #f0ede6; --history-bg: #f9f8f5;
@@ -37,7 +37,7 @@
         .section { display:none; }
         .section.active { display:block; }
 
-        /* 学习卡片 */
+        /* Thẻ học từ vựng */
         .learn-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:14px; }
         .word-card { background:var(--card-bg); border-radius:var(--radius); padding:16px 18px; cursor:pointer; transition:var(--transition); border:1.5px solid transparent; box-shadow:var(--shadow-card); display:flex; flex-direction:column; gap:6px; user-select:none; }
         .word-card:hover { box-shadow:var(--shadow-hover); border-color:#d5cec4; transform:translateY(-2px); }
@@ -52,25 +52,25 @@
         .word-pos { display:inline-block; font-size:0.7rem; font-weight:600; color:var(--accent); background:#fdf8f0; padding:2px 8px; border-radius:4px; }
         .word-meaning { font-size:0.9rem; color:var(--text); font-weight:500; }
         .word-detail { display:none; margin-top:8px; padding-top:10px; border-top:1px dashed var(--border); animation:fadeIn 0.25s ease; }
-        .word-card.expanded .word-detail { display:block; }
+        .word-card.expanded.word-detail { display:block; }
         @keyframes fadeIn { from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:translateY(0); } }
         .word-detail-row { font-size:0.85rem; margin-bottom:4px; color:var(--text-light); line-height:1.5; }
         .word-detail-row strong { color:var(--primary); font-weight:600; }
         .card-collapse-hint { font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:4px; display:none; }
-        .word-card.expanded .card-collapse-hint { display:block; }
+        .word-card.expanded.card-collapse-hint { display:block; }
 
-        /* 检测准备 */
+        /* Đánh giá chuẩn bị */
         .test-setup { background:var(--card-bg); border-radius:var(--radius); padding:32px 28px; text-align:center; box-shadow:var(--shadow); max-width:600px; margin:0 auto; }
         .test-setup h3 { font-family:var(--font-heading); font-size:1.4rem; color:var(--primary); margin-bottom:12px; }
         .test-setup p { color:var(--text-light); margin-bottom:8px; font-size:0.9rem; }
-        .test-setup .stage-info { display:flex; justify-content:center; gap:20px; margin:16px 0 24px; flex-wrap:wrap; }
-        .test-setup .stage-item { background:var(--history-bg); padding:12px 16px; border-radius:var(--radius-sm); text-align:center; min-width:90px; flex:1; max-width:150px; }
-        .test-setup .stage-item .num { font-size:1.5rem; font-weight:700; color:var(--primary); }
-        .test-setup .stage-item .label { font-size:0.75rem; color:var(--text-muted); }
+        .test-setup.stage-info { display:flex; justify-content:center; gap:20px; margin:16px 0 24px; flex-wrap:wrap; }
+        .test-setup.stage-item { background:var(--history-bg); padding:12px 16px; border-radius:var(--radius-sm); text-align:center; min-width:90px; flex:1; max-width:150px; }
+        .test-setup.stage-item.num { font-size:1.5rem; font-weight:700; color:var(--primary); }
+        .test-setup.stage-item.label { font-size:0.75rem; color:var(--text-muted); }
         .btn-start-test { padding:14px 48px; border-radius:26px; border:none; cursor:pointer; font-size:1.1rem; font-weight:700; background:var(--primary); color:#fff; transition:var(--transition); font-family:var(--font-body); }
         .btn-start-test:hover { background:var(--primary-light); box-shadow:0 4px 16px rgba(44,62,107,0.3); transform:translateY(-1px); }
 
-        /* 答题界面 */
+        /* bài thi giao diện */
         .test-active-area { display:none; max-width:700px; margin:0 auto; background:var(--card-bg); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow); text-align:center; position:relative; }
         .test-active-area.visible { display:block; }
         .test-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; font-size:0.85rem; color:var(--text-muted); font-weight:500; gap:8px; flex-wrap:wrap; }
@@ -104,10 +104,10 @@
         .quiz-option.wrong-answer { border-color:var(--error); background:var(--error-bg); }
         .quiz-option.disabled { pointer-events:none; opacity:0.8; }
 
-        /* 按钮组 */
+        /* cái nút tổ */
         .action-bar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px; flex-wrap:wrap; }
-        .action-bar .left { display:flex; gap:10px; flex-wrap:wrap; }
-        .action-bar .right { display:flex; gap:10px; flex-wrap:wrap; }
+        .action-bar.left { display:flex; gap:10px; flex-wrap:wrap; }
+        .action-bar.right { display:flex; gap:10px; flex-wrap:wrap; }
 
         .btn-submit { padding:12px 32px; border-radius:26px; border:none; cursor:pointer; font-size:1rem; font-weight:700; background:var(--primary); color:#fff; transition:var(--transition); }
         .btn-submit:hover:not(:disabled) { background:var(--primary-light); }
@@ -125,19 +125,19 @@
         .test-feedback.correct { background:var(--success-bg); border:1px solid #c3e0cd; color:#2d5a3d; }
         .test-feedback.wrong { background:var(--error-bg); border:1px solid #f5c6cb; color:#6b2020; }
 
-        /* 错题报告 */
+        /* Báo cáo câu sai */
         .test-results { display:none; max-width:820px; margin:0 auto; background:var(--card-bg); border-radius:var(--radius); padding:32px 28px; box-shadow:var(--shadow); }
         .test-results.visible { display:block; }
         .results-score-summary { display:flex; justify-content:center; gap:40px; margin:16px 0 24px; flex-wrap:wrap; }
-        .results-score-summary .item { text-align:center; }
-        .results-score-summary .item .num { font-size:2.2rem; font-weight:700; color:var(--primary); }
-        .results-score-summary .item .label { font-size:0.85rem; color:var(--text-muted); }
+        .results-score-summary.item { text-align:center; }
+        .results-score-summary.item.num { font-size:2.2rem; font-weight:700; color:var(--primary); }
+        .results-score-summary.item.label { font-size:0.85rem; color:var(--text-muted); }
         .results-stage { margin-top:20px; border-top:1px solid var(--border); padding-top:16px; }
         .results-stage h4 { font-size:1rem; color:var(--primary); margin-bottom:12px; }
         .results-table { width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left; }
-        .results-table th, .results-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
+        .results-table th,.results-table td { padding:8px 10px; border-bottom:1px solid var(--border); }
         .results-table th { background:#fafaf7; color:var(--primary); }
-        .row-correct { background:#f9fdf9; } .row-wrong { background:#fefbfb; }
+        .row-correct { background:#f9fdf9; }.row-wrong { background:#fefbfb; }
         .row-unanswered { background:#fef9ee; }
         .results-badge { display:inline-block; padding:4px 16px; border-radius:20px; font-size:0.8rem; font-weight:600; margin-bottom:12px; }
         .results-badge.completed { background:var(--success-bg); color:var(--success); }
@@ -155,10 +155,10 @@
             .word-count-badge { display:none; }
             .btn-play-large { width:56px; height:56px; font-size:1.3rem; }
             .results-score-summary { gap:16px; }
-            .test-setup .stage-info { gap:10px; }
-            .test-setup .stage-item { min-width:70px; }
+            .test-setup.stage-info { gap:10px; }
+            .test-setup.stage-item { min-width:70px; }
             .action-bar { flex-direction:column; align-items:stretch; }
-            .action-bar .left, .action-bar .right { justify-content:center; }
+            .action-bar.left,.action-bar.right { justify-content:center; }
         }
     </style>
 <!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
@@ -166,68 +166,68 @@
 <body>
 <header class="header">
     <div class="header-inner">
-        <div class="logo"><div class="logo-icon">📚</div><span>雅思听力 · 图书馆与学习</span></div>
+        <div class="logo"><div class="logo-icon">📚</div><span> IELTS Listening · đồ thư quán và Học tập </span></div>
         <nav class="nav-tabs" id="navTabs">
-            <button class="nav-tab active" data-mode="learn">📚 学习</button>
-            <button class="nav-tab" data-mode="test">🎯 综合检测</button>
+            <button class="nav-tab active" data-mode="learn">📚 Học tập</button>
+            <button class="nav-tab" data-mode="test">🎯 Kiểm tra tổng hợp</button>
         </nav>
-        <span class="word-count-badge">共 32 词</span>
+        <span class="word-count-badge">tổng 32 từ</span>
     </div>
 </header>
 <div class="main-container">
-    <!-- 学习模式 -->
+    <!-- Học tập hình thức -->
     <section class="section active" id="learnSection">
         <div class="learn-grid" id="learnGrid"></div>
     </section>
 
-    <!-- 检测模式 -->
+    <!-- Đánh giá hình thức -->
     <section class="section" id="testSection">
         <div class="test-setup" id="testSetup">
-            <h3>📋 综合检测 · 共32题</h3>
-            <p>分两个阶段，依次完成，不可跳转。</p>
+            <h3>📋 Kiểm tra tổng hợp · tổng 32 câu</h3>
+            <p>điểm hai cái Giai đoạn, theo thứ tự hoàn thành, không thể nhảy chuyển. </p>
             <div class="stage-info">
-                <div class="stage-item"><div class="num">①</div><div class="label">听写<br>听音拼写+中文</div></div>
-                <div class="stage-item"><div class="num">②</div><div class="label">辨析<br>中文选英文</div></div>
+                <div class="stage-item"><div class="num">①</div><div class="label"> Nghe chép <br>Nghe và viết chính tả + Tiếng Việt </div></div>
+                <div class="stage-item"><div class="num">②</div><div class="label"> Phân biệt từ <br>Tiếng Việt chọn Tiếng Anh </div></div>
             </div>
-            <button class="btn-start-test" id="btnStartTest">🚀 开始检测</button>
+            <button class="btn-start-test" id="btnStartTest">🚀 Bắt đầu Đánh giá</button>
         </div>
 
         <div class="test-active-area" id="testActive">
             <div class="test-progress">
-                <span id="progLabel">第 1 / 32 题</span>
+                <span id="progLabel"> thứ 1 / 32 câu</span>
                 <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progFill"></div></div>
-                <span id="scoreLabel">得分: 0</span>
+                <span id="scoreLabel"> Điểm số: 0</span>
             </div>
-            <div class="stage-badge" id="stageBadge">阶段一：听写</div>
+            <div class="stage-badge" id="stageBadge"> Giai đoạn 1: Nghe chép </div>
 
-            <!-- 听写UI -->
+            <!-- Nghe chép UI -->
             <div id="dictationUI">
                 <div class="test-play-area">
                     <button class="btn-play-large" id="btnPlayDict">▶</button>
-                    <p class="play-hint">点击按钮听单词读音</p>
+                    <p class="play-hint">nhấn cái nút nghe Từ vựng âm đọc </p>
                 </div>
                 <div class="test-inputs">
-                    <div class="test-input-group"><label>🔤 英文拼写</label><input type="text" id="inputSpelling" placeholder="请输入英文拼写..." autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-                    <div class="test-input-group"><label>🈶 中文含义</label><input type="text" id="inputMeaning" placeholder="请输入中文含义..." autocomplete="off"></div>
+                    <div class="test-input-group"><label>🔤 Tiếng Anh Chính tả</label><input type="text" id="inputSpelling" placeholder="xin điền vào Tiếng Anh Chính tả..." autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+                    <div class="test-input-group"><label>🈶 Tiếng Việt Nghĩa</label><input type="text" id="inputMeaning" placeholder="xin điền vào Tiếng Việt Nghĩa..." autocomplete="off"></div>
                 </div>
             </div>
 
-            <!-- 辨析UI -->
+            <!-- Phân biệt từ UI -->
             <div id="quizUI" style="display:none;">
                 <div class="quiz-area" id="quizArea">
-                    <div class="quiz-question" id="qText">加载题目...</div>
+                    <div class="quiz-question" id="qText"> thêm năm đề mục...</div>
                     <div class="quiz-options" id="qOpts"></div>
                 </div>
             </div>
 
-            <!-- 按钮组 -->
+            <!-- cái nút tổ -->
             <div class="action-bar">
                 <div class="left">
-                    <button class="btn-submit" id="btnSubmit">✓ 确认答案</button>
-                    <button class="btn-next" id="btnNext">下一题 →</button>
+                    <button class="btn-submit" id="btnSubmit">✓ Xác nhận Đáp án</button>
+                    <button class="btn-next" id="btnNext">Câu tiếp theo →</button>
                 </div>
                 <div class="right">
-                    <button class="btn-quit" id="btnQuit">⏹ 提前交卷</button>
+                    <button class="btn-quit" id="btnQuit">⏹ sớm Nộp bài</button>
                 </div>
             </div>
 
@@ -235,59 +235,59 @@
         </div>
 
         <div class="test-results" id="testResults">
-            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 检测报告</h3>
+            <h3 style="font-family:var(--font-heading);color:var(--primary);text-align:center;">📊 Đánh giá báo cáo</h3>
             <div id="resultsBadge" style="text-align:center;"></div>
             <div class="results-score-summary" id="summary"></div>
             <div id="stageResults"></div>
             <div style="text-align:center;margin-top:20px;">
-                <button class="btn-retry" id="btnRetry">🔄 重新检测</button>
-                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 返回学习</button>
+                <button class="btn-retry" id="btnRetry">🔄 một lần nữa Đánh giá</button>
+                <button class="btn-retry btn-back-learn" id="btnBackLearn">📚 Quay lại Học tập</button>
             </div>
         </div>
     </section>
 </div>
 <script>
 (function(){
-// ==================== 图书馆与学习 · 32个核心词 ====================
+// ==================== đồ thư quán và Học tập · 32 hạch tâm từ ====================
 const wordData = [
-    // —— 资料类型 ——
-    { word:'Reference book', ipa:'/ˈref.ər.əns ˌbʊk/', pos:'n.', meaning:'参考书；工具书', acceptCN:['参考书','工具书'], example:'You can find the definition in the reference book.' },
-    { word:'Fiction', ipa:'/ˈfɪk.ʃən/', pos:'n.', meaning:'小说', acceptCN:['小说'], example:'She prefers fiction to non-fiction.' },
-    { word:'Textbook', ipa:'/ˈtekst.bʊk/', pos:'n.', meaning:'教科书；课本', acceptCN:['教科书','课本','教材'], example:'The textbook for this course is very expensive.' },
-    { word:'Periodical', ipa:'/ˌpɪə.riˈɒd.ɪ.kəl/', pos:'n.', meaning:'期刊；杂志', acceptCN:['期刊','杂志'], example:'The library subscribes to many academic periodicals.' },
-    { word:'Journal', ipa:'/ˈdʒɜː.nəl/', pos:'n.', meaning:'日报；杂志；期刊', acceptCN:['日报','杂志','期刊'], example:'She published her research in a medical journal.' },
-    { word:'Newspaper', ipa:'/ˈnjuːz.peɪ.pər/', pos:'n.', meaning:'报纸', acceptCN:['报纸'], example:'I read the newspaper every morning.' },
-    { word:'Magazine', ipa:'/ˌmæɡ.əˈziːn/', pos:'n.', meaning:'杂志', acceptCN:['杂志'], example:'This magazine is published weekly.' },
-    { word:'Category', ipa:'/ˈkæt.ə.ɡər.i/', pos:'n.', meaning:'种类；分类', acceptCN:['种类','分类','类别'], example:'Books are organised by category in the library.' },
-    { word:'Publisher', ipa:'/ˈpʌb.lɪ.ʃər/', pos:'n.', meaning:'出版者；出版商', acceptCN:['出版者','出版商','出版社'], example:'The publisher decided to print more copies.' },
-    { word:'Author', ipa:'/ˈɔː.θər/', pos:'n.', meaning:'作者；作家', acceptCN:['作者','作家'], example:'The author of this book is a famous historian.' },
+    // —— tư liệu loại hình ——
+    { word:'Reference book', ipa:'/ˈref.ər.əns ˌbʊk/', pos:'n.', meaning:'sách tham khảo, sách tra cứu', acceptCN:[' sách tham khảo ',' sách tham khảo '], example:'You can find the definition in the reference book.' },
+    { word:'Fiction', ipa:'/ˈfɪk.ʃən/', pos:'n.', meaning:'điều hư cấu, điều tưởng tượng; tiểu thuyết', acceptCN:[' tiểu thuyết '], example:'She prefers fiction to non-fiction.' },
+    { word:'Textbook', ipa:'/ˈtekst.bʊk/', pos:'n.', meaning:'sách giáo khoa ((như) text)', acceptCN:[' sách giáo khoa ',' sách giáo khoa ',' tài liệu giảng dạy '], example:'The textbook for this course is very expensive.' },
+    { word:'Periodical', ipa:'/ˌpɪə.riˈɒd.ɪ.kəl/', pos:'n.', meaning:'tạo chí xuất bản định kỳ', acceptCN:[' tập san ',' tạp chí '], example:'The library subscribes to many academic periodicals.' },
+    { word:'Journal', ipa:'/ˈdʒɜː.nəl/', pos:'n.', meaning:'báo hằng ngày; tạp chí', acceptCN:[' nhật báo ',' tạp chí ',' tập san '], example:'She published her research in a medical journal.' },
+    { word:'Newspaper', ipa:'/ˈnjuːz.peɪ.pər/', pos:'n.', meaning:'báo', acceptCN:[' báo chí '], example:'I read the newspaper every morning.' },
+    { word:'Magazine', ipa:'/ˌmæɡ.əˈziːn/', pos:'n.', meaning:'tạp chí; nhà kho; kho súng, kho đạn, kho thuốc nổ', acceptCN:[' tạp chí '], example:'This magazine is published weekly.' },
+    { word:'Category', ipa:'/ˈkæt.ə.ɡər.i/', pos:'n.', meaning:'hạng, loại; (triết học) phạm trù', acceptCN:[' chủng loại ',' phân loại ',' thuộc loại '], example:'Books are organised by category in the library.' },
+    { word:'Publisher', ipa:'/ˈpʌb.lɪ.ʃər/', pos:'n.', meaning:'người xuất bản, nhà xuất bản (sách báo...); (từ Mỹ,nghĩa Mỹ) chủ báo', acceptCN:[' người xuất bản ',' xuất bản thương lượng ',' nhà xuất bản '], example:'The publisher decided to print more copies.' },
+    { word:'Author', ipa:'/ˈɔː.θər/', pos:'n.', meaning:'tác giả; người tạo ra, người gây ra', acceptCN:[' tác giả ',' tác giả '], example:'The author of this book is a famous historian.' },
 
-    // —— 借阅与管理 ——
-    { word:'Loan period', ipa:'/ˈləʊn ˌpɪə.ri.əd/', pos:'n.', meaning:'借阅期限', acceptCN:['借阅期限','借期'], example:'The loan period for this book is three weeks.' },
-    { word:'Due date', ipa:'/ˈdjuː ˌdeɪt/', pos:'n.', meaning:'到期日', acceptCN:['到期日','应还日期'], example:'Please check the due date on the receipt.' },
-    { word:'Overdue', ipa:'/ˌəʊ.vəˈdjuː/', pos:'adj.', meaning:'过期的；逾期的', acceptCN:['过期的','逾期的','超期'], example:'Your library book is overdue.' },
-    { word:'Fine', ipa:'/faɪn/', pos:'n.', meaning:'罚款', acceptCN:['罚款','罚金'], example:'You have to pay a fine for late returns.' },
-    { word:'Renew', ipa:'/rɪˈnjuː/', pos:'v.', meaning:'续借', acceptCN:['续借','更新'], example:'You can renew books online.' },
-    { word:'Recall', ipa:'/rɪˈkɔːl/', pos:'v.', meaning:'召回；收回', acceptCN:['召回','收回'], example:'The library has recalled this book.' },
-    { word:'Reserve', ipa:'/rɪˈzɜːv/', pos:'v./n.', meaning:'预约；预留', acceptCN:['预约','预留','预订'], example:'You can reserve a book online.' },
-    { word:'Database', ipa:'/ˈdeɪ.tə.beɪs/', pos:'n.', meaning:'数据库', acceptCN:['数据库','资料库'], example:'Students can access the library database from home.' },
+    // —— mượn đọc và Quản trị ——
+    { word:'Loan period', ipa:'/ˈləʊn ˌpɪə.ri.əd/', pos:'n.', meaning:' mượn đọc kỳ hạn ', acceptCN:[' mượn đọc kỳ hạn ',' mượn thời hạn '], example:'The loan period for this book is three weeks.' },
+    { word:'Due date', ipa:'/ˈdjuː ˌdeɪt/', pos:'n.', meaning:' đến kỳ ngày ', acceptCN:[' đến kỳ ngày ',' ứng với còn ngày '], example:'Please check the due date on the receipt.' },
+    { word:'Overdue', ipa:'/ˌəʊ.vəˈdjuː/', pos:'adj.', meaning:'quá chậm; quá hạn', acceptCN:[' quá thời hạn ',' quá hạn ',' vượt qua thời hạn '], example:'Your library book is overdue.' },
+    { word:'Fine', ipa:'/faɪn/', pos:'n.', meaning:'tốt, nguyên chất (vàng, bạc...); nhỏ, mịn, thanh mảnh; sắc', acceptCN:[' phạt tiền ',' phạt tiền '], example:'You have to pay a fine for late returns.' },
+    { word:'Renew', ipa:'/rɪˈnjuː/', pos:'v.', meaning:'hồi phục lại, làm hồi lại; thay mới, đổi mới', acceptCN:[' tục mượn ',' đổi mới '], example:'You can renew books online.' },
+    { word:'Recall', ipa:'/rɪˈkɔːl/', pos:'v.', meaning:'gọi về, đòi về, triệu về, triệu hồi; (quân sự) thu (quân); gọi tái ngũ (quân dự bị...); (hàng hải) gọi trở về (một chiếc tàu)', acceptCN:[' triệu hồi ',' thu hồi '], example:'The library has recalled this book.' },
+    { word:'Reserve', ipa:'/rɪˈzɜːv/', pos:'v./n.', meaning:'để dành, dự trữ', acceptCN:[' hẹn trước ',' để dành ',' đặt trước '], example:'You can reserve a book online.' },
+    { word:'Database', ipa:'/ˈdeɪ.tə.beɪs/', pos:'n.', meaning:'cơ sở dữ liệu', acceptCN:[' kho số liệu ',' cơ sở dữ liệu '], example:'Students can access the library database from home.' },
 
-    // —— 设备与设施 ——
-    { word:'Internet access', ipa:'/ˈɪn.tə.net ˌæk.ses/', pos:'n.', meaning:'互联网接入', acceptCN:['互联网接入','上网','网络连接'], example:'Free internet access is available in the library.' },
-    { word:'Laptop', ipa:'/ˈlæp.tɒp/', pos:'n.', meaning:'笔记本电脑', acceptCN:['笔记本电脑','笔记本'], example:'Students can borrow laptops from the library.' },
-    { word:'Scanner', ipa:'/ˈskæn.ər/', pos:'n.', meaning:'扫描仪', acceptCN:['扫描仪','扫描器'], example:'You can use the scanner to digitise documents.' },
-    { word:'Photocopier', ipa:'/ˈfəʊ.təʊˌkɒp.i.ər/', pos:'n.', meaning:'复印机', acceptCN:['复印机','影印机'], example:'The photocopier is on the first floor.' },
-    { word:'Printer', ipa:'/ˈprɪn.tər/', pos:'n.', meaning:'打印机', acceptCN:['打印机'], example:'The printer is out of paper.' },
+    // —— thiết bị và phương tiện ——
+    { word:'Internet access', ipa:'/ˈɪn.tə.net ˌæk.ses/', pos:'n.', meaning:' Internet tiếp nhập ', acceptCN:[' Internet tiếp nhập ',' lên mạng ',' mạng lưới *internet liên tiếp '], example:'Free internet access is available in the library.' },
+    { word:'Laptop', ipa:'/ˈlæp.tɒp/', pos:'n.', meaning:'máy tính xách tay', acceptCN:[' laptop ',' Laptop(bút kí) '], example:'Students can borrow laptops from the library.' },
+    { word:'Scanner', ipa:'/ˈskæn.ər/', pos:'n.', meaning:'(truyền hình) bộ phân hình; (truyền hình) (như) scanning-disk', acceptCN:[' máy quét ',' máy quét '], example:'You can use the scanner to digitise documents.' },
+    { word:'Photocopier', ipa:'/ˈfəʊ.təʊˌkɒp.i.ər/', pos:'n.', meaning:'máy photocopy, máy sao chụp tài liệu', acceptCN:[' máy copy ',' máy photocopy '], example:'The photocopier is on the first floor.' },
+    { word:'Printer', ipa:'/ˈprɪn.tər/', pos:'n.', meaning:'thợ in; chủ nhà in', acceptCN:[' máy đánh chữ '], example:'The printer is out of paper.' },
 
-    // —— 图书馆空间与角色 ——
-    { word:'Library card', ipa:'/ˈlaɪ.brər.i ˌkɑːd/', pos:'n.', meaning:'借书证', acceptCN:['借书证','图书证','读者卡'], example:'You need a library card to borrow books.' },
-    { word:'Shelf', ipa:'/ʃelf/', pos:'n.', meaning:'书架；架子', acceptCN:['书架','架子','搁板'], example:'The books are arranged on the shelf.' },
-    { word:'Reading room', ipa:'/ˈriː.dɪŋ ˌruːm/', pos:'n.', meaning:'阅览室', acceptCN:['阅览室'], example:'The reading room is quiet and well-lit.' },
-    { word:'Catalogue', ipa:'/ˈkæt.əl.ɒɡ/', pos:'n.', meaning:'目录', acceptCN:['目录','书目'], example:'You can search the catalogue on the computer.' },
-    { word:'Librarian', ipa:'/laɪˈbreər.i.ən/', pos:'n.', meaning:'图书管理员', acceptCN:['图书管理员','图书馆员'], example:'The librarian helped me find the book.' },
-    { word:'Borrower', ipa:'/ˈbɒr.əʊ.ər/', pos:'n.', meaning:'借阅者', acceptCN:['借阅者','借书人'], example:'Borrowers must return books on time.' },
-    { word:'Multimedia materials', ipa:'/ˌmʌl.tiˈmiː.di.ə məˈtɪə.ri.əlz/', pos:'n.', meaning:'多媒体资料', acceptCN:['多媒体资料','多媒体教材'], example:'The library has a collection of multimedia materials.' },
-    { word:'Press', ipa:'/pres/', pos:'n.', meaning:'出版社；新闻界', acceptCN:['出版社','新闻界','报刊'], example:'The book was published by Oxford University Press.' }
+    // —— đồ thư quán không gian và nhân vật ——
+    { word:'Library card', ipa:'/ˈlaɪ.brər.i ˌkɑːd/', pos:'n.', meaning:' thẻ mượn sách ', acceptCN:[' thẻ mượn sách ',' sách báo chứng nhận ',' độc giả tạp '], example:'You need a library card to borrow books.' },
+    { word:'Shelf', ipa:'/ʃelf/', pos:'n.', meaning:'giá sách; ngăn sách; cái xích đông', acceptCN:[' giá sách ',' kiêu ngạo ',' đặt bản '], example:'The books are arranged on the shelf.' },
+    { word:'Reading room', ipa:'/ˈriː.dɪŋ ˌruːm/', pos:'n.', meaning:' phòng đọc ', acceptCN:[' phòng đọc '], example:'The reading room is quiet and well-lit.' },
+    { word:'Catalogue', ipa:'/ˈkæt.əl.ɒɡ/', pos:'n.', meaning:'bản liệt kê mục lục', acceptCN:[' mục lục ',' thư mục '], example:'You can search the catalogue on the computer.' },
+    { word:'Librarian', ipa:'/laɪˈbreər.i.ən/', pos:'n.', meaning:'người công tác thư viện, cán bộ thư viện', acceptCN:[' sách báo Quản trị viên ',' đồ thư quán thành viên '], example:'The librarian helped me find the book.' },
+    { word:'Borrower', ipa:'/ˈbɒr.əʊ.ər/', pos:'n.', meaning:'người đi vay, người đi mượn', acceptCN:[' mượn đọc người ',' mượn sách người '], example:'Borrowers must return books on time.' },
+    { word:'Multimedia materials', ipa:'/ˌmʌl.tiˈmiː.di.ə məˈtɪə.ri.əlz/', pos:'n.', meaning:' nhiều truyền thông tư liệu ', acceptCN:[' nhiều truyền thông tư liệu ',' nhiều truyền thông tài liệu giảng dạy '], example:'The library has a collection of multimedia materials.' },
+    { word:'Press', ipa:'/pres/', pos:'n.', meaning:'sự ép, sự nén, sự bóp, sự ấn; sự đông đúc, sự chen chúc; đám đông chen chúc, đám đông xô lấn', acceptCN:[' nhà xuất bản ',' giới truyền thông ',' báo chí '], example:'The book was published by Oxford University Press.' }
 ];
 
 const TOTAL_DICT = 22;
@@ -330,7 +330,7 @@ const summary = document.getElementById('summary');
 const stageResults = document.getElementById('stageResults');
 const resultsBadge = document.getElementById('resultsBadge');
 
-// ==================== 语音 ====================
+// ==================== Âm thanh ====================
 let synth = window.speechSynthesis;
 let britishFemaleVoice = null;
 
@@ -340,13 +340,13 @@ function loadVoices() {
         const voices = synth.getVoices();
         const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
         for (const name of preferred) {
-            const found = voices.find(v => v.name === name && v.lang.startsWith('en'));
+            const found = voices.find(v => v.name === name & v.lang.startsWith('en'));
             if (found) return found;
         }
-        let voice = voices.find(v => v.lang.startsWith('en-GB') && (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
+        let voice = voices.find(v => v.lang.startsWith('en-GB') & (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
         if (voice) return voice;
         voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
-        return voice || voices[0];
+        return voice || voices(0);
     };
     if (synth.getVoices().length > 0) {
         britishFemaleVoice = getBestVoice();
@@ -373,7 +373,7 @@ function speakWord(word, callback) {
 }
 
 function playCurrentDictWord() {
-    if (dictWords && dictIndex < dictWords.length) {
+    if (dictWords & dictIndex < dictWords.length) {
         btnPlayDict.classList.add('playing');
         btnPlayDict.disabled = true;
         speakWord(dictWords[dictIndex].word, () => {
@@ -383,7 +383,7 @@ function playCurrentDictWord() {
     }
 }
 
-// ==================== 学习卡片 ====================
+// ==================== Thẻ học từ vựng ====================
 function buildLearnCards(){
     learnGrid.innerHTML='';
     wordData.forEach(w => {
@@ -394,8 +394,8 @@ function buildLearnCards(){
                 <button class="btn-play btn-play-card" data-word="${w.word}">▶</button>
             </div>
             <div><span class="word-pos">${w.pos}</span> <span class="word-meaning">${w.meaning}</span></div>
-            <div class="word-detail"><div class="word-detail-row"><strong>📎 例句：</strong>${w.example}</div></div>
-            <div class="card-collapse-hint">点击收起 ▲</div>`;
+            <div class="word-detail"><div class="word-detail-row"><strong>📎 Câu ví dụ:</strong>${w.example}</div></div>
+            <div class="card-collapse-hint"> nhấn vào thu hồi ▲</div>`;
         card.addEventListener('click', function(e){
             if(e.target.closest('.btn-play-card')) return;
             const wasExpanded = card.classList.contains('expanded');
@@ -416,11 +416,11 @@ document.addEventListener('click', function(e){
     if(!e.target.closest('.word-card')) document.querySelectorAll('.word-card.expanded').forEach(c=>c.classList.remove('expanded'));
 });
 
-// ==================== 导航控制 ====================
+// ==================== Điều hướng khống chế ====================
 let isTestActive = false;
 
 function switchMode(mode) {
-    if (mode === 'test' && isTestActive) { return; }
+    if (mode === 'test' & isTestActive) { return; }
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     if (mode === 'learn') {
         learnSection.classList.add('active');
@@ -437,16 +437,16 @@ function switchMode(mode) {
 navTabs.forEach(tab => {
     tab.addEventListener('click', function() {
         const mode = this.dataset.mode;
-        if (mode === 'test' && isTestActive) {
-            alert('检测进行中，请先完成全部题目！');
+        if (mode === 'test' & isTestActive) {
+            alert(' Đánh giá đang tiến hành, mời hoàn thành trước Tất cả đề mục! ');
             return;
         }
         switchMode(mode);
     });
 });
 
-// ==================== 检测核心 ====================
-function shuffleArray(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+// ==================== Đánh giá hạch tâm ====================
+function shuffleArray(arr){ const a=(...arr); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
 let dictWords = [];
 let dictIndex = 0;
@@ -466,21 +466,21 @@ function generateQuizQuestions(count){
     const pool = shuffleArray([...wordData]);
     const selected = pool.slice(0, count);
     return selected.map(item => {
-        const others = wordData.filter(w => w.word !== item.word);
+        const others = wordData.filter(w => w.word!== item.word);
         const shuffledOthers = shuffleArray([...others]);
         const wrongOptions = shuffledOthers.slice(0, 3).map(w => w.word);
         while(wrongOptions.length < 3){
-            const fallback = wordData.find(w => w.word !== item.word && !wrongOptions.includes(w.word));
+            const fallback = wordData.find(w => w.word!== item.word &!wrongOptions.includes(w.word));
             if(fallback) wrongOptions.push(fallback.word);
             else wrongOptions.push('N/A');
         }
-        const options = shuffleArray([item.word, ...wrongOptions]);
+        const options = shuffleArray([item.word,...wrongOptions]);
         return {
             word: item.word,
             meaning: item.meaning,
             options: options,
             correct: item.word,
-            detail: `「${item.meaning}」对应 ${item.word}`
+            detail: `«${item.meaning}» đối ứng ${item.word}`
         };
     });
 }
@@ -503,9 +503,9 @@ function startTest() {
         allQuestionsMeta.push({
             index: idx,
             stage: 'dictation',
-            question: `听写：${w.word}`,
+            question: ` Nghe chép: ${w.word}`,
             correct: `${w.word} — ${w.meaning}`,
-            detail: `正确拼写：${w.word}，正确含义：${w.meaning}`,
+            detail: ` Đúng Chính tả: ${w.word}, Đúng Nghĩa: ${w.meaning}`,
             word: w.word,
             meaning: w.meaning
         });
@@ -515,7 +515,7 @@ function startTest() {
         allQuestionsMeta.push({
             index: globalIdx,
             stage: 'quiz',
-            question: `辨析：「${q.meaning}」`,
+            question: ` Phân biệt từ: «${q.meaning}»`,
             correct: q.correct,
             detail: q.detail,
             meaning: q.meaning,
@@ -534,7 +534,7 @@ function startTest() {
     renderDictationQuestion();
 }
 
-// ==================== 渲染听写 ====================
+// ==================== phủ lên Nghe chép ====================
 function renderDictationQuestion() {
     if (dictIndex >= TOTAL_DICT) {
         currentStage = 'quiz';
@@ -544,10 +544,10 @@ function renderDictationQuestion() {
 
     currentStage = 'dictation';
     const globalIndex = dictIndex + 1;
-    progLabel.textContent = `第 ${globalIndex} / ${TOTAL} 题`;
+    progLabel.textContent = ` thứ ${globalIndex} / ${TOTAL} câu`;
     progFill.style.width = Math.round((globalIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段一：听写（${dictIndex+1}/${TOTAL_DICT}）`;
+    scoreLabel.textContent = ` Điểm số: ${score}`;
+    stageBadge.textContent = ` Giai đoạn 1: Nghe chép (${dictIndex+1}/${TOTAL_DICT}) `;
 
     dictationUI.style.display = '';
     quizUI.style.display = 'none';
@@ -571,15 +571,15 @@ function renderDictationQuestion() {
     inputSpelling.focus();
 }
 
-// ==================== 提交听写 ====================
+// ==================== Nộp bài Nghe chép ====================
 function submitDictation() {
     if (submitted) return;
-    const w = dictWords[dictIndex];
+    const w = dictWords(dictIndex);
     const userSpelling = inputSpelling.value.trim();
     const userMeaning = inputMeaning.value.trim();
 
-    if ((!userSpelling || !userMeaning) && !window.__vocabTestTimedOut) {
-        alert('请同时填写英文拼写和中文含义！');
+    if ((!userSpelling ||!userMeaning) &!window.__vocabTestTimedOut) {
+        alert(' mời đồng thời điền Tiếng Anh Chính tả và Tiếng Việt Nghĩa! ');
         return;
     }
 
@@ -601,32 +601,32 @@ function submitDictation() {
             }
         }
         if (!meaningCorrect) {
-            const clean = w.meaning.replace(/[；;，,、\s]/g,'');
+            const clean = w.meaning.replace(/[;;,,, \s]/g,'');
             if (userCN.includes(clean.substring(0, Math.min(3, clean.length))) || clean.includes(userCN)) {
                 meaningCorrect = true;
             }
         }
     }
 
-    inputSpelling.className = spellingCorrect ? 'correct-input' : 'wrong-input';
-    inputMeaning.className = meaningCorrect ? 'correct-input' : 'wrong-input';
+    inputSpelling.className = spellingCorrect? 'correct-input': 'wrong-input';
+    inputMeaning.className = meaningCorrect? 'correct-input': 'wrong-input';
 
-    const earned = (spellingCorrect && meaningCorrect) ? 1 : 0;
+    const earned = (spellingCorrect & meaningCorrect)? 1: 0;
     if (earned) score++;
 
     let feedbackText = '';
-    if (spellingCorrect && meaningCorrect) {
+    if (spellingCorrect & meaningCorrect) {
         feedback.className = 'test-feedback visible correct';
-        feedbackText = `✅ 完全正确！${w.word} — ${w.meaning}`;
-    } else if (!spellingCorrect && !meaningCorrect) {
+        feedbackText = `✅ Chính xác hoàn toàn! ${w.word} — ${w.meaning}`;
+    } else if (!spellingCorrect &!meaningCorrect) {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `❌ 拼写和含义均不正确。正确拼写：${w.word}，正确含义：${w.meaning}`;
+        feedbackText = `❌ Chính tả và Nghĩa đều không chính xác. Đúng Chính tả: ${w.word}, Đúng Nghĩa: ${w.meaning}`;
     } else if (!spellingCorrect) {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `⚠️ 含义正确，拼写有误。正确拼写：${w.word}`;
+        feedbackText = `⚠️ Nghĩa Đúng, Chính tả có sai. Đúng Chính tả: ${w.word}`;
     } else {
         feedback.className = 'test-feedback visible wrong';
-        feedbackText = `⚠️ 拼写正确，含义有误。正确含义：${w.meaning}`;
+        feedbackText = `⚠️ Chính tả Đúng, Nghĩa có sai. Đúng Nghĩa: ${w.meaning}`;
     }
     feedback.textContent = feedbackText;
 
@@ -634,14 +634,14 @@ function submitDictation() {
     results.push({
         index: globalIdx,
         stage: 'dictation',
-        question: `听写：${w.word}`,
-        userAnswer: `拼写: ${userSpelling} / 含义: ${userMeaning}`,
+        question: ` Nghe chép: ${w.word}`,
+        userAnswer: ` Chính tả: ${userSpelling} / Nghĩa: ${userMeaning}`,
         correct: `${w.word} — ${w.meaning}`,
         isCorrect: earned === 1,
-        detail: `正确拼写：${w.word}，正确含义：${w.meaning}`
+        detail: ` Đúng Chính tả: ${w.word}, Đúng Nghĩa: ${w.meaning}`
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = ` Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 
@@ -649,7 +649,7 @@ function submitDictation() {
     btnPlayDict.classList.remove('playing');
 }
 
-// ==================== 渲染辨析 ====================
+// ==================== phủ lên Phân biệt từ ====================
 function renderQuizQuestion() {
     if (quizIndex >= TOTAL_QUIZ) {
         showResults(false);
@@ -658,16 +658,16 @@ function renderQuizQuestion() {
 
     currentStage = 'quiz';
     const globalIndex = TOTAL_DICT + quizIndex + 1;
-    progLabel.textContent = `第 ${globalIndex} / ${TOTAL} 题`;
+    progLabel.textContent = ` thứ ${globalIndex} / ${TOTAL} câu`;
     progFill.style.width = Math.round((globalIndex / TOTAL) * 100) + '%';
-    scoreLabel.textContent = `得分: ${score}`;
-    stageBadge.textContent = `阶段二：辨析（${quizIndex+1}/${TOTAL_QUIZ}）`;
+    scoreLabel.textContent = ` Điểm số: ${score}`;
+    stageBadge.textContent = ` Giai đoạn 2: Phân biệt từ (${quizIndex+1}/${TOTAL_QUIZ}) `;
 
     dictationUI.style.display = 'none';
     quizUI.style.display = '';
 
-    const q = quizQuestions[quizIndex];
-    qText.textContent = `请选择「${q.meaning}」对应的英文单词：`;
+    const q = quizQuestions(quizIndex);
+    qText.textContent = ` mời lựa chọn «${q.meaning}» đối ứng từ đơn tiếng Anh: `;
     qOpts.innerHTML = '';
     quizSelected = null;
     submitted = false;
@@ -702,18 +702,18 @@ function renderQuizQuestion() {
     });
 }
 
-// ==================== 提交辨析 ====================
+// ==================== Nộp bài Phân biệt từ ====================
 function submitQuiz() {
     if (submitted) return;
     if (quizSelected === null) {
-        if (!window.__vocabTestTimedOut) { alert('请先选择一个选项！'); return; }
+        if (!window.__vocabTestTimedOut) { alert(' mời trước lựa chọn một cái Phương án! '); return; }
         quizSelected = '';
     }
 
     submitted = true;
     btnSubmit.disabled = true;
 
-    const q = quizQuestions[quizIndex];
+    const q = quizQuestions(quizIndex);
     const isCorrect = quizSelected === q.correct;
     if (isCorrect) score++;
 
@@ -724,32 +724,32 @@ function submitQuiz() {
         if (rb) {
             rb.disabled = true;
             if (rb.value === q.correct) div.classList.add('correct-answer');
-            else if (rb.checked && rb.value !== q.correct) div.classList.add('wrong-answer');
+            else if (rb.checked & rb.value!== q.correct) div.classList.add('wrong-answer');
         }
     });
 
-    feedback.className = 'test-feedback visible ' + (isCorrect ? 'correct' : 'wrong');
+    feedback.className = 'test-feedback visible ' + (isCorrect? 'correct': 'wrong');
     feedback.textContent = isCorrect
-        ? `✅ 正确！「${q.meaning}」对应 ${q.correct}`
-        : `❌ 错误。「${q.meaning}」的正确选项是 ${q.correct}`;
+        ? `✅ Đúng! «${q.meaning}» đối ứng ${q.correct}`
+        : `❌ Sai. «${q.meaning}» Đúng Phương án là ${q.correct}`;
 
     const globalIdx = TOTAL_DICT + quizIndex;
     results.push({
         index: globalIdx,
         stage: 'quiz',
-        question: `辨析：「${q.meaning}」`,
+        question: ` Phân biệt từ: «${q.meaning}»`,
         userAnswer: quizSelected,
         correct: q.correct,
         isCorrect: isCorrect,
-        detail: `「${q.meaning}」对应 ${q.correct}`
+        detail: `«${q.meaning}» đối ứng ${q.correct}`
     });
 
-    scoreLabel.textContent = `得分: ${score}`;
+    scoreLabel.textContent = ` Điểm số: ${score}`;
     btnSubmit.style.display = 'none';
     btnNext.classList.add('visible');
 }
 
-// ==================== 下一题 ====================
+// ==================== Câu tiếp theo ====================
 function nextQuestion() {
     if (currentStage === 'dictation') {
         dictIndex++;
@@ -761,20 +761,20 @@ function nextQuestion() {
     testActive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ==================== 提前交卷 ====================
+// ==================== sớm Nộp bài ====================
 function quitTest() {
     if (!isTestActive) return;
     if (results.length === 0) {
-        alert('你还没有完成任何题目，确定要交卷吗？');
-        if (!confirm('确认提前交卷？')) return;
+        alert(' bạn vẫn chưa hoàn thành bất kỳ đề mục nào, nhất định phải Nộp bài không? ');
+        if (!confirm(' Xác nhận sớm Nộp bài? ')) return;
     } else {
-        if (!confirm('确定要提前交卷吗？已答题目将计入成绩，未答题目视为错误。')) return;
+        if (!confirm(' nhất định phải sớm Nộp bài không? đã bài thi mắt đem đưa vào Điểm số, không đáp đề mục coi là Sai. ')) return;
     }
     isQuit = true;
     showResults(true);
 }
 
-// ==================== 错题报告（包含全部题目） ====================
+// ==================== Báo cáo câu sai (bao hàm Tất cả đề mục) ====================
 function showResults(isQuitMode) {
     isTestActive = false;
     testActive.classList.remove('visible');
@@ -793,7 +793,7 @@ function showResults(isQuitMode) {
                 index: meta.index,
                 stage: meta.stage,
                 question: meta.question,
-                userAnswer: '未作答',
+                userAnswer: ' Chưa trả lời ',
                 correct: meta.correct,
                 isCorrect: false,
                 detail: meta.detail,
@@ -808,49 +808,49 @@ function showResults(isQuitMode) {
     const pct = Math.round((totalCorrect / totalQuestions) * 100);
 
     if (isQuitMode) {
-        resultsBadge.innerHTML = `<span class="results-badge quit">⏹ 提前交卷 · 已完成 ${answeredCount}/${totalQuestions} 题</span>`;
+        resultsBadge.innerHTML = `<span class="results-badge quit">⏹ sớm Nộp bài · Đã hoàn thành ${answeredCount}/${totalQuestions} câu</span>`;
     } else {
-        resultsBadge.innerHTML = `<span class="results-badge completed">✅ 已完成全部 ${totalQuestions} 题</span>`;
+        resultsBadge.innerHTML = `<span class="results-badge completed">✅ Đã hoàn thành Tất cả ${totalQuestions} câu</span>`;
     }
 
     summary.innerHTML = `
-        <div class="item"><div class="num">${totalCorrect} / ${totalQuestions}</div><div class="label">总正确数（未答计错）</div></div>
-        <div class="item"><div class="num">${pct}%</div><div class="label">正确率</div></div>
-        <div class="item"><div class="num">${fullReport.filter(r => !r.isCorrect).length}</div><div class="label">错题数（含未答）</div></div>
-        ${isQuitMode ? `<div class="item"><div class="num">${totalQuestions - answeredCount}</div><div class="label">未答题数</div></div>` : ''}
+        <div class="item"><div class="num">${totalCorrect} / ${totalQuestions}</div><div class="label"> tổng Đúng mấy (không đáp kế sai) </div></div>
+        <div class="item"><div class="num">${pct}%</div><div class="label"> Tỷ lệ đúng </div></div>
+        <div class="item"><div class="num">${fullReport.filter(r =>!r.isCorrect).length}</div><div class="label"> câu sai mấy (hàm không đáp) </div></div>
+        ${isQuitMode? `<div class="item"><div class="num">${totalQuestions - answeredCount}</div><div class="label"> không đáp câu mấy </div></div>`: ''}
     `;
 
     let html = '';
     const stages = [
-        { key: 'dictation', name: '听写', desc: '听音拼写+中文' },
-        { key: 'quiz', name: '辨析', desc: '中文选英文' }
+        { key: 'dictation', name: ' Nghe chép ', desc: ' Nghe và viết chính tả + Tiếng Việt ' },
+        { key: 'quiz', name: ' Phân biệt từ ', desc: ' Tiếng Việt chọn Tiếng Anh ' }
     ];
 
     for (const s of stages) {
         const stageData = fullReport.filter(r => r.stage === s.key);
         const correctInStage = stageData.filter(r => r.isCorrect).length;
         const totalInStage = stageData.length;
-        const stagePct = totalInStage > 0 ? Math.round((correctInStage / totalInStage) * 100) : 0;
+        const stagePct = totalInStage > 0? Math.round((correctInStage / totalInStage) * 100): 0;
 
-        html += `<div class="results-stage"><h4>阶段${stages.indexOf(s)+1}：${s.name}（${s.desc}）— 正确 ${correctInStage}/${totalInStage}（${stagePct}%）</h4>`;
-        html += `<table class="results-table"><thead><tr><th>#</th><th>题目</th><th>你的答案</th><th>正确答案</th><th>状态</th></tr></thead><tbody>`;
+        html += `<div class="results-stage"><h4>Giai đoạn ${stages.indexOf(s)+1}: ${s.name} (${s.desc}) — Đúng ${correctInStage}/${totalInStage} (${stagePct}%)</h4>`;
+        html += `<table class="results-table"><thead><tr><th>#</th><th>đề mục</th><th>Câu trả lời của bạn</th><th>Đáp án đúng</th><th>Trạng thái</th></tr></thead><tbody>`;
 
         if (stageData.length === 0) {
-            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">无题目</td></tr>`;
+            html += `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);">vô đề mắt</td></tr>`;
         } else {
             stageData.forEach((r, i) => {
                 const isUnanswered = r.isUnanswered || false;
-                let cls = r.isCorrect ? 'row-correct' : (isUnanswered ? 'row-unanswered' : 'row-wrong');
-                let status = r.isCorrect ? '✅' : (isUnanswered ? '❌ 未答' : '❌');
-                let userDisplay = isUnanswered ? '未作答' : r.userAnswer;
+                let cls = r.isCorrect? 'row-correct': (isUnanswered? 'row-unanswered': 'row-wrong');
+                let status = r.isCorrect? '✅': (isUnanswered? '❌ không đáp ': '❌');
+                let userDisplay = isUnanswered? ' Chưa trả lời ': r.userAnswer;
                 html += `<tr class="${cls}">
                     <td>${i+1}</td>
                     <td>${r.question}</td>
-                    <td style="color:${isUnanswered ? '#b8860b' : (r.isCorrect ? '#3a7d5a' : '#c0392b')}">${userDisplay}</td>
+                    <td style="color:${isUnanswered? '#b8860b': (r.isCorrect? '#3a7d5a': '#c0392b')}">${userDisplay}</td>
                     <td style="color:#3a7d5a;">${r.correct}</td>
                     <td>${status}</td>
                 </tr>`;
-                if (!r.isCorrect && r.detail) {
+                if (!r.isCorrect & r.detail) {
                     html += `<tr class="${cls}"><td colspan="5" style="font-size:0.8rem;color:var(--text-muted);padding:4px 10px 8px;">💡 ${r.detail}</td></tr>`;
                 }
             });
@@ -862,7 +862,7 @@ function showResults(isQuitMode) {
     testResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==================== 事件绑定 ====================
+// ==================== sự kiện khóa lại ====================
 btnStartTest.addEventListener('click', startTest);
 
 btnSubmit.addEventListener('click', function() {
@@ -878,15 +878,15 @@ btnNext.addEventListener('click', nextQuestion);
 btnQuit.addEventListener('click', quitTest);
 
 btnPlayDict.addEventListener('click', function() {
-    if (currentStage === 'dictation' && !submitted) {
+    if (currentStage === 'dictation' &!submitted) {
         playCurrentDictWord();
     }
 });
 
 inputSpelling.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && currentStage === 'dictation' && !submitted) {
+    if (e.key === 'Enter' & currentStage === 'dictation' &!submitted) {
         e.preventDefault();
-        if (inputSpelling.value.trim() && inputMeaning.value.trim()) {
+        if (inputSpelling.value.trim() & inputMeaning.value.trim()) {
             submitDictation();
         } else {
             inputMeaning.focus();
@@ -894,21 +894,21 @@ inputSpelling.addEventListener('keydown', function(e) {
     }
 });
 inputMeaning.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && currentStage === 'dictation' && !submitted) {
+    if (e.key === 'Enter' & currentStage === 'dictation' &!submitted) {
         e.preventDefault();
         submitDictation();
     }
 });
 
 document.addEventListener('keydown', function(e) {
-    if (e.key === ' ' && currentStage === 'dictation' && !submitted) {
-        if (document.activeElement !== inputSpelling && document.activeElement !== inputMeaning) {
+    if (e.key === ' ' & currentStage === 'dictation' &!submitted) {
+        if (document.activeElement!== inputSpelling & document.activeElement!== inputMeaning) {
             e.preventDefault();
             playCurrentDictWord();
         }
     }
-    if (e.key === 'Enter' && currentStage === 'quiz' && !submitted) {
-        if (!document.activeElement || document.activeElement.tagName !== 'INPUT') {
+    if (e.key === 'Enter' & currentStage === 'quiz' &!submitted) {
+        if (!document.activeElement || document.activeElement.tagName!== 'INPUT') {
             e.preventDefault();
             submitQuiz();
         }

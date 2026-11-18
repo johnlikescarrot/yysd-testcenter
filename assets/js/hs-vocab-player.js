@@ -53,7 +53,7 @@
   };
 
   function esc(s) {
-    return Y && Y.esc ? Y.esc(String(s == null ? "" : s)) : String(s == null ? "" : s)
+    return Y && Y.esc? Y.esc(String(s == null? "": s)): String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
@@ -62,7 +62,7 @@
     if (!m) return [];
     try {
       var arr = Function('"use strict"; return (' + m[1] + ");")();
-      return Array.isArray(arr) ? arr.filter(function (w) { return w && w.word; }) : [];
+      return Array.isArray(arr)? arr.filter(function (w) { return w && w.word; }): [];
     } catch (e) {
       return [];
     }
@@ -70,13 +70,13 @@
 
   function normalizeWord(w, list, globalIdx) {
     var ex = String(w.example || "");
-    var em = ex.match(/^(.+?)[（(](.+)[）)]\s*$/);
+    var em = ex.match(/^(.+?)[((](.+)[))]\s*$/);
     var coll = w.collocations;
     if (typeof coll === "string") {
-      coll = coll.split(/[,，]/).map(function (s) {
+      coll = coll.split(/[,,]/).map(function (s) {
         s = s.trim();
-        var cm = s.match(/^(.+?)[（(](.+?)[）)]$/);
-        return cm ? { phrase: cm[1].trim(), meaning: cm[2].trim() } : { phrase: s, meaning: "" };
+        var cm = s.match(/^(.+?)[((](.+?)[))]$/);
+        return cm? { phrase: cm[1].trim(), meaning: cm[2].trim() }: { phrase: s, meaning: "" };
       }).filter(function (c) { return c.phrase; });
     }
     if (!Array.isArray(coll)) coll = [];
@@ -87,15 +87,15 @@
       ipa: String(w.ipa || w.phonetic || "").trim(),
       pos: String(w.pos || "").trim(),
       meaning: String(w.meaning || "").trim(),
-      exampleEn: w.exampleEn || (em ? em[1].trim() : ex),
-      exampleZh: w.exampleZh || (em ? em[2].trim() : ""),
+      exampleEn: w.exampleEn || (em? em[1].trim(): ex),
+      exampleZh: w.exampleZh || (em? em[2].trim(): ""),
       collocations: coll,
       root: w.root || "",
-      synonyms: Array.isArray(w.synonyms) ? w.synonyms : [],
-      antonyms: Array.isArray(w.antonyms) ? w.antonyms : [],
+      synonyms: Array.isArray(w.synonyms)? w.synonyms: [],
+      antonyms: Array.isArray(w.antonyms)? w.antonyms: [],
       examTag: w.examTag || null,
       paraphrase: w.paraphrase || null,
-      acceptCN: Array.isArray(w.acceptCN) ? w.acceptCN : [],
+      acceptCN: Array.isArray(w.acceptCN)? w.acceptCN: [],
       listNo: list,
       globalIdx: globalIdx
     };
@@ -111,7 +111,7 @@
   }
 
   function speak(word) {
-    if (!window.speechSynthesis || !word) return;
+    if (!window.speechSynthesis ||!word) return;
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(word);
     u.lang = "en-GB";
@@ -120,7 +120,7 @@
   }
 
   function requireLogin() {
-    if (!A || !A.getToken || !A.getToken()) {
+    if (!A ||!A.getToken ||!A.getToken()) {
       location.href = "login.html?next=" + encodeURIComponent(location.pathname + location.search);
       return false;
     }
@@ -133,7 +133,7 @@
 
   function fail(msg) {
     root.innerHTML = '<div class="hsv-state"><p>' + esc(msg) + '</p>' +
-      '<p style="margin-top:12px"><a class="hsv-back" href="vocab.html?book=gaozhong">← 返回高中词汇</a></p></div>';
+      '<p style="margin-top:12px"><a class="hsv-back" href="vocab.html?book=gaozhong">← Quay lại Từ vựng Nền tảng THPT </a></p></div>';
   }
 
   function loadBank() {
@@ -145,7 +145,7 @@
       lists.forEach(function (item) {
         chain = chain.then(function (acc) {
           return fetch("library/" + item.file).then(function (r) {
-            if (!r.ok) throw new Error("加载失败 " + item.file);
+            if (!r.ok) throw new Error("Tải dữ liệu thất bại" + item.file);
             return r.text();
           }).then(function (html) {
             var n = Y.vocabListNo(item);
@@ -176,17 +176,17 @@
       if (mode === "unit") return bootUnit();
       if (mode === "custom") return bootCustom();
       if (mode === "wrong") return bootWrong();
-      fail("未知模式");
+      fail(" không biết hình thức ");
     }).catch(function (e) {
-      fail((e && e.message) || "加载失败");
+      fail((e && e.message) || "Tải dữ liệu thất bại");
     });
   }
 
   function bootUnit() {
-    if (!listNo) return fail("缺少单元号");
+    if (!listNo) return fail(" thiếu khuyết Bài số ");
     state.words = wordsForUnit(listNo);
-    if (!state.words.length) return fail("单元 " + listNo + " 没有单词");
-    state.view = panel === "quiz" ? "setup" : "learn";
+    if (!state.words.length) return fail(" Bài " + listNo + " không có Từ vựng ");
+    state.view = panel === "quiz"? "setup": "learn";
     renderShell();
   }
 
@@ -195,22 +195,22 @@
     var active = st.active_batch;
     if (batchIdParam) {
       var hist = (st.batches || []).find(function (b) { return b.id === batchIdParam; });
-      if (!hist) return fail("找不到该批次");
+      if (!hist) return fail(" Không tìm thấy nên phê lần ");
       state.batch = hist;
       state.words = state.bank.slice(hist.start_idx, hist.start_idx + hist.count);
-      state.view = panel === "quiz" ? "setup" : "learn";
+      state.view = panel === "quiz"? "setup": "learn";
       return renderShell();
     }
     if (active) {
       state.batch = active;
       state.words = state.bank.slice(active.start_idx, active.start_idx + active.count);
-      state.view = panel === "quiz" ? "setup" : "learn";
+      state.view = panel === "quiz"? "setup": "learn";
       return renderShell();
     }
     // need to start a batch — show count picker or auto-start from hub
     if (startCountParam >= 10 && startCountParam <= 200) {
       return startCustomBatch(startCountParam).catch(function (e) {
-        fail(e.message || "开批失败");
+        fail(e.message || " Khởi tạo chấm thất bại ");
       });
     }
     state.view = "custom-start";
@@ -218,14 +218,14 @@
   }
 
   function bootWrong() {
-    if (!wrongDate || !wrongSource) return fail("缺少错题分组参数");
+    if (!wrongDate ||!wrongSource) return fail(" thiếu khuyết câu sai phân tổ tham số ");
     return api("/api/hs-vocab/mistakes/group?date=" + encodeURIComponent(wrongDate) +
       "&source=" + encodeURIComponent(wrongSource)).then(function (d) {
       state.words = (d.items || []).map(function (it, i) {
         if (it.word_json) return normalizeWord(it.word_json, 0, i);
         return normalizeWord({ word: it.word, ipa: it.ipa, meaning: it.meaning }, 0, i);
       });
-      if (!state.words.length) return fail("该分组没有错词");
+      if (!state.words.length) return fail(" nên phân tổ không từ sai ");
       state.view = "setup";
       renderShell();
     });
@@ -238,7 +238,7 @@
     }).then(function (st) {
       state.status = st;
       state.batch = st.active_batch;
-      if (!state.batch) throw new Error("开批失败");
+      if (!state.batch) throw new Error(" Khởi tạo chấm thất bại ");
       state.words = state.bank.slice(state.batch.start_idx, state.batch.start_idx + state.batch.count);
       state.view = "learn";
       history.replaceState(null, "", "hs-vocab.html?mode=custom");
@@ -247,54 +247,54 @@
   }
 
   function badgeText() {
-    if (mode === "unit") return "单元 " + listNo;
-    if (mode === "wrong") return "错题再测";
+    if (mode === "unit") return " Bài " + listNo;
+    if (mode === "wrong") return " Kiểm tra lại từ sai ";
     if (state.batch) {
-      return (state.batch.batch_date || "") + " · " + state.batch.count + " 词";
+      return (state.batch.batch_date || "") + " · " + state.batch.count + " từ ";
     }
-    return "自定义";
+    return " từ định nghĩa ";
   }
 
   function renderShell() {
-    document.title = badgeText() + " · 高中词汇";
+    document.title = badgeText() + " · Từ vựng Nền tảng THPT ";
     if (state.view === "custom-start") {
       root.innerHTML =
-        '<a class="hsv-back" href="vocab.html?book=gaozhong&view=custom">← 返回</a>' +
+        '<a class="hsv-back" href="vocab.html?book=gaozhong&view=custom">← Quay lại </a>' +
         '<div class="hsv-setup">' +
-        '<h2>自定义学习</h2>' +
-        '<p>已学到第 <strong>' + (state.status.cursor_idx + 1) + '</strong> 词 / 共 ' +
-        state.bank.length + ' 词。请设置本批数量（10–200）。</p>' +
-        '<label>本批单词数<input type="number" id="hsv-count" min="10" max="200" value="50"></label>' +
-        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-start-batch">开始本批</button>' +
+        '<h2> từ định nghĩa Học tập </h2>' +
+        '<p> Đã học đến thứ <strong>' + (state.status.cursor_idx + 1) + '</strong> từ / tổng ' +
+        state.bank.length + ' từ. mời thiết trí bản phê số lượng (10–200). </p>' +
+        '<label> bản phê Từ vựng mấy <input type="number" id="hsv-count" min="10" max="200" value="50"></label>' +
+        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-start-batch"> Bắt đầu bản phê </button>' +
         '</div>';
       document.getElementById("hsv-start-batch").onclick = function () {
         var n = Number(document.getElementById("hsv-count").value);
-        startCustomBatch(n).catch(function (e) { alert(e.message || "开批失败"); });
+        startCustomBatch(n).catch(function (e) { alert(e.message || " Khởi tạo chấm thất bại "); });
       };
       return;
     }
     if (state.view === "setup") {
       var maxQ = state.words.length;
-      var defaultQ = mode === "unit" ? maxQ : Math.min(40, maxQ);
+      var defaultQ = mode === "unit"? maxQ: Math.min(40, maxQ);
       root.innerHTML =
-        '<a class="hsv-back" href="vocab.html?book=gaozhong">← 返回</a>' +
+        '<a class="hsv-back" href="vocab.html?book=gaozhong">← Quay lại </a>' +
         '<div class="hsv-setup">' +
-        '<h2>闯关检测</h2>' +
-        '<p>' + esc(badgeText()) + ' · 共 ' + maxQ + ' 词。答完且生命未耗尽才算通关。</p>' +
+        '<h2> Kiểm tra vượt ải </h2>' +
+        '<p>' + esc(badgeText()) + ' · tổng ' + maxQ + ' từ. đáp xong mà lại sinh mệnh không hao hết mới tính qua cửa. </p>' +
         (mode === "unit"
-          ? '<p>本单元将检测全部 <strong>' + maxQ + '</strong> 词。</p>'
-          : '<label>抽查数量（1–' + maxQ + '）<input type="number" id="hsv-qcount" min="1" max="' + maxQ + '" value="' + defaultQ + '"></label>') +
+          ? '<p> bản Bài đem Đánh giá Tất cả <strong>' + maxQ + '</strong> từ. </p>'
+          : '<label> kiểm tra thí điểm số lượng (1–' + maxQ + ') <input type="number" id="hsv-qcount" min="1" max="' + maxQ + '" value="' + defaultQ + '"></label>') +
         '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">' +
-        '<button type="button" class="hsv-btn" id="hsv-to-learn">先去学习</button>' +
-        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-begin-quiz">开始闯关</button>' +
+        '<button type="button" class="hsv-btn" id="hsv-to-learn"> đi trước Học tập </button>' +
+        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-begin-quiz"> Bắt đầu vượt ải </button>' +
         '</div></div>';
       document.getElementById("hsv-to-learn").onclick = function () {
         state.view = "learn";
         renderShell();
       };
       document.getElementById("hsv-begin-quiz").onclick = function () {
-        var n = mode === "unit" ? maxQ : Number(document.getElementById("hsv-qcount").value);
-        if (!n || n < 1 || n > maxQ) { alert("请输入有效抽查数量"); return; }
+        var n = mode === "unit"? maxQ: Number(document.getElementById("hsv-qcount").value);
+        if (!n || n < 1 || n > maxQ) { alert(" xin điền vào hữu hiệu kiểm tra thí điểm số lượng "); return; }
         beginQuiz(n);
       };
       return;
@@ -305,18 +305,18 @@
   function renderApp() {
     var livesHtml = "";
     for (var i = 0; i < MAX_LIVES; i++) {
-      livesHtml += '<span class="heart' + (i >= state.lives ? " lost" : "") + '">❤️</span>';
+      livesHtml += '<span class="heart' + (i >= state.lives? " lost": "") + '">❤️</span>';
     }
     root.innerHTML =
-      '<a class="hsv-back" href="vocab.html?book=gaozhong">← 返回高中词汇</a>' +
+      '<a class="hsv-back" href="vocab.html?book=gaozhong">← Quay lại Từ vựng Nền tảng THPT </a>' +
       '<div class="hsv-top">' +
-        '<div class="hsv-brand">优易思达 · <span>高中词汇</span></div>' +
+        '<div class="hsv-brand"> ưu Dễ tư đạt · <span> Từ vựng Nền tảng THPT </span></div>' +
         '<div class="hsv-badge">' + esc(badgeText()) + '</div>' +
-        (state.view === "quiz" ? '<div class="hsv-lives" id="hsv-lives">' + livesHtml + '</div>' : '') +
+        (state.view === "quiz"? '<div class="hsv-lives" id="hsv-lives">' + livesHtml + '</div>': '') +
       '</div>' +
       '<div class="hsv-tabs">' +
-        '<button type="button" class="hsv-tab' + (state.view === "learn" ? " active" : "") + '" data-v="learn">学习</button>' +
-        '<button type="button" class="hsv-tab' + (state.view === "quiz" ? " active" : "") + '" data-v="quiz">闯关检测</button>' +
+        '<button type="button" class="hsv-tab' + (state.view === "learn"? " active": "") + '" data-v="learn"> Học tập </button>' +
+        '<button type="button" class="hsv-tab' + (state.view === "quiz"? " active": "") + '" data-v="quiz"> Kiểm tra vượt ải </button>' +
       '</div>' +
       '<div class="hsv-info">' +
         '<div id="hsv-counter"></div>' +
@@ -347,25 +347,25 @@
     var w = state.words[state.idx];
     if (!w) return;
     document.getElementById("hsv-counter").innerHTML =
-      '第 <strong>' + (state.idx + 1) + '</strong> / ' + state.words.length + ' 词';
+      ' thứ <strong>' + (state.idx + 1) + '</strong> / ' + state.words.length + ' từ ';
     var collHtml = "";
     if (w.collocations && w.collocations.length) {
-      collHtml = '<div class="hsv-section"><div class="hsv-section-title">搭配</div><div class="hsv-collocs">' +
+      collHtml = '<div class="hsv-section"><div class="hsv-section-title"> phối hợp </div><div class="hsv-collocs">' +
         w.collocations.map(function (c) {
           return '<span class="hsv-coloc">' + esc(c.phrase) +
-            (c.meaning ? ' <span style="color:#6b7e78">→ ' + esc(c.meaning) + '</span>' : '') + '</span>';
+            (c.meaning? ' <span style="color:#6b7e78">→ ' + esc(c.meaning) + '</span>': '') + '</span>';
         }).join("") + '</div></div>';
     }
     var examHtml = "";
     if (w.examTag) {
       examHtml = '<div class="hsv-section"><div class="hsv-exam">' +
-        '<span><span class="lbl">来源 </span>' + esc(w.examTag.source || "") + '</span>' +
-        '<span><span class="lbl">话题 </span>' + esc(w.examTag.topic || "") + '</span>' +
-        '<span><span class="lbl">用法 </span>' + esc(w.examTag.commonUsage || "") + '</span>' +
+        '<span><span class="lbl"> nơi phát ra </span>' + esc(w.examTag.source || "") + '</span>' +
+        '<span><span class="lbl"> chủ đề </span>' + esc(w.examTag.topic || "") + '</span>' +
+        '<span><span class="lbl"> cách dùng </span>' + esc(w.examTag.commonUsage || "") + '</span>' +
         '</div></div>';
     }
     var rootHtml = w.root
-      ? '<div class="hsv-section"><div class="hsv-section-title">词根拆解</div><div class="hsv-root-text">' + esc(w.root) + '</div></div>'
+      ? '<div class="hsv-section"><div class="hsv-section-title"> từ căn hóa giải </div><div class="hsv-root-text">' + esc(w.root) + '</div></div>'
       : "";
     var exHtml = "";
     if (w.exampleEn) {
@@ -374,36 +374,36 @@
         en = en.replace(new RegExp("\\b" + w.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "gi"),
           function (m) { return '<span class="hsv-hl">' + m + "</span>"; });
       } catch (e) {}
-      exHtml = '<div class="hsv-section"><div class="hsv-section-title">例句</div>' +
+      exHtml = '<div class="hsv-section"><div class="hsv-section-title"> Câu ví dụ </div>' +
         '<div class="hsv-ex-en">' + en + '</div>' +
-        (w.exampleZh ? '<div class="hsv-ex-zh">' + esc(w.exampleZh) + '</div>' : '') +
+        (w.exampleZh? '<div class="hsv-ex-zh">' + esc(w.exampleZh) + '</div>': '') +
         '</div>';
     }
     var synHtml = "";
     if ((w.synonyms && w.synonyms.length) || (w.antonyms && w.antonyms.length)) {
       synHtml = '<div class="hsv-section">' +
-        (w.synonyms.length ? '<div class="hsv-syn">同义：' + esc(w.synonyms.join(" · ")) + '</div>' : '') +
-        (w.antonyms.length ? '<div class="hsv-syn">反义：' + esc(w.antonyms.join(" · ")) + '</div>' : '') +
+        (w.synonyms.length? '<div class="hsv-syn"> Đồng nghĩa: ' + esc(w.synonyms.join(" · ")) + '</div>': '') +
+        (w.antonyms.length? '<div class="hsv-syn"> Trái nghĩa: ' + esc(w.antonyms.join(" · ")) + '</div>': '') +
         '</div>';
     }
     document.getElementById("hsv-panel").innerHTML =
       '<div class="hsv-card">' +
         '<div class="hsv-word">' + esc(w.en) + '</div>' +
         '<div class="hsv-ipa">' + esc(w.phonetic) + '</div>' +
-        (w.pos ? '<div class="hsv-pos">' + esc(w.pos) + '</div>' : '') +
-        '<div class="hsv-audio"><button type="button" class="hsv-btn" id="hsv-speak">🔊 发音</button></div>' +
-        '<div class="hsv-meaning' + (state.blur ? " blurred" : "") + '" id="hsv-meaning">' +
-          esc(w.meaning) + '<span class="hsv-hint">点击显示/隐藏</span></div>' +
+        (w.pos? '<div class="hsv-pos">' + esc(w.pos) + '</div>': '') +
+        '<div class="hsv-audio"><button type="button" class="hsv-btn" id="hsv-speak">🔊 phát âm </button></div>' +
+        '<div class="hsv-meaning' + (state.blur? " blurred": "") + '" id="hsv-meaning">' +
+          esc(w.meaning) + '<span class="hsv-hint"> nhấn vào biểu hiện / che giấu </span></div>' +
         examHtml + collHtml + exHtml + rootHtml + synHtml +
         '<div class="hsv-nav">' +
-          '<button type="button" id="hsv-prev">← 上一个</button>' +
-          '<button type="button" class="hsv-btn-primary" id="hsv-next">下一个 →</button>' +
-          '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-go-quiz">去检测</button>' +
+          '<button type="button" id="hsv-prev">← một cái đằng trước </button>' +
+          '<button type="button" class="hsv-btn-primary" id="hsv-next"> kế tiếp →</button>' +
+          '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-go-quiz"> đi Đánh giá </button>' +
         '</div>' +
       '</div>';
     document.getElementById("hsv-speak").onclick = function () { speak(w.en); };
     document.getElementById("hsv-meaning").onclick = function () {
-      state.blur = !state.blur;
+      state.blur =!state.blur;
       renderLearn();
     };
     document.getElementById("hsv-prev").onclick = function () {
@@ -439,12 +439,12 @@
     var hasPara = state.quizOrder.some(function (i) { return state.words[i] && state.words[i].paraphrase; });
     document.getElementById("hsv-panel").innerHTML =
       '<div class="hsv-quiz-types">' +
-        '<button type="button" class="hsv-qtype' + (state.quizType === 1 ? " active" : "") + '" data-t="1">听音拼写</button>' +
-        (hasPara ? '<button type="button" class="hsv-qtype' + (state.quizType === 2 ? " active" : "") + '" data-t="2">同义替换</button>' : '') +
+        '<button type="button" class="hsv-qtype' + (state.quizType === 1? " active": "") + '" data-t="1"> Nghe và viết chính tả </button>' +
+        (hasPara? '<button type="button" class="hsv-qtype' + (state.quizType === 2? " active": "") + '" data-t="2"> Diễn đạt tương đương (Paraphrase) </button>': '') +
       '</div>' +
       '<div id="hsv-qbody"></div>' +
       '<div class="hsv-feedback" id="hsv-fb"></div>' +
-      '<div class="hsv-nav"><button type="button" class="hsv-btn hsv-btn-primary" id="hsv-qnext" disabled>下一题 →</button></div>';
+      '<div class="hsv-nav"><button type="button" class="hsv-btn hsv-btn-primary" id="hsv-qnext" disabled> Câu tiếp theo →</button></div>';
     document.querySelector(".hsv-quiz-types").onclick = function (e) {
       var b = e.target.closest(".hsv-qtype");
       if (!b || state.answered || state.gameOver) return;
@@ -461,13 +461,13 @@
 
   function buildMeaningOptions(w) {
     var correct = w.meaning;
-    var pool = state.words.map(function (x) { return x.meaning; }).filter(function (m) { return m && m !== correct; });
+    var pool = state.words.map(function (x) { return x.meaning; }).filter(function (m) { return m && m!== correct; });
     pool = shuffle(pool).slice(0, 3);
     var used = {};
     used[correct] = true;
     pool.forEach(function (m) { used[m] = true; });
-    var extras = ["桌子 / 课桌", "跑步 / 奔跑", "窗户 / 窗口", "黄色 / 金黄",
-      "安静 / 平静", "朋友 / 友人", "天气 / 气候", "学校 / 校园"];
+    var extras = [" cái bàn / bàn học ", " chạy bộ / chạy trốn ", " cửa sổ / cửa sổ ", " màu vàng / vàng óng ánh ",
+      " yên tĩnh / bình tĩnh ", " bằng hữu / bạn bè ", " thời tiết / Khí hậu ", " trường học / sân trường "];
     for (var i = 0; i < extras.length && pool.length < 3; i++) {
       if (used[extras[i]]) continue;
       used[extras[i]] = true;
@@ -491,7 +491,7 @@
       }
       if (state.timerLeft <= 0) {
         clearInterval(state.timer);
-        if (!state.answered && !state.gameOver) onTimeout();
+        if (!state.answered &&!state.gameOver) onTimeout();
       }
     }, 1000);
   }
@@ -507,11 +507,11 @@
     state.selectedMeaning = null;
     var w = currentQuizWord();
     document.getElementById("hsv-counter").innerHTML =
-      '第 <strong>' + (state.qIdx + 1) + '</strong> / ' + state.quizOrder.length + ' 题 · 正确 ' + state.correct;
+      ' thứ <strong>' + (state.qIdx + 1) + '</strong> / ' + state.quizOrder.length + ' câu · Đúng ' + state.correct;
     var livesEl = document.getElementById("hsv-lives");
     if (livesEl) {
       var h = "";
-      for (var i = 0; i < MAX_LIVES; i++) h += '<span class="heart' + (i >= state.lives ? " lost" : "") + '">❤️</span>';
+      for (var i = 0; i < MAX_LIVES; i++) h += '<span class="heart' + (i >= state.lives? " lost": "") + '">❤️</span>';
       livesEl.innerHTML = h;
     }
     var usePara = state.quizType === 2 && w.paraphrase;
@@ -525,11 +525,11 @@
     var opts = buildMeaningOptions(w);
     var labels = ["A", "B", "C", "D"];
     body.innerHTML =
-      '<div class="hsv-listen-hint">听发音，选择正确中文，再拼写英文</div>' +
-      '<button type="button" class="hsv-btn" id="hsv-qlisten">🔊 播放发音</button>' +
+      '<div class="hsv-listen-hint"> nghe phát âm, lựa chọn Đúng Tiếng Việt, lại Chính tả Tiếng Anh </div>' +
+      '<button type="button" class="hsv-btn" id="hsv-qlisten">🔊 phát ra phát âm </button>' +
       '<div class="hsv-spell-row">' +
-        '<input type="text" id="hsv-spell" placeholder="拼写英文..." autocomplete="off">' +
-        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-submit" disabled>提交</button>' +
+        '<input type="text" id="hsv-spell" placeholder=" Chính tả Tiếng Anh..." autocomplete="off">' +
+        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-submit" disabled> Nộp bài </button>' +
       '</div>' +
       '<div class="hsv-opts" id="hsv-opts">' +
         opts.map(function (o, i) {
@@ -542,7 +542,7 @@
     document.getElementById("hsv-opts").onclick = function (e) {
       var b = e.target.closest(".hsv-opt");
       if (!b || state.answered) return;
-      document.querySelectorAll("#hsv-opts .hsv-opt").forEach(function (x) { x.classList.remove("correct"); });
+      document.querySelectorAll("#hsv-opts.hsv-opt").forEach(function (x) { x.classList.remove("correct"); });
       b.classList.add("correct");
       state.selectedMeaning = b.getAttribute("data-v");
       document.getElementById("hsv-submit").disabled = false;
@@ -559,40 +559,40 @@
   }
 
   function submitSpell() {
-    if (state.answered || state.gameOver || !state.selectedMeaning) return;
+    if (state.answered || state.gameOver ||!state.selectedMeaning) return;
     var spell = document.getElementById("hsv-spell").value.trim().toLowerCase();
     if (!spell) {
       var fb0 = document.getElementById("hsv-fb");
       fb0.className = "hsv-feedback show fail";
       fb0.style.display = "block";
-      fb0.textContent = "请拼写英文单词";
+      fb0.textContent = " mời Chính tả từ đơn tiếng Anh ";
       return;
     }
     state.answered = true;
     clearInterval(state.timer);
     document.getElementById("hsv-spell").disabled = true;
     document.getElementById("hsv-submit").disabled = true;
-    document.querySelectorAll("#hsv-opts .hsv-opt").forEach(function (b) { b.classList.add("disabled"); });
+    document.querySelectorAll("#hsv-opts.hsv-opt").forEach(function (b) { b.classList.add("disabled"); });
     var w = currentQuizWord();
     var meaningOk = state.selectedMeaning === w.meaning;
     var spellOk = spell === w.en.toLowerCase();
     var ok = meaningOk && spellOk;
-    document.querySelectorAll("#hsv-opts .hsv-opt").forEach(function (b) {
+    document.querySelectorAll("#hsv-opts.hsv-opt").forEach(function (b) {
       if (b.getAttribute("data-v") === w.meaning) b.classList.add("correct");
-      else if (b.getAttribute("data-v") === state.selectedMeaning && !meaningOk) b.classList.add("wrong");
+      else if (b.getAttribute("data-v") === state.selectedMeaning &&!meaningOk) b.classList.add("wrong");
     });
     var fb = document.getElementById("hsv-fb");
     fb.style.display = "block";
     if (ok) {
       fb.className = "hsv-feedback show ok";
-      fb.textContent = "✅ 完全正确！";
+      fb.textContent = "✅ Chính xác hoàn toàn! ";
       state.correct++;
     } else {
       state.lives--;
       state.wrong++;
       pushMistake(w, spell);
       fb.className = "hsv-feedback show fail";
-      fb.textContent = "❌ 正确答案：" + w.en + "（" + w.meaning + "）";
+      fb.textContent = "❌ Đáp án đúng: " + w.en + " (" + w.meaning + ") ";
       updateLivesUI();
     }
     afterAnswer();
@@ -610,7 +610,7 @@
     var labels = ["A", "B", "C", "D"];
     body.innerHTML =
       '<div class="hsv-ex-en" style="margin-bottom:10px">📖 ' + orig + '</div>' +
-      '<div class="hsv-listen-hint">选择与原文意思最接近的选项</div>' +
+      '<div class="hsv-listen-hint"> lựa chọn và Bài gốc ý tứ gần gũi nhất Phương án </div>' +
       '<div class="hsv-opts" id="hsv-popts">' +
         opts.map(function (o, i) {
           return '<button type="button" class="hsv-opt" data-v="' + esc(o) + '"><span class="label">' +
@@ -631,25 +631,25 @@
   function handlePara(btn, selected, correct, explanation) {
     state.answered = true;
     clearInterval(state.timer);
-    document.querySelectorAll("#hsv-popts .hsv-opt").forEach(function (b) { b.classList.add("disabled"); });
+    document.querySelectorAll("#hsv-popts.hsv-opt").forEach(function (b) { b.classList.add("disabled"); });
     var ok = selected === correct;
-    document.querySelectorAll("#hsv-popts .hsv-opt").forEach(function (b) {
+    document.querySelectorAll("#hsv-popts.hsv-opt").forEach(function (b) {
       if (b.getAttribute("data-v") === correct) b.classList.add("correct");
-      else if (b === btn && !ok) b.classList.add("wrong");
+      else if (b === btn &&!ok) b.classList.add("wrong");
     });
     var fb = document.getElementById("hsv-fb");
     fb.style.display = "block";
     var w = currentQuizWord();
     if (ok) {
       fb.className = "hsv-feedback show ok";
-      fb.innerHTML = "✅ 正确！" + (explanation ? "<div>" + esc(explanation) + "</div>" : "");
+      fb.innerHTML = "✅ Đúng! " + (explanation? "<div>" + esc(explanation) + "</div>": "");
       state.correct++;
     } else {
       state.lives--;
       state.wrong++;
       pushMistake(w, selected);
       fb.className = "hsv-feedback show fail";
-      fb.innerHTML = "❌ " + esc(correct) + (explanation ? "<div>" + esc(explanation) + "</div>" : "");
+      fb.innerHTML = "❌ " + esc(correct) + (explanation? "<div>" + esc(explanation) + "</div>": "");
       updateLivesUI();
     }
     afterAnswer();
@@ -666,7 +666,7 @@
     var fb = document.getElementById("hsv-fb");
     fb.style.display = "block";
     fb.className = "hsv-feedback show timeout";
-    fb.textContent = "⏰ 时间到！答案：" + w.en + "（" + w.meaning + "）";
+    fb.textContent = "⏰ đã đến giờ! Đáp án: " + w.en + " (" + w.meaning + ") ";
     afterAnswer();
   }
 
@@ -684,7 +684,7 @@
     var livesEl = document.getElementById("hsv-lives");
     if (!livesEl) return;
     var h = "";
-    for (var i = 0; i < MAX_LIVES; i++) h += '<span class="heart' + (i >= state.lives ? " lost" : "") + '">❤️</span>';
+    for (var i = 0; i < MAX_LIVES; i++) h += '<span class="heart' + (i >= state.lives? " lost": "") + '">❤️</span>';
     livesEl.innerHTML = h;
   }
 
@@ -705,14 +705,14 @@
   }
 
   function nextQuiz() {
-    if (state.gameOver || !state.waiting) return;
+    if (state.gameOver ||!state.waiting) return;
     state.qIdx++;
     renderQuizQuestion();
   }
 
   function endGame(passedClear) {
     // passedClear means finished all questions with lives left
-    var passed = !!passedClear && state.lives > 0 && state.qIdx >= state.quizOrder.length - 1 && state.wrong + state.correct >= state.quizOrder.length;
+    var passed =!!passedClear && state.lives > 0 && state.qIdx >= state.quizOrder.length - 1 && state.wrong + state.correct >= state.quizOrder.length;
     // recompute: if we got here via lives, passed=false; via complete with lives>0, true
     if (state.lives <= 0) passed = false;
     else if (state.correct + state.wrong >= state.quizOrder.length) passed = true;
@@ -744,20 +744,20 @@
     state.mistakes.forEach(function (m) { uniq[m.word] = m; });
     var errKeys = Object.keys(uniq);
     box.innerHTML =
-      '<div style="font-size:40px">' + (passed ? "🎉" : "💪") + '</div>' +
-      '<h2>' + (passed ? "闯关成功！" : "闯关失败") + '</h2>' +
-      '<div class="sub">' + (passed ? "已通关，进度已保存" : "生命耗尽或不完整，请重试（进度未推进）") + '</div>' +
+      '<div style="font-size:40px">' + (passed? "🎉": "💪") + '</div>' +
+      '<h2>' + (passed? " vượt ải thành công! ": " vượt ải thất bại ") + '</h2>' +
+      '<div class="sub">' + (passed? " Hoàn thành màn, Tiến độ đã Lưu ": " sinh mệnh hao hết hoặc không hoàn chỉnh, mời Thử lại (Tiến độ không đẩy mạnh) ") + '</div>' +
       '<div class="score">' + state.correct + '<span> / ' + state.quizOrder.length + '</span></div>' +
-      '<div class="sub">错误 ' + state.wrong + ' · 剩余生命 ' + Math.max(0, state.lives) + '</div>' +
+      '<div class="sub"> Sai ' + state.wrong + ' · còn thừa sinh mệnh ' + Math.max(0, state.lives) + '</div>' +
       (errKeys.length
         ? '<div class="hsv-err-list">' + errKeys.map(function (k) {
             return '<div><strong>' + esc(k) + '</strong> · ' + esc(uniq[k].meaning || "") + '</div>';
           }).join("") + '</div>'
         : '') +
       '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px">' +
-        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-retry">重新闯关</button>' +
-        '<a class="hsv-btn" href="vocab.html?book=gaozhong">返回词书</a>' +
-        '<a class="hsv-btn" href="wrong-words.html?book=gaozhong">错题本</a>' +
+        '<button type="button" class="hsv-btn hsv-btn-primary" id="hsv-retry"> một lần nữa vượt ải </button>' +
+        '<a class="hsv-btn" href="vocab.html?book=gaozhong"> Quay lại từ sách </a>' +
+        '<a class="hsv-btn" href="wrong-words.html?book=gaozhong"> Sổ lỗi sai </a>' +
       '</div>';
     ov.classList.add("show");
     document.getElementById("hsv-retry").onclick = function () {

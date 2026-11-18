@@ -1,46 +1,46 @@
 {
- "id": "free-13307",
- "title": "Choose a Response #267",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #267",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13307,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-267"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #267",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/f34dcf7ca66b40fdbfd249e5f304a54f.mp3",
-   "questions": [
+  "id": "free-13307",
+  "title": "Choose a Response #267",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #267",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13307,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-267"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, I think it is.",
-      "B": "A very noisy concert.",
-      "C": "Sure, sorry about that.",
-      "D": "No, I'm not going to return it."
-     },
-     "answer": "C",
-     "transcript": "Can you turn down the volume?",
-     "stemZh": "",
-     "analysis": "Can you turn down the volume? 题干分析 本题是日常人际情景交际问句，句意是 “你能把音量调小一点吗？”，核心考点是委婉请求帮忙，需要选出礼貌得体、符合日常回应逻辑的选项。该题目种的turn down是固定搭配，意为\"调低\"。 选项分析 选项 A：句式语义都不匹配请求调小音量的语境，答非所问，予以排除。 选项 B：只提及吵闹的音乐会，没有回应调音量的请求，话题无关，予以排除。 选项 C：爽快答应并表达歉意，完美契合别人请求调低音量的礼貌回应，是正确选项。 选项 D：表述不会退还物品，和音量调节的请求毫无关联，话题偏离，予以排除。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #267",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/f34dcf7ca66b40fdbfd249e5f304a54f.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, I think it is.",
+            "B": "A very noisy concert.",
+            "C": "Sure, sorry about that.",
+            "D": "No, I'm not going to return it."
+          },
+          "answer": "C",
+          "transcript": "Can you turn down the volume?",
+          "stemZh": "",
+          "analysis": "Can you turn down the volume? Câu hỏi phân tích chủ đề là Đời sống nhân tế tình cảnh giao tiếp câu hỏi, câu ý là “ bạn có thể đem âm lượng điều ít một chút không? ”, hạch tâm địa điểm thi là uyển chuyển thỉnh cầu hỗ trợ, cần tuyển ra lễ phép vừa vặn, phù hợp Đời sống đáp lại suy luận Phương án. nên đề mục loại turn down là cố định phối hợp, ý là \" điều thấp \". Phương án phân tích Phương án A: câu thức lời nói nghĩa cũng không xứng đôi thỉnh cầu điều tiểu Âm lượng ngữ cảnh, đáp phi sở vấn, giúp cho bài trừ. Phương án B: chỉ đề cập ồn ào âm nhạc hội, không có trả lời điều âm lượng thỉnh cầu, chủ đề không quan hệ, giúp cho bài trừ. Phương án C: sảng khoái đáp ứng cũng biểu đạt áy náy, hoàn mỹ phù hợp người khác thỉnh cầu điều giọng thấp lượng lễ phép đáp lại, là Đúng Phương án. Phương án D: thuyết minh sẽ không trả lại vật phẩm, và âm lượng điều tiết thỉnh cầu không liên hệ chút nào, chủ đề đều rời đi, giúp cho bài trừ."
+        }
+      ]
+    }
+  ]
 }

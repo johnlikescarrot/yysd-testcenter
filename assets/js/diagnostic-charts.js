@@ -3,7 +3,7 @@
   "use strict";
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
@@ -49,7 +49,7 @@
     var paths = series.map(function (s) {
       if (!s.points.length) return "";
       var d = s.points.map(function (p, i) {
-        return (i ? "L" : "M") + xAt(i) + "," + yAt(p.y);
+        return (i? "L": "M") + xAt(i) + "," + yAt(p.y);
       }).join(" ");
       var dots = s.points.map(function (p, i) {
         return '<circle cx="' + xAt(i) + '" cy="' + yAt(p.y) +
@@ -62,7 +62,7 @@
     }).join("");
 
     var xl = xLabels.map(function (lab, i) {
-      if (maxN > 6 && i % Math.ceil(maxN / 5) !== 0 && i !== maxN - 1) return "";
+      if (maxN > 6 && i % Math.ceil(maxN / 5)!== 0 && i!== maxN - 1) return "";
       return (
         '<text x="' + xAt(i) + '" y="' + (h - 10) +
         '" text-anchor="middle" font-size="10" fill="#888">' +
@@ -94,9 +94,9 @@
     var cy = size / 2;
     var r = size * 0.36;
     var labels = [
-      { key: "high_school", name: "高中" },
-      { key: "cet4", name: "四级" },
-      { key: "ielts", name: "雅思" }
+      { key: "high_school", name: " THPT " },
+      { key: "cet4", name: " Đại học B1 " },
+      { key: "ielts", name: "IELTS" }
     ];
     var n = labels.length;
 
@@ -141,7 +141,7 @@
     return (
       '<div class="diag-radar">' +
       '<svg viewBox="0 0 ' + size + " " + size + '" width="100%" max-width="' +
-      size + '" role="img" aria-label="能力雷达图">' +
+      size + '" role="img" aria-label=" năng lực ra-đa đồ ">' +
       rings + axes +
       '<polygon points="' + poly +
       '" fill="rgba(200,150,62,0.25)" stroke="#c8963e" stroke-width="2"/>' +
@@ -154,4 +154,4 @@
     lineChartSVG: lineChartSVG,
     radarSVG: radarSVG
   };
-})(typeof window !== "undefined" ? window : this);
+})(typeof window!== "undefined"? window: this);

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # one-shot builder — run: python3 scripts/build_toefl58_reading.py
-# Reconstructs 优考托福第58套阅读 (50 items) from the official PDF + key.
+# Reconstructs ưu khảo thi TOEFL thứ 58 bộ Đọc (50 items) from the official PDF + key.
 import json
 from pathlib import Path
 
@@ -17,7 +17,7 @@ def mcq(qid, stem, options, answer, explain=""):
 
 paper = {
     "id": "toefl-58-reading",
-    "title": "新托福第58套 · 阅读",
+    "title": " TOEFL iBT thứ 58 bộ · Đọc ",
     "set": "58",
     "modules": [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
@@ -297,6 +297,6 @@ for t in paper["tasks"]:
         n += sum(1 for p in t["passage"] if p.get("id"))
     else:
         n += len(t["questions"])
-if n != 50:
+if n!= 50:
     raise SystemExit("expected 50 items, got %s" % n)
 print("wrote", OUT, "items", n)

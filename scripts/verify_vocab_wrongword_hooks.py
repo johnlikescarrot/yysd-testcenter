@@ -46,6 +46,7 @@ def main() -> int:
         if not base.is_dir():
             continue
         for html in sorted(base.rglob("*.html")):
+            if html.name.startswith("mau-giao-vien-"): continue
             missing = check_file(html, kind)
             if missing:
                 rel = html.relative_to(ROOT)

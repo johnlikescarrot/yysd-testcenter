@@ -1,46 +1,46 @@
 {
- "id": "free-12306",
- "title": "Choose a Response #64",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #64",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12306,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-64"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #64",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/21380bfd37de4c9fbdbf3355498f3c60.mp3",
-   "questions": [
+  "id": "free-12306",
+  "title": "Choose a Response #64",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #64",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12306,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-64"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "No, I forgot to call him.",
-      "B": "He works in the next building.",
-      "C": "Yes, I will drop by at six.",
-      "D": "That won't be necessary."
-     },
-     "answer": "D",
-     "transcript": "Can I tell John that you came by today?",
-     "stemZh": "我能告诉约翰你今天来过吗？",
-     "analysis": "Can I tell John that you came by today? 题干分析 题目问的是：我能告诉约翰你今天来过吗？ 选项分析： A. 不，我忘了打电话给他。这回答的是是否忘记打电话，而非是否允许告知约翰，因此A选项错误。 B. 他在隔壁楼工作。这陈述的是约翰的工作地点，与是否允许告知无关，因此B选项错误。 C. 是的，我六点会顺便过来。这说的是将来会来，与“今天来过”的事实不符，且没有直接回应是否允许告知，因此C选项错误。 D. 没必要。这直接表示不需要告诉约翰，是对请求的明确回应，因此D选项正确。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #64",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/21380bfd37de4c9fbdbf3355498f3c60.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "No, I forgot to call him.",
+            "B": "He works in the next building.",
+            "C": "Yes, I will drop by at six.",
+            "D": "That won't be necessary."
+          },
+          "answer": "D",
+          "transcript": "Can I tell John that you came by today?",
+          "stemZh": "ta có thể nói cho John ngươi hôm nay đã tới không?",
+          "analysis": "Can I tell John that you came by today? Câu hỏi phân tích đề mục hỏi là: ta có thể nói cho John ngươi hôm nay đã tới không? Phương án phân tích: A. không, tôi đã quên gọi điện thoại cho anh ấy. lúc này đáp chính là có hay không quên gọi điện thoại, mà không phải là có hay không cho phép báo cho biết John, bởi vậy A Phương án Sai. B. hắn ở đây bên cạnh lầu công tác. cái này trần thuật chính là John công tác địa điểm, và có hay không cho phép báo cho biết không quan hệ, bởi vậy B Phương án Sai. C. đúng vậy, tôi sáu giờ sẽ thuận tiện tới đây. cái này nói rất đúng tương lai sẽ đến, và “ hôm nay tới qua ” sự thật không hợp, mà lại không có trực tiếp đáp lại có hay không cho phép báo cho biết, bởi vậy C Phương án Sai. D. không cần phải. cái này trực tiếp biểu thị không cần nói cho John, là đúng thỉnh cầu rõ ràng đáp lại, bởi vậy D Phương án Đúng."
+        }
+      ]
+    }
+  ]
 }

@@ -1,46 +1,46 @@
 {
- "id": "free-12267",
- "title": "Choose a Response #25",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #25",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12267,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-25"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #25",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/bc187262186541b98c871fb03a58966d.mp3",
-   "questions": [
+  "id": "free-12267",
+  "title": "Choose a Response #25",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #25",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12267,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-25"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "That would suit me fine.",
-      "B": "Yes, I have a full schedule today.",
-      "C": "I have a meeting at three.",
-      "D": "No, there will be three of us."
-     },
-     "answer": "A",
-     "transcript": "Should I schedule you for two this afternoon? ​​",
-     "stemZh": "我把你的时间安排在今天下午两点，可以吗？",
-     "analysis": "Should I schedule you for two this afternoon? 题目问的是：要我帮你安排在今天下午两点吗？ 选项分析： A. 那对我来说很合适。这直接表示同意安排，是对提议的肯定回应，因此A选项正确。 B. 是的，我今天行程很满。行程满意味着可能没有时间，这与接受安排的逻辑矛盾，因此B选项错误。 C. 我三点有个会议。这只是在陈述另一个时间点的安排，没有明确接受或拒绝两点的安排，因此C选项错误。 D. 不，我们会有三个人。问题询问的是“是否安排两点”，而不是人数，因此D选项错误。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #25",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/bc187262186541b98c871fb03a58966d.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "That would suit me fine.",
+            "B": "Yes, I have a full schedule today.",
+            "C": "I have a meeting at three.",
+            "D": "No, there will be three of us."
+          },
+          "answer": "A",
+          "transcript": "Should I schedule you for two this afternoon? ​​",
+          "stemZh": "tôi đem ngươi sắp xếp thời gian vào hôm nay hai giờ chiều, có thể chứ?",
+          "analysis": "Should I schedule you for two this afternoon? đề mục hỏi là: muốn ta giúp ngươi an bài vào hôm nay hai giờ chiều không? Phương án phân tích: A. vậy đối với ta tới nói rất phù hợp. cái này trực tiếp biểu thị đồng ý an bài, là đúng đề nghị khẳng định đáp lại, bởi vậy A Phương án Đúng. B. đúng vậy, ta hôm nay hành trình rất đầy. hành trình thoả mãn vị lấy khả năng không có thời gian, cái này cùng tiếp nhận an bài ăn khớp mâu thuẫn, bởi vậy B Phương án Sai. C. tôi ba điểm có một buổi họp. đây chẳng qua là đang trần thuật một cái thời gian khác điểm an bài, không có rõ ràng tiếp nhận hoặc cự tuyệt hai giờ an bài, bởi vậy C Phương án Sai. D. không, chúng tôi sẽ có ba người. vấn đề hỏi thăm là “ có hay không an bài hai điểm ”, mà không phải nhân số, bởi vậy D Phương án Sai. ​​"
+        }
+      ]
+    }
+  ]
 }

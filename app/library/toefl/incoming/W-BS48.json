@@ -19,20 +19,50 @@
       "id": 471,
       "set": "W-BS48-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you attend the university's workshop on digital marketing?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " because " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " because "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["of", "class", "missed", "a", "it", "no, I"],
-      "answer": ["no, I", "missed", "it", "of", "a", "class"]
+      "bank": [
+        "of",
+        "class",
+        "missed",
+        "a",
+        "it",
+        "no, I"
+      ],
+      "answer": [
+        "no, I",
+        "missed",
+        "it",
+        "of",
+        "a",
+        "class"
+      ]
     },
     {
       "type": "sentence",
@@ -40,19 +70,45 @@
       "id": 472,
       "set": "W-BS48-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "We received the shipment of school supplies today.",
       "parts": [
-        { "t": "Do " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Do "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["textbooks", "if the", "were included", "you know", "new"],
-      "answer": ["you know", "if the", "new", "textbooks", "were included"]
+      "bank": [
+        "textbooks",
+        "if the",
+        "were included",
+        "you know",
+        "new"
+      ],
+      "answer": [
+        "you know",
+        "if the",
+        "new",
+        "textbooks",
+        "were included"
+      ]
     },
     {
       "type": "sentence",
@@ -60,20 +116,50 @@
       "id": 473,
       "set": "W-BS48-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you find the workshop helpful?",
       "parts": [
-        { "t": "I " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["did not", "the", "from", "anything new", "learn", "workshop"],
-      "answer": ["did not", "learn", "anything new", "from", "the", "workshop"]
+      "bank": [
+        "did not",
+        "the",
+        "from",
+        "anything new",
+        "learn",
+        "workshop"
+      ],
+      "answer": [
+        "did not",
+        "learn",
+        "anything new",
+        "from",
+        "the",
+        "workshop"
+      ]
     },
     {
       "type": "sentence",
@@ -81,19 +167,45 @@
       "id": 474,
       "set": "W-BS48-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Our group has been working really hard on the presentation for Spanish class.",
       "parts": [
-        { "slot": true },
-        { "t": " do " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "t": " do "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["when", "it", "will be finished", "think", "you"],
-      "answer": ["when", "you", "think", "it", "will be finished"]
+      "bank": [
+        "when",
+        "it",
+        "will be finished",
+        "think",
+        "you"
+      ],
+      "answer": [
+        "when",
+        "you",
+        "think",
+        "it",
+        "will be finished"
+      ]
     },
     {
       "type": "sentence",
@@ -101,19 +213,47 @@
       "id": 475,
       "set": "W-BS48-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard you're traveling during winter break. How is the preparation going?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " flights." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " flights."
+        }
       ],
-      "bank": ["agent wanted", "my travel", "book the", "plan to", "when I", "to know"],
-      "answer": ["my travel", "agent wanted", "to know", "when I", "plan to", "book the"]
+      "bank": [
+        "agent wanted",
+        "my travel",
+        "book the",
+        "plan to",
+        "when I",
+        "to know"
+      ],
+      "answer": [
+        "my travel",
+        "agent wanted",
+        "to know",
+        "when I",
+        "plan to",
+        "book the"
+      ]
     },
     {
       "type": "sentence",
@@ -121,20 +261,50 @@
       "id": 476,
       "set": "W-BS48-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Which internship did you have during the summer?",
       "parts": [
-        { "slot": true },
-        { "t": " worked " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "t": " worked "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["aimed to reduce", "carbon emissions", "I", "that", "with", "a company"],
-      "answer": ["I", "with", "a company", "that", "aimed to reduce", "carbon emissions"]
+      "bank": [
+        "aimed to reduce",
+        "carbon emissions",
+        "I",
+        "that",
+        "with",
+        "a company"
+      ],
+      "answer": [
+        "I",
+        "with",
+        "a company",
+        "that",
+        "aimed to reduce",
+        "carbon emissions"
+      ]
     },
     {
       "type": "sentence",
@@ -142,17 +312,37 @@
       "id": 477,
       "set": "W-BS48-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Have any of your classmates tried the new Italian restaurant in town?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " yet." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " yet."
+        }
       ],
-      "bank": ["none of", "them", "there", "have been"],
-      "answer": ["none of", "them", "have been", "there"]
+      "bank": [
+        "none of",
+        "them",
+        "there",
+        "have been"
+      ],
+      "answer": [
+        "none of",
+        "them",
+        "have been",
+        "there"
+      ]
     },
     {
       "type": "sentence",
@@ -160,18 +350,42 @@
       "id": 478,
       "set": "W-BS48-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard that the art gallery downtown is sponsoring a student exhibition this weekend.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " featured?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " featured?"
+        }
       ],
-      "bank": ["do you", "our classmates", "know if", "any of", "will be"],
-      "answer": ["do you", "know if", "any of", "our classmates", "will be"]
+      "bank": [
+        "do you",
+        "our classmates",
+        "know if",
+        "any of",
+        "will be"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "any of",
+        "our classmates",
+        "will be"
+      ]
     },
     {
       "type": "sentence",
@@ -179,19 +393,45 @@
       "id": 479,
       "set": "W-BS48-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did Professor Garcia ask you?",
       "parts": [
-        { "t": "She wanted " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "She wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["how I", "plan to", "revise", "my paper", "to know"],
-      "answer": ["to know", "how I", "plan to", "revise", "my paper"]
+      "bank": [
+        "how I",
+        "plan to",
+        "revise",
+        "my paper",
+        "to know"
+      ],
+      "answer": [
+        "to know",
+        "how I",
+        "plan to",
+        "revise",
+        "my paper"
+      ]
     },
     {
       "type": "sentence",
@@ -199,20 +439,50 @@
       "id": 480,
       "set": "W-BS48-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you attend the university's time management workshop yesterday?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " was " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["unable", "it", "no,", "to", "make", "I"],
-      "answer": ["no,", "I", "unable", "to", "make", "it"]
+      "bank": [
+        "unable",
+        "it",
+        "no,",
+        "to",
+        "make",
+        "I"
+      ],
+      "answer": [
+        "no,",
+        "I",
+        "unable",
+        "to",
+        "make",
+        "it"
+      ]
     }
   ]
 }

@@ -1,46 +1,46 @@
 {
- "id": "free-12256",
- "title": "Choose a Response #14",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #14",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12256,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-14"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #14",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/404df85974ce4490a6d2cfce92dee83f.mp3",
-   "questions": [
+  "id": "free-12256",
+  "title": "Choose a Response #14",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #14",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12256,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-14"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Put it in the next room.",
-      "B": "They are out of stock.",
-      "C": "She is the receptionist.",
-      "D": "At the local stationery store."
-     },
-     "answer": "A",
-     "transcript": "Where should I put this box of ink cartridges, Ms. Fujimoto? ​​",
-     "stemZh": "藤本女士，这盒墨盒我应该放在哪里呢？",
-     "analysis": "Where should I put this box of ink cartridges, Ms. Fujimoto? 题干分析 本题属于情景交际地点询问类题型。问句以 Where 引导，核心是询问这盒墨盒应该放置在什么地方，需要选出能够直接给出具体摆放位置的回应。 选项分析 选项 A：直接给出了物品摆放的具体地点，精准回应问句询问放置位置的核心诉求，语境贴合、问答匹配，为正确选项。 选项 B：只说明商品缺货的库存情况，和物品该放在哪里没有任何关系，答非所问，予以排除。 选项 C：只是介绍人物的身份职业，没有回应物品摆放位置的问题，偏离题干主题，予以排除。 选项 D：表述的是可以购买文具的店铺地址，并非现有墨盒该摆放的位置，语境不匹配，予以排除。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #14",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/404df85974ce4490a6d2cfce92dee83f.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Put it in the next room.",
+            "B": "They are out of stock.",
+            "C": "She is the receptionist.",
+            "D": "At the local stationery store."
+          },
+          "answer": "A",
+          "transcript": "Where should I put this box of ink cartridges, Ms. Fujimoto? ​​",
+          "stemZh": "đằng bản phu nhân, cái này hộp hộp mực tôi nên để ở nơi đâu nhỉ?",
+          "analysis": "Where should I put this box of ink cartridges, Ms. Fujimoto? Câu hỏi phân tích chủ đề thuộc về tình cảnh giao tiếp địa điểm hỏi thăm loại dạng bài. câu hỏi dùng Where dẫn đạo, hạch tâm là hỏi thăm cái này hộp hộp mực nên đặt ở địa phương nào, cần tuyển ra có thể trực tiếp cho ra cụ thể bầy đặt vị trí đáp lại. Phương án phân tích Phương án A: trực tiếp cấp ra vật phẩm trưng bày địa điểm cụ thể, tinh chuẩn đáp lại câu hỏi hỏi thăm để đặt vị trí hạch tâm tố cầu, ngữ cảnh dán hợp, vấn đáp xứng đôi, là Đúng Phương án. Phương án B: chỉ nói rõ ràng hàng hoá thiếu hàng tồn kho tình huống, và vật phẩm nên để ở nơi đâu không có bất cứ quan hệ nào, đáp phi sở vấn, giúp cho bài trừ. Phương án C: chỉ là giới thiệu nhân vật Vai trò Nghề nghiệp, không có trả lời vật phẩm bầy đặt vị trí vấn đề, đều rời đi Câu hỏi chủ đề, giúp cho bài trừ. Phương án D: diễn tả là có thể mua sắm văn phòng phẩm cửa hàng địa chỉ, cũng không phải là hiện hữu hộp mực nên trưng bày vị trí, ngữ cảnh không xứng đôi, giúp cho bài trừ. ​​"
+        }
+      ]
+    }
+  ]
 }

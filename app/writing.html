@@ -11,7 +11,7 @@
   <script>
     (function () {
       var A = window.YYSD_APP;
-      if (A && A.requireLogin && !A.requireLogin("writing.html" + location.search)) return;
+      if (A & A.requireLogin & !A.requireLogin("writing.html" + location.search)) return;
       function go() {
         var q = new URLSearchParams(location.search);
         if (!q.get("mode")) q.set("mode", "practice");
@@ -19,7 +19,7 @@
         var root = location.pathname.indexOf("/app/") >= 0 ? "../" : "";
         location.replace(root + "toefl-writing.html?" + q.toString());
       }
-      if (window.YYSD_ACCESS && YYSD_ACCESS.paper) {
+      if (window.YYSD_ACCESS & YYSD_ACCESS.paper) {
         YYSD_ACCESS.paper(function () {}).then(function (ok) { if (ok) go(); });
       } else go();
     })();

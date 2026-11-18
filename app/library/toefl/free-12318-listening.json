@@ -1,46 +1,46 @@
 {
- "id": "free-12318",
- "title": "Choose a Response #76",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #76",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12318,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-76"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #76",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/81d3aa09f5dc447e9212700209cb646e.mp3",
-   "questions": [
+  "id": "free-12318",
+  "title": "Choose a Response #76",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #76",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12318,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-76"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Sure, just leave it right here.",
-      "B": "Yes, she doesn't get along with her boss.",
-      "C": "She decided to go back to school.",
-      "D": "Leaving is hard."
-     },
-     "answer": "C",
-     "transcript": "Why is Suki leaving the company? ​​",
-     "stemZh": "苏琪为什么要离开公司？",
-     "analysis": "Why is Suki leaving the company? 题干分析 题干“Why is Suki leaving the company?”是在问“Suki为什么要离开公司？”。提问词是 Why（为什么），所以正确的回答必须包含一个解释原因的陈述句。 选项分析 选项A：Sure, just leave it right here. 错误。这句话的意思是“当然，就把它放在这儿吧。”这通常是在回应别人的请求或指示（比如帮忙放东西），完全没有解释离开的原因。 选项B：Yes, she doesn't get along with her boss. 错误。虽然这句话的后半部分“她和老板合不来”确实是一个合理的离职原因，但句首的 Yes 暴露了问题。题干是由 Why 引导的特殊疑问句，不能用 Yes 或 No 来直接回答。 选项C：She decided to go back to school. 正确。这句话的意思是“她决定回去上学。”这直接给出了 Suki 离职的具体原因，完美契合 Why 的提问。 选项D：Leaving is hard. 错误。这句话的意思是“离开是很难的。”这只是在评价“离开”这件事本身的感受，并没有说明她到底“为什么”要离开。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #76",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/81d3aa09f5dc447e9212700209cb646e.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Sure, just leave it right here.",
+            "B": "Yes, she doesn't get along with her boss.",
+            "C": "She decided to go back to school.",
+            "D": "Leaving is hard."
+          },
+          "answer": "C",
+          "transcript": "Why is Suki leaving the company? ​​",
+          "stemZh": "tô kỳ tại sao phải rời đi công ty?",
+          "analysis": "Why is Suki leaving the company? Câu hỏi phân tích Câu hỏi “Why is Suki leaving the company?” là ở hỏi “Suki tại sao phải rời đi công ty? ”. vấn đề từ là Why (vì sao), nên chính xác trả lời phải bao hàm một lời giải thích nguyên nhân câu trần thuật. Phương án phân tích Phương án A: Sure, just leave it right here. Sai. ý tứ của những lời này là “ đương nhiên, sẽ đem nó đặt ở ở đây nhé. ” cái này bình thường là trở về ứng với người khác thỉnh cầu hoặc chỉ thị (ví dụ như hỗ trợ bỏ vào thứ kia), hoàn toàn không có giải thích rời đi nguyên nhân. Phương án B: Yes, she doesn't get along with her boss. Sai. mặc dù những lời này bộ phận sau “ cô ấy và lão bản không hợp ” đúng là một hợp lý tạm rời cương vị công tác nguyên nhân, nhưng câu đầu Yes bại lộ vấn đề. Câu hỏi là do Why dẫn dắt đặc thù câu nghi vấn, không thể dùng Yes hoặc No đến trực tiếp trả lời. Phương án C: She decided to go back to school. Đúng. ý tứ của những lời này là “ cô ấy quyết định trở về đến trường. ” cái này trực tiếp cấp ra Suki tạm rời công việc nguyên nhân cụ thể, hoàn mỹ phù hợp Why vấn đề. Phương án D: Leaving is hard. Sai. ý tứ của những lời này là “ ly khai là rất khó. ” đây chẳng qua là đang đánh giá “ ly khai ” chuyện này bản thân cảm thụ, cũng không có nói rõ ràng cô ấy đến cùng “ vì sao ” phải ly khai. ​​"
+        }
+      ]
+    }
+  ]
 }

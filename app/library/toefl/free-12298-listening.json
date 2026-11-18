@@ -1,46 +1,46 @@
 {
- "id": "free-12298",
- "title": "Choose a Response #56",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #56",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12298,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-56"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #56",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/baf40d34663e404099eab5a17e7c2564.mp3",
-   "questions": [
+  "id": "free-12298",
+  "title": "Choose a Response #56",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #56",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12298,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-56"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "That is a great offer.",
-      "B": "Moving is hard.",
-      "C": "To the second floor.",
-      "D": "Sure, give me a second first."
-     },
-     "answer": "D",
-     "transcript": "Can you give me a hand moving the couch, please? ​​",
-     "stemZh": "麻烦你帮我搬一下沙发好吗？",
-     "analysis": "Can you give me a hand moving the couch, please? 题干分析 题干意为你能帮我搬一下沙发吗？在寻求帮助。give sb a hand: 固定短语，帮某人一把，帮忙。 选项分析 选项A: That is a great offer. 错误，因为提问是求助，不是offer。 选项B: Moving is hard. 错误，只是评价，没有回应是否提供帮助。 选项C: To the second floor.错误，答非所问，并没有提问要把沙发搬到哪里。 选项D: 正确答案，答复了题目请求。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #56",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/baf40d34663e404099eab5a17e7c2564.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "That is a great offer.",
+            "B": "Moving is hard.",
+            "C": "To the second floor.",
+            "D": "Sure, give me a second first."
+          },
+          "answer": "D",
+          "transcript": "Can you give me a hand moving the couch, please? ​​",
+          "stemZh": "phiền toái bạn giúp ta chuyển thoáng một phát ghế sô pha được không nào?",
+          "analysis": "Can you give me a hand moving the couch, please? Câu hỏi phân tích Câu hỏi ý là bạn có thể giúp ta chuyển thoáng một phát ghế sô pha không? đang tìm xin giúp đỡ. give sb a hand: cố định Cụm từ, giúp đỡ người nào đó một chút, hỗ trợ. Phương án phân tích Phương án A: That is a great offer. Sai, vì vấn đề là xin giúp đỡ, không phải offer. Phương án B: Moving is hard. Sai, chẳng qua là đánh giá, không có trả lời có hay không cung cấp trợ giúp. Phương án C: To the second floor. Sai, đáp phi sở vấn, cũng không có vấn đề muốn đem ghế sô pha đem đến ở đâu. Phương án D: Đáp án đúng, trả lời chắc chắn đề mục thỉnh cầu. ​​"
+        }
+      ]
+    }
+  ]
 }

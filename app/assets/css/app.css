@@ -21,8 +21,8 @@ body {
 a { color: inherit; }
 button, input, select, textarea { font: inherit; border-radius: 0; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-body.exam-ets .ets-bar :focus-visible { outline-color: #fff; }
-.auth-page :focus-visible { outline-color: var(--accent-text); }
+body.exam-ets.ets-bar:focus-visible { outline-color: #fff; }
+.auth-page:focus-visible { outline-color: var(--accent-text); }
 .auth-page { overflow-wrap: anywhere; }
 
 .top {
@@ -123,10 +123,10 @@ h1 {
 .btn-block { width: 100%; }
 .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--muted); }
 .btn-ghost:hover:not(:disabled) { background: var(--soft); }
-.auth-page .btn { min-height: 48px; }
-.auth-page .btn:hover:not(:disabled) { background: var(--accent-text); color: var(--paper); }
-.auth-page .btn:active:not(:disabled) { background: var(--ink); }
-.btn:disabled, .top button:disabled { background: var(--soft); color: var(--muted); cursor: not-allowed; }
+.auth-page.btn { min-height: 48px; }
+.auth-page.btn:hover:not(:disabled) { background: var(--accent-text); color: var(--paper); }
+.auth-page.btn:active:not(:disabled) { background: var(--ink); }
+.btn:disabled,.top button:disabled { background: var(--soft); color: var(--muted); cursor: not-allowed; }
 .msg { min-height: 1.4em; font-size: 13px; color: var(--accent-text); margin: 8px 0; }
 .msg.ok { color: #17633e; }
 .auth-switch { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
@@ -266,14 +266,14 @@ h1 {
 .void-acts { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 #mode-tag { font-size: 13px; opacity: 0.9; }
 
-.hidden, [hidden] { display: none !important; }
+.hidden, [hidden] { display: none!important; }
 
-/* 考场引擎页保持浅色 ETS 皮肤（exam.css 在其后加载，同特异性它优先） */
-body.exam-ets .exam-card { background: transparent; }
-body.exam-ets .opt { background: #fff; border-color: #c5c9d0; color: #1b1b1b; }
-body.exam-ets .insert { background: #eef1f4; border-color: #9aa8b5; color: #1b1b1b; }
-body.exam-ets .blank input { background: #f3f8fb; border-bottom-color: #9aa8b5; color: #1b1b1b; }
-body.exam-ets .blank input:focus { border-bottom-color: #2b2f36; background: #e9edf4; }
+/* trường thi động cơ trang bảo trì màu sáng ETS làn da (exam.css tại phía sau thêm năm, cùng đặc dị tính nó ưu tiên) */
+body.exam-ets.exam-card { background: transparent; }
+body.exam-ets.opt { background: #fff; border-color: #c5c9d0; color: #1b1b1b; }
+body.exam-ets.insert { background: #eef1f4; border-color: #9aa8b5; color: #1b1b1b; }
+body.exam-ets.blank input { background: #f3f8fb; border-bottom-color: #9aa8b5; color: #1b1b1b; }
+body.exam-ets.blank input:focus { border-bottom-color: #2b2f36; background: #e9edf4; }
 
 @media (max-width: 800px) {
   .exam-split { grid-template-columns: 1fr; }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse New Oriental IELTS speaking 机经 PDF (纯题目版) into jiijing JSON bank."""
+"""Parse New Oriental IELTS speaking cơ trải qua PDF (thuần túy đề mục bản) into jiijing JSON bank."""
 from __future__ import annotations
 
 import argparse
@@ -11,11 +11,11 @@ from pathlib import Path
 from pypdf import PdfReader
 
 NOISE = {
-    "必备话题",
-    "本季新题",
-    "保留旧题",
-    "雅思教研中心",
-    "雅思研发中心",
+    " thiết yếu chủ đề ",
+    " bản quý mới câu ",
+    " giữ lại xưa cũ câu ",
+    " IELTS dạy nghiên trung tâm ",
+    " IELTS nghiên cứu phát minh trung tâm ",
     "People:",
     "Place:",
     "Event:",
@@ -35,7 +35,7 @@ def extract_text(pdf: Path) -> str:
     for p in reader.pages:
         parts.append(p.extract_text() or "")
     full = "\n".join(parts).replace("\r", "\n")
-    return re.sub(r"[ \t]+", " ", full)
+    return re.sub(r"[\t]+", " ", full)
 
 
 def parse_part1(full: str) -> list[dict]:
@@ -43,7 +43,7 @@ def parse_part1(full: str) -> list[dict]:
     m2 = re.search(r"3 Topic Pool——Part 2&3|2 Topic Pool", full)
     if not m1 or not m2:
         return []
-    part1_text = full[m1.end() : m2.start()]
+    part1_text = full[m1.end(): m2.start()]
     lines = [ln.strip() for ln in part1_text.split("\n") if ln.strip()]
     lines = [ln for ln in lines if not re.fullmatch(r"\d{1,2}", ln)]
 
@@ -76,7 +76,7 @@ def parse_part1(full: str) -> list[dict]:
                 ):
                     break
                 if "?" in nxt or nxt.startswith("(") or nxt[0].islower() or len(nxt) > 40:
-                    q = current["questions"][-1] + " " + nxt if False else q  # noqa keep structure
+                    q = current["questions"][-1] + " " + nxt if False else q # noqa keep structure
                     # append to last after we push q once
                     pass
                 break
@@ -158,7 +158,7 @@ def join_describe_title(prev: str) -> str | None:
         parts.append(ln)
     title = re.sub(r"\s+", " ", " ".join(parts)).strip()
     title = re.sub(r"^(•\s*)+", "", title)
-    title = re.sub(r"\s*(本季新题|保留旧题)\s*$", "", title).strip()
+    title = re.sub(r"\s*(bản quý mới câu | giữ lại xưa cũ câu)\s*$", "", title).strip()
     if not title.lower().startswith("describe"):
         return None
     return title
@@ -166,7 +166,7 @@ def join_describe_title(prev: str) -> str | None:
 
 def parse_part2(full: str) -> list[dict]:
     m2 = re.search(r"3 Topic Pool——Part 2&3|2 Topic Pool", full)
-    section = full[m2.start() :] if m2 else full
+    section = full[m2.start():] if m2 else full
     chunks = re.split(r"(?i)You should say:\s*", section)
     part2: list[dict] = []
     for ci in range(1, len(chunks)):
@@ -248,7 +248,7 @@ def parse_pdf(pdf: Path, bank_id: str, title: str) -> dict:
     return {
         "id": bank_id,
         "title": title,
-        "source": "新东方在线雅思研发中心 · 纯题目版",
+        "source": " mới phương Đông online IELTS nghiên cứu phát minh trung tâm · thuần túy đề mục bản ",
         "part1": parse_part1(full),
         "part2": parse_part2(full),
     }
@@ -258,7 +258,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf", type=Path)
     ap.add_argument("--bank-id", default="2026-q2")
-    ap.add_argument("--title", default="2026年第二季度雅思口语机经")
+    ap.add_argument("--title", default="năm 2026 thứ hai quý IELTS Speaking cơ trải qua ")
     ap.add_argument(
         "--out-dir",
         type=Path,

@@ -1,50 +1,50 @@
-# AI 协作工作日志
+# AI hợp tác thời gian làm việc chí
 
-> Kimi 只写本文件 + `DESIGN-BRIEF.md` + `CONTEXT.md` + `tasks/`  
-> Cursor 只写代码 + 更新本文件实现状态
+> Kimi chỉ viết bài này kiện + `DESIGN-BRIEF.md` + `CONTEXT.md` + `tasks/`
+> Cursor chỉ viết dấu hiệu + đổi mới bài này kiện thực hiện Trạng thái
 
-## 当前负责人
+## trước mắt người phụ trách
 
-| 角色 | 职责 | 可写路径 |
+| nhân vật | chức trách | có thể ghi đường nhỏ |
 |------|------|----------|
-| Kimi | 设计审计、任务规格、同步 | `docs/ai-collab/**` |
-| Cursor | 代码实现、本地验证 | `*.html` `assets/**` `server/**` |
+| Kimi | xếp đặt thiết kế thẩm kế, nhiệm vụ quy cách, đồng bộ | `docs/ai-collab/**` |
+| Cursor | dấu hiệu thực hiện, bản địa nghiệm chứng | `*.html` `assets/**` `server/**` |
 
-## 进行中
+## đang tiến hành
 
-| ID | 负责人 | 文件范围 | 状态 | 备注 |
+| ID | người phụ trách | văn bản tài liệu phạm vi | Trạng thái | ghi chú |
 |----|--------|----------|------|------|
-| — | — | — | — | **方案 B 里程碑闭环**；后续为运营/内容扩卷，非 B 序列 |
+| — | — | — | — | ** phương án B sự kiện quan trọng bế hoàn **; đến tiếp sau là đưa vào hoạt động / nội dung khuếch trương cuốn, không phải B danh sách |
 
-## 待办（Cursor）
+## Cần làm (Cursor)
 
-| ID | 文件 | 状态 | 规格 |
+| ID | văn bản tài liệu | Trạng thái | quy cách |
 |----|------|------|------|
-| — | — | — | 无 B 序列待办；G6 Familiarisation 人工并排录屏可选 |
+| — | — | — | Không B danh sách Cần làm; G6 Familiarisation nhân công song song lục bình có thể chọn |
 
-## 已完成
+## Đã hoàn thành
 
-| ID | 负责人 | 完成日 | 摘要 |
+| ID | người phụ trách | hoàn thành ngày | trích yếu |
 |----|--------|--------|------|
-| drill-sec | Cursor | 2026-07-31 | drill 闸门选 Section/Passage；`dataset.sections`→试卷 secbox；续考保留草稿部分 |
-| G6 | Cursor | 2026-07-31 | IDP Inspera Familiarisation 公开 Listening 抽检；记入 PLAN-B §5.3b |
-| B5 | Cursor | 2026-07-31 | C01–C20 满分；阅读中缝；C18 英文化；四主路径 + `cdtCheck` |
-| B4 | Cursor | 2026-07-31 | Notepad；多色高亮；Setting 背景色；Help 文案；写作禁拼写 |
-| B3 | Cursor | 2026-07-31 | `cdt-qux.js`：match/map DnD；multi 点选；保留 select 计分；顺带修 drill 无 secbox 空白卷 |
-| B2 | Cursor | 2026-07-31 | 听力禁 seek；播完 2′ review；10′/5′ 计时闪烁；drill 交卷解锁回放 |
-| B1 | Cursor | 2026-07-31 | 剑桥单项进 CDT；闸门选 drill/exam；suite=1 hop；交卷 review |
-| B0 | Cursor | 2026-07-31 | 方案 B 宪法冻结：`CDT-PLAN-B.md` + 重写 `CDT-CHECKLIST.md` + 金样 Cam20 T1 |
-| D-001 | Cursor | 2026-07-22 | 全站 CONTEXT.md（首轮深度学习） |
-| D-002 | Cursor | 2026-07-22 | DESIGN-BRIEF 审计 + I-001～I-005 任务单 |
-| setup | Cursor | 2026-07-22 | 创建 `docs/ai-collab/` 协作骨架 + KIMI-PROMPTS.md |
-| I-001 | Cursor | 2026-07-22 | results.html 接入 page-premium 壳 |
-| I-002 | Cursor | 2026-07-22 | login/register 表单 focus 与 auth-card 视觉统一 |
-| I-003 | Cursor | 2026-07-22 | 移动端 bottom tabs 毛玻璃与 active 态 |
-| I-004 | Cursor | 2026-07-22 | results 空状态 premium 卡片化 |
-| I-005 | Cursor | 2026-07-22 | page-premium 全局 focus-visible 环 |
+| drill-sec | Cursor | 2026-07-31 | drill miệng cống chọn Section/Passage; `dataset.sections`→ bài thi secbox; tục khảo thi giữ lại bản nháp bộ phận |
+| G6 | Cursor | 2026-07-31 | IDP Inspera Familiarisation công khai Listening kiểm tra bộ phận; ghi vào PLAN-B §5.3b |
+| B5 | Cursor | 2026-07-31 | C01–C20 điểm tối đa; Đọc phần giữa hai trang báo; C18 Tiếng Anh hóa; bốn chủ đường nhỏ + `cdtCheck` |
+| B4 | Cursor | 2026-07-31 | Notepad; nhiều sắc cao sáng; Setting màu nền; Help văn án; Viết cấm Chính tả |
+| B3 | Cursor | 2026-07-31 | `cdt-qux.js`: match/map DnD; multi chút:điểm chọn; giữ lại select tỉ số; thuận tiện dài drill Không secbox chỗ trống cuốn |
+| B2 | Cursor | 2026-07-31 | Nghe cấm seek; truyền hình xong 2′ review; 10′/5′ tính theo thời gian lập loè; drill Nộp bài giải tỏa cất đi |
+| B1 | Cursor | 2026-07-31 | Cambridge thi đơn tiến CDT; miệng cống chọn drill/exam; suite=1 hop; Nộp bài review |
+| B0 | Cursor | 2026-07-31 | phương án B hiến pháp đông lại: `CDT-PLAN-B.md` + viết lại `CDT-CHECKLIST.md` + kim dạng Cam20 T1 |
+| D-001 | Cursor | 2026-07-22 | toàn bộ đứng CONTEXT.md (đầu luân phiên chiều sâu Học tập) |
+| D-002 | Cursor | 2026-07-22 | DESIGN-BRIEF thẩm kế + I-001~I-005 nhiệm vụ đơn |
+| setup | Cursor | 2026-07-22 | sáng tạo `docs/ai-collab/` hợp tác khung xương + KIMI-PROMPTS.md |
+| I-001 | Cursor | 2026-07-22 | results.html tiếp nhập page-premium xác |
+| I-002 | Cursor | 2026-07-22 | login/register danh sách focus và auth-card thị giác thống nhất |
+| I-003 | Cursor | 2026-07-22 | di động đầu bottom tabs thuỷ tinh mờ và active thái |
+| I-004 | Cursor | 2026-07-22 | results chỗ trống Trạng thái premium tạp phiến hóa |
+| I-005 | Cursor | 2026-07-22 | page-premium toàn cục focus-visible hoàn |
 
-## Kimi 下一步（用户操作）
+## Kimi bước tiếp theo (người sử dụng thao tác)
 
-1. 打开 Kimi 桌面版，挂载文件夹：`/Users/frankman/yysd test center`
-2. 粘贴 [`KIMI-PROMPTS.md`](KIMI-PROMPTS.md) 中 **§0 系统角色**
-3. 粘贴 **§4 周期性同步**，基于 Cursor 已完成项派下一批 I-006+
+1. mở ra Kimi mặt bàn bản, đeo lên cặp văn kiện: `/Users/frankman/yysd test center`
+2. dán [`KIMI-PROMPTS.md`](KIMI-PROMPTS.md) Vừa **§0 hệ thống nhân vật **
+3. dán **§4 chu kỳ tính đồng bộ **, căn cứ vào Cursor Đã hoàn thành hạng phát một đám I-006+

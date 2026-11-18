@@ -1,30 +1,62 @@
 {
   "version": "v3",
   "ip": {
-    "name": "思达",
+    "name": "tư đạt",
     "nameEn": "Sida",
-    "tagline": "资料在手，高分自有。",
-    "personality": "温暖克制",
-    "archetype": "文件夹",
-    "brand": "优益思达国际课程中心",
+    "tagline": "tư liệu nơi tay, cao phân đều có.",
+    "personality": "ôn hòa khắc chế",
+    "archetype": "cặp văn kiện",
+    "brand": "Trung tâm Luyện thi Quốc tế YYSD",
     "signature": "</>"
   },
   "palette": {
-    "primaryTop": { "hex": "#6EC8E8", "name": "冰川蓝（顶）", "usage": "主体渐变上部" },
-    "primaryBottom": { "hex": "#4AB5D8", "name": "湖水蓝（底）", "usage": "主体渐变下部" },
-    "accent": { "hex": "#FFB4A2", "name": "西柚柔粉", "usage": "文件夹标签、标志光晕" },
-    "accentGlow": { "hex": "#FFCDBF", "name": "珊瑚微光", "usage": "</> 柔和发光" },
-    "accentAlert": { "hex": "#E57373", "name": "柔红警示", "usage": "慌张表情标志" },
-    "surface": { "hex": "#F7F3EA", "name": "象牙纸", "usage": "内页纸张、背景" },
-    "feature": { "hex": "#4A6275", "name": "深灰蓝", "usage": "瞳孔、嘴线" },
-    "eye": { "hex": "#FFFFFF", "name": "眼白", "usage": "眼部" }
+    "primaryTop": {
+      "hex": "#6EC8E8",
+      "name": "sông băng lam (đỉnh)",
+      "usage": "chủ thể thay đổi dần thượng bộ"
+    },
+    "primaryBottom": {
+      "hex": "#4AB5D8",
+      "name": "hồ nước lam (ngọn nguồn)",
+      "usage": "chủ thể thay đổi dần hạ bộ"
+    },
+    "accent": {
+      "hex": "#FFB4A2",
+      "name": "tây dữu nhu phấn",
+      "usage": "cặp văn kiện nhãn hiệu, tiêu chí vầng sáng"
+    },
+    "accentGlow": {
+      "hex": "#FFCDBF",
+      "name": "san hô ánh sáng nhạt",
+      "usage": "</> nhu hòa sáng lên"
+    },
+    "accentAlert": {
+      "hex": "#E57373",
+      "name": "mềm đỏ cảnh kỳ",
+      "usage": "bối rối biểu lộ tiêu chí"
+    },
+    "surface": {
+      "hex": "#F7F3EA",
+      "name": "ngà voi giấy",
+      "usage": "bên trong trang trang giấy, bối cảnh"
+    },
+    "feature": {
+      "hex": "#4A6275",
+      "name": "sâu hôi lam",
+      "usage": "đồng tử, miệng tuyến"
+    },
+    "eye": {
+      "hex": "#FFFFFF",
+      "name": "tròng trắng mắt",
+      "usage": "mắt"
+    }
   },
   "material": {
-    "body": "亚光半透明玻璃（matte frosted glass），轻盈通透，边缘透光",
-    "edge": "细腻边缘高光与倒角反射，立体精致",
-    "papers": "乳白色哑光特种纸肌理",
-    "emblem": "西柚柔粉 </> 标志嵌入正面左下角，柔和微光晕",
-    "finish": "科技清爽感，微弱垂直渐变，无强镜面反射"
+    "body": "á quang hơi mờ thủy tinh (matte frosted glass), nhẹ nhàng thông thấu, biên giới thấu quang",
+    "edge": "tinh tế tỉ mỉ biên giới cao quang và sừng ngược phản xạ, lập thể tinh xảo",
+    "papers": "màu ngà sữa ách quang đặc chủng giấy vân da",
+    "emblem": "tây dữu nhu phấn </> tiêu chí khảm nhập chính diện góc dưới bên trái, nhu hòa ánh sáng nhạt chóng mặt",
+    "finish": "Công nghệ nhẹ nhàng khoan khoái cảm giác, yếu ớt thẳng đứng thay đổi dần, Không mạnh mẽ mặt kính phản xạ"
   },
   "avatarSeed": "Sida, anthropomorphic file folder mascot, matte frosted glass semi-translucent body, lake blue glacier blue vertical gradient #6EC8E8 top lighter #4AB5D8 bottom deeper, delicate edge highlights bevel reflections light passing through edges, soft grapefruit coral blush pink tab #FFB4A2, ivory papers with matte specialty paper texture inside, warm satisfied smile, soft focused white oval eyes with deep gray-blue pupils #4A6275, deep gray-blue mouth line, embedded </> code symbol bottom-left with soft gentle coral-pink micro-glow, short stubby cylindrical limbs, lightweight refined tech crystal art 3D render",
   "prompts": {
@@ -41,11 +73,11 @@
     "turnaround": "sida-turnaround.png"
   },
   "voice": {
-    "tone": "温暖、简洁、专业，偶尔幽默",
+    "tone": "ôn hòa, ngắn gọn, chuyên nghiệp, ngẫu nhiên hài hước",
     "examples": [
-      "模考开始了，加油，你可以的。",
-      "这道题值得再看一眼解析。",
-      "7.0，不错！继续保持这个节奏。"
+      "Thi thử đã bắt đầu, cố gắng lên, bạn cũng được.",
+      "đạo đề này đáng giá lại nhìn liếc Giải thích đáp án.",
+      "7.0, không sai! Tiếp tục bảo trì này tiết tấu."
     ]
   }
 }

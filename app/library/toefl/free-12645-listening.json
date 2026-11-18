@@ -1,57 +1,57 @@
 {
- "id": "free-12645",
- "title": "Conversation #1",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #1",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12645,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-1"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #1",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/a8198e5ee88242cb91731eefe63a1968.mp3",
-   "transcript": "WOMAN: The copier has been on the blink for a few days. I called you guys last week to come and take a look. What took you so long?\nMAN: I'm terribly sorry, but some of our technicians have suddenly come down with terrible colds, and I have been terribly busy running around. Anyway, did you check and see if any paper is jammed inside?\nWOMAN: Yes, that's the first thing I did, and that's not the problem. And it's not the toner either. I'm afraid the problem may be more serious.\nMAN: All right. Let me take a look and see what the problem is.",
-   "questions": [
+  "id": "free-12645",
+  "title": "Conversation #1",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #1",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12645,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-1"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "When did the woman first make the call?",
-     "options": {
-      "A": "Last week.",
-      "B": "A few days ago.",
-      "C": "Yesterday.",
-      "D": "Today."
-     },
-     "answer": "A",
-     "analysis": "题干分析 问题询问女士首次报修的时间点，属于对过去具体时间的细节理解题，需从对话中提取明确的时间信息。 选项分析 选项A：正确。女士在对话开头明确说：“I called you guys last week to come and take a look”，直接对应“last week”，是原文原话的复现。 选项B：“A few days ago” 是文中提到“copier has been on the blink for a few days”的时间，描述的是故障持续时长，而非打电话的时间，属于混淆时间对象的干扰项。 选项C：“Yesterday” 在对话中未被提及，属于无中生有的错误选项。 选项D：“Today” 也不符合事实，因为女士抱怨“what took you so long”，说明维修人员今天才来，但电话是更早打的，属于将当前事件时间误作通话时间的干扰。"
-    },
-    {
-     "id": 2,
-     "stem": "What is the problem?",
-     "options": {
-      "A": "The weather has suddenly gotten very cold.",
-      "B": "The man has come down with a cold.",
-      "C": "Some important papers are missing.",
-      "D": "The copier is not working properly."
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问对话中核心问题是什么，属于主旨/事实识别题，需抓住整个对话围绕的中心事件。 选项分析 选项D：正确。整段对话围绕“copier has been on the blink”（复印机出故障）展开，女士已排除卡纸和碳粉问题，说明机器确实存在功能性故障，“not working properly”是对“on the blink”的准确同义转述。 选项A：“The weather has suddenly gotten very cold” 属于字面误解——文中“cold”指“感冒”（come down with colds），与天气无关，是典型的词汇歧义干扰项。 选项B：“The man has come down with a cold” 错误。文中说的是“some of our technicians”生病，并非这位维修男子本人，属于主语偷换的细节错误。 选项C：“Some important papers are missing” 完全未在对话中出现，女士只提到检查过是否“paper jammed”（卡纸），而非文件丢失，属于凭空捏造信息的干扰项。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #1",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/a8198e5ee88242cb91731eefe63a1968.mp3",
+      "transcript": "WOMAN: The copier has been on the blink for a few days. I called you guys last week to come and take a look. What took you so long?\nMAN: I'm terribly sorry, but some of our technicians have suddenly come down with terrible colds, and I have been terribly busy running around. Anyway, did you check and see if any paper is jammed inside?\nWOMAN: Yes, that's the first thing I did, and that's not the problem. And it's not the toner either. I'm afraid the problem may be more serious.\nMAN: All right. Let me take a look and see what the problem is.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "When did the woman first make the call?",
+          "options": {
+            "A": "Last week.",
+            "B": "A few days ago.",
+            "C": "Yesterday.",
+            "D": "Today."
+          },
+          "answer": "A",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm phu nhân lần đầu báo sửa thời gian chút:điểm, thuộc về đối diện đi thời gian cụ thể chi tiết lý giải câu, cần từ trong lúc nói chuyện với nhau chắt lọc rõ ràng thời gian tin tức. Phương án phân tích Phương án A: Đúng. phu nhân đang đối thoại mở đầu rõ ràng nói: “I called you guys last week to come and take a look”, trực tiếp đối ứng “last week”, là Bài gốc nguyên thoại xuất hiện lại. Phương án B: “A few days ago” là văn trung nhắc tới “copier has been on the blink for a few days” thời gian, miêu tả là trục trặc tiếp tục lúc dài, mà không phải là gọi điện thoại thời gian, thuộc về lẫn lộn thời gian đối với giống như Phương án nhiễu. Phương án C: “Yesterday” đang đối thoại Vừa không bị đề cập, thuộc về bịa đặt sai lầm Phương án. Phương án D: “Today” cũng không phù hợp sự thật, vì phu nhân phàn nàn “what took you so long”, nói rõ nhân viên sửa chữa hôm nay mới đến, nhưng điện thoại là sớm hơn đánh chính là, thuộc về đem trước mắt sự kiện thời gian lầm làm trò chuyện thời gian quấy nhiễu."
+        },
+        {
+          "id": 2,
+          "stem": "What is the problem?",
+          "options": {
+            "A": "The weather has suddenly gotten very cold.",
+            "B": "The man has come down with a cold.",
+            "C": "Some important papers are missing.",
+            "D": "The copier is not working properly."
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm trong lúc nói chuyện với nhau hạch tâm vấn đề là gì, thuộc về ý nghĩa chính / sự thật phân biệt câu, cần bắt lấy toàn bộ đối thoại vây quanh trung tâm sự kiện. Phương án phân tích Phương án D: Đúng. cả đoạn đối thoại quay chung quanh “copier has been on the blink” (máy copy ra trục trặc) triển khai, phu nhân đã bài trừ tạp giấy cùng than phấn vấn đề, nói rõ máy móc xác thực tồn tại công năng tính trục trặc, “not working properly” là đúng “on the blink” chuẩn xác Đồng nghĩa thuật lại. Phương án A: “The weather has suddenly gotten very cold” thuộc về mặt chữ hiểu lầm —— văn trung “cold” chỉ “ cảm mạo ” (come down with colds), và thời tiết không quan hệ, là điển hình Từ vựng nghĩa khác Phương án nhiễu. Phương án B: “The man has come down with a cold” Sai. văn trung nói rất đúng “some of our technicians” sinh bệnh, cũng không phải là vị này bảo hành sửa chữa nam tử bản thân, thuộc về Chủ ngữ trộm đổi chi tiết Sai. Phương án C: “Some important papers are missing” hoàn toàn không đang đối thoại Vừa xuất hiện, phu nhân chỉ nhắc tới đã kiểm tra có hay không “paper jammed” (tạp giấy), mà không phải là văn bản tài liệu mất đi, thuộc về lăng không bịa đặt tin tức Phương án nhiễu."
+        }
+      ]
+    }
+  ]
 }

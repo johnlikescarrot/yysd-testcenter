@@ -1,45 +1,45 @@
 {
-  "sourceNote": "公开分类词表复刻浏览库；暂不含小课/测试。",
+  "sourceNote": "công khai phân loại từ bề ngoài phục khắc xem kho; tạm không chứa tiểu khóa / Kiểm tra.",
   "categories": [
     {
       "id": "all",
-      "label": "全部"
+      "label": "Tất cả"
     },
     {
       "id": "exam",
-      "label": "英语考试"
+      "label": "Tiếng Anh cuộc thi"
     },
     {
       "id": "abroad",
-      "label": "出国留学"
+      "label": "ra nước ngoài học"
     },
     {
       "id": "k12",
-      "label": "中小学"
+      "label": "Vừa tiểu học"
     },
     {
       "id": "learning",
-      "label": "英语学习"
+      "label": "Tiếng Anh Học tập"
     },
     {
       "id": "subject",
-      "label": "学科分类"
+      "label": "ngành học phân loại"
     },
     {
       "id": "nature",
-      "label": "动植物"
+      "label": "động thực vật"
     },
     {
       "id": "life",
-      "label": "生活日常"
+      "label": "sinh hoạt Đời sống"
     },
     {
       "id": "arts",
-      "label": "艺术文体"
+      "label": "Nghệ thuật văn thể"
     },
     {
       "id": "media",
-      "label": "影音视听"
+      "label": "ảnh âm nghe nhìn"
     }
   ],
   "themes": [
@@ -48,7 +48,7 @@
       "no": 1,
       "title": "CET-4",
       "category": "exam",
-      "desc": "英语考试 · 4599 词（已释义 4599）",
+      "desc": "Tiếng Anh cuộc thi · 4599 từ (đã Giải nghĩa 4599)",
       "count": 4599,
       "defined": 4599,
       "preview": [
@@ -72,7 +72,7 @@
       "no": 2,
       "title": "CET-6",
       "category": "exam",
-      "desc": "英语考试 · 2331 词（已释义 2327）",
+      "desc": "Tiếng Anh cuộc thi · 2331 từ (đã Giải nghĩa 2327)",
       "count": 2331,
       "defined": 2327,
       "preview": [
@@ -94,9 +94,9 @@
     {
       "id": "tem",
       "no": 3,
-      "title": "专四专八",
+      "title": "Chuyên ngữ B2 Chuyên ngữ C1",
       "category": "exam",
-      "desc": "英语考试 · 2915 词（已释义 2912）",
+      "desc": "Tiếng Anh cuộc thi · 2915 từ (đã Giải nghĩa 2912)",
       "count": 2915,
       "defined": 2912,
       "preview": [
@@ -118,9 +118,9 @@
     {
       "id": "kaoyan",
       "no": 4,
-      "title": "考研英语",
+      "title": "Sau đại học Tiếng Anh",
       "category": "exam",
-      "desc": "英语考试 · 6341 词（已释义 6335）",
+      "desc": "Tiếng Anh cuộc thi · 6341 từ (đã Giải nghĩa 6335)",
       "count": 6341,
       "defined": 6335,
       "preview": [
@@ -142,9 +142,9 @@
     {
       "id": "gaokao",
       "no": 5,
-      "title": "高考英语",
+      "title": "kỳ thi Đại Học Tiếng Anh",
       "category": "exam",
-      "desc": "英语考试 · 4142 词（已释义 4095）",
+      "desc": "Tiếng Anh cuộc thi · 4142 từ (đã Giải nghĩa 4095)",
       "count": 4142,
       "defined": 4095,
       "preview": [
@@ -168,7 +168,7 @@
       "no": 6,
       "title": "BEC",
       "category": "abroad",
-      "desc": "出国留学 · 1279 词（已释义 1264）",
+      "desc": "ra nước ngoài học · 1279 từ (đã Giải nghĩa 1264)",
       "count": 1279,
       "defined": 1264,
       "preview": [
@@ -192,7 +192,7 @@
       "no": 7,
       "title": "GMAT",
       "category": "abroad",
-      "desc": "出国留学 · 3403 词（已释义 3400）",
+      "desc": "ra nước ngoài học · 3403 từ (đã Giải nghĩa 3400)",
       "count": 3403,
       "defined": 3400,
       "preview": [
@@ -216,7 +216,7 @@
       "no": 8,
       "title": "GRE",
       "category": "abroad",
-      "desc": "出国留学 · 7496 词（已释义 7486）",
+      "desc": "ra nước ngoài học · 7496 từ (đã Giải nghĩa 7486)",
       "count": 7496,
       "defined": 7486,
       "preview": [
@@ -240,7 +240,7 @@
       "no": 9,
       "title": "SAT",
       "category": "abroad",
-      "desc": "出国留学 · 210 词（已释义 196）",
+      "desc": "ra nước ngoài học · 210 từ (đã Giải nghĩa 196)",
       "count": 210,
       "defined": 196,
       "preview": [
@@ -262,9 +262,9 @@
     {
       "id": "toeic",
       "no": 10,
-      "title": "托业",
+      "title": "TOEIC",
       "category": "abroad",
-      "desc": "出国留学 · 828 词（已释义 825）",
+      "desc": "ra nước ngoài học · 828 từ (đã Giải nghĩa 825)",
       "count": 828,
       "defined": 825,
       "preview": [
@@ -286,9 +286,9 @@
     {
       "id": "toefl",
       "no": 11,
-      "title": "托福",
+      "title": "TOEFL",
       "category": "abroad",
-      "desc": "出国留学 · 4883 词（已释义 4876）",
+      "desc": "ra nước ngoài học · 4883 từ (đã Giải nghĩa 4876)",
       "count": 4883,
       "defined": 4876,
       "preview": [
@@ -310,9 +310,9 @@
     {
       "id": "ielts",
       "no": 12,
-      "title": "雅思",
+      "title": "IELTS",
       "category": "abroad",
-      "desc": "出国留学 · 4541 词（已释义 4535）",
+      "desc": "ra nước ngoài học · 4541 từ (đã Giải nghĩa 4535)",
       "count": 4541,
       "defined": 4535,
       "preview": [
@@ -334,9 +334,9 @@
     {
       "id": "primary",
       "no": 13,
-      "title": "小学词汇",
+      "title": "tiểu học Từ vựng",
       "category": "k12",
-      "desc": "中小学 · 1202 词（已释义 1200）",
+      "desc": "Vừa tiểu học · 1202 từ (đã Giải nghĩa 1200)",
       "count": 1202,
       "defined": 1200,
       "preview": [
@@ -358,9 +358,9 @@
     {
       "id": "junior",
       "no": 14,
-      "title": "初中词汇",
+      "title": "sơ trung Từ vựng",
       "category": "k12",
-      "desc": "中小学 · 3626 词（已释义 3619）",
+      "desc": "Vừa tiểu học · 3626 từ (đã Giải nghĩa 3619)",
       "count": 3626,
       "defined": 3619,
       "preview": [
@@ -382,9 +382,9 @@
     {
       "id": "senior",
       "no": 15,
-      "title": "高中词汇",
+      "title": "Từ vựng Nền tảng THPT",
       "category": "k12",
-      "desc": "中小学 · 3896 词（已释义 3888）",
+      "desc": "Vừa tiểu học · 3896 từ (đã Giải nghĩa 3888)",
       "count": 3896,
       "defined": 3888,
       "preview": [
@@ -406,9 +406,9 @@
     {
       "id": "nce",
       "no": 16,
-      "title": "新概念",
+      "title": "mới khái niệm",
       "category": "learning",
-      "desc": "英语学习 · 4276 词（已释义 4274）",
+      "desc": "Tiếng Anh Học tập · 4276 từ (đã Giải nghĩa 4274)",
       "count": 4276,
       "defined": 4274,
       "preview": [
@@ -430,9 +430,9 @@
     {
       "id": "oxford3000",
       "no": 17,
-      "title": "牛津3000词",
+      "title": "ngưu tân 3000 từ",
       "category": "learning",
-      "desc": "英语学习 · 3433 词（已释义 3431）",
+      "desc": "Tiếng Anh Học tập · 3433 từ (đã Giải nghĩa 3431)",
       "count": 3433,
       "defined": 3431,
       "preview": [
@@ -454,9 +454,9 @@
     {
       "id": "collins",
       "no": 18,
-      "title": "柯林斯星级",
+      "title": "Collins Tinh cấp",
       "category": "learning",
-      "desc": "英语学习 · 8903 词（已释义 8894）",
+      "desc": "Tiếng Anh Học tập · 8903 từ (đã Giải nghĩa 8894)",
       "count": 8903,
       "defined": 8894,
       "preview": [
@@ -478,9 +478,9 @@
     {
       "id": "phrases",
       "no": 19,
-      "title": "常用短语",
+      "title": "thường dùng Cụm từ",
       "category": "learning",
-      "desc": "英语学习 · 431 词（已释义 430）",
+      "desc": "Tiếng Anh Học tập · 431 từ (đã Giải nghĩa 430)",
       "count": 431,
       "defined": 430,
       "preview": [
@@ -502,9 +502,9 @@
     {
       "id": "chem",
       "no": 20,
-      "title": "化学",
+      "title": "Hóa học",
       "category": "subject",
-      "desc": "学科分类 · 490 词（已释义 488）",
+      "desc": "ngành học phân loại · 490 từ (đã Giải nghĩa 488)",
       "count": 490,
       "defined": 488,
       "preview": [
@@ -526,9 +526,9 @@
     {
       "id": "geo",
       "no": 21,
-      "title": "地理学",
+      "title": "địa lý học",
       "category": "subject",
-      "desc": "学科分类 · 177 词（已释义 177）",
+      "desc": "ngành học phân loại · 177 từ (đã Giải nghĩa 177)",
       "count": 177,
       "defined": 177,
       "preview": [
@@ -550,9 +550,9 @@
     {
       "id": "math",
       "no": 22,
-      "title": "数学",
+      "title": "Toán học",
       "category": "subject",
-      "desc": "学科分类 · 249 词（已释义 249）",
+      "desc": "ngành học phân loại · 249 từ (đã Giải nghĩa 249)",
       "count": 249,
       "defined": 249,
       "preview": [
@@ -574,9 +574,9 @@
     {
       "id": "phys",
       "no": 23,
-      "title": "物理",
+      "title": "Vật lý",
       "category": "subject",
-      "desc": "学科分类 · 80 词（已释义 80）",
+      "desc": "ngành học phân loại · 80 từ (đã Giải nghĩa 80)",
       "count": 80,
       "defined": 80,
       "preview": [
@@ -598,9 +598,9 @@
     {
       "id": "animals",
       "no": 24,
-      "title": "动物世界",
+      "title": "thế giới động vật",
       "category": "nature",
-      "desc": "动植物 · 319 词（已释义 319）",
+      "desc": "động thực vật · 319 từ (đã Giải nghĩa 319)",
       "count": 319,
       "defined": 319,
       "preview": [
@@ -622,9 +622,9 @@
     {
       "id": "plants",
       "no": 25,
-      "title": "植物王国",
+      "title": "Thực vật vương quốc",
       "category": "nature",
-      "desc": "动植物 · 137 词（已释义 137）",
+      "desc": "động thực vật · 137 từ (đã Giải nghĩa 137)",
       "count": 137,
       "defined": 137,
       "preview": [
@@ -646,9 +646,9 @@
     {
       "id": "food",
       "no": 26,
-      "title": "吃喝玩乐",
+      "title": "ăn uống chơi đùa",
       "category": "life",
-      "desc": "生活日常 · 1365 词（已释义 1256）",
+      "desc": "sinh hoạt Đời sống · 1365 từ (đã Giải nghĩa 1256)",
       "count": 1365,
       "defined": 1256,
       "preview": [
@@ -670,9 +670,9 @@
     {
       "id": "urban",
       "no": 27,
-      "title": "城市规划",
+      "title": "Đô thị quy hoạch",
       "category": "life",
-      "desc": "生活日常 · 117 词（已释义 117）",
+      "desc": "sinh hoạt Đời sống · 117 từ (đã Giải nghĩa 117)",
       "count": 117,
       "defined": 117,
       "preview": [
@@ -694,9 +694,9 @@
     {
       "id": "travel",
       "no": 28,
-      "title": "安全出行",
+      "title": "an toàn Di chuyển",
       "category": "life",
-      "desc": "生活日常 · 415 词（已释义 381）",
+      "desc": "sinh hoạt Đời sống · 415 từ (đã Giải nghĩa 381)",
       "count": 415,
       "defined": 381,
       "preview": [
@@ -718,9 +718,9 @@
     {
       "id": "edu",
       "no": 29,
-      "title": "科教兴国",
+      "title": "Khoa học & Giáo dục hứng nước",
       "category": "life",
-      "desc": "生活日常 · 215 词（已释义 211）",
+      "desc": "sinh hoạt Đời sống · 215 từ (đã Giải nghĩa 211)",
       "count": 215,
       "defined": 211,
       "preview": [
@@ -742,9 +742,9 @@
     {
       "id": "work",
       "no": 30,
-      "title": "职业职场",
+      "title": "Nghề nghiệp Công sở",
       "category": "life",
-      "desc": "生活日常 · 1844 词（已释义 1756）",
+      "desc": "sinh hoạt Đời sống · 1844 từ (đã Giải nghĩa 1756)",
       "count": 1844,
       "defined": 1756,
       "preview": [
@@ -766,9 +766,9 @@
     {
       "id": "festivals",
       "no": 31,
-      "title": "节日",
+      "title": "Lễ hội",
       "category": "life",
-      "desc": "生活日常 · 41 词（已释义 37）",
+      "desc": "sinh hoạt Đời sống · 41 từ (đã Giải nghĩa 37)",
       "count": 41,
       "defined": 37,
       "preview": [
@@ -790,9 +790,9 @@
     {
       "id": "literature",
       "no": 32,
-      "title": "文学艺术",
+      "title": "Văn học Nghệ thuật",
       "category": "arts",
-      "desc": "艺术文体 · 541 词（已释义 538）",
+      "desc": "Nghệ thuật văn thể · 541 từ (đã Giải nghĩa 538)",
       "count": 541,
       "defined": 538,
       "preview": [
@@ -814,9 +814,9 @@
     {
       "id": "sports",
       "no": 33,
-      "title": "体育",
+      "title": "Thể thao",
       "category": "arts",
-      "desc": "艺术文体 · 532 词（已释义 520）",
+      "desc": "Nghệ thuật văn thể · 532 từ (đã Giải nghĩa 520)",
       "count": 532,
       "defined": 520,
       "preview": [
@@ -838,9 +838,9 @@
     {
       "id": "games",
       "no": 34,
-      "title": "游戏娱乐",
+      "title": "Trò chơi giải trí",
       "category": "arts",
-      "desc": "艺术文体 · 925 词（已释义 903）",
+      "desc": "Nghệ thuật văn thể · 925 từ (đã Giải nghĩa 903)",
       "count": 925,
       "defined": 903,
       "preview": [
@@ -862,9 +862,9 @@
     {
       "id": "film",
       "no": 35,
-      "title": "影视剧",
+      "title": "Điện ảnh & Truyền hình kịch",
       "category": "media",
-      "desc": "影音视听 · 525 词（已释义 509）",
+      "desc": "ảnh âm nghe nhìn · 525 từ (đã Giải nghĩa 509)",
       "count": 525,
       "defined": 509,
       "preview": [
@@ -886,9 +886,9 @@
     {
       "id": "music",
       "no": 36,
-      "title": "音乐广播",
+      "title": "Âm nhạc Phát thanh",
       "category": "media",
-      "desc": "影音视听 · 263 词（已释义 239）",
+      "desc": "ảnh âm nghe nhìn · 263 từ (đã Giải nghĩa 239)",
       "count": 263,
       "defined": 239,
       "preview": [

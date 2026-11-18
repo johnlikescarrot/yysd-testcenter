@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
   <script src="assets/js/page-transit.js?v=20260724p1"></script>
-  <title>个人中心 · 优益思达国际课程中心</title>
+  <title>Hồ sơ cá nhân · Trung tâm Luyện thi Quốc tế YYSD</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,29 +17,29 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="优益思达国际课程中心首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ Trung tâm Quốc tế YYSD">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>YYSD International Course Center</span>
         </span>
       </a>
-      <nav class="minimal-nav" id="nav" aria-label="主导航">
-        <a href="dashboard.html" data-nav="dashboard">待办事项</a>
-        <a href="zone.html?zone=study" data-zone="study">单词区</a>
-        <a href="zone.html?zone=practice" data-zone="practice">练习区</a>
-        <a href="zone.html?zone=mock" data-zone="mock">真题区</a>
-        <a href="results.html" data-nav="results">我的成绩</a>
-        <a href="login.html" id="nav-auth">登录</a>
+      <nav class="minimal-nav" id="nav" aria-label="Điều hướng chính">
+        <a href="dashboard.html" data-nav="dashboard"> Việc cần làm</a>
+        <a href="zone.html?zone=study" data-zone="study"> Khu từ vựng</a>
+        <a href="zone.html?zone=practice" data-zone="practice"> Khu luyện tập</a>
+        <a href="zone.html?zone=mock" data-zone="mock"> Khu đề thi</a>
+        <a href="results.html" data-nav="results"> Kết quả của tôi</a>
+        <a href="login.html" id="nav-auth"> Đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <section class="minimal-shell minimal-page-head premium-page-head">
-    <div class="minimal-crumb"><a href="index.html">首页</a> <span class="crumb-sep" aria-hidden="true">★</span> 个人中心</div>
+    <div class="minimal-crumb"><a href="index.html"> Trang chủ</a> <span class="crumb-sep" aria-hidden="true">★</span> Hồ sơ cá nhân </div>
     <p class="dash-premium-eyebrow">Profile</p>
-    <h1>个人中心</h1>
-    <p class="minimal-page-desc" id="profile-desc">加载中…</p>
+    <h1>Hồ sơ cá nhân</h1>
+    <p class="minimal-page-desc" id="profile-desc">Đang tải …</p>
   </section>
 
   <main class="minimal-shell minimal-main">
@@ -47,59 +47,58 @@
       <div class="profile-avatar-block">
         <div class="profile-avatar" id="avatar-preview" aria-hidden="true">—</div>
         <div class="profile-avatar__meta">
-          <label class="btn btn--ghost btn--sm pressable profile-avatar__btn">
-            更换头像
+          <label class="btn btn--ghost btn--sm pressable profile-avatar__btn">thay đổi ảnh chân dung
             <input type="file" id="avatar-input" accept="image/jpeg,image/png,image/webp" hidden>
           </label>
-          <p class="profile-hint">支持 JPG / PNG / WebP，自动裁成方形并压缩。</p>
+          <p class="profile-hint">hỗ trợ JPG / PNG / WebP, tự động tài toa thuốc hình cũng áp súc. </p>
           <p class="auth-msg" id="avatar-msg" role="status"></p>
         </div>
       </div>
       <dl class="profile-dl">
-        <dt>用户名</dt>
+        <dt> Tên người dùng </dt>
         <dd id="p-name-wrap">
           <form class="profile-name-form" id="name-form">
-            <input type="text" id="display-name" maxlength="20" placeholder="如：李明 / 雅思2班张三" autocomplete="nickname">
-            <button type="submit" class="btn btn--primary btn--sm pressable">保存</button>
+            <input type="text" id="display-name" maxlength="20" placeholder="ví dụ: Lý Minh / IELTS 2 lớp Trương Tam" autocomplete="nickname">
+            <button type="submit" class="btn btn--primary btn--sm pressable">Lưu</button>
           </form>
           <p class="auth-msg" id="name-msg" role="status"></p>
-          <p class="profile-hint">设置用户名后，老师可在教师端按姓名查找您的成绩。</p>
+          <p class="profile-hint">thiết trí Tên người dùng sau, Giáo viên có thể theo đạo sư đầu theo như tính danh tra tìm của bạn Điểm số. </p>
         </dd>
-        <dt>手机号</dt><dd id="p-phone">—</dd>
-        <dt>注册时间</dt><dd id="p-created">—</dd>
-        <dt>最近登录</dt><dd id="p-login">—</dd>
+        <dt> Số điện thoại </dt><dd id="p-phone">—</dd>
+        <dt> Đăng ký thời gian </dt><dd id="p-created">—</dd>
+        <dt> gần nhất Đăng nhập </dt><dd id="p-login">—</dd>
       </dl>
       <section class="profile-section" id="password-section">
-        <h2 class="profile-section__title">修改密码</h2>
+        <h2 class="profile-section__title">đổi mật mã</h2>
         <form class="auth-form profile-password-form" id="password-form">
           <label class="auth-field">
-            <span>当前密码</span>
+            <span> trước mắt Mật khẩu </span>
             <input type="password" id="old-password" autocomplete="current-password" minlength="6" maxlength="64" required>
           </label>
           <label class="auth-field">
-            <span>新密码</span>
+            <span> Mật khẩu mới </span>
             <input type="password" id="new-password" autocomplete="new-password" minlength="6" maxlength="64" required>
           </label>
           <label class="auth-field">
-            <span>确认新密码</span>
+            <span> Xác nhận Mật khẩu mới </span>
             <input type="password" id="confirm-password" autocomplete="new-password" minlength="6" maxlength="64" required>
           </label>
           <p class="auth-msg" id="pw-msg" role="status"></p>
-          <button type="submit" class="btn btn--ghost btn--sm pressable">保存新密码</button>
+          <button type="submit" class="btn btn--ghost btn--sm pressable">Lưu Mật khẩu mới</button>
         </form>
-        <p class="profile-hint">忘记密码？<a href="forgot-password.html">短信重置</a></p>
+        <p class="profile-hint">Quên mật khẩu? <a href="forgot-password.html"> Đặt lại qua SMS</a></p>
       </section>
-      <p class="auth-card__desc" id="profile-note">成绩已与云端同步，可在任意设备登录后查看「我的成绩」。</p>
+      <p class="auth-card__desc" id="profile-note">Điểm số đã và đám mây đồng bộ, có thể tại nhiệm ý thiết bị Đăng nhập sau Xem « Kết quả của tôi ». </p>
       <div class="profile-actions">
-        <a class="btn btn--primary" id="teacher-link" href="teacher.html" hidden>进入教师端</a>
-        <button type="button" class="btn btn--ghost" id="logout-btn">退出登录</button>
+        <a class="btn btn--primary" id="teacher-link" href="teacher.html" hidden> Vào cổng giáo viên</a>
+        <button type="button" class="btn btn--ghost" id="logout-btn">Đăng xuất</button>
       </div>
     </div>
   </main>
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm Luyện thi Quốc tế YYSD
         <span class="site-icp" data-icp></span>
       </p>
     </div>
@@ -125,19 +124,19 @@
     function showNameMsg(text, ok) {
       var el = document.getElementById("name-msg");
       el.textContent = text || "";
-      el.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
+      el.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
     }
 
     function showPwMsg(text, ok) {
       var el = document.getElementById("pw-msg");
       el.textContent = text || "";
-      el.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
+      el.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
     }
 
     function showAvatarMsg(text, ok) {
       var el = document.getElementById("avatar-msg");
       el.textContent = text || "";
-      el.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
+      el.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
     }
 
     function renderAvatar(url, phone) {
@@ -168,14 +167,14 @@
         if (u.role === "teacher") {
           document.getElementById("p-name-wrap").hidden = true;
           document.getElementById("profile-desc").textContent =
-            "教师账号已登录，可上传头像、浏览学生端内容，也可进入教师端查看学情。";
+            " Giáo viên tài khoản đã Đăng nhập, có thể thượng truyền(*upload) ảnh chân dung, xem Học viên đầu nội dung, cũng có thể Vào cổng giáo viên Xem học chuyện. ";
           document.getElementById("profile-note").textContent =
-            "教师做练习/模考时成绩不会写入学生云端记录。";
+            " Giáo viên làm Luyện tập / Thi thử lúc Điểm số sẽ không ghi Nhập học sinh đám mây ghi chép. ";
           document.getElementById("teacher-link").hidden = false;
         } else {
           document.getElementById("display-name").value = u.displayName || "";
           document.getElementById("profile-desc").textContent =
-            "欢迎回来。请设置用户名与头像，方便老师查找您的学习记录。";
+            " hoan nghênh trở về. mời thiết trí Tên người dùng và ảnh chân dung, thuận tiện Giáo viên tra tìm của bạn Học tập ghi chép. ";
         }
       })
       .catch(function () {
@@ -184,14 +183,14 @@
       });
 
     document.getElementById("avatar-input").addEventListener("change", function () {
-      var file = this.files && this.files[0];
+      var file = this.files & this.files[0];
       this.value = "";
       if (!file) return;
-      showAvatarMsg("上传中…");
+      showAvatarMsg(" thượng truyền(*upload) Vừa …");
       A.uploadAvatar(file)
         .then(function (d) {
           renderAvatar(d.avatarUrl, A.getUser().phone);
-          showAvatarMsg("头像已更新", true);
+          showAvatarMsg(" ảnh chân dung đã đổi mới mới ", true);
         })
         .catch(function (e) { showAvatarMsg(e.message); });
     });
@@ -200,7 +199,7 @@
       ev.preventDefault();
       showNameMsg("");
       var name = document.getElementById("display-name").value.trim();
-      A.api("/api/auth/profile", { method: "PATCH", body: { displayName: name } })
+      A.api("/api/auth/profile", { method: "PATCH", body:  name  })
         .then(function (d) {
           var u = d.user || {};
           document.getElementById("display-name").value = u.displayName || name;
@@ -210,7 +209,7 @@
             displayName: u.displayName || name,
             avatarUrl: u.avatarUrl || A.getUser().avatarUrl || ""
           });
-          showNameMsg("用户名已保存", true);
+          showNameMsg(" Tên người dùng đã Lưu ", true);
         })
         .catch(function (e) { showNameMsg(e.message); });
     });
@@ -221,8 +220,8 @@
       var oldPw = document.getElementById("old-password").value;
       var newPw = document.getElementById("new-password").value;
       var confirmPw = document.getElementById("confirm-password").value;
-      if (newPw !== confirmPw) {
-        showPwMsg("两次新密码不一致");
+      if (newPw!== confirmPw) {
+        showPwMsg(" hai lần Mật khẩu mới không nhất trí ");
         return;
       }
       A.api("/api/auth/change-password", {
@@ -231,7 +230,7 @@
       })
         .then(function () {
           document.getElementById("password-form").reset();
-          showPwMsg("密码已修改", true);
+          showPwMsg(" Mật khẩu đã sửa chữa ", true);
         })
         .catch(function (e) { showPwMsg(e.message); });
     });

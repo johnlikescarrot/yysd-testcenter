@@ -1,81 +1,81 @@
 {
- "id": "free-12436",
- "title": "Lecture #4",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #4",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12436,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-4"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #4",
-   "instruction": "Listen to a talk in a history class.",
-   "audio": "library/toefl/free/audio/76002024d68c49aaa7e47c3344da7a8a.mp3",
-   "transcript": "If you think about it, thanks to e-mail and computers we hardly write letters on paper anymore. Most people don’t even pay bills through the mail anymore, or mail informs to schools or to the government. It seems almost everything can be done online now. Keep in mind though that e-mail is a very recent development, but postal services systems for delivering physical paper letters and documents and other items, well, they have been around for a long time. For example, we know that in ancient times, documents were transported by riders on horseback. They usually used a relay system, which means that one mail carrier would travel a certain distance with the mail and then pass it on to someone else, whose job was to take it the next part of the way. In ancient China, for example, the government set up a large network of stations, where fresh horses were kept. So mail carriers could deliver official documents to far away parts of the kingdom more quickly. Now during the Roman Empire, almost two thousand years ago, Roman rulers established their own system of roads and stations for mail delivery across the Empire’s vast lands. Interestingly, even after the Roman Empire ended, its postal system remained intact; in other words, even though there was no official Roman Empire to govern the territories, the people living in the area found the postal system created by the Empire so useful that they continued to use it. Then about five hundred years ago, during the Renaissance in Europe, different countries began to travel farther and farther, when they started trading goods. This led to a need for commercial documents to be delivered quickly and safely. That’s when private business got involved and started their own postal systems. So now it wasn’t only government that were delivering mail, and that’s pretty much what it is like in the world today. Most governments operate their own postal services, but there are also many private companies that deliver letters and documents. Of course, with today’s technology, there may soon be no need for any of them.",
-   "questions": [
+  "id": "free-12436",
+  "title": "Lecture #4",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #4",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12436,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-4"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the talk?",
-     "options": {
-      "A": "The influence of the Roman Empire on businesses",
-      "B": "Improvements in electronic mail services",
-      "C": "Ways postal services have changed over time",
-      "D": "Reasons that most people do not send paper documents"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：这次谈话的主要话题是什么？ 定位原文：...postal services systems for delivering physical paper letters and documents and other items, well, they have been around for a long time. For example, we know that in ancient times... during the Roman Empire... during the Renaissance... that's pretty much what it is like in the world today. 选项分析： A. 罗马帝国对商业的影响。谈话中提到了罗马帝国的邮政系统，但重点在于其作为邮政历史的一部分，而非讨论其对商业的影响，因此A选项错误。 B. 电子邮件服务的改进。谈话开头虽然提到了电子邮件，但只是为了引出话题，强调邮政服务有更长的历史，并非讨论其改进，因此B选项错误。 C. 邮政服务随时间变化的方式。谈话按照时间顺序，从古代的骑马信使、中国驿站、罗马帝国邮政，到文艺复兴时期私营邮政的出现，再到今天的状况，系统地讲述了邮政服务的发展和变迁，因此C选项正确。 D. 大多数人不寄送纸质文件的原因。谈话开头提到了这一点，但同样只是引子，并非全文主旨，因此D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What does the teacher suggest about the early mail carriers who rode on horses?",
-     "options": {
-      "A": "They were highly respected by people at the time",
-      "B": "They often took a piece of mail only part of the way",
-      "C": "They usually traveled with soldiers for protections",
-      "D": "They had to pass a physical test to get a job"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：关于早期骑马的邮件信使，老师暗示了什么？ 定位原文：They usually used a relay system, which means that one mail carrier would travel a certain distance with the mail and then pass it on to someone else, whose job was to take it the next part of the way. 选项分析： A. 他们在当时受到高度尊重。原文并未提及信使的社会地位，因此A选项错误。 B. 他们通常只将邮件运送一段路程。原文描述的接力系统（relay system）正是说一个信使走一段距离，然后把邮件传给下一个人，因此B选项正确。 C. 他们通常与士兵一起旅行以获得保护。原文完全没有提及士兵或保护措施，因此C选项错误。 D. 他们必须通过体能测试才能获得工作。原文并未提及任何选拔或测试过程，因此D选项错误。"
-    },
-    {
-     "id": 3,
-     "stem": "What happened to the Roman mail system when the Roman Empire ended?",
-     "options": {
-      "A": "It was taken over by a private business",
-      "B": "The Romans destroyed most of it",
-      "C": "It continued to be used for a period of time",
-      "D": "Countries fought to manage it"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：当罗马帝国结束时，罗马的邮政系统发生了什么？ 定位原文：Interestingly, even after the Roman Empire ended, its postal system remained intact; in other words, even though there was no official Roman Empire to govern the territories, the people living in the area found the postal system created by the Empire so useful that they continued to use it. 选项分析： A. 它被一家私营企业接管了。原文提到系统保持完整并被继续使用，但并未说明被私人接管，私营邮政是后来文艺复兴时期才出现的，因此A选项错误。 B. 罗马人摧毁了它的大部分。原文明确说系统保持完好（remained intact），因此B选项错误。 C. 它被继续使用了一段时间。这与原文中人们发现它很有用并继续使用的描述一致，因此C选项正确。 D. 各国争夺它的管理权。原文并未提及争夺或冲突，因此D选项错误。"
-    },
-    {
-     "id": 4,
-     "stem": "What led to the establishment of private postal system during the Renaissance?",
-     "options": {
-      "A": "An increase in international business",
-      "B": "Growing numbers of people who could read and write",
-      "C": "Advances in printing technology",
-      "D": "Changes in land ownership laws"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：什么导致了文艺复兴时期私营邮政系统的建立？ 定位原文：Then about five hundred years ago, during the Renaissance in Europe, different countries began to travel farther and farther, when they started trading goods. This led to a need for commercial documents to be delivered quickly and safely. That's when private business got involved and started their own postal systems. 选项分析： A. 国际商业的增加。原文明确指出国家间开始贸易货物，导致了对商业文件快速安全递送的需求，从而催生了私营邮政，因此A选项正确。 B. 越来越多的能读会写的人。原文并未提及读写能力的普及，因此B选项错误。 C. 印刷技术的进步。原文并未提及印刷技术，因此C选项错误。 D. 土地所有权法律的变化。原文完全没有涉及土地法，因此D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #4",
+      "instruction": "Listen to a talk in a history class.",
+      "audio": "library/toefl/free/audio/76002024d68c49aaa7e47c3344da7a8a.mp3",
+      "transcript": "If you think about it, thanks to e-mail and computers we hardly write letters on paper anymore. Most people don’t even pay bills through the mail anymore, or mail informs to schools or to the government. It seems almost everything can be done online now. Keep in mind though that e-mail is a very recent development, but postal services systems for delivering physical paper letters and documents and other items, well, they have been around for a long time. For example, we know that in ancient times, documents were transported by riders on horseback. They usually used a relay system, which means that one mail carrier would travel a certain distance with the mail and then pass it on to someone else, whose job was to take it the next part of the way. In ancient China, for example, the government set up a large network of stations, where fresh horses were kept. So mail carriers could deliver official documents to far away parts of the kingdom more quickly. Now during the Roman Empire, almost two thousand years ago, Roman rulers established their own system of roads and stations for mail delivery across the Empire’s vast lands. Interestingly, even after the Roman Empire ended, its postal system remained intact; in other words, even though there was no official Roman Empire to govern the territories, the people living in the area found the postal system created by the Empire so useful that they continued to use it. Then about five hundred years ago, during the Renaissance in Europe, different countries began to travel farther and farther, when they started trading goods. This led to a need for commercial documents to be delivered quickly and safely. That’s when private business got involved and started their own postal systems. So now it wasn’t only government that were delivering mail, and that’s pretty much what it is like in the world today. Most governments operate their own postal services, but there are also many private companies that deliver letters and documents. Of course, with today’s technology, there may soon be no need for any of them.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the talk?",
+          "options": {
+            "A": "The influence of the Roman Empire on businesses",
+            "B": "Improvements in electronic mail services",
+            "C": "Ways postal services have changed over time",
+            "D": "Reasons that most people do not send paper documents"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: lần nói chuyện này chủ yếu chủ đề là cái gì? Dẫn chứng Bài gốc:...postal services systems for delivering physical paper letters and documents and other items, well, they have been around for a long time. For example, we know that in ancient times... during the Roman Empire... during the Renaissance... that's pretty much what it is like in the world today. Phương án phân tích: A. đế quốc La Mã đối với Kinh doanh ảnh hưởng. nói chuyện Vừa nhắc tới đế quốc La Mã bưu chính hệ thống, nhưng trọng điểm ở chỗ coi như bưu chính lịch sử một bộ phận, mà không phải là thảo luận đối với Kinh doanh ảnh hưởng, bởi vậy A Phương án Sai. B. email phục vụ cải tiến. nói chuyện mở đầu mặc dù nhắc tới email, nhưng chỉ là vì dụ ra chủ đề, cường điệu bưu chính phục vụ có dài hơn Lịch sử, cũng không phải là thảo luận kia cải tiến, bởi vậy B Phương án Sai. C. bưu chính phục vụ tùy thời lúc giữa biến hóa phương thức. nói chuyện theo thời gian trình tự, từ cổ đại cưỡi ngựa người mang tin tức, Châu Á trạm dịch, đế quốc La Mã bưu chính, đến văn hoá phục hưng thời kì tư doanh bưu chính xuất hiện, lại đến hôm nay tình huống, hệ thống giảng thuật bưu chính phục vụ phát triển và biến thiên, bởi vậy C Phương án Đúng. D. đại đa số người không gửi tiễn đưa văn kiện bằng giấy nguyên nhân. nói chuyện mở đầu nhắc tới điểm này, nhưng đồng dạng chẳng qua là lời dẫn, cũng không phải là toàn văn ý nghĩa chính, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What does the teacher suggest about the early mail carriers who rode on horses?",
+          "options": {
+            "A": "They were highly respected by people at the time",
+            "B": "They often took a piece of mail only part of the way",
+            "C": "They usually traveled with soldiers for protections",
+            "D": "They had to pass a physical test to get a job"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: về lúc đầu người cưỡi ngựa Email người mang tin tức, Giáo viên ám hiệu gì? Dẫn chứng Bài gốc: They usually used a relay system, which means that one mail carrier would travel a certain distance with the mail and then pass it on to someone else, whose job was to take it the next part of the way. Phương án phân tích: A. họ tại lúc ấy đã bị độ cao tôn trọng. Bài gốc cũng không đề cập người mang tin tức địa vị xã hội, bởi vậy A Phương án Sai. B. họ bình thường chỉ đem Email vận chuyển một đoạn đường. Bài gốc miêu tả tiếp sức hệ thống (relay system) đúng là nói một cái người mang tin tức đi một khoảng cách, sau đó đem Email truyền cho người kế tiếp, bởi vậy B Phương án Đúng. C. họ bình thường và binh sĩ cùng một chỗ Du lịch dùng đạt được bảo hộ. Bài gốc hoàn toàn không có đề cập binh sĩ hoặc bảo hộ biện pháp, bởi vậy C Phương án Sai. D. họ phải thông qua khảo sát thể năng mới có thể đạt được công tác. Bài gốc cũng không đề cập bất luận cái gì tuyển chọn hoặc khảo nghiệm qua trình, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 3,
+          "stem": "What happened to the Roman mail system when the Roman Empire ended?",
+          "options": {
+            "A": "It was taken over by a private business",
+            "B": "The Romans destroyed most of it",
+            "C": "It continued to be used for a period of time",
+            "D": "Countries fought to manage it"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: {làm:lúc} đế quốc La Mã chấm dứt lúc, La Mã bưu chính hệ thống xảy ra chuyện gì? Dẫn chứng Bài gốc: Interestingly, even after the Roman Empire ended, its postal system remained intact; in other words, even though there was no official Roman Empire to govern the territories, the people living in the area found the postal system created by the Empire so useful that they continued to use it. Phương án phân tích: A. nó bị một nhà xí nghiệp tư doanh tiếp quản. Bài gốc nhắc tới hệ thống bảo trì Đầy đủ cũng bị Tiếp tục sử dụng, nhưng cũng không nói rõ bị tư nhân tiếp quản, tư doanh bưu chính là về sau văn hoá phục hưng thời kì mới xuất hiện, bởi vậy A Phương án Sai. B. La Mã người phá hủy của nó đại bộ phận. Bài gốc rõ ràng nói hệ thống bảo trì hoàn hảo (remained intact), bởi vậy B Phương án Sai. C. nó bị Tiếp tục sử dụng một đoạn thời gian. cái này cùng Bài gốc người trong đám Khám phá nó rất hữu dụng cũng Tiếp tục sử dụng miêu tả nhất trí, bởi vậy C Phương án Đúng. D. các quốc gia tranh đoạt của nó quyền quản lý. Bài gốc cũng không đề cập tranh đoạt hoặc xung đột, bởi vậy D Phương án Sai."
+        },
+        {
+          "id": 4,
+          "stem": "What led to the establishment of private postal system during the Renaissance?",
+          "options": {
+            "A": "An increase in international business",
+            "B": "Growing numbers of people who could read and write",
+            "C": "Advances in printing technology",
+            "D": "Changes in land ownership laws"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: gì đưa đến văn hoá phục hưng thời kì tư doanh bưu chính hệ thống thành lập? Dẫn chứng Bài gốc: Then about five hundred years ago, during the Renaissance in Europe, different countries began to travel farther and farther, when they started trading goods. This led to a need for commercial documents to be delivered quickly and safely. That's when private business got involved and started their own postal systems. Phương án phân tích: A. quốc tế Kinh doanh gia tăng. Bài gốc rõ ràng chỉ ra quốc gia lúc giữa Bắt đầu mậu dịch hàng hóa, đưa đến đối với Kinh doanh văn bản tài liệu rất nhanh an toàn đưa nhu cầu, do đó thôi sanh tư doanh bưu chính, bởi vậy A Phương án Đúng. B. càng ngày càng nhiều có thể đọc biết viết người. Bài gốc cũng không đề cập đọc ghi năng lực phổ cập, bởi vậy B Phương án Sai. C. kỹ thuật in tiến bộ. Bài gốc cũng không đề cập kỹ thuật in, bởi vậy C Phương án Sai. D. thổ địa quyền sở hữu luật pháp biến hóa. Bài gốc hoàn toàn không có liên quan đến thổ địa pháp, bởi vậy D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

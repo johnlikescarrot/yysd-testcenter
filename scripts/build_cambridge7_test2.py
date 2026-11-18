@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑7T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 7T2.docx")
 BOAT_MAP_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_17.35.32-04893f4a-4454-4636-bba9-f36196120dbc.png"
@@ -26,10 +26,10 @@ MEAT_GRAPH_SRC = Path(
     "__2026-07-01_17.35.43-a1c6e5ac-0814-49e6-9d5a-236a489bcd08.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS7 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS7 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS7 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS7 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS7 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-7-test-2.html"
@@ -54,7 +54,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -70,24 +70,24 @@ def inject_state_vars(html: str) -> str:
 
 
 def patch_note_image(html: str) -> str:
-    if "if(g.kind==='note'){\n    body=`" in html:
+    if "if(g.kind==='note'){\n body=`" in html:
         insert = (
-            "  if(g.kind==='note'){\n"
-            "    const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+            " if(g.kind==='note'){\n"
+            " const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
             "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.noteTitle||'map'}\" "
             "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-            "    body=fig+`"
+            " body=fig+`"
         )
-        html = html.replace("  if(g.kind==='note'){\n    body=`", insert, 1)
+        html = html.replace(" if(g.kind==='note'){\n body=`", insert, 1)
     return html
 
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 1 听力", "剑桥雅思7 Test 2 听力"),
-        ("剑桥雅思7 · Test 1（听力）", "剑桥雅思7 · Test 2（听力）"),
-        ("剑桥雅思7 Test 1 听力：", "剑桥雅思7 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 Test 1 Nghe ", "Cambridge IELTS 7 Test 2 Nghe "),
+        ("Cambridge IELTS 7 · Test 1 (Nghe) ", "Cambridge IELTS 7 · Test 2 (Nghe) "),
+        ("Cambridge IELTS 7 Test 1 Nghe: ", "Cambridge IELTS 7 Test 2 Nghe: "),
+        ("Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
         ("test-1", "test-2"),
         ("ielts7_test1", "ielts7_test2"),
     ]
@@ -99,10 +99,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 1 阅读", "剑桥雅思7 Test 2 阅读"),
-        ("剑桥雅思7 · Test 1（阅读）", "剑桥雅思7 · Test 2（阅读）"),
-        ("剑桥雅思7 Test 1 学术类阅读", "剑桥雅思7 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 7 Test 1 Đọc ", "Cambridge IELTS 7 Test 2 Đọc "),
+        ("Cambridge IELTS 7 · Test 1 (Đọc) ", "Cambridge IELTS 7 · Test 2 (Đọc) "),
+        ("Cambridge IELTS 7 Test 1 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 7 Test 2 Đọc Học thuật (Academic Reading) "),
+        ("Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -113,16 +113,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思7 Test 1 写作", "剑桥雅思7 Test 2 写作"),
-        ("剑桥雅思7 · Test 1（写作）", "剑桥雅思7 · Test 2（写作）"),
-        ("剑桥雅思7 Test 1 学术类写作", "剑桥雅思7 Test 2 学术类写作"),
+        ("Cambridge IELTS 7 Test 1 Viết ", "Cambridge IELTS 7 Test 2 Viết "),
+        ("Cambridge IELTS 7 · Test 1 (Viết) ", "Cambridge IELTS 7 · Test 2 (Viết) "),
+        ("Cambridge IELTS 7 Test 1 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 7 Test 2 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 consumer expenditure table + Task 2 talent and training essay",
             "Task 1 fish and meat consumption graph + Task 2 fixed punishments essay",
         ),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Test 1 Viết (Đề thi chính thức) ", "Test 2 Viết (Đề thi chính thức) "),
         ("cambridge-7-test-1-writing-draft", "cambridge-7-test-2-writing-draft"),
-        ("【剑桥雅思7 · Test 1 写作】", "【剑桥雅思7 · Test 2 写作】"),
+        ("[Cambridge IELTS 7 · Test 1 Viết]", "[Cambridge IELTS 7 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("expenditure", "fish-meat"),
@@ -331,8 +331,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["A", "D"],
                         "questions": [
-                            {"id": "L29", "no": 29, "explain": "答案：A 与 D，顺序不限。"},
-                            {"id": "L30", "no": 30, "explain": "答案：A 与 D，顺序不限。"},
+                            {"id": "L29", "no": 29, "explain": " Đáp án: A và D, không giới hạn thứ tự. "},
+                            {"id": "L30", "no": 30, "explain": " Đáp án: A và D, không giới hạn thứ tự. "},
                         ],
                     },
                 ],

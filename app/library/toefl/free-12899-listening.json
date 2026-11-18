@@ -1,46 +1,46 @@
 {
- "id": "free-12899",
- "title": "Choose a Response #225",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #225",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12899,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-225"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #225",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/8213eed1e886496283efcee86db12be1.mp3",
-   "questions": [
+  "id": "free-12899",
+  "title": "Choose a Response #225",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #225",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12899,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-225"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "I think so.",
-      "B": "He is tired.",
-      "C": "Yesterday evening.",
-      "D": "Last time."
-     },
-     "answer": "A",
-     "transcript": "Is the gym open right now?",
-     "stemZh": "健身房现在开门吗？",
-     "analysis": "Is the gym open right now? 题干分析 题干是一般疑问句，意思是 “健身房现在开门吗？”。本题考查对场所当前是否开放的正确应答。 选项分析 选项 A：I think so 表示我想是的。此选项为正确答案，直接对问题作出肯定回应，符合题意。 选项 B：He is tired 表示他很累。与健身房是否开放无关，不符合题意。 选项 C：Yesterday evening 表示昨天晚上。回答的是时间，不是是否开放，不符合题意。 选项 D：Last time 表示上次。与问题无关，不符合题意。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #225",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/8213eed1e886496283efcee86db12be1.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "I think so.",
+            "B": "He is tired.",
+            "C": "Yesterday evening.",
+            "D": "Last time."
+          },
+          "answer": "A",
+          "transcript": "Is the gym open right now?",
+          "stemZh": "phòng tập thể thao hiện tại mở cửa không?",
+          "analysis": "Is the gym open right now? Câu hỏi phân tích Câu hỏi là bình thường câu nghi vấn, ý là “ phòng tập thể thao hiện tại mở cửa không? ”. chủ đề khảo tra đối với nơi trước mắt có hay không cởi mở Đúng trả lời. Phương án phân tích Phương án A: I think so biểu thị ta cũng nghĩ thế. này Phương án là Đáp án đúng, trực tiếp đối với vấn đề làm ra khẳng định đáp lại, phù hợp câu ý. Phương án B: He is tired biểu thị anh ấy rất mệt a. và phòng tập thể thao có hay không cởi mở không quan hệ, không phù hợp câu ý. Phương án C: Yesterday evening biểu thị đêm qua. trả lời là thời gian, không phải có hay không cởi mở, không phù hợp câu ý. Phương án D: Last time biểu thị lần trước. và vấn đề không quan hệ, không phù hợp câu ý."
+        }
+      ]
+    }
+  ]
 }

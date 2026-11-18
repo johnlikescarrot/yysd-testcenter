@@ -15,7 +15,7 @@ var rubricCache = {};
 
 function loadRubric(kind) {
   if (rubricCache[kind]) return rubricCache[kind];
-  var file = path.join(RUBRIC_DIR, kind === "speaking" ? "speaking.md" : "writing.md");
+  var file = path.join(RUBRIC_DIR, kind === "speaking"? "speaking.md": "writing.md");
   try {
     rubricCache[kind] = fs.readFileSync(file, "utf8");
   } catch (e) {
@@ -51,11 +51,11 @@ function omniVoice() {
 async function dashscopeChat(messages, opts) {
   opts = opts || {};
   var key = apiKey();
-  if (!key) throw new Error("DASHSCOPE_API_KEY 未配置");
+  if (!key) throw new Error("DASHSCOPE_API_KEY không phối trí ");
   var body = {
     model: opts.model || chatModel(),
     messages: messages,
-    temperature: opts.temperature == null ? 0.2 : opts.temperature
+    temperature: opts.temperature == null? 0.2: opts.temperature
   };
   if (opts.maxTokens) body.max_tokens = opts.maxTokens;
   if (opts.modalities) body.modalities = opts.modalities;
@@ -71,12 +71,12 @@ async function dashscopeChat(messages, opts) {
     body: JSON.stringify(body)
   });
   var data = await res.json();
-  if (!res.ok) throw new Error((data && data.error && data.error.message) || "DashScope 请求失败");
+  if (!res.ok) throw new Error((data && data.error && data.error.message) || "DashScope Yêu cầu thất bại ");
   var content = data && data.choices && data.choices[0] && data.choices[0].message
     ? data.choices[0].message.content
     : null;
-  if (content == null || content === "") throw new Error("AI 返回为空");
-  return { text: typeof content === "string" ? content : JSON.stringify(content), raw: data };
+  if (content == null || content === "") throw new Error("AI Quay lại là chỗ trống ");
+  return { text: typeof content === "string"? content: JSON.stringify(content), raw: data };
 }
 
 async function streamChat(key, body) {
@@ -87,7 +87,7 @@ async function streamChat(key, body) {
   });
   if (!res.ok) {
     var errBody = await res.text();
-    var msg = "DashScope 流式请求失败";
+    var msg = "DashScope chảy thức Yêu cầu thất bại ";
     try {
       var j = JSON.parse(errBody);
       msg = (j.error && j.error.message) || j.message || msg;
@@ -118,7 +118,7 @@ async function streamChat(key, body) {
       } catch (e) { /* skip partial */ }
     }
   }
-  if (!text && !audioB64) throw new Error("AI 流式返回为空");
+  if (!text &&!audioB64) throw new Error("AI chảy thức Quay lại là chỗ trống ");
   return { text: text, audioBase64: audioB64 || null };
 }
 
@@ -126,7 +126,7 @@ function evidenceWritingAddon() {
   return (
     "\nEvidence-first (mandatory):\n" +
     "- Each criteriaNotes.* must quote a short student phrase as evidence.\n" +
-    "- Avoid vague praise like 「词汇丰富」without a quote.\n" +
+    "- Avoid vague praise like « Từ vựng phong phú »without a quote.\n" +
     "- promptVersion=" + PROMPT_VERSION + "\n"
   );
 }
@@ -171,7 +171,7 @@ async function gradeWritingWithVision(system, essay, chartImageDataUrl) {
       { role: "system", content: wrapWritingSystem(system) },
       { role: "user", content: userContent }
     ],
-    { model: chartImageDataUrl ? vlModel() : gradeModel(), temperature: 0.25, maxTokens: 4500 }
+    { model: chartImageDataUrl? vlModel(): gradeModel(), temperature: 0.25, maxTokens: 4500 }
   );
 }
 
@@ -179,10 +179,10 @@ async function gradeText(system, user, opts) {
   opts = opts || {};
   return dashscopeChat(
     [
-      { role: "system", content: opts.speaking ? wrapSpeakingSystem(system) : wrapWritingSystem(system) },
+      { role: "system", content: opts.speaking? wrapSpeakingSystem(system): wrapWritingSystem(system) },
       { role: "user", content: user }
     ],
-    { model: gradeModel(), temperature: opts.temperature == null ? 0.25 : opts.temperature, maxTokens: opts.maxTokens || 4000 }
+    { model: gradeModel(), temperature: opts.temperature == null? 0.25: opts.temperature, maxTokens: opts.maxTokens || 4000 }
   );
 }
 
@@ -223,7 +223,7 @@ async function gradeSpeaking(system, textUser, audioDataUrl) {
 async function omniTurn(system, history, audioDataUrl, textFallback) {
   var messages = [{ role: "system", content: system }];
   (history || []).slice(-16).forEach(function (m) {
-    messages.push({ role: m.role === "assistant" ? "assistant" : "user", content: m.content });
+    messages.push({ role: m.role === "assistant"? "assistant": "user", content: m.content });
   });
   if (audioDataUrl && String(audioDataUrl).indexOf("data:") === 0) {
     var fmt = "webm";
@@ -256,11 +256,11 @@ function maeBands(pairs) {
   pairs.forEach(function (p) {
     var h = Number(p.human);
     var a = Number(p.ai);
-    if (!isFinite(h) || !isFinite(a)) return;
+    if (!isFinite(h) ||!isFinite(a)) return;
     sum += Math.abs(h - a);
     n += 1;
   });
-  return { mae: n ? Math.round((sum / n) * 100) / 100 : null, n: n };
+  return { mae: n? Math.round((sum / n) * 100) / 100: null, n: n };
 }
 
 module.exports = {

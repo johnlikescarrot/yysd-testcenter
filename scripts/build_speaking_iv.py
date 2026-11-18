@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from speaking_hand_assets import (  # noqa: E402
+from speaking_hand_assets import (# noqa: E402
     HAND_IV,
     IV_SKIP,
     copy_iv_audio,
@@ -34,10 +34,10 @@ def load_hit_by_title() -> dict[str, list[str]]:
         cur = None
         stems: list[str] = []
         for t in p.get("tasks") or []:
-            if t.get("type") != "interview":
+            if t.get("type")!= "interview":
                 continue
             title = (t.get("title") or "").lower()
-            if title != cur:
+            if title!= cur:
                 if cur and len(stems) == 4:
                     by.setdefault(cur, stems)
                 cur = title
@@ -122,7 +122,7 @@ def strip_interview_stem(s: str) -> str:
             flags=re.I,
         )
         nxt = re.sub(
-            r"^(?:Today )?I(?:'d| would)? like to (?:ask you some questions|talk with you|discuss|learn)[^.]*\.\s*",
+            r"^(?:Today)?I(?:'d| would)? like to (?:ask you some questions|talk with you|discuss|learn)[^.]*\.\s*",
             "",
             nxt,
             flags=re.I,
@@ -202,7 +202,7 @@ def ocr_questions(png: Path) -> tuple[str, list[str]]:
 def title_zh_for(title: str) -> str:
     if re.search(r"[\u4e00-\u9fff]", title or ""):
         return title
-    return "面试问答"
+    return " phỏng vấn vấn đáp "
 
 
 def build_one(n: int) -> Path:
@@ -235,14 +235,14 @@ def build_one(n: int) -> Path:
             (o_instr or "") + "\n---\n" + "\n".join(o_stems)
         )
 
-    if len(stems) != 4:
+    if len(stems)!= 4:
         stems = o_stems[:4] if len(o_stems) >= 4 else []
-    if len(stems) != 4:
+    if len(stems)!= 4:
         stt = whisper_stems(audio["qs"])
         if len(stt) == 4 and all(len(s.split()) >= 3 for s in stt):
             stems = stt
             print(f"S-INT{n} used whisper STT")
-    if len(stems) != 4:
+    if len(stems)!= 4:
         raise SystemExit(f"S-INT{n} got {len(stems)} stems, need 4")
     stems = [strip_interview_stem(s) for s in stems]
     if any(len(s.split()) < 3 for s in stems):
@@ -264,7 +264,7 @@ def build_one(n: int) -> Path:
                 "audio": audio["qs"][q],
                 "stem": stem,
                 "sample": stem,
-                "analysis": f"围绕「{title}」作答。",
+                "analysis": f" quay chung quanh «{title}» đáp lại. ",
                 "title": title,
                 "titleZh": title_zh,
             }

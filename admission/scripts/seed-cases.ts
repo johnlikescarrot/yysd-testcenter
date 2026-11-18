@@ -12,12 +12,12 @@ const prisma = new PrismaClient();
 const CASES_PER_SCHOOL = 4;
 
 const UNDERGRADS = [
-  "某985高校",
-  "某211高校",
-  "某双一流高校",
-  "某海外本科院校",
-  "某地方重点大学",
-  "某中外合作办学院校",
+  " một 985 trường cao đẳng ",
+  " một 211 trường cao đẳng ",
+  " một song nhất lưu trường cao đẳng ",
+  " một hải ngoại Đại học viện giáo ",
+  " chỗ nào đó phương trọng điểm đại học ",
+  " một trung ngoại hợp tác quản lý trường học viện giáo ",
 ];
 
 const MAJORS_BY_FIELD: Record<Field, string[]> = {
@@ -74,8 +74,8 @@ function admitProb(
   tags: string[]
 ) {
   let p = 0.35 + (gpa - schoolAvg) * 0.55;
-  if (toefl != null) p += (toefl - 100) / 80;
-  if (ielts != null) p += (ielts - 7) / 4;
+  if (toefl!= null) p += (toefl - 100) / 80;
+  if (ielts!= null) p += (ielts - 7) / 4;
   if (tags.includes("publication")) p += 0.1;
   if (tags.includes("research")) p += 0.08;
   if (tags.includes("internship") || tags.includes("cfa")) p += 0.05;
@@ -148,27 +148,27 @@ async function main() {
       slug: s.slug,
       name: s.name,
       program: s.program,
-      programZh: s.programZh ?? null,
+      programZh: s.programZh?? null,
       degree: s.degree,
       country: s.country,
       field: s.field,
-      city: s.city ?? null,
+      city: s.city?? null,
       avgGpa: s.avgGpa,
       minGpa: s.minGpa,
       minToefl: s.minToefl,
       minIelts: s.minIelts,
-      gpaScale: s.gpaScale ?? 4.0,
+      gpaScale: s.gpaScale?? 4.0,
       website: s.website,
-      officialUrl: s.officialUrl ?? s.website,
+      officialUrl: s.officialUrl?? s.website,
       admissionRequirements: s.admissionRequirements,
       tier: s.tier,
-      duration: s.duration ?? null,
-      tuitionNote: s.tuitionNote ?? null,
-      isStem: s.isStem ?? null,
-      greRequired: s.greRequired === undefined ? null : s.greRequired,
-      applicationDeadline: s.applicationDeadline ?? null,
-      blurb: s.blurb ?? null,
-      summaryOfficial: s.summaryOfficial ?? null,
+      duration: s.duration?? null,
+      tuitionNote: s.tuitionNote?? null,
+      isStem: s.isStem?? null,
+      greRequired: s.greRequired === undefined? null: s.greRequired,
+      applicationDeadline: s.applicationDeadline?? null,
+      blurb: s.blurb?? null,
+      summaryOfficial: s.summaryOfficial?? null,
     };
     if (bySlug.has(s.slug)) toUpdate.push(row);
     else toCreate.push(row);
@@ -266,12 +266,12 @@ async function main() {
         2.8,
         4.0
       );
-      const useIelts = preferIelts ? Math.random() < 0.85 : Math.random() < 0.25;
+      const useIelts = preferIelts? Math.random() < 0.85: Math.random() < 0.25;
       const toefl = useIelts
         ? null
-        : Math.round(clamp(gauss((school.minToefl ?? 90) + 8, 8), 70, 120));
+        : Math.round(clamp(gauss((school.minToefl?? 90) + 8, 8), 70, 120));
       const ielts = useIelts
-        ? Math.round(clamp(gauss((school.minIelts ?? 6.5) + 0.35, 0.35), 5.5, 9) * 2) / 2
+        ? Math.round(clamp(gauss((school.minIelts?? 6.5) + 0.35, 0.35), 5.5, 9) * 2) / 2
         : null;
       const gre =
         school.country === "US" && Math.random() < 0.45
@@ -281,12 +281,12 @@ async function main() {
       const undergradMajor = pick(majors);
       const tags = sampleTags(field);
       const year =
-        nowYear - (Math.random() < 0.55 ? 0 : Math.random() < 0.7 ? 1 : 2);
+        nowYear - (Math.random() < 0.55? 0: Math.random() < 0.7? 1: 2);
       const p = admitProb(school.avgGpa, gpa, toefl, ielts, tags);
       const admissionResult = Math.random() < p;
-      const lang = toefl != null ? `TOEFL ${toefl}` : `IELTS ${ielts}`;
-      const grePart = gre != null ? `，GRE ${gre}` : "";
-      const resultCn = admissionResult ? "获录取" : "被拒";
+      const lang = toefl!= null? `TOEFL ${toefl}`: `IELTS ${ielts}`;
+      const grePart = gre!= null? `, GRE ${gre}`: "";
+      const resultCn = admissionResult? " lấy được trúng tuyển ": " bị cự ";
       caseRows.push({
         schoolId: school.id,
         gpa,
@@ -298,7 +298,7 @@ async function main() {
         backgroundTags: tags,
         admissionResult,
         year,
-        description: `脱敏案例：${undergradSchool}${undergradMajor}背景，GPA ${gpa.toFixed(2)}，${lang}${grePart}，标签 ${tags.join("/")}，${year} 年申请 ${school.country} ${school.name} ${school.program}，${resultCn}。`,
+        description: ` cởi mẫn án lệ: ${undergradSchool}${undergradMajor} bối cảnh, GPA ${gpa.toFixed(2)}, ${lang}${grePart}, nhãn hiệu ${tags.join("/")}, ${year} năm thân thỉnh ${school.country} ${school.name} ${school.program}, ${resultCn}. `,
         source: "synthetic",
       });
     }

@@ -15,7 +15,7 @@ must(t2.indexOf("para-label\">C</span>Kudla") >= 0, "T2 C Kudla");
 must(t2.indexOf("The team in China re-domesticated") >= 0, "T2 China still present");
 must(t2.indexOf('para-label">D</span>The team in China') < 0, "T2 China not labelled D");
 must(t2.indexOf('para-label">D</span>Meanwhile, Joyce Van Eck') >= 0, "T2 D is Van Eck");
-must(t2.indexOf("answer:['C']") >= 0 && t2.indexOf("抗细菌性斑点病") >= 0, "T2 Q14 is C");
+must(t2.indexOf("answer:['C']") >= 0 && t2.indexOf(" chống đỡ vi khuẩn tính điểm lấm tấm bệnh ") >= 0, "T2 Q14 is C");
 
 var t3 = read("cambridge-17-test-3-reading.html");
 must(t3.indexOf("maximize return on investment.`") >= 0, "T3 ch5 para ends at investment");

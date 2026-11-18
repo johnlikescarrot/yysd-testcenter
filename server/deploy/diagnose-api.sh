@@ -1,5 +1,5 @@
 #!/bin/bash
-# 在 ECS 上运行：bash deploy/diagnose-api.sh
+# tại ECS bên trên vận hành: bash deploy/diagnose-api.sh
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -9,86 +9,86 @@ ok=0
 warn=0
 fail=0
 
-pass() { echo "  ✓ $1"; ok=$((ok + 1)); }
-note() { echo "  · $1"; warn=$((warn + 1)); }
-bad()  { echo "  ✗ $1"; fail=$((fail + 1)); }
+pass() { echo " ✓ $1"; ok=$((ok + 1)); }
+note() { echo " · $1"; warn=$((warn + 1)); }
+bad() { echo " ✗ $1"; fail=$((fail + 1)); }
 
 env_set() {
   local key="$1"
   local val
-  val="$(grep -E "^${key}=" .env 2>/dev/null | head -1 | cut -d= -f2- || true)"
-  [ -n "$val" ] && [ "$val" != "请改成至少32位随机字符串" ]
+  val="$(grep -E "^${key}=".env 2>/dev/null | head -1 | cut -d= -f2- || true)"
+  [-n "$val"] && ["$val"!= " mời đổi thành Tối thiểu 32 ký tự tùy cơ hội ký tự chuỗi "]
 }
 
-echo "==> 本机监听端口"
+echo "==> bản cơ nghe lén cảng "
 if ss -tlnp 2>/dev/null | grep -E ':80|:443|:3000' || netstat -tlnp 2>/dev/null | grep -E ':80|:443|:3000'; then
   :
 else
-  note "未检测到 80/443/3000 监听"
+  note " không Đánh giá đến 80/443/3000 nghe lén "
 fi
 
 echo ""
-echo "==> pm2 进程"
+echo "==> pm2 tiến trình "
 if command -v pm2 &>/dev/null; then
-  pm2 list 2>/dev/null || note "pm2 list 失败"
+  pm2 list 2>/dev/null || note "pm2 list thất bại "
 else
-  bad "pm2 未安装 — 运行 bash deploy/ecs-setup.sh"
+  bad "pm2 không lắp đặt — vận hành bash deploy/ecs-setup.sh"
 fi
 
 echo ""
-echo "==> 本地 API 探活"
+echo "==> bản địa API dò xét sống "
 if curl -fsS -m 3 http://127.0.0.1:3000/api/health; then
   echo ""
-  pass "127.0.0.1:3000/api/health 正常"
+  pass "127.0.0.1:3000/api/health bình thường "
 else
-  bad "127.0.0.1:3000/api/health 失败 — 检查 pm2 logs yysd-api"
+  bad "127.0.0.1:3000/api/health thất bại — kiểm tra pm2 logs yysd-api"
 fi
 
 echo ""
-echo "==> nginx api 站点"
-if [ -d /etc/nginx ]; then
+echo "==> nginx api trạm điểm[web] "
+if [-d /etc/nginx]; then
   if grep -Rq "api.youyisida.com" /etc/nginx 2>/dev/null; then
-    pass "nginx 已配置 api.youyisida.com"
+    pass "nginx đã phối trí api.youyisida.com"
   else
-    bad "未找到 api.youyisida.com — 参考 deploy/nginx-api.conf"
+    bad " không tìm được api.youyisida.com — tham khảo deploy/nginx-api.conf"
   fi
 else
-  note "nginx 未安装"
+  note "nginx không lắp đặt "
 fi
 
 echo ""
-echo "==> .env 上线必填项"
-if [ ! -f .env ]; then
-  bad ".env 不存在 — cp .env.example .env 并填写"
+echo "==>.env thượng tuyến tất điền hạng "
+if [! -f.env]; then
+  bad ".env không tồn tại — cp.env.example.env cũng điền "
 else
-  env_set JWT_SECRET && pass "JWT_SECRET 已设置" || bad "JWT_SECRET 未设置或过短占位"
-  env_set ALIYUN_ACCESS_KEY_ID && pass "ALIYUN_ACCESS_KEY_ID 已设置" || bad "ALIYUN_ACCESS_KEY_ID 未设置（无法发短信）"
-  env_set ALIYUN_ACCESS_KEY_SECRET && pass "ALIYUN_ACCESS_KEY_SECRET 已设置" || bad "ALIYUN_ACCESS_KEY_SECRET 未设置"
-  env_set SMS_SIGN_NAME && pass "SMS_SIGN_NAME 已设置" || bad "SMS_SIGN_NAME 未设置"
-  env_set SMS_TEMPLATE_CODE && pass "SMS_TEMPLATE_CODE 已设置" || bad "SMS_TEMPLATE_CODE 未设置"
-  env_set CORS_ORIGINS && pass "CORS_ORIGINS 已设置" || bad "CORS_ORIGINS 未设置"
+  env_set JWT_SECRET && pass "JWT_SECRET đã thiết trí " || bad "JWT_SECRET không thiết trí hoặc qua ngắn giành chỗ "
+  env_set ALIYUN_ACCESS_KEY_ID && pass "ALIYUN_ACCESS_KEY_ID đã thiết trí " || bad "ALIYUN_ACCESS_KEY_ID không thiết trí (không cách nào gởi nhắn tin) "
+  env_set ALIYUN_ACCESS_KEY_SECRET && pass "ALIYUN_ACCESS_KEY_SECRET đã thiết trí " || bad "ALIYUN_ACCESS_KEY_SECRET không thiết trí "
+  env_set SMS_SIGN_NAME && pass "SMS_SIGN_NAME đã thiết trí " || bad "SMS_SIGN_NAME không thiết trí "
+  env_set SMS_TEMPLATE_CODE && pass "SMS_TEMPLATE_CODE đã thiết trí " || bad "SMS_TEMPLATE_CODE không thiết trí "
+  env_set CORS_ORIGINS && pass "CORS_ORIGINS đã thiết trí " || bad "CORS_ORIGINS không thiết trí "
   if env_set DASHSCOPE_API_KEY; then
-    pass "DASHSCOPE_API_KEY 已设置（AI 功能可用）"
+    pass "DASHSCOPE_API_KEY đã thiết trí (AI công năng có thể dùng) "
   else
-    note "DASHSCOPE_API_KEY 未设置（精听/口语 AI 不可用，登录不受影响）"
+    note "DASHSCOPE_API_KEY không thiết trí (Nghe sâu / Nói AI không thể dùng, Đăng nhập không bị ảnh hưởng) "
   fi
-  if grep -q '^SMS_DEV_MODE=1' .env 2>/dev/null; then
-    note "SMS_DEV_MODE=1 — 生产环境请改为 0"
+  if grep -q '^SMS_DEV_MODE=1'.env 2>/dev/null; then
+    note "SMS_DEV_MODE=1 — sinh sản Môi trường mời cải thành 0"
   fi
 fi
 
 echo ""
-echo "==> 外网 HTTPS 探活（可选）"
+echo "==> mạng bên ngoài HTTPS dò xét sống (có thể chọn) "
 if curl -fsS -m 5 https://api.youyisida.com/api/health 2>/dev/null; then
   echo ""
-  pass "https://api.youyisida.com/api/health 正常"
+  pass "https://api.youyisida.com/api/health bình thường "
 else
-  note "外网 HTTPS 探活失败 — 检查备案子域名 api、安全组 443、certbot 证书"
+  note " mạng bên ngoài HTTPS dò xét sống thất bại — kiểm tra lập hồ sơ tử vực tên api, tổ an toàn 443, certbot giấy chứng nhận "
 fi
 
 echo ""
-echo "==> 汇总：${ok} 通过 · ${warn} 提示 · ${fail} 待修复"
-if [ "$fail" -gt 0 ]; then
-  echo "修复后再执行：pm2 restart yysd-api && bash deploy/diagnose-api.sh"
+echo "==> tập hợp: ${ok} thông qua · ${warn} nhắc nhở · ${fail} đợi chữa trị "
+if ["$fail" -gt 0]; then
+  echo " chữa trị sau lại chấp hành: pm2 restart yysd-api && bash deploy/diagnose-api.sh"
   exit 1
 fi

@@ -5,7 +5,7 @@
 def blank(n, prefix, word, alts=None):
     if prefix and not word.lower().startswith(prefix.lower()):
         raise SystemExit("prefix %r not in %r" % (prefix, word))
-    item = {"id": n, "prefix": prefix, "answer": word[len(prefix) :], "word": word}
+    item = {"id": n, "prefix": prefix, "answer": word[len(prefix):], "word": word}
     if alts:
         item["alts"] = alts
     return item
@@ -278,7 +278,7 @@ def build_reading():
         ],
     )
     tasks.append(t)
-    if n != 71:
+    if n!= 71:
         raise SystemExit("expected 70 CW blanks, next id %s" % n)
 
     tasks.append(
@@ -835,7 +835,7 @@ def build_reading():
 
     return {
         "id": "2025-09-13",
-        "title": "新托福 9.13 · 阅读",
+        "title": "TOEFL iBT 13/9 · Đọc ",
         "set": "9.13",
         "skill": "reading",
         "modules": [

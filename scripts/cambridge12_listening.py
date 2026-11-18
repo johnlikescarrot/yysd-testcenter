@@ -8,7 +8,7 @@ def ans(*v):
 
 
 def explain(*v):
-    return "答案：" + " / ".join(v) + "。"
+    return " Đáp án: " + " / ".join(v) + ". "
 
 
 def _q(no, *answers, q=None, options=None):
@@ -21,7 +21,7 @@ def _q(no, *answers, q=None, options=None):
 
 
 def _multi_pair(a, b, letters):
-    text = "选两项（顺序不限）：" + " 与 ".join(letters) + "。"
+    text = " chọn hai hạng (không giới hạn thứ tự): " + " và ".join(letters) + ". "
     return [
         {"id": f"L{a}", "no": a, "explain": text},
         {"id": f"L{b}", "no": b, "explain": text},

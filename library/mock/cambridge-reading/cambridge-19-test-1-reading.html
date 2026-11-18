@@ -1,84 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思19 Test 1 阅读</title>
-<meta name="exam:title" content="剑桥雅思19 · Test 1（阅读）">
+<title>YYSD · Cambridge IELTS 19 Test 1 Đọc</title>
+<meta name="exam:title" content="Cambridge IELTS 19 · Test 1 (Đọc)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-reading">
 <meta name="exam:duration" content="60">
-<meta name="exam:description" content="剑桥雅思19 Test 1 学术类阅读（官方真题）：3 篇文章共 40 题，可单篇练习或完整模考，自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 19 Test 1 Đọc Học thuật (Academic Reading) (Đề thi chính thức): 3 bài đọc, tổng 40 câu, có thể bài lẻ Luyện tập hoặc Thi thử toàn phần, Chấm điểm tự động, Giải thích đáp án và Điểm Band IELTS dự kiến.">
 <style>
   * { box-sizing:border-box; }
-  body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
   .header { background:linear-gradient(135deg,#1e1b4b,#312e81); color:#fff; padding:12px 28px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 18px rgba(0,0,0,.25); flex-wrap:wrap; gap:10px; }
   .header h1 { margin:0; font-size:19px; font-weight:600; display:flex; align-items:center; gap:8px; }
-  .header h1 .brandtag { font-size:11px; background:#6366f1; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
-  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background .4s; }
+  .header h1.brandtag { font-size:11px; background:#6366f1; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
+  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background.4s; }
   .timer.show { display:flex; }
-  .timer.warn { background:#e67e22; } .timer.danger { background:#c0392b; animation:pulse 1s infinite; }
+  .timer.warn { background:#e67e22; }.timer.danger { background:#c0392b; animation:pulse 1s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1180px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Trang bìa */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eef2ff,#e0e7ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
-  .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
-  .cover-badge .num { font-size:54px; font-weight:800; color:#4338ca; line-height:1; margin-top:4px; }
+  .cover-badge.lbl { font-size:12px; letter-spacing:2px; color:#4f46e5; font-weight:600; }
+  .cover-badge.num { font-size:54px; font-weight:800; color:#4338ca; line-height:1; margin-top:4px; }
   .cover-hero h2 { margin:0; font-size:30px; color:#1e1b4b; }
-  .cover-hero .sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
+  .cover-hero.sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
   .paper-card-wrap { margin-top:24px; }
-  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform .15s,box-shadow .2s; background:#eef2ff; border-color:#c7d2fe; cursor:pointer; }
+  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform.15s,box-shadow.2s; background:#eef2ff; border-color:#c7d2fe; cursor:pointer; }
   .paper-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10); }
-  .paper-card .pc-icon { font-size:40px; }
+  .paper-card.pc-icon { font-size:40px; }
   .paper-card h3 { margin:10px 0 4px; font-size:24px; color:#3730a3; }
-  .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
-  .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
+  .paper-card.pc-meta { font-size:13px; color:#6b7a8f; }
+  .paper-card.pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; background:#4f46e5; }
 
-  /* 模式弹窗 */
+  /* Hộp thoại chọn chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
   .modal h2 { margin:0 0 20px; font-size:24px; color:#111; }
   .modal-close { position:absolute; right:20px; top:18px; border:none; background:none; font-size:24px; color:#8a96a5; cursor:pointer; }
   .mode-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  @media(max-width:680px){ .mode-grid{grid-template-columns:1fr;} }
+  @media(max-width:680px){.mode-grid{grid-template-columns:1fr;} }
   .mode-box { border:1px solid #e2e8f0; border-radius:14px; padding:24px 22px; }
-  .mode-box .mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
-  .mode-box.practice .mb-ic { background:#e0e7ff; } .mode-box.exam .mb-ic { background:#ffe8cf; }
+  .mode-box.mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
+  .mode-box.practice.mb-ic { background:#e0e7ff; }.mode-box.exam.mb-ic { background:#ffe8cf; }
   .mode-box h3 { text-align:center; margin:0 0 6px; font-size:20px; }
-  .mode-box .mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
-  .mode-box .mb-sub { font-weight:700; color:#3730a3; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
-  .mode-box .mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
+  .mode-box.mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
+  .mode-box.mb-sub { font-weight:700; color:#3730a3; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
+  .mode-box.mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
   .sec-check { display:flex; align-items:center; gap:10px; padding:8px 4px; font-size:15px; font-weight:600; color:#3730a3; cursor:pointer; }
   .sec-check input { width:18px; height:18px; accent-color:#4338ca; }
   .exam-list { list-style:none; padding:0; margin:10px 0 0; color:#445; font-size:14.5px; }
   .exam-list li { padding:3px 0; }
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
-  .mode-box.practice .mode-start { background:#4f46e5; } .mode-box.exam .mode-start { background:#e67e22; }
+  .mode-box.practice.mode-start { background:#4f46e5; }.mode-box.exam.mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực làm bài */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; position:sticky; top:60px; z-index:600; }
-  .test-topbar .tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
-  .test-topbar .tt-mode { font-size:13px; background:#eef2ff; color:#3730a3; padding:3px 12px; border-radius:20px; font-weight:600; }
+  .test-topbar.tt-title { font-size:19px; font-weight:700; color:#1e1b4b; }
+  .test-topbar.tt-mode { font-size:13px; background:#eef2ff; color:#3730a3; padding:3px 12px; border-radius:20px; font-weight:600; }
   .btn-ghost { border:1px solid #cdd7e2; background:#fff; border-radius:8px; padding:8px 16px; font-size:14px; cursor:pointer; color:#33475b; }
   .btn-ghost:hover { background:#f3f6fa; }
 
   .section-banner { background:#eef2ff; border:1px solid #c7d2fe; border-radius:12px; padding:14px 20px; margin:26px 0 14px; }
-  .section-banner .sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-  .section-banner .sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
-  .section-banner .sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
+  .section-banner.sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .section-banner.sb-title { font-size:20px; font-weight:800; color:#3730a3; letter-spacing:.5px; }
+  .section-banner.sb-meta { font-size:13px; color:#5a6b8a; margin-top:6px; }
 
-  /* 阅读分栏：左文章 右题目 */
+  /* Đọc điểm lan: trái văn chương phải đề mục */
   .reading-cols { display:flex; gap:24px; align-items:flex-start; }
   .passage-pane { flex:1 1 50%; background:#fff; border:1px solid #e3e6ee; border-radius:12px; padding:22px 26px; position:sticky; top:130px; max-height:calc(100vh - 150px); overflow:auto; }
-  .passage-pane .pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
-  .passage-pane .ptitle { margin:6px 0 4px; font-size:21px; color:#1e1b4b; }
-  .passage-pane .pp-byline { font-style:italic; color:#6b7a8f; font-size:13.5px; margin-bottom:12px; }
+  .passage-pane.pp-kicker { font-size:12px; letter-spacing:1.5px; color:#6366f1; font-weight:700; }
+  .passage-pane.ptitle { margin:6px 0 4px; font-size:21px; color:#1e1b4b; }
+  .passage-pane.pp-byline { font-style:italic; color:#6b7a8f; font-size:13.5px; margin-bottom:12px; }
   .passage-pane p { margin:0 0 13px; font-size:15px; text-align:justify; }
-  .passage-pane .para-label { font-weight:800; color:#4338ca; margin-right:6px; }
+  .passage-pane.para-label { font-weight:800; color:#4338ca; margin-right:6px; }
   .qcol { flex:1 1 50%; min-width:0; }
   @media(max-width:900px){
     .reading-cols { flex-direction:column; }
@@ -93,8 +93,8 @@
   .note-title { text-align:center; font-weight:800; font-size:17px; margin-bottom:12px; color:#22303f; }
   .note-h { font-weight:700; margin:12px 0 4px; }
   .note-li { margin:6px 0 6px 4px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
-  .note-li .bull { color:#7a8aa0; }
-  .note-li.sub { margin-left:26px; } .note-li.sub2 { margin-left:48px; }
+  .note-li.bull { color:#7a8aa0; }
+  .note-li.sub { margin-left:26px; }.note-li.sub2 { margin-left:48px; }
   .qnum-badge { background:#e0e7ff; color:#3730a3; font-weight:700; min-width:30px; height:30px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; padding:0 6px; }
   input[type=text]{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:15px; width:150px; }
   input[type=text]:focus{ border-color:#4f46e5; box-shadow:0 0 0 3px rgba(79,70,229,.14); outline:none; }
@@ -102,7 +102,7 @@
   table.note-table th, table.note-table td { border:1px solid #d3dce6; padding:10px 12px; font-size:14.5px; vertical-align:top; text-align:left; }
   table.note-table th { background:#eef2ff; }
   .mcq { margin:6px 0 16px; }
-  .mcq .qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
+  .mcq.qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
   .mcq label { display:flex; gap:9px; align-items:flex-start; padding:6px 10px; border-radius:7px; cursor:pointer; }
   .mcq label:hover { background:#eef2fa; }
   .mcq input{ accent-color:#1e1b4b; margin-top:3px; }
@@ -111,142 +111,142 @@
   select{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:14.5px; min-width:70px; }
   select:focus{ border-color:#4f46e5; outline:none; }
   .match-box { border:1px solid #d8e0ea; border-radius:10px; background:#f6f8ff; padding:14px 18px; margin-bottom:14px; }
-  .match-box .mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
-  .match-box .mb-row { display:flex; gap:10px; padding:2px 0; }
+  .match-box.mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
+  .match-box.mb-row { display:flex; gap:10px; padding:2px 0; }
   .match-q { display:flex; align-items:center; gap:10px; margin:8px 0; }
-  .match-q .mq-txt { flex:1; }
+  .match-q.mq-txt { flex:1; }
 
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#1e1b4b; margin:4px 0 2px; }
   .res-meta { color:#6b7a8f; font-size:13px; margin-bottom:20px; }
   .res-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media(max-width:680px){ .res-stats{grid-template-columns:1fr;} }
+  @media(max-width:680px){.res-stats{grid-template-columns:1fr;} }
   .stat-box { border-radius:14px; padding:26px 16px; text-align:center; }
-  .stat-box.s1 { background:#eef2ff; } .stat-box.s2 { background:#eefaf2; } .stat-box.s3 { background:#f5f3ff; }
-  .stat-box .big { font-size:40px; font-weight:800; line-height:1; }
-  .stat-box.s1 .big { color:#4f46e5; } .stat-box.s2 .big { color:#1e8449; } .stat-box.s3 .big { color:#5b3fd6; }
-  .stat-box .cap { color:#5a7184; margin-top:8px; font-size:14px; }
-  .stat-box .sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
+  .stat-box.s1 { background:#eef2ff; }.stat-box.s2 { background:#eefaf2; }.stat-box.s3 { background:#f5f3ff; }
+  .stat-box.big { font-size:40px; font-weight:800; line-height:1; }
+  .stat-box.s1.big { color:#4f46e5; }.stat-box.s2.big { color:#1e8449; }.stat-box.s3.big { color:#5b3fd6; }
+  .stat-box.cap { color:#5a7184; margin-top:8px; font-size:14px; }
+  .stat-box.sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
   .progress-wrap { margin-top:22px; }
-  .progress-wrap .pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
+  .progress-wrap.pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
   .pw-track { height:14px; background:#e2e8f0; border-radius:10px; overflow:hidden; }
-  .pw-fill { height:100%; background:linear-gradient(90deg,#6366f1,#27ae60); width:0; transition:width .8s; }
+  .pw-fill { height:100%; background:linear-gradient(90deg,#6366f1,#27ae60); width:0; transition:width.8s; }
 
   .detail-h { font-size:20px; font-weight:800; color:#1e1b4b; margin:26px 0 12px; }
   .sec-result { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,.05); margin-bottom:12px; overflow:hidden; }
-  .sec-result .sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
-  .sec-result .sr-head h5 { margin:0; font-size:17px; }
-  .sec-result .sr-head .sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
-  .sec-result .sr-head .sr-sum .ok { color:#1e8449; font-weight:700; } .sec-result .sr-head .sr-sum .bad { color:#c0392b; font-weight:700; }
+  .sec-result.sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
+  .sec-result.sr-head h5 { margin:0; font-size:17px; }
+  .sec-result.sr-head.sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
+  .sec-result.sr-head.sr-sum.ok { color:#1e8449; font-weight:700; }.sec-result.sr-head.sr-sum.bad { color:#c0392b; font-weight:700; }
   .sr-body { display:none; padding:0 22px 16px; }
-  .sec-result.open .sr-body { display:block; }
-  .sr-chevron { transition:transform .2s; color:#8a96a5; }
-  .sec-result.open .sr-chevron { transform:rotate(180deg); }
+  .sec-result.open.sr-body { display:block; }
+  .sr-chevron { transition:transform.2s; color:#8a96a5; }
+  .sec-result.open.sr-chevron { transform:rotate(180deg); }
   .ritem { padding:12px 16px; border-radius:9px; margin:8px 0; border-left:5px solid transparent; }
   .ritem.correct { background:#e8f8ee; border-left-color:#27ae60; }
   .ritem.wrong { background:#fdeaea; border-left-color:#e74c3c; }
-  .ritem .rq { font-weight:700; color:#22303f; }
-  .ritem .ra { font-size:14px; margin-top:4px; }
-  .ritem .ra .yours { color:#7b1a1a; } .ritem .ra .correctv { color:#145a32; font-weight:700; }
-  .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
+  .ritem.rq { font-weight:700; color:#22303f; }
+  .ritem.ra { font-size:14px; margin-top:4px; }
+  .ritem.ra.yours { color:#7b1a1a; }.ritem.ra.correctv { color:#145a32; font-weight:700; }
+  .ritem.rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag"> YYSD </span> Bài thi Cambridge IELTS chính thức</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Trang bìa -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">19</div></div>
     <div>
-      <h2>剑桥雅思 19 · Test 1</h2>
-      <div class="sub">学术类阅读 · 官方真题 · 自动批改并给出雅思预估分。点击下方开始测试。</div>
+      <h2>Cambridge IELTS 19 · Test 1</h2>
+      <div class="sub"> Đọc Học thuật (Academic Reading) · Đề thi chính thức · Chấm điểm tự động cũng cho ra Điểm Band IELTS dự kiến. nhấn vào phía dưới Bắt đầu kiểm tra. </div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card" onclick="openMode()">
       <div class="pc-icon">📖</div>
-      <h3>学术类阅读 (Academic Reading)</h3>
-      <div class="pc-meta" id="coverMeta">加载中…</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Đọc Học thuật (Academic Reading) (Academic Reading)</h3>
+      <div class="pc-meta" id="coverMeta"> Đang tải …</div>
+      <div class="pc-go"> Bắt đầu kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Hộp thoại chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>lựa chọn hình thức</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分篇突破，可只练某几篇文章，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习文章：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc"> thích hợp điểm bài đột phá, có thể chỉ luyện một mấy thiên văn chương, đang hướng tính theo thời gian không làm áp lực. </div>
+        <div class="mb-sub"><span> lựa chọn Luyện tập văn chương: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：所有文章一次完成，限时 60 分钟。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;" id="examInfo">完整测试（限时 60 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc"> Đầy đủ mô phỏng chân thật cuộc thi: tất cả văn chương một lần hoàn thành, thời gian 60 phút. </div>
+        <div class="mb-sub"><span> Kiểm tra tin tức: </span></div>
+        <div style="color:#445;font-size:14.5px;" id="examInfo"> Đầy đủ Kiểm tra (thời gian 60 phút) </div>
         <ul class="exam-list" id="examList"></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang bìa</button>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài cũng Xem Báo cáo chấm bài</button>
 </div>
 
-<!-- 结果区 -->
+<!-- kết quả khu -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#4338ca;font-weight:700;">🏆 Báo cáo chấm bài </div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap"> trả lời câu mấy </div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap"> Tỷ lệ đúng </div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap"> Điểm Band IELTS dự kiến </div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span> tổng thể Tiến độ </span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="instruction" id="bandNote" style="margin-top:14px;font-style:normal;color:#8a96a5;font-size:12px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h"> kỹ càng kết quả </div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思20 Test 4 学术类阅读（官方原题 + 官方答案）
-   说明：每篇文章为一个对象 {id, passage:{title,byline,paras[]}, groups:[...]}
-   再发来 Passage 2、3 时按相同格式追加进 passages 数组即可。
+    một, bài thi số liệu —— Cambridge IELTS 20 Test 4 Đọc Học thuật (Academic Reading) (chính thức nguyên câu + chính thức Đáp án)
+    nói rõ: mỗi thiên văn chương làm một cái đối tượng {id, passage:{title,byline,paras[]}, groups:[...]}
+    tái phát đến Passage 2, 3 lúc theo như giống nhau cách thức thêm vào tiến passages mấy tổ là được.
    ============================================================ */
 const TEST = {
   meta:{ volume:19, testNo:1 },
@@ -276,13 +276,13 @@ const TEST = {
         { kind:'tfng', title:'Questions 1–7',
           instruction:'Do the following statements agree with the information given in Reading Passage 1?\n\nIn boxes 1–7 on your answer sheet, write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, or NOT GIVEN if there is no information on this.',
           questions:[
-            {id:'Q1',no:1,q:`People had expected Andy Murray to become the world's top tennis player for at least five years before 2016.`,answer:['FALSE'],explain:`第1段：”five years previously, he had been regarded as a talented outsider who entered but never won the major tournaments.”——五年前他还被视为难以夺冠的黑马，与题干"被预期成为世界第一"矛盾。 FALSE。`},
-            {id:'Q2',no:2,q:`The change that Andy Murray made to his rackets attracted a lot of attention.`,answer:['FALSE'],explain:`第2段：”Another change was so subtle as to pass more or less unnoticed.”——这一改变几乎无人注意，与"引起大量关注"矛盾。 FALSE。`},
-            {id:'Q3',no:3,q:`Most of the world's top players take a professional racket stringer on tour with them.`,answer:['NOT GIVEN'],explain:`文中提到职业穿线师 Colin Triplow，但未说大多数顶尖选手巡回赛时随身带穿线师。 NOT GIVEN。`},
-            {id:'Q4',no:4,q:`Mike and Bob Bryan use rackets that are light in comparison to the majority of rackets.`,answer:['FALSE'],explain:`第3段：”The rackets they use now weigh more than the average model”——他们的球拍比一般型号更重，与"较轻"矛盾。 FALSE。`},
-            {id:'Q5',no:5,q:`Werner Fischer played with a spaghetti-strung racket that he designed himself.`,answer:['NOT GIVEN'],explain:`第5段只说 Fischer 开始使用（started playing with）这种球拍，未说是他自己设计的。 NOT GIVEN。`},
-            {id:'Q6',no:6,q:`The weather can affect how professional players adjust the strings on their rackets.`,answer:['TRUE'],explain:`第6段：”They will continually change it depending on various factors including the court surface, climatic conditions, and game styles.” climatic conditions = 天气状况。 TRUE。`},
-            {id:'Q7',no:7,q:`It was believed that the change Pete Sampras made to his rackets contributed to his strong serve.`,answer:['TRUE'],explain:`第9段：”much of the serving power of US professional player Pete Sampras was attributed to the addition of four to five lead weights”。 TRUE。`},
+            {id:'Q1',no:1,q:`People had expected Andy Murray to become the world's top tennis player for at least five years before 2016.`,answer:['FALSE'],explain:`Đoạn 1: ”five years previously, he had been regarded as a talented outsider who entered but never won the major tournaments.”—— năm năm trước anh ấy còn bị coi là khó có thể đoạt giải quán quân hắc mã, và Câu hỏi " bị mong muốn trở thành đệ nhất thế giới " mâu thuẫn. FALSE. `},
+            {id:'Q2',no:2,q:`The change that Andy Murray made to his rackets attracted a lot of attention.`,answer:['FALSE'],explain:`Đoạn 2: ”Another change was so subtle as to pass more or less unnoticed.”—— cái này thay đổi biến hầu như không người chú ý, và " khiến cho đại lượng chú ý " mâu thuẫn. FALSE. `},
+            {id:'Q3',no:3,q:`Most of the world's top players take a professional racket stringer on tour with them.`,answer:['NOT GIVEN'],explain:` văn trung nhắc tới Nghề nghiệp xuyên tuyến sư Colin Triplow, nhưng không đại đa số cực hạn tuyển thủ lưu động thi đấu lúc tùy thân mang xuyên tuyến sư. NOT GIVEN. `},
+            {id:'Q4',no:4,q:`Mike and Bob Bryan use rackets that are light in comparison to the majority of rackets.`,answer:['FALSE'],explain:`Đoạn 3: ”The rackets they use now weigh more than the average model”—— họ vợt bóng bàn so với bình thường loại quá nặng, và " giác khinh " mâu thuẫn. FALSE. `},
+            {id:'Q5',no:5,q:`Werner Fischer played with a spaghetti-strung racket that he designed himself.`,answer:['NOT GIVEN'],explain:`Đoạn 5 chỉ nói Fischer Bắt đầu sử dụng (started playing with) loại này vợt bóng bàn, không là chính bản thân hắn thiết kế. NOT GIVEN. `},
+            {id:'Q6',no:6,q:`The weather can affect how professional players adjust the strings on their rackets.`,answer:['TRUE'],explain:`Đoạn 6: ”They will continually change it depending on various factors including the court surface, climatic conditions, and game styles.” climatic conditions = thời tiết tình huống. TRUE. `},
+            {id:'Q7',no:7,q:`It was believed that the change Pete Sampras made to his rackets contributed to his strong serve.`,answer:['TRUE'],explain:`Đoạn 9: ”much of the serving power of US professional player Pete Sampras was attributed to the addition of four to five lead weights”. TRUE. `},
           ]},
         { kind:'note', title:'Questions 8–13',
           instruction:'Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -296,12 +296,12 @@ const TEST = {
             {bullet:true, html:`Gon\xe7alo Oliveira changed the <Q n="13"> on his racket handles`},
           ],
           questions:[
-            {id:'Q8',no:8,answer:['paint'],explain:`第3段：”experimented with different kinds of paint”。答案：paint。`},
-            {id:'Q9',no:9,answer:['topspin'],explain:`第5段：”generated so much topspin that it was quickly banned”。答案：topspin。`},
-            {id:'Q10',no:10,answer:['training'],explain:`第5段：”equal in significance to nutrition or training”。答案：training。`},
-            {id:'Q11',no:11,answer:['intestines','gut'],explain:`第7段：”natural gut made from the outer layer of sheep or cow intestines”。答案：intestines 或 gut。`},
-            {id:'Q12',no:12,answer:['weights'],explain:`第9段：”addition of four to five lead weights”。答案：weights。`},
-            {id:'Q13',no:13,answer:['grips'],explain:`第10段：”replaced the original grips of his rackets with something thinner”。答案：grips。`},
+            {id:'Q8',no:8,answer:['paint'],explain:`Đoạn 3: ”experimented with different kinds of paint”. Đáp án: paint. `},
+            {id:'Q9',no:9,answer:['topspin'],explain:`Đoạn 5: ”generated so much topspin that it was quickly banned”. Đáp án: topspin. `},
+            {id:'Q10',no:10,answer:['training'],explain:`Đoạn 5: ”equal in significance to nutrition or training”. Đáp án: training. `},
+            {id:'Q11',no:11,answer:['intestines','gut'],explain:`Đoạn 7: ”natural gut made from the outer layer of sheep or cow intestines”. Đáp án: intestines hoặc gut. `},
+            {id:'Q12',no:12,answer:['weights'],explain:`Đoạn 9: ”addition of four to five lead weights”. Đáp án: weights. `},
+            {id:'Q13',no:13,answer:['grips'],explain:`Đoạn 10: ”replaced the original grips of his rackets with something thinner”. Đáp án: grips. `},
           ]},
       ]},
 
@@ -327,28 +327,28 @@ const TEST = {
           instruction:'Reading Passage 2 has seven paragraphs, A–G. Which paragraph contains the following information?\nWrite the correct letter, A–G, in the box next to each question. You may use any letter more than once.',
           box:{A:'',B:'',C:'',D:'',E:'',F:'',G:''},
           questions:[
-            {id:'Q14',no:14,q:`a reference to a denial of involvement in piracy`,answer:['D'],explain:`D段：希腊斯岛（塞浦路斯）在 Amarna Letters 中否认与 Lukka 海盗的联系。 D。`},
-            {id:'Q15',no:15,q:`details of how a campaign to eradicate piracy was carried out`,answer:['G'],explain:`G段：波庞将地中海分为 13 个区域逐一清剥的细节。 G。`},
-            {id:'Q16',no:16,q:`a mention of the circumstances in which states in the ancient world would make use of pirates`,answer:['C'],explain:`C段：古代政府在战争期间雇用海盗。 C。`},
-            {id:'Q17',no:17,q:`a reference to how people today commonly view pirates`,answer:['A'],explain:`A段：开头说海盗让人联想到加勒比海的庆萨。 A。`},
-            {id:'Q18',no:18,q:`an explanation of how some people were encouraged not to return to piracy`,answer:['G'],explain:`G段：波庞将投降的海盗安置到远离海洋的肥沃土地上耕作。 G。`},
-            {id:'Q19',no:19,q:`a mention of the need for many sailing vessels to stay relatively close to land`,answer:['B'],explain:`B段：古代船只能沿海岸路线航行，无法远离海岸。 B。`},
+            {id:'Q14',no:14,q:`a reference to a denial of involvement in piracy`,answer:['D'],explain:`D đoạn: Hy Lạp tư đảo (Síp) tại Amarna Letters Vừa phủ nhận và Lukka hải tặc liên hệ. D. `},
+            {id:'Q15',no:15,q:`details of how a campaign to eradicate piracy was carried out`,answer:['G'],explain:`G đoạn: sóng bàng đem Địa Trung Hải chia làm 13 cái khu vực từng cái thanh bóc lột chi tiết. G. `},
+            {id:'Q16',no:16,q:`a mention of the circumstances in which states in the ancient world would make use of pirates`,answer:['C'],explain:`C đoạn: cổ đại chính phủ tại chiến tranh trong lúc thuê mướn hải tặc. C. `},
+            {id:'Q17',no:17,q:`a reference to how people today commonly view pirates`,answer:['A'],explain:`A đoạn: mở đầu nói hải tặc làm cho người ta liên tưởng đến biển Ca-ri-bê khánh tát. A. `},
+            {id:'Q18',no:18,q:`an explanation of how some people were encouraged not to return to piracy`,answer:['G'],explain:`G đoạn: sóng bàng đem đầu hàng hải tặc thu xếp đến rời xa đại dương phì nhiêu trên đất canh tác. G. `},
+            {id:'Q19',no:19,q:`a mention of the need for many sailing vessels to stay relatively close to land`,answer:['B'],explain:`B đoạn: cổ đại đội thuyền có thể vùng duyên hải bờ lộ tuyến vận chuyển, không cách nào rời xa bờ biển. B. `},
           ]},
         { kind:'multi', title:'Questions 20 and 21',
           instruction:'Choose TWO letters, A–E.\nWhich TWO of the following statements does the writer make about inhabitants of the Mediterranean region in the ancient world?',
           box:{A:`They often used stolen vessels to carry out pirate attacks.`,B:`They managed to escape capture by the authorities because they knew the area so well.`,C:`They paid for information about the routes merchant ships would take.`,D:`They depended more on the sea for their livelihood than on farming.`,E:`They stored many of the goods taken in pirate attacks in coves along the coastline.`},
           groupId:'Q20_21', answerSet:['B','D'],
           questions:[
-            {id:'Q20',no:20,explain:`选两项（顺序不限）：B 与 D。 B：熟悉地形逿脱追捕； D：海洋资源比农业更重要。`},
-            {id:'Q21',no:21,explain:`同上，正确两项为 B 与 D。`},
+            {id:'Q20',no:20,explain:` chọn hai hạng (không giới hạn thứ tự): B và D. B: quen thuộc hình vượt cởi đuổi bắt; D: hải dương tài nguyên so với nông nghiệp quan trọng hơn. `},
+            {id:'Q21',no:21,explain:` giống như trên, Đúng hai hạng là B và D. `},
           ]},
         { kind:'multi', title:'Questions 22 and 23',
           instruction:'Choose TWO letters, A–E.\nWhich TWO of the following statements does the writer make about piracy and ancient Greece?',
           box:{A:`The state estimated that very few people were involved in piracy.`,B:`Attitudes towards piracy changed shortly after the Iliad and the Odyssey were written.`,C:`Important officials were known to occasionally take part in piracy.`,D:`Every citizen regarded pirate attacks on cities as unacceptable.`,E:`A favourable view of piracy is evident in certain ancient Greek texts.`},
           groupId:'Q22_23', answerSet:['C','E'],
           questions:[
-            {id:'Q22',no:22,explain:`选两项（顺序不限）：C 与 E。 C：小亚海亚的艾塔（Julius Caesar）等重要官员曾经被捕； E： Homer 的作品美化海盗生活方式。`},
-            {id:'Q23',no:23,explain:`同上，正确两项为 C 与 E。`},
+            {id:'Q22',no:22,explain:` chọn hai hạng (không giới hạn thứ tự): C và E. C: tiểu hơn kém hải hơn kém ngải tháp (Julius Caesar) đợi quan viên trọng yếu đã từng bị bắt; E: Homer tác phẩm điểm tô cho đẹp hải tặc cách sống. `},
+            {id:'Q23',no:23,explain:` giống như trên, Đúng hai hạng là C và E. `},
           ]},
         { kind:'note', title:'Questions 24–26',
           instruction:'Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.',
@@ -357,9 +357,9 @@ const TEST = {
             {plain:true, html:`Piracy was an issue ancient Rome had to deal with, but it also brought some benefits for Rome. For example, pirates supplied slaves that were important for Rome’s industries. However, attacks on vessels transporting <Q n="24"> to Rome resulted in calls for <Q n="25"> for the pirates responsible. Nevertheless, piracy continued, with some pirates demanding a <Q n="26"> for the return of the Roman officials they captured.`},
           ],
           questions:[
-            {id:'Q24',no:24,answer:['grain'],explain:`F段：海盗干扰向罗马运输簮食（grain）的船只。答案：grain。`},
-            {id:'Q25',no:25,answer:['punishment'],explain:`F段：民众非常要求就此惩处（punishment）责任者。答案：punishment。`},
-            {id:'Q26',no:26,answer:['ransom'],explain:`F段：海盗绑架罗马官员索要赎金（a large ransom）。答案：ransom。`},
+            {id:'Q24',no:24,answer:['grain'],explain:`F đoạn: hải tặc quấy nhiễu hướng La Mã vận chuyển trâm ăn (grain) đội thuyền. Đáp án: grain. `},
+            {id:'Q25',no:25,answer:['punishment'],explain:`F đoạn: dân chúng vô cùng yêu cầu như vậy trừng phạt (punishment) trách nhiệm người. Đáp án: punishment. `},
+            {id:'Q26',no:26,answer:['ransom'],explain:`F đoạn: hải tặc bắt cóc La Mã quan viên yêu cầu tiền chuộc (a large ransom). Đáp án: ransom. `},
           ]},
       ]},
 
@@ -383,10 +383,10 @@ const TEST = {
         { kind:'mcq', title:'Questions 27–30',
           instruction:'Choose the correct letter, A, B, C or D.',
           questions:[
-            {id:'Q27',no:27,q:`What point does the writer make about misinformation in the first paragraph?`,options:{A:`Misinformation is a relatively recent phenomenon.`,B:`Some people find it easy to identify misinformation.`,C:`Misinformation changes as it is passed from one person to another.`,D:`There may be a number of reasons for the spread of misinformation.`},answer:['D'],explain:`第1段提到多种因素（当代通信技术、社交媒体等）促进了虚假信息传播。 D。`},
-            {id:'Q28',no:28,q:`What does the writer say about the role of technology?`,options:{A:`It may at some point provide us with a solution to misinformation.`,B:`It could fundamentally alter the way in which people regard information.`,C:`It has changed the way in which organisations use misinformation.`,D:`It has made it easier for people to check whether information is accurate.`},answer:['A'],explain:`第1段：”the remedy to misinformation might, over time, be found in those same patterns of mass communication”——技术或许有朝一日成为解决办法。 A。`},
-            {id:'Q29',no:29,q:`What is the writer doing in the fourth paragraph?`,options:{A:`comparing the different opinions people have of misinformation`,B:`explaining how the effects of misinformation have changed over time`,C:`outlining which issues connected with misinformation are significant today`,D:`describing the attitude of policy makers towards misinformation in the media`},answer:['C'],explain:`第4段（“at least three observations”）列了三条当下需关注的重要问题。 C。`},
-            {id:'Q30',no:30,q:`What point does the writer make about regulation in the USA?`,options:{A:`The guidelines issued by the FDA need to be simplified.`,B:`Regulation does not affect people’s opinions of new prescription drugs.`,C:`The USA has more regulatory bodies than most other countries.`,D:`Regulation fails to prevent misinformation from appearing in the media.`},answer:['D'],explain:`第5段： FDA 等机构主要是事后监测，无法预先阻止虚假信息播出。 D。`},
+            {id:'Q27',no:27,q:`What point does the writer make about misinformation in the first paragraph?`,options:{A:`Misinformation is a relatively recent phenomenon.`,B:`Some people find it easy to identify misinformation.`,C:`Misinformation changes as it is passed from one person to another.`,D:`There may be a number of reasons for the spread of misinformation.`},answer:['D'],explain:`Đoạn 1 nhắc tới nhiều loại nhân tố (đương đại thư từ qua lại kỹ thuật, xã giao truyền thông đợi) chạm vào tin tức giả truyền bá. D. `},
+            {id:'Q28',no:28,q:`What does the writer say about the role of technology?`,options:{A:`It may at some point provide us with a solution to misinformation.`,B:`It could fundamentally alter the way in which people regard information.`,C:`It has changed the way in which organisations use misinformation.`,D:`It has made it easier for people to check whether information is accurate.`},answer:['A'],explain:`Đoạn 1: ”the remedy to misinformation might, over time, be found in those same patterns of mass communication”—— kỹ thuật có lẽ có hướng một ngày trở thành biện pháp giải quyết. A. `},
+            {id:'Q29',no:29,q:`What is the writer doing in the fourth paragraph?`,options:{A:`comparing the different opinions people have of misinformation`,B:`explaining how the effects of misinformation have changed over time`,C:`outlining which issues connected with misinformation are significant today`,D:`describing the attitude of policy makers towards misinformation in the media`},answer:['C'],explain:`Đoạn 4 (“at least three observations”) nhóm ba đầu lập tức cần chú ý vấn đề quan trọng. C. `},
+            {id:'Q30',no:30,q:`What point does the writer make about regulation in the USA?`,options:{A:`The guidelines issued by the FDA need to be simplified.`,B:`Regulation does not affect people’s opinions of new prescription drugs.`,C:`The USA has more regulatory bodies than most other countries.`,D:`Regulation fails to prevent misinformation from appearing in the media.`},answer:['D'],explain:`Đoạn 5: FDA các loại cơ cấu chủ yếu là sau đó giám sát, không cách nào dự đoán ngăn cản tin tức giả truyền ra. D. `},
           ]},
         { kind:'wbank', title:'Questions 31–36',
           instruction:'Complete the summary using the list of phrases, A–J, below. Write the correct letter, A–J, in the boxes.',
@@ -397,59 +397,59 @@ const TEST = {
             {html:`Although people have <Q n="31"> to misinformation, there is debate about precisely how and when we label something as true or untrue. The philosophers Descartes and Spinoza had <Q n="32"> about how people engage with information. While Descartes believed that people accept or reject information after considering whether it is true or not, Spinoza argued that people accepted all information they encountered (and by default misinformation) and did not verify or reject it until afterwards. Moreover, Spinoza believed that a distinct <Q n="33"> is involved in these stages. Recent research has provided <Q n="34"> for Spinoza’s theory and it would appear that people accept all encountered information as if it were true, even if this is for an extremely <Q n="35">, and do not label the information as true or false until later. This is consistent with the fact that the resources for scepticism and the resources for perceiving and encoding are in <Q n="36"> in the brain.`},
           ],
           questions:[
-            {id:'Q31',no:31,answer:['G'],explain:`答案：G（frequent exposure）——“Although people have frequent exposure to misinformation”。`},
-            {id:'Q32',no:32,answer:['J'],explain:`答案：J（different ideas）——“Descartes and Spinoza had different ideas”。`},
-            {id:'Q33',no:33,answer:['H'],explain:`答案：H（mental operation）——“a distinct mental operation is involved”。`},
-            {id:'Q34',no:34,answer:['B'],explain:`答案：B（additional evidence）——“provided additional evidence for Spinoza’s theory”。`},
-            {id:'Q35',no:35,answer:['E'],explain:`答案：E（short period）——“even if this is for an extremely short period”。`},
-            {id:'Q36',no:36,answer:['C'],explain:`答案：C（different locations）——“resources for scepticism... are in different locations in the brain”。`},
+            {id:'Q31',no:31,answer:['G'],explain:` Đáp án: G (frequent exposure) ——“Although people have frequent exposure to misinformation”. `},
+            {id:'Q32',no:32,answer:['J'],explain:` Đáp án: J (different ideas) ——“Descartes and Spinoza had different ideas”. `},
+            {id:'Q33',no:33,answer:['H'],explain:` Đáp án: H (mental operation) ——“a distinct mental operation is involved”. `},
+            {id:'Q34',no:34,answer:['B'],explain:` Đáp án: B (additional evidence) ——“provided additional evidence for Spinoza’s theory”. `},
+            {id:'Q35',no:35,answer:['E'],explain:` Đáp án: E (short period) ——“even if this is for an extremely short period”. `},
+            {id:'Q36',no:36,answer:['C'],explain:` Đáp án: C (different locations) ——“resources for scepticism... are in different locations in the brain”. `},
           ]},
         { kind:'tfng', title:'Questions 37–40',
           variant:'yn',
           instruction:'Do the following statements agree with the claims of the writer in Reading Passage 3?\n\nWrite YES if the statement agrees with the claims of the writer, NO if the statement contradicts the claims of the writer, NOT GIVEN if it is impossible to say what the writer thinks about this.',
           questions:[
-            {id:'Q37',no:37,q:`Campaigns designed to correct misinformation will fail to achieve their purpose if people are unable to understand them.`,answer:['YES'],explain:`第7段：纠正宣传要有说服力，受众必须能理解（comprehend）它们。 YES。`},
-            {id:'Q38',no:38,answer:['NOT GIVEN'],q:`Attempts to teach elementary school students about misinformation have been opposed.`,explain:`文中建议小学阶段开展媒体素养教育，但未说这些尝试遭到反对。 NOT GIVEN。`},
-            {id:'Q39',no:39,answer:['NO'],q:`It may be possible to overcome the problem of misinformation in a relatively short period.`,explain:`末段：需要长期协调努力，而非一次性灵药。与“较短时间内克服”矛盾。 NO。`},
-            {id:'Q40',no:40,answer:['NOT GIVEN'],q:`The need to keep up with new information is hugely exaggerated in today's world.`,explain:`文中未评价“跟上新信息的需求是否被严重夸大”。 NOT GIVEN。`},
+            {id:'Q37',no:37,q:`Campaigns designed to correct misinformation will fail to achieve their purpose if people are unable to understand them.`,answer:['YES'],explain:`Đoạn 7: uốn nắn tuyên truyền phải có sức thuyết phục, được chúng phải có thể hiểu được (comprehend) chúng. YES. `},
+            {id:'Q38',no:38,answer:['NOT GIVEN'],q:`Attempts to teach elementary school students about misinformation have been opposed.`,explain:` văn trung đề nghị tiểu học Giai đoạn khai triển,mở rộng truyền thông rèn luyện hàng ngày Giáo dục, nhưng không những mục này nếm thử lọt vào phản đối. NOT GIVEN. `},
+            {id:'Q39',no:39,answer:['NO'],q:`It may be possible to overcome the problem of misinformation in a relatively short period.`,explain:` mạt đoạn: cần trường kỳ cân đối cố gắng, mà không phải là duy nhất một lần Linh dược. và “ hơi ngắn trong thời gian vượt qua ” mâu thuẫn. NO. `},
+            {id:'Q40',no:40,answer:['NOT GIVEN'],q:`The need to keep up with new information is hugely exaggerated in today's world.`,explain:` văn trung không đánh giá “ đuổi kịp mới tin tức nhu cầu có hay không bị nghiêm trọng khuyếch đại ”. NOT GIVEN. `},
           ]},
       ]},
   ]
 };
 
 
-/* 官方 学术类阅读 原始分(0-40) → 雅思分 对照表 */
+/* chính thức Đọc Học thuật (Academic Reading) nguyên thủy điểm (0-40) → Điểm IELTS so sánh bề ngoài */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[33,7.5],[30,7.0],[27,6.5],[23,6.0],[19,5.5],[15,5.0],[13,4.5],[10,4.0],[8,3.5],[6,3.0],[4,2.5],[0,2.0]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.0; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
+    hai, động cơ
    ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 const totalQs = () => TEST.passages.reduce((n,p)=>n+allQs(p).length,0);
 
-/* 封面信息 */
+/* Trang bìa tin tức */
 (function initCover(){
-  document.getElementById('coverMeta').textContent = `${TEST.passages.length} 篇文章 · 共 ${totalQs()} 题`;
+  document.getElementById('coverMeta').textContent = `${TEST.passages.length} thiên văn chương · tổng ${totalQs()} câu`;
 })();
 
-/* 模式弹窗 */
+/* Hộp thoại chọn chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
-    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id}（${allQs(p).length} 题）</label>`).join('');
+    TEST.passages.map(p=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${p.id}" checked> Passage ${p.id} (${allQs(p).length} câu)</label>`).join('');
   document.getElementById('examList').innerHTML = TEST.passages.map(p=>`<li>• Passage ${p.id}</li>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent=' Bỏ chọn tất cả ';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?' Bỏ chọn tất cả ':' Chọn tất cả '; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一篇文章。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert(' mời ít nhất lựa chọn một thiên văn chương. '); return; } selectedSections=ids; }
   else selectedSections=TEST.passages.map(p=>p.id);
   currentPaper=TEST.passages.filter(p=>selectedSections.includes(p.id));
   closeMode(); submitted=false;
@@ -461,8 +461,8 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思19 · Test 1 — 阅读`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 19 · Test 1 — Đọc `;
+  document.getElementById('testModeTag').textContent= mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử ';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(passageHtml).join('');
 }
 function passageHtml(p){
@@ -476,10 +476,10 @@ function passageHtml(p){
   const qs = `<div class="qcol">${p.groups.map(groupHtml).join('')}</div>`;
   return `<div class="section-banner" id="anchor_${p.id}">
       <div class="sb-top"><span class="sb-title">Passage ${p.id}</span></div>
-      <div class="sb-meta">建议用时约 20 分钟 · 本篇共 ${allQs(p).length} 题</div>
+      <div class="sb-meta"> đề nghị thời gian sử dụng khoảng 20 phút · bổn thiên tổng ${allQs(p).length} câu</div>
     </div><div class="reading-cols">${article}${qs}</div>`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // đem <Q n="x"> giành chỗ thay thế thành đánh số huy hiệu + đưa vào khung
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="Q${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -501,7 +501,7 @@ function groupHtml(g){
     body=`${g.tableTitle?`<div class="note-title">${g.tableTitle}</div>`:''}<table class="note-table">${head}${rows}</table>`;
   }
   else if(g.kind==='tfng'){
-    const opts = g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN'];
+    const opts = g.variant==='yn'? ['YES','NO','NOT GIVEN']: ['TRUE','FALSE','NOT GIVEN'];
     body=g.questions.map(q=>{
       const radios=opts.map(v=>`<label><input type="radio" name="${q.id}" value="${v}"> <span>${v}</span></label>`).join('');
       return `<div class="mcq"><div class="qtext"><span class="qnum-badge">${q.no}</span><span>${q.q}</span></div><div class="tfng-opts">${radios}</div></div>`;
@@ -514,7 +514,7 @@ function groupHtml(g){
     }).join('');
   }
   else if(g.kind==='match'){
-    const box=g.noBox ? '' : `<div class="match-box"><div class="mb-h">${g.boxTitle||''}</div>${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
+    const box=g.noBox? '': `<div class="match-box"><div class="mb-h">${g.boxTitle||''}</div>${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=`<select id="REP"><option value="">—</option>${Object.keys(g.box).map(k=>`<option value="${k}">${k}</option>`).join('')}</select>`;
     const qs=(g.subTitle?`<div style="font-weight:700;margin:6px 0 8px;">${g.subTitle}</div>`:'')+g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel.replace('REP',q.id)}</div>`).join('');
     body=box+qs;
@@ -522,11 +522,11 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（本组合计选出正确的几项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> lựa chọn hạng nhất (bản tổ hợp kế tuyển ra chính xác mấy hạng, không giới hạn thứ tự) </span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='wbank'){
-    // 选词填空：词库 A–H + 文中下拉
+    // chọn từ lấp chỗ trống: từ kho A–H + văn trung hạ kéo
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
@@ -537,19 +537,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* máy tính giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
-      t.classList.toggle('warn',left<=600&&left>120); t.classList.toggle('danger',left<=120);
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert(' đã đến giờ, tự động Nộp bài. '); submitTest(); return; }
+      t.classList.toggle('warn',left<=600&left>120); t.classList.toggle('danger',left<=120);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 批改 */
+/* phê chữa */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -557,17 +557,17 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(` đã đáp lại ${answered}/${total} câu. \n Đồng ý Nộp bài cũng Xem Báo cáo chấm bài không? `)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval);
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* trước xử lý multi Nối thông tin (không giới hạn thứ tự, không tái diễn tỉ số) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
   }));
 
   let correct=0,total=0; const detail=[];
@@ -576,7 +576,7 @@ function submitTest(){
     s.groups.forEach(g=>g.questions.forEach(q=>{
       const ua=readAns(q); let ok;
       if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+      else ok = ua!=='' & [].concat(q.answer).map(norm).includes(norm(ua));
       total++; if(ok){correct++;sc++;}
       items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
     }));
@@ -589,29 +589,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思19 · Test 1 — 阅读';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 19 · Test 1 — Đọc ';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử '} · thời gian sử dụng ${fmt(elapsed)} · thời gian hoàn thành ${new Date().toLocaleString('zh-CN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方学术类阅读 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 3 篇文章时为精确换算。`;
+    ? ' Điểm IELTS theo như chính thức Đọc Học thuật (Academic Reading) 40 câu nguyên thủy điểm so sánh bề ngoài đổi. '
+    : ` lần này chỉ trắc ${total} câu, dự đoán điểm theo như tỉ lệ tương đương đến 40 câu sau sử dụng chính thức so sánh bề ngoài; làm xong cả 3 bài đọc lúc là chính xác đổi. `;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?` Câu trả lời của bạn: <span class="yours">${it.ua}</span> `:`<span class="yours"> Chưa trả lời </span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
+        <div class="ra">${it.ok?'<span class="correctv"> Trả lời chính xác </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Passage ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / đúng ${d.total} câu ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -626,7 +626,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Đồng bộ điểm số (do Trung tâm Học tập tự động tăng thêm, không thay đổi di chuyển nguyên phê chữa ăn khớp) ===== */
 (function(){
   var posted=false;
   function report(){

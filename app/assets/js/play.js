@@ -8,17 +8,17 @@
   function isFreePaper() { return paperId().indexOf("free-") === 0; }
   function setId() {
     var n = Number(qs().get("set"));
-    return n > 0 ? String(n) : "1";
+    return n > 0? String(n): "1";
   }
   function taskIndex() {
     var n = Number(qs().get("task"));
-    return isNaN(n) ? 0 : n;
+    return isNaN(n)? 0: n;
   }
   function taskEnd() {
     var raw = qs().get("end");
     if (raw == null || raw === "") return taskIndex();
     var n = Number(raw);
-    return isNaN(n) ? taskIndex() : n;
+    return isNaN(n)? taskIndex(): n;
   }
   function showLoadError(skill) {
     var box = document.getElementById("load-fail");
@@ -44,7 +44,7 @@
       : "library/toefl/set-" + setId() + "-" + skill + ".json";
     return fetch(url, { cache: "no-store" })
       .then(function (r) {
-        if (!r.ok) throw new Error("题库未加载");
+        if (!r.ok) throw new Error(" Ngân hàng đề không thêm năm ");
         return r.json();
       })
       .catch(function (err) {
@@ -63,20 +63,20 @@
     rec.set = rec.set || paperId() || setId();
     if (w.YYSD_HIT && rec.tasks) {
       rec.tasks.forEach(function (t) {
-        var piece = rec.perTask && rec.perTask[t] ? rec.perTask[t] : rec;
+        var piece = rec.perTask && rec.perTask[t]? rec.perTask[t]: rec;
         w.YYSD_HIT.markDone(skill, t, {
           at: Date.now(),
           set: rec.set,
           score: piece.score,
           total: piece.total,
-          ok: piece.total ? piece.score === piece.total : true
+          ok: piece.total? piece.score === piece.total: true
         });
       });
     }
     saveAttempt(rec);
     var preview = qs().get("preview") === "1";
     var bank = qs().get("bank");
-    if (!isFreePaper() && !(preview && !bank) && w.YYSD_TIKU_RUN && w.YYSD_TIKU_RUN.advance(skill, rec)) return;
+    if (!isFreePaper() &&!(preview &&!bank) && w.YYSD_TIKU_RUN && w.YYSD_TIKU_RUN.advance(skill, rec)) return;
     var next = "review.html?skill=" + encodeURIComponent(skill);
     if (bank) next += "&bank=" + encodeURIComponent(bank);
     if (preview) next += "&preview=1";
@@ -106,25 +106,25 @@
     var msg;
     if (pending > 0) {
       if (skill === "speaking") {
-        msg = "You have " + pending + " missing recording" + (pending > 1 ? "s" : "") + " of " + total +
+        msg = "You have " + pending + " missing recording" + (pending > 1? "s": "") + " of " + total +
           ". Missing recordings are not scored. Submit anyway?";
       } else if (skill === "writing") {
-        msg = "You have " + pending + " task" + (pending > 1 ? "s" : "") + " without a response, of " + total +
+        msg = "You have " + pending + " task" + (pending > 1? "s": "") + " without a response, of " + total +
           ". Those tasks are not scored. Submit anyway?";
       } else {
-        msg = "You have " + pending + " unanswered question" + (pending > 1 ? "s" : "") + " of " + total +
+        msg = "You have " + pending + " unanswered question" + (pending > 1? "s": "") + " of " + total +
           ". Unanswered questions are scored as incorrect. Submit anyway?";
       }
     } else {
       msg = "You have completed all " + total + " " +
-        (skill === "speaking" ? "recordings" : skill === "writing" ? "tasks" : "questions") + ". Submit?";
+        (skill === "speaking"? "recordings": skill === "writing"? "tasks": "questions") + ". Submit?";
     }
     openSubmit(msg, onOk, onCancel);
   }
 
   function labOf(skill) {
     return ["reading", "listening", "writing", "speaking"].indexOf(skill) >= 0
-      ? "practice.html?skill=" + skill : "home.html";
+      ? "practice.html?skill=" + skill: "home.html";
   }
   function isPreview() { return qs().get("preview") === "1"; }
   function tikuHome() {
@@ -151,11 +151,11 @@
       w.location.replace(backHref(skill));
       return;
     }
-    // ponytail: preview is a popup from 题库中心. Close it; don't navigate this
+    // ponytail: preview is a popup from Ngân hàng đề trung tâm. Close it; don't navigate this
     // window to tiku (no preload → gate) or the public site login.
     try { w.close(); } catch (e) {}
     if (w.closed) return;
-    if (w.opener && !w.opener.closed) {
+    if (w.opener &&!w.opener.closed) {
       try { w.opener.focus(); } catch (e2) {}
       try { w.close(); } catch (e3) {}
       if (w.closed) return;

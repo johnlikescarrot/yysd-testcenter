@@ -14,12 +14,12 @@ assert.strictEqual(hs.clampCount(9), null);
 assert.strictEqual(hs.clampCount(10), 10);
 assert.strictEqual(hs.clampCount(200), 200);
 assert.strictEqual(hs.clampCount(201), null);
-assert.strictEqual(hs.formatGroupLabel("2026-01-02", "custom"), "1月2日·自定义");
-assert.strictEqual(hs.formatGroupLabel("2026-01-03", "unit:1"), "1月3日·单元1");
+assert.strictEqual(hs.formatGroupLabel("2026-01-02", "custom"), "ngày 2/1 · từ định nghĩa ");
+assert.strictEqual(hs.formatGroupLabel("2026-01-03", "unit:1"), "ngày 3/1·Bài 1");
 
 var dir = path.join(__dirname, "../library/study/vocab");
 for (var n = 1; n <= 5; n++) {
-  var fp = path.join(dir, "高中单词LIST" + n + ".html");
+  var fp = path.join(dir, " Từ vựng THPT LIST" + n + ".html");
   assert.ok(fs.existsSync(fp), "LIST" + n + " missing");
   var html = fs.readFileSync(fp, "utf8");
   var m = html.match(/(?:const|var|let)\s+wordData\s*=\s*(\[[\s\S]*?\]);/);
@@ -53,7 +53,7 @@ assert.ok(hsHtml.indexOf("vocab-shelf.html") >= 0, "hs-vocab.html redirect");
 
 // lock-batch rule: uncleared active blocks start (logic documented via 409 in server)
 var src = fs.readFileSync(path.join(__dirname, "../server/hs-vocab.js"), "utf8");
-assert.ok(src.indexOf("当前批次尚未通关") >= 0, "lock batch message");
+assert.ok(src.indexOf(" trước mắt phê lần chưa qua cửa ") >= 0, "lock batch message");
 assert.ok(src.indexOf("MIN_BATCH") >= 0 && src.indexOf("MAX_BATCH") >= 0, "count bounds");
 
 // optional live API smoke (uses server/node_modules when present)

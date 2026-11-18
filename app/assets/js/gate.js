@@ -14,12 +14,12 @@
   }
   function tikuHome() {
     var h = (w.location && w.location.hostname) || "";
-    return (h === "localhost" || h === "127.0.0.1") ? "/tiku/" : "https://tiku.youyisida.com/";
+    return (h === "localhost" || h === "127.0.0.1")? "/tiku/": "https://tiku.youyisida.com/";
   }
   function allowed() {
     try { if (new URLSearchParams(w.location.search).get("preview") === "1") return true; } catch (e) {}
-    // app 域名只给桌面端；官网 /app/ 挂载后由 auth.js 管登录态，不再弹回下载页
-    return isDesktop() || isLocal() || !isAppHost();
+    // app vực tên chỉ cấp mặt bàn đầu; Website Games /app/ đeo lên sau do auth.js quản Đăng nhập thái, không hề bắn ra quay về download trang
+    return isDesktop() || isLocal() ||!isAppHost();
   }
   function block() {
     if (allowed()) return true;

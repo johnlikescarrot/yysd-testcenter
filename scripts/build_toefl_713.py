@@ -9,12 +9,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/7月/7.13/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /7 tháng /7.13/audio/item_level"
 AUDIO = "library/toefl/audio/2025-07-13/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-07-13"
 SET = "7.13"
-TITLE = "新托福 7.13"
+TITLE = "TOEFL iBT 13/7"
 
 
 def dump(name, obj):
@@ -179,7 +179,7 @@ def build_reading():
         ("on", "online"),
         " exhibitions, expanding access to knowledge and contributing to the diversity of the cultural landscape.",
     ])
-    if n != 21:
+    if n!= 21:
         raise SystemExit("m1 cw expected next 21, got %s" % n)
     t3, n = cw("Animal Behavior", 2, 36, [
         "In studying animal behavior, it becomes apparent that social hierarchies play a significant role in the lives of many terrestrial mammals. These hierarchies, often established through displays of dominance and submission, dictate access to resources such as food, mates, and ",
@@ -204,9 +204,9 @@ def build_reading():
         ("stab", "stability"),
         ", as roles are clearly defined, reducing the frequency of potentially harmful disputes and promoting cooperation among group members.",
     ])
-    if n != 46:
+    if n!= 46:
         raise SystemExit("m2 cw expected next 46, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc ", [
         {"n": 1, "timeSec": 1260, "from": 1, "to": 35},
         {"n": 2, "timeSec": 540, "from": 36, "to": 50},
     ], [
@@ -700,14 +700,14 @@ def build_listening():
             }, "B"),
         ]),
     ]
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 32},
         {"n": 2, "timeSec": 660, "from": 33, "to": 47},
     ], m1 + m2)
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction"},
         {"n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email"},
         {"n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion"},
@@ -876,7 +876,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 7),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview"},
     ], tasks)

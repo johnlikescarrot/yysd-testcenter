@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build jingting JSON from official Cambridge audioscripts.
-  python scripts/build_jingting_all.py              # convert official transcripts already on disk
+  python scripts/build_jingting_all.py # convert official transcripts already on disk
   python scripts/build_jingting_all.py --extract 16 17 21
   python scripts/build_jingting_all.py --ocr 5
   python scripts/build_jingting_all.py --zh
@@ -21,11 +21,11 @@ AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 OUT_DIR = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
 OCR_DIR = ROOT / "scripts/.ocr_cache"
-PDF_DIR = Path("/Users/frankman/Desktop/剑1-21学术类真题")
+PDF_DIR = Path("/Users/frankman/Desktop/Cambridge 1-21 Học thuật loại thực câu ")
 OCR_BIN = ROOT / "scripts/ocr_page"
 
 sys.path.insert(0, str(ROOT / "scripts"))
-import build_listen_sidecars as side  # noqa: E402
+import build_listen_sidecars as side # noqa: E402
 
 side.AUDIO_DIR = AUDIO_DIR
 side.JINGTING = OUT_DIR
@@ -33,9 +33,9 @@ side.CACHE = CACHE
 side.PDF_DIR = PDF_DIR
 
 PDF_NAMES = {
-    14: "剑桥真题14.pdf",
-    20: "剑20.pdf",
-    21: "剑桥雅思21（A类）.pdf",
+    14: " Đề Cambridge IELTS 14.pdf",
+    20: "Cambridge 20.pdf",
+    21: "Cambridge IELTS 21 (A loại).pdf",
 }
 
 
@@ -44,7 +44,7 @@ def load_env():
 
 
 def pdf_path(vol: int) -> Path:
-    name = PDF_NAMES.get(vol, f"剑桥雅思{vol}.pdf")
+    name = PDF_NAMES.get(vol, f" Cambridge IELTS {vol}.pdf")
     p = PDF_DIR / name
     if not p.exists():
         raise SystemExit(f"missing PDF {p}")
@@ -77,7 +77,7 @@ def extract_script_pages(vol: int) -> str:
             pages.append(t)
     doc.close()
     raw = "\n".join(pages)
-    raw = re.sub(r"更多雅思[^\n]*", "\n", raw)
+    raw = re.sub(r" thêm nữa IELTS [^\n]*", "\n", raw)
     raw = re.sub(r"@IELTS\w+", "\n", raw)
     return raw
 
@@ -190,7 +190,7 @@ def extract_ocr_pages(vol: int, last_n: int = 80) -> str:
             pix.save(str(png))
             text = ocr_image(png)
             cache.write_text(text)
-            print(f"  ocr cam{vol} p{i+1}/{doc.page_count} {len(text)} chars")
+            print(f" ocr cam{vol} p{i+1}/{doc.page_count} {len(text)} chars")
         if not started and len(text) > 200 and (
             re.search(r"audioscripts|tapescripts", text, re.I)
             or re.search(r"(?:^|\n)\s*TEST\s+1\s*\n\s*(?:SECTION|PART)\s+1\b", text)
@@ -207,7 +207,7 @@ def extract_ocr_pages(vol: int, last_n: int = 80) -> str:
             sec_m = re.search(r"(?:^|\n)\s*(?:PART|SECTION)\s+([1-4])\b", text)
             if sec_m:
                 last_sec = int(sec_m.group(1))
-                if last_sec != 2:
+                if last_sec!= 2:
                     filled_gap = False
             elif last_sec == 2 and not filled_gap:
                 text = "SECTION 3\n" + text
@@ -223,7 +223,7 @@ def write_official_transcripts(vol: int, gold: dict[tuple[int, int], str], sourc
     ok = True
     for test in range(1, 5):
         audios = paper_audios(vol, test)
-        if len(audios) != 4:
+        if len(audios)!= 4:
             print("skip audio count", vol, test, audios)
             ok = False
             continue
@@ -232,7 +232,7 @@ def write_official_transcripts(vol: int, gold: dict[tuple[int, int], str], sourc
             sents = side.split_official(gold.get((test, sec), ""))
             words = side.words_from_segments(side.load_segments(audio))
             if not sents:
-                print(f"  cam{vol} t{test}p{sec}: 0 official sents")
+                print(f" cam{vol} t{test}p{sec}: 0 official sents")
                 ok = False
                 aligned = []
             elif words:
@@ -240,7 +240,7 @@ def write_official_transcripts(vol: int, gold: dict[tuple[int, int], str], sourc
                 for s in aligned:
                     s["zh"] = s.get("zh") or ""
             else:
-                print(f"  cam{vol} t{test}p{sec}: no whisper cache")
+                print(f" cam{vol} t{test}p{sec}: no whisper cache")
                 ok = False
                 aligned = [{"text": s, "start": 0.0, "end": 1.0, "zh": ""} for s in sents]
             parts.append({"section": sec, "audio": audio, "sentences": aligned})
@@ -269,7 +269,7 @@ def convert_vol(vol: int) -> int:
                 old_zh = {s["en"]: s.get("zh", "") for s in old.get("sentences") or []}
             obj = {
                 "id": pid,
-                "title": f"剑{vol} Test {test} Part {sec}",
+                "title": f" kiếm {vol} Test {test} Part {sec}",
                 "audioUrl": f"library/mock/cambridge-listening/{part['audio']}",
                 "examHref": f"library/mock/cambridge-listening/cambridge-{vol}-test-{test}.html",
                 "sentences": [],
@@ -310,7 +310,7 @@ def fill_zh(vols: list[int], batch_size: int = 40):
                 for i, zh in zip(idxs, zhs):
                     obj["sentences"][i]["zh"] = zh
                 path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n")
-                print(f"  filled {idxs[0]+1}–{idxs[-1]+1}")
+                print(f" filled {idxs[0]+1}–{idxs[-1]+1}")
                 time.sleep(0.35)
 
 

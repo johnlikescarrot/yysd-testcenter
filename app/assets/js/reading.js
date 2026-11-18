@@ -72,7 +72,7 @@
     var ok = 0;
     var wrong = [];
     items.forEach(function (it) {
-      var ua = answers[it.no] == null ? "" : String(answers[it.no]);
+      var ua = answers[it.no] == null? "": String(answers[it.no]);
       var hit = false;
       var ans = "";
       var stem = "";
@@ -92,7 +92,7 @@
       else {
         wrong.push({
           no: String(it.no),
-          ua: ua || "（未作答）",
+          ua: ua || " (Chưa trả lời) ",
           ans: ans,
           stem: stem,
           explain: explain
@@ -104,14 +104,14 @@
   }
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
   function vocabWord(q) {
     var m = String((q && q.stem) || "").match(/the (?:word|phrase)\s+["“”‘’']([^"“”‘’']+)["“”‘’']/i);
-    return m ? m[1].trim() : "";
+    return m? m[1].trim(): "";
   }
 
   function escapeRe(s) {
@@ -133,14 +133,14 @@
   }
 
   function savedSuffix(part, raw) {
-    var v = String(raw == null ? "" : raw);
+    var v = String(raw == null? "": raw);
     var pre = part.prefix || "";
     if (pre && v.toLowerCase().indexOf(pre.toLowerCase()) === 0) return v.slice(pre.length);
     return v;
   }
 
   function bindLetterNav(host) {
-    if (!host || !host.querySelectorAll) return;
+    if (!host ||!host.querySelectorAll) return;
     host.querySelectorAll(".blank").forEach(function (wrap) {
       var inputs = wrap.querySelectorAll(".blank-ch");
       Array.prototype.forEach.call(inputs, function (inp, i) {
@@ -149,7 +149,7 @@
           if (inp.value && i < inputs.length - 1) inputs[i + 1].focus();
         });
         inp.addEventListener("keydown", function (ev) {
-          if (ev.key === "Backspace" && !inp.value && i > 0) {
+          if (ev.key === "Backspace" &&!inp.value && i > 0) {
             ev.preventDefault();
             inputs[i - 1].value = "";
             inputs[i - 1].focus();
@@ -175,7 +175,7 @@
   function renderBlanks(task, host, saved) {
     host.innerHTML = "";
     (task.passage || []).forEach(function (part) {
-      if (part.t && !part.id) {
+      if (part.t &&!part.id) {
         var text = document.createElement("span");
         text.className = "hl-body";
         text.textContent = part.t;
@@ -190,7 +190,7 @@
       pre.className = "blank-pre";
       pre.textContent = part.prefix || "";
       wrap.appendChild(pre);
-      var got = saved && saved[part.id] != null ? savedSuffix(part, saved[part.id]) : "";
+      var got = saved && saved[part.id]!= null? savedSuffix(part, saved[part.id]): "";
       for (var i = 0; i < n; i++) {
         var inp = document.createElement("input");
         inp.type = "text";
@@ -215,7 +215,7 @@
         out[el.dataset.id] = Array.prototype.map.call(letters, function (i) { return i.value; }).join("");
       } else {
         var inp = el.querySelector("input");
-        out[el.dataset.id] = inp ? inp.value : "";
+        out[el.dataset.id] = inp? inp.value: "";
       }
     });
     return out;
@@ -228,14 +228,14 @@
       mark = '<button type="button" class="insert" data-insert="' + esc(p.insert) +
         '" aria-label="insert ' + esc(p.insert) + '">■ ' + esc(p.insert) + "</button> ";
     }
-    if (!p.t) return mark ? "<p>" + mark + "</p>" : "";
+    if (!p.t) return mark? "<p>" + mark + "</p>": "";
     return "<p>" + mark + hl(p.t, word) + "</p>";
   }
 
   function dailyKind(task) {
     var L = task.layout || {};
     var kind = L.kind || "card";
-    if (kind !== "card") return kind;
+    if (kind!== "card") return kind;
     var hint = String((L.kicker || "") + " " + (task.instruction || "")).toLowerCase();
     if (hint.indexOf("email") >= 0) return "email";
     if (/notice|announcement|flyer|poster|sign|schedule|event/.test(hint)) return "notice";
@@ -284,18 +284,18 @@
   }
 
   function highlightBodies(host) {
-    return host ? host.querySelectorAll(".hl-body") : [];
+    return host? host.querySelectorAll(".hl-body"): [];
   }
 
   function saveHighlights(task, host, store) {
-    if (!store || !host) return;
+    if (!store ||!host) return;
     store[taskKey(task)] = Array.prototype.map.call(highlightBodies(host), function (el) {
       return el.innerHTML;
     });
   }
 
   function restoreHighlights(task, host, store) {
-    if (!store || !host) return;
+    if (!store ||!host) return;
     var saved = store[taskKey(task)];
     if (!saved) return;
     var bodies = highlightBodies(host);
@@ -304,13 +304,13 @@
 
   function applySelectionHighlight(root) {
     var sel = window.getSelection();
-    if (!sel || sel.isCollapsed || !sel.rangeCount) return false;
+    if (!sel || sel.isCollapsed ||!sel.rangeCount) return false;
     var range = sel.getRangeAt(0);
     var node = range.commonAncestorContainer;
     if (node.nodeType === 3) node = node.parentNode;
-    var body = node && node.closest ? node.closest(".hl-body") : null;
-    if (!body || !root.contains(body)) return false;
-    if (!body.contains(range.startContainer) || !body.contains(range.endContainer)) return false;
+    var body = node && node.closest? node.closest(".hl-body"): null;
+    if (!body ||!root.contains(body)) return false;
+    if (!body.contains(range.startContainer) ||!body.contains(range.endContainer)) return false;
     var mark = document.createElement("mark");
     mark.className = "hl";
     try {
@@ -326,7 +326,7 @@
   function isInsertQ(q) {
     if (!q) return false;
     if (q.insert || q.kind === "insert") return true;
-    return /four locations|where would the (?:following )?sentence best fit|could be added/i.test(q.stem || "");
+    return /four locations|where would the (?:following)?sentence best fit|could be added/i.test(q.stem || "");
   }
 
   function insertSentence(task, q) {
@@ -339,7 +339,7 @@
     return "";
   }
 
-  /* 复盘三态（照 wofo.cc）：填对=绿字母；填错=红字母+绿(正确答案)；未填=红虚线段+绿(正确答案) */
+  /* phục bàn tam thể (theo wofo.cc): điền đối với = màu xanh lá mẫu; điền sai = màu đỏ mẫu + lục (Đáp án đúng); Chưa điền = hồng hư tuyến đoạn + lục (Đáp án đúng) */
   function blankReviewHTML(part, raw) {
     var ok = matchBlank(part, raw);
     var got = savedSuffix(part, raw);
@@ -354,13 +354,13 @@
       inner += '<span class="rev-blank-got">' + esc(got) + "</span>";
       inner += '<span class="rev-blank-key">(' + esc(key) + ")</span>";
     }
-    return '<span class="rev-blank ' + (ok ? "is-ok" : "is-bad") + '" id="revb' + part.id + '">' + inner + "</span>";
+    return '<span class="rev-blank ' + (ok? "is-ok": "is-bad") + '" id="revb' + part.id + '">' + inner + "</span>";
   }
 
   function renderBlanksReview(task, host, saved) {
     var html = "";
     (task.passage || []).forEach(function (part) {
-      if (part.t && !part.id) {
+      if (part.t &&!part.id) {
         html += '<span class="hl-body">' + esc(part.t) + "</span>";
         return;
       }
@@ -371,14 +371,14 @@
   }
 
   function markInsertReview(host, q, ua, sentence) {
-    if (!host || !q) return;
+    if (!host ||!q) return;
     var key = String(q.answer || "");
     var mine = String(ua || "");
     host.querySelectorAll(".insert").forEach(function (btn) {
       var k = btn.getAttribute("data-insert") || "";
       btn.disabled = true;
       if (k === key) btn.classList.add("is-key");
-      if (mine && k === mine && mine !== key) btn.classList.add("is-mine");
+      if (mine && k === mine && mine!== key) btn.classList.add("is-mine");
     });
     var keyBtn = key && host.querySelector('.insert[data-insert="' + key + '"]');
     if (keyBtn && sentence) {
@@ -391,7 +391,7 @@
 
   function renderPassage(task, host, showInsert, q) {
     var word = vocabWord(q);
-    if (task.image && !task.layout && !(task.paras || []).length) {
+    if (task.image &&!task.layout &&!(task.paras || []).length) {
       host.innerHTML = '<img class="passage-img" src="' + esc(task.image) + '" alt="">';
       return;
     }
@@ -408,7 +408,7 @@
   function renderOptions(q, host, saved) {
     var keys = Object.keys(q.options || {});
     host.innerHTML = keys.map(function (k) {
-      var checked = saved === k ? " checked" : "";
+      var checked = saved === k? " checked": "";
       return '<label class="opt"><input type="radio" name="q' + q.id + '" value="' +
         esc(k) + '"' + checked + "> <b>" + esc(k) + "</b> " + esc(q.options[k]) + "</label>";
     }).join("");
@@ -438,11 +438,11 @@
     esc: esc
   };
 
-  if (typeof module !== "undefined" && module.exports) {
+  if (typeof module!== "undefined" && module.exports) {
     module.exports = w.YYSD_TOEFL;
   }
 
-  if (typeof require !== "undefined" && require.main === module) {
+  if (typeof require!== "undefined" && require.main === module) {
     var assert = require("assert");
     assert.strictEqual(isInsertQ({ kind: "insert" }), true);
     assert.strictEqual(isInsertQ({ insert: true }), true);
@@ -460,4 +460,4 @@
     assert.ok(emptyHtml.indexOf("rev-blank-empty") >= 0);
     console.log("ok reading-review-helpers");
   }
-})(typeof window !== "undefined" ? window : global);
+})(typeof window!== "undefined"? window: global);

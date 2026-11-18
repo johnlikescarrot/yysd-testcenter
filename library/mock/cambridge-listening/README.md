@@ -1,7 +1,7 @@
-# 模考区 / 剑桥真题
+# Khu thi thử / Đề Cambridge IELTS
 
-**剑桥雅思真题（听力 + 阅读）放这里。**
+** Đề thi Cambridge IELTS (Nghe + Đọc) thả tại đây. **
 
-- 板块：🎯 模考区 (mock) / 科目：剑桥真题 (cambridge)
-- 每套真题是一个 HTML（含听力/阅读、section 选择、自动批改、预估分），连同它的音频 MP3 一起上传到本文件夹。
-- 文件按名称自然排序（剑15 Test 1、Test 2…）。
+- khối: 🎯 Khu thi thử (mock) / kỹ năng: Đề Cambridge IELTS (cambridge)
+- mỗi bộ đề thi thật là một HTML (hàm Nghe / Đọc, section lựa chọn, Chấm điểm tự động, dự đoán điểm), tính cả của nó âm tần MP3 cùng tiến lên rơi vào tay bài này kiện kẹp.
+- văn bản tài liệu theo như tên tự nhiên sắp xếp (Cambridge 15 Test 1, Test 2…).

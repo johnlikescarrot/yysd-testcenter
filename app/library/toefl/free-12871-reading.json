@@ -1,96 +1,96 @@
 {
- "id": "free-12871",
- "title": "Academic Passage #24",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #24",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12871,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-24"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "The Human Microbiome",
-   "instruction": "Read the passage.",
-   "paras": [
-    "The human microbiome consists of trillions of microorganisms living in and on our bodies. These include bacteria, viruses, fungi, and other microbes. They play a pivotal role in functions such as digestion, immunity, and mood regulation. For instance, gut bacteria help break down food and produce essential vitamins.",
-    "Recent studies show that the microbiome can be influenced by diet, lifestyle, and medication. Antibiotics, while effective against harmful bacteria, can disrupt the balance of beneficial microbes. This disruption can lead to health issues like digestive problems and weakened immunity. Researchers are exploring the connection between the microbiome and mental health. Certain gut bacteria produce neurotransmitters affecting brain function. An imbalance in these bacteria may be linked to conditions like depression and anxiety.",
-    "Maintaining a healthy microbiome involves eating a varied diet rich in fiber, reducing stress, and avoiding unnecessary antibiotics. Bacteria that aid digestion, known as robotics and prebiotics, are also beneficial. As understanding of the microbiome grows, it may lead to breakthroughs in treating diseases and improving health."
-   ],
-   "questions": [
+  "id": "free-12871",
+  "title": "Academic Passage #24",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #24",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12871,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-24"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "The word “pivotal” in the passage is closest in meaning to",
-     "options": {
-      "A": "very important",
-      "B": "possible",
-      "C": "combined",
-      "D": "unwelcome"
-     },
-     "answer": "A",
-     "analysis": "正确答案：A 题型： 词汇题 原文定位： “They play a pivotal role in functions such as digestion, immunity, and mood regulation.” 正确答案分析： “pivotal” 意为 “关键的、重要的”，在上下文中，微生物群落在消化、免疫和情绪调节等功能中发挥着核心作用，后文 “肠道细菌帮助分解食物、产生必需维生素” 也进一步印证了其重要性。因此 “very important”（非常重要的）是最接近的含义。 选项分析： (A) very important 非常重要的 —— 正确，与 pivotal 语义一致，符合上下文语境。 (B) possible 可能的 —— 无关，文中未体现 “可能性” 相关含义。 (C) combined 结合的 —— 无关，无法体现微生物群落的核心作用。 (D) unwelcome 不受欢迎的 —— 语义相反，文中强调微生物群落的积极作用。"
-    },
-    {
-     "id": 2,
-     "stem": "What is one way antibiotics can affect humans?",
-     "options": {
-      "A": "They enhance the production of neurotransmitters.",
-      "B": "They can weaken immunity by harming beneficial microbes.",
-      "C": "They can help relieve digestive problems.",
-      "D": "They make it easier to produce essential vitamins."
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 细节题 原文定位： “Antibiotics, while effective against harmful bacteria, can disrupt the balance of beneficial microbes. This disruption can lead to health issues like digestive problems and weakened immunity.” 正确答案分析： 文中明确提到，抗生素虽然能对抗有害细菌，但会破坏有益微生物的平衡，这种破坏会导致免疫力下降等健康问题。选项 B 正是对这一内容的同义转述，因此正确。 选项分析： (A) They enhance the production of neurotransmitters. —— 错误，文中提到 “某些肠道细菌产生神经递质”，与抗生素无关。 (B) They can weaken immunity by harming beneficial microbes. —— 正确，与原文 “破坏有益微生物平衡，导致免疫力下降” 完全对应。 (C) They can help relieve digestive problems. —— 错误，文中明确说抗生素的破坏会导致消化问题，而非缓解。 (D) They make it easier to produce essential vitamins. —— 错误，文中提到 “肠道细菌帮助产生必需维生素”，抗生素会破坏这类细菌，不会促进维生素产生。"
-    },
-    {
-     "id": 3,
-     "stem": "What connection are researchers exploring regarding the microbiome?",
-     "options": {
-      "A": "The link between gut bacteria and immunity",
-      "B": "The role of fungi in mood regulation",
-      "C": "The role of viruses in digestion",
-      "D": "The link between gut bacteria and mental health"
-     },
-     "answer": "D",
-     "analysis": "正确答案：D 题型： 细节题 原文定位： “Researchers are exploring the connection between the microbiome and mental health. Certain gut bacteria produce neurotransmitters affecting brain function. An imbalance in these bacteria may be linked to conditions like depression and anxiety.” 正确答案分析： 文中明确指出，研究人员正在探索微生物群落与心理健康之间的关联，具体说明肠道细菌与抑郁、焦虑等心理问题有关。选项 D 准确概括了这一探索的内容，因此正确。 选项分析： (A) The link between gut bacteria and immunity —— 错误，文中未提及研究人员探索肠道细菌与免疫力的关联，免疫力是微生物群落的基本作用之一。 (B) The role of fungi in mood regulation —— 错误，文中提到微生物群落包括真菌，但未涉及 “真菌在情绪调节中的作用”。 (C) The role of viruses in digestion —— 错误，文中未提及病毒在消化中的作用，也未提及相关研究。 (D) The link between gut bacteria and mental health —— 正确，与原文 “探索微生物群落与心理健康的关联” 完全对应。"
-    },
-    {
-     "id": 4,
-     "stem": "All of the following help to maintain a healthy microbiome EXCEPT",
-     "options": {
-      "A": "eating a varied diet rich in fiber",
-      "B": "lowering stress levels",
-      "C": "avoiding sources of bacteria",
-      "D": "reducing the use of antibiotics"
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 细节题 原文定位： “Maintaining a healthy microbiome involves eating a varied diet rich in fiber, reducing stress, and avoiding unnecessary antibiotics.” 正确答案分析： 文中明确列出了维持健康微生物群落的方法：食用多样化、高纤维的饮食、减轻压力、避免不必要的抗生素。选项 C “避免细菌来源” 未被提及，且微生物群落本身由细菌等微生物组成，避免细菌来源不利于维持其平衡，因此是例外选项。 选项分析： (A) eating a varied diet rich in fiber —— 正确，文中明确提及，是维持健康微生物群落的方法之一。 (B) lowering stress levels —— 正确，“reducing stress” 与 “lowering stress levels” 同义，是文中提到的方法。 (C) avoiding sources of bacteria —— 错误，文中未提及，且与维持微生物群落的理念相悖。 (D) reducing the use of antibiotics —— 正确，“avoiding unnecessary antibiotics” 与 “reducing the use of antibiotics” 语义一致，是文中提到的方法。"
-    },
-    {
-     "id": 5,
-     "stem": "What is the relationship between paragraphs 2 and 3?",
-     "options": {
-      "A": "Paragraph 3 challenges the ideas proposed in paragraph 2.",
-      "B": "Paragraph 3 provides examples of the disruptions mentioned in paragraph 2.",
-      "C": "Paragraph 3 specifies how to achieve a healthy microbiome based on the factors mentioned in paragraph 2.",
-      "D": "Paragraph 3 elaborates on the benefits of antibiotics mentioned in paragraph 2."
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 段落关系题 原文定位（两段核心内容）：Paragraph 2： 提出影响微生物群落的因素（饮食、生活方式、药物），重点说明抗生素会破坏有益微生物平衡，同时提到研究人员探索微生物群落与心理健康的关联。Paragraph 3： 开头明确指出 “维持健康的微生物群落需要怎么做”，具体列出饮食、减压、避免不必要抗生素等方法，这些方法均对应第二段提到的影响因素（饮食、生活方式、药物）。 正确答案分析： 第二段介绍了影响微生物群落的相关因素（包括不利因素），第三段则基于这些因素，具体说明如何维持健康的微生物群落，因此两段关系是 “第三段基于第二段提到的因素，明确维持健康微生物群落的方法”，选项 C 正确。 选项分析： (A) Paragraph 3 challenges the ideas proposed in paragraph 2. —— 错误，第三段并未反驳第二段，而是在第二段的基础上给出解决方案，逻辑一致。 (B) Paragraph 3 provides examples of the disruptions mentioned in paragraph 2. —— 错误，第三段讲的是 “维持健康的方法”，而非 “破坏的例子”。 (C) Paragraph 3 specifies how to achieve a healthy microbiome based on the factors mentioned in paragraph 2. —— 正确，符合两段核心逻辑：介绍影响因素→说明对应维持方法。 (D) Paragraph 3 elaborates on the benefits of antibiotics mentioned in paragraph 2. —— 错误，第二段提到抗生素的负面影响，第三段未阐述其益处，反而建议避免不必要的抗生素。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "The Human Microbiome",
+      "instruction": "Read the passage.",
+      "paras": [
+        "The human microbiome consists of trillions of microorganisms living in and on our bodies. These include bacteria, viruses, fungi, and other microbes. They play a pivotal role in functions such as digestion, immunity, and mood regulation. For instance, gut bacteria help break down food and produce essential vitamins.",
+        "Recent studies show that the microbiome can be influenced by diet, lifestyle, and medication. Antibiotics, while effective against harmful bacteria, can disrupt the balance of beneficial microbes. This disruption can lead to health issues like digestive problems and weakened immunity. Researchers are exploring the connection between the microbiome and mental health. Certain gut bacteria produce neurotransmitters affecting brain function. An imbalance in these bacteria may be linked to conditions like depression and anxiety.",
+        "Maintaining a healthy microbiome involves eating a varied diet rich in fiber, reducing stress, and avoiding unnecessary antibiotics. Bacteria that aid digestion, known as robotics and prebiotics, are also beneficial. As understanding of the microbiome grows, it may lead to breakthroughs in treating diseases and improving health."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "The word “pivotal” in the passage is closest in meaning to",
+          "options": {
+            "A": "very important",
+            "B": "possible",
+            "C": "combined",
+            "D": "unwelcome"
+          },
+          "answer": "A",
+          "analysis": "Đáp án đúng: A dạng bài: Từ vựng câu Bài gốc Dẫn chứng: “They play a pivotal role in functions such as digestion, immunity, and mood regulation.” Đáp án đúng phân tích: “pivotal” ý là “ mấu chốt, trọng yếu ”, ở trên bên dưới Vừa, vi sinh vật quần lạc đang tiêu hóa, miễn dịch và tâm tình điều tiết {các loại:đợi} công năng Vừa phát huy hạch tâm tác dụng, sau văn “ tràng đạo vi khuẩn trợ giúp phân giải Thực phẩm, sinh ra thiết yếu vi-ta-min ” cũng tiến thêm một bước ấn chứng kia tầm quan trọng. bởi vậy “very important” (vô cùng trọng yếu) là gần gũi nhất Nghĩa. Phương án phân tích: (A) very important vô cùng trọng yếu —— Đúng, và pivotal lời nói nghĩa nhất trí, phù hợp cao thấp văn ngữ cảnh. (B) possible có thể —— không quan hệ, văn trung không thể hiện “ khả năng ” tương quan Nghĩa. (C) combined kết hợp —— không quan hệ, không cách nào thể hiện vi sinh vật quần lạc hạch tâm tác dụng. (D) unwelcome không được hoan nghênh —— lời nói nghĩa trái lại, văn trung cường điệu vi sinh vật quần lạc tích cực tác dụng."
+        },
+        {
+          "id": 2,
+          "stem": "What is one way antibiotics can affect humans?",
+          "options": {
+            "A": "They enhance the production of neurotransmitters.",
+            "B": "They can weaken immunity by harming beneficial microbes.",
+            "C": "They can help relieve digestive problems.",
+            "D": "They make it easier to produce essential vitamins."
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: chi tiết câu Bài gốc Dẫn chứng: “Antibiotics, while effective against harmful bacteria, can disrupt the balance of beneficial microbes. This disruption can lead to health issues like digestive problems and weakened immunity.” Đáp án đúng phân tích: văn trung rõ ràng nhắc tới, chất kháng sinh mặc dù có thể đối kháng có hại vi khuẩn, nhưng sẽ phá hư hữu ích vi sinh vật cân bằng, loại này phá hư sẽ dẫn đến sức miễn dịch hạ thấp {các loại:đợi} vấn đề sức khỏe. Phương án B đúng là đối với cái này một nội dung Đồng nghĩa thuật lại, bởi vậy Đúng. Phương án phân tích: (A) They enhance the production of neurotransmitters. —— Sai, văn trung nhắc tới “ có chút tràng đạo vi khuẩn sinh ra thần kinh lần lượt chất ”, và chất kháng sinh không quan hệ. (B) They can weaken immunity by harming beneficial microbes. —— Đúng, và Bài gốc “ phá hư hữu ích vi sinh vật cân bằng, dẫn đến sức miễn dịch hạ thấp ” hoàn toàn đúng ứng với. (C) They can help relieve digestive problems. —— Sai, văn trung rõ ràng nói chất kháng sinh phá hư sẽ dẫn đến tiêu hóa vấn đề, mà không phải là giảm bớt. (D) They make it easier to produce essential vitamins. —— Sai, văn trung nhắc tới “ tràng đạo vi khuẩn trợ giúp sinh ra thiết yếu vi-ta-min ”, chất kháng sinh sẽ phá hư cái này vi khuẩn, sẽ không xúc tiến vi-ta-min sinh ra."
+        },
+        {
+          "id": 3,
+          "stem": "What connection are researchers exploring regarding the microbiome?",
+          "options": {
+            "A": "The link between gut bacteria and immunity",
+            "B": "The role of fungi in mood regulation",
+            "C": "The role of viruses in digestion",
+            "D": "The link between gut bacteria and mental health"
+          },
+          "answer": "D",
+          "analysis": "Đáp án đúng: D dạng bài: chi tiết câu Bài gốc Dẫn chứng: “Researchers are exploring the connection between the microbiome and mental health. Certain gut bacteria produce neurotransmitters affecting brain function. An imbalance in these bacteria may be linked to conditions like depression and anxiety.” Đáp án đúng phân tích: văn trung rõ ràng chỉ ra, nhân viên nghiên cứu đang thăm dò vi sinh vật quần lạc và tâm lý Sức khỏe ở giữa liên quan, cụ thể nói rõ tràng đạo vi khuẩn và hậm hực, lo nghĩ {các loại:đợi} vấn đề tâm lý có quan hệ. Phương án D chuẩn xác khái quát cái này tìm kiếm tác nội dung, bởi vậy Đúng. Phương án phân tích: (A) The link between gut bacteria and immunity —— Sai, văn trung Không được đề cập (Not Given) nhân viên nghiên cứu thăm dò tràng đạo vi khuẩn và sức miễn dịch liên quan, sức miễn dịch là vi sinh vật quần lạc cơ bản tác dụng một trong. (B) The role of fungi in mood regulation —— Sai, văn trung nhắc tới vi sinh vật quần lạc kể cả nấm, nhưng không liên quan đến “ nấm tại tâm tình điều tiết trong đích tác dụng ”. (C) The role of viruses in digestion —— Sai, văn trung Không được đề cập (Not Given) virus đang tiêu hóa trong đích tác dụng, cũng không đề cập tương quan nghiên cứu. (D) The link between gut bacteria and mental health —— Đúng, và Bài gốc “ thăm dò vi sinh vật quần lạc và tâm lý khỏe mạnh liên quan ” hoàn toàn đúng ứng với."
+        },
+        {
+          "id": 4,
+          "stem": "All of the following help to maintain a healthy microbiome EXCEPT",
+          "options": {
+            "A": "eating a varied diet rich in fiber",
+            "B": "lowering stress levels",
+            "C": "avoiding sources of bacteria",
+            "D": "reducing the use of antibiotics"
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: chi tiết câu Bài gốc Dẫn chứng: “Maintaining a healthy microbiome involves eating a varied diet rich in fiber, reducing stress, and avoiding unnecessary antibiotics.” Đáp án đúng phân tích: văn trung rõ ràng nhóm ra duy trì Sức khỏe vi sinh vật quần lạc phương pháp: dùng ăn đa dạng hóa, cao sợi Dinh dưỡng, giảm bớt áp lực, tránh cho không cần thiết chất kháng sinh. Phương án C “ tránh cho vi khuẩn nơi phát ra ” không bị đề cập, mà lại vi sinh vật quần lạc bản thân do vi khuẩn {các loại:đợi} vi sinh vật tạo thành, tránh cho vi khuẩn nơi phát ra bất lợi với duy trì kia cân bằng, bởi thế là ngoại lệ Phương án. Phương án phân tích: (A) eating a varied diet rich in fiber —— Đúng, văn trung rõ ràng đề cập, là duy trì Sức khỏe vi sinh vật quần lạc phương pháp một trong. (B) lowering stress levels —— Đúng, “reducing stress” và “lowering stress levels” Đồng nghĩa, là văn trung nhắc tới phương pháp. (C) avoiding sources of bacteria —— Sai, văn trung Không được đề cập (Not Given), lại cùng duy trì vi sinh vật quần lạc lý niệm trái ngược. (D) reducing the use of antibiotics —— Đúng, “avoiding unnecessary antibiotics” và “reducing the use of antibiotics” lời nói nghĩa nhất trí, là văn trung nhắc tới phương pháp."
+        },
+        {
+          "id": 5,
+          "stem": "What is the relationship between paragraphs 2 and 3?",
+          "options": {
+            "A": "Paragraph 3 challenges the ideas proposed in paragraph 2.",
+            "B": "Paragraph 3 provides examples of the disruptions mentioned in paragraph 2.",
+            "C": "Paragraph 3 specifies how to achieve a healthy microbiome based on the factors mentioned in paragraph 2.",
+            "D": "Paragraph 3 elaborates on the benefits of antibiotics mentioned in paragraph 2."
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: đoạn quan hệ câu Bài gốc Dẫn chứng (hai đoạn trong trung tâm cho): Paragraph 2: đưa ra ảnh hưởng vi sinh vật quần lạc nhân tố (Dinh dưỡng, cách sống, dược vật), trọng điểm nói rõ chất kháng sinh sẽ phá hư hữu ích vi sinh vật cân bằng, đồng thời nhắc tới nhân viên nghiên cứu thăm dò vi sinh vật quần lạc và tâm lý khỏe mạnh liên quan. Paragraph 3: mở đầu rõ ràng chỉ ra “ duy trì khỏe mạnh vi sinh vật quần lạc cần làm như thế nào ”, cụ thể nhóm ra Dinh dưỡng, giảm sức ép, tránh cho không tất yếu chất kháng sinh {các loại:đợi} phương pháp, những phương pháp này đều đối ứng thứ hai đoạn nhắc tới ảnh hưởng nhân tố (Dinh dưỡng, cách sống, dược vật). Đáp án đúng phân tích: thứ hai đoạn giới thiệu ảnh hưởng vi sinh vật quần lạc tương quan nhân tố (kể cả bất lợi nhân tố), thứ ba đoạn tức thì căn cứ vào những yếu tố này, cụ thể nói rõ làm thế nào duy trì khỏe mạnh vi sinh vật quần lạc, bởi vậy hai đoạn quan hệ là “ thứ ba đoạn căn cứ vào thứ hai đoạn nhắc tới nhân tố, rõ ràng duy trì Sức khỏe vi sinh vật quần lạc phương pháp ”, Phương án C Đúng. Phương án phân tích: (A) Paragraph 3 challenges the ideas proposed in paragraph 2. —— Sai, thứ ba đoạn cũng không phản bác thứ hai đoạn, mà là đang thứ hai đoạn trên cơ sở cho ra phương án giải quyết, ăn khớp nhất trí. (B) Paragraph 3 provides examples of the disruptions mentioned in paragraph 2. —— Sai, thứ ba đoạn nói là “ duy trì khỏe mạnh phương pháp ”, mà không phải là “ phá hư ví dụ ”. (C) Paragraph 3 specifies how to achieve a healthy microbiome based on the factors mentioned in paragraph 2. —— Đúng, phù hợp hai đoạn hạch tâm ăn khớp: giới thiệu ảnh hưởng nhân tố → nói rõ đối ứng duy trì phương pháp. (D) Paragraph 3 elaborates on the benefits of antibiotics mentioned in paragraph 2. —— Sai, thứ hai đoạn nhắc tới chất kháng sinh tác dụng phụ, thứ ba đoạn không trình bày kia ích lợi, ngược lại đề nghị tránh cho không cần thiết chất kháng sinh."
+        }
+      ]
+    }
+  ]
 }

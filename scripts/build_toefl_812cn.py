@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.12-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /8 tháng /8.12- Thi trực tiếp /audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-12/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-12"
 SET = "8.12"
-TITLE = "新托福 8.12 国内线下"
+TITLE = "TOEFL iBT 12/8 Thi trực tiếp "
 
 
 def dump(name, obj):
@@ -25,7 +25,7 @@ def dump(name, obj):
 def blank(n, prefix, word):
     if prefix and not word.startswith(prefix) and not word.lower().startswith(prefix.lower()):
         raise SystemExit("prefix %r not in %r" % (prefix, word))
-    return {"id": n, "prefix": prefix, "answer": word[len(prefix) :], "word": word}
+    return {"id": n, "prefix": prefix, "answer": word[len(prefix):], "word": word}
 
 
 def cw(title, module, start, parts):
@@ -253,9 +253,9 @@ def build_reading():
         ("phys", "physical"),
         " properties of these materials varied greatly. For example, the strength and flexibility of antler were important to the way these tools were utilized. Many early bone tools show distinctive signs of wear and polishing, revealing how they were handled over time.",
     ])
-    if n != 51:
+    if n!= 51:
         raise SystemExit("expected next 51 after CW, got %s" % n)
-    return paper("reading", "阅读", [
+    return paper("reading", " Đọc ", [
         {"n": 1, "timeSec": 1440, "from": 1, "to": 55},
         {"n": 2, "timeSec": 480, "from": 56, "to": 65},
     ], [
@@ -394,7 +394,7 @@ def build_reading():
 
 
 def build_listening():
-    return paper("listening", "听力", [
+    return paper("listening", " Nghe ", [
         {"n": 1, "timeSec": 900, "from": 1, "to": 12},
         {"n": 2, "timeSec": 600, "from": 13, "to": 20},
     ], [
@@ -532,7 +532,7 @@ def build_listening():
 
 
 def build_writing():
-    return paper("writing", "写作", [
+    return paper("writing", " Viết ", [
         {"n": 1, "timeSec": 1680, "from": 1, "to": 4, "label": "Email"},
         {"n": 2, "timeSec": 3000, "from": 5, "to": 9, "label": "Academic Discussion"},
     ], [
@@ -645,7 +645,7 @@ def build_speaking():
             "audio": AUDIO + "speaking_take_interview_q%02d.mp3" % (i - 7),
             "sample": sample,
         })
-    return paper("speaking", "口语", [
+    return paper("speaking", " Nói ", [
         {"n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat"},
         {"n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview"},
     ], tasks)

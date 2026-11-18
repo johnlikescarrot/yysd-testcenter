@@ -1,57 +1,57 @@
 {
- "id": "free-13684",
- "title": "Conversation #99",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #99",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13684,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-99"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #99",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/358c5962cc5a45c2a1a5000b3511914f.mp3",
-   "transcript": "Man: Are you going to the technology workshop on Saturday?\nWoman: Yes, I am. I heard they'll be discussing the latest trends in artificial intelligence.\nMan: That sounds fascinating. Do you know what time it starts?\nWoman: It starts at 10 a.m. I plan to arrive early to get a good seat.\nMan: Great, I'll see you there.",
-   "questions": [
+  "id": "free-13684",
+  "title": "Conversation #99",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #99",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13684,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-99"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What event are the speakers discussing?",
-     "options": {
-      "A": "A cooking class",
-      "B": "A music concert",
-      "C": "A technology workshop",
-      "D": "A book signing"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：说话者在讨论什么活动？ 定位原文：Man: Are you going to the technology workshop on Saturday? 选项分析： A. A cooking class 烹饪课。对话中未提及烹饪，所以A选项错误。 B. A music concert 音乐会。对话中未提及音乐，所以B选项错误。 C. A technology workshop 技术研讨会。男士明确提到“technology workshop”，所以C选项正确。 D. A book signing 签售会。对话中未提及书籍或签售，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What topic will be discussed at the workshop?",
-     "options": {
-      "A": "Cloud computing",
-      "B": "Artificial intelligence",
-      "C": "Cyber security",
-      "D": "Mobile app development"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：研讨会上将讨论什么话题？ 定位原文：Woman: I heard they'll be discussing the latest trends in artificial intelligence. 选项分析： A. Cloud computing 云计算。对话中未提及云计算，所以A选项错误。 B. Artificial intelligence 人工智能。女士明确说将讨论人工智能的最新趋势，所以B选项正确。 C. Cyber security 网络安全。对话中未提及网络安全，所以C选项错误。 D. Mobile app development 移动应用开发。对话中未提及应用开发，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #99",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/358c5962cc5a45c2a1a5000b3511914f.mp3",
+      "transcript": "Man: Are you going to the technology workshop on Saturday?\nWoman: Yes, I am. I heard they'll be discussing the latest trends in artificial intelligence.\nMan: That sounds fascinating. Do you know what time it starts?\nWoman: It starts at 10 a.m. I plan to arrive early to get a good seat.\nMan: Great, I'll see you there.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What event are the speakers discussing?",
+          "options": {
+            "A": "A cooking class",
+            "B": "A music concert",
+            "C": "A technology workshop",
+            "D": "A book signing"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: kẻ nói chuyện đang thảo luận gì hoạt động? Dẫn chứng Bài gốc: Man: Are you going to the technology workshop on Saturday? Phương án phân tích: A. A cooking class nấu nướng khóa. trong lúc nói chuyện với nhau Không được đề cập (Not Given) nấu nướng, nên A Phương án Sai. B. A music concert âm nhạc hội. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Âm nhạc, nên B Phương án Sai. C. A technology workshop kỹ thuật nghiên cứu thảo luận hội. nam sĩ rõ ràng nhắc tới “technology workshop”, nên C Phương án Đúng. D. A book signing ký bán sẽ. trong lúc nói chuyện với nhau Không được đề cập (Not Given) sách vở hoặc ký bán, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What topic will be discussed at the workshop?",
+          "options": {
+            "A": "Cloud computing",
+            "B": "Artificial intelligence",
+            "C": "Cyber security",
+            "D": "Mobile app development"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: nghiên cứu thảo luận hội thượng tướng thảo luận nói cái gì câu? Dẫn chứng Bài gốc: Woman: I heard they'll be discussing the latest trends in artificial intelligence. Phương án phân tích: A. Cloud computing vân tính toán. trong lúc nói chuyện với nhau Không được đề cập (Not Given) vân tính toán, nên A Phương án Sai. B. Artificial intelligence trí tuệ nhân tạo. phu nhân rõ ràng nói đem thảo luận trí tuệ nhân tạo mới nhất xu thế, nên B Phương án Đúng. C. Cyber security Internet Security. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Internet Security, nên C Phương án Sai. D. Mobile app development di động hữu ích,thiết thực khai phát. trong lúc nói chuyện với nhau Không được đề cập (Not Given) hữu ích,thiết thực khai phát, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

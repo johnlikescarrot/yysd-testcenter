@@ -1,128 +1,128 @@
 {
   "listNo": 2,
   "band": "high",
-  "title": "单元 2",
+  "title": "Bài 2",
   "published": true,
-  "sourceNote": "Headword order from 四级单词List1-35.xlsx; cards rewritten to gaozhong field standard.",
+  "sourceNote": "Headword order from Từ vựng Đại học List1-35.xlsx; cards rewritten to gaozhong field standard.",
   "words": [
     {
       "id": 1,
       "word": "device",
       "ipa": "/dɪˈvaɪs/",
       "pos": "n.",
-      "meaning": "n. ①装置，设备，器具（a medical / electronic device）；②手段，策略（a rhetorical device）。leave to one's own devices（听任某人自行其是）。派生 devise（设计，想出）。",
-      "phrases": "electronic device（电子设备）, medical device（医疗器械）, a rhetorical device（修辞手法）",
-      "example": "The study tested a new device for monitoring blood pressure at home.（该研究测试了一种可在家监测血压的新装置。）",
+      "meaning": "n. phương sách, phương kế; chước mưu; vật sáng chế ra (để dùng vào mục đích gì); thiết bị, dụng cụ, máy móc",
+      "phrases": "electronic device (thiết bị điện tử), medical device (chữa bệnh khí giới), a rhetorical device (tu từ thủ pháp)",
+      "example": "The study tested a new device for monitoring blood pressure at home. (nên nghiên cứu khảo nghiệm một loại có thể ở nhà giám sát huyết áp trang bị mới đưa.)",
       "acceptCN": [
-        "装置",
-        "设备",
-        "手段"
+        "trang bị",
+        "thiết bị",
+        "thủ đoạn"
       ],
       "collocations": [
         {
           "phrase": "electronic device",
-          "meaning": "电子设备"
+          "meaning": "thiết bị điện tử"
         },
         {
           "phrase": "medical device",
-          "meaning": "医疗器械"
+          "meaning": "chữa bệnh khí giới"
         },
         {
           "phrase": "a rhetorical device",
-          "meaning": "修辞手法"
+          "meaning": "tu từ thủ pháp"
         }
       ],
-      "root": "de-（离开）+ vis（看）→ 想出来的东西 → 装置/策略",
+      "root": "de- (ly khai) + vis (nhìn) → nghĩ ra được thứ đồ vật → trang bị / sách lược",
       "synonyms": [
         "gadget",
         "tool"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "装置",
-        "topic": "科技"
+        "commonUsage": "trang bị",
+        "topic": "Công nghệ"
       },
       "exampleEn": "The study tested a new device for monitoring blood pressure at home.",
-      "exampleZh": "该研究测试了一种可在家监测血压的新装置。",
-      "mnemonic": "de-（离开）+ vis（看）→ 想出来的东西 → 装置/策略",
+      "exampleZh": "nên nghiên cứu khảo nghiệm một loại có thể ở nhà giám sát huyết áp trang bị mới đưa.",
+      "mnemonic": "de- (ly khai) + vis (nhìn) → nghĩ ra được thứ đồ vật → trang bị / sách lược",
       "exampleEN": "The study tested a new device for monitoring blood pressure at home.",
-      "exampleCN": "该研究测试了一种可在家监测血压的新装置。"
+      "exampleCN": "nên nghiên cứu khảo nghiệm một loại có thể ở nhà giám sát huyết áp trang bị mới đưa."
     },
     {
       "id": 2,
       "word": "measure",
       "ipa": "/ˈmeʒə(r)/ · /ˈmeʒər/",
       "pos": "n. / v.",
-      "meaning": "n. ①措施（take measures to do）；②计量单位；③程度（in large measure）。v. ①测量；②衡量。measurement（测量；尺寸）。beyond measure（无可估量）。",
-      "phrases": "take measures（采取措施）, measure the impact（衡量影响）, in large measure（在很大程度上）",
-      "example": "The government has taken measures to reduce traffic in city centres.（政府已采取措施减少市中心的交通流量。）",
+      "meaning": "sự đo, sự đo lường; đơn vị đo lường, cái để đo; (nghĩa bóng) hạn độ, phạm vi, giới hạn, chừng mức",
+      "phrases": "take measures (áp dụng biện pháp), measure the impact (cân nhắc ảnh hưởng), in large measure (tại rất lớn trong trình độ)",
+      "example": "The government has taken measures to reduce traffic in city centres. (chính phủ đã áp dụng biện pháp giảm bớt trung tâm chợ Giao thông lưu lượng.)",
       "acceptCN": [
-        "措施",
-        "测量",
-        "衡量"
+        "biện pháp",
+        "đo đạc",
+        "cân nhắc"
       ],
       "collocations": [
         {
           "phrase": "take measures",
-          "meaning": "采取措施"
+          "meaning": "áp dụng biện pháp"
         },
         {
           "phrase": "measure the impact",
-          "meaning": "衡量影响"
+          "meaning": "cân nhắc ảnh hưởng"
         },
         {
           "phrase": "in large measure",
-          "meaning": "在很大程度上"
+          "meaning": "tại rất lớn trong trình độ"
         }
       ],
-      "root": "mens（测量）同源 → 量出尺寸，也指对策",
+      "root": "mens (đo đạc) đồng nguyên → phạm vi nhỏ, cũng chỉ đối sách",
       "synonyms": [
         "step",
         "assess"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "措施",
-        "topic": "社会"
+        "commonUsage": "biện pháp",
+        "topic": "xã hội"
       },
       "exampleEn": "The government has taken measures to reduce traffic in city centres.",
-      "exampleZh": "政府已采取措施减少市中心的交通流量。",
-      "mnemonic": "mens（测量）同源 → 量出尺寸，也指对策",
+      "exampleZh": "chính phủ đã áp dụng biện pháp giảm bớt trung tâm chợ Giao thông lưu lượng.",
+      "mnemonic": "mens (đo đạc) đồng nguyên → phạm vi nhỏ, cũng chỉ đối sách",
       "exampleEN": "The government has taken measures to reduce traffic in city centres.",
-      "exampleCN": "政府已采取措施减少市中心的交通流量。"
+      "exampleCN": "chính phủ đã áp dụng biện pháp giảm bớt trung tâm chợ Giao thông lưu lượng."
     },
     {
       "id": 3,
       "word": "pressure",
       "ipa": "/ˈpreʃə(r)/ · /ˈpreʃər/",
       "pos": "n.",
-      "meaning": "n. ①压力（work / peer pressure；under pressure）；②压强；③催促。v. 对…施加压力（pressure sb into doing）。press（按；新闻界）。keep up the pressure。",
-      "phrases": "under pressure（在压力下）, peer pressure（同辈压力）, blood pressure（血压）",
-      "example": "Many graduates report high pressure in the first year of employment.（许多毕业生表示，就业第一年压力很大。）",
+      "meaning": "n. sức ép, áp lực ((nghĩa đen) & (nghĩa bóng)), áp suất; sự đè nặng, sự ép buộc, sự thúc bách; cảnh quẩn bách",
+      "phrases": "under pressure (tại dưới áp lực), peer pressure (cùng thế hệ áp lực), blood pressure (huyết áp)",
+      "example": "Many graduates report high pressure in the first year of employment. (rất nhiều tốt nghiệp biểu thị, vào nghề năm thứ nhất áp lực rất lớn.)",
       "acceptCN": [
-        "压力",
-        "压强",
-        "催促"
+        "áp lực",
+        "sức chịu nén",
+        "thúc giục"
       ],
       "collocations": [
         {
           "phrase": "under pressure",
-          "meaning": "在压力下"
+          "meaning": "tại dưới áp lực"
         },
         {
           "phrase": "peer pressure",
-          "meaning": "同辈压力"
+          "meaning": "cùng thế hệ áp lực"
         },
         {
           "phrase": "blood pressure",
-          "meaning": "血压"
+          "meaning": "huyết áp"
         }
       ],
-      "root": "press（压）+ -ure → 压的状态 → 压力",
+      "root": "press (áp) + -ure → đè Trạng thái → áp lực",
       "synonyms": [
         "stress"
       ],
@@ -130,89 +130,89 @@
         "relief"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "压力",
-        "topic": "就业"
+        "commonUsage": "áp lực",
+        "topic": "vào nghề"
       },
       "exampleEn": "Many graduates report high pressure in the first year of employment.",
-      "exampleZh": "许多毕业生表示，就业第一年压力很大。",
-      "mnemonic": "press（压）+ -ure → 压的状态 → 压力",
+      "exampleZh": "rất nhiều tốt nghiệp biểu thị, vào nghề năm thứ nhất áp lực rất lớn.",
+      "mnemonic": "press (áp) + -ure → đè Trạng thái → áp lực",
       "exampleEN": "Many graduates report high pressure in the first year of employment.",
-      "exampleCN": "许多毕业生表示，就业第一年压力很大。"
+      "exampleCN": "rất nhiều tốt nghiệp biểu thị, vào nghề năm thứ nhất áp lực rất lớn."
     },
     {
       "id": 4,
       "word": "compare",
       "ipa": "/kəmˈpeə(r)/ · /kəmˈper/",
       "pos": "v.",
-      "meaning": "v. ①比较（compare A with/to B）；②把…比作（compare A to B）。compared with/to（与…相比）。comparison（比较）；beyond compare（无与伦比）。comparable（可比的）。",
-      "phrases": "compare A with B（把A与B比较）, compared with（与…相比）, in comparison with（与…相比）",
-      "example": "The report compares rural schools with urban schools in terms of funding.（该报告从经费方面比较了农村学校与城市学校。）",
+      "meaning": "v. (+ with) so, đối chiếu; (+ to) so sánh",
+      "phrases": "compare A with B (đem A và B so sánh), compared with (và … so sánh với), in comparison with (và … so sánh với)",
+      "example": "The report compares rural schools with urban schools in terms of funding. (nên báo cáo từ kinh phí phương diện so sánh nông thôn trường học và Đô thị trường học.)",
       "acceptCN": [
-        "比较",
-        "相比",
-        "比作"
+        "so sánh",
+        "so sánh với",
+        "so sánh"
       ],
       "collocations": [
         {
           "phrase": "compare A with B",
-          "meaning": "把A与B比较"
+          "meaning": "đem A và B so sánh"
         },
         {
           "phrase": "compared with",
-          "meaning": "与…相比"
+          "meaning": "và … so sánh với"
         },
         {
           "phrase": "in comparison with",
-          "meaning": "与…相比"
+          "meaning": "và … so sánh với"
         }
       ],
-      "root": "com-（一起）+ par（平等）→ 放在一起看是否相当",
+      "root": "com- (cùng một chỗ) + par (ngang hàng) → đặt chung một chỗ nhìn có hay không tương đối",
       "synonyms": [
         "contrast"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "比较",
-        "topic": "学术"
+        "commonUsage": "so sánh",
+        "topic": "Học thuật"
       },
       "exampleEn": "The report compares rural schools with urban schools in terms of funding.",
-      "exampleZh": "该报告从经费方面比较了农村学校与城市学校。",
-      "mnemonic": "com-（一起）+ par（平等）→ 放在一起看是否相当",
+      "exampleZh": "nên báo cáo từ kinh phí phương diện so sánh nông thôn trường học và Đô thị trường học.",
+      "mnemonic": "com- (cùng một chỗ) + par (ngang hàng) → đặt chung một chỗ nhìn có hay không tương đối",
       "exampleEN": "The report compares rural schools with urban schools in terms of funding.",
-      "exampleCN": "该报告从经费方面比较了农村学校与城市学校。"
+      "exampleCN": "nên báo cáo từ kinh phí phương diện so sánh nông thôn trường học và Đô thị trường học."
     },
     {
       "id": 5,
       "word": "demand",
       "ipa": "/dɪˈmɑːnd/ · /dɪˈmænd/",
       "pos": "n. / v.",
-      "meaning": "n. ①需求（demand for；in demand）；②要求。v. ①要求（demand that / to do）；②需要。supply and demand（供求）。demanding（要求高的）。语气强于 require。",
-      "phrases": "demand for（对…的需求）, in demand（有需求）, meet the demand（满足需求）",
-      "example": "There is a growing demand for graduates with data analysis skills.（对具备数据分析能力的毕业生的需求在增长。）",
+      "meaning": "sự đòi hỏi, sự yêu cầu; nhu cầu; (số nhiều) những sự đòi hỏi cấp bách (đối với thì giờ, túi tiền... của ai)",
+      "phrases": "demand for (đối với … nhu cầu), in demand (có nhu cầu), meet the demand (thỏa mãn nhu cầu)",
+      "example": "There is a growing demand for graduates with data analysis skills. (đối với có đủ số liệu năng lực phân tích người tốt nghiệp nhu cầu đang tăng trưởng.)",
       "acceptCN": [
-        "需求",
-        "要求",
-        "需要"
+        "nhu cầu",
+        "yêu cầu",
+        "cần"
       ],
       "collocations": [
         {
           "phrase": "demand for",
-          "meaning": "对…的需求"
+          "meaning": "đối với … nhu cầu"
         },
         {
           "phrase": "in demand",
-          "meaning": "有需求"
+          "meaning": "có nhu cầu"
         },
         {
           "phrase": "meet the demand",
-          "meaning": "满足需求"
+          "meaning": "thỏa mãn nhu cầu"
         }
       ],
-      "root": "de-（加强）+ mand（命令）→ 强求 → 要求/需求",
+      "root": "de- (tăng cường) + mand (mệnh lệnh) → cưỡng cầu → yêu cầu / nhu cầu",
       "synonyms": [
         "request",
         "need"
@@ -221,133 +221,133 @@
         "supply"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "需求",
-        "topic": "经济"
+        "commonUsage": "nhu cầu",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "There is a growing demand for graduates with data analysis skills.",
-      "exampleZh": "对具备数据分析能力的毕业生的需求在增长。",
-      "mnemonic": "de-（加强）+ mand（命令）→ 强求 → 要求/需求",
+      "exampleZh": "đối với có đủ số liệu năng lực phân tích người tốt nghiệp nhu cầu đang tăng trưởng.",
+      "mnemonic": "de- (tăng cường) + mand (mệnh lệnh) → cưỡng cầu → yêu cầu / nhu cầu",
       "exampleEN": "There is a growing demand for graduates with data analysis skills.",
-      "exampleCN": "对具备数据分析能力的毕业生的需求在增长。"
+      "exampleCN": "đối với có đủ số liệu năng lực phân tích người tốt nghiệp nhu cầu đang tăng trưởng."
     },
     {
       "id": 6,
       "word": "effort",
       "ipa": "/ˈefət/ · /ˈefərt/",
       "pos": "n.",
-      "meaning": "n. ①努力，尽力（make an effort to do）；②费力的事；③努力的结果。effortless（不费力的）。joint / collective effort（共同努力）。in an effort to（为了）。",
-      "phrases": "make an effort（努力）, in an effort to（为了）, joint effort（共同努力）",
-      "example": "The university made a considerable effort to improve student support services.（该大学作出了相当大的努力来改善学生支持服务。）",
+      "meaning": "n. sự cố gắng, sự ráng sức; sự cố thử làm; sự ra tay",
+      "phrases": "make an effort (cố gắng), in an effort to (để), joint effort (cộng đồng cố gắng)",
+      "example": "The university made a considerable effort to improve student support services. (nên đại học làm ra tương đối lớn cố gắng đến cải thiện Học viên hỗ trợ phục vụ.)",
       "acceptCN": [
-        "努力",
-        "尽力"
+        "cố gắng",
+        "hết sức"
       ],
       "collocations": [
         {
           "phrase": "make an effort",
-          "meaning": "努力"
+          "meaning": "cố gắng"
         },
         {
           "phrase": "in an effort to",
-          "meaning": "为了"
+          "meaning": "để"
         },
         {
           "phrase": "joint effort",
-          "meaning": "共同努力"
+          "meaning": "cộng đồng cố gắng"
         }
       ],
-      "root": "ef-（出）+ fort（强）→ 使出力量 → 努力",
+      "root": "ef- (ra) + fort (mạnh mẽ) → sử dụng ra lực lượng → cố gắng",
       "synonyms": [
         "attempt"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "努力",
-        "topic": "校园"
+        "commonUsage": "cố gắng",
+        "topic": "sân trường"
       },
       "exampleEn": "The university made a considerable effort to improve student support services.",
-      "exampleZh": "该大学作出了相当大的努力来改善学生支持服务。",
-      "mnemonic": "ef-（出）+ fort（强）→ 使出力量 → 努力",
+      "exampleZh": "nên đại học làm ra tương đối lớn cố gắng đến cải thiện Học viên hỗ trợ phục vụ.",
+      "mnemonic": "ef- (ra) + fort (mạnh mẽ) → sử dụng ra lực lượng → cố gắng",
       "exampleEN": "The university made a considerable effort to improve student support services.",
-      "exampleCN": "该大学作出了相当大的努力来改善学生支持服务。"
+      "exampleCN": "nên đại học làm ra tương đối lớn cố gắng đến cải thiện Học viên hỗ trợ phục vụ."
     },
     {
       "id": 7,
       "word": "material",
       "ipa": "/məˈtɪəriəl/ · /məˈtɪriəl/",
       "pos": "n. / adj.",
-      "meaning": "n. ①材料，原料；②资料（reading / teaching materials，常用复数）；③衣料。adj. ①物质的；②重要的（material evidence）。materialism（物质主义）。",
-      "phrases": "teaching materials（教材资料）, raw material（原材料）, material evidence（实质性证据）",
-      "example": "The course provides online materials to support independent study.（该课程提供在线资料以支持自主学习。）",
+      "meaning": "chất, tài liệu, nguyên liệu, vật liệu; vải",
+      "phrases": "teaching materials (tài liệu giảng dạy tư liệu), raw material (nguyên vật liệu), material evidence (thực chất tính chứng cứ)",
+      "example": "The course provides online materials to support independent study. (nên chương trình học cung cấp online tư liệu hòng duy trì tự chủ Học tập.)",
       "acceptCN": [
-        "材料",
-        "资料",
-        "物质的"
+        "tài liệu",
+        "tư liệu",
+        "vật chất"
       ],
       "collocations": [
         {
           "phrase": "teaching materials",
-          "meaning": "教材资料"
+          "meaning": "tài liệu giảng dạy tư liệu"
         },
         {
           "phrase": "raw material",
-          "meaning": "原材料"
+          "meaning": "nguyên vật liệu"
         },
         {
           "phrase": "material evidence",
-          "meaning": "实质性证据"
+          "meaning": "thực chất tính chứng cứ"
         }
       ],
-      "root": "mater（物质/母体）+ -ial → 构成事物的材料",
+      "root": "mater (vật chất / mẫu thể) + -ial → cấu thành sự vật tài liệu",
       "synonyms": [
         "stuff",
         "substance"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "材料",
-        "topic": "学术"
+        "commonUsage": "tài liệu",
+        "topic": "Học thuật"
       },
       "exampleEn": "The course provides online materials to support independent study.",
-      "exampleZh": "该课程提供在线资料以支持自主学习。",
-      "mnemonic": "mater（物质/母体）+ -ial → 构成事物的材料",
+      "exampleZh": "nên chương trình học cung cấp online tư liệu hòng duy trì tự chủ Học tập.",
+      "mnemonic": "mater (vật chất / mẫu thể) + -ial → cấu thành sự vật tài liệu",
       "exampleEN": "The course provides online materials to support independent study.",
-      "exampleCN": "该课程提供在线资料以支持自主学习。"
+      "exampleCN": "nên chương trình học cung cấp online tư liệu hòng duy trì tự chủ Học tập."
     },
     {
       "id": 8,
       "word": "professional",
       "ipa": "/prəˈfeʃənl/",
       "pos": "adj. / n.",
-      "meaning": "adj. ①职业的，专业的（professional development）；②内行的。n. 专业人士。profession（职业）；professor 勿混。unprofessional（不专业的）。",
-      "phrases": "professional development（专业发展）, professional skills（专业技能）, a medical professional（医疗专业人员）",
-      "example": "Professional development courses help teachers update their methods.（专业发展课程帮助教师更新教学方法。）",
+      "meaning": "(thuộc) nghề, (thuộc) nghề nghiệp; chuyên nghiệp",
+      "phrases": "professional development (chuyên nghiệp phát triển), professional skills (kỹ năng chuyên nghiệp), a medical professional (chữa bệnh nhân viên chuyên nghiệp)",
+      "example": "Professional development courses help teachers update their methods. (chuyên nghiệp phát triển chương trình học trợ giúp Giáo viên đổi mới dạy học phương pháp.)",
       "acceptCN": [
-        "专业的",
-        "职业的",
-        "专业人士"
+        "chuyên nghiệp",
+        "nghề nghiệp",
+        "nhân sĩ chuyên nghiệp"
       ],
       "collocations": [
         {
           "phrase": "professional development",
-          "meaning": "专业发展"
+          "meaning": "chuyên nghiệp phát triển"
         },
         {
           "phrase": "professional skills",
-          "meaning": "专业技能"
+          "meaning": "kỹ năng chuyên nghiệp"
         },
         {
           "phrase": "a medical professional",
-          "meaning": "医疗专业人员"
+          "meaning": "chữa bệnh nhân viên chuyên nghiệp"
         }
       ],
-      "root": "profess（公开声称）+ -ion/-al → 以某业为志 → 专业的",
+      "root": "profess (công khai công bố) + -ion/-al → dùng một nghiệp là chí → chuyên nghiệp",
       "synonyms": [
         "expert"
       ],
@@ -355,45 +355,45 @@
         "amateur"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "专业的",
-        "topic": "就业"
+        "commonUsage": "chuyên nghiệp",
+        "topic": "vào nghề"
       },
       "exampleEn": "Professional development courses help teachers update their methods.",
-      "exampleZh": "专业发展课程帮助教师更新教学方法。",
-      "mnemonic": "profess（公开声称）+ -ion/-al → 以某业为志 → 专业的",
+      "exampleZh": "chuyên nghiệp phát triển chương trình học trợ giúp Giáo viên đổi mới dạy học phương pháp.",
+      "mnemonic": "profess (công khai công bố) + -ion/-al → dùng một nghiệp là chí → chuyên nghiệp",
       "exampleEN": "Professional development courses help teachers update their methods.",
-      "exampleCN": "专业发展课程帮助教师更新教学方法。"
+      "exampleCN": "chuyên nghiệp phát triển chương trình học trợ giúp Giáo viên đổi mới dạy học phương pháp."
     },
     {
       "id": 9,
       "word": "single",
       "ipa": "/ˈsɪŋɡl/",
       "pos": "adj. / n.",
-      "meaning": "adj. ①单一的，单个的（a single parent；every single）；②单身的；③单人的。n. ①单身者；②单曲。single out（单独挑出）。反义 married / double。",
-      "phrases": "a single parent（单亲）, every single（每一个）, single out（单独挑出）",
-      "example": "Not a single student completed the survey in less than ten minutes.（没有一个学生能在十分钟内完成这份调查。）",
+      "meaning": "đơn, đơn độc, một mình, chỉ một; đơn độc, cô đơn, không vợ, không chồng, ở vậy",
+      "phrases": "a single parent (mồ côi cha), every single (mỗi một), single out (một mình lấy ra)",
+      "example": "Not a single student completed the survey in less than ten minutes. (không có một cái nào Học viên có thể ở trong 10' hoàn thành phần này điều tra.)",
       "acceptCN": [
-        "单一的",
-        "单个的",
-        "单身的"
+        "đơn độc",
+        "một cái",
+        "độc thân"
       ],
       "collocations": [
         {
           "phrase": "a single parent",
-          "meaning": "单亲"
+          "meaning": "mồ côi cha"
         },
         {
           "phrase": "every single",
-          "meaning": "每一个"
+          "meaning": "mỗi một"
         },
         {
           "phrase": "single out",
-          "meaning": "单独挑出"
+          "meaning": "một mình lấy ra"
         }
       ],
-      "root": "sing（一）同源 → 一个的",
+      "root": "sing (một) đồng nguyên → một cái",
       "synonyms": [
         "only",
         "sole"
@@ -403,89 +403,89 @@
         "married"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "单一的",
-        "topic": "社会"
+        "commonUsage": "đơn độc",
+        "topic": "xã hội"
       },
       "exampleEn": "Not a single student completed the survey in less than ten minutes.",
-      "exampleZh": "没有一个学生能在十分钟内完成这份调查。",
-      "mnemonic": "sing（一）同源 → 一个的",
+      "exampleZh": "không có một cái nào Học viên có thể ở trong 10' hoàn thành phần này điều tra.",
+      "mnemonic": "sing (một) đồng nguyên → một cái",
       "exampleEN": "Not a single student completed the survey in less than ten minutes.",
-      "exampleCN": "没有一个学生能在十分钟内完成这份调查。"
+      "exampleCN": "không có một cái nào Học viên có thể ở trong 10' hoàn thành phần này điều tra."
     },
     {
       "id": 10,
       "word": "translation",
       "ipa": "/trænsˈleɪʃn/ · /trænzˈleɪʃn/",
       "pos": "n.",
-      "meaning": "n. ①翻译，译文（a translation of）；②转化。in translation（在译本中）。动词 translate；translator（译者）。lost in translation（在翻译中丢失）。",
-      "phrases": "a translation of（…的译本）, in translation（在译本中）, machine translation（机器翻译）",
-      "example": "Machine translation still makes errors in academic writing.（机器翻译在学术写作中仍会出现错误。）",
+      "meaning": "n. sự dịch; bản (bài) dịch; sự chuyển sang, sự biến thành",
+      "phrases": "a translation of (… bản dịch), in translation (tại bản dịch Vừa), machine translation (phiên dịch bằng máy)",
+      "example": "Machine translation still makes errors in academic writing. (phiên dịch bằng máy đang học thuật Viết Vừa nhưng sẽ xuất hiện Sai.)",
       "acceptCN": [
-        "翻译",
-        "译文",
-        "转化"
+        "phiên dịch",
+        "văn dịch",
+        "chuyển hóa"
       ],
       "collocations": [
         {
           "phrase": "a translation of",
-          "meaning": "…的译本"
+          "meaning": "… bản dịch"
         },
         {
           "phrase": "in translation",
-          "meaning": "在译本中"
+          "meaning": "tại bản dịch Vừa"
         },
         {
           "phrase": "machine translation",
-          "meaning": "机器翻译"
+          "meaning": "phiên dịch bằng máy"
         }
       ],
-      "root": "trans-（跨越）+ lat（拿）→ 从一边拿到另一边 → 翻译",
+      "root": "trans- (vượt qua) + lat (cầm) → từ một bên bắt được bên kia → phiên dịch",
       "synonyms": [
         "version"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "翻译",
-        "topic": "校园"
+        "commonUsage": "phiên dịch",
+        "topic": "sân trường"
       },
       "exampleEn": "Machine translation still makes errors in academic writing.",
-      "exampleZh": "机器翻译在学术写作中仍会出现错误。",
-      "mnemonic": "trans-（跨越）+ lat（拿）→ 从一边拿到另一边 → 翻译",
+      "exampleZh": "phiên dịch bằng máy đang học thuật Viết Vừa nhưng sẽ xuất hiện Sai.",
+      "mnemonic": "trans- (vượt qua) + lat (cầm) → từ một bên bắt được bên kia → phiên dịch",
       "exampleEN": "Machine translation still makes errors in academic writing.",
-      "exampleCN": "机器翻译在学术写作中仍会出现错误。"
+      "exampleCN": "phiên dịch bằng máy đang học thuật Viết Vừa nhưng sẽ xuất hiện Sai."
     },
     {
       "id": 11,
       "word": "encourage",
       "ipa": "/ɪnˈkʌrɪdʒ/ · /ɪnˈkɜːrɪdʒ/",
       "pos": "v.",
-      "meaning": "v. ①鼓励（encourage sb to do）；②促进，助长。encouragement（鼓励）；encouraging（令人鼓舞的）。反义 discourage。",
-      "phrases": "encourage sb to do（鼓励某人做）, encourage participation（鼓励参与）, an encouraging sign（令人鼓舞的迹象）",
-      "example": "Teachers are encouraged to give timely feedback on student essays.（教师被鼓励及时对学生作文给出反馈。）",
+      "meaning": "v. làm can đảm, làm mạnh dạn; khuyến khích, cổ vũ, động viên",
+      "phrases": "encourage sb to do (cổ vũ người nào đó làm), encourage participation (cổ vũ tham dự), an encouraging sign (làm cho người khích lệ dấu hiệu)",
+      "example": "Teachers are encouraged to give timely feedback on student essays. (Giáo viên bị cổ vũ kịp thời đối với Học viên viết văn cho ra phản hồi.)",
       "acceptCN": [
-        "鼓励",
-        "促进",
-        "助长"
+        "cổ vũ",
+        "xúc tiến",
+        "cổ vũ"
       ],
       "collocations": [
         {
           "phrase": "encourage sb to do",
-          "meaning": "鼓励某人做"
+          "meaning": "cổ vũ người nào đó làm"
         },
         {
           "phrase": "encourage participation",
-          "meaning": "鼓励参与"
+          "meaning": "cổ vũ tham dự"
         },
         {
           "phrase": "an encouraging sign",
-          "meaning": "令人鼓舞的迹象"
+          "meaning": "làm cho người khích lệ dấu hiệu"
         }
       ],
-      "root": "en-（使）+ courage（勇气）→ 使有勇气 → 鼓励",
+      "root": "en- (khiến cho) + courage (dũng khí) → khiến cho có dũng khí → cổ vũ",
       "synonyms": [
         "promote",
         "inspire"
@@ -494,89 +494,89 @@
         "discourage"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "鼓励",
-        "topic": "教育"
+        "commonUsage": "cổ vũ",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Teachers are encouraged to give timely feedback on student essays.",
-      "exampleZh": "教师被鼓励及时对学生作文给出反馈。",
-      "mnemonic": "en-（使）+ courage（勇气）→ 使有勇气 → 鼓励",
+      "exampleZh": "Giáo viên bị cổ vũ kịp thời đối với Học viên viết văn cho ra phản hồi.",
+      "mnemonic": "en- (khiến cho) + courage (dũng khí) → khiến cho có dũng khí → cổ vũ",
       "exampleEN": "Teachers are encouraged to give timely feedback on student essays.",
-      "exampleCN": "教师被鼓励及时对学生作文给出反馈。"
+      "exampleCN": "Giáo viên bị cổ vũ kịp thời đối với Học viên viết văn cho ra phản hồi."
     },
     {
       "id": 12,
       "word": "factor",
       "ipa": "/ˈfæktə(r)/ · /ˈfæktər/",
       "pos": "n.",
-      "meaning": "n. ①因素，要素（a key / risk factor）；②系数。factor in（把…考虑进去）。factor into（构成…的因素）。复数 factors。",
-      "phrases": "a key factor（关键因素）, risk factor（风险因素）, factor in（把…考虑进去）",
-      "example": "Sleep quality is a key factor in academic performance.（睡眠质量是影响学业表现的一个关键因素。）",
+      "meaning": "n. nhân tố; người quản lý, người đại diện",
+      "phrases": "a key factor (yếu tố mấu chốt), risk factor (mạo hiểm nhân tố), factor in (đem … cân nhắc đi vào)",
+      "example": "Sleep quality is a key factor in academic performance. (giấc ngủ chất lượng là ảnh hưởng việc học biểu hiện một cái yếu tố mấu chốt.)",
       "acceptCN": [
-        "因素",
-        "要素",
-        "系数"
+        "nhân tố",
+        "yếu tố",
+        "hệ số"
       ],
       "collocations": [
         {
           "phrase": "a key factor",
-          "meaning": "关键因素"
+          "meaning": "yếu tố mấu chốt"
         },
         {
           "phrase": "risk factor",
-          "meaning": "风险因素"
+          "meaning": "mạo hiểm nhân tố"
         },
         {
           "phrase": "factor in",
-          "meaning": "把…考虑进去"
+          "meaning": "đem … cân nhắc đi vào"
         }
       ],
-      "root": "fact（做/制成）+ -or → 起作用的东西 → 因素",
+      "root": "fact (làm / chế thành) + -or → tạo tác dụng thứ đồ vật → nhân tố",
       "synonyms": [
         "element"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "因素",
-        "topic": "学术"
+        "commonUsage": "nhân tố",
+        "topic": "Học thuật"
       },
       "exampleEn": "Sleep quality is a key factor in academic performance.",
-      "exampleZh": "睡眠质量是影响学业表现的一个关键因素。",
-      "mnemonic": "fact（做/制成）+ -or → 起作用的东西 → 因素",
+      "exampleZh": "giấc ngủ chất lượng là ảnh hưởng việc học biểu hiện một cái yếu tố mấu chốt.",
+      "mnemonic": "fact (làm / chế thành) + -or → tạo tác dụng thứ đồ vật → nhân tố",
       "exampleEN": "Sleep quality is a key factor in academic performance.",
-      "exampleCN": "睡眠质量是影响学业表现的一个关键因素。"
+      "exampleCN": "giấc ngủ chất lượng là ảnh hưởng việc học biểu hiện một cái yếu tố mấu chốt."
     },
     {
       "id": 13,
       "word": "mental",
       "ipa": "/ˈmentl/",
       "pos": "adj.",
-      "meaning": "adj. ①精神的，思想的（mental health / illness）；②智力的（mental ability）。mentally。与 physical 相对。mental arithmetic（心算）。",
-      "phrases": "mental health（心理健康）, mental illness（精神疾病）, mental ability（智力）",
-      "example": "Universities have increased support for students' mental health.（大学已加强对学生心理健康的支持。）",
+      "meaning": "adj. (y học) (thuộc) cằm; (thuộc) tâm thần, (thuộc) tinh thần",
+      "phrases": "mental health (tâm lý Sức khỏe), mental illness (tinh thần tật bệnh), mental ability (trí lực)",
+      "example": "Universities have increased support for students' mental health. (đại học đã tăng cường đối với Học viên tâm lý khỏe mạnh hỗ trợ.)",
       "acceptCN": [
-        "精神的",
-        "心理的",
-        "智力的"
+        "tinh thần",
+        "trong lòng",
+        "trí khôn"
       ],
       "collocations": [
         {
           "phrase": "mental health",
-          "meaning": "心理健康"
+          "meaning": "tâm lý Sức khỏe"
         },
         {
           "phrase": "mental illness",
-          "meaning": "精神疾病"
+          "meaning": "tinh thần tật bệnh"
         },
         {
           "phrase": "mental ability",
-          "meaning": "智力"
+          "meaning": "trí lực"
         }
       ],
-      "root": "ment（心智）+ -al → 与心智有关的",
+      "root": "ment (tâm trí) + -al → và tâm trí có liên quan",
       "synonyms": [
         "psychological"
       ],
@@ -584,45 +584,45 @@
         "physical"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "心理的",
-        "topic": "健康"
+        "commonUsage": "trong lòng",
+        "topic": "Sức khỏe"
       },
       "exampleEn": "Universities have increased support for students' mental health.",
-      "exampleZh": "大学已加强对学生心理健康的支持。",
-      "mnemonic": "ment（心智）+ -al → 与心智有关的",
+      "exampleZh": "đại học đã tăng cường đối với Học viên tâm lý khỏe mạnh hỗ trợ.",
+      "mnemonic": "ment (tâm trí) + -al → và tâm trí có liên quan",
       "exampleEN": "Universities have increased support for students' mental health.",
-      "exampleCN": "大学已加强对学生心理健康的支持。"
+      "exampleCN": "đại học đã tăng cường đối với Học viên tâm lý khỏe mạnh hỗ trợ."
     },
     {
       "id": 14,
       "word": "individual",
       "ipa": "/ˌɪndɪˈvɪdʒuəl/",
       "pos": "n. / adj.",
-      "meaning": "adj. ①个人的，个体的（individual differences）；②独特的。n. 个人，个体。individually；individuality（个性）。反义 collective。",
-      "phrases": "individual differences（个体差异）, an individual（一个人）, individual rights（个人权利）",
-      "example": "The programme is designed to meet individual learning needs.（该项目旨在满足个性化的学习需求。）",
+      "meaning": "cá nhân; người; vật riêng lẻ",
+      "phrases": "individual differences (thân thể sai biệt), an individual (một người), individual rights (cá nhân quyền lợi)",
+      "example": "The programme is designed to meet individual learning needs. (nên hạng mục chỉ đang thỏa mãn cá tính hóa nhu cầu học tập.)",
       "acceptCN": [
-        "个人",
-        "个体的",
-        "独特的"
+        "cá nhân",
+        "thân thể",
+        "đặc biệt"
       ],
       "collocations": [
         {
           "phrase": "individual differences",
-          "meaning": "个体差异"
+          "meaning": "thân thể sai biệt"
         },
         {
           "phrase": "an individual",
-          "meaning": "一个人"
+          "meaning": "một người"
         },
         {
           "phrase": "individual rights",
-          "meaning": "个人权利"
+          "meaning": "cá nhân quyền lợi"
         }
       ],
-      "root": "in-（不）+ divid（分割）+ -ual → 不可再分的单位 → 个体",
+      "root": "in- (không) + divid (phân cách) + -ual → không thể lại chia đơn vị → thân thể",
       "synonyms": [
         "personal"
       ],
@@ -630,134 +630,134 @@
         "collective"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "个人",
-        "topic": "教育"
+        "commonUsage": "cá nhân",
+        "topic": "Giáo dục"
       },
       "exampleEn": "The programme is designed to meet individual learning needs.",
-      "exampleZh": "该项目旨在满足个性化的学习需求。",
-      "mnemonic": "in-（不）+ divid（分割）+ -ual → 不可再分的单位 → 个体",
+      "exampleZh": "nên hạng mục chỉ đang thỏa mãn cá tính hóa nhu cầu học tập.",
+      "mnemonic": "in- (không) + divid (phân cách) + -ual → không thể lại chia đơn vị → thân thể",
       "exampleEN": "The programme is designed to meet individual learning needs.",
-      "exampleCN": "该项目旨在满足个性化的学习需求。"
+      "exampleCN": "nên hạng mục chỉ đang thỏa mãn cá tính hóa nhu cầu học tập."
     },
     {
       "id": 15,
       "word": "financial",
       "ipa": "/faɪˈnænʃl/ · /fəˈnænʃl/",
       "pos": "adj.",
-      "meaning": "adj. ①财政的，金融的（financial support / crisis）；②财务的。finance（n. 财政；v. 资助）；financially。financial aid（助学金）。",
-      "phrases": "financial support（资金支持）, financial crisis（金融危机）, financial aid（助学金）",
-      "example": "Financial support remains essential for students from low-income families.（对来自低收入家庭的学生而言，资金支持仍然至关重要。）",
+      "meaning": "adj. (thuộc) tài chính, về tài chính",
+      "phrases": "financial support (tài chính hỗ trợ), financial crisis (khủng hoảng tài chính), financial aid (học bổng)",
+      "example": "Financial support remains essential for students from low-income families. (đối với đến từ thấp thu nhập gia đình Học viên mà nói, tài chính hỗ trợ vẫn đang rất trọng yếu.)",
       "acceptCN": [
-        "财政的",
-        "金融的",
-        "财务的"
+        "tài chính",
+        "kim dung",
+        "tài vụ"
       ],
       "collocations": [
         {
           "phrase": "financial support",
-          "meaning": "资金支持"
+          "meaning": "tài chính hỗ trợ"
         },
         {
           "phrase": "financial crisis",
-          "meaning": "金融危机"
+          "meaning": "khủng hoảng tài chính"
         },
         {
           "phrase": "financial aid",
-          "meaning": "助学金"
+          "meaning": "học bổng"
         }
       ],
-      "root": "finance（财政）+ -ial → 与钱有关的",
+      "root": "finance (tài chính) + -ial → và tiền có liên quan",
       "synonyms": [
         "economic"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "财政的",
-        "topic": "经济"
+        "commonUsage": "tài chính",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "Financial support remains essential for students from low-income families.",
-      "exampleZh": "对来自低收入家庭的学生而言，资金支持仍然至关重要。",
-      "mnemonic": "finance（财政）+ -ial → 与钱有关的",
+      "exampleZh": "đối với đến từ thấp thu nhập gia đình Học viên mà nói, tài chính hỗ trợ vẫn đang rất trọng yếu.",
+      "mnemonic": "finance (tài chính) + -ial → và tiền có liên quan",
       "exampleEN": "Financial support remains essential for students from low-income families.",
-      "exampleCN": "对来自低收入家庭的学生而言，资金支持仍然至关重要。"
+      "exampleCN": "đối với đến từ thấp thu nhập gia đình Học viên mà nói, tài chính hỗ trợ vẫn đang rất trọng yếu."
     },
     {
       "id": 16,
       "word": "involve",
       "ipa": "/ɪnˈvɒlv/ · /ɪnˈvɑːlv/",
       "pos": "v.",
-      "meaning": "v. ①包含，需要（involve doing）；②使参与（involve sb in）；③牵涉。be involved in（参与；卷入）。involvement（参与）。involved（复杂的）。",
-      "phrases": "be involved in（参与；卷入）, involve doing（需要做…）, parental involvement（家长参与）",
-      "example": "The internship involves working with a research team for six weeks.（这次实习需要与一个研究团队共事六周。）",
+      "meaning": "v. gồm, bao hàm; làm cho mắc míu (vào chuyện gì); làm liên luỵ, làm dính líu, làm dính dáng",
+      "phrases": "be involved in (tham dự; cuốn vào), involve doing (cần làm …), parental involvement (gia trưởng tham dự)",
+      "example": "The internship involves working with a research team for six weeks. (thực tập lần này cần cùng một nghiên cứu đoàn đội cộng sự sáu chu.)",
       "acceptCN": [
-        "包含",
-        "涉及",
-        "使参与"
+        "bao hàm",
+        "liên quan đến",
+        "khiến cho tham dự"
       ],
       "collocations": [
         {
           "phrase": "be involved in",
-          "meaning": "参与；卷入"
+          "meaning": "tham dự; cuốn vào"
         },
         {
           "phrase": "involve doing",
-          "meaning": "需要做…"
+          "meaning": "cần làm …"
         },
         {
           "phrase": "parental involvement",
-          "meaning": "家长参与"
+          "meaning": "gia trưởng tham dự"
         }
       ],
-      "root": "in-（入）+ volve（卷）→ 卷进去 → 包含/牵涉",
+      "root": "in- (nhập) + volve (cuốn) → cuốn vào → bao hàm / liên lụy",
       "synonyms": [
         "include",
         "entail"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "涉及",
-        "topic": "学术"
+        "commonUsage": "liên quan đến",
+        "topic": "Học thuật"
       },
       "exampleEn": "The internship involves working with a research team for six weeks.",
-      "exampleZh": "这次实习需要与一个研究团队共事六周。",
-      "mnemonic": "in-（入）+ volve（卷）→ 卷进去 → 包含/牵涉",
+      "exampleZh": "thực tập lần này cần cùng một nghiên cứu đoàn đội cộng sự sáu chu.",
+      "mnemonic": "in- (nhập) + volve (cuốn) → cuốn vào → bao hàm / liên lụy",
       "exampleEN": "The internship involves working with a research team for six weeks.",
-      "exampleCN": "这次实习需要与一个研究团队共事六周。"
+      "exampleCN": "thực tập lần này cần cùng một nghiên cứu đoàn đội cộng sự sáu chu."
     },
     {
       "id": 17,
       "word": "leader",
       "ipa": "/ˈliːdə(r)/ · /ˈliːdər/",
       "pos": "n.",
-      "meaning": "n. ①领导者，领袖（a team / political leader）；②领先者。leadership（领导；领导力）；leading（主要的，领先的）。lead（领导，不规则：led, led）。",
-      "phrases": "team leader（组长）, leadership skills（领导力）, a leading cause（一个主要原因）",
-      "example": "The report examines the role of school leaders in educational reform.（该报告探讨了学校领导者在教育改革中的作用。）",
+      "meaning": "n. lânh tụ, người lânh đạo, người chỉ huy, người hướng dẫn, người chỉ đạo; luật sư chính (trong một vụ kiện)",
+      "phrases": "team leader (tổ trưởng), leadership skills (lãnh đạo lực), a leading cause (một cái nguyên nhân chủ yếu)",
+      "example": "The report examines the role of school leaders in educational reform. (nên báo cáo tham khảo lãnh đạo trường học người đang giáo dục cải cách trong đích tác dụng.)",
       "acceptCN": [
-        "领导者",
-        "领袖",
-        "领先者"
+        "người lãnh đạo",
+        "lĩnh tụ",
+        "vượt lên đầu người"
       ],
       "collocations": [
         {
           "phrase": "team leader",
-          "meaning": "组长"
+          "meaning": "tổ trưởng"
         },
         {
           "phrase": "leadership skills",
-          "meaning": "领导力"
+          "meaning": "lãnh đạo lực"
         },
         {
           "phrase": "a leading cause",
-          "meaning": "一个主要原因"
+          "meaning": "một cái nguyên nhân chủ yếu"
         }
       ],
-      "root": "lead（带领）+ -er → 带领的人",
+      "root": "lead (dẫn đầu) + -er → lãnh đạo người",
       "synonyms": [
         "head",
         "chief"
@@ -766,44 +766,44 @@
         "follower"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "领导者",
-        "topic": "社会"
+        "commonUsage": "người lãnh đạo",
+        "topic": "xã hội"
       },
       "exampleEn": "The report examines the role of school leaders in educational reform.",
-      "exampleZh": "该报告探讨了学校领导者在教育改革中的作用。",
-      "mnemonic": "lead（带领）+ -er → 带领的人",
+      "exampleZh": "nên báo cáo tham khảo lãnh đạo trường học người đang giáo dục cải cách trong đích tác dụng.",
+      "mnemonic": "lead (dẫn đầu) + -er → lãnh đạo người",
       "exampleEN": "The report examines the role of school leaders in educational reform.",
-      "exampleCN": "该报告探讨了学校领导者在教育改革中的作用。"
+      "exampleCN": "nên báo cáo tham khảo lãnh đạo trường học người đang giáo dục cải cách trong đích tác dụng."
     },
     {
       "id": 18,
       "word": "similar",
       "ipa": "/ˈsɪmələ(r)/ · /ˈsɪmələr/",
       "pos": "adj.",
-      "meaning": "adj. 相似的，类似的（similar to，不接 with）。similarly。similarity（相似点）。反义 different / dissimilar。",
-      "phrases": "similar to（与…相似）, a similar pattern（类似的模式）, similarly（同样地）",
-      "example": "The two groups showed similar results after the training programme.（两组在培训项目之后显示出相似的结果。）",
+      "meaning": "adj. giống nhau, như nhau, tương tự; (toán học) đồng dạng",
+      "phrases": "similar to (và … tương tự), a similar pattern (tương tự hình thức), similarly (đồng dạng mà)",
+      "example": "The two groups showed similar results after the training programme. (hai tổ tại huấn luyện hạng mục về sau cho thấy tương tự chính là kết quả.)",
       "acceptCN": [
-        "相似的",
-        "类似的"
+        "tương tự chính là",
+        "tương tự"
       ],
       "collocations": [
         {
           "phrase": "similar to",
-          "meaning": "与…相似"
+          "meaning": "và … tương tự"
         },
         {
           "phrase": "a similar pattern",
-          "meaning": "类似的模式"
+          "meaning": "tương tự hình thức"
         },
         {
           "phrase": "similarly",
-          "meaning": "同样地"
+          "meaning": "đồng dạng mà"
         }
       ],
-      "root": "simil（相同）+ -ar → 相近的",
+      "root": "simil (giống nhau) + -ar → tương cận",
       "synonyms": [
         "alike"
       ],
@@ -811,89 +811,89 @@
         "different"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "相似的",
-        "topic": "学术"
+        "commonUsage": "tương tự chính là",
+        "topic": "Học thuật"
       },
       "exampleEn": "The two groups showed similar results after the training programme.",
-      "exampleZh": "两组在培训项目之后显示出相似的结果。",
-      "mnemonic": "simil（相同）+ -ar → 相近的",
+      "exampleZh": "hai tổ tại huấn luyện hạng mục về sau cho thấy tương tự chính là kết quả.",
+      "mnemonic": "simil (giống nhau) + -ar → tương cận",
       "exampleEN": "The two groups showed similar results after the training programme.",
-      "exampleCN": "两组在培训项目之后显示出相似的结果。"
+      "exampleCN": "hai tổ tại huấn luyện hạng mục về sau cho thấy tương tự chính là kết quả."
     },
     {
       "id": 19,
       "word": "detail",
       "ipa": "/ˈdiːteɪl/ · /dɪˈteɪl/",
       "pos": "n. / v.",
-      "meaning": "n. ①细节，详情（in detail；go into detail）；②细部。v. 详述。detailed（详细的）。a detail of（一处细节）。",
-      "phrases": "in detail（详细地）, go into detail（详谈）, a detailed report（详细报告）",
-      "example": "The article describes the method in detail so that others can repeat it.（文章详细描述了该方法，以便他人能够重复。）",
+      "meaning": "chi tiết, tiểu tiết; điều tỉ mỉ, điều vụn vặt; (kỹ thuật) chi tiết (máy)",
+      "phrases": "in detail (cặn kẽ), go into detail (nói chuyện), a detailed report (kỹ càng báo cáo)",
+      "example": "The article describes the method in detail so that others can repeat it. (văn chương kỹ càng miêu tả nên phương pháp, để người khác có thể lặp lại.)",
       "acceptCN": [
-        "细节",
-        "详情",
-        "详述"
+        "chi tiết",
+        "tình hình cụ thể và tỉ mỉ",
+        "tường thuật"
       ],
       "collocations": [
         {
           "phrase": "in detail",
-          "meaning": "详细地"
+          "meaning": "cặn kẽ"
         },
         {
           "phrase": "go into detail",
-          "meaning": "详谈"
+          "meaning": "nói chuyện"
         },
         {
           "phrase": "a detailed report",
-          "meaning": "详细报告"
+          "meaning": "kỹ càng báo cáo"
         }
       ],
-      "root": "de-（加强）+ tail（切割）→ 切得很细 → 细节",
+      "root": "de- (tăng cường) + tail (thiết cắt) → cắt rất mảnh → chi tiết",
       "synonyms": [
         "particular"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "细节",
-        "topic": "学术"
+        "commonUsage": "chi tiết",
+        "topic": "Học thuật"
       },
       "exampleEn": "The article describes the method in detail so that others can repeat it.",
-      "exampleZh": "文章详细描述了该方法，以便他人能够重复。",
-      "mnemonic": "de-（加强）+ tail（切割）→ 切得很细 → 细节",
+      "exampleZh": "văn chương kỹ càng miêu tả nên phương pháp, để người khác có thể lặp lại.",
+      "mnemonic": "de- (tăng cường) + tail (thiết cắt) → cắt rất mảnh → chi tiết",
       "exampleEN": "The article describes the method in detail so that others can repeat it.",
-      "exampleCN": "文章详细描述了该方法，以便他人能够重复。"
+      "exampleCN": "văn chương kỹ càng miêu tả nên phương pháp, để người khác có thể lặp lại."
     },
     {
       "id": 20,
       "word": "expert",
       "ipa": "/ˈekspɜːt/ · /ˈekspɜːrt/",
       "pos": "n. / adj.",
-      "meaning": "n. 专家（an expert in/on/at）。adj. 熟练的，内行的。expertise（专门知识）。expert opinion（专家意见）。",
-      "phrases": "an expert in（…方面的专家）, expert opinion（专家意见）, expertise（专门知识）",
-      "example": "The panel included experts in public health and education policy.（该小组包括公共卫生与教育政策方面的专家。）",
+      "meaning": "nhà chuyên môn, chuyên gia, chuyên viên; viên giám định",
+      "phrases": "an expert in (… phương diện chuyên gia), expert opinion (chuyên gia ý kiến), expertise (chuyên môn tri thức)",
+      "example": "The panel included experts in public health and education policy. (nên tiểu tổ kể cả vệ sinh công cộng và Giáo dục chính sách phương diện chuyên gia.)",
       "acceptCN": [
-        "专家",
-        "内行的",
-        "熟练的"
+        "chuyên gia",
+        "thành thạo",
+        "thuần thục"
       ],
       "collocations": [
         {
           "phrase": "an expert in",
-          "meaning": "…方面的专家"
+          "meaning": "… phương diện chuyên gia"
         },
         {
           "phrase": "expert opinion",
-          "meaning": "专家意见"
+          "meaning": "chuyên gia ý kiến"
         },
         {
           "phrase": "expertise",
-          "meaning": "专门知识"
+          "meaning": "chuyên môn tri thức"
         }
       ],
-      "root": "ex-（出）+ pert（尝试）→ 经多次尝试而精通",
+      "root": "ex- (ra) + pert (nếm thử) → trải qua nhiều lần nếm thử mà tinh thông",
       "synonyms": [
         "specialist"
       ],
@@ -901,90 +901,90 @@
         "amateur"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "专家",
-        "topic": "学术"
+        "commonUsage": "chuyên gia",
+        "topic": "Học thuật"
       },
       "exampleEn": "The panel included experts in public health and education policy.",
-      "exampleZh": "该小组包括公共卫生与教育政策方面的专家。",
-      "mnemonic": "ex-（出）+ pert（尝试）→ 经多次尝试而精通",
+      "exampleZh": "nên tiểu tổ kể cả vệ sinh công cộng và Giáo dục chính sách phương diện chuyên gia.",
+      "mnemonic": "ex- (ra) + pert (nếm thử) → trải qua nhiều lần nếm thử mà tinh thông",
       "exampleEN": "The panel included experts in public health and education policy.",
-      "exampleCN": "该小组包括公共卫生与教育政策方面的专家。"
+      "exampleCN": "nên tiểu tổ kể cả vệ sinh công cộng và Giáo dục chính sách phương diện chuyên gia."
     },
     {
       "id": 21,
       "word": "stress",
       "ipa": "/stres/",
       "pos": "n. / v.",
-      "meaning": "n. ①精神压力（under stress；work stress）；②强调；③重音。v. ①强调（stress that / the importance of）；②使紧张。stressful。易混：pressure 偏外界压迫，stress 偏身心紧张。",
-      "phrases": "under stress（在压力下）, stress the importance of（强调…的重要性）, work stress（工作压力）",
-      "example": "The authors stress the importance of early intervention.（作者强调早期干预的重要性。）",
+      "meaning": "sự nhấn mạnh; (ngôn ngữ học) trọng âm; âm nhấn",
+      "phrases": "under stress (tại dưới áp lực), stress the importance of (cường điệu … tầm quan trọng), work stress (áp lực công việc)",
+      "example": "The authors stress the importance of early intervention. (tác giả cường điệu lúc đầu can thiệp tầm quan trọng.)",
       "acceptCN": [
-        "压力",
-        "强调",
-        "重音"
+        "áp lực",
+        "cường điệu",
+        "trọng âm"
       ],
       "collocations": [
         {
           "phrase": "under stress",
-          "meaning": "在压力下"
+          "meaning": "tại dưới áp lực"
         },
         {
           "phrase": "stress the importance of",
-          "meaning": "强调…的重要性"
+          "meaning": "cường điệu … tầm quan trọng"
         },
         {
           "phrase": "work stress",
-          "meaning": "工作压力"
+          "meaning": "áp lực công việc"
         }
       ],
-      "root": "原义‘拉紧’，引申为精神上被拉紧",
+      "root": "nguyên nghĩa ‘ kéo căng ’, nghĩa rộng là trên tinh thần bị kéo căng",
       "synonyms": [
         "pressure",
         "emphasise"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "压力",
-        "topic": "健康"
+        "commonUsage": "áp lực",
+        "topic": "Sức khỏe"
       },
       "exampleEn": "The authors stress the importance of early intervention.",
-      "exampleZh": "作者强调早期干预的重要性。",
-      "mnemonic": "原义‘拉紧’，引申为精神上被拉紧",
+      "exampleZh": "tác giả cường điệu lúc đầu can thiệp tầm quan trọng.",
+      "mnemonic": "nguyên nghĩa ‘ kéo căng ’, nghĩa rộng là trên tinh thần bị kéo căng",
       "exampleEN": "The authors stress the importance of early intervention.",
-      "exampleCN": "作者强调早期干预的重要性。"
+      "exampleCN": "tác giả cường điệu lúc đầu can thiệp tầm quan trọng."
     },
     {
       "id": 22,
       "word": "center/centre",
       "ipa": "/ˈsentə(r)/ · /ˈsentər/",
       "pos": "n. / v.",
-      "meaning": "n. ①中心，中央（city centre，英式 centre；美式 center）；②中心机构（a research centre）。v. 集中（centre on/around）。central（中心的）。Excel 词形并存，例句用英式 centre。",
-      "phrases": "city centre（市中心）, research centre（研究中心）, centre on（以…为中心）",
-      "example": "A new research centre has been set up to study air quality.（已设立一个新的研究中心来研究空气质量。）",
+      "meaning": "(từ Mỹ,nghĩa Mỹ) (như) centre",
+      "phrases": "city centre (trung tâm chợ), research centre (trung tâm nghiên cứu), centre on (dùng … làm trung tâm)",
+      "example": "A new research centre has been set up to study air quality. (đã thiết lập một cái mới đích trung tâm nghiên cứu đến nghiên cứu không khí chất lượng.)",
       "acceptCN": [
-        "中心",
-        "中央",
-        "中心机构"
+        "trung tâm",
+        "trung ương",
+        "trung tâm cơ cấu"
       ],
       "collocations": [
         {
           "phrase": "city centre",
-          "meaning": "市中心"
+          "meaning": "trung tâm chợ"
         },
         {
           "phrase": "research centre",
-          "meaning": "研究中心"
+          "meaning": "trung tâm nghiên cứu"
         },
         {
           "phrase": "centre on",
-          "meaning": "以…为中心"
+          "meaning": "dùng … làm trung tâm"
         }
       ],
-      "root": "centr（中心）→ 位于正中的点或机构",
+      "root": "centr (trung tâm) → ở vào chính giữa chút:điểm hoặc cơ cấu",
       "synonyms": [
         "middle",
         "hub"
@@ -993,178 +993,178 @@
         "edge"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "中心",
-        "topic": "学术"
+        "commonUsage": "trung tâm",
+        "topic": "Học thuật"
       },
       "exampleEn": "A new research centre has been set up to study air quality.",
-      "exampleZh": "已设立一个新的研究中心来研究空气质量。",
-      "mnemonic": "centr（中心）→ 位于正中的点或机构",
+      "exampleZh": "đã thiết lập một cái mới đích trung tâm nghiên cứu đến nghiên cứu không khí chất lượng.",
+      "mnemonic": "centr (trung tâm) → ở vào chính giữa chút:điểm hoặc cơ cấu",
       "exampleEN": "A new research centre has been set up to study air quality.",
-      "exampleCN": "已设立一个新的研究中心来研究空气质量。"
+      "exampleCN": "đã thiết lập một cái mới đích trung tâm nghiên cứu đến nghiên cứu không khí chất lượng."
     },
     {
       "id": 23,
       "word": "gender",
       "ipa": "/ˈdʒendə(r)/ · /ˈdʒendər/",
       "pos": "n.",
-      "meaning": "n. ①性别（gender differences / equality）；②（语法）性。gender gap（性别差距）。与 sex 相比，gender 更多指社会文化角色。",
-      "phrases": "gender equality（性别平等）, gender differences（性别差异）, gender gap（性别差距）",
-      "example": "The study found a persistent gender gap in science careers.（该研究发现，科学职业中的性别差距依然存在。）",
+      "meaning": "n. (ngôn ngữ học) giống",
+      "phrases": "gender equality (giới tính ngang hàng), gender differences (giới tính sai biệt), gender gap (giới tính chênh lệch)",
+      "example": "The study found a persistent gender gap in science careers. (nên nghiên cứu Khám phá, khoa học Nghề nghiệp trong đích giới tính chênh lệch vẫn như cũ tồn tại.)",
       "acceptCN": [
-        "性别",
-        "社会性别"
+        "giới tính",
+        "xã hội giới tính"
       ],
       "collocations": [
         {
           "phrase": "gender equality",
-          "meaning": "性别平等"
+          "meaning": "giới tính ngang hàng"
         },
         {
           "phrase": "gender differences",
-          "meaning": "性别差异"
+          "meaning": "giới tính sai biệt"
         },
         {
           "phrase": "gender gap",
-          "meaning": "性别差距"
+          "meaning": "giới tính chênh lệch"
         }
       ],
-      "root": "genus（种类）同源 → 类别 → 性别",
+      "root": "genus (chủng loại) đồng nguyên → thuộc loại → giới tính",
       "synonyms": [
         "sex"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "性别",
-        "topic": "社会"
+        "commonUsage": "giới tính",
+        "topic": "xã hội"
       },
       "exampleEn": "The study found a persistent gender gap in science careers.",
-      "exampleZh": "该研究发现，科学职业中的性别差距依然存在。",
-      "mnemonic": "genus（种类）同源 → 类别 → 性别",
+      "exampleZh": "nên nghiên cứu Khám phá, khoa học Nghề nghiệp trong đích giới tính chênh lệch vẫn như cũ tồn tại.",
+      "mnemonic": "genus (chủng loại) đồng nguyên → thuộc loại → giới tính",
       "exampleEN": "The study found a persistent gender gap in science careers.",
-      "exampleCN": "该研究发现，科学职业中的性别差距依然存在。"
+      "exampleCN": "nên nghiên cứu Khám phá, khoa học Nghề nghiệp trong đích giới tính chênh lệch vẫn như cũ tồn tại."
     },
     {
       "id": 24,
       "word": "medium",
       "ipa": "/ˈmiːdiəm/",
       "pos": "n. / adj.",
-      "meaning": "n. ①媒介，手段（a medium of communication）；②媒体（the media，复数常用）；③中间。adj. 中等的（medium-sized）。medium term（中期）。",
-      "phrases": "the media（媒体）, a medium of（…的媒介）, medium-sized（中等规模的）",
-      "example": "Social media have become an important medium of public debate.（社交媒体已成为公共讨论的重要媒介。）",
+      "meaning": "người trung gian, vật môi giới; trung dung, sự chiết trung",
+      "phrases": "the media (truyền thông), a medium of (… môi giới), medium-sized (trung đẳng kích thước)",
+      "example": "Social media have become an important medium of public debate. (xã giao truyền thông đã trở thành công cộng thảo luận trọng yếu môi giới.)",
       "acceptCN": [
-        "媒介",
-        "媒体",
-        "中等的"
+        "môi giới",
+        "truyền thông",
+        "trung đẳng"
       ],
       "collocations": [
         {
           "phrase": "the media",
-          "meaning": "媒体"
+          "meaning": "truyền thông"
         },
         {
           "phrase": "a medium of",
-          "meaning": "…的媒介"
+          "meaning": "… môi giới"
         },
         {
           "phrase": "medium-sized",
-          "meaning": "中等规模的"
+          "meaning": "trung đẳng kích thước"
         }
       ],
-      "root": "med（中间）+ -ium → 处于中间的渠道",
+      "root": "med (chính giữa) + -ium → ở vào trung gian con đường",
       "synonyms": [
         "means",
         "channel"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "媒介",
-        "topic": "社会"
+        "commonUsage": "môi giới",
+        "topic": "xã hội"
       },
       "exampleEn": "Social media have become an important medium of public debate.",
-      "exampleZh": "社交媒体已成为公共讨论的重要媒介。",
-      "mnemonic": "med（中间）+ -ium → 处于中间的渠道",
+      "exampleZh": "xã giao truyền thông đã trở thành công cộng thảo luận trọng yếu môi giới.",
+      "mnemonic": "med (chính giữa) + -ium → ở vào trung gian con đường",
       "exampleEN": "Social media have become an important medium of public debate.",
-      "exampleCN": "社交媒体已成为公共讨论的重要媒介。"
+      "exampleCN": "xã giao truyền thông đã trở thành công cộng thảo luận trọng yếu môi giới."
     },
     {
       "id": 25,
       "word": "rate",
       "ipa": "/reɪt/",
       "pos": "n. / v.",
-      "meaning": "n. ①比率，速率（growth / unemployment rate）；②费用，价格；③等级。v. 评价，列为（rate as）。at a rate of。the rate at which…。",
-      "phrases": "unemployment rate（失业率）, at a rate of（以…的速度）, growth rate（增长率）",
-      "example": "The unemployment rate remained high among recent graduates.（应届毕业生中的失业率仍然很高。）",
+      "meaning": "tỷ lệ; tốc độ",
+      "phrases": "unemployment rate (thất nghiệp dẫn đầu), at a rate of (dùng … tốc độ), growth rate (tăng trưởng dẫn đầu)",
+      "example": "The unemployment rate remained high among recent graduates. (người tốt nghiệp khóa này trong đích thất nghiệp dẫn đầu vẫn đang rất cao.)",
       "acceptCN": [
-        "比率",
-        "速率",
-        "评价"
+        "phần trăm",
+        "tốc độ",
+        "đánh giá"
       ],
       "collocations": [
         {
           "phrase": "unemployment rate",
-          "meaning": "失业率"
+          "meaning": "thất nghiệp dẫn đầu"
         },
         {
           "phrase": "at a rate of",
-          "meaning": "以…的速度"
+          "meaning": "dùng … tốc độ"
         },
         {
           "phrase": "growth rate",
-          "meaning": "增长率"
+          "meaning": "tăng trưởng dẫn đầu"
         }
       ],
-      "root": "rat（计算）+ -e → 算出的比例",
+      "root": "rat (tính toán) + -e → tính ra tỉ lệ",
       "synonyms": [
         "ratio",
         "speed"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "比率",
-        "topic": "经济"
+        "commonUsage": "phần trăm",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "The unemployment rate remained high among recent graduates.",
-      "exampleZh": "应届毕业生中的失业率仍然很高。",
-      "mnemonic": "rat（计算）+ -e → 算出的比例",
+      "exampleZh": "người tốt nghiệp khóa này trong đích thất nghiệp dẫn đầu vẫn đang rất cao.",
+      "mnemonic": "rat (tính toán) + -e → tính ra tỉ lệ",
       "exampleEN": "The unemployment rate remained high among recent graduates.",
-      "exampleCN": "应届毕业生中的失业率仍然很高。"
+      "exampleCN": "người tốt nghiệp khóa này trong đích thất nghiệp dẫn đầu vẫn đang rất cao."
     },
     {
       "id": 26,
       "word": "available",
       "ipa": "/əˈveɪləbl/",
       "pos": "adj.",
-      "meaning": "adj. ①可获得的，可用的（available to/for）；②有空的。availability（可获得性）。make sth available。反义 unavailable。",
-      "phrases": "available to（可供…使用）, make available（提供）, availability（可获得性）",
-      "example": "Scholarships are available to students from rural areas.（奖学金可供农村地区的学生申请。）",
+      "meaning": "adj. sẵn có để dùng, sẵn sàng để dùng, có thể dùng được; có thể kiếm được, có thể mua được",
+      "phrases": "available to (có thể cung cấp … sử dụng), make available (cung cấp), availability (có thể được tính)",
+      "example": "Scholarships are available to students from rural areas. (học bổng có thể cung cấp nông thôn địa khu Học viên thân thỉnh.)",
       "acceptCN": [
-        "可获得的",
-        "可用的",
-        "有空的"
+        "có thể được",
+        "có thể dùng",
+        "có rảnh"
       ],
       "collocations": [
         {
           "phrase": "available to",
-          "meaning": "可供…使用"
+          "meaning": "có thể cung cấp … sử dụng"
         },
         {
           "phrase": "make available",
-          "meaning": "提供"
+          "meaning": "cung cấp"
         },
         {
           "phrase": "availability",
-          "meaning": "可获得性"
+          "meaning": "có thể được tính"
         }
       ],
-      "root": "a-（向）+ vail（价值/益处）→ 拿得到好处的 → 可获得的",
+      "root": "a- (hướng) + vail (giá trị / ích lợi) → lấy được đúng lúc → có thể được",
       "synonyms": [
         "accessible"
       ],
@@ -1172,45 +1172,45 @@
         "unavailable"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "可获得的",
-        "topic": "教育"
+        "commonUsage": "có thể được",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Scholarships are available to students from rural areas.",
-      "exampleZh": "奖学金可供农村地区的学生申请。",
-      "mnemonic": "a-（向）+ vail（价值/益处）→ 拿得到好处的 → 可获得的",
+      "exampleZh": "học bổng có thể cung cấp nông thôn địa khu Học viên thân thỉnh.",
+      "mnemonic": "a- (hướng) + vail (giá trị / ích lợi) → lấy được đúng lúc → có thể được",
       "exampleEN": "Scholarships are available to students from rural areas.",
-      "exampleCN": "奖学金可供农村地区的学生申请。"
+      "exampleCN": "học bổng có thể cung cấp nông thôn địa khu Học viên thân thỉnh."
     },
     {
       "id": 27,
       "word": "unite",
       "ipa": "/juˈnaɪt/",
       "pos": "v.",
-      "meaning": "v. ①联合，团结（unite to do / against）；②统一。united（联合的，团结的）；union（联盟；工会）；unity（团结，统一）。the United Kingdom。",
-      "phrases": "unite to（联合起来做）, united effort（共同努力）, political union（政治联盟）",
-      "example": "European countries united to address the energy shortage.（欧洲国家联合起来应对能源短缺。）",
+      "meaning": "v. nối, hợp làm một, hợp nhất, kết lại; liên kết, liên hiệp, đoàn kết",
+      "phrases": "unite to (liên hợp lại làm), united effort (cộng đồng cố gắng), political union (chính trị liên minh)",
+      "example": "European countries united to address the energy shortage. (Châu Âu quốc gia liên hợp lại ứng đối nguồn năng lượng thiếu.)",
       "acceptCN": [
-        "联合",
-        "团结",
-        "统一"
+        "liên hợp",
+        "đoàn kết",
+        "thống nhất"
       ],
       "collocations": [
         {
           "phrase": "unite to",
-          "meaning": "联合起来做"
+          "meaning": "liên hợp lại làm"
         },
         {
           "phrase": "united effort",
-          "meaning": "共同努力"
+          "meaning": "cộng đồng cố gắng"
         },
         {
           "phrase": "political union",
-          "meaning": "政治联盟"
+          "meaning": "chính trị liên minh"
         }
       ],
-      "root": "uni-（一）+ -ite → 使成为一体",
+      "root": "uni- (một) + -ite → khiến cho trở thành một thể",
       "synonyms": [
         "join",
         "combine"
@@ -1219,45 +1219,45 @@
         "divide"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "联合",
-        "topic": "社会"
+        "commonUsage": "liên hợp",
+        "topic": "xã hội"
       },
       "exampleEn": "European countries united to address the energy shortage.",
-      "exampleZh": "欧洲国家联合起来应对能源短缺。",
-      "mnemonic": "uni-（一）+ -ite → 使成为一体",
+      "exampleZh": "Châu Âu quốc gia liên hợp lại ứng đối nguồn năng lượng thiếu.",
+      "mnemonic": "uni- (một) + -ite → khiến cho trở thành một thể",
       "exampleEN": "European countries united to address the energy shortage.",
-      "exampleCN": "欧洲国家联合起来应对能源短缺。"
+      "exampleCN": "Châu Âu quốc gia liên hợp lại ứng đối nguồn năng lượng thiếu."
     },
     {
       "id": 28,
       "word": "attack",
       "ipa": "/əˈtæk/",
       "pos": "n. / v.",
-      "meaning": "n. ①攻击，袭击（an attack on）；②抨击；③（疾病）发作（a heart attack）。v. 攻击，抨击。under attack。attacker。",
-      "phrases": "an attack on（对…的攻击/抨击）, heart attack（心脏病发作）, under attack（受到攻击）",
-      "example": "The policy came under attack from several education experts.（该政策受到几位教育专家的抨击。）",
+      "meaning": "sự tấn công, sự công kích; cơn (bệnh)",
+      "phrases": "an attack on (đối với … công kích / công kích), heart attack (bệnh tim phát tác), under attack (đã bị công kích)",
+      "example": "The policy came under attack from several education experts. (nên chính sách đã bị mấy vị Giáo dục chuyên gia công kích.)",
       "acceptCN": [
-        "攻击",
-        "袭击",
-        "抨击"
+        "công kích",
+        "tập kích",
+        "công kích"
       ],
       "collocations": [
         {
           "phrase": "an attack on",
-          "meaning": "对…的攻击/抨击"
+          "meaning": "đối với … công kích / công kích"
         },
         {
           "phrase": "heart attack",
-          "meaning": "心脏病发作"
+          "meaning": "bệnh tim phát tác"
         },
         {
           "phrase": "under attack",
-          "meaning": "受到攻击"
+          "meaning": "đã bị công kích"
         }
       ],
-      "root": "at-（向）+ tach/tack（接触）→ 扑向 → 攻击",
+      "root": "at- (hướng) + tach/tack (tiếp xúc) → đánh về phía → công kích",
       "synonyms": [
         "assault"
       ],
@@ -1265,223 +1265,223 @@
         "defend"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "攻击",
-        "topic": "社会"
+        "commonUsage": "công kích",
+        "topic": "xã hội"
       },
       "exampleEn": "The policy came under attack from several education experts.",
-      "exampleZh": "该政策受到几位教育专家的抨击。",
-      "mnemonic": "at-（向）+ tach/tack（接触）→ 扑向 → 攻击",
+      "exampleZh": "nên chính sách đã bị mấy vị Giáo dục chuyên gia công kích.",
+      "mnemonic": "at- (hướng) + tach/tack (tiếp xúc) → đánh về phía → công kích",
       "exampleEN": "The policy came under attack from several education experts.",
-      "exampleCN": "该政策受到几位教育专家的抨击。"
+      "exampleCN": "nên chính sách đã bị mấy vị Giáo dục chuyên gia công kích."
     },
     {
       "id": 29,
       "word": "potential",
       "ipa": "/pəˈtenʃl/",
       "pos": "n. / adj.",
-      "meaning": "n. 潜力，可能性（the potential to do / for）。adj. 潜在的（potential risks）。potentially。realise one's potential（发挥潜力，英式 realise）。",
-      "phrases": "potential risks（潜在风险）, the potential to（有…的潜力）, realise one's potential（发挥潜力）",
-      "example": "Online courses have the potential to widen access to higher education.（在线课程有潜力扩大高等教育的入学机会。）",
+      "meaning": "tiềm lực; khả năng; (vật lý) điện thế; thế",
+      "phrases": "potential risks (tiềm ẩn mạo hiểm), the potential to (có … tiềm lực), realise one's potential (triển khai tiềm lực)",
+      "example": "Online courses have the potential to widen access to higher education. (online chương trình học có tiềm lực mở rộng giáo dục cao đẳng Nhập học cơ hội.)",
       "acceptCN": [
-        "潜力",
-        "潜在的",
-        "可能性"
+        "tiềm lực",
+        "ẩn bên trong",
+        "khả năng"
       ],
       "collocations": [
         {
           "phrase": "potential risks",
-          "meaning": "潜在风险"
+          "meaning": "tiềm ẩn mạo hiểm"
         },
         {
           "phrase": "the potential to",
-          "meaning": "有…的潜力"
+          "meaning": "có … tiềm lực"
         },
         {
           "phrase": "realise one's potential",
-          "meaning": "发挥潜力"
+          "meaning": "triển khai tiềm lực"
         }
       ],
-      "root": "potent（有力的）+ -ial → 尚未发挥的力量",
+      "root": "potent (có lực) + -ial → chưa phát huy lực lượng",
       "synonyms": [
         "possibility"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "潜力",
-        "topic": "教育"
+        "commonUsage": "tiềm lực",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Online courses have the potential to widen access to higher education.",
-      "exampleZh": "在线课程有潜力扩大高等教育的入学机会。",
-      "mnemonic": "potent（有力的）+ -ial → 尚未发挥的力量",
+      "exampleZh": "online chương trình học có tiềm lực mở rộng giáo dục cao đẳng Nhập học cơ hội.",
+      "mnemonic": "potent (có lực) + -ial → chưa phát huy lực lượng",
       "exampleEN": "Online courses have the potential to widen access to higher education.",
-      "exampleCN": "在线课程有潜力扩大高等教育的入学机会。"
+      "exampleCN": "online chương trình học có tiềm lực mở rộng giáo dục cao đẳng Nhập học cơ hội."
     },
     {
       "id": 30,
       "word": "video",
       "ipa": "/ˈvɪdiəʊ/ · /ˈvɪdioʊ/",
       "pos": "n.",
-      "meaning": "n. ①视频，录像（a video clip / recording）；②录像节目。v. 给…录像。video conferencing（视频会议）。复数 videos。",
-      "phrases": "video clip（视频片段）, video conferencing（视频会议）, instructional video（教学录像）",
-      "example": "The lecture was recorded as a video for students who could not attend.（该讲座被录成视频，供无法到场的学生观看。）",
+      "meaning": "n. (từ Mỹ,nghĩa Mỹ) truyền hình",
+      "phrases": "video clip (video đoạn ngắn), video conferencing (video hội nghị), instructional video (dạy học thu hình lại)",
+      "example": "The lecture was recorded as a video for students who could not attend. (nên toạ đàm bị lục thành video, cung cấp không cách nào trình diện Học viên quan sát.)",
       "acceptCN": [
-        "视频",
-        "录像"
+        "video",
+        "thu hình lại"
       ],
       "collocations": [
         {
           "phrase": "video clip",
-          "meaning": "视频片段"
+          "meaning": "video đoạn ngắn"
         },
         {
           "phrase": "video conferencing",
-          "meaning": "视频会议"
+          "meaning": "video hội nghị"
         },
         {
           "phrase": "instructional video",
-          "meaning": "教学录像"
+          "meaning": "dạy học thu hình lại"
         }
       ],
-      "root": "vid（看）+ -eo → 能看见的影像",
+      "root": "vid (nhìn) + -eo → có thể nhìn thấy hình ảnh",
       "synonyms": [
         "film",
         "recording"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "视频",
-        "topic": "科技"
+        "commonUsage": "video",
+        "topic": "Công nghệ"
       },
       "exampleEn": "The lecture was recorded as a video for students who could not attend.",
-      "exampleZh": "该讲座被录成视频，供无法到场的学生观看。",
-      "mnemonic": "vid（看）+ -eo → 能看见的影像",
+      "exampleZh": "nên toạ đàm bị lục thành video, cung cấp không cách nào trình diện Học viên quan sát.",
+      "mnemonic": "vid (nhìn) + -eo → có thể nhìn thấy hình ảnh",
       "exampleEN": "The lecture was recorded as a video for students who could not attend.",
-      "exampleCN": "该讲座被录成视频，供无法到场的学生观看。"
+      "exampleCN": "nên toạ đàm bị lục thành video, cung cấp không cách nào trình diện Học viên quan sát."
     },
     {
       "id": 31,
       "word": "account",
       "ipa": "/əˈkaʊnt/",
       "pos": "n. / v.",
-      "meaning": "n. ①账户（bank account）；②叙述，报道（an account of）；③考虑（take into account）。v. 解释（account for 解释；占…比例）。on account of（因为）。",
-      "phrases": "take into account（考虑到）, account for（解释；占…）, bank account（银行账户）",
-      "example": "Teachers should take individual differences into account when marking essays.（教师在批改作文时应考虑到个体差异。）",
+      "meaning": "sự tính toán; sự kế toán; sổ sách, kế toán",
+      "phrases": "take into account (cân nhắc đến), account for (giải thích; chiếm …), bank account (tài khoản ngân hàng)",
+      "example": "Teachers should take individual differences into account when marking essays. (Giáo viên tại phê chữa viết văn lúc dự thi lo đến thân thể sai biệt.)",
       "acceptCN": [
-        "账户",
-        "叙述",
-        "解释"
+        "tài khoản",
+        "tự thuật",
+        "giải thích"
       ],
       "collocations": [
         {
           "phrase": "take into account",
-          "meaning": "考虑到"
+          "meaning": "cân nhắc đến"
         },
         {
           "phrase": "account for",
-          "meaning": "解释；占…"
+          "meaning": "giải thích; chiếm …"
         },
         {
           "phrase": "bank account",
-          "meaning": "银行账户"
+          "meaning": "tài khoản ngân hàng"
         }
       ],
-      "root": "ac-（向）+ count（计算）→ 算清楚 → 账目/说明",
+      "root": "ac- (hướng) + count (tính toán) → tính toán rõ ràng sở → khoản / nói rõ",
       "synonyms": [
         "report",
         "explain"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "账户",
-        "topic": "学术"
+        "commonUsage": "tài khoản",
+        "topic": "Học thuật"
       },
       "exampleEn": "Teachers should take individual differences into account when marking essays.",
-      "exampleZh": "教师在批改作文时应考虑到个体差异。",
-      "mnemonic": "ac-（向）+ count（计算）→ 算清楚 → 账目/说明",
+      "exampleZh": "Giáo viên tại phê chữa viết văn lúc dự thi lo đến thân thể sai biệt.",
+      "mnemonic": "ac- (hướng) + count (tính toán) → tính toán rõ ràng sở → khoản / nói rõ",
       "exampleEN": "Teachers should take individual differences into account when marking essays.",
-      "exampleCN": "教师在批改作文时应考虑到个体差异。"
+      "exampleCN": "Giáo viên tại phê chữa viết văn lúc dự thi lo đến thân thể sai biệt."
     },
     {
       "id": 32,
       "word": "engage",
       "ipa": "/ɪnˈɡeɪdʒ/",
       "pos": "v.",
-      "meaning": "v. ①从事，参加（engage in）；②吸引（engage sb's attention）；③雇用；④订婚（be engaged to）。engagement（参与；订婚）；engaging（引人入胜的）。",
-      "phrases": "engage in（从事；参与）, student engagement（学生参与）, engage attention（吸引注意）",
-      "example": "The course is designed to engage students in independent research.（该课程旨在让学生参与独立研究。）",
+      "meaning": "v. hẹn, hứa hẹn, ước hẹn, cam kết; đính ước, hứa hôn; thuê (người ở); giữ trước (chỗ ngồi...)",
+      "phrases": "engage in (làm; tham dự), student engagement (Học viên tham dự), engage attention (hấp dẫn chú ý)",
+      "example": "The course is designed to engage students in independent research. (nên chương trình học chỉ đang để cho Học viên tham dự độc lập nghiên cứu.)",
       "acceptCN": [
-        "从事",
-        "参与",
-        "吸引"
+        "làm",
+        "tham dự",
+        "hấp dẫn"
       ],
       "collocations": [
         {
           "phrase": "engage in",
-          "meaning": "从事；参与"
+          "meaning": "làm; tham dự"
         },
         {
           "phrase": "student engagement",
-          "meaning": "学生参与"
+          "meaning": "Học viên tham dự"
         },
         {
           "phrase": "engage attention",
-          "meaning": "吸引注意"
+          "meaning": "hấp dẫn chú ý"
         }
       ],
-      "root": "en-（使）+ gage（抵押/约束）→ 使卷入 → 从事/吸引",
+      "root": "en- (khiến cho) + gage (thế chấp / ước thúc) → khiến cho cuốn vào → làm / hấp dẫn",
       "synonyms": [
         "participate",
         "involve"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "参与",
-        "topic": "教育"
+        "commonUsage": "tham dự",
+        "topic": "Giáo dục"
       },
       "exampleEn": "The course is designed to engage students in independent research.",
-      "exampleZh": "该课程旨在让学生参与独立研究。",
-      "mnemonic": "en-（使）+ gage（抵押/约束）→ 使卷入 → 从事/吸引",
+      "exampleZh": "nên chương trình học chỉ đang để cho Học viên tham dự độc lập nghiên cứu.",
+      "mnemonic": "en- (khiến cho) + gage (thế chấp / ước thúc) → khiến cho cuốn vào → làm / hấp dẫn",
       "exampleEN": "The course is designed to engage students in independent research.",
-      "exampleCN": "该课程旨在让学生参与独立研究。"
+      "exampleCN": "nên chương trình học chỉ đang để cho Học viên tham dự độc lập nghiên cứu."
     },
     {
       "id": 33,
       "word": "prove",
       "ipa": "/pruːv/",
       "pos": "v.",
-      "meaning": "v. ①证明（prove that / to be）；②结果是，原来是（prove difficult）。proof（证据）；proven / proved（过去分词皆可）。反义 disprove。",
-      "phrases": "prove that（证明…）, prove to be（结果是）, scientific proof（科学证据）",
-      "example": "Further studies are needed to prove the long-term effects of the policy.（还需要进一步研究来证明该政策的长期效果。）",
+      "meaning": "v. chứng tỏ, chứng minh; thử (súng...); (toán học) thử (một bài toán); (ngành in) in thử (một bản khắc...)",
+      "phrases": "prove that (chứng minh …), prove to be (kết quả là), scientific proof (khoa học chứng cứ)",
+      "example": "Further studies are needed to prove the long-term effects of the policy. (còn cần tiến thêm một bước nghiên cứu để chứng minh nên chánh sách trường kỳ hiệu quả.)",
       "acceptCN": [
-        "证明",
-        "证实",
-        "原来是"
+        "chứng minh",
+        "chứng minh là đúng",
+        "nguyên lai là"
       ],
       "collocations": [
         {
           "phrase": "prove that",
-          "meaning": "证明…"
+          "meaning": "chứng minh …"
         },
         {
           "phrase": "prove to be",
-          "meaning": "结果是"
+          "meaning": "kết quả là"
         },
         {
           "phrase": "scientific proof",
-          "meaning": "科学证据"
+          "meaning": "khoa học chứng cứ"
         }
       ],
-      "root": "与 proof 同源 → 拿出证据",
+      "root": "và proof đồng nguyên → xuất ra chứng cứ",
       "synonyms": [
         "demonstrate",
         "show"
@@ -1490,45 +1490,45 @@
         "disprove"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "证明",
-        "topic": "学术"
+        "commonUsage": "chứng minh",
+        "topic": "Học thuật"
       },
       "exampleEn": "Further studies are needed to prove the long-term effects of the policy.",
-      "exampleZh": "还需要进一步研究来证明该政策的长期效果。",
-      "mnemonic": "与 proof 同源 → 拿出证据",
+      "exampleZh": "còn cần tiến thêm một bước nghiên cứu để chứng minh nên chánh sách trường kỳ hiệu quả.",
+      "mnemonic": "và proof đồng nguyên → xuất ra chứng cứ",
       "exampleEN": "Further studies are needed to prove the long-term effects of the policy.",
-      "exampleCN": "还需要进一步研究来证明该政策的长期效果。"
+      "exampleCN": "còn cần tiến thêm một bước nghiên cứu để chứng minh nên chánh sách trường kỳ hiệu quả."
     },
     {
       "id": 34,
       "word": "effective",
       "ipa": "/ɪˈfektɪv/",
       "pos": "adj.",
-      "meaning": "adj. ①有效的（effective in / at）；②实际的，生效的（effective from）。effectiveness。易混 efficient（效率高的，省时省力）。effect（n. 效果）。",
-      "phrases": "effective in（在…方面有效）, take effect（生效）, an effective method（有效方法）",
-      "example": "Feedback is more effective when it is specific and timely.（反馈在具体且及时时更为有效。）",
+      "meaning": "adj. có kết quả; có hiệu lực, có kết quả",
+      "phrases": "effective in (tại … phương diện hữu hiệu), take effect (có hiệu lực), an effective method (phương pháp hữu hiệu)",
+      "example": "Feedback is more effective when it is specific and timely. (phản hồi tại cụ thể mà lại kịp thời lúc càng thêm hữu hiệu.)",
       "acceptCN": [
-        "有效的",
-        "生效的",
-        "实际的"
+        "hữu hiệu",
+        "có hiệu lực",
+        "thực tế"
       ],
       "collocations": [
         {
           "phrase": "effective in",
-          "meaning": "在…方面有效"
+          "meaning": "tại … phương diện hữu hiệu"
         },
         {
           "phrase": "take effect",
-          "meaning": "生效"
+          "meaning": "có hiệu lực"
         },
         {
           "phrase": "an effective method",
-          "meaning": "有效方法"
+          "meaning": "phương pháp hữu hiệu"
         }
       ],
-      "root": "effect（效果）+ -ive → 能产生效果的",
+      "root": "effect (hiệu quả) + -ive → có thể sinh ra hiệu quả",
       "synonyms": [
         "successful"
       ],
@@ -1536,45 +1536,45 @@
         "ineffective"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "有效的",
-        "topic": "学术"
+        "commonUsage": "hữu hiệu",
+        "topic": "Học thuật"
       },
       "exampleEn": "Feedback is more effective when it is specific and timely.",
-      "exampleZh": "反馈在具体且及时时更为有效。",
-      "mnemonic": "effect（效果）+ -ive → 能产生效果的",
+      "exampleZh": "phản hồi tại cụ thể mà lại kịp thời lúc càng thêm hữu hiệu.",
+      "mnemonic": "effect (hiệu quả) + -ive → có thể sinh ra hiệu quả",
       "exampleEN": "Feedback is more effective when it is specific and timely.",
-      "exampleCN": "反馈在具体且及时时更为有效。"
+      "exampleCN": "phản hồi tại cụ thể mà lại kịp thời lúc càng thêm hữu hiệu."
     },
     {
       "id": 35,
       "word": "increasingly",
       "ipa": "/ɪnˈkriːsɪŋli/",
       "pos": "adv.",
-      "meaning": "adv. 越来越多地，日益（increasingly important / common）。increase（v./n. 增加）；increasing。用于描述趋势，常修饰形容词。",
-      "phrases": "increasingly important（日益重要）, increasingly common（越来越普遍）, an increasing number of（越来越多的）",
-      "example": "Remote work has become increasingly common in the service sector.（远程办公在服务业中已变得越来越普遍。）",
+      "meaning": "adv. xem increase",
+      "phrases": "increasingly important (ngày càng trọng yếu), increasingly common (càng ngày càng phổ biến), an increasing number of (càng ngày càng nhiều)",
+      "example": "Remote work has become increasingly common in the service sector. (viễn trình văn phòng đang phục vụ nghiệp Vừa đã trở nên càng ngày càng phổ biến.)",
       "acceptCN": [
-        "越来越",
-        "日益",
-        "逐渐增加地"
+        "càng ngày càng",
+        "ngày càng",
+        "dần dần gia tăng mà"
       ],
       "collocations": [
         {
           "phrase": "increasingly important",
-          "meaning": "日益重要"
+          "meaning": "ngày càng trọng yếu"
         },
         {
           "phrase": "increasingly common",
-          "meaning": "越来越普遍"
+          "meaning": "càng ngày càng phổ biến"
         },
         {
           "phrase": "an increasing number of",
-          "meaning": "越来越多的"
+          "meaning": "càng ngày càng nhiều"
         }
       ],
-      "root": "increase（增加）+ -ing + -ly → 正在增加地",
+      "root": "increase (gia tăng) + -ing + -ly → đang gia tăng mà",
       "synonyms": [
         "more and more"
       ],
@@ -1582,176 +1582,176 @@
         "decreasingly"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "越来越",
-        "topic": "社会"
+        "commonUsage": "càng ngày càng",
+        "topic": "xã hội"
       },
       "exampleEn": "Remote work has become increasingly common in the service sector.",
-      "exampleZh": "远程办公在服务业中已变得越来越普遍。",
-      "mnemonic": "increase（增加）+ -ing + -ly → 正在增加地",
+      "exampleZh": "viễn trình văn phòng đang phục vụ nghiệp Vừa đã trở nên càng ngày càng phổ biến.",
+      "mnemonic": "increase (gia tăng) + -ing + -ly → đang gia tăng mà",
       "exampleEN": "Remote work has become increasingly common in the service sector.",
-      "exampleCN": "远程办公在服务业中已变得越来越普遍。"
+      "exampleCN": "viễn trình văn phòng đang phục vụ nghiệp Vừa đã trở nên càng ngày càng phổ biến."
     },
     {
       "id": 36,
       "word": "trend",
       "ipa": "/trend/",
       "pos": "n.",
-      "meaning": "n. 趋势，倾向（a trend towards / in）。v. 倾向，趋向（较少考）。trendy（时髦的）。follow / reverse a trend。current trends。",
-      "phrases": "a trend towards（朝…的趋势）, current trends（当前趋势）, follow the trend（跟随潮流）",
-      "example": "There is a clear trend towards later marriage in large cities.（大城市中晚婚趋势十分明显。）",
+      "meaning": "n. phương hướng; khuynh hướng, xu hướng, chiều hướng",
+      "phrases": "a trend towards (hướng … xu thế), current trends (trước mắt xu thế), follow the trend (đi theo thuỷ triều)",
+      "example": "There is a clear trend towards later marriage in large cities. (trong đại thành thị kết hôn muộn xu thế hết sức rõ ràng.)",
       "acceptCN": [
-        "趋势",
-        "倾向",
-        "潮流"
+        "xu thế",
+        "khuynh hướng",
+        "thuỷ triều"
       ],
       "collocations": [
         {
           "phrase": "a trend towards",
-          "meaning": "朝…的趋势"
+          "meaning": "hướng … xu thế"
         },
         {
           "phrase": "current trends",
-          "meaning": "当前趋势"
+          "meaning": "trước mắt xu thế"
         },
         {
           "phrase": "follow the trend",
-          "meaning": "跟随潮流"
+          "meaning": "đi theo thuỷ triều"
         }
       ],
-      "root": "原义‘旋转/走向’，引申为发展方向",
+      "root": "nguyên nghĩa ‘ xoay tròn / đi về hướng ’, nghĩa rộng là phương hướng phát triển",
       "synonyms": [
         "tendency"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "趋势",
-        "topic": "社会"
+        "commonUsage": "xu thế",
+        "topic": "xã hội"
       },
       "exampleEn": "There is a clear trend towards later marriage in large cities.",
-      "exampleZh": "大城市中晚婚趋势十分明显。",
-      "mnemonic": "原义‘旋转/走向’，引申为发展方向",
+      "exampleZh": "trong đại thành thị kết hôn muộn xu thế hết sức rõ ràng.",
+      "mnemonic": "nguyên nghĩa ‘ xoay tròn / đi về hướng ’, nghĩa rộng là phương hướng phát triển",
       "exampleEN": "There is a clear trend towards later marriage in large cities.",
-      "exampleCN": "大城市中晚婚趋势十分明显。"
+      "exampleCN": "trong đại thành thị kết hôn muộn xu thế hết sức rõ ràng."
     },
     {
       "id": 37,
       "word": "apply",
       "ipa": "/əˈplaɪ/",
       "pos": "v.",
-      "meaning": "v. ①申请（apply for / to）；②应用（apply A to B）；③适用（apply to）。application（申请；应用）；applicant（申请人）；applied（应用的）。",
-      "phrases": "apply for（申请）, apply to（适用于；向…申请）, application form（申请表）",
-      "example": "More than two thousand students applied for the scholarship last year.（去年有两千多名学生申请该项奖学金。）",
+      "meaning": "v. gắn vào, áp vào, ghép vào, đính vào, đắp vào, tra vào; dùng ứng dụng, dùng áp dụng",
+      "phrases": "apply for (thân thỉnh), apply to (áp dụng tại; hướng … thân thỉnh), application form (thân thỉnh bề ngoài)",
+      "example": "More than two thousand students applied for the scholarship last year. (năm trước có hơn hai nghìn danh học sinh thân thỉnh nên hạng học bổng.)",
       "acceptCN": [
-        "申请",
-        "应用",
-        "适用"
+        "thân thỉnh",
+        "hữu ích,thiết thực",
+        "áp dụng"
       ],
       "collocations": [
         {
           "phrase": "apply for",
-          "meaning": "申请"
+          "meaning": "thân thỉnh"
         },
         {
           "phrase": "apply to",
-          "meaning": "适用于；向…申请"
+          "meaning": "áp dụng tại; hướng … thân thỉnh"
         },
         {
           "phrase": "application form",
-          "meaning": "申请表"
+          "meaning": "thân thỉnh bề ngoài"
         }
       ],
-      "root": "ap-（向）+ ply（折叠/用）→ 把…用到某处",
+      "root": "ap- (hướng) + ply (gấp / dùng) → đem … dùng đến một chỗ",
       "synonyms": [
         "request",
         "use"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "申请",
-        "topic": "校园"
+        "commonUsage": "thân thỉnh",
+        "topic": "sân trường"
       },
       "exampleEn": "More than two thousand students applied for the scholarship last year.",
-      "exampleZh": "去年有两千多名学生申请该项奖学金。",
-      "mnemonic": "ap-（向）+ ply（折叠/用）→ 把…用到某处",
+      "exampleZh": "năm trước có hơn hai nghìn danh học sinh thân thỉnh nên hạng học bổng.",
+      "mnemonic": "ap- (hướng) + ply (gấp / dùng) → đem … dùng đến một chỗ",
       "exampleEN": "More than two thousand students applied for the scholarship last year.",
-      "exampleCN": "去年有两千多名学生申请该项奖学金。"
+      "exampleCN": "năm trước có hơn hai nghìn danh học sinh thân thỉnh nên hạng học bổng."
     },
     {
       "id": 38,
       "word": "billion",
       "ipa": "/ˈbɪljən/",
       "pos": "n. / num.",
-      "meaning": "n. / num. 十亿（美式及当代英式；旧英式 billion 曾指万亿，四级按十亿理解）。billions of（数十亿的）。billionaire（亿万富翁）。",
-      "phrases": "billions of（数十亿的）, two billion people（二十亿人）, a billion dollars（十亿美元）",
-      "example": "The company invested two billion pounds in renewable energy.（该公司在可再生能源上投资了二十亿英镑。）",
+      "meaning": "n. / num. (Anh, Đức) nghìn tỉ; Pháp tỉ nghìn triệu",
+      "phrases": "billions of (mấy tỉ), two billion people (hai tỷ người), a billion dollars (mười ức đôla)",
+      "example": "The company invested two billion pounds in renewable energy. (cai công ty tại có thể sống lại nguồn năng lượng bên trên đầu tư hai tỷ bảng Anh.)",
       "acceptCN": [
-        "十亿",
-        "十亿的"
+        "mười ức",
+        "mười ức"
       ],
       "collocations": [
         {
           "phrase": "billions of",
-          "meaning": "数十亿的"
+          "meaning": "mấy tỉ"
         },
         {
           "phrase": "two billion people",
-          "meaning": "二十亿人"
+          "meaning": "hai tỷ người"
         },
         {
           "phrase": "a billion dollars",
-          "meaning": "十亿美元"
+          "meaning": "mười ức đôla"
         }
       ],
-      "root": "bi- 在此不表‘二’，现代用法固定为 10^9",
+      "root": "bi- lúc này không nhắc tới ‘ hai ’, hiện đại cách dùng cố định là 10^9",
       "synonyms": [
         "a thousand million"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "十亿",
-        "topic": "经济"
+        "commonUsage": "mười ức",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "The company invested two billion pounds in renewable energy.",
-      "exampleZh": "该公司在可再生能源上投资了二十亿英镑。",
-      "mnemonic": "bi- 在此不表‘二’，现代用法固定为 10^9",
+      "exampleZh": "cai công ty tại có thể sống lại nguồn năng lượng bên trên đầu tư hai tỷ bảng Anh.",
+      "mnemonic": "bi- lúc này không nhắc tới ‘ hai ’, hiện đại cách dùng cố định là 10^9",
       "exampleEN": "The company invested two billion pounds in renewable energy.",
-      "exampleCN": "该公司在可再生能源上投资了二十亿英镑。"
+      "exampleCN": "cai công ty tại có thể sống lại nguồn năng lượng bên trên đầu tư hai tỷ bảng Anh."
     },
     {
       "id": 39,
       "word": "attract",
       "ipa": "/əˈtrækt/",
       "pos": "v.",
-      "meaning": "v. ①吸引（attract attention / investment）；②招引。attraction（吸引力；景点）；attractive（有吸引力的）。be attracted to。",
-      "phrases": "attract attention（引起注意）, attract investment（吸引投资）, tourist attraction（旅游景点）",
-      "example": "The new campus has attracted students from more than thirty countries.（新校区吸引了来自三十多个国家的学生。）",
+      "meaning": "v. (vật lý) hút; thu hút, hấp dẫn, lôi cuốn",
+      "phrases": "attract attention (khiến cho chú ý), attract investment (hấp dẫn đầu tư), tourist attraction (du lịch cảnh điểm)",
+      "example": "The new campus has attracted students from more than thirty countries. (mới giáo khu hấp dẫn đến từ hơn ba mươi quốc gia Học viên.)",
       "acceptCN": [
-        "吸引",
-        "招引"
+        "hấp dẫn",
+        "thu hút"
       ],
       "collocations": [
         {
           "phrase": "attract attention",
-          "meaning": "引起注意"
+          "meaning": "khiến cho chú ý"
         },
         {
           "phrase": "attract investment",
-          "meaning": "吸引投资"
+          "meaning": "hấp dẫn đầu tư"
         },
         {
           "phrase": "tourist attraction",
-          "meaning": "旅游景点"
+          "meaning": "du lịch cảnh điểm"
         }
       ],
-      "root": "at-（向）+ tract（拉）→ 拉过来 → 吸引",
+      "root": "at- (hướng) + tract (kéo) → kéo qua → hấp dẫn",
       "synonyms": [
         "draw",
         "appeal to"
@@ -1760,89 +1760,89 @@
         "repel"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "吸引",
-        "topic": "教育"
+        "commonUsage": "hấp dẫn",
+        "topic": "Giáo dục"
       },
       "exampleEn": "The new campus has attracted students from more than thirty countries.",
-      "exampleZh": "新校区吸引了来自三十多个国家的学生。",
-      "mnemonic": "at-（向）+ tract（拉）→ 拉过来 → 吸引",
+      "exampleZh": "mới giáo khu hấp dẫn đến từ hơn ba mươi quốc gia Học viên.",
+      "mnemonic": "at- (hướng) + tract (kéo) → kéo qua → hấp dẫn",
       "exampleEN": "The new campus has attracted students from more than thirty countries.",
-      "exampleCN": "新校区吸引了来自三十多个国家的学生。"
+      "exampleCN": "mới giáo khu hấp dẫn đến từ hơn ba mươi quốc gia Học viên."
     },
     {
       "id": 40,
       "word": "evidence",
       "ipa": "/ˈevɪdəns/",
       "pos": "n.",
-      "meaning": "n. 证据，证明（evidence of / that / for；不可数）。v. 证明（较正式）。evident（明显的）。there is evidence that…。in evidence（显而易见）。",
-      "phrases": "evidence that（证明…的证据）, there is evidence that（有证据表明）, scientific evidence（科学证据）",
-      "example": "There is growing evidence that sleep affects memory.（越来越多的证据表明，睡眠影响记忆。）",
+      "meaning": "n. tính hiển nhiên; tính rõ ràng, tính rõ rệt; (pháp lý) chứng, chứng cớ, bằng chứng",
+      "phrases": "evidence that (chứng minh … chứng cứ), there is evidence that (có chứng cứ cho thấy), scientific evidence (khoa học chứng cứ)",
+      "example": "There is growing evidence that sleep affects memory. (càng ngày càng nhiều chứng cứ cho thấy, giấc ngủ ảnh hưởng trí nhớ.)",
       "acceptCN": [
-        "证据",
-        "证明",
-        "根据"
+        "chứng cứ",
+        "chứng minh",
+        "dựa theo"
       ],
       "collocations": [
         {
           "phrase": "evidence that",
-          "meaning": "证明…的证据"
+          "meaning": "chứng minh … chứng cứ"
         },
         {
           "phrase": "there is evidence that",
-          "meaning": "有证据表明"
+          "meaning": "có chứng cứ cho thấy"
         },
         {
           "phrase": "scientific evidence",
-          "meaning": "科学证据"
+          "meaning": "khoa học chứng cứ"
         }
       ],
-      "root": "e-（出）+ vid（看）→ 能看出来的东西 → 证据",
+      "root": "e- (ra) + vid (nhìn) → có thể nhìn ra được thứ đồ vật → chứng cứ",
       "synonyms": [
         "proof"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "证据",
-        "topic": "学术"
+        "commonUsage": "chứng cứ",
+        "topic": "Học thuật"
       },
       "exampleEn": "There is growing evidence that sleep affects memory.",
-      "exampleZh": "越来越多的证据表明，睡眠影响记忆。",
-      "mnemonic": "e-（出）+ vid（看）→ 能看出来的东西 → 证据",
+      "exampleZh": "càng ngày càng nhiều chứng cứ cho thấy, giấc ngủ ảnh hưởng trí nhớ.",
+      "mnemonic": "e- (ra) + vid (nhìn) → có thể nhìn ra được thứ đồ vật → chứng cứ",
       "exampleEN": "There is growing evidence that sleep affects memory.",
-      "exampleCN": "越来越多的证据表明，睡眠影响记忆。"
+      "exampleCN": "càng ngày càng nhiều chứng cứ cho thấy, giấc ngủ ảnh hưởng trí nhớ."
     },
     {
       "id": 41,
       "word": "female",
       "ipa": "/ˈfiːmeɪl/",
       "pos": "adj. / n.",
-      "meaning": "adj. 女的，雌的（female students / workers）。n. 女子，雌性。与 male 相对。书面语中作形容词修饰名词最常见。feminine 偏指女性气质。",
-      "phrases": "female students（女生）, female workers（女工）, male and female（男女）",
-      "example": "Female students now outnumber male students in several arts subjects.（在若干文科专业中，女生人数已超过男生。）",
+      "meaning": "cái, mái; (thuộc) đàn bà con gái, nữ",
+      "phrases": "female students (nữ sinh), female workers (nữ công), male and female (nam nữ)",
+      "example": "Female students now outnumber male students in several arts subjects. (tại một số văn khoa chuyên nghiệp Vừa, nữ sinh nhân số đã vượt qua nam sinh.)",
       "acceptCN": [
-        "女的",
-        "雌的",
-        "女子"
+        "nữ",
+        "con mái",
+        "nữ tử"
       ],
       "collocations": [
         {
           "phrase": "female students",
-          "meaning": "女生"
+          "meaning": "nữ sinh"
         },
         {
           "phrase": "female workers",
-          "meaning": "女工"
+          "meaning": "nữ công"
         },
         {
           "phrase": "male and female",
-          "meaning": "男女"
+          "meaning": "nam nữ"
         }
       ],
-      "root": "与 male 成对；fe- 不表‘铁’",
+      "root": "và male thành đôi; fe- không nhắc tới ‘ thiết ’",
       "synonyms": [
         "woman"
       ],
@@ -1850,89 +1850,89 @@
         "male"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "女的",
-        "topic": "社会"
+        "commonUsage": "nữ",
+        "topic": "xã hội"
       },
       "exampleEn": "Female students now outnumber male students in several arts subjects.",
-      "exampleZh": "在若干文科专业中，女生人数已超过男生。",
-      "mnemonic": "与 male 成对；fe- 不表‘铁’",
+      "exampleZh": "tại một số văn khoa chuyên nghiệp Vừa, nữ sinh nhân số đã vượt qua nam sinh.",
+      "mnemonic": "và male thành đôi; fe- không nhắc tới ‘ thiết ’",
       "exampleEN": "Female students now outnumber male students in several arts subjects.",
-      "exampleCN": "在若干文科专业中，女生人数已超过男生。"
+      "exampleCN": "tại một số văn khoa chuyên nghiệp Vừa, nữ sinh nhân số đã vượt qua nam sinh."
     },
     {
       "id": 42,
       "word": "owner",
       "ipa": "/ˈəʊnə(r)/ · /ˈoʊnər/",
       "pos": "n.",
-      "meaning": "n. 所有者，物主（the owner of）。own（v. 拥有；adj. 自己的）；ownership（所有权）。homeowner（房主）。",
-      "phrases": "the owner of（…的所有者）, car owner（车主）, ownership（所有权）",
-      "example": "The owner of the factory agreed to reduce night-time noise.（工厂所有者同意减少夜间噪音。）",
+      "meaning": "n. người chủ, chủ nhân",
+      "phrases": "the owner of (… tất cả người), car owner (chủ xe), ownership (quyền sở hữu)",
+      "example": "The owner of the factory agreed to reduce night-time noise. (nhà xưởng tất cả người đồng ý giảm bớt ban đêm tạp âm.)",
       "acceptCN": [
-        "所有者",
-        "物主",
-        "主人"
+        "tất cả người",
+        "vật chủ",
+        "chủ nhân"
       ],
       "collocations": [
         {
           "phrase": "the owner of",
-          "meaning": "…的所有者"
+          "meaning": "… tất cả người"
         },
         {
           "phrase": "car owner",
-          "meaning": "车主"
+          "meaning": "chủ xe"
         },
         {
           "phrase": "ownership",
-          "meaning": "所有权"
+          "meaning": "quyền sở hữu"
         }
       ],
-      "root": "own（拥有）+ -er → 拥有者",
+      "root": "own (có được) + -er → kẻ có được",
       "synonyms": [
         "holder"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "所有者",
-        "topic": "经济"
+        "commonUsage": "tất cả người",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "The owner of the factory agreed to reduce night-time noise.",
-      "exampleZh": "工厂所有者同意减少夜间噪音。",
-      "mnemonic": "own（拥有）+ -er → 拥有者",
+      "exampleZh": "nhà xưởng tất cả người đồng ý giảm bớt ban đêm tạp âm.",
+      "mnemonic": "own (có được) + -er → kẻ có được",
       "exampleEN": "The owner of the factory agreed to reduce night-time noise.",
-      "exampleCN": "工厂所有者同意减少夜间噪音。"
+      "exampleCN": "nhà xưởng tất cả người đồng ý giảm bớt ban đêm tạp âm."
     },
     {
       "id": 43,
       "word": "reward",
       "ipa": "/rɪˈwɔːd/ · /rɪˈwɔːrd/",
       "pos": "n. / v.",
-      "meaning": "n. ①报酬，奖赏（a reward for）；②回报。v. 奖励，报答（reward sb for）。rewarding（有益的，值得的）。易混 award（颁发奖项）。",
-      "phrases": "a reward for（对…的奖赏）, reward sb for（因…奖励某人）, a rewarding job（有意义的工作）",
-      "example": "Teaching can be a rewarding career despite the heavy workload.（尽管工作量大，教学仍可以是一份有回报的职业。）",
+      "meaning": "sự thưởng, sự thưởng công; sự báo ơn, sự báo oán; tiền thưởng, vật thưởng (cho ai bắt được tội phạm...)",
+      "phrases": "a reward for (đối với … khen thưởng), reward sb for (bởi vì … ban thưởng người nào đó), a rewarding job (có ý nghĩa công tác)",
+      "example": "Teaching can be a rewarding career despite the heavy workload. (cho dù lượng công việc đại, dạy học nhưng có thể là một phần có hồi báo Nghề nghiệp.)",
       "acceptCN": [
-        "报酬",
-        "奖赏",
-        "回报"
+        "thù lao",
+        "khen thưởng",
+        "hồi báo"
       ],
       "collocations": [
         {
           "phrase": "a reward for",
-          "meaning": "对…的奖赏"
+          "meaning": "đối với … khen thưởng"
         },
         {
           "phrase": "reward sb for",
-          "meaning": "因…奖励某人"
+          "meaning": "bởi vì … ban thưởng người nào đó"
         },
         {
           "phrase": "a rewarding job",
-          "meaning": "有意义的工作"
+          "meaning": "có ý nghĩa công tác"
         }
       ],
-      "root": "re-（回）+ ward（看护）→ 回过来给予 → 回报",
+      "root": "re- (quay về) + ward (chăm sóc) → trở lại vội tới cho → hồi báo",
       "synonyms": [
         "prize",
         "pay"
@@ -1941,45 +1941,45 @@
         "punishment"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "回报",
-        "topic": "就业"
+        "commonUsage": "hồi báo",
+        "topic": "vào nghề"
       },
       "exampleEn": "Teaching can be a rewarding career despite the heavy workload.",
-      "exampleZh": "尽管工作量大，教学仍可以是一份有回报的职业。",
-      "mnemonic": "re-（回）+ ward（看护）→ 回过来给予 → 回报",
+      "exampleZh": "cho dù lượng công việc đại, dạy học nhưng có thể là một phần có hồi báo Nghề nghiệp.",
+      "mnemonic": "re- (quay về) + ward (chăm sóc) → trở lại vội tới cho → hồi báo",
       "exampleEN": "Teaching can be a rewarding career despite the heavy workload.",
-      "exampleCN": "尽管工作量大，教学仍可以是一份有回报的职业。"
+      "exampleCN": "cho dù lượng công việc đại, dạy học nhưng có thể là một phần có hồi báo Nghề nghiệp."
     },
     {
       "id": 44,
       "word": "current",
       "ipa": "/ˈkʌrənt/ · /ˈkɜːrənt/",
       "pos": "adj. / n.",
-      "meaning": "adj. ①当前的，现在的（current research / affairs）；②流通的。n. ①水流，气流；②电流；③潮流。currently。curriculum 勿混。",
-      "phrases": "current research（当前研究）, current affairs（时事）, electric current（电流）",
-      "example": "Current research suggests that exercise improves concentration.（当前研究表明，锻炼能提高注意力。）",
+      "meaning": "hiện hành, đang lưu hành; phổ biến, thịnh hành, thông dụng",
+      "phrases": "current research (trước mắt nghiên cứu), current affairs (thời sự), electric current (dòng điện)",
+      "example": "Current research suggests that exercise improves concentration. (trước mắt nghiên cứu cho thấy, rèn luyện có thể đề cao lực chú ý.)",
       "acceptCN": [
-        "当前的",
-        "电流",
-        "潮流"
+        "trước mặt",
+        "dòng điện",
+        "thuỷ triều"
       ],
       "collocations": [
         {
           "phrase": "current research",
-          "meaning": "当前研究"
+          "meaning": "trước mắt nghiên cứu"
         },
         {
           "phrase": "current affairs",
-          "meaning": "时事"
+          "meaning": "thời sự"
         },
         {
           "phrase": "electric current",
-          "meaning": "电流"
+          "meaning": "dòng điện"
         }
       ],
-      "root": "curr（跑）+ -ent → 正在流/跑着的 → 当前的/流",
+      "root": "curr (chạy) + -ent → đang chảy / chạy trước → trước mặt / chảy",
       "synonyms": [
         "present"
       ],
@@ -1987,45 +1987,45 @@
         "former"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "当前的",
-        "topic": "学术"
+        "commonUsage": "trước mặt",
+        "topic": "Học thuật"
       },
       "exampleEn": "Current research suggests that exercise improves concentration.",
-      "exampleZh": "当前研究表明，锻炼能提高注意力。",
-      "mnemonic": "curr（跑）+ -ent → 正在流/跑着的 → 当前的/流",
+      "exampleZh": "trước mắt nghiên cứu cho thấy, rèn luyện có thể đề cao lực chú ý.",
+      "mnemonic": "curr (chạy) + -ent → đang chảy / chạy trước → trước mặt / chảy",
       "exampleEN": "Current research suggests that exercise improves concentration.",
-      "exampleCN": "当前研究表明，锻炼能提高注意力。"
+      "exampleCN": "trước mắt nghiên cứu cho thấy, rèn luyện có thể đề cao lực chú ý."
     },
     {
       "id": 45,
       "word": "male",
       "ipa": "/meɪl/",
       "pos": "adj. / n.",
-      "meaning": "adj. 男的，雄的（male students / animals）。n. 男子，雄性。与 female 相对。masculine 偏指男性气质。mail（邮件）仅拼写相近。",
-      "phrases": "male students（男生）, male and female（男女）, male workers（男工）",
-      "example": "The sample included both male and female participants aged 18 to 25.（样本包括 18 至 25 岁的男性和女性参与者。）",
+      "meaning": "trai, đực, trống; mạnh mẽ, trai tráng",
+      "phrases": "male students (nam sinh), male and female (nam nữ), male workers (nam công)",
+      "example": "The sample included both male and female participants aged 18 to 25. (hàng mẫu kể cả 18 đến 25 tuổi nam tính và nữ tính người tham dự.)",
       "acceptCN": [
-        "男的",
-        "雄的",
-        "男子"
+        "nam",
+        "hùng",
+        "nam tử"
       ],
       "collocations": [
         {
           "phrase": "male students",
-          "meaning": "男生"
+          "meaning": "nam sinh"
         },
         {
           "phrase": "male and female",
-          "meaning": "男女"
+          "meaning": "nam nữ"
         },
         {
           "phrase": "male workers",
-          "meaning": "男工"
+          "meaning": "nam công"
         }
       ],
-      "root": "与 female 成对，表生物性别",
+      "root": "và female thành đôi, bề ngoài Sinh học giới tính",
       "synonyms": [
         "man"
       ],
@@ -2033,45 +2033,45 @@
         "female"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "男的",
-        "topic": "社会"
+        "commonUsage": "nam",
+        "topic": "xã hội"
       },
       "exampleEn": "The sample included both male and female participants aged 18 to 25.",
-      "exampleZh": "样本包括 18 至 25 岁的男性和女性参与者。",
-      "mnemonic": "与 female 成对，表生物性别",
+      "exampleZh": "hàng mẫu kể cả 18 đến 25 tuổi nam tính và nữ tính người tham dự.",
+      "mnemonic": "và female thành đôi, bề ngoài Sinh học giới tính",
       "exampleEN": "The sample included both male and female participants aged 18 to 25.",
-      "exampleCN": "样本包括 18 至 25 岁的男性和女性参与者。"
+      "exampleCN": "hàng mẫu kể cả 18 đến 25 tuổi nam tính và nữ tính người tham dự."
     },
     {
       "id": 46,
       "word": "relate",
       "ipa": "/rɪˈleɪt/",
       "pos": "v.",
-      "meaning": "v. ①有关联（relate to）；②讲述；③相处（relate to sb）。related（有关的）；relation（关系）；relationship（人际关系）。be related to。",
-      "phrases": "relate to（与…有关；理解）, be related to（与…相关）, in relation to（关于）",
-      "example": "The findings relate to a wider debate about online learning.（这些发现关系到关于在线学习的更广泛讨论。）",
+      "meaning": "v. kể lại, thuật lại; liên hệ, liên kết",
+      "phrases": "relate to (và … có quan hệ; lý giải), be related to (và … tương quan), in relation to (về)",
+      "example": "The findings relate to a wider debate about online learning. (những mục này Khám phá quan hệ đến về online học tập càng rộng hiện thảo luận.)",
       "acceptCN": [
-        "有关",
-        "涉及",
-        "讲述"
+        "có quan hệ",
+        "liên quan đến",
+        "giảng thuật"
       ],
       "collocations": [
         {
           "phrase": "relate to",
-          "meaning": "与…有关；理解"
+          "meaning": "và … có quan hệ; lý giải"
         },
         {
           "phrase": "be related to",
-          "meaning": "与…相关"
+          "meaning": "và … tương quan"
         },
         {
           "phrase": "in relation to",
-          "meaning": "关于"
+          "meaning": "về"
         }
       ],
-      "root": "re-（回）+ lat（拿）→ 把事物拿回来对照 → 关联",
+      "root": "re- (quay về) + lat (cầm) → đem sự vật cầm về so sánh → liên quan",
       "synonyms": [
         "connect"
       ],
@@ -2079,176 +2079,176 @@
         "unrelated"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "有关",
-        "topic": "学术"
+        "commonUsage": "có quan hệ",
+        "topic": "Học thuật"
       },
       "exampleEn": "The findings relate to a wider debate about online learning.",
-      "exampleZh": "这些发现关系到关于在线学习的更广泛讨论。",
-      "mnemonic": "re-（回）+ lat（拿）→ 把事物拿回来对照 → 关联",
+      "exampleZh": "những mục này Khám phá quan hệ đến về online học tập càng rộng hiện thảo luận.",
+      "mnemonic": "re- (quay về) + lat (cầm) → đem sự vật cầm về so sánh → liên quan",
       "exampleEN": "The findings relate to a wider debate about online learning.",
-      "exampleCN": "这些发现关系到关于在线学习的更广泛讨论。"
+      "exampleCN": "những mục này Khám phá quan hệ đến về online học tập càng rộng hiện thảo luận."
     },
     {
       "id": 47,
       "word": "solve",
       "ipa": "/sɒlv/ · /sɑːlv/",
       "pos": "v.",
-      "meaning": "v. 解决，解答（solve a problem / puzzle）。solution（解决办法；溶液）。solvable。solve 后直接接问题，不接 to。",
-      "phrases": "solve a problem（解决问题）, find a solution（找到解决办法）, solve a puzzle（解谜）",
-      "example": "The committee met to solve the shortage of student accommodation.（委员会开会以解决学生住宿短缺问题。）",
+      "meaning": "v. giải quyết (một vấn đề); (toán học) giải (một phương trình)",
+      "phrases": "solve a problem (giải quyết vấn đề), find a solution (tìm được biện pháp giải quyết), solve a puzzle (tìm ra lời giải)",
+      "example": "The committee met to solve the shortage of student accommodation. (uỷ ban họp để giải quyết Học viên dừng chân thiếu vấn đề.)",
       "acceptCN": [
-        "解决",
-        "解答"
+        "giải quyết",
+        "giải đáp"
       ],
       "collocations": [
         {
           "phrase": "solve a problem",
-          "meaning": "解决问题"
+          "meaning": "giải quyết vấn đề"
         },
         {
           "phrase": "find a solution",
-          "meaning": "找到解决办法"
+          "meaning": "tìm được biện pháp giải quyết"
         },
         {
           "phrase": "solve a puzzle",
-          "meaning": "解谜"
+          "meaning": "tìm ra lời giải"
         }
       ],
-      "root": "solv（松开）→ 把结解开 → 解决",
+      "root": "solv (buông ra) → đem kết cởi bỏ → giải quyết",
       "synonyms": [
         "resolve"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "解决",
-        "topic": "社会"
+        "commonUsage": "giải quyết",
+        "topic": "xã hội"
       },
       "exampleEn": "The committee met to solve the shortage of student accommodation.",
-      "exampleZh": "委员会开会以解决学生住宿短缺问题。",
-      "mnemonic": "solv（松开）→ 把结解开 → 解决",
+      "exampleZh": "uỷ ban họp để giải quyết Học viên dừng chân thiếu vấn đề.",
+      "mnemonic": "solv (buông ra) → đem kết cởi bỏ → giải quyết",
       "exampleEN": "The committee met to solve the shortage of student accommodation.",
-      "exampleCN": "委员会开会以解决学生住宿短缺问题。"
+      "exampleCN": "uỷ ban họp để giải quyết Học viên dừng chân thiếu vấn đề."
     },
     {
       "id": 48,
       "word": "action",
       "ipa": "/ˈækʃn/",
       "pos": "n.",
-      "meaning": "n. ①行动，行为（take action）；②作用；③诉讼。in action（在运转；在起作用）。active；activity。take action to do。",
-      "phrases": "take action（采取行动）, in action（在起作用）, legal action（法律诉讼）",
-      "example": "The government promised to take action against food waste.（政府承诺对食物浪费采取行动。）",
+      "meaning": "n. hành động, hành vi; hoạt động; công việc, việc làm; tác động, tác dụng, ảnh hưởng",
+      "phrases": "take action (áp dụng hành động), in action (tại có tác dụng), legal action (pháp luật tố tụng)",
+      "example": "The government promised to take action against food waste. (chính phủ hứa hẹn đối với Thực phẩm lãng phí áp dụng hành động.)",
       "acceptCN": [
-        "行动",
-        "行为",
-        "作用"
+        "hành động",
+        "hành vi",
+        "tác dụng"
       ],
       "collocations": [
         {
           "phrase": "take action",
-          "meaning": "采取行动"
+          "meaning": "áp dụng hành động"
         },
         {
           "phrase": "in action",
-          "meaning": "在起作用"
+          "meaning": "tại có tác dụng"
         },
         {
           "phrase": "legal action",
-          "meaning": "法律诉讼"
+          "meaning": "pháp luật tố tụng"
         }
       ],
-      "root": "act（做）+ -ion → 做出来的事 → 行动",
+      "root": "act (làm) + -ion → làm được sự tình → hành động",
       "synonyms": [
         "act",
         "measure"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "行动",
-        "topic": "社会"
+        "commonUsage": "hành động",
+        "topic": "xã hội"
       },
       "exampleEn": "The government promised to take action against food waste.",
-      "exampleZh": "政府承诺对食物浪费采取行动。",
-      "mnemonic": "act（做）+ -ion → 做出来的事 → 行动",
+      "exampleZh": "chính phủ hứa hẹn đối với Thực phẩm lãng phí áp dụng hành động.",
+      "mnemonic": "act (làm) + -ion → làm được sự tình → hành động",
       "exampleEN": "The government promised to take action against food waste.",
-      "exampleCN": "政府承诺对食物浪费采取行动。"
+      "exampleCN": "chính phủ hứa hẹn đối với Thực phẩm lãng phí áp dụng hành động."
     },
     {
       "id": 49,
       "word": "bacteria",
       "ipa": "/bækˈtɪəriə/ · /bækˈtɪriə/",
       "pos": "n.",
-      "meaning": "n. 细菌（bacterium 的复数；作主语时动词常用复数）。bacterial（细菌的）。beneficial / harmful bacteria。勿与 virus（病毒）混用。",
-      "phrases": "harmful bacteria（有害细菌）, bacterial infection（细菌感染）, antibiotic-resistant bacteria（耐药细菌）",
-      "example": "Some bacteria in the gut are essential for digestion.（肠道中的一些细菌对消化至关重要。）",
+      "meaning": "n. vi khuẩn",
+      "phrases": "harmful bacteria (có hại vi khuẩn), bacterial infection (vi khuẩn bị nhiễm), antibiotic-resistant bacteria (nhịn thuốc vi khuẩn)",
+      "example": "Some bacteria in the gut are essential for digestion. (tràng đạo trong đích một ít vi khuẩn bù trừ lẫn nhau hóa rất trọng yếu.)",
       "acceptCN": [
-        "细菌",
-        "病菌"
+        "vi khuẩn",
+        "bệnh khuẩn"
       ],
       "collocations": [
         {
           "phrase": "harmful bacteria",
-          "meaning": "有害细菌"
+          "meaning": "có hại vi khuẩn"
         },
         {
           "phrase": "bacterial infection",
-          "meaning": "细菌感染"
+          "meaning": "vi khuẩn bị nhiễm"
         },
         {
           "phrase": "antibiotic-resistant bacteria",
-          "meaning": "耐药细菌"
+          "meaning": "nhịn thuốc vi khuẩn"
         }
       ],
-      "root": "bacter（小棒）→ 杆状微生物 → 细菌",
+      "root": "bacter (tiểu bổng) → cán hình dáng vi sinh vật → vi khuẩn",
       "synonyms": [
         "germs"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "细菌",
-        "topic": "健康"
+        "commonUsage": "vi khuẩn",
+        "topic": "Sức khỏe"
       },
       "exampleEn": "Some bacteria in the gut are essential for digestion.",
-      "exampleZh": "肠道中的一些细菌对消化至关重要。",
-      "mnemonic": "bacter（小棒）→ 杆状微生物 → 细菌",
+      "exampleZh": "tràng đạo trong đích một ít vi khuẩn bù trừ lẫn nhau hóa rất trọng yếu.",
+      "mnemonic": "bacter (tiểu bổng) → cán hình dáng vi sinh vật → vi khuẩn",
       "exampleEN": "Some bacteria in the gut are essential for digestion.",
-      "exampleCN": "肠道中的一些细菌对消化至关重要。"
+      "exampleCN": "tràng đạo trong đích một ít vi khuẩn bù trừ lẫn nhau hóa rất trọng yếu."
     },
     {
       "id": 50,
       "word": "marry",
       "ipa": "/ˈmæri/",
       "pos": "v.",
-      "meaning": "v. ①结婚（marry sb，不接 with）；②把…嫁给。get married（结婚，状态/动作皆可）。marriage（婚姻）；married。marry in/into。",
-      "phrases": "get married（结婚）, marry sb（与某人结婚）, marriage rate（结婚率）",
-      "example": "The average age at which people marry has risen over the past decade.（过去十年里，人们结婚的平均年龄有所上升。）",
+      "meaning": "v. cưới (vợ), lấy (chồng); lấy vợ cho, lấy chồng cho, gả, làm lễ cưới cho ở nhà thờ",
+      "phrases": "get married (kết hôn), marry sb (và người nào đó kết hôn), marriage rate (kết hôn dẫn đầu)",
+      "example": "The average age at which people marry has risen over the past decade. (qua trong mười năm, mọi người kết hôn bình quân tuổi có chỗ bay lên.)",
       "acceptCN": [
-        "结婚",
-        "嫁",
-        "娶"
+        "kết hôn",
+        "gả",
+        "lấy"
       ],
       "collocations": [
         {
           "phrase": "get married",
-          "meaning": "结婚"
+          "meaning": "kết hôn"
         },
         {
           "phrase": "marry sb",
-          "meaning": "与某人结婚"
+          "meaning": "và người nào đó kết hôn"
         },
         {
           "phrase": "marriage rate",
-          "meaning": "结婚率"
+          "meaning": "kết hôn dẫn đầu"
         }
       ],
-      "root": "与 marriage 同源，指结成夫妇",
+      "root": "và marriage đồng nguyên, chỉ kết thành vợ chồng",
       "synonyms": [
         "wed"
       ],
@@ -2256,88 +2256,88 @@
         "divorce"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "结婚",
-        "topic": "社会"
+        "commonUsage": "kết hôn",
+        "topic": "xã hội"
       },
       "exampleEn": "The average age at which people marry has risen over the past decade.",
-      "exampleZh": "过去十年里，人们结婚的平均年龄有所上升。",
-      "mnemonic": "与 marriage 同源，指结成夫妇",
+      "exampleZh": "qua trong mười năm, mọi người kết hôn bình quân tuổi có chỗ bay lên.",
+      "mnemonic": "và marriage đồng nguyên, chỉ kết thành vợ chồng",
       "exampleEN": "The average age at which people marry has risen over the past decade.",
-      "exampleCN": "过去十年里，人们结婚的平均年龄有所上升。"
+      "exampleCN": "qua trong mười năm, mọi người kết hôn bình quân tuổi có chỗ bay lên."
     },
     {
       "id": 51,
       "word": "recently",
       "ipa": "/ˈriːsntli/",
       "pos": "adv.",
-      "meaning": "adv. 最近，近来（与现在完成时或一般过去时连用）。recent（最近的）。as recently as（就在最近…时）。",
-      "phrases": "until recently（直到最近）, as recently as（就在最近）, a recent study（一项近期研究）",
-      "example": "A recent study has shown that short breaks improve concentration.（一项近期研究表明，短暂休息能提高注意力。）",
+      "meaning": "adv. gần đây, mới đây",
+      "phrases": "until recently (thẳng đến gần nhất), as recently as (ngay tại gần nhất), a recent study (hạng nhất gần đây nghiên cứu)",
+      "example": "A recent study has shown that short breaks improve concentration. (hạng nhất gần đây nghiên cứu cho thấy, ngắn ngủi nghỉ ngơi có thể đề cao lực chú ý.)",
       "acceptCN": [
-        "最近",
-        "近来"
+        "gần nhất",
+        "gần đây"
       ],
       "collocations": [
         {
           "phrase": "until recently",
-          "meaning": "直到最近"
+          "meaning": "thẳng đến gần nhất"
         },
         {
           "phrase": "as recently as",
-          "meaning": "就在最近"
+          "meaning": "ngay tại gần nhất"
         },
         {
           "phrase": "a recent study",
-          "meaning": "一项近期研究"
+          "meaning": "hạng nhất gần đây nghiên cứu"
         }
       ],
-      "root": "recent（新近的）+ -ly",
+      "root": "recent (gần đây) + -ly",
       "synonyms": [
         "lately"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "最近",
-        "topic": "学术"
+        "commonUsage": "gần nhất",
+        "topic": "Học thuật"
       },
       "exampleEn": "A recent study has shown that short breaks improve concentration.",
-      "exampleZh": "一项近期研究表明，短暂休息能提高注意力。",
-      "mnemonic": "recent（新近的）+ -ly",
+      "exampleZh": "hạng nhất gần đây nghiên cứu cho thấy, ngắn ngủi nghỉ ngơi có thể đề cao lực chú ý.",
+      "mnemonic": "recent (gần đây) + -ly",
       "exampleEN": "A recent study has shown that short breaks improve concentration.",
-      "exampleCN": "一项近期研究表明，短暂休息能提高注意力。"
+      "exampleCN": "hạng nhất gần đây nghiên cứu cho thấy, ngắn ngủi nghỉ ngơi có thể đề cao lực chú ý."
     },
     {
       "id": 52,
       "word": "balance",
       "ipa": "/ˈbæləns/",
       "pos": "n. / v.",
-      "meaning": "n. ①平衡（keep a balance between A and B）；②余额；③天平。v. 使平衡。on balance（总的来说）。balanced（均衡的）。work–life balance。",
-      "phrases": "keep a balance（保持平衡）, work–life balance（工作与生活的平衡）, on balance（总的来说）",
-      "example": "Students need to keep a balance between study and rest.（学生需要在学习与休息之间保持平衡。）",
+      "meaning": "cái cân; sự thăng bằng sự cân bằng; cán cân",
+      "phrases": "keep a balance (bảo trì cân bằng), work–life balance (công tác và sinh hoạt cân bằng), on balance (nói tóm lại)",
+      "example": "Students need to keep a balance between study and rest. (Học viên cần đang học và nghỉ ngơi giữa bảo trì cân bằng.)",
       "acceptCN": [
-        "平衡",
-        "余额",
-        "使平衡"
+        "cân bằng",
+        "số dư còn lại",
+        "khiến cho cân bằng"
       ],
       "collocations": [
         {
           "phrase": "keep a balance",
-          "meaning": "保持平衡"
+          "meaning": "bảo trì cân bằng"
         },
         {
           "phrase": "work–life balance",
-          "meaning": "工作与生活的平衡"
+          "meaning": "công tác và sinh hoạt cân bằng"
         },
         {
           "phrase": "on balance",
-          "meaning": "总的来说"
+          "meaning": "nói tóm lại"
         }
       ],
-      "root": "原指天平两臂，引申为两边相当",
+      "root": "nguyên chỉ thiên đều hai cánh tay, nghĩa rộng là hai bên tương đối",
       "synonyms": [
         "equilibrium"
       ],
@@ -2345,400 +2345,400 @@
         "imbalance"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "平衡",
-        "topic": "校园"
+        "commonUsage": "cân bằng",
+        "topic": "sân trường"
       },
       "exampleEn": "Students need to keep a balance between study and rest.",
-      "exampleZh": "学生需要在学习与休息之间保持平衡。",
-      "mnemonic": "原指天平两臂，引申为两边相当",
+      "exampleZh": "Học viên cần đang học và nghỉ ngơi giữa bảo trì cân bằng.",
+      "mnemonic": "nguyên chỉ thiên đều hai cánh tay, nghĩa rộng là hai bên tương đối",
       "exampleEN": "Students need to keep a balance between study and rest.",
-      "exampleCN": "学生需要在学习与休息之间保持平衡。"
+      "exampleCN": "Học viên cần đang học và nghỉ ngơi giữa bảo trì cân bằng."
     },
     {
       "id": 53,
       "word": "replace",
       "ipa": "/rɪˈpleɪs/",
       "pos": "v.",
-      "meaning": "v. ①替换（replace A with/by B）；②取代；③把…放回原处。replacement（替换；替代物）。in place of。",
-      "phrases": "replace A with B（用B替换A）, replacement（替代物）, in place of（代替）",
-      "example": "Online materials will not completely replace printed textbooks.（在线资料不会完全取代纸质教材。）",
+      "meaning": "v. thay thế; đặt lại chỗ cũ",
+      "phrases": "replace A with B (dùng B thay thế A), replacement (vật thay thế), in place of (thay thế)",
+      "example": "Online materials will not completely replace printed textbooks. (online tư liệu sẽ không hoàn toàn thay thế bằng giấy tài liệu giảng dạy.)",
       "acceptCN": [
-        "替换",
-        "取代",
-        "放回"
+        "thay thế",
+        "thay thế",
+        "thả lại"
       ],
       "collocations": [
         {
           "phrase": "replace A with B",
-          "meaning": "用B替换A"
+          "meaning": "dùng B thay thế A"
         },
         {
           "phrase": "replacement",
-          "meaning": "替代物"
+          "meaning": "vật thay thế"
         },
         {
           "phrase": "in place of",
-          "meaning": "代替"
+          "meaning": "thay thế"
         }
       ],
-      "root": "re-（再）+ place（放置）→ 放到原位/换成另一个",
+      "root": "re- (lại) + place (để đặt) → phóng tới tại chỗ / đổi thành cái khác",
       "synonyms": [
         "substitute"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "替换",
-        "topic": "教育"
+        "commonUsage": "thay thế",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Online materials will not completely replace printed textbooks.",
-      "exampleZh": "在线资料不会完全取代纸质教材。",
-      "mnemonic": "re-（再）+ place（放置）→ 放到原位/换成另一个",
+      "exampleZh": "online tư liệu sẽ không hoàn toàn thay thế bằng giấy tài liệu giảng dạy.",
+      "mnemonic": "re- (lại) + place (để đặt) → phóng tới tại chỗ / đổi thành cái khác",
       "exampleEN": "Online materials will not completely replace printed textbooks.",
-      "exampleCN": "在线资料不会完全取代纸质教材。"
+      "exampleCN": "online tư liệu sẽ không hoàn toàn thay thế bằng giấy tài liệu giảng dạy."
     },
     {
       "id": 54,
       "word": "charge",
       "ipa": "/tʃɑːdʒ/ · /tʃɑːrdʒ/",
       "pos": "n. / v.",
-      "meaning": "n. ①费用（free of charge）；②指控；③主管（in charge of）；④电荷。v. ①收费；②指控（charge sb with）；③充电。take charge of。",
-      "phrases": "in charge of（负责）, free of charge（免费）, charge sb with（指控某人）",
-      "example": "A senior lecturer is in charge of the writing programme.（一位资深讲师负责该写作项目。）",
+      "meaning": "vật mang, vật chở, vật gánh; gánh nặng ((nghĩa đen) & (nghĩa bóng))",
+      "phrases": "in charge of (chịu trách nhiệm), free of charge (miễn phí), charge sb with (lên án người nào đó)",
+      "example": "A senior lecturer is in charge of the writing programme. (một vị thâm niên giảng sư chịu trách nhiệm nên Viết hạng mục.)",
       "acceptCN": [
-        "收费",
-        "指控",
-        "主管"
+        "thu phí",
+        "lên án",
+        "chủ quản"
       ],
       "collocations": [
         {
           "phrase": "in charge of",
-          "meaning": "负责"
+          "meaning": "chịu trách nhiệm"
         },
         {
           "phrase": "free of charge",
-          "meaning": "免费"
+          "meaning": "miễn phí"
         },
         {
           "phrase": "charge sb with",
-          "meaning": "指控某人"
+          "meaning": "lên án người nào đó"
         }
       ],
-      "root": "原义‘装上负担’→ 收费/指控/充电",
+      "root": "nguyên nghĩa ‘ cài đặt gánh nặng ’→ thu phí / lên án / nạp điện",
       "synonyms": [
         "fee",
         "accuse"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "负责",
-        "topic": "校园"
+        "commonUsage": "chịu trách nhiệm",
+        "topic": "sân trường"
       },
       "exampleEn": "A senior lecturer is in charge of the writing programme.",
-      "exampleZh": "一位资深讲师负责该写作项目。",
-      "mnemonic": "原义‘装上负担’→ 收费/指控/充电",
+      "exampleZh": "một vị thâm niên giảng sư chịu trách nhiệm nên Viết hạng mục.",
+      "mnemonic": "nguyên nghĩa ‘ cài đặt gánh nặng ’→ thu phí / lên án / nạp điện",
       "exampleEN": "A senior lecturer is in charge of the writing programme.",
-      "exampleCN": "一位资深讲师负责该写作项目。"
+      "exampleCN": "một vị thâm niên giảng sư chịu trách nhiệm nên Viết hạng mục."
     },
     {
       "id": 55,
       "word": "facility",
       "ipa": "/fəˈsɪləti/",
       "pos": "n.",
-      "meaning": "n. ①设施，设备（sports / medical facilities，常用复数）；②便利，才能。facilitate（使便利）。research facilities。",
-      "phrases": "sports facilities（体育设施）, medical facilities（医疗设施）, research facilities（研究设施）",
-      "example": "The new campus provides excellent sports facilities for students.（新校区为学生提供了很好的体育设施。）",
+      "meaning": "n. (số nhiều) điều kiện dễ dàng, điều kiện thuận lợi; phương tiện dễ dàng; sự dễ dàng, sự trôi chảy",
+      "phrases": "sports facilities (Thể thao phương tiện), medical facilities (chữa bệnh phương tiện), research facilities (nghiên cứu phương tiện)",
+      "example": "The new campus provides excellent sports facilities for students. (mới giáo khu là Học viên cung cấp rất tốt Thể thao phương tiện.)",
       "acceptCN": [
-        "设施",
-        "设备",
-        "便利"
+        "phương tiện",
+        "thiết bị",
+        "tiện lợi"
       ],
       "collocations": [
         {
           "phrase": "sports facilities",
-          "meaning": "体育设施"
+          "meaning": "Thể thao phương tiện"
         },
         {
           "phrase": "medical facilities",
-          "meaning": "医疗设施"
+          "meaning": "chữa bệnh phương tiện"
         },
         {
           "phrase": "research facilities",
-          "meaning": "研究设施"
+          "meaning": "nghiên cứu phương tiện"
         }
       ],
-      "root": "facil（容易）+ -ity → 使事情容易进行的条件 → 设施",
+      "root": "facil (dễ dàng) + -ity → khiến cho sự tình dễ dàng tiến hành điều kiện → phương tiện",
       "synonyms": [
         "amenities"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "设施",
-        "topic": "校园"
+        "commonUsage": "phương tiện",
+        "topic": "sân trường"
       },
       "exampleEn": "The new campus provides excellent sports facilities for students.",
-      "exampleZh": "新校区为学生提供了很好的体育设施。",
-      "mnemonic": "facil（容易）+ -ity → 使事情容易进行的条件 → 设施",
+      "exampleZh": "mới giáo khu là Học viên cung cấp rất tốt Thể thao phương tiện.",
+      "mnemonic": "facil (dễ dàng) + -ity → khiến cho sự tình dễ dàng tiến hành điều kiện → phương tiện",
       "exampleEN": "The new campus provides excellent sports facilities for students.",
-      "exampleCN": "新校区为学生提供了很好的体育设施。"
+      "exampleCN": "mới giáo khu là Học viên cung cấp rất tốt Thể thao phương tiện."
     },
     {
       "id": 56,
       "word": "influence",
       "ipa": "/ˈɪnfluəns/",
       "pos": "n. / v.",
-      "meaning": "n. 影响（influence on/over；under the influence of）。v. 影响（influence sb/sth，不接 on）。influential（有影响力的）。比 affect 更可作名词。",
-      "phrases": "influence on（对…的影响）, under the influence of（在…影响下）, an influential study（一项有影响力的研究）",
-      "example": "Peer influence on study habits is often stronger than teachers expect.（同伴对学习习惯的影响往往比教师预期的更强。）",
+      "meaning": "ảnh hưởng, tác dụng; uy thế, thế lực",
+      "phrases": "influence on (đối với … ảnh hưởng), under the influence of (tại … dưới ảnh hưởng), an influential study (hạng nhất có sức ảnh hưởng nghiên cứu)",
+      "example": "Peer influence on study habits is often stronger than teachers expect. (đồng bạn đối với Học tập thói quen ảnh hưởng thường thường so với Giáo viên dự trù càng mạnh hơn nữa.)",
       "acceptCN": [
-        "影响",
-        "影响力"
+        "ảnh hưởng",
+        "lực ảnh hưởng"
       ],
       "collocations": [
         {
           "phrase": "influence on",
-          "meaning": "对…的影响"
+          "meaning": "đối với … ảnh hưởng"
         },
         {
           "phrase": "under the influence of",
-          "meaning": "在…影响下"
+          "meaning": "tại … dưới ảnh hưởng"
         },
         {
           "phrase": "an influential study",
-          "meaning": "一项有影响力的研究"
+          "meaning": "hạng nhất có sức ảnh hưởng nghiên cứu"
         }
       ],
-      "root": "in-（入）+ flu（流）→ 流入而起作用 → 影响",
+      "root": "in- (nhập) + flu (chảy) → chảy vào dựng lên tác dụng → ảnh hưởng",
       "synonyms": [
         "affect",
         "impact"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "影响",
-        "topic": "教育"
+        "commonUsage": "ảnh hưởng",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Peer influence on study habits is often stronger than teachers expect.",
-      "exampleZh": "同伴对学习习惯的影响往往比教师预期的更强。",
-      "mnemonic": "in-（入）+ flu（流）→ 流入而起作用 → 影响",
+      "exampleZh": "đồng bạn đối với Học tập thói quen ảnh hưởng thường thường so với Giáo viên dự trù càng mạnh hơn nữa.",
+      "mnemonic": "in- (nhập) + flu (chảy) → chảy vào dựng lên tác dụng → ảnh hưởng",
       "exampleEN": "Peer influence on study habits is often stronger than teachers expect.",
-      "exampleCN": "同伴对学习习惯的影响往往比教师预期的更强。"
+      "exampleCN": "đồng bạn đối với Học tập thói quen ảnh hưởng thường thường so với Giáo viên dự trù càng mạnh hơn nữa."
     },
     {
       "id": 57,
       "word": "policy",
       "ipa": "/ˈpɒləsi/ · /ˈpɑːləsi/",
       "pos": "n.",
-      "meaning": "n. ①政策（education / economic policy）；②方针；③保险单（an insurance policy）。policy on/towards。policy-maker。",
-      "phrases": "education policy（教育政策）, economic policy（经济政策）, insurance policy（保险单）",
-      "example": "The new education policy aims to reduce the cost of textbooks.（新的教育政策旨在降低教材费用。）",
+      "meaning": "n. chính sách (của chính phủ, đảng...); cách xử sự, cách giải quyết (vấn đề...) đường lối hành động",
+      "phrases": "education policy (Giáo dục chính sách), economic policy (chánh sách kinh tế), insurance policy (bảo hiểm đơn)",
+      "example": "The new education policy aims to reduce the cost of textbooks. (mới đích Giáo dục chính sách chỉ tại giảm xuống tài liệu giảng dạy phí tổn.)",
       "acceptCN": [
-        "政策",
-        "方针",
-        "保险单"
+        "chính sách",
+        "phương châm",
+        "bảo hiểm đơn"
       ],
       "collocations": [
         {
           "phrase": "education policy",
-          "meaning": "教育政策"
+          "meaning": "Giáo dục chính sách"
         },
         {
           "phrase": "economic policy",
-          "meaning": "经济政策"
+          "meaning": "chánh sách kinh tế"
         },
         {
           "phrase": "insurance policy",
-          "meaning": "保险单"
+          "meaning": "bảo hiểm đơn"
         }
       ],
-      "root": "polis（城邦）同源 → 治理城邦的办法 → 政策",
+      "root": "polis (City State) đồng nguyên → thống trị City State phương pháp xử lý → chính sách",
       "synonyms": [
         "strategy"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "政策",
-        "topic": "社会"
+        "commonUsage": "chính sách",
+        "topic": "xã hội"
       },
       "exampleEn": "The new education policy aims to reduce the cost of textbooks.",
-      "exampleZh": "新的教育政策旨在降低教材费用。",
-      "mnemonic": "polis（城邦）同源 → 治理城邦的办法 → 政策",
+      "exampleZh": "mới đích Giáo dục chính sách chỉ tại giảm xuống tài liệu giảng dạy phí tổn.",
+      "mnemonic": "polis (City State) đồng nguyên → thống trị City State phương pháp xử lý → chính sách",
       "exampleEN": "The new education policy aims to reduce the cost of textbooks.",
-      "exampleCN": "新的教育政策旨在降低教材费用。"
+      "exampleCN": "mới đích Giáo dục chính sách chỉ tại giảm xuống tài liệu giảng dạy phí tổn."
     },
     {
       "id": 58,
       "word": "argue",
       "ipa": "/ˈɑːɡjuː/ · /ˈɑːrɡjuː/",
       "pos": "v.",
-      "meaning": "v. ①主张，认为（argue that，学术高频）；②争论（argue with sb about）；③论证。argument（论点；争论）；argumentative。argue for/against。",
-      "phrases": "argue that（认为…）, argue for（主张支持）, an argument（论点；争论）",
-      "example": "The authors argue that smaller classes improve writing quality.（作者认为，较小的班级能提高写作质量。）",
+      "meaning": "v. chứng tỏ, chỉ rõ; tranh cãi, tranh luận",
+      "phrases": "argue that (cho rằng …), argue for (chủ trương hỗ trợ), an argument (luận điểm; tranh luận)",
+      "example": "The authors argue that smaller classes improve writing quality. (tác giả cho rằng, giác tiểu lớp có thể đề cao Viết chất lượng.)",
       "acceptCN": [
-        "主张",
-        "争论",
-        "论证"
+        "chủ trương",
+        "tranh luận",
+        "luận chứng"
       ],
       "collocations": [
         {
           "phrase": "argue that",
-          "meaning": "认为…"
+          "meaning": "cho rằng …"
         },
         {
           "phrase": "argue for",
-          "meaning": "主张支持"
+          "meaning": "chủ trương hỗ trợ"
         },
         {
           "phrase": "an argument",
-          "meaning": "论点；争论"
+          "meaning": "luận điểm; tranh luận"
         }
       ],
-      "root": "argu（澄清）→ 把道理说清楚 → 论证/争论",
+      "root": "argu (làm sáng tỏ) → đem đạo lý nói rõ ràng → luận chứng / tranh luận",
       "synonyms": [
         "claim",
         "maintain"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "主张",
-        "topic": "学术"
+        "commonUsage": "chủ trương",
+        "topic": "Học thuật"
       },
       "exampleEn": "The authors argue that smaller classes improve writing quality.",
-      "exampleZh": "作者认为，较小的班级能提高写作质量。",
-      "mnemonic": "argu（澄清）→ 把道理说清楚 → 论证/争论",
+      "exampleZh": "tác giả cho rằng, giác tiểu lớp có thể đề cao Viết chất lượng.",
+      "mnemonic": "argu (làm sáng tỏ) → đem đạo lý nói rõ ràng → luận chứng / tranh luận",
       "exampleEN": "The authors argue that smaller classes improve writing quality.",
-      "exampleCN": "作者认为，较小的班级能提高写作质量。"
+      "exampleCN": "tác giả cho rằng, giác tiểu lớp có thể đề cao Viết chất lượng."
     },
     {
       "id": 59,
       "word": "contribute",
       "ipa": "/kənˈtrɪbjuːt/",
       "pos": "v.",
-      "meaning": "v. ①促成，导致（contribute to，不接 to doing 而接名词/动名词皆可见）；②捐献，投稿。contribution（贡献）；contributor。a contributing factor。",
-      "phrases": "contribute to（促成；贡献于）, make a contribution（作出贡献）, a contributing factor（促成因素）",
-      "example": "Lack of sleep may contribute to poorer exam performance.（睡眠不足可能导致考试成绩较差。）",
+      "meaning": "v. đóng góp, góp phần",
+      "phrases": "contribute to (thúc đẩy; cống hiến tại), make a contribution (làm ra cống hiến), a contributing factor (thúc đẩy nhân tố)",
+      "example": "Lack of sleep may contribute to poorer exam performance. (giấc ngủ chưa đủ khả năng dẫn đến thành tích cuộc thi độ chênh lệch.)",
       "acceptCN": [
-        "促成",
-        "贡献",
-        "捐献"
+        "thúc đẩy",
+        "cống hiến",
+        "hiến cho"
       ],
       "collocations": [
         {
           "phrase": "contribute to",
-          "meaning": "促成；贡献于"
+          "meaning": "thúc đẩy; cống hiến tại"
         },
         {
           "phrase": "make a contribution",
-          "meaning": "作出贡献"
+          "meaning": "làm ra cống hiến"
         },
         {
           "phrase": "a contributing factor",
-          "meaning": "促成因素"
+          "meaning": "thúc đẩy nhân tố"
         }
       ],
-      "root": "con-（共同）+ tribute（给予）→ 一起给出 → 贡献/促成",
+      "root": "con- (cộng đồng) + tribute (cho) → cùng một chỗ cho ra → cống hiến / thúc đẩy",
       "synonyms": [
         "lead to",
         "donate"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "促成",
-        "topic": "学术"
+        "commonUsage": "thúc đẩy",
+        "topic": "Học thuật"
       },
       "exampleEn": "Lack of sleep may contribute to poorer exam performance.",
-      "exampleZh": "睡眠不足可能导致考试成绩较差。",
-      "mnemonic": "con-（共同）+ tribute（给予）→ 一起给出 → 贡献/促成",
+      "exampleZh": "giấc ngủ chưa đủ khả năng dẫn đến thành tích cuộc thi độ chênh lệch.",
+      "mnemonic": "con- (cộng đồng) + tribute (cho) → cùng một chỗ cho ra → cống hiến / thúc đẩy",
       "exampleEN": "Lack of sleep may contribute to poorer exam performance.",
-      "exampleCN": "睡眠不足可能导致考试成绩较差。"
+      "exampleCN": "giấc ngủ chưa đủ khả năng dẫn đến thành tích cuộc thi độ chênh lệch."
     },
     {
       "id": 60,
       "word": "generally",
       "ipa": "/ˈdʒenrəli/",
       "pos": "adv.",
-      "meaning": "adv. ①一般来说，通常（it is generally believed that）；②普遍地。general（一般的；将军）；in general。generalisation（概括，英式 -isation）。",
-      "phrases": "in general（一般来说）, it is generally believed that（人们普遍认为）, generally speaking（一般而言）",
-      "example": "It is generally believed that regular review improves long-term memory.（人们普遍认为，定期复习能改善长期记忆。）",
+      "meaning": "adv. nói chung, đại thể; thông thường, theo như lệ thường",
+      "phrases": "in general (nói như vậy), it is generally believed that (mọi người phổ biến cho rằng), generally speaking (nói chung)",
+      "example": "It is generally believed that regular review improves long-term memory. (mọi người phổ biến cho rằng, định kỳ Ôn tập có thể thay đổi thiện trường thời hạn trí nhớ.)",
       "acceptCN": [
-        "一般来说",
-        "通常",
-        "普遍地"
+        "nói như vậy",
+        "bình thường",
+        "phổ biến mà"
       ],
       "collocations": [
         {
           "phrase": "in general",
-          "meaning": "一般来说"
+          "meaning": "nói như vậy"
         },
         {
           "phrase": "it is generally believed that",
-          "meaning": "人们普遍认为"
+          "meaning": "mọi người phổ biến cho rằng"
         },
         {
           "phrase": "generally speaking",
-          "meaning": "一般而言"
+          "meaning": "nói chung"
         }
       ],
-      "root": "general（一般的）+ -ly",
+      "root": "general (giống vậy) + -ly",
       "synonyms": [
         "usually",
         "broadly"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "一般来说",
-        "topic": "学术"
+        "commonUsage": "nói như vậy",
+        "topic": "Học thuật"
       },
       "exampleEn": "It is generally believed that regular review improves long-term memory.",
-      "exampleZh": "人们普遍认为，定期复习能改善长期记忆。",
-      "mnemonic": "general（一般的）+ -ly",
+      "exampleZh": "mọi người phổ biến cho rằng, định kỳ Ôn tập có thể thay đổi thiện trường thời hạn trí nhớ.",
+      "mnemonic": "general (giống vậy) + -ly",
       "exampleEN": "It is generally believed that regular review improves long-term memory.",
-      "exampleCN": "人们普遍认为，定期复习能改善长期记忆。"
+      "exampleCN": "mọi người phổ biến cho rằng, định kỳ Ôn tập có thể thay đổi thiện trường thời hạn trí nhớ."
     },
     {
       "id": 61,
       "word": "hire",
       "ipa": "/ˈhaɪə(r)/ · /ˈhaɪər/",
       "pos": "v. / n.",
-      "meaning": "v. ①雇用（hire sb）；②租用（英式 hire a car，美式常用 rent）。n. 雇用，租用（for hire）。hire out。hirer。与 fire（解雇）相对。",
-      "phrases": "hire sb（雇用某人）, hire a car（租车）, for hire（供租用）",
-      "example": "The laboratory hired two research assistants for the project.（该实验室为这个项目雇用了两名研究助理。）",
+      "meaning": "thuê; cho thuê (nhà...); (từ Mỹ,nghĩa Mỹ) mướn, thuê (nhân công)",
+      "phrases": "hire sb (thuê mướn người nào đó), hire a car (taxi), for hire (cung cấp cho thuê)",
+      "example": "The laboratory hired two research assistants for the project. (nên phòng thí nghiệm vì cái này hạng mục thuê mướn rồi hai gã nghiên cứu trợ lý.)",
       "acceptCN": [
-        "雇用",
-        "租用"
+        "thuê mướn",
+        "cho thuê"
       ],
       "collocations": [
         {
           "phrase": "hire sb",
-          "meaning": "雇用某人"
+          "meaning": "thuê mướn người nào đó"
         },
         {
           "phrase": "hire a car",
-          "meaning": "租车"
+          "meaning": "taxi"
         },
         {
           "phrase": "for hire",
-          "meaning": "供租用"
+          "meaning": "cung cấp cho thuê"
         }
       ],
-      "root": "原义‘工资’，引申为付钱用人或用物",
+      "root": "nguyên nghĩa ‘ tiền lương ’, nghĩa rộng là trả tiền người hầu hoặc dùng vật",
       "synonyms": [
         "employ",
         "rent"
@@ -2747,89 +2747,89 @@
         "fire"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "雇用",
-        "topic": "就业"
+        "commonUsage": "thuê mướn",
+        "topic": "vào nghề"
       },
       "exampleEn": "The laboratory hired two research assistants for the project.",
-      "exampleZh": "该实验室为这个项目雇用了两名研究助理。",
-      "mnemonic": "原义‘工资’，引申为付钱用人或用物",
+      "exampleZh": "nên phòng thí nghiệm vì cái này hạng mục thuê mướn rồi hai gã nghiên cứu trợ lý.",
+      "mnemonic": "nguyên nghĩa ‘ tiền lương ’, nghĩa rộng là trả tiền người hầu hoặc dùng vật",
       "exampleEN": "The laboratory hired two research assistants for the project.",
-      "exampleCN": "该实验室为这个项目雇用了两名研究助理。"
+      "exampleCN": "nên phòng thí nghiệm vì cái này hạng mục thuê mướn rồi hai gã nghiên cứu trợ lý."
     },
     {
       "id": 62,
       "word": "knit",
       "ipa": "/nɪt/",
       "pos": "v.",
-      "meaning": "v. ①编织，针织（knit a sweater）；②使紧密结合（knit together）。n. 针织衫。close-knit（紧密团结的）。过去式 knitted 或 knit。",
-      "phrases": "knit together（使紧密结合）, a close-knit community（紧密团结的社区）, knit a sweater（织毛衣）",
-      "example": "The programme aims to knit together researchers from different faculties.（该项目旨在把不同院系的研究者紧密联系起来。）",
+      "meaning": "v. đan (len, sợi...); ((thường) together) nối chặt, gắn chặt, thắt chặt, kết chặt",
+      "phrases": "knit together (khiến cho chặt chẽ kết hợp), a close-knit community (chặt chẽ đoàn kết cộng đồng), knit a sweater (dệt áo lông)",
+      "example": "The programme aims to knit together researchers from different faculties. (nên hạng mục chỉ tại đem bất đồng viện hệ nhà nghiên cứu liên lạc chặc chẽ đứng lên.)",
       "acceptCN": [
-        "编织",
-        "针织",
-        "结合"
+        "bện",
+        "đồ hàng len",
+        "kết hợp"
       ],
       "collocations": [
         {
           "phrase": "knit together",
-          "meaning": "使紧密结合"
+          "meaning": "khiến cho chặt chẽ kết hợp"
         },
         {
           "phrase": "a close-knit community",
-          "meaning": "紧密团结的社区"
+          "meaning": "chặt chẽ đoàn kết cộng đồng"
         },
         {
           "phrase": "knit a sweater",
-          "meaning": "织毛衣"
+          "meaning": "dệt áo lông"
         }
       ],
-      "root": "原义‘用线连结’，引申为使群体结合",
+      "root": "nguyên nghĩa ‘ dùng sợi dây gắn kết kết ’, nghĩa rộng là khiến cho quần thể kết hợp",
       "synonyms": [
         "weave",
         "join"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "编织",
-        "topic": "社会"
+        "commonUsage": "bện",
+        "topic": "xã hội"
       },
       "exampleEn": "The programme aims to knit together researchers from different faculties.",
-      "exampleZh": "该项目旨在把不同院系的研究者紧密联系起来。",
-      "mnemonic": "原义‘用线连结’，引申为使群体结合",
+      "exampleZh": "nên hạng mục chỉ tại đem bất đồng viện hệ nhà nghiên cứu liên lạc chặc chẽ đứng lên.",
+      "mnemonic": "nguyên nghĩa ‘ dùng sợi dây gắn kết kết ’, nghĩa rộng là khiến cho quần thể kết hợp",
       "exampleEN": "The programme aims to knit together researchers from different faculties.",
-      "exampleCN": "该项目旨在把不同院系的研究者紧密联系起来。"
+      "exampleCN": "nên hạng mục chỉ tại đem bất đồng viện hệ nhà nghiên cứu liên lạc chặc chẽ đứng lên."
     },
     {
       "id": 63,
       "word": "various",
       "ipa": "/ˈveəriəs/ · /ˈveriəs/",
       "pos": "adj.",
-      "meaning": "adj. 各种各样的（various reasons / methods）。variety（多样性；种类）；a variety of；vary（变化）；variation。比 different 更强调‘多种’。",
-      "phrases": "various reasons（种种原因）, a variety of（各种各样的）, vary from（与…不同）",
-      "example": "The survey listed various reasons why students drop out.（该调查列出了学生退学的种种原因。）",
+      "meaning": "adj. khác nhau; nhiều thứ khác nhau",
+      "phrases": "various reasons (đủ loại nguyên nhân), a variety of (các loại các dạng), vary from (và … bất đồng)",
+      "example": "The survey listed various reasons why students drop out. (nên điều tra nhóm ra Học viên nghỉ học đủ loại nguyên nhân.)",
       "acceptCN": [
-        "各种各样的",
-        "不同的"
+        "các loại các dạng",
+        "bất đồng"
       ],
       "collocations": [
         {
           "phrase": "various reasons",
-          "meaning": "种种原因"
+          "meaning": "đủ loại nguyên nhân"
         },
         {
           "phrase": "a variety of",
-          "meaning": "各种各样的"
+          "meaning": "các loại các dạng"
         },
         {
           "phrase": "vary from",
-          "meaning": "与…不同"
+          "meaning": "và … bất đồng"
         }
       ],
-      "root": "vari（变化）+ -ous → 多变化的 → 各种各样的",
+      "root": "vari (biến hóa) + -ous → hay thay đổi hóa → các loại các dạng",
       "synonyms": [
         "diverse",
         "several"
@@ -2838,133 +2838,133 @@
         "single"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "各种各样的",
-        "topic": "学术"
+        "commonUsage": "các loại các dạng",
+        "topic": "Học thuật"
       },
       "exampleEn": "The survey listed various reasons why students drop out.",
-      "exampleZh": "该调查列出了学生退学的种种原因。",
-      "mnemonic": "vari（变化）+ -ous → 多变化的 → 各种各样的",
+      "exampleZh": "nên điều tra nhóm ra Học viên nghỉ học đủ loại nguyên nhân.",
+      "mnemonic": "vari (biến hóa) + -ous → hay thay đổi hóa → các loại các dạng",
       "exampleEN": "The survey listed various reasons why students drop out.",
-      "exampleCN": "该调查列出了学生退学的种种原因。"
+      "exampleCN": "nên điều tra nhóm ra Học viên nghỉ học đủ loại nguyên nhân."
     },
     {
       "id": 64,
       "word": "contact",
       "ipa": "/ˈkɒntækt/ · /ˈkɑːntækt/",
       "pos": "n. / v.",
-      "meaning": "n. ①接触，联系（in contact with；make contact with）；②熟人。v. 联系（contact sb，不接 with）。contact details（联系方式）。",
-      "phrases": "in contact with（与…保持联系）, contact sb（联系某人）, contact details（联系方式）",
-      "example": "Students were asked to contact their supervisor once a week.（学生被要求每周与导师联系一次。）",
+      "meaning": "sự chạm, sự tiếp xúc; (toán học) tiếp điểm",
+      "phrases": "in contact with (và … giữ liên lạc), contact sb (liên hệ người nào đó), contact details (phương thức liên lạc)",
+      "example": "Students were asked to contact their supervisor once a week. (Học viên bị yêu cầu mỗi tuần và đạo sư liên hệ một lần.)",
       "acceptCN": [
-        "联系",
-        "接触",
-        "联络"
+        "liên hệ",
+        "tiếp xúc",
+        "liên lạc"
       ],
       "collocations": [
         {
           "phrase": "in contact with",
-          "meaning": "与…保持联系"
+          "meaning": "và … giữ liên lạc"
         },
         {
           "phrase": "contact sb",
-          "meaning": "联系某人"
+          "meaning": "liên hệ người nào đó"
         },
         {
           "phrase": "contact details",
-          "meaning": "联系方式"
+          "meaning": "phương thức liên lạc"
         }
       ],
-      "root": "con-（共同）+ tact（触）→ 碰到一起 → 接触/联系",
+      "root": "con- (cộng đồng) + tact (sờ) → đụng vào nhau → tiếp xúc / liên hệ",
       "synonyms": [
         "touch",
         "reach"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "联系",
-        "topic": "校园"
+        "commonUsage": "liên hệ",
+        "topic": "sân trường"
       },
       "exampleEn": "Students were asked to contact their supervisor once a week.",
-      "exampleZh": "学生被要求每周与导师联系一次。",
-      "mnemonic": "con-（共同）+ tact（触）→ 碰到一起 → 接触/联系",
+      "exampleZh": "Học viên bị yêu cầu mỗi tuần và đạo sư liên hệ một lần.",
+      "mnemonic": "con- (cộng đồng) + tact (sờ) → đụng vào nhau → tiếp xúc / liên hệ",
       "exampleEN": "Students were asked to contact their supervisor once a week.",
-      "exampleCN": "学生被要求每周与导师联系一次。"
+      "exampleCN": "Học viên bị yêu cầu mỗi tuần và đạo sư liên hệ một lần."
     },
     {
       "id": 65,
       "word": "resource",
       "ipa": "/rɪˈsɔːs/ · /ˈriːsɔːrs/",
       "pos": "n.",
-      "meaning": "n. ①资源（natural / educational resources，常用复数）；②资料。resourceful（足智多谋的）。human resources（人力资源）。",
-      "phrases": "natural resources（自然资源）, educational resources（教育资源）, human resources（人力资源）",
-      "example": "Not all schools have equal access to digital learning resources.（并非所有学校都能平等获得数字化学习资源。）",
+      "meaning": "n. phương sách, phương kế, thủ đoạn, cách xoay xở; chỗ trông mong vào (khi gặp thế bí); (số nhiều) tài nguyên",
+      "phrases": "natural resources (tự nhiên tài nguyên), educational resources (Giáo dục tài nguyên), human resources (tài nguyên nhân lực)",
+      "example": "Not all schools have equal access to digital learning resources. (cũng không phải là tất cả trường học đều có thể ngang hàng đạt được con số Hóa học tập tài nguyên.)",
       "acceptCN": [
-        "资源",
-        "资料"
+        "tài nguyên",
+        "tư liệu"
       ],
       "collocations": [
         {
           "phrase": "natural resources",
-          "meaning": "自然资源"
+          "meaning": "tự nhiên tài nguyên"
         },
         {
           "phrase": "educational resources",
-          "meaning": "教育资源"
+          "meaning": "Giáo dục tài nguyên"
         },
         {
           "phrase": "human resources",
-          "meaning": "人力资源"
+          "meaning": "tài nguyên nhân lực"
         }
       ],
-      "root": "re-（再）+ source（来源）→ 可一再取用的来源",
+      "root": "re- (lại) + source (nơi phát ra) → có thể lần nữa lấy dùng là nơi phát ra",
       "synonyms": [
         "supply"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "资源",
-        "topic": "教育"
+        "commonUsage": "tài nguyên",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Not all schools have equal access to digital learning resources.",
-      "exampleZh": "并非所有学校都能平等获得数字化学习资源。",
-      "mnemonic": "re-（再）+ source（来源）→ 可一再取用的来源",
+      "exampleZh": "cũng không phải là tất cả trường học đều có thể ngang hàng đạt được con số Hóa học tập tài nguyên.",
+      "mnemonic": "re- (lại) + source (nơi phát ra) → có thể lần nữa lấy dùng là nơi phát ra",
       "exampleEN": "Not all schools have equal access to digital learning resources.",
-      "exampleCN": "并非所有学校都能平等获得数字化学习资源。"
+      "exampleCN": "cũng không phải là tất cả trường học đều có thể ngang hàng đạt được con số Hóa học tập tài nguyên."
     },
     {
       "id": 66,
       "word": "supply",
       "ipa": "/səˈplaɪ/",
       "pos": "n. / v.",
-      "meaning": "n. ①供应，供给（in short supply；water supply）；②补给（supplies）。v. 供给（supply sb with sth / supply sth to sb）。supply and demand。",
-      "phrases": "in short supply（供应不足）, water supply（供水）, supply sb with（向某人提供）",
-      "example": "Clean water was in short supply after the storm.（风暴过后，清洁用水供应不足。）",
+      "meaning": "sự cung cấp, sự tiếp tế; nguồn dự trữ, kho cung cấp; đồ dự trữ; hàng cung cấp",
+      "phrases": "in short supply (cung ứng chưa đủ), water supply (cung cấp nước), supply sb with (hướng người nào đó cung cấp)",
+      "example": "Clean water was in short supply after the storm. (phong bạo qua đi, sạch sẽ dùng nước cung ứng chưa đủ.)",
       "acceptCN": [
-        "供应",
-        "供给",
-        "补给"
+        "cung ứng",
+        "cung cấp",
+        "tiếp tế"
       ],
       "collocations": [
         {
           "phrase": "in short supply",
-          "meaning": "供应不足"
+          "meaning": "cung ứng chưa đủ"
         },
         {
           "phrase": "water supply",
-          "meaning": "供水"
+          "meaning": "cung cấp nước"
         },
         {
           "phrase": "supply sb with",
-          "meaning": "向某人提供"
+          "meaning": "hướng người nào đó cung cấp"
         }
       ],
-      "root": "sup-（从下）+ ply（填满）→ 补上 → 供给",
+      "root": "sup- (từ dưới) + ply (nhồi vào) → bổ sung → cung cấp",
       "synonyms": [
         "provide"
       ],
@@ -2972,218 +2972,218 @@
         "demand"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "供应",
-        "topic": "社会"
+        "commonUsage": "cung ứng",
+        "topic": "xã hội"
       },
       "exampleEn": "Clean water was in short supply after the storm.",
-      "exampleZh": "风暴过后，清洁用水供应不足。",
-      "mnemonic": "sup-（从下）+ ply（填满）→ 补上 → 供给",
+      "exampleZh": "phong bạo qua đi, sạch sẽ dùng nước cung ứng chưa đủ.",
+      "mnemonic": "sup- (từ dưới) + ply (nhồi vào) → bổ sung → cung cấp",
       "exampleEN": "Clean water was in short supply after the storm.",
-      "exampleCN": "风暴过后，清洁用水供应不足。"
+      "exampleCN": "phong bạo qua đi, sạch sẽ dùng nước cung ứng chưa đủ."
     },
     {
       "id": 67,
       "word": "credit",
       "ipa": "/ˈkredɪt/",
       "pos": "n. / v.",
-      "meaning": "n. ①学分（course credits）；②信用，信贷（credit card）；③赞扬（give sb credit for）。v. ①记入贷方；②认为…有（credit sb with）。to sb's credit。",
-      "phrases": "credit card（信用卡）, course credits（课程学分）, give sb credit for（因…赞扬某人）",
-      "example": "Students must complete 120 credits before they can graduate.（学生须修满 120 个学分才能毕业。）",
+      "meaning": "sự tin, lòng tin; danh tiếng; danh vọng, uy tín",
+      "phrases": "credit card (thẻ tín dụng), course credits (chương trình học học phần), give sb credit for (bởi vì … tán dương người nào đó)",
+      "example": "Students must complete 120 credits before they can graduate. (Học viên tu dài đầy 120 học phần mới có thể tốt nghiệp.)",
       "acceptCN": [
-        "学分",
-        "信用",
-        "赞扬"
+        "học phần",
+        "tín dụng",
+        "tán dương"
       ],
       "collocations": [
         {
           "phrase": "credit card",
-          "meaning": "信用卡"
+          "meaning": "thẻ tín dụng"
         },
         {
           "phrase": "course credits",
-          "meaning": "课程学分"
+          "meaning": "chương trình học học phần"
         },
         {
           "phrase": "give sb credit for",
-          "meaning": "因…赞扬某人"
+          "meaning": "bởi vì … tán dương người nào đó"
         }
       ],
-      "root": "cred（相信）+ -it → 被相信的额度 → 信用/学分",
+      "root": "cred (tin tưởng) + -it → bị tin tưởng khoản độ → tín dụng / học phần",
       "synonyms": [
         "recognition"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "学分",
-        "topic": "校园"
+        "commonUsage": "học phần",
+        "topic": "sân trường"
       },
       "exampleEn": "Students must complete 120 credits before they can graduate.",
-      "exampleZh": "学生须修满 120 个学分才能毕业。",
-      "mnemonic": "cred（相信）+ -it → 被相信的额度 → 信用/学分",
+      "exampleZh": "Học viên tu dài đầy 120 học phần mới có thể tốt nghiệp.",
+      "mnemonic": "cred (tin tưởng) + -it → bị tin tưởng khoản độ → tín dụng / học phần",
       "exampleEN": "Students must complete 120 credits before they can graduate.",
-      "exampleCN": "学生须修满 120 个学分才能毕业。"
+      "exampleCN": "Học viên tu dài đầy 120 học phần mới có thể tốt nghiệp."
     },
     {
       "id": 68,
       "word": "airport",
       "ipa": "/ˈeəpɔːt/ · /ˈerpɔːrt/",
       "pos": "n.",
-      "meaning": "n. 机场（at the airport；an international airport）。air + port（港）。airport security。复数 airports。",
-      "phrases": "at the airport（在机场）, international airport（国际机场）, airport security（机场安检）",
-      "example": "A new railway line will connect the city centre with the airport.（一条新铁路线将把市中心与机场连接起来。）",
+      "meaning": "n. sân bay, phi trường",
+      "phrases": "at the airport (ở phi trường), international airport (phi trường quốc tế), airport security (sân bay kiểm an)",
+      "example": "A new railway line will connect the city centre with the airport. (một cái mới đường ray xe lửa đem đem trung tâm chợ và sân bay liên tiếp.)",
       "acceptCN": [
-        "机场",
-        "航空港"
+        "sân bay",
+        "cảng hàng không"
       ],
       "collocations": [
         {
           "phrase": "at the airport",
-          "meaning": "在机场"
+          "meaning": "ở phi trường"
         },
         {
           "phrase": "international airport",
-          "meaning": "国际机场"
+          "meaning": "phi trường quốc tế"
         },
         {
           "phrase": "airport security",
-          "meaning": "机场安检"
+          "meaning": "sân bay kiểm an"
         }
       ],
-      "root": "air（空中）+ port（港口）→ 空中港口",
+      "root": "air (không trung) + port (bến cảng) → không trung bến cảng",
       "synonyms": [
         "airfield"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "机场",
-        "topic": "交通"
+        "commonUsage": "sân bay",
+        "topic": "Giao thông"
       },
       "exampleEn": "A new railway line will connect the city centre with the airport.",
-      "exampleZh": "一条新铁路线将把市中心与机场连接起来。",
-      "mnemonic": "air（空中）+ port（港口）→ 空中港口",
+      "exampleZh": "một cái mới đường ray xe lửa đem đem trung tâm chợ và sân bay liên tiếp.",
+      "mnemonic": "air (không trung) + port (bến cảng) → không trung bến cảng",
       "exampleEN": "A new railway line will connect the city centre with the airport.",
-      "exampleCN": "一条新铁路线将把市中心与机场连接起来。"
+      "exampleCN": "một cái mới đường ray xe lửa đem đem trung tâm chợ và sân bay liên tiếp."
     },
     {
       "id": 69,
       "word": "interview",
       "ipa": "/ˈɪntəvjuː/ · /ˈɪntərvjuː/",
       "pos": "n. / v.",
-      "meaning": "n. ①面试（a job interview）；②采访。v. 面试，采访（interview sb for / about）。interviewee；interviewer。in an interview。",
-      "phrases": "job interview（求职面试）, interview sb（采访/面试某人）, in an interview（在采访中）",
-      "example": "Candidates were interviewed for twenty minutes about their research plans.（候选人就其研究计划接受了二十分钟的面试。）",
+      "meaning": "sự gặp gỡ, sự gặp mặt; cuộc nói chuyện riêng; cuộc phỏng vấn; bài phỏng vấn",
+      "phrases": "job interview (tìm việc phỏng vấn), interview sb (phỏng vấn / phỏng vấn người nào đó), in an interview (tại trong phỏng vấn)",
+      "example": "Candidates were interviewed for twenty minutes about their research plans. (người được đề cử liền kia nghiên cứu kế hoạch đã tiếp nhận 20 phút phỏng vấn.)",
       "acceptCN": [
-        "面试",
-        "采访"
+        "phỏng vấn",
+        "phỏng vấn"
       ],
       "collocations": [
         {
           "phrase": "job interview",
-          "meaning": "求职面试"
+          "meaning": "tìm việc phỏng vấn"
         },
         {
           "phrase": "interview sb",
-          "meaning": "采访/面试某人"
+          "meaning": "phỏng vấn / phỏng vấn người nào đó"
         },
         {
           "phrase": "in an interview",
-          "meaning": "在采访中"
+          "meaning": "tại trong phỏng vấn"
         }
       ],
-      "root": "inter-（在…之间）+ view（看）→ 当面相看 → 面试/采访",
+      "root": "inter- (tại … giữa) + view (nhìn) → ở trước mặt nhìn nhau → phỏng vấn / phỏng vấn",
       "synonyms": [
         "meeting"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "面试",
-        "topic": "就业"
+        "commonUsage": "phỏng vấn",
+        "topic": "vào nghề"
       },
       "exampleEn": "Candidates were interviewed for twenty minutes about their research plans.",
-      "exampleZh": "候选人就其研究计划接受了二十分钟的面试。",
-      "mnemonic": "inter-（在…之间）+ view（看）→ 当面相看 → 面试/采访",
+      "exampleZh": "người được đề cử liền kia nghiên cứu kế hoạch đã tiếp nhận 20 phút phỏng vấn.",
+      "mnemonic": "inter- (tại … giữa) + view (nhìn) → ở trước mặt nhìn nhau → phỏng vấn / phỏng vấn",
       "exampleEN": "Candidates were interviewed for twenty minutes about their research plans.",
-      "exampleCN": "候选人就其研究计划接受了二十分钟的面试。"
+      "exampleCN": "người được đề cử liền kia nghiên cứu kế hoạch đã tiếp nhận 20 phút phỏng vấn."
     },
     {
       "id": 70,
       "word": "solar",
       "ipa": "/ˈsəʊlə(r)/ · /ˈsoʊlər/",
       "pos": "adj.",
-      "meaning": "adj. ①太阳的（solar energy / power）；②太阳能的。solar panel（太阳能电池板）。solar system（太阳系）。与 lunar（月亮的）相对。",
-      "phrases": "solar energy（太阳能）, solar power（太阳能发电）, solar panel（太阳能电池板）",
-      "example": "Several universities have invested in solar energy on campus.（若干大学已在校园内投资太阳能。）",
+      "meaning": "adj. (thuộc) mặt trời, (thuộc) thái dương",
+      "phrases": "solar energy (năng lượng mặt trời), solar power (năng lượng mặt trời phát điện), solar panel (năng lượng mặt trời pin bản)",
+      "example": "Several universities have invested in solar energy on campus. (một số đại học đã ở trong sân trường đầu tư năng lượng mặt trời.)",
       "acceptCN": [
-        "太阳的",
-        "太阳能的"
+        "mặt trời",
+        "năng lượng mặt trời"
       ],
       "collocations": [
         {
           "phrase": "solar energy",
-          "meaning": "太阳能"
+          "meaning": "năng lượng mặt trời"
         },
         {
           "phrase": "solar power",
-          "meaning": "太阳能发电"
+          "meaning": "năng lượng mặt trời phát điện"
         },
         {
           "phrase": "solar panel",
-          "meaning": "太阳能电池板"
+          "meaning": "năng lượng mặt trời pin bản"
         }
       ],
-      "root": "sol（太阳）+ -ar → 与太阳有关的",
+      "root": "sol (mặt trời) + -ar → và mặt trời có liên quan",
       "synonyms": [],
       "antonyms": [
         "lunar"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "太阳的",
-        "topic": "环境"
+        "commonUsage": "mặt trời",
+        "topic": "Môi trường"
       },
       "exampleEn": "Several universities have invested in solar energy on campus.",
-      "exampleZh": "若干大学已在校园内投资太阳能。",
-      "mnemonic": "sol（太阳）+ -ar → 与太阳有关的",
+      "exampleZh": "một số đại học đã ở trong sân trường đầu tư năng lượng mặt trời.",
+      "mnemonic": "sol (mặt trời) + -ar → và mặt trời có liên quan",
       "exampleEN": "Several universities have invested in solar energy on campus.",
-      "exampleCN": "若干大学已在校园内投资太阳能。"
+      "exampleCN": "một số đại học đã ở trong sân trường đầu tư năng lượng mặt trời."
     },
     {
       "id": 71,
       "word": "mobile",
       "ipa": "/ˈməʊbaɪl/ · /ˈmoʊbl/",
       "pos": "adj. / n.",
-      "meaning": "adj. ①可移动的（a mobile population）；②流动的。n. 手机（英式 a mobile；美式 cell phone）。mobile phone。mobility（流动性）。immobilise（使不能移动）。",
-      "phrases": "mobile phone（手机）, a mobile population（流动人口）, social mobility（社会流动性）",
-      "example": "Mobile phones are now widely used for language learning.（手机现已广泛用于语言学习。）",
+      "meaning": "chuyển động, di động; lưu động; hay thay đổi, dễ biến đổi, biến đổi nhanh",
+      "phrases": "mobile phone (điện thoại), a mobile population (lưu động nhân khẩu), social mobility (xã hội lưu động tính)",
+      "example": "Mobile phones are now widely used for language learning. (điện thoại hiện đã rộng khắp dùng cho ngôn ngữ học tập.)",
       "acceptCN": [
-        "可移动的",
-        "手机",
-        "流动的"
+        "có thể di động",
+        "điện thoại",
+        "lưu động"
       ],
       "collocations": [
         {
           "phrase": "mobile phone",
-          "meaning": "手机"
+          "meaning": "điện thoại"
         },
         {
           "phrase": "a mobile population",
-          "meaning": "流动人口"
+          "meaning": "lưu động nhân khẩu"
         },
         {
           "phrase": "social mobility",
-          "meaning": "社会流动性"
+          "meaning": "xã hội lưu động tính"
         }
       ],
-      "root": "mov（移动）同源 → 可移动的；英式名词指手机",
+      "root": "mov (di động) đồng nguyên → có thể di động; kiểu Anh danh từ chỉ điện thoại",
       "synonyms": [
         "portable"
       ],
@@ -3191,313 +3191,313 @@
         "fixed"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "可移动的",
-        "topic": "科技"
+        "commonUsage": "có thể di động",
+        "topic": "Công nghệ"
       },
       "exampleEn": "Mobile phones are now widely used for language learning.",
-      "exampleZh": "手机现已广泛用于语言学习。",
-      "mnemonic": "mov（移动）同源 → 可移动的；英式名词指手机",
+      "exampleZh": "điện thoại hiện đã rộng khắp dùng cho ngôn ngữ học tập.",
+      "mnemonic": "mov (di động) đồng nguyên → có thể di động; kiểu Anh danh từ chỉ điện thoại",
       "exampleEN": "Mobile phones are now widely used for language learning.",
-      "exampleCN": "手机现已广泛用于语言学习。"
+      "exampleCN": "điện thoại hiện đã rộng khắp dùng cho ngôn ngữ học tập."
     },
     {
       "id": 72,
       "word": "promote",
       "ipa": "/prəˈməʊt/ · /prəˈmoʊt/",
       "pos": "v.",
-      "meaning": "v. ①促进，推动（promote growth / health）；②促销；③晋升（be promoted to）。promotion（促进；促销；晋升）；promotional。",
-      "phrases": "promote growth（促进增长）, be promoted to（被提升为）, health promotion（健康促进）",
-      "example": "The campaign aims to promote reading among primary school children.（该活动旨在促进小学生阅读。）",
+      "meaning": "v. thăng chức, thăng cấp, đề bạt; cho lên lớp; làm tăng tiến, đẩy mạnh, xúc tiến, khuyến khích",
+      "phrases": "promote growth (xúc tiến tăng trưởng), be promoted to (được đề thăng làm), health promotion (Sức khỏe xúc tiến)",
+      "example": "The campaign aims to promote reading among primary school children. (nên hoạt động chỉ tại xúc tiến học sinh tiểu học Đọc.)",
       "acceptCN": [
-        "促进",
-        "推销",
-        "晋升"
+        "xúc tiến",
+        "chào hàng",
+        "tấn chức"
       ],
       "collocations": [
         {
           "phrase": "promote growth",
-          "meaning": "促进增长"
+          "meaning": "xúc tiến tăng trưởng"
         },
         {
           "phrase": "be promoted to",
-          "meaning": "被提升为"
+          "meaning": "được đề thăng làm"
         },
         {
           "phrase": "health promotion",
-          "meaning": "健康促进"
+          "meaning": "Sức khỏe xúc tiến"
         }
       ],
-      "root": "pro-（向前）+ mote（移动）→ 向前推 → 促进/晋升",
+      "root": "pro- (về phía trước) + mote (di động) → đẩy về phía trước → xúc tiến / tấn chức",
       "synonyms": [
         "encourage",
         "advance"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "促进",
-        "topic": "教育"
+        "commonUsage": "xúc tiến",
+        "topic": "Giáo dục"
       },
       "exampleEn": "The campaign aims to promote reading among primary school children.",
-      "exampleZh": "该活动旨在促进小学生阅读。",
-      "mnemonic": "pro-（向前）+ mote（移动）→ 向前推 → 促进/晋升",
+      "exampleZh": "nên hoạt động chỉ tại xúc tiến học sinh tiểu học Đọc.",
+      "mnemonic": "pro- (về phía trước) + mote (di động) → đẩy về phía trước → xúc tiến / tấn chức",
       "exampleEN": "The campaign aims to promote reading among primary school children.",
-      "exampleCN": "该活动旨在促进小学生阅读。"
+      "exampleCN": "nên hoạt động chỉ tại xúc tiến học sinh tiểu học Đọc."
     },
     {
       "id": 73,
       "word": "shift",
       "ipa": "/ʃɪft/",
       "pos": "n. / v.",
-      "meaning": "n. ①转变（a shift in / towards）；②轮班（night shift）。v. 转移，改变（shift from A to B）。shift work。make a shift。",
-      "phrases": "a shift in（在…方面的转变）, night shift（夜班）, shift from A to B（从A转向B）",
-      "example": "There has been a shift towards online assessment in higher education.（高等教育已出现转向在线测评的趋势。）",
+      "meaning": "sự thay đổi vị trí, sự thay đổi tính tình; sự thăng trầm; sự luân phiên; ca, kíp",
+      "phrases": "a shift in (tại … phương diện chuyển biến), night shift (ca đêm), shift from A to B (từ A chuyển hướng B)",
+      "example": "There has been a shift towards online assessment in higher education. (giáo dục cao đẳng đã xuất hiện chuyển hướng online xác định và đánh giá xu thế.)",
       "acceptCN": [
-        "转变",
-        "转移",
-        "轮班"
+        "chuyển biến",
+        "chuyển di",
+        "cắt lượt"
       ],
       "collocations": [
         {
           "phrase": "a shift in",
-          "meaning": "在…方面的转变"
+          "meaning": "tại … phương diện chuyển biến"
         },
         {
           "phrase": "night shift",
-          "meaning": "夜班"
+          "meaning": "ca đêm"
         },
         {
           "phrase": "shift from A to B",
-          "meaning": "从A转向B"
+          "meaning": "từ A chuyển hướng B"
         }
       ],
-      "root": "原义‘分开/更换位置’→ 转变/换班",
+      "root": "nguyên nghĩa ‘ tách ra / thay đổi vị trí ’→ chuyển biến / thay ca",
       "synonyms": [
         "change",
         "move"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "转变",
-        "topic": "教育"
+        "commonUsage": "chuyển biến",
+        "topic": "Giáo dục"
       },
       "exampleEn": "There has been a shift towards online assessment in higher education.",
-      "exampleZh": "高等教育已出现转向在线测评的趋势。",
-      "mnemonic": "原义‘分开/更换位置’→ 转变/换班",
+      "exampleZh": "giáo dục cao đẳng đã xuất hiện chuyển hướng online xác định và đánh giá xu thế.",
+      "mnemonic": "nguyên nghĩa ‘ tách ra / thay đổi vị trí ’→ chuyển biến / thay ca",
       "exampleEN": "There has been a shift towards online assessment in higher education.",
-      "exampleCN": "高等教育已出现转向在线测评的趋势。"
+      "exampleCN": "giáo dục cao đẳng đã xuất hiện chuyển hướng online xác định và đánh giá xu thế."
     },
     {
       "id": 74,
       "word": "accident",
       "ipa": "/ˈæksɪdənt/",
       "pos": "n.",
-      "meaning": "n. ①事故（a traffic / car accident）；②意外。by accident（偶然，= by chance）。accidental（意外的）。accident and emergency（急诊）。",
-      "phrases": "by accident（偶然）, traffic accident（交通事故）, accidental（意外的）",
-      "example": "The decline in traffic accidents followed stricter speed limits.（交通事故的减少出现在更严格的限速规定之后。）",
+      "meaning": "n. sự rủi ro, tai nạn, tai biến; sự tình cờ, sự ngẫu nhiên",
+      "phrases": "by accident (ngẫu nhiên), traffic accident (tai nạn giao thông), accidental (bất ngờ)",
+      "example": "The decline in traffic accidents followed stricter speed limits. (tai nạn giao thông giảm bớt xuất hiện ở càng nghiêm khắc hạn nhanh chóng quy định về sau.)",
       "acceptCN": [
-        "事故",
-        "意外",
-        "偶然"
+        "sự cố",
+        "ngoài ý muốn",
+        "ngẫu nhiên"
       ],
       "collocations": [
         {
           "phrase": "by accident",
-          "meaning": "偶然"
+          "meaning": "ngẫu nhiên"
         },
         {
           "phrase": "traffic accident",
-          "meaning": "交通事故"
+          "meaning": "tai nạn giao thông"
         },
         {
           "phrase": "accidental",
-          "meaning": "意外的"
+          "meaning": "bất ngờ"
         }
       ],
-      "root": "ac-（向）+ cid（落）→ 落到头上 → 意外",
+      "root": "ac- (hướng) + cid (rơi) → rơi xuống trên đầu → ngoài ý muốn",
       "synonyms": [
         "crash",
         "mishap"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "事故",
-        "topic": "社会"
+        "commonUsage": "sự cố",
+        "topic": "xã hội"
       },
       "exampleEn": "The decline in traffic accidents followed stricter speed limits.",
-      "exampleZh": "交通事故的减少出现在更严格的限速规定之后。",
-      "mnemonic": "ac-（向）+ cid（落）→ 落到头上 → 意外",
+      "exampleZh": "tai nạn giao thông giảm bớt xuất hiện ở càng nghiêm khắc hạn nhanh chóng quy định về sau.",
+      "mnemonic": "ac- (hướng) + cid (rơi) → rơi xuống trên đầu → ngoài ý muốn",
       "exampleEN": "The decline in traffic accidents followed stricter speed limits.",
-      "exampleCN": "交通事故的减少出现在更严格的限速规定之后。"
+      "exampleCN": "tai nạn giao thông giảm bớt xuất hiện ở càng nghiêm khắc hạn nhanh chóng quy định về sau."
     },
     {
       "id": 75,
       "word": "management",
       "ipa": "/ˈmænɪdʒmənt/",
       "pos": "n.",
-      "meaning": "n. ①管理，经营（time / waste management）；②管理层（the management）。manage（管理）；manager（经理）；manageable。management skills。",
-      "phrases": "time management（时间管理）, waste management（废物管理）, management skills（管理技能）",
-      "example": "Time management is often cited as a key skill for university students.（时间管理常被列为大学生的一项关键技能。）",
+      "meaning": "n. sự trông nom, sự quản lý; sự điều khiển",
+      "phrases": "time management (thời gian Quản trị), waste management (phế vật Quản trị), management skills (Quản trị kỹ năng)",
+      "example": "Time management is often cited as a key skill for university students. (thời gian Quản trị thường bị liệt là sinh viên hạng nhất mấu chốt kỹ năng.)",
       "acceptCN": [
-        "管理",
-        "经营",
-        "管理层"
+        "Quản trị",
+        "kinh doanh",
+        "tầng quản lý"
       ],
       "collocations": [
         {
           "phrase": "time management",
-          "meaning": "时间管理"
+          "meaning": "thời gian Quản trị"
         },
         {
           "phrase": "waste management",
-          "meaning": "废物管理"
+          "meaning": "phế vật Quản trị"
         },
         {
           "phrase": "management skills",
-          "meaning": "管理技能"
+          "meaning": "Quản trị kỹ năng"
         }
       ],
-      "root": "manage（驾驭）+ -ment → 驾驭事务 → 管理",
+      "root": "manage (khống chế) + -ment → khống chế sự vụ → Quản trị",
       "synonyms": [
         "administration"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "管理",
-        "topic": "校园"
+        "commonUsage": "Quản trị",
+        "topic": "sân trường"
       },
       "exampleEn": "Time management is often cited as a key skill for university students.",
-      "exampleZh": "时间管理常被列为大学生的一项关键技能。",
-      "mnemonic": "manage（驾驭）+ -ment → 驾驭事务 → 管理",
+      "exampleZh": "thời gian Quản trị thường bị liệt là sinh viên hạng nhất mấu chốt kỹ năng.",
+      "mnemonic": "manage (khống chế) + -ment → khống chế sự vụ → Quản trị",
       "exampleEN": "Time management is often cited as a key skill for university students.",
-      "exampleCN": "时间管理常被列为大学生的一项关键技能。"
+      "exampleCN": "thời gian Quản trị thường bị liệt là sinh viên hạng nhất mấu chốt kỹ năng."
     },
     {
       "id": 76,
       "word": "source",
       "ipa": "/sɔːs/ · /sɔːrs/",
       "pos": "n.",
-      "meaning": "n. ①来源，出处（a source of energy / information）；②消息来源；③源头。v. 采购，寻求来源。primary source（第一手资料）。source material。",
-      "phrases": "a source of（…的来源）, primary source（第一手资料）, energy source（能源）",
-      "example": "The internet is now a major source of health information for young people.（互联网现已成为年轻人获取健康信息的一个主要来源。）",
+      "meaning": "n. nguồn sông, nguồi suối; nguồn, nguồn gốc",
+      "phrases": "a source of (… nơi phát ra), primary source (trực tiếp tư liệu), energy source (nguồn năng lượng)",
+      "example": "The internet is now a major source of health information for young people. (Internet hiện đã trở thành người trẻ tuổi thu hoạch Sức khỏe tin tức một cái chủ yếu nơi phát ra.)",
       "acceptCN": [
-        "来源",
-        "出处",
-        "源头"
+        "nơi phát ra",
+        "xuất xứ",
+        "ngọn nguồn"
       ],
       "collocations": [
         {
           "phrase": "a source of",
-          "meaning": "…的来源"
+          "meaning": "… nơi phát ra"
         },
         {
           "phrase": "primary source",
-          "meaning": "第一手资料"
+          "meaning": "trực tiếp tư liệu"
         },
         {
           "phrase": "energy source",
-          "meaning": "能源"
+          "meaning": "nguồn năng lượng"
         }
       ],
-      "root": "与 surge（涌出）同源 → 涌出之处 → 来源",
+      "root": "và surge (tuôn ra) đồng nguyên → tuôn ra chỗ → nơi phát ra",
       "synonyms": [
         "origin"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "来源",
-        "topic": "学术"
+        "commonUsage": "nơi phát ra",
+        "topic": "Học thuật"
       },
       "exampleEn": "The internet is now a major source of health information for young people.",
-      "exampleZh": "互联网现已成为年轻人获取健康信息的一个主要来源。",
-      "mnemonic": "与 surge（涌出）同源 → 涌出之处 → 来源",
+      "exampleZh": "Internet hiện đã trở thành người trẻ tuổi thu hoạch Sức khỏe tin tức một cái chủ yếu nơi phát ra.",
+      "mnemonic": "và surge (tuôn ra) đồng nguyên → tuôn ra chỗ → nơi phát ra",
       "exampleEN": "The internet is now a major source of health information for young people.",
-      "exampleCN": "互联网现已成为年轻人获取健康信息的一个主要来源。"
+      "exampleCN": "Internet hiện đã trở thành người trẻ tuổi thu hoạch Sức khỏe tin tức một cái chủ yếu nơi phát ra."
     },
     {
       "id": 77,
       "word": "option",
       "ipa": "/ˈɒpʃn/ · /ˈɑːpʃn/",
       "pos": "n.",
-      "meaning": "n. ①选择，选项（have no option but to）；②选修课。optional（可选择的）。the best option。keep one's options open。",
-      "phrases": "have no option but to（别无选择只能）, optional course（选修课）, the best option（最佳选择）",
-      "example": "Part-time work is one option for students who need extra income.（兼职工作是需要额外收入的学生的一个选择。）",
+      "meaning": "n. sự chọn lựa, quyền lựa chọn; vật được chọn; điều được chọn",
+      "phrases": "have no option but to (không có lựa chọn nào khác chỉ có thể), optional course (chọn môn học khóa), the best option (lựa chọn tốt nhất)",
+      "example": "Part-time work is one option for students who need extra income. (kiêm chức công tác là cần thêm vào thu vào học viên một cái lựa chọn.)",
       "acceptCN": [
-        "选择",
-        "选项",
-        "选修"
+        "lựa chọn",
+        "Phương án",
+        "chọn môn học"
       ],
       "collocations": [
         {
           "phrase": "have no option but to",
-          "meaning": "别无选择只能"
+          "meaning": "không có lựa chọn nào khác chỉ có thể"
         },
         {
           "phrase": "optional course",
-          "meaning": "选修课"
+          "meaning": "chọn môn học khóa"
         },
         {
           "phrase": "the best option",
-          "meaning": "最佳选择"
+          "meaning": "lựa chọn tốt nhất"
         }
       ],
-      "root": "opt（选择）+ -ion → 选出来的路",
+      "root": "opt (lựa chọn) + -ion → tuyển ra tới đường",
       "synonyms": [
         "choice",
         "alternative"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "选择",
-        "topic": "校园"
+        "commonUsage": "lựa chọn",
+        "topic": "sân trường"
       },
       "exampleEn": "Part-time work is one option for students who need extra income.",
-      "exampleZh": "兼职工作是需要额外收入的学生的一个选择。",
-      "mnemonic": "opt（选择）+ -ion → 选出来的路",
+      "exampleZh": "kiêm chức công tác là cần thêm vào thu vào học viên một cái lựa chọn.",
+      "mnemonic": "opt (lựa chọn) + -ion → tuyển ra tới đường",
       "exampleEN": "Part-time work is one option for students who need extra income.",
-      "exampleCN": "兼职工作是需要额外收入的学生的一个选择。"
+      "exampleCN": "kiêm chức công tác là cần thêm vào thu vào học viên một cái lựa chọn."
     },
     {
       "id": 78,
       "word": "purchase",
       "ipa": "/ˈpɜːtʃəs/ · /ˈpɜːrtʃəs/",
       "pos": "n. / v.",
-      "meaning": "n. 购买，购得物（make a purchase）。v. 购买（较 buy 正式）。purchasing power（购买力）。purchaser。",
-      "phrases": "make a purchase（购买）, purchasing power（购买力）, purchase online（网上购买）",
-      "example": "Consumers' purchasing power has declined because of higher housing costs.（由于住房成本上升，消费者的购买力已经下降。）",
+      "meaning": "sự mua, sự tậu được; vật mua được, vật tậu được; thu hoạch hằng năm, hoa lợi hằng năm, lợi tức hằng năm (của đất đai...)",
+      "phrases": "make a purchase (mua sắm), purchasing power (sức mua), purchase online (mua trên nết)",
+      "example": "Consumers' purchasing power has declined because of higher housing costs. (bởi vì nhà ở thành phẩm bay lên, người tiêu thụ sức mua đã hạ thấp.)",
       "acceptCN": [
-        "购买",
-        "采购",
-        "购得物"
+        "mua sắm",
+        "mua sắm",
+        "mua hàng vật"
       ],
       "collocations": [
         {
           "phrase": "make a purchase",
-          "meaning": "购买"
+          "meaning": "mua sắm"
         },
         {
           "phrase": "purchasing power",
-          "meaning": "购买力"
+          "meaning": "sức mua"
         },
         {
           "phrase": "purchase online",
-          "meaning": "网上购买"
+          "meaning": "mua trên nết"
         }
       ],
-      "root": "pur-（向前）+ chase（追求）→ 追着去买 → 购买",
+      "root": "pur- (về phía trước) + chase (truy cầu) → đuổi theo đi mua → mua sắm",
       "synonyms": [
         "buy"
       ],
@@ -3505,135 +3505,135 @@
         "sell"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "购买",
-        "topic": "经济"
+        "commonUsage": "mua sắm",
+        "topic": "Kinh tế học"
       },
       "exampleEn": "Consumers' purchasing power has declined because of higher housing costs.",
-      "exampleZh": "由于住房成本上升，消费者的购买力已经下降。",
-      "mnemonic": "pur-（向前）+ chase（追求）→ 追着去买 → 购买",
+      "exampleZh": "bởi vì nhà ở thành phẩm bay lên, người tiêu thụ sức mua đã hạ thấp.",
+      "mnemonic": "pur- (về phía trước) + chase (truy cầu) → đuổi theo đi mua → mua sắm",
       "exampleEN": "Consumers' purchasing power has declined because of higher housing costs.",
-      "exampleCN": "由于住房成本上升，消费者的购买力已经下降。"
+      "exampleCN": "bởi vì nhà ở thành phẩm bay lên, người tiêu thụ sức mua đã hạ thấp."
     },
     {
       "id": 79,
       "word": "function",
       "ipa": "/ˈfʌŋkʃn/",
       "pos": "n. / v.",
-      "meaning": "n. ①功能，作用（the function of）；②典礼，宴会。v. 运转，起作用（function as / normally）。functional（实用的；功能的）。functioning。",
-      "phrases": "the function of（…的功能）, function as（起…的作用）, function normally（正常运转）",
-      "example": "The committee functions as an advisory body for the university.（该委员会作为大学的顾问机构发挥作用。）",
+      "meaning": "chức năng; ((thường) số nhiều) nhiệm vụ, trách nhiệm",
+      "phrases": "the function of (… công năng), function as (nảy sinh … tác dụng), function normally (vận chuyển bình thường)",
+      "example": "The committee functions as an advisory body for the university. (nên uỷ ban với tư cách đại học cố vấn cơ cấu triển khai tác dụng.)",
       "acceptCN": [
-        "功能",
-        "作用",
-        "运转"
+        "công năng",
+        "tác dụng",
+        "vận chuyển"
       ],
       "collocations": [
         {
           "phrase": "the function of",
-          "meaning": "…的功能"
+          "meaning": "… công năng"
         },
         {
           "phrase": "function as",
-          "meaning": "起…的作用"
+          "meaning": "nảy sinh … tác dụng"
         },
         {
           "phrase": "function normally",
-          "meaning": "正常运转"
+          "meaning": "vận chuyển bình thường"
         }
       ],
-      "root": "fung（履行）+ -tion → 所履行的职责 → 功能",
+      "root": "fung (thực hiện) + -tion → chỗ thực hiện chức trách → công năng",
       "synonyms": [
         "role",
         "work"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "功能",
-        "topic": "学术"
+        "commonUsage": "công năng",
+        "topic": "Học thuật"
       },
       "exampleEn": "The committee functions as an advisory body for the university.",
-      "exampleZh": "该委员会作为大学的顾问机构发挥作用。",
-      "mnemonic": "fung（履行）+ -tion → 所履行的职责 → 功能",
+      "exampleZh": "nên uỷ ban với tư cách đại học cố vấn cơ cấu triển khai tác dụng.",
+      "mnemonic": "fung (thực hiện) + -tion → chỗ thực hiện chức trách → công năng",
       "exampleEN": "The committee functions as an advisory body for the university.",
-      "exampleCN": "该委员会作为大学的顾问机构发挥作用。"
+      "exampleCN": "nên uỷ ban với tư cách đại học cố vấn cơ cấu triển khai tác dụng."
     },
     {
       "id": 80,
       "word": "panel",
       "ipa": "/ˈpænl/",
       "pos": "n.",
-      "meaning": "n. ①专门小组（an expert panel；a panel of judges）；②面板，嵌板；③仪表盘。panel discussion（小组讨论）。solar panel。",
-      "phrases": "expert panel（专家小组）, panel discussion（小组讨论）, solar panel（太阳能电池板）",
-      "example": "An expert panel was invited to review the new curriculum.（邀请了一个专家小组来评审新的课程方案。）",
+      "meaning": "n. cán ô (cửa, tường), panô; ô vải khác màu (trên quần áo đàn bà); mảnh da (cừu, dê... để viết)",
+      "phrases": "expert panel (chuyên gia tiểu tổ), panel discussion (tiểu tổ thảo luận), solar panel (năng lượng mặt trời pin bản)",
+      "example": "An expert panel was invited to review the new curriculum. (mời một cái chuyên gia tiểu tổ đến giám khảo mới đích chương trình học phương án.)",
       "acceptCN": [
-        "小组",
-        "面板",
-        "仪表盘"
+        "tiểu tổ",
+        "mặt bản",
+        "đồng hồ đo"
       ],
       "collocations": [
         {
           "phrase": "expert panel",
-          "meaning": "专家小组"
+          "meaning": "chuyên gia tiểu tổ"
         },
         {
           "phrase": "panel discussion",
-          "meaning": "小组讨论"
+          "meaning": "tiểu tổ thảo luận"
         },
         {
           "phrase": "solar panel",
-          "meaning": "太阳能电池板"
+          "meaning": "năng lượng mặt trời pin bản"
         }
       ],
-      "root": "原义‘一块布/板’，引申为坐在一块的评审组",
+      "root": "nguyên nghĩa ‘ một tấm vải / bản ’, nghĩa rộng là ngồi chung một chỗ giám khảo tổ",
       "synonyms": [
         "board",
         "committee"
       ],
       "antonyms": [],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "小组",
-        "topic": "学术"
+        "commonUsage": "tiểu tổ",
+        "topic": "Học thuật"
       },
       "exampleEn": "An expert panel was invited to review the new curriculum.",
-      "exampleZh": "邀请了一个专家小组来评审新的课程方案。",
-      "mnemonic": "原义‘一块布/板’，引申为坐在一块的评审组",
+      "exampleZh": "mời một cái chuyên gia tiểu tổ đến giám khảo mới đích chương trình học phương án.",
+      "mnemonic": "nguyên nghĩa ‘ một tấm vải / bản ’, nghĩa rộng là ngồi chung một chỗ giám khảo tổ",
       "exampleEN": "An expert panel was invited to review the new curriculum.",
-      "exampleCN": "邀请了一个专家小组来评审新的课程方案。"
+      "exampleCN": "mời một cái chuyên gia tiểu tổ đến giám khảo mới đích chương trình học phương án."
     },
     {
       "id": 81,
       "word": "outside",
       "ipa": "/ˌaʊtˈsaɪd/",
       "pos": "prep. / adv. / n. / adj.",
-      "meaning": "prep. / adv. 在…外面（outside the classroom；英式少用 outside of）。n. 外面，外部。adj. 外面的，外界的（outside help）。outsider（局外人）。反义 inside。",
-      "phrases": "outside the classroom（在课堂外）, outside help（外界帮助）, on the outside（在外面）",
-      "example": "Learning also takes place outside the classroom, for example in internships.（学习也发生在课堂之外，例如在实习中。）",
+      "meaning": "bề ngoài, bên ngoài; thế giới bên ngoài",
+      "phrases": "outside the classroom (tại lớp học bên ngoài), outside help (ngoại giới trợ giúp), on the outside (ở bên ngoài)",
+      "example": "Learning also takes place outside the classroom, for example in internships. (Học tập cũng phát sinh ở lớp học bên ngoài, tỷ như tại trong thực tập.)",
       "acceptCN": [
-        "外面",
-        "在外面",
-        "外部的"
+        "bên ngoài",
+        "ở bên ngoài",
+        "bên ngoài"
       ],
       "collocations": [
         {
           "phrase": "outside the classroom",
-          "meaning": "在课堂外"
+          "meaning": "tại lớp học bên ngoài"
         },
         {
           "phrase": "outside help",
-          "meaning": "外界帮助"
+          "meaning": "ngoại giới trợ giúp"
         },
         {
           "phrase": "on the outside",
-          "meaning": "在外面"
+          "meaning": "ở bên ngoài"
         }
       ],
-      "root": "out + side → 在某一侧之外",
+      "root": "out + side → tại một loại bên cạnh bên ngoài",
       "synonyms": [
         "outdoors"
       ],
@@ -3641,16 +3641,16 @@
         "inside"
       ],
       "examTag": {
-        "source": "大学英语四级",
+        "source": "đại học Tiếng Anh Đại học B1",
         "frequency": 4,
-        "commonUsage": "外面",
-        "topic": "教育"
+        "commonUsage": "bên ngoài",
+        "topic": "Giáo dục"
       },
       "exampleEn": "Learning also takes place outside the classroom, for example in internships.",
-      "exampleZh": "学习也发生在课堂之外，例如在实习中。",
-      "mnemonic": "out + side → 在某一侧之外",
+      "exampleZh": "Học tập cũng phát sinh ở lớp học bên ngoài, tỷ như tại trong thực tập.",
+      "mnemonic": "out + side → tại một loại bên cạnh bên ngoài",
       "exampleEN": "Learning also takes place outside the classroom, for example in internships.",
-      "exampleCN": "学习也发生在课堂之外，例如在实习中。"
+      "exampleCN": "Học tập cũng phát sinh ở lớp học bên ngoài, tỷ như tại trong thực tập."
     }
   ]
 }

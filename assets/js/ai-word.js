@@ -1,4 +1,4 @@
-/* ai-word.js — 单词区 AI 查词（本页结果 + 追问 + 生词本） */
+/* ai-word.js — Khu từ vựng AI tra từ (bổn trang kết quả + truy vấn + Sổ từ đã lưu) */
 window.YYSD_AI_WORD = (function () {
   "use strict";
 
@@ -12,27 +12,27 @@ window.YYSD_AI_WORD = (function () {
   function shellHTML() {
     return '<div class="ai-word" id="ai-word">' +
       '<div class="ai-word__head">' +
-        "<h3>AI 查词</h3>" +
-        '<span class="ai-word__quota" id="ai-word-quota">今日额度加载中…</span>' +
+        "<h3>AI tra từ </h3>" +
+        '<span class="ai-word__quota" id="ai-word-quota"> hôm nay khoản độ Đang tải …</span>' +
       "</div>" +
-      '<p class="ai-word__hint">查单词、短语、句子，或用中文反查；可继续追问。</p>' +
+      '<p class="ai-word__hint"> tra Từ vựng, Cụm từ, câu, hoặc dùng Tiếng Việt phản tra; có thể tiếp tục truy vấn. </p>' +
       '<form class="ai-word__form" id="ai-word-form">' +
         '<label class="ai-word__search">' +
           '<span class="catalog-search__ico" aria-hidden="true">⌕</span>' +
-          '<input type="search" id="ai-word-input" placeholder="输入英文单词 / 短语 / 句子，或中文…" autocomplete="off" spellcheck="false">' +
+          '<input type="search" id="ai-word-input" placeholder=" đưa vào từ đơn tiếng Anh / Cụm từ / câu, hoặc Tiếng Việt …" autocomplete="off" spellcheck="false">' +
         "</label>" +
-        '<button type="submit" class="btn btn--primary btn--sm" id="ai-word-submit">查询</button>' +
+        '<button type="submit" class="btn btn--primary btn--sm" id="ai-word-submit"> điều tra </button>' +
       "</form>" +
-      '<div class="ai-word__panel" id="ai-word-panel"' + (history.length ? "" : " hidden") + ">" +
+      '<div class="ai-word__panel" id="ai-word-panel"' + (history.length? "": " hidden") + ">" +
         '<div class="ai-word__msgs" id="ai-word-msgs"></div>' +
         '<div class="ai-word__bar">' +
           '<button type="button" class="btn btn--ghost btn--sm" id="ai-word-save"' +
-            (lastMeta && lastMeta.word ? "" : " disabled") + ">加入生词本</button>" +
-          '<button type="button" class="btn btn--ghost btn--sm" id="ai-word-clear">新查询</button>' +
+            (lastMeta && lastMeta.word? "": " disabled") + "> gia nhập Sổ từ đã lưu </button>" +
+          '<button type="button" class="btn btn--ghost btn--sm" id="ai-word-clear"> mới điều tra </button>' +
         "</div>" +
         '<form class="ai-word__follow" id="ai-word-follow">' +
-          '<input type="search" id="ai-word-follow-input" placeholder="继续追问…" autocomplete="off">' +
-          '<button type="submit" class="btn btn--primary btn--sm">发送</button>' +
+          '<input type="search" id="ai-word-follow-input" placeholder=" tiếp tục truy vấn …" autocomplete="off">' +
+          '<button type="submit" class="btn btn--primary btn--sm"> gửi đi </button>' +
         "</form>" +
       "</div>" +
       '<p class="ai-word__status" id="ai-word-status" hidden></p>' +
@@ -44,7 +44,7 @@ window.YYSD_AI_WORD = (function () {
   }
 
   function ensureLogin() {
-    if (!A || !A.getToken || !A.getToken()) {
+    if (!A ||!A.getToken ||!A.getToken()) {
       loginNext();
       return false;
     }
@@ -54,10 +54,10 @@ window.YYSD_AI_WORD = (function () {
   function api(path, opts) {
     return A.api(path, opts).catch(function (err) {
       var msg = String(err && err.message || "");
-      // ponytail: "请使用学生账号登录" also contains 登录 — must not bounce teachers off zone
+      // ponytail: " xin sử dụng tài khoản học viên Đăng nhập " also contains Đăng nhập — must not bounce teachers off zone
       if (A && A.isTeacher && A.isTeacher()) throw err;
-      if (msg.indexOf("学生账号") >= 0) throw err;
-      if (msg.indexOf("登录") >= 0 || msg.indexOf("未登录") >= 0) loginNext();
+      if (msg.indexOf(" tài khoản học viên ") >= 0) throw err;
+      if (msg.indexOf("Đăng nhập") >= 0 || msg.indexOf(" Chưa đăng nhập ") >= 0) loginNext();
       throw err;
     });
   }
@@ -68,21 +68,21 @@ window.YYSD_AI_WORD = (function () {
     if (!msg) { el.hidden = true; el.textContent = ""; return; }
     el.hidden = false;
     el.textContent = msg;
-    el.className = "ai-word__status" + (kind ? " is-" + kind : "");
+    el.className = "ai-word__status" + (kind? " is-" + kind: "");
   }
 
   function renderQuota() {
     var el = document.getElementById("ai-word-quota");
     if (!el) return;
-    if (!quota) { el.textContent = "今日额度 —"; return; }
-    el.textContent = "今日剩余 " + quota.left + " / " + quota.limit + " 次";
+    if (!quota) { el.textContent = " hôm nay khoản độ —"; return; }
+    el.textContent = " hôm nay còn thừa " + quota.left + " / " + quota.limit + " lần ";
   }
 
   function paintMsgs() {
     var box = document.getElementById("ai-word-msgs");
     if (!box) return;
     box.innerHTML = history.map(function (m) {
-      return '<div class="ai-word__msg ai-word__msg--' + (m.role === "assistant" ? "assistant" : "user") + '">' +
+      return '<div class="ai-word__msg ai-word__msg--' + (m.role === "assistant"? "assistant": "user") + '">' +
         "<pre>" + Y.esc(m.content) + "</pre></div>";
     }).join("");
     box.scrollTop = box.scrollHeight;
@@ -91,14 +91,14 @@ window.YYSD_AI_WORD = (function () {
   function syncPanel() {
     var panel = document.getElementById("ai-word-panel");
     var saveBtn = document.getElementById("ai-word-save");
-    if (panel) panel.hidden = !history.length;
-    if (saveBtn) saveBtn.disabled = !(lastMeta && lastMeta.word);
+    if (panel) panel.hidden =!history.length;
+    if (saveBtn) saveBtn.disabled =!(lastMeta && lastMeta.word);
     paintMsgs();
     renderQuota();
   }
 
   function loadQuota() {
-    if (!A || !A.getToken || !A.getToken()) return;
+    if (!A ||!A.getToken ||!A.getToken()) return;
     api("/api/ai-word/quota").then(function (d) {
       quota = d.quota;
       renderQuota();
@@ -111,7 +111,7 @@ window.YYSD_AI_WORD = (function () {
     content = String(content || "").trim();
     if (!content) return;
     busy = true;
-    setStatus("正在查询…");
+    setStatus(" đang điều tra …");
     var submit = document.getElementById("ai-word-submit");
     var followBtn = document.querySelector("#ai-word-follow button");
     if (submit) submit.disabled = true;
@@ -130,9 +130,9 @@ window.YYSD_AI_WORD = (function () {
       if (input) input.value = "";
       if (follow) follow.value = "";
       syncPanel();
-      setStatus(quota && quota.left === 0 ? "今日额度已用完" : "", quota && quota.left === 0 ? "warn" : "");
+      setStatus(quota && quota.left === 0? " Đã hết hạn mức hôm nay ": "", quota && quota.left === 0? "warn": "");
     }).catch(function (err) {
-      setStatus((err && err.message) || "查询失败", "err");
+      setStatus((err && err.message) || " điều tra thất bại ", "err");
     }).then(function () {
       busy = false;
       if (submit) submit.disabled = false;
@@ -141,8 +141,8 @@ window.YYSD_AI_WORD = (function () {
   }
 
   function saveWord() {
-    if (!lastMeta || !lastMeta.word) {
-      setStatus("暂无可收藏的词条", "warn");
+    if (!lastMeta ||!lastMeta.word) {
+      setStatus(" tạm thời chưa có có thể cất giữ từ đầu ", "warn");
       return;
     }
     Y.addSavedWord({
@@ -151,8 +151,8 @@ window.YYSD_AI_WORD = (function () {
       meaning: lastMeta.meaning || "",
       note: ""
     });
-    setStatus("已加入生词本：" + lastMeta.word, "ok");
-    var card = document.querySelector('.wrong-notebook-strip[aria-label="生词本"]');
+    setStatus(" đã gia nhập Sổ từ đã lưu: " + lastMeta.word, "ok");
+    var card = document.querySelector('.wrong-notebook-strip[aria-label=" Sổ từ đã lưu "]');
     if (card && Y.savedWordsStripHTML) {
       card.outerHTML = Y.savedWordsStripHTML("");
     }

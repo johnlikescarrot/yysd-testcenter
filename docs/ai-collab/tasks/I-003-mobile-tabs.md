@@ -1,29 +1,29 @@
-# I-003 — 移动端 bottom tabs 毛玻璃
+# I-003 — di động đầu bottom tabs thuỷ tinh mờ
 
-**状态：** done
+** Trạng thái: ** done
 
-## 目标
+## mục tiêu
 
-≤820px 主路径底部 `mobile-tabs` 与 premium topbar 同级质感。
+≤820px chủ đường nhỏ dưới đáy `mobile-tabs` và premium topbar đồng cấp cảm nhận.
 
-## 允许改动
+## cho phép cải biến
 
-- `assets/css/style.css`：`.mobile-tabs`、`.mobile-tabs__item.is-active`
+- `assets/css/style.css`: `.mobile-tabs`, `.mobile-tabs__item.is-active`
 
-## 禁止
+## cấm
 
-- nav.js drawer 逻辑
+- nav.js drawer ăn khớp
 
-## 变更
+## thay đổi
 
-- tabs 容器：`backdrop-filter` + 半透明白底 + 顶边 `var(--border)`
-- active item：浅金底 `color-mix(in srgb, var(--brand-gold) 12%, transparent)`
+- tabs vật chứa: `backdrop-filter` + hơi mờ bạch ngọn nguồn + đỉnh bên cạnh `var(--border)`
+- active item: thiển kim ngọn nguồn `color-mix(in srgb, var(--brand-gold) 12%, transparent)`
 
-## 验收
+## nghiệm thu
 
 - 375px dashboard / zone / results
-- active tab 可读；safe-area 仍生效
+- active tab có thể đọc; safe-area nhưng có hiệu lực
 
-## 回滚
+## quay về lăn
 
-恢复 `.mobile-tabs` 原 background。
+ khôi phục `.mobile-tabs` nguyên background.

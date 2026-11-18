@@ -10,23 +10,23 @@ function scoreProgram(
   const q = query.toLowerCase();
   const bag = bagParts.join(" ").toLowerCase();
   let score = 0;
-  const tokens = q.split(/[\s,，、/|]+/).filter((t) => t.length >= 2);
+  const tokens = q.split(/[\s,,, /|]+/).filter((t) => t.length >= 2);
   for (const t of tokens) if (bag.includes(t)) score += 3;
-  if (/数据|data/i.test(query) && /data science|analytics/.test(bag)) score += 4;
-  if (/人工.?智能|ai\b/i.test(query) && /artificial intelligence|machine learning/.test(bag))
+  if (/ số liệu |data/i.test(query) && /data science|analytics/.test(bag)) score += 4;
+  if (/ nhân công.? trí tuệ nhân tạo |ai\b/i.test(query) && /artificial intelligence|machine learning/.test(bag))
     score += 4;
   return score;
 }
 
-const ds = scoreProgram("我对数据科学感兴趣", [
+const ds = scoreProgram(" tôi đối số theo khoa học cảm thấy hứng thú ", [
   "Data Science",
-  "数据科学",
+  " số liệu khoa học ",
   "data_ai",
-  "统计、机器学习",
+  " công tác thống kê, máy móc Học tập ",
 ]);
-const cs = scoreProgram("我对数据科学感兴趣", [
+const cs = scoreProgram(" tôi đối số theo khoa học cảm thấy hứng thú ", [
   "Computer Science",
-  "计算机科学",
+  " Khoa học máy tính ",
   "cs",
 ]);
 console.assert(ds > cs, `data should beat cs: ${ds} vs ${cs}`);

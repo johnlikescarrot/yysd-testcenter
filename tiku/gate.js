@@ -1,4 +1,4 @@
-/* 题库中心：生产必须老师端；本机检查放行。顺手补刷新钮（旧缓存页没有）。 */
+/* Ngân hàng đề trung tâm: sinh sản phải Giáo viên đầu; thiết bị này kiểm tra cho đi. thuận tay bổ Làm mới tay cầm (xưa cũ trì hoãn tồn trang không có). */
 (function (w) {
   "use strict";
   function local() {
@@ -14,13 +14,13 @@
     else w.location.reload();
   }
   function injectRefresh() {
-    var row = document.querySelector("#app .top .row");
+    var row = document.querySelector("#app.top.row");
     if (!row || document.getElementById("refresh")) return;
     var b = document.createElement("button");
     b.type = "button";
     b.className = "btn ghost";
     b.id = "refresh";
-    b.textContent = "刷新";
+    b.textContent = " Làm mới ";
     row.insertBefore(b, document.getElementById("out"));
     b.addEventListener("click", hardReload);
   }

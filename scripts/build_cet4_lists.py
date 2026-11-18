@@ -29,26 +29,26 @@ def word_js(w: dict) -> str:
     ant = w.get("antonyms") if isinstance(w.get("antonyms"), list) else []
     return (
         "{\n"
-        f"  id: {int(w.get('id') or 0)},\n"
-        f"  word: {js_str(w.get('word') or '')},\n"
-        f"  ipa: {js_str(w.get('ipa') or '')},\n"
-        f"  pos: {js_str(w.get('pos') or '')},\n"
-        f"  meaning: {js_str(w.get('meaning') or '')},\n"
-        f"  mnemonic: {js_str(w.get('mnemonic') or '')},\n"
-        f"  root: {js_str(w.get('root') or w.get('mnemonic') or '')},\n"
-        f"  collocations: {coll},\n"
-        f"  phrases: {js_str(w.get('phrases') or ('' if isinstance(w.get('collocations'), list) else (w.get('collocations') or '')))},\n"
-        f"  example: {js_str(w.get('example') or '')},\n"
-        f"  exampleEN: {js_str(w.get('exampleEN') or w.get('exampleEn') or '')},\n"
-        f"  exampleCN: {js_str(w.get('exampleCN') or w.get('exampleZh') or '')},\n"
-        f"  exampleEn: {js_str(w.get('exampleEn') or w.get('exampleEN') or '')},\n"
-        f"  exampleZh: {js_str(w.get('exampleZh') or w.get('exampleCN') or '')},\n"
-        f"  derivatives: {js_str(w.get('derivatives') or '')},\n"
-        f"  distinguish: {js_str(w.get('distinguish') or '')},\n"
-        f"  synonyms: {json.dumps(syn, ensure_ascii=False)},\n"
-        f"  antonyms: {json.dumps(ant, ensure_ascii=False)},\n"
-        f"  examTag: {exam_js},\n"
-        f"  acceptCN: {json.dumps(w.get('acceptCN') or [], ensure_ascii=False)}\n"
+        f" id: {int(w.get('id') or 0)},\n"
+        f" word: {js_str(w.get('word') or '')},\n"
+        f" ipa: {js_str(w.get('ipa') or '')},\n"
+        f" pos: {js_str(w.get('pos') or '')},\n"
+        f" meaning: {js_str(w.get('meaning') or '')},\n"
+        f" mnemonic: {js_str(w.get('mnemonic') or '')},\n"
+        f" root: {js_str(w.get('root') or w.get('mnemonic') or '')},\n"
+        f" collocations: {coll},\n"
+        f" phrases: {js_str(w.get('phrases') or ('' if isinstance(w.get('collocations'), list) else (w.get('collocations') or '')))},\n"
+        f" example: {js_str(w.get('example') or '')},\n"
+        f" exampleEN: {js_str(w.get('exampleEN') or w.get('exampleEn') or '')},\n"
+        f" exampleCN: {js_str(w.get('exampleCN') or w.get('exampleZh') or '')},\n"
+        f" exampleEn: {js_str(w.get('exampleEn') or w.get('exampleEN') or '')},\n"
+        f" exampleZh: {js_str(w.get('exampleZh') or w.get('exampleCN') or '')},\n"
+        f" derivatives: {js_str(w.get('derivatives') or '')},\n"
+        f" distinguish: {js_str(w.get('distinguish') or '')},\n"
+        f" synonyms: {json.dumps(syn, ensure_ascii=False)},\n"
+        f" antonyms: {json.dumps(ant, ensure_ascii=False)},\n"
+        f" examTag: {exam_js},\n"
+        f" acceptCN: {json.dumps(w.get('acceptCN') or [], ensure_ascii=False)}\n"
         "}"
     )
 
@@ -58,18 +58,18 @@ def render_html(meta: dict) -> str:
     words = meta.get("words") or []
     total = len(words)
     band = meta.get("band") or "high"
-    title = meta.get("title") or f"单元 {n}"
+    title = meta.get("title") or f" Bài {n}"
     word_data = ",\n".join(word_js(w) for w in words)
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="exam:title" content="四级词汇 {title}">
+<meta name="exam:title" content=" Từ vựng Đại học Cốt lõi {title}">
 <meta name="exam:duration" content="0">
-<meta name="exam:description" content="频段 {band} · {total} 词 · 边学边测">
+<meta name="exam:description" content=" tần đoạn {band} · {total} từ · bên cạnh học bên cạnh trắc ">
 <meta name="exam:band" content="{band}">
-<title>四级词汇 {title} · 语速0.8 · 宽松评判</title>
+<title> Từ vựng Đại học Cốt lõi {title} · ngữ tốc 0.8 · rộng thùng thình bình phán </title>
 <style>
 :root {{
   --bg:#f5f3f0; --card:#fff; --primary:#2c3e6b; --primary-light:#3d5a99;
@@ -99,16 +99,16 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
 .btn-play.playing {{ background:var(--primary); color:#fff }}
 .word-pos {{ color:var(--accent); font-weight:600; margin-right:6px }}
 .word-blocks {{ display:none; margin-top:10px; border-top:1px dashed var(--border); padding-top:10px }}
-.word-card.expanded .word-blocks {{ display:block }}
+.word-card.expanded.word-blocks {{ display:block }}
 .block {{ margin:8px 0; font-size:.92rem }}
 .block b {{ display:inline-block; min-width:2em; color:var(--accent); margin-right:4px }}
 .hint {{ color:var(--muted); font-size:.8rem; margin-top:6px; display:none }}
-.word-card.expanded .hint {{ display:block }}
+.word-card.expanded.hint {{ display:block }}
 .test-setup,.test-active-area,.test-results {{ background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow) }}
 .test-active-area,.test-results {{ display:none }}
 .test-active-area.visible,.test-results.visible {{ display:block }}
 .btn-start-test,.btn-submit,.btn-next,.btn-retry {{ border:0; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; background:var(--primary); color:#fff; margin-top:12px }}
-.btn-next {{ display:none }} .btn-next.visible {{ display:inline-block }}
+.btn-next {{ display:none }}.btn-next.visible {{ display:inline-block }}
 .test-input-group {{ margin:12px 0 }}
 .test-input-group input {{ width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:1rem }}
 .test-feedback {{ margin-top:12px; padding:12px; border-radius:8px; display:none }}
@@ -125,41 +125,41 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
 </head>
 <body>
 <header class="header"><div class="header-inner">
-  <div class="logo"><span>📖</span><span>四级词汇 {title}</span></div>
+  <div class="logo"><span>📖</span><span> Từ vựng Đại học Cốt lõi {title}</span></div>
   <nav class="nav-tabs" id="navTabs">
-    <button class="nav-tab active" data-mode="learn">词汇总览</button>
-    <button class="nav-tab" data-mode="test">单词检测</button>
+    <button class="nav-tab active" data-mode="learn"> Từ vựng quan sát </button>
+    <button class="nav-tab" data-mode="test"> Từ vựng Đánh giá </button>
   </nav>
-  <span class="badge">共 {total} 词</span>
+  <span class="badge"> tổng {total} từ </span>
 </div></header>
 <div class="main">
   <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
   <section class="test-section" id="testSection">
     <div class="test-setup" id="testSetup">
-      <h3>四级词汇 {title} · 单词检测</h3>
-      <p>听读音后填写拼写与中文含义（宽松评判）。</p>
-      <button class="btn-start-test" id="btnStartTest">开始检测（{total} 题）</button>
-      <div class="history-title">历史记录 <button class="btn-clear-history" id="btnClearHistory">清除</button></div>
+      <h3> Từ vựng Đại học Cốt lõi {title} · Từ vựng Đánh giá </h3>
+      <p> nghe âm đọc sau điền Chính tả và Tiếng Việt Nghĩa (rộng thùng thình bình phán). </p>
+      <button class="btn-start-test" id="btnStartTest"> Bắt đầu Đánh giá ({total} câu) </button>
+      <div class="history-title"> Lịch sử ghi chép <button class="btn-clear-history" id="btnClearHistory"> thanh trừ </button></div>
       <div id="historyContent"></div>
     </div>
     <div class="test-active-area" id="testActiveArea">
-      <div class="test-progress"><span id="testProgressLabel">第 1 / {total} 题</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel">得分: 0</span></div>
+      <div class="test-progress"><span id="testProgressLabel"> thứ 1 / {total} câu </span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel"> Điểm số: 0</span></div>
       <button class="btn-play" id="btnPlayTest" style="width:64px;height:64px;font-size:1.4rem">▶</button>
       <div class="test-inputs">
-        <div class="test-input-group"><label>英文拼写</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-        <div class="test-input-group"><label>中文含义</label><input id="inputMeaning" autocomplete="off"></div>
+        <div class="test-input-group"><label> Tiếng Anh Chính tả </label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div class="test-input-group"><label> Tiếng Việt Nghĩa </label><input id="inputMeaning" autocomplete="off"></div>
       </div>
-      <button class="btn-submit" id="btnSubmit">提交答案</button>
+      <button class="btn-submit" id="btnSubmit"> Nộp bài Đáp án </button>
       <div class="test-feedback" id="testFeedback"></div>
-      <button class="btn-next" id="btnNext">下一题</button>
+      <button class="btn-next" id="btnNext"> Câu tiếp theo </button>
     </div>
     <div class="test-results" id="testResults">
-      <h3>检测完成</h3>
+      <h3> Đánh giá hoàn thành </h3>
       <div id="resultsScore" style="font-size:2rem;font-weight:700;color:var(--primary)"></div>
       <div id="resultsDetail"></div>
-      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>单词</th><th>拼写</th><th>含义</th><th>结果</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
-      <button class="btn-retry" id="btnRetry">重新检测</button>
-      <button class="btn-retry" id="btnBackToSetup" style="background:#666">返回</button>
+      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th> Từ vựng </th><th> Chính tả </th><th> Nghĩa </th><th> kết quả </th></tr></thead><tbody id="resultsTableBody"></tbody></table>
+      <button class="btn-retry" id="btnRetry"> một lần nữa Đánh giá </button>
+      <button class="btn-retry" id="btnBackToSetup" style="background:#666"> Quay lại </button>
     </div>
   </section>
 </div>
@@ -189,7 +189,7 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
       voice = vs.find(v => v.lang.startsWith('en-GB')) || vs.find(v => v.lang.startsWith('en')) || vs[0];
     }};
     pick();
-    if(synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pick;
+    if(synth.onvoiceschanged!== undefined) synth.onvoiceschanged = pick;
   }}
   function speakWord(word, cb){{
     if(!synth){{ if(cb) cb(); return; }}
@@ -211,12 +211,12 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
       '<button class="btn-play btn-play-card" data-word="'+esc(w.word)+'">▶</button></div>'+
       '<div><span class="word-pos">'+esc(w.pos)+'</span><span>'+esc(w.meaning)+'</span></div>'+
       '<div class="word-blocks">'+
-        block('记', w.mnemonic || w.root)+
-        block('考', w.phrases || w.collocations)+
-        block('例', w.example)+
-        block('派', w.derivatives)+
-        block('辨', w.distinguish)+
-      '</div><div class="hint">点击收起</div>';
+        block(' nhớ ', w.mnemonic || w.root)+
+        block(' khảo thi ', w.phrases || w.collocations)+
+        block(' lệ ', w.example)+
+        block(' phái ', w.derivatives)+
+        block(' phân biệt ', w.distinguish)+
+      '</div><div class="hint"> điểm kích[ấn vào] thu hồi </div>';
     card.addEventListener('click', e => {{
       if(e.target.closest('.btn-play-card')) return;
       const open = card.classList.contains('expanded');
@@ -272,13 +272,13 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
   function saveHistory(r){{ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }}
   function renderHistory(){{
     const h = getHistory();
-    if(!h.length){{ historyContent.innerHTML = '<div style="color:#888;margin-top:8px">暂无记录</div>'; return; }}
+    if(!h.length){{ historyContent.innerHTML = '<div style="color:#888;margin-top:8px"> tạm thời chưa có ghi chép </div>'; return; }}
     historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {{
       const t = new Date(r.timestamp);
-      return '<li>'+r.score+'/'+r.total+'（'+r.percent+'%） · '+t.toLocaleString()+'</li>';
+      return '<li>'+r.score+'/'+r.total+' ('+r.percent+'%) · '+t.toLocaleString()+'</li>';
     }}).join('')+'</ul>';
   }}
-  btnClearHistory.addEventListener('click', () => {{ if(confirm('清除历史？')){{ localStorage.removeItem(HISTORY_KEY); renderHistory(); }} }});
+  btnClearHistory.addEventListener('click', () => {{ if(confirm(' thanh trừ Lịch sử? ')){{ localStorage.removeItem(HISTORY_KEY); renderHistory(); }} }});
 
   let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
   function shuffle(a){{ const x=[...a]; for(let i=x.length-1;i>0;i--){{ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; }} return x; }}
@@ -295,14 +295,14 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
     updateProgress(); setTimeout(playCurrent, 300);
   }});
   function updateProgress(){{
-    testProgressLabel.textContent = '第 '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' 题';
-    testScoreLabel.textContent = '得分: '+testScore;
+    testProgressLabel.textContent = ' thứ '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' câu ';
+    testScoreLabel.textContent = ' Điểm số: '+testScore;
     progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
   }}
   function playCurrent(){{ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }}
   btnPlayTest.addEventListener('click', () => {{ if(!testSubmitted) playCurrent(); }});
 
-  function cleanCN(s){{ return String(s||'').replace(/[，,、。；;：:！!？?（）()【】\\[\\]"\"''\\s]/g,''); }}
+  function cleanCN(s){{ return String(s||'').replace(/[,,,.;;::!!?? () ()[]\\[\\]"\"''\\s]/g,''); }}
   function submitAnswer(){{
     if(testSubmitted || testCurrentIndex>=testWords.length) return;
     testSubmitted = true; btnSubmit.disabled = true;
@@ -322,11 +322,11 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
       }}
     }}
     const both = spellingOk && meaningOk;
-    const earned = both ? 1 : ((spellingOk || meaningOk) ? 0.5 : 0);
+    const earned = both? 1: ((spellingOk || meaningOk)? 0.5: 0);
     testScore += earned;
     testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
-    testFeedback.innerHTML = (both?'全对':(spellingOk||meaningOk?'部分正确':'再看看'))+
-      '<div style="margin-top:6px;font-size:.9rem">答案：'+esc(w.word)+' · '+esc(w.meaning)+'</div>';
+    testFeedback.innerHTML = (both?' hoàn toàn đúng ':(spellingOk||meaningOk?' bộ phận Đúng ':' nhìn lại một chút '))+
+      '<div style="margin-top:6px;font-size:.9rem"> Đáp án: '+esc(w.word)+' · '+esc(w.meaning)+'</div>';
     testResultsData.push({{
       word: w.word, ipa: w.ipa || '', meaning: w.meaning,
       userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
@@ -350,10 +350,10 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
     testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
     const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
     resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
-    resultsDetail.textContent = '正确率 '+percent+'%';
+    resultsDetail.textContent = ' Đúng dẫn đầu '+percent+'%';
     resultsTableBody.innerHTML = testResultsData.map((r,i) => {{
       const ok = r.earned === 1;
-      const cls = ok ? 'row-ok' : 'row-wrong';
+      const cls = ok? 'row-ok': 'row-wrong';
       return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
     }}).join('');
     saveHistory({{ score:testScore, total:TOTAL_QUESTIONS, percent, timestamp:Date.now() }});
@@ -364,7 +364,7 @@ body {{ font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); colo
   // URL mode from parent
   try {{
     const m = new URLSearchParams(location.search).get('vocabMode') ||
-      (parent !== window ? new URLSearchParams(parent.location.search).get('vocabMode') : null);
+      (parent!== window? new URLSearchParams(parent.location.search).get('vocabMode'): null);
     if(m === 'test'){{
       const tab = navTabs.querySelector('[data-mode="test"]');
       if(tab) tab.click();
@@ -383,7 +383,7 @@ def build_one(path: Path) -> Path:
         print("skip unpublished", path.name)
         return None
     n = int(meta["listNo"])
-    out = OUT / f"四级单词LIST{n}.html"
+    out = OUT / f" Từ vựng Đại học LIST{n}.html"
     OUT.mkdir(parents=True, exist_ok=True)
     out.write_text(render_html(meta), encoding="utf-8")
     print("wrote", out.relative_to(ROOT), "words", len(meta.get("words") or []))

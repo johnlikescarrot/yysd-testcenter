@@ -10,7 +10,7 @@ must(t.indexOf("Julius Caesar") >= 0 && t.indexOf("rising power of ancient Rome"
 must(t.indexOf("demanding a <Q n=\"26\">") >= 0, "Q26 a ransom");
 must(t.indexOf("The persistence and peril of misinformation") >= 0, "P3 title");
 must(t.indexOf("both deliberately promoted and accidentally shared") >= 0, "P3 para1");
-must(t.indexOf("〔注：") < 0, "no reconstruction notes");
+must(t.indexOf(" rót: ") < 0, "no reconstruction notes");
 must(t.indexOf("G:`frequent exposure`") >= 0, "Q31-36 option G");
 must(t.indexOf("J:`different ideas`") >= 0, "Q31-36 option J");
 must(t.indexOf("answer:['G']") >= 0 && t.indexOf("answer:['J']") >= 0, "Q31 G Q32 J");

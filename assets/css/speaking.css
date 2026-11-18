@@ -1,4 +1,4 @@
-/* speaking.css — 雅思口语专项练习 */
+/* speaking.css — IELTS Speaking Chuyên sâu Luyện tập */
 .spk-page { padding-bottom: 48px; }
 
 .spk-hero {
@@ -48,7 +48,7 @@
 .spk-stat span { font-size: 0.85rem; color: #6b7c90; }
 
 .spk-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
-.spk-actions .btn { min-width: 160px; }
+.spk-actions.btn { min-width: 160px; }
 
 .spk-section h2 { font-size: 1.15rem; margin: 0 0 14px; }
 .spk-records { display: flex; flex-direction: column; gap: 10px; }
@@ -366,7 +366,7 @@
 
 .spk-qfb { border-top: 1px solid #eee; padding: 12px 0; font-size: 0.88rem; }
 .spk-qfb__q { margin: 0 0 8px; }
-.spk-qfb__a span, .spk-qfb__fix span { font-weight: 600; color: #6b7c90; margin-right: 6px; }
+.spk-qfb__a span,.spk-qfb__fix span { font-weight: 600; color: #6b7c90; margin-right: 6px; }
 .spk-qfb__fix { color: #1a6b3c; }
 .spk-qfb__fb { color: #4a5d73; }
 
@@ -399,7 +399,7 @@
 .spk-session-main { padding-top: 16px; }
 .spk-session-title { margin-left: 8px; }
 .spk-ai-banner--session { margin-top: 8px; }
-.page-premium.spk-page .spk-hero.bento-panel {
+.page-premium.spk-page.spk-hero.bento-panel {
   background: var(--card, #fff);
   border: 1px solid var(--bento-border, #f1f5f9);
   box-shadow: var(--bento-shadow, 0 1px 2px rgba(16,24,39,.05));

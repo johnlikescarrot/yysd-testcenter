@@ -1,5 +1,5 @@
 /* =========================================================================
-   student-calendar.js — 学生端任务日历
+   student-calendar.js — Học viên đầu Lịch nhiệm vụ
    ========================================================================= */
 (function () {
   "use strict";
@@ -25,30 +25,30 @@
   if (!A.requireLogin()) return;
   if (A.isTeacher && A.isTeacher()) {
     document.getElementById("cal-desc").textContent =
-      "教师账号请前往「教师端 → 任务日历」发布与管理任务。";
+      " Giáo viên tài khoản mời tiến về trước « Cổng giáo viên → Lịch nhiệm vụ » tuyên bố và Quản trị nhiệm vụ. ";
     viewEl.innerHTML =
-      '<div class="state state--brand teacher-empty"><h3>教师请使用发布台</h3>' +
-      '<p><a class="btn btn--primary btn--sm" href="teacher-calendar.html">打开任务发布台</a></p></div>';
+      '<div class="state state--brand teacher-empty"><h3> Giáo viên xin sử dụng đài tuyên bố </h3>' +
+      '<p><a class="btn btn--primary btn--sm" href="teacher-calendar.html"> mở ra phân phát nhiệm vụ đài </a></p></div>';
     return;
   }
 
   var TYPE_LABEL = {
-    ASSIGNMENT: "练习作业",
-    LESSON: "课程日程",
-    ANNOUNCEMENT: "提醒事项"
+    ASSIGNMENT: " Bài tập luyện tập ",
+    LESSON: " Lịch học ",
+    ANNOUNCEMENT: " Lời nhắc "
   };
   var STATUS_LABEL = {
-    PENDING: "未完成",
-    COMPLETED: "已完成",
-    OVERDUE: "已逾期"
+    PENDING: "Chưa hoàn thành",
+    COMPLETED: "Đã hoàn thành",
+    OVERDUE: " Đã quá hạn "
   };
 
   function esc(s) { return Y.esc(s); }
 
   var VOCAB_BOOK_LABEL = {
-    gaozhong: "高中词汇",
-    cet4: "四级词汇",
-    special: "雅思专项词汇"
+    gaozhong: " Từ vựng Nền tảng THPT ",
+    cet4: " Từ vựng Đại học Cốt lõi ",
+    special: " Từ vựng IELTS chuyên sâu "
   };
 
   function vocabLinkedTitle(xid) {
@@ -58,19 +58,19 @@
     var book = s.slice(0, i);
     var list = s.slice(i + 2);
     var bookLabel = VOCAB_BOOK_LABEL[book] ||
-      (book.indexOf("theme:") === 0 ? book.slice(6) : book);
+      (book.indexOf("theme:") === 0? book.slice(6): book);
     return bookLabel + " · " + list;
   }
 
   function catalogTitle(xid, uploadName, pack) {
-    if (String(xid).indexOf("upload-") === 0) return uploadName || "老师上传的练习";
+    if (String(xid).indexOf("upload-") === 0) return uploadName || " Giáo viên thượng truyền(*upload) Luyện tập ";
     var p = String(pack || "").toLowerCase();
     if (p === "vocab-quiz" || p === "vocab-learn" || String(xid).indexOf("||") > 0) {
       var vt = vocabLinkedTitle(xid);
       if (vt) return vt;
     }
-    var it = catalogById[xid] || (Y.resolveItem ? Y.resolveItem(catalogItems, xid) : null);
-    return it ? Y.displayTitle(it) : xid;
+    var it = catalogById[xid] || (Y.resolveItem? Y.resolveItem(catalogItems, xid): null);
+    return it? Y.displayTitle(it): xid;
   }
 
   function explainOnly(ev) {
@@ -78,7 +78,7 @@
   }
 
   function statusLabel(ev) {
-    if (explainOnly(ev)) return "详解";
+    if (explainOnly(ev)) return " Giải thích chi tiết ";
     return STATUS_LABEL[ev.status] || ev.status;
   }
 
@@ -90,7 +90,7 @@
       if (i <= 0) return;
       var b = s.slice(0, i);
       var lid = s.slice(i + 2);
-      if (!b || !lid) return;
+      if (!b ||!lid) return;
       refs.push({ bookId: b, listId: lid, raw: b + "||" + lid });
     });
     if (refs.length) {
@@ -102,11 +102,11 @@
     }
     // legacy: old catalog item ids
     var id0 = String((linkedIds && linkedIds[0]) || "");
-    var it = catalogById[id0] || (Y.resolveItem ? Y.resolveItem(catalogItems, id0) : null);
+    var it = catalogById[id0] || (Y.resolveItem? Y.resolveItem(catalogItems, id0): null);
     var legacyBook = "gaozhong";
     if (it && Y.vocabBookOfSubject) legacyBook = Y.vocabBookOfSubject(it.subject) || "gaozhong";
-    else if (/cet4|四级/i.test(id0)) legacyBook = "cet4";
-    else if (/listening|reading|writing|special|专项/i.test(id0)) legacyBook = "special";
+    else if (/cet4| Đại học B1 /i.test(id0)) legacyBook = "cet4";
+    else if (/listening|reading|writing|special| Chuyên sâu /i.test(id0)) legacyBook = "special";
     return { bookId: legacyBook, listIds: (linkedIds || []).slice(), refs: [] };
   }
 
@@ -159,7 +159,7 @@
     return "cal-status--pending";
   }
 
-  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function pad(n) { return n < 10? "0" + n: "" + n; }
 
   function dayKeyOf(iso) {
     if (!iso) return "";
@@ -184,7 +184,7 @@
     var b = dayKeyOf(ev.dueTime);
     if (a) keys[a] = 1;
     if (b) keys[b] = 1;
-    if (!a && !b && ev.createdAt) keys[dayKeyOf(ev.createdAt)] = 1;
+    if (!a &&!b && ev.createdAt) keys[dayKeyOf(ev.createdAt)] = 1;
     return keys;
   }
 
@@ -208,10 +208,10 @@
       else pending++;
     });
     statsEl.innerHTML =
-      '<div class="teacher-stat"><b>' + events.length + "</b><span>全部任务</span></div>" +
-      '<div class="teacher-stat"><b>' + pending + "</b><span>待完成</span></div>" +
-      '<div class="teacher-stat"><b>' + done + "</b><span>已完成</span></div>" +
-      '<div class="teacher-stat"><b>' + overdue + "</b><span>已逾期</span></div>";
+      '<div class="teacher-stat"><b>' + events.length + "</b><span> Tất cả nhiệm vụ </span></div>" +
+      '<div class="teacher-stat"><b>' + pending + "</b><span> đợi hoàn thành </span></div>" +
+      '<div class="teacher-stat"><b>' + done + "</b><span> Đã hoàn thành </span></div>" +
+      '<div class="teacher-stat"><b>' + overdue + "</b><span> Đã quá hạn </span></div>";
   }
 
   function chipHtml(ev) {
@@ -251,11 +251,11 @@
       '<div class="cal-month">' +
         '<div class="cal-month__nav">' +
           '<button type="button" class="btn btn--ghost btn--sm" data-nav-dir="-1">‹</button>' +
-          "<strong>" + y + " 年 " + (m + 1) + " 月</strong>" +
+          "<strong>" + y + " năm " + (m + 1) + " tháng </strong>" +
           '<button type="button" class="btn btn--ghost btn--sm" data-nav-dir="1">›</button>' +
         "</div>" +
         '<div class="cal-month__weekdays">' +
-          "<span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>" +
+          "<span> ngày </span><span> một </span><span> hai </span><span> ba </span><span> bốn </span><span> năm </span><span> sáu </span>" +
         "</div>" +
         '<div class="cal-month__grid">' + cells.join("") + "</div></div>";
   }
@@ -270,15 +270,15 @@
       d.setDate(start.getDate() + i);
       var dayKey = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
       var dayEvents = eventsOnDay(dayKey);
-      var dayCls = "cal-week__day" + (dayKey === todayKey ? " is-today" : "");
+      var dayCls = "cal-week__day" + (dayKey === todayKey? " is-today": "");
       days.push(
         '<div class="' + dayCls + '">' +
           '<div class="cal-week__head">' +
             "<b>" + (d.getMonth() + 1) + "/" + d.getDate() + "</b>" +
-            "<span>" + "日一二三四五六".charAt(d.getDay()) + "</span>" +
+            "<span>" + " ngày một hai ba bốn năm sáu ".charAt(d.getDay()) + "</span>" +
           "</div>" +
           '<div class="cal-week__list">' +
-            (dayEvents.length ? dayEvents.map(chipHtml).join("") : '<p class="profile-hint">无安排</p>') +
+            (dayEvents.length? dayEvents.map(chipHtml).join(""): '<p class="profile-hint"> Không có lịch </p>') +
           "</div></div>"
       );
     }
@@ -298,32 +298,32 @@
   function renderAgenda() {
     if (!events.length) {
       viewEl.innerHTML =
-        '<div class="state state--brand teacher-empty"><h3>暂无任务</h3>' +
-        "<p>老师布置作业或课程后，会出现在这里。</p></div>";
+        '<div class="state state--brand teacher-empty"><h3> tạm thời chưa có nhiệm vụ </h3>' +
+        "<p> Giáo viên bố trí bài tập hoặc chương trình học sau, sẽ xuất hiện ở chỗ này. </p></div>";
       return;
     }
     var sorted = events.slice().sort(function (a, b) {
-      var oa = explainOnly(a) ? 3 : (a.status === "OVERDUE" ? 0 : (a.status === "PENDING" ? 1 : 2));
-      var ob = explainOnly(b) ? 3 : (b.status === "OVERDUE" ? 0 : (b.status === "PENDING" ? 1 : 2));
-      if (oa !== ob) return oa - ob;
+      var oa = explainOnly(a)? 3: (a.status === "OVERDUE"? 0: (a.status === "PENDING"? 1: 2));
+      var ob = explainOnly(b)? 3: (b.status === "OVERDUE"? 0: (b.status === "PENDING"? 1: 2));
+      if (oa!== ob) return oa - ob;
       return String(a.dueTime || a.startTime || "").localeCompare(String(b.dueTime || b.startTime || ""));
     });
     var rows = sorted.map(function (ev) {
       var ids = ev.linkedExerciseIds || [];
       var doneN = ev.exerciseDone || 0;
-      var totalN = ev.exerciseTotal != null ? ev.exerciseTotal : ids.length;
+      var totalN = ev.exerciseTotal!= null? ev.exerciseTotal: ids.length;
       var prog = (!explainOnly(ev) && totalN)
-        ? '<span class="cal-progress__txt">' + doneN + "/" + totalN + " 练习</span>"
+        ? '<span class="cal-progress__txt">' + doneN + "/" + totalN + " Luyện tập </span>"
         : "";
       var cta = ev.status === "COMPLETED"
-        ? '<button type="button" class="btn btn--ghost btn--sm" data-open="' + ev.id + '">查看</button>'
+        ? '<button type="button" class="btn btn--ghost btn--sm" data-open="' + ev.id + '"> Xem </button>'
         : (ids.length === 1 ||
             ((ev.cdtPack === "vocab-quiz" || ev.cdtPack === "vocab-learn") && ids.length)
           ? '<a class="btn btn--primary btn--sm" href="' + examHref(ids[0], ev.id, ids, ev.cdtPack) + '">' +
-              (ev.cdtPack === "vocab-quiz" ? "开始检测"
-                : (ev.cdtPack === "vocab-learn" ? "开始学习"
-                  : (Y.isExplainId && Y.isExplainId(ids[0]) ? "进入详解" : "去做"))) + "</a>"
-          : '<button type="button" class="btn btn--primary btn--sm" data-open="' + ev.id + '">去做</button>');
+              (ev.cdtPack === "vocab-quiz"? " Bắt đầu Đánh giá "
+                : (ev.cdtPack === "vocab-learn"? " Bắt đầu học "
+                  : (Y.isExplainId && Y.isExplainId(ids[0])? " Xem giải thích chi tiết ": " đi làm "))) + "</a>"
+          : '<button type="button" class="btn btn--primary btn--sm" data-open="' + ev.id + '"> đi làm </button>');
       return '<article class="cal-todo-row ' + statusClass(ev.status) + '">' +
         '<div class="cal-todo-row__main">' +
           '<div class="cal-todo-row__tags">' +
@@ -333,9 +333,9 @@
           "</div>" +
           "<h3>" + esc(ev.title) + "</h3>" +
           '<p class="cal-card__meta">' +
-            (ev.dueTime ? "截止 " + esc(fmtDate(ev.dueTime)) : "") +
-            (ev.startTime ? (ev.dueTime ? " · " : "") + "开始 " + esc(fmtDate(ev.startTime)) : "") +
-            (prog ? " · " + prog : "") +
+            (ev.dueTime? " Hạn chót " + esc(fmtDate(ev.dueTime)): "") +
+            (ev.startTime? (ev.dueTime? " · ": "") + " Bắt đầu " + esc(fmtDate(ev.startTime)): "") +
+            (prog? " · " + prog: "") +
           "</p>" +
         "</div>" +
         '<div class="cal-todo-row__act">' + cta + "</div>" +
@@ -354,14 +354,14 @@
   function canManualComplete(ev) {
     if (!ev || ev.status === "COMPLETED") return false;
     if (ev.eventType === "ASSIGNMENT" && (ev.linkedExerciseIds || []).length) {
-      // ponytail: 列表学习无自动交卷，允许学生手动勾完成
+      // ponytail: liệt biểu List Học tập Không tự động Nộp bài, cho phép Học viên chủ động phác thảo hoàn thành
       return String(ev.cdtPack || "").toLowerCase() === "vocab-learn";
     }
     return true;
   }
 
   function markCalSeen(id) {
-    // ponytail: shared with dashboard.js 今日焦点「新」标记
+    // ponytail: shared with dashboard.js hôm nay tiêu điểm « mới » dấu hiệu
     var key = "yysd:cal-seen-ids";
     var n = Number(id);
     if (!n) return;
@@ -388,60 +388,60 @@
     var isVocab = pack === "vocab-quiz" || pack === "vocab-learn";
     var exList = linkedIds.map(function (xid) {
       var title = catalogTitle(xid, ev.attachmentName, pack);
-      var kind = (!isVocab && Y.drillKindLabel) ? Y.drillKindLabel(xid) : "";
-      var explain = !!(Y.isExplainId && Y.isExplainId(xid));
-      var done = isVocab ? ev.status === "COMPLETED" : (!explain && !!doneSet[xid]);
+      var kind = (!isVocab && Y.drillKindLabel)? Y.drillKindLabel(xid): "";
+      var explain =!!(Y.isExplainId && Y.isExplainId(xid));
+      var done = isVocab? ev.status === "COMPLETED": (!explain &&!!doneSet[xid]);
       var href = examHref(xid, ev.id, linkedIds, ev.cdtPack);
-      return '<li class="cal-ex-row' + (done ? " is-done" : "") + '">' +
+      return '<li class="cal-ex-row' + (done? " is-done": "") + '">' +
         "<span><b>" + esc(title) + "</b>" +
-          (done ? '<small class="cal-ex-done">已完成</small>' : "") +
-          (kind ? '<small class="cal-ex-kind">' + esc(kind) + "</small>" : "") +
+          (done? '<small class="cal-ex-done"> Đã hoàn thành </small>': "") +
+          (kind? '<small class="cal-ex-kind">' + esc(kind) + "</small>": "") +
         "</span>" +
         (done
-          ? '<a class="btn btn--ghost btn--sm" href="' + href + '">再看一次</a>'
+          ? '<a class="btn btn--ghost btn--sm" href="' + href + '"> lại nhìn một lần </a>'
           : '<a class="btn btn--primary btn--sm" href="' + href + '">' +
-              (pack === "vocab-quiz" ? "开始检测" : (pack === "vocab-learn" ? "开始学习"
-                : (explain ? "进入详解" : "立即去做"))) +
+              (pack === "vocab-quiz"? " Bắt đầu Đánh giá ": (pack === "vocab-learn"? " Bắt đầu học "
+                : (explain? " Xem giải thích chi tiết ": " lập tức đi làm "))) +
             "</a>") +
         "</li>";
     }).join("");
 
-    var totalN = ev.exerciseTotal != null ? ev.exerciseTotal : (ev.linkedExerciseIds || []).length;
+    var totalN = ev.exerciseTotal!= null? ev.exerciseTotal: (ev.linkedExerciseIds || []).length;
     var doneN = ev.exerciseDone || 0;
     var progHint = "";
     if (explainOnly(ev)) {
-      progHint = '<p class="profile-hint">详解可答题看对错，不记成绩、不算完成。</p>';
-    } else if (ev.status !== "COMPLETED" && totalN) {
+      progHint = '<p class="profile-hint"> Giải thích chi tiết có thể bài thi nhìn đúng sai, không nhớ Điểm số, còn chưa xong thành. </p>';
+    } else if (ev.status!== "COMPLETED" && totalN) {
       progHint = isVocab
         ? (pack === "vocab-quiz"
-          ? '<p class="profile-hint">闯关通过后，任务将自动标记为已完成。</p>'
-          : '<p class="profile-hint">学完本 List 后，任务将自动标记为已完成。</p>')
-        : '<p class="profile-hint">完成全部 ' + totalN + " 份练习后，任务将自动标记为已完成。</p>";
+          ? '<p class="profile-hint"> vượt ải thông qua sau, nhiệm vụ đem tự động dấu hiệu là Đã hoàn thành. </p>'
+          : '<p class="profile-hint"> học xong bản List sau, nhiệm vụ đem tự động dấu hiệu là Đã hoàn thành. </p>')
+        : '<p class="profile-hint"> hoàn thành Tất cả ' + totalN + " bài Luyện tập sau, nhiệm vụ đem tự động dấu hiệu là Đã hoàn thành. </p>";
     }
     detailBody.innerHTML =
       '<p><span class="cal-tag ' + typeClass(ev.eventType) + '">' +
         esc(TYPE_LABEL[ev.eventType] || "") + "</span> " +
         '<span class="cal-status-pill ' + statusClass(ev.status) + '">' +
         esc(statusLabel(ev)) + "</span></p>" +
-      "<p>" + esc(ev.description || "老师未填写额外说明。") + "</p>" +
-      '<p class="cal-card__meta">开始：' + esc(fmtDate(ev.startTime)) +
-        " · 截止：" + esc(fmtDate(ev.dueTime)) +
-        ((!explainOnly(ev) && totalN) ? " · 练习进度 " + doneN + "/" + totalN : "") + "</p>" +
+      "<p>" + esc(ev.description || " Giáo viên Chưa điền ghi thêm vào nói rõ. ") + "</p>" +
+      '<p class="cal-card__meta"> Bắt đầu: ' + esc(fmtDate(ev.startTime)) +
+        " · Hạn chót: " + esc(fmtDate(ev.dueTime)) +
+        ((!explainOnly(ev) && totalN)? " · Luyện tập Tiến độ " + doneN + "/" + totalN: "") + "</p>" +
       (exList
-        ? "<h3>关联练习</h3><ul class=\"cal-ex-list\">" + exList + "</ul>" + progHint
+        ? "<h3> liên quan Luyện tập </h3><ul class=\"cal-ex-list\">" + exList + "</ul>" + progHint
         : (ev.eventType === "ASSIGNMENT"
-          ? "<p class=\"profile-hint\">未关联具体练习，可按说明完成并手动勾选。</p>"
+          ? "<p class=\"profile-hint\"> không đóng liên cụ thể Luyện tập, có thể lẽ ra rõ ràng hoàn thành cũng chủ động phác thảo chọn. </p>"
           : ""));
 
-    var acts = '<button type="button" class="btn btn--ghost" data-close="1">关闭</button>';
+    var acts = '<button type="button" class="btn btn--ghost" data-close="1"> Đóng </button>';
     if (canManualComplete(ev)) {
-      acts += '<button type="button" class="btn btn--primary" id="mark-done-btn">标记完成</button>';
+      acts += '<button type="button" class="btn btn--primary" id="mark-done-btn"> dấu hiệu hoàn thành </button>';
     } else if (ev.status === "COMPLETED") {
-      acts += '<span class="profile-hint">已完成' +
-        (ev.completedAt ? " · " + esc(fmtDate(ev.completedAt)) : "") + "</span>";
+      acts += '<span class="profile-hint"> Đã hoàn thành ' +
+        (ev.completedAt? " · " + esc(fmtDate(ev.completedAt)): "") + "</span>";
     } else if ((ev.linkedExerciseIds || []).length === 1) {
       acts += '<a class="btn btn--primary" href="' +
-        examHref(ev.linkedExerciseIds[0], ev.id, ev.linkedExerciseIds, ev.cdtPack) + '">立即去做</a>';
+        examHref(ev.linkedExerciseIds[0], ev.id, ev.linkedExerciseIds, ev.cdtPack) + '"> lập tức đi làm </a>';
     }
     detailActions.innerHTML = acts;
     modal.hidden = false;
@@ -457,8 +457,8 @@
     Promise.all([
       A.api("/api/student/calendar"),
       Y.load(),
-      Y.loadListeningTaxonomy ? Y.loadListeningTaxonomy().catch(function () { return null; }) : Promise.resolve(null),
-      Y.loadReadingTaxonomy ? Y.loadReadingTaxonomy().catch(function () { return null; }) : Promise.resolve(null)
+      Y.loadListeningTaxonomy? Y.loadListeningTaxonomy().catch(function () { return null; }): Promise.resolve(null),
+      Y.loadReadingTaxonomy? Y.loadReadingTaxonomy().catch(function () { return null; }): Promise.resolve(null)
     ]).then(function (res) {
       events = res[0].events || [];
       catalogById = {};
@@ -467,12 +467,12 @@
       render();
       openFromHash();
     }).catch(function (e) {
-      if (String(e.message).indexOf("登录") >= 0) {
+      if (String(e.message).indexOf("Đăng nhập") >= 0) {
         A.setToken("");
         location.href = "login.html?next=" + encodeURIComponent("dashboard.html");
         return;
       }
-      viewEl.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' + esc(e.message) + "</p></div>";
+      viewEl.innerHTML = '<div class="state state--brand"><h3> Tải dữ liệu thất bại </h3><p>' + esc(e.message) + "</p></div>";
     });
   }
 

@@ -1,10 +1,19 @@
 /* =========================================================================
-   auth.js — 登录态、导航、API 调用、成绩云端同步（优益思达国际课程中心）
+   auth.js — Đăng nhập thái, Điều hướng, API thuyên chuyển, Điểm số đám mây đồng bộ (Trung tâm Luyện thi Quốc tế YYSD)
    ========================================================================= */
 window.YYSD_AUTH = (function () {
   "use strict";
 
-  var API_BASE = (typeof location !== "undefined" &&
+  function isStaticMode() {
+    if (typeof window !== "undefined" && window.YYSD_FORCE_CLOUD === true) return false;
+    if (typeof location === "undefined") return true;
+    var h = (location.hostname || "").toLowerCase();
+    if (h === "youyisida.com" || h.slice(-14) === ".youyisida.com") return false;
+    if ((h === "localhost" || h === "127.0.0.1") && location.port === "3000") return false;
+    return true;
+  }
+
+  var API_BASE = (typeof location!== "undefined" &&
     (location.hostname === "localhost" || location.hostname === "127.0.0.1"))
     ? (location.protocol + "//" + location.hostname + ":3000")
     : "https://api.youyisida.com";
@@ -14,16 +23,16 @@ window.YYSD_AUTH = (function () {
   var TEACHER_USER_KEY = "yysd:teacher:user";
   var RESULTS_KEY = "yysd:results";
   var WRONG_WORDS_KEY = "yysd:wrong-words";
-  // ponytail: shared-PC students were cross-uploading each other's yysd:results on login sync
   var LOCAL_OWNER_KEY = "yysd:local-owner";
   var AUTH_COOKIE = "yysd_auth";
-  var ICP_TEXT = "皖ICP备2026021555号-1";
-  var ICP_URL = "https://beian.miit.gov.cn/";
-  var MPS_TEXT = "皖公网安备34010402705009号";
-  var MPS_URL = "https://beian.mps.gov.cn/#/query/webSearch?code=34010402705009";
-  var MPS_ICON = "assets/img/gongan.png";
+  var ICP_TEXT = "Trung tâm Luyện thi IELTS Quốc tế YYSD";
+  var ICP_URL = "tai-lieu.html";
+  var MPS_TEXT = "Thư viện Học thuật Chuẩn Quốc tế";
+  var MPS_URL = "lo-trinh.html";
+  var MPS_ICON = "";
   var PUBLIC_PAGES = {
-    "index.html": 1, "login.html": 1, "register.html": 1, "forgot-password.html": 1,
+    "index.html": 1, "lo-trinh.html": 1, "tai-lieu.html": 1,
+    "login.html": 1, "register.html": 1, "forgot-password.html": 1,
     "agreement.html": 1, "privacy.html": 1, "report.html": 1, "teacher-login.html": 1, "teacher-register.html": 1,
     "suspended.html": 1, "platform.html": 1, "ielts-upgrade.html": 1, "maintenance.html": 1,
     "download.html": 1
@@ -60,18 +69,18 @@ window.YYSD_AUTH = (function () {
     return tenantSlug() === "yysd";
   }
 
-  /** 词境远征：暂时全站下线（入口与深链一并关掉） */
+  /** Hành trình Vương quốc Từ: tạm thời toàn bộ đứng tạm ẩn (cửa vào và sâu liệm cùng nhau tắt đi) */
   function canWordRealm() {
     // ponytail: was HQ-only; flip back to isHqSite() when reopening
     return false;
   }
 
-  /** AI升学顾问：暂时仅优益思达总部站开放，其他租户子域隐藏且不可进 */
+  /** AI học lên cố vấn: tạm thời chỉ YYSD tổng bộ đứng ra thả, Khác người thuê tử vực che giấu lại không có thể tiến */
   function canAiAdmit() {
     return isHqSite();
   }
 
-  /** 雅思区域：已对全体师生开放（仍需登录） */
+  /** IELTS khu vực: đã đối với toàn thể thầy trò cởi mở (nhưng cần Đăng nhập) */
   function canIeltsArea() {
     return true;
   }
@@ -87,20 +96,20 @@ window.YYSD_AUTH = (function () {
   }
 
   function brandName(org) {
-    return (org && org.name) || "优益思达国际课程中心";
+    return (org && org.name) || "Trung tâm Luyện thi Quốc tế YYSD";
   }
 
-  /** 客户站白标：去掉可见的优益思达/YYSD（备案号除外） */
+  /** hộ khách đứng bạch nhãn hiệu: xóa có thể thấy được YYSD /YYSD (lập hồ sơ số ngoại trừ) */
   function scrubTenantBrandText(orgName) {
     if (isHqSite()) return;
     var replacers = [
-      [/优益思达国际课程中心/g, orgName],
-      [/优益思达备考/g, orgName],
-      [/优益思达学习中心/g, orgName],
-      [/优益思达/g, orgName],
+      [/ Trung tâm Luyện thi Quốc tế YYSD /g, orgName],
+      [/ Luyện thi YYSD /g, orgName],
+      [/ Trung tâm Học tập YYSD /g, orgName],
+      [/ YYSD /g, orgName],
       [/YYSD International Course Center/gi, orgName],
       [/YYSD\s*·\s*IELTS/gi, orgName],
-      [/YYSD\s*·\s*TEACHER/gi, orgName + " · 教师端"],
+      [/YYSD\s*·\s*TEACHER/gi, orgName + " · Cổng giáo viên "],
       [/\bYYSD\b/g, orgName]
     ];
     var walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
@@ -110,15 +119,15 @@ window.YYSD_AUTH = (function () {
       if (!p) continue;
       var tag = p.tagName;
       if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") continue;
-      if (p.getAttribute && (p.getAttribute("data-icp") != null || p.getAttribute("data-report") != null || p.getAttribute("data-mps") != null)) continue;
+      if (p.getAttribute && (p.getAttribute("data-icp")!= null || p.getAttribute("data-report")!= null || p.getAttribute("data-mps")!= null)) continue;
       if (p.closest && (p.closest("[data-icp]") || p.closest("[data-report]") || p.closest("[data-mps]"))) continue;
       var t = node.nodeValue;
-      if (!t || (t.indexOf("优益思达") < 0 && t.indexOf("YYSD") < 0 && t.indexOf("Yysd") < 0)) continue;
+      if (!t || (t.indexOf("YYSD") < 0 && t.indexOf("YYSD") < 0 && t.indexOf("Yysd") < 0)) continue;
       var next = t;
       replacers.forEach(function (pair) {
         next = next.replace(pair[0], pair[1]);
       });
-      if (next !== t) node.nodeValue = next;
+      if (next!== t) node.nodeValue = next;
     }
     document.querySelectorAll(".auth-aside__eyebrow").forEach(function (el) {
       el.textContent = orgName;
@@ -129,7 +138,7 @@ window.YYSD_AUTH = (function () {
     });
     document.querySelectorAll(".minimal-footer__copy").forEach(function (el) {
       var year = el.querySelector("#year");
-      var yearText = year ? year.textContent : String(new Date().getFullYear());
+      var yearText = year? year.textContent: String(new Date().getFullYear());
       var icp = el.querySelector("[data-icp]");
       var report = el.querySelector("[data-report]");
       var mps = el.querySelector("[data-mps]");
@@ -150,12 +159,12 @@ window.YYSD_AUTH = (function () {
     if (!org) return;
     setOrg(org);
     var name = brandName(org);
-    var tenant = !isHqSite();
+    var tenant =!isHqSite();
 
     document.querySelectorAll(".minimal-brand").forEach(function (a) {
-      a.setAttribute("aria-label", name + "首页");
+      a.setAttribute("aria-label", name + "Trang chủ");
     });
-    document.querySelectorAll(".minimal-brand__text b, .minimal-brand b, .minimal-footer__brand b").forEach(function (el) {
+    document.querySelectorAll(".minimal-brand__text b,.minimal-brand b,.minimal-footer__brand b").forEach(function (el) {
       el.textContent = name;
     });
     document.querySelectorAll(".minimal-footer__brand span").forEach(function (el) {
@@ -164,7 +173,7 @@ window.YYSD_AUTH = (function () {
         el.hidden = true;
       }
     });
-    document.querySelectorAll(".minimal-brand__logo, .minimal-footer__logo, .auth-aside__logo img, .viewer-bar__logo").forEach(function (img) {
+    document.querySelectorAll(".minimal-brand__logo,.minimal-footer__logo,.auth-aside__logo img,.viewer-bar__logo").forEach(function (img) {
       if (tenant && org.logoUrl) {
         img.src = logoSrc(org.logoUrl);
       } else if (org.logoUrl) {
@@ -198,6 +207,11 @@ window.YYSD_AUTH = (function () {
   }
 
   function bootstrapTenant() {
+    if (isStaticMode()) {
+      var localOrg = { slug: "yysd", name: "Trung tâm Luyện thi Quốc tế YYSD" };
+      applyOrgBrand(localOrg);
+      return Promise.resolve(localOrg);
+    }
     if (!isHqSite()) {
       var cached = getOrg();
       if (cached && cached.slug === tenantSlug()) applyOrgBrand(cached);
@@ -206,12 +220,12 @@ window.YYSD_AUTH = (function () {
       headers: { "X-Tenant-Slug": tenantSlug() }
     }).then(function (r) {
       return r.json().then(function (d) {
-        if (!r.ok) throw new Error((d && d.error) || "机构加载失败");
+        if (!r.ok) throw new Error((d && d.error) || " cơ cấu Tải dữ liệu thất bại ");
         return d.org;
       });
     }).then(function (org) {
       applyOrgBrand(org);
-      if (!org.usable && pageName() !== "suspended.html" && pageName() !== "platform.html") {
+      if (!org.usable && pageName()!== "suspended.html" && pageName()!== "platform.html") {
         location.replace("suspended.html");
         return null;
       }
@@ -230,17 +244,17 @@ window.YYSD_AUTH = (function () {
 
   function pageName() {
     var parts = location.pathname.split("/").filter(Boolean);
-    return parts.length ? parts[parts.length - 1] : "index.html";
+    return parts.length? parts[parts.length - 1]: "index.html";
   }
 
   function isPublicPage() {
-    return !!PUBLIC_PAGES[pageName()];
+    return!!PUBLIC_PAGES[pageName()];
   }
 
   function setAuthCookie(on) {
-    var secure = location.protocol === "https:" ? "; Secure" : "";
-    document.cookie = AUTH_COOKIE + "=" + (on ? "1" : "") +
-      "; path=/; max-age=" + (on ? 2592000 : 0) + "; SameSite=Lax" + secure;
+    var secure = location.protocol === "https:"? "; Secure": "";
+    document.cookie = AUTH_COOKIE + "=" + (on? "1": "") +
+      "; path=/; max-age=" + (on? 2592000: 0) + "; SameSite=Lax" + secure;
   }
 
   function hasAnySession() {
@@ -257,14 +271,14 @@ window.YYSD_AUTH = (function () {
     } catch (e) {}
   }
 
-  /** Drop prior student's local scores/错词 before another account syncs them up. */
+  /** Drop prior student's local scores/ từ sai before another account syncs them up. */
   function adoptLocalStores(phone) {
     phone = String(phone || "").trim();
     if (!phone) return;
     var prev = "";
     try { prev = localStorage.getItem(LOCAL_OWNER_KEY) || ""; } catch (e) {}
     // legacy unscoped store has no owner — treat as foreign on shared PCs
-    if (!prev || prev !== phone) clearLocalLearningStores();
+    if (!prev || prev!== phone) clearLocalLearningStores();
     try { localStorage.setItem(LOCAL_OWNER_KEY, phone); } catch (e) {}
   }
 
@@ -284,7 +298,7 @@ window.YYSD_AUTH = (function () {
       var student = localStorage.getItem(TOKEN_KEY) || "";
       // ponytail: leftover student/preview JWT was beating teacher JWT on platform.html
       if (pageName() === "platform.html") return teacher || student;
-      if (isTeacherPage() && localStorage.getItem("yysd:teacher:mode") !== "site") {
+      if (isTeacherPage() && localStorage.getItem("yysd:teacher:mode")!== "site") {
         return teacher || student;
       }
       if (student) return student;
@@ -320,7 +334,7 @@ window.YYSD_AUTH = (function () {
       if (isTeacherSiteMode()) return false;
       // student session wins on student-facing pages (avoids dashboard bounce)
       if (localStorage.getItem(TOKEN_KEY)) return false;
-      return !!localStorage.getItem(TEACHER_TOKEN_KEY);
+      return!!localStorage.getItem(TEACHER_TOKEN_KEY);
     } catch (e) { return false; }
   }
 
@@ -346,8 +360,8 @@ window.YYSD_AUTH = (function () {
           phone: teacher.phone || "",
           name: teacher.name || "",
           avatarUrl: teacher.avatarUrl || "",
-          isAdmin: !!teacher.isAdmin,
-          isPlatformAdmin: !!teacher.isPlatformAdmin
+          isAdmin:!!teacher.isAdmin,
+          isPlatformAdmin:!!teacher.isPlatformAdmin
         }));
       } else {
         // student session only — keep teacher keys so both can coexist
@@ -359,8 +373,8 @@ window.YYSD_AUTH = (function () {
           role: "student",
           displayName: stu.displayName || "",
           avatarUrl: stu.avatarUrl || "",
-          isAdmin: !!stu.isAdmin,
-          isPlatformAdmin: !!stu.isPlatformAdmin
+          isAdmin:!!stu.isAdmin,
+          isPlatformAdmin:!!stu.isPlatformAdmin
         });
       }
       if (d.org) applyOrgBrand(d.org);
@@ -373,16 +387,16 @@ window.YYSD_AUTH = (function () {
     try {
       var student = JSON.parse(localStorage.getItem(USER_KEY) || "{}");
       var teacher = JSON.parse(localStorage.getItem(TEACHER_USER_KEY) || "{}");
-      var hasTeacherTok = !!localStorage.getItem(TEACHER_TOKEN_KEY);
+      var hasTeacherTok =!!localStorage.getItem(TEACHER_TOKEN_KEY);
       // teacher portal always shows teacher; elsewhere student profile wins if present
-      if (hasTeacherTok && teacher.phone && (isTeacherPage() || !student.phone)) {
+      if (hasTeacherTok && teacher.phone && (isTeacherPage() ||!student.phone)) {
         return {
           phone: teacher.phone,
           role: "teacher",
           displayName: teacher.name || "",
           avatarUrl: teacher.avatarUrl || "",
-          isAdmin: !!teacher.isAdmin,
-          isPlatformAdmin: !!teacher.isPlatformAdmin
+          isAdmin:!!teacher.isAdmin,
+          isPlatformAdmin:!!teacher.isPlatformAdmin
         };
       }
       return student;
@@ -397,8 +411,8 @@ window.YYSD_AUTH = (function () {
           role: u.role || "",
           displayName: u.displayName || "",
           avatarUrl: u.avatarUrl || "",
-          isAdmin: !!u.isAdmin,
-          isPlatformAdmin: !!u.isPlatformAdmin
+          isAdmin:!!u.isAdmin,
+          isPlatformAdmin:!!u.isPlatformAdmin
         }));
       } else localStorage.removeItem(USER_KEY);
     } catch (e) {}
@@ -409,7 +423,7 @@ window.YYSD_AUTH = (function () {
     try {
       if (getUser().isAdmin) return true;
       var t = JSON.parse(localStorage.getItem(TEACHER_USER_KEY) || "{}");
-      return !!t.isAdmin;
+      return!!t.isAdmin;
     } catch (e) { return false; }
   }
 
@@ -417,7 +431,7 @@ window.YYSD_AUTH = (function () {
     try {
       if (getUser().isPlatformAdmin) return true;
       var t = JSON.parse(localStorage.getItem(TEACHER_USER_KEY) || "{}");
-      return !!t.isPlatformAdmin;
+      return!!t.isPlatformAdmin;
     } catch (e) { return false; }
   }
 
@@ -430,10 +444,10 @@ window.YYSD_AUTH = (function () {
   // ponytail: canvas resize to 256px JPEG; skip crop UI
   function compressAvatar(file) {
     return new Promise(function (resolve, reject) {
-      if (!file || !/^image\/(jpeg|jpg|png|webp|gif)$/i.test(file.type)) {
-        return reject(new Error("请选择 JPG / PNG / WebP 图片"));
+      if (!file ||!/^image\/(jpeg|jpg|png|webp|gif)$/i.test(file.type)) {
+        return reject(new Error(" mời lựa chọn JPG / PNG / WebP hình ảnh "));
       }
-      if (file.size > 5 * 1024 * 1024) return reject(new Error("图片不能超过 5MB"));
+      if (file.size > 5 * 1024 * 1024) return reject(new Error(" hình ảnh không thể vượt qua 5MB"));
       var img = new Image();
       var objectUrl = URL.createObjectURL(file);
       img.onload = function () {
@@ -451,7 +465,7 @@ window.YYSD_AUTH = (function () {
       };
       img.onerror = function () {
         URL.revokeObjectURL(objectUrl);
-        reject(new Error("图片读取失败"));
+        reject(new Error(" hình ảnh đọc đến thất bại "));
       };
       img.src = objectUrl;
     });
@@ -467,7 +481,7 @@ window.YYSD_AUTH = (function () {
         role: u.role || getUser().role || "",
         displayName: u.displayName || u.name || getUser().displayName || "",
         avatarUrl: d.avatarUrl || u.avatarUrl || "",
-        isAdmin: u.isAdmin != null ? !!u.isAdmin : !!getUser().isAdmin
+        isAdmin: u.isAdmin!= null?!!u.isAdmin:!!getUser().isAdmin
       };
       setUser(next);
       if (next.role === "teacher") {
@@ -476,7 +490,7 @@ window.YYSD_AUTH = (function () {
             phone: next.phone,
             name: next.displayName || "",
             avatarUrl: next.avatarUrl || "",
-            isAdmin: !!next.isAdmin
+            isAdmin:!!next.isAdmin
           }));
         } catch (e) {}
       }
@@ -488,11 +502,11 @@ window.YYSD_AUTH = (function () {
     try {
       if (!localStorage.getItem(TEACHER_TOKEN_KEY)) return false;
       if (isTeacherPage()) return false;
-      if (localStorage.getItem("yysd:teacher:mode") !== "site") return false;
+      if (localStorage.getItem("yysd:teacher:mode")!== "site") return false;
       var stu = localStorage.getItem(TOKEN_KEY);
       var tea = localStorage.getItem(TEACHER_TOKEN_KEY);
-      if (stu && stu !== tea) return false;
-      return !stu || stu === tea;
+      if (stu && stu!== tea) return false;
+      return!stu || stu === tea;
     } catch (e) {
       return false;
     }
@@ -515,8 +529,8 @@ window.YYSD_AUTH = (function () {
     }).then(function (r) {
       return r.text().then(function (text) {
         var d = null;
-        try { d = text ? JSON.parse(text) : null; } catch (e) { d = null; }
-        if (!r.ok) throw new Error((d && d.error) || "无法恢复体验模式");
+        try { d = text? JSON.parse(text): null; } catch (e) { d = null; }
+        if (!r.ok) throw new Error((d && d.error) || " không cách nào khôi phục Dùng thử hình thức ");
         applyLogin({ token: d.token, user: d.user, role: "student" });
         return d;
       });
@@ -538,7 +552,7 @@ window.YYSD_AUTH = (function () {
 
   function desktopDevice() {
     var d = window.yysdDesktop && window.yysdDesktop.device;
-    if (!d || !d.hw || !d.file) return null;
+    if (!d ||!d.hw ||!d.file) return null;
     return { hw: String(d.hw), file: String(d.file) };
   }
 
@@ -551,7 +565,7 @@ window.YYSD_AUTH = (function () {
       return fetch(API_BASE + path, {
         method: opts.method || "GET",
         headers: authHeaders(),
-        body: opts.body ? JSON.stringify(opts.body) : undefined,
+        body: opts.body? JSON.stringify(opts.body): undefined,
         cache: "no-store"
       }).then(function (r) {
         return r.text().then(function (text) {
@@ -559,20 +573,20 @@ window.YYSD_AUTH = (function () {
           // ponytail: 304/empty used to parse as {} and wipe yysd:results on sync
           if (!text) {
             throw new Error(r.status === 304
-              ? "成绩同步失败，请强刷后重试"
-              : "服务器返回空响应（" + r.status + "）");
+              ? " Đồng bộ điểm số thất bại, mời mạnh mẽ xoát sau Thử lại "
+              : " Server Quay lại không hưởng ứng với (" + r.status + ") ");
           }
           try { d = JSON.parse(text); } catch (e) {
             throw new Error(r.status === 502 || r.status === 504
-              ? "服务器暂时不可用，请稍后重试"
-              : "服务器返回异常（" + r.status + "），请确认已部署最新版本");
+              ? " Server tạm thời không thể dùng, xin sau Thử lại "
+              : " Máy chủ phản hồi bất thường (" + r.status + "), xin xác nhận đã bố trí mới nhất phiên bản ");
           }
           if (!r.ok) {
             if (d && d.code === "seat_required" && location.pathname.indexOf("download.html") < 0) {
               clearSession();
               location.replace("download.html");
             }
-            throw new Error((d && d.error) || "请求失败");
+            throw new Error((d && d.error) || "Yêu cầu thất bại");
           }
           return d;
         });
@@ -590,10 +604,10 @@ window.YYSD_AUTH = (function () {
         if (!r.ok) {
           try {
             var d = JSON.parse(text);
-            throw new Error((d && d.error) || "请求失败");
+            throw new Error((d && d.error) || "Yêu cầu thất bại");
           } catch (e) {
-            if (e.message && e.message !== "请求失败" && e.name !== "SyntaxError") throw e;
-            throw new Error("加载练习失败（" + r.status + "）");
+            if (e.message && e.message!== "Yêu cầu thất bại" && e.name!== "SyntaxError") throw e;
+            throw new Error(" thêm năm Luyện tập thất bại (" + r.status + ") ");
           }
         }
         return text;
@@ -614,10 +628,10 @@ window.YYSD_AUTH = (function () {
     if (!b) return a;
     if (!a) return b;
     var aNewer = String(a.date || "") >= String(b.date || "");
-    var pick = Object.assign({}, aNewer ? a : b);
-    var other = aNewer ? b : a;
+    var pick = Object.assign({}, aNewer? a: b);
+    var other = aNewer? b: a;
     // cloud latest score historically omitted wrong — keep local/attempt wrong if pick lacks it
-    if ((!pick.wrong || !pick.wrong.length) && other && other.wrong && other.wrong.length) {
+    if ((!pick.wrong ||!pick.wrong.length) && other && other.wrong && other.wrong.length) {
       pick.wrong = other.wrong;
     }
     if (!pick.cdt && other && other.cdt) pick.cdt = true;
@@ -651,10 +665,10 @@ window.YYSD_AUTH = (function () {
       Object.keys(local).forEach(function (id) {
         var L = local[id];
         var C = cloud[id];
-        if (!L || !L.date) return;
+        if (!L ||!L.date) return;
         if (C && String(C.date || "") >= String(L.date || "")) return;
         var attemptAt = L.attemptAt || L.date;
-        if (!attemptAt || !isFinite(Date.parse(attemptAt))) return;
+        if (!attemptAt ||!isFinite(Date.parse(attemptAt))) return;
         pushes.push(pushScoreRecord(Object.assign({}, L, { id: id, attemptAt: attemptAt })));
       });
       return Promise.all(pushes);
@@ -662,7 +676,7 @@ window.YYSD_AUTH = (function () {
   }
 
   function pushScoreRecord(record) {
-    if (!getToken() || isTeacher() || !record || !record.id) return Promise.resolve(false);
+    if (!getToken() || isTeacher() ||!record ||!record.id) return Promise.resolve(false);
     return api("/api/scores/" + encodeURIComponent(record.id), { method: "PUT", body: record })
       .then(function () { return true; })
       .catch(function () { return false; });
@@ -677,16 +691,16 @@ window.YYSD_AUTH = (function () {
     if (opts.itemId) q.push("itemId=" + encodeURIComponent(opts.itemId));
     if (opts.eventId) q.push("eventId=" + encodeURIComponent(opts.eventId));
     if (opts.limit) q.push("limit=" + encodeURIComponent(String(opts.limit)));
-    return api("/api/student/score-attempts" + (q.length ? "?" + q.join("&") : ""));
+    return api("/api/student/score-attempts" + (q.length? "?" + q.join("&"): ""));
   }
 
   function fetchScoreAttempt(attemptId) {
-    if (!getToken() || isTeacher()) return Promise.reject(new Error("请先登录学生账号"));
+    if (!getToken() || isTeacher()) return Promise.reject(new Error(" Vui lòng đăng nhập tài khoản học viên trước "));
     return api("/api/student/score-attempts/" + encodeURIComponent(String(attemptId)));
   }
 
   function analyzeWrongItem(body) {
-    if (!getToken() || isTeacher()) return Promise.reject(new Error("请先登录学生账号"));
+    if (!getToken() || isTeacher()) return Promise.reject(new Error(" Vui lòng đăng nhập tài khoản học viên trước "));
     return api("/api/exam/wrong-analyze", { method: "POST", body: body || {} });
   }
 
@@ -696,7 +710,7 @@ window.YYSD_AUTH = (function () {
     btn.type = "button";
     btn.className = "btn btn--ghost btn--sm nav-persist";
     btn.id = "nav-logout";
-    btn.textContent = "退出";
+    btn.textContent = "Đăng xuất";
     btn.addEventListener("click", function () { logout(); });
     nav.appendChild(btn);
   }
@@ -719,11 +733,11 @@ window.YYSD_AUTH = (function () {
       return;
     }
     if (getToken()) {
-      el.href = (isTeacherPage() && !isTeacherSiteMode()) ? "teacher.html" : "profile.html";
+      el.href = (isTeacherPage() &&!isTeacherSiteMode())? "teacher.html": "profile.html";
       el.classList.add("nav-persist");
       var user = getUser();
       var phone = (user.phone || "").trim();
-      var label = (user.displayName || "").trim() || "个人中心";
+      var label = (user.displayName || "").trim() || "Hồ sơ cá nhân";
       var src = avatarSrc(user.avatarUrl);
       if (phone.length >= 4 || src) {
         el.classList.add("is-logged-in");
@@ -731,10 +745,10 @@ window.YYSD_AUTH = (function () {
           ? '<img class="nav-auth__avatar nav-auth__avatar--img" src="' + src.replace(/"/g, "") + '" alt="">'
           : '<span class="nav-auth__avatar" aria-hidden="true">' + (phone.slice(-4) || "·") + "</span>";
         el.innerHTML = avatarHtml + '<span class="nav-auth__label">' + label + "</span>";
-        el.setAttribute("aria-label", label + (phone.length >= 4 ? "，尾号 " + phone.slice(-4) : ""));
+        el.setAttribute("aria-label", label + (phone.length >= 4? ", số đuôi " + phone.slice(-4): ""));
       } else {
         el.classList.remove("is-logged-in");
-        el.textContent = "个人中心";
+        el.textContent = "Hồ sơ cá nhân";
         el.removeAttribute("aria-label");
       }
       applyCompactShell();
@@ -742,7 +756,7 @@ window.YYSD_AUTH = (function () {
       el.href = "login.html";
       el.classList.remove("is-logged-in");
       el.classList.remove("nav-persist");
-      el.textContent = "登录";
+      el.textContent = "Đăng nhập";
       el.removeAttribute("aria-label");
     }
   }
@@ -750,8 +764,8 @@ window.YYSD_AUTH = (function () {
   function bindIcp() {
     if (!ICP_TEXT) return;
     document.querySelectorAll("[data-icp]").forEach(function (el) {
-      var link = el.tagName === "A" ? el : document.createElement("a");
-      if (link !== el) {
+      var link = el.tagName === "A"? el: document.createElement("a");
+      if (link!== el) {
         link.className = el.className || "site-icp";
         el.replaceWith(link);
       }
@@ -764,7 +778,7 @@ window.YYSD_AUTH = (function () {
     bindMps();
   }
 
-  // ponytail: 公安备案号跟 ICP 一样注入页脚，不改每一页 HTML
+  // ponytail: công an lập hồ sơ số cùng ICP giống nhau rót vào trang chân, không thay đổi mỗi một trang HTML
   function bindMps() {
     if (!MPS_TEXT) return;
     document.querySelectorAll(".minimal-footer__copy").forEach(function (el) {
@@ -786,7 +800,7 @@ window.YYSD_AUTH = (function () {
     });
   }
 
-  // ponytail: footer 公示投诉渠道，满足公安备案安全评估勾选
+  // ponytail: footer công nhiên bày tỏ khiếu nại con đường, thỏa mãn công an lập hồ sơ an toàn ước định phác thảo chọn
   function bindReport() {
     document.querySelectorAll(".minimal-footer__copy").forEach(function (el) {
       if (el.querySelector("[data-report], a[href$='report.html']")) return;
@@ -794,7 +808,7 @@ window.YYSD_AUTH = (function () {
       a.href = "report.html";
       a.className = "site-report";
       a.setAttribute("data-report", "");
-      a.textContent = "投诉举报";
+      a.textContent = " Góp ý & Báo cáo ";
       var icp = el.querySelector("[data-icp]");
       if (icp) el.insertBefore(a, icp);
       else el.appendChild(a);
@@ -802,6 +816,7 @@ window.YYSD_AUTH = (function () {
   }
 
   function requireLogin() {
+    if (isStaticMode()) return true;
     try { if (new URLSearchParams(location.search).get("preview") === "1") return true; } catch (e) {}
     if (!getToken()) {
       (window.YYSD_GO || function (h) { location.href = h; })("login.html?next=" + encodeURIComponent(location.pathname + location.search), "scene");
@@ -821,9 +836,9 @@ window.YYSD_AUTH = (function () {
 
   function postLoginPath(next) {
     var n = String(next || "").trim() || studentHome();
-    // 主控台仅总部站可进；客户站即使带 next=platform 也回首页
+    // bàn điều khiển chỉ tổng bộ đứng có thể tiến; hộ khách đứng dù cho mang next=platform cũng trở về Trang chủ
     if (n.indexOf("platform") >= 0) {
-      return isHqSite() ? "platform.html" : studentHome();
+      return isHqSite()? "platform.html": studentHome();
     }
     if (isTeacher()) return "teacher.html";
     if (!n || n === "/" || n.indexOf("login") >= 0 || n.indexOf("register") >= 0) {
@@ -834,8 +849,8 @@ window.YYSD_AUTH = (function () {
 
   function redirectLoggedInAwayFromMarketing() {
     if (!getToken()) return false;
-    if (pageName() !== "index.html") return false;
-    // 学生登录后留在主页自行点板块；仅教师跳工作台
+    if (pageName()!== "index.html") return false;
+    // Học viên Đăng nhập sau ở lại trang chủ tự hành chút:điểm khối; chỉ Giáo viên nhảy bàn làm việc
     if (isTeacher()) {
       location.replace("teacher.html");
       return true;
@@ -865,28 +880,28 @@ window.YYSD_AUTH = (function () {
 
     var side = document.createElement("aside");
     side.className = "student-side";
-    side.setAttribute("aria-label", "课程导航");
+    side.setAttribute("aria-label", " chương trình học Điều hướng ");
 
     var links = [
-      { href: "dashboard.html", label: "工作台", key: "dashboard" },
-      { href: "zone.html?zone=study", label: "学习区", key: "study" },
-      { href: "zone.html?zone=practice", label: "练习区", key: "practice" },
-      { href: "zone.html?zone=mock", label: "模考区", key: "mock" },
-      { href: "calendar.html", label: "任务日历", key: "calendar" },
-      { href: "results.html", label: "我的成绩", key: "results" },
-      { href: "profile.html", label: "个人中心", key: "profile" }
+      { href: "dashboard.html", label: " bàn làm việc ", key: "dashboard" },
+      { href: "zone.html?zone=study", label: " Khu học tập ", key: "study" },
+      { href: "zone.html?zone=practice", label: " Khu luyện tập ", key: "practice" },
+      { href: "zone.html?zone=mock", label: " Khu thi thử ", key: "mock" },
+      { href: "calendar.html", label: " Lịch nhiệm vụ ", key: "calendar" },
+      { href: "results.html", label: "Kết quả của tôi", key: "results" },
+      { href: "profile.html", label: "Hồ sơ cá nhân", key: "profile" }
     ];
     if (isAdmin()) {
-      links.push({ href: "admin-assign.html", label: "学生分配", key: "admin" });
+      links.push({ href: "admin-assign.html", label: " Phân bổ học viên ", key: "admin" });
     }
     if (isPlatformAdmin() && isHqSite()) {
-      links.push({ href: "platform.html", label: "平台主控台", key: "platform" });
+      links.push({ href: "platform.html", label: " Bảng điều khiển hệ thống ", key: "platform" });
     }
 
     var path = location.pathname + location.search;
     var label = document.createElement("p");
     label.className = "student-side__label";
-    label.textContent = (getOrg() && getOrg().name) || (isHqSite() ? "优益思达备考" : "学习中心");
+    label.textContent = (getOrg() && getOrg().name) || (isHqSite()? " Luyện thi YYSD ": "Trung tâm Học tập");
     side.appendChild(label);
 
     links.forEach(function (L) {
@@ -915,7 +930,7 @@ window.YYSD_AUTH = (function () {
 
     var node = header.nextSibling;
     var footer = document.querySelector(".minimal-footer, footer.site-footer");
-    while (node && node !== footer) {
+    while (node && node!== footer) {
       var next = node.nextSibling;
       if (node.nodeType === 1 || (node.nodeType === 3 && String(node.textContent).trim())) {
         content.appendChild(node);
@@ -930,7 +945,7 @@ window.YYSD_AUTH = (function () {
   }
 
   function guardPage() {
-    if (isPublicPage()) return true;
+    if (isPublicPage() || isStaticMode()) return true;
     try { if (new URLSearchParams(location.search).get("preview") === "1") return true; } catch (e) {}
     if (!getToken()) {
       location.replace("login.html?next=" + encodeURIComponent(location.pathname + location.search));
@@ -941,7 +956,7 @@ window.YYSD_AUTH = (function () {
   }
 
   function refreshSessionFlags() {
-    if (!getToken()) return Promise.resolve();
+    if (!getToken() || isStaticMode()) return Promise.resolve();
     return api("/api/auth/me").then(function (d) {
       var u = d.user || {};
       setUser({
@@ -949,8 +964,8 @@ window.YYSD_AUTH = (function () {
         role: u.role || getUser().role || "",
         displayName: u.displayName || u.name || getUser().displayName || "",
         avatarUrl: u.avatarUrl || getUser().avatarUrl || "",
-        isAdmin: !!u.isAdmin,
-        isPlatformAdmin: !!u.isPlatformAdmin
+        isAdmin:!!u.isAdmin,
+        isPlatformAdmin:!!u.isPlatformAdmin
       });
       if (u.role === "teacher" || isTeacher()) {
         try {
@@ -958,8 +973,8 @@ window.YYSD_AUTH = (function () {
             phone: u.phone || "",
             name: u.displayName || u.name || "",
             avatarUrl: u.avatarUrl || "",
-            isAdmin: !!u.isAdmin,
-            isPlatformAdmin: !!u.isPlatformAdmin
+            isAdmin:!!u.isAdmin,
+            isPlatformAdmin:!!u.isPlatformAdmin
           }));
         } catch (e) {}
       }
@@ -986,9 +1001,9 @@ window.YYSD_AUTH = (function () {
       return refreshSessionFlags().then(function () {
         if (!guardIeltsArea()) return;
         bindNav();
-        bindIcp();
+        if (!isStaticMode()) bindIcp();
         bindReport();
-        if (getToken() && !isPublicPage() && !isTeacher()) syncScoresFromCloud();
+        if (getToken() && !isPublicPage() && !isTeacher() && !isStaticMode()) syncScoresFromCloud();
       });
     });
   });
@@ -1039,14 +1054,17 @@ window.YYSD_AUTH = (function () {
     analyzeWrongItem: analyzeWrongItem,
     uploadAvatar: uploadAvatar,
     avatarSrc: avatarSrc,
+    isStaticMode: isStaticMode,
     logoSrc: logoSrc
   };
 })();
 
 (function () {
   "use strict";
+  if (window.YYSD_AUTH && window.YYSD_AUTH.isStaticMode && window.YYSD_AUTH.isStaticMode()) return;
   var PUBLIC = {
-    "index.html": 1, "login.html": 1, "register.html": 1, "forgot-password.html": 1,
+    "index.html": 1, "lo-trinh.html": 1, "tai-lieu.html": 1,
+    "login.html": 1, "register.html": 1, "forgot-password.html": 1,
     "agreement.html": 1, "privacy.html": 1, "report.html": 1, "teacher-login.html": 1, "teacher-register.html": 1,
     "suspended.html": 1, "platform.html": 1, "ielts-upgrade.html": 1, "maintenance.html": 1,
     "download.html": 1
@@ -1062,29 +1080,30 @@ window.YYSD_AUTH = (function () {
 })();
 
 (function () {
+  if (window.YYSD_AUTH && window.YYSD_AUTH.isStaticMode && window.YYSD_AUTH.isStaticMode()) return;
   var page = location.pathname.split("/").filter(Boolean).pop() || "index.html";
   var authPages = {
     "login.html": 1, "register.html": 1, "forgot-password.html": 1,
     "teacher-login.html": 1, "teacher-register.html": 1
   };
-  if (!authPages[page] || !window.YYSD_AUTH) return;
+  if (!authPages[page] ||!window.YYSD_AUTH) return;
   var form = document.querySelector("form");
-  if (window.yysdDesktop && form && !document.getElementById("activationCode")) {
+  if (window.yysdDesktop && form &&!document.getElementById("activationCode")) {
     var label = document.createElement("label");
     label.className = "auth-field";
-    label.innerHTML = "<span>激活码</span><input id=\"activationCode\" autocomplete=\"off\" placeholder=\"这台电脑已绑定可留空\">";
+    label.innerHTML = "<span> Mã kích hoạt </span><input id=\"activationCode\" autocomplete=\"off\" placeholder=\" máy vi tính này đã khóa lại có thể lưu chỗ trống \">";
     var btn = form.querySelector("button[type=submit], button");
     form.insertBefore(label, btn);
   }
   if (window.yysdDesktop) return;
   window.YYSD_AUTH.api("/api/seat/config").then(function (d) {
-    if (!d || !d.on || !form) return;
+    if (!d ||!d.on ||!form) return;
     var p = document.createElement("p");
     p.className = "auth-msg auth-msg--err";
-    p.textContent = "学生和老师请下载机考程序。管理员仍可在此登录。";
+    p.textContent = " Học viên và Giáo viên mời Tải ứng dụng thi máy trình tự. Quản trị viên nhưng có thể lúc này Đăng nhập. ";
     var a = document.createElement("a");
     a.href = "download.html";
-    a.textContent = "下载机考程序";
+    a.textContent = " Tải ứng dụng thi máy trình tự ";
     form.parentNode.insertBefore(p, form);
     form.parentNode.insertBefore(a, form);
   }).catch(function () {});

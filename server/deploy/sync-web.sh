@@ -1,6 +1,6 @@
 #!/bin/bash
-# 优益思达静态站 — 从 GitHub 同步到 nginx 目录（在 ECS 上运行）
-# 用法：sudo bash deploy/sync-web.sh
+# YYSD trạng thái tĩnh đứng — từ GitHub đồng bộ đến nginx mục lục (tại ECS bên trên vận hành)
+# cách dùng: sudo bash deploy/sync-web.sh
 set -euo pipefail
 
 REPO_DIR="${REPO_DIR:-/opt/yysd/repo}"
@@ -8,15 +8,15 @@ WEB_ROOT="${WEB_ROOT:-/opt/yysd/web}"
 REPO_URL="${REPO_URL:-https://github.com/wanli4473/yysd-testcenter.git}"
 BRANCH="${BRANCH:-main}"
 
-echo "==> 仓库目录: $REPO_DIR"
-echo "==> 网站目录: $WEB_ROOT"
+echo "==> nhà kho mục lục: $REPO_DIR"
+echo "==> trang web mục lục: $WEB_ROOT"
 
-if ! command -v git &>/dev/null; then
-  echo "!! 请先安装 git: apt-get install -y git"
+if! command -v git &>/dev/null; then
+  echo "!! mời trước lắp đặt git: apt-get install -y git"
   exit 1
 fi
 
-if [ ! -d "$REPO_DIR/.git" ]; then
+if [! -d "$REPO_DIR/.git"]; then
   mkdir -p "$(dirname "$REPO_DIR")"
   git clone --branch "$BRANCH" "$REPO_URL" "$REPO_DIR"
 fi
@@ -38,9 +38,9 @@ need=(
   "library/mock/cambridge-reading/secret-set-4-reading.html"
 )
 for f in "${need[@]}"; do
-  if [ ! -f "$REPO_DIR/$f" ]; then
-    echo "!! 仓库缺少 $f — 中止，避免 rsync --delete 把线上绝密套卷删掉"
-    echo "   先把本机 library/mock/**/secret-set-* 提交并推送后再同步"
+  if [! -f "$REPO_DIR/$f"]; then
+    echo "!! nhà kho thiếu khuyết $f — bỏ dở, tránh cho rsync --delete đem tuyến thượng tuyệt mật bộ cuốn xóa bỏ "
+    echo " trước tiên đem bản cơ library/mock/**/secret-set-* Nộp bài cũng đẩy tiễn đưa sau lại đồng bộ "
     exit 1
   fi
 done
@@ -61,36 +61,36 @@ if command -v rsync &>/dev/null; then
     --exclude '.env.local' \
     "$REPO_DIR/" "$WEB_ROOT/"
 else
-  echo "!! rsync 未安装，使用 cp（较慢）"
-  find "$WEB_ROOT" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
+  echo "!! rsync không lắp đặt, sử dụng cp (chậm chạp) "
+  find "$WEB_ROOT" -mindepth 1 -maxdepth 1! -name '.git' -exec rm -rf {} + 2>/dev/null || true
   for item in assets data library "*.html" "*.json" scripts; do
-    [ -e "$REPO_DIR/$item" ] && cp -a "$REPO_DIR/$item" "$WEB_ROOT/" 2>/dev/null || true
+    [-e "$REPO_DIR/$item"] && cp -a "$REPO_DIR/$item" "$WEB_ROOT/" 2>/dev/null || true
   done
 fi
 
-# 旧 HTML 发布会丢掉绝密套卷芯片；同步后强制补回
+# xưa cũ HTML buổi họp báo vứt bỏ tuyệt mật bộ cuốn Chip; đồng bộ sau cưỡng chế bổ quay về
 python3 - <<PY
 from pathlib import Path
 p = Path("${WEB_ROOT}/teacher-calendar.html")
 if not p.is_file():
     raise SystemExit(0)
 t = p.read_text(encoding="utf-8")
-old = '              <button type="button" class="chip" data-ex-cat="rsecret">阅读绝密套卷</button>\\n            </div>'
-new = '              <button type="button" class="chip" data-ex-cat="rsecret">阅读绝密套卷</button>\\n              <button type="button" class="chip" data-ex-cat="lsecret">听力绝密套卷</button>\\n            </div>'
+old = ' <button type="button" class="chip" data-ex-cat="rsecret"> Đọc tuyệt mật bộ cuốn </button>\\n </div>'
+new = ' <button type="button" class="chip" data-ex-cat="rsecret"> Đọc tuyệt mật bộ cuốn </button>\\n <button type="button" class="chip" data-ex-cat="lsecret"> Nghe tuyệt mật bộ cuốn </button>\\n </div>'
 if 'data-ex-cat="lsecret"' not in t:
     if old not in t:
-        raise SystemExit("teacher-calendar.html missing 听力绝密套卷 chip and cannot patch")
+        raise SystemExit("teacher-calendar.html missing Nghe tuyệt mật bộ cuốn chip and cannot patch")
     p.write_text(t.replace(old, new, 1), encoding="utf-8")
-    print("==> 已补回听力绝密套卷芯片")
+    print("==> đã bổ quay về Nghe tuyệt mật bộ cuốn Chip ")
 PY
 
 echo ""
-echo "==> 校验关键文件"
+echo "==> kiểm tra mấu chốt văn bản tài liệu "
 check() {
-  if [ -f "$WEB_ROOT/$1" ]; then
-    echo "  ✓ $1"
+  if [-f "$WEB_ROOT/$1"]; then
+    echo " ✓ $1"
   else
-    echo "  ✗ 缺少 $1"
+    echo " ✗ thiếu khuyết $1"
     missing=1
   fi
 }
@@ -139,31 +139,31 @@ check "library/mock/cambridge-listening/secret-set-2.html"
 check "library/mock/cambridge-listening/secret-set-2-audio1.mp3"
 check "library/mock/cambridge-reading/secret-set-3-reading.html"
 check "library/mock/cambridge-reading/secret-set-4-reading.html"
-if ! grep -q 'data-ex-cat="lsecret"' "$WEB_ROOT/teacher-calendar.html"; then
-  echo "  ✗ teacher-calendar.html 缺少听力绝密套卷芯片"
+if! grep -q 'data-ex-cat="lsecret"' "$WEB_ROOT/teacher-calendar.html"; then
+  echo " ✗ teacher-calendar.html thiếu khuyết Nghe tuyệt mật bộ cuốn Chip "
   missing=1
 else
-  echo "  ✓ 听力绝密套卷芯片"
+  echo " ✓ Nghe tuyệt mật bộ cuốn Chip "
 fi
 
 if grep -q "api.youyisida.com" "$WEB_ROOT/library/practice/jingting/cam20-test1-section1.html" 2>/dev/null; then
-  echo "  ✓ 精听页已配置生产 API"
+  echo " ✓ Nghe sâu trang đã phối trí sinh sản API"
 else
-  echo "  ✗ 精听页 API_BASE 未指向 api.youyisida.com"
+  echo " ✗ Nghe sâu trang API_BASE không chỉ hướng api.youyisida.com"
   missing=1
 fi
 
-if [ -f /etc/nginx/sites-enabled/youyisida.com ] || grep -Rq "youyisida.com" /etc/nginx 2>/dev/null; then
+if [-f /etc/nginx/sites-enabled/youyisida.com] || grep -Rq "youyisida.com" /etc/nginx 2>/dev/null; then
   if nginx -t 2>/dev/null; then
     systemctl reload nginx 2>/dev/null || service nginx reload 2>/dev/null || true
-    echo "  ✓ nginx 已重载"
+    echo " ✓ nginx đã trọng tải "
   fi
 fi
 
 echo ""
-if [ "$missing" -eq 0 ]; then
-  echo "==> 同步完成。请在浏览器强制刷新（Ctrl+Shift+R）后测试口语与精听。"
+if ["$missing" -eq 0]; then
+  echo "==> đồng bộ hoàn thành. mời tại trình duyệt cưỡng chế Làm mới (Ctrl+Shift+R) sau Kiểm tra Nói và Nghe sâu. "
 else
-  echo "==> 同步完成但有缺失项，请检查上方 ✗"
+  echo "==> đồng bộ hoàn thành nhưng có thiếu thốn hạng, mời kiểm tra phía trên ✗"
   exit 1
 fi

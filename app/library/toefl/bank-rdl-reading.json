@@ -1,6 +1,6 @@
 {
   "id": "bank-rdl",
-  "title": "题块库 · 生活阅读",
+  "title": "Ngân hàng dạng bài · sinh hoạt Đọc",
   "skill": "reading",
   "source": "bank",
   "tasks": [
@@ -8562,7 +8562,7 @@
             "D": "He hired some summer interns."
           },
           "answer": "B",
-          "analysis": "邮件写 Blundin University hosted a career fair yesterday，Ryan 去招聘会见了实习生候选人。答案是 B。"
+          "analysis": "Email ghi Blundin University hosted a career fair yesterday, Ryan đi tuyển dụng hội thấy thực tập sinh người được đề cử. đáp án dĩ nhiên là B."
         },
         {
           "id": 2,
@@ -8574,17 +8574,17 @@
             "D": "Introduce themselves to new interns."
           },
           "answer": "A",
-          "analysis": "Ryan 请大家 no later than Friday 给出 feedback，即对候选人发表意见。"
+          "analysis": "Ryan xin mọi người no later than Friday cho ra feedback, tiếp xúc đối với người được đề cử phát biểu ý kiến."
         }
       ],
-      "titleZh": "招聘会",
+      "titleZh": "tuyển dụng hội",
       "set": "R-RDL1",
       "module": 1
     },
     {
       "type": "daily_life",
       "title": "Introduction to Glassblowing",
-      "titleZh": "玻璃吹制入门",
+      "titleZh": "thủy tinh thổi chế nhập môn",
       "instruction": "Read a course description.",
       "layout": {
         "kind": "card",
@@ -8603,7 +8603,7 @@
             "D": "Anyone who is registered for classes at a university"
           },
           "answer": "A",
-          "analysis": "课程写 adults (18+)，年满 18 岁即可报名。"
+          "analysis": "chương trình học ghi adults (18+), tuổi tròn 18 tuổi là được báo danh."
         },
         {
           "id": 2,
@@ -8615,7 +8615,7 @@
             "D": "they help reduce the risk of falling"
           },
           "answer": "B",
-          "analysis": "与 safety-related equipment 并列，闭口鞋是保护。"
+          "analysis": "và safety-related equipment đặt song song, ngậm miệng giày là bảo vệ."
         }
       ],
       "set": "R-RDL2",
@@ -8624,7 +8624,7 @@
     {
       "type": "daily_life",
       "title": "FitLife Gym Membership",
-      "titleZh": "FitLife 健身房会员",
+      "titleZh": "FitLife phòng tập thể thao hội viên",
       "instruction": "Read a webpage.",
       "layout": {
         "kind": "card",
@@ -8643,7 +8643,7 @@
             "D": "Free trial and minimum commitment"
           },
           "answer": "C",
-          "analysis": "月卡只有器械使用；季卡增加团体课和游泳池权益。"
+          "analysis": "tháng tạp chỉ có khí giới sử dụng; quý tạp gia tăng đoàn thể khóa và bể bơi quyền lợi."
         },
         {
           "id": 2,
@@ -8655,7 +8655,7 @@
             "D": "An annual membership"
           },
           "answer": "C",
-          "analysis": "免费试用结束后，新会员必须承诺至少三个月的会籍。"
+          "analysis": "miễn phí dùng thử sau khi kết thúc, mới hội viên phải hứa hẹn ít nhất ba tháng hội tịch."
         }
       ],
       "set": "R-RDL3",
@@ -8664,7 +8664,7 @@
     {
       "type": "daily_life",
       "title": "WaveSound Earbuds",
-      "titleZh": "WaveSound 耳机",
+      "titleZh": "WaveSound tai nghe",
       "instruction": "Read a product review.",
       "layout": {
         "kind": "card",
@@ -8683,7 +8683,7 @@
             "D": "They sound better."
           },
           "answer": "B",
-          "analysis": "评价称耳机有最佳 price-to-quality ratio，强调的是价格与品质的价值比。"
+          "analysis": "đánh giá xưng tai nghe có tốt nhất price-to-quality ratio, nhấn mạnh là giá cả và phẩm chất giá trị so với."
         },
         {
           "id": 2,
@@ -8695,7 +8695,7 @@
             "D": "Preparing for a future career"
           },
           "answer": "B",
-          "analysis": "on a shoestring 表示预算紧张、可支配花费较少。"
+          "analysis": "on a shoestring biểu thị dự toán khẩn trương, có thể chi phối tiêu phí ít."
         }
       ],
       "set": "R-RDL4",
@@ -8722,7 +8722,7 @@
             "D": "To provide information about refreshments at a conference"
           },
           "answer": "C",
-          "analysis": "时间表列出 keynote、panel、lunch 和 workshop，目的是列出会议活动。"
+          "analysis": "bảng giờ giấc nhóm ra keynote, panel, lunch và workshop, mục đích là nhóm ra hội nghị hoạt động."
         },
         {
           "id": 2,
@@ -8734,17 +8734,17 @@
             "D": "They are students."
           },
           "answer": "D",
-          "analysis": "通篇写 student health、fellow students 和学生学习，多数参加者是学生。"
+          "analysis": "thông thiên ghi student health, fellow students và Học viên Học tập, đa số người tham gia là Học viên."
         }
       ],
-      "titleZh": "大学健康福祉会议",
+      "titleZh": "đại học Sức khỏe phúc lợi hội nghị",
       "set": "R-RDL5",
       "module": 1
     },
     {
       "type": "daily_life",
       "title": "AI-Generated Art on Campus",
-      "titleZh": "校园 AI 艺术展",
+      "titleZh": "sân trường AI Nghệ thuật giương",
       "instruction": "Read an article.",
       "layout": {
         "kind": "card",
@@ -8763,7 +8763,7 @@
             "D": "A plan to replace the art gallery with a data center"
           },
           "answer": "A",
-          "analysis": "文章围绕画廊的 AI 绘画展览，以及技术如何参与艺术创作。"
+          "analysis": "văn chương quay chung quanh hành lang triển lãm tranh AI hội họa triển lãm, cũng như kỹ thuật làm thế nào tham dự Nghệ thuật sáng tác."
         },
         {
           "id": 2,
@@ -8775,7 +8775,7 @@
             "D": "It tries to help visitors feel comfortable using AI in their creative endeavors."
           },
           "answer": "D",
-          "analysis": "互动程序让访客选择主题和色板并实时生成作品，支持访客尝试用 AI 进行创作。"
+          "analysis": "ảnh hưởng lẫn nhau,tác động qua lại trình tự lại để cho khách tới thăm lựa chọn chủ đề và sắc bản cũng thực thì tạo ra tác phẩm, hỗ trợ khách tới thăm nếm thử dùng AI tiến hành sáng tác."
         }
       ],
       "set": "R-RDL7",
@@ -8784,7 +8784,7 @@
     {
       "type": "daily_life",
       "title": "Downtown School of Data Skills",
-      "titleZh": "市中心数据技能学校",
+      "titleZh": "trung tâm chợ số liệu kỹ năng trường học",
       "instruction": "Read a notice.",
       "layout": {
         "kind": "card",
@@ -8803,7 +8803,7 @@
             "D": "Section D"
           },
           "answer": "B",
-          "analysis": "Peter 是初学者，应选 Spreadsheet Introduction；不能周三上课，周二和周四的 Section B 符合。"
+          "analysis": "Peter là người mới học, ứng với chọn Spreadsheet Introduction; không thể thứ tư đi học, thứ ba và thứ năm Section B phù hợp."
         },
         {
           "id": 2,
@@ -8815,7 +8815,7 @@
             "D": "Section G"
           },
           "answer": "C",
-          "analysis": "Data Seminar 面向希望学习复杂数据工作的研究人员，符合已掌握公式并要学高级技能的 Beth。"
+          "analysis": "Data Seminar mặt hướng hy vọng Học tập phức tạp số liệu công tác nhân viên nghiên cứu, phù hợp đã nắm giữ công thức cũng muốn học cao cấp kỹ năng Beth."
         }
       ],
       "set": "R-RDL8",

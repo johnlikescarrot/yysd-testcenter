@@ -1,94 +1,94 @@
 {
- "id": "free-12881",
- "title": "Academic Passage #30",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #30",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12881,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-30"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "The Golden Age of Television",
-   "instruction": "Read the passage.",
-   "paras": [
-    "The Golden Age of Television is often considered to have occurred during the 1950s and 1960s, when TV became a dominant cultural force. This era was marked by groundbreaking shows that experimented with new formats and storytelling techniques. During this time period, TV saw the rise of anthology series, which presented different stories and characters in each episode, in contrast to traditional ongoing narratives. One influential anthology series was The Twilight Zone, which blended science fiction, horror, and drama in thought-provoking ways. Sitcoms reflecting everyday life, like I Love Lucy, became a cultural phenomenon. Despite its simple format, the show tackled complex social issues including gender roles and family dynamics. There was also a new focus on live broadcasts, providing viewers with real-time coverage of events and entertainers. However, the Golden Age was not without challenges. TV networks navigated the balance between artistic innovation and commercial pressures. Advertisers sought to influence content to appeal to mass audiences, which sometimes clashed with creative visions. Nonetheless, the period left an indelible mark on the television industry, setting standards for future programming and contributing to the medium's evolution."
-   ],
-   "questions": [
+  "id": "free-12881",
+  "title": "Academic Passage #30",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #30",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12881,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-30"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "The word “dominant” in the passage is closest in meaning to",
-     "options": {
-      "A": "relevant",
-      "B": "favorite",
-      "C": "leading",
-      "D": "entertaining"
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 词汇题 原文定位： “The Golden Age of Television is often considered to have occurred during the 1950s and 1960s, when TV became a dominant cultural force.” 正确答案分析： “dominant” 意为“占主导地位的、支配性的”，在句中描述电视成为文化领域的主要力量。因此 “leading”（领先的、主要的）是最接近的含义。 选项分析： (A) relevant 相关的 —— 语义不符。 (B) favorite 最喜欢的 —— 语义过窄。 (C) leading 主要的、领先的 —— 正确。 (D) entertaining 娱乐的 —— 语义不符。"
-    },
-    {
-     "id": 2,
-     "stem": "Why does the author mention The Twilight Zone?",
-     "options": {
-      "A": "To illustrate the popularity of science fiction during the Golden Age",
-      "B": "To highlight the innovative nature of anthology series",
-      "C": "To discuss the impact of horror on television",
-      "D": "To compare different types of TV formats"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 修辞目的题 原文定位： “During this time period, TV saw the rise of anthology series, which presented different stories and characters in each episode, in contrast to traditional ongoing narratives. One influential anthology series was The Twilight Zone, which blended science fiction, horror, and drama in thought-provoking ways.” 正确答案分析： 作者在介绍选集系列（anthology series）这一创新形式后，举出《迷离时空》作为例子，目的是为了突出选集系列的创新性。因此选项 B 正确。 选项分析： (A) To illustrate the popularity of science fiction during the Golden Age 说明科幻小说在黄金时代的受欢迎程度 —— 错误，重点不在于科幻的流行程度。 (B) To highlight the innovative nature of anthology series 突出选集系列的创新性 —— 正确。 (C) To discuss the impact of horror on television 讨论恐怖片对电视的影响 —— 错误，这不是主要目的。 (D) To compare different types of TV formats 比较不同类型的电视格式 —— 错误，文中未进行比较。"
-    },
-    {
-     "id": 3,
-     "stem": "What does the author suggest about sitcoms like I Love Lucy?",
-     "options": {
-      "A": "They made TV less popular during the Golden Age",
-      "B": "They focused on people's daily lives.",
-      "C": "They reduced the influence of advertisers",
-      "D": "They were more popular than anthology series"
-     },
-     "answer": "B",
-     "analysis": "正确答案：B 题型： 细节题 原文定位： “Sitcoms reflecting everyday life, like I Love Lucy, became a cultural phenomenon.” 正确答案分析： 文中明确指出，像《我爱露西》这样的情景喜剧反映了日常生活。因此选项 B“它们关注人们的日常生活”正确。 选项分析： (A) They made TV less popular during the Golden Age 它们使电视在黄金时代不那么受欢迎 —— 错误，它们成为了文化现象。 (B) They focused on people's daily lives. 它们关注人们的日常生活 —— 正确。 (C) They reduced the influence of advertisers 它们减少了广告商的影响力 —— 错误，文中未提及。 (D) They were more popular than anthology series 它们比选集系列更受欢迎 —— 错误，文中未进行比较。"
-    },
-    {
-     "id": 4,
-     "stem": "What is the relationship between paragraphs 2 and 3?",
-     "options": {
-      "A": "Paragraph 3 expands on the challenges mentioned in paragraph 2.",
-      "B": "Paragraph 3 provides examples of the formats discussed in paragraph 2.",
-      "C": "Paragraph 3 introduces a new issue that was not covered in paragraph 2.",
-      "D": "Paragraph 3 contradicts the success of TV shows mentioned in paragraph 2."
-     },
-     "answer": "C",
-     "analysis": "正确答案：C 题型： 关系题（段落关系） 原文定位： 第二段主要讲述黄金时代的积极成就（选集系列、情景喜剧、直播）；第三段开头：“However, the Golden Age was not without challenges.” 随后讨论了电视网络在艺术创新与商业压力之间的平衡，以及广告商的影响。 正确答案分析： 第二段聚焦于黄金时代的创新和成就，第三段则转而讨论这一时期面临的挑战。因此第三段引入了第二段未涵盖的新问题（挑战）。选项 C 正确。 选项分析： (A) Paragraph 3 expands on the challenges mentioned in paragraph 2. 第三段详述了第二段提到的挑战 —— 错误，第二段未提及挑战。 (B) Paragraph 3 provides examples of the formats discussed in paragraph 2. 第三段提供了第二段讨论的形式的例子 —— 错误，第三段没有举例。 (C) Paragraph 3 introduces a new issue that was not covered in paragraph 2. 第三段引入了第二段未涵盖的新问题 —— 正确。 (D) Paragraph 3 contradicts the success of TV shows mentioned in paragraph 2. 第三段反驳了第二段提到的电视节目的成功 —— 错误，并未反驳，只是补充了挑战。"
-    },
-    {
-     "id": 5,
-     "stem": "Why does the author mention advertisers in the passage?",
-     "options": {
-      "A": "To explain a challenge faced by TV networks",
-      "B": "To point out how TV shows were funded at the time",
-      "C": "To illustrate the role of commercials during live broadcasts",
-      "D": "To criticize the quality of programming during the Golden Age"
-     },
-     "answer": "A",
-     "analysis": "正确答案：A 题型： 修辞目的题 原文定位： “TV networks navigated the balance between artistic innovation and commercial pressures. Advertisers sought to influence content to appeal to mass audiences, which sometimes clashed with creative visions.” 正确答案分析： 作者提到广告商是为了说明电视网络所面临的一个挑战：广告商试图影响内容以吸引大众观众，这与创作愿景有时发生冲突。因此选项 A“解释电视网络面临的一个挑战”正确。 选项分析： (A) To explain a challenge faced by TV networks 解释电视网络面临的一个挑战 —— 正确。 (B) To point out how TV shows were funded at the time 指出当时电视节目是如何获得资金的 —— 错误，文中未讨论资金问题。 (C) To illustrate the role of commercials during live broadcasts 说明直播期间广告的作用 —— 错误，文中未提及直播广告。 (D) To criticize the quality of programming during the Golden Age 批评黄金时代的节目质量 —— 错误，作者并未批评质量。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "The Golden Age of Television",
+      "instruction": "Read the passage.",
+      "paras": [
+        "The Golden Age of Television is often considered to have occurred during the 1950s and 1960s, when TV became a dominant cultural force. This era was marked by groundbreaking shows that experimented with new formats and storytelling techniques. During this time period, TV saw the rise of anthology series, which presented different stories and characters in each episode, in contrast to traditional ongoing narratives. One influential anthology series was The Twilight Zone, which blended science fiction, horror, and drama in thought-provoking ways. Sitcoms reflecting everyday life, like I Love Lucy, became a cultural phenomenon. Despite its simple format, the show tackled complex social issues including gender roles and family dynamics. There was also a new focus on live broadcasts, providing viewers with real-time coverage of events and entertainers. However, the Golden Age was not without challenges. TV networks navigated the balance between artistic innovation and commercial pressures. Advertisers sought to influence content to appeal to mass audiences, which sometimes clashed with creative visions. Nonetheless, the period left an indelible mark on the television industry, setting standards for future programming and contributing to the medium's evolution."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "The word “dominant” in the passage is closest in meaning to",
+          "options": {
+            "A": "relevant",
+            "B": "favorite",
+            "C": "leading",
+            "D": "entertaining"
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: Từ vựng câu Bài gốc Dẫn chứng: “The Golden Age of Television is often considered to have occurred during the 1950s and 1960s, when TV became a dominant cultural force.” Đáp án đúng phân tích: “dominant” ý là “ chiếm chủ đạo địa vị, chi phối tính ”, tại câu Vừa miêu tả TV trở thành văn hóa lĩnh vực lực lượng chủ yếu. bởi vậy “leading” (vượt lên đầu, chủ yếu) là gần gũi nhất Nghĩa. Phương án phân tích: (A) relevant tương quan —— lời nói nghĩa không hợp. (B) favorite thích nhất —— lời nói nghĩa qua chật vật. (C) leading chủ yếu, vượt lên đầu —— Đúng. (D) entertaining giải trí —— lời nói nghĩa không hợp."
+        },
+        {
+          "id": 2,
+          "stem": "Why does the author mention The Twilight Zone?",
+          "options": {
+            "A": "To illustrate the popularity of science fiction during the Golden Age",
+            "B": "To highlight the innovative nature of anthology series",
+            "C": "To discuss the impact of horror on television",
+            "D": "To compare different types of TV formats"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: tu từ mục đích câu Bài gốc Dẫn chứng: “During this time period, TV saw the rise of anthology series, which presented different stories and characters in each episode, in contrast to traditional ongoing narratives. One influential anthology series was The Twilight Zone, which blended science fiction, horror, and drama in thought-provoking ways.” Đáp án đúng phân tích: tác giả tại giới thiệu tuyển tập hàng loạt (anthology series) cái này một sáng tạo cái mới hình thức sau, cử ra \" mê ly thời không \" với tư cách ví dụ, mục đích là để xông ra tuyển tập hàng loạt sáng tạo cái mới tính. bởi vậy Phương án B Đúng. Phương án phân tích: (A) To illustrate the popularity of science fiction during the Golden Age nói rõ tiểu thuyết khoa huyễn tại thời đại hoàng kim được hoan nghênh trình độ —— Sai, trọng điểm không tại ở khoa học viễn tưởng lưu hành trình độ. (B) To highlight the innovative nature of anthology series xông ra tuyển tập hàng loạt sáng tạo cái mới tính —— Đúng. (C) To discuss the impact of horror on television thảo luận phim kịnh dị đối với ti vi ảnh hưởng —— Sai, đây không phải mục đích chủ yếu. (D) To compare different types of TV formats so sánh bất đồng kiểu TV cách thức —— Sai, văn trung không tiến hành so sánh."
+        },
+        {
+          "id": 3,
+          "stem": "What does the author suggest about sitcoms like I Love Lucy?",
+          "options": {
+            "A": "They made TV less popular during the Golden Age",
+            "B": "They focused on people's daily lives.",
+            "C": "They reduced the influence of advertisers",
+            "D": "They were more popular than anthology series"
+          },
+          "answer": "B",
+          "analysis": "Đáp án đúng: B dạng bài: chi tiết câu Bài gốc Dẫn chứng: “Sitcoms reflecting everyday life, like I Love Lucy, became a cultural phenomenon.” Đáp án đúng phân tích: văn trung rõ ràng chỉ ra, như \" tôi yêu Lucy \" tình cảnh như vậy hài kịch phản ảnh sinh hoạt hàng ngày. bởi vậy Phương án B“ chúng chú ý mọi người sinh hoạt hàng ngày ” Đúng. Phương án phân tích: (A) They made TV less popular during the Golden Age chúng khiến cho TV tại thời đại hoàng kim chẳng phải được hoan nghênh —— Sai, chúng đã trở thành văn hóa hiện tượng. (B) They focused on people's daily lives. chúng chú ý mọi người sinh hoạt hàng ngày —— Đúng. (C) They reduced the influence of advertisers chúng giảm bớt quảng cáo thương lượng lực ảnh hưởng —— Sai, văn trung Không được đề cập (Not Given). (D) They were more popular than anthology series chúng so với tuyển tập hàng loạt được hoan nghênh hơn —— Sai, văn trung không tiến hành so sánh."
+        },
+        {
+          "id": 4,
+          "stem": "What is the relationship between paragraphs 2 and 3?",
+          "options": {
+            "A": "Paragraph 3 expands on the challenges mentioned in paragraph 2.",
+            "B": "Paragraph 3 provides examples of the formats discussed in paragraph 2.",
+            "C": "Paragraph 3 introduces a new issue that was not covered in paragraph 2.",
+            "D": "Paragraph 3 contradicts the success of TV shows mentioned in paragraph 2."
+          },
+          "answer": "C",
+          "analysis": "Đáp án đúng: C dạng bài: quan hệ câu (đoạn quan hệ) Bài gốc Dẫn chứng: thứ hai đoạn chủ yếu giảng thuật thời đại hoàng kim tích cực thành tựu (tuyển tập hàng loạt, tình cảnh hài kịch, trực tiếp); thứ ba đoạn mở đầu: “However, the Golden Age was not without challenges.” sau đó thảo luận TV mạng lưới *internet tại Nghệ thuật sáng tạo cái mới và Kinh doanh áp lực ở giữa cân bằng, cũng như quảng cáo thương lượng ảnh hưởng. Đáp án đúng phân tích: thứ hai đoạn tập trung tại thời đại hoàng kim sáng tạo cái mới và thành tựu, thứ ba đoạn tức thì ngược lại thảo luận thời kỳ này gặp phải khiêu chiến. bởi vậy thứ ba đoạn dẫn vào rồi thứ hai đoạn không bao dung vấn đề mới (khiêu chiến). Phương án C Đúng. Phương án phân tích: (A) Paragraph 3 expands on the challenges mentioned in paragraph 2. thứ ba đoạn tường thuật rồi thứ hai đoạn nhắc tới khiêu chiến —— Sai, thứ hai đoạn Không được đề cập (Not Given) khiêu chiến. (B) Paragraph 3 provides examples of the formats discussed in paragraph 2. thứ ba đoạn cung cấp thứ hai đoạn thảo luận hình thức ví dụ —— Sai, thứ ba đoạn không có nêu ví dụ. (C) Paragraph 3 introduces a new issue that was not covered in paragraph 2. thứ ba đoạn dẫn vào rồi thứ hai đoạn không bao dung vấn đề mới —— Đúng. (D) Paragraph 3 contradicts the success of TV shows mentioned in paragraph 2. thứ ba đoạn phản bác thứ hai đoạn nhắc tới tiết mục ti vi thành công —— Sai, cũng không phản bác, chẳng qua là bổ sung khiêu chiến."
+        },
+        {
+          "id": 5,
+          "stem": "Why does the author mention advertisers in the passage?",
+          "options": {
+            "A": "To explain a challenge faced by TV networks",
+            "B": "To point out how TV shows were funded at the time",
+            "C": "To illustrate the role of commercials during live broadcasts",
+            "D": "To criticize the quality of programming during the Golden Age"
+          },
+          "answer": "A",
+          "analysis": "Đáp án đúng: A dạng bài: tu từ mục đích câu Bài gốc Dẫn chứng: “TV networks navigated the balance between artistic innovation and commercial pressures. Advertisers sought to influence content to appeal to mass audiences, which sometimes clashed with creative visions.” Đáp án đúng phân tích: tác giả nhắc tới quảng cáo thương lượng là vì nói rõ TV mạng lưới *internet đối mặt một cái khiêu chiến: quảng cáo thương lượng ý đồ ảnh hưởng nội dung dùng hấp dẫn đại chúng người xem, cái này cùng sáng tác nguyện cảnh có khi phát sinh xung đột. bởi vậy Phương án A“ giải thích TV mạng lưới *internet gặp phải một cái khiêu chiến ” Đúng. Phương án phân tích: (A) To explain a challenge faced by TV networks giải thích TV mạng lưới *internet gặp phải một cái khiêu chiến —— Đúng. (B) To point out how TV shows were funded at the time chỉ ra lúc ấy tiết mục ti vi là như thế nào đạt được tiền bạc —— Sai, văn trung không thảo luận vấn đề tiền bạc. (C) To illustrate the role of commercials during live broadcasts nói rõ trực tiếp trong lúc quảng cáo tác dụng —— Sai, văn trung Không được đề cập (Not Given) trực tiếp quảng cáo. (D) To criticize the quality of programming during the Golden Age phê bình thời đại hoàng kim tiết mục chất lượng —— Sai, tác giả cũng không phê bình chất lượng."
+        }
+      ]
+    }
+  ]
 }

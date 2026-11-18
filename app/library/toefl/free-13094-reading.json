@@ -1,96 +1,96 @@
 {
- "id": "free-13094",
- "title": "Academic Passage #52",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #52",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13094,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-52"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "Harmonic Analysis: Unveiling the Hidden Structures",
-   "instruction": "Read the passage.",
-   "paras": [
-    "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting anomalies in financial data.",
-    "The Fourier transform is a key tool in harmonic analysis, breaking down functions into their constituent frequencies. For example, in signal processing, it isolates different frequency components, making it easier to filter out noise and enhance signal clarity. This decomposition is also crucial in quantum mechanics, where wave functions are expressed as combinations of base states, allowing for the analysis and prediction of quantum systems.",
-    "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. (A)Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. (B)These methods are particularly useful in data compression. (C)In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction.(D)"
-   ],
-   "questions": [
+  "id": "free-13094",
+  "title": "Academic Passage #52",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #52",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13094,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-52"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "The word \"anomalies\" in the passage is closest in meaning to",
-     "options": {
-      "A": "falsehoods",
-      "B": "gaps",
-      "C": "inconsistencies",
-      "D": "patterns"
-     },
-     "answer": "C",
-     "analysis": "解析： “anomalies”意为“异常、反常事物”。在上下文中，指在金融数据中检测到的“异常”情况。 选项分析： A. falsehoods（虚假、谎言）：不符。 B. gaps（缺口、间隙）：不符。 C. inconsistencies（不一致、矛盾）意思最接近。 D. patterns（模式）：与“anomalies”（异常）意思相反。"
-    },
-    {
-     "id": 2,
-     "stem": "All of the following are mentioned about harmonic analysis EXCEPT:",
-     "options": {
-      "A": "It involves the way functions and signals are represented.",
-      "B": "It has practical uses in several areas.",
-      "C": "It can reveal unseen structures in complex signals.",
-      "D": "It is more effective in music than in finance."
-     },
-     "answer": "D",
-     "analysis": "解析： A/B/C 三项均在第一段有原句对应；原文只列举音乐、金融为应用案例，从未对比二者效果强弱。 选项分析： A. 涉及函数和信号的表示方式：第一句“studies how functions or signals can be represented”。 B. 在多个领域有实际用途：第一句“has applications in signal processing, quantum mechanics, and data compression”。 C. 可以揭示复杂信号中看不见的结构：第一段“its ability to reveal hidden structures”。 D. 在音乐中比在金融中更有效：原文只举例说明可以用于音乐（识别基频）和金融（检测异常），但并未比较两者哪个更有效。因此这是文中未提及的。"
-    },
-    {
-     "id": 3,
-     "stem": "In which of the following ways does the Fourier transform benefit signal processing?",
-     "options": {
-      "A": "By making signals travel far",
-      "B": "By making signals clearer",
-      "C": "By protecting signals from noise",
-      "D": "By increasing the frequency of signals"
-     },
-     "answer": "B",
-     "analysis": "解析：原文第二段提到傅里叶变换在信号处理中的应用：“it isolates different frequency components, making it easier to filter out noise and enhance signal clarity.” 即它通过分离频率成分来“增强信号的清晰度”。 选项分析： A. 使信号传播更远，未提及。 B. 使信号更清晰，与“enhance signal clarity”一致。 C. 保护信号免受噪声影响，它通过“filter out noise”（滤除噪声）来间接保护，但直接益处是使信号更清晰。 D. 增加信号频率，未提及。"
-    },
-    {
-     "id": 4,
-     "stem": "Why does the author discuss \"quantum mechanics\" in paragraph 2?",
-     "options": {
-      "A": "To explain why the Fourier transform is a key tool of harmonic analysis",
-      "B": "To illustrate an application of breaking down functions into their constituent frequencies",
-      "C": "To highlight an important difference between signal processing and quantum mechanics",
-      "D": "To demonstrate the challenge of analyzing and predicting quantum systems"
-     },
-     "answer": "B",
-     "analysis": "解析： 第二段在介绍傅里叶变换“将函数分解为其组成频率”这一核心功能后，先以信号处理为例（“For example, in signal processing...”），紧接着说“This decomposition is also crucial in quantum mechanics...”，即这种分解在量子力学中也至关重要。因此，提到量子力学是为了举例说明“分解函数”这一原理的另一个应用领域。 选项分析： A. 解释为什么傅里叶变换是谐波分析的关键工具，这是本段开头就说明的，量子力学是作为应用例子来支持这一点的。 B. 举例说明将函数分解为其组成频率的一个应用，与原文逻辑一致。 C. 强调信号处理和量子力学之间的重要区别，文中未进行比较。 D. 展示分析和预测量子系统的挑战，文中提到的是该分解“允许”分析和预测，并未强调挑战。"
-    },
-    {
-     "id": 5,
-     "stem": "There are four locations (A, B, C, and D) in the passage that indicate where the following sentence could be added. They enable the reduction of file sizes without significant loss of quality. Where would the sentence best fit? Select a location where the sentence could be added to the passage.",
-     "options": {
-      "A": "Option A",
-      "B": "Option B",
-      "C": "Option C",
-      "D": "Option D"
-     },
-     "answer": "C",
-     "analysis": "解析：应添加在第三段关于数据压缩的句子之后。具体位置在“These methods are particularly useful in data compression.”这句话的后面。待插入句：“They enable the reduction of file sizes without significant loss of quality.”（它们能够在没有明显质量损失的情况下减小文件大小。）其中“They”指代前文提到的“These methods”（这些方法），即小波变换等方法。原文第三段在介绍小波变换后，指出“These methods are particularly useful in data compression.”（这些方法在数据压缩中特别有用）。紧接着插入的句子具体解释了它们在数据压缩中是如何有用的——即减小文件大小且保真。然后原文再继续举例说明在图像处理中的应用。因此，插入此句能使“数据压缩”这个优点得到具体阐述，逻辑连贯。 选项分析： A：不在数据压缩话题段，指代断裂，排除 B：不在数据压缩话题段，指代断裂，排除 C：紧贴 data compression 后，衔接完美，正确 D：位于举例之后，逻辑后置、生硬，排除"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "Harmonic Analysis: Unveiling the Hidden Structures",
+      "instruction": "Read the passage.",
+      "paras": [
+        "Harmonic analysis studies how functions or signals can be represented as combinations of basic waves, typically sine and cosine functions. This field has applications in signal processing, quantum mechanics, and data compression. One intriguing aspect is its ability to reveal hidden structures within complex signals, such as identifying the fundamental frequencies in a musical piece or detecting anomalies in financial data.",
+        "The Fourier transform is a key tool in harmonic analysis, breaking down functions into their constituent frequencies. For example, in signal processing, it isolates different frequency components, making it easier to filter out noise and enhance signal clarity. This decomposition is also crucial in quantum mechanics, where wave functions are expressed as combinations of base states, allowing for the analysis and prediction of quantum systems.",
+        "Wavelet transforms offer precise localization of signals in both time and frequency domains, making them highly effective for analyzing transient or non-stationary signals. (A)Their ability to adapt to various signal characteristics makes them versatile tools in numerous applications. (B)These methods are particularly useful in data compression. (C)In image processing, wavelet transforms facilitate efficient encoding of information, allowing for enhanced image reconstruction and feature extraction.(D)"
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "The word \"anomalies\" in the passage is closest in meaning to",
+          "options": {
+            "A": "falsehoods",
+            "B": "gaps",
+            "C": "inconsistencies",
+            "D": "patterns"
+          },
+          "answer": "C",
+          "analysis": "Giải thích đáp án: “anomalies” ý là “ dị thường, khác thường sự vật ”. ở trên bên dưới Vừa, chỉ tại tài chính số liệu Vừa Đánh giá đến “ dị thường ” tình huống. Phương án phân tích: A. falsehoods (hư giả, nói dối): không hợp. B. gaps (lỗ hổng, khoảng cách): không hợp. C. inconsistencies (không nhất trí, mâu thuẫn) ý tứ tiếp cận nhất. D. patterns (hình thức): và “anomalies” (dị thường) ý tứ trái lại."
+        },
+        {
+          "id": 2,
+          "stem": "All of the following are mentioned about harmonic analysis EXCEPT:",
+          "options": {
+            "A": "It involves the way functions and signals are represented.",
+            "B": "It has practical uses in several areas.",
+            "C": "It can reveal unseen structures in complex signals.",
+            "D": "It is more effective in music than in finance."
+          },
+          "answer": "D",
+          "analysis": "Giải thích đáp án: A/B/C ba hạng đều tại đoạn thứ nhất có nguyên câu đối ứng; Bài gốc chỉ liệt kê Âm nhạc, tài chính là hữu ích,thiết thực án lệ, chưa bao giờ đối lập hai người hiệu quả mạnh yếu. Phương án phân tích: A. liên quan đến hàm số và tín hiệu biểu thị phương thức: câu đầu tiên “studies how functions or signals can be represented”. B. tại nhiều lĩnh vực có thực tế công dụng: câu đầu tiên “has applications in signal processing, quantum mechanics, and data compression”. C. có thể công bố phức tạp tín hiệu trông được không thấy kết cấu: đoạn thứ nhất “its ability to reveal hidden structures”. D. tại Âm nhạc Vừa so với tại tài chính Vừa càng hữu hiệu: Bài gốc chỉ nêu ví dụ nói rõ có thể dùng tại Âm nhạc (phân biệt cơ nhiều lần) và tài chính (Đánh giá dị thường), nhưng cũng không so sánh cả hai cái nào càng hữu hiệu. bởi vậy đây là văn trung Không được đề cập (Not Given)."
+        },
+        {
+          "id": 3,
+          "stem": "In which of the following ways does the Fourier transform benefit signal processing?",
+          "options": {
+            "A": "By making signals travel far",
+            "B": "By making signals clearer",
+            "C": "By protecting signals from noise",
+            "D": "By increasing the frequency of signals"
+          },
+          "answer": "B",
+          "analysis": "Giải thích đáp án: Bài gốc thứ hai đoạn nhắc tới phó dặm lá biến hóa tại tín hiệu xử lý trong đích hữu ích,thiết thực: “it isolates different frequency components, making it easier to filter out noise and enhance signal clarity.” tiếp xúc nó thông qua chia lìa tần suất thành phần đến “ tăng cường tín hiệu rõ ràng độ ”. Phương án phân tích: A. khiến cho tín hiệu truyền bá xa hơn, Không được đề cập (Not Given). B. khiến cho tín hiệu rõ ràng hơn tích, và “enhance signal clarity” nhất trí. C. bảo hộ tín hiệu khỏi bị tiếng ồn ảnh hưởng, nó thông qua “filter out noise” (lọc trừ tiếng ồn) đến gián tiếp bảo hộ, nhưng trực tiếp ích lợi là khiến cho tín hiệu rõ ràng hơn tích. D. gia tăng tín hiệu tần suất, Không được đề cập (Not Given)."
+        },
+        {
+          "id": 4,
+          "stem": "Why does the author discuss \"quantum mechanics\" in paragraph 2?",
+          "options": {
+            "A": "To explain why the Fourier transform is a key tool of harmonic analysis",
+            "B": "To illustrate an application of breaking down functions into their constituent frequencies",
+            "C": "To highlight an important difference between signal processing and quantum mechanics",
+            "D": "To demonstrate the challenge of analyzing and predicting quantum systems"
+          },
+          "answer": "B",
+          "analysis": "Giải thích đáp án: thứ hai đoạn tại giới thiệu phó dặm lá biến hóa “ đem hàm số phân giải làm kia tạo thành tần suất ” cái này một hạch tâm công năng sau, trước dùng tín hiệu xử lý làm thí dụ (“For example, in signal processing...”), ngay sau đó nói “This decomposition is also crucial in quantum mechanics...”, tiếp xúc loại này phân giải tại lượng tử cơ học Vừa cũng rất trọng yếu. bởi vậy, nhắc tới lượng tử cơ học là vì nêu ví dụ nói rõ “ phân giải hàm số ” cái này một nguyên lý cái khác hữu ích,thiết thực lĩnh vực. Phương án phân tích: A. giải thích vì sao phó dặm lá biến hóa là hài sóng phân tích mấu chốt công cụ, đây là bản đoạn mở đầu đã nói lên, lượng tử cơ học là với tư cách hữu ích,thiết thực ví dụ đến hỗ trợ điểm này. B. nêu ví dụ nói rõ đem hàm số phân giải làm kia tạo thành tần số một cái hữu ích,thiết thực, và Bài gốc ăn khớp nhất trí. C. cường điệu tín hiệu xử lý và lượng tử cơ học ở giữa trọng yếu khác nhau, văn trung không tiến hành so sánh. D. biểu hiện ra phân tích và dự đoán lượng tử hệ thống khiêu chiến, văn trung nhắc tới là nên phân giải “ cho phép ” phân tích và dự đoán, cũng không cường điệu khiêu chiến."
+        },
+        {
+          "id": 5,
+          "stem": "There are four locations (A, B, C, and D) in the passage that indicate where the following sentence could be added. They enable the reduction of file sizes without significant loss of quality. Where would the sentence best fit? Select a location where the sentence could be added to the passage.",
+          "options": {
+            "A": "Option A",
+            "B": "Option B",
+            "C": "Option C",
+            "D": "Option D"
+          },
+          "answer": "C",
+          "analysis": "Giải thích đáp án: ứng với tăng thêm tại thứ ba đoạn về số liệu áp súc câu về sau. vị trí cụ thể tại “These methods are particularly useful in data compression.” những lời này đằng sau. đợi cắm vào câu: “They enable the reduction of file sizes without significant loss of quality.” (chúng có thể đang không có rõ ràng chất lượng tổn thất dưới tình huống giảm nhỏ văn bản tài liệu lớn nhỏ.) trong đó “They” chỉ thay tiền văn nhắc tới “These methods” (những phương pháp này), tiếp xúc Tiểu Ba biến hóa {các loại:đợi} phương pháp. Bài gốc thứ ba đoạn tại giới thiệu Tiểu Ba biến hóa sau, chỉ ra “These methods are particularly useful in data compression.” (những phương pháp này tại số liệu áp súc Vừa đặc biệt có dùng). ngay sau đó cắm vào câu cụ thể giải thích chúng tại số liệu áp súc Vừa là như thế nào hữu dụng —— tiếp xúc giảm nhỏ văn bản tài liệu lớn nhỏ mà lại bảo vệ thực. sau đó Bài gốc lại tiếp tục nêu ví dụ nói rõ tại hình vẽ xử lý trong đích hữu ích,thiết thực. bởi vậy, cắm vào này câu có thể khiến cho “ số liệu áp súc ” này ưu điểm đạt được cụ thể trình bày, ăn khớp nối liền. Phương án phân tích: A: không có ở đây số liệu áp súc chủ đề đoạn, chỉ thay đứt gãy, bài trừ B: không có ở đây số liệu áp súc chủ đề đoạn, chỉ thay đứt gãy, bài trừ C: kề sát data compression sau, dính liền hoàn mỹ, Đúng D: ở vào nêu ví dụ về sau, ăn khớp từ đứng sau, đông cứng, bài trừ"
+        }
+      ]
+    }
+  ]
 }

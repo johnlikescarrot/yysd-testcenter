@@ -6,7 +6,7 @@
   color: #1a2e2a;
   margin: 0;
 }
-.vl-page .vl-wrap {
+.vl-page.vl-wrap {
   max-width: 820px;
   margin: 0 auto;
   padding: 16px;
@@ -124,7 +124,7 @@
   gap: 8px 14px;
   font-size: 13px;
 }
-.vl-exam .lbl { color: #6b7e78; }
+.vl-exam.lbl { color: #6b7e78; }
 .vl-root-text {
   font-size: 14px;
   background: #f4f8f6;
@@ -182,11 +182,11 @@
 }
 .vl-word-table tr.word-row { cursor: pointer; }
 .vl-word-table tr.word-row:hover { background: #f4f8f6; }
-.vl-word-table .w-en { font-weight: 700; color: #1a2e2a; }
-.vl-word-table .w-ipa { color: #6b7e78; font-size: 12px; }
-.vl-word-table .w-pos { color: #2d6b4f; font-size: 12px; font-weight: 600; }
-.vl-word-table .w-en.blurred,
-.vl-word-table .w-meaning.blurred {
+.vl-word-table.w-en { font-weight: 700; color: #1a2e2a; }
+.vl-word-table.w-ipa { color: #6b7e78; font-size: 12px; }
+.vl-word-table.w-pos { color: #2d6b4f; font-size: 12px; font-weight: 600; }
+.vl-word-table.w-en.blurred,
+.vl-word-table.w-meaning.blurred {
   /* ponytail: inline-block keeps filter paint inside the cell (no sibling spill) */
   display: inline-block;
   max-width: 100%;
@@ -194,25 +194,25 @@
   user-select: none;
   opacity: 0.55;
 }
-.vl-word-table .w-en.blurred,
-.vl-word-table .w-meaning.blurred { cursor: pointer; }
-.vl-toolbar .vl-btn.is-on {
+.vl-word-table.w-en.blurred,
+.vl-word-table.w-meaning.blurred { cursor: pointer; }
+.vl-toolbar.vl-btn.is-on {
   border-color: color-mix(in srgb, #1f3d5c 35%, #d8e0dc);
   background: #eef4fa;
   color: #1f3d5c;
 }
-.vl-word-table .w-no { color: #8a9e96; font-size: 12px; width: 36px; }
+.vl-word-table.w-no { color: #8a9e96; font-size: 12px; width: 36px; }
 @media (max-width: 560px) {
   .vl-app { border-radius: 24px; padding: 18px 14px 24px; }
   .vl-word { font-size: 28px; }
-  .vl-word-table .col-ipa, .vl-word-table .col-pos { display: none; }
+  .vl-word-table.col-ipa,.vl-word-table.col-pos { display: none; }
 }
 
-/* Quiz (template 闯关) */
+/* Quiz (template vượt ải) */
 .vl-lives { display: flex; gap: 4px; font-size: 22px; }
-.vl-lives .heart { transition: 0.2s; }
-.vl-lives .heart.lost { opacity: 0.12; transform: scale(0.5); }
-.vl-timer .num.warning { color: #c0392b; font-weight: 700; }
+.vl-lives.heart { transition: 0.2s; }
+.vl-lives.heart.lost { opacity: 0.12; transform: scale(0.5); }
+.vl-timer.num.warning { color: #c0392b; font-weight: 700; }
 .vl-listen-hint { font-size: 14px; color: #4d625b; margin: 8px 0; }
 .vl-opts { display: grid; gap: 8px; margin-top: 10px; }
 .vl-opt {
@@ -225,7 +225,7 @@
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
-.vl-opt .label { font-weight: 700; margin-right: 6px; color: #6b7e78; }
+.vl-opt.label { font-weight: 700; margin-right: 6px; color: #6b7e78; }
 .vl-opt.selected {
   border-color: #1f3d5c;
   background: #eef4fa;
@@ -250,8 +250,8 @@
   transform: none;
   overflow: visible;
 }
-.vl-spell-row[hidden] { display: none !important; }
-.vl-spell-row.is-open[hidden] { display: flex !important; }
+.vl-spell-row[hidden] { display: none!important; }
+.vl-spell-row.is-open[hidden] { display: flex!important; }
 .vl-spell-row input,
 .yysd-en-spell {
   flex: 1;
@@ -282,7 +282,7 @@
 }
 .vl-feedback.show { display: block; }
 .vl-feedback.ok { background: #eaf5ef; color: #1f553f; }
-.vl-feedback.fail, .vl-feedback.timeout { background: #fdecea; color: #922b21; }
+.vl-feedback.fail,.vl-feedback.timeout { background: #fdecea; color: #922b21; }
 .vl-overlay {
   position: fixed;
   inset: 0;
@@ -357,9 +357,9 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-.yysd-ime-gate-open .vl-app,
-.yysd-ime-gate-open .minimal-shell,
-.yysd-ime-gate-open .teacher-site-banner {
+.yysd-ime-gate-open.vl-app,
+.yysd-ime-gate-open.minimal-shell,
+.yysd-ime-gate-open.teacher-site-banner {
   pointer-events: none;
   user-select: none;
 }
@@ -441,12 +441,12 @@
   color: #8a5a00;
 }
 .ime-gate-strikes strong { color: #b42318; }
-.ime-gate-panel--cheat .ime-gate-actions {
+.ime-gate-panel--cheat.ime-gate-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
-.yysd-ime-gate--cheat .ime-gate-panel {
+.yysd-ime-gate--cheat.ime-gate-panel {
   border: 2px solid #f5c2c0;
 }

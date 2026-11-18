@@ -35,12 +35,12 @@ var stu = read("assets/js/student-calendar.js");
 assert(stu.indexOf("vocab-quiz.html?refs=") >= 0, "student-calendar refs href");
 
 var teach = read("assets/js/teacher-calendar.js");
-assert(teach.indexOf("可跨词书勾选多个 List") >= 0, "teacher multi-book hint");
-assert(teach.indexOf("请至少勾选 1 个 List") >= 0, "teacher multi validate");
-assert(teach.indexOf("含同 List 列表学习") < 0, "no learn twin copy");
+assert(teach.indexOf(" có thể vượt qua từ sách phác thảo chọn nhiều List") >= 0, "teacher multi-book hint");
+assert(teach.indexOf(" mời ít nhất phác thảo chọn 1 List") >= 0, "teacher multi validate");
+assert(teach.indexOf(" hàm cùng List liệt biểu List Học tập ") < 0, "no learn twin copy");
 
 assert(quiz.indexOf("renderAssignPicker") >= 0, "assign picker");
-assert(quiz.indexOf("本 List 通过") >= 0 || quiz.indexOf("assignPartial") >= 0, "partial pass UX");
+assert(quiz.indexOf(" bản List thông qua ") >= 0 || quiz.indexOf("assignPartial") >= 0, "partial pass UX");
 
 var server = read("server/server.js");
 assert(server.indexOf("partial: true") >= 0, "partial complete");

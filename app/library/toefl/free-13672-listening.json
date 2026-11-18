@@ -1,57 +1,57 @@
 {
- "id": "free-13672",
- "title": "Conversation #87",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #87",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13672,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-87"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #87",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/34b031bc2abc4cee8b79ddbcdd4e5da6.mp3",
-   "transcript": "Woman: There's a lot of buzz about the new Italian restaurant downtown, though the reviews are decidedly mixed.\nMan: One of my neighbors said his pasta was seasoned to perfection, while another thought they overdid it with the olive oil.\nWoman: Maybe we should figure it out for ourselves. How about this Saturday? I could make a reservation.\nMan: That day? I have some family members coming over to my house for dinner. Sorry.",
-   "questions": [
+  "id": "free-13672",
+  "title": "Conversation #87",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #87",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13672,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-87"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Why does the man mention his neighbors?",
-     "options": {
-      "A": "To confirm that customers disagree about a restaurant",
-      "B": "To imply that some people do not like Italian food",
-      "C": "To emphasize the importance of olive oil in Italian food",
-      "D": "To identify the people that visited a restaurant with him"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：男士为什么提到他的邻居？ 定位原文：Man: One of my neighbors said his pasta was seasoned to perfection, while another thought they overdid it with the olive oil. 选项分析： A. To confirm that customers disagree about a restaurant 为了证实顾客对一家餐厅意见不一。男士举出两个邻居对同一家意大利菜截然不同的评价（一个说调味完美，另一个说橄榄油过多），正好呼应了女士说的“reviews are decidedly mixed”，所以A选项正确。 B. To imply that some people do not like Italian food 为了暗示有些人不喜欢意大利菜。对话中没有提到邻居不喜欢意大利菜，只是对菜品做法有不同看法，所以B选项错误。 C. To emphasize the importance of olive oil in Italian food 为了强调橄榄油在意大利菜中的重要性。男士只是在举例说明评价不同，并非强调橄榄油本身的重要性，所以C选项错误。 D. To identify the people that visited a restaurant with him 为了指认和他一起去过餐厅的人。男士没有说他和邻居一起去过，只是转述邻居的评价，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "Why does the man mention his family members?",
-     "options": {
-      "A": "To make a point about an existing reservation",
-      "B": "To point out a different opinion about a restaurant",
-      "C": "To invite the woman to his house for dinner",
-      "D": "To decline the woman's invitation"
-     },
-     "answer": "D",
-     "analysis": "答案：D 题目问的是：男士为什么提到他的家人？ 定位原文：Woman: How about this Saturday? I could make a reservation. Man: That day? I have some family members coming over to my house for dinner. Sorry. 选项分析： A. To make a point about an existing reservation 为了说明一个已有的预约。男士没有提到自己有预约，只是说家人要来，所以A选项错误。 B. To point out a different opinion about a restaurant 为了指出对餐厅的不同看法。家人话题与对餐厅的看法无关，所以B选项错误。 C. To invite the woman to his house for dinner 为了邀请女士去他家吃饭。男士只是说家人来吃饭，并没有邀请女士参加，所以C选项错误。 D. To decline the woman's invitation 为了拒绝女士的邀请。女士提议周六去餐厅并说可以预约，男士以家人来家里吃饭为由回答“Sorry”，这是在委婉拒绝，所以D选项正确。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #87",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/34b031bc2abc4cee8b79ddbcdd4e5da6.mp3",
+      "transcript": "Woman: There's a lot of buzz about the new Italian restaurant downtown, though the reviews are decidedly mixed.\nMan: One of my neighbors said his pasta was seasoned to perfection, while another thought they overdid it with the olive oil.\nWoman: Maybe we should figure it out for ourselves. How about this Saturday? I could make a reservation.\nMan: That day? I have some family members coming over to my house for dinner. Sorry.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Why does the man mention his neighbors?",
+          "options": {
+            "A": "To confirm that customers disagree about a restaurant",
+            "B": "To imply that some people do not like Italian food",
+            "C": "To emphasize the importance of olive oil in Italian food",
+            "D": "To identify the people that visited a restaurant with him"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: nam sĩ vì sao nhắc tới hàng xóm của hắn? Dẫn chứng Bài gốc: Man: One of my neighbors said his pasta was seasoned to perfection, while another thought they overdid it with the olive oil. Phương án phân tích: A. To confirm that customers disagree about a restaurant để chứng minh là đúng khách hàng đối với một nhà hàng ý kiến không đồng nhất. nam sĩ cử ra hai cái hàng xóm đối với cùng một nhà I-ta-li-a đồ ăn hoàn toàn bất đồng đánh giá (một cái nói gia vị hoàn mỹ, cái khác nói dầu ô liu quá nhiều), vừa vặn hô ứng rồi phu nhân nói “reviews are decidedly mixed”, nên A Phương án Đúng. B. To imply that some people do not like Italian food để ám chỉ có ít người không thích I-ta-li-a đồ ăn. trong lúc nói chuyện với nhau không có nói tới hàng xóm không thích I-ta-li-a đồ ăn, chẳng qua là đối với thái phẩm cách làm không có cùng cái nhìn, nên B Phương án Sai. C. To emphasize the importance of olive oil in Italian food để cường điệu dầu ô liu để trong lòng đại lợi trong thức ăn tầm quan trọng. nam sĩ chẳng qua là tại nêu ví dụ nói rõ đánh giá bất đồng, cũng không phải là cường điệu dầu ô liu bản thân tầm quan trọng, nên C Phương án Sai. D. To identify the people that visited a restaurant with him để chỉ ra và xác nhận và anh ấy cùng đi qua người của phòng ăn. nam sĩ cũng không nói gì hắn và hàng xóm cùng đi qua, chẳng qua là thuật lại hàng xóm đánh giá, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "Why does the man mention his family members?",
+          "options": {
+            "A": "To make a point about an existing reservation",
+            "B": "To point out a different opinion about a restaurant",
+            "C": "To invite the woman to his house for dinner",
+            "D": "To decline the woman's invitation"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: nam sĩ vì sao nhắc tới người nhà của hắn? Dẫn chứng Bài gốc: Woman: How about this Saturday? I could make a reservation. Man: That day? I have some family members coming over to my house for dinner. Sorry. Phương án phân tích: A. To make a point about an existing reservation để nói rõ một cái đã có hẹn trước. nam sĩ không có nói tới tự có hẹn trước, chỉ nói là người nhà muốn tới, nên A Phương án Sai. B. To point out a different opinion about a restaurant để chỉ ra đối với phòng ăn bất đồng cái nhìn. người nhà chủ đề và đối với phòng ăn cái nhìn không quan hệ, nên B Phương án Sai. C. To invite the woman to his house for dinner để mời phu nhân đi nhà hắn ăn cơm. nam sĩ chỉ nói là người nhà tới dùng cơm, cũng không có mời phu nhân tham gia, nên C Phương án Sai. D. To decline the woman's invitation để cự tuyệt phu nhân mời. phu nhân đề nghị thứ bảy đi nhà hàng cũng nói có thể hẹn trước, nam sĩ dùng người nhà tới nhà ăn cơm làm lý do trả lời “Sorry”, đây là ở uyển chuyển cự tuyệt, nên D Phương án Đúng."
+        }
+      ]
+    }
+  ]
 }

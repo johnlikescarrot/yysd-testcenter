@@ -11,7 +11,7 @@ if (!m) {
 var fn = Function(m[0] + "\nreturn yysdMeaningForList;")();
 
 function eq(got, want, label) {
-  if (got !== want) {
+  if (got!== want) {
     console.error("FAIL:", label);
     console.error(" got ", JSON.stringify(got));
     console.error(" want", JSON.stringify(want));
@@ -20,27 +20,27 @@ function eq(got, want, label) {
 }
 
 eq(
-  fn("adj. ①空的，空无一人的；②空洞的，无意义的（empty promises）。v. 倒空，清空（empty the bin）。n. 空瓶，空箱。empty of（没有…）。反义 full。"),
-  "adj. ①空的，空无一人的；②空洞的，无意义的。v. 倒空，清空。n. 空瓶，空箱。",
+  fn("adj. ① trống không, không có một bóng người; ② trống rỗng, vô tình ý nghĩa (empty promises). v. trống không, Xóa trống (empty the bin). n. chai không, chỗ trống rương. empty of (không có …). Trái nghĩa full. "),
+  "adj. ① trống không, không có một bóng người; ② trống rỗng, vô tình ý nghĩa. v. trống không, Xóa trống. n. chai không, chỗ trống rương. ",
   "empty"
 );
 eq(
-  fn("n. 踝，踝关节。twist / sprain one's ankle（扭伤脚踝）；ankle boots（踝靴）。"),
-  "n. 踝，踝关节。",
+  fn("n. mắt cá chân, mắt cá chân các đốt ngón tay. twist / sprain one's ankle (bị trật mắt cá chân); ankle boots (mắt cá chân giày). "),
+  "n. mắt cá chân, mắt cá chân các đốt ngón tay. ",
   "ankle"
 );
 eq(
-  fn("v. 游泳；游过（swim the river）；旋转、眩晕（my head is swimming）；充满（eyes swimming with tears）。n. 游泳。go for a swim；swimming pool。不规则：swim–swam–swum。"),
-  "v. 游泳；游过；旋转、眩晕；充满。n. 游泳。",
+  fn("v. bơi lội; bơi qua (swim the river); xoay tròn, mê muội (my head is swimming); tràn ngập (eyes swimming with tears). n. bơi lội. go for a swim; swimming pool. Bất quy tắc: swim–swam–swum. "),
+  "v. bơi lội; bơi qua; xoay tròn, mê muội; tràn ngập. n. bơi lội. ",
   "swim"
 );
 eq(
-  fn("v. ①祝福，保佑（God bless you；bless sb with sth 赋予某人某物）；②使有幸得到。n. blessing 祝福，幸事。a blessing in disguise（因祸得福）。be blessed with（有幸拥有）。宗教用语已日常化，口语 God bless 表祝愿或打喷嚏时的回应。"),
-  "v. ①祝福，保佑；②使有幸得到。n. 祝福，幸事。",
+  fn("v. ① chúc phúc, phù hộ (God bless you; bless sb with sth giao phó người nào đó vật gì đó); ② khiến cho may mắn được đến. n. blessing chúc phúc, chuyện may mắn. a blessing in disguise (nhân họa đắc phúc). be blessed with (may mắn có được). tôn giáo dùng từ đã Đời sống hóa, Nói God bless bề ngoài mong ước hoặc nhảy mũi lúc đáp lại. "),
+  "v. ① chúc phúc, phù hộ; ② khiến cho may mắn được đến. n. chúc phúc, chuyện may mắn. ",
   "bless"
 );
-eq(fn("按照；根据"), "按照；根据", "cet4 passthrough");
-eq(fn("adv. 因此，从而，这样。较正式，相当于 therefore / so。thus far（到目前为止）。"), "adv. 因此，从而，这样。", "thus");
-eq(fn("prep. 按照；根据。常用 according to plan（按计划）。", ["根据", "按照"]), "根据；按照", "prefer acceptCN");
+eq(fn(" theo; dựa theo "), " theo; dựa theo ", "cet4 passthrough");
+eq(fn("adv. bởi vậy, do đó, như vậy. so sánh chính thức, tương đương với therefore / so. thus far (cho tới bây giờ). "), "adv. bởi vậy, do đó, như vậy. ", "thus");
+eq(fn("prep. theo; dựa theo. thường dùng according to plan (theo kế hoạch). ", [" dựa theo ", " theo "]), " dựa theo; theo ", "prefer acceptCN");
 
 console.log("OK: list meaning");

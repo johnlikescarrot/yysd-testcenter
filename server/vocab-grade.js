@@ -6,7 +6,7 @@
 function parseWordJson(raw) {
   if (raw == null) return null;
   try {
-    return typeof raw === "string" ? JSON.parse(raw) : raw;
+    return typeof raw === "string"? JSON.parse(raw): raw;
   } catch (e) {
     return null;
   }
@@ -15,8 +15,8 @@ function parseWordJson(raw) {
 function metaFromWord(w) {
   if (!w) return { word: "", meaning: "", acceptCN: [] };
   if (typeof w === "string") return { word: w, meaning: "", acceptCN: [] };
-  var wj = w.word_json != null ? parseWordJson(w.word_json) : w;
-  if (wj && typeof wj === "object" && !wj.word && w.word) wj = Object.assign({}, wj, { word: w.word });
+  var wj = w.word_json!= null? parseWordJson(w.word_json): w;
+  if (wj && typeof wj === "object" &&!wj.word && w.word) wj = Object.assign({}, wj, { word: w.word });
   var word = String((w && w.word) || (wj && wj.word) || "").trim();
   var acceptCN = [];
   if (Array.isArray(w.acceptCN)) acceptCN = w.acceptCN;
@@ -42,13 +42,13 @@ function metaFromWord(w) {
 }
 
 function quizMeaning(meta) {
-  if (!meta) return "（暂无释义）";
+  if (!meta) return " (Chưa có nghĩa) ";
   if (meta.acceptCN && meta.acceptCN.length) {
     var cn = meta.acceptCN.filter(Boolean).join(" / ");
     if (cn) return cn;
   }
   var m = String(meta.meaning || "").trim();
-  return m || "（暂无释义）";
+  return m || " (Chưa có nghĩa) ";
 }
 
 function normalizeSpell(s) {
@@ -96,7 +96,7 @@ var UK_PAIRS = [
   ["gaol", "jail"], ["grey", "gray"], ["blonde", "blond"], ["axe", "ax"]
 ];
 UK_PAIRS.sort(function (a, b) {
-  if (b[0].length !== a[0].length) return b[0].length - a[0].length;
+  if (b[0].length!== a[0].length) return b[0].length - a[0].length;
   if (a[0].indexOf(b[0]) === 0) return -1;
   if (b[0].indexOf(a[0]) === 0) return 1;
   return 0;
@@ -136,8 +136,8 @@ function toUS(s) {
   if (/gramme$/.test(s)) s = s.replace(/gramme$/, "gram");
   if (/isation$/.test(s)) s = s.replace(/isation$/, "ization");
   if (/yse$/.test(s)) s = s.replace(/yse$/, "yze");
-  if (/ise$/.test(s) && !ISE_KEEP[s]) s = s.replace(/ise$/, "ize");
-  if (/ogue$/.test(s) && s !== "rogue" && s !== "vogue" && s !== "synagogue") {
+  if (/ise$/.test(s) &&!ISE_KEEP[s]) s = s.replace(/ise$/, "ize");
+  if (/ogue$/.test(s) && s!== "rogue" && s!== "vogue" && s!== "synagogue") {
     s = s.replace(/ogue$/, "og");
   }
   return s;
@@ -175,7 +175,7 @@ function spellingForms(s) {
 function spellMatches(user, expected) {
   var u = normalizeSpell(user);
   var e = normalizeSpell(expected);
-  if (!u || !e) return false;
+  if (!u ||!e) return false;
   if (u === e) return true;
   var uForms = spellingForms(u);
   var eForms = spellingForms(e);
@@ -186,7 +186,7 @@ function spellMatches(user, expected) {
     }
   }
   var optS = e.replace(/\s*\(s\)\s*$/i, "");
-  if (optS !== e && (u === optS || u === optS + "s")) return true;
+  if (optS!== e && (u === optS || u === optS + "s")) return true;
   if (/wards?$/.test(e)) {
     var stem = e.replace(/s$/, "");
     if (u === stem || u === stem + "s") return true;
@@ -200,7 +200,7 @@ function spellMatches(user, expected) {
 }
 
 function spellMatchesAny(user, expectedList) {
-  var list = Array.isArray(expectedList) ? expectedList : [expectedList];
+  var list = Array.isArray(expectedList)? expectedList: [expectedList];
   for (var i = 0; i < list.length; i++) {
     if (spellMatches(user, list[i])) return true;
   }
@@ -215,12 +215,12 @@ function isSkipAnswer(userAnswer) {
 /** Match client: meaning exact string + spell exact lowercase. */
 function gradeVocabAnswer(meta, ans) {
   ans = ans || {};
-  var userAnswer = ans.userAnswer != null ? String(ans.userAnswer) : "";
+  var userAnswer = ans.userAnswer!= null? String(ans.userAnswer): "";
   if (isSkipAnswer(userAnswer)) return false;
-  var spellOk = spellMatchesAny(userAnswer, meta.spellings && meta.spellings.length ? meta.spellings : [meta.word]);
+  var spellOk = spellMatchesAny(userAnswer, meta.spellings && meta.spellings.length? meta.spellings: [meta.word]);
   var expected = quizMeaning(meta);
-  var userMeaning = ans.userMeaning != null ? String(ans.userMeaning).trim() : "";
-  var meaningOk = !!userMeaning && userMeaning === expected;
+  var userMeaning = ans.userMeaning!= null? String(ans.userMeaning).trim(): "";
+  var meaningOk =!!userMeaning && userMeaning === expected;
   return spellOk && meaningOk;
 }
 
@@ -229,7 +229,7 @@ function gradeChallengeAnswer(draft, word, ans) {
   var meta = metaFromWord((draft && draft.wordMeta && draft.wordMeta[key]) || { word: key });
   var wj = parseWordJson(meta.word_json);
   if (wj && Array.isArray(wj.acceptCN)) meta.acceptCN = wj.acceptCN;
-  if (wj && wj.meaning && !meta.meaning) meta.meaning = String(wj.meaning);
+  if (wj && wj.meaning &&!meta.meaning) meta.meaning = String(wj.meaning);
   return gradeVocabAnswer(meta, ans);
 }
 
@@ -239,8 +239,8 @@ function gradedAnswerMap(draft, answers) {
     if (!a || a.word == null) return;
     var word = String(a.word);
     map[word] = {
-      userAnswer: a.userAnswer != null ? String(a.userAnswer) : null,
-      userMeaning: a.userMeaning != null ? String(a.userMeaning) : null,
+      userAnswer: a.userAnswer!= null? String(a.userAnswer): null,
+      userMeaning: a.userMeaning!= null? String(a.userMeaning): null,
       correct: gradeChallengeAnswer(draft, word, a)
     };
   });
@@ -248,8 +248,8 @@ function gradedAnswerMap(draft, answers) {
 }
 
 function gradeQuizResults(words, results, maxLives) {
-  words = Array.isArray(words) ? words : [];
-  results = Array.isArray(results) ? results : [];
+  words = Array.isArray(words)? words: [];
+  results = Array.isArray(results)? results: [];
   maxLives = Math.max(1, Math.floor(Number(maxLives) || 5));
   var wordSet = {};
   words.forEach(function (w) {
@@ -258,7 +258,7 @@ function gradeQuizResults(words, results, maxLives) {
   });
   var byWord = {};
   results.forEach(function (r) {
-    if (!r || !r.word) return;
+    if (!r ||!r.word) return;
     byWord[String(r.word)] = r;
   });
   var graded = [];
@@ -297,41 +297,41 @@ function gradeQuizResults(words, results, maxLives) {
 }
 
 function selfCheck() {
-  var m = metaFromWord({ word: "include", acceptCN: ["包括", "包含"], meaning: "v. 包括" });
-  if (quizMeaning(m) !== "包括 / 包含") throw new Error("quizMeaning acceptCN");
-  if (!gradeVocabAnswer(m, { userAnswer: "include", userMeaning: "包括 / 包含" })) {
+  var m = metaFromWord({ word: "include", acceptCN: [" kể cả ", " bao hàm "], meaning: "bao gồm, gồm có; tính đến, kể cả" });
+  if (quizMeaning(m)!== " kể cả / bao hàm ") throw new Error("quizMeaning acceptCN");
+  if (!gradeVocabAnswer(m, { userAnswer: "include", userMeaning: " kể cả / bao hàm " })) {
     throw new Error("grade ok");
   }
-  if (gradeVocabAnswer(m, { userAnswer: "include", userMeaning: "包括" })) {
+  if (gradeVocabAnswer(m, { userAnswer: "include", userMeaning: " kể cả " })) {
     throw new Error("grade meaning exact");
   }
-  if (gradeVocabAnswer(m, { userAnswer: "wrong", userMeaning: "包括 / 包含" })) {
+  if (gradeVocabAnswer(m, { userAnswer: "wrong", userMeaning: " kể cả / bao hàm " })) {
     throw new Error("grade spell");
   }
-  var east = { word: "eastward(s)", acceptCN: ["向东"] };
-  if (!gradeVocabAnswer(east, { userAnswer: "eastward", userMeaning: "向东" })) {
+  var east = { word: "eastward(s)", acceptCN: [" hướng đông "] };
+  if (!gradeVocabAnswer(east, { userAnswer: "eastward", userMeaning: " hướng đông " })) {
     throw new Error("grade eastward(s) -> eastward");
   }
-  if (!gradeVocabAnswer(east, { userAnswer: "eastwards", userMeaning: "向东" })) {
+  if (!gradeVocabAnswer(east, { userAnswer: "eastwards", userMeaning: " hướng đông " })) {
     throw new Error("grade eastward(s) -> eastwards");
   }
-  if (!gradeVocabAnswer({ word: "0", acceptCN: ["零"] }, { userAnswer: "zero", userMeaning: "零" })) {
+  if (!gradeVocabAnswer({ word: "0", acceptCN: [" linh "] }, { userAnswer: "zero", userMeaning: " linh " })) {
     throw new Error("grade 0 -> zero");
   }
-  if (!gradeVocabAnswer({ word: "zero", acceptCN: ["零"] }, { userAnswer: "0", userMeaning: "零" })) {
+  if (!gradeVocabAnswer({ word: "zero", acceptCN: [" linh "] }, { userAnswer: "0", userMeaning: " linh " })) {
     throw new Error("grade zero -> 0");
   }
-  if (!gradeVocabAnswer({ word: "used to", acceptCN: ["过去常常"] }, { userAnswer: "used  to", userMeaning: "过去常常" })) {
+  if (!gradeVocabAnswer({ word: "used to", acceptCN: [" qua thường thường "] }, { userAnswer: "used to", userMeaning: " qua thường thường " })) {
     throw new Error("grade used to spaces");
   }
-  var dual = { word: "center", spellings: ["center", "centre"], acceptCN: ["中心"] };
-  if (!gradeVocabAnswer(dual, { userAnswer: "centre", userMeaning: "中心" })) {
+  var dual = { word: "center", spellings: ["center", "centre"], acceptCN: [" trung tâm "] };
+  if (!gradeVocabAnswer(dual, { userAnswer: "centre", userMeaning: " trung tâm " })) {
     throw new Error("grade dual UK spelling");
   }
-  if (!gradeVocabAnswer({ word: "license", acceptCN: ["执照"] }, { userAnswer: "licence", userMeaning: "执照" })) {
+  if (!gradeVocabAnswer({ word: "license", acceptCN: [" giấy phép "] }, { userAnswer: "licence", userMeaning: " giấy phép " })) {
     throw new Error("grade license <- licence");
   }
-  if (!gradeVocabAnswer({ word: "licence", acceptCN: ["执照"] }, { userAnswer: "license", userMeaning: "执照" })) {
+  if (!gradeVocabAnswer({ word: "licence", acceptCN: [" giấy phép "] }, { userAnswer: "license", userMeaning: " giấy phép " })) {
     throw new Error("grade licence <- license");
   }
   [
@@ -350,7 +350,7 @@ function selfCheck() {
     ["travelled", "traveled"], ["labelled", "labeled"], ["flavour", "flavor"],
     ["ageing", "aging"], ["enrolment", "enrollment"], ["colourful", "colorful"]
   ].forEach(function (p) {
-    if (!spellMatches(p[0], p[1]) || !spellMatches(p[1], p[0])) {
+    if (!spellMatches(p[0], p[1]) ||!spellMatches(p[1], p[0])) {
       throw new Error("uk/us " + p.join("/"));
     }
   });
@@ -367,21 +367,21 @@ function selfCheck() {
   });
   var draft = { wordMeta: { alpha: { word: "alpha", meaning: "a", word_json: null } } };
   var map = gradedAnswerMap(draft, [{ word: "alpha", userAnswer: "alpha", userMeaning: "a", correct: true }]);
-  if (!map.alpha || !map.alpha.correct) throw new Error("gradedAnswerMap");
+  if (!map.alpha ||!map.alpha.correct) throw new Error("gradedAnswerMap");
   var gq = gradeQuizResults(
-    [{ word: "a", acceptCN: ["甲"] }, { word: "b", acceptCN: ["乙"] }],
+    [{ word: "a", acceptCN: [" giáp "] }, { word: "b", acceptCN: [" ất "] }],
     [
-      { word: "a", userAnswer: "a", userMeaning: "甲" },
-      { word: "b", userAnswer: "x", userMeaning: "乙" }
+      { word: "a", userAnswer: "a", userMeaning: " giáp " },
+      { word: "b", userAnswer: "x", userMeaning: " ất " }
     ],
     5
   );
-  if (gq.correct !== 1 || gq.wrong !== 1 || !gq.passed) throw new Error("gradeQuizResults partial");
+  if (gq.correct!== 1 || gq.wrong!== 1 ||!gq.passed) throw new Error("gradeQuizResults partial");
   var gqFail = gradeQuizResults(
-    [{ word: "a", acceptCN: ["甲"] }, { word: "b", acceptCN: ["乙"] }, { word: "c", acceptCN: ["丙"] }],
+    [{ word: "a", acceptCN: [" giáp "] }, { word: "b", acceptCN: [" ất "] }, { word: "c", acceptCN: [" bính "] }],
     [
-      { word: "a", userAnswer: "x", userMeaning: "甲" },
-      { word: "b", userAnswer: "x", userMeaning: "乙" }
+      { word: "a", userAnswer: "x", userMeaning: " giáp " },
+      { word: "b", userAnswer: "x", userMeaning: " ất " }
     ],
     2
   );

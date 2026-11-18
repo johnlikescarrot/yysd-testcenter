@@ -1,46 +1,46 @@
 {
- "id": "free-12896",
- "title": "Choose a Response #222",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #222",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12896,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-222"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #222",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/b1a690318a584c8db467bf2f72777f6a.mp3",
-   "questions": [
+  "id": "free-12896",
+  "title": "Choose a Response #222",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #222",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12896,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-222"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Follow the tutorial.",
-      "B": "Purchase a computer.",
-      "C": "A soft touch is needed.",
-      "D": "Thursday afternoons."
-     },
-     "answer": "A",
-     "transcript": "How do you use this software?",
-     "stemZh": "你如何使用这个软件？",
-     "analysis": "How do you use this software? 题干分析 题干是由 How 引导的特殊疑问句，意思是 “你如何使用这个软件？”。本题考查对方式方法提问的正确应答。 选项分析 选项 A：此选项为正确答案。Follow the tutorial 表示按照教程操作，直接回答了使用软件的方法，符合题意。 选项 B：Purchase a computer 表示购买一台电脑，与如何使用软件无关，不符合题意。 选项 C：A soft touch is needed 表示需要轻柔的触碰，句意与软件操作无关，不符合题意。 选项 D：Thursday afternoons 表示周四下午，回答的是时间，不是方法，不符合题意。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #222",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/b1a690318a584c8db467bf2f72777f6a.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Follow the tutorial.",
+            "B": "Purchase a computer.",
+            "C": "A soft touch is needed.",
+            "D": "Thursday afternoons."
+          },
+          "answer": "A",
+          "transcript": "How do you use this software?",
+          "stemZh": "bạn làm thế nào sử dụng này phần mềm?",
+          "analysis": "How do you use this software? Câu hỏi phân tích Câu hỏi là do How dẫn dắt đặc thù câu nghi vấn, ý là “ bạn làm thế nào sử dụng này phần mềm? ”. chủ đề khảo tra đối phương thức phương pháp đặt câu hỏi Đúng trả lời. Phương án phân tích Phương án A: này Phương án là Đáp án đúng. Follow the tutorial biểu thị theo giáo trình thao tác, trực tiếp trả lời sử dụng phần mềm phương pháp, phù hợp câu ý. Phương án B: Purchase a computer biểu thị mua sắm một đài máy tính, và làm thế nào sử dụng phần mềm không quan hệ, không phù hợp câu ý. Phương án C: A soft touch is needed biểu thị cần êm ái đụng vào, câu ý và phần mềm thao tác không quan hệ, không phù hợp câu ý. Phương án D: Thursday afternoons biểu thị thứ năm buổi chiều, trả lời là thời gian, không phải phương pháp, không phù hợp câu ý."
+        }
+      ]
+    }
+  ]
 }

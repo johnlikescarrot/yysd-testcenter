@@ -1,96 +1,96 @@
 {
- "id": "free-12170",
- "title": "Academic Passage #8",
- "set": "free",
- "skill": "reading",
- "titleZh": "学术阅读 #8",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12170,
-  "labelId": 1321,
-  "code": "TOEFL--read an academic passage-8"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "academic",
-   "module": 1,
-   "title": "The Science of Dendrochronology",
-   "instruction": "Read the passage.",
-   "paras": [
-    "Dendrochronology is the technique of counting tree rings to determine a tree’s age and measuring the width of these rings to determine characteristics of past climates. This might seem simple: each ring represents one year, and wider rings generally mean better growing conditions-plentiful rainfall, moderate temperatures, and so forth.",
-    "But the seasonal growth of a particular tree is affected by factors other than the weather. Trees vary, one from another, just like people do. The genetic makeup of each individual tree is unique, so one particular tree may grow a bit more quickly than another. Highly local conditions can also change over time. It is easy enough to see that if part of the soil near a tree has been eroded, this will impact the tree’s root system and limit its growth, at least until the situation stabilizes. Then again, an infestation of insects may affect a tree in one valley more than the same type of tree ten miles away. Or one tree may suddenly start to get a lot more sunlight when an old, big tree in the neighborhood finally falls.",
-    "These kinds of factors produce significant variations among individual specimens, and that fact means that researchers need to average together samples from many specimens of a single tree species in one region over the same time period. Some dendrochronologists think that measuring an average of twenty-five to thirty tree-ring records in a locale is an essential first step in getting around the problem of individual variability. While it may be easy enough to find thirty samples in some locations for particular periods, it obviously becomes less and less likely the more ancient the wood samples are."
-   ],
-   "questions": [
+  "id": "free-12170",
+  "title": "Academic Passage #8",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Học thuật Đọc #8",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12170,
+    "labelId": 1321,
+    "code": "TOEFL--read an academic passage-8"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the primary focus of the passage?",
-     "options": {
-      "A": "Tree rings provide a simple and reliable method for studying ancient climates.",
-      "B": "Individual tree growth is primarily controlled by genetic factors alone.",
-      "C": "Dendrochronology faces challenges due to non-climatic variables, requiring statistical solutions.",
-      "D": "Ancient wood samples are too scarce for meaningful scientific research."
-     },
-     "answer": "C",
-     "analysis": "题型：主旨题 正确答案：C 文本核心结构： 首段：提出树木年轮学的基本原理（年轮宽度反映气候）。 次段：转折（But），揭示个体树木生长的复杂性（遗传差异、土壤侵蚀、虫害、光照突变等非气候干扰）。 末段：提出解决方案（需25-30个样本取平均值），并点明古代样本稀缺的局限。 C选项完整概括了“原理→局限→解决方案”的逻辑链，紧扣“非气候变量干扰”和“大样本平均法”两大核心。 选项分析： A 错误。文本强调该方法并非简单可靠（非气候因素干扰显著）。 B 错误。遗传只是干扰因素之一，且原文明确提到多重局部变量（如土壤、虫害）。 D 片面。古代样本稀缺是实施难点，但非主旨；重点在于方法论困境与应对策略。"
-    },
-    {
-     "id": 2,
-     "stem": "Why does the author provide the information that “if part of the soil near a tree has been eroded, this will impact the tree's root system and limit its growth, at least until the situation stabilizes”?",
-     "options": {
-      "A": "To give an example of a factor other than weather that can affect the seasonal growth of a particular tree",
-      "B": "To call into question the importance of the unique genetic makeup of each individual tree as a factor in tree growth",
-      "C": "To argue that the condition of soil at a particular time can be easily determined using dendrochronology",
-      "D": "To provide an explanation for why a particular tree might be more affected by an insect infestation than other nearby trees of the same type"
-     },
-     "answer": "A",
-     "analysis": "题型：修辞目的题 正确答案：A 正确答案分析：文章首段话，且标题中有专有名词，先浏览阅读段落前几句话提供的信息。首句可以看出Dendrochronology是指树木年代学。接着二三句提到计算树木年龄看起来很容易，但特定的一棵树的生长会被天气之外的其他因素影响。接下来就是给出几个其他因素的例子：基因构成、高度局部的条件比如土壤侵蚀、昆虫侵扰、阳光等等。所以题干信息就是第三句话But the seasonal growth of a particular tree is affected by factors other than the weather的一个例子，故答案选择A项。"
-    },
-    {
-     "id": 3,
-     "stem": "Which of the following can be inferred from the passage about a tree that “may suddenly start to get a lot more sunlight when an old, big tree in the neighborhood finally falls”?",
-     "options": {
-      "A": "It will become more vulnerable to insect infestations.",
-      "B": "It will no longer require as extensive a root system as it once did.",
-      "C": "It will have rings that reflect its age more accurately than do the rings of trees where soil is eroded.",
-      "D": "It will have a change in its growth rings."
-     },
-     "answer": "D",
-     "analysis": "题型：推断题 题目分析：题目需要我们推断，如果一棵树，因为它附近又老又大的树倒下而获得了更多阳光，它会怎么样？首先可以看出这棵树因为阳光会有更好的生长，根据前文信息生长的情况会反映在年轮上，所以推断出D项它的生长年轮会有改变。"
-    },
-    {
-     "id": 4,
-     "stem": "The word “essential” in the passage is closest in meaning to",
-     "options": {
-      "A": "useful",
-      "B": "obvious",
-      "C": "critical",
-      "D": "possible"
-     },
-     "answer": "C",
-     "analysis": "题型：词汇题。 正确答案：critical的意思为”关键的，极重要的”，essential的意思为”必不可少的，极其重要的”，答案选择C项。 选项分析： useful的意思为”有用的”，obvious的意思为”明显的”，possible的意思为”可能的”。"
-    },
-    {
-     "id": 5,
-     "stem": "According to paragraph 3, how do dendrochronologists deal with the problem of individual tree variability?",
-     "options": {
-      "A": "They only use samples from trees that have been living for at least twenty-five to thirty years.",
-      "B": "They select samples from tree species that are known to show little variation over time and within a particular location.",
-      "C": "They do not use samples from trees that show evidence of an unknown genetic makeup.",
-      "D": "They average together the measurements from samples of many different trees from the same location and time."
-     },
-     "answer": "D",
-     "analysis": "题型：事实信息题。 原文定位：根据题干individual tree variability定位到段落倒数第二第三句话：researchers need to average together samples from many specimens of a single tree species in one region over the same time period ，研究人员需要在同一时间段内对同一地区单个树种的许多样本进行平均；Some dendrochronologists think that measuring an average of twenty-five to thirty tree-ring records in a locale is an essential first step in getting around the problem of individual variability，一些树木年代学家认为，测量一个地区平均25到30个树木年轮记录是解决个体变异问题的重要第一步。和D项意思一致。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "academic",
+      "module": 1,
+      "title": "The Science of Dendrochronology",
+      "instruction": "Read the passage.",
+      "paras": [
+        "Dendrochronology is the technique of counting tree rings to determine a tree’s age and measuring the width of these rings to determine characteristics of past climates. This might seem simple: each ring represents one year, and wider rings generally mean better growing conditions-plentiful rainfall, moderate temperatures, and so forth.",
+        "But the seasonal growth of a particular tree is affected by factors other than the weather. Trees vary, one from another, just like people do. The genetic makeup of each individual tree is unique, so one particular tree may grow a bit more quickly than another. Highly local conditions can also change over time. It is easy enough to see that if part of the soil near a tree has been eroded, this will impact the tree’s root system and limit its growth, at least until the situation stabilizes. Then again, an infestation of insects may affect a tree in one valley more than the same type of tree ten miles away. Or one tree may suddenly start to get a lot more sunlight when an old, big tree in the neighborhood finally falls.",
+        "These kinds of factors produce significant variations among individual specimens, and that fact means that researchers need to average together samples from many specimens of a single tree species in one region over the same time period. Some dendrochronologists think that measuring an average of twenty-five to thirty tree-ring records in a locale is an essential first step in getting around the problem of individual variability. While it may be easy enough to find thirty samples in some locations for particular periods, it obviously becomes less and less likely the more ancient the wood samples are."
+      ],
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the primary focus of the passage?",
+          "options": {
+            "A": "Tree rings provide a simple and reliable method for studying ancient climates.",
+            "B": "Individual tree growth is primarily controlled by genetic factors alone.",
+            "C": "Dendrochronology faces challenges due to non-climatic variables, requiring statistical solutions.",
+            "D": "Ancient wood samples are too scarce for meaningful scientific research."
+          },
+          "answer": "C",
+          "analysis": "dạng bài: ý nghĩa chính câu Đáp án đúng: C văn bản hạch tâm kết cấu: đầu đoạn: đưa ra cây cối vòng tuổi học nguyên lý căn bản (vòng tuổi độ rộng phản ánh Khí hậu). lần đoạn: chuyển hướng (But), công bố thân thể cây cối sinh trưởng phức tạp tính (di truyền sai biệt, thổ nhưỡng ăn mòn, sâu bệnh, chiếu sáng đột biến {các loại:đợi} không phải Khí hậu quấy nhiễu). mạt đoạn: đưa ra phương án giải quyết (cần 25-30 hàng mẫu lấy bình quân giá trị), cũng chỉ ra cổ đại hàng mẫu khan hiếm cực hạn. C Phương án Đầy đủ khái quát “ nguyên lý → cực hạn → phương án giải quyết ” ăn khớp liệm, khấu chặt “ không phải Khí hậu lượng biến đổi quấy nhiễu ” và “ bản in cả trang báo bản bình quân pháp ” hai đại hạch tâm. Phương án phân tích: A Sai. văn bản cường điệu nên phương pháp cũng không phải là đơn giản tin cậy (không phải Khí hậu nhân tố quấy nhiễu rõ rệt). B Sai. di truyền chẳng qua là quấy nhiễu nhân tố một trong, mà lại Bài gốc rõ ràng nhắc tới nặng hơn bộ phận lượng biến đổi (như đất nhưỡng, sâu bệnh). D phiến diện. cổ đại hàng mẫu khan hiếm là áp dụng chỗ khó, nhưng không phải ý nghĩa chính; trọng điểm ở chỗ phương pháp luận khốn cảnh và sách lược ứng đối."
+        },
+        {
+          "id": 2,
+          "stem": "Why does the author provide the information that “if part of the soil near a tree has been eroded, this will impact the tree's root system and limit its growth, at least until the situation stabilizes”?",
+          "options": {
+            "A": "To give an example of a factor other than weather that can affect the seasonal growth of a particular tree",
+            "B": "To call into question the importance of the unique genetic makeup of each individual tree as a factor in tree growth",
+            "C": "To argue that the condition of soil at a particular time can be easily determined using dendrochronology",
+            "D": "To provide an explanation for why a particular tree might be more affected by an insect infestation than other nearby trees of the same type"
+          },
+          "answer": "A",
+          "analysis": "dạng bài: tu từ mục đích câu Đáp án đúng: A Đáp án đúng phân tích: văn chương đầu đoạn lời nói, mà lại tiêu đề trong có danh từ riêng, trước xem Đọc đoạn trước mấy câu cung cấp tin tức. đầu câu đó có thể thấy được Dendrochronology là chỉ cây cối niên đại học. tiếp theo hai ba câu nhắc tới tính toán cây cối tuổi thoạt nhìn rất dễ dàng, nhưng đặc định một thân cây sinh trưởng sẽ bị thời tiết ra những nhân tố khác ảnh hưởng. kế tiếp chính là cho ra mấy cái những nhân tố khác ví dụ: gien cấu thành, độ cao cục bộ điều kiện ví dụ như thổ nhưỡng ăn mòn, côn trùng quấy nhiễu, ánh mặt trời...,. nên Câu hỏi tin tức chính là thứ ba câu nói But the seasonal growth of a particular tree is affected by factors other than the weather một ví dụ, cố Đáp án lựa chọn A hạng."
+        },
+        {
+          "id": 3,
+          "stem": "Which of the following can be inferred from the passage about a tree that “may suddenly start to get a lot more sunlight when an old, big tree in the neighborhood finally falls”?",
+          "options": {
+            "A": "It will become more vulnerable to insect infestations.",
+            "B": "It will no longer require as extensive a root system as it once did.",
+            "C": "It will have rings that reflect its age more accurately than do the rings of trees where soil is eroded.",
+            "D": "It will have a change in its growth rings."
+          },
+          "answer": "D",
+          "analysis": "dạng bài: suy đoán câu đề mục phân tích: đề mục cần ta đám suy đoán, nếu một thân cây, vì nó phụ cận vừa già cực lớn cây ngã xuống mà thu hoạch được thêm nữa ánh mặt trời, nó sẽ như thế nào? đầu tiên đó có thể thấy được cây này vì ánh mặt trời sẽ có tốt hơn sinh trưởng, dựa theo tiền văn tin tức sinh trưởng tình huống sẽ phản ánh tại vòng tuổi bên trên, nên suy đoán ra D hạng sinh trưởng của nó vòng tuổi sẽ có cải biến."
+        },
+        {
+          "id": 4,
+          "stem": "The word “essential” in the passage is closest in meaning to",
+          "options": {
+            "A": "useful",
+            "B": "obvious",
+            "C": "critical",
+            "D": "possible"
+          },
+          "answer": "C",
+          "analysis": "dạng bài: Từ vựng câu. Đáp án đúng: critical ý tứ là ” mấu chốt, rất quan trọng ”, essential ý tứ là ” không thể thiếu được, cực kỳ trọng yếu ”, Đáp án lựa chọn C hạng. Phương án phân tích: useful ý tứ là ” hữu dụng ”, obvious ý tứ là ” rõ ràng ”, possible ý tứ là ” có thể ”."
+        },
+        {
+          "id": 5,
+          "stem": "According to paragraph 3, how do dendrochronologists deal with the problem of individual tree variability?",
+          "options": {
+            "A": "They only use samples from trees that have been living for at least twenty-five to thirty years.",
+            "B": "They select samples from tree species that are known to show little variation over time and within a particular location.",
+            "C": "They do not use samples from trees that show evidence of an unknown genetic makeup.",
+            "D": "They average together the measurements from samples of many different trees from the same location and time."
+          },
+          "answer": "D",
+          "analysis": "dạng bài: sự thật tin tức câu. Bài gốc Dẫn chứng: dựa theo Câu hỏi individual tree variability Dẫn chứng đến đoạn thứ hai đếm ngược thứ ba câu nói: researchers need to average together samples from many specimens of a single tree species in one region over the same time period, nhân viên nghiên cứu cần trong cùng một lúc đoạn bên trong đối với đồng nhất khu một cái loại cây rất nhiều hàng mẫu tiến hành bình quân; Some dendrochronologists think that measuring an average of twenty-five to thirty tree-ring records in a locale is an essential first step in getting around the problem of individual variability, một ít cây mộc niên đại học giả cho rằng, đo đạc một cái địa khu bình quân 25 đến 30 cây cối vòng tuổi ghi chép là giải quyết một thể biến dị vấn đề trọng yếu bước đầu tiên. và D hạng ý tứ nhất trí."
+        }
+      ]
+    }
+  ]
 }

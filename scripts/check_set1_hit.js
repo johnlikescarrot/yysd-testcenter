@@ -23,14 +23,14 @@ ok(/independent study/.test(L.tasks[19].transcript) && L.tasks[19].questions[1].
 ok(W.tasks.length === 12 && W.tasks[0].type === "sentence" && W.tasks[10].type === "email", "writing");
 ok(S.tasks.length === 11 && S.tasks[0].type === "repeat" && S.tasks[7].type === "interview", "speaking");
 ok(S.modules[0].intro && /s-lr-intro/.test(S.modules[0].intro.audio), "lr intro file");
-ok(/set-1-s-lr-1\.mp3$/.test(S.tasks[0].audio) && S.tasks[0].audio !== S.modules[0].intro.audio, "q1 is not the intro file");
+ok(/set-1-s-lr-1\.mp3$/.test(S.tasks[0].audio) && S.tasks[0].audio!== S.modules[0].intro.audio, "q1 is not the intro file");
 ok(fs.existsSync(path.join(root, "audio", "Set1-L-CR1.mp3")), "audio");
 ok(fs.existsSync(path.join(root, "audio", "Set1-L-CR8.mp3")), "cr8 remapped");
 ok(fs.existsSync(path.join(root, "audio", "Set1-L-CR9.mp3")), "cr9 official");
 ok(L.tasks[1].questions[0].transcript.indexOf("fundraiser") >= 0, "q2 transcript");
 var rev = fs.readFileSync(path.join(__dirname, "../app/review.html"), "utf8");
-ok(rev.indexOf("rev-card") >= 0 && rev.indexOf("is-strike") >= 0 && rev.indexOf("已提交") >= 0, "review cards");
-ok(rev.indexOf("导出本题") >= 0 && rev.indexOf("export-all") >= 0 && rev.indexOf("<audio controls") >= 0, "speak review export");
+ok(rev.indexOf("rev-card") >= 0 && rev.indexOf("is-strike") >= 0 && rev.indexOf(" đã Nộp bài ") >= 0, "review cards");
+ok(rev.indexOf(" dẫn xuất chủ đề ") >= 0 && rev.indexOf("export-all") >= 0 && rev.indexOf("<audio controls") >= 0, "speak review export");
 var css = fs.readFileSync(path.join(__dirname, "../app/assets/css/hit.css"), "utf8");
 ok(css.indexOf("#2563eb") >= 0 && css.indexOf("#f59e0b") >= 0, "template blue gold");
 ok(css.indexOf("repeat(2") >= 0 && css.indexOf("is-hero") < 0, "regular grid");

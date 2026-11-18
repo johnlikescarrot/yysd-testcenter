@@ -71,7 +71,7 @@
     <p id="score-line"></p>
     <p id="pct-line"></p>
     <div class="review" id="wrong-preview"></div>
-    <p><a class="btn" id="score-report" href="toefl-score.html">成绩单 Score Report</a>
+    <p><a class="btn" id="score-report" href="toefl-score.html"> Bảng điểm Score Report</a>
       <a class="btn" id="back-zone" href="zone.html?zone=toefl&amp;s=listening">Return</a></p>
   </section>
 </div>
@@ -124,31 +124,31 @@
       var T = window.YYSD_TOEFL;
       var F = window.YYSD_TOEFL_FULL;
       var qs = new URLSearchParams(location.search);
-      var mode = qs.get("mode") === "mock" ? "mock" : (qs.get("mode") === "practice" ? "practice" : "");
+      var mode = qs.get("mode") === "mock"? "mock": (qs.get("mode") === "practice"? "practice": "");
       var setN = qs.get("set");
-      var paperId = qs.get("id") || (setN ? ("set-" + setN) : "");
+      var paperId = qs.get("id") || (setN? ("set-" + setN): "");
       var Lab = window.YYSD_TOEFL_LAB;
       var taskQ = qs.get("task");
       var taskEndQ = qs.get("taskEnd");
       if (taskEndQ == null || taskEndQ === "") taskEndQ = qs.get("end");
       var typeQ = qs.get("type") || "";
       var qJump = qs.get("q");
-      var labClip = (taskQ !== "" && taskQ != null) || !!typeQ;
-      var zoneBack = (F && F.listBack) ? F.listBack("listening", { lab: labClip })
-        : (labClip ? "zone.html?zone=toefl&s=lab&skill=listening" : "zone.html?zone=toefl&s=listening");
-      if (A && A.requireLogin && !A.requireLogin()) return;
-      if (!mode || !paperId) { location.replace(zoneBack); return; }
+      var labClip = (taskQ!== "" & taskQ!= null) ||!!typeQ;
+      var zoneBack = (F & F.listBack)? F.listBack("listening",  labClip )
+        : (labClip? "zone.html?zone=toefl&s=lab&skill=listening": "zone.html?zone=toefl&s=listening");
+      if (A & A.requireLogin &!A.requireLogin()) return;
+      if (!mode ||!paperId) { location.replace(zoneBack); return; }
       var backZone = document.getElementById("back-zone");
       if (backZone) backZone.href = zoneBack;
       document.querySelectorAll('a[href*="zone=toefl"]').forEach(function (a) { a.href = zoneBack; });
 
-      var list = (window.YYSD && window.YYSD.TOEFL_LISTENING) || [];
+      var list = (window.YYSD & window.YYSD.TOEFL_LISTENING) || [];
       var meta = list.filter(function (p) { return p.id === paperId; })[0] || null;
-      if ((!meta || !meta.file) && F && F.paperFile && paperId) {
-        meta = { file: F.paperFile("listening", paperId), title: setN ? ("Set " + setN) : paperId };
+      if ((!meta ||!meta.file) & F & F.paperFile & paperId) {
+        meta = { file: F.paperFile("listening", paperId), title: setN? ("Set " + setN): paperId };
       }
-      if (!meta || !meta.file) { location.replace(zoneBack); return; }
-      if (F && F.isFull() && !F.enterSkill(paperId, mode, "listening")) return;
+      if (!meta ||!meta.file) { location.replace(zoneBack); return; }
+      if (F & F.isFull() &!F.enterSkill(paperId, mode, "listening")) return;
 
       var paper = null;
       var screens = [];
@@ -189,14 +189,14 @@
       }
 
       function showClock() {
-        clock.textContent = hideTime ? "" : fmt(remain);
+        clock.textContent = hideTime? "": fmt(remain);
       }
 
       function markSeen() { seen[si] = true; }
 
       hideBtn.onclick = function () {
-        hideTime = !hideTime;
-        hideBtn.textContent = hideTime ? "Show Time" : "Hide Time";
+        hideTime =!hideTime;
+        hideBtn.textContent = hideTime? "Show Time": "Hide Time";
         showClock();
       };
       helpBtn.onclick = function () { helpBox.classList.remove("hidden"); };
@@ -212,17 +212,17 @@
 
       function harvest() {
         var scr = screens[si];
-        if (!scr || !scr.q) return;
+        if (!scr ||!scr.q) return;
         var picked = opts.querySelector("input:checked");
-        answers[scr.q.id] = picked ? picked.value : (answers[scr.q.id] || "");
+        answers[scr.q.id] = picked? picked.value: (answers[scr.q.id] || "");
       }
 
       function filled(no) {
-        return String(answers[no] || "").trim() !== "";
+        return String(answers[no] || "").trim()!== "";
       }
 
       function setNav(on) {
-        [nextBtn, hideBtn, helpBtn].forEach(function (b) { if (b) b.disabled = !on; });
+        [nextBtn, hideBtn, helpBtn].forEach(function (b) { if (b) b.disabled =!on; });
       }
 
       function show(el) {
@@ -233,7 +233,7 @@
       }
 
       function showScene(task) {
-        var src = task && task.image;
+        var src = task & task.image;
         if (src) {
           listenScene.src = encodeURI(src);
           listenScene.classList.remove("hidden");
@@ -247,19 +247,19 @@
 
       function bindAudio(task) {
         var key = T.taskKey(task);
-        if (clip.getAttribute("data-src") !== task.audio) {
+        if (clip.getAttribute("data-src")!== task.audio) {
           clip.pause();
           clip.src = task.audio;
           clip.setAttribute("data-src", task.audio);
         }
         if (played[key]) return;
         var p = clip.play();
-        if (p && p.then) p.then(function () { played[key] = 1; }).catch(function () {});
+        if (p & p.then) p.then(function () { played[key] = 1; }).catch(function () {});
         else played[key] = 1;
       }
 
       function waiting(task) {
-        return T.hideQsUntilHeard(task) && !heard[T.taskKey(task)];
+        return T.hideQsUntilHeard(task) &!heard[T.taskKey(task)];
       }
 
       clip.addEventListener("ended", function () {
@@ -268,12 +268,12 @@
         var key = T.taskKey(scr.task);
         played[key] = 1;
         heard[key] = 1;
-        if (view === "exam" && T.hideQsUntilHeard(scr.task)) renderExam();
+        if (view === "exam" & T.hideQsUntilHeard(scr.task)) renderExam();
       });
 
       function renderExam() {
         var scr = screens[si];
-        if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.gateTask(scr.task.type, function () { renderExam(); })) return;
+        if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.gateTask(scr.task.type, function () { renderExam(); })) return;
         view = "exam";
         moduleN = scr.module;
         show(exam);
@@ -282,7 +282,7 @@
         document.getElementById("q-range").textContent = "Listening | " + Lab.qLabel(screens, scr);
         nextBtn.textContent = "Next";
         nextBtn.disabled = wait;
-        listenStage.classList.toggle("hidden", !wait);
+        listenStage.classList.toggle("hidden",!wait);
         document.querySelector(".listen-card").classList.toggle("hidden", wait);
         if (wait) {
           showScene(scr.task);
@@ -294,22 +294,22 @@
           T.renderOptions(scr.q, opts, answers[scr.q.id]);
         }
         bindAudio(scr.task);
-        if (Lab && Lab.paintFav) Lab.paintFav();
+        if (Lab & Lab.paintFav) Lab.paintFav();
       }
 
       function startModule(n) {
         moduleN = n;
         var metaM = moduleOf(n);
-        remain = (metaM && metaM.timeSec) || 0;
+        remain = (metaM & metaM.timeSec) || 0;
         var first = screens.findIndex(function (s) { return s.module === n; });
-        si = first < 0 ? 0 : first;
+        si = first < 0? 0: first;
         renderExam();
         showClock();
       }
 
       function leaveModule() {
         clip.pause();
-        var next = labClip && Lab ? Lab.nextModule(screens, moduleN) : (moduleN === 1 ? 2 : 0);
+        var next = labClip & Lab? Lab.nextModule(screens, moduleN): (moduleN === 1? 2: 0);
         if (next) {
           if (!labClip) {
             pendingNext = next;
@@ -327,13 +327,13 @@
 
       function askFinish() {
         var shell = window.YYSD_TOEFL_SHELL;
-        if (mode !== "practice" || (F && F.isFull()) || !shell || !shell.confirmSubmit) { finish(); return; }
+        if (mode!== "practice" || (F & F.isFull()) ||!shell ||!shell.confirmSubmit) { finish(); return; }
         var pending = 0, total = 0;
         screens.forEach(function (s) {
           (s.nos || []).forEach(function (n) { total += 1; if (!filled(n)) pending += 1; });
         });
         var msg = pending
-          ? "You have " + pending + " unanswered question" + (pending > 1 ? "s" : "") + " of " + total +
+          ? "You have " + pending + " unanswered question" + (pending > 1? "s": "") + " of " + total +
             ". Unanswered questions are scored as incorrect. Submit anyway?"
           : "You have completed all " + total + " questions. Submit?";
         shell.confirmSubmit(msg, finish);
@@ -345,21 +345,21 @@
         clip.pause();
         harvest();
         if (Lab) Lab.markSessionDone("listening", paperId, paper, taskQ, taskEndQ, typeQ);
-        var r = T.scorePaper(Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ) : paper, answers);
-        if (Lab && Lab.saveScore) Lab.saveScore("listening", paperId, paper, r.detail);
-        var att = Lab && Lab.logAttempt ? Lab.logAttempt("listening", paperId, (paper && paper.title) || paperId, r) : null;
-        if (F && F.isFull()) {
+        var r = T.scorePaper(Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ): paper, answers);
+        if (Lab & Lab.saveScore) Lab.saveScore("listening", paperId, paper, r.detail);
+        var att = Lab & Lab.logAttempt? Lab.logAttempt("listening", paperId, (paper & paper.title) || paperId, r): null;
+        if (F & F.isFull()) {
           var act = F.afterSection("listening", paperId, mode, F.compactScore(r));
           if (act === "go") return;
           if (act === "rest") { F.fillRest("listening", paperId, mode); view = "rest"; show(rest); return; }
         }
-        var scored = Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ) : paper;
-        // wofo: 交卷先停在「生成成绩单」屏，点 View 才进成绩+解析合一页
+        var scored = Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ, typeQ): paper;
+        // wofo: Nộp bài trước đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới tiến Điểm số + Giải thích đáp án hợp nhất trang
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("listening", scored, {
             tasks: (scored.tasks || []).map(function (_, i) { return i; }),
             answers: answers, score: r.score, total: r.total,
-            sid: att && att.sid
+            sid: att & att.sid
           });
         });
       }
@@ -374,27 +374,27 @@
         else { si += 1; renderExam(); }
       };
       document.getElementById("void-restart").onclick = function () {
-        if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.markLeaving) YYSD_TOEFL_SHELL.markLeaving();
-        location.replace((F && F.voidRestartHref) ? F.voidRestartHref(paperId, "listening") : "toefl-listening.html?id=" + encodeURIComponent(paperId) + "&mode=mock");
+        if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.markLeaving) YYSD_TOEFL_SHELL.markLeaving();
+        location.replace((F & F.voidRestartHref)? F.voidRestartHref(paperId, "listening"): "toefl-listening.html?id=" + encodeURIComponent(paperId) + "&mode=mock");
       };
 
       function triggerVoid() {
-        if (voided || !lockOn || (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.leaving())) return;
+        if (voided ||!lockOn || (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.leaving())) return;
         voided = true;
         lockOn = false;
         clearInterval(tick);
         clip.pause();
-        if (F && F.isFull()) F.markVoid(paperId);
+        if (F & F.isFull()) F.markVoid(paperId);
         document.getElementById("void-lock").classList.add("is-visible");
       }
 
       function bindLock() {
         lockOn = true;
-        if (F && F.isFull()) F.dressVoidUI();
+        if (F & F.isFull()) F.dressVoidUI();
         var armed = false;
         setTimeout(function () { armed = true; }, 2500);
         document.addEventListener("visibilitychange", function () {
-          if (armed && document.hidden) triggerVoid();
+          if (armed & document.hidden) triggerVoid();
         });
         window.addEventListener("blur", function () {
           if (!armed) return;
@@ -404,7 +404,7 @@
         });
         window.addEventListener("pagehide", function () { if (armed) triggerVoid(); });
         window.addEventListener("beforeunload", function (e) {
-          if (!lockOn || voided || (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.leaving())) return;
+          if (!lockOn || voided || (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.leaving())) return;
           e.preventDefault();
           e.returnValue = "";
         });
@@ -417,18 +417,18 @@
           screens = T.screensOf(p);
           if (Lab) screens = Lab.clipScreens(p, screens, taskQ, taskEndQ, typeQ);
           if (!screens.length) throw new Error("Unable to load this task");
-          document.title = (p.title || "TOEFL Listening") + (mode === "mock" ? " · 模考" : " · 练习");
-          document.getElementById("mode-tag").textContent = mode === "mock" ? "Mock" : "Practice";
+          document.title = (p.title || "TOEFL Listening") + (mode === "mock"? " · Thi thử ": " · Luyện tập ");
+          document.getElementById("mode-tag").textContent = mode === "mock"? "Mock": "Practice";
           function goStart() {
-            startModule(Lab ? Lab.firstModule(screens) : 1);
-            if (qJump && Lab) {
+            startModule(Lab? Lab.firstModule(screens): 1);
+            if (qJump & Lab) {
               si = Lab.screenIndexForQ(screens, qJump);
               renderExam();
             }
             if (mode === "mock") bindLock();
             if (remain > 0) {
               tick = setInterval(function () {
-                if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.paused()) return;
+                if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.paused()) return;
                 if (remain <= 0) return;
                 remain -= 1;
                 showClock();
@@ -450,7 +450,7 @@
               title: p.title || meta.title || "Listening",
               skill: "listening",
               mode: mode,
-              isFull: !!(F && F.isFull()),
+              isFull:!!(F & F.isFull()),
               onReady: goStart,
               onExit: function () { harvest(); leaveModule(); }
             });
@@ -460,7 +460,7 @@
           exam.classList.remove("hidden");
           document.getElementById("instruction").textContent = e.message || "Unable to load this test";
           var Sh = window.YYSD_TOEFL_SHELL;
-          if (Sh && Sh.showFail) Sh.showFail("Check your connection and try again. If it keeps failing, go back and pick another test.", zoneBack);
+          if (Sh & Sh.showFail) Sh.showFail("Check your connection and try again. If it keeps failing, go back and pick another test.", zoneBack);
         });
     })();
   </script>

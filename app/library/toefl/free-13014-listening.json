@@ -1,57 +1,57 @@
 {
- "id": "free-13014",
- "title": "Conversation #36",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #36",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13014,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-36"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #36",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/8209c5f2faf44966bb7b07705f95d403.mp3",
-   "transcript": "Woman: Did you finish setting up the new online store?\nMan: Almost. There's just a few more product descriptions to write.\nWoman: Do you need any help with that? I know the stuff we sell pretty intimately.\nMan: Thank you! I'd love to collaborate with you on this. Would you like to meet in my office after lunch?\nWoman: Later in the afternoon would be safer. I have a lunch-time meeting with our newest client today, and I don't know how long that's gonna last.",
-   "questions": [
+  "id": "free-13014",
+  "title": "Conversation #36",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #36",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13014,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-36"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What does the woman offer to help with?",
-     "options": {
-      "A": "Deciding which products to sell",
-      "B": "Finding new clients",
-      "C": "Producing goods",
-      "D": "Describing items for sale"
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问女士主动提出帮忙做什么，属于主旨 / 事实识别题，需抓住对话中女士主动帮忙的核心内容。 选项分析 选项 A：错误。对话未提及帮忙决定售卖产品，属于凭空捏造信息的干扰项。 选项 B：错误。对话未涉及寻找新客户，属于无中生有的干扰项。 选项 C：错误。对话未提到生产商品，属于信息无关的干扰项。 选项 D：正确。男士提到还需写产品描述，女士主动提出帮忙，“Describing items for sale” 是对 “product descriptions” 的准确同义转述。"
-    },
-    {
-     "id": 2,
-     "stem": "Why does the woman mention a client?",
-     "options": {
-      "A": "To emphasize the need for an online store",
-      "B": "To propose a strategy for increasing sales",
-      "C": "To illustrate the importance of collaboration",
-      "D": "To explain why she prefers not to plan a meeting after lunch"
-     },
-     "answer": "D",
-     "analysis": "题干分析 问题询问女士提到客户的原因，属于主旨 / 事实识别题，需定位女士解释时间安排的关键语句。 选项分析 选项 A：错误。女士未用客户强调网店需求，属于细节曲解的干扰项。 选项 B：错误。对话未提出提升销量的策略，属于无中生有的干扰项。 选项 C：错误。女士未用客户说明合作重要性，属于信息错位的干扰项。 选项 D：正确。女士因午餐时间要见新客户，无法午后面谈，是对无法午饭后见面的原因解释，与选项表述完全一致。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #36",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/8209c5f2faf44966bb7b07705f95d403.mp3",
+      "transcript": "Woman: Did you finish setting up the new online store?\nMan: Almost. There's just a few more product descriptions to write.\nWoman: Do you need any help with that? I know the stuff we sell pretty intimately.\nMan: Thank you! I'd love to collaborate with you on this. Would you like to meet in my office after lunch?\nWoman: Later in the afternoon would be safer. I have a lunch-time meeting with our newest client today, and I don't know how long that's gonna last.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What does the woman offer to help with?",
+          "options": {
+            "A": "Deciding which products to sell",
+            "B": "Finding new clients",
+            "C": "Producing goods",
+            "D": "Describing items for sale"
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm phu nhân chủ động đưa ra giúp làm gì, thuộc về ý nghĩa chính / sự thật phân biệt câu, cần bắt lấy trong lúc nói chuyện với nhau phu nhân chủ động giúp trong trung tâm cho. Phương án phân tích Phương án A: Sai. đối thoại Không được đề cập (Not Given) hỗ trợ quyết định bán sản phẩm, thuộc về lăng không bịa đặt tin tức Phương án nhiễu. Phương án B: Sai. đối thoại không liên quan đến tìm kiếm mới hộ khách, thuộc về bịa đặt Phương án nhiễu. Phương án C: Sai. đối thoại không nhắc tới sinh sản hàng hoá, thuộc về tin tức không liên quan Phương án nhiễu. Phương án D: Đúng. nam sĩ nhắc tới còn cần ghi sản phẩm miêu tả, phu nhân chủ động đưa ra hỗ trợ, “Describing items for sale” là đúng “product descriptions” chuẩn xác Đồng nghĩa thuật lại."
+        },
+        {
+          "id": 2,
+          "stem": "Why does the woman mention a client?",
+          "options": {
+            "A": "To emphasize the need for an online store",
+            "B": "To propose a strategy for increasing sales",
+            "C": "To illustrate the importance of collaboration",
+            "D": "To explain why she prefers not to plan a meeting after lunch"
+          },
+          "answer": "D",
+          "analysis": "Câu hỏi phân tích vấn đề hỏi thăm phu nhân nhắc tới khách hàng nguyên nhân, thuộc về ý nghĩa chính / sự thật phân biệt câu, cần Dẫn chứng phu nhân giải thích sắp xếp thời gian mấu chốt câu nói. Phương án phân tích Phương án A: Sai. phu nhân không dùng hộ khách cường điệu bán hàng qua mạng nhu cầu, thuộc về chi tiết xuyên tạc Phương án nhiễu. Phương án B: Sai. đối thoại không đưa ra tăng lên lượng tiêu thụ sách lược, thuộc về bịa đặt Phương án nhiễu. Phương án C: Sai. phu nhân không dùng hộ khách nói rõ hợp tác tầm quan trọng, thuộc về tin tức sai chỗ Phương án nhiễu. Phương án D: Đúng. phu nhân bởi vì cơm trưa thời gian muốn gặp mới hộ khách, không cách nào sau giờ ngọ gặp mặt nói chuyện, là đúng không cách nào sau bữa cơm trưa gặp mặt nguyên nhân giải thích, và Phương án thuyết minh hoàn toàn nhất trí."
+        }
+      ]
+    }
+  ]
 }

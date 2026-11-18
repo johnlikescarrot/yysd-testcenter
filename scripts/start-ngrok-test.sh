@@ -1,11 +1,11 @@
 #!/bin/bash
-# 临时公网内测 — ngrok 暴露 AI 精听（方案 B）
+# tạm thời công trong lưới trắc — ngrok bại lộ AI Nghe sâu (phương án B)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export PATH="$HOME/.local/node/bin:$PATH"
 
-echo "==> 启动 AI 服务器（端口 3000）…"
-lsof -ti :3000 | xargs kill 2>/dev/null || true
+echo "==> khởi động AI Server (cảng 3000) …"
+lsof -ti:3000 | xargs kill 2>/dev/null || true
 sleep 1
 cd "$ROOT/server"
 nohup npm start > /tmp/yysd-api.log 2>&1 &
@@ -13,27 +13,27 @@ for i in 1 2 3 4 5 6 7 8 9 10; do
   curl -sf http://127.0.0.1:3000/api/health >/dev/null 2>&1 && break
   sleep 1
 done
-if ! curl -sf http://127.0.0.1:3000/api/health | grep -q '"ai":true'; then
-  echo "❌ AI 服务器未就绪，查看 /tmp/yysd-api.log"
+if! curl -sf http://127.0.0.1:3000/api/health | grep -q '"ai":true'; then
+  echo "❌ AI Server không sẵn sàng, Xem /tmp/yysd-api.log"
   tail -5 /tmp/yysd-api.log 2>/dev/null || true
   exit 1
 fi
-echo "    AI 服务器已就绪"
+echo " AI Server đã sẵn sàng "
 
-echo "==> 启动 ngrok 隧道…"
-lsof -ti :4040 | xargs kill 2>/dev/null || true
+echo "==> khởi động ngrok đường hầm …"
+lsof -ti:4040 | xargs kill 2>/dev/null || true
 pkill -f "ngrok http 3000" 2>/dev/null || true
 sleep 1
 
-if [ -z "${NGROK_AUTHTOKEN:-}" ] && [ -f "$HOME/.ngrok2/ngrok.yml" ]; then
-  : # 已配置过
-elif [ -z "${NGROK_AUTHTOKEN:-}" ]; then
+if [-z "${NGROK_AUTHTOKEN:-}"] && [-f "$HOME/.ngrok2/ngrok.yml"]; then
+  : # đã phối trí qua
+elif [-z "${NGROK_AUTHTOKEN:-}"]; then
   echo ""
-  echo "⚠️  首次使用需要 ngrok 账号（免费）："
-  echo "   1. 打开 https://dashboard.ngrok.com/signup 注册"
-  echo "   2. 复制 Authtoken，运行："
-  echo "      npx ngrok config add-authtoken <你的token>"
-  echo "   3. 再重新运行本脚本"
+  echo "⚠️ lần đầu sử dụng cần ngrok tài khoản (miễn phí): "
+  echo " 1. mở ra https://dashboard.ngrok.com/signup Đăng ký "
+  echo " 2. phục chế Authtoken, vận hành: "
+  echo " npx ngrok config add-authtoken < của bạn token>"
+  echo " 3. một lần nữa vận hành bản kịch bản gốc "
   echo ""
   exit 1
 fi
@@ -54,8 +54,8 @@ try:
 except: pass
 " 2>/dev/null)
 
-if [ -z "$PUBLIC_URL" ]; then
-  echo "❌ ngrok 未获取到公网地址，查看 /tmp/yysd-ngrok.log"
+if [-z "$PUBLIC_URL"]; then
+  echo "❌ ngrok không thu hoạch đến công mạng lưới địa chỉ, Xem /tmp/yysd-ngrok.log"
   tail -10 /tmp/yysd-ngrok.log 2>/dev/null || true
   exit 1
 fi
@@ -63,14 +63,14 @@ fi
 TEST_URL="${PUBLIC_URL}/test/jingting"
 
 echo ""
-echo "✅ 临时公网链接已生成（发给内测人员）："
+echo "✅ tạm thời công mạng lưới kết nối đã tạo ra (chia bên trong trắc nhân viên): "
 echo ""
-echo "   $TEST_URL"
+echo " $TEST_URL"
 echo ""
-echo "⚠️  注意："
-echo "   · 你的 Mac 必须保持开机，且本脚本服务在运行"
-echo "   · 免费 ngrok 链接重启后会变"
-echo "   · 首次打开可能有 ngrok 提示页，点 Visit Site 继续"
-echo "   · 请用 Chrome 打开，并允许麦克风"
+echo "⚠️ chú ý: "
+echo " · của bạn Mac phải bảo trì khởi động máy, mà lại bản kịch bản gốc phục vụ tại vận hành "
+echo " · miễn phí ngrok kết nối trọng khải sau sẽ thành "
+echo " · lần đầu mở ra khả năng có ngrok nhắc nhở trang, chút:điểm Visit Site Tiếp tục "
+echo " · mời dùng Chrome mở ra, cũng cho phép microphone "
 echo ""
-echo "停止：bash \"$ROOT/scripts/stop-ngrok-test.sh\""
+echo " đình chỉ: bash \"$ROOT/scripts/stop-ngrok-test.sh\""

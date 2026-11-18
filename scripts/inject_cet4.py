@@ -21,7 +21,7 @@ def polish(words):
     for w in words:
         w = dict(w)
         tag = dict(w.get("examTag") or {})
-        tag["source"] = "大学英语四级"
+        tag["source"] = " đại học Tiếng Anh Đại học B1 "
         w["examTag"] = tag
         w["mnemonic"] = w.get("root") or w.get("mnemonic") or ""
         w["exampleEN"] = w.get("exampleEn") or w.get("exampleEN") or ""
@@ -41,15 +41,15 @@ def polish(words):
 def write_list(n, words, excel=None):
     ws = polish(words)
     got = [w["word"] for w in ws]
-    if excel is not None and got != list(excel):
-        diff = [(a, b) for a, b in zip(got, excel) if a != b][:5]
+    if excel is not None and got!= list(excel):
+        diff = [(a, b) for a, b in zip(got, excel) if a!= b][:5]
         raise SystemExit("order mismatch: %s" % (diff or "len %s/%s" % (len(got), len(excel))))
     meta = {
         "listNo": n,
         "band": band_for(n),
-        "title": "单元 %s" % n,
+        "title": " Bài %s" % n,
         "published": True,
-        "sourceNote": "Headword order from 四级单词List1-35.xlsx; cards rewritten to gaozhong field standard.",
+        "sourceNote": "Headword order from Từ vựng Đại học List1-35.xlsx; cards rewritten to gaozhong field standard.",
         "words": ws,
     }
     DATA.mkdir(parents=True, exist_ok=True)
@@ -59,7 +59,7 @@ def write_list(n, words, excel=None):
     html = render_html(meta).replace("const wordData = [", "var wordData = [", 1)
     if "yysd-hide-legacy-test" not in html:
         html = html.replace("</style>\n</head>", HIDE, 1)
-    out = HTML_DIR / ("四级单词LIST%s.html" % n)
+    out = HTML_DIR / (" Từ vựng Đại học LIST%s.html" % n)
     out.write_text(html, encoding="utf-8")
     print("LIST%s %s words → %s" % (n, len(ws), out.name))
     return out

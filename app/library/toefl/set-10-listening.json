@@ -16,7 +16,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR01",
-      "titleZh": "听句选回应 01",
+      "titleZh": "nghe câu chọn đáp lại 01",
       "code": "LR01",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR1.mp3",
@@ -32,7 +32,7 @@
           },
           "answer": "D",
           "transcript": "Where did you buy your laptop?",
-          "analysis": "问在哪买的笔记本。D 说网上买的。"
+          "analysis": "hỏi mua ở đâu Laptop(bút kí). D nói trên mạng mua."
         }
       ]
     },
@@ -40,7 +40,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR02",
-      "titleZh": "听句选回应 02",
+      "titleZh": "nghe câu chọn đáp lại 02",
       "code": "LR02",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR2.mp3",
@@ -56,7 +56,7 @@
           },
           "answer": "A",
           "transcript": "How often do you drink coffee?",
-          "analysis": "问多久喝一次咖啡。A 说只在晚自习时喝。"
+          "analysis": "hỏi bao lâu uống một lần cà phê. A nói chỉ ở tự học buổi tối lúc uống."
         }
       ]
     },
@@ -64,7 +64,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR03",
-      "titleZh": "听句选回应 03",
+      "titleZh": "nghe câu chọn đáp lại 03",
       "code": "LR03",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR3.mp3",
@@ -80,7 +80,7 @@
           },
           "answer": "C",
           "transcript": "Why don't you like this creative writing assignment?",
-          "analysis": "问为何不喜欢这篇创意写作作业。C 说对人物不感兴趣。"
+          "analysis": "hỏi vì sao không thích cái này bài sáng ý Viết bài tập. C nói đúng nhân vật không có hứng thú."
         }
       ]
     },
@@ -88,7 +88,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR04",
-      "titleZh": "听句选回应 04",
+      "titleZh": "nghe câu chọn đáp lại 04",
       "code": "LR04",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR4.mp3",
@@ -104,7 +104,7 @@
           },
           "answer": "B",
           "transcript": "Have you all signed the student club roster?",
-          "analysis": "问是否都签了社团名单。B 说有些学生刚到。"
+          "analysis": "hỏi có hay không đều ký xã đoàn danh sách. B nói có chút Học viên vừa xong."
         }
       ]
     },
@@ -112,7 +112,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR05",
-      "titleZh": "听句选回应 05",
+      "titleZh": "nghe câu chọn đáp lại 05",
       "code": "LR05",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR5.mp3",
@@ -128,7 +128,7 @@
           },
           "answer": "B",
           "transcript": "Should we go hiking or biking with the Student Activities Club this weekend?",
-          "analysis": "问周末徒步还是骑行。B 说两种都行。"
+          "analysis": "hỏi cuối tuần đi bộ hay cưỡi đi. B nói hai loại đều được."
         }
       ]
     },
@@ -136,7 +136,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR06",
-      "titleZh": "听句选回应 06",
+      "titleZh": "nghe câu chọn đáp lại 06",
       "code": "LR06",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR6.mp3",
@@ -152,7 +152,7 @@
           },
           "answer": "D",
           "transcript": "Can you help me with this new software?",
-          "analysis": "请对方帮忙用新软件。D 建议去机房找人帮忙。"
+          "analysis": "mời đối phương hỗ trợ dùng mới phần mềm. D đề nghị đi phòng máy tìm người hỗ trợ."
         }
       ]
     },
@@ -160,7 +160,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR07",
-      "titleZh": "听句选回应 07",
+      "titleZh": "nghe câu chọn đáp lại 07",
       "code": "LR07",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR7.mp3",
@@ -176,7 +176,7 @@
           },
           "answer": "B",
           "transcript": "Is this your first time visiting the campus museum?",
-          "analysis": "问是否第一次来校园博物馆。B 说以前来过。"
+          "analysis": "hỏi có hay không lần đầu tiên tới sân trường nhà bảo tàng. B nói trước kia đã tới."
         }
       ]
     },
@@ -184,7 +184,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR08",
-      "titleZh": "听句选回应 08",
+      "titleZh": "nghe câu chọn đáp lại 08",
       "code": "LR08",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR8.mp3",
@@ -200,7 +200,7 @@
           },
           "answer": "A",
           "transcript": "How do you spend your Sunday mornings?",
-          "analysis": "问周日早上做什么。A 说通常和室友出去购物。"
+          "analysis": "hỏi chủ nhật buổi sáng làm cái gì. A thuyết phục thường và bạn cùng phòng đi ra ngoài mua sắm."
         }
       ]
     },
@@ -208,7 +208,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR09",
-      "titleZh": "听句选回应 09",
+      "titleZh": "nghe câu chọn đáp lại 09",
       "code": "LR09",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR9.mp3",
@@ -224,7 +224,7 @@
           },
           "answer": "C",
           "transcript": "Which book do you recommend?",
-          "analysis": "问推荐哪本书。C 推荐教授写的专著。"
+          "analysis": "hỏi Đề xuất quyển sách kia. C Đề xuất dạy dỗ viết chuyên tác."
         }
       ]
     },
@@ -232,7 +232,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR10",
-      "titleZh": "听句选回应 10",
+      "titleZh": "nghe câu chọn đáp lại 10",
       "code": "LR10",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR10.mp3",
@@ -248,7 +248,7 @@
           },
           "answer": "C",
           "transcript": "What's your favorite way to spend a day off?",
-          "analysis": "问休息日喜欢怎么过。C 说喜欢在校园外散步。"
+          "analysis": "hỏi ngày nghỉ ưa thích làm sao sống. C nói ưa thích ở sân trường tản ra ngoài bước."
         }
       ]
     },
@@ -256,7 +256,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR11",
-      "titleZh": "听句选回应 11",
+      "titleZh": "nghe câu chọn đáp lại 11",
       "code": "LR11",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR11.mp3",
@@ -272,7 +272,7 @@
           },
           "answer": "A",
           "transcript": "Where can I buy a train ticket?",
-          "analysis": "问哪买火车票。A 说学生会有咨询台。"
+          "analysis": "hỏi cái đó mua vé xe lửa. A nói hội học sinh có cố vấn đài."
         }
       ]
     },
@@ -280,7 +280,7 @@
       "type": "choose_response",
       "module": 1,
       "title": "LR12",
-      "titleZh": "听句选回应 12",
+      "titleZh": "nghe câu chọn đáp lại 12",
       "code": "LR12",
       "instruction": "Choose the best response.",
       "audio": "library/toefl/audio/Set10-L-CR12.mp3",
@@ -296,7 +296,7 @@
           },
           "answer": "D",
           "transcript": "What are your thoughts on the new attendance policy?",
-          "analysis": "问对新考勤政策的看法。D 说还在形成意见。"
+          "analysis": "hỏi đối với mới chấm công chánh sách cái nhìn. D nói vẫn còn hình thành ý kiến."
         }
       ]
     },
@@ -305,7 +305,7 @@
       "module": 1,
       "title": "Subway Delay",
       "image": "library/toefl/img/listen/listen-subway.jpg",
-      "titleZh": "地铁延误",
+      "titleZh": "tàu điện ngầm đến trễ",
       "code": "C01",
       "instruction": "Listen to a conversation.",
       "audio": "library/toefl/audio/Set10-L-LCN1.mp3",
@@ -321,7 +321,7 @@
             "D": "Paying for a taxi"
           },
           "answer": "B",
-          "analysis": "need to be on campus by 10，担心迟到。"
+          "analysis": "need to be on campus by 10, lo lắng muộn."
         },
         {
           "id": 2,
@@ -342,7 +342,7 @@
       "module": 1,
       "title": "Travel to a Conference",
       "image": "library/toefl/img/listen/listen-travel.jpg",
-      "titleZh": "去开会",
+      "titleZh": "đi họp",
       "code": "C02",
       "instruction": "Listen to a conversation.",
       "audio": "library/toefl/audio/Set10-L-LCN2.mp3",
@@ -379,7 +379,7 @@
       "module": 1,
       "title": "Weekend Plans",
       "image": "library/toefl/img/listen/listen-outdoors.jpg",
-      "titleZh": "周末计划",
+      "titleZh": "cuối tuần kế hoạch",
       "code": "C03",
       "instruction": "Listen to a conversation.",
       "audio": "library/toefl/audio/Set10-L-LCN3.mp3",
@@ -416,7 +416,7 @@
       "module": 1,
       "title": "Parents Visiting",
       "image": "library/toefl/img/listen/listen-apartment.jpg",
-      "titleZh": "父母来访",
+      "titleZh": "cha mẹ tới chơi",
       "code": "C04",
       "instruction": "Listen to a conversation.",
       "audio": "library/toefl/audio/Set10-L-LCN4.mp3",
@@ -453,7 +453,7 @@
       "module": 1,
       "title": "Physics App",
       "image": "library/toefl/img/listen/listen-lab.jpg",
-      "titleZh": "物理应用",
+      "titleZh": "Vật lý hữu ích,thiết thực",
       "code": "C05",
       "instruction": "Listen to a conversation.",
       "audio": "library/toefl/audio/Set10-L-LCN5.mp3",
@@ -481,7 +481,7 @@
             "D": "To cancel his appointment"
           },
           "answer": "A",
-          "analysis": "I was going to go to the tutoring center instead，说明原先的计划。"
+          "analysis": "I was going to go to the tutoring center instead, nói rõ kế hoạch ban đầu."
         }
       ]
     },
@@ -490,7 +490,7 @@
       "module": 1,
       "title": "New Computer Lab",
       "image": "library/toefl/img/listen/listen-lab.jpg",
-      "titleZh": "新机房",
+      "titleZh": "máy mới phòng",
       "code": "A01",
       "instruction": "Listen to an announcement.",
       "audio": "library/toefl/audio/Set10-L-ANO1.mp3",
@@ -506,7 +506,7 @@
             "D": "It has fewer computers than before"
           },
           "answer": "B",
-          "analysis": "a significant financial investment，暗示设备昂贵。"
+          "analysis": "a significant financial investment, ám chỉ thiết bị đắt đỏ."
         },
         {
           "id": 2,
@@ -527,7 +527,7 @@
       "module": 1,
       "title": "Campus Parking",
       "image": "library/toefl/img/listen/listen-office.jpg",
-      "titleZh": "校园停车",
+      "titleZh": "sân trường đỗ xe",
       "code": "A02",
       "instruction": "Listen to an announcement.",
       "audio": "library/toefl/audio/Set10-L-ANO2.mp3",
@@ -543,7 +543,7 @@
             "D": "It will only serve faculty lots"
           },
           "answer": "C",
-          "analysis": "now begin running at 6 a.m. instead of 8 a.m.，运营时间延长。"
+          "analysis": "now begin running at 6 a.m. instead of 8 a.m., đưa vào hoạt động thời gian kéo dài."
         },
         {
           "id": 2,
@@ -564,7 +564,7 @@
       "module": 1,
       "title": "Photo Contest",
       "image": "library/toefl/img/listen/listen-photo.jpg",
-      "titleZh": "摄影比赛",
+      "titleZh": "chụp ảnh trận đấu",
       "code": "A03",
       "instruction": "Listen to an announcement.",
       "audio": "library/toefl/audio/Set10-L-ANO3.mp3",
@@ -601,7 +601,7 @@
       "module": 1,
       "title": "Hydrophones and Upsweep Sounds",
       "image": "library/toefl/img/listen/listen-lecture.jpg",
-      "titleZh": "水听器与升频声",
+      "titleZh": "nước nghe khí và thăng nhiều lần âm thanh",
       "code": "AT1",
       "instruction": "Listen to a lecture.",
       "audio": "library/toefl/audio/Set10-L-AT1.mp3",

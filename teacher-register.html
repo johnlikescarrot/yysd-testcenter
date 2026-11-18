@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>管理员注册 · 学习平台</title>
+  <title>Quản trị viên Đăng ký · Học tập bình đài</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,77 +16,76 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="index.html" class="minimal-brand" aria-label="首页">
+      <a href="index.html" class="minimal-brand" aria-label="Trang chủ">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>学习平台</b>
+          <b>Học tập bình đài</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <a href="index.html">返回学生端</a>
-        <a href="teacher-login.html" id="nav-login-link">教师登录</a>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <a href="index.html"> Quay lại Học viên đầu</a>
+        <a href="teacher-login.html" id="nav-login-link"> Giáo viên đăng nhập</a>
       </nav>
     </div>
   </header>
 
   <main class="minimal-shell minimal-main auth-main">
     <div class="auth-layout">
-      <aside class="auth-aside reveal" aria-label="介绍">
+      <aside class="auth-aside reveal" aria-label="giới thiệu">
         <div class="auth-aside__logo" aria-hidden="true">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
         </div>
-        <span class="auth-aside__eyebrow" id="aside-eyebrow">教师注册</span>
-        <h2 class="auth-aside__title" id="aside-title">注册教师账号<br>管理教学事务</h2>
-        <p class="auth-aside__desc" id="aside-desc">使用机构提供的教师注册密钥完成注册。登录后可查看学生成绩、布置练习。</p>
+        <span class="auth-aside__eyebrow" id="aside-eyebrow"> Đăng ký giáo viên </span>
+        <h2 class="auth-aside__title" id="aside-title">Đăng ký Giáo viên tài khoản <br>Quản trị dạy học sự vụ</h2>
+        <p class="auth-aside__desc" id="aside-desc">sử dụng cơ cấu cung cấp Đăng ký giáo viên Mã khóa hoàn thành Đăng ký. Đăng nhập sau có thể tra nhìn Học viên Điểm số, bố trí Luyện tập. </p>
         <ul class="auth-aside__points" id="aside-points">
-          <li>机构密钥注册</li>
-          <li>学生成绩汇总</li>
-          <li>布置练习任务</li>
+          <li> cơ cấu Mã khóa Đăng ký </li>
+          <li> Học viên Điểm số tập hợp </li>
+          <li> bố trí Luyện tập nhiệm vụ </li>
         </ul>
       </aside>
       <section class="auth-card reveal">
         <div class="auth-tabs">
-          <a class="auth-tabs__item" href="teacher-login.html" id="tab-login-link">登录</a>
-          <span class="auth-tabs__item is-active">注册</span>
+          <a class="auth-tabs__item" href="teacher-login.html" id="tab-login-link"> Đăng nhập</a>
+          <span class="auth-tabs__item is-active"> Đăng ký </span>
         </div>
-        <h1 class="auth-card__title" id="card-title">教师注册</h1>
-        <p class="auth-card__desc" id="card-desc">请向机构管理员获取教师注册密钥。</p>
+        <h1 class="auth-card__title" id="card-title">Đăng ký giáo viên</h1>
+        <p class="auth-card__desc" id="card-desc">mời hướng cơ cấu Quản trị viên thu hoạch Đăng ký giáo viên Mã khóa. </p>
 
         <form class="auth-form" id="register-form" novalidate>
           <label class="auth-field" id="role-field" hidden>
-            <span>注册身份</span>
+            <span> Đăng ký Vai trò </span>
             <select id="reg-role">
-              <option value="teacher">老师</option>
-              <option value="org_admin">本校管理员</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="org_admin">trường chúng ta Quản trị viên</option>
             </select>
           </label>
           <label class="auth-field">
-            <span>姓名（可选）</span>
-            <input type="text" id="name" autocomplete="name" maxlength="40" placeholder="便于识别，如：王老师">
+            <span> tính danh (có thể chọn) </span>
+            <input type="text" id="name" autocomplete="name" maxlength="40" placeholder="dễ dàng cho phân biệt, ví dụ: Vương lão sư">
           </label>
           <label class="auth-field">
-            <span>手机号</span>
-            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 位中国大陆手机号" required>
+            <span> Số điện thoại </span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="11 chữ số điện thoại" required>
           </label>
           <label class="auth-field" id="key-field">
-            <span id="key-label">教师注册密钥</span>
-            <input type="password" id="teacher-key" autocomplete="off" placeholder="机构提供的专属密钥">
+            <span id="key-label"> Đăng ký giáo viên Mã khóa </span>
+            <input type="password" id="teacher-key" autocomplete="off" placeholder="cơ cấu cung cấp dành riêng Mã khóa">
           </label>
           <label class="auth-field">
-            <span>设置密码</span>
-            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="至少 6 位" required>
+            <span> thiết trí Mật khẩu </span>
+            <input type="password" id="password" autocomplete="new-password" minlength="6" maxlength="64" placeholder="Tối thiểu 6 ký tự" required>
           </label>
           <label class="auth-field">
-            <span>确认密码</span>
-            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="再次输入密码" required>
+            <span> Xác nhận mật khẩu </span>
+            <input type="password" id="confirm" autocomplete="new-password" minlength="6" maxlength="64" placeholder="lần nữa điền mật mã vào" required>
           </label>
           <p class="auth-msg" id="msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn--primary btn--block pressable" id="submit-btn">注册并进入教师端</button>
+          <button type="submit" class="btn btn--primary btn--block pressable" id="submit-btn">Đăng ký đồng tiến nhập giáo sư đầu</button>
         </form>
 
-        <p class="auth-legal">
-          已有账号？<a href="teacher-login.html" id="foot-login-link">去登录</a>
+        <p class="auth-legal">đã có tài khoản? <a href="teacher-login.html" id="foot-login-link"> Đăng nhập ngay</a>
         </p>
       </section>
     </div>
@@ -108,7 +107,7 @@
     var form = document.getElementById("register-form");
     var msgEl = document.getElementById("msg");
     var inviteToken = new URLSearchParams(location.search).get("invite") || "";
-    var tenantMode = A.isHqSite && !A.isHqSite();
+    var tenantMode = A.isHqSite &!A.isHqSite();
 
     if (T.getToken()) {
       var mode = "";
@@ -123,27 +122,27 @@
 
     function showMsg(text, ok) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (ok ? " auth-msg--ok" : text ? " auth-msg--err" : "");
+      msgEl.className = "auth-msg" + (ok? " auth-msg--ok": text? " auth-msg--err": "");
     }
 
     function setupInvite(d) {
       var org = d.org || {};
-      var name = org.name || "本校";
-      document.getElementById("card-title").textContent = "管理员注册";
+      var name = org.name || " trường chúng ta ";
+      document.getElementById("card-title").textContent = " Quản trị viên Đăng ký ";
       document.getElementById("card-desc").textContent =
-        "您正在注册「" + name + "」的管理员账号。设置密码后即可管理本校师生。";
-      document.getElementById("aside-title").innerHTML = "成为" + name + "<br>管理员";
-      document.getElementById("aside-desc").textContent = "无需教师密钥。完成注册后请妥善保管密码。";
+        " bạn đang Đăng ký «" + name + "» Quản trị viên tài khoản. thiết trí Mật khẩu sau là được Quản trị trường chúng ta thầy trò. ";
+      document.getElementById("aside-title").innerHTML = " trở thành " + name + "<br>Quản trị viên ";
+      document.getElementById("aside-desc").textContent = " không cần Giáo viên Mã khóa. hoàn thành Đăng ký sau mời thích đáng đảm bảo Mật khẩu. ";
       document.getElementById("aside-eyebrow").textContent = name;
-      document.getElementById("submit-btn").textContent = "完成注册并进入";
+      document.getElementById("submit-btn").textContent = " hoàn thành Đăng ký đồng tiến nhập ";
       document.getElementById("key-field").hidden = true;
       document.getElementById("teacher-key").required = false;
-      if (d.invite && d.invite.phoneFull) {
+      if (d.invite & d.invite.phoneFull) {
         var phoneEl = document.getElementById("phone");
         phoneEl.value = d.invite.phoneFull;
         phoneEl.readOnly = true;
       }
-      if (A && A.applyOrgBrand) A.applyOrgBrand(org);
+      if (A & A.applyOrgBrand) A.applyOrgBrand(org);
     }
 
     var tenantLoginUrl = "login.html?next=" + encodeURIComponent("teacher.html");
@@ -156,22 +155,22 @@
       });
       document.getElementById("role-field").hidden = false;
       document.getElementById("teacher-key").required = true;
-      document.getElementById("card-title").textContent = "工作人员注册";
+      document.getElementById("card-title").textContent = " nhân viên công tác Đăng ký ";
       document.getElementById("card-desc").textContent =
-        "向学校索取注册密钥，选择身份后完成注册。";
-      document.getElementById("aside-eyebrow").textContent = "工作人员";
-      document.getElementById("aside-title").innerHTML = "密钥注册";
+        " dốc lòng cầu học trường học cố gắng Mã khóa đăng ký, lựa chọn Vai trò sau hoàn thành Đăng ký. ";
+      document.getElementById("aside-eyebrow").textContent = " nhân viên công tác ";
+      document.getElementById("aside-title").innerHTML = " Mã khóa Đăng ký ";
       document.getElementById("aside-desc").textContent =
-        "老师或管理员使用对应密钥注册；登录统一使用 login 页。";
+        " Giáo viên hoặc Quản trị viên sử dụng đối ứng Mã khóa Đăng ký; Đăng nhập thống nhất sử dụng login trang. ";
       document.getElementById("aside-points").innerHTML =
-        "<li>注册密钥</li><li>手机号 + 密码登录</li><li>成绩与任务管理</li>";
-      document.getElementById("key-label").textContent = "注册密钥";
-      document.getElementById("teacher-key").placeholder = "注册密钥";
-    } else if (inviteToken && A && A.api) {
+        "<li> Mã khóa đăng ký </li><li> Số điện thoại + Mật khẩu Đăng nhập </li><li> Điểm số và nhiệm vụ Quản trị </li>";
+      document.getElementById("key-label").textContent = " Mã khóa đăng ký ";
+      document.getElementById("teacher-key").placeholder = " Mã khóa đăng ký ";
+    } else if (inviteToken & A & A.api) {
       A.api("/api/tenant/invite/" + encodeURIComponent(inviteToken))
         .then(setupInvite)
         .catch(function (e) {
-          showMsg(e.message || "邀请无效");
+          showMsg(e.message || " mời không có hiệu quả ");
           form.querySelectorAll("input,button").forEach(function (el) { el.disabled = true; });
         });
     } else {
@@ -197,9 +196,9 @@
       T.api("/api/teacher/register", { method: "POST", body: body })
         .then(function (d) {
           if (d.alreadyRegistered) {
-            showMsg(d.message || "请直接登录", true);
+            showMsg(d.message || " mời trực tiếp Đăng nhập ", true);
             setTimeout(function () {
-              location.href = tenantMode ? tenantLoginUrl : "teacher-login.html";
+              location.href = tenantMode? tenantLoginUrl: "teacher-login.html";
             }, 1200);
             return;
           }
@@ -212,15 +211,15 @@
               role: "teacher",
               displayName: teacher.name || "",
               avatarUrl: teacher.avatarUrl || "",
-              isAdmin: !!teacher.isAdmin,
-              isPlatformAdmin: !!teacher.isPlatformAdmin
+              isAdmin:!!teacher.isAdmin,
+              isPlatformAdmin:!!teacher.isPlatformAdmin
             }));
             localStorage.setItem("yysd:teacher:user", JSON.stringify({
               phone: teacher.phone || body.phone,
               name: teacher.name || "",
               avatarUrl: teacher.avatarUrl || "",
-              isAdmin: !!teacher.isAdmin,
-              isPlatformAdmin: !!teacher.isPlatformAdmin
+              isAdmin:!!teacher.isAdmin,
+              isPlatformAdmin:!!teacher.isPlatformAdmin
             }));
           } catch (e) {}
           try {

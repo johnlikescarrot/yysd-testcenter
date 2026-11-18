@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 OUT_DIR = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
-PDF = Path("/Users/frankman/Downloads/剑1-20学术类真题") / "剑雅20 .pdf"
+PDF = Path("/Users/frankman/Downloads/Cambridge 1-20 Học thuật loại thực câu ") / "Cambridge IELTS 20.pdf"
 RAW_CACHE = ROOT / "scripts/cam20_scripts_raw.txt"
 GOLD_T1P1 = ROOT / "library/practice/jingting/cam20-test1-section1.html"
 
@@ -100,7 +100,7 @@ def normalize_speakers(text: str) -> str:
 def split_sentences(text: str) -> list[str]:
     text = strip_exam_chrome(text)
     text = normalize_speakers(text)
-    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"[\t]+", " ", text)
     text = re.sub(r"\n{2,}", "\n", text).strip()
     names = "|".join(SPEAKERS)
     lines, buf = [], ""
@@ -200,7 +200,7 @@ def fix_trailing_spans(sentences: list[dict], dur: float) -> list[dict]:
     if last_good < 0 or last_good >= len(sents) - 1:
         return sentences
     # if last_good already eats almost all remaining time, shrink it
-    trail = sents[last_good + 1 :]
+    trail = sents[last_good + 1:]
     if not any(s["end"] <= s["start"] + 0.05 for s in trail):
         return sentences
     words = max(1, len(sents[last_good]["en"].split()))
@@ -318,7 +318,7 @@ def convert_jingting():
             path = OUT_DIR / f"{pid}.json"
             obj = {
                 "id": pid,
-                "title": f"剑20 Test {test} Part {sec}",
+                "title": f"Cambridge 20 Test {test} Part {sec}",
                 "audioUrl": f"library/mock/cambridge-listening/{part['audio']}",
                 "examHref": f"library/mock/cambridge-listening/cambridge-20-test-{test}.html",
                 "sentences": [],
@@ -353,8 +353,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             {
                 "role": "system",
                 "content": (
-                    "你是雅思听力原文译者。把每句英译中，保留说话人标签（如 WOMAN:/MAN:/TAMARA:）不译。"
-                    "只输出 JSON 数组，长度与输入句数相同，元素为中文字符串，不要其它文字。"
+                    " ngươi là IELTS Listening Bài gốc dịch người. đem mỗi câu Anh dịch Vừa, giữ lại người nói chuyện nhãn hiệu (ví dụ WOMAN:/MAN:/TAMARA:) không dịch. "
+                    " chỉ phát ra JSON mấy tổ, chiều dài và đưa vào câu mấy giống nhau, nguyên tố {vì:là} Tiếng Việt ký tự chuỗi, không nên khác văn tự. "
                 ),
             },
             {"role": "user", "content": numbered},
@@ -375,8 +375,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             text = text[4:]
         text = text.strip()
     arr = json.loads(text)
-    if len(arr) != len(sentences):
-        raise ValueError(f"length {len(arr)} != {len(sentences)}")
+    if len(arr)!= len(sentences):
+        raise ValueError(f"length {len(arr)}!= {len(sentences)}")
     return [str(x) for x in arr]
 
 
@@ -391,18 +391,18 @@ def fill_zh(batch_size: int = 20):
             continue
         print(f"{path.name}: translating {len(missing)}…")
         for off in range(0, len(missing), batch_size):
-            idxs = missing[off : off + batch_size]
+            idxs = missing[off: off + batch_size]
             ens = [sents[i]["en"] for i in idxs]
             try:
                 zhs = qwen_translate_batch(ens)
             except Exception as e:
-                print("  retry", e)
+                print(" retry", e)
                 time.sleep(2)
                 zhs = qwen_translate_batch(ens)
             for i, zh in zip(idxs, zhs):
                 sents[i]["zh"] = zh
             path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n")
-            print(f"  filled {idxs[0]+1}–{idxs[-1]+1}")
+            print(f" filled {idxs[0]+1}–{idxs[-1]+1}")
             time.sleep(0.35)
 
 
@@ -428,11 +428,11 @@ def update_manifest():
                 "id": pid,
                 "file": f"practice/jingting/data/{pid}.json",
                 "directHref": f"jingting-player.html?id={pid}",
-                "title": f"听力精听：剑20 Test {t} Part {p}",
+                "title": f" Nghe sâu (Intensive Listening): Cambridge 20 Test {t} Part {p}",
                 "zone": "mock",
                 "subject": "jingting",
                 "duration": 0,
-                "description": "全文/逐句精听 + AI 跟读：真音频、句子时间轴、隐文/译文、倍速与单句循环。",
+                "description": " toàn văn / trục câu Nghe sâu + AI Đọc nhại: thực âm tần, câu thời gian trục, ẩn văn / văn dịch, Tốc độ và Lặp lại câu hiện tại. ",
                 "added": "2026-07-23",
             })
     last = -1
@@ -442,7 +442,7 @@ def update_manifest():
     if last < 0:
         items.extend(new)
     else:
-        items = items[: last + 1] + new + items[last + 1 :]
+        items = items[: last + 1] + new + items[last + 1:]
     if "items" in man:
         man["items"] = items
     else:

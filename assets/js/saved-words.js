@@ -1,4 +1,4 @@
-/* saved-words.js — AI 生词本列表 */
+/* saved-words.js — AI Sổ từ đã lưu liệt biểu List */
 (function () {
   "use strict";
   var Y = window.YYSD;
@@ -8,7 +8,7 @@
   var navLink = document.querySelector('#nav a[data-zone="study"]');
   if (navLink) navLink.classList.add("is-active");
   document.getElementById("year").textContent = new Date().getFullYear();
-  document.title = "生词本 · 优益思达国际课程中心";
+  document.title = " Sổ từ đã lưu · Trung tâm Luyện thi Quốc tế YYSD ";
 
   function formatDate(iso) {
     if (!iso) return "—";
@@ -30,22 +30,22 @@
     var words = filtered();
     var n = Y.savedWordCount();
     var html = '<div class="cam-hero vocab-hero wrong-words-hero bento-panel">' +
-      '<div class="cam-hero__badge"><div class="lbl">生词</div><div class="num">' + n + "</div></div>" +
-      "<div><h1>AI 生词本</h1>" +
-      '<div class="meta">' + (n ? n + " 个收藏生词" : "暂无生词 · 在单词区用 AI 查词后可加入") + "</div>" +
+      '<div class="cam-hero__badge"><div class="lbl"> chử mới </div><div class="num">' + n + "</div></div>" +
+      "<div><h1>AI Sổ từ đã lưu </h1>" +
+      '<div class="meta">' + (n? n + " cất chứa chử mới ": " tạm thời chưa có chử mới · tại Khu từ vựng dùng AI tra từ sau có thể gia nhập ") + "</div>" +
       '<div class="vocab-hero__actions">' +
-        '<a class="btn btn--primary btn--sm" href="zone.html?zone=study&s=vocab">去 AI 查词</a>' +
-        (n ? '<button type="button" class="btn btn--ghost btn--sm" id="btn-clear">清空生词本</button>' : "") +
+        '<a class="btn btn--primary btn--sm" href="zone.html?zone=study&s=vocab"> đi AI tra từ </a>' +
+        (n? '<button type="button" class="btn btn--ghost btn--sm" id="btn-clear"> Xóa trống Sổ từ đã lưu </button>': "") +
       "</div></div></div>" +
       '<div class="wrong-words-toolbar">' +
         '<label class="catalog-search wrong-words-search">' +
           '<span class="catalog-search__ico" aria-hidden="true">⌕</span>' +
-          '<input type="search" id="word-search" placeholder="搜索生词…" autocomplete="off" spellcheck="false" value="' +
+          '<input type="search" id="word-search" placeholder=" tìm kiếm chử mới …" autocomplete="off" spellcheck="false" value="' +
             Y.esc(searchQuery) + '">' +
         "</label></div>";
 
     if (!words.length) {
-      html += '<div class="soon-box premium-empty">' + (n ? "没有匹配的生词。" : "还没有生词。回到单词区用 AI 查词，再点「加入生词本」。") + "</div>";
+      html += '<div class="soon-box premium-empty">' + (n? " không có thất phối chử mới. ": " còn không có chử mới. trở lại Khu từ vựng dùng AI tra từ, gọi thêm « gia nhập Sổ từ đã lưu ». ") + "</div>";
     } else {
       html += '<div class="wrong-words-list">' + words.map(function (w) {
         var key = String(w.word).toLowerCase();
@@ -60,8 +60,8 @@
             "</div>" +
           "</div>" +
           '<div class="wrong-word-card__actions">' +
-            '<button type="button" class="btn btn--ghost btn--sm btn-speak" data-word="' + Y.esc(w.word) + '">🔊 发音</button>' +
-            '<button type="button" class="btn btn--ghost btn--sm btn-remove" data-key="' + Y.esc(key) + '">移出</button>' +
+            '<button type="button" class="btn btn--ghost btn--sm btn-speak" data-word="' + Y.esc(w.word) + '">🔊 phát âm </button>' +
+            '<button type="button" class="btn btn--ghost btn--sm btn-remove" data-key="' + Y.esc(key) + '"> dời ra </button>' +
           "</div></article>";
       }).join("") + "</div>";
     }
@@ -80,7 +80,7 @@
     var clearBtn = document.getElementById("btn-clear");
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
-        if (!confirm("确定清空生词本？")) return;
+        if (!confirm(" Đồng ý Xóa trống Sổ từ đã lưu? ")) return;
         Y.clearSavedWords();
         render();
       });

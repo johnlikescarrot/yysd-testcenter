@@ -39,7 +39,7 @@ def speech_runs(path):
     hop = max(1, int(fr * HOP))
     flags = []
     for i in range(0, n, hop):
-        sl = raw[i * ch * sw : (i + hop) * ch * sw]
+        sl = raw[i * ch * sw: (i + hop) * ch * sw]
         samples = struct.unpack("<" + "h" * (len(sl) // 2), sl) if sw == 2 else [b - 128 for b in sl]
         if not samples:
             continue
@@ -84,14 +84,14 @@ def intro_then_seven(src):
         raise SystemExit("no intro boundary in " + src)
     rest = [r for r in runs if r[0] >= intro_end - 0.15]
     sents = merge_to(rest, 7)
-    if len(sents) != 7:
+    if len(sents)!= 7:
         raise SystemExit("%s: expected 7 sentences after intro, got %d" % (src, len(sents)))
     bounds = []
     for i, (a, b) in enumerate(sents):
         left = intro_end if i == 0 else (sents[i - 1][1] + a) / 2
         right = duration if i == 6 else (b + sents[i + 1][0]) / 2
         bounds.append((round(left, 2), round(right, 2)))
-    print("%s  intro 0–%.2f  sentences %s" % (os.path.basename(src), intro_end, bounds))
+    print("%s intro 0–%.2f sentences %s" % (os.path.basename(src), intro_end, bounds))
     return round(intro_end, 2), bounds
 
 
@@ -122,7 +122,7 @@ def slice_m4a(wav, start, end, dest):
 
 
 # Whisper timestamps on Set2-S-LR2.mp3, snapped to mid-silence between
-# the 7 应复述 sentences. Silence-split had put "Repeat only once" on Q1.
+# the 7 ứng với thuật lại sentences. Silence-split had put "Repeat only once" on Q1.
 SET2_CUTS = [
     ("intro", 0.00, 10.54),
     (1, 10.54, 12.57),
@@ -163,7 +163,7 @@ def patch_set(n):
     title, slug = SCENE[n]
     image = "library/toefl/img/scenes/%s.jpg" % slug
     repeats = [t for t in paper["tasks"] if t.get("type") == "repeat"]
-    if len(repeats) != 7:
+    if len(repeats)!= 7:
         raise SystemExit("set %d has %d repeat tasks" % (n, len(repeats)))
 
     if n == 1:

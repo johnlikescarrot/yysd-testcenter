@@ -1,46 +1,46 @@
 {
- "id": "free-12888",
- "title": "Choose a Response #214",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #214",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12888,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-214"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #214",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/6d7c8db5c02a4522882a741ba15f2836.mp3",
-   "questions": [
+  "id": "free-12888",
+  "title": "Choose a Response #214",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #214",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12888,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-214"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "It will be in the conference room.",
-      "B": "It's been rescheduled to Monday morning.",
-      "C": "I'll do that next time.",
-      "D": "We went out for lunch afterward."
-     },
-     "answer": "B",
-     "transcript": "When is your job interview?",
-     "stemZh": "你的工作面试在什么时候？",
-     "analysis": "When is your job interview? 题干分析 题干是由 When 引导的特殊疑问句，意为 “你的工作面试在什么时候？”，考点是对询问时间作出正确回应。 选项分析 选项 A：回答内容为 “在会议室”，回答的是地点而非时间。 选项 B：此选项为正确答案，说明时间改到周一早上，直接回答时间。 选项 C：回答内容为 “我下次做”，与面试时间无关。 选项 D：回答内容为 “我们之后去吃午饭了”，与问题无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #214",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/6d7c8db5c02a4522882a741ba15f2836.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "It will be in the conference room.",
+            "B": "It's been rescheduled to Monday morning.",
+            "C": "I'll do that next time.",
+            "D": "We went out for lunch afterward."
+          },
+          "answer": "B",
+          "transcript": "When is your job interview?",
+          "stemZh": "công tác của bạn phỏng vấn từ lúc nào?",
+          "analysis": "When is your job interview? Câu hỏi phân tích Câu hỏi là do When dẫn dắt đặc thù câu nghi vấn, ý là “ công tác của bạn phỏng vấn từ lúc nào? ”, địa điểm thi là đúng hỏi thăm thời gian làm ra Đúng đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ tại phòng họp ”, trả lời tất nhiên chút:điểm mà không phải là thời gian. Phương án B: này Phương án là Đáp án đúng, nói rõ thời gian sửa đến sáng sớm thứ hai, trực tiếp trả lời thời gian. Phương án C: trả lời nội dung là “ tôi lần sau làm ”, và phỏng vấn thời gian không quan hệ. Phương án D: trả lời nội dung là “ chúng tôi về sau đi ăn cơm trưa ”, và vấn đề không quan hệ."
+        }
+      ]
+    }
+  ]
 }

@@ -1,46 +1,46 @@
 {
- "id": "free-12271",
- "title": "Choose a Response #29",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #29",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12271,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-29"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #29",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/89a3f3492cb04bfca6089ed5df312929.mp3",
-   "questions": [
+  "id": "free-12271",
+  "title": "Choose a Response #29",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #29",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12271,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-29"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "The speaker was tired.",
-      "B": "All right, I think it's a good idea.",
-      "C": "No, I found it to be quite stimulating.",
-      "D": "It's quite a distance from here."
-     },
-     "answer": "C",
-     "transcript": "Didn't you think the speech was a bit slow? ​​",
-     "stemZh": "你不觉得那场演讲有点慢吗？",
-     "analysis": "Didn't you think the speech was a bit slow? 题目问的是：你不觉得演讲有点慢吗？ 选项分析： A. 演讲者累了。这猜测的是演讲速度慢的原因，但没有直接回应是否同意“慢”这一看法，因此A选项错误。 B. 好吧，我觉得这是个好主意。这与演讲节奏无关，因此B选项错误。 C. 不，我觉得它相当有启发性。这用“No”来回应反问句（实际意思是“我不同意你觉得慢”），并给出了正面评价，因此C选项正确。 D. 离这里相当远。这谈论的是距离，与演讲节奏无关，因此D选项错误。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #29",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/89a3f3492cb04bfca6089ed5df312929.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "The speaker was tired.",
+            "B": "All right, I think it's a good idea.",
+            "C": "No, I found it to be quite stimulating.",
+            "D": "It's quite a distance from here."
+          },
+          "answer": "C",
+          "transcript": "Didn't you think the speech was a bit slow? ​​",
+          "stemZh": "bạn không cảm thấy trận kia diễn thuyết có chút chậm không?",
+          "analysis": "Didn't you think the speech was a bit slow? đề mục hỏi là: bạn không cảm thấy diễn thuyết có chút chậm không? Phương án phân tích: A. diễn thuyết người mệt mỏi. cái này đoán là diễn thuyết tốc độ chậm nguyên nhân, nhưng không có trực tiếp đáp lại có đồng ý hay không “ chậm ” cái nhìn này, bởi vậy A Phương án Sai. B. được rồi, ta cảm thấy được đó là một ý kiến hay. cái này cùng diễn thuyết tiết tấu không quan hệ, bởi vậy B Phương án Sai. C. không, ta cảm thấy được nó tương đối có dẫn dắt tính. cái này dùng “No” đối lại hỏi lại câu (thực tế ý là “ tôi không đồng ý bạn cảm thấy chậm ”), cũng cấp ra chính diện đánh giá, bởi vậy C Phương án Đúng. D. cách nơi này tương đối xa. cái này đàm luận là khoảng cách, và diễn thuyết tiết tấu không quan hệ, bởi vậy D Phương án Sai. ​​"
+        }
+      ]
+    }
+  ]
 }

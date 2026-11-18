@@ -31,7 +31,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
     q: searchParams.q,
     country: searchParams.country,
     page,
-    sort: searchParams.sort === "score" ? "score" : "rank",
+    sort: searchParams.sort === "score"? "score": "rank",
   });
   const pages = Math.max(1, Math.ceil(total / pageSize));
 
@@ -48,7 +48,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
       if (v) p.set(k, v);
     });
     const s = p.toString();
-    return s ? `?${s}` : "";
+    return s? `?${s}`: "";
   };
 
   return (
@@ -78,7 +78,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
             key={y}
             href={`/${system}/${params.slug}/${y}`}
             className={`mono border px-2.5 py-1 text-xs ${
-              y === year ? "border-[var(--ink)] bg-[var(--ink)] text-white" : "border-[var(--line)] hover:border-[var(--ink)]"
+              y === year? "border-[var(--ink)] bg-[var(--ink)] text-white": "border-[var(--line)] hover:border-[var(--ink)]"
             }`}
           >
             {y}
@@ -87,9 +87,9 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
       </div>
 
       <form className="panel flex flex-wrap gap-2 p-3 text-sm" method="get">
-        <input name="q" defaultValue={searchParams.q || ""} placeholder="筛校名…" className="input-desk max-w-xs py-2" />
+        <input name="q" defaultValue={searchParams.q || ""} placeholder=" si trường học tên …" className="input-desk max-w-xs py-2" />
         <select name="country" defaultValue={searchParams.country || ""} className="input-desk w-auto py-2">
-          <option value="">全部地区</option>
+          <option value=""> toàn bộ khu </option>
           {["US", "UK", "CA", "AU", "CN", "HK", "SG", "JP", "KR", "DE", "FR", "CH", "NL", "SE", "OTHER"].map((c) => (
             <option key={c} value={c}>
               {countryLabel(c)}
@@ -97,11 +97,11 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
           ))}
         </select>
         <select name="sort" defaultValue={searchParams.sort || "rank"} className="input-desk w-auto py-2">
-          <option value="rank">按排名</option>
-          <option value="score">按总分</option>
+          <option value="rank"> theo như bài danh </option>
+          <option value="score"> theo như Tổng điểm </option>
         </select>
         <button type="submit" className="btn-ink py-2">
-          筛选
+           bộ lọc
         </button>
       </form>
 
@@ -126,7 +126,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
                   </Link>
                 </td>
                 <td className="mono px-4 py-2.5 text-[11px] text-[var(--muted)]">{countryLabel(r.university.country)}</td>
-                <td className="mono px-4 py-2.5">{r.score?.toFixed(1) ?? "—"}</td>
+                <td className="mono px-4 py-2.5">{r.score?.toFixed(1)?? "—"}</td>
               </tr>
             ))}
           </tbody>
@@ -137,7 +137,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
         <nav className="flex flex-wrap items-center gap-2 text-sm">
           {page > 1 && (
             <Link href={`/${system}/${params.slug}/${year}${qs({ page: String(page - 1) })}`} className="btn-ghost py-1.5">
-              上一页
+               trang trước
             </Link>
           )}
           <span className="mono text-[var(--muted)]">
@@ -145,7 +145,7 @@ export default async function RankingTablePage({ params, searchParams }: Props) 
           </span>
           {page < pages && (
             <Link href={`/${system}/${params.slug}/${year}${qs({ page: String(page + 1) })}`} className="btn-ghost py-1.5">
-              下一页
+               trang kế tiếp
             </Link>
           )}
         </nav>

@@ -28,9 +28,9 @@ export async function POST(req: Request) {
     const bg: AdvisorBackground | null = body.background
       ? {
           gpa: body.background.gpa,
-          toefl: body.background.toefl ?? null,
-          ielts: body.background.ielts ?? null,
-          gre: body.background.gre ?? null,
+          toefl: body.background.toefl?? null,
+          ielts: body.background.ielts?? null,
+          gre: body.background.gre?? null,
           undergradSchool: body.background.undergradSchool,
           undergradMajor: body.background.undergradMajor,
         }
@@ -44,11 +44,11 @@ export async function POST(req: Request) {
     return NextResponse.json(result);
   } catch (e) {
     if (e instanceof z.ZodError) {
-      return NextResponse.json({ error: "参数无效", details: e.flatten() }, { status: 400 });
+      return NextResponse.json({ error: " tham số không có hiệu quả ", details: e.flatten() }, { status: 400 });
     }
     console.error(e);
     return NextResponse.json(
-      { error: e instanceof Error ? e.message : "顾问服务失败" },
+      { error: e instanceof Error? e.message: " cố vấn phục vụ thất bại " },
       { status: 500 }
     );
   }

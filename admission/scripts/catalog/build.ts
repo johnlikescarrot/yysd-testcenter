@@ -31,263 +31,263 @@ const PROGRAMS_BY_FIELD: Record<Field, ProgMeta[]> = {
   cs: [
     {
       program: "Computer Science",
-      programZh: "计算机科学",
+      programZh: " Khoa học máy tính ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1.5–2 years",
       durationUK: "1 year",
-      blurb: "系统、算法、软件与计算理论方向的研究生课程。",
+      blurb: " hệ thống, phép tính, phần mềm và tính toán lý luận phương hướng nghiên cứu sinh chương trình học. ",
     },
     {
       program: "Software Engineering",
-      programZh: "软件工程",
+      programZh: " phần mềm công trình ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "面向软件设计、工程实践与大型系统交付的专业学位。",
+      blurb: " mặt hướng phần mềm xếp đặt thiết kế, công trình thực tế và cỡ lớn hệ thống giao phó chuyên nghiệp học vị. ",
     },
     {
       program: "Cybersecurity",
-      programZh: "网络安全",
+      programZh: " Internet Security ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "安全体系、攻防与隐私保护相关研究生项目。",
+      blurb: " an toàn hệ thống, công thủ và việc riêng tư bảo hộ tương quan nghiên cứu sinh hạng mục. ",
     },
   ],
   engineering: [
     {
       program: "Electrical Engineering",
-      programZh: "电气工程",
+      programZh: " điện khí công trình ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1.5–2 years",
       durationUK: "1 year",
-      blurb: "电子、通信、电力与控制系统等方向。",
+      blurb: " điện tử, thư từ qua lại, điện lực và hệ thống điều khiển {các loại:đợi} phương hướng. ",
     },
     {
       program: "Mechanical Engineering",
-      programZh: "机械工程",
+      programZh: " máy móc công trình ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1.5–2 years",
       durationUK: "1 year",
-      blurb: "力学、制造、热流与机电一体化方向。",
+      blurb: " cơ học, chế tạo, nhiệt lưu và cơ điện nhất thể hóa phương hướng. ",
     },
   ],
   data_ai: [
     {
       program: "Data Science",
-      programZh: "数据科学",
+      programZh: " số liệu khoa học ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "统计、机器学习与数据工程交叉的应用型研究生项目。",
+      blurb: " công tác thống kê, máy móc Học tập và số liệu công trình đan chéo hữu ích,thiết thực hình nghiên cứu sinh hạng mục. ",
     },
     {
       program: "Artificial Intelligence",
-      programZh: "人工智能",
+      programZh: " trí tuệ nhân tạo ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "机器学习、深度学习与智能系统方向。",
+      blurb: " máy móc Học tập, chiều sâu Học tập và hệ thống trí năng phương hướng. ",
     },
     {
       program: "Business Analytics",
-      programZh: "商业分析",
+      programZh: " Kinh doanh phân tích ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–1.5 years",
       durationUK: "1 year",
-      blurb: "数据分析驱动商业决策的跨学科项目（偏应用）。",
+      blurb: " số liệu phân tích khu động Kinh doanh quyết sách vượt qua ngành học hạng mục (thiên hữu ích,thiết thực). ",
     },
   ],
   business: [
     {
       program: "Business Analytics",
-      programZh: "商业分析",
+      programZh: " Kinh doanh phân tích ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–1.5 years",
       durationUK: "1 year",
-      blurb: "数据与管理结合的商科研究生项目。",
+      blurb: " số liệu và Quản trị kết hợp Kinh doanh nghiên cứu sinh hạng mục. ",
     },
     {
       program: "Management",
-      programZh: "管理学",
+      programZh: " Quản trị học ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "组织管理、战略与领导力方向。",
+      blurb: " tổ chức Quản trị, chiến lược và lãnh đạo lực phương hướng. ",
     },
   ],
   finance: [
     {
       program: "Finance",
-      programZh: "金融",
+      programZh: " tài chính ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "公司金融、资产定价与金融市场方向。",
+      blurb: " công ty tài chính, tài sản định giá và thị trường chứng khoán phương hướng. ",
     },
     {
       program: "Financial Engineering",
-      programZh: "金融工程",
+      programZh: " tài chính công trình ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–1.5 years",
       durationUK: "1 year",
-      blurb: "量化金融、衍生品与风险管理方向。",
+      blurb: " định lượng tài chính, diễn sinh phẩm và mạo hiểm Quản trị phương hướng. ",
     },
   ],
   science: [
     {
       program: "Physics",
-      programZh: "物理学",
+      programZh: " vật lý học ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1.5–2 years",
       durationUK: "1 year",
-      blurb: "物理学研究型或授课型研究生项目。",
+      blurb: " vật lý học nghiên cứu hình hoặc giảng bài hình nghiên cứu sinh hạng mục. ",
     },
     {
       program: "Mathematics",
-      programZh: "数学",
+      programZh: " Toán học ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1.5–2 years",
       durationUK: "1 year",
-      blurb: "纯数/应用数学方向研究生课程。",
+      blurb: " thuần túy mấy / hữu ích,thiết thực Toán học phương hướng nghiên cứu sinh chương trình học. ",
     },
   ],
   life_health: [
     {
       program: "Public Health",
-      programZh: "公共卫生",
+      programZh: " vệ sinh công cộng ",
       degreeUS: "MPH",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "流行病学、健康政策与公共卫生实践。",
+      blurb: " bệnh truyền nhiễm học, Sức khỏe chính sách và vệ sinh công cộng thực tế. ",
     },
     {
       program: "Biotechnology",
-      programZh: "生物技术",
+      programZh: " Sinh học kỹ thuật ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: true,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "生物技术研发与产业应用方向。",
+      blurb: " Sinh học kỹ thuật nghiên cứu phát minh và sản nghiệp hữu ích,thiết thực phương hướng. ",
     },
   ],
   arts_design: [
     {
       program: "Design",
-      programZh: "设计",
+      programZh: " xếp đặt thiết kế ",
       degreeUS: "MDes",
       degreeUK: "MA",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "产品/交互/视觉等设计类研究生项目。",
+      blurb: " sản phẩm / lẫn nhau / thị giác {các loại:đợi} xếp đặt thiết kế loại nghiên cứu sinh hạng mục. ",
     },
     {
       program: "Media Studies",
-      programZh: "媒体研究",
+      programZh: " truyền thông nghiên cứu ",
       degreeUS: "MA",
       degreeUK: "MA",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "媒体、传播与数字文化方向。",
+      blurb: " truyền thông, truyền bá và con số văn hóa phương hướng. ",
     },
   ],
   social: [
     {
       program: "International Relations",
-      programZh: "国际关系",
+      programZh: " quốc tế quan hệ ",
       degreeUS: "MA",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "国际政治、外交与全球治理方向。",
+      blurb: " quốc tế chính trị, ngoại giao và toàn cầu thống trị phương hướng. ",
     },
     {
       program: "Sociology",
-      programZh: "社会学",
+      programZh: " xã hội học ",
       degreeUS: "MA",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "社会理论与实证研究方法方向。",
+      blurb: " xã hội lý luận và chứng minh thực tế nghiên cứu phương pháp phương hướng. ",
     },
   ],
   education: [
     {
       program: "Education",
-      programZh: "教育学",
+      programZh: " Giáo dục học ",
       degreeUS: "MEd",
       degreeUK: "MA",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "教育理论、课程与教学实践方向。",
+      blurb: " Giáo dục lý luận, chương trình học và dạy học thực tế phương hướng. ",
     },
   ],
   law: [
     {
       program: "Law",
-      programZh: "法学（LLM）",
+      programZh: " luật học (LLM) ",
       degreeUS: "LLM",
       degreeUK: "LLM",
       isStem: false,
       durationUS: "1 year",
       durationUK: "1 year",
-      blurb: "法学硕士，常见于国际法/商法等细分方向。",
+      blurb: " luật học Thạc sĩ, thông thường với đất nước tế pháp / thương lượng pháp {các loại:đợi} mảnh điểm phương hướng. ",
     },
   ],
   other: [
     {
       program: "Interdisciplinary Studies",
-      programZh: "跨学科研究",
+      programZh: " vượt qua ngành học nghiên cứu ",
       degreeUS: "MS",
       degreeUK: "MSc",
       isStem: false,
       durationUS: "1–2 years",
       durationUK: "1 year",
-      blurb: "跨学科定制型研究生项目。",
+      blurb: " vượt qua ngành học định chế(*hàng đặt theo yêu cầu) hình nghiên cứu sinh hạng mục. ",
     },
   ],
 };
 
 function thresholds(country: Country, tier: number, field: Field) {
-  const baseAvg = tier === 1 ? 3.75 : tier === 2 ? 3.55 : 3.35;
+  const baseAvg = tier === 1? 3.75: tier === 2? 3.55: 3.35;
   const fieldBump =
-    field === "cs" || field === "data_ai" || field === "finance" ? 0.08 : 0;
+    field === "cs" || field === "data_ai" || field === "finance"? 0.08: 0;
   const avgGpa = Math.min(3.95, baseAvg + fieldBump);
   const minGpa = Math.max(2.8, avgGpa - 0.45);
 
@@ -296,38 +296,38 @@ function thresholds(country: Country, tier: number, field: Field) {
       avgGpa,
       minGpa,
       minToefl: null as number | null,
-      minIelts: tier === 1 ? 7.0 : tier === 2 ? 6.5 : 6.0,
+      minIelts: tier === 1? 7.0: tier === 2? 6.5: 6.0,
     };
   }
   return {
     avgGpa,
     minGpa,
-    minToefl: tier === 1 ? 100 : tier === 2 ? 90 : 80,
-    minIelts: tier === 1 ? 7.0 : 6.5,
+    minToefl: tier === 1? 100: tier === 2? 90: 80,
+    minIelts: tier === 1? 7.0: 6.5,
   };
 }
 
 function tuitionNote(country: Country, tier: number): string {
   if (country === "US") {
     return tier === 1
-      ? "约 USD 50,000–80,000 / 年（学费，因项目而异；以官网为准）"
+      ? " ước USD 50,000–80,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) "
       : tier === 2
-        ? "约 USD 35,000–60,000 / 年（学费，因项目而异；以官网为准）"
-        : "约 USD 25,000–45,000 / 年（学费，因项目而异；以官网为准）";
+        ? " ước USD 35,000–60,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) "
+        : " ước USD 25,000–45,000 / năm (học phí, bởi vì hạng mục mà khác; dùng Website Games làm chuẩn) ";
   }
   if (country === "UK") {
     return tier === 1
-      ? "约 GBP 28,000–45,000 / 年（国际生学费，以官网为准）"
-      : "约 GBP 20,000–35,000 / 年（国际生学费，以官网为准）";
+      ? " ước GBP 28,000–45,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) "
+      : " ước GBP 20,000–35,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
   }
   if (country === "CA") {
-    return "约 CAD 25,000–55,000 / 年（国际生学费，以官网为准）";
+    return " ước CAD 25,000–55,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
   }
-  return "约 AUD 35,000–55,000 / 年（国际生学费，以官网为准）";
+  return " ước AUD 35,000–55,000 / năm (quốc tế sinh học phí, dùng Website Games làm chuẩn) ";
 }
 
 function greRequired(country: Country, field: Field, tier: number): boolean | null {
-  if (country !== "US") return false;
+  if (country!== "US") return false;
   if (field === "arts_design" || field === "education") return false;
   if (tier === 1 && (field === "cs" || field === "data_ai" || field === "finance"))
     return null; // often optional now
@@ -335,10 +335,10 @@ function greRequired(country: Country, field: Field, tier: number): boolean | nu
 }
 
 function deadline(country: Country): string {
-  if (country === "US") return "常见轮次：12/15、1/15、2/1、3/15（以项目页为准）";
-  if (country === "UK") return "常见：滚动录取或 1–3 月截止（以项目页为准）";
-  if (country === "CA") return "常见：12–2 月截止（以项目页为准）";
-  return "常见：10–12 月优先轮 / 次年 2 月（以项目页为准）";
+  if (country === "US") return " thông thường theo trình tự: 12/15, 1/15, 2/1, 3/15 (dùng hạng mục trang làm chuẩn) ";
+  if (country === "UK") return " thông thường: chuyển động trúng tuyển hoặc 1–3 tháng Hạn chót (dùng hạng mục trang làm chuẩn) ";
+  if (country === "CA") return " thông thường: 12–2 tháng Hạn chót (dùng hạng mục trang làm chuẩn) ";
+  return " thông thường: 10–12 tháng ưu tiên luân phiên / năm sau 2 tháng (dùng hạng mục trang làm chuẩn) ";
 }
 
 export function expandInstitutions(list: Institution[]): SchoolSeed[] {
@@ -353,15 +353,15 @@ export function expandInstitutions(list: Institution[]): SchoolSeed[] {
       const progs = PROGRAMS_BY_FIELD[field] || PROGRAMS_BY_FIELD.other;
       for (const meta of progs.slice(0, 2)) {
         const ukish = inst.country === "UK" || inst.country === "AU";
-        const degree = ukish ? meta.degreeUK : meta.degreeUS;
+        const degree = ukish? meta.degreeUK: meta.degreeUS;
         const slug = slugify([inst.name, meta.program, degree, inst.country]);
         if (seen.has(slug)) continue;
         seen.add(slug);
         const t = thresholds(inst.country, inst.tier, field);
-        const duration = ukish ? meta.durationUK : meta.durationUS;
+        const duration = ukish? meta.durationUK: meta.durationUS;
         const lang =
-          t.minToefl != null
-            ? `TOEFL ≥ ${t.minToefl} 或同等 IELTS`
+          t.minToefl!= null
+            ? `TOEFL ≥ ${t.minToefl} hoặc tương đương IELTS`
             : `IELTS ≥ ${t.minIelts}`;
         out.push({
           slug,
@@ -379,7 +379,7 @@ export function expandInstitutions(list: Institution[]): SchoolSeed[] {
           gpaScale: 4.0,
           website: inst.website,
           officialUrl: inst.website,
-          admissionRequirements: `${inst.name} ${meta.program}（${degree}）。建议 GPA ≥ ${t.minGpa.toFixed(1)}（4.0 制近似），均分参考约 ${t.avgGpa.toFixed(2)}；语言 ${lang}。细则以官网为准。`,
+          admissionRequirements: `${inst.name} ${meta.program} (${degree}). đề nghị GPA ≥ ${t.minGpa.toFixed(1)} (4.0 chế xấp xỉ), chia đều tham khảo ước ${t.avgGpa.toFixed(2)}; ngôn ngữ ${lang}. quy tắc chi tiết dùng Website Games làm chuẩn. `,
           tier: inst.tier,
           duration,
           tuitionNote: tuitionNote(inst.country, inst.tier),
@@ -387,7 +387,7 @@ export function expandInstitutions(list: Institution[]): SchoolSeed[] {
           greRequired: greRequired(inst.country, field, inst.tier),
           applicationDeadline: deadline(inst.country),
           blurb: meta.blurb,
-          summaryOfficial: `${meta.programZh}（${meta.program}）是 ${inst.name} 常见的研究生授课/专业型项目之一，学制约 ${duration}。${meta.blurb}申请门槛与材料清单请以学校官方项目页为准；本站摘要用于顾问检索与对比，不替代官方通知。官方入口：${inst.website}`,
+          summaryOfficial: `${meta.programZh} (${meta.program}) là ${inst.name} thường gặp nghiên cứu sinh giảng bài / chuyên nghiệp hình hạng mục một trong, chế độ giáo dục ước ${duration}. ${meta.blurb} thân thỉnh cánh cửa và tài liệu danh sách mời dùng trường học chính thức hạng mục trang làm chuẩn; trạm[trang web] trích yếu dùng cho cố vấn kiểm tra và đối lập, không thay thế chính thức thông tri. chính thức cửa vào: ${inst.website}`,
         });
       }
     }

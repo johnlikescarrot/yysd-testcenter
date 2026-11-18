@@ -33,7 +33,7 @@ STEM_START = re.compile(
 )
 STEM_LEAD = re.compile(
     r"^(?:At the (?:end|beginning) of the conversation,\s+"
-    r"|According to (?:the )?(?:conversation|speakers|man|woman),\s+"
+    r"|According to (?:the)?(?:conversation|speakers|man|woman),\s+"
     r"|Based on the conversation,\s+)",
     re.I,
 )
@@ -270,7 +270,7 @@ def green_answers(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if not any(p[1] for p in group) or len(group) != 4:
+        if not any(p[1] for p in group) or len(group)!= 4:
             continue
         out.append("ABCD"[next(i for i, p in enumerate(group) if p[1])])
     json.dump(out, open(cache, "w"))
@@ -386,7 +386,7 @@ def pill_sets(stem):
             groups[-1].append(pill)
     out = []
     for group in groups:
-        if len(group) != 4 or not any(p[1] for p in group):
+        if len(group)!= 4 or not any(p[1] for p in group):
             continue
         opts = {}
         answer = ""
@@ -460,7 +460,7 @@ def attach_stems(stem, found):
         else:
             groups[-1].append(pill)
     tops = [g[0][0] for g in groups if len(g) == 4 and any(p[1] for p in g)]
-    if len(tops) != len(found):
+    if len(tops)!= len(found):
         return found
     for pill, y in zip(found, tops):
         crop = im.crop((x0, max(0, y - 120), x1, max(0, y - 2)))
@@ -493,7 +493,7 @@ def from_pills(lines, stem):
         if "?" in s:
             s = s[:s.index("?") + 1].strip()
         elif englishish(s) and len(s) > 20:
-            s = s.rstrip(" .") + "?"
+            s = s.rstrip(".") + "?"
         if s.endswith("?") and englishish(s):
             stems.append(s)
         elif len(page) == len(found):
@@ -597,7 +597,7 @@ def main():
             "set": "L-LCN" + n,
             "title": "L-LCN%s-%s" % (n, k),
             "image": pair,
-            "titleZh": "对话",
+            "titleZh": " đối thoại ",
             "code": item["code"] or ("C%02d" % int(k)),
             "instruction": "Listen to a conversation.",
             "audio": "library/toefl/audio/bank-l-lcn/" + audio_name,
@@ -607,7 +607,7 @@ def main():
         tasks.append(task)
     paper = {
         "id": "bank-lcn",
-        "title": "题块库 · 对话",
+        "title": " Ngân hàng dạng bài · đối thoại ",
         "skill": "listening",
         "source": "bank",
         "modules": [{"n": 1, "timeSec": 0, "from": 1, "to": max(1, qid - 1)}],

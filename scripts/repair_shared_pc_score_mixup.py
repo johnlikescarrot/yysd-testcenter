@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Repair user_scores / cloned attempts after shared-PC login sync mixup.
 
-Default: dry-run. Pass --apply to write. Targets 谢超然(4) / 刘雨茜(5) unless --all-clones.
+Default: dry-run. Pass --apply to write. Targets tạ siêu nhiên (4) / lưu vũ thiến (5) unless --all-clones.
 """
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ def main() -> int:
     a, b = args.uid_a, args.uid_b
     names = {
         r["id"]: (r["display_name"] or "")
-        for r in c.execute("SELECT id, display_name FROM users WHERE id IN (?, ?)", (a, b))
+        for r in c.execute("SELECT id, display_name FROM users WHERE id IN (?,?)", (a, b))
     }
     name_a = names.get(a, "")
     name_b = names.get(b, "")
@@ -36,7 +36,7 @@ def main() -> int:
     for uid, foreign in ((a, name_b), (b, name_a)):
         if not foreign or len(foreign) < 2:
             continue
-        for row in c.execute("SELECT item_id, payload FROM user_scores WHERE user_id = ?", (uid,)):
+        for row in c.execute("SELECT item_id, payload FROM user_scores WHERE user_id =?", (uid,)):
             try:
                 rec = json.loads(row["payload"])
             except Exception:
@@ -49,12 +49,12 @@ def main() -> int:
     a_fp = {
         f"{r['item_id']}|{json.loads(r['payload']).get('score')}": r["item_id"]
         for r in c.execute(
-            "SELECT item_id, payload FROM user_score_attempts WHERE user_id = ?", (a,)
+            "SELECT item_id, payload FROM user_score_attempts WHERE user_id =?", (a,)
         )
     }
-    for row in c.execute("SELECT item_id, payload FROM user_scores WHERE user_id = ?", (b,)):
+    for row in c.execute("SELECT item_id, payload FROM user_scores WHERE user_id =?", (b,)):
         n_att = c.execute(
-            "SELECT COUNT(*) AS n FROM user_score_attempts WHERE user_id = ? AND item_id = ?",
+            "SELECT COUNT(*) AS n FROM user_score_attempts WHERE user_id =? AND item_id =?",
             (b, row["item_id"]),
         ).fetchone()["n"]
         if n_att:
@@ -69,11 +69,11 @@ def main() -> int:
 
     # 3) Restore B's user_scores from own latest attempt when score_row diverges
     for row in c.execute(
-        "SELECT item_id, payload, updated_at FROM user_scores WHERE user_id = ?", (b,)
+        "SELECT item_id, payload, updated_at FROM user_scores WHERE user_id =?", (b,)
     ):
         att = c.execute(
             "SELECT payload, created_at FROM user_score_attempts "
-            "WHERE user_id = ? AND item_id = ? ORDER BY created_at DESC LIMIT 1",
+            "WHERE user_id =? AND item_id =? ORDER BY created_at DESC LIMIT 1",
             (b, row["item_id"]),
         ).fetchone()
         if not att:
@@ -83,7 +83,7 @@ def main() -> int:
             apay = json.loads(att["payload"])
         except Exception:
             continue
-        if sc.get("score") != apay.get("score") or str(sc.get("date") or "") != str(att["created_at"]):
+        if sc.get("score")!= apay.get("score") or str(sc.get("date") or "")!= str(att["created_at"]):
             actions.append(("restore_score", b, row["item_id"], apay.get("score"), att["created_at"]))
 
     # 4) Identical created_at+item clones between A/B — keep lower attempt id
@@ -93,7 +93,7 @@ def main() -> int:
         FROM user_score_attempts a
         JOIN user_score_attempts b
           ON a.item_id = b.item_id AND a.created_at = b.created_at
-        WHERE a.user_id = ? AND b.user_id = ?
+        WHERE a.user_id =? AND b.user_id =?
         """,
         (a, b),
     ).fetchall()
@@ -111,12 +111,12 @@ def main() -> int:
     for act in actions:
         kind = act[0]
         if kind in ("del_score", "del_score_orphan"):
-            c.execute("DELETE FROM user_scores WHERE user_id = ? AND item_id = ?", (act[1], act[2]))
+            c.execute("DELETE FROM user_scores WHERE user_id =? AND item_id =?", (act[1], act[2]))
         elif kind == "restore_score":
             uid, item_id = act[1], act[2]
             att = c.execute(
                 "SELECT payload, created_at FROM user_score_attempts "
-                "WHERE user_id = ? AND item_id = ? ORDER BY created_at DESC LIMIT 1",
+                "WHERE user_id =? AND item_id =? ORDER BY created_at DESC LIMIT 1",
                 (uid, item_id),
             ).fetchone()
             if not att:
@@ -125,11 +125,11 @@ def main() -> int:
             # user_scores historically omit wrong[]
             rec.pop("wrong", None)
             c.execute(
-                "UPDATE user_scores SET payload = ?, updated_at = ? WHERE user_id = ? AND item_id = ?",
+                "UPDATE user_scores SET payload =?, updated_at =? WHERE user_id =? AND item_id =?",
                 (json.dumps(rec, ensure_ascii=False), att["created_at"], uid, item_id),
             )
         elif kind == "del_clone_attempt":
-            c.execute("DELETE FROM user_score_attempts WHERE id = ?", (act[1],))
+            c.execute("DELETE FROM user_score_attempts WHERE id =?", (act[1],))
     c.commit()
     print(f"applied: {len(actions)} actions")
     return 0

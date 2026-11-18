@@ -13,20 +13,20 @@
   var OPT_KEYS = ["A", "B", "C", "D", "E", "F"];
 
   var TYPE_LABEL = {
-    listening_choice: "听音选词",
-    english_to_chinese: "看英选中",
-    chinese_to_english: "看中选英",
-    spelling: "拼写填空"
+    listening_choice: " nghe chọn từ ",
+    english_to_chinese: " nhìn Anh chọn trúng ",
+    chinese_to_english: " nhìn trúng chọn Anh ",
+    spelling: " điền chính tả "
   };
   var RATING_STAR = {
-    excellent: "优秀",
-    good: "良好",
-    weak: "需加强"
+    excellent: " Xuất sắc ",
+    good: " Tốt ",
+    weak: " Cần củng cố "
   };
   var LEVEL_NAME = {
-    high_school: "高中词汇",
-    cet4: "四级词汇",
-    ielts: "雅思词汇"
+    high_school: " Từ vựng Nền tảng THPT ",
+    cet4: " Từ vựng Đại học Cốt lõi ",
+    ielts: " Từ vựng IELTS "
   };
 
   var state = {
@@ -46,13 +46,13 @@
   state.gate = new URLSearchParams(location.search).get("gate") === "1";
 
   function esc(s) {
-    return Y && Y.esc ? Y.esc(s) : String(s == null ? "" : s)
+    return Y && Y.esc? Y.esc(s): String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
 
   function api(path, opts) {
-    if (!A || !A.api) return Promise.reject(new Error("请先登录"));
+    if (!A ||!A.api) return Promise.reject(new Error(" Vui lòng đăng nhập trước "));
     return A.api(path, opts);
   }
 
@@ -66,7 +66,7 @@
     sec = Math.max(0, Math.floor(sec || 0));
     var m = Math.floor(sec / 60);
     var s = sec % 60;
-    return m + ":" + (s < 10 ? "0" : "") + s;
+    return m + ":" + (s < 10? "0": "") + s;
   }
 
   function startTimer(base) {
@@ -89,28 +89,28 @@
   }
 
   function setSessionMode(on) {
-    document.body.classList.toggle("is-diag-session", !!on);
-    if (examCenter) examCenter.hidden = !on;
+    document.body.classList.toggle("is-diag-session",!!on);
+    if (examCenter) examCenter.hidden =!on;
     if (examSub) {
       examSub.textContent = on
         ? "IN SESSION"
-        : (state.gate ? "First-time Placement" : "Vocabulary Placement Assessment");
+        : (state.gate? "First-time Placement": "Vocabulary Placement Assessment");
     }
   }
 
   function updateExamHud(sess) {
-    if (!examCenter || !sess) return;
+    if (!examCenter ||!sess) return;
     var prog = sess.stage_progress || { answered: 0, total: 0, correct: 0 };
     var qNo = Math.min((prog.answered || 0) + 1, prog.total || 0);
     if (sess.stage_done) qNo = prog.total || 0;
     var answered = prog.answered || 0;
     var wrong = Math.max(0, answered - (prog.correct || 0));
-    var errPct = answered ? Math.round((wrong / answered) * 100) : 0;
+    var errPct = answered? Math.round((wrong / answered) * 100): 0;
     examCenter.innerHTML =
-      '<span class="diag-hud-chip"><em>阶段</em><b>' + esc(sess.stage_name || "—") + "</b></span>" +
-      '<span class="diag-hud-chip"><em>题号</em><b>' + qNo + " / " + (prog.total || 0) + "</b></span>" +
-      '<span class="diag-hud-chip"><em>用时</em><b id="diag-hud-timer">' + esc(formatTime(elapsedNow())) + "</b></span>" +
-      '<span class="diag-hud-chip"><em>错误率</em><b>' + (answered ? errPct + "%" : "—") + "</b></span>";
+      '<span class="diag-hud-chip"><em> Giai đoạn </em><b>' + esc(sess.stage_name || "—") + "</b></span>" +
+      '<span class="diag-hud-chip"><em> câu số </em><b>' + qNo + " / " + (prog.total || 0) + "</b></span>" +
+      '<span class="diag-hud-chip"><em> thời gian sử dụng </em><b id="diag-hud-timer">' + esc(formatTime(elapsedNow())) + "</b></span>" +
+      '<span class="diag-hud-chip"><em> Tỷ lệ sai </em><b>' + (answered? errPct + "%": "—") + "</b></span>";
   }
 
   function speakWord(text) {
@@ -125,25 +125,25 @@
 
   function requireLogin() {
     setSessionMode(false);
-    if (!A || !A.getToken || !A.getToken()) {
-      var next = state.gate ? "diagnostic.html?gate=1" : "diagnostic.html";
+    if (!A ||!A.getToken ||!A.getToken()) {
+      var next = state.gate? "diagnostic.html?gate=1": "diagnostic.html";
       contentEl.innerHTML =
         '<div class="diag-brief">' +
         '<p class="diag-kicker">Access</p>' +
-        "<h1>请先登录</h1>" +
-        '<p class="diag-lead">使用学生账号登录后开始词汇能力诊断。</p>' +
+        "<h1> Vui lòng đăng nhập trước </h1>" +
+        '<p class="diag-lead"> sử dụng tài khoản học viên Đăng nhập sau Bắt đầu Từ vựng Chẩn đoán năng lực. </p>' +
         '<div class="diag-actions"><a class="btn btn--primary" href="login.html?next=' +
         encodeURIComponent(next) +
-        '">去登录</a></div></div>';
+        '"> Đăng nhập ngay </a></div></div>';
       return false;
     }
     if (A.isTeacher && A.isTeacher()) {
       contentEl.innerHTML =
         '<div class="diag-brief">' +
         '<p class="diag-kicker">Teacher</p>' +
-        "<h1>请使用学生账号</h1>" +
-        '<p class="diag-lead">教师可在学情看板查看班级诊断总览。</p>' +
-        '<div class="diag-actions"><a class="btn btn--ghost" href="teacher.html">打开教师端</a></div></div>';
+        "<h1> xin sử dụng tài khoản học viên </h1>" +
+        '<p class="diag-lead"> Giáo viên có thể đang học chuyện nhìn bản Xem lớp chẩn đoán năng lực quan sát. </p>' +
+        '<div class="diag-actions"><a class="btn btn--ghost" href="teacher.html"> mở ra Cổng giáo viên </a></div></div>';
       return false;
     }
     return true;
@@ -151,9 +151,9 @@
 
   function applyGateChrome() {
     if (!state.gate) return;
-    document.title = "首次词汇能力测试 · 优益思达国际课程中心";
+    document.title = " lần đầu Từ vựng năng lực Kiểm tra · Trung tâm Luyện thi Quốc tế YYSD ";
     if (exitLink) {
-      exitLink.textContent = "完成后进入单词区";
+      exitLink.textContent = " sau khi hoàn thành Vào học Khu từ vựng ";
       exitLink.removeAttribute("href");
       exitLink.style.opacity = "0.65";
       exitLink.style.pointerEvents = "none";
@@ -163,49 +163,49 @@
   function renderIntro(resumeSession) {
     setSessionMode(false);
     applyGateChrome();
-    var title = state.gate ? "首次词汇能力测试" : "词汇能力诊断";
+    var title = state.gate? " lần đầu Từ vựng năng lực Kiểm tra ": " Từ vựng Chẩn đoán năng lực ";
     var resumeHtml = "";
     if (resumeSession) {
       resumeHtml =
-        '<p class="diag-lead">检测到未完成场次（' +
-        esc(resumeSession.stage_name || "") + " · 已答 " +
+        '<p class="diag-lead"> Đánh giá đến Chưa hoàn thành buổi diễn (' +
+        esc(resumeSession.stage_name || "") + " · đã đáp " +
         ((resumeSession.stage_progress && resumeSession.stage_progress.answered) || 0) +
-        " 题）。</p>" +
+        " câu). </p>" +
         '<div class="diag-actions">' +
-        '<button type="button" class="btn btn--primary" id="diag-resume">继续测试</button>' +
-        '<button type="button" class="btn btn--ghost" id="diag-restart">重新开始</button>' +
+        '<button type="button" class="btn btn--primary" id="diag-resume"> Tiếp tục Kiểm tra </button>' +
+        '<button type="button" class="btn btn--ghost" id="diag-restart"> bắt đầu lại </button>' +
         "</div>";
     } else {
       resumeHtml =
         '<div class="diag-actions">' +
         '<button type="button" class="btn btn--primary" id="diag-start">' +
-        (state.gate ? "开始测试" : "开始诊断") +
+        (state.gate? " Bắt đầu kiểm tra ": " Bắt đầu chẩn đoán năng lực ") +
         "</button>" +
         (state.gate
           ? ""
-          : '<a class="btn btn--ghost" href="diagnostic-mistakes.html">诊断错题本</a>') +
+          : '<a class="btn btn--ghost" href="diagnostic-mistakes.html"> sổ lỗi chẩn đoán </a>') +
         "</div>";
     }
 
     contentEl.innerHTML =
       '<div class="diag-brief">' +
-      '<p class="diag-kicker">' + (state.gate ? "Mandatory Placement" : "Assessment Briefing") + "</p>" +
+      '<p class="diag-kicker">' + (state.gate? "Mandatory Placement": "Assessment Briefing") + "</p>" +
       "<h1>" + esc(title) + "</h1>" +
       (state.gate
-        ? '<p class="diag-lead diag-lead--gate"><strong>首次进入单词区前须完成一次能力测试。</strong>结束后生成详细报告、学习建议与推荐起始词库。</p>'
-        : '<p class="diag-lead">硬门槛进阶：高中 ≥90%、四级 ≥80% 方可进入下一阶段；优秀线用于报告评级。</p>') +
+        ? '<p class="diag-lead diag-lead--gate"><strong> lần đầu Vào học Khu từ vựng trước tu hoàn thành một lần năng lực Kiểm tra. </strong> sau khi kết thúc tạo ra kỹ càng báo cáo, Học tập đề nghị và Đề xuất bộ từ khởi đầu. </p>'
+        : '<p class="diag-lead"> cứng rắn cánh cửa tiến giai: THPT ≥90%, Đại học B1 ≥80% lại vừa Vào học tiếp theo Giai đoạn; Xuất sắc tuyến dùng cho báo cáo bình xét cấp bậc. </p>') +
       '<div class="diag-meta-row">' +
-      '<span class="diag-meta-pill">预计 20–40 分钟</span>' +
-      '<span class="diag-meta-pill">最多 95 题</span>' +
-      '<span class="diag-meta-pill">即时反馈</span>' +
-      '<span class="diag-meta-pill">错误率 &gt; 50% 提前结束</span>' +
+      '<span class="diag-meta-pill"> dự tính 20–40 phút</span>' +
+      '<span class="diag-meta-pill"> tối đa 95 câu</span>' +
+      '<span class="diag-meta-pill"> Phản hồi tức thì </span>' +
+      '<span class="diag-meta-pill"> Tỷ lệ sai &gt; 50% sớm chấm dứt </span>' +
       "</div>" +
       '<ul class="diag-rules">' +
-      "<li><span>阶段一</span><div><strong>高中词汇</strong> · 30 题 · 通过线 <strong>90%</strong>（至少 27/30）· 优秀 95%</div></li>" +
-      "<li><span>阶段二</span><div><strong>四级词汇</strong> · 30 题 · 通过线 <strong>80%</strong>（至少 24/30）· 优秀 90%</div></li>" +
-      "<li><span>阶段三</span><div><strong>雅思词汇</strong> · 35 题 · 通过评级 <strong>80%</strong>（至少 28/35）· 优秀 90%；完成后无论是否通过均结束</div></li>" +
-      "<li><span>题型</span><div>听音选词 / 看英选中 / 看中选英 / 拼写填空（严格匹配，忽略大小写）</div></li>" +
-      "<li><span>产出</span><div>推荐起始词库、能力报告、诊断错题本</div></li>" +
+      "<li><span> Giai đoạn 1 </span><div><strong> Từ vựng Nền tảng THPT </strong> · 30 câu · mức đạt <strong>90%</strong> (ít nhất 27/30) · Xuất sắc 95%</div></li>" +
+      "<li><span> Giai đoạn 2 </span><div><strong> Từ vựng Đại học Cốt lõi </strong> · 30 câu · mức đạt <strong>80%</strong> (ít nhất 24/30) · Xuất sắc 90%</div></li>" +
+      "<li><span> Giai đoạn 3 </span><div><strong> Từ vựng IELTS </strong> · 35 câu · mức đạt <strong>80%</strong> (ít nhất 28/35) · Xuất sắc 90%; sau khi hoàn thành vô luận là hay không thông qua đều chấm dứt </div></li>" +
+      "<li><span> dạng bài </span><div> nghe chọn từ / nhìn từ Anh chọn nghĩa Việt / nhìn nghĩa Việt chọn từ Anh / điền chính tả (nghiêm khắc xứng đôi, xem nhẹ chữ hoa hay thường) </div></li>" +
+      "<li><span> sản xuất </span><div> Đề xuất bộ từ khởi đầu, báo cáo năng lực, sổ lỗi chẩn đoán </div></li>" +
       "</ul>" +
       resumeHtml +
       '<p class="diag-msg" id="diag-err" hidden></p></div>';
@@ -213,7 +213,7 @@
     var err = document.getElementById("diag-err");
     function showErr(msg) {
       if (!err) return;
-      err.hidden = !msg;
+      err.hidden =!msg;
       err.textContent = msg || "";
     }
 
@@ -232,7 +232,7 @@
           })
           .catch(function (e) {
             startBtn.disabled = false;
-            showErr(e.message || "无法开始");
+            showErr(e.message || " không cách nào Bắt đầu ");
           });
       });
     }
@@ -250,7 +250,7 @@
           .then(function (d) { enterSession(d.session); })
           .catch(function (e) {
             restartBtn.disabled = false;
-            showErr(e.message || "无法重新开始");
+            showErr(e.message || " không cách nào bắt đầu lại ");
           });
       });
     }
@@ -280,9 +280,9 @@
 
   function renderQuestion() {
     var sess = state.session;
-    if (!sess || !sess.current_question) {
+    if (!sess ||!sess.current_question) {
       if (sess && sess.stage_done) return renderStageGate();
-      contentEl.innerHTML = '<div class="diag-brief"><p>题目加载失败</p></div>';
+      contentEl.innerHTML = '<div class="diag-brief"><p> đề mục Tải dữ liệu thất bại </p></div>';
       return;
     }
     state.qStart = Date.now();
@@ -293,7 +293,7 @@
 
     var q = sess.current_question;
     var prog = sess.stage_progress || { answered: 0, total: 1 };
-    var pct = prog.total ? Math.round((prog.answered / prog.total) * 100) : 0;
+    var pct = prog.total? Math.round((prog.answered / prog.total) * 100): 0;
 
     contentEl.innerHTML =
       '<div class="diag-session">' +
@@ -304,8 +304,8 @@
       '<p class="diag-msg" id="diag-err" hidden></p>' +
       "</div>" +
       '<div class="diag-session__dock"><div class="diag-session__dock-inner">' +
-      '<button type="button" class="btn btn--primary" id="diag-submit">提交答案</button>' +
-      '<button type="button" class="btn btn--ghost" id="diag-next" hidden>下一题</button>' +
+      '<button type="button" class="btn btn--primary" id="diag-submit"> Nộp bài Đáp án </button>' +
+      '<button type="button" class="btn btn--ghost" id="diag-next" hidden> Câu tiếp theo </button>' +
       "</div></div></div>";
 
     bindQuestionControls(q);
@@ -317,16 +317,16 @@
     if (type === "listening_choice") {
       html +=
         '<div class="diag-listen">' +
-        '<button type="button" class="diag-play" id="diag-play" aria-label="播放读音">▶</button>' +
-        '<p class="diag-hint">播放音频后，选择你听到的单词</p></div>';
+        '<button type="button" class="diag-play" id="diag-play" aria-label=" phát ra âm đọc ">▶</button>' +
+        '<p class="diag-hint"> phát ra âm tần sau, lựa chọn bạn nghe được Từ vựng </p></div>';
       html += optionsHTML(q.options || []);
     } else if (type === "english_to_chinese") {
       html += '<p class="diag-prompt">' + esc(q.question_content) + "</p>";
-      html += '<p class="diag-hint">选择最准确的中文释义</p>';
+      html += '<p class="diag-hint"> lựa chọn chuẩn xác nhất Tiếng Việt Giải nghĩa </p>';
       html += optionsHTML(q.options || []);
     } else if (type === "chinese_to_english") {
       html += '<p class="diag-prompt diag-prompt--cn">' + esc(q.question_content) + "</p>";
-      html += '<p class="diag-hint">选择对应的英文单词</p>';
+      html += '<p class="diag-hint"> lựa chọn đối ứng từ đơn tiếng Anh </p>';
       html += optionsHTML(q.options || []);
     } else {
       html +=
@@ -338,9 +338,9 @@
         esc((q.question_content && q.question_content.example) || q.example_sentence || "______") +
         "</div>";
       html +=
-        '<p class="diag-hint">根据音标与语境填写英文拼写（忽略大小写；词形不同视为不同答案）</p>';
+        '<p class="diag-hint"> dựa theo ký âm và ngữ cảnh điền Tiếng Anh Chính tả (xem nhẹ chữ hoa hay thường; từ hình bất đồng coi là bất đồng Đáp án) </p>';
       html +=
-        '<input class="diag-input" id="diag-spell" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="在此输入拼写">';
+        '<input class="diag-input" id="diag-spell" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder=" lúc này đưa vào Chính tả ">';
     }
     return html;
   }
@@ -414,13 +414,13 @@
     var ua = state.selected;
     if (q.question_type === "spelling") {
       var input = document.getElementById("diag-spell");
-      ua = input ? input.value : "";
+      ua = input? input.value: "";
     }
     if (ua == null || String(ua).trim() === "") {
       var err = document.getElementById("diag-err");
       if (err) {
         err.hidden = false;
-        err.textContent = "请先作答";
+        err.textContent = " mời trước đáp lại ";
       }
       return;
     }
@@ -455,7 +455,7 @@
         var errEl = document.getElementById("diag-err");
         if (errEl) {
           errEl.hidden = false;
-          errEl.textContent = e.message || "提交失败";
+          errEl.textContent = e.message || " Nộp bài thất bại ";
         }
       });
   }
@@ -463,13 +463,13 @@
   function showFeedback(ok, correct, userAnswer, earlyAborted) {
     var fb = document.getElementById("diag-fb");
     if (fb) {
-      fb.className = "diag-feedback is-visible " + (ok ? "is-ok" : "is-bad");
+      fb.className = "diag-feedback is-visible " + (ok? "is-ok": "is-bad");
       fb.innerHTML = ok
-        ? "正确"
-        : ("错误 · 正确答案：<strong>" + esc(correct) + "</strong>");
+        ? "Đúng"
+        : (" Sai · Đáp án đúng: <strong>" + esc(correct) + "</strong>");
       if (earlyAborted) {
         fb.innerHTML +=
-          '<div class="diag-early-abort">错误率已超过 50%，本场测试提前结束。请点击「查看报告」。</div>';
+          '<div class="diag-early-abort"> Tỷ lệ sai đã vượt qua 50%, bổn tràng Kiểm tra sớm chấm dứt. xin nhấn vào « Xem báo cáo ». </div>';
       }
     }
     var submit = document.getElementById("diag-submit");
@@ -477,7 +477,7 @@
     if (submit) submit.hidden = true;
     if (next) {
       next.hidden = false;
-      next.textContent = earlyAborted ? "查看报告" : "下一题";
+      next.textContent = earlyAborted? " Xem báo cáo ": " Câu tiếp theo ";
       next.focus();
     }
 
@@ -485,13 +485,13 @@
       btn.disabled = true;
       var v = btn.getAttribute("data-opt");
       if (v === String(correct)) btn.classList.add("is-correct");
-      if (v === String(userAnswer) && !ok) btn.classList.add("is-wrong");
+      if (v === String(userAnswer) &&!ok) btn.classList.add("is-wrong");
     });
     var spell = document.getElementById("diag-spell");
     if (spell) {
       spell.disabled = true;
-      spell.style.borderColor = ok ? "var(--diag-ok)" : "var(--diag-bad)";
-      spell.style.background = ok ? "var(--diag-ok-bg)" : "var(--diag-bad-bg)";
+      spell.style.borderColor = ok? "var(--diag-ok)": "var(--diag-bad)";
+      spell.style.background = ok? "var(--diag-ok-bg)": "var(--diag-bad-bg)";
     }
   }
 
@@ -501,7 +501,7 @@
     contentEl.innerHTML =
       '<div class="diag-brief diag-section-break">' +
       '<p class="diag-kicker">Section Review</p>' +
-      '<div class="state state--brand"><div class="spinner spinner--brand"></div>正在结算本阶段…</div></div>';
+      '<div class="state state--brand"><div class="spinner spinner--brand"></div> đang kết toán bản Giai đoạn …</div></div>';
     api("/api/diagnostic/session/" + state.session.session_id + "/next-stage", {
       method: "POST",
       body: { elapsed_seconds: elapsedNow() }
@@ -518,14 +518,14 @@
       .catch(function (e) {
         contentEl.innerHTML =
           '<div class="diag-brief"><p class="diag-msg">' +
-          esc(e.message || "结算失败") +
-          '</p><button type="button" class="btn btn--primary" id="diag-retry-stage">重试</button></div>';
+          esc(e.message || " kết toán thất bại ") +
+          '</p><button type="button" class="btn btn--primary" id="diag-retry-stage"> Thử lại </button></div>';
         document.getElementById("diag-retry-stage").addEventListener("click", renderStageGate);
       });
   }
 
   function renderStageTransition(result, canContinue) {
-    setSessionMode(!canContinue ? false : true);
+    setSessionMode(!canContinue? false: true);
     if (canContinue) updateExamHud(state.session);
     else if (examCenter) examCenter.hidden = true;
 
@@ -537,36 +537,36 @@
       '<div class="diag-stat-grid">' +
       '<div class="diag-stat"><div class="diag-stat__val">' +
       Math.round((result.accuracy || 0) * 100) +
-      '%</div><div class="diag-stat__lbl">正确率</div></div>' +
+      '%</div><div class="diag-stat__lbl"> Tỷ lệ đúng </div></div>' +
       '<div class="diag-stat"><div class="diag-stat__val">' +
       Math.round((result.spelling_accuracy || 0) * 100) +
-      '%</div><div class="diag-stat__lbl">拼写</div></div>' +
+      '%</div><div class="diag-stat__lbl"> Chính tả </div></div>' +
       '<div class="diag-stat"><div class="diag-stat__val">' +
       result.correct + "/" + result.total +
-      '</div><div class="diag-stat__lbl">答对</div></div>' +
+      '</div><div class="diag-stat__lbl"> trả lời </div></div>' +
       "</div>" +
       '<p class="diag-rating diag-rating--' + esc(rating) + '">' +
       esc(RATING_STAR[rating] || rating) +
-      (result.is_passed ? " · 达标" : " · 未达实用推荐线") +
-      (result.early_aborted ? " · 提前结束" : "") +
+      (result.is_passed? " · đạt tiêu chuẩn ": " · không đạt thực dụng Đề xuất tuyến ") +
+      (result.early_aborted? " · sớm chấm dứt ": "") +
       "</p>" +
       '<p class="diag-lead" style="margin-top:18px">' +
       (canContinue
-        ? "本阶段已通过实用推荐线，进入下一阶段。"
-        : "本场测试已结束，可查看完整能力报告。") +
+        ? " bản Giai đoạn Đã đạt thực dụng Đề xuất tuyến, Vào học tiếp theo Giai đoạn. "
+        : " bổn tràng Kiểm tra đã chấm dứt, có thể tra xem hết cả báo cáo năng lực. ") +
       "</p>" +
       '<div class="diag-actions" id="diag-stage-actions"></div></div>';
 
     var actions = document.getElementById("diag-stage-actions");
     if (canContinue) {
       actions.innerHTML =
-        '<button type="button" class="btn btn--primary" id="diag-continue">进入下一阶段</button>';
+        '<button type="button" class="btn btn--primary" id="diag-continue"> Vào học tiếp theo Giai đoạn </button>';
       document.getElementById("diag-continue").addEventListener("click", function () {
         renderQuestion();
       });
     } else {
       actions.innerHTML =
-        '<button type="button" class="btn btn--primary" id="diag-to-complete">查看结果</button>';
+        '<button type="button" class="btn btn--primary" id="diag-to-complete"> Xem kết quả </button>';
       document.getElementById("diag-to-complete").addEventListener("click", function () {
         renderComplete(state.session);
       });
@@ -583,7 +583,7 @@
         });
 
     contentEl.innerHTML =
-      '<div class="diag-brief"><div class="state state--brand"><div class="spinner spinner--brand"></div>生成成绩单…</div></div>';
+      '<div class="diag-brief"><div class="state state--brand"><div class="spinner spinner--brand"></div> Đang tạo bảng điểm …</div></div>';
 
     loadReport
       .then(function (report) {
@@ -596,36 +596,36 @@
           totalQ += s.total || 0;
           totalC += s.correct || 0;
         });
-        var acc = totalQ ? Math.round((totalC / totalQ) * 100) : 0;
+        var acc = totalQ? Math.round((totalC / totalQ) * 100): 0;
         contentEl.innerHTML =
           '<div class="diag-brief">' +
           '<p class="diag-kicker">Result Summary</p>' +
-          "<h1>测试完成</h1>" +
+          "<h1> đã kiểm tra xong </h1>" +
           (report && report.early_aborted
-            ? '<p class="diag-lead">因错误率超过 50%，本场测试已提前结束。</p>'
-            : '<p class="diag-lead">已完成本场词汇能力诊断。</p>') +
+            ? '<p class="diag-lead"> bởi vì Tỷ lệ sai vượt qua 50%, bổn tràng Kiểm tra đã sớm chấm dứt. </p>'
+            : '<p class="diag-lead"> Đã hoàn thành bổn tràng Từ vựng Chẩn đoán năng lực. </p>') +
           '<div class="diag-stat-grid">' +
           '<div class="diag-stat"><div class="diag-stat__val">' + totalQ +
-          '</div><div class="diag-stat__lbl">总题数</div></div>' +
+          '</div><div class="diag-stat__lbl"> tổng câu mấy </div></div>' +
           '<div class="diag-stat"><div class="diag-stat__val">' + acc +
-          '%</div><div class="diag-stat__lbl">总正确率</div></div>' +
+          '%</div><div class="diag-stat__lbl"> tổng Tỷ lệ đúng </div></div>' +
           '<div class="diag-stat"><div class="diag-stat__val">' +
           formatTime((report && report.total_time_seconds) || state.elapsedBase) +
-          '</div><div class="diag-stat__lbl">用时</div></div>' +
+          '</div><div class="diag-stat__lbl"> thời gian sử dụng </div></div>' +
           "</div>" +
-          '<p class="diag-lead">推荐起始词库：<strong>' +
+          '<p class="diag-lead"> Đề xuất bộ từ khởi đầu: <strong>' +
           esc(LEVEL_NAME[report.recommended_start_level] || report.recommended_start_level) +
           "</strong></p>" +
           '<div class="diag-actions">' +
           (state.gate
             ? '<a class="btn btn--primary" href="diagnostic-report.html?session=' +
               sid +
-              '&placement=1">查看详细报告与学习建议</a>'
+              '&placement=1"> Xem kỹ càng báo cáo và Học tập đề nghị </a>'
             : '<a class="btn btn--primary" href="diagnostic-report.html?session=' +
               sid +
-              '">查看详细能力报告</a>' +
-              '<a class="btn btn--ghost" href="diagnostic-mistakes.html">进入错题本</a>' +
-              '<a class="btn btn--ghost" href="zone.html?zone=study&s=vocab">返回单词区</a>') +
+              '"> Xem kỹ càng báo cáo năng lực </a>' +
+              '<a class="btn btn--ghost" href="diagnostic-mistakes.html"> Vào học Sổ lỗi sai </a>' +
+              '<a class="btn btn--ghost" href="zone.html?zone=study&s=vocab"> Quay lại Khu từ vựng </a>') +
           "</div></div>";
         if (state.gate) {
           setTimeout(function () {

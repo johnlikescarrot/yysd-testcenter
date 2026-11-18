@@ -21,7 +21,7 @@ type EvidenceItem = {
 type EvalResult = {
   probability: number;
   range?: { low: number; high: number };
-  category?: "冲刺" | "匹配" | "保底";
+  category?: " chạy nước rút " | " xứng đôi " | " giữ gốc ";
   analysis: {
     strengths: string[];
     weaknesses: string[];
@@ -71,15 +71,15 @@ export function AdmissionEval({
   };
 }) {
   const tech = variant === "tech";
-  const [gpa, setGpa] = useState(initial?.gpa ?? "3.42");
-  const [toefl, setToefl] = useState(initial?.toefl ?? "100");
-  const [ielts, setIelts] = useState(initial?.ielts ?? "");
-  const [gre, setGre] = useState(initial?.gre ?? "");
+  const [gpa, setGpa] = useState(initial?.gpa?? "3.42");
+  const [toefl, setToefl] = useState(initial?.toefl?? "100");
+  const [ielts, setIelts] = useState(initial?.ielts?? "");
+  const [gre, setGre] = useState(initial?.gre?? "");
   const [undergradSchool, setUndergradSchool] = useState(
-    initial?.undergradSchool ?? "THE PENNSYLVANIA STATE UNIVERSITY"
+    initial?.undergradSchool?? "THE PENNSYLVANIA STATE UNIVERSITY"
   );
   const [undergradMajor, setUndergradMajor] = useState(
-    initial?.undergradMajor ?? "Social Data Analytics"
+    initial?.undergradMajor?? "Social Data Analytics"
   );
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [dragOver, setDragOver] = useState(false);
@@ -118,10 +118,10 @@ export function AdmissionEval({
       // basePath=/admission — absolute /api/* would hit the static site (HTML 404)
       const res = await fetch("/admission/api/evaluate", { method: "POST", body: fd });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "评估失败");
+      if (!res.ok) throw new Error(data.error || " ước định thất bại ");
       setResult(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "评估失败");
+      setError(err instanceof Error? err.message: " ước định thất bại ");
     } finally {
       setLoading(false);
     }
@@ -129,10 +129,10 @@ export function AdmissionEval({
 
   const dropCls = tech
     ? `mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed px-4 py-8 text-sm text-slate-400 ${
-        dragOver ? "border-sky-400 bg-sky-500/10" : "border-sky-500/30"
+        dragOver? "border-sky-400 bg-sky-500/10": "border-sky-500/30"
       }`
     : `mt-2 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed px-4 py-8 text-sm text-stone-600 ${
-        dragOver ? "border-stone-800 bg-stone-50" : "border-stone-300"
+        dragOver? "border-stone-800 bg-stone-50": "border-stone-300"
       }`;
 
   return (
@@ -140,59 +140,59 @@ export function AdmissionEval({
       <Panel tech={tech}>
         <PanelHead
           tech={tech}
-          title="填写背景并评估"
-          desc={`目标：${schoolName}${useMock ? " · Mock" : " · 校准引擎锁定概率"}`}
+          title=" điền bối cảnh cũng ước định "
+          desc={` mục tiêu: ${schoolName}${useMock? " · Mock": " · hiệu chỉnh động cơ tập trung xác suất "}`}
         />
         <FormBody tech={tech}>
           <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
-            {tech ? (
+            {tech? (
               <>
                 <TechField label="GPA (4.0)">
                   <input className="tech-input" type="number" step="0.01" min="0" max="4.5" required value={gpa} onChange={(e) => setGpa(e.target.value)} />
                 </TechField>
-                <TechField label="TOEFL（可选）">
+                <TechField label="TOEFL (có thể chọn) ">
                   <input className="tech-input" type="number" min="0" max="120" value={toefl} onChange={(e) => setToefl(e.target.value)} />
                 </TechField>
-                <TechField label="IELTS（可选）">
+                <TechField label="IELTS (có thể chọn) ">
                   <input className="tech-input" type="number" step="0.5" min="0" max="9" value={ielts} onChange={(e) => setIelts(e.target.value)} />
                 </TechField>
-                <TechField label="GRE（可选）">
+                <TechField label="GRE (có thể chọn) ">
                   <input className="tech-input" type="number" min="260" max="340" value={gre} onChange={(e) => setGre(e.target.value)} />
                 </TechField>
-                <TechField label="本科院校">
+                <TechField label=" Đại học viện giáo ">
                   <input className="tech-input" required value={undergradSchool} onChange={(e) => setUndergradSchool(e.target.value)} />
                 </TechField>
-                <TechField label="本科专业">
+                <TechField label=" Đại học chuyên nghiệp ">
                   <input className="tech-input" required value={undergradMajor} onChange={(e) => setUndergradMajor(e.target.value)} />
                 </TechField>
               </>
-            ) : (
+            ): (
               <>
                 <Field label="GPA (4.0)">
                   <Input type="number" step="0.01" min="0" max="4.5" required value={gpa} onChange={(e) => setGpa(e.target.value)} />
                 </Field>
-                <Field label="TOEFL（可选）">
+                <Field label="TOEFL (có thể chọn) ">
                   <Input type="number" min="0" max="120" value={toefl} onChange={(e) => setToefl(e.target.value)} />
                 </Field>
-                <Field label="IELTS（可选）">
+                <Field label="IELTS (có thể chọn) ">
                   <Input type="number" step="0.5" min="0" max="9" value={ielts} onChange={(e) => setIelts(e.target.value)} />
                 </Field>
-                <Field label="GRE（可选）">
+                <Field label="GRE (có thể chọn) ">
                   <Input type="number" min="260" max="340" value={gre} onChange={(e) => setGre(e.target.value)} />
                 </Field>
-                <Field label="本科院校">
+                <Field label=" Đại học viện giáo ">
                   <Input required value={undergradSchool} onChange={(e) => setUndergradSchool(e.target.value)} />
                 </Field>
-                <Field label="本科专业">
+                <Field label=" Đại học chuyên nghiệp ">
                   <Input required value={undergradMajor} onChange={(e) => setUndergradMajor(e.target.value)} />
                 </Field>
               </>
             )}
             <div className="sm:col-span-2">
-              {tech ? (
-                <label className="text-sm text-slate-400">简历 PDF / Word（解析后不保留原文件）</label>
-              ) : (
-                <Label>简历 PDF / Word（解析后不保留原文件）</Label>
+              {tech? (
+                <label className="text-sm text-slate-400"> lý lịch sơ lược PDF / Word (Giải thích đáp án sau khó giữ được lưu Bài gốc kiện) </label>
+              ): (
+                <Label> lý lịch sơ lược PDF / Word (Giải thích đáp án sau khó giữ được lưu Bài gốc kiện) </Label>
               )}
               <div
                 onDragOver={(e) => {
@@ -205,7 +205,7 @@ export function AdmissionEval({
                 onClick={() => document.getElementById("resume-input")?.click()}
               >
                 <Upload className="h-5 w-5" />
-                {resumeFile ? resumeFile.name : "拖拽 PDF / DOC / DOCX，或点击选择"}
+                {resumeFile? resumeFile.name: " kéo PDF / DOC / DOCX, hoặc nhấn vào lựa chọn "}
                 <input
                   id="resume-input"
                   type="file"
@@ -216,19 +216,19 @@ export function AdmissionEval({
               </div>
             </div>
             <div className="sm:col-span-2">
-              {tech ? (
+              {tech? (
                 <button type="submit" disabled={loading} className="tech-btn w-full sm:w-auto">
-                  {loading ? "评估中…" : "开始评估"}
+                  {loading? " ước định Vừa …": " Bắt đầu ước định "}
                 </button>
-              ) : (
+              ): (
                 <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-                  {loading ? "评估中…" : "开始评估"}
+                  {loading? " ước định Vừa …": " Bắt đầu ước định "}
                 </Button>
               )}
             </div>
           </form>
           {error && (
-            <p className={`mt-4 text-sm ${tech ? "text-rose-300" : "text-red-600"}`}>
+            <p className={`mt-4 text-sm ${tech? "text-rose-300": "text-red-600"}`}>
               {error}
             </p>
           )}
@@ -240,10 +240,10 @@ export function AdmissionEval({
           <Panel tech={tech}>
             <PanelHead
               tech={tech}
-              title="录取成功率估算"
-              desc={`顾问口径估算 · 非院校官方录取率${result.calibrated ? " · 已校准" : ""}`}
+              title=" trúng tuyển xác xuất thành công tính ra "
+              desc={` cố vấn đường kính tính ra · không phải viện giáo chính thức tỷ số trúng tuyển ${result.calibrated? " · đã hiệu chỉnh ": ""}`}
             />
-            <div className={`flex justify-center py-6 ${tech ? "px-5" : ""}`}>
+            <div className={`flex justify-center py-6 ${tech? "px-5": ""}`}>
               <ProbabilityRing
                 probability={result.probability}
                 category={result.category}
@@ -258,19 +258,19 @@ export function AdmissionEval({
           )}
 
           <div>
-            <h3 className={`mb-3 text-lg font-semibold ${tech ? "text-slate-50" : ""}`}>
-              相似案例
+            <h3 className={`mb-3 text-lg font-semibold ${tech? "text-slate-50": ""}`}>
+               tương tự án lệ
             </h3>
-            <p className={`mb-3 text-xs ${tech ? "text-slate-500" : "text-stone-500"}`}>
-              仅展示本校 GradCafe 真实自报；当前项目不足时回退同校相近项目。不展示合成样本与其他大学案例。
+            <p className={`mb-3 text-xs ${tech? "text-slate-500": "text-stone-500"}`}>
+               chỉ biểu hiện ra trường chúng ta GradCafe chân thật tự báo; trước mắt hạng mục chưa đủ lúc lui trở về cùng trường gần hạng mục. không biểu hiện ra hợp thành hàng mẫu cùng với khác đại học án lệ.
               {result.similar_scope === "field" || result.similar_scope === "school"
-                ? "（下列含同校其他相关项目）"
+                ? " (dưới đây hàm cùng trường Khác tương quan hạng mục) "
                 : ""}
             </p>
             <div className="grid gap-3">
               {result.similar_cases.length === 0 && (
-                <p className={`text-sm ${tech ? "text-slate-500" : "text-stone-500"}`}>
-                  该校暂无足够 GradCafe 公开真实案例，故不展示相似案例（避免合成/跨校样本）。
+                <p className={`text-sm ${tech? "text-slate-500": "text-stone-500"}`}>
+                   cai giáo tạm thời chưa có đầy đủ GradCafe công khai chân thật án lệ, cố không biểu hiện ra tương tự án lệ (tránh cho hợp thành / vượt qua so mẫu bản).
                 </p>
               )}
               {result.similar_cases.map((c) => {
@@ -284,66 +284,66 @@ export function AdmissionEval({
                         : undefined
                     }
                   >
-                    {tech ? (
+                    {tech? (
                       <>
                         <div className="space-y-1 text-sm">
                           <div className="flex flex-wrap gap-1.5">
                             <span className="rounded bg-cyan-500/15 px-1.5 py-0.5 text-[11px] font-medium text-cyan-200">
-                              真实案例 · GradCafe
+                               chân thật án lệ · GradCafe
                             </span>
                             {c.sameProgram === false && (
                               <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-[11px] font-medium text-amber-200">
-                                同校相近项目
-                                {c.caseProgram ? ` · ${c.caseProgram}` : ""}
+                                 cùng trường gần hạng mục
+                                {c.caseProgram? ` · ${c.caseProgram}`: ""}
                               </span>
                             )}
                           </div>
                           <p className="text-slate-200">{c.description}</p>
                           <p className="text-slate-500">
-                            GPA {c.gpa} · {c.year} · 相似度 {Math.round(c.similarity * 100)}%
-                            {c.peerBand === false ? " · 跨档参考" : ""}
-                            {c.peerBand === true ? " · 同档" : ""}
+                            GPA {c.gpa} · {c.year} · tương tự độ {Math.round(c.similarity * 100)}%
+                            {c.peerBand === false? " · vượt qua đương tham khảo ": ""}
+                            {c.peerBand === true? " · cùng đương ": ""}
                           </p>
                         </div>
                         <span
                           className={`shrink-0 rounded px-2 py-1 text-xs font-medium text-white ${
-                            c.admissionResult ? "bg-cyan-700" : "bg-slate-600"
+                            c.admissionResult? "bg-cyan-700": "bg-slate-600"
                           }`}
                         >
-                          {c.admissionResult ? "录取" : "拒绝"}
+                          {c.admissionResult? " trúng tuyển ": " cự tuyệt "}
                         </span>
                       </>
-                    ) : (
+                    ): (
                       <Card>
                         <CardContent className="flex flex-col gap-2 p-4 sm:flex-row sm:items-start sm:justify-between">
                           <div className="space-y-1 text-sm">
                             <div className="flex flex-wrap gap-1.5">
-                              {real ? (
+                              {real? (
                                 <span className="rounded bg-teal-50 px-1.5 py-0.5 text-[11px] font-medium text-teal-800">
-                                  真实案例 · GradCafe
+                                   chân thật án lệ · GradCafe
                                 </span>
-                              ) : null}
+                              ): null}
                               {c.sameProgram === false && (
                                 <span className="rounded bg-amber-50 px-1.5 py-0.5 text-[11px] font-medium text-amber-800">
-                                  同校相近项目
-                                  {c.caseProgram ? ` · ${c.caseProgram}` : ""}
+                                   cùng trường gần hạng mục
+                                  {c.caseProgram? ` · ${c.caseProgram}`: ""}
                                 </span>
                               )}
                             </div>
                             <p className="text-stone-800">{c.description}</p>
                             <p className="text-stone-500">
-                              GPA {c.gpa} · {c.year} · 相似度{" "}
+                              GPA {c.gpa} · {c.year} · tương tự độ {" "}
                               {Math.round(c.similarity * 100)}%
-                              {c.peerBand === false ? " · 跨档参考" : ""}
-                              {c.peerBand === true ? " · 同档" : ""}
+                              {c.peerBand === false? " · vượt qua đương tham khảo ": ""}
+                              {c.peerBand === true? " · cùng đương ": ""}
                             </p>
                           </div>
                           <span
                             className={`shrink-0 rounded px-2 py-1 text-xs font-medium text-white ${
-                              c.admissionResult ? "bg-teal-700" : "bg-stone-500"
+                              c.admissionResult? "bg-teal-700": "bg-stone-500"
                             }`}
                           >
-                            {c.admissionResult ? "录取" : "拒绝"}
+                            {c.admissionResult? " trúng tuyển ": " cự tuyệt "}
                           </span>
                         </CardContent>
                       </Card>
@@ -356,13 +356,13 @@ export function AdmissionEval({
 
           <AnalysisPanel result={result} tech={tech} />
 
-          {tech ? (
+          {tech? (
             <Link href="/" className="tech-btn-ghost inline-flex">
-              重新选择学校
+               lựa chọn lần nữa trường học
             </Link>
-          ) : (
+          ): (
             <Button asChild variant="outline">
-              <Link href="/schools">对比其他学校</Link>
+              <Link href="/schools"> đối lập trường học khác </Link>
             </Button>
           )}
         </div>
@@ -437,17 +437,17 @@ function EvidencePanel({ items, tech }: { items: EvidenceItem[]; tech?: boolean 
       {items.map((e, i) => (
         <div
           key={i}
-          className={`border-b pb-3 last:border-0 ${tech ? "border-sky-500/15" : "border-stone-100"}`}
+          className={`border-b pb-3 last:border-0 ${tech? "border-sky-500/15": "border-stone-100"}`}
         >
-          <p className={`font-medium ${tech ? "text-slate-100" : "text-stone-800"}`}>
+          <p className={`font-medium ${tech? "text-slate-100": "text-stone-800"}`}>
             {e.title}
-            {e.weight ? (
-              <span className={`ml-2 text-xs font-normal ${tech ? "text-slate-500" : "text-stone-500"}`}>
+            {e.weight? (
+              <span className={`ml-2 text-xs font-normal ${tech? "text-slate-500": "text-stone-500"}`}>
                 [{e.weight}]
               </span>
-            ) : null}
+            ): null}
           </p>
-          <p className={`mt-1 whitespace-pre-wrap ${tech ? "text-slate-400" : "text-stone-600"}`}>
+          <p className={`mt-1 whitespace-pre-wrap ${tech? "text-slate-400": "text-stone-600"}`}>
             {e.detail}
           </p>
         </div>
@@ -457,33 +457,33 @@ function EvidencePanel({ items, tech }: { items: EvidenceItem[]; tech?: boolean 
   return (
     <Collapsible open={open} onOpenChange={setOpen}>
       <Panel tech={!!tech}>
-        <div className={`flex items-center justify-between ${tech ? "p-5 pb-2" : ""}`}>
-          {tech ? (
+        <div className={`flex items-center justify-between ${tech? "p-5 pb-2": ""}`}>
+          {tech? (
             <div>
-              <h3 className="text-lg font-semibold text-slate-50">依据与来源</h3>
-              <p className="text-sm text-slate-400">可追溯的评估依据</p>
+              <h3 className="text-lg font-semibold text-slate-50"> căn cứ và nơi phát ra </h3>
+              <p className="text-sm text-slate-400"> có thể ngược dòng tìm hiểu ước định căn cứ </p>
             </div>
-          ) : (
+          ): (
             <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0">
               <div>
-                <CardTitle>依据与来源</CardTitle>
-                <CardDescription>可追溯的评估依据（点击展开）</CardDescription>
+                <CardTitle> căn cứ và nơi phát ra </CardTitle>
+                <CardDescription> có thể ngược dòng tìm hiểu ước định căn cứ (nhấn vào triển khai) </CardDescription>
               </div>
             </CardHeader>
           )}
           <CollapsibleTrigger asChild>
-            <button type="button" className={tech ? "tech-btn-ghost px-2 py-1" : undefined}>
-              {tech ? (
-                <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
-              ) : (
+            <button type="button" className={tech? "tech-btn-ghost px-2 py-1": undefined}>
+              {tech? (
+                <ChevronDown className={`h-4 w-4 transition ${open? "rotate-180": ""}`} />
+              ): (
                 <Button variant="ghost" size="sm">
-                  <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-4 w-4 transition ${open? "rotate-180": ""}`} />
                 </Button>
               )}
             </button>
           </CollapsibleTrigger>
         </div>
-        <CollapsibleContent>{tech ? body : <CardContent className="space-y-3 text-sm">{body}</CardContent>}</CollapsibleContent>
+        <CollapsibleContent>{tech? body: <CardContent className="space-y-3 text-sm">{body}</CardContent>}</CollapsibleContent>
       </Panel>
     </Collapsible>
   );
@@ -495,35 +495,35 @@ function AnalysisPanel({ result, tech }: { result: EvalResult; tech?: boolean })
   return (
     <Collapsible open={open} onOpenChange={setOpen}>
       <Panel tech={!!tech}>
-        <div className={`flex items-center justify-between ${tech ? "p-5 pb-2" : ""}`}>
-          {tech ? (
+        <div className={`flex items-center justify-between ${tech? "p-5 pb-2": ""}`}>
+          {tech? (
             <div>
-              <h3 className="text-lg font-semibold text-slate-50">顾问分析</h3>
-              <p className="text-sm text-slate-400">优势 / 劣势 / 建议</p>
+              <h3 className="text-lg font-semibold text-slate-50"> cố vấn phân tích </h3>
+              <p className="text-sm text-slate-400"> ưu thế / hoàn cảnh xấu / đề nghị </p>
             </div>
-          ) : (
+          ): (
             <CardHeader className="p-0">
-              <CardTitle>顾问分析</CardTitle>
-              <CardDescription>优势 / 劣势 / 建议（不改动概率）</CardDescription>
+              <CardTitle> cố vấn phân tích </CardTitle>
+              <CardDescription> ưu thế / hoàn cảnh xấu / đề nghị (không thay đổi di chuyển xác suất) </CardDescription>
             </CardHeader>
           )}
           <CollapsibleTrigger asChild>
-            <button type="button" className={tech ? "rounded-lg p-2 text-slate-400 hover:bg-white/5" : undefined}>
-              <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} />
+            <button type="button" className={tech? "rounded-lg p-2 text-slate-400 hover:bg-white/5": undefined}>
+              <ChevronDown className={`h-4 w-4 transition ${open? "rotate-180": ""}`} />
             </button>
           </CollapsibleTrigger>
         </div>
         <CollapsibleContent>
-          <div className={`space-y-4 text-sm ${tech ? "p-5 pt-0" : "p-6 pt-0"}`}>
-            <Section title="优势" items={a.strengths} tech={tech} />
-            <Section title="劣势" items={a.weaknesses} tech={tech} />
-            <Section title="提升建议" items={a.suggestions} tech={tech} />
+          <div className={`space-y-4 text-sm ${tech? "p-5 pt-0": "p-6 pt-0"}`}>
+            <Section title=" ưu thế " items={a.strengths} tech={tech} />
+            <Section title=" hoàn cảnh xấu " items={a.weaknesses} tech={tech} />
+            <Section title=" tăng lên đề nghị " items={a.suggestions} tech={tech} />
             {result.comparison && (
               <div>
-                <p className={`mb-1 font-medium ${tech ? "text-slate-100" : "text-stone-800"}`}>
-                  与相似案例对比
+                <p className={`mb-1 font-medium ${tech? "text-slate-100": "text-stone-800"}`}>
+                   và tương tự án lệ đối lập
                 </p>
-                <p className={tech ? "text-slate-400" : "text-stone-600"}>{result.comparison}</p>
+                <p className={tech? "text-slate-400": "text-stone-600"}>{result.comparison}</p>
               </div>
             )}
           </div>
@@ -545,8 +545,8 @@ function Section({
   if (!items?.length) return null;
   return (
     <div>
-      <p className={`mb-1 font-medium ${tech ? "text-slate-100" : "text-stone-800"}`}>{title}</p>
-      <ul className={`list-disc space-y-1 pl-5 ${tech ? "text-slate-400" : "text-stone-600"}`}>
+      <p className={`mb-1 font-medium ${tech? "text-slate-100": "text-stone-800"}`}>{title}</p>
+      <ul className={`list-disc space-y-1 pl-5 ${tech? "text-slate-400": "text-stone-600"}`}>
         {items.map((t, i) => (
           <li key={i}>{t}</li>
         ))}

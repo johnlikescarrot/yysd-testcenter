@@ -5,13 +5,13 @@
 (function () {
   "use strict";
 
-  var PANE_SEL = ".passage-pane, .col.passage, .reading-text, .qcol, #questionsHolder, .yysd-cdt-wprompt";
+  var PANE_SEL = ".passage-pane,.col.passage,.reading-text,.qcol, #questionsHolder,.yysd-cdt-wprompt";
   var HL = "yysd-hl";
   var COLORS = ["yellow", "green", "pink", "blue"];
   var script = document.currentScript;
   var examId = (script && script.dataset.examId) || "local";
-  var store = (script && script.dataset.persist) === "local" ? localStorage : sessionStorage;
-  var cdtMode = !!(script && script.dataset && script.dataset.cdt === "1");
+  var store = (script && script.dataset.persist) === "local"? localStorage: sessionStorage;
+  var cdtMode =!!(script && script.dataset && script.dataset.cdt === "1");
 
   var ctxMenu = null;
   var notePanel = null;
@@ -58,7 +58,7 @@
   }
 
   function applyMarkColor(mark, color) {
-    var c = COLORS.indexOf(color) >= 0 ? color : "yellow";
+    var c = COLORS.indexOf(color) >= 0? color: "yellow";
     mark.dataset.color = c;
     COLORS.forEach(function (x) { mark.classList.remove(HL + "--" + x); });
     mark.classList.add(HL + "--" + c);
@@ -75,7 +75,7 @@
       if (!eNode && cur + len >= end) { eNode = node; eOff = end - cur; break; }
       cur += len;
     }
-    if (!sNode || !eNode) return null;
+    if (!sNode ||!eNode) return null;
     var r = document.createRange();
     r.setStart(sNode, sOff);
     r.setEnd(eNode, eOff);
@@ -89,7 +89,7 @@
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: function (n) {
-          if (!n.nodeValue || !n.nodeValue.length) return NodeFilter.FILTER_REJECT;
+          if (!n.nodeValue ||!n.nodeValue.length) return NodeFilter.FILTER_REJECT;
           var nr = document.createRange();
           nr.selectNodeContents(n);
           if (range.compareBoundaryPoints(Range.END_TO_START, nr) <= 0 ||
@@ -102,8 +102,8 @@
     );
     var n;
     while ((n = w.nextNode())) {
-      var s = n === range.startContainer ? range.startOffset : 0;
-      var e = n === range.endContainer ? range.endOffset : n.length;
+      var s = n === range.startContainer? range.startOffset: 0;
+      var e = n === range.endContainer? range.endOffset: n.length;
       if (s < e) out.push({ node: n, start: s, end: e });
     }
     return out;
@@ -155,7 +155,7 @@
 
   function selectionInPane(pane) {
     var sel = window.getSelection();
-    if (!sel || !sel.rangeCount || sel.isCollapsed) return null;
+    if (!sel ||!sel.rangeCount || sel.isCollapsed) return null;
     var r = sel.getRangeAt(0);
     if (!pane.contains(r.commonAncestorContainer)) return null;
     return r;
@@ -201,10 +201,10 @@
         '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span>Clear all</button>';
     } else {
       ctxMenu.innerHTML =
-        '<button type="button" data-act="highlight" data-color="yellow"><span class="ico ico--hl">🖍</span>高亮 Highlight</button>' +
-        '<button type="button" data-act="notes"><span class="ico ico--note">📝</span>笔记 Notes</button>' +
-        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span>清除 Clear</button>' +
-        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span>全部清除 Clear all</button>';
+        '<button type="button" data-act="highlight" data-color="yellow"><span class="ico ico--hl">🖍</span> cao sáng Highlight</button>' +
+        '<button type="button" data-act="notes"><span class="ico ico--note">📝</span> bút ký Notes</button>' +
+        '<button type="button" data-act="clear"><span class="ico ico--clear">⌫</span> thanh trừ Clear</button>' +
+        '<button type="button" data-act="clear-all"><span class="ico ico--clear-all">⊖</span> Tất cả thanh trừ Clear all</button>';
     }
     document.body.appendChild(ctxMenu);
 
@@ -212,7 +212,7 @@
 
     ctxMenu.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-act]");
-      if (!btn || btn.disabled || !activePane) return;
+      if (!btn || btn.disabled ||!activePane) return;
       var act = btn.dataset.act;
       var range = pendingRange;
       hideUI();
@@ -232,8 +232,8 @@
     var menu = ensureCtx();
     var marks = marksInRange(pane, range);
     var hasHl = pane.querySelector("." + HL);
-    menu.querySelector('[data-act="clear"]').disabled = !marks.length;
-    menu.querySelector('[data-act="clear-all"]').disabled = !hasHl;
+    menu.querySelector('[data-act="clear"]').disabled =!marks.length;
+    menu.querySelector('[data-act="clear-all"]').disabled =!hasHl;
     menu.hidden = false;
     var mw = menu.offsetWidth || 160;
     var mh = menu.offsetHeight || 140;
@@ -283,7 +283,7 @@
     var mark = marks[0];
     var panel = ensureNotePanel();
     var ta = panel.querySelector("textarea");
-    ta.value = mark ? (mark.dataset.note || "") : "";
+    ta.value = mark? (mark.dataset.note || ""): "";
 
     panel.hidden = false;
     var rect = range.getBoundingClientRect();
@@ -321,7 +321,7 @@
       showCtx(e.clientX, e.clientY, pane, range);
     });
 
-    /* 选中文字松手后也弹出菜单（Mac 无右键时更友好） */
+    /* chọn trúng văn tự buông tay sau cũng bắn ra Trình đơn (Mac Không phải khóa lúc càng hữu hảo) */
     pane.addEventListener("mouseup", function (e) {
       if (e.button === 2) return;
       setTimeout(function () {
@@ -343,7 +343,7 @@
   }
 
   document.addEventListener("mousedown", function (e) {
-    if (ctxMenu && !ctxMenu.contains(e.target) && (!notePanel || !notePanel.contains(e.target))) {
+    if (ctxMenu &&!ctxMenu.contains(e.target) && (!notePanel ||!notePanel.contains(e.target))) {
       hideUI();
     }
   });
@@ -362,7 +362,7 @@
     var host = document.createElement("div");
     host.textContent = "Hello world";
     var r = rangeFromOffsets(host, 6, 11);
-    if (!r || r.toString() !== "world") console.warn("yysd reading-tools: offset check failed");
+    if (!r || r.toString()!== "world") console.warn("yysd reading-tools: offset check failed");
     scan();
     observe();
   }

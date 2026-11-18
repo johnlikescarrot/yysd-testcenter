@@ -20,7 +20,7 @@ from scripts.reading_paras import (
     to_plain as _to_plain,
 )
 
-PDF = Path("/Users/frankman/Desktop/剑21/剑桥雅思21（A类）.pdf")
+PDF = Path("/Users/frankman/Desktop/Cambridge 21/Cambridge IELTS 21 (A loại).pdf")
 
 # ponytail: hard-coded page ranges — upgrade path: scan for PASSAGE markers dynamically
 PASSAGE_PAGES: dict[int, list[tuple[int, int]]] = {
@@ -35,7 +35,7 @@ SKIP = re.compile(
     re.I,
 )
 
-BYLINE = re.compile(r"^A review of .+ book ", re.I)
+BYLINE = re.compile(r"^A review of.+ book ", re.I)
 _FOOTNOTE_LINE = re.compile(r"^[•\*]{1,3}\s|^\*\*\*")
 
 # Section label: A–G + space + word (uppercase + lowercase), not “A I …” / “a single …”
@@ -51,7 +51,7 @@ _BODY_START = re.compile(
 _CORE_UNLABELED_SPLIT = re.compile(
     r"(?<=\.)\s+(?="
     r"(?:However, I do|Let's |Art also |To say these|In a sense,|One way or another,|"
-    r"Perhaps the most |It seems that the more )"
+    r"Perhaps the most |It seems that the more)"
     r")"
 )
 

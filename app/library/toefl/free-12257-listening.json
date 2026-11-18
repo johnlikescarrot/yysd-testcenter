@@ -1,46 +1,46 @@
 {
- "id": "free-12257",
- "title": "Choose a Response #15",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #15",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12257,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-15"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #15",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/bea35565320a48f28ca7d7fb0dc8b6d3.mp3",
-   "questions": [
+  "id": "free-12257",
+  "title": "Choose a Response #15",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #15",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12257,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-15"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Yes, it is very good.",
-      "B": "The software came with it.",
-      "C": "John is the person you are looking for.",
-      "D": "Computers are essential these days."
-     },
-     "answer": "C",
-     "transcript": "Who is good with computers? ​​",
-     "stemZh": "谁擅长用电脑呀？",
-     "analysis": "Who is good with computers? 题干分析 本题是由 Who 引导的特殊疑问句，核心意图是询问擅长电脑的人是谁，答题关键是选出能够直接指出具体人物的选项。 选项分析 选项 A：用 Yes 作答，只评价事物好坏，没有回答具体人物是谁，完全偏离问句核心，予以排除。 选项 B：只说明软件是配套附带的，和询问谁擅长电脑毫无关联，话题不相关，予以排除。 选项 C：直接点明对应的人选，精准回应问句询问人物的诉求，问答逻辑契合，是正确选项。 选项 D：只是发表现如今电脑很重要的观点，没有回答具体是谁擅长电脑，答非所问，予以排除。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #15",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/bea35565320a48f28ca7d7fb0dc8b6d3.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Yes, it is very good.",
+            "B": "The software came with it.",
+            "C": "John is the person you are looking for.",
+            "D": "Computers are essential these days."
+          },
+          "answer": "C",
+          "transcript": "Who is good with computers? ​​",
+          "stemZh": "ai am hiểu dùng máy tính nha?",
+          "analysis": "Who is good with computers? Câu hỏi phân tích chủ đề là do Who dẫn dắt đặc thù câu nghi vấn, hạch tâm ý đồ là hỏi thăm am hiểu máy vi tính người là ai, bài thi mấu chốt là tuyển ra có thể trực tiếp chỉ ra cụ thể nhân vật Phương án. Phương án phân tích Phương án A: dùng Yes đáp lại, chỉ đánh giá sự vật rất xấu, không có trả lời cụ thể nhân vật là ai, hoàn toàn đều rời đi câu hỏi hạch tâm, giúp cho bài trừ. Phương án B: chỉ nói rõ ràng phần mềm là nguyên bộ phụ đái, và hỏi thăm ai am hiểu máy tính không liên hệ chút nào, chủ đề không liên hệ, giúp cho bài trừ. Phương án C: trực tiếp một chút rõ ràng đối ứng người chọn lựa, tinh chuẩn đáp lại câu hỏi hỏi thăm nhân vật tố cầu, vấn đáp ăn khớp phù hợp, là Đúng Phương án. Phương án D: chẳng qua là phát biểu hiện nay máy tính rất trọng yếu quan điểm, không có trả lời cụ thể là ai am hiểu máy tính, đáp phi sở vấn, giúp cho bài trừ. ​​"
+        }
+      ]
+    }
+  ]
 }

@@ -1,8 +1,16 @@
-# Bug memory
+# Ghi chú Kiến trúc Hệ thống (`MEMORIES.md`)
 
-- TOEFL writing sentence `bank` must never match `answer` order. Builders use `scripts/toefl_sent.py`. Upload gate: `node scripts/check_toefl_paper.js` (live catalog includes `bank-*-*.json`).
-- TOEFL Build a Sentence chips must not show Titlecase (Do/Have leaks the first word). Player lowercases chips; score is case-insensitive. Bank writing JSON is gated for Titlecase / HUD / CJK / ▩.
-- TOEFL reading: Complete the Words = one slot per missing letter; academic vocab stem quotes the word so the player can highlight it; daily-life email/notice/schedule must have line breaks or structured layout. Gate: `node scripts/check_toefl_paper.js`.
-- After TOEFL paper or reading-engine edits pass the gate, ship immediately via `~/.ssh/yysd_ecs_deploy` to `root@8.159.129.88` (`/opt/yysd/app` + `/opt/yysd/repo/app`; website files to `/opt/yysd/web` + `/opt/yysd/repo`). Do not wait to be asked. `139.224.0.221` is the retired pre-2026-10-13 IP — ignore it and any shell history that points there.
-- TOEFL Listen and Repeat: one sentence → 3s think → beep → 8s record. Never show `sample` during the item. One scene photo. HIT Sets 3–10 Q2–7 are `say` stand-ins until real per-sentence audio exists.
-- TOEFL listening photos are official-exam portraits on a plain white background, matched to the speaker's accent. Conversation: two people talking. Choose a response: one person, usually with a phone. Announcement and lecture: one person standing. No scenery, no text in the image. Same voice reuses the same file under `library/toefl/img/listen/` on `task.image`.
+## Kiến trúc tổng thể
+
+- **Ứng dụng học viên (HTML/CSS/ES Modules tĩnh):** Triển khai trực tiếp trên GitHub Pages qua `scripts/build_pages.mjs` và tương thích hoàn toàn với máy chủ Express (`server/server.js`) khi chạy ở chế độ đám mây.
+- **Lõi học tập thông minh (`src/`):**
+  - `src/scholar-citations.js`: Cơ sở dữ liệu hơn 120 công trình khoa học đã xác minh kèm DOI và liên kết `scholar.google.com`.
+  - `src/proficiency-score.js`: Quy đổi điểm năng lực 0–160 ↔ CEFR A1–C2 ↔ IELTS Band 2.0–9.0 và bảng quy đổi điểm thô 40 câu Cambridge.
+  - `src/hlr-srs.js`: Thuật toán lặp lại ngắt quãng Half-Life Regression ($p = 2^{-\Delta/h}$, Settles & Meeder, 2016).
+  - `src/gamification.js`: XP, Chuỗi ngày học, Đóng băng chuỗi, Chuỗi bạn bè (tối đa 5 bạn), Năng lượng & Siêu Cấp IELTS, Đá quý & Cửa hàng vật phẩm, 10 Giải đấu hàng tuần (Đồng → Kim cương), Nhiệm vụ hàng ngày, 12 Huy hiệu và Ảnh đại diện theo 4 mùa.
+  - `src/notification-bandit.js`: Thuật toán nhắc học Recovering-Difference Softmax Bandit (Yancey & Settles, 2020).
+  - `src/ielts-curriculum.js`: Lộ trình 8 chặng IELTS Academic, 7 dạng bài tập tương tác, câu bất ngờ ngữ nghĩa (SUS) và bộ giải thích lỗi sai miễn phí.
+  - `src/stories-roleplay.js`: Truyện ngắn học thuật tương tác và nhập vai đối thoại nhân vật theo 4 tiêu chí chấm Speaking.
+  - `src/pdf-report.js`: Danh mục 6 cẩm nang PDF học thuật và bộ dựng báo cáo cá nhân hóa kèm trích dẫn Google Scholar.
+  - `src/storage.js`: Lưu trữ an toàn theo phiên bản schema và đồng bộ sự kiện điểm `yysd:score` giữa phòng thi Cambridge và hệ thống XP/Streak.
+- **Giao thức đồng bộ điểm phòng thi:** `window.parent.postMessage({ type: "yysd:score", score, total, band, wrongItems }, "*")`.

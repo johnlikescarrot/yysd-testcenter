@@ -1,46 +1,46 @@
 {
- "id": "free-12265",
- "title": "Choose a Response #23",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #23",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12265,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-23"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #23",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/c50cf66faca84d9992f91f08440b5cf2.mp3",
-   "questions": [
+  "id": "free-12265",
+  "title": "Choose a Response #23",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #23",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12265,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-23"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "It was very exciting.",
-      "B": "The tickets were expensive.",
-      "C": "I'll see it this weekend.",
-      "D": "At the theater in the mall."
-     },
-     "answer": "A",
-     "transcript": "What did you think of the movie we just saw? ​​",
-     "stemZh": "你觉得我们刚看的那部电影怎么样？",
-     "analysis": "What did you think of the movie we just saw? 题干分析 题目问的是：你觉得我们刚看的这部电影怎么样？ 选项分析： A. 它非常激动人心。这直接回答了观影感受，是对电影的评价，因此A选项正确。 B. 票很贵。这谈论的是票价，而非对电影内容的看法，因此B选项错误。 C. 我这周末会去看。这表示还没有看过电影，与“我们刚看过”矛盾，因此C选项错误。 D. 在购物中心的电影院。这回答的是地点，而非对电影的评价，因此D选项错误。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #23",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/c50cf66faca84d9992f91f08440b5cf2.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "It was very exciting.",
+            "B": "The tickets were expensive.",
+            "C": "I'll see it this weekend.",
+            "D": "At the theater in the mall."
+          },
+          "answer": "A",
+          "transcript": "What did you think of the movie we just saw? ​​",
+          "stemZh": "bạn cảm thấy chúng tôi vừa nhìn cái kia bộ phim thế nào?",
+          "analysis": "What did you think of the movie we just saw? Câu hỏi phân tích đề mục hỏi là: bạn cảm thấy chúng tôi vừa nhìn bộ phim này thế nào? Phương án phân tích: A. nó kích động vô cùng nhân tâm. cái này trực tiếp trả lời xem ảnh cảm thụ, là đúng điện ảnh đánh giá, bởi vậy A Phương án Đúng. B. phiếu vé rất đắt. cái này đàm luận là giá vé, mà không phải là đối với trong phim ảnh cho cách nhìn, bởi vậy B Phương án Sai. C. ta đây cuối tuần sẽ đi gặp. cái này biểu thị còn không có xem qua Điện ảnh, và “ chúng tôi vừa xem qua ” mâu thuẫn, bởi vậy C Phương án Sai. D. tại trung tâm thương mại rạp chiếu phim. lúc này đáp chính là địa điểm, mà không phải là đối với điện ảnh đánh giá, bởi vậy D Phương án Sai. ​​"
+        }
+      ]
+    }
+  ]
 }

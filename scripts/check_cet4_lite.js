@@ -17,7 +17,7 @@ var shelf = require("../server/vocab-shelf");
 var cat = shelf.buildCatalog(root);
 assert.ok(cat.byId["cet4-lite"], "catalog book");
 assert.strictEqual(cat.byId["cet4-lite"].listCount, 30, "catalog 30");
-assert.strictEqual(cat.byId["cet4-lite"].label, "四级词汇（精简版）", "label");
+assert.strictEqual(cat.byId["cet4-lite"].label, "Từ vựng Đại học Cốt lõi (Bản rút gọn)", "label");
 
 var total = 0;
 var dualSpell = 0;
@@ -29,8 +29,8 @@ cat.byId["cet4-lite"].lists.forEach(function (l) {
   lesson.words.forEach(function (w) {
     assert.ok(w.word && w.meaning, "card " + w.word);
     assert.ok(String(w.ipa || "").indexOf(" · ") < 0, "no concatenated ipa " + w.word);
-    if (w.wordUk && w.wordUs && w.wordUk !== w.wordUs) dualSpell += 1;
-    if (w.ipaUs && w.ipaUk && w.ipaUs !== w.ipaUk) dualIpa += 1;
+    if (w.wordUk && w.wordUs && w.wordUk!== w.wordUs) dualSpell += 1;
+    if (w.ipaUs && w.ipaUk && w.ipaUs!== w.ipaUk) dualIpa += 1;
     assert.ok(w.spellings && w.spellings.length, "spellings " + w.word);
   });
 });
@@ -52,8 +52,8 @@ var schJs = read("server/vocab-challenge-schedule.js");
 assert.ok(schJs.indexOf("cet4-lite") >= 0, "schedule wired");
 assert.ok(read("assets/js/config.js").indexOf("vocab-cet4-lite") >= 0, "config subject");
 assert.ok(read("scripts/build_manifest.py").indexOf('"vocab-cet4-lite"') >= 0, "manifest builder subject");
-assert.ok(read("assets/js/teacher-vocab-challenge.js").indexOf("布置四级精简") >= 0, "teacher button");
-assert.ok(read("assets/js/teacher-vocab-challenge.js").indexOf("取消布置") >= 0, "unassign");
+assert.ok(read("assets/js/teacher-vocab-challenge.js").indexOf(" Giao bộ Đại học Rút gọn ") >= 0, "teacher button");
+assert.ok(read("assets/js/teacher-vocab-challenge.js").indexOf(" Hủy bố trí ") >= 0, "unassign");
 assert.ok(read("server/vocab-challenge.js").indexOf("unassignBook") >= 0, "unassign api");
 assert.ok(read("server/vocab-challenge.js").indexOf("PRIMARY KEY (student_id, book_id)") >= 0, "multi pk");
 assert.ok(read("assets/js/vocab-learn.js").indexOf("accentOf") >= 0, "learn split accent");

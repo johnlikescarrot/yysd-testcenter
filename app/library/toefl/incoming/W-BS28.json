@@ -19,21 +19,55 @@
       "id": 271,
       "set": "W-BS28-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Where did you find the instructions for the class assignment?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " gave " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " gave "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["includes", "professor", "the instructions", "that", "the syllabus", "us", "our"],
-      "answer": ["the syllabus", "that", "our", "professor", "us", "includes", "the instructions"]
+      "bank": [
+        "includes",
+        "professor",
+        "the instructions",
+        "that",
+        "the syllabus",
+        "us",
+        "our"
+      ],
+      "answer": [
+        "the syllabus",
+        "that",
+        "our",
+        "professor",
+        "us",
+        "includes",
+        "the instructions"
+      ]
     },
     {
       "type": "sentence",
@@ -41,20 +75,52 @@
       "id": 272,
       "set": "W-BS28-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Who is in charge of the group project for psychology class?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["leading", "it", "is", "I'm", "sure", "who", "not"],
-      "answer": ["I'm", "not", "sure", "who", "is", "leading", "it"]
+      "bank": [
+        "leading",
+        "it",
+        "is",
+        "I'm",
+        "sure",
+        "who",
+        "not"
+      ],
+      "answer": [
+        "I'm",
+        "not",
+        "sure",
+        "who",
+        "is",
+        "leading",
+        "it"
+      ]
     },
     {
       "type": "sentence",
@@ -62,17 +128,37 @@
       "id": 273,
       "set": "W-BS28-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard that the annual school picnic is scheduled for next weekend.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " decided?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " decided?"
+        }
       ],
-      "bank": ["has been", "the venue", "know if", "do you"],
-      "answer": ["do you", "know if", "the venue", "has been"]
+      "bank": [
+        "has been",
+        "the venue",
+        "know if",
+        "do you"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "the venue",
+        "has been"
+      ]
     },
     {
       "type": "sentence",
@@ -80,18 +166,40 @@
       "id": 274,
       "set": "W-BS28-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm planning to visit the new museum exhibit after class today.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " does " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " does "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["what", "time", "open", "it"],
-      "answer": ["what", "time", "it", "open"]
+      "bank": [
+        "what",
+        "time",
+        "open",
+        "it"
+      ],
+      "answer": [
+        "what",
+        "time",
+        "it",
+        "open"
+      ]
     },
     {
       "type": "sentence",
@@ -99,19 +207,47 @@
       "id": 275,
       "set": "W-BS28-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "How did the professor respond to your research proposal?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["details about", "study would", "be implemented", "he asked", "for more", "how the"],
-      "answer": ["he asked", "for more", "details about", "how the", "study would", "be implemented"]
+      "bank": [
+        "details about",
+        "study would",
+        "be implemented",
+        "he asked",
+        "for more",
+        "how the"
+      ],
+      "answer": [
+        "he asked",
+        "for more",
+        "details about",
+        "how the",
+        "study would",
+        "be implemented"
+      ]
     },
     {
       "type": "sentence",
@@ -119,21 +255,53 @@
       "id": 276,
       "set": "W-BS28-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Can you explain why Sarah missed class?",
       "parts": [
-        { "t": "Didn't she " },
-        { "slot": true },
-        { "slot": true },
-        { "t": " to " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Didn't she "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " to "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["doctor's", "a", "attend", "she had", "appointment", "mention that"],
-      "answer": ["mention that", "she had", "attend", "a", "doctor's", "appointment"]
+      "bank": [
+        "doctor's",
+        "a",
+        "attend",
+        "she had",
+        "appointment",
+        "mention that"
+      ],
+      "answer": [
+        "mention that",
+        "she had",
+        "attend",
+        "a",
+        "doctor's",
+        "appointment"
+      ]
     },
     {
       "type": "sentence",
@@ -141,20 +309,50 @@
       "id": 277,
       "set": "W-BS28-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why haven't you read that book yet?",
       "parts": [
-        { "t": "I read " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I read "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["another", "book", "written", "instead", "the same author", "by"],
-      "answer": ["another", "book", "written", "by", "the same author", "instead"]
+      "bank": [
+        "another",
+        "book",
+        "written",
+        "instead",
+        "the same author",
+        "by"
+      ],
+      "answer": [
+        "another",
+        "book",
+        "written",
+        "by",
+        "the same author",
+        "instead"
+      ]
     },
     {
       "type": "sentence",
@@ -162,20 +360,50 @@
       "id": 278,
       "set": "W-BS28-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Which team did you join for the class project?",
       "parts": [
-        { "t": "I participated " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I participated "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["energy", "in", "focuses on", "that group that", "renewable", "solutions"],
-      "answer": ["in", "that group that", "focuses on", "renewable", "energy", "solutions"]
+      "bank": [
+        "energy",
+        "in",
+        "focuses on",
+        "that group that",
+        "renewable",
+        "solutions"
+      ],
+      "answer": [
+        "in",
+        "that group that",
+        "focuses on",
+        "renewable",
+        "energy",
+        "solutions"
+      ]
     },
     {
       "type": "sentence",
@@ -183,19 +411,47 @@
       "id": 279,
       "set": "W-BS28-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What are you looking for in a new laptop?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " choice." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " choice."
+        }
       ],
-      "bank": ["is my", "battery life", "top", "the model", "that has", "the longest"],
-      "answer": ["the model", "that has", "the longest", "battery life", "is my", "top"]
+      "bank": [
+        "is my",
+        "battery life",
+        "top",
+        "the model",
+        "that has",
+        "the longest"
+      ],
+      "answer": [
+        "the model",
+        "that has",
+        "the longest",
+        "battery life",
+        "is my",
+        "top"
+      ]
     },
     {
       "type": "sentence",
@@ -203,20 +459,50 @@
       "id": 280,
       "set": "W-BS28-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you attend the school's networking event yesterday?",
       "parts": [
-        { "t": "I was " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["to", "it", "the", "to make", "not able", "event"],
-      "answer": ["not able", "to make", "it", "to", "the", "event"]
+      "bank": [
+        "to",
+        "it",
+        "the",
+        "to make",
+        "not able",
+        "event"
+      ],
+      "answer": [
+        "not able",
+        "to make",
+        "it",
+        "to",
+        "the",
+        "event"
+      ]
     }
   ]
 }

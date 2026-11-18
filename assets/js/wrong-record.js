@@ -1,5 +1,5 @@
 /* =========================================================================
-   wrong-record.js — 错题详情 + 按需 AI 分析/追问
+   wrong-record.js — câu sai tình hình cụ thể và tỉ mỉ + theo như cần AI phân tích / truy vấn
    ========================================================================= */
 (function () {
   "use strict";
@@ -17,7 +17,7 @@
   var chatByNo = {};
 
   function esc(s) {
-    return Y && Y.esc ? Y.esc(s) : String(s == null ? "" : s)
+    return Y && Y.esc? Y.esc(s): String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
@@ -40,8 +40,8 @@
       band: r.band,
       date: r.date,
       assignmentEventId: r.assignmentEventId || null,
-      cdt: !!r.cdt,
-      wrong: Array.isArray(r.wrong) ? r.wrong : [],
+      cdt:!!r.cdt,
+      wrong: Array.isArray(r.wrong)? r.wrong: [],
       attemptId: null
     };
   }
@@ -53,17 +53,17 @@
       return;
     }
     quotaEl.hidden = false;
-    quotaEl.textContent = "今日 AI 文字额度剩余 " + (q.textLeft != null ? q.textLeft : "—") +
-      (q.textLimit != null ? "/" + q.textLimit : "");
+    quotaEl.textContent = " hôm nay AI văn tự khoản độ còn thừa " + (q.textLeft!= null? q.textLeft: "—") +
+      (q.textLimit!= null? "/" + q.textLimit: "");
   }
 
   function analysisHTML(a) {
     if (!a) return "";
     return '<div class="wrong-ai-card">' +
-      (a.whyWrong ? "<p><b>错因</b> " + esc(a.whyWrong) + "</p>" : "") +
-      (a.evidence ? "<p><b>考点</b> " + esc(a.evidence) + "</p>" : "") +
-      (a.strategy ? "<p><b>策略</b> " + esc(a.strategy) + "</p>" : "") +
-      (a.keyVocab ? "<p><b>词汇</b> " + esc(a.keyVocab) + "</p>" : "") +
+      (a.whyWrong? "<p><b> sai bởi vì </b> " + esc(a.whyWrong) + "</p>": "") +
+      (a.evidence? "<p><b> địa điểm thi </b> " + esc(a.evidence) + "</p>": "") +
+      (a.strategy? "<p><b> sách lược </b> " + esc(a.strategy) + "</p>": "") +
+      (a.keyVocab? "<p><b> Từ vựng </b> " + esc(a.keyVocab) + "</p>": "") +
     "</div>";
   }
 
@@ -72,23 +72,23 @@
     var explain = (w.explain || "").trim();
     var explainNote = explain
       ? '<p class="wrong-item__explain">' + esc(explain) + "</p>"
-      : '<p class="wrong-item__hint">暂无卷面讲解（历史记录可能未收录）。重做该卷交卷后会更新。</p>';
+      : '<p class="wrong-item__hint"> tạm thời chưa có cuốn mặt giảng giải (Lịch sử ghi chép khả năng không thu nhận sử dụng). trọng tố nên cuốn Nộp bài sau sẽ đổi mới. </p>';
     return '<article class="wrong-item" data-key="' + esc(key) + '">' +
-      "<header><h3>第 " + esc(String(w.no)) + " 题</h3>" +
-        (attempt.title ? '<span class="wrong-item__paper">' + esc(attempt.title) + "</span>" : "") +
+      "<header><h3> thứ " + esc(String(w.no)) + " câu </h3>" +
+        (attempt.title? '<span class="wrong-item__paper">' + esc(attempt.title) + "</span>": "") +
       "</header>" +
-      (w.stem ? '<p class="wrong-item__stem">' + esc(w.stem) + "</p>" : "") +
+      (w.stem? '<p class="wrong-item__stem">' + esc(w.stem) + "</p>": "") +
       '<dl class="wrong-item__ans">' +
-        "<div><dt>你的答案</dt><dd>" + esc(w.ua || "未作答") + "</dd></div>" +
-        "<div><dt>正确答案</dt><dd>" + esc(w.ans || "—") + "</dd></div>" +
+        "<div><dt> Câu trả lời của bạn </dt><dd>" + esc(w.ua || "Chưa trả lời") + "</dd></div>" +
+        "<div><dt> Đáp án đúng </dt><dd>" + esc(w.ans || "—") + "</dd></div>" +
       "</dl>" +
       explainNote +
       '<div class="wrong-item__ai" data-ai="' + esc(key) + '">' +
-        '<button type="button" class="btn btn--ghost btn--sm" data-analyze="' + esc(key) + '">AI 分析本题</button>' +
+        '<button type="button" class="btn btn--ghost btn--sm" data-analyze="' + esc(key) + '">AI phân tích chủ đề </button>' +
         '<div class="wrong-item__ai-out" hidden></div>' +
         '<div class="wrong-item__ask" hidden>' +
-          '<input type="text" class="wrong-ask-input" placeholder="继续追问…" maxlength="500" data-ask-input="' + esc(key) + '">' +
-          '<button type="button" class="btn btn--primary btn--sm" data-ask="' + esc(key) + '">提问</button>' +
+          '<input type="text" class="wrong-ask-input" placeholder=" tiếp tục truy vấn …" maxlength="500" data-ask-input="' + esc(key) + '">' +
+          '<button type="button" class="btn btn--primary btn--sm" data-ask="' + esc(key) + '"> vấn đề </button>' +
         "</div>" +
         '<p class="wrong-item__ai-err" hidden></p>' +
       "</div>" +
@@ -122,15 +122,15 @@
   function runAnalyze(key, followUp) {
     var meta = findWrongMeta(key);
     var box = content.querySelector('[data-ai="' + key + '"]');
-    if (!box || !meta.w) return;
+    if (!box ||!meta.w) return;
     var out = box.querySelector(".wrong-item__ai-out");
     var ask = box.querySelector(".wrong-item__ask");
     var err = box.querySelector(".wrong-item__ai-err");
     var btn = box.querySelector('[data-analyze="' + key + '"]');
     err.hidden = true;
-    if (!AUTH || !AUTH.analyzeWrongItem) {
+    if (!AUTH ||!AUTH.analyzeWrongItem) {
       err.hidden = false;
-      err.textContent = "请先登录学生账号后再使用 AI 分析";
+      err.textContent = " Vui lòng đăng nhập tài khoản học viên trước sau lại sử dụng AI phân tích ";
       return;
     }
     if (btn) btn.disabled = true;
@@ -151,16 +151,16 @@
       var text = analysisHTML(d.analysis);
       out.hidden = false;
       out.innerHTML = (out.innerHTML || "") + (followUp
-        ? '<div class="wrong-ai-turn"><p class="wrong-ai-q">问：' + esc(followUp) + "</p>" + text + "</div>"
+        ? '<div class="wrong-ai-turn"><p class="wrong-ai-q"> hỏi: ' + esc(followUp) + "</p>" + text + "</div>"
         : text);
       ask.hidden = false;
       var reply = [d.analysis.whyWrong, d.analysis.evidence, d.analysis.strategy].filter(Boolean).join("\n");
-      hist.push({ role: "user", content: followUp || ("分析第 " + meta.w.no + " 题") });
+      hist.push({ role: "user", content: followUp || (" phân tích thứ " + meta.w.no + " câu ") });
       hist.push({ role: "assistant", content: reply });
       chatByNo[key] = hist.slice(-8);
     }).catch(function (e) {
       err.hidden = false;
-      err.textContent = (e && e.message) || "分析失败";
+      err.textContent = (e && e.message) || " phân tích thất bại ";
       if (e && e.quota) setQuota(e.quota);
     }).then(function () {
       if (btn) btn.disabled = false;
@@ -178,7 +178,7 @@
       if (q) {
         var key = q.getAttribute("data-ask");
         var input = content.querySelector('[data-ask-input="' + key + '"]');
-        var text = input ? String(input.value || "").trim() : "";
+        var text = input? String(input.value || "").trim(): "";
         if (!text) return;
         input.value = "";
         runAnalyze(key, text);
@@ -192,22 +192,22 @@
     });
     window.__WR_ATTEMPTS = attempts;
     if (!attempts.length) {
-      titleEl.textContent = "暂无错题";
-      metaEl.textContent = "这次作答没有错题，或记录尚未同步。";
+      titleEl.textContent = " tạm thời chưa có câu sai ";
+      metaEl.textContent = " lần này đáp lại không câu sai, hoặc ghi chép chưa đồng bộ. ";
       content.innerHTML = '<div class="state state--brand results-empty premium-empty">' +
-        "<h3>没有可查看的错题</h3>" +
-        '<p>完成作业并交卷后，错题会出现在「我的成绩 · 错题记录」。</p>' +
-        '<a class="btn btn--primary" href="results.html#tab=wrongs">返回错题记录</a></div>';
+        "<h3> không có có thể tra nhìn câu sai </h3>" +
+        '<p> hoàn thành bài tập cũng Nộp bài sau, câu sai sẽ xuất hiện tại « Kết quả của tôi · sai lời tựa lục ». </p>' +
+        '<a class="btn btn--primary" href="results.html#tab=wrongs"> Quay lại sai lời tựa lục </a></div>';
       return;
     }
     var titles = attempts.map(function (a) { return a.title || a.id; });
     var uniq = titles.filter(function (t, i) { return titles.indexOf(t) === i; });
-    titleEl.textContent = uniq.length === 1 ? uniq[0] : "模考错题合集";
+    titleEl.textContent = uniq.length === 1? uniq[0]: " Tổng hợp câu sai thi thử ";
     var totalWrong = attempts.reduce(function (n, a) { return n + a.wrong.length; }, 0);
-    metaEl.textContent = "共 " + totalWrong + " 道错题 · " + fmtDate(attempts[0].date);
+    metaEl.textContent = " tổng " + totalWrong + " đạo câu sai · " + fmtDate(attempts[0].date);
     var retryId = attempts[0].id;
     var html = '<div class="wrong-detail-acts">' +
-      '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(retryId) + '">再做本卷</a>' +
+      '<a class="btn btn--ghost btn--sm" href="exam.html?id=' + encodeURIComponent(retryId) + '"> làm tiếp bản cuốn </a>' +
       '</div><div class="wrong-detail-list">';
     attempts.forEach(function (a) {
       a.wrong.forEach(function (w, idx) {
@@ -229,10 +229,10 @@
 
     if (attemptId && AUTH && AUTH.fetchScoreAttempt) {
       AUTH.fetchScoreAttempt(attemptId).then(function (d) {
-        renderAttempts(d.attempt ? [d.attempt] : []);
+        renderAttempts(d.attempt? [d.attempt]: []);
       }).catch(function (e) {
-        content.innerHTML = '<div class="state state--brand"><h3>加载失败</h3><p>' +
-          esc((e && e.message) || "请稍后重试") + "</p></div>";
+        content.innerHTML = '<div class="state state--brand"><h3> Tải dữ liệu thất bại </h3><p>' +
+          esc((e && e.message) || " xin sau Thử lại ") + "</p></div>";
       });
       return;
     }
@@ -255,7 +255,7 @@
     }
 
     if (itemId) {
-      if (local || !AUTH || !AUTH.getToken || !AUTH.getToken()) {
+      if (local ||!AUTH ||!AUTH.getToken ||!AUTH.getToken()) {
         renderAttempts([localByItem(itemId)].filter(Boolean));
         return;
       }
@@ -283,9 +283,9 @@
       return;
     }
 
-    content.innerHTML = '<div class="state state--brand"><h3>缺少参数</h3>' +
-      '<p>请从「我的成绩 · 错题记录」进入。</p>' +
-      '<a class="btn btn--primary" href="results.html#tab=wrongs">返回</a></div>';
+    content.innerHTML = '<div class="state state--brand"><h3> thiếu khuyết tham số </h3>' +
+      '<p> mời từ « Kết quả của tôi · sai lời tựa lục » Vào học. </p>' +
+      '<a class="btn btn--primary" href="results.html#tab=wrongs"> Quay lại </a></div>';
   }
 
   load();

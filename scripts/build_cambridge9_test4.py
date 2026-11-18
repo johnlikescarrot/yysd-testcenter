@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T4.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T4.docx")
 BOILER_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_14.23.29-fa96a46c-8f4e-42c8-9c38-ad3d72d6e6e7.png"
@@ -26,10 +26,10 @@ ENERGY_SRC = Path(
     "__2026-07-01_14.23.46-6b92bad3-c869-4193-a62e-50817c5e89e4.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test4 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test4 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test4 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test4 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test4 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-4.html"
@@ -53,7 +53,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -73,7 +73,7 @@ def patch_listening_meta(html: str) -> str:
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
         ("test3", "test4"),
-        ("Test 3 听力（官方原题 + 官方答案）", "Test 4 听力（官方原题 + 官方答案）"),
+        ("Test 3 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 4 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -87,19 +87,19 @@ def patch_listening_meta(html: str) -> str:
         "const el=document.getElementById(q.id);",
         "function readAns(q){ const el=document.getElementById(q.id);",
     )
-    match_needle = "else if(g.kind==='match'){\n    const box="
+    match_needle = "else if(g.kind==='match'){\n const box="
     match_insert = (
         "else if(g.kind==='match'){\n"
-        "    const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"diagram\" style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const box="
+        " const box="
     )
     if match_needle in html and "const fig=" not in html.split("else if(g.kind==='match')")[1][:200]:
         html = html.replace(match_needle, match_insert, 1)
     if "body=box+qs;" in html and "body=fig+box+qs;" not in html:
         html = html.replace(
-            "    body=box+qs;\n  }\n  else if(g.kind==='multi')",
-            "    body=fig+box+qs;\n  }\n  else if(g.kind==='multi')",
+            " body=box+qs;\n }\n else if(g.kind==='multi')",
+            " body=fig+box+qs;\n }\n else if(g.kind==='multi')",
             1,
         )
     return html
@@ -109,7 +109,7 @@ def patch_reading_meta(html: str) -> str:
     reps = [
         ("Test 3", "Test 4"),
         ("test-3", "test-4"),
-        ("Test 3 阅读（官方原题 + 官方答案）", "Test 4 阅读（官方原题 + 官方答案）"),
+        ("Test 3 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 4 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -133,7 +133,7 @@ def patch_writing_meta(html: str) -> str:
             "Task 1 Yemen/Italy population pie charts + Task 2 sports facilities and public health essay",
             "Task 1 US energy consumption graph + Task 2 languages dying out essay",
         ),
-        ("Test 3 写作（官方真题）", "Test 4 写作（官方真题）"),
+        ("Test 3 Viết (Đề thi chính thức) ", "Test 4 Viết (Đề thi chính thức) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -257,8 +257,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["B", "E"],
                         "questions": [
-                            {"id": "L5", "no": 5, "explain": "答案：B 与 E，顺序不限。"},
-                            {"id": "L6", "no": 6, "explain": "答案：B 与 E，顺序不限。"},
+                            {"id": "L5", "no": 5, "explain": " Đáp án: B và E, không giới hạn thứ tự. "},
+                            {"id": "L6", "no": 6, "explain": " Đáp án: B và E, không giới hạn thứ tự. "},
                         ],
                     },
                     {

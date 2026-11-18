@@ -1,81 +1,81 @@
 {
- "id": "free-13113",
- "title": "Lecture #45",
- "set": "free",
- "skill": "listening",
- "titleZh": "学术讲座 #45",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13113,
-  "labelId": 1325,
-  "code": "TOEFL--L-academic talks-45"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "lecture",
-   "module": 1,
-   "title": "Lecture #45",
-   "instruction": "Listen to a talk in a music class.",
-   "audio": "library/toefl/free/audio/9d9b233c402549529af2d1f751d2418b.mp3",
-   "transcript": "Man: Hip hop is one of the world's most popular musical genres. I want to discuss a characteristic feature of this art form, sampling. Sampling refers to the reuse of a part of an existing song in a new composition.\nHip hop artists might write a song that uses part of a vocal track or a drum beat, or some other sound from an existing song. For example, the singer Beyonce 's 2003hit Crazy in Love uses a melody from a 1970 release by the band The Shy Lights.\nSampling was especially common in the early days of hip hop, before the landmark 1991 US District Court case “Grand Upright Music Limited versus Warner Brothers Records Inc.” The ruling in that case required artists to obtain permission to use samples in their recordings. Before that legal decision, sampling had been a relatively cheap and easy practice. It continued afterward, down to today, but in a more limited way.\nCritics often argue that sampling is a less creative approach than traditional music making, but I'd respond that all art, especially music, is referential. In creating a new work, all artists borrow in one manner or another from existing works of art. Hip hop creativity comes in finding unusual sources or putting recognizable material into new contexts. But now I'd like to know what you think. Let's examine the Sonic collage that is Paul's Boutique, the 1989 album from the Beastie Boys, which utilizes A remarkable number of samples.",
-   "questions": [
+  "id": "free-13113",
+  "title": "Lecture #45",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "Học thuật toạ đàm #45",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13113,
+    "labelId": 1325,
+    "code": "TOEFL--L-academic talks-45"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "How does the speaker define \"sampling\"?",
-     "options": {
-      "A": "Listening to music from different genres",
-      "B": "Choosing particular musicians to research",
-      "C": "Combining a range of musical styles in one song",
-      "D": "Using pieces of recorded music in a new song"
-     },
-     "answer": "D",
-     "analysis": "答案: D 题目问的是: 说话者是如何定义“采样”的？ 定位原文: \"Sampling refers to the reuse of a part of an existing song in a new composition.\" 选项分析: A. Listening to music from different genres (听不同流派的音乐) - 错误。这是对“sampling”字面意思的误解，与定义无关。 B. Choosing particular musicians to research (选择特定的音乐家进行研究) - 错误。与创作新歌曲无关。 C. Combining a range of musical styles in one song (在一首歌中结合多种音乐风格) - 错误。虽然采样可能涉及风格融合，但定义的核心是“reuse of a part”（重用片段），而非风格融合。 D. Using pieces of recorded music in a new song (在新歌中使用录音片段) - 正确。这与原文“reuse of a part of an existing song”完全对应。"
-    },
-    {
-     "id": 2,
-     "stem": "What event does the speaker say caused a change to a creative process?",
-     "options": {
-      "A": "A legal case",
-      "B": "A concert",
-      "C": "The invention of a new instrument",
-      "D": "The start of a new recording company"
-     },
-     "answer": "A",
-     "analysis": "答案: A 题目问的是: 说话者说是什么事件导致了创作过程的改变？ 定位原文: \"The ruling in that case required artists to obtain permission to use samples in their recordings. Before that legal decision, sampling had been a relatively cheap and easy practice.\" 选项分析: A. A legal case (一个法律案件) - 正确。文中明确提到了“1991 US District Court case”以及“legal decision”改变了采样变得昂贵和受限的现状。 B. A concert (一场音乐会) - 错误。文中未提及。 C. The invention of a new instrument (一种新乐器的发明) - 错误。文中未提及。 D. The start of a new recording company (一家新唱片公司的成立) - 错误。虽然提到了Warner Brothers Records，但重点在于它是被告方，而非公司的成立导致了变化。"
-    },
-    {
-     "id": 3,
-     "stem": "What is the speaker's attitude toward sampling?",
-     "options": {
-      "A": "She disagrees with the criticism that it lacks creativity.",
-      "B": "She believes that it is a unique practice in the history of music.",
-      "C": "She is disappointed that it is no longer commonly used.",
-      "D": "She has not yet decided how she feels about it."
-     },
-     "answer": "A",
-     "analysis": "答案: A 题目问的是: 说话者对采样的态度是什么？ 定位原文: \"Critics often argue that sampling is a less creative approach than traditional music making, but I'd respond that all art, especially music, is referential.\" 选项分析: A. She disagrees with the criticism that it lacks creativity. (她不同意关于它缺乏创造力的批评。) - 正确。说话者用“but I'd respond...”反驳了批评者的观点，认为所有艺术都是相互参照的，嘻哈的创造力在于寻找不寻常的来源。 B. She believes that it is a unique practice in the history of music. (她认为这是音乐史上独特的做法。) - 错误。她认为所有艺术都是“referential”（相互参照的），暗示这并非嘻哈独有。 C. She is disappointed that it is no longer commonly used. (她对它不再常用感到失望。) -错误。她说它“continued afterward... but in a more limited way”，并没有表达失望的情绪。 D. She has not yet decided how she feels about it. (她还没决定怎么看待它。) - 错误。她的立场非常明确，支持采样的创造性。"
-    },
-    {
-     "id": 4,
-     "stem": "What will the speaker most likely do next?",
-     "options": {
-      "A": "Take a survey",
-      "B": "Discuss the artwork from an album cover",
-      "C": "Play a recording",
-      "D": "Help students do their own sampling"
-     },
-     "answer": "C",
-     "analysis": "答案: C 题目问的是: 说话者接下来最可能会做什么？ 定位原文: \"Let's examine the Sonic collage that is Paul's Boutique, the 1989 album from the Beastie Boys, which utilizes A remarkable number of samples.\" 选项分析: A. Take a survey (做一个调查) - 错误。虽然前面说了“I'd like to know what you think”，但紧接着的具体行动是“examine the Sonic collage”，即分析具体作品。 B. Discuss the artwork from an album cover (讨论专辑封面的艺术) - 错误。文中提到的是“Sonic collage”（声音拼贴），指音乐本身，而非视觉封面。 C. Play a recording (播放一段录音) - 正确。在音乐课上，当老师说“Let's examine...album... utilizes samples”时，最自然的下一步就是播放这张专辑的片段来让学生听其中的采样。 D. Help students do their own sampling (帮助学生做他们自己的采样) - 错误。这是分析现有作品，不是实践课。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "lecture",
+      "module": 1,
+      "title": "Lecture #45",
+      "instruction": "Listen to a talk in a music class.",
+      "audio": "library/toefl/free/audio/9d9b233c402549529af2d1f751d2418b.mp3",
+      "transcript": "Man: Hip hop is one of the world's most popular musical genres. I want to discuss a characteristic feature of this art form, sampling. Sampling refers to the reuse of a part of an existing song in a new composition.\nHip hop artists might write a song that uses part of a vocal track or a drum beat, or some other sound from an existing song. For example, the singer Beyonce 's 2003hit Crazy in Love uses a melody from a 1970 release by the band The Shy Lights.\nSampling was especially common in the early days of hip hop, before the landmark 1991 US District Court case “Grand Upright Music Limited versus Warner Brothers Records Inc.” The ruling in that case required artists to obtain permission to use samples in their recordings. Before that legal decision, sampling had been a relatively cheap and easy practice. It continued afterward, down to today, but in a more limited way.\nCritics often argue that sampling is a less creative approach than traditional music making, but I'd respond that all art, especially music, is referential. In creating a new work, all artists borrow in one manner or another from existing works of art. Hip hop creativity comes in finding unusual sources or putting recognizable material into new contexts. But now I'd like to know what you think. Let's examine the Sonic collage that is Paul's Boutique, the 1989 album from the Beastie Boys, which utilizes A remarkable number of samples.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "How does the speaker define \"sampling\"?",
+          "options": {
+            "A": "Listening to music from different genres",
+            "B": "Choosing particular musicians to research",
+            "C": "Combining a range of musical styles in one song",
+            "D": "Using pieces of recorded music in a new song"
+          },
+          "answer": "D",
+          "analysis": "Đáp án: D đề mục hỏi là: kẻ nói chuyện là như thế nào định nghĩa “ thu thập mẫu ”? Dẫn chứng Bài gốc: \"Sampling refers to the reuse of a part of an existing song in a new composition.\" Phương án phân tích: A. Listening to music from different genres (nghe bất đồng lưu phái Âm nhạc) - Sai. đây là đối với “sampling” mặt chữ ý tứ hiểu lầm, và định nghĩa không quan hệ. B. Choosing particular musicians to research (lựa chọn đặc định Âm nhạc gia tiến hành nghiên cứu) - Sai. và sáng tác ca khúc mới uốn khúc không quan hệ. C. Combining a range of musical styles in one song (tại một ca khúc Vừa kết hợp nhiều loại Âm nhạc phong cách) - Sai. mặc dù thu thập mẫu khả năng liên quan đến phong cách dung hợp, nhưng định nghĩa hạch tâm là “reuse of a part” (trọng dụng đoạn ngắn), mà không phải là phong cách dung hợp. D. Using pieces of recorded music in a new song (tại ca khúc mới Vừa sử dụng ghi âm đoạn ngắn) - Đúng. cái này cùng Bài gốc “reuse of a part of an existing song” hoàn toàn đúng ứng với."
+        },
+        {
+          "id": 2,
+          "stem": "What event does the speaker say caused a change to a creative process?",
+          "options": {
+            "A": "A legal case",
+            "B": "A concert",
+            "C": "The invention of a new instrument",
+            "D": "The start of a new recording company"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: kẻ nói chuyện nói là chuyện gì kiện đưa đến sáng tác quá trình cải biến? Dẫn chứng Bài gốc: \"The ruling in that case required artists to obtain permission to use samples in their recordings. Before that legal decision, sampling had been a relatively cheap and easy practice.\" Phương án phân tích: A. A legal case (một cái pháp luật vụ án) - Đúng. văn trung rõ ràng nhắc tới “1991 US District Court case” cũng như “legal decision” cải biến thu thập mẫu trở nên đắt đỏ và chế ngự hiện trạng. B. A concert (một cuộc âm nhạc hội) - Sai. văn trung Không được đề cập (Not Given). C. The invention of a new instrument (một loại mới nhạc khí phát minh) - Sai. văn trung Không được đề cập (Not Given). D. The start of a new recording company (một nhà đĩa nhạc mới công ty thành lập) - Sai. mặc dù nhắc tới Warner Brothers Records, nhưng trọng điểm ở chỗ nó là bị cáo phương, mà không phải là công ty thành lập đưa đến biến hóa."
+        },
+        {
+          "id": 3,
+          "stem": "What is the speaker's attitude toward sampling?",
+          "options": {
+            "A": "She disagrees with the criticism that it lacks creativity.",
+            "B": "She believes that it is a unique practice in the history of music.",
+            "C": "She is disappointed that it is no longer commonly used.",
+            "D": "She has not yet decided how she feels about it."
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: kẻ nói chuyện đối với thu thập mẫu thái độ là cái gì? Dẫn chứng Bài gốc: \"Critics often argue that sampling is a less creative approach than traditional music making, but I'd respond that all art, especially music, is referential.\" Phương án phân tích: A. She disagrees with the criticism that it lacks creativity. (cô ấy không đồng ý về nó khuyết thiếu sức sáng tạo phê bình.) - Đúng. kẻ nói chuyện dùng “but I'd respond...” phản bác phê bình người quan điểm, cho rằng tất cả Nghệ thuật đều là lẫn nhau tham chiếu, hip-hop sức sáng tạo ở chỗ tìm kiếm không tầm thường nơi phát ra. B. She believes that it is a unique practice in the history of music. (cô ấy cho rằng đây là Âm nhạc trên lịch sử đặc biệt cách làm.) - Sai. cô ấy cho rằng tất cả Nghệ thuật đều là “referential” (lẫn nhau tham chiếu), ám chỉ đây cũng không phải là hip-hop chỉ có. C. She is disappointed that it is no longer commonly used. (cô ấy đối với nó không hề thường dùng cảm thấy thất vọng.) - Sai. cô ấy nói nó “continued afterward... but in a more limited way”, cũng không có biểu đạt thất vọng tâm tình. D. She has not yet decided how she feels about it. (cô ấy còn không có quyết định ý kiến gì nó.) - Sai. lập trường của nàng vô cùng rõ ràng, hỗ trợ thu thập mẫu tính sáng tạo."
+        },
+        {
+          "id": 4,
+          "stem": "What will the speaker most likely do next?",
+          "options": {
+            "A": "Take a survey",
+            "B": "Discuss the artwork from an album cover",
+            "C": "Play a recording",
+            "D": "Help students do their own sampling"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: kẻ nói chuyện kế tiếp khả năng nhất biết làm gì? Dẫn chứng Bài gốc: \"Let's examine the Sonic collage that is Paul's Boutique, the 1989 album from the Beastie Boys, which utilizes A remarkable number of samples.\" Phương án phân tích: A. Take a survey (làm một cái điều tra) - Sai. mặc dù phía trước nói “I'd like to know what you think”, nhưng ngay sau đó cụ thể hành động là “examine the Sonic collage”, liền phân ra tích cụ thể tác phẩm. B. Discuss the artwork from an album cover (thảo luận album Trang bìa Nghệ thuật) - Sai. văn trung nhắc tới là “Sonic collage” (thanh âm liều dán), chỉ Âm nhạc bản thân, mà không phải là thị giác Trang bìa. C. Play a recording (phát ra một đoạn ghi âm) - Đúng. tại Âm nhạc trong lớp, làm lão sư nói “Let's examine...album... utilizes samples” lúc, tự nhiên nhất bước tiếp theo chính là phát ra tờ này album đoạn ngắn đến lại để cho Học viên nghe trong đó thu thập mẫu. D. Help students do their own sampling (trợ giúp Học viên làm chính bọn hắn thu thập mẫu) - Sai. đây là phân tích hiện hữu tác phẩm, không phải thực tế khóa."
+        }
+      ]
+    }
+  ]
 }

@@ -6,12 +6,12 @@ import shutil
 import stat
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/8 月/8.30-国内线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /8 tháng /8.30- Thi trực tiếp /audio/item_level"
 AUDIO = "library/toefl/audio/2025-08-30/"
 PHOTO = "library/toefl/img/2025-09-02/"
 ID = "2025-08-30"
 SET = "8.30"
-TITLE = "新托福 8.30 国内线下"
+TITLE = "TOEFL iBT 30/8 Thi trực tiếp "
 
 
 def dump(name, obj):
@@ -502,7 +502,7 @@ def build_reading():
         " speak for the first time, transforming the cinematic experience. This breakthrough laid the foundation for later innovations like CGI and immersive sound design, expanding how stories could be told onscreen.",
     ])
     tasks.append(t)
-    if n != 162:
+    if n!= 162:
         raise SystemExit("cw expected next 162, got %s" % n)
     tasks.append(academic("Biofertilizer Dynamics in Agrochemistry", 2, [
         "One of the latest inventions in agrochemistry is biofertilizers. This innovation aims to provide an environmentally friendly alternative to traditional fertilizers, which are infamous for causing soil and water pollution. Biofertilizers use living microorganisms to improve soil fertility by fixing nutrients such as nitrogen, ensuring that these nutrients remain available for plant uptake. Unlike conventional fertilizers that simply release nutrients into the soil, biofertilizers enhance the soil's own biological activity, creating a more sustainable agricultural practice.",
@@ -537,14 +537,14 @@ def build_reading():
             "D": "It offers advice to farmers on best agricultural practices.",
         }, "C"),
     ]))
-    return paper(ID, "reading", "阅读", [
+    return paper(ID, "reading", " Đọc ", [
         {"n": 1, "timeSec": 1920, "from": 1, "to": 161},
         {"n": 2, "timeSec": 480, "from": 162, "to": 166},
     ], tasks)
 
 
 def build_listening():
-    return paper(ID, "listening", "听力", [
+    return paper(ID, "listening", " Nghe ", [
         {"n": 1, "timeSec": 1500, "from": 1, "to": 24},
         {"n": 2, "timeSec": 1320, "from": 25, "to": 46},
     ], [
@@ -859,7 +859,7 @@ def build_listening():
 
 
 def build_writing():
-    return paper(ID, "writing", "写作", [
+    return paper(ID, "writing", " Viết ", [
         {"n": 1, "timeSec": 2100, "from": 1, "to": 5, "label": "Email"},
         {"n": 2, "timeSec": 3000, "from": 6, "to": 10, "label": "Academic Discussion"},
     ], [
@@ -1087,10 +1087,10 @@ if __name__ == "__main__":
     dump("2025-08-30-listening.json", build_listening())
     dump("2025-08-30-writing.json", build_writing())
     dump("2025-08-30-speaking.json", build_speaking(
-        ID, TITLE + " · 口语 Form 1", 1, 1))
+        ID, TITLE + " · Nói Form 1", 1, 1))
     dump("2025-08-30-speaking-f2.json", build_speaking(
-        ID + "-s2", TITLE + " · 口语 Form 2", 2, 2))
+        ID + "-s2", TITLE + " · Nói Form 2", 2, 2))
     dump("2025-08-30-speaking-f3.json", build_speaking(
-        ID + "-s3", TITLE + " · 口语 Form 3", 3, None))
+        ID + "-s3", TITLE + " · Nói Form 3", 3, None))
     dump("2025-08-30-speaking-f4.json", build_speaking(
-        ID + "-s4", TITLE + " · 口语 Form 4", 4, None))
+        ID + "-s4", TITLE + " · Nói Form 4", 4, None))

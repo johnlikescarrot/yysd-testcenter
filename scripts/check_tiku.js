@@ -1,4 +1,4 @@
-/* ponytail: 题库中心 state machine + pool + no-relist */
+/* ponytail: Ngân hàng đề trung tâm state machine + pool + no-relist */
 var path = require("path");
 var fs = require("fs");
 var tiku = require("../server/tiku");
@@ -56,15 +56,15 @@ if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-bs-writing.
   });
   var setN, q;
   for (setN = 1; setN <= maxSet; setN++) {
-    var qMax = setN === 90 ? 5 : 10;
+    var qMax = setN === 90? 5: 10;
     for (q = 1; q <= qMax; q++) {
       var id = "W-BS" + setN + "-Q" + q;
       var b = pool.filter(function (x) { return x.set === id; })[0];
-      if (!b || b.n !== 1 || b.type !== "sentence") throw new Error(id + " missing");
+      if (!b || b.n!== 1 || b.type!== "sentence") throw new Error(id + " missing");
     }
   }
   var bs1 = pool.filter(function (x) { return x.set === "W-BS1-Q1"; })[0];
-  if (!bs1 || !bs1.hay || bs1.hay.indexOf("bookstore") < 0) throw new Error("W-BS1-Q1 hay");
+  if (!bs1 ||!bs1.hay || bs1.hay.indexOf("bookstore") < 0) throw new Error("W-BS1-Q1 hay");
 }
 if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-we-writing.json"))) {
   var wePaper = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "app/library/toefl/bank-we-writing.json"), "utf8"));
@@ -77,7 +77,7 @@ if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-we-writing.
   for (weN = 1; weN <= weMax; weN++) {
     var weId = "W-WE" + weN;
     var wb = pool.filter(function (x) { return x.set === weId; })[0];
-    if (!wb || wb.n !== 1 || wb.type !== "email") throw new Error(weId + " missing");
+    if (!wb || wb.n!== 1 || wb.type!== "email") throw new Error(weId + " missing");
   }
 }
 if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-ad-writing.json"))) {
@@ -86,7 +86,7 @@ if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-ad-writing.
   if (adTasks.length < 87) throw new Error("bank-ad short " + adTasks.length);
   adTasks.forEach(function (t) {
     var ab = pool.filter(function (x) { return x.set === t.set; })[0];
-    if (!ab || ab.n !== 1 || ab.type !== "discussion") throw new Error((t.set || "?") + " missing");
+    if (!ab || ab.n!== 1 || ab.type!== "discussion") throw new Error((t.set || "?") + " missing");
   });
 }
 if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-lr-speaking.json"))) {
@@ -101,7 +101,7 @@ if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-lr-speaking
     for (lrQ = 1; lrQ <= 7; lrQ++) {
       var lrId = "S-LRP" + lrN + "-Q" + lrQ;
       var lrb = pool.filter(function (x) { return x.set === lrId; })[0];
-      if (!lrb || lrb.n !== 1 || lrb.type !== "repeat") throw new Error(lrId + " missing");
+      if (!lrb || lrb.n!== 1 || lrb.type!== "repeat") throw new Error(lrId + " missing");
     }
   }
 }
@@ -115,7 +115,7 @@ if (fs.existsSync(path.join(__dirname, "..", "app/library/toefl/bank-iv-speaking
       ivNums[m[1]] = 1;
       var ivId = t.set;
       var ivb = pool.filter(function (x) { return x.set === ivId; })[0];
-      if (!ivb || ivb.n !== 1 || ivb.type !== "interview") throw new Error(ivId + " missing");
+      if (!ivb || ivb.n!== 1 || ivb.type!== "interview") throw new Error(ivId + " missing");
     }
   });
   Object.keys(ivNums).forEach(function (n) {
@@ -144,7 +144,7 @@ if (!pool.some(function (b) { return b.set === "R-RDL1"; })) throw new Error("R-
 });
 var ui = fs.readFileSync(path.join(__dirname, "..", "tiku/tiku.js"), "utf8");
 if (ui.indexOf("/api/tiku/papers") < 0) throw new Error("tiku ui api");
-if (ui.indexOf('["pool", "题块池"]') >= 0) throw new Error("pool tab should be gone");
+if (ui.indexOf('["pool", " câu khối trì "]') >= 0) throw new Error("pool tab should be gone");
 if (ui.indexOf("f-type") < 0) throw new Error("type filter");
 if (ui.indexOf('value="bank"') < 0) throw new Error("bank source filter");
 if (ui.indexOf("L-CR") < 0 || ui.indexOf("L-LCN") < 0 || ui.indexOf("L-ANO") < 0 || ui.indexOf("L-AT") < 0 || ui.indexOf("R-CW") < 0 || ui.indexOf("W-BS") < 0 || ui.indexOf("S-LRP") < 0 || ui.indexOf("S-INT") < 0) throw new Error("bank set filter");
@@ -152,11 +152,11 @@ if (ui.indexOf("blockMatches") < 0 || ui.indexOf("dropGoneSet") < 0) throw new E
 if (ui.indexOf("cmpSet") < 0 || ui.indexOf(".sort(function (a, b)") < 0) throw new Error("pool sorts by set");
 if (ui.indexOf("b.hay") < 0) throw new Error("search uses passage hay");
 var rap1 = pool.filter(function (b) { return b.set === "R-RAP1"; })[0];
-if (!rap1 || !rap1.hay || rap1.hay.indexOf("hollywood") < 0) throw new Error("rap hay");
+if (!rap1 ||!rap1.hay || rap1.hay.indexOf("hollywood") < 0) throw new Error("rap hay");
 var cw1 = pool.filter(function (b) { return b.set === "R-CW1"; })[0];
-if (!cw1 || !cw1.hay || cw1.hay.indexOf("pacific") < 0) throw new Error("cw hay");
+if (!cw1 ||!cw1.hay || cw1.hay.indexOf("pacific") < 0) throw new Error("cw hay");
 var rdl1 = pool.filter(function (b) { return b.set === "R-RDL1"; })[0];
-if (!rdl1 || !rdl1.hay || rdl1.hay.indexOf("career") < 0) throw new Error("rdl hay");
+if (!rdl1 ||!rdl1.hay || rdl1.hay.indexOf("career") < 0) throw new Error("rdl hay");
 if (ui.indexOf("refreshNow") < 0) throw new Error("refresh without logout");
 if (ui.indexOf("blockPreviewHref") < 0 || ui.indexOf("data-bpv") < 0) throw new Error("block preview");
 if (ui.indexOf("preview=1") < 0) throw new Error("block preview flag");
@@ -189,10 +189,10 @@ if (ui.indexOf("yysd-preview") < 0 || ui.indexOf("function openPreview") < 0) {
     vm.runInNewContext(play, sandbox);
     return sandbox.window.YYSD_PLAY.backHref("reading");
   }
-  if (hrefFor("?preview=1") !== "https://tiku.youyisida.com/") throw new Error("preview block back");
-  if (hrefFor("?preview=1&bank=p1") !== "bank.html?id=p1&preview=1") throw new Error("preview paper back");
-  if (hrefFor("?bank=p1") !== "bank.html?id=p1") throw new Error("student bank back");
-  if (hrefFor("") !== "practice.html?skill=reading") throw new Error("student lab back");
+  if (hrefFor("?preview=1")!== "https://tiku.youyisida.com/") throw new Error("preview block back");
+  if (hrefFor("?preview=1&bank=p1")!== "bank.html?id=p1&preview=1") throw new Error("preview paper back");
+  if (hrefFor("?bank=p1")!== "bank.html?id=p1") throw new Error("student bank back");
+  if (hrefFor("")!== "practice.html?skill=reading") throw new Error("student lab back");
 })();
 var rev = fs.readFileSync(path.join(__dirname, "..", "app/review.html"), "utf8");
 if (rev.indexOf("P.backHref") < 0 || rev.indexOf("P.goBack") < 0) throw new Error("review back uses play helper");
@@ -210,7 +210,7 @@ if ((siteAuth.match(/get\("preview"\) === "1"/g) || []).length < 3) {
 var gateApp = fs.readFileSync(path.join(__dirname, "..", "app/assets/js/gate.js"), "utf8");
 if (gateApp.indexOf('preview') < 0) throw new Error("app gate preview");
 if (gateApp.indexOf("tikuHome") < 0) throw new Error("app gate tikuHome");
-if (/if\s*\(\s*!pkgs\s*\)\s*jobs\.push/.test(ui)) throw new Error("packages must refetch on 开通");
+if (/if\s*\(\s*!pkgs\s*\)\s*jobs\.push/.test(ui)) throw new Error("packages must refetch on kích hoạt ");
 if (ui.indexOf("data-refresh") < 0) throw new Error("tab refresh");
 if (ui.indexOf("class=\"bench\"") < 0) throw new Error("merged bench");
 var html = fs.readFileSync(path.join(__dirname, "..", "tiku/index.html"), "utf8");
@@ -219,7 +219,7 @@ var gate = fs.readFileSync(path.join(__dirname, "..", "tiku/gate.js"), "utf8");
 if (gate.indexOf("injectRefresh") < 0) throw new Error("gate injects refresh");
 var plat = fs.readFileSync(path.join(__dirname, "..", "platform.html"), "utf8");
 if (plat.indexOf("plat-tiku") < 0) throw new Error("platform tiku");
-if (ui.indexOf('[["pool", "题目审阅"], ["mine", "已有试卷"]]') < 0) throw new Error("teacher review tabs");
+if (ui.indexOf('[["pool", " đề mục thẩm duyệt "], ["mine", " đã có bài thi "]]') < 0) throw new Error("teacher review tabs");
 ["data-add", "function saveBuild", "function paintBuild", "function copyPaper", "data-edit"].forEach(function (s) {
   if (ui.indexOf(s) >= 0) throw new Error("manual builder remains: " + s);
 });
@@ -240,12 +240,12 @@ if (ui.indexOf('[["pool", "题目审阅"], ["mine", "已有试卷"]]') < 0) thro
   manifest.members.forEach(function (m) {
     var b = ids[m.blockId];
     assert.ok(b && b.sources.indexOf("prediction") >= 0);
-    assert.strictEqual(b.source === "prediction", !m.reused);
+    assert.strictEqual(b.source === "prediction",!m.reused);
     var detail = tiku.blockDetail(root, m.blockId);
     var source = snapshot.sections[m.key].items.filter(function (item) { return item.num === m.num; })[0];
     assert.ok(detail.sourceItems.some(function (item) { return JSON.stringify(item) === JSON.stringify(source); }));
     var count = detail.tasks.reduce(function (n, task) {
-      return n + (task.type === "complete_words" ? task.passage.filter(function (p) { return p.id; }).length : (task.questions || []).length || 1);
+      return n + (task.type === "complete_words"? task.passage.filter(function (p) { return p.id; }).length: (task.questions || []).length || 1);
     }, 0);
     assert.strictEqual(count, m.questionCount);
     detail.media.forEach(function (a) { assert.ok(/^\/api\/tiku\/prediction\/media\/[a-f0-9]{24}\.[a-z0-9]+$/.test(a.path)); });

@@ -33,7 +33,7 @@ assert(/ielts-hub__band/.test(zone), "zone.js must render mock band");
 assert(/ielts-hub__rail/.test(zone), "zone.js must render skill rails");
 assert(/--bento-shadow:\s*none/.test(prem), "bento shadow should be none");
 assert(/Glanceable/.test(rules), "DESIGN-RULES glanceable section missing");
-assert(/优益思达国际课程中心/.test(read("index.html")), "index brand hero copy missing");
+assert(/ Trung tâm Luyện thi Quốc tế YYSD /.test(read("index.html")), "index brand hero copy missing");
 assert(/home-market__brand/.test(read("index.html")), "index brand class missing");
 
 console.log("OK: glanceable shell");

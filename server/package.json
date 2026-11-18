@@ -2,7 +2,7 @@
   "name": "yysd-api",
   "version": "1.0.0",
   "private": true,
-  "description": "优益思达登录 API（手机号验证码）",
+  "description": "YYSD Đăng nhập API (Số điện thoại Mã xác thực)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

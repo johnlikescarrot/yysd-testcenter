@@ -10,26 +10,26 @@ export type UndergradBand = {
 };
 
 const EXACT: Array<{ re: RegExp; score: number; label: string }> = [
-  { re: /\b(mit|stanford|harvard|princeton|yale|caltech)\b/i, score: 5, label: "美本顶校/HYPSM级" },
-  { re: /\b(berkeley|ucla|michigan|cmu|carnegie mellon|columbia|upenn|u penn|cornell|chicago|northwestern|duke|johns hopkins)\b/i, score: 5, label: "美本顶尖私立/公立" },
-  { re: /\b(penn state|pennsylvania state|psu)\b/i, score: 3, label: "美本州立旗舰（中上）" },
-  { re: /\b(virginia tech|vt|asu|arizona state|northeastern|purdue|ohio state|wisconsin|minnesota|maryland|uc davis|uc irvine|ucsb|ucsc)\b/i, score: 3, label: "美本较强州立/私立" },
-  { re: /\b(oxford|cambridge|imperial|ucl|lse)\b/i, score: 5, label: "英本 G5" },
-  { re: /\b(toronto|ubc|mcgill|waterloo)\b/i, score: 4, label: "加本顶尖" },
-  { re: /\b(melbourne|sydney|anu|unsw|monash)\b/i, score: 4, label: "澳本八大前列" },
-  { re: /清华|北大|复旦|上交|浙大|中科大|南大|人大/, score: 5, label: "内地顶尖（清北华五等）" },
-  { re: /某985|985高校/, score: 4, label: "内地 985（合成案例档）" },
-  { re: /某211|211高校|双一流/, score: 3, label: "内地 211/双一流（合成案例档）" },
-  { re: /某海外本科/, score: 3, label: "海外本科（合成案例档）" },
-  { re: /某地方重点|中外合作/, score: 2, label: "内地普通/中外合作（合成案例档）" },
+  { re: /\b(mit|stanford|harvard|princeton|yale|caltech)\b/i, score: 5, label: " Mỹ bản đỉnh trường học /HYPSM cấp " },
+  { re: /\b(berkeley|ucla|michigan|cmu|carnegie mellon|columbia|upenn|u penn|cornell|chicago|northwestern|duke|johns hopkins)\b/i, score: 5, label: " Mỹ bản cực hạn tư nhân / công lập " },
+  { re: /\b(penn state|pennsylvania state|psu)\b/i, score: 3, label: " Mỹ Bản Châu lập tàu chiến chỉ huy (trung thượng) " },
+  { re: /\b(virginia tech|vt|asu|arizona state|northeastern|purdue|ohio state|wisconsin|minnesota|maryland|uc davis|uc irvine|ucsb|ucsc)\b/i, score: 3, label: " Mỹ bản khá mạnh châu lập / tư nhân " },
+  { re: /\b(oxford|cambridge|imperial|ucl|lse)\b/i, score: 5, label: " Anh bản G5" },
+  { re: /\b(toronto|ubc|mcgill|waterloo)\b/i, score: 4, label: " thêm bản cực hạn " },
+  { re: /\b(melbourne|sydney|anu|unsw|monash)\b/i, score: 4, label: " úc bản bát đại hàng đầu " },
+  { re: / Thanh Hoa | bắc đại | phục đán | nộp lên | Chiết Đại | trung khoa đại | nam đại | nhân đại /, score: 5, label: " nội địa cực hạn (thanh bắc hoa ngũ đẳng) " },
+  { re: / một 985|985 trường cao đẳng /, score: 4, label: " nội địa 985 (hợp thành án lệ đương) " },
+  { re: / một 211|211 trường cao đẳng | song nhất lưu /, score: 3, label: " nội địa 211/ song nhất lưu (hợp thành án lệ đương) " },
+  { re: / một hải ngoại Đại học /, score: 3, label: " hải ngoại Đại học (hợp thành án lệ đương) " },
+  { re: / chỗ nào đó phương trọng điểm | trung ngoại hợp tác /, score: 2, label: " nội địa bình thường / trung ngoại hợp tác (hợp thành án lệ đương) " },
   // GradCafe anonymized buckets — treat as mid peer band for filtering
-  { re: /GradCafe|国际本科|美国本科|未标注本科/, score: 3, label: "GradCafe 自报本科（中等档假设）" },
+  { re: /GradCafe| quốc tế Đại học | Hoa Kỳ Đại học | không đánh dấu Đại học /, score: 3, label: "GradCafe tự báo Đại học (trung đẳng đương giả thiết) " },
 ];
 
 export function classifyUndergrad(schoolName: string): UndergradBand {
   const name = (schoolName || "").trim();
   if (!name) {
-    return { score: 2, label: "未识别本科", source: "default" };
+    return { score: 2, label: " vị thức bản khác khoa ", source: "default" };
   }
   for (const row of EXACT) {
     if (row.re.test(name)) {
@@ -41,10 +41,10 @@ export function classifyUndergrad(schoolName: string): UndergradBand {
     }
   }
   // Chinese generic
-  if (/大学|学院/.test(name)) {
-    return { score: 2, label: "内地普通本科（未匹配名录）", source: "undergrad_tier_table_v1" };
+  if (/ đại học | học viện /.test(name)) {
+    return { score: 2, label: " nội địa bình thường Đại học (không xứng đôi list danh sách) ", source: "undergrad_tier_table_v1" };
   }
-  return { score: 3, label: "未名录院校（按中等假设）", source: "undergrad_tier_table_v1" };
+  return { score: 3, label: " không list danh sách viện giáo (theo như trung đẳng giả thiết) ", source: "undergrad_tier_table_v1" };
 }
 
 /** Map synthetic case undergrad labels → score for peer filtering */

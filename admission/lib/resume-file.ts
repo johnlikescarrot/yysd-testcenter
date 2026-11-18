@@ -75,24 +75,24 @@ export async function extractResumeText(
     }
     const cli = extractViaCli(buf, filename);
     if (cli?.trim()) return cli.slice(0, 50000);
-    throw new Error("无法解析 Word（.docx）简历，请另存为 PDF 后重试");
+    throw new Error(" không cách nào Giải thích đáp án Word (.docx) lý lịch sơ lược, mời khác tồn là PDF sau Thử lại ");
   }
 
   if (lower.endsWith(".doc")) {
     const cli = extractViaCli(buf, filename);
     if (cli?.trim()) return cli.slice(0, 50000);
-    // last resort: scrape printable UTF-16LE / ASCII runs from OLE .doc
+    // last resort: scrape printable UTF-16LE / ASCII runs from OLE.doc
     const scraped = scrapeDocBinary(buf);
     if (scraped.length >= 80) return scraped.slice(0, 50000);
     throw new Error(
-      "无法解析旧版 Word（.doc）简历。请另存为 .docx 或 PDF 后重试"
+      " không cách nào Giải thích đáp án bản cũ Word (.doc) lý lịch sơ lược. mời khác tồn là.docx hoặc PDF sau Thử lại "
     );
   }
 
   return buf.toString("utf8").slice(0, 50000);
 }
 
-/** ponytail: crude .doc text salvage when antiword/catdoc missing; ceiling = garbled CJK */
+/** ponytail: crude.doc text salvage when antiword/catdoc missing; ceiling = garbled CJK */
 function scrapeDocBinary(buf: Buffer): string {
   const parts: string[] = [];
   // UTF-16LE runs
@@ -137,7 +137,7 @@ export function hintFromResume(text: string): {
     undergradSchool?: string;
     undergradMajor?: string;
   } = {};
-  const gpaM = text.match(/GPA\s*[:：]?\s*([0-4]\.\d{1,2})\s*\/\s*4/i);
+  const gpaM = text.match(/GPA\s*[::]?\s*([0-4]\.\d{1,2})\s*\/\s*4/i);
   if (gpaM) out.gpa = Number(gpaM[1]);
 
   if (/PENNSYLVANIA STATE|Penn State/i.test(text)) {

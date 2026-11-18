@@ -19,7 +19,7 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑6T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 6T2.docx")
 PROGRESS_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-02_14.31.55-e58e9bb4-7787-4995-a14f-790cebe6b2dc.png"
@@ -29,10 +29,10 @@ TRAVEL_MODES_SRC = Path(
     "__2026-07-02_14.32.06-7c4c87ed-1aa4-4642-ba7f-2df3276f83b3.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS6 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS6 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-6-test-2.html"
@@ -56,7 +56,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -73,12 +73,12 @@ def inject_state_vars(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 1 听力", "剑桥雅思6 Test 2 听力"),
-        ("剑桥雅思6 · Test 1（听力）", "剑桥雅思6 · Test 2（听力）"),
-        ("剑桥雅思6 Test 1 听力：", "剑桥雅思6 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 6 · Test 1", "剑桥雅思 6 · Test 2"),
-        ("剑桥雅思6 · Test 1", "剑桥雅思6 · Test 2"),
+        ("Cambridge IELTS 6 Test 1 Nghe ", "Cambridge IELTS 6 Test 2 Nghe "),
+        ("Cambridge IELTS 6 · Test 1 (Nghe) ", "Cambridge IELTS 6 · Test 2 (Nghe) "),
+        ("Cambridge IELTS 6 Test 1 Nghe: ", "Cambridge IELTS 6 Test 2 Nghe: "),
+        ("Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
         ("test-1", "test-2"),
         ("ielts6_test1", "ielts6_test2"),
     ]
@@ -89,12 +89,12 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 1 阅读", "剑桥雅思6 Test 2 阅读"),
-        ("剑桥雅思6 · Test 1（阅读）", "剑桥雅思6 · Test 2（阅读）"),
-        ("剑桥雅思6 Test 1 学术类阅读", "剑桥雅思6 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
-        ("剑桥雅思 6 · Test 1", "剑桥雅思 6 · Test 2"),
-        ("剑桥雅思6 · Test 1", "剑桥雅思6 · Test 2"),
+        ("Cambridge IELTS 6 Test 1 Đọc ", "Cambridge IELTS 6 Test 2 Đọc "),
+        ("Cambridge IELTS 6 · Test 1 (Đọc) ", "Cambridge IELTS 6 · Test 2 (Đọc) "),
+        ("Cambridge IELTS 6 Test 1 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 6 Test 2 Đọc Học thuật (Academic Reading) "),
+        ("Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -105,18 +105,18 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思6 Test 1 写作", "剑桥雅思6 Test 2 写作"),
-        ("剑桥雅思6 · Test 1（写作）", "剑桥雅思6 · Test 2（写作）"),
-        ("剑桥雅思6 Test 1 学术类写作", "剑桥雅思6 Test 2 学术类写作"),
+        ("Cambridge IELTS 6 Test 1 Viết ", "Cambridge IELTS 6 Test 2 Viết "),
+        ("Cambridge IELTS 6 · Test 1 (Viết) ", "Cambridge IELTS 6 · Test 2 (Viết) "),
+        ("Cambridge IELTS 6 Test 1 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 6 Test 2 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 global water use graph + Task 2 consumer goods and advertising essay",
             "Task 1 travel modes table + Task 2 sports professionals earnings essay",
         ),
-        ("剑桥雅思 6 · Test 1", "剑桥雅思 6 · Test 2"),
-        ("剑桥雅思6 · Test 1", "剑桥雅思6 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
+        ("Cambridge IELTS 6 · Test 1", "Cambridge IELTS 6 · Test 2"),
+        ("Test 1 Viết (Đề thi chính thức) ", "Test 2 Viết (Đề thi chính thức) "),
         ("cambridge-6-test-1-writing-draft", "cambridge-6-test-2-writing-draft"),
-        ("【剑桥雅思6 · Test 1 写作】", "【剑桥雅思6 · Test 2 写作】"),
+        ("[Cambridge IELTS 6 · Test 1 Viết]", "[Cambridge IELTS 6 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("water-use", "travel-modes"),
@@ -285,9 +285,9 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["C", "D", "G"],
                         "questions": [
-                            {"id": "L18", "no": 18, "explain": "答案：C、D、G，顺序不限。"},
-                            {"id": "L19", "no": 19, "explain": "答案：C、D、G，顺序不限。"},
-                            {"id": "L20", "no": 20, "explain": "答案：C、D、G，顺序不限。"},
+                            {"id": "L18", "no": 18, "explain": " Đáp án: C, D, G, không giới hạn thứ tự. "},
+                            {"id": "L19", "no": 19, "explain": " Đáp án: C, D, G, không giới hạn thứ tự. "},
+                            {"id": "L20", "no": 20, "explain": " Đáp án: C, D, G, không giới hạn thứ tự. "},
                         ],
                     },
                 ],

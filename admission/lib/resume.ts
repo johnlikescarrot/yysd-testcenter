@@ -8,9 +8,9 @@ export type ResumeFeatures = {
   tags: string[];
 };
 
-const SYSTEM = `你是留学申请材料解析助手。从简历文本提取结构化特征，只返回 JSON，不要姓名/电话/邮箱等隐私字段。
-格式：{"research":[],"internships":[],"papers":[],"contests":[],"tags":[]}
-tags 用短英文标签，如 research, internship, publication, competition, leadership。`;
+const SYSTEM = ` ngươi là du học thân thỉnh tài liệu Giải thích đáp án trợ thủ. giản lược lịch văn bản chắt lọc kết cấu hóa đặc thù, chỉ Quay lại JSON, không nên tính danh / điện thoại / hòm thư {các loại:đợi} việc riêng tư chữ đoạn.
+ cách thức: {"research":[],"internships":[],"papers":[],"contests":[],"tags":[]}
+tags dùng ngắn Tiếng Anh nhãn hiệu, ví dụ research, internship, publication, competition, leadership. `;
 
 export async function parseResumeFeatures(
   resumeText: string
@@ -34,5 +34,5 @@ export async function parseResumeFeatures(
 }
 
 function arr(v: unknown): string[] {
-  return Array.isArray(v) ? v.map(String).slice(0, 15) : [];
+  return Array.isArray(v)? v.map(String).slice(0, 15): [];
 }

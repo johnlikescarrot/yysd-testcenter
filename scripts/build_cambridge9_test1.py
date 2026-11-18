@@ -16,16 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑9T1.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 9T1.docx")
 ISLAND_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_13.37.48-8d201a8d-0101-46f4-bd09-ecf94995d939.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test1 Section1 (1).mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test1 Section2 (1).mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test1 Section3 (1).mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS9 Test1 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test1 Section1 (1).mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test1 Section2 (1).mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test1 Section3 (1).mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS9 Test1 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-9-test-1.html"
@@ -44,7 +44,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -54,13 +54,13 @@ def replace_test(html: str, test: dict) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思10 Test 1 听力", "剑桥雅思9 Test 1 听力"),
-        ("剑桥雅思10 · Test 1（听力）", "剑桥雅思9 · Test 1（听力）"),
-        ("剑桥雅思10 Test 1 听力：", "剑桥雅思9 Test 1 听力："),
+        ("Cambridge IELTS 10 Test 1 Nghe ", "Cambridge IELTS 9 Test 1 Nghe "),
+        ("Cambridge IELTS 10 · Test 1 (Nghe) ", "Cambridge IELTS 9 · Test 1 (Nghe) "),
+        ("Cambridge IELTS 10 Test 1 Nghe: ", "Cambridge IELTS 9 Test 1 Nghe: "),
         ('<div class="num">10</div>', '<div class="num">9</div>'),
-        ("剑桥雅思 10 · Test 1", "剑桥雅思 9 · Test 1"),
-        ("剑桥雅思10 · Test 1", "剑桥雅思9 · Test 1"),
-        ("剑桥雅思10 Test 1 听力（官方原题 + 官方答案）", "剑桥雅思9 Test 1 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 10 · Test 1", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 10 · Test 1", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 10 Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Cambridge IELTS 9 Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
         ("ielts10_test1", "cam9_test1"),
     ]
     for old, new in reps:
@@ -70,13 +70,13 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思14 Test 2 阅读", "剑桥雅思9 Test 1 阅读"),
-        ("剑桥雅思14 · Test 2（阅读）", "剑桥雅思9 · Test 1（阅读）"),
-        ("剑桥雅思14 Test 2 学术类阅读", "剑桥雅思9 Test 1 学术类阅读"),
+        ("Cambridge IELTS 14 Test 2 Đọc ", "Cambridge IELTS 9 Test 1 Đọc "),
+        ("Cambridge IELTS 14 · Test 2 (Đọc) ", "Cambridge IELTS 9 · Test 1 (Đọc) "),
+        ("Cambridge IELTS 14 Test 2 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 9 Test 1 Đọc Học thuật (Academic Reading) "),
         ('<div class="num">14</div>', '<div class="num">9</div>'),
-        ("剑桥雅思 14 · Test 2", "剑桥雅思 9 · Test 1"),
-        ("剑桥雅思14 · Test 2", "剑桥雅思9 · Test 1"),
-        ("剑桥雅思14 Test 2 阅读（官方原题 + 官方答案）", "剑桥雅思9 Test 1 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 14 · Test 2", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 14 · Test 2", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 14 Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Cambridge IELTS 9 Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -85,16 +85,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思10 Test 1 写作", "剑桥雅思9 Test 1 写作"),
-        ("剑桥雅思10 · Test 1（写作）", "剑桥雅思9 · Test 1（写作）"),
-        ("剑桥雅思10 Test 1 学术类写作", "剑桥雅思9 Test 1 学术类写作"),
+        ("Cambridge IELTS 10 Test 1 Viết ", "Cambridge IELTS 9 Test 1 Viết "),
+        ("Cambridge IELTS 10 · Test 1 (Viết) ", "Cambridge IELTS 9 · Test 1 (Viết) "),
+        ("Cambridge IELTS 10 Test 1 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 9 Test 1 Viết Học thuật (Academic Writing) "),
         ("Task 1 Australian household energy pie charts + Task 2 punishment for children essay", "Task 1 island before/after maps + Task 2 foreign language at primary school essay"),
         ('<div class="num">10</div>', '<div class="num">9</div>'),
-        ("剑桥雅思 10 · Test 1", "剑桥雅思 9 · Test 1"),
-        ("剑桥雅思10 · Test 1", "剑桥雅思9 · Test 1"),
-        ("剑桥雅思10 Test 1 写作（官方真题）", "剑桥雅思9 Test 1 写作（官方真题）"),
+        ("Cambridge IELTS 10 · Test 1", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 10 · Test 1", "Cambridge IELTS 9 · Test 1"),
+        ("Cambridge IELTS 10 Test 1 Viết (Đề thi chính thức) ", "Cambridge IELTS 9 Test 1 Viết (Đề thi chính thức) "),
         ("cambridge-10-test-1-writing-draft", "cambridge-9-test-1-writing-draft"),
-        ("【剑桥雅思10 · Test 1 写作】", "【剑桥雅思9 · Test 1 写作】"),
+        ("[Cambridge IELTS 10 · Test 1 Viết]", "[Cambridge IELTS 9 · Test 1 Viết]"),
     ]
     for old, new in reps:
         html = html.replace(old, new)
@@ -288,8 +288,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["A", "E"],
                         "questions": [
-                            {"id": "L19", "no": 19, "explain": "答案：A 与 E，顺序不限。"},
-                            {"id": "L20", "no": 20, "explain": "答案：A 与 E，顺序不限。"},
+                            {"id": "L19", "no": 19, "explain": " Đáp án: A và E, không giới hạn thứ tự. "},
+                            {"id": "L20", "no": 20, "explain": " Đáp án: A và E, không giới hạn thứ tự. "},
                         ],
                     },
                 ],

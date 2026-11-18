@@ -1,73 +1,73 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>优益思达 · 剑桥雅思18 Test 2 听力</title>
-<meta name="exam:title" content="剑桥雅思18 · Test 2（听力）">
+<title>YYSD · Cambridge IELTS 18 Test 2 Nghe</title>
+<meta name="exam:title" content="Cambridge IELTS 18 · Test 2 (Nghe)">
 <meta name="exam:zone" content="mock">
 <meta name="exam:subject" content="cambridge-listening">
 <meta name="exam:duration" content="32">
-<meta name="exam:description" content="剑桥雅思18 Test 2 听力（官方真题）：餐厅招聘、住宅区规划、拉基火山喷发与服装口袋史；4 个 section，自带音频、自动批改、解析与雅思预估分。">
+<meta name="exam:description" content="Cambridge IELTS 18 Test 2 Nghe (Đề thi chính thức): nhà hàng thông báo tuyển dụng, khu dân cư quy hoạch, kéo cơ núi lửa phun trào và trang phục túi lịch sử; 4 section, kèm theo âm tần, Chấm điểm tự động, Giải thích đáp án và Điểm Band IELTS dự kiến.">
 <style>
   * { box-sizing:border-box; }
-  body { font-family:'Segoe UI','PingFang SC',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
+  body { font-family:'Segoe UI',Roboto,sans-serif; background:#f0f2f6; margin:0; color:#1e2a3a; line-height:1.7; padding:0 0 60px; }
   .header { background:linear-gradient(135deg,#001f3f,#003366); color:#fff; padding:12px 28px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 4px 18px rgba(0,0,0,.25); flex-wrap:wrap; gap:10px; }
   .header h1 { margin:0; font-size:19px; font-weight:600; display:flex; align-items:center; gap:8px; }
-  .header h1 .brandtag { font-size:11px; background:#2e86de; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
-  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background .4s; }
+  .header h1.brandtag { font-size:11px; background:#2e86de; padding:2px 9px; border-radius:20px; font-weight:600; letter-spacing:.5px; }
+  .timer { font-size:18px; font-weight:700; background:#1e8449; padding:6px 18px; border-radius:30px; display:none; align-items:center; gap:8px; box-shadow:0 2px 8px rgba(0,0,0,.25); transition:background.4s; }
   .timer.show { display:flex; }
-  .timer.warn { background:#e67e22; } .timer.danger { background:#c0392b; animation:pulse 1s infinite; }
+  .timer.warn { background:#e67e22; }.timer.danger { background:#c0392b; animation:pulse 1s infinite; }
   @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .container { max-width:1080px; margin:24px auto; padding:0 24px; }
 
-  /* 封面 */
+  /* Trang bìa */
   .cover-hero { display:flex; align-items:center; gap:24px; background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .cover-badge { background:linear-gradient(135deg,#eaf2ff,#dbe9ff); border-radius:14px; padding:18px 30px; text-align:center; min-width:180px; }
-  .cover-badge .lbl { font-size:12px; letter-spacing:2px; color:#5a7184; font-weight:600; }
-  .cover-badge .num { font-size:54px; font-weight:800; color:#1e8449; line-height:1; margin-top:4px; }
+  .cover-badge.lbl { font-size:12px; letter-spacing:2px; color:#5a7184; font-weight:600; }
+  .cover-badge.num { font-size:54px; font-weight:800; color:#1e8449; line-height:1; margin-top:4px; }
   .cover-hero h2 { margin:0; font-size:30px; color:#001f3f; }
-  .cover-hero .sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
+  .cover-hero.sub { color:#6b7a8f; margin-top:6px; font-size:14px; }
   .paper-card-wrap { margin-top:24px; }
-  @media(max-width:760px){ .cover-hero{flex-direction:column; text-align:center;} }
-  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform .15s,box-shadow .2s; }
+  @media(max-width:760px){.cover-hero{flex-direction:column; text-align:center;} }
+  .paper-card { border-radius:16px; padding:30px 26px; text-align:center; border:2px solid; transition:transform.15s,box-shadow.2s; }
   .paper-card.listen { background:#eff5ff; border-color:#bcd4f6; cursor:pointer; }
   .paper-card.listen:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10); }
   .paper-card.read { background:#f3f5f8; border-color:#dde3ea; opacity:.7; }
-  .paper-card .pc-icon { font-size:40px; }
+  .paper-card.pc-icon { font-size:40px; }
   .paper-card h3 { margin:10px 0 4px; font-size:24px; }
-  .paper-card.listen h3 { color:#1b4f8a; } .paper-card.read h3 { color:#90a0b2; }
-  .paper-card .pc-meta { font-size:13px; color:#6b7a8f; }
-  .paper-card .pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; }
-  .paper-card.listen .pc-go { background:#2563eb; } .paper-card.read .pc-go { background:#aeb9c6; }
+  .paper-card.listen h3 { color:#1b4f8a; }.paper-card.read h3 { color:#90a0b2; }
+  .paper-card.pc-meta { font-size:13px; color:#6b7a8f; }
+  .paper-card.pc-go { margin-top:18px; display:inline-block; padding:11px 30px; border-radius:30px; color:#fff; font-weight:600; font-size:15px; }
+  .paper-card.listen.pc-go { background:#2563eb; }.paper-card.read.pc-go { background:#aeb9c6; }
 
-  /* 模式弹窗 */
+  /* Hộp thoại chọn chế độ */
   .modal-mask { display:none; position:fixed; inset:0; background:rgba(10,20,40,.55); z-index:2000; align-items:center; justify-content:center; padding:20px; }
   .modal-mask.show { display:flex; }
   .modal { background:#fff; border-radius:18px; max-width:880px; width:100%; padding:28px 30px 34px; position:relative; max-height:92vh; overflow:auto; }
   .modal h2 { margin:0 0 20px; font-size:24px; color:#111; }
   .modal-close { position:absolute; right:20px; top:18px; border:none; background:none; font-size:24px; color:#8a96a5; cursor:pointer; }
   .mode-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  @media(max-width:680px){ .mode-grid{grid-template-columns:1fr;} }
+  @media(max-width:680px){.mode-grid{grid-template-columns:1fr;} }
   .mode-box { border:1px solid #e2e8f0; border-radius:14px; padding:24px 22px; }
-  .mode-box .mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
-  .mode-box.practice .mb-ic { background:#dceafe; } .mode-box.exam .mb-ic { background:#ffe8cf; }
+  .mode-box.mb-ic { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 12px; }
+  .mode-box.practice.mb-ic { background:#dceafe; }.mode-box.exam.mb-ic { background:#ffe8cf; }
   .mode-box h3 { text-align:center; margin:0 0 6px; font-size:20px; }
-  .mode-box .mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
-  .mode-box .mb-sub { font-weight:700; color:#1b4f8a; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
-  .mode-box .mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
+  .mode-box.mb-desc { text-align:center; color:#6b7a8f; font-size:13.5px; min-height:38px; }
+  .mode-box.mb-sub { font-weight:700; color:#1b4f8a; margin:14px 0 8px; display:flex; justify-content:space-between; align-items:center; }
+  .mode-box.mb-sub button { background:#fff; border:1px solid #cdd7e2; border-radius:8px; padding:5px 12px; font-size:13px; cursor:pointer; }
   .sec-check { display:flex; align-items:center; gap:10px; padding:8px 4px; font-size:15px; font-weight:600; color:#1b4f8a; cursor:pointer; }
   .sec-check input { width:18px; height:18px; accent-color:#001f3f; }
   .exam-list { list-style:none; padding:0; margin:10px 0 0; color:#445; font-size:14.5px; }
   .exam-list li { padding:3px 0; }
   .mode-start { width:100%; margin-top:18px; border:none; color:#fff; font-weight:700; font-size:16px; padding:13px; border-radius:10px; cursor:pointer; }
-  .mode-box.practice .mode-start { background:#2563eb; } .mode-box.exam .mode-start { background:#e67e22; }
+  .mode-box.practice.mode-start { background:#2563eb; }.mode-box.exam.mode-start { background:#e67e22; }
 
-  /* 答题区 */
+  /* Khu vực làm bài */
   #testArea { display:none; }
   .test-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#fff; border-radius:14px; padding:14px 22px; box-shadow:0 4px 18px rgba(0,0,0,.05); margin-bottom:18px; }
-  .test-topbar .tt-title { font-size:19px; font-weight:700; color:#001f3f; }
-  .test-topbar .tt-mode { font-size:13px; background:#eef4fb; color:#1b4f8a; padding:3px 12px; border-radius:20px; font-weight:600; }
+  .test-topbar.tt-title { font-size:19px; font-weight:700; color:#001f3f; }
+  .test-topbar.tt-mode { font-size:13px; background:#eef4fb; color:#1b4f8a; padding:3px 12px; border-radius:20px; font-weight:600; }
   .btn-ghost { border:1px solid #cdd7e2; background:#fff; border-radius:8px; padding:8px 16px; font-size:14px; cursor:pointer; color:#33475b; }
   .btn-ghost:hover { background:#f3f6fa; }
 
@@ -75,16 +75,16 @@
   .audio-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
   .audio-play { background:#2563eb; color:#fff; border:none; width:46px; height:46px; border-radius:50%; font-size:18px; cursor:pointer; flex-shrink:0; }
   .audio-prog { flex:1; min-width:140px; height:8px; background:#cfdcf0; border-radius:6px; cursor:pointer; position:relative; }
-  .audio-prog .fill { position:absolute; left:0; top:0; bottom:0; background:#2563eb; border-radius:6px; width:0; }
+  .audio-prog.fill { position:absolute; left:0; top:0; bottom:0; background:#2563eb; border-radius:6px; width:0; }
   .audio-time { font-size:13px; color:#33475b; min-width:96px; text-align:right; font-variant-numeric:tabular-nums; }
   .audio-cur { font-size:13px; font-weight:700; color:#1b4f8a; }
   .audio-note { font-size:12px; color:#8a96a5; margin-top:8px; }
 
   .section-banner { background:#eff5ff; border:1px solid #cfe0f7; border-radius:12px; padding:14px 20px; margin:26px 0 14px; }
-  .section-banner .sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-  .section-banner .sb-title { font-size:20px; font-weight:800; color:#1b4f8a; letter-spacing:.5px; }
+  .section-banner.sb-top { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .section-banner.sb-title { font-size:20px; font-weight:800; color:#1b4f8a; letter-spacing:.5px; }
   .listen-here { background:#2563eb; color:#fff; border:none; border-radius:20px; padding:5px 14px; font-size:13px; cursor:pointer; display:inline-flex; gap:6px; align-items:center; }
-  .section-banner .sb-meta { font-size:13px; color:#5a7184; margin-top:6px; }
+  .section-banner.sb-meta { font-size:13px; color:#5a7184; margin-top:6px; }
 
   .qgroup { background:#fff; border:1px solid #eaeef4; border-radius:12px; padding:22px 26px; margin-bottom:18px; }
   .qgroup h4 { margin:0 0 6px; font-size:18px; color:#111; }
@@ -93,8 +93,8 @@
   .note-title { text-align:center; font-weight:800; font-size:17px; margin-bottom:12px; color:#22303f; }
   .note-h { font-weight:700; margin:12px 0 4px; }
   .note-li { margin:6px 0 6px 4px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
-  .note-li .bull { color:#7a8aa0; }
-  .note-li.sub { margin-left:26px; } .note-li.sub2 { margin-left:48px; }
+  .note-li.bull { color:#7a8aa0; }
+  .note-li.sub { margin-left:26px; }.note-li.sub2 { margin-left:48px; }
   .qnum-badge { background:#dceafe; color:#1b4f8a; font-weight:700; min-width:30px; height:30px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; padding:0 6px; }
   input[type=text]{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:15px; width:150px; }
   input[type=text]:focus{ border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.14); outline:none; }
@@ -102,17 +102,17 @@
   table.note-table th, table.note-table td { border:1px solid #d3dce6; padding:10px 12px; font-size:14.5px; vertical-align:top; text-align:left; }
   table.note-table th { background:#eef4fb; }
   .mcq { margin:6px 0 16px; }
-  .mcq .qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
+  .mcq.qtext { font-weight:600; margin-bottom:6px; display:flex; gap:8px; }
   .mcq label { display:flex; gap:9px; align-items:flex-start; padding:6px 10px; border-radius:7px; cursor:pointer; }
   .mcq label:hover { background:#eef4fa; }
   .mcq input{ accent-color:#001f3f; margin-top:3px; }
   select{ padding:6px 10px; border:1.5px solid #d0d8e0; border-radius:6px; font-size:14.5px; min-width:70px; }
   select:focus{ border-color:#2563eb; outline:none; }
   .match-box { border:1px solid #d8e0ea; border-radius:10px; background:#f7faff; padding:14px 18px; margin-bottom:14px; }
-  .match-box .mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
-  .match-box .mb-row { display:flex; gap:10px; padding:2px 0; }
+  .match-box.mb-h { text-align:center; font-weight:700; margin-bottom:8px; }
+  .match-box.mb-row { display:flex; gap:10px; padding:2px 0; }
   .match-q { display:flex; align-items:center; gap:10px; margin:8px 0; }
-  .match-q .mq-txt { flex:1; }
+  .match-q.mq-txt { flex:1; }
   .map-wrap { border:1px solid #d8e0ea; border-radius:10px; background:#fafcff; padding:14px 16px; margin-bottom:16px; text-align:center; }
   .map-img { max-width:100%; height:auto; border-radius:8px; }
   .map-missing { color:#8a6d1b; background:#fff7e0; border:1px dashed #e0c879; border-radius:8px; padding:18px; font-size:14px; }
@@ -120,102 +120,102 @@
   .submit-btn { display:block; width:100%; background:linear-gradient(135deg,#1e8449,#27ae60); color:#fff; border:none; padding:16px; font-size:19px; border-radius:12px; cursor:pointer; margin-top:28px; font-weight:700; box-shadow:0 4px 14px rgba(39,174,96,.3); }
   .submit-btn:hover { transform:translateY(-2px); }
 
-  /* 结果 */
+  /* kết quả */
   #resultArea { display:none; }
   .res-card { background:#fff; border-radius:16px; padding:26px 30px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
   .res-title { font-size:24px; font-weight:800; color:#001f3f; margin:4px 0 2px; }
   .res-meta { color:#6b7a8f; font-size:13px; margin-bottom:20px; }
   .res-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  @media(max-width:680px){ .res-stats{grid-template-columns:1fr;} }
+  @media(max-width:680px){.res-stats{grid-template-columns:1fr;} }
   .stat-box { border-radius:14px; padding:26px 16px; text-align:center; }
-  .stat-box.s1 { background:#eef5ff; } .stat-box.s2 { background:#eefaf2; } .stat-box.s3 { background:#f5f3ff; }
-  .stat-box .big { font-size:40px; font-weight:800; line-height:1; }
-  .stat-box.s1 .big { color:#2563eb; } .stat-box.s2 .big { color:#1e8449; } .stat-box.s3 .big { color:#5b3fd6; }
-  .stat-box .cap { color:#5a7184; margin-top:8px; font-size:14px; }
-  .stat-box .sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
+  .stat-box.s1 { background:#eef5ff; }.stat-box.s2 { background:#eefaf2; }.stat-box.s3 { background:#f5f3ff; }
+  .stat-box.big { font-size:40px; font-weight:800; line-height:1; }
+  .stat-box.s1.big { color:#2563eb; }.stat-box.s2.big { color:#1e8449; }.stat-box.s3.big { color:#5b3fd6; }
+  .stat-box.cap { color:#5a7184; margin-top:8px; font-size:14px; }
+  .stat-box.sub2 { color:#8a96a5; font-size:12px; margin-top:2px; }
   .progress-wrap { margin-top:22px; }
-  .progress-wrap .pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
+  .progress-wrap.pw-top { display:flex; justify-content:space-between; font-size:13px; color:#5a7184; margin-bottom:6px; }
   .pw-track { height:14px; background:#e2e8f0; border-radius:10px; overflow:hidden; }
-  .pw-fill { height:100%; background:linear-gradient(90deg,#2e86de,#27ae60); width:0; transition:width .8s; }
+  .pw-fill { height:100%; background:linear-gradient(90deg,#2e86de,#27ae60); width:0; transition:width.8s; }
 
   .detail-h { font-size:20px; font-weight:800; color:#001f3f; margin:26px 0 12px; }
   .sec-result { background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,.05); margin-bottom:12px; overflow:hidden; }
-  .sec-result .sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
-  .sec-result .sr-head h5 { margin:0; font-size:17px; }
-  .sec-result .sr-head .sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
-  .sec-result .sr-head .sr-sum .ok { color:#1e8449; font-weight:700; } .sec-result .sr-head .sr-sum .bad { color:#c0392b; font-weight:700; }
+  .sec-result.sr-head { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; cursor:pointer; }
+  .sec-result.sr-head h5 { margin:0; font-size:17px; }
+  .sec-result.sr-head.sr-sum { font-size:13px; color:#6b7a8f; margin-top:3px; }
+  .sec-result.sr-head.sr-sum.ok { color:#1e8449; font-weight:700; }.sec-result.sr-head.sr-sum.bad { color:#c0392b; font-weight:700; }
   .sr-body { display:none; padding:0 22px 16px; }
-  .sec-result.open .sr-body { display:block; }
-  .sr-chevron { transition:transform .2s; color:#8a96a5; }
-  .sec-result.open .sr-chevron { transform:rotate(180deg); }
+  .sec-result.open.sr-body { display:block; }
+  .sr-chevron { transition:transform.2s; color:#8a96a5; }
+  .sec-result.open.sr-chevron { transform:rotate(180deg); }
   .ritem { padding:12px 16px; border-radius:9px; margin:8px 0; border-left:5px solid transparent; }
   .ritem.correct { background:#e8f8ee; border-left-color:#27ae60; }
   .ritem.wrong { background:#fdeaea; border-left-color:#e74c3c; }
-  .ritem .rq { font-weight:700; color:#22303f; }
-  .ritem .ra { font-size:14px; margin-top:4px; }
-  .ritem .ra .yours { color:#7b1a1a; } .ritem .ra .correctv { color:#145a32; font-weight:700; }
-  .ritem .rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
+  .ritem.rq { font-weight:700; color:#22303f; }
+  .ritem.ra { font-size:14px; margin-top:4px; }
+  .ritem.ra.yours { color:#7b1a1a; }.ritem.ra.correctv { color:#145a32; font-weight:700; }
+  .ritem.rex { font-size:13.5px; color:#3a4a5a; margin-top:6px; background:rgba(255,255,255,.65); padding:7px 11px; border-radius:7px; }
   .back-row { text-align:center; margin-top:24px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1><span class="brandtag">优益思达</span> 剑桥雅思真题测试</h1>
+  <h1><span class="brandtag"> YYSD </span> Bài thi Cambridge IELTS chính thức</h1>
   <div class="timer" id="timer"><span id="timerText">00:00</span></div>
 </div>
 
-<!-- 封面 -->
+<!-- Trang bìa -->
 <div class="container" id="coverArea">
   <div class="cover-hero">
     <div class="cover-badge"><div class="lbl">CAMBRIDGE IELTS</div><div class="num">18</div></div>
     <div>
-      <h2>剑桥雅思 18 · Test 2</h2>
-      <div class="sub">官方真题 · 自动批改并给出雅思预估分。请选择科目开始测试。</div>
+      <h2>Cambridge IELTS 18 · Test 2</h2>
+      <div class="sub"> Đề thi chính thức · Chấm điểm tự động cũng cho ra Điểm Band IELTS dự kiến. mời lựa chọn kỹ năng Bắt đầu kiểm tra. </div>
     </div>
   </div>
   <div class="paper-card-wrap">
     <div class="paper-card listen" onclick="openMode()">
       <div class="pc-icon">🎧</div>
-      <h3>听力 (Listening)</h3>
-      <div class="pc-meta">4 个部分 · 共 40 题</div>
-      <div class="pc-go">开始测试 ›</div>
+      <h3>Nghe (Listening)</h3>
+      <div class="pc-meta">4 bộ phận · tổng 40 câu</div>
+      <div class="pc-go"> Bắt đầu kiểm tra ›</div>
     </div>
   </div>
 </div>
 
-<!-- 模式弹窗 -->
+<!-- Hộp thoại chọn chế độ -->
 <div class="modal-mask" id="modeModal">
   <div class="modal">
     <button class="modal-close" onclick="closeMode()">×</button>
-    <h2>选择模式</h2>
+    <h2>lựa chọn hình thức</h2>
     <div class="mode-grid">
       <div class="mode-box practice">
         <div class="mb-ic">📘</div>
-        <h3>练习模式</h3>
-        <div class="mb-desc">适合分项突破，可只练某几个部分，正向计时不施加压力。</div>
-        <div class="mb-sub"><span>选择练习部分：</span><button onclick="toggleAll()" id="toggleAllBtn">取消全选</button></div>
+        <h3>Chế độ luyện tập</h3>
+        <div class="mb-desc"> thích hợp điểm hạng đột phá, có thể chỉ luyện một mấy cái bộ phận, đang hướng tính theo thời gian không làm áp lực. </div>
+        <div class="mb-sub"><span> Chọn phần luyện tập: </span><button onclick="toggleAll()" id="toggleAllBtn">Bỏ chọn tất cả</button></div>
         <div id="sectionChecks"></div>
-        <button class="mode-start" onclick="startTest('practice')">开始练习</button>
+        <button class="mode-start" onclick="startTest('practice')">Bắt đầu luyện tập</button>
       </div>
       <div class="mode-box exam">
         <div class="mb-ic">⏱️</div>
-        <h3>模考模式</h3>
-        <div class="mb-desc">完整模拟真实考试：4 个部分一次完成，限时 32 分钟并自动连播录音。</div>
-        <div class="mb-sub"><span>测试信息：</span></div>
-        <div style="color:#445;font-size:14.5px;">完整测试（4 个部分，限时 32 分钟）</div>
+        <h3>Chế độ thi thử</h3>
+        <div class="mb-desc"> Đầy đủ mô phỏng chân thật cuộc thi: 4 bộ phận một lần hoàn thành, thời gian 32 phút cũng tự động phát sóng liên tục ghi âm. </div>
+        <div class="mb-sub"><span> Kiểm tra tin tức: </span></div>
+        <div style="color:#445;font-size:14.5px;"> Đầy đủ Kiểm tra (4 bộ phận, thời gian 32 phút) </div>
         <ul class="exam-list"><li>• Section 1</li><li>• Section 2</li><li>• Section 3</li><li>• Section 4</li></ul>
-        <button class="mode-start" onclick="startTest('exam')">开始模考</button>
+        <button class="mode-start" onclick="startTest('exam')">Bắt đầu thi thử</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 答题区 -->
+<!-- Khu vực làm bài -->
 <div class="container" id="testArea">
   <div class="test-topbar">
     <div><div class="tt-title" id="testTitle"></div><span class="tt-mode" id="testModeTag"></span></div>
-    <button class="btn-ghost" onclick="backToCover()">← 返回封面</button>
+    <button class="btn-ghost" onclick="backToCover()">← Về trang bìa</button>
   </div>
   <div class="audio-bar">
     <div class="audio-row">
@@ -224,38 +224,38 @@
       <div class="audio-prog" id="aProg" onclick="seekAudio(event)"><div class="fill" id="aFill"></div></div>
       <div class="audio-time" id="aTime">00:00 / 00:00</div>
     </div>
-    <div class="audio-note" id="aNote">🔊 点击各部分的「▶ 听本部分录音」可单独播放该部分；模考模式下会自动连播。</div>
+    <div class="audio-note" id="aNote">🔊 nhấn vào các bộ phận «▶ nghe phần quan trọng điểm ghi âm » có thể một mình phát ra nên bộ phận; Chế độ thi thử hạ sẽ tự động phát sóng liên tục. </div>
     <audio id="player" preload="none"></audio>
   </div>
   <div id="questionsHolder"></div>
-  <button class="submit-btn" onclick="confirmSubmit()">提交并查看批改报告</button>
+  <button class="submit-btn" onclick="confirmSubmit()">Nộp bài cũng Xem Báo cáo chấm bài</button>
 </div>
 
-<!-- 结果区 -->
+<!-- kết quả khu -->
 <div class="container" id="resultArea">
   <div class="res-card">
-    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 批改报告</div>
+    <div style="font-size:14px;color:#b9770e;font-weight:700;">🏆 Báo cáo chấm bài </div>
     <div class="res-title" id="resTitle"></div>
     <div class="res-meta" id="resMeta"></div>
     <div class="res-stats">
-      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap">答对题数</div></div>
-      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap">正确率</div></div>
-      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap">雅思预估分</div><div class="sub2" id="resLevel"></div></div>
+      <div class="stat-box s1"><div class="big" id="resCorrect">0/0</div><div class="cap"> trả lời câu mấy </div></div>
+      <div class="stat-box s2"><div class="big" id="resPct">0%</div><div class="cap"> Tỷ lệ đúng </div></div>
+      <div class="stat-box s3"><div class="big" id="resBand">-</div><div class="cap"> Điểm Band IELTS dự kiến </div><div class="sub2" id="resLevel"></div></div>
     </div>
     <div class="progress-wrap">
-      <div class="pw-top"><span>总体进度</span><span id="resProgLbl">0 / 0</span></div>
+      <div class="pw-top"><span> tổng thể Tiến độ </span><span id="resProgLbl">0 / 0</span></div>
       <div class="pw-track"><div class="pw-fill" id="resProgFill"></div></div>
     </div>
     <div class="audio-note" id="bandNote" style="margin-top:14px;"></div>
   </div>
-  <div class="detail-h">详细结果</div>
+  <div class="detail-h"> kỹ càng kết quả </div>
   <div id="detailHolder"></div>
-  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">返回封面</button></div>
+  <div class="back-row"><button class="btn-ghost" onclick="backToCover()">Về trang bìa</button></div>
 </div>
 
 <script>
 /* ============================================================
-   一、试卷数据 —— 剑桥雅思18 Test 2 听力（官方原题 + 官方答案）
+    một, bài thi số liệu —— Cambridge IELTS 18 Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án)
    ============================================================ */
 const TEST = {
   meta:{ volume:18, testNo:2 },
@@ -277,11 +277,11 @@ const TEST = {
             {bullet:true,html:`must have a qualification in <Q n="5">`},
           ],
           questions:[
-            {id:'L1',no:1,answer:['training'],explain:`所有员工均可获得培训。答案：training。`},
-            {id:'L2',no:2,answer:['discount'],explain:`工作日员工可享受折扣。答案：discount。`},
-            {id:'L3',no:3,answer:['taxi'],explain:`午夜后提供出租车。答案：taxi。`},
-            {id:'L4',no:4,answer:['service'],explain:`须保持高标准的服务。答案：service。`},
-            {id:'L5',no:5,answer:['English'],explain:`须具备英语资格证书。答案：English。`},
+            {id:'L1',no:1,answer:['training'],explain:` tất cả công nhân đều có thể đạt được huấn luyện. Đáp án: training. `},
+            {id:'L2',no:2,answer:['discount'],explain:` thời gian làm việc công nhân có thể hưởng chiết khấu. Đáp án: discount. `},
+            {id:'L3',no:3,answer:['taxi'],explain:` nửa đêm sau cung cấp xe taxi. Đáp án: taxi. `},
+            {id:'L4',no:4,answer:['service'],explain:` tu bảo trì tiêu chuẩn cao phục vụ. Đáp án: service. `},
+            {id:'L5',no:5,answer:['English'],explain:` tu có đủ Tiếng Anh bằng hành nghề. Đáp án: English. `},
           ]},
         { kind:'table', title:'Questions 6–10', audioStart:206.8, audioEnd:447,
           instruction:'Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.',
@@ -291,11 +291,11 @@ const TEST = {
             [`City Road`,`Junior chef`,`Supporting senior chefs<br>Maintaining stock and organising <Q n="9">`,`Annual salary £23,000<br>No work on a <Q n="10"> once a month`],
           ],
           questions:[
-            {id:'L6',no:6,answer:['Wivenhoe'],explain:`工作地点在 Wivenhoe Street。`},
-            {id:'L7',no:7,answer:['equipment'],explain:`确保设备清洁。答案：equipment。`},
-            {id:'L8',no:8,answer:['9.75','£9.75'],explain:`起薪为每小时 £9.75。`},
-            {id:'L9',no:9,answer:['deliveries'],explain:`负责安排送货。答案：deliveries。`},
-            {id:'L10',no:10,answer:['Sunday'],explain:`每月有一个星期日不用上班。答案：Sunday。`},
+            {id:'L6',no:6,answer:['Wivenhoe'],explain:` công tác địa điểm tại Wivenhoe Street. `},
+            {id:'L7',no:7,answer:['equipment'],explain:` bảo đảm thiết bị sạch sẽ. Đáp án: equipment. `},
+            {id:'L8',no:8,answer:['9.75','£9.75'],explain:` nảy sinh lương là mỗi giờ £9.75. `},
+            {id:'L9',no:9,answer:['deliveries'],explain:` chịu trách nhiệm an bài đưa hàng. Đáp án: deliveries. `},
+            {id:'L10',no:10,answer:['Sunday'],explain:` mỗi tháng có một cái Chủ Nhật không cần đi làm. Đáp án: Sunday. `},
           ]}
       ]},
     { id:2, audio:'ielts18_test2_audio2.mp3', audioClips:[{qFrom:11,qTo:12,audioStart:0,audioEnd:100.5},{qFrom:13,qTo:14,audioStart:100.5,audioEnd:201},{qFrom:15,qTo:20,audioStart:201,audioEnd:449}],
@@ -305,16 +305,16 @@ const TEST = {
           box:{A:`It has suitable geographical features.`,B:`There is easy access to local facilities.`,C:`It has good connections with the airport.`,D:`The land is of little agricultural value.`,E:`It will be convenient for workers.`},
           groupId:'L11_12',answerSet:['B','E'],
           questions:[
-            {id:'L11',no:11,explain:`选两项（顺序不限）：B 与 E。`},
-            {id:'L12',no:12,explain:`同上。`},
+            {id:'L11',no:11,explain:` chọn hai hạng (không giới hạn thứ tự): B và E. `},
+            {id:'L12',no:12,explain:` giống như trên. `},
           ]},
         { kind:'multi', title:'Questions 13 and 14', audioStart:100.5, audioEnd:201,
           instruction:'Choose TWO letters, A–E. Which TWO aspects of the planned housing development have people given positive feedback about?',
           box:{A:`the facilities for cyclists`,B:`the impact on the environment`,C:`the encouragement of good relations between residents`,D:`the low cost of all the accommodation`,E:`the rural location`},
           groupId:'L13_14',answerSet:['B','C'],
           questions:[
-            {id:'L13',no:13,explain:`选两项（顺序不限）：B 与 C。`},
-            {id:'L14',no:14,explain:`同上。`},
+            {id:'L13',no:13,explain:` chọn hai hạng (không giới hạn thứ tự): B và C. `},
+            {id:'L14',no:14,explain:` giống như trên. `},
           ]},
         { kind:'map', title:'Questions 15–20', audioStart:201, audioEnd:449,
           instruction:'Label the map below. Write the correct letter, A–I, next to Questions 15–20.',
@@ -322,12 +322,12 @@ const TEST = {
           letters:['A','B','C','D','E','F','G','H','I'],
           image:'ielts18_test2_map.png?v=20260821c18lis1',
           questions:[
-            {id:'L15',no:15,q:`School`,answer:['G'],explain:`学校位于 G。`},
-            {id:'L16',no:16,q:`Sports centre`,answer:['C'],explain:`体育中心位于 C。`},
-            {id:'L17',no:17,q:`Clinic`,answer:['D'],explain:`诊所位于 D。`},
-            {id:'L18',no:18,q:`Community centre`,answer:['B'],explain:`社区中心位于 B。`},
-            {id:'L19',no:19,q:`Supermarket`,answer:['H'],explain:`超市位于 H。`},
-            {id:'L20',no:20,q:`Playground`,answer:['A'],explain:`游乐场位于 A。`},
+            {id:'L15',no:15,q:`School`,answer:['G'],explain:` trường học ở vào G. `},
+            {id:'L16',no:16,q:`Sports centre`,answer:['C'],explain:` trung tâm thể dục ở vào C. `},
+            {id:'L17',no:17,q:`Clinic`,answer:['D'],explain:` phòng khám bệnh ở vào D. `},
+            {id:'L18',no:18,q:`Community centre`,answer:['B'],explain:` cộng đồng trung tâm ở vào B. `},
+            {id:'L19',no:19,q:`Supermarket`,answer:['H'],explain:` siêu thị ở vào H. `},
+            {id:'L20',no:20,q:`Playground`,answer:['A'],explain:` sân chơi ở vào A. `},
           ]}
       ]},
     { id:3, audio:'ielts18_test2_audio3.mp3', audioClips:[{qFrom:21,qTo:24,audioStart:0,audioEnd:129.5},{qFrom:25,qTo:26,audioStart:129.5,audioEnd:259},{qFrom:27,qTo:30,audioStart:259,audioEnd:432}],
@@ -335,18 +335,18 @@ const TEST = {
         { kind:'mcq', title:'Questions 21–24', audioStart:0, audioEnd:129.5,
           instruction:'Choose the correct letter, A, B or C.',
           questions:[
-            {id:'L21',no:21,q:`Why do the students think the Laki eruption of 1783 is so important?`,options:{A:`It was the most severe eruption in modern times.`,B:`It led to the formal study of volcanoes.`,C:`It had a profound effect on society.`},answer:['C'],explain:`答案：C。它对社会产生了深远影响。`},
-            {id:'L22',no:22,q:`What surprised Adam about observations made at the time?`,options:{A:`the number of places producing them`,B:`the contradictions in them`,C:`the lack of scientific data to support them`},answer:['A'],explain:`答案：A。记录来自许多不同地点。`},
-            {id:'L23',no:23,q:`According to Michelle, what did the contemporary sources say about the Laki haze?`,options:{A:`People thought it was similar to ordinary fog.`,B:`It was associated with health issues.`,C:`It completely blocked out the sun for weeks.`},answer:['B'],explain:`答案：B。雾霾与健康问题有关。`},
-            {id:'L24',no:24,q:`Adam corrects Michelle when she claims that Benjamin Franklin`,options:{A:`came to the wrong conclusion about the cause of the haze.`,B:`was the first to identify the reason for the haze.`,C:`supported the opinions of other observers about the haze.`},answer:['B'],explain:`答案：B。富兰克林并非第一个确认原因的人。`},
+            {id:'L21',no:21,q:`Why do the students think the Laki eruption of 1783 is so important?`,options:{A:`It was the most severe eruption in modern times.`,B:`It led to the formal study of volcanoes.`,C:`It had a profound effect on society.`},answer:['C'],explain:` Đáp án: C. nó đối với xã hội sinh ra sâu xa ảnh hưởng. `},
+            {id:'L22',no:22,q:`What surprised Adam about observations made at the time?`,options:{A:`the number of places producing them`,B:`the contradictions in them`,C:`the lack of scientific data to support them`},answer:['A'],explain:` Đáp án: A. ghi chép đến từ rất nhiều bất đồng địa điểm. `},
+            {id:'L23',no:23,q:`According to Michelle, what did the contemporary sources say about the Laki haze?`,options:{A:`People thought it was similar to ordinary fog.`,B:`It was associated with health issues.`,C:`It completely blocked out the sun for weeks.`},answer:['B'],explain:` Đáp án: B. sương mù và vấn đề sức khỏe có quan hệ. `},
+            {id:'L24',no:24,q:`Adam corrects Michelle when she claims that Benjamin Franklin`,options:{A:`came to the wrong conclusion about the cause of the haze.`,B:`was the first to identify the reason for the haze.`,C:`supported the opinions of other observers about the haze.`},answer:['B'],explain:` Đáp án: B. Fourain Klin cũng không phải là cái thứ nhất Xác nhận nguyên nhân người. `},
           ]},
         { kind:'multi', title:'Questions 25 and 26', audioStart:129.5, audioEnd:259,
           instruction:'Choose TWO letters, A–E. Which TWO issues following the Laki eruption surprised the students?',
           box:{A:`how widespread the effects were`,B:`how long-lasting the effects were`,C:`the number of deaths it caused`,D:`the speed at which the volcanic ash cloud spread`,E:`how people ignored the warning signs`},
           groupId:'L25_26',answerSet:['A','B'],
           questions:[
-            {id:'L25',no:25,explain:`选两项（顺序不限）：A 与 B。`},
-            {id:'L26',no:26,explain:`同上。`},
+            {id:'L25',no:25,explain:` chọn hai hạng (không giới hạn thứ tự): A và B. `},
+            {id:'L26',no:26,explain:` giống như trên. `},
           ]},
         { kind:'match', title:'Questions 27–30', audioStart:259, audioEnd:432,
           instruction:'What comment do the students make about the impact of the Laki eruption on the following countries? Choose FOUR answers from the box and write the correct letter, A–F.',
@@ -354,10 +354,10 @@ const TEST = {
           box:{A:`This country suffered the most severe loss of life.`,B:`The impact on agriculture was predictable.`,C:`There was a significant increase in deaths of young people.`,D:`Animals suffered from a sickness.`,E:`This country saw the highest rise in food prices in the world.`,F:`It caused a particularly harsh winter.`},
           subTitle:'Countries',
           questions:[
-            {id:'L27',no:27,q:`Iceland`,answer:['D'],explain:`答案：D。动物患病。`},
-            {id:'L28',no:28,q:`Egypt`,answer:['A'],explain:`答案：A。死亡人数损失最严重。`},
-            {id:'L29',no:29,q:`UK`,answer:['C'],explain:`答案：C。年轻人的死亡明显增加。`},
-            {id:'L30',no:30,q:`USA`,answer:['F'],explain:`答案：F。冬季格外严寒。`},
+            {id:'L27',no:27,q:`Iceland`,answer:['D'],explain:` Đáp án: D. Động vật bị bệnh. `},
+            {id:'L28',no:28,q:`Egypt`,answer:['A'],explain:` Đáp án: A. số người chết tổn thất nghiêm trọng nhất. `},
+            {id:'L29',no:29,q:`UK`,answer:['C'],explain:` Đáp án: C. người tuổi trẻ tử vong rõ ràng gia tăng. `},
+            {id:'L30',no:30,q:`USA`,answer:['F'],explain:` Đáp án: F. mùa đông đặc biệt giá lạnh. `},
           ]}
       ]},
     { id:4, audio:'ielts18_test2_audio4.mp3', audioClips:[{qFrom:31,qTo:40,audioStart:0,audioEnd:411}],
@@ -384,46 +384,46 @@ const TEST = {
             {bullet:true,html:`Bags called 'pouches' became popular, before women carried a <Q n="40">.`},
           ],
           questions:[
-            {id:'L31',no:31,answer:['convenient'],explain:`答案：convenient。`},
-            {id:'L32',no:32,answer:['suits'],explain:`答案：suits。`},
-            {id:'L33',no:33,answer:['tailor'],explain:`答案：tailor。`},
-            {id:'L34',no:34,answer:['profession'],explain:`答案：profession。`},
-            {id:'L35',no:35,answer:['visible'],explain:`答案：visible。`},
-            {id:'L36',no:36,answer:['string','strings'],explain:`答案：string(s)。`},
-            {id:'L37',no:37,answer:['waist','waists'],explain:`答案：waist(s)。`},
-            {id:'L38',no:38,answer:['perfume'],explain:`答案：perfume。`},
-            {id:'L39',no:39,answer:['image'],explain:`答案：image。`},
-            {id:'L40',no:40,answer:['handbag'],explain:`答案：handbag。`},
+            {id:'L31',no:31,answer:['convenient'],explain:` Đáp án: convenient. `},
+            {id:'L32',no:32,answer:['suits'],explain:` Đáp án: suits. `},
+            {id:'L33',no:33,answer:['tailor'],explain:` Đáp án: tailor. `},
+            {id:'L34',no:34,answer:['profession'],explain:` Đáp án: profession. `},
+            {id:'L35',no:35,answer:['visible'],explain:` Đáp án: visible. `},
+            {id:'L36',no:36,answer:['string','strings'],explain:` Đáp án: string(s). `},
+            {id:'L37',no:37,answer:['waist','waists'],explain:` Đáp án: waist(s). `},
+            {id:'L38',no:38,answer:['perfume'],explain:` Đáp án: perfume. `},
+            {id:'L39',no:39,answer:['image'],explain:` Đáp án: image. `},
+            {id:'L40',no:40,answer:['handbag'],explain:` Đáp án: handbag. `},
           ]}
       ]},
   ]
 };
 
-/* 官方 听力 原始分(0-40) → 雅思分 对照表 */
+/* chính thức Nghe nguyên thủy điểm (0-40) → Điểm IELTS so sánh bề ngoài */
 const BAND_TABLE = [[39,9.0],[37,8.5],[35,8.0],[32,7.5],[30,7.0],[26,6.5],[23,6.0],[18,5.5],[16,5.0],[13,4.5],[10,4.0],[6,3.5],[4,3.0],[0,2.5]];
 const LEVEL_LABEL = [[8.5,'Expert / Very good user'],[7.0,'Good user'],[6.0,'Competent user'],[5.0,'Modest user'],[4.0,'Limited user'],[0,'Basic user']];
 function lookupBand(correct,total){ const scaled = total===40?correct:Math.round(correct/Math.max(1,total)*40); for(const [m,b] of BAND_TABLE) if(scaled>=m) return b; return 2.5; }
 function levelLabel(b){ for(const [m,l] of LEVEL_LABEL) if(b>=m) return l; return ''; }
 
 /* ============================================================
-   二、引擎
+    hai, động cơ
    ============================================================ */
 let currentPaper=[], selectedSections=[], mode='practice', startTime=0, timerInterval=null, submitted=false;
 const allQs = sec => sec.groups.flatMap(g=>g.questions);
 
-/* 模式弹窗 */
+/* Hộp thoại chọn chế độ */
 function openMode(){
   document.getElementById('sectionChecks').innerHTML =
     TEST.sections.map(s=>`<label class="sec-check"><input type="checkbox" class="secbox" value="${s.id}" checked> Section ${s.id}</label>`).join('');
-  document.getElementById('toggleAllBtn').textContent='取消全选';
+  document.getElementById('toggleAllBtn').textContent=' Bỏ chọn tất cả ';
   document.getElementById('modeModal').classList.add('show');
 }
 function closeMode(){ document.getElementById('modeModal').classList.remove('show'); }
-function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?'取消全选':'全选'; }
+function toggleAll(){ const b=[...document.querySelectorAll('.secbox')]; const off=b.some(x=>!x.checked); b.forEach(x=>x.checked=off); document.getElementById('toggleAllBtn').textContent=off?' Bỏ chọn tất cả ':' Chọn tất cả '; }
 
 function startTest(m){
   mode=m;
-  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert('请至少选择一个部分。'); return; } selectedSections=ids; }
+  if(m==='practice'){ const ids=[...document.querySelectorAll('.secbox:checked')].map(b=>+b.value); if(!ids.length){ alert(' mời ít nhất lựa chọn một cái bộ phận. '); return; } selectedSections=ids; }
   else selectedSections=TEST.sections.map(s=>s.id);
   currentPaper=TEST.sections.filter(s=>selectedSections.includes(s.id));
   closeMode(); submitted=false;
@@ -435,18 +435,18 @@ function startTest(m){
 }
 
 function renderPaper(){
-  document.getElementById('testTitle').textContent=`剑桥雅思18 · Test 2 — 听力`;
-  document.getElementById('testModeTag').textContent= mode==='practice'?'练习模式':'模考模式';
+  document.getElementById('testTitle').textContent=`Cambridge IELTS 18 · Test 2 — Nghe `;
+  document.getElementById('testModeTag').textContent= mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử ';
   document.getElementById('questionsHolder').innerHTML = currentPaper.map(sectionHtml).join('');
 }
 function sectionHtml(s){
   return `<div class="section-banner" id="anchor_${s.id}">
       <div class="sb-top"><span class="sb-title">Section ${s.id}</span>
-        <button class="listen-here" onclick="playSection(${s.id})">▶ 听本部分录音</button></div>
-      <div class="sb-meta">本部分共 ${allQs(s).length} 题</div>
+        <button class="listen-here" onclick="playSection(${s.id})">▶ nghe phần quan trọng điểm ghi âm</button></div>
+      <div class="sb-meta"> phần quan trọng điểm tổng ${allQs(s).length} câu</div>
     </div>${s.groups.map(groupHtml).join('')}`;
 }
-function expandQ(html){ // 把 <Q n="x"> 占位替换成 编号徽标 + 输入框
+function expandQ(html){ // đem <Q n="x"> giành chỗ thay thế thành đánh số huy hiệu + đưa vào khung
   return (html==null?'':String(html)).replace(/<Q n="(\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><input type="text" id="L${n}" autocomplete="off">`);
 }
 function groupHtml(g){
@@ -482,13 +482,13 @@ function groupHtml(g){
   else if(g.kind==='multi'){
     const box=`<div class="match-box">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${Object.keys(g.box).map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
-    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">选择一项（两题合计选出正确的两项，顺序不限）</span>${sel(q.id)}</div>`).join('');
+    const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt"> lựa chọn hạng nhất (hai câu cộng lại tuyển ra chính xác hai hạng, không giới hạn thứ tự) </span>${sel(q.id)}</div>`).join('');
     body=box+qs;
   }
   else if(g.kind==='map'){
     const letters=g.letters||['A','B','C','D','E','F','G','H','I'];
     const inner=g.svg?g.svg:`<img class="map-img" src="${g.image}" alt="${g.mapTitle||'map'}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">` +
-      `<div class="map-missing" style="display:none;">📍 地图图片待上传：请把书上这张地图发给老师，上传后此处会显示地图，即可对照作答。</div>`;
+      `<div class="map-missing" style="display:none;">📍 Bản đồ hình ảnh nghỉ ngơi truyền: xin đem trên sách tấm bản đồ này chia Giáo viên, thượng truyền(*upload) về sau chỗ sẽ biểu hiện Bản đồ, là được so sánh đáp lại. </div>`;
     const img=`<div class="map-wrap">${g.mapTitle?`<div class="note-title">${g.mapTitle}</div>`:''}${inner}</div>`;
     const sel=k=>`<select id="${k}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`;
     const qs=g.questions.map(q=>`<div class="match-q"><span class="qnum-badge">${q.no}</span><span class="mq-txt">${q.q}</span>${sel(q.id)}</div>`).join('');
@@ -497,19 +497,19 @@ function groupHtml(g){
   return `<div class="qgroup"><h4>${g.title}</h4><div class="instruction">${g.instruction}</div>${body}</div>`;
 }
 
-/* 计时器 */
+/* máy tính giờ */
 function setupTimer(){
   startTime=Date.now(); const t=document.getElementById('timer'); t.classList.add('show'); clearInterval(timerInterval);
   if(mode==='exam'){ const total=TEST.durationMin*60;
     timerInterval=setInterval(()=>{ const left=total-Math.floor((Date.now()-startTime)/1000);
-      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert('时间到，自动提交。'); submitTest(); return; }
-      t.classList.toggle('warn',left<=300&&left>60); t.classList.toggle('danger',left<=60);
+      if(left<=0){ clearInterval(timerInterval); document.getElementById('timerText').textContent='00:00'; alert(' đã đến giờ, tự động Nộp bài. '); submitTest(); return; }
+      t.classList.toggle('warn',left<=300&left>60); t.classList.toggle('danger',left<=60);
       document.getElementById('timerText').textContent=fmt(left); },500);
   } else timerInterval=setInterval(()=>{ document.getElementById('timerText').textContent=fmt(Math.floor((Date.now()-startTime)/1000)); },500);
 }
 function fmt(s){ const m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
 
-/* 音频（真实文件，每部分一段；模考自动连播） */
+/* âm tần (chân thật văn bản tài liệu, mỗi bộ phận một đoạn; Thi thử tự động phát sóng liên tục) */
 let curAudioSec=null;
 const player=document.getElementById('player');
 function initAudio(){ curAudioSec=currentPaper[0].id; loadSection(curAudioSec,false); paintAudio(); }
@@ -527,11 +527,11 @@ player.addEventListener('play',()=>document.getElementById('aPlay').textContent=
 player.addEventListener('pause',()=>document.getElementById('aPlay').textContent='▶');
 player.addEventListener('ended',()=>{
   document.getElementById('aPlay').textContent='▶';
-  if(mode==='exam'){ const idx=currentPaper.findIndex(s=>s.id===curAudioSec); if(idx>-1&&idx<currentPaper.length-1) loadSection(currentPaper[idx+1].id,true); }
+  if(mode==='exam'){ const idx=currentPaper.findIndex(s=>s.id===curAudioSec); if(idx>-1&idx<currentPaper.length-1) loadSection(currentPaper[idx+1].id,true); }
 });
 function paintAudio(){ const d=player.duration||0,c=player.currentTime||0; document.getElementById('aFill').style.width=(d?c/d*100:0)+'%'; document.getElementById('aTime').textContent=fmt(Math.floor(c))+' / '+fmt(Math.floor(d)); }
 
-/* 批改 */
+/* phê chữa */
 function norm(s){ return (s||'').toString().toLowerCase().replace(/[£$,.;:!?"'’]/g,'').replace(/\s+/g,' ').trim().replace(/^(a|an|the)\s+/,''); }
 function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.tagName==='SELECT')?el.value:el.value.trim();
   const r=document.getElementsByName(q.id); for(const x of r) if(x.checked) return x.value; return ''; }
@@ -539,17 +539,17 @@ function readAns(q){ const el=document.getElementById(q.id); if(el) return (el.t
 function confirmSubmit(){
   let answered=0,total=0;
   currentPaper.forEach(s=>allQs(s).forEach(q=>{ total++; if(readAns(q)!=='') answered++; }));
-  if(window.confirm(`已作答 ${answered}/${total} 题。\n确定提交并查看批改报告吗？`)) submitTest();
+  if(window.confirm(` đã đáp lại ${answered}/${total} câu. \n Đồng ý Nộp bài cũng Xem Báo cáo chấm bài không? `)) submitTest();
 }
 function submitTest(){
   if(submitted) return; submitted=true;
   clearInterval(timerInterval); player.pause();
   document.getElementById('timer').classList.remove('show');
 
-  /* 先处理 multi 配对题（顺序不限、不重复计分） */
+  /* trước xử lý multi Nối thông tin (không giới hạn thứ tự, không tái diễn tỉ số) */
   const pairCorrect={};
   currentPaper.forEach(s=>s.groups.forEach(g=>{
-    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
+    if(g.kind==='multi'){ const set=g.answerSet.slice(); g.questions.forEach(q=>{ const ua=(readAns(q)||'').toUpperCase(); const i=set.indexOf(ua); if(ua&i>-1){ pairCorrect[q.id]=true; set.splice(i,1);} else pairCorrect[q.id]=false; }); }
   }));
 
   let correct=0,total=0; const detail=[];
@@ -558,7 +558,7 @@ function submitTest(){
     s.groups.forEach(g=>g.questions.forEach(q=>{
       const ua=readAns(q); let ok;
       if(g.kind==='multi') ok=!!pairCorrect[q.id];
-      else ok = ua!=='' && [].concat(q.answer).map(norm).includes(norm(ua));
+      else ok = ua!=='' & [].concat(q.answer).map(norm).includes(norm(ua));
       total++; if(ok){correct++;sc++;}
       items.push({q,ua,ok, ans:(g.kind==='multi'?g.answerSet:[].concat(q.answer))});
     }));
@@ -571,29 +571,29 @@ function submitTest(){
 
   document.getElementById('testArea').style.display='none';
   document.getElementById('resultArea').style.display='block';
-  document.getElementById('resTitle').textContent='剑桥雅思18 · Test 2 — 听力';
-  document.getElementById('resMeta').textContent=`${mode==='practice'?'练习模式':'模考模式'} · 用时 ${fmt(elapsed)} · 完成时间 ${new Date().toLocaleString('zh-CN')}`;
+  document.getElementById('resTitle').textContent='Cambridge IELTS 18 · Test 2 — Nghe ';
+  document.getElementById('resMeta').textContent=`${mode==='practice'?' Chế độ luyện tập ':' Chế độ thi thử '} · thời gian sử dụng ${fmt(elapsed)} · thời gian hoàn thành ${new Date().toLocaleString('zh-CN')}`;
   document.getElementById('resCorrect').textContent=`${correct}/${total}`;
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resBand').textContent=band.toFixed(1);
-  document.getElementById('resLevel').textContent='水平：'+levelLabel(band);
+  document.getElementById('resLevel').textContent=' Trình độ: '+levelLabel(band);
   document.getElementById('resProgLbl').textContent=`${correct} / ${total}`;
   setTimeout(()=>document.getElementById('resProgFill').style.width=pct+'%',60);
   document.getElementById('bandNote').textContent = total===40
-    ? '雅思分按官方听力 40 题原始分对照表换算。'
-    : `本次仅测 ${total} 题，预估分按比例折算至 40 题后套用官方对照表；做完整 4 个部分时为精确换算。`;
+    ? ' Điểm IELTS theo như chính thức Nghe 40 câu nguyên thủy điểm so sánh bề ngoài đổi. '
+    : ` lần này chỉ trắc ${total} câu, dự đoán điểm theo như tỉ lệ tương đương đến 40 câu sau sử dụng chính thức so sánh bề ngoài; làm xong cả 4 bộ phận lúc là chính xác đổi. `;
 
   document.getElementById('detailHolder').innerHTML=detail.map((d,i)=>{
     const sp=d.total?Math.round(d.sc/d.total*100):0;
     const rows=d.items.map(it=>{
       const cls=it.ok?'correct':'wrong';
-      const yours=it.ua?`你的答案：<span class="yours">${it.ua}</span>　`:`<span class="yours">未作答</span>　`;
-      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} 第 ${it.q.no} 题</div>
-        <div class="ra">${it.ok?'<span class="correctv">回答正确</span>':yours+'正确答案：<span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
+      const yours=it.ua?` Câu trả lời của bạn: <span class="yours">${it.ua}</span> `:`<span class="yours"> Chưa trả lời </span> `;
+      return `<div class="ritem ${cls}"><div class="rq">${it.ok?'✔':'✘'} Câu ${it.q.no}</div>
+        <div class="ra">${it.ok?'<span class="correctv"> Trả lời chính xác </span>':yours+' Đáp án đúng: <span class="correctv">'+it.ans.join(' / ')+'</span>'}</div>
         <div class="rex">💡 ${it.q.explain||''}</div></div>`;
     }).join('');
     return `<div class="sec-result${i===0?' open':''}"><div class="sr-head" onclick="this.parentNode.classList.toggle('open')">
-        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / ${d.total} 题正确　${sp}%</span></div></div>
+        <div><h5>Section ${d.s.id}</h5><div class="sr-sum"><span class="${sp>=60?'ok':'bad'}">${d.sc} / đúng ${d.total} câu ${sp}%</span></div></div>
         <div class="sr-chevron">▾</div></div><div class="sr-body">${rows}</div></div>`;
   }).join('');
   window.scrollTo(0,0);
@@ -608,7 +608,7 @@ function backToCover(){
   window.scrollTo(0,0);
 }
 
-/* ===== YYSD 成绩同步（由学习中心自动添加，不改动原批改逻辑） ===== */
+/* ===== YYSD Đồng bộ điểm số (do Trung tâm Học tập tự động tăng thêm, không thay đổi di chuyển nguyên phê chữa ăn khớp) ===== */
 (function(){
   var posted=false;
   function report(){

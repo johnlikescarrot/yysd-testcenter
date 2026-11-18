@@ -12,7 +12,7 @@ function todayDate() {
   var d = new Date();
   var m = d.getMonth() + 1;
   var day = d.getDate();
-  return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+  return d.getFullYear() + "-" + (m < 10? "0": "") + m + "-" + (day < 10? "0": "") + day;
 }
 
 function ensureSchema(db) {
@@ -71,43 +71,43 @@ function mountRoutes(app, opts) {
   ensureSchema(db);
 
   var stmts = {
-    getProgress: db.prepare("SELECT * FROM hs_vocab_progress WHERE student_id = ?"),
+    getProgress: db.prepare("SELECT * FROM hs_vocab_progress WHERE student_id =?"),
     upsertProgress: db.prepare(
-      "INSERT INTO hs_vocab_progress (student_id, cursor_idx, active_batch_id, updated_at) VALUES (?, ?, ?, ?) " +
+      "INSERT INTO hs_vocab_progress (student_id, cursor_idx, active_batch_id, updated_at) VALUES (?,?,?,?) " +
       "ON CONFLICT(student_id) DO UPDATE SET cursor_idx = excluded.cursor_idx, active_batch_id = excluded.active_batch_id, updated_at = excluded.updated_at"
     ),
     insertBatch: db.prepare(
-      "INSERT INTO hs_vocab_batches (student_id, batch_date, start_idx, count, cleared, created_at) VALUES (?, ?, ?, ?, 0, ?)"
+      "INSERT INTO hs_vocab_batches (student_id, batch_date, start_idx, count, cleared, created_at) VALUES (?,?,?,?, 0,?)"
     ),
-    findBatch: db.prepare("SELECT * FROM hs_vocab_batches WHERE id = ? AND student_id = ?"),
+    findBatch: db.prepare("SELECT * FROM hs_vocab_batches WHERE id =? AND student_id =?"),
     listBatches: db.prepare(
-      "SELECT * FROM hs_vocab_batches WHERE student_id = ? ORDER BY id DESC LIMIT 100"
+      "SELECT * FROM hs_vocab_batches WHERE student_id =? ORDER BY id DESC LIMIT 100"
     ),
     clearBatch: db.prepare(
-      "UPDATE hs_vocab_batches SET cleared = 1, cleared_at = ? WHERE id = ? AND student_id = ?"
+      "UPDATE hs_vocab_batches SET cleared = 1, cleared_at =? WHERE id =? AND student_id =?"
     ),
     listUnitClears: db.prepare(
-      "SELECT list_no, cleared_at FROM hs_vocab_unit_clears WHERE student_id = ?"
+      "SELECT list_no, cleared_at FROM hs_vocab_unit_clears WHERE student_id =?"
     ),
     upsertUnitClear: db.prepare(
-      "INSERT INTO hs_vocab_unit_clears (student_id, list_no, cleared_at) VALUES (?, ?, ?) " +
+      "INSERT INTO hs_vocab_unit_clears (student_id, list_no, cleared_at) VALUES (?,?,?) " +
       "ON CONFLICT(student_id, list_no) DO UPDATE SET cleared_at = excluded.cleared_at"
     ),
     insertMistake: db.prepare(
       "INSERT INTO hs_vocab_mistakes (student_id, mistake_date, source, word, ipa, meaning, word_json, user_answer, is_removed, created_at) " +
-      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?)"
+      "VALUES (?,?,?,?,?,?,?,?, 0,?)"
     ),
     listMistakes: db.prepare(
-      "SELECT * FROM hs_vocab_mistakes WHERE student_id = ? AND is_removed = 0 ORDER BY id DESC"
+      "SELECT * FROM hs_vocab_mistakes WHERE student_id =? AND is_removed = 0 ORDER BY id DESC"
     ),
     findMistake: db.prepare(
-      "SELECT * FROM hs_vocab_mistakes WHERE id = ? AND student_id = ?"
+      "SELECT * FROM hs_vocab_mistakes WHERE id =? AND student_id =?"
     ),
     removeMistake: db.prepare(
-      "UPDATE hs_vocab_mistakes SET is_removed = 1 WHERE id = ? AND student_id = ?"
+      "UPDATE hs_vocab_mistakes SET is_removed = 1 WHERE id =? AND student_id =?"
     ),
     listMistakesByGroup: db.prepare(
-      "SELECT * FROM hs_vocab_mistakes WHERE student_id = ? AND is_removed = 0 AND mistake_date = ? AND source = ? ORDER BY id ASC"
+      "SELECT * FROM hs_vocab_mistakes WHERE student_id =? AND is_removed = 0 AND mistake_date =? AND source =? ORDER BY id ASC"
     )
   };
 
@@ -120,7 +120,7 @@ function mountRoutes(app, opts) {
   }
 
   function activeBatch(studentId, prog) {
-    if (!prog || !prog.active_batch_id) return null;
+    if (!prog ||!prog.active_batch_id) return null;
     var b = stmts.findBatch.get(prog.active_batch_id, studentId);
     if (!b || b.cleared) return null;
     return b;
@@ -141,7 +141,7 @@ function mountRoutes(app, opts) {
             batch_date: batch.batch_date,
             start_idx: batch.start_idx,
             count: batch.count,
-            cleared: !!batch.cleared
+            cleared:!!batch.cleared
           }
         : null,
       batches: stmts.listBatches.all(studentId).map(function (b) {
@@ -150,7 +150,7 @@ function mountRoutes(app, opts) {
           batch_date: b.batch_date,
           start_idx: b.start_idx,
           count: b.count,
-          cleared: !!b.cleared,
+          cleared:!!b.cleared,
           cleared_at: b.cleared_at
         };
       }),
@@ -159,13 +159,13 @@ function mountRoutes(app, opts) {
   }
 
   function insertMistakes(studentId, source, mistakes) {
-    if (!Array.isArray(mistakes) || !mistakes.length) return 0;
+    if (!Array.isArray(mistakes) ||!mistakes.length) return 0;
     var now = new Date().toISOString();
     var date = todayDate();
     var n = 0;
     var tx = db.transaction(function (list) {
       list.forEach(function (m) {
-        if (!m || !m.word) return;
+        if (!m ||!m.word) return;
         stmts.insertMistake.run(
           studentId,
           date,
@@ -173,8 +173,8 @@ function mountRoutes(app, opts) {
           String(m.word),
           m.ipa || null,
           m.meaning || null,
-          m.word_json ? JSON.stringify(m.word_json) : null,
-          m.user_answer != null ? String(m.user_answer) : null,
+          m.word_json? JSON.stringify(m.word_json): null,
+          m.user_answer!= null? String(m.user_answer): null,
           now
         );
         n++;
@@ -192,17 +192,17 @@ function mountRoutes(app, opts) {
   app.post("/api/hs-vocab/custom/start", authMiddleware, function (req, res) {
     var count = clampCount(req.body && req.body.count);
     if (count == null) {
-      return res.status(400).json({ error: "数量须在 " + MIN_BATCH + "–" + MAX_BATCH + " 之间" });
+      return res.status(400).json({ error: " số lượng tu tại " + MIN_BATCH + "–" + MAX_BATCH + " giữa " });
     }
     var bankTotal = Number(req.body && req.body.bank_total);
     if (!Number.isFinite(bankTotal) || bankTotal <= 0) {
-      return res.status(400).json({ error: "缺少词库总量 bank_total" });
+      return res.status(400).json({ error: " thiếu khuyết từ kho tổng sản lượng bank_total" });
     }
     var prog = ensureProgress(req.user.sub);
     var cur = activeBatch(req.user.sub, prog);
     if (cur) {
       return res.status(409).json({
-        error: "当前批次尚未通关，请先完成检测",
+        error: " trước mắt phê lần chưa qua cửa, mời hoàn thành trước Đánh giá ",
         active_batch: {
           id: cur.id,
           batch_date: cur.batch_date,
@@ -213,14 +213,14 @@ function mountRoutes(app, opts) {
       });
     }
     if (prog.cursor_idx >= bankTotal) {
-      return res.status(400).json({ error: "词库已学完" });
+      return res.status(400).json({ error: " từ kho Đã học hết " });
     }
     var start = prog.cursor_idx;
     var actual = Math.min(count, bankTotal - start);
-    if (actual < 1) return res.status(400).json({ error: "没有可学的单词" });
+    if (actual < 1) return res.status(400).json({ error: " không có có thể học Từ vựng " });
     // ponytail: allow last slice < MIN_BATCH when bank remainder is small
     if (actual < MIN_BATCH && start + actual < bankTotal) {
-      return res.status(400).json({ error: "数量须在 " + MIN_BATCH + "–" + MAX_BATCH + " 之间" });
+      return res.status(400).json({ error: " số lượng tu tại " + MIN_BATCH + "–" + MAX_BATCH + " giữa " });
     }
     var now = new Date().toISOString();
     var info = stmts.insertBatch.run(req.user.sub, todayDate(), start, actual, now);
@@ -232,9 +232,9 @@ function mountRoutes(app, opts) {
   app.post("/api/hs-vocab/custom/finish", authMiddleware, function (req, res) {
     var body = req.body || {};
     var batchId = Number(body.batch_id);
-    var passed = !!body.passed;
+    var passed =!!body.passed;
     var batch = stmts.findBatch.get(batchId, req.user.sub);
-    if (!batch) return res.status(404).json({ error: "批次不存在" });
+    if (!batch) return res.status(404).json({ error: " phê lần không tồn tại " });
     insertMistakes(req.user.sub, "custom", body.mistakes || []);
     if (!passed) {
       return res.json({ ok: true, passed: false, status: progressPayload(req.user.sub) });
@@ -252,8 +252,8 @@ function mountRoutes(app, opts) {
   app.post("/api/hs-vocab/unit/finish", authMiddleware, function (req, res) {
     var body = req.body || {};
     var listNo = Number(body.list_no);
-    var passed = !!body.passed;
-    if (!listNo || listNo < 1) return res.status(400).json({ error: "无效单元号" });
+    var passed =!!body.passed;
+    if (!listNo || listNo < 1) return res.status(400).json({ error: " không có hiệu quả Bài số " });
     insertMistakes(req.user.sub, "unit:" + listNo, body.mistakes || []);
     if (passed) {
       stmts.upsertUnitClear.run(req.user.sub, listNo, new Date().toISOString());
@@ -276,7 +276,7 @@ function mountRoutes(app, opts) {
         };
       }
       var wj = null;
-      try { wj = r.word_json ? JSON.parse(r.word_json) : null; } catch (e) {}
+      try { wj = r.word_json? JSON.parse(r.word_json): null; } catch (e) {}
       groups[key].items.push({
         id: r.id,
         word: r.word,
@@ -289,17 +289,17 @@ function mountRoutes(app, opts) {
     });
     var list = Object.keys(groups).map(function (k) { return groups[k]; });
     list.sort(function (a, b) {
-      if (a.mistake_date !== b.mistake_date) return a.mistake_date < b.mistake_date ? 1 : -1;
-      return a.source < b.source ? -1 : 1;
+      if (a.mistake_date!== b.mistake_date) return a.mistake_date < b.mistake_date? 1: -1;
+      return a.source < b.source? -1: 1;
     });
     res.json({ ok: true, groups: list, total: rows.length });
   });
 
   app.post("/api/hs-vocab/mistakes/remove", authMiddleware, function (req, res) {
     var id = Number(req.body && req.body.id);
-    if (!id) return res.status(400).json({ error: "缺少错题 id" });
+    if (!id) return res.status(400).json({ error: " thiếu khuyết câu sai id" });
     var row = stmts.findMistake.get(id, req.user.sub);
-    if (!row || row.is_removed) return res.status(404).json({ error: "错题不存在" });
+    if (!row || row.is_removed) return res.status(404).json({ error: " câu sai không tồn tại " });
     stmts.removeMistake.run(id, req.user.sub);
     res.json({ ok: true });
   });
@@ -307,14 +307,14 @@ function mountRoutes(app, opts) {
   app.get("/api/hs-vocab/mistakes/group", authMiddleware, function (req, res) {
     var date = String(req.query.date || "");
     var source = String(req.query.source || "");
-    if (!date || !source) return res.status(400).json({ error: "需要 date 与 source" });
+    if (!date ||!source) return res.status(400).json({ error: " cần date và source" });
     var rows = stmts.listMistakesByGroup.all(req.user.sub, date, source);
     res.json({
       ok: true,
       label: formatGroupLabel(date, source),
       items: rows.map(function (r) {
         var wj = null;
-        try { wj = r.word_json ? JSON.parse(r.word_json) : null; } catch (e) {}
+        try { wj = r.word_json? JSON.parse(r.word_json): null; } catch (e) {}
         return {
           id: r.id,
           word: r.word,
@@ -338,12 +338,12 @@ function mountRoutes(app, opts) {
 function formatGroupLabel(date, source) {
   var parts = String(date).split("-");
   var nice = parts.length === 3
-    ? (Number(parts[1]) + "月" + Number(parts[2]) + "日")
+    ? (Number(parts[1]) + " tháng " + Number(parts[2]) + " ngày ")
     : date;
-  if (source === "custom") return nice + "·自定义";
+  if (source === "custom") return nice + "· từ định nghĩa ";
   var m = String(source).match(/^unit:(\d+)$/);
-  if (m) return nice + "·单元" + m[1];
-  if (source.indexOf("wrong") === 0) return nice + "·错题再测";
+  if (m) return nice + "· Bài " + m[1];
+  if (source.indexOf("wrong") === 0) return nice + "· Kiểm tra lại từ sai ";
   return nice + "·" + source;
 }
 
@@ -353,8 +353,8 @@ function selfCheck() {
   console.assert(clampCount(10) === 10);
   console.assert(clampCount(200) === 200);
   console.assert(clampCount(201) === null);
-  console.assert(formatGroupLabel("2026-01-02", "custom") === "1月2日·自定义");
-  console.assert(formatGroupLabel("2026-01-03", "unit:1") === "1月3日·单元1");
+  console.assert(formatGroupLabel("2026-01-02", "custom") === "ngày 2/1· từ định nghĩa ");
+  console.assert(formatGroupLabel("2026-01-03", "unit:1") === "ngày 3/1·Bài 1");
   return true;
 }
 

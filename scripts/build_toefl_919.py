@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from toefl_sent import scramble
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = "/Users/frankman/Desktop/优益思达自整理 新托福题/9月/9.19-海外线下/audio/item_level"
+SRC = "/Users/frankman/Desktop/ YYSD từ sửa sang lại TOEFL iBT câu /9 tháng /9.19- hải ngoại tuyến hạ /audio/item_level"
 AUDIO = "library/toefl/audio/2025-09-19/"
 PHOTO = "library/toefl/img/2025-09-02/"
 
@@ -24,7 +24,7 @@ def dump(name, obj):
 def blank(n, prefix, word):
     if prefix and not word.startswith(prefix) and not word.lower().startswith(prefix.lower()):
         raise SystemExit("prefix %r not in %r" % (prefix, word))
-    return {"id": n, "prefix": prefix, "answer": word[len(prefix) :], "word": word}
+    return {"id": n, "prefix": prefix, "answer": word[len(prefix):], "word": word}
 
 
 def cw(title, module, start, parts):
@@ -318,11 +318,11 @@ def build_reading():
             "D": "It matters only for translation studies.",
         }, "B"),
     ]))
-    if n != 46:
+    if n!= 46:
         raise SystemExit("reading blanks ended at %s" % n)
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 阅读",
+        "title": "TOEFL iBT 19/9 hải ngoại tuyến hạ · Đọc ",
         "set": "9.19",
         "skill": "reading",
         "modules": [
@@ -612,7 +612,7 @@ def build_listening():
     ]
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 听力",
+        "title": "TOEFL iBT 19/9 hải ngoại tuyến hạ · Nghe ",
         "set": "9.19",
         "skill": "listening",
         "modules": [
@@ -637,7 +637,7 @@ def sent(sid, context, lead, bank, answer, tail="."):
 def build_writing():
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 写作",
+        "title": "TOEFL iBT 19/9 hải ngoại tuyến hạ · Viết ",
         "set": "9.19",
         "skill": "writing",
         "modules": [
@@ -753,7 +753,7 @@ def build_speaking():
         })
     return {
         "id": "2025-09-19",
-        "title": "新托福 9.19 海外线下 · 口语",
+        "title": "TOEFL iBT 19/9 hải ngoại tuyến hạ · Nói ",
         "set": "9.19",
         "skill": "speaking",
         "modules": [

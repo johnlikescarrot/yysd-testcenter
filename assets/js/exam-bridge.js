@@ -4,19 +4,19 @@
 (function () {
   "use strict";
 
-  /** 客户站 iframe 卷面白标：读父页 YYSD_AUTH，替换 title / brandtag / 页头 */
+  /** hộ khách đứng iframe cuốn mặt trắng nhãn hiệu: đọc phụ trang YYSD_AUTH, thay thế title / brandtag / trang đầu */
   function applyTenantPaperBrand() {
     var A;
     try { A = window.parent && window.parent.YYSD_AUTH; } catch (e) { return; }
-    if (!A || !A.isHqSite || A.isHqSite()) return;
+    if (!A ||!A.isHqSite || A.isHqSite()) return;
     var org = (A.getOrg && A.getOrg()) || null;
     var name = (A.brandName && A.brandName(org)) || (org && org.name) || "";
     if (!name) return;
     var replacers = [
-      [/优益思达国际课程中心/g, name],
-      [/优益思达备考/g, name],
-      [/优益思达学习中心/g, name],
-      [/优益思达/g, name],
+      [/ Trung tâm Luyện thi Quốc tế YYSD /g, name],
+      [/ Luyện thi YYSD /g, name],
+      [/ Trung tâm Học tập YYSD /g, name],
+      [/ YYSD /g, name],
       [/YYSD International Course Center/gi, name],
       [/\bYYSD\b/g, name]
     ];
@@ -27,17 +27,17 @@
     }
     document.querySelectorAll(".brandtag").forEach(function (el) {
       var bt = el.textContent || "";
-      if (bt.indexOf("优益思达") >= 0 || bt.indexOf("YYSD") >= 0) el.textContent = name;
+      if (bt.indexOf("YYSD") >= 0 || bt.indexOf("YYSD") >= 0) el.textContent = name;
     });
-    document.querySelectorAll(".header h1, h1 .brandtag").forEach(function (el) {
+    document.querySelectorAll(".header h1, h1.brandtag").forEach(function (el) {
       var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
       var node;
       while ((node = walk.nextNode())) {
         var txt = node.nodeValue;
-        if (!txt || txt.indexOf("优益思达") < 0) continue;
+        if (!txt || txt.indexOf("YYSD") < 0) continue;
         var next = txt;
         replacers.forEach(function (pair) { next = next.replace(pair[0], pair[1]); });
-        if (next !== txt) node.nodeValue = next;
+        if (next!== txt) node.nodeValue = next;
       }
     });
   }
@@ -48,10 +48,10 @@
   var bridgeMode = (script && script.dataset.mode) || "exam";
   var examId = (script && script.dataset.examId) || "";
   // ponytail: parent CDT chrome is outside this iframe — fullscreen here hides timer/Finish/footer
-  var cdtShell = !!(script && script.dataset && script.dataset.cdt === "1");
+  var cdtShell =!!(script && script.dataset && script.dataset.cdt === "1");
   function cdtPack() {
     var p = (script && script.dataset && script.dataset.pack) || "";
-    return p === "drill" ? "drill" : "exam";
+    return p === "drill"? "drill": "exam";
   }
 
   function isExplainMode() {
@@ -83,20 +83,20 @@
   function assignQRange() {
     var from = Number((script && script.dataset.assignQFrom) || 0);
     var to = Number((script && script.dataset.assignQTo) || 0);
-    if ((!from || !to) && location.search) {
+    if ((!from ||!to) && location.search) {
       try {
         var qs = new URLSearchParams(location.search);
         from = from || Number(qs.get("qFrom") || 0);
         to = to || Number(qs.get("qTo") || 0);
       } catch (e) { /* ignore */ }
     }
-    return (from && to) ? { from: from, to: to } : null;
+    return (from && to)? { from: from, to: to }: null;
   }
 
   function clipHtmlQ(html, from, to) {
-    return String(html == null ? "" : html).replace(/<Q n="(\d+)">/g, function (m, n) {
+    return String(html == null? "": html).replace(/<Q n="(\d+)">/g, function (m, n) {
       n = +n;
-      return (n >= from && n <= to) ? m : "";
+      return (n >= from && n <= to)? m: "";
     });
   }
 
@@ -128,7 +128,7 @@
     }
     // ponytail: papers use const TEST — not on window; pageGet evals the page scope
     var TEST = pageGet("TEST");
-    if (!part || !TEST) return;
+    if (!part ||!TEST) return;
     function clipBlocks(blocks) {
       return (blocks || []).filter(function (s) { return +s.id === part; }).map(function (s) {
         if (!range) return s;
@@ -144,7 +144,7 @@
 
   function clipOk(a, b) {
     a = Number(a); b = Number(b);
-    return (b > a) ? { start: a, end: b } : null;
+    return (b > a)? { start: a, end: b }: null;
   }
 
   function assignedAudioWindow() {
@@ -169,7 +169,7 @@
         var g = groups[j];
         if (g.audioStart == null || g.audioEnd == null) continue;
         var qs = g.questions || [];
-        var hit = !qs.length && groups.length === 1;
+        var hit =!qs.length && groups.length === 1;
         for (var k = 0; k < qs.length; k++) {
           if (qs[k].no >= range.from && qs[k].no <= range.to) { hit = true; break; }
         }
@@ -185,7 +185,7 @@
     s = Math.max(0, Math.floor(Number(s) || 0));
     var m = Math.floor(s / 60);
     var n = s % 60;
-    return (m < 10 ? "0" : "") + m + ":" + (n < 10 ? "0" : "") + n;
+    return (m < 10? "0": "") + m + ":" + (n < 10? "0": "") + n;
   }
 
   function paintClipBar(player) {
@@ -201,7 +201,7 @@
       d = player.duration || 0;
       c = player.currentTime || 0;
     }
-    if (fill) fill.style.width = (d ? (c / d) * 100 : 0) + "%";
+    if (fill) fill.style.width = (d? (c / d) * 100: 0) + "%";
     if (time) time.textContent = fmtClip(c) + " / " + fmtClip(d);
   }
 
@@ -213,7 +213,7 @@
     if (!player) return;
 
     var load = window.loadSection || pageGet("loadSection");
-    if (typeof load === "function" && !load._yysdClip) {
+    if (typeof load === "function" &&!load._yysdClip) {
       window.loadSection = function (id, autoplay) {
         var r = load.call(this, id, false);
         var w = assignedAudioWindow();
@@ -237,7 +237,7 @@
 
     // papers bind timeupdate to the original paintAudio; replacing window.paintAudio does not unhook it
     var origPaint = pageGet("paintAudio");
-    if (origPaint && !player._yysdPaintOff) {
+    if (origPaint &&!player._yysdPaintOff) {
       player.removeEventListener("timeupdate", origPaint);
       player._yysdPaintOff = true;
     }
@@ -269,7 +269,7 @@
     }
 
     var seek = window.seekAudio || pageGet("seekAudio");
-    if (typeof seek === "function" && !seek._yysdClip) {
+    if (typeof seek === "function" &&!seek._yysdClip) {
       window.seekAudio = function (e) {
         var w = assignedAudioWindow();
         if (!w) return seek.apply(this, arguments);
@@ -290,7 +290,7 @@
   function resolveExamId() {
     if (examId) return examId;
     var m = location.pathname.match(/cambridge-\d+-test-\d+(?:-[a-z]+)?\.html$/i);
-    return m ? m[0].replace(/\.html$/i, "") : "";
+    return m? m[0].replace(/\.html$/i, ""): "";
   }
 
   function clearAnyDraft() {
@@ -302,7 +302,7 @@
 
   function isTesting() {
     var ta = document.getElementById("testArea");
-    return ta && getComputedStyle(ta).display !== "none";
+    return ta && getComputedStyle(ta).display!== "none";
   }
 
   function pageGet(name) {
@@ -318,13 +318,13 @@
 
   function isTestDone() {
     var s = pageGet("submitted");
-    if (s !== undefined) return !!s;
+    if (s!== undefined) return!!s;
     var f = pageGet("finished");
-    if (f !== undefined) return !!f;
+    if (f!== undefined) return!!f;
     return false;
   }
 
-  /* ---- mock exam lock (模考模式：一切页即作废) ---- */
+  /* ---- mock exam lock (Chế độ thi thử: hết thảy trang tiếp xúc hết hiệu lực) ---- */
   var origBackToCover = null;
   var examLock = (function () {
     var on = false, voided = false, bound = null;
@@ -342,8 +342,8 @@
     }
 
     function freezeTest() {
-      if (typeof timerInterval !== "undefined" && timerInterval) clearInterval(timerInterval);
-      if (typeof player !== "undefined" && player && player.pause) try { player.pause(); } catch (e) {}
+      if (typeof timerInterval!== "undefined" && timerInterval) clearInterval(timerInterval);
+      if (typeof player!== "undefined" && player && player.pause) try { player.pause(); } catch (e) {}
       var root = document.getElementById("testArea");
       if (!root) return;
       root.querySelectorAll("input, select, textarea, button").forEach(function (el) { el.disabled = true; });
@@ -389,8 +389,8 @@
     function focusLost() {
       if (!on || voided || Date.now() < voidPausedUntil) return false;
       // ponytail: CDT chrome is on parent — Finish/Help/nav blur this iframe; only void on tab hide
-      if (cdtShell) return !!document.hidden;
-      return document.hidden || !document.hasFocus();
+      if (cdtShell) return!!document.hidden;
+      return document.hidden ||!document.hasFocus();
     }
 
     function scheduleVoidCheck() {
@@ -401,7 +401,7 @@
     }
 
     function voidExam() {
-      if (voided || !on) return;
+      if (voided ||!on) return;
       voided = true;
       on = false;
       clearAnyDraft();
@@ -516,7 +516,7 @@
       },
       voidExam: voidExam,
       pauseVoid: pauseVoid,
-      isOn: function () { return on && !voided; },
+      isOn: function () { return on &&!voided; },
       isVoided: function () { return voided; },
       restart: doRestart
     };
@@ -545,7 +545,7 @@
     try {
       var startedAt = scoreStartedAt();
       var msg = Object.assign({ type: "yysd:score" }, payload);
-      if (startedAt && !msg.startedAt) msg.startedAt = startedAt;
+      if (startedAt &&!msg.startedAt) msg.startedAt = startedAt;
       window.parent.postMessage(msg, "*");
     } catch (e) { /* ponytail: iframe edge */ }
   }
@@ -560,7 +560,7 @@
     if (typeof confirmFinish === "function") { confirmFinish(); return; }
     if (typeof submitTest === "function") { submitTest(); return; }
     var btn = document.querySelector(".submit-btn, #submitBtn, #submit-btn");
-    if (btn && !btn.disabled) btn.click();
+    if (btn &&!btn.disabled) btn.click();
   }
 
   if (bridgeMode === "writing") {
@@ -592,7 +592,7 @@
 
     function hookWritingStart() {
       var fn = window.startTest;
-      if (typeof fn !== "function" || fn._yysdHooked) return;
+      if (typeof fn!== "function" || fn._yysdHooked) return;
       window.startTest = function () {
         // B1: suite/exam CDT wipes draft; drill keeps draft for continue
         if (cdtShell && cdtPack() === "exam") {
@@ -610,11 +610,11 @@
 
     function hookWritingFinish() {
       var fn = window.finishTest;
-      if (typeof fn !== "function" || fn._yysdHooked) return;
+      if (typeof fn!== "function" || fn._yysdHooked) return;
       window.finishTest = function () {
         clearAnyDraft();
         var ret = fn.apply(this, arguments);
-        // ponytail: CDT hides #resultArea with !important — MutationObserver never posts
+        // ponytail: CDT hides #resultArea with!important — MutationObserver never posts
         if (cdtShell) reportWriting();
         examLock.disable();
         return ret;
@@ -624,13 +624,13 @@
 
     function hookWritingBack() {
       var fn = window.backToCover;
-      if (typeof fn !== "function" || fn._yysdHooked) return;
+      if (typeof fn!== "function" || fn._yysdHooked) return;
       origBackToCover = fn;
       window.backToCover = function () {
-        if (examLock.isOn() && !isTestDone() && isTesting()) {
+        if (examLock.isOn() &&!isTestDone() && isTesting()) {
           alert(cdtShell
             ? "You cannot leave during a mock test. Use Finish section to end this part."
-            : "模考进行中不可返回封面。如需结束，请点「完成并查看报告」。");
+            : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời chút:điểm « hoàn thành cũng Xem báo cáo ». ");
           return;
         }
         examLock.disable();
@@ -643,7 +643,7 @@
       var ta = document.getElementById("t" + n);
       if (ta && ta.value) return ta.value;
       var dump = document.getElementById("dump" + n);
-      if (dump && dump.textContent && dump.textContent !== "（未作答）") return dump.textContent;
+      if (dump && dump.textContent && dump.textContent!== " (Chưa trả lời) ") return dump.textContent;
       return "";
     }
 
@@ -661,7 +661,7 @@
     }
 
     function escHtml(s) {
-      return String(s == null ? "" : s)
+      return String(s == null? "": s)
         .replace(/&/g, "&amp;").replace(/</g, "&lt;")
         .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
@@ -688,67 +688,67 @@
     function promptForTask(taskType) {
       var test = pageGet("TEST");
       if (test) {
-        var block = taskType === "task1" ? test.task1 : test.task2;
+        var block = taskType === "task1"? test.task1: test.task2;
         var fromTest = plainPrompt(block && block.prompt);
         if (fromTest) return fromTest;
       }
-      var el = document.getElementById(taskType === "task1" ? "task1Prompt" : "task2Prompt");
-      return el ? plainPrompt(el.innerHTML) : "";
+      var el = document.getElementById(taskType === "task1"? "task1Prompt": "task2Prompt");
+      return el? plainPrompt(el.innerHTML): "";
     }
 
     function looksLikeJsonLeak(s) {
       s = String(s || "").trim();
-      return !s ? false : (s.indexOf("WRITING_JSON") >= 0 || s.charAt(0) === "{" || s.charAt(0) === "[");
+      return!s? false: (s.indexOf("WRITING_JSON") >= 0 || s.charAt(0) === "{" || s.charAt(0) === "[");
     }
 
     function renderGradeHtml(d) {
       var g = d && d.grade;
       var html = "";
-      if (g && !looksLikeJsonLeak(g.overall)) {
-        html += '<div class="yysd-ai-grade__score"><h4>写作评分 · Overall ' + escHtml(g.overall) +
-          " <span style=\"font-weight:500;font-size:12px;color:#64748b\">（AI 估分 · 非正式考分）</span></h4><dl>" +
+      if (g &&!looksLikeJsonLeak(g.overall)) {
+        html += '<div class="yysd-ai-grade__score"><h4> Viết cho điểm · Overall ' + escHtml(g.overall) +
+          " <span style=\"font-weight:500;font-size:12px;color:#64748b\"> (AI cổ phân · không nghi thức điểm thi) </span></h4><dl>" +
           "<dt>Task</dt><dd>" + escHtml(g.task) + "</dd>" +
           "<dt>Coherence</dt><dd>" + escHtml(g.coherence) + "</dd>" +
           "<dt>Lexical</dt><dd>" + escHtml(g.lexical) + "</dd>" +
           "<dt>Grammar</dt><dd>" + escHtml(g.grammar) + "</dd></dl>" +
-          (g.comment && !looksLikeJsonLeak(g.comment) ? "<p>" + escHtml(g.comment) + "</p>" : "") + "</div>";
+          (g.comment &&!looksLikeJsonLeak(g.comment)? "<p>" + escHtml(g.comment) + "</p>": "") + "</div>";
         var cn = g.criteriaNotes || {};
         if (cn.task || cn.coherence || cn.lexical || cn.grammar) {
-          html += "<h4>对照官方四项说明</h4><ul>" +
-            (cn.task && !looksLikeJsonLeak(cn.task) ? "<li><b>Task</b>：" + escHtml(cn.task) + "</li>" : "") +
-            (cn.coherence && !looksLikeJsonLeak(cn.coherence) ? "<li><b>Coherence</b>：" + escHtml(cn.coherence) + "</li>" : "") +
-            (cn.lexical && !looksLikeJsonLeak(cn.lexical) ? "<li><b>Lexical</b>：" + escHtml(cn.lexical) + "</li>" : "") +
-            (cn.grammar && !looksLikeJsonLeak(cn.grammar) ? "<li><b>Grammar</b>：" + escHtml(cn.grammar) + "</li>" : "") +
+          html += "<h4> so sánh chính thức bốn hạng nói rõ </h4><ul>" +
+            (cn.task &&!looksLikeJsonLeak(cn.task)? "<li><b>Task</b>: " + escHtml(cn.task) + "</li>": "") +
+            (cn.coherence &&!looksLikeJsonLeak(cn.coherence)? "<li><b>Coherence</b>: " + escHtml(cn.coherence) + "</li>": "") +
+            (cn.lexical &&!looksLikeJsonLeak(cn.lexical)? "<li><b>Lexical</b>: " + escHtml(cn.lexical) + "</li>": "") +
+            (cn.grammar &&!looksLikeJsonLeak(cn.grammar)? "<li><b>Grammar</b>: " + escHtml(cn.grammar) + "</li>": "") +
             "</ul>";
         }
         if (g.paragraphNotes && g.paragraphNotes.length) {
-          html += "<h4>逐段批注</h4><ul>" + g.paragraphNotes.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h4> trục đoạn phê bình chú giải </h4><ul>" + g.paragraphNotes.filter(function (n) { return!looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + escHtml(n) + "</li>";
           }).join("") + "</ul>";
         }
         if (g.corrections && g.corrections.length) {
-          html += "<h4>用词 / 语法纠错</h4><ul>" + g.corrections.filter(function (c) {
-            return c && !looksLikeJsonLeak(c.bad) && !looksLikeJsonLeak(c.good);
+          html += "<h4> Gợi ý sửa lỗi từ vựng & ngữ pháp </h4><ul>" + g.corrections.filter(function (c) {
+            return c &&!looksLikeJsonLeak(c.bad) &&!looksLikeJsonLeak(c.good);
           }).map(function (c) {
             return "<li><s>" + escHtml(c.bad) + "</s> → <b>" + escHtml(c.good) + "</b>" +
-              (c.why ? "（" + escHtml(c.why) + "）" : "") + "</li>";
+              (c.why? " (" + escHtml(c.why) + ") ": "") + "</li>";
           }).join("") + "</ul>";
         }
         if (g.nextSteps && g.nextSteps.length) {
-          html += "<h4>提分建议</h4><ul>" + g.nextSteps.filter(function (n) { return !looksLikeJsonLeak(n); }).map(function (n) {
+          html += "<h4> xách điểm đề nghị </h4><ul>" + g.nextSteps.filter(function (n) { return!looksLikeJsonLeak(n); }).map(function (n) {
             return "<li>" + escHtml(n) + "</li>";
           }).join("") + "</ul>";
         }
-        if (g.modelEssay && !looksLikeJsonLeak(g.modelEssay)) {
-          html += "<h4>同题高分范文</h4><pre class=\"yysd-ai-grade__model\">" + escHtml(g.modelEssay) + "</pre>";
+        if (g.modelEssay &&!looksLikeJsonLeak(g.modelEssay)) {
+          html += "<h4> cùng câu cao phân bài văn mẫu </h4><pre class=\"yysd-ai-grade__model\">" + escHtml(g.modelEssay) + "</pre>";
         }
       }
       // ponytail: ignore raw LLM dumps that look like failed JSON payloads
-      var fb = d && d.feedback ? String(d.feedback).trim() : "";
-      if (fb && !looksLikeJsonLeak(fb)) {
+      var fb = d && d.feedback? String(d.feedback).trim(): "";
+      if (fb &&!looksLikeJsonLeak(fb)) {
         html += "<div class=\"yysd-ai-grade__feedback\">" + escHtml(fb) + "</div>";
       }
-      return html || "<p>未返回结构化评分，请再点上方按钮重试</p>";
+      return html || "<p> không Quay lại kết cấu hóa cho điểm, mời gọi thêm phía trên cái nút Thử lại </p>";
     }
 
     function ensureAiPanel() {
@@ -774,18 +774,18 @@
         ".yysd-ai-grade__block{margin-top:12px;padding-top:12px;border-top:1px solid #c7d2fe;}" +
         ".yysd-ai-grade__block h4{margin:12px 0 6px;font-size:14px;color:#312e81;}" +
         ".yysd-ai-grade__score dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:8px 0;font-size:14px;}" +
-        ".yysd-ai-grade__score dt{color:#64748b;} .yysd-ai-grade__score dd{margin:0;font-weight:700;}" +
+        ".yysd-ai-grade__score dt{color:#64748b;}.yysd-ai-grade__score dd{margin:0;font-weight:700;}" +
         ".yysd-ai-grade__model{white-space:pre-wrap;font-size:13px;line-height:1.55;background:#fff;padding:10px;border-radius:8px;border:1px solid #e2e8f0;}" +
         ".yysd-ai-grade__feedback{font-size:13px;white-space:pre-wrap;color:#334155;margin-top:8px;}" +
         ".yysd-ai-grade ul{margin:6px 0 0;padding-left:1.2em;font-size:13px;line-height:1.5;}" +
         "</style>" +
-        "<h3>AI 考官批改</h3>" +
-        '<p class="yysd-ai-grade__note">按雅思四项标准估分，并给出点评、纠错与范文。' +
-        "<b>AI 估分仅供练习参考，非正式考分</b>。Task 1 本版不读原图，仅依据题干与图表说明文字。" +
-        "每次批改消耗 1 次当日 AI 文字额度。</p>" +
+        "<h3>AI giám khảo phê chữa </h3>" +
+        '<p class="yysd-ai-grade__note"> theo như IELTS bốn hạng tiêu chuẩn cổ phân, cũng cho ra lời bình, sửa chữa sai và bài văn mẫu. ' +
+        "<b>AI cổ phân chỉ cung Luyện tập tham khảo, không nghi thức điểm thi </b>. Task 1 bản bản không học nguyên đồ, chỉ căn cứ Câu hỏi và biểu đồ lời thuyết minh chữ. " +
+        " mỗi lần phê chữa tiêu hao 1 lần ngày đó AI văn tự khoản độ. </p>" +
         '<div class="yysd-ai-grade__actions">' +
-        '<button type="button" data-task="task1">AI 批改 Task 1</button>' +
-        '<button type="button" data-task="task2">AI 批改 Task 2</button>' +
+        '<button type="button" data-task="task1">AI phê chữa Task 1</button>' +
+        '<button type="button" data-task="task2">AI phê chữa Task 2</button>' +
         "</div>" +
         '<p class="yysd-ai-grade__hint" id="yysd-ai-grade-hint"></p>' +
         '<div class="yysd-ai-grade__block" id="yysd-ai-grade-task1" hidden></div>' +
@@ -805,40 +805,40 @@
       var el = document.getElementById("yysd-ai-grade-hint");
       if (!el) return;
       el.textContent = msg || "";
-      el.className = "yysd-ai-grade__hint" + (isError ? " is-error" : "");
+      el.className = "yysd-ai-grade__hint" + (isError? " is-error": "");
     }
 
     function setGradeButtonsBusy(busy) {
       var panel = document.getElementById("yysd-ai-grade");
       if (!panel) return;
-      panel.querySelectorAll("button[data-task]").forEach(function (b) { b.disabled = !!busy; });
+      panel.querySelectorAll("button[data-task]").forEach(function (b) { b.disabled =!!busy; });
     }
 
     function requestWritingGrade(taskType) {
       if (Object.keys(gradePending).length) {
-        setGradeHint("上一题仍在批改中，请稍候…");
+        setGradeHint(" Câu trước còn đang Đang chấm bài, xin đợi …");
         return;
       }
-      var essay = readWritingTask(taskType === "task1" ? 1 : 2).trim();
+      var essay = readWritingTask(taskType === "task1"? 1: 2).trim();
       if (!essay || essay.length < 80) {
-        setGradeHint(taskType === "task1" ? "Task 1 作文过短或未作答" : "Task 2 作文过短或未作答", true);
+        setGradeHint(taskType === "task1"? "Task 1 viết văn qua ngắn hoặc Chưa trả lời ": "Task 2 viết văn qua ngắn hoặc Chưa trả lời ", true);
         return;
       }
       var prompt = promptForTask(taskType);
       if (!prompt) {
-        setGradeHint("未能读取本题题干", true);
+        setGradeHint(" không thể đọc đến chủ đề Câu hỏi ", true);
         return;
       }
       var reqId = "wg-" + (++gradeReqSeq);
       gradePending[reqId] = taskType;
       setGradeButtonsBusy(true);
-      setGradeHint("批改中…");
+      setGradeHint(" Đang chấm bài …");
       gradeTimers[reqId] = setTimeout(function () {
         if (!gradePending[reqId]) return;
         delete gradePending[reqId];
         delete gradeTimers[reqId];
         setGradeButtonsBusy(Object.keys(gradePending).length > 0);
-        setGradeHint("批改超时，请再点按钮重试", true);
+        setGradeHint(" phê chữa vượt quá thời gian, mời gọi thêm cái nút Thử lại ", true);
       }, 120000);
       try {
         window.parent.postMessage({
@@ -846,7 +846,7 @@
           reqId: reqId,
           taskType: taskType,
           prompt: prompt,
-          chartNote: taskType === "task1" ? chartNoteFromTest() : "",
+          chartNote: taskType === "task1"? chartNoteFromTest(): "",
           essay: essay
         }, "*");
       } catch (e) {
@@ -854,12 +854,12 @@
         delete gradeTimers[reqId];
         delete gradePending[reqId];
         setGradeButtonsBusy(false);
-        setGradeHint("无法联系父页面，请刷新重试", true);
+        setGradeHint(" không cách nào liên hệ phụ trang web, mời Làm mới Thử lại ", true);
       }
     }
 
     function onWritingGradeRes(d) {
-      if (!d || !d.reqId || !gradePending[d.reqId]) return;
+      if (!d ||!d.reqId ||!gradePending[d.reqId]) return;
       var taskType = gradePending[d.reqId];
       delete gradePending[d.reqId];
       if (gradeTimers[d.reqId]) {
@@ -868,11 +868,11 @@
       }
       setGradeButtonsBusy(Object.keys(gradePending).length > 0);
       if (d.error) {
-        var err = String(d.error || "批改失败");
-        if (/上限|用完|额度/i.test(err) && !/明日|明天/.test(err)) {
-          err = err.replace(/[。！!]?$/, "") + "，明日再来";
-        } else if (/解析|失败|稍后/i.test(err)) {
-          err = err.replace(/[。！!]?$/, "") + " — 可再点按钮重试";
+        var err = String(d.error || " Chấm bài thất bại ");
+        if (/ hạn mức cao nhất | sử dụng hết | khoản độ /i.test(err) &&!/ ngày mai | ngày mai /.test(err)) {
+          err = err.replace(/[.!!]?$/, "") + ", hẹn gặp lại ngày mai ";
+        } else if (/ Giải thích đáp án | thất bại | sau đó /i.test(err)) {
+          err = err.replace(/[.!!]?$/, "") + " — có thể gọi thêm cái nút Thử lại ";
         }
         setGradeHint(err, true);
         return;
@@ -881,10 +881,10 @@
       var box = document.getElementById("yysd-ai-grade-" + taskType);
       if (!box) return;
       box.hidden = false;
-      box.innerHTML = "<h3>" + (taskType === "task1" ? "Task 1" : "Task 2") + " 批改结果</h3>" + renderGradeHtml(d);
-      if (d.quota && d.quota.textLeft != null) {
-        var qHint = "今日文字额度剩余 " + d.quota.textLeft + "/" + d.quota.textLimit;
-        if (d.quota.textLeft <= 0) qHint += "（已用完，明日再来）";
+      box.innerHTML = "<h3>" + (taskType === "task1"? "Task 1": "Task 2") + " Kết quả chấm bài </h3>" + renderGradeHtml(d);
+      if (d.quota && d.quota.textLeft!= null) {
+        var qHint = " hôm nay văn tự khoản độ còn thừa " + d.quota.textLeft + "/" + d.quota.textLimit;
+        if (d.quota.textLeft <= 0) qHint += " (Đã dùng hết, hẹn gặp lại ngày mai) ";
         setGradeHint(qHint);
       }
     }
@@ -897,13 +897,13 @@
     function reportWriting() {
       if (posted) return;
       var ra = document.getElementById("resultArea");
-      // ponytail: CDT skin forces resultArea display:none !important — still post
+      // ponytail: CDT skin forces resultArea display:none!important — still post
       if (!cdtShell && (!ra || getComputedStyle(ra).display === "none")) return;
       var r1 = document.getElementById("r1");
       var r2 = document.getElementById("r2");
-      var n1 = r1 ? parseInt(r1.textContent, 10) || 0 : 0;
-      var n2 = r2 ? parseInt(r2.textContent, 10) || 0 : 0;
-      if (!n1 && !n2) {
+      var n1 = r1? parseInt(r1.textContent, 10) || 0: 0;
+      var n2 = r2? parseInt(r2.textContent, 10) || 0: 0;
+      if (!n1 &&!n2) {
         n1 = (readWritingTask(1).trim().match(/\S+/g) || []).length;
         n2 = (readWritingTask(2).trim().match(/\S+/g) || []).length;
       }
@@ -936,7 +936,7 @@
     }
 
     window.addEventListener("message", function (e) {
-      if (!e.data || e.data.type !== "yysd:writing-grade-res") return;
+      if (!e.data || e.data.type!== "yysd:writing-grade-res") return;
       onWritingGradeRes(e.data);
     });
 
@@ -960,15 +960,15 @@
     var levels = [[8.5, "Expert / Very good user"], [7.0, "Good user"], [6.0, "Competent user"], [5.0, "Modest user"], [4.0, "Limited user"], [0, "Basic user"]];
     if (!window.BAND_TABLE) window.BAND_TABLE = bands;
     if (!window.LEVEL_LABEL) window.LEVEL_LABEL = levels;
-    if (typeof window.lookupBand !== "function") {
+    if (typeof window.lookupBand!== "function") {
       window.lookupBand = function (correct, total) {
-        var scaled = total === 40 ? correct : Math.round(correct / Math.max(1, total) * 40);
+        var scaled = total === 40? correct: Math.round(correct / Math.max(1, total) * 40);
         var table = window.BAND_TABLE || bands;
         for (var i = 0; i < table.length; i++) if (scaled >= table[i][0]) return table[i][1];
-        return isReading ? 2.0 : 2.5;
+        return isReading? 2.0: 2.5;
       };
     }
-    if (typeof window.levelLabel !== "function") {
+    if (typeof window.levelLabel!== "function") {
       window.levelLabel = function (b) {
         var table = window.LEVEL_LABEL || levels;
         for (var i = 0; i < table.length; i++) if (b >= table[i][0]) return table[i][1];
@@ -1018,11 +1018,11 @@
   function ensurePageGlobals() {
     // ponytail: some papers omit `let timerInterval=null` — clearInterval then throws and skips restore
     ["timerInterval", "startTime", "submitted", "mode", "selectedSections", "currentPaper"].forEach(function (n) {
-      if (pageGet(n) !== undefined) return;
+      if (pageGet(n)!== undefined) return;
       if (n === "selectedSections" || n === "currentPaper") pageSet(n, []);
       else if (n === "mode") pageSet(n, "practice");
       else if (n === "submitted") pageSet(n, false);
-      else pageSet(n, n === "timerInterval" ? null : 0);
+      else pageSet(n, n === "timerInterval"? null: 0);
     });
   }
 
@@ -1037,10 +1037,10 @@
     var sections = pageGet("selectedSections");
     var draft = {
       mode: pageGet("mode") || "practice",
-      sections: Array.isArray(sections) ? sections.slice() : [],
+      sections: Array.isArray(sections)? sections.slice(): [],
       answers: answers,
       startTime: st,
-      elapsedSec: st ? Math.floor((Date.now() - st) / 1000) : 0,
+      elapsedSec: st? Math.floor((Date.now() - st) / 1000): 0,
       savedAt: Date.now()
     };
     try { localStorage.setItem(DRAFT_KEY, JSON.stringify(draft)); } catch (e) {}
@@ -1111,13 +1111,13 @@
 
   function paperMode() {
     try {
-      if (typeof mode !== "undefined" && mode) return mode;
+      if (typeof mode!== "undefined" && mode) return mode;
     } catch (e) { /* ignore */ }
     return pageGet("mode") || "";
   }
 
   function installCdtListeningIron() {
-    if (!cdtShell || !isListeningPaper()) return;
+    if (!cdtShell ||!isListeningPaper()) return;
     if (!cdtListenOrig) {
       cdtListenOrig = {
         seekAudio: window.seekAudio,
@@ -1152,9 +1152,9 @@
     // capture: must read curAudioSec BEFORE paper's bubble handler advances it via loadSection
     player.addEventListener("ended", function () {
       try {
-        var paper = typeof currentPaper !== "undefined" ? currentPaper : null;
-        var cur = typeof curAudioSec !== "undefined" ? curAudioSec : null;
-        if (!paper || !paper.length) {
+        var paper = typeof currentPaper!== "undefined"? currentPaper: null;
+        var cur = typeof curAudioSec!== "undefined"? curAudioSec: null;
+        if (!paper ||!paper.length) {
           window.parent.postMessage({ type: "yysd:listening-ended" }, "*");
           return;
         }
@@ -1165,7 +1165,7 @@
         if (idx < 0) return;
         var isLast = idx >= paper.length - 1;
         // exam mode: paper already auto-chains; practice under CDT must chain here
-        if (!isLast && paperMode() !== "exam" && typeof loadSection === "function") {
+        if (!isLast && paperMode()!== "exam" && typeof loadSection === "function") {
           loadSection(paper[idx + 1].id, true);
           var ap = document.getElementById("aPlay");
           if (ap) ap.textContent = "⏸";
@@ -1216,19 +1216,19 @@
   // ponytail: wall-clock must not run while MP3 still buffering — start on `playing`
   var audioWaitGen = 0;
   function armListeningTimerOnPlay() {
-    if (!isListeningPaper() || !isTesting()) return;
+    if (!isListeningPaper() ||!isTesting()) return;
     var player = document.getElementById("player");
     if (!player) return;
     var gen = ++audioWaitGen;
 
     var iv = pageGet("timerInterval");
-    if (iv != null) clearInterval(iv);
+    if (iv!= null) clearInterval(iv);
     pageSet("timerInterval", null);
     pageSet("startTime", 0);
     var tEl = document.getElementById("timer");
     var tt = document.getElementById("timerText");
     if (tEl) tEl.classList.add("show");
-    if (tt) tt.textContent = "等待播放";
+    if (tt) tt.textContent = " chờ đợi phát ra ";
 
     var oldOverlay = document.getElementById("yysd-audio-wait");
     if (oldOverlay) oldOverlay.remove();
@@ -1239,7 +1239,7 @@
     var isCdt = document.body.classList.contains("yysd-cdt-listening");
 
     function finish() {
-      if (done || gen !== audioWaitGen) return;
+      if (done || gen!== audioWaitGen) return;
       done = true;
       player.removeEventListener("playing", onPlaying);
       player.removeEventListener("error", onFail);
@@ -1254,7 +1254,7 @@
     function onPlaying() { finish(); }
 
     function ensureOverlay() {
-      if (overlay || !isCdt || gen !== audioWaitGen) return;
+      if (overlay ||!isCdt || gen!== audioWaitGen) return;
       overlay = document.createElement("div");
       overlay.id = "yysd-audio-wait";
       overlay.setAttribute("role", "status");
@@ -1271,7 +1271,7 @@
     }
 
     function showRetry(msg) {
-      if (gen !== audioWaitGen) return;
+      if (gen!== audioWaitGen) return;
       ensureOverlay();
       if (!overlay) return;
       var msgEl = overlay.querySelector("#yysd-audio-wait-msg");
@@ -1281,7 +1281,7 @@
     }
 
     function retryPlay() {
-      if (done || gen !== audioWaitGen) return;
+      if (done || gen!== audioWaitGen) return;
       var msgEl = overlay && overlay.querySelector("#yysd-audio-wait-msg");
       if (msgEl) msgEl.textContent = "Loading listening audio…";
       var btn = overlay && overlay.querySelector("#yysd-audio-retry");
@@ -1312,12 +1312,12 @@
     }
   }
 
-  // CDT drill → startTest("practice") but papers only build .secbox inside openMode()
+  // CDT drill → startTest("practice") but papers only build.secbox inside openMode()
   function parseSectionsAttr() {
     var raw = (script && script.dataset && script.dataset.sections) || "";
     if (!raw) return null;
     var ids = raw.split(",").map(function (s) { return +s; }).filter(function (n) { return n > 0; });
-    return ids.length ? ids : null;
+    return ids.length? ids: null;
   }
 
   function ensureCdtPracticeSections(draftSections) {
@@ -1325,10 +1325,10 @@
     if (typeof openMode === "function") openMode();
     var boxes = document.querySelectorAll(".secbox");
     if (!boxes.length) return;
-    var pick = (draftSections && draftSections.length) ? draftSections : parseSectionsAttr();
+    var pick = (draftSections && draftSections.length)? draftSections: parseSectionsAttr();
     if (pick && pick.length) {
       boxes.forEach(function (cb) {
-        cb.checked = pick.indexOf(+cb.value) !== -1;
+        cb.checked = pick.indexOf(+cb.value)!== -1;
       });
     } else {
       boxes.forEach(function (cb) { cb.checked = true; });
@@ -1338,14 +1338,14 @@
 
   function hookStartTest() {
     var fn = window.startTest;
-    if (typeof fn !== "function" || fn._yysdHooked) return;
+    if (typeof fn!== "function" || fn._yysdHooked) return;
     window.startTest = function (m) {
       ensurePageGlobals();
       if (m === "exam") examLock.enable();
       else examLock.disable();
       // ponytail: auto-restore practice draft — exit copy promises autosave/continue
       var draftSections = null;
-      if (m === "practice" && !restorePending) {
+      if (m === "practice" &&!restorePending) {
         var d = loadDraft();
         if (d && d.mode === "practice" && countAnswered(d.answers)) {
           restorePending = d;
@@ -1354,7 +1354,7 @@
       } else if (restorePending && restorePending.sections) {
         draftSections = restorePending.sections;
       }
-      // CDT + teacher Section/Passage assign: papers ignore .secbox in exam mode
+      // CDT + teacher Section/Passage assign: papers ignore.secbox in exam mode
       var assignPart = Number((script && script.dataset.assignPart) || 0) || 0;
       if (cdtShell && assignPart > 0 && m === "exam") {
         m = "practice";
@@ -1362,9 +1362,9 @@
         examLock.disable();
         ensureCdtPracticeSections([assignPart]);
       } else if (m === "practice") {
-        ensureCdtPracticeSections(draftSections || (assignPart > 0 ? [assignPart] : null));
+        ensureCdtPracticeSections(draftSections || (assignPart > 0? [assignPart]: null));
       }
-      var resuming = !!restorePending;
+      var resuming =!!restorePending;
       var ret;
       try {
         ret = fn.apply(this, arguments);
@@ -1376,7 +1376,7 @@
             armListeningTimerOnPlay();
             if (cdtShell) installCdtListeningIron();
           }
-          // B5/C18: parent CDT owns the clock — kill paper alert('时间到…')
+          // B5/C18: parent CDT owns the clock — kill paper alert(' đã đến giờ …')
           if (cdtShell) {
             try {
               var iv = pageGet("timerInterval");
@@ -1395,7 +1395,7 @@
 
   function hookSubmitTest() {
     var fn = window.submitTest;
-    if (typeof fn !== "function" || fn._yysdHooked) return;
+    if (typeof fn!== "function" || fn._yysdHooked) return;
     window.submitTest = function () {
       clearDraft();
       ensureBandHelpers();
@@ -1410,7 +1410,7 @@
         try {
           alert(cdtShell
             ? "Submit failed. Please try again or tell your invigilator."
-            : "交卷失败，请再试一次。若仍不行请联系老师。");
+            : " Nộp bài thất bại, mời thử một lần nữa. như nhưng không được xin liên lạc Giáo viên. ");
         } catch (e) {}
         return;
       }
@@ -1420,13 +1420,13 @@
 
   function hookBackToCover() {
     var fn = window.backToCover;
-    if (typeof fn !== "function" || fn._yysdHooked) return;
+    if (typeof fn!== "function" || fn._yysdHooked) return;
     origBackToCover = fn;
     window.backToCover = function () {
-      if (examLock.isOn() && !isTestDone() && isTestingLR()) {
+      if (examLock.isOn() &&!isTestDone() && isTestingLR()) {
         alert(cdtShell
           ? "You cannot leave during a mock test. Use Finish section to end this part."
-          : "模考进行中不可返回封面。如需结束，请滚动至底部点击「提交并批改」。");
+          : " Thi thử đang tiến hành không thể Về trang bìa. ví dụ cần chấm dứt, mời chuyển động đến dưới đáy nhấn vào « Nộp bài cũng phê chữa ». ");
         return;
       }
       examLock.disable();
@@ -1444,7 +1444,7 @@
       if (typeof openMode === "function") openMode();
       setTimeout(function () {
         document.querySelectorAll(".secbox").forEach(function (cb) {
-          cb.checked = draft.sections.indexOf(+cb.value) !== -1;
+          cb.checked = draft.sections.indexOf(+cb.value)!== -1;
         });
         if (typeof startTest === "function") startTest("practice");
       }, 0);
@@ -1456,22 +1456,22 @@
   function showResumeBanner() {
     if (isExplainMode()) return;
     var draft = loadDraft();
-    if (!draft || draft.mode === "exam" || !countAnswered(draft.answers)) return;
+    if (!draft || draft.mode === "exam" ||!countAnswered(draft.answers)) return;
     var cover = document.getElementById("coverArea");
     if (!cover) return;
     var old = document.getElementById("yysd-resume-bar");
     if (old) old.remove();
 
     var n = countAnswered(draft.answers);
-    var when = draft.savedAt ? new Date(draft.savedAt).toLocaleString("zh-CN") : "";
+    var when = draft.savedAt? new Date(draft.savedAt).toLocaleString("zh-CN"): "";
     var bar = document.createElement("div");
     bar.id = "yysd-resume-bar";
     bar.style.cssText = "margin-top:16px;padding:14px 18px;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;text-align:center;";
     bar.innerHTML =
-      '<p style="margin:0 0 10px;color:#065f46;font-weight:600;">发现未完成进度（已保存 ' + n + " 道题" +
-      (when ? "，" + when : "") + "）</p>" +
-      '<button type="button" id="yysd-resume-btn" style="background:#059669;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer;margin-right:8px;">继续上次练习</button>' +
-      '<button type="button" id="yysd-discard-btn" style="background:#fff;color:#64748b;border:1px solid #cbd5e1;padding:10px 16px;border-radius:8px;cursor:pointer;">重新开始</button>';
+      '<p style="margin:0 0 10px;color:#065f46;font-weight:600;"> Khám phá Chưa hoàn thành Tiến độ (đã Lưu ' + n + " đề " +
+      (when? ", " + when: "") + ") </p>" +
+      '<button type="button" id="yysd-resume-btn" style="background:#059669;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer;margin-right:8px;"> Tiếp tục lần trước Luyện tập </button>' +
+      '<button type="button" id="yysd-discard-btn" style="background:#fff;color:#64748b;border:1px solid #cbd5e1;padding:10px 16px;border-radius:8px;cursor:pointer;"> bắt đầu lại </button>';
     bar.querySelector("#yysd-resume-btn").addEventListener("click", function () { bar.remove(); continueDraft(draft); });
     bar.querySelector("#yysd-discard-btn").addEventListener("click", function () { clearDraft(); bar.remove(); });
     cover.appendChild(bar);
@@ -1491,7 +1491,7 @@
     }
     if (!part) return;
     function go() {
-      if (assignedBooted || typeof startTest !== "function") return false;
+      if (assignedBooted || typeof startTest!== "function") return false;
       if (typeof openMode === "function") openMode();
       var boxes = document.querySelectorAll(".secbox");
       if (!boxes.length) return false;
@@ -1535,7 +1535,7 @@
   }
 
   function escTx(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
@@ -1547,30 +1547,30 @@
       ".yysd-explain-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}" +
       "#yysd-tx-pane{background:#fff;border:1px solid #e2e8f0;border-radius:12px;position:sticky;top:12px;" +
         "max-height:calc(100vh - 24px);display:flex;flex-direction:column;box-shadow:0 4px 18px rgba(0,0,0,.04);}" +
-      "#yysd-tx-pane .transcript-head{display:flex;align-items:center;justify-content:space-between;gap:10px;" +
+      "#yysd-tx-pane.transcript-head{display:flex;align-items:center;justify-content:space-between;gap:10px;" +
         "padding:12px 16px;border-bottom:1px solid #eef2f7;flex-shrink:0;flex-wrap:wrap;}" +
-      "#yysd-tx-pane .th-title{font-size:14px;font-weight:700;color:#1b4f8a;}" +
-      "#yysd-tx-pane .transcript-toggles{display:flex;gap:12px;}" +
-      "#yysd-tx-pane .transcript-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;" +
+      "#yysd-tx-pane.th-title{font-size:14px;font-weight:700;color:#1b4f8a;}" +
+      "#yysd-tx-pane.transcript-toggles{display:flex;gap:12px;}" +
+      "#yysd-tx-pane.transcript-toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;" +
         "color:#33475b;cursor:pointer;user-select:none;}" +
-      "#yysd-tx-pane .transcript-body{overflow:auto;padding:14px 16px 20px;line-height:1.75;font-size:14.5px;color:#243447;}" +
-      "#yysd-tx-pane .tx-sent{display:block;width:100%;text-align:left;border:none;background:transparent;" +
+      "#yysd-tx-pane.transcript-body{overflow:auto;padding:14px 16px 20px;line-height:1.75;font-size:14.5px;color:#243447;}" +
+      "#yysd-tx-pane.tx-sent{display:block;width:100%;text-align:left;border:none;background:transparent;" +
         "padding:6px 8px;margin:0 0 2px;border-radius:8px;cursor:pointer;color:inherit;font:inherit;line-height:1.75;}" +
-      "#yysd-tx-pane .tx-sent:hover{background:#f0f6ff;}" +
-      "#yysd-tx-pane .tx-sent.active{background:#dbeafe;color:#0f3d7a;}" +
-      "#yysd-tx-pane .tx-en{display:block;}" +
-      "#yysd-tx-pane .tx-zh{display:none;color:#4b5d73;font-size:13.5px;margin-top:2px;}" +
-      "#yysd-tx-pane.show-en .tx-en{display:block;}" +
-      "#yysd-tx-pane.hide-en .tx-en{display:none;}" +
-      "#yysd-tx-pane.show-zh .tx-zh{display:block;}" +
-      "#yysd-tx-pane .tx-empty{color:#8a96a5;font-size:13.5px;padding:12px 4px;}" +
+      "#yysd-tx-pane.tx-sent:hover{background:#f0f6ff;}" +
+      "#yysd-tx-pane.tx-sent.active{background:#dbeafe;color:#0f3d7a;}" +
+      "#yysd-tx-pane.tx-en{display:block;}" +
+      "#yysd-tx-pane.tx-zh{display:none;color:#4b5d73;font-size:13.5px;margin-top:2px;}" +
+      "#yysd-tx-pane.show-en.tx-en{display:block;}" +
+      "#yysd-tx-pane.hide-en.tx-en{display:none;}" +
+      "#yysd-tx-pane.show-zh.tx-zh{display:block;}" +
+      "#yysd-tx-pane.tx-empty{color:#8a96a5;font-size:13.5px;padding:12px 4px;}" +
       "@media (max-width:959px){.yysd-explain-split{display:block;}#yysd-tx-pane{display:none;}}";
     document.head.appendChild(st);
   }
 
   function paintExplainToggles(pane) {
     pane.classList.toggle("show-en", document.getElementById("yysd-tx-en").checked);
-    pane.classList.toggle("hide-en", !document.getElementById("yysd-tx-en").checked);
+    pane.classList.toggle("hide-en",!document.getElementById("yysd-tx-en").checked);
     pane.classList.toggle("show-zh", document.getElementById("yysd-tx-zh").checked);
   }
 
@@ -1587,7 +1587,7 @@
   function syncExplainHighlight(sents) {
     var player = document.getElementById("player");
     var body = document.getElementById("yysd-tx-body");
-    if (!player || !body || !sents || !sents.length) return;
+    if (!player ||!body ||!sents ||!sents.length) return;
     var t = player.currentTime || 0;
     var idx = -1;
     for (var i = 0; i < sents.length; i++) {
@@ -1611,13 +1611,13 @@
   function renderExplainSentences(sents) {
     var body = document.getElementById("yysd-tx-body");
     var pane = document.getElementById("yysd-tx-pane");
-    if (!body || !pane) return;
+    if (!body ||!pane) return;
     if (!sents.length) {
-      body.innerHTML = '<p class="tx-empty">暂无原文</p>';
+      body.innerHTML = '<p class="tx-empty"> tạm thời chưa có Bài gốc </p>';
       return;
     }
     body.innerHTML = sents.map(function (s, i) {
-      var zh = s.zh ? '<span class="tx-zh">' + escTx(s.zh) + "</span>" : "";
+      var zh = s.zh? '<span class="tx-zh">' + escTx(s.zh) + "</span>": "";
       return '<button type="button" class="tx-sent" data-i="' + i + '" data-start="' + escTx(s.start) + '">' +
         '<span class="tx-en">' + escTx(s.text || s.en || "") + "</span>" + zh + "</button>";
     }).join("");
@@ -1625,7 +1625,7 @@
       btn.addEventListener("click", function () { seekExplainSentence(btn.getAttribute("data-start")); });
     });
     var player = document.getElementById("player");
-    if (player && !player._yysdTxBound) {
+    if (player &&!player._yysdTxBound) {
       player._yysdTxBound = true;
       player.addEventListener("timeupdate", function () { syncExplainHighlight(sents); });
     } else {
@@ -1634,7 +1634,7 @@
   }
 
   function mountExplainTranscript() {
-    if (!isExplainMode() || !isExplainWide()) return;
+    if (!isExplainMode() ||!isExplainWide()) return;
     var test = document.getElementById("testArea");
     if (!test || document.getElementById("yysd-tx-pane")) return;
     if (test.style.display === "none") return;
@@ -1651,14 +1651,14 @@
     var pane = document.createElement("aside");
     pane.id = "yysd-tx-pane";
     pane.className = "show-en";
-    pane.setAttribute("aria-label", "听力原文");
+    pane.setAttribute("aria-label", " Nghe Bài gốc ");
     pane.innerHTML =
-      '<div class="transcript-head"><span class="th-title">原文</span>' +
+      '<div class="transcript-head"><span class="th-title"> Bài gốc </span>' +
         '<span class="transcript-toggles">' +
-          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-en" checked>原文</label>' +
-          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-zh">译文</label>' +
+          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-en" checked> Bài gốc </label>' +
+          '<label class="transcript-toggle"><input type="checkbox" id="yysd-tx-zh"> văn dịch </label>' +
         "</span></div>" +
-      '<div class="transcript-body" id="yysd-tx-body"><p class="tx-empty">加载原文…</p></div>';
+      '<div class="transcript-body" id="yysd-tx-body"><p class="tx-empty"> thêm năm Bài gốc …</p></div>';
     wrap.appendChild(pane);
     document.getElementById("yysd-tx-en").addEventListener("change", function () { paintExplainToggles(pane); });
     document.getElementById("yysd-tx-zh").addEventListener("change", function () { paintExplainToggles(pane); });
@@ -1683,7 +1683,7 @@
     hookBackToCover();
     bootAssignedPart();
     mountExplainTranscript();
-    if (!script || !script.dataset.assignPart) showResumeBanner();
+    if (!script ||!script.dataset.assignPart) showResumeBanner();
     if (draftListenersBound) return;
     draftListenersBound = true;
     window.addEventListener("pagehide", saveDraftNow);

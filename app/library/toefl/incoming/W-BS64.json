@@ -19,21 +19,55 @@
       "id": 631,
       "set": "W-BS64-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Are you going to the class picnic?",
       "parts": [
-        { "t": "Unfortunately, I " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " this year." }
+        {
+          "t": "Unfortunately, I "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " this year."
+        }
       ],
-      "bank": ["to", "able", "will", "not", "make", "be", "it"],
-      "answer": ["will", "not", "be", "able", "to", "make", "it"]
+      "bank": [
+        "to",
+        "able",
+        "will",
+        "not",
+        "make",
+        "be",
+        "it"
+      ],
+      "answer": [
+        "will",
+        "not",
+        "be",
+        "able",
+        "to",
+        "make",
+        "it"
+      ]
     },
     {
       "type": "sentence",
@@ -41,20 +75,51 @@
       "id": 632,
       "set": "W-BS64-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Do you have a question about the interview process for the research position at the Chemistry Department?",
       "parts": [
-        { "t": "Yes. Do " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " the head of the department?" }
+        {
+          "t": "Yes. Do "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " the head of the department?"
+        }
       ],
-      "bank": ["will", "stopped", "know", "if", "I", "you", "speak with"],
-      "answer": ["you", "know", "if", "I", "will", "speak with"]
+      "bank": [
+        "will",
+        "stopped",
+        "know",
+        "if",
+        "I",
+        "you",
+        "speak with"
+      ],
+      "answer": [
+        "you",
+        "know",
+        "if",
+        "I",
+        "will",
+        "speak with"
+      ]
     },
     {
       "type": "sentence",
@@ -62,19 +127,46 @@
       "id": 633,
       "set": "W-BS64-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Which backpack did you buy?",
       "parts": [
-        { "t": "I bought the one " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "I bought the one "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["charger", "that", "built-in", "a", "what", "has"],
-      "answer": ["that", "has", "a", "built-in", "charger"]
+      "bank": [
+        "charger",
+        "that",
+        "built-in",
+        "a",
+        "what",
+        "has"
+      ],
+      "answer": [
+        "that",
+        "has",
+        "a",
+        "built-in",
+        "charger"
+      ]
     },
     {
       "type": "sentence",
@@ -82,19 +174,47 @@
       "id": 634,
       "set": "W-BS64-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Where did you get this information?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " details." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " details."
+        }
       ],
-      "bank": ["the", "contained", "read for class", "all", "that I", "the article"],
-      "answer": ["the article", "that I", "read for class", "contained", "all", "the"]
+      "bank": [
+        "the",
+        "contained",
+        "read for class",
+        "all",
+        "that I",
+        "the article"
+      ],
+      "answer": [
+        "the article",
+        "that I",
+        "read for class",
+        "contained",
+        "all",
+        "the"
+      ]
     },
     {
       "type": "sentence",
@@ -102,20 +222,52 @@
       "id": 635,
       "set": "W-BS64-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Who is responsible for organizing the school dance?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["not", "the details", "who", "handling", "I'm", "sure", "is"],
-      "answer": ["I'm", "not", "sure", "who", "is", "handling", "the details"]
+      "bank": [
+        "not",
+        "the details",
+        "who",
+        "handling",
+        "I'm",
+        "sure",
+        "is"
+      ],
+      "answer": [
+        "I'm",
+        "not",
+        "sure",
+        "who",
+        "is",
+        "handling",
+        "the details"
+      ]
     },
     {
       "type": "sentence",
@@ -123,17 +275,35 @@
       "id": 636,
       "set": "W-BS64-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I have a doctor's appointment after class.",
       "parts": [
-        { "slot": true },
-        { "t": " is " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "t": " is "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["where", "appointment", "your"],
-      "answer": ["where", "your", "appointment"]
+      "bank": [
+        "where",
+        "appointment",
+        "your"
+      ],
+      "answer": [
+        "where",
+        "your",
+        "appointment"
+      ]
     },
     {
       "type": "sentence",
@@ -141,20 +311,50 @@
       "id": 637,
       "set": "W-BS64-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "When will the English Department meeting start?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " when everyone " },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " when everyone "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["out", "is available", "to find", "to meet", "I", "need"],
-      "answer": ["I", "need", "to find", "out", "is available", "to meet"]
+      "bank": [
+        "out",
+        "is available",
+        "to find",
+        "to meet",
+        "I",
+        "need"
+      ],
+      "answer": [
+        "I",
+        "need",
+        "to find",
+        "out",
+        "is available",
+        "to meet"
+      ]
     },
     {
       "type": "sentence",
@@ -162,18 +362,42 @@
       "id": 638,
       "set": "W-BS64-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard that the science fair is happening next weekend.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " afternoon?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " afternoon?"
+        }
       ],
-      "bank": ["morning or", "in the", "know if", "do you", "it starts"],
-      "answer": ["do you", "know if", "it starts", "in the", "morning or"]
+      "bank": [
+        "morning or",
+        "in the",
+        "know if",
+        "do you",
+        "it starts"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "it starts",
+        "in the",
+        "morning or"
+      ]
     },
     {
       "type": "sentence",
@@ -181,19 +405,45 @@
       "id": 639,
       "set": "W-BS64-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm thinking about joining the new university gym.",
       "parts": [
-        { "t": "Does " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Does "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["pool", "have", "swimming", "it", "a"],
-      "answer": ["it", "have", "a", "swimming", "pool"]
+      "bank": [
+        "pool",
+        "have",
+        "swimming",
+        "it",
+        "a"
+      ],
+      "answer": [
+        "it",
+        "have",
+        "a",
+        "swimming",
+        "pool"
+      ]
     },
     {
       "type": "sentence",
@@ -201,19 +451,47 @@
       "id": 640,
       "set": "W-BS64-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you enjoy the student film festival?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " me." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " me."
+        }
       ],
-      "bank": ["movies", "to", "the", "none of", "were", "of interest"],
-      "answer": ["none of", "the", "movies", "were", "of interest", "to"]
+      "bank": [
+        "movies",
+        "to",
+        "the",
+        "none of",
+        "were",
+        "of interest"
+      ],
+      "answer": [
+        "none of",
+        "the",
+        "movies",
+        "were",
+        "of interest",
+        "to"
+      ]
     }
   ]
 }

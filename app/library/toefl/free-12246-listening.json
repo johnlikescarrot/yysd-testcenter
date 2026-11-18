@@ -1,46 +1,46 @@
 {
- "id": "free-12246",
- "title": "Choose a Response #4",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #4",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12246,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-4"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #4",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/be4696af58154db29653dfec564654f9.mp3",
-   "questions": [
+  "id": "free-12246",
+  "title": "Choose a Response #4",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #4",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12246,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-4"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "He lives next door.",
-      "B": "That's a good idea.",
-      "C": "Sure, I will be there.",
-      "D": "No, he isn't."
-     },
-     "answer": "B",
-     "transcript": "Why don't you invite John to your party? ​​",
-     "stemZh": "你为什么不邀请约翰去你的派对呢？",
-     "analysis": "Why don't you invite John to your party? 题干分析 题干是 Why don't you... 句型，用来提出建议：你为什么不邀请约翰来你的派对呢？题目考查对建议句型的口语回应。 选项分析 选项 A：他住在隔壁。和要不要邀请约翰的建议无关，答非所问。 选项 B：That's a good idea. 好主意。是对别人提议最标准、最自然的赞同回应，为正确答案。 选项 C：当然，我会去那儿。答非所问，没有回应邀请约翰这件事。 选项 D：不，他不是。句式和语义都完全不匹配问句，无法作答。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #4",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/be4696af58154db29653dfec564654f9.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "He lives next door.",
+            "B": "That's a good idea.",
+            "C": "Sure, I will be there.",
+            "D": "No, he isn't."
+          },
+          "answer": "B",
+          "transcript": "Why don't you invite John to your party? ​​",
+          "stemZh": "bạn vì sao không mời John đi chết đi party nhỉ?",
+          "analysis": "Why don't you invite John to your party? Câu hỏi phân tích Câu hỏi là Why don't you... câu hình, dùng để đưa đề nghị: bạn vì sao không mời John đến của bạn party nhỉ? đề mục khảo tra đối với đề nghị câu hình Nói đáp lại. Phương án phân tích Phương án A: anh ấy ở tại bên cạnh. và có muốn hay không mời John đề nghị không quan hệ, đáp phi sở vấn. Phương án B: That's a good idea. ý kiến hay. là đúng người khác đề nghị tiêu chuẩn nhất, tự nhiên nhất đồng ý đáp lại, là Đáp án đúng. Phương án C: đương nhiên, ta sẽ đi chỗ đó. đáp phi sở vấn, không có trả lời mời John chuyện này. Phương án D: không, anh ấy không phải. câu thức và lời nói nghĩa đều hoàn toàn không xứng đôi câu hỏi, không cách nào đáp lại. ​​"
+        }
+      ]
+    }
+  ]
 }

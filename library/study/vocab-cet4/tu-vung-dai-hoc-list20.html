@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="exam:title" content="Từ vựng Đại học Cốt lõi Bài 20">
+<meta name="exam:duration" content="0">
+<meta name="exam:description" content="tần đoạn mid · 81 từ · bên cạnh học bên cạnh trắc">
+<meta name="exam:band" content="mid">
+<title>Từ vựng Đại học Cốt lõi Bài 20 · ngữ tốc 0.8 · rộng thùng thình bình phán</title>
+<style>
+:root {
+  --bg:#f5f3f0; --card:#fff; --primary:#2c3e6b; --primary-light:#3d5a99;
+  --accent:#2f6f4e; --text:#2d2d2d; --muted:#888; --border:#e0dcd5;
+  --shadow:0 1px 4px rgba(0,0,0,.04); --radius:12px; --ok:#3a7d5a; --bad:#c0392b;
+}
+* { box-sizing:border-box; margin:0; padding:0 }
+body { font-family:"Inter",sans-serif; background:var(--bg); color:var(--text); line-height:1.55 }
+.header { background:var(--card); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10 }
+.header-inner { max-width:1100px; margin:0 auto; height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; gap:12px }
+.logo { font-weight:700; color:var(--primary); display:flex; align-items:center; gap:8px }
+.nav-tabs { display:flex; gap:4px; background:#f0ebe4; border-radius:999px; padding:3px }
+.nav-tab { border:0; background:transparent; padding:8px 16px; border-radius:999px; cursor:pointer; font-weight:600; color:#666 }
+.nav-tab.active { background:#fff; color:var(--primary); box-shadow:var(--shadow) }
+.badge { font-size:.8rem; color:var(--muted); background:#f0ebe4; padding:4px 10px; border-radius:999px }
+.main { max-width:1100px; margin:0 auto; padding:20px 16px 40px }
+.learn-section,.test-section none 
+.learn-section.active,.test-section.active block 
+.learn-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px }
+.word-card { background:var(--card); border:1px solid transparent; border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow); cursor:pointer }
+.word-card:hover { border-color:#d5cec4 }
+.word-card.expanded { border-color:var(--primary); grid-column:1/-1 }
+.word-head { display:flex; justify-content:space-between; gap:8px; align-items:flex-start }
+.word-headword { font-size:1.2rem; font-weight:700; color:var(--primary) }
+.word-ipa { color:#666; font-size:.92rem }
+.btn-play { border:0; background:#eef2fb; color:var(--primary); width:34px; height:34px; border-radius:50%; cursor:pointer }
+.btn-play.playing { background:var(--primary); color:#fff }
+.word-pos { color:var(--accent); font-weight:600; margin-right:6px }
+.word-blocks { display:none; margin-top:10px; border-top:1px dashed var(--border); padding-top:10px }
+.word-card.expanded.word-blocks block 
+.block { margin:8px 0; font-size:.92rem }
+.block b { display:inline-block; min-width:2em; color:var(--accent); margin-right:4px }
+.hint { color:var(--muted); font-size:.8rem; margin-top:6px; display:none }
+.word-card.expanded.hint block 
+.test-setup,.test-active-area,.test-results { background:var(--card); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow) }
+.test-active-area,.test-results none 
+.test-active-area.visible,.test-results.visible block 
+.btn-start-test,.btn-submit,.btn-next,.btn-retry { border:0; border-radius:10px; padding:12px 18px; font-weight:700; cursor:pointer; background:var(--primary); color:#fff; margin-top:12px }
+.btn-next none .btn-next.visible { display:inline-block }
+.test-input-group { margin:12px 0 }
+.test-input-group input { width:100%; padding:12px; border:1px solid var(--border); border-radius:8px; font-size:1rem }
+.test-feedback { margin-top:12px; padding:12px; border-radius:8px; display:none }
+.test-feedback.visible block 
+.test-feedback.correct-all { background:#eaf5ee; color:var(--ok) }
+.test-feedback.partial { background:#fef9ee; color:#b8860b }
+.test-feedback.wrong-all { background:#fdf0ee; color:var(--bad) }
+.progress-bar-wrap { flex:1; height:8px; background:#eee; border-radius:999px; overflow:hidden; margin:0 10px }
+.progress-bar-fill { height:100%; background:var(--primary); width:0 }
+.test-progress { display:flex; align-items:center; margin-bottom:16px; font-size:.9rem }
+.history-title { margin-top:20px; font-weight:700 }
+.btn-clear-history { margin-left:8px; border:0; background:#eee; padding:4px 8px; border-radius:6px; cursor:pointer }
+</style>
+<!-- yysd:hide-legacy-test --><style id="yysd-hide-legacy-test">.nav-tab[data-mode="test"],#testSection,.test-section,[data-mode="test"]{display:none!important}</style>
+</head>
+<body>
+<header class="header"><div class="header-inner">
+  <div class="logo"><span>📖</span><span> Từ vựng Đại học Cốt lõi Bài 20</span></div>
+  <nav class="nav-tabs" id="navTabs">
+    <button class="nav-tab active" data-mode="learn">Từ vựng quan sát</button>
+    <button class="nav-tab" data-mode="test">Từ vựng Đánh giá</button>
+  </nav>
+  <span class="badge">tổng 81 từ</span>
+</div></header>
+<div class="main">
+  <section class="learn-section active" id="learnSection"><div class="learn-grid" id="learnGrid"></div></section>
+  <section class="test-section" id="testSection">
+    <div class="test-setup" id="testSetup">
+      <h3>Từ vựng Đại học Cốt lõi Bài 20 · Từ vựng Đánh giá</h3>
+      <p>nghe âm đọc sau điền Chính tả và Tiếng Việt Nghĩa (rộng thùng thình bình phán). </p>
+      <button class="btn-start-test" id="btnStartTest">Bắt đầu Đánh giá (81 câu)</button>
+      <div class="history-title"> Lịch sử ghi chép <button class="btn-clear-history" id="btnClearHistory">thanh trừ</button></div>
+      <div id="historyContent"></div>
+    </div>
+    <div class="test-active-area" id="testActiveArea">
+      <div class="test-progress"><span id="testProgressLabel"> thứ 1 / 81 câu</span><div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBarFill"></div></div><span id="testScoreLabel"> Điểm số: 0</span></div>
+      <button class="btn-play" id="btnPlayTest" style="width:64px;height:64px;font-size:1.4rem">▶</button>
+      <div class="test-inputs">
+        <div class="test-input-group"><label>Tiếng Anh Chính tả</label><input id="inputSpelling" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div class="test-input-group"><label>Tiếng Việt Nghĩa</label><input id="inputMeaning" autocomplete="off"></div>
+      </div>
+      <button class="btn-submit" id="btnSubmit">Nộp bài Đáp án</button>
+      <div class="test-feedback" id="testFeedback"></div>
+      <button class="btn-next" id="btnNext">Câu tiếp theo</button>
+    </div>
+    <div class="test-results" id="testResults">
+      <h3>Đánh giá hoàn thành</h3>
+      <div id="resultsScore" style="font-size:2rem;font-weight:700;color:var(--primary)"></div>
+      <div id="resultsDetail"></div>
+      <table style="width:100%;margin-top:12px;border-collapse:collapse;font-size:.9rem"><thead><tr><th>#</th><th>Từ vựng</th><th>Chính tả</th><th>Nghĩa</th><th>kết quả</th></tr></thead><tbody id="resultsTableBody"></tbody></table>
+      <button class="btn-retry" id="btnRetry">một lần nữa Đánh giá</button>
+      <button class="btn-retry" id="btnBackToSetup" style="background:#666">Quay lại</button>
+    </div>
+  </section>
+</div>
+<script>
+  // var (not let/const): vocab-bridge reads these as iframe globals
+  var wordData = [
+{
+  id: 1,
+  word: "intend",
+  ipa: "/ɪnˈtend/",
+  pos: "vt.",
+  meaning: "định, có ý định, có ý muốn; định dùng, dành",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ý muốn »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ý muốn »",
+  collocations: "intend skills (ý muốn tương quan năng lực), use intend (sử dụng / vận dụng nên từ) ",
+  phrases: "intend skills (ý muốn tương quan năng lực), use intend (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of intend in this sentence. (lý giải trong những lời này intend Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of intend in this sentence.",
+  exampleCN: " lý giải trong những lời này intend Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of intend in this sentence.",
+  exampleZh: " lý giải trong những lời này intend Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ý muốn ", "topic": " thông dụng "},
+  acceptCN: [" ý muốn ", " kế hoạch ", " là đặc thù mục đích mà xếp đặt thiết kế ", " là đặc biệt công dụng định ", " ý chỉ hoặc ý tứ hàm xúc "]
+},
+{
+  id: 2,
+  word: "tragedy",
+  ipa: "/ˈtrædʒədi/",
+  pos: "n.",
+  meaning: "bi kịch; (nghĩa bóng) tấn bi kịch, tấn thảm kịch",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bi kịch »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bi kịch »",
+  collocations: "tragedy skills (bi kịch tương quan năng lực), use tragedy (sử dụng / vận dụng nên từ) ",
+  phrases: "tragedy skills (bi kịch tương quan năng lực), use tragedy (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of tragedy in this sentence. (lý giải trong những lời này tragedy Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of tragedy in this sentence.",
+  exampleCN: " lý giải trong những lời này tragedy Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of tragedy in this sentence.",
+  exampleZh: " lý giải trong những lời này tragedy Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bi kịch ", "topic": " thông dụng "},
+  acceptCN: [" bi kịch ", " thảm kịch ", " bi kịch Văn học ", " bi kịch lý luận ", " bi kịch nghệ thuật biểu diễn ", " bi kịch thức tác phẩm "]
+},
+{
+  id: 3,
+  word: "straw",
+  ipa: "/strɔ:/",
+  pos: "n.",
+  meaning: "rơm; nón rơm, mũ rơm",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « rơm rạ »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « rơm rạ »",
+  collocations: "straw skills (rơm rạ tương quan năng lực), use straw (sử dụng / vận dụng nên từ) ",
+  phrases: "straw skills (rơm rạ tương quan năng lực), use straw (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of straw in this sentence. (lý giải trong những lời này straw Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of straw in this sentence.",
+  exampleCN: " lý giải trong những lời này straw Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of straw in this sentence.",
+  exampleZh: " lý giải trong những lời này straw Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " rơm rạ ", "topic": " thông dụng "},
+  acceptCN: [" rơm rạ ", " mạch cán ", " ống hút ", " không có chút giá trị nào thứ đồ vật "]
+},
+{
+  id: 4,
+  word: "equivalent",
+  ipa: "/ɪˈkwɪvələnt/",
+  pos: "adj.",
+  meaning: "tương đương",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bằng nhau »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bằng nhau »",
+  collocations: "equivalent skills (bằng nhau tương quan năng lực), use equivalent (sử dụng / vận dụng nên từ) ",
+  phrases: "equivalent skills (bằng nhau tương quan năng lực), use equivalent (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of equivalent in this sentence. (lý giải trong những lời này equivalent Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of equivalent in this sentence.",
+  exampleCN: " lý giải trong những lời này equivalent Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of equivalent in this sentence.",
+  exampleZh: " lý giải trong những lời này equivalent Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bằng nhau ", "topic": " thông dụng "},
+  acceptCN: [" bằng nhau ", " tương đối ", " đợi hiệu quả ", " đồng giá ", " đợi tích ", "[Hóa học] đương lượng "]
+},
+{
+  id: 5,
+  word: "spokesman",
+  ipa: "/ˈspəʊksmən/",
+  pos: "n.",
+  meaning: "người phát ngôn",
+  mnemonic: "",
+  root: "",
+  collocations: "government spokesman (chính phủ phát ngôn nhân), company spokesman (công ty phát ngôn nhân), official spokesman (chính thức phát ngôn nhân) ",
+  phrases: "government spokesman (chính phủ phát ngôn nhân), company spokesman (công ty phát ngôn nhân), official spokesman (chính thức phát ngôn nhân) ",
+  example: "The spokesman refused to comment on the matter. (phát ngôn nhân cự tuyệt đối với chuyện này phát biểu bình luận.) ",
+  exampleEN: "The spokesman refused to comment on the matter.",
+  exampleCN: " phát ngôn nhân cự tuyệt đối với chuyện này phát biểu bình luận. ",
+  exampleEn: "The spokesman refused to comment on the matter.",
+  exampleZh: " phát ngôn nhân cự tuyệt đối với chuyện này phát biểu bình luận. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phát ngôn nhân ", "topic": " thông dụng "},
+  acceptCN: [" phát ngôn nhân ", " người phát ngôn "]
+},
+{
+  id: 6,
+  word: "adventure",
+  ipa: "/ədˈventʃə(r)/",
+  pos: "n.",
+  meaning: "sự phiêu lưu, sự mạo hiểm; việc làm mạo hiểm, việc làm táo bạo; sự nguy hiểm, sự hiểm nghèo",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mạo hiểm hoạt động »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mạo hiểm hoạt động »",
+  collocations: "adventure skills (mạo hiểm hoạt động tương quan năng lực), use adventure (sử dụng / vận dụng nên từ) ",
+  phrases: "adventure skills (mạo hiểm hoạt động tương quan năng lực), use adventure (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of adventure in this sentence. (lý giải trong những lời này adventure Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of adventure in this sentence.",
+  exampleCN: " lý giải trong những lời này adventure Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of adventure in this sentence.",
+  exampleZh: " lý giải trong những lời này adventure Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mạo hiểm hoạt động ", "topic": " thông dụng "},
+  acceptCN: [" mạo hiểm hoạt động ", " mạo hiểm trải qua ", " kỳ ngộ "]
+},
+{
+  id: 7,
+  word: "insight",
+  ipa: "/ˈɪnsaɪt/",
+  pos: "n.",
+  meaning: "sự nhìn thấu được bên trong sự vật, sự hiểu thấu được bên trong sự vật; sự hiểu biết sâu sắc, sự sáng suốt",
+  mnemonic: "",
+  root: "",
+  collocations: "insight into (đối với … thấy rõ lực), deep insight (khắc sâu giải thích), gain insight (đạt được lĩnh ngộ) ",
+  phrases: "insight into (đối với … thấy rõ lực), deep insight (khắc sâu giải thích), gain insight (đạt được lĩnh ngộ) ",
+  example: "The book gives an insight into human nature. (quyển sách này hiểu rõ nhân tính.) ",
+  exampleEN: "The book gives an insight into human nature.",
+  exampleCN: " quyển sách này hiểu rõ nhân tính. ",
+  exampleEn: "The book gives an insight into human nature.",
+  exampleZh: " quyển sách này hiểu rõ nhân tính. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thấy rõ lực ", "topic": " thông dụng "},
+  acceptCN: [" thấy rõ lực ", " lĩnh ngộ "]
+},
+{
+  id: 8,
+  word: "dose",
+  ipa: "/dəʊs/",
+  pos: "n./v.",
+  meaning: "liều lượng, liều thuốc",
+  mnemonic: "",
+  root: "",
+  collocations: "a dose of (một tề …), daily dose (ngày liều thuốc), high dose (cao liều thuốc) ",
+  phrases: "a dose of (một tề …), daily dose (ngày liều thuốc), high dose (cao liều thuốc) ",
+  example: "Take one dose every six hours. (mỗi sáu giờ phục một tề.) ",
+  exampleEN: "Take one dose every six hours.",
+  exampleCN: " mỗi sáu giờ phục một tề. ",
+  exampleEn: "Take one dose every six hours.",
+  exampleZh: " mỗi sáu giờ phục một tề. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " liều thuốc ", "topic": " thông dụng "},
+  acceptCN: [" liều thuốc ", " một tề ", " cho thuốc "]
+},
+{
+  id: 9,
+  word: "pint",
+  ipa: "/paɪnt/",
+  pos: "n.",
+  meaning: "Panh (đơn vị đo lường bằng 0, 57 lít ở Mỹ)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « phẩm cởi »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « phẩm cởi »",
+  collocations: "pint skills (phẩm cởi tương quan năng lực), use pint (sử dụng / vận dụng nên từ) ",
+  phrases: "pint skills (phẩm cởi tương quan năng lực), use pint (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of pint in this sentence. (lý giải trong những lời này pint Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of pint in this sentence.",
+  exampleCN: " lý giải trong những lời này pint Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of pint in this sentence.",
+  exampleZh: " lý giải trong những lời này pint Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phẩm cởi ", "topic": " thông dụng "},
+  acceptCN: [" phẩm cởi ", " nhất phẩm cởi số lượng khí hoặc vật chứa ", " nhất phẩm cởi đồ chứa thứ đồ vật "]
+},
+{
+  id: 10,
+  word: "qualification",
+  ipa: "/ˌkwɒlɪfɪˈkeɪʃən/",
+  pos: "n.",
+  meaning: "sự cho là; sự gọi là; sự định tính chất, sự định phẩm chất",
+  mnemonic: "",
+  root: "",
+  collocations: "academic qualification (bằng cấp), professional qualification (Nghề nghiệp tư cách), qualification for (… điều kiện) ",
+  phrases: "academic qualification (bằng cấp), professional qualification (Nghề nghiệp tư cách), qualification for (… điều kiện) ",
+  example: "He has the necessary qualifications for the job. (anh ấy có đủ công việc này cần điều kiện.) ",
+  exampleEN: "He has the necessary qualifications for the job.",
+  exampleCN: " anh ấy có đủ công việc này cần điều kiện. ",
+  exampleEn: "He has the necessary qualifications for the job.",
+  exampleZh: " anh ấy có đủ công việc này cần điều kiện. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tư cách ", "topic": " thông dụng "},
+  acceptCN: [" tư cách ", " điều kiện ", " bằng cấp ", " tư chất "]
+},
+{
+  id: 11,
+  word: "steer",
+  ipa: "/stɪə(r)/",
+  pos: "vt.& vi.",
+  meaning: "lái (tàu thuỷ, ô tô); (thông tục) hướng (bước...) về",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « điều khiển »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « điều khiển »",
+  collocations: "steer skills (điều khiển tương quan năng lực), use steer (sử dụng / vận dụng nên từ) ",
+  phrases: "steer skills (điều khiển tương quan năng lực), use steer (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of steer in this sentence. (lý giải trong những lời này steer Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of steer in this sentence.",
+  exampleCN: " lý giải trong những lời này steer Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of steer in this sentence.",
+  exampleZh: " lý giải trong những lời này steer Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " điều khiển ", "topic": " thông dụng "},
+  acceptCN: [" điều khiển ", " thao túng ", " khống chế ", " dẫn đạo "]
+},
+{
+  id: 12,
+  word: "mere",
+  ipa: "/mɪə(r)/",
+  pos: "adj.",
+  meaning: "chỉ là",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « chỉ »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « chỉ »",
+  collocations: "mere skills (chỉ tương quan năng lực), use mere (sử dụng / vận dụng nên từ) ",
+  phrases: "mere skills (chỉ tương quan năng lực), use mere (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of mere in this sentence. (lý giải trong những lời này mere Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of mere in this sentence.",
+  exampleCN: " lý giải trong những lời này mere Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of mere in this sentence.",
+  exampleZh: " lý giải trong những lời này mere Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " chỉ ", "topic": " thông dụng "},
+  acceptCN: [" chỉ ", " chỉ có điều ", " nho nhỏ ", " nhỏ nhẹ ", " thuần túy "]
+},
+{
+  id: 13,
+  word: "phenomenon",
+  ipa: "/fəˈnɒmɪnən/",
+  pos: "n.",
+  meaning: "hiện tượng; sự việc phi thường, người phi thường; vật phi thường; người kỳ lạ, vật kỳ lạ",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hiện tượng »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hiện tượng »",
+  collocations: "phenomenon skills (hiện tượng tương quan năng lực), use phenomenon (sử dụng / vận dụng nên từ) ",
+  phrases: "phenomenon skills (hiện tượng tương quan năng lực), use phenomenon (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of phenomenon in this sentence. (lý giải trong những lời này phenomenon Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of phenomenon in this sentence.",
+  exampleCN: " lý giải trong những lời này phenomenon Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of phenomenon in this sentence.",
+  exampleZh: " lý giải trong những lời này phenomenon Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hiện tượng ", "topic": " thông dụng "},
+  acceptCN: [" hiện tượng ", " sự kiện ", " kỳ tích ", " phi phàm người "]
+},
+{
+  id: 14,
+  word: "corps",
+  ipa: "/kɔːr/",
+  pos: "n.",
+  meaning: "(quân sự) quân đoàn; đoàn",
+  mnemonic: "",
+  root: "",
+  collocations: "marine corps (đội thủy quân lục chiến), press corps (phóng viên đoàn), diplomatic corps (ngoại giao sứ đoàn) ",
+  phrases: "marine corps (đội thủy quân lục chiến), press corps (phóng viên đoàn), diplomatic corps (ngoại giao sứ đoàn) ",
+  example: "He served in the medical corps during the war. (trong lúc chiến tranh hắn ở đây chữa bệnh binh sĩ đi lính.) ",
+  exampleEN: "He served in the medical corps during the war.",
+  exampleCN: " trong lúc chiến tranh hắn ở đây chữa bệnh binh sĩ đi lính. ",
+  exampleEn: "He served in the medical corps during the war.",
+  exampleZh: " trong lúc chiến tranh hắn ở đây chữa bệnh binh sĩ đi lính. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " quân đoàn ", "topic": " thông dụng "},
+  acceptCN: [" quân đoàn ", " binh sĩ ", " đoàn thể "]
+},
+{
+  id: 15,
+  word: "medal",
+  ipa: "/ˈmedl/",
+  pos: "n.",
+  meaning: "huy chương, mề đay",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « huy hiệu »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « huy hiệu »",
+  collocations: "medal skills (huy hiệu tương quan năng lực), use medal (sử dụng / vận dụng nên từ) ",
+  phrases: "medal skills (huy hiệu tương quan năng lực), use medal (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of medal in this sentence. (lý giải trong những lời này medal Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of medal in this sentence.",
+  exampleCN: " lý giải trong những lời này medal Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of medal in this sentence.",
+  exampleZh: " lý giải trong những lời này medal Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " huy hiệu ", "topic": " thông dụng "},
+  acceptCN: [" huy hiệu ", " huy chương ", " huân chương ", " kỷ niệm chương ", " huy hiệu "]
+},
+{
+  id: 16,
+  word: "amid",
+  ipa: "/əˈmɪd/",
+  pos: "prep.",
+  meaning: "giữa, ở giữa ((nghĩa đen) & (nghĩa bóng)); trong quá trình",
+  mnemonic: "",
+  root: "",
+  collocations: "amid the chaos (trong lúc hỗn loạn), amid cheers (đang hoan hô trong tiếng), stand amid (đứng ở … chính giữa) ",
+  phrases: "amid the chaos (trong lúc hỗn loạn), amid cheers (đang hoan hô trong tiếng), stand amid (đứng ở … chính giữa) ",
+  example: "Amid all the noise, she managed to concentrate. (tại một mảnh tiếng ồn ào Vừa, cô ấy nghĩ cách tập trung lực chú ý.) ",
+  exampleEN: "Amid all the noise, she managed to concentrate.",
+  exampleCN: " tại một mảnh tiếng ồn ào Vừa, cô ấy nghĩ cách tập trung lực chú ý. ",
+  exampleEn: "Amid all the noise, she managed to concentrate.",
+  exampleZh: " tại một mảnh tiếng ồn ào Vừa, cô ấy nghĩ cách tập trung lực chú ý. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tại … chính giữa ", "topic": " thông dụng "},
+  acceptCN: [" tại … chính giữa ", " tại … chính giữa "]
+},
+{
+  id: 17,
+  word: "impress",
+  ipa: "/ɪmˈpres/",
+  pos: "vt.",
+  meaning: "đóng, in (dấu lên cái gì); đóng dấu vào, in dấu vào (cái gì); ghi sâu vào, khắc sâu vào, in sâu vào",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ấn »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ấn »",
+  collocations: "impress skills (ấn tượng màn năng lực), use impress (sử dụng / vận dụng nên từ) ",
+  phrases: "impress skills (ấn tượng màn năng lực), use impress (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of impress in this sentence. (lý giải trong những lời này impress Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of impress in this sentence.",
+  exampleCN: " lý giải trong những lời này impress Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of impress in this sentence.",
+  exampleZh: " lý giải trong những lời này impress Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ấn ", "topic": " thông dụng "},
+  acceptCN: [" ấn ", " cho … dùng ấn tượng sâu sắc ", " khiến cho ghi khắc "]
+},
+{
+  id: 18,
+  word: "moral",
+  ipa: "/ˈmɔːrəl/",
+  pos: "adj./n.",
+  meaning: "(thuộc) đạo đức, (thuộc) luân lý, (thuộc) phẩm hạnh; có đạo đức, hợp đạo đức",
+  mnemonic: "",
+  root: "",
+  collocations: "moral values (giá trị đạo đức xem), moral lesson (đạo đức giáo huấn), moral standards (đạo đức tiêu chuẩn) ",
+  phrases: "moral values (giá trị đạo đức xem), moral lesson (đạo đức giáo huấn), moral standards (đạo đức tiêu chuẩn) ",
+  example: "The story has a moral lesson. (câu chuyện này có đạo đức ngụ ý.) ",
+  exampleEN: "The story has a moral lesson.",
+  exampleCN: " câu chuyện này có đạo đức ngụ ý. ",
+  exampleEn: "The story has a moral lesson.",
+  exampleZh: " câu chuyện này có đạo đức ngụ ý. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " đạo đức ", "topic": " thông dụng "},
+  acceptCN: [" đạo đức ", " ngụ ý "]
+},
+{
+  id: 19,
+  word: "contest",
+  ipa: "/ˈkɒn.test/",
+  pos: "n. / v.",
+  meaning: "cuộc tranh luận, cuộc tranh cãi; (thể dục,thể thao) cuộc thi; trận đấu, trận giao tranh",
+  mnemonic: "",
+  root: "",
+  collocations: "beauty contest (dự thi hoa hậu), enter a contest (tham gia trận đấu), contest an election (tranh cử) ",
+  phrases: "beauty contest (dự thi hoa hậu), enter a contest (tham gia trận đấu), contest an election (tranh cử) ",
+  example: "She won first prize in the singing contest. (cô ấy đang ca hát trong trận đấu đã lấy được nhất đẳng thưởng.) ",
+  exampleEN: "She won first prize in the singing contest.",
+  exampleCN: " cô ấy đang ca hát trong trận đấu đã lấy được nhất đẳng thưởng. ",
+  exampleEn: "She won first prize in the singing contest.",
+  exampleZh: " cô ấy đang ca hát trong trận đấu đã lấy được nhất đẳng thưởng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " trận đấu ", "topic": " thông dụng "},
+  acceptCN: [" trận đấu ", " thi đua ", " cạnh tranh ", " tranh luận "]
+},
+{
+  id: 20,
+  word: "grace",
+  ipa: "/greɪs/",
+  pos: "n.",
+  meaning: "vẻ duyên dáng, vẻ yêu kiều; vẻ uyển chuyển; (số nhiều) vẻ phong nhã, vẻ thanh nhã",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ưu mỹ »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ưu mỹ »",
+  collocations: "grace skills (ưu mỹ tương quan năng lực), use grace (sử dụng / vận dụng nên từ) ",
+  phrases: "grace skills (ưu mỹ tương quan năng lực), use grace (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of grace in this sentence. (lý giải trong những lời này grace Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of grace in this sentence.",
+  exampleCN: " lý giải trong những lời này grace Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of grace in this sentence.",
+  exampleZh: " lý giải trong những lời này grace Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ưu mỹ ", "topic": " thông dụng "},
+  acceptCN: [" ưu mỹ ", " phong độ ", " mị lực ", " thư thả ", " hoãn lại ", " ân trạch "]
+},
+{
+  id: 21,
+  word: "destination",
+  ipa: "/ˌdestɪˈneɪʃn/",
+  pos: "n.",
+  meaning: "nơi gửi tới, nơi đưa tới, nơi đi tới; sự dự định; mục đích dự định",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mục đích »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mục đích »",
+  collocations: "destination skills (mục đích tương quan năng lực), use destination (sử dụng / vận dụng nên từ) ",
+  phrases: "destination skills (mục đích tương quan năng lực), use destination (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of destination in this sentence. (lý giải trong những lời này destination Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of destination in this sentence.",
+  exampleCN: " lý giải trong những lời này destination Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of destination in this sentence.",
+  exampleZh: " lý giải trong những lời này destination Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mục đích ", "topic": " thông dụng "},
+  acceptCN: [" mục đích ", " mục tiêu ", " chỗ mục đích ", " tới hạn ", "[hi hữu dùng từ] dự định ", " chỉ định "]
+},
+{
+  id: 22,
+  word: "weapon",
+  ipa: "/ˈwepən/",
+  pos: "n.",
+  meaning: "vũ khí ((nghĩa đen) & (nghĩa bóng))",
+  mnemonic: "",
+  root: "",
+  collocations: "nuclear weapon (vũ khí hạt nhân), weapon of mass destruction (đại quy mô tính sát thương vũ khí), deadly weapon (vũ khí trí mạng) ",
+  phrases: "nuclear weapon (vũ khí hạt nhân), weapon of mass destruction (đại quy mô tính sát thương vũ khí), deadly weapon (vũ khí trí mạng) ",
+  example: "The police found a weapon at the scene. (cảnh sát tại hiện trường phát hiện một kiện vũ khí.) ",
+  exampleEN: "The police found a weapon at the scene.",
+  exampleCN: " cảnh sát tại hiện trường phát hiện một kiện vũ khí. ",
+  exampleEn: "The police found a weapon at the scene.",
+  exampleZh: " cảnh sát tại hiện trường phát hiện một kiện vũ khí. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " vũ khí ", "topic": " thông dụng "},
+  acceptCN: [" vũ khí ", " binh khí "]
+},
+{
+  id: 23,
+  word: "squeeze",
+  ipa: "/skwi:z/",
+  pos: "vt.& vi.",
+  meaning: "ép, vắt, nén, siết chặt",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « lách vào »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « lách vào »",
+  collocations: "squeeze skills (lách vào tương quan năng lực), use squeeze (sử dụng / vận dụng nên từ) ",
+  phrases: "squeeze skills (lách vào tương quan năng lực), use squeeze (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of squeeze in this sentence. (lý giải trong những lời này squeeze Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of squeeze in this sentence.",
+  exampleCN: " lý giải trong những lời này squeeze Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of squeeze in this sentence.",
+  exampleZh: " lý giải trong những lời này squeeze Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " lách vào ", "topic": " thông dụng "},
+  acceptCN: [" lách vào ", " ép ", " bóp ", " áp bách ", " nghiền ép "]
+},
+{
+  id: 24,
+  word: "anticipate",
+  ipa: "/ænˈtɪsɪpeɪt/",
+  pos: "vt.",
+  meaning: "dùng trước, hưởng trước; thấy trước, biết trước, đoán trước; dè trước, chặn trước, liệu trước, lường trước",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « dự cảm »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « dự cảm »",
+  collocations: "anticipate skills (dự cảm tương quan năng lực), use anticipate (sử dụng / vận dụng nên từ) ",
+  phrases: "anticipate skills (dự cảm tương quan năng lực), use anticipate (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of anticipate in this sentence. (lý giải trong những lời này anticipate Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of anticipate in this sentence.",
+  exampleCN: " lý giải trong những lời này anticipate Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of anticipate in this sentence.",
+  exampleZh: " lý giải trong những lời này anticipate Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " dự cảm ", "topic": " thông dụng "},
+  acceptCN: [" dự cảm ", " đoán được ", " đoán trước ", " trước tại … hành động "]
+},
+{
+  id: 25,
+  word: "thoughtful",
+  ipa: "/ˈθɔːt.fəl/",
+  pos: "adj.",
+  meaning: "ngẫm nghĩ, trầm tư, tư lự; có suy nghĩ, chín chắn, thận trọng",
+  mnemonic: "",
+  root: "",
+  collocations: "thoughtful person (quan tâm người), thoughtful gift (thân thiếp lễ vật), thoughtful look (vẻ mặt trầm tư) ",
+  phrases: "thoughtful person (quan tâm người), thoughtful gift (thân thiếp lễ vật), thoughtful look (vẻ mặt trầm tư) ",
+  example: "It was very thoughtful of you to bring me flowers. (bạn mang cho ta hao phí đến, thật sự là săn sóc.) ",
+  exampleEN: "It was very thoughtful of you to bring me flowers.",
+  exampleCN: " bạn mang cho ta hao phí đến, thật sự là săn sóc. ",
+  exampleEn: "It was very thoughtful of you to bring me flowers.",
+  exampleZh: " bạn mang cho ta hao phí đến, thật sự là săn sóc. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " suy nghĩ sâu xa ", "topic": " thông dụng "},
+  acceptCN: [" suy nghĩ sâu xa ", " săn sóc ", " cân nhắc chu đáo ", " quan tâm "]
+},
+{
+  id: 26,
+  word: "paw",
+  ipa: "/pɔ:/",
+  pos: "n.",
+  meaning: "chân (có vuốt của mèo, hổ...); (thông tục) bàn tay; nét chữ",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « móng vuốt »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « móng vuốt »",
+  collocations: "paw skills (móng vuốt tương quan năng lực), use paw (sử dụng / vận dụng nên từ) ",
+  phrases: "paw skills (móng vuốt tương quan năng lực), use paw (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of paw in this sentence. (lý giải trong những lời này paw Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of paw in this sentence.",
+  exampleCN: " lý giải trong những lời này paw Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of paw in this sentence.",
+  exampleZh: " lý giải trong những lời này paw Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " móng vuốt ", "topic": " thông dụng "},
+  acceptCN: [" móng vuốt ", " tay ", " bút tích "]
+},
+{
+  id: 27,
+  word: "imagination",
+  ipa: "/ɪˌmædʒɪˈneɪʃn/",
+  pos: "n.",
+  meaning: "sức tưởng tượng, trí tưởng tượng; sự tưởng tượng; điều tưởng tượng",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « tưởng tượng »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « tưởng tượng »",
+  collocations: "imagination skills (tưởng tượng tương quan năng lực), use imagination (sử dụng / vận dụng nên từ) ",
+  phrases: "imagination skills (tưởng tượng tương quan năng lực), use imagination (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of imagination in this sentence. (lý giải trong những lời này imagination Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of imagination in this sentence.",
+  exampleCN: " lý giải trong những lời này imagination Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of imagination in this sentence.",
+  exampleZh: " lý giải trong những lời này imagination Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tưởng tượng ", "topic": " thông dụng "},
+  acceptCN: [" tưởng tượng ", " sức tưởng tượng ", " không tưởng ", " vọng tưởng ", " tưởng tượng ra được sự vật "]
+},
+{
+  id: 28,
+  word: "porter",
+  ipa: "/ˈpɔ:tə(r)/",
+  pos: "n.",
+  meaning: "người gác cổng; công nhân khuân vác",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « công nhân bốc vác »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « công nhân bốc vác »",
+  collocations: "porter skills (công nhân bốc vác tương quan năng lực), use porter (sử dụng / vận dụng nên từ) ",
+  phrases: "porter skills (công nhân bốc vác tương quan năng lực), use porter (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of porter in this sentence. (lý giải trong những lời này porter Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of porter in this sentence.",
+  exampleCN: " lý giải trong những lời này porter Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of porter in this sentence.",
+  exampleZh: " lý giải trong những lời này porter Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " công nhân bốc vác ", "topic": " thông dụng "},
+  acceptCN: [" công nhân bốc vác ", " cổng bảo vệ "]
+},
+{
+  id: 29,
+  word: "accommodation",
+  ipa: "/əˌkɒməˈdeɪʃn/",
+  pos: "n.",
+  meaning: "sự điều tiết, sự thích nghi, sự làm cho phù hợp; sự điều tiết (sức nhìn của mắt)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « chỗ ở »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « chỗ ở »",
+  collocations: "accommodation skills (chỗ ở tương quan năng lực), use accommodation (sử dụng / vận dụng nên từ) ",
+  phrases: "accommodation skills (chỗ ở tương quan năng lực), use accommodation (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of accommodation in this sentence. (lý giải trong những lời này accommodation Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of accommodation in this sentence.",
+  exampleCN: " lý giải trong những lời này accommodation Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of accommodation in this sentence.",
+  exampleZh: " lý giải trong những lời này accommodation Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " chỗ ở ", "topic": " thông dụng "},
+  acceptCN: [" chỗ ở ", " thích ứng ", " tiện lợi ", " hoà giải "]
+},
+{
+  id: 30,
+  word: "tide",
+  ipa: "/taɪd/",
+  pos: "n.",
+  meaning: "triều, thuỷ triều, con nước; dòng nước, dòng chảy, dòng",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « triều tịch »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « triều tịch »",
+  collocations: "tide skills (triều tịch tương quan năng lực), use tide (sử dụng / vận dụng nên từ) ",
+  phrases: "tide skills (triều tịch tương quan năng lực), use tide (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of tide in this sentence. (lý giải trong những lời này tide Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of tide in this sentence.",
+  exampleCN: " lý giải trong những lời này tide Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of tide in this sentence.",
+  exampleZh: " lý giải trong những lời này tide Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " triều tịch ", "topic": " thông dụng "},
+  acceptCN: [" triều tịch ", " thuỷ triều ", " xu thế ", " thời cơ ", " thời kì ", " mùa "]
+},
+{
+  id: 31,
+  word: "scrape",
+  ipa: "/skreɪp/",
+  pos: "vt.",
+  meaning: "sự nạo, sự cạo; tiếng nạo, tiếng cạo kèn kẹt, tiếng sột soạt",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « sát »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « sát »",
+  collocations: "scrape skills (sát tương quan năng lực), use scrape (sử dụng / vận dụng nên từ) ",
+  phrases: "scrape skills (sát tương quan năng lực), use scrape (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of scrape in this sentence. (lý giải trong những lời này scrape Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of scrape in this sentence.",
+  exampleCN: " lý giải trong những lời này scrape Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of scrape in this sentence.",
+  exampleZh: " lý giải trong những lời này scrape Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sát ", "topic": " thông dụng "},
+  acceptCN: [" sát ", " cạo ", " lau đi ", " trầy da ", " cạo phá ", " đào rỗng "]
+},
+{
+  id: 32,
+  word: "consideration",
+  ipa: "/kənˌsɪdəˈreɪʃn/",
+  pos: "n.",
+  meaning: "sự cân nhắc, sự suy xét, sự nghiên cứu, sự suy nghĩ; sự để ý, sự quan tâm, sự lưu ý",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « cân nhắc »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « cân nhắc »",
+  collocations: "consideration skills (cân nhắc tương quan năng lực), use consideration (sử dụng / vận dụng nên từ) ",
+  phrases: "consideration skills (cân nhắc tương quan năng lực), use consideration (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of consideration in this sentence. (lý giải trong những lời này consideration Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of consideration in this sentence.",
+  exampleCN: " lý giải trong những lời này consideration Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of consideration in this sentence.",
+  exampleZh: " lý giải trong những lời này consideration Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " cân nhắc ", "topic": " thông dụng "},
+  acceptCN: [" cân nhắc ", " khảo sát ", " chiếu cố ", " quan tâm ", " thù lao ", " tôn kính "]
+},
+{
+  id: 33,
+  word: "objective",
+  ipa: "/əbˈdʒektɪv/",
+  pos: "adj.",
+  meaning: "khách quan; (thuộc) mục tiêu",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « khách quan »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « khách quan »",
+  collocations: "objective skills (khách quan tương quan năng lực), use objective (sử dụng / vận dụng nên từ) ",
+  phrases: "objective skills (khách quan tương quan năng lực), use objective (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of objective in this sentence. (lý giải trong những lời này objective Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of objective in this sentence.",
+  exampleCN: " lý giải trong những lời này objective Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of objective in this sentence.",
+  exampleZh: " lý giải trong những lời này objective Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " khách quan ", "topic": " thông dụng "},
+  acceptCN: [" khách quan ", " thật thể ", " mục tiêu ", "[lời nói] cách mục đích ", "[y] anh ấy cảm thấy "]
+},
+{
+  id: 34,
+  word: "alongside",
+  ipa: "/əˌlɒŋˈsaɪd/",
+  pos: "prep. / adv.",
+  meaning: "sát cạnh, kế bên, dọc theo, dọc; (hàng hải) sát mạn tàu, dọc theo mạn tàu",
+  mnemonic: "",
+  root: "",
+  collocations: "work alongside (kề vai sát cánh công tác), alongside each other (song song mà), alongside with (và … cùng một chỗ) ",
+  phrases: "work alongside (kề vai sát cánh công tác), alongside each other (song song mà), alongside with (và … cùng một chỗ) ",
+  example: "She parked her car alongside the kerb. (cô ấy ngừng xe ở đường duyên bên cạnh.) ",
+  exampleEN: "She parked her car alongside the kerb.",
+  exampleCN: " cô ấy ngừng xe ở đường duyên bên cạnh. ",
+  exampleEn: "She parked her car alongside the kerb.",
+  exampleZh: " cô ấy ngừng xe ở đường duyên bên cạnh. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bên cạnh ", "topic": " thông dụng "},
+  acceptCN: [" bên cạnh ", " kề vai sát cánh ", " cùng một chỗ ", " xuôi theo "]
+},
+{
+  id: 35,
+  word: "meanwhile",
+  ipa: "/ˈmi:nwaɪl/",
+  pos: "adv.",
+  meaning: "trong khi chờ đợi, trong lúc ấy, đang lúc ấy",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « đồng thời »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « đồng thời »",
+  collocations: "meanwhile skills (đồng thời tương quan năng lực), use meanwhile (sử dụng / vận dụng nên từ) ",
+  phrases: "meanwhile skills (đồng thời tương quan năng lực), use meanwhile (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of meanwhile in this sentence. (lý giải trong những lời này meanwhile Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of meanwhile in this sentence.",
+  exampleCN: " lý giải trong những lời này meanwhile Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of meanwhile in this sentence.",
+  exampleZh: " lý giải trong những lời này meanwhile Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " đồng thời ", "topic": " thông dụng "},
+  acceptCN: [" đồng thời ", " ở giữa "]
+},
+{
+  id: 36,
+  word: "logic",
+  ipa: "/ˈlɒdʒɪk/",
+  pos: "n.",
+  meaning: "Lôgic",
+  mnemonic: "",
+  root: "",
+  collocations: "logic of (… ăn khớp), formal logic (lô-gích hình thức), logic behind (sau lưng ăn khớp) ",
+  phrases: "logic of (… ăn khớp), formal logic (lô-gích hình thức), logic behind (sau lưng ăn khớp) ",
+  example: "His argument lacks logic. (của anh ấy luận điểm khuyết thiếu ăn khớp.) ",
+  exampleEN: "His argument lacks logic.",
+  exampleCN: " của anh ấy luận điểm khuyết thiếu ăn khớp. ",
+  exampleEn: "His argument lacks logic.",
+  exampleZh: " của anh ấy luận điểm khuyết thiếu ăn khớp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ăn khớp ", "topic": " thông dụng "},
+  acceptCN: [" ăn khớp ", " suy luận "]
+},
+{
+  id: 37,
+  word: "surge",
+  ipa: "/sɜːdʒ/",
+  pos: "v. / n.",
+  meaning: "dấy lên, dâng lên (phong trào...); (hàng hải) lơi ra (thừng...)",
+  mnemonic: "",
+  root: "",
+  collocations: "surge forward (xông về trước), power surge (điện tuôn ra), a surge of anger (một cỗ nộ khí) ",
+  phrases: "surge forward (xông về trước), power surge (điện tuôn ra), a surge of anger (một cỗ nộ khí) ",
+  example: "There has been a surge in online shopping. (trên mạng mua sắm xuất hiện tăng vọt.) ",
+  exampleEN: "There has been a surge in online shopping.",
+  exampleCN: " trên mạng mua sắm xuất hiện tăng vọt. ",
+  exampleEn: "There has been a surge in online shopping.",
+  exampleZh: " trên mạng mua sắm xuất hiện tăng vọt. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mãnh liệt ", "topic": " thông dụng "},
+  acceptCN: [" mãnh liệt ", " tăng vọt ", " lao nhanh ", " tăng thêm mãnh liệt "]
+},
+{
+  id: 38,
+  word: "instinct",
+  ipa: "/ˈɪn.stɪŋkt/",
+  pos: "n.",
+  meaning: "bản năng; thiên hướng, năng khiếu",
+  mnemonic: "",
+  root: "",
+  collocations: "maternal instinct (mẫu tính(*bản năng của người mẹ) bản năng), by instinct (theo bản năng), survival instinct (bản năng cầu sinh) ",
+  phrases: "maternal instinct (mẫu tính(*bản năng của người mẹ) bản năng), by instinct (theo bản năng), survival instinct (bản năng cầu sinh) ",
+  example: "Birds build nests by instinct. (chim xây tổ là theo bản năng.) ",
+  exampleEN: "Birds build nests by instinct.",
+  exampleCN: " chim xây tổ là theo bản năng. ",
+  exampleEn: "Birds build nests by instinct.",
+  exampleZh: " chim xây tổ là theo bản năng. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bản năng ", "topic": " thông dụng "},
+  acceptCN: [" bản năng ", " trực giác ", " thiên tính "]
+},
+{
+  id: 39,
+  word: "editor",
+  ipa: "/ˈedɪtər/",
+  pos: "n.",
+  meaning: "người thu thập và xuất bản; chủ bút (báo, tập san...)",
+  mnemonic: "",
+  root: "",
+  collocations: "editor in chief (chủ biên), news editor (tin tức biên tập), copy editor (văn tự biên tập) ",
+  phrases: "editor in chief (chủ biên), news editor (tin tức biên tập), copy editor (văn tự biên tập) ",
+  example: "He works as an editor for a publishing company. (hắn ở đây một nhà xuất bản công ty đảm nhiệm biên tập.) ",
+  exampleEN: "He works as an editor for a publishing company.",
+  exampleCN: " hắn ở đây một nhà xuất bản công ty đảm nhiệm biên tập. ",
+  exampleEn: "He works as an editor for a publishing company.",
+  exampleZh: " hắn ở đây một nhà xuất bản công ty đảm nhiệm biên tập. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " biên tập ", "topic": " thông dụng "},
+  acceptCN: [" biên tập "]
+},
+{
+  id: 40,
+  word: "prosperity",
+  ipa: "/prɒˈsperəti/",
+  pos: "n.",
+  meaning: "sự thịnh vượng, sự phát đạt, sự phồn vinh, sự thành công",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « phồn vinh »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « phồn vinh »",
+  collocations: "prosperity skills (phồn vinh tương quan năng lực), use prosperity (sử dụng / vận dụng nên từ) ",
+  phrases: "prosperity skills (phồn vinh tương quan năng lực), use prosperity (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of prosperity in this sentence. (lý giải trong những lời này prosperity Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of prosperity in this sentence.",
+  exampleCN: " lý giải trong những lời này prosperity Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of prosperity in this sentence.",
+  exampleZh: " lý giải trong những lời này prosperity Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " phồn vinh ", "topic": " thông dụng "},
+  acceptCN: [" phồn vinh ", " thịnh vượng ", " hưng thịnh ", " thành công "]
+},
+{
+  id: 41,
+  word: "energetic",
+  ipa: "/ˌenəˈdʒetɪk/",
+  pos: "adj.",
+  meaning: "mạnh mẽ, mãnh liệt, đầy nghị lực, đầy sinh lực; hoạt động",
+  mnemonic: "",
+  root: "",
+  collocations: "",
+  phrases: "",
+  example: "",
+  exampleEN: "",
+  exampleCN: "",
+  exampleEn: "",
+  exampleZh: "",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tinh lực dồi dào ", "topic": " thông dụng "},
+  acceptCN: [" tinh lực dồi dào ", " tràn ngập sức sống ", " tinh lực thịnh vượng ", " tinh thần sung mãn ", " tích cực ", " có lực "]
+},
+{
+  id: 42,
+  word: "fisherman",
+  ipa: "/ˈfɪʃəmən/",
+  pos: "n.",
+  meaning: "người đánh cá, thuyền chài; người câu cá, người bắt cá",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ngư dân »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ngư dân »",
+  collocations: "fisherman skills (ngư dân tương quan năng lực), use fisherman (sử dụng / vận dụng nên từ) ",
+  phrases: "fisherman skills (ngư dân tương quan năng lực), use fisherman (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of fisherman in this sentence. (lý giải trong những lời này fisherman Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of fisherman in this sentence.",
+  exampleCN: " lý giải trong những lời này fisherman Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of fisherman in this sentence.",
+  exampleZh: " lý giải trong những lời này fisherman Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ngư dân ", "topic": " thông dụng "},
+  acceptCN: [" ngư dân ", " ngư dân "]
+},
+{
+  id: 43,
+  word: "incentive",
+  ipa: "/ɪnˈsen.tɪv/",
+  pos: "n.",
+  meaning: "sự khuyến khích, sự khích lệ; sự thúc đẩy; động cơ (thúc đẩy làm việc gì)",
+  mnemonic: "",
+  root: "",
+  collocations: "tax incentive (thu thuế ưu đãi), provide an incentive (cung cấp khích lệ), lack of incentive (khuyết thiếu động lực) ",
+  phrases: "tax incentive (thu thuế ưu đãi), provide an incentive (cung cấp khích lệ), lack of incentive (khuyết thiếu động lực) ",
+  example: "Bonus payments provide an incentive to work harder. (tiền thưởng chế độ là càng thêm cố gắng làm việc cung cấp động lực.) ",
+  exampleEN: "Bonus payments provide an incentive to work harder.",
+  exampleCN: " tiền thưởng chế độ là càng thêm cố gắng làm việc cung cấp động lực. ",
+  exampleEn: "Bonus payments provide an incentive to work harder.",
+  exampleZh: " tiền thưởng chế độ là càng thêm cố gắng làm việc cung cấp động lực. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " khích lệ ", "topic": " thông dụng "},
+  acceptCN: [" khích lệ ", " ban thưởng ", " kích thích ", " động lực "]
+},
+{
+  id: 44,
+  word: "discriminate",
+  ipa: "/dɪˈskrɪmɪneɪt/",
+  pos: "v.",
+  meaning: "(+ from) phân biệt; (+ between) phân biệt nhận rõ sự khác nhau (giữa hai vật, giữa cái này với cái khác...), tách bạch ra",
+  mnemonic: "",
+  root: "",
+  collocations: "discriminate against (kỳ thị …), discriminate between (khác nhau …), discriminate in favor of (ưu đãi …) ",
+  phrases: "discriminate against (kỳ thị …), discriminate between (khác nhau …), discriminate in favor of (ưu đãi …) ",
+  example: "It is illegal to discriminate against people on the basis of race. (căn cứ vào kì thị chủng tộc là phi pháp.) ",
+  exampleEN: "It is illegal to discriminate against people on the basis of race.",
+  exampleCN: " căn cứ vào kì thị chủng tộc là phi pháp. ",
+  exampleEn: "It is illegal to discriminate against people on the basis of race.",
+  exampleZh: " căn cứ vào kì thị chủng tộc là phi pháp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " kỳ thị ", "topic": " thông dụng "},
+  acceptCN: [" kỳ thị ", " khác nhau ", " phân biệt rõ "]
+},
+{
+  id: 45,
+  word: "replacement",
+  ipa: "/rɪˈpleɪs.mənt/",
+  pos: "n.",
+  meaning: "sự thay thế; vật thay thế, người thay thế; sự đặt lại chỗ c",
+  mnemonic: "",
+  root: "",
+  collocations: "find a replacement (tìm vật thay thế), replacement part (thay thế linh kiện), hormone replacement therapy (hoóc-môn kích thích thay thế liệu pháp) ",
+  phrases: "find a replacement (tìm vật thay thế), replacement part (thay thế linh kiện), hormone replacement therapy (hoóc-môn kích thích thay thế liệu pháp) ",
+  example: "We need to find a replacement for the broken window. (chúng tôi cần tìm thứ đồ vật thay thế đánh vỡ cửa sổ.) ",
+  exampleEN: "We need to find a replacement for the broken window.",
+  exampleCN: " chúng tôi cần tìm thứ đồ vật thay thế đánh vỡ cửa sổ. ",
+  exampleEn: "We need to find a replacement for the broken window.",
+  exampleZh: " chúng tôi cần tìm thứ đồ vật thay thế đánh vỡ cửa sổ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thay đổi ", "topic": " thông dụng "},
+  acceptCN: [" thay đổi ", " vật thay thế ", " tiếp nhận "]
+},
+{
+  id: 46,
+  word: "plunge",
+  ipa: "/plʌndʒ/",
+  pos: "vt.",
+  meaning: "nhúng, thọc; đâm sâu vào, đâm ngập vào",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « dùng sức cắm vào »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « dùng sức cắm vào »",
+  collocations: "plunge skills (dùng sức cắm vào tương quan năng lực), use plunge (sử dụng / vận dụng nên từ) ",
+  phrases: "plunge skills (dùng sức cắm vào tương quan năng lực), use plunge (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of plunge in this sentence. (lý giải trong những lời này plunge Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of plunge in this sentence.",
+  exampleCN: " lý giải trong những lời này plunge Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of plunge in this sentence.",
+  exampleZh: " lý giải trong những lời này plunge Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " dùng sức cắm vào ", "topic": " thông dụng "},
+  acceptCN: [" dùng sức cắm vào ", " khiến cho lâm vào "]
+},
+{
+  id: 47,
+  word: "circuit",
+  ipa: "/ˈsɜ:kɪt/",
+  pos: "n.",
+  meaning: "chu vi, đường vòng quanh; sự đi vòng quanh",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mạch điện »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « mạch điện »",
+  collocations: "circuit skills (mạch điện tương quan năng lực), use circuit (sử dụng / vận dụng nên từ) ",
+  phrases: "circuit skills (mạch điện tương quan năng lực), use circuit (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of circuit in this sentence. (lý giải trong những lời này circuit Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of circuit in this sentence.",
+  exampleCN: " lý giải trong những lời này circuit Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of circuit in this sentence.",
+  exampleZh: " lý giải trong những lời này circuit Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " mạch điện ", "topic": " thông dụng "},
+  acceptCN: [" mạch điện ", " tuyến đường ", " lưu động ", " tỉnh lại ", " vòng tròn đạo ", " điện dòng điện "]
+},
+{
+  id: 48,
+  word: "upset",
+  ipa: "/ʌpˈset/",
+  pos: "vi.",
+  meaning: "làm đổ, đánh đổ, lật đổ; đánh ng; (hàng hi) làm lật úp (thuyền...)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « quật ngã »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « quật ngã »",
+  collocations: "upset skills (quật ngã tương quan năng lực), use upset (sử dụng / vận dụng nên từ) ",
+  phrases: "upset skills (quật ngã tương quan năng lực), use upset (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of upset in this sentence. (lý giải trong những lời này upset Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of upset in this sentence.",
+  exampleCN: " lý giải trong những lời này upset Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of upset in this sentence.",
+  exampleZh: " lý giải trong những lời này upset Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " quật ngã ", "topic": " thông dụng "},
+  acceptCN: [" quật ngã ", " làm cho lật ", " quấy rầy ", " đã quấy rầy "]
+},
+{
+  id: 49,
+  word: "skip",
+  ipa: "/skɪp/",
+  pos: "v./n.",
+  meaning: "(thể dục,thể thao) đội trưởng, thủ quân; ông bầu",
+  mnemonic: "",
+  root: "",
+  collocations: "skip school (trốn học), skip a meal (không ăn cơm), skip rope (nhảy dây) ",
+  phrases: "skip school (trốn học), skip a meal (không ăn cơm), skip rope (nhảy dây) ",
+  example: "He decided to skip the meeting and go home early. (anh ấy quyết định không đi họp, về nhà sớm.) ",
+  exampleEN: "He decided to skip the meeting and go home early.",
+  exampleCN: " anh ấy quyết định không đi họp, về nhà sớm. ",
+  exampleEn: "He decided to skip the meeting and go home early.",
+  exampleZh: " anh ấy quyết định không đi họp, về nhà sớm. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhảy qua ", "topic": " thông dụng "},
+  acceptCN: [" nhảy qua ", " nhảy về phía trước ", " lược qua "]
+},
+{
+  id: 50,
+  word: "bucket",
+  ipa: "/ˈbʌkɪt/",
+  pos: "n.",
+  meaning: "thùng, xô (để múc nước); pittông (ống bơm)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « thùng nước »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « thùng nước »",
+  collocations: "bucket skills (thùng nước tương quan năng lực), use bucket (sử dụng / vận dụng nên từ) ",
+  phrases: "bucket skills (thùng nước tương quan năng lực), use bucket (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of bucket in this sentence. (lý giải trong những lời này bucket Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of bucket in this sentence.",
+  exampleCN: " lý giải trong những lời này bucket Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of bucket in this sentence.",
+  exampleZh: " lý giải trong những lời này bucket Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " thùng nước ", "topic": " thông dụng "},
+  acceptCN: [" thùng nước ", " một thùng ", " đại lượng ", "< lý > phương tiện giao thông "]
+},
+{
+  id: 51,
+  word: "inevitable",
+  ipa: "/ɪnˈevɪtəbl/",
+  pos: "adj.",
+  meaning: "không thể tránh được, chắc chắn xảy ra ((nghĩa đen) & (nghĩa bóng)); (thông tục) vẫn thường thấy; vẫn thường nghe; quen thuộc",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « không thể tránh khỏi »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « không thể tránh khỏi »",
+  collocations: "inevitable skills (không thể tránh khỏi tương quan năng lực), use inevitable (sử dụng / vận dụng nên từ) ",
+  phrases: "inevitable skills (không thể tránh khỏi tương quan năng lực), use inevitable (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of inevitable in this sentence. (lý giải trong những lời này inevitable Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of inevitable in this sentence.",
+  exampleCN: " lý giải trong những lời này inevitable Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of inevitable in this sentence.",
+  exampleZh: " lý giải trong những lời này inevitable Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " không thể tránh khỏi ", "topic": " thông dụng "},
+  acceptCN: [" không thể tránh khỏi ", " tất nhiên phát sinh ", " tổng hội phát sinh ", " tất nhiên chuyện phát sinh "]
+},
+{
+  id: 52,
+  word: "consensus",
+  ipa: "/kənˈsensəs/",
+  pos: "n.",
+  meaning: "sự đồng lòng, sự đồng tâm, sự nhất trí; (sinh vật học) sự liên ứng",
+  mnemonic: "",
+  root: "",
+  collocations: "consensus on (về … chung nhận thức), general consensus (phổ biến chung nhận thức), reach a consensus (đạt thành chung nhận thức) ",
+  phrases: "consensus on (về … chung nhận thức), general consensus (phổ biến chung nhận thức), reach a consensus (đạt thành chung nhận thức) ",
+  example: "There is a consensus that we should act now. (mọi người nhất trí cho là ta đám nên hiện tại tựu hành động.) ",
+  exampleEN: "There is a consensus that we should act now.",
+  exampleCN: " mọi người nhất trí cho là ta đám nên hiện tại tựu hành động. ",
+  exampleEn: "There is a consensus that we should act now.",
+  exampleZh: " mọi người nhất trí cho là ta đám nên hiện tại tựu hành động. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " chung nhận thức ", "topic": " thông dụng "},
+  acceptCN: [" chung nhận thức ", " nhất trí ý kiến "]
+},
+{
+  id: 53,
+  word: "lightning",
+  ipa: "/ˈlaɪtnɪŋ/",
+  pos: "adj.",
+  meaning: "chớp, tia chớp",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « nhanh như tia chớp »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « nhanh như tia chớp »",
+  collocations: "lightning skills (nhanh như tia chớp tương quan năng lực), use lightning (sử dụng / vận dụng nên từ) ",
+  phrases: "lightning skills (nhanh như tia chớp tương quan năng lực), use lightning (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of lightning in this sentence. (lý giải trong những lời này lightning Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of lightning in this sentence.",
+  exampleCN: " lý giải trong những lời này lightning Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of lightning in this sentence.",
+  exampleZh: " lý giải trong những lời này lightning Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhanh như tia chớp ", "topic": " thông dụng "},
+  acceptCN: [" nhanh như tia chớp ", " nhanh chóng "]
+},
+{
+  id: 54,
+  word: "gallery",
+  ipa: "/ˈgæləri/",
+  pos: "n.",
+  meaning: "phòng trưng bày tranh tượng; nhà cầu, hành lang",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hành lang triển lãm tranh »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hành lang triển lãm tranh »",
+  collocations: "gallery skills (hành lang triển lãm tranh tương quan năng lực), use gallery (sử dụng / vận dụng nên từ) ",
+  phrases: "gallery skills (hành lang triển lãm tranh tương quan năng lực), use gallery (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of gallery in this sentence. (lý giải trong những lời này gallery Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of gallery in this sentence.",
+  exampleCN: " lý giải trong những lời này gallery Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of gallery in this sentence.",
+  exampleZh: " lý giải trong những lời này gallery Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hành lang triển lãm tranh ", "topic": " thông dụng "},
+  acceptCN: [" hành lang triển lãm tranh ", " hành lang ", " (giáo đường ", " nghị viện chờ) bên cạnh tòa ", " dự thính chỗ ngồi ", " rất nhiều người xem "]
+},
+{
+  id: 55,
+  word: "vessel",
+  ipa: "/ˈvesl/",
+  pos: "n.",
+  meaning: "bình, chậu, lọ, thùng; (hàng hải) thuyền lớn, tàu thuỷ",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « vật chứa »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « vật chứa »",
+  collocations: "vessel skills (vật chứa tương quan năng lực), use vessel (sử dụng / vận dụng nên từ) ",
+  phrases: "vessel skills (vật chứa tương quan năng lực), use vessel (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of vessel in this sentence. (lý giải trong những lời này vessel Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of vessel in this sentence.",
+  exampleCN: " lý giải trong những lời này vessel Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of vessel in this sentence.",
+  exampleZh: " lý giải trong những lời này vessel Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " vật chứa ", "topic": " thông dụng "},
+  acceptCN: [" vật chứa ", " thuyền ", " phi thuyền ", " mạch máu ", " quản thúc ", "… hóa thân "]
+},
+{
+  id: 56,
+  word: "arise",
+  ipa: "/əˈraɪz/",
+  pos: "vi.& vt.",
+  meaning: "xuất hiện, nảy sinh ra, xảy ra; phát sinh do; do bởi",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « sinh ra »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « sinh ra »",
+  collocations: "arise skills (sinh ra tương quan năng lực), use arise (sử dụng / vận dụng nên từ) ",
+  phrases: "arise skills (sinh ra tương quan năng lực), use arise (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of arise in this sentence. (lý giải trong những lời này arise Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of arise in this sentence.",
+  exampleCN: " lý giải trong những lời này arise Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of arise in this sentence.",
+  exampleZh: " lý giải trong những lời này arise Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " sinh ra ", "topic": " thông dụng "},
+  acceptCN: [" sinh ra ", " xuất hiện ", " đứng dậy ", " đứng dậy ", " khởi nguyên từ ", " sinh ra tại "]
+},
+{
+  id: 57,
+  word: "workshop",
+  ipa: "/ˈwɜːkʃɒp/",
+  pos: "n.",
+  meaning: "xưởng",
+  mnemonic: "",
+  root: "",
+  collocations: "workshop of (… xưởng), writing workshop (Viết công tác phường), drama workshop (hí kịch công tác phường) ",
+  phrases: "workshop of (… xưởng), writing workshop (Viết công tác phường), drama workshop (hí kịch công tác phường) ",
+  example: "She attended a writing workshop. (cô ấy tham gia một cái Viết công tác phường.) ",
+  exampleEN: "She attended a writing workshop.",
+  exampleCN: " cô ấy tham gia một cái Viết công tác phường. ",
+  exampleEn: "She attended a writing workshop.",
+  exampleZh: " cô ấy tham gia một cái Viết công tác phường. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " xưởng ", "topic": " thông dụng "},
+  acceptCN: [" xưởng ", " nghiên cứu và thảo luận lớp ", " công tác phường "]
+},
+{
+  id: 58,
+  word: "suspicion",
+  ipa: "/səˈspɪʃn/",
+  pos: "n.",
+  meaning: "sự ngờ, sự nghi ngờ, sự ngờ vực; tí, chút",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hoài nghi »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hoài nghi »",
+  collocations: "suspicion skills (hoài nghi tương quan năng lực), use suspicion (sử dụng / vận dụng nên từ) ",
+  phrases: "suspicion skills (hoài nghi tương quan năng lực), use suspicion (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of suspicion in this sentence. (lý giải trong những lời này suspicion Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of suspicion in this sentence.",
+  exampleCN: " lý giải trong những lời này suspicion Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of suspicion in this sentence.",
+  exampleZh: " lý giải trong những lời này suspicion Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hoài nghi ", "topic": " thông dụng "},
+  acceptCN: [" hoài nghi ", " hiềm nghi ", " lòng nghi ngờ ", "< miệng > một chút "]
+},
+{
+  id: 59,
+  word: "loose",
+  ipa: "/luːs/",
+  pos: "adj./v.",
+  meaning: "lỏng, không chặt, chùng, không căng, không khít, rời ra, lung lay, long ra, lòng thòng; rộng lùng thùng, lùng nhùng (quần áo)",
+  mnemonic: "",
+  root: "",
+  collocations: "loose clothes (quần áo rộng thùng thình), loose the rope (buông ra dây thừng), on the loose (nhởn nhơn ngoài vòng pháp luật) ",
+  phrases: "loose clothes (quần áo rộng thùng thình), loose the rope (buông ra dây thừng), on the loose (nhởn nhơn ngoài vòng pháp luật) ",
+  example: "This shirt is a little loose. (áo sơ mi này có chút rộng thùng thình.) ",
+  exampleEN: "This shirt is a little loose.",
+  exampleCN: " áo sơ mi này có chút rộng thùng thình. ",
+  exampleEn: "This shirt is a little loose.",
+  exampleZh: " áo sơ mi này có chút rộng thùng thình. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " lỏng ", "topic": " thông dụng "},
+  acceptCN: [" lỏng ", " rộng thùng thình ", " buông ra "]
+},
+{
+  id: 60,
+  word: "expertise",
+  ipa: "/ˌekspɜ:ˈti:z/",
+  pos: "n.",
+  meaning: "sự thành thạo, sự tinh thông; tài chuyên môn; ý kiến về mặt chuyên môn",
+  mnemonic: "",
+  root: "",
+  collocations: "",
+  phrases: "",
+  example: "",
+  exampleEN: "",
+  exampleCN: "",
+  exampleEn: "",
+  exampleZh: "",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " chuyên môn tri thức hoặc kỹ năng ", "topic": " thông dụng "},
+  acceptCN: [" chuyên môn tri thức hoặc kỹ năng ", " chuyên gia ý kiến ", " chuyên gia đánh giá ", " xem xét "]
+},
+{
+  id: 61,
+  word: "aisle",
+  ipa: "/aɪl/",
+  pos: "n.",
+  meaning: "cánh, gian bên (trong giáo đường); lối đi giữa các dãy ghế (trong nhà thờ, ở rạp hát, xe lửa, xe buýt)",
+  mnemonic: "",
+  root: "",
+  collocations: "down the aisle (đi đến giáo đường lối đi nhỏ; kết hôn), aisle seat (dựa vào hành lang chỗ ngồi), supermarket aisle (siêu thị thông đạo) ",
+  phrases: "down the aisle (đi đến giáo đường lối đi nhỏ; kết hôn), aisle seat (dựa vào hành lang chỗ ngồi), supermarket aisle (siêu thị thông đạo) ",
+  example: "The bride walked down the aisle with her father. (tân nương kéo tay của phụ thân đi qua giáo đường lối đi nhỏ.) ",
+  exampleEN: "The bride walked down the aisle with her father.",
+  exampleCN: " tân nương kéo tay của phụ thân đi qua giáo đường lối đi nhỏ. ",
+  exampleEn: "The bride walked down the aisle with her father.",
+  exampleZh: " tân nương kéo tay của phụ thân đi qua giáo đường lối đi nhỏ. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " lối đi nhỏ ", "topic": " thông dụng "},
+  acceptCN: [" lối đi nhỏ ", " thông đạo ", " hành lang "]
+},
+{
+  id: 62,
+  word: "spoil",
+  ipa: "/spɔɪl/",
+  pos: "vi.",
+  meaning: "(số nhiều) chiến lợi phẩm; lợi lộc, quyền lợi (sau khi chiến thắng)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « biến chất »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « biến chất »",
+  collocations: "spoil skills (biến chất tương quan năng lực), use spoil (sử dụng / vận dụng nên từ) ",
+  phrases: "spoil skills (biến chất tương quan năng lực), use spoil (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of spoil in this sentence. (lý giải trong những lời này spoil Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of spoil in this sentence.",
+  exampleCN: " lý giải trong những lời này spoil Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of spoil in this sentence.",
+  exampleZh: " lý giải trong những lời này spoil Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " biến chất ", "topic": " thông dụng "},
+  acceptCN: [" biến chất ", " cướp đoạt ", " mục nát "]
+},
+{
+  id: 63,
+  word: "thereby",
+  ipa: "/ˌðeəˈbaɪ/",
+  pos: "adv.",
+  meaning: "bằng cách ấy, theo cách ấy, do đó; có dính dáng tới cái đó, có liên quan tới cái đó",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bởi vậy »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bởi vậy »",
+  collocations: "thereby skills (bởi vậy tương quan năng lực), use thereby (sử dụng / vận dụng nên từ) ",
+  phrases: "thereby skills (bởi vậy tương quan năng lực), use thereby (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of thereby in this sentence. (lý giải trong những lời này thereby Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of thereby in this sentence.",
+  exampleCN: " lý giải trong những lời này thereby Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of thereby in this sentence.",
+  exampleZh: " lý giải trong những lời này thereby Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bởi vậy ", "topic": " thông dụng "},
+  acceptCN: [" bởi vậy ", " do đó ", " ở đằng kia phụ cận "]
+},
+{
+  id: 64,
+  word: "sympathy",
+  ipa: "/ˈsɪmpəθi/",
+  pos: "n.",
+  meaning: "sự thông cảm; sự đồng tình; sự thương cảm; mối thương cảm",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ý hợp tâm đầu »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ý hợp tâm đầu »",
+  collocations: "sympathy skills (ý hợp tâm đầu tương quan năng lực), use sympathy (sử dụng / vận dụng nên từ) ",
+  phrases: "sympathy skills (ý hợp tâm đầu tương quan năng lực), use sympathy (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of sympathy in this sentence. (lý giải trong những lời này sympathy Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of sympathy in this sentence.",
+  exampleCN: " lý giải trong những lời này sympathy Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of sympathy in this sentence.",
+  exampleZh: " lý giải trong những lời này sympathy Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ý hợp tâm đầu ", "topic": " thông dụng "},
+  acceptCN: [" ý hợp tâm đầu ", " đồng cảm ", " đồng tình ", " đồng tình tâm ", " an ủi ", " hòa hài nhất trí "]
+},
+{
+  id: 65,
+  word: "lucky",
+  ipa: "/ˈlʌk.i/",
+  pos: "adj.",
+  meaning: "đỏ, gặp may, may mắn, gặp vận may, hạnh phúc; đem lại may mắn, đem lại kết quả tốt, mang điềm lành",
+  mnemonic: "",
+  root: "",
+  collocations: "lucky charm (may mắn phù), lucky escape (may mắn đào thoát), consider yourself lucky (cho là mình rất may mắn) ",
+  phrases: "lucky charm (may mắn phù), lucky escape (may mắn đào thoát), consider yourself lucky (cho là mình rất may mắn) ",
+  example: "I was lucky to get the last ticket. (tôi rất may mắn mua được cuối cùng một trương phiếu vé.) ",
+  exampleEN: "I was lucky to get the last ticket.",
+  exampleCN: " tôi rất may mắn mua được cuối cùng một trương phiếu vé. ",
+  exampleEn: "I was lucky to get the last ticket.",
+  exampleZh: " tôi rất may mắn mua được cuối cùng một trương phiếu vé. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " may mắn ", "topic": " thông dụng "},
+  acceptCN: [" may mắn ", " may mắn ", " vận may "]
+},
+{
+  id: 66,
+  word: "distress",
+  ipa: "/dɪˈstres/",
+  pos: "n.",
+  meaning: "nỗi đau buồn, nỗi đau khổ, nỗi đau đớn; cảnh khốn cùng, cảnh túng quẫn, cảnh gieo neo",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bi thống »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bi thống »",
+  collocations: "distress skills (bi thống tương quan năng lực), use distress (sử dụng / vận dụng nên từ) ",
+  phrases: "distress skills (bi thống tương quan năng lực), use distress (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of distress in this sentence. (lý giải trong những lời này distress Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of distress in this sentence.",
+  exampleCN: " lý giải trong những lời này distress Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of distress in this sentence.",
+  exampleZh: " lý giải trong những lời này distress Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bi thống ", "topic": " thông dụng "},
+  acceptCN: [" bi thống ", " nguy nan ", " bất hạnh ", " nghèo khó ", "[pháp] giam tài vật "]
+},
+{
+  id: 67,
+  word: "pack",
+  ipa: "/pæk/",
+  pos: "n.",
+  meaning: "bó, gói; ba lô (quần áo); đàn, bầy (chó săn, chó sói...)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « một đám »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « một đám »",
+  collocations: "pack skills (một đám tương quan năng lực), use pack (sử dụng / vận dụng nên từ) ",
+  phrases: "pack skills (một đám tương quan năng lực), use pack (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of pack in this sentence. (lý giải trong những lời này pack Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of pack in this sentence.",
+  exampleCN: " lý giải trong những lời này pack Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of pack in this sentence.",
+  exampleZh: " lý giải trong những lời này pack Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " một đám ", "topic": " thông dụng "},
+  acceptCN: [" một đám ", " bao bọc ", " một bộ ", " một tổ "]
+},
+{
+  id: 68,
+  word: "sake",
+  ipa: "/seɪk/",
+  pos: "n.",
+  meaning: "mục đích, lợi ích",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « duyên cớ »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « duyên cớ »",
+  collocations: "sake skills (duyên cớ tương quan năng lực), use sake (sử dụng / vận dụng nên từ) ",
+  phrases: "sake skills (duyên cớ tương quan năng lực), use sake (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of sake in this sentence. (lý giải trong những lời này sake Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of sake in this sentence.",
+  exampleCN: " lý giải trong những lời này sake Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of sake in this sentence.",
+  exampleZh: " lý giải trong những lời này sake Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " duyên cớ ", "topic": " thông dụng "},
+  acceptCN: [" duyên cớ ", " lý do ", " Nhật Bản rượu gạo ", " mục đích "]
+},
+{
+  id: 69,
+  word: "continuous",
+  ipa: "/kənˈtɪnjuəs/",
+  pos: "adj.",
+  meaning: "liên tục, liên tiếp, không dứt, không ngừng; (ngôn ngữ học) tiến hành",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « liên tục »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « liên tục »",
+  collocations: "continuous skills (liên tục tương quan năng lực), use continuous (sử dụng / vận dụng nên từ) ",
+  phrases: "continuous skills (liên tục tương quan năng lực), use continuous (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of continuous in this sentence. (lý giải trong những lời này continuous Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of continuous in this sentence.",
+  exampleCN: " lý giải trong những lời này continuous Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of continuous in this sentence.",
+  exampleZh: " lý giải trong những lời này continuous Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " liên tục ", "topic": " thông dụng "},
+  acceptCN: [" liên tục ", " dọc theo ", " miên ", " liên miên "]
+},
+{
+  id: 70,
+  word: "hardware",
+  ipa: "/ˈhɑ:dweə(r)/",
+  pos: "n.",
+  meaning: "phần cứng",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ngũ kim khí cụ »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « ngũ kim khí cụ »",
+  collocations: "hardware skills (ngũ kim khí cụ tương quan năng lực), use hardware (sử dụng / vận dụng nên từ) ",
+  phrases: "hardware skills (ngũ kim khí cụ tương quan năng lực), use hardware (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of hardware in this sentence. (lý giải trong những lời này hardware Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of hardware in this sentence.",
+  exampleCN: " lý giải trong những lời này hardware Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of hardware in this sentence.",
+  exampleZh: " lý giải trong những lời này hardware Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " ngũ kim khí cụ ", "topic": " thông dụng "},
+  acceptCN: [" ngũ kim khí cụ ", " Máy tính phần cứng ", " vũ khí trang bị "]
+},
+{
+  id: 71,
+  word: "compel",
+  ipa: "/kəmˈpel/",
+  pos: "vt.",
+  meaning: "buộc phải, bắt phải, bắt buộc, ép, thúc ép",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bắt buộc »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bắt buộc »",
+  collocations: "compel skills (bắt buộc tương quan năng lực), use compel (sử dụng / vận dụng nên từ) ",
+  phrases: "compel skills (bắt buộc tương quan năng lực), use compel (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of compel in this sentence. (lý giải trong những lời này compel Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of compel in this sentence.",
+  exampleCN: " lý giải trong những lời này compel Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of compel in this sentence.",
+  exampleZh: " lý giải trong những lời này compel Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bắt buộc ", "topic": " thông dụng "},
+  acceptCN: [" bắt buộc ", " khiến cho ", " cưỡng chế phát sinh ", " không được không "]
+},
+{
+  id: 72,
+  word: "strip",
+  ipa: "/strɪp/",
+  pos: "vi.",
+  meaning: "cởi quần áo; trờn răng (đinh vít, bu lông...)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « lột sạch »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « lột sạch »",
+  collocations: "strip skills (lột sạch tương quan năng lực), use strip (sử dụng / vận dụng nên từ) ",
+  phrases: "strip skills (lột sạch tương quan năng lực), use strip (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of strip in this sentence. (lý giải trong những lời này strip Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of strip in this sentence.",
+  exampleCN: " lý giải trong những lời này strip Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of strip in this sentence.",
+  exampleZh: " lý giải trong những lời này strip Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " lột sạch ", "topic": " thông dụng "},
+  acceptCN: [" lột sạch ", " biểu diễn thoát y vũ ", " bóc "]
+},
+{
+  id: 73,
+  word: "assistance",
+  ipa: "/əˈsɪs.təns/",
+  pos: "n.",
+  meaning: "n. trợ giúp; viện trợ; hỗ trợ. thường dùng provide assistance (cung cấp trợ giúp), financial assistance (Kinh tế học viện trợ), come to someone's assistance (đến trợ giúp người nào đó). ",
+  mnemonic: "",
+  root: "",
+  collocations: "provide assistance (cung cấp trợ giúp), financial assistance (Kinh tế học viện trợ), come to someone's assistance (đến trợ giúp người nào đó) ",
+  phrases: "provide assistance (cung cấp trợ giúp), financial assistance (Kinh tế học viện trợ), come to someone's assistance (đến trợ giúp người nào đó) ",
+  example: "Thank you for all your assistance during the project. (cảm tạ ngươi đang ở đây hạng mục trong lúc tất cả trợ giúp.) ",
+  exampleEN: "Thank you for all your assistance during the project.",
+  exampleCN: " cảm tạ ngươi đang ở đây hạng mục trong lúc tất cả trợ giúp. ",
+  exampleEn: "Thank you for all your assistance during the project.",
+  exampleZh: " cảm tạ ngươi đang ở đây hạng mục trong lúc tất cả trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " trợ giúp ", "topic": " thông dụng "},
+  acceptCN: [" trợ giúp ", " viện trợ ", " hiệp trợ ", " hỗ trợ "]
+},
+{
+  id: 74,
+  word: "nevertheless",
+  ipa: "/ˌnevəðəˈles/",
+  pos: "adv.",
+  meaning: "tuy nhiên, tuy thế mà",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « nhưng mà »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « nhưng mà »",
+  collocations: "nevertheless skills (nhưng mà tương quan năng lực), use nevertheless (sử dụng / vận dụng nên từ) ",
+  phrases: "nevertheless skills (nhưng mà tương quan năng lực), use nevertheless (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of nevertheless in this sentence. (lý giải trong những lời này nevertheless Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of nevertheless in this sentence.",
+  exampleCN: " lý giải trong những lời này nevertheless Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of nevertheless in this sentence.",
+  exampleZh: " lý giải trong những lời này nevertheless Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " nhưng mà ", "topic": " thông dụng "},
+  acceptCN: [" nhưng mà ", " mặc dù như thế ", " tuy nhiên ", " vẫn đang "]
+},
+{
+  id: 75,
+  word: "limitation",
+  ipa: "/ˌlɪmɪˈteɪʃn/",
+  pos: "n.",
+  meaning: "sự hạn chế, sự hạn định, sự giới hạn; tính hạn chế, tính hạn định, tính có hạn",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hạn chế »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « hạn chế »",
+  collocations: "limitation skills (hạn chế tương quan năng lực), use limitation (sử dụng / vận dụng nên từ) ",
+  phrases: "limitation skills (hạn chế tương quan năng lực), use limitation (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of limitation in this sentence. (lý giải trong những lời này limitation Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of limitation in this sentence.",
+  exampleCN: " lý giải trong những lời này limitation Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of limitation in this sentence.",
+  exampleZh: " lý giải trong những lời này limitation Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " hạn chế ", "topic": " thông dụng "},
+  acceptCN: [" hạn chế ", " cực hạn ", " cực hạn ", " nảy sinh hạn chế tác dụng quy tắc (hoặc sự thật ", " điều kiện) "]
+},
+{
+  id: 76,
+  word: "boundary",
+  ipa: "/ˈbaʊndri/",
+  pos: "n.",
+  meaning: "đường biên giới, ranh giới",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « đường ranh giới »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « đường ranh giới »",
+  collocations: "boundary skills (đường ranh giới tương quan năng lực), use boundary (sử dụng / vận dụng nên từ) ",
+  phrases: "boundary skills (đường ranh giới tương quan năng lực), use boundary (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of boundary in this sentence. (lý giải trong những lời này boundary Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of boundary in this sentence.",
+  exampleCN: " lý giải trong những lời này boundary Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of boundary in this sentence.",
+  exampleZh: " lý giải trong những lời này boundary Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " đường ranh giới ", "topic": " thông dụng "},
+  acceptCN: [" đường ranh giới ", " phạm vi ", " đường biên "]
+},
+{
+  id: 77,
+  word: "petrol",
+  ipa: "/ˈpetrəl/",
+  pos: "n.",
+  meaning: "dầu xăng",
+  mnemonic: "",
+  root: "",
+  collocations: "petrol station (trạm xăng dầu), petrol tank (bình xăng), unleaded petrol (Không chì xăng) ",
+  phrases: "petrol station (trạm xăng dầu), petrol tank (bình xăng), unleaded petrol (Không chì xăng) ",
+  example: "We need to stop for petrol. (chúng tôi cần đỗ xe cố gắng lên.) ",
+  exampleEN: "We need to stop for petrol.",
+  exampleCN: " chúng tôi cần đỗ xe cố gắng lên. ",
+  exampleEn: "We need to stop for petrol.",
+  exampleZh: " chúng tôi cần đỗ xe cố gắng lên. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " xăng ", "topic": " thông dụng "},
+  acceptCN: [" xăng "]
+},
+{
+  id: 78,
+  word: "impulse",
+  ipa: "/ˈɪm.pʌls/",
+  pos: "n.",
+  meaning: "sức đẩy tới; sự bốc đồng; cơn bốc đồng",
+  mnemonic: "",
+  root: "",
+  collocations: "on impulse (nhất thời xúc động), impulse buy (xúc động mua sắm), electrical impulse (điện mạch xung) ",
+  phrases: "on impulse (nhất thời xúc động), impulse buy (xúc động mua sắm), electrical impulse (điện mạch xung) ",
+  example: "She bought the dress on impulse. (cô ấy nhất thời xúc động mua cái kia váy.) ",
+  exampleEN: "She bought the dress on impulse.",
+  exampleCN: " cô ấy nhất thời xúc động mua cái kia váy. ",
+  exampleEn: "She bought the dress on impulse.",
+  exampleZh: " cô ấy nhất thời xúc động mua cái kia váy. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " xúc động ", "topic": " thông dụng "},
+  acceptCN: [" xúc động ", " mạch xung ", " động lực "]
+},
+{
+  id: 79,
+  word: "jewel",
+  ipa: "/ˈdʒu:əl/",
+  pos: "n.",
+  meaning: "ngọc đá quý; (số nhiều) đồ châu báu; đồ nữ trang, đồ kim hoàn",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bảo thạch, bảo thạch đồ trang sức »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « bảo thạch, bảo thạch đồ trang sức »",
+  collocations: "jewel skills (bảo thạch, bảo thạch đồ trang sức tương quan năng lực), use jewel (sử dụng / vận dụng nên từ) ",
+  phrases: "jewel skills (bảo thạch, bảo thạch đồ trang sức tương quan năng lực), use jewel (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of jewel in this sentence. (lý giải trong những lời này jewel Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of jewel in this sentence.",
+  exampleCN: " lý giải trong những lời này jewel Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of jewel in this sentence.",
+  exampleZh: " lý giải trong những lời này jewel Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " bảo thạch ", "topic": " thông dụng "},
+  acceptCN: [" bảo thạch ", " bảo thạch đồ trang sức ", " được quý trọng người vật "]
+},
+{
+  id: 80,
+  word: "laughter",
+  ipa: "/ˈlɑːf.tər/",
+  pos: "n.",
+  meaning: "sự cười, tiếng cười",
+  mnemonic: "",
+  root: "",
+  collocations: "burst into laughter (cất tiếng cười to), roar with laughter (ồn ào cười to), laughter therapy (cười liệu) ",
+  phrases: "burst into laughter (cất tiếng cười to), roar with laughter (ồn ào cười to), laughter therapy (cười liệu) ",
+  example: "The room was filled with laughter. (trong phòng tràn đầy tiếng cười.) ",
+  exampleEN: "The room was filled with laughter.",
+  exampleCN: " trong phòng tràn đầy tiếng cười. ",
+  exampleEn: "The room was filled with laughter.",
+  exampleZh: " trong phòng tràn đầy tiếng cười. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " tiếng cười ", "topic": " thông dụng "},
+  acceptCN: [" tiếng cười ", " cười ", " cười vui "]
+},
+{
+  id: 81,
+  word: "fade",
+  ipa: "/feɪd/",
+  pos: "vi.",
+  meaning: "héo đi, tàn đi (cây); nhạt đi, phai đi (màu)",
+  mnemonic: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « rút đi »",
+  root: " liên tưởng: kết hợp từ hình và Giải nghĩa nhớ kỹ « rút đi »",
+  collocations: "fade skills (rút đi tương quan năng lực), use fade (sử dụng / vận dụng nên từ) ",
+  phrases: "fade skills (rút đi tương quan năng lực), use fade (sử dụng / vận dụng nên từ) ",
+  example: "It is useful to understand the meaning of fade in this sentence. (lý giải trong những lời này fade Nghĩa rất có trợ giúp.) ",
+  exampleEN: "It is useful to understand the meaning of fade in this sentence.",
+  exampleCN: " lý giải trong những lời này fade Nghĩa rất có trợ giúp. ",
+  exampleEn: "It is useful to understand the meaning of fade in this sentence.",
+  exampleZh: " lý giải trong những lời này fade Nghĩa rất có trợ giúp. ",
+  derivatives: "",
+  distinguish: "",
+  synonyms: [],
+  antonyms: [],
+  examTag: {"source": " đại học Tiếng Anh Đại học B1 ", "frequency": 4, "commonUsage": " rút đi ", "topic": " thông dụng "},
+  acceptCN: [" rút đi ", " mất đi sáng bóng ", " dần dần biến mất ", " héo tàn ", " già yếu "]
+}
+  ];
+  var TOTAL_QUESTIONS = 81;
+  var testResultsData = [];
+(function(){
+  const HISTORY_KEY = 'cet4_vocab_history_list20';
+
+  function esc(s){
+    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  }
+  function block(label, text){
+    if(!text) return '';
+    return '<div class="block"><b>'+label+'</b>'+esc(text)+'</div>';
+  }
+
+  let synth = window.speechSynthesis, voice = null;
+  function loadVoices(){
+    if(!synth) return;
+    const pick = () => {
+      const vs = synth.getVoices();
+      voice = vs.find(v => v.lang.startsWith('en-GB')) || vs.find(v => v.lang.startsWith('en')) || vs(0);
+    };
+    pick();
+    if(synth.onvoiceschanged!== undefined) synth.onvoiceschanged = pick;
+  }
+  function speakWord(word, cb){
+    if(!synth){ if(cb) cb(); return; }
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    if(voice) u.voice = voice;
+    u.lang = 'en-GB'; u.rate = 0.8;
+    if(cb){ u.onend = cb; u.onerror = () => cb(); }
+    synth.speak(u);
+  }
+  loadVoices();
+
+  const learnGrid = document.getElementById('learnGrid');
+  wordData.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'word-card';
+    card.innerHTML =
+      '<div class="word-head"><div><span class="word-headword">'+esc(w.word)+'</span> <span class="word-ipa">'+esc(w.ipa)+'</span></div>'+
+      '<button class="btn-play btn-play-card" data-word="'+esc(w.word)+'">▶</button></div>'+
+      '<div><span class="word-pos">'+esc(w.pos)+'</span><span>'+esc(w.meaning)+'</span></div>'+
+      '<div class="word-blocks">'+
+        block(' nhớ ', w.mnemonic)+
+        block(' khảo thi ', w.collocations || w.phrases)+
+        block(' lệ ', w.example)+
+        block(' phái ', w.derivatives)+
+        block(' phân biệt ', w.distinguish)+
+      '</div><div class="hint"> nhấn vào thu hồi </div>';
+    card.addEventListener('click', e => {
+      if(e.target.closest('.btn-play-card')) return;
+      const open = card.classList.contains('expanded');
+      document.querySelectorAll('.word-card.expanded').forEach(c => c.classList.remove('expanded'));
+      if(!open) card.classList.add('expanded');
+    });
+    card.querySelector('.btn-play-card').addEventListener('click', function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.btn-play.playing').forEach(b => b.classList.remove('playing'));
+      this.classList.add('playing');
+      speakWord(w.word, () => this.classList.remove('playing'));
+    });
+    learnGrid.appendChild(card);
+  });
+
+  const navTabs = document.getElementById('navTabs');
+  const learnSection = document.getElementById('learnSection');
+  const testSection = document.getElementById('testSection');
+  let currentMode = 'learn';
+  navTabs.addEventListener('click', e => {
+    const tab = e.target.closest('.nav-tab'); if(!tab) return;
+    const mode = tab.dataset.mode; if(mode === currentMode) return;
+    currentMode = mode;
+    navTabs.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t === tab));
+    learnSection.classList.toggle('active', mode === 'learn');
+    testSection.classList.toggle('active', mode === 'test');
+    if(mode === 'test'){ showTestSetup(); renderHistory(); }
+    if(synth) synth.cancel();
+  });
+
+  const testSetup = document.getElementById('testSetup');
+  const testActiveArea = document.getElementById('testActiveArea');
+  const testResults = document.getElementById('testResults');
+  const btnStartTest = document.getElementById('btnStartTest');
+  const btnPlayTest = document.getElementById('btnPlayTest');
+  const btnSubmit = document.getElementById('btnSubmit');
+  const btnNext = document.getElementById('btnNext');
+  const btnRetry = document.getElementById('btnRetry');
+  const btnBackToSetup = document.getElementById('btnBackToSetup');
+  const btnClearHistory = document.getElementById('btnClearHistory');
+  const inputSpelling = document.getElementById('inputSpelling');
+  const inputMeaning = document.getElementById('inputMeaning');
+  const testFeedback = document.getElementById('testFeedback');
+  const testProgressLabel = document.getElementById('testProgressLabel');
+  const testScoreLabel = document.getElementById('testScoreLabel');
+  const progressBarFill = document.getElementById('progressBarFill');
+  const resultsScore = document.getElementById('resultsScore');
+  const resultsDetail = document.getElementById('resultsDetail');
+  const resultsTableBody = document.getElementById('resultsTableBody');
+  const historyContent = document.getElementById('historyContent');
+
+  function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e){ return []; } }
+  function saveHistory(r){ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
+  function renderHistory(){
+    const h = getHistory();
+    if(!h.length){ historyContent.innerHTML = '<div style="color:#888;margin-top:8px"> tạm thời chưa có ghi chép </div>'; return; }
+    historyContent.innerHTML = '<ul style="margin-top:8px;padding-left:18px">'+h.map(r => {
+      const t = new Date(r.timestamp);
+      return '<li>'+r.score+'/'+r.total+' ('+r.percent+'%) · '+t.toLocaleString()+'</li>';
+    }).join('')+'</ul>';
+  }
+  btnClearHistory.addEventListener('click', () => { if(confirm(' thanh trừ Lịch sử? ')){ localStorage.removeItem(HISTORY_KEY); renderHistory(); } });
+
+  let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
+  function shuffle(a){ const x=(...a); for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; } return x; }
+  function resetTestState(){
+    testSetup.style.display=''; testActiveArea.classList.remove('visible'); testResults.classList.remove('visible');
+    testFeedback.className='test-feedback'; testFeedback.textContent=''; btnNext.classList.remove('visible');
+    inputSpelling.value=''; inputMeaning.value=''; btnSubmit.disabled=false; btnSubmit.style.display='';
+  }
+  function showTestSetup(){ resetTestState(); }
+  btnStartTest.addEventListener('click', () => {
+    testWords = shuffle(wordData).slice(0, TOTAL_QUESTIONS);
+    testCurrentIndex=0; testScore=0; testResultsData=[]; testSubmitted=false;
+    testSetup.style.display='none'; testActiveArea.classList.add('visible'); testResults.classList.remove('visible');
+    updateProgress(); setTimeout(playCurrent, 300);
+  });
+  function updateProgress(){
+    testProgressLabel.textContent = ' thứ '+(testCurrentIndex+1)+' / '+TOTAL_QUESTIONS+' câu ';
+    testScoreLabel.textContent = ' Điểm số: '+testScore;
+    progressBarFill.style.width = Math.round((testCurrentIndex/TOTAL_QUESTIONS)*100)+'%';
+  }
+  function playCurrent(){ if(testCurrentIndex>=testWords.length) return; btnPlayTest.classList.add('playing'); speakWord(testWords[testCurrentIndex].word, ()=>btnPlayTest.classList.remove('playing')); }
+  btnPlayTest.addEventListener('click', () => { if(!testSubmitted) playCurrent(); });
+
+  function cleanCN(s){ return String(s||'').replace(/[,,,.;;::!!?? () ()[]\[\]""''\s]/g,''); }
+  function submitAnswer(){
+    if(testSubmitted || testCurrentIndex>=testWords.length) return;
+    testSubmitted = true; btnSubmit.disabled = true;
+    const w = testWords(testCurrentIndex);
+    const userSpelling = inputSpelling.value.trim();
+    const userMeaningClean = cleanCN(inputMeaning.value);
+    const spellingOk = userSpelling.toLowerCase() === w.word.toLowerCase();
+    let meaningOk = false;
+    if(userMeaningClean){
+      for(const a of (w.acceptCN||[])){
+        const ac = cleanCN(a);
+        if(ac & (userMeaningClean.includes(ac) || ac.includes(userMeaningClean))){ meaningOk = true; break; }
+      }
+      if(!meaningOk){
+        const m = cleanCN(w.meaning);
+        if(m & (userMeaningClean.includes(m) || m.includes(userMeaningClean))) meaningOk = true;
+      }
+    }
+    const both = spellingOk & meaningOk;
+    const earned = both? 1: ((spellingOk || meaningOk)? 0.5: 0);
+    testScore += earned;
+    testFeedback.className = 'test-feedback visible '+(both?'correct-all':(spellingOk||meaningOk?'partial':'wrong-all'));
+    testFeedback.innerHTML = (both?' hoàn toàn đúng ':(spellingOk||meaningOk?' bộ phận Đúng ':' nhìn lại một chút '))+
+      '<div style="margin-top:6px;font-size:.9rem"> Đáp án: '+esc(w.word)+' · '+esc(w.meaning)+'</div>';
+    testResultsData.push({
+      word: w.word, ipa: w.ipa || '', meaning: w.meaning,
+      userSpelling: userSpelling, userMeaning: inputMeaning.value.trim(),
+      spellingCorrect: spellingOk, meaningCorrect: meaningOk, earned: earned
+    });
+    btnNext.classList.add('visible');
+  }
+  btnSubmit.addEventListener('click', submitAnswer);
+  inputMeaning.addEventListener('keydown', e => { if(e.key==='Enter') submitAnswer(); });
+  inputSpelling.addEventListener('keydown', e => { if(e.key==='Enter') inputMeaning.focus(); });
+
+  function nextQ(){
+    testCurrentIndex++; testSubmitted=false; btnSubmit.disabled=false; btnNext.classList.remove('visible');
+    testFeedback.className='test-feedback'; inputSpelling.value=''; inputMeaning.value='';
+    if(testCurrentIndex >= TOTAL_QUESTIONS){ finish(); return; }
+    updateProgress(); setTimeout(playCurrent, 250); inputSpelling.focus();
+  }
+  btnNext.addEventListener('click', nextQ);
+
+  function finish(){
+    testActiveArea.classList.remove('visible'); testResults.classList.add('visible');
+    const percent = Math.round((testScore/TOTAL_QUESTIONS)*100);
+    resultsScore.textContent = testScore + ' / ' + TOTAL_QUESTIONS;
+    resultsDetail.textContent = ' Tỷ lệ đúng '+percent+'%';
+    resultsTableBody.innerHTML = testResultsData.map((r,i) => {
+      const ok = r.earned === 1;
+      const cls = ok? 'row-ok': 'row-wrong';
+      return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+esc(r.word)+'</strong></td><td style="color:'+(r.spellingCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userSpelling||'—')+'</td><td style="color:'+(r.meaningCorrect?'#3a7d5a':'#c0392b')+'">'+esc(r.userMeaning||'—')+'</td><td>'+(ok?'✓':(r.earned? '△':'✗'))+'</td></tr>';
+    }).join('');
+    saveHistory({ score:testScore, total:TOTAL_QUESTIONS, percent, timestamp:Date.now() });
+  }
+  btnRetry.addEventListener('click', () => btnStartTest.click());
+  btnBackToSetup.addEventListener('click', showTestSetup);
+
+  // URL mode from parent
+  try {
+    const m = new URLSearchParams(location.search).get('vocabMode') ||
+      (parent!== window? new URLSearchParams(parent.location.search).get('vocabMode'): null);
+    if(m === 'test'){
+      const tab = navTabs.querySelector('[data-mode="test"]');
+      if(tab) tab.click();
+    }
+  } catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -8,26 +8,26 @@
   function msg(t, ok) {
     var el = document.getElementById("plat-msg");
     if (!el) return;
-    el.style.color = ok ? "#2e7d32" : "#c62828";
+    el.style.color = ok? "#2e7d32": "#c62828";
     el.textContent = t || "";
   }
 
   function badge(org) {
-    if (org.status === "suspended" || !org.usable) {
-      return '<span class="plat-badge plat-badge--bad">已停用</span>';
+    if (org.status === "suspended" ||!org.usable) {
+      return '<span class="plat-badge plat-badge--bad"> Đã tạm ngưng </span>';
     }
     if (org.expiringSoon) {
-      return '<span class="plat-badge plat-badge--warn">即将到期</span>';
+      return '<span class="plat-badge plat-badge--warn"> sắp đến kỳ </span>';
     }
     if (org.status === "trial") {
-      return '<span class="plat-badge plat-badge--warn">试用</span>';
+      return '<span class="plat-badge plat-badge--warn"> dùng thử </span>';
     }
-    return '<span class="plat-badge plat-badge--ok">正常</span>';
+    return '<span class="plat-badge plat-badge--ok"> bình thường </span>';
   }
 
   function hostBase() {
     var h = location.hostname;
-    if (h === "localhost" || h === "127.0.0.1") return h + (location.port ? ":" + location.port : "");
+    if (h === "localhost" || h === "127.0.0.1") return h + (location.port? ":" + location.port: "");
     return h.replace(/^[^.]+\./, "") === "youyisida.com" || h.indexOf("youyisida.com") >= 0
       ? "youyisida.com"
       : h;
@@ -46,9 +46,9 @@
     var soon = (orgs || []).filter(function (o) { return o.expiringSoon; });
     if (soon.length) {
       warn.hidden = false;
-      warn.textContent = "即将到期（14 天内）：" + soon.map(function (o) {
-        return o.name + "（剩 " + o.expiresInDays + " 天）";
-      }).join("、");
+      warn.textContent = " sắp đến kỳ (14 ngày bên trong): " + soon.map(function (o) {
+        return o.name + " (thừa " + o.expiresInDays + " ngày) ";
+      }).join(", ");
     } else {
       warn.hidden = true;
     }
@@ -58,32 +58,32 @@
         '<article class="plat-card" data-id="' + o.id + '">' +
           '<div class="plat-card__top">' +
             '<div><span class="plat-card__name">' + escapeHtml(o.name) + "</span> " + badge(o) +
-            '<div class="plat-card__meta">' + escapeHtml(o.slug) + ".… · 管理员 " +
-            escapeHtml(o.adminPhone || "未设") +
-            (o.expiresAt ? " · 到期 " + String(o.expiresAt).slice(0, 10) : " · 不限期") +
+            '<div class="plat-card__meta">' + escapeHtml(o.slug) + ".… · Quản trị viên " +
+            escapeHtml(o.adminPhone || " không thiết ") +
+            (o.expiresAt? " · đến kỳ " + String(o.expiresAt).slice(0, 10): " · không ngày quy định ") +
             "</div></div>" +
-            (o.logoUrl ? '<img src="' + A.logoSrc(o.logoUrl) + '" alt="" width="40" height="40" style="border-radius:6px;object-fit:cover">' : "") +
+            (o.logoUrl? '<img src="' + A.logoSrc(o.logoUrl) + '" alt="" width="40" height="40" style="border-radius:6px;object-fit:cover">': "") +
           "</div>" +
           '<div class="plat-card__stats">' +
-            "<span>学生 " + o.studentCount + "</span>" +
-            "<span>老师 " + o.teacherCount + "</span>" +
-            "<span>7 日活跃 " + o.active7d + "</span>" +
-            "<span>30 日活跃 " + o.active30d + "</span>" +
+            "<span> Học viên " + o.studentCount + "</span>" +
+            "<span> Giáo viên " + o.teacherCount + "</span>" +
+            "<span>7 ngày sinh động " + o.active7d + "</span>" +
+            "<span>30 ngày sinh động " + o.active30d + "</span>" +
           "</div>" +
           '<div class="plat-card__actions">' +
-            '<a class="btn btn--ghost btn--sm" href="' + orgUrl(o.slug) + '" target="_blank" rel="noopener">打开站点</a>' +
-            '<button type="button" class="btn btn--ghost btn--sm" data-act="edit">编辑</button>' +
+            '<a class="btn btn--ghost btn--sm" href="' + orgUrl(o.slug) + '" target="_blank" rel="noopener"> mở ra trạm điểm[web] </a>' +
+            '<button type="button" class="btn btn--ghost btn--sm" data-act="edit"> biên tập </button>' +
             (o.status === "suspended"
-              ? '<button type="button" class="btn btn--primary btn--sm" data-act="activate">恢复开通</button>'
-              : '<button type="button" class="btn btn--ghost btn--sm" data-act="suspend">关停</button>') +
-            (o.slug !== "yysd"
-              ? '<button type="button" class="btn btn--ghost btn--sm" data-act="keys">注册密钥</button>'
+              ? '<button type="button" class="btn btn--primary btn--sm" data-act="activate"> khôi phục kích hoạt </button>'
+              : '<button type="button" class="btn btn--ghost btn--sm" data-act="suspend"> màn ngừng </button>') +
+            (o.slug!== "yysd"
+              ? '<button type="button" class="btn btn--ghost btn--sm" data-act="keys"> Mã khóa đăng ký </button>'
               : "") +
-            '<button type="button" class="btn btn--primary btn--sm" data-act="impersonate">客服进入</button>' +
+            '<button type="button" class="btn btn--primary btn--sm" data-act="impersonate"> phục vụ khách hàng Vào học </button>' +
           "</div>" +
         "</article>"
       );
-    }).join("") || "<p>暂无机构</p>";
+    }).join("") || "<p> tạm thời chưa có cơ cấu </p>";
   }
 
   function escapeHtml(s) {
@@ -103,7 +103,7 @@
       ul.innerHTML = (d.logs || []).slice(0, 30).map(function (l) {
         return "<li>" + escapeHtml(l.createdAt) + " · " + escapeHtml(l.actorPhone) +
           " · " + escapeHtml(l.action) + " · " + escapeHtml(l.detail) + "</li>";
-      }).join("") || "<li>暂无</li>";
+      }).join("") || "<li> tạm thời chưa có </li>";
     });
   }
 
@@ -112,19 +112,19 @@
       if (!file) return resolve("");
       var r = new FileReader();
       r.onload = function () { resolve(String(r.result || "")); };
-      r.onerror = function () { reject(new Error("读取图片失败")); };
+      r.onerror = function () { reject(new Error(" đọc đến hình ảnh thất bại ")); };
       r.readAsDataURL(file);
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    // 主控台仅允许总部站 youyisida.com（slug=yysd）
-    if (A.isHqSite && !A.isHqSite()) {
-      msg("平台主控台仅可在优益思达总部网站使用。");
+    // bàn điều khiển chỉ cho phép tổng bộ đứng youyisida.com (slug=yysd)
+    if (A.isHqSite &&!A.isHqSite()) {
+      msg(" Bảng điều khiển hệ thống chỉ có thể tại YYSD tổng bộ trang web sử dụng. ");
       return;
     }
     if (!A.getToken()) {
-      location.replace((window.YYSD_TEACHER ? "teacher-login.html" : "login.html") +
+      location.replace((window.YYSD_TEACHER? "teacher-login.html": "login.html") +
         "?next=" + encodeURIComponent("platform.html"));
       return;
     }
@@ -140,7 +140,7 @@
       return A.api("/api/auth/me").then(function (d) {
         var u = d.user || {};
         if (!u.isPlatformAdmin) {
-          msg("当前账号无法进入平台主控台。");
+          msg(" trước mắt tài khoản không cách nào Vào học Bảng điều khiển hệ thống. ");
           return null;
         }
         A.setUser({
@@ -148,7 +148,7 @@
           role: u.role || "",
           displayName: u.displayName || u.name || "",
           avatarUrl: u.avatarUrl || "",
-          isAdmin: !!u.isAdmin,
+          isAdmin:!!u.isAdmin,
           isPlatformAdmin: true
         });
         return load();
@@ -167,11 +167,11 @@
         status: "trial"
       };
       A.api("/api/platform/orgs", { method: "POST", body: body }).then(function () {
-        msg("已创建", true);
+        msg(" đã sáng tạo ", true);
         document.getElementById("c-name").value = "";
         document.getElementById("c-slug").value = "";
         return load();
-      }).catch(function (e) { msg(e.message || "创建失败"); });
+      }).catch(function (e) { msg(e.message || " sáng tạo thất bại "); });
     });
 
     var dlg = document.getElementById("plat-edit");
@@ -189,9 +189,9 @@
       ["student", "teacher", "org_admin"].forEach(function (role) {
         var row = (keys || []).filter(function (k) { return k.role === role; })[0] || {};
         document.getElementById("k-" + role + "-key").value = row.keyValue || "";
-        document.getElementById("k-" + role + "-max").value = row.maxUses != null ? row.maxUses : 0;
+        document.getElementById("k-" + role + "-max").value = row.maxUses!= null? row.maxUses: 0;
         document.getElementById("k-" + role + "-used").textContent =
-          "已用 " + (row.usedCount || 0) + " / " + (row.maxUses || 0);
+          " Đã dùng " + (row.usedCount || 0) + " / " + (row.maxUses || 0);
       });
     }
 
@@ -212,7 +212,7 @@
       var act = btn.getAttribute("data-k-act");
       var role = btn.getAttribute("data-role");
       if (act === "gen" && role) {
-        var prefix = role === "student" ? "STU" : role === "teacher" ? "TCH" : "ADM";
+        var prefix = role === "student"? "STU": role === "teacher"? "TCH": "ADM";
         document.getElementById("k-" + role + "-key").value = randKey(prefix);
         document.getElementById("k-" + role + "-reset").checked = true;
         return;
@@ -235,7 +235,7 @@
           role: role,
           keyValue: document.getElementById("k-" + role + "-key").value.trim(),
           maxUses: Math.max(0, Math.floor(Number(document.getElementById("k-" + role + "-max").value) || 0)),
-          resetUsed: !!document.getElementById("k-" + role + "-reset").checked
+          resetUsed:!!document.getElementById("k-" + role + "-reset").checked
         };
       });
       A.api("/api/platform/orgs/" + keysOrgId + "/reg-keys", {
@@ -246,9 +246,9 @@
         ["student", "teacher", "org_admin"].forEach(function (role) {
           document.getElementById("k-" + role + "-reset").checked = false;
         });
-        msg("注册密钥已保存", true);
+        msg(" Mã khóa đăng ký đã Lưu ", true);
         keysDlg.close();
-      }).catch(function (e) { msg(e.message || "保存失败"); });
+      }).catch(function (e) { msg(e.message || " Lưu thất bại "); });
     });
 
     document.getElementById("plat-list").addEventListener("click", function (ev) {
@@ -260,7 +260,7 @@
       var act = btn.getAttribute("data-act");
 
       if (act === "suspend") {
-        if (!confirm("确认关停该机构？对方将无法登录。")) return;
+        if (!confirm(" Xác nhận màn ngừng nên cơ cấu? đối phương đem không cách nào Đăng nhập. ")) return;
         A.api("/api/platform/orgs/" + id + "/suspend", { method: "POST", body: {} })
           .then(load).catch(function (e) { msg(e.message); });
         return;
@@ -279,7 +279,7 @@
           .then(function (d) {
             if (d.entryUrl) {
               window.open(d.entryUrl, "_blank", "noopener");
-              msg("已打开客服会话（2 小时内有效）", true);
+              msg(" đã mở ra phục vụ khách hàng hội thoại (2 giờ bên trong có hiệu quả) ", true);
             }
           }).catch(function (e) { msg(e.message); });
         return;
@@ -293,7 +293,7 @@
           document.getElementById("e-slug").value = editing.slug || "";
           document.getElementById("e-admin").value = editing.adminPhone || "";
           document.getElementById("e-expires").value = editing.expiresAt
-            ? String(editing.expiresAt).slice(0, 10) : "";
+            ? String(editing.expiresAt).slice(0, 10): "";
           document.getElementById("e-status").value = editing.status || "active";
           document.getElementById("e-note").value = editing.contractNote || "";
           document.getElementById("e-logo").value = "";
@@ -323,50 +323,50 @@
         return A.api("/api/platform/orgs/" + id, { method: "PATCH", body: body });
       }).then(function () {
         dlg.close();
-        msg("已保存", true);
+        msg(" đã Lưu ", true);
         return load();
-      }).catch(function (e) { msg(e.message || "保存失败"); });
+      }).catch(function (e) { msg(e.message || " Lưu thất bại "); });
     });
 
     function loadMaint() {
       return A.api("/api/maintenance").then(function (d) {
         var btn = document.getElementById("maint-toggle");
         if (!btn) return;
-        btn.setAttribute("data-on", d.on ? "1" : "0");
-        btn.textContent = d.on ? "关闭维护（恢复大家访问）" : "打开维护（只留自己能进）";
+        btn.setAttribute("data-on", d.on? "1": "0");
+        btn.textContent = d.on? " Đóng bảo vệ (khôi phục mọi người phỏng vấn) ": " mở ra bảo vệ (chỉ chừa mình có thể tiến) ";
       });
     }
     var maintBtn = document.getElementById("maint-toggle");
     if (maintBtn) {
       maintBtn.addEventListener("click", function () {
-        var on = maintBtn.getAttribute("data-on") !== "1";
+        var on = maintBtn.getAttribute("data-on")!== "1";
         A.api("/api/maintenance", { method: "POST", body: { on: on } })
           .then(function () {
-            msg(on ? "维护已打开，其他人暂时进不来" : "维护已关闭，网站恢复访问", true);
+            msg(on? " bảo vệ đã mở ra, những người khác tạm thời vào không được ": " bảo vệ đã đóng bế, trang web khôi phục phỏng vấn ", true);
             return loadMaint();
           })
-          .catch(function (e) { msg(e.message || "切换失败"); });
+          .catch(function (e) { msg(e.message || " hoán đổi thất bại "); });
       });
     }
 
     function esc(s) {
-      return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      return String(s == null? "": s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
     function loadTiku() {
       var box = document.getElementById("tiku-teachers");
       var ips = document.getElementById("tiku-ips");
-      if (!box || !ips) return Promise.resolve();
+      if (!box ||!ips) return Promise.resolve();
       return Promise.all([
         A.api("/api/platform/tiku/teachers"),
         A.api("/api/platform/tiku/ips")
       ]).then(function (xs) {
         box.innerHTML = (xs[0].teachers || []).map(function (t) {
           return '<label style="display:block;margin:.35rem 0"><input type="checkbox" data-tiku="' + t.id + '"' +
-            (t.canTiku ? " checked" : "") + "> " + esc(t.name || "") + " " + esc(t.phone) + "</label>";
-        }).join("") || "<p>还没有老师账号。</p>";
+            (t.canTiku? " checked": "") + "> " + esc(t.name || "") + " " + esc(t.phone) + "</label>";
+        }).join("") || "<p> còn không có Giáo viên tài khoản. </p>";
         ips.innerHTML = (xs[1].ips || []).map(function (x) {
-          return "<li>" + esc(x.ip) + (x.note ? " · " + esc(x.note) : "") +
-            ' <button type="button" class="btn btn--ghost btn--sm" data-del-ip="' + esc(x.ip) + '">删</button></li>';
+          return "<li>" + esc(x.ip) + (x.note? " · " + esc(x.note): "") +
+            ' <button type="button" class="btn btn--ghost btn--sm" data-del-ip="' + esc(x.ip) + '"> xóa </button></li>';
         }).join("");
       });
     }
@@ -377,8 +377,8 @@
         if (!el) return;
         A.api("/api/platform/tiku/teachers/" + el.getAttribute("data-tiku"), {
           method: "POST",
-          body: { canTiku: !!el.checked }
-        }).then(function () { msg("已更新题库权限", true); }).catch(function (e) { msg(e.message); });
+          body: { canTiku:!!el.checked }
+        }).then(function () { msg(" đã đổi mới mới Ngân hàng đề quyền hạn ", true); }).catch(function (e) { msg(e.message); });
       });
     }
     var tikuAdd = document.getElementById("tiku-ip-add");
@@ -386,11 +386,11 @@
       tikuAdd.onclick = function () {
         var ip = (document.getElementById("tiku-ip") || {}).value || "";
         var note = (document.getElementById("tiku-ip-note") || {}).value || "";
-        msg("正在添加…", true);
+        msg(" đang tăng thêm …", true);
         A.api("/api/platform/tiku/ips", {
           method: "POST",
           body: { ip: ip.trim(), note: note.trim() }
-        }).then(function () { msg("已添加 IP", true); return loadTiku(); }).catch(function (e) { msg(e.message); });
+        }).then(function () { msg(" đã tăng thêm IP", true); return loadTiku(); }).catch(function (e) { msg(e.message); });
       };
     }
     var tikuIps = document.getElementById("tiku-ips");
@@ -404,7 +404,7 @@
     }
 
     gateThenLoad().then(loadMaint).then(loadTiku).catch(function (e) {
-      msg((e && e.message) || "无法进入平台主控台");
+      msg((e && e.message) || " không cách nào Vào học Bảng điều khiển hệ thống ");
     });
   });
 })();

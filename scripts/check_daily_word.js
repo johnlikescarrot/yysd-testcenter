@@ -17,7 +17,7 @@ assert.strictEqual(DW.speakPass("radio", "television"), false);
 
 var pool = [];
 for (var i = 0; i < 40; i++) {
-  pool.push({ word: "w" + i, meaning: "义" + i });
+  pool.push({ word: "w" + i, meaning: " nghĩa " + i });
 }
 var first = DW.pickDaily(pool, "gaozhong", 10, {});
 assert.strictEqual(first.length, 10);
@@ -25,7 +25,7 @@ assert.strictEqual(first.length, 10);
 var alwaysHead = true;
 for (var t = 0; t < 8; t++) {
   var sample = DW.pickDaily(pool, "gaozhong", 10, {});
-  if (sample[0].word !== "w0") { alwaysHead = false; break; }
+  if (sample[0].word!== "w0") { alwaysHead = false; break; }
 }
 assert.strictEqual(alwaysHead, false);
 
@@ -43,8 +43,8 @@ assert.strictEqual(DW.isThemeBook("theme:nce"), true);
 assert.strictEqual(DW.isThemeBook("gaozhong"), false);
 assert.strictEqual(DW.THEME_PREFIX + "nce", "theme:nce");
 
-assert.strictEqual(DW.meaningCheck("公司", { meaning: "公司；牢固的", acceptCN: [] }).ok, true);
-assert.strictEqual(DW.meaningCheck("牢固", { meaning: "公司；牢固的", acceptCN: ["坚固"] }).ok, true);
-assert.strictEqual(DW.meaningCheck("坚固", { meaning: "公司；牢固的", acceptCN: ["坚固"] }).ok, true);
-assert.strictEqual(DW.meaningCheck("香蕉", { meaning: "公司；牢固的", acceptCN: [] }).ok, false);
+assert.strictEqual(DW.meaningCheck(" công ty ", { meaning: " công ty; kiên cố ", acceptCN: [] }).ok, true);
+assert.strictEqual(DW.meaningCheck(" kiên cố ", { meaning: " công ty; kiên cố ", acceptCN: [" chắc chắn "] }).ok, true);
+assert.strictEqual(DW.meaningCheck(" chắc chắn ", { meaning: " công ty; kiên cố ", acceptCN: [" chắc chắn "] }).ok, true);
+assert.strictEqual(DW.meaningCheck(" chuối tiêu ", { meaning: " công ty; kiên cố ", acceptCN: [] }).ok, false);
 console.log("check_daily_word: ok");

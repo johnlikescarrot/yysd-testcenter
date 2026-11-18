@@ -1,5 +1,5 @@
 /* =========================================================================
-   daily-word/core.js — 每日单词：存储、抽词、拼写、LIST 解析、API 助手
+   daily-word/core.js — mỗi ngày Từ vựng: tồn trữ, rút từ, Chính tả, LIST Giải thích đáp án, API trợ thủ
    ========================================================================= */
 (function (global) {
   "use strict";
@@ -30,7 +30,7 @@
   };
 
   function esc(s) {
-    return String(s == null ? "" : s)
+    return String(s == null? "": s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
@@ -74,7 +74,7 @@
   // ponytail: date[] only — month calendar later if needed
   function getCheckins() {
     var arr = readJson(KEYS.checkins, []);
-    return Array.isArray(arr) ? arr : [];
+    return Array.isArray(arr)? arr: [];
   }
 
   function markCheckin(date) {
@@ -115,7 +115,7 @@
     var A = global.YYSD_AUTH;
     var base = (A && A.API_BASE) || "";
     if (!base) return url;
-    return String(base).replace(/\/$/, "") + (url.charAt(0) === "/" ? url : "/" + url);
+    return String(base).replace(/\/$/, "") + (url.charAt(0) === "/"? url: "/" + url);
   }
 
   function clampCount(n) {
@@ -142,13 +142,13 @@
       return arr.map(function (w) {
         var word = String(w.word || "").trim();
         var meaning = String(w.meaning || "").trim();
-        if (!word || !meaning) return null;
+        if (!word ||!meaning) return null;
         return {
-          id: String(w.id != null ? w.id : word),
+          id: String(w.id!= null? w.id: word),
           word: word,
           meaning: meaning,
           ipa: String(w.ipa || "").trim(),
-          acceptCN: Array.isArray(w.acceptCN) ? w.acceptCN : [],
+          acceptCN: Array.isArray(w.acceptCN)? w.acceptCN: [],
           example: String(w.example || "").trim(),
           phrases: String(w.phrases || "").trim(),
           pos: String(w.pos || "").trim()
@@ -185,7 +185,7 @@
   function spellCheck(input, target) {
     var a = normalizeWord(input);
     var b = normalizeWord(target);
-    if (!a || !b) return { ok: false, marks: [] };
+    if (!a ||!b) return { ok: false, marks: [] };
     if (a === b || a === usVariant(b) || usVariant(a) === b) return { ok: true };
     var marks = [];
     var max = Math.max(a.length, b.length);
@@ -205,8 +205,8 @@
     for (i = 0; i < list.length; i++) {
       if (list[i]) accepts.push(String(list[i]).replace(/\s+/g, ""));
     }
-    String((wordObj && wordObj.meaning) || "").split(/[；;，,、\/|]/).forEach(function (p) {
-      p = String(p || "").replace(/\s+/g, "").replace(/（[^）]*）|\([^)]*\)/g, "");
+    String((wordObj && wordObj.meaning) || "").split(/[;;,,, \/|]/).forEach(function (p) {
+      p = String(p || "").replace(/\s+/g, "").replace(/ ([^)]*) |\([^)]*\)/g, "");
       if (p) accepts.push(p);
     });
     for (i = 0; i < accepts.length; i++) {
@@ -214,7 +214,7 @@
       if (!a) continue;
       if (userCN === a || userCN.indexOf(a) >= 0 || a.indexOf(userCN) >= 0) return { ok: true };
     }
-    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[；;，,、\s]/g, "");
+    var meaningClean = String((wordObj && wordObj.meaning) || "").replace(/[;;,,, \s]/g, "");
     if (!meaningClean) return { ok: false };
     var head = meaningClean.substring(0, Math.min(2, meaningClean.length));
     if (userCN.length >= 2 && (userCN.indexOf(head) >= 0 || meaningClean.indexOf(userCN) >= 0)) {
@@ -232,11 +232,11 @@
     var i, j;
     for (i = 0; i <= m; i++) {
       dp[i] = [i];
-      for (j = 1; j <= n; j++) dp[i][j] = i === 0 ? j : 0;
+      for (j = 1; j <= n; j++) dp[i][j] = i === 0? j: 0;
     }
     for (i = 1; i <= m; i++) {
       for (j = 1; j <= n; j++) {
-        var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+        var cost = a.charAt(i - 1) === b.charAt(j - 1)? 0: 1;
         dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
       }
     }
@@ -247,10 +247,10 @@
   function speakPass(heard, target) {
     var h = normalizeWord(heard);
     var t = normalizeWord(target);
-    if (!h || !t) return false;
+    if (!h ||!t) return false;
     if (h === t || h.indexOf(t) >= 0 || t.indexOf(h) >= 0) return true;
     if (h === usVariant(t) || usVariant(h) === t) return true;
-    var maxDist = t.length <= 4 ? 1 : 2;
+    var maxDist = t.length <= 4? 1: 2;
     return lev(h, t) <= maxDist;
   }
 
@@ -320,7 +320,7 @@
     Object.keys(patch || {}).forEach(function (p) { cur[p] = patch[p]; });
     cur.lastReviewTime = Date.now();
     if (cur.speakingWrong || cur.spellingWrong || cur.meaningWrong) cur.status = "learning";
-    else if (cur.correctCount >= 1 && !cur.speakingWrong && !cur.spellingWrong && !cur.meaningWrong) {
+    else if (cur.correctCount >= 1 &&!cur.speakingWrong &&!cur.spellingWrong &&!cur.meaningWrong) {
       cur.status = "learning";
     }
     recs[key] = cur;
@@ -348,10 +348,10 @@
     }).then(function (r) {
       return r.text().then(function (text) {
         var d = null;
-        try { d = text ? JSON.parse(text) : {}; } catch (e) {
-          throw new Error("服务器返回异常（" + r.status + "）");
+        try { d = text? JSON.parse(text): {}; } catch (e) {
+          throw new Error(" Máy chủ phản hồi bất thường (" + r.status + ") ");
         }
-        if (!r.ok) throw new Error((d && d.error) || "请求失败");
+        if (!r.ok) throw new Error((d && d.error) || "Yêu cầu thất bại");
         return d;
       });
     });
@@ -380,12 +380,12 @@
   }
 
   function themeIdOf(bookKey) {
-    return isThemeBook(bookKey) ? String(bookKey).slice(THEME_PREFIX.length) : "";
+    return isThemeBook(bookKey)? String(bookKey).slice(THEME_PREFIX.length): "";
   }
 
   function fetchThemesCatalog() {
     return fetch(libraryUrl("study/vocab-themes/themes.json")).then(function (r) {
-      if (!r.ok) throw new Error("分类词库目录加载失败");
+      if (!r.ok) throw new Error(" Từ vựng theo chủ đề mục lục Tải dữ liệu thất bại ");
       return r.json();
     });
   }
@@ -399,11 +399,11 @@
       if (!word || seen[key]) return;
       seen[key] = true;
       out.push({
-        id: String(w.id != null ? w.id : word),
+        id: String(w.id!= null? w.id: word),
         word: word,
         meaning: String(w.meaning || "").trim(),
         ipa: String(w.ipa || "").trim(),
-        acceptCN: Array.isArray(w.acceptCN) ? w.acceptCN : [],
+        acceptCN: Array.isArray(w.acceptCN)? w.acceptCN: [],
         example: String(w.example || "").trim(),
         phrases: String(w.phrases || "").trim(),
         pos: String(w.pos || "").trim(),
@@ -416,14 +416,14 @@
 
   function fetchThemePool(bookKey) {
     var themeId = themeIdOf(bookKey);
-    if (!themeId) return Promise.reject(new Error("分类词库无效"));
+    if (!themeId) return Promise.reject(new Error(" Từ vựng theo chủ đề không có hiệu quả "));
     return fetchThemesCatalog().then(function (cat) {
       var t = null;
       var i;
       for (i = 0; i < (cat.themes || []).length; i++) {
         if (cat.themes[i].id === themeId) { t = cat.themes[i]; break; }
       }
-      if (!t || !t.dataFile) throw new Error("分类词库不存在");
+      if (!t ||!t.dataFile) throw new Error(" Từ vựng theo chủ đề không tồn tại ");
       var catLabel = "";
       for (i = 0; i < (cat.categories || []).length; i++) {
         if (cat.categories[i].id === t.category) {
@@ -432,17 +432,17 @@
         }
       }
       return fetch(libraryUrl(t.dataFile)).then(function (r) {
-        if (!r.ok) throw new Error("分类词库加载失败");
+        if (!r.ok) throw new Error(" Từ vựng theo chủ đề Tải dữ liệu thất bại ");
         return r.json();
       }).then(function (detail) {
         var pool = mapThemeWords((detail && detail.words) || [], bookKey, themeId)
           .filter(function (w) { return w.word; });
-        if (!pool.length) throw new Error("分类词库暂无可用单词");
+        if (!pool.length) throw new Error(" Từ vựng theo chủ đề tạm thời chưa có có thể dùng Từ vựng ");
         return {
           book: {
             key: bookKey,
             label: t.title || themeId,
-            tag: catLabel || "分类词库"
+            tag: catLabel || " Từ vựng theo chủ đề "
           },
           pool: pool,
           listCount: 1
@@ -457,7 +457,7 @@
     // 0 / null / undefined → whole book (needed for true random)
     return Y.load().then(function (items) {
       var stats = Y.vocabBookStats(items, bookKey);
-      if (!stats || !stats.lists.length) throw new Error("词书为空或不存在");
+      if (!stats ||!stats.lists.length) throw new Error(" từ sách là chỗ trống hoặc không tồn tại ");
       var lists = stats.lists;
       if (maxLists > 0) lists = lists.slice(0, maxLists);
       // ponytail: parallel fetch; ceiling = whole book (~40 LISTs)
@@ -488,7 +488,7 @@
     });
   }
 
-  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function pad2(n) { return (n < 10? "0": "") + n; }
 
   function todayStr() {
     var d = new Date();
@@ -542,5 +542,5 @@
   };
 
   global.YYSD_DAILY_WORD = API;
-  if (typeof module !== "undefined" && module.exports) module.exports = API;
-})(typeof window !== "undefined" ? window : global);
+  if (typeof module!== "undefined" && module.exports) module.exports = API;
+})(typeof window!== "undefined"? window: global);

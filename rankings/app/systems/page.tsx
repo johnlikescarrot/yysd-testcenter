@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SYSTEM_ORDER, SYSTEMS, SYSTEM_TRACK, type SystemKey } from "@/lib/systems";
 import { latestYear } from "@/lib/queries";
 
-export const metadata: Metadata = { title: "排名体系" };
+export const metadata: Metadata = { title: " bài danh hệ thống " };
 export const dynamic = "force-dynamic";
 
 export default async function SystemsPage() {
@@ -13,8 +13,8 @@ export default async function SystemsPage() {
     <div className="space-y-6">
       <div>
         <p className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Tracks</p>
-        <h1 className="mt-1 text-2xl font-bold tracking-tight">四条行情轨</h1>
-        <p className="mt-2 text-sm text-[var(--muted)]">方法论不同，结论不同。先认轨，再读数。</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight"> bốn đầu giá thị trường quỹ </h1>
+        <p className="mt-2 text-sm text-[var(--muted)]"> phương pháp luận bất đồng, kết luận bất đồng. trước nhận thức quỹ, lại số ghi. </p>
       </div>
       <div className="grid gap-3">
         {SYSTEM_ORDER.map((key, i) => {
@@ -31,7 +31,7 @@ export default async function SystemsPage() {
                   </div>
                 </div>
                 <Link href={`/${key}/world/${y}`} className="btn-ink">
-                  {y} 全表
+                  {y} toàn bộ bề ngoài
                 </Link>
               </div>
               <div className="grid gap-4 p-4 sm:grid-cols-2">
@@ -40,7 +40,7 @@ export default async function SystemsPage() {
               </div>
               <div className="border-t border-[var(--line)] px-4 py-2">
                 <Link href={`/systems/${key}`} className="mono text-[11px] text-[var(--muted)] hover:text-[var(--ink)]">
-                  体系详情与历年 →
+                   hệ thống tình hình cụ thể và tỉ mỉ và bao năm qua →
                 </Link>
               </div>
             </div>

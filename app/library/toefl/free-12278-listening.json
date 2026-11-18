@@ -1,46 +1,46 @@
 {
- "id": "free-12278",
- "title": "Choose a Response #36",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #36",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12278,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-36"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #36",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/f1f95573283240dead68b4fb1f15e7ca.mp3",
-   "questions": [
+  "id": "free-12278",
+  "title": "Choose a Response #36",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #36",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12278,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-36"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Projects are challenging.",
-      "B": "I work with a great staff.",
-      "C": "It might be a little too late.",
-      "D": "Let's do it tomorrow instead."
-     },
-     "answer": "B",
-     "transcript": "How did you manage to get the project done on time? ​​",
-     "stemZh": "你是怎么设法按时完成这个项目的？",
-     "analysis": "How did you manage to get the project done on time? 题干分析 题干以 “How did you manage to…” 开头，询问对方成功按时完成项目的方式或原因。这是一个典型的方式/原因类细节问题，强调“在有难度的情况下如何达成目标”（“manage to” 隐含克服困难）。正确回答应说明促成成功的具体因素，如团队协作、时间管理、资源支持等。 选项分析 选项B：这是正确答案。“I work with a great staff.” 表明成功的关键在于优秀的团队支持，直接解释了“如何做到按时完成”——依靠得力同事协作。该回答聚焦于完成项目的实际助力，逻辑清晰，符合职场语境中对“how”类问题的常见回应方式。 选项A：“Projects are challenging.” 仅泛泛评论项目本身具有挑战性，但未说明“如何应对挑战并按时完成”，属于描述问题而非提供解决方案或成功因素，无法回答“How did you manage…”的核心诉求。 选项C：“It might be a little too late.” 暗示任务已延误，与题干预设前提“you got the project done on time”（你已经按时完成了）直接矛盾，属于事实冲突型错误选项。 选项D：“Let’s do it tomorrow instead.” 提出将任务推迟到明天，不仅否认了“已完成”的事实，还建议放弃当前成果，完全违背题干情境，属于时间错乱+逻辑颠倒的干扰项。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #36",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/f1f95573283240dead68b4fb1f15e7ca.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Projects are challenging.",
+            "B": "I work with a great staff.",
+            "C": "It might be a little too late.",
+            "D": "Let's do it tomorrow instead."
+          },
+          "answer": "B",
+          "transcript": "How did you manage to get the project done on time? ​​",
+          "stemZh": "ngươi là như thế nào nghĩ cách đúng hạn hoàn thành hạng mục này?",
+          "analysis": "How did you manage to get the project done on time? Câu hỏi phân tích Câu hỏi dùng “How did you manage to…” mở đầu, hỏi thăm đối phương thành công đúng hạn hoàn thành hạng mục phương thức hoặc nguyên nhân. đây là một cái điển hình phương thức / nguyên nhân loại vấn đề chi tiết, cường điệu “ tại khó khăn dưới tình huống làm thế nào đạt thành mục tiêu ” (“manage to” ẩn hàm vượt qua khó khăn). Đúng trả lời ứng với nói rõ thúc đẩy thành công cụ thể nhân tố, ví dụ đoàn đội hợp tác, thời gian Quản trị, tài nguyên hỗ trợ {các loại:đợi}. Phương án phân tích Phương án B: đây là Đáp án đúng. “I work with a great staff.” cho thấy thành công mấu chốt ở chỗ ưu tú đoàn đội hỗ trợ, trực tiếp giải thích “ làm thế nào làm được đúng hạn hoàn thành ”—— dựa vào đắc lực đồng sự hợp tác. nên trở về đáp tập trung tại hoàn thành hạng mục thực tế trợ lực, ăn khớp rõ ràng, phù hợp Công sở ngữ cảnh Vừa đối với “how” loại vấn đề thông thường đáp lại phương thức. Phương án A: “Projects are challenging.” chỉ hời hợt bình luận hạng mục bản thân có tính khiêu chiến, nhưng không rõ ràng “ làm thế nào ứng đối khiêu chiến cũng đúng hạn hoàn thành ”, thuộc về miêu tả vấn đề mà không phải là cung cấp phương án giải quyết hoặc thành công nhân tố, không cách nào trả lời “How did you manage…” hạch tâm tố cầu. Phương án C: “It might be a little too late.” ám chỉ nhiệm vụ đã đến trễ, và Câu hỏi dự thiết điều kiện tiên quyết “you got the project done on time” (bạn đã đúng hạn hoàn thành) trực tiếp mâu thuẫn, thuộc về sự thật xung đột hình Sai Phương án. Phương án D: “Let’s do it tomorrow instead.” đưa ra đem nhiệm vụ trì hoãn đến ngày mai, không chỉ có phủ nhận “ Đã hoàn thành ” sự thật, còn đề nghị buông tha cho trước mắt thành quả, hoàn toàn vi phạm Câu hỏi tình cảnh, thuộc về thời gian thác loạn + ăn khớp điên đảo Phương án nhiễu. ​​"
+        }
+      ]
+    }
+  ]
 }

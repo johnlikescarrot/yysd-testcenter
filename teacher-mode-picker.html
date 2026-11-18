@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>选择使用模式 · 教师端</title>
+  <title>lựa chọn sử dụng hình thức · Cổng giáo viên</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +15,15 @@
 
   <header class="minimal-topbar">
     <div class="minimal-shell minimal-topbar__inner">
-      <a href="teacher-mode-picker.html" class="minimal-brand" aria-label="优益思达国际课程中心">
+      <a href="teacher-mode-picker.html" class="minimal-brand" aria-label="Trung tâm Luyện thi Quốc tế YYSD">
         <img src="assets/img/logo.svg?v=20260702-logo" alt="" class="minimal-brand__logo">
         <span class="minimal-brand__text">
-          <b>优益思达国际课程中心</b>
+          <b>Trung tâm Luyện thi Quốc tế YYSD</b>
           <span>Teacher Portal</span>
         </span>
       </a>
-      <nav class="minimal-nav" aria-label="教师导航">
-        <button type="button" class="btn btn--ghost btn--sm" id="logout-btn">退出登录</button>
+      <nav class="minimal-nav" aria-label="Điều hướng giáo viên">
+        <button type="button" class="btn btn--ghost btn--sm" id="logout-btn">Đăng xuất</button>
       </nav>
     </div>
   </header>
@@ -31,17 +31,17 @@
   <main class="minimal-shell minimal-main auth-main">
     <section class="auth-card reveal teacher-mode-picker">
       <div class="minimal-eyebrow">TEACHER MODE</div>
-      <h1 class="auth-card__title">请选择使用模式</h1>
-      <p class="auth-card__desc">登录后请先选择要进入的区域。之后如需切换，请使用页面顶部的模式切换按钮。</p>
+      <h1 class="auth-card__title">mời lựa chọn sử dụng hình thức</h1>
+      <p class="auth-card__desc">Đăng nhập sau mời trước lựa chọn muốn đi vào khu vực. về sau ví dụ cần hoán đổi, xin sử dụng trang web đỉnh hình thức hoán đổi cái nút. </p>
 
       <div class="teacher-mode-picker__choices">
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-admin">
-          <strong>教室管理区</strong>
-          <span>查看学情、布置任务、词汇诊断、单词闯关管理与学生成绩。</span>
+          <strong>phòng học quản lý khu</strong>
+          <span> Xem học chuyện, bố trí nhiệm vụ, Chẩn đoán từ vựng, Vượt ải từ vựng Quản trị và Học viên Điểm số. </span>
         </button>
         <button type="button" class="teacher-mode-picker__btn pressable" id="pick-site">
-          <strong>网站功能区</strong>
-          <span>以学生视角体验单词区、练习区、真题区等功能与闯关进度。</span>
+          <strong>Khu tính năng học tập</strong>
+          <span> dùng Học viên thị giác Dùng thử Khu từ vựng, Khu luyện tập, Khu đề thi đợi công năng và vượt ải Tiến độ. </span>
         </button>
       </div>
 
@@ -51,7 +51,7 @@
 
   <footer class="minimal-footer minimal-footer--rich">
     <div class="minimal-shell minimal-footer__inner">
-      <p class="minimal-footer__copy">© <span id="year"></span> 优益思达国际课程中心 · 教师端</p>
+      <p class="minimal-footer__copy">© <span id="year"></span> Trung tâm Luyện thi Quốc tế YYSD · Cổng giáo viên </p>
     </div>
   </footer>
 
@@ -65,14 +65,14 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    if (!T || !T.getToken()) {
+    if (!T ||!T.getToken()) {
       location.replace("teacher-login.html?next=" + encodeURIComponent("teacher-mode-picker.html"));
       return;
     }
 
     function showMsg(text) {
       msgEl.textContent = text || "";
-      msgEl.className = "auth-msg" + (text ? " auth-msg--err" : "");
+      msgEl.className = "auth-msg" + (text? " auth-msg--err": "");
     }
 
     document.getElementById("logout-btn").addEventListener("click", function () {
@@ -89,7 +89,7 @@
       var btn = this;
       btn.disabled = true;
       M.enterSiteMode().catch(function (err) {
-        showMsg((err && err.message) || "无法进入网站功能区");
+        showMsg((err & err.message) || " không cách nào Vào học Khu tính năng học tập ");
         btn.disabled = false;
       });
     });

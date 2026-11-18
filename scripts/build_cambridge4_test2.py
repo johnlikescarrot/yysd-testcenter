@@ -19,12 +19,12 @@ from cambridge_scoring import patch_scoring
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑4T2.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 4T2.docx")
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS4 Test2 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test2 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test2 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test2 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS4 Test2 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-4-test-2.html"
@@ -49,7 +49,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -67,13 +67,13 @@ def inject_state_vars(html: str) -> str:
 def patch_listening_table_image(html: str) -> str:
     if "tfig=" in html:
         return html
-    needle = "  else if(g.kind==='table'){\n    const cols = g.cols || g.columns || [];"
+    needle = " else if(g.kind==='table'){\n const cols = g.cols || g.columns || [];"
     insert = (
-        "  else if(g.kind==='table'){\n"
-        "    const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " else if(g.kind==='table'){\n"
+        " const tfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.tableTitle||'table'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const cols = g.cols || g.columns || [];"
+        " const cols = g.cols || g.columns || [];"
     )
     old_body = "body=`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
     new_body = "body=tfig+`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
@@ -86,13 +86,13 @@ def patch_listening_table_image(html: str) -> str:
 def patch_listening_match_image(html: str) -> str:
     if "mfig=" in html:
         return html
-    needle = "  else if(g.kind==='match'){\n    const box="
+    needle = " else if(g.kind==='match'){\n const box="
     insert = (
-        "  else if(g.kind==='match'){\n"
-        "    const mfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+        " else if(g.kind==='match'){\n"
+        " const mfig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.boxTitle||'chart'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const box="
+        " const box="
     )
     if needle in html:
         html = html.replace(needle, insert, 1)
@@ -118,13 +118,13 @@ def patch_reading_passage_image(html: str) -> str:
 def patch_reading_table_image(html: str) -> str:
     if "tfig=" in html:
         return html
-    needle = "  else if(g.kind==='table'){\n    const cols = g.cols || g.columns || [];"
+    needle = " else if(g.kind==='table'){\n const cols = g.cols || g.columns || [];"
     insert = (
-        "  else if(g.kind==='table'){\n"
-        "    const tfig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
+        " else if(g.kind==='table'){\n"
+        " const tfig=(g.image?`<div style=\"margin:14px auto 20px;max-width:900px;text-align:center;\">"
         "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.tableTitle||'table'}\" "
         "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-        "    const cols = g.cols || g.columns || [];"
+        " const cols = g.cols || g.columns || [];"
     )
     old_body = "body=`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
     new_body = "body=tfig+`${(g.tableTitle||g.noteTitle)?`<div class=\"note-title\">${g.tableTitle||g.noteTitle}</div>`:''}<table class=\"note-table\">${head}${rows}</table>`;"
@@ -136,12 +136,12 @@ def patch_reading_table_image(html: str) -> str:
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 听力", "剑桥雅思4 Test 2 听力"),
-        ("剑桥雅思4 · Test 1（听力）", "剑桥雅思4 · Test 2（听力）"),
-        ("剑桥雅思4 Test 1 听力：", "剑桥雅思4 Test 2 听力："),
-        ("Test 1 听力（官方原题 + 官方答案）", "Test 2 听力（官方原题 + 官方答案）"),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        ("Cambridge IELTS 4 Test 1 Nghe ", "Cambridge IELTS 4 Test 2 Nghe "),
+        ("Cambridge IELTS 4 · Test 1 (Nghe) ", "Cambridge IELTS 4 · Test 2 (Nghe) "),
+        ("Cambridge IELTS 4 Test 1 Nghe: ", "Cambridge IELTS 4 Test 2 Nghe: "),
+        ("Test 1 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("ielts4_test1", "ielts4_test2"),
@@ -153,20 +153,20 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 阅读", "剑桥雅思4 Test 2 阅读"),
-        ("剑桥雅思4 · Test 1（阅读）", "剑桥雅思4 · Test 2（阅读）"),
-        ("剑桥雅思4 Test 1 学术类阅读", "剑桥雅思4 Test 2 学术类阅读"),
-        ("Test 1 阅读（官方原题 + 官方答案）", "Test 2 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 4 Test 1 Đọc ", "Cambridge IELTS 4 Test 2 Đọc "),
+        ("Cambridge IELTS 4 · Test 1 (Đọc) ", "Cambridge IELTS 4 · Test 2 (Đọc) "),
+        ("Cambridge IELTS 4 Test 1 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 4 Test 2 Đọc Học thuật (Academic Reading) "),
+        ("Test 1 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         (
             "Adults and children — loss o… / What Do Whales Feel? / Visual Symbols and the Blind",
             "Lost for Words / Alternative Medicine in Australia / Play Is a Serious Business",
         ),
         (
-            "Rainforests、What Do Whales Feel?、Visual Symbols and the Blind",
-            "Lost for Words、Alternative Medicine in Australia、Play Is a Serious Business",
+            "Rainforests, What Do Whales Feel?, Visual Symbols and the Blind",
+            "Lost for Words, Alternative Medicine in Australia, Play Is a Serious Business",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
     ]
@@ -177,22 +177,22 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思4 Test 1 写作", "剑桥雅思4 Test 2 写作"),
-        ("剑桥雅思4 · Test 1（写作）", "剑桥雅思4 · Test 2（写作）"),
-        ("剑桥雅思4 Test 1 学术类写作", "剑桥雅思4 Test 2 学术类写作"),
+        ("Cambridge IELTS 4 Test 1 Viết ", "Cambridge IELTS 4 Test 2 Viết "),
+        ("Cambridge IELTS 4 · Test 1 (Viết) ", "Cambridge IELTS 4 · Test 2 (Viết) "),
+        ("Cambridge IELTS 4 Test 1 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 4 Test 2 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 poverty table + Task 2 media for communicating information essay",
             "Task 1 electricity graph & pie chart + Task 2 happiness essay",
         ),
         (
-            "Task 1 表格作文 + Task 2 议论文",
-            "Task 1 电力图表 + Task 2 幸福话题议论文",
+            "Task 1 bản khai viết văn + Task 2 Bài nghị luận học thuật ",
+            "Task 1 điện lực biểu đồ + Task 2 hạnh phúc chủ đề Bài nghị luận học thuật ",
         ),
-        ("剑桥雅思 4 · Test 1", "剑桥雅思 4 · Test 2"),
-        ("剑桥雅思4 · Test 1", "剑桥雅思4 · Test 2"),
-        ("Test 1 写作（官方真题）", "Test 2 写作（官方真题）"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Cambridge IELTS 4 · Test 1", "Cambridge IELTS 4 · Test 2"),
+        ("Test 1 Viết (Đề thi chính thức) ", "Test 2 Viết (Đề thi chính thức) "),
         ("cambridge-4-test-1-writing-draft", "cambridge-4-test-2-writing-draft"),
-        ("【剑桥雅思4 · Test 1 写作】", "【剑桥雅思4 · Test 2 写作】"),
+        ("[Cambridge IELTS 4 · Test 1 Viết]", "[Cambridge IELTS 4 · Test 2 Viết]"),
         ("Test 1", "Test 2"),
         ("test-1", "test-2"),
         ("poverty-table", "electricity-charts"),

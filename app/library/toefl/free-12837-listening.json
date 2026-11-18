@@ -1,46 +1,46 @@
 {
- "id": "free-12837",
- "title": "Choose a Response #192",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #192",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12837,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-192"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #192",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/3abf99b1ff304c399d42234f25c27ff1.mp3",
-   "questions": [
+  "id": "free-12837",
+  "title": "Choose a Response #192",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #192",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12837,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-192"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "The menu features two fish entr&eacute;es.",
-      "B": "It depends on the season.",
-      "C": "The cost of broccoli has increased.",
-      "D": "Yes, the natural lighting is lovely."
-     },
-     "answer": "B",
-     "transcript": "Does the restaurant use organic vegetables?",
-     "stemZh": "这家餐厅用有机蔬菜吗？",
-     "analysis": "Does the restaurant use organic vegetables? 题干分析 题干是一般疑问句，意为 “这家餐厅使用有机蔬菜吗？”，考点是对食材相关问题作出合理回应。 选项分析 选项 A：回答内容为 “菜单上有两道鱼主菜”，与是否有机蔬菜无关，答非所问。 选项 B：此选项为正确答案，说明 “视季节而定”，直接回应问题，逻辑通顺。 选项 C：回答内容为 “西兰花价格上涨了”，与有机食材无关。 选项 D：回答内容为 “是的，自然采光很好”，话题完全无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #192",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/3abf99b1ff304c399d42234f25c27ff1.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "The menu features two fish entr&eacute;es.",
+            "B": "It depends on the season.",
+            "C": "The cost of broccoli has increased.",
+            "D": "Yes, the natural lighting is lovely."
+          },
+          "answer": "B",
+          "transcript": "Does the restaurant use organic vegetables?",
+          "stemZh": "nhà này nhà hàng dùng hữu cơ rau quả không?",
+          "analysis": "Does the restaurant use organic vegetables? Câu hỏi phân tích Câu hỏi là bình thường câu nghi vấn, ý là “ nhà này nhà hàng sử dụng hữu cơ rau quả không? ”, địa điểm thi là đúng nguyên liệu nấu ăn vấn đề tương quan làm ra hợp lý đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ trong thực đơn có hai đạo cá món chính ”, và có hay không hữu cơ rau quả không quan hệ, đáp phi sở vấn. Phương án B: này Phương án là Đáp án đúng, nói rõ “ xem mùa mà định ra ”, trực tiếp đáp lại vấn đề, ăn khớp lưu loát. Phương án C: trả lời nội dung là “ cây bông cải xanh về giá cả tăng ”, và hữu cơ nguyên liệu nấu ăn không quan hệ. Phương án D: trả lời nội dung là “ đúng vậy, tự nhiên lấy ánh sáng rất tốt ”, chủ đề hoàn toàn không liên quan."
+        }
+      ]
+    }
+  ]
 }

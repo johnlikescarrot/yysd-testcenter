@@ -7,10 +7,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 
 def dump(rows, out_path, expect):
-    if [r[0] for r in rows] != expect:
+    if [r[0] for r in rows]!= expect:
         got = [r[0] for r in rows]
         for i, (a, b) in enumerate(zip(got, expect), 1):
-            if a != b:
+            if a!= b:
                 raise SystemExit("%s #%s: got %r want %r" % (out_path.name, i, a, b))
         raise SystemExit("%s length got %s want %s" % (out_path.name, len(got), len(expect)))
     out = []
@@ -18,8 +18,8 @@ def dump(rows, out_path, expect):
     for word, ipa, pos, meaning, accept, phrases, en, zh, root, syn, ant, usage, topic in rows:
         n_zh = len(re.findall(r"[\u4e00-\u9fff]", meaning))
         if n_zh < 40:
-            extra = "高中须抓住「%s」等义项，并记牢搭配与词性转换。" % "、".join(accept[:3])
-            meaning = meaning.rstrip("。") + "。" + extra
+            extra = " THPT tu bắt lấy «%s» {các loại:đợi} mục nghĩa, cũng nhớ lao phối hợp và từ tính chuyển đổi. " % ", ".join(accept[:3])
+            meaning = meaning.rstrip(". ") + ". " + extra
             n_zh = len(re.findall(r"[\u4e00-\u9fff]", meaning))
             if n_zh < 40:
                 thin.append("%s %s (%s)" % (out_path.name, word, n_zh))
@@ -40,7 +40,7 @@ def dump(rows, out_path, expect):
             "synonyms": syn,
             "antonyms": ant,
             "examTag": {
-                "source": "高中英语",
+                "source": " THPT Tiếng Anh ",
                 "frequency": 4,
                 "commonUsage": accept[0],
                 "topic": topic,

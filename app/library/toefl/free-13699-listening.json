@@ -1,57 +1,57 @@
 {
- "id": "free-13699",
- "title": "Conversation #114",
- "set": "free",
- "skill": "listening",
- "titleZh": "对话 #114",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13699,
-  "labelId": 1323,
-  "code": "TOEFL--L-conversation-114"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "conversation",
-   "module": 1,
-   "title": "Conversation #114",
-   "instruction": "Listen to a conversation.",
-   "audio": "library/toefl/free/audio/2beb1dd21fdf41689ac89e654b375659.mp3",
-   "transcript": "Man: Are you going to the community cleanup event on Saturday?\nWoman: Yes. I think it's a great way to help out and meet new people.\nMan: I agree. It starts at 9 a.m. Do you know where we're supposed to meet?\nWoman: Yes, we're meeting at the park entrance. Don't forget to bring gloves and trash bags.\nMan: Thanks. I'll see you there.",
-   "questions": [
+  "id": "free-13699",
+  "title": "Conversation #114",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "đối thoại #114",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13699,
+    "labelId": 1323,
+    "code": "TOEFL--L-conversation-114"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What event are the speakers discussing?",
-     "options": {
-      "A": "A charity run",
-      "B": "A community cleanup",
-      "C": "A farmers market",
-      "D": "A festival"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：说话者在讨论什么活动？ 定位原文：Man: Are you going to the community cleanup event on Saturday? 选项分析： A. A charity run 慈善跑。对话中未提及跑步或慈善跑，所以A选项错误。 B. A community cleanup 社区清洁活动。男士明确提到“community cleanup event”，所以B选项正确。 C. A farmers market 农贸市场。对话中未提及农贸市场，所以C选项错误。 D. A festival 节日活动。对话中未提及节日，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "Where are the participants meeting?",
-     "options": {
-      "A": "At a city hall",
-      "B": "At a park entrance",
-      "C": "At a community center",
-      "D": "At a school"
-     },
-     "answer": "B",
-     "analysis": "答案：B 题目问的是：参与者在什么地方集合？ 定位原文：Woman: Yes, we're meeting at the park entrance. 选项分析： A. At a city hall 在市政厅。对话中未提及市政厅，所以A选项错误。 B. At a park entrance 在公园入口。女士明确说在公园入口集合，所以B选项正确。 C. At a community center 在社区中心。对话中未提及社区中心，所以C选项错误。 D. At a school 在学校。对话中未提及学校，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "conversation",
+      "module": 1,
+      "title": "Conversation #114",
+      "instruction": "Listen to a conversation.",
+      "audio": "library/toefl/free/audio/2beb1dd21fdf41689ac89e654b375659.mp3",
+      "transcript": "Man: Are you going to the community cleanup event on Saturday?\nWoman: Yes. I think it's a great way to help out and meet new people.\nMan: I agree. It starts at 9 a.m. Do you know where we're supposed to meet?\nWoman: Yes, we're meeting at the park entrance. Don't forget to bring gloves and trash bags.\nMan: Thanks. I'll see you there.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What event are the speakers discussing?",
+          "options": {
+            "A": "A charity run",
+            "B": "A community cleanup",
+            "C": "A farmers market",
+            "D": "A festival"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: kẻ nói chuyện đang thảo luận gì hoạt động? Dẫn chứng Bài gốc: Man: Are you going to the community cleanup event on Saturday? Phương án phân tích: A. A charity run từ thiện chạy. trong lúc nói chuyện với nhau Không được đề cập (Not Given) chạy bộ hoặc từ thiện chạy, nên A Phương án Sai. B. A community cleanup cộng đồng sạch sẽ hoạt động. nam sĩ rõ ràng nhắc tới “community cleanup event”, nên B Phương án Đúng. C. A farmers market chợ nông dân. trong lúc nói chuyện với nhau Không được đề cập (Not Given) chợ nông dân, nên C Phương án Sai. D. A festival Lễ hội hoạt động. trong lúc nói chuyện với nhau Không được đề cập (Not Given) Lễ hội, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "Where are the participants meeting?",
+          "options": {
+            "A": "At a city hall",
+            "B": "At a park entrance",
+            "C": "At a community center",
+            "D": "At a school"
+          },
+          "answer": "B",
+          "analysis": "Đáp án: B đề mục hỏi là: người tham dự ở địa phương nào tập hợp? Dẫn chứng Bài gốc: Woman: Yes, we're meeting at the park entrance. Phương án phân tích: A. At a city hall ở thành phố chính sảnh. trong lúc nói chuyện với nhau Không được đề cập (Not Given) toà thị chính, nên A Phương án Sai. B. At a park entrance tại công viên cửa vào. phu nhân rõ ràng nói tại công viên cửa vào tập hợp, nên B Phương án Đúng. C. At a community center tại cộng đồng trung tâm. trong lúc nói chuyện với nhau Không được đề cập (Not Given) cộng đồng trung tâm, nên C Phương án Sai. D. At a school ở trường học. trong lúc nói chuyện với nhau Không được đề cập (Not Given) trường học, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

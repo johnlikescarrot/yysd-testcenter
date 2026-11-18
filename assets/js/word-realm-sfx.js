@@ -1,5 +1,5 @@
 /* =========================================================================
-   word-realm-sfx.js — 零素材 SFX（Web Audio 合成），可静音
+   word-realm-sfx.js — linh tư liệu sống SFX (Web Audio hợp thành), có thể yên lặng
    localStorage: yysd:word-realm-mute = "1"
    ========================================================================= */
 window.YYSD_WORD_REALM_SFX = (function () {
@@ -12,7 +12,7 @@ window.YYSD_WORD_REALM_SFX = (function () {
   }
 
   function setMuted(on) {
-    try { localStorage.setItem(MUTE_KEY, on ? "1" : "0"); } catch (e) {}
+    try { localStorage.setItem(MUTE_KEY, on? "1": "0"); } catch (e) {}
   }
 
   function ac() {
@@ -34,7 +34,7 @@ window.YYSD_WORD_REALM_SFX = (function () {
     var g = c.createGain();
     o.type = type || "square";
     o.frequency.value = freq;
-    g.gain.setValueAtTime(gain == null ? 0.04 : gain, t0);
+    g.gain.setValueAtTime(gain == null? 0.04: gain, t0);
     g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
     o.connect(g);
     g.connect(c.destination);
@@ -44,9 +44,9 @@ window.YYSD_WORD_REALM_SFX = (function () {
 
   function hit(crit) {
     // slash whoosh + cut
-    beep(crit ? 220 : 180, 0.05, "sawtooth", 0.03);
+    beep(crit? 220: 180, 0.05, "sawtooth", 0.03);
     setTimeout(function () {
-      beep(crit ? 720 : 560, 0.07, "square", 0.05);
+      beep(crit? 720: 560, 0.07, "square", 0.05);
     }, 30);
     if (crit) setTimeout(function () { beep(990, 0.08, "triangle", 0.04); }, 70);
   }

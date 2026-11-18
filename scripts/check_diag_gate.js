@@ -31,11 +31,11 @@ must(statusApi.indexOf("placement_done") >= 0, "status API returns placement_don
 var diag = read("assets/js/diagnostic.js");
 must(diag.indexOf('get("gate") === "1"') >= 0, "diagnostic reads gate=1");
 must(diag.indexOf("placement=1") >= 0, "diagnostic completes to placement report");
-must(diag.indexOf("开始测试") >= 0 && diag.indexOf("首次词汇能力测试") >= 0, "gate intro CTA");
+must(diag.indexOf(" Bắt đầu kiểm tra ") >= 0 && diag.indexOf(" lần đầu Từ vựng năng lực Kiểm tra ") >= 0, "gate intro CTA");
 
 var report = read("assets/js/diagnostic-report.js");
 must(report.indexOf('placement") === "1"') >= 0, "report placement mode");
-must(report.indexOf("学习建议") >= 0, "report shows 学习建议");
+must(report.indexOf(" Học tập đề nghị ") >= 0, "report shows Học tập đề nghị ");
 must(report.indexOf("vocab-shelf.html") >= 0, "report CTA to shelf");
 
 var zone = read("assets/js/zone.js");

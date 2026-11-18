@@ -1,10 +1,10 @@
 /* =========================================================================
-   teacher-auth.js — 教师端登录态与 API
+   teacher-auth.js — Cổng giáo viên Đăng nhập thái và API
    ========================================================================= */
 window.YYSD_TEACHER = (function () {
   "use strict";
 
-  var API_BASE = (typeof location !== "undefined" &&
+  var API_BASE = (typeof location!== "undefined" &&
     (location.hostname === "localhost" || location.hostname === "127.0.0.1"))
     ? (location.protocol + "//" + location.hostname + ":3000")
     : "https://api.youyisida.com";
@@ -17,11 +17,11 @@ window.YYSD_TEACHER = (function () {
 
   function pageName() {
     var parts = location.pathname.split("/").filter(Boolean);
-    return parts.length ? parts[parts.length - 1] : "index.html";
+    return parts.length? parts[parts.length - 1]: "index.html";
   }
 
   function isPublicPage() {
-    return !!PUBLIC_PAGES[pageName()];
+    return!!PUBLIC_PAGES[pageName()];
   }
 
   function isModePickerPage() {
@@ -53,9 +53,9 @@ window.YYSD_TEACHER = (function () {
   }
 
   function setAuthCookie(on) {
-    var secure = location.protocol === "https:" ? "; Secure" : "";
-    document.cookie = AUTH_COOKIE + "=" + (on ? "1" : "") +
-      "; path=/; max-age=" + (on ? 2592000 : 0) + "; SameSite=Lax" + secure;
+    var secure = location.protocol === "https:"? "; Secure": "";
+    document.cookie = AUTH_COOKIE + "=" + (on? "1": "") +
+      "; path=/; max-age=" + (on? 2592000: 0) + "; SameSite=Lax" + secure;
   }
 
   function clearSession() {
@@ -99,8 +99,8 @@ window.YYSD_TEACHER = (function () {
           phone: t.phone,
           name: t.name || "",
           avatarUrl: t.avatarUrl || "",
-          isAdmin: !!t.isAdmin,
-          isPlatformAdmin: !!t.isPlatformAdmin
+          isAdmin:!!t.isAdmin,
+          isPlatformAdmin:!!t.isPlatformAdmin
         }));
       } else localStorage.removeItem(TEACHER_KEY);
     } catch (e) {}
@@ -113,15 +113,15 @@ window.YYSD_TEACHER = (function () {
   function revealAdminNav() {
     var show = isAdmin();
     document.querySelectorAll("[data-admin-only]").forEach(function (el) {
-      el.hidden = !show;
+      el.hidden =!show;
     });
     var onHq = true;
     try {
-      onHq = !(window.YYSD_AUTH && YYSD_AUTH.isHqSite) || YYSD_AUTH.isHqSite();
+      onHq =!(window.YYSD_AUTH && YYSD_AUTH.isHqSite) || YYSD_AUTH.isHqSite();
     } catch (e) {}
-    var plat = !!(getTeacher().isPlatformAdmin) && onHq;
+    var plat =!!(getTeacher().isPlatformAdmin) && onHq;
     document.querySelectorAll("[data-platform-only]").forEach(function (el) {
-      el.hidden = !plat;
+      el.hidden =!plat;
     });
   }
 
@@ -133,7 +133,7 @@ window.YYSD_TEACHER = (function () {
       else {
         var host = (location.hostname || "").toLowerCase();
         var m = host.match(/^([a-z0-9-]+)\.youyisida\.com$/);
-        if (m && !/^(www|api)$/.test(m[1])) slug = m[1];
+        if (m &&!/^(www|api)$/.test(m[1])) slug = m[1];
       }
     } catch (e) {}
     h["X-Tenant-Slug"] = slug;
@@ -151,14 +151,14 @@ window.YYSD_TEACHER = (function () {
     return fetch(API_BASE + path, {
       method: opts.method || "GET",
       headers: authHeaders(),
-      body: opts.body ? JSON.stringify(opts.body) : undefined
+      body: opts.body? JSON.stringify(opts.body): undefined
     }).then(function (r) {
       return r.text().then(function (raw) {
         var d = null;
-        try { d = raw ? JSON.parse(raw) : null; } catch (e) { d = null; }
+        try { d = raw? JSON.parse(raw): null; } catch (e) { d = null; }
         if (!r.ok) {
           if (d && d.code === "seat_required") location.replace("download.html");
-          throw new Error((d && d.error) || (r.status === 502 ? "服务暂不可用，请重试" : "请求失败"));
+          throw new Error((d && d.error) || (r.status === 502? " phục vụ tạm không thể dùng, mời Thử lại ": "Yêu cầu thất bại"));
         }
         return d || {};
       });
@@ -210,12 +210,12 @@ window.YYSD_TEACHER = (function () {
         var tok = decodeURIComponent(m[1]);
         if (tok) {
           setToken(tok);
-          setTeacher({ phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true });
+          setTeacher({ phone: " phục vụ khách hàng ", name: " bình đài phục vụ khách hàng ", isAdmin: true, isPlatformAdmin: true });
           if (window.YYSD_AUTH && YYSD_AUTH.applyLogin) {
             YYSD_AUTH.applyLogin({
               token: tok,
               role: "teacher",
-              teacher: { phone: "客服", name: "平台客服", isAdmin: true, isPlatformAdmin: true }
+              teacher: { phone: " phục vụ khách hàng ", name: " bình đài phục vụ khách hàng ", isAdmin: true, isPlatformAdmin: true }
             });
           }
           history.replaceState({}, "", location.pathname);
@@ -225,19 +225,19 @@ window.YYSD_TEACHER = (function () {
     if (!guardPage()) return;
     revealAdminNav();
     if (!getToken() || isPublicPage()) return;
-    var mePath = pageName() === "admin-assign.html" ? "/api/auth/me" : "/api/teacher/me";
+    var mePath = pageName() === "admin-assign.html"? "/api/auth/me": "/api/teacher/me";
     api(mePath).then(function (d) {
       var me = d.teacher || d.user || {};
       setTeacher({
         phone: me.phone,
         name: me.name || me.displayName || "",
         avatarUrl: me.avatarUrl || "",
-        isAdmin: !!me.isAdmin,
-        isPlatformAdmin: !!me.isPlatformAdmin
+        isAdmin:!!me.isAdmin,
+        isPlatformAdmin:!!me.isPlatformAdmin
       });
       revealAdminNav();
     }).catch(function () {
-      // 学生超管 token 也可进教师页看主控台入口：再试 /api/auth/me
+      // Học viên vượt qua quản token cũng có thể tiến Giáo viên trang nhìn bàn điều khiển cửa vào: thử lại /api/auth/me
       if (window.YYSD_AUTH && YYSD_AUTH.api) {
         YYSD_AUTH.api("/api/auth/me").then(function (d) {
           var me = d.user || {};

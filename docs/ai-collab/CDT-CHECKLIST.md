@@ -1,159 +1,159 @@
-# IELTS CDT 能力对照 Checklist（方案 B）
+# IELTS CDT năng lực so sánh Checklist (phương án B)
 
-> **宪法与里程碑：** [`CDT-PLAN-B.md`](CDT-PLAN-B.md)（B0 已冻结 2026-07-31）  
-> **对照基准：** 官方 IELTS on computer（BC/IDP Familiarisation），不以新东方为唯一金样  
-> **图例：** `✅` 已对齐 · `⚠️` 有但不像/不全 · `❌` 缺失 · `N/A` 刻意不做  
-> **更新规则：** 每完成一个里程碑验收后，改本表对应行；勿再写回「仅模考套壳」旧策略
+> ** hiến pháp và sự kiện quan trọng: ** [`CDT-PLAN-B.md`](CDT-PLAN-B.md) (B0 đã đông lại 2026-07-31)
+> ** so sánh tiêu chuẩn cơ bản: ** chính thức IELTS on computer (BC/IDP Familiarisation), không dùng mới phương Đông là duy nhất kim dạng
+> ** lời ghi chú trên bản đồ: ** `✅` đã xếp hợp lý · `⚠️` có nhưng không giống / không được đầy đủ · `❌` thiếu thốn · `N/A` tận lực không làm
+> ** đổi mới quy tắc: ** mỗi hoàn thành một cái sự kiện quan trọng sau khi kiểm tra, sửa bản bề ngoài đối ứng đi; chớ viết nữa quay về « chỉ Thi thử bộ xác » xưa cũ sách lược
 
 ---
 
-## 策略摘要
+## sách lược trích yếu
 
-| 项 | 决议 |
+| hạng | nghị quyết |
 |----|------|
-| 范围 | 剑桥 L/R/W **练习 + 模考** 一律 CDT 壳 |
-| 规则 | 一壳双包：`exam` / `drill`（差规则不差控件） |
-| 排除 | 口语、长难句、数字听写、精听、词汇 |
-| 现状总判 | **方案 B DoD 达成**（B0–B5）；金样 C01–C20 本地 20/20；G6 并排录屏建议人工抽检 |
+| phạm vi | Cambridge L/R/W ** Luyện tập + Thi thử ** hết thảy CDT xác |
+| quy tắc | một xác song bao: `exam` / `drill` (chênh lệch quy tắc không kém khống kiện) |
+| bài trừ | Nói, Câu phức học thuật, Nghe chép số liệu, Nghe sâu, Từ vựng |
+| hiện trạng tổng phán | ** phương án B DoD đạt thành ** (B0–B5); kim dạng C01–C20 bản địa 20/20; G6 song song lục bình đề nghị nhân công kiểm tra bộ phận |
 
 ---
 
-## 0. 产品与入口
+## 0. sản phẩm và cửa vào
 
-| # | 能力 | 官方/目标 | YYSD | 阶段 |
+| # | năng lực | chính thức / mục tiêu | YYSD | Giai đoạn |
 |---|------|-----------|------|------|
-| 0.1 | 套题 L→R→W 一体模考 | ✅ | ✅ `?cdt=1` hop + `cdt-report` | 壳 DONE |
-| 0.2 | 单项顺序练习也走 CDT | ✅ 同壳 | ✅ `cambridge` → `?cdt=1`，闸门选 pack | B1 DONE |
-| 0.3 | 开考前选 drill / exam（只选规则） | — | ✅ CDT gate「Practice / Mock test」 | B1 DONE |
-| 0.4 | Speaking 与三科壳分离 | ✅ | ✅ | N/A |
-| 0.5 | 专项工具不进壳 | — | ✅ | N/A |
-| 0.6 | 老师上传 IELTS 剑桥形态默认 CDT | — | ⚠️ 可选 `cdt=1`，未默认策略 | B1 |
-| 0.7 | 交卷报告 | 运营出分 / 练习解析 | ✅ 套题报告；drill 精析待统一 | B1 |
+| 0.1 | bộ câu L→R→W nhất thể Thi thử | ✅ | ✅ `?cdt=1` hop + `cdt-report` | xác DONE |
+| 0.2 | thi đơn Luyện theo thứ tự cũng đi CDT | ✅ cùng xác | ✅ `cambridge` → `?cdt=1`, miệng cống chọn pack | B1 DONE |
+| 0.3 | bắt đầu thi trước chọn drill / exam (chỉ chọn quy tắc) | — | ✅ CDT gate«Practice / Mock test» | B1 DONE |
+| 0.4 | Speaking và ba khoa xác chia lìa | ✅ | ✅ | N/A |
+| 0.5 | Chuyên sâu công cụ không vào xác | — | ✅ | N/A |
+| 0.6 | Giáo viên thượng truyền(*upload) IELTS Cambridge hình thái cam chịu CDT | — | ⚠️ có thể chọn `cdt=1`, không cam chịu sách lược | B1 |
+| 0.7 | Nộp bài báo cáo | đưa vào hoạt động ra điểm / Luyện tập Giải thích đáp án | ✅ bộ câu báo cáo; drill tinh tích đợi thống nhất | B1 |
 
 ---
 
-## 1. 开考闸门
+## 1. bắt đầu thi miệng cống
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 1.1 | Confirm your details | ⚠️ 有；EXAMPLE 占位 | B1 抛光 |
-| 1.2 | Test sound（听力） | ⚠️ 有；合成 beep 非官方样轨 | B1/B4 |
-| 1.3 | Instructions → Start test | ✅ 套题 CDT 有 | 壳 DONE |
-| 1.4 | drill 可缩短闸门（Sound/Info→Start，跳过 Confirm） | ✅ | B1 DONE |
-| 1.4b | drill 开考前可选 Section/Passage（写作跳过；续考用草稿 sections） | ✅ 闸门 `cdt-gate-sections` → `.secbox` | 2026-07-31 |
-| 1.5 | 文案与真实计时一致（含 2′ review） | ✅ 闸门写 two minutes；播完进 review | B2 DONE |
+| 1.1 | Confirm your details | ⚠️ có; EXAMPLE giành chỗ | B1 đánh bóng |
+| 1.2 | Test sound (Nghe) | ⚠️ có; hợp thành beep không chính thức dạng quỹ | B1/B4 |
+| 1.3 | Instructions → Start test | ✅ bộ câu CDT có | xác DONE |
+| 1.4 | drill có thể rút ngắn miệng cống (Sound/Info→Start, nhảy qua Confirm) | ✅ | B1 DONE |
+| 1.4b | drill bắt đầu thi trước có thể chọn Section/Passage (Viết nhảy qua; tục khảo thi dùng bản nháp sections) | ✅ miệng cống `cdt-gate-sections` → `.secbox` | 2026-07-31 |
+| 1.5 | văn án và chân thật tính theo thời gian nhất trí (hàm 2′ review) | ✅ miệng cống ghi two minutes; truyền hình xong tiến review | B2 DONE |
 
 ---
 
-## 2. 顶栏 Chrome
+## 2. thanh điều hướng Chrome
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 2.1 | 深色顶栏 | ✅（`?cdt=1`） | 壳 DONE |
-| 2.2 | Logo + 套题名 | ✅ | 壳 DONE |
-| 2.3 | `N minutes left` | ✅ | 壳 DONE |
-| 2.4 | Finish section | ✅ + disclaimer | 壳 DONE |
-| 2.5 | Setting → 字号 | ✅ | 壳 DONE |
-| 2.6 | Setting → **背景色** | ✅ White / Cream / Pale blue | B4 DONE |
-| 2.7 | Help 三页签 | ✅ Information / Test / Task 英文文案 | B4 DONE |
-| 2.8 | Hide（钟不停） | ✅ | 壳 DONE |
-| 2.9 | 听力顶栏音量 | ✅ | 壳 DONE |
-| 2.10 | 10′ / 5′ **闪烁** | ✅ `is-flash` ≤10′；颜色阈值保留 | B2 DONE |
+| 2.1 | màu đậm thanh điều hướng | ✅ (`?cdt=1`) | xác DONE |
+| 2.2 | Logo + bộ đề danh | ✅ | xác DONE |
+| 2.3 | `N minutes left` | ✅ | xác DONE |
+| 2.4 | Finish section | ✅ + disclaimer | xác DONE |
+| 2.5 | Setting → tên cửa hiệu | ✅ | xác DONE |
+| 2.6 | Setting → ** màu nền ** | ✅ White / Cream / Pale blue | B4 DONE |
+| 2.7 | Help ba trang ký | ✅ Information / Test / Task Tiếng Anh văn án | B4 DONE |
+| 2.8 | Hide (chuông liên tục) | ✅ | xác DONE |
+| 2.9 | Nghe thanh điều hướng âm lượng | ✅ | xác DONE |
+| 2.10 | 10′ / 5′ ** lập loè ** | ✅ `is-flash` ≤10′; màu sắc quắc giá trị giữ lại | B2 DONE |
 
 ---
 
-## 3. 底栏 Chrome
+## 3. ngọn nguồn lan Chrome
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 3.1 | Review 方→圆 | ✅ | 壳 DONE |
-| 3.2 | Part 分组题号 | ✅ | 壳 DONE |
-| 3.3 | 已答 / 未答 / Review 态 | ✅ | 壳 DONE |
-| 3.4 | 左右箭头 | ✅ | 壳 DONE |
-| 3.5 | Writing Part 1/2 | ✅ | 壳 DONE |
+| 3.1 | Review phương → tròn | ✅ | xác DONE |
+| 3.2 | Part phân tổ câu số | ✅ | xác DONE |
+| 3.3 | đã đáp / không đáp / Review thái | ✅ | xác DONE |
+| 3.4 | tả hữu mũi tên | ✅ | xác DONE |
+| 3.5 | Writing Part 1/2 | ✅ | xác DONE |
 
 ---
 
-## 4. 工作区 · Listening
+## 4. khu làm việc · Listening
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 4A.1 | 冷灰蓝 + 白题纸 | ✅ CDT skin | 壳 DONE |
-| 4A.2 | 开考自动播；**禁止 seek/重播** | ✅ CDT 锁 progress/play/section | B2 DONE |
-| 4A.3 | 独立 **2′ review** | ✅ 播完 → 120s review 条 + 倒计时 | B2 DONE |
-| 4A.4 | 填空 input | ✅ | — |
-| 4A.5 | 匹配 DnD | ✅ `cdt-qux.js` 池→槽；`<select>` 仍为答题源 | B3 DONE |
-| 4A.6 | 地图点选/DnD | ✅ 同 DnD 字母槽（图保留） | B3 DONE |
-| 4A.6b | 多选 Choose TWO | ✅ 字母点选写回双 select；去中文 helper | B3 DONE |
-| 4A.7 | 交卷后才解锁学习回放（drill） | ✅ drill 交卷后 unlock + 显示播放器 | B2 DONE |
+| 4A.1 | lạnh hôi lam + bạch câu giấy | ✅ CDT skin | xác DONE |
+| 4A.2 | bắt đầu thi tự động truyền bá; ** cấm seek/ phát lại ** | ✅ CDT Khóa progress/play/section | B2 DONE |
+| 4A.3 | độc lập **2′ review** | ✅ truyền hình xong → 120s review đầu + đảo kế thì | B2 DONE |
+| 4A.4 | lấp chỗ trống input | ✅ | — |
+| 4A.5 | xứng đôi DnD | ✅ `cdt-qux.js` trì → rãnh; `<select>` nhưng là bài thi nguyên | B3 DONE |
+| 4A.6 | Bản đồ chút:điểm chọn /DnD | ✅ cùng DnD chữ cái rãnh (đồ giữ lại) | B3 DONE |
+| 4A.6b | nhiều chọn Choose TWO | ✅ chữ cái chút:điểm chọn ghi quay về song select; đi Tiếng Việt helper | B3 DONE |
+| 4A.7 | Nộp bài sau mới giải tỏa Học tập cất đi (drill) | ✅ drill Nộp bài sau unlock + biểu hiện bá phóng khí | B2 DONE |
 
 ---
 
-## 5. 工作区 · Reading
+## 5. khu làm việc · Reading
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 4B.1 | 左 passage / 右 questions | ✅ | 壳 DONE |
-| 4B.2 | 两栏独立滚动 | ✅ | 壳 DONE |
-| 4B.3 | 可拖中缝 | ✅ `.yysd-cdt-split` 拖宽 | B5 DONE |
-| 4B.4 | 匹配/入空 DnD | ✅ 同 `cdt-qux`（match + letter-bank select） | B3 DONE |
-| 4B.5 | 阅读复制粘贴作答（能力保留+验收） | ⚠️ 浏览器默认 | B3/B4 |
+| 4B.1 | trái passage / phải questions | ✅ | xác DONE |
+| 4B.2 | hai lan độc lập chuyển động | ✅ | xác DONE |
+| 4B.3 | có thể kéo phần giữa hai trang báo | ✅ `.yysd-cdt-split` kéo rộng | B5 DONE |
+| 4B.4 | xứng đôi / nhập không DnD | ✅ cùng `cdt-qux` (match + letter-bank select) | B3 DONE |
+| 4B.5 | Đọc phục chế dán đáp lại (năng lực giữ lại + nghiệm thu) | ⚠️ trình duyệt cam chịu | B3/B4 |
 
 ---
 
-## 6. 工作区 · Writing
+## 6. khu làm việc · Writing
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 4C.1 | 左题(+图) / 右答 | ✅ | 壳 DONE |
-| 4C.2 | Word count: N | ✅ | 壳 DONE |
-| 4C.3 | Task 字数门槛提示 | ✅ | — |
-| 4C.4 | `spellcheck=false` 全覆盖 | ✅ CDT writing textarea 禁拼写/自动更正 | B4 DONE |
+| 4C.1 | trái câu (+ đồ) / phải đáp | ✅ | xác DONE |
+| 4C.2 | Word count: N | ✅ | xác DONE |
+| 4C.3 | Task Số từ cánh cửa nhắc nhở | ✅ | — |
+| 4C.4 | `spellcheck=false` toàn bộ bao trùm | ✅ CDT writing textarea cấm Chính tả / tự động sữa chửa | B4 DONE |
 
 ---
 
-## 7. 工具
+## 7. công cụ
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 7.1 | 高亮：右键 + **多色** | ✅ 黄/绿/粉/蓝；CDT 菜单全英 | B4 DONE |
-| 7.2 | 独立 Notepad（L/R/W） | ✅ 顶栏 Notepad + session 持久；选区 Notes 仍保留 | B4 DONE |
-| 7.3 | 考试中 UI 全英文 | ✅ CDT 高亮菜单英文化；闸门/壳英 | B4 DONE |
+| 7.1 | cao sáng: phải khóa + ** nhiều sắc ** | ✅ hoàng / lục / phấn / lam; CDT Trình đơn toàn bộ Anh | B4 DONE |
+| 7.2 | độc lập Notepad (L/R/W) | ✅ thanh điều hướng Notepad + session bền bỉ; khu vực tuyển cử Notes nhưng giữ lại | B4 DONE |
+| 7.3 | trong cuộc thi UI toàn bộ Tiếng Anh | ✅ CDT cao sáng Trình đơn Tiếng Anh hóa; miệng cống / xác Anh | B4 DONE |
 
 ---
 
-## 8. 规则包行为
+## 8. quy tắc bao hành vi
 
-| # | 能力 | YYSD | 阶段 |
+| # | năng lực | YYSD | Giai đoạn |
 |---|------|------|------|
-| 8.1 | exam：离页 void | ✅ pack=exam → startTest("exam") + lock | B1 DONE |
-| 8.2 | drill：可存续考、不 void | ✅ pack=drill + 闸门 Continue/Start over | B1 DONE |
-| 8.3 | exam/drill 控件形态相同 | ✅ 同 CDT 壳；仅规则包不同 | B1 DONE |
-| 8.4 | 到时强制收卷（两包皆是） | ✅ 父钟倒计时；到时 submit→review/hop | B1 DONE |
+| 8.1 | exam: cách trang void | ✅ pack=exam → startTest("exam") + lock | B1 DONE |
+| 8.2 | drill: có thể sống còn khảo thi, không void | ✅ pack=drill + miệng cống Continue/Start over | B1 DONE |
+| 8.3 | exam/drill khống kiện hình thái giống nhau | ✅ cùng CDT xác; chỉ quy tắc bao bất đồng | B1 DONE |
+| 8.4 | đến lúc đó cưỡng chế thu cuốn (hai bao đều là) | ✅ phụ chuông đảo kế thì; đến lúc đó submit→review/hop | B1 DONE |
 
 ---
 
-## 9. 里程碑映射（旧 M1–M6）
+## 9. sự kiện quan trọng chiếu rọi (xưa cũ M1–M6)
 
-| 旧 | 含义 | 新位置 |
+| xưa cũ | Nghĩa | mới vị trí |
 |----|------|--------|
-| M1–M6 壳（2026-07-23） | 套题 `?cdt=1` 壳层 | **保留为底座**；不再表示「项目完成」 |
-| — | 练习进壳 + 双规则包 | **B1** |
-| — | 音频铁律 + 2′ | **B2** |
-| — | DnD 题型 | **B3 DONE** |
-| — | Notepad / 多色 / 背景色 | **B4 DONE** |
-| — | 金样 ≥95% | **B5 DONE（20/20）** |
+| M1–M6 xác (2026-07-23) | bộ câu `?cdt=1` xác tầng | ** giữ lại làm đế tòa **; không hề biểu thị « hạng mục hoàn thành » |
+| — | Luyện tập tiến xác + song quy(*nhà nước điều tra) tức thì bao | **B1** |
+| — | âm tần luật thép + 2′ | **B2** |
+| — | DnD dạng bài | **B3 DONE** |
+| — | Notepad / nhiều sắc / màu nền | **B4 DONE** |
+| — | kim dạng ≥95% | **B5 DONE (20/20) ** |
 
 ---
 
-## 10. 壳层一页验收（已满足 ≠ 方案 B 完成）
+## 10. xác tầng một tờ nghiệm thu (đã thỏa mãn ≠ phương án B hoàn thành)
 
-打开剑桥套题全真模考（`?cdt=1`）应已满足：
+ mở ra Cambridge bộ câu Thi thử toàn phần (`?cdt=1`) ứng với đã thỏa mãn:
 
-1. 深色顶栏 + `minutes left` + Finish / Setting / Help / Hide  
-2. 底栏 Review + Part 题号 + 圆箭头  
-3. 冷灰蓝工作区  
-4. 听力音量与音测闸门；阅读/写作左右分栏 + Word count  
-5. Hide 后钟仍走；Finish 可 hop 或出报告  
+1. màu đậm thanh điều hướng + `minutes left` + Finish / Setting / Help / Hide
+2. ngọn nguồn lan Review + Part câu số + tròn mũi tên
+3. lạnh hôi lam khu làm việc
+4. Nghe âm lượng và âm trắc miệng cống; Đọc / Viết tả hữu điểm lan + Word count
+5. Hide sau chuông nhưng đi; Finish có thể hop hoặc ra báo cáo
 
-以上 = **壳底座**。方案 B 总 DoD 见 `CDT-PLAN-B.md` §4。
+ trở lên = ** xác cái bệ **. phương án B tổng DoD gặp `CDT-PLAN-B.md` §4.

@@ -18,7 +18,7 @@ def load_test(path):
 def save_test(path, html, m, test):
     blob = json.dumps(test, ensure_ascii=False, indent=2)
     # keep `const TEST = {...};` indent like the file (2 spaces inside object)
-    path.write_text(html[: m.start(1)] + blob + html[m.end(1) :], encoding="utf-8")
+    path.write_text(html[: m.start(1)] + blob + html[m.end(1):], encoding="utf-8")
 
 
 def q(no, stem, options, ans, extra=None):
@@ -28,7 +28,7 @@ def q(no, stem, options, ans, extra=None):
         "q": stem,
         "options": options,
         "answer": [ans],
-        "explain": f"答案：{ans}。",
+        "explain": f" Đáp án: {ans}. ",
     }
     if extra:
         d.update(extra)
@@ -41,7 +41,7 @@ def yn(no, stem, ans):
         "no": no,
         "q": stem,
         "answer": [ans],
-        "explain": f"答案：{ans}。",
+        "explain": f" Đáp án: {ans}. ",
     }
 
 
@@ -51,7 +51,7 @@ def match_q(no, stem, ans):
         "no": no,
         "q": stem,
         "answer": [ans],
-        "explain": f"答案：{ans}。",
+        "explain": f" Đáp án: {ans}. ",
     }
 
 
@@ -61,21 +61,21 @@ def fill_q(no, ans, alts=None):
         "id": f"Q{no}",
         "no": no,
         "answer": a,
-        "explain": f"答案：{', '.join(a)}。",
+        "explain": f" Đáp án: {', '.join(a)}. ",
     }
 
 
 def patch_tfng_wbank(html):
     html = html.replace(
-        "const opts = g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN'];",
-        "const opts = (g.labels && g.labels.length) ? g.labels : (g.variant==='yn' ? ['YES','NO','NOT GIVEN'] : ['TRUE','FALSE','NOT GIVEN']);",
+        "const opts = g.variant==='yn'? ['YES','NO','NOT GIVEN']: ['TRUE','FALSE','NOT GIVEN'];",
+        "const opts = (g.labels && g.labels.length)? g.labels: (g.variant==='yn'? ['YES','NO','NOT GIVEN']: ['TRUE','FALSE','NOT GIVEN']);",
     )
-    old = """    const cols=g.boxCols||2;
+    old = """ const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(g.box).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(g.box);
     const expand=html=>(html==null?'':String(html)).replace(/<Q n="(\\d+)">/g,(m,n)=>`<span class="qnum-badge">${n}</span><select id="Q${n}"><option value="">—</option>${letters.map(o=>`<option value="${o}">${o}</option>`).join('')}</select>`);
     const para=(g.noteTitle?`<div class="note-title">${g.noteTitle}</div>`:'')+g.lines.map(l=>`<div class="note-li plain" style="display:block;">${expand(l.html)}</div>`).join('');"""
-    new = """    const src=g.box||g.bank||{};
+    new = """ const src=g.box||g.bank||{};
     const cols=g.boxCols||2;
     const box=`<div class="match-box wbank-box" style="columns:${cols};">${Object.entries(src).map(([k,v])=>`<div class="mb-row"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>`;
     const letters=Object.keys(src);

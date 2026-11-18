@@ -1,11 +1,23 @@
 {
   "id": "2025-09-02",
-  "title": "新托福 9.02 · 口语",
+  "title": "TOEFL iBT 02/9 · Nói",
   "set": "9.02",
   "skill": "speaking",
   "modules": [
-    { "n": 1, "timeSec": 240, "from": 1, "to": 7, "label": "Listen and Repeat" },
-    { "n": 2, "timeSec": 360, "from": 8, "to": 11, "label": "Take an Interview" }
+    {
+      "n": 1,
+      "timeSec": 240,
+      "from": 1,
+      "to": 7,
+      "label": "Listen and Repeat"
+    },
+    {
+      "n": 2,
+      "timeSec": 360,
+      "from": 8,
+      "to": 11,
+      "label": "Take an Interview"
+    }
   ],
   "tasks": [
     {

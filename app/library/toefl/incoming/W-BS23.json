@@ -19,19 +19,47 @@
       "id": 221,
       "set": "W-BS23-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did the professor say about our group project?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["our teamwork", "to discuss", "and time management", "how we", "could improve", "she wanted"],
-      "answer": ["she wanted", "to discuss", "how we", "could improve", "our teamwork", "and time management"]
+      "bank": [
+        "our teamwork",
+        "to discuss",
+        "and time management",
+        "how we",
+        "could improve",
+        "she wanted"
+      ],
+      "answer": [
+        "she wanted",
+        "to discuss",
+        "how we",
+        "could improve",
+        "our teamwork",
+        "and time management"
+      ]
     },
     {
       "type": "sentence",
@@ -39,19 +67,45 @@
       "id": 222,
       "set": "W-BS23-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you enjoy the drama club's performance last night?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " was " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["very", "not", "the", "compelling", "storyline"],
-      "answer": ["the", "storyline", "not", "very", "compelling"]
+      "bank": [
+        "very",
+        "not",
+        "the",
+        "compelling",
+        "storyline"
+      ],
+      "answer": [
+        "the",
+        "storyline",
+        "not",
+        "very",
+        "compelling"
+      ]
     },
     {
       "type": "sentence",
@@ -59,18 +113,42 @@
       "id": 223,
       "set": "W-BS23-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I heard there will be a workshop on creative writing next month.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["know if", "do you", "yet", "is open", "the registration"],
-      "answer": ["do you", "know if", "the registration", "is open", "yet"]
+      "bank": [
+        "know if",
+        "do you",
+        "yet",
+        "is open",
+        "the registration"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "the registration",
+        "is open",
+        "yet"
+      ]
     },
     {
       "type": "sentence",
@@ -78,19 +156,47 @@
       "id": 224,
       "set": "W-BS23-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why did you choose this university?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["research facilities", "the campus", "the", "and laboratories", "has", "best"],
-      "answer": ["the campus", "has", "the", "best", "research facilities", "and laboratories"]
+      "bank": [
+        "research facilities",
+        "the campus",
+        "the",
+        "and laboratories",
+        "has",
+        "best"
+      ],
+      "answer": [
+        "the campus",
+        "has",
+        "the",
+        "best",
+        "research facilities",
+        "and laboratories"
+      ]
     },
     {
       "type": "sentence",
@@ -98,19 +204,45 @@
       "id": 225,
       "set": "W-BS23-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I'm considering joining the campus gym.",
       "parts": [
-        { "t": "Have " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Have "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["you", "their", "checked", "fees", "membership"],
-      "answer": ["you", "checked", "their", "membership", "fees"]
+      "bank": [
+        "you",
+        "their",
+        "checked",
+        "fees",
+        "membership"
+      ],
+      "answer": [
+        "you",
+        "checked",
+        "their",
+        "membership",
+        "fees"
+      ]
     },
     {
       "type": "sentence",
@@ -118,20 +250,50 @@
       "id": 226,
       "set": "W-BS23-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "The library will be closed for renovations next week.",
       "parts": [
-        { "t": "Can you " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Can you "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["the month", "of", "will reopen by", "the end", "whether it", "tell me"],
-      "answer": ["tell me", "whether it", "will reopen by", "the end", "of", "the month"]
+      "bank": [
+        "the month",
+        "of",
+        "will reopen by",
+        "the end",
+        "whether it",
+        "tell me"
+      ],
+      "answer": [
+        "tell me",
+        "whether it",
+        "will reopen by",
+        "the end",
+        "of",
+        "the month"
+      ]
     },
     {
       "type": "sentence",
@@ -139,21 +301,56 @@
       "id": 227,
       "set": "W-BS23-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "What did you discuss with the dean?",
       "parts": [
-        { "t": "She " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "She "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["her", "if", "suggestions", "I", "for improving", "the curriculum", "asked", "had"],
-      "answer": ["asked", "if", "I", "had", "suggestions", "for improving", "the curriculum"]
+      "bank": [
+        "her",
+        "if",
+        "suggestions",
+        "I",
+        "for improving",
+        "the curriculum",
+        "asked",
+        "had"
+      ],
+      "answer": [
+        "asked",
+        "if",
+        "I",
+        "had",
+        "suggestions",
+        "for improving",
+        "the curriculum"
+      ]
     },
     {
       "type": "sentence",
@@ -161,18 +358,42 @@
       "id": 228,
       "set": "W-BS23-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you attend the outdoor club meeting yesterday?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["the email", "I", "said it", "was canceled", "received"],
-      "answer": ["the email", "I", "received", "said it", "was canceled"]
+      "bank": [
+        "the email",
+        "I",
+        "said it",
+        "was canceled",
+        "received"
+      ],
+      "answer": [
+        "the email",
+        "I",
+        "received",
+        "said it",
+        "was canceled"
+      ]
     },
     {
       "type": "sentence",
@@ -180,18 +401,40 @@
       "id": 229,
       "set": "W-BS23-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I want to learn more about the English Department's literature classes.",
       "parts": [
-        { "t": "Have " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Have "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["brochure", "read", "the", "you"],
-      "answer": ["you", "read", "the", "brochure"]
+      "bank": [
+        "brochure",
+        "read",
+        "the",
+        "you"
+      ],
+      "answer": [
+        "you",
+        "read",
+        "the",
+        "brochure"
+      ]
     },
     {
       "type": "sentence",
@@ -199,18 +442,40 @@
       "id": 230,
       "set": "W-BS23-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I've been trying to learn how to play the guitar.",
       "parts": [
-        { "slot": true },
-        { "t": " you " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " at the university?" }
+        {
+          "slot": true
+        },
+        {
+          "t": " you "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " at the university?"
+        }
       ],
-      "bank": ["any", "taken", "have", "lessons"],
-      "answer": ["have", "taken", "any", "lessons"]
+      "bank": [
+        "any",
+        "taken",
+        "have",
+        "lessons"
+      ],
+      "answer": [
+        "have",
+        "taken",
+        "any",
+        "lessons"
+      ]
     }
   ]
 }

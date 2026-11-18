@@ -20,7 +20,7 @@ function todayDate() {
   var d = new Date();
   var m = d.getMonth() + 1;
   var day = d.getDate();
-  return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+  return d.getFullYear() + "-" + (m < 10? "0": "") + m + "-" + (day < 10? "0": "") + day;
 }
 
 function quizSampleSize(total) {
@@ -48,13 +48,13 @@ function sampleWords(words, ratio) {
 }
 
 var MAIN_BOOKS = [
-  { id: "gaozhong", label: "高中词汇", tag: "雅思基础", subjects: ["vocab"] },
-  { id: "cet4", label: "四级词汇", tag: "CET-4", subjects: ["vocab-cet4"] },
-  { id: "cet4-lite", label: "四级词汇（精简版）", tag: "CET-4 精简", subjects: ["vocab-cet4-lite"] },
+  { id: "gaozhong", label: "Từ vựng Nền tảng THPT", tag: " IELTS trụ cột ", subjects: ["vocab"] },
+  { id: "cet4", label: "Từ vựng Đại học Cốt lõi", tag: "CET-4", subjects: ["vocab-cet4"] },
+  { id: "cet4-lite", label: "Từ vựng Đại học Cốt lõi (Bản rút gọn)", tag: "CET-4 Rút gọn ", subjects: ["vocab-cet4-lite"] },
   {
     id: "special",
-    label: "雅思专项词汇",
-    tag: "专题",
+    label: "Từ vựng IELTS chuyên sâu",
+    tag: " chuyên đề ",
     subjects: ["vocab-special-listening", "vocab-special-reading", "vocab-special-writing"]
   }
 ];
@@ -68,19 +68,19 @@ function isThemeBookId(bookId) {
 }
 
 function themeIdOf(bookId) {
-  return isThemeBookId(bookId) ? String(bookId).slice(THEME_PREFIX.length) : "";
+  return isThemeBookId(bookId)? String(bookId).slice(THEME_PREFIX.length): "";
 }
 
 function listNoFromItem(item) {
   var t = String((item && item.title) || "");
   var m = t.match(/LIST\s*0*(\d+)/i);
   if (m) return Number(m[1]);
-  m = t.match(/单元\s*0*(\d+)/);
+  m = t.match(/ Bài \s*0*(\d+)/);
   if (m) return Number(m[1]);
   m = String((item && item.id) || "").match(/(?:writing|listening|reading)-vocab-0*(\d+)/i);
   if (m) return Number(m[1]);
   m = String((item && item.file) || "").match(/(?:LIST|list|vocab-)0*(\d+)/i);
-  return m ? Number(m[1]) : 0;
+  return m? Number(m[1]): 0;
 }
 
 function listLabel(item, bookId) {
@@ -90,9 +90,9 @@ function listLabel(item, bookId) {
   if (bookId === "gaozhong" || s === "vocab") return "List " + n;
   if (bookId === "cet4" || s === "vocab-cet4") return "List " + n;
   if (bookId === "cet4-lite" || s === "vocab-cet4-lite") return "List " + n;
-  if (s === "vocab-special-listening") return "听力 List " + n;
-  if (s === "vocab-special-reading") return "阅读 List " + n;
-  if (s === "vocab-special-writing") return "写作 List " + n;
+  if (s === "vocab-special-listening") return " Nghe List " + n;
+  if (s === "vocab-special-reading") return " Đọc List " + n;
+  if (s === "vocab-special-writing") return " Viết List " + n;
   return "List " + n;
 }
 
@@ -135,13 +135,13 @@ function buildCatalog(repoRoot) {
       // ponytail: teacher HTML templates are not student Lists
       var id = String(it.id || "");
       var title = String(it.title || "");
-      if (/模版|template/i.test(id) || /模版|template/i.test(title)) return false;
+      if (/mau-giao-vien|mẫu|template/i.test(id) || /mẫu|template/i.test(title)) return false;
       return true;
     });
     lists.sort(function (a, b) {
       var ai = def.subjects.indexOf(a.subject);
       var bi = def.subjects.indexOf(b.subject);
-      if (ai !== bi) return ai - bi;
+      if (ai!== bi) return ai - bi;
       var d = listNoFromItem(a) - listNoFromItem(b);
       return d || String(a.id).localeCompare(String(b.id), "en");
     });
@@ -166,7 +166,7 @@ function buildCatalog(repoRoot) {
   });
 
   (themesCat.themes || []).forEach(function (t) {
-    if (!t || !t.id) return;
+    if (!t ||!t.id) return;
     var wc = Number(t.count) || 0;
     var lists = chunkLists(wc, THEME_CHUNK);
     books.push({
@@ -211,14 +211,14 @@ function createCatalogLoader(initialRoot) {
     var m = path.join(root, "library", "manifest.json");
     var t = path.join(root, "library", "study", "vocab-themes", "themes.json");
     var ms = fs.statSync(m).mtimeMs;
-    var ts = fs.existsSync(t) ? fs.statSync(t).mtimeMs : 0;
+    var ts = fs.existsSync(t)? fs.statSync(t).mtimeMs: 0;
     return ms + ":" + ts;
   }
   return function load() {
     var root = resolveContentRoot(cache.root);
     try {
       var s = sig(root);
-      if (!cache.data || cache.sig !== s || cache.root !== root) {
+      if (!cache.data || cache.sig!== s || cache.root!== root) {
         cache.data = buildCatalog(root);
         cache.sig = s;
         cache.root = root;
@@ -306,22 +306,22 @@ function ensureSchema(db) {
 
 function formatQuizDate(date) {
   var parts = String(date || "").split("-");
-  if (parts.length !== 3) return String(date || "");
-  return Number(parts[1]) + "月" + Number(parts[2]) + "日";
+  if (parts.length!== 3) return String(date || "");
+  return "ngày " + Number(parts[2]) + "/" + Number(parts[1]);
 }
 
 function legacyHsSourceLabel(source) {
-  if (source === "custom") return "自定义";
+  if (source === "custom") return " từ định nghĩa ";
   var m = String(source || "").match(/^unit:(\d+)$/);
-  if (m) return "单元" + m[1];
-  if (String(source).indexOf("wrong") === 0) return "错题再测";
-  return String(source || "旧检测");
+  if (m) return " Bài " + m[1];
+  if (String(source).indexOf("wrong") === 0) return " Kiểm tra lại từ sai ";
+  return String(source || " xưa cũ Đánh giá ");
 }
 
 function sessionTitle(date, bookLabel, listLabels) {
   var lists = (listLabels || []).filter(Boolean);
-  var listPart = lists.length ? lists.join("、") : "若干 List";
-  return formatQuizDate(date) + " · " + (bookLabel || "词书") + " · " + listPart;
+  var listPart = lists.length? lists.join(", "): " một số List";
+  return formatQuizDate(date) + " · " + (bookLabel || " từ sách ") + " · " + listPart;
 }
 
 function readJsArray(html, name) {
@@ -330,7 +330,7 @@ function readJsArray(html, name) {
   if (!m) return [];
   try {
     var arr = Function('"use strict"; return (' + m[1] + ");")();
-    return Array.isArray(arr) ? arr : [];
+    return Array.isArray(arr)? arr: [];
   } catch (e) {
     return [];
   }
@@ -342,14 +342,14 @@ function phrasesAsWords(arr) {
     if (!p) return null;
     var phrase = String(p.en || p.word || "").trim();
     var meaning = String(p.cn || p.meaning || "").trim();
-    if (!phrase || !meaning) return null;
+    if (!phrase ||!meaning) return null;
     var syn = String(p.synonym || "").trim();
     return {
       word: phrase,
       meaning: meaning,
       example: p.example || "",
       note: String(p.detail || "").trim(),
-      synonyms: syn ? [syn] : [],
+      synonyms: syn? [syn]: [],
       acceptCN: [meaning]
     };
   }).filter(Boolean);
@@ -365,22 +365,22 @@ function normalizeWord(w) {
   if (!w) return null;
   var word = String(w.word || w.en || "").trim();
   var meaning = String(w.meaning || "").trim();
-  if (!word || !meaning) return null;
+  if (!word ||!meaning) return null;
   var ex = String(w.example || "");
-  var em = ex.match(/^(.+?)[（(](.+)[）)]\s*$/);
+  var em = ex.match(/^(.+?)[((](.+)[))]\s*$/);
   var coll = w.collocations;
   if (typeof coll === "string") {
-    coll = coll.split(/[,，]/).map(function (s) {
+    coll = coll.split(/[,,]/).map(function (s) {
       s = s.trim();
-      var cm = s.match(/^(.+?)[（(](.+?)[）)]$/);
-      return cm ? { phrase: cm[1].trim(), meaning: cm[2].trim() } : { phrase: s, meaning: "" };
+      var cm = s.match(/^(.+?)[((](.+?)[))]$/);
+      return cm? { phrase: cm[1].trim(), meaning: cm[2].trim() }: { phrase: s, meaning: "" };
     }).filter(function (c) { return c.phrase; });
   }
   if (!Array.isArray(coll)) coll = [];
   var ipaUs = String(w.ipaUs || "").trim();
   var ipaUk = String(w.ipaUk || "").trim();
   var ipa = String(w.ipa || w.phonetic || "").trim();
-  if (!ipaUs && !ipaUk && ipa) {
+  if (!ipaUs &&!ipaUk && ipa) {
     var parts = ipa.split(/\s*·\s*/).map(function (p) { return p.trim(); }).filter(Boolean);
     if (parts.length >= 2) {
       ipaUk = parts[0];
@@ -407,12 +407,12 @@ function normalizeWord(w) {
     ipaUk: ipaUk || ipa,
     pos: String(w.pos || "").trim(),
     meaning: meaning,
-    exampleEn: w.exampleEn || w.exampleEN || (em ? em[1].trim() : ex),
-    exampleZh: w.exampleZh || w.exampleCN || (em ? em[2].trim() : ""),
+    exampleEn: w.exampleEn || w.exampleEN || (em? em[1].trim(): ex),
+    exampleZh: w.exampleZh || w.exampleCN || (em? em[2].trim(): ""),
     collocations: coll,
     root: w.root || w.mnemonic || "",
-    synonyms: Array.isArray(w.synonyms) ? w.synonyms : [],
-    antonyms: Array.isArray(w.antonyms) ? w.antonyms : [],
+    synonyms: Array.isArray(w.synonyms)? w.synonyms: [],
+    antonyms: Array.isArray(w.antonyms)? w.antonyms: [],
     examTag: w.examTag || null,
     note: String(w.note || "").trim(),
     acceptCN: Array.isArray(w.acceptCN)
@@ -450,7 +450,7 @@ function loadWordsFromThemeJson(absPath, offset, count) {
 }
 
 function resolveLesson(repoRoot, book, listId) {
-  if (!book || !listId) return null;
+  if (!book ||!listId) return null;
   var list = null;
   for (var i = 0; i < (book.lists || []).length; i++) {
     if (String(book.lists[i].id) === String(listId)) {
@@ -485,82 +485,82 @@ function mountRoutes(app, opts) {
 
   var stmts = {
     listShelf: db.prepare(
-      "SELECT book_id, added_at FROM vocab_bookshelf WHERE student_id = ? ORDER BY added_at DESC"
+      "SELECT book_id, added_at FROM vocab_bookshelf WHERE student_id =? ORDER BY added_at DESC"
     ),
     findShelf: db.prepare(
-      "SELECT book_id, added_at FROM vocab_bookshelf WHERE student_id = ? AND book_id = ?"
+      "SELECT book_id, added_at FROM vocab_bookshelf WHERE student_id =? AND book_id =?"
     ),
     addShelf: db.prepare(
-      "INSERT OR IGNORE INTO vocab_bookshelf (student_id, book_id, added_at) VALUES (?, ?, ?)"
+      "INSERT OR IGNORE INTO vocab_bookshelf (student_id, book_id, added_at) VALUES (?,?,?)"
     ),
     removeShelf: db.prepare(
-      "DELETE FROM vocab_bookshelf WHERE student_id = ? AND book_id = ?"
+      "DELETE FROM vocab_bookshelf WHERE student_id =? AND book_id =?"
     ),
     clearLearn: db.prepare(
-      "DELETE FROM vocab_learn_progress WHERE student_id = ? AND book_id = ?"
+      "DELETE FROM vocab_learn_progress WHERE student_id =? AND book_id =?"
     ),
     listProgress: db.prepare(
-      "SELECT list_id, word_idx, done, updated_at FROM vocab_learn_progress WHERE student_id = ? AND book_id = ?"
+      "SELECT list_id, word_idx, done, updated_at FROM vocab_learn_progress WHERE student_id =? AND book_id =?"
     ),
     listAllProgress: db.prepare(
-      "SELECT book_id, list_id, word_idx, done, updated_at FROM vocab_learn_progress WHERE student_id = ?"
+      "SELECT book_id, list_id, word_idx, done, updated_at FROM vocab_learn_progress WHERE student_id =?"
     ),
     countShelf: db.prepare(
-      "SELECT COUNT(*) AS n FROM vocab_bookshelf WHERE student_id = ?"
+      "SELECT COUNT(*) AS n FROM vocab_bookshelf WHERE student_id =?"
     ),
     upsertProgress: db.prepare(
       "INSERT INTO vocab_learn_progress (student_id, book_id, list_id, word_idx, done, updated_at) " +
-      "VALUES (?, ?, ?, ?, ?, ?) " +
+      "VALUES (?,?,?,?,?,?) " +
       "ON CONFLICT(student_id, book_id, list_id) DO UPDATE SET " +
       "word_idx = excluded.word_idx, done = excluded.done, updated_at = excluded.updated_at"
     ),
     insertSession: db.prepare(
       "INSERT INTO vocab_quiz_sessions " +
       "(student_id, book_id, list_ids, list_labels, quiz_date, total, correct, wrong_count, passed, is_removed, created_at) " +
-      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)"
+      "VALUES (?,?,?,?,?,?,?,?,?, 0,?)"
     ),
     insertQuizMistake: db.prepare(
       "INSERT INTO vocab_quiz_mistakes " +
       "(session_id, student_id, book_id, list_id, word, ipa, meaning, word_json, user_answer, is_removed, created_at) " +
-      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)"
+      "VALUES (?,?,?,?,?,?,?,?,?, 0,?)"
     ),
     listSessions: db.prepare(
-      "SELECT * FROM vocab_quiz_sessions WHERE student_id = ? AND is_removed = 0 " +
+      "SELECT * FROM vocab_quiz_sessions WHERE student_id =? AND is_removed = 0 " +
       "ORDER BY quiz_date DESC, id DESC"
     ),
     findSession: db.prepare(
-      "SELECT * FROM vocab_quiz_sessions WHERE id = ? AND student_id = ? AND is_removed = 0"
+      "SELECT * FROM vocab_quiz_sessions WHERE id =? AND student_id =? AND is_removed = 0"
     ),
     removeSession: db.prepare(
-      "UPDATE vocab_quiz_sessions SET is_removed = 1 WHERE id = ? AND student_id = ?"
+      "UPDATE vocab_quiz_sessions SET is_removed = 1 WHERE id =? AND student_id =?"
     ),
     softRemoveSessionMistakes: db.prepare(
-      "UPDATE vocab_quiz_mistakes SET is_removed = 1 WHERE session_id = ? AND student_id = ? AND is_removed = 0"
+      "UPDATE vocab_quiz_mistakes SET is_removed = 1 WHERE session_id =? AND student_id =? AND is_removed = 0"
     ),
     listSessionMistakes: db.prepare(
-      "SELECT * FROM vocab_quiz_mistakes WHERE session_id = ? AND student_id = ? AND is_removed = 0 ORDER BY id ASC"
+      "SELECT * FROM vocab_quiz_mistakes WHERE session_id =? AND student_id =? AND is_removed = 0 ORDER BY id ASC"
     ),
     countSessionMistakes: db.prepare(
-      "SELECT COUNT(*) AS n FROM vocab_quiz_mistakes WHERE session_id = ? AND is_removed = 0"
+      "SELECT COUNT(*) AS n FROM vocab_quiz_mistakes WHERE session_id =? AND is_removed = 0"
     ),
     updateSessionWrongCount: db.prepare(
-      "UPDATE vocab_quiz_sessions SET wrong_count = ? WHERE id = ? AND student_id = ?"
+      "UPDATE vocab_quiz_sessions SET wrong_count =? WHERE id =? AND student_id =?"
     ),
     getMigrateFlag: db.prepare(
-      "SELECT flag FROM vocab_migrate_flags WHERE student_id = ? AND flag = ?"
+      "SELECT flag FROM vocab_migrate_flags WHERE student_id =? AND flag =?"
     ),
     setMigrateFlag: db.prepare(
-      "INSERT OR IGNORE INTO vocab_migrate_flags (student_id, flag, done_at) VALUES (?, ?, ?)"
+      "INSERT OR IGNORE INTO vocab_migrate_flags (student_id, flag, done_at) VALUES (?,?,?)"
     ),
     insertQuizPending: db.prepare(
       "INSERT INTO vocab_quiz_pending (student_id, book_id, list_ids, list_labels, words_json, created_at) " +
-      "VALUES (?, ?, ?, ?, ?, ?)"
+      "VALUES (?,?,?,?,?,?)"
     ),
     findQuizPending: db.prepare(
-      "SELECT * FROM vocab_quiz_pending WHERE id = ? AND student_id = ?"
+      "SELECT * FROM vocab_quiz_pending WHERE id =? AND student_id =?"
     ),
     deleteQuizPending: db.prepare(
-      "DELETE FROM vocab_quiz_pending WHERE id = ? AND student_id = ?"
+      "DELETE FROM vocab_quiz_pending WHERE id =? AND student_id =?"
     )
   };
 
@@ -580,7 +580,7 @@ function mountRoutes(app, opts) {
   function parseJsonArr(raw) {
     try {
       var v = JSON.parse(raw || "[]");
-      return Array.isArray(v) ? v : [];
+      return Array.isArray(v)? v: [];
     } catch (e) {
       return [];
     }
@@ -589,10 +589,10 @@ function mountRoutes(app, opts) {
   function bookLabelOf(cat, bookId) {
     var b = cat.byId[bookId];
     if (b) return b.label;
-    if (bookId === "gaozhong") return "高中词汇";
-    if (bookId === "cet4") return "四级词汇";
-    if (bookId === "cet4-lite") return "四级词汇（精简版）";
-    if (bookId === "special") return "雅思专项词汇";
+    if (bookId === "gaozhong") return "Từ vựng Nền tảng THPT";
+    if (bookId === "cet4") return "Từ vựng Đại học Cốt lõi";
+    if (bookId === "cet4-lite") return "Từ vựng Đại học Cốt lõi (Bản rút gọn)";
+    if (bookId === "special") return "Từ vựng IELTS chuyên sâu";
     return bookId;
   }
 
@@ -611,7 +611,7 @@ function mountRoutes(app, opts) {
       return;
     }
     var rows = db.prepare(
-      "SELECT * FROM hs_vocab_mistakes WHERE student_id = ? AND is_removed = 0 ORDER BY id ASC"
+      "SELECT * FROM hs_vocab_mistakes WHERE student_id =? AND is_removed = 0 ORDER BY id ASC"
     ).all(studentId);
     var groups = {};
     rows.forEach(function (r) {
@@ -650,7 +650,7 @@ function mountRoutes(app, opts) {
             m.ipa || null,
             m.meaning || null,
             m.word_json || null,
-            m.user_answer != null ? String(m.user_answer) : null,
+            m.user_answer!= null? String(m.user_answer): null,
             m.created_at || now
           );
         });
@@ -677,7 +677,7 @@ function mountRoutes(app, opts) {
     stmts.listProgress.all(studentId, bookId).forEach(function (r) {
       map[r.list_id] = {
         wordIdx: r.word_idx,
-        done: !!r.done,
+        done:!!r.done,
         updatedAt: r.updated_at
       };
     });
@@ -704,7 +704,7 @@ function mountRoutes(app, opts) {
       });
     } catch (e) {
       console.error("[vocab-shelf/catalog]", e && e.message);
-      res.status(503).json({ error: "词库目录暂时不可用，请稍后重试" });
+      res.status(503).json({ error: " từ kho mục lục tạm thời không thể dùng, xin sau Thử lại " });
     }
   });
 
@@ -729,7 +729,7 @@ function mountRoutes(app, opts) {
       });
     } catch (e) {
       console.error("[vocab-shelf/bookshelf]", e && e.message);
-      res.status(503).json({ error: "词库暂时不可用，请稍后重试" });
+      res.status(503).json({ error: " từ kho tạm thời không thể dùng, xin sau Thử lại " });
     }
   });
 
@@ -737,10 +737,10 @@ function mountRoutes(app, opts) {
   function weekStartDate() {
     var d = new Date();
     var day = d.getDay();
-    d.setDate(d.getDate() - (day === 0 ? 6 : day - 1));
+    d.setDate(d.getDate() - (day === 0? 6: day - 1));
     var m = d.getMonth() + 1;
     var dayN = d.getDate();
-    return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (dayN < 10 ? "0" : "") + dayN;
+    return d.getFullYear() + "-" + (m < 10? "0": "") + m + "-" + (dayN < 10? "0": "") + dayN;
   }
 
   function datePrefix(iso) {
@@ -841,9 +841,9 @@ function mountRoutes(app, opts) {
 
   app.post("/api/vocab-shelf/add", authMiddleware, function (req, res) {
     var bookId = String((req.body && req.body.bookId) || "").trim();
-    if (!bookId) return res.status(400).json({ error: "缺少 bookId" });
+    if (!bookId) return res.status(400).json({ error: " thiếu khuyết bookId" });
     var cat = loadCatalog();
-    if (!cat.byId[bookId]) return res.status(404).json({ error: "词书不存在" });
+    if (!cat.byId[bookId]) return res.status(404).json({ error: " từ sách không tồn tại " });
     var now = new Date().toISOString();
     stmts.addShelf.run(req.user.sub, bookId, now);
     var row = stmts.findShelf.get(req.user.sub, bookId);
@@ -857,9 +857,9 @@ function mountRoutes(app, opts) {
 
   app.post("/api/vocab-shelf/remove", authMiddleware, function (req, res) {
     var bookId = String((req.body && req.body.bookId) || "").trim();
-    if (!bookId) return res.status(400).json({ error: "缺少 bookId" });
+    if (!bookId) return res.status(400).json({ error: " thiếu khuyết bookId" });
     var row = stmts.findShelf.get(req.user.sub, bookId);
-    if (!row) return res.status(404).json({ error: "书架上没有这本词书" });
+    if (!row) return res.status(404).json({ error: " trên giá sách không có quyển này từ sách " });
     var tx = db.transaction(function () {
       stmts.removeShelf.run(req.user.sub, bookId);
       stmts.clearLearn.run(req.user.sub, bookId);
@@ -871,13 +871,13 @@ function mountRoutes(app, opts) {
   // Book detail: lists + per-list learn progress (must be on shelf)
   app.get("/api/vocab-shelf/book", authMiddleware, function (req, res) {
     var bookId = String(req.query.bookId || "").trim();
-    if (!bookId) return res.status(400).json({ error: "缺少 bookId" });
+    if (!bookId) return res.status(400).json({ error: " thiếu khuyết bookId" });
     if (!stmts.findShelf.get(req.user.sub, bookId)) {
-      return res.status(403).json({ error: "请先将词书加入书架" });
+      return res.status(403).json({ error: " mời trước đem từ sách thêm vào kho truyện " });
     }
     var cat = loadCatalog();
     var book = cat.byId[bookId];
-    if (!book) return res.status(404).json({ error: "词书不存在" });
+    if (!book) return res.status(404).json({ error: " từ sách không tồn tại " });
     var prog = progressMap(req.user.sub, bookId);
     res.json({
       ok: true,
@@ -889,7 +889,7 @@ function mountRoutes(app, opts) {
           label: l.label,
           wordCount: l.wordCount,
           wordIdx: p.wordIdx || 0,
-          done: !!p.done
+          done:!!p.done
         };
       })
     });
@@ -898,22 +898,22 @@ function mountRoutes(app, opts) {
   app.get("/api/vocab-shelf/lesson", authMiddleware, function (req, res) {
     var bookId = String(req.query.bookId || "").trim();
     var listId = String(req.query.listId || "").trim();
-    if (!bookId || !listId) return res.status(400).json({ error: "缺少 bookId 或 listId" });
+    if (!bookId ||!listId) return res.status(400).json({ error: " thiếu khuyết bookId hoặc listId" });
     if (!stmts.findShelf.get(req.user.sub, bookId)) {
-      return res.status(403).json({ error: "请先将词书加入书架" });
+      return res.status(403).json({ error: " mời trước đem từ sách thêm vào kho truyện " });
     }
     var cat = loadCatalog();
     var book = cat.byId[bookId];
-    if (!book) return res.status(404).json({ error: "词书不存在" });
+    if (!book) return res.status(404).json({ error: " từ sách không tồn tại " });
     var lesson = resolveLesson(repoRoot, book, listId);
-    if (!lesson) return res.status(404).json({ error: "List 不存在或词表缺失" });
+    if (!lesson) return res.status(404).json({ error: "List không tồn tại hoặc từ bề ngoài thiếu thốn " });
     var prog = progressMap(req.user.sub, bookId)[listId] || { wordIdx: 0, done: false };
     var idx = Math.max(0, Math.min(Number(prog.wordIdx) || 0, Math.max(0, lesson.words.length - 1)));
     res.json({
       ok: true,
       book: bookSummary(book),
       list: { id: lesson.list.id, label: lesson.list.label, wordCount: lesson.words.length },
-      progress: { wordIdx: idx, done: !!prog.done },
+      progress: { wordIdx: idx, done:!!prog.done },
       words: lesson.words
     });
   });
@@ -923,20 +923,20 @@ function mountRoutes(app, opts) {
     var bookId = String(body.bookId || "").trim();
     var listId = String(body.listId || "").trim();
     var wordIdx = Math.max(0, Math.floor(Number(body.wordIdx) || 0));
-    var done = body.done ? 1 : 0;
+    var done = body.done? 1: 0;
     var assignmentEventId = Number(body.assignmentEventId || body.eventId || 0) || 0;
-    if (!bookId || !listId) return res.status(400).json({ error: "缺少 bookId 或 listId" });
+    if (!bookId ||!listId) return res.status(400).json({ error: " thiếu khuyết bookId hoặc listId" });
     if (!stmts.findShelf.get(req.user.sub, bookId)) {
-      return res.status(403).json({ error: "请先将词书加入书架" });
+      return res.status(403).json({ error: " mời trước đem từ sách thêm vào kho truyện " });
     }
     var cat = loadCatalog();
     var book = cat.byId[bookId];
-    if (!book) return res.status(404).json({ error: "词书不存在" });
+    if (!book) return res.status(404).json({ error: " từ sách không tồn tại " });
     var found = false;
     for (var i = 0; i < book.lists.length; i++) {
       if (String(book.lists[i].id) === listId) { found = true; break; }
     }
-    if (!found) return res.status(404).json({ error: "List 不存在" });
+    if (!found) return res.status(404).json({ error: "List không tồn tại " });
     var now = new Date().toISOString();
     stmts.upsertProgress.run(req.user.sub, bookId, listId, wordIdx, done, now);
     var assignment = null;
@@ -948,7 +948,7 @@ function mountRoutes(app, opts) {
       bookId: bookId,
       listId: listId,
       wordIdx: wordIdx,
-      done: !!done,
+      done:!!done,
       assignment: assignment
     });
   });
@@ -967,7 +967,7 @@ function mountRoutes(app, opts) {
     if (i <= 0) return null;
     var bookId = s.slice(0, i).trim();
     var listId = s.slice(i + 2).trim();
-    if (!bookId || !listId) return null;
+    if (!bookId ||!listId) return null;
     return { bookId: bookId, listId: listId, raw: bookId + "||" + listId };
   }
 
@@ -1025,7 +1025,7 @@ function mountRoutes(app, opts) {
     return { words: words, labels: labels, bookIds: bookIds };
   }
 
-  // Merged word pool (60% sample). ?refs=book||list,... OR legacy ?bookId=&listIds=
+  // Merged word pool (60% sample).?refs=book||list,... OR legacy?bookId=&listIds=
   app.get("/api/vocab-shelf/quiz-pool", authMiddleware, function (req, res) {
     var cat = loadCatalog();
     var now = new Date().toISOString();
@@ -1033,17 +1033,17 @@ function mountRoutes(app, opts) {
     if (refs.length) {
       for (var ri = 0; ri < refs.length; ri++) {
         if (!cat.byId[refs[ri].bookId]) {
-          return res.status(404).json({ error: "词书不存在: " + refs[ri].bookId });
+          return res.status(404).json({ error: " từ sách không tồn tại: " + refs[ri].bookId });
         }
         var knownLists = {};
         cat.byId[refs[ri].bookId].lists.forEach(function (l) { knownLists[l.id] = true; });
         if (!knownLists[refs[ri].listId]) {
-          return res.status(404).json({ error: "List 不存在: " + refs[ri].raw });
+          return res.status(404).json({ error: "List không tồn tại: " + refs[ri].raw });
         }
       }
       refs.forEach(function (r) { ensureOnShelf(req.user.sub, r.bookId, now); });
       var multi = buildPoolFromRefs(cat, refs);
-      if (!multi.words.length) return res.status(400).json({ error: "所选 List 没有可测单词" });
+      if (!multi.words.length) return res.status(400).json({ error: " lựa chọn List không có có thể trắc Từ vựng " });
       var sampledM = sampleWords(multi.words, QUIZ_RATIO);
       var primary = cat.byId[multi.bookIds[0]];
       var bookLabel = multi.bookIds.map(function (id) {
@@ -1074,17 +1074,17 @@ function mountRoutes(app, opts) {
 
     var bookId = String(req.query.bookId || "").trim();
     var listIds = parseListIds(req.query.listIds);
-    if (!bookId || !listIds.length) return res.status(400).json({ error: "缺少 bookId 或 listIds" });
+    if (!bookId ||!listIds.length) return res.status(400).json({ error: " thiếu khuyết bookId hoặc listIds" });
     ensureOnShelf(req.user.sub, bookId, now);
     var book = cat.byId[bookId];
-    if (!book) return res.status(404).json({ error: "词书不存在" });
+    if (!book) return res.status(404).json({ error: " từ sách không tồn tại " });
     var known = {};
     book.lists.forEach(function (l) { known[l.id] = true; });
     for (var i = 0; i < listIds.length; i++) {
-      if (!known[listIds[i]]) return res.status(404).json({ error: "List 不存在: " + listIds[i] });
+      if (!known[listIds[i]]) return res.status(404).json({ error: "List không tồn tại: " + listIds[i] });
     }
     var pool = buildPool(book, listIds);
-    if (!pool.words.length) return res.status(400).json({ error: "所选 List 没有可测单词" });
+    if (!pool.words.length) return res.status(400).json({ error: " lựa chọn List không có có thể trắc Từ vựng " });
     var sampled = sampleWords(pool.words, QUIZ_RATIO);
     return res.json(issueQuizPool(db, stmts, req.user.sub, {
       now: now,
@@ -1116,25 +1116,25 @@ function mountRoutes(app, opts) {
       ? body.listLabels.map(function (x) { return String(x || ""); })
       : [];
     var quizToken = Math.floor(Number(body.quizToken) || 0);
-    var results = Array.isArray(body.results) ? body.results : [];
+    var results = Array.isArray(body.results)? body.results: [];
     var total = Math.max(0, Math.floor(Number(body.total) || 0));
     var correct = Math.max(0, Math.floor(Number(body.correct) || 0));
     var wrongCount = Math.max(0, Math.floor(Number(body.wrong) || 0));
-    var passed = body.passed ? 1 : 0;
-    var mistakes = Array.isArray(body.mistakes) ? body.mistakes : [];
-    if (!bookId || !listIds.length) return res.status(400).json({ error: "缺少 bookId 或 listIds" });
+    var passed = body.passed? 1: 0;
+    var mistakes = Array.isArray(body.mistakes)? body.mistakes: [];
+    if (!bookId ||!listIds.length) return res.status(400).json({ error: " thiếu khuyết bookId hoặc listIds" });
     var cat = loadCatalog();
     var now = new Date().toISOString();
     if (quizToken) {
       var pending = stmts.findQuizPending.get(quizToken, req.user.sub);
-      if (!pending) return res.status(400).json({ error: "测验已过期，请重新组卷" });
+      if (!pending) return res.status(400).json({ error: " trắc nghiệm Đã qua thời hạn, mời trùng tân tổ cuốn " });
       var pendingWords = [];
       try {
         pendingWords = JSON.parse(pending.words_json || "[]");
       } catch (e) {
         pendingWords = [];
       }
-      if (!pendingWords.length) return res.status(400).json({ error: "测验数据无效" });
+      if (!pendingWords.length) return res.status(400).json({ error: " trắc nghiệm số liệu không có hiệu quả " });
       bookId = pending.book_id || bookId;
       listIds = parseJsonArr(pending.list_ids);
       listLabels = parseJsonArr(pending.list_labels);
@@ -1142,7 +1142,7 @@ function mountRoutes(app, opts) {
       total = scored.total;
       correct = scored.correct;
       wrongCount = scored.wrong;
-      passed = scored.passed ? 1 : 0;
+      passed = scored.passed? 1: 0;
       mistakes = [];
       var wordByKey = {};
       pendingWords.forEach(function (w) {
@@ -1150,7 +1150,7 @@ function mountRoutes(app, opts) {
         if (m.word) wordByKey[m.word] = w;
       });
       results.forEach(function (r) {
-        if (!r || !r.word) return;
+        if (!r ||!r.word) return;
         var meta = grade.metaFromWord(wordByKey[r.word] || { word: r.word });
         if (grade.gradeVocabAnswer(meta, r)) return;
         var src = wordByKey[r.word] || meta;
@@ -1159,7 +1159,7 @@ function mountRoutes(app, opts) {
           ipa: src.ipa,
           meaning: src.meaning,
           listId: src.listId || null,
-          userAnswer: r.userAnswer != null ? String(r.userAnswer) : "",
+          userAnswer: r.userAnswer!= null? String(r.userAnswer): "",
           word_json: src
         });
       });
@@ -1169,14 +1169,14 @@ function mountRoutes(app, opts) {
     if (finishRefs.length) {
       for (var fi = 0; fi < finishRefs.length; fi++) {
         if (!cat.byId[finishRefs[fi].bookId]) {
-          return res.status(404).json({ error: "词书不存在: " + finishRefs[fi].bookId });
+          return res.status(404).json({ error: " từ sách không tồn tại: " + finishRefs[fi].bookId });
         }
         ensureOnShelf(req.user.sub, finishRefs[fi].bookId, now);
       }
       if (!bookId) bookId = finishRefs[0].bookId;
     } else {
       ensureOnShelf(req.user.sub, bookId, now);
-      if (!cat.byId[bookId]) return res.status(404).json({ error: "词书不存在" });
+      if (!cat.byId[bookId]) return res.status(404).json({ error: " từ sách không tồn tại " });
     }
     var date = todayDate();
     var sid;
@@ -1195,17 +1195,17 @@ function mountRoutes(app, opts) {
       );
       sid = info.lastInsertRowid;
       mistakes.forEach(function (m) {
-        if (!m || !m.word) return;
+        if (!m ||!m.word) return;
         stmts.insertQuizMistake.run(
           sid,
           req.user.sub,
           bookId,
-          m.listId != null ? String(m.listId) : null,
+          m.listId!= null? String(m.listId): null,
           String(m.word),
           m.ipa || null,
           m.meaning || null,
-          m.word_json ? JSON.stringify(m.word_json) : null,
-          m.userAnswer != null ? String(m.userAnswer) : (m.user_answer != null ? String(m.user_answer) : null),
+          m.word_json? JSON.stringify(m.word_json): null,
+          m.userAnswer!= null? String(m.userAnswer): (m.user_answer!= null? String(m.user_answer): null),
           now
         );
       });
@@ -1216,13 +1216,13 @@ function mountRoutes(app, opts) {
     if (assignmentEventId && typeof completeVocabQuizAssignment === "function") {
       // ponytail: fail → needRetest; pass one List → partial or COMPLETED
       assignment = completeVocabQuizAssignment(req.user.sub, assignmentEventId, {
-        passed: !!passed,
+        passed:!!passed,
         sessionId: sid,
         total: total,
         correct: correct,
         wrong: wrongCount,
         listIds: listIds,
-        listRef: listIds.length === 1 ? listIds[0] : String(body.listRef || "").trim()
+        listRef: listIds.length === 1? listIds[0]: String(body.listRef || "").trim()
       });
     }
     res.json({
@@ -1248,8 +1248,8 @@ function mountRoutes(app, opts) {
       title: sessionTitle(row.quiz_date, bookLabel, listLabels),
       total: row.total,
       correct: row.correct,
-      wrongCount: mistakeCount != null ? mistakeCount : row.wrong_count,
-      passed: !!row.passed,
+      wrongCount: mistakeCount!= null? mistakeCount: row.wrong_count,
+      passed:!!row.passed,
       createdAt: row.created_at
     };
   }
@@ -1269,13 +1269,13 @@ function mountRoutes(app, opts) {
   app.get("/api/vocab-shelf/wrongbook/session", authMiddleware, function (req, res) {
     migrateHsMistakes(req.user.sub);
     var id = Number(req.query.id || 0);
-    if (!id) return res.status(400).json({ error: "缺少 session id" });
+    if (!id) return res.status(400).json({ error: " thiếu khuyết session id" });
     var row = stmts.findSession.get(id, req.user.sub);
-    if (!row) return res.status(404).json({ error: "记录不存在" });
+    if (!row) return res.status(404).json({ error: " ghi chép không tồn tại " });
     var cat = loadCatalog();
     var mistakes = stmts.listSessionMistakes.all(id, req.user.sub).map(function (m) {
       var wj = null;
-      try { wj = m.word_json ? JSON.parse(m.word_json) : null; } catch (e) {}
+      try { wj = m.word_json? JSON.parse(m.word_json): null; } catch (e) {}
       return {
         id: m.id,
         word: m.word,
@@ -1291,7 +1291,7 @@ function mountRoutes(app, opts) {
       session: serializeSession(row, cat, mistakes.length),
       mistakes: mistakes,
       words: mistakes.map(function (m) {
-        var base = m.word_json && typeof m.word_json === "object" ? m.word_json : {};
+        var base = m.word_json && typeof m.word_json === "object"? m.word_json: {};
         return {
           word: m.word,
           ipa: m.ipa || base.ipa || "",
@@ -1305,7 +1305,7 @@ function mountRoutes(app, opts) {
           synonyms: base.synonyms || [],
           antonyms: base.antonyms || [],
           examTag: base.examTag || null,
-          acceptCN: Array.isArray(base.acceptCN) ? base.acceptCN : []
+          acceptCN: Array.isArray(base.acceptCN)? base.acceptCN: []
         };
       }).filter(function (w) { return w.word && w.meaning; })
     });
@@ -1313,9 +1313,9 @@ function mountRoutes(app, opts) {
 
   app.post("/api/vocab-shelf/wrongbook/session/remove", authMiddleware, function (req, res) {
     var id = Number(req.body && req.body.sessionId);
-    if (!id) return res.status(400).json({ error: "缺少 sessionId" });
+    if (!id) return res.status(400).json({ error: " thiếu khuyết sessionId" });
     var row = stmts.findSession.get(id, req.user.sub);
-    if (!row) return res.status(404).json({ error: "记录不存在" });
+    if (!row) return res.status(404).json({ error: " ghi chép không tồn tại " });
     var tx = db.transaction(function () {
       stmts.removeSession.run(id, req.user.sub);
       stmts.softRemoveSessionMistakes.run(id, req.user.sub);
@@ -1328,27 +1328,27 @@ function mountRoutes(app, opts) {
   app.post("/api/vocab-shelf/wrongbook/retest-finish", authMiddleware, function (req, res) {
     var body = req.body || {};
     var id = Number(body.sessionId);
-    var mistakes = Array.isArray(body.mistakes) ? body.mistakes : [];
-    if (!id) return res.status(400).json({ error: "缺少 sessionId" });
+    var mistakes = Array.isArray(body.mistakes)? body.mistakes: [];
+    if (!id) return res.status(400).json({ error: " thiếu khuyết sessionId" });
     var row = stmts.findSession.get(id, req.user.sub);
-    if (!row) return res.status(404).json({ error: "记录不存在" });
+    if (!row) return res.status(404).json({ error: " ghi chép không tồn tại " });
     var now = new Date().toISOString();
     var kept = 0;
     var tx = db.transaction(function () {
       stmts.softRemoveSessionMistakes.run(id, req.user.sub);
       mistakes.forEach(function (m) {
-        if (!m || !m.word) return;
+        if (!m ||!m.word) return;
         kept++;
         stmts.insertQuizMistake.run(
           id,
           req.user.sub,
           row.book_id,
-          m.listId != null ? String(m.listId) : null,
+          m.listId!= null? String(m.listId): null,
           String(m.word),
           m.ipa || null,
           m.meaning || null,
-          m.word_json ? JSON.stringify(m.word_json) : null,
-          m.userAnswer != null ? String(m.userAnswer) : (m.user_answer != null ? String(m.user_answer) : null),
+          m.word_json? JSON.stringify(m.word_json): null,
+          m.userAnswer!= null? String(m.userAnswer): (m.user_answer!= null? String(m.user_answer): null),
           now
         );
       });
@@ -1363,13 +1363,13 @@ function mountRoutes(app, opts) {
     if (stmts.getMigrateFlag.get(req.user.sub, "local_wrong")) {
       return res.json({ ok: true, imported: 0, skipped: true });
     }
-    var books = Array.isArray(req.body && req.body.books) ? req.body.books : [];
+    var books = Array.isArray(req.body && req.body.books)? req.body.books: [];
     var now = new Date().toISOString();
     var date = todayDate();
     var imported = 0;
     var tx = db.transaction(function () {
       books.forEach(function (b) {
-        if (!b || !b.bookId || !Array.isArray(b.words) || !b.words.length) return;
+        if (!b ||!b.bookId ||!Array.isArray(b.words) ||!b.words.length) return;
         var bookId = String(b.bookId);
         var words = b.words.filter(function (w) { return w && w.word; });
         if (!words.length) return;
@@ -1377,7 +1377,7 @@ function mountRoutes(app, opts) {
           req.user.sub,
           bookId,
           JSON.stringify(["legacy:local"]),
-          JSON.stringify(["本机旧错题"]),
+          JSON.stringify([" thiết bị này xưa cũ câu sai "]),
           date,
           words.length,
           0,
@@ -1411,18 +1411,18 @@ function mountRoutes(app, opts) {
 
 function selfCheck() {
   var lists = chunkLists(120, 50);
-  if (lists.length !== 3) throw new Error("chunkLists length");
-  if (lists[0].wordCount !== 50 || lists[0].offset !== 0) throw new Error("chunk 0");
-  if (lists[1].wordCount !== 50 || lists[1].offset !== 50) throw new Error("chunk 1");
-  if (lists[2].wordCount !== 20 || lists[2].offset !== 100) throw new Error("chunk 2");
-  if (chunkLists(50, 50).length !== 1) throw new Error("exact chunk");
-  if (chunkLists(0, 50).length !== 0) throw new Error("empty");
-  if (themeBookId("toeic") !== "theme:toeic") throw new Error("theme id");
+  if (lists.length!== 3) throw new Error("chunkLists length");
+  if (lists[0].wordCount!== 50 || lists[0].offset!== 0) throw new Error("chunk 0");
+  if (lists[1].wordCount!== 50 || lists[1].offset!== 50) throw new Error("chunk 1");
+  if (lists[2].wordCount!== 20 || lists[2].offset!== 100) throw new Error("chunk 2");
+  if (chunkLists(50, 50).length!== 1) throw new Error("exact chunk");
+  if (chunkLists(0, 50).length!== 0) throw new Error("empty");
+  if (themeBookId("toeic")!== "theme:toeic") throw new Error("theme id");
   if (!isThemeBookId("theme:toeic") || isThemeBookId("cet4")) throw new Error("isTheme");
-  if (themeIdOf("theme:toeic") !== "toeic") throw new Error("themeIdOf");
-  if (quizSampleSize(10) !== 6) throw new Error("60% of 10");
-  if (quizSampleSize(1) !== 1) throw new Error("min 1");
-  if (sampleWords([{ word: "a" }, { word: "b" }, { word: "c" }, { word: "d" }, { word: "e" }], 0.6).length !== 3) {
+  if (themeIdOf("theme:toeic")!== "toeic") throw new Error("themeIdOf");
+  if (quizSampleSize(10)!== 6) throw new Error("60% of 10");
+  if (quizSampleSize(1)!== 1) throw new Error("min 1");
+  if (sampleWords([{ word: "a" }, { word: "b" }, { word: "c" }, { word: "d" }, { word: "e" }], 0.6).length!== 3) {
     throw new Error("sample 5→3");
   }
   return true;
@@ -1457,17 +1457,17 @@ if (require.main === module) {
   var cat = buildCatalog(root);
   if (cat.books.length < 4) throw new Error("catalog too small");
   if (!cat.byId.gaozhong || cat.byId.gaozhong.listCount < 40) throw new Error("gaozhong lists");
-  if (!cat.byId["cet4-lite"] || cat.byId["cet4-lite"].listCount !== 30) throw new Error("cet4-lite lists");
+  if (!cat.byId["cet4-lite"] || cat.byId["cet4-lite"].listCount!== 30) throw new Error("cet4-lite lists");
   var gzN = (cat.byId.gaozhong.lists || []).filter(function (l) {
-    return /^高中单词list\d+$/.test(String(l.id));
+    return /^tu-vung-thpt-list\d+$/.test(String(l.id));
   }).length;
-  if (gzN !== 40) throw new Error("gaozhong 40 lists, got " + gzN);
+  if (gzN!== 40) throw new Error("gaozhong 40 lists, got " + gzN);
   if (!cat.byId["theme:toeic"]) throw new Error("missing theme:toeic");
   var toeic = cat.byId["theme:toeic"];
   var expect = Math.ceil((toeic.wordCount || 0) / THEME_CHUNK);
-  if (toeic.listCount !== expect) throw new Error("toeic listCount");
+  if (toeic.listCount!== expect) throw new Error("toeic listCount");
   var gzList1 = (cat.byId.gaozhong.lists || []).filter(function (l) {
-    return l.id === "高中单词list1";
+    return l.id === "tu-vung-thpt-list1";
   })[0];
   var special = cat.byId.special;
   if (!special) throw new Error("missing special");
@@ -1477,10 +1477,10 @@ if (require.main === module) {
   if (writingLists.length < 14) throw new Error("writing lists " + writingLists.length);
   writingLists.forEach(function (l) {
     var lesson = resolveLesson(root, special, l.id);
-    if (!lesson || !lesson.words.length) throw new Error("empty " + l.id);
+    if (!lesson ||!lesson.words.length) throw new Error("empty " + l.id);
   });
   var w1 = resolveLesson(root, special, "writing-vocab-01");
-  if (!w1 || w1.words[0].word !== "Acquire knowledge" || w1.words[0].meaning !== "获得知识") {
+  if (!w1 || w1.words[0].word!== "Acquire knowledge" || w1.words[0].meaning!== " đạt được tri thức ") {
     throw new Error("writing phrase map");
   }
   if (!w1.words[0].note || w1.words[0].note.indexOf("knowledge") < 0) throw new Error("writing note");
@@ -1488,13 +1488,13 @@ if (require.main === module) {
     return l.subject === "vocab-special-listening";
   })[0];
   var heard = listen && resolveLesson(root, special, listen.id);
-  if (!heard || heard.words[0].word !== "Football") throw new Error("listening wordData");
-  var gz = resolveLesson(root, cat.byId.gaozhong, gzList1 ? gzList1.id : cat.byId.gaozhong.lists[0].id);
-  if (!gz || !gz.words.length) throw new Error("gaozhong lesson empty");
-  if (gz.words.length !== 57 || gz.words[0].word !== "include") throw new Error("list1 excel order");
+  if (!heard || heard.words[0].word!== "Football") throw new Error("listening wordData");
+  var gz = resolveLesson(root, cat.byId.gaozhong, gzList1? gzList1.id: cat.byId.gaozhong.lists[0].id);
+  if (!gz ||!gz.words.length) throw new Error("gaozhong lesson empty");
+  if (gz.words.length!== 57 || gz.words[0].word!== "include") throw new Error("list1 excel order");
   if (!gz.words[0].acceptCN || gz.words[0].acceptCN.length < 2) throw new Error("list1 acceptCN");
   if (String(gz.words[0].meaning).length < 40) throw new Error("list1 meaning too thin");
   var tl = resolveLesson(root, toeic, "1");
-  if (!tl || tl.words.length !== 50) throw new Error("theme list1 size");
+  if (!tl || tl.words.length!== 50) throw new Error("theme list1 size");
   console.log("vocab-shelf self-check ok · books=" + cat.books.length);
 }

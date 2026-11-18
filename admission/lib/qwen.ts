@@ -20,7 +20,7 @@ export async function qwenChat(
   opts?: { temperature?: number; maxTokens?: number }
 ): Promise<string> {
   const key = apiKey();
-  if (!key) throw new Error("DASHSCOPE_API_KEY 未配置");
+  if (!key) throw new Error("DASHSCOPE_API_KEY không phối trí ");
   const res = await fetch(DASHSCOPE_CHAT, {
     method: "POST",
     headers: {
@@ -30,23 +30,23 @@ export async function qwenChat(
     body: JSON.stringify({
       model: chatModel(),
       messages,
-      temperature: opts?.temperature ?? 0.3,
-      max_tokens: opts?.maxTokens ?? 2000,
+      temperature: opts?.temperature?? 0.3,
+      max_tokens: opts?.maxTokens?? 2000,
     }),
   });
   const data = await res.json();
   if (!res.ok) {
-    throw new Error(data?.error?.message || "DashScope 请求失败");
+    throw new Error(data?.error?.message || "DashScope Yêu cầu thất bại ");
   }
   const content = data?.choices?.[0]?.message?.content;
-  if (content == null || content === "") throw new Error("AI 返回为空");
-  return typeof content === "string" ? content : JSON.stringify(content);
+  if (content == null || content === "") throw new Error("AI Quay lại là chỗ trống ");
+  return typeof content === "string"? content: JSON.stringify(content);
 }
 
 /** DashScope text-embedding-v3 → 1024-d by default */
 export async function qwenEmbed(text: string): Promise<number[]> {
   const key = apiKey();
-  if (!key) throw new Error("DASHSCOPE_API_KEY 未配置");
+  if (!key) throw new Error("DASHSCOPE_API_KEY không phối trí ");
   const res = await fetch(DASHSCOPE_EMBED, {
     method: "POST",
     headers: {
@@ -62,19 +62,19 @@ export async function qwenEmbed(text: string): Promise<number[]> {
   });
   const data = await res.json();
   if (!res.ok) {
-    throw new Error(data?.error?.message || "Embedding 请求失败");
+    throw new Error(data?.error?.message || "Embedding Yêu cầu thất bại ");
   }
   const emb = data?.data?.[0]?.embedding;
-  if (!Array.isArray(emb)) throw new Error("Embedding 返回为空");
+  if (!Array.isArray(emb)) throw new Error("Embedding Quay lại là chỗ trống ");
   return emb as number[];
 }
 
 export function parseJsonFromLLM<T = unknown>(text: string): T {
   const trimmed = text.trim();
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const raw = fenced ? fenced[1].trim() : trimmed;
+  const raw = fenced? fenced[1].trim(): trimmed;
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
-  if (start < 0 || end < 0) throw new Error("LLM 未返回 JSON");
+  if (start < 0 || end < 0) throw new Error("LLM không Quay lại JSON");
   return JSON.parse(raw.slice(start, end + 1)) as T;
 }

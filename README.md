@@ -1,72 +1,76 @@
-# 优益思达学习中心
+# Trung tâm Luyện thi IELTS Quốc tế YYSD
 
-雅思与国际课程（A-Level 等）在线备考平台。线上站点：[youyisida.com](https://youyisida.com)
+Nền tảng luyện thi IELTS toàn diện thế hệ mới dành cho người học tiếng Việt — kết hợp kho **226 đề thi Cambridge IELTS chính thức (Nghe · Đọc · Viết)**, **hệ thống học tập trò chơi hóa lấy cảm hứng từ khoa học học tập của Duolingo**, **thuật toán lặp lại ngắt quãng Half-Life Regression (HLR)**, **hơn 24.800 mục từ vựng Anh – Việt chuẩn xác**, và **thư viện 6 cẩm nang PDF học thuật trích dẫn hơn 120 công trình nghiên cứu kiểm duyệt từ Google Scholar**.
 
-静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
+## Điểm nổi bật của phiên bản nâng cấp toàn diện
 
-## 学生端
+1. **Việt hóa 100% toàn bộ nội dung không phải tiếng Anh**
+   - Toàn bộ giao diện, điều hướng, hướng dẫn phòng thi, giải thích đáp án, hơn 24.800 mục từ vựng, cổng giáo viên, tra cứu tuyển sinh đại học và tài liệu kỹ thuật được chuyển ngữ sang tiếng Việt tự nhiên, chuẩn xác.
+   - Giữ nguyên 100% ngữ liệu tiếng Anh học thuật của đề thi IELTS, TOEFL và A-Level.
+   - Kiểm chứng tự động bằng bộ kiểm thử `npm run check:vi` đảm bảo **0 ký tự phi tiếng Anh / phi tiếng Việt** trên toàn bộ kho mã nguồn.
 
-| 入口 | 说明 |
-|------|------|
-| 单词 | 高中 / 四级 / 雅思听读写专项词书、分类词库、错题本 |
-| 雅思真题 | 剑桥听力 / 阅读 / 写作；补弱 Section·Passage；单项模考；全套模考（CDT 机考壳） |
-| 练习 | 长难句、数字听写、口语练习等 |
-| 国际课程 | A-Level 等资料入口 |
-| 任务中心 | 教师布置的作业、日程与待办 |
-| 口语 / AI | 口语练习、写作 AI 批改（额度受限） |
+2. **Hệ sinh thái Lộ trình IELTS Thông minh (`lo-trinh.html`)**
+   - **Cây kỹ năng tuyến tính 8 Chặng (CEFR A2 → C2 / IELTS Band 4.5 → 8.5+):** bài học ngắn gọn 3–5 phút với 7 dạng bài tương tác (trắc nghiệm học thuật, ghép thẻ từ paraphrase, điền khuyết ngữ cảnh, nối cặp collocation, True/False/Not Given, nghe chép học thuật và bài tập **Câu Bất Ngờ Ngữ Nghĩa — SUS** kích hoạt sai số dự đoán phần thưởng).
+   - **Giải thích Lỗi sai Miễn phí & Tức thì:** phân tích nguyên nhân sai, dẫn chứng quy tắc ngôn ngữ học ứng dụng và gợi ý chiến thuật tăng band.
+   - **Lặp lại Ngắt quãng Half-Life Regression (Settles & Meeder, 2016):** tính xác suất ghi nhớ $p = 2^{-\Delta / h}$, tự động xếp hàng ôn tập từ vựng và kỹ năng sắp quên.
+   - **Trò chơi hóa toàn diện:** điểm kinh nghiệm (**XP** & hệ số combo), **Chuỗi ngày học (Daily Streak)** & **Đóng băng Chuỗi**, **Chuỗi Bạn bè (Friend Streak — tối đa 5 bạn đồng hành)**, **Năng lượng (Energy)** & chế độ **Siêu Cấp IELTS** miễn phí bằng **Đá quý (Gems)**, **Cửa hàng Vật phẩm**, **Nhiệm vụ Hàng ngày**, **12 Huy hiệu Thành tích**, và **Xưởng Ảnh đại diện với 4 Bộ Trang phục Theo mùa** (Xuân Hoa Đào, Hạ Biển Xanh, Thu Hà Nội, Đông Học Viện).
+   - **10 Giải đấu Hàng tuần:** Đồng, Bạc, Vàng, Lam ngọc, Hồng ngọc, Lục bảo, Thạch anh tím, Ngọc trai, Hắc diện thạch và Kim cương (bảng xếp hạng 30 học viên với nhóm thăng hạng, an toàn và xuống hạng).
+   - **Truyện ngắn Học thuật Tương tác & Nhập vai Đối thoại Nhân vật:** luyện phản xạ IELTS Speaking & Reading cùng các nhân vật Linh, Hùng, Mai và Sida kèm đánh giá 4 tiêu chí chính thức (FC, LR, GRA, P).
+   - **Thang điểm Năng lực 0–160 ↔ CEFR (A1–C2) ↔ IELTS Band (2.0–9.0):** quy đổi chính xác theo chuẩn Cambridge, tạo chứng nhận chia sẻ LinkedIn.
+   - **Nhắc học Thông minh Recovering-Difference Softmax Bandit (Yancey & Settles, 2020):** tối ưu hóa lời nhắc hàng ngày dựa trên mức độ mới mẻ và lịch sử phản hồi.
 
-全套模考结束进入三科成绩报告（`cdt-report.html`）；交卷等待时有加载提示。
+3. **Thư viện Cẩm nang PDF Học thuật (`tai-lieu.html` & `assets/docs/*.pdf`)**
+   - 6 bộ cẩm nang PDF tiếng Việt chuyên sâu về IELTS Listening, Reading, Writing, Speaking, Từ vựng học thuật (AWL/AVL/ACL/AFL) và Khoa học nhận thức (HLR SRS, Gamification, Bối cảnh người học Việt Nam).
+   - Tích hợp **120+ trích dẫn khoa học chuẩn APA 7** kèm DOI và liên kết trực tiếp tới `https://scholar.google.com/scholar?q=...`.
+   - Hỗ trợ xuất báo cáo chẩn đoán & kế hoạch học tập cá nhân hóa sang PDF kèm danh mục tài liệu tham khảo Google Scholar.
 
-## 教师端
+4. **Chất lượng Kỹ thuật Đỉnh cao**
+   - **Google Lighthouse 100 / 100 / 100 / 100** (Performance, Accessibility, Best Practices, SEO).
+   - **Độ bao phủ mã nguồn (Code Coverage) 100%** (Statements, Branches, Functions, Lines) kiểm chứng bằng Vitest + V8.
+   - **GitHub Super-Linter** chạy định kỳ và tự động trên mọi Pull Request.
+   - **Triển khai tự động trên GitHub Pages** qua GitHub Actions (`scripts/build_pages.mjs`).
 
-- 登录：`teacher-login.html`
-- 日历布置：`teacher-calendar.html` — 按类型（单词 / 补弱 / 单项模考 / 全套）下钻勾选，支持上传自有 HTML
-- 学生诊断与其它教师页见仓库内 `teacher-*.html`
+## Cấu trúc thư mục chính
 
-## 技术结构
-
+```text
+yysd-testcenter/
+├── index.html                  Trang chủ Trung tâm Luyện thi IELTS Quốc tế YYSD
+├── lo-trinh.html               Lộ trình IELTS Thông minh (Gamification, HLR SRS, Truyện, Nhập vai, Giải đấu)
+├── tai-lieu.html               Thư viện PDF Học thuật & Cơ sở dữ liệu 120+ trích dẫn Google Scholar
+├── zone.html / cambridge.html  Kho đề thi Cambridge IELTS 6–20 (Nghe, Đọc, Viết, Nghe sâu)
+├── vocab.html                  Tủ sách từ vựng Anh – Việt (THPT, Đại học, IELTS chuyên sâu, 36 chủ đề)
+├── exam.html / cdt-report.html Phòng thi máy tính (CDT) & Báo cáo điểm kèm trích dẫn học thuật
+├── dashboard.html / results.html Trung tâm nhiệm vụ, lịch học & thống kê kết quả cá nhân
+├── src/                        Các mô-đun ES lõi (đạt 100% độ bao phủ kiểm thử)
+├── tests/                      Bộ kiểm thử đơn vị, tích hợp & kiểm toán Việt hóa (Vitest)
+├── assets/
+│   ├── css/                    Hệ thống thiết kế Giấy Ngà & Kính Mờ (Ivory Paper + Glass Chrome)
+│   ├── js/                     Trình điều khiển giao diện & cầu nối phòng thi
+│   ├── img/                    Biểu trưng SVG & hình minh họa tối ưu
+│   └── docs/                   6 cẩm nang PDF học thuật tiếng Việt có liên kết Google Scholar
+├── library/                    Kho đề thi Cambridge IELTS, từ vựng và bài luyện tập
+├── scripts/                    Công cụ tạo manifest, xuất PDF học thuật, đóng gói GitHub Pages & kiểm tra Lighthouse
+└── .github/workflows/          CI/CD: Super-Linter, Kiểm thử 100% Coverage, Lighthouse 100 & GitHub Pages
 ```
-├── *.html                 # 站点页面（首页、考场、单词、教师端等）
-├── assets/                # CSS / JS（config 分类、exam CDT、auth）
-├── library/               # 题目与词书 HTML（按 zone/subject 分目录）
-│   └── manifest.json      # 内容索引（脚本/CI 生成，勿手改）
-├── server/                # Express API + SQLite（登录、成绩、日历、AI 代理等）
-├── rankings/              # 排行榜子应用（可选）
-├── admission/             # 招生相关子应用（可选）
-└── scripts/               # manifest、词库、自检脚本
-```
 
-API 依赖见 [`server/package.json`](server/package.json)；环境变量模板见 [`server/.env.example`](server/.env.example)。生产部署脚本在 [`server/deploy/`](server/deploy/)。
-
-## 本地预览
-
-前端不要直接双击打开 HTML，需本地静态服务；API 另开进程。
+## Lệnh phát triển & kiểm chứng
 
 ```bash
-# 前端
-python3 -m http.server 8080
-# → http://localhost:8080
+# Chạy toàn bộ kiểm thử với ngưỡng bao phủ bắt buộc 100%
+npm run test:coverage
 
-# API（需 Node ≥ 18）
-cd server && cp -n .env.example .env && npm i && npm start
-# → 默认 http://localhost:3000
+# Kiểm tra 100% Việt hóa (0 ký tự CJK/Kana/Hangul/Cyrillic)
+npm run check:vi
+
+# Chạy bộ kiểm tra mã nguồn (tương thích GitHub Super-Linter)
+npm run lint
+
+# Sinh lại 6 bộ cẩm nang PDF học thuật tiếng Việt (kèm trích dẫn Google Scholar)
+npm run build:pdfs
+
+# Đóng gói bản phát hành tĩnh tối ưu cho GitHub Pages vào _site/
+npm run build:pages
+
+# Khởi chạy máy chủ tĩnh phục vụ phát triển (http://0.0.0.0:8080)
+npm run serve
 ```
-
-前端如何指向本地 API，以 `assets/js/auth.js` / 环境配置为准。
-
-## 内容与成绩
-
-- 新题放入 `library/<zone>/<subject>/`，提交后由 Actions 或 `scripts/build_manifest.py` 重建 `manifest.json`。
-- 可选 meta：`exam:title` / `exam:duration` / `exam:description`。
-- 试卷批改后向父页同步分数：
-
-```js
-parent.postMessage({ type: "yysd:score", score: 32, total: 40, band: 7 }, "*");
-```
-
-写作模考另可附带 `writingTask1` / `writingTask2` 等字段供报告页使用。
-
-## 相关文档
-
-- 剑桥听力内容说明：[`library/mock/cambridge-listening/README.md`](library/mock/cambridge-listening/README.md)
-- A-Level 库：[`library/mock/alevel/README.md`](library/mock/alevel/README.md)

@@ -1,57 +1,57 @@
 {
- "id": "free-13638",
- "title": "Announcement #55",
- "set": "free",
- "skill": "listening",
- "titleZh": "公告 #55",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 13638,
-  "labelId": 1324,
-  "code": "TOEFL--L-announcements-55"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "announcement",
-   "module": 1,
-   "title": "Announcement #55",
-   "instruction": "Listen to an announcement at a university event.",
-   "audio": "library/toefl/free/audio/b0e12591d919457087ac40b1a011dd2e.mp3",
-   "transcript": "The annual student art exhibition opens this Thursday at 3 PM in the University Gallery, featuring paintings and sculptures by our incredibly talented art students. It's opening a month earlier this year to accommodate the gallery renovation. New this year, you'll have the chance to talk with the artists, hear the stories behind their work, and gain insight into their creative journeys. Artists will be on site Fridays from 4 to 5 PM this week and next.",
-   "questions": [
+  "id": "free-13638",
+  "title": "Announcement #55",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "thông cáo #55",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 13638,
+    "labelId": 1324,
+    "code": "TOEFL--L-announcements-55"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "What is the main topic of the announcement?",
-     "options": {
-      "A": "A daily conversation series about creativity",
-      "B": "Changes to gallery hours during a renovation",
-      "C": "Information about an annual art exhibition",
-      "D": "How to sign up for a student art competition"
-     },
-     "answer": "C",
-     "analysis": "答案：C 题目问的是：这则公告的主要话题是什么？ 定位原文：The annual student art exhibition opens this Thursday at 3 PM in the University Gallery... 选项分析： A. A daily conversation series about creativity 关于创造力的每日对话系列。公告中提到可以跟艺术家交谈，但这不是每日系列，也不是主要内容，所以A选项错误。 B. Changes to gallery hours during a renovation 翻新期间画廊开放时间的变更。公告中提到展览比往年提前一个月开幕以适应翻新，但这不是主要内容，主要内容是展览本身的信息，所以B选项错误。 C. Information about an annual art exhibition 关于年度艺术展览的信息。公告围绕年度学生艺术展览的开幕时间、地点、展品、新增互动环节等内容展开，所以C选项正确。 D. How to sign up for a student art competition 如何报名参加学生艺术比赛。公告中未提及比赛报名，所以D选项错误。"
-    },
-    {
-     "id": 2,
-     "stem": "What will featured artists do at the gallery?",
-     "options": {
-      "A": "Talk about the development of their art",
-      "B": "Facilitate a painting workshop",
-      "C": "Lead guided tours of the gallery",
-      "D": "Create artwork in real time on site"
-     },
-     "answer": "A",
-     "analysis": "答案：A 题目问的是：参展艺术家将在画廊做什么？ 定位原文：New this year, you'll have the chance to talk with the artists, hear the stories behind their work, and gain insight into their creative journeys. Artists will be on site Fridays from 4 to 5 PM this week and next. 选项分析： A. Talk about the development of their art 谈论他们艺术的发展过程。公告中提到可以听作品背后的故事并了解他们的创作历程，这对应“艺术的发展”，所以A选项正确。 B. Facilitate a painting workshop 组织绘画工作坊。公告中未提及工作坊或教学，所以B选项错误。 C. Lead guided tours of the gallery 带领画廊导览。公告中未提及导览，所以C选项错误。 D. Create artwork in real time on site 在现场实时创作艺术作品。公告中只提到艺术家在场交谈，未提现场创作，所以D选项错误。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "announcement",
+      "module": 1,
+      "title": "Announcement #55",
+      "instruction": "Listen to an announcement at a university event.",
+      "audio": "library/toefl/free/audio/b0e12591d919457087ac40b1a011dd2e.mp3",
+      "transcript": "The annual student art exhibition opens this Thursday at 3 PM in the University Gallery, featuring paintings and sculptures by our incredibly talented art students. It's opening a month earlier this year to accommodate the gallery renovation. New this year, you'll have the chance to talk with the artists, hear the stories behind their work, and gain insight into their creative journeys. Artists will be on site Fridays from 4 to 5 PM this week and next.",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "What is the main topic of the announcement?",
+          "options": {
+            "A": "A daily conversation series about creativity",
+            "B": "Changes to gallery hours during a renovation",
+            "C": "Information about an annual art exhibition",
+            "D": "How to sign up for a student art competition"
+          },
+          "answer": "C",
+          "analysis": "Đáp án: C đề mục hỏi là: cái này tức thì thông cáo chủ yếu chủ đề là cái gì? Dẫn chứng Bài gốc: The annual student art exhibition opens this Thursday at 3 PM in the University Gallery... Phương án phân tích: A. A daily conversation series about creativity về sức sáng tạo mỗi ngày đối thoại hàng loạt. trong thông báo nhắc tới có thể cùng nghệ thuật gia nói chuyện với nhau, nhưng cái này không phải mỗi ngày hàng loạt, cũng không phải nội dung chủ yếu, nên A Phương án Sai. B. Changes to gallery hours during a renovation đổi mới trong lúc hành lang triển lãm tranh cởi mở thời gian thay đổi. trong thông báo nhắc tới triển lãm so với những năm qua sớm một tháng khai mạc dùng thích ứng đổi mới, nhưng cái này không phải nội dung chủ yếu, nội dung chủ yếu là triển lãm bản thân tin tức, nên B Phương án Sai. C. Information about an annual art exhibition về niên độ Nghệ thuật triển lãm tin tức. thông cáo quay chung quanh niên độ Học viên Nghệ thuật triển lãm khai mạc thời gian, địa điểm, hàng triển lãm, mới tăng ảnh hưởng lẫn nhau,tác động qua lại khâu {các loại:đợi} nội dung triển khai, nên C Phương án Đúng. D. How to sign up for a student art competition làm thế nào báo danh tham gia Học viên Nghệ thuật trận đấu. trong thông báo Không được đề cập (Not Given) trận đấu báo danh, nên D Phương án Sai."
+        },
+        {
+          "id": 2,
+          "stem": "What will featured artists do at the gallery?",
+          "options": {
+            "A": "Talk about the development of their art",
+            "B": "Facilitate a painting workshop",
+            "C": "Lead guided tours of the gallery",
+            "D": "Create artwork in real time on site"
+          },
+          "answer": "A",
+          "analysis": "Đáp án: A đề mục hỏi là: tham gia triển lãm nghệ thuật gia đem đang vẽ hành lang làm cái gì? Dẫn chứng Bài gốc: New this year, you'll have the chance to talk with the artists, hear the stories behind their work, and gain insight into their creative journeys. Artists will be on site Fridays from 4 to 5 PM this week and next. Phương án phân tích: A. Talk about the development of their art đàm luận họ nghệ thuật phát triển quá trình. trong thông báo nhắc tới có thể nghe tác phẩm sau lưng câu chuyện gộp giải họ sáng tác con đường trải qua, đây đối với ứng với “ nghệ thuật phát triển ”, nên A Phương án Đúng. B. Facilitate a painting workshop tổ chức hội họa công tác phường. trong thông báo Không được đề cập (Not Given) công tác phường hoặc dạy học, nên B Phương án Sai. C. Lead guided tours of the gallery dẫn đầu hành lang triển lãm tranh đạo lãm. trong thông báo Không được đề cập (Not Given) đạo lãm, nên C Phương án Sai. D. Create artwork in real time on site tại hiện trường thực thì sáng tác Nghệ thuật tác phẩm. trong thông báo chỉ nhắc tới nghệ thuật gia ở đây nói chuyện với nhau, không xách hiện trường sáng tác, nên D Phương án Sai."
+        }
+      ]
+    }
+  ]
 }

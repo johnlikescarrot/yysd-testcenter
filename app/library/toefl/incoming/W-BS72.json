@@ -19,20 +19,50 @@
       "id": 711,
       "set": "W-BS72-Q1",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you enjoy your trip to the mountains over the school break?",
       "parts": [
-        { "t": "No, the " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "No, the "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["liking", "for", "weather was", "too", "cold", "my"],
-      "answer": ["weather was", "too", "cold", "for", "my", "liking"]
+      "bank": [
+        "liking",
+        "for",
+        "weather was",
+        "too",
+        "cold",
+        "my"
+      ],
+      "answer": [
+        "weather was",
+        "too",
+        "cold",
+        "for",
+        "my",
+        "liking"
+      ]
     },
     {
       "type": "sentence",
@@ -40,20 +70,50 @@
       "id": 712,
       "set": "W-BS72-Q2",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "The new library is opening soon.",
       "parts": [
-        { "slot": true },
-        { "t": " you " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "t": " you "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["they", "do", "hours during exams", "know", "will have extended", "if"],
-      "answer": ["do", "know", "if", "they", "will have extended", "hours during exams"]
+      "bank": [
+        "they",
+        "do",
+        "hours during exams",
+        "know",
+        "will have extended",
+        "if"
+      ],
+      "answer": [
+        "do",
+        "know",
+        "if",
+        "they",
+        "will have extended",
+        "hours during exams"
+      ]
     },
     {
       "type": "sentence",
@@ -61,18 +121,42 @@
       "id": 713,
       "set": "W-BS72-Q3",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "I have an interview with the Admission's Office scheduled for next week.",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["know if", "an individual interview", "it's a", "do you", "group or"],
-      "answer": ["do you", "know if", "it's a", "group or", "an individual interview"]
+      "bank": [
+        "know if",
+        "an individual interview",
+        "it's a",
+        "do you",
+        "group or"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "it's a",
+        "group or",
+        "an individual interview"
+      ]
     },
     {
       "type": "sentence",
@@ -80,20 +164,50 @@
       "id": 714,
       "set": "W-BS72-Q4",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why didn't you bring your books to class?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "t": " to " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " to "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["have time", "them", "morning", "pack", "this", "I didn't"],
-      "answer": ["I didn't", "have time", "pack", "them", "this", "morning"]
+      "bank": [
+        "have time",
+        "them",
+        "morning",
+        "pack",
+        "this",
+        "I didn't"
+      ],
+      "answer": [
+        "I didn't",
+        "have time",
+        "pack",
+        "them",
+        "this",
+        "morning"
+      ]
     },
     {
       "type": "sentence",
@@ -101,20 +215,50 @@
       "id": 715,
       "set": "W-BS72-Q5",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why haven't you started your presentation?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " to " },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " to "
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["I've been", "arrive", "additional", "for", "waiting", "data"],
-      "answer": ["I've been", "waiting", "for", "additional", "data", "arrive"]
+      "bank": [
+        "I've been",
+        "arrive",
+        "additional",
+        "for",
+        "waiting",
+        "data"
+      ],
+      "answer": [
+        "I've been",
+        "waiting",
+        "for",
+        "additional",
+        "data",
+        "arrive"
+      ]
     },
     {
       "type": "sentence",
@@ -122,19 +266,47 @@
       "id": 716,
       "set": "W-BS72-Q6",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Why haven't you responded to the professor's email?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " yet." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " yet."
+        }
       ],
-      "bank": ["response", "I", "my", "on", "haven't", "decided"],
-      "answer": ["I", "haven't", "decided", "on", "my", "response"]
+      "bank": [
+        "response",
+        "I",
+        "my",
+        "on",
+        "haven't",
+        "decided"
+      ],
+      "answer": [
+        "I",
+        "haven't",
+        "decided",
+        "on",
+        "my",
+        "response"
+      ]
     },
     {
       "type": "sentence",
@@ -142,20 +314,51 @@
       "id": 717,
       "set": "W-BS72-Q7",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you attend the conference last week?",
       "parts": [
-        { "t": "Unfortunately, " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "Unfortunately, "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["I", "able", "to get", "did", "never", "there", "was"],
-      "answer": ["I", "was", "never", "able", "to get", "there"]
+      "bank": [
+        "I",
+        "able",
+        "to get",
+        "did",
+        "never",
+        "there",
+        "was"
+      ],
+      "answer": [
+        "I",
+        "was",
+        "never",
+        "able",
+        "to get",
+        "there"
+      ]
     },
     {
       "type": "sentence",
@@ -163,19 +366,45 @@
       "id": 718,
       "set": "W-BS72-Q8",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Which programming language are you learning?",
       "parts": [
-        { "t": "One " },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "t": "One "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["is most", "demand right", "now", "that", "in"],
-      "answer": ["that", "is most", "in", "demand right", "now"]
+      "bank": [
+        "is most",
+        "demand right",
+        "now",
+        "that",
+        "in"
+      ],
+      "answer": [
+        "that",
+        "is most",
+        "in",
+        "demand right",
+        "now"
+      ]
     },
     {
       "type": "sentence",
@@ -183,19 +412,47 @@
       "id": 719,
       "set": "W-BS72-Q9",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Did you like the new offerings in the university cafeteria?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": " to me." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " to me."
+        }
       ],
-      "bank": ["the", "very", "were", "not", "options", "appealing"],
-      "answer": ["the", "options", "were", "not", "very", "appealing"]
+      "bank": [
+        "the",
+        "very",
+        "were",
+        "not",
+        "options",
+        "appealing"
+      ],
+      "answer": [
+        "the",
+        "options",
+        "were",
+        "not",
+        "very",
+        "appealing"
+      ]
     },
     {
       "type": "sentence",
@@ -203,20 +460,52 @@
       "id": 720,
       "set": "W-BS72-Q10",
       "title": "Build a Sentence",
-      "titleZh": "句子构建",
+      "titleZh": "câu xây dựng",
       "context": "Have you met the new biology professor yet?",
       "parts": [
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "slot": true },
-        { "t": "." }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["to", "the chance", "had", "myself", "no, I", "haven't", "introduce"],
-      "answer": ["no, I", "haven't", "had", "the chance", "to", "introduce", "myself"]
+      "bank": [
+        "to",
+        "the chance",
+        "had",
+        "myself",
+        "no, I",
+        "haven't",
+        "introduce"
+      ],
+      "answer": [
+        "no, I",
+        "haven't",
+        "had",
+        "the chance",
+        "to",
+        "introduce",
+        "myself"
+      ]
     }
   ]
 }

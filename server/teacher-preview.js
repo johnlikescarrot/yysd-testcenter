@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Teacher site-mode: shadow student user per teacher for full-site preview + gaozhong 闯关.
+ * Teacher site-mode: shadow student user per teacher for full-site preview + gaozhong vượt ải.
  */
 var crypto = require("crypto");
 
@@ -15,7 +15,7 @@ function previewPhone(teacherId) {
 function isPreviewUser(user) {
   var phone = String((user && (user.phone || user.Phone)) || "").replace(/\D/g, "");
   var name = String((user && (user.display_name || user.displayName || user.name)) || "");
-  if (/（体验）/.test(name)) return true;
+  if (/ (Dùng thử) /.test(name)) return true;
   if (/^900\d{8}$/.test(phone)) return true;
   // leftover from old previewPhone("199"+pad)
   if (/^19900000\d{3}$/.test(phone)) return true;
@@ -32,12 +32,12 @@ function ensureSchema(db) {
 
 function getTeacher(db, teacherId) {
   return db
-    .prepare("SELECT * FROM teachers WHERE id = ?")
+    .prepare("SELECT * FROM teachers WHERE id =?")
     .get(Math.floor(Number(teacherId) || 0));
 }
 
 function ensurePreviewUser(db, stmts, teacher) {
-  if (!teacher || !teacher.id) return null;
+  if (!teacher ||!teacher.id) return null;
   if (teacher.preview_user_id) {
     var cached = stmts.findUserById.get(teacher.preview_user_id);
     if (cached) return cached;
@@ -49,20 +49,20 @@ function ensurePreviewUser(db, stmts, teacher) {
     var unusable = crypto.randomBytes(16).toString("hex") + ":" + crypto.randomBytes(64).toString("hex");
     stmts.insertUser.run(phone, unusable, now, now, teacher.org_id || null);
     user = stmts.findUser.get(phone);
-    var label = String(teacher.name || "教师").trim().slice(0, 16) + "（体验）";
+    var label = String(teacher.name || " Giáo viên ").trim().slice(0, 16) + " (Dùng thử) ";
     if (user && label.length >= 2) {
       stmts.setDisplayName.run(label, phone);
       user = stmts.findUser.get(phone);
     }
   }
   if (user) {
-    db.prepare("UPDATE teachers SET preview_user_id = ? WHERE id = ?").run(user.id, teacher.id);
+    db.prepare("UPDATE teachers SET preview_user_id =? WHERE id =?").run(user.id, teacher.id);
   }
   return user;
 }
 
 function ensureGaozhongChallenge(db, vocabChallenge, studentId, teacherId) {
-  if (!vocabChallenge || typeof vocabChallenge.assignBook !== "function") return;
+  if (!vocabChallenge || typeof vocabChallenge.assignBook!== "function") return;
   vocabChallenge.assignBook(db, {
     studentId: studentId,
     bookId: PILOT_BOOK,
@@ -70,9 +70,9 @@ function ensureGaozhongChallenge(db, vocabChallenge, studentId, teacherId) {
   });
 }
 
-/** Idempotent: preview user + 高中闯关布置（登录/注册/进入体验模式时调用） */
+/** Idempotent: preview user + THPT vượt ải bố trí (Đăng nhập / Đăng ký / Vào học Dùng thử hình thức điệu hát thịnh hành dùng) */
 function provisionTeacher(db, stmts, vocabChallenge, teacher) {
-  var t = teacher && teacher.id ? teacher : getTeacher(db, teacher);
+  var t = teacher && teacher.id? teacher: getTeacher(db, teacher);
   if (!t) return null;
   var user = ensurePreviewUser(db, stmts, t);
   if (user) ensureGaozhongChallenge(db, vocabChallenge, user.id, t.id);
@@ -90,11 +90,11 @@ function mountRoutes(app, opts) {
 
   app.post("/api/teacher/site-mode/enter", teacherAuth, function (req, res) {
     var teacher = getTeacher(db, req.user.sub);
-    if (!teacher) return res.status(404).json({ error: "教师不存在" });
+    if (!teacher) return res.status(404).json({ error: " Giáo viên không tồn tại " });
     var user = provisionTeacher(db, stmts, vocabChallenge, teacher);
-    if (!user) return res.status(500).json({ error: "无法创建体验账号" });
+    if (!user) return res.status(500).json({ error: " không cách nào sáng tạo Dùng thử tài khoản " });
     var token = issueToken(user, user.phone);
-    if (!token) return res.status(503).json({ error: "服务未配置 JWT_SECRET" });
+    if (!token) return res.status(503).json({ error: " phục vụ không phối trí JWT_SECRET" });
     res.json({
       ok: true,
       token: token,
@@ -109,7 +109,7 @@ function mountRoutes(app, opts) {
     var teacher = getTeacher(db, req.user.sub);
     res.json({
       ok: true,
-      hasPreview: !!(teacher && teacher.preview_user_id),
+      hasPreview:!!(teacher && teacher.preview_user_id),
       bookId: PILOT_BOOK
     });
   });
@@ -117,16 +117,16 @@ function mountRoutes(app, opts) {
 
 function selfCheck(db, stmts, vocabChallenge) {
   ensureSchema(db);
-  if (previewPhone(1) !== "90000000001" || previewPhone(26) !== "90000000026") {
+  if (previewPhone(1)!== "90000000001" || previewPhone(26)!== "90000000026") {
     throw new Error("previewPhone format");
   }
-  if (!isPreviewUser({ phone: "90000000002", display_name: "张老师（体验）" })) {
+  if (!isPreviewUser({ phone: "90000000002", display_name: " Trương lão sư (Dùng thử) " })) {
     throw new Error("isPreviewUser 900");
   }
-  if (!isPreviewUser({ phone: "19900000004", display_name: "馨馨老师（体验）" })) {
+  if (!isPreviewUser({ phone: "19900000004", display_name: " Hinh Hinh Giáo viên (Dùng thử) " })) {
     throw new Error("isPreviewUser leftover 199");
   }
-  if (isPreviewUser({ phone: "15901754473", display_name: "张老师" })) {
+  if (isPreviewUser({ phone: "15901754473", display_name: " Trương lão sư " })) {
     throw new Error("isPreviewUser false positive");
   }
   // ponytail: boot must not DELETE 199% users on live db — wipes teacher preview accounts + progress

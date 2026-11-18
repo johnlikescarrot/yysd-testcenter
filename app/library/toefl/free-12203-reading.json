@@ -1,126 +1,126 @@
 {
- "id": "free-12203",
- "title": "Complete the Words #20",
- "set": "free",
- "skill": "reading",
- "titleZh": "阅读填空 #20",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12203,
-  "labelId": 1319,
-  "code": "TOEFL--R-complete the words-20"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "complete_words",
-   "module": 1,
-   "title": "Complete the Words",
-   "instruction": "Fill in the missing letters in the paragraph.",
-   "passage": [
+  "id": "free-12203",
+  "title": "Complete the Words #20",
+  "set": "free",
+  "skill": "reading",
+  "titleZh": "Đọc lấp chỗ trống #20",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12203,
+    "labelId": 1319,
+    "code": "TOEFL--R-complete the words-20"
+  },
+  "modules": [
     {
-     "t": " During the Pleistocene Ice Age that ended 12,000 years ago, many large mammals coexisted in an ecosystem that paleontologist Dale Guthrie dubbed the \"mammoth steppe,\" an icy prairie too cold, windy, and dry to support more than a few trees. When "
-    },
-    {
-     "id": 1,
-     "prefix": "th",
-     "answer": "is",
-     "word": "this"
-    },
-    {
-     "t": " ecosystem "
-    },
-    {
-     "id": 2,
-     "prefix": "fa",
-     "answer": "ded",
-     "word": "faded"
-    },
-    {
-     "t": " away "
-    },
-    {
-     "id": 3,
-     "prefix": "a",
-     "answer": "t",
-     "word": "at"
-    },
-    {
-     "t": " the "
-    },
-    {
-     "id": 4,
-     "prefix": "e",
-     "answer": "nd",
-     "word": "end"
-    },
-    {
-     "t": " of "
-    },
-    {
-     "id": 5,
-     "prefix": "t",
-     "answer": "he",
-     "word": "the"
-    },
-    {
-     "t": " Ice "
-    },
-    {
-     "id": 6,
-     "prefix": "A",
-     "answer": "ge",
-     "word": "Age"
-    },
-    {
-     "t": ", many "
-    },
-    {
-     "id": 7,
-     "prefix": "o",
-     "answer": "f",
-     "word": "of"
-    },
-    {
-     "t": " its "
-    },
-    {
-     "id": 8,
-     "prefix": "char",
-     "answer": "acteristic",
-     "word": "characteristic"
-    },
-    {
-     "t": " animals, "
-    },
-    {
-     "id": 9,
-     "prefix": "li",
-     "answer": "ke",
-     "word": "like"
-    },
-    {
-     "t": " the "
-    },
-    {
-     "id": 10,
-     "prefix": "mam",
-     "answer": "moth",
-     "word": "mammoth"
-    },
-    {
-     "t": ", the woolly rhino, and the short-faced bear, went extinct, while a new set of megafaunas—moose, elk, and bison—invaded Alaska and the Yukon. To understand the varied fates of these big herbivores, Guthrie looks to their digestive systems. "
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ],
-   "analysis": "During the Pleistocene Ice Age that ended 12,000 years ago, many large mammals coexisted in an ecosystem that paleontologist Dale Guthrie dubbed the \"mammoth steppe,\" an icy prairie too cold, windy, and dry to support more than a few trees. When this ecosystem faded away at the end of the Ice Age, many of its characteristic animals, like the mammoth, the woolly rhino, and the short-faced bear, went extinct, while a new set of megafaunas—moose, elk, and bison—invaded Alaska and the Yukon. To understand the varied fates of these big herbivores, Guthrie looks to their digestive systems. 在约 1.2 万年前结束的更新世冰期，许多大型哺乳动物共同生活在一个被古生物学家戴尔・格思里称为 “猛犸草原” 的生态系统中。这片冰封的草原寒冷、多风且干燥，仅能生长少量树木。当冰期末期这一生态系统逐渐消失后，许多具有该生态系统特征的动物（如猛犸象、披毛犀和短面熊）随之灭绝，而一批新的巨型动物群 —— 驼鹿、麋鹿和野牛则迁入了阿拉斯加和育空地区。为了弄清这些大型食草动物截然不同的命运，格思里将研究目光投向了它们的消化系统。",
-   "titleZh": "阅读填空"
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "complete_words",
+      "module": 1,
+      "title": "Complete the Words",
+      "instruction": "Fill in the missing letters in the paragraph.",
+      "passage": [
+        {
+          "t": " During the Pleistocene Ice Age that ended 12,000 years ago, many large mammals coexisted in an ecosystem that paleontologist Dale Guthrie dubbed the \"mammoth steppe,\" an icy prairie too cold, windy, and dry to support more than a few trees. When "
+        },
+        {
+          "id": 1,
+          "prefix": "th",
+          "answer": "is",
+          "word": "this"
+        },
+        {
+          "t": " ecosystem "
+        },
+        {
+          "id": 2,
+          "prefix": "fa",
+          "answer": "ded",
+          "word": "faded"
+        },
+        {
+          "t": " away "
+        },
+        {
+          "id": 3,
+          "prefix": "a",
+          "answer": "t",
+          "word": "at"
+        },
+        {
+          "t": " the "
+        },
+        {
+          "id": 4,
+          "prefix": "e",
+          "answer": "nd",
+          "word": "end"
+        },
+        {
+          "t": " of "
+        },
+        {
+          "id": 5,
+          "prefix": "t",
+          "answer": "he",
+          "word": "the"
+        },
+        {
+          "t": " Ice "
+        },
+        {
+          "id": 6,
+          "prefix": "A",
+          "answer": "ge",
+          "word": "Age"
+        },
+        {
+          "t": ", many "
+        },
+        {
+          "id": 7,
+          "prefix": "o",
+          "answer": "f",
+          "word": "of"
+        },
+        {
+          "t": " its "
+        },
+        {
+          "id": 8,
+          "prefix": "char",
+          "answer": "acteristic",
+          "word": "characteristic"
+        },
+        {
+          "t": " animals, "
+        },
+        {
+          "id": 9,
+          "prefix": "li",
+          "answer": "ke",
+          "word": "like"
+        },
+        {
+          "t": " the "
+        },
+        {
+          "id": 10,
+          "prefix": "mam",
+          "answer": "moth",
+          "word": "mammoth"
+        },
+        {
+          "t": ", the woolly rhino, and the short-faced bear, went extinct, while a new set of megafaunas—moose, elk, and bison—invaded Alaska and the Yukon. To understand the varied fates of these big herbivores, Guthrie looks to their digestive systems. "
+        }
+      ],
+      "analysis": "During the Pleistocene Ice Age that ended 12,000 years ago, many large mammals coexisted in an ecosystem that paleontologist Dale Guthrie dubbed the \"mammoth steppe,\" an icy prairie too cold, windy, and dry to support more than a few trees. When this ecosystem faded away at the end of the Ice Age, many of its characteristic animals, like the mammoth, the woolly rhino, and the short-faced bear, went extinct, while a new set of megafaunas—moose, elk, and bison—invaded Alaska and the Yukon. To understand the varied fates of these big herbivores, Guthrie looks to their digestive systems. tại ước 1.2 vạn năm trước kết thúc đổi mới thế băng kỳ, rất nhiều cỡ lớn động vật có vú cộng đồng sinh hoạt tại một cái bị cổ sinh vật học gia Đái Nhĩ · cách tư dặm xưng là “ mãnh tượng thảo nguyên ” sinh thái trong hệ thống. cái mảnh này đóng băng thảo nguyên rét lạnh, nhiều gió mà lại khô ráo, chỉ có thể sinh trưởng chút ít cây cối. {làm:lúc} băng kỳ thời kì cuối cả đời này thái hệ thống dần dần biến mất sau, rất nhiều có nên sinh thái hệ thống đặc thù Động vật (ví dụ voi ma-mút, tê giác lông dài và ngắn mặt gấu) tùy theo diệt sạch, mà một đám mới đích khổng lồ Động vật bầy —— nai sừng tấm Bắc Mỹ, con nai và trâu rừng tức thì dời vào rồi A-la-xka và dục đất trống khu. để biết rõ những mục này cỡ lớn ăn cỏ Động vật hoàn toàn bất đồng vận mệnh, cách tư dặm đem nghiên cứu ánh mắt nhìn về phía họ hệ tiêu hoá.",
+      "titleZh": "Đọc lấp chỗ trống"
+    }
+  ]
 }

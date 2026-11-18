@@ -1,46 +1,46 @@
 {
- "id": "free-12361",
- "title": "Choose a Response #119",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #119",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12361,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-119"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #119",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/beee0da5eaf84a67a6c63f02b350eb28.mp3",
-   "questions": [
+  "id": "free-12361",
+  "title": "Choose a Response #119",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #119",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12361,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-119"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "Check the expiration date.",
-      "B": "Tickets are expensive.",
-      "C": "It's valued at two dollars.",
-      "D": "Not too much longer, I hope."
-     },
-     "answer": "A",
-     "transcript": "How long is the ticket valid for?",
-     "stemZh": "这张票的有效期是多久？",
-     "analysis": "How long is the ticket valid for? 题干分析 题干是询问票证有效期的常用句，意为这张票有效期多久？，核心短语是 be valid for（有效期为……）。 选项分析 选项A：此选项为正确答案， “查看过期日期。” 这个回答提供了一个合理的指引，让提问者自己去核对具体的失效时间，从而推算出有效期，是符合逻辑的回应。 选项B： “票很贵。” 这是一个关于价格的评价，与询问有效期的时间长度完全无关，属于答非所问。 选项C： “价值两美元。” 这是在回答票的面值或价格，而不是有效期，不符合题意。 选项D： “希望不会太久。” 这是一个模糊的、带有主观愿望的感叹句，没有给出确切的时间信息，无法准确回答问题。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #119",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/beee0da5eaf84a67a6c63f02b350eb28.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "Check the expiration date.",
+            "B": "Tickets are expensive.",
+            "C": "It's valued at two dollars.",
+            "D": "Not too much longer, I hope."
+          },
+          "answer": "A",
+          "transcript": "How long is the ticket valid for?",
+          "stemZh": "tờ này phiếu thời hạn có hiệu lực là bao lâu?",
+          "analysis": "How long is the ticket valid for? Câu hỏi phân tích Câu hỏi là hỏi thăm phiếu vé chứng nhận thời hạn có hiệu lực thường dùng câu, ý là tờ này phiếu vé thời hạn có hiệu lực bao lâu?, hạch tâm Cụm từ là be valid for (thời hạn có hiệu lực là ……). Phương án phân tích Phương án A: này Phương án là Đáp án đúng, “ đã tra xét thời hạn ngày. ” câu trả lời này cung cấp một hợp lý chỉ dẫn, lại để cho vấn đề người chính mình đi thẩm tra đối chiếu cụ thể mất đi hiệu lực thời gian, do đó suy tính ra thời hạn có hiệu lực, là phù hợp suy luận đáp lại. Phương án B: “ phiếu vé rất đắt. ” đây là một cái về giá cả đánh giá, và hỏi thăm thời hạn có hiệu lực thời gian dài độ hoàn toàn không liên quan, thuộc về đáp phi sở vấn. Phương án C: “ giá trị hai đôla. ” đây là ở trả lời phiếu mặt giá trị hoặc giá cả, mà không phải thời hạn có hiệu lực, không phù hợp câu ý. Phương án D: “ hy vọng sẽ không quá lâu. ” đây là một cái mơ hồ, có chứa chủ quan nguyện vọng câu cảm thán, không có cho ra xác thực thời gian tin tức, không cách nào chuẩn xác trả lời vấn đề."
+        }
+      ]
+    }
+  ]
 }

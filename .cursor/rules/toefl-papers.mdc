@@ -12,7 +12,7 @@ Before any new or edited TOEFL paper goes live:
 2. Audio filenames: ASCII kebab-case, no spaces or parentheses. Player encodes spaces, but new files must not need that.
 3. Dated mock papers go in `library/toefl/` (and `library/toefl/audio/YYYY-MM-DD/`). HIT Set 1/2 papers go in `app/library/toefl/`. Do not dump set JSON into the website dated-paper folder.
 4. After writing JSON, run `node scripts/check_toefl_paper.js path/to/paper.json`. A pack: `node scripts/check_toefl_paper.js` (live catalog, including `app/library/toefl/bank-*-*.json`). Do not upload if it fails.
-4b. After a paper or reading-engine change passes the gate, ship it the same turn: rsync touched files with `~/.ssh/yysd_ecs_deploy` to `root@8.159.129.88` — HIT → `/opt/yysd/app` and `/opt/yysd/repo/app`; website reading → `/opt/yysd/web` and `/opt/yysd/repo`. Do not `rsync --delete` the website. Do not wait for a later “上线” ask.
+4b. After a paper or reading-engine change passes the gate, ship it the same turn: rsync touched files with `~/.ssh/yysd_ecs_deploy` to `root@8.159.129.88` — HIT → `/opt/yysd/app` and `/opt/yysd/repo/app`; website reading → `/opt/yysd/web` and `/opt/yysd/repo`. Do not `rsync --delete` the website. Do not wait for a later “ thượng tuyến ” ask.
 4c. Hand writing banks: one PNG → one task in `bank-bs|we|ad-writing.json`. PNG is source of truth; do not OCR-batch. Green answer bar verifies the reconstructed sentence — do not copy Titlecase from it into `bank`. Email needs `prompt` / `bullets` / `to` / `subject`. Discussion needs professor name+text and two student posts. Duplicate `task.set` fails. CJK/HUD/▩ in English fields fail.
 
 Reading (Jiajia / official Enhanced TOEFL):
@@ -24,8 +24,8 @@ Reading (Jiajia / official Enhanced TOEFL):
 Speaking (Xiaochun / official Listen and Repeat):
 
 8. One sentence per item — one kebab-case audio file. Do not share one long mp3 plus `fromSec` (players fail the seek and play the intro). A spoken scene intro is `modules[].intro.audio`, its own file — never a numbered task. The gate fails if a `repeat` task uses the intro/reel file or if `sample` is the directions text.
-9. Cadence is listen → 3s prep (`prepSec`) → beep → 8s record (`repeatSec` or default 8). Never show `sample` during the item. One scene `image` stays on screen for the set. Review shows `sample` as 应复述 — never the directions text.
-9b. Interview: `instruction` (scenario) may stay on screen. Never show `stem` during the item. Cadence is listen → 45s record (`speakSec` or default 45). No prep, no beep. Review shows `stem` as 题目.
+9. Cadence is listen → 3s prep (`prepSec`) → beep → 8s record (`repeatSec` or default 8). Never show `sample` during the item. One scene `image` stays on screen for the set. Review shows `sample` as ứng với thuật lại — never the directions text.
+9b. Interview: `instruction` (scenario) may stay on screen. Never show `stem` during the item. Cadence is listen → 45s record (`speakSec` or default 45). No prep, no beep. Review shows `stem` as đề mục.
 10. New LR audio: kebab-case, one file per sentence.
 
 Do not add a second exam engine. Reuse `toefl-*.html` + existing players.

@@ -5,8 +5,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function tierLabel(probability: number): "冲刺" | "匹配" | "保底" {
-  if (probability < 40) return "冲刺";
-  if (probability < 70) return "匹配";
-  return "保底";
+export function tierLabel(probability: number): " chạy nước rút " | " xứng đôi " | " giữ gốc " {
+  if (probability < 40) return " chạy nước rút ";
+  if (probability < 70) return " xứng đôi ";
+  return " giữ gốc ";
 }

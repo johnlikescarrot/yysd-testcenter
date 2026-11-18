@@ -132,7 +132,7 @@
     }
     if (!text) { if (onEnd) onEnd(); return; }
     cancel();
-    if (/[\u4e00-\u9fff]/.test(text)) {
+    if (/[àáảãạăắằẳẵặâấầẩẫậđèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵ]/i.test(text)) {
       ttsSpeak(text, onEnd, accent);
       return;
     }
@@ -165,7 +165,7 @@
         return;
       }
       var text = String((utterance && utterance.text) || "").trim();
-      if (!text || /[\u4e00-\u9fff]/.test(text)) {
+      if (!text || /[àáảãạăắằẳẵặâấầẩẫậđèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵ]/i.test(text)) {
         origSpeak(utterance);
         return;
       }

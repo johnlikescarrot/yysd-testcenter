@@ -11,7 +11,7 @@ var CONFIG = path.join(ROOT, "assets/js/config.js");
 var OUT = path.join(ROOT, "library/toefl/lab-index.json");
 
 function catalog(src, name) {
-  var m = src.match(new RegExp("var " + name + " = \\[([\\s\\S]*?)\\n  \\];"));
+  var m = src.match(new RegExp("var " + name + " = \\[([\\s\\S]*?)\\n \\];"));
   if (!m) return [];
   var out = [];
   var re = /id:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?file:\s*"([^"]+)"/g;
@@ -24,7 +24,7 @@ function catalog(src, name) {
 
 function dateOf(id) {
   var m = String(id).match(/^(\d{4}-\d{2}-\d{2})/);
-  return m ? m[1] : id;
+  return m? m[1]: id;
 }
 
 function titleOf(skill, task) {
@@ -36,7 +36,7 @@ function itemNos(task) {
     return (task.passage || []).filter(function (x) { return x && x.id; }).map(function (x) { return x.id; });
   }
   if (task.questions && task.questions.length) return task.questions.map(function (q) { return q.id; });
-  if (task.id != null) return [task.id];
+  if (task.id!= null) return [task.id];
   return [];
 }
 
@@ -131,7 +131,7 @@ items.forEach(function (it) {
 });
 items.forEach(function (it) {
   var key = it.skill + "|" + it.type + "|" + normTitle(it.title);
-  it.hot = !!(freq[key] && Object.keys(freq[key]).length >= 2);
+  it.hot =!!(freq[key] && Object.keys(freq[key]).length >= 2);
 });
 I18N.assignListenCodes(items);
 
@@ -145,10 +145,10 @@ items.forEach(function (it) { skills[it.skill] = (skills[it.skill] || 0) + 1; })
 });
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 must(items.filter(function (it) { return it.titleEn === "Campus Bike Repair"; }).length >= 2, "bike titles");
-must(items.some(function (it) { return it.listenCode === "C02" && it.titleEn === "Film Club" && it.titleZh === "电影社"; }), "film set code");
-must(items.some(function (it) { return it.titleEn === "University Registration Office" && it.titleZh.indexOf("注册") >= 0; }), "reg office");
-must(items.some(function (it) { return it.titleEn === "Coral Reefs" && it.titleZh === "珊瑚礁"; }), "coral");
-must(items.some(function (it) { return it.titleEn === "Ancient Greece and Rome" && it.titleZh.indexOf("罗马") >= 0; }), "greece");
-must(items.some(function (it) { return it.skill === "writing" && it.titleEn === "New Library Opening" && it.titleZh.indexOf("图书馆") >= 0; }), "library opening");
-must(items.some(function (it) { return it.listenCode === "T01" && it.titleZh && it.titleZh !== it.titleEn; }), "lecture zh");
-must(items.some(function (it) { return it.type === "announcement" && it.titleZh && it.titleZh !== it.titleEn; }), "announce zh");
+must(items.some(function (it) { return it.listenCode === "C02" && it.titleEn === "Film Club" && it.titleZh === " Điện ảnh xã "; }), "film set code");
+must(items.some(function (it) { return it.titleEn === "University Registration Office" && it.titleZh.indexOf("Đăng ký") >= 0; }), "reg office");
+must(items.some(function (it) { return it.titleEn === "Coral Reefs" && it.titleZh === " đá san hô "; }), "coral");
+must(items.some(function (it) { return it.titleEn === "Ancient Greece and Rome" && it.titleZh.indexOf(" La Mã ") >= 0; }), "greece");
+must(items.some(function (it) { return it.skill === "writing" && it.titleEn === "New Library Opening" && it.titleZh.indexOf(" đồ thư quán ") >= 0; }), "library opening");
+must(items.some(function (it) { return it.listenCode === "T01" && it.titleZh && it.titleZh!== it.titleEn; }), "lecture zh");
+must(items.some(function (it) { return it.type === "announcement" && it.titleZh && it.titleZh!== it.titleEn; }), "announce zh");

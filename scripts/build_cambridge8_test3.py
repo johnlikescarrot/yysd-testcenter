@@ -16,16 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_RE = re.compile(r"const TEST = (\{[\s\S]*?\});", re.S)
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 
-DOCX = Path("/Users/frankman/Desktop/剑8T3.docx")
+DOCX = Path("/Users/frankman/Desktop/Cambridge 8T3.docx")
 CEMENT_SRC = Path(
     "/Users/frankman/.cursor/projects/Users-frankman-yysd-test-center/assets/"
     "__2026-07-01_16.14.35-08827b9e-1d93-4434-930d-76e00fa86d2b.png"
 )
 AUDIO_SRC = [
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test3 Section1.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test3 Section2.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test3 Section3.mp3"),
-    Path("/Users/frankman/Desktop/之昂张张张zzz - IELTS8 Test3 Section4.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test3 Section1.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test3 Section2.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test3 Section3.mp3"),
+    Path("/Users/frankman/Desktop/ chi ngang trương trương trương zzz - IELTS8 Test3 Section4.mp3"),
 ]
 
 OUT_LISTENING = ROOT / "library/mock/cambridge-listening/cambridge-8-test-3.html"
@@ -49,7 +49,7 @@ def ans(*values: str) -> list[str]:
 
 
 def explain(*values: str) -> str:
-    return "答案：" + " / ".join(values) + "。"
+    return " Đáp án: " + " / ".join(values) + ". "
 
 
 def replace_test(html: str, test: dict) -> str:
@@ -65,25 +65,25 @@ def inject_state_vars(html: str) -> str:
 
 
 def patch_note_image(html: str) -> str:
-    needle = "  if(g.kind==='note'){\n    const fig="
-    if "if(g.kind==='note'){\n    body=`" in html:
+    needle = " if(g.kind==='note'){\n const fig="
+    if "if(g.kind==='note'){\n body=`" in html:
         insert = (
-            "  if(g.kind==='note'){\n"
-            "    const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
+            " if(g.kind==='note'){\n"
+            " const fig=(g.image?`<div class=\"map-wrap\" style=\"margin-bottom:16px;\">"
             "<img class=\"map-img\" src=\"${g.image}\" alt=\"${g.noteTitle||'map'}\" "
             "style=\"max-width:100%;height:auto;\"></div>`:'');\n"
-            "    body=fig+`"
+            " body=fig+`"
         )
-        html = html.replace("  if(g.kind==='note'){\n    body=`", insert, 1)
+        html = html.replace(" if(g.kind==='note'){\n body=`", insert, 1)
     return html
 
 
 def patch_listening_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 听力", "剑桥雅思8 Test 3 听力"),
-        ("剑桥雅思8 · Test 2（听力）", "剑桥雅思8 · Test 3（听力）"),
-        ("剑桥雅思8 Test 2 听力：", "剑桥雅思8 Test 3 听力："),
-        ("Test 2 听力（官方原题 + 官方答案）", "Test 3 听力（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 2 Nghe ", "Cambridge IELTS 8 Test 3 Nghe "),
+        ("Cambridge IELTS 8 · Test 2 (Nghe) ", "Cambridge IELTS 8 · Test 3 (Nghe) "),
+        ("Cambridge IELTS 8 Test 2 Nghe: ", "Cambridge IELTS 8 Test 3 Nghe: "),
+        ("Test 2 Nghe (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Nghe (chính thức nguyên câu + chính thức Đáp án) "),
         ("test-2", "test-3"),
         ("cam8_test2", "cam8_test3"),
     ]
@@ -95,10 +95,10 @@ def patch_listening_meta(html: str) -> str:
 
 def patch_reading_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 阅读", "剑桥雅思8 Test 3 阅读"),
-        ("剑桥雅思8 · Test 2（阅读）", "剑桥雅思8 · Test 3（阅读）"),
-        ("剑桥雅思8 Test 2 学术类阅读", "剑桥雅思8 Test 3 学术类阅读"),
-        ("Test 2 阅读（官方原题 + 官方答案）", "Test 3 阅读（官方原题 + 官方答案）"),
+        ("Cambridge IELTS 8 Test 2 Đọc ", "Cambridge IELTS 8 Test 3 Đọc "),
+        ("Cambridge IELTS 8 · Test 2 (Đọc) ", "Cambridge IELTS 8 · Test 3 (Đọc) "),
+        ("Cambridge IELTS 8 Test 2 Đọc Học thuật (Academic Reading) ", "Cambridge IELTS 8 Test 3 Đọc Học thuật (Academic Reading) "),
+        ("Test 2 Đọc (chính thức nguyên câu + chính thức Đáp án) ", "Test 3 Đọc (chính thức nguyên câu + chính thức Đáp án) "),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
     ]
@@ -109,16 +109,16 @@ def patch_reading_meta(html: str) -> str:
 
 def patch_writing_meta(html: str) -> str:
     reps = [
-        ("剑桥雅思8 Test 2 写作", "剑桥雅思8 Test 3 写作"),
-        ("剑桥雅思8 · Test 2（写作）", "剑桥雅思8 · Test 3（写作）"),
-        ("剑桥雅思8 Test 2 学术类写作", "剑桥雅思8 Test 3 学术类写作"),
+        ("Cambridge IELTS 8 Test 2 Viết ", "Cambridge IELTS 8 Test 3 Viết "),
+        ("Cambridge IELTS 8 · Test 2 (Viết) ", "Cambridge IELTS 8 · Test 3 (Viết) "),
+        ("Cambridge IELTS 8 Test 2 Viết Học thuật (Academic Writing) ", "Cambridge IELTS 8 Test 3 Viết Học thuật (Academic Writing) "),
         (
             "Task 1 UK school spending pie charts + Task 2 technology and relationships essay",
             "Task 1 cement and concrete production diagrams + Task 2 petrol price traffic pollution essay",
         ),
-        ("Test 2 写作（官方真题）", "Test 3 写作（官方真题）"),
+        ("Test 2 Viết (Đề thi chính thức) ", "Test 3 Viết (Đề thi chính thức) "),
         ("cambridge-8-test-2-writing-draft", "cambridge-8-test-3-writing-draft"),
-        ("【剑桥雅思8 · Test 2 写作】", "【剑桥雅思8 · Test 3 写作】"),
+        ("[Cambridge IELTS 8 · Test 2 Viết]", "[Cambridge IELTS 8 · Test 3 Viết]"),
         ("Test 2", "Test 3"),
         ("test-2", "test-3"),
         ("school-spending", "cement-concrete"),
@@ -253,8 +253,8 @@ def listening_test() -> dict:
                         },
                         "answerSet": ["B", "E"],
                         "questions": [
-                            {"id": "L9", "no": 9, "explain": "答案：B 与 E，顺序不限。"},
-                            {"id": "L10", "no": 10, "explain": "答案：B 与 E，顺序不限。"},
+                            {"id": "L9", "no": 9, "explain": " Đáp án: B và E, không giới hạn thứ tự. "},
+                            {"id": "L10", "no": 10, "explain": " Đáp án: B và E, không giới hạn thứ tự. "},
                         ],
                     },
                 ],
@@ -482,11 +482,11 @@ def reading_test() -> dict:
             },
             "answerSet": ["B", "C", "F", "H", "J"],
             "questions": [
-                {"id": "Q14", "no": 14, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q15", "no": 15, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q16", "no": 16, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q17", "no": 17, "explain": "答案：B、C、F、H、J，顺序不限。"},
-                {"id": "Q18", "no": 18, "explain": "答案：B、C、F、H、J，顺序不限。"},
+                {"id": "Q14", "no": 14, "explain": " Đáp án: B, C, F, H, J, không giới hạn thứ tự. "},
+                {"id": "Q15", "no": 15, "explain": " Đáp án: B, C, F, H, J, không giới hạn thứ tự. "},
+                {"id": "Q16", "no": 16, "explain": " Đáp án: B, C, F, H, J, không giới hạn thứ tự. "},
+                {"id": "Q17", "no": 17, "explain": " Đáp án: B, C, F, H, J, không giới hạn thứ tự. "},
+                {"id": "Q18", "no": 18, "explain": " Đáp án: B, C, F, H, J, không giới hạn thứ tự. "},
             ],
         },
         {

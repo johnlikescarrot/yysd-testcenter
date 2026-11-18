@@ -42,8 +42,8 @@ function parseLine(line: string): string[] {
       if (q && line[i + 1] === '"') {
         cur += '"';
         i++;
-      } else q = !q;
-    } else if (ch === "," && !q) {
+      } else q =!q;
+    } else if (ch === "," &&!q) {
       out.push(cur);
       cur = "";
     } else cur += ch;
@@ -55,7 +55,7 @@ function parseLine(line: string): string[] {
 function greTotal(v: string, q: string): number | null {
   const a = Number(v);
   const b = Number(q);
-  if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
+  if (!Number.isFinite(a) ||!Number.isFinite(b)) return null;
   if (a > 170 || b > 170) return null; // old GRE scale — skip
   return Math.round(a + b);
 }
@@ -135,12 +135,12 @@ async function main() {
 
   // Prefer GPA-present, then International, then newer seasons
   const ranked = [...ms].sort((a, b) => {
-    const ga = a.gpa.trim() ? 1 : 0;
-    const gb = b.gpa.trim() ? 1 : 0;
-    if (gb !== ga) return gb - ga;
-    const ia = /international/i.test(a.status) ? 1 : 0;
-    const ib = /international/i.test(b.status) ? 1 : 0;
-    if (ib !== ia) return ib - ia;
+    const ga = a.gpa.trim()? 1: 0;
+    const gb = b.gpa.trim()? 1: 0;
+    if (gb!== ga) return gb - ga;
+    const ia = /international/i.test(a.status)? 1: 0;
+    const ib = /international/i.test(b.status)? 1: 0;
+    if (ib!== ia) return ib - ia;
     return (seasonYear(b.season) || 0) - (seasonYear(a.season) || 0);
   });
 
@@ -162,7 +162,7 @@ async function main() {
     }
     const gpaNum = Number(r.gpa);
     const hasGpa = Number.isFinite(gpaNum) && gpaNum >= 2.0 && gpaNum <= 4.0;
-    if (PREFER_WITH_GPA && !hasGpa) {
+    if (PREFER_WITH_GPA &&!hasGpa) {
       skippedNoGpa++;
       continue;
     }
@@ -171,12 +171,12 @@ async function main() {
     const gre = greTotal(r.greV, r.greQ);
     const ug =
       /international/i.test(r.status)
-        ? "国际本科（GradCafe 自报）"
+        ? " quốc tế Đại học (GradCafe tự báo) "
         : /american/i.test(r.status)
-          ? "美国本科（GradCafe 自报）"
-          : "未标注本科（GradCafe 自报）";
+          ? " Hoa Kỳ Đại học (GradCafe tự báo) "
+          : " không đánh dấu Đại học (GradCafe tự báo) ";
     const note = redactComment(r.comment);
-    const gpa = hasGpa ? Math.round(gpaNum * 100) / 100 : school.avgGpa;
+    const gpa = hasGpa? Math.round(gpaNum * 100) / 100: school.avgGpa;
     const tags = ["gradcafe"];
     if (/international/i.test(r.status)) tags.push("international");
     if (note.toLowerCase().includes("research")) tags.push("research");
@@ -193,7 +193,7 @@ async function main() {
       backgroundTags: tags,
       admissionResult: admitted,
       year,
-      description: `GradCafe 真实自报（脱敏）：${ug}，GPA ${gpa.toFixed(2)}${gre != null ? `，GRE ${gre}` : ""}，${year} ${r.season} 申请 ${catalog} ${school.program}，${admitted ? "录取" : "拒绝"}${note ? `。备注：${note}` : ""}。来源：The GradCafe（历史公开数据集）。`,
+      description: `GradCafe chân thật tự báo (cởi mẫn): ${ug}, GPA ${gpa.toFixed(2)}${gre!= null? `, GRE ${gre}`: ""}, ${year} ${r.season} thân thỉnh ${catalog} ${school.program}, ${admitted? " trúng tuyển ": " cự tuyệt "}${note? `. ghi chú: ${note}`: ""}. nơi phát ra: The GradCafe (Lịch sử công khai số liệu tụ tập). `,
       source: "gradcafe",
       externalId: `gradcafe-deedy-${r.rowId}`,
     });

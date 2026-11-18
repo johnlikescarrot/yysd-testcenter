@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/tenant-boot.js?v=20261013perm1"></script>
-  <title>词汇诊断总览 · 教师端</title>
+  <title>Chẩn đoán từ vựng quan sát · Cổng giáo viên</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css?v=20260722polish">
   <link rel="stylesheet" href="assets/css/dashboard-premium.css?v=20260825calnavy3">
@@ -13,57 +13,57 @@
 </head>
 <body class="home-minimal teacher-page teacher-layout shell-compact-nav page-premium">
   <header class="teacher-mobilebar">
-    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">菜单</button>
-    <span class="teacher-mobilebar__title">词汇诊断</span>
+    <button type="button" class="teacher-nav-toggle" data-teacher-nav-toggle aria-controls="teacher-side" aria-expanded="false">Trình đơn</button>
+    <span class="teacher-mobilebar__title"> Chẩn đoán từ vựng </span>
   </header>
   <div class="teacher-nav-overlay" data-teacher-nav-close hidden></div>
   <div class="teacher-shell">
-    <aside class="teacher-side" id="teacher-side" aria-label="教师导航">
+    <aside class="teacher-side" id="teacher-side" aria-label="Điều hướng giáo viên">
       <div class="teacher-side__head">
         <a href="teacher.html" class="teacher-side__brand">
           <img src="assets/img/logo.svg?v=20260702-logo" alt="">
-          <span class="teacher-side__brand-text"><b>优益思达</b><span>教务</span></span>
+          <span class="teacher-side__brand-text"><b>YYSD</b><span> Giáo vụ </span></span>
         </a>
-        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="收起侧栏">‹</button>
+        <button type="button" class="teacher-nav-collapse" data-teacher-nav-collapse aria-pressed="false" aria-label="Thu gọn thanh bên">‹</button>
       </div>
       <nav class="teacher-side__nav">
-        <p class="teacher-side__label">教务</p>
-        <a href="teacher.html" class="teacher-side__link" title="我的学生">我的学生</a>
-        <a href="teacher-calendar.html" class="teacher-side__link" title="任务日历">任务日历</a>
-        <a href="teacher-diagnostic.html" class="teacher-side__link is-active" title="词汇诊断">词汇诊断</a>
-        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="单词闯关">单词闯关</a>
-        <a href="admin-assign.html" class="teacher-side__link" title="学生分配" data-admin-only hidden>学生分配</a>
-        <a href="admin-perms.html" class="teacher-side__link" title="权限管理" data-admin-only hidden>权限管理</a>
-        <a href="platform.html" class="teacher-side__link" title="平台主控台" data-platform-only hidden>平台主控台</a>
+        <p class="teacher-side__label">Giáo vụ </p>
+        <a href="teacher.html" class="teacher-side__link" title="Học viên của tôi"> Học viên của tôi</a>
+        <a href="teacher-calendar.html" class="teacher-side__link" title="Lịch nhiệm vụ"> Lịch nhiệm vụ</a>
+        <a href="teacher-diagnostic.html" class="teacher-side__link is-active" title="Chẩn đoán từ vựng"> Chẩn đoán từ vựng</a>
+        <a href="teacher-vocab-challenge.html" class="teacher-side__link" title="Vượt ải từ vựng"> Vượt ải từ vựng</a>
+        <a href="admin-assign.html" class="teacher-side__link" title="Phân bổ học viên" data-admin-only hidden> Phân bổ học viên</a>
+        <a href="admin-perms.html" class="teacher-side__link" title="Quản lý quyền truy cập" data-admin-only hidden> Quản lý quyền truy cập</a>
+        <a href="platform.html" class="teacher-side__link" title="Bảng điều khiển hệ thống" data-platform-only hidden> Bảng điều khiển hệ thống</a>
       </nav>
       <div class="teacher-side__foot">
-        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth">个人中心</a>
-        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">退出</button>
+        <a class="teacher-side__link teacher-side__account" href="teacher.html" id="nav-auth"> Hồ sơ cá nhân</a>
+        <button type="button" class="btn btn--ghost btn--sm nav-persist" id="logout-btn">Đăng xuất</button>
       </div>
     </aside>
     <div class="teacher-content">
       <section class="minimal-page-head">
-        <div class="minimal-crumb">教师端</div>
+        <div class="minimal-crumb"> Cổng giáo viên </div>
         <div class="minimal-eyebrow">VOCAB DIAGNOSTIC</div>
-        <h1>班级词汇诊断总览</h1>
-        <p class="minimal-page-desc">各词库正确率与评级；高中正确率 &lt; 60% 标红预警</p>
+        <h1>lớp Chẩn đoán từ vựng quan sát</h1>
+        <p class="minimal-page-desc">tất cả từ kho Tỷ lệ đúng và bình xét cấp bậc; THPT Tỷ lệ đúng &lt; 60% tiêu hồng báo động trước </p>
       </section>
       <main class="minimal-main">
         <div class="diag-mistakes-toolbar">
           <select id="filt-rec">
-            <option value="">全部推荐册</option>
-            <option value="high_school">推荐高中</option>
-            <option value="cet4">推荐四级</option>
-            <option value="ielts">推荐雅思</option>
+            <option value="">Tất cả Đề xuất quyển</option>
+            <option value="high_school">Đề xuất THPT</option>
+            <option value="cet4">Đề xuất Đại học B1</option>
+            <option value="ielts">Đề xuất IELTS</option>
           </select>
-          <button type="button" class="btn btn--ghost btn--sm" id="refresh-btn">刷新</button>
+          <button type="button" class="btn btn--ghost btn--sm" id="refresh-btn">Làm mới</button>
         </div>
         <div id="diag-overview" class="diag-table-wrap">
           <div class="state state--brand"><div class="spinner spinner--brand"></div></div>
         </div>
         <section class="diag-card diag-card--wide" style="margin-top:20px">
-          <h2 class="diag-h2">班级高频错词 TOP20</h2>
-          <p class="diag-lead">当前班级错题本中尚未移出的单词，按出现次数排序</p>
+          <h2 class="diag-h2">lớp Tần suất cao từ sai TOP20</h2>
+          <p class="diag-lead">trước mắt lớp Sổ lỗi sai Vừa chưa dời ra Từ vựng, theo như xuất hiện số lần sắp xếp </p>
           <div id="diag-hot"></div>
         </section>
       </main>

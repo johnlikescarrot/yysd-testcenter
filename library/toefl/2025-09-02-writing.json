@@ -1,12 +1,30 @@
 {
   "id": "2025-09-02",
-  "title": "新托福 9.02 · 写作",
+  "title": "TOEFL iBT 02/9 · Viết",
   "set": "9.02",
   "skill": "writing",
   "modules": [
-    { "n": 1, "timeSec": 480, "from": 1, "to": 10, "label": "Sentence Construction" },
-    { "n": 2, "timeSec": 420, "from": 11, "to": 11, "label": "Email" },
-    { "n": 3, "timeSec": 600, "from": 12, "to": 12, "label": "Academic Discussion" }
+    {
+      "n": 1,
+      "timeSec": 480,
+      "from": 1,
+      "to": 10,
+      "label": "Sentence Construction"
+    },
+    {
+      "n": 2,
+      "timeSec": 420,
+      "from": 11,
+      "to": 11,
+      "label": "Email"
+    },
+    {
+      "n": 3,
+      "timeSec": 600,
+      "from": 12,
+      "to": 12,
+      "label": "Academic Discussion"
+    }
   ],
   "tasks": [
     {
@@ -15,13 +33,47 @@
       "id": 1,
       "context": "Are you planning to attend the conference next month?",
       "parts": [
-        { "t": "I don't " },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "." }
+        {
+          "t": "I don't "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["attend", "plans", "to", "any", "have", "it"],
-      "answer": ["have", "any", "plans", "to", "attend", "it"]
+      "bank": [
+        "attend",
+        "plans",
+        "to",
+        "any",
+        "have",
+        "it"
+      ],
+      "answer": [
+        "have",
+        "any",
+        "plans",
+        "to",
+        "attend",
+        "it"
+      ]
     },
     {
       "type": "sentence",
@@ -29,13 +81,42 @@
       "id": 2,
       "context": "What was our classmate complaining about?",
       "parts": [
-        { "t": "She was " },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true },
-        { "t": "." }
+        {
+          "t": "She was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["what prompted", "exam schedule", "curious about", "the change", "in the"],
-      "answer": ["curious about", "what prompted", "the change", "in the", "exam schedule"]
+      "bank": [
+        "what prompted",
+        "exam schedule",
+        "curious about",
+        "the change",
+        "in the"
+      ],
+      "answer": [
+        "curious about",
+        "what prompted",
+        "the change",
+        "in the",
+        "exam schedule"
+      ]
     },
     {
       "type": "sentence",
@@ -43,13 +124,53 @@
       "id": 3,
       "context": "I just bought a new laptop for school.",
       "parts": [
-        { "t": "Have " },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "?" }
+        {
+          "t": "Have "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["all", "the", "updates", "necessary", "software", "you", "installed", "did"],
-      "answer": ["you", "installed", "all", "the", "necessary", "software", "updates"]
+      "bank": [
+        "all",
+        "the",
+        "updates",
+        "necessary",
+        "software",
+        "you",
+        "installed",
+        "did"
+      ],
+      "answer": [
+        "you",
+        "installed",
+        "all",
+        "the",
+        "necessary",
+        "software",
+        "updates"
+      ]
     },
     {
       "type": "sentence",
@@ -57,12 +178,44 @@
       "id": 4,
       "context": "The opening event of the new library is scheduled for next month.",
       "parts": [
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": " event?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " event?"
+        }
       ],
-      "bank": ["there will", "the", "know if", "be", "do you", "food at"],
-      "answer": ["do you", "know if", "there will", "be", "food at", "the"]
+      "bank": [
+        "there will",
+        "the",
+        "know if",
+        "be",
+        "do you",
+        "food at"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "there will",
+        "be",
+        "food at",
+        "the"
+      ]
     },
     {
       "type": "sentence",
@@ -70,12 +223,49 @@
       "id": 5,
       "context": "Why didn’t you attend the seminar yesterday?",
       "parts": [
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["can you", "later viewing", "tell me", "it", "for", "if", "was recorded"],
-      "answer": ["can you", "tell me", "if", "it", "was recorded", "for", "later viewing"]
+      "bank": [
+        "can you",
+        "later viewing",
+        "tell me",
+        "it",
+        "for",
+        "if",
+        "was recorded"
+      ],
+      "answer": [
+        "can you",
+        "tell me",
+        "if",
+        "it",
+        "was recorded",
+        "for",
+        "later viewing"
+      ]
     },
     {
       "type": "sentence",
@@ -83,12 +273,39 @@
       "id": 6,
       "context": "The workshop on effective communication skills was very helpful.",
       "parts": [
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true },
-        { "t": " month?" }
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": " month?"
+        }
       ],
-      "bank": ["know if", "be another", "session next", "do you", "there will"],
-      "answer": ["do you", "know if", "there will", "be another", "session next"]
+      "bank": [
+        "know if",
+        "be another",
+        "session next",
+        "do you",
+        "there will"
+      ],
+      "answer": [
+        "do you",
+        "know if",
+        "there will",
+        "be another",
+        "session next"
+      ]
     },
     {
       "type": "sentence",
@@ -96,13 +313,47 @@
       "id": 7,
       "context": "What did that student ask in the career center?",
       "parts": [
-        { "t": "He was " },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "." }
+        {
+          "t": "He was "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["which internships", "most useful", "experience", "know", "curious to", "provided the"],
-      "answer": ["curious to", "know", "which internships", "provided the", "most useful", "experience"]
+      "bank": [
+        "which internships",
+        "most useful",
+        "experience",
+        "know",
+        "curious to",
+        "provided the"
+      ],
+      "answer": [
+        "curious to",
+        "know",
+        "which internships",
+        "provided the",
+        "most useful",
+        "experience"
+      ]
     },
     {
       "type": "sentence",
@@ -110,13 +361,47 @@
       "id": 8,
       "context": "Why did the university president make a speech?",
       "parts": [
-        { "t": "He wanted " },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "." }
+        {
+          "t": "He wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["been", "to announce", "environmental", "what", "goals have", "reached"],
-      "answer": ["to announce", "what", "environmental", "goals have", "been", "reached"]
+      "bank": [
+        "been",
+        "to announce",
+        "environmental",
+        "what",
+        "goals have",
+        "reached"
+      ],
+      "answer": [
+        "to announce",
+        "what",
+        "environmental",
+        "goals have",
+        "been",
+        "reached"
+      ]
     },
     {
       "type": "sentence",
@@ -124,13 +409,42 @@
       "id": 9,
       "context": "I’m thinking about joining the fitness club on campus.",
       "parts": [
-        { "slot": true },
-        { "t": " you " },
-        { "slot": true }, { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "?" }
+        {
+          "slot": true
+        },
+        {
+          "t": " you "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "?"
+        }
       ],
-      "bank": ["membership", "the", "check", "fees", "did"],
-      "answer": ["did", "check", "the", "membership", "fees"]
+      "bank": [
+        "membership",
+        "the",
+        "check",
+        "fees",
+        "did"
+      ],
+      "answer": [
+        "did",
+        "check",
+        "the",
+        "membership",
+        "fees"
+      ]
     },
     {
       "type": "sentence",
@@ -138,12 +452,37 @@
       "id": 10,
       "context": "What did the teacher say about the homework assignment?",
       "parts": [
-        { "t": "She wanted " },
-        { "slot": true }, { "slot": true }, { "slot": true }, { "slot": true },
-        { "t": "." }
+        {
+          "t": "She wanted "
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "slot": true
+        },
+        {
+          "t": "."
+        }
       ],
-      "bank": ["if everyone", "to know", "instructions clearly", "understood the"],
-      "answer": ["to know", "if everyone", "understood the", "instructions clearly"]
+      "bank": [
+        "if everyone",
+        "to know",
+        "instructions clearly",
+        "understood the"
+      ],
+      "answer": [
+        "to know",
+        "if everyone",
+        "understood the",
+        "instructions clearly"
+      ]
     },
     {
       "type": "email",

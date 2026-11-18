@@ -1,5 +1,5 @@
 /* =========================================================================
-   config.js — shared taxonomy + helpers for 优益思达学习中心
+   config.js — shared taxonomy + helpers for Trung tâm Học tập YYSD
    Loaded by the landing page, zone pages, the viewer and results page.
    ========================================================================= */
 window.YYSD = (function () {
@@ -7,1105 +7,1105 @@ window.YYSD = (function () {
 
   // Bump when library HTML changes so exam iframe skips stale browser cache.
   var CONTENT_VER = "20260909jtopen";
-  // ponytail: 剑7/12 与剑10 T4P2 仍缺，目录只列出已有册
+  // ponytail: Cambridge 7/12 và Cambridge 10 T4P2 nhưng thiếu, mục lục chỉ nhóm ra đã có quyển
   var JINGTING_OPEN = true;
   var WRONG_WORDS_KEY = "yysd:wrong-words";
   var SAVED_WORDS_KEY = "yysd:saved-words";
 
-  // Homepage display order: 单词区 → 练习区 → 真题区
+  // Homepage display order: Khu từ vựng → Khu luyện tập → Khu đề thi
   var ZONES = ["study", "practice", "mock"];
 
   var ZONE = {
-    study:    { label: "单词区", en: "Words", icon: "📚",
-                desc: "词书、错题本与 AI 查词，边学边测，打牢基础。" },
-    practice: { label: "练习区", en: "Practice", icon: "✏️",
-                desc: "长难句、数字听写等专项训练，针对性提分。" },
-    mock:     { label: "雅思真题", en: "IELTS Past Papers", icon: "🎯",
-                desc: "剑桥雅思听力 / 阅读 / 写作历年真题，在线练习。" },
-    toefl:    { label: "托福真题", en: "TOEFL", icon: "🎯",
-                desc: "新托福阅读机考：练习不限时，模考按模块计时。" }
+    study: { label: " Khu từ vựng ", en: "Words", icon: "📚",
+                desc: " từ sách, Sổ lỗi sai và AI tra từ, bên cạnh học bên cạnh trắc, đánh lao trụ cột. " },
+    practice: { label: " Khu luyện tập ", en: "Practice", icon: "✏️",
+                desc: " Câu phức học thuật, Nghe chép số liệu {các loại:đợi} Luyện tập chuyên đề, tính nhắm vào xách điểm. " },
+    mock: { label: " Đề thi IELTS ", en: "IELTS Past Papers", icon: "🎯",
+                desc: " Cambridge IELTS Nghe / Đọc / Viết đề thi các năm, luyện tập trực tuyến. " },
+    toefl: { label: " Đề thi TOEFL ", en: "TOEFL", icon: "🎯",
+                desc: " TOEFL iBT Đọc cơ khảo thi: Luyện tập không Thời gian, Thi thử theo như module tính theo thời gian. " }
   };
 
   // ordered subjects per zone (leaf keys used by the manifest / folder classification)
   var ZONE_SUBJECTS = {
-    study:    ["grammar", "vocab", "vocab-cet4", "vocab-cet4-lite",
+    study: ["grammar", "vocab", "vocab-cet4", "vocab-cet4-lite",
                "vocab-special-listening", "vocab-special-reading", "vocab-special-writing",
                "vocab-themes"],
     practice: ["changnanju", "shuzi-tingxie", "ielts-speaking", "ielts"],
-    mock:     ["cambridge-listening", "cambridge-reading", "cambridge-writing", "ielts",
+    mock: ["cambridge-listening", "cambridge-reading", "cambridge-writing", "ielts",
                "ielts-speaking", "ielts-writing", "jingting"],
-    toefl:    ["toefl-reading", "toefl-listening", "toefl-speaking", "toefl-writing"]
+    toefl: ["toefl-reading", "toefl-listening", "toefl-speaking", "toefl-writing"]
   };
 
   var SUBJECT = {
-    "cambridge-listening": { label: "听力", en: "Listening", color: "var(--c-cambridge-listening)" },
-    "cambridge-reading":   { label: "阅读", en: "Reading", color: "var(--c-cambridge-reading)" },
-    "cambridge-writing":   { label: "写作", en: "Writing", color: "var(--c-writing)" },
-    "ielts-speaking":      { label: "口语", en: "Speaking", color: "var(--c-ielts)" },
-    "ielts-writing":       { label: "写作", en: "Writing", color: "var(--c-ielts)" },
-    cambridge: { label: "剑桥真题", en: "Cambridge", color: "var(--c-cambridge)" },
-    ielts:   { label: "雅思真题", en: "IELTS", color: "var(--c-ielts)" },
-    alevel:  { label: "A-Level 真题", en: "A-Level", color: "var(--c-pte)" },
-    ap:      { label: "AP 真题", en: "AP", color: "var(--c-toefl)" },
-    toefl:   { label: "托福真题", en: "TOEFL", color: "var(--c-toefl)" },
-    "toefl-reading": { label: "托福阅读", en: "TOEFL Reading", color: "var(--c-toefl)" },
-    "toefl-listening": { label: "托福听力", en: "TOEFL Listening", color: "var(--c-toefl)" },
-    "toefl-writing": { label: "托福写作", en: "TOEFL Writing", color: "var(--c-toefl)" },
-    "toefl-speaking": { label: "托福口语", en: "TOEFL Speaking", color: "var(--c-toefl)" },
-    sat:     { label: "SAT 真题", en: "SAT", color: "var(--c-grammar)" },
-    grammar: { label: "语法", en: "Grammar", color: "var(--c-grammar)" },
-    vocab:   { label: "高中词汇", en: "Vocabulary", color: "var(--c-vocab)" },
-    "vocab-cet4":    { label: "四级词汇", en: "CET-4", color: "var(--c-vocab)" },
-    "vocab-cet4-lite": { label: "四级词汇（精简版）", en: "CET-4 Compact", color: "var(--c-vocab)" },
-    "vocab-special-listening": { label: "听力专项词汇", en: "Listening Words", color: "var(--c-cambridge-listening)" },
-    "vocab-special-reading":   { label: "阅读专项词汇", en: "Reading Words", color: "var(--c-cambridge-reading)" },
-    "vocab-special-writing":   { label: "写作专项词汇", en: "Writing Vocabulary", color: "var(--c-writing)" },
-    "vocab-themes": { label: "分类词库", en: "Thematic Vocab", color: "var(--c-vocab)" },
-    changnanju: { label: "长难句", en: "Complex Sentences", color: "var(--c-zone-practice)" },
-    "shuzi-tingxie": { label: "数字听写", en: "Number Dictation", color: "var(--c-zone-practice)" },
-    jingting:   { label: "听力精听", en: "Intensive Listening", color: "var(--c-listening)" }
+    "cambridge-listening": { label: "Nghe", en: "Listening", color: "var(--c-cambridge-listening)" },
+    "cambridge-reading": { label: "Đọc", en: "Reading", color: "var(--c-cambridge-reading)" },
+    "cambridge-writing": { label: "Viết", en: "Writing", color: "var(--c-writing)" },
+    "ielts-speaking": { label: "Nói", en: "Speaking", color: "var(--c-ielts)" },
+    "ielts-writing": { label: "Viết", en: "Writing", color: "var(--c-ielts)" },
+    cambridge: { label: " Đề Cambridge IELTS ", en: "Cambridge", color: "var(--c-cambridge)" },
+    ielts: { label: " Đề thi IELTS ", en: "IELTS", color: "var(--c-ielts)" },
+    alevel: { label: "A-Level đề thi thật ", en: "A-Level", color: "var(--c-pte)" },
+    ap: { label: "AP đề thi thật ", en: "AP", color: "var(--c-toefl)" },
+    toefl: { label: " Đề thi TOEFL ", en: "TOEFL", color: "var(--c-toefl)" },
+    "toefl-reading": { label: " TOEFL Reading ", en: "TOEFL Reading", color: "var(--c-toefl)" },
+    "toefl-listening": { label: " TOEFL Listening ", en: "TOEFL Listening", color: "var(--c-toefl)" },
+    "toefl-writing": { label: " TOEFL Writing ", en: "TOEFL Writing", color: "var(--c-toefl)" },
+    "toefl-speaking": { label: " TOEFL Speaking ", en: "TOEFL Speaking", color: "var(--c-toefl)" },
+    sat: { label: "SAT đề thi thật ", en: "SAT", color: "var(--c-grammar)" },
+    grammar: { label: " Ngữ pháp ", en: "Grammar", color: "var(--c-grammar)" },
+    vocab: { label: " Từ vựng Nền tảng THPT ", en: "Vocabulary", color: "var(--c-vocab)" },
+    "vocab-cet4": { label: " Từ vựng Đại học Cốt lõi ", en: "CET-4", color: "var(--c-vocab)" },
+    "vocab-cet4-lite": { label: " Từ vựng Đại học Cốt lõi (Bản rút gọn) ", en: "CET-4 Compact", color: "var(--c-vocab)" },
+    "vocab-special-listening": { label: " Từ vựng Nghe chuyên sâu ", en: "Listening Words", color: "var(--c-cambridge-listening)" },
+    "vocab-special-reading": { label: " Từ vựng Đọc chuyên sâu ", en: "Reading Words", color: "var(--c-cambridge-reading)" },
+    "vocab-special-writing": { label: " Từ vựng Viết chuyên sâu ", en: "Writing Vocabulary", color: "var(--c-writing)" },
+    "vocab-themes": { label: " Từ vựng theo chủ đề ", en: "Thematic Vocab", color: "var(--c-vocab)" },
+    changnanju: { label: " Câu phức học thuật ", en: "Complex Sentences", color: "var(--c-zone-practice)" },
+    "shuzi-tingxie": { label: " Nghe chép số liệu ", en: "Number Dictation", color: "var(--c-zone-practice)" },
+    jingting: { label: " Nghe sâu (Intensive Listening) ", en: "Intensive Listening", color: "var(--c-listening)" }
   };
 
   // Display tree for homepage + zone pages (mirrors the course-centre diagram).
   // Each leaf maps to a manifest `subject`; categories may have `children`.
   var NAV = {
     study: [
-      { key: "vocab", label: "单词", children: [
-        { label: "高中词汇", subject: "vocab" },
-        { label: "四级词汇", subject: "vocab-cet4" },
-        { label: "四级词汇（精简版）", subject: "vocab-cet4-lite" },
-        { key: "vocab-special", label: "雅思专项词汇", children: [
-          { label: "听力专项词汇", subject: "vocab-special-listening" },
-          { label: "阅读专项词汇", subject: "vocab-special-reading" },
-          { label: "写作专项词汇", subject: "vocab-special-writing" }
+      { key: "vocab", label: "Từ vựng", children: [
+        { label: " Từ vựng Nền tảng THPT ", subject: "vocab" },
+        { label: " Từ vựng Đại học Cốt lõi ", subject: "vocab-cet4" },
+        { label: " Từ vựng Đại học Cốt lõi (Bản rút gọn) ", subject: "vocab-cet4-lite" },
+        { key: "vocab-special", label: " Từ vựng IELTS chuyên sâu ", children: [
+          { label: " Từ vựng Nghe chuyên sâu ", subject: "vocab-special-listening" },
+          { label: " Từ vựng Đọc chuyên sâu ", subject: "vocab-special-reading" },
+          { label: " Từ vựng Viết chuyên sâu ", subject: "vocab-special-writing" }
         ] },
-        { label: "分类词库", subject: "vocab-themes", href: "vocab-shelf.html?view=catalog" }
+        { label: " Từ vựng theo chủ đề ", subject: "vocab-themes", href: "vocab-shelf.html?view=catalog" }
       ] }
     ],
     practice: [
-      { key: "changnanju", label: "长难句", subject: "changnanju" },
-      { key: "shuzi-tingxie", label: "数字听写", subject: "shuzi-tingxie" },
-      { key: "ielts-speaking", label: "雅思口语", subject: "ielts-speaking" }
+      { key: "changnanju", label: " Câu phức học thuật ", subject: "changnanju" },
+      { key: "shuzi-tingxie", label: " Nghe chép số liệu ", subject: "shuzi-tingxie" },
+      { key: "ielts-speaking", label: " IELTS Speaking ", subject: "ielts-speaking" }
     ],
     mock: [
-      { key: "listening", label: "听力", subject: "cambridge-listening", desc: "听力真题顺序练习", skill: "listening",
+      { key: "listening", label: "Nghe", subject: "cambridge-listening", desc: " Luyện đề Nghe theo thứ tự ", skill: "listening",
         links: [
-          { label: "听力真题顺序练习", href: "zone.html?zone=mock&s=listening" }
-        ].concat(JINGTING_OPEN ? [
-          { label: "听力真题精听", href: "zone.html?zone=mock&s=jingting" }
-        ] : []) },
-      { key: "reading", label: "阅读", subject: "cambridge-reading", desc: "阅读真题顺序练习", skill: "reading" },
-      { key: "speaking", label: "口语", subject: "ielts-speaking", desc: "AI口语练习/模考", href: "speaking.html" },
-      { key: "writing", label: "写作", subject: "cambridge-writing", desc: "写作真题顺序练习", skill: "writing",
+          { label: " Luyện đề Nghe theo thứ tự ", href: "zone.html?zone=mock&s=listening" }
+        ].concat(JINGTING_OPEN? [
+          { label: " Nghe sâu chép chính tả đề thật ", href: "zone.html?zone=mock&s=jingting" }
+        ]: []) },
+      { key: "reading", label: "Đọc", subject: "cambridge-reading", desc: " Luyện đề Đọc theo thứ tự ", skill: "reading" },
+      { key: "speaking", label: "Nói", subject: "ielts-speaking", desc: "AI Luyện kỹ năng Nói / Thi thử ", href: "speaking.html" },
+      { key: "writing", label: "Viết", subject: "cambridge-writing", desc: " Luyện đề Viết theo thứ tự ", skill: "writing",
         links: [
-          { label: "写作真题顺序练习", href: "zone.html?zone=mock&s=writing" },
-          { label: "AI写作批改", href: "ai-tutor.html?track=writing" }
+          { label: " Luyện đề Viết theo thứ tự ", href: "zone.html?zone=mock&s=writing" },
+          { label: "AI Viết phê chữa ", href: "ai-tutor.html?track=writing" }
         ] },
-      { key: "mock", label: "模考", subject: "ielts", desc: "剑桥套题模考" },
-      // ponytail: under 听力 links only — excluded from hub columns/chips in zone.js
-      { key: "jingting", label: "听力精听", subject: "jingting", desc: "听力真题精听" }
+      { key: "mock", label: "Thi thử", subject: "ielts", desc: " Thi thử trọn bộ Cambridge " },
+      // ponytail: under Nghe links only — excluded from hub columns/chips in zone.js
+      { key: "jingting", label: " Nghe sâu (Intensive Listening) ", subject: "jingting", desc: " Nghe sâu chép chính tả đề thật " }
     ],
     toefl: [
-      { key: "reading", label: "阅读", subject: "toefl-reading", desc: "阅读真题顺序练习", skill: "reading" },
-      { key: "listening", label: "听力", subject: "toefl-listening", desc: "听力真题顺序练习", skill: "listening" },
-      { key: "speaking", label: "口语", subject: "toefl-speaking", desc: "口语真题顺序练习", skill: "speaking" },
-      { key: "writing", label: "写作", subject: "toefl-writing", desc: "写作真题顺序练习", skill: "writing" }
+      { key: "reading", label: "Đọc", subject: "toefl-reading", desc: " Luyện đề Đọc theo thứ tự ", skill: "reading" },
+      { key: "listening", label: "Nghe", subject: "toefl-listening", desc: " Luyện đề Nghe theo thứ tự ", skill: "listening" },
+      { key: "speaking", label: "Nói", subject: "toefl-speaking", desc: " Nói đề thi thật Luyện theo thứ tự ", skill: "speaking" },
+      { key: "writing", label: "Viết", subject: "toefl-writing", desc: " Luyện đề Viết theo thứ tự ", skill: "writing" }
     ]
   };
 
-  // ponytail: 托福卷是 JSON，不进 HTML manifest；加套只改这一表
+  // ponytail: TOEFL cuốn là JSON, không vào HTML manifest; thêm bộ chỉ sửa cái này một bề ngoài
   var TOEFL_READING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 阅读",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-04-reading.json",
       duration: 41,
-      desc: "65 题 · 填词 40（16 分钟）+ 学术 25（25 分钟）· 国内线下"
+      desc: "65 câu · Điền từ 40 (16 phút) + Học thuật 25 (25 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 阅读",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-05-reading.json",
       duration: 27,
-      desc: "45 题 · 填词 40（12 分钟）+ 学术 5（15 分钟）· 国内线下"
+      desc: "45 câu · Điền từ 40 (12 phút) + Học thuật 5 (15 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 阅读",
+      title: "TOEFL iBT 08/7 · Đọc ",
       file: "library/toefl/2025-07-08-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) "
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 阅读",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-11-reading.json",
       duration: 18,
-      desc: "30 题 · 填词 30 · Module 1（12 分钟）+ Module 2（6 分钟）· 国内线下"
+      desc: "30 câu · Điền từ 30 · Module 1 (12 phút) + Module 2 (6 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 阅读",
+      title: "TOEFL iBT 13/7 · Đọc ",
       file: "library/toefl/2025-07-13-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) "
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 阅读",
+      title: "TOEFL iBT 16/7 · Đọc ",
       file: "library/toefl/2025-07-16-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) "
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 阅读",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-18-reading.json",
       duration: 53,
-      desc: "113 题 · 填词 80（35 分钟）+ 学术 33（18 分钟）· 国内线下"
+      desc: "113 câu · Điền từ 80 (35 phút) + Học thuật 33 (18 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 阅读",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-19-reading.json",
       duration: 40,
-      desc: "65 题 · 填词 40（20 分钟）+ 学术 25（20 分钟）· 国内线下"
+      desc: "65 câu · Điền từ 40 (20 phút) + Học thuật 25 (20 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 阅读",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-25-reading.json",
       duration: 30,
-      desc: "40 题 · 填词 10（10 分钟）+ 学术 30（20 分钟）· 国内线下"
+      desc: "40 câu · Điền từ 10 (10 phút) + Học thuật 30 (20 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 阅读",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-07-29-reading.json",
       duration: 38,
-      desc: "55 题 · 填词 40（20 分钟）+ 学术 15（18 分钟）· 国内线下"
+      desc: "55 câu · Điền từ 40 (20 phút) + Học thuật 15 (18 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 阅读",
+      title: "TOEFL iBT 08/8 · Đọc ",
       file: "library/toefl/2025-08-08-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) "
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 阅读",
+      title: "TOEFL iBT 12/8 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-08-12-reading.json",
       duration: 32,
-      desc: "65 题 · 填词 50 + 日常 5（24 分钟）+ 学术 10（8 分钟）· 国内线下"
+      desc: "65 câu · Điền từ 50 + Đời sống 5 (24 phút) + Học thuật 10 (8 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 阅读",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-08-19-reading.json",
       duration: 52,
-      desc: "108 题 · 填词 70（28 分钟）+ 日常 3 + 学术 35（24 分钟）· 国内线下"
+      desc: "108 câu · Điền từ 70 (28 phút) + Đời sống 3 + Học thuật 35 (24 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 阅读",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-08-22-reading.json",
       duration: 76,
-      desc: "165 题 · 填词 120（48 分钟）+ 日常 10 + 学术 35（28 分钟）· 国内线下"
+      desc: "165 câu · Điền từ 120 (48 phút) + Đời sống 10 + Học thuật 35 (28 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 阅读",
+      title: "TOEFL iBT 26/8 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-08-26-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）· 国内线下"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 阅读",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-08-30-reading.json",
       duration: 40,
-      desc: "166 题 · 填词 161（32 分钟）+ 学术 5（8 分钟）· 国内线下"
+      desc: "166 câu · Điền từ 161 (32 phút) + Học thuật 5 (8 phút) · Thi trực tiếp "
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 阅读",
+      title: "TOEFL iBT 02/9 · Đọc ",
       file: "library/toefl/2025-09-02-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) "
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 阅读",
+      title: "TOEFL iBT 05/9 · Đọc ",
       file: "library/toefl/2025-09-05-reading.json",
       duration: 52,
-      desc: "110 题 · 填词 70（28 分钟）+ 学术 40（24 分钟）"
+      desc: "110 câu · Điền từ 70 (28 phút) + Học thuật 40 (24 phút) "
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 阅读",
+      title: "TOEFL iBT 13/9 · Đọc ",
       file: "library/toefl/2025-09-13-reading.json",
       duration: 52,
-      desc: "111 题 · 填词 70（28 分钟）+ 日常 6 + 学术 35（24 分钟）"
+      desc: "111 câu · Điền từ 70 (28 phút) + Đời sống 6 + Học thuật 35 (24 phút) "
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 阅读",
+      title: "TOEFL iBT 19/9 hải ngoại tuyến hạ · Đọc ",
       file: "library/toefl/2025-09-19-reading.json",
       duration: 30,
-      desc: "50 题 · Module 1（21 分钟）+ Module 2（9 分钟）· 海外线下"
+      desc: "50 câu · Module 1 (21 phút) + Module 2 (9 phút) · hải ngoại tuyến hạ "
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 阅读",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Đọc ",
       file: "library/toefl/2025-09-23-reading.json",
       duration: 48,
-      desc: "100 题 · 填词 80（32 分钟）+ 学术 20（16 分钟）· 国内线下"
+      desc: "100 câu · Điền từ 80 (32 phút) + Học thuật 20 (16 phút) · Thi trực tiếp "
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 阅读",
+      title: "TOEFL iBT 23/9 · Đọc ",
       file: "library/toefl/2026-09-23-reading.json",
       duration: 32,
-      desc: "80 题 · 填词 80 · Module 1（16 分钟）+ Module 2（16 分钟）"
+      desc: "80 câu · Điền từ 80 · Module 1 (16 phút) + Module 2 (16 phút) "
     }
   ];
-  // ponytail: 听力 PDF 无模块时长；9.02 按 Enhanced 整段约 36 分钟拆 25+11；9.05 仅 13 讲座
+  // ponytail: Nghe PDF Không module lúc dài; 9.02 theo như Enhanced cả đoạn khoảng 36 phút hủy đi 25+11; 9.05 chỉ 13 toạ đàm
   var TOEFL_LISTENING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 听力",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-04-listening.json",
       duration: 24,
-      desc: "12 题 · 3 篇讲座 · Module 1（16 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "12 câu · 3 bài toạ đàm · Module 1 (16 phút) + Module 2 (8 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 听力",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-05-listening.json",
       duration: 16,
-      desc: "8 题 · 2 篇讲座 · Module 1（8 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "8 câu · 2 bài toạ đàm · Module 1 (8 phút) + Module 2 (8 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 听力",
+      title: "TOEFL iBT 08/7 · Nghe ",
       file: "library/toefl/2025-07-08-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) "
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 听力",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-11-listening.json",
       duration: 16,
-      desc: "8 题 · 2 篇讲座 · Module 1（8 分钟）+ Module 2（8 分钟）· 国内线下"
+      desc: "8 câu · 2 bài toạ đàm · Module 1 (8 phút) + Module 2 (8 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 听力",
+      title: "TOEFL iBT 13/7 · Nghe ",
       file: "library/toefl/2025-07-13-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) "
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 听力",
+      title: "TOEFL iBT 16/7 · Nghe ",
       file: "library/toefl/2025-07-16-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) "
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 听力",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-18-listening.json",
       duration: 24,
-      desc: "16 题 · 4 篇讲座 · Module 1（12 分钟）+ Module 2（12 分钟）· 国内线下"
+      desc: "16 câu · 4 bài toạ đàm · Module 1 (12 phút) + Module 2 (12 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 听力",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-19-listening.json",
       duration: 32,
-      desc: "30 题 · Module 1（8 分钟）+ Module 2（24 分钟）· 国内线下"
+      desc: "30 câu · Module 1 (8 phút) + Module 2 (24 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 听力",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-25-listening.json",
       duration: 24,
-      desc: "16 题 · 4 篇讲座（24 分钟）· 国内线下"
+      desc: "16 câu · 4 bài toạ đàm (24 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 听力",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-07-29-listening.json",
       duration: 32,
-      desc: "20 题 · Module 1（8 分钟）+ Module 2（24 分钟）· 国内线下"
+      desc: "20 câu · Module 1 (8 phút) + Module 2 (24 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 听力",
+      title: "TOEFL iBT 08/8 · Nghe ",
       file: "library/toefl/2025-08-08-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) "
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 听力",
+      title: "TOEFL iBT 12/8 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-08-12-listening.json",
       duration: 25,
-      desc: "20 题 · 5 篇讲座 · Module 1（15 分钟）+ Module 2（10 分钟）· 国内线下"
+      desc: "20 câu · 5 bài toạ đàm · Module 1 (15 phút) + Module 2 (10 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 听力",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-08-19-listening.json",
       duration: 60,
-      desc: "68 题 · 17 篇讲座 · Module 1（32 分钟）+ Module 2（28 分钟）· 国内线下"
+      desc: "68 câu · 17 bài toạ đàm · Module 1 (32 phút) + Module 2 (28 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 听力",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-08-22-listening.json",
       duration: 40,
-      desc: "30 题 · 6 篇讲座 + 2 段对话 + 1 则通知 · Module 1（24 分钟）+ Module 2（16 分钟）· 国内线下"
+      desc: "30 câu · 6 bài toạ đàm + 2 đoạn đối thoại + 1 tức thì thông tri · Module 1 (24 phút) + Module 2 (16 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 听力",
+      title: "TOEFL iBT 26/8 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-08-26-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）· 国内线下"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 听力",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-08-30-listening.json",
       duration: 47,
-      desc: "46 题 · 11 篇讲座 + 1 则通知 · Module 1（25 分钟）+ Module 2（22 分钟）· 国内线下"
+      desc: "46 câu · 11 bài toạ đàm + 1 tức thì thông tri · Module 1 (25 phút) + Module 2 (22 phút) · Thi trực tiếp "
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 听力",
+      title: "TOEFL iBT 02/9 · Nghe ",
       file: "library/toefl/2025-09-02-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) "
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 听力",
+      title: "TOEFL iBT 05/9 · Nghe ",
       file: "library/toefl/2025-09-05-listening.json",
       duration: 45,
-      desc: "52 题 · 13 篇讲座 · Module 1（25 分钟）+ Module 2（20 分钟）"
+      desc: "52 câu · 13 bài toạ đàm · Module 1 (25 phút) + Module 2 (20 phút) "
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 听力",
+      title: "TOEFL iBT 13/9 · Nghe ",
       file: "library/toefl/2025-09-13-listening.json",
       duration: 47,
-      desc: "58 题 · 14 篇讲座 + 1 则通知 · Module 1（25 分钟）+ Module 2（22 分钟）"
+      desc: "58 câu · 14 bài toạ đàm + 1 tức thì thông tri · Module 1 (25 phút) + Module 2 (22 phút) "
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 听力",
+      title: "TOEFL iBT 19/9 hải ngoại tuyến hạ · Nghe ",
       file: "library/toefl/2025-09-19-listening.json",
       duration: 36,
-      desc: "47 题 · Module 1（25 分钟）+ Module 2（11 分钟）· 海外线下"
+      desc: "47 câu · Module 1 (25 phút) + Module 2 (11 phút) · hải ngoại tuyến hạ "
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 听力",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nghe ",
       file: "library/toefl/2025-09-23-listening.json",
       duration: 45,
-      desc: "52 题 · 13 篇讲座 · Module 1（25 分钟）+ Module 2（20 分钟）· 国内线下"
+      desc: "52 câu · 13 bài toạ đàm · Module 1 (25 phút) + Module 2 (20 phút) · Thi trực tiếp "
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 听力",
+      title: "TOEFL iBT 23/9 · Nghe ",
       file: "library/toefl/2026-09-23-listening.json",
       duration: 20,
-      desc: "16 题 · 4 篇讲座 · Module 1（10 分钟）+ Module 2（10 分钟）"
+      desc: "16 câu · 4 bài toạ đàm · Module 1 (10 phút) + Module 2 (10 phút) "
     }
   ];
-  // ponytail: 组句无官方时长；邮件 7 分、讨论 10 分按 ETS Enhanced
+  // ponytail: Sắp xếp câu Không chính thức lúc dài; Email 7 điểm, thảo luận 10 điểm theo như ETS Enhanced
   var TOEFL_WRITING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 写作",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-04-writing.json",
       duration: 88,
-      desc: "4 封邮件（28 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "4 bức Email (28 phút) + 6 bài Thảo luận học thuật (60 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 写作",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-05-writing.json",
       duration: 75,
-      desc: "5 封邮件（35 分钟）+ 4 篇学术讨论（40 分钟）· 无组句 · 国内线下"
+      desc: "5 bức Email (35 phút) + 4 bài Thảo luận học thuật (40 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 写作",
+      title: "TOEFL iBT 08/7 · Viết ",
       file: "library/toefl/2025-07-08-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) "
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 写作",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-11-writing.json",
       duration: 38,
-      desc: "4 封邮件（28 分钟）+ 1 篇学术讨论（10 分钟）· 无组句 · 国内线下"
+      desc: "4 bức Email (28 phút) + 1 bài Thảo luận học thuật (10 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 写作",
+      title: "TOEFL iBT 13/7 · Viết ",
       file: "library/toefl/2025-07-13-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) "
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 写作",
+      title: "TOEFL iBT 16/7 · Viết ",
       file: "library/toefl/2025-07-16-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) "
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 写作",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-18-writing.json",
       duration: 88,
-      desc: "4 封邮件（28 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "4 bức Email (28 phút) + 6 bài Thảo luận học thuật (60 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 写作",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-19-writing.json",
       duration: 44,
-      desc: "2 封邮件（14 分钟）+ 3 篇学术讨论（30 分钟）· 无组句 · 国内线下"
+      desc: "2 bức Email (14 phút) + 3 bài Thảo luận học thuật (30 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 写作",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-25-writing.json",
       duration: 52,
-      desc: "组句 2 题（8 分钟）+ 2 封邮件（14 分钟）+ 3 篇学术讨论（30 分钟）· 国内线下"
+      desc: " Sắp xếp câu 2 câu (8 phút) + 2 bức Email (14 phút) + 3 bài Thảo luận học thuật (30 phút) · Thi trực tiếp "
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 写作",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-07-29-writing.json",
       duration: 54,
-      desc: "2 封邮件（14 分钟）+ 4 篇学术讨论（40 分钟）· 无组句 · 国内线下"
+      desc: "2 bức Email (14 phút) + 4 bài Thảo luận học thuật (40 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 写作",
+      title: "TOEFL iBT 08/8 · Viết ",
       file: "library/toefl/2025-08-08-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) "
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 写作",
+      title: "TOEFL iBT 12/8 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-08-12-writing.json",
       duration: 78,
-      desc: "4 封邮件（28 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "4 bức Email (28 phút) + 5 bài Thảo luận học thuật (50 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 写作",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-08-19-writing.json",
       duration: 71,
-      desc: "3 封邮件（21 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "3 bức Email (21 phút) + 5 bài Thảo luận học thuật (50 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 写作",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-08-22-writing.json",
       duration: 126,
-      desc: "8 封邮件（56 分钟）+ 7 篇学术讨论（70 分钟）· 无组句 · 国内线下"
+      desc: "8 bức Email (56 phút) + 7 bài Thảo luận học thuật (70 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 写作",
+      title: "TOEFL iBT 26/8 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-08-26-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）· 国内线下"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) · Thi trực tiếp "
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 写作",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-08-30-writing.json",
       duration: 85,
-      desc: "5 封邮件（35 分钟）+ 5 篇学术讨论（50 分钟）· 无组句 · 国内线下"
+      desc: "5 bức Email (35 phút) + 5 bài Thảo luận học thuật (50 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 写作",
+      title: "TOEFL iBT 02/9 · Viết ",
       file: "library/toefl/2025-09-02-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) "
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 写作",
+      title: "TOEFL iBT 05/9 · Viết ",
       file: "library/toefl/2025-09-05-writing.json",
       duration: 68,
-      desc: "4 封邮件（28 分钟）+ 4 篇学术讨论（40 分钟）· 无组句"
+      desc: "4 bức Email (28 phút) + 4 bài Thảo luận học thuật (40 phút) · Không Sắp xếp câu "
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 写作",
+      title: "TOEFL iBT 13/9 · Viết ",
       file: "library/toefl/2025-09-13-writing.json",
       duration: 58,
-      desc: "4 封邮件（28 分钟）+ 3 篇学术讨论（30 分钟）· 无组句"
+      desc: "4 bức Email (28 phút) + 3 bài Thảo luận học thuật (30 phút) · Không Sắp xếp câu "
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 写作",
+      title: "TOEFL iBT 19/9 hải ngoại tuyến hạ · Viết ",
       file: "library/toefl/2025-09-19-writing.json",
       duration: 25,
-      desc: "组句 10 题（8 分钟）+ 邮件（7 分钟）+ 学术讨论（10 分钟）· 海外线下"
+      desc: " Sắp xếp câu 10 câu (8 phút) + Email (7 phút) + Thảo luận học thuật (10 phút) · hải ngoại tuyến hạ "
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 写作",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Viết ",
       file: "library/toefl/2025-09-23-writing.json",
       duration: 109,
-      desc: "7 封邮件（49 分钟）+ 6 篇学术讨论（60 分钟）· 无组句 · 国内线下"
+      desc: "7 bức Email (49 phút) + 6 bài Thảo luận học thuật (60 phút) · Không Sắp xếp câu · Thi trực tiếp "
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 写作",
+      title: "TOEFL iBT 23/9 · Viết ",
       file: "library/toefl/2026-09-23-writing.json",
       duration: 41,
-      desc: "3 封邮件（21 分钟）+ 2 篇学术讨论（20 分钟）· 无组句"
+      desc: "3 bức Email (21 phút) + 2 bài Thảo luận học thuật (20 phút) · Không Sắp xếp câu "
     }
   ];
   var TOEFL_SPEAKING = [
     {
       id: "2025-07-04",
-      title: "新托福 7.04 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-04-speaking.json",
       duration: 10,
-      desc: "选课注册 · 听后复述 7 题 + 历史意识面试 4 题 · 国内线下"
+      desc: " chọn khóa Đăng ký · Nghe và nhắc lại 7 câu + Lịch sử ý thức phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-04-s2",
-      title: "新托福 7.04 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-04-speaking-f2.json",
       duration: 10,
-      desc: "木工 · 听后复述 + 可再生能源面试 · 国内线下"
+      desc: " nghề mộc · Nghe và nhắc lại + có thể sống lại nguồn năng lượng phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-04-s3",
-      title: "新托福 7.04 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-04-speaking-f3.json",
       duration: 10,
-      desc: "图书馆资料 · 听后复述 + 环保实践面试 · 国内线下"
+      desc: " đồ thư quán tư liệu · Nghe và nhắc lại + bảo vệ môi trường thực tế phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-04-s4",
-      title: "新托福 7.04 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-04-speaking-f4.json",
       duration: 10,
-      desc: "课堂演示 · 听后复述 + 历史研究面试 · 国内线下"
+      desc: " lớp học biểu thị · Nghe và nhắc lại + Lịch sử nghiên cứu phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-04-s5",
-      title: "新托福 7.04 国内线下 · 口语 Form 5",
+      title: "TOEFL iBT 04/7 Thi trực tiếp · Nói Form 5",
       file: "library/toefl/2025-07-04-speaking-f5.json",
       duration: 10,
-      desc: "瑜伽 · 听后复述 + 送礼面试 · 国内线下"
+      desc: " yô-ga · Nghe và nhắc lại + tặng lễ phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-05",
-      title: "新托福 7.05 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-05-speaking.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 7 题 + 睡眠面试 4 题 · 国内线下"
+      desc: " sân trường quán cà phê · Nghe và nhắc lại 7 câu + giấc ngủ phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-05-s2",
-      title: "新托福 7.05 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-05-speaking-f2.json",
       duration: 10,
-      desc: "缝纽扣 · 听后复述 + 公园面试 · 国内线下"
+      desc: " khe hở cúc áo · Nghe và nhắc lại + công viên phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-05-s3",
-      title: "新托福 7.05 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-05-speaking-f3.json",
       duration: 10,
-      desc: "做面包 · 听后复述 + 日常安排面试 · 国内线下"
+      desc: " làm bún bao · Nghe và nhắc lại + Đời sống an bài phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-05-s4",
-      title: "新托福 7.05 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 05/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-05-speaking-f4.json",
       duration: 10,
-      desc: "垃圾分类 · 听后复述 + 艺术音乐面试 · 国内线下"
+      desc: " rác rưởi phân loại · Nghe và nhắc lại + Nghệ thuật Âm nhạc phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-08",
-      title: "新托福 7.08 · 口语",
+      title: "TOEFL iBT 08/7 · Nói ",
       file: "library/toefl/2025-07-08-speaking.json",
       duration: 10,
-      desc: "社区烘焙 · 听后复述 7 题（4 分钟）+ 公园面试 4 题（6 分钟）"
+      desc: " cộng đồng sấy khô · Nghe và nhắc lại 7 câu (4 phút) + công viên phỏng vấn 4 câu (6 phút) "
     },
     {
       id: "2025-07-11",
-      title: "新托福 7.11 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-11-speaking.json",
       duration: 10,
-      desc: "大学艺术展 · 听后复述 7 题 + 气候面试 4 题 · 国内线下"
+      desc: " đại học Nghệ thuật giương · Nghe và nhắc lại 7 câu + Khí hậu phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-11-s2",
-      title: "新托福 7.11 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-11-speaking-f2.json",
       duration: 10,
-      desc: "城市地标 · 听后复述 + 居住习惯面试 3 题（源缺 Q4 音频）· 国内线下"
+      desc: " Đô thị tiêu chí · Nghe và nhắc lại + cư trú thói quen phỏng vấn 3 câu (nguyên thiếu Q4 âm tần) · Thi trực tiếp "
     },
     {
       id: "2025-07-11-s3",
-      title: "新托福 7.11 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-11-speaking-f3.json",
       duration: 10,
-      desc: "学生中心 · 听后复述 + 网购面试 · 国内线下"
+      desc: " Học viên trung tâm · Nghe và nhắc lại + mua qua Internet phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-11-s4",
-      title: "新托福 7.11 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 11/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-11-speaking-f4.json",
       duration: 4,
-      desc: "美术馆 · 听后复述 7 题 · 国内线下"
+      desc: " mỹ thuật tạo hình quán · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-13",
-      title: "新托福 7.13 · 口语",
+      title: "TOEFL iBT 13/7 · Nói ",
       file: "library/toefl/2025-07-13-speaking.json",
       duration: 10,
-      desc: "听后复述 7 题（4 分钟）+ 面试 4 题（6 分钟）"
+      desc: " Nghe và nhắc lại 7 câu (4 phút) + phỏng vấn 4 câu (6 phút) "
     },
     {
       id: "2025-07-16",
-      title: "新托福 7.16 · 口语",
+      title: "TOEFL iBT 16/7 · Nói ",
       file: "library/toefl/2025-07-16-speaking.json",
       duration: 10,
-      desc: "图书馆资料 · 听后复述 7 题（4 分钟）+ 回收面试 4 题（6 分钟）"
+      desc: " đồ thư quán tư liệu · Nghe và nhắc lại 7 câu (4 phút) + thu về phỏng vấn 4 câu (6 phút) "
     },
     {
       id: "2025-07-18",
-      title: "新托福 7.18 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-18-speaking.json",
       duration: 10,
-      desc: "健身中心 · 听后复述 7 题 + 社交媒体面试 4 题 · 国内线下"
+      desc: " tập thể hình trung tâm · Nghe và nhắc lại 7 câu + xã giao truyền thông phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-18-s2",
-      title: "新托福 7.18 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-18-speaking-f2.json",
       duration: 10,
-      desc: "自然中心 · 听后复述 + 网购面试 · 国内线下"
+      desc: " trong tự nhiên · Nghe và nhắc lại + mua qua Internet phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-18-s3",
-      title: "新托福 7.18 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-18-speaking-f3.json",
       duration: 10,
-      desc: "海事博物馆 · 听后复述 + 音乐面试 · 国内线下"
+      desc: " ngành hàng hải nhà bảo tàng · Nghe và nhắc lại + Âm nhạc phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-18-s4",
-      title: "新托福 7.18 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-18-speaking-f4.json",
       duration: 10,
-      desc: "野生动物园 · 听后复述 + 环保面试 · 国内线下"
+      desc: " động vật hoang dã vườn · Nghe và nhắc lại + bảo vệ môi trường phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-18-s5",
-      title: "新托福 7.18 国内线下 · 口语 Form 5",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 5",
       file: "library/toefl/2025-07-18-speaking-f5.json",
       duration: 4,
-      desc: "图书馆数字资源 · 听后复述 7 题 · 国内线下"
+      desc: " đồ thư quán con số tài nguyên · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-18-s6",
-      title: "新托福 7.18 国内线下 · 口语 Form 6",
+      title: "TOEFL iBT 18/7 Thi trực tiếp · Nói Form 6",
       file: "library/toefl/2025-07-18-speaking-f6.json",
       duration: 4,
-      desc: "社区花园 · 听后复述 7 题 · 国内线下"
+      desc: " cộng đồng hoa viên · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-19",
-      title: "新托福 7.19 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-19-speaking.json",
       duration: 10,
-      desc: "攀岩馆 · 听后复述 7 题 + 面试 4 题 · 国内线下"
+      desc: " leo núi quán · Nghe và nhắc lại 7 câu + phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-19-s2",
-      title: "新托福 7.19 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-19-speaking-f2.json",
       duration: 10,
-      desc: "社区工作坊 · 听后复述 + 爱好面试 · 国内线下"
+      desc: " cộng đồng công tác phường · Nghe và nhắc lại + yêu thích phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-19-s3",
-      title: "新托福 7.19 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-19-speaking-f3.json",
       duration: 10,
-      desc: "校园媒体制作 · 听后复述 + 个性面试 · 国内线下"
+      desc: " sân trường truyền thông chế tác · Nghe và nhắc lại + cá tính phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-19-s4",
-      title: "新托福 7.19 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 19/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-19-speaking-f4.json",
       duration: 10,
-      desc: "社区搭建 · 听后复述 + 购物面试 · 国内线下"
+      desc: " cộng đồng dựng · Nghe và nhắc lại + mua sắm phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-25",
-      title: "新托福 7.25 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-25-speaking.json",
       duration: 10,
-      desc: "招聘会 · 听后复述 7 题 + 面试 4 题 · 国内线下"
+      desc: " tuyển dụng hội · Nghe và nhắc lại 7 câu + phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-25-s2",
-      title: "新托福 7.25 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-25-speaking-f2.json",
       duration: 10,
-      desc: "博物馆 · 听后复述 + 娱乐面试 · 国内线下"
+      desc: " nhà bảo tàng · Nghe và nhắc lại + giải trí phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-25-s3",
-      title: "新托福 7.25 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-25-speaking-f3.json",
       duration: 10,
-      desc: "文化节 · 听后复述 + 文化面试 · 国内线下"
+      desc: " tiết văn hóa · Nghe và nhắc lại + văn hóa phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-07-25-s4",
-      title: "新托福 7.25 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 25/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-25-speaking-f4.json",
       duration: 6,
-      desc: "童年教育面试 4 题 · 国内线下"
+      desc: " lúc nhỏ Giáo dục phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-29",
-      title: "新托福 7.29 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-07-29-speaking.json",
       duration: 10,
-      desc: "修自行车 · 听后复述 7 题 + 购物面试 4 题 · 国内线下"
+      desc: " dài xe đạp · Nghe và nhắc lại 7 câu + mua sắm phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-29-s2",
-      title: "新托福 7.29 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-07-29-speaking-f2.json",
       duration: 4,
-      desc: "旅行社 · 听后复述 7 题 · 国内线下"
+      desc: " cơ quan du lịch · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-29-s3",
-      title: "新托福 7.29 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-07-29-speaking-f3.json",
       duration: 4,
-      desc: "投影仪 · 听后复述 7 题 · 国内线下"
+      desc: " máy chiếu hình · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-07-29-s4",
-      title: "新托福 7.29 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 29/7 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-07-29-speaking-f4.json",
       duration: 4,
-      desc: "在线学习平台 · 听后复述 7 题 · 国内线下"
+      desc: " online Học tập bình đài · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-08",
-      title: "新托福 8.08 · 口语",
+      title: "TOEFL iBT 08/8 · Nói ",
       file: "library/toefl/2025-08-08-speaking.json",
       duration: 9,
-      desc: "听后复述 7 题（4 分钟）+ 面试 3 题（4.5 分钟）"
+      desc: " Nghe và nhắc lại 7 câu (4 phút) + phỏng vấn 3 câu (4.5 phút) "
     },
     {
       id: "2025-08-12",
-      title: "新托福 8.12 国内线下 · 口语",
+      title: "TOEFL iBT 12/8 Thi trực tiếp · Nói ",
       file: "library/toefl/2025-08-12-speaking.json",
       duration: 10,
-      desc: "服装店 · 听后复述 7 题 + 购物习惯面试 4 题 · 国内线下"
+      desc: " tiệm bán quần áo · Nghe và nhắc lại 7 câu + mua sắm thói quen phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-19",
-      title: "新托福 8.19 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-08-19-speaking.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 7 题 + 艺术音乐面试 4 题 · 国内线下"
+      desc: " sân trường quán cà phê · Nghe và nhắc lại 7 câu + Nghệ thuật Âm nhạc phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-19-s2",
-      title: "新托福 8.19 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-08-19-speaking-f2.json",
       duration: 10,
-      desc: "图书馆设施 · 听后复述 + 阅读面试 · 国内线下"
+      desc: " đồ thư quán phương tiện · Nghe và nhắc lại + Đọc phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-19-s3",
-      title: "新托福 8.19 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-08-19-speaking-f3.json",
       duration: 10,
-      desc: "科学项目展示 · 听后复述 + 文化节面试 · 国内线下"
+      desc: " khoa học hạng mục biểu hiện ra · Nghe và nhắc lại + tiết văn hóa phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-19-s4",
-      title: "新托福 8.19 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-08-19-speaking-f4.json",
       duration: 10,
-      desc: "自行车修理 · 听后复述 + 新爱好面试 · 国内线下"
+      desc: " xe đạp sửa chữa · Nghe và nhắc lại + mới yêu thích phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-19-s5",
-      title: "新托福 8.19 国内线下 · 口语 Form 5",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 5",
       file: "library/toefl/2025-08-19-speaking-f5.json",
       duration: 6,
-      desc: "爱好面试 4 题 · 国内线下"
+      desc: " yêu thích phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-19-s6",
-      title: "新托福 8.19 国内线下 · 口语 Form 6",
+      title: "TOEFL iBT 19/8 Thi trực tiếp · Nói Form 6",
       file: "library/toefl/2025-08-19-speaking-f6.json",
       duration: 6,
-      desc: "可再生能源面试 4 题 · 国内线下"
+      desc: " có thể sống lại nguồn năng lượng phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-22",
-      title: "新托福 8.22 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-08-22-speaking.json",
       duration: 10,
-      desc: "校园导览 · 听后复述 7 题 + 音乐经历面试 4 题 · 国内线下"
+      desc: " sân trường đạo lãm · Nghe và nhắc lại 7 câu + Âm nhạc trải qua phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-22-s2",
-      title: "新托福 8.22 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-08-22-speaking-f2.json",
       duration: 10,
-      desc: "旅行社 · 听后复述 + 园艺面试 · 国内线下"
+      desc: " cơ quan du lịch · Nghe và nhắc lại + nghề làm vườn phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-22-s3",
-      title: "新托福 8.22 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-08-22-speaking-f3.json",
       duration: 10,
-      desc: "大学美术馆 · 听后复述 + 睡眠习惯面试 · 国内线下"
+      desc: " đại học mỹ thuật tạo hình quán · Nghe và nhắc lại + giấc ngủ thói quen phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-22-s4",
-      title: "新托福 8.22 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 22/8 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-08-22-speaking-f4.json",
       duration: 6,
-      desc: "音乐体验面试 4 题 · 国内线下"
+      desc: " Âm nhạc Dùng thử phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-26",
-      title: "新托福 8.26 国内线下 · 口语",
+      title: "TOEFL iBT 26/8 Thi trực tiếp · Nói ",
       file: "library/toefl/2025-08-26-speaking.json",
       duration: 9,
-      desc: "听后复述 5 题（源缺 Q1–Q2 音频）+ 爱好面试 4 题 · 国内线下"
+      desc: " Nghe và nhắc lại 5 câu (nguyên thiếu Q1–Q2 âm tần) + yêu thích phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-30",
-      title: "新托福 8.30 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-08-30-speaking.json",
       duration: 10,
-      desc: "插花 · 听后复述 7 题 + 在线学习面试 4 题 · 国内线下"
+      desc: " xen · Nghe và nhắc lại 7 câu + online Học tập phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-30-s2",
-      title: "新托福 8.30 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-08-30-speaking-f2.json",
       duration: 10,
-      desc: "鸟屋 · 听后复述 + 购物习惯面试 · 国内线下"
+      desc: " chim phòng · Nghe và nhắc lại + mua sắm thói quen phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-08-30-s3",
-      title: "新托福 8.30 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-08-30-speaking-f3.json",
       duration: 4,
-      desc: "服装店 · 听后复述 7 题 · 国内线下"
+      desc: " tiệm bán quần áo · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-08-30-s4",
-      title: "新托福 8.30 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 30/8 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-08-30-speaking-f4.json",
       duration: 4,
-      desc: "观鸟 · 听后复述 7 题 · 国内线下"
+      desc: " xem chim · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-09-02",
-      title: "新托福 9.02 · 口语",
+      title: "TOEFL iBT 02/9 · Nói ",
       file: "library/toefl/2025-09-02-speaking.json",
       duration: 10,
-      desc: "听后复述 7 题（4 分钟）+ 面试 4 题（6 分钟）"
+      desc: " Nghe và nhắc lại 7 câu (4 phút) + phỏng vấn 4 câu (6 phút) "
     },
     {
       id: "2025-09-05",
-      title: "新托福 9.05 · 口语 Form 1",
+      title: "TOEFL iBT 05/9 · Nói Form 1",
       file: "library/toefl/2025-09-05-speaking.json",
       duration: 10,
-      desc: "科学展示 · 听后复述 7 题 + 新爱好面试 4 题"
+      desc: " khoa học biểu hiện ra · Nghe và nhắc lại 7 câu + mới yêu thích phỏng vấn 4 câu"
     },
     {
       id: "2025-09-05-s2",
-      title: "新托福 9.05 · 口语 Form 2",
+      title: "TOEFL iBT 05/9 · Nói Form 2",
       file: "library/toefl/2025-09-05-speaking-f2.json",
       duration: 10,
-      desc: "校园咖啡店 · 听后复述 + 学习新爱好面试"
+      desc: " sân trường quán cà phê · Nghe và nhắc lại + Học tập mới yêu thích phỏng vấn "
     },
     {
       id: "2025-09-05-s3",
-      title: "新托福 9.05 · 口语 Form 3",
+      title: "TOEFL iBT 05/9 · Nói Form 3",
       file: "library/toefl/2025-09-05-speaking-f3.json",
       duration: 10,
-      desc: "海事博物馆 · 听后复述 + 艺术表达面试"
+      desc: " ngành hàng hải nhà bảo tàng · Nghe và nhắc lại + Nghệ thuật biểu đạt phỏng vấn "
     },
     {
       id: "2025-09-05-s4",
-      title: "新托福 9.05 · 口语 Form 4",
+      title: "TOEFL iBT 05/9 · Nói Form 4",
       file: "library/toefl/2025-09-05-speaking-f4.json",
       duration: 10,
-      desc: "博物馆导览 · 听后复述 + 可再生能源面试"
+      desc: " nhà bảo tàng đạo lãm · Nghe và nhắc lại + có thể sống lại nguồn năng lượng phỏng vấn "
     },
     {
       id: "2025-09-05-s5",
-      title: "新托福 9.05 · 口语 Form 5",
+      title: "TOEFL iBT 05/9 · Nói Form 5",
       file: "library/toefl/2025-09-05-speaking-f5.json",
       duration: 10,
-      desc: "机房值班 · 听后复述 + 文化节面试"
+      desc: " phòng máy trách nhiệm · Nghe và nhắc lại + tiết văn hóa phỏng vấn "
     },
     {
       id: "2025-09-05-s6",
-      title: "新托福 9.05 · 口语 Form 6 面试",
+      title: "TOEFL iBT 05/9 · Nói Form 6 phỏng vấn ",
       file: "library/toefl/2025-09-05-speaking-f6.json",
       duration: 6,
-      desc: "公共交通习惯 · 面试 4 题"
+      desc: " giao thông công cộng thói quen · phỏng vấn 4 câu"
     },
     {
       id: "2025-09-05-s7",
-      title: "新托福 9.05 · 口语 Form 7 面试",
+      title: "TOEFL iBT 05/9 · Nói Form 7 phỏng vấn ",
       file: "library/toefl/2025-09-05-speaking-f7.json",
       duration: 6,
-      desc: "阅读习惯 · 面试 4 题"
+      desc: " Đọc thói quen · phỏng vấn 4 câu"
     },
     {
       id: "2025-09-13",
-      title: "新托福 9.13 · 口语 Form 1",
+      title: "TOEFL iBT 13/9 · Nói Form 1",
       file: "library/toefl/2025-09-13-speaking.json",
       duration: 10,
-      desc: "观鸟 · 听后复述 7 题 + 公园休闲面试 4 题"
+      desc: " xem chim · Nghe và nhắc lại 7 câu + công viên nghỉ ngơi phỏng vấn 4 câu"
     },
     {
       id: "2025-09-13-s2",
-      title: "新托福 9.13 · 口语 Form 2",
+      title: "TOEFL iBT 13/9 · Nói Form 2",
       file: "library/toefl/2025-09-13-speaking-f2.json",
       duration: 10,
-      desc: "做沙拉 · 听后复述 + 环保习惯面试"
+      desc: " làm salad · Nghe và nhắc lại + bảo vệ môi trường thói quen phỏng vấn "
     },
     {
       id: "2025-09-13-s3",
-      title: "新托福 9.13 · 口语 Form 3",
+      title: "TOEFL iBT 13/9 · Nói Form 3",
       file: "library/toefl/2025-09-13-speaking-f3.json",
       duration: 10,
-      desc: "烤面包 · 听后复述 + 消费习惯面试"
+      desc: " bánh mì nướng · Nghe và nhắc lại + tiêu phí thói quen phỏng vấn "
     },
     {
       id: "2025-09-13-s4",
-      title: "新托福 9.13 · 口语 Form 4",
+      title: "TOEFL iBT 13/9 · Nói Form 4",
       file: "library/toefl/2025-09-13-speaking-f4.json",
       duration: 10,
-      desc: "图书馆导览 · 听后复述 + 电影娱乐面试"
+      desc: " đồ thư quán đạo lãm · Nghe và nhắc lại + Điện ảnh giải trí phỏng vấn "
     },
     {
       id: "2025-09-19",
-      title: "新托福 9.19 海外线下 · 口语",
+      title: "TOEFL iBT 19/9 hải ngoại tuyến hạ · Nói ",
       file: "library/toefl/2025-09-19-speaking.json",
       duration: 10,
-      desc: "选课注册 · 听后复述 7 题 + 个人目标面试 4 题 · 海外线下"
+      desc: " chọn khóa Đăng ký · Nghe và nhắc lại 7 câu + cá nhân mục tiêu phỏng vấn 4 câu · hải ngoại tuyến hạ "
     },
     {
       id: "2025-09-23",
-      title: "新托福 9.23 国内线下 · 口语 Form 1",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 1",
       file: "library/toefl/2025-09-23-speaking.json",
       duration: 10,
-      desc: "健身中心 · 听后复述 7 题 + 消费预算面试 4 题 · 国内线下"
+      desc: " tập thể hình trung tâm · Nghe và nhắc lại 7 câu + tiêu phí dự toán phỏng vấn 4 câu · Thi trực tiếp "
     },
     {
       id: "2025-09-23-s2",
-      title: "新托福 9.23 国内线下 · 口语 Form 2",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 2",
       file: "library/toefl/2025-09-23-speaking-f2.json",
       duration: 10,
-      desc: "书店协助 · 听后复述 + 公园休闲面试 · 国内线下"
+      desc: " tiệm sách hiệp trợ · Nghe và nhắc lại + công viên nghỉ ngơi phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-09-23-s3",
-      title: "新托福 9.23 国内线下 · 口语 Form 3",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 3",
       file: "library/toefl/2025-09-23-speaking-f3.json",
       duration: 10,
-      desc: "观鸟 · 听后复述 + 环保习惯面试 · 国内线下"
+      desc: " xem chim · Nghe và nhắc lại + bảo vệ môi trường thói quen phỏng vấn · Thi trực tiếp "
     },
     {
       id: "2025-09-23-s4",
-      title: "新托福 9.23 国内线下 · 口语 Form 4",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 4",
       file: "library/toefl/2025-09-23-speaking-f4.json",
       duration: 4,
-      desc: "图书馆设施 · 听后复述 7 题 · 国内线下"
+      desc: " đồ thư quán phương tiện · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-09-23-s5",
-      title: "新托福 9.23 国内线下 · 口语 Form 5",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 5",
       file: "library/toefl/2025-09-23-speaking-f5.json",
       duration: 4,
-      desc: "木工入门 · 听后复述 7 题 · 国内线下"
+      desc: " nghề mộc nhập môn · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2025-09-23-s6",
-      title: "新托福 9.23 国内线下 · 口语 Form 6",
+      title: "TOEFL iBT 23/9 Thi trực tiếp · Nói Form 6",
       file: "library/toefl/2025-09-23-speaking-f6.json",
       duration: 4,
-      desc: "烤面包 · 听后复述 7 题 · 国内线下"
+      desc: " bánh mì nướng · Nghe và nhắc lại 7 câu · Thi trực tiếp "
     },
     {
       id: "2026-09-23",
-      title: "新托福 9.23 · 口语 Form 1",
+      title: "TOEFL iBT 23/9 · Nói Form 1",
       file: "library/toefl/2026-09-23-speaking.json",
       duration: 4,
-      desc: "图书馆导览 · 听后复述 7 题"
+      desc: " đồ thư quán đạo lãm · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s2",
-      title: "新托福 9.23 · 口语 Form 2",
+      title: "TOEFL iBT 23/9 · Nói Form 2",
       file: "library/toefl/2026-09-23-speaking-f2.json",
       duration: 4,
-      desc: "木工入门 · 听后复述 7 题"
+      desc: " nghề mộc nhập môn · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s3",
-      title: "新托福 9.23 · 口语 Form 3",
+      title: "TOEFL iBT 23/9 · Nói Form 3",
       file: "library/toefl/2026-09-23-speaking-f3.json",
       duration: 4,
-      desc: "观鸟 · 听后复述 7 题"
+      desc: " xem chim · Nghe và nhắc lại 7 câu"
     },
     {
       id: "2026-09-23-s4",
-      title: "新托福 9.23 · 口语 Form 4",
+      title: "TOEFL iBT 23/9 · Nói Form 4",
       file: "library/toefl/2026-09-23-speaking-f4.json",
       duration: 4,
-      desc: "做果昔 · 听后复述 7 题"
+      desc: " làm quả xưa kia · Nghe và nhắc lại 7 câu"
     }
   ];
-  // ponytail: 完整模考 = 四科同 id 齐全的日期卷，从上面四张表派生；加套只改四科表
-  // 官方新托福连考 101 分钟无休息，卡面时长用统一口径（各科目页仍按自己的卷时限跑）
+  // ponytail: Thi thử toàn phần = bốn khoa cùng id đầy đủ hết ngày cuốn, từ phía trên bốn tờ bề ngoài đẻ ra; thêm bộ chỉ sửa bốn khoa bề ngoài
+  // chính thức TOEFL iBT liền khảo thi 101 phút không ngừng hơi thở, tạp diện lúc dài dùng thống nhất đường kính (tất cả kỹ năng trang nhưng theo như mình cuốn thời hạn chạy)
   var TOEFL_FULL = TOEFL_READING.filter(function (r) {
     return [TOEFL_LISTENING, TOEFL_WRITING, TOEFL_SPEAKING].every(function (L) {
       return L.some(function (p) { return p.id === r.id; });
@@ -1113,15 +1113,15 @@ window.YYSD = (function () {
   }).map(function (r) {
     return {
       id: r.id,
-      title: String(r.title || "").replace(/·\s*阅读$/, "· 完整模考"),
+      title: String(r.title || "").replace(/·\s*Đọc\s*$/, "· Thi thử toàn phần"),
       duration: 101,
-      desc: "阅读→听力→写作→口语 · 约 101 分钟 · 无休息"
+      desc: " Đọc → Nghe → Viết → Nói · khoảng 101 phút · không ngừng hơi thở "
     };
   });
   function navOf(zone) { return NAV[zone] || []; }
 
   function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+    return String(s == null? "": s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
@@ -1155,7 +1155,7 @@ window.YYSD = (function () {
   }
 
   function mergeWrongWords(book, words, source) {
-    if (!book || !words || !words.length) return 0;
+    if (!book ||!words ||!words.length) return 0;
     var store = wrongWordsStore();
     if (!store[book]) store[book] = {};
     var bucket = store[book];
@@ -1177,8 +1177,8 @@ window.YYSD = (function () {
       entry.lastAttempt = {
         userSpelling: w.userSpelling || "",
         userMeaning: w.userMeaning || "",
-        spellingCorrect: !!w.spellingCorrect,
-        meaningCorrect: !!w.meaningCorrect
+        spellingCorrect:!!w.spellingCorrect,
+        meaningCorrect:!!w.meaningCorrect
       };
       if (w.acceptCN && w.acceptCN.length) entry.acceptCN = w.acceptCN;
       if (source && source.id) {
@@ -1256,17 +1256,17 @@ window.YYSD = (function () {
   function savedWordsStripHTML(prefix) {
     var p = prefix || "";
     var n = savedWordCount();
-    return '<div class="wrong-notebook-strip" aria-label="生词本">' +
-      '<div class="wrong-notebook-strip__head"><h3>生词本</h3>' +
-      '<span class="wrong-notebook-strip__hint">AI 查词后可一键收藏，便于复习</span></div>' +
+    return '<div class="wrong-notebook-strip" aria-label=" Sổ từ đã lưu ">' +
+      '<div class="wrong-notebook-strip__head"><h3> Sổ từ đã lưu </h3>' +
+      '<span class="wrong-notebook-strip__hint">AI tra từ sau có thể một khóa cất chứa, dễ dàng cho Ôn tập </span></div>' +
       '<div class="wrong-notebook-strip__grid">' +
-        '<a class="wrong-notebook-card' + (n ? " has-items" : "") + '" href="' + p + 'saved-words.html">' +
+        '<a class="wrong-notebook-card' + (n? " has-items": "") + '" href="' + p + 'saved-words.html">' +
           '<span class="wrong-notebook-card__ico" aria-hidden="true">📘</span>' +
           '<span class="wrong-notebook-card__body">' +
-            '<b>AI 生词本</b>' +
-            '<span>' + (n ? n + " 个生词待复习" : "暂无生词，查词后可加入") + "</span>" +
+            '<b>AI Sổ từ đã lưu </b>' +
+            '<span>' + (n? n + " chử mới đợi Ôn tập ": " tạm thời chưa có chử mới, tra từ sau có thể gia nhập ") + "</span>" +
           "</span>" +
-          (n ? '<span class="wrong-notebook-card__badge">' + n + "</span>" : '<span class="wrong-notebook-card__go">进入 ›</span>') +
+          (n? '<span class="wrong-notebook-card__badge">' + n + "</span>": '<span class="wrong-notebook-card__go"> Vào học ›</span>') +
         "</a>" +
       "</div></div>";
   }
@@ -1276,17 +1276,17 @@ window.YYSD = (function () {
     var n = ["gaozhong", "cet4", "cet4-lite", "special"].reduce(function (sum, k) {
       return sum + (wrongWordCount(k) || 0);
     }, 0);
-    return '<div class="wrong-notebook-strip" aria-label="单词错题本">' +
-      '<div class="wrong-notebook-strip__head"><h3>单词错题本</h3>' +
-      '<span class="wrong-notebook-strip__hint">检测错词按场次收录 · 日期 + 词书 + List</span></div>' +
+    return '<div class="wrong-notebook-strip" aria-label=" Từ vựng Sổ lỗi sai ">' +
+      '<div class="wrong-notebook-strip__head"><h3> Từ vựng Sổ lỗi sai </h3>' +
+      '<span class="wrong-notebook-strip__hint"> Đánh giá từ sai theo như buổi diễn thu nhận sử dụng · ngày + từ sách + List</span></div>' +
       '<div class="wrong-notebook-strip__grid">' +
-        '<a class="wrong-notebook-card' + (n ? " has-items" : "") + '" href="' + p + 'wrong-words.html">' +
+        '<a class="wrong-notebook-card' + (n? " has-items": "") + '" href="' + p + 'wrong-words.html">' +
           '<span class="wrong-notebook-card__ico" aria-hidden="true">📕</span>' +
           '<span class="wrong-notebook-card__body">' +
-            "<b>统一错题本</b>" +
-            "<span>" + (n ? n + " 个本机旧错词待同步/复习" : "完成单词检测后自动收录") + "</span>" +
+            "<b> thống nhất Sổ lỗi sai </b>" +
+            "<span>" + (n? n + " thiết bị này xưa cũ từ sai đợi đồng bộ / Ôn tập ": " hoàn thành Từ vựng Đánh giá sau Tự động lưu lại ") + "</span>" +
           "</span>" +
-          (n ? '<span class="wrong-notebook-card__badge">' + n + "</span>" : '<span class="wrong-notebook-card__go">进入 ›</span>') +
+          (n? '<span class="wrong-notebook-card__badge">' + n + "</span>": '<span class="wrong-notebook-card__go"> Vào học ›</span>') +
         "</a>" +
       "</div></div>";
   }
@@ -1294,7 +1294,7 @@ window.YYSD = (function () {
   // Resolve the manifest path relative to the current page (root or /admin etc.)
   function manifestUrl() {
     // pages at root use "library/...", pages one level deep use "../library/..."
-    return (location.pathname.replace(/\/[^/]*$/, "/").endsWith("/admin/") ? "../" : "")
+    return (location.pathname.replace(/\/[^/]*$/, "/").endsWith("/admin/")? "../": "")
       + "library/manifest.json?v=" + encodeURIComponent(CONTENT_VER);
   }
 
@@ -1319,7 +1319,7 @@ window.YYSD = (function () {
   }
 
   function practiceExerciseIds(ids) {
-    return (ids || []).filter(function (id) { return !isExplainId(id); });
+    return (ids || []).filter(function (id) { return!isExplainId(id); });
   }
 
   function isExplainOnlyAssignment(ids) {
@@ -1331,13 +1331,13 @@ window.YYSD = (function () {
     var raw = String(id || "");
     var explain = isExplainId(raw);
     var row = _taxById[baseExerciseId(raw)];
-    if (!row) return explain ? "详解" : "";
+    if (!row) return explain? " Giải thích chi tiết ": "";
     var bits = [];
-    if (row.qType) bits.push("题型：" + row.qType);
-    if (row.scene) bits.push("场景：" + row.scene);
+    if (row.qType) bits.push(" dạng bài: " + row.qType);
+    if (row.scene) bits.push(" tình cảnh: " + row.scene);
     var label = bits.join(" · ");
-    if (explain) return label ? ("详解 · " + label) : "详解";
-    if (row.qType && raw.indexOf("-reading-") < 0) return label ? ("练习 · " + label) : "练习";
+    if (explain) return label? (" Giải thích chi tiết · " + label): " Giải thích chi tiết ";
+    if (row.qType && raw.indexOf("-reading-") < 0) return label? (" Luyện tập · " + label): "Luyện tập";
     return label;
   }
 
@@ -1367,7 +1367,7 @@ window.YYSD = (function () {
       if (!r.ok) throw new Error("manifest.json HTTP " + r.status);
       return r.json();
     }).then(function (d) {
-      var items = (d && (d.items || d.exams)) || [];   // accept old key too
+      var items = (d && (d.items || d.exams)) || []; // accept old key too
       items.sort(function (a, b) { return String(b.added || "").localeCompare(String(a.added || "")); });
       return items;
     }).catch(function (err) {
@@ -1380,44 +1380,44 @@ window.YYSD = (function () {
   function subjectsOf(zone) { return ZONE_SUBJECTS[zone] || []; }
 
   function fileHref(item, prefix) {
-    // ponytail: lyric 精听直链播放器，不套 exam iframe
+    // ponytail: lyric Nghe sâu thẳng liệm bá phóng khí, không bộ exam iframe
     if (item && item.directHref) return (prefix || "") + item.directHref;
     return (prefix || "") + "exam.html?id=" + encodeURIComponent(item.id);
   }
 
   /** Immersive vocab lesson player (Duolingo-style short lesson). */
   function vocabLessonHref(item, prefix) {
-    if (!item || !item.id) return (prefix || "") + "vocab-lesson.html";
+    if (!item ||!item.id) return (prefix || "") + "vocab-lesson.html";
     return (prefix || "") + "vocab-lesson.html?id=" + encodeURIComponent(item.id);
   }
 
   // Render one content card. prefix = path prefix to root pages (e.g. "" or "../")
   function cardHTML(item, prefix) {
-    var subj = SUBJECT[item.subject] || { label: "其他", color: "var(--text-muted)" };
+    var subj = SUBJECT[item.subject] || { label: " Khác ", color: "var(--text-muted)" };
     var done = results()[item.id];
     var isStudy = item.zone === "study";
     var meta = isStudy
-      ? '<span>📖 学习材料</span>'
-      : '<span>⏱️ ' + (item.duration ? item.duration + " 分钟" : "不限时") + '</span>';
+      ? '<span>📖 Học tập tài liệu </span>'
+      : '<span>⏱️ ' + (item.duration? item.duration + " phút ": " không Thời gian ") + '</span>';
     var doneText = done
-      ? '已完成' + (done.score != null ? ' · ' + done.score + (done.total ? "/" + done.total : "") : "")
-        + (done.band != null ? ' · Band ' + done.band : "")
+      ? ' Đã hoàn thành ' + (done.score!= null? ' · ' + done.score + (done.total? "/" + done.total: ""): "")
+        + (done.band!= null? ' · Band ' + done.band: "")
       : "";
-    var cta = isStudy ? "开始学习 →"
-      : (item.subject === "jingting" ? "开始精听 →"
-        : (item.zone === "mock" ? "进入考场 →" : "开始练习 →"));
+    var cta = isStudy? " Bắt đầu học →"
+      : (item.subject === "jingting"? " Bắt đầu nghe sâu →"
+        : (item.zone === "mock"? " Vào phòng thi →": " Bắt đầu luyện tập →"));
 
     return '' +
-      '<a class="exam-card ' + (done ? "is-done" : "") + '" href="' + fileHref(item, prefix) + '">' +
+      '<a class="exam-card ' + (done? "is-done": "") + '" href="' + fileHref(item, prefix) + '">' +
         '<span class="done-flag">' + esc(doneText) + '</span>' +
         '<div class="exam-card__top">' +
           '<span class="badge badge--' + esc(item.subject) + '">' + esc(subj.label) + '</span>' +
           '<span class="tag-cat">' + esc((ZONE[item.zone] || {}).label || "") + '</span>' +
         '</div>' +
         '<h3>' + esc(displayTitle(item)) + '</h3>' +
-        '<p>' + esc(item.description || "点击进入，按要求完成本份内容。") + '</p>' +
+        '<p>' + esc(item.description || " nhấn vào Vào học, theo như yêu cầu hoàn thành bổn phận nội dung. ") + '</p>' +
         '<div class="exam-card__meta">' + meta +
-          (item.added ? '<span>📅 ' + esc(item.added) + '</span>' : '') +
+          (item.added? '<span>📅 ' + esc(item.added) + '</span>': '') +
         '</div>' +
         '<div class="exam-card__foot">' +
           '<span class="btn btn--primary btn--sm" style="pointer-events:none">' + cta + '</span>' +
@@ -1425,24 +1425,24 @@ window.YYSD = (function () {
       '</a>';
   }
 
-  // ---- Vocabulary book grouping (单词区 → vocab-shelf.html?book=…) ----
+  // ---- Vocabulary book grouping (Khu từ vựng → vocab-shelf.html?book=…) ----
   var VOCAB_BOOKS = {
-    gaozhong: { key: "gaozhong", label: "高中词汇", subject: "vocab", tag: "雅思基础", chunk: 10 },
+    gaozhong: { key: "gaozhong", label: " Từ vựng Nền tảng THPT ", subject: "vocab", tag: " IELTS trụ cột ", chunk: 10 },
     cet4: {
-      key: "cet4", label: "四级词汇", subject: "vocab-cet4", tag: "CET-4", chunk: 10,
+      key: "cet4", label: " Từ vựng Đại học Cốt lõi ", subject: "vocab-cet4", tag: "CET-4", chunk: 10,
       // ponytail: frequency bands replace 10-unit chunks for cet4 hub tabs
       bands: [
-        { id: "high", label: "高频", start: 1, end: 10 },
-        { id: "mid", label: "中频", start: 11, end: 20 },
-        { id: "low", label: "低频", start: 21, end: 28 },
-        { id: "zero", label: "零频", start: 29, end: 35 }
+        { id: "high", label: " Tần suất cao ", start: 1, end: 10 },
+        { id: "mid", label: " Tần suất vừa ", start: 11, end: 20 },
+        { id: "low", label: " Tần suất thấp ", start: 21, end: 28 },
+        { id: "zero", label: " linh nhiều lần ", start: 29, end: 35 }
       ]
     },
     "cet4-lite": {
-      key: "cet4-lite", label: "四级词汇（精简版）", subject: "vocab-cet4-lite", tag: "CET-4 精简", chunk: 10
+      key: "cet4-lite", label: " Từ vựng Đại học Cốt lõi (Bản rút gọn) ", subject: "vocab-cet4-lite", tag: "CET-4 Rút gọn ", chunk: 10
     },
-    special:  {
-      key: "special", label: "雅思专项词汇", tag: "专题",
+    special: {
+      key: "special", label: " Từ vựng IELTS chuyên sâu ", tag: " chuyên đề ",
       subjects: ["vocab-special-listening", "vocab-special-reading", "vocab-special-writing"]
     }
     // ponytail: themes live in shelf catalog (vocab-shelf.html?view=catalog)
@@ -1464,9 +1464,9 @@ window.YYSD = (function () {
     var t = String((item && item.title) || "");
     var m = t.match(/LIST\s*0*(\d+)/i);
     if (m) return Number(m[1]);
-    m = t.match(/单元\s*0*(\d+)/);
+    m = t.match(/(?:Bài|Đơn vị|Unit)\s*0*(\d+)/i);
     if (m) return Number(m[1]);
-    m = t.match(/第\s*0*(\d+)\s*篇/);
+    m = t.match(/(?:Bài|Phần)\s*0*(\d+)/i);
     if (m) return Number(m[1]);
     m = String((item && item.id) || "").match(/(?:writing|listening|reading)-vocab-0*(\d+)/i);
     if (m) return Number(m[1]);
@@ -1475,7 +1475,7 @@ window.YYSD = (function () {
     m = String((item && item.id) || "").match(/theme-0*(\d+)/i);
     if (m) return Number(m[1]);
     m = String((item && item.file) || "").match(/(?:LIST|list|vocab-)0*(\d+)/i);
-    return m ? Number(m[1]) : 0;
+    return m? Number(m[1]): 0;
   }
 
   // Clear catalog titles for search + UI (manifest keeps raw LIST titles).
@@ -1483,13 +1483,13 @@ window.YYSD = (function () {
     var n = vocabListNo(item);
     var s = (item && item.subject) || "";
     if (!n) return (item && item.title) || "";
-    if (s === "vocab") return "高中词汇单元" + n;
-    if (s === "vocab-cet4") return "单元 " + n;
-    if (s === "vocab-cet4-lite") return "精简 List " + n;
-    if (s === "vocab-special-listening") return "听力词汇单元" + n;
-    if (s === "vocab-special-reading") return "阅读词汇单元" + n;
-    if (s === "vocab-special-writing") return "写作词汇单元" + n;
-    if (isVocabSpecial(s)) return "雅思词汇单元" + n;
+    if (s === "vocab") return "Từ vựng THPT · Bài " + n;
+    if (s === "vocab-cet4") return "Từ vựng Đại học · Bài " + n;
+    if (s === "vocab-cet4-lite") return "Từ vựng Rút gọn · List " + n;
+    if (s === "vocab-special-listening") return "Từ vựng Nghe IELTS · Bài " + n;
+    if (s === "vocab-special-reading") return "Từ vựng Đọc IELTS · Bài " + n;
+    if (s === "vocab-special-writing") return "Từ vựng Viết IELTS · Bài " + n;
+    if (isVocabSpecial(s)) return "Từ vựng IELTS · Bài " + n;
     return (item && item.title) || "";
   }
 
@@ -1508,7 +1508,7 @@ window.YYSD = (function () {
     return { parentId: m[1], kind: m[2].toLowerCase(), num: Number(m[3]) };
   }
 
-  // 题型练习: cambridge-21-test-1-s1-q1-6 / …-q1-6-explain / secret-set-1-reading-p1-q1-13
+  // dạng bài Luyện tập: cambridge-21-test-1-s1-q1-6 / …-q1-6-explain / secret-set-1-reading-p1-q1-13
   function parseGroupId(id) {
     var raw = String(id || "");
     var m = raw.match(/^(cambridge-\d+-test-\d+(?:-reading)?|secret-set-\d+(?:-reading)?)-(s|p)(\d+)-q(\d+)-(\d+)(?:-explain)?$/i);
@@ -1539,33 +1539,33 @@ window.YYSD = (function () {
       return "&cdt=1&pack=exam&suite=1";
     }
     var pack = String(cdtPack || "").toLowerCase();
-    var qs = pack === "exam" ? "&cdt=1&pack=exam" : "&cdt=1&pack=drill";
+    var qs = pack === "exam"? "&cdt=1&pack=exam": "&cdt=1&pack=drill";
     if (explain) qs += "&explain=1";
     return qs;
   }
 
-  // 绝密套卷 Section / Passage 中英标题（教师布置检索用）
+  // tuyệt mật bộ cuốn Section / Passage Vừa Anh tiêu đề (Giáo viên bố trí kiểm tra dùng)
   var SECRET_PART_TITLES = {
-    "secret-set-1-s1": ["图书馆服务", "Library services"],
-    "secret-set-1-s2": ["大学生租房", "Types of accommodation"],
-    "secret-set-1-s3": ["牛仔裤时尚项目", "Fashion Project on Jeans"],
-    "secret-set-1-s4": ["天然橡胶制作", "Natural rubber production"],
-    "secret-set-1-reading-p1": ["历代玩偶", "Dolls through the ages"],
-    "secret-set-1-reading-p2": ["过山车", "Roller coaster"],
-    "secret-set-1-reading-p3": ["史蒂文森", "Robert Louis Stevenson"],
-    "secret-set-2-s1": ["热气球飞行", "High Flyers balloon flights"],
-    "secret-set-2-s2": ["美术馆导览", "Art Gallery"],
-    "secret-set-2-s3": ["目击者证词", "Eyewitness reliability"],
-    "secret-set-2-s4": ["红树林再生", "The mangrove regeneration project"],
-    "secret-set-2-reading-p1": ["野生长长颈鹿", "Giraffes in the wild"],
-    "secret-set-2-reading-p2": ["法律的重要性", "The importance of law"],
-    "secret-set-2-reading-p3": ["艺术博物馆重塑", "Rebranding art museums"],
-    "secret-set-3-reading-p1": ["悉尼歌剧院", "Sydney Opera House"],
-    "secret-set-3-reading-p2": ["亲自然设计", "Biophilic Design"],
-    "secret-set-3-reading-p3": ["当人们对音乐失聪", "When people are deaf to music"],
-    "secret-set-4-reading-p1": ["澳大利亚空中牙医", "Australia's Airborne Dentists"],
-    "secret-set-4-reading-p2": ["塔斯马尼亚虎", "The Tasmanian Tiger"],
-    "secret-set-4-reading-p3": ["200年澳洲风景之伦敦皇家学院", "200 Years of Australian Landscapes at the Royal Academy in London"]
+    "secret-set-1-s1": [" đồ thư quán phục vụ ", "Library services"],
+    "secret-set-1-s2": [" sinh viên phòng cho thuê ", "Types of accommodation"],
+    "secret-set-1-s3": [" quần jean thời thượng hạng mục ", "Fashion Project on Jeans"],
+    "secret-set-1-s4": [" cao su thiên nhiên chế tác ", "Natural rubber production"],
+    "secret-set-1-reading-p1": [" các thời kỳ con rối ", "Dolls through the ages"],
+    "secret-set-1-reading-p2": [" xe cáp treo ", "Roller coaster"],
+    "secret-set-1-reading-p3": [" lịch sử đế văn dày đặc ", "Robert Louis Stevenson"],
+    "secret-set-2-s1": [" nhiệt khí bóng phi hành ", "High Flyers balloon flights"],
+    "secret-set-2-s2": [" mỹ thuật tạo hình quán đạo lãm ", "Art Gallery"],
+    "secret-set-2-s3": [" người chứng kiến lời chứng ", "Eyewitness reliability"],
+    "secret-set-2-s4": [" cây đước lâm tái sinh ", "The mangrove regeneration project"],
+    "secret-set-2-reading-p1": [" hoang dại thật dài cái cổ lộc ", "Giraffes in the wild"],
+    "secret-set-2-reading-p2": [" luật pháp tầm quan trọng ", "The importance of law"],
+    "secret-set-2-reading-p3": [" Nghệ thuật nhà bảo tàng cải tạo ", "Rebranding art museums"],
+    "secret-set-3-reading-p1": [" Xít-ni ca kịch viện ", "Sydney Opera House"],
+    "secret-set-3-reading-p2": [" tự mình nhưng xếp đặt thiết kế ", "Biophilic Design"],
+    "secret-set-3-reading-p3": [" khi mọi người đối với Âm nhạc mất thông ", "When people are deaf to music"],
+    "secret-set-4-reading-p1": [" Úc không trung nha sĩ ", "Australia's Airborne Dentists"],
+    "secret-set-4-reading-p2": [" tháp tư ngựa ni hơn kém Hổ ", "The Tasmanian Tiger"],
+    "secret-set-4-reading-p3": ["200 năm Úc phong cảnh chi Luân Đôn hoàng gia học viện ", "200 Years of Australian Landscapes at the Royal Academy in London"]
   };
 
   function secretPartPair(id) {
@@ -1574,14 +1574,14 @@ window.YYSD = (function () {
 
   function secretTopicLine(item) {
     var t = item && SECRET_PART_TITLES[item.id];
-    return t ? (t[0] + " · " + t[1]) : "";
+    return t? (t[0] + " · " + t[1]): "";
   }
 
   function secretPaperTopics(item) {
     if (!item || item.partNum) return "";
-    var kind = item.subject === "cambridge-listening" ? "s" : (item.subject === "cambridge-reading" ? "p" : "");
-    if (!kind || !/^secret-set-\d+/.test(item.id || "")) return "";
-    var n = kind === "s" ? 4 : 3;
+    var kind = item.subject === "cambridge-listening"? "s": (item.subject === "cambridge-reading"? "p": "");
+    if (!kind ||!/^secret-set-\d+/.test(item.id || "")) return "";
+    var n = kind === "s"? 4: 3;
     var bits = [];
     for (var i = 1; i <= n; i++) {
       var t = SECRET_PART_TITLES[item.id + "-" + kind + i];
@@ -1598,22 +1598,22 @@ window.YYSD = (function () {
   }
 
   function makePartItem(parent, kind, num) {
-    if (!parent || !num) return null;
-    var label = kind === "s" ? ("Section " + num) : ("Passage " + num);
-    var base = String(parent.title || "").replace(/（[^）]*）\s*$/, "").replace(/\s+$/, "");
+    if (!parent ||!num) return null;
+    var label = kind === "s"? ("Section " + num): ("Passage " + num);
+    var base = String(parent.title || "").replace(/ ([^)]*) \s*$/, "").replace(/\s+$/, "");
     return Object.assign({}, parent, {
       id: parent.id + "-" + kind + num,
       title: base + " · " + label,
       partKind: kind,
       partNum: num,
       parentId: parent.id,
-      duration: kind === "s" ? 10 : 20
+      duration: kind === "s"? 10: 20
     });
   }
 
   function makeGroupItem(parent, num, qFrom, qTo, explain) {
-    if (!parent || !num || !qFrom || !qTo) return null;
-    var kind = parent.subject === "cambridge-reading" ? "p" : "s";
+    if (!parent ||!num ||!qFrom ||!qTo) return null;
+    var kind = parent.subject === "cambridge-reading"? "p": "s";
     var part = makePartItem(parent, kind, num);
     if (!part) return null;
     part.id = parent.id + "-" + kind + num + "-q" + qFrom + "-" + qTo;
@@ -1622,7 +1622,7 @@ window.YYSD = (function () {
     part.qTo = qTo;
     if (explain) {
       part.id += "-explain";
-      part.title += " · 详解";
+      part.title += " · Giải thích chi tiết ";
       part.explain = true;
     }
     return part;
@@ -1639,7 +1639,7 @@ window.YYSD = (function () {
       for (var gi = 0; gi < list.length; gi++) {
         if (list[gi].id === group.parentId) { gParent = list[gi]; break; }
       }
-      return gParent ? makeGroupItem(gParent, group.num, group.qFrom, group.qTo, group.explain) : null;
+      return gParent? makeGroupItem(gParent, group.num, group.qFrom, group.qTo, group.explain): null;
     }
     var part = parsePartId(id);
     if (!part) return null;
@@ -1647,7 +1647,7 @@ window.YYSD = (function () {
     for (var j = 0; j < list.length; j++) {
       if (list[j].id === part.parentId) { parent = list[j]; break; }
     }
-    return parent ? makePartItem(parent, part.kind, part.num) : null;
+    return parent? makePartItem(parent, part.kind, part.num): null;
   }
 
   // Teacher assignment picker: full paper + each listening section / reading passage
@@ -1665,16 +1665,16 @@ window.YYSD = (function () {
   }
 
   function partSearchText(item) {
-    if (!item || !item.partNum) return "";
+    if (!item ||!item.partNum) return "";
     var v = camVolume(item);
     var t = camTestNo(item);
-    var k = item.partKind === "s" ? "s" : "p";
-    var skill = item.subject === "cambridge-listening" ? "听力" : "阅读";
+    var k = item.partKind === "s"? "s": "p";
+    var skill = item.subject === "cambridge-listening"? "Nghe": "Đọc";
     return [
       "c" + v, "c" + v + skill,
       "t" + t + k + item.partNum,
-      "t" + t + (item.partKind === "s" ? "section" : "passage") + item.partNum,
-      (item.partKind === "s" ? "section" : "passage") + item.partNum,
+      "t" + t + (item.partKind === "s"? "section": "passage") + item.partNum,
+      (item.partKind === "s"? "section": "passage") + item.partNum,
       skill + "t" + t + k + item.partNum,
       secretSearchText(item)
     ].join(" ");
@@ -1684,7 +1684,7 @@ window.YYSD = (function () {
   function vocabTopic(item) {
     var t = String((item && item.title) || "");
     var m = t.match(/[·•]\s*(.+)$/);
-    return m ? m[1].replace(/\s*-\s*.*$/, "").trim() : "";
+    return m? m[1].replace(/\s*-\s*.*$/, "").trim(): "";
   }
 
   function vocabBookStats(items, bookKey) {
@@ -1700,7 +1700,7 @@ window.YYSD = (function () {
       if (book.subjects) {
         var ai = book.subjects.indexOf(a.subject);
         var bi = book.subjects.indexOf(b.subject);
-        if (ai !== bi) return ai - bi;
+        if (ai!== bi) return ai - bi;
       }
       var d = vocabListNo(a) - vocabListNo(b);
       return d || String(a.title).localeCompare(String(b.title), "zh-Hans-CN", { numeric: true, sensitivity: "base" });
@@ -1720,7 +1720,7 @@ window.YYSD = (function () {
     var sorted = (lists || []).slice().sort(function (a, b) { return vocabListNo(a) - vocabListNo(b); });
     var next = null, i;
     for (i = 0; i < sorted.length; i++) {
-      if (vocabListNo(sorted[i]) > lastNo && !res[sorted[i].id]) { next = sorted[i]; break; }
+      if (vocabListNo(sorted[i]) > lastNo &&!res[sorted[i].id]) { next = sorted[i]; break; }
     }
     if (!next) {
       for (i = 0; i < sorted.length; i++) {
@@ -1733,13 +1733,13 @@ window.YYSD = (function () {
 
   function vocabListRanges(lists, chunkSize) {
     var nums = (lists || []).map(vocabListNo).filter(function (n) { return n > 0; });
-    if (!nums.length) return [{ id: "all", label: "全部", start: 0, end: 9999 }];
+    if (!nums.length) return [{ id: "all", label: "Tất cả", start: 0, end: 9999 }];
     var max = Math.max.apply(null, nums);
     var chunk = chunkSize || 10;
     var ranges = [];
     for (var start = 1; start <= max; start += chunk) {
       var end = Math.min(start + chunk - 1, max);
-      ranges.push({ id: start + "-" + end, label: "单元 " + start + "–" + end, start: start, end: end });
+      ranges.push({ id: start + "-" + end, label: " Bài " + start + "–" + end, start: start, end: end });
     }
     return ranges;
   }
@@ -1753,12 +1753,12 @@ window.YYSD = (function () {
   function vocabBookCardHTML(stats, prefix) {
     var book = stats.book;
     var prog = vocabProgress(stats.lists);
-    var unit = book.subject ? " 单元" : " 份";
+    var unit = book.subject? " Bài ": " bài ";
     var cnt = stats.total + unit;
-    var progTxt = prog.done ? ("已学 " + prog.done + "/" + stats.total) : cnt;
-    var shortLabel = book.key === "gaozhong" ? "高中"
-      : (book.key === "cet4" ? "四级" : (book.key === "cet4-lite" ? "精简" : "雅思"));
-    var tagTier = book.key === "special" ? "new" : (book.key === "cet4" ? "mid" : "base");
+    var progTxt = prog.done? (" Đã học " + prog.done + "/" + stats.total): cnt;
+    var shortLabel = book.key === "gaozhong"? " THPT "
+      : (book.key === "cet4"? " Đại học B1 ": (book.key === "cet4-lite"? " Rút gọn ": "IELTS"));
+    var tagTier = book.key === "special"? "new": (book.key === "cet4"? "mid": "base");
     var shieldIcon = '<svg class="vol-card__shield" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 1.2 12 3v5.2c0 3.4-2.1 5.9-5 7.3-2.9-1.4-5-3.9-5-7.3V3L7 1.2Z" fill="currentColor"/></svg>';
     var bookIcon = '<svg class="vol-card__book" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
       '<path class="vol-card__book-l" d="M4.5 5.5c2.6 0 4.8.5 6.5 1.6v11.4c-1.7-1.1-3.9-1.6-6.5-1.6V5.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>' +
@@ -1777,14 +1777,14 @@ window.YYSD = (function () {
           '<div class="vol-card__cnt">' + esc(progTxt) + '</div></div>' +
         '</div>' +
         '<div class="vol-card__foot">' +
-          '<span class="vol-card__skills"><span class="vc-skill vc-skill--a">词</span></span>' +
-          '<span class="vol-card__go">进入 ›</span>' +
+          '<span class="vol-card__skills"><span class="vc-skill vc-skill--a"> từ </span></span>' +
+          '<span class="vol-card__go"> Vào học ›</span>' +
         '</div>' +
         '</div>' +
       '</a>';
   }
 
-  // ---- Cambridge series grouping (真题区 shows one card per volume) ----
+  // ---- Cambridge series grouping (Khu đề thi shows one card per volume) ----
   function isCambridge(subject) {
     return subject === "cambridge-listening" || subject === "cambridge-reading" || subject === "cambridge-writing";
   }
@@ -1794,20 +1794,20 @@ window.YYSD = (function () {
     if (!item) return false;
     if (item.subject === "cambridge-reading") return true;
     var blob = (item.file || "") + (item.title || "") + (item.description || "");
-    return /reading|阅读/i.test(blob);
+    return /reading|đọc/i.test(blob);
   }
 
-  // Pull the volume number (e.g. "15") out of a title like "剑桥雅思15 · Test 1（听力）".
+  // Pull the volume number (e.g. "15") out of a title like "Cambridge IELTS 15 · Test 1 (Nghe) ".
   function camVolume(item) {
-    var m = String((item && item.title) || "").match(/剑(?:桥雅思)?\s*0*(\d+)/);
-    return m ? m[1] : "";
+    var m = String((item && item.title) || "").match(/(?:Cambridge(?:\s*IELTS)?)\s*0*(\d+)/i);
+    return m? m[1]: "";
   }
 
   // Summarise cambridge items into [{vol, listening, reading, total}], newest volume first.
-  // Pull the test number out of a title like "… · Test 1（听力）".
+  // Pull the test number out of a title like "… · Test 1 (Nghe) ".
   function camTestNo(item) {
     var m = String((item && item.title) || "").match(/Test\s*0*(\d+)/i);
-    return m ? m[1] : "";
+    return m? m[1]: "";
   }
 
   function camVolumes(items) {
@@ -1827,12 +1827,12 @@ window.YYSD = (function () {
       .map(function (k) { var o = map[k]; o.tests = Object.keys(o._tests).length || o.total; delete o._tests; return o; });
   }
 
-  // Tag a volume by recency (cosmetic, like the mockup's 最新/进阶/基础).
+  // Tag a volume by recency (cosmetic, like the mockup's mới nhất / tiến giai / trụ cột).
   function camVolTag(vol) {
     var n = Number(vol);
-    if (n >= 19) return { t: "最新", c: "new" };
-    if (n >= 13) return { t: "进阶", c: "mid" };
-    return { t: "基础", c: "base" };
+    if (n >= 19) return { t: " mới nhất ", c: "new" };
+    if (n >= 13) return { t: " tiến giai ", c: "mid" };
+    return { t: " trụ cột ", c: "base" };
   }
 
   /* ponytail: one glyph set for hub / vol-card / skill-panel */
@@ -1873,13 +1873,13 @@ window.YYSD = (function () {
   function camVolumeCardHTML(v, prefix, items, opts) {
     opts = opts || {};
     var skill = opts.skill || "";
-    var accent = skill === "listening" || skill === "reading" || skill === "writing" ? skill : "mock";
+    var accent = skill === "listening" || skill === "reading" || skill === "writing"? skill: "mock";
     var tag = camVolTag(v.vol);
-    var prog = items ? camVolumeProgress(items, v.vol) : null;
+    var prog = items? camVolumeProgress(items, v.vol): null;
     var cntText = prog && prog.done
-      ? "已完成 " + prog.done + "/" + prog.total + " 份 · " + v.tests + " 套"
-      : "包含 " + v.tests + " 套";
-    var doneClass = prog && prog.total && prog.done >= prog.total ? " vol-card--done" : "";
+      ? "Đã hoàn thành" + prog.done + "/" + prog.total + " bài · " + v.tests + " bộ "
+      : " bao hàm " + v.tests + " bộ ";
+    var doneClass = prog && prog.total && prog.done >= prog.total? " vol-card--done": "";
     var markIcon = '<svg class="vol-card__shield" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 1.2 12 3v5.2c0 3.4-2.1 5.9-5 7.3-2.9-1.4-5-3.9-5-7.3V3L7 1.2Z" fill="currentColor"/></svg>';
     var skills = accent === "mock"
       ? '<span class="vc-skill vc-skill--l">L</span><span class="vc-skill vc-skill--r">R</span><span class="vc-skill vc-skill--w">W</span>'
@@ -1889,11 +1889,11 @@ window.YYSD = (function () {
           ? '<span class="vc-skill vc-skill--r">P1</span><span class="vc-skill vc-skill--r">P2</span><span class="vc-skill vc-skill--r">P3</span>'
           : '<span class="vc-skill vc-skill--w">T1</span><span class="vc-skill vc-skill--w">T2</span>';
     var href = opts.href || ((prefix || "") + "cambridge.html?vol=" + encodeURIComponent(v.vol) +
-      (skill ? "&skill=" + encodeURIComponent(skill) : ""));
-    var goLabel = opts.goLabel || (skill ? "开始练习 ›" : "开始模考 ›");
+      (skill? "&skill=" + encodeURIComponent(skill): ""));
+    var goLabel = opts.goLabel || (skill? " Bắt đầu luyện tập ›": " Bắt đầu thi thử ›");
     return '' +
       '<a class="vol-card vol-card--' + accent + ' vol-card--tier-' + tag.c + doneClass +
-        (opts.cardClass ? " " + opts.cardClass : "") +
+        (opts.cardClass? " " + opts.cardClass: "") +
         '" href="' + href + '" data-skill="' + accent + '">' +
         '<div class="vol-card__main">' +
         '<div class="vol-card__top">' +
@@ -1902,7 +1902,7 @@ window.YYSD = (function () {
         '</div>' +
         '<div class="vol-card__body">' +
           '<span class="vol-card__ico">' + skillGlyph(accent) + '</span>' +
-          '<div><h3>剑桥雅思 ' + esc(v.vol) + '</h3>' +
+          '<div><h3> Cambridge IELTS ' + esc(v.vol) + '</h3>' +
           '<div class="vol-card__cnt">' + cntText + '</div></div>' +
         '</div>' +
         '<div class="vol-card__foot">' +
@@ -1918,8 +1918,8 @@ window.YYSD = (function () {
     opts = opts || {};
     var q = String(opts.query || "").toLowerCase().trim();
     var tier = opts.tier || "all";
-    var collapseLegacy = opts.collapseLegacy !== false;
-    var legacyBefore = opts.legacyBefore != null ? opts.legacyBefore : 13;
+    var collapseLegacy = opts.collapseLegacy!== false;
+    var legacyBefore = opts.legacyBefore!= null? opts.legacyBefore: 13;
 
     var filtered = (volumes || []).filter(function (v) {
       var n = Number(v.vol);
@@ -1927,14 +1927,14 @@ window.YYSD = (function () {
       if (tier === "mid" && (n < 13 || n > 18)) return false;
       if (tier === "base" && n >= 13) return false;
       if (q) {
-        var hay = ("剑桥雅思 vol " + v.vol + " cambridge " + v.vol).toLowerCase();
+        var hay = (" Cambridge IELTS vol " + v.vol + " cambridge " + v.vol).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
       }
       return true;
     });
 
     if (!filtered.length) {
-      return '<div class="soon-box">没有匹配的册数，试试其他筛选条件。</div>';
+      return '<div class="soon-box"> không có thất phối quyển mấy, thử xem Khác bộ lọc điều kiện. </div>';
     }
 
     function cards(vols) {
@@ -1947,7 +1947,7 @@ window.YYSD = (function () {
       }).join("");
     }
 
-    if (tier !== "all" || q || !collapseLegacy) {
+    if (tier!== "all" || q ||!collapseLegacy) {
       return '<div class="vol-grid">' + cards(filtered) + '</div>';
     }
 
@@ -1956,20 +1956,20 @@ window.YYSD = (function () {
     var html = '<div class="vol-grid">' + cards(recent) + "</div>";
     if (legacy.length) {
       html += '<details class="catalog-collapse">' +
-        '<summary><span class="catalog-collapse__label">更多基础册</span>' +
-        '<span class="catalog-collapse__meta">' + legacy.length + " 册 · Vol." +
+        '<summary><span class="catalog-collapse__label"> thêm nữa trụ cột quyển </span>' +
+        '<span class="catalog-collapse__meta">' + legacy.length + " quyển · Vol." +
         legacy[legacy.length - 1].vol + "–" + legacy[0].vol + "</span></summary>" +
         '<div class="vol-grid">' + cards(legacy) + "</div></details>";
     }
     return html;
   }
 
-  // 听力精听：册列表走 vol-grid；点进一册再列 Test / Part
+  // Nghe sâu (Intensive Listening): quyển liệt biểu List đi vol-grid; chút:điểm tiến một quyển lại nhóm Test / Part
   function jingtingVol(item) {
-    var m = String((item && item.title) || "").match(/剑(?:雅|桥雅思)?\s*0*(\d+)/);
+    var m = String((item && item.title) || "").match(/(?:Cambridge(?:\s*IELTS)?)\s*0*(\d+)/i);
     if (m) return m[1];
     m = String((item && item.id) || "").match(/cam(\d+)/i);
-    return m ? m[1] : "";
+    return m? m[1]: "";
   }
 
   function jingtingTestNo(item) {
@@ -1984,18 +1984,18 @@ window.YYSD = (function () {
     m = String((item && item.title) || "").match(/Part\s*0*(\d+)/i);
     if (m) return m[1];
     m = String((item && item.title) || "").match(/Section\s*0*(\d+)/i);
-    return m ? m[1] : "";
+    return m? m[1]: "";
   }
 
   function jingtingPartRowHTML(item, prefix) {
     var done = results()[item.id];
     var t = jingtingTestNo(item);
     var p = jingtingPartNo(item);
-    var label = (t && p) ? ("Test " + t + " · Part " + p) : displayTitle(item);
-    return '<a class="catalog-row' + (done ? " is-done" : "") + '" href="' + fileHref(item, prefix) + '">' +
+    var label = (t && p)? ("Test " + t + " · Part " + p): displayTitle(item);
+    return '<a class="catalog-row' + (done? " is-done": "") + '" href="' + fileHref(item, prefix) + '">' +
       '<span class="catalog-row__badge badge badge--jingting">Part ' + esc(p || "?") + "</span>" +
       '<span class="catalog-row__title">' + esc(label) + "</span>" +
-      (done ? '<span class="catalog-row__status">已完成</span>' : '<span class="catalog-row__go">开始精听 ›</span>') +
+      (done? '<span class="catalog-row__status"> Đã hoàn thành </span>': '<span class="catalog-row__go"> Bắt đầu nghe sâu ›</span>') +
       "</a>";
   }
 
@@ -2066,21 +2066,21 @@ window.YYSD = (function () {
       var vol = String(opts.vol);
       var list = items.filter(function (it) { return jingtingVol(it) === vol; });
       if (!list.length) {
-        return '<div class="soon-box">未找到剑' + esc(vol) + " 精听。" +
-          '<p><a href="zone.html?zone=mock&amp;s=jingting">返回册列表</a></p></div>';
+        return '<div class="soon-box"> không tìm được kiếm ' + esc(vol) + " Nghe sâu. " +
+          '<p><a href="zone.html?zone=mock&amp;s=jingting"> Quay lại quyển liệt biểu List </a></p></div>';
       }
-      return '<p class="cam-pick-hint"><a href="zone.html?zone=mock&amp;s=jingting">← 返回听力精听</a>' +
-        " · 选择 Test / Part 进入精听。</p>" +
+      return '<p class="cam-pick-hint"><a href="zone.html?zone=mock&amp;s=jingting">← Quay lại Nghe sâu (Intensive Listening) </a>' +
+        " · lựa chọn Test / Part Vào học Nghe sâu. </p>" +
         jingtingTestsHTML(list, prefix);
     }
     var vols = jingtingVolumes(items);
-    if (!vols.length) return '<div class="soon-box">暂无精听内容。</div>';
+    if (!vols.length) return '<div class="soon-box"> tạm thời chưa có Nghe sâu nội dung. </div>';
     return cambridgeCatalogHTML(vols, items, prefix, {
       skill: "listening",
       tier: opts.tier,
       query: opts.query,
       collapseLegacy: true,
-      goLabel: "开始精听 ›",
+      goLabel: " Bắt đầu nghe sâu ›",
       cardClass: "vol-card--jingting",
       cardHref: function (v) {
         return (prefix || "") + "zone.html?zone=mock&s=jingting&vol=" + encodeURIComponent(v.vol);
@@ -2096,21 +2096,21 @@ window.YYSD = (function () {
     var sameDay = d.toDateString() === now.toDateString();
     var yest = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
     var time = d.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", hour12: false });
-    if (sameDay) return "今天 " + time;
-    if (d.toDateString() === yest.toDateString()) return "昨天 " + time;
+    if (sameDay) return " hôm nay " + time;
+    if (d.toDateString() === yest.toDateString()) return " hôm qua " + time;
     return d.toLocaleString("zh-CN", { hour12: false });
   }
 
   function subjectPillLabel(subject) {
-    if (subject === "cambridge-listening") return "听力";
-    if (subject === "cambridge-reading") return "阅读";
-    if (subject === "cambridge-writing") return "写作";
+    if (subject === "cambridge-listening") return "Nghe";
+    if (subject === "cambridge-reading") return "Đọc";
+    if (subject === "cambridge-writing") return "Viết";
     var s = SUBJECT[subject];
-    return (s && s.label) || "练习";
+    return (s && s.label) || "Luyện tập";
   }
 
   function resultsInsightLine(rows) {
-    var listen = rows.filter(function (r) { return r.subject === "cambridge-listening" && r.band != null; }).slice(0, 3);
+    var listen = rows.filter(function (r) { return r.subject === "cambridge-listening" && r.band!= null; }).slice(0, 3);
     var wrongN = 0;
     rows.forEach(function (r) {
       if (r.wrong && r.wrong.length) wrongN += r.wrong.length;
@@ -2118,56 +2118,56 @@ window.YYSD = (function () {
     var parts = [];
     if (listen.length) {
       var avg = listen.reduce(function (s, r) { return s + Number(r.band); }, 0) / listen.length;
-      parts.push("听力最近 " + listen.length + " 次均 Band " + (Math.round(avg * 10) / 10));
+      parts.push(" Nghe gần nhất " + listen.length + " lần đều Band " + (Math.round(avg * 10) / 10));
     }
-    if (wrongN) parts.push("待复习错题 " + wrongN);
-    else parts.push("累计 " + rows.length + " 次练习");
+    if (wrongN) parts.push(" đợi Ôn tập câu sai " + wrongN);
+    else parts.push(" tính gộp lại " + rows.length + " lần Luyện tập ");
     return parts.join(" · ");
   }
 
   function resultsSummaryHTML(rows, prefix) {
     if (!rows.length) return "";
     var latest = rows[0];
-    var bandRows = rows.filter(function (r) { return r.band != null; });
-    var latestBand = bandRows.length ? bandRows[0].band : null;
-    var scoreTxt = latest.score != null
-      ? latest.score + (latest.total != null ? " / " + latest.total : "")
+    var bandRows = rows.filter(function (r) { return r.band!= null; });
+    var latestBand = bandRows.length? bandRows[0].band: null;
+    var scoreTxt = latest.score!= null
+      ? latest.score + (latest.total!= null? " / " + latest.total: "")
       : "—";
     var wrongN = (latest.wrong && latest.wrong.length) || 0;
-    if (!wrongN && latest.score != null && latest.total != null && latest.score < latest.total) {
+    if (!wrongN && latest.score!= null && latest.total!= null && latest.score < latest.total) {
       wrongN = Math.max(0, latest.total - latest.score);
     }
-    var hasWrong = !!(latest.wrong && latest.wrong.length);
+    var hasWrong =!!(latest.wrong && latest.wrong.length);
     var mayHaveWrong = hasWrong || (
       (latest.subject === "cambridge-listening" || latest.subject === "cambridge-reading") &&
-      latest.score != null && latest.total != null && latest.score < latest.total
+      latest.score!= null && latest.total!= null && latest.score < latest.total
     );
     var wrongBtn = mayHaveWrong
-      ? '<button type="button" class="btn btn--ghost btn--sm" data-results-tab="wrongs">查看错题</button>'
-      : '<span class="results-hero__soon btn btn--ghost btn--sm is-disabled" title="本次无错题或尚未收录">查看错题</span>';
+      ? '<button type="button" class="btn btn--ghost btn--sm" data-results-tab="wrongs"> Xem câu sai </button>'
+      : '<span class="results-hero__soon btn btn--ghost btn--sm is-disabled" title=" lần này Không câu sai hoặc chưa thu nhận sử dụng "> Xem câu sai </span>';
     var pill = subjectPillLabel(latest.subject);
     var insight = resultsInsightLine(rows);
-    return '<section class="results-hero reveal" aria-label="成绩概览">' +
+    return '<section class="results-hero reveal" aria-label=" Điểm số nhìn chung ">' +
       '<div class="results-hero__main">' +
         '<span class="results-hero__eyebrow">LATEST RESULT</span>' +
         '<div class="results-hero__title-row">' +
           '<h2>' + esc(latest.title) + "</h2>" +
           '<span class="results-pill">' + esc(pill) + "</span>" +
         "</div>" +
-        '<p class="results-hero__meta">最近完成 · ' + esc(relativeWhen(latest.date)) +
-          " · 共 " + rows.length + " 次记录</p>" +
+        '<p class="results-hero__meta"> gần nhất hoàn thành · ' + esc(relativeWhen(latest.date)) +
+          " · tổng " + rows.length + " lần ghi chép </p>" +
         '<div class="results-hero__actions">' +
-          '<a class="btn btn--primary btn--sm" href="exam.html?id=' + encodeURIComponent(latest.id) + '">再练一次</a>' +
+          '<a class="btn btn--primary btn--sm" href="exam.html?id=' + encodeURIComponent(latest.id) + '"> luyện thêm một lần </a>' +
           wrongBtn +
-          '<button type="button" class="results-hero__ghost-link" data-results-tab="archive">全部记录</button>' +
+          '<button type="button" class="results-hero__ghost-link" data-results-tab="archive"> Tất cả ghi chép </button>' +
         "</div></div>" +
       '<div class="results-hero__stats">' +
-        '<div class="results-hero__stat"><b>' + esc(scoreTxt) + '</b><span>最近得分</span></div>' +
-        '<div class="results-hero__stat' + (latestBand != null ? " results-hero__stat--band" : "") + '">' +
-          '<b>' + (latestBand != null ? esc(String(latestBand)) : "—") + '</b><span>Band 预估</span></div>' +
-        '<div class="results-hero__stat"><b>' + wrongN + '</b><span>本卷错题</span></div>' +
+        '<div class="results-hero__stat"><b>' + esc(scoreTxt) + '</b><span> Điểm gần nhất </span></div>' +
+        '<div class="results-hero__stat' + (latestBand!= null? " results-hero__stat--band": "") + '">' +
+          '<b>' + (latestBand!= null? esc(String(latestBand)): "—") + '</b><span>Band dự kiến </span></div>' +
+        '<div class="results-hero__stat"><b>' + wrongN + '</b><span> câu sai trong đề </span></div>' +
       "</div>" +
-      (insight ? '<p class="results-insight">' + esc(insight) + "</p>" : "") +
+      (insight? '<p class="results-insight">' + esc(insight) + "</p>": "") +
       "</section>";
   }
 
@@ -2204,7 +2204,7 @@ window.YYSD = (function () {
     var counts = { study: 0, practice: 0, mock: 0, total: 0 };
     Object.keys(store).forEach(function (k) {
       var it = byId[k];
-      if (!it || !counts.hasOwnProperty(it.zone)) return;
+      if (!it ||!counts.hasOwnProperty(it.zone)) return;
       counts[it.zone]++;
       counts.total++;
     });
@@ -2214,9 +2214,9 @@ window.YYSD = (function () {
   function homeIeltsHTML(items, prefix) {
     var p = prefix || "";
     var zones = [
-      { step: "01", label: "单词区", sub: "词汇 · 语法 · 课程资料", href: p + "zone.html?zone=study" },
-      { step: "02", label: "练习区", sub: "长难句 · 专项训练", href: p + "zone.html?zone=practice" },
-      { step: "03", label: "真题区", sub: "剑桥雅思真题", href: p + "zone.html?zone=mock&s=ielts" }
+      { step: "01", label: " Khu từ vựng ", sub: " Từ vựng · Ngữ pháp · chương trình học tư liệu ", href: p + "zone.html?zone=study" },
+      { step: "02", label: " Khu luyện tập ", sub: " Câu phức học thuật · Luyện tập chuyên đề ", href: p + "zone.html?zone=practice" },
+      { step: "03", label: " Khu đề thi ", sub: " Đề thi Cambridge IELTS ", href: p + "zone.html?zone=mock&s=ielts" }
     ];
     var zoneCards = zones.map(function (z) {
       return '<a class="home-ielts__zone pressable" href="' + z.href + '">' +
@@ -2226,17 +2226,17 @@ window.YYSD = (function () {
         '<span class="home-ielts__zone-go" aria-hidden="true">→</span></a>';
     }).join("");
 
-    return '<section class="home-ielts reveal" aria-label="雅思备考">' +
+    return '<section class="home-ielts reveal" aria-label=" Luyện thi IELTS ">' +
       '<div class="home-ielts__inner">' +
         '<div class="home-ielts__head">' +
           "<div>" +
             '<span class="home-ielts__eyebrow">IELTS PREPARATION</span>' +
-            "<h2>雅思备考</h2>" +
-            "<p>单词 · 练习 · 真题一站完成 · 剑桥雅思真题 · 词汇语法系统精讲</p>" +
+            "<h2> Luyện thi IELTS </h2>" +
+            "<p> Từ vựng · Luyện tập · đề thi thật vừa đứng hoàn thành · Đề thi Cambridge IELTS · Từ vựng Ngữ pháp hệ thống tinh giảng </p>" +
           "</div>" +
           '<div class="home-ielts__actions">' +
-            '<a class="btn btn--primary pressable" href="' + p + 'zone.html?zone=study">进入单词区</a>' +
-            '<a class="btn btn--gold pressable" href="' + p + 'zone.html?zone=mock&s=ielts">开始真题</a>' +
+            '<a class="btn btn--primary pressable" href="' + p + 'zone.html?zone=study"> Vào học Khu từ vựng </a>' +
+            '<a class="btn btn--gold pressable" href="' + p + 'zone.html?zone=mock&s=ielts"> Bắt đầu đề thi thật </a>' +
           "</div>" +
         "</div>" +
         '<div class="home-ielts__zones">' + zoneCards + "</div>" +
@@ -2246,9 +2246,9 @@ window.YYSD = (function () {
   function homeJourneyHTML(items, prefix) {
     var counts = journeyStats(items);
     var steps = [
-      { zone: "study", step: "01", label: "单词", sub: "词汇 · 语法", href: (prefix || "") + "zone.html?zone=study" },
-      { zone: "practice", step: "02", label: "练习", sub: "长难句 · 专项", href: (prefix || "") + "zone.html?zone=practice" },
-      { zone: "mock", step: "03", label: "真题", sub: "剑桥真题", href: (prefix || "") + "zone.html?zone=mock" }
+      { zone: "study", step: "01", label: "Từ vựng", sub: " Từ vựng · Ngữ pháp ", href: (prefix || "") + "zone.html?zone=study" },
+      { zone: "practice", step: "02", label: "Luyện tập", sub: " Câu phức học thuật · Chuyên sâu ", href: (prefix || "") + "zone.html?zone=practice" },
+      { zone: "mock", step: "03", label: " đề thi thật ", sub: " Đề Cambridge IELTS ", href: (prefix || "") + "zone.html?zone=mock" }
     ];
     var current = "study";
     if (counts.mock) current = "mock";
@@ -2264,15 +2264,15 @@ window.YYSD = (function () {
         '<span class="home-journey__step">' + s.step + '</span>' +
         '<span class="home-journey__label">' + esc(s.label) + '</span>' +
         '<span class="home-journey__sub">' + esc(s.sub) + '</span>' +
-        (n ? '<span class="home-journey__count">' + n + ' 份</span>' : "") +
+        (n? '<span class="home-journey__count">' + n + ' bài </span>': "") +
         "</a>";
     }).join("");
 
-    return '<section class="home-journey reveal" aria-label="备考路径">' +
+    return '<section class="home-journey reveal" aria-label=" phụ lục đường nhỏ ">' +
       '<div class="home-journey__head">' +
         '<span class="home-journey__eyebrow">LEARNING PATH</span>' +
-        '<h2>你的备考路径</h2>' +
-        '<p>学习打基础 → 练习强技能 → 模考验真章</p>' +
+        '<h2> của bạn phụ lục đường nhỏ </h2>' +
+        '<p> Học tập đặt nền móng → Luyện tập mạnh mẽ kỹ năng → Thi thử nghiệm chân chương </p>' +
       "</div>" +
       '<div class="home-journey__track">' + nodes + "</div>" +
       "</section>";
@@ -2284,57 +2284,57 @@ window.YYSD = (function () {
     var p = prefix || "";
 
     if (!acts.length) {
-      return '<section class="home-dashboard home-dashboard--empty reveal" aria-label="备考仪表盘">' +
+      return '<section class="home-dashboard home-dashboard--empty reveal" aria-label=" phụ lục đồng hồ đo ">' +
         '<div class="home-dashboard__inner">' +
           '<span class="home-dashboard__eyebrow">YOUR COCKPIT</span>' +
-          "<h2>开始你的备考路径</h2>" +
-          "<p>从单词区或真题区任选入口，进度会保存在本浏览器。</p>" +
+          "<h2> Bắt đầu của bạn phụ lục đường nhỏ </h2>" +
+          "<p> từ Khu từ vựng hoặc Khu đề thi tùy chọn cửa vào, Tiến độ sẽ Lưu tại bản trình duyệt. </p>" +
           '<div class="home-dashboard__actions">' +
-            '<a class="btn btn--gold btn--sm" href="' + p + 'zone.html?zone=mock">开始真题</a>' +
-            '<a class="btn btn--ghost-dark btn--sm" href="' + p + 'zone.html?zone=study">进入单词区</a>' +
+            '<a class="btn btn--gold btn--sm" href="' + p + 'zone.html?zone=mock"> Bắt đầu đề thi thật </a>' +
+            '<a class="btn btn--ghost-dark btn--sm" href="' + p + 'zone.html?zone=study"> Vào học Khu từ vựng </a>' +
           "</div></div></section>";
     }
 
     var rows = acts.map(function (a) {
       var r = a.result;
       var zone = (ZONE[a.item.zone] || {}).label || "";
-      var meta = r.score != null ? r.score + (r.total ? "/" + r.total : "") : "继续";
-      if (r.band != null) meta += " · Band " + r.band;
+      var meta = r.score!= null? r.score + (r.total? "/" + r.total: ""): " Tiếp tục ";
+      if (r.band!= null) meta += " · Band " + r.band;
       return '<a class="home-dashboard__row" href="' + fileHref(a.item, p) + '">' +
         '<span class="home-dashboard__row-zone">' + esc(zone) + "</span>" +
         '<span class="home-dashboard__row-title">' + esc(displayTitle(a.item)) + "</span>" +
         '<span class="home-dashboard__row-meta">' + esc(meta) + " ›</span></a>";
     }).join("");
 
-    return '<section class="home-dashboard reveal" aria-label="备考仪表盘">' +
+    return '<section class="home-dashboard reveal" aria-label=" phụ lục đồng hồ đo ">' +
       '<div class="home-dashboard__inner">' +
         '<div class="home-dashboard__top">' +
           '<div><span class="home-dashboard__eyebrow">YOUR COCKPIT</span>' +
-          "<h2>继续备考</h2>" +
-          "<p>从上次停下的地方接着学</p></div>" +
+          "<h2> Tiếp tục phụ lục </h2>" +
+          "<p> từ lần trước dừng lại địa phương tiếp theo học </p></div>" +
           '<div class="home-dashboard__metrics">' +
-            '<div class="home-dashboard__metric"><b>' + counts.total + '</b><span>已做</span></div>' +
-            '<div class="home-dashboard__metric"><b>' + counts.mock + '</b><span>模考</span></div>' +
-            '<div class="home-dashboard__metric"><b>' + counts.study + '</b><span>学习</span></div>' +
+            '<div class="home-dashboard__metric"><b>' + counts.total + '</b><span> đã làm </span></div>' +
+            '<div class="home-dashboard__metric"><b>' + counts.mock + '</b><span> Thi thử </span></div>' +
+            '<div class="home-dashboard__metric"><b>' + counts.study + '</b><span> Học tập </span></div>' +
           "</div></div>" +
         '<div class="home-dashboard__list">' + rows + "</div>" +
-        '<a class="home-dashboard__all" href="' + p + 'results.html">查看全部成绩 →</a>' +
+        '<a class="home-dashboard__all" href="' + p + 'results.html"> Xem Tất cả Điểm số →</a>' +
       "</div></section>";
   }
 
   function compactItemRowHTML(item, prefix) {
     var done = results()[item.id];
-    var subj = SUBJECT[item.subject] || { label: "其他" };
-    return '<a class="catalog-row' + (done ? " is-done" : "") + '" href="' + fileHref(item, prefix) + '">' +
+    var subj = SUBJECT[item.subject] || { label: " Khác " };
+    return '<a class="catalog-row' + (done? " is-done": "") + '" href="' + fileHref(item, prefix) + '">' +
       '<span class="catalog-row__badge badge badge--' + esc(item.subject) + '">' + esc(subj.label) + "</span>" +
       '<span class="catalog-row__title">' + esc(displayTitle(item)) + "</span>" +
-      (done ? '<span class="catalog-row__status">已完成</span>' : '<span class="catalog-row__go">进入 ›</span>') +
+      (done? '<span class="catalog-row__status"> Đã hoàn thành </span>': '<span class="catalog-row__go"> Vào học ›</span>') +
       "</a>";
   }
 
   function searchResultsHTML(items, prefix) {
     if (!items.length) {
-      return '<div class="soon-box">没有找到匹配的内容，试试其他关键词。</div>';
+      return '<div class="soon-box"> không có tìm được thất phối nội dung, thử xem Khác từ khóa. </div>';
     }
     var bySubject = {};
     items.forEach(function (it) {
@@ -2350,7 +2350,7 @@ window.YYSD = (function () {
         ? '<div class="catalog-rows">' + its.map(function (it) { return compactItemRowHTML(it, prefix); }).join("") + "</div>"
         : '<div class="exam-grid exam-grid--compact">' + its.map(function (it) { return cardHTML(it, prefix); }).join("") + "</div>";
       return '<div class="catalog-section">' +
-        '<div class="catalog-section__head"><h3>' + esc(label) + '</h3><span class="cnt">' + its.length + " 份</span></div>" +
+        '<div class="catalog-section__head"><h3>' + esc(label) + '</h3><span class="cnt">' + its.length + " bài </span></div>" +
         body + "</div>";
     }).join("");
   }
@@ -2359,47 +2359,47 @@ window.YYSD = (function () {
   function countsBySubject(items, zone) {
     var m = {};
     (items || []).forEach(function (it) {
-      if (zone && it.zone !== zone) return;
+      if (zone && it.zone!== zone) return;
       m[it.subject] = (m[it.subject] || 0) + 1;
     });
     return m;
   }
 
   function resultsBandTimelineHTML(rows) {
-    var pts = (rows || []).filter(function (r) { return r.band != null; }).slice(0, 10);
+    var pts = (rows || []).filter(function (r) { return r.band!= null; }).slice(0, 10);
     if (!pts.length) return "";
     pts = pts.slice().reverse();
     var maxBand = 9;
     var bars = pts.map(function (r, i) {
       var h = Math.max(12, Math.round((Number(r.band) / maxBand) * 100));
-      var d = r.date ? new Date(r.date) : null;
-      var dateLabel = d && !isNaN(d.getTime())
+      var d = r.date? new Date(r.date): null;
+      var dateLabel = d &&!isNaN(d.getTime())
         ? (d.getMonth() + 1) + "/" + d.getDate()
         : "";
       var isLatest = i === pts.length - 1;
-      return '<div class="band-timeline__item' + (isLatest ? " is-latest" : "") +
+      return '<div class="band-timeline__item' + (isLatest? " is-latest": "") +
         '" style="--h:' + h + '%;--i:' + i + '">' +
         '<div class="band-timeline__bar-wrap"><span class="band-timeline__bar"></span></div>' +
         '<span class="band-timeline__val">' + esc(String(r.band)) + '</span>' +
-        (dateLabel ? '<span class="band-timeline__date">' + esc(dateLabel) + '</span>' : "") +
+        (dateLabel? '<span class="band-timeline__date">' + esc(dateLabel) + '</span>': "") +
         "</div>";
     }).join("");
     var latest = pts[pts.length - 1].band;
-    return '<section class="band-timeline results-panel reveal" aria-label="Band 轨迹">' +
+    return '<section class="band-timeline results-panel reveal" aria-label="Band quỹ tích ">' +
       '<div class="band-timeline__head">' +
         '<span class="band-timeline__eyebrow">BAND TRAJECTORY</span>' +
-        "<h2>Band 轨迹</h2>" +
-        "<p>最近 " + pts.length + " 次有 Band 的练习 · 最新 Band " + esc(String(latest)) + "</p>" +
+        "<h2>Band quỹ tích </h2>" +
+        "<p> gần nhất " + pts.length + " lần có Band Luyện tập · mới nhất Band " + esc(String(latest)) + "</p>" +
       "</div>" +
       '<div class="band-timeline__chart">' + bars + "</div>" +
       "</section>";
   }
 
-  // HTML 被旧发布盖掉时，布置栏仍补回绝密套卷芯片
+  // HTML bị xưa cũ tuyên bố che mất lúc, bố trí lan nhưng bổ từ chối mật bộ cuốn Chip
   function ensureSecretCatChips() {
     var host = document.getElementById("exercise-cats");
     if (!host) return;
-    [["rsecret", "阅读绝密套卷"], ["lsecret", "听力绝密套卷"]].forEach(function (pair) {
+    [["rsecret", " Đọc tuyệt mật bộ cuốn "], ["lsecret", " Nghe tuyệt mật bộ cuốn "]].forEach(function (pair) {
       if (host.querySelector('[data-ex-cat="' + pair[0] + '"]')) return;
       var btn = document.createElement("button");
       btn.type = "button";
@@ -2409,7 +2409,7 @@ window.YYSD = (function () {
       host.appendChild(btn);
     });
   }
-  if (typeof document !== "undefined") {
+  if (typeof document!== "undefined") {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", ensureSecretCatChips);
     } else {
@@ -2438,7 +2438,7 @@ window.YYSD = (function () {
     searchResultsHTML: searchResultsHTML, compactItemRowHTML: compactItemRowHTML,
     VOCAB_BOOKS: VOCAB_BOOKS, isVocabListSubject: isVocabListSubject, isVocabSpecial: isVocabSpecial,
     needsVocabBridge: needsVocabBridge,
-    vocabListNo: vocabListNo, vocabDisplayTitle: vocabDisplayTitle,     displayTitle: displayTitle,
+    vocabListNo: vocabListNo, vocabDisplayTitle: vocabDisplayTitle, displayTitle: displayTitle,
     parsePartId: parsePartId, parseGroupId: parseGroupId,
     isExplainId: isExplainId, baseExerciseId: baseExerciseId,
     practiceExerciseIds: practiceExerciseIds, isExplainOnlyAssignment: isExplainOnlyAssignment,

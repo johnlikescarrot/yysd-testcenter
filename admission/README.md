@@ -1,87 +1,87 @@
-# AI 留学录取评估（admission 子应用）
+# AI du học trúng tuyển ước định (admission tử hữu ích,thiết thực)
 
-Next.js 14 + Prisma + Supabase Postgres（pgvector）+ 通义千问（DashScope）。
+Next.js 14 + Prisma + Supabase Postgres (pgvector) + thông nghĩa nghìn hỏi (DashScope).
 
-## 文件说明
+## văn bản tài liệu nói rõ
 
-| 路径 | 作用 |
+| đường nhỏ | tác dụng |
 |------|------|
-| `prisma/schema.prisma` | School / Case / UserQuery 表结构 |
-| `prisma/migrations/.../migration.sql` | 含 `vector` 扩展与建表 SQL |
-| `scripts/catalog/` | 美英加澳全科目录（country/field/slug） |
-| `scripts/seed-cases.ts` | upsert 目录 + 每项目约 4 条合成脱敏案例 |
-| `scripts/import-gradcafe.ts` | 导入 GradCafe 历史真实自报（脱敏） |
-| `scripts/apply-official-stats.ts` | 写入可引用公开/近似录取率 |
-| `data/gradcafe_cs.csv` | GradCafe CS 公开历史数据集 |
-| `data/official-stats.json` | 公开录取率引用条目 |
-| `scripts/sync-embeddings.ts` | 将 Case 文本嵌入写入 pgvector |
-| `scripts/scrape_gradcafe.py` | 可选 GradCafe 抓取骨架（默认不跑） |
-| `app/api/evaluate/route.ts` | 评估 API：硬门槛 → 概率 → 相似案例 → 千问 |
+| `prisma/schema.prisma` | School / Case / UserQuery bề ngoài kết cấu |
+| `prisma/migrations/.../migration.sql` | hàm `vector` mở rộng và xây dựng bề ngoài SQL |
+| `scripts/catalog/` | Mỹ Anh thêm úc toàn kỹ năng lục (country/field/slug) |
+| `scripts/seed-cases.ts` | upsert mục lục + mỗi hạng mục ước 4 đầu hợp thành cởi mẫn án lệ |
+| `scripts/import-gradcafe.ts` | đạo nhập GradCafe Lịch sử chân thật tự báo (cởi mẫn) |
+| `scripts/apply-official-stats.ts` | ghi nhập có thể trích dẫn công khai / xấp xỉ tỷ số trúng tuyển |
+| `data/gradcafe_cs.csv` | GradCafe CS công khai Lịch sử số liệu tụ tập |
+| `data/official-stats.json` | công khai tỷ số trúng tuyển trích dẫn điều mục |
+| `scripts/sync-embeddings.ts` | đem Case văn bản khảm nhập ghi nhập pgvector |
+| `scripts/scrape_gradcafe.py` | có thể chọn GradCafe trảo lấy khung xương (cam chịu không chạy) |
+| `app/api/evaluate/route.ts` | ước định API: cứng rắn cánh cửa → xác suất → tương tự án lệ → nghìn hỏi |
 | `lib/qwen.ts` | DashScope Chat / Embedding |
-| `lib/hard-gate.ts` / `probability.ts` / `similar.ts` / `resume.ts` | 评估子逻辑 |
-| `components/AdmissionEval.tsx` | 学校详情页内的评估表单与结果展示 |
-| `lib/mock.ts` | 前端 Mock 结果（`NEXT_PUBLIC_USE_MOCK=1`） |
+| `lib/hard-gate.ts` / `probability.ts` / `similar.ts` / `resume.ts` | ước định tử ăn khớp |
+| `components/AdmissionEval.tsx` | trường học tình hình cụ thể và tỉ mỉ trang bên trong ước định danh sách và kết quả biểu hiện ra |
+| `lib/mock.ts` | lối vào Mock kết quả (`NEXT_PUBLIC_USE_MOCK=1`) |
 
-## 本地运行
+## bản địa vận hành
 
 ### 1. Supabase
 
-1. 创建项目 → **Database → Extensions** → 启用 `vector`
-2. **Project Settings → Database** 复制连接串：
-   - `DATABASE_URL`：Transaction pooler（6543，加 `?pgbouncer=true`）
-   - `DIRECT_URL`：Session / Direct（5432）
+1. sáng tạo hạng mục → **Database → Extensions** → bắt đầu dùng `vector`
+2. **Project Settings → Database** phục chế liên tiếp chuỗi:
+   - `DATABASE_URL`: Transaction pooler (6543, thêm `?pgbouncer=true`)
+   - `DIRECT_URL`: Session / Direct (5432)
 
-### 2. 环境变量
+### 2. Môi trường lượng biến đổi
 
 ```bash
 cd admission
-cp .env.example .env.local
-# 编辑 .env.local：DATABASE_URL、DIRECT_URL、DASHSCOPE_API_KEY
-# 先跑 UI 可保持 NEXT_PUBLIC_USE_MOCK=1
+cp.env.example.env.local
+# biên tập.env.local: DATABASE_URL, DIRECT_URL, DASHSCOPE_API_KEY
+# chạy trước UI có thể bảo trì NEXT_PUBLIC_USE_MOCK=1
 ```
 
-### 3. 安装与迁移
+### 3. lắp đặt và di chuyển
 
 ```bash
 npm install --registry=https://registry.npmmirror.com --ignore-scripts
-# 国内拉取 Prisma Engine 慢时：
+# trong nước kéo lấy Prisma Engine chậm lúc:
 PRISMA_ENGINES_MIRROR=https://registry.npmmirror.com/-/binary/prisma npx prisma generate
 
 npx prisma migrate deploy
-# 或开发：npx prisma migrate dev
+# hoặc khai phát: npx prisma migrate dev
 npm run seed
 npm run apply:stats
 npm run import:gradcafe
-# 有 DASHSCOPE_API_KEY 后再同步向量：
+# có DASHSCOPE_API_KEY sau lại đồng bộ véc-tơ:
 npm run sync:embeddings
 ```
 
-### 4. 启动
+### 4. khởi động
 
 ```bash
 npm run dev
 # http://localhost:3001
-# Mock：打开任意 /schools/mock-cmu 点评估
-# 真实：NEXT_PUBLIC_USE_MOCK=0，并用 seed 后的学校 id
+# Mock: mở ra tùy ý /schools/mock-cmu lời bình đánh giá
+# chân thật: NEXT_PUBLIC_USE_MOCK=0, cùng sử dụng seed sau đích trường học id
 ```
 
-### 5. 自检（无需 DB）
+### 5. tự kiểm (không cần DB)
 
 ```bash
 npx tsx lib/check-eval.ts
 ```
 
-## 校准引擎（准确性）
+## hiệu chỉnh động cơ (độ chuẩn xác)
 
-- 概率与「冲刺/匹配/保底」由 `lib/calibrate.ts` **锁定**（本科档次 × 项目选择性 × GPA/专业匹配/简历信号）
-- 千问只写分析，**不能改概率**
-- 返回 `range` 区间 + `evidence` 可追溯依据
-- 校准优先使用 `source=gradcafe` 真实案例；合成样本仅作回退
-- evidence 展示公开录取率引用 + GradCafe 样本率
-- 简历支持 PDF / DOC / DOCX（macOS `textutil`）
+- xác suất và « chạy nước rút / xứng đôi / giữ gốc » do `lib/calibrate.ts` ** tập trung ** (Đại học cấp bậc × hạng mục lựa chọn tính × GPA/ chuyên nghiệp xứng đôi / lý lịch sơ lược tín hiệu)
+- nghìn hỏi chỉ viết phân tích, ** không thể sửa xác suất **
+- Quay lại `range` khu lúc giữa + `evidence` có thể ngược dòng tìm hiểu căn cứ
+- hiệu chỉnh ưu tiên sử dụng `source=gradcafe` chân thật án lệ; hợp thành hàng mẫu chỉ làm lui trở về
+- evidence biểu hiện ra công khai tỷ số trúng tuyển trích dẫn + GradCafe hàng mẫu dẫn đầu
+- lý lịch sơ lược hỗ trợ PDF / DOC / DOCX (macOS `textutil`)
 
-## 隐私
+## việc riêng tư
 
-- 简历仅在请求内存中解析，不落盘、不入库存原文
-- `UserQuery` 只存结构化特征 JSON
-- GradCafe 案例已脱敏（去邮箱/链接）；合成案例为模板描述
+- lý lịch sơ lược chỉ tại thỉnh cầu bộ nhớ Vừa Giải thích đáp án, không rơi bàn, không vào tồn kho Bài gốc
+- `UserQuery` chỉ tồn kết cấu hóa đặc thù JSON
+- GradCafe án lệ đã cởi mẫn (đi hòm thư / kết nối); hợp thành án lệ là khuôn mô hình miêu tả

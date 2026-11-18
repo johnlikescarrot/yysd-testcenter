@@ -1,39 +1,39 @@
 ---
 name: yysd-site
 description: >
-  制作或改优益思达网站与系统。官网 Hub、题库、教师端、新托福机考 app、
-  Electron 桌面端、词书、上线。用户提到改首页、做页面、上试卷、改播放器、
-  教师端、座位、租户、部署时使用。
+   chế tác hoặc sửa YYSD trang web và hệ thống. Website Games Hub, Ngân hàng đề, Cổng giáo viên, TOEFL iBT cơ khảo thi app,
+  Electron mặt bàn đầu, từ sách, phát hành. người sử dụng nhắc tới sửa Trang chủ, làm trang web, bên trên bài thi, sửa bá phóng khí,
+   Cổng giáo viên, chỗ ngồi, người thuê, bố trí lúc sử dụng.
 ---
 
-# 优益思达网站 / 系统
+# YYSD trang web / hệ thống
 
-先读 `AGENTS.md` 和 `YYSD-DESIGN-RULES.md`。本机部署看 `AGENTS.local.md`。
+ trước đọc `AGENTS.md` và `YYSD-DESIGN-RULES.md`. thiết bị này bố trí nhìn `AGENTS.local.md`.
 
-## 动手前
+## trước khi động thủ
 
-1. 这是内容、壳，还是考场？性格不要混。
-2. 已有页面 / helper / 播放器能不能复用？禁止第二套引擎。
-3. 落地页手感用 `design-taste-frontend`；壳层动效用 `apple-design`；改旧站用 `redesign-existing-projects`。考场不要苹果化。
+1. đây là nội dung, xác, hay trường thi? tính cách không nên lẫn vào.
+2. đã có trang web / helper / bá phóng khí có thể hay không phục dùng? cấm thứ hai bộ động cơ.
+3. rơi xuống đất trang xúc cảm dùng `design-taste-frontend`; xác tầng di chuyển hiệu dụng `apple-design`; sửa xưa cũ đứng dùng `redesign-existing-projects`. trường thi không nên quả táo hóa.
 
-## 改哪里
+## sửa ở đâu
 
-| 要做的事 | 去哪 |
+| chuyện cần làm | đi đâu |
 | --- | --- |
-| 官网 / Hub | `index.html`、`assets/css/style.css`、`assets/js/` |
-| 表面 / 确认框 | `assets/js/ui.js`（`YYSD_SURFACE` / `YYSD_CONFIRM`） |
-| 分区与科目 | `assets/js/config.js` |
-| 新托福机考 | `app/` + `app/library/toefl/` |
-| 网站日期卷 | `library/toefl/` |
-| 后端 / 座位 / 租户 | `server/server.js` |
-| 桌面端 | `desktop/` |
-| 题库页 | `tiku/` |
+| Website Games / Hub | `index.html`, `assets/css/style.css`, `assets/js/` |
+| mặt ngoài / Xác nhận khung | `assets/js/ui.js` (`YYSD_SURFACE` / `YYSD_CONFIRM`) |
+| phân khu và kỹ năng | `assets/js/config.js` |
+| TOEFL iBT cơ khảo thi | `app/` + `app/library/toefl/` |
+| trang web ngày cuốn | `library/toefl/` |
+| sau đầu / chỗ ngồi / người thuê | `server/server.js` |
+| mặt bàn đầu | `desktop/` |
+| Ngân hàng đề trang | `tiku/` |
 
-## 硬门禁
+## cứng rắn gác cổng
 
-- Writing sentence：`bank` 不得与 `answer` 同序。`scripts/toefl_sent.py`。chips 禁止 Titlecase。
-- 过门再上：`node scripts/check_toefl_paper.js`
-- 听后续说：`conversation` / `announcement` / `lecture` 先放完音频再出题
-- Listen and Repeat：一句一音频 → 3 秒想 → beep → 8 秒录。作答中不显示 `sample`
-- 不要 `rsync --delete` 官网
-- UI 改完在浏览器里点一遍，不是只看截图
+- Writing sentence: `bank` không được cùng `answer` cùng tự. `scripts/toefl_sent.py`. chips cấm Titlecase.
+- về nhà chồng trở lên: `node scripts/check_toefl_paper.js`
+- nghe xong tục nói: `conversation` / `announcement` / `lecture` trước để hết âm tần ra lại câu
+- Listen and Repeat: một câu một âm tần → 3 giây muốn → beep → 8 giây lục. đáp lại Vừa không biểu hiện `sample`
+- không nên `rsync --delete` Website Games
+- UI đổi xong tại trình duyệt dặm chút:điểm một lần, không phải chỉ nhìn Screenshots

@@ -4,15 +4,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "选校行情台 · 优益思达",
-    template: "%s · 优益思达行情台",
+    default: " chọn trường học giá thị trường đài · YYSD ",
+    template: "%s · YYSD giá thị trường đài ",
   },
-  description: "优益思达选校行情台：QS / THE / ARWU / US News 四大榜对照、院校检索与跨体系对比。",
+  description: " YYSD chọn trường học giá thị trường đài: QS / THE / ARWU / US News tứ đại bảng so sánh, viện giáo kiểm tra và vượt qua hệ thống đối lập. ",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
+    <html lang="vi">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

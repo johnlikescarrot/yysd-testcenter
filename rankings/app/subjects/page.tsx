@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/db";
 import { SYSTEMS, SYSTEM_TRACK, type SystemKey } from "@/lib/systems";
 
-export const metadata: Metadata = { title: "学科排名" };
+export const metadata: Metadata = { title: " ngành học bài danh " };
 export const dynamic = "force-dynamic";
 
 export default async function SubjectsPage() {
@@ -24,13 +24,13 @@ export default async function SubjectsPage() {
     <div className="space-y-5">
       <div>
         <p className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Subject tapes</p>
-        <h1 className="mt-1 text-2xl font-bold tracking-tight">学科排名</h1>
-        <p className="mt-2 text-sm text-[var(--muted)]">QS 优先学科榜（各榜前 500，来源 TopUniversities 公开表）。</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight"> ngành học bài danh </h1>
+        <p className="mt-2 text-sm text-[var(--muted)]">QS ưu tiên ngành học bảng (tất cả bảng trước 500, nơi phát ra TopUniversities công khai bề ngoài). </p>
       </div>
 
-      {latest.length === 0 ? (
-        <p className="text-[var(--muted)]">暂无学科数据</p>
-      ) : (
+      {latest.length === 0? (
+        <p className="text-[var(--muted)]"> tạm thời chưa có ngành học số liệu </p>
+      ): (
         <ul className="panel divide-y divide-[var(--line)]">
           {latest.map((s) => (
             <li key={`${s.system}-${s.categorySlug}`}>
@@ -52,8 +52,8 @@ export default async function SubjectsPage() {
       )}
 
       <div className="panel p-4 text-sm text-[var(--muted)]">
-        <p className="font-semibold text-[var(--ink)]">说明</p>
-        <p className="mt-1">当前覆盖 QS 12 个优先窄专业；THE / 软科学科榜后续按需扩展。</p>
+        <p className="font-semibold text-[var(--ink)]"> nói rõ </p>
+        <p className="mt-1"> trước mắt bao trùm QS 12 ưu tiên chật vật chuyên nghiệp; THE / mềm khoa học khoa bảng đến tiếp sau theo như cần mở rộng. </p>
       </div>
     </div>
   );

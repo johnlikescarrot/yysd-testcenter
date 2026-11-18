@@ -1,46 +1,46 @@
 {
- "id": "free-12845",
- "title": "Choose a Response #200",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #200",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12845,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-200"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #200",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/97a63af242d04a0f95b0d32883a9c362.mp3",
-   "questions": [
+  "id": "free-12845",
+  "title": "Choose a Response #200",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #200",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12845,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-200"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "No, the week after!",
-      "B": "Formal wear is expected.",
-      "C": "At the new convention center downtown.",
-      "D": "That play has gotten good reviews."
-     },
-     "answer": "C",
-     "transcript": "Where is the fashion show next week?",
-     "stemZh": "下周的时装秀在哪里举办？",
-     "analysis": "Where is the fashion show next week? 题干分析 题干是由 Where 引导的特殊疑问句，意为 “下周的时装秀在哪里举办？”，考点是对询问地点的问题作出正确回应。 选项分析 选项 A：回答内容为 “不是，是下周之后”，回答的是时间而非地点，与问题不符。 选项 B：回答内容为 “要求穿正式服装”，与举办地点无关。 选项 C：此选项为正确答案，直接说明地点，精准对应 Where 的提问。 选项 D：回答内容为 “那部剧评价很好”，与时装秀无关。"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #200",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/97a63af242d04a0f95b0d32883a9c362.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "No, the week after!",
+            "B": "Formal wear is expected.",
+            "C": "At the new convention center downtown.",
+            "D": "That play has gotten good reviews."
+          },
+          "answer": "C",
+          "transcript": "Where is the fashion show next week?",
+          "stemZh": "cuối tuần thời trang thanh tú cử hành ở nơi nào?",
+          "analysis": "Where is the fashion show next week? Câu hỏi phân tích Câu hỏi là do Where dẫn dắt đặc thù câu nghi vấn, ý là “ cuối tuần thời trang thanh tú cử hành ở nơi nào? ”, địa điểm thi là đúng hỏi thăm địa điểm vấn đề làm ra Đúng đáp lại. Phương án phân tích Phương án A: trả lời nội dung là “ không phải, là cuối tuần về sau ”, trả lời là thời gian mà không phải là địa điểm, và vấn đề không hợp. Phương án B: trả lời nội dung là “ yêu cầu mặc chính thức trang phục ”, và tổ chức địa điểm không quan hệ. Phương án C: này Phương án là Đáp án đúng, trực tiếp nói rõ địa điểm, tinh chuẩn đối ứng Where vấn đề. Phương án D: trả lời nội dung là “ cái kia bộ phận kịch bình giá rất tốt ”, và thời trang thanh tú không quan hệ."
+        }
+      ]
+    }
+  ]
 }

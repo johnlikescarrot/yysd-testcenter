@@ -14,28 +14,47 @@
   },
   "build": {
     "appId": "com.youyisida.desktop",
-    "productName": "优益思达国际课程中心",
+    "productName": "Trung tâm Luyện thi Quốc tế YYSD",
     "mac": {
       "icon": "build/icon.png",
       "identity": null,
       "extendInfo": {
-        "CFBundleDisplayName": "优益思达国际课程中心",
-        "CFBundleName": "优益思达国际课程中心",
-        "NSMicrophoneUsageDescription": "口语模考需要使用麦克风录音。"
+        "CFBundleDisplayName": "Trung tâm Luyện thi Quốc tế YYSD",
+        "CFBundleName": "Trung tâm Luyện thi Quốc tế YYSD",
+        "NSMicrophoneUsageDescription": "Nói Thi thử cần sử dụng microphone ghi âm."
       },
       "gatekeeperAssess": false,
       "category": "public.app-category.education",
-      "target": [{ "target": "dmg", "arch": ["universal"] }]
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ]
     },
     "win": {
       "icon": "build/icon.png",
-      "target": [{ "target": "nsis", "arch": ["x64"] }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "nsis": {
       "oneClick": true,
       "perMachine": false,
       "artifactName": "YouYiSiDa.exe"
     },
-    "files": ["main.js", "preload.js", "splash.html", "splash-preload.js"]
+    "files": [
+      "main.js",
+      "preload.js",
+      "splash.html",
+      "splash-preload.js"
+    ]
   }
 }

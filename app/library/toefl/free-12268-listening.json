@@ -1,46 +1,46 @@
 {
- "id": "free-12268",
- "title": "Choose a Response #26",
- "set": "free",
- "skill": "listening",
- "titleZh": "听答 #26",
- "source": {
-  "site": "liuxue.koolearn.com",
-  "qid": 12268,
-  "labelId": 1322,
-  "code": "TOEFL--L-listen and choose a response-26"
- },
- "modules": [
-  {
-   "n": 1,
-   "timeSec": 0,
-   "from": 1,
-   "to": 1
-  }
- ],
- "tasks": [
-  {
-   "type": "choose_response",
-   "module": 1,
-   "title": "Choose a Response #26",
-   "instruction": "Choose the best response.",
-   "audio": "library/toefl/free/audio/d5c91708ead84d9fb763f64148e6a377.mp3",
-   "questions": [
+  "id": "free-12268",
+  "title": "Choose a Response #26",
+  "set": "free",
+  "skill": "listening",
+  "titleZh": "nghe đáp #26",
+  "source": {
+    "site": "liuxue.koolearn.com",
+    "qid": 12268,
+    "labelId": 1322,
+    "code": "TOEFL--L-listen and choose a response-26"
+  },
+  "modules": [
     {
-     "id": 1,
-     "stem": "Choose the best response.",
-     "options": {
-      "A": "I will call you this afternoon.",
-      "B": "Answers are important.",
-      "C": "He will give it to me there.",
-      "D": "Sorry, I am late."
-     },
-     "answer": "A",
-     "transcript": "Please give me an answer as soon as you can. ​​",
-     "stemZh": "请你尽快给我一个答复。",
-     "analysis": "Please give me an answer as soon as you can. 题干分析 题目问的是：请尽快给我答复。 选项分析： A. 我今天下午给你打电话。这表示会尽快回应（通过电话告知答复），是对请求的合理回应，因此A选项正确。 B. 答案很重要。这讨论的是答案的重要性，而非承诺何时给出答复，因此B选项错误。 C. 他会在那里给我。这没有回应“尽快”这一要求，也没有明确给出答复的时间，因此C选项错误。 D. 抱歉，我迟到了。这与给出答复的请求无关，因此D选项错误。​​"
+      "n": 1,
+      "timeSec": 0,
+      "from": 1,
+      "to": 1
     }
-   ]
-  }
- ]
+  ],
+  "tasks": [
+    {
+      "type": "choose_response",
+      "module": 1,
+      "title": "Choose a Response #26",
+      "instruction": "Choose the best response.",
+      "audio": "library/toefl/free/audio/d5c91708ead84d9fb763f64148e6a377.mp3",
+      "questions": [
+        {
+          "id": 1,
+          "stem": "Choose the best response.",
+          "options": {
+            "A": "I will call you this afternoon.",
+            "B": "Answers are important.",
+            "C": "He will give it to me there.",
+            "D": "Sorry, I am late."
+          },
+          "answer": "A",
+          "transcript": "Please give me an answer as soon as you can. ​​",
+          "stemZh": "xin ngươi mau sớm cho ta một cái trả lời thuyết phục.",
+          "analysis": "Please give me an answer as soon as you can. Câu hỏi phân tích đề mục hỏi là: xin mau sớm cho ta trả lời thuyết phục. Phương án phân tích: A. ta hôm nay buổi chiều điện thoại cho bạn. cái này biểu thị sẽ mau chóng đáp lại (thông qua điện thoại báo cho biết trả lời thuyết phục), là đúng thỉnh cầu hợp lý đáp lại, bởi vậy A Phương án Đúng. B. Đáp án rất trọng yếu. cái này thảo luận là câu trả lời tầm quan trọng, mà không phải là hứa hẹn khi nào cho ra trả lời thuyết phục, bởi vậy B Phương án Sai. C. anh ấy sẽ ở ở đó cho ta. cái này không có đáp lại “ mau chóng ” cái này một phải cầu, cũng không có rõ ràng cho ra trả lời chắc chắn thời gian, bởi vậy C Phương án Sai. D. thật có lỗi, tôi đến muộn. cái này cùng cho ra trả lời chắc chắn thỉnh cầu không quan hệ, bởi vậy D Phương án Sai. ​​"
+        }
+      ]
+    }
+  ]
 }

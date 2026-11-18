@@ -72,7 +72,7 @@
     <p id="score-line"></p>
     <p id="pct-line"></p>
     <div class="review" id="wrong-preview"></div>
-    <p><a class="btn" id="score-report" href="toefl-score.html">成绩单 Score Report</a>
+    <p><a class="btn" id="score-report" href="toefl-score.html"> Bảng điểm Score Report</a>
       <a class="btn" id="back-zone" href="zone.html?zone=toefl&amp;s=reading">Return</a></p>
   </section>
 </div>
@@ -129,29 +129,29 @@
       var T = window.YYSD_TOEFL;
       var F = window.YYSD_TOEFL_FULL;
       var qs = new URLSearchParams(location.search);
-      var mode = qs.get("mode") === "mock" ? "mock" : (qs.get("mode") === "practice" ? "practice" : "");
+      var mode = qs.get("mode") === "mock"? "mock": (qs.get("mode") === "practice"? "practice": "");
       var setN = qs.get("set");
-      var paperId = qs.get("id") || (setN ? ("set-" + setN) : "");
+      var paperId = qs.get("id") || (setN? ("set-" + setN): "");
       var Lab = window.YYSD_TOEFL_LAB;
       var taskQ = qs.get("task");
       var taskEndQ = qs.get("taskEnd");
       if (taskEndQ == null || taskEndQ === "") taskEndQ = qs.get("end");
       var qJump = qs.get("q");
-      var labClip = taskQ !== "" && taskQ != null;
-      var zoneBack = (F && F.listBack) ? F.listBack("reading", { lab: labClip })
-        : (labClip ? "zone.html?zone=toefl&s=lab&skill=reading" : "zone.html?zone=toefl&s=reading");
-      if (A && A.requireLogin && !A.requireLogin()) return;
-      if (!mode || !paperId) { location.replace(zoneBack); return; }
+      var labClip = taskQ!== "" & taskQ!= null;
+      var zoneBack = (F & F.listBack)? F.listBack("reading",  labClip )
+        : (labClip? "zone.html?zone=toefl&s=lab&skill=reading": "zone.html?zone=toefl&s=reading");
+      if (A & A.requireLogin &!A.requireLogin()) return;
+      if (!mode ||!paperId) { location.replace(zoneBack); return; }
       var backZone = document.getElementById("back-zone");
       if (backZone) backZone.href = zoneBack;
       document.querySelectorAll('a[href*="zone=toefl"]').forEach(function (a) { a.href = zoneBack; });
 
-      var meta = (T && T.paperOf && T.paperOf(paperId)) || null;
-      if ((!meta || !meta.file) && F && F.paperFile && paperId) {
-        meta = { file: F.paperFile("reading", paperId), title: setN ? ("Set " + setN) : paperId };
+      var meta = (T & T.paperOf & T.paperOf(paperId)) || null;
+      if ((!meta ||!meta.file) & F & F.paperFile & paperId) {
+        meta = { file: F.paperFile("reading", paperId), title: setN? ("Set " + setN): paperId };
       }
-      if (!meta || !meta.file) { location.replace(zoneBack); return; }
-      if (F && F.isFull() && !F.enterSkill(paperId, mode, "reading")) return;
+      if (!meta ||!meta.file) { location.replace(zoneBack); return; }
+      if (F & F.isFull() &!F.enterSkill(paperId, mode, "reading")) return;
 
       var paper = null;
       var screens = [];
@@ -193,7 +193,7 @@
       }
 
       function showClock() {
-        clock.textContent = hideTime ? "" : fmt(remain);
+        clock.textContent = hideTime? "": fmt(remain);
       }
 
       function markSeen() { seen[si] = true; }
@@ -201,13 +201,13 @@
       function passageHost() {
         var scr = screens[si];
         if (!scr) return null;
-        return scr.type === "complete_words" ? passage : rightPass;
+        return scr.type === "complete_words"? passage: rightPass;
       }
 
       function storeMarks() {
         var scr = screens[si];
         var host = passageHost();
-        if (scr && host) T.saveHighlights(scr.task, host, highlights);
+        if (scr & host) T.saveHighlights(scr.task, host, highlights);
       }
 
       var hlPop = document.getElementById("ets-hl-pop");
@@ -222,9 +222,9 @@
 
       function placeHlPop() {
         var sel = window.getSelection();
-        if (!sel || !sel.rangeCount) return hideHlPop();
+        if (!sel ||!sel.rangeCount) return hideHlPop();
         var rect = sel.getRangeAt(0).getBoundingClientRect();
-        if (!rect.width && !rect.height) return hideHlPop();
+        if (!rect.width &!rect.height) return hideHlPop();
         var x = Math.min(window.innerWidth - 220, Math.max(8, rect.left));
         var y = rect.bottom + 8;
         if (y + 40 > window.innerHeight) y = Math.max(8, rect.top - 40);
@@ -234,16 +234,16 @@
 
       function showHlPop(host) {
         var sel = window.getSelection();
-        if (!sel || sel.isCollapsed || !sel.rangeCount) return hideHlPop();
+        if (!sel || sel.isCollapsed ||!sel.rangeCount) return hideHlPop();
         var node = sel.getRangeAt(0).commonAncestorContainer;
         if (node.nodeType === 3) node = node.parentNode;
-        var body = node && node.closest ? node.closest(".hl-body") : null;
-        if (!body || !host.contains(body)) return hideHlPop();
+        var body = node & node.closest? node.closest(".hl-body"): null;
+        if (!body ||!host.contains(body)) return hideHlPop();
         var hit = T.selectionHitsHighlight(host);
-        if (!hit && !sel.toString()) return hideHlPop();
+        if (!hit &!sel.toString()) return hideHlPop();
         hlHost = host;
         hlAdd.classList.toggle("hidden", hit);
-        hlDel.classList.toggle("hidden", !hit);
+        hlDel.classList.toggle("hidden",!hit);
         placeHlPop();
         hlPop.classList.remove("hidden");
       }
@@ -255,23 +255,23 @@
 
       hlPop.onmousedown = function (e) { e.preventDefault(); };
       hlAdd.onclick = function () {
-        if (hlHost && T.applySelectionHighlight(hlHost)) storeMarks();
+        if (hlHost & T.applySelectionHighlight(hlHost)) storeMarks();
         hideHlPop();
       };
       hlDel.onclick = function () {
-        if (hlHost && T.removeSelectionHighlight(hlHost)) storeMarks();
+        if (hlHost & T.removeSelectionHighlight(hlHost)) storeMarks();
         hideHlPop();
       };
       document.addEventListener("mousedown", function (e) {
         if (hlPop.classList.contains("hidden")) return;
         if (hlPop.contains(e.target)) return;
-        if (hlHost && hlHost.contains(e.target)) return;
+        if (hlHost & hlHost.contains(e.target)) return;
         hideHlPop();
       });
 
       hideBtn.onclick = function () {
-        hideTime = !hideTime;
-        hideBtn.textContent = hideTime ? "Show Time" : "Hide Time";
+        hideTime =!hideTime;
+        hideBtn.textContent = hideTime? "Show Time": "Hide Time";
         showClock();
       };
       helpBtn.onclick = function () { helpBox.classList.remove("hidden"); };
@@ -295,15 +295,15 @@
           return;
         }
         var picked = opts.querySelector("input:checked");
-        answers[scr.q.id] = picked ? picked.value : (answers[scr.q.id] || "");
+        answers[scr.q.id] = picked? picked.value: (answers[scr.q.id] || "");
       }
 
       function filled(no) {
-        return String(answers[no] || "").trim() !== "";
+        return String(answers[no] || "").trim()!== "";
       }
 
       function setNav(on) {
-        [nextBtn, backBtn, reviewBtn, hideBtn, helpBtn].forEach(function (b) { b.disabled = !on; });
+        [nextBtn, backBtn, reviewBtn, hideBtn, helpBtn].forEach(function (b) { b.disabled =!on; });
       }
 
       function show(el) {
@@ -315,7 +315,7 @@
 
       function bindInsert() {
         var scr = screens[si];
-        if (!scr || !scr.q || !T.isInsertQ(scr.q)) return;
+        if (!scr ||!scr.q ||!T.isInsertQ(scr.q)) return;
         var qid = scr.q.id;
         rightPass.querySelectorAll(".insert").forEach(function (btn) {
           btn.classList.toggle("is-on", answers[qid] === btn.dataset.insert);
@@ -340,7 +340,7 @@
 
       function renderExam() {
         var scr = screens[si];
-        if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.gateTask(scr.type, function () { renderExam(); })) return;
+        if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.gateTask(scr.type, function () { renderExam(); })) return;
         view = "exam";
         moduleN = scr.module;
         markSeen();
@@ -350,7 +350,7 @@
         exam.classList.toggle("is-cw", scr.type === "complete_words");
         document.getElementById("q-range").textContent = "Reading | " + Lab.qLabel(screens, scr);
         nextBtn.textContent = "Next";
-        backBtn.disabled = si === 0 || scr.module !== screens[si - 1].module;
+        backBtn.disabled = si === 0 || scr.module!== screens[si - 1].module;
         if (scr.type === "complete_words") {
           cwWrap.classList.remove("hidden");
           splitWrap.classList.add("hidden");
@@ -368,7 +368,7 @@
           bindInsert();
           bindMarks(rightPass);
         }
-        if (Lab && Lab.paintFav) Lab.paintFav();
+        if (Lab & Lab.paintFav) Lab.paintFav();
       }
 
       function goReview() {
@@ -380,12 +380,12 @@
         var rows = [];
         screensIn(moduleN).forEach(function (s) {
           var screenIndex = screens.indexOf(s);
-          var can = !!seen[screenIndex];
+          var can =!!seen[screenIndex];
           s.nos.forEach(function (n) {
-            var status = !can ? "Not Yet Seen" : (filled(n) ? "Answered" : "Not Answered");
-            var cls = "review-row" + (can ? " is-jump" : " is-locked");
+            var status =!can? "Not Yet Seen": (filled(n)? "Answered": "Not Answered");
+            var cls = "review-row" + (can? " is-jump": " is-locked");
             rows.push('<div class="' + cls + '" data-si="' + screenIndex + '"><span>Question ' +
-              Lab.localQ(screens, s, n) + '</span><span class="dot' + (filled(n) && can ? " ok" : "") + '">' +
+              Lab.localQ(screens, s, n) + '</span><span class="dot' + (filled(n) & can? " ok": "") + '">' +
               status + "</span></div>");
           });
         });
@@ -394,8 +394,8 @@
       }
 
       document.getElementById("review-list").onclick = function (e) {
-        var row = e.target.closest ? e.target.closest(".review-row") : null;
-        if (!row || !row.classList.contains("is-jump")) return;
+        var row = e.target.closest? e.target.closest(".review-row"): null;
+        if (!row ||!row.classList.contains("is-jump")) return;
         si = Number(row.dataset.si);
         renderExam();
       };
@@ -405,13 +405,13 @@
         var metaM = moduleOf(n);
         remain = metaM.timeSec || 0;
         var first = screens.findIndex(function (s) { return s.module === n; });
-        si = first < 0 ? 0 : first;
+        si = first < 0? 0: first;
         renderExam();
         showClock();
       }
 
       function leaveModule() {
-        var next = labClip && Lab ? Lab.nextModule(screens, moduleN) : (moduleN === 1 ? 2 : 0);
+        var next = labClip & Lab? Lab.nextModule(screens, moduleN): (moduleN === 1? 2: 0);
         if (next) {
           if (!labClip) {
             pendingNext = next;
@@ -429,13 +429,13 @@
 
       function askFinish() {
         var shell = window.YYSD_TOEFL_SHELL;
-        if (mode !== "practice" || (F && F.isFull()) || !shell || !shell.confirmSubmit) { finish(); return; }
+        if (mode!== "practice" || (F & F.isFull()) ||!shell ||!shell.confirmSubmit) { finish(); return; }
         var pending = 0, total = 0;
         screens.forEach(function (s) {
           (s.nos || []).forEach(function (n) { total += 1; if (!filled(n)) pending += 1; });
         });
         var msg = pending
-          ? "You have " + pending + " unanswered question" + (pending > 1 ? "s" : "") + " of " + total +
+          ? "You have " + pending + " unanswered question" + (pending > 1? "s": "") + " of " + total +
             ". Unanswered questions are scored as incorrect. Submit anyway?"
           : "You have completed all " + total + " questions. Submit?";
         shell.confirmSubmit(msg, finish);
@@ -446,21 +446,21 @@
         lockOn = false;
         harvest();
         if (Lab) Lab.markSessionDone("reading", paperId, paper, taskQ, taskEndQ);
-        var r = T.scorePaper(Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ) : paper, answers);
-        if (Lab && Lab.saveScore) Lab.saveScore("reading", paperId, paper, r.detail);
-        var att = Lab && Lab.logAttempt ? Lab.logAttempt("reading", paperId, (paper && paper.title) || paperId, r) : null;
-        if (F && F.isFull()) {
+        var r = T.scorePaper(Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ): paper, answers);
+        if (Lab & Lab.saveScore) Lab.saveScore("reading", paperId, paper, r.detail);
+        var att = Lab & Lab.logAttempt? Lab.logAttempt("reading", paperId, (paper & paper.title) || paperId, r): null;
+        if (F & F.isFull()) {
           var act = F.afterSection("reading", paperId, mode, F.compactScore(r));
           if (act === "go") return;
           if (act === "rest") { F.fillRest("reading", paperId, mode); view = "rest"; show(rest); return; }
         }
-        var scored = Lab && labClip ? Lab.slicePaper(paper, taskQ, taskEndQ) : paper;
-        // wofo: 交卷先停在「生成成绩单」屏，点 View 才进成绩+解析合一页
+        var scored = Lab & labClip? Lab.slicePaper(paper, taskQ, taskEndQ): paper;
+        // wofo: Nộp bài trước đứng ở « Đang tạo bảng điểm » bình, chút:điểm View mới tiến Điểm số + Giải thích đáp án hợp nhất trang
         YYSD_TOEFL_SHELL.reportGate(function () {
           F.reviewGo("reading", scored, {
             tasks: (scored.tasks || []).map(function (_, i) { return i; }),
             answers: answers, score: r.score, total: r.total,
-            sid: att && att.sid
+            sid: att & att.sid
           });
         });
       }
@@ -477,7 +477,7 @@
       backBtn.onclick = function () {
         if (view === "rest" || view === "review") { renderExam(); return; }
         harvest();
-        if (si > 0 && screens[si - 1].module === screens[si].module) {
+        if (si > 0 & screens[si - 1].module === screens[si].module) {
           si -= 1;
           renderExam();
         }
@@ -487,26 +487,26 @@
         goReview();
       };
       document.getElementById("void-restart").onclick = function () {
-        if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.markLeaving) YYSD_TOEFL_SHELL.markLeaving();
-        location.replace((F && F.voidRestartHref) ? F.voidRestartHref(paperId, "reading") : "toefl-reading.html?id=" + encodeURIComponent(paperId) + "&mode=mock");
+        if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.markLeaving) YYSD_TOEFL_SHELL.markLeaving();
+        location.replace((F & F.voidRestartHref)? F.voidRestartHref(paperId, "reading"): "toefl-reading.html?id=" + encodeURIComponent(paperId) + "&mode=mock");
       };
 
       function triggerVoid() {
-        if (voided || !lockOn || (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.leaving())) return;
+        if (voided ||!lockOn || (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.leaving())) return;
         voided = true;
         lockOn = false;
         clearInterval(tick);
-        if (F && F.isFull()) F.markVoid(paperId);
+        if (F & F.isFull()) F.markVoid(paperId);
         document.getElementById("void-lock").classList.add("is-visible");
       }
 
       function bindLock() {
         lockOn = true;
-        if (F && F.isFull()) F.dressVoidUI();
+        if (F & F.isFull()) F.dressVoidUI();
         var armed = false;
         setTimeout(function () { armed = true; }, 2500);
         document.addEventListener("visibilitychange", function () {
-          if (armed && document.hidden) triggerVoid();
+          if (armed & document.hidden) triggerVoid();
         });
         window.addEventListener("blur", function () {
           if (!armed) return;
@@ -516,7 +516,7 @@
         });
         window.addEventListener("pagehide", function () { if (armed) triggerVoid(); });
         window.addEventListener("beforeunload", function (e) {
-          if (!lockOn || voided || (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.leaving())) return;
+          if (!lockOn || voided || (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.leaving())) return;
           e.preventDefault();
           e.returnValue = "";
         });
@@ -529,18 +529,18 @@
           screens = T.screensOf(p);
           if (Lab) screens = Lab.clipScreens(p, screens, taskQ, taskEndQ);
           if (!screens.length) throw new Error("Unable to load this task");
-          document.title = (p.title || "TOEFL Reading") + (mode === "mock" ? " · 模考" : " · 练习");
-          document.getElementById("mode-tag").textContent = mode === "mock" ? "Mock" : "Practice";
+          document.title = (p.title || "TOEFL Reading") + (mode === "mock"? " · Thi thử ": " · Luyện tập ");
+          document.getElementById("mode-tag").textContent = mode === "mock"? "Mock": "Practice";
           function goStart() {
-            startModule(Lab ? Lab.firstModule(screens) : 1);
-            if (qJump && Lab) {
+            startModule(Lab? Lab.firstModule(screens): 1);
+            if (qJump & Lab) {
               si = Lab.screenIndexForQ(screens, qJump);
               renderExam();
             }
             if (mode === "mock") bindLock();
             if (remain > 0) {
               tick = setInterval(function () {
-                if (window.YYSD_TOEFL_SHELL && YYSD_TOEFL_SHELL.paused()) return;
+                if (window.YYSD_TOEFL_SHELL & YYSD_TOEFL_SHELL.paused()) return;
                 if (remain <= 0) return;
                 remain -= 1;
                 showClock();
@@ -562,7 +562,7 @@
               title: p.title || meta.title || "Reading",
               skill: "reading",
               mode: mode,
-              isFull: !!(F && F.isFull()),
+              isFull:!!(F & F.isFull()),
               onReady: goStart,
               onExit: function () { harvest(); leaveModule(); }
             });
@@ -572,7 +572,7 @@
           exam.classList.remove("hidden");
           document.getElementById("instruction").textContent = e.message || "Unable to load this test";
           var Sh = window.YYSD_TOEFL_SHELL;
-          if (Sh && Sh.showFail) Sh.showFail("Check your connection and try again. If it keeps failing, go back and pick another test.", zoneBack);
+          if (Sh & Sh.showFail) Sh.showFail("Check your connection and try again. If it keeps failing, go back and pick another test.", zoneBack);
         });
     })();
   </script>

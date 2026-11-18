@@ -1,8 +1,8 @@
-# 练习区 / 雅思练习
+# Khu luyện tập / IELTS Luyện tập
 
-**把「雅思练习题」的 HTML 文件上传到这个文件夹即可自动归类。**
+** đem « IELTS Luyện tập câu » HTML trên văn kiện rơi vào tay này cặp văn kiện là được tự động phân loại. **
 
-- 板块：✏️ 练习区 (practice)
-- 科目：雅思 (ielts)
-- 上传方式：在本文件夹点 `Add file` → `Upload files` → 拖入 HTML → `Commit changes`
-- 约 1 分钟后自动出现在网站对应分类下，无需其他操作。
+- khối: ✏️ Khu luyện tập (practice)
+- kỹ năng: IELTS (ielts)
+- thượng truyền(*upload) phương thức: tại bài này kiện kẹp chút:điểm `Add file` → `Upload files` → kéo vào HTML → `Commit changes`
+- khoảng 1 phút sau tự động xuất hiện ở trang web đối ứng phân loại hạ, không cần Khác thao tác.

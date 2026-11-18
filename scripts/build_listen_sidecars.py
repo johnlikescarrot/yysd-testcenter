@@ -21,13 +21,13 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "library/mock/cambridge-listening"
 JINGTING = ROOT / "library/practice/jingting/data"
 CACHE = ROOT / "scripts/.whisper_cache"
-PDF_DIR = Path("/Users/frankman/Downloads/剑1-20学术类真题")
+PDF_DIR = Path("/Users/frankman/Downloads/Cambridge 1-20 Học thuật loại thực câu ")
 AUDIO_RE = re.compile(r"""(?:["']audio["']|audio)\s*:\s*['"]([^'"]+\.(?:mp3|m4a))['"]""", re.I)
 CHROME = re.compile(
     r"(this is the ielts|published by cambridge|this recording is copyright|"
     r"you will hear a number of different recordings|the test is in four|"
     r"you will be given ten minutes|now turn to part|first,? you have some time|"
-    r"now listen (carefully and )?answer|that is the end of part|"
+    r"now listen (carefully and)?answer|that is the end of part|"
     r"you now have (one|half) minute|before you hear the rest|"
     r"you will have a chance to check|all the recordings will be played)",
     re.I,
@@ -170,7 +170,7 @@ def write_sidecar(vol: int, test: int, parts: list[dict], source: str):
 def build_from_segments(vol: int):
     for test in range(1, 5):
         audios = paper_audios(vol, test)
-        if len(audios) != 4:
+        if len(audios)!= 4:
             print("skip audio count", vol, test, audios)
             continue
         parts = []
@@ -198,7 +198,7 @@ def split_official(text: str) -> list[str]:
         line = line.strip()
         if not line:
             continue
-        if re.match(r"^[A-Za-z][A-Za-z'’.\- ]{0,20}:\s*", line) and buf:
+        if re.match(r"^[A-Za-z][A-Za-z'’.\-]{0,20}:\s*", line) and buf:
             sents.append(buf.strip())
             buf = line
         elif buf and not re.search(r"[.!?…][\"']?$", buf):
@@ -223,7 +223,7 @@ def split_official(text: str) -> list[str]:
 
 
 def extract_pdf_parts(vol: int) -> dict[tuple[int, int], str]:
-    name = f"剑桥雅思{vol}.pdf"
+    name = f" Cambridge IELTS {vol}.pdf"
     pdf = PDF_DIR / name
     if not pdf.exists():
         return {}
@@ -261,7 +261,7 @@ def build_official(vol: int, align_mod) -> bool:
         return False
     for test in range(1, 5):
         audios = paper_audios(vol, test)
-        if len(audios) != 4:
+        if len(audios)!= 4:
             continue
         parts = []
         for sec, audio in enumerate(audios, 1):
@@ -291,8 +291,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             {
                 "role": "system",
                 "content": (
-                    "你是雅思听力原文译者。把每句英译中，保留说话人标签（如 WOMAN:/MAN:）不译。"
-                    "只输出 JSON 数组，长度与输入句数相同，元素为中文字符串，不要其它文字。"
+                    " ngươi là IELTS Listening Bài gốc dịch người. đem mỗi câu Anh dịch Vừa, giữ lại người nói chuyện nhãn hiệu (ví dụ WOMAN:/MAN:) không dịch. "
+                    " chỉ phát ra JSON mấy tổ, chiều dài và đưa vào câu mấy giống nhau, nguyên tố {vì:là} Tiếng Việt ký tự chuỗi, không nên khác văn tự. "
                 ),
             },
             {"role": "user", "content": numbered},
@@ -313,8 +313,8 @@ def qwen_translate_batch(sentences: list[str]) -> list[str]:
             text = text[4:]
         text = text.strip()
     arr = json.loads(text)
-    if len(arr) != len(sentences):
-        raise ValueError(f"translate length mismatch {len(arr)} != {len(sentences)}")
+    if len(arr)!= len(sentences):
+        raise ValueError(f"translate length mismatch {len(arr)}!= {len(sentences)}")
     return [str(x) for x in arr]
 
 
@@ -324,7 +324,7 @@ def translate_safe(ens: list[str]) -> list[str]:
     try:
         return qwen_translate_batch(ens)
     except Exception as e:
-        print("  batch fail", e, "split" if len(ens) > 1 else "skip")
+        print(" batch fail", e, "split" if len(ens) > 1 else "skip")
         time.sleep(1)
         if len(ens) == 1:
             return [""]
@@ -356,7 +356,7 @@ def fill_zh(vols: list[int], batch_size: int = 40):
                 for (pi, si, _), zh in zip(chunk, zhs):
                     data["parts"][pi]["sentences"][si]["zh"] = zh
                 path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
-                print(f"  filled {off+1}–{off+len(chunk)}")
+                print(f" filled {off+1}–{off+len(chunk)}")
                 time.sleep(0.35)
 
 

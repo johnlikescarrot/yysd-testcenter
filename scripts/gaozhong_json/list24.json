@@ -3,16 +3,16 @@
     "word": "welcome",
     "ipa": "/ˈwelkəm/",
     "pos": "v. / adj. / n. / int.",
-    "meaning": "v. 欢迎（某人到来）。adj. 受欢迎的；令人愉快的（a welcome change）。n. 欢迎、接待（give sb a warm welcome）。int. 欢迎！welcome sb to sp；You're welcome（不客气，用于答谢）。make sb welcome。易混：You're welcome 不是“欢迎你来”。反义 unwelcome。高考常考词性转换与客套用语。",
+    "meaning": "đón tiếp ân cần; hoan nghênh",
     "acceptCN": [
-      "欢迎",
-      "受欢迎的",
-      "不客气"
+      "hoan nghênh",
+      "được hoan nghênh",
+      "không khách khí"
     ],
-    "phrases": "welcome sb to（欢迎某人来到）, a warm welcome（热烈欢迎）, You're welcome（不客气）",
+    "phrases": "welcome sb to (hoan nghênh người nào đó đi vào), a warm welcome (hoan nghênh nhiệt liệt), You're welcome (không khách khí)",
     "exampleEn": "They gave the new students a warm welcome.",
-    "exampleZh": "他们热烈欢迎新生到来。",
-    "root": "well + come → 来得好 → 欢迎",
+    "exampleZh": "họ hoan nghênh nhiệt liệt tân sinh đã đến.",
+    "root": "well + come → đến thật tốt → hoan nghênh",
     "synonyms": [
       "greet",
       "receive"
@@ -22,129 +22,129 @@
       "reject"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "欢迎",
-      "topic": "社交"
+      "commonUsage": "hoan nghênh",
+      "topic": "xã giao"
     }
   },
   {
     "word": "recipe",
     "ipa": "/ˈresəpi/",
     "pos": "n.",
-    "meaning": "n. ①食谱、烹饪法（a recipe for cookies）；②诀窍、妙法（a recipe for success 成功的诀窍）。follow a recipe；recipe book。易混 receipt（收据，发音 /rɪˈsiːt/）。高考常考“成功秘诀”这一引申义及与 receipt 的形近辨析。",
+    "meaning": "n. công thức (bánh, món ăn, thuốc pha chế); đơn thuốc, thuốc pha chế theo đơn, thuốc bốc theo đơn",
     "acceptCN": [
-      "食谱",
-      "烹饪法",
-      "诀窍"
+      "sách dạy nấu ăn",
+      "nấu nướng pháp",
+      "bí quyết"
     ],
-    "phrases": "a recipe for success（成功的诀窍）, follow a recipe（按食谱做）, recipe book（食谱书）",
+    "phrases": "a recipe for success (thành công bí quyết), follow a recipe (theo như sách dạy nấu ăn làm), recipe book (sách dạy nấu ăn sách)",
     "exampleEn": "This cake recipe is easy to follow.",
-    "exampleZh": "这个蛋糕食谱很容易照着做。",
-    "root": "re-(再) + cip(拿) → 拿来配制的方法",
+    "exampleZh": "này bánh ngọt sách dạy nấu ăn rất dễ dàng chiếu vào làm.",
+    "root": "re-(lại) + cip(cầm) → lấy ra chế biến phương pháp",
     "synonyms": [
       "formula",
       "method"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "食谱",
-      "topic": "生活"
+      "commonUsage": "sách dạy nấu ăn",
+      "topic": "sinh hoạt"
     }
   },
   {
     "word": "though",
     "ipa": "/ðəʊ/ · /ðoʊ/",
     "pos": "conj. / adv.",
-    "meaning": "conj. 虽然、尽管（= although，引导让步状语从句，though 可倒装：Tired though he was）。adv. 不过、可是（多置于句末：It's hard. I like it, though.）。as though = as if 好像。even though 即使。even though 不可换成 even although。高考常考句末 though 与 although 不可置于句末的区别。",
+    "meaning": "dù, dù cho, mặc dù, dẫu cho",
     "acceptCN": [
-      "虽然",
-      "尽管",
-      "不过"
+      "mặc dù",
+      "cho dù",
+      "tuy nhiên"
     ],
-    "phrases": "even though（即使）, as though（好像）, Tired though he was（尽管他累）",
+    "phrases": "even though (dù cho), as though (giống như), Tired though he was (mặc dù hắn mệt mỏi)",
     "exampleEn": "Though it was raining, they went on walking.",
-    "exampleZh": "尽管下着雨，他们仍继续走。",
-    "root": "让步连词；句末作副词是高考易错点",
+    "exampleZh": "cho dù mưa, họ nhưng Tiếp tục đi.",
+    "root": "nhượng bộ liên từ; câu mạt làm trạng từ là kỳ thi Đại Học Dễ sai chút:điểm",
     "synonyms": [
       "although",
       "however"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "虽然",
-      "topic": "语法"
+      "commonUsage": "mặc dù",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "dynasty",
     "ipa": "/ˈdɪnəsti/ · /ˈdaɪnəsti/",
     "pos": "n.",
-    "meaning": "n. 王朝、朝代。the Tang Dynasty 唐朝（专有名词前用 the，Dynasty 常大写）。during the Ming Dynasty。形容词 dynastic。高考阅读、文化类完形常出现中英朝代对照；注意英式重音多在第一音节 /ˈdɪnəsti/，美式亦作 /ˈdaɪnəsti/。",
+    "meaning": "n. triều đại, triều vua",
     "acceptCN": [
-      "王朝",
-      "朝代"
+      "vương triều",
+      "triều đại"
     ],
-    "phrases": "the Tang Dynasty（唐朝）, during the Ming Dynasty（在明朝）, a ruling dynasty（统治王朝）",
+    "phrases": "the Tang Dynasty (Đường triều), during the Ming Dynasty (ở ngoài sáng hướng), a ruling dynasty (thống trị vương triều)",
     "exampleEn": "The Great Wall was rebuilt during the Ming Dynasty.",
-    "exampleZh": "长城在明朝得到大规模重修。",
-    "root": "dynast(统治者) + -y → 统治家族",
+    "exampleZh": "Trường Thành ở ngoài sáng hướng đạt được đại quy mô trùng tu.",
+    "root": "dynast(kẻ thống trị) + -y → thống trị gia tộc",
     "synonyms": [
       "reign",
       "era"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "朝代",
-      "topic": "历史"
+      "commonUsage": "triều đại",
+      "topic": "Lịch sử"
     }
   },
   {
     "word": "idiom",
     "ipa": "/ˈɪdiəm/",
     "pos": "n.",
-    "meaning": "n. 习语、成语、惯用语（其意义往往不能由单词字面相加得出）。an English idiom；in the idiom of（用…的表达习惯）。形容词 idiomatic 地道的。区别 proverb（谚语，多含道理）。高考写作强调 idiomatic English；阅读中习语需整体理解，不可逐词直译。",
+    "meaning": "n. thành ngữ; đặc ngữ",
     "acceptCN": [
-      "习语",
-      "成语",
-      "惯用语"
+      "tập lời nói",
+      "thành ngữ",
+      "thành ngữ"
     ],
-    "phrases": "an English idiom（英语习语）, idiomatic English（地道英语）, in the idiom of（按…表达习惯）",
+    "phrases": "an English idiom (Tiếng Anh tập lời nói), idiomatic English (mà nói Tiếng Anh), in the idiom of (theo như … biểu đạt thói quen)",
     "exampleEn": "“Break the ice” is a common English idiom.",
-    "exampleZh": "“打破僵局”是一个常见的英语习语。",
-    "root": "idio-(独特) → 独特说法",
+    "exampleZh": "“ đánh vỡ cục diện bế tắc ” là một thường gặp Tiếng Anh tập lời nói.",
+    "root": "idio-(đặc biệt) → đặc biệt thuyết pháp",
     "synonyms": [
       "expression",
       "phrase"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "习语",
-      "topic": "语言"
+      "commonUsage": "tập lời nói",
+      "topic": "ngôn ngữ"
     }
   },
   {
     "word": "amateur",
     "ipa": "/ˈæmətə(r)/ · /ˈæmətʃər/",
     "pos": "n. / adj.",
-    "meaning": "n. 业余爱好者、外行。adj. 业余的（an amateur photographer）。反义 professional 职业的、专业的。amateur sport 业余体育。语气上有时略含“不够专业”，阅读需看语境褒贬。高考常与 professional 对举，考职业/业余身份。",
+    "meaning": "tài tử; người ham chuộng; (định ngữ) có tính chất tài tử, nghiệp dư, không chuyên",
     "acceptCN": [
-      "业余爱好者",
-      "业余的",
-      "外行"
+      "nghiệp dư kẻ yêu thích",
+      "không chuyên nghiệp",
+      "người thường"
     ],
-    "phrases": "an amateur photographer（业余摄影师）, amateur sport（业余体育）, amateur and professional（业余与职业）",
+    "phrases": "an amateur photographer (nghiệp dư nhà nhiếp ảnh), amateur sport (nghiệp dư Thể thao), amateur and professional (nghiệp dư và Nghề nghiệp)",
     "exampleEn": "He is an amateur painter, not a professional.",
-    "exampleZh": "他是业余画家，不是职业画家。",
-    "root": "amat(爱) → 因爱好而做，非职业",
+    "exampleZh": "hắn là nghiệp dư hoạ sĩ, không phải Nghề nghiệp hoạ sĩ.",
+    "root": "amat(yêu) → vì ái tốt mà làm, không phải Nghề nghiệp",
     "synonyms": [
       "non-professional",
       "layman"
@@ -153,26 +153,26 @@
       "professional"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "业余的",
-      "topic": "人物"
+      "commonUsage": "không chuyên nghiệp",
+      "topic": "nhân vật"
     }
   },
   {
     "word": "resist",
     "ipa": "/rɪˈzɪst/",
     "pos": "v.",
-    "meaning": "v. 抵抗、抵制；忍住（常接 doing：resist doing sth；can't resist + n./doing 忍不住）。resist temptation 抵制诱惑；resist the enemy。名词 resistance；形容词 resistant（be resistant to 对…有抵抗力）。高考高频：can't resist buying / eating。注意 resist 后不接不定式。后接动名词不接不定式；can't resist doing 为完形高频，resistance 为名词。",
+    "meaning": "v. kháng cự, chống lại; chịu đựng được, chịu được",
     "acceptCN": [
-      "抵抗",
-      "抵制",
-      "忍住"
+      "chống cự",
+      "chống lại",
+      "nhịn xuống"
     ],
-    "phrases": "resist doing（忍住不做）, can't resist（忍不住）, be resistant to（对…有抵抗力）",
+    "phrases": "resist doing (nhịn xuống không làm), can't resist (nhịn không được), be resistant to (đối với … có sức chống cự)",
     "exampleEn": "She couldn't resist buying the book.",
-    "exampleZh": "她忍不住买了那本书。",
-    "root": "re-(反) + sist(站) → 站到对面抵抗",
+    "exampleZh": "cô ấy nhịn không được mua quyển sách kia.",
+    "root": "re-(phản) + sist(đứng) → đứng ở đối diện chống cự",
     "synonyms": [
       "oppose",
       "withstand"
@@ -182,51 +182,51 @@
       "yield"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "抵制",
-      "topic": "行为"
+      "commonUsage": "chống lại",
+      "topic": "hành vi"
     }
   },
   {
     "word": "vocabulary",
     "ipa": "/vəˈkæbjələri/ · /voʊˈkæbjəleri/",
     "pos": "n.",
-    "meaning": "n. 词汇（总称，多作不可数）；词汇量（a large vocabulary）。enlarge / build up one's vocabulary。区别 word（具体的一个词）、glossary（术语表）、dictionary（词典）。高考写作与阅读技巧文常考 enlarge vocabulary；注意不可数时不加 s，表“词汇表”时可数。",
+    "meaning": "n. (ngôn ngữ học) từ vựng",
     "acceptCN": [
-      "词汇",
-      "词汇量"
+      "Từ vựng",
+      "Từ vựng số lượng"
     ],
-    "phrases": "enlarge one's vocabulary（扩大词汇量）, a wide vocabulary（词汇丰富）, vocabulary list（词汇表）",
+    "phrases": "enlarge one's vocabulary (mở rộng Từ vựng số lượng), a wide vocabulary (Từ vựng phong phú), vocabulary list (Từ vựng bề ngoài)",
     "exampleEn": "Reading every day can enlarge your vocabulary.",
-    "exampleZh": "每天阅读可以扩大你的词汇量。",
-    "root": "vocabul(词) + -ary → 词语的集合",
+    "exampleZh": "mỗi ngày Đọc có thể mở rộng của bạn Từ vựng số lượng.",
+    "root": "vocabul(từ) + -ary → từ ngữ tập hợp",
     "synonyms": [
       "lexicon",
       "words"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "词汇量",
-      "topic": "学习"
+      "commonUsage": "Từ vựng số lượng",
+      "topic": "Học tập"
     }
   },
   {
     "word": "strict",
     "ipa": "/strɪkt/",
     "pos": "adj.",
-    "meaning": "adj. 严格的、严厉的；严谨的。be strict with sb 对某人严格；be strict in / about sth 对某事严格。strict rules。副词 strictly（strictly speaking 严格说来）。名词 strictness。高考固定搭配 with 接人、in/about 接事，属完形高频。反义 lenient / easy-going。",
+    "meaning": "adj. chính xác, đúng; nghiêm ngặt, nghiêm khắc; nghiêm chỉnh",
     "acceptCN": [
-      "严格的",
-      "严厉的",
-      "严谨的"
+      "nghiêm khắc",
+      "nghiêm khắc",
+      "nghiêm cẩn"
     ],
-    "phrases": "be strict with sb（对某人严格）, be strict in sth（对某事严格）, strictly speaking（严格说来）",
+    "phrases": "be strict with sb (đối với người nào đó nghiêm khắc), be strict in sth (đối với chuyện gì nghiêm khắc), strictly speaking (nghiêm chỉnh mà nói)",
     "exampleEn": "Our teacher is strict with us but fair.",
-    "exampleZh": "我们的老师对我们很严格，但很公正。",
-    "root": "strict(拉紧) → 要求绷紧、不放松",
+    "exampleZh": "thầy của chúng ta đối với chúng ta rất nghiêm khắc, nhưng rất công chính.",
+    "root": "strict(kéo căng) → yêu cầu kéo căng, không buông lỏng",
     "synonyms": [
       "stern",
       "rigorous"
@@ -236,52 +236,52 @@
       "easy-going"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "严格的",
-      "topic": "校园"
+      "commonUsage": "nghiêm khắc",
+      "topic": "sân trường"
     }
   },
   {
     "word": "receipt",
     "ipa": "/rɪˈsiːt/",
     "pos": "n.",
-    "meaning": "n. ①收据、收条（ask for a receipt）；②收到（on receipt of 一收到…）。p 不发音。动词 receive。易混 recipe（食谱 /ˈresəpi/）。高考购物、应用文写作常要求保留收据；on receipt of 属书面语搭配。make out a receipt 开收据。",
+    "meaning": "n. công thức (làm bánh, nấu món ăn...); đơn thuốc",
     "acceptCN": [
-      "收据",
-      "收条",
-      "收到"
+      "biên lai",
+      "biên lai",
+      "thu được"
     ],
-    "phrases": "ask for a receipt（要收据）, on receipt of（一收到）, make out a receipt（开收据）",
+    "phrases": "ask for a receipt (muốn thu theo), on receipt of (vừa nhận được), make out a receipt (mở biên lai)",
     "exampleEn": "Please keep the receipt in case you need to return it.",
-    "exampleZh": "请保留收据，以备退货。",
-    "root": "receive 的名词；p 不发音",
+    "exampleZh": "mời giữ lại biên lai, chuẩn bị hàng rởm.",
+    "root": "receive danh từ; p không phát âm",
     "synonyms": [
       "ticket",
       "proof of purchase"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "收据",
-      "topic": "生活"
+      "commonUsage": "biên lai",
+      "topic": "sinh hoạt"
     }
   },
   {
     "word": "conversation",
     "ipa": "/ˌkɒnvəˈseɪʃn/ · /ˌkɑːnvərˈseɪʃn/",
     "pos": "n.",
-    "meaning": "n. 交谈、会话（可数）。have a conversation with sb about sth；get into conversation 攀谈起来。动词 converse；形容词 conversational。区别 dialogue（对白、对话体）、talk（较口语、可正式可随意）。高考听力与口语材料高频；in conversation with 与…交谈中。",
+    "meaning": "n. sự nói chuyện; cuộc nói chuyện, cuộc chuyện trò, cuộc đàm luận; (pháp lý) sự giao cấu; sự giao hợp",
     "acceptCN": [
-      "交谈",
-      "会话",
-      "谈话"
+      "nói chuyện với nhau",
+      "hội thoại",
+      "nói chuyện"
     ],
-    "phrases": "have a conversation with（与…交谈）, in conversation with（在与…谈话）, get into conversation（攀谈起来）",
+    "phrases": "have a conversation with (và … nói chuyện với nhau), in conversation with (đang cùng … nói chuyện), get into conversation (chuyện trò)",
     "exampleEn": "I had a long conversation with my teacher after class.",
-    "exampleZh": "课后我和老师进行了一次长谈。",
-    "root": "con-(共同) + vers(转) → 互相转向对方说话",
+    "exampleZh": "sau giờ học ta cùng Giáo viên đã tiến hành một lần nói chuyện lâu.",
+    "root": "con-(cộng đồng) + vers(chuyển) → giúp nhau chuyển hướng đối phương nói chuyện",
     "synonyms": [
       "talk",
       "dialogue"
@@ -290,51 +290,51 @@
       "silence"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "交谈",
-      "topic": "社交"
+      "commonUsage": "nói chuyện với nhau",
+      "topic": "xã giao"
     }
   },
   {
     "word": "brochure",
     "ipa": "/ˈbrəʊʃə(r)/ · /broʊˈʃʊr/",
     "pos": "n.",
-    "meaning": "n. 小册子、宣传册（介绍旅游、课程、产品等的折叠印刷品）。a travel brochure；pick up a brochure。区别 booklet（小册子，更中性）、leaflet（单页传单）、catalogue（目录）。高考旅游、招生类应用文与阅读插图题常见，需能根据语境判断为宣传材料。",
+    "meaning": "n. cuốn sách mỏng",
     "acceptCN": [
-      "小册子",
-      "宣传册"
+      "sách nhỏ",
+      "tuyên truyền quyển"
     ],
-    "phrases": "a travel brochure（旅游手册）, pick up a brochure（拿一份宣传册）, information brochure（资料手册）",
+    "phrases": "a travel brochure (du lịch sổ tay), pick up a brochure (cầm một phần tuyên truyền quyển), information brochure (tư liệu sổ tay)",
     "exampleEn": "We picked up a travel brochure at the hotel.",
-    "exampleZh": "我们在酒店拿了一本旅游宣传册。",
-    "root": "法语借词，指折叠宣传册",
+    "exampleZh": "chúng tôi tại khách sạn cầm một quyển du lịch tuyên truyền quyển.",
+    "root": "tiếng Pháp từ vay mượn, chỉ gấp tuyên truyền quyển",
     "synonyms": [
       "booklet",
       "leaflet"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "宣传册",
-      "topic": "旅游"
+      "commonUsage": "tuyên truyền quyển",
+      "topic": "du lịch"
     }
   },
   {
     "word": "next",
     "ipa": "/nekst/",
     "pos": "adj. / adv. / n. / prep.",
-    "meaning": "adj. 下一个的（next week / year，不加 the 时从现在算起）。adv. 然后、下一步。n. 下一个人/事。prep. next to 紧挨着。the next 后接名词常表序列中的下一个（the next train）。高考易错：this / next / last 与冠词；next to 既表位置也表“仅次于”。What next? 接下来怎么办。",
+    "meaning": "sát, gần, ngay bên, bên cạnh; sau, ngay sau, tiếp sau",
     "acceptCN": [
-      "下一个",
-      "然后",
-      "紧挨着"
+      "kế tiếp",
+      "sau đó",
+      "liên tiếp"
     ],
-    "phrases": "next to（紧挨着；仅次于）, next week（下周）, the next day（第二天）",
+    "phrases": "next to (liên tiếp; gần với), next week (cuối tuần), the next day (ngày hôm sau)",
     "exampleEn": "The library is next to the post office.",
-    "exampleZh": "图书馆紧挨着邮局。",
-    "root": "表顺序或位置上的“紧接”",
+    "exampleZh": "đồ thư quán liên tiếp bưu cục.",
+    "root": "bề ngoài trình tự hoặc vị trí “ tiếp theo ”",
     "synonyms": [
       "following",
       "adjacent"
@@ -344,25 +344,25 @@
       "last"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "下一个",
-      "topic": "语法"
+      "commonUsage": "kế tiếp",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "divorce",
     "ipa": "/dɪˈvɔːs/ · /dɪˈvɔːrs/",
     "pos": "n. / v.",
-    "meaning": "n. / v. 离婚。get a divorce；divorce sb。be divorced from 与…离婚；引申为“脱离、与…无关”（be divorced from reality 脱离实际）。名词 divorcee 离婚者。高考社会类阅读可见字面义与引申义；注意 divorced 作表语形容词。反义 marry / marriage。",
+    "meaning": "n. / v. sự ly dị; (nghĩa bóng) sự lìa ra, sự tách ra",
     "acceptCN": [
-      "离婚",
-      "脱离"
+      "ly hôn",
+      "thoát ly"
     ],
-    "phrases": "get a divorce（离婚）, be divorced from（与…离婚；脱离）, divorce sb（与某人离婚）",
+    "phrases": "get a divorce (ly hôn), be divorced from (và … ly hôn; thoát ly), divorce sb (và người nào đó ly hôn)",
     "exampleEn": "His ideas are divorced from reality.",
-    "exampleZh": "他的想法脱离了实际。",
-    "root": "di-(分开) + vorce(转) → 转向分开",
+    "exampleZh": "ý nghĩ của hắn thoát ly thực tế.",
+    "root": "di-(tách ra) + vorce(chuyển) → chuyển hướng tách ra",
     "synonyms": [
       "separate",
       "split up"
@@ -372,104 +372,104 @@
       "unite"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "离婚",
-      "topic": "社会"
+      "commonUsage": "ly hôn",
+      "topic": "xã hội"
     }
   },
   {
     "word": "constitution",
     "ipa": "/ˌkɒnstɪˈtjuːʃn/ · /ˌkɑːnstɪˈtuːʃn/",
     "pos": "n.",
-    "meaning": "n. ①宪法（the Constitution 常特指某国宪法）；②体质、体格（a strong constitution）；③构成、组成。形容词 constitutional 宪法的；合宪的。动词 constitute 构成。高考政治、健康类阅读均可能出现，需据语境选义；a healthy constitution 表示身体素质好。",
+    "meaning": "n. hiến pháp; thể tạng, thể chất",
     "acceptCN": [
-      "宪法",
-      "体质",
-      "构成"
+      "hiến pháp",
+      "thể chất",
+      "cấu thành"
     ],
-    "phrases": "the Constitution（宪法）, a strong constitution（强健体格）, constitutional right（宪法权利）",
+    "phrases": "the Constitution (hiến pháp), a strong constitution (cường tráng thể trạng), constitutional right (hiến pháp quyền lợi)",
     "exampleEn": "Freedom of speech is protected by the constitution.",
-    "exampleZh": "言论自由受宪法保护。",
-    "root": "con-(共同) + stitut(建立) → 共同订立的根本法",
+    "exampleZh": "ngôn luận tự do được hiến pháp bảo hộ.",
+    "root": "con-(cộng đồng) + stitut(thành lập) → cộng đồng ký kết hiến pháp",
     "synonyms": [
       "charter",
       "physique"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "宪法",
-      "topic": "社会"
+      "commonUsage": "hiến pháp",
+      "topic": "xã hội"
     }
   },
   {
     "word": "basis",
     "ipa": "/ˈbeɪsɪs/",
     "pos": "n.",
-    "meaning": "n. 基础、根据（复数 bases /ˈbeɪsiːz/）。on the basis of 根据、在…基础上（高考超高频介词短语）。on a regular / daily basis 定期/每天。区别 base（基地、底座，具体）；basic（基础的，形容词）。provide a basis for 为…提供依据。不可与 base 混用搭配。",
+    "meaning": "n. nền tảng, cơ sở; căn cứ (quân sự)",
     "acceptCN": [
-      "基础",
-      "根据",
-      "基准"
+      "trụ cột",
+      "dựa theo",
+      "tiêu chuẩn cơ bản"
     ],
-    "phrases": "on the basis of（根据）, on a regular basis（定期地）, provide a basis for（为…提供基础）",
+    "phrases": "on the basis of (dựa theo), on a regular basis (định kỳ mà), provide a basis for (là … cung cấp trụ cột)",
     "exampleEn": "We made the decision on the basis of facts.",
-    "exampleZh": "我们根据事实作出了决定。",
-    "root": "base 的抽象名词；复数 bases",
+    "exampleZh": "chúng tôi dựa theo sự thật làm ra quyết định.",
+    "root": "base trừu tượng danh từ; số nhiều bases",
     "synonyms": [
       "foundation",
       "ground"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "根据",
-      "topic": "说明文"
+      "commonUsage": "dựa theo",
+      "topic": "lời thuyết minh"
     }
   },
   {
     "word": "lesson",
     "ipa": "/ˈlesn/",
     "pos": "n.",
-    "meaning": "n. ①课、一节课（have / take a lesson）；②教训（learn a lesson；teach sb a lesson 给某人一个教训）。lesson 1 第一课。区别 class（班级、一堂课，更强调群体）、course（课程，一整门）。高考记叙文常考 learn a lesson from 从…中吸取教训。give lessons in 教授某科目。",
+    "meaning": "n. bài học; lời dạy bảo, lời khuyên",
     "acceptCN": [
-      "课",
-      "一节课",
-      "教训"
+      "khóa",
+      "một tiết khóa",
+      "giáo huấn"
     ],
-    "phrases": "learn a lesson（吸取教训）, teach sb a lesson（教训某人）, have a lesson（上课）",
+    "phrases": "learn a lesson (hấp thụ giáo huấn), teach sb a lesson (giáo huấn người nào đó), have a lesson (đi học)",
     "exampleEn": "We should learn a lesson from this accident.",
-    "exampleZh": "我们应该从这次事故中吸取教训。",
-    "root": "既表“课”也表“教训”，后者为引申义",
+    "exampleZh": "chúng tôi nên từ nơi này lần sự cố Vừa hấp thụ giáo huấn.",
+    "root": "đã bề ngoài “ khóa ” cũng bề ngoài “ giáo huấn ”, người kia làm dẫn thân nghĩa",
     "synonyms": [
       "class",
       "warning"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "教训",
-      "topic": "校园"
+      "commonUsage": "giáo huấn",
+      "topic": "sân trường"
     }
   },
   {
     "word": "software",
     "ipa": "/ˈsɒftweə(r)/ · /ˈsɔːftwer/",
     "pos": "n.",
-    "meaning": "n. 软件（不可数）。software company；install software；application software 应用软件。反义 hardware 硬件。a piece of software 一套软件。高考科技说明文、应用文常见；注意不可数，不能说 a software，应说 a software program / a piece of software。download software 下载软件。",
+    "meaning": "n. phần mềm",
     "acceptCN": [
-      "软件",
-      "程序",
-      "应用软件"
+      "phần mềm",
+      "trình tự",
+      "hữu ích,thiết thực phần mềm"
     ],
-    "phrases": "install software（安装软件）, a piece of software（一套软件）, software company（软件公司）",
+    "phrases": "install software (lắp đặt phần mềm), a piece of software (một bộ phần mềm), software company (phần mềm công ty)",
     "exampleEn": "You need to install the software before using the camera.",
-    "exampleZh": "使用相机前需要先安装软件。",
-    "root": "soft + ware（制品）→ 相对硬件的软制品",
+    "exampleZh": "sử dụng Cameras trước cần trước lắp đặt phần mềm.",
+    "root": "soft + ware (chế phẩm) → tương đối phần cứng mềm chế phẩm",
     "synonyms": [
       "program",
       "app"
@@ -478,26 +478,26 @@
       "hardware"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "软件",
-      "topic": "科技"
+      "commonUsage": "phần mềm",
+      "topic": "Công nghệ"
     }
   },
   {
     "word": "friction",
     "ipa": "/ˈfrɪkʃn/",
     "pos": "n.",
-    "meaning": "n. ①摩擦、摩擦力（物理：friction between the tyre and the road）；②冲突、不和（friction between the two countries）。reduce friction；cause friction。动词 rub 摩擦（动作）。高考既可能出现理科语境，也可能出现人际关系“摩擦”。不可数为主。形容词 frictional。",
+    "meaning": "n. (kỹ thuật) sự mài xát, sự ma xát; sự xoa bóp; sự chà xát",
     "acceptCN": [
-      "摩擦",
-      "摩擦力",
-      "不和"
+      "xung đột",
+      "lực ma sát",
+      "bất hòa"
     ],
-    "phrases": "reduce friction（减少摩擦）, cause friction（引起不和）, friction between（…之间的摩擦）",
+    "phrases": "reduce friction (giảm bớt xung đột), cause friction (khiến cho bất hòa), friction between (… ở giữa xung đột)",
     "exampleEn": "There has been some friction between the two teams.",
-    "exampleZh": "两队之间一直有些摩擦。",
-    "root": "frict(摩擦) + -ion",
+    "exampleZh": "hai đội giữa một mực có chút xung đột.",
+    "root": "frict(xung đột) + -ion",
     "synonyms": [
       "rubbing",
       "conflict"
@@ -507,26 +507,26 @@
       "smoothness"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "摩擦",
-      "topic": "科学"
+      "commonUsage": "xung đột",
+      "topic": "khoa học"
     }
   },
   {
     "word": "mention",
     "ipa": "/ˈmenʃn/",
     "pos": "v. / n.",
-    "meaning": "v. 提到、说起（mention sth to sb；mention doing）。n. 提及。Don't mention it. 不客气。not to mention 更不必说。There's no mention of 没有提到。高考交际用语 Don't mention it 与 You're welcome 近义；not to mention 表递进。mention 后一般不接双宾语而不用 to。",
+    "meaning": "kể ra, nói đến, đề cập; tuyên dương",
     "acceptCN": [
-      "提到",
-      "说起",
-      "提及"
+      "nhắc tới",
+      "nói lên",
+      "đề cập"
     ],
-    "phrases": "Don't mention it（不客气）, not to mention（更不必说）, mention sth to sb（向某人提起）",
+    "phrases": "Don't mention it (không khách khí), not to mention (lại càng không phải nói), mention sth to sb (hướng người nào đó nhắc tới)",
     "exampleEn": "She didn't mention the meeting to me.",
-    "exampleZh": "她没有向我提起这次会议。",
-    "root": "ment(想) → 说出所想到的",
+    "exampleZh": "cô ấy không có hướng tôi nhắc tới lần hội nghị này.",
+    "root": "ment(muốn) → nói ra nghĩ tới",
     "synonyms": [
       "refer to",
       "bring up"
@@ -536,26 +536,26 @@
       "conceal"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "提到",
-      "topic": "交际"
+      "commonUsage": "nhắc tới",
+      "topic": "giao tiếp"
     }
   },
   {
     "word": "absurd",
     "ipa": "/əbˈsɜːd/ · /əbˈsɜːrd/",
     "pos": "adj.",
-    "meaning": "adj. 荒谬的、荒唐的、不合理的。It is absurd to do sth；an absurd idea / excuse。名词 absurdity。语气强于 unreasonable，带“可笑、说不通”色彩。高考阅读态度题、议论文常用其否定不合理观点。副词 absurdly。近义 ridiculous，但 absurd 更强调逻辑上说不通。",
+    "meaning": "adj. vô lý; ngu xuẩn, ngớ ngẩn; buồn cười, lố bịch",
     "acceptCN": [
-      "荒谬的",
-      "荒唐的",
-      "不合理的"
+      "hoang đường",
+      "hoang đường",
+      "không hợp lý"
     ],
-    "phrases": "an absurd idea（荒谬的想法）, it is absurd to（做…很荒唐）, absurdity（荒谬）",
+    "phrases": "an absurd idea (hoang đường ý tưởng), it is absurd to (làm … rất hoang đường), absurdity (vớ vẩn)",
     "exampleEn": "It is absurd to go out without a coat in this snow.",
-    "exampleZh": "下这么大雪不穿外套出门太荒唐了。",
-    "root": "ab-(离开) + surd(合理) → 不合理",
+    "exampleZh": "hạ lớn như vậy tuyết không mặc áo khoác đi ra ngoài quá hoang đường.",
+    "root": "ab-(ly khai) + surd(hợp lý) → không hợp lý",
     "synonyms": [
       "ridiculous",
       "unreasonable"
@@ -565,26 +565,26 @@
       "sensible"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "荒谬的",
-      "topic": "评价"
+      "commonUsage": "hoang đường",
+      "topic": "đánh giá"
     }
   },
   {
     "word": "latter",
     "ipa": "/ˈlætə(r)/ · /ˈlætər/",
     "pos": "adj. / n.",
-    "meaning": "adj. / n. 后者的；后者（the latter，与 the former 前者相对，用于两者中的第二个）。the latter half of the year 下半年。易混 later（更晚）、latest（最近的）、last（最后的）。高考完形与阅读指代题高频：the former … the latter …。latter 不作比较级，不能说 latter than。",
+    "meaning": "adj. / n. sau cùng, gần đây, mới đây; sau, thứ hai (đối lại với former)",
     "acceptCN": [
-      "后者",
-      "后者的",
-      "后一半的"
+      "người kia",
+      "người sau",
+      "sau một nửa"
     ],
-    "phrases": "the former ... the latter（前者…后者）, the latter half（后一半）, in the latter part of（在后半部分）",
+    "phrases": "the former... the latter (người phía trước … người kia), the latter half (sau một nửa), in the latter part of (ở phía sau nửa bộ phận)",
     "exampleEn": "Of tea and coffee, I prefer the latter.",
-    "exampleZh": "茶和咖啡之中，我更喜欢后者。",
-    "root": "与 later 同源，但 latter 专指两者中的后者",
+    "exampleZh": "trà và trong cà phê, tôi càng ưa thích người kia.",
+    "root": "và later đồng nguyên, nhưng latter chuyên chỉ trong hai cái người kia",
     "synonyms": [
       "second",
       "later"
@@ -593,26 +593,26 @@
       "former"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "后者",
-      "topic": "语法"
+      "commonUsage": "người kia",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "whisper",
     "ipa": "/ˈwɪspə(r)/ · /ˈwɪspər/",
     "pos": "v. / n.",
-    "meaning": "v. 低语、小声说（whisper to sb；whisper sth in sb's ear）。n. 低语、耳语（in a whisper / in whispers）。It is whispered that 有传言说。反义 shout / roar。高考描写类阅读常用以营造秘密或安静氛围。whisper 不接双宾语时注意 to。in a whisper 作方式状语。",
+    "meaning": "nói thầm; xì xào (lá); xào xạc (gió); xì xào bàn tán",
     "acceptCN": [
-      "低语",
-      "小声说",
-      "耳语"
+      "nói nhỏ",
+      "nhỏ giọng nói",
+      "thì thầm"
     ],
-    "phrases": "whisper to sb（对某人耳语）, in a whisper（低声地）, whisper in sb's ear（在某耳边低语）",
+    "phrases": "whisper to sb (đối với người nào đó thì thầm), in a whisper (thấp giọng), whisper in sb's ear (tại một bên tai nói nhỏ)",
     "exampleEn": "She whispered the answer to her classmate.",
-    "exampleZh": "她小声把答案告诉了同桌。",
-    "root": "拟声：细碎气流声",
+    "exampleZh": "cô ấy nhỏ giọng đem Đáp án nói cho ngồi cùng bàn.",
+    "root": "mô phỏng âm thanh: nhỏ vụn khí lưu âm thanh",
     "synonyms": [
       "murmur",
       "mutter"
@@ -622,26 +622,26 @@
       "yell"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "低语",
-      "topic": "描写"
+      "commonUsage": "nói nhỏ",
+      "topic": "miêu tả"
     }
   },
   {
     "word": "large",
     "ipa": "/lɑːdʒ/ · /lɑːrdʒ/",
     "pos": "adj.",
-    "meaning": "adj. 大的（体积、数量、规模，比 big 更正式）。a large number of + 可数复数；a large amount of + 不可数。at large ①逍遥法外 ②一般说来（the public at large）。by and large 大体上。副词 largely 主要地。高考数量短语与 at large 熟词僻义并重。反义 small。",
+    "meaning": "adj. rộng, lớn, to; rộng rãi",
     "acceptCN": [
-      "大的",
-      "大量的",
-      "大规模的"
+      "lớn",
+      "số lớn",
+      "đại quy mô"
     ],
-    "phrases": "a large number of（许多）, at large（逍遥法外；普遍）, by and large（大体上）",
+    "phrases": "a large number of (rất nhiều), at large (nhởn nhơn ngoài vòng pháp luật; phổ biến), by and large (trên đại thể)",
     "exampleEn": "A large number of students took part in the race.",
-    "exampleZh": "许多学生参加了这次赛跑。",
-    "root": "正式场合表“大”；at large 为熟词僻义",
+    "exampleZh": "rất nhiều Học viên tham gia lần này thi chạy.",
+    "root": "trường hợp chính thức bề ngoài “ đại ”; at large là quen thuộc từ tích nghĩa",
     "synonyms": [
       "big",
       "huge"
@@ -651,26 +651,26 @@
       "tiny"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "大的",
-      "topic": "通用"
+      "commonUsage": "lớn",
+      "topic": "thông dụng"
     }
   },
   {
     "word": "preview",
     "ipa": "/ˈpriːvjuː/",
     "pos": "n. / v.",
-    "meaning": "n. / v. 预习；预览、预演（电影、节目等）。preview a lesson 预习功课；a movie preview 电影预告。前缀 pre- 表示“事先”。反义 review 复习、回顾。高考学习方法类短文常与 review 对举：先 preview 再 review。give a preview of 预先介绍。",
+    "meaning": "n. / v. sự xem trước, sự duyệt trước (phim ảnh, ảnh...)",
     "acceptCN": [
-      "预习",
-      "预览",
-      "预演"
+      "chuẩn bị bài",
+      "Xem trước",
+      "diễn thử"
     ],
-    "phrases": "preview a lesson（预习功课）, a movie preview（电影预告）, give a preview of（预先介绍）",
+    "phrases": "preview a lesson (chuẩn bị bài bài học), a movie preview (Điện ảnh báo trước), give a preview of (dự đoán giới thiệu)",
     "exampleEn": "Please preview the new lesson before class.",
-    "exampleZh": "请在课前预习新课。",
-    "root": "pre-(预先) + view(看)",
+    "exampleZh": "mời tại khóa trước chuẩn bị bài mới khóa.",
+    "root": "pre-(dự đoán) + view(nhìn)",
     "synonyms": [
       "foretaste",
       "trailer"
@@ -679,52 +679,52 @@
       "review"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "预习",
-      "topic": "学习"
+      "commonUsage": "chuẩn bị bài",
+      "topic": "Học tập"
     }
   },
   {
     "word": "theft",
     "ipa": "/θeft/",
     "pos": "n.",
-    "meaning": "n. 偷窃、盗窃案（可数或不可数）。commit theft；identity theft 身份盗窃。动词 steal（steal–stole–stolen）；人 thief。区别 robbery（抢劫，含暴力或威胁）。高考新闻、法律类阅读常见；a theft 可指一起盗窃案。report a theft to the police 向警方报案。",
+    "meaning": "n. sự ăn trộm, sự trộm cắp",
     "acceptCN": [
-      "偷窃",
-      "盗窃",
-      "盗窃案"
+      "ăn cắp",
+      "trộm cướp",
+      "án trộm cắp"
     ],
-    "phrases": "commit theft（实施盗窃）, identity theft（身份盗窃）, report a theft（报案）",
+    "phrases": "commit theft (áp dụng trộm cướp), identity theft (Vai trò trộm cướp), report a theft (báo án)",
     "exampleEn": "The theft of the painting was reported last night.",
-    "exampleZh": "那幅画失窃的事昨晚已报案。",
-    "root": "与 thief 同源，表偷窃行为或案件",
+    "exampleZh": "bức họa kia mất trộm sự tình tối hôm qua đã báo án.",
+    "root": "và thief đồng nguyên, bề ngoài ăn cắp hành vi hoặc vụ án",
     "synonyms": [
       "stealing",
       "robbery"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "盗窃",
-      "topic": "社会"
+      "commonUsage": "trộm cướp",
+      "topic": "xã hội"
     }
   },
   {
     "word": "level",
     "ipa": "/ˈlevl/",
     "pos": "n. / adj. / v.",
-    "meaning": "n. 水平、级别、层次（sea level；a high level of）。adj. 平坦的、同一水平的。v. 夷平、使平坦（level the ground）；level at 瞄准。at sea level；on a level with 与…持平。高考教育、环境类材料常考 English level / pollution level。level off 趋于平稳。level off 表趋于平稳；英语水平、污染水平、海平面均为高频搭配，注意可作动词夷平。",
+    "meaning": "ống bọt nước, ống thuỷ; mức, mực; mặt",
     "acceptCN": [
-      "水平",
-      "级别",
-      "平坦的"
+      "Trình độ",
+      "cấp bậc",
+      "bằng phẳng"
     ],
-    "phrases": "sea level（海平面）, at a high level（在高水平）, level off（趋于平稳）",
+    "phrases": "sea level (mặt biển), at a high level (tại cao cấp), level off (gần như vững vàng)",
     "exampleEn": "Her English has reached a high level.",
-    "exampleZh": "她的英语已达到很高水平。",
-    "root": "既表“水平高度”也表“平坦”",
+    "exampleZh": "của cô ấy Tiếng Anh đã đạt tới rất cao Trình độ.",
+    "root": "đã bề ngoài “ Trình độ độ cao ” cũng bề ngoài “ bằng phẳng ”",
     "synonyms": [
       "standard",
       "flat"
@@ -733,26 +733,26 @@
       "uneven"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "水平",
-      "topic": "通用"
+      "commonUsage": "Trình độ",
+      "topic": "thông dụng"
     }
   },
   {
     "word": "accustomed",
     "ipa": "/əˈkʌstəmd/",
     "pos": "adj.",
-    "meaning": "adj. 习惯的、适应的。be / get / become accustomed to + n./doing 习惯于（= be used to）。accustomed 作前置定语：one's accustomed seat 惯常的座位。动词 accustom。高考与 used to / be used to 辨析：accustomed to 后接 ing。It takes time to get accustomed to a new school。accustomed to 后接名词或动名词，与 used to do（过去常常）完全不同，属语法易错点。",
+    "meaning": "adj. quen với; thành thói quen, thành thường lệ",
     "acceptCN": [
-      "习惯的",
-      "适应的",
-      "惯常的"
+      "thói quen",
+      "thích ứng",
+      "đã từng"
     ],
-    "phrases": "be accustomed to（习惯于）, get accustomed to（逐渐习惯）, one's accustomed seat（惯常座位）",
+    "phrases": "be accustomed to (thói quen tại), get accustomed to (dần dần thói quen), one's accustomed seat (đã từng chỗ ngồi)",
     "exampleEn": "I am not yet accustomed to getting up so early.",
-    "exampleZh": "我还没习惯这么早起床。",
-    "root": "custom(习惯) → 使成习惯",
+    "exampleZh": "ta còn không có thói quen sớm như vậy rời giường.",
+    "root": "custom(thói quen) → khiến cho thành thói quen",
     "synonyms": [
       "used to",
       "familiar"
@@ -761,51 +761,51 @@
       "unaccustomed"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "习惯于",
-      "topic": "语法"
+      "commonUsage": "thói quen tại",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "fax",
     "ipa": "/fæks/",
     "pos": "n. / v.",
-    "meaning": "n. 传真；传真机；传真件。v. 传真发送（fax sth to sb）。send a fax；by fax。fax machine 传真机。虽已被电邮部分取代，高考商务、办公应用文及旧课文仍常见。a fax number 传真号码。注意不可数或可数均可，视“业务/一份传真”而定。",
+    "meaning": "bản fax",
     "acceptCN": [
-      "传真",
-      "传真机",
-      "传真发送"
+      "vẽ truyền thần",
+      "vẽ truyền thần cơ",
+      "vẽ truyền thần gửi đi"
     ],
-    "phrases": "send a fax（发传真）, by fax（通过传真）, fax machine（传真机）",
+    "phrases": "send a fax (gửi vẽ truyền thần), by fax (thông qua vẽ truyền thần), fax machine (vẽ truyền thần cơ)",
     "exampleEn": "Please fax the contract to our office.",
-    "exampleZh": "请把合同传真到我们办公室。",
-    "root": "facsimile 的缩略：完全复制件",
+    "exampleZh": "xin đem hợp đồng vẽ truyền thần đến chúng tôi văn phòng.",
+    "root": "facsimile co lại hơi: hoàn toàn phục chế kiện",
     "synonyms": [
       "telefax"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "传真",
-      "topic": "办公"
+      "commonUsage": "vẽ truyền thần",
+      "topic": "văn phòng"
     }
   },
   {
     "word": "bow",
     "ipa": "/baʊ/ · /bəʊ/",
     "pos": "v. / n.",
-    "meaning": "读 /baʊ/：v. 鞠躬、点头；屈服（bow to sb / pressure）。n. 鞠躬。读 /bəʊ/：n. 弓；蝴蝶结（tie a bow）。bow and arrow 弓箭。高考必须据词性与语境判断读音：鞠躬 /baʊ/，弓与蝴蝶结 /bəʊ/。take a bow 谢幕鞠躬。bow one's head 低头。",
+    "meaning": "(âm nhạc) kéo vĩ (viôlông)",
     "acceptCN": [
-      "鞠躬",
-      "弓",
-      "蝴蝶结"
+      "cúi đầu",
+      "cung",
+      "nơ con bướm"
     ],
-    "phrases": "bow to sb（向某人鞠躬；屈服于）, take a bow（谢幕）, bow and arrow（弓箭）",
+    "phrases": "bow to sb (hướng người nào đó cúi đầu; khuất phục tại), take a bow (chào cảm ơn), bow and arrow (cung tiễn)",
     "exampleEn": "The actors bowed to the audience.",
-    "exampleZh": "演员们向观众鞠躬致谢。",
-    "root": "同形异音词：鞠躬 /baʊ/，弓 /bəʊ/",
+    "exampleZh": "các diễn viên hướng người xem cúi đầu gửi tới lời cảm ơn.",
+    "root": "cùng hình dị âm từ: cúi đầu /baʊ/, cung /bəʊ/",
     "synonyms": [
       "bend",
       "stoop"
@@ -814,26 +814,26 @@
       "straighten"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "鞠躬",
-      "topic": "文化"
+      "commonUsage": "cúi đầu",
+      "topic": "văn hóa"
     }
   },
   {
     "word": "typical",
     "ipa": "/ˈtɪpɪkl/",
     "pos": "adj.",
-    "meaning": "adj. 典型的、有代表性的；特有的。be typical of 是…的特点（It's typical of him to be late. 他一向迟到）。a typical example。副词 typically。名词 type。高考常考 It is typical of sb to do。反义 atypical / unusual。typical day 平常的一天。It is typical of sb to do 为黄金句型；typically 表通常或典型地，反义 atypical。",
+    "meaning": "adj. tiêu biểu, điển hình ((cũng) typic); đặc thù, đặc trưng",
     "acceptCN": [
-      "典型的",
-      "有代表性的",
-      "特有的"
+      "điển hình",
+      "có đại biểu tính",
+      "đặc hữu"
     ],
-    "phrases": "be typical of（是…的特点）, a typical example（典型例子）, typically（通常；典型地）",
+    "phrases": "be typical of (là … đặc điểm), a typical example (điển hình ví dụ), typically (bình thường; điển hình mà)",
     "exampleEn": "It is typical of her to help others without being asked.",
-    "exampleZh": "她一向不等人请就会去帮助别人。",
-    "root": "type(类型) + -ical → 属于某类型的",
+    "exampleZh": "cô ấy luôn luôn không đều người mời sẽ đi trợ giúp người khác.",
+    "root": "type(loại hình) + -ical → thuộc về một kiểu",
     "synonyms": [
       "characteristic",
       "representative"
@@ -843,25 +843,25 @@
       "unusual"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "典型的",
-      "topic": "评价"
+      "commonUsage": "điển hình",
+      "topic": "đánh giá"
     }
   },
   {
     "word": "centigrade",
     "ipa": "/ˈsentɪɡreɪd/",
     "pos": "adj. / n.",
-    "meaning": "adj. / n. 摄氏（温度）的；摄氏温度。20 degrees centigrade（20℃），符号 ℃。与 Celsius 通用（degrees Celsius）。区别 Fahrenheit 华氏（°F）。高考天气、实验说明常见；zero degrees centigrade 冰点。也可写作 20°C。注意 degree 用复数 degrees。与 Celsius 通用；华氏为 Fahrenheit。零度为冰点，高考天气与实验说明常见摄氏表达。",
+    "meaning": "adj. / n. chia trăm độ, bách phân",
     "acceptCN": [
-      "摄氏的",
-      "摄氏温度"
+      "nhiếp thị",
+      "nhiếp thị độ ấm"
     ],
-    "phrases": "degrees centigrade（摄氏度）, zero degrees centigrade（零摄氏度）, Celsius（摄氏）",
+    "phrases": "degrees centigrade (cấp bậc), zero degrees centigrade (linh cấp bậc), Celsius (nhiếp thị)",
     "exampleEn": "Water freezes at zero degrees centigrade.",
-    "exampleZh": "水在零摄氏度结冰。",
-    "root": "centi-(百分) + grade(度) → 百分度温标",
+    "exampleZh": "nước tại linh cấp bậc kết băng.",
+    "root": "centi-(phần trăm) + grade(độ) → phần trăm độ ôn nhãn hiệu",
     "synonyms": [
       "Celsius"
     ],
@@ -869,50 +869,50 @@
       "Fahrenheit"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "摄氏",
-      "topic": "科学"
+      "commonUsage": "nhiếp thị",
+      "topic": "khoa học"
     }
   },
   {
     "word": "editor",
     "ipa": "/ˈedɪtə(r)/ · /ˈedɪtər/",
     "pos": "n.",
-    "meaning": "n. 编辑；主编（chief editor / editor-in-chief）。newspaper editor；edit 编辑（动词）；edition 版本；editorial 社论。高考职业、媒体类阅读常见。sub-editor 助理编辑。the letters editor 读者来信编辑。注意 editor 是人，edition 是书刊的一版。",
+    "meaning": "n. người thu thập và xuất bản; chủ bút (báo, tập san...)",
     "acceptCN": [
-      "编辑",
-      "主编"
+      "biên tập",
+      "chủ biên"
     ],
-    "phrases": "chief editor（主编）, newspaper editor（报纸编辑）, editor-in-chief（总编辑）",
+    "phrases": "chief editor (chủ biên), newspaper editor (báo chí biên tập), editor-in-chief (tổng biên tập)",
     "exampleEn": "She works as an editor for a science magazine.",
-    "exampleZh": "她在一家科学杂志当编辑。",
-    "root": "edit(编辑) + -or（人）",
+    "exampleZh": "cô ấy tại một nhà khoa học tạp chí {làm:lúc} biên tập.",
+    "root": "edit(biên tập) + -or (người)",
     "synonyms": [
       "compiler"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "编辑",
-      "topic": "职业"
+      "commonUsage": "biên tập",
+      "topic": "Nghề nghiệp"
     }
   },
   {
     "word": "develop",
     "ipa": "/dɪˈveləp/",
     "pos": "v.",
-    "meaning": "v. ①发展、发育（develop into）；②培养、养成（develop a habit / skill）；③冲洗（胶卷）；④患上（develop a disease）。developed / developing countries 发达/发展中国家。名词 development。高考词义广，需据宾语判断；developing 作定语时表“发展中的”。",
+    "meaning": "v. trình bày, bày tỏ, thuyết minh (luận điểm, vấn đề...); phát triển, mở mang, mở rộng, khuếch trương, làm cho phát đạt",
     "acceptCN": [
-      "发展",
-      "培养",
-      "冲洗"
+      "phát triển",
+      "bồi dưỡng",
+      "súc"
     ],
-    "phrases": "develop a habit（养成习惯）, developing countries（发展中国家）, develop into（发展成为）",
+    "phrases": "develop a habit (dưỡng thành thói quen), developing countries (quốc gia đang phát triển), develop into (phát triển trở thành là)",
     "exampleEn": "She has developed a habit of reading before bed.",
-    "exampleZh": "她养成了睡前阅读的习惯。",
-    "root": "词义多：发展、培养、冲洗、患病",
+    "exampleZh": "cô ấy dưỡng thành trước khi ngủ đọc thói quen.",
+    "root": "từ nghĩa nhiều: phát triển, bồi dưỡng, súc, bị bệnh",
     "synonyms": [
       "grow",
       "evolve"
@@ -921,26 +921,26 @@
       "decline"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "发展",
-      "topic": "通用"
+      "commonUsage": "phát triển",
+      "topic": "thông dụng"
     }
   },
   {
     "word": "leak",
     "ipa": "/liːk/",
     "pos": "v. / n.",
-    "meaning": "v. 漏（水、气）；泄露（秘密、信息）。n. 漏洞、泄漏。the roof leaks；leak out 泄露出去；a gas leak 煤气泄漏。高考新闻、环保、科技文常见信息泄露与管道泄漏两义。a leak of information。形容词 leaking。区别 drip（滴下）。",
+    "meaning": "lọt qua, rỉ ra, rò ra, thoát ra; để rỉ qua, để rò; lọt ra, lộ ra; để lọt ra, để lộ ra (điều bí mật)",
     "acceptCN": [
-      "泄漏",
-      "漏",
-      "漏洞"
+      "tiết lộ",
+      "rò",
+      "lỗ thủng"
     ],
-    "phrases": "leak out（泄露出去）, a gas leak（煤气泄漏）, leak information（泄露信息）",
+    "phrases": "leak out (tiết lộ ra ngoài), a gas leak (khí than tiết lộ), leak information (tiết lộ tin tức)",
     "exampleEn": "The pipe is leaking and water is all over the floor.",
-    "exampleZh": "管子在漏水，地板上都是水。",
-    "root": "本义液体渗出，引申为消息外泄",
+    "exampleZh": "cái ống tại rỉ nước, trên sàn nhà đều là nước.",
+    "root": "nghĩa gốc chất lỏng chảy ra, nghĩa rộng là tin tức tiết ra ngoài",
     "synonyms": [
       "seep",
       "disclose"
@@ -949,52 +949,52 @@
       "seal"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "泄漏",
-      "topic": "新闻"
+      "commonUsage": "tiết lộ",
+      "topic": "tin tức"
     }
   },
   {
     "word": "session",
     "ipa": "/ˈseʃn/",
     "pos": "n.",
-    "meaning": "n. ①一场、一节（训练、会议、课程：a training session）；②会议、开庭期（in session 在开会/开庭）。question-and-answer session 问答环节。高考校园、会议通知常见 a morning session。out of session 闭会。区别 lesson（课）、meeting（会议，更通用）。",
+    "meaning": "n. buổi họp, phiên họp, kỳ họp; hội nghị; thời kỳ hội nghị",
     "acceptCN": [
-      "一场",
-      "一节",
-      "会议"
+      "một cuộc",
+      "một tiết",
+      "hội nghị"
     ],
-    "phrases": "a training session（一节训练课）, in session（在开会；开庭中）, Q&A session（问答环节）",
+    "phrases": "a training session (một tiết lớp huấn luyện), in session (đang họp; mở phiên toà Vừa), Q&A session (vấn đáp khâu)",
     "exampleEn": "The afternoon session will start at two o'clock.",
-    "exampleZh": "下午那场将于两点开始。",
-    "root": "sess(坐) → 坐下来进行的一段时间",
+    "exampleZh": "buổi chiều trận kia vào khoảng hai điểm Bắt đầu.",
+    "root": "sess(ngồi) → ngồi xuống tiến hành một đoạn thời gian",
     "synonyms": [
       "meeting",
       "sitting"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "一场",
-      "topic": "校园"
+      "commonUsage": "một cuộc",
+      "topic": "sân trường"
     }
   },
   {
     "word": "end",
     "ipa": "/end/",
     "pos": "n. / v.",
-    "meaning": "n. 末端、结束、目的（to this end 为此）。v. 结束（end in 以…告终；end up doing / in）。at the end of 在…尽头/结束时；in the end 终于；by the end of 到…为止（常完成时）。put an end to 终止。高考介词短语辨析极高频。endless 无尽的。",
+    "meaning": "giới hạn; đầu, đầu mút (dây...); đuôi; đáy (thùng...) đoạn cuối",
     "acceptCN": [
-      "结束",
-      "末端",
-      "目的"
+      "chấm dứt",
+      "cuối cùng",
+      "mục đích"
     ],
-    "phrases": "in the end（终于）, at the end of（在…尽头）, end up doing（最终做了）",
+    "phrases": "in the end (rút cuộc), at the end of (tại … phần cuối), end up doing (cuối cùng làm)",
     "exampleEn": "In the end, they decided to stay at home.",
-    "exampleZh": "最后他们决定待在家里。",
-    "root": "in the end / at the end of / by the end of 必辨",
+    "exampleZh": "cuối cùng họ quyết định dừng lại ở trong nhà.",
+    "root": "in the end / at the end of / by the end of tất phân biệt",
     "synonyms": [
       "finish",
       "conclusion"
@@ -1004,26 +1004,26 @@
       "start"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "结束",
-      "topic": "语法"
+      "commonUsage": "chấm dứt",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "balance",
     "ipa": "/ˈbæləns/",
     "pos": "n. / v.",
-    "meaning": "n. 平衡；余额（bank balance）。v. 使平衡、权衡（balance A against B）。keep / lose one's balance；a balanced diet 均衡饮食。on balance 总的说来。out of balance 失去平衡。高考健康、环保议论文高频：strike a balance between 在…之间取得平衡。形容词 balanced。",
+    "meaning": "cái cân; sự thăng bằng sự cân bằng; cán cân",
     "acceptCN": [
-      "平衡",
-      "余额",
-      "权衡"
+      "cân bằng",
+      "số dư còn lại",
+      "cân nhắc"
     ],
-    "phrases": "keep one's balance（保持平衡）, a balanced diet（均衡饮食）, strike a balance（取得平衡）",
+    "phrases": "keep one's balance (bảo trì cân bằng), a balanced diet (cân đối Dinh dưỡng), strike a balance (lấy được cân bằng)",
     "exampleEn": "A balanced diet is important for good health.",
-    "exampleZh": "均衡饮食对健康很重要。",
-    "root": "原指天平，引申为平衡与权衡",
+    "exampleZh": "cân đối Dinh dưỡng đối với Sức khỏe rất trọng yếu.",
+    "root": "nguyên chỉ thiên đều, nghĩa rộng là cân bằng và cân nhắc",
     "synonyms": [
       "equilibrium",
       "poise"
@@ -1032,26 +1032,26 @@
       "imbalance"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "平衡",
-      "topic": "健康"
+      "commonUsage": "cân bằng",
+      "topic": "Sức khỏe"
     }
   },
   {
     "word": "disgusting",
     "ipa": "/dɪsˈɡʌstɪŋ/",
     "pos": "adj.",
-    "meaning": "adj. 令人厌恶的、令人作呕的（修饰事物）。disgusted 感到厌恶的（修饰人：be disgusted at / with）。动词 / 名词 disgust。How disgusting! 真恶心。高考情感形容词 -ing/-ed 辨析：disgusting 事，disgusted 人。语气强于 unpleasant。a disgusting smell。",
+    "meaning": "adj. làm ghê tởm, làm kinh tởm",
     "acceptCN": [
-      "令人厌恶的",
-      "恶心的",
-      "讨厌的"
+      "làm cho người chán ghét",
+      "chán ghét",
+      "ghét"
     ],
-    "phrases": "a disgusting smell（难闻的气味）, be disgusted at（对…感到厌恶）, How disgusting（真恶心）",
+    "phrases": "a disgusting smell (mùi khó ngửi), be disgusted at (đối với … cảm thấy chán ghét), How disgusting (thực buồn nôn)",
     "exampleEn": "The smell from the bin was disgusting.",
-    "exampleZh": "垃圾桶散发出的气味令人作呕。",
-    "root": "dis-(相反) + gust(品尝) → 难以下咽 → 厌恶",
+    "exampleZh": "thùng rác tản ra mùi làm cho người buồn nôn.",
+    "root": "dis-(trái lại) + gust(nhấm nháp) → khó có thể nuốt xuống → chán ghét",
     "synonyms": [
       "revolting",
       "awful"
@@ -1061,26 +1061,26 @@
       "delightful"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "令人厌恶的",
-      "topic": "情感"
+      "commonUsage": "làm cho người chán ghét",
+      "topic": "tình cảm"
     }
   },
   {
     "word": "injury",
     "ipa": "/ˈɪndʒəri/",
     "pos": "n.",
-    "meaning": "n. 伤害、损伤（多指身体；也可指感情：an injury to one's pride）。serious / slight injury；injury time 伤停补时。动词 injure；形容词 injured（the injured 伤员）。区别 wound（刀枪等外伤）、hurt（疼痛、感情）、damage（物体损坏）。do sb an injury。高考体育、事故新闻高频。",
+    "meaning": "n. sự làm hại, sự làm tổn hại, sự làm hỏng; điều hại, điều tổn hại; chỗ hỏng; chỗ bị thương",
     "acceptCN": [
-      "伤害",
-      "损伤",
-      "受伤"
+      "tổn thương",
+      "tổn thương",
+      "bị thương"
     ],
-    "phrases": "serious injury（重伤）, the injured（伤员）, an injury to（对…的伤害）",
+    "phrases": "serious injury (trọng thương), the injured (thương binh), an injury to (đối với … tổn thương)",
     "exampleEn": "He missed the match because of a knee injury.",
-    "exampleZh": "他因膝盖受伤错过了比赛。",
-    "root": "in-(不) + jur(权利/伤害) → 损害",
+    "exampleZh": "anh ấy bởi vì đầu gối bị thương bỏ lỡ trận đấu.",
+    "root": "in-(không) + jur(quyền lợi / tổn thương) → tổn hại",
     "synonyms": [
       "harm",
       "wound"
@@ -1089,52 +1089,52 @@
       "healing"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "受伤",
-      "topic": "健康"
+      "commonUsage": "bị thương",
+      "topic": "Sức khỏe"
     }
   },
   {
     "word": "adventure",
     "ipa": "/ədˈventʃə(r)/ · /ədˈventʃər/",
     "pos": "n. / v.",
-    "meaning": "n. 冒险、奇遇（可数）；冒险精神（不可数）。v. 冒险去做。adventure story；a sense of adventure。形容词 adventurous 爱冒险的。adventurer 冒险者。高考阅读、写作常见“一次难忘的冒险”。go on an adventure。区别 venture（风险事业，更偏商业）。",
+    "meaning": "sự phiêu lưu, sự mạo hiểm; việc làm mạo hiểm, việc làm táo bạo; sự nguy hiểm, sự hiểm nghèo",
     "acceptCN": [
-      "冒险",
-      "奇遇",
-      "冒险经历"
+      "mạo hiểm",
+      "kỳ ngộ",
+      "mạo hiểm trải qua"
     ],
-    "phrases": "go on an adventure（去冒险）, a sense of adventure（冒险精神）, adventure story（历险故事）",
+    "phrases": "go on an adventure (đi mạo hiểm), a sense of adventure (tinh thần mạo hiểm), adventure story (trải qua nguy hiểm câu chuyện)",
     "exampleEn": "Their trip to the mountains was a great adventure.",
-    "exampleZh": "他们的登山之旅是一次了不起的冒险。",
-    "root": "ad-(向) + vent(来) → 走向未知之事",
+    "exampleZh": "họ lên hành trình là một lần không dậy nổi mạo hiểm.",
+    "root": "ad-(hướng) + vent(đến) → đi về hướng chuyện không biết",
     "synonyms": [
       "exploit",
       "quest"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "冒险",
-      "topic": "记叙"
+      "commonUsage": "mạo hiểm",
+      "topic": "kể"
     }
   },
   {
     "word": "pride",
     "ipa": "/praɪd/",
     "pos": "n. / v.",
-    "meaning": "n. 自豪；骄傲、傲慢。v. pride oneself on 以…自豪。take pride in；with pride；the pride of …的骄傲。形容词 proud（be proud of）。高考写作高频 take pride in doing。贬义时指自负。Pride goes before a fall. 骄者必败。反义 humility / shame。take pride in doing 与 pride oneself on 同义不同结构；proud 为形容词 be proud of。",
+    "meaning": "sự kiêu hãnh, sự hãnh diện; niềm kiêu hãnh, niềm hãnh diện, tính tự cao, tính tự phụ, tính kiêu căng",
     "acceptCN": [
-      "自豪",
-      "骄傲",
-      "引以为荣"
+      "tự hào",
+      "kiêu ngạo",
+      "vẫn lấy làm quang vinh"
     ],
-    "phrases": "take pride in（以…为荣）, pride oneself on（以…自豪）, with pride（骄傲地）",
+    "phrases": "take pride in (dùng … vẻ vang), pride oneself on (dùng … tự hào), with pride (kiêu ngạo mà)",
     "exampleEn": "She takes pride in her children's success.",
-    "exampleZh": "她为孩子们的成功感到自豪。",
-    "root": "与 proud 同源；pride oneself on 为固定反身搭配",
+    "exampleZh": "cô ấy là bọn nhỏ thành công cảm thấy tự hào.",
+    "root": "và proud đồng nguyên; pride oneself on là cố định quay người phối hợp",
     "synonyms": [
       "honour",
       "dignity"
@@ -1144,25 +1144,25 @@
       "humility"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "自豪",
-      "topic": "情感"
+      "commonUsage": "tự hào",
+      "topic": "tình cảm"
     }
   },
   {
     "word": "fluency",
     "ipa": "/ˈfluːənsi/",
     "pos": "n.",
-    "meaning": "n. 流利、流畅（尤指语言）。speak with fluency；fluency in English。形容词 fluent（be fluent in）；副词 fluently。高考英语学习方法类文章常把 fluency 与 accuracy（准确性）并提。improve fluency 提高流利度。不可数。动词可联想 flow 流动。",
+    "meaning": "n. độ lưu loát, sự trôi chảy",
     "acceptCN": [
-      "流利",
-      "流畅"
+      "lưu loát",
+      "trôi chảy"
     ],
-    "phrases": "fluency in English（英语流利）, with fluency（流利地）, fluent in（精通；说得流利）",
+    "phrases": "fluency in English (Tiếng Anh lưu loát), with fluency (lưu loát mà), fluent in (tinh thông; nói được lưu loát)",
     "exampleEn": "Daily practice will improve your fluency in English.",
-    "exampleZh": "每天练习会提高你的英语流利程度。",
-    "root": "flu(流) + -ency → 如水流般顺畅",
+    "exampleZh": "mỗi ngày Luyện tập sẽ đề cao của bạn Tiếng Anh lưu loát trình độ.",
+    "root": "flu(chảy) + -ency → như dòng nước giống như trôi chảy",
     "synonyms": [
       "smoothness",
       "ease"
@@ -1171,26 +1171,26 @@
       "hesitation"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "流利",
-      "topic": "学习"
+      "commonUsage": "lưu loát",
+      "topic": "Học tập"
     }
   },
   {
     "word": "bar",
     "ipa": "/bɑː(r)/ · /bɑːr/",
     "pos": "n. / v.",
-    "meaning": "n. ①酒吧；②条、棒（a bar of chocolate / soap）；③栏杆、障碍。v. 阻止、封锁（bar sb from doing）。behind bars 在狱中。bar code 条形码。高考多义极广，需看语境：巧克力用 a bar of；法律/体育中 bar 可表禁止。called to the bar 获得律师资格（超纲引申，阅读偶见）。",
+    "meaning": "barơ (đơn vị áp suất); thanh, thỏi",
     "acceptCN": [
-      "酒吧",
-      "条",
-      "阻止"
+      "quán bar",
+      "đầu",
+      "ngăn cản"
     ],
-    "phrases": "a bar of chocolate（一条巧克力）, behind bars（在狱中）, bar sb from（禁止某人）",
+    "phrases": "a bar of chocolate (một cái chocolate), behind bars (tại trong ngục), bar sb from (cấm người nào đó)",
     "exampleEn": "He bought a bar of chocolate after school.",
-    "exampleZh": "他放学后买了一条巧克力。",
-    "root": "多义：棒状物 → 酒吧吧台 → 阻拦",
+    "exampleZh": "anh ấy sau khi tan học mua một cái chocolate.",
+    "root": "đa nghĩa: bổng hình dáng vật → quán bar quầy bar → ngăn trở",
     "synonyms": [
       "pub",
       "rod",
@@ -1200,52 +1200,52 @@
       "permit"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "条",
-      "topic": "生活"
+      "commonUsage": "đầu",
+      "topic": "sinh hoạt"
     }
   },
   {
     "word": "drill",
     "ipa": "/drɪl/",
     "pos": "n. / v.",
-    "meaning": "n. / v. ①钻孔（机）；钻（孔）。②训练、操练（fire drill 消防演习；drill students in grammar）。military drill 军事操练。高考校园安全通知常考 fire drill；语言学习中 drill 指反复操练。drill into 反复灌输。区别 practice（练习，更通用）。",
+    "meaning": "n. / v. (kỹ thuật) mũi khoan; máy khoan; (động vật học) ốc khoan",
     "acceptCN": [
-      "钻孔",
-      "训练",
-      "操练"
+      "khoan",
+      "huấn luyện",
+      "thao luyện"
     ],
-    "phrases": "fire drill（消防演习）, drill a hole（钻孔）, grammar drill（语法操练）",
+    "phrases": "fire drill (phòng cháy diễn tập), drill a hole (khoan), grammar drill (Ngữ pháp thao luyện)",
     "exampleEn": "The school holds a fire drill every term.",
-    "exampleZh": "学校每学期举行一次消防演习。",
-    "root": "本义钻孔，引申为反复操练",
+    "exampleZh": "trường học mỗi học kỳ cử hành một lần phòng cháy diễn tập.",
+    "root": "nghĩa gốc khoan, nghĩa rộng là nhiều lần thao luyện",
     "synonyms": [
       "practice",
       "bore"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "演习",
-      "topic": "校园"
+      "commonUsage": "diễn tập",
+      "topic": "sân trường"
     }
   },
   {
     "word": "adopt",
     "ipa": "/əˈdɒpt/ · /əˈdɑːpt/",
     "pos": "v.",
-    "meaning": "v. ①收养（adopt a child）；②采纳、采取（adopt a method / policy / attitude）。名词 adoption；形容词 adopted（an adopted son）。易混 adapt（适应、改编）。高考写作“采取有效措施”常用 adopt measures。be adopted by 被…收养/通过。易混 adapt（适应、改编）：adopt measures 采取措施，adapt to 适应环境，高考必辨。",
+    "meaning": "v. nhận làm con nuôi; nhận làm bố mẹ nuôi; theo, làm theo",
     "acceptCN": [
-      "收养",
-      "采纳",
-      "采取"
+      "thu dưỡng",
+      "tiếp thu",
+      "áp dụng"
     ],
-    "phrases": "adopt a child（收养孩子）, adopt a policy（采取政策）, adopted son（养子）",
+    "phrases": "adopt a child (thu dưỡng hài tử), adopt a policy (áp dụng chính sách), adopted son (con nuôi)",
     "exampleEn": "The school adopted a new teaching method.",
-    "exampleZh": "学校采用了一种新的教学方法。",
-    "root": "ad-(向) + opt(选择) → 选过来用；勿混 adapt",
+    "exampleZh": "trường học dùng một loại mới đích dạy học phương pháp.",
+    "root": "ad-(hướng) + opt(lựa chọn) → chọn tới đây dùng; chớ lẫn vào adapt",
     "synonyms": [
       "take on",
       "embrace"
@@ -1255,26 +1255,26 @@
       "reject"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "采取",
-      "topic": "社会"
+      "commonUsage": "áp dụng",
+      "topic": "xã hội"
     }
   },
   {
     "word": "dip",
     "ipa": "/dɪp/",
     "pos": "v. / n.",
-    "meaning": "v. 蘸、浸（dip … into）；下降（prices dip）。n. 蘸酱；短暂下降；小浴。dip into ①蘸入 ②翻阅、动用（存款）。高考烹饪、实验说明常见 dip into the sauce；经济类可见 prices dipped。take a dip 游一会儿泳。不规则否，规则动词 dip–dipped。",
+    "meaning": "sự nhúng, sự ngâm vào, sự dìm xuống (nước...); sự đầm mình, sự tắm (ở biển)",
     "acceptCN": [
-      "蘸",
-      "浸",
-      "下降"
+      "trám",
+      "thấm",
+      "hạ thấp"
     ],
-    "phrases": "dip into（蘸；翻阅；动用）, dip ... into（把…浸入）, take a dip（游一会儿）",
+    "phrases": "dip into (trám; đọc qua; vận dụng), dip... into (đem … xuyên vào), take a dip (bơi trong chốc lát)",
     "exampleEn": "She dipped the bread into the soup.",
-    "exampleZh": "她把面包蘸进汤里。",
-    "root": "短促向下再起来：蘸、下跌",
+    "exampleZh": "cô ấy đem bánh mì trám tiến trong súp.",
+    "root": "ngắn ngủi hướng phía dưới tái khởi đến: trám, ngã xuống",
     "synonyms": [
       "immerse",
       "drop"
@@ -1283,25 +1283,25 @@
       "rise"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "蘸",
-      "topic": "生活"
+      "commonUsage": "trám",
+      "topic": "sinh hoạt"
     }
   },
   {
     "word": "satisfy",
     "ipa": "/ˈsætɪsfaɪ/",
     "pos": "v.",
-    "meaning": "v. 使满意；满足（需要、条件）（satisfy one's needs / curiosity）。satisfied 感到满意的（人）；satisfying / satisfactory 令人满意的（事）。be satisfied with。名词 satisfaction。高考 -ed/-ing 及 satisfactory 词性转换高频。far from satisfactory 远不能令人满意。satisfied 修饰人，satisfying 与 satisfactory 修饰事物，far from satisfactory 书面高频。",
+    "meaning": "v. làm thoả mãn, làm vừa lòng, đáp ứng (được yêu cầu, điều kiện...); dạng bị động thoả mãn, hài lòng (với thành tích...)",
     "acceptCN": [
-      "使满意",
-      "满足"
+      "khiến cho thoả mãn",
+      "thỏa mãn"
     ],
-    "phrases": "be satisfied with（对…满意）, satisfy one's needs（满足需要）, to one's satisfaction（使某人满意地）",
+    "phrases": "be satisfied with (đối với … thoả mãn), satisfy one's needs (thỏa mãn cần), to one's satisfaction (khiến cho người nào đó hài lòng)",
     "exampleEn": "Nothing can satisfy his curiosity about space.",
-    "exampleZh": "什么都满足不了他对太空的好奇心。",
-    "root": "satis(足够) + -fy(使) → 使足够",
+    "exampleZh": "gì đều không thỏa mãn được anh ấy đối với thái không lòng hiếu kỳ.",
+    "root": "satis(đầy đủ) + -fy(khiến cho) → khiến cho đầy đủ",
     "synonyms": [
       "please",
       "meet"
@@ -1310,26 +1310,26 @@
       "disappoint"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "使满意",
-      "topic": "情感"
+      "commonUsage": "khiến cho thoả mãn",
+      "topic": "tình cảm"
     }
   },
   {
     "word": "doubt",
     "ipa": "/daʊt/",
     "pos": "n. / v.",
-    "meaning": "n. / v. 怀疑（b 不发音）。there is no doubt that；no doubt 无疑。in doubt 不确定。beyond / without doubt 毫无疑问。doubt 后接 whether/if；否定句、疑问句中常接 that。高考句型 There is no doubt that 写作黄金句。形容词 doubtful。Don't doubt yourself。肯定句多接 whether，否定疑问句多接 that；There is no doubt that 为写作黄金句。",
+    "meaning": "n. / v. sự nghi ngờ, sự ngờ vực; sự không chắc, sự hồ nghi; sự do dự, sự lưỡng lự, sự nghi ngờ",
     "acceptCN": [
-      "怀疑",
-      "疑问",
-      "不确定"
+      "hoài nghi",
+      "nghi vấn",
+      "không xác định"
     ],
-    "phrases": "there is no doubt that（毫无疑问）, no doubt（无疑）, in doubt（不确定）",
+    "phrases": "there is no doubt that (không hề nghi ngờ), no doubt (không thể nghi ngờ), in doubt (không xác định)",
     "exampleEn": "There is no doubt that he will pass the exam.",
-    "exampleZh": "毫无疑问他会通过考试。",
-    "root": "b 不发音；肯定句多接 whether，否定句多接 that",
+    "exampleZh": "không hề nghi ngờ anh ấy sẽ thông qua cuộc thi.",
+    "root": "b không phát âm; khẳng định câu nhiều tiếp whether, chối bỏ câu nhiều tiếp that",
     "synonyms": [
       "question",
       "suspect"
@@ -1339,26 +1339,26 @@
       "trust"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "怀疑",
-      "topic": "语法"
+      "commonUsage": "hoài nghi",
+      "topic": "Ngữ pháp"
     }
   },
   {
     "word": "appreciate",
     "ipa": "/əˈpriːʃieɪt/",
     "pos": "v.",
-    "meaning": "v. ①欣赏、赏识；②感激（appreciate sth，不接 sb：I appreciate your help. 不能 I appreciate you 表感谢，应用 thank）；③理解；④升值。appreciate doing。I would appreciate it if you could ... 高考黄金句。名词 appreciation。易错：不直接接人作宾语表感谢。不接人作宾语表感谢；I would appreciate it if 中 it 不可省略，属高考句型。",
+    "meaning": "v. đánh giá; đánh giá đúng, đánh giá cao, hiểu rõ giá trị",
     "acceptCN": [
-      "欣赏",
-      "感激",
-      "理解"
+      "thưởng thức",
+      "cảm kích",
+      "lý giải"
     ],
-    "phrases": "appreciate doing（感激做）, I would appreciate it if（如蒙…将不胜感激）, show appreciation（表示感谢）",
+    "phrases": "appreciate doing (cảm kích làm), I would appreciate it if (như được … đem cảm kích khôn cùng), show appreciation (biểu thị cảm tạ)",
     "exampleEn": "I would appreciate it if you could reply soon.",
-    "exampleZh": "如能尽快回复，我将不胜感激。",
-    "root": "ap-(向) + preci(价值) → 认识到价值",
+    "exampleZh": "ví dụ có thể mau chóng hồi phục, tôi đem cảm kích khôn cùng.",
+    "root": "ap-(hướng) + preci(giá trị) → nhận thức đến giá trị",
     "synonyms": [
       "value",
       "be grateful for"
@@ -1368,26 +1368,26 @@
       "depreciate"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "感激",
-      "topic": "交际"
+      "commonUsage": "cảm kích",
+      "topic": "giao tiếp"
     }
   },
   {
     "word": "minus",
     "ipa": "/ˈmaɪnəs/",
     "pos": "prep. / adj. / n.",
-    "meaning": "prep. 减、减去（ten minus six is four）。adj. 负的（minus ten degrees 零下十度）。n. 减号；缺点（plus and minus 利弊）。反义 plus。高考数学表达与气温（minus 5℃）常见。minus 还可口语表“缺少”：I came minus my keys. 高考以运算和零下温度为主。",
+    "meaning": "trừ; (thông tục) thiếu, mất, không còn",
     "acceptCN": [
-      "减",
-      "负的",
-      "零下"
+      "giảm",
+      "chịu",
+      "dưới âm"
     ],
-    "phrases": "minus ten degrees（零下十度）, plus and minus（利与弊）, ten minus six（十减六）",
+    "phrases": "minus ten degrees (dưới âm mười độ), plus and minus (lợi và hại), ten minus six (mười giảm sáu)",
     "exampleEn": "The temperature dropped to minus five degrees.",
-    "exampleZh": "气温降到了零下五度。",
-    "root": "与 plus 相对；气温中表零下",
+    "exampleZh": "nhiệt độ hạ xuống dưới âm năm độ.",
+    "root": "và plus tương đối; nhiệt độ bà con cô cậu dưới âm",
     "synonyms": [
       "less",
       "negative"
@@ -1397,26 +1397,26 @@
       "positive"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "减",
-      "topic": "科学"
+      "commonUsage": "giảm",
+      "topic": "khoa học"
     }
   },
   {
     "word": "subject",
     "ipa": "/ˈsʌbdʒɪkt/ · /səbˈdʒekt/",
     "pos": "n. / adj. / v.",
-    "meaning": "n. /ˈsʌbdʒɪkt/ 科目；主题；主语；臣民。adj. be subject to 易遭受；须服从。v. /səbˈdʒekt/ subject sb to 使遭受。change the subject 换话题。高考多义：课堂“科目”、语法“主语”、阅读“主题”。subject matter 题材。be subject to change 可能更改。",
+    "meaning": "chủ đề; vấn đề; dân, thần dân",
     "acceptCN": [
-      "科目",
-      "主题",
-      "使遭受"
+      "kỹ năng",
+      "chủ đề",
+      "khiến cho gặp"
     ],
-    "phrases": "be subject to（易遭受；须服从）, change the subject（换话题）, subject sb to（使某人遭受）",
+    "phrases": "be subject to (dễ bị được; tu phục tùng), change the subject (đổi chủ đề), subject sb to (khiến cho người nào đó gặp)",
     "exampleEn": "English is my favourite subject at school.",
-    "exampleZh": "英语是我在学校最喜欢的科目。",
-    "root": "sub-(在下) + ject(投) → 置于某主题之下；重音随词性变",
+    "exampleZh": "Tiếng Anh là ta ở trường học thích nhất kỹ năng.",
+    "root": "sub-(tôi) + ject(quăng) → đặt một chủ đề phía dưới; trọng âm theo từ tính biến",
     "synonyms": [
       "topic",
       "course"
@@ -1425,26 +1425,26 @@
       "object"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "科目",
-      "topic": "校园"
+      "commonUsage": "kỹ năng",
+      "topic": "sân trường"
     }
   },
   {
     "word": "acquisition",
     "ipa": "/ˌækwɪˈzɪʃn/",
     "pos": "n.",
-    "meaning": "n. 获得、习得（language acquisition 语言习得）；获得物。动词 acquire（acquire knowledge / a skill，比 get 正式，强调逐渐获得）。高考语言学、学习方法类阅读高频 language acquisition。the acquisition of 对…的获得。不可数为主，表具体获得物时可数。",
+    "meaning": "n. sự được, sự giành được, sự thu được, sự đạt được, sự kiếm được; cái giành được, cái thu nhận được",
     "acceptCN": [
-      "获得",
-      "习得",
-      "获得物"
+      "đạt được",
+      "tập được",
+      "đạt được vật"
     ],
-    "phrases": "language acquisition（语言习得）, the acquisition of knowledge（知识的获得）, acquire a skill（获得技能）",
+    "phrases": "language acquisition (ngôn ngữ tập được), the acquisition of knowledge (kiến thức đạt được), acquire a skill (đạt được kỹ năng)",
     "exampleEn": "Language acquisition is faster in early childhood.",
-    "exampleZh": "语言习得在幼儿期更快。",
-    "root": "ac-(向) + quire(寻求) → 寻求得到",
+    "exampleZh": "ngôn ngữ tập được tại sơ sinh thời hạn nhanh hơn.",
+    "root": "ac-(hướng) + quire(tìm kiếm) → tìm kiếm đạt được",
     "synonyms": [
       "attainment",
       "gain"
@@ -1453,26 +1453,26 @@
       "loss"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "习得",
-      "topic": "学习"
+      "commonUsage": "tập được",
+      "topic": "Học tập"
     }
   },
   {
     "word": "control",
     "ipa": "/kənˈtrəʊl/ · /kənˈtroʊl/",
     "pos": "n. / v.",
-    "meaning": "n. / v. 控制、管理、克制。under control 处于控制中；out of control 失控；in control of 控制着；in the control of 被…控制。beyond control 无法控制。lose / take control of。高考介词短语必辨：in control of（主动）与 in the control of（被动）。remote control 遥控器。in control of 表主动掌控，in the control of 表被控制，介词有无 the 意义相反。",
+    "meaning": "n. / v. quyền hành, quyền lực, quyền chỉ huy; sự điều khiển, sự lái, sự cầm lái",
     "acceptCN": [
-      "控制",
-      "管理",
-      "克制"
+      "khống chế",
+      "Quản trị",
+      "khắc chế"
     ],
-    "phrases": "under control（处于控制中）, out of control（失控）, in control of（控制着）",
+    "phrases": "under control (ở vào trong khống chế), out of control (không khống chế được), in control of (khống chế được)",
     "exampleEn": "The fire was soon brought under control.",
-    "exampleZh": "火势很快得到了控制。",
-    "root": "in control of 主动；in the control of 被动",
+    "exampleZh": "thế lửa rất nhanh đã nhận được khống chế.",
+    "root": "in control of chủ động; in the control of bị động",
     "synonyms": [
       "command",
       "manage"
@@ -1481,52 +1481,52 @@
       "chaos"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "控制",
-      "topic": "通用"
+      "commonUsage": "khống chế",
+      "topic": "thông dụng"
     }
   },
   {
     "word": "outing",
     "ipa": "/ˈaʊtɪŋ/",
     "pos": "n.",
-    "meaning": "n. 郊游、短途旅行、外出游玩（多指集体、日间活动）。go on an outing；a school outing；family outing。动词短语 go out。区别 trip（可远可近）、picnic（野餐，强调用餐）、excursion（远足，稍正式）。高考校园通知、日记类写作常见。an outing to the museum。",
+    "meaning": "n. cuộc đi chơi; cuộc đi nghỉ hè (xa nhà)",
     "acceptCN": [
-      "郊游",
-      "短途旅行",
-      "外出"
+      "dạo chơi ngoại thành",
+      "khoảng cách ngắn Du lịch",
+      "ra ngoài"
     ],
-    "phrases": "go on an outing（去郊游）, a school outing（学校郊游）, family outing（家庭出游）",
+    "phrases": "go on an outing (đi dạo chơi ngoại thành), a school outing (trường học dạo chơi ngoại thành), family outing (gia đình du lịch)",
     "exampleEn": "Our class went on an outing to the lake last Saturday.",
-    "exampleZh": "上周六我们班去湖边郊游了。",
-    "root": "out + -ing → 外出活动",
+    "exampleZh": "đầu tuần sáu lớp chúng ta đi bên hồ dạo chơi.",
+    "root": "out + -ing → ra ngoài hoạt động",
     "synonyms": [
       "trip",
       "excursion"
     ],
     "antonyms": [],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "郊游",
-      "topic": "校园"
+      "commonUsage": "dạo chơi ngoại thành",
+      "topic": "sân trường"
     }
   },
   {
     "word": "sell",
     "ipa": "/sel/",
     "pos": "v.",
-    "meaning": "v. 卖、销售。不规则：sell–sold–sold。sell sb sth / sell sth to sb；sell well 畅销（主动表被动，不以人作主语常用）。for sale 待售；on sale 减价出售（美）/ 上市。seller 卖方；sale 销售。高考 sell well / sell out 售罄。sell off 廉价出清。反义 buy。",
+    "meaning": "v. bán (hàng hoá); chuyên bán; phản bội, bán, bán rẻ (nước, lương tâm)",
     "acceptCN": [
-      "卖",
-      "销售",
-      "畅销"
+      "bán",
+      "tiêu thụ",
+      "dễ bán"
     ],
-    "phrases": "sell well（畅销）, sell out（售罄）, for sale（待售）",
+    "phrases": "sell well (dễ bán), sell out (bán khánh), for sale (đợi bán)",
     "exampleEn": "This kind of book sells well among teenagers.",
-    "exampleZh": "这类书在青少年中很畅销。",
-    "root": "sell–sold–sold；sell well 为主动表被动",
+    "exampleZh": "cái này sách tại thanh thiếu niên Vừa rất dễ bán.",
+    "root": "sell–sold–sold; sell well làm chủ di chuyển bề ngoài bị động",
     "synonyms": [
       "vend",
       "market"
@@ -1536,26 +1536,26 @@
       "purchase"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "卖",
-      "topic": "生活"
+      "commonUsage": "bán",
+      "topic": "sinh hoạt"
     }
   },
   {
     "word": "vacant",
     "ipa": "/ˈveɪkənt/",
     "pos": "adj.",
-    "meaning": "adj. ①空着的、未被占用的（a vacant seat / position 空位/空缺职位）；②茫然的（a vacant look）。名词 vacancy 空缺、空房。区别 empty（空无内容）、blank（空白的纸面）、hollow（中空）。高考招聘、旅馆场景：the position is vacant。fall vacant 出缺。",
+    "meaning": "adj. trống, rỗng; bỏ không, trống",
     "acceptCN": [
-      "空着的",
-      "空缺的",
-      "茫然的"
+      "trống không",
+      "chỗ trống",
+      "mờ mịt"
     ],
-    "phrases": "a vacant seat（空座位）, a vacant position（空缺职位）, vacancy（空缺）",
+    "phrases": "a vacant seat (ghế trống vị), a vacant position (ghế trống chức vị), vacancy (ghế trống)",
     "exampleEn": "There is a vacant position in the school office.",
-    "exampleZh": "校办公室有一个空缺职位。",
-    "root": "vac(空) + -ant → 空着的；侧重“未被占用”",
+    "exampleZh": "trường học văn phòng có một cái ghế trống chức vị.",
+    "root": "vac(chỗ trống) + -ant → trống không; trọng điểm “ không bị chiếm dụng ”",
     "synonyms": [
       "empty",
       "unoccupied"
@@ -1565,10 +1565,10 @@
       "full"
     ],
     "examTag": {
-      "source": "高中英语",
+      "source": "THPT Tiếng Anh",
       "frequency": 4,
-      "commonUsage": "空缺的",
-      "topic": "生活"
+      "commonUsage": "chỗ trống",
+      "topic": "sinh hoạt"
     }
   }
 ]

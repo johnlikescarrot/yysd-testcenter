@@ -132,11 +132,11 @@ def media_paths(value):
 def main():
     blank = {"type": "complete_words", "passage": [{"t": "Words, matter."}, {"prefix": "popul", "answer": "ations"}]}
     assert signature([blank]) == signature([dict(blank, passage=[{"t": "Words matter"}, {"prefix": "popul", "answer": "ations"}])])
-    assert signature([blank]) != signature([dict(blank, passage=[{"t": "Words, matter."}, {"prefix": "popu", "answer": "lations"}])])
-    assert signature([dict(blank, passage=[{"t": "1.5"}])]) != signature([dict(blank, passage=[{"t": "15"}])])
+    assert signature([blank])!= signature([dict(blank, passage=[{"t": "Words, matter."}, {"prefix": "popu", "answer": "lations"}])])
+    assert signature([dict(blank, passage=[{"t": "1.5"}])])!= signature([dict(blank, passage=[{"t": "15"}])])
     insert = {"type": "academic", "paras": [{"t": "Text", "insert": "A"}], "insertSentence": "New sentence", "questions": []}
-    assert signature([insert]) != signature([dict(insert, paras=[{"t": "Text", "insert": "B"}])])
-    assert signature([insert]) != signature([dict(insert, insertSentence="Different sentence")])
+    assert signature([insert])!= signature([dict(insert, paras=[{"t": "Text", "insert": "B"}])])
+    assert signature([insert])!= signature([dict(insert, insertSentence="Different sentence")])
     parser = argparse.ArgumentParser()
     parser.add_argument("snapshot", type=Path)
     parser.add_argument("existing", type=Path)
@@ -181,7 +181,7 @@ def main():
         paper = existing["papers"][block["source"] + "|" + block["skill"] + "|" + str(block.get("paperId") or block["set"])]
         tasks = paper["tasks"][block["task"]:block["end"] + 1]
         index.setdefault(signature(tasks), block)
-    papers = {skill: {"id": "prediction-2026-10-17", "skill": skill, "title": "预测包 · 2026-10-17", "source": "prediction", "modules": [], "tasks": []} for skill in {x[0] for x in KINDS.values()}}
+    papers = {skill: {"id": "prediction-2026-10-17", "skill": skill, "title": " dự đoán bao · 2026-10-17", "source": "prediction", "modules": [], "tasks": []} for skill in {x[0] for x in KINDS.values()}}
     members, counters = [], {skill: 1 for skill in papers}
     for key in KINDS:
         skill, kind = KINDS[key]
