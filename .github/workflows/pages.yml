@@ -1,3 +1,4 @@
+---
 name: Triển khai IELTS Việt lên GitHub Pages
 
 on:
@@ -23,9 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Cấu hình Pages
-        uses: actions/configure-pages@v5
 
       - name: Chuẩn bị artefact (chỉ ứng dụng tiếng Việt)
         run: |

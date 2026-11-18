@@ -1,3 +1,4 @@
+---
 name: Super-Linter
 
 on:
@@ -54,7 +55,6 @@ jobs:
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
           IGNORE_GITIGNORED_FILES: true
-          FILTER_REGEX_EXCLUDE: "(^|/)(library|app|tiku|server|desktop|desktop-tiku|admission|rankings|assets|scripts|data|admin)/.*|(^|/)(alevel|admin|teacher|toefl|speaking|vocab)[^/]*\\.html$"
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_CSS: true
           VALIDATE_HTML: true
