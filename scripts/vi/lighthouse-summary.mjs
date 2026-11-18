@@ -46,6 +46,15 @@ async function main() {
       for (const audit of failing) {
         const detail = (audit.displayValue || audit.title || '').replace(/\|/g, '\\|');
         lines.push(`- \`${audit.id}\` (${Math.round((audit.score ?? 0) * 100)}) — ${detail}`);
+        const items = (audit.details && audit.details.items) || [];
+        for (const item of items.slice(0, 4)) {
+          const node = item.node || {};
+          const where = node.selector || node.snippet || item.url || '';
+          const why = node.explanation || item.explanation || '';
+          if (where || why) {
+            lines.push(`  - \`${String(where).slice(0, 160)}\` ${String(why).slice(0, 200)}`.trim());
+          }
+        }
       }
     }
     lines.push('');

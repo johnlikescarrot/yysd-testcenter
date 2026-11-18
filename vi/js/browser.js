@@ -119,6 +119,7 @@ async function main() {
       <p class="muted">Ứng dụng cần chạy qua máy chủ tĩnh (GitHub Pages hoặc <code>python3 -m http.server</code>).
       Lỗi: ${String(error.message || error)}</p>
       <p><a class="btn btn--primary" href="./index.html">Về trang chủ</a></p></div></div>`;
+    document.body.dataset.ready = 'true';
     return;
   }
 

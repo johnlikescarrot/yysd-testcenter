@@ -159,6 +159,7 @@ TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className += " js";</script>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#07192f">

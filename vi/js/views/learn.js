@@ -29,8 +29,7 @@ function lessonNode(state, curriculum, unit, lesson) {
     <span class="node-xp">+${formatInt(lesson.xp)} XP</span>`;
 
   if (unlocked) {
-    return `<a class="node node--${status}" href="./bai-hoc.html?bai=${encodeURIComponent(lesson.id)}"
-      aria-label="${esc(lesson.title)} — ${esc(meta)}">${inner}</a>`;
+    return `<a class="node node--${status}" href="./bai-hoc.html?bai=${encodeURIComponent(lesson.id)}">${inner}</a>`;
   }
   return `<div class="node node--locked" aria-disabled="true">${inner}</div>`;
 }

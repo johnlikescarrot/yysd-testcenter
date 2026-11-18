@@ -187,6 +187,16 @@ button {
   min-height: 100dvh;
 }
 
+/* Trang có JS: ẩn vùng nội dung cho tới lần vẽ đầu để không nhảy bố cục (CLS = 0).
+   Không có JS thì `.js` không được thêm vào <html>, nội dung tĩnh vẫn hiện bình thường. */
+#app {
+  min-height: 100vh;
+}
+
+.js body:not([data-ready]) #app {
+  visibility: hidden;
+}
+
 .main {
   min-width: 0;
   padding: 1.1rem clamp(.9rem, 3vw, 2.6rem) 6.5rem;
@@ -260,6 +270,7 @@ button {
 
 .stats {
   display: flex;
+  min-height: 42px;
   align-items: center;
   gap: .4rem;
   flex-wrap: wrap;
