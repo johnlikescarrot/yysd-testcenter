@@ -261,25 +261,25 @@ const TOTAL_STAGE2 = 10;
 const TOTAL_STAGE3 = 10;
 const TOTAL = TOTAL_STAGE1 + TOTAL_STAGE2 + TOTAL_STAGE3; // 52
 
-const STAGE_NAMES = ['nghĩa của một từ phân biệt', 'đồng nghĩa thay thế', 'toàn diện đưa vào sử dụng'];
-const STAGE_DESC = [`tiếng Anh→tiếng Trung(Tất cả${TOTAL_STAGE1}Từ)`, 'tiếng Anh→tiếng Anh gần công lý', 'ngữ cảnh lấp chỗ trống công việc+một biến thể cũ của | đa nghĩa'];
+const STAGE_NAMES = ['nghĩa của một từ phân biệt', 'đồng nghĩa thay thế', 'toàn diện đưa vào sử dụng'] ;
+const STAGE_DESC = [`tiếng Anh→tiếng Trung(Tất cả${TOTAL_STAGE1}Từ)`, 'tiếng Anh→tiếng Anh gần công lý', 'ngữ cảnh lấp chỗ trống công việc+một biến thể cũ của | đa nghĩa'] ;
 const wordCountBadge = document.getElementById('wordCountBadge');
 if (wordCountBadge) wordCountBadge.textContent = `Tổng cộng ${TOTAL_STAGE1} Từ`;
 const testTotalTitle = document.getElementById('testTotalTitle');
 if (testTotalTitle) testTotalTitle.textContent = `📋 toàn diện phát hiện · Tổng cộng${TOTAL}Câu hỏi`;
 
 // ==================== công cụ ====================
-function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function shuffle(arr){ const a=[...arr] ; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] ; } return a; }
 
 // ==================== chủ đề tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...wordData]);
-    const questions = [];
+    const questions = [] ;
 
     // giai đoạn một: nghĩa của một từ phân biệt (32 Câu hỏi) - che phủ toàn bộ từ
     const stage1Data = all; // Tất cả 32 cái
     stage1Data.forEach(w => {
-        const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))];
+        const allMeanings = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.meaning).filter(m => m !== w.meaning))] ;
         const shuffledMeanings = shuffle([...allMeanings]);
         const wrongs = shuffledMeanings.slice(0, 3);
         while(wrongs.length < 3) wrongs.push('chưa biết');
@@ -297,7 +297,7 @@ function generateQuestions() {
     // giai đoạn hai: đồng nghĩa thay thế (10 Câu hỏi) - tiếng Anh chọn tiếng Anh từ đồng nghĩa
     const stage2Data = all.slice(10, 20);
     stage2Data.forEach(w => {
-        const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))];
+        const allSynonyms = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.synonym).filter(s => s !== w.synonym))] ;
         const shuffledSyns = shuffle([...allSynonyms]);
         const wrongs = shuffledSyns.slice(0, 3);
         while(wrongs.length < 3) wrongs.push('unknown');
@@ -320,7 +320,7 @@ function generateQuestions() {
             // ngữ cảnh lấp chỗ trống công việc: Sử dụng target thay thế
             const regex = new RegExp('\\b' + w.target + '\\b', 'gi');
             const sentenceDisplay = w.example.replace(regex, '______');
-            const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))];
+            const allWords = [...new Set(wordData.filter(x => x.word !== w.word).map(x => x.word).filter(word => word !== w.word))] ;
             const shuffledWords = shuffle([...allWords]);
             const wrongs = shuffledWords.slice(0, 3);
             while(wrongs.length < 3) wrongs.push('unknown');
@@ -335,10 +335,10 @@ function generateQuestions() {
             });
         } else {
             // một biến thể cũ của | đa nghĩa
-            const correctMeaning = w.accept_meaning[0];
+            const correctMeaning = w.accept_meaning[0] ;
             const wrongMeanings = w.accept_meaning.slice(1);
             while(wrongMeanings.length < 3) {
-                const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))];
+                const otherMeanings = [...new Set(wordData.filter(x => x.word !== w.word).flatMap(x => x.accept_meaning).filter(m => m !== correctMeaning))] ;
                 const shuffledOthers = shuffle([...otherMeanings]);
                 for (const m of shuffledOthers) {
                     if (!wrongMeanings.includes(m) && m !== correctMeaning) {
@@ -362,7 +362,7 @@ function generateQuestions() {
         subTypeCounter++;
     });
 
-    const qs = [];
+    const qs = [] ;
     for(let s=0; s<3; s++) {
         const stageQs = questions.filter(q => q.stage === s);
         qs.push(...shuffle(stageQs));
@@ -371,10 +371,10 @@ function generateQuestions() {
 }
 
 // ==================== lõi logic ====================
-let questions = [];
+let questions = [] ;
 let currentIndex = 0;
 let score = 0;
-let results = [];
+let results = [] ;
 let selected = null;
 let submitted = false;
 let isTestActive = false;
@@ -411,7 +411,7 @@ function loadVoices() {
     if (!synth) return;
     const getBestVoice = () => {
         const voices = synth.getVoices();
-        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
+        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'] ;
         for (const name of preferred) {
             const found = voices.find(v => v.name === name && v.lang.startsWith('en'));
             if (found) return found;
@@ -419,7 +419,7 @@ function loadVoices() {
         let voice = voices.find(v => v.lang.startsWith('en-GB') && (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
         if (voice) return voice;
         voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
-        return voice || voices[0];
+        return voice || voices[0] ;
     };
     if (synth.getVoices().length > 0) {
         britishFemaleVoice = getBestVoice();
@@ -513,7 +513,7 @@ function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
     score = 0;
-    results = [];
+    results = [] ;
     selected = null;
     submitted = false;
     isTestActive = true;
@@ -535,7 +535,7 @@ function renderQuestion() {
         return;
     }
 
-    const q = questions[currentIndex];
+    const q = questions[currentIndex] ;
     const stage = q.stage;
 
     progLabel.textContent = `Thứ ${currentIndex+1} / ${TOTAL} Câu hỏi`;
@@ -584,7 +584,7 @@ function renderQuestion() {
 function submitAnswer() {
     if (submitted) return;
 
-    const q = questions[currentIndex];
+    const q = questions[currentIndex] ;
 
     if (selected === null) {
         if (!window.__vocabTestTimedOut) { alert('mời trước chọn một dùng trong | tùy chọn! '); return; }

@@ -337,7 +337,7 @@ function loadVoices() {
     if (!synth) return;
     const getBestVoice = () => {
         const voices = synth.getVoices();
-        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
+        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'] ;
         for (const name of preferred) {
             const found = voices.find(v => v.name === name && v.lang.startsWith('en'));
             if (found) return found;
@@ -345,7 +345,7 @@ function loadVoices() {
         let voice = voices.find(v => v.lang.startsWith('en-GB') && (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
         if (voice) return voice;
         voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
-        return voice || voices[0];
+        return voice || voices[0] ;
     };
     if (synth.getVoices().length > 0) {
         britishFemaleVoice = getBestVoice();
@@ -445,21 +445,21 @@ navTabs.forEach(tab => {
 });
 
 // ==================== phát hiện lõi ====================
-function shuffleArray(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function shuffleArray(arr){ const a=[...arr] ; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] ; } return a; }
 
-let dictWords = [];
+let dictWords = [] ;
 let dictIndex = 0;
-let quizQuestions = [];
+let quizQuestions = [] ;
 let quizIndex = 0;
 let currentStage = 'dictation';
 let currentIndex = 0;
 let score = 0;
-let results = [];
+let results = [] ;
 let submitted = false;
 let quizSelected = null;
 let isQuit = false;
 
-let allQuestionsMeta = [];
+let allQuestionsMeta = [] ;
 
 function generateQuizQuestions(count){
     const pool = shuffleArray([...wordData]);
@@ -491,13 +491,13 @@ function startTest() {
     quizIndex = 0;
     currentIndex = 0;
     score = 0;
-    results = [];
+    results = [] ;
     isTestActive = true;
     currentStage = 'dictation';
     submitted = false;
     isQuit = false;
 
-    allQuestionsMeta = [];
+    allQuestionsMeta = [] ;
     dictWords.forEach((w, idx) => {
         allQuestionsMeta.push({
             index: idx,
@@ -573,7 +573,7 @@ function renderDictationQuestion() {
 // ==================== nộp viết chính tả ====================
 function submitDictation() {
     if (submitted) return;
-    const w = dictWords[dictIndex];
+    const w = dictWords[dictIndex] ;
     const userSpelling = inputSpelling.value.trim();
     const userMeaning = inputMeaning.value.trim();
 
@@ -665,7 +665,7 @@ function renderQuizQuestion() {
     dictationUI.style.display = 'none';
     quizUI.style.display = '';
 
-    const q = quizQuestions[quizIndex];
+    const q = quizQuestions[quizIndex] ;
     qText.textContent = `Vui lòng chọn«${q.meaning}»tương ứng với của tiếng Anh từ: `;
     qOpts.innerHTML = '';
     quizSelected = null;
@@ -712,7 +712,7 @@ function submitQuiz() {
     submitted = true;
     btnSubmit.disabled = true;
 
-    const q = quizQuestions[quizIndex];
+    const q = quizQuestions[quizIndex] ;
     const isCorrect = quizSelected === q.correct;
     if (isCorrect) score++;
 

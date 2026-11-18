@@ -1,4 +1,5 @@
 """Kiem tra: moi noi dung khong phai tieng Anh da duoc viet hoa."""
+import json
 import re
 import sys
 from pathlib import Path
@@ -35,9 +36,22 @@ def main():
         except (UnicodeDecodeError, OSError):
             continue
         files += 1
-        vietnamese_chars += len(re.findall(r'[ăâđêôơưĂÂĐÊÔƠƯ]', text))
-        han = len(HAN.findall(text))
-        other = len(OTHER.findall(text))
+        # Cac truong id/file la dinh danh va duong dan tep, khong phai noi dung.
+        if path.relative_to(ROOT).as_posix() == 'library/manifest.json':
+            try:
+                data = json.loads(text)
+                scan = json.dumps(
+                    [{k: v for k, v in item.items() if k not in ('id', 'file')}
+                     for item in data.get('items', [])],
+                    ensure_ascii=False,
+                )
+            except (ValueError, TypeError, AttributeError):
+                scan = text
+        else:
+            scan = text
+        vietnamese_chars += len(re.findall(r'[ăâđêôơưĂÂĐÊÔƠƯ]', scan))
+        han = len(HAN.findall(scan))
+        other = len(OTHER.findall(scan))
         if han or other:
             errors.append('{}: Han={} khac={}'.format(
                 path.relative_to(ROOT).as_posix(), han, other))

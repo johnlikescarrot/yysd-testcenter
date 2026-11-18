@@ -2678,7 +2678,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   }
 ];
   var TOTAL_QUESTIONS = 81;
-  var testResultsData = [];
+  var testResultsData = [] ;
 (function(){
   const HISTORY_KEY = 'cet4_vocab_history_list6';
 
@@ -2695,7 +2695,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
     if(!synth) return;
     const pick = () => {
       const vs = synth.getVoices();
-      voice = vs.find(v => v.lang.startsWith('en-GB')) || vs.find(v => v.lang.startsWith('en')) || vs[0];
+      voice = vs.find(v => v.lang.startsWith('en-GB')) || vs.find(v => v.lang.startsWith('en')) || vs[0] ;
     };
     pick();
     if(synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pick;
@@ -2777,7 +2777,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   const resultsTableBody = document.getElementById('resultsTableBody');
   const historyContent = document.getElementById('historyContent');
 
-  function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e){ return []; } }
+  function getHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [] ; } catch(e){ return [] ; } }
   function saveHistory(r){ const h = getHistory(); h.unshift(r); if(h.length>50) h.length=50; localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
   function renderHistory(){
     const h = getHistory();
@@ -2790,7 +2790,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   btnClearHistory.addEventListener('click', () => { if(confirm('dọn dẹp lịch sử? ')){ localStorage.removeItem(HISTORY_KEY); renderHistory(); } });
 
   let testWords=[], testCurrentIndex=0, testScore=0, testSubmitted=false;
-  function shuffle(a){ const x=[...a]; for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]]; } return x; }
+  function shuffle(a){ const x=[...a] ; for(let i=x.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [x[i],x[j]]=[x[j],x[i]] ; } return x; }
   function resetTestState(){
     testSetup.style.display=''; testActiveArea.classList.remove('visible'); testResults.classList.remove('visible');
     testFeedback.className='test-feedback'; testFeedback.textContent=''; btnNext.classList.remove('visible');
@@ -2799,7 +2799,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   function showTestSetup(){ resetTestState(); }
   btnStartTest.addEventListener('click', () => {
     testWords = shuffle(wordData).slice(0, TOTAL_QUESTIONS);
-    testCurrentIndex=0; testScore=0; testResultsData=[]; testSubmitted=false;
+    testCurrentIndex=0; testScore=0; testResultsData=[] ; testSubmitted=false;
     testSetup.style.display='none'; testActiveArea.classList.add('visible'); testResults.classList.remove('visible');
     updateProgress(); setTimeout(playCurrent, 300);
   });
@@ -2815,7 +2815,7 @@ body { font-family:"PingFang SC","Inter",sans-serif; background:var(--bg); color
   function submitAnswer(){
     if(testSubmitted || testCurrentIndex>=testWords.length) return;
     testSubmitted = true; btnSubmit.disabled = true;
-    const w = testWords[testCurrentIndex];
+    const w = testWords[testCurrentIndex] ;
     const userSpelling = inputSpelling.value.trim();
     const userMeaningClean = cleanCN(inputMeaning.value);
     const spellingOk = userSpelling.toLowerCase() === w.word.toLowerCase();

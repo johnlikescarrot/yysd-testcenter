@@ -241,16 +241,16 @@ const phraseData = [
 ];
 
 const TOTAL = 30;
-const STAGE_NAMES = ['ghép đôi chọn', 'đánh vần', 'đồng nghĩa thay thế'];
-const STAGE_DESC = ['chọn đúng tiếng Anh ghép đôi', 'thích ngôn ngữ viết tiếng Anh cụm từ', 'chọn từ đồng nghĩa'];
+const STAGE_NAMES = ['ghép đôi chọn', 'đánh vần', 'đồng nghĩa thay thế'] ;
+const STAGE_DESC = ['chọn đúng tiếng Anh ghép đôi', 'thích ngôn ngữ viết tiếng Anh cụm từ', 'chọn từ đồng nghĩa'] ;
 
 // ==================== công cụ ====================
-function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function shuffle(arr){ const a=[...arr] ; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] ; } return a; }
 
 // ==================== chủ đề tạo ra ====================
 function generateQuestions() {
     const all = shuffle([...phraseData]);
-    const questions = [];
+    const questions = [] ;
 
     // giai đoạn một: ghép đôi chọn (10 Câu hỏi)
     const stage1Data = all.slice(0, 10);
@@ -314,7 +314,7 @@ function generateQuestions() {
         });
     });
 
-    const qs = [];
+    const qs = [] ;
     for(let s=0; s<3; s++) {
         const stageQs = questions.filter(q => q.stage === s);
         qs.push(...shuffle(stageQs));
@@ -323,10 +323,10 @@ function generateQuestions() {
 }
 
 // ==================== lõi logic ====================
-let questions = [];
+let questions = [] ;
 let currentIndex = 0;
 let score = 0;
-let results = [];
+let results = [] ;
 let selected = null;
 let submitted = false;
 let isTestActive = false;
@@ -367,7 +367,7 @@ function loadVoices() {
     if (!synth) return;
     const getBestVoice = () => {
         const voices = synth.getVoices();
-        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
+        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'] ;
         for (const name of preferred) {
             const found = voices.find(v => v.name === name && v.lang.startsWith('en'));
             if (found) return found;
@@ -375,7 +375,7 @@ function loadVoices() {
         let voice = voices.find(v => v.lang.startsWith('en-GB') && (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
         if (voice) return voice;
         voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
-        return voice || voices[0];
+        return voice || voices[0] ;
     };
     if (synth.getVoices().length > 0) {
         britishFemaleVoice = getBestVoice();
@@ -469,7 +469,7 @@ function startTest() {
     questions = generateQuestions();
     currentIndex = 0;
     score = 0;
-    results = [];
+    results = [] ;
     selected = null;
     submitted = false;
     isTestActive = true;
@@ -491,7 +491,7 @@ function renderQuestion() {
         return;
     }
 
-    const q = questions[currentIndex];
+    const q = questions[currentIndex] ;
     const stage = q.stage;
 
     progLabel.textContent = `Thứ ${currentIndex+1} / ${TOTAL} Câu hỏi`;
@@ -570,7 +570,7 @@ function renderQuestion() {
 function submitAnswer() {
     if (submitted) return;
 
-    const q = questions[currentIndex];
+    const q = questions[currentIndex] ;
     let userAnswer = '';
     let isCorrect = false;
 

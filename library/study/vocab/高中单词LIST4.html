@@ -2409,7 +2409,7 @@ async function loadVoices() {
     const getBestVoice = () => {
         const voices = synth.getVoices();
         // đầu tiên mức độ ưu tiên: Google UK English Female, Microsoft Susan, Microsoft Hazel, Samantha, Fiona
-        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'];
+        const preferred = ['Google UK English Female','Microsoft Susan','Microsoft Hazel','Samantha','Fiona'] ;
         for (const name of preferred) {
             const found = voices.find(v => v.name === name && v.lang.startsWith('en'));
             if (found) return found;
@@ -2417,7 +2417,7 @@ async function loadVoices() {
         let voice = voices.find(v => v.lang.startsWith('en-GB') && (v.name.toLowerCase().includes('female')||v.name.toLowerCase().includes('woman')));
         if (voice) return voice;
         voice = voices.find(v => v.lang.startsWith('en-GB')) || voices.find(v => v.lang.startsWith('en-UK')) || voices.find(v => v.lang.startsWith('en'));
-        return voice || voices[0];
+        return voice || voices[0] ;
     };
     if (synth.getVoices().length > 0) {
         britishFemaleVoice = getBestVoice();
@@ -2456,7 +2456,7 @@ loadVoices();
 
 // ==================== lịch sử ghi chép ====================
 function getHistory() {
-    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch(e) { return []; }
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [] ; } catch(e) { return [] ; }
 }
 function saveHistory(record) {
     const history = getHistory();
@@ -2574,24 +2574,24 @@ document.addEventListener('click', function(e) {
 });
 
 // ==================== phát hiện chế độ ====================
-let testWords = [];
+let testWords = [] ;
 let testCurrentIndex = 0;
 let testScore = 0;
-let testResultsData = [];
+let testResultsData = [] ;
 let testSubmitted = false;
 
 function shuffleArray(arr) {
-    const a = [...arr];
+    const a = [...arr] ;
     for (let i = a.length-1; i>0; i--) {
         const j = Math.floor(Math.random()*(i+1));
-        [a[i],a[j]] = [a[j],a[i]];
+        [a[i],a[j]] = [a[j],a[i]] ;
     }
     return a;
 }
 
 btnStartTest.addEventListener('click', () => {
     testWords = shuffleArray(wordData).slice(0, TOTAL_QUESTIONS);
-    testCurrentIndex = 0; testScore = 0; testResultsData = []; testSubmitted = false;
+    testCurrentIndex = 0; testScore = 0; testResultsData = [] ; testSubmitted = false;
     testSetup.style.display = 'none';
     testActiveArea.classList.add('visible');
     testResults.classList.remove('visible');
@@ -2621,7 +2621,7 @@ btnPlayTest.addEventListener('click', () => { if (!testSubmitted) playCurrentWor
 function submitAnswer() {
     if (testSubmitted || testCurrentIndex >= testWords.length) return;
     testSubmitted = true; btnSubmit.disabled = true;
-    const w = testWords[testCurrentIndex];
+    const w = testWords[testCurrentIndex] ;
     const userSpelling = inputSpelling.value.trim();
     const userMeaning = inputMeaning.value.trim();
     const spellingCorrect = userSpelling.toLowerCase() === w.word.toLowerCase();
@@ -2712,7 +2712,7 @@ btnRetry.addEventListener('click', () => {
     testResults.classList.remove('visible');
     testActiveArea.classList.add('visible');
     testWords = shuffleArray(wordData).slice(0, TOTAL_QUESTIONS);
-    testCurrentIndex = 0; testScore = 0; testResultsData = []; testSubmitted = false;
+    testCurrentIndex = 0; testScore = 0; testResultsData = [] ; testSubmitted = false;
     inputSpelling.value = ''; inputMeaning.value = '';
     inputSpelling.className = ''; inputMeaning.className = '';
     testFeedback.classList.remove('visible','correct-all','partial','wrong-all'); testFeedback.textContent = '';

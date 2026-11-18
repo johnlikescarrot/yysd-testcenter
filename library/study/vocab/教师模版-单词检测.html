@@ -9,7 +9,7 @@ A. giáo viên cuối sắp xếp bài tập về nhà biến thể cũ của |,
 B. đưa công nghệ bỏ vào library/study/vocab/ và đăng ký kho từ hoàng hậu, trạm bên trong«từ phát hiện»cũng có thể dấu phẩy
 
 nền tảng chỉ phân tích: 
-  const wordData = [ ... ];     ← phải biến thể cũ của dấu chấm phẩy kết thúc
+  const wordData = [ ... ] ;     ← phải biến thể cũ của dấu chấm phẩy kết thúc
 nhất định lấp hoặc nhồi: word(tiếng Anh), meaning(tiếng Trung)
 Gợi ý: ipa, pos, acceptCN(gốc đầu lấp chỗ trống công việc phân biệt ngôn ngữ Trung Quốc biến thể cũ của | thay đổi hoặc thay thế rộng rãi)
 
@@ -136,7 +136,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
   const fb = document.getElementById("fb");
   const btnNext = document.getElementById("btnNext");
 
-  var order = [];
+  var order = [] ;
   var idx = 0;
   var lives = MAX_LIVES;
   var correct = 0;
@@ -150,7 +150,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
     var a = arr.slice();
     for (var i = a.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
-      var t = a[i]; a[i] = a[j]; a[j] = t;
+      var t = a[i] ; a[i] = a[j] ; a[j] = t;
     }
     return a;
   }
@@ -206,7 +206,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
   }
 
   function renderQ() {
-    var w = words[order[idx]];
+    var w = words[order[idx]] ;
     waiting = false;
     selected = null;
     spell.value = "";
@@ -227,7 +227,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
   }
 
   function paintMeaning(ok) {
-    var w = words[order[idx]];
+    var w = words[order[idx]] ;
     Array.prototype.forEach.call(optsEl.querySelectorAll(".opt"), function (b) {
       b.disabled = true;
       var v = b.getAttribute("data-v");
@@ -254,7 +254,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
 
   function judge(timeout) {
     if (waiting) return;
-    var w = words[order[idx]];
+    var w = words[order[idx]] ;
     var meaningOk = selected === w.meaning;
     if (!meaningOk) {
       paintMeaning(false);
@@ -275,7 +275,7 @@ phát hiện quy tắc(biến thể của | trạm bên trong xông qua rào c�
 
   function judgeSpell() {
     if (waiting) return;
-    var w = words[order[idx]];
+    var w = words[order[idx]] ;
     var typed = spell.value.trim().toLowerCase();
     if (!typed) { spell.focus(); return; }
     var ok = typed === String(w.word).toLowerCase();

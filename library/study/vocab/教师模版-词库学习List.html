@@ -4,10 +4,10 @@ YYSD · kho từ học List biến thể của(biến thể của | trạm bên 
 ================================================================
 cách dùng: 
 1. sử dụng trình duyệt trực tiếp mở văn bản này món → nhìn thấy biến thể cũ của trực tuyến giống của«thẻ / danh sách»
-2. chỉ thay đổi bên dưới const wordData = [ ... ]; biến thể của | của từ
+2. chỉ thay đổi bên dưới const wordData = [ ... ] ; biến thể của | của từ
 3. đưa công nghệ bỏ vào library/study/vocab/ và đăng ký kho từ hoàng hậu, học sinh cuối giá sách cũng có thể dấu phẩy giống hệt lượng từ cho quà tặng wordData
 
-nền tảng chỉ phân tích: const wordData = [ ... ];(phải biến thể cũ của dấu chấm phẩy kết thúc)
+nền tảng chỉ phân tích: const wordData = [ ... ] ;(phải biến thể cũ của dấu chấm phẩy kết thúc)
 nhất định lấp hoặc nhồi: word, meaning, acceptCN(2~4 dùng trong | ngắn công lý, phát hiện sử dụng)
 Gợi ý: ipa, pos, exampleEn, exampleZh, collocations, root, synonyms, antonyms, examTag
 danh sách nghĩa của cái gì đó có thể tự động loại bỏ tiếng Anh, chỉ biến thể cũ của ngôn ngữ Trung Quốc; thẻ giữ hoàn chỉnh giải thích chi tiết biến thể cũ của câu ví dụ 
@@ -470,7 +470,7 @@ function yysdMeaningForList(raw, accept) {
   s = s.replace(/[((]([^))]*)[))]/g, function (_, inner) {
     return /[A-Za-z]/.test(inner) ? "" : "(" + inner + ")";
   });
-  s = s.split(/(?:nên biến thể cũ của | trường trung học phổ thông|phải học thuộc lòng|chú ý đến loại từ|đọc hình thức tổng thể|viết Trung Quốc chính xác|kinh doanh đọc|tôn giáo cách chọn từ đã|Nghĩa cốt lõi là|bắt nguồn từ|Dễ nhầm|Kỳ thi đại học|so sánh trang trọng|tương đương với)/)[0];
+  s = s.split(/(?:nên biến thể cũ của | trường trung học phổ thông|phải học thuộc lòng|chú ý đến loại từ|đọc hình thức tổng thể|viết Trung Quốc chính xác|kinh doanh đọc|tôn giáo cách chọn từ đã|Nghĩa cốt lõi là|bắt nguồn từ|Dễ nhầm|Kỳ thi đại học|so sánh trang trọng|tương đương với)/)[0] ;
   s = s.replace(/[ ; ;]?\s*(?:Trái nghĩa|đồng nghĩa|bất quy tắc)[:: ]?[\s\S]*$/, "");
 
   var POS = /^(?:interj\.|modal(?:\s+v\.?)?|adj\.|adv\.|prep\.|conj\.|pron\.|num\.|art\.|int\.|det\.|aux\.|phr\.|pref\.|abbr\.|pl\.|vt\.|vi\.|n\.|v\.)/i;
@@ -481,7 +481,7 @@ function yysdMeaningForList(raw, accept) {
     if (/[\s., , ;  / ]/.test(prev)) {
       var m = s.slice(i).match(POS);
       if (m) {
-        out += m[0];
+        out += m[0] ;
         i += m[0].length;
         continue;
       }
@@ -634,7 +634,7 @@ function yysdMeaningForList(raw, accept) {
     });
   }
   function renderCard() {
-    var w = words[state.learnIdx];
+    var w = words[state.learnIdx] ;
     if (!w) return;
     var blur = state.blurAllOff ? false : state.blurOne;
     shell("");

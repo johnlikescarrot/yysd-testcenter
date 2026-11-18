@@ -2,7 +2,7 @@ import globals from 'globals';
 
 export default [
   {
-    files: ['docs/js/**/*.js', 'tests/**/*.js', 'vitest.config.js'],
+    files: ['docs/js/**/*.js', 'tests/**/*.mjs', 'vitest.config.mjs'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',

@@ -100,7 +100,7 @@ def guess(haystack, table, default):
 
 
 def slugify(name):
-    s = re.sub(r"[^a-z0-9 một-noi dung]+", "-", name.lower())
+    s = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", "-", name.lower())
     return s.strip("-") or "item"
 
 
