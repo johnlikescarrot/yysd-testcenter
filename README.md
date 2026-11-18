@@ -4,6 +4,10 @@
 
 静态前端 + Node API（手机号登录、成绩同步、教师布置、AI 能力等）。内容以 `library/` 下自带批改的 HTML 试卷为主，外层提供品牌壳、计时考场（CDT）、任务中心与教师端。
 
+## IELTS Mỗi Ngày — bản tiếng Việt
+
+Luyện IELTS Học thuật với 12 bài ngắn, phản hồi tiếng Việt, lịch ôn và hai PDF có dẫn nguồn. Xem [hướng dẫn chạy và triển khai bản GitHub Pages](ielts-vi/README.md). Hệ thống gốc bên dưới không thuộc bản phát hành tĩnh.
+
 ## 学生端
 
 | 入口 | 说明 |

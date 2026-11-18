@@ -1,0 +1,117 @@
+---
+name: IELTS tiếng Việt · chất lượng và Pages
+
+on:
+  pull_request:
+    paths:
+      - 'ielts-vi/**'
+      - '.github/workflows/ielts-vi.yml'
+  push:
+    branches:
+      - main
+      - arena/0aac58c1-yysd-testcenter
+    paths:
+      - 'ielts-vi/**'
+      - '.github/workflows/ielts-vi.yml'
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ielts-vi-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            ielts-vi
+      - uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          IGNORE_GITIGNORED_FILES: true
+          FILTER_REGEX_INCLUDE: '(^|/)(ielts-vi/|\.github/workflows/ielts-vi\.yml$)'
+          MULTI_STATUS: false
+          VALIDATE_CSS: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_PYTHON_RUFF: true
+          VALIDATE_YAML: true
+
+  quality:
+    name: Độ bao phủ, PDF và Lighthouse
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: ielts-vi
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          sparse-checkout: ielts-vi
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22.22.3
+          cache: npm
+          cache-dependency-path: ielts-vi/package-lock.json
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Cài công cụ kiểm tra
+        run: |
+          npm ci --ignore-scripts
+          python -m pip install pypdf==6.9.2
+      - name: Kiểm tra logic, luồng học thật và độ bao phủ 100%
+        run: npm test
+      - name: Kiểm tra PDF và liên kết học thuật
+        run: python qa/check_pdf.py
+      - name: Yêu cầu 100 điểm ở mỗi hạng mục Lighthouse
+        run: npm run audit
+      - name: Lưu báo cáo Lighthouse
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: ielts-vi-lighthouse
+          path: ielts-vi/audit-results/
+          if-no-files-found: ignore
+      - name: Đóng gói bản phát hành tĩnh
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ielts-vi/dist
+
+  deploy:
+    name: Triển khai GitHub Pages
+    needs: [lint, quality]
+    if: >-
+      github.repository == 'johnlikescarrot/yysd-testcenter' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
+      (github.ref == 'refs/heads/main' ||
+       github.ref == 'refs/heads/arena/0aac58c1-yysd-testcenter')
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - id: pages
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

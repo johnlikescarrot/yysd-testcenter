@@ -8,7 +8,10 @@
   <title>IELTS Mỗi Ngày · YYSD</title>
   <link rel="icon" href="media/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js"></script>
+  <link rel="modulepreload" href="app.js">
+  <link rel="modulepreload" href="lessons.js">
+  <link rel="modulepreload" href="learning.js">
+  <link rel="modulepreload" href="path.js">
 </head>
 <body>
   <a class="skip" href="#noi-dung">Đến nội dung chính</a>
@@ -43,16 +46,16 @@
           <div class="hero-copy">
             <p class="eyebrow"><svg aria-hidden="true" width="17" height="17"><use href="media/icons.svg#spark"></use></svg> HỌC TỪNG BƯỚC</p>
             <h2>Mỗi ngày một bước <em>gần IELTS hơn.</em></h2>
-            <p>Rèn cả bốn kỹ năng với bài ngắn, giải thích tiếng Việt và lịch ôn dành riêng cho bạn.</p>
+            <p class="hero-lead">Rèn cả bốn kỹ năng với bài ngắn, giải thích tiếng Việt và lịch ôn dành riêng cho bạn.</p>
             <button id="start" class="button button-cream" type="button" disabled><span id="start-label">Bắt đầu học</span><svg aria-hidden="true" width="18" height="18"><use href="media/icons.svg#arrow"></use></svg></button>
           </div>
           <img class="hero-art" src="media/hero.svg" alt="" width="360" height="288" fetchpriority="high">
         </div>
         <div class="path-intro"><div><p class="eyebrow">CHƯƠNG TRÌNH</p><h2>Luyện đủ bốn kỹ năng</h2></div><span id="path-summary">3 chặng · 12 bài</span></div>
-        <div id="units"></div>
+        <div id="units"><!-- initial-path --></div>
       </section>
 
-      <section id="on-tap" data-view hidden>
+      <section id="on-tap" data-view>
         <header class="page-head"><div><p class="eyebrow">HỌC LẠI ĐÚNG LÚC</p><h1 tabindex="-1">Ôn tập</h1></div></header>
         <div class="feature-card">
           <span class="tile reading"><svg aria-hidden="true" width="24" height="24"><use href="media/icons.svg#repeat"></use></svg></span>
@@ -69,7 +72,7 @@
         </section>
       </section>
 
-      <section id="tien-do" data-view hidden>
+      <section id="tien-do" data-view>
         <header class="page-head"><div><p class="eyebrow">THÓI QUEN HỌC TẬP</p><h1 tabindex="-1">Tiến độ</h1></div></header>
         <section class="paper history">
           <div class="card-title"><div><p class="eyebrow">NHẬT KÝ HỌC</p><h2>7 ngày gần nhất</h2></div><svg aria-hidden="true" width="24" height="24"><use href="media/icons.svg#chart"></use></svg></div>
@@ -88,8 +91,8 @@
     <aside class="rail" aria-label="Tổng quan học tập">
       <header class="rail-head"><div><p class="eyebrow">NHỊP ĐỘ CỦA BẠN</p><h2>Hôm nay</h2></div><time id="today" class="date"></time></header>
       <div class="metrics">
-        <div class="paper metric"><span class="tile orange"><svg aria-hidden="true" width="20" height="20"><use href="media/icons.svg#flame"></use></svg></span><strong id="streak">0 ngày</strong><span>Chuỗi học</span></div>
-        <div class="paper metric"><span class="tile gold"><svg aria-hidden="true" width="20" height="20"><use href="media/icons.svg#bolt"></use></svg></span><strong id="xp">0 XP</strong><span>Tổng điểm</span></div>
+        <div class="paper metric"><span class="tile orange"><svg aria-hidden="true" width="20" height="20"><use href="media/icons.svg#flame"></use></svg></span><strong id="streak">0 ngày</strong><span class="metric-label">Chuỗi học</span></div>
+        <div class="paper metric"><span class="tile gold"><svg aria-hidden="true" width="20" height="20"><use href="media/icons.svg#bolt"></use></svg></span><strong id="xp">0 XP</strong><span class="metric-label">Tổng điểm</span></div>
       </div>
       <section class="paper rail-card">
         <div class="card-title"><h3 id="goal-heading">Mục tiêu hôm nay</h3><svg aria-hidden="true" width="20" height="20"><use href="media/icons.svg#target"></use></svg></div>
@@ -124,5 +127,6 @@
       <div class="actions"><button class="button button-outline" type="submit" value="cancel" autofocus>Giữ tiến độ</button><button id="confirm-delete" class="button button-primary" type="submit" value="delete">Xóa tiến độ</button></div>
     </form>
   </dialog>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

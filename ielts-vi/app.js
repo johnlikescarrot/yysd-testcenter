@@ -1,12 +1,12 @@
 import { lessons, objective, skills, units } from './lessons.js';
 import {
-  checkAnswer, dueItems, finish, lessonItems, lessonState, load, localDay,
+  checkAnswer, dueItems, finish, lessonItems, load, localDay,
   newProgress, nextLesson, reviewLimit, save, stats, utcDay, wordCount,
 } from './learning.js';
+import { icon, pathMarkup } from './path.js';
 
 const byId = id => document.getElementById(id);
 const text = (id, value) => { byId(id).textContent = value; };
-const icon = (name, size = 20) => `<svg aria-hidden="true" width="${size}" height="${size}"><use href="media/icons.svg#${name}"></use></svg>`;
 const day = () => localDay(new Date());
 const weekday = new Intl.DateTimeFormat('vi-VN', { weekday: 'short', timeZone: 'UTC' });
 const dateLabel = new Intl.DateTimeFormat('vi-VN', { day: 'numeric', month: 'long', timeZone: 'UTC' });
@@ -20,30 +20,11 @@ const dialog = byId('session');
 const exercise = byId('exercise');
 const views = [...document.querySelectorAll('[data-view]')];
 const nav = [...document.querySelectorAll('[data-nav]')];
-const statusLabel = { ready: 'Bắt đầu', done: 'Học lại', locked: 'Chưa mở' };
-const statusIcon = { ready: 'arrow', done: 'check', locked: 'lock' };
-
 function drawPath() {
   const next = nextLesson(progress);
   text('start-label', next === lessons[0] ? 'Bắt đầu học' : next ? 'Tiếp tục học' : 'Xem lịch ôn');
   byId('start').disabled = false;
-  byId('units').innerHTML = units.map((unit, index) => `
-    <section class="unit" aria-labelledby="${unit.id}-title">
-      <header class="unit-head">
-        <span class="unit-number">0${index + 1}</span>
-        <div><p class="eyebrow">CHẶNG ${index + 1}</p><h3 id="${unit.id}-title">${unit.title}</h3><p>${unit.description}</p></div>
-      </header>
-      <ol class="unit-lessons">
-        ${unit.lessons.map(lesson => {
-          const state = lessonState(lesson, progress);
-          return `<li><button class="lesson" type="button" data-lesson="${lesson.id}" data-state="${state}" ${state === 'locked' ? 'disabled' : ''}>
-            <span class="tile ${lesson.skill}">${icon(lesson.skill, 22)}</span>
-            <span class="lesson-copy"><span class="lesson-meta">${skills[lesson.skill].label} · ${lesson.minutes} phút</span><strong>${lesson.title}</strong></span>
-            <span class="lesson-state"><span>${statusLabel[state]}</span>${icon(statusIcon[state], 17)}</span>
-          </button></li>`;
-        }).join('')}
-      </ol>
-    </section>`).join('');
+  byId('units').innerHTML = pathMarkup(progress);
 }
 
 function drawReview(today) {
@@ -98,7 +79,7 @@ function persist() {
 
 function route(moveFocus) {
   const hash = location.hash.slice(1);
-  if (hash === 'noi-dung') return;
+  if (hash === 'noi-dung' && moveFocus) return;
   const view = views.find(node => node.id === hash) ?? views[0];
   for (const node of views) node.hidden = node !== view;
   for (const link of nav) {
@@ -262,3 +243,4 @@ window.addEventListener('hashchange', () => route(true));
 byId('storage-notice').hidden = loaded.available;
 route(false);
 draw();
+document.body.dataset.enhanced = 'true';
