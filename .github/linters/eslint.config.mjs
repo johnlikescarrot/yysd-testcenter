@@ -1,6 +1,6 @@
 const names = [
   'window', 'document', 'localStorage', 'SpeechSynthesisUtterance', 'URLSearchParams',
-  'URL', 'Event', 'console', 'process', 'fetch', 'innerWidth', 'location', 'setTimeout', 'clearTimeout'
+  'URL', 'Event', 'console', 'process', 'fetch', 'innerWidth', 'innerHeight', 'getComputedStyle', 'location', 'setTimeout', 'clearTimeout'
 ];
 
 export default [{

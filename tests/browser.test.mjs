@@ -215,6 +215,8 @@ try {
       await page.setViewportSize({ width, height: 900 });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `sample overflow at ${width}px`);
     }
+    await page.setViewportSize({ width: 390, height: 844 });
+    assert.equal(await page.locator('.bar').evaluate((element) => getComputedStyle(element).position), 'static');
     await page.locator('input[name="q1"][value="TRUE"]').check();
     await page.locator('input[name="q2"][value="TRUE"]').check();
     await page.locator('input[name="q3"][value="NOT GIVEN"]').check();
@@ -225,6 +227,10 @@ try {
     await page.locator('#submit').click();
     assert.match(await page.locator('#result').innerText(), /6 \/ 8/);
     assert.match(await page.locator('#result').innerText(), /Không quy đổi sang band/);
+    assert.equal(await page.locator('#result').evaluate((element) => {
+      const bounds = element.getBoundingClientRect();
+      return bounds.top >= 0 && bounds.bottom <= innerHeight;
+    }), true);
     assert.equal(await page.locator('.answer-status').count(), 8);
     assert.equal(await page.locator('.right').count(), 6);
     assert.equal(await page.locator('.wrong').count(), 2);

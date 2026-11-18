@@ -33,7 +33,7 @@
   h1, .questions-title { font-size:20px; color:var(--navy); margin:0 0 4px; }
   .sub { color:var(--muted); font-size:13px; margin-bottom:18px; font-family:sans-serif; }
   .passage h2 { font-size:17px; color:var(--navy); }
-  .passage p { font-size:15px; text-align:justify; }
+  .passage p { font-size:15px; }
   .q { margin:0 0 20px; padding-bottom:18px; border-bottom:1px dashed var(--line); }
   .q:last-child { border-bottom:0; }
   .q .num { font-weight:700; color:var(--red); }
@@ -45,12 +45,12 @@
   .blank { padding:6px 10px; border:1px solid var(--line); border-radius:7px; font-size:14px; width:170px; font-family:sans-serif; }
   .instr { font-family:sans-serif; font-size:13px; background:#f6f8fb; border:1px solid var(--line);
            border-radius:8px; padding:10px 13px; margin-bottom:16px; color:#475467; }
-  .bar { position:sticky; bottom:0; grid-column:1/-1; background:var(--bg); border:1px solid var(--line);
+  .bar { grid-column:1/-1; background:var(--bg); border:1px solid var(--line);
          border-radius:10px; padding:16px 22px; display:flex; flex-wrap:wrap; align-items:center; gap:16px; font-family:sans-serif; }
   .btn { background:var(--red); color:#fff; border:0; border-radius:9px; padding:12px 26px; font-size:15px;
          font-weight:700; cursor:pointer; }
   .btn.ghost { background:#fff; color:var(--ink); border:1px solid var(--line); }
-  #result { display:none; margin-left:auto; font-weight:700; font-size:16px; color:var(--navy); }
+  #result { display:none; margin-left:auto; scroll-margin-block:16px; font-weight:700; font-size:16px; color:var(--navy); }
   .is-correct-answer { outline:2px solid #1c744c; }
   .is-incorrect-answer { outline:2px solid var(--red); }
   .answer-status { display:block; margin-top:8px; font-size:13px; font-weight:700; }
@@ -223,7 +223,8 @@ document.getElementById("submit").addEventListener("click", function(){
       window.location.origin === "null" ? "*" : window.location.origin);
   } catch (e) {}
 
-  window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  // Keep the score visible without covering the passage or jumping away from it.
+  res.scrollIntoView({ block: "nearest" });
 });
 
 document.getElementById("retry").addEventListener("click", function(){
