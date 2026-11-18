@@ -34,10 +34,9 @@ jobs:
           MULTI_STATUS: true
           LINTER_RULES_PATH: .
           # yamllint disable-line rule:line-length
-          FILTER_REGEX_INCLUDE: "^(src/.*\\.js|tests/.*\\.js|assets/css/duo-ielts\\.css|assets/js/(duo-app|tai-lieu|duo-hud)\\.js|scripts/(check_vietnamese|build_pages|serve_static)\\.mjs|scripts/build_scholar_pdfs\\.py|(index|lo-trinh|tai-lieu|vocab)\\.html|(README|AGENTS|MEMORIES|YYSD-DESIGN-RULES)\\.md|\\.github/workflows/(super-linter|quality-gate|deploy-pages)\\.yml)$"
+          FILTER_REGEX_INCLUDE: "^/github/workspace/(src/.*\\.js|tests/.*\\.js|assets/css/duo-ielts\\.css|assets/js/(duo-app|tai-lieu|duo-hud)\\.js|scripts/(check_vietnamese|build_pages|serve_static)\\.mjs|scripts/build_scholar_pdfs\\.py|(index|lo-trinh|tai-lieu|vocab)\\.html|(README|AGENTS|MEMORIES|YYSD-DESIGN-RULES)\\.md|\\.github/workflows/(super-linter|quality-gate|deploy-pages)\\.yml)$"
           JAVASCRIPT_ES_CONFIG_FILE: eslint.config.mjs
           CSS_FILE_NAME: .stylelintrc.json
-          HTML_CONFIG_FILE: .htmlhintrc
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           YAML_CONFIG_FILE: .yamllint.yml
           VALIDATE_JAVASCRIPT_ES: true
