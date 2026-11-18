@@ -92,7 +92,7 @@
   function orgName() {
     var A = window.YYSD_AUTH;
     var org = A && A.getOrg && A.getOrg();
-    return (org && org.name) || "Trung tâm học tập";
+    return A && A.brandName ? A.brandName(org) : ((org && org.name) || "Trung tâm học tập");
   }
 
   function renderUser() {

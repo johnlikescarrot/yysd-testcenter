@@ -81,13 +81,17 @@ window.YYSD_AUTH = (function () {
   }
 
   function logoSrc(url) {
-    if (!url) return "assets/img/logo.svg?v=20260702-logo";
+    if (!url) return "assets/img/logo.svg?v=f2417f3c62";
     if (/^https?:\/\//i.test(url) || url.indexOf("data:") === 0) return url;
     return API_BASE + url;
   }
 
   function brandName(org) {
-    return (org && org.name) || "Trung tâm Luyện thi Quốc tế YYSD";
+    var name = org && org.name;
+    if (!name || (org.slug === "yysd" && /^(优益思达|优益思达国际课程中心|优益思达学习中心)$/.test(name))) {
+      return "Trung tâm Luyện thi Quốc tế YYSD";
+    }
+    return name; // Respect the institution's own registered name.
   }
 
   /** 客户站白标：去掉可见的优益思达/YYSD（备案号除外） */
@@ -972,7 +976,7 @@ window.YYSD_AUTH = (function () {
       if (!localStorage.getItem(TEACHER_TOKEN_KEY)) return;
       if (document.querySelector("script[data-teacher-mode]")) return;
       var s = document.createElement("script");
-      s.src = "assets/js/teacher-mode.js?v=20261013dl1";
+      s.src = "assets/js/teacher-mode.js?v=539ca51d45";
       s.setAttribute("data-teacher-mode", "1");
       document.body.appendChild(s);
     } catch (e) {}

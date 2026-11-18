@@ -2,6 +2,8 @@
 
 **[Sải bước · Luyện IELTS Academic bằng tiếng Việt](ielts-vi/)** có 16 bài luyện, lịch ôn theo câu từng làm và bốn sổ tay có nguồn học thuật. Không cần tài khoản. Xem [cách chạy thử, đo chất lượng và triển khai GitHub Pages](ielts-vi/README.md).
 
+Xem [phạm vi Việt hóa và kết quả kiểm định](docs/kiem-dinh-ielts.md) để phân biệt bản học tĩnh với cổng có tài khoản.
+
 Cổng YYSD tại [youyisida.com](https://youyisida.com) phục vụ IELTS và các chương trình quốc tế như A-Level. Cổng chính kết hợp giao diện tĩnh với Node API cho đăng nhập bằng số điện thoại, lưu kết quả, giao bài và các tính năng AI. Bản Sải bước không phụ thuộc API này.
 
 ## Dành cho học viên
