@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài học · IELTS Việt</title>
+  <meta name="description" content="Học từng câu một: chọn đáp án, điền từ, sắp xếp câu và nghe. Có tim, chuỗi đúng, XP và ôn tập ngắt quãng.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="lesson">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <div class="lesson">
+      <div class="lesson__bar">
+        <a class="btn btn--ghost" href="index.html" style="min-height:40px;padding:0 14px">Thoát</a>
+        <div class="lesson__progress" role="progressbar" aria-label="Tiến độ bài học" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="lesson-progress-bar">
+          <span id="lesson-progress-fill"></span>
+        </div>
+        <p class="lesson__step" id="lesson-step">Câu 1</p>
+      </div>
+
+      <h1 id="lesson-title" style="font-size:clamp(22px,3vw,28px);margin:0 0 14px">Bài học</h1>
+
+      <section class="lesson__card" id="lesson-card" aria-labelledby="lesson-prompt">
+        <h2 class="lesson__prompt" id="lesson-prompt">Đang tải câu hỏi…</h2>
+        <div id="lesson-media"></div>
+        <div class="options" id="lesson-options" role="group" aria-label="Các lựa chọn"></div>
+        <div id="lesson-fill-wrap" hidden style="margin-top:8px">
+          <label class="field" for="lesson-fill">Câu trả lời của bạn
+            <input class="fill-input" id="lesson-fill" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Nhập câu trả lời…">
+          </label>
+        </div>
+        <div id="lesson-order-wrap" hidden style="margin-top:8px">
+          <p class="lesson__hint">Nhấn từ để thêm; nhấn lại từ đã chọn để bỏ.</p>
+          <div class="order-answer" id="lesson-answer" aria-label="Câu trả lời đã chọn"></div>
+          <div class="bank" id="lesson-bank"></div>
+        </div>
+        <div class="feedback" id="lesson-feedback" role="status" aria-live="polite"></div>
+        <div class="lesson__actions">
+          <button class="btn" id="lesson-check" type="button">Kiểm tra</button>
+          <button class="btn btn--gold" id="lesson-next" type="button" hidden>Tiếp tục</button>
+        </div>
+      </section>
+
+      <section class="lesson__card" id="lesson-summary" hidden aria-live="polite"></section>
+      <p class="lesson__hint" style="margin-top:16px">Mẹo: trả lời sai sẽ mất 1 tim. Tim tự hồi 1 điểm mỗi 25 phút.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="index.html">Học</a> · <a href="luyen-tap.html">Luyện tập</a> · <a href="ho-so.html">Hồ sơ</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

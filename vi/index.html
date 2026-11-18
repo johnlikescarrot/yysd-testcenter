@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Học mỗi ngày · IELTS Việt</title>
+  <meta name="description" content="Lộ trình IELTS tiếng Việt với chuỗi ngày, XP, ôn tập ngắt quãng và thư viện PDF có trích dẫn Google Scholar. Học offline, miễn phí.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="home">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <p class="eyebrow">Lộ trình cá nhân hoá · miễn phí</p>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title" data-bind="greeting">Chào bạn, hôm nay học gì?</h1>
+        <p>Bài học ngắn 5–10 phút, ôn tập ngắt quãng và thư viện PDF học thuật. Tiến độ lưu ngay trên thiết bị của bạn.</p>
+        <div class="hero__actions">
+          <a class="btn" id="continue-link" href="hoc.html?bai=u1l1">Bắt đầu học</a>
+          <a class="btn btn--ghost" href="hoc.html?bai=practice">Ôn tập hôm nay</a>
+        </div>
+        <p class="lesson__hint" id="continue-title" style="margin-top:10px"></p>
+        <div class="goal">
+          <div class="goal__row">
+            <span>Mục tiêu hôm nay · <span id="goal-done">0</span>/<span id="goal-goal">50</span> XP</span>
+            <span id="goal-percent">0%</span>
+          </div>
+          <div class="progress" role="progressbar" aria-label="Mục tiêu XP hôm nay" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="goal-progress">
+            <span class="progress__fill" id="goal-fill"></span>
+          </div>
+          <p class="lesson__hint" id="goal-note" style="margin-top:6px">0/50 XP</p>
+        </div>
+      </div>
+      <div class="streak-ring" id="streak-ring" role="img" aria-label="Chuỗi ngày học trong tuần">
+        <div class="streak-ring__inner">
+          <strong id="streak-value">0</strong>
+          <span>ngày liên tiếp</span>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="sr-only">Tổng quan tiến độ</h2>
+    <section class="stats" aria-label="Chỉ số của bạn">
+      <div class="stat-card"><span>Cấp độ</span><strong id="stat-level">1</strong><small id="stat-level-title">Người mới nhập môn</small></div>
+      <div class="stat-card"><span>Tổng XP</span><strong id="stat-xp">0</strong><small>XP tích luỹ</small></div>
+      <div class="stat-card"><span>Chuỗi ngày</span><strong id="stat-streak">0</strong><small>ngày liên tiếp</small></div>
+      <div class="stat-card"><span>Cần ôn</span><strong id="stat-due">0</strong><small>thẻ đến hạn</small></div>
+      <div class="stat-card"><span>Giải đấu</span><strong id="stat-league">Đồng</strong><small>theo XP tuần</small></div>
+    </section>
+
+    <div class="grid grid--2">
+      <section class="card" aria-labelledby="path-title">
+        <h2 id="path-title">Lộ trình học</h2>
+        <p id="path-progress">0/0 bài · 0%</p>
+        <div class="progress" role="progressbar" aria-label="Tiến độ lộ trình" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="path-progress-bar">
+          <span class="progress__fill" id="path-fill"></span>
+        </div>
+        <div class="path" id="home-path" style="margin-top:16px"></div>
+      </section>
+
+      <aside aria-label="Nhiệm vụ và tài liệu">
+        <section class="card" aria-labelledby="quest-title" style="margin-bottom:16px">
+          <h2 id="quest-title">Nhiệm vụ hôm nay</h2>
+          <p>Hoàn thành để nhận thêm đá quý.</p>
+          <ul class="quests" id="home-quests"></ul>
+        </section>
+        <section class="card" aria-labelledby="badge-title" style="margin-bottom:16px">
+          <h2 id="badge-title">Huy hiệu</h2>
+          <ul class="badges" id="home-badges" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))"></ul>
+          <p style="margin-top:10px"><a href="ho-so.html">Xem tất cả huy hiệu</a></p>
+        </section>
+        <section aria-labelledby="lib-title">
+          <h2 id="lib-title">Tài liệu nên đọc</h2>
+          <div class="grid" id="home-library"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="thu-vien.html">Thư viện PDF</a> · <a href="ho-so.html">Hồ sơ học tập</a> · <a href="https://youyisida.com">Trang chủ YYSD</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

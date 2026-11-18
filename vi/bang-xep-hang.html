@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bảng xếp hạng tuần · IELTS Việt</title>
+  <meta name="description" content="Bảng xếp hạng tuần theo XP, giải đấu Đồng đến Kim cương, vùng thăng hạng và xuống hạng. Dữ liệu lưu trên thiết bị, chơi được offline.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="league">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <div class="page-head">
+      <p class="eyebrow">Giải đấu</p>
+      <h1>Bảng xếp hạng tuần</h1>
+      <p>Top 5 thăng hạng, hai vị trí cuối có nguy cơ xuống hạng. Học đều mỗi ngày là cách giữ vị trí.</p>
+    </div>
+
+    <section class="card" aria-labelledby="league-heading">
+      <div class="league-head">
+        <div>
+          <h2 id="league-heading" style="margin:0">Giải <span id="league-name">🥉 Đồng</span></h2>
+          <p class="lesson__hint" id="league-week" style="margin:4px 0 0">Tuần này</p>
+        </div>
+        <div class="card__meta">
+          <span class="tag" id="league-days">Còn 7 ngày</span>
+          <span class="tag">Hạng của bạn: <strong id="league-rank">—</strong></span>
+        </div>
+      </div>
+      <ol class="league-rows" id="league-rows"></ol>
+      <div class="legend" aria-label="Chú thích">
+        <span><i class="dot dot--promote" aria-hidden="true"></i> Vùng thăng hạng</span>
+        <span><i class="dot dot--demote" aria-hidden="true"></i> Nguy cơ xuống hạng</span>
+        <span>Bảng mô phỏng trên thiết bị — không gửi dữ liệu đi đâu.</span>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px" aria-labelledby="league-tip">
+      <h2 id="league-tip">Cách lên hạng nhanh</h2>
+      <p>XP mỗi câu tối đa 40 khi bạn giữ chuỗi đúng. Học 15 phút mỗi ngày hiệu quả hơn 2 giờ vào cuối tuần vì XP được cộng theo ngày và trí nhớ được củng cố cách quãng.</p>
+      <p><a href="hoc.html?bai=practice">Ôn tập ngay</a> để cộng XP cho tuần này.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="index.html">Học</a> · <a href="luyen-tap.html">Luyện tập</a> · <a href="ho-so.html">Hồ sơ</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "yysd-ielts-vi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YYSD · IELTS Việt — nền tảng luyện thi IELTS tiếng Việt, lấy cảm hứng từ Duolingo",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "pdf": "node vi/scripts/build-pdfs.mjs",
+    "audit": "node vi/scripts/audit.mjs",
+    "serve": "node vi/scripts/serve.mjs",
+    "lint": "eslint vi/assets/js tests",
+    "lint:css": "stylelint \"vi/assets/css/*.css\"",
+    "lint:html": "htmlhint \"vi/*.html\"",
+    "lint:md": "markdownlint-cli2 \"README.vi.md\" \"docs/vi/**/*.md\"",
+    "check:pdf": "node vi/scripts/check-pdfs.mjs",
+    "ci": "npm run lint && npm run lint:css && npm run lint:html && npm run lint:md && npm run coverage && npm run audit && npm run check:pdf"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.39.1",
+    "htmlhint": "^1.9.2",
+    "jsdom": "^26.1.0",
+    "markdownlint-cli2": "^0.24.1",
+    "pdfkit": "^0.17.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "vitest": "^3.2.4"
+  }
+}

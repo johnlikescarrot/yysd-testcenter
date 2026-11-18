@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thư viện PDF học thuật · IELTS Việt</title>
+  <meta name="description" content="Sáu cẩm nang IELTS tiếng Việt: ôn tập ngắt quãng, hiệu ứng kiểm tra, chiến lược nghe, Writing Task 2, Speaking và động lực học. Có 54 trích dẫn Google Scholar.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="library">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <div class="page-head">
+      <p class="eyebrow">Học liệu</p>
+      <h1>Thư viện tài liệu PDF</h1>
+      <p data-bind="library-stats">Đang tải thống kê…</p>
+    </div>
+
+    <div class="filters" role="search" aria-label="Tìm và lọc tài liệu">
+      <label class="field" for="library-search">Tìm kiếm
+        <input id="library-search" type="search" placeholder="Tên, tác giả hoặc chủ đề…" autocomplete="off">
+      </label>
+      <label class="field" for="library-skill">Kỹ năng
+        <select id="library-skill">
+          <option value="all">Tất cả kỹ năng</option>
+        </select>
+      </label>
+      <label class="field" for="library-level">Trình độ
+        <select id="library-level">
+          <option value="all">Mọi trình độ</option>
+        </select>
+      </label>
+      <label class="field" for="library-sort">Sắp xếp
+        <select id="library-sort">
+          <option value="featured">Nổi bật</option>
+          <option value="citations">Nhiều trích dẫn</option>
+          <option value="newest">Mới nhất</option>
+        </select>
+      </label>
+    </div>
+
+    <section aria-label="Danh sách tài liệu">
+      <div class="doc-list" id="library-list"></div>
+      <p class="empty" id="library-empty" hidden>Không tìm thấy tài liệu phù hợp.</p>
+    </section>
+
+    <section class="card" style="margin-top:20px" aria-labelledby="cite-title">
+      <h2 id="cite-title">Vì sao có trích dẫn Google Scholar?</h2>
+      <p>Mỗi cẩm nang đều dẫn nguồn nghiên cứu gốc để bạn tự kiểm chứng và dùng khi viết bài luận. Liên kết mở tìm kiếm trên scholar.google.com, nơi bạn có thể xem bản PDF, số trích dẫn và các bài liên quan.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="index.html">Học</a> · <a href="luyen-tap.html">Luyện tập</a> · <a href="ho-so.html">Hồ sơ</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

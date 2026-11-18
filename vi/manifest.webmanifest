@@ -1,0 +1,33 @@
+{
+  "name": "IELTS Việt · YYSD Learning",
+  "short_name": "IELTS Việt",
+  "description": "Lộ trình IELTS tiếng Việt: bài học ngắn, ôn tập ngắt quãng, thư viện PDF có trích dẫn Google Scholar.",
+  "lang": "vi",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f3ec",
+  "theme_color": "#0b1c33",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Học tiếp", "url": "./index.html", "description": "Mở lộ trình học" },
+    { "name": "Thư viện PDF", "url": "./thu-vien.html", "description": "Đọc cẩm nang học thuật" },
+    { "name": "Bảng xếp hạng", "url": "./bang-xep-hang.html", "description": "Xem giải đấu tuần" }
+  ]
+}

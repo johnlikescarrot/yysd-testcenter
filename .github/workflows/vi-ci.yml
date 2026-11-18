@@ -1,0 +1,101 @@
+name: IELTS Việt · kiểm thử, độ bao phủ, Lighthouse
+
+on:
+  push:
+    paths:
+      - "vi/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vitest.config.mjs"
+      - "eslint.config.js"
+      - ".stylelintrc.json"
+      - ".htmlhintrc"
+      - "lighthouserc.json"
+      - ".github/workflows/vi-ci.yml"
+  pull_request:
+    paths:
+      - "vi/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vitest.config.mjs"
+      - "eslint.config.js"
+      - ".stylelintrc.json"
+      - ".htmlhintrc"
+      - "lighthouserc.json"
+      - ".github/workflows/vi-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vi-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test + coverage 100%
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Cài phụ thuộc
+        run: npm ci
+
+      - name: ESLint
+        run: npx eslint vi/assets/js tests
+
+      - name: Stylelint
+        run: npx stylelint "vi/assets/css/*.css"
+
+      - name: HTMLHint
+        run: npx htmlhint "vi/*.html"
+
+      - name: Markdownlint
+        run: npx markdownlint-cli2 "README.vi.md" "docs/vi/**/*.md"
+
+      - name: Kiểm thử với ngưỡng bao phủ 100%
+        run: npm run coverage
+
+      - name: Kiểm tra Lighthouse tĩnh & nội dung
+        run: node vi/scripts/audit.mjs
+
+      - name: Kiểm tra PDF và trích dẫn
+        run: node vi/scripts/check-pdfs.mjs
+
+      - name: Lưu báo cáo độ bao phủ
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 14
+
+  lighthouse:
+    name: Lighthouse 100/100
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Chạy Lighthouse CI
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.json
+
+      - name: Lưu báo cáo Lighthouse
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 14

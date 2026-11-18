@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hồ sơ học tập · IELTS Việt</title>
+  <meta name="description" content="Xem tổng XP, chuỗi ngày, huy hiệu, tỉ lệ ghi nhớ và danh sách thẻ cần ôn. Mọi dữ liệu lưu trên thiết bị của bạn.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="profile">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <div class="page-head">
+      <p class="eyebrow">Hồ sơ</p>
+      <h1>Hồ sơ học tập</h1>
+      <p>Toàn bộ tiến độ được lưu trên thiết bị của bạn. Không có tài khoản, không có dữ liệu gửi lên máy chủ.</p>
+    </div>
+
+    <section class="stats" aria-label="Thống kê học tập">
+      <div class="stat-card"><span>Cấp độ</span><strong id="profile-level">1</strong><small>theo tổng XP</small></div>
+      <div class="stat-card"><span>Tổng XP</span><strong id="profile-xp">0</strong><small>XP tích luỹ</small></div>
+      <div class="stat-card"><span>Chuỗi hiện tại</span><strong id="profile-streak">0</strong><small>ngày</small></div>
+      <div class="stat-card"><span>Kỷ lục chuỗi</span><strong id="profile-best">0</strong><small>ngày</small></div>
+      <div class="stat-card"><span>Tỉ lệ ghi nhớ</span><strong id="profile-retention">0%</strong><small>thẻ đã học</small></div>
+      <div class="stat-card"><span>Lượt ôn</span><strong id="profile-reviews">0</strong><small>lần chấm thẻ</small></div>
+    </section>
+
+    <div class="grid grid--2">
+      <section class="card" aria-labelledby="badges-title">
+        <h2 id="badges-title">Huy hiệu</h2>
+        <p>Mở khoá bằng hành vi học thật, không phải bằng điểm số.</p>
+        <ul class="badges" id="profile-badges"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="due-title">
+        <h2 id="due-title">Thẻ đến hạn ôn</h2>
+        <p>Ôn đúng hạn giúp bạn nhớ lâu hơn với ít thời gian hơn.</p>
+        <ul class="due-list" id="profile-due"></ul>
+        <p class="lesson__hint" id="profile-soon"></p>
+        <p><a class="btn" href="hoc.html?bai=practice">Ôn ngay</a></p>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px" aria-labelledby="danger-title">
+      <h2 id="danger-title">Dữ liệu của bạn</h2>
+      <p>Đặt lại sẽ xoá XP, chuỗi ngày, huy hiệu và lịch ôn trên thiết bị này. Không thể hoàn tác.</p>
+      <button class="btn btn--ghost" id="reset-progress" type="button">Đặt lại tiến độ</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="index.html">Học</a> · <a href="luyen-tap.html">Luyện tập</a> · <a href="thu-vien.html">Thư viện PDF</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

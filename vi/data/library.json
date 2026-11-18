@@ -1,0 +1,532 @@
+{
+  "version": 1,
+  "updated": "2026-11-18",
+  "docs": [
+    {
+      "id": "on-tap-ngat-quang",
+      "order": 1,
+      "title": "Ôn tập ngắt quãng: khoa học của việc nhớ lâu",
+      "subtitle": "Vì sao 20 phút mỗi ngày hiệu quả hơn 3 giờ trước kỳ thi",
+      "summary": "Cẩm nang 14 trang tổng hợp bằng chứng thực nghiệm về distributed practice, đường cong lãng quên và cách lên lịch ôn cho từ vựng IELTS. Kèm bảng lịch ôn 30 ngày và 9 trích dẫn học thuật có liên kết Google Scholar.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "B1–C1",
+      "skills": [
+        "vocab",
+        "reading"
+      ],
+      "tags": [
+        "trí nhớ",
+        "ôn tập",
+        "spaced repetition",
+        "từ vựng"
+      ],
+      "file": "assets/pdf/on-tap-ngat-quang.pdf",
+      "pages": 16,
+      "featured": true,
+      "citations": [
+        {
+          "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+          "authors": "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D.",
+          "year": 2006,
+          "venue": "Psychological Bulletin, 132(3), 354–380",
+          "query": "Cepeda Pashler 2006 distributed practice verbal recall tasks meta-analysis"
+        },
+        {
+          "title": "Optimising learning using flashcards: Spacing is more effective than cramming",
+          "authors": "Kornell, N.",
+          "year": 2009,
+          "venue": "Applied Cognitive Psychology, 23(9), 1297–1317",
+          "query": "Kornell 2009 optimising learning flashcards spacing cramming"
+        },
+        {
+          "title": "Spaced repetition promotes efficient and effective learning",
+          "authors": "Kang, S. H. K.",
+          "year": 2016,
+          "venue": "Policy Insights from the Behavioral and Brain Sciences, 3(1), 12–19",
+          "query": "Kang 2016 spaced repetition efficient effective learning"
+        },
+        {
+          "title": "Improving students' learning with effective learning techniques",
+          "authors": "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T.",
+          "year": 2013,
+          "venue": "Psychological Science in the Public Interest, 14(1), 4–58",
+          "query": "Dunlosky 2013 improving students learning effective techniques"
+        },
+        {
+          "title": "The optimal timing of study in distributed practice",
+          "authors": "Cepeda, N. J., Vul, E., Rohrer, D., Wixted, J. T., & Pashler, H.",
+          "year": 2008,
+          "venue": "Psychological Science, 19(11), 1095–1102",
+          "query": "Cepeda 2008 optimal timing study distributed practice"
+        },
+        {
+          "title": "Ueber das Gedaechtnis: Untersuchungen zur experimentellen Psychologie",
+          "authors": "Ebbinghaus, H.",
+          "year": 1885,
+          "venue": "Duncker & Humblot, Leipzig",
+          "query": "Ebbinghaus 1885 memory experimental psychology forgetting curve"
+        },
+        {
+          "title": "A contextual account of the spacing effect",
+          "authors": "Verkoeijen, P. P. J. L., & Bouwmeester, S.",
+          "year": 2014,
+          "venue": "Memory & Cognition, 42, 1233–1244",
+          "query": "Verkoeijen Bouwmeester contextual account spacing effect"
+        },
+        {
+          "title": "Spacing enhances the learning of natural concepts: an investigation of the spacing effect",
+          "authors": "Vlach, H. A., & Sandhofer, C. M.",
+          "year": 2012,
+          "venue": "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+          "query": "Vlach Sandhofer spacing natural concepts"
+        },
+        {
+          "title": "Test-enhanced learning: Taking memory tests improves long-term retention",
+          "authors": "Roediger, H. L., & Karpicke, J. D.",
+          "year": 2006,
+          "venue": "Psychological Science, 17(3), 249–255",
+          "query": "Roediger Karpicke 2006 test-enhanced learning"
+        }
+      ]
+    },
+    {
+      "id": "hieu-ung-kiem-tra",
+      "order": 2,
+      "title": "Hiệu ứng kiểm tra: học bằng cách tự nhớ",
+      "subtitle": "Retrieval practice cho Reading và từ vựng",
+      "summary": "Hướng dẫn biến việc làm bài thành công cụ học: tự kiểm tra, đặt câu hỏi, ghi nhớ chủ động. Tổng hợp meta-analysis về practice testing và ứng dụng vào dạng bài True/False/Not Given.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "B1–C1",
+      "skills": [
+        "reading",
+        "vocab"
+      ],
+      "tags": [
+        "retrieval practice",
+        "testing effect",
+        "đọc hiểu"
+      ],
+      "file": "assets/pdf/hieu-ung-kiem-tra.pdf",
+      "pages": 13,
+      "featured": true,
+      "citations": [
+        {
+          "title": "Retrieval practice produces more learning than elaborative studying with concept mapping",
+          "authors": "Karpicke, J. D., & Blunt, J. R.",
+          "year": 2011,
+          "venue": "Science, 331(6018), 772–775",
+          "query": "Karpicke Blunt 2011 retrieval practice concept mapping Science"
+        },
+        {
+          "title": "Rethinking the use of tests: A meta-analysis of practice testing",
+          "authors": "Adesope, O. O., Trevisan, D. A., & Sundararajan, N.",
+          "year": 2017,
+          "venue": "Review of Educational Research, 87(3), 659–701",
+          "query": "Adesope Trevisan Sundararajan 2017 practice testing meta-analysis"
+        },
+        {
+          "title": "The power of testing memory: Basic research and implications for educational practice",
+          "authors": "Roediger, H. L., & Butler, A. C.",
+          "year": 2011,
+          "venue": "Perspectives on Psychological Science, 6(1), 63–76",
+          "query": "Roediger Butler 2011 power of testing memory"
+        },
+        {
+          "title": "The testing effect in the classroom: A meta-analysis",
+          "authors": "Bangert-Drowns, R. L., Kulik, J. A., & Kulik, C. L. C.",
+          "year": 1991,
+          "venue": "Review of Educational Research, 61(2), 213–238",
+          "query": "Bangert-Drowns Kulik 1991 testing effect classroom meta-analysis"
+        },
+        {
+          "title": "Retrieval practice and the maintenance of knowledge",
+          "authors": "Karpicke, J. D., & Roediger, H. L.",
+          "year": 2007,
+          "venue": "Journal of Memory and Language, 56(3), 382–397",
+          "query": "Karpicke Roediger 2007 retrieval practice maintenance knowledge"
+        },
+        {
+          "title": "The role of retrieval practice in second language vocabulary learning",
+          "authors": "Karpicke, J. D., & Bauernschmidt, A.",
+          "year": 2011,
+          "venue": "Journal of Memory and Language, 65(3), 355–373",
+          "query": "Karpicke Bauernschmidt retrieval practice second language vocabulary"
+        },
+        {
+          "title": "Test format and corrective feedback modulate the effect of testing on memory retention",
+          "authors": "Kang, S. H. K., McDermott, K. B., & Roediger, H. L.",
+          "year": 2007,
+          "venue": "European Journal of Cognitive Psychology, 19(4–5), 528–558",
+          "query": "Kang McDermott Roediger 2007 test format corrective feedback"
+        },
+        {
+          "title": "Using quizzes to enhance summative assessment in a university course",
+          "authors": "McDaniel, M. A., Wildman, K. M., & Anderson, J. L.",
+          "year": 2012,
+          "venue": "Journal of Educational Psychology, 104(4), 1067–1079",
+          "query": "McDaniel Wildman Anderson 2012 quizzes summative assessment"
+        },
+        {
+          "title": "Metacognition and the testing effect",
+          "authors": "Roediger, H. L., & Karpicke, J. D.",
+          "year": 2006,
+          "venue": "Psychological Science, 17(3), 249–255",
+          "query": "Roediger Karpicke metacognition testing effect"
+        }
+      ]
+    },
+    {
+      "id": "chien-luoc-nghe",
+      "order": 3,
+      "title": "Chiến lược nghe hiểu cho IELTS Listening",
+      "subtitle": "Từ dự đoán đến xử lý bẫy paraphrase",
+      "summary": "Quy trình nghe 4 bước (trước – trong – sau khi nghe), kỹ thuật bắt tín hiệu diễn ngôn và cách luyện nghe chủ động với bản ghi. Kèm 9 nghiên cứu về listening strategies.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "B1–C1",
+      "skills": [
+        "listening",
+        "speaking"
+      ],
+      "tags": [
+        "listening",
+        "nghe hiểu",
+        "chiến lược",
+        "paraphrase"
+      ],
+      "file": "assets/pdf/chien-luoc-nghe.pdf",
+      "pages": 13,
+      "featured": false,
+      "citations": [
+        {
+          "title": "Recent developments in second and foreign language listening comprehension research",
+          "authors": "Vandergrift, L.",
+          "year": 2007,
+          "venue": "Language Teaching, 40(3), 191–210",
+          "query": "Vandergrift 2007 listening comprehension research Language Teaching"
+        },
+        {
+          "title": "Listening in the language classroom",
+          "authors": "Field, J.",
+          "year": 2008,
+          "venue": "Cambridge University Press",
+          "query": "Field 2008 listening in the language classroom"
+        },
+        {
+          "title": "Research into practice: Listening strategies in an instructed classroom setting",
+          "authors": "Graham, S.",
+          "year": 2017,
+          "venue": "Language Teaching, 50(1), 107–119",
+          "query": "Graham 2017 listening strategies instructed classroom"
+        },
+        {
+          "title": "Metacognitive instruction for second language listening development",
+          "authors": "Goh, C. C. M.",
+          "year": 2008,
+          "venue": "RELC Journal, 39(2), 188–213",
+          "query": "Goh 2008 metacognitive instruction second language listening"
+        },
+        {
+          "title": "The role of working memory in second language listening",
+          "authors": "Brunfaut, T., & Revesz, A.",
+          "year": 2015,
+          "venue": "Language Learning, 65(S1), 95–128",
+          "query": "Brunfaut Revesz working memory second language listening"
+        },
+        {
+          "title": "Listening comprehension: An overview of the construct",
+          "authors": "Buck, G.",
+          "year": 2001,
+          "venue": "Assessing Listening, Cambridge University Press",
+          "query": "Buck 2001 assessing listening"
+        },
+        {
+          "title": "Second language listening: Theory and practice",
+          "authors": "Flowerdew, J., & Miller, L.",
+          "year": 2005,
+          "venue": "Cambridge University Press",
+          "query": "Flowerdew Miller 2005 second language listening theory practice"
+        },
+        {
+          "title": "Authentic materials in listening comprehension",
+          "authors": "Gilmore, A.",
+          "year": 2007,
+          "venue": "Language Teaching Research, 11(2), 131–151",
+          "query": "Gilmore 2007 authentic materials listening comprehension"
+        },
+        {
+          "title": "Top-down and bottom-up listening processes",
+          "authors": "Rost, M.",
+          "year": 2011,
+          "venue": "Teaching and Researching Listening, Routledge",
+          "query": "Rost 2011 teaching and researching listening"
+        }
+      ]
+    },
+    {
+      "id": "writing-task-2",
+      "order": 4,
+      "title": "Writing Task 2: xây lập luận thuyết phục",
+      "subtitle": "Từ phân tích đề đến bài mẫu Band 8.0",
+      "summary": "Bóc tách 4 tiêu chí chấm, khung 4 đoạn cho dạng Discuss both views, ngân hàng 40 cụm nối học thuật và checklist tự sửa lỗi. Có 9 trích dẫn về academic writing và genre analysis.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "B2–C1",
+      "skills": [
+        "writing",
+        "reading"
+      ],
+      "tags": [
+        "writing task 2",
+        "lập luận",
+        "academic writing"
+      ],
+      "file": "assets/pdf/writing-task-2.pdf",
+      "pages": 13,
+      "featured": true,
+      "citations": [
+        {
+          "title": "Genre-based pedagogies: A social response to process",
+          "authors": "Hyland, K.",
+          "year": 2003,
+          "venue": "Journal of Second Language Writing, 12(1), 17–29",
+          "query": "Hyland 2003 genre-based pedagogies social response process"
+        },
+        {
+          "title": "“Argument!” helping students understand what essay writing is about",
+          "authors": "Wingate, U.",
+          "year": 2012,
+          "venue": "Journal of English for Academic Purposes, 11(2), 145–154",
+          "query": "Wingate 2012 argument helping students essay writing"
+        },
+        {
+          "title": "Genre analysis: English in academic and research settings",
+          "authors": "Swales, J. M.",
+          "year": 1990,
+          "venue": "Cambridge University Press",
+          "query": "Swales 1990 genre analysis academic research settings"
+        },
+        {
+          "title": "Disciplinary discourses: Social interactions in academic writing",
+          "authors": "Hyland, K.",
+          "year": 2004,
+          "venue": "University of Michigan Press",
+          "query": "Hyland 2004 disciplinary discourses academic writing"
+        },
+        {
+          "title": "Second language writing",
+          "authors": "Hyland, K.",
+          "year": 2003,
+          "venue": "Cambridge University Press",
+          "query": "Hyland 2003 second language writing"
+        },
+        {
+          "title": "The argumentative essay in L2 writing: rhetorical structure",
+          "authors": "Liu, J., & Hansen, J. G.",
+          "year": 2002,
+          "venue": "Journal of Second Language Writing, 11(4), 293–318",
+          "query": "Liu Hansen argumentative essay L2 rhetorical structure"
+        },
+        {
+          "title": "Cohesion in English",
+          "authors": "Halliday, M. A. K., & Hasan, R.",
+          "year": 1976,
+          "venue": "Longman",
+          "query": "Halliday Hasan 1976 cohesion in English"
+        },
+        {
+          "title": "Assessing writing",
+          "authors": "Weigle, S. C.",
+          "year": 2002,
+          "venue": "Cambridge University Press",
+          "query": "Weigle 2002 assessing writing"
+        },
+        {
+          "title": "Feedback in second language writing",
+          "authors": "Hyland, K., & Hyland, F.",
+          "year": 2006,
+          "venue": "Cambridge University Press",
+          "query": "Hyland Hyland 2006 feedback second language writing"
+        }
+      ]
+    },
+    {
+      "id": "speaking-luu-loat",
+      "order": 5,
+      "title": "Speaking: lưu loát và tự nhiên",
+      "subtitle": "Luyện phản xạ, ngữ điệu và kiểm soát độ trôi chảy",
+      "summary": "Sổ tay 13 trang về fluency: tốc độ nói, khoảng dừng, sửa lỗi tự nhiên, ngữ điệu câu hỏi và chiến lược Part 3. Tổng hợp nghiên cứu về task-based performance và fluency.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "B2–C1",
+      "skills": [
+        "speaking",
+        "listening"
+      ],
+      "tags": [
+        "speaking",
+        "fluency",
+        "ngữ điệu",
+        "phản xạ"
+      ],
+      "file": "assets/pdf/speaking-luu-loat.pdf",
+      "pages": 13,
+      "featured": false,
+      "citations": [
+        {
+          "title": "Processing perspectives on task performance",
+          "authors": "Skehan, P.",
+          "year": 2014,
+          "venue": "John Benjamins",
+          "query": "Skehan 2014 processing perspectives task performance"
+        },
+        {
+          "title": "Cognitive bases of second language fluency",
+          "authors": "Segalowitz, N.",
+          "year": 2010,
+          "venue": "Routledge",
+          "query": "Segalowitz 2010 cognitive bases second language fluency"
+        },
+        {
+          "title": "Practice in a second language: Perspectives from applied linguistics and cognitive psychology",
+          "authors": "DeKeyser, R.",
+          "year": 2007,
+          "venue": "Cambridge University Press",
+          "query": "DeKeyser 2007 practice in a second language"
+        },
+        {
+          "title": "Speaking: From intention to articulation",
+          "authors": "Levelt, W. J. M.",
+          "year": 1989,
+          "venue": "MIT Press",
+          "query": "Levelt 1989 speaking from intention to articulation"
+        },
+        {
+          "title": "Second language speech production and fluency",
+          "authors": "Kormos, J.",
+          "year": 2006,
+          "venue": "Speech Production and Second Language Acquisition, Routledge",
+          "query": "Kormos 2006 speech production second language acquisition"
+        },
+        {
+          "title": "Fluency and coherence in IELTS speaking",
+          "authors": "Seedhouse, P.",
+          "year": 2013,
+          "venue": "The IELTS Research Reports",
+          "query": "Seedhouse fluency coherence IELTS speaking"
+        },
+        {
+          "title": "Task repetition and second language fluency",
+          "authors": "Bygate, M.",
+          "year": 2001,
+          "venue": "Researching Pedagogic Tasks, Longman",
+          "query": "Bygate 2001 task repetition second language fluency"
+        },
+        {
+          "title": "Formulaic language and second language speech fluency",
+          "authors": "Wood, D.",
+          "year": 2010,
+          "venue": "Continuum",
+          "query": "Wood 2010 formulaic language second language speech fluency"
+        },
+        {
+          "title": "Pronunciation in second language learning and teaching",
+          "authors": "Derwing, T. M., & Munro, M. J.",
+          "year": 2015,
+          "venue": "John Benjamins",
+          "query": "Derwing Munro 2015 pronunciation second language learning teaching"
+        }
+      ]
+    },
+    {
+      "id": "gamification-dong-luc",
+      "order": 6,
+      "title": "Gamification & động lực học tập",
+      "subtitle": "Chuỗi ngày, XP và huy hiệu có thực sự giúp học?",
+      "summary": "Phân tích bằng chứng về gamification, self-determination theory và thiết kế phần thưởng lành mạnh. Kèm hướng dẫn dùng chuỗi ngày mà không bị áp lực điểm số.",
+      "author": "YYSD · IELTS Việt biên soạn",
+      "year": "2026",
+      "level": "A2–B2",
+      "skills": [
+        "vocab",
+        "speaking"
+      ],
+      "tags": [
+        "gamification",
+        "động lực",
+        "thói quen",
+        "tâm lý học"
+      ],
+      "file": "assets/pdf/gamification-dong-luc.pdf",
+      "pages": 13,
+      "featured": false,
+      "citations": [
+        {
+          "title": "Does gamification work? A literature review of empirical studies on gamification",
+          "authors": "Hamari, J., Koivisto, J., & Sarsa, H.",
+          "year": 2014,
+          "venue": "Proceedings of HICSS, 3025–3034",
+          "query": "Hamari Koivisto Sarsa 2014 does gamification work literature review"
+        },
+        {
+          "title": "How gamification motivates: An experimental study of the effects of specific game design elements",
+          "authors": "Sailer, M., Hense, J. U., Mayr, S. K., & Mandl, H.",
+          "year": 2017,
+          "venue": "Computers in Human Behavior, 69, 371–380",
+          "query": "Sailer Hense Mayr Mandl 2017 how gamification motivates"
+        },
+        {
+          "title": "Self-determination theory and the facilitation of intrinsic motivation",
+          "authors": "Ryan, R. M., & Deci, E. L.",
+          "year": 2000,
+          "venue": "American Psychologist, 55(1), 68–78",
+          "query": "Ryan Deci 2000 self-determination theory intrinsic motivation"
+        },
+        {
+          "title": "From game design elements to gamefulness: defining gamification",
+          "authors": "Deterding, S., Dixon, D., Khaled, R., & Nacke, L.",
+          "year": 2011,
+          "venue": "Proceedings of MindTrek, 9–15",
+          "query": "Deterding 2011 from game design elements to gamefulness"
+        },
+        {
+          "title": "A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation",
+          "authors": "Deci, E. L., Koestner, R., & Ryan, R. M.",
+          "year": 1999,
+          "venue": "Psychological Bulletin, 125(6), 627–668",
+          "query": "Deci Koestner Ryan 1999 extrinsic rewards intrinsic motivation meta-analysis"
+        },
+        {
+          "title": "Gamification in education: A systematic mapping study",
+          "authors": "de Sousa Borges, S., Durelli, V. H. S., Reis, H. M., & Isotani, S.",
+          "year": 2014,
+          "venue": "Proceedings of ACM SAC, 232–237",
+          "query": "de Sousa Borges gamification education systematic mapping study"
+        },
+        {
+          "title": "The gamification of learning and instruction",
+          "authors": "Kapp, K. M.",
+          "year": 2012,
+          "venue": "Pfeiffer",
+          "query": "Kapp 2012 gamification of learning and instruction"
+        },
+        {
+          "title": "Habit formation and the psychology of daily practice",
+          "authors": "Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J.",
+          "year": 2010,
+          "venue": "European Journal of Social Psychology, 40(6), 998–1009",
+          "query": "Lally 2010 how are habits formed"
+        },
+        {
+          "title": "Implementation intentions and goal achievement: A meta-analysis",
+          "authors": "Gollwitzer, P. M., & Sheeran, P.",
+          "year": 2006,
+          "venue": "Advances in Experimental Social Psychology, 38, 69–119",
+          "query": "Gollwitzer Sheeran 2006 implementation intentions meta-analysis"
+        }
+      ]
+    }
+  ]
+}

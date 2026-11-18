@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luyện tập theo kỹ năng · IELTS Việt</title>
+  <meta name="description" content="Chọn kỹ năng Nghe, Nói, Đọc, Viết, Từ vựng hoặc Ngữ pháp để luyện tập theo lộ trình và thẻ đến hạn ôn.">
+  <meta name="theme-color" content="#0b1c33">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body data-page="practice">
+  <a class="skip-to-content" href="#main">Bỏ qua nội dung</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="IELTS Việt — trang chủ">
+      <span class="brand__mark" aria-hidden="true">🦉</span>
+      <span class="brand__text"><strong>IELTS Việt</strong><small>YYSD Learning</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="index.html" data-nav="home">Học</a>
+      <a href="luyen-tap.html" data-nav="practice">Luyện tập</a>
+      <a href="thu-vien.html" data-nav="library">Thư viện PDF</a>
+      <a href="bang-xep-hang.html" data-nav="league">Bảng xếp hạng</a>
+      <a href="ho-so.html" data-nav="profile">Hồ sơ</a>
+    </nav>
+    <div class="topbar__stats" aria-label="Chỉ số học tập">
+      <span class="stat"><span class="stat__icon" aria-hidden="true">🔥</span><span class="sr-only">Chuỗi ngày</span><span data-stat="streak">0</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">❤️</span><span class="sr-only">Tim</span><span data-stat="hearts">5</span></span>
+      <span class="stat"><span class="stat__icon" aria-hidden="true">⚡</span><span class="sr-only">XP</span><span data-stat="xp">0</span></span>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <div class="banner" id="offline-banner" role="status" aria-live="polite"></div>
+    <div class="page-head">
+      <p class="eyebrow">Luyện tập</p>
+      <h1>Luyện tập theo kỹ năng</h1>
+      <p>Chọn một kỹ năng. Hệ thống trộn câu hỏi từ lộ trình với thẻ sắp đến hạn để bạn nhớ lâu hơn.</p>
+    </div>
+
+    <section class="stats" aria-label="Số liệu luyện tập">
+      <div class="stat-card"><span>Thẻ đến hạn</span><strong id="practice-due">0</strong><small>ưu tiên ôn trước</small></div>
+      <div class="stat-card"><span>Câu hỏi</span><strong id="practice-total">0</strong><small>trong lộ trình</small></div>
+      <div class="stat-card"><span>Hoàn thành</span><strong id="practice-progress">0%</strong><small>lộ trình học</small></div>
+    </section>
+
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title" class="sr-only">Danh sách kỹ năng</h2>
+      <div class="skill-grid" id="practice-skills"></div>
+    </section>
+
+    <section class="card" style="margin-top:20px" aria-labelledby="tip-title">
+      <h2 id="tip-title">Cách luyện hiệu quả</h2>
+      <p>Một phiên 10 phút: 60% thẻ đến hạn, 30% câu mới, 10% nội dung đã thuộc. Sai không sao — bạn sẽ gặp lại câu đó sau 10 phút.</p>
+      <p><a href="thu-vien.html">Đọc cẩm nang ôn tập ngắt quãng</a> để hiểu vì sao lịch ôn quan trọng hơn số giờ học.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>IELTS Việt · YYSD Learning Center — học liệu tham khảo, không thay thế đề thi chính thức.</p>
+    <p><a href="index.html">Học</a> · <a href="thu-vien.html">Thư viện PDF</a> · <a href="ho-so.html">Hồ sơ</a></p>
+  </footer>
+
+  <script type="module">
+    import { bootPage } from "./assets/js/boot.js";
+    bootPage();
+  </script>
+</body>
+</html>

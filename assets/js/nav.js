@@ -36,7 +36,8 @@
     { href: "/admission", key: "ai-admit", label: "AI升学顾问", special: "nav-ai-admit", aiAdmit: true },
     { href: "dashboard.html", key: "tasks", label: "任务中心" },
     { href: "download.html", key: "download", label: "下载机考" },
-    { href: "requirements.html", key: "requirements", label: "录取查询" }
+    { href: "requirements.html", key: "requirements", label: "录取查询" },
+    { href: "vi/index.html", key: "vi", label: "IELTS Việt" }
   ].filter(function (l) {
     if ((l.aiAdmit || l.rankings) && !canAiAdmit()) return false;
     return true;

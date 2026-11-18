@@ -1,0 +1,57 @@
+name: Triển khai IELTS Việt lên GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "vi/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-vi
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Đóng gói ứng dụng
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cấu hình Pages
+        uses: actions/configure-pages@v5
+
+      - name: Chuẩn bị artefact (chỉ ứng dụng tiếng Việt)
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          cp -R vi/. _site/
+          cp vi/index.html _site/404.html
+          find _site -name "*.map" -delete
+          test -f _site/index.html
+          test -f _site/assets/pdf/on-tap-ngat-quang.pdf
+          du -sh _site
+
+      - name: Tải artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Xuất bản
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

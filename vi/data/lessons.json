@@ -1,0 +1,582 @@
+{
+  "version": 1,
+  "units": [
+    {
+      "id": "u1",
+      "title": "Từ vựng học thuật",
+      "subtitle": "Nhóm từ xuất hiện dày đặc trong Reading và Writing Task 2.",
+      "skill": "vocab",
+      "level": "A2–B1",
+      "icon": "🌱",
+      "lessons": [
+        {
+          "id": "u1l1",
+          "title": "Từ khoá học thuật cốt lõi",
+          "goal": "Nhận diện 5 từ học thuật thường gặp và nghĩa tiếng Việt.",
+          "questions": [
+            {
+              "id": "u1l1q1",
+              "type": "choice",
+              "term": "significant",
+              "prompt": "Từ nào gần nghĩa nhất với “significant” trong văn phong học thuật?",
+              "options": ["không đáng kể", "đáng kể", "tạm thời", "miễn cưỡng"],
+              "answer": 1,
+              "explain": "“Significant” = đáng kể, có ý nghĩa thống kê. Trái nghĩa là “negligible”."
+            },
+            {
+              "id": "u1l1q2",
+              "type": "choice",
+              "term": "substantiate",
+              "prompt": "Động từ “substantiate” phù hợp nhất với nghĩa nào?",
+              "options": ["bác bỏ một giả thuyết", "chứng minh bằng bằng chứng", "trì hoãn một quyết định", "tóm tắt một báo cáo"],
+              "answer": 1,
+              "explain": "“Substantiate a claim” = củng cố/ chứng minh một luận điểm bằng bằng chứng cụ thể."
+            },
+            {
+              "id": "u1l1q3",
+              "type": "listen",
+              "term": "mitigate",
+              "audio": "Governments can mitigate the effects of air pollution by investing in public transport.",
+              "prompt": "Nghe câu sau và chọn nghĩa đúng của “mitigate”.",
+              "options": ["làm trầm trọng thêm", "làm giảm bớt", "đo lường chính xác", "phớt lờ hoàn toàn"],
+              "answer": 1,
+              "explain": "“Mitigate” = làm dịu, giảm nhẹ tác động tiêu cực."
+            },
+            {
+              "id": "u1l1q4",
+              "type": "fill",
+              "term": "inevitable",
+              "prompt": "Điền từ: “Rapid urbanisation seems ______ in developing economies.” (không thể tránh khỏi)",
+              "answer": "inevitable",
+              "accept": ["unavoidable"],
+              "explain": "“Inevitable” = không thể tránh khỏi; “unavoidable” cũng được chấp nhận."
+            },
+            {
+              "id": "u1l1q5",
+              "type": "order",
+              "term": "correlation",
+              "prompt": "Sắp xếp các từ thành câu học thuật đúng:",
+              "bank": ["The", "study", "found", "a", "strong", "correlation"],
+              "answer": ["The", "study", "found", "a", "strong", "correlation"],
+              "explain": "Trật tự chuẩn: chủ ngữ + động từ + tân ngữ. “A strong correlation” là cụm danh từ."
+            }
+          ]
+        },
+        {
+          "id": "u1l2",
+          "title": "Collocation trong IELTS",
+          "goal": "Ghép từ đúng để tránh lỗi “nghe đúng nhưng không tự nhiên”.",
+          "questions": [
+            {
+              "id": "u1l2q1",
+              "type": "choice",
+              "term": "pose a threat",
+              "prompt": "Cụm nào đi với “threat” đúng chuẩn học thuật?",
+              "options": ["do a threat", "pose a threat", "make a threat", "take a threat"],
+              "answer": 1,
+              "explain": "Collocation chuẩn là “pose a threat to…”. Không dùng “do/make a threat” với nghĩa này."
+            },
+            {
+              "id": "u1l2q2",
+              "type": "choice",
+              "term": "play a role",
+              "prompt": "Chọn cụm đúng: “Education ______ a crucial role in social mobility.”",
+              "options": ["plays", "does", "makes", "takes"],
+              "answer": 0,
+              "explain": "“Play a role/part in” là collocation cố định."
+            },
+            {
+              "id": "u1l2q3",
+              "type": "listen",
+              "term": "draw a conclusion",
+              "audio": "Researchers drew a cautious conclusion from the limited data.",
+              "prompt": "Nghe và cho biết động từ nào đi với “conclusion”.",
+              "options": ["draw", "collect", "build", "raise"],
+              "answer": 0,
+              "explain": "“Draw a conclusion” = rút ra kết luận. Ngoài ra có “reach a conclusion”."
+            },
+            {
+              "id": "u1l2q4",
+              "type": "fill",
+              "term": "heavy reliance",
+              "prompt": "Điền từ: “The region’s ______ reliance on tourism made it vulnerable.” (sự phụ thuộc nặng)",
+              "answer": "heavy",
+              "accept": ["strong"],
+              "explain": "“Heavy reliance on” là collocation tự nhiên trong văn phong học thuật."
+            },
+            {
+              "id": "u1l2q5",
+              "type": "order",
+              "term": "raise awareness",
+              "prompt": "Sắp xếp thành câu hoàn chỉnh:",
+              "bank": ["Campaigns", "raise", "public", "awareness", "of", "recycling"],
+              "answer": ["Campaigns", "raise", "public", "awareness", "of", "recycling"],
+              "explain": "“Raise awareness of something” — chiến dịch nâng cao nhận thức cộng đồng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Ngữ pháp chính xác",
+      "subtitle": "Sửa các lỗi khiến giám khảo trừ điểm Grammatical Range and Accuracy.",
+      "skill": "grammar",
+      "level": "B1",
+      "icon": "🧩",
+      "lessons": [
+        {
+          "id": "u2l1",
+          "title": "Mệnh đề quan hệ",
+          "goal": "Dùng who / which / whose / where đúng ngữ cảnh.",
+          "questions": [
+            {
+              "id": "u2l1q1",
+              "type": "choice",
+              "term": "whose",
+              "prompt": "Chọn đại từ: “The scientist ______ research changed the field received the prize.”",
+              "options": ["who", "which", "whose", "where"],
+              "answer": 2,
+              "explain": "“Whose” thay cho sở hữu cách: research of the scientist."
+            },
+            {
+              "id": "u2l1q2",
+              "type": "choice",
+              "term": "where",
+              "prompt": "Chọn đại từ: “Cities ______ public transport is reliable tend to have lower emissions.”",
+              "options": ["which", "where", "who", "whose"],
+              "answer": 1,
+              "explain": "“Where” thay cho cụm trạng ngữ chỉ nơi chốn “in cities”."
+            },
+            {
+              "id": "u2l1q3",
+              "type": "listen",
+              "term": "which",
+              "audio": "The report, which was published last year, recommends stricter regulations.",
+              "prompt": "Nghe và chọn loại mệnh đề quan hệ được dùng.",
+              "options": ["mệnh đề xác định", "mệnh đề không xác định", "mệnh đề điều kiện", "mệnh đề mục đích"],
+              "answer": 1,
+              "explain": "Có dấu phẩy hai bên và “which” bổ sung thông tin → mệnh đề không xác định."
+            },
+            {
+              "id": "u2l1q4",
+              "type": "fill",
+              "term": "who",
+              "prompt": "Điền đại từ: “Students ______ study abroad often become more independent.”",
+              "answer": "who",
+              "accept": ["that"],
+              "explain": "Chủ ngữ chỉ người → “who” (hoặc “that” trong mệnh đề xác định)."
+            },
+            {
+              "id": "u2l1q5",
+              "type": "order",
+              "term": "relative clause",
+              "prompt": "Sắp xếp thành câu đúng:",
+              "bank": ["This", "is", "the", "policy", "that", "reduced", "emissions"],
+              "answer": ["This", "is", "the", "policy", "that", "reduced", "emissions"],
+              "explain": "Mệnh đề quan hệ xác định theo sau danh từ “policy”."
+            }
+          ]
+        },
+        {
+          "id": "u2l2",
+          "title": "Câu điều kiện & nhượng bộ",
+          "goal": "Viết câu phức tự nhiên cho Writing Task 2.",
+          "questions": [
+            {
+              "id": "u2l2q1",
+              "type": "choice",
+              "term": "were",
+              "prompt": "Chọn dạng đúng: “If the government ______ to invest more, literacy rates would rise.”",
+              "options": ["was", "were", "is", "has been"],
+              "answer": 1,
+              "explain": "Câu điều kiện loại 2 dùng “were” cho mọi chủ ngữ trong văn phong trang trọng."
+            },
+            {
+              "id": "u2l2q2",
+              "type": "choice",
+              "term": "although",
+              "prompt": "Chọn liên từ: “______ the policy is expensive, it has reduced traffic accidents.”",
+              "options": ["Although", "Because", "Unless", "Therefore"],
+              "answer": 0,
+              "explain": "Quan hệ nhượng bộ → “Although” (mặc dù)."
+            },
+            {
+              "id": "u2l2q3",
+              "type": "listen",
+              "term": "provided that",
+              "audio": "The scheme will succeed provided that local councils cooperate.",
+              "prompt": "Nghe và chọn nghĩa của “provided that”.",
+              "options": ["với điều kiện là", "bởi vì", "mặc dù", "trước khi"],
+              "answer": 0,
+              "explain": "“Provided that” ≈ “on condition that” — với điều kiện là."
+            },
+            {
+              "id": "u2l2q4",
+              "type": "fill",
+              "term": "unless",
+              "prompt": "Điền liên từ: “______ governments act now, the problem will worsen.” (trừ khi)",
+              "answer": "Unless",
+              "accept": ["unless"],
+              "explain": "“Unless” = if not; theo sau là mệnh đề khẳng định."
+            },
+            {
+              "id": "u2l2q5",
+              "type": "order",
+              "term": "despite",
+              "prompt": "Sắp xếp thành câu nhượng bộ đúng:",
+              "bank": ["Despite", "the", "high", "cost", "the", "project", "continued"],
+              "answer": ["Despite", "the", "high", "cost", "the", "project", "continued"],
+              "explain": "“Despite + cụm danh từ” rồi mới tới mệnh đề chính."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Nghe & Đọc hiểu",
+      "subtitle": "Bắt từ khoá, nghe số liệu và xử lý bẫy paraphrase.",
+      "skill": "listening",
+      "level": "B1–B2",
+      "icon": "🎧",
+      "lessons": [
+        {
+          "id": "u3l1",
+          "title": "Nghe số liệu & ngày tháng",
+          "goal": "Không mất điểm ở các câu điền số trong Section 1.",
+          "questions": [
+            {
+              "id": "u3l1q1",
+              "type": "listen",
+              "term": "fifteen",
+              "audio": "The workshop starts at a quarter past nine on the fifteenth of March.",
+              "prompt": "Nghe và chọn thời điểm bắt đầu.",
+              "options": ["9:15", "9:45", "8:15", "10:15"],
+              "answer": 0,
+              "explain": "“A quarter past nine” = 9:15; “the fifteenth of March” là ngày 15/3."
+            },
+            {
+              "id": "u3l1q2",
+              "type": "listen",
+              "term": "forty",
+              "audio": "The deposit is forty pounds, refundable within fourteen days.",
+              "prompt": "Nghe và chọn số tiền đặt cọc.",
+              "options": ["£14", "£40", "£44", "£4"],
+              "answer": 1,
+              "explain": "“Forty pounds” = £40; “fourteen days” là thời hạn hoàn tiền — bẫy số."
+            },
+            {
+              "id": "u3l1q3",
+              "type": "choice",
+              "term": "double",
+              "prompt": "Trong bài nghe, “double” thường được đọc thành:",
+              "options": ["hai lần", "gấp đôi", "một nửa", "hai phần ba"],
+              "answer": 1,
+              "explain": "“Double” = gấp đôi; “twice” = hai lần."
+            },
+            {
+              "id": "u3l1q4",
+              "type": "fill",
+              "term": "nineteen",
+              "prompt": "Điền số bằng chữ: “The course costs ______ hundred dollars.” (1900)",
+              "answer": "nineteen",
+              "explain": "1900 → “nineteen hundred dollars”. Viết đúng chính tả số là bắt buộc."
+            },
+            {
+              "id": "u3l1q5",
+              "type": "order",
+              "term": "listen for numbers",
+              "prompt": "Sắp xếp thành hướng dẫn ôn nghe đúng:",
+              "bank": ["Listen", "for", "numbers", "and", "write", "them", "immediately"],
+              "answer": ["Listen", "for", "numbers", "and", "write", "them", "immediately"],
+              "explain": "Ghi ngay khi nghe được số — tránh mất thông tin khi băng tiếp tục."
+            }
+          ]
+        },
+        {
+          "id": "u3l2",
+          "title": "Paraphrase trong Reading",
+          "goal": "Nhận ra câu trả lời bị diễn đạt lại, không trùng từ khoá.",
+          "questions": [
+            {
+              "id": "u3l2q1",
+              "type": "choice",
+              "term": "paraphrase",
+              "prompt": "Câu nào là paraphrase của “The museum attracts a large number of visitors”?",
+              "options": ["The museum is visited by many people.", "The museum attracts few visitors.", "The museum was built long ago.", "Visitors must pay to enter the museum."],
+              "answer": 0,
+              "explain": "Bị động + “many people” thay “a large number of visitors”."
+            },
+            {
+              "id": "u3l2q2",
+              "type": "choice",
+              "term": "not given",
+              "prompt": "Đề nói “Some scientists believe the method is safe.” Bài đọc chỉ nêu phương pháp được thử nghiệm. Đáp án True/False/Not Given?",
+              "options": ["True", "False", "Not Given", "Cannot decide from grammar"],
+              "answer": 2,
+              "explain": "Bài đọc không nói gì về niềm tin an toàn → Not Given, không phải False."
+            },
+            {
+              "id": "u3l2q3",
+              "type": "listen",
+              "term": "scanning",
+              "audio": "Skim the passage first, then scan for names and dates.",
+              "prompt": "Nghe và cho biết kỹ năng nào được nhắc tới để tìm tên và ngày.",
+              "options": ["skim", "scan", "predict", "summarise"],
+              "answer": 1,
+              "explain": "Scan = quét tìm thông tin cụ thể; skim = đọc lướt ý chính."
+            },
+            {
+              "id": "u3l2q4",
+              "type": "fill",
+              "term": "synonym",
+              "prompt": "Điền từ: “A ______ is a word with the same or similar meaning.” (từ đồng nghĩa)",
+              "answer": "synonym",
+              "explain": "Synonym = từ đồng nghĩa; antonym = từ trái nghĩa."
+            },
+            {
+              "id": "u3l2q5",
+              "type": "order",
+              "term": "topic sentence",
+              "prompt": "Sắp xếp thành câu chủ đề đúng:",
+              "bank": ["Urban", "gardens", "improve", "air", "quality", "in", "cities"],
+              "answer": ["Urban", "gardens", "improve", "air", "quality", "in", "cities"],
+              "explain": "Câu chủ đề nêu thẳng lợi ích chính, không lan man."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Viết học thuật",
+      "subtitle": "Xây lập luận Task 2 và kiểm soát lỗi diễn đạt.",
+      "skill": "writing",
+      "level": "B2",
+      "icon": "✍️",
+      "lessons": [
+        {
+          "id": "u4l1",
+          "title": "Mở bài & luận điểm",
+          "goal": "Viết mở bài rõ quan điểm trong 2 câu.",
+          "questions": [
+            {
+              "id": "u4l1q1",
+              "type": "choice",
+              "term": "thesis statement",
+              "prompt": "Câu nào là thesis statement phù hợp cho đề “Ưu điểm của làm việc từ xa”?",
+              "options": ["This essay will discuss working from home.", "Remote work benefits both employees and employers by reducing commuting and widening talent pools.", "In conclusion, remote work is good.", "Many people work from home nowadays."],
+              "answer": 1,
+              "explain": "Thesis nêu rõ quan điểm + hai lý do cụ thể, không chỉ thông báo chủ đề."
+            },
+            {
+              "id": "u4l1q2",
+              "type": "choice",
+              "term": "cohesion",
+              "prompt": "Từ nối nào thể hiện quan hệ nguyên nhân – kết quả?",
+              "options": ["In contrast", "Consequently", "For instance", "Meanwhile"],
+              "answer": 1,
+              "explain": "“Consequently” = do đó, hệ quả trực tiếp."
+            },
+            {
+              "id": "u4l1q3",
+              "type": "listen",
+              "term": "coherent",
+              "audio": "A coherent paragraph develops one idea and connects it to the thesis.",
+              "prompt": "Nghe và chọn đặc điểm của một đoạn văn mạch lạc.",
+              "options": ["nêu nhiều ý rời rạc", "phát triển một ý và nối với luận điểm", "chỉ dùng từ vựng khó", "càng dài càng tốt"],
+              "answer": 1,
+              "explain": "Mỗi đoạn một ý, liên kết với thesis; không nhồi nhiều ý."
+            },
+            {
+              "id": "u4l1q4",
+              "type": "fill",
+              "term": "outweigh",
+              "prompt": "Điền động từ: “The benefits of remote work ______ its drawbacks.” (vượt trội hơn)",
+              "answer": "outweigh",
+              "explain": "“Outweigh” = lớn hơn/ quan trọng hơn — cấu trúc quen thuộc trong Task 2."
+            },
+            {
+              "id": "u4l1q5",
+              "type": "order",
+              "term": "topic sentence",
+              "prompt": "Sắp xếp thành câu chủ đề cho đoạn thân bài:",
+              "bank": ["Remote", "work", "reduces", "commuting", "costs", "for", "employees"],
+              "answer": ["Remote", "work", "reduces", "commuting", "costs", "for", "employees"],
+              "explain": "Câu chủ đề nêu một lợi ích cụ thể, có thể triển khai bằng ví dụ."
+            }
+          ]
+        },
+        {
+          "id": "u4l2",
+          "title": "Sửa lỗi diễn đạt",
+          "goal": "Loại bỏ lỗi khiến bài viết bị trừ điểm Lexical Resource.",
+          "questions": [
+            {
+              "id": "u4l2q1",
+              "type": "choice",
+              "term": "formal register",
+              "prompt": "Cách diễn đạt nào phù hợp văn phong học thuật?",
+              "options": ["Kids these days are glued to their phones.", "Children today spend excessive time on mobile devices.", "It's kinda obvious that phones are bad.", "Phones are a big no-no for kids."],
+              "answer": 1,
+              "explain": "Tránh tiếng lóng/ khẩu ngữ; dùng “excessive time on mobile devices”."
+            },
+            {
+              "id": "u4l2q2",
+              "type": "choice",
+              "term": "wordiness",
+              "prompt": "Câu nào súc tích nhất?",
+              "options": ["Due to the fact that prices rose, demand fell.", "Because prices rose, demand fell.", "On account of the fact of prices rising, demand fell.", "In view of the fact that prices rose, demand fell."],
+              "answer": 1,
+              "explain": "“Because” thay cho cụm dài “due to the fact that”."
+            },
+            {
+              "id": "u4l2q3",
+              "type": "listen",
+              "term": "hedging",
+              "audio": "The evidence suggests that the policy may reduce inequality.",
+              "prompt": "Nghe và cho biết câu dùng biện pháp tu từ nào để giảm mức khẳng định.",
+              "options": ["hedging", "generalisation", "exaggeration", "repetition"],
+              "answer": 0,
+              "explain": "“Suggests” và “may” là hedging — cách nói thận trọng, học thuật."
+            },
+            {
+              "id": "u4l2q4",
+              "type": "fill",
+              "term": "therefore",
+              "prompt": "Điền trạng từ nối: “The data were incomplete; ______, the findings are tentative.” (do đó)",
+              "answer": "therefore",
+              "accept": ["consequently"],
+              "explain": "“Therefore/ Consequently” nối hệ quả logic, cần dấu chấm phẩy trước đó."
+            },
+            {
+              "id": "u4l2q5",
+              "type": "order",
+              "term": "conclusion",
+              "prompt": "Sắp xếp thành câu kết luận đúng:",
+              "bank": ["In", "conclusion", "stricter", "rules", "are", "necessary"],
+              "answer": ["In", "conclusion", "stricter", "rules", "are", "necessary"],
+              "explain": "Kết luận ngắn, khẳng định lại quan điểm đã triển khai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Nói lưu loát",
+      "subtitle": "Luyện phản xạ, ngữ điệu và cấu trúc trả lời 2 phút.",
+      "skill": "speaking",
+      "level": "B2–C1",
+      "icon": "🎙️",
+      "lessons": [
+        {
+          "id": "u5l1",
+          "title": "Trả lời Part 1 tự nhiên",
+          "goal": "Mở rộng câu trả lời 2–3 câu mà không học thuộc.",
+          "questions": [
+            {
+              "id": "u5l1q1",
+              "type": "choice",
+              "term": "extend answer",
+              "prompt": "Cách mở rộng câu trả lời Part 1 tốt nhất?",
+              "options": ["Trả lời “Yes” rồi im lặng.", "Nêu lý do và ví dụ ngắn.", "Đọc thuộc lòng một đoạn văn.", "Hỏi lại giám khảo."],
+              "answer": 1,
+              "explain": "Công thức A-R-E: Answer – Reason – Example."
+            },
+            {
+              "id": "u5l1q2",
+              "type": "choice",
+              "term": "fillers",
+              "prompt": "Cụm nào giúp kéo dài thời gian suy nghĩ tự nhiên?",
+              "options": ["Um, ah, eh…", "That's an interesting question — let me think.", "I don't know anything.", "Repeat the question word by word."],
+              "answer": 1,
+              "explain": "Dùng cụm dẫn dắt tự nhiên thay vì âm đệm liên tục."
+            },
+            {
+              "id": "u5l1q3",
+              "type": "listen",
+              "term": "intonation",
+              "audio": "Well, I suppose I enjoy reading because it helps me unwind after work.",
+              "prompt": "Nghe và chọn mục đích của “Well, I suppose…”.",
+              "options": ["do dự, thiếu tự tin", "mở đầu mềm mỏng trước khi nêu ý", "phản đối giám khảo", "kết thúc câu trả lời"],
+              "answer": 1,
+              "explain": "Đây là cách mở đầu mềm, tạo thời gian suy nghĩ tự nhiên."
+            },
+            {
+              "id": "u5l1q4",
+              "type": "fill",
+              "term": "keen on",
+              "prompt": "Điền cụm: “I'm quite ______ on photography at the moment.” (thích)",
+              "answer": "keen",
+              "explain": "“Be keen on + V-ing/ noun” = rất thích."
+            },
+            {
+              "id": "u5l1q5",
+              "type": "order",
+              "term": "answer structure",
+              "prompt": "Sắp xếp thành câu trả lời mẫu đúng:",
+              "bank": ["I", "usually", "study", "in", "the", "evening", "because", "it", "is", "quieter"],
+              "answer": ["I", "usually", "study", "in", "the", "evening", "because", "it", "is", "quieter"],
+              "explain": "Answer + reason với “because”, tránh câu quá ngắn."
+            }
+          ]
+        },
+        {
+          "id": "u5l2",
+          "title": "Part 2: kể chuyện có cấu trúc",
+          "goal": "Dùng mốc thời gian và từ nối để nói 2 phút liền mạch.",
+          "questions": [
+            {
+              "id": "u5l2q1",
+              "type": "choice",
+              "term": "narrative structure",
+              "prompt": "Cấu trúc nào giúp bài nói Part 2 mạch lạc?",
+              "options": ["Hiện tại – quá khứ – tương lai lộn xộn", "Bối cảnh → diễn biến → cảm xúc/ bài học", "Liệt kê 10 tính từ", "Chỉ mô tả ngoại hình"],
+              "answer": 1,
+              "explain": "Khung 3 phần giúp giám khảo theo dõi và thể hiện coherence."
+            },
+            {
+              "id": "u5l2q2",
+              "type": "choice",
+              "term": "sequencing",
+              "prompt": "Từ nào đánh dấu bước tiếp theo trong câu chuyện?",
+              "options": ["Initially", "Subsequently", "Overall", "Frankly"],
+              "answer": 1,
+              "explain": "“Subsequently” = sau đó; “initially” mở đầu, “overall” kết luận."
+            },
+            {
+              "id": "u5l2q3",
+              "type": "listen",
+              "term": "paraphrasing",
+              "audio": "What I found most rewarding was the moment my students finally understood the concept.",
+              "prompt": "Nghe và chọn cấu trúc nhấn mạnh được dùng.",
+              "options": ["câu chẻ (cleft sentence)", "câu bị động", "câu điều kiện", "câu so sánh"],
+              "answer": 0,
+              "explain": "“What I found most rewarding was…” là câu chẻ — nhấn mạnh thông tin."
+            },
+            {
+              "id": "u5l2q4",
+              "type": "fill",
+              "term": "memorable",
+              "prompt": "Điền tính từ: “It was one of the most ______ experiences of my life.” (đáng nhớ)",
+              "answer": "memorable",
+              "accept": ["unforgettable"],
+              "explain": "“Memorable/ unforgettable” đều tự nhiên; chú ý trật tự tính từ."
+            },
+            {
+              "id": "u5l2q5",
+              "type": "order",
+              "term": "conclusion",
+              "prompt": "Sắp xếp thành câu kết bài nói đúng:",
+              "bank": ["Looking", "back", "I", "realise", "how", "much", "I", "learned"],
+              "answer": ["Looking", "back", "I", "realise", "how", "much", "I", "learned"],
+              "explain": "Cụm phân từ “Looking back” tạo kết thúc tự nhiên, giàu cảm xúc."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
