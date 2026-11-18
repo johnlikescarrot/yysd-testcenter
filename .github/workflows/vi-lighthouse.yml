@@ -43,12 +43,18 @@ jobs:
           set -o pipefail
           npx --yes @lhci/cli@0.14.x autorun 2>&1 | tee lhci.log
 
+      - name: Tóm tắt audit chưa đạt
+        if: always()
+        run: node scripts/vi/lighthouse-summary.mjs > lhci-summary.md || true
+
       - name: Đăng kết quả chi tiết vào PR
         if: always() && github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           {
+            cat lhci-summary.md 2>/dev/null || true
+            echo
             echo '<details><summary>Nhật ký Lighthouse CI</summary>'
             echo
             echo '```'

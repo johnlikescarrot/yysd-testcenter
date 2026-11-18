@@ -14,9 +14,9 @@
   --navy-soft: #102a4c;
   --ink: #101827;
   --ink-muted: #55606f;
-  --ink-faint: #6f6a5c;
+  --ink-faint: #615c4e;
   --gold: #c7a45d;
-  --gold-dark: #a98234;
+  --gold-dark: #7d6024;
   --gold-ink: #72541a;
   --gold-soft: #f6eedf;
   --line: #e5ddcd;
@@ -287,7 +287,7 @@ button {
 }
 
 .stat--streak svg {
-  color: #b8451f;
+  color: #a83f1b;
 }
 
 .stat--xp svg {
@@ -295,7 +295,7 @@ button {
 }
 
 .stat--gem svg {
-  color: #1f6f8b;
+  color: #19607a;
 }
 
 .stat--heart svg {
@@ -845,7 +845,7 @@ button {
 
 .unit-badge--locked {
   background: #e9e2d3;
-  color: #8b8574;
+  color: #6a6454;
 }
 
 .path {
@@ -1363,7 +1363,7 @@ a.node:hover {
   height: 22px;
 }
 
-.tile h3 {
+.tile h2 {
   margin: 0;
   font-size: 1rem;
   font-family: var(--font-ui);

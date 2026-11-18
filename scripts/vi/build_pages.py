@@ -151,6 +151,9 @@ JSONLD = (
     + "\n</script>\n"
 )
 
+CSS = (ROOT / "css" / "app.css").read_text(encoding="utf-8")
+
+
 TEMPLATE = """<!doctype html>
 <html lang="vi">
 <head>
@@ -168,8 +171,9 @@ TEMPLATE = """<!doctype html>
 <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./img/favicon.svg">
-<link rel="preload" href="./css/app.css" as="style">
-<link rel="stylesheet" href="./css/app.css">
+<style>
+{css}
+</style>
 {jsonld}</head>
 <body data-page="{page}">
 <a class="skip-link" href="#app">Bỏ qua điều hướng</a>
@@ -240,8 +244,9 @@ NOT_FOUND = """<!doctype html>
 <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./img/favicon.svg">
-<link rel="preload" href="./css/app.css" as="style">
-<link rel="stylesheet" href="./css/app.css">
+<style>
+{css}
+</style>
 </head>
 <body data-page="not-found">
 <main class="main">
@@ -266,6 +271,7 @@ def main() -> None:
             desc=cfg["desc"],
             page=cfg["page"],
             jsonld=JSONLD if cfg["jsonld"] else "",
+            css=CSS,
             brand=BRAND,
             nav=nav_items(cfg["active"]),
             stats=stats_block(),
@@ -275,7 +281,7 @@ def main() -> None:
         )
         (ROOT / name).write_text(html, encoding="utf-8")
         print(f"wrote {name} ({len(html)} bytes)")
-    (ROOT / "404.html").write_text(NOT_FOUND, encoding="utf-8")
+    (ROOT / "404.html").write_text(NOT_FOUND.format(css=CSS), encoding="utf-8")
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
     print("wrote 404.html, robots.txt")
 

@@ -17,7 +17,7 @@ function tile(mode, ui) {
   return `<button class="tile" type="button" data-action="mode" data-value="${mode.id}" aria-pressed="${active}"
     style="${active ? 'border-color:var(--gold-dark);box-shadow:var(--shadow-md)' : ''}">
     <span class="tile-icon">${icon(mode.icon)}</span>
-    <h3>${esc(mode.label)}</h3>
+    <h2>${esc(mode.label)}</h2>
     <p>${esc(mode.text)}</p>
   </button>`;
 }
