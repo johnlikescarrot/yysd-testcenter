@@ -1,0 +1,45 @@
+name: Super-Linter · IELTS
+on:
+  push:
+    paths: &paths
+      - "studio/**"
+      - "tests/studio/**"
+      - "scripts/studio/**"
+      - ".github/workflows/studio-*.yml"
+      - "README.md"
+  pull_request:
+    paths: *paths
+  schedule:
+    - cron: "27 3 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lint-ielts-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            studio
+            tests/studio
+            scripts/studio
+            .github/workflows
+          persist-credentials: false
+      - uses: super-linter/super-linter/slim@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
+        env:
+          DEFAULT_BRANCH: main
+          VALIDATE_ALL_CODEBASE: true
+          USE_FIND_ALGORITHM: true
+          FILTER_REGEX_INCLUDE: (^|/)(studio/|tests/studio/|scripts/studio/|\.github/workflows/studio-|README\.md$)
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_PRETTIER: true
+          VALIDATE_CSS_PRETTIER: true
+          VALIDATE_JSON_PRETTIER: true
+          VALIDATE_YAML_PRETTIER: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_PYTHON_RUFF: true
+          ENABLE_GITHUB_ACTIONS_STEP_SUMMARY: true
