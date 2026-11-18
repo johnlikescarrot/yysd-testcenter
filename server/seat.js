@@ -88,7 +88,7 @@ function init(db) {
     var on = switchOn();
     if (!key) {
       if (on && (opts.purpose === "login" || opts.purpose === "register" || opts.purpose === "reset")) {
-        return { error: "请下载机考程序后继续", status: 403, code: "seat_required" };
+        return { error: "Hãy tải ứng dụng thi trên máy để tiếp tục", status: 403, code: "seat_required" };
       }
       return { ok: true };
     }

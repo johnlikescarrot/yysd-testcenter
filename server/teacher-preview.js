@@ -90,11 +90,11 @@ function mountRoutes(app, opts) {
 
   app.post("/api/teacher/site-mode/enter", teacherAuth, function (req, res) {
     var teacher = getTeacher(db, req.user.sub);
-    if (!teacher) return res.status(404).json({ error: "教师不存在" });
+    if (!teacher) return res.status(404).json({ error: "Không tìm thấy giáo viên" });
     var user = provisionTeacher(db, stmts, vocabChallenge, teacher);
     if (!user) return res.status(500).json({ error: "无法创建体验账号" });
     var token = issueToken(user, user.phone);
-    if (!token) return res.status(503).json({ error: "服务未配置 JWT_SECRET" });
+    if (!token) return res.status(503).json({ error: "Dịch vụ đăng nhập chưa được cấu hình" });
     res.json({
       ok: true,
       token: token,

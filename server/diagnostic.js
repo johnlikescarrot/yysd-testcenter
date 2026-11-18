@@ -626,7 +626,7 @@ function mountRoutes(app, opts) {
     }
     var row = stmts.findSession.get(id);
     if (!row || row.student_id !== req.user.sub) {
-      res.status(404).json({ error: "会话不存在" });
+      res.status(404).json({ error: "Phiên không tồn tại" });
       return null;
     }
     return row;
@@ -1082,13 +1082,13 @@ function mountRoutes(app, opts) {
 
   app.get("/api/teacher/student-diagnostic/:studentId", teacherAuthMiddleware, function (req, res) {
     var studentId = Number(req.params.studentId);
-    if (!studentId) return res.status(400).json({ error: "无效的学生 ID" });
+    if (!studentId) return res.status(400).json({ error: "Mã học viên không hợp lệ" });
     if (teacherCanManageStudent && !teacherCanManageStudent(req, studentId)) {
-      return res.status(403).json({ error: "该学生未分配给你" });
+      return res.status(403).json({ error: "Học viên này chưa được phân công cho bạn" });
     }
     var user = findUserById ? findUserById(studentId) : null;
     if (!user || (req.user.orgId && user.org_id !== req.user.orgId)) {
-      return res.status(404).json({ error: "学生不存在" });
+      return res.status(404).json({ error: "Không tìm thấy học viên" });
     }
     var sessions = stmts.listCompleted.all(studentId).map(function (sess) {
       var report = parseJson(sess.final_report, null) || {};
